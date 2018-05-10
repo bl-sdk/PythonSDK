@@ -11,27 +11,9 @@ Menu::Menu()
 {
 	visible = true;//false; //hide by default
 
-	//Perform signature scans inside the 'gameoverlayrenderer.dll' library.
-	std::uintptr_t present_addr = FindPattern("gameoverlayrenderer.dll", "FF 15 ? ? ? ? 8B F8 85 DB 74 1F") + 2;
-	std::uintptr_t reset_addr = FindPattern("gameoverlayrenderer.dll", "FF 15 ? ? ? ? 8B F8 85 FF 78 18") + 2;
-
-	// Store the original contents of the pointers for later usage.
-	original_present = **reinterpret_cast<decltype(original_present)*>(present_addr);
-	original_reset = **reinterpret_cast<decltype(original_reset)*>(reset_addr);
-
-	// Switch the contents to point to our replacement functions.
-	//**reinterpret_cast<void***>(present_addr) = reinterpret_cast<void*>(user_present);
-	//**reinterpret_cast<void***>(reset_addr) = reinterpret_cast<void*>(user_reset);
-
-	game_hwnd = (HWND)GetCurrentProcessId();
-
-	GetWindowThreadProcessId(game_hwnd, &hwnd_pid);
-
-	//d3dDevice9 = **(IDirect3DDevice9***)(FindPattern(0x000000, 0x900000, "A1 ? ? ? ? 50 8B 08 FF 51 0C", "xxxxxxxxx", 0);
-
-	//D3DDEVICE_CREATION_PARAMETERS params;
-	//d3dDevice9->GetCreationParameters(&params);
-	//ImGui_ImplDX9_Init(params.hFocusWindow, d3dDevice9);
+	D3DDEVICE_CREATION_PARAMETERS params;
+	d3dDevice9->GetCreationParameters(&params);
+	ImGui_ImplDX9_Init(GetActiveWindow(), d3dDevice9);
 }
 
 Menu::~Menu()
