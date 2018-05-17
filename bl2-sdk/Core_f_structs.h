@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -227,11 +227,11 @@ struct UObject_execPointDistToPlane_Parms
 	struct FVector                                     Origin;                                           		// 0x0018 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     out_ClosestPoint;                                 		// 0x0024 (0x000C) [0x0000000000000190]              ( CPF_OptionalParm | CPF_Parm | CPF_OutParm )
 	float                                              ReturnValue;                                      		// 0x0030 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  AxisX;                                            		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  AxisY;                                            		// 0x0040 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  AxisZ;                                            		// 0x004C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  PointNoZ;                                         		// 0x0058 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  OriginNoZ;                                        		// 0x0064 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  AxisX;                                            		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FVector                                  AxisY;                                            		// 0x0040 (0x000C) [0x0000000000000000]
+	// struct FVector                                  AxisZ;                                            		// 0x004C (0x000C) [0x0000000000000000]
+	// struct FVector                                  PointNoZ;                                         		// 0x0058 (0x000C) [0x0000000000000000]
+	// struct FVector                                  OriginNoZ;                                        		// 0x0064 (0x000C) [0x0000000000000000]
 };
 
 // Function Core.Object.PointDistToSegment
@@ -740,7 +740,7 @@ struct UObject_execMakeLinearColor_Parms
 	float                                              B;                                                		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              A;                                                		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FLinearColor                                ReturnValue;                                      		// 0x0010 (0x0010) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FLinearColor                             LC;                                               		// 0x0020 (0x0010) [0x0000000000000000]              
+	// struct FLinearColor                             LC;                                               		// 0x0020 (0x0010) [0x0000000000000000]
 };
 
 // Function Core.Object.GetHTMLColor
@@ -759,10 +759,10 @@ struct UObject_execLerpColor_Parms
 	struct FColor                                      B;                                                		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              Alpha;                                            		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FColor                                      ReturnValue;                                      		// 0x000C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  FloatA;                                           		// 0x0010 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  FloatB;                                           		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  FloatResult;                                      		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FColor                                   Result;                                           		// 0x0040 (0x0004) [0x0000000000000000]              
+	// struct FVector                                  FloatA;                                           		// 0x0010 (0x000C) [0x0000000000000000]
+	// struct FVector                                  FloatB;                                           		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FVector                                  FloatResult;                                      		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FColor                                   Result;                                           		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // Function Core.Object.MakeColor
@@ -774,7 +774,7 @@ struct UObject_execMakeColor_Parms
 	unsigned char                                      B;                                                		// 0x0002 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      A;                                                		// 0x0003 (0x0001) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	struct FColor                                      ReturnValue;                                      		// 0x0004 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FColor                                   C;                                                		// 0x0008 (0x0004) [0x0000000000000000]              
+	// struct FColor                                   C;                                                		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // Function Core.Object.Add_ColorColor
@@ -847,7 +847,7 @@ struct UObject_execvect2d_Parms
 	float                                              InX;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              InY;                                              		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector2D                                   ReturnValue;                                      		// 0x0008 (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector2D                                NewVect2d;                                        		// 0x0010 (0x0008) [0x0000000000000000]              
+	// struct FVector2D                                NewVect2d;                                        		// 0x0010 (0x0008) [0x0000000000000000]
 };
 
 // Function Core.Object.GetMappedRangeValue
@@ -1494,7 +1494,7 @@ struct UObject_execMakeRotator_Parms
 	int                                                Yaw;                                              		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	int                                                Roll;                                             		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    ReturnValue;                                      		// 0x000C (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FRotator                                 R;                                                		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 R;                                                		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // Function Core.Object.SClampRotAxis
@@ -1770,8 +1770,8 @@ struct UObject_execInCylinder_Parms
 	struct FVector                                     A;                                                		// 0x001C (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bIgnoreZ : 1;                                     		// 0x0028 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x002C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  B;                                                		// 0x0030 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  VDir;                                             		// 0x003C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  B;                                                		// 0x0030 (0x000C) [0x0000000000000000]
+	// struct FVector                                  VDir;                                             		// 0x003C (0x000C) [0x0000000000000000]
 };
 
 // Function Core.Object.NoZDot
@@ -2934,7 +2934,6 @@ struct UCommandlet_eventMain_Parms
 	int                                                ReturnValue;                                      		// 0x000C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

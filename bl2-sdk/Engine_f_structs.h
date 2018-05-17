@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -179,28 +179,28 @@ struct AActor_execGetStatusEffectBaseDamage_Parms
 };
 
 // Function Engine.Actor.WaitingForAttachmentBase
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execWaitingForAttachmentBase_Parms
 {
-	// class UIWorldBody*                              BaseInterface;                                    		// 0x0000 (0x0008) [0x0000000000000000]              
-	// class UIWorldBody*                              AttachmentBaseInterface;                          		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UIWorldBody*                              BaseInterface;                                    		// 0x0000 (0x0008) [0x0000000000000000]
+	// class UIWorldBody*                              AttachmentBaseInterface;                          		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Actor.Behavior_ChangeVisibility
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_ChangeVisibility_Parms
 {
 	unsigned long                                      bVisible : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Actor.Behavior_ToggleVisibility
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_ToggleVisibility_Parms
 {
 };
 
 // Function Engine.Actor.Behavior_ChangeCollisionSize
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_ChangeCollisionSize_Parms
 {
 	float                                              NewRadius;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -208,49 +208,49 @@ struct AActor_execBehavior_ChangeCollisionSize_Parms
 };
 
 // Function Engine.Actor.Behavior_ChangeCollision
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_ChangeCollision_Parms
 {
 	unsigned char                                      NewCollisionType;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Actor.GetDamageVector
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execGetDamageVector_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Actor.GetRigidBodyMesh
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execGetRigidBodyMesh_Parms
 {
 	class UMeshComponent*                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000004000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline )
 };
 
 // Function Engine.Actor.ClientConsoleCommand
-// [0x010201C2] 
+// [0x010201C2]
 struct AActor_execClientConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Actor.Behavior_ClientConsoleCommand
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execBehavior_ClientConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Actor.Behavior_ConsoleCommand
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execBehavior_ConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Actor.Behavior_StopSound
-// [0x00024102] 
+// [0x00024102]
 struct AActor_execBehavior_StopSound_Parms
 {
 	class USoundCue*                                   Sound;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -259,7 +259,7 @@ struct AActor_execBehavior_StopSound_Parms
 };
 
 // Function Engine.Actor.Behavior_PlaySoundForListener
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_PlaySoundForListener_Parms
 {
 	class USoundCue*                                   Sound;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -268,7 +268,7 @@ struct AActor_execBehavior_PlaySoundForListener_Parms
 };
 
 // Function Engine.Actor.Behavior_PlaySound
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_PlaySound_Parms
 {
 	class USoundCue*                                   Sound;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -276,7 +276,7 @@ struct AActor_execBehavior_PlaySound_Parms
 };
 
 // Function Engine.Actor.Behavior_PostAkEvent
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_PostAkEvent_Parms
 {
 	class UAkEvent*                                    Event;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -285,7 +285,7 @@ struct AActor_execBehavior_PostAkEvent_Parms
 };
 
 // Function Engine.Actor.Behavior_Destroy
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execBehavior_Destroy_Parms
 {
 };
@@ -447,7 +447,7 @@ struct AActor_execGetWorldBodyLocation_Parms
 };
 
 // Function Engine.Actor.GetSpawnOwner
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execGetSpawnOwner_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -489,7 +489,7 @@ struct AActor_eventReplicationEnded_Parms
 };
 
 // Function Engine.Actor.SetDebugBeaconState
-// [0x00024002] 
+// [0x00024002]
 struct AActor_execSetDebugBeaconState_Parms
 {
 	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -707,7 +707,7 @@ struct AActor_execGetTargetLocation_Parms
 };
 
 // Function Engine.Actor.FindGoodEndView
-// [0x00420102] 
+// [0x00420102]
 struct AActor_execFindGoodEndView_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -715,7 +715,7 @@ struct AActor_execFindGoodEndView_Parms
 };
 
 // Function Engine.Actor.NotifyLocalPlayerTeamReceived
-// [0x00020100] 
+// [0x00020100]
 struct AActor_execNotifyLocalPlayerTeamReceived_Parms
 {
 };
@@ -735,7 +735,7 @@ struct AActor_execGetTeamNum_Parms
 };
 
 // Function Engine.Actor.PawnBaseDied
-// [0x00020000] 
+// [0x00020000]
 struct AActor_execPawnBaseDied_Parms
 {
 };
@@ -770,14 +770,14 @@ struct AActor_eventGetActorFaceFXAsset_Parms
 };
 
 // Function Engine.Actor.CanActorPlayFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execCanActorPlayFaceFXAnim_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Actor.IsActorPlayingFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execIsActorPlayingFaceFXAnim_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -876,18 +876,18 @@ struct AActor_eventOnAnimEnd_Parms
 };
 
 // Function Engine.Actor.DoKismetAttachment
-// [0x00820002] 
+// [0x00820002]
 struct AActor_execDoKismetAttachment_Parms
 {
 	class AActor*                                      Attachment;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class USeqAct_AttachToActor*                       Action;                                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  X;                                                		// 0x0010 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Y;                                                		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Z;                                                		// 0x0028 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  X;                                                		// 0x0010 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Y;                                                		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FVector                                  Z;                                                		// 0x0028 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Actor.OnAttachToActor
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execOnAttachToActor_Parms
 {
 	class USeqAct_AttachToActor*                       Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -895,48 +895,48 @@ struct AActor_execOnAttachToActor_Parms
 };
 
 // Function Engine.Actor.OnToggleHidden
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execOnToggleHidden_Parms
 {
 	class USeqAct_ToggleHidden*                        Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Actor.OnChangeCollision
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execOnChangeCollision_Parms
 {
 	class USeqAct_ChangeCollision*                     Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Actor.OnSetPhysics
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execOnSetPhysics_Parms
 {
 	class USeqAct_SetPhysics*                          Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Actor.OnSetBlockRigidBody
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execOnSetBlockRigidBody_Parms
 {
 	class USeqAct_SetBlockRigidBody*                   Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Actor.OnSetVelocity
-// [0x00820102] 
+// [0x00820102]
 struct AActor_execOnSetVelocity_Parms
 {
 	class USeqAct_SetVelocity*                         Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  V;                                                		// 0x0004 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  V;                                                		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Actor.OnTeleport
-// [0x00820102] 
+// [0x00820102]
 struct AActor_execOnTeleport_Parms
 {
 	class USeqAct_Teleport*                            Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	// TArray< class UObject* >                        objVars;                                          		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FVector                                  Extent;                                           		// 0x0034 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Extent;                                           		// 0x0034 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Actor.ModifyHealth
@@ -954,7 +954,7 @@ struct AActor_eventModifyHealth_Parms
 };
 
 // Function Engine.Actor.OnModifyHealth
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execOnModifyHealth_Parms
 {
 	class USeqAct_ModifyHealth*                        Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -989,7 +989,7 @@ struct AActor_eventForceNetRelevant_Parms
 };
 
 // Function Engine.Actor.OnDestroy
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execOnDestroy_Parms
 {
 	class USeqAct_Destroy*                             Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1028,7 +1028,7 @@ struct AActor_execActivateEventClass_Parms
 };
 
 // Function Engine.Actor.TriggerGlobalEventClass
-// [0x00024102] 
+// [0x00024102]
 struct AActor_execTriggerGlobalEventClass_Parms
 {
 	class UClass*                                      InEventClass;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1047,7 +1047,7 @@ struct AActor_eventReceivedNewEvent_Parms
 };
 
 // Function Engine.Actor.TriggerEventClass
-// [0x00424102] 
+// [0x00424102]
 struct AActor_execTriggerEventClass_Parms
 {
 	class UClass*                                      InEventClass;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1092,7 +1092,7 @@ struct AActor_execActorEffectIsRelevant_Parms
 };
 
 // Function Engine.Actor.EffectIsRelevant
-// [0x00024102] 
+// [0x00024102]
 struct AActor_execEffectIsRelevant_Parms
 {
 	struct FVector                                     SpawnLocation;                                    		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -1104,28 +1104,28 @@ struct AActor_execEffectIsRelevant_Parms
 };
 
 // Function Engine.Actor.GetTraceImpact
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execGetTraceImpact_Parms
 {
 	class UImpactDefinition*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Actor.GetUntouchImpact
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execGetUntouchImpact_Parms
 {
 	class UImpactDefinition*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Actor.GetTouchImpact
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execGetTouchImpact_Parms
 {
 	class UImpactDefinition*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Actor.ApplyFluidSurfaceImpact
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execApplyFluidSurfaceImpact_Parms
 {
 	class AFluidSurfaceActor*                          Fluid;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1133,14 +1133,14 @@ struct AActor_execApplyFluidSurfaceImpact_Parms
 };
 
 // Function Engine.Actor.CanSplash
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execCanSplash_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Actor.PlayTeleportEffect
-// [0x00020000] 
+// [0x00020000]
 struct AActor_execPlayTeleportEffect_Parms
 {
 	unsigned long                                      bOut : 1;                                         		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1168,14 +1168,14 @@ struct AActor_eventModifyHearSoundComponent_Parms
 };
 
 // Function Engine.Actor.GetPhysicsName
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execGetPhysicsName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Actor.SwitchDisplayDebugPage
-// [0x00020100] 
+// [0x00020100]
 struct AActor_execSwitchDisplayDebugPage_Parms
 {
 	struct FName                                       ActiveDebugCategory;                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1183,20 +1183,20 @@ struct AActor_execSwitchDisplayDebugPage_Parms
 };
 
 // Function Engine.Actor.GetDebugName
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execGetDebugName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Actor.MatchStarting
-// [0x00020000] 
+// [0x00020000]
 struct AActor_execMatchStarting_Parms
 {
 };
 
 // Function Engine.Actor.GetLocalString
-// [0x00026002] 
+// [0x00026002]
 struct AActor_execGetLocalString_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -1206,7 +1206,7 @@ struct AActor_execGetLocalString_Parms
 };
 
 // Function Engine.Actor.ReplaceHTMLMarkup
-// [0x00422002] 
+// [0x00422002]
 struct AActor_execReplaceHTMLMarkup_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -1215,7 +1215,7 @@ struct AActor_execReplaceHTMLMarkup_Parms
 };
 
 // Function Engine.Actor.ReplaceText
-// [0x00422002] 
+// [0x00422002]
 struct AActor_execReplaceText_Parms
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -1225,21 +1225,21 @@ struct AActor_execReplaceText_Parms
 };
 
 // Function Engine.Actor.CheckForOwnedInstanceData
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execCheckForOwnedInstanceData_Parms
 {
-	// class UIInstanceData*                           Data;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
+	// class UIInstanceData*                           Data;                                             		// 0x0000 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Actor.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Actor.GetItemName
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execGetItemName_Parms
 {
 	struct FString                                     FullName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1272,7 +1272,7 @@ struct AActor_eventBecomeViewTarget_Parms
 };
 
 // Function Engine.Actor.CheckForErrors
-// [0x00020000] 
+// [0x00020000]
 struct AActor_execCheckForErrors_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -1300,15 +1300,15 @@ struct AActor_execCheckHitInfo_Parms
 	class UPrimitiveComponent*                         FallBackComponent;                                		// 0x001C (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
 	struct FVector                                     Dir;                                              		// 0x0020 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     out_HitLocation;                                  		// 0x002C (0x000C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
-	// struct FVector                                  out_NewHitLocation;                               		// 0x0038 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  out_HitNormal;                                    		// 0x0044 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  TraceEnd;                                         		// 0x0050 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  TraceStart;                                       		// 0x005C (0x000C) [0x0000000000000000]              
-	// struct FTraceHitInfo                            newHitInfo;                                       		// 0x0068 (0x001C) [0x0000000000000000]              
+	// struct FVector                                  out_NewHitLocation;                               		// 0x0038 (0x000C) [0x0000000000000000]
+	// struct FVector                                  out_HitNormal;                                    		// 0x0044 (0x000C) [0x0000000000000000]
+	// struct FVector                                  TraceEnd;                                         		// 0x0050 (0x000C) [0x0000000000000000]
+	// struct FVector                                  TraceStart;                                       		// 0x005C (0x000C) [0x0000000000000000]
+	// struct FTraceHitInfo                            newHitInfo;                                       		// 0x0068 (0x001C) [0x0000000000000000]
 };
 
 // Function Engine.Actor.TakeRadiusDamage
-// [0x00824102] 
+// [0x00824102]
 struct AActor_execTakeRadiusDamage_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1321,7 +1321,7 @@ struct AActor_execTakeRadiusDamage_Parms
 	class UIDamageCauser*                              DamageCauser;                                     		// 0x0024 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	float                                              DamageFalloffExponent;                            		// 0x002C (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UDamagePipeline*                             Pipeline;                                         		// 0x0030 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  Dir;                                              		// 0x0048 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Dir;                                              		// 0x0048 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Actor.HealDamage
@@ -1396,14 +1396,14 @@ struct AActor_execGetDamagePipeline_Parms
 };
 
 // Function Engine.Actor.KilledBy
-// [0x00020000] 
+// [0x00020000]
 struct AActor_execKilledBy_Parms
 {
 	class APawn*                                       EventInstigator;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Actor.HurtRadius
-// [0x00C24102] 
+// [0x00C24102]
 struct AActor_execHurtRadius_Parms
 {
 	float                                              BaseDamage;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1419,7 +1419,7 @@ struct AActor_execHurtRadius_Parms
 	unsigned long                                      bSkipTraceTest : 1;                               		// 0x0034 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	TArray< class AActor* >                            ActorsHurt;                                       		// 0x0038 (0x000C) [0x0000000000400190]              ( CPF_OptionalParm | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0044 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0050 (0x001C) [0x0000000000000000]              
+	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0050 (0x001C) [0x0000000000000000]
 	// class UStaticMeshComponent*                     HitComponent;                                     		// 0x006C (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
@@ -1431,7 +1431,7 @@ struct AActor_execCanWorldGeometryBecomeDynamic_Parms
 };
 
 // Function Engine.Actor.StopsProjectile
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execStopsProjectile_Parms
 {
 	class AProjectile*                                 P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1769,7 +1769,7 @@ struct AActor_execPlaySoundBase_Parms
 };
 
 // Function Engine.Actor.OnAkEventCompleted
-// [0x00020100] 
+// [0x00020100]
 struct AActor_execOnAkEventCompleted_Parms
 {
 	class UAkComponent*                                SourceComponent;                                  		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -2065,7 +2065,7 @@ struct AActor_execTrace_Parms
 };
 
 // Function Engine.Actor.VolumeBasedDestroy
-// [0x00020102] 
+// [0x00020102]
 struct AActor_execVolumeBasedDestroy_Parms
 {
 	class APhysicsVolume*                              PV;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2086,7 +2086,7 @@ struct AActor_eventFellOutOfWorld_Parms
 };
 
 // Function Engine.Actor.UsedBy
-// [0x00020002] 
+// [0x00020002]
 struct AActor_execUsedBy_Parms
 {
 	class APawn*                                       User;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -3078,25 +3078,25 @@ struct AWorldInfo_execAddNavMeshToList_Parms
 };
 
 // Function Engine.WorldInfo.Reset
-// [0x00020002] 
+// [0x00020002]
 struct AWorldInfo_execReset_Parms
 {
 };
 
 // Function Engine.WorldInfo.PostBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct AWorldInfo_execPostBeginPlay_Parms
 {
 };
 
 // Function Engine.WorldInfo.PreBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct AWorldInfo_execPreBeginPlay_Parms
 {
 };
 
 // Function Engine.WorldInfo.ThisIsNeverExecuted
-// [0x00020002] 
+// [0x00020002]
 struct AWorldInfo_execThisIsNeverExecuted_Parms
 {
 	class ADefaultPhysicsVolume*                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -3112,7 +3112,7 @@ struct AWorldInfo_eventServerTravel_Parms
 };
 
 // Function Engine.WorldInfo.GetGameClass
-// [0x00020102] 
+// [0x00020102]
 struct AWorldInfo_execGetGameClass_Parms
 {
 	class UClass*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -3252,7 +3252,7 @@ struct AWorldInfo_execReleaseCachedConstraintsAndEvaluators_Parms
 };
 
 // Function Engine.DownloadableContentEnumerator.SetNeedsRefresh
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentEnumerator_execSetNeedsRefresh_Parms
 {
 	unsigned long                                      InNeedsRefresh : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -3272,7 +3272,7 @@ struct UDownloadableContentEnumerator_execTriggerFindDLCDelegates_Parms
 };
 
 // Function Engine.DownloadableContentEnumerator.InstallAllDLC
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentEnumerator_execInstallAllDLC_Parms
 {
 };
@@ -3285,21 +3285,21 @@ struct UDownloadableContentEnumerator_execDeleteDLC_Parms
 };
 
 // Function Engine.DownloadableContentEnumerator.ClearFindDLCDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentEnumerator_execClearFindDLCDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.DownloadableContentEnumerator.AddFindDLCDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentEnumerator_execAddFindDLCDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.DownloadableContentEnumerator.OnFindDLCComplete
-// [0x00120000] 
+// [0x00120000]
 struct UDownloadableContentEnumerator_execOnFindDLCComplete_Parms
 {
 };
@@ -3311,7 +3311,7 @@ struct UDownloadableContentEnumerator_execFindDLC_Parms
 };
 
 // Function Engine.DownloadableContentManager.IsSeasonPassLicensed
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execIsSeasonPassLicensed_Parms
 {
 	int                                                SeasonPassId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -3358,7 +3358,7 @@ struct UDownloadableContentManager_execNeedsRefresh_Parms
 };
 
 // Function Engine.DownloadableContentManager.IsInStartMenu
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execIsInStartMenu_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -3407,21 +3407,21 @@ struct UDownloadableContentManager_execTriggerRefreshCompleteDelegates_Parms
 };
 
 // Function Engine.DownloadableContentManager.ClearRefreshCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execClearRefreshCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.DownloadableContentManager.AddRefreshCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execAddRefreshCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.DownloadableContentManager.OnRefreshComplete
-// [0x00120000] 
+// [0x00120000]
 struct UDownloadableContentManager_execOnRefreshComplete_Parms
 {
 };
@@ -3434,7 +3434,7 @@ struct UDownloadableContentManager_execAddPackagesToFullyLoad_Parms
 };
 
 // Function Engine.DownloadableContentManager.TriggerRefreshComplete
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execTriggerRefreshComplete_Parms
 {
 };
@@ -3447,13 +3447,13 @@ struct UDownloadableContentManager_execGetAppSeconds_Parms
 };
 
 // Function Engine.DownloadableContentManager.RefreshOffersComplete
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execRefreshOffersComplete_Parms
 {
 };
 
 // Function Engine.DownloadableContentManager.RefreshDLCComplete
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execRefreshDLCComplete_Parms
 {
 };
@@ -3468,7 +3468,7 @@ struct UDownloadableContentManager_eventRefreshDLC_Parms
 };
 
 // Function Engine.DownloadableContentManager.HasBeenRefreshed
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execHasBeenRefreshed_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -3482,19 +3482,19 @@ struct UDownloadableContentManager_execTryContentChangeEventRefresh_Parms
 };
 
 // Function Engine.DownloadableContentManager.OnContentChange
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execOnContentChange_Parms
 {
 };
 
 // Function Engine.DownloadableContentManager.OnStorageDeviceChange
-// [0x00020000] 
+// [0x00020000]
 struct UDownloadableContentManager_execOnStorageDeviceChange_Parms
 {
 };
 
 // Function Engine.DownloadableContentManager.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentManager_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -3679,21 +3679,21 @@ struct UDownloadableContentOfferEnumerator_execTriggerFindDlcOfferDelegates_Parm
 };
 
 // Function Engine.DownloadableContentOfferEnumerator.ClearFindDlcOfferDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentOfferEnumerator_execClearFindDlcOfferDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.DownloadableContentOfferEnumerator.AddFindDlcOfferDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UDownloadableContentOfferEnumerator_execAddFindDlcOfferDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.DownloadableContentOfferEnumerator.OnFindDlcOfferComplete
-// [0x00120000] 
+// [0x00120000]
 struct UDownloadableContentOfferEnumerator_execOnFindDlcOfferComplete_Parms
 {
 };
@@ -3976,47 +3976,47 @@ struct UGameEngine_execCreateNamedNetDriver_Parms
 };
 
 // Function Engine.InGameAdManager.ClearClosedAdDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UInGameAdManager_execClearClosedAdDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.InGameAdManager.AddClosedAdDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UInGameAdManager_execAddClosedAdDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.InGameAdManager.OnUserClosedAdvertisement
-// [0x00120000] 
+// [0x00120000]
 struct UInGameAdManager_execOnUserClosedAdvertisement_Parms
 {
 };
 
 // Function Engine.InGameAdManager.ClearClickedBannerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UInGameAdManager_execClearClickedBannerDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.InGameAdManager.AddClickedBannerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UInGameAdManager_execAddClickedBannerDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.InGameAdManager.OnUserClickedBanner
-// [0x00120000] 
+// [0x00120000]
 struct UInGameAdManager_execOnUserClickedBanner_Parms
 {
 };
 
 // Function Engine.InGameAdManager.SetPauseWhileAdOpen
-// [0x00020002] 
+// [0x00020002]
 struct UInGameAdManager_execSetPauseWhileAdOpen_Parms
 {
 	unsigned long                                      bShouldPause : 1;                                 		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -4061,7 +4061,7 @@ struct AVolume_eventCollisionChanged_Parms
 };
 
 // Function Engine.Volume.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AVolume_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4080,7 +4080,7 @@ struct AVolume_eventPostBeginPlay_Parms
 };
 
 // Function Engine.Volume.AssociateActor
-// [0x00020002] 
+// [0x00020002]
 struct AVolume_execAssociateActor_Parms
 {
 	class AActor*                                      ActorToAssociate;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4103,21 +4103,21 @@ struct AVolume_execEncompasses_Parms
 };
 
 // Function Engine.BlockingVolume.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ABlockingVolume_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.DynamicBlockingVolume.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ADynamicBlockingVolume_execApplyCheckpointRecord_Parms
 {
 	struct ADynamicBlockingVolume_FCheckpointRecord    Record;                                           		// 0x0000 (0x001C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.DynamicBlockingVolume.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ADynamicBlockingVolume_execCreateCheckpointRecord_Parms
 {
 	struct ADynamicBlockingVolume_FCheckpointRecord    Record;                                           		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -4130,56 +4130,56 @@ struct ADynamicBlockingVolume_eventPostBeginPlay_Parms
 };
 
 // Function Engine.LevelStreamingVolume.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ALevelStreamingVolume_execApplyCheckpointRecord_Parms
 {
 	struct ALevelStreamingVolume_FCheckpointRecord     Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.LevelStreamingVolume.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ALevelStreamingVolume_execCreateCheckpointRecord_Parms
 {
 	struct ALevelStreamingVolume_FCheckpointRecord     Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.LevelStreamingVolume.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ALevelStreamingVolume_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PhysicsVolume.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct APhysicsVolume_execApplyCheckpointRecord_Parms
 {
 	struct APhysicsVolume_FCheckpointRecord            Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PhysicsVolume.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct APhysicsVolume_execCreateCheckpointRecord_Parms
 {
 	struct APhysicsVolume_FCheckpointRecord            Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PhysicsVolume.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct APhysicsVolume_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PhysicsVolume.OnSetDamageInstigator
-// [0x00020002] 
+// [0x00020002]
 struct APhysicsVolume_execOnSetDamageInstigator_Parms
 {
 	class USeqAct_SetDamageInstigator*                 Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PhysicsVolume.NotifyPawnBecameViewTarget
-// [0x00020000] 
+// [0x00020000]
 struct APhysicsVolume_execNotifyPawnBecameViewTarget_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4187,14 +4187,14 @@ struct APhysicsVolume_execNotifyPawnBecameViewTarget_Parms
 };
 
 // Function Engine.PhysicsVolume.ModifyPlayer
-// [0x00020000] 
+// [0x00020000]
 struct APhysicsVolume_execModifyPlayer_Parms
 {
 	class APawn*                                       PlayerPawn;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PhysicsVolume.CausePainTo
-// [0x00020002] 
+// [0x00020002]
 struct APhysicsVolume_execCausePainTo_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4211,7 +4211,7 @@ struct APhysicsVolume_eventTouch_Parms
 };
 
 // Function Engine.PhysicsVolume.TimerPop
-// [0x00020002] 
+// [0x00020002]
 struct APhysicsVolume_execTimerPop_Parms
 {
 	class AVolumeTimer*                                T;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4224,7 +4224,7 @@ struct APhysicsVolume_eventCollisionChanged_Parms
 };
 
 // Function Engine.PhysicsVolume.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct APhysicsVolume_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4266,7 +4266,7 @@ struct APhysicsVolume_eventPhysicsChangedFor_Parms
 };
 
 // Function Engine.PhysicsVolume.Reset
-// [0x00020002] 
+// [0x00020002]
 struct APhysicsVolume_execReset_Parms
 {
 };
@@ -4317,11 +4317,11 @@ struct ALadderVolume_eventPawnLeavingVolume_Parms
 struct ALadderVolume_eventPawnEnteredVolume_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FRotator                                 PawnRot;                                          		// 0x0004 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 PawnRot;                                          		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.LadderVolume.InUse
-// [0x00020002] 
+// [0x00020002]
 struct ALadderVolume_execInUse_Parms
 {
 	class APawn*                                       Ignored;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4332,18 +4332,18 @@ struct ALadderVolume_execInUse_Parms
 // [0x00820902] ( FUNC_Event )
 struct ALadderVolume_eventPostBeginPlay_Parms
 {
-	// struct FVector                                  Dir;                                              		// 0x0008 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Dir;                                              		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PostProcessVolume.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct APostProcessVolume_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.TriggerVolume.StopsProjectile
-// [0x00020102] 
+// [0x00020102]
 struct ATriggerVolume_execStopsProjectile_Parms
 {
 	class AProjectile*                                 P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4377,7 +4377,7 @@ struct ADynamicSMActor_eventAttach_Parms
 };
 
 // Function Engine.DynamicSMActor.CanBasePawn
-// [0x00020102] 
+// [0x00020102]
 struct ADynamicSMActor_execCanBasePawn_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4385,7 +4385,7 @@ struct ADynamicSMActor_execCanBasePawn_Parms
 };
 
 // Function Engine.DynamicSMActor.SetStaticMesh
-// [0x00024002] 
+// [0x00024002]
 struct ADynamicSMActor_execSetStaticMesh_Parms
 {
 	class UStaticMesh*                                 NewMesh;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4395,14 +4395,14 @@ struct ADynamicSMActor_execSetStaticMesh_Parms
 };
 
 // Function Engine.DynamicSMActor.OnSetMaterial
-// [0x00020002] 
+// [0x00020002]
 struct ADynamicSMActor_execOnSetMaterial_Parms
 {
 	class USeqAct_SetMaterial*                         Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.DynamicSMActor.OnSetMesh
-// [0x00020002] 
+// [0x00020002]
 struct ADynamicSMActor_execOnSetMesh_Parms
 {
 	class USeqAct_SetMesh*                             Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4422,32 +4422,32 @@ struct ADynamicSMActor_eventPostBeginPlay_Parms
 };
 
 // Function Engine.InterpActor.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct AInterpActor_execApplyCheckpointRecord_Parms
 {
 	struct AInterpActor_FCheckpointRecord              Record;                                           		// 0x0000 (0x0020) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	// class USkeletalMeshComponent*                   OldBaseComp;                                      		// 0x0024 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
-	// struct FName                                    OldBaseBoneName;                                  		// 0x0028 (0x0008) [0x0000000000000000]              
+	// struct FName                                    OldBaseBoneName;                                  		// 0x0028 (0x0008) [0x0000000000000000]
 	// TArray< class AActor* >                         OldAttached;                                      		// 0x0030 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< struct FVector >                        OldLocations;                                     		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function Engine.InterpActor.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct AInterpActor_execCreateCheckpointRecord_Parms
 {
 	struct AInterpActor_FCheckpointRecord              Record;                                           		// 0x0000 (0x0020) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.InterpActor.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct AInterpActor_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.InterpActor.ShutDown
-// [0x00020102] 
+// [0x00020102]
 struct AInterpActor_execShutDown_Parms
 {
 };
@@ -4475,20 +4475,20 @@ struct AInterpActor_eventInterpolationStarted_Parms
 };
 
 // Function Engine.InterpActor.PlayMovingSound
-// [0x00020102] 
+// [0x00020102]
 struct AInterpActor_execPlayMovingSound_Parms
 {
 	unsigned long                                      bClosing : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.InterpActor.FinishedOpen
-// [0x00020002] 
+// [0x00020002]
 struct AInterpActor_execFinishedOpen_Parms
 {
 };
 
 // Function Engine.InterpActor.Restart
-// [0x00020002] 
+// [0x00020002]
 struct AInterpActor_execRestart_Parms
 {
 };
@@ -4530,13 +4530,13 @@ struct AInterpActor_eventEncroachingOn_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Height;                                           		// 0x0014 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitLocation;                                      		// 0x0020 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x002C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Height;                                           		// 0x0014 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitLocation;                                      		// 0x0020 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x002C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.InterpActor.ChildEncroachingOn
-// [0x00020002] 
+// [0x00020002]
 struct AInterpActor_execChildEncroachingOn_Parms
 {
 	class AInterpActor*                                Child;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4545,7 +4545,7 @@ struct AInterpActor_execChildEncroachingOn_Parms
 };
 
 // Function Engine.InterpActor.StopOnEncroach
-// [0x00020002] 
+// [0x00020002]
 struct AInterpActor_execStopOnEncroach_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -4558,12 +4558,12 @@ struct AInterpActor_eventPostBeginPlay_Parms
 };
 
 // Function Engine.EmitterPool.PostBeginPlay
-// [0x00820102] 
+// [0x00820102]
 struct AEmitterPool_execPostBeginPlay_Parms
 {
 	// class UDynamicLightEnvironmentComponent*        PhysXLightEnvironment;                            		// 0x0004 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 	// class UParticleSystemComponent*                 SurrogateComponentTemplate;                       		// 0x0008 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
-	// struct FLightingChannelContainer                LightingChannels;                                 		// 0x000C (0x0004) [0x0000000000000000]              
+	// struct FLightingChannelContainer                LightingChannels;                                 		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // Function Engine.EmitterPool.SpawnEmitterCustomLifetime
@@ -4753,13 +4753,13 @@ struct AHUD_eventOnLostFocusPause_Parms
 };
 
 // Function Engine.HUD.PlayerOwnerDied
-// [0x00020000] 
+// [0x00020000]
 struct AHUD_execPlayerOwnerDied_Parms
 {
 };
 
 // Function Engine.HUD.AddConsoleMessage
-// [0x00024002] 
+// [0x00024002]
 struct AHUD_execAddConsoleMessage_Parms
 {
 	struct FString                                     M;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -4775,7 +4775,7 @@ struct AHUD_eventDisplayConsoleMessages_Parms
 };
 
 // Function Engine.HUD.Message
-// [0x00024002] 
+// [0x00024002]
 struct AHUD_execMessage_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4846,14 +4846,14 @@ struct AHUD_execToggleHUD_Parms
 };
 
 // Function Engine.HUD.AddPostRenderedActor
-// [0x00020000] 
+// [0x00020000]
 struct AHUD_execAddPostRenderedActor_Parms
 {
 	class AActor*                                      A;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.HUD.RemovePostRenderedActor
-// [0x00020000] 
+// [0x00020000]
 struct AHUD_execRemovePostRenderedActor_Parms
 {
 	class AActor*                                      A;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4886,14 +4886,14 @@ struct AHUD_execDraw3DLine_Parms
 };
 
 // Function Engine.AutoTestManager.CheckForSentinelRun
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execCheckForSentinelRun_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.AutoTestManager.StartMatch
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execStartMatch_Parms
 {
 };
@@ -4905,7 +4905,7 @@ struct AAutoTestManager_execStopTraversal_Parms
 };
 
 // Function Engine.AutoTestManager.GetNextAutomatedTestingMap
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execGetNextAutomatedTestingMap_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -4913,25 +4913,25 @@ struct AAutoTestManager_execGetNextAutomatedTestingMap_Parms
 };
 
 // Function Engine.AutoTestManager.IncrementNumberOfMatchesPlayed
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execIncrementNumberOfMatchesPlayed_Parms
 {
 };
 
 // Function Engine.AutoTestManager.IncrementAutomatedTestingMapIndex
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execIncrementAutomatedTestingMapIndex_Parms
 {
 };
 
 // Function Engine.AutoTestManager.CloseAutomatedMapTestTimer
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execCloseAutomatedMapTestTimer_Parms
 {
 };
 
 // Function Engine.AutoTestManager.StartAutomatedMapTestTimerWorker
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execStartAutomatedMapTestTimerWorker_Parms
 {
 };
@@ -4961,11 +4961,11 @@ struct AAutoTestManager_execDoMemoryTracking_Parms
 };
 
 // Function Engine.AutoTestManager.DoTimeBasedSentinelStatGathering
-// [0x00820002] 
+// [0x00820002]
 struct AAutoTestManager_execDoTimeBasedSentinelStatGathering_Parms
 {
-	// struct FVector                                  ViewLocation;                                     		// 0x0004 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 ViewRotation;                                     		// 0x0010 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ViewLocation;                                     		// 0x0004 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 ViewRotation;                                     		// 0x0010 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.AutoTestManager.DoSentinel_ViewDependentMemoryAtSpecificLocation
@@ -5014,19 +5014,19 @@ struct AAutoTestManager_execDoSentinelActionPerLoadedMap_Parms
 };
 
 // Function Engine.AutoTestManager.DoAutomatedSmokeTest
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execDoAutomatedSmokeTest_Parms
 {
 };
 
 // Function Engine.AutoTestManager.DoUIAutoMemTest
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execDoUIAutoMemTest_Parms
 {
 };
 
 // Function Engine.AutoTestManager.DoTravelTheWorld
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execDoTravelTheWorld_Parms
 {
 };
@@ -5058,13 +5058,13 @@ struct AAutoTestManager_execBeginSentinelRun_Parms
 };
 
 // Function Engine.AutoTestManager.PopulateFullAutomatedTestingMapList
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execPopulateFullAutomatedTestingMapList_Parms
 {
 };
 
 // Function Engine.AutoTestManager.InitializeOptions
-// [0x00020002] 
+// [0x00020002]
 struct AAutoTestManager_execInitializeOptions_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -5084,7 +5084,7 @@ struct AAutoTestManager_eventPostBeginPlay_Parms
 };
 
 // Function Engine.CoverGroup.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ACoverGroup_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5140,13 +5140,13 @@ struct AFileWriter_execOpenFile_Parms
 };
 
 // Function Engine.FileLog.CloseLog
-// [0x00020002] 
+// [0x00020002]
 struct AFileLog_execCloseLog_Parms
 {
 };
 
 // Function Engine.FileLog.OpenLog
-// [0x00024002] 
+// [0x00024002]
 struct AFileLog_execOpenLog_Parms
 {
 	struct FString                                     LogFilename;                                      		// 0x0000 (0x000C) [0x0000000000400880]              ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
@@ -5172,7 +5172,7 @@ struct AGameInfo_execBeacon_Parms
 };
 
 // Function Engine.GameInfo.CheckForDebugBeacon
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCheckForDebugBeacon_Parms
 {
 	class AActor*                                      BeaconTestActor;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5203,7 +5203,7 @@ struct AGameInfo_eventOnEngineHasLoaded_Parms
 };
 
 // Function Engine.GameInfo.OnDestroyOnlineGameComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execOnDestroyOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -5232,42 +5232,42 @@ struct AGameInfo_execBeginBVT_Parms
 };
 
 // Function Engine.GameInfo.CheckForSentinelRun
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCheckForSentinelRun_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.ShouldAutoContinueToNextRound
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execShouldAutoContinueToNextRound_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.IsDoingASentinelRun
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execIsDoingASentinelRun_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.IsCheckingForMemLeaks
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execIsCheckingForMemLeaks_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.IsCheckingForFragmentation
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execIsCheckingForFragmentation_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.IsAutomatedPerfTesting
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execIsAutomatedPerfTesting_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -5287,37 +5287,37 @@ struct AGameInfo_execDoTravelTheWorld_Parms
 };
 
 // Function Engine.GameInfo.DoGameSpecificPerformanceSettings
-// [0x00022100] 
+// [0x00022100]
 struct AGameInfo_execDoGameSpecificPerformanceSettings_Parms
 {
 	class AWorldInfo*                                  TheWorldInfo;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.TellClientsToTravelToSession
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execTellClientsToTravelToSession_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.TellClientsPartyHostIsLeaving
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execTellClientsPartyHostIsLeaving_Parms
 {
 	struct FUniqueNetId                                PartyHostPlayerId;                                		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.TellClientsToReturnToPartyHost
-// [0x00820002] 
+// [0x00820002]
 struct AGameInfo_execTellClientsToReturnToPartyHost_Parms
 {
-	// struct FUniqueNetId                             RequestingPlayerId;                               		// 0x0008 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             RequestingPlayerId;                               		// 0x0008 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.OnServerCreateComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execOnServerCreateComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -5325,20 +5325,20 @@ struct AGameInfo_execOnServerCreateComplete_Parms
 };
 
 // Function Engine.GameInfo.RegisterServer
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execRegisterServer_Parms
 {
 };
 
 // Function Engine.GameInfo.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.OnLoginFailed
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execOnLoginFailed_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -5346,13 +5346,13 @@ struct AGameInfo_execOnLoginFailed_Parms
 };
 
 // Function Engine.GameInfo.ClearAutoLoginDelegates
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execClearAutoLoginDelegates_Parms
 {
 };
 
 // Function Engine.GameInfo.ProcessServerLogin
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execProcessServerLogin_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -5365,35 +5365,35 @@ struct AGameInfo_eventMatineeCancelled_Parms
 };
 
 // Function Engine.GameInfo.RecalculateSkillRating
-// [0x00820002] 
+// [0x00820002]
 struct AGameInfo_execRecalculateSkillRating_Parms
 {
 	// TArray< struct FUniqueNetId >                   Players;                                          		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0010 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0010 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.UpdateGameplayMuteList
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execUpdateGameplayMuteList_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.NotifyArbitratedMatchEnd
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execNotifyArbitratedMatchEnd_Parms
 {
 };
 
 // Function Engine.GameInfo.MatchIsInProgress
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execMatchIsInProgress_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.ArbitrationRegistrationComplete
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execArbitrationRegistrationComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -5401,25 +5401,25 @@ struct AGameInfo_execArbitrationRegistrationComplete_Parms
 };
 
 // Function Engine.GameInfo.RegisterServerForArbitration
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execRegisterServerForArbitration_Parms
 {
 };
 
 // Function Engine.GameInfo.StartArbitratedMatch
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execStartArbitratedMatch_Parms
 {
 };
 
 // Function Engine.GameInfo.StartArbitrationRegistration
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execStartArbitrationRegistration_Parms
 {
 };
 
 // Function Engine.GameInfo.ProcessClientRegistrationCompletion
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execProcessClientRegistrationCompletion_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5427,13 +5427,13 @@ struct AGameInfo_execProcessClientRegistrationCompletion_Parms
 };
 
 // Function Engine.GameInfo.UpdateGameSettingsCounts
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execUpdateGameSettingsCounts_Parms
 {
 };
 
 // Function Engine.GameInfo.SetSeamlessTravelViewTarget
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execSetSeamlessTravelViewTarget_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5444,11 +5444,11 @@ struct AGameInfo_execSetSeamlessTravelViewTarget_Parms
 struct AGameInfo_eventHandleSeamlessTravelPlayer_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
-	// struct FRotator                                 StartRotation;                                    		// 0x0004 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 StartRotation;                                    		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.UpdateGameSettings
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execUpdateGameSettings_Parms
 {
 };
@@ -5476,7 +5476,7 @@ struct AGameInfo_eventGetSeamlessTravelActorList_Parms
 };
 
 // Function Engine.GameInfo.OverridePRI
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execOverridePRI_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5484,7 +5484,7 @@ struct AGameInfo_execOverridePRI_Parms
 };
 
 // Function Engine.GameInfo.FindInactivePRI
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execFindInactivePRI_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5494,7 +5494,7 @@ struct AGameInfo_execFindInactivePRI_Parms
 };
 
 // Function Engine.GameInfo.AddInactivePRI
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execAddInactivePRI_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5516,7 +5516,7 @@ struct AGameInfo_eventPreCommitMapChange_Parms
 };
 
 // Function Engine.GameInfo.AllowPausing
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execAllowPausing_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -5524,7 +5524,7 @@ struct AGameInfo_execAllowPausing_Parms
 };
 
 // Function Engine.GameInfo.AllowCheats
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execAllowCheats_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5532,7 +5532,7 @@ struct AGameInfo_execAllowCheats_Parms
 };
 
 // Function Engine.GameInfo.AllowMutator
-// [0x00022002] 
+// [0x00022002]
 struct AGameInfo_execAllowMutator_Parms
 {
 	struct FString                                     MutatorClassName;                                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -5540,7 +5540,7 @@ struct AGameInfo_execAllowMutator_Parms
 };
 
 // Function Engine.GameInfo.PlayerCanRestart
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execPlayerCanRestart_Parms
 {
 	class APlayerController*                           aPlayer;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5548,7 +5548,7 @@ struct AGameInfo_execPlayerCanRestart_Parms
 };
 
 // Function Engine.GameInfo.PlayerCanRestartGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execPlayerCanRestartGame_Parms
 {
 	class APlayerController*                           aPlayer;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5556,7 +5556,7 @@ struct AGameInfo_execPlayerCanRestartGame_Parms
 };
 
 // Function Engine.GameInfo.DriverLeftVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execDriverLeftVehicle_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5564,7 +5564,7 @@ struct AGameInfo_execDriverLeftVehicle_Parms
 };
 
 // Function Engine.GameInfo.CanLeaveVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCanLeaveVehicle_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5573,7 +5573,7 @@ struct AGameInfo_execCanLeaveVehicle_Parms
 };
 
 // Function Engine.GameInfo.DriverEnteredVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execDriverEnteredVehicle_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5581,7 +5581,7 @@ struct AGameInfo_execDriverEnteredVehicle_Parms
 };
 
 // Function Engine.GameInfo.ModifyScoreKill
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execModifyScoreKill_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5589,7 +5589,7 @@ struct AGameInfo_execModifyScoreKill_Parms
 };
 
 // Function Engine.GameInfo.ScoreKill
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execScoreKill_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5597,7 +5597,7 @@ struct AGameInfo_execScoreKill_Parms
 };
 
 // Function Engine.GameInfo.CheckScore
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCheckScore_Parms
 {
 	class APlayerReplicationInfo*                      Scorer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5605,7 +5605,7 @@ struct AGameInfo_execCheckScore_Parms
 };
 
 // Function Engine.GameInfo.ScoreObjective
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execScoreObjective_Parms
 {
 	class APlayerReplicationInfo*                      Scorer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5613,7 +5613,7 @@ struct AGameInfo_execScoreObjective_Parms
 };
 
 // Function Engine.GameInfo.AddObjectiveScore
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execAddObjectiveScore_Parms
 {
 	class APlayerReplicationInfo*                      Scorer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5621,7 +5621,7 @@ struct AGameInfo_execAddObjectiveScore_Parms
 };
 
 // Function Engine.GameInfo.RatePlayerStart
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execRatePlayerStart_Parms
 {
 	class APlayerStart*                                P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5631,7 +5631,7 @@ struct AGameInfo_execRatePlayerStart_Parms
 };
 
 // Function Engine.GameInfo.ChoosePlayerStart
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execChoosePlayerStart_Parms
 {
 	class AController*                                 Player;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5640,7 +5640,7 @@ struct AGameInfo_execChoosePlayerStart_Parms
 };
 
 // Function Engine.GameInfo.FindPlayerStart
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execFindPlayerStart_Parms
 {
 	class AController*                                 Player;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5650,7 +5650,7 @@ struct AGameInfo_execFindPlayerStart_Parms
 };
 
 // Function Engine.GameInfo.ShouldSpawnAtStartSpot
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execShouldSpawnAtStartSpot_Parms
 {
 	class AController*                                 Player;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5658,32 +5658,32 @@ struct AGameInfo_execShouldSpawnAtStartSpot_Parms
 };
 
 // Function Engine.GameInfo.EndLogging
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execEndLogging_Parms
 {
 	struct FString                                     Reason;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.GameInfo.GameEventsPoll
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execGameEventsPoll_Parms
 {
 };
 
 // Function Engine.GameInfo.EndOnlineGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execEndOnlineGame_Parms
 {
 };
 
 // Function Engine.GameInfo.PerformEndGameHandling
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execPerformEndGameHandling_Parms
 {
 };
 
 // Function Engine.GameInfo.EndGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execEndGame_Parms
 {
 	class APlayerReplicationInfo*                      Winner;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5691,19 +5691,19 @@ struct AGameInfo_execEndGame_Parms
 };
 
 // Function Engine.GameInfo.WriteOnlinePlayerScores
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execWriteOnlinePlayerScores_Parms
 {
 };
 
 // Function Engine.GameInfo.WriteOnlineStats
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execWriteOnlineStats_Parms
 {
 };
 
 // Function Engine.GameInfo.CheckEndGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCheckEndGame_Parms
 {
 	class APlayerReplicationInfo*                      Winner;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5712,7 +5712,7 @@ struct AGameInfo_execCheckEndGame_Parms
 };
 
 // Function Engine.GameInfo.CheckModifiedEndGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCheckModifiedEndGame_Parms
 {
 	class APlayerReplicationInfo*                      Winner;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5746,7 +5746,7 @@ struct AGameInfo_eventBroadcastLocalized_Parms
 };
 
 // Function Engine.GameInfo.BroadcastTeam
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execBroadcastTeam_Parms
 {
 	class AController*                                 Sender;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5764,7 +5764,7 @@ struct AGameInfo_eventBroadcast_Parms
 };
 
 // Function Engine.GameInfo.RestartGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execRestartGame_Parms
 {
 	// struct FString                                  NextMap;                                          		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -5773,21 +5773,21 @@ struct AGameInfo_execRestartGame_Parms
 };
 
 // Function Engine.GameInfo.GetTravelType
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execGetTravelType_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.GetNextMap
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execGetNextMap_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.GameInfo.SendPlayer
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execSendPlayer_Parms
 {
 	class APlayerController*                           aPlayer;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5795,7 +5795,7 @@ struct AGameInfo_execSendPlayer_Parms
 };
 
 // Function Engine.GameInfo.PickTeam
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execPickTeam_Parms
 {
 	unsigned char                                      Current;                                          		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -5804,7 +5804,7 @@ struct AGameInfo_execPickTeam_Parms
 };
 
 // Function Engine.GameInfo.ChangeTeam
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execChangeTeam_Parms
 {
 	class AController*                                 Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5814,7 +5814,7 @@ struct AGameInfo_execChangeTeam_Parms
 };
 
 // Function Engine.GameInfo.ChangeName
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execChangeName_Parms
 {
 	class AController*                                 Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5823,7 +5823,7 @@ struct AGameInfo_execChangeName_Parms
 };
 
 // Function Engine.GameInfo.DiscardInventory
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execDiscardInventory_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5831,7 +5831,7 @@ struct AGameInfo_execDiscardInventory_Parms
 };
 
 // Function Engine.GameInfo.ShouldPawnDropWeaponOnDeath
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execShouldPawnDropWeaponOnDeath_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5839,7 +5839,7 @@ struct AGameInfo_execShouldPawnDropWeaponOnDeath_Parms
 };
 
 // Function Engine.GameInfo.PickupQuery
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execPickupQuery_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5848,7 +5848,7 @@ struct AGameInfo_execPickupQuery_Parms
 };
 
 // Function Engine.GameInfo.ShouldRespawn
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execShouldRespawn_Parms
 {
 	class APickupFactory*                              Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5856,7 +5856,7 @@ struct AGameInfo_execShouldRespawn_Parms
 };
 
 // Function Engine.GameInfo.CheckRelevance
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCheckRelevance_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5864,7 +5864,7 @@ struct AGameInfo_execCheckRelevance_Parms
 };
 
 // Function Engine.GameInfo.ReduceDamage
-// [0x00424002] 
+// [0x00424002]
 struct AGameInfo_execReduceDamage_Parms
 {
 	float                                              Damage;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -5893,7 +5893,7 @@ struct AGameInfo_eventGetHealingDamageTypeDefinition_Parms
 };
 
 // Function Engine.GameInfo.ConvertDamageToHealing
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execConvertDamageToHealing_Parms
 {
 	float                                              Damage;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5916,7 +5916,7 @@ struct AGameInfo_execIsFriendlyFire_Parms
 };
 
 // Function Engine.GameInfo.CanSpectate
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCanSpectate_Parms
 {
 	class APlayerController*                           Viewer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5925,21 +5925,21 @@ struct AGameInfo_execCanSpectate_Parms
 };
 
 // Function Engine.GameInfo.KickBan
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execKickBan_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.GameInfo.Kick
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execKick_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.GameInfo.BroadcastDeathMessage
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execBroadcastDeathMessage_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5949,7 +5949,7 @@ struct AGameInfo_execBroadcastDeathMessage_Parms
 };
 
 // Function Engine.GameInfo.PreventDeath
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execPreventDeath_Parms
 {
 	class APawn*                                       KilledPawn;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5961,7 +5961,7 @@ struct AGameInfo_execPreventDeath_Parms
 };
 
 // Function Engine.GameInfo.Killed
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execKilled_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5972,7 +5972,7 @@ struct AGameInfo_execKilled_Parms
 };
 
 // Function Engine.GameInfo.NotifyKilled
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execNotifyKilled_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5982,14 +5982,14 @@ struct AGameInfo_execNotifyKilled_Parms
 };
 
 // Function Engine.GameInfo.SetPlayerDefaults
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execSetPlayerDefaults_Parms
 {
 	class APawn*                                       PlayerPawn;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.Mutate
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execMutate_Parms
 {
 	struct FString                                     MutateString;                                     		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6011,15 +6011,15 @@ struct AGameInfo_eventAcceptInventory_Parms
 };
 
 // Function Engine.GameInfo.UnregisterPlayer
-// [0x00820002] 
+// [0x00820002]
 struct AGameInfo_execUnregisterPlayer_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0004 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0004 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.Logout
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execLogout_Parms
 {
 	class AController*                                 Exiting;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6032,14 +6032,14 @@ struct AGameInfo_eventPreExit_Parms
 };
 
 // Function Engine.GameInfo.CalculatedNetSpeed
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execCalculatedNetSpeed_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.UpdateNetSpeeds
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execUpdateNetSpeeds_Parms
 {
 };
@@ -6055,23 +6055,23 @@ struct AGameInfo_eventPostLogin_Parms
 };
 
 // Function Engine.GameInfo.DisableFakePauseFor
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execDisableFakePauseFor_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.UpdateBestNextHosts
-// [0x00820002] 
+// [0x00820002]
 struct AGameInfo_execUpdateBestNextHosts_Parms
 {
 	// TArray< class APlayerController* >              SortedPCList;                                     		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FUniqueNetId                             SortedPlayerIdList[ 0xA ];                        		// 0x0010 (0x00F0) [0x0000000000000000]              
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0100 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             SortedPlayerIdList[ 0xA ];                        		// 0x0010 (0x00F0) [0x0000000000000000]
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0100 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.BestNextHostSort
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execBestNextHostSort_Parms
 {
 	class APlayerController*                           A;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6080,28 +6080,28 @@ struct AGameInfo_execBestNextHostSort_Parms
 };
 
 // Function Engine.GameInfo.ClientsShouldSeeLobby
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execClientsShouldSeeLobby_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.GenericPlayerInitialization
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execGenericPlayerInitialization_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.ReplicateStreamingStatus
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execReplicateStreamingStatus_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.GetDefaultPlayerClass
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execGetDefaultPlayerClass_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6109,24 +6109,24 @@ struct AGameInfo_execGetDefaultPlayerClass_Parms
 };
 
 // Function Engine.GameInfo.SpawnDefaultPawnFor
-// [0x00820002] 
+// [0x00820002]
 struct AGameInfo_execSpawnDefaultPawnFor_Parms
 {
 	class AController*                                 NewPlayer;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class AActor*                                      StartSpot;                                        		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class APawn*                                       ReturnValue;                                      		// 0x0008 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FRotator                                 StartRotation;                                    		// 0x0010 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 StartRotation;                                    		// 0x0010 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.InitiatePlayerPawnDataLoad
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execInitiatePlayerPawnDataLoad_Parms
 {
 	class AController*                                 NewPlayer;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.RestartPlayer
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execRestartPlayer_Parms
 {
 	class AController*                                 NewPlayer;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6134,19 +6134,19 @@ struct AGameInfo_execRestartPlayer_Parms
 };
 
 // Function Engine.GameInfo.StartBots
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execStartBots_Parms
 {
 };
 
 // Function Engine.GameInfo.StartHumans
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execStartHumans_Parms
 {
 };
 
 // Function Engine.GameInfo.OnStartOnlineGameComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execOnStartOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -6155,13 +6155,13 @@ struct AGameInfo_execOnStartOnlineGameComplete_Parms
 };
 
 // Function Engine.GameInfo.StartOnlineGame
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execStartOnlineGame_Parms
 {
 };
 
 // Function Engine.GameInfo.StartMatch
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execStartMatch_Parms
 {
 };
@@ -6177,12 +6177,12 @@ struct AGameInfo_eventLogin_Parms
 	class APlayerController*                           ReturnValue;                                      		// 0x003C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 	// struct FString                                  inCharacter;                                      		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  InPassword;                                       		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FRotator                                 SpawnRotation;                                    		// 0x0070 (0x000C) [0x0000000000000000]              
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x007C (0x0018) [0x0000000000000000]              
+	// struct FRotator                                 SpawnRotation;                                    		// 0x0070 (0x000C) [0x0000000000000000]
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x007C (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.SpawnPlayerController
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execSpawnPlayerController_Parms
 {
 	struct FVector                                     SpawnLocation;                                    		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -6198,7 +6198,7 @@ struct AGameInfo_execGetNextPlayerID_Parms
 };
 
 // Function Engine.GameInfo.AtCapacity
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execAtCapacity_Parms
 {
 	unsigned long                                      bSpectator : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -6239,14 +6239,14 @@ struct AGameInfo_eventPreLogin_Parms
 };
 
 // Function Engine.GameInfo.RequiresPassword
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execRequiresPassword_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.ProcessClientTravel
-// [0x00420002] 
+// [0x00420002]
 struct AGameInfo_execProcessClientTravel_Parms
 {
 	struct FString                                     URL;                                              		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -6257,24 +6257,24 @@ struct AGameInfo_execProcessClientTravel_Parms
 };
 
 // Function Engine.GameInfo.ProcessServerTravel
-// [0x00824002] 
+// [0x00824002]
 struct AGameInfo_execProcessServerTravel_Parms
 {
 	struct FString                                     URL;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      bAbsolute : 1;                                    		// 0x000C (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	// struct FString                                  NextMap;                                          		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FGuid                                    NextMapGuid;                                      		// 0x0024 (0x0010) [0x0000000000000000]              
+	// struct FGuid                                    NextMapGuid;                                      		// 0x0024 (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.GameInfo.RemoveMutator
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execRemoveMutator_Parms
 {
 	class AMutator*                                    MutatorToRemove;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.AddMutator
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execAddMutator_Parms
 {
 	struct FString                                     mutname;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6318,7 +6318,7 @@ struct AGameInfo_eventGetDefaultGameClassPath_Parms
 };
 
 // Function Engine.GameInfo.GetIntOption
-// [0x00022002] 
+// [0x00022002]
 struct AGameInfo_execGetIntOption_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6329,7 +6329,7 @@ struct AGameInfo_execGetIntOption_Parms
 };
 
 // Function Engine.GameInfo.HasOption
-// [0x00022002] 
+// [0x00022002]
 struct AGameInfo_execHasOption_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6341,7 +6341,7 @@ struct AGameInfo_execHasOption_Parms
 };
 
 // Function Engine.GameInfo.ParseOption
-// [0x00022002] 
+// [0x00022002]
 struct AGameInfo_execParseOption_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6353,7 +6353,7 @@ struct AGameInfo_execParseOption_Parms
 };
 
 // Function Engine.GameInfo.GetKeyValue
-// [0x00422002] 
+// [0x00422002]
 struct AGameInfo_execGetKeyValue_Parms
 {
 	struct FString                                     Pair;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6362,7 +6362,7 @@ struct AGameInfo_execGetKeyValue_Parms
 };
 
 // Function Engine.GameInfo.GrabOption
-// [0x00422002] 
+// [0x00422002]
 struct AGameInfo_execGrabOption_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -6371,14 +6371,14 @@ struct AGameInfo_execGrabOption_Parms
 };
 
 // Function Engine.GameInfo.SetGameSpeed
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execSetGameSpeed_Parms
 {
 	float                                              T;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameInfo.DebugPause
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execDebugPause_Parms
 {
 	// struct FScriptDelegate                          CanUnpauseCriteriaMet;                            		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -6399,7 +6399,7 @@ struct AGameInfo_eventClearPause_Parms
 };
 
 // Function Engine.GameInfo.SetPause
-// [0x00024002] 
+// [0x00024002]
 struct AGameInfo_execSetPause_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6408,14 +6408,14 @@ struct AGameInfo_execSetPause_Parms
 };
 
 // Function Engine.GameInfo.CanUnpause
-// [0x00120002] 
+// [0x00120002]
 struct AGameInfo_execCanUnpause_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameInfo.GetNumPlayers
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execGetNumPlayers_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6429,7 +6429,7 @@ struct AGameInfo_execGetNetworkNumber_Parms
 };
 
 // Function Engine.GameInfo.InitGameReplicationInfo
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execInitGameReplicationInfo_Parms
 {
 };
@@ -6456,7 +6456,7 @@ struct AGameInfo_eventGameEnding_Parms
 };
 
 // Function Engine.GameInfo.NotifyNavigationChanged
-// [0x00020000] 
+// [0x00020000]
 struct AGameInfo_execNotifyNavigationChanged_Parms
 {
 	class ANavigationPoint*                            N;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6469,7 +6469,7 @@ struct AGameInfo_eventTimer_Parms
 };
 
 // Function Engine.GameInfo.ResetLevel
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execResetLevel_Parms
 {
 	// TArray< class USequenceObject* >                AllSeqEvents;                                     		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -6477,7 +6477,7 @@ struct AGameInfo_execResetLevel_Parms
 };
 
 // Function Engine.GameInfo.ShouldReset
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execShouldReset_Parms
 {
 	class AActor*                                      ActorToReset;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6485,7 +6485,7 @@ struct AGameInfo_execShouldReset_Parms
 };
 
 // Function Engine.GameInfo.Reset
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execReset_Parms
 {
 };
@@ -6497,7 +6497,7 @@ struct AGameInfo_eventPostBeginPlay_Parms
 };
 
 // Function Engine.GameInfo.GetCoverReplicator
-// [0x00020002] 
+// [0x00020002]
 struct AGameInfo_execGetCoverReplicator_Parms
 {
 	class ACoverReplicator*                            ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6529,7 +6529,7 @@ struct AGameInfo_execGetSupportedGameTypes_Parms
 };
 
 // Function Engine.Mutator.NetDamage
-// [0x00420002] 
+// [0x00420002]
 struct AMutator_execNetDamage_Parms
 {
 	float                                              OriginalDamage;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6544,7 +6544,7 @@ struct AMutator_execNetDamage_Parms
 };
 
 // Function Engine.Mutator.ScoreKill
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execScoreKill_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6552,7 +6552,7 @@ struct AMutator_execScoreKill_Parms
 };
 
 // Function Engine.Mutator.ScoreObjective
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execScoreObjective_Parms
 {
 	class APlayerReplicationInfo*                      Scorer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6560,7 +6560,7 @@ struct AMutator_execScoreObjective_Parms
 };
 
 // Function Engine.Mutator.PreventDeath
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execPreventDeath_Parms
 {
 	class APawn*                                       Killed;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6572,7 +6572,7 @@ struct AMutator_execPreventDeath_Parms
 };
 
 // Function Engine.Mutator.OverridePickupQuery
-// [0x00420002] 
+// [0x00420002]
 struct AMutator_execOverridePickupQuery_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6582,7 +6582,7 @@ struct AMutator_execOverridePickupQuery_Parms
 };
 
 // Function Engine.Mutator.CheckEndGame
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execCheckEndGame_Parms
 {
 	class APlayerReplicationInfo*                      Winner;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6591,14 +6591,14 @@ struct AMutator_execCheckEndGame_Parms
 };
 
 // Function Engine.Mutator.HandleRestartGame
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execHandleRestartGame_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Mutator.FindPlayerStart
-// [0x00024002] 
+// [0x00024002]
 struct AMutator_execFindPlayerStart_Parms
 {
 	class AController*                                 Player;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6608,7 +6608,7 @@ struct AMutator_execFindPlayerStart_Parms
 };
 
 // Function Engine.Mutator.GetSeamlessTravelActorList
-// [0x00420002] 
+// [0x00420002]
 struct AMutator_execGetSeamlessTravelActorList_Parms
 {
 	unsigned long                                      bToEntry : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -6616,7 +6616,7 @@ struct AMutator_execGetSeamlessTravelActorList_Parms
 };
 
 // Function Engine.Mutator.InitMutator
-// [0x00420002] 
+// [0x00420002]
 struct AMutator_execInitMutator_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6624,7 +6624,7 @@ struct AMutator_execInitMutator_Parms
 };
 
 // Function Engine.Mutator.DriverLeftVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execDriverLeftVehicle_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6632,7 +6632,7 @@ struct AMutator_execDriverLeftVehicle_Parms
 };
 
 // Function Engine.Mutator.CanLeaveVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execCanLeaveVehicle_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6641,7 +6641,7 @@ struct AMutator_execCanLeaveVehicle_Parms
 };
 
 // Function Engine.Mutator.DriverEnteredVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execDriverEnteredVehicle_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6649,21 +6649,21 @@ struct AMutator_execDriverEnteredVehicle_Parms
 };
 
 // Function Engine.Mutator.NotifyLogin
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execNotifyLogin_Parms
 {
 	class AController*                                 NewPlayer;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Mutator.NotifyLogout
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execNotifyLogout_Parms
 {
 	class AController*                                 Exiting;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Mutator.CheckReplacement
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execCheckReplacement_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6671,7 +6671,7 @@ struct AMutator_execCheckReplacement_Parms
 };
 
 // Function Engine.Mutator.CheckRelevance
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execCheckRelevance_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6679,7 +6679,7 @@ struct AMutator_execCheckRelevance_Parms
 };
 
 // Function Engine.Mutator.IsRelevant
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execIsRelevant_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6687,7 +6687,7 @@ struct AMutator_execIsRelevant_Parms
 };
 
 // Function Engine.Mutator.AlwaysKeep
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execAlwaysKeep_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6695,21 +6695,21 @@ struct AMutator_execAlwaysKeep_Parms
 };
 
 // Function Engine.Mutator.AddMutator
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execAddMutator_Parms
 {
 	class AMutator*                                    M;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Mutator.ModifyPlayer
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execModifyPlayer_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Mutator.ModifyLogin
-// [0x00420002] 
+// [0x00420002]
 struct AMutator_execModifyLogin_Parms
 {
 	struct FString                                     Portal;                                           		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -6717,7 +6717,7 @@ struct AMutator_execModifyLogin_Parms
 };
 
 // Function Engine.Mutator.Mutate
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execMutate_Parms
 {
 	struct FString                                     MutateString;                                     		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -6731,7 +6731,7 @@ struct AMutator_eventDestroyed_Parms
 };
 
 // Function Engine.Mutator.MutatorIsAllowed
-// [0x00020002] 
+// [0x00020002]
 struct AMutator_execMutatorIsAllowed_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6748,7 +6748,7 @@ struct AMutator_eventPreBeginPlay_Parms
 struct APotentialClimbWatcher_eventTick_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FRotator                                 PawnRot;                                          		// 0x0004 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 PawnRot;                                          		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Route.MoveOntoRoutePath
@@ -6773,7 +6773,7 @@ struct ARoute_execResolveRouteIndex_Parms
 };
 
 // Function Engine.MatineeActor.CheckPriorityRefresh
-// [0x00020002] 
+// [0x00020002]
 struct AMatineeActor_execCheckPriorityRefresh_Parms
 {
 };
@@ -6799,21 +6799,21 @@ struct ANavigationPoint_eventGetDebugAbbrev_Parms
 };
 
 // Function Engine.NavigationPoint.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ANavigationPoint_execApplyCheckpointRecord_Parms
 {
 	struct ANavigationPoint_FCheckpointRecord          Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.NavigationPoint.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ANavigationPoint_execCreateCheckpointRecord_Parms
 {
 	struct ANavigationPoint_FCheckpointRecord          Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.NavigationPoint.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct ANavigationPoint_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6826,7 +6826,7 @@ struct ANavigationPoint_eventShutDown_Parms
 };
 
 // Function Engine.NavigationPoint.OnToggle
-// [0x00020002] 
+// [0x00020002]
 struct ANavigationPoint_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6925,7 +6925,7 @@ struct ANavigationPoint_execGetNearestNavToActor_Parms
 };
 
 // Function Engine.NavigationPoint.ProceedWithMove
-// [0x00020002] 
+// [0x00020002]
 struct ANavigationPoint_execProceedWithMove_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7052,21 +7052,21 @@ struct ACoverLink_eventShutDown_Parms
 };
 
 // Function Engine.CoverLink.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ACoverLink_execApplyCheckpointRecord_Parms
 {
 	struct ANavigationPoint_FCheckpointRecord          Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.CoverLink.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ACoverLink_execCreateCheckpointRecord_Parms
 {
 	struct ANavigationPoint_FCheckpointRecord          Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.CoverLink.OnToggle
-// [0x00020002] 
+// [0x00020002]
 struct ACoverLink_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7089,7 +7089,7 @@ struct ACoverLink_execAutoAdjustSlot_Parms
 };
 
 // Function Engine.CoverLink.OnModifyCover
-// [0x00020002] 
+// [0x00020002]
 struct ACoverLink_execOnModifyCover_Parms
 {
 	class USeqAct_ModifyCover*                         Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7105,7 +7105,7 @@ struct ACoverLink_eventSetSlotPlayerOnly_Parms
 };
 
 // Function Engine.CoverLink.NotifySlotOwnerCoverDisabled
-// [0x00024102] 
+// [0x00024102]
 struct ACoverLink_execNotifySlotOwnerCoverDisabled_Parms
 {
 	int                                                SlotIdx;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7368,7 +7368,7 @@ struct ADoorMarker_eventSuggestMovePreparation_Parms
 };
 
 // Function Engine.DoorMarker.ProceedWithMove
-// [0x00020002] 
+// [0x00020002]
 struct ADoorMarker_execProceedWithMove_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7384,13 +7384,13 @@ struct ADoorMarker_eventSpecialHandling_Parms
 };
 
 // Function Engine.DoorMarker.MoverClosed
-// [0x00020002] 
+// [0x00020002]
 struct ADoorMarker_execMoverClosed_Parms
 {
 };
 
 // Function Engine.DoorMarker.MoverOpened
-// [0x00020002] 
+// [0x00020002]
 struct ADoorMarker_execMoverOpened_Parms
 {
 };
@@ -7410,7 +7410,7 @@ struct ALadder_eventSuggestMovePreparation_Parms
 };
 
 // Function Engine.LiftCenter.ProceedWithMove
-// [0x00020002] 
+// [0x00020002]
 struct ALiftCenter_execProceedWithMove_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7448,14 +7448,14 @@ struct ALiftExit_eventSuggestMovePreparation_Parms
 };
 
 // Function Engine.LiftExit.WaitForLift
-// [0x00020002] 
+// [0x00020002]
 struct ALiftExit_execWaitForLift_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.LiftExit.CanBeReachedFromLiftBy
-// [0x00020002] 
+// [0x00020002]
 struct ALiftExit_execCanBeReachedFromLiftBy_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7470,7 +7470,7 @@ struct APathNode_eventGetDebugAbbrev_Parms
 };
 
 // Function Engine.PickupFactory.DelayRespawn
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execDelayRespawn_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -7483,52 +7483,52 @@ struct APickupFactory_eventDestroyed_Parms
 };
 
 // Function Engine.PickupFactory.SetPickupVisible
-// [0x00020102] 
+// [0x00020102]
 struct APickupFactory_execSetPickupVisible_Parms
 {
 };
 
 // Function Engine.PickupFactory.SetPickupHidden
-// [0x00020102] 
+// [0x00020102]
 struct APickupFactory_execSetPickupHidden_Parms
 {
 };
 
 // Function Engine.PickupFactory.RespawnEffect
-// [0x00020000] 
+// [0x00020000]
 struct APickupFactory_execRespawnEffect_Parms
 {
 };
 
 // Function Engine.PickupFactory.GetRespawnTime
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execGetRespawnTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PickupFactory.RecheckValidTouch
-// [0x00020000] 
+// [0x00020000]
 struct APickupFactory_execRecheckValidTouch_Parms
 {
 };
 
 // Function Engine.PickupFactory.PickedUpBy
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execPickedUpBy_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PickupFactory.GiveTo
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execGiveTo_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PickupFactory.ReadyToPickup
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execReadyToPickup_Parms
 {
 	float                                              MaxWait;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7536,7 +7536,7 @@ struct APickupFactory_execReadyToPickup_Parms
 };
 
 // Function Engine.PickupFactory.SpawnCopyFor
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execSpawnCopyFor_Parms
 {
 	class APawn*                                       Recipient;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7552,40 +7552,40 @@ struct APickupFactory_eventDetourWeight_Parms
 };
 
 // Function Engine.PickupFactory.StartSleeping
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execStartSleeping_Parms
 {
 };
 
 // Function Engine.PickupFactory.SetRespawn
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execSetRespawn_Parms
 {
 };
 
 // Function Engine.PickupFactory.CheckForErrors
-// [0x00820002] 
+// [0x00820002]
 struct APickupFactory_execCheckForErrors_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  HitLocation;                                      		// 0x0008 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  HitLocation;                                      		// 0x0008 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0014 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PickupFactory.Reset
-// [0x00020002] 
+// [0x00020002]
 struct APickupFactory_execReset_Parms
 {
 };
 
 // Function Engine.PickupFactory.SetPickupMesh
-// [0x00020102] 
+// [0x00020102]
 struct APickupFactory_execSetPickupMesh_Parms
 {
 };
 
 // Function Engine.PickupFactory.ShutDown
-// [0x00020102] 
+// [0x00020102]
 struct APickupFactory_execShutDown_Parms
 {
 };
@@ -7597,7 +7597,7 @@ struct APickupFactory_eventSetInitialState_Parms
 };
 
 // Function Engine.PickupFactory.InitializePickup
-// [0x00020102] 
+// [0x00020102]
 struct APickupFactory_execInitializePickup_Parms
 {
 };
@@ -7623,15 +7623,15 @@ struct APlayerStart_eventPostRenderFor_Parms
 	class UCanvas*                                     Canvas;                                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     CameraPosition;                                   		// 0x0008 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     CameraDir;                                        		// 0x0014 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  ScreenLoc;                                        		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  ViewLoc;                                          		// 0x0040 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 ViewRot;                                          		// 0x004C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ScreenLoc;                                        		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FVector                                  ViewLoc;                                          		// 0x0040 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 ViewRot;                                          		// 0x004C (0x000C) [0x0000000000000000]
 	// struct FString                                  ScreenName;                                       		// 0x0058 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FFontRenderInfo                          FontInfo;                                         		// 0x0064 (0x0028) [0x0000000000000000]              
+	// struct FFontRenderInfo                          FontInfo;                                         		// 0x0064 (0x0028) [0x0000000000000000]
 };
 
 // Function Engine.PlayerStart.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct APlayerStart_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7655,7 +7655,7 @@ struct APylon_execCanReachPylon_Parms
 };
 
 // Function Engine.Pylon.OnToggle
-// [0x00020002] 
+// [0x00020002]
 struct APylon_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7676,7 +7676,7 @@ struct APylon_eventSetEnabled_Parms
 };
 
 // Function Engine.Pylon.PostBeginPlay
-// [0x00020002] 
+// [0x00020002]
 struct APylon_execPostBeginPlay_Parms
 {
 };
@@ -7702,7 +7702,7 @@ struct AAISwitchablePylon_eventSetEnabled_Parms
 };
 
 // Function Engine.AISwitchablePylon.PostBeginPlay
-// [0x00020002] 
+// [0x00020002]
 struct AAISwitchablePylon_execPostBeginPlay_Parms
 {
 };
@@ -7732,7 +7732,7 @@ struct ADynamicPylon_execRebuildDynamicEdges_Parms
 };
 
 // Function Engine.DynamicPylon.PostBeginPlay
-// [0x00020002] 
+// [0x00020002]
 struct ADynamicPylon_execPostBeginPlay_Parms
 {
 };
@@ -7786,7 +7786,7 @@ struct ATeleporter_execCanTeleport_Parms
 };
 
 // Function Engine.Projectile.ApplyFluidSurfaceImpact
-// [0x00020102] 
+// [0x00020102]
 struct AProjectile_execApplyFluidSurfaceImpact_Parms
 {
 	class AFluidSurfaceActor*                          Fluid;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7794,14 +7794,14 @@ struct AProjectile_execApplyFluidSurfaceImpact_Parms
 };
 
 // Function Engine.Projectile.GetRange
-// [0x00022102] 
+// [0x00022102]
 struct AProjectile_execGetRange_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Projectile.StaticGetTimeToLocation
-// [0x00022102] 
+// [0x00022102]
 struct AProjectile_execStaticGetTimeToLocation_Parms
 {
 	struct FVector                                     TargetLoc;                                        		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -7811,7 +7811,7 @@ struct AProjectile_execStaticGetTimeToLocation_Parms
 };
 
 // Function Engine.Projectile.GetTimeToLocation
-// [0x00020102] 
+// [0x00020102]
 struct AProjectile_execGetTimeToLocation_Parms
 {
 	struct FVector                                     TargetLoc;                                        		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -7833,7 +7833,7 @@ struct AProjectile_execRandSpin_Parms
 };
 
 // Function Engine.Projectile.Explode
-// [0x00020102] 
+// [0x00020102]
 struct AProjectile_execExplode_Parms
 {
 	struct FVector                                     HitLocation;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -7858,7 +7858,7 @@ struct AProjectile_eventHitWall_Parms
 };
 
 // Function Engine.Projectile.ProcessTouch
-// [0x00020102] 
+// [0x00020102]
 struct AProjectile_execProcessTouch_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7878,7 +7878,7 @@ struct AProjectile_eventTouch_Parms
 };
 
 // Function Engine.Projectile.HurtRadius
-// [0x00424102] 
+// [0x00424102]
 struct AProjectile_execHurtRadius_Parms
 {
 	float                                              DamageAmount;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7897,25 +7897,25 @@ struct AProjectile_execHurtRadius_Parms
 };
 
 // Function Engine.Projectile.ProjectileHurtRadius
-// [0x00820102] 
+// [0x00820102]
 struct AProjectile_execProjectileHurtRadius_Parms
 {
 	struct FVector                                     HurtOrigin;                                       		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     HitNormal;                                        		// 0x000C (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  AltOrigin;                                        		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  TraceHitLocation;                                 		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  TraceHitNormal;                                   		// 0x0034 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  AltOrigin;                                        		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FVector                                  TraceHitLocation;                                 		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FVector                                  TraceHitNormal;                                   		// 0x0034 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Projectile.Reset
-// [0x00020002] 
+// [0x00020002]
 struct AProjectile_execReset_Parms
 {
 };
 
 // Function Engine.Projectile.CanSplash
-// [0x00020102] 
+// [0x00020102]
 struct AProjectile_execCanSplash_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -7956,14 +7956,14 @@ struct AProjectile_eventEncroachingOn_Parms
 };
 
 // Function Engine.SceneCaptureActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ASceneCaptureActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PortalTeleporter.StopsProjectile
-// [0x00020102] 
+// [0x00020102]
 struct APortalTeleporter_execStopsProjectile_Parms
 {
 	class AProjectile*                                 P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8002,7 +8002,7 @@ struct APortalTeleporter_execTransformActor_Parms
 };
 
 // Function Engine.StaticMeshActorBasedOnExtremeContent.SetMaterialBasedOnExtremeContent
-// [0x00020102] 
+// [0x00020102]
 struct AStaticMeshActorBasedOnExtremeContent_execSetMaterialBasedOnExtremeContent_Parms
 {
 };
@@ -8014,7 +8014,7 @@ struct AStaticMeshActorBasedOnExtremeContent_eventPostBeginPlay_Parms
 };
 
 // Function Engine.TeleporterDestination.GetNextExitPoint
-// [0x00020002] 
+// [0x00020002]
 struct ATeleporterDestination_execGetNextExitPoint_Parms
 {
 	class AActor*                                      TeleportActor;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8023,35 +8023,35 @@ struct ATeleporterDestination_execGetNextExitPoint_Parms
 };
 
 // Function Engine.TeleporterDestination.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ATeleporterDestination_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Trigger.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ATrigger_execApplyCheckpointRecord_Parms
 {
 	struct ATrigger_FCheckpointRecord                  Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.Trigger.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ATrigger_execCreateCheckpointRecord_Parms
 {
 	struct ATrigger_FCheckpointRecord                  Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.Trigger.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct ATrigger_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Trigger.StopsProjectile
-// [0x00020102] 
+// [0x00020102]
 struct ATrigger_execStopsProjectile_Parms
 {
 	class AProjectile*                                 P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8059,13 +8059,13 @@ struct ATrigger_execStopsProjectile_Parms
 };
 
 // Function Engine.Trigger.UnTrigger
-// [0x00020002] 
+// [0x00020002]
 struct ATrigger_execUnTrigger_Parms
 {
 };
 
 // Function Engine.Trigger.NotifyTriggered
-// [0x00020002] 
+// [0x00020002]
 struct ATrigger_execNotifyTriggered_Parms
 {
 };
@@ -8093,7 +8093,7 @@ struct ATrigger_execTriggerDetachSprites_Parms
 };
 
 // Function Engine.ActorComponent.Behavior_Destroy
-// [0x00020002] 
+// [0x00020002]
 struct UActorComponent_execBehavior_Destroy_Parms
 {
 };
@@ -8261,7 +8261,7 @@ struct UAkComponent_execIsPlayingEvent_Parms
 };
 
 // Function Engine.AkComponent.UpdateComponentPosition
-// [0x00520000] 
+// [0x00520000]
 struct UAkComponent_execUpdateComponentPosition_Parms
 {
 	TArray< struct FVector >                           ListenerPositions;                                		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8269,7 +8269,7 @@ struct UAkComponent_execUpdateComponentPosition_Parms
 };
 
 // Function Engine.AkComponent.OnAkEventCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UAkComponent_execOnAkEventCompleted_Parms
 {
 	class UAkComponent*                                Source;                                           		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -8285,7 +8285,7 @@ struct UAudioComponent_eventOcclusionChanged_Parms
 };
 
 // Function Engine.AudioComponent.OnQueueSubtitles
-// [0x00120000] 
+// [0x00120000]
 struct UAudioComponent_execOnQueueSubtitles_Parms
 {
 	TArray< struct FSubtitleCue >                      Subtitles;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -8293,7 +8293,7 @@ struct UAudioComponent_execOnQueueSubtitles_Parms
 };
 
 // Function Engine.AudioComponent.OnAudioFinished
-// [0x00120000] 
+// [0x00120000]
 struct UAudioComponent_execOnAudioFinished_Parms
 {
 	class UAudioComponent*                             AC;                                               		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -8386,7 +8386,7 @@ struct UHeightFogComponent_execSetEnabled_Parms
 };
 
 // Function Engine.PrimitiveComponent.Behavior_ChangeCollisionSize
-// [0x00020002] 
+// [0x00020002]
 struct UPrimitiveComponent_execBehavior_ChangeCollisionSize_Parms
 {
 	float                                              NewRadius;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8394,34 +8394,34 @@ struct UPrimitiveComponent_execBehavior_ChangeCollisionSize_Parms
 };
 
 // Function Engine.PrimitiveComponent.Behavior_ChangeCollision
-// [0x00020002] 
+// [0x00020002]
 struct UPrimitiveComponent_execBehavior_ChangeCollision_Parms
 {
 	unsigned char                                      NewCollisionType;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PrimitiveComponent.TickInstanceDataAttachment
-// [0x00020002] 
+// [0x00020002]
 struct UPrimitiveComponent_execTickInstanceDataAttachment_Parms
 {
 };
 
 // Function Engine.PrimitiveComponent.Behavior_ChangeScale
-// [0x00020002] 
+// [0x00020002]
 struct UPrimitiveComponent_execBehavior_ChangeScale_Parms
 {
 	float                                              InScale;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PrimitiveComponent.Behavior_ChangeVisibility
-// [0x00020002] 
+// [0x00020002]
 struct UPrimitiveComponent_execBehavior_ChangeVisibility_Parms
 {
 	unsigned long                                      bVisible : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PrimitiveComponent.Behavior_ToggleVisibility
-// [0x00020002] 
+// [0x00020002]
 struct UPrimitiveComponent_execBehavior_ToggleVisibility_Parms
 {
 };
@@ -8831,19 +8831,19 @@ struct USpriteComponent_execSetSprite_Parms
 };
 
 // Function Engine.RadialBlurComponent.OnUpdatePropertyBlurOpacity
-// [0x00020002] 
+// [0x00020002]
 struct URadialBlurComponent_execOnUpdatePropertyBlurOpacity_Parms
 {
 };
 
 // Function Engine.RadialBlurComponent.OnUpdatePropertyBlurFalloffExponent
-// [0x00020002] 
+// [0x00020002]
 struct URadialBlurComponent_execOnUpdatePropertyBlurFalloffExponent_Parms
 {
 };
 
 // Function Engine.RadialBlurComponent.OnUpdatePropertyBlurScale
-// [0x00020002] 
+// [0x00020002]
 struct URadialBlurComponent_execOnUpdatePropertyBlurScale_Parms
 {
 };
@@ -8970,7 +8970,7 @@ struct USoundCue_execIsSoundLooping_Parms
 };
 
 // Function Engine.Canvas.DrawDebugGraph
-// [0x00020002] 
+// [0x00020002]
 struct UCanvas_execDrawDebugGraph_Parms
 {
 	struct FString                                     Title;                                            		// 0x0000 (0x000C) [0x0000000000400880]              ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
@@ -9045,7 +9045,7 @@ struct UCanvas_execSetBGColor_Parms
 	unsigned char                                      G;                                                		// 0x0001 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      B;                                                		// 0x0002 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      A;                                                		// 0x0003 (0x0001) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FColor                                   C;                                                		// 0x0004 (0x0004) [0x0000000000000000]              
+	// struct FColor                                   C;                                                		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // Function Engine.Canvas.SetDrawColorStruct
@@ -9112,7 +9112,7 @@ struct UCanvas_execMakeIcon_Parms
 	float                                              UL;                                               		// 0x000C (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	float                                              VL;                                               		// 0x0010 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	struct FCanvasIcon                                 ReturnValue;                                      		// 0x0014 (0x0014) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FCanvasIcon                              Icon;                                             		// 0x0028 (0x0014) [0x0000000000000000]              
+	// struct FCanvasIcon                              Icon;                                             		// 0x0028 (0x0014) [0x0000000000000000]
 };
 
 // Function Engine.Canvas.DrawTextureBlended
@@ -9122,7 +9122,7 @@ struct UCanvas_execDrawTextureBlended_Parms
 	class UTexture*                                    Tex;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              Scale;                                            		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      Blend;                                            		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// struct FLinearColor                             DrawColorLinear;                                  		// 0x000C (0x0010) [0x0000000000000000]              
+	// struct FLinearColor                             DrawColorLinear;                                  		// 0x000C (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.Canvas.DrawTexture
@@ -9159,7 +9159,7 @@ struct UCanvas_execSetPos_Parms
 };
 
 // Function Engine.Canvas.GetDefaultCanvasFont
-// [0x00020002] 
+// [0x00020002]
 struct UCanvas_execGetDefaultCanvasFont_Parms
 {
 	class UFont*                                       ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -9251,7 +9251,7 @@ struct UCanvas_execCreateFontRenderInfo_Parms
 	struct FVector2D                                   GlowOuterRadius;                                  		// 0x0018 (0x0008) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	struct FVector2D                                   GlowInnerRadius;                                  		// 0x0020 (0x0008) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	struct FFontRenderInfo                             ReturnValue;                                      		// 0x0028 (0x0028) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FFontRenderInfo                          Result;                                           		// 0x0050 (0x0028) [0x0000000000000000]              
+	// struct FFontRenderInfo                          Result;                                           		// 0x0050 (0x0028) [0x0000000000000000]
 };
 
 // Function Engine.Canvas.DrawTris
@@ -9368,7 +9368,7 @@ struct AController_execIsUsingVehicle_Parms
 };
 
 // Function Engine.Controller.DestroyOwnedInstanceData
-// [0x00020000] 
+// [0x00020000]
 struct AController_execDestroyOwnedInstanceData_Parms
 {
 };
@@ -9399,7 +9399,7 @@ struct AController_eventGetInstanceData_Parms
 };
 
 // Function Engine.Controller.SetInstanceData
-// [0x00024000] 
+// [0x00024000]
 struct AController_execSetInstanceData_Parms
 {
 	struct FInstanceDataUnion                          InstanceData;                                     		// 0x0000 (0x0058) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -9415,7 +9415,7 @@ struct AController_execGetInstanceDataPawn_Parms
 };
 
 // Function Engine.Controller.ShouldSwitchToBestWeapon
-// [0x00020002] 
+// [0x00020002]
 struct AController_execShouldSwitchToBestWeapon_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -9429,7 +9429,7 @@ struct AController_execGetWorldPawn_Parms
 };
 
 // Function Engine.Controller.AddAccuracyImpulse
-// [0x00020002] 
+// [0x00020002]
 struct AController_execAddAccuracyImpulse_Parms
 {
 	float                                              Delta;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9472,7 +9472,7 @@ struct AController_eventInterpolationStarted_Parms
 };
 
 // Function Engine.Controller.DisplayDebugResourcePoolManager
-// [0x00420102] 
+// [0x00420102]
 struct AController_execDisplayDebugResourcePoolManager_Parms
 {
 	class AResourcePoolManager*                        PoolManager;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9485,7 +9485,7 @@ struct AController_execDisplayDebugResourcePoolManager_Parms
 };
 
 // Function Engine.Controller.DisplayDebugResourcePools
-// [0x00420102] 
+// [0x00420102]
 struct AController_execDisplayDebugResourcePools_Parms
 {
 	class AHUD*                                        HUD;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9516,7 +9516,7 @@ struct AController_execApplyCharacterClassStartingValues_Parms
 };
 
 // Function Engine.Controller.ApplyCharacterClassDefaults
-// [0x00020002] 
+// [0x00020002]
 struct AController_execApplyCharacterClassDefaults_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9531,7 +9531,7 @@ struct AController_eventGetClassDefinition_Parms
 };
 
 // Function Engine.Controller.GetDestinationOffset
-// [0x00020000] 
+// [0x00020000]
 struct AController_execGetDestinationOffset_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -9544,13 +9544,13 @@ struct AController_execInitNavigationHandle_Parms
 };
 
 // Function Engine.Controller.ReadyForLift
-// [0x00020000] 
+// [0x00020000]
 struct AController_execReadyForLift_Parms
 {
 };
 
 // Function Engine.Controller.SendMessage
-// [0x00024000] 
+// [0x00024000]
 struct AController_execSendMessage_Parms
 {
 	class APlayerReplicationInfo*                      Recipient;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9581,28 +9581,28 @@ struct AController_eventIsSpectating_Parms
 };
 
 // Function Engine.Controller.OnToggleHidden
-// [0x00020102] 
+// [0x00020102]
 struct AController_execOnToggleHidden_Parms
 {
 	class USeqAct_ToggleHidden*                        Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.NotifyAddInventory
-// [0x00020000] 
+// [0x00020000]
 struct AController_execNotifyAddInventory_Parms
 {
 	class AInventory*                                  NewItem;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.OnModifyHealth
-// [0x00020102] 
+// [0x00020102]
 struct AController_execOnModifyHealth_Parms
 {
 	class USeqAct_ModifyHealth*                        Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.NotifyCoverClaimViolation
-// [0x00020100] 
+// [0x00020100]
 struct AController_execNotifyCoverClaimViolation_Parms
 {
 	class AController*                                 NewClaim;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9618,7 +9618,7 @@ struct AController_eventNotifyCoverAdjusted_Parms
 };
 
 // Function Engine.Controller.NotifyCoverDisabled
-// [0x00024100] 
+// [0x00024100]
 struct AController_execNotifyCoverDisabled_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9627,42 +9627,42 @@ struct AController_execNotifyCoverDisabled_Parms
 };
 
 // Function Engine.Controller.OnSetVelocity
-// [0x00020102] 
+// [0x00020102]
 struct AController_execOnSetVelocity_Parms
 {
 	class USeqAct_SetVelocity*                         Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.OnSetPhysics
-// [0x00020102] 
+// [0x00020102]
 struct AController_execOnSetPhysics_Parms
 {
 	class USeqAct_SetPhysics*                          Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.GetNonCheatGodMode
-// [0x00020002] 
+// [0x00020002]
 struct AController_execGetNonCheatGodMode_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Controller.SetNonCheatGodMode
-// [0x00020002] 
+// [0x00020002]
 struct AController_execSetNonCheatGodMode_Parms
 {
 	unsigned long                                      NewMode : 1;                                      		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Controller.GetGodMode
-// [0x00020002] 
+// [0x00020002]
 struct AController_execGetGodMode_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Controller.SetGodMode
-// [0x00020002] 
+// [0x00020002]
 struct AController_execSetGodMode_Parms
 {
 	unsigned long                                      NewMode : 1;                                      		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -9676,14 +9676,14 @@ struct AController_execInGodMode_Parms
 };
 
 // Function Engine.Controller.OnToggleGodMode
-// [0x00020002] 
+// [0x00020002]
 struct AController_execOnToggleGodMode_Parms
 {
 	class USeqAct_ToggleGodMode*                       inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.OnTeleport
-// [0x00020102] 
+// [0x00020102]
 struct AController_execOnTeleport_Parms
 {
 	class USeqAct_Teleport*                            Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9697,7 +9697,7 @@ struct AController_execIsDead_Parms
 };
 
 // Function Engine.Controller.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct AController_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -9786,21 +9786,21 @@ struct AController_eventNotifyPhysicsVolumeChange_Parms
 };
 
 // Function Engine.Controller.LandingShake
-// [0x00020102] 
+// [0x00020102]
 struct AController_execLandingShake_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Controller.IsAimingAt
-// [0x00820102] 
+// [0x00820102]
 struct AController_execIsAimingAt_Parms
 {
 	class AActor*                                      ATarget;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              Epsilon;                                          		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0008 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Loc;                                              		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 Rot;                                              		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Loc;                                              		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 Rot;                                              		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Controller.GetActorEyesViewPoint
@@ -9829,7 +9829,7 @@ struct AController_eventHandlePathObstruction_Parms
 };
 
 // Function Engine.Controller.UnderLift
-// [0x00020000] 
+// [0x00020000]
 struct AController_execUnderLift_Parms
 {
 	class ALiftCenter*                                 Lift;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9843,7 +9843,7 @@ struct AController_eventMoverFinished_Parms
 };
 
 // Function Engine.Controller.WaitForMover
-// [0x00020002] 
+// [0x00020002]
 struct AController_execWaitForMover_Parms
 {
 	class AInterpActor*                                M;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10084,7 +10084,7 @@ struct AController_execLineOfSightTo_Parms
 };
 
 // Function Engine.Controller.NotifyChangedWeapon
-// [0x00020000] 
+// [0x00020000]
 struct AController_execNotifyChangedWeapon_Parms
 {
 	class AWeapon*                                     PrevWeapon;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10093,7 +10093,7 @@ struct AController_execNotifyChangedWeapon_Parms
 };
 
 // Function Engine.Controller.ClientSwitchToBestWeapon
-// [0x010241C2] 
+// [0x010241C2]
 struct AController_execClientSwitchToBestWeapon_Parms
 {
 	unsigned long                                      bForceNewWeapon : 1;                              		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -10117,14 +10117,14 @@ struct AController_execCanHoldWeapon_Parms
 };
 
 // Function Engine.Controller.ReceiveProjectileWarning
-// [0x00020000] 
+// [0x00020000]
 struct AController_execReceiveProjectileWarning_Parms
 {
 	class AProjectile*                                 Proj;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.ReceiveWarning
-// [0x00020000] 
+// [0x00020000]
 struct AController_execReceiveWarning_Parms
 {
 	class APawn*                                       shooter;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10133,7 +10133,7 @@ struct AController_execReceiveWarning_Parms
 };
 
 // Function Engine.Controller.InstantWarnTarget
-// [0x00020002] 
+// [0x00020002]
 struct AController_execInstantWarnTarget_Parms
 {
 	class AActor*                                      InTarget;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10142,7 +10142,7 @@ struct AController_execInstantWarnTarget_Parms
 };
 
 // Function Engine.Controller.GetAdjustedAimFor
-// [0x00020002] 
+// [0x00020002]
 struct AController_execGetAdjustedAimFor_Parms
 {
 	class AWeapon*                                     W;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10151,28 +10151,28 @@ struct AController_execGetAdjustedAimFor_Parms
 };
 
 // Function Engine.Controller.UnTouchedPickupable
-// [0x00020000] 
+// [0x00020000]
 struct AController_execUnTouchedPickupable_Parms
 {
 	class UIPickupable*                                Pickup;                                           		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.TouchedPickupable
-// [0x00020002] 
+// [0x00020002]
 struct AController_execTouchedPickupable_Parms
 {
 	class UIPickupable*                                Pickup;                                           		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.HandlePickup
-// [0x00020000] 
+// [0x00020000]
 struct AController_execHandlePickup_Parms
 {
 	class AInventory*                                  Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.RoundHasEnded
-// [0x00024002] 
+// [0x00024002]
 struct AController_execRoundHasEnded_Parms
 {
 	class AActor*                                      EndRoundFocus;                                    		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -10185,7 +10185,7 @@ struct AController_eventStopFiring_Parms
 };
 
 // Function Engine.Controller.FireWeaponAt
-// [0x00020000] 
+// [0x00020000]
 struct AController_execFireWeaponAt_Parms
 {
 	class AActor*                                      inActor;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10202,21 +10202,21 @@ struct AController_eventRatePickup_Parms
 };
 
 // Function Engine.Controller.WarnProjExplode
-// [0x00020000] 
+// [0x00020000]
 struct AController_execWarnProjExplode_Parms
 {
 	class AProjectile*                                 Proj;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.NotifyProjLanded
-// [0x00020002] 
+// [0x00020002]
 struct AController_execNotifyProjLanded_Parms
 {
 	class AProjectile*                                 Proj;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Controller.NotifyKilled
-// [0x00020002] 
+// [0x00020002]
 struct AController_execNotifyKilled_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10226,7 +10226,7 @@ struct AController_execNotifyKilled_Parms
 };
 
 // Function Engine.Controller.GameHasEnded
-// [0x00024002] 
+// [0x00024002]
 struct AController_execGameHasEnded_Parms
 {
 	class AActor*                                      EndGameFocus;                                     		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -10234,20 +10234,20 @@ struct AController_execGameHasEnded_Parms
 };
 
 // Function Engine.Controller.SetCharacter
-// [0x00020000] 
+// [0x00020000]
 struct AController_execSetCharacter_Parms
 {
 	struct FString                                     inCharacter;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Controller.ServerGivePawn
-// [0x00020000] 
+// [0x00020000]
 struct AController_execServerGivePawn_Parms
 {
 };
 
 // Function Engine.Controller.ServerRestartPlayer
-// [0x002200C2] 
+// [0x002200C2]
 struct AController_execServerRestartPlayer_Parms
 {
 };
@@ -10260,7 +10260,7 @@ struct AController_execGetTeamNum_Parms
 };
 
 // Function Engine.Controller.InitPlayerReplicationInfo
-// [0x00020002] 
+// [0x00020002]
 struct AController_execInitPlayerReplicationInfo_Parms
 {
 };
@@ -10290,7 +10290,7 @@ struct AController_execNotifyTakeHit_Parms
 };
 
 // Function Engine.Controller.EnemyJustTeleported
-// [0x00020002] 
+// [0x00020002]
 struct AController_execEnemyJustTeleported_Parms
 {
 };
@@ -10305,20 +10305,20 @@ struct AController_execBeyondFogDistance_Parms
 };
 
 // Function Engine.Controller.SpawningProcessComplete
-// [0x00020000] 
+// [0x00020000]
 struct AController_execSpawningProcessComplete_Parms
 {
 };
 
 // Function Engine.Controller.Restart
-// [0x00020002] 
+// [0x00020002]
 struct AController_execRestart_Parms
 {
 	unsigned long                                      bVehicleTransition : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Controller.CleanupPRI
-// [0x00020002] 
+// [0x00020002]
 struct AController_execCleanupPRI_Parms
 {
 };
@@ -10336,14 +10336,14 @@ struct AController_eventNotifyPostLanded_Parms
 };
 
 // Function Engine.Controller.GamePlayEndedState
-// [0x00020002] 
+// [0x00020002]
 struct AController_execGamePlayEndedState_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Controller.PawnDied
-// [0x00020002] 
+// [0x00020002]
 struct AController_execPawnDied_Parms
 {
 	class APawn*                                       inPawn;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10364,7 +10364,7 @@ struct AController_eventPossess_Parms
 };
 
 // Function Engine.Controller.OnPossess
-// [0x00020002] 
+// [0x00020002]
 struct AController_execOnPossess_Parms
 {
 	class USeqAct_Possess*                             inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10378,7 +10378,7 @@ struct AController_eventReplicatedEvent_Parms
 };
 
 // Function Engine.Controller.ClientSetRotation
-// [0x010241C2] 
+// [0x010241C2]
 struct AController_execClientSetRotation_Parms
 {
 	struct FRotator                                    NewRotation;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -10386,7 +10386,7 @@ struct AController_execClientSetRotation_Parms
 };
 
 // Function Engine.Controller.ClientSetLocation
-// [0x010201C2] 
+// [0x010201C2]
 struct AController_execClientSetLocation_Parms
 {
 	struct FVector                                     NewLocation;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -10394,7 +10394,7 @@ struct AController_execClientSetLocation_Parms
 };
 
 // Function Engine.Controller.Reset
-// [0x00020002] 
+// [0x00020002]
 struct AController_execReset_Parms
 {
 };
@@ -10585,13 +10585,13 @@ struct APlayerController_execPS3UserSelect_Parms
 };
 
 // Function Engine.PlayerController.ServerDestroy
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerDestroy_Parms
 {
 };
 
 // Function Engine.PlayerController.CanDrop
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execCanDrop_Parms
 {
 	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10599,7 +10599,7 @@ struct APlayerController_execCanDrop_Parms
 };
 
 // Function Engine.PlayerController.GetDLCPackageMask
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execGetDLCPackageMask_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -10612,35 +10612,35 @@ struct APlayerController_execClearAllPoolComponents_Parms
 };
 
 // Function Engine.PlayerController.OnGameInviteAcceptedP3
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execOnGameInviteAcceptedP3_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PlayerController.OnGameInviteAcceptedP2
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execOnGameInviteAcceptedP2_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PlayerController.OnGameInviteAcceptedP1
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execOnGameInviteAcceptedP1_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PlayerController.OnGameInviteAcceptedP0
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execOnGameInviteAcceptedP0_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PlayerController.OnGameInviteAcceptedP
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execOnGameInviteAcceptedP_Parms
 {
 	int                                                P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10648,7 +10648,7 @@ struct APlayerController_execOnGameInviteAcceptedP_Parms
 };
 
 // Function Engine.PlayerController.PreOnGameInviteAccepted
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execPreOnGameInviteAccepted_Parms
 {
 };
@@ -10691,7 +10691,7 @@ struct APlayerController_eventNotifyDisconnect_Parms
 };
 
 // Function Engine.PlayerController.ReceivedGameClass
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execReceivedGameClass_Parms
 {
 	class UClass*                                      GameClass;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10716,7 +10716,7 @@ struct APlayerController_execLogOutBugItGoToLogFile_Parms
 };
 
 // Function Engine.PlayerController.DisableDebugAI
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execDisableDebugAI_Parms
 {
 };
@@ -10748,8 +10748,8 @@ struct APlayerController_execBugItStringCreator_Parms
 struct APlayerController_execBugItAI_Parms
 {
 	struct FString                                     ScreenShotDescription;                            		// 0x0000 (0x000C) [0x0000000000400090]              ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
-	// struct FVector                                  ViewLocation;                                     		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 ViewRotation;                                     		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ViewLocation;                                     		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 ViewRotation;                                     		// 0x0018 (0x000C) [0x0000000000000000]
 	// struct FString                                  GoString;                                         		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  LocString;                                        		// 0x0030 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -10758,8 +10758,8 @@ struct APlayerController_execBugItAI_Parms
 // [0x00820202] ( FUNC_Exec )
 struct APlayerController_execLogLoc_Parms
 {
-	// struct FVector                                  ViewLocation;                                     		// 0x0000 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 ViewRotation;                                     		// 0x000C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ViewLocation;                                     		// 0x0000 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 ViewRotation;                                     		// 0x000C (0x000C) [0x0000000000000000]
 	// struct FString                                  GoString;                                         		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  LocString;                                        		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -10769,8 +10769,8 @@ struct APlayerController_execLogLoc_Parms
 struct APlayerController_execBugIt_Parms
 {
 	struct FString                                     ScreenShotDescription;                            		// 0x0000 (0x000C) [0x0000000000400090]              ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
-	// struct FVector                                  ViewLocation;                                     		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 ViewRotation;                                     		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ViewLocation;                                     		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 ViewRotation;                                     		// 0x0018 (0x000C) [0x0000000000000000]
 	// struct FString                                  GoString;                                         		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  LocString;                                        		// 0x0030 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -10784,7 +10784,7 @@ struct APlayerController_execHasPeerConnection_Parms
 };
 
 // Function Engine.PlayerController.OnSetSoundMode
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnSetSoundMode_Parms
 {
 	class USeqAct_SetSoundMode*                        Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10826,14 +10826,14 @@ struct APlayerController_eventClientPlayCameraAnim_Parms
 };
 
 // Function Engine.PlayerController.ClientStopCameraShake
-// [0x01020142] 
+// [0x01020142]
 struct APlayerController_execClientStopCameraShake_Parms
 {
 	class UCameraShake*                                Shake;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientPlayCameraShake
-// [0x01024142] 
+// [0x01024142]
 struct APlayerController_execClientPlayCameraShake_Parms
 {
 	class UCameraShake*                                Shake;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10844,7 +10844,7 @@ struct APlayerController_execClientPlayCameraShake_Parms
 };
 
 // Function Engine.PlayerController.DoForceFeedbackForScreenShake
-// [0x00080100] 
+// [0x00080100]
 struct APlayerController_execDoForceFeedbackForScreenShake_Parms
 {
 	class UCameraShake*                                ShakeData;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10852,13 +10852,13 @@ struct APlayerController_execDoForceFeedbackForScreenShake_Parms
 };
 
 // Function Engine.PlayerController.TestMovieStop
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execTestMovieStop_Parms
 {
 };
 
 // Function Engine.PlayerController.TestMovie
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execTestMovie_Parms
 {
 	struct FString                                     MovieName;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -10878,31 +10878,31 @@ struct APlayerController_execNativeTestMovie_Parms
 };
 
 // Function Engine.PlayerController.InputMatchDelegate
-// [0x00120000] 
+// [0x00120000]
 struct APlayerController_execInputMatchDelegate_Parms
 {
 };
 
 // Function Engine.PlayerController.Sentinel_PostAcquireTravelTheWorldPoints
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execSentinel_PostAcquireTravelTheWorldPoints_Parms
 {
 };
 
 // Function Engine.PlayerController.Sentinel_PreAcquireTravelTheWorldPoints
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execSentinel_PreAcquireTravelTheWorldPoints_Parms
 {
 };
 
 // Function Engine.PlayerController.Sentinel_SetupForGamebasedTravelTheWorld
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execSentinel_SetupForGamebasedTravelTheWorld_Parms
 {
 };
 
 // Function Engine.PlayerController.OnFlyThroughHasEnded
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execOnFlyThroughHasEnded_Parms
 {
 	class USeqAct_FlyThroughHasEnded*                  inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10919,21 +10919,21 @@ struct APlayerController_eventGetAchievementProgression_Parms
 };
 
 // Function Engine.PlayerController.GetPartyGameTypeName
-// [0x00022000] 
+// [0x00022000]
 struct APlayerController_execGetPartyGameTypeName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.GetPartyMapName
-// [0x00022000] 
+// [0x00022000]
 struct APlayerController_execGetPartyMapName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.IsPartyLeader
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execIsPartyLeader_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -10968,7 +10968,7 @@ struct APlayerController_eventClientSetForceMipLevelsToBeResident_Parms
 };
 
 // Function Engine.PlayerController.ClientControlMovieTexture
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientControlMovieTexture_Parms
 {
 	class UTextureMovie*                               MovieTexture;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -10976,14 +10976,14 @@ struct APlayerController_execClientControlMovieTexture_Parms
 };
 
 // Function Engine.PlayerController.GetSplitscreenPlayerCount
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execGetSplitscreenPlayerCount_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.GetSplitscreenPlayerByIndex
-// [0x00024102] 
+// [0x00024102]
 struct APlayerController_execGetSplitscreenPlayerByIndex_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -11006,21 +11006,21 @@ struct APlayerController_execIsPrimaryPlayer_Parms
 };
 
 // Function Engine.PlayerController.ServerNotifyPartyHostLeaving
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerNotifyPartyHostLeaving_Parms
 {
 	struct FUniqueNetId                                PartyHostPlayerId;                                		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientNotifyPartyHostLeaving
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientNotifyPartyHostLeaving_Parms
 {
 	struct FUniqueNetId                                PartyHostPlayerId;                                		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientReturnToParty
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientReturnToParty_Parms
 {
 	struct FUniqueNetId                                RequestingPlayerId;                               		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -11028,7 +11028,7 @@ struct APlayerController_execClientReturnToParty_Parms
 };
 
 // Function Engine.PlayerController.OnJoinTravelToSessionComplete
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnJoinTravelToSessionComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11037,7 +11037,7 @@ struct APlayerController_execOnJoinTravelToSessionComplete_Parms
 };
 
 // Function Engine.PlayerController.PreJoinUpdateGameSettings
-// [0x00020100] 
+// [0x00020100]
 struct APlayerController_execPreJoinUpdateGameSettings_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11045,13 +11045,13 @@ struct APlayerController_execPreJoinUpdateGameSettings_Parms
 };
 
 // Function Engine.PlayerController.ClientTravelToSession
-// [0x018201C2] 
+// [0x018201C2]
 struct APlayerController_execClientTravelToSession_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
-	// struct FOnlineGameSearchResult                  SessionToJoin;                                    		// 0x0064 (0x0008) [0x0000000000000000]              
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	// struct FOnlineGameSearchResult                  SessionToJoin;                                    		// 0x0064 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.PathClear
@@ -11084,13 +11084,13 @@ struct APlayerController_execShouldCheckRemoteControlCheckbox_Parms
 };
 
 // Function Engine.PlayerController.NotifyGameUnPaused
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execNotifyGameUnPaused_Parms
 {
 };
 
 // Function Engine.PlayerController.NotifyGamePaused
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execNotifyGamePaused_Parms
 {
 };
@@ -11103,39 +11103,39 @@ struct APlayerController_eventSoakPause_Parms
 };
 
 // Function Engine.PlayerController.IncrementNumberOfMatchesPlayed
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execIncrementNumberOfMatchesPlayed_Parms
 {
 };
 
 // Function Engine.PlayerController.CanViewUserCreatedContent
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCanViewUserCreatedContent_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.ClientEndOnlineGame
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientEndOnlineGame_Parms
 {
 };
 
 // Function Engine.PlayerController.ClientStartOnlineGame
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientStartOnlineGame_Parms
 {
 };
 
 // Function Engine.PlayerController.ServerRegisterClientStatGuid
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerRegisterClientStatGuid_Parms
 {
 	struct FString                                     StatGuid;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.OnRegisterHostStatGuidComplete
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnRegisterHostStatGuidComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -11143,7 +11143,7 @@ struct APlayerController_execOnRegisterHostStatGuidComplete_Parms
 };
 
 // Function Engine.PlayerController.ClientRegisterHostStatGuid
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientRegisterHostStatGuid_Parms
 {
 	struct FString                                     StatGuid;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -11184,41 +11184,41 @@ struct APlayerController_eventDrawDebugTextList_Parms
 {
 	class UCanvas*                                     Canvas;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              RenderDelta;                                      		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  cameraLoc;                                        		// 0x0008 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  ScreenLoc;                                        		// 0x0014 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Offset;                                           		// 0x0020 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  WorldTextLoc;                                     		// 0x002C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 cameraRot;                                        		// 0x0038 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  cameraLoc;                                        		// 0x0008 (0x000C) [0x0000000000000000]
+	// struct FVector                                  ScreenLoc;                                        		// 0x0014 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Offset;                                           		// 0x0020 (0x000C) [0x0000000000000000]
+	// struct FVector                                  WorldTextLoc;                                     		// 0x002C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 cameraRot;                                        		// 0x0038 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.OnDestroy
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execOnDestroy_Parms
 {
 	class USeqAct_Destroy*                             Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientStartNetworkedVoice
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientStartNetworkedVoice_Parms
 {
 };
 
 // Function Engine.PlayerController.ClientStopNetworkedVoice
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientStopNetworkedVoice_Parms
 {
 };
 
 // Function Engine.PlayerController.ClientSetHostUniqueId
-// [0x010201C0] 
+// [0x010201C0]
 struct APlayerController_execClientSetHostUniqueId_Parms
 {
 	struct FUniqueNetId                                InHostId;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientWriteLeaderboardStats
-// [0x010241C0] 
+// [0x010241C0]
 struct APlayerController_execClientWriteLeaderboardStats_Parms
 {
 	class UClass*                                      OnlineStatsWriteClass;                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11226,40 +11226,40 @@ struct APlayerController_execClientWriteLeaderboardStats_Parms
 };
 
 // Function Engine.PlayerController.ClientWriteOnlinePlayerScores
-// [0x018201C2] 
+// [0x018201C2]
 struct APlayerController_execClientWriteOnlinePlayerScores_Parms
 {
 	int                                                LeaderboardId;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	// TArray< struct FOnlinePlayerScore >             PlayerScores;                                     		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FUniqueNetId                             ZeroUniqueId;                                     		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroUniqueId;                                     		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ClientArbitratedMatchEnded
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientArbitratedMatchEnded_Parms
 {
 };
 
 // Function Engine.PlayerController.NotifyNotEnoughSpaceInInvite
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execNotifyNotEnoughSpaceInInvite_Parms
 {
 };
 
 // Function Engine.PlayerController.NotifyNotAllPlayersCanJoinInvite
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execNotifyNotAllPlayersCanJoinInvite_Parms
 {
 };
 
 // Function Engine.PlayerController.NotifyInviteFailed
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execNotifyInviteFailed_Parms
 {
 };
 
 // Function Engine.PlayerController.OnInviteJoinComplete
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnInviteJoinComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11269,7 +11269,7 @@ struct APlayerController_execOnInviteJoinComplete_Parms
 };
 
 // Function Engine.PlayerController.ModifyClientURL
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execModifyClientURL_Parms
 {
 	struct FString                                     URL;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -11277,7 +11277,7 @@ struct APlayerController_execModifyClientURL_Parms
 };
 
 // Function Engine.PlayerController.OnDestroyForInviteComplete
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnDestroyForInviteComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11285,7 +11285,7 @@ struct APlayerController_execOnDestroyForInviteComplete_Parms
 };
 
 // Function Engine.PlayerController.OnEndForInviteComplete
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnEndForInviteComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11293,20 +11293,20 @@ struct APlayerController_execOnEndForInviteComplete_Parms
 };
 
 // Function Engine.PlayerController.ClearInviteDelegates
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execClearInviteDelegates_Parms
 {
 };
 
 // Function Engine.PlayerController.CanAllPlayersPlayOnline
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCanAllPlayersPlayOnline_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.InviteHasEnoughSpace
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execInviteHasEnoughSpace_Parms
 {
 	class UOnlineGameSettings*                         InviteSettings;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11314,21 +11314,21 @@ struct APlayerController_execInviteHasEnoughSpace_Parms
 };
 
 // Function Engine.PlayerController.OnGameInviteAccepted
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execOnGameInviteAccepted_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PlayerController.ServerRegisteredForArbitration
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerRegisteredForArbitration_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.OnArbitrationRegisterComplete
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnArbitrationRegisterComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11336,7 +11336,7 @@ struct APlayerController_execOnArbitrationRegisterComplete_Parms
 };
 
 // Function Engine.PlayerController.ClientRegisterForArbitration
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientRegisterForArbitration_Parms
 {
 };
@@ -11384,14 +11384,14 @@ struct APlayerController_eventServerMutePlayer_Parms
 };
 
 // Function Engine.PlayerController.GameplayUnmutePlayer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execGameplayUnmutePlayer_Parms
 {
 	struct FUniqueNetId                                PlayerNetId;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.GameplayMutePlayer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execGameplayMutePlayer_Parms
 {
 	struct FUniqueNetId                                PlayerNetId;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -11412,7 +11412,7 @@ struct APlayerController_eventClientMutePlayer_Parms
 };
 
 // Function Engine.PlayerController.ClientVoiceHandshakeComplete
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientVoiceHandshakeComplete_Parms
 {
 };
@@ -11426,20 +11426,20 @@ struct APlayerController_execGetPlayerControllerFromNetId_Parms
 };
 
 // Function Engine.PlayerController.ClientSetOnlineStatus
-// [0x010201C0] 
+// [0x010201C0]
 struct APlayerController_execClientSetOnlineStatus_Parms
 {
 };
 
 // Function Engine.PlayerController.SeamlessTravelFrom
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSeamlessTravelFrom_Parms
 {
 	class APlayerController*                           OldPC;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.SeamlessTravelTo
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execSeamlessTravelTo_Parms
 {
 	class APlayerController*                           NewPC;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11483,7 +11483,7 @@ struct APlayerController_execSaveClassConfig_Parms
 };
 
 // Function Engine.PlayerController.ClientWaitForLevelsVisible
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientWaitForLevelsVisible_Parms
 {
 	class USeqAct_WaitForLevelsVisible*                inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11514,7 +11514,7 @@ struct APlayerController_eventClientCommitMapChange_Parms
 };
 
 // Function Engine.PlayerController.DelayedPrepareMapChange
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execDelayedPrepareMapChange_Parms
 {
 };
@@ -11577,7 +11577,7 @@ struct APlayerController_eventClientForceGarbageCollection_Parms
 };
 
 // Function Engine.PlayerController.OnConsoleCommand
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnConsoleCommand_Parms
 {
 	class USeqAct_ConsoleCommand*                      inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11585,7 +11585,7 @@ struct APlayerController_execOnConsoleCommand_Parms
 };
 
 // Function Engine.PlayerController.ResetPlayerMovementInput
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execResetPlayerMovementInput_Parms
 {
 };
@@ -11598,7 +11598,7 @@ struct APlayerController_eventIsButtonInputIgnored_Parms
 };
 
 // Function Engine.PlayerController.IgnoreButtonInput
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execIgnoreButtonInput_Parms
 {
 	unsigned long                                      bNewButtonInput : 1;                              		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -11612,7 +11612,7 @@ struct APlayerController_execIsLookInputIgnored_Parms
 };
 
 // Function Engine.PlayerController.IgnoreLookInput
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execIgnoreLookInput_Parms
 {
 	unsigned long                                      bNewLookInput : 1;                                		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -11626,14 +11626,14 @@ struct APlayerController_execIsMoveInputIgnored_Parms
 };
 
 // Function Engine.PlayerController.IgnoreMoveInput
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execIgnoreMoveInput_Parms
 {
 	unsigned long                                      bNewMoveInput : 1;                                		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientSetCinematicMode
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientSetCinematicMode_Parms
 {
 	unsigned long                                      bInCinematicMode : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -11647,7 +11647,7 @@ struct APlayerController_execClientSetCinematicMode_Parms
 };
 
 // Function Engine.PlayerController.SetCinematicMode
-// [0x00024002] 
+// [0x00024002]
 struct APlayerController_execSetCinematicMode_Parms
 {
 	unsigned long                                      bInCinematicMode : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -11664,14 +11664,14 @@ struct APlayerController_execSetCinematicMode_Parms
 };
 
 // Function Engine.PlayerController.OnToggleCinematicMode
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnToggleCinematicMode_Parms
 {
 	class USeqAct_ToggleCinematicMode*                 Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.IsForceFeedbackAllowed
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execIsForceFeedbackAllowed_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -11704,7 +11704,7 @@ struct APlayerController_execClientPlayForceFeedbackWaveform_Parms
 };
 
 // Function Engine.PlayerController.IsShotForceFeedbackAllowedByPlayerProfile
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execIsShotForceFeedbackAllowedByPlayerProfile_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -11718,14 +11718,14 @@ struct APlayerController_eventPlayRumble_Parms
 };
 
 // Function Engine.PlayerController.OnForceFeedback
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnForceFeedback_Parms
 {
 	class USeqAct_ForceFeedback*                       Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.NotifyTakeHit
-// [0x00024002] 
+// [0x00024002]
 struct APlayerController_execNotifyTakeHit_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11750,7 +11750,7 @@ struct APlayerController_execShowPlayerState_Parms
 };
 
 // Function Engine.PlayerController.ServerRemoteEvent
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerRemoteEvent_Parms
 {
 	struct FName                                       EventName;                                        		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11799,7 +11799,7 @@ struct APlayerController_execCauseEvent_Parms
 };
 
 // Function Engine.PlayerController.ServerCauseEvent
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerCauseEvent_Parms
 {
 	struct FName                                       EventName;                                        		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -11807,14 +11807,14 @@ struct APlayerController_execServerCauseEvent_Parms
 };
 
 // Function Engine.PlayerController.OnToggleHUD
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execOnToggleHUD_Parms
 {
 	class USeqAct_ToggleHUD*                           inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.OnSetCameraTarget
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execOnSetCameraTarget_Parms
 {
 	class USeqAct_SetCameraTarget*                     inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11836,28 +11836,28 @@ struct APlayerController_execClientDrawKismetText_Parms
 };
 
 // Function Engine.PlayerController.OnDrawText
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnDrawText_Parms
 {
 	class USeqAct_DrawText*                            inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientIgnoreLookInput
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientIgnoreLookInput_Parms
 {
 	unsigned long                                      bIgnore : 1;                                      		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientIgnoreMoveInput
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientIgnoreMoveInput_Parms
 {
 	unsigned long                                      bIgnore : 1;                                      		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.OnToggleInput
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnToggleInput_Parms
 {
 	class USeqAct_ToggleInput*                         inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11871,28 +11871,28 @@ struct APlayerController_execDrawHUD_Parms
 };
 
 // Function Engine.PlayerController.CanRestartPlayer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCanRestartPlayer_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.ServerViewSelf
-// [0x00224042] 
+// [0x00224042]
 struct APlayerController_execServerViewSelf_Parms
 {
 	struct FViewTargetTransitionParams                 TransitionParams;                                 		// 0x0000 (0x0010) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function Engine.PlayerController.ViewAPlayer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execViewAPlayer_Parms
 {
 	int                                                Dir;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.GetNextViewablePlayer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execGetNextViewablePlayer_Parms
 {
 	int                                                Dir;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11900,40 +11900,40 @@ struct APlayerController_execGetNextViewablePlayer_Parms
 };
 
 // Function Engine.PlayerController.ServerViewPrevPlayer
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerViewPrevPlayer_Parms
 {
 };
 
 // Function Engine.PlayerController.ServerViewNextPlayer
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerViewNextPlayer_Parms
 {
 };
 
 // Function Engine.PlayerController.ServerSetSpectatorLocation
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerSetSpectatorLocation_Parms
 {
 	struct FVector                                     NewLoc;                                           		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.IsSpectating
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execIsSpectating_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.AdjustPlayerWalkingMoveAccel
-// [0x00420000] 
+// [0x00420000]
 struct APlayerController_execAdjustPlayerWalkingMoveAccel_Parms
 {
 	struct FVector                                     newAccel;                                         		// 0x0000 (0x000C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PlayerController.CheckJumpOrDuck
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCheckJumpOrDuck_Parms
 {
 };
@@ -11949,7 +11949,7 @@ struct APlayerController_eventLimitViewRotation_Parms
 };
 
 // Function Engine.PlayerController.ProcessViewRotation
-// [0x00420002] 
+// [0x00420002]
 struct APlayerController_execProcessViewRotation_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11958,17 +11958,17 @@ struct APlayerController_execProcessViewRotation_Parms
 };
 
 // Function Engine.PlayerController.UpdateRotation
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execUpdateRotation_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FRotator                                 DeltaRot;                                         		// 0x0004 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 NewRotation;                                      		// 0x0010 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 ViewRotation;                                     		// 0x001C (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 DeltaRot;                                         		// 0x0004 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 NewRotation;                                      		// 0x0010 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 ViewRotation;                                     		// 0x001C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ViewShake
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execViewShake_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -11990,7 +11990,7 @@ struct APlayerController_eventSpawnPlayerCamera_Parms
 };
 
 // Function Engine.PlayerController.ServerVerifyViewTarget
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerVerifyViewTarget_Parms
 {
 };
@@ -12019,7 +12019,7 @@ struct APlayerController_execSetViewTargetWithBlend_Parms
 	unsigned char                                      BlendFunc;                                        		// 0x0008 (0x0001) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	float                                              BlendExp;                                         		// 0x000C (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      bLockOutgoing : 1;                                		// 0x0010 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
-	// struct FViewTargetTransitionParams              TransitionParams;                                 		// 0x0014 (0x0010) [0x0000000000000000]              
+	// struct FViewTargetTransitionParams              TransitionParams;                                 		// 0x0014 (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.SetViewTarget
@@ -12059,7 +12059,7 @@ struct APlayerController_eventGetFOVAngle_Parms
 };
 
 // Function Engine.PlayerController.AdjustFOV
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execAdjustFOV_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12075,7 +12075,7 @@ struct APlayerController_eventNotifyLanded_Parms
 };
 
 // Function Engine.PlayerController.AimHelpDot
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execAimHelpDot_Parms
 {
 	unsigned long                                      bInstantHit : 1;                                  		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -12083,20 +12083,20 @@ struct APlayerController_execAimHelpDot_Parms
 };
 
 // Function Engine.PlayerController.GetAdjustedAimFor
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execGetAdjustedAimFor_Parms
 {
 	class AWeapon*                                     W;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     StartFireLoc;                                     		// 0x0004 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    ReturnValue;                                      		// 0x0010 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  FireDir;                                          		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  AimSpot;                                          		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitLocation;                                      		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0040 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  OldAim;                                           		// 0x004C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  AimOffset;                                        		// 0x0058 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 BaseAimRot;                                       		// 0x007C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 AimRot;                                           		// 0x0088 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  FireDir;                                          		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FVector                                  AimSpot;                                          		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitLocation;                                      		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0040 (0x000C) [0x0000000000000000]
+	// struct FVector                                  OldAim;                                           		// 0x004C (0x000C) [0x0000000000000000]
+	// struct FVector                                  AimOffset;                                        		// 0x0058 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 BaseAimRot;                                       		// 0x007C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 AimRot;                                           		// 0x0088 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.CameraLookAtFinished
@@ -12107,7 +12107,7 @@ struct APlayerController_eventCameraLookAtFinished_Parms
 };
 
 // Function Engine.PlayerController.AimingHelp
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execAimingHelp_Parms
 {
 	unsigned long                                      bInstantHit : 1;                                  		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -12115,7 +12115,7 @@ struct APlayerController_execAimingHelp_Parms
 };
 
 // Function Engine.PlayerController.PlayerMove
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execPlayerMove_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12129,7 +12129,7 @@ struct APlayerController_eventPlayerTick_Parms
 };
 
 // Function Engine.PlayerController.NotifyChangedWeapon
-// [0x00024000] 
+// [0x00024000]
 struct APlayerController_execNotifyChangedWeapon_Parms
 {
 	class AWeapon*                                     PreviousWeapon;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12138,7 +12138,7 @@ struct APlayerController_execNotifyChangedWeapon_Parms
 };
 
 // Function Engine.PlayerController.ClientGameEnded
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientGameEnded_Parms
 {
 	class AActor*                                      EndGameFocus;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12146,7 +12146,7 @@ struct APlayerController_execClientGameEnded_Parms
 };
 
 // Function Engine.PlayerController.GameHasEnded
-// [0x00024002] 
+// [0x00024002]
 struct APlayerController_execGameHasEnded_Parms
 {
 	class AActor*                                      EndGameFocus;                                     		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -12154,17 +12154,17 @@ struct APlayerController_execGameHasEnded_Parms
 };
 
 // Function Engine.PlayerController.ClientRestart
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientRestart_Parms
 {
 	class APawn*                                       NewPawn;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.EnterStartState
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execEnterStartState_Parms
 {
-	// struct FName                                    NewState;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	// struct FName                                    NewState;                                         		// 0x0000 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ForceSingleNetUpdateFor
@@ -12187,7 +12187,7 @@ struct APlayerController_eventNotifyLoadedWorld_Parms
 {
 	struct FName                                       WorldPackageName;                                 		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bFinalDest : 1;                                   		// 0x0008 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// struct FRotator                                 SpawnRotation;                                    		// 0x0010 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 SpawnRotation;                                    		// 0x0010 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ServerNotifyLoadedWorld
@@ -12198,7 +12198,7 @@ struct APlayerController_eventServerNotifyLoadedWorld_Parms
 };
 
 // Function Engine.PlayerController.Restart
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execRestart_Parms
 {
 	unsigned long                                      bVehicleTransition : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -12222,7 +12222,7 @@ struct APlayerController_execSwitchLevel_Parms
 };
 
 // Function Engine.PlayerController.ServerChangeTeam
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerChangeTeam_Parms
 {
 	int                                                N;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12242,7 +12242,7 @@ struct APlayerController_execSwitchTeam_Parms
 };
 
 // Function Engine.PlayerController.ServerChangeName
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerChangeName_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400880]              ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
@@ -12257,7 +12257,7 @@ struct APlayerController_execSetName_Parms
 };
 
 // Function Engine.PlayerController.ServerSuicide
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerSuicide_Parms
 {
 };
@@ -12269,36 +12269,36 @@ struct APlayerController_execSuicide_Parms
 };
 
 // Function Engine.PlayerController.TriggerInteracted
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execTriggerInteracted_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  cameraLoc;                                        		// 0x0014 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 cameraRot;                                        		// 0x0020 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  cameraLoc;                                        		// 0x0014 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 cameraRot;                                        		// 0x0020 (0x000C) [0x0000000000000000]
 	// TArray< class ATrigger* >                       useList;                                          		// 0x002C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< class AActor* >                         sortedList;                                       		// 0x0038 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< float >                                 weightList;                                       		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.FindVehicleToDrive
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execFindVehicleToDrive_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  ViewDir;                                          		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  PawnLoc2D;                                        		// 0x0018 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  VLoc2D;                                           		// 0x0024 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ViewDir;                                          		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FVector                                  PawnLoc2D;                                        		// 0x0018 (0x000C) [0x0000000000000000]
+	// struct FVector                                  VLoc2D;                                           		// 0x0024 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.PerformedUseAction
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execPerformedUseAction_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.ServerUse
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerUse_Parms
 {
 };
@@ -12310,7 +12310,7 @@ struct APlayerController_execUse_Parms
 };
 
 // Function Engine.PlayerController.GetTriggerUseList
-// [0x00C20002] 
+// [0x00C20002]
 struct APlayerController_execGetTriggerUseList_Parms
 {
 	float                                              interactDistanceToCheck;                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12318,8 +12318,8 @@ struct APlayerController_execGetTriggerUseList_Parms
 	float                                              minDot;                                           		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bUsuableOnly : 1;                                 		// 0x000C (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	TArray< class ATrigger* >                          out_useList;                                      		// 0x0010 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	// struct FVector                                  cameraLoc;                                        		// 0x0020 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 cameraRot;                                        		// 0x002C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  cameraLoc;                                        		// 0x0020 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 cameraRot;                                        		// 0x002C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.StopAltFire
@@ -12363,7 +12363,7 @@ struct APlayerController_execPrevWeapon_Parms
 };
 
 // Function Engine.PlayerController.ServerThrowWeapon
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerThrowWeapon_Parms
 {
 };
@@ -12381,7 +12381,7 @@ struct APlayerController_execUTrace_Parms
 };
 
 // Function Engine.PlayerController.ServerUTrace
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerUTrace_Parms
 {
 };
@@ -12394,7 +12394,7 @@ struct APlayerController_eventConditionalPause_Parms
 };
 
 // Function Engine.PlayerController.ServerPause
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerPause_Parms
 {
 };
@@ -12413,7 +12413,7 @@ struct APlayerController_execIsPaused_Parms
 };
 
 // Function Engine.PlayerController.SetPause
-// [0x00024002] 
+// [0x00024002]
 struct APlayerController_execSetPause_Parms
 {
 	unsigned long                                      bPause : 1;                                       		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -12422,21 +12422,21 @@ struct APlayerController_execSetPause_Parms
 };
 
 // Function Engine.PlayerController.CanUnpause
-// [0x00120002] 
+// [0x00120002]
 struct APlayerController_execCanUnpause_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.ClientPauseRumble
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientPauseRumble_Parms
 {
 	unsigned long                                      bShouldPauseRumble : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.PauseRumbleForAllPlayers
-// [0x00024002] 
+// [0x00024002]
 struct APlayerController_execPauseRumbleForAllPlayers_Parms
 {
 	unsigned long                                      bShouldPauseRumble : 1;                           		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -12456,7 +12456,7 @@ struct APlayerController_execRestartLevel_Parms
 };
 
 // Function Engine.PlayerController.ServerSpeech
-// [0x002200C0] 
+// [0x002200C0]
 struct APlayerController_execServerSpeech_Parms
 {
 	struct FName                                       Type;                                             		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -12474,7 +12474,7 @@ struct APlayerController_execSpeech_Parms
 };
 
 // Function Engine.PlayerController.ServerRestartGame
-// [0x002200C0] 
+// [0x002200C0]
 struct APlayerController_execServerRestartGame_Parms
 {
 };
@@ -12486,16 +12486,16 @@ struct APlayerController_execHandleWalking_Parms
 };
 
 // Function Engine.PlayerController.ServerUpdateCamera
-// [0x00A20042] 
+// [0x00A20042]
 struct APlayerController_execServerUpdateCamera_Parms
 {
 	struct FVector                                     CamLoc;                                           		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	int                                                CamPitchAndYaw;                                   		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FTPOV                                    NewPOV;                                           		// 0x0010 (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    NewPOV;                                           		// 0x0010 (0x001C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.CallServerMove
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execCallServerMove_Parms
 {
 	class USavedMove*                                  NewMove;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12503,11 +12503,11 @@ struct APlayerController_execCallServerMove_Parms
 	unsigned char                                      ClientRoll;                                       		// 0x0010 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	int                                                View;                                             		// 0x0014 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class USavedMove*                                  OldMove;                                          		// 0x0018 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  BuildAccel;                                       		// 0x001C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  BuildAccel;                                       		// 0x001C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ReplicateMove
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execReplicateMove_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12518,7 +12518,7 @@ struct APlayerController_execReplicateMove_Parms
 };
 
 // Function Engine.PlayerController.CompressAccel
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCompressAccel_Parms
 {
 	int                                                C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12533,34 +12533,34 @@ struct APlayerController_execGetFreeMove_Parms
 };
 
 // Function Engine.PlayerController.ClientUpdatePosition
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execClientUpdatePosition_Parms
 {
-	// unsigned char                                   RealRootMotionMode;                               		// 0x001C (0x0001) [0x0000000000000000]              
+	// unsigned char                                   RealRootMotionMode;                               		// 0x001C (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ClearAckedMoves
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execClearAckedMoves_Parms
 {
 };
 
 // Function Engine.PlayerController.ServerUpdatePing
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerUpdatePing_Parms
 {
 	int                                                NewPing;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.UpdateStateFromAdjustment
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execUpdateStateFromAdjustment_Parms
 {
 	struct FName                                       NewState;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.LongClientAdjustPosition
-// [0x01820142] 
+// [0x01820142]
 struct APlayerController_execLongClientAdjustPosition_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12576,13 +12576,13 @@ struct APlayerController_execLongClientAdjustPosition_Parms
 	float                                              NewFloorX;                                        		// 0x002C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              NewFloorY;                                        		// 0x0030 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              NewFloorZ;                                        		// 0x0034 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  NewLocation;                                      		// 0x0038 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  NewVelocity;                                      		// 0x0044 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  NewFloor;                                         		// 0x0050 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  NewLocation;                                      		// 0x0038 (0x000C) [0x0000000000000000]
+	// struct FVector                                  NewVelocity;                                      		// 0x0044 (0x000C) [0x0000000000000000]
+	// struct FVector                                  NewFloor;                                         		// 0x0050 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.SkipPositionUpdateForRM
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSkipPositionUpdateForRM_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -12596,7 +12596,7 @@ struct APlayerController_execUpdatePing_Parms
 };
 
 // Function Engine.PlayerController.ClientAdjustPosition
-// [0x01820142] 
+// [0x01820142]
 struct APlayerController_execClientAdjustPosition_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12609,25 +12609,25 @@ struct APlayerController_execClientAdjustPosition_Parms
 	float                                              NewVelY;                                          		// 0x0020 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              NewVelZ;                                          		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class AActor*                                      NewBase;                                          		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  Floor;                                            		// 0x002C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Floor;                                            		// 0x002C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ClientAckGoodMove
-// [0x01020142] 
+// [0x01020142]
 struct APlayerController_execClientAckGoodMove_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientCapBandwidth
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientCapBandwidth_Parms
 {
 	int                                                Cap;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ShortClientAdjustPosition
-// [0x01820142] 
+// [0x01820142]
 struct APlayerController_execShortClientAdjustPosition_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12637,11 +12637,11 @@ struct APlayerController_execShortClientAdjustPosition_Parms
 	float                                              NewLocY;                                          		// 0x0014 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              NewLocZ;                                          		// 0x0018 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class AActor*                                      NewBase;                                          		// 0x001C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  Floor;                                            		// 0x0020 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Floor;                                            		// 0x0020 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.VeryShortClientAdjustPosition
-// [0x01820142] 
+// [0x01820142]
 struct APlayerController_execVeryShortClientAdjustPosition_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12649,7 +12649,7 @@ struct APlayerController_execVeryShortClientAdjustPosition_Parms
 	float                                              NewLocY;                                          		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              NewLocZ;                                          		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class AActor*                                      NewBase;                                          		// 0x0010 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  Floor;                                            		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Floor;                                            		// 0x0014 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.MoveAutonomous
@@ -12661,11 +12661,11 @@ struct APlayerController_eventMoveAutonomous_Parms
 	struct FVector                                     newAccel;                                         		// 0x0008 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    DeltaRot;                                         		// 0x0014 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      AnalogPct;                                        		// 0x0020 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   DoubleClickMove;                                  		// 0x0021 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   DoubleClickMove;                                  		// 0x0021 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ProcessMove
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execProcessMove_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12676,7 +12676,7 @@ struct APlayerController_execProcessMove_Parms
 };
 
 // Function Engine.PlayerController.UncompressAnalogMovePct
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execUncompressAnalogMovePct_Parms
 {
 	unsigned char                                      InAnalogPct;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -12684,7 +12684,7 @@ struct APlayerController_execUncompressAnalogMovePct_Parms
 };
 
 // Function Engine.PlayerController.CompressAnalogMovePct
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCompressAnalogMovePct_Parms
 {
 	float                                              InAnalogPct;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12692,7 +12692,7 @@ struct APlayerController_execCompressAnalogMovePct_Parms
 };
 
 // Function Engine.PlayerController.ProcessDrive
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execProcessDrive_Parms
 {
 	float                                              InForward;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12702,7 +12702,7 @@ struct APlayerController_execProcessDrive_Parms
 };
 
 // Function Engine.PlayerController.ServerDrive
-// [0x00A20042] 
+// [0x00A20042]
 struct APlayerController_execServerDrive_Parms
 {
 	float                                              InForward;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12710,7 +12710,7 @@ struct APlayerController_execServerDrive_Parms
 	float                                              aUp;                                              		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      InJump : 1;                                       		// 0x000C (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	int                                                View;                                             		// 0x0010 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FRotator                                 ViewRotation;                                     		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 ViewRotation;                                     		// 0x0014 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.SendClientAdjustment
@@ -12720,7 +12720,7 @@ struct APlayerController_eventSendClientAdjustment_Parms
 };
 
 // Function Engine.PlayerController.ServerMove
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerMove_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12746,7 +12746,7 @@ struct APlayerController_execPCServerMoveInner_Parms
 };
 
 // Function Engine.PlayerController.OldServerMove
-// [0x00A20042] 
+// [0x00A20042]
 struct APlayerController_execOldServerMove_Parms
 {
 	float                                              OldTimeStamp;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12755,11 +12755,11 @@ struct APlayerController_execOldServerMove_Parms
 	unsigned char                                      OldAccelZ;                                        		// 0x0006 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      OldMoveFlags;                                     		// 0x0007 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      OldAnalogPct;                                     		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  Accel;                                            		// 0x000C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Accel;                                            		// 0x000C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.DualServerMove
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execDualServerMove_Parms
 {
 	float                                              TimeStamp0;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -12777,7 +12777,7 @@ struct APlayerController_execDualServerMove_Parms
 };
 
 // Function Engine.PlayerController.ForceDeathUpdate
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execForceDeathUpdate_Parms
 {
 };
@@ -12806,21 +12806,21 @@ struct APlayerController_eventResetCameraMode_Parms
 };
 
 // Function Engine.PlayerController.SetCameraMode
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSetCameraMode_Parms
 {
 	struct FName                                       NewCamMode;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ClientSetCameraMode
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientSetCameraMode_Parms
 {
 	struct FName                                       NewCamMode;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ServerCamera
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerCamera_Parms
 {
 	struct FName                                       NewMode;                                          		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -12843,7 +12843,7 @@ struct APlayerController_eventPreClientTravel_Parms
 };
 
 // Function Engine.PlayerController.ServerTeamSay
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerTeamSay_Parms
 {
 	struct FString                                     msg;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -12857,14 +12857,14 @@ struct APlayerController_execTeamSay_Parms
 };
 
 // Function Engine.PlayerController.ClientAdminMessage
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientAdminMessage_Parms
 {
 	struct FString                                     msg;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.ServerSay
-// [0x00220042] 
+// [0x00220042]
 struct APlayerController_execServerSay_Parms
 {
 	struct FString                                     msg;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -12878,7 +12878,7 @@ struct APlayerController_execSay_Parms
 };
 
 // Function Engine.PlayerController.AllowTextMessage
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execAllowTextMessage_Parms
 {
 	struct FString                                     msg;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -12886,7 +12886,7 @@ struct APlayerController_execAllowTextMessage_Parms
 };
 
 // Function Engine.PlayerController.ServerMutate
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerMutate_Parms
 {
 	struct FString                                     MutateString;                                     		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -12907,20 +12907,20 @@ struct APlayerController_execFOV_Parms
 };
 
 // Function Engine.PlayerController.ResetFOV
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execResetFOV_Parms
 {
 };
 
 // Function Engine.PlayerController.SetFOV
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSetFOV_Parms
 {
 	float                                              NewFOV;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.FixFOV
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execFixFOV_Parms
 {
 };
@@ -12932,7 +12932,7 @@ struct APlayerController_eventDestroyed_Parms
 };
 
 // Function Engine.PlayerController.CleanupPawn
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCleanupPawn_Parms
 {
 };
@@ -12944,7 +12944,7 @@ struct APlayerController_eventClearOnlineDelegates_Parms
 };
 
 // Function Engine.PlayerController.OnPartyMembersInfoChanged
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execOnPartyMembersInfoChanged_Parms
 {
 	struct FString                                     PlayerName;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -12956,7 +12956,7 @@ struct APlayerController_execOnPartyMembersInfoChanged_Parms
 };
 
 // Function Engine.PlayerController.OnPartyMemberListChanged
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execOnPartyMemberListChanged_Parms
 {
 	unsigned long                                      bJoinedOrLeft : 1;                                		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -12965,13 +12965,13 @@ struct APlayerController_execOnPartyMemberListChanged_Parms
 };
 
 // Function Engine.PlayerController.RegisterOnlineDelegates
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execRegisterOnlineDelegates_Parms
 {
 };
 
 // Function Engine.PlayerController.PlayBeepSound
-// [0x00020000] 
+// [0x00020000]
 struct APlayerController_execPlayBeepSound_Parms
 {
 };
@@ -12987,7 +12987,7 @@ struct APlayerController_eventTeamMessage_Parms
 };
 
 // Function Engine.PlayerController.SpeakTTS
-// [0x00024102] 
+// [0x00024102]
 struct APlayerController_execSpeakTTS_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400880]              ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
@@ -13017,7 +13017,7 @@ struct APlayerController_execCreateTTSSoundCue_Parms
 };
 
 // Function Engine.PlayerController.AllowTTSMessageFrom
-// [0x00080102] 
+// [0x00080102]
 struct APlayerController_execAllowTTSMessageFrom_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13025,7 +13025,7 @@ struct APlayerController_execAllowTTSMessageFrom_Parms
 };
 
 // Function Engine.PlayerController.CanCommunicate
-// [0x00080102] 
+// [0x00080102]
 struct APlayerController_execCanCommunicate_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -13041,7 +13041,7 @@ struct APlayerController_eventClientMessage_Parms
 };
 
 // Function Engine.PlayerController.ClientPlayActorFaceFXAnim
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientPlayActorFaceFXAnim_Parms
 {
 	class AActor*                                      SourceActor;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13088,7 +13088,7 @@ struct APlayerController_eventKismet_ClientPlaySound_Parms
 };
 
 // Function Engine.PlayerController.IsClosestLocalPlayerToActor
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execIsClosestLocalPlayerToActor_Parms
 {
 	class AActor*                                      TheActor;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13154,7 +13154,7 @@ struct APlayerController_execGetPooledAudioComponent_Parms
 };
 
 // Function Engine.PlayerController.HearSoundFinished
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execHearSoundFinished_Parms
 {
 	class UAudioComponent*                             AC;                                               		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -13200,40 +13200,40 @@ struct APlayerController_eventReceiveLocalizedMessage_Parms
 };
 
 // Function Engine.PlayerController.CleanupPRI
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCleanupPRI_Parms
 {
 };
 
 // Function Engine.PlayerController.HandlePickup
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execHandlePickup_Parms
 {
 	class AInventory*                                  Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.SetLobbyShown
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSetLobbyShown_Parms
 {
 	unsigned long                                      bShown : 1;                                       		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.WasLobbyShown
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execWasLobbyShown_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.ClientNotifyPostInitialize
-// [0x010201C0] 
+// [0x010201C0]
 struct APlayerController_execClientNotifyPostInitialize_Parms
 {
 };
 
 // Function Engine.PlayerController.ClientSetHUD
-// [0x010241C2] 
+// [0x010241C2]
 struct APlayerController_execClientSetHUD_Parms
 {
 	class UClass*                                      newHUDType;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13241,7 +13241,7 @@ struct APlayerController_execClientSetHUD_Parms
 };
 
 // Function Engine.PlayerController.PawnDied
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execPawnDied_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13254,14 +13254,14 @@ struct APlayerController_eventUnPossess_Parms
 };
 
 // Function Engine.PlayerController.ServerAcknowledgePossession
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerAcknowledgePossession_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.AcknowledgePossession
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execAcknowledgePossession_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13276,20 +13276,20 @@ struct APlayerController_eventPossess_Parms
 };
 
 // Function Engine.PlayerController.GivePawn
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execGivePawn_Parms
 {
 	class APawn*                                       NewPawn;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.AskForPawn
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execAskForPawn_Parms
 {
 };
 
 // Function Engine.PlayerController.ClientGotoState
-// [0x010241C2] 
+// [0x010241C2]
 struct APlayerController_execClientGotoState_Parms
 {
 	struct FName                                       NewState;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13353,33 +13353,33 @@ struct APlayerController_execSetRumbleScale_Parms
 };
 
 // Function Engine.PlayerController.ReloadProfileSettings
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execReloadProfileSettings_Parms
 {
 };
 
 // Function Engine.PlayerController.UnregisterStandardPlayerDataStores
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execUnregisterStandardPlayerDataStores_Parms
 {
 	// TArray< class UClass* >                         PlayerDataStoreClasses;                           		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.UnregisterPlayerDataStores
-// [0x00020102] 
+// [0x00020102]
 struct APlayerController_execUnregisterPlayerDataStores_Parms
 {
 };
 
 // Function Engine.PlayerController.RegisterStandardPlayerDataStores
-// [0x00080102] 
+// [0x00080102]
 struct APlayerController_execRegisterStandardPlayerDataStores_Parms
 {
 	// TArray< class UClass* >                         PlayerDataStoreClasses;                           		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.RegisterCustomPlayerDataStores
-// [0x00080102] 
+// [0x00080102]
 struct APlayerController_execRegisterCustomPlayerDataStores_Parms
 {
 };
@@ -13391,7 +13391,7 @@ struct APlayerController_execRegisterPlayerDataStores_Parms
 };
 
 // Function Engine.PlayerController.ClientInitializeDataStores
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientInitializeDataStores_Parms
 {
 };
@@ -13411,38 +13411,38 @@ struct APlayerController_execGetOnlineSubsystem_Parms
 };
 
 // Function Engine.PlayerController.PostControllerIdChange
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execPostControllerIdChange_Parms
 {
-	// struct FUniqueNetId                             PlayerID;                                         		// 0x0004 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             PlayerID;                                         		// 0x0004 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.PreControllerIdChange
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execPreControllerIdChange_Parms
 {
 };
 
 // Function Engine.PlayerController.CleanOutSavedMoves
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCleanOutSavedMoves_Parms
 {
 };
 
 // Function Engine.PlayerController.ClientReset
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientReset_Parms
 {
 };
 
 // Function Engine.PlayerController.Reset
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execReset_Parms
 {
 };
 
 // Function Engine.PlayerController.SpawnDefaultHUD
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSpawnDefaultHUD_Parms
 {
 };
@@ -13454,7 +13454,7 @@ struct APlayerController_execEnableCheats_Parms
 };
 
 // Function Engine.PlayerController.AddCheats
-// [0x00024002] 
+// [0x00024002]
 struct APlayerController_execAddCheats_Parms
 {
 	unsigned long                                      bForce : 1;                                       		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -13467,13 +13467,13 @@ struct APlayerController_eventKickWarning_Parms
 };
 
 // Function Engine.PlayerController.ServerGivePawn
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execServerGivePawn_Parms
 {
 };
 
 // Function Engine.PlayerController.ServerShortTimeout
-// [0x002200C2] 
+// [0x002200C2]
 struct APlayerController_execServerShortTimeout_Parms
 {
 };
@@ -13485,7 +13485,7 @@ struct APlayerController_execResetTimeMargin_Parms
 };
 
 // Function Engine.PlayerController.OnJoinMigratedGame
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnJoinMigratedGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13493,7 +13493,7 @@ struct APlayerController_execOnJoinMigratedGame_Parms
 };
 
 // Function Engine.PlayerController.PeerDesignatedAsClient
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execPeerDesignatedAsClient_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13501,7 +13501,7 @@ struct APlayerController_execPeerDesignatedAsClient_Parms
 };
 
 // Function Engine.PlayerController.OnUnregisterPlayerCompleteForJoinMigrate
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnUnregisterPlayerCompleteForJoinMigrate_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13516,8 +13516,8 @@ struct APlayerController_eventPeerReceivedMigratedSession_Parms
 	struct FUniqueNetId                                FromPeerNetId;                                    		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 	struct FName                                       SessionName;                                      		// 0x0018 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0020 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0024 (0x0050) [0x0000000000000080]              ( CPF_Parm )
-	// struct FOnlineGameSearchResult                  SessionToJoin;                                    		// 0x0074 (0x0008) [0x0000000000000000]              
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0024 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	// struct FOnlineGameSearchResult                  SessionToJoin;                                    		// 0x0074 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.TellPeerToTravelToSession
@@ -13527,7 +13527,7 @@ struct APlayerController_execTellPeerToTravelToSession_Parms
 	struct FUniqueNetId                                ToPeerNetId;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 	struct FName                                       SessionName;                                      		// 0x0018 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0020 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0024 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0024 (0x0050) [0x0000000000000080]              ( CPF_Parm )
 	int                                                PlatformSpecificInfoSize;                         		// 0x0074 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
@@ -13547,29 +13547,29 @@ struct APlayerController_execPeerTravelAsHost_Parms
 };
 
 // Function Engine.PlayerController.GetNewPeerHostURL
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execGetNewPeerHostURL_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerController.PeerDesignatedAsHost
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execPeerDesignatedAsHost_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   PlatformInfo[ 0x50 ];                             		// 0x000C (0x0050) [0x0000000000000000]              
+	// unsigned char                                   PlatformInfo[ 0x50 ];                             		// 0x000C (0x0050) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.GetCurrentSearchClass
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execGetCurrentSearchClass_Parms
 {
 	class UClass*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.OnHostMigratedOnlineGame
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnHostMigratedOnlineGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13577,7 +13577,7 @@ struct APlayerController_execOnHostMigratedOnlineGame_Parms
 };
 
 // Function Engine.PlayerController.OnUnregisterPlayerCompleteForHostMigrate
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnUnregisterPlayerCompleteForHostMigrate_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13586,18 +13586,18 @@ struct APlayerController_execOnUnregisterPlayerCompleteForHostMigrate_Parms
 };
 
 // Function Engine.PlayerController.RemoveMissingPeersFromSession
-// [0x00820002] 
+// [0x00820002]
 struct APlayerController_execRemoveMissingPeersFromSession_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             UnregisterDelegate;                               		// 0x0008 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0014 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 	// TArray< struct FUniqueNetId >                   RegisteredPlayers;                                		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0024 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0024 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.OnMissingPeersUnregistered
-// [0x00120000] 
+// [0x00120000]
 struct APlayerController_execOnMissingPeersUnregistered_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13606,7 +13606,7 @@ struct APlayerController_execOnMissingPeersUnregistered_Parms
 };
 
 // Function Engine.PlayerController.GetRegisteredPlayersInSession
-// [0x00420000] 
+// [0x00420000]
 struct APlayerController_execGetRegisteredPlayersInSession_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -13614,7 +13614,7 @@ struct APlayerController_execGetRegisteredPlayersInSession_Parms
 };
 
 // Function Engine.PlayerController.NotifyHostMigrationStarted
-// [0x00020100] 
+// [0x00020100]
 struct APlayerController_execNotifyHostMigrationStarted_Parms
 {
 };
@@ -13627,7 +13627,7 @@ struct APlayerController_eventMigrateNewHost_Parms
 };
 
 // Function Engine.PlayerController.IsBestHostPeer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execIsBestHostPeer_Parms
 {
 	struct FUniqueNetId                                PeerNetId;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -13642,29 +13642,29 @@ struct APlayerController_eventNotifyPeerDisconnectHost_Parms
 };
 
 // Function Engine.PlayerController.ClientUpdateBestNextHosts
-// [0x010201C2] 
+// [0x010201C2]
 struct APlayerController_execClientUpdateBestNextHosts_Parms
 {
-	struct FUniqueNetId                                SortedNextHosts[ 0xA ];                           		// 0x0000 (0x00F0) [0x0000000000000080]              ( CPF_Parm )
+	struct FUniqueNetId                                SortedNextHosts[0xA];                           		// 0x0000 (0x00F0) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumEntries;                                       		// 0x00F0 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ServerRemovePeer
-// [0x00A200C2] 
+// [0x00A200C2]
 struct APlayerController_execServerRemovePeer_Parms
 {
 	struct FUniqueNetId                                PeerNetId;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.ServerAddPeer
-// [0x00A200C2] 
+// [0x00A200C2]
 struct APlayerController_execServerAddPeer_Parms
 {
 	struct FUniqueNetId                                PeerNetId;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NatType;                                          		// 0x0018 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x001C (0x0018) [0x0000000000000000]              
-	// struct FConnectedPeerInfo                       NewPeerInfo;                                      		// 0x0034 (0x0020) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x001C (0x0018) [0x0000000000000000]
+	// struct FConnectedPeerInfo                       NewPeerInfo;                                      		// 0x0034 (0x0020) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.RemovePeer
@@ -13672,7 +13672,7 @@ struct APlayerController_execServerAddPeer_Parms
 struct APlayerController_eventRemovePeer_Parms
 {
 	struct FUniqueNetId                                PeerNetId;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.AddPeer
@@ -13681,8 +13681,8 @@ struct APlayerController_eventAddPeer_Parms
 {
 	struct FUniqueNetId                                PeerNetId;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NatType;                                          		// 0x0018 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x001C (0x0018) [0x0000000000000000]              
-	// struct FConnectedPeerInfo                       NewPeerInfo;                                      		// 0x0034 (0x0020) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x001C (0x0018) [0x0000000000000000]
+	// struct FConnectedPeerInfo                       NewPeerInfo;                                      		// 0x0034 (0x0020) [0x0000000000000000]
 };
 
 // Function Engine.PlayerController.FindConnectedPeerIndex
@@ -13706,21 +13706,21 @@ struct APlayerController_eventPostBeginPlay_Parms
 };
 
 // Function Engine.PlayerController.SpawnCoverReplicator
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execSpawnCoverReplicator_Parms
 {
 	class ACoverReplicator*                            ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.CanUnpauseControllerConnected
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCanUnpauseControllerConnected_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.OnControllerChanged
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnControllerChanged_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -13728,45 +13728,45 @@ struct APlayerController_execOnControllerChanged_Parms
 };
 
 // Function Engine.PlayerController.CanUnpauseExternalUI
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execCanUnpauseExternalUI_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerController.OnExternalUIChanged
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execOnExternalUIChanged_Parms
 {
 	unsigned long                                      bIsOpening : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ForceClearUnpauseDelegates
-// [0x00020002] 
+// [0x00020002]
 struct APlayerController_execForceClearUnpauseDelegates_Parms
 {
 };
 
 // Function Engine.PlayerController.DisableActorHeadTracking
-// [0x01020140] 
+// [0x01020140]
 struct APlayerController_execDisableActorHeadTracking_Parms
 {
 	class AActor*                                      TargetActor;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.EnableActorHeadTracking
-// [0x01020140] 
+// [0x01020140]
 struct APlayerController_execEnableActorHeadTracking_Parms
 {
 	class AActor*                                      TargetActor;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	struct FName                                       TrackControllerName[ 0xA ];                       		// 0x0004 (0x0050) [0x0000000000000080]              ( CPF_Parm )
-	class UClass*                                      ActorClassesToLookAt[ 0xA ];                      		// 0x0054 (0x0028) [0x0000000000000080]              ( CPF_Parm )
+	struct FName                                       TrackControllerName[0xA];                       		// 0x0004 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	class UClass*                                      ActorClassesToLookAt[0xA];                      		// 0x0054 (0x0028) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bLookAtPawns : 1;                                 		// 0x007C (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	float                                              MinLookAtTime;                                    		// 0x0080 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              MaxLookAtTime;                                    		// 0x0084 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              MaxInterestTime;                                  		// 0x0088 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              LookAtActorRadius;                                		// 0x008C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	struct FName                                       TargetBoneNames[ 0xA ];                           		// 0x0090 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	struct FName                                       TargetBoneNames[0xA];                           		// 0x0090 (0x0050) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.FellOutOfWorld
@@ -13995,7 +13995,7 @@ struct UCheatManager_execLogPlaySoundCalls_Parms
 };
 
 // Function Engine.CheatManager.InitCheatManager
-// [0x00020000] 
+// [0x00020000]
 struct UCheatManager_execInitCheatManager_Parms
 {
 };
@@ -14142,7 +14142,7 @@ struct UDamagePipeline_execAdjustDamage_Parms
 };
 
 // Function Engine.DamageType.VehicleDamageScalingFor
-// [0x00022002] 
+// [0x00022002]
 struct UDamageType_execVehicleDamageScalingFor_Parms
 {
 	class AVehicle*                                    V;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14150,63 +14150,63 @@ struct UDamageType_execVehicleDamageScalingFor_Parms
 };
 
 // Function Engine.FacebookIntegration.ClearWebRequestCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UFacebookIntegration_execClearWebRequestCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.AddWebRequestCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UFacebookIntegration_execAddWebRequestCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.OnWebRequestComplete
-// [0x00120000] 
+// [0x00120000]
 struct UFacebookIntegration_execOnWebRequestComplete_Parms
 {
 	struct FString                                     Response;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.ClearFacebookRequestCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UFacebookIntegration_execClearFacebookRequestCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.AddFacebookRequestCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UFacebookIntegration_execAddFacebookRequestCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.OnFacebookRequestComplete
-// [0x00120000] 
+// [0x00120000]
 struct UFacebookIntegration_execOnFacebookRequestComplete_Parms
 {
 	struct FString                                     JsonString;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.ClearAuthorizationCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UFacebookIntegration_execClearAuthorizationCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.AddAuthorizationCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UFacebookIntegration_execAddAuthorizationCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             InDelegate;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.FacebookIntegration.OnAuthorizationComplete
-// [0x00120000] 
+// [0x00120000]
 struct UFacebookIntegration_execOnAuthorizationComplete_Parms
 {
 	unsigned long                                      bSucceeded : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -14327,14 +14327,14 @@ struct UMultiFont_execGetResolutionTestTableIndex_Parms
 };
 
 // Function Engine.ForceFeedbackManager.PauseWaveform
-// [0x00024102] 
+// [0x00024102]
 struct UForceFeedbackManager_execPauseWaveform_Parms
 {
 	unsigned long                                      bPause : 1;                                       		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function Engine.ForceFeedbackManager.StopForceFeedbackWaveform
-// [0x00024102] 
+// [0x00024102]
 struct UForceFeedbackManager_execStopForceFeedbackWaveform_Parms
 {
 	class UForceFeedbackWaveform*                      WaveForm;                                         		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -14356,7 +14356,7 @@ struct UForceFeedbackManager_execPlayForceFeedbackWaveform_Parms
 };
 
 // Function Engine.ForceFeedbackWaveform.CopyDataTo
-// [0x00420002] 
+// [0x00420002]
 struct UForceFeedbackWaveform_execCopyDataTo_Parms
 {
 	class UForceFeedbackWaveform*                      dst;                                              		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -14370,13 +14370,13 @@ struct UGameplayEvents_eventGetFilename_Parms
 };
 
 // Function Engine.GameplayEvents.CloseStatsFile
-// [0x00020000] 
+// [0x00020000]
 struct UGameplayEvents_execCloseStatsFile_Parms
 {
 };
 
 // Function Engine.GameplayEvents.OpenStatsFile
-// [0x00020000] 
+// [0x00020000]
 struct UGameplayEvents_execOpenStatsFile_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -14486,7 +14486,7 @@ struct UGameplayEventsReader_execOpenStatsFile_Parms
 };
 
 // Function Engine.GameplayEventsWriter.RecordCoverLinkFireLinks
-// [0x00020002] 
+// [0x00020002]
 struct UGameplayEventsWriter_execRecordCoverLinkFireLinks_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14495,7 +14495,7 @@ struct UGameplayEventsWriter_execRecordCoverLinkFireLinks_Parms
 };
 
 // Function Engine.GameplayEventsWriter.RecordAIPathFail
-// [0x00020000] 
+// [0x00020000]
 struct UGameplayEventsWriter_execRecordAIPathFail_Parms
 {
 	class AController*                                 AI;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14697,7 +14697,7 @@ struct UGameplayEventsWriter_eventGetGameTypeId_Parms
 };
 
 // Function Engine.GameplayEventsWriter.Poll
-// [0x00020002] 
+// [0x00020002]
 struct UGameplayEventsWriter_execPoll_Parms
 {
 };
@@ -14731,7 +14731,7 @@ struct UGameplayEventsWriter_execOpenStatsFile_Parms
 };
 
 // Function Engine.GameplayEventsWriter.IsSessionInProgress
-// [0x00020002] 
+// [0x00020002]
 struct UGameplayEventsWriter_execIsSessionInProgress_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -14766,14 +14766,14 @@ struct UGameplayEventsWriter_execResolvePlayerIndex_Parms
 };
 
 // Function Engine.GameplayEventsHandler.RemoveFilter
-// [0x00020002] 
+// [0x00020002]
 struct UGameplayEventsHandler_execRemoveFilter_Parms
 {
 	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameplayEventsHandler.AddFilter
-// [0x00020002] 
+// [0x00020002]
 struct UGameplayEventsHandler_execAddFilter_Parms
 {
 	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14798,7 +14798,7 @@ struct UGameplayEventsHandler_eventPreProcessStream_Parms
 };
 
 // Function Engine.GameplayEventsHandler.SetReader
-// [0x00020002] 
+// [0x00020002]
 struct UGameplayEventsHandler_execSetReader_Parms
 {
 	class UGameplayEventsReader*                       NewReader;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14813,7 +14813,7 @@ struct UGameViewportClient_execDebugSetUISystemEnabled_Parms
 };
 
 // Function Engine.GameViewportClient.BecomePrimaryPlayer
-// [0x00020002] 
+// [0x00020002]
 struct UGameViewportClient_execBecomePrimaryPlayer_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14822,7 +14822,7 @@ struct UGameViewportClient_execBecomePrimaryPlayer_Parms
 };
 
 // Function Engine.GameViewportClient.OnPrimaryPlayerSwitch
-// [0x00020000] 
+// [0x00020000]
 struct UGameViewportClient_execOnPrimaryPlayerSwitch_Parms
 {
 	class ULocalPlayer*                                OldPrimaryPlayer;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14858,7 +14858,7 @@ struct UGameViewportClient_execSetProgressTime_Parms
 };
 
 // Function Engine.GameViewportClient.NotifyConnectionError
-// [0x00024002] 
+// [0x00024002]
 struct UGameViewportClient_execNotifyConnectionError_Parms
 {
 	unsigned char                                      MessageType;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -14909,7 +14909,7 @@ struct UGameViewportClient_execNotifyPlayerAdded_Parms
 };
 
 // Function Engine.GameViewportClient.DisplayProgressMessage
-// [0x00020002] 
+// [0x00020002]
 struct UGameViewportClient_execDisplayProgressMessage_Parms
 {
 	class UCanvas*                                     Canvas;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -14923,7 +14923,7 @@ struct UGameViewportClient_eventPostRender_Parms
 };
 
 // Function Engine.GameViewportClient.DrawTitleSafeArea
-// [0x00020002] 
+// [0x00020002]
 struct UGameViewportClient_execDrawTitleSafeArea_Parms
 {
 	class UCanvas*                                     Canvas;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -15023,15 +15023,15 @@ struct UGameViewportClient_eventGetSubtitleRegion_Parms
 // [0x00020802] ( FUNC_Event )
 struct UGameViewportClient_eventLayoutPlayers_Parms
 {
-	// unsigned char                                   SplitType;                                        		// 0x0004 (0x0001) [0x0000000000000000]              
-	// unsigned char                                   PreviousSplitType;                                		// 0x0005 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   SplitType;                                        		// 0x0004 (0x0001) [0x0000000000000000]
+	// unsigned char                                   PreviousSplitType;                                		// 0x0005 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.GameViewportClient.UpdateActiveSplitscreenType
-// [0x00020002] 
+// [0x00020002]
 struct UGameViewportClient_execUpdateActiveSplitscreenType_Parms
 {
-	// unsigned char                                   SplitType;                                        		// 0x0000 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   SplitType;                                        		// 0x0000 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.GameViewportClient.GetSplitscreenConfiguration
@@ -15064,7 +15064,7 @@ struct UGameViewportClient_eventInsertInteraction_Parms
 };
 
 // Function Engine.GameViewportClient.CreateInitialPlayer
-// [0x00420002] 
+// [0x00420002]
 struct UGameViewportClient_execCreateInitialPlayer_Parms
 {
 	struct FString                                     OutError;                                         		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -15164,7 +15164,7 @@ struct UGameViewportClient_execConsoleCommand_Parms
 };
 
 // Function Engine.GameViewportClient.HandleInputChar
-// [0x00120000] 
+// [0x00120000]
 struct UGameViewportClient_execHandleInputChar_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -15173,7 +15173,7 @@ struct UGameViewportClient_execHandleInputChar_Parms
 };
 
 // Function Engine.GameViewportClient.HandleInputAxis
-// [0x00120000] 
+// [0x00120000]
 struct UGameViewportClient_execHandleInputAxis_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -15185,7 +15185,7 @@ struct UGameViewportClient_execHandleInputAxis_Parms
 };
 
 // Function Engine.GameViewportClient.HandleInputKey
-// [0x00124000] 
+// [0x00124000]
 struct UGameViewportClient_execHandleInputKey_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -15197,14 +15197,14 @@ struct UGameViewportClient_execHandleInputKey_Parms
 };
 
 // Function Engine.GBXDefinition.InitializeDefinitionActor
-// [0x00020100] 
+// [0x00020100]
 struct UGBXDefinition_execInitializeDefinitionActor_Parms
 {
 	class AActor*                                      DefinitionActor;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GBXDefinition.GetDefinitionActorClass
-// [0x00020100] 
+// [0x00020100]
 struct UGBXDefinition_execGetDefinitionActorClass_Parms
 {
 	class UClass*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -15235,7 +15235,7 @@ struct UGBXDefinition_execGetDefinition_Parms
 };
 
 // Function Engine.DamageTypeDefinition.CalcRadiusDamageScale
-// [0x00024002] 
+// [0x00024002]
 struct UDamageTypeDefinition_execCalcRadiusDamageScale_Parms
 {
 	float                                              Dist;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -15245,42 +15245,42 @@ struct UDamageTypeDefinition_execCalcRadiusDamageScale_Parms
 };
 
 // Function Engine.DamageTypeDefinition.GetMinDamagePercent
-// [0x00020000] 
+// [0x00020000]
 struct UDamageTypeDefinition_execGetMinDamagePercent_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DamageTypeDefinition.GetMinDamageRadius
-// [0x00020000] 
+// [0x00020000]
 struct UDamageTypeDefinition_execGetMinDamageRadius_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DamageTypeDefinition.GetMaxDamageRadius
-// [0x00020000] 
+// [0x00020000]
 struct UDamageTypeDefinition_execGetMaxDamageRadius_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DamageTypeDefinition.GetRigidBodyMomentumScale
-// [0x00020000] 
+// [0x00020000]
 struct UDamageTypeDefinition_execGetRigidBodyMomentumScale_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DamageTypeDefinition.GetUpwardMomentumScale
-// [0x00020000] 
+// [0x00020000]
 struct UDamageTypeDefinition_execGetUpwardMomentumScale_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DamageTypeDefinition.ApplyUpwardMomentum
-// [0x00020000] 
+// [0x00020000]
 struct UDamageTypeDefinition_execApplyUpwardMomentum_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -15555,7 +15555,7 @@ struct UGearboxEngineGlobals_execGetTexture2D_Parms
 };
 
 // Function Engine.GearboxEngineGlobals.OnDlgFinished
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxEngineGlobals_execOnDlgFinished_Parms
 {
 	class UIDialogBox*                                 Dlg;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -15683,7 +15683,7 @@ struct UIAnimBehavior_execSetAnimTreeTemplate_Parms
 };
 
 // Function Engine.IAnimBehavior.Behavior_ChangeBoneVisibility
-// [0x00020000] 
+// [0x00020000]
 struct UIAnimBehavior_execBehavior_ChangeBoneVisibility_Parms
 {
 	struct FName                                       InBoneName;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -15691,14 +15691,14 @@ struct UIAnimBehavior_execBehavior_ChangeBoneVisibility_Parms
 };
 
 // Function Engine.IAnimBehavior.Behavior_ToggleBoneVisibility
-// [0x00020000] 
+// [0x00020000]
 struct UIAnimBehavior_execBehavior_ToggleBoneVisibility_Parms
 {
 	struct FName                                       InBoneName;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.IAnimBehavior.Behavior_InstanceVertexWeight
-// [0x00020000] 
+// [0x00020000]
 struct UIAnimBehavior_execBehavior_InstanceVertexWeight_Parms
 {
 	struct FName                                       InBoneName;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -15728,7 +15728,7 @@ struct UIAnimBehavior_execFindSkelControl_Parms
 };
 
 // Function Engine.IAnimBehavior.PlayAnim
-// [0x00024000] 
+// [0x00024000]
 struct UIAnimBehavior_execPlayAnim_Parms
 {
 	struct FName                                       AnimName;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -15740,7 +15740,7 @@ struct UIAnimBehavior_execPlayAnim_Parms
 };
 
 // Function Engine.IAnimBehavior.Behavior_SetMorphNodeWeight
-// [0x00024000] 
+// [0x00024000]
 struct UIAnimBehavior_execBehavior_SetMorphNodeWeight_Parms
 {
 	struct FName                                       NodeName;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -15759,7 +15759,7 @@ struct UIAnimBehavior_execGetAnimTreeNodes_Parms
 };
 
 // Function Engine.IAnimBehavior.Behavior_SetSkelControlStrength
-// [0x00020000] 
+// [0x00020000]
 struct UIAnimBehavior_execBehavior_SetSkelControlStrength_Parms
 {
 	struct FName                                       SkelControlName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -16091,7 +16091,7 @@ struct UIFaceFXActor_execPlayFaceAnimation_Parms
 };
 
 // Function Engine.IKilledBehavior.Behavior_Killed
-// [0x00024000] 
+// [0x00024000]
 struct UIKilledBehavior_execBehavior_Killed_Parms
 {
 	class AActor*                                      Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -16108,27 +16108,27 @@ struct UIniLocPatcher_execUpdateLocFileName_Parms
 };
 
 // Function Engine.IniLocPatcher.ClearCachedFiles
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execClearCachedFiles_Parms
 {
 };
 
 // Function Engine.IniLocPatcher.ClearReadFileDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execClearReadFileDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.IniLocPatcher.AddReadFileDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execAddReadFileDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.IniLocPatcher.AddFileToDownload
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execAddFileToDownload_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -16145,7 +16145,7 @@ struct UIniLocPatcher_execProcessIniLocFile_Parms
 };
 
 // Function Engine.IniLocPatcher.OnReadFileComplete
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execOnReadFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -16154,20 +16154,20 @@ struct UIniLocPatcher_execOnReadFileComplete_Parms
 };
 
 // Function Engine.IniLocPatcher.DownloadFiles
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execDownloadFiles_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.IniLocPatcher.Init
-// [0x00020002] 
+// [0x00020002]
 struct UIniLocPatcher_execInit_Parms
 {
 };
 
 // Function Engine.IniLocPatcher.OnReadTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UIniLocPatcher_execOnReadTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -16197,7 +16197,7 @@ struct UIResourcePoolProvider_execGetResourcePoolForResourceDefinition_Parms
 };
 
 // Function Engine.ISpawnActor.GetSpawnOwner
-// [0x00020000] 
+// [0x00020000]
 struct UISpawnActor_execGetSpawnOwner_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -16260,7 +16260,7 @@ struct UITargetable_execIsBoss_Parms
 };
 
 // Function Engine.ITargetable.Behavior_RegisterTargetable
-// [0x00020000] 
+// [0x00020000]
 struct UITargetable_execBehavior_RegisterTargetable_Parms
 {
 	unsigned long                                      bUnregister : 1;                                  		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -16351,7 +16351,7 @@ struct UITargetable_execGetTargetableLocation_Parms
 };
 
 // Function Engine.ITargetable.Behavior_SetCanTarget
-// [0x00020000] 
+// [0x00020000]
 struct UITargetable_execBehavior_SetCanTarget_Parms
 {
 	unsigned char                                      ChangeStatus;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -16366,7 +16366,7 @@ struct UITargetable_execIsTargetable_Parms
 };
 
 // Function Engine.ITargetable.ShowSelfAsTarget
-// [0x00020000] 
+// [0x00020000]
 struct UITargetable_execShowSelfAsTarget_Parms
 {
 	unsigned long                                      bControllersOnly : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -16515,7 +16515,7 @@ struct UJsonObject_execEncodeJson_Parms
 };
 
 // Function Engine.JsonObject.SetBoolValue
-// [0x00020002] 
+// [0x00020002]
 struct UJsonObject_execSetBoolValue_Parms
 {
 	struct FString                                     Key;                                              		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
@@ -16523,7 +16523,7 @@ struct UJsonObject_execSetBoolValue_Parms
 };
 
 // Function Engine.JsonObject.SetFloatValue
-// [0x00020002] 
+// [0x00020002]
 struct UJsonObject_execSetFloatValue_Parms
 {
 	struct FString                                     Key;                                              		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
@@ -16531,7 +16531,7 @@ struct UJsonObject_execSetFloatValue_Parms
 };
 
 // Function Engine.JsonObject.SetIntValue
-// [0x00020002] 
+// [0x00020002]
 struct UJsonObject_execSetIntValue_Parms
 {
 	struct FString                                     Key;                                              		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
@@ -16555,7 +16555,7 @@ struct UJsonObject_execSetObject_Parms
 };
 
 // Function Engine.JsonObject.GetBoolValue
-// [0x00020002] 
+// [0x00020002]
 struct UJsonObject_execGetBoolValue_Parms
 {
 	struct FString                                     Key;                                              		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
@@ -16564,7 +16564,7 @@ struct UJsonObject_execGetBoolValue_Parms
 };
 
 // Function Engine.JsonObject.GetFloatValue
-// [0x00020002] 
+// [0x00020002]
 struct UJsonObject_execGetFloatValue_Parms
 {
 	struct FString                                     Key;                                              		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
@@ -16573,7 +16573,7 @@ struct UJsonObject_execGetFloatValue_Parms
 };
 
 // Function Engine.JsonObject.GetIntValue
-// [0x00020002] 
+// [0x00020002]
 struct UJsonObject_execGetIntValue_Parms
 {
 	struct FString                                     Key;                                              		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
@@ -16622,7 +16622,7 @@ struct UMaterialInterface_execSetForceMipLevelsToBeResident_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_SetColorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UMaterialInterface_execBehavior_SetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16631,7 +16631,7 @@ struct UMaterialInterface_execBehavior_SetColorParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_SetFloatParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UMaterialInterface_execBehavior_SetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16640,7 +16640,7 @@ struct UMaterialInterface_execBehavior_SetFloatParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_SetObjectParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UMaterialInterface_execBehavior_SetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16649,7 +16649,7 @@ struct UMaterialInterface_execBehavior_SetObjectParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_SetVectorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UMaterialInterface_execBehavior_SetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16658,7 +16658,7 @@ struct UMaterialInterface_execBehavior_SetVectorParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_GetColorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInterface_execBehavior_GetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16668,7 +16668,7 @@ struct UMaterialInterface_execBehavior_GetColorParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_GetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInterface_execBehavior_GetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16678,7 +16678,7 @@ struct UMaterialInterface_execBehavior_GetFloatParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_GetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInterface_execBehavior_GetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16688,7 +16688,7 @@ struct UMaterialInterface_execBehavior_GetObjectParameterValue_Parms
 };
 
 // Function Engine.MaterialInterface.Behavior_GetVectorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInterface_execBehavior_GetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -16792,35 +16792,35 @@ struct UOnlineSubsystem_execFindUniqueId_Parms
 };
 
 // Function Engine.OnlineSubsystem.ClearCachedProfile
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystem_execClearCachedProfile_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineSubsystem.SetDebugSpewLevel
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystem_execSetDebugSpewLevel_Parms
 {
 	int                                                DebugSpewLevel;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineSubsystem.DumpVoiceRegistration
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystem_execDumpVoiceRegistration_Parms
 {
 };
 
 // Function Engine.OnlineSubsystem.DumpSessionState
-// [0x00820002] 
+// [0x00820002]
 struct UOnlineSubsystem_execDumpSessionState_Parms
 {
-	// struct FUniqueNetId                             NetId;                                            		// 0x0008 (0x0018) [0x0000000000000000]              
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0020 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             NetId;                                            		// 0x0008 (0x0018) [0x0000000000000000]
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0020 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.OnlineSubsystem.DumpGameSettings
-// [0x00022002] 
+// [0x00022002]
 struct UOnlineSubsystem_execDumpGameSettings_Parms
 {
 	class UOnlineGameSettings*                         GameSettings;                                     		// 0x0000 (0x0004) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
@@ -16998,7 +16998,7 @@ struct UOnlineSubsystem_eventInit_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.GetServerAddr
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterfaceBaseImpl_execGetServerAddr_Parms
 {
 	int                                                OutServerIP;                                      		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -17007,7 +17007,7 @@ struct UOnlineAuthInterfaceBaseImpl_execGetServerAddr_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.GetServerUniqueId
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterfaceBaseImpl_execGetServerUniqueId_Parms
 {
 	struct FUniqueNetId                                OutServerUID;                                     		// 0x0000 (0x0018) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -17015,7 +17015,7 @@ struct UOnlineAuthInterfaceBaseImpl_execGetServerUniqueId_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.FindLocalServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execFindLocalServerAuthSession_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17023,7 +17023,7 @@ struct UOnlineAuthInterfaceBaseImpl_execFindLocalServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.FindServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execFindServerAuthSession_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17031,7 +17031,7 @@ struct UOnlineAuthInterfaceBaseImpl_execFindServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.FindLocalClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execFindLocalClientAuthSession_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17039,7 +17039,7 @@ struct UOnlineAuthInterfaceBaseImpl_execFindLocalClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.FindClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execFindClientAuthSession_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17047,7 +17047,7 @@ struct UOnlineAuthInterfaceBaseImpl_execFindClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.EndRemoteServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execEndRemoteServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17055,7 +17055,7 @@ struct UOnlineAuthInterfaceBaseImpl_execEndRemoteServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.EndLocalServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execEndLocalServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17063,7 +17063,7 @@ struct UOnlineAuthInterfaceBaseImpl_execEndLocalServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.VerifyServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execVerifyServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17073,7 +17073,7 @@ struct UOnlineAuthInterfaceBaseImpl_execVerifyServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.CreateServerAuthSession
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterfaceBaseImpl_execCreateServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17084,7 +17084,7 @@ struct UOnlineAuthInterfaceBaseImpl_execCreateServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.EndRemoteClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execEndRemoteClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17092,7 +17092,7 @@ struct UOnlineAuthInterfaceBaseImpl_execEndRemoteClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.EndLocalClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execEndLocalClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17101,7 +17101,7 @@ struct UOnlineAuthInterfaceBaseImpl_execEndLocalClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.VerifyClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execVerifyClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17112,7 +17112,7 @@ struct UOnlineAuthInterfaceBaseImpl_execVerifyClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.CreateClientAuthSession
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterfaceBaseImpl_execCreateClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17124,14 +17124,14 @@ struct UOnlineAuthInterfaceBaseImpl_execCreateClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.SendAuthRetryServer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execSendAuthRetryServer_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.SendAuthKillClient
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execSendAuthKillClient_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17139,7 +17139,7 @@ struct UOnlineAuthInterfaceBaseImpl_execSendAuthKillClient_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.SendAuthBlobServer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execSendAuthBlobServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17148,7 +17148,7 @@ struct UOnlineAuthInterfaceBaseImpl_execSendAuthBlobServer_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.SendAuthBlobClient
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execSendAuthBlobClient_Parms
 {
 	int                                                AuthBlobUID;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17156,7 +17156,7 @@ struct UOnlineAuthInterfaceBaseImpl_execSendAuthBlobClient_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.SendAuthRequestServer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execSendAuthRequestServer_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17164,7 +17164,7 @@ struct UOnlineAuthInterfaceBaseImpl_execSendAuthRequestServer_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.SendAuthRequestClient
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execSendAuthRequestClient_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17173,105 +17173,105 @@ struct UOnlineAuthInterfaceBaseImpl_execSendAuthRequestClient_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearServerConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearServerConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddServerConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddServerConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnServerConnectionClose
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnServerConnectionClose_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearClientConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearClientConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddClientConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddClientConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnClientConnectionClose
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnClientConnectionClose_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthRetryServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthRetryServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRetryServerDelegate;                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthRetryServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthRetryServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRetryServerDelegate;                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthRetryServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthRetryServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthKillClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthKillClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthKillClientDelegate;                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthKillClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthKillClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthKillClientDelegate;                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthKillClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthKillClient_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthCompleteServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthCompleteServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteServerDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthCompleteServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthCompleteServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteServerDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthCompleteServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthCompleteServer_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -17281,21 +17281,21 @@ struct UOnlineAuthInterfaceBaseImpl_execOnAuthCompleteServer_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthCompleteClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthCompleteClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteClientDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthCompleteClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthCompleteClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteClientDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthCompleteClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthCompleteClient_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -17305,21 +17305,21 @@ struct UOnlineAuthInterfaceBaseImpl_execOnAuthCompleteClient_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthBlobReceivedServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthBlobReceivedServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedServerDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthBlobReceivedServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthBlobReceivedServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedServerDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthBlobReceivedServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthBlobReceivedServer_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17328,21 +17328,21 @@ struct UOnlineAuthInterfaceBaseImpl_execOnAuthBlobReceivedServer_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthBlobReceivedClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthBlobReceivedClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedClientDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthBlobReceivedClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthBlobReceivedClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedClientDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthBlobReceivedClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthBlobReceivedClient_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17351,21 +17351,21 @@ struct UOnlineAuthInterfaceBaseImpl_execOnAuthBlobReceivedClient_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthRequestServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthRequestServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestServerDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthRequestServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthRequestServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestServerDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthRequestServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthRequestServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -17375,21 +17375,21 @@ struct UOnlineAuthInterfaceBaseImpl_execOnAuthRequestServer_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthRequestClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthRequestClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestClientDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthRequestClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthRequestClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestClientDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthRequestClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthRequestClient_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -17399,27 +17399,27 @@ struct UOnlineAuthInterfaceBaseImpl_execOnAuthRequestClient_Parms
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.ClearAuthReadyDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execClearAuthReadyDelegate_Parms
 {
 	struct FScriptDelegate                             AuthReadyDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.AddAuthReadyDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterfaceBaseImpl_execAddAuthReadyDelegate_Parms
 {
 	struct FScriptDelegate                             AuthReadyDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.OnAuthReady
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterfaceBaseImpl_execOnAuthReady_Parms
 {
 };
 
 // Function Engine.OnlineAuthInterfaceBaseImpl.IsReady
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceBaseImpl_execIsReady_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -17946,7 +17946,7 @@ struct UOnlineStatsWrite_execGetStatId_Parms
 };
 
 // Function Engine.OnlineStatsWrite.OnStatsWriteComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineStatsWrite_execOnStatsWriteComplete_Parms
 {
 };
@@ -17959,11 +17959,11 @@ struct UPlayer_execSwitchController_Parms
 };
 
 // Function Engine.LocalPlayer.Cleanup
-// [0x00824002] 
+// [0x00824002]
 struct ULocalPlayer_execCleanup_Parms
 {
 	unsigned long                                      bExit : 1;                                        		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
-	// struct FUniqueNetId                             CurUID;                                           		// 0x0010 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurUID;                                           		// 0x0010 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.LocalPlayer.Exit
@@ -17989,18 +17989,18 @@ struct ULocalPlayer_eventViewportClosed_Parms
 struct ULocalPlayer_execStaticOnServerConnectionClose_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             CurServerUID;                                     		// 0x0014 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurServerUID;                                     		// 0x0014 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.LocalPlayer.OnServerConnectionClose
-// [0x00020002] 
+// [0x00020002]
 struct ULocalPlayer_execOnServerConnectionClose_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.LocalPlayer.ServerAuthFailure
-// [0x00020002] 
+// [0x00020002]
 struct ULocalPlayer_execServerAuthFailure_Parms
 {
 };
@@ -18012,7 +18012,7 @@ struct ULocalPlayer_eventServerAuthTimedOut_Parms
 };
 
 // Function Engine.LocalPlayer.OnAuthCompleteServer
-// [0x00020002] 
+// [0x00020002]
 struct ULocalPlayer_execOnAuthCompleteServer_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -18022,7 +18022,7 @@ struct ULocalPlayer_execOnAuthCompleteServer_Parms
 };
 
 // Function Engine.LocalPlayer.OnAuthBlobReceivedServer
-// [0x00020002] 
+// [0x00020002]
 struct ULocalPlayer_execOnAuthBlobReceivedServer_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -18031,22 +18031,22 @@ struct ULocalPlayer_execOnAuthBlobReceivedServer_Parms
 };
 
 // Function Engine.LocalPlayer.OnAuthKillClient
-// [0x00820002] 
+// [0x00820002]
 struct ULocalPlayer_execOnAuthKillClient_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             CurServerUID;                                     		// 0x0004 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurServerUID;                                     		// 0x0004 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.LocalPlayer.OnAuthRequestClient
-// [0x00820002] 
+// [0x00820002]
 struct ULocalPlayer_execOnAuthRequestClient_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 	int                                                ServerIP;                                         		// 0x0018 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	int                                                ServerPort;                                       		// 0x001C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bSecure : 1;                                      		// 0x0020 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// struct FUniqueNetId                             NullId;                                           		// 0x0024 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             NullId;                                           		// 0x0024 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.LocalPlayer.NotifyServerConnectionOpen
@@ -18068,7 +18068,7 @@ struct ULocalPlayer_eventGetNickname_Parms
 struct ULocalPlayer_eventGetUniqueNetId_Parms
 {
 	struct FUniqueNetId                                ReturnValue;                                      		// 0x0000 (0x0018) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FUniqueNetId                             Result;                                           		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             Result;                                           		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.LocalPlayer.DeProject
@@ -18213,7 +18213,7 @@ struct UPostProcessChain_execFindPostProcessEffect_Parms
 };
 
 // Function Engine.ReachSpec.IsBlockedFor
-// [0x00020002] 
+// [0x00020002]
 struct UReachSpec_execIsBlockedFor_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -18243,7 +18243,7 @@ struct UReachSpec_execCostFor_Parms
 };
 
 // Function Engine.SavedMove.GetDebugString
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execGetDebugString_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -18251,7 +18251,7 @@ struct USavedMove_execGetDebugString_Parms
 };
 
 // Function Engine.SavedMove.SetFlags
-// [0x00022002] 
+// [0x00022002]
 struct USavedMove_execSetFlags_Parms
 {
 	unsigned char                                      Flags;                                            		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -18260,28 +18260,28 @@ struct USavedMove_execSetFlags_Parms
 };
 
 // Function Engine.SavedMove.CompressedFlags
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execCompressedFlags_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.SavedMove.ResetMoveFor
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execResetMoveFor_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SavedMove.PrepMoveFor
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execPrepMoveFor_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SavedMove.SetMoveFor
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execSetMoveFor_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -18292,7 +18292,7 @@ struct USavedMove_execSetMoveFor_Parms
 };
 
 // Function Engine.SavedMove.CanCombineWith
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execCanCombineWith_Parms
 {
 	class USavedMove*                                  NewMove;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -18302,38 +18302,38 @@ struct USavedMove_execCanCombineWith_Parms
 };
 
 // Function Engine.SavedMove.SetInitialPosition
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execSetInitialPosition_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SavedMove.GetStartLocation
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execGetStartLocation_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.SavedMove.IsImportantMove
-// [0x00820002] 
+// [0x00820002]
 struct USavedMove_execIsImportantMove_Parms
 {
 	struct FVector                                     CompareAccel;                                     		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      CompareAnalogPct;                                 		// 0x000C (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0010 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  AccelNorm;                                        		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  AccelNorm;                                        		// 0x0014 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.SavedMove.PostUpdate
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execPostUpdate_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SavedMove.Clear
-// [0x00020002] 
+// [0x00020002]
 struct USavedMove_execClear_Parms
 {
 };
@@ -18821,7 +18821,7 @@ struct UOnlineGameSearch_eventSortSearchResults_Parms
 };
 
 // Function Engine.OnlineGameSearch.SetSkillOverride
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineGameSearch_execSetSkillOverride_Parms
 {
 	int                                                LeaderboardId;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -18890,7 +18890,7 @@ struct UUIRoot_execSafeCaps_Parms
 struct UUIRoot_execGetOnlinePlayerInterfaceEx_Parms
 {
 	class UOnlinePlayerInterfaceEx*                    ReturnValue;                                      		// 0x0000 (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterfaceEx*                 PlayerIntEx;                                      		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterfaceEx*                 PlayerIntEx;                                      		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIRoot.GetOnlinePlayerInterface
@@ -18898,7 +18898,7 @@ struct UUIRoot_execGetOnlinePlayerInterfaceEx_Parms
 struct UUIRoot_execGetOnlinePlayerInterface_Parms
 {
 	class UOnlinePlayerInterface*                      ReturnValue;                                      		// 0x0000 (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterface*                   Result;                                           		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   Result;                                           		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIRoot.GetOnlineGameInterface
@@ -18906,11 +18906,11 @@ struct UUIRoot_execGetOnlinePlayerInterface_Parms
 struct UUIRoot_execGetOnlineGameInterface_Parms
 {
 	class UOnlineGameInterface*                        ReturnValue;                                      		// 0x0000 (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlineGameInterface*                     Result;                                           		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlineGameInterface*                     Result;                                           		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIRoot.GetDataStoreStringValue
-// [0x00C26002] 
+// [0x00C26002]
 struct UUIRoot_execGetDataStoreStringValue_Parms
 {
 	struct FString                                     InDataStoreMarkup;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -18931,7 +18931,7 @@ struct UUIRoot_execGetDataStoreFieldValue_Parms
 };
 
 // Function Engine.UIRoot.SetDataStoreStringValue
-// [0x00826002] 
+// [0x00826002]
 struct UUIRoot_execSetDataStoreStringValue_Parms
 {
 	struct FString                                     InDataStoreMarkup;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -18983,7 +18983,7 @@ struct UUIRoot_execGetInputPlatformType_Parms
 };
 
 // Function Engine.Interaction.NotifyPlayerRemoved
-// [0x00020000] 
+// [0x00020000]
 struct UInteraction_execNotifyPlayerRemoved_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -18991,7 +18991,7 @@ struct UInteraction_execNotifyPlayerRemoved_Parms
 };
 
 // Function Engine.Interaction.NotifyPlayerAdded
-// [0x00020000] 
+// [0x00020000]
 struct UInteraction_execNotifyPlayerAdded_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -18999,19 +18999,19 @@ struct UInteraction_execNotifyPlayerAdded_Parms
 };
 
 // Function Engine.Interaction.NotifyGameSessionEnded
-// [0x00020000] 
+// [0x00020000]
 struct UInteraction_execNotifyGameSessionEnded_Parms
 {
 };
 
 // Function Engine.Interaction.Initialized
-// [0x00020000] 
+// [0x00020000]
 struct UInteraction_execInitialized_Parms
 {
 };
 
 // Function Engine.Interaction.OnInitialize
-// [0x00120000] 
+// [0x00120000]
 struct UInteraction_execOnInitialize_Parms
 {
 };
@@ -19037,7 +19037,7 @@ struct UInteraction_eventTick_Parms
 };
 
 // Function Engine.Interaction.OnReceivedNativeInputChar
-// [0x00120000] 
+// [0x00120000]
 struct UInteraction_execOnReceivedNativeInputChar_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19046,7 +19046,7 @@ struct UInteraction_execOnReceivedNativeInputChar_Parms
 };
 
 // Function Engine.Interaction.OnReceivedNativeInputAxis
-// [0x00124000] 
+// [0x00124000]
 struct UInteraction_execOnReceivedNativeInputAxis_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19058,7 +19058,7 @@ struct UInteraction_execOnReceivedNativeInputAxis_Parms
 };
 
 // Function Engine.Interaction.OnReceivedNativeInputKey
-// [0x00124000] 
+// [0x00124000]
 struct UInteraction_execOnReceivedNativeInputKey_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19070,7 +19070,7 @@ struct UInteraction_execOnReceivedNativeInputKey_Parms
 };
 
 // Function Engine.UIInteraction.NotifyGameSessionEnded
-// [0x00020002] 
+// [0x00020002]
 struct UUIInteraction_execNotifyGameSessionEnded_Parms
 {
 };
@@ -19080,8 +19080,8 @@ struct UUIInteraction_execNotifyGameSessionEnded_Parms
 struct UUIInteraction_eventGetNATType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlineSystemInterface*                   SystemInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   Result;                                           		// 0x0010 (0x0001) [0x0000000000000000]              
+	// class UOnlineSystemInterface*                   SystemInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
+	// unsigned char                                   Result;                                           		// 0x0010 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.CanCommunicate
@@ -19090,8 +19090,8 @@ struct UUIInteraction_eventCanCommunicate_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   Result;                                           		// 0x0008 (0x0001) [0x0000000000000000]              
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0010 (0x0008) [0x0000000000000000]              
+	// unsigned char                                   Result;                                           		// 0x0008 (0x0001) [0x0000000000000000]
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0010 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.GetConnectedGamepadCount
@@ -19108,7 +19108,7 @@ struct UUIInteraction_execIsGamepadConnected_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlineSystemInterface*                   SystemInterface;                                  		// 0x0010 (0x0008) [0x0000000000000000]              
+	// class UOnlineSystemInterface*                   SystemInterface;                                  		// 0x0010 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.GetNumGuestsLoggedIn
@@ -19133,7 +19133,7 @@ struct UUIInteraction_eventIsLoggedIn_Parms
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bRequireOnlineLogin : 1;                          		// 0x0004 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0008 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   LoginStatus;                                      		// 0x0010 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   LoginStatus;                                      		// 0x0010 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.HasLinkConnection
@@ -19141,7 +19141,7 @@ struct UUIInteraction_eventIsLoggedIn_Parms
 struct UUIInteraction_eventHasLinkConnection_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlineSystemInterface*                   SystemInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlineSystemInterface*                   SystemInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.GetLowestLoginStatusOfControllers
@@ -19149,8 +19149,8 @@ struct UUIInteraction_eventHasLinkConnection_Parms
 struct UUIInteraction_execGetLowestLoginStatusOfControllers_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   Result;                                           		// 0x0001 (0x0001) [0x0000000000000000]              
-	// unsigned char                                   LoginStatus;                                      		// 0x0002 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   Result;                                           		// 0x0001 (0x0001) [0x0000000000000000]
+	// unsigned char                                   LoginStatus;                                      		// 0x0002 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.GetLoginStatus
@@ -19159,26 +19159,26 @@ struct UUIInteraction_eventGetLoginStatus_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      ReturnValue;                                      		// 0x0004 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   Result;                                           		// 0x0005 (0x0001) [0x0000000000000000]              
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]              
+	// unsigned char                                   Result;                                           		// 0x0005 (0x0001) [0x0000000000000000]
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.NotifyPlayerRemoved
-// [0x00820002] 
+// [0x00820002]
 struct UUIInteraction_execNotifyPlayerRemoved_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ULocalPlayer*                                RemovedPlayer;                                    		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUIAxisEmulationData                     Empty;                                            		// 0x0014 (0x0014) [0x0000000000000000]              
+	// struct FUIAxisEmulationData                     Empty;                                            		// 0x0014 (0x0014) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.NotifyPlayerAdded
-// [0x00820002] 
+// [0x00820002]
 struct UUIInteraction_execNotifyPlayerAdded_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ULocalPlayer*                                AddedPlayer;                                      		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUIAxisEmulationData                     Empty;                                            		// 0x0008 (0x0014) [0x0000000000000000]              
+	// struct FUIAxisEmulationData                     Empty;                                            		// 0x0008 (0x0014) [0x0000000000000000]
 };
 
 // Function Engine.UIInteraction.GetLocalPlayer
@@ -19220,7 +19220,7 @@ struct UUIInteraction_execGetPlayerCount_Parms
 };
 
 // Function Engine.UIManager.NotifyPlayerRemoved
-// [0x00020000] 
+// [0x00020000]
 struct UUIManager_execNotifyPlayerRemoved_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19228,7 +19228,7 @@ struct UUIManager_execNotifyPlayerRemoved_Parms
 };
 
 // Function Engine.UIManager.NotifyPlayerAdded
-// [0x00020000] 
+// [0x00020000]
 struct UUIManager_execNotifyPlayerAdded_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19265,7 +19265,7 @@ struct AEnvironmentVolume_execSetSplitNavMesh_Parms
 };
 
 // Function Engine.AIController.CanFireWeapon
-// [0x00020002] 
+// [0x00020002]
 struct AAIController_execCanFireWeapon_Parms
 {
 	class AWeapon*                                     Wpn;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19274,7 +19274,7 @@ struct AAIController_execCanFireWeapon_Parms
 };
 
 // Function Engine.AIController.NotifyWeaponFinishedFiring
-// [0x00020000] 
+// [0x00020000]
 struct AAIController_execNotifyWeaponFinishedFiring_Parms
 {
 	class AWeapon*                                     W;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19282,7 +19282,7 @@ struct AAIController_execNotifyWeaponFinishedFiring_Parms
 };
 
 // Function Engine.AIController.NotifyWeaponFired
-// [0x00020000] 
+// [0x00020000]
 struct AAIController_execNotifyWeaponFired_Parms
 {
 	class AWeapon*                                     W;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19290,7 +19290,7 @@ struct AAIController_execNotifyWeaponFired_Parms
 };
 
 // Function Engine.AIController.OnAIMoveToActor
-// [0x00020002] 
+// [0x00020002]
 struct AAIController_execOnAIMoveToActor_Parms
 {
 	class USeqAct_AIMoveToActor*                       Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19313,7 +19313,7 @@ struct AAIController_eventSetTeam_Parms
 };
 
 // Function Engine.AIController.Reset
-// [0x00020002] 
+// [0x00020002]
 struct AAIController_execReset_Parms
 {
 };
@@ -19332,35 +19332,35 @@ struct APathTargetPoint_execShouldBeHiddenBySHOW_NavigationNodes_Parms
 };
 
 // Function Engine.NavMeshObstacle.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ANavMeshObstacle_execApplyCheckpointRecord_Parms
 {
 	struct ANavMeshObstacle_FCheckpointRecord          Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.NavMeshObstacle.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ANavMeshObstacle_execCreateCheckpointRecord_Parms
 {
 	struct ANavMeshObstacle_FCheckpointRecord          Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.NavMeshObstacle.SetEnabled
-// [0x00020002] 
+// [0x00020002]
 struct ANavMeshObstacle_execSetEnabled_Parms
 {
 	unsigned long                                      bInEnabled : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.NavMeshObstacle.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ANavMeshObstacle_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.NavMeshObstacle.PostBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct ANavMeshObstacle_execPostBeginPlay_Parms
 {
 };
@@ -19383,24 +19383,24 @@ struct ANavMeshObstacle_eventGetObstacleBoudingShape_Parms
 {
 	TArray< struct FVector >                           Shape;                                            		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x000C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Offset;                                           		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Offset;                                           		// 0x0014 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.BlockingMeshReplicatedActor.UpdateBlockingMeshComponent
-// [0x00020102] 
+// [0x00020102]
 struct ABlockingMeshReplicatedActor_execUpdateBlockingMeshComponent_Parms
 {
 };
 
 // Function Engine.BlockingMeshReplicatedActor.OnInterpToggle
-// [0x00020002] 
+// [0x00020002]
 struct ABlockingMeshReplicatedActor_execOnInterpToggle_Parms
 {
 	int                                                ShouldToggleOn;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.BlockingMeshReplicatedActor.OnToggle
-// [0x00020002] 
+// [0x00020002]
 struct ABlockingMeshReplicatedActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19430,7 +19430,7 @@ struct UMeshComponent_execCreateAndSetMaterialInstanceConstant_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_SetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMeshComponent_execBehavior_SetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -19439,7 +19439,7 @@ struct UMeshComponent_execBehavior_SetObjectParameterValue_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_SetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMeshComponent_execBehavior_SetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -19448,17 +19448,17 @@ struct UMeshComponent_execBehavior_SetFloatParameterValue_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_SetVectorParameterValue
-// [0x00C20002] 
+// [0x00C20002]
 struct UMeshComponent_execBehavior_SetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FName                                       ParameterName;                                    		// 0x0004 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FVector                                     Value;                                            		// 0x000C (0x000C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	// struct FLinearColor                             AsColor;                                          		// 0x0018 (0x0010) [0x0000000000000000]              
+	// struct FLinearColor                             AsColor;                                          		// 0x0018 (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.MeshComponent.Behavior_SetColorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMeshComponent_execBehavior_SetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -19467,7 +19467,7 @@ struct UMeshComponent_execBehavior_SetColorParameterValue_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_GetColorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMeshComponent_execBehavior_GetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -19477,7 +19477,7 @@ struct UMeshComponent_execBehavior_GetColorParameterValue_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_GetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMeshComponent_execBehavior_GetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -19487,7 +19487,7 @@ struct UMeshComponent_execBehavior_GetFloatParameterValue_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_GetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMeshComponent_execBehavior_GetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -19497,18 +19497,18 @@ struct UMeshComponent_execBehavior_GetObjectParameterValue_Parms
 };
 
 // Function Engine.MeshComponent.Behavior_GetVectorParameterValue
-// [0x00C20002] 
+// [0x00C20002]
 struct UMeshComponent_execBehavior_GetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FName                                       ParameterName;                                    		// 0x0004 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FVector                                     OutValue;                                         		// 0x000C (0x000C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FLinearColor                             TempResult;                                       		// 0x0020 (0x0010) [0x0000000000000000]              
+	// struct FLinearColor                             TempResult;                                       		// 0x0020 (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.MeshComponent.CreateAndSetMaterialInstanceTimeVarying
-// [0x00020002] 
+// [0x00020002]
 struct UMeshComponent_execCreateAndSetMaterialInstanceTimeVarying_Parms
 {
 	int                                                ElementIndex;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -19621,7 +19621,7 @@ struct UInterface_NavMeshPathSwitch_eventAIActivateSwitch_Parms
 };
 
 // Function Engine.NavigationHandle.DrawBreadCrumbs
-// [0x00024000] 
+// [0x00024000]
 struct UNavigationHandle_execDrawBreadCrumbs_Parms
 {
 	unsigned long                                      bPersistent : 1;                                  		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -20003,7 +20003,7 @@ struct UNavMeshGoal_Filter_eventGetDumpString_Parms
 };
 
 // Function Engine.NavMeshGoalFilter_MinPathDistance.MustBeLongerPathThan
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshGoalFilter_MinPathDistance_execMustBeLongerPathThan_Parms
 {
 	class UNavMeshGoal_GenericFilterContainer*         FilterContainer;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20012,7 +20012,7 @@ struct UNavMeshGoalFilter_MinPathDistance_execMustBeLongerPathThan_Parms
 };
 
 // Function Engine.NavMeshGoalFilter_NotNearOtherAI.NotNearOtherAI
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshGoalFilter_NotNearOtherAI_execNotNearOtherAI_Parms
 {
 	class UNavMeshGoal_GenericFilterContainer*         FilterContainer;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20021,7 +20021,7 @@ struct UNavMeshGoalFilter_NotNearOtherAI_execNotNearOtherAI_Parms
 };
 
 // Function Engine.NavMeshGoalFilter_OutOfViewFrom.MustBeHiddenFromThisPoint
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshGoalFilter_OutOfViewFrom_execMustBeHiddenFromThisPoint_Parms
 {
 	class UNavMeshGoal_GenericFilterContainer*         FilterContainer;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20030,7 +20030,7 @@ struct UNavMeshGoalFilter_OutOfViewFrom_execMustBeHiddenFromThisPoint_Parms
 };
 
 // Function Engine.NavMeshGoalFilter_OutSideOfDotProductWedge.OutsideOfDotProductWedge
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshGoalFilter_OutSideOfDotProductWedge_execOutsideOfDotProductWedge_Parms
 {
 	class UNavMeshGoal_GenericFilterContainer*         FilterContainer;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20041,7 +20041,7 @@ struct UNavMeshGoalFilter_OutSideOfDotProductWedge_execOutsideOfDotProductWedge_
 };
 
 // Function Engine.NavMeshGoalFilter_PolyEncompassesAI.MakeSureAIFits
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshGoalFilter_PolyEncompassesAI_execMakeSureAIFits_Parms
 {
 	class UNavMeshGoal_GenericFilterContainer*         FilterContainer;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20063,13 +20063,13 @@ struct UNavMeshPathConstraint_eventRecycle_Parms
 };
 
 // Function Engine.NavMeshPath_AlongLine.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_AlongLine_execRecycle_Parms
 {
 };
 
 // Function Engine.NavMeshPath_AlongLine.AlongLine
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshPath_AlongLine_execAlongLine_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20078,7 +20078,7 @@ struct UNavMeshPath_AlongLine_execAlongLine_Parms
 };
 
 // Function Engine.NavMeshPath_EnforceTwoWayEdges.EnforceTwoWayEdges
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshPath_EnforceTwoWayEdges_execEnforceTwoWayEdges_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20086,13 +20086,13 @@ struct UNavMeshPath_EnforceTwoWayEdges_execEnforceTwoWayEdges_Parms
 };
 
 // Function Engine.NavMeshPath_MinDistBetweenSpecsOfType.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_MinDistBetweenSpecsOfType_execRecycle_Parms
 {
 };
 
 // Function Engine.NavMeshPath_MinDistBetweenSpecsOfType.EnforceMinDist
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshPath_MinDistBetweenSpecsOfType_execEnforceMinDist_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20104,7 +20104,7 @@ struct UNavMeshPath_MinDistBetweenSpecsOfType_execEnforceMinDist_Parms
 };
 
 // Function Engine.NavMeshPath_SameCoverLink.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_SameCoverLink_execRecycle_Parms
 {
 };
@@ -20118,7 +20118,7 @@ struct UNavMeshPath_SameCoverLink_execSameCoverLink_Parms
 };
 
 // Function Engine.NavMeshPath_Toward.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_Toward_execRecycle_Parms
 {
 };
@@ -20142,13 +20142,13 @@ struct UNavMeshPath_Toward_execTowardGoal_Parms
 };
 
 // Function Engine.NavMeshPath_WithinDistanceEnvelope.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_WithinDistanceEnvelope_execRecycle_Parms
 {
 };
 
 // Function Engine.NavMeshPath_WithinDistanceEnvelope.StayWithinEnvelopeToLoc
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshPath_WithinDistanceEnvelope_execStayWithinEnvelopeToLoc_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20162,13 +20162,13 @@ struct UNavMeshPath_WithinDistanceEnvelope_execStayWithinEnvelopeToLoc_Parms
 };
 
 // Function Engine.NavMeshPath_WithinTraversalDist.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_WithinTraversalDist_execRecycle_Parms
 {
 };
 
 // Function Engine.NavMeshPath_WithinTraversalDist.DontExceedMaxDist
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshPath_WithinTraversalDist_execDontExceedMaxDist_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20191,7 +20191,7 @@ struct UNavMeshPathGoalEvaluator_eventRecycle_Parms
 };
 
 // Function Engine.NavMeshGoal_At.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_At_execRecycle_Parms
 {
 };
@@ -20239,7 +20239,7 @@ struct UNavMeshGoal_ClosestActorInList_eventRecycle_Parms
 };
 
 // Function Engine.NavMeshGoal_ClosestActorInList.ClosestActorInList
-// [0x00422002] 
+// [0x00422002]
 struct UNavMeshGoal_ClosestActorInList_execClosestActorInList_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20248,7 +20248,7 @@ struct UNavMeshGoal_ClosestActorInList_execClosestActorInList_Parms
 };
 
 // Function Engine.NavMeshGoal_GenericFilterContainer.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_GenericFilterContainer_execRecycle_Parms
 {
 };
@@ -20261,7 +20261,7 @@ struct UNavMeshGoal_GenericFilterContainer_execGetGoalPoint_Parms
 };
 
 // Function Engine.NavMeshGoal_GenericFilterContainer.GetFilterOfType
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_GenericFilterContainer_execGetFilterOfType_Parms
 {
 	class UClass*                                      Filter_Class;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20269,7 +20269,7 @@ struct UNavMeshGoal_GenericFilterContainer_execGetFilterOfType_Parms
 };
 
 // Function Engine.NavMeshGoal_GenericFilterContainer.CreateAndAddFilterToNavHandle
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshGoal_GenericFilterContainer_execCreateAndAddFilterToNavHandle_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20278,7 +20278,7 @@ struct UNavMeshGoal_GenericFilterContainer_execCreateAndAddFilterToNavHandle_Par
 };
 
 // Function Engine.NavMeshGoal_Null.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_Null_execRecycle_Parms
 {
 };
@@ -20290,7 +20290,7 @@ struct UNavMeshGoal_Null_execRecycleNative_Parms
 };
 
 // Function Engine.NavMeshGoal_Null.GoUntilBust
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshGoal_Null_execGoUntilBust_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20299,13 +20299,13 @@ struct UNavMeshGoal_Null_execGoUntilBust_Parms
 };
 
 // Function Engine.NavMeshGoal_PolyEncompassesAI.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_PolyEncompassesAI_execRecycle_Parms
 {
 };
 
 // Function Engine.NavMeshGoal_PolyEncompassesAI.MakeSureAIFits
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshGoal_PolyEncompassesAI_execMakeSureAIFits_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20314,7 +20314,7 @@ struct UNavMeshGoal_PolyEncompassesAI_execMakeSureAIFits_Parms
 };
 
 // Function Engine.NavMeshGoal_Random.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_Random_execRecycle_Parms
 {
 };
@@ -20326,7 +20326,7 @@ struct UNavMeshGoal_Random_execRecycleNative_Parms
 };
 
 // Function Engine.NavMeshGoal_Random.FindRandom
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshGoal_Random_execFindRandom_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20336,13 +20336,13 @@ struct UNavMeshGoal_Random_execFindRandom_Parms
 };
 
 // Function Engine.NavMeshGoal_WithinDistanceEnvelope.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_WithinDistanceEnvelope_execRecycle_Parms
 {
 };
 
 // Function Engine.NavMeshGoal_WithinDistanceEnvelope.GoalWithinEnvelopeToLoc
-// [0x00026002] 
+// [0x00026002]
 struct UNavMeshGoal_WithinDistanceEnvelope_execGoalWithinEnvelopeToLoc_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20367,13 +20367,13 @@ struct UPathConstraint_eventRecycle_Parms
 };
 
 // Function Engine.Path_AlongLine.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_AlongLine_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_AlongLine.AlongLine
-// [0x00022002] 
+// [0x00022002]
 struct UPath_AlongLine_execAlongLine_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20382,13 +20382,13 @@ struct UPath_AlongLine_execAlongLine_Parms
 };
 
 // Function Engine.Path_AvoidInEscapableNodes.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_AvoidInEscapableNodes_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_AvoidInEscapableNodes.DontGetStuck
-// [0x00022002] 
+// [0x00022002]
 struct UPath_AvoidInEscapableNodes_execDontGetStuck_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20403,13 +20403,13 @@ struct UPath_AvoidInEscapableNodes_execCachePawnReacFlags_Parms
 };
 
 // Function Engine.Path_MinDistBetweenSpecsOfType.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_MinDistBetweenSpecsOfType_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_MinDistBetweenSpecsOfType.EnforceMinDist
-// [0x00026002] 
+// [0x00026002]
 struct UPath_MinDistBetweenSpecsOfType_execEnforceMinDist_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20420,13 +20420,13 @@ struct UPath_MinDistBetweenSpecsOfType_execEnforceMinDist_Parms
 };
 
 // Function Engine.Path_TowardGoal.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_TowardGoal_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_TowardGoal.TowardGoal
-// [0x00022002] 
+// [0x00022002]
 struct UPath_TowardGoal_execTowardGoal_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20435,13 +20435,13 @@ struct UPath_TowardGoal_execTowardGoal_Parms
 };
 
 // Function Engine.Path_TowardPoint.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_TowardPoint_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_TowardPoint.TowardPoint
-// [0x00022002] 
+// [0x00022002]
 struct UPath_TowardPoint_execTowardPoint_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20450,13 +20450,13 @@ struct UPath_TowardPoint_execTowardPoint_Parms
 };
 
 // Function Engine.Path_WithinDistanceEnvelope.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_WithinDistanceEnvelope_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_WithinDistanceEnvelope.StayWithinEnvelopeToLoc
-// [0x00026002] 
+// [0x00026002]
 struct UPath_WithinDistanceEnvelope_execStayWithinEnvelopeToLoc_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20470,13 +20470,13 @@ struct UPath_WithinDistanceEnvelope_execStayWithinEnvelopeToLoc_Parms
 };
 
 // Function Engine.Path_WithinTraversalDist.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UPath_WithinTraversalDist_execRecycle_Parms
 {
 };
 
 // Function Engine.Path_WithinTraversalDist.DontExceedMaxDist
-// [0x00026002] 
+// [0x00026002]
 struct UPath_WithinTraversalDist_execDontExceedMaxDist_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20499,13 +20499,13 @@ struct UPathGoalEvaluator_eventRecycle_Parms
 };
 
 // Function Engine.Goal_AtActor.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UGoal_AtActor_execRecycle_Parms
 {
 };
 
 // Function Engine.Goal_AtActor.AtActor
-// [0x00026002] 
+// [0x00026002]
 struct UGoal_AtActor_execAtActor_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20516,13 +20516,13 @@ struct UGoal_AtActor_execAtActor_Parms
 };
 
 // Function Engine.Goal_Null.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UGoal_Null_execRecycle_Parms
 {
 };
 
 // Function Engine.Goal_Null.GoUntilBust
-// [0x00026002] 
+// [0x00026002]
 struct UGoal_Null_execGoUntilBust_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20564,7 +20564,7 @@ struct ASkeletalMeshActor_eventCreateForceField_Parms
 };
 
 // Function Engine.SkeletalMeshActor.SkelMeshActorOnParticleSystemFinished
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActor_execSkelMeshActorOnParticleSystemFinished_Parms
 {
 	class UParticleSystemComponent*                    PSC;                                              		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -20576,27 +20576,27 @@ struct ASkeletalMeshActor_eventPlayParticleEffect_Parms
 {
 	class UAnimNotify_PlayParticleEffect*              AnimNotifyData;                                   		// 0x0000 (0x0004) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Loc;                                              		// 0x0008 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 Rot;                                              		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Loc;                                              		// 0x0008 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 Rot;                                              		// 0x0014 (0x000C) [0x0000000000000000]
 	// class UParticleSystemComponent*                 PSC;                                              		// 0x0020 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
 // Function Engine.SkeletalMeshActor.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ASkeletalMeshActor_execApplyCheckpointRecord_Parms
 {
 	struct ASkeletalMeshActor_FCheckpointRecord        Record;                                           		// 0x0000 (0x001C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.SkeletalMeshActor.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ASkeletalMeshActor_execCreateCheckpointRecord_Parms
 {
 	struct ASkeletalMeshActor_FCheckpointRecord        Record;                                           		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.SkeletalMeshActor.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct ASkeletalMeshActor_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -20614,11 +20614,11 @@ struct ASkeletalMeshActor_eventTakeDamage_Parms
 	struct FTraceHitInfo                               HitInfo;                                          		// 0x0024 (0x001C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UIDamageCauser*                              DamageCauser;                                     		// 0x0040 (0x0008) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UDamagePipeline*                             Pipeline;                                         		// 0x0048 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  ApplyImpulse;                                     		// 0x004C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ApplyImpulse;                                     		// 0x004C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.SkeletalMeshActor.DoKismetAttachment
-// [0x00020002] 
+// [0x00020002]
 struct ASkeletalMeshActor_execDoKismetAttachment_Parms
 {
 	class AActor*                                      Attachment;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20653,7 +20653,7 @@ struct ASkeletalMeshActor_eventOnSetMesh_Parms
 };
 
 // Function Engine.SkeletalMeshActor.IsActorPlayingFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActor_execIsActorPlayingFaceFXAnim_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -20674,7 +20674,7 @@ struct ASkeletalMeshActor_eventGetActorFaceFXAsset_Parms
 };
 
 // Function Engine.SkeletalMeshActor.OnPlayFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActor_execOnPlayFaceFXAnim_Parms
 {
 	class USeqAct_PlayFaceFXAnim*                      inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20747,14 +20747,14 @@ struct ASkeletalMeshActor_eventBeginAnimControl_Parms
 };
 
 // Function Engine.SkeletalMeshActor.OnSetMaterial
-// [0x00020002] 
+// [0x00020002]
 struct ASkeletalMeshActor_execOnSetMaterial_Parms
 {
 	class USeqAct_SetMaterial*                         Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SkeletalMeshActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20786,7 +20786,7 @@ struct ASkeletalMeshActor_eventPostBeginPlay_Parms
 };
 
 // Function Engine.SkeletalMeshActorBasedOnExtremeContent.SetMaterialBasedOnExtremeContent
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActorBasedOnExtremeContent_execSetMaterialBasedOnExtremeContent_Parms
 {
 };
@@ -20847,13 +20847,13 @@ struct ASkeletalMeshActorMAT_eventSetAnimPosition_Parms
 };
 
 // Function Engine.SkeletalMeshActorMAT.ClearAnimNodes
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActorMAT_execClearAnimNodes_Parms
 {
 };
 
 // Function Engine.SkeletalMeshActorMAT.CacheAnimNodes
-// [0x00020102] 
+// [0x00020102]
 struct ASkeletalMeshActorMAT_execCacheAnimNodes_Parms
 {
 };
@@ -20903,7 +20903,7 @@ struct ASkeletalMeshActorMAT_execMAT_SetAnimWeights_Parms
 };
 
 // Function Engine.AnimNotify.FindNextNotifyOfClass
-// [0x00420102] 
+// [0x00420102]
 struct UAnimNotify_execFindNextNotifyOfClass_Parms
 {
 	class UAnimNodeSequence*                           AnimSeqInstigator;                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -20934,7 +20934,7 @@ struct UAnimNotify_PawnMaterialParam_eventNotify_Parms
 {
 	class AActor*                                      Owner;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UAnimNodeSequence*                           AnimSeqInstigator;                                		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FScalarParameterInterpStruct             ScalarParam;                                      		// 0x0010 (0x0014) [0x0000000000000000]              
+	// struct FScalarParameterInterpStruct             ScalarParam;                                      		// 0x0010 (0x0014) [0x0000000000000000]
 };
 
 // Function Engine.AnimNotify_ViewShake.Notify
@@ -20943,7 +20943,7 @@ struct UAnimNotify_ViewShake_eventNotify_Parms
 {
 	class AActor*                                      Owner;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UAnimNodeSequence*                           AnimSeqInstigator;                                		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  ViewShakeOrigin;                                  		// 0x0008 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ViewShakeOrigin;                                  		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.AnimNotify_Trails.GetNumSteps
@@ -21692,11 +21692,11 @@ struct ADecalManager_eventSpawnDecal_Parms
 	unsigned long                                      bDontAttach : 1;                                  		// 0x0060 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	class UDecalComponent*                             ReturnValue;                                      		// 0x0064 (0x0004) [0x0000000004000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline )
 	// class UDecalComponent*                          Result;                                           		// 0x0068 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
-	// struct FActiveDecalInfo                         DecalInfo;                                        		// 0x006C (0x0008) [0x0000000000000000]              
+	// struct FActiveDecalInfo                         DecalInfo;                                        		// 0x006C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.DecalManager.GetPooledComponent
-// [0x00080002] 
+// [0x00080002]
 struct ADecalManager_execGetPooledComponent_Parms
 {
 	class UDecalComponent*                             ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000004000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline )
@@ -21728,7 +21728,7 @@ struct ADecalManager_execSetDecalParameters_Parms
 };
 
 // Function Engine.DecalManager.CanSpawnDecals
-// [0x00020002] 
+// [0x00020002]
 struct ADecalManager_execCanSpawnDecals_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -21749,7 +21749,7 @@ struct ADecalManager_execAreDynamicDecalsEnabled_Parms
 };
 
 // Function Engine.DecalManager.PostBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct ADecalManager_execPostBeginPlay_Parms
 {
 };
@@ -21788,28 +21788,28 @@ struct UDecalComponent_execResetToDefaults_Parms
 };
 
 // Function Engine.FogVolumeDensityInfo.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct AFogVolumeDensityInfo_execApplyCheckpointRecord_Parms
 {
 	struct AFogVolumeDensityInfo_FCheckpointRecord     Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.FogVolumeDensityInfo.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct AFogVolumeDensityInfo_execCreateCheckpointRecord_Parms
 {
 	struct AFogVolumeDensityInfo_FCheckpointRecord     Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.FogVolumeDensityInfo.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct AFogVolumeDensityInfo_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.FogVolumeDensityInfo.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AFogVolumeDensityInfo_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -21857,7 +21857,7 @@ struct AApexDestructibleActor_eventModifyHealth_Parms
 };
 
 // Function Engine.ApexDestructibleActor.ModifyHealthExec
-// [0x00020102] 
+// [0x00020102]
 struct AApexDestructibleActor_execModifyHealthExec_Parms
 {
 	unsigned long                                      bHeal : 1;                                        		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -21920,7 +21920,7 @@ struct AApexDestructibleActor_eventSpawnFractureEmitter_Parms
 	struct FVector                                     SpawnLocation;                                    		// 0x0004 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     SpawnDirection;                                   		// 0x0010 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	// class UParticleSystemComponent*                 PSC;                                              		// 0x001C (0x0004) [0x0000000004000000]              ( CPF_EditInline )
-	// struct FLightingChannelContainer                Lights;                                           		// 0x0020 (0x0004) [0x0000000000000000]              
+	// struct FLightingChannelContainer                Lights;                                           		// 0x0020 (0x0004) [0x0000000000000000]
 };
 
 // Function Engine.ApexDestructibleActor.ReplicatedEvent
@@ -21998,7 +21998,7 @@ struct UMaterialInstance_execSetParent_Parms
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_SetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInstanceConstant_execBehavior_SetObjectParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22007,7 +22007,7 @@ struct UMaterialInstanceConstant_execBehavior_SetObjectParameterValue_Parms
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_SetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInstanceConstant_execBehavior_SetFloatParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22016,7 +22016,7 @@ struct UMaterialInstanceConstant_execBehavior_SetFloatParameterValue_Parms
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_SetColorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInstanceConstant_execBehavior_SetColorParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22025,17 +22025,17 @@ struct UMaterialInstanceConstant_execBehavior_SetColorParameterValue_Parms
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_SetVectorParameterValue
-// [0x00C20002] 
+// [0x00C20002]
 struct UMaterialInstanceConstant_execBehavior_SetVectorParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FName                                       ParameterName;                                    		// 0x0004 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FVector                                     Value;                                            		// 0x000C (0x000C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	// struct FLinearColor                             Temp;                                             		// 0x0018 (0x0010) [0x0000000000000000]              
+	// struct FLinearColor                             Temp;                                             		// 0x0018 (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_GetColorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInstanceConstant_execBehavior_GetColorParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22045,18 +22045,18 @@ struct UMaterialInstanceConstant_execBehavior_GetColorParameterValue_Parms
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_GetVectorParameterValue
-// [0x00C20002] 
+// [0x00C20002]
 struct UMaterialInstanceConstant_execBehavior_GetVectorParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FName                                       ParameterName;                                    		// 0x0004 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FVector                                     OutValue;                                         		// 0x000C (0x000C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FLinearColor                             Temp;                                             		// 0x001C (0x0010) [0x0000000000000000]              
+	// struct FLinearColor                             Temp;                                             		// 0x001C (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_GetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInstanceConstant_execBehavior_GetFloatParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22066,7 +22066,7 @@ struct UMaterialInstanceConstant_execBehavior_GetFloatParameterValue_Parms
 };
 
 // Function Engine.MaterialInstanceConstant.Behavior_GetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UMaterialInstanceConstant_execBehavior_GetObjectParameterValue_Parms
 {
 	int                                                Section;                                          		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22214,47 +22214,47 @@ struct UMaterialInstanceTimeVarying_execSetParent_Parms
 };
 
 // Function Engine.Emitter.Behavior_Destroy
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execBehavior_Destroy_Parms
 {
 };
 
 // Function Engine.Emitter.HideSelf
-// [0x00020100] 
+// [0x00020100]
 struct AEmitter_execHideSelf_Parms
 {
 };
 
 // Function Engine.Emitter.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct AEmitter_execApplyCheckpointRecord_Parms
 {
 	struct AEmitter_FCheckpointRecord                  Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.Emitter.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct AEmitter_execCreateCheckpointRecord_Parms
 {
 	struct AEmitter_FCheckpointRecord                  Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.Emitter.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct AEmitter_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Emitter.OnSetParticleSysParam
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execOnSetParticleSysParam_Parms
 {
 	class USeqAct_SetParticleSysParam*                 Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Emitter.SetActorParameter
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execSetActorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -22262,7 +22262,7 @@ struct AEmitter_execSetActorParameter_Parms
 };
 
 // Function Engine.Emitter.SetExtColorParameter
-// [0x00820102] 
+// [0x00820102]
 struct AEmitter_execSetExtColorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -22270,11 +22270,11 @@ struct AEmitter_execSetExtColorParameter_Parms
 	unsigned char                                      Green;                                            		// 0x0009 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      Blue;                                             		// 0x000A (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      Alpha;                                            		// 0x000B (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// struct FColor                                   C;                                                		// 0x000C (0x0004) [0x0000000000000000]              
+	// struct FColor                                   C;                                                		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // Function Engine.Emitter.SetColorParameter
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execSetColorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -22282,7 +22282,7 @@ struct AEmitter_execSetColorParameter_Parms
 };
 
 // Function Engine.Emitter.SetVectorParameter
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execSetVectorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -22290,7 +22290,7 @@ struct AEmitter_execSetVectorParameter_Parms
 };
 
 // Function Engine.Emitter.SetFloatParameter
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execSetFloatParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -22298,27 +22298,27 @@ struct AEmitter_execSetFloatParameter_Parms
 };
 
 // Function Engine.Emitter.ShutDown
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execShutDown_Parms
 {
 };
 
 // Function Engine.Emitter.OnParticleEventGenerator
-// [0x00020000] 
+// [0x00020000]
 struct AEmitter_execOnParticleEventGenerator_Parms
 {
 	class USeqAct_ParticleEventGenerator*              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Emitter.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Emitter.OnParticleSystemFinished
-// [0x00020102] 
+// [0x00020102]
 struct AEmitter_execOnParticleSystemFinished_Parms
 {
 	class UParticleSystemComponent*                    FinishedComponent;                                		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -22355,32 +22355,32 @@ struct AEmitterCameraLensEffectBase_execUpdateLocation_Parms
 };
 
 // Function Engine.EmitterCameraLensEffectBase.ActivateLensEffect
-// [0x00020102] 
+// [0x00020102]
 struct AEmitterCameraLensEffectBase_execActivateLensEffect_Parms
 {
 };
 
 // Function Engine.EmitterCameraLensEffectBase.PostBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct AEmitterCameraLensEffectBase_execPostBeginPlay_Parms
 {
 };
 
 // Function Engine.EmitterCameraLensEffectBase.NotifyRetriggered
-// [0x00020000] 
+// [0x00020000]
 struct AEmitterCameraLensEffectBase_execNotifyRetriggered_Parms
 {
 };
 
 // Function Engine.EmitterCameraLensEffectBase.RegisterCamera
-// [0x00020002] 
+// [0x00020002]
 struct AEmitterCameraLensEffectBase_execRegisterCamera_Parms
 {
 	class ACamera*                                     C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.EmitterCameraLensEffectBase.Destroyed
-// [0x00020002] 
+// [0x00020002]
 struct AEmitterCameraLensEffectBase_execDestroyed_Parms
 {
 };
@@ -22397,14 +22397,14 @@ struct AParticleEventManager_eventHandleParticleModuleEventSendToGame_Parms
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_ChangeParticleSystemActiveState
-// [0x00020002] 
+// [0x00020002]
 struct UParticleSystemComponent_execBehavior_ChangeParticleSystemActiveState_Parms
 {
 	unsigned char                                      ChangeType;                                       		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_SetVectorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UParticleSystemComponent_execBehavior_SetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22413,17 +22413,17 @@ struct UParticleSystemComponent_execBehavior_SetVectorParameterValue_Parms
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_SetColorParameterValue
-// [0x00C20002] 
+// [0x00C20002]
 struct UParticleSystemComponent_execBehavior_SetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FName                                       ParameterName;                                    		// 0x0004 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FLinearColor                                Value;                                            		// 0x000C (0x0010) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	// struct FColor                                   AsColor;                                          		// 0x001C (0x0004) [0x0000000000000000]              
+	// struct FColor                                   AsColor;                                          		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_SetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UParticleSystemComponent_execBehavior_SetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22432,7 +22432,7 @@ struct UParticleSystemComponent_execBehavior_SetObjectParameterValue_Parms
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_SetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UParticleSystemComponent_execBehavior_SetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22441,7 +22441,7 @@ struct UParticleSystemComponent_execBehavior_SetFloatParameterValue_Parms
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_GetObjectParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UParticleSystemComponent_execBehavior_GetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22451,7 +22451,7 @@ struct UParticleSystemComponent_execBehavior_GetObjectParameterValue_Parms
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_GetVectorParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UParticleSystemComponent_execBehavior_GetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22461,18 +22461,18 @@ struct UParticleSystemComponent_execBehavior_GetVectorParameterValue_Parms
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_GetColorParameterValue
-// [0x00C20002] 
+// [0x00C20002]
 struct UParticleSystemComponent_execBehavior_GetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FName                                       ParameterName;                                    		// 0x0004 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FLinearColor                                Value;                                            		// 0x000C (0x0010) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x001C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FColor                                   ColorValue;                                       		// 0x0024 (0x0004) [0x0000000000000000]              
+	// struct FColor                                   ColorValue;                                       		// 0x0024 (0x0004) [0x0000000000000000]
 };
 
 // Function Engine.ParticleSystemComponent.Behavior_GetFloatParameterValue
-// [0x00420002] 
+// [0x00420002]
 struct UParticleSystemComponent_execBehavior_GetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22841,7 +22841,7 @@ struct UParticleSystemComponent_execSetTemplate_Parms
 };
 
 // Function Engine.ParticleSystemComponent.OnSystemFinished
-// [0x00120000] 
+// [0x00120000]
 struct UParticleSystemComponent_execOnSystemFinished_Parms
 {
 	class UParticleSystemComponent*                    PSystem;                                          		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -22875,7 +22875,7 @@ struct UParticleModuleForceFieldBase_eventGetForceFieldInstance_Parms
 };
 
 // Function Engine.ParticleModuleEventSendToGame.DoEvent
-// [0x00420000] 
+// [0x00420000]
 struct UParticleModuleEventSendToGame_execDoEvent_Parms
 {
 	struct FVector                                     InCollideDirection;                               		// 0x0000 (0x000C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -22938,13 +22938,13 @@ struct UParticleSystem_execEffectiveParticleSystemAfterPhysXMutator_Parms
 };
 
 // Function Engine.KActor.Reset
-// [0x00020102] 
+// [0x00020102]
 struct AKActor_execReset_Parms
 {
 };
 
 // Function Engine.KActor.OnTeleport
-// [0x00020102] 
+// [0x00020102]
 struct AKActor_execOnTeleport_Parms
 {
 	class USeqAct_Teleport*                            inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -22952,14 +22952,14 @@ struct AKActor_execOnTeleport_Parms
 };
 
 // Function Engine.KActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AKActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.KActor.TakeRadiusDamage
-// [0x00024102] 
+// [0x00024102]
 struct AKActor_execTakeRadiusDamage_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -22997,7 +22997,7 @@ struct AKActor_eventApplyImpulse_Parms
 	struct FVector                                     HitLocation;                                      		// 0x0010 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FTraceHitInfo                               HitInfo;                                          		// 0x001C (0x001C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UClass*                                      DamageType;                                       		// 0x0038 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  AppliedImpulse;                                   		// 0x003C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  AppliedImpulse;                                   		// 0x003C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.KActor.ReplicatedEvent
@@ -23005,7 +23005,7 @@ struct AKActor_eventApplyImpulse_Parms
 struct AKActor_eventReplicatedEvent_Parms
 {
 	struct FName                                       VarName;                                          		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  NewDrawScale3D;                                   		// 0x0008 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  NewDrawScale3D;                                   		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.KActor.SpawnedByKismet
@@ -23015,7 +23015,7 @@ struct AKActor_eventSpawnedByKismet_Parms
 };
 
 // Function Engine.KActor.SetPhysicalCollisionProperties
-// [0x00020102] 
+// [0x00020102]
 struct AKActor_execSetPhysicalCollisionProperties_Parms
 {
 };
@@ -23053,7 +23053,7 @@ struct AKActor_execGetKActorPhysMaterial_Parms
 };
 
 // Function Engine.KActorFromStatic.TakeRadiusDamage
-// [0x00024102] 
+// [0x00024102]
 struct AKActorFromStatic_execTakeRadiusDamage_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23088,13 +23088,13 @@ struct AKActorFromStatic_eventBump_Parms
 };
 
 // Function Engine.KActorFromStatic.ReceiveImpulse
-// [0x00820002] 
+// [0x00820002]
 struct AKActorFromStatic_execReceiveImpulse_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     HitLocation;                                      		// 0x0004 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     HitNormal;                                        		// 0x0010 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  HitDir;                                           		// 0x001C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  HitDir;                                           		// 0x001C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.KActorFromStatic.ApplyImpulse
@@ -23123,7 +23123,7 @@ struct AKActorFromStatic_execMakeStatic_Parms
 };
 
 // Function Engine.KActorFromStatic.BecomeStatic
-// [0x00020002] 
+// [0x00020002]
 struct AKActorFromStatic_execBecomeStatic_Parms
 {
 };
@@ -23159,13 +23159,13 @@ struct AKActorSpawnable_eventRecycleInternal_Parms
 };
 
 // Function Engine.KActorSpawnable.Recycle
-// [0x00020102] 
+// [0x00020102]
 struct AKActorSpawnable_execRecycle_Parms
 {
 };
 
 // Function Engine.KActorSpawnable.Initialize
-// [0x00020102] 
+// [0x00020102]
 struct AKActorSpawnable_execInitialize_Parms
 {
 };
@@ -23178,7 +23178,7 @@ struct AKActorSpawnable_eventReplicatedEvent_Parms
 };
 
 // Function Engine.KActorPizazz.ApplyReplicatedImpulse
-// [0x00020102] 
+// [0x00020102]
 struct AKActorPizazz_execApplyReplicatedImpulse_Parms
 {
 };
@@ -23191,7 +23191,7 @@ struct AKActorPizazz_eventReplicatedEvent_Parms
 };
 
 // Function Engine.KAsset.DoKismetAttachment
-// [0x00020002] 
+// [0x00020002]
 struct AKAsset_execDoKismetAttachment_Parms
 {
 	class AActor*                                      Attachment;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23199,21 +23199,21 @@ struct AKAsset_execDoKismetAttachment_Parms
 };
 
 // Function Engine.KAsset.OnTeleport
-// [0x00020102] 
+// [0x00020102]
 struct AKAsset_execOnTeleport_Parms
 {
 	class USeqAct_Teleport*                            inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.KAsset.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AKAsset_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.KAsset.TakeRadiusDamage
-// [0x00024102] 
+// [0x00024102]
 struct AKAsset_execTakeRadiusDamage_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23333,7 +23333,7 @@ struct APawn_execGetDefaultRootMotionMode_Parms
 };
 
 // Function Engine.Pawn.OverrideDestroyInventoryContents
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execOverrideDestroyInventoryContents_Parms
 {
 	unsigned long                                      bDestroyContents : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -23341,28 +23341,28 @@ struct APawn_execOverrideDestroyInventoryContents_Parms
 };
 
 // Function Engine.Pawn.TellOpportunityPawnIsDead
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execTellOpportunityPawnIsDead_Parms
 {
 	unsigned long                                      bKeepCorpse : 1;                                  		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Pawn.GetDamageVector
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execGetDamageVector_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.GetRigidBodyMesh
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execGetRigidBodyMesh_Parms
 {
 	class UMeshComponent*                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000004000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline )
 };
 
 // Function Engine.Pawn.DestroyHealthPool
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execDestroyHealthPool_Parms
 {
 };
@@ -23376,7 +23376,7 @@ struct APawn_execSetHealthResourcePoolDefinition_Parms
 };
 
 // Function Engine.Pawn.Behavior_Killed
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execBehavior_Killed_Parms
 {
 	class AActor*                                      Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23385,7 +23385,7 @@ struct APawn_execBehavior_Killed_Parms
 };
 
 // Function Engine.Pawn.Behavior_CauseRadiusDamage
-// [0x00424002] 
+// [0x00424002]
 struct APawn_execBehavior_CauseRadiusDamage_Parms
 {
 	float                                              Radius;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23406,7 +23406,7 @@ struct APawn_execBehavior_CauseRadiusDamage_Parms
 };
 
 // Function Engine.Pawn.Behavior_CauseDamage
-// [0x00824002] 
+// [0x00824002]
 struct APawn_execBehavior_CauseDamage_Parms
 {
 	class AActor*                                      Target;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23419,11 +23419,11 @@ struct APawn_execBehavior_CauseDamage_Parms
 	class UIDamageCauser*                              DamageCauser;                                     		// 0x001C (0x0008) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	float                                              BarrelSourceTime;                                 		// 0x0024 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	float                                              PlantSourceTime;                                  		// 0x0028 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  MomentumVect;                                     		// 0x002C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  MomentumVect;                                     		// 0x002C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.EvaluateAttributeInitialization
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execEvaluateAttributeInitialization_Parms
 {
 	struct FAttributeInitializationData                InitData;                                         		// 0x0000 (0x0010) [0x0000000000000080]              ( CPF_Parm )
@@ -23431,7 +23431,7 @@ struct APawn_execEvaluateAttributeInitialization_Parms
 };
 
 // Function Engine.Pawn.FindAnimNode
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execFindAnimNode_Parms
 {
 	struct FName                                       NodeName;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -23439,35 +23439,35 @@ struct APawn_execFindAnimNode_Parms
 };
 
 // Function Engine.Pawn.SetRotationRate
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSetRotationRate_Parms
 {
 	struct FRotator                                    NewRotationRate;                                  		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.GetCollisionRadius
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execGetCollisionRadius_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.Behavior_RegisterTargetable
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execBehavior_RegisterTargetable_Parms
 {
 	unsigned long                                      bUnregister : 1;                                  		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Pawn.Behavior_SetCanTarget
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execBehavior_SetCanTarget_Parms
 {
 	unsigned char                                      ChangeStatus;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.ShowSelfAsTarget
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execShowSelfAsTarget_Parms
 {
 	unsigned long                                      bControllersOnly : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -23505,14 +23505,14 @@ struct APawn_execSetRootMotionInterpCurrentTime_Parms
 };
 
 // Function Engine.Pawn.SetCinematicMode
-// [0x00020100] 
+// [0x00020100]
 struct APawn_execSetCinematicMode_Parms
 {
 	unsigned long                                      bInCinematicMode : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Pawn.ZeroMovementVariables
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execZeroMovementVariables_Parms
 {
 };
@@ -23547,7 +23547,7 @@ struct APawn_execIncrementPathStep_Parms
 };
 
 // Function Engine.Pawn.CreatePathGoalEvaluator
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCreatePathGoalEvaluator_Parms
 {
 	class UClass*                                      GoalEvalClass;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23555,7 +23555,7 @@ struct APawn_execCreatePathGoalEvaluator_Parms
 };
 
 // Function Engine.Pawn.CreatePathConstraint
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCreatePathConstraint_Parms
 {
 	class UClass*                                      ConstraintClass;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23603,7 +23603,7 @@ struct APawn_eventMessagePlayer_Parms
 };
 
 // Function Engine.Pawn.HandleTeleport
-// [0x00824102] 
+// [0x00824102]
 struct APawn_execHandleTeleport_Parms
 {
 	TArray< class UObject* >                           DestList;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -23613,11 +23613,11 @@ struct APawn_execHandleTeleport_Parms
 	TArray< class AVolume* >                           TeleportVolumes;                                  		// 0x0018 (0x000C) [0x0000000000400090]              ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
 	int                                                PreferredDestIndex;                               		// 0x0024 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0028 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Extent;                                           		// 0x004C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Extent;                                           		// 0x004C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.OnTeleport
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execOnTeleport_Parms
 {
 	class USeqAct_Teleport*                            Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23625,21 +23625,21 @@ struct APawn_execOnTeleport_Parms
 };
 
 // Function Engine.Pawn.OnSetMaterial
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execOnSetMaterial_Parms
 {
 	class USeqAct_SetMaterial*                         Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.GetDamageScaling
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execGetDamageScaling_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.DoKismetAttachment
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execDoKismetAttachment_Parms
 {
 	class AActor*                                      Attachment;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23657,7 +23657,7 @@ struct APawn_eventSpawnedByKismet_Parms
 struct APawn_execGetCollisionExtent_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Extent;                                           		// 0x000C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Extent;                                           		// 0x000C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.GetCollisionHeight
@@ -23668,28 +23668,28 @@ struct APawn_eventGetCollisionHeight_Parms
 };
 
 // Function Engine.Pawn.CheatFly
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCheatFly_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.CheatGhost
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCheatGhost_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.CheatWalk
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCheatWalk_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.PlayWeaponSwitch
-// [0x00020100] 
+// [0x00020100]
 struct APawn_execPlayWeaponSwitch_Parms
 {
 	class AWeapon*                                     OldWeapon;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23697,7 +23697,7 @@ struct APawn_execPlayWeaponSwitch_Parms
 };
 
 // Function Engine.Pawn.SetActiveWeapon
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execSetActiveWeapon_Parms
 {
 	class AWeapon*                                     NewWeapon;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23705,21 +23705,21 @@ struct APawn_execSetActiveWeapon_Parms
 };
 
 // Function Engine.Pawn.TossInventory
-// [0x00824002] 
+// [0x00824002]
 struct APawn_execTossInventory_Parms
 {
 	class AInventory*                                  Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     ForceVelocity;                                    		// 0x0004 (0x000C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  POVLoc;                                           		// 0x0010 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  TossVel;                                          		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 POVRot;                                           		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  X;                                                		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Y;                                                		// 0x0040 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Z;                                                		// 0x004C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  POVLoc;                                           		// 0x0010 (0x000C) [0x0000000000000000]
+	// struct FVector                                  TossVel;                                          		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 POVRot;                                           		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FVector                                  X;                                                		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Y;                                                		// 0x0040 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Z;                                                		// 0x004C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.ThrowActiveWeapon
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execThrowActiveWeapon_Parms
 {
 	unsigned long                                      bDestroyWeap : 1;                                 		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -23751,7 +23751,7 @@ struct APawn_eventCreateInventory_Parms
 };
 
 // Function Engine.Pawn.AddDefaultInventory
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execAddDefaultInventory_Parms
 {
 };
@@ -23772,14 +23772,14 @@ struct APawn_eventStartDriving_Parms
 };
 
 // Function Engine.Pawn.CanThrowWeapon
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execCanThrowWeapon_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.Suicide
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSuicide_Parms
 {
 };
@@ -23792,14 +23792,14 @@ struct APawn_execGetVehicleBase_Parms
 };
 
 // Function Engine.Pawn.PlayLanded
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execPlayLanded_Parms
 {
 	float                                              ImpactVel;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.CannotJumpNow
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCannotJumpNow_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -23820,7 +23820,7 @@ struct APawn_eventTornOff_Parms
 };
 
 // Function Engine.Pawn.PlayDying
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execPlayDying_Parms
 {
 	class UClass*                                      DamageType;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23830,19 +23830,19 @@ struct APawn_execPlayDying_Parms
 };
 
 // Function Engine.Pawn.SetDyingPhysics
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSetDyingPhysics_Parms
 {
 };
 
 // Function Engine.Pawn.TurnOff
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execTurnOff_Parms
 {
 };
 
 // Function Engine.Pawn.PlayHealingHit
-// [0x00024000] 
+// [0x00024000]
 struct APawn_execPlayHealingHit_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23853,7 +23853,7 @@ struct APawn_execPlayHealingHit_Parms
 };
 
 // Function Engine.Pawn.PlayHit
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execPlayHit_Parms
 {
 	class APawn*                                       SomePawn;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23873,13 +23873,13 @@ struct APawn_execPawnCheckPlayHitPreconditions_Parms
 };
 
 // Function Engine.Pawn.PlayDyingSound
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execPlayDyingSound_Parms
 {
 };
 
 // Function Engine.Pawn.DoJump
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execDoJump_Parms
 {
 	unsigned long                                      bUpdating : 1;                                    		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -23887,35 +23887,35 @@ struct APawn_execDoJump_Parms
 };
 
 // Function Engine.Pawn.CanJump
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCanJump_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.CanStuckJump
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execCanStuckJump_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.CheckWaterJump
-// [0x00C20002] 
+// [0x00C20002]
 struct APawn_execCheckWaterJump_Parms
 {
 	struct FVector                                     WallNormal;                                       		// 0x0000 (0x000C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x000C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  HitLocation;                                      		// 0x0014 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0020 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Checkpoint;                                       		// 0x002C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Start;                                            		// 0x0038 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  checkNorm;                                        		// 0x0044 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Extent;                                           		// 0x0050 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  HitLocation;                                      		// 0x0014 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0020 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Checkpoint;                                       		// 0x002C (0x000C) [0x0000000000000000]
+	// struct FVector                                  Start;                                            		// 0x0038 (0x000C) [0x0000000000000000]
+	// struct FVector                                  checkNorm;                                        		// 0x0044 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Extent;                                           		// 0x0050 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.TakeDrowningDamage
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execTakeDrowningDamage_Parms
 {
 };
@@ -23927,7 +23927,7 @@ struct APawn_eventBreathTimer_Parms
 };
 
 // Function Engine.Pawn.TouchingWaterVolume
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execTouchingWaterVolume_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -23962,13 +23962,13 @@ struct APawn_eventFalling_Parms
 };
 
 // Function Engine.Pawn.DelayTriggerDeath
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execDelayTriggerDeath_Parms
 {
 };
 
 // Function Engine.Pawn.Died
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execDied_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23979,7 +23979,7 @@ struct APawn_execDied_Parms
 };
 
 // Function Engine.Pawn.PlayInjured
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execPlayInjured_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -23989,7 +23989,7 @@ struct APawn_execPlayInjured_Parms
 };
 
 // Function Engine.Pawn.ThrowWeaponOnDeath
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execThrowWeaponOnDeath_Parms
 {
 };
@@ -24017,7 +24017,7 @@ struct APawn_execGetTeamNum_Parms
 };
 
 // Function Engine.Pawn.TookDamageFromFriendly
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execTookDamageFromFriendly_Parms
 {
 	float                                              Damage;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24031,7 +24031,7 @@ struct APawn_execTookDamageFromFriendly_Parms
 };
 
 // Function Engine.Pawn.TookDamageFromEnemy
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execTookDamageFromEnemy_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24056,12 +24056,12 @@ struct APawn_eventTakeDamage_Parms
 	struct FTraceHitInfo                               HitInfo;                                          		// 0x0024 (0x001C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UIDamageCauser*                              DamageCauser;                                     		// 0x0040 (0x0008) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UDamagePipeline*                             Pipeline;                                         		// 0x0048 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  OriginalMomentum;                                 		// 0x0058 (0x000C) [0x0000000000000000]              
-	// class UITargetable*                             InstigatingTargetable;                            		// 0x0070 (0x0008) [0x0000000000000000]              
+	// struct FVector                                  OriginalMomentum;                                 		// 0x0058 (0x000C) [0x0000000000000000]
+	// class UITargetable*                             InstigatingTargetable;                            		// 0x0070 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.IsDemigodMode
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execIsDemigodMode_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -24088,7 +24088,7 @@ struct APawn_eventHandleHealthDepleted_Parms
 };
 
 // Function Engine.Pawn.SetKillInstigator
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSetKillInstigator_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24124,13 +24124,13 @@ struct APawn_eventTakeRadiusDamageOnBones_Parms
 	TArray< struct FName >                             Bones;                                            		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	class UDamagePipeline*                             Pipeline;                                         		// 0x0038 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x003C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0044 (0x001C) [0x0000000000000000]              
-	// struct FVector                                  Dir;                                              		// 0x006C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  BoneLoc;                                          		// 0x0078 (0x000C) [0x0000000000000000]              
+	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0044 (0x001C) [0x0000000000000000]
+	// struct FVector                                  Dir;                                              		// 0x006C (0x000C) [0x0000000000000000]
+	// struct FVector                                  BoneLoc;                                          		// 0x0078 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.PruneDamagedBoneList
-// [0x00420000] 
+// [0x00420000]
 struct APawn_execPruneDamagedBoneList_Parms
 {
 	TArray< struct FName >                             Bones;                                            		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -24156,7 +24156,7 @@ struct APawn_execHealthWasGained_Parms
 };
 
 // Function Engine.Pawn.AdjustDamage
-// [0x00424000] 
+// [0x00424000]
 struct APawn_execAdjustDamage_Parms
 {
 	float                                              InDamage;                                         		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -24171,19 +24171,19 @@ struct APawn_execAdjustDamage_Parms
 };
 
 // Function Engine.Pawn.SetMovementPhysics
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSetMovementPhysics_Parms
 {
 };
 
 // Function Engine.Pawn.Gasp
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execGasp_Parms
 {
 };
 
 // Function Engine.Pawn.OnAssignController
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execOnAssignController_Parms
 {
 	class USeqAct_AssignController*                    inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24197,7 +24197,7 @@ struct APawn_eventReceivedNewEvent_Parms
 };
 
 // Function Engine.Pawn.SpawnDefaultController
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSpawnDefaultController_Parms
 {
 };
@@ -24221,28 +24221,28 @@ struct APawn_eventDestroyed_Parms
 };
 
 // Function Engine.Pawn.DetachFromController
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execDetachFromController_Parms
 {
 	unsigned long                                      bDestroyController : 1;                           		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function Engine.Pawn.CrushedByActor
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execCrushedByActor_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.CrushedBy
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCrushedBy_Parms
 {
 	class APawn*                                       OtherPawn;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.CanBeBaseForPawn
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execCanBeBaseForPawn_Parms
 {
 	class APawn*                                       aPawn;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24263,13 +24263,13 @@ struct APawn_eventStuckOnPawn_Parms
 };
 
 // Function Engine.Pawn.JumpOffPawn
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execJumpOffPawn_Parms
 {
 };
 
 // Function Engine.Pawn.gibbedBy
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execgibbedBy_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24306,20 +24306,20 @@ struct APawn_eventUpdatePawnRotation_Parms
 };
 
 // Function Engine.Pawn.ClientSetRotation
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execClientSetRotation_Parms
 {
 	struct FRotator                                    NewRotation;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.ClientRestart
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execClientRestart_Parms
 {
 };
 
 // Function Engine.Pawn.Restart
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execRestart_Parms
 {
 };
@@ -24332,20 +24332,20 @@ struct APawn_execGetFallingDamageScale_Parms
 };
 
 // Function Engine.Pawn.TakeFallingDamage
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execTakeFallingDamage_Parms
 {
 };
 
 // Function Engine.Pawn.KilledBy
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execKilledBy_Parms
 {
 	class APawn*                                       EventInstigator;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.AddVelocity
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execAddVelocity_Parms
 {
 	struct FVector                                     NewVelocity;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -24356,7 +24356,7 @@ struct APawn_execAddVelocity_Parms
 };
 
 // Function Engine.Pawn.HandleMomentum
-// [0x00024002] 
+// [0x00024002]
 struct APawn_execHandleMomentum_Parms
 {
 	struct FVector                                     Momentum;                                         		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -24380,14 +24380,14 @@ struct APawn_eventEndCrouch_Parms
 };
 
 // Function Engine.Pawn.ShouldCrouch
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execShouldCrouch_Parms
 {
 	unsigned long                                      bCrouch : 1;                                      		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Pawn.UnCrouch
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execUnCrouch_Parms
 {
 };
@@ -24415,14 +24415,14 @@ struct APawn_eventClientMessage_Parms
 };
 
 // Function Engine.Pawn.HandlePickup
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execHandlePickup_Parms
 {
 	class AInventory*                                  Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.LineOfSightTo
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execLineOfSightTo_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24430,7 +24430,7 @@ struct APawn_execLineOfSightTo_Parms
 };
 
 // Function Engine.Pawn.SetMoveTarget
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execSetMoveTarget_Parms
 {
 	class AActor*                                      NewTarget;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24444,14 +24444,14 @@ struct APawn_execInGodMode_Parms
 };
 
 // Function Engine.Pawn.SetViewRotation
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execSetViewRotation_Parms
 {
 	struct FRotator                                    NewRotation;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.GetAdjustedAimFor
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execGetAdjustedAimFor_Parms
 {
 	class AWeapon*                                     W;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24471,8 +24471,8 @@ struct APawn_execInFreeCam_Parms
 struct APawn_eventGetBaseAimRotation_Parms
 {
 	struct FRotator                                    ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  POVLoc;                                           		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 POVRot;                                           		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  POVLoc;                                           		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 POVRot;                                           		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.GetWeaponStartTraceLocation
@@ -24506,7 +24506,7 @@ struct APawn_execGetActorEyesViewPoint_Parms
 };
 
 // Function Engine.Pawn.ProcessViewRotation
-// [0x00420102] 
+// [0x00420102]
 struct APawn_execProcessViewRotation_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24551,21 +24551,21 @@ struct APawn_execIsHumanControlled_Parms
 };
 
 // Function Engine.Pawn.ClimbLadder
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execClimbLadder_Parms
 {
 	class ALadderVolume*                               L;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.EndClimbLadder
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execEndClimbLadder_Parms
 {
 	class ALadderVolume*                               OldLadder;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.CanSplash
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execCanSplash_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -24579,34 +24579,34 @@ struct APawn_eventSetSprinting_Parms
 };
 
 // Function Engine.Pawn.RangedAttackTime
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execRangedAttackTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.RecommendLongRangedAttack
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execRecommendLongRangedAttack_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.CanGrabLadder
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCanGrabLadder_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.DropToGround
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execDropToGround_Parms
 {
 };
 
 // Function Engine.Pawn.GetDefaultCameraMode
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execGetDefaultCameraMode_Parms
 {
 	class APlayerController*                           RequestedBy;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24614,27 +24614,27 @@ struct APawn_execGetDefaultCameraMode_Parms
 };
 
 // Function Engine.Pawn.UnPossessed
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execUnPossessed_Parms
 {
 };
 
 // Function Engine.Pawn.UpdateControllerOnPossess
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execUpdateControllerOnPossess_Parms
 {
 	unsigned long                                      bVehicleTransition : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Pawn.UpdateWeaponOnPossess
-// [0x00080002] 
+// [0x00080002]
 struct APawn_execUpdateWeaponOnPossess_Parms
 {
 	unsigned long                                      bVehicleTransition : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.Pawn.PossessedBy
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execPossessedBy_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24642,13 +24642,13 @@ struct APawn_execPossessedBy_Parms
 };
 
 // Function Engine.Pawn.NotifyTeamChanged
-// [0x00020100] 
+// [0x00020100]
 struct APawn_execNotifyTeamChanged_Parms
 {
 };
 
 // Function Engine.Pawn.PlayTeleportEffect
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execPlayTeleportEffect_Parms
 {
 	unsigned long                                      bOut : 1;                                         		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -24656,45 +24656,45 @@ struct APawn_execPlayTeleportEffect_Parms
 };
 
 // Function Engine.Pawn.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Pawn.NeedToTurn
-// [0x00820002] 
+// [0x00820002]
 struct APawn_execNeedToTurn_Parms
 {
 	struct FVector                                     targ;                                             		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x000C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  LookDir;                                          		// 0x0010 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  AimDir;                                           		// 0x001C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  LookDir;                                          		// 0x0010 (0x000C) [0x0000000000000000]
+	// struct FVector                                  AimDir;                                           		// 0x001C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Pawn.IsFiring
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execIsFiring_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.HasRangedAttack
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execHasRangedAttack_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.FireOnRelease
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execFireOnRelease_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.TooCloseToAttack
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execTooCloseToAttack_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24702,7 +24702,7 @@ struct APawn_execTooCloseToAttack_Parms
 };
 
 // Function Engine.Pawn.CanAttack
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execCanAttack_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24710,7 +24710,7 @@ struct APawn_execCanAttack_Parms
 };
 
 // Function Engine.Pawn.BotFire
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execBotFire_Parms
 {
 	unsigned long                                      bFinished : 1;                                    		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -24745,7 +24745,7 @@ struct APawn_execFlashLocationUpdated_Parms
 };
 
 // Function Engine.Pawn.ClearFlashLocation
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execClearFlashLocation_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24761,14 +24761,14 @@ struct APawn_execSetFlashLocation_Parms
 };
 
 // Function Engine.Pawn.ClearFlashCount
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execClearFlashCount_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.FlashCountUpdated
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execFlashCountUpdated_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24777,7 +24777,7 @@ struct APawn_execFlashCountUpdated_Parms
 };
 
 // Function Engine.Pawn.IncrementFlashCount
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execIncrementFlashCount_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24802,7 +24802,7 @@ struct APawn_execSetFiringMode_Parms
 };
 
 // Function Engine.Pawn.GetWeaponFiringMode
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execGetWeaponFiringMode_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -24810,40 +24810,40 @@ struct APawn_execGetWeaponFiringMode_Parms
 };
 
 // Function Engine.Pawn.StopFire
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execStopFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.StartFire
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execStartFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.StopFiring
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execStopFiring_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.Reset
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execReset_Parms
 {
 };
 
 // Function Engine.Pawn.PlayerChangedTeam
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execPlayerChangedTeam_Parms
 {
 };
 
 // Function Engine.Pawn.SetBaseEyeheight
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execSetBaseEyeheight_Parms
 {
 };
@@ -24883,7 +24883,7 @@ struct APawn_eventSpecialMoveThruEdge_Parms
 };
 
 // Function Engine.Pawn.SpecialMoveTo
-// [0x00020000] 
+// [0x00020000]
 struct APawn_execSpecialMoveTo_Parms
 {
 	class ANavigationPoint*                            Start;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25048,13 +25048,13 @@ struct APawn_execIsAliveAndWell_Parms
 };
 
 // Function Engine.Pawn.ApplyBalanceDefinitionCustomizations
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execApplyBalanceDefinitionCustomizations_Parms
 {
 };
 
 // Function Engine.Pawn.InitializeBalanceDefinitionState
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execInitializeBalanceDefinitionState_Parms
 {
 	class UBaseBalanceDefinition*                      BalanceDefinition;                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25092,28 +25092,28 @@ struct APawn_eventGetActorFaceFXAsset_Parms
 };
 
 // Function Engine.Pawn.FaceFXAudioFinished
-// [0x00020100] 
+// [0x00020100]
 struct APawn_execFaceFXAudioFinished_Parms
 {
 	class UAudioComponent*                             AC;                                               		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
 };
 
 // Function Engine.Pawn.OnPlayFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execOnPlayFaceFXAnim_Parms
 {
 	class USeqAct_PlayFaceFXAnim*                      inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Pawn.CanActorPlayFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execCanActorPlayFaceFXAnim_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.IsActorPlayingFaceFXAnim
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execIsActorPlayingFaceFXAnim_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -25162,13 +25162,13 @@ struct APawn_eventMAT_BeginAIGroup_Parms
 };
 
 // Function Engine.Pawn.FinishAIGroup
-// [0x00020100] 
+// [0x00020100]
 struct APawn_execFinishAIGroup_Parms
 {
 };
 
 // Function Engine.Pawn.BeginAIGroup
-// [0x00020100] 
+// [0x00020100]
 struct APawn_execBeginAIGroup_Parms
 {
 };
@@ -25280,14 +25280,14 @@ struct APawn_eventBeginAnimControl_Parms
 };
 
 // Function Engine.Pawn.GetDefaultMaxHealth
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execGetDefaultMaxHealth_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Pawn.GetDefaultHealth
-// [0x00020002] 
+// [0x00020002]
 struct APawn_execGetDefaultHealth_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -25354,7 +25354,7 @@ struct APawn_execUpdateAnimSetList_Parms
 };
 
 // Function Engine.Pawn.ClearAnimNodes
-// [0x00020102] 
+// [0x00020102]
 struct APawn_execClearAnimNodes_Parms
 {
 };
@@ -25672,7 +25672,7 @@ struct APawn_execGetTargetableActor_Parms
 };
 
 // Function Engine.Vehicle.GetOccupantWhoCanPickup
-// [0x00420002] 
+// [0x00420002]
 struct AVehicle_execGetOccupantWhoCanPickup_Parms
 {
 	class UIPickupable*                                Pickup;                                           		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -25681,13 +25681,13 @@ struct AVehicle_execGetOccupantWhoCanPickup_Parms
 };
 
 // Function Engine.Vehicle.SwitchSeats
-// [0x00020100] 
+// [0x00020100]
 struct AVehicle_execSwitchSeats_Parms
 {
 };
 
 // Function Engine.Vehicle.ZeroMovementVariables
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execZeroMovementVariables_Parms
 {
 };
@@ -25714,7 +25714,7 @@ struct AVehicle_execSetCanTarget_Parms
 };
 
 // Function Engine.Vehicle.NotifyDriverTakeHit
-// [0x00024000] 
+// [0x00024000]
 struct AVehicle_execNotifyDriverTakeHit_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25746,7 +25746,7 @@ struct AVehicle_eventDrivingStatusChanged_Parms
 };
 
 // Function Engine.Vehicle.SetDriving
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execSetDriving_Parms
 {
 	unsigned long                                      B : 1;                                            		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -25760,14 +25760,14 @@ struct AVehicle_eventGetEntryLocation_Parms
 };
 
 // Function Engine.Vehicle.CrushedBy
-// [0x00020000] 
+// [0x00020000]
 struct AVehicle_execCrushedBy_Parms
 {
 	class APawn*                                       OtherPawn;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Vehicle.PancakeOther
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execPancakeOther_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25779,12 +25779,12 @@ struct AVehicle_eventEncroachingOn_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  PushVelocity;                                     		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  CheckExtent;                                      		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  PushVelocity;                                     		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FVector                                  CheckExtent;                                      		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Vehicle.GetCollisionDamageInstigator
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execGetCollisionDamageInstigator_Parms
 {
 	class AController*                                 ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -25798,7 +25798,7 @@ struct AVehicle_eventEncroachedBy_Parms
 };
 
 // Function Engine.Vehicle.FaceRotation
-// [0x00020100] 
+// [0x00020100]
 struct AVehicle_execFaceRotation_Parms
 {
 	struct FRotator                                    NewRotation;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -25806,7 +25806,7 @@ struct AVehicle_execFaceRotation_Parms
 };
 
 // Function Engine.Vehicle.GetDefaultCameraMode
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execGetDefaultCameraMode_Parms
 {
 	class APlayerController*                           RequestedBy;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25814,7 +25814,7 @@ struct AVehicle_execGetDefaultCameraMode_Parms
 };
 
 // Function Engine.Vehicle.PlayDying
-// [0x00020100] 
+// [0x00020100]
 struct AVehicle_execPlayDying_Parms
 {
 	class UClass*                                      DamageType;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25824,7 +25824,7 @@ struct AVehicle_execPlayDying_Parms
 };
 
 // Function Engine.Vehicle.DriverDied
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execDriverDied_Parms
 {
 	class UClass*                                      DamageType;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25832,7 +25832,7 @@ struct AVehicle_execDriverDied_Parms
 };
 
 // Function Engine.Vehicle.Died
-// [0x00024002] 
+// [0x00024002]
 struct AVehicle_execDied_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25843,7 +25843,7 @@ struct AVehicle_execDied_Parms
 };
 
 // Function Engine.Vehicle.ThrowActiveWeapon
-// [0x00024000] 
+// [0x00024000]
 struct AVehicle_execThrowActiveWeapon_Parms
 {
 	unsigned long                                      bDestroyWeap : 1;                                 		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -25864,7 +25864,7 @@ struct AVehicle_eventTakeDamage_Parms
 };
 
 // Function Engine.Vehicle.SetKillInstigator
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execSetKillInstigator_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25874,13 +25874,13 @@ struct AVehicle_execSetKillInstigator_Parms
 };
 
 // Function Engine.Vehicle.UnPossessed
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execUnPossessed_Parms
 {
 };
 
 // Function Engine.Vehicle.TryExitPos
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execTryExitPos_Parms
 {
 	class APawn*                                       ExitingDriver;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25890,7 +25890,7 @@ struct AVehicle_execTryExitPos_Parms
 };
 
 // Function Engine.Vehicle.FindAutoExit
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execFindAutoExit_Parms
 {
 	class APawn*                                       ExitingDriver;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25898,7 +25898,7 @@ struct AVehicle_execFindAutoExit_Parms
 };
 
 // Function Engine.Vehicle.PlaceExitingDriver
-// [0x00024002] 
+// [0x00024002]
 struct AVehicle_execPlaceExitingDriver_Parms
 {
 	class APawn*                                       ExitingDriver;                                    		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -25906,13 +25906,13 @@ struct AVehicle_execPlaceExitingDriver_Parms
 };
 
 // Function Engine.Vehicle.DriverLeft
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execDriverLeft_Parms
 {
 };
 
 // Function Engine.Vehicle.SetInputs
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execSetInputs_Parms
 {
 	float                                              InForward;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25935,11 +25935,11 @@ struct AVehicle_eventDriverLeave_Parms
 	unsigned long                                      bForceLeave : 1;                                  		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	unsigned long                                      SkipPawnPlacement : 1;                            		// 0x0004 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0008 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FRotator                                 ExitRotation;                                     		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 ExitRotation;                                     		// 0x0014 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Vehicle.GetDefaultExitLocation
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execGetDefaultExitLocation_Parms
 {
 	class APawn*                                       ExitingDriver;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25947,12 +25947,12 @@ struct AVehicle_execGetDefaultExitLocation_Parms
 };
 
 // Function Engine.Vehicle.GetExitRotation
-// [0x00820002] 
+// [0x00820002]
 struct AVehicle_execGetExitRotation_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    ReturnValue;                                      		// 0x0004 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FRotator                                 Rot;                                              		// 0x0010 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 Rot;                                              		// 0x0010 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Vehicle.ContinueOnFoot
@@ -25963,14 +25963,14 @@ struct AVehicle_eventContinueOnFoot_Parms
 };
 
 // Function Engine.Vehicle.DetachDriver
-// [0x00020100] 
+// [0x00020100]
 struct AVehicle_execDetachDriver_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Vehicle.AttachDriver
-// [0x00024102] 
+// [0x00024102]
 struct AVehicle_execAttachDriver_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25978,14 +25978,14 @@ struct AVehicle_execAttachDriver_Parms
 };
 
 // Function Engine.Vehicle.EntryAnnouncement
-// [0x00020000] 
+// [0x00020000]
 struct AVehicle_execEntryAnnouncement_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Vehicle.PossessedBy
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execPossessedBy_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -25993,7 +25993,7 @@ struct AVehicle_execPossessedBy_Parms
 };
 
 // Function Engine.Vehicle.DriverEnter
-// [0x00024002] 
+// [0x00024002]
 struct AVehicle_execDriverEnter_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26002,7 +26002,7 @@ struct AVehicle_execDriverEnter_Parms
 };
 
 // Function Engine.Vehicle.TryToRide
-// [0x00024002] 
+// [0x00024002]
 struct AVehicle_execTryToRide_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26012,14 +26012,14 @@ struct AVehicle_execTryToRide_Parms
 };
 
 // Function Engine.Vehicle.AnySeatAvailable
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execAnySeatAvailable_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Vehicle.CanEnterVehicle
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execCanEnterVehicle_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26027,7 +26027,7 @@ struct AVehicle_execCanEnterVehicle_Parms
 };
 
 // Function Engine.Vehicle.Destroyed_HandleDriver
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execDestroyed_HandleDriver_Parms
 {
 };
@@ -26039,21 +26039,21 @@ struct AVehicle_eventDestroyed_Parms
 };
 
 // Function Engine.Vehicle.CheatFly
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execCheatFly_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Vehicle.CheatGhost
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execCheatGhost_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Vehicle.CheatWalk
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execCheatWalk_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -26066,19 +26066,19 @@ struct AVehicle_eventPostBeginPlay_Parms
 };
 
 // Function Engine.Vehicle.SetBaseEyeheight
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execSetBaseEyeheight_Parms
 {
 };
 
 // Function Engine.Vehicle.PlayerChangedTeam
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execPlayerChangedTeam_Parms
 {
 };
 
 // Function Engine.Vehicle.DriverRadiusDamage
-// [0x00024002] 
+// [0x00024002]
 struct AVehicle_execDriverRadiusDamage_Parms
 {
 	float                                              DamageAmount;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26093,7 +26093,7 @@ struct AVehicle_execDriverRadiusDamage_Parms
 };
 
 // Function Engine.Vehicle.TakeRadiusDamage
-// [0x00024102] 
+// [0x00024102]
 struct AVehicle_execTakeRadiusDamage_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26146,26 +26146,26 @@ struct AVehicle_execGetVehicleBase_Parms
 };
 
 // Function Engine.Vehicle.Suicide
-// [0x00020002] 
+// [0x00020002]
 struct AVehicle_execSuicide_Parms
 {
 };
 
 // Function Engine.Vehicle.NotifyTeamChanged
-// [0x00020102] 
+// [0x00020102]
 struct AVehicle_execNotifyTeamChanged_Parms
 {
 };
 
 // Function Engine.SVehicle.GetSVehicleDebug
-// [0x00420102] 
+// [0x00420102]
 struct ASVehicle_execGetSVehicleDebug_Parms
 {
 	TArray< struct FString >                           DebugInfo;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.SVehicle.HermiteEval
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execHermiteEval_Parms
 {
 	float                                              Slip;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26173,7 +26173,7 @@ struct ASVehicle_execHermiteEval_Parms
 };
 
 // Function Engine.SVehicle.PostTeleport
-// [0x00020002] 
+// [0x00020002]
 struct ASVehicle_execPostTeleport_Parms
 {
 	class ATeleporter*                                 OutTeleporter;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26187,7 +26187,7 @@ struct ASVehicle_eventRigidBodyCollision_Parms
 	class UPrimitiveComponent*                         OtherComponent;                                   		// 0x0004 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
 	struct FCollisionImpactData                        RigidCollisionData;                               		// 0x0008 (0x0024) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	int                                                ContactIndex;                                     		// 0x002C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  LocalNormal;                                      		// 0x0030 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  LocalNormal;                                      		// 0x0030 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.SVehicle.DrivingStatusChanged
@@ -26197,37 +26197,37 @@ struct ASVehicle_eventDrivingStatusChanged_Parms
 };
 
 // Function Engine.SVehicle.VehiclePlayExitSound
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execVehiclePlayExitSound_Parms
 {
 };
 
 // Function Engine.SVehicle.VehiclePlayEnterSound
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execVehiclePlayEnterSound_Parms
 {
 };
 
 // Function Engine.SVehicle.StopEngineSoundTimed
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execStopEngineSoundTimed_Parms
 {
 };
 
 // Function Engine.SVehicle.StopEngineSound
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execStopEngineSound_Parms
 {
 };
 
 // Function Engine.SVehicle.StartEngineSoundTimed
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execStartEngineSoundTimed_Parms
 {
 };
 
 // Function Engine.SVehicle.StartEngineSound
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execStartEngineSound_Parms
 {
 };
@@ -26240,7 +26240,7 @@ struct ASVehicle_execHasWheelsOnGround_Parms
 };
 
 // Function Engine.SVehicle.GetDefaultCameraMode
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execGetDefaultCameraMode_Parms
 {
 	class APlayerController*                           RequestedBy;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26259,7 +26259,7 @@ struct ASVehicle_execCalcCamera_Parms
 };
 
 // Function Engine.SVehicle.Died
-// [0x00024002] 
+// [0x00024002]
 struct ASVehicle_execDied_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26270,7 +26270,7 @@ struct ASVehicle_execDied_Parms
 };
 
 // Function Engine.SVehicle.AddVelocity
-// [0x00024002] 
+// [0x00024002]
 struct ASVehicle_execAddVelocity_Parms
 {
 	struct FVector                                     NewVelocity;                                      		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -26291,7 +26291,7 @@ struct ASVehicle_execInitVehicleRagdoll_Parms
 };
 
 // Function Engine.SVehicle.TakeRadiusDamage
-// [0x00824102] 
+// [0x00824102]
 struct ASVehicle_execTakeRadiusDamage_Parms
 {
 	class AController*                                 InstigatedBy;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26304,20 +26304,20 @@ struct ASVehicle_execTakeRadiusDamage_Parms
 	class UIDamageCauser*                              DamageCauser;                                     		// 0x0024 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	float                                              DamageFalloffExponent;                            		// 0x002C (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class UDamagePipeline*                             Pipeline;                                         		// 0x0030 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  HitLocation;                                      		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Dir;                                              		// 0x0040 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  NewDir;                                           		// 0x004C (0x000C) [0x0000000000000000]              
-	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0060 (0x001C) [0x0000000000000000]              
+	// struct FVector                                  HitLocation;                                      		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Dir;                                              		// 0x0040 (0x000C) [0x0000000000000000]
+	// struct FVector                                  NewDir;                                           		// 0x004C (0x000C) [0x0000000000000000]
+	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0060 (0x001C) [0x0000000000000000]
 };
 
 // Function Engine.SVehicle.StopVehicleSounds
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execStopVehicleSounds_Parms
 {
 };
 
 // Function Engine.SVehicle.TurnOff
-// [0x00020102] 
+// [0x00020102]
 struct ASVehicle_execTurnOff_Parms
 {
 };
@@ -26379,21 +26379,21 @@ struct ASVehicle_execAddForce_Parms
 };
 
 // Function Engine.RB_ConstraintActor.OnToggleConstraintDrive
-// [0x00020102] 
+// [0x00020102]
 struct ARB_ConstraintActor_execOnToggleConstraintDrive_Parms
 {
 	class USeqAct_ToggleConstraintDrive*               Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.RB_ConstraintActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ARB_ConstraintActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.RB_ConstraintActor.OnDestroy
-// [0x00020102] 
+// [0x00020102]
 struct ARB_ConstraintActor_execOnDestroy_Parms
 {
 	class USeqAct_Destroy*                             Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26431,7 +26431,7 @@ struct ARB_LineImpulseActor_eventReplicatedEvent_Parms
 };
 
 // Function Engine.RB_LineImpulseActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ARB_LineImpulseActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26451,14 +26451,14 @@ struct ARB_RadialImpulseActor_eventReplicatedEvent_Parms
 };
 
 // Function Engine.RB_RadialImpulseActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ARB_RadialImpulseActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.RB_Thruster.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ARB_Thruster_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26542,7 +26542,7 @@ struct URB_Spring_execSetComponents_Parms
 };
 
 // Function Engine.PhysicalMaterial.GetPhysicalMaterialProperty
-// [0x00020102] 
+// [0x00020102]
 struct UPhysicalMaterial_execGetPhysicalMaterialProperty_Parms
 {
 	class UClass*                                      DesiredClass;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -26550,7 +26550,7 @@ struct UPhysicalMaterial_execGetPhysicalMaterialProperty_Parms
 };
 
 // Function Engine.PhysicalMaterial.FindFractureSounds
-// [0x00420102] 
+// [0x00420102]
 struct UPhysicalMaterial_execFindFractureSounds_Parms
 {
 	class USoundCue*                                   OutSoundExplosion;                                		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -27055,7 +27055,7 @@ struct URB_ConstraintInstance_execInitConstraint_Parms
 };
 
 // Function Engine.NxGenericForceFieldBrush.StopsProjectile
-// [0x00020102] 
+// [0x00020102]
 struct ANxGenericForceFieldBrush_execStopsProjectile_Parms
 {
 	class AProjectile*                                 P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27069,7 +27069,7 @@ struct ANxGenericForceFieldBrush_eventPostBeginPlay_Parms
 };
 
 // Function Engine.NxForceField.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ANxForceField_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27112,21 +27112,21 @@ struct ANxGenericForceFieldBox_execDoInitRBPhys_Parms
 };
 
 // Function Engine.NxForceFieldSpawnable.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ANxForceFieldSpawnable_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.RB_CylindricalForceActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ARB_CylindricalForceActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.RB_RadialForceActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ARB_RadialForceActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27373,7 +27373,7 @@ struct USequenceOp_execForceActivateInput_Parms
 };
 
 // Function Engine.SequenceOp.GetController
-// [0x00020002] 
+// [0x00020002]
 struct USequenceOp_execGetController_Parms
 {
 	class AActor*                                      TheActor;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27381,7 +27381,7 @@ struct USequenceOp_execGetController_Parms
 };
 
 // Function Engine.SequenceOp.GetPawn
-// [0x00020002] 
+// [0x00020002]
 struct USequenceOp_execGetPawn_Parms
 {
 	class AActor*                                      TheActor;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27389,7 +27389,7 @@ struct USequenceOp_execGetPawn_Parms
 };
 
 // Function Engine.SequenceOp.Reset
-// [0x00020000] 
+// [0x00020000]
 struct USequenceOp_execReset_Parms
 {
 };
@@ -27499,7 +27499,7 @@ struct USequenceEvent_eventToggled_Parms
 };
 
 // Function Engine.SequenceEvent.Reset
-// [0x00020002] 
+// [0x00020002]
 struct USequenceEvent_execReset_Parms
 {
 };
@@ -27530,7 +27530,7 @@ struct USequence_execSetEnabled_Parms
 };
 
 // Function Engine.Sequence.Reset
-// [0x00020002] 
+// [0x00020002]
 struct USequence_execReset_Parms
 {
 };
@@ -27612,7 +27612,7 @@ struct USeqAct_ConsoleCommand_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.SeqAct_ConsoleCommand.VersionUpdated
-// [0x00020002] 
+// [0x00020002]
 struct USeqAct_ConsoleCommand_execVersionUpdated_Parms
 {
 	int                                                OldVersion;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27651,9 +27651,9 @@ struct USeqAct_GetVelocity_eventGetObjClassVersion_Parms
 // [0x00020802] ( FUNC_Event )
 struct USeqAct_HeadTrackingControl_eventActivated_Parms
 {
-	// class UClass*                                   ActorClassesToLookAtParam[ 0xA ];                 		// 0x000C (0x0028) [0x0000000000000000]              
-	// struct FName                                    TargetBoneNamesParam[ 0xA ];                      		// 0x0034 (0x0050) [0x0000000000000000]              
-	// struct FName                                    TrackControllerNameParam[ 0xA ];                  		// 0x0084 (0x0050) [0x0000000000000000]              
+	// class UClass*                                   ActorClassesToLookAtParam[ 0xA ];                 		// 0x000C (0x0028) [0x0000000000000000]
+	// struct FName                                    TargetBoneNamesParam[ 0xA ];                      		// 0x0034 (0x0050) [0x0000000000000000]
+	// struct FName                                    TrackControllerNameParam[ 0xA ];                  		// 0x0084 (0x0050) [0x0000000000000000]
 };
 
 // Function Engine.SeqAct_HeadTrackingControl.GetObjClassVersion
@@ -27693,7 +27693,7 @@ struct USeqAct_ProjectileFactory_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.SeqAct_AIMoveToActor.PickDestination
-// [0x00020002] 
+// [0x00020002]
 struct USeqAct_AIMoveToActor_execPickDestination_Parms
 {
 	class AActor*                                      Requestor;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -27714,7 +27714,7 @@ struct USeqAct_Delay_execResetDelayActive_Parms
 };
 
 // Function Engine.SeqAct_Delay.Reset
-// [0x00020002] 
+// [0x00020002]
 struct USeqAct_Delay_execReset_Parms
 {
 };
@@ -27734,7 +27734,7 @@ struct USeqAct_Interp_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.SeqAct_Interp.Reset
-// [0x00020002] 
+// [0x00020002]
 struct USeqAct_Interp_execReset_Parms
 {
 };
@@ -27904,7 +27904,7 @@ struct USeqCond_IsBenchmarking_eventGetObjClassVersion_Parms
 struct USeqCond_IsLoggedIn_eventCheckLogins_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterface*                   PlayerInt;                                        		// 0x0010 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInt;                                        		// 0x0010 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.SeqCond_IsPIE.GetObjClassVersion
@@ -28006,14 +28006,14 @@ struct USeqEvent_LevelLoaded_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.SeqEvent_Mover.NotifyFinishedOpen
-// [0x00020002] 
+// [0x00020002]
 struct USeqEvent_Mover_execNotifyFinishedOpen_Parms
 {
 	// TArray< int >                                   ActivateIndices;                                  		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function Engine.SeqEvent_Mover.NotifyDetached
-// [0x00020002] 
+// [0x00020002]
 struct USeqEvent_Mover_execNotifyDetached_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28021,7 +28021,7 @@ struct USeqEvent_Mover_execNotifyDetached_Parms
 };
 
 // Function Engine.SeqEvent_Mover.NotifyAttached
-// [0x00020002] 
+// [0x00020002]
 struct USeqEvent_Mover_execNotifyAttached_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28029,7 +28029,7 @@ struct USeqEvent_Mover_execNotifyAttached_Parms
 };
 
 // Function Engine.SeqEvent_Mover.NotifyEncroachingOn
-// [0x00020002] 
+// [0x00020002]
 struct USeqEvent_Mover_execNotifyEncroachingOn_Parms
 {
 	class AActor*                                      Hit;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28070,7 +28070,7 @@ struct USeqEvent_TakeDamage_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.SeqEvent_TakeDamage.Reset
-// [0x00020002] 
+// [0x00020002]
 struct USeqEvent_TakeDamage_execReset_Parms
 {
 };
@@ -28110,7 +28110,7 @@ struct USeqEvent_Touch_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.SeqEvent_Touch.NotifyTouchingPawnDied
-// [0x00020002] 
+// [0x00020002]
 struct USeqEvent_Touch_execNotifyTouchingPawnDied_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28150,28 +28150,28 @@ struct USeqVar_Object_execSetObjectValue_Parms
 };
 
 // Function Engine.SeqVar_Object.GetObjectValue
-// [0x00020002] 
+// [0x00020002]
 struct USeqVar_Object_execGetObjectValue_Parms
 {
 	class UObject*                                     ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.SeqVar_ObjectList.SetObjectValue
-// [0x00020002] 
+// [0x00020002]
 struct USeqVar_ObjectList_execSetObjectValue_Parms
 {
 	class UObject*                                     NewValue;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SeqVar_ObjectList.GetObjectValue
-// [0x00020002] 
+// [0x00020002]
 struct USeqVar_ObjectList_execGetObjectValue_Parms
 {
 	class UObject*                                     ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.SeqVar_Player.GetObjectValue
-// [0x00020002] 
+// [0x00020002]
 struct USeqVar_Player_execGetObjectValue_Parms
 {
 	class UObject*                                     ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -28198,7 +28198,7 @@ struct ATerrain_eventPostBeginPlay_Parms
 };
 
 // Function Engine.TerrainLayerSetup.PostBeginPlay
-// [0x00020100] 
+// [0x00020100]
 struct UTerrainLayerSetup_execPostBeginPlay_Parms
 {
 };
@@ -28288,14 +28288,14 @@ struct UConsole_execBuildRuntimeAutoCompleteList_Parms
 };
 
 // Function Engine.Console.AppendInputText
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execAppendInputText_Parms
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Console.ProcessControlKey
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execProcessControlKey_Parms
 {
 	struct FName                                       Key;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -28304,13 +28304,13 @@ struct UConsole_execProcessControlKey_Parms
 };
 
 // Function Engine.Console.FlushPlayerInput
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execFlushPlayerInput_Parms
 {
 };
 
 // Function Engine.Console.InputChar
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execInputChar_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28319,7 +28319,7 @@ struct UConsole_execInputChar_Parms
 };
 
 // Function Engine.Console.InputKey
-// [0x00024002] 
+// [0x00024002]
 struct UConsole_execInputKey_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28331,14 +28331,14 @@ struct UConsole_execInputKey_Parms
 };
 
 // Function Engine.Console.PostRender_Console
-// [0x00020000] 
+// [0x00020000]
 struct UConsole_execPostRender_Console_Parms
 {
 	class UCanvas*                                     Canvas;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Console.StartTyping
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execStartTyping_Parms
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400880]              ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
@@ -28353,14 +28353,14 @@ struct UConsole_eventOutputText_Parms
 };
 
 // Function Engine.Console.OutputTextLine
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execOutputTextLine_Parms
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400880]              ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Console.ClearOutput
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execClearOutput_Parms
 {
 };
@@ -28380,28 +28380,28 @@ struct UConsole_execShippingConsoleCommand_Parms
 };
 
 // Function Engine.Console.PurgeCommandFromHistory
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execPurgeCommandFromHistory_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Console.SetCursorPos
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execSetCursorPos_Parms
 {
 	int                                                Position;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Console.SetInputText
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execSetInputText_Parms
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Console.Initialized
-// [0x00020002] 
+// [0x00020002]
 struct UConsole_execInitialized_Parms
 {
 };
@@ -28430,7 +28430,7 @@ struct UInput_execResetInput_Parms
 };
 
 // Function Engine.PlayerInput.PreClientTravel
-// [0x00020000] 
+// [0x00020000]
 struct UPlayerInput_execPreClientTravel_Parms
 {
 	struct FString                                     PendingURL;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -28439,19 +28439,19 @@ struct UPlayerInput_execPreClientTravel_Parms
 };
 
 // Function Engine.PlayerInput.ClientInitInputSystem
-// [0x00020000] 
+// [0x00020000]
 struct UPlayerInput_execClientInitInputSystem_Parms
 {
 };
 
 // Function Engine.PlayerInput.InitInputSystem
-// [0x00020000] 
+// [0x00020000]
 struct UPlayerInput_execInitInputSystem_Parms
 {
 };
 
 // Function Engine.PlayerInput.SmoothMouse
-// [0x00420002] 
+// [0x00420002]
 struct UPlayerInput_execSmoothMouse_Parms
 {
 	float                                              aMouse;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28487,17 +28487,17 @@ struct UPlayerInput_execProcessInputMatching_Parms
 };
 
 // Function Engine.PlayerInput.CheckForDoubleClickMove
-// [0x00020002] 
+// [0x00020002]
 struct UPlayerInput_execCheckForDoubleClickMove_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      ReturnValue;                                      		// 0x0004 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   DoubleClickMove;                                  		// 0x0005 (0x0001) [0x0000000000000000]              
-	// unsigned char                                   OldDoubleClick;                                   		// 0x0006 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   DoubleClickMove;                                  		// 0x0005 (0x0001) [0x0000000000000000]
+	// unsigned char                                   OldDoubleClick;                                   		// 0x0006 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.PlayerInput.CatchDoubleClickInput
-// [0x00020002] 
+// [0x00020002]
 struct UPlayerInput_execCatchDoubleClickInput_Parms
 {
 };
@@ -28532,14 +28532,14 @@ struct UPlayerInput_execAdjustMouseSensitivity_Parms
 };
 
 // Function Engine.PlayerInput.PostProcessInput
-// [0x00020000] 
+// [0x00020000]
 struct UPlayerInput_execPostProcessInput_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerInput.PreProcessInput
-// [0x00020000] 
+// [0x00020000]
 struct UPlayerInput_execPreProcessInput_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28793,7 +28793,7 @@ struct UUIDataProvider_execGetProviderFieldType_Parms
 };
 
 // Function Engine.UIDataProvider.OnDataProviderPropertyChange
-// [0x00124000] 
+// [0x00124000]
 struct UUIDataProvider_execOnDataProviderPropertyChange_Parms
 {
 	class UUIDataProvider*                             SourceProvider;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28814,7 +28814,7 @@ struct UUIDataProvider_OnlinePlayerDataBase_eventOnRegister_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.OnGameInviteReceived
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriendMessages_execOnGameInviteReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -28822,14 +28822,14 @@ struct UUIDataProvider_OnlineFriendMessages_execOnGameInviteReceived_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriendMessages_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.OnFriendMessageReceived
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriendMessages_execOnFriendMessageReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -28839,7 +28839,7 @@ struct UUIDataProvider_OnlineFriendMessages_execOnFriendMessageReceived_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.OnFriendInviteReceived
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriendMessages_execOnFriendInviteReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -28849,17 +28849,17 @@ struct UUIDataProvider_OnlineFriendMessages_execOnFriendInviteReceived_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.ReadMessages
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriendMessages_execReadMessages_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.OnUnregister
 // [0x00020802] ( FUNC_Event )
 struct UUIDataProvider_OnlineFriendMessages_eventOnUnregister_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriendMessages.OnRegister
@@ -28867,37 +28867,37 @@ struct UUIDataProvider_OnlineFriendMessages_eventOnUnregister_Parms
 struct UUIDataProvider_OnlineFriendMessages_eventOnRegister_Parms
 {
 	class ULocalPlayer*                                InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriends.RefreshFriendsList
 // [0x00020802] ( FUNC_Event )
 struct UUIDataProvider_OnlineFriends_eventRefreshFriendsList_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriends.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriends_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriends.OnFriendsReadComplete
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineFriends_execOnFriendsReadComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriends.OnUnregister
 // [0x00020802] ( FUNC_Event )
 struct UUIDataProvider_OnlineFriends_eventOnUnregister_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineFriends.OnRegister
@@ -28905,29 +28905,29 @@ struct UUIDataProvider_OnlineFriends_eventOnUnregister_Parms
 struct UUIDataProvider_OnlineFriends_eventOnRegister_Parms
 {
 	class ULocalPlayer*                                InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePartyChatList.RefreshMembersList
 // [0x00020802] ( FUNC_Event )
 struct UUIDataProvider_OnlinePartyChatList_eventRefreshMembersList_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePartyChatList.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePartyChatList_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePartyChatList.OnUnregister
 // [0x00020802] ( FUNC_Event )
 struct UUIDataProvider_OnlinePartyChatList_eventOnUnregister_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePartyChatList.OnRegister
@@ -28935,31 +28935,31 @@ struct UUIDataProvider_OnlinePartyChatList_eventOnUnregister_Parms
 struct UUIDataProvider_OnlinePartyChatList_eventOnRegister_Parms
 {
 	class ULocalPlayer*                                InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnExternalUIChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execOnExternalUIChange_Parms
 {
 	unsigned long                                      bIsOpening : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnStorageDeviceChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execOnStorageDeviceChange_Parms
 {
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnSettingValueUpdated
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execOnSettingValueUpdated_Parms
 {
 	struct FName                                       SettingName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.ArrayProviderPropertyChanged
-// [0x00024002] 
+// [0x00024002]
 struct UUIDataProvider_OnlinePlayerStorage_execArrayProviderPropertyChanged_Parms
 {
 	class UUIDataProvider*                             SourceProvider;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -28968,7 +28968,7 @@ struct UUIDataProvider_OnlinePlayerStorage_execArrayProviderPropertyChanged_Parm
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnDeviceSelectionComplete
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execOnDeviceSelectionComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -28976,41 +28976,41 @@ struct UUIDataProvider_OnlinePlayerStorage_execOnDeviceSelectionComplete_Parms
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.ShowDeviceSelection
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execShowDeviceSelection_Parms
 {
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.RefreshStorageData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execRefreshStorageData_Parms
 {
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnLoginChange
-// [0x00820002] 
+// [0x00820002]
 struct UUIDataProvider_OnlinePlayerStorage_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   LoginStatus;                                      		// 0x0010 (0x0001) [0x0000000000000000]              
-	// struct FUniqueNetId                             NetId;                                            		// 0x0014 (0x0018) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
+	// unsigned char                                   LoginStatus;                                      		// 0x0010 (0x0001) [0x0000000000000000]
+	// struct FUniqueNetId                             NetId;                                            		// 0x0014 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnReadStorageComplete
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execOnReadStorageComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0004 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnUnregister
 // [0x00020802] ( FUNC_Event )
 struct UUIDataProvider_OnlinePlayerStorage_eventOnUnregister_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.OnRegister
@@ -29018,11 +29018,11 @@ struct UUIDataProvider_OnlinePlayerStorage_eventOnUnregister_Parms
 struct UUIDataProvider_OnlinePlayerStorage_eventOnRegister_Parms
 {
 	class ULocalPlayer*                                InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.ClearReadCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UUIDataProvider_OnlinePlayerStorage_execClearReadCompleteDelegate_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29030,7 +29030,7 @@ struct UUIDataProvider_OnlinePlayerStorage_execClearReadCompleteDelegate_Parms
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.AddReadCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UUIDataProvider_OnlinePlayerStorage_execAddReadCompleteDelegate_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29038,7 +29038,7 @@ struct UUIDataProvider_OnlinePlayerStorage_execAddReadCompleteDelegate_Parms
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.GetData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execGetData_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29047,7 +29047,7 @@ struct UUIDataProvider_OnlinePlayerStorage_execGetData_Parms
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.WriteData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execWriteData_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29058,7 +29058,7 @@ struct UUIDataProvider_OnlinePlayerStorage_execWriteData_Parms
 };
 
 // Function Engine.UIDataProvider_OnlinePlayerStorage.ReadData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlinePlayerStorage_execReadData_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29069,14 +29069,14 @@ struct UUIDataProvider_OnlinePlayerStorage_execReadData_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineProfileSettings.RefreshStorageData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineProfileSettings_execRefreshStorageData_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_OnlineProfileSettings.ClearReadCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineProfileSettings_execClearReadCompleteDelegate_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29084,7 +29084,7 @@ struct UUIDataProvider_OnlineProfileSettings_execClearReadCompleteDelegate_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineProfileSettings.AddReadCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineProfileSettings_execAddReadCompleteDelegate_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29092,7 +29092,7 @@ struct UUIDataProvider_OnlineProfileSettings_execAddReadCompleteDelegate_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineProfileSettings.GetData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineProfileSettings_execGetData_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29101,7 +29101,7 @@ struct UUIDataProvider_OnlineProfileSettings_execGetData_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineProfileSettings.WriteData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineProfileSettings_execWriteData_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29112,7 +29112,7 @@ struct UUIDataProvider_OnlineProfileSettings_execWriteData_Parms
 };
 
 // Function Engine.UIDataProvider_OnlineProfileSettings.ReadData
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_OnlineProfileSettings_execReadData_Parms
 {
 	class UOnlinePlayerInterface*                      PlayerInterface;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29123,13 +29123,13 @@ struct UUIDataProvider_OnlineProfileSettings_execReadData_Parms
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.UpdateAchievements
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_PlayerAchievements_execUpdateAchievements_Parms
 {
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_PlayerAchievements_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -29149,22 +29149,22 @@ struct UUIDataProvider_PlayerAchievements_eventOnRegister_Parms
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementUnlocked
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_PlayerAchievements_execOnPlayerAchievementUnlocked_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementsChanged
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_PlayerAchievements_execOnPlayerAchievementsChanged_Parms
 {
 	int                                                TitleId;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   Result;                                           		// 0x0008 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   Result;                                           		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.GetAchievementDetails
-// [0x00420002] 
+// [0x00420002]
 struct UUIDataProvider_PlayerAchievements_execGetAchievementDetails_Parms
 {
 	int                                                AchievementId;                                    		// 0x0000 (0x0004) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
@@ -29172,7 +29172,7 @@ struct UUIDataProvider_PlayerAchievements_execGetAchievementDetails_Parms
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.GetAchievementIconPathName
-// [0x00024000] 
+// [0x00024000]
 struct UUIDataProvider_PlayerAchievements_execGetAchievementIconPathName_Parms
 {
 	int                                                AchievementId;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -29181,7 +29181,7 @@ struct UUIDataProvider_PlayerAchievements_execGetAchievementIconPathName_Parms
 };
 
 // Function Engine.UIDataProvider_PlayerAchievements.PopulateAchievementIcons
-// [0x00020000] 
+// [0x00020000]
 struct UUIDataProvider_PlayerAchievements_execPopulateAchievementIcons_Parms
 {
 };
@@ -29226,7 +29226,7 @@ struct UUIDataStore_eventRefreshSubscribers_Parms
 };
 
 // Function Engine.UIDataStore.NotifyGameSessionEnded
-// [0x00020000] 
+// [0x00020000]
 struct UUIDataStore_execNotifyGameSessionEnded_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -29261,7 +29261,7 @@ struct UUIDataStore_eventRegistered_Parms
 };
 
 // Function Engine.UIDataStore.OnDataStoreValueUpdated
-// [0x00120000] 
+// [0x00120000]
 struct UUIDataStore_execOnDataStoreValueUpdated_Parms
 {
 	class UUIDataStore*                                SourceDataStore;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -29277,7 +29277,7 @@ struct UUIDataStore_DynamicResource_eventUnregistered_Parms
 {
 	class ULocalPlayer*                                PlayerOwner;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	// TArray< class UUIResourceCombinationProvider* > ProviderInstances;                                		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x001C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x001C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_DynamicResource.Registered
@@ -29285,7 +29285,7 @@ struct UUIDataStore_DynamicResource_eventUnregistered_Parms
 struct UUIDataStore_DynamicResource_eventRegistered_Parms
 {
 	class ULocalPlayer*                                PlayerOwner;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_DynamicResource.OnLoginChange
@@ -29438,7 +29438,7 @@ struct UUIDataStore_MenuItems_eventRegistered_Parms
 };
 
 // Function Engine.UIDataStore_MenuItems.OnGameSettingsChanged
-// [0x00024002] 
+// [0x00024002]
 struct UUIDataStore_MenuItems_execOnGameSettingsChanged_Parms
 {
 	class UUIDataProvider*                             SourceProvider;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -29469,14 +29469,14 @@ struct UUIDataStore_MenuItems_execClearSet_Parms
 };
 
 // Function Engine.UIDataStore_GameState.NotifyGameSessionEnded
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_GameState_execNotifyGameSessionEnded_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.UIDataStore_GameState.OnRefreshDataFieldValue
-// [0x00120000] 
+// [0x00120000]
 struct UUIDataStore_GameState_execOnRefreshDataFieldValue_Parms
 {
 };
@@ -29489,7 +29489,7 @@ struct UUIDataStore_Registry_execGetDataProvider_Parms
 };
 
 // Function Engine.UIDataStore_OnlineGameSearch.ClearAllSearchResults
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlineGameSearch_execClearAllSearchResults_Parms
 {
 };
@@ -29525,7 +29525,7 @@ struct UUIDataStore_OnlineGameSearch_eventSetCurrentByIndex_Parms
 };
 
 // Function Engine.UIDataStore_OnlineGameSearch.FindSearchConfigurationIndex
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlineGameSearch_execFindSearchConfigurationIndex_Parms
 {
 	struct FName                                       SearchTag;                                        		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -29559,7 +29559,7 @@ struct UUIDataStore_OnlineGameSearch_eventShowHostGamercard_Parms
 	unsigned char                                      ControllerIndex;                                  		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	int                                                ListIndex;                                        		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0008 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterfaceEx*                 PlayerExt;                                        		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterfaceEx*                 PlayerExt;                                        		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlineGameSearch.GetSearchResultFromIndex
@@ -29572,14 +29572,14 @@ struct UUIDataStore_OnlineGameSearch_eventGetSearchResultFromIndex_Parms
 };
 
 // Function Engine.UIDataStore_OnlineGameSearch.OnSearchComplete
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlineGameSearch_execOnSearchComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.UIDataStore_OnlineGameSearch.OverrideQuerySubmission
-// [0x00080002] 
+// [0x00080002]
 struct UUIDataStore_OnlineGameSearch_execOverrideQuerySubmission_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -29597,7 +29597,7 @@ struct UUIDataStore_OnlineGameSearch_eventSubmitGameSearch_Parms
 };
 
 // Function Engine.UIDataStore_OnlineGameSearch.InvalidateCurrentSearchResults
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlineGameSearch_execInvalidateCurrentSearchResults_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -29615,7 +29615,7 @@ struct UUIDataStore_OnlinePlayerData_eventGetCachedPlayerStorage_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UOnlinePlayerStorage*                        ReturnValue;                                      		// 0x0004 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.GetCachedPlayerProfile
@@ -29624,40 +29624,40 @@ struct UUIDataStore_OnlinePlayerData_eventGetCachedPlayerProfile_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UOnlineProfileSettings*                      ReturnValue;                                      		// 0x0004 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.ClearDelegates
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlinePlayerData_execClearDelegates_Parms
 {
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.RegisterDelegates
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlinePlayerData_execRegisterDelegates_Parms
 {
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.OnPlayerDataChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlinePlayerData_execOnPlayerDataChange_Parms
 {
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.OnLoginChange
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlinePlayerData_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.OnUnregister
 // [0x00020802] ( FUNC_Event )
 struct UUIDataStore_OnlinePlayerData_eventOnUnregister_Parms
 {
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.OnRegister
@@ -29665,7 +29665,7 @@ struct UUIDataStore_OnlinePlayerData_eventOnUnregister_Parms
 struct UUIDataStore_OnlinePlayerData_eventOnRegister_Parms
 {
 	class ULocalPlayer*                                InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlinePlayerData.OnSettingProviderChanged
@@ -29684,7 +29684,7 @@ struct UUIDataStore_OnlineStats_execSortResultsByRank_Parms
 };
 
 // Function Engine.UIDataStore_OnlineStats.OnReadComplete
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlineStats_execOnReadComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -29697,8 +29697,8 @@ struct UUIDataStore_OnlineStats_eventShowGamercard_Parms
 	unsigned char                                      ConrollerIndex;                                   		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	int                                                ListIndex;                                        		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0008 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlinePlayerInterfaceEx*                 PlayerExt;                                        		// 0x0010 (0x0008) [0x0000000000000000]              
-	// struct FUniqueNetId                             PlayerID;                                         		// 0x0018 (0x0018) [0x0000000000000000]              
+	// class UOnlinePlayerInterfaceEx*                 PlayerExt;                                        		// 0x0010 (0x0008) [0x0000000000000000]
+	// struct FUniqueNetId                             PlayerID;                                         		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlineStats.RefreshStats
@@ -29708,11 +29708,11 @@ struct UUIDataStore_OnlineStats_eventRefreshStats_Parms
 	unsigned char                                      ControllerIndex;                                  		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 	// TArray< struct FUniqueNetId >                   Players;                                          		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FUniqueNetId                             PlayerID;                                         		// 0x0014 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             PlayerID;                                         		// 0x0014 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlineStats.SetStatsReadInfo
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataStore_OnlineStats_execSetStatsReadInfo_Parms
 {
 };
@@ -29783,7 +29783,7 @@ struct UUIDataStore_OnlineGameSettings_eventCreateGame_Parms
 {
 	unsigned char                                      ControllerIndex;                                  		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UOnlineGameInterface*                     GameInterface;                                    		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UOnlineGameInterface*                     GameInterface;                                    		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.UIDataStore_OnlineGameSettings.OnSettingProviderChanged
@@ -30095,7 +30095,7 @@ struct UUIPropertyDataProvider_eventGetCustomPropertyValue_Parms
 };
 
 // Function Engine.UIPropertyDataProvider.CanSupportComplexPropertyType
-// [0x00120000] 
+// [0x00120000]
 struct UUIPropertyDataProvider_execCanSupportComplexPropertyType_Parms
 {
 	class UProperty*                                   UnsupportedProperty;                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30103,7 +30103,7 @@ struct UUIPropertyDataProvider_execCanSupportComplexPropertyType_Parms
 };
 
 // Function Engine.UIDynamicDataProvider.CleanupDataProvider
-// [0x00020002] 
+// [0x00020002]
 struct UUIDynamicDataProvider_execCleanupDataProvider_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -30154,14 +30154,14 @@ struct UUIDynamicDataProvider_execBindProviderInstance_Parms
 };
 
 // Function Engine.UIDataProvider_Settings.OnSettingValueUpdated
-// [0x00020002] 
+// [0x00020002]
 struct UUIDataProvider_Settings_execOnSettingValueUpdated_Parms
 {
 	struct FName                                       SettingName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.UIDataProvider_Settings.ArrayProviderPropertyChanged
-// [0x00024002] 
+// [0x00024002]
 struct UUIDataProvider_Settings_execArrayProviderPropertyChanged_Parms
 {
 	class UUIDataProvider*                             SourceProvider;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30184,7 +30184,7 @@ struct UUIDataProvider_MenuItem_execIsFiltered_Parms
 };
 
 // Function Engine.UIResourceCombinationProvider.ReplaceProviderCollection
-// [0x00420002] 
+// [0x00420002]
 struct UUIResourceCombinationProvider_execReplaceProviderCollection_Parms
 {
 	TArray< struct FUIDataProviderField >              out_Fields;                                       		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -30194,7 +30194,7 @@ struct UUIResourceCombinationProvider_execReplaceProviderCollection_Parms
 };
 
 // Function Engine.UIResourceCombinationProvider.ReplaceProviderValue
-// [0x00420002] 
+// [0x00420002]
 struct UUIResourceCombinationProvider_execReplaceProviderValue_Parms
 {
 	TArray< struct FUIDataProviderField >              out_Fields;                                       		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -30204,7 +30204,7 @@ struct UUIResourceCombinationProvider_execReplaceProviderValue_Parms
 };
 
 // Function Engine.UIResourceCombinationProvider.ClearProviderReferences
-// [0x00020002] 
+// [0x00020002]
 struct UUIResourceCombinationProvider_execClearProviderReferences_Parms
 {
 };
@@ -30303,7 +30303,7 @@ struct UUIResourceCombinationProvider_eventInitializeProvider_Parms
 };
 
 // Function Engine.GameUISceneClient.FindLocalPlayerIndex
-// [0x00020002] 
+// [0x00020002]
 struct UGameUISceneClient_execFindLocalPlayerIndex_Parms
 {
 	class UPlayer*                                     P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30311,7 +30311,7 @@ struct UGameUISceneClient_execFindLocalPlayerIndex_Parms
 };
 
 // Function Engine.GameUISceneClient.NotifyPlayerRemoved
-// [0x00020002] 
+// [0x00020002]
 struct UGameUISceneClient_execNotifyPlayerRemoved_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30319,7 +30319,7 @@ struct UGameUISceneClient_execNotifyPlayerRemoved_Parms
 };
 
 // Function Engine.GameUISceneClient.NotifyPlayerAdded
-// [0x00020002] 
+// [0x00020002]
 struct UGameUISceneClient_execNotifyPlayerAdded_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30327,13 +30327,13 @@ struct UGameUISceneClient_execNotifyPlayerAdded_Parms
 };
 
 // Function Engine.GameUISceneClient.NotifyGameSessionEnded
-// [0x00020000] 
+// [0x00020000]
 struct UGameUISceneClient_execNotifyGameSessionEnded_Parms
 {
 };
 
 // Function Engine.GameUISceneClient.NotifyClientTravel
-// [0x00020000] 
+// [0x00020000]
 struct UGameUISceneClient_execNotifyClientTravel_Parms
 {
 	class APlayerController*                           TravellingPlayer;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30402,7 +30402,7 @@ struct AFluidInfluenceActor_eventReplicatedEvent_Parms
 };
 
 // Function Engine.FluidInfluenceActor.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AFluidInfluenceActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30457,7 +30457,7 @@ struct UFluidSurfaceComponent_execApplyForce_Parms
 };
 
 // Function Engine.LensFlareSource.SetActorParameter
-// [0x00020100] 
+// [0x00020100]
 struct ALensFlareSource_execSetActorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -30465,7 +30465,7 @@ struct ALensFlareSource_execSetActorParameter_Parms
 };
 
 // Function Engine.LensFlareSource.SetExtColorParameter
-// [0x00020100] 
+// [0x00020100]
 struct ALensFlareSource_execSetExtColorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -30476,7 +30476,7 @@ struct ALensFlareSource_execSetExtColorParameter_Parms
 };
 
 // Function Engine.LensFlareSource.SetColorParameter
-// [0x00020100] 
+// [0x00020100]
 struct ALensFlareSource_execSetColorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -30484,7 +30484,7 @@ struct ALensFlareSource_execSetColorParameter_Parms
 };
 
 // Function Engine.LensFlareSource.SetVectorParameter
-// [0x00020100] 
+// [0x00020100]
 struct ALensFlareSource_execSetVectorParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -30492,7 +30492,7 @@ struct ALensFlareSource_execSetVectorParameter_Parms
 };
 
 // Function Engine.LensFlareSource.SetFloatParameter
-// [0x00020100] 
+// [0x00020100]
 struct ALensFlareSource_execSetFloatParameter_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -30507,7 +30507,7 @@ struct ALensFlareSource_eventReplicatedEvent_Parms
 };
 
 // Function Engine.LensFlareSource.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ALensFlareSource_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30648,7 +30648,7 @@ struct UTextureRenderTarget2D_execCreate_Parms
 };
 
 // Function Engine.ScriptedTexture.Render
-// [0x00120000] 
+// [0x00120000]
 struct UScriptedTexture_execRender_Parms
 {
 	class UCanvas*                                     C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30686,7 +30686,7 @@ struct ADebugCameraController_execShowDebugSelectedInfo_Parms
 };
 
 // Function Engine.DebugCameraController.NativeInputKey
-// [0x00824002] 
+// [0x00824002]
 struct ADebugCameraController_execNativeInputKey_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30695,16 +30695,16 @@ struct ADebugCameraController_execNativeInputKey_Parms
 	float                                              AmountDepressed;                                  		// 0x0010 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      bGamepad : 1;                                     		// 0x0014 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  CamLoc;                                           		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  ZeroVec;                                          		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 CamRot;                                           		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0040 (0x001C) [0x0000000000000000]              
-	// struct FVector                                  HitLoc;                                           		// 0x0060 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x006C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  CamLoc;                                           		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FVector                                  ZeroVec;                                          		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 CamRot;                                           		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0040 (0x001C) [0x0000000000000000]
+	// struct FVector                                  HitLoc;                                           		// 0x0060 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x006C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.DebugCameraController.DisableDebugCamera
-// [0x00020002] 
+// [0x00020002]
 struct ADebugCameraController_execDisableDebugCamera_Parms
 {
 };
@@ -30728,14 +30728,14 @@ struct ADebugCameraController_execSetFreezeRendering_Parms
 };
 
 // Function Engine.DebugCameraController.OnDeactivate
-// [0x00020002] 
+// [0x00020002]
 struct ADebugCameraController_execOnDeactivate_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.DebugCameraController.OnActivate
-// [0x00020002] 
+// [0x00020002]
 struct ADebugCameraController_execOnActivate_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30778,7 +30778,7 @@ struct AScout_eventPreBeginPlay_Parms
 };
 
 // Function Engine.Light.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct ALight_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -30792,86 +30792,86 @@ struct ALight_eventReplicatedEvent_Parms
 };
 
 // Function Engine.PointLightToggleable.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct APointLightToggleable_execApplyCheckpointRecord_Parms
 {
 	struct APointLightToggleable_FCheckpointRecord     Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PointLightToggleable.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct APointLightToggleable_execCreateCheckpointRecord_Parms
 {
 	struct APointLightToggleable_FCheckpointRecord     Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.PointLightToggleable.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct APointLightToggleable_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.SpotLightToggleable.ApplyCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ASpotLightToggleable_execApplyCheckpointRecord_Parms
 {
 	struct ASpotLightToggleable_FCheckpointRecord      Record;                                           		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.SpotLightToggleable.CreateCheckpointRecord
-// [0x00420002] 
+// [0x00420002]
 struct ASpotLightToggleable_execCreateCheckpointRecord_Parms
 {
 	struct ASpotLightToggleable_FCheckpointRecord      Record;                                           		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.SpotLightToggleable.ShouldSaveForCheckpoint
-// [0x00020002] 
+// [0x00020002]
 struct ASpotLightToggleable_execShouldSaveForCheckpoint_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.LightComponent.Behavior_ChangeVisibility
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execBehavior_ChangeVisibility_Parms
 {
 	unsigned long                                      bVisible : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.LightComponent.Behavior_ToggleVisibility
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execBehavior_ToggleVisibility_Parms
 {
 };
 
 // Function Engine.LightComponent.OnUpdatePropertyLightColor
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execOnUpdatePropertyLightColor_Parms
 {
 };
 
 // Function Engine.LightComponent.OnUpdatePropertyBrightness
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execOnUpdatePropertyBrightness_Parms
 {
 };
 
 // Function Engine.LightComponent.OnUpdatePropertyOcclusionMaskDarkness
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execOnUpdatePropertyOcclusionMaskDarkness_Parms
 {
 };
 
 // Function Engine.LightComponent.OnUpdatePropertyBloomTint
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execOnUpdatePropertyBloomTint_Parms
 {
 };
 
 // Function Engine.LightComponent.OnUpdatePropertyBloomScale
-// [0x00020002] 
+// [0x00020002]
 struct ULightComponent_execOnUpdatePropertyBloomScale_Parms
 {
 };
@@ -30919,73 +30919,73 @@ struct ULightComponent_execSetEnabled_Parms
 };
 
 // Function Engine.DirectionalLightComponent.OnUpdatePropertyLightEnv_BouncedLightBrightness
-// [0x00020002] 
+// [0x00020002]
 struct UDirectionalLightComponent_execOnUpdatePropertyLightEnv_BouncedLightBrightness_Parms
 {
 };
 
 // Function Engine.DirectionalLightComponent.OnUpdatePropertyLightEnv_BouncedModulationColor
-// [0x00020002] 
+// [0x00020002]
 struct UDirectionalLightComponent_execOnUpdatePropertyLightEnv_BouncedModulationColor_Parms
 {
 };
 
 // Function Engine.DirectionalLightComponent.OnUpdatePropertyBrightness
-// [0x00020002] 
+// [0x00020002]
 struct UDirectionalLightComponent_execOnUpdatePropertyBrightness_Parms
 {
 };
 
 // Function Engine.DirectionalLightComponent.OnUpdatePropertyLightColor
-// [0x00020002] 
+// [0x00020002]
 struct UDirectionalLightComponent_execOnUpdatePropertyLightColor_Parms
 {
 };
 
 // Function Engine.DominantDirectionalLightComponent.OnUpdatePropertyTimeOfDaySpecularColor
-// [0x00020002] 
+// [0x00020002]
 struct UDominantDirectionalLightComponent_execOnUpdatePropertyTimeOfDaySpecularColor_Parms
 {
 };
 
 // Function Engine.DominantDirectionalLightComponent.OnUpdatePropertyTimeOfDaySpecularBrightness
-// [0x00020002] 
+// [0x00020002]
 struct UDominantDirectionalLightComponent_execOnUpdatePropertyTimeOfDaySpecularBrightness_Parms
 {
 };
 
 // Function Engine.DominantDirectionalLightComponent.OnUpdatePropertyTimeOfDayDiffuseColor
-// [0x00020002] 
+// [0x00020002]
 struct UDominantDirectionalLightComponent_execOnUpdatePropertyTimeOfDayDiffuseColor_Parms
 {
 };
 
 // Function Engine.DominantDirectionalLightComponent.OnUpdatePropertyTimeOfDayDiffuseBrightness
-// [0x00020002] 
+// [0x00020002]
 struct UDominantDirectionalLightComponent_execOnUpdatePropertyTimeOfDayDiffuseBrightness_Parms
 {
 };
 
 // Function Engine.PointLightComponent.OnUpdatePropertyLightEnv_BouncedLightBrightness
-// [0x00020002] 
+// [0x00020002]
 struct UPointLightComponent_execOnUpdatePropertyLightEnv_BouncedLightBrightness_Parms
 {
 };
 
 // Function Engine.PointLightComponent.OnUpdatePropertyLightEnv_BouncedModulationColor
-// [0x00020002] 
+// [0x00020002]
 struct UPointLightComponent_execOnUpdatePropertyLightEnv_BouncedModulationColor_Parms
 {
 };
 
 // Function Engine.PointLightComponent.OnUpdatePropertyBrightness
-// [0x00020002] 
+// [0x00020002]
 struct UPointLightComponent_execOnUpdatePropertyBrightness_Parms
 {
 };
 
 // Function Engine.PointLightComponent.OnUpdatePropertyLightColor
-// [0x00020002] 
+// [0x00020002]
 struct UPointLightComponent_execOnUpdatePropertyLightColor_Parms
 {
 };
@@ -31005,37 +31005,37 @@ struct USpotLightComponent_execSetRotation_Parms
 };
 
 // Function Engine.SkyLightComponent.OnUpdatePropertyLowerBrightness
-// [0x00020002] 
+// [0x00020002]
 struct USkyLightComponent_execOnUpdatePropertyLowerBrightness_Parms
 {
 };
 
 // Function Engine.SkyLightComponent.OnUpdatePropertyLowerColor
-// [0x00020002] 
+// [0x00020002]
 struct USkyLightComponent_execOnUpdatePropertyLowerColor_Parms
 {
 };
 
 // Function Engine.SkyLightComponent.OnUpdatePropertyLightEnv_BouncedLightBrightness
-// [0x00020002] 
+// [0x00020002]
 struct USkyLightComponent_execOnUpdatePropertyLightEnv_BouncedLightBrightness_Parms
 {
 };
 
 // Function Engine.SkyLightComponent.OnUpdatePropertyLightEnv_BouncedModulationColor
-// [0x00020002] 
+// [0x00020002]
 struct USkyLightComponent_execOnUpdatePropertyLightEnv_BouncedModulationColor_Parms
 {
 };
 
 // Function Engine.SkyLightComponent.OnUpdatePropertyBrightness
-// [0x00020002] 
+// [0x00020002]
 struct USkyLightComponent_execOnUpdatePropertyBrightness_Parms
 {
 };
 
 // Function Engine.SkyLightComponent.OnUpdatePropertyLightColor
-// [0x00020002] 
+// [0x00020002]
 struct USkyLightComponent_execOnUpdatePropertyLightColor_Parms
 {
 };
@@ -31061,7 +31061,7 @@ struct UDynamicLightEnvironmentComponent_execResetEnvironment_Parms
 };
 
 // Function Engine.SkeletalMeshComponent.Behavior_ChangeBoneVisibility
-// [0x00020002] 
+// [0x00020002]
 struct USkeletalMeshComponent_execBehavior_ChangeBoneVisibility_Parms
 {
 	struct FName                                       InBoneName;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -31069,14 +31069,14 @@ struct USkeletalMeshComponent_execBehavior_ChangeBoneVisibility_Parms
 };
 
 // Function Engine.SkeletalMeshComponent.Behavior_ToggleBoneVisibility
-// [0x00020002] 
+// [0x00020002]
 struct USkeletalMeshComponent_execBehavior_ToggleBoneVisibility_Parms
 {
 	struct FName                                       InBoneName;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SkeletalMeshComponent.Behavior_InstanceVertexWeight
-// [0x00020002] 
+// [0x00020002]
 struct USkeletalMeshComponent_execBehavior_InstanceVertexWeight_Parms
 {
 	struct FName                                       InBoneName;                                       		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -31098,7 +31098,7 @@ struct USkeletalMeshComponent_execSetForceDiscardRootMotion_Parms
 };
 
 // Function Engine.SkeletalMeshComponent.Behavior_SetMorphNodeWeight
-// [0x00024002] 
+// [0x00024002]
 struct USkeletalMeshComponent_execBehavior_SetMorphNodeWeight_Parms
 {
 	struct FName                                       NodeName;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -31132,7 +31132,7 @@ struct USkeletalMeshComponent_execGetAnimTreeNodes_Parms
 };
 
 // Function Engine.SkeletalMeshComponent.Behavior_SetSkelControlStrength
-// [0x00020002] 
+// [0x00020002]
 struct USkeletalMeshComponent_execBehavior_SetSkelControlStrength_Parms
 {
 	struct FName                                       SkelControlName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -31164,7 +31164,7 @@ struct USkeletalMeshComponent_execBreakConstraint_Parms
 };
 
 // Function Engine.SkeletalMeshComponent.SkelMeshCompOnParticleSystemFinished
-// [0x00020102] 
+// [0x00020102]
 struct USkeletalMeshComponent_execSkelMeshCompOnParticleSystemFinished_Parms
 {
 	class UParticleSystemComponent*                    PSC;                                              		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -31176,8 +31176,8 @@ struct USkeletalMeshComponent_eventPlayParticleEffect_Parms
 {
 	class UAnimNotify_PlayParticleEffect*              AnimNotifyData;                                   		// 0x0000 (0x0004) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  Loc;                                              		// 0x0008 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 Rot;                                              		// 0x0014 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Loc;                                              		// 0x0008 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 Rot;                                              		// 0x0014 (0x000C) [0x0000000000000000]
 	// class UParticleSystemComponent*                 PSC;                                              		// 0x0024 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
@@ -31191,13 +31191,13 @@ struct USkeletalMeshComponent_eventCreateForceField_Parms
 };
 
 // Function Engine.SkeletalMeshComponent.StopAnim
-// [0x00020002] 
+// [0x00020002]
 struct USkeletalMeshComponent_execStopAnim_Parms
 {
 };
 
 // Function Engine.SkeletalMeshComponent.PlayAnim
-// [0x00024002] 
+// [0x00024002]
 struct USkeletalMeshComponent_execPlayAnim_Parms
 {
 	struct FName                                       AnimName;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -32154,14 +32154,14 @@ struct USkeletalMeshComponent_execAttachComponent_Parms
 };
 
 // Function Engine.SplineActor.OnToggleHidden
-// [0x00020102] 
+// [0x00020102]
 struct ASplineActor_execOnToggleHidden_Parms
 {
 	class USeqAct_ToggleHidden*                        Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.SplineActor.OnToggle
-// [0x00020002] 
+// [0x00020002]
 struct ASplineActor_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32335,33 +32335,33 @@ struct AGameReplicationInfo_eventShouldShowGore_Parms
 };
 
 // Function Engine.GameReplicationInfo.IsCoopMultiplayerGame
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execIsCoopMultiplayerGame_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameReplicationInfo.IsMultiplayerGame
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execIsMultiplayerGame_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.GameReplicationInfo.EndGame
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execEndGame_Parms
 {
 };
 
 // Function Engine.GameReplicationInfo.StartMatch
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execStartMatch_Parms
 {
 };
 
 // Function Engine.GameReplicationInfo.SetTeam
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execSetTeam_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32369,14 +32369,14 @@ struct AGameReplicationInfo_execSetTeam_Parms
 };
 
 // Function Engine.GameReplicationInfo.RemovePRI
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execRemovePRI_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.GameReplicationInfo.AddPRI
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execAddPRI_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32404,13 +32404,13 @@ struct AGameReplicationInfo_eventDestroyed_Parms
 };
 
 // Function Engine.GameReplicationInfo.Reset
-// [0x00020002] 
+// [0x00020002]
 struct AGameReplicationInfo_execReset_Parms
 {
 };
 
 // Function Engine.GameReplicationInfo.ReceivedGameClass
-// [0x00020102] 
+// [0x00020102]
 struct AGameReplicationInfo_execReceivedGameClass_Parms
 {
 };
@@ -32429,27 +32429,27 @@ struct AGameReplicationInfo_eventPostBeginPlay_Parms
 };
 
 // Function Engine.PlayerReplicationInfo.HandlePlayerJoinWithValidName
-// [0x00020100] 
+// [0x00020100]
 struct APlayerReplicationInfo_execHandlePlayerJoinWithValidName_Parms
 {
 };
 
 // Function Engine.PlayerReplicationInfo.UnregisterPlayerFromSession
-// [0x00820102] 
+// [0x00820102]
 struct APlayerReplicationInfo_execUnregisterPlayerFromSession_Parms
 {
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0004 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0004 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerReplicationInfo.RegisterPlayerWithSession
-// [0x00820102] 
+// [0x00820102]
 struct APlayerReplicationInfo_execRegisterPlayerWithSession_Parms
 {
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0008 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0008 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerReplicationInfo.IsInvalidName
-// [0x00020102] 
+// [0x00020102]
 struct APlayerReplicationInfo_execIsInvalidName_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -32464,49 +32464,49 @@ struct APlayerReplicationInfo_execGetTeamNum_Parms
 };
 
 // Function Engine.PlayerReplicationInfo.SetUniqueId
-// [0x00020102] 
+// [0x00020102]
 struct APlayerReplicationInfo_execSetUniqueId_Parms
 {
 	struct FUniqueNetId                                PlayerUniqueId;                                   		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerReplicationInfo.SeamlessTravelTo
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execSeamlessTravelTo_Parms
 {
 	class APlayerReplicationInfo*                      NewPRI;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerReplicationInfo.IncrementDeaths
-// [0x00024002] 
+// [0x00024002]
 struct APlayerReplicationInfo_execIncrementDeaths_Parms
 {
 	int                                                Amt;                                              		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function Engine.PlayerReplicationInfo.CopyProperties
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execCopyProperties_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerReplicationInfo.OverrideWith
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execOverrideWith_Parms
 {
 	class APlayerReplicationInfo*                      PRI;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerReplicationInfo.Duplicate
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execDuplicate_Parms
 {
 	class APlayerReplicationInfo*                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.PlayerReplicationInfo.SetWaitingPlayer
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execSetWaitingPlayer_Parms
 {
 	unsigned long                                      B : 1;                                            		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -32527,14 +32527,14 @@ struct APlayerReplicationInfo_eventGetHumanReadableHTMLName_Parms
 };
 
 // Function Engine.PlayerReplicationInfo.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct APlayerReplicationInfo_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.PlayerReplicationInfo.Reset
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execReset_Parms
 {
 };
@@ -32543,11 +32543,11 @@ struct APlayerReplicationInfo_execReset_Parms
 // [0x00820902] ( FUNC_Event )
 struct APlayerReplicationInfo_eventDestroyed_Parms
 {
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0004 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0004 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerReplicationInfo.ShouldBroadCastWelcomeMessage
-// [0x00024102] 
+// [0x00024102]
 struct APlayerReplicationInfo_execShouldBroadCastWelcomeMessage_Parms
 {
 	unsigned long                                      bExiting : 1;                                     		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -32566,18 +32566,18 @@ struct APlayerReplicationInfo_execUpdatePing_Parms
 struct APlayerReplicationInfo_eventReplicatedEvent_Parms
 {
 	struct FName                                       VarName;                                          		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ZeroId;                                           		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ZeroId;                                           		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.PlayerReplicationInfo.SetPlayerTeam
-// [0x00020002] 
+// [0x00020002]
 struct APlayerReplicationInfo_execSetPlayerTeam_Parms
 {
 	class ATeamInfo*                                   NewTeam;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerReplicationInfo.ClientInitialize
-// [0x00020102] 
+// [0x00020102]
 struct APlayerReplicationInfo_execClientInitialize_Parms
 {
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32597,21 +32597,21 @@ struct ATeamInfo_execGetTeamNum_Parms
 };
 
 // Function Engine.TeamInfo.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct ATeamInfo_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.TeamInfo.RemoveFromTeam
-// [0x00020002] 
+// [0x00020002]
 struct ATeamInfo_execRemoveFromTeam_Parms
 {
 	class AController*                                 Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.TeamInfo.AddToTeam
-// [0x00020002] 
+// [0x00020002]
 struct ATeamInfo_execAddToTeam_Parms
 {
 	class AController*                                 Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32671,13 +32671,13 @@ struct ACamera_execPlayCameraAnim_Parms
 };
 
 // Function Engine.Camera.ClearAllCameraShakes
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execClearAllCameraShakes_Parms
 {
 };
 
 // Function Engine.Camera.PlayWorldCameraShake
-// [0x00826002] 
+// [0x00826002]
 struct ACamera_execPlayWorldCameraShake_Parms
 {
 	class UCameraShake*                                Shake;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32688,12 +32688,12 @@ struct ACamera_execPlayWorldCameraShake_Parms
 	float                                              Falloff;                                          		// 0x001C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bTryForceFeedback : 1;                            		// 0x0020 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	unsigned long                                      bOrientShakeTowardsEpicenter : 1;                 		// 0x0024 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
-	// struct FRotator                                 CamRot;                                           		// 0x0030 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  CamLoc;                                           		// 0x003C (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 CamRot;                                           		// 0x0030 (0x000C) [0x0000000000000000]
+	// struct FVector                                  CamLoc;                                           		// 0x003C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Camera.CalcRadialShakeScale
-// [0x00822002] 
+// [0x00822002]
 struct ACamera_execCalcRadialShakeScale_Parms
 {
 	class ACamera*                                     Cam;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32702,18 +32702,18 @@ struct ACamera_execCalcRadialShakeScale_Parms
 	float                                              OuterRadius;                                      		// 0x0014 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              Falloff;                                          		// 0x0018 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              ReturnValue;                                      		// 0x001C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  POVLoc;                                           		// 0x0020 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  POVLoc;                                           		// 0x0020 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Camera.StopCameraShake
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execStopCameraShake_Parms
 {
 	class UCameraShake*                                Shake;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Camera.PlayCameraShake
-// [0x00024002] 
+// [0x00024002]
 struct ACamera_execPlayCameraShake_Parms
 {
 	class UCameraShake*                                Shake;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32723,29 +32723,29 @@ struct ACamera_execPlayCameraShake_Parms
 };
 
 // Function Engine.Camera.ClearCameraLensEffects
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execClearCameraLensEffects_Parms
 {
 };
 
 // Function Engine.Camera.RemoveCameraLensEffect
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execRemoveCameraLensEffect_Parms
 {
 	class AEmitterCameraLensEffectBase*                Emitter;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Camera.AddCameraLensEffect
-// [0x00820002] 
+// [0x00820002]
 struct ACamera_execAddCameraLensEffect_Parms
 {
 	class UClass*                                      LensEffectEmitterClass;                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  CamLoc;                                           		// 0x0004 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 CamRot;                                           		// 0x0010 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  CamLoc;                                           		// 0x0004 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 CamRot;                                           		// 0x0010 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Camera.FindCameraLensEffect
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execFindCameraLensEffect_Parms
 {
 	class UClass*                                      LensEffectEmitterClass;                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32753,7 +32753,7 @@ struct ACamera_execFindCameraLensEffect_Parms
 };
 
 // Function Engine.Camera.ProcessViewRotation
-// [0x00420002] 
+// [0x00420002]
 struct ACamera_execProcessViewRotation_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32770,17 +32770,17 @@ struct ACamera_execSetViewTarget_Parms
 };
 
 // Function Engine.Camera.UpdateViewTarget
-// [0x00C20002] 
+// [0x00C20002]
 struct ACamera_execUpdateViewTarget_Parms
 {
 	struct FTViewTarget                                OutVT;                                            		// 0x0000 (0x002C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	float                                              DeltaTime;                                        		// 0x002C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  Loc;                                              		// 0x0030 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  pos;                                              		// 0x003C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitLocation;                                      		// 0x0048 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0054 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 Rot;                                              		// 0x0060 (0x000C) [0x0000000000000000]              
-	// struct FTPOV                                    OrigPOV;                                          		// 0x0078 (0x001C) [0x0000000000000000]              
+	// struct FVector                                  Loc;                                              		// 0x0030 (0x000C) [0x0000000000000000]
+	// struct FVector                                  pos;                                              		// 0x003C (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitLocation;                                      		// 0x0048 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0054 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 Rot;                                              		// 0x0060 (0x000C) [0x0000000000000000]
+	// struct FTPOV                                    OrigPOV;                                          		// 0x0078 (0x001C) [0x0000000000000000]
 };
 
 // Function Engine.Camera.CheckViewTarget
@@ -32805,15 +32805,15 @@ struct ACamera_execBlendViewTargets_Parms
 	struct FTViewTarget                                B;                                                		// 0x002C (0x002C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	float                                              Alpha;                                            		// 0x0058 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FTPOV                                       ReturnValue;                                      		// 0x005C (0x001C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FTPOV                                    POV;                                              		// 0x0078 (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    POV;                                              		// 0x0078 (0x001C) [0x0000000000000000]
 };
 
 // Function Engine.Camera.DoUpdateCamera
-// [0x00820102] 
+// [0x00820102]
 struct ACamera_execDoUpdateCamera_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FTPOV                                    NewPOV;                                           		// 0x0004 (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    NewPOV;                                           		// 0x0004 (0x001C) [0x0000000000000000]
 };
 
 // Function Engine.Camera.UpdateCamera
@@ -32847,7 +32847,7 @@ struct ACamera_execGetCameraViewPoint_Parms
 };
 
 // Function Engine.Camera.SetFOV
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execSetFOV_Parms
 {
 	float                                              NewFOV;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32882,13 +32882,13 @@ struct ACamera_eventDestroyed_Parms
 };
 
 // Function Engine.Camera.PostBeginPlay
-// [0x00020002] 
+// [0x00020002]
 struct ACamera_execPostBeginPlay_Parms
 {
 };
 
 // Function Engine.Camera.CreateCameraModifier
-// [0x00080002] 
+// [0x00080002]
 struct ACamera_execCreateCameraModifier_Parms
 {
 	class UClass*                                      ModifierClass;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32896,7 +32896,7 @@ struct ACamera_execCreateCameraModifier_Parms
 };
 
 // Function Engine.CameraActor.GetCameraView
-// [0x00420102] 
+// [0x00420102]
 struct ACameraActor_execGetCameraView_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32977,7 +32977,7 @@ struct UCameraModifier_execUpdateAlpha_Parms
 };
 
 // Function Engine.CameraModifier.ProcessViewRotation
-// [0x00420100] 
+// [0x00420100]
 struct UCameraModifier_execProcessViewRotation_Parms
 {
 	class AActor*                                      ViewTarget;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -32988,13 +32988,13 @@ struct UCameraModifier_execProcessViewRotation_Parms
 };
 
 // Function Engine.CameraModifier.ToggleModifier
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifier_execToggleModifier_Parms
 {
 };
 
 // Function Engine.CameraModifier.EnableModifier
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifier_execEnableModifier_Parms
 {
 };
@@ -33007,7 +33007,7 @@ struct UCameraModifier_eventDisableModifier_Parms
 };
 
 // Function Engine.CameraModifier.RemoveCameraModifier
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifier_execRemoveCameraModifier_Parms
 {
 	class ACamera*                                     Camera;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33015,7 +33015,7 @@ struct UCameraModifier_execRemoveCameraModifier_Parms
 };
 
 // Function Engine.CameraModifier.AddCameraModifier
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifier_execAddCameraModifier_Parms
 {
 	class ACamera*                                     Camera;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33040,7 +33040,7 @@ struct UCameraModifier_execModifyCamera_Parms
 };
 
 // Function Engine.CameraModifier.Init
-// [0x00020000] 
+// [0x00020000]
 struct UCameraModifier_execInit_Parms
 {
 };
@@ -33065,20 +33065,20 @@ struct UCameraModifier_CameraShake_execUpdateCameraShake_Parms
 };
 
 // Function Engine.CameraModifier_CameraShake.RemoveAllCameraShakes
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifier_CameraShake_execRemoveAllCameraShakes_Parms
 {
 };
 
 // Function Engine.CameraModifier_CameraShake.RemoveCameraShake
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifier_CameraShake_execRemoveCameraShake_Parms
 {
 	class UCameraShake*                                Shake;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.CameraModifier_CameraShake.AddCameraShake
-// [0x00024002] 
+// [0x00024002]
 struct UCameraModifier_CameraShake_execAddCameraShake_Parms
 {
 	class UCameraShake*                                NewShake;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33088,7 +33088,7 @@ struct UCameraModifier_CameraShake_execAddCameraShake_Parms
 };
 
 // Function Engine.CameraModifier_CameraShake.InitializeShake
-// [0x00884002] 
+// [0x00884002]
 struct UCameraModifier_CameraShake_execInitializeShake_Parms
 {
 	class UCameraShake*                                NewShake;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33096,11 +33096,11 @@ struct UCameraModifier_CameraShake_execInitializeShake_Parms
 	unsigned char                                      PlaySpace;                                        		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    UserPlaySpaceRot;                                 		// 0x000C (0x000C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	struct FCameraShakeInstance                        ReturnValue;                                      		// 0x0020 (0x0090) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FCameraShakeInstance                     Inst;                                             		// 0x00B0 (0x0090) [0x0000000000000000]              
+	// struct FCameraShakeInstance                     Inst;                                             		// 0x00B0 (0x0090) [0x0000000000000000]
 };
 
 // Function Engine.CameraModifier_CameraShake.ReinitShake
-// [0x00080002] 
+// [0x00080002]
 struct UCameraModifier_CameraShake_execReinitShake_Parms
 {
 	int                                                ActiveShakeIdx;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33108,7 +33108,7 @@ struct UCameraModifier_CameraShake_execReinitShake_Parms
 };
 
 // Function Engine.CameraModifier_CameraShake.InitializeOffset
-// [0x00482002] 
+// [0x00482002]
 struct UCameraModifier_CameraShake_execInitializeOffset_Parms
 {
 	struct FFOscillator                                Param;                                            		// 0x0000 (0x000C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -33116,19 +33116,19 @@ struct UCameraModifier_CameraShake_execInitializeOffset_Parms
 };
 
 // Function Engine.CameraShake.GetLocOscillationMagnitude
-// [0x00820102] 
+// [0x00820102]
 struct UCameraShake_execGetLocOscillationMagnitude_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  V;                                                		// 0x0004 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  V;                                                		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.CameraShake.GetRotOscillationMagnitude
-// [0x00820102] 
+// [0x00820102]
 struct UCameraShake_execGetRotOscillationMagnitude_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  V;                                                		// 0x0004 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  V;                                                		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.ResourcePoolManager.CreateResourcePoolManagerIfNecessary
@@ -33169,14 +33169,14 @@ struct AResourcePoolManager_execCreatePoolAtIndex_Parms
 };
 
 // Function Engine.ResourcePoolManager.GetDebugInfo
-// [0x00420102] 
+// [0x00420102]
 struct AResourcePoolManager_execGetDebugInfo_Parms
 {
 	TArray< struct FString >                           DebugInfo;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.ResourcePoolManager.GetNumberOfPoolsInUse
-// [0x00020102] 
+// [0x00020102]
 struct AResourcePoolManager_execGetNumberOfPoolsInUse_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -33372,24 +33372,24 @@ struct UBalancedActorAttributeContextResolver_execGetAttributeContext_Parms
 };
 
 // Function Engine.AttributeEffect.RemoveAttributeEffects
-// [0x00C22002] 
+// [0x00C22002]
 struct UAttributeEffect_execRemoveAttributeEffects_Parms
 {
 	class AActor*                                      Owner;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	TArray< struct FAppliedAttributeEffect >           EffectModifiers;                                  		// 0x0004 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	// struct FAppliedAttributeEffect                  Effect;                                           		// 0x0010 (0x000C) [0x0000000000000000]              
+	// struct FAppliedAttributeEffect                  Effect;                                           		// 0x0010 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.AttributeEffect.ApplyAttributeEffects
-// [0x00C26002] 
+// [0x00C26002]
 struct UAttributeEffect_execApplyAttributeEffects_Parms
 {
 	class AActor*                                      ContextSource;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	TArray< struct FAttributeEffectData >              InAttributeEffects;                               		// 0x0004 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	TArray< struct FAppliedAttributeEffect >           OutModifiers;                                     		// 0x0010 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	class UObject*                                     OptionalOverrideContextSource;                    		// 0x001C (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	// struct FAttributeEffectData                     InData;                                           		// 0x0020 (0x0018) [0x0000000000000000]              
-	// struct FAppliedAttributeEffect                  Effect;                                           		// 0x0038 (0x000C) [0x0000000000000000]              
+	// struct FAttributeEffectData                     InData;                                           		// 0x0020 (0x0018) [0x0000000000000000]
+	// struct FAppliedAttributeEffect                  Effect;                                           		// 0x0038 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.AttributeExpression.SelectAkEvent
@@ -33531,17 +33531,17 @@ struct UBehaviorBase_eventApplyBehavior_Parms
 };
 
 // Function Engine.BehaviorBase.GetImpactInfoParameter
-// [0x00880002] 
+// [0x00880002]
 struct UBehaviorBase_execGetImpactInfoParameter_Parms
 {
 	struct FBehaviorParameters                         EventData;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	struct FName                                       ValueName;                                        		// 0x000C (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	struct FImpactInfo                                 ReturnValue;                                      		// 0x0014 (0x005C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FImpactInfo                              rslt;                                             		// 0x0070 (0x005C) [0x0000000000000000]              
+	// struct FImpactInfo                              rslt;                                             		// 0x0070 (0x005C) [0x0000000000000000]
 };
 
 // Function Engine.BehaviorBase.GetActorParameter
-// [0x00080002] 
+// [0x00080002]
 struct UBehaviorBase_execGetActorParameter_Parms
 {
 	struct FBehaviorParameters                         EventData;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -33550,17 +33550,17 @@ struct UBehaviorBase_execGetActorParameter_Parms
 };
 
 // Function Engine.BehaviorBase.GetVectorParameter
-// [0x00880002] 
+// [0x00880002]
 struct UBehaviorBase_execGetVectorParameter_Parms
 {
 	struct FBehaviorParameters                         EventData;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	struct FName                                       ValueName;                                        		// 0x000C (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     ReturnValue;                                      		// 0x0014 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  rslt;                                             		// 0x0020 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  rslt;                                             		// 0x0020 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.BehaviorBase.SetImpactInfoParameter
-// [0x00422002] 
+// [0x00422002]
 struct UBehaviorBase_execSetImpactInfoParameter_Parms
 {
 	struct FBehaviorParameters                         EventData;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -33569,7 +33569,7 @@ struct UBehaviorBase_execSetImpactInfoParameter_Parms
 };
 
 // Function Engine.BehaviorBase.SetActorParameter
-// [0x00422002] 
+// [0x00422002]
 struct UBehaviorBase_execSetActorParameter_Parms
 {
 	struct FBehaviorParameters                         EventData;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -33578,7 +33578,7 @@ struct UBehaviorBase_execSetActorParameter_Parms
 };
 
 // Function Engine.BehaviorBase.SetVectorParameter
-// [0x00422002] 
+// [0x00422002]
 struct UBehaviorBase_execSetVectorParameter_Parms
 {
 	struct FBehaviorParameters                         EventData;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -33605,7 +33605,7 @@ struct UBehaviorBase_execRunBehaviors_Parms
 };
 
 // Function Engine.Behavior_Kill.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_Kill_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33614,11 +33614,11 @@ struct UBehavior_Kill_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIKilledBehavior*                         KilledInterface;                                  		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIKilledBehavior*                         KilledInterface;                                  		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_PlaySound.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_PlaySound_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -33627,7 +33627,7 @@ struct UBehavior_PlaySound_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UISoundBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UISoundBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_RemoteEvent.ApplyBehaviorToContext
@@ -33909,7 +33909,7 @@ struct UImpactDefinition_execHandleRigidBodyImpact_Parms
 };
 
 // Function Engine.ICounterBehavior.SetCounterState
-// [0x00020000] 
+// [0x00020000]
 struct UICounterBehavior_execSetCounterState_Parms
 {
 	unsigned char                                      CounterId;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -33918,7 +33918,7 @@ struct UICounterBehavior_execSetCounterState_Parms
 };
 
 // Function Engine.ICounterBehavior.GetCounterState
-// [0x00420000] 
+// [0x00420000]
 struct UICounterBehavior_execGetCounterState_Parms
 {
 	unsigned char                                      CounterId;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -33927,7 +33927,7 @@ struct UICounterBehavior_execGetCounterState_Parms
 };
 
 // Function Engine.ICounterBehavior.OnCounterEvent
-// [0x00024000] 
+// [0x00024000]
 struct UICounterBehavior_execOnCounterEvent_Parms
 {
 	unsigned char                                      EventType;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -33935,7 +33935,7 @@ struct UICounterBehavior_execOnCounterEvent_Parms
 };
 
 // Function Engine.IInstanceData.GetReplicatedInstanceDataState
-// [0x00420000] 
+// [0x00420000]
 struct UIInstanceData_execGetReplicatedInstanceDataState_Parms
 {
 	struct FReplicatedInstanceDataState                OutReplicatedInstanceDataState;                   		// 0x0000 (0x0010) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -33943,7 +33943,7 @@ struct UIInstanceData_execGetReplicatedInstanceDataState_Parms
 };
 
 // Function Engine.IInstanceData.GetInstanceDataState
-// [0x00420000] 
+// [0x00420000]
 struct UIInstanceData_execGetInstanceDataState_Parms
 {
 	struct FInstanceDataSet                            OutInstanceDataState;                             		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -33951,7 +33951,7 @@ struct UIInstanceData_execGetInstanceDataState_Parms
 };
 
 // Function Engine.IInstanceData.DestroyOwnedInstanceData
-// [0x00020000] 
+// [0x00020000]
 struct UIInstanceData_execDestroyOwnedInstanceData_Parms
 {
 };
@@ -33982,7 +33982,7 @@ struct UIInstanceData_eventGetInstanceData_Parms
 };
 
 // Function Engine.IInstanceData.SetInstanceData
-// [0x00024000] 
+// [0x00024000]
 struct UIInstanceData_execSetInstanceData_Parms
 {
 	struct FInstanceDataUnion                          InstanceData;                                     		// 0x0000 (0x0058) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -33991,12 +33991,12 @@ struct UIInstanceData_execSetInstanceData_Parms
 };
 
 // Function Engine.InstanceDataHelper.DestroyOwnedInstanceData
-// [0x00822102] 
+// [0x00822102]
 struct UInstanceDataHelper_execDestroyOwnedInstanceData_Parms
 {
 	struct FInstanceDataSet                            DataSet;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	// struct FInstanceDataUnion                       Data;                                             		// 0x000C (0x0058) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class UIDestroyBehavior*                        Behavior;                                         		// 0x0064 (0x0008) [0x0000000000000000]              
+	// class UIDestroyBehavior*                        Behavior;                                         		// 0x0064 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.InstanceDataHelper.ForceDetachDelegate
@@ -34169,14 +34169,14 @@ struct UResourcePool_execWasCreatedAndNotModified_Parms
 };
 
 // Function Engine.ResourcePool.IsAuthoritative
-// [0x00020002] 
+// [0x00020002]
 struct UResourcePool_execIsAuthoritative_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.ResourcePool.SetAuthoritative
-// [0x00020002] 
+// [0x00020002]
 struct UResourcePool_execSetAuthoritative_Parms
 {
 	unsigned long                                      B : 1;                                            		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -34197,14 +34197,14 @@ struct UResourcePool_execGetMinimalDebugText_Parms
 };
 
 // Function Engine.ResourcePool.GetDebugText
-// [0x00420002] 
+// [0x00420002]
 struct UResourcePool_execGetDebugText_Parms
 {
 	TArray< struct FString >                           DebugText;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.ResourcePool.RefillPercentage
-// [0x00024002] 
+// [0x00024002]
 struct UResourcePool_execRefillPercentage_Parms
 {
 	float                                              Percentage;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34238,7 +34238,7 @@ struct UResourcePool_execUpdateLastValues_Parms
 };
 
 // Function Engine.ResourcePool.SetMaxValueFromProfile
-// [0x00020002] 
+// [0x00020002]
 struct UResourcePool_execSetMaxValueFromProfile_Parms
 {
 	float                                              Value;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34309,7 +34309,7 @@ struct UResourcePool_execIsResourcePoolForResourceDefinition_Parms
 };
 
 // Function Engine.ResourcePool.UpdateCurrentValueOnExtremaChange
-// [0x00020002] 
+// [0x00020002]
 struct UResourcePool_execUpdateCurrentValueOnExtremaChange_Parms
 {
 };
@@ -34322,13 +34322,13 @@ struct UResourcePool_eventCalculateBaseValues_Parms
 };
 
 // Function Engine.ResourcePool.ApplyUpgrades
-// [0x00080002] 
+// [0x00080002]
 struct UResourcePool_execApplyUpgrades_Parms
 {
 };
 
 // Function Engine.ResourcePool.SetUpgradeLevel
-// [0x00020002] 
+// [0x00020002]
 struct UResourcePool_execSetUpgradeLevel_Parms
 {
 	int                                                NewUpgradeLevel;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34336,7 +34336,7 @@ struct UResourcePool_execSetUpgradeLevel_Parms
 };
 
 // Function Engine.ResourcePool.GetUpgradeLevel
-// [0x00020002] 
+// [0x00020002]
 struct UResourcePool_execGetUpgradeLevel_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -34422,7 +34422,7 @@ struct AHybridNavigationArea_execGetAreaName_Parms
 };
 
 // Function Engine.PickupableMeshActor.SetTarget
-// [0x00020002] 
+// [0x00020002]
 struct APickupableMeshActor_execSetTarget_Parms
 {
 	class AActor*                                      TargetActor;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34437,7 +34437,7 @@ struct UManufacturerDefinition_execGetManufacturerGradeDisplayName_Parms
 };
 
 // Function Engine.LocalMessage.PartiallyDuplicates
-// [0x00022002] 
+// [0x00022002]
 struct ULocalMessage_execPartiallyDuplicates_Parms
 {
 	int                                                Switch1;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34448,7 +34448,7 @@ struct ULocalMessage_execPartiallyDuplicates_Parms
 };
 
 // Function Engine.LocalMessage.IsConsoleMessage
-// [0x00022002] 
+// [0x00022002]
 struct ULocalMessage_execIsConsoleMessage_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34456,7 +34456,7 @@ struct ULocalMessage_execIsConsoleMessage_Parms
 };
 
 // Function Engine.LocalMessage.GetLifeTime
-// [0x00022002] 
+// [0x00022002]
 struct ULocalMessage_execGetLifeTime_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34464,7 +34464,7 @@ struct ULocalMessage_execGetLifeTime_Parms
 };
 
 // Function Engine.LocalMessage.GetColor
-// [0x00026002] 
+// [0x00026002]
 struct ULocalMessage_execGetColor_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -34475,7 +34475,7 @@ struct ULocalMessage_execGetColor_Parms
 };
 
 // Function Engine.LocalMessage.GetConsoleColor
-// [0x00022002] 
+// [0x00022002]
 struct ULocalMessage_execGetConsoleColor_Parms
 {
 	class APlayerReplicationInfo*                      RelatedPRI;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34483,7 +34483,7 @@ struct ULocalMessage_execGetConsoleColor_Parms
 };
 
 // Function Engine.LocalMessage.GetString
-// [0x00026002] 
+// [0x00026002]
 struct ULocalMessage_execGetString_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -34495,7 +34495,7 @@ struct ULocalMessage_execGetString_Parms
 };
 
 // Function Engine.LocalMessage.GetMsgType
-// [0x00026002] 
+// [0x00026002]
 struct ULocalMessage_execGetMsgType_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -34507,7 +34507,7 @@ struct ULocalMessage_execGetMsgType_Parms
 };
 
 // Function Engine.LocalMessage.ClientReceive
-// [0x00026002] 
+// [0x00026002]
 struct ULocalMessage_execClientReceive_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34519,11 +34519,11 @@ struct ULocalMessage_execClientReceive_Parms
 };
 
 // Function Engine.DroppedPickup.GetTouchTraceLocation
-// [0x00820102] 
+// [0x00820102]
 struct ADroppedPickup_execGetTouchTraceLocation_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  TraceLocation;                                    		// 0x000C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  TraceLocation;                                    		// 0x000C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.DroppedPickup.TouchPickupTrace
@@ -34536,14 +34536,14 @@ struct ADroppedPickup_execTouchPickupTrace_Parms
 };
 
 // Function Engine.DroppedPickup.GetPickupableMeshActor
-// [0x00020100] 
+// [0x00020100]
 struct ADroppedPickup_execGetPickupableMeshActor_Parms
 {
 	class APickupableMeshActor*                        ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DroppedPickup.SetInteractionIcon
-// [0x00020000] 
+// [0x00020000]
 struct ADroppedPickup_execSetInteractionIcon_Parms
 {
 	class UEngineInteractionIconDefinition*            Icon;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34563,7 +34563,7 @@ struct ADroppedPickup_execIsDiscovered_Parms
 };
 
 // Function Engine.DroppedPickup.DenyPickupAttempt
-// [0x00020100] 
+// [0x00020100]
 struct ADroppedPickup_execDenyPickupAttempt_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34592,33 +34592,33 @@ struct ADroppedPickup_execGetPickupableInventory_Parms
 };
 
 // Function Engine.DroppedPickup.IsPickupableInventoryAutomaticallyPickedUp
-// [0x00020102] 
+// [0x00020102]
 struct ADroppedPickup_execIsPickupableInventoryAutomaticallyPickedUp_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.DroppedPickup.RecheckValidTouch
-// [0x00020000] 
+// [0x00020000]
 struct ADroppedPickup_execRecheckValidTouch_Parms
 {
 };
 
 // Function Engine.DroppedPickup.FailedPickup
-// [0x00020100] 
+// [0x00020100]
 struct ADroppedPickup_execFailedPickup_Parms
 {
 };
 
 // Function Engine.DroppedPickup.PickedUpBy
-// [0x00020002] 
+// [0x00020002]
 struct ADroppedPickup_execPickedUpBy_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.DroppedPickup.GiveTo
-// [0x00020002] 
+// [0x00020002]
 struct ADroppedPickup_execGiveTo_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34634,7 +34634,7 @@ struct ADroppedPickup_eventLanded_Parms
 };
 
 // Function Engine.DroppedPickup.DetourWeight
-// [0x00020002] 
+// [0x00020002]
 struct ADroppedPickup_execDetourWeight_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34666,7 +34666,7 @@ struct ADroppedPickup_eventSetPickupMesh_Parms
 };
 
 // Function Engine.DroppedPickup.InitializeFromInventory
-// [0x00020000] 
+// [0x00020000]
 struct ADroppedPickup_execInitializeFromInventory_Parms
 {
 	class AWillowInventory*                            InInv;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34675,7 +34675,7 @@ struct ADroppedPickup_execInitializeFromInventory_Parms
 };
 
 // Function Engine.DroppedPickup.Reset
-// [0x00020002] 
+// [0x00020002]
 struct ADroppedPickup_execReset_Parms
 {
 };
@@ -34706,13 +34706,13 @@ struct ADroppedPickup_execAddToNavigation_Parms
 };
 
 // Function Engine.Inventory.Unreadied
-// [0x00080100] 
+// [0x00080100]
 struct AInventory_execUnreadied_Parms
 {
 };
 
 // Function Engine.Inventory.Readied
-// [0x00080100] 
+// [0x00080100]
 struct AInventory_execReadied_Parms
 {
 };
@@ -34739,7 +34739,7 @@ struct AInventory_eventCanBeUsedBy_Parms
 };
 
 // Function Engine.Inventory.GetLocalString
-// [0x00026002] 
+// [0x00026002]
 struct AInventory_execGetLocalString_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -34749,7 +34749,7 @@ struct AInventory_execGetLocalString_Parms
 };
 
 // Function Engine.Inventory.DropFrom
-// [0x00024000] 
+// [0x00024000]
 struct AInventory_execDropFrom_Parms
 {
 	struct FVector                                     StartLocation;                                    		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -34761,7 +34761,7 @@ struct AInventory_execDropFrom_Parms
 };
 
 // Function Engine.Inventory.DenyPickupQuery
-// [0x00020002] 
+// [0x00020002]
 struct AInventory_execDenyPickupQuery_Parms
 {
 	class UIPickupable*                                Pickup;                                           		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -34769,13 +34769,13 @@ struct AInventory_execDenyPickupQuery_Parms
 };
 
 // Function Engine.Inventory.ItemRemovedFromInvManager
-// [0x00020002] 
+// [0x00020002]
 struct AInventory_execItemRemovedFromInvManager_Parms
 {
 };
 
 // Function Engine.Inventory.ClientGivenTo
-// [0x010201C2] 
+// [0x010201C2]
 struct AInventory_execClientGivenTo_Parms
 {
 	class APawn*                                       NewOwner;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34783,7 +34783,7 @@ struct AInventory_execClientGivenTo_Parms
 };
 
 // Function Engine.Inventory.GivenTo
-// [0x00024002] 
+// [0x00024002]
 struct AInventory_execGivenTo_Parms
 {
 	class APawn*                                       thisPawn;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34792,7 +34792,7 @@ struct AInventory_execGivenTo_Parms
 };
 
 // Function Engine.Inventory.PlayPickupSound
-// [0x00020000] 
+// [0x00020000]
 struct AInventory_execPlayPickupSound_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34800,7 +34800,7 @@ struct AInventory_execPlayPickupSound_Parms
 };
 
 // Function Engine.Inventory.AnnouncePickup
-// [0x00020002] 
+// [0x00020002]
 struct AInventory_execAnnouncePickup_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34816,7 +34816,7 @@ struct AInventory_eventGiveTo_Parms
 };
 
 // Function Engine.Inventory.DetourWeight
-// [0x00022002] 
+// [0x00022002]
 struct AInventory_execDetourWeight_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34825,7 +34825,7 @@ struct AInventory_execDetourWeight_Parms
 };
 
 // Function Engine.Inventory.BotDesireability
-// [0x00022002] 
+// [0x00022002]
 struct AInventory_execBotDesireability_Parms
 {
 	class AActor*                                      PickupHolder;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -34841,7 +34841,7 @@ struct AInventory_eventDestroyed_Parms
 };
 
 // Function Engine.Inventory.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct AInventory_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -34855,20 +34855,20 @@ struct AInventory_eventReplicatedEvent_Parms
 };
 
 // Function Engine.WillowInventory.TryConsume
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execTryConsume_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.Consume
-// [0x00020100] 
+// [0x00020100]
 struct AWillowInventory_execConsume_Parms
 {
 };
 
 // Function Engine.WillowInventory.IsReadied
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execIsReadied_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -34882,21 +34882,21 @@ struct AWillowInventory_execGetHolsteredGearLikenessType_Parms
 };
 
 // Function Engine.WillowInventory.RemoveExternalLikenessConsumer
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execRemoveExternalLikenessConsumer_Parms
 {
 	class AActor*                                      LikenessActor;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.WillowInventory.AddExternalLikenessConsumer
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execAddExternalLikenessConsumer_Parms
 {
 	class AActor*                                      LikenessActor;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.WillowInventory.GetRarityLevel
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execGetRarityLevel_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -35016,7 +35016,7 @@ struct AWillowInventory_eventClonePrimaryMeshForUI_Parms
 };
 
 // Function Engine.WillowInventory.CloneInventorySkelMeshComponent
-// [0x00084102] 
+// [0x00084102]
 struct AWillowInventory_execCloneInventorySkelMeshComponent_Parms
 {
 	class AActor*                                      CloneOwner;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35038,28 +35038,28 @@ struct AWillowInventory_eventCloneAppearance_Parms
 };
 
 // Function Engine.WillowInventory.ClonePrimaryMesh
-// [0x00020100] 
+// [0x00020100]
 struct AWillowInventory_execClonePrimaryMesh_Parms
 {
 	class UMeshComponent*                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000004000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline )
 };
 
 // Function Engine.WillowInventory.AttachMeshToPickup
-// [0x00020100] 
+// [0x00020100]
 struct AWillowInventory_execAttachMeshToPickup_Parms
 {
 	class AActor*                                      Pickup;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.WillowInventory.GetModelName
-// [0x00020100] 
+// [0x00020100]
 struct AWillowInventory_execGetModelName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.WillowInventory.GetDroppedImpactDefinition
-// [0x00020100] 
+// [0x00020100]
 struct AWillowInventory_execGetDroppedImpactDefinition_Parms
 {
 	class UImpactDefinition*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -35075,7 +35075,7 @@ struct AWillowInventory_execCompareUIStat_Parms
 };
 
 // Function Engine.WillowInventory.CanBeReadiedOnPickup
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execCanBeReadiedOnPickup_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35083,7 +35083,7 @@ struct AWillowInventory_execCanBeReadiedOnPickup_Parms
 };
 
 // Function Engine.WillowInventory.HandlePickupQuery
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execHandlePickupQuery_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35092,7 +35092,7 @@ struct AWillowInventory_execHandlePickupQuery_Parms
 };
 
 // Function Engine.WillowInventory.CanBeUsedBy
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execCanBeUsedBy_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35100,7 +35100,7 @@ struct AWillowInventory_execCanBeUsedBy_Parms
 };
 
 // Function Engine.WillowInventory.IsConsumable
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execIsConsumable_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -35124,7 +35124,7 @@ struct AWillowInventory_execGetDLCRestrictedMessage_Parms
 };
 
 // Function Engine.WillowInventory.GetPawnController
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execGetPawnController_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35162,11 +35162,11 @@ struct AWillowInventory_eventIsLevelRequirementMet_Parms
 	class AController*                                 C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	int                                                RequiredLevel;                                    		// 0x0004 (0x0004) [0x0000000000000190]              ( CPF_OptionalParm | CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0008 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UIBalancedActor*                          BalancedActor;                                    		// 0x0018 (0x0008) [0x0000000000000000]              
+	// class UIBalancedActor*                          BalancedActor;                                    		// 0x0018 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.WillowInventory.GetControllerPlayerExpLevelRequiredToUse
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execGetControllerPlayerExpLevelRequiredToUse_Parms
 {
 	class AController*                                 OtherController;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35174,7 +35174,7 @@ struct AWillowInventory_execGetControllerPlayerExpLevelRequiredToUse_Parms
 };
 
 // Function Engine.WillowInventory.GetPlayerExpLevelRequiredToUse
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execGetPlayerExpLevelRequiredToUse_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35182,14 +35182,14 @@ struct AWillowInventory_execGetPlayerExpLevelRequiredToUse_Parms
 };
 
 // Function Engine.WillowInventory.CreateClone
-// [0x00020100] 
+// [0x00020100]
 struct AWillowInventory_execCreateClone_Parms
 {
 	class AWillowInventory*                            ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.GivenTo
-// [0x00024002] 
+// [0x00024002]
 struct AWillowInventory_execGivenTo_Parms
 {
 	class APawn*                                       thisPawn;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35213,20 +35213,20 @@ struct AWillowInventory_execGetInventorySpaceRequirement_Parms
 };
 
 // Function Engine.WillowInventory.ClientSoldTo
-// [0x010201C0] 
+// [0x010201C0]
 struct AWillowInventory_execClientSoldTo_Parms
 {
 	unsigned long                                      bSoldAll : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.WillowInventory.RemoveFromShop
-// [0x00020000] 
+// [0x00020000]
 struct AWillowInventory_execRemoveFromShop_Parms
 {
 };
 
 // Function Engine.WillowInventory.SoldTo
-// [0x00024002] 
+// [0x00024002]
 struct AWillowInventory_execSoldTo_Parms
 {
 	class APawn*                                       Buyer;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35235,25 +35235,25 @@ struct AWillowInventory_execSoldTo_Parms
 };
 
 // Function Engine.WillowInventory.MissionDenyPickup
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execMissionDenyPickup_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.CreatePickup
-// [0x00024002] 
+// [0x00024002]
 struct AWillowInventory_execCreatePickup_Parms
 {
 	unsigned long                                      bDroppedPickup : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	unsigned long                                      bEnablePickup : 1;                                		// 0x0004 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	struct FVector                                     StartLocation;                                    		// 0x0008 (0x000C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	class ADroppedPickup*                              ReturnValue;                                      		// 0x0014 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UISpawnActor*                             SpawnActorInterface;                              		// 0x001C (0x0008) [0x0000000000000000]              
+	// class UISpawnActor*                             SpawnActorInterface;                              		// 0x001C (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.WillowInventory.GetPickup
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execGetPickup_Parms
 {
 	unsigned long                                      bDisableRigidBody : 1;                            		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -35274,7 +35274,7 @@ struct AWillowInventory_eventDropFromNative_Parms
 };
 
 // Function Engine.WillowInventory.DropFrom
-// [0x00024002] 
+// [0x00024002]
 struct AWillowInventory_execDropFrom_Parms
 {
 	struct FVector                                     StartLocation;                                    		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -35286,21 +35286,21 @@ struct AWillowInventory_execDropFrom_Parms
 };
 
 // Function Engine.WillowInventory.GetDroppedPickupRotation
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execGetDroppedPickupRotation_Parms
 {
 	struct FRotator                                    ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.PickupDisassociated
-// [0x00020000] 
+// [0x00020000]
 struct AWillowInventory_execPickupDisassociated_Parms
 {
 	class ADroppedPickup*                              Pickup;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.WillowInventory.PickupAssociated
-// [0x00020000] 
+// [0x00020000]
 struct AWillowInventory_execPickupAssociated_Parms
 {
 	class ADroppedPickup*                              Pickup;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35323,7 +35323,7 @@ struct AWillowInventory_eventInitConstructPreview_Parms
 };
 
 // Function Engine.WillowInventory.PlayPickupSound
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execPlayPickupSound_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35331,14 +35331,14 @@ struct AWillowInventory_execPlayPickupSound_Parms
 };
 
 // Function Engine.WillowInventory.AnnouncePickup
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execAnnouncePickup_Parms
 {
 	class APawn*                                       Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.WillowInventory.GetTemplateString
-// [0x00024102] 
+// [0x00024102]
 struct AWillowInventory_execGetTemplateString_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -35349,7 +35349,7 @@ struct AWillowInventory_execGetTemplateString_Parms
 };
 
 // Function Engine.WillowInventory.ConsumeItem
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execConsumeItem_Parms
 {
 };
@@ -35386,35 +35386,35 @@ struct AWillowInventory_eventGetShortHumanReadableName_Parms
 };
 
 // Function Engine.WillowInventory.GetHumanReadableName
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execGetHumanReadableName_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.WillowInventory.CanThrow
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execCanThrow_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.CanInventoryBeSoldOrStoredByOwner
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execCanInventoryBeSoldOrStoredByOwner_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.CanInventoryBeDroppedByOwner
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execCanInventoryBeDroppedByOwner_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventory.PassesDroppabilityCheck
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execPassesDroppabilityCheck_Parms
 {
 	unsigned char                                      MaxDroppability;                                  		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -35430,7 +35430,7 @@ struct AWillowInventory_execStaticCreateCompositeMesh_Parms
 };
 
 // Function Engine.WillowInventory.OverrideMonetaryValue
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execOverrideMonetaryValue_Parms
 {
 	int                                                NewMonetaryValue;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35475,7 +35475,7 @@ struct AWillowInventory_execGetCurrencyTypeInventoryIsValuedIn_Parms
 };
 
 // Function Engine.WillowInventory.ClientInitializeInventoryFromDefinition
-// [0x00020102] 
+// [0x00020102]
 struct AWillowInventory_execClientInitializeInventoryFromDefinition_Parms
 {
 };
@@ -35622,7 +35622,7 @@ struct AWillowInventory_execGetAttributeSlotIndexByAttributeDef_Parms
 };
 
 // Function Engine.WillowInventory.GetEquippedStat
-// [0x00020002] 
+// [0x00020002]
 struct AWillowInventory_execGetEquippedStat_Parms
 {
 	struct FName                                       ReturnValue;                                      		// 0x0000 (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -35700,52 +35700,52 @@ struct AWillowInventory_execCreateInventoryFromSerialNumber_Parms
 };
 
 // Function Engine.Weapon.Unreadied
-// [0x00080102] 
+// [0x00080102]
 struct AWeapon_execUnreadied_Parms
 {
 };
 
 // Function Engine.Weapon.Readied
-// [0x00080100] 
+// [0x00080100]
 struct AWeapon_execReadied_Parms
 {
 };
 
 // Function Engine.Weapon.GetTargetDistance
-// [0x00820102] 
+// [0x00820102]
 struct AWeapon_execGetTargetDistance_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  HitLocation;                                      		// 0x0008 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0014 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  projStart;                                        		// 0x0020 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  TargetLoc;                                        		// 0x002C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  X;                                                		// 0x0038 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Y;                                                		// 0x0044 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Z;                                                		// 0x0050 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 cameraRot;                                        		// 0x005C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  HitLocation;                                      		// 0x0008 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0014 (0x000C) [0x0000000000000000]
+	// struct FVector                                  projStart;                                        		// 0x0020 (0x000C) [0x0000000000000000]
+	// struct FVector                                  TargetLoc;                                        		// 0x002C (0x000C) [0x0000000000000000]
+	// struct FVector                                  X;                                                		// 0x0038 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Y;                                                		// 0x0044 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Z;                                                		// 0x0050 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 cameraRot;                                        		// 0x005C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Weapon.CacheAIController
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execCacheAIController_Parms
 {
 };
 
 // Function Engine.Weapon.UninitializeAfterPutDown
-// [0x00020000] 
+// [0x00020000]
 struct AWeapon_execUninitializeAfterPutDown_Parms
 {
 };
 
 // Function Engine.Weapon.WeaponIsDown
-// [0x00020100] 
+// [0x00020100]
 struct AWeapon_execWeaponIsDown_Parms
 {
 };
 
 // Function Engine.Weapon.StillFiring
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execStillFiring_Parms
 {
 	unsigned char                                      FireMode;                                         		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -35753,40 +35753,40 @@ struct AWeapon_execStillFiring_Parms
 };
 
 // Function Engine.Weapon.ShouldRefire
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execShouldRefire_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.NotifyWeaponFinishedFiring
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execNotifyWeaponFinishedFiring_Parms
 {
 	unsigned char                                      FireMode;                                         		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.NotifyWeaponFired
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execNotifyWeaponFired_Parms
 {
 	unsigned char                                      FireMode;                                         		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.HandleFinishedFiring
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execHandleFinishedFiring_Parms
 {
 };
 
 // Function Engine.Weapon.TryPutDownEx
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execTryPutDownEx_Parms
 {
 };
 
 // Function Engine.Weapon.TryPutDown
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execTryPutDown_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -35808,21 +35808,21 @@ struct AWeapon_eventGetMuzzleLoc_Parms
 };
 
 // Function Engine.Weapon.CustomFire
-// [0x00020100] 
+// [0x00020100]
 struct AWeapon_execCustomFire_Parms
 {
 };
 
 // Function Engine.Weapon.ProjectileFire
-// [0x00820102] 
+// [0x00820102]
 struct AWeapon_execProjectileFire_Parms
 {
 	class AProjectile*                                 ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  StartTrace;                                       		// 0x0004 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  EndTrace;                                         		// 0x0010 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  RealStartLoc;                                     		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  AimDir;                                           		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FImpactInfo                              TestImpact;                                       		// 0x0034 (0x005C) [0x0000000000000000]              
+	// struct FVector                                  StartTrace;                                       		// 0x0004 (0x000C) [0x0000000000000000]
+	// struct FVector                                  EndTrace;                                         		// 0x0010 (0x000C) [0x0000000000000000]
+	// struct FVector                                  RealStartLoc;                                     		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FVector                                  AimDir;                                           		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FImpactInfo                              TestImpact;                                       		// 0x0034 (0x005C) [0x0000000000000000]
 };
 
 // Function Engine.Weapon.ProcessInstantHit
@@ -35836,13 +35836,13 @@ struct AWeapon_eventProcessInstantHit_Parms
 };
 
 // Function Engine.Weapon.InstantFire
-// [0x00820102] 
+// [0x00820102]
 struct AWeapon_execInstantFire_Parms
 {
-	// struct FVector                                  StartTrace;                                       		// 0x0000 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  EndTrace;                                         		// 0x000C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  StartTrace;                                       		// 0x0000 (0x000C) [0x0000000000000000]
+	// struct FVector                                  EndTrace;                                         		// 0x000C (0x000C) [0x0000000000000000]
 	// TArray< struct FImpactInfo >                    ImpactList;                                       		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FImpactInfo                              RealImpact;                                       		// 0x0028 (0x005C) [0x0000000000000000]              
+	// struct FImpactInfo                              RealImpact;                                       		// 0x0028 (0x005C) [0x0000000000000000]
 };
 
 // Function Engine.Weapon.PassThroughDamage
@@ -35854,7 +35854,7 @@ struct AWeapon_execPassThroughDamage_Parms
 };
 
 // Function Engine.Weapon.CalcWeaponFire
-// [0x00C24102] 
+// [0x00C24102]
 struct AWeapon_execCalcWeaponFire_Parms
 {
 	struct FVector                                     StartTrace;                                       		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -35863,11 +35863,11 @@ struct AWeapon_execCalcWeaponFire_Parms
 	struct FVector                                     Extent;                                           		// 0x0024 (0x000C) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      bTestTrace : 1;                                   		// 0x0030 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	struct FImpactInfo                                 ReturnValue;                                      		// 0x0034 (0x005C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  HitLocation;                                      		// 0x0090 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x009C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Dir;                                              		// 0x00A8 (0x000C) [0x0000000000000000]              
-	// struct FTraceHitInfo                            HitInfo;                                          		// 0x00B8 (0x001C) [0x0000000000000000]              
-	// struct FImpactInfo                              CurrentImpact;                                    		// 0x00D4 (0x005C) [0x0000000000000000]              
+	// struct FVector                                  HitLocation;                                      		// 0x0090 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x009C (0x000C) [0x0000000000000000]
+	// struct FVector                                  Dir;                                              		// 0x00A8 (0x000C) [0x0000000000000000]
+	// struct FTraceHitInfo                            HitInfo;                                          		// 0x00B8 (0x001C) [0x0000000000000000]
+	// struct FImpactInfo                              CurrentImpact;                                    		// 0x00D4 (0x005C) [0x0000000000000000]
 };
 
 // Function Engine.Weapon.GetTraceOwner
@@ -35885,16 +35885,16 @@ struct AWeapon_eventGetTraceRange_Parms
 };
 
 // Function Engine.Weapon.GetAdjustedAim
-// [0x00820102] 
+// [0x00820102]
 struct AWeapon_execGetAdjustedAim_Parms
 {
 	struct FVector                                     StartFireLoc;                                     		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    ReturnValue;                                      		// 0x000C (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FRotator                                 R;                                                		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FRotator                                 R;                                                		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Weapon.FireAmmunition
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execFireAmmunition_Parms
 {
 };
@@ -35908,69 +35908,69 @@ struct AWeapon_execFireModeUpdated_Parms
 };
 
 // Function Engine.Weapon.SetCurrentFireMode
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execSetCurrentFireMode_Parms
 {
 	unsigned char                                      FiringModeNum;                                    		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.SendToFiringState
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execSendToFiringState_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.ForceEndFire
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execForceEndFire_Parms
 {
 };
 
 // Function Engine.Weapon.EndFire
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execEndFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.ServerStopFire
-// [0x002200C2] 
+// [0x002200C2]
 struct AWeapon_execServerStopFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.StopFire
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execStopFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.BeginFire
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execBeginFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.ServerStartFire
-// [0x002200C2] 
+// [0x002200C2]
 struct AWeapon_execServerStartFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.StartFire
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execStartFire_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.ClientWeaponSet
-// [0x010241C2] 
+// [0x010241C2]
 struct AWeapon_execClientWeaponSet_Parms
 {
 	unsigned long                                      bOptionalSet : 1;                                 		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -35978,7 +35978,7 @@ struct AWeapon_execClientWeaponSet_Parms
 };
 
 // Function Engine.Weapon.ClientGivenTo
-// [0x010201C2] 
+// [0x010201C2]
 struct AWeapon_execClientGivenTo_Parms
 {
 	class APawn*                                       NewOwner;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -35986,13 +35986,13 @@ struct AWeapon_execClientGivenTo_Parms
 };
 
 // Function Engine.Weapon.DetachWeapon
-// [0x00020100] 
+// [0x00020100]
 struct AWeapon_execDetachWeapon_Parms
 {
 };
 
 // Function Engine.Weapon.AttachWeaponTo
-// [0x00024100] 
+// [0x00024100]
 struct AWeapon_execAttachWeaponTo_Parms
 {
 	class USkeletalMeshComponent*                      MeshCpnt;                                         		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -36000,7 +36000,7 @@ struct AWeapon_execAttachWeaponTo_Parms
 };
 
 // Function Engine.Weapon.ClearFlashLocation
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execClearFlashLocation_Parms
 {
 };
@@ -36013,25 +36013,25 @@ struct AWeapon_execSetFlashLocation_Parms
 };
 
 // Function Engine.Weapon.ClearFlashCount
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execClearFlashCount_Parms
 {
 };
 
 // Function Engine.Weapon.IncrementFlashCount
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execIncrementFlashCount_Parms
 {
 };
 
 // Function Engine.Weapon.WeaponEmpty
-// [0x00020100] 
+// [0x00020100]
 struct AWeapon_execWeaponEmpty_Parms
 {
 };
 
 // Function Engine.Weapon.DenyPickupQuery
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execDenyPickupQuery_Parms
 {
 	class UIPickupable*                                Pickup;                                           		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -36039,26 +36039,26 @@ struct AWeapon_execDenyPickupQuery_Parms
 };
 
 // Function Engine.Weapon.PutDownWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execPutDownWeapon_Parms
 {
 };
 
 // Function Engine.Weapon.Activate
-// [0x00024102] 
+// [0x00024102]
 struct AWeapon_execActivate_Parms
 {
 	unsigned long                                      bEquipInOffHand : 1;                              		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function Engine.Weapon.TimeWeaponEquipping
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execTimeWeaponEquipping_Parms
 {
 };
 
 // Function Engine.Weapon.GetEquipTime
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execGetEquipTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -36071,20 +36071,20 @@ struct AWeapon_eventTimeWeaponPutDown_Parms
 };
 
 // Function Engine.Weapon.GetPutDownTime
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execGetPutDownTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.RefireCheckTimer
-// [0x00020100] 
+// [0x00020100]
 struct AWeapon_execRefireCheckTimer_Parms
 {
 };
 
 // Function Engine.Weapon.TimeWeaponFiring
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execTimeWeaponFiring_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -36114,13 +36114,13 @@ struct AWeapon_execPlayFireEffects_Parms
 };
 
 // Function Engine.Weapon.StopWeaponAnimation
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execStopWeaponAnimation_Parms
 {
 };
 
 // Function Engine.Weapon.PlayWeaponAnimation
-// [0x00024102] 
+// [0x00024102]
 struct AWeapon_execPlayWeaponAnimation_Parms
 {
 	struct FName                                       Sequence;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -36138,21 +36138,21 @@ struct AWeapon_execWeaponPlayAkEvent_Parms
 };
 
 // Function Engine.Weapon.GetWeaponAnimNodeSeq
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execGetWeaponAnimNodeSeq_Parms
 {
 	class UAnimNodeSequence*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.FireOnRelease
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execFireOnRelease_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.CanAttack
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execCanAttack_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36160,39 +36160,39 @@ struct AWeapon_execCanAttack_Parms
 };
 
 // Function Engine.Weapon.GetWeaponRating
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execGetWeaponRating_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.GetAIRating
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execGetAIRating_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.MaxRange
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execMaxRange_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.AddSpread
-// [0x00820102] 
+// [0x00820102]
 struct AWeapon_execAddSpread_Parms
 {
 	struct FRotator                                    BaseAim;                                          		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 	struct FRotator                                    ReturnValue;                                      		// 0x000C (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  X;                                                		// 0x0018 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Y;                                                		// 0x0024 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  Z;                                                		// 0x0030 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  X;                                                		// 0x0018 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Y;                                                		// 0x0024 (0x000C) [0x0000000000000000]
+	// struct FVector                                  Z;                                                		// 0x0030 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.Weapon.GetProjectileClass
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execGetProjectileClass_Parms
 {
 	class UClass*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -36228,14 +36228,14 @@ struct AWeapon_execGetPendingFireLength_Parms
 };
 
 // Function Engine.Weapon.HasAnyAmmo
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execHasAnyAmmo_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.HasActiveAmmo
-// [0x00024102] 
+// [0x00024102]
 struct AWeapon_execHasActiveAmmo_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -36253,7 +36253,7 @@ struct AWeapon_eventHasAmmo_Parms
 };
 
 // Function Engine.Weapon.AddAmmo
-// [0x00020000] 
+// [0x00020000]
 struct AWeapon_execAddAmmo_Parms
 {
 	int                                                Amount;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36261,14 +36261,14 @@ struct AWeapon_execAddAmmo_Parms
 };
 
 // Function Engine.Weapon.ConsumeAmmo
-// [0x00020000] 
+// [0x00020000]
 struct AWeapon_execConsumeAmmo_Parms
 {
 	unsigned char                                      FireModeNum;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Weapon.DenyClientWeaponSet
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execDenyClientWeaponSet_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -36282,20 +36282,20 @@ struct AWeapon_eventIsFiring_Parms
 };
 
 // Function Engine.Weapon.ClientWeaponThrown
-// [0x010201C2] 
+// [0x010201C2]
 struct AWeapon_execClientWeaponThrown_Parms
 {
 };
 
 // Function Engine.Weapon.CanThrow
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execCanThrow_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.DropFrom
-// [0x00024002] 
+// [0x00024002]
 struct AWeapon_execDropFrom_Parms
 {
 	struct FVector                                     StartLocation;                                    		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -36307,27 +36307,27 @@ struct AWeapon_execDropFrom_Parms
 };
 
 // Function Engine.Weapon.DoOverridePrevWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execDoOverridePrevWeapon_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.DoOverrideNextWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execDoOverrideNextWeapon_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Weapon.HolderDied
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execHolderDied_Parms
 {
 };
 
 // Function Engine.Weapon.ItemRemovedFromInvManager
-// [0x00020002] 
+// [0x00020002]
 struct AWeapon_execItemRemovedFromInvManager_Parms
 {
 };
@@ -36339,41 +36339,41 @@ struct AWeapon_eventDestroyed_Parms
 };
 
 // Function Engine.Weapon.ForceWeaponToBeEquipped
-// [0x00020102] 
+// [0x00020102]
 struct AWeapon_execForceWeaponToBeEquipped_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.InventoryManager.ClientConditionalIncrementPickupStats
-// [0x010201C0] 
+// [0x010201C0]
 struct AInventoryManager_execClientConditionalIncrementPickupStats_Parms
 {
 	class AInventory*                                  InvObject;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.InventoryManager.ClearInventoryReferences
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execClearInventoryReferences_Parms
 {
 	class AInventory*                                  TheItem;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.InventoryManager.ShouldSwitchToBestWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execShouldSwitchToBestWeapon_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.InventoryManager.UpdateController
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execUpdateController_Parms
 {
 };
 
 // Function Engine.InventoryManager.ClientWeaponSet
-// [0x00024102] 
+// [0x00024102]
 struct AInventoryManager_execClientWeaponSet_Parms
 {
 	class AWeapon*                                     NewWeapon;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36382,28 +36382,28 @@ struct AInventoryManager_execClientWeaponSet_Parms
 };
 
 // Function Engine.InventoryManager.ChangedWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execChangedWeapon_Parms
 {
 	unsigned long                                      bEquipInOffHand : 1;                              		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.InventoryManager.ClearPendingWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execClearPendingWeapon_Parms
 {
 	unsigned long                                      bOffHand : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.InventoryManager.CancelWeaponChange
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execCancelWeaponChange_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.InventoryManager.SetPendingWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execSetPendingWeapon_Parms
 {
 	class AWeapon*                                     DesiredWeapon;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36411,7 +36411,7 @@ struct AInventoryManager_execSetPendingWeapon_Parms
 };
 
 // Function Engine.InventoryManager.InternalSetCurrentWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execInternalSetCurrentWeapon_Parms
 {
 	class AWeapon*                                     DesiredWeapon;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36419,7 +36419,7 @@ struct AInventoryManager_execInternalSetCurrentWeapon_Parms
 };
 
 // Function Engine.InventoryManager.ServerSetCurrentWeapon
-// [0x002200C2] 
+// [0x002200C2]
 struct AInventoryManager_execServerSetCurrentWeapon_Parms
 {
 	class AWeapon*                                     DesiredWeapon;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36427,7 +36427,7 @@ struct AInventoryManager_execServerSetCurrentWeapon_Parms
 };
 
 // Function Engine.InventoryManager.SetCurrentWeapon
-// [0x010201C2] 
+// [0x010201C2]
 struct AInventoryManager_execSetCurrentWeapon_Parms
 {
 	class AWeapon*                                     DesiredWeapon;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36435,26 +36435,26 @@ struct AInventoryManager_execSetCurrentWeapon_Parms
 };
 
 // Function Engine.InventoryManager.NextWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execNextWeapon_Parms
 {
 };
 
 // Function Engine.InventoryManager.PrevWeapon
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execPrevWeapon_Parms
 {
 };
 
 // Function Engine.InventoryManager.SwitchToBestWeapon
-// [0x00024102] 
+// [0x00024102]
 struct AInventoryManager_execSwitchToBestWeapon_Parms
 {
 	unsigned long                                      bForceADifferentWeapon : 1;                       		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function Engine.InventoryManager.GetBestWeapon
-// [0x00024102] 
+// [0x00024102]
 struct AInventoryManager_execGetBestWeapon_Parms
 {
 	unsigned long                                      bForceADifferentWeapon : 1;                       		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -36462,7 +36462,7 @@ struct AInventoryManager_execGetBestWeapon_Parms
 };
 
 // Function Engine.InventoryManager.GetWeaponRatingFor
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execGetWeaponRatingFor_Parms
 {
 	class AWeapon*                                     W;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36477,7 +36477,7 @@ struct AInventoryManager_eventDrawHUD_Parms
 };
 
 // Function Engine.InventoryManager.OwnerDied
-// [0x00020002] 
+// [0x00020002]
 struct AInventoryManager_execOwnerDied_Parms
 {
 };
@@ -36487,11 +36487,11 @@ struct AInventoryManager_execOwnerDied_Parms
 struct AInventoryManager_eventDiscardInventory_Parms
 {
 	unsigned long                                      bDestroyContents : 1;                             		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
-	// struct FVector                                  TossVelocity;                                     		// 0x0008 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  TossVelocity;                                     		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.InventoryManager.InventoryUnreadied
-// [0x00020000] 
+// [0x00020000]
 struct AInventoryManager_execInventoryUnreadied_Parms
 {
 	class AInventory*                                  Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36499,14 +36499,14 @@ struct AInventoryManager_execInventoryUnreadied_Parms
 };
 
 // Function Engine.InventoryManager.InventoryReadied
-// [0x00020000] 
+// [0x00020000]
 struct AInventoryManager_execInventoryReadied_Parms
 {
 	class AInventory*                                  Inv;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.InventoryManager.RemoveFromInventory
-// [0x00024102] 
+// [0x00024102]
 struct AInventoryManager_execRemoveFromInventory_Parms
 {
 	class AInventory*                                  ItemToRemove;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36514,7 +36514,7 @@ struct AInventoryManager_execRemoveFromInventory_Parms
 };
 
 // Function Engine.InventoryManager.AddInventory
-// [0x00024102] 
+// [0x00024102]
 struct AInventoryManager_execAddInventory_Parms
 {
 	class AInventory*                                  NewItem;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36525,7 +36525,7 @@ struct AInventoryManager_execAddInventory_Parms
 };
 
 // Function Engine.InventoryManager.CreateInventory
-// [0x00024102] 
+// [0x00024102]
 struct AInventoryManager_execCreateInventory_Parms
 {
 	class UClass*                                      NewInventoryItemClass;                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36558,7 +36558,7 @@ struct AInventoryManager_eventDestroyed_Parms
 };
 
 // Function Engine.InventoryManager.SetupFor
-// [0x00020002] 
+// [0x00020002]
 struct AInventoryManager_execSetupFor_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36574,7 +36574,7 @@ struct AInventoryManager_execInventoryActors_Parms
 };
 
 // Function Engine.InventoryManager.ClearAllPendingFire
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execClearAllPendingFire_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36592,7 +36592,7 @@ struct AInventoryManager_execIsPendingFire_Parms
 };
 
 // Function Engine.InventoryManager.ClearPendingFire
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execClearPendingFire_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36601,7 +36601,7 @@ struct AInventoryManager_execClearPendingFire_Parms
 };
 
 // Function Engine.InventoryManager.SetPendingFire
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execSetPendingFire_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36610,7 +36610,7 @@ struct AInventoryManager_execSetPendingFire_Parms
 };
 
 // Function Engine.InventoryManager.GetPendingFireLength
-// [0x00020102] 
+// [0x00020102]
 struct AInventoryManager_execGetPendingFireLength_Parms
 {
 	class AWeapon*                                     InWeapon;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36619,7 +36619,7 @@ struct AInventoryManager_execGetPendingFireLength_Parms
 };
 
 // Function Engine.InventoryManager.PostBeginPlay
-// [0x00020002] 
+// [0x00020002]
 struct AInventoryManager_execPostBeginPlay_Parms
 {
 };
@@ -36632,14 +36632,14 @@ struct AInventoryManager_eventReplicatedEvent_Parms
 };
 
 // Function Engine.WillowInventoryDefinition.CanPickupInBulk
-// [0x00020002] 
+// [0x00020002]
 struct UWillowInventoryDefinition_execCanPickupInBulk_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.WillowInventoryDefinition.ShouldPlayerAutomaticallyPickup
-// [0x00020002] 
+// [0x00020002]
 struct UWillowInventoryDefinition_execShouldPlayerAutomaticallyPickup_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36710,7 +36710,7 @@ struct UWillowInventoryPartDefinition_execGetRarityLevel_Parms
 };
 
 // Function Engine.IPickupable.SetInteractionIcon
-// [0x00020000] 
+// [0x00020000]
 struct UIPickupable_execSetInteractionIcon_Parms
 {
 	class UEngineInteractionIconDefinition*            Icon;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36730,13 +36730,13 @@ struct UIPickupable_execIsDiscovered_Parms
 };
 
 // Function Engine.IPickupable.FailedPickup
-// [0x00020100] 
+// [0x00020100]
 struct UIPickupable_execFailedPickup_Parms
 {
 };
 
 // Function Engine.IPickupable.DenyPickupAttempt
-// [0x00020100] 
+// [0x00020100]
 struct UIPickupable_execDenyPickupAttempt_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36765,14 +36765,14 @@ struct UIPickupable_execGetPickupableInventory_Parms
 };
 
 // Function Engine.IPickupable.GetPickupableMeshActor
-// [0x00020100] 
+// [0x00020100]
 struct UIPickupable_execGetPickupableMeshActor_Parms
 {
 	class APickupableMeshActor*                        ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.IPickupable.GiveTo
-// [0x00020000] 
+// [0x00020000]
 struct UIPickupable_execGiveTo_Parms
 {
 	class APawn*                                       P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36796,14 +36796,14 @@ struct USeqAct_Teleport_execGetFirstValidActorFromObjectInput_Parms
 };
 
 // Function Engine.SeqAct_Teleport.GetTeleportHoldingCell
-// [0x00020002] 
+// [0x00020002]
 struct USeqAct_Teleport_execGetTeleportHoldingCell_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.SeqAct_Teleport.GetTeleportDestination
-// [0x00020002] 
+// [0x00020002]
 struct USeqAct_Teleport_execGetTeleportDestination_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -36835,48 +36835,48 @@ struct USeqAct_AttachToActor_eventGetObjClassVersion_Parms
 };
 
 // Function Engine.IConsoleCommandBehavior.Behavior_ClientConsoleCommand
-// [0x00020000] 
+// [0x00020000]
 struct UIConsoleCommandBehavior_execBehavior_ClientConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.IConsoleCommandBehavior.Behavior_ConsoleCommand
-// [0x00020000] 
+// [0x00020000]
 struct UIConsoleCommandBehavior_execBehavior_ConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.IAppearanceBehavior.Behavior_ChangeVisibility
-// [0x00020000] 
+// [0x00020000]
 struct UIAppearanceBehavior_execBehavior_ChangeVisibility_Parms
 {
 	unsigned long                                      bVisible : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.IAppearanceBehavior.Behavior_ToggleVisibility
-// [0x00020000] 
+// [0x00020000]
 struct UIAppearanceBehavior_execBehavior_ToggleVisibility_Parms
 {
 };
 
 // Function Engine.IPhysicsBehavior.GetDamageVector
-// [0x00020000] 
+// [0x00020000]
 struct UIPhysicsBehavior_execGetDamageVector_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.IPhysicsBehavior.GetRigidBodyMesh
-// [0x00020000] 
+// [0x00020000]
 struct UIPhysicsBehavior_execGetRigidBodyMesh_Parms
 {
 	class UMeshComponent*                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000004000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline )
 };
 
 // Function Engine.IChangeCollisionBehavior.Behavior_ChangeCollisionSize
-// [0x00020000] 
+// [0x00020000]
 struct UIChangeCollisionBehavior_execBehavior_ChangeCollisionSize_Parms
 {
 	float                                              NewCollisionRadius;                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36884,20 +36884,20 @@ struct UIChangeCollisionBehavior_execBehavior_ChangeCollisionSize_Parms
 };
 
 // Function Engine.IChangeCollisionBehavior.Behavior_ChangeCollision
-// [0x00020000] 
+// [0x00020000]
 struct UIChangeCollisionBehavior_execBehavior_ChangeCollision_Parms
 {
 	unsigned char                                      NewCollisionType;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.IDestroyBehavior.Behavior_Destroy
-// [0x00020000] 
+// [0x00020000]
 struct UIDestroyBehavior_execBehavior_Destroy_Parms
 {
 };
 
 // Function Engine.ISoundBehavior.Behavior_PostAkEvent
-// [0x00020000] 
+// [0x00020000]
 struct UISoundBehavior_execBehavior_PostAkEvent_Parms
 {
 	class UAkEvent*                                    Event;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36906,7 +36906,7 @@ struct UISoundBehavior_execBehavior_PostAkEvent_Parms
 };
 
 // Function Engine.ISoundBehavior.Behavior_PlaySoundForListener
-// [0x00020000] 
+// [0x00020000]
 struct UISoundBehavior_execBehavior_PlaySoundForListener_Parms
 {
 	class USoundCue*                                   Sound;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36915,7 +36915,7 @@ struct UISoundBehavior_execBehavior_PlaySoundForListener_Parms
 };
 
 // Function Engine.ISoundBehavior.Behavior_StopSound
-// [0x00024000] 
+// [0x00024000]
 struct UISoundBehavior_execBehavior_StopSound_Parms
 {
 	class USoundCue*                                   Sound;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36924,7 +36924,7 @@ struct UISoundBehavior_execBehavior_StopSound_Parms
 };
 
 // Function Engine.ISoundBehavior.Behavior_PlaySound
-// [0x00020000] 
+// [0x00020000]
 struct UISoundBehavior_execBehavior_PlaySound_Parms
 {
 	class USoundCue*                                   Sound;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -36932,7 +36932,7 @@ struct UISoundBehavior_execBehavior_PlaySound_Parms
 };
 
 // Function Engine.OnlineAuthInterface.GetServerAddr
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterface_execGetServerAddr_Parms
 {
 	int                                                OutServerIP;                                      		// 0x0000 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -36941,7 +36941,7 @@ struct UOnlineAuthInterface_execGetServerAddr_Parms
 };
 
 // Function Engine.OnlineAuthInterface.GetServerUniqueId
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterface_execGetServerUniqueId_Parms
 {
 	struct FUniqueNetId                                OutServerUID;                                     		// 0x0000 (0x0018) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -36949,7 +36949,7 @@ struct UOnlineAuthInterface_execGetServerUniqueId_Parms
 };
 
 // Function Engine.OnlineAuthInterface.EndRemoteServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execEndRemoteServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -36957,7 +36957,7 @@ struct UOnlineAuthInterface_execEndRemoteServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.EndLocalServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execEndLocalServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -36965,7 +36965,7 @@ struct UOnlineAuthInterface_execEndLocalServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.VerifyServerAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execVerifyServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -36975,7 +36975,7 @@ struct UOnlineAuthInterface_execVerifyServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.CreateServerAuthSession
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterface_execCreateServerAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -36986,7 +36986,7 @@ struct UOnlineAuthInterface_execCreateServerAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.EndRemoteClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execEndRemoteClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -36994,7 +36994,7 @@ struct UOnlineAuthInterface_execEndRemoteClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.EndLocalClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execEndLocalClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37003,7 +37003,7 @@ struct UOnlineAuthInterface_execEndLocalClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.VerifyClientAuthSession
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execVerifyClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37014,7 +37014,7 @@ struct UOnlineAuthInterface_execVerifyClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.CreateClientAuthSession
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAuthInterface_execCreateClientAuthSession_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37026,14 +37026,14 @@ struct UOnlineAuthInterface_execCreateClientAuthSession_Parms
 };
 
 // Function Engine.OnlineAuthInterface.SendAuthRetryServer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execSendAuthRetryServer_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineAuthInterface.SendAuthKillClient
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execSendAuthKillClient_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -37041,7 +37041,7 @@ struct UOnlineAuthInterface_execSendAuthKillClient_Parms
 };
 
 // Function Engine.OnlineAuthInterface.SendAuthBlobServer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execSendAuthBlobServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -37050,7 +37050,7 @@ struct UOnlineAuthInterface_execSendAuthBlobServer_Parms
 };
 
 // Function Engine.OnlineAuthInterface.SendAuthBlobClient
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execSendAuthBlobClient_Parms
 {
 	int                                                AuthBlobUID;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -37058,7 +37058,7 @@ struct UOnlineAuthInterface_execSendAuthBlobClient_Parms
 };
 
 // Function Engine.OnlineAuthInterface.SendAuthRequestServer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execSendAuthRequestServer_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37066,7 +37066,7 @@ struct UOnlineAuthInterface_execSendAuthRequestServer_Parms
 };
 
 // Function Engine.OnlineAuthInterface.SendAuthRequestClient
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execSendAuthRequestClient_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -37075,105 +37075,105 @@ struct UOnlineAuthInterface_execSendAuthRequestClient_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearServerConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearServerConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddServerConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddServerConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnServerConnectionClose
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnServerConnectionClose_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterface.ClearClientConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearClientConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddClientConnectionCloseDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddClientConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnClientConnectionClose
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnClientConnectionClose_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthRetryServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthRetryServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRetryServerDelegate;                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthRetryServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthRetryServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRetryServerDelegate;                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthRetryServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthRetryServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthKillClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthKillClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthKillClientDelegate;                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthKillClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthKillClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthKillClientDelegate;                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthKillClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthKillClient_Parms
 {
 	class UPlayer*                                     ServerConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthCompleteServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthCompleteServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteServerDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthCompleteServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthCompleteServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteServerDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthCompleteServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthCompleteServer_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -37183,21 +37183,21 @@ struct UOnlineAuthInterface_execOnAuthCompleteServer_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthCompleteClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthCompleteClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteClientDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthCompleteClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthCompleteClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteClientDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthCompleteClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthCompleteClient_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -37207,21 +37207,21 @@ struct UOnlineAuthInterface_execOnAuthCompleteClient_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthBlobReceivedServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthBlobReceivedServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedServerDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthBlobReceivedServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthBlobReceivedServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedServerDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthBlobReceivedServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthBlobReceivedServer_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37230,21 +37230,21 @@ struct UOnlineAuthInterface_execOnAuthBlobReceivedServer_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthBlobReceivedClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthBlobReceivedClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedClientDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthBlobReceivedClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthBlobReceivedClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedClientDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthBlobReceivedClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthBlobReceivedClient_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37253,21 +37253,21 @@ struct UOnlineAuthInterface_execOnAuthBlobReceivedClient_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthRequestServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthRequestServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestServerDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthRequestServerDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthRequestServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestServerDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthRequestServer
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthRequestServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -37277,21 +37277,21 @@ struct UOnlineAuthInterface_execOnAuthRequestServer_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthRequestClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthRequestClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestClientDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthRequestClientDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthRequestClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestClientDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthRequestClient
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthRequestClient_Parms
 {
 	struct FUniqueNetId                                ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37301,48 +37301,48 @@ struct UOnlineAuthInterface_execOnAuthRequestClient_Parms
 };
 
 // Function Engine.OnlineAuthInterface.ClearAuthReadyDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execClearAuthReadyDelegate_Parms
 {
 	struct FScriptDelegate                             AuthReadyDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthReadyDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execAddAuthReadyDelegate_Parms
 {
 	struct FScriptDelegate                             AuthReadyDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthReady
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAuthInterface_execOnAuthReady_Parms
 {
 };
 
 // Function Engine.OnlineAuthInterface.IsReady
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAuthInterface_execIsReady_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineTitleFileInterface.ClearShareTitleFileCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execClearShareTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShareTitleFileCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineTitleFileInterface.AddShareTitleFileCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execAddShareTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShareTitleFileCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineTitleFileInterface.ShareTitleFile
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execShareTitleFile_Parms
 {
 	struct FString                                     FileToShare;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -37350,7 +37350,7 @@ struct UOnlineTitleFileInterface_execShareTitleFile_Parms
 };
 
 // Function Engine.OnlineTitleFileInterface.ClearDownloadedFile
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execClearDownloadedFile_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -37358,14 +37358,14 @@ struct UOnlineTitleFileInterface_execClearDownloadedFile_Parms
 };
 
 // Function Engine.OnlineTitleFileInterface.ClearDownloadedFiles
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execClearDownloadedFiles_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineTitleFileInterface.GetTitleFileState
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execGetTitleFileState_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -37373,7 +37373,7 @@ struct UOnlineTitleFileInterface_execGetTitleFileState_Parms
 };
 
 // Function Engine.OnlineTitleFileInterface.GetTitleFileContents
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineTitleFileInterface_execGetTitleFileContents_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -37382,21 +37382,21 @@ struct UOnlineTitleFileInterface_execGetTitleFileContents_Parms
 };
 
 // Function Engine.OnlineTitleFileInterface.ClearReadTitleFileCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execClearReadTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineTitleFileInterface.AddReadTitleFileCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execAddReadTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineTitleFileInterface.ReadTitleFile
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileInterface_execReadTitleFile_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37405,7 +37405,7 @@ struct UOnlineTitleFileInterface_execReadTitleFile_Parms
 };
 
 // Function Engine.OnlineTitleFileInterface.OnShareTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineTitleFileInterface_execOnShareTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -37414,7 +37414,7 @@ struct UOnlineTitleFileInterface_execOnShareTitleFileComplete_Parms
 };
 
 // Function Engine.OnlineTitleFileInterface.OnReadTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineTitleFileInterface_execOnReadTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -37422,7 +37422,7 @@ struct UOnlineTitleFileInterface_execOnReadTitleFileComplete_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.IsInPartyChat
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execIsInPartyChat_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37430,7 +37430,7 @@ struct UOnlinePartyChatInterface_execIsInPartyChat_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.ShowCommunitySessionsUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execShowCommunitySessionsUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37438,7 +37438,7 @@ struct UOnlinePartyChatInterface_execShowCommunitySessionsUI_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.ShowVoiceChannelUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execShowVoiceChannelUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37446,7 +37446,7 @@ struct UOnlinePartyChatInterface_execShowVoiceChannelUI_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.ShowPartyUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execShowPartyUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37454,14 +37454,14 @@ struct UOnlinePartyChatInterface_execShowPartyUI_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.GetPartyBandwidth
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execGetPartyBandwidth_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlinePartyChatInterface.SetPartyMemberCustomData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execSetPartyMemberCustomData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37473,7 +37473,7 @@ struct UOnlinePartyChatInterface_execSetPartyMemberCustomData_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.ClearPartyMembersInfoChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execClearPartyMembersInfoChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37481,7 +37481,7 @@ struct UOnlinePartyChatInterface_execClearPartyMembersInfoChangedDelegate_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.AddPartyMembersInfoChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execAddPartyMembersInfoChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37489,7 +37489,7 @@ struct UOnlinePartyChatInterface_execAddPartyMembersInfoChangedDelegate_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.OnPartyMembersInfoChanged
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePartyChatInterface_execOnPartyMembersInfoChanged_Parms
 {
 	struct FString                                     PlayerName;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -37501,7 +37501,7 @@ struct UOnlinePartyChatInterface_execOnPartyMembersInfoChanged_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.ClearPartyMemberListChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execClearPartyMemberListChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37509,7 +37509,7 @@ struct UOnlinePartyChatInterface_execClearPartyMemberListChangedDelegate_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.AddPartyMemberListChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execAddPartyMemberListChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37517,7 +37517,7 @@ struct UOnlinePartyChatInterface_execAddPartyMemberListChangedDelegate_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.OnPartyMemberListChanged
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePartyChatInterface_execOnPartyMemberListChanged_Parms
 {
 	unsigned long                                      bJoinedOrLeft : 1;                                		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -37526,7 +37526,7 @@ struct UOnlinePartyChatInterface_execOnPartyMemberListChanged_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.GetPartyMemberInformation
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePartyChatInterface_execGetPartyMemberInformation_Parms
 {
 	struct FUniqueNetId                                MemberId;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37535,7 +37535,7 @@ struct UOnlinePartyChatInterface_execGetPartyMemberInformation_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.GetPartyMembersInformation
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePartyChatInterface_execGetPartyMembersInformation_Parms
 {
 	TArray< struct FOnlinePartyMember >                PartyMembers;                                     		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -37543,7 +37543,7 @@ struct UOnlinePartyChatInterface_execGetPartyMembersInformation_Parms
 };
 
 // Function Engine.OnlinePartyChatInterface.ClearSendPartyGameInvitesCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execClearSendPartyGameInvitesCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37551,7 +37551,7 @@ struct UOnlinePartyChatInterface_execClearSendPartyGameInvitesCompleteDelegate_P
 };
 
 // Function Engine.OnlinePartyChatInterface.AddSendPartyGameInvitesCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execAddSendPartyGameInvitesCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37559,14 +37559,14 @@ struct UOnlinePartyChatInterface_execAddSendPartyGameInvitesCompleteDelegate_Par
 };
 
 // Function Engine.OnlinePartyChatInterface.OnSendPartyGameInvitesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePartyChatInterface_execOnSendPartyGameInvitesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePartyChatInterface.SendPartyGameInvites
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePartyChatInterface_execSendPartyGameInvites_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37574,7 +37574,7 @@ struct UOnlinePartyChatInterface_execSendPartyGameInvites_Parms
 };
 
 // Function Engine.OnlineNewsInterface.GetNews
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineNewsInterface_execGetNews_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37583,21 +37583,21 @@ struct UOnlineNewsInterface_execGetNews_Parms
 };
 
 // Function Engine.OnlineNewsInterface.ClearReadNewsCompletedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineNewsInterface_execClearReadNewsCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             ReadNewsDelegate;                                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineNewsInterface.AddReadNewsCompletedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineNewsInterface_execAddReadNewsCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             ReadNewsDelegate;                                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineNewsInterface.OnReadNewsCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineNewsInterface_execOnReadNewsCompleted_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -37605,7 +37605,7 @@ struct UOnlineNewsInterface_execOnReadNewsCompleted_Parms
 };
 
 // Function Engine.OnlineNewsInterface.ReadNews
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineNewsInterface_execReadNews_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37614,7 +37614,7 @@ struct UOnlineNewsInterface_execReadNews_Parms
 };
 
 // Function Engine.OnlineStatsInterface.CalcAggregateSkill
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineStatsInterface_execCalcAggregateSkill_Parms
 {
 	TArray< struct FDouble >                           Mus;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -37624,7 +37624,7 @@ struct UOnlineStatsInterface_execCalcAggregateSkill_Parms
 };
 
 // Function Engine.OnlineStatsInterface.RegisterStatGuid
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineStatsInterface_execRegisterStatGuid_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37633,35 +37633,35 @@ struct UOnlineStatsInterface_execRegisterStatGuid_Parms
 };
 
 // Function Engine.OnlineStatsInterface.GetClientStatGuid
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execGetClientStatGuid_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.ClearRegisterHostStatGuidCompleteDelegateDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execClearRegisterHostStatGuidCompleteDelegateDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.AddRegisterHostStatGuidCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execAddRegisterHostStatGuidCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.OnRegisterHostStatGuidComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineStatsInterface_execOnRegisterHostStatGuidComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineStatsInterface.RegisterHostStatGuid
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineStatsInterface_execRegisterHostStatGuid_Parms
 {
 	struct FString                                     HostStatGuid;                                     		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -37669,14 +37669,14 @@ struct UOnlineStatsInterface_execRegisterHostStatGuid_Parms
 };
 
 // Function Engine.OnlineStatsInterface.GetHostStatGuid
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execGetHostStatGuid_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.WriteOnlinePlayerScores
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineStatsInterface_execWriteOnlinePlayerScores_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -37686,21 +37686,21 @@ struct UOnlineStatsInterface_execWriteOnlinePlayerScores_Parms
 };
 
 // Function Engine.OnlineStatsInterface.ClearFlushOnlineStatsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execClearFlushOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.AddFlushOnlineStatsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execAddFlushOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.OnFlushOnlineStatsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineStatsInterface_execOnFlushOnlineStatsComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -37708,7 +37708,7 @@ struct UOnlineStatsInterface_execOnFlushOnlineStatsComplete_Parms
 };
 
 // Function Engine.OnlineStatsInterface.FlushOnlineStats
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execFlushOnlineStats_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -37716,7 +37716,7 @@ struct UOnlineStatsInterface_execFlushOnlineStats_Parms
 };
 
 // Function Engine.OnlineStatsInterface.WriteOnlineStats
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execWriteOnlineStats_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -37726,35 +37726,35 @@ struct UOnlineStatsInterface_execWriteOnlineStats_Parms
 };
 
 // Function Engine.OnlineStatsInterface.FreeStats
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execFreeStats_Parms
 {
 	class UOnlineStatsRead*                            StatsRead;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineStatsInterface.ClearReadOnlineStatsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execClearReadOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.AddReadOnlineStatsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execAddReadOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineStatsInterface.OnReadOnlineStatsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineStatsInterface_execOnReadOnlineStatsComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineStatsInterface.ReadOnlineStatsByRankAroundPlayer
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineStatsInterface_execReadOnlineStatsByRankAroundPlayer_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37764,7 +37764,7 @@ struct UOnlineStatsInterface_execReadOnlineStatsByRankAroundPlayer_Parms
 };
 
 // Function Engine.OnlineStatsInterface.ReadOnlineStatsByRank
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineStatsInterface_execReadOnlineStatsByRank_Parms
 {
 	class UOnlineStatsRead*                            StatsRead;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -37774,7 +37774,7 @@ struct UOnlineStatsInterface_execReadOnlineStatsByRank_Parms
 };
 
 // Function Engine.OnlineStatsInterface.ReadOnlineStatsForFriends
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineStatsInterface_execReadOnlineStatsForFriends_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37783,7 +37783,7 @@ struct UOnlineStatsInterface_execReadOnlineStatsForFriends_Parms
 };
 
 // Function Engine.OnlineStatsInterface.ReadOnlineStats
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineStatsInterface_execReadOnlineStats_Parms
 {
 	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -37792,7 +37792,7 @@ struct UOnlineStatsInterface_execReadOnlineStats_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.SetVoiceVolume
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execSetVoiceVolume_Parms
 {
 	unsigned char                                      VolType;                                          		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37801,7 +37801,7 @@ struct UOnlineVoiceInterface_execSetVoiceVolume_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.UnmuteAll
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execUnmuteAll_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37809,7 +37809,7 @@ struct UOnlineVoiceInterface_execUnmuteAll_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.MuteAll
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execMuteAll_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37818,7 +37818,7 @@ struct UOnlineVoiceInterface_execMuteAll_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.SetSpeechRecognitionObject
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execSetSpeechRecognitionObject_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37827,7 +37827,7 @@ struct UOnlineVoiceInterface_execSetSpeechRecognitionObject_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.SelectVocabulary
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execSelectVocabulary_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37836,7 +37836,7 @@ struct UOnlineVoiceInterface_execSelectVocabulary_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.ClearRecognitionCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execClearRecognitionCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37844,7 +37844,7 @@ struct UOnlineVoiceInterface_execClearRecognitionCompleteDelegate_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.AddRecognitionCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execAddRecognitionCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37852,13 +37852,13 @@ struct UOnlineVoiceInterface_execAddRecognitionCompleteDelegate_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.OnRecognitionComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineVoiceInterface_execOnRecognitionComplete_Parms
 {
 };
 
 // Function Engine.OnlineVoiceInterface.GetRecognitionResults
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineVoiceInterface_execGetRecognitionResults_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37867,7 +37867,7 @@ struct UOnlineVoiceInterface_execGetRecognitionResults_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.StopSpeechRecognition
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execStopSpeechRecognition_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37875,7 +37875,7 @@ struct UOnlineVoiceInterface_execStopSpeechRecognition_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.StartSpeechRecognition
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execStartSpeechRecognition_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37883,35 +37883,35 @@ struct UOnlineVoiceInterface_execStartSpeechRecognition_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.StopNetworkedVoice
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execStopNetworkedVoice_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineVoiceInterface.StartNetworkedVoice
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execStartNetworkedVoice_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineVoiceInterface.ClearPlayerTalkingDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execClearPlayerTalkingDelegate_Parms
 {
 	struct FScriptDelegate                             TalkerDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineVoiceInterface.AddPlayerTalkingDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execAddPlayerTalkingDelegate_Parms
 {
 	struct FScriptDelegate                             TalkerDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineVoiceInterface.OnPlayerTalkingStateChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineVoiceInterface_execOnPlayerTalkingStateChange_Parms
 {
 	struct FUniqueNetId                                Player;                                           		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37919,7 +37919,7 @@ struct UOnlineVoiceInterface_execOnPlayerTalkingStateChange_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.UnmuteRemoteTalker
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineVoiceInterface_execUnmuteRemoteTalker_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37929,7 +37929,7 @@ struct UOnlineVoiceInterface_execUnmuteRemoteTalker_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.MuteRemoteTalker
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineVoiceInterface_execMuteRemoteTalker_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37939,7 +37939,7 @@ struct UOnlineVoiceInterface_execMuteRemoteTalker_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.SetRemoteTalkerPriority
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execSetRemoteTalkerPriority_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37949,7 +37949,7 @@ struct UOnlineVoiceInterface_execSetRemoteTalkerPriority_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.IsHeadsetPresent
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execIsHeadsetPresent_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37957,7 +37957,7 @@ struct UOnlineVoiceInterface_execIsHeadsetPresent_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.IsRemotePlayerTalking
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execIsRemotePlayerTalking_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37965,7 +37965,7 @@ struct UOnlineVoiceInterface_execIsRemotePlayerTalking_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.IsLocalPlayerTalking
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execIsLocalPlayerTalking_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37973,7 +37973,7 @@ struct UOnlineVoiceInterface_execIsLocalPlayerTalking_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.UnregisterRemoteTalker
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execUnregisterRemoteTalker_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37981,7 +37981,7 @@ struct UOnlineVoiceInterface_execUnregisterRemoteTalker_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.RegisterRemoteTalker
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execRegisterRemoteTalker_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -37989,7 +37989,7 @@ struct UOnlineVoiceInterface_execRegisterRemoteTalker_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.UnregisterLocalTalker
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execUnregisterLocalTalker_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -37997,7 +37997,7 @@ struct UOnlineVoiceInterface_execUnregisterLocalTalker_Parms
 };
 
 // Function Engine.OnlineVoiceInterface.RegisterLocalTalker
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineVoiceInterface_execRegisterLocalTalker_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38005,7 +38005,7 @@ struct UOnlineVoiceInterface_execRegisterLocalTalker_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearCheckDownloadableContentListDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearCheckDownloadableContentListDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38013,7 +38013,7 @@ struct UOnlineContentInterface_execClearCheckDownloadableContentListDelegate_Par
 };
 
 // Function Engine.OnlineContentInterface.AddCheckDownloadableContentListDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddCheckDownloadableContentListDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38021,7 +38021,7 @@ struct UOnlineContentInterface_execAddCheckDownloadableContentListDelegate_Parms
 };
 
 // Function Engine.OnlineContentInterface.CheckDownloadableContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execCheckDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38029,7 +38029,7 @@ struct UOnlineContentInterface_execCheckDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnCheckDownloadableContentList
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnCheckDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38037,7 +38037,7 @@ struct UOnlineContentInterface_execOnCheckDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.GetCriticalDownloadableContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetCriticalDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38046,7 +38046,7 @@ struct UOnlineContentInterface_execGetCriticalDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadCriticalDownloadableContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execReadCriticalDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38055,7 +38055,7 @@ struct UOnlineContentInterface_execReadCriticalDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadCriticalDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadCriticalDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38063,7 +38063,7 @@ struct UOnlineContentInterface_execClearReadCriticalDownloadableContentListCompl
 };
 
 // Function Engine.OnlineContentInterface.AddReadCriticalDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadCriticalDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38071,14 +38071,14 @@ struct UOnlineContentInterface_execAddReadCriticalDownloadableContentListComplet
 };
 
 // Function Engine.OnlineContentInterface.OnReadCriticalDownloadableContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadCriticalDownloadableContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.GetHiddenDownloadableContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetHiddenDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38087,7 +38087,7 @@ struct UOnlineContentInterface_execGetHiddenDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadHiddenDownloadableContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execReadHiddenDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38096,7 +38096,7 @@ struct UOnlineContentInterface_execReadHiddenDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadHiddenDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadHiddenDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38104,7 +38104,7 @@ struct UOnlineContentInterface_execClearReadHiddenDownloadableContentListComplet
 };
 
 // Function Engine.OnlineContentInterface.AddReadHiddenDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadHiddenDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38112,14 +38112,14 @@ struct UOnlineContentInterface_execAddReadHiddenDownloadableContentListComplete_
 };
 
 // Function Engine.OnlineContentInterface.OnReadHiddenDownloadableContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadHiddenDownloadableContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.GetDownloadableContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38128,7 +38128,7 @@ struct UOnlineContentInterface_execGetDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadDownloadableContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execReadDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38137,7 +38137,7 @@ struct UOnlineContentInterface_execReadDownloadableContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38145,7 +38145,7 @@ struct UOnlineContentInterface_execClearReadDownloadableContentListComplete_Parm
 };
 
 // Function Engine.OnlineContentInterface.AddReadDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38153,14 +38153,14 @@ struct UOnlineContentInterface_execAddReadDownloadableContentListComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnReadDownloadableContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadDownloadableContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.GetSaveGamesList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetSaveGamesList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38169,7 +38169,7 @@ struct UOnlineContentInterface_execGetSaveGamesList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadSaveGamesList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execReadSaveGamesList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38179,7 +38179,7 @@ struct UOnlineContentInterface_execReadSaveGamesList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadSaveGamesComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadSaveGamesComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38187,7 +38187,7 @@ struct UOnlineContentInterface_execClearReadSaveGamesComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddReadSaveGamesComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadSaveGamesComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38195,14 +38195,14 @@ struct UOnlineContentInterface_execAddReadSaveGamesComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnReadSaveGamesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadSaveGamesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.ClearSaveGames
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearSaveGames_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38210,7 +38210,7 @@ struct UOnlineContentInterface_execClearSaveGames_Parms
 };
 
 // Function Engine.OnlineContentInterface.DeleteSaveGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execDeleteSaveGame_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38221,7 +38221,7 @@ struct UOnlineContentInterface_execDeleteSaveGame_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearWriteSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearWriteSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38229,7 +38229,7 @@ struct UOnlineContentInterface_execClearWriteSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddWriteSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddWriteSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38237,7 +38237,7 @@ struct UOnlineContentInterface_execAddWriteSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnWriteSaveGameDataComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnWriteSaveGameDataComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -38249,7 +38249,7 @@ struct UOnlineContentInterface_execOnWriteSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.WriteSaveGameData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execWriteSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38262,7 +38262,7 @@ struct UOnlineContentInterface_execWriteSaveGameData_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38270,7 +38270,7 @@ struct UOnlineContentInterface_execClearReadSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddReadSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38278,7 +38278,7 @@ struct UOnlineContentInterface_execAddReadSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnReadSaveGameDataComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadSaveGameDataComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -38290,7 +38290,7 @@ struct UOnlineContentInterface_execOnReadSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.GetSaveGameData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38304,7 +38304,7 @@ struct UOnlineContentInterface_execGetSaveGameData_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadSaveGameData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execReadSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38316,7 +38316,7 @@ struct UOnlineContentInterface_execReadSaveGameData_Parms
 };
 
 // Function Engine.OnlineContentInterface.GetAvailableDownloadCounts
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetAvailableDownloadCounts_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38325,7 +38325,7 @@ struct UOnlineContentInterface_execGetAvailableDownloadCounts_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearQueryAvailableDownloadsComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearQueryAvailableDownloadsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38333,7 +38333,7 @@ struct UOnlineContentInterface_execClearQueryAvailableDownloadsComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddQueryAvailableDownloadsComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddQueryAvailableDownloadsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38341,14 +38341,14 @@ struct UOnlineContentInterface_execAddQueryAvailableDownloadsComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnQueryAvailableDownloadsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnQueryAvailableDownloadsComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.QueryAvailableDownloads
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execQueryAvailableDownloads_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38357,7 +38357,7 @@ struct UOnlineContentInterface_execQueryAvailableDownloads_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearCrossTitleSaveGames
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearCrossTitleSaveGames_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38365,7 +38365,7 @@ struct UOnlineContentInterface_execClearCrossTitleSaveGames_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadCrossTitleSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadCrossTitleSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38373,7 +38373,7 @@ struct UOnlineContentInterface_execClearReadCrossTitleSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddReadCrossTitleSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadCrossTitleSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38381,7 +38381,7 @@ struct UOnlineContentInterface_execAddReadCrossTitleSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnReadCrossTitleSaveGameDataComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadCrossTitleSaveGameDataComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -38394,7 +38394,7 @@ struct UOnlineContentInterface_execOnReadCrossTitleSaveGameDataComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.GetCrossTitleSaveGameData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetCrossTitleSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38409,7 +38409,7 @@ struct UOnlineContentInterface_execGetCrossTitleSaveGameData_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadCrossTitleSaveGameData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execReadCrossTitleSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38422,7 +38422,7 @@ struct UOnlineContentInterface_execReadCrossTitleSaveGameData_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadCrossTitleContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadCrossTitleContentCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38431,7 +38431,7 @@ struct UOnlineContentInterface_execClearReadCrossTitleContentCompleteDelegate_Pa
 };
 
 // Function Engine.OnlineContentInterface.AddReadCrossTitleContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadCrossTitleContentCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38440,14 +38440,14 @@ struct UOnlineContentInterface_execAddReadCrossTitleContentCompleteDelegate_Parm
 };
 
 // Function Engine.OnlineContentInterface.OnReadCrossTitleContentComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadCrossTitleContentComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.GetCrossTitleContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetCrossTitleContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38457,7 +38457,7 @@ struct UOnlineContentInterface_execGetCrossTitleContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearCrossTitleContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearCrossTitleContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38465,7 +38465,7 @@ struct UOnlineContentInterface_execClearCrossTitleContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadCrossTitleContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execReadCrossTitleContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38476,7 +38476,7 @@ struct UOnlineContentInterface_execReadCrossTitleContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.GetContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineContentInterface_execGetContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38486,7 +38486,7 @@ struct UOnlineContentInterface_execGetContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38494,7 +38494,7 @@ struct UOnlineContentInterface_execClearContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ReadContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execReadContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38504,7 +38504,7 @@ struct UOnlineContentInterface_execReadContentList_Parms
 };
 
 // Function Engine.OnlineContentInterface.ClearReadContentComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execClearReadContentComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38513,7 +38513,7 @@ struct UOnlineContentInterface_execClearReadContentComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddReadContentComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineContentInterface_execAddReadContentComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38522,14 +38522,14 @@ struct UOnlineContentInterface_execAddReadContentComplete_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnReadContentComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnReadContentComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineContentInterface.ClearContentChangeDelegate
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execClearContentChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -38537,7 +38537,7 @@ struct UOnlineContentInterface_execClearContentChangeDelegate_Parms
 };
 
 // Function Engine.OnlineContentInterface.AddContentChangeDelegate
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineContentInterface_execAddContentChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -38545,40 +38545,40 @@ struct UOnlineContentInterface_execAddContentChangeDelegate_Parms
 };
 
 // Function Engine.OnlineContentInterface.OnContentChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineContentInterface_execOnContentChange_Parms
 {
 };
 
 // Function Engine.OnlineGameInterface.HasPendingBootInvite
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execHasPendingBootInvite_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineGameInterface.CancelNATNegotiation
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execCancelNATNegotiation_Parms
 {
 };
 
 // Function Engine.OnlineGameInterface.ClearJoinMigratedOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearJoinMigratedOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddJoinMigratedOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddJoinMigratedOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnJoinMigratedOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnJoinMigratedOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38586,7 +38586,7 @@ struct UOnlineGameInterface_execOnJoinMigratedOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.JoinMigratedOnlineGame
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execJoinMigratedOnlineGame_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38596,21 +38596,21 @@ struct UOnlineGameInterface_execJoinMigratedOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearMigrateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearMigrateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddMigrateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddMigrateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnMigrateOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnMigrateOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38618,7 +38618,7 @@ struct UOnlineGameInterface_execOnMigrateOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.MigrateOnlineGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execMigrateOnlineGame_Parms
 {
 	unsigned char                                      HostingPlayerNum;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38627,21 +38627,21 @@ struct UOnlineGameInterface_execMigrateOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearRecalculateSkillRatingCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearRecalculateSkillRatingCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RecalculateSkillRatingGameCompleteDelegate;       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddRecalculateSkillRatingCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddRecalculateSkillRatingCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RecalculateSkillRatingCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnRecalculateSkillRatingComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnRecalculateSkillRatingComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38649,7 +38649,7 @@ struct UOnlineGameInterface_execOnRecalculateSkillRatingComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.RecalculateSkillRating
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execRecalculateSkillRating_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38658,27 +38658,27 @@ struct UOnlineGameInterface_execRecalculateSkillRating_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearGameInviteProcessingStartedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearGameInviteProcessingStartedDelegate_Parms
 {
 	struct FScriptDelegate                             GameInviteProcessingStartedDelegate;              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddGameInviteProcessingStartedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddGameInviteProcessingStartedDelegate_Parms
 {
 	struct FScriptDelegate                             GameInviteProcessingStartedDelegate;              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnGameInviteProcessingStarted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnGameInviteProcessingStarted_Parms
 {
 };
 
 // Function Engine.OnlineGameInterface.AcceptGameInvite
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAcceptGameInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38687,7 +38687,7 @@ struct UOnlineGameInterface_execAcceptGameInvite_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearGameInviteAcceptedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearGameInviteAcceptedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38695,7 +38695,7 @@ struct UOnlineGameInterface_execClearGameInviteAcceptedDelegate_Parms
 };
 
 // Function Engine.OnlineGameInterface.AddGameInviteAcceptedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddGameInviteAcceptedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38703,14 +38703,14 @@ struct UOnlineGameInterface_execAddGameInviteAcceptedDelegate_Parms
 };
 
 // Function Engine.OnlineGameInterface.OnGameInviteAccepted
-// [0x00520000] 
+// [0x00520000]
 struct UOnlineGameInterface_execOnGameInviteAccepted_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function Engine.OnlineGameInterface.GetArbitratedPlayers
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execGetArbitratedPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38718,21 +38718,21 @@ struct UOnlineGameInterface_execGetArbitratedPlayers_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearArbitrationRegistrationCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearArbitrationRegistrationCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddArbitrationRegistrationCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddArbitrationRegistrationCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnArbitrationRegistrationComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnArbitrationRegistrationComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38740,7 +38740,7 @@ struct UOnlineGameInterface_execOnArbitrationRegistrationComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.RegisterForArbitration
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execRegisterForArbitration_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38748,21 +38748,21 @@ struct UOnlineGameInterface_execRegisterForArbitration_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearEndOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearEndOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddEndOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddEndOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnEndOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnEndOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38770,7 +38770,7 @@ struct UOnlineGameInterface_execOnEndOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.EndOnlineGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execEndOnlineGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38778,21 +38778,21 @@ struct UOnlineGameInterface_execEndOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearStartOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearStartOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddStartOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddStartOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnStartOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnStartOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38800,7 +38800,7 @@ struct UOnlineGameInterface_execOnStartOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.StartOnlineGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execStartOnlineGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38808,21 +38808,21 @@ struct UOnlineGameInterface_execStartOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearUnregisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearUnregisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddUnregisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddUnregisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnUnregisterPlayerComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnUnregisterPlayerComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38831,7 +38831,7 @@ struct UOnlineGameInterface_execOnUnregisterPlayerComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.UnregisterPlayers
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execUnregisterPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38840,7 +38840,7 @@ struct UOnlineGameInterface_execUnregisterPlayers_Parms
 };
 
 // Function Engine.OnlineGameInterface.UnregisterPlayer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execUnregisterPlayer_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38849,21 +38849,21 @@ struct UOnlineGameInterface_execUnregisterPlayer_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearRegisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearRegisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddRegisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddRegisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnRegisterPlayerComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnRegisterPlayerComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38872,7 +38872,7 @@ struct UOnlineGameInterface_execOnRegisterPlayerComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.RegisterPlayers
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execRegisterPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38881,7 +38881,7 @@ struct UOnlineGameInterface_execRegisterPlayers_Parms
 };
 
 // Function Engine.OnlineGameInterface.RegisterPlayer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execRegisterPlayer_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38891,7 +38891,7 @@ struct UOnlineGameInterface_execRegisterPlayer_Parms
 };
 
 // Function Engine.OnlineGameInterface.GetResolvedConnectString
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execGetResolvedConnectString_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38900,21 +38900,21 @@ struct UOnlineGameInterface_execGetResolvedConnectString_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearJoinOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearJoinOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddJoinOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddJoinOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnJoinOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnJoinOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -38922,7 +38922,7 @@ struct UOnlineGameInterface_execOnJoinOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.JoinOnlineGame
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execJoinOnlineGame_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -38932,7 +38932,7 @@ struct UOnlineGameInterface_execJoinOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.QueryNonAdvertisedData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execQueryNonAdvertisedData_Parms
 {
 	int                                                StartAt;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -38941,7 +38941,7 @@ struct UOnlineGameInterface_execQueryNonAdvertisedData_Parms
 };
 
 // Function Engine.OnlineGameInterface.FreeSearchResults
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineGameInterface_execFreeSearchResults_Parms
 {
 	class UOnlineGameSearch*                           Search;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -38949,56 +38949,56 @@ struct UOnlineGameInterface_execFreeSearchResults_Parms
 };
 
 // Function Engine.OnlineGameInterface.GetGameSearch
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execGetGameSearch_Parms
 {
 	class UOnlineGameSearch*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineGameInterface.BindPlatformSpecificSessionToSearch
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execBindPlatformSpecificSessionToSearch_Parms
 {
 	unsigned char                                      SearchingPlayerNum;                               		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	class UOnlineGameSearch*                           SearchSettings;                                   		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineGameInterface.ReadPlatformSpecificSessionInfoBySessionName
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execReadPlatformSpecificSessionInfoBySessionName_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineGameInterface.ReadPlatformSpecificSessionInfo
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterface_execReadPlatformSpecificSessionInfo_Parms
 {
 	struct FOnlineGameSearchResult                     DesiredGame;                                      		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineGameInterface.ClearQosStatusChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearQosStatusChangedDelegate_Parms
 {
 	struct FScriptDelegate                             QosStatusChangedDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddQosStatusChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddQosStatusChangedDelegate_Parms
 {
 	struct FScriptDelegate                             QosStatusChangedDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnQosStatusChanged
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnQosStatusChanged_Parms
 {
 	int                                                NumComplete;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -39006,56 +39006,56 @@ struct UOnlineGameInterface_execOnQosStatusChanged_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearCancelFindOnlineGamesCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearCancelFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddCancelFindOnlineGamesCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddCancelFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnCancelFindOnlineGamesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnCancelFindOnlineGamesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineGameInterface.CancelFindOnlineGames
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execCancelFindOnlineGames_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineGameInterface.ClearFindOnlineGamesCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddFindOnlineGamesCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnFindOnlineGamesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnFindOnlineGamesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineGameInterface.FindOnlineGames
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execFindOnlineGames_Parms
 {
 	unsigned char                                      SearchingPlayerNum;                               		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39064,21 +39064,21 @@ struct UOnlineGameInterface_execFindOnlineGames_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearDestroyOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearDestroyOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddDestroyOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddDestroyOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnDestroyOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnDestroyOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -39086,7 +39086,7 @@ struct UOnlineGameInterface_execOnDestroyOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.DestroyOnlineGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execDestroyOnlineGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -39094,7 +39094,7 @@ struct UOnlineGameInterface_execDestroyOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.GetGameSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execGetGameSettings_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -39102,21 +39102,21 @@ struct UOnlineGameInterface_execGetGameSettings_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearUpdateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearUpdateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddUpdateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddUpdateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnUpdateOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnUpdateOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -39124,7 +39124,7 @@ struct UOnlineGameInterface_execOnUpdateOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.UpdateOnlineGame
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineGameInterface_execUpdateOnlineGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -39134,21 +39134,21 @@ struct UOnlineGameInterface_execUpdateOnlineGame_Parms
 };
 
 // Function Engine.OnlineGameInterface.ClearCreateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execClearCreateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.AddCreateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execAddCreateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineGameInterface.OnCreateOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterface_execOnCreateOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -39156,7 +39156,7 @@ struct UOnlineGameInterface_execOnCreateOnlineGameComplete_Parms
 };
 
 // Function Engine.OnlineGameInterface.CreateOnlineGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterface_execCreateOnlineGame_Parms
 {
 	unsigned char                                      HostingPlayerNum;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39166,82 +39166,82 @@ struct UOnlineGameInterface_execCreateOnlineGame_Parms
 };
 
 // Function Engine.OnlineSystemInterface.ClearContentChangeDelegateEx
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execClearContentChangeDelegateEx_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.AddContentChangeDelegateEx
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execAddContentChangeDelegateEx_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.OnContentChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSystemInterface_execOnContentChange_Parms
 {
 };
 
 // Function Engine.OnlineSystemInterface.GetLocale
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execGetLocale_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineSystemInterface.ClearStorageDeviceChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execClearStorageDeviceChangeDelegate_Parms
 {
 	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.AddStorageDeviceChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execAddStorageDeviceChangeDelegate_Parms
 {
 	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.OnStorageDeviceChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSystemInterface_execOnStorageDeviceChange_Parms
 {
 };
 
 // Function Engine.OnlineSystemInterface.GetNATType
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execGetNATType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineSystemInterface.ClearConnectionStatusChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execClearConnectionStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ConnectionStatusDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.AddConnectionStatusChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execAddConnectionStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ConnectionStatusDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.OnConnectionStatusChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSystemInterface_execOnConnectionStatusChange_Parms
 {
 	unsigned char                                      ConnectionStatus;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineSystemInterface.IsControllerConnected
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execIsControllerConnected_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -39249,21 +39249,21 @@ struct UOnlineSystemInterface_execIsControllerConnected_Parms
 };
 
 // Function Engine.OnlineSystemInterface.ClearControllerChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execClearControllerChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ControllerChangeDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.AddControllerChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execAddControllerChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ControllerChangeDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.OnControllerChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSystemInterface_execOnControllerChange_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -39271,70 +39271,70 @@ struct UOnlineSystemInterface_execOnControllerChange_Parms
 };
 
 // Function Engine.OnlineSystemInterface.SetNetworkNotificationPosition
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execSetNetworkNotificationPosition_Parms
 {
 	unsigned char                                      NewPos;                                           		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineSystemInterface.GetNetworkNotificationPosition
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execGetNetworkNotificationPosition_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineSystemInterface.ClearExternalUIChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execClearExternalUIChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ExternalUIDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.AddExternalUIChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execAddExternalUIChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ExternalUIDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.OnExternalUIChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSystemInterface_execOnExternalUIChange_Parms
 {
 	unsigned long                                      bIsOpening : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineSystemInterface.ClearLinkStatusChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execClearLinkStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LinkStatusDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.AddLinkStatusChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execAddLinkStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LinkStatusDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSystemInterface.OnLinkStatusChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSystemInterface_execOnLinkStatusChange_Parms
 {
 	unsigned long                                      bIsConnected : 1;                                 		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineSystemInterface.HasLinkConnection
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSystemInterface_execHasLinkConnection_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowRedeemCodeUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowRedeemCodeUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39342,7 +39342,7 @@ struct UOnlinePlayerInterfaceEx_execShowRedeemCodeUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ClearUnlockAvatarAwardCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execClearUnlockAvatarAwardCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39350,7 +39350,7 @@ struct UOnlinePlayerInterfaceEx_execClearUnlockAvatarAwardCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddUnlockAvatarAwardCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execAddUnlockAvatarAwardCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39358,14 +39358,14 @@ struct UOnlinePlayerInterfaceEx_execAddUnlockAvatarAwardCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnUnlockAvatarAwardComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterfaceEx_execOnUnlockAvatarAwardComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowCustomMessageUI
-// [0x00424000] 
+// [0x00424000]
 struct UOnlinePlayerInterfaceEx_execShowCustomMessageUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39377,7 +39377,7 @@ struct UOnlinePlayerInterfaceEx_execShowCustomMessageUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ClearCrossTitleProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execClearCrossTitleProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39385,7 +39385,7 @@ struct UOnlinePlayerInterfaceEx_execClearCrossTitleProfileSettings_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.GetCrossTitleProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execGetCrossTitleProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39394,7 +39394,7 @@ struct UOnlinePlayerInterfaceEx_execGetCrossTitleProfileSettings_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ClearReadCrossTitleProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execClearReadCrossTitleProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39402,7 +39402,7 @@ struct UOnlinePlayerInterfaceEx_execClearReadCrossTitleProfileSettingsCompleteDe
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddReadCrossTitleProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execAddReadCrossTitleProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39410,7 +39410,7 @@ struct UOnlinePlayerInterfaceEx_execAddReadCrossTitleProfileSettingsCompleteDele
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnReadCrossTitleProfileSettingsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterfaceEx_execOnReadCrossTitleProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39419,7 +39419,7 @@ struct UOnlinePlayerInterfaceEx_execOnReadCrossTitleProfileSettingsComplete_Parm
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ReadCrossTitleProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execReadCrossTitleProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39429,7 +39429,7 @@ struct UOnlinePlayerInterfaceEx_execReadCrossTitleProfileSettings_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.UnlockAvatarAward
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execUnlockAvatarAward_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39438,7 +39438,7 @@ struct UOnlinePlayerInterfaceEx_execUnlockAvatarAward_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowCustomPlayersUI
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterfaceEx_execShowCustomPlayersUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39449,7 +39449,7 @@ struct UOnlinePlayerInterfaceEx_execShowCustomPlayersUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowPlayersUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowPlayersUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39457,7 +39457,7 @@ struct UOnlinePlayerInterfaceEx_execShowPlayersUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowFriendsInviteUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowFriendsInviteUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39466,7 +39466,7 @@ struct UOnlinePlayerInterfaceEx_execShowFriendsInviteUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ClearProfileDataChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execClearProfileDataChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39474,7 +39474,7 @@ struct UOnlinePlayerInterfaceEx_execClearProfileDataChangedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddProfileDataChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execAddProfileDataChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39482,13 +39482,13 @@ struct UOnlinePlayerInterfaceEx_execAddProfileDataChangedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnProfileDataChanged
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterfaceEx_execOnProfileDataChanged_Parms
 {
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.UnlockGamerPicture
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execUnlockGamerPicture_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39497,7 +39497,7 @@ struct UOnlinePlayerInterfaceEx_execUnlockGamerPicture_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.IsDeviceValid
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterfaceEx_execIsDeviceValid_Parms
 {
 	int                                                DeviceID;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -39506,7 +39506,7 @@ struct UOnlinePlayerInterfaceEx_execIsDeviceValid_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.GetDeviceSelectionResults
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterfaceEx_execGetDeviceSelectionResults_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39515,7 +39515,7 @@ struct UOnlinePlayerInterfaceEx_execGetDeviceSelectionResults_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ClearDeviceSelectionDoneDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execClearDeviceSelectionDoneDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39523,7 +39523,7 @@ struct UOnlinePlayerInterfaceEx_execClearDeviceSelectionDoneDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddDeviceSelectionDoneDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execAddDeviceSelectionDoneDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39531,14 +39531,14 @@ struct UOnlinePlayerInterfaceEx_execAddDeviceSelectionDoneDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnDeviceSelectionComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterfaceEx_execOnDeviceSelectionComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowDeviceSelectionUI
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterfaceEx_execShowDeviceSelectionUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39549,7 +39549,7 @@ struct UOnlinePlayerInterfaceEx_execShowDeviceSelectionUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowMembershipMarketplaceUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowMembershipMarketplaceUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39557,7 +39557,7 @@ struct UOnlinePlayerInterfaceEx_execShowMembershipMarketplaceUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowContentMarketplaceUI
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterfaceEx_execShowContentMarketplaceUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39567,7 +39567,7 @@ struct UOnlinePlayerInterfaceEx_execShowContentMarketplaceUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowInviteUI
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterfaceEx_execShowInviteUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39576,7 +39576,7 @@ struct UOnlinePlayerInterfaceEx_execShowInviteUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowAchievementsUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowAchievementsUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39584,7 +39584,7 @@ struct UOnlinePlayerInterfaceEx_execShowAchievementsUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowMessagesUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowMessagesUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39592,7 +39592,7 @@ struct UOnlinePlayerInterfaceEx_execShowMessagesUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowGamerCardUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowGamerCardUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39601,7 +39601,7 @@ struct UOnlinePlayerInterfaceEx_execShowGamerCardUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.ShowFeedbackUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterfaceEx_execShowFeedbackUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39610,7 +39610,7 @@ struct UOnlinePlayerInterfaceEx_execShowFeedbackUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetAchievements
-// [0x00424000] 
+// [0x00424000]
 struct UOnlinePlayerInterface_execGetAchievements_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39620,7 +39620,7 @@ struct UOnlinePlayerInterface_execGetAchievements_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearReadAchievementsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearReadAchievementsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39628,7 +39628,7 @@ struct UOnlinePlayerInterface_execClearReadAchievementsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadAchievementsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddReadAchievementsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39636,14 +39636,14 @@ struct UOnlinePlayerInterface_execAddReadAchievementsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadAchievementsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnReadAchievementsComplete_Parms
 {
 	int                                                TitleId;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.ReadAchievements
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execReadAchievements_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39654,7 +39654,7 @@ struct UOnlinePlayerInterface_execReadAchievements_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearUnlockAchievementCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearUnlockAchievementCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39662,7 +39662,7 @@ struct UOnlinePlayerInterface_execClearUnlockAchievementCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddUnlockAchievementCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddUnlockAchievementCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39670,14 +39670,14 @@ struct UOnlinePlayerInterface_execAddUnlockAchievementCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnUnlockAchievementComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnUnlockAchievementComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.UnlockAchievement
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execUnlockAchievement_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39686,7 +39686,7 @@ struct UOnlinePlayerInterface_execUnlockAchievement_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.DeleteMessage
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execDeleteMessage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39695,7 +39695,7 @@ struct UOnlinePlayerInterface_execDeleteMessage_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearFriendMessageReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearFriendMessageReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39703,7 +39703,7 @@ struct UOnlinePlayerInterface_execClearFriendMessageReceivedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendMessageReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddFriendMessageReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39711,7 +39711,7 @@ struct UOnlinePlayerInterface_execAddFriendMessageReceivedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendMessageReceived
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnFriendMessageReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39721,7 +39721,7 @@ struct UOnlinePlayerInterface_execOnFriendMessageReceived_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetFriendMessages
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterface_execGetFriendMessages_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39729,28 +39729,28 @@ struct UOnlinePlayerInterface_execGetFriendMessages_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearJoinFriendGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearJoinFriendGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.AddJoinFriendGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddJoinFriendGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.OnJoinFriendGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnJoinFriendGameComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.JoinFriendGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execJoinFriendGame_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39759,7 +39759,7 @@ struct UOnlinePlayerInterface_execJoinFriendGame_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearReceivedGameInviteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearReceivedGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39767,7 +39767,7 @@ struct UOnlinePlayerInterface_execClearReceivedGameInviteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddReceivedGameInviteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddReceivedGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39775,7 +39775,7 @@ struct UOnlinePlayerInterface_execAddReceivedGameInviteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnReceivedGameInvite
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnReceivedGameInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39783,7 +39783,7 @@ struct UOnlinePlayerInterface_execOnReceivedGameInvite_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearSentGameInviteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearSentGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39791,7 +39791,7 @@ struct UOnlinePlayerInterface_execClearSentGameInviteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddSentGameInviteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddSentGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39799,7 +39799,7 @@ struct UOnlinePlayerInterface_execAddSentGameInviteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnSentGameInvite
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnSentGameInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39807,7 +39807,7 @@ struct UOnlinePlayerInterface_execOnSentGameInvite_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.SendGameInviteToFriends
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execSendGameInviteToFriends_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39817,7 +39817,7 @@ struct UOnlinePlayerInterface_execSendGameInviteToFriends_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.SendGameInviteToFriend
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execSendGameInviteToFriend_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39827,7 +39827,7 @@ struct UOnlinePlayerInterface_execSendGameInviteToFriend_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.SendMessageToFriend
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execSendMessageToFriend_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39837,7 +39837,7 @@ struct UOnlinePlayerInterface_execSendMessageToFriend_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearFriendInviteReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearFriendInviteReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39845,7 +39845,7 @@ struct UOnlinePlayerInterface_execClearFriendInviteReceivedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendInviteReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddFriendInviteReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39853,7 +39853,7 @@ struct UOnlinePlayerInterface_execAddFriendInviteReceivedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendInviteReceived
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnFriendInviteReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39863,7 +39863,7 @@ struct UOnlinePlayerInterface_execOnFriendInviteReceived_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.RemoveFriend
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execRemoveFriend_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39872,7 +39872,7 @@ struct UOnlinePlayerInterface_execRemoveFriend_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.DenyFriendInvite
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execDenyFriendInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39881,7 +39881,7 @@ struct UOnlinePlayerInterface_execDenyFriendInvite_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AcceptFriendInvite
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAcceptFriendInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39890,7 +39890,7 @@ struct UOnlinePlayerInterface_execAcceptFriendInvite_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearAddFriendByNameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearAddFriendByNameCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39898,7 +39898,7 @@ struct UOnlinePlayerInterface_execClearAddFriendByNameCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddAddFriendByNameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddAddFriendByNameCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39906,14 +39906,14 @@ struct UOnlinePlayerInterface_execAddAddFriendByNameCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnAddFriendByNameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnAddFriendByNameComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendByName
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execAddFriendByName_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39923,7 +39923,7 @@ struct UOnlinePlayerInterface_execAddFriendByName_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriend
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execAddFriend_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39933,7 +39933,7 @@ struct UOnlinePlayerInterface_execAddFriend_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetKeyboardInputResults
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterface_execGetKeyboardInputResults_Parms
 {
 	unsigned char                                      bWasCanceled;                                     		// 0x0000 (0x0001) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -39941,28 +39941,28 @@ struct UOnlinePlayerInterface_execGetKeyboardInputResults_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearKeyboardInputDoneDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearKeyboardInputDoneDelegate_Parms
 {
 	struct FScriptDelegate                             InputDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.AddKeyboardInputDoneDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddKeyboardInputDoneDelegate_Parms
 {
 	struct FScriptDelegate                             InputDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.OnKeyboardInputComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnKeyboardInputComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.ShowKeyboardUI
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execShowKeyboardUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39976,7 +39976,7 @@ struct UOnlinePlayerInterface_execShowKeyboardUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.SetOnlineStatus
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterface_execSetOnlineStatus_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39986,7 +39986,7 @@ struct UOnlinePlayerInterface_execSetOnlineStatus_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetFriendsList
-// [0x00424000] 
+// [0x00424000]
 struct UOnlinePlayerInterface_execGetFriendsList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -39997,7 +39997,7 @@ struct UOnlinePlayerInterface_execGetFriendsList_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearReadFriendsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearReadFriendsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40005,7 +40005,7 @@ struct UOnlinePlayerInterface_execClearReadFriendsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadFriendsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddReadFriendsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40013,14 +40013,14 @@ struct UOnlinePlayerInterface_execAddReadFriendsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadFriendsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnReadFriendsComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.ReadFriendsList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execReadFriendsList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40030,7 +40030,7 @@ struct UOnlinePlayerInterface_execReadFriendsList_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearWritePlayerStorageCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearWritePlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40038,7 +40038,7 @@ struct UOnlinePlayerInterface_execClearWritePlayerStorageCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddWritePlayerStorageCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddWritePlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40046,7 +40046,7 @@ struct UOnlinePlayerInterface_execAddWritePlayerStorageCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnWritePlayerStorageComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnWritePlayerStorageComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40054,7 +40054,7 @@ struct UOnlinePlayerInterface_execOnWritePlayerStorageComplete_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.WritePlayerStorage
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execWritePlayerStorage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40064,7 +40064,7 @@ struct UOnlinePlayerInterface_execWritePlayerStorage_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetPlayerStorage
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execGetPlayerStorage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40072,7 +40072,7 @@ struct UOnlinePlayerInterface_execGetPlayerStorage_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearReadPlayerStorageForNetIdCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearReadPlayerStorageForNetIdCompleteDelegate_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -40080,7 +40080,7 @@ struct UOnlinePlayerInterface_execClearReadPlayerStorageForNetIdCompleteDelegate
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadPlayerStorageForNetIdCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddReadPlayerStorageForNetIdCompleteDelegate_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -40088,7 +40088,7 @@ struct UOnlinePlayerInterface_execAddReadPlayerStorageForNetIdCompleteDelegate_P
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadPlayerStorageForNetIdComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnReadPlayerStorageForNetIdComplete_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -40096,7 +40096,7 @@ struct UOnlinePlayerInterface_execOnReadPlayerStorageForNetIdComplete_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ReadPlayerStorageForNetId
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execReadPlayerStorageForNetId_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40106,7 +40106,7 @@ struct UOnlinePlayerInterface_execReadPlayerStorageForNetId_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearReadPlayerStorageCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearReadPlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40114,7 +40114,7 @@ struct UOnlinePlayerInterface_execClearReadPlayerStorageCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadPlayerStorageCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddReadPlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40122,7 +40122,7 @@ struct UOnlinePlayerInterface_execAddReadPlayerStorageCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadPlayerStorageComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnReadPlayerStorageComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40130,7 +40130,7 @@ struct UOnlinePlayerInterface_execOnReadPlayerStorageComplete_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ReadPlayerStorage
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execReadPlayerStorage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40140,7 +40140,7 @@ struct UOnlinePlayerInterface_execReadPlayerStorage_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearWriteProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearWriteProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40148,7 +40148,7 @@ struct UOnlinePlayerInterface_execClearWriteProfileSettingsCompleteDelegate_Parm
 };
 
 // Function Engine.OnlinePlayerInterface.AddWriteProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddWriteProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40156,7 +40156,7 @@ struct UOnlinePlayerInterface_execAddWriteProfileSettingsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnWriteProfileSettingsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnWriteProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40164,7 +40164,7 @@ struct UOnlinePlayerInterface_execOnWriteProfileSettingsComplete_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.WriteProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execWriteProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40173,7 +40173,7 @@ struct UOnlinePlayerInterface_execWriteProfileSettings_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execGetProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40181,7 +40181,7 @@ struct UOnlinePlayerInterface_execGetProfileSettings_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearReadProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearReadProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40189,7 +40189,7 @@ struct UOnlinePlayerInterface_execClearReadProfileSettingsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddReadProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40197,7 +40197,7 @@ struct UOnlinePlayerInterface_execAddReadProfileSettingsCompleteDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadProfileSettingsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnReadProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40205,7 +40205,7 @@ struct UOnlinePlayerInterface_execOnReadProfileSettingsComplete_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ReadProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execReadProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40214,7 +40214,7 @@ struct UOnlinePlayerInterface_execReadProfileSettings_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearFriendsChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearFriendsChangeDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40222,7 +40222,7 @@ struct UOnlinePlayerInterface_execClearFriendsChangeDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendsChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddFriendsChangeDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40230,35 +40230,35 @@ struct UOnlinePlayerInterface_execAddFriendsChangeDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearMutingChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearMutingChangeDelegate_Parms
 {
 	struct FScriptDelegate                             MutingDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.AddMutingChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddMutingChangeDelegate_Parms
 {
 	struct FScriptDelegate                             MutingDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLoginCancelledDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearLoginCancelledDelegate_Parms
 {
 	struct FScriptDelegate                             CancelledDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginCancelledDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddLoginCancelledDelegate_Parms
 {
 	struct FScriptDelegate                             CancelledDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLoginStatusChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearLoginStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginStatusDelegate;                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40266,7 +40266,7 @@ struct UOnlinePlayerInterface_execClearLoginStatusChangeDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginStatusChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddLoginStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginStatusDelegate;                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40274,7 +40274,7 @@ struct UOnlinePlayerInterface_execAddLoginStatusChangeDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnLoginStatusChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnLoginStatusChange_Parms
 {
 	unsigned char                                      NewStatus;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40282,21 +40282,21 @@ struct UOnlinePlayerInterface_execOnLoginStatusChange_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLoginChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearLoginChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddLoginChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlinePlayerInterface.ShowFriendsUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execShowFriendsUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40304,7 +40304,7 @@ struct UOnlinePlayerInterface_execShowFriendsUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.IsMuted
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execIsMuted_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40313,7 +40313,7 @@ struct UOnlinePlayerInterface_execIsMuted_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AreAnyFriends
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterface_execAreAnyFriends_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40322,7 +40322,7 @@ struct UOnlinePlayerInterface_execAreAnyFriends_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.IsFriend
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execIsFriend_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40331,7 +40331,7 @@ struct UOnlinePlayerInterface_execIsFriend_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.CanShowPresenceInformation
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execCanShowPresenceInformation_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40339,7 +40339,7 @@ struct UOnlinePlayerInterface_execCanShowPresenceInformation_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.CanViewPlayerProfiles
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execCanViewPlayerProfiles_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40347,7 +40347,7 @@ struct UOnlinePlayerInterface_execCanViewPlayerProfiles_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.CanPurchaseContent
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execCanPurchaseContent_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40355,7 +40355,7 @@ struct UOnlinePlayerInterface_execCanPurchaseContent_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.CanDownloadUserContent
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execCanDownloadUserContent_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40363,7 +40363,7 @@ struct UOnlinePlayerInterface_execCanDownloadUserContent_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.CanCommunicate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execCanCommunicate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40371,7 +40371,7 @@ struct UOnlinePlayerInterface_execCanCommunicate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.CanPlayOnline
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execCanPlayOnline_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40379,7 +40379,7 @@ struct UOnlinePlayerInterface_execCanPlayOnline_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearGetUserAgeGroupDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearGetUserAgeGroupDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40387,7 +40387,7 @@ struct UOnlinePlayerInterface_execClearGetUserAgeGroupDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddGetUserAgeGroupDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddGetUserAgeGroupDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40395,7 +40395,7 @@ struct UOnlinePlayerInterface_execAddGetUserAgeGroupDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetUserAgeGroup
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execGetUserAgeGroup_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40403,7 +40403,7 @@ struct UOnlinePlayerInterface_execGetUserAgeGroup_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnGetUserAgeGroup
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnGetUserAgeGroup_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40411,7 +40411,7 @@ struct UOnlinePlayerInterface_execOnGetUserAgeGroup_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.IsLocalLogin
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execIsLocalLogin_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40419,7 +40419,7 @@ struct UOnlinePlayerInterface_execIsLocalLogin_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.IsGuestLogin
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execIsGuestLogin_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40427,7 +40427,7 @@ struct UOnlinePlayerInterface_execIsGuestLogin_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetPlayerNickname
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execGetPlayerNickname_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40435,7 +40435,7 @@ struct UOnlinePlayerInterface_execGetPlayerNickname_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetUniquePlayerId
-// [0x00420000] 
+// [0x00420000]
 struct UOnlinePlayerInterface_execGetUniquePlayerId_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40444,7 +40444,7 @@ struct UOnlinePlayerInterface_execGetUniquePlayerId_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.GetLoginStatus
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execGetLoginStatus_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40452,7 +40452,7 @@ struct UOnlinePlayerInterface_execGetLoginStatus_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLogoutCompletedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearLogoutCompletedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40460,7 +40460,7 @@ struct UOnlinePlayerInterface_execClearLogoutCompletedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddLogoutCompletedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddLogoutCompletedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40468,14 +40468,14 @@ struct UOnlinePlayerInterface_execAddLogoutCompletedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnLogoutCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnLogoutCompleted_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlinePlayerInterface.Logout
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execLogout_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40483,7 +40483,7 @@ struct UOnlinePlayerInterface_execLogout_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLoginFailedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execClearLoginFailedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40491,7 +40491,7 @@ struct UOnlinePlayerInterface_execClearLoginFailedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginFailedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAddLoginFailedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40499,7 +40499,7 @@ struct UOnlinePlayerInterface_execAddLoginFailedDelegate_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnLoginFailed
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnLoginFailed_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40507,14 +40507,14 @@ struct UOnlinePlayerInterface_execOnLoginFailed_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.AutoLogin
-// [0x00020000] 
+// [0x00020000]
 struct UOnlinePlayerInterface_execAutoLogin_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlinePlayerInterface.Login
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execLogin_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -40525,7 +40525,7 @@ struct UOnlinePlayerInterface_execLogin_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.ShowLoginUI
-// [0x00024000] 
+// [0x00024000]
 struct UOnlinePlayerInterface_execShowLoginUI_Parms
 {
 	unsigned long                                      bShowOnlineOnly : 1;                              		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -40535,32 +40535,32 @@ struct UOnlinePlayerInterface_execShowLoginUI_Parms
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendsChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnFriendsChange_Parms
 {
 };
 
 // Function Engine.OnlinePlayerInterface.OnMutingChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnMutingChange_Parms
 {
 };
 
 // Function Engine.OnlinePlayerInterface.OnLoginCancelled
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnLoginCancelled_Parms
 {
 };
 
 // Function Engine.OnlinePlayerInterface.OnLoginChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlayerInterface_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAccountInterface.GetLocalAccountNames
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineAccountInterface_execGetLocalAccountNames_Parms
 {
 	TArray< struct FString >                           Accounts;                                         		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -40568,7 +40568,7 @@ struct UOnlineAccountInterface_execGetLocalAccountNames_Parms
 };
 
 // Function Engine.OnlineAccountInterface.DeleteLocalAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineAccountInterface_execDeleteLocalAccount_Parms
 {
 	struct FString                                     UserName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40577,7 +40577,7 @@ struct UOnlineAccountInterface_execDeleteLocalAccount_Parms
 };
 
 // Function Engine.OnlineAccountInterface.RenameLocalAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineAccountInterface_execRenameLocalAccount_Parms
 {
 	struct FString                                     NewUserName;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40587,7 +40587,7 @@ struct UOnlineAccountInterface_execRenameLocalAccount_Parms
 };
 
 // Function Engine.OnlineAccountInterface.CreateLocalAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineAccountInterface_execCreateLocalAccount_Parms
 {
 	struct FString                                     UserName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40596,28 +40596,28 @@ struct UOnlineAccountInterface_execCreateLocalAccount_Parms
 };
 
 // Function Engine.OnlineAccountInterface.ClearCreateOnlineAccountCompletedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAccountInterface_execClearCreateOnlineAccountCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             AccountCreateDelegate;                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAccountInterface.AddCreateOnlineAccountCompletedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineAccountInterface_execAddCreateOnlineAccountCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             AccountCreateDelegate;                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAccountInterface.OnCreateOnlineAccountCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineAccountInterface_execOnCreateOnlineAccountCompleted_Parms
 {
 	unsigned char                                      ErrorStatus;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineAccountInterface.CreateOnlineAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineAccountInterface_execCreateOnlineAccount_Parms
 {
 	struct FString                                     UserName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40628,19 +40628,19 @@ struct UOnlineAccountInterface_execCreateOnlineAccount_Parms
 };
 
 // Function Engine.AccessControl.ShutdownAuth
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execShutdownAuth_Parms
 {
 };
 
 // Function Engine.AccessControl.InitAuth
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execInitAuth_Parms
 {
 };
 
 // Function Engine.AccessControl.IsPendingAuth
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execIsPendingAuth_Parms
 {
 	struct FUniqueNetId                                PlayerUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -40648,40 +40648,40 @@ struct AAccessControl_execIsPendingAuth_Parms
 };
 
 // Function Engine.AccessControl.Cleanup
-// [0x00824002] 
+// [0x00824002]
 struct AAccessControl_execCleanup_Parms
 {
 	unsigned long                                      bExit : 1;                                        		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
-	// struct FUniqueNetId                             CurUID;                                           		// 0x000C (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurUID;                                           		// 0x000C (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.NotifyExit
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execNotifyExit_Parms
 {
 };
 
 // Function Engine.AccessControl.NotifyGameEnding
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execNotifyGameEnding_Parms
 {
 };
 
 // Function Engine.AccessControl.NotifyTravel
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execNotifyTravel_Parms
 {
 	unsigned long                                      bSeamless : 1;                                    		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.AccessControl.OnDestroyOnlineGameComplete
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execOnDestroyOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0008 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// unsigned char                                   ClientAuthStatus;                                 		// 0x0020 (0x0001) [0x0000000000000000]              
-	// struct FUniqueNetId                             ClientUID;                                        		// 0x0024 (0x0018) [0x0000000000000000]              
+	// unsigned char                                   ClientAuthStatus;                                 		// 0x0020 (0x0001) [0x0000000000000000]
+	// struct FUniqueNetId                             ClientUID;                                        		// 0x0024 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.StaticOnClientConnectionClose
@@ -40689,62 +40689,62 @@ struct AAccessControl_execOnDestroyOnlineGameComplete_Parms
 struct AAccessControl_execStaticOnClientConnectionClose_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             CurUID;                                           		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurUID;                                           		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.OnClientConnectionClose
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execOnClientConnectionClose_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.AccessControl.ListenHostAuthTimeout
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execListenHostAuthTimeout_Parms
 {
-	// struct FUniqueNetId                             ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.EndListenHostAuth
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execEndListenHostAuth_Parms
 {
-	// struct FUniqueNetId                             ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]              
-	// struct FUniqueNetId                             HostUID;                                          		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]
+	// struct FUniqueNetId                             HostUID;                                          		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.ContinueListenHostAuth
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execContinueListenHostAuth_Parms
 {
-	// struct FUniqueNetId                             HostUID;                                          		// 0x0000 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             HostUID;                                          		// 0x0000 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.BeginListenHostAuth
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execBeginListenHostAuth_Parms
 {
-	// struct FUniqueNetId                             ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]              
-	// struct FUniqueNetId                             HostUID;                                          		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ServerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]
+	// struct FUniqueNetId                             HostUID;                                          		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.NotifyStartOnlineGame
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execNotifyStartOnlineGame_Parms
 {
 };
 
 // Function Engine.AccessControl.OnAuthRetryServer
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execOnAuthRetryServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             ClientUID;                                        		// 0x0018 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             ClientUID;                                        		// 0x0018 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.OnAuthRequestServer
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execOnAuthRequestServer_Parms
 {
 	class UPlayer*                                     ClientConnection;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40754,18 +40754,18 @@ struct AAccessControl_execOnAuthRequestServer_Parms
 };
 
 // Function Engine.AccessControl.OnAuthCompleteClient
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execOnAuthCompleteClient_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0004 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 	class UPlayer*                                     ClientConnection;                                 		// 0x001C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FString                                     ExtraInfo;                                        		// 0x0020 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// struct FUniqueNetId                             HostUID;                                          		// 0x002C (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             HostUID;                                          		// 0x002C (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.OnAuthBlobReceivedClient
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execOnAuthBlobReceivedClient_Parms
 {
 	struct FUniqueNetId                                ClientUID;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -40774,16 +40774,16 @@ struct AAccessControl_execOnAuthBlobReceivedClient_Parms
 };
 
 // Function Engine.AccessControl.OnAuthReady
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execOnAuthReady_Parms
 {
 };
 
 // Function Engine.AccessControl.PendingAuthTimer
-// [0x00820002] 
+// [0x00820002]
 struct AAccessControl_execPendingAuthTimer_Parms
 {
-	// struct FUniqueNetId                             CurUID;                                           		// 0x000C (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurUID;                                           		// 0x000C (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.PreLogin
@@ -40797,12 +40797,12 @@ struct AAccessControl_eventPreLogin_Parms
 	struct FString                                     OutError;                                         		// 0x0034 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	unsigned long                                      bSpectator : 1;                                   		// 0x0040 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	// struct FString                                  InPassword;                                       		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FUniqueNetId                             NullId;                                           		// 0x006C (0x0018) [0x0000000000000000]              
-	// struct FUniqueNetId                             HostUID;                                          		// 0x0084 (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             NullId;                                           		// 0x006C (0x0018) [0x0000000000000000]
+	// struct FUniqueNetId                             HostUID;                                          		// 0x0084 (0x0018) [0x0000000000000000]
 };
 
 // Function Engine.AccessControl.IsIDBanned
-// [0x00420002] 
+// [0x00420002]
 struct AAccessControl_execIsIDBanned_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -40810,7 +40810,7 @@ struct AAccessControl_execIsIDBanned_Parms
 };
 
 // Function Engine.AccessControl.CheckIPPolicy
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execCheckIPPolicy_Parms
 {
 	struct FString                                     Address;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40820,7 +40820,7 @@ struct AAccessControl_execCheckIPPolicy_Parms
 };
 
 // Function Engine.AccessControl.ValidLogin
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execValidLogin_Parms
 {
 	struct FString                                     UserName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40829,7 +40829,7 @@ struct AAccessControl_execValidLogin_Parms
 };
 
 // Function Engine.AccessControl.ParseAdminOptions
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execParseAdminOptions_Parms
 {
 	struct FString                                     Options;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40839,7 +40839,7 @@ struct AAccessControl_execParseAdminOptions_Parms
 };
 
 // Function Engine.AccessControl.AdminExited
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execAdminExited_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40847,7 +40847,7 @@ struct AAccessControl_execAdminExited_Parms
 };
 
 // Function Engine.AccessControl.AdminEntered
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execAdminEntered_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40855,7 +40855,7 @@ struct AAccessControl_execAdminEntered_Parms
 };
 
 // Function Engine.AccessControl.AdminLogout
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execAdminLogout_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40863,7 +40863,7 @@ struct AAccessControl_execAdminLogout_Parms
 };
 
 // Function Engine.AccessControl.AdminLogin
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execAdminLogin_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40872,7 +40872,7 @@ struct AAccessControl_execAdminLogin_Parms
 };
 
 // Function Engine.AccessControl.KickPlayer
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execKickPlayer_Parms
 {
 	class APlayerController*                           C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40881,7 +40881,7 @@ struct AAccessControl_execKickPlayer_Parms
 };
 
 // Function Engine.AccessControl.ForceKickPlayer
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execForceKickPlayer_Parms
 {
 	class APlayerController*                           C;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40890,7 +40890,7 @@ struct AAccessControl_execForceKickPlayer_Parms
 };
 
 // Function Engine.AccessControl.KickBan
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execKickBan_Parms
 {
 	struct FString                                     Target;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40898,14 +40898,14 @@ struct AAccessControl_execKickBan_Parms
 };
 
 // Function Engine.AccessControl.Kick
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execKick_Parms
 {
 	struct FString                                     Target;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.AccessControl.GetControllerFromString
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execGetControllerFromString_Parms
 {
 	struct FString                                     Target;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40913,21 +40913,21 @@ struct AAccessControl_execGetControllerFromString_Parms
 };
 
 // Function Engine.AccessControl.RequiresPassword
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execRequiresPassword_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.AccessControl.SetGamePassword
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execSetGamePassword_Parms
 {
 	struct FString                                     P;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.AccessControl.SetAdminPassword
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execSetAdminPassword_Parms
 {
 	struct FString                                     P;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40935,7 +40935,7 @@ struct AAccessControl_execSetAdminPassword_Parms
 };
 
 // Function Engine.AccessControl.IsAdmin
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execIsAdmin_Parms
 {
 	class APlayerController*                           P;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -40943,19 +40943,19 @@ struct AAccessControl_execIsAdmin_Parms
 };
 
 // Function Engine.AccessControl.Destroyed
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execDestroyed_Parms
 {
 };
 
 // Function Engine.AccessControl.PostBeginPlay
-// [0x00020002] 
+// [0x00020002]
 struct AAccessControl_execPostBeginPlay_Parms
 {
 };
 
 // Function Engine.Admin.ServerSwitch
-// [0x002200C2] 
+// [0x002200C2]
 struct AAdmin_execServerSwitch_Parms
 {
 	struct FString                                     URL;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -40969,7 +40969,7 @@ struct AAdmin_execSwitch_Parms
 };
 
 // Function Engine.Admin.ServerRestartMap
-// [0x002200C2] 
+// [0x002200C2]
 struct AAdmin_execServerRestartMap_Parms
 {
 };
@@ -40987,7 +40987,7 @@ struct AAdmin_execPlayerList_Parms
 };
 
 // Function Engine.Admin.ServerKick
-// [0x002200C2] 
+// [0x002200C2]
 struct AAdmin_execServerKick_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -41001,7 +41001,7 @@ struct AAdmin_execKick_Parms
 };
 
 // Function Engine.Admin.ServerKickBan
-// [0x002200C2] 
+// [0x002200C2]
 struct AAdmin_execServerKickBan_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -41015,7 +41015,7 @@ struct AAdmin_execKickBan_Parms
 };
 
 // Function Engine.Admin.ServerAdmin
-// [0x002200C2] 
+// [0x002200C2]
 struct AAdmin_execServerAdmin_Parms
 {
 	struct FString                                     CommandLine;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -41036,7 +41036,7 @@ struct AAdmin_eventPostBeginPlay_Parms
 };
 
 // Function Engine.IScaleBehavior.Behavior_ChangeScale
-// [0x00020000] 
+// [0x00020000]
 struct UIScaleBehavior_execBehavior_ChangeScale_Parms
 {
 	float                                              InScale;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41061,11 +41061,11 @@ struct AEmitterSpawnable_eventSetTemplate_Parms
 // [0x00020802] ( FUNC_Event )
 struct USeqAct_ControlMovieTexture_eventActivated_Parms
 {
-	// unsigned char                                   Mode;                                             		// 0x0004 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   Mode;                                             		// 0x0004 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.IParameterBehavior.Behavior_SetColorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_SetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41074,7 +41074,7 @@ struct UIParameterBehavior_execBehavior_SetColorParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_SetFloatParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_SetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41083,7 +41083,7 @@ struct UIParameterBehavior_execBehavior_SetFloatParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_SetObjectParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_SetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41092,7 +41092,7 @@ struct UIParameterBehavior_execBehavior_SetObjectParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_SetVectorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_SetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41101,7 +41101,7 @@ struct UIParameterBehavior_execBehavior_SetVectorParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_GetColorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_GetColorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41111,7 +41111,7 @@ struct UIParameterBehavior_execBehavior_GetColorParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_GetFloatParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_GetFloatParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41121,7 +41121,7 @@ struct UIParameterBehavior_execBehavior_GetFloatParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_GetObjectParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_GetObjectParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41131,7 +41131,7 @@ struct UIParameterBehavior_execBehavior_GetObjectParameterValue_Parms
 };
 
 // Function Engine.IParameterBehavior.Behavior_GetVectorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIParameterBehavior_execBehavior_GetVectorParameterValue_Parms
 {
 	int                                                SectionIndex;                                     		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
@@ -41141,7 +41141,7 @@ struct UIParameterBehavior_execBehavior_GetVectorParameterValue_Parms
 };
 
 // Function Engine.CoverReplicator.ClientReceiveLinkDisabledState
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientReceiveLinkDisabledState_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41150,40 +41150,40 @@ struct ACoverReplicator_execClientReceiveLinkDisabledState_Parms
 };
 
 // Function Engine.CoverReplicator.ServerSendLinkDisabledState
-// [0x002200C2] 
+// [0x002200C2]
 struct ACoverReplicator_execServerSendLinkDisabledState_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.NotifyLinkDisabledStateChange
-// [0x00020002] 
+// [0x00020002]
 struct ACoverReplicator_execNotifyLinkDisabledStateChange_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ClientReceiveManualCoverTypeSlots
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientReceiveManualCoverTypeSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ACoverLink*                                  Link;                                             		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumCoverTypesChanged;                             		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	struct FManualCoverTypeInfo                        SlotsCoverTypeChanged[ 0x8 ];                     		// 0x000C (0x0020) [0x0000000000000080]              ( CPF_Parm )
+	struct FManualCoverTypeInfo                        SlotsCoverTypeChanged[0x8];                     		// 0x000C (0x0020) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bDone : 1;                                        		// 0x002C (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ServerSendManualCoverTypeSlots
-// [0x00A200C2] 
+// [0x00A200C2]
 struct ACoverReplicator_execServerSendManualCoverTypeSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FManualCoverTypeInfo                     SlotsCoverTypeChanged[ 0x8 ];                     		// 0x000C (0x0020) [0x0000000000000000]              
+	// struct FManualCoverTypeInfo                     SlotsCoverTypeChanged[ 0x8 ];                     		// 0x000C (0x0020) [0x0000000000000000]
 };
 
 // Function Engine.CoverReplicator.NotifySetManualCoverTypeForSlots
-// [0x00420002] 
+// [0x00420002]
 struct ACoverReplicator_execNotifySetManualCoverTypeForSlots_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41192,26 +41192,26 @@ struct ACoverReplicator_execNotifySetManualCoverTypeForSlots_Parms
 };
 
 // Function Engine.CoverReplicator.ClientReceiveAdjustedSlots
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientReceiveAdjustedSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ACoverLink*                                  Link;                                             		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumSlotsAdjusted;                                 		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      SlotsAdjusted[ 0x8 ];                             		// 0x0009 (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      SlotsAdjusted[0x8];                             		// 0x0009 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bDone : 1;                                        		// 0x0014 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ServerSendAdjustedSlots
-// [0x002200C2] 
+// [0x002200C2]
 struct ACoverReplicator_execServerSendAdjustedSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   SlotsAdjusted[ 0x8 ];                             		// 0x0009 (0x0008) [0x0000000000000000]              
+	// unsigned char                                   SlotsAdjusted[ 0x8 ];                             		// 0x0009 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.CoverReplicator.NotifyAutoAdjustSlots
-// [0x00420002] 
+// [0x00420002]
 struct ACoverReplicator_execNotifyAutoAdjustSlots_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41219,26 +41219,26 @@ struct ACoverReplicator_execNotifyAutoAdjustSlots_Parms
 };
 
 // Function Engine.CoverReplicator.ClientReceiveDisabledSlots
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientReceiveDisabledSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ACoverLink*                                  Link;                                             		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumSlotsDisabled;                                 		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      SlotsDisabled[ 0x8 ];                             		// 0x0009 (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      SlotsDisabled[0x8];                             		// 0x0009 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bDone : 1;                                        		// 0x0014 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ServerSendDisabledSlots
-// [0x002200C2] 
+// [0x002200C2]
 struct ACoverReplicator_execServerSendDisabledSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   SlotsDisabled[ 0x8 ];                             		// 0x0009 (0x0008) [0x0000000000000000]              
+	// unsigned char                                   SlotsDisabled[ 0x8 ];                             		// 0x0009 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.CoverReplicator.NotifyDisabledSlots
-// [0x00420002] 
+// [0x00420002]
 struct ACoverReplicator_execNotifyDisabledSlots_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41246,26 +41246,26 @@ struct ACoverReplicator_execNotifyDisabledSlots_Parms
 };
 
 // Function Engine.CoverReplicator.ClientReceiveEnabledSlots
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientReceiveEnabledSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ACoverLink*                                  Link;                                             		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumSlotsEnabled;                                  		// 0x0008 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      SlotsEnabled[ 0x8 ];                              		// 0x0009 (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      SlotsEnabled[0x8];                              		// 0x0009 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bDone : 1;                                        		// 0x0014 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ServerSendEnabledSlots
-// [0x002200C2] 
+// [0x002200C2]
 struct ACoverReplicator_execServerSendEnabledSlots_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   SlotsEnabled[ 0x8 ];                              		// 0x0009 (0x0008) [0x0000000000000000]              
+	// unsigned char                                   SlotsEnabled[ 0x8 ];                              		// 0x0009 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.CoverReplicator.NotifyEnabledSlots
-// [0x00420002] 
+// [0x00420002]
 struct ACoverReplicator_execNotifyEnabledSlots_Parms
 {
 	class ACoverLink*                                  Link;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41273,55 +41273,55 @@ struct ACoverReplicator_execNotifyEnabledSlots_Parms
 };
 
 // Function Engine.CoverReplicator.ClientReceiveInitialCoverReplicationInfo
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientReceiveInitialCoverReplicationInfo_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class ACoverLink*                                  Link;                                             		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bLinkDisabled : 1;                                		// 0x0008 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	unsigned char                                      NumSlotsEnabled;                                  		// 0x000C (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      SlotsEnabled[ 0x8 ];                              		// 0x000D (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      SlotsEnabled[0x8];                              		// 0x000D (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumSlotsDisabled;                                 		// 0x0015 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      SlotsDisabled[ 0x8 ];                             		// 0x0016 (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      SlotsDisabled[0x8];                             		// 0x0016 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumSlotsAdjusted;                                 		// 0x001E (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      SlotsAdjusted[ 0x8 ];                             		// 0x001F (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      SlotsAdjusted[0x8];                             		// 0x001F (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      NumCoverTypesChanged;                             		// 0x0027 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	struct FManualCoverTypeInfo                        SlotsCoverTypeChanged[ 0x8 ];                     		// 0x0028 (0x0020) [0x0000000000000080]              ( CPF_Parm )
+	struct FManualCoverTypeInfo                        SlotsCoverTypeChanged[0x8];                     		// 0x0028 (0x0020) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bDone : 1;                                        		// 0x0048 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ServerSendInitialCoverReplicationInfo
-// [0x00A200C2] 
+// [0x00A200C2]
 struct ACoverReplicator_execServerSendInitialCoverReplicationInfo_Parms
 {
 	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// unsigned char                                   SlotsEnabled[ 0x8 ];                              		// 0x0009 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   SlotsDisabled[ 0x8 ];                             		// 0x0011 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   SlotsAdjusted[ 0x8 ];                             		// 0x0019 (0x0008) [0x0000000000000000]              
-	// struct FManualCoverTypeInfo                     SlotsCoverTypeChanged[ 0x8 ];                     		// 0x0024 (0x0020) [0x0000000000000000]              
+	// unsigned char                                   SlotsEnabled[ 0x8 ];                              		// 0x0009 (0x0008) [0x0000000000000000]
+	// unsigned char                                   SlotsDisabled[ 0x8 ];                             		// 0x0011 (0x0008) [0x0000000000000000]
+	// unsigned char                                   SlotsAdjusted[ 0x8 ];                             		// 0x0019 (0x0008) [0x0000000000000000]
+	// struct FManualCoverTypeInfo                     SlotsCoverTypeChanged[ 0x8 ];                     		// 0x0024 (0x0020) [0x0000000000000000]
 };
 
 // Function Engine.CoverReplicator.ClientSetOwner
-// [0x010201C2] 
+// [0x010201C2]
 struct ACoverReplicator_execClientSetOwner_Parms
 {
 	class APlayerController*                           PC;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.CoverReplicator.ReplicateInitialCoverInfo
-// [0x00020002] 
+// [0x00020002]
 struct ACoverReplicator_execReplicateInitialCoverInfo_Parms
 {
 };
 
 // Function Engine.CoverReplicator.PurgeOldEntries
-// [0x00020002] 
+// [0x00020002]
 struct ACoverReplicator_execPurgeOldEntries_Parms
 {
 };
 
 // Function Engine.GameMessage.GetString
-// [0x00026002] 
+// [0x00026002]
 struct UGameMessage_execGetString_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -41361,7 +41361,7 @@ struct UAnimNotify_PlayFaceFXAnim_eventNotify_Parms
 };
 
 // Function Engine.Behavior_ChangeAllegiance.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeAllegiance_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41370,11 +41370,11 @@ struct UBehavior_ChangeAllegiance_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UITargetable*                             ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UITargetable*                             ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ChangeBoneVisibility.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeBoneVisibility_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41383,11 +41383,11 @@ struct UBehavior_ChangeBoneVisibility_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAnimBehavior*                           ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIAnimBehavior*                           ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ChangeCollision.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeCollision_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41396,11 +41396,11 @@ struct UBehavior_ChangeCollision_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIChangeCollisionBehavior*                ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIChangeCollisionBehavior*                ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ChangeCollisionSize.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeCollisionSize_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41409,11 +41409,11 @@ struct UBehavior_ChangeCollisionSize_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIChangeCollisionBehavior*                ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIChangeCollisionBehavior*                ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ChangeCounter.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ChangeCounter_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41422,13 +41422,13 @@ struct UBehavior_ChangeCounter_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UICounterBehavior*                        ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorCounterState                    CounterState;                                     		// 0x0040 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   Event;                                            		// 0x0048 (0x0001) [0x0000000000000000]              
+	// class UICounterBehavior*                        ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorCounterState                    CounterState;                                     		// 0x0040 (0x0008) [0x0000000000000000]
+	// unsigned char                                   Event;                                            		// 0x0048 (0x0001) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ChangeParticleSystemActiveState.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeParticleSystemActiveState_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41437,18 +41437,18 @@ struct UBehavior_ChangeParticleSystemActiveState_execApplyBehaviorToContext_Parm
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParticleSystemBehavior*                 ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIParticleSystemBehavior*                 ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.IParticleSystemBehavior.Behavior_ChangeParticleSystemActiveState
-// [0x00020000] 
+// [0x00020000]
 struct UIParticleSystemBehavior_execBehavior_ChangeParticleSystemActiveState_Parms
 {
 	unsigned char                                      ChangeType;                                       		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.Behavior_ChangeScale.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeScale_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41457,11 +41457,11 @@ struct UBehavior_ChangeScale_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIScaleBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIScaleBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ChangeSpin.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ChangeSpin_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41470,12 +41470,12 @@ struct UBehavior_ChangeSpin_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBasicBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FRotator                                 RotationRate;                                     		// 0x004C (0x000C) [0x0000000000000000]              
+	// class UIBasicBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FRotator                                 RotationRate;                                     		// 0x004C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.IBasicBehavior.EvaluateAttributeInitialization
-// [0x00020100] 
+// [0x00020100]
 struct UIBasicBehavior_execEvaluateAttributeInitialization_Parms
 {
 	struct FAttributeInitializationData                InitData;                                         		// 0x0000 (0x0010) [0x0000000000000080]              ( CPF_Parm )
@@ -41483,7 +41483,7 @@ struct UIBasicBehavior_execEvaluateAttributeInitialization_Parms
 };
 
 // Function Engine.IBasicBehavior.FindAnimNode
-// [0x00020000] 
+// [0x00020000]
 struct UIBasicBehavior_execFindAnimNode_Parms
 {
 	struct FName                                       NodeName;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41491,21 +41491,21 @@ struct UIBasicBehavior_execFindAnimNode_Parms
 };
 
 // Function Engine.IBasicBehavior.SetRotationRate
-// [0x00020000] 
+// [0x00020000]
 struct UIBasicBehavior_execSetRotationRate_Parms
 {
 	struct FRotator                                    NewRotationRate;                                  		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.IBasicBehavior.GetCollisionRadius
-// [0x00020100] 
+// [0x00020100]
 struct UIBasicBehavior_execGetCollisionRadius_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.Behavior_ChangeVisibility.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ChangeVisibility_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41514,11 +41514,11 @@ struct UBehavior_ChangeVisibility_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAppearanceBehavior*                     ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIAppearanceBehavior*                     ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ClientConsoleCommand.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ClientConsoleCommand_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41527,11 +41527,11 @@ struct UBehavior_ClientConsoleCommand_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIConsoleCommandBehavior*                 ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIConsoleCommandBehavior*                 ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ConsoleCommand.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ConsoleCommand_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41540,11 +41540,11 @@ struct UBehavior_ConsoleCommand_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIConsoleCommandBehavior*                 ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIConsoleCommandBehavior*                 ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_CustomAnimation.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_CustomAnimation_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41553,12 +41553,12 @@ struct UBehavior_CustomAnimation_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBasicBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIBasicBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 	// class USkeletalMeshComponent*                   SkelMesh;                                         		// 0x0044 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
 // Function Engine.Behavior_Destroy.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_Destroy_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41567,11 +41567,11 @@ struct UBehavior_Destroy_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIDestroyBehavior*                        ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIDestroyBehavior*                        ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_FollowAllegiance.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_FollowAllegiance_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41580,12 +41580,12 @@ struct UBehavior_FollowAllegiance_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UITargetable*                             Parent;                                           		// 0x003C (0x0008) [0x0000000000000000]              
-	// class UITargetable*                             Child;                                            		// 0x0044 (0x0008) [0x0000000000000000]              
+	// class UITargetable*                             Parent;                                           		// 0x003C (0x0008) [0x0000000000000000]
+	// class UITargetable*                             Child;                                            		// 0x0044 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_RandomlyRunBehaviors.ApplyBehavior
-// [0x00C24002] 
+// [0x00C24002]
 struct UBehavior_RandomlyRunBehaviors_execApplyBehavior_Parms
 {
 	class UObject*                                     SelfObject;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41608,7 +41608,7 @@ struct UBehavior_RunBehaviorCollection_execRunBehaviorCollection_Parms
 };
 
 // Function Engine.Behavior_RunBehaviorCollection.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_RunBehaviorCollection_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41620,7 +41620,7 @@ struct UBehavior_RunBehaviorCollection_execApplyBehaviorToContext_Parms
 };
 
 // Function Engine.Behavior_RunBehaviorCollection.ApplyBehavior
-// [0x00424002] 
+// [0x00424002]
 struct UBehavior_RunBehaviorCollection_execApplyBehavior_Parms
 {
 	class UObject*                                     SelfObject;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41631,7 +41631,7 @@ struct UBehavior_RunBehaviorCollection_execApplyBehavior_Parms
 };
 
 // Function Engine.Behavior_SetMaterialParameters.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_SetMaterialParameters_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41640,15 +41640,15 @@ struct UBehavior_SetMaterialParameters_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FLinearColor                             ScaledVector;                                     		// 0x0044 (0x0010) [0x0000000000000000]              
-	// struct FScalarMaterialParameter                 ScalarParam;                                      		// 0x0054 (0x001C) [0x0000000000000000]              
-	// struct FVectorMaterialParameter                 VectorParam;                                      		// 0x0070 (0x0028) [0x0000000000000000]              
-	// struct FTextureMaterialParameter                TextureParam;                                     		// 0x0098 (0x000C) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FLinearColor                             ScaledVector;                                     		// 0x0044 (0x0010) [0x0000000000000000]
+	// struct FScalarMaterialParameter                 ScalarParam;                                      		// 0x0054 (0x001C) [0x0000000000000000]
+	// struct FVectorMaterialParameter                 VectorParam;                                      		// 0x0070 (0x0028) [0x0000000000000000]
+	// struct FTextureMaterialParameter                TextureParam;                                     		// 0x0098 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.IMaterialBehavior.Behavior_SetTextureParameterValue
-// [0x00020000] 
+// [0x00020000]
 struct UIMaterialBehavior_execBehavior_SetTextureParameterValue_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41656,7 +41656,7 @@ struct UIMaterialBehavior_execBehavior_SetTextureParameterValue_Parms
 };
 
 // Function Engine.IMaterialBehavior.Behavior_SetScalarParameterValue
-// [0x00020000] 
+// [0x00020000]
 struct UIMaterialBehavior_execBehavior_SetScalarParameterValue_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41664,7 +41664,7 @@ struct UIMaterialBehavior_execBehavior_SetScalarParameterValue_Parms
 };
 
 // Function Engine.IMaterialBehavior.Behavior_SetVectorParameterValue
-// [0x00020000] 
+// [0x00020000]
 struct UIMaterialBehavior_execBehavior_SetVectorParameterValue_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41672,7 +41672,7 @@ struct UIMaterialBehavior_execBehavior_SetVectorParameterValue_Parms
 };
 
 // Function Engine.IMaterialBehavior.Behavior_GetScalarParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIMaterialBehavior_execBehavior_GetScalarParameterValue_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41681,7 +41681,7 @@ struct UIMaterialBehavior_execBehavior_GetScalarParameterValue_Parms
 };
 
 // Function Engine.IMaterialBehavior.Behavior_GetVectorParameterValue
-// [0x00420000] 
+// [0x00420000]
 struct UIMaterialBehavior_execBehavior_GetVectorParameterValue_Parms
 {
 	struct FName                                       ParameterName;                                    		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41690,7 +41690,7 @@ struct UIMaterialBehavior_execBehavior_GetVectorParameterValue_Parms
 };
 
 // Function Engine.Behavior_SetParticleSystemParameters.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_SetParticleSystemParameters_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41699,18 +41699,18 @@ struct UBehavior_SetParticleSystemParameters_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FVector                                  ScaledVector;                                     		// 0x0044 (0x000C) [0x0000000000000000]              
-	// struct FScalarParticleSystemParameter           ScalarParam;                                      		// 0x0050 (0x0018) [0x0000000000000000]              
-	// struct FVectorParticleSystemParameter           VectorParam;                                      		// 0x0068 (0x0024) [0x0000000000000000]              
-	// struct FColorParticleSystemParameter            ColorParam;                                       		// 0x008C (0x000C) [0x0000000000000000]              
-	// struct FMaterialParticleSystemParameter         MaterialParam;                                    		// 0x0098 (0x000C) [0x0000000000000000]              
-	// struct FActorParticleSystemParameter            ActorParam;                                       		// 0x00A4 (0x0018) [0x0000000000000000]              
-	// struct FLinearColor                             ConvertedColor;                                   		// 0x00C8 (0x0010) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FVector                                  ScaledVector;                                     		// 0x0044 (0x000C) [0x0000000000000000]
+	// struct FScalarParticleSystemParameter           ScalarParam;                                      		// 0x0050 (0x0018) [0x0000000000000000]
+	// struct FVectorParticleSystemParameter           VectorParam;                                      		// 0x0068 (0x0024) [0x0000000000000000]
+	// struct FColorParticleSystemParameter            ColorParam;                                       		// 0x008C (0x000C) [0x0000000000000000]
+	// struct FMaterialParticleSystemParameter         MaterialParam;                                    		// 0x0098 (0x000C) [0x0000000000000000]
+	// struct FActorParticleSystemParameter            ActorParam;                                       		// 0x00A4 (0x0018) [0x0000000000000000]
+	// struct FLinearColor                             ConvertedColor;                                   		// 0x00C8 (0x0010) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_SetPhysics.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SetPhysics_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41720,12 +41720,12 @@ struct UBehavior_SetPhysics_execApplyBehaviorToContext_Parms
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	// class USkeletalMeshComponent*                   SkelMesh;                                         		// 0x003C (0x0004) [0x0000000004000000]              ( CPF_EditInline )
-	// unsigned char                                   CurrentPhysics;                                   		// 0x0040 (0x0001) [0x0000000000000000]              
-	// class UIPhysicsBehavior*                        ContextInterface;                                 		// 0x0044 (0x0008) [0x0000000000000000]              
+	// unsigned char                                   CurrentPhysics;                                   		// 0x0040 (0x0001) [0x0000000000000000]
+	// class UIPhysicsBehavior*                        ContextInterface;                                 		// 0x0044 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_SetSkelControlActive.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SetSkelControlActive_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41734,11 +41734,11 @@ struct UBehavior_SetSkelControlActive_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAnimBehavior*                           ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIAnimBehavior*                           ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.Behavior_ToggleVisibility.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ToggleVisibility_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41747,7 +41747,7 @@ struct UBehavior_ToggleVisibility_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAppearanceBehavior*                     ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIAppearanceBehavior*                     ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function Engine.BroadcastHandler.AllowBroadcastLocalizedTeam
@@ -41776,7 +41776,7 @@ struct ABroadcastHandler_eventAllowBroadcastLocalized_Parms
 };
 
 // Function Engine.BroadcastHandler.BroadcastTeam
-// [0x00024002] 
+// [0x00024002]
 struct ABroadcastHandler_execBroadcastTeam_Parms
 {
 	class AController*                                 Sender;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41785,7 +41785,7 @@ struct ABroadcastHandler_execBroadcastTeam_Parms
 };
 
 // Function Engine.BroadcastHandler.Broadcast
-// [0x00024002] 
+// [0x00024002]
 struct ABroadcastHandler_execBroadcast_Parms
 {
 	class AActor*                                      Sender;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41794,7 +41794,7 @@ struct ABroadcastHandler_execBroadcast_Parms
 };
 
 // Function Engine.BroadcastHandler.BroadcastLocalized
-// [0x00024002] 
+// [0x00024002]
 struct ABroadcastHandler_execBroadcastLocalized_Parms
 {
 	class AActor*                                      Sender;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41807,7 +41807,7 @@ struct ABroadcastHandler_execBroadcastLocalized_Parms
 };
 
 // Function Engine.BroadcastHandler.BroadcastText
-// [0x00024002] 
+// [0x00024002]
 struct ABroadcastHandler_execBroadcastText_Parms
 {
 	class APlayerReplicationInfo*                      SenderPRI;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41817,7 +41817,7 @@ struct ABroadcastHandler_execBroadcastText_Parms
 };
 
 // Function Engine.BroadcastHandler.AllowsBroadcast
-// [0x00020002] 
+// [0x00020002]
 struct ABroadcastHandler_execAllowsBroadcast_Parms
 {
 	class AActor*                                      broadcaster;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41826,7 +41826,7 @@ struct ABroadcastHandler_execAllowsBroadcast_Parms
 };
 
 // Function Engine.BroadcastHandler.UpdateSentText
-// [0x00020002] 
+// [0x00020002]
 struct ABroadcastHandler_execUpdateSentText_Parms
 {
 };
@@ -41836,7 +41836,7 @@ struct ABroadcastHandler_execUpdateSentText_Parms
 struct AColorScaleVolume_eventUnTouch_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  DesiredColorScale;                                		// 0x000C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  DesiredColorScale;                                		// 0x000C (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.ColorScaleVolume.Touch
@@ -41854,17 +41854,17 @@ struct AColorScaleVolume_eventTouch_Parms
 struct ADebugCameraHUD_eventPostRender_Parms
 {
 	// struct FString                                  MyText;                                           		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FVector                                  CamLoc;                                           		// 0x0020 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  ZeroVec;                                          		// 0x002C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 CamRot;                                           		// 0x0038 (0x000C) [0x0000000000000000]              
-	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0044 (0x001C) [0x0000000000000000]              
+	// struct FVector                                  CamLoc;                                           		// 0x0020 (0x000C) [0x0000000000000000]
+	// struct FVector                                  ZeroVec;                                          		// 0x002C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 CamRot;                                           		// 0x0038 (0x000C) [0x0000000000000000]
+	// struct FTraceHitInfo                            HitInfo;                                          		// 0x0044 (0x001C) [0x0000000000000000]
 	// class UMeshComponent*                           MeshComp;                                         		// 0x0064 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
-	// struct FVector                                  HitLoc;                                           		// 0x0068 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0074 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  HitLoc;                                           		// 0x0068 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0074 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.DebugCameraHUD.DisplayMaterials
-// [0x00420002] 
+// [0x00420002]
 struct ADebugCameraHUD_execDisplayMaterials_Parms
 {
 	float                                              X;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41881,7 +41881,7 @@ struct ADebugCameraHUD_eventPostBeginPlay_Parms
 };
 
 // Function Engine.DebugCameraInput.InputKey
-// [0x00024002] 
+// [0x00024002]
 struct UDebugCameraInput_execInputKey_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41917,7 +41917,7 @@ struct ADynamicTriggerVolume_eventPostBeginPlay_Parms
 };
 
 // Function Engine.ExponentialHeightFog.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AExponentialHeightFog_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41937,7 +41937,7 @@ struct AExponentialHeightFog_eventPostBeginPlay_Parms
 };
 
 // Function Engine.FailedConnect.GetString
-// [0x00026002] 
+// [0x00026002]
 struct UFailedConnect_execGetString_Parms
 {
 	int                                                Switch;                                           		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -41949,7 +41949,7 @@ struct UFailedConnect_execGetString_Parms
 };
 
 // Function Engine.FailedConnect.GetFailSwitch
-// [0x00022002] 
+// [0x00022002]
 struct UFailedConnect_execGetFailSwitch_Parms
 {
 	struct FString                                     FailString;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -41957,7 +41957,7 @@ struct UFailedConnect_execGetFailSwitch_Parms
 };
 
 // Function Engine.GameReplicationInfoAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UGameReplicationInfoAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41966,7 +41966,7 @@ struct UGameReplicationInfoAttributeContextResolver_execGetAttributeContext_Parm
 };
 
 // Function Engine.HeightFog.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AHeightFog_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -41986,7 +41986,7 @@ struct AHeightFog_eventPostBeginPlay_Parms
 };
 
 // Function Engine.IChangeBehaviorSetStateBehavior.Behavior_ChangeBehaviorSet
-// [0x00020000] 
+// [0x00020000]
 struct UIChangeBehaviorSetStateBehavior_execBehavior_ChangeBehaviorSet_Parms
 {
 	struct FName                                       BehaviorSetName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -41994,7 +41994,7 @@ struct UIChangeBehaviorSetStateBehavior_execBehavior_ChangeBehaviorSet_Parms
 };
 
 // Function Engine.IDamageBehavior.Behavior_CauseRadiusDamage
-// [0x00424000] 
+// [0x00424000]
 struct UIDamageBehavior_execBehavior_CauseRadiusDamage_Parms
 {
 	float                                              Radius;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42015,7 +42015,7 @@ struct UIDamageBehavior_execBehavior_CauseRadiusDamage_Parms
 };
 
 // Function Engine.IDamageBehavior.Behavior_CauseDamage
-// [0x00024000] 
+// [0x00024000]
 struct UIDamageBehavior_execBehavior_CauseDamage_Parms
 {
 	class AActor*                                      Target;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42031,7 +42031,7 @@ struct UIDamageBehavior_execBehavior_CauseDamage_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.RateContent
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineCommunityContentInterface_execRateContent_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42040,21 +42040,21 @@ struct UOnlineCommunityContentInterface_execRateContent_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.ClearGetContentPayloadCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execClearGetContentPayloadCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             GetContentPayloadCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddGetContentPayloadCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execAddGetContentPayloadCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             GetContentPayloadCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnGetContentPayloadComplete
-// [0x00520000] 
+// [0x00520000]
 struct UOnlineCommunityContentInterface_execOnGetContentPayloadComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -42063,7 +42063,7 @@ struct UOnlineCommunityContentInterface_execOnGetContentPayloadComplete_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.GetContentPayload
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineCommunityContentInterface_execGetContentPayload_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42072,21 +42072,21 @@ struct UOnlineCommunityContentInterface_execGetContentPayload_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.ClearDownloadContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execClearDownloadContentCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             DownloadContentCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddDownloadContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execAddDownloadContentCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             DownloadContentCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnDownloadContentComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineCommunityContentInterface_execOnDownloadContentComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -42094,7 +42094,7 @@ struct UOnlineCommunityContentInterface_execOnDownloadContentComplete_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.DownloadContent
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineCommunityContentInterface_execDownloadContent_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42103,21 +42103,21 @@ struct UOnlineCommunityContentInterface_execDownloadContent_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.ClearUploadContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execClearUploadContentCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UploadContentCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddUploadContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execAddUploadContentCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UploadContentCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnUploadContentComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineCommunityContentInterface_execOnUploadContentComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -42125,7 +42125,7 @@ struct UOnlineCommunityContentInterface_execOnUploadContentComplete_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.UploadContent
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineCommunityContentInterface_execUploadContent_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42135,7 +42135,7 @@ struct UOnlineCommunityContentInterface_execUploadContent_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.GetFriendsContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineCommunityContentInterface_execGetFriendsContentList_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42145,28 +42145,28 @@ struct UOnlineCommunityContentInterface_execGetFriendsContentList_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.ClearReadFriendsContentListCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execClearReadFriendsContentListCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadFriendsContentListCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddReadFriendsContentListCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execAddReadFriendsContentListCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadFriendsContentListCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnReadFriendsContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineCommunityContentInterface_execOnReadFriendsContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineCommunityContentInterface.ReadFriendsContentList
-// [0x00424000] 
+// [0x00424000]
 struct UOnlineCommunityContentInterface_execReadFriendsContentList_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42177,7 +42177,7 @@ struct UOnlineCommunityContentInterface_execReadFriendsContentList_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.GetContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineCommunityContentInterface_execGetContentList_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42186,28 +42186,28 @@ struct UOnlineCommunityContentInterface_execGetContentList_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.ClearReadContentListCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execClearReadContentListCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadContentListCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddReadContentListCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execAddReadContentListCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadContentListCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnReadContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineCommunityContentInterface_execOnReadContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function Engine.OnlineCommunityContentInterface.ReadContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineCommunityContentInterface_execReadContentList_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42217,20 +42217,20 @@ struct UOnlineCommunityContentInterface_execReadContentList_Parms
 };
 
 // Function Engine.OnlineCommunityContentInterface.Exit
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execExit_Parms
 {
 };
 
 // Function Engine.OnlineCommunityContentInterface.Init
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineCommunityContentInterface_execInit_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineEventsInterface.UpdatePlaylistPopulation
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineEventsInterface_execUpdatePlaylistPopulation_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42239,7 +42239,7 @@ struct UOnlineEventsInterface_execUpdatePlaylistPopulation_Parms
 };
 
 // Function Engine.OnlineEventsInterface.UploadGameplayEventsData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineEventsInterface_execUploadGameplayEventsData_Parms
 {
 	struct FUniqueNetId                                UniqueId;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -42248,7 +42248,7 @@ struct UOnlineEventsInterface_execUploadGameplayEventsData_Parms
 };
 
 // Function Engine.OnlineEventsInterface.UploadPlayerData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineEventsInterface_execUploadPlayerData_Parms
 {
 	struct FUniqueNetId                                UniqueId;                                         		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -42259,21 +42259,21 @@ struct UOnlineEventsInterface_execUploadPlayerData_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.GetCurrentPlayersListCount
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execGetCurrentPlayersListCount_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineRecentPlayersList.SetCurrentPlayersList
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execSetCurrentPlayersList_Parms
 {
 	TArray< struct FCurrentPlayerMet >                 Players;                                          		// 0x0000 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineRecentPlayersList.ShowCurrentPlayersList
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execShowCurrentPlayersList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42284,7 +42284,7 @@ struct UOnlineRecentPlayersList_execShowCurrentPlayersList_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.ShowLastPartyPlayerList
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execShowLastPartyPlayerList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42294,7 +42294,7 @@ struct UOnlineRecentPlayersList_execShowLastPartyPlayerList_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.ShowRecentPartiesPlayerList
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execShowRecentPartiesPlayerList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42305,7 +42305,7 @@ struct UOnlineRecentPlayersList_execShowRecentPartiesPlayerList_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.ShowRecentPlayerList
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execShowRecentPlayerList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42315,7 +42315,7 @@ struct UOnlineRecentPlayersList_execShowRecentPlayerList_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.SetLastParty
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineRecentPlayersList_execSetLastParty_Parms
 {
 	struct FUniqueNetId                                PartyLeader;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -42323,7 +42323,7 @@ struct UOnlineRecentPlayersList_execSetLastParty_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.GetTeamForCurrentPlayer
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execGetTeamForCurrentPlayer_Parms
 {
 	struct FUniqueNetId                                Player;                                           		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -42331,7 +42331,7 @@ struct UOnlineRecentPlayersList_execGetTeamForCurrentPlayer_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.GetSkillForCurrentPlayer
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execGetSkillForCurrentPlayer_Parms
 {
 	struct FUniqueNetId                                Player;                                           		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -42339,27 +42339,27 @@ struct UOnlineRecentPlayersList_execGetSkillForCurrentPlayer_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.GetPlayersFromCurrentPlayers
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineRecentPlayersList_execGetPlayersFromCurrentPlayers_Parms
 {
 	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineRecentPlayersList.GetPlayersFromRecentParties
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineRecentPlayersList_execGetPlayersFromRecentParties_Parms
 {
 	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineRecentPlayersList.ClearRecentParties
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execClearRecentParties_Parms
 {
 };
 
 // Function Engine.OnlineRecentPlayersList.AddPartyToRecentParties
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineRecentPlayersList_execAddPartyToRecentParties_Parms
 {
 	struct FUniqueNetId                                PartyLeader;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -42367,20 +42367,20 @@ struct UOnlineRecentPlayersList_execAddPartyToRecentParties_Parms
 };
 
 // Function Engine.OnlineRecentPlayersList.ClearRecentPlayers
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execClearRecentPlayers_Parms
 {
 };
 
 // Function Engine.OnlineRecentPlayersList.AddPlayerToRecentPlayers
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineRecentPlayersList_execAddPlayerToRecentPlayers_Parms
 {
 	struct FUniqueNetId                                NewPlayer;                                        		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.OnlineSuppliedUIInterface.ShowMatchmakingUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSuppliedUIInterface_execShowMatchmakingUI_Parms
 {
 	unsigned char                                      SearchingPlayerNum;                               		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -42390,21 +42390,21 @@ struct UOnlineSuppliedUIInterface_execShowMatchmakingUI_Parms
 };
 
 // Function Engine.OnlineSuppliedUIInterface.ClearShowOnlineStatsUICompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSuppliedUIInterface_execClearShowOnlineStatsUICompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShowOnlineStatsUICompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSuppliedUIInterface.AddShowOnlineStatsUICompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSuppliedUIInterface_execAddShowOnlineStatsUICompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShowOnlineStatsUICompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineSuppliedUIInterface.ShowOnlineStatsUI
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSuppliedUIInterface_execShowOnlineStatsUI_Parms
 {
 	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -42413,13 +42413,13 @@ struct UOnlineSuppliedUIInterface_execShowOnlineStatsUI_Parms
 };
 
 // Function Engine.OnlineSuppliedUIInterface.OnShowOnlineStatsUIComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSuppliedUIInterface_execOnShowOnlineStatsUIComplete_Parms
 {
 };
 
 // Function Engine.OwnerAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UOwnerAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42435,7 +42435,7 @@ struct APathNode_Dynamic_eventGetDebugAbbrev_Parms
 };
 
 // Function Engine.ProjectileAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UProjectileAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42444,7 +42444,7 @@ struct UProjectileAttributeContextResolver_execGetAttributeContext_Parms
 };
 
 // Function Engine.ReverbVolumeToggleable.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AReverbVolumeToggleable_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42467,7 +42467,7 @@ struct USeqAct_MITV_Activate_eventGetObjClassVersion_Parms
 // [0x00820802] ( FUNC_Event )
 struct USeqAct_SetVector_eventActivated_Parms
 {
-	// struct FVector                                  Value;                                            		// 0x0008 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Value;                                            		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // Function Engine.SeqAct_UpdatePhysBonesFromAnim.GetObjClassVersion
@@ -42490,8 +42490,8 @@ struct ATrigger_LOS_eventTick_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	// TArray< class USequenceEvent* >                 losEvents;                                        		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FVector                                  cameraLoc;                                        		// 0x001C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 cameraRot;                                        		// 0x0028 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  cameraLoc;                                        		// 0x001C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 cameraRot;                                        		// 0x0028 (0x000C) [0x0000000000000000]
 	// TArray< int >                                   ActivateIndices;                                  		// 0x0038 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -42512,7 +42512,7 @@ struct ATriggeredPath_eventSpecialHandling_Parms
 };
 
 // Function Engine.TriggeredPath.OnToggle
-// [0x00020002] 
+// [0x00020002]
 struct ATriggeredPath_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42550,7 +42550,7 @@ struct UUIWeaponSummary_eventIsProviderDisabled_Parms
 };
 
 // Function Engine.VehicleAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UVehicleAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42559,7 +42559,7 @@ struct UVehicleAttributeContextResolver_execGetAttributeContext_Parms
 };
 
 // Function Engine.WaterVolume.PlayExitSplash
-// [0x00020002] 
+// [0x00020002]
 struct AWaterVolume_execPlayExitSplash_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42573,7 +42573,7 @@ struct AWaterVolume_eventUnTouch_Parms
 };
 
 // Function Engine.WaterVolume.PlayEntrySplash
-// [0x00020002] 
+// [0x00020002]
 struct AWaterVolume_execPlayEntrySplash_Parms
 {
 	class AActor*                                      Other;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -42589,7 +42589,6 @@ struct AWaterVolume_eventTouch_Parms
 	struct FVector                                     HitNormal;                                        		// 0x0014 (0x000C) [0x0000000000000080]              ( CPF_Parm )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

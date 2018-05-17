@@ -83,7 +83,7 @@ public:
 
 	static TArray<FNameEntry*>* Names()
 	{
-		//return (TArray<FNameEntry*>*)UHook::pGNames;
+		return (TArray<FNameEntry*>*)BL2SDK::pGNames;
 	}
 
 	char* GetName()

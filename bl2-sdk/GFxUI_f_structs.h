@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -147,7 +147,7 @@ struct UGFxMoviePlayer_execUpdateRenderTexture_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.OnInputKey
-// [0x00120000] 
+// [0x00120000]
 struct UGFxMoviePlayer_execOnInputKey_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -204,14 +204,14 @@ struct UGFxMoviePlayer_execUpdateSplitscreenLayout_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityVisibilityEffect
-// [0x00020000] 
+// [0x00020000]
 struct UGFxMoviePlayer_execApplyPriorityVisibilityEffect_Parms
 {
 	unsigned long                                      bRemoveEffect : 1;                                		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityBlurEffect
-// [0x00020000] 
+// [0x00020000]
 struct UGFxMoviePlayer_execApplyPriorityBlurEffect_Parms
 {
 	unsigned long                                      bRemoveEffect : 1;                                		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -226,7 +226,7 @@ struct UGFxMoviePlayer_eventApplyPriorityEffect_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.PlaySoundFromTheme
-// [0x00024002] 
+// [0x00024002]
 struct UGFxMoviePlayer_execPlaySoundFromTheme_Parms
 {
 	struct FName                                       EventName;                                        		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -248,7 +248,7 @@ struct UGFxMoviePlayer_eventOnFocusGained_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.ConsoleCommand
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMoviePlayer_execConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -276,7 +276,7 @@ struct UGFxMoviePlayer_execGetLP_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.Init
-// [0x00024002] 
+// [0x00024002]
 struct UGFxMoviePlayer_execInit_Parms
 {
 	class ULocalPlayer*                                LocPlay;                                          		// 0x0000 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
@@ -721,7 +721,7 @@ struct UGFxMoviePlayer_execSetExternalTexture_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.SetExternalInterface
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMoviePlayer_execSetExternalInterface_Parms
 {
 	class UObject*                                     H;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -735,7 +735,7 @@ struct UGFxMoviePlayer_execSetTimingMode_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.SetMovieInfo
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMoviePlayer_execSetMovieInfo_Parms
 {
 	class USwfMovie*                                   Data;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -774,7 +774,7 @@ struct UGFxMoviePlayer_execSetPause_Parms
 };
 
 // Function GFxUI.GFxMoviePlayer.OnPostAdvance
-// [0x00120000] 
+// [0x00120000]
 struct UGFxMoviePlayer_execOnPostAdvance_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1434,14 +1434,14 @@ struct UGFxClikWidget_execGetEventStringFromTypename_Parms
 };
 
 // Function GFxUI.GFxClikWidget.RemoveAllEventListeners
-// [0x00020002] 
+// [0x00020002]
 struct UGFxClikWidget_execRemoveAllEventListeners_Parms
 {
 	struct FString                                     Event;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GFxUI.GFxClikWidget.AddEventListener
-// [0x00020002] 
+// [0x00020002]
 struct UGFxClikWidget_execAddEventListener_Parms
 {
 	struct FName                                       Type;                                             		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1450,7 +1450,7 @@ struct UGFxClikWidget_execAddEventListener_Parms
 };
 
 // Function GFxUI.GFxClikWidget.EventListener
-// [0x00120000] 
+// [0x00120000]
 struct UGFxClikWidget_execEventListener_Parms
 {
 	struct FEventData                                  Data;                                             		// 0x0000 (0x0024) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1572,7 +1572,6 @@ struct UGFxDataStoreSubscriber_execPublishValues_Parms
 {
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

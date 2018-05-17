@@ -1,19 +1,20 @@
 #ifndef SIGNATURES_H
 #define SIGNATURES_H
 
+#include "MemorySignature.h"
 #include "CSigScan.h"
 
-namespace UHook
+namespace BL2SDK
 {
 	namespace Signatures
 	{
-		MemorySignature GObjects = { 
+		MemorySignature GObjects = {
 			"\x00\x00\x00\x00\x8B\x04\xB1\x8B\x40\x08",
 			"????xxxxxx",
 			10
 		};
 
-		MemorySignature GNames = { 
+		MemorySignature GNames = {
 			"\x00\x00\x00\x00\x83\x3C\x81\x00\x74\x5C",
 			"????xxxxxx",
 			10

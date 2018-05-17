@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -40,12 +40,12 @@ struct FRecoilDef
 	float                                              TimeDuration;                                     		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FVector                                     RotAmplitude;                                     		// 0x0008 (0x000C) [0x0000000000000001]              ( CPF_Edit )
 	struct FVector                                     RotFrequency;                                     		// 0x0014 (0x000C) [0x0000000000000001]              ( CPF_Edit )
-	struct FVector                                     RotSinOffset;                                     		// 0x0020 (0x000C) [0x0000000000000000]              
+	struct FVector                                     RotSinOffset;                                     		// 0x0020 (0x000C) [0x0000000000000000]
 	struct FRecoilParams                               RotParams;                                        		// 0x002C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FRotator                                    RotOffset;                                        		// 0x0030 (0x000C) [0x0000000000002000]              ( CPF_Transient )
 	struct FVector                                     LocAmplitude;                                     		// 0x003C (0x000C) [0x0000000000000001]              ( CPF_Edit )
 	struct FVector                                     LocFrequency;                                     		// 0x0048 (0x000C) [0x0000000000000001]              ( CPF_Edit )
-	struct FVector                                     LocSinOffset;                                     		// 0x0054 (0x000C) [0x0000000000000000]              
+	struct FVector                                     LocSinOffset;                                     		// 0x0054 (0x000C) [0x0000000000000000]
 	struct FRecoilParams                               LocParams;                                        		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FVector                                     LocOffset;                                        		// 0x0064 (0x000C) [0x0000000000002000]              ( CPF_Transient )
 };
@@ -54,7 +54,7 @@ struct FRecoilDef
 // 0x0010
 struct FTeamState
 {
-	int                                                TeamIndex;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                TeamIndex;                                        		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< int >                                      PlayerIndices;                                    		// 0x0004 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -62,19 +62,19 @@ struct FTeamState
 // 0x0010
 struct FPlayerState
 {
-	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                CurrentTeamIndex;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              TimeSpawned;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              TimeAliveSinceLastDeath;                          		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                CurrentTeamIndex;                                 		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              TimeSpawned;                                      		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              TimeAliveSinceLastDeath;                          		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GameFramework.GameStatsAggregator.AggregateEventMapping
 // 0x000C
 struct FAggregateEventMapping
 {
-	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                AggregateID;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                TargetAggregateID;                                		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                AggregateID;                                      		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                TargetAggregateID;                                		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GameFramework.GameStatsAggregator.GameEvents
@@ -88,7 +88,7 @@ struct FGameEvents
 // 0x0048
 struct FEventsBase
 {
-	struct FGameEvents                                 TotalEvents;                                      		// 0x0000 (0x003C) [0x0000000000000000]              
+	struct FGameEvents                                 TotalEvents;                                      		// 0x0000 (0x003C) [0x0000000000000000]
 	TArray< struct FGameEvents >                       EventsByClass;                                    		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -120,7 +120,7 @@ struct FPawnEvents : FEventsBase
 // 0x01A4
 struct FTeamEvents
 {
-	struct FGameEvents                                 TotalEvents;                                      		// 0x0000 (0x003C) [0x0000000000000000]              
+	struct FGameEvents                                 TotalEvents;                                      		// 0x0000 (0x003C) [0x0000000000000000]
 	struct FWeaponEvents                               WeaponEvents;                                     		// 0x003C (0x0048) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FDamageEvents                               DamageAsPlayerEvents;                             		// 0x0084 (0x0048) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FDamageEvents                               DamageAsTargetEvents;                             		// 0x00CC (0x0048) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -132,7 +132,7 @@ struct FTeamEvents
 // 0x01A4
 struct FPlayerEvents
 {
-	struct FGameEvents                                 TotalEvents;                                      		// 0x0000 (0x003C) [0x0000000000000000]              
+	struct FGameEvents                                 TotalEvents;                                      		// 0x0000 (0x003C) [0x0000000000000000]
 	struct FWeaponEvents                               WeaponEvents;                                     		// 0x003C (0x0048) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FDamageEvents                               DamageAsPlayerEvents;                             		// 0x0084 (0x0048) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FDamageEvents                               DamageAsTargetEvents;                             		// 0x00CC (0x0048) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -156,7 +156,6 @@ struct FPropertyInfo
 	struct FString                                     PropertyValue;                                    		// 0x000C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

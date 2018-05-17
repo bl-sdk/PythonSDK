@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -156,7 +156,7 @@ struct UOnlineGameInterfaceSteamworks_execBindPlatformSpecificSessionToSearch_Pa
 {
 	unsigned char                                      SearchingPlayerNum;                               		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	class UOnlineGameSearch*                           SearchSettings;                                   		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
@@ -165,7 +165,7 @@ struct UOnlineGameInterfaceSteamworks_execBindPlatformSpecificSessionToSearch_Pa
 struct UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfoBySessionName_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
@@ -174,12 +174,12 @@ struct UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfoBySessi
 struct UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfo_Parms
 {
 	struct FOnlineGameSearchResult                     DesiredGame;                                      		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.QueryNonAdvertisedData
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execQueryNonAdvertisedData_Parms
 {
 	int                                                StartAt;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -188,21 +188,21 @@ struct UOnlineGameInterfaceSteamworks_execQueryNonAdvertisedData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearUnregisterPlayerCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execClearUnregisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddUnregisterPlayerCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execAddUnregisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnUnregisterPlayerComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceSteamworks_execOnUnregisterPlayerComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -220,21 +220,21 @@ struct UOnlineGameInterfaceSteamworks_execUnregisterPlayer_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearRegisterPlayerCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execClearRegisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddRegisterPlayerCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execAddRegisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnRegisterPlayerComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceSteamworks_execOnRegisterPlayerComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -262,14 +262,14 @@ struct UOnlineGameInterfaceSteamworks_execAcceptGameInvite_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnGameInviteAccepted
-// [0x00520000] 
+// [0x00520000]
 struct UOnlineGameInterfaceSteamworks_execOnGameInviteAccepted_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearGameInviteAcceptedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execClearGameInviteAcceptedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -277,7 +277,7 @@ struct UOnlineGameInterfaceSteamworks_execClearGameInviteAcceptedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddGameInviteAcceptedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceSteamworks_execAddGameInviteAcceptedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -295,7 +295,7 @@ struct UOnlineGameInterfaceSteamworks_execUpdateOnlineGame_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCheckDownloadableContentListDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearCheckDownloadableContentListDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -303,7 +303,7 @@ struct UOnlineSubsystemSteamworks_execClearCheckDownloadableContentListDelegate_
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCheckDownloadableContentListDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddCheckDownloadableContentListDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -311,7 +311,7 @@ struct UOnlineSubsystemSteamworks_execAddCheckDownloadableContentListDelegate_Pa
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CheckDownloadableContentList
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execCheckDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -320,7 +320,7 @@ struct UOnlineSubsystemSteamworks_execCheckDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCheckDownloadableContentList
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnCheckDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -328,7 +328,7 @@ struct UOnlineSubsystemSteamworks_execOnCheckDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCriticalDownloadableContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetCriticalDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -337,7 +337,7 @@ struct UOnlineSubsystemSteamworks_execGetCriticalDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCriticalDownloadableContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execReadCriticalDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -346,7 +346,7 @@ struct UOnlineSubsystemSteamworks_execReadCriticalDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCriticalDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadCriticalDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -354,7 +354,7 @@ struct UOnlineSubsystemSteamworks_execClearReadCriticalDownloadableContentListCo
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCriticalDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadCriticalDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -362,14 +362,14 @@ struct UOnlineSubsystemSteamworks_execAddReadCriticalDownloadableContentListComp
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCriticalDownloadableContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadCriticalDownloadableContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHiddenDownloadableContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetHiddenDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -378,7 +378,7 @@ struct UOnlineSubsystemSteamworks_execGetHiddenDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadHiddenDownloadableContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execReadHiddenDownloadableContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -387,7 +387,7 @@ struct UOnlineSubsystemSteamworks_execReadHiddenDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadHiddenDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadHiddenDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -395,7 +395,7 @@ struct UOnlineSubsystemSteamworks_execClearReadHiddenDownloadableContentListComp
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadHiddenDownloadableContentListComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadHiddenDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -403,7 +403,7 @@ struct UOnlineSubsystemSteamworks_execAddReadHiddenDownloadableContentListComple
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadHiddenDownloadableContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadHiddenDownloadableContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -428,7 +428,7 @@ struct UOnlineSubsystemSteamworks_execReadDownloadableContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadDownloadableContentListComplete
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -436,7 +436,7 @@ struct UOnlineSubsystemSteamworks_execClearReadDownloadableContentListComplete_P
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadDownloadableContentListComplete
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadDownloadableContentListComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -444,14 +444,14 @@ struct UOnlineSubsystemSteamworks_execAddReadDownloadableContentListComplete_Par
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadDownloadableContentListComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadDownloadableContentListComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGamesList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetSaveGamesList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -460,7 +460,7 @@ struct UOnlineSubsystemSteamworks_execGetSaveGamesList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGamesList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execReadSaveGamesList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -470,7 +470,7 @@ struct UOnlineSubsystemSteamworks_execReadSaveGamesList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGamesComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadSaveGamesComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -478,7 +478,7 @@ struct UOnlineSubsystemSteamworks_execClearReadSaveGamesComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGamesComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadSaveGamesComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -486,14 +486,14 @@ struct UOnlineSubsystemSteamworks_execAddReadSaveGamesComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGamesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadSaveGamesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSaveGames
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearSaveGames_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -501,7 +501,7 @@ struct UOnlineSubsystemSteamworks_execClearSaveGames_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteSaveGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execDeleteSaveGame_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -512,7 +512,7 @@ struct UOnlineSubsystemSteamworks_execDeleteSaveGame_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearWriteSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -520,7 +520,7 @@ struct UOnlineSubsystemSteamworks_execClearWriteSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddWriteSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -528,7 +528,7 @@ struct UOnlineSubsystemSteamworks_execAddWriteSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSaveGameDataComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnWriteSaveGameDataComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -540,7 +540,7 @@ struct UOnlineSubsystemSteamworks_execOnWriteSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSaveGameData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execWriteSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -553,7 +553,7 @@ struct UOnlineSubsystemSteamworks_execWriteSaveGameData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -561,7 +561,7 @@ struct UOnlineSubsystemSteamworks_execClearReadSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -569,7 +569,7 @@ struct UOnlineSubsystemSteamworks_execAddReadSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGameDataComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadSaveGameDataComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -581,7 +581,7 @@ struct UOnlineSubsystemSteamworks_execOnReadSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGameData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -595,7 +595,7 @@ struct UOnlineSubsystemSteamworks_execGetSaveGameData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGameData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execReadSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -607,7 +607,7 @@ struct UOnlineSubsystemSteamworks_execReadSaveGameData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetAvailableDownloadCounts_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -616,7 +616,7 @@ struct UOnlineSubsystemSteamworks_execGetAvailableDownloadCounts_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearQueryAvailableDownloadsComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearQueryAvailableDownloadsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -624,7 +624,7 @@ struct UOnlineSubsystemSteamworks_execClearQueryAvailableDownloadsComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddQueryAvailableDownloadsComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddQueryAvailableDownloadsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -632,14 +632,14 @@ struct UOnlineSubsystemSteamworks_execAddQueryAvailableDownloadsComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnQueryAvailableDownloadsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnQueryAvailableDownloadsComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueryAvailableDownloads
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execQueryAvailableDownloads_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -648,7 +648,7 @@ struct UOnlineSubsystemSteamworks_execQueryAvailableDownloads_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleSaveGames
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearCrossTitleSaveGames_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -656,7 +656,7 @@ struct UOnlineSubsystemSteamworks_execClearCrossTitleSaveGames_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadCrossTitleSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -664,7 +664,7 @@ struct UOnlineSubsystemSteamworks_execClearReadCrossTitleSaveGameDataComplete_Pa
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleSaveGameDataComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadCrossTitleSaveGameDataComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -672,7 +672,7 @@ struct UOnlineSubsystemSteamworks_execAddReadCrossTitleSaveGameDataComplete_Parm
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleSaveGameDataComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadCrossTitleSaveGameDataComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -685,7 +685,7 @@ struct UOnlineSubsystemSteamworks_execOnReadCrossTitleSaveGameDataComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleSaveGameData
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetCrossTitleSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -700,7 +700,7 @@ struct UOnlineSubsystemSteamworks_execGetCrossTitleSaveGameData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleSaveGameData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execReadCrossTitleSaveGameData_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -713,7 +713,7 @@ struct UOnlineSubsystemSteamworks_execReadCrossTitleSaveGameData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadCrossTitleContentCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -722,7 +722,7 @@ struct UOnlineSubsystemSteamworks_execClearReadCrossTitleContentCompleteDelegate
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleContentCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadCrossTitleContentCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -731,14 +731,14 @@ struct UOnlineSubsystemSteamworks_execAddReadCrossTitleContentCompleteDelegate_P
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleContentComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadCrossTitleContentComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetCrossTitleContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -748,7 +748,7 @@ struct UOnlineSubsystemSteamworks_execGetCrossTitleContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearCrossTitleContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -756,7 +756,7 @@ struct UOnlineSubsystemSteamworks_execClearCrossTitleContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execReadCrossTitleContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -767,7 +767,7 @@ struct UOnlineSubsystemSteamworks_execReadCrossTitleContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetContentList
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -777,7 +777,7 @@ struct UOnlineSubsystemSteamworks_execGetContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentList
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -785,7 +785,7 @@ struct UOnlineSubsystemSteamworks_execClearContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadContentList
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execReadContentList_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -795,7 +795,7 @@ struct UOnlineSubsystemSteamworks_execReadContentList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadContentComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadContentComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -804,7 +804,7 @@ struct UOnlineSubsystemSteamworks_execClearReadContentComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadContentComplete
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadContentComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -813,14 +813,14 @@ struct UOnlineSubsystemSteamworks_execAddReadContentComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadContentComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadContentComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegate
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execClearContentChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -828,7 +828,7 @@ struct UOnlineSubsystemSteamworks_execClearContentChangeDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegate
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execAddContentChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -836,27 +836,27 @@ struct UOnlineSubsystemSteamworks_execAddContentChangeDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegateEx
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearContentChangeDelegateEx_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegateEx
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddContentChangeDelegateEx_Parms
 {
 	struct FScriptDelegate                             ContentDelegate;                                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnContentChange_Parms
 {
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowRedeemCodeUI
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execShowRedeemCodeUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -870,7 +870,7 @@ struct UOnlineSubsystemSteamworks_execDumpSteamworksSessionState_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DumpSessionState
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execDumpSessionState_Parms
 {
 };
@@ -885,7 +885,7 @@ struct UOnlineSubsystemSteamworks_execSetVoiceVolume_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAvatarAwardCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearUnlockAvatarAwardCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -893,7 +893,7 @@ struct UOnlineSubsystemSteamworks_execClearUnlockAvatarAwardCompleteDelegate_Par
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAvatarAwardCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddUnlockAvatarAwardCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -901,7 +901,7 @@ struct UOnlineSubsystemSteamworks_execAddUnlockAvatarAwardCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAvatarAwardComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnUnlockAvatarAwardComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -952,7 +952,7 @@ struct UOnlineSubsystemSteamworks_execNotifyVOIPPlaybackFinished_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnVOIPPlaybackFinished
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execOnVOIPPlaybackFinished_Parms
 {
 	class UAudioComponent*                             AC;                                               		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
@@ -1005,7 +1005,7 @@ struct UOnlineSubsystemSteamworks_execResetStats_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomMessageUI
-// [0x00424000] 
+// [0x00424000]
 struct UOnlineSubsystemSteamworks_execShowCustomMessageUI_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1017,7 +1017,7 @@ struct UOnlineSubsystemSteamworks_execShowCustomMessageUI_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearCrossTitleProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1025,7 +1025,7 @@ struct UOnlineSubsystemSteamworks_execClearCrossTitleProfileSettings_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execGetCrossTitleProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1034,7 +1034,7 @@ struct UOnlineSubsystemSteamworks_execGetCrossTitleProfileSettings_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearReadCrossTitleProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1042,7 +1042,7 @@ struct UOnlineSubsystemSteamworks_execClearReadCrossTitleProfileSettingsComplete
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleProfileSettingsCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddReadCrossTitleProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1050,7 +1050,7 @@ struct UOnlineSubsystemSteamworks_execAddReadCrossTitleProfileSettingsCompleteDe
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleProfileSettingsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadCrossTitleProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1059,7 +1059,7 @@ struct UOnlineSubsystemSteamworks_execOnReadCrossTitleProfileSettingsComplete_Pa
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleProfileSettings
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execReadCrossTitleProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1069,7 +1069,7 @@ struct UOnlineSubsystemSteamworks_execReadCrossTitleProfileSettings_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAvatarAward
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execUnlockAvatarAward_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1136,21 +1136,21 @@ struct UOnlineSubsystemSteamworks_execGetSteamClanData_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetNumberOfCurrentPlayersCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearGetNumberOfCurrentPlayersCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             GetNumberOfCurrentPlayersCompleteDelegate;        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetNumberOfCurrentPlayersCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddGetNumberOfCurrentPlayersCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             GetNumberOfCurrentPlayersCompleteDelegate;        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetNumberOfCurrentPlayersComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnGetNumberOfCurrentPlayersComplete_Parms
 {
 	int                                                TotalPlayers;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1173,7 +1173,7 @@ struct UOnlineSubsystemSteamworks_execReadOnlineAvatar_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineAvatarComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadOnlineAvatarComplete_Parms
 {
 	struct FUniqueNetId                                PlayerNetId;                                      		// 0x0000 (0x0018) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
@@ -1202,7 +1202,7 @@ struct UOnlineSubsystemSteamworks_execGetAchievements_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadAchievementsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadAchievementsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1210,7 +1210,7 @@ struct UOnlineSubsystemSteamworks_execClearReadAchievementsCompleteDelegate_Parm
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadAchievementsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadAchievementsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1218,7 +1218,7 @@ struct UOnlineSubsystemSteamworks_execAddReadAchievementsCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadAchievementsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadAchievementsComplete_Parms
 {
 	int                                                TitleId;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1261,7 +1261,7 @@ struct UOnlineSubsystemSteamworks_execShowFriendsUI_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearProfileDataChangedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearProfileDataChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1269,7 +1269,7 @@ struct UOnlineSubsystemSteamworks_execClearProfileDataChangedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddProfileDataChangedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddProfileDataChangedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1277,7 +1277,7 @@ struct UOnlineSubsystemSteamworks_execAddProfileDataChangedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnProfileDataChanged
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnProfileDataChanged_Parms
 {
 };
@@ -1292,7 +1292,7 @@ struct UOnlineSubsystemSteamworks_execUnlockGamerPicture_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAchievementCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearUnlockAchievementCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1300,7 +1300,7 @@ struct UOnlineSubsystemSteamworks_execClearUnlockAchievementCompleteDelegate_Par
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAchievementCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddUnlockAchievementCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1308,7 +1308,7 @@ struct UOnlineSubsystemSteamworks_execAddUnlockAchievementCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAchievementComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnUnlockAchievementComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1342,7 +1342,7 @@ struct UOnlineSubsystemSteamworks_execGetDeviceSelectionResults_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeviceSelectionDoneDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearDeviceSelectionDoneDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1350,7 +1350,7 @@ struct UOnlineSubsystemSteamworks_execClearDeviceSelectionDoneDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeviceSelectionDoneDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddDeviceSelectionDoneDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1358,7 +1358,7 @@ struct UOnlineSubsystemSteamworks_execAddDeviceSelectionDoneDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeviceSelectionComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnDeviceSelectionComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1437,7 +1437,7 @@ struct UOnlineSubsystemSteamworks_execShowFeedbackUI_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteMessage
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execDeleteMessage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1446,7 +1446,7 @@ struct UOnlineSubsystemSteamworks_execDeleteMessage_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteAll
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execUnmuteAll_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1454,7 +1454,7 @@ struct UOnlineSubsystemSteamworks_execUnmuteAll_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteAll
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execMuteAll_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1463,7 +1463,7 @@ struct UOnlineSubsystemSteamworks_execMuteAll_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CalcAggregateSkill
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execCalcAggregateSkill_Parms
 {
 	TArray< struct FDouble >                           Mus;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1489,21 +1489,21 @@ struct UOnlineSubsystemSteamworks_execGetClientStatGuid_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRegisterHostStatGuidCompleteDelegateDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearRegisterHostStatGuidCompleteDelegateDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRegisterHostStatGuidCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddRegisterHostStatGuidCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRegisterHostStatGuidComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnRegisterHostStatGuidComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1525,7 +1525,7 @@ struct UOnlineSubsystemSteamworks_execGetHostStatGuid_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendMessageReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearFriendMessageReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1533,7 +1533,7 @@ struct UOnlineSubsystemSteamworks_execClearFriendMessageReceivedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendMessageReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddFriendMessageReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1541,7 +1541,7 @@ struct UOnlineSubsystemSteamworks_execAddFriendMessageReceivedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendMessageReceived
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnFriendMessageReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1551,7 +1551,7 @@ struct UOnlineSubsystemSteamworks_execOnFriendMessageReceived_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendMessages
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetFriendMessages_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1559,21 +1559,21 @@ struct UOnlineSubsystemSteamworks_execGetFriendMessages_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearJoinFriendGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearJoinFriendGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddJoinFriendGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddJoinFriendGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnJoinFriendGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnJoinFriendGameComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1589,7 +1589,7 @@ struct UOnlineSubsystemSteamworks_execJoinFriendGame_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReceivedGameInviteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReceivedGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1597,7 +1597,7 @@ struct UOnlineSubsystemSteamworks_execClearReceivedGameInviteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReceivedGameInviteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReceivedGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1605,7 +1605,7 @@ struct UOnlineSubsystemSteamworks_execAddReceivedGameInviteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReceivedGameInvite
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReceivedGameInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1613,7 +1613,7 @@ struct UOnlineSubsystemSteamworks_execOnReceivedGameInvite_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSentGameInviteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearSentGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1621,7 +1621,7 @@ struct UOnlineSubsystemSteamworks_execClearSentGameInviteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddSentGameInviteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddSentGameInviteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1629,7 +1629,7 @@ struct UOnlineSubsystemSteamworks_execAddSentGameInviteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnSentGameInvite
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnSentGameInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1667,7 +1667,7 @@ struct UOnlineSubsystemSteamworks_execSendMessageToFriend_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendInviteReceivedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearFriendInviteReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1675,7 +1675,7 @@ struct UOnlineSubsystemSteamworks_execClearFriendInviteReceivedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendInviteReceivedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddFriendInviteReceivedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1683,7 +1683,7 @@ struct UOnlineSubsystemSteamworks_execAddFriendInviteReceivedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendInviteReceived
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnFriendInviteReceived_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1720,7 +1720,7 @@ struct UOnlineSubsystemSteamworks_execRemoveFriend_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAddFriendByNameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearAddFriendByNameCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1728,7 +1728,7 @@ struct UOnlineSubsystemSteamworks_execClearAddFriendByNameCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddAddFriendByNameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddAddFriendByNameCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1736,7 +1736,7 @@ struct UOnlineSubsystemSteamworks_execAddAddFriendByNameCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnAddFriendByNameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnAddFriendByNameComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1763,7 +1763,7 @@ struct UOnlineSubsystemSteamworks_execAddFriend_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineSubsystemSteamworks_execGetKeyboardInputResults_Parms
 {
 	unsigned char                                      bWasCanceled;                                     		// 0x0000 (0x0001) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -1771,21 +1771,21 @@ struct UOnlineSubsystemSteamworks_execGetKeyboardInputResults_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearKeyboardInputDoneDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearKeyboardInputDoneDelegate_Parms
 {
 	struct FScriptDelegate                             InputDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddKeyboardInputDoneDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddKeyboardInputDoneDelegate_Parms
 {
 	struct FScriptDelegate                             InputDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnKeyboardInputComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnKeyboardInputComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1816,7 +1816,7 @@ struct UOnlineSubsystemSteamworks_execSetOnlineStatus_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocalAccountNames
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineSubsystemSteamworks_execGetLocalAccountNames_Parms
 {
 	TArray< struct FString >                           Accounts;                                         		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -1824,7 +1824,7 @@ struct UOnlineSubsystemSteamworks_execGetLocalAccountNames_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteLocalAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execDeleteLocalAccount_Parms
 {
 	struct FString                                     UserName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1833,7 +1833,7 @@ struct UOnlineSubsystemSteamworks_execDeleteLocalAccount_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RenameLocalAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execRenameLocalAccount_Parms
 {
 	struct FString                                     NewUserName;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1843,7 +1843,7 @@ struct UOnlineSubsystemSteamworks_execRenameLocalAccount_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLocalAccount
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execCreateLocalAccount_Parms
 {
 	struct FString                                     UserName;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1852,21 +1852,21 @@ struct UOnlineSubsystemSteamworks_execCreateLocalAccount_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCreateOnlineAccountCompletedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearCreateOnlineAccountCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             AccountCreateDelegate;                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCreateOnlineAccountCompletedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddCreateOnlineAccountCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             AccountCreateDelegate;                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCreateOnlineAccountCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnCreateOnlineAccountCompleted_Parms
 {
 	unsigned char                                      ErrorStatus;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1899,7 +1899,7 @@ struct UOnlineSubsystemSteamworks_execClearDownloadedFiles_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileState
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetTitleFileState_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1916,14 +1916,14 @@ struct UOnlineSubsystemSteamworks_execGetTitleFileContents_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadTitleFileCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadTitleFileCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1939,7 +1939,7 @@ struct UOnlineSubsystemSteamworks_execReadTitleFile_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1947,14 +1947,14 @@ struct UOnlineSubsystemSteamworks_execOnReadTitleFileComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearShareTitleFileCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearShareTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShareTitleFileCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddShareTitleFileCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddShareTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShareTitleFileCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1969,7 +1969,7 @@ struct UOnlineSubsystemSteamworks_execShareTitleFile_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnShareTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnShareTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1978,27 +1978,27 @@ struct UOnlineSubsystemSteamworks_execOnShareTitleFileComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearStorageDeviceChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearStorageDeviceChangeDelegate_Parms
 {
 	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddStorageDeviceChangeDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddStorageDeviceChangeDelegate_Parms
 {
 	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnStorageDeviceChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnStorageDeviceChange_Parms
 {
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocale
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetLocale_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -2012,21 +2012,21 @@ struct UOnlineSubsystemSteamworks_execGetNATType_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearConnectionStatusChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearConnectionStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ConnectionStatusDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddConnectionStatusChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddConnectionStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ConnectionStatusDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnConnectionStatusChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnConnectionStatusChange_Parms
 {
 	unsigned char                                      ConnectionStatus;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2041,21 +2041,21 @@ struct UOnlineSubsystemSteamworks_execIsControllerConnected_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearControllerChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearControllerChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ControllerChangeDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddControllerChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddControllerChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ControllerChangeDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnControllerChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnControllerChange_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2070,49 +2070,49 @@ struct UOnlineSubsystemSteamworks_execSetNetworkNotificationPosition_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNetworkNotificationPosition
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetNetworkNotificationPosition_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearExternalUIChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearExternalUIChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ExternalUIDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddExternalUIChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddExternalUIChangeDelegate_Parms
 {
 	struct FScriptDelegate                             ExternalUIDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnExternalUIChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnExternalUIChange_Parms
 {
 	unsigned long                                      bIsOpening : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLinkStatusChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearLinkStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LinkStatusDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLinkStatusChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddLinkStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LinkStatusDelegate;                               		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLinkStatusChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnLinkStatusChange_Parms
 {
 	unsigned long                                      bIsConnected : 1;                                 		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -2131,7 +2131,7 @@ struct UOnlineSubsystemSteamworks_eventGetPlayerUniqueNetIdFromIndex_Parms
 {
 	int                                                UserIndex;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FUniqueNetId                                ReturnValue;                                      		// 0x0004 (0x0018) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FUniqueNetId                             Zero;                                             		// 0x001C (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             Zero;                                             		// 0x001C (0x0018) [0x0000000000000000]
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNicknameFromIndex
@@ -2153,21 +2153,21 @@ struct UOnlineSubsystemSteamworks_execWriteOnlinePlayerScores_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFlushOnlineStatsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearFlushOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFlushOnlineStatsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddFlushOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFlushOnlineStatsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnFlushOnlineStatsComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -2200,21 +2200,21 @@ struct UOnlineSubsystemSteamworks_execFreeStats_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadOnlineStatsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadOnlineStatsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadOnlineStatsCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineStatsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadOnlineStatsComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -2277,7 +2277,7 @@ struct UOnlineSubsystemSteamworks_execSelectVocabulary_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRecognitionCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearRecognitionCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2285,7 +2285,7 @@ struct UOnlineSubsystemSteamworks_execClearRecognitionCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRecognitionCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddRecognitionCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2293,7 +2293,7 @@ struct UOnlineSubsystemSteamworks_execAddRecognitionCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRecognitionComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnRecognitionComplete_Parms
 {
 };
@@ -2338,21 +2338,21 @@ struct UOnlineSubsystemSteamworks_execStartNetworkedVoice_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPlayerTalkingDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearPlayerTalkingDelegate_Parms
 {
 	struct FScriptDelegate                             TalkerDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPlayerTalkingDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddPlayerTalkingDelegate_Parms
 {
 	struct FScriptDelegate                             TalkerDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPlayerTalkingStateChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnPlayerTalkingStateChange_Parms
 {
 	struct FUniqueNetId                                Player;                                           		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -2457,7 +2457,7 @@ struct UOnlineSubsystemSteamworks_execGetFriendsList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadFriendsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadFriendsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2465,7 +2465,7 @@ struct UOnlineSubsystemSteamworks_execClearReadFriendsCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadFriendsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadFriendsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2473,7 +2473,7 @@ struct UOnlineSubsystemSteamworks_execAddReadFriendsCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadFriendsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadFriendsComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -2490,7 +2490,7 @@ struct UOnlineSubsystemSteamworks_execReadFriendsList_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWritePlayerStorageCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearWritePlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2498,7 +2498,7 @@ struct UOnlineSubsystemSteamworks_execClearWritePlayerStorageCompleteDelegate_Pa
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWritePlayerStorageCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddWritePlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2506,7 +2506,7 @@ struct UOnlineSubsystemSteamworks_execAddWritePlayerStorageCompleteDelegate_Parm
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWritePlayerStorageComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnWritePlayerStorageComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2514,7 +2514,7 @@ struct UOnlineSubsystemSteamworks_execOnWritePlayerStorageComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WritePlayerStorage
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execWritePlayerStorage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2524,7 +2524,7 @@ struct UOnlineSubsystemSteamworks_execWritePlayerStorage_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerStorage
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetPlayerStorage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2532,7 +2532,7 @@ struct UOnlineSubsystemSteamworks_execGetPlayerStorage_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageForNetIdCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadPlayerStorageForNetIdCompleteDelegate_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -2540,7 +2540,7 @@ struct UOnlineSubsystemSteamworks_execClearReadPlayerStorageForNetIdCompleteDele
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageForNetIdCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadPlayerStorageForNetIdCompleteDelegate_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -2548,7 +2548,7 @@ struct UOnlineSubsystemSteamworks_execAddReadPlayerStorageForNetIdCompleteDelega
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageForNetIdComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadPlayerStorageForNetIdComplete_Parms
 {
 	struct FUniqueNetId                                NetId;                                            		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -2556,7 +2556,7 @@ struct UOnlineSubsystemSteamworks_execOnReadPlayerStorageForNetIdComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorageForNetId
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execReadPlayerStorageForNetId_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2566,7 +2566,7 @@ struct UOnlineSubsystemSteamworks_execReadPlayerStorageForNetId_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadPlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2574,7 +2574,7 @@ struct UOnlineSubsystemSteamworks_execClearReadPlayerStorageCompleteDelegate_Par
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadPlayerStorageCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2582,7 +2582,7 @@ struct UOnlineSubsystemSteamworks_execAddReadPlayerStorageCompleteDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadPlayerStorageComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2590,7 +2590,7 @@ struct UOnlineSubsystemSteamworks_execOnReadPlayerStorageComplete_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorage
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineSubsystemSteamworks_execReadPlayerStorage_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2600,7 +2600,7 @@ struct UOnlineSubsystemSteamworks_execReadPlayerStorage_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteProfileSettingsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearWriteProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2608,7 +2608,7 @@ struct UOnlineSubsystemSteamworks_execClearWriteProfileSettingsCompleteDelegate_
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteProfileSettingsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddWriteProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2616,7 +2616,7 @@ struct UOnlineSubsystemSteamworks_execAddWriteProfileSettingsCompleteDelegate_Pa
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteProfileSettingsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnWriteProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2633,7 +2633,7 @@ struct UOnlineSubsystemSteamworks_execWriteProfileSettings_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetProfileSettings
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetProfileSettings_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2641,7 +2641,7 @@ struct UOnlineSubsystemSteamworks_execGetProfileSettings_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadProfileSettingsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearReadProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2649,7 +2649,7 @@ struct UOnlineSubsystemSteamworks_execClearReadProfileSettingsCompleteDelegate_P
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadProfileSettingsCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddReadProfileSettingsCompleteDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2657,7 +2657,7 @@ struct UOnlineSubsystemSteamworks_execAddReadProfileSettingsCompleteDelegate_Par
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadProfileSettingsComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnReadProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2674,7 +2674,7 @@ struct UOnlineSubsystemSteamworks_execReadProfileSettings_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendsChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearFriendsChangeDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2682,7 +2682,7 @@ struct UOnlineSubsystemSteamworks_execClearFriendsChangeDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendsChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddFriendsChangeDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2690,35 +2690,35 @@ struct UOnlineSubsystemSteamworks_execAddFriendsChangeDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMutingChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearMutingChangeDelegate_Parms
 {
 	struct FScriptDelegate                             MutingDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMutingChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddMutingChangeDelegate_Parms
 {
 	struct FScriptDelegate                             MutingDelegate;                                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginCancelledDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execClearLoginCancelledDelegate_Parms
 {
 	struct FScriptDelegate                             CancelledDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginCancelledDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execAddLoginCancelledDelegate_Parms
 {
 	struct FScriptDelegate                             CancelledDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginStatusChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearLoginStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginStatusDelegate;                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2726,7 +2726,7 @@ struct UOnlineSubsystemSteamworks_execClearLoginStatusChangeDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginStatusChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddLoginStatusChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginStatusDelegate;                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2734,7 +2734,7 @@ struct UOnlineSubsystemSteamworks_execAddLoginStatusChangeDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginStatusChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnLoginStatusChange_Parms
 {
 	unsigned char                                      NewStatus;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2742,14 +2742,14 @@ struct UOnlineSubsystemSteamworks_execOnLoginStatusChange_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearLoginChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginChangeDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddLoginChangeDelegate_Parms
 {
 	struct FScriptDelegate                             LoginDelegate;                                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2783,7 +2783,7 @@ struct UOnlineSubsystemSteamworks_execIsFriend_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanShowPresenceInformation
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execCanShowPresenceInformation_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2791,7 +2791,7 @@ struct UOnlineSubsystemSteamworks_execCanShowPresenceInformation_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanViewPlayerProfiles
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execCanViewPlayerProfiles_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2799,7 +2799,7 @@ struct UOnlineSubsystemSteamworks_execCanViewPlayerProfiles_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPurchaseContent
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execCanPurchaseContent_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2807,7 +2807,7 @@ struct UOnlineSubsystemSteamworks_execCanPurchaseContent_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanDownloadUserContent
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execCanDownloadUserContent_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2831,7 +2831,7 @@ struct UOnlineSubsystemSteamworks_execCanPlayOnline_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetUserAgeGroupDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearGetUserAgeGroupDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2839,7 +2839,7 @@ struct UOnlineSubsystemSteamworks_execClearGetUserAgeGroupDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetUserAgeGroupDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddGetUserAgeGroupDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2847,17 +2847,17 @@ struct UOnlineSubsystemSteamworks_execAddGetUserAgeGroupDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserAgeGroup
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetUserAgeGroup_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   UserAgeGroup;                                     		// 0x0008 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   UserAgeGroup;                                     		// 0x0008 (0x0001) [0x0000000000000000]
 	// struct FScriptDelegate                          GetUserAgeGroupCompletedDelegate;                 		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetUserAgeGroup
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnGetUserAgeGroup_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2865,7 +2865,7 @@ struct UOnlineSubsystemSteamworks_execOnGetUserAgeGroup_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNickname
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execGetPlayerNickname_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2873,7 +2873,7 @@ struct UOnlineSubsystemSteamworks_execGetPlayerNickname_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineSubsystemSteamworks_execGetUniquePlayerId_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2882,7 +2882,7 @@ struct UOnlineSubsystemSteamworks_execGetUniquePlayerId_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalLogin
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execIsLocalLogin_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2890,7 +2890,7 @@ struct UOnlineSubsystemSteamworks_execIsLocalLogin_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsGuestLogin
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineSubsystemSteamworks_execIsGuestLogin_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2906,7 +2906,7 @@ struct UOnlineSubsystemSteamworks_execGetLoginStatus_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLogoutCompletedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearLogoutCompletedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2914,7 +2914,7 @@ struct UOnlineSubsystemSteamworks_execClearLogoutCompletedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLogoutCompletedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddLogoutCompletedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2922,7 +2922,7 @@ struct UOnlineSubsystemSteamworks_execAddLogoutCompletedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLogoutCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnLogoutCompleted_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -2937,7 +2937,7 @@ struct UOnlineSubsystemSteamworks_execLogout_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginFailedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execClearLoginFailedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2945,7 +2945,7 @@ struct UOnlineSubsystemSteamworks_execClearLoginFailedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginFailedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineSubsystemSteamworks_execAddLoginFailedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2953,7 +2953,7 @@ struct UOnlineSubsystemSteamworks_execAddLoginFailedDelegate_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginFailed
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnLoginFailed_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2989,25 +2989,25 @@ struct UOnlineSubsystemSteamworks_execShowLoginUI_Parms
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendsChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnFriendsChange_Parms
 {
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMutingChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnMutingChange_Parms
 {
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginCancelled
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnLoginCancelled_Parms
 {
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginChange
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineSubsystemSteamworks_execOnLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -3026,7 +3026,6 @@ struct UOnlineSubsystemSteamworks_eventInit_Parms
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

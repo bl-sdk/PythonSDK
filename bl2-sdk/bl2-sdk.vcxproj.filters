@@ -27,9 +27,6 @@
     <ClInclude Include="AkAudio_f_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AkAudio_functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AkAudio_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,9 +60,6 @@
     <ClInclude Include="GameFramework_f_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameFramework_functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameFramework_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -73,9 +67,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GearboxFramework_f_structs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GearboxFramework_functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GearboxFramework_structs.h">
@@ -96,9 +87,6 @@
     <ClInclude Include="IpDrv_f_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IpDrv_functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IpDrv_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -108,16 +96,10 @@
     <ClInclude Include="OnlineSubsystemSteamworks_f_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OnlineSubsystemSteamworks_functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="OnlineSubsystemSteamworks_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Signatures.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UHook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WillowGame_classes.h">
@@ -135,9 +117,6 @@
     <ClInclude Include="WinDrv_f_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WinDrv_functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WinDrv_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -147,10 +126,31 @@
     <ClInclude Include="XAudio2_f_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="XAudio2_functions.h">
+    <ClInclude Include="XAudio2_structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="XAudio2_structs.h">
+    <ClInclude Include="CSigScan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PackageFix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemorySignature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSimpleDetour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detours.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameHooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -168,6 +168,45 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="WillowGame_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GearboxFramework_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IpDrv_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinDrv_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XAudio2_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AkAudio_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BL2-SDK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSigScan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PackageFix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSimpleDetour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameHooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

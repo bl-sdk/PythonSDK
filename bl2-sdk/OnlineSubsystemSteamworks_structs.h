@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -26,7 +26,7 @@
 // 0x0008
 struct FServerQueryToRulesResponseMapping
 {
-	int                                                Query;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                Query;                                            		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FPointer                                    Response;                                         		// 0x0004 (0x0004) [0x0000000000001000]              ( CPF_Native )
 };
 
@@ -34,7 +34,7 @@ struct FServerQueryToRulesResponseMapping
 // 0x0008
 struct FServerQueryToPingResponseMapping
 {
-	int                                                Query;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                Query;                                            		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FPointer                                    Response;                                         		// 0x0004 (0x0004) [0x0000000000001000]              ( CPF_Native )
 };
 
@@ -49,11 +49,11 @@ struct FClientFilterORClause
 // 0x0030
 struct FFilterKeyToSteamKeyMapping
 {
-	int                                                KeyId;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      KeyType;                                          		// 0x0004 (0x0001) [0x0000000000000000]              
+	int                                                KeyId;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      KeyType;                                          		// 0x0004 (0x0001) [0x0000000000000000]
 	struct FString                                     RawKey;                                           		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     SteamKey;                                         		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bReverseFilter : 1;                               		// 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bReverseFilter : 1;                               		// 0x0020 (0x0004) [0x0000000000000000] [0x00000001]
 	struct FString                                     IgnoreValue;                                      		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -69,7 +69,7 @@ struct FLeaderboardHandle
 struct FLeaderboardTemplate
 {
 	struct FString                                     LeaderboardName;                                  		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UpdateType;                                       		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      UpdateType;                                       		// 0x000C (0x0001) [0x0000000000000000]
 	int                                                LeaderboardSize;                                  		// 0x0010 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	unsigned char                                      SortType;                                         		// 0x0014 (0x0001) [0x0000000000000002]              ( CPF_Const )
 	unsigned char                                      DisplayFormat;                                    		// 0x0015 (0x0001) [0x0000000000000002]              ( CPF_Const )
@@ -83,9 +83,9 @@ struct FLeaderboardTemplate
 struct FDeferredLeaderboardRead
 {
 	struct FString                                     LeaderboardName;                                  		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      RequestType;                                      		// 0x000C (0x0001) [0x0000000000000000]              
-	int                                                Start;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                End;                                              		// 0x0014 (0x0004) [0x0000000000000000]              
+	unsigned char                                      RequestType;                                      		// 0x000C (0x0001) [0x0000000000000000]
+	int                                                Start;                                            		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                End;                                              		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeferredLeaderboardWrite
@@ -93,23 +93,23 @@ struct FDeferredLeaderboardRead
 struct FDeferredLeaderboardWrite
 {
 	struct FString                                     LeaderboardName;                                  		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                Score;                                            		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                Score;                                            		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.LeaderboardEntry
 // 0x0020
 struct FLeaderboardEntry
 {
-	struct FUniqueNetId                                PlayerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]              
-	int                                                Rank;                                             		// 0x0018 (0x0004) [0x0000000000000000]              
-	int                                                Score;                                            		// 0x001C (0x0004) [0x0000000000000000]              
+	struct FUniqueNetId                                PlayerUID;                                        		// 0x0000 (0x0018) [0x0000000000000000]
+	int                                                Rank;                                             		// 0x0018 (0x0004) [0x0000000000000000]
+	int                                                Score;                                            		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ViewIdToLeaderboardName
 // 0x0010
 struct FViewIdToLeaderboardName
 {
-	int                                                ViewId;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                ViewId;                                           		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FString                                     LeaderboardName;                                  		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -126,7 +126,7 @@ struct FSteamPlayerClanData
 struct FMarketplaceListCache
 {
 	TArray< struct FMarketplaceContent >               Content;                                          		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      ReadState;                                        		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      ReadState;                                        		// 0x000C (0x0001) [0x0000000000000000]
 	TArray< struct FScriptDelegate >                   ReadCompleteDelegates;                            		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -134,8 +134,8 @@ struct FMarketplaceListCache
 // 0x0014
 struct FMarketplaceOfferData
 {
-	int                                                OfferId;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Category;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                OfferId;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                Category;                                         		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FString                                     SellTextLocKey;                                   		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -143,7 +143,7 @@ struct FMarketplaceOfferData
 // 0x0028
 struct FProfileSettingsCache
 {
-	class UOnlineProfileSettings*                      Profile;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UOnlineProfileSettings*                      Profile;                                          		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FScriptDelegate >                   ReadDelegates;                                    		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FScriptDelegate >                   WriteDelegates;                                   		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FScriptDelegate >                   ProfileDataChangedDelegates;                      		// 0x001C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -153,7 +153,7 @@ struct FProfileSettingsCache
 // 0x001C
 struct FDeviceIdCache
 {
-	int                                                DeviceID;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                DeviceID;                                         		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FScriptDelegate                             DeviceSelectionMulticast;                         		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FScriptDelegate >                   DeviceSelectionDelegates;                         		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -162,22 +162,22 @@ struct FDeviceIdCache
 // 0x0010
 struct FAchievementProgressStat
 {
-	int                                                AchievementId;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Progress;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                MaxProgress;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bUnlock : 1;                                      		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                AchievementId;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                Progress;                                         		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                MaxProgress;                                      		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned long                                      bUnlock : 1;                                      		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AchievementMappingInfo
 // 0x001C
 struct FAchievementMappingInfo
 {
-	int                                                AchievementId;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       AchievementName;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
-	int                                                ViewId;                                           		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                ProgressCount;                                    		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                MaxProgress;                                      		// 0x0014 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bAutoUnlock : 1;                                  		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                AchievementId;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       AchievementName;                                  		// 0x0004 (0x0008) [0x0000000000000000]
+	int                                                ViewId;                                           		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                ProgressCount;                                    		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                MaxProgress;                                      		// 0x0014 (0x0004) [0x0000000000000000]
+	unsigned long                                      bAutoUnlock : 1;                                  		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueuedAvatarRequest
@@ -212,7 +212,7 @@ struct FControllerConnectionState
 struct FOnlineStatusContextMapping
 {
 	struct FString                                     KeyString;                                        		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ContextId;                                        		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                ContextId;                                        		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnlineStatusPropertyMapping
@@ -220,15 +220,15 @@ struct FOnlineStatusContextMapping
 struct FOnlineStatusPropertyMapping
 {
 	struct FString                                     KeyString;                                        		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                PropertyId;                                       		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                EncodeId;                                         		// 0x0010 (0x0004) [0x0000000000000000]              
+	int                                                PropertyId;                                       		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                EncodeId;                                         		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnlineStatusMapping
 // 0x0010
 struct FOnlineStatusMapping
 {
-	int                                                StatusId;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                StatusId;                                         		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FString                                     StatusString;                                     		// 0x0004 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
 };
 
@@ -236,16 +236,16 @@ struct FOnlineStatusMapping
 // 0x0008
 struct FPropertyToColumn
 {
-	int                                                PropertyId;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ColumnId;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                PropertyId;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ColumnId;                                         		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.PlayerStat
 // 0x0014
 struct FPlayerStat
 {
-	int                                                ViewId;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PropertyId;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                ViewId;                                           		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PropertyId;                                       		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FSettingsData                               Data;                                             		// 0x0008 (0x000C) [0x0000000000000002]              ( CPF_Const )
 };
 
@@ -266,8 +266,8 @@ struct FPendingPlayerStats
 struct FListenEntry
 {
 	struct FQWord                                      RemoteId;                                         		// 0x0000 (0x0008) [0x0000000000001000]              ( CPF_Native )
-	unsigned char                                      Status;                                           		// 0x0008 (0x0001) [0x0000000000000000]              
-	struct FDouble                                     ActiveTimestamp;                                  		// 0x000C (0x0008) [0x0000000000000000]              
+	unsigned char                                      Status;                                           		// 0x0008 (0x0001) [0x0000000000000000]
+	struct FDouble                                     ActiveTimestamp;                                  		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.QoSHandlerSteamworks.QoSResults
@@ -275,7 +275,7 @@ struct FListenEntry
 struct FQoSResults
 {
 	TArray< struct FDouble >                           PingTimes;                                        		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                PingInMs;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                PingInMs;                                         		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct OnlineSubsystemSteamworks.QoSHandlerSteamworks.RequestEntry
@@ -283,10 +283,10 @@ struct FQoSResults
 struct FRequestEntry
 {
 	struct FQWord                                      RemoteId;                                         		// 0x0000 (0x0008) [0x0000000000001000]              ( CPF_Native )
-	int                                                NumProbesSent;                                    		// 0x0008 (0x0004) [0x0000000000000000]              
-	struct FDouble                                     ChallengeTimestamp;                               		// 0x000C (0x0008) [0x0000000000000000]              
-	struct FDouble                                     PingTimestamp;                                    		// 0x0014 (0x0008) [0x0000000000000000]              
-	unsigned char                                      Status;                                           		// 0x001C (0x0001) [0x0000000000000000]              
+	int                                                NumProbesSent;                                    		// 0x0008 (0x0004) [0x0000000000000000]
+	struct FDouble                                     ChallengeTimestamp;                               		// 0x000C (0x0008) [0x0000000000000000]
+	struct FDouble                                     PingTimestamp;                                    		// 0x0014 (0x0008) [0x0000000000000000]
+	unsigned char                                      Status;                                           		// 0x001C (0x0001) [0x0000000000000000]
 	struct FQoSResults                                 Results;                                          		// 0x0020 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FPointer                                    CallbackFunc;                                     		// 0x0030 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FPointer                                    UserData;                                         		// 0x0034 (0x0004) [0x0000000000001000]              ( CPF_Native )
@@ -301,7 +301,6 @@ struct FPendingEntry
 	struct FPointer                                    UserData;                                         		// 0x000C (0x0004) [0x0000000000001000]              ( CPF_Native )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

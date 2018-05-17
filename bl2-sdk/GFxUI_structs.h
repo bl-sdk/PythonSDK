@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -61,7 +61,7 @@ struct FGFxDataStoreBinding
 	TArray< unsigned char >                            ModelIdUtf8;                                      		// 0x0064 (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
 	TArray< unsigned char >                            ControlIdUtf8;                                    		// 0x0070 (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
 	class UUIListElementProvider*                      ListDataProvider;                                 		// 0x007C (0x0008) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0080 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	TArray< struct FName >                             FullCellTags;                                     		// 0x0084 (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
 	struct FPointer                                    ModelRef;                                         		// 0x0090 (0x0004) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
 	struct FPointer                                    ControlRef;                                       		// 0x0094 (0x0004) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
@@ -116,12 +116,12 @@ struct FASColorTransform
 struct FEventData
 {
 	struct FString                                     Type;                                             		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                Data;                                             		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                mouseIndex;                                       		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                Button;                                           		// 0x0014 (0x0004) [0x0000000000000000]              
-	int                                                Index;                                            		// 0x0018 (0x0004) [0x0000000000000000]              
-	int                                                lastIndex;                                        		// 0x001C (0x0004) [0x0000000000000000]              
-	int                                                controllerIdx;                                    		// 0x0020 (0x0004) [0x0000000000000000]              
+	int                                                Data;                                             		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                mouseIndex;                                       		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                Button;                                           		// 0x0014 (0x0004) [0x0000000000000000]
+	int                                                Index;                                            		// 0x0018 (0x0004) [0x0000000000000000]
+	int                                                lastIndex;                                        		// 0x001C (0x0004) [0x0000000000000000]
+	int                                                controllerIdx;                                    		// 0x0020 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GFxUI.GFxEngine.GCReference
@@ -129,8 +129,8 @@ struct FEventData
 struct FGCReference
 {
 	class UObject*                                     m_object;                                         		// 0x0000 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	int                                                m_count;                                          		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                m_statid;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                m_count;                                          		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                m_statid;                                         		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GFxUI.GFxManagerDefinition.AkEventResolver
@@ -141,7 +141,6 @@ struct FAkEventResolver
 	class UAkEvent*                                    AkEvent;                                          		// 0x0008 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

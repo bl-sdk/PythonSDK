@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -26,15 +26,15 @@
 // 0x000C
 struct FAIHoldData
 {
-	struct FName                                       HoldName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	class UObject*                                     HoldTag;                                          		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       HoldName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	class UObject*                                     HoldTag;                                          		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIComponent.AIResourceData
 // 0x001C
 struct FAIResourceData
 {
-	class UAIResource*                                 Resource;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UAIResource*                                 Resource;                                         		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FPointer >                          CanRun;                                           		// 0x0004 (0x000C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	TArray< struct FPointer >                          Running;                                          		// 0x0010 (0x000C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 };
@@ -52,7 +52,7 @@ struct FAIRange
 struct FAITreeData
 {
 	class UIAIInterface*                               AI;                                               		// 0x0000 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	unsigned char                                      Type;                                             		// 0x0008 (0x0001) [0x0000000000020003]              ( CPF_Edit | CPF_Const | CPF_EditConst )
 	TArray< int >                                      Children;                                         		// 0x000C (0x000C) [0x0000000000420003]              ( CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink )
 	class UAIResource*                                 Resource;                                         		// 0x0018 (0x0004) [0x0000000000020003]              ( CPF_Edit | CPF_Const | CPF_EditConst )
@@ -105,20 +105,20 @@ struct FFlagDefinitionInitialization
 // 0x000C
 struct FCoverDebugScoringInfo
 {
-	struct FName                                       PriorityName;                                     		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       PriorityName;                                     		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.CoverDebugPriority
 // 0x002C
 struct FCoverDebugPriority
 {
-	float                                              Score;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Distance;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      IsACandidate : 1;                                 		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      IsBestCandidate : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
-	class AActor*                                      TheCoverActor;                                    		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                SlotNdx;                                          		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              Score;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Distance;                                         		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      IsACandidate : 1;                                 		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      IsBestCandidate : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002]
+	class AActor*                                      TheCoverActor;                                    		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                SlotNdx;                                          		// 0x0010 (0x0004) [0x0000000000000000]
 	struct FString                                     FailString;                                       		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FCoverDebugScoringInfo >            ScoringInfo;                                      		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -127,24 +127,24 @@ struct FCoverDebugPriority
 // 0x0008
 struct FValidNameRange
 {
-	int                                                Start;                                            		// 0x0000 (0x0004) [0x0000000000100000]              
-	int                                                End;                                              		// 0x0004 (0x0004) [0x0000000000100000]              
+	int                                                Start;                                            		// 0x0000 (0x0004) [0x0000000000100000]
+	int                                                End;                                              		// 0x0004 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.ObjectKey
 // 0x0010
 struct FObjectKey
 {
-	struct FName                                       ObjectName;                                       		// 0x0000 (0x0008) [0x0000000000100000]              
-	struct FName                                       AdditionalKey;                                    		// 0x0008 (0x0008) [0x0000000000100000]              
+	struct FName                                       ObjectName;                                       		// 0x0000 (0x0008) [0x0000000000100000]
+	struct FName                                       AdditionalKey;                                    		// 0x0008 (0x0008) [0x0000000000100000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.LevelStateRecord
 // 0x0018
 struct FLevelStateRecord
 {
-	struct FName                                       LevelName;                                        		// 0x0000 (0x0008) [0x0000000000100000]              
-	unsigned char                                      LevelLoaded;                                      		// 0x0008 (0x0001) [0x0000000000100000]              
+	struct FName                                       LevelName;                                        		// 0x0000 (0x0008) [0x0000000000100000]
+	unsigned char                                      LevelLoaded;                                      		// 0x0008 (0x0001) [0x0000000000100000]
 	TArray< struct FObjectKey >                        ObjectKeys;                                       		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -152,38 +152,38 @@ struct FLevelStateRecord
 // 0x000D
 struct FVantageSpot
 {
-	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000000]              
-	unsigned char                                      VantageType;                                      		// 0x000C (0x0001) [0x0000000000000000]              
+	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000000]
+	unsigned char                                      VantageType;                                      		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.GearboxCoverState
 // 0x000C
 struct FGearboxCoverState
 {
-	class AActor*                                      TheCoverActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                SlotIndex;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      State;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
-	unsigned char                                      ExtendedState;                                    		// 0x0009 (0x0001) [0x0000000000000000]              
-	unsigned char                                      MetaData;                                         		// 0x000A (0x0001) [0x0000000000000000]              
-	unsigned char                                      ExtendedMetaData;                                 		// 0x000B (0x0001) [0x0000000000000000]              
+	class AActor*                                      TheCoverActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                SlotIndex;                                        		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      State;                                            		// 0x0008 (0x0001) [0x0000000000000000]
+	unsigned char                                      ExtendedState;                                    		// 0x0009 (0x0001) [0x0000000000000000]
+	unsigned char                                      MetaData;                                         		// 0x000A (0x0001) [0x0000000000000000]
+	unsigned char                                      ExtendedMetaData;                                 		// 0x000B (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.GearboxCoverTransition
 // 0x0004
 struct FGearboxCoverTransition
 {
-	unsigned char                                      Action;                                           		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      ExtendedAction;                                   		// 0x0001 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Padding[ 0x2 ];                                   		// 0x0002 (0x0002) [0x0000000000000000]              
+	unsigned char                                      Action;                                           		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      ExtendedAction;                                   		// 0x0001 (0x0001) [0x0000000000000000]
+	unsigned char                                      Padding[0x2];                                   		// 0x0002 (0x0002) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.CoverCandidate
 // 0x000C
 struct FCoverCandidate
 {
-	class AActor*                                      TheCoverActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                SlotNdx;                                          		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	class AActor*                                      TheCoverActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                SlotNdx;                                          		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxGlobals.PopulationActor
@@ -201,8 +201,8 @@ struct FPopulationActor
 // 0x0010
 struct FLocationInfo
 {
-	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000000]              
-	unsigned long                                      IsPlayerInfo : 1;                                 		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000000]
+	unsigned long                                      IsPlayerInfo : 1;                                 		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.ActionSequenceRandom.ActionSequenceRandomData
@@ -262,7 +262,7 @@ struct FBehaviorEventUserData
 {
 	struct FName                                       EventName;                                        		// 0x0000 (0x0008) [0x0000000000020001]              ( CPF_Edit | CPF_EditConst )
 	unsigned long                                      bEnabled : 1;                                     		// 0x0008 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bReplicate : 1;                                   		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bReplicate : 1;                                   		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002]
 	int                                                MaxTriggerCount;                                  		// 0x000C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              ReTriggerDelay;                                   		// 0x0010 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UBehaviorEventFilterBase*                    FilterObject;                                     		// 0x0014 (0x0004) [0x0000000004420009]              ( CPF_Edit | CPF_ExportObject | CPF_EditConst | CPF_NeedCtorLink | CPF_EditInline )
@@ -364,81 +364,81 @@ struct FBehaviorSequenceData
 // 0x0051
 struct FDebugListItem
 {
-	unsigned char                                      DisplayType;                                      		// 0x0000 (0x0001) [0x0000000000100000]              
-	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000100000]              
-	struct FVector                                     Location2;                                        		// 0x0010 (0x000C) [0x0000000000100000]              
-	struct FVector                                     Location3;                                        		// 0x001C (0x000C) [0x0000000000100000]              
-	class UTexture2D*                                  Texture;                                          		// 0x0028 (0x0004) [0x0000000000100000]              
-	float                                              U;                                                		// 0x002C (0x0004) [0x0000000000100000]              
-	float                                              V;                                                		// 0x0030 (0x0004) [0x0000000000100000]              
-	float                                              UL;                                               		// 0x0034 (0x0004) [0x0000000000100000]              
-	float                                              VL;                                               		// 0x0038 (0x0004) [0x0000000000100000]              
-	float                                              Scale;                                            		// 0x003C (0x0004) [0x0000000000100000]              
+	unsigned char                                      DisplayType;                                      		// 0x0000 (0x0001) [0x0000000000100000]
+	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000100000]
+	struct FVector                                     Location2;                                        		// 0x0010 (0x000C) [0x0000000000100000]
+	struct FVector                                     Location3;                                        		// 0x001C (0x000C) [0x0000000000100000]
+	class UTexture2D*                                  Texture;                                          		// 0x0028 (0x0004) [0x0000000000100000]
+	float                                              U;                                                		// 0x002C (0x0004) [0x0000000000100000]
+	float                                              V;                                                		// 0x0030 (0x0004) [0x0000000000100000]
+	float                                              UL;                                               		// 0x0034 (0x0004) [0x0000000000100000]
+	float                                              VL;                                               		// 0x0038 (0x0004) [0x0000000000100000]
+	float                                              Scale;                                            		// 0x003C (0x0004) [0x0000000000100000]
 	struct FString                                     TextString;                                       		// 0x0040 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FColor                                      TextColor;                                        		// 0x004C (0x0004) [0x0000000000100000]              
-	unsigned char                                      Alignment;                                        		// 0x0050 (0x0001) [0x0000000000100000]              
+	struct FColor                                      TextColor;                                        		// 0x004C (0x0004) [0x0000000000100000]
+	unsigned char                                      Alignment;                                        		// 0x0050 (0x0001) [0x0000000000100000]
 };
 
 // ScriptStruct GearboxFramework.IBehaviorConsumer.BehaviorConsumerHandle
 // 0x0004
 struct FBehaviorConsumerHandle
 {
-	int                                                PID;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                PID;                                              		// 0x0000 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.TimeStampedRecord
 // 0x0004
 struct FTimeStampedRecord
 {
-	float                                              DeathTimeStamp;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
+	float                                              DeathTimeStamp;                                   		// 0x0000 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.KnowledgeRecordStruct
 // 0x0005(0x0009 - 0x0004)
 struct FKnowledgeRecordStruct : FTimeStampedRecord
 {
-	class UKnowledgeRecord*                            TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
+	class UKnowledgeRecord*                            TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.RuleSetRecord
 // 0x0005(0x0009 - 0x0004)
 struct FRuleSetRecord : FTimeStampedRecord
 {
-	class URuleSet*                                    TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
+	class URuleSet*                                    TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.RuleRecord
 // 0x0005(0x0009 - 0x0004)
 struct FRuleRecord : FTimeStampedRecord
 {
-	class URule*                                       TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
+	class URule*                                       TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.ActionSequenceRecord
 // 0x0005(0x0009 - 0x0004)
 struct FActionSequenceRecord : FTimeStampedRecord
 {
-	class UActionSequence*                             TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
+	class UActionSequence*                             TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.TargetInfoRecord
 // 0x0005(0x0009 - 0x0004)
 struct FTargetInfoRecord : FTimeStampedRecord
 {
-	class UMindTargetInfo*                             TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
+	class UMindTargetInfo*                             TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIFactoryBase.AIDefinitionRecord
 // 0x0005(0x0009 - 0x0004)
 struct FAIDefinitionRecord : FTimeStampedRecord
 {
-	class UAIDefinition*                               TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]              
+	class UAIDefinition*                               TheObj;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      InUse;                                            		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AIResource.AIResourceRestriction
@@ -468,24 +468,24 @@ struct FVariableLink
 // 0x001C
 struct FSpecialMoveData
 {
-	class UObject*                                     Data;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              PlayRateScale;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
-	struct FName                                       CallbackName;                                     		// 0x000C (0x0008) [0x0000000000000000]              
-	class UObject*                                     CallbackObject;                                   		// 0x0014 (0x0004) [0x0000000000000000]              
-	class USpecialMoveDefinition*                      SMD;                                              		// 0x0018 (0x0004) [0x0000000000000000]              
+	class UObject*                                     Data;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              PlayRateScale;                                    		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]
+	struct FName                                       CallbackName;                                     		// 0x000C (0x0008) [0x0000000000000000]
+	class UObject*                                     CallbackObject;                                   		// 0x0014 (0x0004) [0x0000000000000000]
+	class USpecialMoveDefinition*                      SMD;                                              		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.AnimNodeSpecialMoveBlend.SlotAnimParameters
 // 0x0044
 struct FSlotAnimParameters
 {
-	struct FSpecialMoveData                            SMData;                                           		// 0x0000 (0x001C) [0x0000000000000000]              
-	class UGearboxAnimDefinition*                      CustomAnimDef;                                    		// 0x001C (0x0004) [0x0000000000000000]              
-	struct FName                                       CustomAnimName;                                   		// 0x0020 (0x0008) [0x0000000000000000]              
+	struct FSpecialMoveData                            SMData;                                           		// 0x0000 (0x001C) [0x0000000000000000]
+	class UGearboxAnimDefinition*                      CustomAnimDef;                                    		// 0x001C (0x0004) [0x0000000000000000]
+	struct FName                                       CustomAnimName;                                   		// 0x0020 (0x0008) [0x0000000000000000]
 	TArray< float >                                    PerBoneWeights;                                   		// 0x0028 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< unsigned char >                            TransformReqBone;                                 		// 0x0034 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                TransformReqBoneIndex;                            		// 0x0040 (0x0004) [0x0000000000000000]              
+	int                                                TransformReqBoneIndex;                            		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.IBehaviorProvider.SpecializedBehaviorEvent
@@ -499,9 +499,9 @@ struct FSpecializedBehaviorEvent
 // 0x000C
 struct FBehaviorTimerState
 {
-	unsigned long                                      bIsRunning : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              Delay;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              EventTime;                                        		// 0x0008 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bIsRunning : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              Delay;                                            		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              EventTime;                                        		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.ITimerBehavior.TimerEventReactionDataSpecialized
@@ -514,7 +514,7 @@ struct FTimerEventReactionDataSpecialized : FSpecializedBehaviorEvent
 // 0x0024
 struct FTimerBehaviorUserState
 {
-	struct FBehaviorTimerState                         Timers[ 0x3 ];                                    		// 0x0000 (0x0024) [0x0000000000000000]              
+	struct FBehaviorTimerState                         Timers[0x3];                                    		// 0x0000 (0x0024) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.ITimerBehavior.TimerEventReactionData
@@ -549,58 +549,58 @@ struct FRelativeDirectionData
 struct FAttachmentLocationData
 {
 	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000001]              ( CPF_Edit )
-	class UIWorldBody*                                 AttachmentBase;                                   		// 0x000C (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0010 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FName                                       AttachmentName;                                   		// 0x0014 (0x0008) [0x0000000000000000]              
+	class UIWorldBody*                                 AttachmentBase;                                   		// 0x000C (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0010 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FName                                       AttachmentName;                                   		// 0x0014 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.ProviderRecord
 // 0x0008
 struct FProviderRecord
 {
-	class UBehaviorProviderDefinition*                 ProviderDefinition;                               		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ReferenceCount;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UBehaviorProviderDefinition*                 ProviderDefinition;                               		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ReferenceCount;                                   		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.BehaviorExecutionRecord
 // 0x001C
 struct FBehaviorExecutionRecord
 {
-	int                                                OwningProcessID;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ProvidersIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                SequencesDataIndex;                               		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                BehaviorNumber;                                   		// 0x000C (0x0004) [0x0000000000000000]              
-	struct FName                                       BehaviorName;                                     		// 0x0010 (0x0008) [0x0000000000000000]              
-	float                                              TimeOfExecution;                                  		// 0x0018 (0x0004) [0x0000000000000000]              
+	int                                                OwningProcessID;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ProvidersIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                SequencesDataIndex;                               		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                BehaviorNumber;                                   		// 0x000C (0x0004) [0x0000000000000000]
+	struct FName                                       BehaviorName;                                     		// 0x0010 (0x0008) [0x0000000000000000]
+	float                                              TimeOfExecution;                                  		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.BehaviorThread
 // 0x0018
 struct FBehaviorThread
 {
-	unsigned char                                      ThreadState;                                      		// 0x0000 (0x0001) [0x0000000000000000]              
-	int                                                OwningProcessID;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
+	unsigned char                                      ThreadState;                                      		// 0x0000 (0x0001) [0x0000000000000000]
+	int                                                OwningProcessID;                                  		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FPointer                                    ThreadSequenceState;                              		// 0x0008 (0x0004) [0x0000000000001000]              ( CPF_Native )
-	int                                                NextBehavior;                                     		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              ActivateTime;                                     		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              BehaviorStartedTime;                              		// 0x0014 (0x0004) [0x0000000000000000]              
+	int                                                NextBehavior;                                     		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              ActivateTime;                                     		// 0x0010 (0x0004) [0x0000000000000000]
+	float                                              BehaviorStartedTime;                              		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.BehaviorEventState
 // 0x000C
 struct FBehaviorEventState
 {
-	int                                                TriggerCount;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              LastTriggerTime;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UBehaviorEventFilterBase*                    FilterObject;                                     		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                TriggerCount;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              LastTriggerTime;                                  		// 0x0004 (0x0004) [0x0000000000000000]
+	class UBehaviorEventFilterBase*                    FilterObject;                                     		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.BehaviorVariableState
 // 0x0010
 struct FBehaviorVariableState
 {
-	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned char                                      Type;                                             		// 0x0008 (0x0001) [0x0000000000000000]              
+	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned char                                      Type;                                             		// 0x0008 (0x0001) [0x0000000000000000]
 	struct FBehaviorVariableValueUnion_Mirror          Value;                                            		// 0x000C (0x0004) [0x0000000000801000]              ( CPF_Native | CPF_NoExport )
 };
 
@@ -608,10 +608,10 @@ struct FBehaviorVariableState
 // 0x0018
 struct FBehaviorSequenceState
 {
-	unsigned long                                      bIsEnabled : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                ProvidersIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                SequencesDataIndex;                               		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                SequenceEnabledBitIndex;                          		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bIsEnabled : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                ProvidersIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                SequencesDataIndex;                               		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                SequenceEnabledBitIndex;                          		// 0x000C (0x0004) [0x0000000000000000]
 	struct FPointer                                    EventStateHead;                                   		// 0x0010 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FPointer                                    VariableStateHead;                                		// 0x0014 (0x0004) [0x0000000000001000]              ( CPF_Native )
 };
@@ -620,13 +620,13 @@ struct FBehaviorSequenceState
 // 0x001C
 struct FBehaviorProcess
 {
-	class UObject*                                     Owner;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ProcessID;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                SequenceEnabledBitField;                          		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned char                                      ProcessState;                                     		// 0x000C (0x0001) [0x0000000000000000]              
-	unsigned char                                      NextSequenceEnabledBitIndexToUse;                 		// 0x000D (0x0001) [0x0000000000000000]              
-	unsigned char                                      bSupportsReplicatedSequenceState;                 		// 0x000E (0x0001) [0x0000000000000000]              
-	unsigned char                                      NumPendingProviderRemovalRequests;                		// 0x000F (0x0001) [0x0000000000000000]              
+	class UObject*                                     Owner;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ProcessID;                                        		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                SequenceEnabledBitField;                          		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned char                                      ProcessState;                                     		// 0x000C (0x0001) [0x0000000000000000]
+	unsigned char                                      NextSequenceEnabledBitIndexToUse;                 		// 0x000D (0x0001) [0x0000000000000000]
+	unsigned char                                      bSupportsReplicatedSequenceState;                 		// 0x000E (0x0001) [0x0000000000000000]
+	unsigned char                                      NumPendingProviderRemovalRequests;                		// 0x000F (0x0001) [0x0000000000000000]
 	struct FChunkedList_Mirror                         Sequences;                                        		// 0x0010 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FChunkedList_Mirror                         Events;                                           		// 0x0014 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FChunkedList_Mirror                         Variables;                                        		// 0x0018 (0x0004) [0x0000000000001000]              ( CPF_Native )
@@ -636,64 +636,64 @@ struct FBehaviorProcess
 // 0x0008
 struct FProviderRemovalRequest
 {
-	struct FBehaviorConsumerHandle                     ConsumerHandle;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ProvidersIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
+	struct FBehaviorConsumerHandle                     ConsumerHandle;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ProvidersIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.BehaviorKernelArrayStats
 // 0x0010
 struct FBehaviorKernelArrayStats
 {
-	int                                                UsedSlots;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                UnusedSlots;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                PeakUsage;                                        		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                ContainerSlack;                                   		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                UsedSlots;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                UnusedSlots;                                      		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                PeakUsage;                                        		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                ContainerSlack;                                   		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorKernel.BehaviorKernelStats
 // 0x0068
 struct FBehaviorKernelStats
 {
-	int                                                NumProcessesCreated;                              		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                NumThreadsCreated;                                		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                NumWaitingThreads;                                		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                NumEventsActivated;                               		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                NumEventsIgnored;                                 		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                NumBehaviorsRun;                                  		// 0x0014 (0x0004) [0x0000000000000000]              
-	struct FBehaviorKernelArrayStats                   ProcessListStats;                                 		// 0x0018 (0x0010) [0x0000000000000000]              
-	struct FBehaviorKernelArrayStats                   ProviderListStats;                                		// 0x0028 (0x0010) [0x0000000000000000]              
-	struct FBehaviorKernelArrayStats                   ObjectVariablesListStats;                         		// 0x0038 (0x0010) [0x0000000000000000]              
-	struct FBehaviorKernelArrayStats                   DynamicBehaviorsListStats;                        		// 0x0048 (0x0010) [0x0000000000000000]              
-	int                                                ProvidersIndexFreeListLength;                     		// 0x0058 (0x0004) [0x0000000000000000]              
-	int                                                ObjectVariablesFreeListLength;                    		// 0x005C (0x0004) [0x0000000000000000]              
-	int                                                TotalMemoryUsed;                                  		// 0x0060 (0x0004) [0x0000000000000000]              
-	int                                                MemoryUsedBySlack;                                		// 0x0064 (0x0004) [0x0000000000000000]              
+	int                                                NumProcessesCreated;                              		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                NumThreadsCreated;                                		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                NumWaitingThreads;                                		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                NumEventsActivated;                               		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                NumEventsIgnored;                                 		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                NumBehaviorsRun;                                  		// 0x0014 (0x0004) [0x0000000000000000]
+	struct FBehaviorKernelArrayStats                   ProcessListStats;                                 		// 0x0018 (0x0010) [0x0000000000000000]
+	struct FBehaviorKernelArrayStats                   ProviderListStats;                                		// 0x0028 (0x0010) [0x0000000000000000]
+	struct FBehaviorKernelArrayStats                   ObjectVariablesListStats;                         		// 0x0038 (0x0010) [0x0000000000000000]
+	struct FBehaviorKernelArrayStats                   DynamicBehaviorsListStats;                        		// 0x0048 (0x0010) [0x0000000000000000]
+	int                                                ProvidersIndexFreeListLength;                     		// 0x0058 (0x0004) [0x0000000000000000]
+	int                                                ObjectVariablesFreeListLength;                    		// 0x005C (0x0004) [0x0000000000000000]
+	int                                                TotalMemoryUsed;                                  		// 0x0060 (0x0004) [0x0000000000000000]
+	int                                                MemoryUsedBySlack;                                		// 0x0064 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.IBehaviorConsumer.ReplicatedBehaviorConsumerState
 // 0x000C
 struct FReplicatedBehaviorConsumerState
 {
-	unsigned long                                      bIsProcessSuspended : 1;                          		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                BehaviorSequenceEnabledFlags;                     		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bNeedToApplyThisState : 1;                        		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bIsProcessSuspended : 1;                          		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                BehaviorSequenceEnabledFlags;                     		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      bNeedToApplyThisState : 1;                        		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.IBehaviorConsumer.ReplicatedBehaviorEvent
 // 0x0004
 struct FReplicatedBehaviorEvent
 {
-	unsigned char                                      SequenceIndex;                                    		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      EventCounter;                                     		// 0x0001 (0x0001) [0x0000000000000000]              
-	unsigned char                                      EventIndex;                                       		// 0x0002 (0x0001) [0x0000000000000000]              
-	unsigned char                                      EventOutput;                                      		// 0x0003 (0x0001) [0x0000000000000000]              
+	unsigned char                                      SequenceIndex;                                    		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      EventCounter;                                     		// 0x0001 (0x0001) [0x0000000000000000]
+	unsigned char                                      EventIndex;                                       		// 0x0002 (0x0001) [0x0000000000000000]
+	unsigned char                                      EventOutput;                                      		// 0x0003 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.BehaviorSequenceCustomEnableCondition.LinkedBehaviorSequence
 // 0x0008
 struct FLinkedBehaviorSequence
 {
-	struct FBehaviorConsumerHandle                     ConsumerHandle;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
+	struct FBehaviorConsumerHandle                     ConsumerHandle;                                   		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FPointer                                    SequenceState;                                    		// 0x0004 (0x0004) [0x0000000000001000]              ( CPF_Native )
 };
 
@@ -711,13 +711,13 @@ struct FBehaviorTriggerMessageStruct
 // 0x0040
 struct FExposureCacheStruct
 {
-	struct FName                                       FromPawnName;                                     		// 0x0000 (0x0008) [0x0000000000100000]              
-	struct FName                                       ToActorName;                                      		// 0x0008 (0x0008) [0x0000000000100000]              
-	float                                              TimeCached;                                       		// 0x0010 (0x0004) [0x0000000000100000]              
-	float                                              NextUpdateTime;                                   		// 0x0014 (0x0004) [0x0000000000100000]              
-	float                                              Exposure;                                         		// 0x0018 (0x0004) [0x0000000000100000]              
-	struct FVector                                     FromLoc;                                          		// 0x001C (0x000C) [0x0000000000100000]              
-	struct FVector                                     ToLoc;                                            		// 0x0028 (0x000C) [0x0000000000100000]              
+	struct FName                                       FromPawnName;                                     		// 0x0000 (0x0008) [0x0000000000100000]
+	struct FName                                       ToActorName;                                      		// 0x0008 (0x0008) [0x0000000000100000]
+	float                                              TimeCached;                                       		// 0x0010 (0x0004) [0x0000000000100000]
+	float                                              NextUpdateTime;                                   		// 0x0014 (0x0004) [0x0000000000100000]
+	float                                              Exposure;                                         		// 0x0018 (0x0004) [0x0000000000100000]
+	struct FVector                                     FromLoc;                                          		// 0x001C (0x000C) [0x0000000000100000]
+	struct FVector                                     ToLoc;                                            		// 0x0028 (0x000C) [0x0000000000100000]
 	TArray< struct FVantageSpot >                      Vantage;                                          		// 0x0034 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
 };
 
@@ -725,22 +725,22 @@ struct FExposureCacheStruct
 // 0x001D
 struct FExposureUpdateStruct
 {
-	class AGearboxPawn*                                FromPawn;                                         		// 0x0000 (0x0004) [0x0000000000100000]              
-	class AActor*                                      ToActor;                                          		// 0x0004 (0x0004) [0x0000000000100000]              
-	float                                              TimeRequested;                                    		// 0x0008 (0x0004) [0x0000000000100000]              
-	float                                              Exposure;                                         		// 0x000C (0x0004) [0x0000000000100000]              
+	class AGearboxPawn*                                FromPawn;                                         		// 0x0000 (0x0004) [0x0000000000100000]
+	class AActor*                                      ToActor;                                          		// 0x0004 (0x0004) [0x0000000000100000]
+	float                                              TimeRequested;                                    		// 0x0008 (0x0004) [0x0000000000100000]
+	float                                              Exposure;                                         		// 0x000C (0x0004) [0x0000000000100000]
 	TArray< struct FVantageSpot >                      Vantage;                                          		// 0x0010 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      ShouldRemove;                                     		// 0x001C (0x0001) [0x0000000000100000]              
+	unsigned char                                      ShouldRemove;                                     		// 0x001C (0x0001) [0x0000000000100000]
 };
 
 // ScriptStruct GearboxFramework.ExposureUtilityFixedCost.BucketStruct
 // 0x001C
 struct FBucketStruct
 {
-	int                                                NdxToStartCheckFrom;                              		// 0x0000 (0x0004) [0x0000000000100000]              
-	float                                              DistanceSquared;                                  		// 0x0004 (0x0004) [0x0000000000100000]              
-	int                                                MaxLineChecksPerFrame;                            		// 0x0008 (0x0004) [0x0000000000100000]              
-	int                                                MaxIterationsPerFrame;                            		// 0x000C (0x0004) [0x0000000000100000]              
+	int                                                NdxToStartCheckFrom;                              		// 0x0000 (0x0004) [0x0000000000100000]
+	float                                              DistanceSquared;                                  		// 0x0004 (0x0004) [0x0000000000100000]
+	int                                                MaxLineChecksPerFrame;                            		// 0x0008 (0x0004) [0x0000000000100000]
+	int                                                MaxIterationsPerFrame;                            		// 0x000C (0x0004) [0x0000000000100000]
 	TArray< struct FExposureUpdateStruct >             Exposures;                                        		// 0x0010 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
 };
 
@@ -748,12 +748,12 @@ struct FBucketStruct
 // 0x0028
 struct FPointExposureData
 {
-	class AActor*                                      Looker;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector                                     Point;                                            		// 0x0004 (0x000C) [0x0000000000000000]              
-	struct FVector                                     Point2;                                           		// 0x0010 (0x000C) [0x0000000000000000]              
-	float                                              Exposure;                                         		// 0x001C (0x0004) [0x0000000000000000]              
-	float                                              LastCheckTime;                                    		// 0x0020 (0x0004) [0x0000000000000000]              
-	float                                              LastUpdateTime;                                   		// 0x0024 (0x0004) [0x0000000000000000]              
+	class AActor*                                      Looker;                                           		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector                                     Point;                                            		// 0x0004 (0x000C) [0x0000000000000000]
+	struct FVector                                     Point2;                                           		// 0x0010 (0x000C) [0x0000000000000000]
+	float                                              Exposure;                                         		// 0x001C (0x0004) [0x0000000000000000]
+	float                                              LastCheckTime;                                    		// 0x0020 (0x0004) [0x0000000000000000]
+	float                                              LastUpdateTime;                                   		// 0x0024 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.FeatherBoneBlendDefinition.FeatherBoneBlendData
@@ -768,13 +768,13 @@ struct FFeatherBoneBlendData
 // 0x0019
 struct FFiringBehaviorBurstInfo
 {
-	class AGearboxPawn*                                Instigator;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	class AWeapon*                                     InstigatorWeapon;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
-	class AActor*                                      TargetActor;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                NumShots;                                         		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              RefireRate;                                       		// 0x0010 (0x0004) [0x0000000000000000]              
-	class UMindTargetInfo*                             TargetInfo;                                       		// 0x0014 (0x0004) [0x0000000000000000]              
-	unsigned char                                      FireType;                                         		// 0x0018 (0x0001) [0x0000000000000000]              
+	class AGearboxPawn*                                Instigator;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	class AWeapon*                                     InstigatorWeapon;                                 		// 0x0004 (0x0004) [0x0000000000000000]
+	class AActor*                                      TargetActor;                                      		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                NumShots;                                         		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              RefireRate;                                       		// 0x0010 (0x0004) [0x0000000000000000]
+	class UMindTargetInfo*                             TargetInfo;                                       		// 0x0014 (0x0004) [0x0000000000000000]
+	unsigned char                                      FireType;                                         		// 0x0018 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.FiringBehaviorDefinition.ConditionalPattern
@@ -805,17 +805,17 @@ struct FFlagEvalORConnector
 // 0x000C
 struct Fs_actorList
 {
-	struct FName                                       LevelName;                                        		// 0x0000 (0x0008) [0x0000000000000000]              
-	class AActor*                                      Actor;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       LevelName;                                        		// 0x0000 (0x0008) [0x0000000000000000]
+	class AActor*                                      Actor;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.SparkTypes.SparkResult
 // 0x0018
 struct FSparkResult
 {
-	unsigned long                                      RequestSucceeded : 1;                             		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned char                                      ErrorCode;                                        		// 0x0004 (0x0001) [0x0000000000000000]              
-	int                                                HttpStatusCode;                                   		// 0x0008 (0x0004) [0x0000000000000000]              
+	unsigned long                                      RequestSucceeded : 1;                             		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned char                                      ErrorCode;                                        		// 0x0004 (0x0001) [0x0000000000000000]
+	int                                                HttpStatusCode;                                   		// 0x0008 (0x0004) [0x0000000000000000]
 	TArray< unsigned char >                            ResponseBody;                                     		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -823,26 +823,26 @@ struct FSparkResult
 // 0x0038
 struct FHttpParameters
 {
-	class USparkServiceConfiguration*                  ServiceConfiguration;                             		// 0x0000 (0x0004) [0x0000000000000000]              
+	class USparkServiceConfiguration*                  ServiceConfiguration;                             		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FString                                     SubService;                                       		// 0x0004 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      ContentType;                                      		// 0x0010 (0x0001) [0x0000000000000000]              
+	unsigned char                                      ContentType;                                      		// 0x0010 (0x0001) [0x0000000000000000]
 	struct FString                                     CustomContentType;                                		// 0x0014 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      AcceptsType;                                      		// 0x0020 (0x0001) [0x0000000000000000]              
+	unsigned char                                      AcceptsType;                                      		// 0x0020 (0x0001) [0x0000000000000000]
 	struct FString                                     CustomAcceptsType;                                		// 0x0024 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      Method;                                           		// 0x0030 (0x0001) [0x0000000000000000]              
-	unsigned long                                      IsResponseDesired : 1;                            		// 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned char                                      Method;                                           		// 0x0030 (0x0001) [0x0000000000000000]
+	unsigned long                                      IsResponseDesired : 1;                            		// 0x0034 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.GearboxAccountData.EntitlementResult
 // 0x0024
 struct FEntitlementResult
 {
-	struct FName                                       Identifier;                                       		// 0x0000 (0x0008) [0x0000000000100000]              
+	struct FName                                       Identifier;                                       		// 0x0000 (0x0008) [0x0000000000100000]
 	struct FString                                     Payload;                                          		// 0x0008 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	int                                                Id;                                               		// 0x0014 (0x0004) [0x0000000000100000]              
-	unsigned long                                      Consumable : 1;                                   		// 0x0018 (0x0004) [0x0000000000100000] [0x00000001] 
-	int                                                Consumed;                                         		// 0x001C (0x0004) [0x0000000000100000]              
-	int                                                ConsumableAmount;                                 		// 0x0020 (0x0004) [0x0000000000100000]              
+	int                                                Id;                                               		// 0x0014 (0x0004) [0x0000000000100000]
+	unsigned long                                      Consumable : 1;                                   		// 0x0018 (0x0004) [0x0000000000100000] [0x00000001]
+	int                                                Consumed;                                         		// 0x001C (0x0004) [0x0000000000100000]
+	int                                                ConsumableAmount;                                 		// 0x0020 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct GearboxFramework.GearboxAccountData.OfferResult
@@ -851,8 +851,8 @@ struct FOfferResult
 {
 	struct FString                                     TitleEfigs;                                       		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     DescriptionEfigs;                                 		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	int                                                Id;                                               		// 0x0018 (0x0004) [0x0000000000100000]              
-	unsigned long                                      Notified : 1;                                     		// 0x001C (0x0004) [0x0000000000100000] [0x00000001] 
+	int                                                Id;                                               		// 0x0018 (0x0004) [0x0000000000100000]
+	unsigned long                                      Notified : 1;                                     		// 0x001C (0x0004) [0x0000000000100000] [0x00000001]
 	struct FString                                     DateUnlocked;                                     		// 0x0020 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -868,8 +868,8 @@ struct FServiceParameterResult
 // 0x001C
 struct FServiceResult
 {
-	struct FName                                       ServiceName;                                      		// 0x0000 (0x0008) [0x0000000000100000]              
-	struct FName                                       ConfigurationGroup;                               		// 0x0008 (0x0008) [0x0000000000100000]              
+	struct FName                                       ServiceName;                                      		// 0x0000 (0x0008) [0x0000000000100000]
+	struct FName                                       ConfigurationGroup;                               		// 0x0008 (0x0008) [0x0000000000100000]
 	TArray< struct FServiceParameterResult >           Parameters;                                       		// 0x0010 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -884,11 +884,11 @@ struct FArchwayResult
 	TArray< struct FEntitlementResult >                Entitlements;                                     		// 0x0030 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	TArray< struct FOfferResult >                      Offers;                                           		// 0x003C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	TArray< struct FServiceResult >                    Services;                                         		// 0x0048 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned long                                      InProgress : 1;                                   		// 0x0054 (0x0004) [0x0000000000100000] [0x00000001] 
-	unsigned long                                      Success : 1;                                      		// 0x0054 (0x0004) [0x0000000000100000] [0x00000002] 
-	unsigned long                                      DisableSpark : 1;                                 		// 0x0054 (0x0004) [0x0000000000100000] [0x00000004] 
-	unsigned long                                      TimeOut : 1;                                      		// 0x0054 (0x0004) [0x0000000000100000] [0x00000008] 
-	unsigned long                                      HasShiftAccount : 1;                              		// 0x0054 (0x0004) [0x0000000000100000] [0x00000010] 
+	unsigned long                                      InProgress : 1;                                   		// 0x0054 (0x0004) [0x0000000000100000] [0x00000001]
+	unsigned long                                      Success : 1;                                      		// 0x0054 (0x0004) [0x0000000000100000] [0x00000002]
+	unsigned long                                      DisableSpark : 1;                                 		// 0x0054 (0x0004) [0x0000000000100000] [0x00000004]
+	unsigned long                                      TimeOut : 1;                                      		// 0x0054 (0x0004) [0x0000000000100000] [0x00000008]
+	unsigned long                                      HasShiftAccount : 1;                              		// 0x0054 (0x0004) [0x0000000000100000] [0x00000010]
 	struct FString                                     EmergencyMessage;                                 		// 0x0058 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -929,13 +929,13 @@ struct FTimedAnimBehaviorEvent : FSpecializedBehaviorEvent
 // 0x0018
 struct FCoverSpotInfo
 {
-	class AActor*                                      TheCoverActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                CoverSlotIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FVector                                     CoverSpotWorldLocation;                           		// 0x0008 (0x000C) [0x0000000000000000]              
-	unsigned char                                      CoverHeight;                                      		// 0x0014 (0x0001) [0x0000000000000000]              
-	unsigned char                                      ExtendedInfo1;                                    		// 0x0015 (0x0001) [0x0000000000000000]              
-	unsigned char                                      ExtendedInfo2;                                    		// 0x0016 (0x0001) [0x0000000000000000]              
-	unsigned char                                      ExtendedInfo3;                                    		// 0x0017 (0x0001) [0x0000000000000000]              
+	class AActor*                                      TheCoverActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                CoverSlotIndex;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FVector                                     CoverSpotWorldLocation;                           		// 0x0008 (0x000C) [0x0000000000000000]
+	unsigned char                                      CoverHeight;                                      		// 0x0014 (0x0001) [0x0000000000000000]
+	unsigned char                                      ExtendedInfo1;                                    		// 0x0015 (0x0001) [0x0000000000000000]
+	unsigned char                                      ExtendedInfo2;                                    		// 0x0016 (0x0001) [0x0000000000000000]
+	unsigned char                                      ExtendedInfo3;                                    		// 0x0017 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxDialogInterface.GearboxDialogData
@@ -944,7 +944,7 @@ struct FGearboxDialogData
 {
 	class UGearboxDialogNameTag*                       NameTag;                                          		// 0x0000 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UAkEvent*                                    TalkAkEvent;                                      		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                AkAudioUniqueID;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                AkAudioUniqueID;                                  		// 0x0008 (0x0004) [0x0000000000000000]
 	float                                              Pitch;                                            		// 0x000C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 };
 
@@ -952,48 +952,48 @@ struct FGearboxDialogData
 // 0x0014
 struct FGearboxDialogReplicatedData
 {
-	float                                              Pitch;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UAkEvent*                                    TalkAkEvent;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                AkAudioUniqueID;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
-	class UGearboxDialogAct_Talk*                      TalkAct;                                          		// 0x000C (0x0004) [0x0000000000000000]              
-	class UGearboxDialogEventTag*                      EventTag;                                         		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              Pitch;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	class UAkEvent*                                    TalkAkEvent;                                      		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                AkAudioUniqueID;                                  		// 0x0008 (0x0004) [0x0000000000000000]
+	class UGearboxDialogAct_Talk*                      TalkAct;                                          		// 0x000C (0x0004) [0x0000000000000000]
+	class UGearboxDialogEventTag*                      EventTag;                                         		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxDialogGroup.OutputLinkToStruct
 // 0x000C
 struct FOutputLinkToStruct
 {
-	int                                                FromNodeID;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                LinkNumber;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                ToNodeID;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                FromNodeID;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                LinkNumber;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                ToNodeID;                                         		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxDialogGroup.DialogEventData
 // 0x000C
 struct FDialogEventData
 {
-	class UGearboxDialogEventTag*                      Tag;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bEnabled : 1;                                     		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
-	class UGearboxDialogAction*                        OutputAction;                                     		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UGearboxDialogEventTag*                      Tag;                                              		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned long                                      bEnabled : 1;                                     		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001]
+	class UGearboxDialogAction*                        OutputAction;                                     		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxDialogGroup.DialogEventInfo
 // 0x0008
 struct FDialogEventInfo
 {
-	class UGearboxDialogEvent*                         Event;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                NodeID;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UGearboxDialogEvent*                         Event;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                NodeID;                                           		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxDialogGroup.TalkActData
 // 0x001C
 struct FTalkActData
 {
-	float                                              OutputDelay;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
+	float                                              OutputDelay;                                      		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FGearboxDialogData >                TalkData;                                         		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UGearboxDialogVariable*                      TalkerVariable;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	class UGearboxDialogAction*                        OutputAction;                                     		// 0x0014 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bInstigatorTalker : 1;                            		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UGearboxDialogVariable*                      TalkerVariable;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	class UGearboxDialogAction*                        OutputAction;                                     		// 0x0014 (0x0004) [0x0000000000000000]
+	unsigned long                                      bInstigatorTalker : 1;                            		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.GFxMovieState.MovieStateData
@@ -1018,8 +1018,8 @@ struct FMovieStateStruct
 // 0x0010
 struct FReplicatedNounAttributeState
 {
-	struct FName                                       NounName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       NounName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 	unsigned long                                      bOnlyRelevantToOwner : 1;                         		// 0x000C (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
 };
 
@@ -1027,28 +1027,28 @@ struct FReplicatedNounAttributeState
 // 0x0024
 struct FNounAttributeState
 {
-	struct FName                                       NounName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              BaseValue;                                        		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FName                                       NounName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              BaseValue;                                        		// 0x000C (0x0004) [0x0000000000000000]
 	TArray< class UAttributeModifier* >                ModifierStack;                                    		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      ReplicationStrategy;                              		// 0x001C (0x0001) [0x0000000000000000]              
-	int                                                IndexInReplicationArray;                          		// 0x0020 (0x0004) [0x0000000000000000]              
+	unsigned char                                      ReplicationStrategy;                              		// 0x001C (0x0001) [0x0000000000000000]
+	int                                                IndexInReplicationArray;                          		// 0x0020 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RuleEngine.DynamicFlagInstanceData
 // 0x0014
 struct FDynamicFlagInstanceData
 {
-	struct FFlag                                       DynamicFlag;                                      		// 0x0000 (0x0010) [0x0000000000000000]              
-	float                                              LastEvaluatedExpressionTime;                      		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FFlag                                       DynamicFlag;                                      		// 0x0000 (0x0010) [0x0000000000000000]
+	float                                              LastEvaluatedExpressionTime;                      		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RuleEngine.EventRecord
 // 0x0008
 struct FEventRecord
 {
-	class URuleEventDef*                               EventDefinition;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UObject*                                     OtherEventParticipantObject;                      		// 0x0004 (0x0004) [0x0000000000000000]              
+	class URuleEventDef*                               EventDefinition;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	class UObject*                                     OtherEventParticipantObject;                      		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RuleEngine.RuleSetReference
@@ -1072,114 +1072,114 @@ struct FTargetIteratorData
 struct FPathFindData
 {
 	struct FGBXNavMeshPath                             Path;                                             		// 0x0000 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FBasedPosition                              FinalDest;                                        		// 0x0010 (0x0034) [0x0000000000000000]              
-	unsigned long                                      bFinalDestIsActor : 1;                            		// 0x0044 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              MaxRangeToDest;                                   		// 0x0048 (0x0004) [0x0000000000000000]              
-	struct FGBXNavMeshPolyRef                          AnchorPoly;                                       		// 0x004C (0x0008) [0x0000000000000000]              
-	unsigned long                                      bCanArriveEarly : 1;                              		// 0x0054 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FBasedPosition                              FinalDest;                                        		// 0x0010 (0x0034) [0x0000000000000000]
+	unsigned long                                      bFinalDestIsActor : 1;                            		// 0x0044 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              MaxRangeToDest;                                   		// 0x0048 (0x0004) [0x0000000000000000]
+	struct FGBXNavMeshPolyRef                          AnchorPoly;                                       		// 0x004C (0x0008) [0x0000000000000000]
+	unsigned long                                      bCanArriveEarly : 1;                              		// 0x0054 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.SpecialMoveInterface.ReplicatedSpecialMoveData
 // 0x0014
 struct FReplicatedSpecialMoveData
 {
-	class UObject*                                     Data;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              PlayRateScale;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned char                                      DirtyCounter;                                     		// 0x000C (0x0001) [0x0000000000000000]              
-	class USpecialMoveDefinition*                      SMD;                                              		// 0x0010 (0x0004) [0x0000000000000000]              
+	class UObject*                                     Data;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              PlayRateScale;                                    		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned char                                      DirtyCounter;                                     		// 0x000C (0x0001) [0x0000000000000000]
+	class USpecialMoveDefinition*                      SMD;                                              		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.SnapshotRecord.RuleInfo
 // 0x0044
 struct FRuleInfo
 {
-	struct FName                                       RuleName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FName                                       RuleName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
 	struct FString                                     RuleNameString;                                   		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     RunningSequence;                                  		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     LatentAction;                                     		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bIsRunning : 1;                                   		// 0x002C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bHasFinishedCode : 1;                             		// 0x002C (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bIsDisabled : 1;                                  		// 0x002C (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bIsContainer : 1;                                 		// 0x002C (0x0004) [0x0000000000000000] [0x00000008] 
+	unsigned long                                      bIsRunning : 1;                                   		// 0x002C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bHasFinishedCode : 1;                             		// 0x002C (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bIsDisabled : 1;                                  		// 0x002C (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bIsContainer : 1;                                 		// 0x002C (0x0004) [0x0000000000000000] [0x00000008]
 	TArray< struct FString >                           ColorCodedStrings;                                		// 0x0030 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ContainerRuleStartNdx;                            		// 0x003C (0x0004) [0x0000000000000000]              
-	int                                                ContainerRuleNumSubRules;                         		// 0x0040 (0x0004) [0x0000000000000000]              
+	int                                                ContainerRuleStartNdx;                            		// 0x003C (0x0004) [0x0000000000000000]
+	int                                                ContainerRuleNumSubRules;                         		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.SnapshotRecord.IconData
 // 0x0014
 struct FIconData
 {
-	float                                              U;                                                		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              V;                                                		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              UL;                                               		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              VL;                                               		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              Scale;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              U;                                                		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              V;                                                		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              UL;                                               		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              VL;                                               		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              Scale;                                            		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.AwarenessInfo
 // 0x0020
 struct FAwarenessInfo
 {
-	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000000]              
-	float                                              Radius;                                           		// 0x000C (0x0004) [0x0000000000000000]              
-	struct FName                                       AwarenessZoneName;                                		// 0x0010 (0x0008) [0x0000000000000000]              
-	unsigned long                                      IsInfinitelyFarAway : 1;                          		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FColor                                      ZoneColor;                                        		// 0x001C (0x0004) [0x0000000000000000]              
+	struct FVector                                     Location;                                         		// 0x0000 (0x000C) [0x0000000000000000]
+	float                                              Radius;                                           		// 0x000C (0x0004) [0x0000000000000000]
+	struct FName                                       AwarenessZoneName;                                		// 0x0010 (0x0008) [0x0000000000000000]
+	unsigned long                                      IsInfinitelyFarAway : 1;                          		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
+	struct FColor                                      ZoneColor;                                        		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.LastVisibleInfo
 // 0x0018
 struct FLastVisibleInfo
 {
-	struct FVector                                     LastVisibleLocation;                              		// 0x0000 (0x000C) [0x0000000000000000]              
-	struct FVector                                     CurrentLocation;                                  		// 0x000C (0x000C) [0x0000000000000000]              
+	struct FVector                                     LastVisibleLocation;                              		// 0x0000 (0x000C) [0x0000000000000000]
+	struct FVector                                     CurrentLocation;                                  		// 0x000C (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.DebugExposure
 // 0x0018
 struct FDebugExposure
 {
-	float                                              TargetExposure;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              MyExposure;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FVector                                     InWorldLocation;                                  		// 0x0008 (0x000C) [0x0000000000000000]              
-	unsigned long                                      IsPlayerInfo : 1;                                 		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              TargetExposure;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              MyExposure;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FVector                                     InWorldLocation;                                  		// 0x0008 (0x000C) [0x0000000000000000]
+	unsigned long                                      IsPlayerInfo : 1;                                 		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.ViewConeInfo
 // 0x0028
 struct FViewConeInfo
 {
-	struct FVector                                     ConeOrigin;                                       		// 0x0000 (0x000C) [0x0000000000000000]              
-	struct FVector                                     ConeDirection;                                    		// 0x000C (0x000C) [0x0000000000000000]              
-	float                                              ConeAngle;                                        		// 0x0018 (0x0004) [0x0000000000000000]              
-	float                                              ConeLength;                                       		// 0x001C (0x0004) [0x0000000000000000]              
-	struct FColor                                      ConeColor;                                        		// 0x0020 (0x0004) [0x0000000000000000]              
-	unsigned long                                      Has360DegreesAwareness : 1;                       		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FVector                                     ConeOrigin;                                       		// 0x0000 (0x000C) [0x0000000000000000]
+	struct FVector                                     ConeDirection;                                    		// 0x000C (0x000C) [0x0000000000000000]
+	float                                              ConeAngle;                                        		// 0x0018 (0x0004) [0x0000000000000000]
+	float                                              ConeLength;                                       		// 0x001C (0x0004) [0x0000000000000000]
+	struct FColor                                      ConeColor;                                        		// 0x0020 (0x0004) [0x0000000000000000]
+	unsigned long                                      Has360DegreesAwareness : 1;                       		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.CoverDebugScoringData
 // 0x000C
 struct FCoverDebugScoringData
 {
-	struct FName                                       PriorityName;                                     		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       PriorityName;                                     		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.CoverDebugInfo
 // 0x0050
 struct FCoverDebugInfo
 {
-	struct FName                                       CoverRegionName;                                  		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              Distance;                                         		// 0x000C (0x0004) [0x0000000000000000]              
-	unsigned long                                      IsACandidate : 1;                                 		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      IsBestCandidate : 1;                              		// 0x0010 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FName                                       CoverRegionName;                                  		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              Score;                                            		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              Distance;                                         		// 0x000C (0x0004) [0x0000000000000000]
+	unsigned long                                      IsACandidate : 1;                                 		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      IsBestCandidate : 1;                              		// 0x0010 (0x0004) [0x0000000000000000] [0x00000002]
 	struct FString                                     FailString;                                       		// 0x0014 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FVector                                     LeftEndPoint;                                     		// 0x0020 (0x000C) [0x0000000000000000]              
-	struct FVector                                     RightEndPoint;                                    		// 0x002C (0x000C) [0x0000000000000000]              
-	struct FVector                                     CoverDirection;                                   		// 0x0038 (0x000C) [0x0000000000000000]              
+	struct FVector                                     LeftEndPoint;                                     		// 0x0020 (0x000C) [0x0000000000000000]
+	struct FVector                                     RightEndPoint;                                    		// 0x002C (0x000C) [0x0000000000000000]
+	struct FVector                                     CoverDirection;                                   		// 0x0038 (0x000C) [0x0000000000000000]
 	TArray< struct FCoverDebugScoringData >            ScoringInfo;                                      		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -1187,20 +1187,20 @@ struct FCoverDebugInfo
 // 0x001C
 struct FTargetPriorityInfo
 {
-	struct FName                                       TargetName;                                       		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FName                                       TargetName;                                       		// 0x0000 (0x0008) [0x0000000000000000]
 	struct FString                                     ShortName;                                        		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              Value;                                            		// 0x0014 (0x0004) [0x0000000000000000]              
-	struct FColor                                      BarColor;                                         		// 0x0018 (0x0004) [0x0000000000000000]              
+	float                                              Value;                                            		// 0x0014 (0x0004) [0x0000000000000000]
+	struct FColor                                      BarColor;                                         		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxPawnSnapshotRecord.TargetDebugDatum
 // 0x0020
 struct FTargetDebugDatum
 {
-	unsigned long                                      bCurrent : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsPlayer : 1;                                    		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bCurrent : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsPlayer : 1;                                    		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002]
 	struct FString                                     TargetName;                                       		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              TotalPriority;                                    		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              TotalPriority;                                    		// 0x0010 (0x0004) [0x0000000000000000]
 	TArray< struct FTargetPriorityInfo >               PriorityData;                                     		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -1208,7 +1208,7 @@ struct FTargetDebugDatum
 // 0x0014
 struct FAIHoldDebugData
 {
-	struct FName                                       HoldName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FName                                       HoldName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
 	struct FString                                     HoldTag;                                          		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -1231,11 +1231,11 @@ struct FGearboxViewShakeInfo
 // 0x0014
 struct FStepConfiguration
 {
-	int                                                FirstAttemptDelay;                                		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                BaseRetrySeconds;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              RetryMultiplier;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                MaxRetryAttempts;                                 		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                RetryJitter;                                      		// 0x0010 (0x0004) [0x0000000000000000]              
+	int                                                FirstAttemptDelay;                                		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                BaseRetrySeconds;                                 		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              RetryMultiplier;                                  		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                MaxRetryAttempts;                                 		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                RetryJitter;                                      		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxRenderTextureManager.ThumbnailRenderData
@@ -1245,14 +1245,14 @@ struct FThumbnailRenderData
 	struct FName                                       Context;                                          		// 0x0000 (0x0008) [0x0000000000000002]              ( CPF_Const )
 	class UTextureRenderTarget2D*                      RenderTarget;                                     		// 0x0008 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	class UTexture*                                    ResultTexture;                                    		// 0x000C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	unsigned char                                      UpdateType;                                       		// 0x0010 (0x0001) [0x0000000000000000]              
+	unsigned char                                      UpdateType;                                       		// 0x0010 (0x0001) [0x0000000000000000]
 	class UMeshComponent*                              Mesh;                                             		// 0x0014 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
 	int                                                TextureSizeX;                                     		// 0x0018 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                TextureSizeY;                                     		// 0x001C (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                SizeX;                                            		// 0x0020 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                SizeY;                                            		// 0x0024 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	TArray< class UTexture* >                          ReferencedTextures;                               		// 0x0028 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              StopStreamTexturesTime;                           		// 0x0034 (0x0004) [0x0000000000000000]              
+	float                                              StopStreamTexturesTime;                           		// 0x0034 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GearboxRenderTextureManager.ThumbnailLightData
@@ -1320,7 +1320,7 @@ struct FGestaltPartPermutation
 struct FMovieInstanceArray
 {
 	TArray< class UGearboxGFxMovie* >                  Movies;                                           		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	class UGearboxGFxMovie*                            PoolParent;                                       		// 0x000C (0x0004) [0x0000000000000000]              
+	class UGearboxGFxMovie*                            PoolParent;                                       		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GFxMovieDefinition.GFxMenuLink
@@ -1347,16 +1347,16 @@ struct FHUDAnchorPoint
 {
 	unsigned char                                      MoviePoint;                                       		// 0x0000 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      ScreenPoint;                                      		// 0x0001 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FHUDCoordValue                              Offset[ 0x2 ];                                    		// 0x0004 (0x0020) [0x0000000000000001]              ( CPF_Edit )
+	struct FHUDCoordValue                              Offset[0x2];                                    		// 0x0004 (0x0020) [0x0000000000000001]              ( CPF_Edit )
 };
 
 // ScriptStruct GearboxFramework.GFxMovieManager.GearboxGFxPlayParameters
 // 0x000C
 struct FGearboxGFxPlayParameters
 {
-	class UGFxMovieDefinition*                         Definition;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UObject*                                     OtherObject;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	class APlayerController*                           PlayerOwner;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UGFxMovieDefinition*                         Definition;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	class UObject*                                     OtherObject;                                      		// 0x0004 (0x0004) [0x0000000000000000]
+	class APlayerController*                           PlayerOwner;                                      		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.GFxMovieStatePlayerAware.MovieRangeStateData
@@ -1402,19 +1402,19 @@ struct FCustomEventReactionDataSpecialized : FSpecializedBehaviorEvent
 // 0x0014
 struct FHitTargetRecord
 {
-	struct FVector                                     vecHitLoc;                                        		// 0x0000 (0x000C) [0x0000000000000000]              
-	float                                              flDamage;                                         		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              flHitTime;                                        		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FVector                                     vecHitLoc;                                        		// 0x0000 (0x000C) [0x0000000000000000]
+	float                                              flDamage;                                         		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              flHitTime;                                        		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.MindTargetInfo.PriorityDebugStruct
 // 0x001C
 struct FPriorityDebugStruct
 {
-	struct FName                                       IteratorName;                                     		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FName                                       IteratorName;                                     		// 0x0000 (0x0008) [0x0000000000000000]
 	struct FString                                     ShortName;                                        		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              PriorityValue;                                    		// 0x0014 (0x0004) [0x0000000000000000]              
-	unsigned long                                      AutomaticTopPriority : 1;                         		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              PriorityValue;                                    		// 0x0014 (0x0004) [0x0000000000000000]
+	unsigned long                                      AutomaticTopPriority : 1;                         		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.PopulationEncounter.EncounterLimitState
@@ -1453,8 +1453,8 @@ struct FEncounterWaveData
 // 0x0008
 struct FSpawnOption
 {
-	class UPopulationFactory*                          Factory;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              ComputedProbability;                              		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UPopulationFactory*                          Factory;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              ComputedProbability;                              		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationFactory.DestructionParameters
@@ -1468,36 +1468,36 @@ struct FDestructionParameters
 // 0x001C
 struct FSpawnedPopulationActor
 {
-	class AActor*                                      SpawnedActor;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UPopulationFactory*                          SpawnFactory;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FDestructionParameters                      FactoryDestructionParams;                         		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              flLastInRadiusOrVisible;                          		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                SpawnCost;                                        		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                CreationFlags;                                    		// 0x0014 (0x0004) [0x0000000000000000]              
-	unsigned long                                      Reuse : 1;                                        		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsDead : 1;                                      		// 0x0018 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bCanSave : 1;                                     		// 0x0018 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bShouldRemove : 1;                                		// 0x0018 (0x0004) [0x0000000000000000] [0x00000008] 
+	class AActor*                                      SpawnedActor;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	class UPopulationFactory*                          SpawnFactory;                                     		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FDestructionParameters                      FactoryDestructionParams;                         		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              flLastInRadiusOrVisible;                          		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                SpawnCost;                                        		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                CreationFlags;                                    		// 0x0014 (0x0004) [0x0000000000000000]
+	unsigned long                                      Reuse : 1;                                        		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsDead : 1;                                      		// 0x0018 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bCanSave : 1;                                     		// 0x0018 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bShouldRemove : 1;                                		// 0x0018 (0x0004) [0x0000000000000000] [0x00000008]
 };
 
 // ScriptStruct GearboxFramework.PopulationMaster.RemovedPopulationActor
 // 0x003C
 struct FRemovedPopulationActor
 {
-	unsigned long                                      bReuseActor : 1;                                  		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                CreationFlags;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FNameBasedObjectPath                        FactoryPath;                                      		// 0x0008 (0x0034) [0x0000000000000000]              
+	unsigned long                                      bReuseActor : 1;                                  		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                CreationFlags;                                    		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FNameBasedObjectPath                        FactoryPath;                                      		// 0x0008 (0x0034) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationOpportunity.OpportunitySavedState
 // 0x0010
 struct FOpportunitySavedState
 {
-	int                                                SelectedSpawnIdx;                                 		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                NumTotalActors;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      MaxActiveActors;                                  		// 0x0008 (0x0001) [0x0000000000000000]              
-	unsigned char                                      NumActiveActors;                                  		// 0x0009 (0x0001) [0x0000000000000000]              
-	float                                              NextSpawnTime;                                    		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                SelectedSpawnIdx;                                 		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                NumTotalActors;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      MaxActiveActors;                                  		// 0x0008 (0x0001) [0x0000000000000000]
+	unsigned char                                      NumActiveActors;                                  		// 0x0009 (0x0001) [0x0000000000000000]
+	float                                              NextSpawnTime;                                    		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationOpportunity.OpportunityCleanupParameters
@@ -1505,7 +1505,7 @@ struct FOpportunitySavedState
 struct FOpportunityCleanupParameters
 {
 	unsigned long                                      bCleanupActorsWhenIrrelevant : 1;                 		// 0x0000 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bRequireOpportunityToBeInactive : 1;              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bRequireOpportunityToBeInactive : 1;              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002]
 	float                                              ActorIrrelvantDistance;                           		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 };
 
@@ -1513,71 +1513,71 @@ struct FOpportunityCleanupParameters
 // 0x0054
 struct FPopulationOpportunityTracker
 {
-	struct FName                                       OpportunityOutermostName;                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FName                                       OpportunityName;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
-	class APopulationOpportunity*                      LoadedOpportunity;                                		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FName                                       OpportunityOutermostName;                         		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FName                                       OpportunityName;                                  		// 0x0008 (0x0008) [0x0000000000000000]
+	class APopulationOpportunity*                      LoadedOpportunity;                                		// 0x0010 (0x0004) [0x0000000000000000]
 	TArray< struct FSpawnedPopulationActor >           SpawnedActors;                                    		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FPointer                                    SavedActorsList;                                  		// 0x0020 (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
 	TArray< struct FRemovedPopulationActor >           ActorsRemovedWhileUnloaded;                       		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      DynamicOpportunity : 1;                           		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bHasSavedState : 1;                               		// 0x0030 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned char                                      bTotalResetOnLevelLoad;                           		// 0x0034 (0x0001) [0x0000000000000000]              
-	unsigned char                                      RespawnStyle;                                     		// 0x0035 (0x0001) [0x0000000000000000]              
-	float                                              RespawnDelayStartTime;                            		// 0x0038 (0x0004) [0x0000000000000000]              
-	struct FOpportunitySavedState                      SavedState;                                       		// 0x003C (0x0010) [0x0000000000000000]              
-	struct FOpportunityCleanupParameters               OpportunityCleanupParams;                         		// 0x004C (0x0008) [0x0000000000000000]              
+	unsigned long                                      DynamicOpportunity : 1;                           		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bHasSavedState : 1;                               		// 0x0030 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned char                                      bTotalResetOnLevelLoad;                           		// 0x0034 (0x0001) [0x0000000000000000]
+	unsigned char                                      RespawnStyle;                                     		// 0x0035 (0x0001) [0x0000000000000000]
+	float                                              RespawnDelayStartTime;                            		// 0x0038 (0x0004) [0x0000000000000000]
+	struct FOpportunitySavedState                      SavedState;                                       		// 0x003C (0x0010) [0x0000000000000000]
+	struct FOpportunityCleanupParameters               OpportunityCleanupParams;                         		// 0x004C (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationMaster.PopulationMasterStat
 // 0x0018
 struct FPopulationMasterStat
 {
-	struct FName                                       StatName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              StatTime;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              StatMaxTime;                                      		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                StatIterations;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                IterationStartTime;                               		// 0x0014 (0x0004) [0x0000000000000000]              
+	struct FName                                       StatName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              StatTime;                                         		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              StatMaxTime;                                      		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                StatIterations;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                IterationStartTime;                               		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationMaster.EncounterWaveTracker
 // 0x0010
 struct FEncounterWaveTracker
 {
-	int                                                nWaveIdx;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                nLimitStateIdx;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FEncounterLimitState                        LimitSaveState;                                   		// 0x0008 (0x0008) [0x0000000000000000]              
+	int                                                nWaveIdx;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                nLimitStateIdx;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FEncounterLimitState                        LimitSaveState;                                   		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationMaster.EncounterTracker
 // 0x005C
 struct FEncounterTracker
 {
-	class APopulationEncounter*                        LoadedEncounter;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	class ULevelStreaming*                             EncountersLevel;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FNameBasedObjectPath                        EncounterPath;                                    		// 0x0008 (0x0034) [0x0000000000000000]              
-	unsigned long                                      bNeedsKismetUpdate : 1;                           		// 0x003C (0x0004) [0x0000000000000000] [0x00000001] 
+	class APopulationEncounter*                        LoadedEncounter;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	class ULevelStreaming*                             EncountersLevel;                                  		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FNameBasedObjectPath                        EncounterPath;                                    		// 0x0008 (0x0034) [0x0000000000000000]
+	unsigned long                                      bNeedsKismetUpdate : 1;                           		// 0x003C (0x0004) [0x0000000000000000] [0x00000001]
 	TArray< unsigned char >                            EncounterCompletionSaveState;                     		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FEncounterWaveTracker >             EncounterSaveState;                               		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              RespawnDelayStartTime;                            		// 0x0058 (0x0004) [0x0000000000000000]              
+	float                                              RespawnDelayStartTime;                            		// 0x0058 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationMaster.PopulationOpportunityStat
 // 0x0004
 struct FPopulationOpportunityStat
 {
-	float                                              PercentNodeReduction;                             		// 0x0000 (0x0004) [0x0000000000000000]              
+	float                                              PercentNodeReduction;                             		// 0x0000 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationMaster.PopulationOpportunitySavedActor
 // 0x0058
 struct FPopulationOpportunitySavedActor
 {
-	struct FNameBasedObjectPath                        FactoryPath;                                      		// 0x0000 (0x0034) [0x0000000000000000]              
-	float                                              TimeActorSaved;                                   		// 0x0034 (0x0004) [0x0000000000000000]              
-	struct FVector                                     SpawnActorLocation;                               		// 0x0038 (0x000C) [0x0000000000000000]              
-	struct FRotator                                    SpawnActorRotation;                               		// 0x0044 (0x000C) [0x0000000000000000]              
-	int                                                CreationFlags;                                    		// 0x0050 (0x0004) [0x0000000000000000]              
-	class UObject*                                     CustomActorData;                                  		// 0x0054 (0x0004) [0x0000000000000000]              
+	struct FNameBasedObjectPath                        FactoryPath;                                      		// 0x0000 (0x0034) [0x0000000000000000]
+	float                                              TimeActorSaved;                                   		// 0x0034 (0x0004) [0x0000000000000000]
+	struct FVector                                     SpawnActorLocation;                               		// 0x0038 (0x000C) [0x0000000000000000]
+	struct FRotator                                    SpawnActorRotation;                               		// 0x0044 (0x000C) [0x0000000000000000]
+	int                                                CreationFlags;                                    		// 0x0050 (0x0004) [0x0000000000000000]
+	class UObject*                                     CustomActorData;                                  		// 0x0054 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationOpportunityArea.PopulationOptionAreaPopDefData
@@ -1586,7 +1586,7 @@ struct FPopulationOptionAreaPopDefData
 {
 	class UPopulationDefinition*                       PopulationDef;                                    		// 0x0000 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                MaxTotalActorsFormula;                            		// 0x0004 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	int                                                MaxTotalActors;                                   		// 0x0014 (0x0004) [0x0000000000000000]              
+	int                                                MaxTotalActors;                                   		// 0x0014 (0x0004) [0x0000000000000000]
 	int                                                MaxActiveActors;                                  		// 0x0018 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              RespawnDelay;                                     		// 0x001C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              RespawnDelayAfterDeath;                           		// 0x0020 (0x0004) [0x0000000000000001]              ( CPF_Edit )
@@ -1605,9 +1605,9 @@ struct FPopulationOptionAreaData
 struct FPopulationOptionSpawnDefData
 {
 	struct FString                                     PopulationDefName;                                		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                NumTotalActors;                                   		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                NumActiveActors;                                  		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              NextSpawnTime;                                    		// 0x0014 (0x0004) [0x0000000000000000]              
+	int                                                NumTotalActors;                                   		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                NumActiveActors;                                  		// 0x0010 (0x0004) [0x0000000000000000]
+	float                                              NextSpawnTime;                                    		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopulationOpportunityArea.PopulationAreaOptionSpawnData
@@ -1622,10 +1622,10 @@ struct FPopulationAreaOptionSpawnData
 struct FPopulationOptionSpawnData
 {
 	struct FString                                     PopulationDefName;                                		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                MaxActiveActors;                                  		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                NumTotalActors;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                NumActiveActors;                                  		// 0x0014 (0x0004) [0x0000000000000000]              
-	float                                              NextSpawnTime;                                    		// 0x0018 (0x0004) [0x0000000000000000]              
+	int                                                MaxActiveActors;                                  		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                NumTotalActors;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                NumActiveActors;                                  		// 0x0014 (0x0004) [0x0000000000000000]
+	float                                              NextSpawnTime;                                    		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.PopUpDebugBarGraph.ColumnDataStruct
@@ -1633,49 +1633,49 @@ struct FPopulationOptionSpawnData
 struct FColumnDataStruct
 {
 	struct FString                                     HeaderText;                                       		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              Value;                                            		// 0x000C (0x0004) [0x0000000000000000]              
-	struct FColor                                      BarColor;                                         		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              Value;                                            		// 0x000C (0x0004) [0x0000000000000000]
+	struct FColor                                      BarColor;                                         		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RandomAttributeValueResolver.SavedRandomValue
 // 0x0010
 struct FSavedRandomValue
 {
-	struct FName                                       ContextName;                                      		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              SavedValue;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              ExpirationTime;                                   		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FName                                       ContextName;                                      		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              SavedValue;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              ExpirationTime;                                   		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RuleEngineLoadBalanceManager.RuleEngineLoadBalanceStruct
 // 0x000C
 struct FRuleEngineLoadBalanceStruct
 {
-	class URuleEngine*                                 RuleEngine;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              TimeSinceLastUpdate;                              		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                Priority;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+	class URuleEngine*                                 RuleEngine;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              TimeSinceLastUpdate;                              		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                Priority;                                         		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RuleEngineLoadBalanceManager.DebugLoadBalance
 // 0x0018
 struct FDebugLoadBalance
 {
-	struct FName                                       RuleEngine;                                       		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned long                                      bIsInQueue : 1;                                   		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              TimeSinceUpdate;                                  		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              TimeToDoLastUpdate;                               		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                Priority;                                         		// 0x0014 (0x0004) [0x0000000000000000]              
+	struct FName                                       RuleEngine;                                       		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned long                                      bIsInQueue : 1;                                   		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              TimeSinceUpdate;                                  		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              TimeToDoLastUpdate;                               		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                Priority;                                         		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.RuleEngineLoadBalanceManager.RELBManagerStats
 // 0x0018
 struct FRELBManagerStats
 {
-	float                                              TotalTimeUpdated;                                 		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              MaxTimeUpdating;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                NumUpdated;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                AveragePriority;                                  		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                LowestPriority;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                HighestPriority;                                  		// 0x0014 (0x0004) [0x0000000000000000]              
+	float                                              TotalTimeUpdated;                                 		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              MaxTimeUpdating;                                  		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                NumUpdated;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                AveragePriority;                                  		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                LowestPriority;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                HighestPriority;                                  		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.ShowDebugHelpers.DebugStringData
@@ -1683,7 +1683,7 @@ struct FRELBManagerStats
 struct FDebugStringData
 {
 	struct FString                                     DebugStr;                                         		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FColor                                      StrColor;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FColor                                      StrColor;                                         		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.ShowDebugHelpers.DebugEntryData
@@ -1697,28 +1697,28 @@ struct FDebugEntryData
 // 0x007C
 struct FSparkOutstandingRequest
 {
-	unsigned char                                      State;                                            		// 0x0000 (0x0001) [0x0000000000000000]              
-	struct FDouble                                     SleepUntil;                                       		// 0x0004 (0x0008) [0x0000000000000000]              
-	unsigned long                                      WantResponse : 1;                                 		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      ScriptCallback : 1;                               		// 0x000C (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned char                                      State;                                            		// 0x0000 (0x0001) [0x0000000000000000]
+	struct FDouble                                     SleepUntil;                                       		// 0x0004 (0x0008) [0x0000000000000000]
+	unsigned long                                      WantResponse : 1;                                 		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      ScriptCallback : 1;                               		// 0x000C (0x0004) [0x0000000000000000] [0x00000002]
 	struct FScriptDelegate                             RequestCompleteDelegate;                          		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                RequestIdentifier;                                		// 0x001C (0x0004) [0x0000000000000000]              
+	int                                                RequestIdentifier;                                		// 0x001C (0x0004) [0x0000000000000000]
 	struct FPointer                                    SparkUpdateCallback;                              		// 0x0020 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FPointer                                    HttpRequest;                                      		// 0x0024 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FPointer                                    RequestBody;                                      		// 0x0028 (0x0004) [0x0000000000001000]              ( CPF_Native )
 	struct FPointer                                    ResponseBody;                                     		// 0x002C (0x0004) [0x0000000000001000]              ( CPF_Native )
-	int                                                RetryNumber;                                      		// 0x0030 (0x0004) [0x0000000000000000]              
-	int                                                BaseRetryIntervalSeconds;                         		// 0x0034 (0x0004) [0x0000000000000000]              
-	int                                                MaxRetryAttempts;                                 		// 0x0038 (0x0004) [0x0000000000000000]              
-	float                                              RetryMultiplier;                                  		// 0x003C (0x0004) [0x0000000000000000]              
-	int                                                RetryJitter;                                      		// 0x0040 (0x0004) [0x0000000000000000]              
-	int                                                HttpTimeout;                                      		// 0x0044 (0x0004) [0x0000000000000000]              
-	int                                                ReadBufferSize;                                   		// 0x0048 (0x0004) [0x0000000000000000]              
+	int                                                RetryNumber;                                      		// 0x0030 (0x0004) [0x0000000000000000]
+	int                                                BaseRetryIntervalSeconds;                         		// 0x0034 (0x0004) [0x0000000000000000]
+	int                                                MaxRetryAttempts;                                 		// 0x0038 (0x0004) [0x0000000000000000]
+	float                                              RetryMultiplier;                                  		// 0x003C (0x0004) [0x0000000000000000]
+	int                                                RetryJitter;                                      		// 0x0040 (0x0004) [0x0000000000000000]
+	int                                                HttpTimeout;                                      		// 0x0044 (0x0004) [0x0000000000000000]
+	int                                                ReadBufferSize;                                   		// 0x0048 (0x0004) [0x0000000000000000]
 	struct FString                                     Accept;                                           		// 0x004C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     ContentType;                                      		// 0x0058 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      Method;                                           		// 0x0064 (0x0001) [0x0000000000000000]              
+	unsigned char                                      Method;                                           		// 0x0064 (0x0001) [0x0000000000000000]
 	struct FString                                     URL;                                              		// 0x0068 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FDouble                                     RequestStartTime;                                 		// 0x0074 (0x0008) [0x0000000000000000]              
+	struct FDouble                                     RequestStartTime;                                 		// 0x0074 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct GearboxFramework.SparkServiceConfiguration.SparkMicropatch
@@ -1729,7 +1729,7 @@ struct FSparkMicropatch
 	struct FString                                     PropertyPath;                                     		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     OriginalValue;                                    		// 0x0018 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     NewValue;                                         		// 0x0024 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bApplied : 1;                                     		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bApplied : 1;                                     		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct GearboxFramework.SpecialMoveExpressionList.SMExpressionList
@@ -1775,7 +1775,6 @@ struct FNewsArticle
 	struct FString                                     Body;                                             		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

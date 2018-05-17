@@ -11,16 +11,12 @@ namespace BL2SDK
 }
 
 #include "GameDefines.h"
+#include "Signatures.h"
 
 #include "Core_structs.h"
 #include "Core_f_structs.h"
 #include "Core_classes.h"
 //#include "Core_functions.h"
-
-#include "AkAudio_structs.h"
-#include "AkAudio_f_structs.h"
-//#include "AkAudio_classes.h"
-//#include "AkAudio_functions.h"
 
 #include "Engine_structs.h"
 #include "Engine_f_structs.h"
@@ -67,6 +63,11 @@ namespace BL2SDK
 #include "XAudio2_classes.h"
 //#include "XAudio2_functions.h"
 
+#include "AkAudio_structs.h"
+#include "AkAudio_f_structs.h"
+#include "AkAudio_classes.h"
+//#include "AkAudio_functions.h"
+
 namespace BL2SDK
 {
 	typedef void(__thiscall *tProcessEvent) (UObject*, UFunction*, void*, void*);
@@ -90,14 +91,12 @@ namespace BL2SDK
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
-	/*
 	void LogAllProcessEventCalls(bool enabled);
 	void LogAllUnrealScriptCalls(bool enabled);
 	bool GetGameVersion(std::wstring& appVersion);
 	void InjectedCallNext();
-	void Initialize(LauncherStruct* args);
+	void Initialize(/*LauncherStruct* args*/);
 	void Cleanup();
-	*/
 }
 
 #endif

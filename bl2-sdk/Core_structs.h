@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -59,10 +59,10 @@ struct FVector
 // 0x0010
 struct FGuid
 {
-	int                                                A;                                                		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                B;                                                		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                C;                                                		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                D;                                                		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                A;                                                		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                B;                                                		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                C;                                                		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                D;                                                		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.Vector4
@@ -79,21 +79,21 @@ struct FVector4
 // 0x0031
 struct FNameBasedObjectPath
 {
-	struct FName                                       PathComponentNames[ 0x6 ];                        		// 0x0000 (0x0030) [0x0000000000000000]              
-	unsigned char                                      IsSubobjectMask;                                  		// 0x0030 (0x0001) [0x0000000000000000]              
+	struct FName                                       PathComponentNames[0x6];                        		// 0x0000 (0x0030) [0x0000000000000000]
+	unsigned char                                      IsSubobjectMask;                                  		// 0x0030 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.Flag
 // 0x0010
 struct FFlag
 {
-	unsigned char                                      Value;                                            		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Raised;                                           		// 0x0001 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Lowered;                                          		// 0x0002 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Padding;                                          		// 0x0003 (0x0001) [0x0000000000000000]              
-	float                                              RaisedTime;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              LoweredTime;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned char                                      Value;                                            		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      Raised;                                           		// 0x0001 (0x0001) [0x0000000000000000]
+	unsigned char                                      Lowered;                                          		// 0x0002 (0x0001) [0x0000000000000000]
+	unsigned char                                      Padding;                                          		// 0x0003 (0x0001) [0x0000000000000000]
+	float                                              RaisedTime;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              LoweredTime;                                      		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.Quat
@@ -110,17 +110,17 @@ struct FQuat
 // 0x0020
 struct FBoneAtom
 {
-	struct FQuat                                       Rotation;                                         		// 0x0000 (0x0010) [0x0000000000000000]              
-	struct FVector                                     Translation;                                      		// 0x0010 (0x000C) [0x0000000000000000]              
-	float                                              Scale;                                            		// 0x001C (0x0004) [0x0000000000000000]              
+	struct FQuat                                       Rotation;                                         		// 0x0000 (0x0010) [0x0000000000000000]
+	struct FVector                                     Translation;                                      		// 0x0010 (0x000C) [0x0000000000000000]
+	float                                              Scale;                                            		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.SmartVector
 // 0x001C
 struct FSmartVector
 {
-	struct FVector                                     Vector;                                           		// 0x0000 (0x000C) [0x0000000000000000]              
-	struct FFlag                                       Flag;                                             		// 0x000C (0x0010) [0x0000000000000000]              
+	struct FVector                                     Vector;                                           		// 0x0000 (0x000C) [0x0000000000000000]
+	struct FFlag                                       Flag;                                             		// 0x000C (0x0010) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.LinearColor
@@ -159,7 +159,7 @@ struct FInterpCurvePointVector2D
 struct FInterpCurveVector2D
 {
 	TArray< struct FInterpCurvePointVector2D >         Points;                                           		// 0x0000 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.InterpCurvePointFloat
@@ -178,15 +178,15 @@ struct FInterpCurvePointFloat
 struct FInterpCurveFloat
 {
 	TArray< struct FInterpCurvePointFloat >            Points;                                           		// 0x0000 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.Cylinder
 // 0x0008
 struct FCylinder
 {
-	float                                              Radius;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Height;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
+	float                                              Radius;                                           		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Height;                                           		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.InterpCurvePointVector
@@ -205,7 +205,7 @@ struct FInterpCurvePointVector
 struct FInterpCurveVector
 {
 	TArray< struct FInterpCurvePointVector >           Points;                                           		// 0x0000 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.Plane
@@ -300,13 +300,13 @@ struct FRenderCommandFence
 // 0x0018
 struct FRawDistribution
 {
-	unsigned char                                      Type;                                             		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Op;                                               		// 0x0001 (0x0001) [0x0000000000000000]              
-	unsigned char                                      LookupTableNumElements;                           		// 0x0002 (0x0001) [0x0000000000000000]              
-	unsigned char                                      LookupTableChunkSize;                             		// 0x0003 (0x0001) [0x0000000000000000]              
+	unsigned char                                      Type;                                             		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      Op;                                               		// 0x0001 (0x0001) [0x0000000000000000]
+	unsigned char                                      LookupTableNumElements;                           		// 0x0002 (0x0001) [0x0000000000000000]
+	unsigned char                                      LookupTableChunkSize;                             		// 0x0003 (0x0001) [0x0000000000000000]
 	TArray< float >                                    LookupTable;                                      		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              LookupTableTimeScale;                             		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              LookupTableStartTime;                             		// 0x0014 (0x0004) [0x0000000000000000]              
+	float                                              LookupTableTimeScale;                             		// 0x0010 (0x0004) [0x0000000000000000]
+	float                                              LookupTableStartTime;                             		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.InterpCurvePointLinearColor
@@ -325,7 +325,7 @@ struct FInterpCurvePointLinearColor
 struct FInterpCurveLinearColor
 {
 	TArray< struct FInterpCurvePointLinearColor >      Points;                                           		// 0x0000 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.InterpCurvePointQuat
@@ -333,7 +333,7 @@ struct FInterpCurveLinearColor
 struct FInterpCurvePointQuat
 {
 	float                                              InVal;                                            		// 0x0000 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x0004 (0x000C) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xC];                             		// 0x0004 (0x000C) MISSED OFFSET
 	struct FQuat                                       OutVal;                                           		// 0x0010 (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	struct FQuat                                       ArriveTangent;                                    		// 0x0020 (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	struct FQuat                                       LeaveTangent;                                     		// 0x0030 (0x0010) [0x0000000000000001]              ( CPF_Edit )
@@ -345,7 +345,7 @@ struct FInterpCurvePointQuat
 struct FInterpCurveQuat
 {
 	TArray< struct FInterpCurvePointQuat >             Points;                                           		// 0x0000 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.InterpCurvePointTwoVectors
@@ -364,7 +364,7 @@ struct FInterpCurvePointTwoVectors
 struct FInterpCurveTwoVectors
 {
 	TArray< struct FInterpCurvePointTwoVectors >       Points;                                           		// 0x0000 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]              
+	unsigned char                                      InterpMethod;                                     		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.Box
@@ -373,7 +373,7 @@ struct FBox
 {
 	struct FVector                                     Min;                                              		// 0x0000 (0x000C) [0x0000000000000001]              ( CPF_Edit )
 	struct FVector                                     Max;                                              		// 0x000C (0x000C) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      IsValid;                                          		// 0x0018 (0x0001) [0x0000000000000000]              
+	unsigned char                                      IsValid;                                          		// 0x0018 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.TPOV
@@ -389,8 +389,8 @@ struct FTPOV
 // 0x0030
 struct FSHVector
 {
-	float                                              V[ 0x9 ];                                         		// 0x0000 (0x0024) [0x0000000000000001]              ( CPF_Edit )
-	float                                              Padding[ 0x3 ];                                   		// 0x0024 (0x000C) [0x0000000000000000]              
+	float                                              V[0x9];                                         		// 0x0000 (0x0024) [0x0000000000000001]              ( CPF_Edit )
+	float                                              Padding[0x3];                                   		// 0x0024 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct Core.Object.SHVectorRGB
@@ -495,7 +495,7 @@ struct FUntypedBulkData_Mirror
 struct FBitArray_Mirror
 {
 	struct FPointer                                    IndirectData;                                     		// 0x0000 (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	int                                                InlineData[ 0x4 ];                                		// 0x0004 (0x0010) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	int                                                InlineData[0x4];                                		// 0x0004 (0x0010) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	int                                                NumBits;                                          		// 0x0014 (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	int                                                MaxBits;                                          		// 0x0018 (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 };
@@ -571,7 +571,6 @@ struct FRawDistributionVector : FRawDistribution
 	class UDistributionVector*                         Distribution;                                     		// 0x0018 (0x0004) [0x0000000006080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_NoClear | CPF_EditInline )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -36,13 +36,13 @@ struct FAchievementUnlockData
 // 0x0024
 struct FPlayerRecentDamageEventData
 {
-	class UWillowDamageTypeDefinition*                 DamageTypeDefinition;                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector                                     DamageLocation;                                   		// 0x0004 (0x000C) [0x0000000000000000]              
-	float                                              TotalDamageForDamageType;                         		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned char                                      DamageEventFlags;                                 		// 0x0014 (0x0001) [0x0000000000000000]              
-	unsigned long                                      bDirty : 1;                                       		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              DamageTime;                                       		// 0x001C (0x0004) [0x0000000000000000]              
-	class AActor*                                      DamagedActor;                                     		// 0x0020 (0x0004) [0x0000000000000000]              
+	class UWillowDamageTypeDefinition*                 DamageTypeDefinition;                             		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector                                     DamageLocation;                                   		// 0x0004 (0x000C) [0x0000000000000000]
+	float                                              TotalDamageForDamageType;                         		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned char                                      DamageEventFlags;                                 		// 0x0014 (0x0001) [0x0000000000000000]
+	unsigned long                                      bDirty : 1;                                       		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              DamageTime;                                       		// 0x001C (0x0004) [0x0000000000000000]
+	class AActor*                                      DamagedActor;                                     		// 0x0020 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.BodyClassDefinition.VehicleCrewMappingStruct
@@ -125,26 +125,26 @@ struct FTurnData
 // 0x0020
 struct FCombatZone
 {
-	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FBox                                        Bounds;                                           		// 0x0004 (0x001C) [0x0000000000000000]              
+	int                                                Index;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FBox                                        Bounds;                                           		// 0x0004 (0x001C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowAIComponent.CoverExposureData
 // 0x0004
 struct FCoverExposureData
 {
-	unsigned long                                      bExposedUp : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bExposedLeft : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bExposedRight : 1;                                		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      bExposedUp : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bExposedLeft : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bExposedRight : 1;                                		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004]
 };
 
 // ScriptStruct WillowGame.WillowAIComponent.CombatPointDebugData
 // 0x0014
 struct FCombatPointDebugData
 {
-	unsigned long                                      bBest : 1;                                        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              Score;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FVector                                     Location;                                         		// 0x0008 (0x000C) [0x0000000000000000]              
+	unsigned long                                      bBest : 1;                                        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              Score;                                            		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FVector                                     Location;                                         		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowAIComponent.CombatPointData
@@ -194,26 +194,26 @@ struct FPerchAnimData
 // 0x0014
 struct FWillowCoverState
 {
-	struct FName                                       Action;                                           		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FCoverInfo                                  Cover;                                            		// 0x0008 (0x0008) [0x0000000000000000]              
-	class UWillowCoverStanceDefinition*                Stance;                                           		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FName                                       Action;                                           		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FCoverInfo                                  Cover;                                            		// 0x0008 (0x0008) [0x0000000000000000]
+	class UWillowCoverStanceDefinition*                Stance;                                           		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.Action_Drive_Pursuit.EnemyBreadCrumbStruct
 // 0x0010
 struct FEnemyBreadCrumbStruct
 {
-	struct FVector                                     pos;                                              		// 0x0000 (0x000C) [0x0000000000000000]              
-	class AWillowVehicleCombatArea*                    CombatArea;                                       		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FVector                                     pos;                                              		// 0x0000 (0x000C) [0x0000000000000000]
+	class AWillowVehicleCombatArea*                    CombatArea;                                       		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowAIPawn.SplineAnimPathData
 // 0x0010
 struct FSplineAnimPathData
 {
-	class ASplineActor*                                StartSpline;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       AnimSeqName;                                      		// 0x0004 (0x0008) [0x0000000000000000]              
-	unsigned long                                      bReverse : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	class ASplineActor*                                StartSpline;                                      		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       AnimSeqName;                                      		// 0x0004 (0x0008) [0x0000000000000000]
+	unsigned long                                      bReverse : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.Behavior_AIThrowProjectileAtTarget.TrajectoryData
@@ -222,7 +222,7 @@ struct FTrajectoryData
 {
 	float                                              Speed;                                            		// 0x0000 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              AnglePct;                                         		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              Angle;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	float                                              Angle;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 	float                                              Error;                                            		// 0x000C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FVector                                     Offset;                                           		// 0x0010 (0x000C) [0x0000000000000001]              ( CPF_Edit )
 	float                                              PredictDistMax;                                   		// 0x001C (0x0004) [0x0000000000000001]              ( CPF_Edit )
@@ -232,33 +232,33 @@ struct FTrajectoryData
 // 0x0028
 struct FBeamDamageData
 {
-	float                                              Momentum;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Amount;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Radius;                                           		// 0x0008 (0x0004) [0x0000000000000000]              
-	class UClass*                                      Source;                                           		// 0x000C (0x0004) [0x0000000000000000]              
-	class UDamageTypeDefinition*                       TypeDefinition;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              BarrelSourceTime;                                 		// 0x0014 (0x0004) [0x0000000000000000]              
-	float                                              PlantSourceTime;                                  		// 0x0018 (0x0004) [0x0000000000000000]              
-	class UIDamageCauser*                              DamageCauser;                                     		// 0x001C (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0020 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	unsigned long                                      bCanDamageFriendlies : 1;                         		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              Momentum;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Amount;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Radius;                                           		// 0x0008 (0x0004) [0x0000000000000000]
+	class UClass*                                      Source;                                           		// 0x000C (0x0004) [0x0000000000000000]
+	class UDamageTypeDefinition*                       TypeDefinition;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	float                                              BarrelSourceTime;                                 		// 0x0014 (0x0004) [0x0000000000000000]
+	float                                              PlantSourceTime;                                  		// 0x0018 (0x0004) [0x0000000000000000]
+	class UIDamageCauser*                              DamageCauser;                                     		// 0x001C (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0020 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned long                                      bCanDamageFriendlies : 1;                         		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowLightProjectileManager.ServerBeamState
 // 0x005C
 struct FServerBeamState
 {
-	unsigned long                                      bDeleteMe : 1;                                    		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FBeamDamageData                             DamageData;                                       		// 0x0004 (0x0028) [0x0000000000000000]              
-	class AController*                                 DamageInstigator;                                 		// 0x002C (0x0004) [0x0000000000000000]              
-	float                                              StartTime;                                        		// 0x0030 (0x0004) [0x0000000000000000]              
-	float                                              LockTime;                                         		// 0x0034 (0x0004) [0x0000000000000000]              
-	float                                              NextTraceTime;                                    		// 0x0038 (0x0004) [0x0000000000000000]              
-	float                                              BeamNetUpdateTime;                                		// 0x003C (0x0004) [0x0000000000000000]              
-	float                                              LastDamageApplicationTime;                        		// 0x0040 (0x0004) [0x0000000000000000]              
-	class AActor*                                      LastDamagedActor;                                 		// 0x0044 (0x0004) [0x0000000000000000]              
-	float                                              NextRandomBoneTime;                               		// 0x0048 (0x0004) [0x0000000000000000]              
-	int                                                ParentBeamIndex;                                  		// 0x004C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bDeleteMe : 1;                                    		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	struct FBeamDamageData                             DamageData;                                       		// 0x0004 (0x0028) [0x0000000000000000]
+	class AController*                                 DamageInstigator;                                 		// 0x002C (0x0004) [0x0000000000000000]
+	float                                              StartTime;                                        		// 0x0030 (0x0004) [0x0000000000000000]
+	float                                              LockTime;                                         		// 0x0034 (0x0004) [0x0000000000000000]
+	float                                              NextTraceTime;                                    		// 0x0038 (0x0004) [0x0000000000000000]
+	float                                              BeamNetUpdateTime;                                		// 0x003C (0x0004) [0x0000000000000000]
+	float                                              LastDamageApplicationTime;                        		// 0x0040 (0x0004) [0x0000000000000000]
+	class AActor*                                      LastDamagedActor;                                 		// 0x0044 (0x0004) [0x0000000000000000]
+	float                                              NextRandomBoneTime;                               		// 0x0048 (0x0004) [0x0000000000000000]
+	int                                                ParentBeamIndex;                                  		// 0x004C (0x0004) [0x0000000000000000]
 	TArray< int >                                      ChildBeamsIndicies;                               		// 0x0050 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -266,114 +266,114 @@ struct FServerBeamState
 // 0x0024
 struct FBeamLocationData
 {
-	class AActor*                                      Actor;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       Socket;                                           		// 0x0004 (0x0008) [0x0000000000000000]              
-	struct FVector                                     Offset;                                           		// 0x000C (0x000C) [0x0000000000000000]              
-	unsigned long                                      bUseWeapon : 1;                                   		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	class UIWorldBody*                                 WorldBody;                                        		// 0x001C (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0020 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class AActor*                                      Actor;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       Socket;                                           		// 0x0004 (0x0008) [0x0000000000000000]
+	struct FVector                                     Offset;                                           		// 0x000C (0x000C) [0x0000000000000000]
+	unsigned long                                      bUseWeapon : 1;                                   		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
+	class UIWorldBody*                                 WorldBody;                                        		// 0x001C (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0020 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 };
 
 // ScriptStruct WillowGame.WillowLightProjectileManager.ReplicatedBeamState
 // 0x005C
 struct FReplicatedBeamState
 {
-	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	class UFiringModeDefinition*                       FireDef;                                          		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UImpactDefinition*                           ImpactDefinition;                                 		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bLocked : 1;                                      		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FBeamLocationData                           SourceData;                                       		// 0x0010 (0x0024) [0x0000000000000000]              
-	struct FBeamLocationData                           TargetData;                                       		// 0x0034 (0x0024) [0x0000000000000000]              
-	unsigned long                                      bPlayImpactAudio : 1;                             		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	class UFiringModeDefinition*                       FireDef;                                          		// 0x0004 (0x0004) [0x0000000000000000]
+	class UImpactDefinition*                           ImpactDefinition;                                 		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned long                                      bLocked : 1;                                      		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
+	struct FBeamLocationData                           SourceData;                                       		// 0x0010 (0x0024) [0x0000000000000000]
+	struct FBeamLocationData                           TargetData;                                       		// 0x0034 (0x0024) [0x0000000000000000]
+	unsigned long                                      bPlayImpactAudio : 1;                             		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowLightProjectileManager.BeamState
 // 0x0118
 struct FBeamState
 {
-	int                                                BeamIndex;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                BeamIndex;                                        		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FServerBeamState                            ServerOnlyState;                                  		// 0x0004 (0x005C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FReplicatedBeamState                        CoreBeamState;                                    		// 0x0060 (0x005C) [0x0000000000000000]              
+	struct FReplicatedBeamState                        CoreBeamState;                                    		// 0x0060 (0x005C) [0x0000000000000000]
 	class UParticleSystemComponent*                    PartRef;                                          		// 0x00BC (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
 	struct FAkPlayingInfo                              BeamAudioInfo;                                    		// 0x00C0 (0x0008) [0x0000000000080000]              ( CPF_Component )
 	struct FAkPlayingInfo                              BeamImpactAudioInfo;                              		// 0x00C8 (0x0008) [0x0000000000080000]              ( CPF_Component )
-	struct FVector                                     CurrentStartPoint;                                		// 0x00D0 (0x000C) [0x0000000000000000]              
-	struct FVector                                     CurrentEndPoint;                                  		// 0x00DC (0x000C) [0x0000000000000000]              
-	struct FVector                                     CurrentStartTangent;                              		// 0x00E8 (0x000C) [0x0000000000000000]              
-	struct FVector                                     CurrentEndTangent;                                		// 0x00F4 (0x000C) [0x0000000000000000]              
-	struct FRotator                                    CurrentDirection;                                 		// 0x0100 (0x000C) [0x0000000000000000]              
-	struct FVector                                     LastImpactLocation;                               		// 0x010C (0x000C) [0x0000000000000000]              
+	struct FVector                                     CurrentStartPoint;                                		// 0x00D0 (0x000C) [0x0000000000000000]
+	struct FVector                                     CurrentEndPoint;                                  		// 0x00DC (0x000C) [0x0000000000000000]
+	struct FVector                                     CurrentStartTangent;                              		// 0x00E8 (0x000C) [0x0000000000000000]
+	struct FVector                                     CurrentEndTangent;                                		// 0x00F4 (0x000C) [0x0000000000000000]
+	struct FRotator                                    CurrentDirection;                                 		// 0x0100 (0x000C) [0x0000000000000000]
+	struct FVector                                     LastImpactLocation;                               		// 0x010C (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowLightProjectileManager.LightProjectile
 // 0x0088
 struct FLightProjectile
 {
-	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bPendingAdd : 1;                                  		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bNeedsConstantTrace : 1;                          		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bStartParticleTracerAtWeapon : 1;                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      bActorReflected : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000010] 
-	unsigned long                                      bEnemyPenetrating : 1;                            		// 0x0000 (0x0004) [0x0000000000000000] [0x00000020] 
-	unsigned long                                      bOvercharged : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000040] 
-	unsigned long                                      bRicochetTowardsEnemy : 1;                        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000080] 
-	unsigned long                                      bPenetrateUsingOriginalTraceDirection : 1;        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000100] 
-	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000000000]              
-	struct FVector                                     PartLocation;                                     		// 0x0010 (0x000C) [0x0000000000000000]              
-	struct FVector                                     Velocity;                                         		// 0x001C (0x000C) [0x0000000000000000]              
+	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bPendingAdd : 1;                                  		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bNeedsConstantTrace : 1;                          		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bStartParticleTracerAtWeapon : 1;                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000008]
+	unsigned long                                      bActorReflected : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000010]
+	unsigned long                                      bEnemyPenetrating : 1;                            		// 0x0000 (0x0004) [0x0000000000000000] [0x00000020]
+	unsigned long                                      bOvercharged : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000040]
+	unsigned long                                      bRicochetTowardsEnemy : 1;                        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000080]
+	unsigned long                                      bPenetrateUsingOriginalTraceDirection : 1;        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000100]
+	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000000000]
+	struct FVector                                     PartLocation;                                     		// 0x0010 (0x000C) [0x0000000000000000]
+	struct FVector                                     Velocity;                                         		// 0x001C (0x000C) [0x0000000000000000]
 	class UParticleSystemComponent*                    PartRef;                                          		// 0x0028 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
 	struct FAkPlayingInfo                              AudioRef;                                         		// 0x002C (0x0008) [0x0000000000080000]              ( CPF_Component )
-	class UFiringModeDefinition*                       FireDef;                                          		// 0x0034 (0x0004) [0x0000000000000000]              
-	float                                              StartTime;                                        		// 0x0038 (0x0004) [0x0000000000000000]              
-	int                                                NumRicochets;                                     		// 0x003C (0x0004) [0x0000000000000000]              
-	float                                              LastTraceTime;                                    		// 0x0040 (0x0004) [0x0000000000000000]              
-	struct FVector                                     LastSafeTraceStartLocation;                       		// 0x0044 (0x000C) [0x0000000000000000]              
-	class AActor*                                      LastHitActor;                                     		// 0x0050 (0x0004) [0x0000000000000000]              
-	class APawn*                                       Instigator;                                       		// 0x0054 (0x0004) [0x0000000000000000]              
-	float                                              Damage;                                           		// 0x0058 (0x0004) [0x0000000000000000]              
-	int                                                FiringPatternIdx;                                 		// 0x005C (0x0004) [0x0000000000000000]              
-	unsigned char                                      BulletFromClipType;                               		// 0x0060 (0x0001) [0x0000000000000000]              
-	unsigned char                                      bHitWater;                                        		// 0x0061 (0x0001) [0x0000000000000000]              
-	unsigned char                                      PenetrationCount;                                 		// 0x0062 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Id;                                               		// 0x0063 (0x0001) [0x0000000000000000]              
-	struct FVector                                     StartTrace;                                       		// 0x0064 (0x000C) [0x0000000000000000]              
-	struct FVector                                     EndTrace;                                         		// 0x0070 (0x000C) [0x0000000000000000]              
-	struct FVector                                     OriginalStartTrace;                               		// 0x007C (0x000C) [0x0000000000000000]              
+	class UFiringModeDefinition*                       FireDef;                                          		// 0x0034 (0x0004) [0x0000000000000000]
+	float                                              StartTime;                                        		// 0x0038 (0x0004) [0x0000000000000000]
+	int                                                NumRicochets;                                     		// 0x003C (0x0004) [0x0000000000000000]
+	float                                              LastTraceTime;                                    		// 0x0040 (0x0004) [0x0000000000000000]
+	struct FVector                                     LastSafeTraceStartLocation;                       		// 0x0044 (0x000C) [0x0000000000000000]
+	class AActor*                                      LastHitActor;                                     		// 0x0050 (0x0004) [0x0000000000000000]
+	class APawn*                                       Instigator;                                       		// 0x0054 (0x0004) [0x0000000000000000]
+	float                                              Damage;                                           		// 0x0058 (0x0004) [0x0000000000000000]
+	int                                                FiringPatternIdx;                                 		// 0x005C (0x0004) [0x0000000000000000]
+	unsigned char                                      BulletFromClipType;                               		// 0x0060 (0x0001) [0x0000000000000000]
+	unsigned char                                      bHitWater;                                        		// 0x0061 (0x0001) [0x0000000000000000]
+	unsigned char                                      PenetrationCount;                                 		// 0x0062 (0x0001) [0x0000000000000000]
+	unsigned char                                      Id;                                               		// 0x0063 (0x0001) [0x0000000000000000]
+	struct FVector                                     StartTrace;                                       		// 0x0064 (0x000C) [0x0000000000000000]
+	struct FVector                                     EndTrace;                                         		// 0x0070 (0x000C) [0x0000000000000000]
+	struct FVector                                     OriginalStartTrace;                               		// 0x007C (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowLightProjectileManager.ReplicatedLightProjectile
 // 0x0034
 struct FReplicatedLightProjectile
 {
-	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bStartParticleTracerAtWeapon : 1;                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bActorReflected : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bEnemyPenetrating : 1;                            		// 0x0000 (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      bOvercharged : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000010] 
-	unsigned long                                      bRicochetTowardsEnemy : 1;                        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000020] 
-	unsigned char                                      Id;                                               		// 0x0004 (0x0001) [0x0000000000000000]              
-	struct FVector                                     StartTrace;                                       		// 0x0008 (0x000C) [0x0000000000000000]              
-	struct FVector                                     EndTrace;                                         		// 0x0014 (0x000C) [0x0000000000000000]              
-	float                                              ReflectSpeed;                                     		// 0x0020 (0x0004) [0x0000000000000000]              
-	class UFiringModeDefinition*                       FireDef;                                          		// 0x0024 (0x0004) [0x0000000000000000]              
-	int                                                FiringPatternIdx;                                 		// 0x0028 (0x0004) [0x0000000000000000]              
-	class APawn*                                       Instigator;                                       		// 0x002C (0x0004) [0x0000000000000000]              
-	float                                              StartTime;                                        		// 0x0030 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bStartParticleTracerAtWeapon : 1;                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bActorReflected : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bEnemyPenetrating : 1;                            		// 0x0000 (0x0004) [0x0000000000000000] [0x00000008]
+	unsigned long                                      bOvercharged : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000010]
+	unsigned long                                      bRicochetTowardsEnemy : 1;                        		// 0x0000 (0x0004) [0x0000000000000000] [0x00000020]
+	unsigned char                                      Id;                                               		// 0x0004 (0x0001) [0x0000000000000000]
+	struct FVector                                     StartTrace;                                       		// 0x0008 (0x000C) [0x0000000000000000]
+	struct FVector                                     EndTrace;                                         		// 0x0014 (0x000C) [0x0000000000000000]
+	float                                              ReflectSpeed;                                     		// 0x0020 (0x0004) [0x0000000000000000]
+	class UFiringModeDefinition*                       FireDef;                                          		// 0x0024 (0x0004) [0x0000000000000000]
+	int                                                FiringPatternIdx;                                 		// 0x0028 (0x0004) [0x0000000000000000]
+	class APawn*                                       Instigator;                                       		// 0x002C (0x0004) [0x0000000000000000]
+	float                                              StartTime;                                        		// 0x0030 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowLightProjectileManager.ReplicatedBeamEndPoints
 // 0x0018
 struct FReplicatedBeamEndPoints
 {
-	struct FVector                                     StartPoint;                                       		// 0x0000 (0x000C) [0x0000000000000000]              
-	struct FVector                                     EndPoint;                                         		// 0x000C (0x000C) [0x0000000000000000]              
+	struct FVector                                     StartPoint;                                       		// 0x0000 (0x000C) [0x0000000000000000]
+	struct FVector                                     EndPoint;                                         		// 0x000C (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.Action_SwoopAttack.SwoopAttackData
 // 0x0008
 struct FSwoopAttackData
 {
-	unsigned long                                      bTriggered : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bTriggered : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      bCacheTargetLocation : 1;                         		// 0x0000 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
 	float                                              Distance;                                         		// 0x0004 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 };
@@ -382,8 +382,8 @@ struct FSwoopAttackData
 // 0x000C
 struct FActionSkillCustomEventReplicationData
 {
-	unsigned char                                      EventCountForReplication;                         		// 0x0000 (0x0001) [0x0000000000000000]              
-	struct FName                                       EventName;                                        		// 0x0004 (0x0008) [0x0000000000000000]              
+	unsigned char                                      EventCountForReplication;                         		// 0x0000 (0x0001) [0x0000000000000000]
+	struct FName                                       EventName;                                        		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.ActionSkill.CachedWeaponInfo
@@ -404,13 +404,13 @@ struct FCachedWeaponInfo
 // 0x0034
 struct FWillowStatProperty
 {
-	struct FName                                       Id;                                               		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FSettingsData                               Data;                                             		// 0x0008 (0x000C) [0x0000000000000000]              
-	struct FSettingsData                               MaxData;                                          		// 0x0014 (0x000C) [0x0000000000000000]              
-	struct FSettingsData                               ChallengeBaseData;                                		// 0x0020 (0x000C) [0x0000000000000000]              
-	int                                                OnlineId;                                         		// 0x002C (0x0004) [0x0000000000000000]              
-	unsigned long                                      bSparkStatDirty : 1;                              		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bSparkStatInFlight : 1;                           		// 0x0030 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FName                                       Id;                                               		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FSettingsData                               Data;                                             		// 0x0008 (0x000C) [0x0000000000000000]
+	struct FSettingsData                               MaxData;                                          		// 0x0014 (0x000C) [0x0000000000000000]
+	struct FSettingsData                               ChallengeBaseData;                                		// 0x0020 (0x000C) [0x0000000000000000]
+	int                                                OnlineId;                                         		// 0x002C (0x0004) [0x0000000000000000]
+	unsigned long                                      bSparkStatDirty : 1;                              		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bSparkStatInFlight : 1;                           		// 0x0030 (0x0004) [0x0000000000000000] [0x00000002]
 };
 
 // ScriptStruct WillowGame.WillowCharacterClassDefinition.AttributeCategory
@@ -450,32 +450,32 @@ struct FDeathByWeaponDamageStatID
 // 0x0014
 struct FInteractionIconWithOverrides
 {
-	class UInteractionIconDefinition*                  IconDef;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UInteractionIconDefinition*                  OverrideIconDef;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bOverrideIcon : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bOverrideAction : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bOverrideText : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned char                                      bCostsToUse;                                      		// 0x000C (0x0001) [0x0000000000000000]              
-	unsigned char                                      CostsCurrencyType;                                		// 0x000D (0x0001) [0x0000000000000000]              
-	int                                                CostsAmount;                                      		// 0x0010 (0x0004) [0x0000000000000000]              
+	class UInteractionIconDefinition*                  IconDef;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	class UInteractionIconDefinition*                  OverrideIconDef;                                  		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      bOverrideIcon : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bOverrideAction : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bOverrideText : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned char                                      bCostsToUse;                                      		// 0x000C (0x0001) [0x0000000000000000]
+	unsigned char                                      CostsCurrencyType;                                		// 0x000D (0x0001) [0x0000000000000000]
+	int                                                CostsAmount;                                      		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowRadarManager.ServerDynamicRadarIconData
 // 0x000C
 struct FServerDynamicRadarIconData
 {
-	class UObject*                                     SourceObject;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              StartTime;                                        		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UObject*                                     SourceObject;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              StartTime;                                        		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowRadarManager.RemoteDynamicRadarIconData
 // 0x0014
 struct FRemoteDynamicRadarIconData
 {
-	unsigned char                                      IconType;                                         		// 0x0000 (0x0001) [0x0000000000000000]              
-	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000000000]              
-	unsigned long                                      bActive : 1;                                      		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned char                                      IconType;                                         		// 0x0000 (0x0001) [0x0000000000000000]
+	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000000000]
+	unsigned long                                      bActive : 1;                                      		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.AIPawnBalanceDefinition.AITransformedName
@@ -534,9 +534,9 @@ struct FAIPawnGameStageGradeWeightData : FGameStageGradeWeightData
 // 0x0020
 struct FCellInfo
 {
-	struct FVector                                     AbsolutePosition;                                 		// 0x0000 (0x000C) [0x0000000000000000]              
-	float                                              Width;                                            		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              Height;                                           		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FVector                                     AbsolutePosition;                                 		// 0x0000 (0x000C) [0x0000000000000000]
+	float                                              Width;                                            		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              Height;                                           		// 0x0010 (0x0004) [0x0000000000000000]
 	struct FString                                     CellName;                                         		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -544,10 +544,10 @@ struct FCellInfo
 // 0x0010
 struct FCellContentData
 {
-	class UTexture*                                    Tex;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UTexture*                                    Tex;                                              		// 0x0000 (0x0004) [0x0000000000000000]
 	class UMeshComponent*                              Mesh;                                             		// 0x0004 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class AWillowInventory*                            Inv;                                              		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                ExtArrayIndex;                                    		// 0x000C (0x0004) [0x0000000000000000]              
+	class AWillowInventory*                            Inv;                                              		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                ExtArrayIndex;                                    		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowDeclarations.PanelInfo
@@ -648,10 +648,10 @@ struct FItemDefinitionData
 // 0x0118
 struct FPendingMissionRewardData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FWeaponDefinitionData                       WeaponRewards[ 0x2 ];                             		// 0x0004 (0x0088) [0x0000000000000000]              
-	struct FItemDefinitionData                         ItemRewards[ 0x2 ];                               		// 0x008C (0x0088) [0x0000000000000000]              
-	unsigned long                                      bGrantAltReward : 1;                              		// 0x0114 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FWeaponDefinitionData                       WeaponRewards[0x2];                             		// 0x0004 (0x0088) [0x0000000000000000]
+	struct FItemDefinitionData                         ItemRewards[0x2];                               		// 0x008C (0x0088) [0x0000000000000000]
+	unsigned long                                      bGrantAltReward : 1;                              		// 0x0114 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowDeclarations.UnloadableDlcPendingRewardData
@@ -659,10 +659,10 @@ struct FPendingMissionRewardData
 struct FUnloadableDlcPendingRewardData
 {
 	struct FString                                     MissionDefName;                                   		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FInventorySerialNumber                      WeaponRewards[ 0x2 ];                             		// 0x000C (0x0068) [0x0000000000000000]              
-	struct FInventorySerialNumber                      ItemRewards[ 0x2 ];                               		// 0x0074 (0x0068) [0x0000000000000000]              
-	int                                                DlcPackageId;                                     		// 0x00DC (0x0004) [0x0000000000000000]              
-	unsigned long                                      bGrantAltReward : 1;                              		// 0x00E0 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FInventorySerialNumber                      WeaponRewards[0x2];                             		// 0x000C (0x0068) [0x0000000000000000]
+	struct FInventorySerialNumber                      ItemRewards[0x2];                               		// 0x0074 (0x0068) [0x0000000000000000]
+	int                                                DlcPackageId;                                     		// 0x00DC (0x0004) [0x0000000000000000]
+	unsigned long                                      bGrantAltReward : 1;                              		// 0x00E0 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowDeclarations.MissionStatusPresentation
@@ -684,28 +684,28 @@ struct FItemBehaviorSet
 // 0x0020
 struct FSKULibrarySet
 {
-	int                                                Id;                                               		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                Id;                                               		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FString                                     NameID;                                           		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     LibrarySetPackage;                                		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UObject*                                     CachedDlcALDefRef;                                		// 0x001C (0x0004) [0x0000000000000000]              
+	class UObject*                                     CachedDlcALDefRef;                                		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.AssetLibraryManager.SKURuntimeLibrarySet
 // 0x001C
 struct FSKURuntimeLibrarySet
 {
-	int                                                Id;                                               		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UPackageAssetLibrary*                        Libraries[ 0x6 ];                                 		// 0x0004 (0x0018) [0x0000000000000000]              
+	int                                                Id;                                               		// 0x0000 (0x0004) [0x0000000000000000]
+	class UPackageAssetLibrary*                        Libraries[0x6];                                 		// 0x0004 (0x0018) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.AssetLibraryManager.AssetLibConfig
 // 0x0018
 struct FAssetLibConfig
 {
-	int                                                SublibraryBits;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                AssetBits;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                SublibraryBits;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                AssetBits;                                        		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FString                                     Desc;                                             		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UClass*                                      LibraryType;                                      		// 0x0014 (0x0004) [0x0000000000000000]              
+	class UClass*                                      LibraryType;                                      		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.AttributePresentationDefinition.AttributePresentationValueRemappingData
@@ -723,18 +723,18 @@ struct FAttributePresentationValueRemappingData
 // 0x0010
 struct FModifierValuePresentationData
 {
-	class UAttributePresentationDefinition*            AttributePresentation;                            		// 0x0000 (0x0004) [0x0000000000100000]              
-	class UAttributePresentationDefinition*            OptionalConstraintPresentation;                   		// 0x0004 (0x0004) [0x0000000000100000]              
-	float                                              ModifierValue;                                    		// 0x0008 (0x0004) [0x0000000000100000]              
-	unsigned long                                      bShouldDisplay : 1;                               		// 0x000C (0x0004) [0x0000000000100000] [0x00000001] 
+	class UAttributePresentationDefinition*            AttributePresentation;                            		// 0x0000 (0x0004) [0x0000000000100000]
+	class UAttributePresentationDefinition*            OptionalConstraintPresentation;                   		// 0x0004 (0x0004) [0x0000000000100000]
+	float                                              ModifierValue;                                    		// 0x0008 (0x0004) [0x0000000000100000]
+	unsigned long                                      bShouldDisplay : 1;                               		// 0x000C (0x0004) [0x0000000000100000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.CustomizationUnlockData
 // 0x0014
 struct FCustomizationUnlockData
 {
-	int                                                ProductID;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                NumUnlockedCustomizations;                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                ProductID;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                NumUnlockedCustomizations;                        		// 0x0004 (0x0004) [0x0000000000000000]
 	TArray< unsigned char >                            UnlockedMask;                                     		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -742,47 +742,47 @@ struct FCustomizationUnlockData
 // 0x0005
 struct FMissionRewardPresentationData
 {
-	class UInventoryCardPresentationDefinition*        PresentationDefinition;                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      Rarity;                                           		// 0x0004 (0x0001) [0x0000000000000000]              
+	class UInventoryCardPresentationDefinition*        PresentationDefinition;                           		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      Rarity;                                           		// 0x0004 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IMission.ReplicatedMissionFilterData
 // 0x0008
 struct FReplicatedMissionFilterData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bFiltered : 1;                                    		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned long                                      bFiltered : 1;                                    		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.IMission.ReplicatedMissionObjectiveData
 // 0x0008
 struct FReplicatedMissionObjectiveData
 {
-	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ObjectiveBit;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ObjectiveBit;                                     		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IMission.ReplicatedMissionStatusData
 // 0x0005
 struct FReplicatedMissionStatusData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      Status;                                           		// 0x0004 (0x0001) [0x0000000000000000]              
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      Status;                                           		// 0x0004 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IMission.ReplicatedMissionData
 // 0x007C
 struct FReplicatedMissionData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      Status;                                           		// 0x0004 (0x0001) [0x0000000000000000]              
-	unsigned long                                      bTimerRunning : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	class UMissionObjectiveSetDefinition*              ActiveObjectiveSet;                               		// 0x000C (0x0004) [0x0000000000000000]              
-	class UMissionObjectiveSetDefinition*              SubObjectiveSets[ 0x4 ];                          		// 0x0010 (0x0010) [0x0000000000000000]              
-	int                                                SecondsLeft;                                      		// 0x0020 (0x0004) [0x0000000000000000]              
-	int                                                ObjectiveCounts[ 0x14 ];                          		// 0x0024 (0x0050) [0x0000000000000000]              
-	int                                                GameStage;                                        		// 0x0074 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bFiltered : 1;                                    		// 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      Status;                                           		// 0x0004 (0x0001) [0x0000000000000000]
+	unsigned long                                      bTimerRunning : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	class UMissionObjectiveSetDefinition*              ActiveObjectiveSet;                               		// 0x000C (0x0004) [0x0000000000000000]
+	class UMissionObjectiveSetDefinition*              SubObjectiveSets[0x4];                          		// 0x0010 (0x0010) [0x0000000000000000]
+	int                                                SecondsLeft;                                      		// 0x0020 (0x0004) [0x0000000000000000]
+	int                                                ObjectiveCounts[0x14];                          		// 0x0024 (0x0050) [0x0000000000000000]
+	int                                                GameStage;                                        		// 0x0074 (0x0004) [0x0000000000000000]
+	unsigned long                                      bFiltered : 1;                                    		// 0x0078 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.IMissionDirector.MissionDirectorData
@@ -799,9 +799,9 @@ struct FMissionDirectorData
 // 0x0014
 struct FReplicatedMissionDirectiveData
 {
-	class UIMissionDirector*                           MissionDirector;                                  		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FMissionDirectorData                        MissionDirective;                                 		// 0x0008 (0x000C) [0x0000000000000000]              
+	class UIMissionDirector*                           MissionDirector;                                  		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FMissionDirectorData                        MissionDirective;                                 		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IMission.MissionStatusData
@@ -820,22 +820,22 @@ struct FMissionStatusData
 struct FUnloadableDlcMissionStatusData
 {
 	struct FString                                     MissionDefName;                                   		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      Status;                                           		// 0x000C (0x0001) [0x0000000000000000]              
-	int                                                DlcPackageId;                                     		// 0x0010 (0x0004) [0x0000000000000000]              
+	unsigned char                                      Status;                                           		// 0x000C (0x0001) [0x0000000000000000]
+	int                                                DlcPackageId;                                     		// 0x0010 (0x0004) [0x0000000000000000]
 	TArray< int >                                      ObjectivesProgress;                               		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ActiveObjectiveSetIndex;                          		// 0x0020 (0x0004) [0x0000000000000000]              
+	int                                                ActiveObjectiveSetIndex;                          		// 0x0020 (0x0004) [0x0000000000000000]
 	TArray< int >                                      SubObjectiveSetsIndices;                          		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                GameStage;                                        		// 0x0030 (0x0004) [0x0000000000000000]              
-	int                                                NeedsRewards;                                     		// 0x0034 (0x0004) [0x0000000000000000]              
-	int                                                HeardKickoff;                                     		// 0x0038 (0x0004) [0x0000000000000000]              
+	int                                                GameStage;                                        		// 0x0030 (0x0004) [0x0000000000000000]
+	int                                                NeedsRewards;                                     		// 0x0034 (0x0004) [0x0000000000000000]
+	int                                                HeardKickoff;                                     		// 0x0038 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IMission.MissionRewardData
 // 0x0008
 struct FMissionRewardData
 {
-	class UMissionDefinition*                          MissionDef;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bGrantAltReward : 1;                              		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UMissionDefinition*                          MissionDef;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned long                                      bGrantAltReward : 1;                              		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.IMission.MissionStatusPlayerData
@@ -848,22 +848,22 @@ struct FMissionStatusPlayerData
 	class UMissionObjectiveSetDefinition*              ActiveObjectiveSet;                               		// 0x0014 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< class UMissionObjectiveSetDefinition* >    SubObjectiveSets;                                 		// 0x0018 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	int                                                GameStage;                                        		// 0x0024 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bNeedsRewards : 1;                                		// 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bHeardKickoff : 1;                                		// 0x0028 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bNeedsRewards : 1;                                		// 0x0028 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bHeardKickoff : 1;                                		// 0x0028 (0x0004) [0x0000000000000000] [0x00000002]
 };
 
 // ScriptStruct WillowGame.IMission.MissionData
 // 0x0028
 struct FMissionData
 {
-	class UMissionDefinition*                          MissionDef;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      Status;                                           		// 0x0004 (0x0001) [0x0000000000000000]              
+	class UMissionDefinition*                          MissionDef;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      Status;                                           		// 0x0004 (0x0001) [0x0000000000000000]
 	TArray< int >                                      ObjectivesProgress;                               		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UMissionObjectiveSetDefinition*              ActiveObjectiveSet;                               		// 0x0014 (0x0004) [0x0000000000000000]              
+	class UMissionObjectiveSetDefinition*              ActiveObjectiveSet;                               		// 0x0014 (0x0004) [0x0000000000000000]
 	TArray< class UMissionObjectiveSetDefinition* >    SubObjectiveSets;                                 		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bInitialized : 1;                                 		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bHeardKickoff : 1;                                		// 0x0024 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bFiltered : 1;                                    		// 0x0024 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      bInitialized : 1;                                 		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bHeardKickoff : 1;                                		// 0x0024 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bFiltered : 1;                                    		// 0x0024 (0x0004) [0x0000000000000000] [0x00000004]
 };
 
 // ScriptStruct WillowGame.IMission.ObjectiveStatusData
@@ -877,32 +877,32 @@ struct FObjectiveStatusData
 // 0x0094
 struct FTradeSlot
 {
-	unsigned char                                      Status;                                           		// 0x0000 (0x0001) [0x0000000000000000]              
-	struct FWeaponDefinitionData                       WeaponData;                                       		// 0x0004 (0x0044) [0x0000000000000000]              
-	struct FItemDefinitionData                         ItemData;                                         		// 0x0048 (0x0044) [0x0000000000000000]              
-	int                                                Quantity;                                         		// 0x008C (0x0004) [0x0000000000000000]              
-	class AWillowInventory*                            WInv;                                             		// 0x0090 (0x0004) [0x0000000000000000]              
+	unsigned char                                      Status;                                           		// 0x0000 (0x0001) [0x0000000000000000]
+	struct FWeaponDefinitionData                       WeaponData;                                       		// 0x0004 (0x0044) [0x0000000000000000]
+	struct FItemDefinitionData                         ItemData;                                         		// 0x0048 (0x0044) [0x0000000000000000]
+	int                                                Quantity;                                         		// 0x008C (0x0004) [0x0000000000000000]
+	class AWillowInventory*                            WInv;                                             		// 0x0090 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowHUD.HUDWidget_ChallengeData
 // 0x0018
 struct FHUDWidget_ChallengeData
 {
-	class UChallengeDefinition*                        Challenge;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                LevelIndex;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                ConditionIndex;                                   		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                CurrStatVal;                                      		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                GoalStatVal;                                      		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bComplete : 1;                                    		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UChallengeDefinition*                        Challenge;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                LevelIndex;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                ConditionIndex;                                   		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                CurrStatVal;                                      		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                GoalStatVal;                                      		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned long                                      bComplete : 1;                                    		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowHUD.FadePickupParticle
 // 0x000C
 struct FFadePickupParticle
 {
-	class AActor*                                      SourceActor;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
+	class AActor*                                      SourceActor;                                      		// 0x0000 (0x0004) [0x0000000000000000]
 	class UParticleSystemComponent*                    Particle;                                         		// 0x0004 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	float                                              FadeEndTime;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
+	float                                              FadeEndTime;                                      		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowSaveGameManager.PlayerSaveData
@@ -910,24 +910,24 @@ struct FFadePickupParticle
 struct FPlayerSaveData
 {
 	struct FString                                     FilePath;                                         		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FDouble                                     TimeStamp;                                        		// 0x000C (0x0008) [0x0000000000000000]              
+	struct FDouble                                     TimeStamp;                                        		// 0x000C (0x0008) [0x0000000000000000]
 	struct FString                                     PlayerClassDefName;                               		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     ClassName;                                        		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     CharacterName;                                    		// 0x002C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ExpLevel;                                         		// 0x0038 (0x0004) [0x0000000000000000]              
-	int                                                CurrencyOnHand[ 0xD ];                            		// 0x003C (0x0034) [0x0000000000000000]              
+	int                                                ExpLevel;                                         		// 0x0038 (0x0004) [0x0000000000000000]
+	int                                                CurrencyOnHand[0xD];                            		// 0x003C (0x0034) [0x0000000000000000]
 	struct FString                                     UICharacterName;                                  		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                PlaythroughsCompleted;                            		// 0x007C (0x0004) [0x0000000000000000]              
+	int                                                PlaythroughsCompleted;                            		// 0x007C (0x0004) [0x0000000000000000]
 	struct FString                                     LastVisitedTeleporter;                            		// 0x0080 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ActiveMissionNumber;                              		// 0x008C (0x0004) [0x0000000000000000]              
-	int                                                PlotMissionNumber;                                		// 0x0090 (0x0004) [0x0000000000000000]              
-	int                                                TotalPlayTime;                                    		// 0x0094 (0x0004) [0x0000000000000000]              
-	int                                                LastPlaythroughNumber;                            		// 0x0098 (0x0004) [0x0000000000000000]              
+	int                                                ActiveMissionNumber;                              		// 0x008C (0x0004) [0x0000000000000000]
+	int                                                PlotMissionNumber;                                		// 0x0090 (0x0004) [0x0000000000000000]
+	int                                                TotalPlayTime;                                    		// 0x0094 (0x0004) [0x0000000000000000]
+	int                                                LastPlaythroughNumber;                            		// 0x0098 (0x0004) [0x0000000000000000]
 	struct FString                                     LastSaveDate;                                     		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FGuid                                       SaveGuid;                                         		// 0x00A8 (0x0010) [0x0000000000000000]              
-	unsigned long                                      bIsUnloadedDlcCharacter : 1;                      		// 0x00B8 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                SaveGameFileId;                                   		// 0x00BC (0x0004) [0x0000000000000000]              
-	int                                                ExpPoints;                                        		// 0x00C0 (0x0004) [0x0000000000000000]              
+	struct FGuid                                       SaveGuid;                                         		// 0x00A8 (0x0010) [0x0000000000000000]
+	unsigned long                                      bIsUnloadedDlcCharacter : 1;                      		// 0x00B8 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                SaveGameFileId;                                   		// 0x00BC (0x0004) [0x0000000000000000]
+	int                                                ExpPoints;                                        		// 0x00C0 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowSaveGameManager.LoadInfo
@@ -935,9 +935,9 @@ struct FPlayerSaveData
 struct FLoadInfo
 {
 	struct FPlayerSaveData                             CharacterData;                                    		// 0x0000 (0x00C4) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      LoadInfoReady : 1;                                		// 0x00C4 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      LoadSucceeded : 1;                                		// 0x00C4 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      LoadCancelled : 1;                                		// 0x00C4 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      LoadInfoReady : 1;                                		// 0x00C4 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      LoadSucceeded : 1;                                		// 0x00C4 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      LoadCancelled : 1;                                		// 0x00C4 (0x0004) [0x0000000000000000] [0x00000004]
 };
 
 // ScriptStruct WillowGame.IUpdatePostProcessOverride.AttributeDefinitionDefault
@@ -961,7 +961,7 @@ struct FAttributeScalarParam
 	struct FAttributeDefinitionDefault                 MinOutput;                                        		// 0x0024 (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeDefinitionDefault                 MaxOutput;                                        		// 0x002C (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      ScalarParamOperand;                               		// 0x0034 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	float                                              CurrentValue;                                     		// 0x0038 (0x0004) [0x0000000000000000]              
+	float                                              CurrentValue;                                     		// 0x0038 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IScreenParticle.ScreenParticleModifier
@@ -1016,7 +1016,7 @@ struct FScreenParticleInitParams
 	float                                              ParticleDepth;                                    		// 0x0030 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      ScalingMode;                                      		// 0x0034 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	struct FScreenParticleParamOverTime                StopParamsOT;                                     		// 0x0038 (0x0018) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      bOnlyOwnerSee : 1;                                		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bOnlyOwnerSee : 1;                                		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.IScreenParticle.ScreenParticleRecord
@@ -1057,7 +1057,7 @@ struct FMaterialEffectModifier
 	struct FName                                       EffectName;                                       		// 0x0000 (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	TArray< struct FAttributeScalarParam >             ScalarParams;                                     		// 0x0008 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	float                                              CachedValue;                                      		// 0x0014 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UMaterialInstanceConstant*                   MaterialInstance;                                 		// 0x0018 (0x0004) [0x0000000000000000]              
+	class UMaterialInstanceConstant*                   MaterialInstance;                                 		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IUpdatePostProcessOverride.DOFEffectModifierData
@@ -1099,9 +1099,9 @@ struct FPostProcessChainRecord
 	class UPostProcessChain*                           Template;                                         		// 0x0000 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UPostProcessChain*                           Instance;                                         		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< struct FMaterialEffectModifier >           AppliedModifiers;                                 		// 0x0008 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      PopWhenScalarParamIsMaxedOut : 1;                 		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FDOFEffectModifierData                      DOFEffectModifier;                                		// 0x0018 (0x000C) [0x0000000000000000]              
-	float                                              NextDOFUpdateTime;                                		// 0x0024 (0x0004) [0x0000000000000000]              
+	unsigned long                                      PopWhenScalarParamIsMaxedOut : 1;                 		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
+	struct FDOFEffectModifierData                      DOFEffectModifier;                                		// 0x0018 (0x000C) [0x0000000000000000]
+	float                                              NextDOFUpdateTime;                                		// 0x0024 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPhysicalMaterialProperty.RtpcParameterValue
@@ -1172,44 +1172,44 @@ struct FDamageSurfaceTypeModifier
 {
 	unsigned char                                      SurfaceType;                                      		// 0x0000 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                BaseChance;                                       		// 0x0004 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                BaseSpreadChance;                                 		// 0x0014 (0x0010) [0x0000000000000000]              
-	struct FAttributeInitializationData                SpreadChanceDecayMultiplier;                      		// 0x0024 (0x0010) [0x0000000000000000]              
+	struct FAttributeInitializationData                BaseSpreadChance;                                 		// 0x0014 (0x0010) [0x0000000000000000]
+	struct FAttributeInitializationData                SpreadChanceDecayMultiplier;                      		// 0x0024 (0x0010) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StatusEffectsComponent.ActiveStatusEffect
 // 0x0084
 struct FActiveStatusEffect
 {
-	float                                              Duration;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              TotalElapsedTime;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              AccumulatedTime;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              DamagePerSecond;                                  		// 0x000C (0x0004) [0x0000000000000000]              
-	class AActor*                                      EventInstigator;                                  		// 0x0010 (0x0004) [0x0000000000000000]              
-	class UIDamageCauser*                              DamageCauser;                                     		// 0x0014 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0018 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	class UClass*                                      DamageSource;                                     		// 0x001C (0x0004) [0x0000000000000000]              
-	class UStatusEffectDefinition*                     StatusEffectDefinition;                           		// 0x0020 (0x0004) [0x0000000000000000]              
-	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x0024 (0x0004) [0x0000000000000000]              
+	float                                              Duration;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              TotalElapsedTime;                                 		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              AccumulatedTime;                                  		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              DamagePerSecond;                                  		// 0x000C (0x0004) [0x0000000000000000]
+	class AActor*                                      EventInstigator;                                  		// 0x0010 (0x0004) [0x0000000000000000]
+	class UIDamageCauser*                              DamageCauser;                                     		// 0x0014 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0018 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UClass*                                      DamageSource;                                     		// 0x001C (0x0004) [0x0000000000000000]
+	class UStatusEffectDefinition*                     StatusEffectDefinition;                           		// 0x0020 (0x0004) [0x0000000000000000]
+	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x0024 (0x0004) [0x0000000000000000]
 	struct FTraceHitInfo                               HitInfo;                                          		// 0x0028 (0x001C) [0x0000000000080000]              ( CPF_Component )
-	struct FName                                       DamageNumberSocket;                               		// 0x0044 (0x0008) [0x0000000000000000]              
-	float                                              AccumulatedSpreadTime;                            		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              SpreadTimeInterval;                               		// 0x0050 (0x0004) [0x0000000000000000]              
-	int                                                SpreadCount;                                      		// 0x0054 (0x0004) [0x0000000000000000]              
-	int                                                SpreadAttempt;                                    		// 0x0058 (0x0004) [0x0000000000000000]              
-	float                                              SpreadRadius;                                     		// 0x005C (0x0004) [0x0000000000000000]              
+	struct FName                                       DamageNumberSocket;                               		// 0x0044 (0x0008) [0x0000000000000000]
+	float                                              AccumulatedSpreadTime;                            		// 0x004C (0x0004) [0x0000000000000000]
+	float                                              SpreadTimeInterval;                               		// 0x0050 (0x0004) [0x0000000000000000]
+	int                                                SpreadCount;                                      		// 0x0054 (0x0004) [0x0000000000000000]
+	int                                                SpreadAttempt;                                    		// 0x0058 (0x0004) [0x0000000000000000]
+	float                                              SpreadRadius;                                     		// 0x005C (0x0004) [0x0000000000000000]
 	TArray< class UBodyHitRegionDefinition* >          TravelledRegions;                                 		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UIStatusEffectTarget* >              TravelledTargets;                                 		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	class UStatusEffectsComponent*                     OwnerComponent;                                   		// 0x0078 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	int                                                SpreadCap;                                        		// 0x007C (0x0004) [0x0000000000000000]              
-	unsigned long                                      bIsInfiniteDuration : 1;                          		// 0x0080 (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                SpreadCap;                                        		// 0x007C (0x0004) [0x0000000000000000]
+	unsigned long                                      bIsInfiniteDuration : 1;                          		// 0x0080 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.StatusEffectsComponent.SocketEmitter
 // 0x000C
 struct FSocketEmitter
 {
-	class AEmitter*                                    Emitter;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       SocketName;                                       		// 0x0004 (0x0008) [0x0000000000000000]              
+	class AEmitter*                                    Emitter;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       SocketName;                                       		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StatusEffectsComponent.HitRegionEmitters
@@ -1217,35 +1217,35 @@ struct FSocketEmitter
 struct FHitRegionEmitters
 {
 	TArray< struct FSocketEmitter >                    Emitters;                                         		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x000C (0x0004) [0x0000000000000000]              
-	unsigned long                                      bDeleteOnDeactivation : 1;                        		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              TimeWaitingToDie;                                 		// 0x0014 (0x0004) [0x0000000000000000]              
+	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x000C (0x0004) [0x0000000000000000]
+	unsigned long                                      bDeleteOnDeactivation : 1;                        		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              TimeWaitingToDie;                                 		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StatusEffectsComponent.EffectSoundData
 // 0x0008
 struct FEffectSoundData
 {
-	unsigned char                                      Type;                                             		// 0x0000 (0x0001) [0x0000000000000000]              
-	int                                                AkPlayingId;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
+	unsigned char                                      Type;                                             		// 0x0000 (0x0001) [0x0000000000000000]
+	int                                                AkPlayingId;                                      		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StatusEffectsComponent.OngoingEffectInfo
 // 0x000C
 struct FOngoingEffectInfo
 {
-	float                                              TotalDamageDealtToHealth;                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              TotalDamageDealtToShields;                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+	float                                              TotalDamageDealtToHealth;                         		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              TotalDamageDealtToShields;                        		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IShop.ShopItemData
 // 0x0009
 struct FShopItemData
 {
-	class AWillowInventory*                            Item;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Price;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      ItemStatus;                                       		// 0x0008 (0x0001) [0x0000000000000000]              
+	class AWillowInventory*                            Item;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                Price;                                            		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      ItemStatus;                                       		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.BodyWeaponHoldDefinition.ConditionalAnimData
@@ -1313,51 +1313,51 @@ struct FWeaponBoneControllerData
 // 0x003C
 struct FWeaponMemento
 {
-	struct FInventorySerialNumber                      SerialNumber;                                     		// 0x0000 (0x0034) [0x0000000000000000]              
-	int                                                StoredAmmo;                                       		// 0x0034 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bEquipped : 1;                                    		// 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bDropOnDeath : 1;                                 		// 0x0038 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FInventorySerialNumber                      SerialNumber;                                     		// 0x0000 (0x0034) [0x0000000000000000]
+	int                                                StoredAmmo;                                       		// 0x0034 (0x0004) [0x0000000000000000]
+	unsigned long                                      bEquipped : 1;                                    		// 0x0038 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bDropOnDeath : 1;                                 		// 0x0038 (0x0004) [0x0000000000000000] [0x00000002]
 };
 
 // ScriptStruct WillowGame.WillowPawn.BloodSplatterTrace
 // 0x0020
 struct FBloodSplatterTrace
 {
-	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector                                     HitLocation;                                      		// 0x0004 (0x000C) [0x0000000000000000]              
-	struct FVector                                     Momentum;                                         		// 0x0010 (0x000C) [0x0000000000000000]              
-	float                                              DamageSeverityPercent;                            		// 0x001C (0x0004) [0x0000000000000000]              
+	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector                                     HitLocation;                                      		// 0x0004 (0x000C) [0x0000000000000000]
+	struct FVector                                     Momentum;                                         		// 0x0010 (0x000C) [0x0000000000000000]
+	float                                              DamageSeverityPercent;                            		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPawn.GoreEffect
 // 0x0024
 struct FGoreEffect
 {
-	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                GoreDataIndex;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
-	class AController*                                 InstigatedBy;                                     		// 0x0008 (0x0004) [0x0000000000000000]              
-	struct FVector                                     HitLocation;                                      		// 0x000C (0x000C) [0x0000000000000000]              
-	struct FVector                                     Momentum;                                         		// 0x0018 (0x000C) [0x0000000000000000]              
+	class UBodyHitRegionDefinition*                    HitRegion;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                GoreDataIndex;                                    		// 0x0004 (0x0004) [0x0000000000000000]
+	class AController*                                 InstigatedBy;                                     		// 0x0008 (0x0004) [0x0000000000000000]
+	struct FVector                                     HitLocation;                                      		// 0x000C (0x000C) [0x0000000000000000]
+	struct FVector                                     Momentum;                                         		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPawn.MaterialScalarFadeReplication
 // 0x0018
 struct FMaterialScalarFadeReplication
 {
-	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              StartValue;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              EndValue;                                         		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              FadeTime;                                         		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bRunning : 1;                                     		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsForGoreDeath : 1;                              		// 0x0014 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              StartValue;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              EndValue;                                         		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              FadeTime;                                         		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned long                                      bRunning : 1;                                     		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsForGoreDeath : 1;                              		// 0x0014 (0x0004) [0x0000000000000000] [0x00000002]
 };
 
 // ScriptStruct WillowGame.WillowPawn.HolsteredGearDisplaySlot
 // 0x0008
 struct FHolsteredGearDisplaySlot
 {
-	unsigned char                                      State;                                            		// 0x0000 (0x0001) [0x0000000000000000]              
-	class AWillowInventory*                            Item;                                             		// 0x0004 (0x0004) [0x0000000000000000]              
+	unsigned char                                      State;                                            		// 0x0000 (0x0001) [0x0000000000000000]
+	class AWillowInventory*                            Item;                                             		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.BodyHitRegionDefinition.GoreTriggerData
@@ -1397,39 +1397,39 @@ struct FWeaponPartAttachmentData
 // 0x0034
 struct FMeleeOverTimeState
 {
-	unsigned long                                      bIsMeleeActive : 1;                               		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	class UMeleeDefinition*                            MeleeDefinition;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              MeleeStartTime;                                   		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              TimeElapsedSinceLastMelee;                        		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bIsMeleeActive : 1;                               		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	class UMeleeDefinition*                            MeleeDefinition;                                  		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              MeleeStartTime;                                   		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              TimeElapsedSinceLastMelee;                        		// 0x000C (0x0004) [0x0000000000000000]
 	TArray< class AActor* >                            HitActors;                                        		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     MeleeStartLocation;                               		// 0x001C (0x000C) [0x0000000000000000]              
-	struct FRotator                                    MeleeStartRotation;                               		// 0x0028 (0x000C) [0x0000000000000000]              
+	struct FVector                                     MeleeStartLocation;                               		// 0x001C (0x000C) [0x0000000000000000]
+	struct FRotator                                    MeleeStartRotation;                               		// 0x0028 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.IDynamicObstacle.ObstacleData
 // 0x004C
 struct FObstacleData
 {
-	class AActor*                                      Actor;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	class AActor*                                      Leader;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Radius;                                           		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              HalfHeight;                                       		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              MaxSpeed;                                         		// 0x0010 (0x0004) [0x0000000000000000]              
-	struct FVector                                     Location;                                         		// 0x0014 (0x000C) [0x0000000000000000]              
-	struct FVector                                     Velocity;                                         		// 0x0020 (0x000C) [0x0000000000000000]              
-	struct FVector                                     OldVelocity;                                      		// 0x002C (0x000C) [0x0000000000000000]              
-	struct FVector2D                                   LastOffset;                                       		// 0x0038 (0x0008) [0x0000000000000000]              
-	class UIDynamicObstacle*                           IDO;                                              		// 0x0040 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	unsigned long                                      bWasAvoiding : 1;                                 		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	class AActor*                                      Actor;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	class AActor*                                      Leader;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Radius;                                           		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              HalfHeight;                                       		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              MaxSpeed;                                         		// 0x0010 (0x0004) [0x0000000000000000]
+	struct FVector                                     Location;                                         		// 0x0014 (0x000C) [0x0000000000000000]
+	struct FVector                                     Velocity;                                         		// 0x0020 (0x000C) [0x0000000000000000]
+	struct FVector                                     OldVelocity;                                      		// 0x002C (0x000C) [0x0000000000000000]
+	struct FVector2D                                   LastOffset;                                       		// 0x0038 (0x0008) [0x0000000000000000]
+	class UIDynamicObstacle*                           IDO;                                              		// 0x0040 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned long                                      bWasAvoiding : 1;                                 		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.ISimpleAnimPlayer.SimpleAnimData
 // 0x0018
 struct FSimpleAnimData
 {
-	struct FName                                       AnimName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	class UWillowAnimTree*                             Tree;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       AnimName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	class UWillowAnimTree*                             Tree;                                             		// 0x0008 (0x0004) [0x0000000000000000]
 	TArray< class UWillowAnimNode_Simple* >            Nodes;                                            		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -1643,9 +1643,9 @@ struct FPlayerClassAchievementUnlockData
 // 0x000C
 struct FPendingClientTrainingMessage
 {
-	class UClass*                                      Message;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UTrainingMessageDefinition*                  TrainingDefinition;                               		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UClass*                                      Message;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	class UTrainingMessageDefinition*                  TrainingDefinition;                               		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.PendingMissionRewardsData
@@ -1653,15 +1653,15 @@ struct FPendingClientTrainingMessage
 struct FPendingMissionRewardsData
 {
 	TArray< struct FPendingMissionRewardData >         PendingMissionRewards;                            		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                PlaythroughIndex;                                 		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                PlaythroughIndex;                                 		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.OneOffLevelChallengeData
 // 0x0010
 struct FOneOffLevelChallengeData
 {
-	unsigned char                                      PackageId;                                        		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      ContentId;                                        		// 0x0001 (0x0001) [0x0000000000000000]              
+	unsigned char                                      PackageId;                                        		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      ContentId;                                        		// 0x0001 (0x0001) [0x0000000000000000]
 	TArray< int >                                      Completion;                                       		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -1681,8 +1681,8 @@ struct FCurrencyState
 {
 	unsigned char                                      FormOfCurrency;                                   		// 0x0000 (0x0001) [0x0000000000000002]              ( CPF_Const )
 	struct FName                                       StatName;                                         		// 0x0004 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	int                                                CurrentAmount;                                    		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                LastKnownAmount;                                  		// 0x0010 (0x0004) [0x0000000000000000]              
+	int                                                CurrentAmount;                                    		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                LastKnownAmount;                                  		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.BankSlot
@@ -1696,9 +1696,9 @@ struct FBankSlot
 // 0x003C
 struct FChestData
 {
-	class UClass*                                      InventoryClass;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FInventorySerialNumber                      InventorySerialNumber;                            		// 0x0004 (0x0034) [0x0000000000000000]              
-	class AWillowInventory*                            Inventory;                                        		// 0x0038 (0x0004) [0x0000000000000000]              
+	class UClass*                                      InventoryClass;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FInventorySerialNumber                      InventorySerialNumber;                            		// 0x0004 (0x0034) [0x0000000000000000]
+	class AWillowInventory*                            Inventory;                                        		// 0x0038 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.MissionPlaythroughData
@@ -1709,7 +1709,7 @@ struct FMissionPlaythroughData
 	TArray< struct FUnloadableDlcMissionStatusData >   UnloadableDlcMissionList;                         		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FUnloadableDlcPendingRewardData >   UnloadableDlcPendingMissionRewards;               		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UMissionDefinition* >                FilteredMissions;                                 		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UMissionDefinition*                          ActiveMission;                                    		// 0x0030 (0x0004) [0x0000000000000000]              
+	class UMissionDefinition*                          ActiveMission;                                    		// 0x0030 (0x0004) [0x0000000000000000]
 	int                                                PlayThroughNumber;                                		// 0x0034 (0x0004) [0x0000000020000000]              ( CPF_Deprecated )
 };
 
@@ -1717,10 +1717,10 @@ struct FMissionPlaythroughData
 // 0x000C
 struct FStatusMenuMissionEligibilityData
 {
-	class UMissionDefinition*                          MissionDef;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      MissionStatus;                                    		// 0x0004 (0x0001) [0x0000000000000000]              
-	unsigned long                                      bIsBlocked : 1;                                   		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsFiltered : 1;                                  		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
+	class UMissionDefinition*                          MissionDef;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      MissionStatus;                                    		// 0x0004 (0x0001) [0x0000000000000000]
+	unsigned long                                      bIsBlocked : 1;                                   		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsFiltered : 1;                                  		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.InventorySaveGameData
@@ -1738,62 +1738,62 @@ struct FInventorySaveGameData
 struct FLoginState
 {
 	struct FString                                     LoginName;                                        		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bIsDirty : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bIsDirty : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.LungeData
 // 0x0010
 struct FLungeData
 {
-	class AActor*                                      Target;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Length;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Start;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              SavedAccelRate;                                   		// 0x000C (0x0004) [0x0000000000000000]              
+	class AActor*                                      Target;                                           		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Length;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Start;                                            		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              SavedAccelRate;                                   		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowVehicle.TimePosition
 // 0x0010
 struct FTimePosition
 {
-	struct FVector                                     Position;                                         		// 0x0000 (0x000C) [0x0000000000000000]              
-	float                                              Time;                                             		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FVector                                     Position;                                         		// 0x0000 (0x000C) [0x0000000000000000]
+	float                                              Time;                                             		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowVehicle.VehicleSeatInstance
 // 0x0078
 struct FVehicleSeatInstance
 {
-	class APawn*                                       StoragePawn;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
-	class APawn*                                       LastStoragePawn;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	class AVehicle*                                    SeatPawn;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
-	class AWillowVehicleWeapon*                        Gun;                                              		// 0x000C (0x0004) [0x0000000000000000]              
+	class APawn*                                       StoragePawn;                                      		// 0x0000 (0x0004) [0x0000000000000000]
+	class APawn*                                       LastStoragePawn;                                  		// 0x0004 (0x0004) [0x0000000000000000]
+	class AVehicle*                                    SeatPawn;                                         		// 0x0008 (0x0004) [0x0000000000000000]
+	class AWillowVehicleWeapon*                        Gun;                                              		// 0x000C (0x0004) [0x0000000000000000]
 	class UMeshComponent*                              GunMesh;                                          		// 0x0010 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UWeaponTypeDefinition*                       GunDefinition;                                    		// 0x0014 (0x0004) [0x0000000000000000]              
-	int                                                BarrelIndex;                                      		// 0x0018 (0x0004) [0x0000000000000000]              
-	struct FName                                       WeaponRotationName;                               		// 0x001C (0x0008) [0x0000000000000000]              
-	struct FName                                       FlashLocationName;                                		// 0x0024 (0x0008) [0x0000000000000000]              
-	struct FName                                       FlashCountName;                                   		// 0x002C (0x0008) [0x0000000000000000]              
-	struct FName                                       FiringModeName;                                   		// 0x0034 (0x0008) [0x0000000000000000]              
-	struct FName                                       AttachedWeaponName;                               		// 0x003C (0x0008) [0x0000000000000000]              
+	class UWeaponTypeDefinition*                       GunDefinition;                                    		// 0x0014 (0x0004) [0x0000000000000000]
+	int                                                BarrelIndex;                                      		// 0x0018 (0x0004) [0x0000000000000000]
+	struct FName                                       WeaponRotationName;                               		// 0x001C (0x0008) [0x0000000000000000]
+	struct FName                                       FlashLocationName;                                		// 0x0024 (0x0008) [0x0000000000000000]
+	struct FName                                       FlashCountName;                                   		// 0x002C (0x0008) [0x0000000000000000]
+	struct FName                                       FiringModeName;                                   		// 0x0034 (0x0008) [0x0000000000000000]
+	struct FName                                       AttachedWeaponName;                               		// 0x003C (0x0008) [0x0000000000000000]
 	TArray< class UWillowSkelControl_TurretConstrained* > TurretControllers;                                		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class USpecialMoveDefinition*                      WeaponFireSMD;                                    		// 0x0050 (0x0004) [0x0000000000000000]              
+	class USpecialMoveDefinition*                      WeaponFireSMD;                                    		// 0x0050 (0x0004) [0x0000000000000000]
 	TArray< struct FTimePosition >                     OldPositions;                                     		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     SmoothedCameraOffset;                             		// 0x0060 (0x000C) [0x0000000000000000]              
-	int                                                IncomingSeatIndex;                                		// 0x006C (0x0004) [0x0000000000000000]              
-	float                                              SeatLockTime;                                     		// 0x0070 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bDontStopAnimOnExit : 1;                          		// 0x0074 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bSwitchingSeats : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bExiting : 1;                                     		// 0x0074 (0x0004) [0x0000000000000000] [0x00000004] 
+	struct FVector                                     SmoothedCameraOffset;                             		// 0x0060 (0x000C) [0x0000000000000000]
+	int                                                IncomingSeatIndex;                                		// 0x006C (0x0004) [0x0000000000000000]
+	float                                              SeatLockTime;                                     		// 0x0070 (0x0004) [0x0000000000000000]
+	unsigned long                                      bDontStopAnimOnExit : 1;                          		// 0x0074 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bSwitchingSeats : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bExiting : 1;                                     		// 0x0074 (0x0004) [0x0000000000000000] [0x00000004]
 };
 
 // ScriptStruct WillowGame.UBMGraveyardSaveData.TombstoneData
 // 0x004C
 struct FTombstoneData
 {
-	int                                                TotalTimePlayed;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                CharacterLevel;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                PercentMissionsComplete;                          		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                PercentChallengesComplete;                        		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                TotalTimePlayed;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                CharacterLevel;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                PercentMissionsComplete;                          		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                PercentChallengesComplete;                        		// 0x000C (0x0004) [0x0000000000000000]
 	struct FString                                     CharacterName;                                    		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     FavoriteManufacturer;                             		// 0x001C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     FavoriteWeaponType;                               		// 0x0028 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -1884,9 +1884,9 @@ struct FUnloadableDlcWeaponSaveGameData
 struct FPostProcessOverlayInfo
 {
 	struct FPostProcessOverlay                         PostProcessOverlay;                               		// 0x0000 (0x010C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              SceneInterpolationPhaseTime;                      		// 0x010C (0x0004) [0x0000000000000000]              
-	float                                              SceneInterpolationDuration;                       		// 0x0110 (0x0004) [0x0000000000000000]              
-	unsigned char                                      PostProcessOverlayPhase;                          		// 0x0114 (0x0001) [0x0000000000000000]              
+	float                                              SceneInterpolationPhaseTime;                      		// 0x010C (0x0004) [0x0000000000000000]
+	float                                              SceneInterpolationDuration;                       		// 0x0110 (0x0004) [0x0000000000000000]
+	unsigned char                                      PostProcessOverlayPhase;                          		// 0x0114 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.SpeedKillData
@@ -1894,44 +1894,44 @@ struct FPostProcessOverlayInfo
 struct FSpeedKillData
 {
 	struct FString                                     VictimName;                                       		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              VictimKillTime;                                   		// 0x000C (0x0004) [0x0000000000000000]              
+	float                                              VictimKillTime;                                   		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.LurchData
 // 0x0014
 struct FLurchData
 {
-	float                                              StartTime;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              LocMagnitude;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              RotMagnitude;                                     		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              Duration;                                         		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              FalloffRate;                                      		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              StartTime;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              LocMagnitude;                                     		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              RotMagnitude;                                     		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              Duration;                                         		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              FalloffRate;                                      		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSkillTree.SkillTreeSkillStateData
 // 0x0014
 struct FSkillTreeSkillStateData
 {
-	class USkillDefinition*                            SkillDefinition;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	class USkillTreeBranchDefinition*                  ParentBranchDefinition;                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                TierNumber;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                SkillGrade;                                       		// 0x000C (0x0004) [0x0000000000000000]              
-	unsigned long                                      bIsUnlocked : 1;                                  		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	class USkillDefinition*                            SkillDefinition;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	class USkillTreeBranchDefinition*                  ParentBranchDefinition;                           		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                TierNumber;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                SkillGrade;                                       		// 0x000C (0x0004) [0x0000000000000000]
+	unsigned long                                      bIsUnlocked : 1;                                  		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.PlayerSkillTree.PlayerSkillTreeSkillData
 // 0x0024
 struct FPlayerSkillTreeSkillData
 {
-	class USkillDefinition*                            Definition;                                       		// 0x0000 (0x0004) [0x0000000000100000]              
-	int                                                Index;                                            		// 0x0004 (0x0004) [0x0000000000100000]              
-	int                                                PrevSkillIndex;                                   		// 0x0008 (0x0004) [0x0000000000100000]              
-	int                                                NextSkillIndex;                                   		// 0x000C (0x0004) [0x0000000000100000]              
-	int                                                ParentTierIndex;                                  		// 0x0010 (0x0004) [0x0000000000100000]              
-	int                                                PrevSkillTypeIndex;                               		// 0x0014 (0x0004) [0x0000000000100000]              
-	int                                                NextSkillTypeIndex;                               		// 0x0018 (0x0004) [0x0000000000100000]              
-	int                                                Grade;                                            		// 0x001C (0x0004) [0x0000000000100000]              
-	class UPlayerSkillTree*                            Owner;                                            		// 0x0020 (0x0004) [0x0000000000100000]              
+	class USkillDefinition*                            Definition;                                       		// 0x0000 (0x0004) [0x0000000000100000]
+	int                                                Index;                                            		// 0x0004 (0x0004) [0x0000000000100000]
+	int                                                PrevSkillIndex;                                   		// 0x0008 (0x0004) [0x0000000000100000]
+	int                                                NextSkillIndex;                                   		// 0x000C (0x0004) [0x0000000000100000]
+	int                                                ParentTierIndex;                                  		// 0x0010 (0x0004) [0x0000000000100000]
+	int                                                PrevSkillTypeIndex;                               		// 0x0014 (0x0004) [0x0000000000100000]
+	int                                                NextSkillTypeIndex;                               		// 0x0018 (0x0004) [0x0000000000100000]
+	int                                                Grade;                                            		// 0x001C (0x0004) [0x0000000000100000]
+	class UPlayerSkillTree*                            Owner;                                            		// 0x0020 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct WillowGame.Skill.AppliedSkillEffect
@@ -1940,7 +1940,7 @@ struct FAppliedSkillEffect
 {
 	struct FSkillEffectData                            EffectData;                                       		// 0x0000 (0x004C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UObject* >                           Contexts;                                         		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UAttributeModifier*                          Modifier;                                         		// 0x0058 (0x0004) [0x0000000000000000]              
+	class UAttributeModifier*                          Modifier;                                         		// 0x0058 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.VehicleClassDefinition.VehicleSeatDefinition
@@ -1956,8 +1956,8 @@ struct FVehicleSeatDefinition
 	class UAIDefinition*                               SeatAIDef;                                        		// 0x0020 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	class ULocalizedStringDefinition*                  SeatInteractTextDefinition;                       		// 0x0024 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< struct FName >                             GunSocket;                                        		// 0x0028 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	struct FName                                       SeatNameEnter;                                    		// 0x0034 (0x0008) [0x0000000000000000]              
-	struct FName                                       SeatNameExit;                                     		// 0x003C (0x0008) [0x0000000000000000]              
+	struct FName                                       SeatNameEnter;                                    		// 0x0034 (0x0008) [0x0000000000000000]
+	struct FName                                       SeatNameExit;                                     		// 0x003C (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.ChallengeDefinition.ConditionLevel
@@ -1976,55 +1976,55 @@ struct FConditionLevel
 // 0x0008
 struct FChallengeData
 {
-	class AWillowPlayerController*                     PCOwner;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UChallengeDefinition*                        ChallengeDefinition;                              		// 0x0004 (0x0004) [0x0000000000000000]              
+	class AWillowPlayerController*                     PCOwner;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	class UChallengeDefinition*                        ChallengeDefinition;                              		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.TrainingData
 // 0x0008
 struct FTrainingData
 {
-	class AWillowPlayerController*                     PCOwner;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UTrainingMessageDefinition*                  TrainingDefinition;                               		// 0x0004 (0x0004) [0x0000000000000000]              
+	class AWillowPlayerController*                     PCOwner;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	class UTrainingMessageDefinition*                  TrainingDefinition;                               		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.TaggedGFxMovie
 // 0x000C
 struct FTaggedGFxMovie
 {
-	class UGearboxGFxMovie*                            Movie;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       Tag;                                              		// 0x0004 (0x0008) [0x0000000000000000]              
+	class UGearboxGFxMovie*                            Movie;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       Tag;                                              		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.ILootable.SpawnedAttachedLootData
 // 0x000C
 struct FSpawnedAttachedLootData
 {
-	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000100000]              
-	struct FName                                       AttachmentPointName;                              		// 0x0004 (0x0008) [0x0000000000100000]              
+	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000100000]
+	struct FName                                       AttachmentPointName;                              		// 0x0004 (0x0008) [0x0000000000100000]
 };
 
 // ScriptStruct WillowGame.ILootable.SpawnedDroppedLootData
 // 0x0008
 struct FSpawnedDroppedLootData
 {
-	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000100000]              
-	unsigned long                                      bDisableRigidBodyPhysics : 1;                     		// 0x0004 (0x0004) [0x0000000000100000] [0x00000001] 
+	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000100000]
+	unsigned long                                      bDisableRigidBodyPhysics : 1;                     		// 0x0004 (0x0004) [0x0000000000100000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.PlayerSkillTree.PlayerSkillTreeBranchData
 // 0x0034
 struct FPlayerSkillTreeBranchData
 {
-	class USkillTreeBranchDefinition*                  Definition;                                       		// 0x0000 (0x0004) [0x0000000000100000]              
-	int                                                BranchPointsToUnlockNextBranch;                   		// 0x0004 (0x0004) [0x0000000000100000]              
-	int                                                Index;                                            		// 0x0008 (0x0004) [0x0000000000100000]              
-	int                                                ParentBranchIndex;                                		// 0x000C (0x0004) [0x0000000000100000]              
-	int                                                PrevBranchIndex;                                  		// 0x0010 (0x0004) [0x0000000000100000]              
-	int                                                NextBranchIndex;                                  		// 0x0014 (0x0004) [0x0000000000100000]              
+	class USkillTreeBranchDefinition*                  Definition;                                       		// 0x0000 (0x0004) [0x0000000000100000]
+	int                                                BranchPointsToUnlockNextBranch;                   		// 0x0004 (0x0004) [0x0000000000100000]
+	int                                                Index;                                            		// 0x0008 (0x0004) [0x0000000000100000]
+	int                                                ParentBranchIndex;                                		// 0x000C (0x0004) [0x0000000000100000]
+	int                                                PrevBranchIndex;                                  		// 0x0010 (0x0004) [0x0000000000100000]
+	int                                                NextBranchIndex;                                  		// 0x0014 (0x0004) [0x0000000000100000]
 	TArray< int >                                      ChildBranchIndices;                               		// 0x0018 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	TArray< int >                                      TierIndices;                                      		// 0x0024 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	class UPlayerSkillTree*                            Owner;                                            		// 0x0030 (0x0004) [0x0000000000100000]              
+	class UPlayerSkillTree*                            Owner;                                            		// 0x0030 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct WillowGame.PlayerSkillTree.PlayerSkillTreeTierData
@@ -2032,14 +2032,14 @@ struct FPlayerSkillTreeBranchData
 struct FPlayerSkillTreeTierData
 {
 	TArray< int >                                      SkillIndices;                                     		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	int                                                BranchPointsToUnlockTier;                         		// 0x000C (0x0004) [0x0000000000100000]              
-	int                                                Index;                                            		// 0x0010 (0x0004) [0x0000000000100000]              
-	int                                                PrevTierIndex;                                    		// 0x0014 (0x0004) [0x0000000000100000]              
-	int                                                NextTierIndex;                                    		// 0x0018 (0x0004) [0x0000000000100000]              
-	int                                                ParentBranchIndex;                                		// 0x001C (0x0004) [0x0000000000100000]              
-	int                                                TierNumber;                                       		// 0x0020 (0x0004) [0x0000000000100000]              
-	unsigned long                                      bUnlocked : 1;                                    		// 0x0024 (0x0004) [0x0000000000100000] [0x00000001] 
-	class UPlayerSkillTree*                            Owner;                                            		// 0x0028 (0x0004) [0x0000000000100000]              
+	int                                                BranchPointsToUnlockTier;                         		// 0x000C (0x0004) [0x0000000000100000]
+	int                                                Index;                                            		// 0x0010 (0x0004) [0x0000000000100000]
+	int                                                PrevTierIndex;                                    		// 0x0014 (0x0004) [0x0000000000100000]
+	int                                                NextTierIndex;                                    		// 0x0018 (0x0004) [0x0000000000100000]
+	int                                                ParentBranchIndex;                                		// 0x001C (0x0004) [0x0000000000100000]
+	int                                                TierNumber;                                       		// 0x0020 (0x0004) [0x0000000000100000]
+	unsigned long                                      bUnlocked : 1;                                    		// 0x0024 (0x0004) [0x0000000000100000] [0x00000001]
+	class UPlayerSkillTree*                            Owner;                                            		// 0x0028 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct WillowGame.MissionObjectiveDefinition.KillMissionData
@@ -2070,37 +2070,37 @@ struct FBalancedInventoryData
 // 0x0004
 struct FGoldenKeySource
 {
-	unsigned char                                      SourceId;                                         		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      NumKeys;                                          		// 0x0001 (0x0001) [0x0000000000000000]              
-	unsigned char                                      NumKeysSpent;                                     		// 0x0002 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Empty;                                            		// 0x0003 (0x0001) [0x0000000000000000]              
+	unsigned char                                      SourceId;                                         		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      NumKeys;                                          		// 0x0001 (0x0001) [0x0000000000000000]
+	unsigned char                                      NumKeysSpent;                                     		// 0x0002 (0x0001) [0x0000000000000000]
+	unsigned char                                      Empty;                                            		// 0x0003 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowDownloadableContentManager.SeasonPassOfferUnion
 // 0x0010
 struct FSeasonPassOfferUnion
 {
-	int                                                AssociatedSeasonPassOfferId;                      		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PaidOfferId;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                FreeOfferId;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                SeasonPassId;                                     		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                AssociatedSeasonPassOfferId;                      		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PaidOfferId;                                      		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                FreeOfferId;                                      		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                SeasonPassId;                                     		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowDownloadableContentManager.SeasonPassPackageCount
 // 0x000C
 struct FSeasonPassPackageCount
 {
-	int                                                SeasonPassId;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PackageCount;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bPreOrder : 1;                                    		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                SeasonPassId;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PackageCount;                                     		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      bPreOrder : 1;                                    		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowDownloadableContentManager.DLCMissionData
 // 0x0014
 struct FDLCMissionData
 {
-	int                                                MinMissionNumber;                                 		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                MaxMissionNumber;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                MinMissionNumber;                                 		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                MaxMissionNumber;                                 		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FString                                     MissionNameLocKey;                                		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -2108,32 +2108,32 @@ struct FDLCMissionData
 // 0x0014
 struct FCompatibilityVersionInfo
 {
-	int                                                CurrentCompatPackVersion;                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FDlcCompatibilityData                       CurrentCompatibilityMask;                         		// 0x0004 (0x0010) [0x0000000000000000]              
+	int                                                CurrentCompatPackVersion;                         		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FDlcCompatibilityData                       CurrentCompatibilityMask;                         		// 0x0004 (0x0010) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowDownloadableContentManager.ContentState
 // 0x0008
 struct FContentState
 {
-	int                                                LicensedMask;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                InstalledMask;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                LicensedMask;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                InstalledMask;                                    		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerController.RecentlyResistedAttackData
 // 0x000C
 struct FRecentlyResistedAttackData
 {
-	class AActor*                                      DamagedActor;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      DamageType;                                       		// 0x0004 (0x0001) [0x0000000000000000]              
-	float                                              LastResistTime;                                   		// 0x0008 (0x0004) [0x0000000000000000]              
+	class AActor*                                      DamagedActor;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      DamageType;                                       		// 0x0004 (0x0001) [0x0000000000000000]
+	float                                              LastResistTime;                                   		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.ExpansionData
 // 0x0010
 struct FExpansionData
 {
-	int                                                Tag;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                Tag;                                              		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< unsigned char >                            Data;                                             		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -2141,9 +2141,9 @@ struct FExpansionData
 // 0x000C
 struct FRegionGameStageData
 {
-	class URegionDefinition*                           RegionDef;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                GameStage;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                PlaythroughIdx;                                   		// 0x0008 (0x0004) [0x0000000000000000]              
+	class URegionDefinition*                           RegionDef;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                GameStage;                                        		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                PlaythroughIdx;                                   		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.UnloadableDlcRegionGameStageData
@@ -2151,9 +2151,9 @@ struct FRegionGameStageData
 struct FUnloadableDlcRegionGameStageData
 {
 	struct FString                                     RegionDefName;                                    		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                GameStage;                                        		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                PlaythroughIdx;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                DlcPackageId;                                     		// 0x0014 (0x0004) [0x0000000000000000]              
+	int                                                GameStage;                                        		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                PlaythroughIdx;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                DlcPackageId;                                     		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.UnloadableDlcChallengeData
@@ -2177,16 +2177,16 @@ struct FLockoutData
 struct FUnloadableDlcLockoutData
 {
 	struct FString                                     LockoutDefName;                                   		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                LockoutTime;                                      		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                DlcPackageId;                                     		// 0x0010 (0x0004) [0x0000000000000000]              
+	int                                                LockoutTime;                                      		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                DlcPackageId;                                     		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerSaveGame.ChosenVehicleCustomization
 // 0x000C
 struct FChosenVehicleCustomization
 {
-	class UVehicleFamilyDefinition*                    FamilyDef;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UCustomizationDefinition*                    CustomizationDef[ 0x2 ];                          		// 0x0004 (0x0008) [0x0000000000000000]              
+	class UVehicleFamilyDefinition*                    FamilyDef;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	class UCustomizationDefinition*                    CustomizationDef[0x2];                          		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGFxThirdPersonDefinition.ThirdPersonMenuView
@@ -2212,35 +2212,35 @@ struct FOneTimeDataElement
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     Icon;                                             		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     IconOverride;                                     		// 0x0018 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FColor                                      TextColor;                                        		// 0x0024 (0x0004) [0x0000000000000000]              
-	class UObject*                                     Data;                                             		// 0x0028 (0x0004) [0x0000000000000000]              
+	struct FColor                                      TextColor;                                        		// 0x0024 (0x0004) [0x0000000000000000]
+	class UObject*                                     Data;                                             		// 0x0028 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.GFxTextListContainer.SortableDataElement
 // 0x0010
 struct FSortableDataElement
 {
-	unsigned long                                      bFiltered : 1;                                    		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                OneTimeIdx;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                CategoryIdx;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
-	class UObject*                                     Data;                                             		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bFiltered : 1;                                    		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                OneTimeIdx;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                CategoryIdx;                                      		// 0x0008 (0x0004) [0x0000000000000000]
+	class UObject*                                     Data;                                             		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.GFxTextListContainer.GFxTextEntry
 // 0x0005
 struct FGFxTextEntry
 {
-	int                                                ArrayIdx;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      Kind;                                             		// 0x0004 (0x0001) [0x0000000000000000]              
+	int                                                ArrayIdx;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      Kind;                                             		// 0x0004 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.InventoryDataProviderGFxObject.SortFilterConfiguration
 // 0x0010
 struct FSortFilterConfiguration
 {
-	unsigned char                                      SortType;                                         		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      FilterType;                                       		// 0x0001 (0x0001) [0x0000000000000000]              
-	unsigned char                                      CategoryType;                                     		// 0x0002 (0x0001) [0x0000000000000000]              
+	unsigned char                                      SortType;                                         		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      FilterType;                                       		// 0x0001 (0x0001) [0x0000000000000000]
+	unsigned char                                      CategoryType;                                     		// 0x0002 (0x0001) [0x0000000000000000]
 	struct FString                                     SortTitleLookupKey;                               		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -2249,17 +2249,17 @@ struct FSortFilterConfiguration
 struct FHeavyInventoryElement
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FColor                                      Color;                                            		// 0x000C (0x0004) [0x0000000000000000]              
-	class UObject*                                     Data;                                             		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FColor                                      Color;                                            		// 0x000C (0x0004) [0x0000000000000000]
+	class UObject*                                     Data;                                             		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.BaseTopLevelPanelGFxObject.ItemCardInfo
 // 0x0010
 struct FItemCardInfo
 {
-	struct FName                                       CardName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	int                                                ContentIdx;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	class UItemCardGFxObject*                          ItemCard;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FName                                       CardName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	int                                                ContentIdx;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	class UItemCardGFxObject*                          ItemCard;                                         		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.Behavior_AIThrowProjectileAtTarget.AIThrowProjectileBehaviorSequenceStateData
@@ -2274,13 +2274,13 @@ struct FAIThrowProjectileBehaviorSequenceStateData
 // 0x0030
 struct FPerchStateData
 {
-	struct FName                                       AttachmentName;                                   		// 0x0000 (0x0008) [0x0000000000000000]              
-	class UStaticMesh*                                 StaticMesh;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	class USkeletalMesh*                               SkelMesh;                                         		// 0x000C (0x0004) [0x0000000000000000]              
-	struct FVector                                     LocOffset;                                        		// 0x0010 (0x000C) [0x0000000000000000]              
-	struct FRotator                                    RotOffset;                                        		// 0x001C (0x000C) [0x0000000000000000]              
-	float                                              Scale;                                            		// 0x0028 (0x0004) [0x0000000000000000]              
-	class AActor*                                      Actor;                                            		// 0x002C (0x0004) [0x0000000000000000]              
+	struct FName                                       AttachmentName;                                   		// 0x0000 (0x0008) [0x0000000000000000]
+	class UStaticMesh*                                 StaticMesh;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	class USkeletalMesh*                               SkelMesh;                                         		// 0x000C (0x0004) [0x0000000000000000]
+	struct FVector                                     LocOffset;                                        		// 0x0010 (0x000C) [0x0000000000000000]
+	struct FRotator                                    RotOffset;                                        		// 0x001C (0x000C) [0x0000000000000000]
+	float                                              Scale;                                            		// 0x0028 (0x0004) [0x0000000000000000]
+	class AActor*                                      Actor;                                            		// 0x002C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.Behavior_Conditional.BehaviorCondition
@@ -2413,9 +2413,9 @@ struct FFishtailingInfo
 // 0x000C
 struct FMoveToCellData
 {
-	int                                                IndexInCellsList;                                 		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              DistanceFromCurrentCell;                          		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              CosAngle;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                IndexInCellsList;                                 		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              DistanceFromCurrentCell;                          		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              CosAngle;                                         		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.InventoryBalanceDefinition.InventoryGradeModifierData
@@ -2464,11 +2464,11 @@ struct FItemCustomPartTypeData
 // 0x0014
 struct FTargetedPlayerState
 {
-	class AWillowMind*                                 Enemy;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	class AActor*                                      Player;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              InitialThreat;                                    		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              StoppedTargetingPlayerTime;                       		// 0x000C (0x0004) [0x0000000000000000]              
-	unsigned long                                      bIsPlayerPet : 1;                                 		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	class AWillowMind*                                 Enemy;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	class AActor*                                      Player;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              InitialThreat;                                    		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              StoppedTargetingPlayerTime;                       		// 0x000C (0x0004) [0x0000000000000000]
+	unsigned long                                      bIsPlayerPet : 1;                                 		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.CoordinatedEffectDefinition.CoordinatedVectorParameter
@@ -2541,20 +2541,20 @@ struct FCurrencyPresentation
 // 0x0010
 struct FSkillTreeTierStateData
 {
-	class USkillTreeBranchDefinition*                  ParentBranchDefinition;                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                TierNumber;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                PointsSpentInTier;                                		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bIsUnlocked : 1;                                  		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	class USkillTreeBranchDefinition*                  ParentBranchDefinition;                           		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                TierNumber;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                PointsSpentInTier;                                		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned long                                      bIsUnlocked : 1;                                  		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.PlayerSkillTree.SkillTreeBranchStateData
 // 0x0010
 struct FSkillTreeBranchStateData
 {
-	class USkillTreeBranchDefinition*                  BranchDefinition;                                 		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PointsSpentInBranch;                              		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                MaxPointsForBranch;                               		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bIsUnlocked : 1;                                  		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	class USkillTreeBranchDefinition*                  BranchDefinition;                                 		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PointsSpentInBranch;                              		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                MaxPointsForBranch;                               		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned long                                      bIsUnlocked : 1;                                  		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowDownloadableContentManager.TaggedMarketplaceContent
@@ -2562,52 +2562,52 @@ struct FSkillTreeBranchStateData
 struct FTaggedMarketplaceContent
 {
 	struct FString                                     Tag;                                              		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                OfferId;                                          		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                OfferId;                                          		// 0x000C (0x0004) [0x0000000000000000]
 	struct FString                                     OfferIdText;                                      		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     OfferName;                                        		// 0x001C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     SellText;                                         		// 0x0028 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ContentCategory;                                  		// 0x0034 (0x0004) [0x0000000000000000]              
-	int                                                PackageId;                                        		// 0x0038 (0x0004) [0x0000000000000000]              
-	int                                                ContentId;                                        		// 0x003C (0x0004) [0x0000000000000000]              
-	unsigned long                                      bShowInStore : 1;                                 		// 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                ContentCategory;                                  		// 0x0034 (0x0004) [0x0000000000000000]
+	int                                                PackageId;                                        		// 0x0038 (0x0004) [0x0000000000000000]
+	int                                                ContentId;                                        		// 0x003C (0x0004) [0x0000000000000000]
+	unsigned long                                      bShowInStore : 1;                                 		// 0x0040 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.DamageOverTimeManager.SourceObjectData
 // 0x0068
 struct FSourceObjectData
 {
-	int                                                UniqueId;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UObject*                                     SourceObject;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FVector                                     SourceLocation;                                   		// 0x0008 (0x000C) [0x0000000000000000]              
-	class AController*                                 InstigatedByController;                           		// 0x0014 (0x0004) [0x0000000000000000]              
-	class UIDamageBehavior*                            DamageContext;                                    		// 0x0018 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x001C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	float                                              StartDamageTime;                                  		// 0x0020 (0x0004) [0x0000000000000000]              
-	float                                              TimeElapsedSinceLastDamage;                       		// 0x0024 (0x0004) [0x0000000000000000]              
-	class UExplosionDefinition*                        ExplosionDef;                                     		// 0x0028 (0x0004) [0x0000000000000000]              
-	int                                                ExplosionScaleIndex;                              		// 0x002C (0x0004) [0x0000000000000000]              
-	float                                              InitialDamageRadius;                              		// 0x0030 (0x0004) [0x0000000000000000]              
-	float                                              Damage;                                           		// 0x0034 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bFullDamage : 1;                                  		// 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              Momentum;                                         		// 0x003C (0x0004) [0x0000000000000000]              
-	class UClass*                                      DamageSource;                                     		// 0x0040 (0x0004) [0x0000000000000000]              
-	class UDamageTypeDefinition*                       DamageTypeDef;                                    		// 0x0044 (0x0004) [0x0000000000000000]              
-	class UImpactDefinition*                           ImpactDefinition;                                 		// 0x0048 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bCanDamageFriendlies : 1;                         		// 0x004C (0x0004) [0x0000000000000000] [0x00000001] 
-	class UIDamageCauser*                              DamageCauser;                                     		// 0x0050 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0054 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	unsigned long                                      bSkipTraceTest : 1;                               		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
-	class UObject*                                     HitObject;                                        		// 0x005C (0x0004) [0x0000000000000000]              
-	float                                              BarrelSourceTime;                                 		// 0x0060 (0x0004) [0x0000000000000000]              
-	float                                              PlantSourceTime;                                  		// 0x0064 (0x0004) [0x0000000000000000]              
+	int                                                UniqueId;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	class UObject*                                     SourceObject;                                     		// 0x0004 (0x0004) [0x0000000000000000]
+	struct FVector                                     SourceLocation;                                   		// 0x0008 (0x000C) [0x0000000000000000]
+	class AController*                                 InstigatedByController;                           		// 0x0014 (0x0004) [0x0000000000000000]
+	class UIDamageBehavior*                            DamageContext;                                    		// 0x0018 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x001C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	float                                              StartDamageTime;                                  		// 0x0020 (0x0004) [0x0000000000000000]
+	float                                              TimeElapsedSinceLastDamage;                       		// 0x0024 (0x0004) [0x0000000000000000]
+	class UExplosionDefinition*                        ExplosionDef;                                     		// 0x0028 (0x0004) [0x0000000000000000]
+	int                                                ExplosionScaleIndex;                              		// 0x002C (0x0004) [0x0000000000000000]
+	float                                              InitialDamageRadius;                              		// 0x0030 (0x0004) [0x0000000000000000]
+	float                                              Damage;                                           		// 0x0034 (0x0004) [0x0000000000000000]
+	unsigned long                                      bFullDamage : 1;                                  		// 0x0038 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              Momentum;                                         		// 0x003C (0x0004) [0x0000000000000000]
+	class UClass*                                      DamageSource;                                     		// 0x0040 (0x0004) [0x0000000000000000]
+	class UDamageTypeDefinition*                       DamageTypeDef;                                    		// 0x0044 (0x0004) [0x0000000000000000]
+	class UImpactDefinition*                           ImpactDefinition;                                 		// 0x0048 (0x0004) [0x0000000000000000]
+	unsigned long                                      bCanDamageFriendlies : 1;                         		// 0x004C (0x0004) [0x0000000000000000] [0x00000001]
+	class UIDamageCauser*                              DamageCauser;                                     		// 0x0050 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData01[0x4];                             		// 0x0054 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned long                                      bSkipTraceTest : 1;                               		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001]
+	class UObject*                                     HitObject;                                        		// 0x005C (0x0004) [0x0000000000000000]
+	float                                              BarrelSourceTime;                                 		// 0x0060 (0x0004) [0x0000000000000000]
+	float                                              PlantSourceTime;                                  		// 0x0064 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.DamageOverTimeManager.DamageOnlyOnceData
 // 0x0008
 struct FDamageOnlyOnceData
 {
-	int                                                UniqueId;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	class AActor*                                      HurtActor;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                UniqueId;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	class AActor*                                      HurtActor;                                        		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.DamageTypeAttributeValueResolver.DamageTypeSelectorData
@@ -2631,8 +2631,8 @@ struct FDefinitionIconDatum
 // 0x0010
 struct FDamageLocationData
 {
-	float                                              Time;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000000000]              
+	float                                              Time;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector                                     Location;                                         		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowAIPawn.RagdollDeathImpulseStruct
@@ -2650,20 +2650,20 @@ struct FRagdollDeathImpulseStruct
 // 0x0030
 struct FStaggerStateData
 {
-	unsigned long                                      bIsStaggered : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsUnstaggering : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bForced : 1;                                      		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned char                                      State;                                            		// 0x0004 (0x0001) [0x0000000000000000]              
-	float                                              StaggerStartTime;                                 		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              StaggerEndTime;                                   		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              StaggerEndRagdollTime;                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              StaggerRecoveryStartTime;                         		// 0x0014 (0x0004) [0x0000000000000000]              
-	float                                              NextUnstaggerCheckTime;                           		// 0x0018 (0x0004) [0x0000000000000000]              
-	class UPhysicalMaterial*                           PreviousOverridePhysicalMaterial;                 		// 0x001C (0x0004) [0x0000000000000000]              
-	unsigned char                                      PreviousCollisionChannel;                         		// 0x0020 (0x0001) [0x0000000000000000]              
+	unsigned long                                      bIsStaggered : 1;                                 		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsUnstaggering : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bForced : 1;                                      		// 0x0000 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned char                                      State;                                            		// 0x0004 (0x0001) [0x0000000000000000]
+	float                                              StaggerStartTime;                                 		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              StaggerEndTime;                                   		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              StaggerEndRagdollTime;                            		// 0x0010 (0x0004) [0x0000000000000000]
+	float                                              StaggerRecoveryStartTime;                         		// 0x0014 (0x0004) [0x0000000000000000]
+	float                                              NextUnstaggerCheckTime;                           		// 0x0018 (0x0004) [0x0000000000000000]
+	class UPhysicalMaterial*                           PreviousOverridePhysicalMaterial;                 		// 0x001C (0x0004) [0x0000000000000000]
+	unsigned char                                      PreviousCollisionChannel;                         		// 0x0020 (0x0001) [0x0000000000000000]
 	class UPrimitiveComponent*                         PreviousCollisionComponent;                       		// 0x0024 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class APawn*                                       StaggerInstigator;                                		// 0x0028 (0x0004) [0x0000000000000000]              
-	int                                                RestaggeredCount;                                 		// 0x002C (0x0004) [0x0000000000000000]              
+	class APawn*                                       StaggerInstigator;                                		// 0x0028 (0x0004) [0x0000000000000000]
+	int                                                RestaggeredCount;                                 		// 0x002C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StaggerDefinition.StaggeredRecoveryRotationData
@@ -2777,9 +2777,9 @@ struct FExplosionScaleData
 // 0x0018
 struct FRecentExplosion
 {
-	struct FName                                       ExplosionInstigatorName;                          		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FVector                                     ExplosionLocation;                                		// 0x0008 (0x000C) [0x0000000000000000]              
-	float                                              ExpirationTime;                                   		// 0x0014 (0x0004) [0x0000000000000000]              
+	struct FName                                       ExplosionInstigatorName;                          		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FVector                                     ExplosionLocation;                                		// 0x0008 (0x000C) [0x0000000000000000]
+	float                                              ExpirationTime;                                   		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.InteractiveObjectBalanceDefinition.LootAttachmentData
@@ -2805,8 +2805,8 @@ struct FLootConfigurationData
 // 0x001C
 struct FInteractiveObjectReplicatedStateData
 {
-	struct FReplicatedBehaviorConsumerState            ReplicatedBehaviorConsumerState;                  		// 0x0000 (0x000C) [0x0000000000000000]              
-	struct FReplicatedInstanceDataState                ReplicatedInstanceDataState;                      		// 0x000C (0x0010) [0x0000000000000000]              
+	struct FReplicatedBehaviorConsumerState            ReplicatedBehaviorConsumerState;                  		// 0x0000 (0x000C) [0x0000000000000000]
+	struct FReplicatedInstanceDataState                ReplicatedInstanceDataState;                      		// 0x000C (0x0010) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.InteractiveObjectBalanceDefinition.InteractiveObjectGradeModifierData
@@ -2884,34 +2884,34 @@ struct FFiringPatternLine
 // 0x0014
 struct FActiveAreaWaypointData
 {
-	struct FVector                                     WaypointLocation;                                 		// 0x0000 (0x000C) [0x0000000000000000]              
-	int                                                WaypointRadius;                                   		// 0x000C (0x0004) [0x0000000000000000]              
-	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0010 (0x0004) [0x0000000000000000]              
+	struct FVector                                     WaypointLocation;                                 		// 0x0000 (0x000C) [0x0000000000000000]
+	int                                                WaypointRadius;                                   		// 0x000C (0x0004) [0x0000000000000000]
+	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGameReplicationInfo.ActiveWaypointData
 // 0x0018
 struct FActiveWaypointData
 {
-	struct FVector                                     WaypointLocation;                                 		// 0x0000 (0x000C) [0x0000000000000000]              
-	class AActor*                                      WaypointActor;                                    		// 0x000C (0x0004) [0x0000000000000000]              
-	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bCanTransition : 1;                               		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FVector                                     WaypointLocation;                                 		// 0x0000 (0x000C) [0x0000000000000000]
+	class AActor*                                      WaypointActor;                                    		// 0x000C (0x0004) [0x0000000000000000]
+	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned long                                      bCanTransition : 1;                               		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowGameInfo.ColiseumStat
 // 0x0008
 struct FColiseumStat
 {
-	unsigned char                                      StatType;                                         		// 0x0000 (0x0001) [0x0000000000000000]              
-	int                                                StatValue;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	unsigned char                                      StatType;                                         		// 0x0000 (0x0001) [0x0000000000000000]
+	int                                                StatValue;                                        		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGameInfo.ColiseumPlayerInfo
 // 0x0010
 struct FColiseumPlayerInfo
 {
-	class AWillowPlayerController*                     WPC;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
+	class AWillowPlayerController*                     WPC;                                              		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FColiseumStat >                     Stats;                                            		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -2919,17 +2919,17 @@ struct FColiseumPlayerInfo
 // 0x000C
 struct FAreaWaypointData
 {
-	class AActor*                                      WaypointActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                WaypointRadius;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0008 (0x0004) [0x0000000000000000]              
+	class AActor*                                      WaypointActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                WaypointRadius;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGameInfo.WaypointActorData
 // 0x0014
 struct FWaypointActorData
 {
-	class AActor*                                      WaypointActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0004 (0x0004) [0x0000000000000000]              
+	class AActor*                                      WaypointActor;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	class UMissionObjectiveDefinition*                 WaypointObjective;                                		// 0x0004 (0x0004) [0x0000000000000000]
 	TArray< class UWaypointComponent* >                Waypoints;                                        		// 0x0008 (0x000C) [0x0000000004480008]              ( CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline )
 };
 
@@ -2939,16 +2939,16 @@ struct FMessageOfTheDay
 {
 	struct FString                                     Header;                                           		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     Body;                                             		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                DisplayTime;                                      		// 0x0018 (0x0004) [0x0000000000000000]              
+	int                                                DisplayTime;                                      		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowScrollingList.DataProviderInfo
 // 0x000C
 struct FDataProviderInfo
 {
-	class UIWillowScrollingListDataProvider*           DataProvider;                                     		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	int                                                SelectedIndex;                                    		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UIWillowScrollingListDataProvider*           DataProvider;                                     		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	int                                                SelectedIndex;                                    		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGFxDialogBox.DialogBoxButton
@@ -2957,7 +2957,7 @@ struct FDialogBoxButton
 {
 	struct FString                                     Caption;                                          		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     TipText;                                          		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       Tag;                                              		// 0x0018 (0x0008) [0x0000000000000000]              
+	struct FName                                       Tag;                                              		// 0x0018 (0x0008) [0x0000000000000000]
 	TArray< struct FName >                             Keys;                                             		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             OnButtonClicked;                                  		// 0x002C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -2966,11 +2966,11 @@ struct FDialogBoxButton
 // 0x0018
 struct FPauseTimerData
 {
-	struct FName                                       FuncName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned long                                      bLoop : 1;                                        		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              Rate;                                             		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              Count;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	class UObject*                                     TimerObj;                                         		// 0x0014 (0x0004) [0x0000000000000000]              
+	struct FName                                       FuncName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned long                                      bLoop : 1;                                        		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              Rate;                                             		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              Count;                                            		// 0x0010 (0x0004) [0x0000000000000000]
+	class UObject*                                     TimerObj;                                         		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.GameBalanceDefinition.MissionStateBalanceAdjustment
@@ -3002,8 +3002,8 @@ struct FFlashTextEntry
 {
 	struct FString                                     TextEntry;                                        		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     IconFrameLabel;                                   		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      ArrayType;                                        		// 0x0018 (0x0001) [0x0000000000000000]              
-	class UObject*                                     Obj;                                              		// 0x001C (0x0004) [0x0000000000000000]              
+	unsigned char                                      ArrayType;                                        		// 0x0018 (0x0001) [0x0000000000000000]
+	class UObject*                                     Obj;                                              		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.GrenadeModDefinition.GrenadeModBehaviorSequenceStateData
@@ -3026,10 +3026,10 @@ struct FGrenadeModPartBehaviorSequenceStateData
 // 0x0028
 struct FHitRegionDamage
 {
-	class UBodyHitRegionDefinition*                    BodyHitRegion;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Damage;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              RecentDamage;                                     		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bHasGored : 1;                                    		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	class UBodyHitRegionDefinition*                    BodyHitRegion;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Damage;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              RecentDamage;                                     		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned long                                      bHasGored : 1;                                    		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 	TArray< float >                                    LastPctHealthForRunDamageTriggeredBehaviors;      		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< float >                                    LastPctHealthForRunHealingTriggeredBehaviors;     		// 0x001C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -3134,7 +3134,7 @@ struct FTopStatData
 	struct FString                                     LabelText;                                        		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     ValueText;                                        		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     AuxText;                                          		// 0x0018 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      Arrow;                                            		// 0x0024 (0x0001) [0x0000000000000000]              
+	unsigned char                                      Arrow;                                            		// 0x0024 (0x0001) [0x0000000000000000]
 	struct FString                                     IconName;                                         		// 0x0028 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -3201,28 +3201,28 @@ struct FInputRemappingButtonData
 // 0x0004(0x000C - 0x0008)
 struct FBehaviorKeyFrameEventData : FSpecializedBehaviorEvent
 {
-	float                                              KeyTime;                                          		// 0x0008 (0x0004) [0x0000000000000000]              
+	float                                              KeyTime;                                          		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.ISimpleAnimPlayer.SimpleAnimStateData
 // 0x0004
 struct FSimpleAnimStateData
 {
-	int                                                AnimState;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                AnimState;                                        		// 0x0000 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.LANServerBrowserGFxMovie.ResultEntry
 // 0x002C
 struct FResultEntry
 {
-	struct FOnlineGameSearchResult                     Game;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FOnlineGameSearchResult                     Game;                                             		// 0x0000 (0x0008) [0x0000000000000000]
 	struct FString                                     Name;                                             		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ExpLevel;                                         		// 0x0014 (0x0004) [0x0000000000000000]              
-	int                                                Mission;                                          		// 0x0018 (0x0004) [0x0000000000000000]              
-	int                                                PlayThrough;                                      		// 0x001C (0x0004) [0x0000000000000000]              
-	int                                                NumPlayers;                                       		// 0x0020 (0x0004) [0x0000000000000000]              
-	int                                                MaxPlayers;                                       		// 0x0024 (0x0004) [0x0000000000000000]              
-	int                                                Ping;                                             		// 0x0028 (0x0004) [0x0000000000000000]              
+	int                                                ExpLevel;                                         		// 0x0014 (0x0004) [0x0000000000000000]
+	int                                                Mission;                                          		// 0x0018 (0x0004) [0x0000000000000000]
+	int                                                PlayThrough;                                      		// 0x001C (0x0004) [0x0000000000000000]
+	int                                                NumPlayers;                                       		// 0x0020 (0x0004) [0x0000000000000000]
+	int                                                MaxPlayers;                                       		// 0x0024 (0x0004) [0x0000000000000000]
+	int                                                Ping;                                             		// 0x0028 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.LevelDependencyList.PersistentMapDependencies
@@ -3330,37 +3330,37 @@ struct FMissionItemPoolData
 // 0x000C
 struct FMissionKickoffData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	class AWillowPlayerController*                     PlayerThatAcceptedMission;                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bFromActivation : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	class AWillowPlayerController*                     PlayerThatAcceptedMission;                        		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      bFromActivation : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.MissionTracker.MinimapIconHelper_Director
 // 0x001C
 struct FMinimapIconHelper_Director
 {
-	class UIMissionDirector*                           Director;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FVector                                     Location;                                         		// 0x0008 (0x000C) [0x0000000000000000]              
-	class UMissionDefinition*                          ActionableMissionDefinition;                      		// 0x0014 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bHasMoreActionableMissions : 1;                   		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bBegins : 1;                                      		// 0x0018 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bEnds : 1;                                        		// 0x0018 (0x0004) [0x0000000000000000] [0x00000004] 
+	class UIMissionDirector*                           Director;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FVector                                     Location;                                         		// 0x0008 (0x000C) [0x0000000000000000]
+	class UMissionDefinition*                          ActionableMissionDefinition;                      		// 0x0014 (0x0004) [0x0000000000000000]
+	unsigned long                                      bHasMoreActionableMissions : 1;                   		// 0x0018 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bBegins : 1;                                      		// 0x0018 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bEnds : 1;                                        		// 0x0018 (0x0004) [0x0000000000000000] [0x00000004]
 };
 
 // ScriptStruct WillowGame.MissionTracker.ObjectiveUpdateData
 // 0x0008
 struct FObjectiveUpdateData
 {
-	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ObjectiveBit;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ObjectiveBit;                                     		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.MissionTracker.BlockedMissionData
 // 0x0010
 struct FBlockedMissionData
 {
-	class UMissionDefinition*                          BlockedMission;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UMissionDefinition*                          BlockedMission;                                   		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< class UMissionDefinition* >                MissionBlockers;                                  		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -3368,41 +3368,41 @@ struct FBlockedMissionData
 // 0x0008
 struct FDefendTargetData
 {
-	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PercentHealth;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PercentHealth;                                    		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.MissionTracker.DefendMissionData
 // 0x000C
 struct FDefendMissionData
 {
-	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UITargetable*                                Target;                                           		// 0x0004 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0008 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UMissionObjectiveDefinition*                 Objective;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	class UITargetable*                                Target;                                           		// 0x0004 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0008 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 };
 
 // ScriptStruct WillowGame.MissionTracker.TimedMissionData
 // 0x000C
 struct FTimedMissionData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              SecondsLeft;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bTimerRunning : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              SecondsLeft;                                      		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      bTimerRunning : 1;                                		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.MissionTracker.LevelTransitionData
 // 0x000C
 struct FLevelTransitionData
 {
-	struct FName                                       TargetLevel;                                      		// 0x0000 (0x0008) [0x0000000000000000]              
-	class ALevelTravelStation*                         LevelTransition;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       TargetLevel;                                      		// 0x0000 (0x0008) [0x0000000000000000]
+	class ALevelTravelStation*                         LevelTransition;                                  		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.MissionTracker.MissionWaypointsData
 // 0x0010
 struct FMissionWaypointsData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< class UWaypointComponent* >                Waypoints;                                        		// 0x0004 (0x000C) [0x0000000004480008]              ( CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline )
 };
 
@@ -3410,7 +3410,7 @@ struct FMissionWaypointsData
 // 0x0010
 struct FMissionObserversData
 {
-	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UMissionDefinition*                          Mission;                                          		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< class UIMission* >                         Observers;                                        		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -3418,7 +3418,7 @@ struct FMissionObserversData
 // 0x0014
 struct FMissionSetData
 {
-	struct FName                                       PackageName;                                      		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FName                                       PackageName;                                      		// 0x0000 (0x0008) [0x0000000000000000]
 	TArray< class UMissionDefinition* >                Missions;                                         		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -3445,24 +3445,24 @@ struct FWeaponCustomPartTypeData
 // 0x0014
 struct FNPCList
 {
-	class AWillowMind*                                 Mind;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              LastPathTime;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              PathRequestTime;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bWantsToPath : 1;                                 		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bOnPerch : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bForceStopped : 1;                                		// 0x000C (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bIsPathing : 1;                                   		// 0x000C (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      bCanPath : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000010] 
-	float                                              Score;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
+	class AWillowMind*                                 Mind;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              LastPathTime;                                     		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              PathRequestTime;                                  		// 0x0008 (0x0004) [0x0000000000000000]
+	unsigned long                                      bWantsToPath : 1;                                 		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bOnPerch : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bForceStopped : 1;                                		// 0x000C (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bIsPathing : 1;                                   		// 0x000C (0x0004) [0x0000000000000000] [0x00000008]
+	unsigned long                                      bCanPath : 1;                                     		// 0x000C (0x0004) [0x0000000000000000] [0x00000010]
+	float                                              Score;                                            		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowSystemSettings.SystemOption
 // 0x001C
 struct FSystemOption
 {
-	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
-	int                                                ValueCount;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                CurrValue;                                        		// 0x000C (0x0004) [0x0000000000000000]              
+	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]
+	int                                                ValueCount;                                       		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                CurrValue;                                        		// 0x000C (0x0004) [0x0000000000000000]
 	TArray< struct FString >                           ValueStrings;                                     		// 0x0010 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
 };
 
@@ -3482,40 +3482,40 @@ struct FCameraLerpKeyFrame
 // 0x0038
 struct FRelevanceCacheStruct
 {
-	struct FName                                       RealViewerName;                                   		// 0x0000 (0x0008) [0x0000000000100000]              
-	struct FName                                       ToPawnName;                                       		// 0x0008 (0x0008) [0x0000000000100000]              
-	float                                              TimeCached;                                       		// 0x0010 (0x0004) [0x0000000000100000]              
-	float                                              NextUpdateTime;                                   		// 0x0014 (0x0004) [0x0000000000100000]              
-	unsigned long                                      bIsRelevant : 1;                                  		// 0x0018 (0x0004) [0x0000000000100000] [0x00000001] 
-	struct FVector                                     FromLoc;                                          		// 0x001C (0x000C) [0x0000000000100000]              
-	struct FVector                                     ToLoc;                                            		// 0x0028 (0x000C) [0x0000000000100000]              
-	int                                                RotatingIndex;                                    		// 0x0034 (0x0004) [0x0000000000100000]              
+	struct FName                                       RealViewerName;                                   		// 0x0000 (0x0008) [0x0000000000100000]
+	struct FName                                       ToPawnName;                                       		// 0x0008 (0x0008) [0x0000000000100000]
+	float                                              TimeCached;                                       		// 0x0010 (0x0004) [0x0000000000100000]
+	float                                              NextUpdateTime;                                   		// 0x0014 (0x0004) [0x0000000000100000]
+	unsigned long                                      bIsRelevant : 1;                                  		// 0x0018 (0x0004) [0x0000000000100000] [0x00000001]
+	struct FVector                                     FromLoc;                                          		// 0x001C (0x000C) [0x0000000000100000]
+	struct FVector                                     ToLoc;                                            		// 0x0028 (0x000C) [0x0000000000100000]
+	int                                                RotatingIndex;                                    		// 0x0034 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct WillowGame.PawnRelevanceUtilityFixedCost.RelevanceUpdateStruct
 // 0x0028
 struct FRelevanceUpdateStruct
 {
-	class APlayerController*                           FromRealViewer;                                   		// 0x0000 (0x0004) [0x0000000000100000]              
-	struct FVector                                     SrcLocation;                                      		// 0x0004 (0x000C) [0x0000000000100000]              
-	class AWillowPawn*                                 ToPawn;                                           		// 0x0010 (0x0004) [0x0000000000100000]              
-	float                                              TimeRequested;                                    		// 0x0014 (0x0004) [0x0000000000100000]              
-	unsigned long                                      bRelevant : 1;                                    		// 0x0018 (0x0004) [0x0000000000100000] [0x00000001] 
-	unsigned char                                      ShouldRemove;                                     		// 0x001C (0x0001) [0x0000000000100000]              
-	unsigned long                                      bIsForcedValue : 1;                               		// 0x0020 (0x0004) [0x0000000000100000] [0x00000001] 
-	unsigned long                                      bForceNextCheckTrue : 1;                          		// 0x0020 (0x0004) [0x0000000000100000] [0x00000002] 
-	float                                              NextUpdateTime;                                   		// 0x0024 (0x0004) [0x0000000000100000]              
+	class APlayerController*                           FromRealViewer;                                   		// 0x0000 (0x0004) [0x0000000000100000]
+	struct FVector                                     SrcLocation;                                      		// 0x0004 (0x000C) [0x0000000000100000]
+	class AWillowPawn*                                 ToPawn;                                           		// 0x0010 (0x0004) [0x0000000000100000]
+	float                                              TimeRequested;                                    		// 0x0014 (0x0004) [0x0000000000100000]
+	unsigned long                                      bRelevant : 1;                                    		// 0x0018 (0x0004) [0x0000000000100000] [0x00000001]
+	unsigned char                                      ShouldRemove;                                     		// 0x001C (0x0001) [0x0000000000100000]
+	unsigned long                                      bIsForcedValue : 1;                               		// 0x0020 (0x0004) [0x0000000000100000] [0x00000001]
+	unsigned long                                      bForceNextCheckTrue : 1;                          		// 0x0020 (0x0004) [0x0000000000100000] [0x00000002]
+	float                                              NextUpdateTime;                                   		// 0x0024 (0x0004) [0x0000000000100000]
 };
 
 // ScriptStruct WillowGame.PawnRelevanceUtilityFixedCost.RelevanceBucketStruct
 // 0x0020
 struct FRelevanceBucketStruct
 {
-	int                                                NdxToStartCheckFrom;                              		// 0x0000 (0x0004) [0x0000000000100000]              
-	float                                              DistanceSquared;                                  		// 0x0004 (0x0004) [0x0000000000100000]              
-	int                                                MinLineChecksPerFrame;                            		// 0x0008 (0x0004) [0x0000000000100000]              
-	int                                                MaxLineChecksPerFrame;                            		// 0x000C (0x0004) [0x0000000000100000]              
-	int                                                MaxIterationsPerFrame;                            		// 0x0010 (0x0004) [0x0000000000100000]              
+	int                                                NdxToStartCheckFrom;                              		// 0x0000 (0x0004) [0x0000000000100000]
+	float                                              DistanceSquared;                                  		// 0x0004 (0x0004) [0x0000000000100000]
+	int                                                MinLineChecksPerFrame;                            		// 0x0008 (0x0004) [0x0000000000100000]
+	int                                                MaxLineChecksPerFrame;                            		// 0x000C (0x0004) [0x0000000000100000]
+	int                                                MaxIterationsPerFrame;                            		// 0x0010 (0x0004) [0x0000000000100000]
 	TArray< struct FRelevanceUpdateStruct >            Relevance;                                        		// 0x0014 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
 };
 
@@ -3539,30 +3539,30 @@ struct FEvalActionData
 // 0x0008
 struct FPlayerClassCountOverride
 {
-	int                                                Override;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UPlayerClassIdentifierDefinition*            PlayerClassIdDef;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                Override;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	class UPlayerClassIdentifierDefinition*            PlayerClassIdDef;                                 		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PlayerInteractionManager.ActiveInteraction
 // 0x0020
 struct FActiveInteraction
 {
-	float                                              TimeLength;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              TimeRemaining;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UPlayerInteractionServer*                    InteractionServer;                                		// 0x0008 (0x0004) [0x0000000000000000]              
+	float                                              TimeLength;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              TimeRemaining;                                    		// 0x0004 (0x0004) [0x0000000000000000]
+	class UPlayerInteractionServer*                    InteractionServer;                                		// 0x0008 (0x0004) [0x0000000000000000]
 	TArray< class AWillowPlayerController* >           Players;                                          		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class AWillowPlayerController*                     Instigator;                                       		// 0x0018 (0x0004) [0x0000000000000000]              
-	unsigned long                                      IsValid : 1;                                      		// 0x001C (0x0004) [0x0000000000000000] [0x00000001] 
+	class AWillowPlayerController*                     Instigator;                                       		// 0x0018 (0x0004) [0x0000000000000000]
+	unsigned long                                      IsValid : 1;                                      		// 0x001C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.PlayerSkillTree.SkillTreeTierLayoutData
 // 0x001C
 struct FSkillTreeTierLayoutData
 {
-	class USkillTreeBranchDefinition*                  ParentBranchDefinition;                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                TierNumber;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	class USkillTreeBranchDefinition*                  DependencyBranchDefinition;                       		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                DependencyTierNumber;                             		// 0x000C (0x0004) [0x0000000000000000]              
+	class USkillTreeBranchDefinition*                  ParentBranchDefinition;                           		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                TierNumber;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	class USkillTreeBranchDefinition*                  DependencyBranchDefinition;                       		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                DependencyTierNumber;                             		// 0x000C (0x0004) [0x0000000000000000]
 	TArray< class USkillDefinition* >                  Skills;                                           		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -3570,11 +3570,11 @@ struct FSkillTreeTierLayoutData
 // 0x0038
 struct FItemMemento
 {
-	struct FInventorySerialNumber                      SerialNumber;                                     		// 0x0000 (0x0034) [0x0000000000000000]              
-	unsigned long                                      bEquipped : 1;                                    		// 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bDropOnDeath : 1;                                 		// 0x0034 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bShopsHaveInfiniteQuantity : 1;                   		// 0x0034 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bGrenadeStored : 1;                               		// 0x0034 (0x0004) [0x0000000000000000] [0x00000008] 
+	struct FInventorySerialNumber                      SerialNumber;                                     		// 0x0000 (0x0034) [0x0000000000000000]
+	unsigned long                                      bEquipped : 1;                                    		// 0x0034 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bDropOnDeath : 1;                                 		// 0x0034 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bShopsHaveInfiniteQuantity : 1;                   		// 0x0034 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bGrenadeStored : 1;                               		// 0x0034 (0x0004) [0x0000000000000000] [0x00000008]
 };
 
 // ScriptStruct WillowGame.PopulationFactoryWillowAIPawn.PopulatedAIPawnMemento
@@ -3589,8 +3589,8 @@ struct FPopulatedAIPawnMemento
 // 0x0006
 struct FPopulatedInteractiveObjectMemento
 {
-	int                                                BehaviorSequenceState;                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      bCanBeUsed[ 0x2 ];                                		// 0x0004 (0x0002) [0x0000000000000000]              
+	int                                                BehaviorSequenceState;                            		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      bCanBeUsed[0x2];                                		// 0x0004 (0x0002) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PopulationFactoryVendingMachine.FeaturedItemData
@@ -3607,18 +3607,18 @@ struct FFeaturedItemData
 // 0x0010
 struct FPickupMemento
 {
-	struct FRotator                                    Rotation;                                         		// 0x0000 (0x000C) [0x0000000000000000]              
-	unsigned long                                      bIsAttachedToSomething : 1;                       		// 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FRotator                                    Rotation;                                         		// 0x0000 (0x000C) [0x0000000000000000]
+	unsigned long                                      bIsAttachedToSomething : 1;                       		// 0x000C (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.PopulationFactoryWillowInventory.PopulatedPickupMemento
 // 0x0088
 struct FPopulatedPickupMemento
 {
-	class UClass*                                      SavedInventoryClass;                              		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FPickupMemento                              PickupMemento;                                    		// 0x0004 (0x0010) [0x0000000000000000]              
-	struct FWeaponMemento                              WeaponMemento;                                    		// 0x0014 (0x003C) [0x0000000000000000]              
-	struct FItemMemento                                ItemMemento;                                      		// 0x0050 (0x0038) [0x0000000000000000]              
+	class UClass*                                      SavedInventoryClass;                              		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FPickupMemento                              PickupMemento;                                    		// 0x0004 (0x0010) [0x0000000000000000]
+	struct FWeaponMemento                              WeaponMemento;                                    		// 0x0014 (0x003C) [0x0000000000000000]
+	struct FItemMemento                                ItemMemento;                                      		// 0x0050 (0x0038) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.PopulationFactoryWillowVehicle.VehicleDefaultCrewStruct
@@ -3654,12 +3654,12 @@ struct FVehicleGameStageGradeWeightData : FGameStageGradeWeightData
 struct FPopulationOptionDenSpawnData
 {
 	struct FString                                     PopulationDefName;                                		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                MaxActiveActors;                                  		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                NumTotalActors;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                NumActiveActors;                                  		// 0x0014 (0x0004) [0x0000000000000000]              
-	float                                              NextSpawnTime;                                    		// 0x0018 (0x0004) [0x0000000000000000]              
-	int                                                NumTotalExternalActors;                           		// 0x001C (0x0004) [0x0000000000000000]              
-	int                                                NumActiveExternalActors;                          		// 0x0020 (0x0004) [0x0000000000000000]              
+	int                                                MaxActiveActors;                                  		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                NumTotalActors;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                NumActiveActors;                                  		// 0x0014 (0x0004) [0x0000000000000000]
+	float                                              NextSpawnTime;                                    		// 0x0018 (0x0004) [0x0000000000000000]
+	int                                                NumTotalExternalActors;                           		// 0x001C (0x0004) [0x0000000000000000]
+	int                                                NumActiveExternalActors;                          		// 0x0020 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.ProjectileDefinition.HomingRadiusThreshold
@@ -3682,10 +3682,10 @@ struct FObjectReference
 // 0x001C
 struct FDeferredSkillActivationData
 {
-	class AController*                                 SkillInstigator;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	class USkillDefinition*                            Definition;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UObject*                                     AdditionalSkillTarget;                            		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                SkillGrade;                                       		// 0x000C (0x0004) [0x0000000000000000]              
+	class AController*                                 SkillInstigator;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	class USkillDefinition*                            Definition;                                       		// 0x0004 (0x0004) [0x0000000000000000]
+	class UObject*                                     AdditionalSkillTarget;                            		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                SkillGrade;                                       		// 0x000C (0x0004) [0x0000000000000000]
 	struct FScriptDelegate                             StateChangeDelegate;                              		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -3708,21 +3708,21 @@ struct FTierLayout
 // 0x001C
 struct FSkillTreeUICell
 {
-	int                                                BranchNum;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                TierNum;                                          		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                CellNum;                                          		// 0x0008 (0x0004) [0x0000000000000000]              
-	class UGFxObject*                                  Clip_Cell;                                        		// 0x000C (0x0004) [0x0000000000000000]              
-	class UGFxObject*                                  Clip_Highlight;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
-	class UGFxObject*                                  Clip_Outline;                                     		// 0x0014 (0x0004) [0x0000000000000000]              
-	class UGFxObject*                                  Clip_Overclocked;                                 		// 0x0018 (0x0004) [0x0000000000000000]              
+	int                                                BranchNum;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                TierNum;                                          		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                CellNum;                                          		// 0x0008 (0x0004) [0x0000000000000000]
+	class UGFxObject*                                  Clip_Cell;                                        		// 0x000C (0x0004) [0x0000000000000000]
+	class UGFxObject*                                  Clip_Highlight;                                   		// 0x0010 (0x0004) [0x0000000000000000]
+	class UGFxObject*                                  Clip_Outline;                                     		// 0x0014 (0x0004) [0x0000000000000000]
+	class UGFxObject*                                  Clip_Overclocked;                                 		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.SkillTreeGFxObject.artifact_datum
 // 0x0014
 struct Fartifact_datum
 {
-	int                                                SkillIndex;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Grade;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                SkillIndex;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                Grade;                                            		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FString                                     Name;                                             		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -3738,9 +3738,9 @@ struct FSMPerchRandomPair
 // 0x0009
 struct FCachedInvData
 {
-	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bReadied : 1;                                     		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned char                                      TrashOrFavorite;                                  		// 0x0008 (0x0001) [0x0000000000000000]              
+	class AWillowInventory*                            Inv;                                              		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned long                                      bReadied : 1;                                     		// 0x0004 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned char                                      TrashOrFavorite;                                  		// 0x0008 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StatusMenuGFxDefinition.DirectionData
@@ -3758,35 +3758,35 @@ struct FDirectionData
 // 0x0010
 struct FClipRect
 {
-	float                                              Top;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Right;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Bottom;                                           		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              Left;                                             		// 0x000C (0x0004) [0x0000000000000000]              
+	float                                              Top;                                              		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Right;                                            		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Bottom;                                           		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              Left;                                             		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.StatusMenuMapGFxObject.MapObjectData
 // 0x0088
 struct FMapObjectData
 {
-	class AWillowPlayerController*                     Player;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	class AWillowVehicle*                              Vehicle;                                          		// 0x0004 (0x0004) [0x0000000000000000]              
-	class ALevelLandmark*                              Landmark;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
-	class AWillowInteractiveObject*                    ClientInteractiveObject;                          		// 0x000C (0x0004) [0x0000000000000000]              
-	class AWillowPlayerReplicationInfo*                WPRI;                                             		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bWaypoint : 1;                                    		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bAreaWaypoint : 1;                                		// 0x0014 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bOptional : 1;                                    		// 0x0014 (0x0004) [0x0000000000000000] [0x00000004] 
-	int                                                WaypointIndex;                                    		// 0x0018 (0x0004) [0x0000000000000000]              
-	struct FVector                                     CustomObjectLoc;                                  		// 0x001C (0x000C) [0x0000000000000000]              
-	unsigned long                                      bIsDirty : 1;                                     		// 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FVector2D                                   TransformedLocation;                              		// 0x002C (0x0008) [0x0000000000000000]              
-	float                                              Angle;                                            		// 0x0034 (0x0004) [0x0000000000000000]              
-	float                                              Scale;                                            		// 0x0038 (0x0004) [0x0000000000000000]              
+	class AWillowPlayerController*                     Player;                                           		// 0x0000 (0x0004) [0x0000000000000000]
+	class AWillowVehicle*                              Vehicle;                                          		// 0x0004 (0x0004) [0x0000000000000000]
+	class ALevelLandmark*                              Landmark;                                         		// 0x0008 (0x0004) [0x0000000000000000]
+	class AWillowInteractiveObject*                    ClientInteractiveObject;                          		// 0x000C (0x0004) [0x0000000000000000]
+	class AWillowPlayerReplicationInfo*                WPRI;                                             		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned long                                      bWaypoint : 1;                                    		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bAreaWaypoint : 1;                                		// 0x0014 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bOptional : 1;                                    		// 0x0014 (0x0004) [0x0000000000000000] [0x00000004]
+	int                                                WaypointIndex;                                    		// 0x0018 (0x0004) [0x0000000000000000]
+	struct FVector                                     CustomObjectLoc;                                  		// 0x001C (0x000C) [0x0000000000000000]
+	unsigned long                                      bIsDirty : 1;                                     		// 0x0028 (0x0004) [0x0000000000000000] [0x00000001]
+	struct FVector2D                                   TransformedLocation;                              		// 0x002C (0x0008) [0x0000000000000000]
+	float                                              Angle;                                            		// 0x0034 (0x0004) [0x0000000000000000]
+	float                                              Scale;                                            		// 0x0038 (0x0004) [0x0000000000000000]
 	struct FString                                     AS_IconClipPath;                                  		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     AS_IconClipFrame;                                 		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     AS_IconClipInnerFrame;                            		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     AS_IconPath;                                      		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bShowInfoBox : 1;                                 		// 0x006C (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bShowInfoBox : 1;                                 		// 0x006C (0x0004) [0x0000000000000000] [0x00000001]
 	struct FString                                     InfoBoxTitle;                                     		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     InfoBoxDesc;                                      		// 0x007C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
@@ -3873,8 +3873,8 @@ struct FVehicleCrewAnimSetMapping
 // 0x000C
 struct FVSSUsageTracking
 {
-	class AVehicleSpawnStationTerminal*                TheTerminal;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       ThePlayerName;                                    		// 0x0004 (0x0008) [0x0000000000000000]              
+	class AVehicleSpawnStationTerminal*                TheTerminal;                                      		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       ThePlayerName;                                    		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WeaponAmmoResourceAttributeValueResolver.WeaponAmmoResourceSelectorData
@@ -3969,25 +3969,25 @@ struct FFeatherBoneBlendTarget
 // 0x0008
 struct FReplicatedInventoryCardData
 {
-	float                                              ModifierValue;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                ModifierStatIndex;                                		// 0x0004 (0x0004) [0x0000000000000000]              
+	float                                              ModifierValue;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                ModifierStatIndex;                                		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowItem.UIStatModifierData
 // 0x0029
 struct FUIStatModifierData
 {
-	class UAttributePresentationDefinition*            AttributePresentation;                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UAttributePresentationDefinition*            ConstraintAttributePresentation;                  		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      AttributeStyle;                                   		// 0x0008 (0x0001) [0x0000000000000000]              
-	float                                              ModifierTotal;                                    		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              CompareModifierTotal;                             		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                DefinitionIndex;                                  		// 0x0014 (0x0004) [0x0000000000000000]              
-	class UAttributePresentationDefinition*            SupplementalAttributePresentation;                		// 0x0018 (0x0004) [0x0000000000000000]              
-	unsigned char                                      SupplementalAttributeStyle;                       		// 0x001C (0x0001) [0x0000000000000000]              
-	float                                              SupplementalModifierTotal;                        		// 0x0020 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bUseSupplementalModifier : 1;                     		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned char                                      StatCombinationMethod;                            		// 0x0028 (0x0001) [0x0000000000000000]              
+	class UAttributePresentationDefinition*            AttributePresentation;                            		// 0x0000 (0x0004) [0x0000000000000000]
+	class UAttributePresentationDefinition*            ConstraintAttributePresentation;                  		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      AttributeStyle;                                   		// 0x0008 (0x0001) [0x0000000000000000]
+	float                                              ModifierTotal;                                    		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              CompareModifierTotal;                             		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                DefinitionIndex;                                  		// 0x0014 (0x0004) [0x0000000000000000]
+	class UAttributePresentationDefinition*            SupplementalAttributePresentation;                		// 0x0018 (0x0004) [0x0000000000000000]
+	unsigned char                                      SupplementalAttributeStyle;                       		// 0x001C (0x0001) [0x0000000000000000]
+	float                                              SupplementalModifierTotal;                        		// 0x0020 (0x0004) [0x0000000000000000]
+	unsigned long                                      bUseSupplementalModifier : 1;                     		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned char                                      StatCombinationMethod;                            		// 0x0028 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowAutoAimStrategyDefinition.ProfileDefinition
@@ -4002,24 +4002,24 @@ struct FProfileDefinition
 // 0x0024
 struct FLockOnProfile
 {
-	class UITargetable*                                Target;                                           		// 0x0000 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FVector                                     Intersection;                                     		// 0x0008 (0x000C) [0x0000000000000000]              
-	struct FVector                                     MagneticCenterToIntersect;                        		// 0x0014 (0x000C) [0x0000000000000000]              
-	unsigned long                                      bWithinWorldSpaceRadius : 1;                      		// 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UITargetable*                                Target;                                           		// 0x0000 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0004 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FVector                                     Intersection;                                     		// 0x0008 (0x000C) [0x0000000000000000]
+	struct FVector                                     MagneticCenterToIntersect;                        		// 0x0014 (0x000C) [0x0000000000000000]
+	unsigned long                                      bWithinWorldSpaceRadius : 1;                      		// 0x0020 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowAutoAimStrategy.ViewProfile
 // 0x0070
 struct FViewProfile
 {
-	class AWillowPlayerController*                     InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector                                     ViewNormal;                                       		// 0x0004 (0x000C) [0x0000000000000000]              
-	struct FVector                                     ViewLocation;                                     		// 0x0010 (0x000C) [0x0000000000000000]              
-	struct FRotator                                    ViewRotation;                                     		// 0x001C (0x000C) [0x0000000000000000]              
-	float                                              ViewNormalDotViewNormal;                          		// 0x0028 (0x0004) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x002C (0x0004) MISSED OFFSET
-	struct FMatrix                                     ViewMatrix;                                       		// 0x0030 (0x0040) [0x0000000000000000]              
+	class AWillowPlayerController*                     InPlayer;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector                                     ViewNormal;                                       		// 0x0004 (0x000C) [0x0000000000000000]
+	struct FVector                                     ViewLocation;                                     		// 0x0010 (0x000C) [0x0000000000000000]
+	struct FRotator                                    ViewRotation;                                     		// 0x001C (0x000C) [0x0000000000000000]
+	float                                              ViewNormalDotViewNormal;                          		// 0x0028 (0x0004) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x002C (0x0004) MISSED OFFSET
+	struct FMatrix                                     ViewMatrix;                                       		// 0x0030 (0x0040) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowCheatManager.BalanceMeResourceUpgradePath
@@ -4058,7 +4058,7 @@ struct FClanSwitchData
 // 0x0010
 struct FPendingCustomization
 {
-	class UCustomizationDefinition*                    Definition;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UCustomizationDefinition*                    Definition;                                       		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< class UICustomizable* >                    Targets;                                          		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4066,25 +4066,25 @@ struct FPendingCustomization
 // 0x000C
 struct FProductCustomizationInfo
 {
-	int                                                ProductID;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                NumUnlockableCustomizations;                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                NumCustomizations;                                		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                ProductID;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                NumUnlockableCustomizations;                      		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                NumCustomizations;                                		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowCustomizationManager.CustomizationSizeMapping
 // 0x0008
 struct FCustomizationSizeMapping
 {
-	int                                                ProductID;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                NumCustomizations;                                		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                ProductID;                                        		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                NumCustomizations;                                		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowDialogManager.QueuedPersonalEchoLog
 // 0x0008
 struct FQueuedPersonalEchoLog
 {
-	class UWillowDialogEventTag*                       Event;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UGearboxDialogGroup*                         Group;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UWillowDialogEventTag*                       Event;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	class UGearboxDialogGroup*                         Group;                                            		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowDialogNameTag.ScaleformPortraitData
@@ -4139,27 +4139,27 @@ struct FDynamicNavMeshConnection
 // 0x0008
 struct FCoordinatedEffectIndices
 {
-	int                                                StartingIndex;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                EndingIndex;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                StartingIndex;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                EndingIndex;                                      		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowEffectCoordinator.CoordinatedEffectThread
 // 0x0050
 struct FCoordinatedEffectThread
 {
-	class UCoordinatedEffectDefinition*                EffectDefinition;                                 		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       IgnoreInstanceData;                               		// 0x0004 (0x0008) [0x0000000000000000]              
-	float                                              LatentFloat;                                      		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              TargetFloat;                                      		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              ParticleSpeedMultiplier;                          		// 0x0014 (0x0004) [0x0000000000000000]              
-	struct FCoordinatedEffectIndices                   CriticalParticleEffects;                          		// 0x0018 (0x0008) [0x0000000000000000]              
-	struct FCoordinatedEffectIndices                   ParticleEffects;                                  		// 0x0020 (0x0008) [0x0000000000000000]              
-	struct FCoordinatedEffectIndices                   AudioEffects;                                     		// 0x0028 (0x0008) [0x0000000000000000]              
-	struct FCoordinatedEffectIndices                   HiddenParticles;                                  		// 0x0030 (0x0008) [0x0000000000000000]              
-	class AActor*                                      EffectOwner;                                      		// 0x0038 (0x0004) [0x0000000000000000]              
-	unsigned char                                      EffectID;                                         		// 0x003C (0x0001) [0x0000000000000000]              
-	unsigned long                                      bHideInstanceDataParticles : 1;                   		// 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bPendingDelete : 1;                               		// 0x0040 (0x0004) [0x0000000000000000] [0x00000002] 
+	class UCoordinatedEffectDefinition*                EffectDefinition;                                 		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       IgnoreInstanceData;                               		// 0x0004 (0x0008) [0x0000000000000000]
+	float                                              LatentFloat;                                      		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              TargetFloat;                                      		// 0x0010 (0x0004) [0x0000000000000000]
+	float                                              ParticleSpeedMultiplier;                          		// 0x0014 (0x0004) [0x0000000000000000]
+	struct FCoordinatedEffectIndices                   CriticalParticleEffects;                          		// 0x0018 (0x0008) [0x0000000000000000]
+	struct FCoordinatedEffectIndices                   ParticleEffects;                                  		// 0x0020 (0x0008) [0x0000000000000000]
+	struct FCoordinatedEffectIndices                   AudioEffects;                                     		// 0x0028 (0x0008) [0x0000000000000000]
+	struct FCoordinatedEffectIndices                   HiddenParticles;                                  		// 0x0030 (0x0008) [0x0000000000000000]
+	class AActor*                                      EffectOwner;                                      		// 0x0038 (0x0004) [0x0000000000000000]
+	unsigned char                                      EffectID;                                         		// 0x003C (0x0001) [0x0000000000000000]
+	unsigned long                                      bHideInstanceDataParticles : 1;                   		// 0x0040 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bPendingDelete : 1;                               		// 0x0040 (0x0004) [0x0000000000000000] [0x00000002]
 	struct FScriptDelegate                             EffectCompleteDelegate;                           		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4167,43 +4167,43 @@ struct FCoordinatedEffectThread
 // 0x0012
 struct FCoordinatedEffectProcess
 {
-	class UObject*                                     Target;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UObject*                                     Target;                                           		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FCoordinatedEffectThread >          Threads;                                          		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      Player0MatIndex;                                  		// 0x0010 (0x0001) [0x0000000000000000]              
-	unsigned char                                      Player1MatIndex;                                  		// 0x0011 (0x0001) [0x0000000000000000]              
+	unsigned char                                      Player0MatIndex;                                  		// 0x0010 (0x0001) [0x0000000000000000]
+	unsigned char                                      Player1MatIndex;                                  		// 0x0011 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowReplicatedEmitter.FloatParameter
 // 0x000C
 struct FFloatParameter
 {
-	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
-	float                                              Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]
+	float                                              Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowReplicatedEmitter.VectorParameter
 // 0x0014
 struct FVectorParameter
 {
-	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FVector                                     Value;                                            		// 0x0008 (0x000C) [0x0000000000000000]              
+	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FVector                                     Value;                                            		// 0x0008 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowReplicatedEmitter.ColorParameter
 // 0x000C
 struct FColorParameter
 {
-	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FColor                                      Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       Name;                                             		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FColor                                      Value;                                            		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowReplicatedEmitter.EmitterTemplateOptions
 // 0x000C
 struct FEmitterTemplateOptions
 {
-	class UParticleSystem*                             DefaultTemplate;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UParticleSystem*                             CensoredTemplateAlternative;                      		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bEffectEligibleForCensoring : 1;                  		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class UParticleSystem*                             DefaultTemplate;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	class UParticleSystem*                             CensoredTemplateAlternative;                      		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      bEffectEligibleForCensoring : 1;                  		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowExplosionImpactDefinition.DecalData
@@ -4223,83 +4223,83 @@ struct FDecalData
 // 0x0004
 struct FGamepadState
 {
-	unsigned long                                      bConnected : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bConnected : 1;                                   		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowGameViewportClient.SubtitleProfile
 // 0x0010
 struct FSubtitleProfile
 {
-	float                                              MinX;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              MaxX;                                             		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              MinY;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
-	float                                              MaxY;                                             		// 0x000C (0x0004) [0x0000000000000000]              
+	float                                              MinX;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              MaxX;                                             		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              MinY;                                             		// 0x0008 (0x0004) [0x0000000000000000]
+	float                                              MaxY;                                             		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.tMenuTextPos
 // 0x0010
 struct FtMenuTextPos
 {
-	unsigned char                                      TextHAlign;                                       		// 0x0000 (0x0001) [0x0000000000000000]              
-	int                                                TextXPos;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned char                                      TextVAlign;                                       		// 0x0008 (0x0001) [0x0000000000000000]              
-	int                                                TextYPos;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned char                                      TextHAlign;                                       		// 0x0000 (0x0001) [0x0000000000000000]
+	int                                                TextXPos;                                         		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned char                                      TextVAlign;                                       		// 0x0008 (0x0001) [0x0000000000000000]
+	int                                                TextYPos;                                         		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.ColumnLayoutData
 // 0x0015
 struct FColumnLayoutData
 {
-	unsigned char                                      HeaderHAlign;                                     		// 0x0000 (0x0001) [0x0000000000000000]              
+	unsigned char                                      HeaderHAlign;                                     		// 0x0000 (0x0001) [0x0000000000000000]
 	struct FString                                     Header;                                           		// 0x0004 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	float                                              Width;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned char                                      DataHAlign;                                       		// 0x0014 (0x0001) [0x0000000000000000]              
+	float                                              Width;                                            		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned char                                      DataHAlign;                                       		// 0x0014 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.tMenuLayout
 // 0x0078
 struct FtMenuLayout
 {
-	class UTexture2D*                                  Background;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                BackgroundXPos;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                BackgroundYPos;                                   		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                BackgroundXL;                                     		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                BackgroundYL;                                     		// 0x0010 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bDrawOutlineToShowInputFocus : 1;                 		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                ColumnDataYL;                                     		// 0x0018 (0x0004) [0x0000000000000000]              
-	int                                                ItemDetailYL;                                     		// 0x001C (0x0004) [0x0000000000000000]              
+	class UTexture2D*                                  Background;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                BackgroundXPos;                                   		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                BackgroundYPos;                                   		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                BackgroundXL;                                     		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                BackgroundYL;                                     		// 0x0010 (0x0004) [0x0000000000000000]
+	unsigned long                                      bDrawOutlineToShowInputFocus : 1;                 		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                ColumnDataYL;                                     		// 0x0018 (0x0004) [0x0000000000000000]
+	int                                                ItemDetailYL;                                     		// 0x001C (0x0004) [0x0000000000000000]
 	struct FString                                     DescriptionBoxHeader;                             		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      DescriptionBoxHeaderHAlign;                       		// 0x002C (0x0001) [0x0000000000000000]              
-	unsigned long                                      bUnderlineDescriptionBoxHeader : 1;               		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                DescriptionBoxXPos;                               		// 0x0034 (0x0004) [0x0000000000000000]              
-	int                                                DescriptionBoxYPos;                               		// 0x0038 (0x0004) [0x0000000000000000]              
-	int                                                DescriptionBoxXL;                                 		// 0x003C (0x0004) [0x0000000000000000]              
-	struct FtMenuTextPos                               TitlePos;                                         		// 0x0040 (0x0010) [0x0000000000000000]              
-	unsigned long                                      bDrawHintSeparatorLine : 1;                       		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FtMenuTextPos                               HintPos;                                          		// 0x0054 (0x0010) [0x0000000000000000]              
-	int                                                ColumnPadding;                                    		// 0x0064 (0x0004) [0x0000000000000000]              
+	unsigned char                                      DescriptionBoxHeaderHAlign;                       		// 0x002C (0x0001) [0x0000000000000000]
+	unsigned long                                      bUnderlineDescriptionBoxHeader : 1;               		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                DescriptionBoxXPos;                               		// 0x0034 (0x0004) [0x0000000000000000]
+	int                                                DescriptionBoxYPos;                               		// 0x0038 (0x0004) [0x0000000000000000]
+	int                                                DescriptionBoxXL;                                 		// 0x003C (0x0004) [0x0000000000000000]
+	struct FtMenuTextPos                               TitlePos;                                         		// 0x0040 (0x0010) [0x0000000000000000]
+	unsigned long                                      bDrawHintSeparatorLine : 1;                       		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001]
+	struct FtMenuTextPos                               HintPos;                                          		// 0x0054 (0x0010) [0x0000000000000000]
+	int                                                ColumnPadding;                                    		// 0x0064 (0x0004) [0x0000000000000000]
 	TArray< struct FColumnLayoutData >                 ColumnLayout;                                     		// 0x0068 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	class UFont*                                       ColumnDataFont;                                   		// 0x0074 (0x0004) [0x0000000000000000]              
+	class UFont*                                       ColumnDataFont;                                   		// 0x0074 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGFxColiseumOverlayMovie.PlayerLineInfo
 // 0x0020
 struct FPlayerLineInfo
 {
-	unsigned long                                      bUpdatedThisRound : 1;                            		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bUpdatedThisRound : 1;                            		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
 	struct FString                                     Avatar;                                           		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class APlayerReplicationInfo*                      PRI;                                              		// 0x0010 (0x0004) [0x0000000000000000]              
-	int                                                PlayerID;                                         		// 0x0014 (0x0004) [0x0000000000000000]              
-	int                                                RoundKills;                                       		// 0x0018 (0x0004) [0x0000000000000000]              
-	int                                                TotalKills;                                       		// 0x001C (0x0004) [0x0000000000000000]              
+	class APlayerReplicationInfo*                      PRI;                                              		// 0x0010 (0x0004) [0x0000000000000000]
+	int                                                PlayerID;                                         		// 0x0014 (0x0004) [0x0000000000000000]
+	int                                                RoundKills;                                       		// 0x0018 (0x0004) [0x0000000000000000]
+	int                                                TotalKills;                                       		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGFxDialogBox.DialogBoxLayout
 // 0x001C
 struct FDialogBoxLayout
 {
-	struct FName                                       LayoutTag;                                        		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FName                                       CancelTag;                                        		// 0x0008 (0x0008) [0x0000000000000000]              
+	struct FName                                       LayoutTag;                                        		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FName                                       CancelTag;                                        		// 0x0008 (0x0008) [0x0000000000000000]
 	TArray< struct FDialogBoxButton >                  Buttons;                                          		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4307,7 +4307,7 @@ struct FDialogBoxLayout
 // 0x0014
 struct FMenuItemCallback
 {
-	struct FName                                       Tag;                                              		// 0x0000 (0x0008) [0x0000000000000000]              
+	struct FName                                       Tag;                                              		// 0x0000 (0x0008) [0x0000000000000000]
 	struct FScriptDelegate                             OnClicked;                                        		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4315,8 +4315,8 @@ struct FMenuItemCallback
 // 0x0074
 struct FLoadCharacterData
 {
-	int                                                SaveDataId;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                CharLevel;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                SaveDataId;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                CharLevel;                                        		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FString                                     CharName;                                         		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     CharClass;                                        		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     PlayThrough;                                      		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -4324,16 +4324,16 @@ struct FLoadCharacterData
 	struct FString                                     PlotMission;                                      		// 0x0038 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     CharSaveDate;                                     		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     CharPlayedTime;                                   		// 0x0050 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                CharPlayedTimeInt;                                		// 0x005C (0x0004) [0x0000000000000000]              
-	struct FGuid                                       SaveGuid;                                         		// 0x0060 (0x0010) [0x0000000000000000]              
-	class UDownloadableCharacterDefinition*            DlcCharDef;                                       		// 0x0070 (0x0004) [0x0000000000000000]              
+	int                                                CharPlayedTimeInt;                                		// 0x005C (0x0004) [0x0000000000000000]
+	struct FGuid                                       SaveGuid;                                         		// 0x0060 (0x0010) [0x0000000000000000]
+	class UDownloadableCharacterDefinition*            DlcCharDef;                                       		// 0x0070 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowGFxMenuHelperSaveGame.SaveResult
 // 0x00C8
 struct FSaveResult
 {
-	int                                                charID;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                charID;                                           		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FPlayerSaveData                             Data;                                             		// 0x0004 (0x00C4) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4349,25 +4349,25 @@ struct FLoadingMovieExceptionInfo
 // 0x0008
 struct FAvailableTrackedSkill
 {
-	class USkillDefinition*                            SkillDef;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                RemappedSlot;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
+	class USkillDefinition*                            SkillDef;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                RemappedSlot;                                     		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowHUDGFxMovie.TrackedSkillIconState
 // 0x0010
 struct FTrackedSkillIconState
 {
-	unsigned char                                      Type;                                             		// 0x0000 (0x0001) [0x0000000000000000]              
-	class USwfMovie*                                   Icon;                                             		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                PercentComplete;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                StackCount;                                       		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned char                                      Type;                                             		// 0x0000 (0x0001) [0x0000000000000000]
+	class USwfMovie*                                   Icon;                                             		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                PercentComplete;                                  		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                StackCount;                                       		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowHUDGFxMovie.HUDInteractionIcon
 // 0x0028
 struct FHUDInteractionIcon
 {
-	struct FInteractionIconWithOverrides               Icons[ 0x2 ];                                     		// 0x0000 (0x0028) [0x0000000000000000]              
+	struct FInteractionIconWithOverrides               Icons[0x2];                                     		// 0x0000 (0x0028) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowHUDGFxMovie.CriticalTextMessage
@@ -4376,8 +4376,8 @@ struct FCriticalTextMessage
 {
 	struct FString                                     Message;                                          		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     Title;                                            		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              DestroyTime;                                      		// 0x0018 (0x0004) [0x0000000000000000]              
-	struct FColor                                      DrawColor;                                        		// 0x001C (0x0004) [0x0000000000000000]              
+	float                                              DestroyTime;                                      		// 0x0018 (0x0004) [0x0000000000000000]
+	struct FColor                                      DrawColor;                                        		// 0x001C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowHUDGFxMovie.CriticalTextMessageArray
@@ -4401,19 +4401,19 @@ struct FInjuredStringReplacementSet
 // 0x0008
 struct FTrackedSkillState
 {
-	class USkillDefinition*                            SkillDef;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PackedStackCountAndPercentComplete;               		// 0x0004 (0x0004) [0x0000000000000000]              
+	class USkillDefinition*                            SkillDef;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PackedStackCountAndPercentComplete;               		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerReplicationInfo.ReplicatedStandInGear
 // 0x0154
 struct FReplicatedStandInGear
 {
-	struct FWeaponDefinitionData                       Weapon1Data;                                      		// 0x0000 (0x0044) [0x0000000000000000]              
-	struct FWeaponDefinitionData                       Weapon2Data;                                      		// 0x0044 (0x0044) [0x0000000000000000]              
-	struct FItemDefinitionData                         ShieldData;                                       		// 0x0088 (0x0044) [0x0000000000000000]              
-	struct FItemDefinitionData                         GrenadeModData;                                   		// 0x00CC (0x0044) [0x0000000000000000]              
-	struct FItemDefinitionData                         ClassModData;                                     		// 0x0110 (0x0044) [0x0000000000000000]              
+	struct FWeaponDefinitionData                       Weapon1Data;                                      		// 0x0000 (0x0044) [0x0000000000000000]
+	struct FWeaponDefinitionData                       Weapon2Data;                                      		// 0x0044 (0x0044) [0x0000000000000000]
+	struct FItemDefinitionData                         ShieldData;                                       		// 0x0088 (0x0044) [0x0000000000000000]
+	struct FItemDefinitionData                         GrenadeModData;                                   		// 0x00CC (0x0044) [0x0000000000000000]
+	struct FItemDefinitionData                         ClassModData;                                     		// 0x0110 (0x0044) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowHUDGFxMovieDefinition.ScaledHUDElement
@@ -4428,59 +4428,59 @@ struct FScaledHUDElement
 // 0x0008
 struct FTouchingPawn
 {
-	class APawn*                                       Pawn;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                VolumesTouched;                                   		// 0x0004 (0x0004) [0x0000000000000000]              
+	class APawn*                                       Pawn;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                VolumesTouched;                                   		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowProjectile.HitActorData
 // 0x0044
 struct FHitActorData
 {
-	class AActor*                                      HitActor;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
+	class AActor*                                      HitActor;                                         		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FTraceHitInfo                               HitInfo;                                          		// 0x0004 (0x001C) [0x0000000000080000]              ( CPF_Component )
-	struct FVector                                     HitLocation;                                      		// 0x0020 (0x000C) [0x0000000000000000]              
-	struct FVector                                     HitLocationRelativeToHitActor;                    		// 0x002C (0x000C) [0x0000000000000000]              
-	struct FVector                                     HitNormal;                                        		// 0x0038 (0x000C) [0x0000000000000000]              
+	struct FVector                                     HitLocation;                                      		// 0x0020 (0x000C) [0x0000000000000000]
+	struct FVector                                     HitLocationRelativeToHitActor;                    		// 0x002C (0x000C) [0x0000000000000000]
+	struct FVector                                     HitNormal;                                        		// 0x0038 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowProjectile.HomingTargetedActorInfo
 // 0x0008
 struct FHomingTargetedActorInfo
 {
-	class AActor*                                      HomingActor;                                      		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                HomingActorCount;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
+	class AActor*                                      HomingActor;                                      		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                HomingActorCount;                                 		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowObstacleUtility.ObstaclePoint
 // 0x000C
 struct FObstaclePoint
 {
-	float                                              Value;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector2D                                   Offset;                                           		// 0x0004 (0x0008) [0x0000000000000000]              
+	float                                              Value;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector2D                                   Offset;                                           		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowObstacleUtility.ObstacleSegment
 // 0x0018
 struct FObstacleSegment
 {
-	struct FVector2D                                   P1;                                               		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FVector2D                                   P2;                                               		// 0x0008 (0x0008) [0x0000000000000000]              
-	struct FVector2D                                   Normal;                                           		// 0x0010 (0x0008) [0x0000000000000000]              
+	struct FVector2D                                   P1;                                               		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FVector2D                                   P2;                                               		// 0x0008 (0x0008) [0x0000000000000000]
+	struct FVector2D                                   Normal;                                           		// 0x0010 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowObstacleUtility.VelocityObstacle
 // 0x0048
 struct FVelocityObstacle
 {
-	struct FObstacleSegment                            Segments[ 0x3 ];                                  		// 0x0000 (0x0048) [0x0000000000000000]              
+	struct FObstacleSegment                            Segments[0x3];                                  		// 0x0000 (0x0048) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerInput.InputDeviceButtonAddress
 // 0x000C
 struct FInputDeviceButtonAddress
 {
-	class UInputDeviceDefinition*                      SourceDevice;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                SourceIndex;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UInputDeviceDefinition*                      SourceDevice;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                SourceIndex;                                      		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FPointer                                    RemappedButton;                                   		// 0x0008 (0x0004) [0x0000000000001000]              ( CPF_Native )
 };
 
@@ -4489,97 +4489,97 @@ struct FInputDeviceButtonAddress
 struct FInputButtonData
 {
 	TArray< struct FInputDeviceButtonAddress >         InputDeviceHandlers;                              		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       ButtonName;                                       		// 0x000C (0x0008) [0x0000000000000000]              
-	unsigned char                                      State;                                            		// 0x0014 (0x0001) [0x0000000000000000]              
-	float                                              LastPressedTime;                                  		// 0x0018 (0x0004) [0x0000000000000000]              
+	struct FName                                       ButtonName;                                       		// 0x000C (0x0008) [0x0000000000000000]
+	unsigned char                                      State;                                            		// 0x0014 (0x0001) [0x0000000000000000]
+	float                                              LastPressedTime;                                  		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerInput.DeviceLookAxisData
 // 0x0014
 struct FDeviceLookAxisData
 {
-	class UInputDeviceDefinition*                      SourceDevice;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       LookXAxisName;                                    		// 0x0004 (0x0008) [0x0000000000000000]              
-	struct FName                                       LookYAxisName;                                    		// 0x000C (0x0008) [0x0000000000000000]              
+	class UInputDeviceDefinition*                      SourceDevice;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       LookXAxisName;                                    		// 0x0004 (0x0008) [0x0000000000000000]
+	struct FName                                       LookYAxisName;                                    		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerInput.KeyRebindingData
 // 0x0010
 struct FKeyRebindingData
 {
-	struct FName                                       DefaultKeyName;                                   		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FName                                       RemappedKeyName;                                  		// 0x0008 (0x0008) [0x0000000000000000]              
+	struct FName                                       DefaultKeyName;                                   		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FName                                       RemappedKeyName;                                  		// 0x0008 (0x0008) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerInput.InputDeviceAxisAddress
 // 0x0008
 struct FInputDeviceAxisAddress
 {
-	class UInputDeviceDefinition*                      SourceDevice;                                     		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                SourceIndex;                                      		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UInputDeviceDefinition*                      SourceDevice;                                     		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                SourceIndex;                                      		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerInput.AccelStateData
 // 0x0010
 struct FAccelStateData
 {
-	unsigned long                                      bIsAccelerating : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              Warmup;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              CurrentSpeed;                                     		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                Direction;                                        		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bIsAccelerating : 1;                              		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              Warmup;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              CurrentSpeed;                                     		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                Direction;                                        		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerInput.InputAxisData
 // 0x0028
 struct FInputAxisData
 {
-	struct FName                                       AxisName;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FInputDeviceAxisAddress                     InputDeviceHandler;                               		// 0x0008 (0x0008) [0x0000000000000000]              
+	struct FName                                       AxisName;                                         		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FInputDeviceAxisAddress                     InputDeviceHandler;                               		// 0x0008 (0x0008) [0x0000000000000000]
 	struct FPointer                                    ParameterPtr;                                     		// 0x0010 (0x0004) [0x0000000000001000]              ( CPF_Native )
-	struct FAccelStateData                             AccelState;                                       		// 0x0014 (0x0010) [0x0000000000000000]              
-	unsigned long                                      bIsLookAxis : 1;                                  		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsRemappedInverted : 1;                          		// 0x0024 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FAccelStateData                             AccelState;                                       		// 0x0014 (0x0010) [0x0000000000000000]
+	unsigned long                                      bIsLookAxis : 1;                                  		// 0x0024 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsRemappedInverted : 1;                          		// 0x0024 (0x0004) [0x0000000000000000] [0x00000002]
 };
 
 // ScriptStruct WillowGame.WillowPlayerPawn.SpeedTravelData
 // 0x0005
 struct FSpeedTravelData
 {
-	float                                              OriginLeaveTime;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
-	unsigned char                                      OriginRegion;                                     		// 0x0004 (0x0001) [0x0000000000000000]              
+	float                                              OriginLeaveTime;                                  		// 0x0000 (0x0004) [0x0000000000000000]
+	unsigned char                                      OriginRegion;                                     		// 0x0004 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerPawn.WeatherSystemEffects
 // 0x0008
 struct FWeatherSystemEffects
 {
-	class UParticleSystem*                             WeatherSystemTemplate;                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UParticleSystem*                             ScreenEffectsTemplate;                            		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UParticleSystem*                             WeatherSystemTemplate;                            		// 0x0000 (0x0004) [0x0000000000000000]
+	class UParticleSystem*                             ScreenEffectsTemplate;                            		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerPawn.AttachmentData
 // 0x0025
 struct FAttachmentData
 {
-	class AActor*                                      AttachmentBase;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FName                                       AttachmentBaseBoneName;                           		// 0x0004 (0x0008) [0x0000000000000000]              
-	struct FVector                                     AttachmentRelativeOffset;                         		// 0x000C (0x000C) [0x0000000000000000]              
-	struct FRotator                                    AttachmentRelativeRotation;                       		// 0x0018 (0x000C) [0x0000000000000000]              
-	unsigned char                                      AttachmentPhysicsMode;                            		// 0x0024 (0x0001) [0x0000000000000000]              
+	class AActor*                                      AttachmentBase;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FName                                       AttachmentBaseBoneName;                           		// 0x0004 (0x0008) [0x0000000000000000]
+	struct FVector                                     AttachmentRelativeOffset;                         		// 0x000C (0x000C) [0x0000000000000000]
+	struct FRotator                                    AttachmentRelativeRotation;                       		// 0x0018 (0x000C) [0x0000000000000000]
+	unsigned char                                      AttachmentPhysicsMode;                            		// 0x0024 (0x0001) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPlayerPawnDataManager.AsyncDataRequest
 // 0x002C
 struct FAsyncDataRequest
 {
-	unsigned char                                      RequestType;                                      		// 0x0000 (0x0001) [0x0000000000000000]              
+	unsigned char                                      RequestType;                                      		// 0x0000 (0x0001) [0x0000000000000000]
 	struct FString                                     ObjectPath;                                       		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UObject*                                     Instigator;                                       		// 0x0010 (0x0004) [0x0000000000000000]              
-	class AWillowPlayerController*                     PlayerContext;                                    		// 0x0014 (0x0004) [0x0000000000000000]              
-	class UObject*                                     Payload;                                          		// 0x0018 (0x0004) [0x0000000000000000]              
-	struct FName                                       CallbackEventName;                                		// 0x001C (0x0008) [0x0000000000000000]              
-	int                                                IntParam;                                         		// 0x0024 (0x0004) [0x0000000000000000]              
-	float                                              FloatParam;                                       		// 0x0028 (0x0004) [0x0000000000000000]              
+	class UObject*                                     Instigator;                                       		// 0x0010 (0x0004) [0x0000000000000000]
+	class AWillowPlayerController*                     PlayerContext;                                    		// 0x0014 (0x0004) [0x0000000000000000]
+	class UObject*                                     Payload;                                          		// 0x0018 (0x0004) [0x0000000000000000]
+	struct FName                                       CallbackEventName;                                		// 0x001C (0x0008) [0x0000000000000000]
+	int                                                IntParam;                                         		// 0x0024 (0x0004) [0x0000000000000000]
+	float                                              FloatParam;                                       		// 0x0028 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPointLight.LightValues
@@ -4596,8 +4596,8 @@ struct FLightValues
 // 0x0008
 struct FVehicleSpawnStationPooledVehicle
 {
-	class AWillowVehicle*                              SpawnedVehicle;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UVehicleSpawnStationVehicleDefinition*       SpawnVehicleDef;                                  		// 0x0004 (0x0004) [0x0000000000000000]              
+	class AWillowVehicle*                              SpawnedVehicle;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	class UVehicleSpawnStationVehicleDefinition*       SpawnVehicleDef;                                  		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPopulationMaster.VehicleSpawnStationSlot
@@ -4605,7 +4605,7 @@ struct FVehicleSpawnStationPooledVehicle
 struct FVehicleSpawnStationSlot
 {
 	TArray< struct FVehicleSpawnStationPooledVehicle > PooledVehicles;                                   		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                PooledVehicleIndex;                               		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                PooledVehicleIndex;                               		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPopulationMaster.PopOppSummary
@@ -4613,7 +4613,7 @@ struct FVehicleSpawnStationSlot
 struct FPopOppSummary
 {
 	struct FString                                     Summary;                                          		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                Count;                                            		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                Count;                                            		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPopulationPointDefinition.SpawnAnimPair
@@ -4638,17 +4638,17 @@ struct FSpawnAnimData
 // 0x0030
 struct FPursuitNode
 {
-	struct FVector                                     RelativeLocation;                                 		// 0x0000 (0x000C) [0x0000000000000000]              
-	float                                              RelativeDistance;                                 		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              EvasiveActionDistance;                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	struct FName                                       NodeType;                                         		// 0x0014 (0x0008) [0x0000000000000000]              
-	unsigned long                                      bNeverFallback : 1;                               		// 0x001C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bMultipleReservations : 1;                        		// 0x001C (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bIsReserved : 1;                                  		// 0x001C (0x0004) [0x0000000000000000] [0x00000004] 
-	float                                              LastReservedTime;                                 		// 0x0020 (0x0004) [0x0000000000000000]              
-	class AActor*                                      ReservedBy;                                       		// 0x0024 (0x0004) [0x0000000000000000]              
-	float                                              AIAlertDistance;                                  		// 0x0028 (0x0004) [0x0000000000000000]              
-	class UFlagDefinition*                             AIAlertFlagDef;                                   		// 0x002C (0x0004) [0x0000000000000000]              
+	struct FVector                                     RelativeLocation;                                 		// 0x0000 (0x000C) [0x0000000000000000]
+	float                                              RelativeDistance;                                 		// 0x000C (0x0004) [0x0000000000000000]
+	float                                              EvasiveActionDistance;                            		// 0x0010 (0x0004) [0x0000000000000000]
+	struct FName                                       NodeType;                                         		// 0x0014 (0x0008) [0x0000000000000000]
+	unsigned long                                      bNeverFallback : 1;                               		// 0x001C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bMultipleReservations : 1;                        		// 0x001C (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bIsReserved : 1;                                  		// 0x001C (0x0004) [0x0000000000000000] [0x00000004]
+	float                                              LastReservedTime;                                 		// 0x0020 (0x0004) [0x0000000000000000]
+	class AActor*                                      ReservedBy;                                       		// 0x0024 (0x0004) [0x0000000000000000]
+	float                                              AIAlertDistance;                                  		// 0x0028 (0x0004) [0x0000000000000000]
+	class UFlagDefinition*                             AIAlertFlagDef;                                   		// 0x002C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowPursuitGridDefinition.PursuitNodeData
@@ -4668,7 +4668,7 @@ struct FPursuitNodeData
 // 0x0010
 struct FDescriptionEntry
 {
-	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FString                                     Description;                                      		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4676,11 +4676,11 @@ struct FDescriptionEntry
 // 0x0028
 struct FKeyBindInfo
 {
-	struct FName                                       Tag;                                              		// 0x0000 (0x0008) [0x0000000000000000]              
-	struct FName                                       ActionName;                                       		// 0x0008 (0x0008) [0x0000000000000000]              
+	struct FName                                       Tag;                                              		// 0x0000 (0x0008) [0x0000000000000000]
+	struct FName                                       ActionName;                                       		// 0x0008 (0x0008) [0x0000000000000000]
 	struct FString                                     Caption;                                          		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       CurrentKey;                                       		// 0x001C (0x0008) [0x0000000000000000]              
-	class UGFxObject*                                  Object;                                           		// 0x0024 (0x0004) [0x0000000000000000]              
+	struct FName                                       CurrentKey;                                       		// 0x001C (0x0008) [0x0000000000000000]
+	class UGFxObject*                                  Object;                                           		// 0x0024 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowStaggerAnimNodeBlend.ReferencePoint
@@ -4703,37 +4703,37 @@ struct FReferencePointComparisonData
 // 0x0008
 struct FResolution
 {
-	int                                                Width;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Height;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                Width;                                            		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                Height;                                           		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowWeapon.LockOnTargetStateStruct
 // 0x0010
 struct FLockOnTargetStateStruct
 {
-	class AActor*                                      CurrentTarget;                                    		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              StartTime;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	unsigned long                                      LockOnRequested : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      LockOnInProgress : 1;                             		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
-	float                                              CoolDownStartTime;                                		// 0x000C (0x0004) [0x0000000000000000]              
+	class AActor*                                      CurrentTarget;                                    		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              StartTime;                                        		// 0x0004 (0x0004) [0x0000000000000000]
+	unsigned long                                      LockOnRequested : 1;                              		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      LockOnInProgress : 1;                             		// 0x0008 (0x0004) [0x0000000000000000] [0x00000002]
+	float                                              CoolDownStartTime;                                		// 0x000C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowWeapon.WeaponBoneControllerInstance
 // 0x000C
 struct FWeaponBoneControllerInstance
 {
-	unsigned char                                      SourcePartType;                                   		// 0x0000 (0x0001) [0x0000000000000000]              
-	unsigned char                                      BoneControlType;                                  		// 0x0001 (0x0001) [0x0000000000000000]              
-	class UIWeaponBoneController*                      BoneController;                                   		// 0x0004 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0008 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      SourcePartType;                                   		// 0x0000 (0x0001) [0x0000000000000000]
+	unsigned char                                      BoneControlType;                                  		// 0x0001 (0x0001) [0x0000000000000000]
+	class UIWeaponBoneController*                      BoneController;                                   		// 0x0004 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0008 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 };
 
 // ScriptStruct WillowGame.WillowWeapon.ShellCasingImpact
 // 0x0010
 struct FShellCasingImpact
 {
-	float                                              ImpactTime;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FVector                                     ImpactLocation;                                   		// 0x0004 (0x000C) [0x0000000000000000]              
+	float                                              ImpactTime;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	struct FVector                                     ImpactLocation;                                   		// 0x0004 (0x000C) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.ColumnData
@@ -4741,15 +4741,15 @@ struct FShellCasingImpact
 struct FColumnData
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      HAlign;                                           		// 0x000C (0x0001) [0x0000000000000000]              
-	struct FColor                                      TextColor;                                        		// 0x0010 (0x0004) [0x0000000000000000]              
+	unsigned char                                      HAlign;                                           		// 0x000C (0x0001) [0x0000000000000000]
+	struct FColor                                      TextColor;                                        		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.tMenuData
 // 0x0098
 struct FtMenuData
 {
-	unsigned long                                      bIsSelectable : 1;                                		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bIsSelectable : 1;                                		// 0x0000 (0x0004) [0x0000000000000000] [0x00000001]
 	TArray< struct FColumnData >                       ColumnText;                                       		// 0x0004 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     PrimaryActionCmd;                                 		// 0x0010 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     SecondaryActionCmd;                               		// 0x001C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
@@ -4759,7 +4759,7 @@ struct FtMenuData
 	struct FString                                     OverCmd;                                          		// 0x004C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     LeaveCmd;                                         		// 0x0058 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     Data;                                             		// 0x0064 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned char                                      HintFontSize;                                     		// 0x0070 (0x0001) [0x0000000000100000]              
+	unsigned char                                      HintFontSize;                                     		// 0x0070 (0x0001) [0x0000000000100000]
 	struct FString                                     Hint;                                             		// 0x0074 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     ItemDetail;                                       		// 0x0080 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     DescriptionBoxStr;                                		// 0x008C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
@@ -4770,25 +4770,25 @@ struct FtMenuData
 struct FMenuHeaderData
 {
 	struct FString                                     Header;                                           		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              Width;                                            		// 0x000C (0x0004) [0x0000000000000000]              
+	float                                              Width;                                            		// 0x000C (0x0004) [0x0000000000000000]
 	struct FString                                     InterfaceName;                                    		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      FontSize;                                         		// 0x001C (0x0001) [0x0000000000000000]              
-	struct FColor                                      TextColor;                                        		// 0x0020 (0x0004) [0x0000000000000000]              
-	struct FColor                                      TextHighlightColor;                               		// 0x0024 (0x0004) [0x0000000000000000]              
-	struct FColor                                      IconColor;                                        		// 0x0028 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bDrawIcon : 1;                                    		// 0x002C (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                IconU;                                            		// 0x0030 (0x0004) [0x0000000000000000]              
-	int                                                IconV;                                            		// 0x0034 (0x0004) [0x0000000000000000]              
-	int                                                IconUL;                                           		// 0x0038 (0x0004) [0x0000000000000000]              
-	int                                                IconVL;                                           		// 0x003C (0x0004) [0x0000000000000000]              
+	unsigned char                                      FontSize;                                         		// 0x001C (0x0001) [0x0000000000000000]
+	struct FColor                                      TextColor;                                        		// 0x0020 (0x0004) [0x0000000000000000]
+	struct FColor                                      TextHighlightColor;                               		// 0x0024 (0x0004) [0x0000000000000000]
+	struct FColor                                      IconColor;                                        		// 0x0028 (0x0004) [0x0000000000000000]
+	unsigned long                                      bDrawIcon : 1;                                    		// 0x002C (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                IconU;                                            		// 0x0030 (0x0004) [0x0000000000000000]
+	int                                                IconV;                                            		// 0x0034 (0x0004) [0x0000000000000000]
+	int                                                IconUL;                                           		// 0x0038 (0x0004) [0x0000000000000000]
+	int                                                IconVL;                                           		// 0x003C (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.SkillIndexLevelRequirementPair
 // 0x0008
 struct FSkillIndexLevelRequirementPair
 {
-	int                                                SkillIndex;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PlayerLevelRequirement;                           		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                SkillIndex;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PlayerLevelRequirement;                           		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.DebugConsoleCommand
@@ -4799,7 +4799,7 @@ struct FDebugConsoleCommand
 	struct FString                                     CommandName;                                      		// 0x000C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     Description;                                      		// 0x0018 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     Command;                                          		// 0x0024 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bOnClient : 1;                                    		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bOnClient : 1;                                    		// 0x0030 (0x0004) [0x0000000000000000] [0x00000001]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.NetworkChannelData
@@ -4808,20 +4808,20 @@ struct FNetworkChannelData
 {
 	struct FString                                     ChannelName;                                      		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     StateName;                                        		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UClass*                                      ActorClass;                                       		// 0x0018 (0x0004) [0x0000000000000000]              
+	class UClass*                                      ActorClass;                                       		// 0x0018 (0x0004) [0x0000000000000000]
 	struct FString                                     ActorClassName;                                   		// 0x001C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     Role;                                             		// 0x0028 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     RemoteRole;                                       		// 0x0034 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ActorClassCount;                                  		// 0x0040 (0x0004) [0x0000000000000000]              
-	float                                              ActorClassPercent;                                		// 0x0044 (0x0004) [0x0000000000000000]              
+	int                                                ActorClassCount;                                  		// 0x0040 (0x0004) [0x0000000000000000]
+	float                                              ActorClassPercent;                                		// 0x0044 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.ItemPartSettings
 // 0x0014
 struct FItemPartSettings
 {
-	class UItemPartListDefinition*                     PartList;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UItemPartDefinition*                         Part;                                             		// 0x0004 (0x0004) [0x0000000000000000]              
+	class UItemPartListDefinition*                     PartList;                                         		// 0x0000 (0x0004) [0x0000000000000000]
+	class UItemPartDefinition*                         Part;                                             		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FString                                     PartName;                                         		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4829,9 +4829,9 @@ struct FItemPartSettings
 // 0x000C
 struct FGearBuilderWeightedInventoryPart
 {
-	class UWillowInventoryPartDefinition*              Part;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Weight;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              ProbabilityOfPickingThisPart;                     		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UWillowInventoryPartDefinition*              Part;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Weight;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              ProbabilityOfPickingThisPart;                     		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.GearBuilderInventoryPartSlot
@@ -4839,7 +4839,7 @@ struct FGearBuilderWeightedInventoryPart
 struct FGearBuilderInventoryPartSlot
 {
 	struct FString                                     PartName;                                         		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                SelectedPart;                                     		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                SelectedPart;                                     		// 0x000C (0x0004) [0x0000000000000000]
 	TArray< struct FGearBuilderWeightedInventoryPart > WeightedPartList;                                 		// 0x0010 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -4847,24 +4847,24 @@ struct FGearBuilderInventoryPartSlot
 // 0x011C
 struct FItemSettings
 {
-	class UItemDefinition*                             ItemDefinition;                                   		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UInventoryBalanceDefinition*                 BalanceDefinition;                                		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UManufacturerDefinition*                     ManufacturerDefinition;                           		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                ManufacturerGradeIndex;                           		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                Level;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	struct FGearBuilderInventoryPartSlot               GenericParts[ 0x9 ];                              		// 0x0014 (0x00FC) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                CurrentPartBeingSet;                              		// 0x0110 (0x0004) [0x0000000000000000]              
-	int                                                ItemBuilderIndex;                                 		// 0x0114 (0x0004) [0x0000000000000000]              
-	int                                                ActiveSubmenuForThisItem;                         		// 0x0118 (0x0004) [0x0000000000000000]              
+	class UItemDefinition*                             ItemDefinition;                                   		// 0x0000 (0x0004) [0x0000000000000000]
+	class UInventoryBalanceDefinition*                 BalanceDefinition;                                		// 0x0004 (0x0004) [0x0000000000000000]
+	class UManufacturerDefinition*                     ManufacturerDefinition;                           		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                ManufacturerGradeIndex;                           		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                Level;                                            		// 0x0010 (0x0004) [0x0000000000000000]
+	struct FGearBuilderInventoryPartSlot               GenericParts[0x9];                              		// 0x0014 (0x00FC) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	int                                                CurrentPartBeingSet;                              		// 0x0110 (0x0004) [0x0000000000000000]
+	int                                                ItemBuilderIndex;                                 		// 0x0114 (0x0004) [0x0000000000000000]
+	int                                                ActiveSubmenuForThisItem;                         		// 0x0118 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.GearBuilderWeightedWeaponPart
 // 0x000C
 struct FGearBuilderWeightedWeaponPart
 {
-	class UWeaponPartDefinition*                       Part;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Weight;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              ProbabilityOfPickingThisPart;                     		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UWeaponPartDefinition*                       Part;                                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Weight;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              ProbabilityOfPickingThisPart;                     		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.GearBuilderWeaponPartSlot
@@ -4872,7 +4872,7 @@ struct FGearBuilderWeightedWeaponPart
 struct FGearBuilderWeaponPartSlot
 {
 	struct FString                                     PartName;                                         		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                SelectedPart;                                     		// 0x000C (0x0004) [0x0000000000000000]              
+	int                                                SelectedPart;                                     		// 0x000C (0x0004) [0x0000000000000000]
 	TArray< struct FGearBuilderWeightedWeaponPart >    WeightedPartList;                                 		// 0x0010 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -4880,13 +4880,13 @@ struct FGearBuilderWeaponPartSlot
 // 0x0114
 struct FWeaponSettings
 {
-	class UWeaponTypeDefinition*                       WeaponTypeDefinition;                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	class UWeaponBalanceDefinition*                    BalanceDefinition;                                		// 0x0004 (0x0004) [0x0000000000000000]              
-	class UManufacturerDefinition*                     ManufacturerDefinition;                           		// 0x0008 (0x0004) [0x0000000000000000]              
-	int                                                ManufacturerGradeIndex;                           		// 0x000C (0x0004) [0x0000000000000000]              
-	int                                                Level;                                            		// 0x0010 (0x0004) [0x0000000000000000]              
-	struct FGearBuilderWeaponPartSlot                  GenericParts[ 0x9 ];                              		// 0x0014 (0x00FC) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                CurrentPartBeingSet;                              		// 0x0110 (0x0004) [0x0000000000000000]              
+	class UWeaponTypeDefinition*                       WeaponTypeDefinition;                             		// 0x0000 (0x0004) [0x0000000000000000]
+	class UWeaponBalanceDefinition*                    BalanceDefinition;                                		// 0x0004 (0x0004) [0x0000000000000000]
+	class UManufacturerDefinition*                     ManufacturerDefinition;                           		// 0x0008 (0x0004) [0x0000000000000000]
+	int                                                ManufacturerGradeIndex;                           		// 0x000C (0x0004) [0x0000000000000000]
+	int                                                Level;                                            		// 0x0010 (0x0004) [0x0000000000000000]
+	struct FGearBuilderWeaponPartSlot                  GenericParts[0x9];                              		// 0x0014 (0x00FC) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	int                                                CurrentPartBeingSet;                              		// 0x0110 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowUIInteraction.ItemBuilderData
@@ -4904,7 +4904,7 @@ struct FItemBuilderData
 // 0x0010
 struct FItemBuilderBalanceDefinition
 {
-	class UClass*                                      InventoryDefinitionClass;                         		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UClass*                                      InventoryDefinitionClass;                         		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FString >                           BalanceDefinitions;                               		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4912,7 +4912,7 @@ struct FItemBuilderBalanceDefinition
 // 0x0010
 struct FGearBuilderCustomizationData
 {
-	int                                                SortValue;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                SortValue;                                        		// 0x0000 (0x0004) [0x0000000000000000]
 	struct FString                                     BalanceDefinition;                                		// 0x0004 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -4920,7 +4920,7 @@ struct FGearBuilderCustomizationData
 // 0x0010
 struct FGearBuilderCustomizationUsageData
 {
-	class UClass*                                      Usage;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UClass*                                      Usage;                                            		// 0x0000 (0x0004) [0x0000000000000000]
 	TArray< struct FGearBuilderCustomizationData >     CustomizationBalanceDefinitions;                  		// 0x0004 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 };
 
@@ -4928,8 +4928,8 @@ struct FGearBuilderCustomizationUsageData
 // 0x000C
 struct FVirtualSeatStruct
 {
-	struct FName                                       NameKey;                                          		// 0x0000 (0x0008) [0x0000000000000000]              
-	int                                                CurrentRealSeat;                                  		// 0x0008 (0x0004) [0x0000000000000000]              
+	struct FName                                       NameKey;                                          		// 0x0000 (0x0008) [0x0000000000000000]
+	int                                                CurrentRealSeat;                                  		// 0x0008 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowVehicle.VehicleEffect
@@ -4951,13 +4951,13 @@ struct FVehicleEffect
 // 0x0038
 struct FFDamageMorphTargets
 {
-	struct FName                                       MorphNodeName;                                    		// 0x0000 (0x0008) [0x0000000000000000]              
-	class UMorphNodeWeight*                            MorphNode;                                        		// 0x0008 (0x0004) [0x0000000000000000]              
-	struct FName                                       LinkedMorphNodeName;                              		// 0x000C (0x0008) [0x0000000000000000]              
-	int                                                LinkedMorphNodeIndex;                             		// 0x0014 (0x0004) [0x0000000000000000]              
-	struct FName                                       AssociatedSkelControl;                            		// 0x0018 (0x0008) [0x0000000000000000]              
-	struct FName                                       InfluenceBone;                                    		// 0x0020 (0x0008) [0x0000000000000000]              
-	int                                                Health;                                           		// 0x0028 (0x0004) [0x0000000000000000]              
+	struct FName                                       MorphNodeName;                                    		// 0x0000 (0x0008) [0x0000000000000000]
+	class UMorphNodeWeight*                            MorphNode;                                        		// 0x0008 (0x0004) [0x0000000000000000]
+	struct FName                                       LinkedMorphNodeName;                              		// 0x000C (0x0008) [0x0000000000000000]
+	int                                                LinkedMorphNodeIndex;                             		// 0x0014 (0x0004) [0x0000000000000000]
+	struct FName                                       AssociatedSkelControl;                            		// 0x0018 (0x0008) [0x0000000000000000]
+	struct FName                                       InfluenceBone;                                    		// 0x0020 (0x0008) [0x0000000000000000]
+	int                                                Health;                                           		// 0x0028 (0x0004) [0x0000000000000000]
 	TArray< struct FName >                             DamagePropNames;                                  		// 0x002C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -4965,8 +4965,8 @@ struct FFDamageMorphTargets
 // 0x0010
 struct FSuspensionSound
 {
-	float                                              LastSuspensionTravel;                             		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              LastPlayTime;                                     		// 0x0004 (0x0004) [0x0000000000000000]              
+	float                                              LastSuspensionTravel;                             		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              LastPlayTime;                                     		// 0x0004 (0x0004) [0x0000000000000000]
 	struct FAkPlayingInfo                              PlayingInfo;                                      		// 0x0008 (0x0008) [0x0000000000080000]              ( CPF_Component )
 };
 
@@ -4974,8 +4974,8 @@ struct FSuspensionSound
 // 0x0008
 struct FIndexPair
 {
-	int                                                Index1;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Index2;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                Index1;                                           		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                Index2;                                           		// 0x0004 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowVehicle_Tank.TankSensor
@@ -5017,17 +5017,17 @@ struct FDuelTeamPair
 // 0x0048
 struct FTempWeaponStruct
 {
-	struct FWeaponDefinitionData                       DefinitionData;                                   		// 0x0000 (0x0044) [0x0000000000000000]              
-	int                                                Ammo;                                             		// 0x0044 (0x0004) [0x0000000000000000]              
+	struct FWeaponDefinitionData                       DefinitionData;                                   		// 0x0000 (0x0044) [0x0000000000000000]
+	int                                                Ammo;                                             		// 0x0044 (0x0004) [0x0000000000000000]
 };
 
 // ScriptStruct WillowGame.WillowVersusDuelInfo.TempProfileStruct
 // 0x0018
 struct FTempProfileStruct
 {
-	class UPawnAllegiance*                             Allegiance;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	float                                              Health;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	float                                              Shield;                                           		// 0x0008 (0x0004) [0x0000000000000000]              
+	class UPawnAllegiance*                             Allegiance;                                       		// 0x0000 (0x0004) [0x0000000000000000]
+	float                                              Health;                                           		// 0x0004 (0x0004) [0x0000000000000000]
+	float                                              Shield;                                           		// 0x0008 (0x0004) [0x0000000000000000]
 	TArray< struct FTempWeaponStruct >                 Weapons;                                          		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -5093,9 +5093,9 @@ struct FLegacyCustomizationItemData
 // 0x0018
 struct FPremiumCustomizationInfo
 {
-	int                                                OfferId;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PackageId;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                ContentId;                                        		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                OfferId;                                          		// 0x0000 (0x0004) [0x0000000000000000]
+	int                                                PackageId;                                        		// 0x0004 (0x0004) [0x0000000000000000]
+	int                                                ContentId;                                        		// 0x0008 (0x0004) [0x0000000000000000]
 	struct FString                                     PS3TitleId;                                       		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -5116,7 +5116,6 @@ struct FDirChangeRateRange
 	float                                              SpeedRange;                                       		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

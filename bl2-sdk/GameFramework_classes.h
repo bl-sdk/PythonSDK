@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -72,7 +72,6 @@
 	GT_MAX                                             = 4
 };*/
 
-
 /*
 # ========================================================================================= #
 # Classes
@@ -91,12 +90,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2840 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2840];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* AGamePawn::pClassPointer = NULL;
@@ -115,26 +113,26 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2842 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2842];
 
 		return pClassPointer;
 	};
 
-	void ClientColorFade ( struct FColor FadeColor, unsigned char FromAlpha, unsigned char ToAlpha, float FadeTime );
-	void CallMemLeakCheck ( );
-	void StopMemLeakChecking ( );
-	void DoMemLeakChecking ( float InTimeBetweenMemLeakChecks );
-	void eventWarmupPause ( unsigned long bDesiredPauseState );
-	bool CanUnpauseWarmup ( );
-	void GetCurrentMovie ( struct FString* MovieName );
-	void eventClientStopMovie ( float DelayInSeconds, unsigned long bAllowMovieToFinish, unsigned long bForceStopNonSkippable, unsigned long bForceStopLoadingMovie );
-	void eventClientPlayMovie ( struct FString MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame, unsigned long bRestrictPausing, unsigned long bPlayOnceFromStream, unsigned long bOnlyBackButtonSkipsMovie );
-	void KeepPlayingLoadingMovie ( );
-	void ShowLoadingMovie ( unsigned long bShowMovie, unsigned long bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, unsigned long bOverridePreviousDelays );
-	void SetSoundMode ( struct FName InSoundModeName );
-	void DoForceFeedbackForScreenShake ( class UCameraShake* ShakeData, float Scale );
-	int GetUIPlayerIndex ( );
+	void ClientColorFade(struct FColor FadeColor, unsigned char FromAlpha, unsigned char ToAlpha, float FadeTime);
+	void CallMemLeakCheck();
+	void StopMemLeakChecking();
+	void DoMemLeakChecking(float InTimeBetweenMemLeakChecks);
+	void eventWarmupPause(unsigned long bDesiredPauseState);
+	bool CanUnpauseWarmup();
+	void GetCurrentMovie(struct FString* MovieName);
+	void eventClientStopMovie(float DelayInSeconds, unsigned long bAllowMovieToFinish, unsigned long bForceStopNonSkippable, unsigned long bForceStopLoadingMovie);
+	void eventClientPlayMovie(struct FString MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame, unsigned long bRestrictPausing, unsigned long bPlayOnceFromStream, unsigned long bOnlyBackButtonSkipsMovie);
+	void KeepPlayingLoadingMovie();
+	void ShowLoadingMovie(unsigned long bShowMovie, unsigned long bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, unsigned long bOverridePreviousDelays);
+	void SetSoundMode(struct FName InSoundModeName);
+	void DoForceFeedbackForScreenShake(class UCameraShake* ShakeData, float Scale);
+	int GetUIPlayerIndex();
 };
 
 UClass* AGamePlayerController::pClassPointer = NULL;
@@ -151,12 +149,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2844 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2844];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGameTypes::pClassPointer = NULL;
@@ -167,8 +164,8 @@ class UNavMeshGoal_OutOfViewFrom : public UNavMeshPathGoalEvaluator
 {
 public:
 	struct FPointer                                    GoalPoly;                                         		// 0x0050 (0x0004) [0x0000000000001000]              ( CPF_Native )
-	struct FVector                                     OutOfViewLocation;                                		// 0x0054 (0x000C) [0x0000000000000000]              
-	unsigned long                                      bShowDebug : 1;                                   		// 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FVector                                     OutOfViewLocation;                                		// 0x0054 (0x000C) [0x0000000000000000]
+	unsigned long                                      bShowDebug : 1;                                   		// 0x0060 (0x0004) [0x0000000000000000] [0x00000001]
 
 private:
 	static UClass* pClassPointer;
@@ -176,15 +173,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2846 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2846];
 
 		return pClassPointer;
 	};
 
-	void Recycle ( );
-	bool MustBeHiddenFromThisPoint ( class UNavigationHandle* NavHandle, struct FVector InOutOfViewLocation );
-	void RecycleNative ( );
+	void Recycle();
+	bool MustBeHiddenFromThisPoint(class UNavigationHandle* NavHandle, struct FVector InOutOfViewLocation);
+	void RecycleNative();
 };
 
 UClass* UNavMeshGoal_OutOfViewFrom::pClassPointer = NULL;
@@ -205,14 +202,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2848 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2848];
 
 		return pClassPointer;
 	};
 
-	void Recycle ( );
-	bool BiasAgainstPolysWithinDistanceOfLocations ( class UNavigationHandle* NavHandle, struct FVector InLocation, struct FRotator InRotation, float InDistanceToCheck, TArray< struct FVector > InLocationsToCheck );
+	void Recycle();
+	bool BiasAgainstPolysWithinDistanceOfLocations(class UNavigationHandle* NavHandle, struct FVector InLocation, struct FRotator InRotation, float InDistanceToCheck, TArray< struct FVector > InLocationsToCheck);
 };
 
 UClass* UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::pClassPointer = NULL;
@@ -232,12 +229,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2850 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2850];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqAct_ControlGameMovie::pClassPointer = NULL;
@@ -250,9 +246,9 @@ public:
 	float                                              ScreenX;                                          		// 0x00A4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              ScreenY;                                          		// 0x00A8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              TraceDistance;                                    		// 0x00AC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UObject*                                     HitObject;                                        		// 0x00B0 (0x0004) [0x0000000000000000]              
-	struct FVector                                     HitLocation;                                      		// 0x00B4 (0x000C) [0x0000000000000000]              
-	struct FVector                                     HitNormal;                                        		// 0x00C0 (0x000C) [0x0000000000000000]              
+	class UObject*                                     HitObject;                                        		// 0x00B0 (0x0004) [0x0000000000000000]
+	struct FVector                                     HitLocation;                                      		// 0x00B4 (0x000C) [0x0000000000000000]
+	struct FVector                                     HitNormal;                                        		// 0x00C0 (0x000C) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -260,12 +256,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2852 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2852];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqAct_Deproject::pClassPointer = NULL;
@@ -283,12 +278,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2854 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2854];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqAct_ModifyProperty::pClassPointer = NULL;
@@ -311,12 +305,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2856 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2856];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGameSkelCtrl_Recoil::pClassPointer = NULL;
@@ -328,11 +321,11 @@ class UGameStateObject : public UGameplayEventsHandler
 public:
 	struct FArray_Mirror                               TeamStates;                                       		// 0x0058 (0x000C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	struct FArray_Mirror                               PlayerStates;                                     		// 0x0064 (0x000C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	unsigned char                                      SessionType;                                      		// 0x0070 (0x0001) [0x0000000000000000]              
-	unsigned long                                      bIsMatchStarted : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bIsRoundStarted : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000002] 
-	int                                                RoundNumber;                                      		// 0x0078 (0x0004) [0x0000000000000000]              
-	int                                                MaxRoundNumber;                                   		// 0x007C (0x0004) [0x0000000000000000]              
+	unsigned char                                      SessionType;                                      		// 0x0070 (0x0001) [0x0000000000000000]
+	unsigned long                                      bIsMatchStarted : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bIsRoundStarted : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000002]
+	int                                                RoundNumber;                                      		// 0x0078 (0x0004) [0x0000000000000000]
+	int                                                MaxRoundNumber;                                   		// 0x007C (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -340,14 +333,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2858 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2858];
 
 		return pClassPointer;
 	};
 
-	void Reset ( );
-	void eventPreProcessStream ( );
+	void Reset();
+	void eventPreProcessStream();
 };
 
 UClass* UGameStateObject::pClassPointer = NULL;
@@ -357,12 +350,12 @@ UClass* UGameStateObject::pClassPointer = NULL;
 class UGameStatsAggregator : public UGameplayEventsHandler
 {
 public:
-	class UGameStateObject*                            GameState;                                        		// 0x0058 (0x0004) [0x0000000000000000]              
+	class UGameStateObject*                            GameState;                                        		// 0x0058 (0x0004) [0x0000000000000000]
 	TArray< struct FAggregateEventMapping >            AggregatesList;                                   		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FMap_Mirror                                 AggregateEventsMapping;                           		// 0x0068 (0x003C) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
 	TArray< struct FGameplayEventMetaData >            AggregateEvents;                                  		// 0x00A4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< int >                                      AggregatesFound;                                  		// 0x00B0 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FGameEvents                                 AllGameEvents;                                    		// 0x00BC (0x003C) [0x0000000000000000]              
+	struct FGameEvents                                 AllGameEvents;                                    		// 0x00BC (0x003C) [0x0000000000000000]
 	TArray< struct FTeamEvents >                       AllTeamEvents;                                    		// 0x00F8 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 	TArray< struct FPlayerEvents >                     AllPlayerEvents;                                  		// 0x0104 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 	struct FWeaponEvents                               AllWeaponEvents;                                  		// 0x0110 (0x0048) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
@@ -376,16 +369,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2860 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2860];
 
 		return pClassPointer;
 	};
 
-	bool GetAggregateMappingIDs ( int EventID, int* AggregateID, int* TargetAggregateID );
-	void Reset ( );
-	void eventPostProcessStream ( );
-	void eventPreProcessStream ( );
+	bool GetAggregateMappingIDs(int EventID, int* AggregateID, int* TargetAggregateID);
+	void Reset();
+	void eventPostProcessStream();
+	void eventPreProcessStream();
 };
 
 UClass* UGameStatsAggregator::pClassPointer = NULL;
@@ -395,10 +388,10 @@ UClass* UGameStatsAggregator::pClassPointer = NULL;
 class UGameWaveForms : public UObject
 {
 public:
-	class UForceFeedbackWaveform*                      CameraShakeMediumShort;                           		// 0x003C (0x0004) [0x0000000000000000]              
-	class UForceFeedbackWaveform*                      CameraShakeMediumLong;                            		// 0x0040 (0x0004) [0x0000000000000000]              
-	class UForceFeedbackWaveform*                      CameraShakeBigShort;                              		// 0x0044 (0x0004) [0x0000000000000000]              
-	class UForceFeedbackWaveform*                      CameraShakeBigLong;                               		// 0x0048 (0x0004) [0x0000000000000000]              
+	class UForceFeedbackWaveform*                      CameraShakeMediumShort;                           		// 0x003C (0x0004) [0x0000000000000000]
+	class UForceFeedbackWaveform*                      CameraShakeMediumLong;                            		// 0x0040 (0x0004) [0x0000000000000000]
+	class UForceFeedbackWaveform*                      CameraShakeBigShort;                              		// 0x0044 (0x0004) [0x0000000000000000]
+	class UForceFeedbackWaveform*                      CameraShakeBigLong;                               		// 0x0048 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -406,12 +399,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38380 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38380];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGameWaveForms::pClassPointer = NULL;
@@ -421,7 +413,7 @@ UClass* UGameWaveForms::pClassPointer = NULL;
 class APlayerCollectorGame : public AGameInfo
 {
 public:
-	int                                                NumberOfClientsToWaitFor;                         		// 0x0330 (0x0004) [0x0000000000000000]              
+	int                                                NumberOfClientsToWaitFor;                         		// 0x0330 (0x0004) [0x0000000000000000]
 	struct FString                                     URLToLoad;                                        		// 0x0334 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
 private:
@@ -430,14 +422,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38577 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38577];
 
 		return pClassPointer;
 	};
 
-	void eventGetSeamlessTravelActorList ( unsigned long bToEntry, TArray< class AActor* >* ActorList );
-	class APlayerController* eventLogin ( struct FString Portal, struct FString Options, struct FUniqueNetId UniqueId, struct FString* ErrorMessage );
+	void eventGetSeamlessTravelActorList(unsigned long bToEntry, TArray< class AActor* >* ActorList);
+	class APlayerController* eventLogin(struct FString Portal, struct FString Options, struct FUniqueNetId UniqueId, struct FString* ErrorMessage);
 };
 
 UClass* APlayerCollectorGame::pClassPointer = NULL;
@@ -447,7 +439,7 @@ UClass* APlayerCollectorGame::pClassPointer = NULL;
 class UPMESTG_LeaveADecalBase : public UParticleModuleEventSendToGame
 {
 public:
-	class UClass*                                      PhysicalMaterialPropertyClass;                    		// 0x003C (0x0004) [0x0000000000000000]              
+	class UClass*                                      PhysicalMaterialPropertyClass;                    		// 0x003C (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -455,17 +447,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38591 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38591];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPMESTG_LeaveADecalBase::pClassPointer = NULL;
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

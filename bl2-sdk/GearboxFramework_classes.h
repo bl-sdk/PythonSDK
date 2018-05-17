@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -1146,7 +1146,6 @@
 	NEWSRETRIEVE_MAX                                   = 4
 };*/
 
-
 /*
 # ========================================================================================= #
 # Classes
@@ -1167,12 +1166,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2910 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2910];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UActorFactoryClone::pClassPointer = NULL;
@@ -1189,12 +1187,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2912 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2912];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UActorFactoryWireTerminal::pClassPointer = NULL;
@@ -1204,10 +1201,10 @@ UClass* UActorFactoryWireTerminal::pClassPointer = NULL;
 class UAIDebugCamera : public UObject
 {
 public:
-	class AGearboxMind*                                Mind;                                             		// 0x003C (0x0004) [0x0000000000000000]              
-	class URuleEngine*                                 RuleEngine;                                       		// 0x0040 (0x0004) [0x0000000000000000]              
+	class AGearboxMind*                                Mind;                                             		// 0x003C (0x0004) [0x0000000000000000]
+	class URuleEngine*                                 RuleEngine;                                       		// 0x0040 (0x0004) [0x0000000000000000]
 	TArray< struct FDebugListItem >                    DisplayList;                                      		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bSnapshotModeOn : 1;                              		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bSnapshotModeOn : 1;                              		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      bShowFlags : 1;                                   		// 0x0050 (0x0004) [0x0000000000044000] [0x00000002] ( CPF_Config | CPF_GlobalConfig )
 	unsigned long                                      bShowRules : 1;                                   		// 0x0050 (0x0004) [0x0000000000044000] [0x00000004] ( CPF_Config | CPF_GlobalConfig )
 	unsigned long                                      bShowInactiveRules : 1;                           		// 0x0050 (0x0004) [0x0000000000044000] [0x00000008] ( CPF_Config | CPF_GlobalConfig )
@@ -1217,20 +1214,20 @@ public:
 	unsigned long                                      bShowAwarenessZones : 1;                          		// 0x0050 (0x0004) [0x0000000000044000] [0x00000080] ( CPF_Config | CPF_GlobalConfig )
 	unsigned long                                      bShowTargetViewCones : 1;                         		// 0x0050 (0x0004) [0x0000000000044000] [0x00000100] ( CPF_Config | CPF_GlobalConfig )
 	unsigned long                                      bShowTimers : 1;                                  		// 0x0050 (0x0004) [0x0000000000044000] [0x00000200] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowAITree : 1;                                  		// 0x0050 (0x0004) [0x0000000000000000] [0x00000400] 
-	int                                                SnapshotNdx;                                      		// 0x0054 (0x0004) [0x0000000000000000]              
-	class USnapshotRecord*                             CurSnapshot;                                      		// 0x0058 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bShowAITree : 1;                                  		// 0x0050 (0x0004) [0x0000000000000000] [0x00000400]
+	int                                                SnapshotNdx;                                      		// 0x0054 (0x0004) [0x0000000000000000]
+	class USnapshotRecord*                             CurSnapshot;                                      		// 0x0058 (0x0004) [0x0000000000000000]
 	class UPopUpDebugBarGraph*                         PopUpGraphTop;                                    		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UPopUpDebugBarGraph*                         PopUpGraphCenter;                                 		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FName                                       CurrentInspectedTargetName;                       		// 0x0064 (0x0008) [0x0000000000000000]              
+	struct FName                                       CurrentInspectedTargetName;                       		// 0x0064 (0x0008) [0x0000000000000000]
 	float                                              TopBarGraphStartXPct;                             		// 0x006C (0x0004) [0x0000000000000002]              ( CPF_Const )
 	float                                              TopBarGraphStartYPct;                             		// 0x0070 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	float                                              CenterBarGraphStartXPct;                          		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	float                                              CenterBarGraphStartYPct;                          		// 0x0078 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	float                                              Column2XOffset;                                   		// 0x007C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              Column1LastY;                                     		// 0x0080 (0x0004) [0x0000000000000000]              
-	float                                              Column2LastY;                                     		// 0x0084 (0x0004) [0x0000000000000000]              
-	int                                                LastColumnDrawnTo;                                		// 0x0088 (0x0004) [0x0000000000000000]              
+	float                                              Column1LastY;                                     		// 0x0080 (0x0004) [0x0000000000000000]
+	float                                              Column2LastY;                                     		// 0x0084 (0x0004) [0x0000000000000000]
+	int                                                LastColumnDrawnTo;                                		// 0x0088 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -1238,36 +1235,36 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2914 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2914];
 
 		return pClassPointer;
 	};
 
-	void ToggleAITree ( );
-	void ToggleTargetViewCones ( );
-	void ToggleAwarenessZones ( );
-	void ToggleRuleEngineLoadBalance ( );
-	void ToggleCombat ( );
-	void ToggleShowTimers ( );
-	void ToggleResources ( );
-	void ToggleInactiveRules ( );
-	void ToggleRules ( );
-	void ToggleFlags ( );
-	class UAITracker* GetTracker ( );
-	void SetMind ( class AGearboxMind* NewMind );
-	void InitDummies ( int NewNumDummies );
-	bool WantsToDoCameraInspection ( );
-	void SetCurrentInspectedTarget ( struct FName NewName );
-	void CompareRuleSetAndAdjustRuleIdx ( class USnapshotRecord* OldSnapshot, class USnapshotRecord* NewSnapshot );
-	void SetRuleEngine ( class URuleEngine* NewRuleEngine );
-	void SetPrevSnapshotRule ( );
-	void SetNextSnapshotRule ( );
-	void SetPrevSnapshot ( );
-	void SetNextSnapshot ( );
-	void NotifyGameUnPaused ( );
-	void NotifyGamePaused ( );
-	void Display ( class AHUD* HUD );
+	void ToggleAITree();
+	void ToggleTargetViewCones();
+	void ToggleAwarenessZones();
+	void ToggleRuleEngineLoadBalance();
+	void ToggleCombat();
+	void ToggleShowTimers();
+	void ToggleResources();
+	void ToggleInactiveRules();
+	void ToggleRules();
+	void ToggleFlags();
+	class UAITracker* GetTracker();
+	void SetMind(class AGearboxMind* NewMind);
+	void InitDummies(int NewNumDummies);
+	bool WantsToDoCameraInspection();
+	void SetCurrentInspectedTarget(struct FName NewName);
+	void CompareRuleSetAndAdjustRuleIdx(class USnapshotRecord* OldSnapshot, class USnapshotRecord* NewSnapshot);
+	void SetRuleEngine(class URuleEngine* NewRuleEngine);
+	void SetPrevSnapshotRule();
+	void SetNextSnapshotRule();
+	void SetPrevSnapshot();
+	void SetNextSnapshot();
+	void NotifyGameUnPaused();
+	void NotifyGamePaused();
+	void Display(class AHUD* HUD);
 };
 
 UClass* UAIDebugCamera::pClassPointer = NULL;
@@ -1277,9 +1274,9 @@ UClass* UAIDebugCamera::pClassPointer = NULL;
 class UAITracker : public UObject
 {
 public:
-	class USnapshotRecord*                             Snapshots[ 0x32 ];                                		// 0x003C (0x00C8) [0x0000000000002000]              ( CPF_Transient )
-	int                                                SnapshotSize;                                     		// 0x0104 (0x0004) [0x0000000000000000]              
-	int                                                SnapshotIndex;                                    		// 0x0108 (0x0004) [0x0000000000000000]              
+	class USnapshotRecord*                             Snapshots[0x32];                                		// 0x003C (0x00C8) [0x0000000000002000]              ( CPF_Transient )
+	int                                                SnapshotSize;                                     		// 0x0104 (0x0004) [0x0000000000000000]
+	int                                                SnapshotIndex;                                    		// 0x0108 (0x0004) [0x0000000000000000]
 	class AActor*                                      DebugOwner;                                       		// 0x010C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
@@ -1288,12 +1285,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2916 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2916];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAITracker::pClassPointer = NULL;
@@ -1306,7 +1302,7 @@ public:
 	unsigned char                                      AnimState;                                        		// 0x00EC (0x0001) [0x0000000000002000]              ( CPF_Transient )
 	float                                              SavedBlendOutTime;                                		// 0x00F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class USpecialMoveInterface*                       SMI;                                              		// 0x00F4 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00F8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x00F8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	TArray< struct FSlotAnimParameters >               AnimParameters;                                   		// 0x00FC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	unsigned long                                      bForceLocalSpaceBlend : 1;                        		// 0x0108 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 	unsigned long                                      IssueNotifiesWhenZeroWeight : 1;                  		// 0x0108 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
@@ -1317,20 +1313,20 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2918 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2918];
 
 		return pClassPointer;
 	};
 
-	bool IsPlaying ( class UGearboxAnimDefinition* AnimSMD );
-	void SetRootMotion ( class URootMotionDefinition* RMDef );
-	class UGearboxAnimDefinition* GetCurrentAnimDef ( );
-	struct FName GetCurrentAnimName ( );
-	void Finish ( unsigned long bInterrupted );
-	void Stop ( unsigned long bInterrupted );
-	float PlayData ( struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride, struct FSpecialMoveData* SMData );
-	float Play ( class UGearboxAnimDefinition* CustomAnimSMD, struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride );
+	bool IsPlaying(class UGearboxAnimDefinition* AnimSMD);
+	void SetRootMotion(class URootMotionDefinition* RMDef);
+	class UGearboxAnimDefinition* GetCurrentAnimDef();
+	struct FName GetCurrentAnimName();
+	void Finish(unsigned long bInterrupted);
+	void Stop(unsigned long bInterrupted);
+	float PlayData(struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride, struct FSpecialMoveData* SMData);
+	float Play(class UGearboxAnimDefinition* CustomAnimSMD, struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride);
 };
 
 UClass* UAnimNodeSpecialMoveBlend::pClassPointer = NULL;
@@ -1348,13 +1344,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2920 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2920];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UAttributeExpressionEvaluator::pClassPointer = NULL;
@@ -1372,14 +1368,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2922 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2922];
 
 		return pClassPointer;
 	};
 
-	void CallFunction ( class AActor* inActor, struct FName InFunctionName );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void CallFunction(class AActor* inActor, struct FName InFunctionName);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_CallFunction::pClassPointer = NULL;
@@ -1400,13 +1396,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2924 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2924];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_ChangeRemoteBehaviorSequenceState::pClassPointer = NULL;
@@ -1428,13 +1424,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2926 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2926];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_ChangeTimer::pClassPointer = NULL;
@@ -1454,13 +1450,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2928 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2928];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_IsSequenceEnabled::pClassPointer = NULL;
@@ -1475,7 +1471,7 @@ public:
 	unsigned long                                      bForLocalPlayerOnly : 1;                          		// 0x0050 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
 	unsigned long                                      bForcePlayImmediate : 1;                          		// 0x0050 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
 	unsigned long                                      bPlayFromActor : 1;                               		// 0x0050 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      bLatentWhenNoConnections : 1;                     		// 0x0050 (0x0004) [0x0000000000000000] [0x00000010] 
+	unsigned long                                      bLatentWhenNoConnections : 1;                     		// 0x0050 (0x0004) [0x0000000000000000] [0x00000010]
 	struct FAkPlayingInfo                              PlayingInfo;                                      		// 0x0054 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
 
 private:
@@ -1484,13 +1480,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2930 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2930];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_PostAkEvent::pClassPointer = NULL;
@@ -1509,21 +1505,21 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2932 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2932];
 
 		return pClassPointer;
 	};
 
-	void RunAllBehaviorsForEvent ( struct FName EventName, struct FScriptDelegate SetStrategy, struct FScriptDelegate Strategy, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, unsigned char EnumValue );
-	void BehaviorStrategy ( struct FPointer BehaviorSet, struct FName EventName, unsigned char EnumValue, TArray< class UBehaviorBase* >* BehaviorList );
-	void BehaviorSetStrategy ( TArray< struct FPointer >* BehaviorSetList );
-	class UBehaviorProviderDefinition* ResolveBehaviorProviderDefinitionReference ( class UBehaviorBase* SourceBehavior, class UObject* ProviderReference, struct FNameBasedObjectPath* PathName );
-	bool IsBehaviorsV2 ( struct FBehaviorKernelInfo* KernelInfo );
-	bool ShouldContinueExecution ( float TimeBetweenSteps, int MaxSteps, struct FBehaviorKernelInfo* KernelInfo, int* NumSteps );
-	struct FName GetNextFireLocationSocket ( unsigned char FireSocketSelection, TArray< struct FName > FireLocationSocketNames, TArray< struct FName >* FireLocationSocketsRemaining );
-	bool GetRotationFromAttachmentLocationData ( struct FAttachmentLocationData AttachmentLocation, struct FRotator* AttachmentLocationRotation );
-	struct FVector GetRelativeDirection ( struct FRelativeDirectionData DesiredDirection, class UIWorldBody* Source, struct FVector DefaultDirection, struct FName SpawnSocketName );
+	void RunAllBehaviorsForEvent(struct FName EventName, struct FScriptDelegate SetStrategy, struct FScriptDelegate Strategy, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, unsigned char EnumValue);
+	void BehaviorStrategy(struct FPointer BehaviorSet, struct FName EventName, unsigned char EnumValue, TArray< class UBehaviorBase* >* BehaviorList);
+	void BehaviorSetStrategy(TArray< struct FPointer >* BehaviorSetList);
+	class UBehaviorProviderDefinition* ResolveBehaviorProviderDefinitionReference(class UBehaviorBase* SourceBehavior, class UObject* ProviderReference, struct FNameBasedObjectPath* PathName);
+	bool IsBehaviorsV2(struct FBehaviorKernelInfo* KernelInfo);
+	bool ShouldContinueExecution(float TimeBetweenSteps, int MaxSteps, struct FBehaviorKernelInfo* KernelInfo, int* NumSteps);
+	struct FName GetNextFireLocationSocket(unsigned char FireSocketSelection, TArray< struct FName > FireLocationSocketNames, TArray< struct FName >* FireLocationSocketsRemaining);
+	bool GetRotationFromAttachmentLocationData(struct FAttachmentLocationData AttachmentLocation, struct FRotator* AttachmentLocationRotation);
+	struct FVector GetRelativeDirection(struct FRelativeDirectionData DesiredDirection, class UIWorldBody* Source, struct FVector DefaultDirection, struct FName SpawnSocketName);
 };
 
 UClass* UBehaviorHelpers::pClassPointer = NULL;
@@ -1543,13 +1539,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2934 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2934];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UCompoundExpressionEvaluator::pClassPointer = NULL;
@@ -1567,12 +1563,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2936 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2936];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UConditionalAttributeValueResolver::pClassPointer = NULL;
@@ -1590,12 +1585,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2938 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2938];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UConstantAttributeValueResolver::pClassPointer = NULL;
@@ -1613,12 +1607,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2940 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2940];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UConstraintAttributeValueResolver::pClassPointer = NULL;
@@ -1636,12 +1629,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2942 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2942];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFeatherBoneBlendDefinition::pClassPointer = NULL;
@@ -1659,22 +1651,22 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2944 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2944];
 
 		return pClassPointer;
 	};
 
-	void RemoveAndDeleteActorsOfClassFromLevel ( class UClass* TheClass, class ULevel* Level );
-	void RemoveActorsOfClassFromLevel ( class UClass* TheClass, class ULevel* Level );
-	void RemoveAndDeleteActorsFromLevel ( class ULevel* Level );
-	void RemoveActorsFromLevel ( class ULevel* Level );
-	class AActor* FindNextActorByLevel ( class ULevel* Level, int* Index );
-	class AActor* FindFirstActorByLevel ( class ULevel* Level, int* Index );
-	class AActor* FindNextActorByClass ( class UClass* TheClass, int* Index );
-	class AActor* FindFirstActorByClass ( class UClass* TheClass, int* Index );
-	void RemoveActor ( class AActor* Actor );
-	void AddActor ( class AActor* Actor, class ULevel* Level );
+	void RemoveAndDeleteActorsOfClassFromLevel(class UClass* TheClass, class ULevel* Level);
+	void RemoveActorsOfClassFromLevel(class UClass* TheClass, class ULevel* Level);
+	void RemoveAndDeleteActorsFromLevel(class ULevel* Level);
+	void RemoveActorsFromLevel(class ULevel* Level);
+	class AActor* FindNextActorByLevel(class ULevel* Level, int* Index);
+	class AActor* FindFirstActorByLevel(class ULevel* Level, int* Index);
+	class AActor* FindNextActorByClass(class UClass* TheClass, int* Index);
+	class AActor* FindFirstActorByClass(class UClass* TheClass, int* Index);
+	void RemoveActor(class AActor* Actor);
+	void AddActor(class AActor* Actor, class ULevel* Level);
 };
 
 UClass* UGBXActorList::pClassPointer = NULL;
@@ -1692,17 +1684,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2946 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2946];
 
 		return pClassPointer;
 	};
 
-	void RemoveObjectsOfClass ( class UClass* TheClass );
-	class UObject* FindNextObjectByClass ( class UClass* TheClass, int* Index );
-	class UObject* FindFirstObjectByClass ( class UClass* TheClass, int* Index );
-	void RemoveObject ( class UObject* TheObject );
-	void AddObject ( class UObject* TheObject );
+	void RemoveObjectsOfClass(class UClass* TheClass);
+	class UObject* FindNextObjectByClass(class UClass* TheClass, int* Index);
+	class UObject* FindFirstObjectByClass(class UClass* TheClass, int* Index);
+	void RemoveObject(class UObject* TheObject);
+	void AddObject(class UObject* TheObject);
 };
 
 UClass* UGBXObjectList::pClassPointer = NULL;
@@ -1719,13 +1711,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2948 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2948];
 
 		return pClassPointer;
 	};
 
-	void ForceMoveToActor ( class AActor* destActor );
+	void ForceMoveToActor(class AActor* destActor);
 };
 
 UClass* AGearboxAIController::pClassPointer = NULL;
@@ -1750,20 +1742,20 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2950 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2950];
 
 		return pClassPointer;
 	};
 
-	bool DoesPatrolPathExistToPoint ( class AGearboxAIMoveNode* PatrolPoint );
-	void GetAllLinkedNodes ( TArray< class AGearboxAIMoveNode* >* OutNodes );
-	class AGearboxAIMoveNode* GetNextMoveNodeClosestToPoint ( struct FVector TestPoint );
-	class AGearboxAIMoveNode* GetNextMoveNode ( );
-	int RemoveNode ( class AGearboxAIMoveNode* OldNode );
-	void AddNode ( class AGearboxAIMoveNode* NewNode );
-	void ClearLinks ( );
-	void OnToggle ( class USeqAct_Toggle* Action );
+	bool DoesPatrolPathExistToPoint(class AGearboxAIMoveNode* PatrolPoint);
+	void GetAllLinkedNodes(TArray< class AGearboxAIMoveNode* >* OutNodes);
+	class AGearboxAIMoveNode* GetNextMoveNodeClosestToPoint(struct FVector TestPoint);
+	class AGearboxAIMoveNode* GetNextMoveNode();
+	int RemoveNode(class AGearboxAIMoveNode* OldNode);
+	void AddNode(class AGearboxAIMoveNode* NewNode);
+	void ClearLinks();
+	void OnToggle(class USeqAct_Toggle* Action);
 };
 
 UClass* AGearboxAIMoveNode::pClassPointer = NULL;
@@ -1781,18 +1773,18 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2952 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2952];
 
 		return pClassPointer;
 	};
 
-	void eventFinishCameraLookAt ( );
-	void eventEnableThirdPersonLookAt ( float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode );
-	void BeginCameraLookAt ( class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut );
-	void CalcSimpleThirdPersonView ( float DeltaTime, struct FTViewTarget* OutVT );
-	void CalcBaseView ( float DeltaTime, struct FTViewTarget* OutVT );
-	void UpdateViewTarget ( float DeltaTime, struct FTViewTarget* OutVT );
+	void eventFinishCameraLookAt();
+	void eventEnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
+	void BeginCameraLookAt(class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
+	void CalcSimpleThirdPersonView(float DeltaTime, struct FTViewTarget* OutVT);
+	void CalcBaseView(float DeltaTime, struct FTViewTarget* OutVT);
+	void UpdateViewTarget(float DeltaTime, struct FTViewTarget* OutVT);
 };
 
 UClass* AGearboxCameraBasic::pClassPointer = NULL;
@@ -1802,16 +1794,16 @@ UClass* AGearboxCameraBasic::pClassPointer = NULL;
 class UGearboxCameraModifier : public UCameraModifier
 {
 public:
-	class AGearboxCameraBasic*                         GBXCameraOwner;                                   		// 0x0058 (0x0004) [0x0000000000000000]              
-	struct FTPOV                                       DesiredPOV;                                       		// 0x005C (0x001C) [0x0000000000000000]              
-	float                                              MasterFadeValue;                                  		// 0x0078 (0x0004) [0x0000000000000000]              
-	float                                              FadeElapsedTime;                                  		// 0x007C (0x0004) [0x0000000000000000]              
-	float                                              FadeTimeSpan;                                     		// 0x0080 (0x0004) [0x0000000000000000]              
-	unsigned long                                      FadeStarted : 1;                                  		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      FadingUpwards : 1;                                		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      DisableWhenFadedOut : 1;                          		// 0x0084 (0x0004) [0x0000000000000000] [0x00000004] 
+	class AGearboxCameraBasic*                         GBXCameraOwner;                                   		// 0x0058 (0x0004) [0x0000000000000000]
+	struct FTPOV                                       DesiredPOV;                                       		// 0x005C (0x001C) [0x0000000000000000]
+	float                                              MasterFadeValue;                                  		// 0x0078 (0x0004) [0x0000000000000000]
+	float                                              FadeElapsedTime;                                  		// 0x007C (0x0004) [0x0000000000000000]
+	float                                              FadeTimeSpan;                                     		// 0x0080 (0x0004) [0x0000000000000000]
+	unsigned long                                      FadeStarted : 1;                                  		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      FadingUpwards : 1;                                		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      DisableWhenFadedOut : 1;                          		// 0x0084 (0x0004) [0x0000000000000000] [0x00000004]
 	unsigned long                                      AdjustForTimeDilation : 1;                        		// 0x0084 (0x0004) [0x0000000000000002] [0x00000008] ( CPF_Const )
-	unsigned char                                      FadeMode;                                         		// 0x0088 (0x0001) [0x0000000000000000]              
+	unsigned char                                      FadeMode;                                         		// 0x0088 (0x0001) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -1819,25 +1811,25 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2954 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2954];
 
 		return pClassPointer;
 	};
 
-	float LerpFOV ( float Src, float Dest, float T );
-	struct FRotator LerpRotation ( struct FRotator Src, struct FRotator Dest, float T );
-	struct FVector LerpLocation ( struct FVector Src, struct FVector Dest, float T );
-	void UpdateAllLerps ( float DeltaTime, struct FTPOV* OutPOV );
-	void UpdateMasterFadePercentage ( float AdjustedDeltaTime );
-	bool IsFadingDownwards ( );
-	bool IsFadingUpwards ( );
-	bool IsFadeInProgress ( );
-	void StartFadeOut ( float NewTimeSpan, unsigned long NewDisableWhenFadedOut, unsigned char NewFadeMode );
-	void StartFadeIn ( float NewTimeSpan, unsigned char NewFadeMode );
-	void SetDesiredCamera ( struct FVector DesiredLoc, struct FRotator DesiredRot, float DesiredFOV );
-	void SetGBXCameraOwner ( class AGearboxCameraBasic* InCamera );
-	bool AddCameraModifier ( class ACamera* Camera );
+	float LerpFOV(float Src, float Dest, float T);
+	struct FRotator LerpRotation(struct FRotator Src, struct FRotator Dest, float T);
+	struct FVector LerpLocation(struct FVector Src, struct FVector Dest, float T);
+	void UpdateAllLerps(float DeltaTime, struct FTPOV* OutPOV);
+	void UpdateMasterFadePercentage(float AdjustedDeltaTime);
+	bool IsFadingDownwards();
+	bool IsFadingUpwards();
+	bool IsFadeInProgress();
+	void StartFadeOut(float NewTimeSpan, unsigned long NewDisableWhenFadedOut, unsigned char NewFadeMode);
+	void StartFadeIn(float NewTimeSpan, unsigned char NewFadeMode);
+	void SetDesiredCamera(struct FVector DesiredLoc, struct FRotator DesiredRot, float DesiredFOV);
+	void SetGBXCameraOwner(class AGearboxCameraBasic* InCamera);
+	bool AddCameraModifier(class ACamera* Camera);
 };
 
 UClass* UGearboxCameraModifier::pClassPointer = NULL;
@@ -1854,12 +1846,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2956 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2956];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxCheatManager::pClassPointer = NULL;
@@ -1876,21 +1867,21 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2958 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2958];
 
 		return pClassPointer;
 	};
 
-	void eventServerDialog_TriggerEvent ( class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter );
-	void SetDialogNameTag ( class UGearboxDialogNameTag* NewName );
-	struct FGearboxDialogReplicatedData GetReplicatedDialogData ( );
-	void SetReplicatedDialogData ( class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data );
-	void GetDialogGroups ( TArray< class UGearboxDialogGroup* >* Groups );
-	class UGearboxDialogComponent* GetDialogComponent ( );
-	class UGearboxDialogNameTag* GetDialogNameTag ( );
-	class AActor* GetActor ( );
-	bool CanTalk ( );
+	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
+	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
+	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
+	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
+	void GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups);
+	class UGearboxDialogComponent* GetDialogComponent();
+	class UGearboxDialogNameTag* GetDialogNameTag();
+	class AActor* GetActor();
+	bool CanTalk();
 };
 
 UClass* UGearboxDialogInterface::pClassPointer = NULL;
@@ -1900,18 +1891,18 @@ UClass* UGearboxDialogInterface::pClassPointer = NULL;
 class UGearboxEditorNode : public UObject
 {
 public:
-	unsigned char                                      Type;                                             		// 0x003C (0x0001) [0x0000000000000000]              
+	unsigned char                                      Type;                                             		// 0x003C (0x0001) [0x0000000000000000]
 	TArray< struct FOutputLink >                       OutputLinks;                                      		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UGearboxEditorNode* >                InputLinks;                                       		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FVariableLink >                     VariableLinks;                                    		// 0x0058 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bAllowInputs : 1;                                 		// 0x0064 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bAllowOutputs : 1;                                		// 0x0064 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bAllowVariables : 1;                              		// 0x0064 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bAllowMovement : 1;                               		// 0x0064 (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      bAllowMultipleInputs : 1;                         		// 0x0064 (0x0004) [0x0000000000000000] [0x00000010] 
-	unsigned long                                      bAllowMultipleOutputs : 1;                        		// 0x0064 (0x0004) [0x0000000000000000] [0x00000020] 
-	unsigned long                                      bAllowMultipleVariables : 1;                      		// 0x0064 (0x0004) [0x0000000000000000] [0x00000040] 
-	float                                              SliderPosition;                                   		// 0x0068 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bAllowInputs : 1;                                 		// 0x0064 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bAllowOutputs : 1;                                		// 0x0064 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bAllowVariables : 1;                              		// 0x0064 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bAllowMovement : 1;                               		// 0x0064 (0x0004) [0x0000000000000000] [0x00000008]
+	unsigned long                                      bAllowMultipleInputs : 1;                         		// 0x0064 (0x0004) [0x0000000000000000] [0x00000010]
+	unsigned long                                      bAllowMultipleOutputs : 1;                        		// 0x0064 (0x0004) [0x0000000000000000] [0x00000020]
+	unsigned long                                      bAllowMultipleVariables : 1;                      		// 0x0064 (0x0004) [0x0000000000000000] [0x00000040]
+	float                                              SliderPosition;                                   		// 0x0068 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -1919,13 +1910,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2960 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2960];
 
 		return pClassPointer;
 	};
 
-	bool IsChild ( class UGearboxEditorNode* TestNode );
+	bool IsChild(class UGearboxEditorNode* TestNode);
 };
 
 UClass* UGearboxEditorNode::pClassPointer = NULL;
@@ -1935,12 +1926,12 @@ UClass* UGearboxEditorNode::pClassPointer = NULL;
 class UGearboxEngine : public UGameEngine
 {
 public:
-	int                                                CurrentUserID;                                    		// 0x07AC (0x0004) [0x0000000000000000]              
-	int                                                CurrentDeviceID;                                  		// 0x07B0 (0x0004) [0x0000000000000000]              
+	int                                                CurrentUserID;                                    		// 0x07AC (0x0004) [0x0000000000000000]
+	int                                                CurrentDeviceID;                                  		// 0x07B0 (0x0004) [0x0000000000000000]
 	unsigned long                                      bHasSelectedValidStorageDevice : 1;               		// 0x07B4 (0x0004) [0x0000000000002002] [0x00000001] ( CPF_Const | CPF_Transient )
 	struct FString                                     DefaultSparkInterfaceName;                        		// 0x07B8 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
 	class USparkInterface*                             SparkInterface;                                   		// 0x07C4 (0x0008) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x07C8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x07C8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -1948,17 +1939,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2962 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2962];
 
 		return pClassPointer;
 	};
 
-	class USparkInterface* GetSparkInterface ( );
-	bool eventIsCurrentDeviceValid ( int SizeNeeded );
-	bool HasStorageDeviceBeenRemoved ( );
-	int GetCurrentDeviceID ( );
-	void SetCurrentDeviceID ( int NewDeviceID, unsigned long bProfileSignedOut );
+	class USparkInterface* GetSparkInterface();
+	bool eventIsCurrentDeviceValid(int SizeNeeded);
+	bool HasStorageDeviceBeenRemoved();
+	int GetCurrentDeviceID();
+	void SetCurrentDeviceID(int NewDeviceID, unsigned long bProfileSignedOut);
 };
 
 UClass* UGearboxEngine::pClassPointer = NULL;
@@ -1975,13 +1966,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2964 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2964];
 
 		return pClassPointer;
 	};
 
-	void eventPostLogin ( class APlayerController* NewPlayer );
+	void eventPostLogin(class APlayerController* NewPlayer);
 };
 
 UClass* AGearboxGameInfo::pClassPointer = NULL;
@@ -1992,14 +1983,14 @@ class UGearboxGFxMovie : public UGFxMovie
 {
 public:
 	TArray< struct FAkEventResolver >                  InteractionOverrideSounds;                        		// 0x01C8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	float                                              TickRateSeconds;                                  		// 0x01D4 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bTickScript : 1;                                  		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              TickRateSeconds;                                  		// 0x01D4 (0x0004) [0x0000000000000000]
+	unsigned long                                      bTickScript : 1;                                  		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      bTickFirstFrame : 1;                              		// 0x01D8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
 	unsigned long                                      bRenderingDisabled : 1;                           		// 0x01D8 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bSupportsStatePooling : 1;                        		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      bIsUsingFlashMouse : 1;                           		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000010] 
-	unsigned long                                      bBlockingMovie : 1;                               		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000020] 
-	unsigned long                                      bCloseOnDeath : 1;                                		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000040] 
+	unsigned long                                      bSupportsStatePooling : 1;                        		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000008]
+	unsigned long                                      bIsUsingFlashMouse : 1;                           		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000010]
+	unsigned long                                      bBlockingMovie : 1;                               		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000020]
+	unsigned long                                      bCloseOnDeath : 1;                                		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000040]
 	TArray< class UGFxMovieDrawStyle* >                AllStyles;                                        		// 0x01DC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	class UGFxMovieDefinition*                         MyDefinition;                                     		// 0x01E8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UGFxActorMoviePool*                          MyPool;                                           		// 0x01EC (0x0004) [0x0000000000002000]              ( CPF_Transient )
@@ -2010,7 +2001,7 @@ public:
 	struct FMovieStateStruct                           CurrentMovieState;                                		// 0x0208 (0x0018) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< class UGFxMovieState* >                    BaseMovieStates;                                  		// 0x0220 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
 	TArray< class UGFxMovieState* >                    AllMovieStates;                                   		// 0x022C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                bMouseable;                                       		// 0x0238 (0x0004) [0x0000000000000000]              
+	int                                                bMouseable;                                       		// 0x0238 (0x0004) [0x0000000000000000]
 	struct FScriptDelegate                             __OnInputAxis__Delegate;                          		// 0x023C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnClosed__Delegate;                             		// 0x0248 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
@@ -2020,60 +2011,60 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2966 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2966];
 
 		return pClassPointer;
 	};
 
-	void extSetLanguageExt ( struct FString ClipPath );
-	void OnClosedOnDeath ( );
-	bool IsShowingFlashMouse ( );
-	int extIsMouseablePlatform ( );
-	void eventSetMouseableFlag ( );
-	struct FString GetStyleDebugString ( );
-	struct FString GetStateDebugString ( unsigned long bIncludeFlags );
-	void InitializeFrom ( class UGearboxGFxMovie* SrcMovie );
-	bool RemoveStylesDrawnTo ( class UPrimitiveComponent* PrimComp, class UIGFxActorMovie* Target );
-	bool RemoveStyles ( class UIGFxActorMovie* Target );
-	void RemoveStyle ( class UGFxMovieDrawStyle* Style );
-	void AddStyle ( class UGFxMovieDrawStyle* Style );
-	void ShutdownMoviePlayback ( );
-	void InitMoviePlayback ( );
-	class UTextureRenderTarget2D* GetRenderTexture ( );
-	void eventMovieState_OnChanged ( unsigned long bStateWasChanged );
-	bool eventMovieState_SetFromMovie ( class UGearboxGFxMovie* Movie );
-	bool MovieState_Copy ( struct FMovieStateStruct* StateDst, struct FMovieStateStruct* StateSrc );
-	bool MovieState_Compare ( struct FMovieStateStruct* S1, struct FMovieStateStruct* S2 );
-	void MovieState_Toggle ( struct FName TheState );
-	bool MovieState_Enable ( struct FName TheState, unsigned long bEnable );
-	bool MovieState_IsEnabled ( struct FName TheState );
-	bool MovieState_SupportsState ( struct FName TheState );
-	void MovieState_Init ( );
-	void InitFromDefinition ( );
-	void MovieState_Apply ( class UGearboxGFxMovie* Movie, class UClass* HandlerClass );
-	void MovieState_ApplyState ( struct FName TheState, class UGearboxGFxMovie* Movie );
-	void ApplyState ( struct FString StateName, struct FString StateAction );
-	void SetRenderingEnabled ( unsigned long bEnabled );
-	void GotoAndStop ( struct FString FrameLabel );
-	void GotoAndPlay ( struct FString FrameLabel );
-	void PlaySpecialUISound ( struct FString SoundString );
-	void eventPlayUISound ( struct FName UIEvent );
-	void eventSetOtherObject ( class UObject* Obj );
-	class UObject* GetInstanceContextObject ( );
-	void eventOnTick ( );
-	void eventOnClose ( );
-	bool eventStart ( unsigned long StartPaused );
-	struct FString ColorizeTooltipText ( struct FString S, unsigned long bDisabled );
-	struct FString GFxColoredText ( unsigned long bAppendNewline, struct FColor* C, struct FString* S );
-	void SingleArgInvokeB ( struct FString Command, unsigned long Arg );
-	void SingleArgInvokeS ( struct FString Command, struct FString Arg );
-	void SingleArgInvokeF ( struct FString Command, float Arg );
-	class ULocalPlayer* GetLocalPlayer ( );
-	void OnClosed ( class UGearboxGFxMovie* Movie );
-	bool WantsControllerInput ( int ControllerId );
-	bool SetExternalTexture ( struct FString Resource, class UTexture* Texture );
-	bool OnInputAxis ( int ControllerId, struct FName ukey, float Delta, float DeltaTime );
+	void extSetLanguageExt(struct FString ClipPath);
+	void OnClosedOnDeath();
+	bool IsShowingFlashMouse();
+	int extIsMouseablePlatform();
+	void eventSetMouseableFlag();
+	struct FString GetStyleDebugString();
+	struct FString GetStateDebugString(unsigned long bIncludeFlags);
+	void InitializeFrom(class UGearboxGFxMovie* SrcMovie);
+	bool RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, class UIGFxActorMovie* Target);
+	bool RemoveStyles(class UIGFxActorMovie* Target);
+	void RemoveStyle(class UGFxMovieDrawStyle* Style);
+	void AddStyle(class UGFxMovieDrawStyle* Style);
+	void ShutdownMoviePlayback();
+	void InitMoviePlayback();
+	class UTextureRenderTarget2D* GetRenderTexture();
+	void eventMovieState_OnChanged(unsigned long bStateWasChanged);
+	bool eventMovieState_SetFromMovie(class UGearboxGFxMovie* Movie);
+	bool MovieState_Copy(struct FMovieStateStruct* StateDst, struct FMovieStateStruct* StateSrc);
+	bool MovieState_Compare(struct FMovieStateStruct* S1, struct FMovieStateStruct* S2);
+	void MovieState_Toggle(struct FName TheState);
+	bool MovieState_Enable(struct FName TheState, unsigned long bEnable);
+	bool MovieState_IsEnabled(struct FName TheState);
+	bool MovieState_SupportsState(struct FName TheState);
+	void MovieState_Init();
+	void InitFromDefinition();
+	void MovieState_Apply(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
+	void MovieState_ApplyState(struct FName TheState, class UGearboxGFxMovie* Movie);
+	void ApplyState(struct FString StateName, struct FString StateAction);
+	void SetRenderingEnabled(unsigned long bEnabled);
+	void GotoAndStop(struct FString FrameLabel);
+	void GotoAndPlay(struct FString FrameLabel);
+	void PlaySpecialUISound(struct FString SoundString);
+	void eventPlayUISound(struct FName UIEvent);
+	void eventSetOtherObject(class UObject* Obj);
+	class UObject* GetInstanceContextObject();
+	void eventOnTick();
+	void eventOnClose();
+	bool eventStart(unsigned long StartPaused);
+	struct FString ColorizeTooltipText(struct FString S, unsigned long bDisabled);
+	struct FString GFxColoredText(unsigned long bAppendNewline, struct FColor* C, struct FString* S);
+	void SingleArgInvokeB(struct FString Command, unsigned long Arg);
+	void SingleArgInvokeS(struct FString Command, struct FString Arg);
+	void SingleArgInvokeF(struct FString Command, float Arg);
+	class ULocalPlayer* GetLocalPlayer();
+	void OnClosed(class UGearboxGFxMovie* Movie);
+	bool WantsControllerInput(int ControllerId);
+	bool SetExternalTexture(struct FString Resource, class UTexture* Texture);
+	bool OnInputAxis(int ControllerId, struct FName ukey, float Delta, float DeltaTime);
 };
 
 UClass* UGearboxGFxMovie::pClassPointer = NULL;
@@ -2091,14 +2082,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2968 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2968];
 
 		return pClassPointer;
 	};
 
-	void MovieState_OnChanged ( unsigned long bStateWasChanged );
-	bool eventStart ( unsigned long StartPaused );
+	void MovieState_OnChanged(unsigned long bStateWasChanged);
+	bool eventStart(unsigned long StartPaused);
 };
 
 UClass* UGFxMovie_StateParent::pClassPointer = NULL;
@@ -2108,9 +2099,9 @@ UClass* UGFxMovie_StateParent::pClassPointer = NULL;
 class UGearboxGlobals : public UGearboxEngineGlobals
 {
 public:
-	class UGearboxGlobalsDefinition*                   TheGlobalsDefinition;                             		// 0x0084 (0x0004) [0x0000000000000000]              
-	class UClass*                                      ExposureUtilityClass;                             		// 0x0088 (0x0004) [0x0000000000000000]              
-	class UClass*                                      ExposureUtilityStrategyClass;                     		// 0x008C (0x0004) [0x0000000000000000]              
+	class UGearboxGlobalsDefinition*                   TheGlobalsDefinition;                             		// 0x0084 (0x0004) [0x0000000000000000]
+	class UClass*                                      ExposureUtilityClass;                             		// 0x0088 (0x0004) [0x0000000000000000]
+	class UClass*                                      ExposureUtilityStrategyClass;                     		// 0x008C (0x0004) [0x0000000000000000]
 	class UExposureUtilityBase*                        TheExposureUtility;                               		// 0x0090 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UGearboxAIFactory*                           TheAIFactory;                                     		// 0x0094 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class URuleEngineLoadBalanceManager*               TheRuleEngineLoadBalanceManager;                  		// 0x0098 (0x0004) [0x0000000000002000]              ( CPF_Transient )
@@ -2137,39 +2128,39 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2970 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2970];
 
 		return pClassPointer;
 	};
 
-	class UBehaviorKernel* GetBehaviorKernel ( );
-	class UGearboxDialogManager* GetDialogManager ( );
-	float GetPopulationRespawnDelay ( );
-	class UIDialogBox* eventShowDialog ( class APlayerController* PC );
-	void NotifyActorDied ( class AActor* TheActor, unsigned long bKeepBody );
-	bool DoesLOSIntersectSpecialOccluder ( struct FVector FromLoc, struct FVector ToLoc, class UPawnAllegiance* AllegianceAffected );
-	bool HasPhysXCapableGPU ( );
-	unsigned char GetPlatform ( );
-	bool ValidatePlayerName ( unsigned long bReplaceCharacters, struct FString* InName );
-	bool RegisterStateKey ( struct FName LevelName, struct FName ObjectName, struct FName AdditionalKey );
-	bool DoesStateKeyExist ( struct FName LevelName, struct FName ObjectName, struct FName AdditionalKey );
-	bool FreeTexture2D ( class UTexture2D* Texture );
-	class UTexture2D* GetTexture2D ( );
-	class UGearboxRenderTextureManager* GetRenderTextureManager ( );
-	class UGFxMovieManager* GetGFxManager ( );
-	class UScreenSpaceManager* GetScreenSpaceManager ( );
-	class UGbxMessageManager* GetMessageManager ( );
-	void RegDynamicTextureStreaming ( class AActor* A, unsigned long bRegister );
-	class UGBXActorList* GetDynamicTextureActorList ( );
-	class UPopulationMaster* GetPopulationMaster ( );
-	class AWireManager* GetWireManager ( );
-	class UGBXObjectList* GetGBXObjectList ( );
-	class UGBXActorList* GetGBXActorList ( );
-	class URuleEngineLoadBalanceManager* GetRuleEngineLoadBalanceManager ( );
-	class UGearboxAIFactory* GetGearboxAIFactory ( );
-	class UExposureUtilityBase* GetExposureUtility ( );
-	class UGearboxGlobals* GetGearboxGlobals ( );
+	class UBehaviorKernel* GetBehaviorKernel();
+	class UGearboxDialogManager* GetDialogManager();
+	float GetPopulationRespawnDelay();
+	class UIDialogBox* eventShowDialog(class APlayerController* PC);
+	void NotifyActorDied(class AActor* TheActor, unsigned long bKeepBody);
+	bool DoesLOSIntersectSpecialOccluder(struct FVector FromLoc, struct FVector ToLoc, class UPawnAllegiance* AllegianceAffected);
+	bool HasPhysXCapableGPU();
+	unsigned char GetPlatform();
+	bool ValidatePlayerName(unsigned long bReplaceCharacters, struct FString* InName);
+	bool RegisterStateKey(struct FName LevelName, struct FName ObjectName, struct FName AdditionalKey);
+	bool DoesStateKeyExist(struct FName LevelName, struct FName ObjectName, struct FName AdditionalKey);
+	bool FreeTexture2D(class UTexture2D* Texture);
+	class UTexture2D* GetTexture2D();
+	class UGearboxRenderTextureManager* GetRenderTextureManager();
+	class UGFxMovieManager* GetGFxManager();
+	class UScreenSpaceManager* GetScreenSpaceManager();
+	class UGbxMessageManager* GetMessageManager();
+	void RegDynamicTextureStreaming(class AActor* A, unsigned long bRegister);
+	class UGBXActorList* GetDynamicTextureActorList();
+	class UPopulationMaster* GetPopulationMaster();
+	class AWireManager* GetWireManager();
+	class UGBXObjectList* GetGBXObjectList();
+	class UGBXActorList* GetGBXActorList();
+	class URuleEngineLoadBalanceManager* GetRuleEngineLoadBalanceManager();
+	class UGearboxAIFactory* GetGearboxAIFactory();
+	class UExposureUtilityBase* GetExposureUtility();
+	class UGearboxGlobals* GetGearboxGlobals();
 };
 
 UClass* UGearboxGlobals::pClassPointer = NULL;
@@ -2188,12 +2179,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2972 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2972];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxGlobalsDefinition::pClassPointer = NULL;
@@ -2210,8 +2200,8 @@ public:
 	struct FAttributeInitializationData                MinDistanceFromOrigin;                            		// 0x004C (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                MaxDistanceFromOrigin;                            		// 0x005C (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      SearchRandomness;                                 		// 0x006C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FVector                                     SearchOriginResult;                               		// 0x0070 (0x000C) [0x0000000000000000]              
-	struct FVector                                     SearchDirectionResult;                            		// 0x007C (0x000C) [0x0000000000000000]              
+	struct FVector                                     SearchOriginResult;                               		// 0x0070 (0x000C) [0x0000000000000000]
+	struct FVector                                     SearchDirectionResult;                            		// 0x007C (0x000C) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -2219,17 +2209,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2974 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2974];
 
 		return pClassPointer;
 	};
 
-	struct FVector GetLastDirection ( );
-	struct FVector GetLastOrigin ( );
-	bool GetDirection ( class AActor* ContextActor, struct FVector* OutDirection );
-	bool GetOrigin ( class AActor* ContextActor, struct FVector* OutOrigin );
-	bool Get ( class AActor* ContextActor, struct FVector* OutLocation );
+	struct FVector GetLastDirection();
+	struct FVector GetLastOrigin();
+	bool GetDirection(class AActor* ContextActor, struct FVector* OutDirection);
+	bool GetOrigin(class AActor* ContextActor, struct FVector* OutOrigin);
+	bool Get(class AActor* ContextActor, struct FVector* OutLocation);
 };
 
 UClass* UGearboxLocationRequest::pClassPointer = NULL;
@@ -2254,13 +2244,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2976 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2976];
 
 		return pClassPointer;
 	};
 
-	bool Get ( class AActor* ContextActor, struct FVector* OutLocation );
+	bool Get(class AActor* ContextActor, struct FVector* OutLocation);
 };
 
 UClass* UPawnMoveLocationRequest::pClassPointer = NULL;
@@ -2272,8 +2262,8 @@ class AGearboxPawn : public AGamePawn
 public:
 	struct FPointer                                    VfTable_ISpecialMoveInterface;                    		// 0x0690 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 	struct FPointer                                    VfTable_IGearboxDialogInterface;                  		// 0x0694 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FName                                       NPCSightBone;                                     		// 0x0698 (0x0008) [0x0000000000000000]              
-	unsigned long                                      bWantsToMove : 1;                                 		// 0x06A0 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FName                                       NPCSightBone;                                     		// 0x0698 (0x0008) [0x0000000000000000]
+	unsigned long                                      bWantsToMove : 1;                                 		// 0x06A0 (0x0004) [0x0000000000000000] [0x00000001]
 	class USpecialMoveComponent*                       SMComponent;                                      		// 0x06A4 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
 	struct FReplicatedSpecialMoveData                  ReplicatedSMData;                                 		// 0x06A8 (0x0014) [0x0000000000000020]              ( CPF_Net )
 	struct FFlag                                       HasBeenShotAtRecently;                            		// 0x06BC (0x0010) [0x0000000000002000]              ( CPF_Transient )
@@ -2289,44 +2279,44 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2978 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2978];
 
 		return pClassPointer;
 	};
 
-	struct FVector GetAimDirection ( );
-	void SetDialogNameTag ( class UGearboxDialogNameTag* NewName );
-	void eventServerDialog_TriggerEvent ( class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter );
-	struct FGearboxDialogReplicatedData GetReplicatedDialogData ( );
-	void SetReplicatedDialogData ( class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data );
-	void GetDialogGroups ( TArray< class UGearboxDialogGroup* >* Groups );
-	class UGearboxDialogComponent* GetDialogComponent ( );
-	class UGearboxDialogNameTag* GetDialogNameTag ( );
-	bool CanTalk ( );
-	void OnCoverStateChanged ( );
-	void ServerSetCoverState ( struct FGearboxCoverState NewCoverState );
-	void eventSetCoverState ( struct FGearboxCoverState NewCoverState );
-	float GetMountAnimDistanceForSpeed ( unsigned char TheSpeed, unsigned char CoverHeight, unsigned char CoverDir );
-	struct FVector eventGetSpotOthersShouldLookAt ( );
-	void SetReplicatedSMData ( struct FSpecialMoveData* NewSMData );
-	void eventServerSpecialMove_StopAny ( );
-	void eventServerSpecialMove_Stop ( class USpecialMoveDefinition* OldSMD );
-	void eventServerSpecialMove_Queue ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	void eventServerSpecialMove_Play ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	unsigned char GetDefaultRootMotionRotationMode ( );
-	unsigned char GetDefaultRootMotionMode ( );
-	class USkeletalMeshComponent* GetSkelMesh ( );
-	class USpecialMoveComponent* GetSMComponent ( );
-	class AActor* GetActor ( );
-	class UGearboxNavigationHandle* GetNavigationHandle ( );
-	void PlayHit ( class APawn* SomePawn, struct FVector HitLocation, class UClass* DamageType, struct FVector Momentum, struct FTraceHitInfo HitInfo, class UDamagePipeline* Pipeline );
-	void eventReplicatedEvent ( struct FName VarName );
-	bool Died ( class AController* Killer, class UClass* DamageType, struct FVector HitLocation, class UDamagePipeline* Pipeline );
-	void SetMovementPhysics ( );
-	void eventPostBeginPlay ( );
-	void NotifyShotAtBy ( class AGearboxPawn* ShootingPawn );
-	bool HaveIBeenShotAtRecently ( );
+	struct FVector GetAimDirection();
+	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
+	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
+	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
+	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
+	void GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups);
+	class UGearboxDialogComponent* GetDialogComponent();
+	class UGearboxDialogNameTag* GetDialogNameTag();
+	bool CanTalk();
+	void OnCoverStateChanged();
+	void ServerSetCoverState(struct FGearboxCoverState NewCoverState);
+	void eventSetCoverState(struct FGearboxCoverState NewCoverState);
+	float GetMountAnimDistanceForSpeed(unsigned char TheSpeed, unsigned char CoverHeight, unsigned char CoverDir);
+	struct FVector eventGetSpotOthersShouldLookAt();
+	void SetReplicatedSMData(struct FSpecialMoveData* NewSMData);
+	void eventServerSpecialMove_StopAny();
+	void eventServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
+	void eventServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void eventServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	unsigned char GetDefaultRootMotionRotationMode();
+	unsigned char GetDefaultRootMotionMode();
+	class USkeletalMeshComponent* GetSkelMesh();
+	class USpecialMoveComponent* GetSMComponent();
+	class AActor* GetActor();
+	class UGearboxNavigationHandle* GetNavigationHandle();
+	void PlayHit(class APawn* SomePawn, struct FVector HitLocation, class UClass* DamageType, struct FVector Momentum, struct FTraceHitInfo HitInfo, class UDamagePipeline* Pipeline);
+	void eventReplicatedEvent(struct FName VarName);
+	bool Died(class AController* Killer, class UClass* DamageType, struct FVector HitLocation, class UDamagePipeline* Pipeline);
+	void SetMovementPhysics();
+	void eventPostBeginPlay();
+	void NotifyShotAtBy(class AGearboxPawn* ShootingPawn);
+	bool HaveIBeenShotAtRecently();
 };
 
 UClass* AGearboxPawn::pClassPointer = NULL;
@@ -2336,16 +2326,16 @@ UClass* AGearboxPawn::pClassPointer = NULL;
 class AGearboxPlayerController : public AGamePlayerController
 {
 public:
-	struct FGearboxViewShakeInfo                       CurrentViewShake;                                 		// 0x08FC (0x0044) [0x0000000000000000]              
-	struct FGearboxViewShakeInfo                       BaseDamageShake;                                  		// 0x0940 (0x0044) [0x0000000000000000]              
-	struct FVector                                     ShakeOffset;                                      		// 0x0984 (0x000C) [0x0000000000000000]              
-	struct FRotator                                    ShakeRot;                                         		// 0x0990 (0x000C) [0x0000000000000000]              
-	float                                              ShakeFOV;                                         		// 0x099C (0x0004) [0x0000000000000000]              
+	struct FGearboxViewShakeInfo                       CurrentViewShake;                                 		// 0x08FC (0x0044) [0x0000000000000000]
+	struct FGearboxViewShakeInfo                       BaseDamageShake;                                  		// 0x0940 (0x0044) [0x0000000000000000]
+	struct FVector                                     ShakeOffset;                                      		// 0x0984 (0x000C) [0x0000000000000000]
+	struct FRotator                                    ShakeRot;                                         		// 0x0990 (0x000C) [0x0000000000000000]
+	float                                              ShakeFOV;                                         		// 0x099C (0x0004) [0x0000000000000000]
 	unsigned long                                      bWantsToShowStorageMenu : 1;                      		// 0x09A0 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 	unsigned long                                      bShouldCheckForProfileDeviceRemoval : 1;          		// 0x09A0 (0x0004) [0x0000000000006000] [0x00000002] ( CPF_Transient | CPF_Config )
 	class UAIDebugCamera*                              AIDebugCam;                                       		// 0x09A4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class AGearboxPawn*                                PreviousDebugPawn;                                		// 0x09A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UClass*                                      AIDebugCamClass;                                  		// 0x09AC (0x0004) [0x0000000000000000]              
+	class UClass*                                      AIDebugCamClass;                                  		// 0x09AC (0x0004) [0x0000000000000000]
 	float                                              DamageShakeMagnitudeMultiplier;                   		// 0x09B0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	float                                              DamageShakeMagnitudeMultiplierBaseValue;          		// 0x09B4 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	TArray< class UAttributeModifier* >                DamageShakeMagnitudeMultiplierModifierStack;      		// 0x09B8 (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
@@ -2355,7 +2345,7 @@ public:
 	class ULeviathanChannel*                           LeviathanReplicationChannel;                      		// 0x09D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FGuid                                       PlaySessionGuid;                                  		// 0x09DC (0x0010) [0x0000000000002000]              ( CPF_Transient )
 	int                                                SessionBundleNumber;                              		// 0x09EC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxProfileSettings*                     CachedProfileSettings;                            		// 0x09F0 (0x0004) [0x0000000000000000]              
+	class UGearboxProfileSettings*                     CachedProfileSettings;                            		// 0x09F0 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -2363,92 +2353,92 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2980 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2980];
 
 		return pClassPointer;
 	};
 
-	int RequestTitleStorageFile ( struct FString Filename, struct FScriptDelegate TitleStorageRequestCompleteDelegate, unsigned char AcceptsType, struct FString CustomAcceptsType );
-	void ShowSparkID ( );
-	bool ShouldCheckRemoteControlCheckbox ( unsigned char CheckBoxName, class AHUD* HUD );
-	void DisplayDebugSpark ( class AHUD* HUD, float* out_YL, float* out_YPos );
-	void AITree ( );
-	void AIToggleTargetViewCones ( );
-	void AIToggleAwarenessZones ( );
-	void AIToggleCombat ( );
-	void AIToggleResources ( );
-	void AIToggleInactiveRules ( );
-	void AIToggleRules ( );
-	void AIToggleFlags ( );
-	void AIDebugNextSnapshot ( );
-	void AIDebugPrevSnapshot ( );
-	void ainext ( );
-	void aiprev ( );
-	void AINextRule ( unsigned long bSkipContainers );
-	void AIPrevRule ( unsigned long bSkipContainers );
-	void AIDebugSetPawn ( class AGearboxPawn* NewPawn );
-	void AIDebugSetPawnByName ( struct FName NewPawnName );
-	void debugpawn ( );
-	void aisetp ( struct FName NewPawnName );
-	void NotifyGameUnPaused ( );
-	void NotifyGamePaused ( );
-	void SetSettingsFromProfile ( );
-	int GetStorageDeviceID ( );
-	void SetStorageDeviceID ( int DeviceID );
-	void NotifyDeviceSelectComplete ( unsigned long bWasSuccessful );
-	void eventDisplayStorageRemovedMenu ( );
-	void DisplayProfileRemovedMenu ( );
-	void NotifyProfileWriteFromStorageChangeComplete ( unsigned char LocalUser, unsigned long bWasSuccessful );
-	bool IsCurrentStorageDeviceValid ( );
-	void NotifyStorageDeviceChange ( );
-	void eventDestroyOnlineGame ( );
-	void ReturnToTitleScreen ( unsigned long bSkipSave, unsigned long bRemoveSplitPlayer );
-	struct FString GetConnectionFailureNoticeMsg ( );
-	struct FString GetMainMenuMapName ( );
-	void NotifyLinkStatusChange ( unsigned long bIsConnected );
-	void NotifyLoginStatusChange ( unsigned char NewStatus, struct FUniqueNetId NewId );
-	void NotifyLoginChange ( unsigned char LocalUserNum );
-	void OnReadProfileSettingsComplete ( unsigned char LocalUserNum, unsigned long bWasSuccessful );
-	void OnReceivedNewProfile ( );
-	void ClearOnlineDelegates ( );
-	void RegisterOnlineDelegates ( );
-	void OnProfileWriteComplete ( unsigned char LocalUserNum, unsigned long bWasSuccessful );
-	void HidePS3WritingProfileDialog ( );
-	void ShowPS3WritingProfileDialog ( );
-	bool eventWriteProfile ( unsigned long bShouldShowProfileDialog );
-	class UGearboxProfileSettings* eventGetProfileSettings ( );
-	unsigned char GetMyControllerId ( );
-	void eventReadProfile ( );
-	void UnregisterPlayerDataStores ( );
-	void RegisterCustomPlayerDataStores ( );
-	void SetDataStoreStringValue ( struct FString MarkupString, struct FString NewValue );
-	struct FString GetDataStoreStringValue ( struct FString MarkupString );
-	void eventClientKeepPlayingLoadingMovie ( );
-	void ClientResetCamera ( );
-	void eventSpawnPlayerCamera ( );
-	void eventInitInputSystem ( );
-	void NoTargetAll ( );
-	void NoTarget ( );
-	bool GetNoTargetPlayers ( );
-	void SetNoTargetPlayers ( unsigned long bNoTarget );
-	void Possess ( class APawn* aPawn, unsigned long bVehicleTransition );
-	void DontTarget ( unsigned long bModeFlag );
-	void ClientConsoleCommand ( struct FString Command );
-	bool IsPlayerAllowingActiveMoment ( );
-	bool IsActiveMomentRunning ( );
-	void ViewShake ( float DeltaTime );
-	void UpdateShakeRotComponent ( float Time, float DeltaTime, float* Max, int* Current, float* Rate );
-	void CheckShake ( float Time, float* MaxOffset, float* Offset, float* Rate );
-	void StopViewShaking ( );
-	void OnCameraShake ( class UGearboxSeqAct_CameraShake* ShakeAction );
-	void ShakeView ( struct FGearboxViewShakeInfo NewViewShake );
-	void ClientDamageShake ( int Damage );
-	void ConsoleEcho ( struct FString Text, unsigned long bLogOutput );
-	void Initialize ( );
-	void PostBeginPlay ( );
-	void TryAndSpawnLeviathanChannel ( class UNetConnection* Connection );
-	void GenerateNewSessionGuid ( );
+	int RequestTitleStorageFile(struct FString Filename, struct FScriptDelegate TitleStorageRequestCompleteDelegate, unsigned char AcceptsType, struct FString CustomAcceptsType);
+	void ShowSparkID();
+	bool ShouldCheckRemoteControlCheckbox(unsigned char CheckBoxName, class AHUD* HUD);
+	void DisplayDebugSpark(class AHUD* HUD, float* out_YL, float* out_YPos);
+	void AITree();
+	void AIToggleTargetViewCones();
+	void AIToggleAwarenessZones();
+	void AIToggleCombat();
+	void AIToggleResources();
+	void AIToggleInactiveRules();
+	void AIToggleRules();
+	void AIToggleFlags();
+	void AIDebugNextSnapshot();
+	void AIDebugPrevSnapshot();
+	void ainext();
+	void aiprev();
+	void AINextRule(unsigned long bSkipContainers);
+	void AIPrevRule(unsigned long bSkipContainers);
+	void AIDebugSetPawn(class AGearboxPawn* NewPawn);
+	void AIDebugSetPawnByName(struct FName NewPawnName);
+	void debugpawn();
+	void aisetp(struct FName NewPawnName);
+	void NotifyGameUnPaused();
+	void NotifyGamePaused();
+	void SetSettingsFromProfile();
+	int GetStorageDeviceID();
+	void SetStorageDeviceID(int DeviceID);
+	void NotifyDeviceSelectComplete(unsigned long bWasSuccessful);
+	void eventDisplayStorageRemovedMenu();
+	void DisplayProfileRemovedMenu();
+	void NotifyProfileWriteFromStorageChangeComplete(unsigned char LocalUser, unsigned long bWasSuccessful);
+	bool IsCurrentStorageDeviceValid();
+	void NotifyStorageDeviceChange();
+	void eventDestroyOnlineGame();
+	void ReturnToTitleScreen(unsigned long bSkipSave, unsigned long bRemoveSplitPlayer);
+	struct FString GetConnectionFailureNoticeMsg();
+	struct FString GetMainMenuMapName();
+	void NotifyLinkStatusChange(unsigned long bIsConnected);
+	void NotifyLoginStatusChange(unsigned char NewStatus, struct FUniqueNetId NewId);
+	void NotifyLoginChange(unsigned char LocalUserNum);
+	void OnReadProfileSettingsComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful);
+	void OnReceivedNewProfile();
+	void ClearOnlineDelegates();
+	void RegisterOnlineDelegates();
+	void OnProfileWriteComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful);
+	void HidePS3WritingProfileDialog();
+	void ShowPS3WritingProfileDialog();
+	bool eventWriteProfile(unsigned long bShouldShowProfileDialog);
+	class UGearboxProfileSettings* eventGetProfileSettings();
+	unsigned char GetMyControllerId();
+	void eventReadProfile();
+	void UnregisterPlayerDataStores();
+	void RegisterCustomPlayerDataStores();
+	void SetDataStoreStringValue(struct FString MarkupString, struct FString NewValue);
+	struct FString GetDataStoreStringValue(struct FString MarkupString);
+	void eventClientKeepPlayingLoadingMovie();
+	void ClientResetCamera();
+	void eventSpawnPlayerCamera();
+	void eventInitInputSystem();
+	void NoTargetAll();
+	void NoTarget();
+	bool GetNoTargetPlayers();
+	void SetNoTargetPlayers(unsigned long bNoTarget);
+	void Possess(class APawn* aPawn, unsigned long bVehicleTransition);
+	void DontTarget(unsigned long bModeFlag);
+	void ClientConsoleCommand(struct FString Command);
+	bool IsPlayerAllowingActiveMoment();
+	bool IsActiveMomentRunning();
+	void ViewShake(float DeltaTime);
+	void UpdateShakeRotComponent(float Time, float DeltaTime, float* Max, int* Current, float* Rate);
+	void CheckShake(float Time, float* MaxOffset, float* Offset, float* Rate);
+	void StopViewShaking();
+	void OnCameraShake(class UGearboxSeqAct_CameraShake* ShakeAction);
+	void ShakeView(struct FGearboxViewShakeInfo NewViewShake);
+	void ClientDamageShake(int Damage);
+	void ConsoleEcho(struct FString Text, unsigned long bLogOutput);
+	void Initialize();
+	void PostBeginPlay();
+	void TryAndSpawnLeviathanChannel(class UNetConnection* Connection);
+	void GenerateNewSessionGuid();
 };
 
 UClass* AGearboxPlayerController::pClassPointer = NULL;
@@ -2465,13 +2455,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2982 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2982];
 
 		return pClassPointer;
 	};
 
-	void eventPlayerInput ( float DeltaTime );
+	void eventPlayerInput(float DeltaTime);
 };
 
 UClass* UGearboxPlayerInput::pClassPointer = NULL;
@@ -2482,7 +2472,7 @@ class AGearboxPlayerReplicationInfo : public APlayerReplicationInfo
 {
 public:
 	unsigned char                                      Difficulty;                                       		// 0x0254 (0x0001) [0x0000000000000020]              ( CPF_Net )
-	int                                                Dummy;                                            		// 0x0258 (0x0004) [0x0000000000000000]              
+	int                                                Dummy;                                            		// 0x0258 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -2490,12 +2480,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2984 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2984];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* AGearboxPlayerReplicationInfo::pClassPointer = NULL;
@@ -2512,12 +2501,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2986 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2986];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxProfileSettings::pClassPointer = NULL;
@@ -2530,7 +2518,7 @@ public:
 	TArray< class UTexture2D* >                        FreeList2D;                                       		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UTextureRenderTarget2D* >            FreeList;                                         		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	float                                              HoldDuration;                                     		// 0x0054 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TimeToNextTick;                                   		// 0x0058 (0x0004) [0x0000000000000000]              
+	float                                              TimeToNextTick;                                   		// 0x0058 (0x0004) [0x0000000000000000]
 	TArray< struct FThumbnailRenderData >              Thumbnails;                                       		// 0x005C (0x000C) [0x0000000000480000]              ( CPF_Component | CPF_NeedCtorLink )
 	TArray< struct FThumbnailLightData >               DefaultLights;                                    		// 0x0068 (0x000C) [0x0000000000480000]              ( CPF_Component | CPF_NeedCtorLink )
 	float                                              ThumbnailTextureArea;                             		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
@@ -2541,20 +2529,20 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2988 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2988];
 
 		return pClassPointer;
 	};
 
-	void SetThumbnailMesh ( class UTexture* Texture, class UMeshComponent* Mesh );
-	void FreeContext ( struct FName Context );
-	void FreeThumbnail ( class UTexture* Texture );
-	class UTexture* GetThumbnail ( struct FName Context, int TextureSizeX, int TextureSizeY, unsigned char UpdateType, int SizeX, int SizeY );
-	bool FreeTexture2D ( class UTexture2D* Texture );
-	class UTexture2D* GetTexture2D ( );
-	bool FreeRenderTexture ( class UTextureRenderTarget2D* Texture );
-	class UTextureRenderTarget2D* GetRenderTexture ( int InSizeX, int InSizeY, unsigned long bNeedsTwoCopies );
+	void SetThumbnailMesh(class UTexture* Texture, class UMeshComponent* Mesh);
+	void FreeContext(struct FName Context);
+	void FreeThumbnail(class UTexture* Texture);
+	class UTexture* GetThumbnail(struct FName Context, int TextureSizeX, int TextureSizeY, unsigned char UpdateType, int SizeX, int SizeY);
+	bool FreeTexture2D(class UTexture2D* Texture);
+	class UTexture2D* GetTexture2D();
+	bool FreeRenderTexture(class UTextureRenderTarget2D* Texture);
+	class UTextureRenderTarget2D* GetRenderTexture(int InSizeX, int InSizeY, unsigned long bNeedsTwoCopies);
 };
 
 UClass* UGearboxRenderTextureManager::pClassPointer = NULL;
@@ -2566,7 +2554,7 @@ class UGearboxSeqAct_DestroyPopulationActors : public USeqAct_Latent
 public:
 	unsigned long                                      SaveDestroyedActors : 1;                          		// 0x00B4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      DisablePopulationSpawners : 1;                    		// 0x00B4 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bActorsDestroyed : 1;                             		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      bActorsDestroyed : 1;                             		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000004]
 	TArray< class APopulationOpportunity* >            Opportunities;                                    		// 0x00B8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< class APopulationEncounter* >              Encounters;                                       		// 0x00C4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
@@ -2576,12 +2564,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2990 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2990];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_DestroyPopulationActors::pClassPointer = NULL;
@@ -2598,12 +2585,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2992 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2992];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_ResetPopulationCount::pClassPointer = NULL;
@@ -2621,13 +2607,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2994 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2994];
 
 		return pClassPointer;
 	};
 
-	void SetFOV ( float NewFOV );
+	void SetFOV(float NewFOV);
 };
 
 UClass* UGearboxSkeletalMeshComponent::pClassPointer = NULL;
@@ -2645,12 +2631,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2996 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2996];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxStaticMeshComponent::pClassPointer = NULL;
@@ -2673,14 +2658,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 2998 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2998];
 
 		return pClassPointer;
 	};
 
-	void InitGestaltAccessoryMeshDataFromParts ( class USkeletalMesh* MeshToBorrowBonesFrom, class UGestaltPartMatrices* AccessoryMatrices, class USkeletalMeshComponent* TargetComponent, TArray< struct FGestaltPartPermutation >* PermutationConfiguration );
-	void InitGestaltMeshDataFromParts ( class USkeletalMeshComponent* TargetComponent, TArray< struct FName >* PartMeshNames );
+	void InitGestaltAccessoryMeshDataFromParts(class USkeletalMesh* MeshToBorrowBonesFrom, class UGestaltPartMatrices* AccessoryMatrices, class USkeletalMeshComponent* TargetComponent, TArray< struct FGestaltPartPermutation >* PermutationConfiguration);
+	void InitGestaltMeshDataFromParts(class USkeletalMeshComponent* TargetComponent, TArray< struct FName >* PartMeshNames);
 };
 
 UClass* UGestaltSkeletalMeshDefinition::pClassPointer = NULL;
@@ -2690,7 +2675,7 @@ UClass* UGestaltSkeletalMeshDefinition::pClassPointer = NULL;
 class UGFxActorMoviePool : public UObject
 {
 public:
-	class UGFxMovieDefinition*                         MovieDefinition;                                  		// 0x003C (0x0004) [0x0000000000000000]              
+	class UGFxMovieDefinition*                         MovieDefinition;                                  		// 0x003C (0x0004) [0x0000000000000000]
 	TArray< struct FMovieInstanceArray >               Pools;                                            		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UIGFxActorMovie* >                   MovieTargets;                                     		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
@@ -2700,16 +2685,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3000 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3000];
 
 		return pClassPointer;
 	};
 
-	void DisplayDebug ( class AHUD* HUD, float X, float* out_YL, float* out_YPos );
-	struct FString GetPoolName ( int Index );
-	struct FString PoolStyleString ( unsigned char Pooling );
-	void MovieStateChanged ( class UGearboxGFxMovie* Movie );
+	void DisplayDebug(class AHUD* HUD, float X, float* out_YL, float* out_YPos);
+	struct FString GetPoolName(int Index);
+	struct FString PoolStyleString(unsigned char Pooling);
+	void MovieStateChanged(class UGearboxGFxMovie* Movie);
 };
 
 UClass* UGFxActorMoviePool::pClassPointer = NULL;
@@ -2754,17 +2739,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3002 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3002];
 
 		return pClassPointer;
 	};
 
-	class UGFxMovieDefinition* FindMovieLink ( struct FName MovieName );
-	void PostMovieStart ( class UGearboxGFxMovie* StartedMovie );
-	class UGearboxGFxMovie* SpawnPlayerMovie ( class AGearboxPlayerController* Owner, class UIGFxActorMovie* TargetActor, class UObject* ContextObject );
-	bool SupportsStatePooling ( );
-	unsigned char GetPoolStyle ( );
+	class UGFxMovieDefinition* FindMovieLink(struct FName MovieName);
+	void PostMovieStart(class UGearboxGFxMovie* StartedMovie);
+	class UGearboxGFxMovie* SpawnPlayerMovie(class AGearboxPlayerController* Owner, class UIGFxActorMovie* TargetActor, class UObject* ContextObject);
+	bool SupportsStatePooling();
+	unsigned char GetPoolStyle();
 };
 
 UClass* UGFxMovieDefinition::pClassPointer = NULL;
@@ -2776,7 +2761,7 @@ class UGFxMovieDrawStyle : public UObject
 public:
 	class UGearboxGFxMovie*                            Movie;                                            		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UIGFxActorMovie*                             TargetActor;                                      		// 0x0040 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -2784,13 +2769,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3004 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3004];
 
 		return pClassPointer;
 	};
 
-	struct FString GetStyleDebugString ( );
+	struct FString GetStyleDebugString();
 };
 
 UClass* UGFxMovieDrawStyle::pClassPointer = NULL;
@@ -2801,9 +2786,9 @@ class UGFxMovieDrawStyleHUD : public UGFxMovieDrawStyle
 {
 public:
 	TArray< struct FHUDAnchorPoint >                   AnchorPoints;                                     		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	struct FHUDCoordValue                              MovieDimensions[ 0x2 ];                           		// 0x0054 (0x0020) [0x0000000000000001]              ( CPF_Edit )
+	struct FHUDCoordValue                              MovieDimensions[0x2];                           		// 0x0054 (0x0020) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      bCacheValid : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	float                                              MovieScreenPos[ 0x4 ];                            		// 0x0078 (0x0010) [0x0000000000002000]              ( CPF_Transient )
+	float                                              MovieScreenPos[0x4];                            		// 0x0078 (0x0010) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -2811,13 +2796,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3006 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3006];
 
 		return pClassPointer;
 	};
 
-	bool eventRequiresClientInstance ( );
+	bool eventRequiresClientInstance();
 };
 
 UClass* UGFxMovieDrawStyleHUD::pClassPointer = NULL;
@@ -2836,12 +2821,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3008 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3008];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGFxMovieDrawStyleRTT::pClassPointer = NULL;
@@ -2858,12 +2842,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3010 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3010];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGFxMovieDrawStyleComponent::pClassPointer = NULL;
@@ -2890,14 +2873,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3012 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3012];
 
 		return pClassPointer;
 	};
 
-	struct FString GetStyleDebugString ( );
-	bool eventRequiresClientInstance ( );
+	struct FString GetStyleDebugString();
+	bool eventRequiresClientInstance();
 };
 
 UClass* UGFxMovieDrawStyleMesh::pClassPointer = NULL;
@@ -2916,12 +2899,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3014 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3014];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGFxMovieDrawStyleSprite::pClassPointer = NULL;
@@ -2938,13 +2920,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3016 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3016];
 
 		return pClassPointer;
 	};
 
-	bool eventRequiresClientInstance ( );
+	bool eventRequiresClientInstance();
 };
 
 UClass* UGFxMovieDrawStyleSplitscreen::pClassPointer = NULL;
@@ -2963,19 +2945,19 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3018 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3018];
 
 		return pClassPointer;
 	};
 
-	void ChangeMovieState ( class UIGFxActorMovie* TargetActor, struct FName State, unsigned char Change, class AGearboxPlayerController* PC );
-	void Unsubscribe ( class AGearboxPlayerController* PC );
-	void Subscribe ( class AGearboxPlayerController* PC );
-	void UnregisterMoviesDrawnTo ( class UPrimitiveComponent* PrimComp, class UIGFxActorMovie* TargetActor );
-	void UnregisterTarget ( class UIGFxActorMovie* TargetActor );
-	void UnregisterMovie ( class UGFxMovieDefinition* Definition, class UIGFxActorMovie* TargetActor );
-	void RegisterMovie ( class UGFxMovieDefinition* Definition, class UIGFxActorMovie* TargetActor );
+	void ChangeMovieState(class UIGFxActorMovie* TargetActor, struct FName State, unsigned char Change, class AGearboxPlayerController* PC);
+	void Unsubscribe(class AGearboxPlayerController* PC);
+	void Subscribe(class AGearboxPlayerController* PC);
+	void UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimComp, class UIGFxActorMovie* TargetActor);
+	void UnregisterTarget(class UIGFxActorMovie* TargetActor);
+	void UnregisterMovie(class UGFxMovieDefinition* Definition, class UIGFxActorMovie* TargetActor);
+	void RegisterMovie(class UGFxMovieDefinition* Definition, class UIGFxActorMovie* TargetActor);
 };
 
 UClass* UGFxMovieManager::pClassPointer = NULL;
@@ -2996,18 +2978,18 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3020 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3020];
 
 		return pClassPointer;
 	};
 
-	struct FString GetDebugString ( class UGearboxGFxMovie* Movie, unsigned long bIncludeFlags );
-	void ApplyMovieState ( class UGearboxGFxMovie* Movie, class UClass* HandlerClass );
-	int FindMovieState ( struct FName TheState );
-	bool TestState ( struct FName TheState, struct FMovieStateStruct* MovieState );
-	int ToggleState ( struct FName TheState, struct FMovieStateStruct* MovieState );
-	int EnableState ( struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState );
+	struct FString GetDebugString(class UGearboxGFxMovie* Movie, unsigned long bIncludeFlags);
+	void ApplyMovieState(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
+	int FindMovieState(struct FName TheState);
+	bool TestState(struct FName TheState, struct FMovieStateStruct* MovieState);
+	int ToggleState(struct FName TheState, struct FMovieStateStruct* MovieState);
+	int EnableState(struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState);
 };
 
 UClass* UGFxMovieState::pClassPointer = NULL;
@@ -3025,12 +3007,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3022 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3022];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGFxMovieStateCustom::pClassPointer = NULL;
@@ -3048,12 +3029,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3024 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3024];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGFxMovieStateFlags::pClassPointer = NULL;
@@ -3073,13 +3053,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3026 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3026];
 
 		return pClassPointer;
 	};
 
-	int EnableState ( struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState );
+	int EnableState(struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState);
 };
 
 UClass* UGFxMovieStatePlayerAware::pClassPointer = NULL;
@@ -3096,20 +3076,20 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3028 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3028];
 
 		return pClassPointer;
 	};
 
-	void InitSequence ( class UActionSequence* NewSequence );
-	class UPawnAllegiance* GetAllegiance ( );
-	class UAIDefinition* GetAIDefinition ( );
-	class UAIComponent* GetAIComponent ( );
-	class UIAIInterface* GetAIParent ( );
-	struct FVector GetAILocation ( );
-	class AActor* GetAIActor ( );
-	bool CanTickAI ( );
+	void InitSequence(class UActionSequence* NewSequence);
+	class UPawnAllegiance* GetAllegiance();
+	class UAIDefinition* GetAIDefinition();
+	class UAIComponent* GetAIComponent();
+	class UIAIInterface* GetAIParent();
+	struct FVector GetAILocation();
+	class AActor* GetAIActor();
+	bool CanTickAI();
 };
 
 UClass* UIAIInterface::pClassPointer = NULL;
@@ -3126,12 +3106,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3030 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3030];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UIConstructObject::pClassPointer = NULL;
@@ -3148,15 +3127,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3032 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3032];
 
 		return pClassPointer;
 	};
 
-	void GFx_NotifyMovieDestroy ( class UGearboxGFxMovie* Movie );
-	void GFx_NotifyMovieCreate ( class UGearboxGFxMovie* Movie );
-	class AActor* GFx_GetMovieActor ( );
+	void GFx_NotifyMovieDestroy(class UGearboxGFxMovie* Movie);
+	void GFx_NotifyMovieCreate(class UGearboxGFxMovie* Movie);
+	class AActor* GFx_GetMovieActor();
 };
 
 UClass* UIGFxActorMovie::pClassPointer = NULL;
@@ -3173,12 +3152,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3034 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3034];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UINounAttributeProvider::pClassPointer = NULL;
@@ -3195,15 +3173,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3036 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3036];
 
 		return pClassPointer;
 	};
 
-	void eventFinishCameraLookAt ( );
-	void EnableThirdPersonLookAt ( float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode );
-	void BeginCameraLookAt ( class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut );
+	void eventFinishCameraLookAt();
+	void EnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
+	void BeginCameraLookAt(class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
 };
 
 UClass* UInterfaceGearboxCamera::pClassPointer = NULL;
@@ -3220,13 +3198,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3038 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3038];
 
 		return pClassPointer;
 	};
 
-	void eventRunStreamingDataEvent ( struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, int IntParam, float FloatParam );
+	void eventRunStreamingDataEvent(struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, int IntParam, float FloatParam);
 };
 
 UClass* UIStreamingDataEvent::pClassPointer = NULL;
@@ -3236,7 +3214,7 @@ UClass* UIStreamingDataEvent::pClassPointer = NULL;
 class ULeviathanChannel : public UChannel
 {
 public:
-	unsigned char                                      UnknownData00[ 0x10 ];                            		// 0x0068 (0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                            		// 0x0068 (0x0010) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -3244,12 +3222,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3040 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3040];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* ULeviathanChannel::pClassPointer = NULL;
@@ -3266,12 +3243,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3042 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3042];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UNoContextNeededAttributeContextResolver::pClassPointer = NULL;
@@ -3290,12 +3266,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3044 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3044];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UNounAttributeValueResolver::pClassPointer = NULL;
@@ -3313,12 +3288,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3046 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3046];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UObjectFunctionAttributeValueResolver::pClassPointer = NULL;
@@ -3336,12 +3310,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3048 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3048];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UObjectPropertyContextResolver::pClassPointer = NULL;
@@ -3360,13 +3333,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3050 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3050];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UPhysicsStateExpressionEvaluator::pClassPointer = NULL;
@@ -3383,19 +3356,19 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3052 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3052];
 
 		return pClassPointer;
 	};
 
-	void eventDenStatRemoved ( class APawn* DenPawn );
-	void eventDenStatAdded ( class APawn* DenPawn );
-	void eventEnabledStatusChanged ( unsigned long bIsEnabled, unsigned long bHasActiveActors );
-	void eventAllActorsRemoved ( unsigned long bFinishedSpawning );
-	void eventOnActorDeath ( class AActor* DeadActor );
-	void eventOnSpawnActor ( class AActor* SpawnedActor );
-	void eventInitialize ( );
+	void eventDenStatRemoved(class APawn* DenPawn);
+	void eventDenStatAdded(class APawn* DenPawn);
+	void eventEnabledStatusChanged(unsigned long bIsEnabled, unsigned long bHasActiveActors);
+	void eventAllActorsRemoved(unsigned long bFinishedSpawning);
+	void eventOnActorDeath(class AActor* DeadActor);
+	void eventOnSpawnActor(class AActor* SpawnedActor);
+	void eventInitialize();
 };
 
 UClass* UPopulationAspect::pClassPointer = NULL;
@@ -3412,12 +3385,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3054 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3054];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationBodyTag::pClassPointer = NULL;
@@ -3446,17 +3418,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3056 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3056];
 
 		return pClassPointer;
 	};
 
-	void eventTriggerKismetAllSpawnedEvent ( );
-	void eventTriggerKismetDeathEvent ( );
-	void OnToggle ( class USeqAct_Toggle* Action );
-	void UpdateOpportunityEnabledStates ( int nWave, unsigned long bUpdateIfOnlyOneWave );
-	void UpdateKismetNotifications ( );
+	void eventTriggerKismetAllSpawnedEvent();
+	void eventTriggerKismetDeathEvent();
+	void OnToggle(class USeqAct_Toggle* Action);
+	void UpdateOpportunityEnabledStates(int nWave, unsigned long bUpdateIfOnlyOneWave);
+	void UpdateKismetNotifications();
 };
 
 UClass* APopulationEncounter::pClassPointer = NULL;
@@ -3473,12 +3445,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3058 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3058];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationEncounterRenderingComponent::pClassPointer = NULL;
@@ -3495,12 +3466,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3060 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3060];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationOpportunityCombatRenderingComponent::pClassPointer = NULL;
@@ -3517,12 +3487,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3062 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3062];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationSpawnedActorTagDefinition::pClassPointer = NULL;
@@ -3551,17 +3520,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3064 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3064];
 
 		return pClassPointer;
 	};
 
-	void Display ( float DeltaSeconds, class UCanvas* Canvas );
-	float GetValue ( int ColumnNdx );
-	void SetValue ( int ColumnNdx, float NewValue );
-	int AddNewColumn ( struct FColor ColumnColor, struct FString HeaderText, float Value );
-	void AddTitleText ( struct FString NewTitleText );
+	void Display(float DeltaSeconds, class UCanvas* Canvas);
+	float GetValue(int ColumnNdx);
+	void SetValue(int ColumnNdx, float NewValue);
+	int AddNewColumn(struct FColor ColumnColor, struct FString HeaderText, float Value);
+	void AddTitleText(struct FString NewTitleText);
 };
 
 UClass* UPopUpDebugBarGraph::pClassPointer = NULL;
@@ -3583,12 +3552,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3066 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3066];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URandomAttributeValueResolver::pClassPointer = NULL;
@@ -3605,15 +3573,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3068 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3068];
 
 		return pClassPointer;
 	};
 
-	bool GetDefaultRegionGameStage ( int* MinGameStage, int* MaxGameStage, int* AwesomeLevel, int* GameStageIncreaseOverPlayerLevel );
-	bool TestRegionGameStage ( unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel );
-	bool GetRegionGameStage ( unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel );
+	bool GetDefaultRegionGameStage(int* MinGameStage, int* MaxGameStage, int* AwesomeLevel, int* GameStageIncreaseOverPlayerLevel);
+	bool TestRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
+	bool GetRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
 };
 
 UClass* URegionDefinition::pClassPointer = NULL;
@@ -3624,9 +3592,9 @@ class URootMotionDefinition : public UGBXDefinition
 {
 public:
 	unsigned char                                      RootMotionMode;                                   		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      RootBoneOption[ 0x3 ];                            		// 0x003D (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      RootBoneOption[0x3];                            		// 0x003D (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned char                                      RootRotationMode;                                 		// 0x0040 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      RootRotationOption[ 0x3 ];                        		// 0x0041 (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      RootRotationOption[0x3];                        		// 0x0041 (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
 private:
 	static UClass* pClassPointer;
@@ -3634,12 +3602,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3070 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3070];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URootMotionDefinition::pClassPointer = NULL;
@@ -3649,13 +3616,13 @@ UClass* URootMotionDefinition::pClassPointer = NULL;
 class URuleEngineLoadBalanceManager : public UObject
 {
 public:
-	float                                              NumTimeSpentThisFrame;                            		// 0x003C (0x0004) [0x0000000000000000]              
-	float                                              LastTimeFullUpdate;                               		// 0x0040 (0x0004) [0x0000000000000000]              
+	float                                              NumTimeSpentThisFrame;                            		// 0x003C (0x0004) [0x0000000000000000]
+	float                                              LastTimeFullUpdate;                               		// 0x0040 (0x0004) [0x0000000000000000]
 	TArray< struct FRuleEngineLoadBalanceStruct >      WaitingEngines;                                   		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FDebugLoadBalance >                 DebugEngines;                                     		// 0x0050 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< struct FRELBManagerStats >                 ManagerStats;                                     		// 0x005C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned long                                      bIsDebugging : 1;                                 		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                MSPosition;                                       		// 0x006C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bIsDebugging : 1;                                 		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                MSPosition;                                       		// 0x006C (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -3663,13 +3630,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3072 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3072];
 
 		return pClassPointer;
 	};
 
-	void SetAsDebugging ( unsigned long bSetDebugging );
+	void SetAsDebugging(unsigned long bSetDebugging);
 };
 
 UClass* URuleEngineLoadBalanceManager::pClassPointer = NULL;
@@ -3679,12 +3646,12 @@ UClass* URuleEngineLoadBalanceManager::pClassPointer = NULL;
 class UScreenSpaceManager : public UObject
 {
 public:
-	class ULocalPlayer*                                pLocalPlayer;                                     		// 0x003C (0x0004) [0x0000000000000000]              
-	int                                                ViewWidth;                                        		// 0x0040 (0x0004) [0x0000000000000000]              
-	int                                                ViewHeight;                                       		// 0x0044 (0x0004) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0048 (0x0008) MISSED OFFSET
-	struct FMatrix                                     ViewProjectionMatrix;                             		// 0x0050 (0x0040) [0x0000000000000000]              
-	unsigned long                                      bMatricesUpToDate : 1;                            		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001] 
+	class ULocalPlayer*                                pLocalPlayer;                                     		// 0x003C (0x0004) [0x0000000000000000]
+	int                                                ViewWidth;                                        		// 0x0040 (0x0004) [0x0000000000000000]
+	int                                                ViewHeight;                                       		// 0x0044 (0x0004) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x8];                             		// 0x0048 (0x0008) MISSED OFFSET
+	struct FMatrix                                     ViewProjectionMatrix;                             		// 0x0050 (0x0040) [0x0000000000000000]
+	unsigned long                                      bMatricesUpToDate : 1;                            		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001]
 
 private:
 	static UClass* pClassPointer;
@@ -3692,12 +3659,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3074 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3074];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UScreenSpaceManager::pClassPointer = NULL;
@@ -3708,7 +3674,7 @@ class USeqAct_AllPlayersInVolume : public USequenceAction
 {
 public:
 	TArray< class AVolume* >                           Volumes;                                          		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      bAllActorsInVolumes : 1;                          		// 0x00B0 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bAllActorsInVolumes : 1;                          		// 0x00B0 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      bCheckForAllPlayers : 1;                          		// 0x00B0 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
 
 private:
@@ -3717,14 +3683,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3076 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3076];
 
 		return pClassPointer;
 	};
 
-	bool AllPlayersInVolumes ( );
-	bool PlayerIsInAVolume ( class APlayerController* PC );
+	bool AllPlayersInVolumes();
+	bool PlayerIsInAVolume(class APlayerController* PC);
 };
 
 UClass* USeqAct_AllPlayersInVolume::pClassPointer = NULL;
@@ -3742,12 +3708,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3078 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3078];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqCond_CompareLocation::pClassPointer = NULL;
@@ -3765,12 +3730,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3080 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3080];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqCond_CompareString::pClassPointer = NULL;
@@ -3788,12 +3752,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3082 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3082];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqCond_GetLanguage::pClassPointer = NULL;
@@ -3814,12 +3777,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3084 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3084];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USimpleMathValueResolver::pClassPointer = NULL;
@@ -3832,7 +3794,7 @@ public:
 	unsigned long                                      bLocalPlay : 1;                                   		// 0x005C (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 	float                                              StartTime;                                        		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0064 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0068 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0068 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	struct FSpecialMoveData                            CurrentSMData;                                    		// 0x006C (0x001C) [0x0000000000002000]              ( CPF_Transient )
 	TArray< struct FSpecialMoveData >                  SMDQueue;                                         		// 0x0088 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	class UAnimNodeSpecialMoveBlend*                   SMBlendNode;                                      		// 0x0094 (0x0004) [0x0000000000002000]              ( CPF_Transient )
@@ -3843,37 +3805,37 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3086 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3086];
 
 		return pClassPointer;
 	};
 
-	bool IsOwnerAlwaysNetRelevant ( );
-	bool CanPlayBehaviorData ( struct FSMBehavior* Data );
-	void RunBehaviors ( TArray< struct FSMBehavior >* SMBehaviors );
-	class USpecialMoveDefinition* GetCurrent ( );
-	float GetPlayRateScale ( );
-	float GetDuration ( );
-	class UObject* GetData ( );
-	void LocalAnimFinished ( class USpecialMoveDefinition* SMD, unsigned long bInterrupted, struct FSpecialMoveData* SMData );
-	void ClearQueue ( );
-	void StopAnyLocal ( struct FName SMNodeName, unsigned long bInterrupted, class USkeletalMeshComponent* MeshComp );
-	void StopLocal ( class USpecialMoveDefinition* OldSMD, unsigned long bInterrupted );
-	void StopAny ( unsigned long bClearQueue, unsigned long bInterrupted );
-	void Stop ( class USpecialMoveDefinition* OldSMD, unsigned long bClearQueue, unsigned long bInterrupted );
-	float PlayLocal ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	void Queue ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	float Play ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	void RemoveFromQueue ( class USpecialMoveDefinition* SMD );
-	bool IsQueued ( class USpecialMoveDefinition* SMD );
-	bool IsPlayingClass ( class UClass* SMClass );
-	bool IsPlayingAny ( );
-	bool IsPlaying ( class USpecialMoveDefinition* SMD );
-	struct FVector GetAnimDelta ( class UGearboxAnimDefinition* CustomAnimSMD );
-	class UAnimNodeSpecialMoveBlend* GetSMNode ( );
-	void PlayReplicated ( struct FReplicatedSpecialMoveData NewSMData );
-	float GetAnimLength ( class UGearboxAnimDefinition* CustomAnimSMD, unsigned long bIncludeNextSMD, class USkeletalMeshComponent* SMC );
+	bool IsOwnerAlwaysNetRelevant();
+	bool CanPlayBehaviorData(struct FSMBehavior* Data);
+	void RunBehaviors(TArray< struct FSMBehavior >* SMBehaviors);
+	class USpecialMoveDefinition* GetCurrent();
+	float GetPlayRateScale();
+	float GetDuration();
+	class UObject* GetData();
+	void LocalAnimFinished(class USpecialMoveDefinition* SMD, unsigned long bInterrupted, struct FSpecialMoveData* SMData);
+	void ClearQueue();
+	void StopAnyLocal(struct FName SMNodeName, unsigned long bInterrupted, class USkeletalMeshComponent* MeshComp);
+	void StopLocal(class USpecialMoveDefinition* OldSMD, unsigned long bInterrupted);
+	void StopAny(unsigned long bClearQueue, unsigned long bInterrupted);
+	void Stop(class USpecialMoveDefinition* OldSMD, unsigned long bClearQueue, unsigned long bInterrupted);
+	float PlayLocal(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	float Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void RemoveFromQueue(class USpecialMoveDefinition* SMD);
+	bool IsQueued(class USpecialMoveDefinition* SMD);
+	bool IsPlayingClass(class UClass* SMClass);
+	bool IsPlayingAny();
+	bool IsPlaying(class USpecialMoveDefinition* SMD);
+	struct FVector GetAnimDelta(class UGearboxAnimDefinition* CustomAnimSMD);
+	class UAnimNodeSpecialMoveBlend* GetSMNode();
+	void PlayReplicated(struct FReplicatedSpecialMoveData NewSMData);
+	float GetAnimLength(class UGearboxAnimDefinition* CustomAnimSMD, unsigned long bIncludeNextSMD, class USkeletalMeshComponent* SMC);
 };
 
 UClass* USpecialMoveComponent::pClassPointer = NULL;
@@ -3894,21 +3856,21 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3088 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3088];
 
 		return pClassPointer;
 	};
 
-	bool eventIsPlayingLocally ( class USpecialMoveInterface* SMI );
-	class USpecialMoveDefinition* GetSMDToPlay ( class USpecialMoveInterface* SMI );
-	bool Contains ( class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI );
-	void eventClientFinished ( class USpecialMoveInterface* SMI, unsigned long bInterrupted );
-	void eventServerFinished ( class USpecialMoveInterface* SMI, unsigned long bInterrupted );
-	float eventClientStarted ( class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData );
-	void eventServerStarted ( class USpecialMoveInterface* SMI );
-	bool IsLocalAuthority ( class USpecialMoveInterface* SMI );
-	bool eventAuthorityCanPlay ( class USpecialMoveInterface* SMI );
+	bool eventIsPlayingLocally(class USpecialMoveInterface* SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
+	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
+	void eventClientFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
+	void eventServerFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
+	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
+	void eventServerStarted(class USpecialMoveInterface* SMI);
+	bool IsLocalAuthority(class USpecialMoveInterface* SMI);
+	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
 };
 
 UClass* USpecialMoveDefinition::pClassPointer = NULL;
@@ -3926,14 +3888,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3090 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3090];
 
 		return pClassPointer;
 	};
 
-	bool Contains ( class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI );
-	class USpecialMoveDefinition* GetSMDToPlay ( class USpecialMoveInterface* SMI );
+	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
 };
 
 UClass* USpecialMoveExpressionList::pClassPointer = NULL;
@@ -3951,14 +3913,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3092 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3092];
 
 		return pClassPointer;
 	};
 
-	bool Contains ( class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI );
-	class USpecialMoveDefinition* GetSMDToPlay ( class USpecialMoveInterface* SMI );
+	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
 };
 
 UClass* USpecialMoveRandom::pClassPointer = NULL;
@@ -3975,22 +3937,22 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3094 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3094];
 
 		return pClassPointer;
 	};
 
-	void SetReplicatedSMData ( struct FSpecialMoveData* NewSMData );
-	void eventServerSpecialMove_StopAny ( );
-	void eventServerSpecialMove_Stop ( class USpecialMoveDefinition* OldSMD );
-	void eventServerSpecialMove_Queue ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	void eventServerSpecialMove_Play ( class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data );
-	unsigned char GetDefaultRootMotionRotationMode ( );
-	unsigned char GetDefaultRootMotionMode ( );
-	class USkeletalMeshComponent* GetSkelMesh ( );
-	class USpecialMoveComponent* GetSMComponent ( );
-	class AActor* GetActor ( );
+	void SetReplicatedSMData(struct FSpecialMoveData* NewSMData);
+	void eventServerSpecialMove_StopAny();
+	void eventServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
+	void eventServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void eventServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	unsigned char GetDefaultRootMotionRotationMode();
+	unsigned char GetDefaultRootMotionMode();
+	class USkeletalMeshComponent* GetSkelMesh();
+	class USpecialMoveComponent* GetSMComponent();
+	class AActor* GetActor();
 };
 
 UClass* USpecialMoveInterface::pClassPointer = NULL;
@@ -4008,12 +3970,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3096 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3096];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UStateAttributeResolver::pClassPointer = NULL;
@@ -4034,12 +3995,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3098 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3098];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTimeValueResolver::pClassPointer = NULL;
@@ -4057,12 +4017,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3100 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3100];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* AWireManager::pClassPointer = NULL;
@@ -4083,14 +4042,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3102 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3102];
 
 		return pClassPointer;
 	};
 
-	void eventDestroyed ( );
-	void NotifyModifiedTerminal ( );
+	void eventDestroyed();
+	void NotifyModifiedTerminal();
 };
 
 UClass* AWireTerminal::pClassPointer = NULL;
@@ -4107,12 +4066,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3104 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3104];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* AWiringActor::pClassPointer = NULL;
@@ -4122,7 +4080,7 @@ UClass* AWiringActor::pClassPointer = NULL;
 class UWiringMesh : public UStaticMesh
 {
 public:
-	unsigned char                                      UnknownData00[ 0x240 ];                           		// 0x0130 (0x0240) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x240];                           		// 0x0130 (0x0240) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -4130,12 +4088,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3106 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3106];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UWiringMesh::pClassPointer = NULL;
@@ -4152,12 +4109,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3108 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3108];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UActionResource::pClassPointer = NULL;
@@ -4179,11 +4135,11 @@ public:
 	class UActionSequence*                             ChildSequence;                                    		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FString                                     ContextMenu;                                      		// 0x0064 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              StoredDeltaTime;                                  		// 0x0070 (0x0004) [0x0000000000000000]              
+	float                                              StoredDeltaTime;                                  		// 0x0070 (0x0004) [0x0000000000000000]
 	TArray< struct FFlagDefinitionInitialization >     FlagValuesToSetOnBegin;                           		// 0x0074 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	TArray< struct FFlagDefinitionInitialization >     FlagValuesToSetOnEnd;                             		// 0x0080 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class UIAIInterface*                               AI;                                               		// 0x008C (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0090 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UIAIInterface*                               AI;                                               		// 0x008C (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0090 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	TArray< struct FName >                             BehaviorOutputs;                                  		// 0x0094 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 	struct FName                                       BehaviorName;                                     		// 0x00A0 (0x0008) [0x0000000000020002]              ( CPF_Const | CPF_EditConst )
 
@@ -4193,42 +4149,42 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3110 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3110];
 
 		return pClassPointer;
 	};
 
-	void TriggerBehavior ( struct FName OutputName );
-	float GetRangeValue ( struct FAIRange* Range );
-	bool RangeIsValid ( struct FAIRange* Range );
-	void Finish ( unsigned long bFailed );
-	bool IsRunning ( );
-	void eventScriptCleanUp ( );
-	struct FName eventCanRun ( );
-	void eventActivateEvent ( struct FName EventName );
-	void eventUpdate ( );
-	void eventInit ( );
-	void eventStop ( );
-	void eventStart ( );
-	void eventInterruptSequence ( class UActionSequence* InterruptingSequence );
-	void eventStopSequence ( );
-	void eventStartSequence ( );
-	void ExecuteSequence ( class UActionSequence* SequenceTemplate );
-	void Sleep ( float Seconds );
-	void RunSubSequence ( class UActionSequence* SubSequence );
-	void InterruptLatentAction ( );
-	void DoRuleSetPop ( );
-	bool DoRuleSetPush ( class URuleSet* NewRuleSet );
-	void DoRuleSetSwitch ( class URuleSet* NewRuleSet );
-	void PreventNewRulesFromStarting ( );
-	class URule* GetRuleNative ( );
-	void GetActionSequence ( class UActionSequence* Template, class UActionSequence** OutSequence );
-	bool IsInLabel ( struct FName TestLabel );
-	bool IsAtomic ( );
-	void StopAtomic ( );
-	void StartAtomic ( );
-	bool IsActionReadyToFinish ( );
+	void TriggerBehavior(struct FName OutputName);
+	float GetRangeValue(struct FAIRange* Range);
+	bool RangeIsValid(struct FAIRange* Range);
+	void Finish(unsigned long bFailed);
+	bool IsRunning();
+	void eventScriptCleanUp();
+	struct FName eventCanRun();
+	void eventActivateEvent(struct FName EventName);
+	void eventUpdate();
+	void eventInit();
+	void eventStop();
+	void eventStart();
+	void eventInterruptSequence(class UActionSequence* InterruptingSequence);
+	void eventStopSequence();
+	void eventStartSequence();
+	void ExecuteSequence(class UActionSequence* SequenceTemplate);
+	void Sleep(float Seconds);
+	void RunSubSequence(class UActionSequence* SubSequence);
+	void InterruptLatentAction();
+	void DoRuleSetPop();
+	bool DoRuleSetPush(class URuleSet* NewRuleSet);
+	void DoRuleSetSwitch(class URuleSet* NewRuleSet);
+	void PreventNewRulesFromStarting();
+	class URule* GetRuleNative();
+	void GetActionSequence(class UActionSequence* Template, class UActionSequence** OutSequence);
+	bool IsInLabel(struct FName TestLabel);
+	bool IsAtomic();
+	void StopAtomic();
+	void StartAtomic();
+	bool IsActionReadyToFinish();
 };
 
 UClass* UActionSequence::pClassPointer = NULL;
@@ -4238,7 +4194,7 @@ UClass* UActionSequence::pClassPointer = NULL;
 class UActionSequenceList : public UActionSequence
 {
 public:
-	int                                                CurrentIndex;                                     		// 0x00A8 (0x0004) [0x0000000000000000]              
+	int                                                CurrentIndex;                                     		// 0x00A8 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -4246,13 +4202,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3112 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3112];
 
 		return pClassPointer;
 	};
 
-	bool IsActionReadyToFinish ( );
+	bool IsActionReadyToFinish();
 };
 
 UClass* UActionSequenceList::pClassPointer = NULL;
@@ -4262,8 +4218,8 @@ UClass* UActionSequenceList::pClassPointer = NULL;
 class UActionSequencePawn : public UActionSequence
 {
 public:
-	class AGearboxMind*                                MyGearboxMind;                                    		// 0x00A8 (0x0004) [0x0000000000000000]              
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x00AC (0x0004) [0x0000000000000000]              
+	class AGearboxMind*                                MyGearboxMind;                                    		// 0x00A8 (0x0004) [0x0000000000000000]
+	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x00AC (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -4271,12 +4227,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3114 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3114];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UActionSequencePawn::pClassPointer = NULL;
@@ -4286,10 +4241,10 @@ UClass* UActionSequencePawn::pClassPointer = NULL;
 class UAction_PawnMovementBase : public UActionSequencePawn
 {
 public:
-	struct FVector                                     CachedSearchOrigin;                               		// 0x00B0 (0x000C) [0x0000000000000000]              
-	struct FFlag                                       CoverCheckThrottle;                               		// 0x00BC (0x0010) [0x0000000000000000]              
+	struct FVector                                     CachedSearchOrigin;                               		// 0x00B0 (0x000C) [0x0000000000000000]
+	struct FFlag                                       CoverCheckThrottle;                               		// 0x00BC (0x0010) [0x0000000000000000]
 	float                                              CoverCheckThrottleInterval;                       		// 0x00CC (0x0004) [0x0000000000000002]              ( CPF_Const )
-	unsigned long                                      ShouldRepeatNavSearch : 1;                        		// 0x00D0 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      ShouldRepeatNavSearch : 1;                        		// 0x00D0 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      Interrupted : 1;                                  		// 0x00D0 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
 	unsigned long                                      GoToCover : 1;                                    		// 0x00D0 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
 	unsigned long                                      UsePreciseArrival : 1;                            		// 0x00D0 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
@@ -4318,22 +4273,22 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3116 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3116];
 
 		return pClassPointer;
 	};
 
-	void eventPostMovement ( );
-	void eventPreMovement ( );
-	void eventPrePathFind ( );
-	void eventInterruptSequence ( class UActionSequence* InterruptingSequence );
-	void eventStopSequence ( );
-	void eventStartSequence ( );
-	void MovePawnToDestinationLocation ( struct FVector GoalLocation, unsigned long NewUsePreciseArrival );
-	void TakeDebugSnapshotMoveFailure ( unsigned char Cause );
-	void SetMaxMovementSpeed ( unsigned char NewMaxSpeed );
-	void EndMovePawnToDestinationLocation ( );
+	void eventPostMovement();
+	void eventPreMovement();
+	void eventPrePathFind();
+	void eventInterruptSequence(class UActionSequence* InterruptingSequence);
+	void eventStopSequence();
+	void eventStartSequence();
+	void MovePawnToDestinationLocation(struct FVector GoalLocation, unsigned long NewUsePreciseArrival);
+	void TakeDebugSnapshotMoveFailure(unsigned char Cause);
+	void SetMaxMovementSpeed(unsigned char NewMaxSpeed);
+	void EndMovePawnToDestinationLocation();
 };
 
 UClass* UAction_PawnMovementBase::pClassPointer = NULL;
@@ -4351,15 +4306,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3118 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3118];
 
 		return pClassPointer;
 	};
 
-	void EvaluateActionList ( );
-	void OverrideNextSequenceToRun ( class UActionSequence* NewSequence );
-	class UActionSequence* GetRandomAction ( );
+	void EvaluateActionList();
+	void OverrideNextSequenceToRun(class UActionSequence* NewSequence);
+	class UActionSequence* GetRandomAction();
 };
 
 UClass* UActionSequenceRandom::pClassPointer = NULL;
@@ -4369,9 +4324,9 @@ UClass* UActionSequenceRandom::pClassPointer = NULL;
 class UAIComponent : public UActorComponent
 {
 public:
-	float                                              UpdateRate;                                       		// 0x005C (0x0004) [0x0000000000000000]              
+	float                                              UpdateRate;                                       		// 0x005C (0x0004) [0x0000000000000000]
 	class UIAIInterface*                               AI;                                               		// 0x0060 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0064 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[0x4];                             		// 0x0064 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	unsigned long                                      bInitialized : 1;                                 		// 0x0068 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 	class UAIDefinition*                               AIDef;                                            		// 0x006C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	float                                              LastStateUpdateTime;                              		// 0x0070 (0x0004) [0x0000000000002000]              ( CPF_Transient )
@@ -4396,61 +4351,61 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3120 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3120];
 
 		return pClassPointer;
 	};
 
-	float GetAIRangeTime ( struct FAIRange InRange );
-	void DrawAITree ( class UCanvas* Canvas );
-	void LogDemigodHolds ( );
-	void ReleaseDialog ( struct FName HoldName, class UObject* Tag );
-	void HoldDialog ( struct FName HoldName, class UObject* Tag );
-	bool DialogOnHold ( );
-	void ReleaseGod ( struct FName HoldName, class UObject* Tag );
-	void HoldGod ( struct FName HoldName, class UObject* Tag );
-	bool GodOnHold ( );
-	void ReleaseDemigod ( struct FName HoldName, class UObject* Tag );
-	void HoldDemigod ( struct FName HoldName, class UObject* Tag );
-	bool DemigodOnHold ( );
-	void ReleaseMovement ( struct FName HoldName, class UObject* Tag );
-	void HoldMovement ( struct FName HoldName, class UObject* Tag );
-	bool MovementOnHold ( );
-	void ReleaseTarget ( struct FName HoldName, class UObject* Tag );
-	void HoldTarget ( struct FName HoldName, class UObject* Tag );
-	bool TargetOnHold ( );
-	void Release ( struct FName HoldName, class UObject* Tag );
-	void Hold ( struct FName HoldName, class UObject* Tag );
-	bool OnHold ( );
-	void ForceUpdateTargets ( );
-	void TargetChanged ( class AActor* OldTarget, class AActor* NewTarget );
-	void SetTarget ( class AActor* NewTarget );
-	void SetScriptedTarget ( class AActor* NewScriptedTarget );
-	class UMindTargetInfo* GetTargetRecordFor ( class AActor* Target, unsigned long bTryParent );
-	class UMindTargetInfo* GetTargetRecord ( unsigned long bTryParent );
-	bool IsTarget ( class AActor* TestTarget );
-	class AActor* GetTarget ( );
-	bool HasTarget ( );
-	bool ShouldRemoveTarget ( class UMindTargetInfo* TargetRec );
-	void TargetRemoved ( class UMindTargetInfo* TargetRec );
-	void ForceRemoveTarget ( class AActor* Target );
-	bool ValidCurrentTarget ( class UMindTargetInfo* TargetRec );
-	bool ValidTarget ( class AActor* Target );
-	void PrioritizeTarget ( class UMindTargetInfo* TargetRec );
-	void CalcTargetInfo ( class UMindTargetInfo* TargetRec );
-	void ChooseBestTarget ( );
-	void InheritTargets ( class UAIComponent* Parent );
-	void RemoveTargets ( );
-	void FindTargets ( );
-	void GetTargets ( );
-	void InitializeTargetRecord ( class UMindTargetInfo* TargetRec );
-	void NotifyAttackedBy ( class AActor* Attacker );
-	class UMindTargetInfo* AddTarget ( class AActor* NewTarget );
-	class UAIComponent* GetParentComponent ( );
-	class UPawnAllegiance* GetAllegiance ( );
-	void ClearState ( );
-	bool ActivateEvent ( struct FName EventName );
+	float GetAIRangeTime(struct FAIRange InRange);
+	void DrawAITree(class UCanvas* Canvas);
+	void LogDemigodHolds();
+	void ReleaseDialog(struct FName HoldName, class UObject* Tag);
+	void HoldDialog(struct FName HoldName, class UObject* Tag);
+	bool DialogOnHold();
+	void ReleaseGod(struct FName HoldName, class UObject* Tag);
+	void HoldGod(struct FName HoldName, class UObject* Tag);
+	bool GodOnHold();
+	void ReleaseDemigod(struct FName HoldName, class UObject* Tag);
+	void HoldDemigod(struct FName HoldName, class UObject* Tag);
+	bool DemigodOnHold();
+	void ReleaseMovement(struct FName HoldName, class UObject* Tag);
+	void HoldMovement(struct FName HoldName, class UObject* Tag);
+	bool MovementOnHold();
+	void ReleaseTarget(struct FName HoldName, class UObject* Tag);
+	void HoldTarget(struct FName HoldName, class UObject* Tag);
+	bool TargetOnHold();
+	void Release(struct FName HoldName, class UObject* Tag);
+	void Hold(struct FName HoldName, class UObject* Tag);
+	bool OnHold();
+	void ForceUpdateTargets();
+	void TargetChanged(class AActor* OldTarget, class AActor* NewTarget);
+	void SetTarget(class AActor* NewTarget);
+	void SetScriptedTarget(class AActor* NewScriptedTarget);
+	class UMindTargetInfo* GetTargetRecordFor(class AActor* Target, unsigned long bTryParent);
+	class UMindTargetInfo* GetTargetRecord(unsigned long bTryParent);
+	bool IsTarget(class AActor* TestTarget);
+	class AActor* GetTarget();
+	bool HasTarget();
+	bool ShouldRemoveTarget(class UMindTargetInfo* TargetRec);
+	void TargetRemoved(class UMindTargetInfo* TargetRec);
+	void ForceRemoveTarget(class AActor* Target);
+	bool ValidCurrentTarget(class UMindTargetInfo* TargetRec);
+	bool ValidTarget(class AActor* Target);
+	void PrioritizeTarget(class UMindTargetInfo* TargetRec);
+	void CalcTargetInfo(class UMindTargetInfo* TargetRec);
+	void ChooseBestTarget();
+	void InheritTargets(class UAIComponent* Parent);
+	void RemoveTargets();
+	void FindTargets();
+	void GetTargets();
+	void InitializeTargetRecord(class UMindTargetInfo* TargetRec);
+	void NotifyAttackedBy(class AActor* Attacker);
+	class UMindTargetInfo* AddTarget(class AActor* NewTarget);
+	class UAIComponent* GetParentComponent();
+	class UPawnAllegiance* GetAllegiance();
+	void ClearState();
+	bool ActivateEvent(struct FName EventName);
 };
 
 UClass* UAIComponent::pClassPointer = NULL;
@@ -4469,13 +4424,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3122 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3122];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UAICostExpressionEvaluator::pClassPointer = NULL;
@@ -4499,29 +4454,29 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3124 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3124];
 
 		return pClassPointer;
 	};
 
-	void FlushPools ( );
-	void ReturnAIDef ( class UAIDefinition** InAIDef );
-	bool GetAIDef ( class UAIDefinition* AIDefTemplate, class UAIDefinition** OutAIDef );
-	void ReturnTargetRecord ( class UMindTargetInfo** InTargetRecord );
-	bool GetTargetRecord ( class UClass* InfoClass, class UMindTargetInfo** OutTargetRecord );
-	void ReturnActionSequence ( class UActionSequence** InSequence );
-	bool GetActionSequence ( class UActionSequence* SequenceTemplate, class UActionSequence** OutSequence );
-	void ReturnRuleSet ( class URuleSet** InRuleSet );
-	bool GetRuleSetFromArchetype ( class URuleSet* RuleSetArchetype, class URuleSet** OutRuleSet, TArray< class URule* >* CurRunningRules );
-	void ReturnKnowledgeRecord ( class UKnowledgeRecord** InKR );
-	bool GetKnowledgeRecordListFromArchetypes ( TArray< class UKnowledgeRecord* > KnowledgeRecordTemplates, TArray< class UKnowledgeRecord* >* KnowledgeRecords );
-	bool GetKnowledgeRecordFromArchetype ( class UKnowledgeRecord* InKR, class UKnowledgeRecord** OutKR );
-	bool GetKnowledgeRecord ( class UClass* KnowledgeRecordClass, class UKnowledgeRecord** OutKR );
-	void ReturnRule ( class URule** InRule );
-	bool GetRuleFromArchetype ( class URule* InRule, class URule** OutRule );
-	bool GetRule ( class UClass* RuleClass, class URule** OutRule );
-	void ReturnRuleEngine ( class URuleEngine* InRuleEngine );
+	void FlushPools();
+	void ReturnAIDef(class UAIDefinition** InAIDef);
+	bool GetAIDef(class UAIDefinition* AIDefTemplate, class UAIDefinition** OutAIDef);
+	void ReturnTargetRecord(class UMindTargetInfo** InTargetRecord);
+	bool GetTargetRecord(class UClass* InfoClass, class UMindTargetInfo** OutTargetRecord);
+	void ReturnActionSequence(class UActionSequence** InSequence);
+	bool GetActionSequence(class UActionSequence* SequenceTemplate, class UActionSequence** OutSequence);
+	void ReturnRuleSet(class URuleSet** InRuleSet);
+	bool GetRuleSetFromArchetype(class URuleSet* RuleSetArchetype, class URuleSet** OutRuleSet, TArray< class URule* >* CurRunningRules);
+	void ReturnKnowledgeRecord(class UKnowledgeRecord** InKR);
+	bool GetKnowledgeRecordListFromArchetypes(TArray< class UKnowledgeRecord* > KnowledgeRecordTemplates, TArray< class UKnowledgeRecord* >* KnowledgeRecords);
+	bool GetKnowledgeRecordFromArchetype(class UKnowledgeRecord* InKR, class UKnowledgeRecord** OutKR);
+	bool GetKnowledgeRecord(class UClass* KnowledgeRecordClass, class UKnowledgeRecord** OutKR);
+	void ReturnRule(class URule** InRule);
+	bool GetRuleFromArchetype(class URule* InRule, class URule** OutRule);
+	bool GetRule(class UClass* RuleClass, class URule** OutRule);
+	void ReturnRuleEngine(class URuleEngine* InRuleEngine);
 };
 
 UClass* UAIFactoryBase::pClassPointer = NULL;
@@ -4538,14 +4493,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3126 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3126];
 
 		return pClassPointer;
 	};
 
-	void FreeRuleEngine ( class URuleEngine* InRuleEngine );
-	bool GetRuleEngineFromTemplate ( class URuleEngine* RuleEngineTemplate, class URuleEngine** OutRuleEngine );
+	void FreeRuleEngine(class URuleEngine* InRuleEngine);
+	bool GetRuleEngineFromTemplate(class URuleEngine* RuleEngineTemplate, class URuleEngine** OutRuleEngine);
 };
 
 UClass* UGearboxAIFactory::pClassPointer = NULL;
@@ -4565,12 +4520,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3128 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3128];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIResource::pClassPointer = NULL;
@@ -4589,13 +4543,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3130 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3130];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UAIResourceExpressionEvaluator::pClassPointer = NULL;
@@ -4614,13 +4568,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3132 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3132];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UAllegianceExpressionEvaluator::pClassPointer = NULL;
@@ -4639,12 +4593,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3134 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3134];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAwarenessZoneCollectionDefinition::pClassPointer = NULL;
@@ -4675,12 +4628,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3136 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3136];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAwarenessZoneDefinition::pClassPointer = NULL;
@@ -4702,15 +4654,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3138 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3138];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
-	struct FVector GetLocation ( unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject );
-	class UObject* GetMessageParameter ( unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	struct FVector GetLocation(unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject);
+	class UObject* GetMessageParameter(unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject);
 };
 
 UClass* UBehavior_SendGbxMessage::pClassPointer = NULL;
@@ -4728,13 +4680,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3140 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3140];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_SetFlag::pClassPointer = NULL;
@@ -4752,12 +4704,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3142 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3142];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UBestTargetAttributeContextResolver::pClassPointer = NULL;
@@ -4775,12 +4726,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3144 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3144];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UCharacterClassMessageDefinition::pClassPointer = NULL;
@@ -4825,12 +4775,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3146 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3146];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UCoverSearchCriteria::pClassPointer = NULL;
@@ -4849,14 +4798,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3148 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3148];
 
 		return pClassPointer;
 	};
 
-	float CalculateVantageToPoint ( class AActor* pLooker, struct FVector* TargetPoint );
-	float CalculateTargetExposure ( class AGearboxPawn* pLooker, class AActor* pTarget );
+	float CalculateVantageToPoint(class AActor* pLooker, struct FVector* TargetPoint);
+	float CalculateTargetExposure(class AGearboxPawn* pLooker, class AActor* pTarget);
 };
 
 UClass* UExposureUtilityBase::pClassPointer = NULL;
@@ -4887,12 +4836,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3150 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3150];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UExposureUtilityBasicCaching::pClassPointer = NULL;
@@ -4906,15 +4854,15 @@ public:
 	float                                              MedDistanceSquared;                               		// 0x0088 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                MaxLineChecksPerFrame;                            		// 0x008C (0x0004) [0x0000000000000002]              ( CPF_Const )
 	TArray< struct FBucketStruct >                     Buckets;                                          		// 0x0090 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	float                                              MedAccumulatedTime;                               		// 0x009C (0x0004) [0x0000000000000000]              
-	float                                              FarAccumulatedTime;                               		// 0x00A0 (0x0004) [0x0000000000000000]              
-	float                                              SkipUpdateForTime;                                		// 0x00A4 (0x0004) [0x0000000000000000]              
-	int                                                MaxPointData;                                     		// 0x00A8 (0x0004) [0x0000000000000000]              
-	int                                                PointLineChecks;                                  		// 0x00AC (0x0004) [0x0000000000000000]              
-	int                                                PointMaxLineChecks;                               		// 0x00B0 (0x0004) [0x0000000000000000]              
-	float                                              PointFreshTime;                                   		// 0x00B4 (0x0004) [0x0000000000000000]              
-	float                                              PointStaleTime;                                   		// 0x00B8 (0x0004) [0x0000000000000000]              
-	float                                              PointMaxErrorSq;                                  		// 0x00BC (0x0004) [0x0000000000000000]              
+	float                                              MedAccumulatedTime;                               		// 0x009C (0x0004) [0x0000000000000000]
+	float                                              FarAccumulatedTime;                               		// 0x00A0 (0x0004) [0x0000000000000000]
+	float                                              SkipUpdateForTime;                                		// 0x00A4 (0x0004) [0x0000000000000000]
+	int                                                MaxPointData;                                     		// 0x00A8 (0x0004) [0x0000000000000000]
+	int                                                PointLineChecks;                                  		// 0x00AC (0x0004) [0x0000000000000000]
+	int                                                PointMaxLineChecks;                               		// 0x00B0 (0x0004) [0x0000000000000000]
+	float                                              PointFreshTime;                                   		// 0x00B4 (0x0004) [0x0000000000000000]
+	float                                              PointStaleTime;                                   		// 0x00B8 (0x0004) [0x0000000000000000]
+	float                                              PointMaxErrorSq;                                  		// 0x00BC (0x0004) [0x0000000000000000]
 	TArray< struct FPointExposureData >                PointData;                                        		// 0x00C0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
 private:
@@ -4923,12 +4871,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3152 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3152];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UExposureUtilityFixedCost::pClassPointer = NULL;
@@ -4945,12 +4892,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3154 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3154];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UExposureUtilityStrategy::pClassPointer = NULL;
@@ -4968,12 +4914,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3156 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3156];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFiringBehaviorDefinition::pClassPointer = NULL;
@@ -4985,14 +4930,14 @@ class UFiringBehaviorManager : public UObject
 public:
 	class UFiringPattern*                              CurrentFiringPattern;                             		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	float                                              CurrentTargetExposure;                            		// 0x0040 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                NumShotsThisBurst;                                		// 0x0044 (0x0004) [0x0000000000000000]              
-	struct FVector                                     CachedTargetPoint;                                		// 0x0048 (0x000C) [0x0000000000000000]              
-	unsigned long                                      bHasTargetPoint : 1;                              		// 0x0054 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bSetupWithZoneCollection : 1;                     		// 0x0054 (0x0004) [0x0000000000000000] [0x00000002] 
+	int                                                NumShotsThisBurst;                                		// 0x0044 (0x0004) [0x0000000000000000]
+	struct FVector                                     CachedTargetPoint;                                		// 0x0048 (0x000C) [0x0000000000000000]
+	unsigned long                                      bHasTargetPoint : 1;                              		// 0x0054 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bSetupWithZoneCollection : 1;                     		// 0x0054 (0x0004) [0x0000000000000000] [0x00000002]
 	class UFiringZoneCollectionDefinition*             CurrentZoneCollection;                            		// 0x0058 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UFiringZoneDefinition*                       CurrentZone;                                      		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UFiringBehaviorDefinition*                   CurrentBehavior;                                  		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                CurrentConditionalPattern;                        		// 0x0064 (0x0004) [0x0000000000000000]              
+	int                                                CurrentConditionalPattern;                        		// 0x0064 (0x0004) [0x0000000000000000]
 	class UFiringBehaviorDefinition*                   DefaultFiringBehaviorDefinition;                  		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UFiringPattern*                              DefaultFiringPatternTemplate;                     		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
@@ -5002,13 +4947,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3158 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3158];
 
 		return pClassPointer;
 	};
 
-	class UClass* eventGetTemplateClass ( class UObject* TemplateObject );
+	class UClass* eventGetTemplateClass(class UObject* TemplateObject);
 };
 
 UClass* UFiringBehaviorManager::pClassPointer = NULL;
@@ -5025,12 +4970,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3160 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3160];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFiringCondition::pClassPointer = NULL;
@@ -5047,12 +4991,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3162 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3162];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFireCond_IsPlayerTarget::pClassPointer = NULL;
@@ -5071,12 +5014,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3164 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3164];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFiringPattern::pClassPointer = NULL;
@@ -5095,12 +5037,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3166 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3166];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFirePatt_Cone::pClassPointer = NULL;
@@ -5110,8 +5051,8 @@ UClass* UFirePatt_Cone::pClassPointer = NULL;
 class UFirePatt_ShrinkingCone : public UFiringPattern
 {
 public:
-	float                                              CurrentAccuracyConeDeg;                           		// 0x0040 (0x0004) [0x0000000000000000]              
-	struct FRotator                                    LastDesiredAim;                                   		// 0x0044 (0x000C) [0x0000000000000000]              
+	float                                              CurrentAccuracyConeDeg;                           		// 0x0040 (0x0004) [0x0000000000000000]
+	struct FRotator                                    LastDesiredAim;                                   		// 0x0044 (0x000C) [0x0000000000000000]
 	float                                              MaxAccuracyConeDeg;                               		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              ConeMultiplierPerShot;                            		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      ShotSpreadType;                                   		// 0x0058 (0x0001) [0x0000000000000001]              ( CPF_Edit )
@@ -5122,12 +5063,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3168 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3168];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFirePatt_ShrinkingCone::pClassPointer = NULL;
@@ -5137,10 +5077,10 @@ UClass* UFirePatt_ShrinkingCone::pClassPointer = NULL;
 class UFirePatt_StrafeOver : public UFiringPattern
 {
 public:
-	struct FRotator                                    CurrentAimRotation;                               		// 0x0040 (0x000C) [0x0000000000000000]              
-	float                                              PitchDeltaPerShot;                                		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              MaxYawDeltaPerShot;                               		// 0x0050 (0x0004) [0x0000000000000000]              
-	float                                              RefireRate;                                       		// 0x0054 (0x0004) [0x0000000000000000]              
+	struct FRotator                                    CurrentAimRotation;                               		// 0x0040 (0x000C) [0x0000000000000000]
+	float                                              PitchDeltaPerShot;                                		// 0x004C (0x0004) [0x0000000000000000]
+	float                                              MaxYawDeltaPerShot;                               		// 0x0050 (0x0004) [0x0000000000000000]
+	float                                              RefireRate;                                       		// 0x0054 (0x0004) [0x0000000000000000]
 	float                                              LineOfShotsSpeed;                                 		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              LineOfShotsEndZ;                                  		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              YawDeltaRatio;                                    		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
@@ -5152,12 +5092,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3170 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3170];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFirePatt_StrafeOver::pClassPointer = NULL;
@@ -5175,13 +5114,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3172 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3172];
 
 		return pClassPointer;
 	};
 
-	class UFiringZoneDefinition* eventGetZoneForDistance ( float Distance );
+	class UFiringZoneDefinition* eventGetZoneForDistance(float Distance);
 };
 
 UClass* UFiringZoneCollectionDefinition::pClassPointer = NULL;
@@ -5203,12 +5142,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3174 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3174];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFiringZoneDefinition::pClassPointer = NULL;
@@ -5228,16 +5166,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3176 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3176];
 
 		return pClassPointer;
 	};
 
-	void ApplyFlagInitializationData ( class UObject* ContextSource, TArray< struct FFlagDefinitionInitialization >* FlagsToSet );
-	class UObject* ResolveContext ( class UObject* ContextSource );
-	bool SetTrueTimed ( class UObject* ContextSource, float TimeSeconds );
-	bool SetValue ( class UObject* ContextSource, unsigned long Value );
+	void ApplyFlagInitializationData(class UObject* ContextSource, TArray< struct FFlagDefinitionInitialization >* FlagsToSet);
+	class UObject* ResolveContext(class UObject* ContextSource);
+	bool SetTrueTimed(class UObject* ContextSource, float TimeSeconds);
+	bool SetValue(class UObject* ContextSource, unsigned long Value);
 };
 
 UClass* UFlagDefinition::pClassPointer = NULL;
@@ -5256,13 +5194,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3178 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3178];
 
 		return pClassPointer;
 	};
 
-	bool Evaluate ( class UObject* ContextSource );
+	bool Evaluate(class UObject* ContextSource);
 };
 
 UClass* UFlagExpressionEvaluator::pClassPointer = NULL;
@@ -5279,12 +5217,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3180 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3180];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UFlagValueResolver::pClassPointer = NULL;
@@ -5303,12 +5240,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3182 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3182];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UMultipleFlagValueResolver::pClassPointer = NULL;
@@ -5327,12 +5263,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3184 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3184];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UObjectFunctionFlagValueResolver::pClassPointer = NULL;
@@ -5350,12 +5285,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3186 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3186];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UObjectPropertyFlagValueResolver::pClassPointer = NULL;
@@ -5372,12 +5306,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3188 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3188];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URuleEngineFlagValueResolver::pClassPointer = NULL;
@@ -5387,31 +5320,31 @@ UClass* URuleEngineFlagValueResolver::pClassPointer = NULL;
 class UGbxMessage : public UObject
 {
 public:
-	class UGbxMessageDefinition*                       Definition;                                       		// 0x003C (0x0004) [0x0000000000000000]              
-	struct FName                                       NameKey;                                          		// 0x0040 (0x0008) [0x0000000000000000]              
-	class UObject*                                     Sender;                                           		// 0x0048 (0x0004) [0x0000000000000000]              
-	class UObject*                                     Subject;                                          		// 0x004C (0x0004) [0x0000000000000000]              
-	class UObject*                                     AdditionalData;                                   		// 0x0050 (0x0004) [0x0000000000000000]              
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData;                                   		// 0x0054 (0x001C) [0x0000000000000000]              
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData2;                                  		// 0x0070 (0x001C) [0x0000000000000000]              
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData3;                                  		// 0x008C (0x001C) [0x0000000000000000]              
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData4;                                  		// 0x00A8 (0x001C) [0x0000000000000000]              
-	class UPawnAllegiance*                             SenderAllegiance;                                 		// 0x00C4 (0x0004) [0x0000000000000000]              
-	class UPawnAllegiance*                             SubjectAllegiance;                                		// 0x00C8 (0x0004) [0x0000000000000000]              
-	unsigned long                                      IntendedForAllies : 1;                            		// 0x00CC (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      IntendedForEnemies : 1;                           		// 0x00CC (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      HasLocation : 1;                                  		// 0x00CC (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      HasRadius : 1;                                    		// 0x00CC (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      SendRepeatedly : 1;                               		// 0x00CC (0x0004) [0x0000000000000000] [0x00000010] 
-	struct FVector                                     MessageLocation;                                  		// 0x00D0 (0x000C) [0x0000000000000000]              
-	float                                              BroadcastRadius;                                  		// 0x00DC (0x0004) [0x0000000000000000]              
-	float                                              DeliverTime;                                      		// 0x00E0 (0x0004) [0x0000000000000000]              
-	float                                              TimePosted;                                       		// 0x00E4 (0x0004) [0x0000000000000000]              
-	float                                              TimeSent;                                         		// 0x00E8 (0x0004) [0x0000000000000000]              
-	struct FFlag                                       DoNotSendRightNow;                                		// 0x00EC (0x0010) [0x0000000000000000]              
-	int                                                StopSendingAfterXReceptions;                      		// 0x00FC (0x0004) [0x0000000000000000]              
-	float                                              MaxDurationToSend;                                		// 0x0100 (0x0004) [0x0000000000000000]              
-	float                                              TimeBetweenSends;                                 		// 0x0104 (0x0004) [0x0000000000000000]              
+	class UGbxMessageDefinition*                       Definition;                                       		// 0x003C (0x0004) [0x0000000000000000]
+	struct FName                                       NameKey;                                          		// 0x0040 (0x0008) [0x0000000000000000]
+	class UObject*                                     Sender;                                           		// 0x0048 (0x0004) [0x0000000000000000]
+	class UObject*                                     Subject;                                          		// 0x004C (0x0004) [0x0000000000000000]
+	class UObject*                                     AdditionalData;                                   		// 0x0050 (0x0004) [0x0000000000000000]
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData;                                   		// 0x0054 (0x001C) [0x0000000000000000]
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData2;                                  		// 0x0070 (0x001C) [0x0000000000000000]
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData3;                                  		// 0x008C (0x001C) [0x0000000000000000]
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData4;                                  		// 0x00A8 (0x001C) [0x0000000000000000]
+	class UPawnAllegiance*                             SenderAllegiance;                                 		// 0x00C4 (0x0004) [0x0000000000000000]
+	class UPawnAllegiance*                             SubjectAllegiance;                                		// 0x00C8 (0x0004) [0x0000000000000000]
+	unsigned long                                      IntendedForAllies : 1;                            		// 0x00CC (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      IntendedForEnemies : 1;                           		// 0x00CC (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      HasLocation : 1;                                  		// 0x00CC (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      HasRadius : 1;                                    		// 0x00CC (0x0004) [0x0000000000000000] [0x00000008]
+	unsigned long                                      SendRepeatedly : 1;                               		// 0x00CC (0x0004) [0x0000000000000000] [0x00000010]
+	struct FVector                                     MessageLocation;                                  		// 0x00D0 (0x000C) [0x0000000000000000]
+	float                                              BroadcastRadius;                                  		// 0x00DC (0x0004) [0x0000000000000000]
+	float                                              DeliverTime;                                      		// 0x00E0 (0x0004) [0x0000000000000000]
+	float                                              TimePosted;                                       		// 0x00E4 (0x0004) [0x0000000000000000]
+	float                                              TimeSent;                                         		// 0x00E8 (0x0004) [0x0000000000000000]
+	struct FFlag                                       DoNotSendRightNow;                                		// 0x00EC (0x0010) [0x0000000000000000]
+	int                                                StopSendingAfterXReceptions;                      		// 0x00FC (0x0004) [0x0000000000000000]
+	float                                              MaxDurationToSend;                                		// 0x0100 (0x0004) [0x0000000000000000]
+	float                                              TimeBetweenSends;                                 		// 0x0104 (0x0004) [0x0000000000000000]
 	TArray< unsigned char >                            DupeCriteria;                                     		// 0x0108 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
 private:
@@ -5420,13 +5353,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3190 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3190];
 
 		return pClassPointer;
 	};
 
-	void InitializeFromDefinition ( class UGbxMessageDefinition* InDefinition, class UObject* RadiusContextSource, class UObject* InSender, class UObject* InSubject, class UPawnAllegiance* ManualSenderAllegiance );
+	void InitializeFromDefinition(class UGbxMessageDefinition* InDefinition, class UObject* RadiusContextSource, class UObject* InSender, class UObject* InSubject, class UPawnAllegiance* ManualSenderAllegiance);
 };
 
 UClass* UGbxMessage::pClassPointer = NULL;
@@ -5456,12 +5389,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3192 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3192];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGbxMessageDefinition::pClassPointer = NULL;
@@ -5473,7 +5405,7 @@ class UGbxMessageManager : public UObject
 public:
 	TArray< class UIGbxMessageListener* >              Listeners;                                        		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UGbxMessage* >                       MessagesToSend;                                   		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FFlag                                       SentMessagesRecently;                             		// 0x0054 (0x0010) [0x0000000000000000]              
+	struct FFlag                                       SentMessagesRecently;                             		// 0x0054 (0x0010) [0x0000000000000000]
 	float                                              DistributionInterval;                             		// 0x0064 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                MaxMessagesPerDistribution;                       		// 0x0068 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
@@ -5483,16 +5415,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3194 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3194];
 
 		return pClassPointer;
 	};
 
-	void RemoveListener ( class UIGbxMessageListener* InListener );
-	void AddListener ( class UIGbxMessageListener* InListener );
-	void PostMessage ( class UGbxMessage* Message );
-	class UGbxMessage* AllocateMessage ( );
+	void RemoveListener(class UIGbxMessageListener* InListener);
+	void AddListener(class UIGbxMessageListener* InListener);
+	void PostMessage(class UGbxMessage* Message);
+	class UGbxMessage* AllocateMessage();
 };
 
 UClass* UGbxMessageManager::pClassPointer = NULL;
@@ -5506,21 +5438,21 @@ public:
 	struct FPointer                                    VfTable_IINounAttributeProvider;                  		// 0x0688 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 	struct FPointer                                    VfTable_IIFlagProvider;                           		// 0x068C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 	struct FPointer                                    VfTable_IIAIInterface;                            		// 0x0690 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	unsigned long                                      bDisabledDueToPopulationIrrelevance : 1;          		// 0x0694 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bWantsToWalk : 1;                                 		// 0x0694 (0x0004) [0x0000000000000000] [0x00000002] 
-	class UGearboxRuleEngine*                          MyRuleEngine;                                     		// 0x0698 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bDisabledDueToPopulationIrrelevance : 1;          		// 0x0694 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bWantsToWalk : 1;                                 		// 0x0694 (0x0004) [0x0000000000000000] [0x00000002]
+	class UGearboxRuleEngine*                          MyRuleEngine;                                     		// 0x0698 (0x0004) [0x0000000000000000]
 	class UGearboxRuleEngine*                          RuleEngineTemplate;                               		// 0x069C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x06A0 (0x0004) [0x0000000000000000]              
-	unsigned char                                      FacingPolicy;                                     		// 0x06A4 (0x0001) [0x0000000000000000]              
-	unsigned char                                      AtLeastOneKnownThreat;                            		// 0x06A5 (0x0001) [0x0000000000000000]              
-	unsigned char                                      NewEnemyAwarenessReason;                          		// 0x06A6 (0x0001) [0x0000000000000000]              
+	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x06A0 (0x0004) [0x0000000000000000]
+	unsigned char                                      FacingPolicy;                                     		// 0x06A4 (0x0001) [0x0000000000000000]
+	unsigned char                                      AtLeastOneKnownThreat;                            		// 0x06A5 (0x0001) [0x0000000000000000]
+	unsigned char                                      NewEnemyAwarenessReason;                          		// 0x06A6 (0x0001) [0x0000000000000000]
 	unsigned char                                      DebugMoveFinishedReason;                          		// 0x06A7 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	class AActor*                                      FacingActor;                                      		// 0x06A8 (0x0004) [0x0000000000000000]              
-	struct FVector                                     FacingVector;                                     		// 0x06AC (0x000C) [0x0000000000000000]              
-	float                                              DotProductToFacingPolicy;                         		// 0x06B8 (0x0004) [0x0000000000000000]              
-	float                                              DotProductToCurrentEnemy;                         		// 0x06BC (0x0004) [0x0000000000000000]              
-	struct FName                                       MostRecentNewEnemyName;                           		// 0x06C0 (0x0008) [0x0000000000000000]              
-	struct FName                                       MostRecentNewEnemyArchName;                       		// 0x06C8 (0x0008) [0x0000000000000000]              
+	class AActor*                                      FacingActor;                                      		// 0x06A8 (0x0004) [0x0000000000000000]
+	struct FVector                                     FacingVector;                                     		// 0x06AC (0x000C) [0x0000000000000000]
+	float                                              DotProductToFacingPolicy;                         		// 0x06B8 (0x0004) [0x0000000000000000]
+	float                                              DotProductToCurrentEnemy;                         		// 0x06BC (0x0004) [0x0000000000000000]
+	struct FName                                       MostRecentNewEnemyName;                           		// 0x06C0 (0x0008) [0x0000000000000000]
+	struct FName                                       MostRecentNewEnemyArchName;                       		// 0x06C8 (0x0008) [0x0000000000000000]
 	class UAwarenessZoneCollectionDefinition*          DefaultAwarenessZoneCollection;                   		// 0x06D0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	class UAwarenessZoneCollectionDefinition*          CurrentAwarenessZoneCollection;                   		// 0x06D4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UAwarenessZoneDefinition*                    CurrentAwarenessZone;                             		// 0x06D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
@@ -5533,7 +5465,7 @@ public:
 	class UAITracker*                                  MyTracker;                                        		// 0x070C (0x0004) [0x0000000004400008]              ( CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline )
 	TArray< class UFlagDefinition* >                   DynamicFlagDefinitions;                           		// 0x0710 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< struct FDynamicFlagInstanceData >          DynamicFlags;                                     		// 0x071C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x3C ];                            		// 0x0728 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.GearboxMind.DynamicFlagDefLookup
+	unsigned char                                      UnknownData00[0x3C];                            		// 0x0728 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.GearboxMind.DynamicFlagDefLookup
 	class UAIComponent*                                AIComponent;                                      		// 0x0764 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
 
 private:
@@ -5542,54 +5474,54 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3196 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3196];
 
 		return pClassPointer;
 	};
 
-	void InitSequence ( class UActionSequence* NewSequence );
-	class UPawnAllegiance* GetAllegiance ( );
-	class UAIDefinition* GetAIDefinition ( );
-	class UAIComponent* GetAIComponent ( );
-	class UIAIInterface* GetAIParent ( );
-	struct FVector GetAILocation ( );
-	class AActor* GetAIActor ( );
-	bool CanTickAI ( );
-	bool InGodMode ( );
-	void PawnDied ( class APawn* inPawn );
-	void OnTargetPriority ( class UGearboxSeqAct_TargetPriority* inAction );
-	void Behavior_SetCanTarget ( unsigned char ChangeStatus );
-	bool GetNoTargetAllEnemies ( );
-	void SetNoTargetAllEnemies ( unsigned long bNoTarget );
-	void eventClearScriptedMoveTarget ( );
-	bool eventIsCloseEnoughToScriptedMoveTarget ( );
-	struct FVector eventGetWeaponFireLocation ( );
-	int ActivateEventRule ( struct FName RuleEventName );
-	void AddHitTargetRecord ( class AGearboxPawn* HitByPawn, struct FVector NewHitLocation, float flNewDamage );
-	void StopMovement ( );
-	void eventPossess ( class APawn* inPawn, unsigned long bVehicleTransition );
-	class UGearboxRuleEngine* GetGearboxRuleEngine ( );
-	class URuleEngine* GetRuleEngine ( );
-	void NotifyShotAtBy ( class AGearboxPawn* ShootingPawn );
-	bool FindCoverAndClaim ( struct FVector CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, unsigned long bEnactCoverChanges, struct FVector* OutDestination );
-	void UpdateRuleEngineKnowledge ( class UClass* aKDBClass );
-	bool GetCurrentTargetInfo ( class UMindTargetInfo** OutTargetRec );
-	bool IsSameAllegianceMind ( class AGearboxMind* aMind );
-	bool IsSameAllegiance ( class UObject* anObject );
-	bool IsNeutralMind ( class AGearboxMind* aMind );
-	bool IsNeutral ( class UObject* anObject );
-	bool IsFriendlyMind ( class AGearboxMind* aMind );
-	bool IsFriendly ( class UObject* anObject );
-	bool IsEnemyMind ( class AGearboxMind* aMind );
-	bool IsEnemy ( class UObject* anObject );
-	bool WantsToWalk ( );
-	void SetWantsToWalk ( unsigned long bInWantsToWalk );
-	unsigned char GetFacingPolicy ( );
-	void SetFacingPolicy ( unsigned char NewFacingPolicy, class AActor* NewFacingActor, struct FVector NewFacingVector );
-	class AActor* GetCurrentTarget ( );
-	void RemoveEnemyFromQueue ( class AActor* Target );
-	class UGearboxNavigationHandle* GetNavigationHandle ( );
+	void InitSequence(class UActionSequence* NewSequence);
+	class UPawnAllegiance* GetAllegiance();
+	class UAIDefinition* GetAIDefinition();
+	class UAIComponent* GetAIComponent();
+	class UIAIInterface* GetAIParent();
+	struct FVector GetAILocation();
+	class AActor* GetAIActor();
+	bool CanTickAI();
+	bool InGodMode();
+	void PawnDied(class APawn* inPawn);
+	void OnTargetPriority(class UGearboxSeqAct_TargetPriority* inAction);
+	void Behavior_SetCanTarget(unsigned char ChangeStatus);
+	bool GetNoTargetAllEnemies();
+	void SetNoTargetAllEnemies(unsigned long bNoTarget);
+	void eventClearScriptedMoveTarget();
+	bool eventIsCloseEnoughToScriptedMoveTarget();
+	struct FVector eventGetWeaponFireLocation();
+	int ActivateEventRule(struct FName RuleEventName);
+	void AddHitTargetRecord(class AGearboxPawn* HitByPawn, struct FVector NewHitLocation, float flNewDamage);
+	void StopMovement();
+	void eventPossess(class APawn* inPawn, unsigned long bVehicleTransition);
+	class UGearboxRuleEngine* GetGearboxRuleEngine();
+	class URuleEngine* GetRuleEngine();
+	void NotifyShotAtBy(class AGearboxPawn* ShootingPawn);
+	bool FindCoverAndClaim(struct FVector CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, unsigned long bEnactCoverChanges, struct FVector* OutDestination);
+	void UpdateRuleEngineKnowledge(class UClass* aKDBClass);
+	bool GetCurrentTargetInfo(class UMindTargetInfo** OutTargetRec);
+	bool IsSameAllegianceMind(class AGearboxMind* aMind);
+	bool IsSameAllegiance(class UObject* anObject);
+	bool IsNeutralMind(class AGearboxMind* aMind);
+	bool IsNeutral(class UObject* anObject);
+	bool IsFriendlyMind(class AGearboxMind* aMind);
+	bool IsFriendly(class UObject* anObject);
+	bool IsEnemyMind(class AGearboxMind* aMind);
+	bool IsEnemy(class UObject* anObject);
+	bool WantsToWalk();
+	void SetWantsToWalk(unsigned long bInWantsToWalk);
+	unsigned char GetFacingPolicy();
+	void SetFacingPolicy(unsigned char NewFacingPolicy, class AActor* NewFacingActor, struct FVector NewFacingVector);
+	class AActor* GetCurrentTarget();
+	void RemoveEnemyFromQueue(class AActor* Target);
+	class UGearboxNavigationHandle* GetNavigationHandle();
 };
 
 UClass* AGearboxMind::pClassPointer = NULL;
@@ -5606,12 +5538,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3198 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3198];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxAIMoveNodeRenderComponent::pClassPointer = NULL;
@@ -5646,61 +5577,61 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3200 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3200];
 
 		return pClassPointer;
 	};
 
-	bool IsChangingDirection ( );
-	bool IsMantlingOverCoverInProgress ( );
-	bool IsReturnFromPeekInProgress ( );
-	bool IsPeekTransitionInProgress ( );
-	bool IsPeekedUp ( unsigned long bTransitionCounts );
-	bool IsReturnFromLeanOutInProgress ( );
-	bool IsLeanOutTransitionInProgress ( );
-	bool IsLeanedOut ( unsigned long bTransitionCounts );
-	bool IsReturnFromPopUpInProgress ( );
-	bool IsPopUpTransitionInProgress ( );
-	bool IsPoppedUp ( unsigned long bTransitionCounts );
-	bool IsExecutingAnyTransition ( );
-	unsigned char GetDesiredState ( );
-	unsigned char GetCurrentTransition ( );
-	void OnMantleOverCoverAnimEnd ( );
-	void OnTransitionAnimEndEx ( );
-	void OnTransitionAnimEnd ( unsigned char Transition );
-	void OnDismountAnimEnd ( );
-	void OnMountAnimEnd ( );
-	bool MantleOverCover ( class AActor* CoverActor, int CoverSlotNdx );
-	bool ReturnToCover ( );
-	bool LeanOutForFiring ( unsigned long BlindFire );
-	bool PopUpForFiring ( unsigned long BlindFire );
-	bool Peek ( );
-	bool DetachFromCover ( );
-	bool DismountCover ( unsigned char DismountType );
-	bool ClaimAndMountCover ( class ACoverLink* TheCoverLink, int SlotNdx );
-	bool MountDesiredCover ( );
-	void ClearDesiredCover ( );
-	void GetCurrentCoverLocationAndRotation ( struct FVector* CoverLoc, struct FRotator* CoverRot );
-	void GetDesiredCoverLocationAndRotation ( struct FVector* CoverLoc, struct FRotator* CoverRot );
-	bool HasDesiredCover ( );
-	unsigned char GetLastCoverHeight ( );
-	unsigned char GetCurrentCoverHeight ( );
-	unsigned char GetDesiredCoverHeight ( );
-	bool WasCoveredFrom ( struct FVector ThreatLocation );
-	bool WillBeCoveredFrom ( struct FVector ThreatLocation );
-	bool IsCoveredFrom ( struct FVector ThreatLocation );
-	bool IsDismountInProgress ( );
-	bool IsMountInProgress ( );
-	bool WasMountedOnCover ( );
-	bool IsMountedOnCover ( );
-	bool IsUsingCover ( );
-	void OnCoverStateChanged ( );
-	void GetLastCover ( class AActor** OutCoverActor, int* OutSlotNdx );
-	void GetCurrentCover ( class AActor** OutCoverActor, int* OutSlotNdx );
-	void GetDesiredCover ( class AActor** OutCoverActor, int* OutSlotNdx );
-	bool FindCoverAndClaim ( class AGearboxMind* TheMind, struct FVector CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, unsigned long bEnactCoverChanges, struct FVector* OutDestination );
-	void Initialize ( class AGearboxPawn* P );
+	bool IsChangingDirection();
+	bool IsMantlingOverCoverInProgress();
+	bool IsReturnFromPeekInProgress();
+	bool IsPeekTransitionInProgress();
+	bool IsPeekedUp(unsigned long bTransitionCounts);
+	bool IsReturnFromLeanOutInProgress();
+	bool IsLeanOutTransitionInProgress();
+	bool IsLeanedOut(unsigned long bTransitionCounts);
+	bool IsReturnFromPopUpInProgress();
+	bool IsPopUpTransitionInProgress();
+	bool IsPoppedUp(unsigned long bTransitionCounts);
+	bool IsExecutingAnyTransition();
+	unsigned char GetDesiredState();
+	unsigned char GetCurrentTransition();
+	void OnMantleOverCoverAnimEnd();
+	void OnTransitionAnimEndEx();
+	void OnTransitionAnimEnd(unsigned char Transition);
+	void OnDismountAnimEnd();
+	void OnMountAnimEnd();
+	bool MantleOverCover(class AActor* CoverActor, int CoverSlotNdx);
+	bool ReturnToCover();
+	bool LeanOutForFiring(unsigned long BlindFire);
+	bool PopUpForFiring(unsigned long BlindFire);
+	bool Peek();
+	bool DetachFromCover();
+	bool DismountCover(unsigned char DismountType);
+	bool ClaimAndMountCover(class ACoverLink* TheCoverLink, int SlotNdx);
+	bool MountDesiredCover();
+	void ClearDesiredCover();
+	void GetCurrentCoverLocationAndRotation(struct FVector* CoverLoc, struct FRotator* CoverRot);
+	void GetDesiredCoverLocationAndRotation(struct FVector* CoverLoc, struct FRotator* CoverRot);
+	bool HasDesiredCover();
+	unsigned char GetLastCoverHeight();
+	unsigned char GetCurrentCoverHeight();
+	unsigned char GetDesiredCoverHeight();
+	bool WasCoveredFrom(struct FVector ThreatLocation);
+	bool WillBeCoveredFrom(struct FVector ThreatLocation);
+	bool IsCoveredFrom(struct FVector ThreatLocation);
+	bool IsDismountInProgress();
+	bool IsMountInProgress();
+	bool WasMountedOnCover();
+	bool IsMountedOnCover();
+	bool IsUsingCover();
+	void OnCoverStateChanged();
+	void GetLastCover(class AActor** OutCoverActor, int* OutSlotNdx);
+	void GetCurrentCover(class AActor** OutCoverActor, int* OutSlotNdx);
+	void GetDesiredCover(class AActor** OutCoverActor, int* OutSlotNdx);
+	bool FindCoverAndClaim(class AGearboxMind* TheMind, struct FVector CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, unsigned long bEnactCoverChanges, struct FVector* OutDestination);
+	void Initialize(class AGearboxPawn* P);
 };
 
 UClass* UGearboxCoverStateManager::pClassPointer = NULL;
@@ -5717,12 +5648,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3202 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3202];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxMindAttributeContextResolver::pClassPointer = NULL;
@@ -5760,29 +5690,29 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3204 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3204];
 
 		return pClassPointer;
 	};
 
-	void SetDesiredMovementSpeed ( unsigned char Speed );
-	void ClearAnchor ( );
-	bool GetNearestPositionOnNavMesh ( float Radius, struct FVector TestLoc, unsigned long bAnyHeight, struct FBasedPosition* NearestPos, struct FNavMeshPathParams* PolyUsableCheckParams, struct FGBXNavMeshPolyRef* NearestPoly );
-	bool GetNavMeshPolyForPoint ( struct FVector Point, struct FGBXNavMeshPolyRef* FoundPoly, struct FNavMeshPathParams* PolyUsableCheckParams );
-	bool IsDoingSpecialMove ( );
-	bool InFinalPoly ( struct FVector TestLoc );
-	bool NeedsRegularWalkingPhysics ( );
-	bool PopulatePathfindingParamCache ( );
-	bool TrySpecialMove ( struct FBasedPosition* MoveTarget );
-	void Finished ( );
-	bool IsGoalValid ( );
-	void MovePawnToGoal ( );
-	bool PathIsValid ( unsigned long bCheckAnchor, struct FPathFindData* Data );
-	bool IsFollowingPath ( );
-	bool ClearPath ( unsigned long bStopMovement, unsigned long bAllowDelayedClear );
-	bool FollowPath ( struct FPathFindData* Data );
-	bool CreatePathToLocation ( struct FVector DestLocation, struct FGBXNavMeshPolyRef DestPoly, unsigned long bAdjustStartForMotion, struct FPathFindData* PathData );
+	void SetDesiredMovementSpeed(unsigned char Speed);
+	void ClearAnchor();
+	bool GetNearestPositionOnNavMesh(float Radius, struct FVector TestLoc, unsigned long bAnyHeight, struct FBasedPosition* NearestPos, struct FNavMeshPathParams* PolyUsableCheckParams, struct FGBXNavMeshPolyRef* NearestPoly);
+	bool GetNavMeshPolyForPoint(struct FVector Point, struct FGBXNavMeshPolyRef* FoundPoly, struct FNavMeshPathParams* PolyUsableCheckParams);
+	bool IsDoingSpecialMove();
+	bool InFinalPoly(struct FVector TestLoc);
+	bool NeedsRegularWalkingPhysics();
+	bool PopulatePathfindingParamCache();
+	bool TrySpecialMove(struct FBasedPosition* MoveTarget);
+	void Finished();
+	bool IsGoalValid();
+	void MovePawnToGoal();
+	bool PathIsValid(unsigned long bCheckAnchor, struct FPathFindData* Data);
+	bool IsFollowingPath();
+	bool ClearPath(unsigned long bStopMovement, unsigned long bAllowDelayedClear);
+	bool FollowPath(struct FPathFindData* Data);
+	bool CreatePathToLocation(struct FVector DestLocation, struct FGBXNavMeshPolyRef DestPoly, unsigned long bAdjustStartForMotion, struct FPathFindData* PathData);
 };
 
 UClass* UGearboxNavigationHandle::pClassPointer = NULL;
@@ -5799,12 +5729,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3206 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3206];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UIFlagProvider::pClassPointer = NULL;
@@ -5821,12 +5750,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3208 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3208];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UIFlagProviderGroup::pClassPointer = NULL;
@@ -5843,18 +5771,18 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3210 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3210];
 
 		return pClassPointer;
 	};
 
-	bool WantsToStopListening ( );
-	class AActor* GetActor ( );
-	struct FVector GetListenerLocation ( );
-	class UPawnAllegiance* GetAllegiance ( );
-	bool ReceiveMessage ( class UGbxMessage* Message );
-	bool CaresAboutMessage ( class UGbxMessage* Message );
+	bool WantsToStopListening();
+	class AActor* GetActor();
+	struct FVector GetListenerLocation();
+	class UPawnAllegiance* GetAllegiance();
+	bool ReceiveMessage(class UGbxMessage* Message);
+	bool CaresAboutMessage(class UGbxMessage* Message);
 };
 
 UClass* UIGbxMessageListener::pClassPointer = NULL;
@@ -5871,13 +5799,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3212 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3212];
 
 		return pClassPointer;
 	};
 
-	class URuleEngine* GetRuleEngine ( );
+	class URuleEngine* GetRuleEngine();
 };
 
 UClass* UIRuleEngineOwner::pClassPointer = NULL;
@@ -5887,15 +5815,15 @@ UClass* UIRuleEngineOwner::pClassPointer = NULL;
 class UKnowledgeRecord : public UObject
 {
 public:
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x003C (0x0004) [0x0000000000000000]              
+	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x003C (0x0004) [0x0000000000000000]
 	struct FName                                       TheName;                                          		// 0x0040 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned char                                      KCategory;                                        		// 0x0048 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned char                                      EvalType;                                         		// 0x0049 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned char                                      Active;                                           		// 0x004A (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      Marked;                                           		// 0x004B (0x0001) [0x0000000000000000]              
+	unsigned char                                      Marked;                                           		// 0x004B (0x0001) [0x0000000000000000]
 	float                                              Frequency;                                        		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              NextUpdateTime;                                   		// 0x0050 (0x0004) [0x0000000000000000]              
-	int                                                FlagIndex;                                        		// 0x0054 (0x0004) [0x0000000000000000]              
+	float                                              NextUpdateTime;                                   		// 0x0050 (0x0004) [0x0000000000000000]
+	int                                                FlagIndex;                                        		// 0x0054 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -5903,13 +5831,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3214 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3214];
 
 		return pClassPointer;
 	};
 
-	void eventRecordEvalCallback ( class URuleEngine* EvalRuleEngine );
+	void eventRecordEvalCallback(class URuleEngine* EvalRuleEngine);
 };
 
 UClass* UKnowledgeRecord::pClassPointer = NULL;
@@ -5926,12 +5854,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3216 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3216];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* ULocationFilter::pClassPointer = NULL;
@@ -5948,12 +5875,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3218 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3218];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* ULocationFilter_MustHaveLOS::pClassPointer = NULL;
@@ -5970,12 +5896,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3220 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3220];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* ULocationFilter_MustNotHaveLOS::pClassPointer = NULL;
@@ -5985,24 +5910,24 @@ UClass* ULocationFilter_MustNotHaveLOS::pClassPointer = NULL;
 class UMindTargetInfo : public UObject
 {
 public:
-	class AActor*                                      Target;                                           		// 0x003C (0x0004) [0x0000000000000000]              
-	float                                              Distance;                                         		// 0x0040 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bShouldRemove : 1;                                		// 0x0044 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bCanSeeOrHearTarget : 1;                          		// 0x0044 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned char                                      bCanFireAt;                                       		// 0x0048 (0x0001) [0x0000000000000000]              
-	float                                              Priority;                                         		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              OnePriority;                                      		// 0x0050 (0x0004) [0x0000000000000000]              
-	float                                              TargetExposureToMe;                               		// 0x0054 (0x0004) [0x0000000000000000]              
-	float                                              MyExposureToTarget;                               		// 0x0058 (0x0004) [0x0000000000000000]              
+	class AActor*                                      Target;                                           		// 0x003C (0x0004) [0x0000000000000000]
+	float                                              Distance;                                         		// 0x0040 (0x0004) [0x0000000000000000]
+	unsigned long                                      bShouldRemove : 1;                                		// 0x0044 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bCanSeeOrHearTarget : 1;                          		// 0x0044 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned char                                      bCanFireAt;                                       		// 0x0048 (0x0001) [0x0000000000000000]
+	float                                              Priority;                                         		// 0x004C (0x0004) [0x0000000000000000]
+	float                                              OnePriority;                                      		// 0x0050 (0x0004) [0x0000000000000000]
+	float                                              TargetExposureToMe;                               		// 0x0054 (0x0004) [0x0000000000000000]
+	float                                              MyExposureToTarget;                               		// 0x0058 (0x0004) [0x0000000000000000]
 	TArray< struct FHitTargetRecord >                  HitTargetHistory;                                 		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FPriorityDebugStruct >              PriorityDebugRecords;                             		// 0x0068 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FFlag                                       IAmConsciousOfTarget;                             		// 0x0074 (0x0010) [0x0000000000000000]              
-	float                                              IAmConsciousTime;                                 		// 0x0084 (0x0004) [0x0000000000000000]              
-	struct FFlag                                       TargetHasShotAtMeRecently;                        		// 0x0088 (0x0010) [0x0000000000000000]              
-	struct FFlag                                       TargetOccludedBySmoke;                            		// 0x0098 (0x0010) [0x0000000000000000]              
-	struct FFlag                                       IHaveSeenOrKnownThisTargetBefore;                 		// 0x00A8 (0x0010) [0x0000000000000000]              
-	struct FSmartVector                                LastVisibleOrAudibleLocation;                     		// 0x00B8 (0x001C) [0x0000000000000000]              
-	float                                              BonusPriority;                                    		// 0x00D4 (0x0004) [0x0000000000000000]              
+	struct FFlag                                       IAmConsciousOfTarget;                             		// 0x0074 (0x0010) [0x0000000000000000]
+	float                                              IAmConsciousTime;                                 		// 0x0084 (0x0004) [0x0000000000000000]
+	struct FFlag                                       TargetHasShotAtMeRecently;                        		// 0x0088 (0x0010) [0x0000000000000000]
+	struct FFlag                                       TargetOccludedBySmoke;                            		// 0x0098 (0x0010) [0x0000000000000000]
+	struct FFlag                                       IHaveSeenOrKnownThisTargetBefore;                 		// 0x00A8 (0x0010) [0x0000000000000000]
+	struct FSmartVector                                LastVisibleOrAudibleLocation;                     		// 0x00B8 (0x001C) [0x0000000000000000]
+	float                                              BonusPriority;                                    		// 0x00D4 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -6010,14 +5935,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3222 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3222];
 
 		return pClassPointer;
 	};
 
-	float GetAverageHitTime ( );
-	void AddHitTargetRecord ( struct FVector vecNewHitLoc, float flNewDamage );
+	float GetAverageHitTime();
+	void AddHitTargetRecord(struct FVector vecNewHitLoc, float flNewDamage);
 };
 
 UClass* UMindTargetInfo::pClassPointer = NULL;
@@ -6028,15 +5953,15 @@ class URule : public UObject
 {
 public:
 	class URuleEngine*                                 MyRuleEngine;                                     		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                Priority;                                         		// 0x0040 (0x0004) [0x0000000000000000]              
-	int                                                BasePriority;                                     		// 0x0044 (0x0004) [0x0000000000000000]              
+	int                                                Priority;                                         		// 0x0040 (0x0004) [0x0000000000000000]
+	int                                                BasePriority;                                     		// 0x0044 (0x0004) [0x0000000000000000]
 	class UActionSequence*                             StartingSequenceTemplate;                         		// 0x0048 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
 	unsigned long                                      RuleEnabled : 1;                                  		// 0x004C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 	unsigned long                                      StopWhenStateCodeRunsOut : 1;                     		// 0x004C (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
 	unsigned long                                      AlwaysExecute : 1;                                		// 0x004C (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
 	unsigned long                                      bInitialized : 1;                                 		// 0x004C (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
 	unsigned long                                      bIsRunning : 1;                                   		// 0x004C (0x0004) [0x0000000000002000] [0x00000010] ( CPF_Transient )
-	unsigned long                                      bCanRunMultipleInstances : 1;                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000020] 
+	unsigned long                                      bCanRunMultipleInstances : 1;                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000020]
 	unsigned long                                      bIsTransferable : 1;                              		// 0x004C (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
 	unsigned long                                      bRestartable : 1;                                 		// 0x004C (0x0004) [0x0000000000000001] [0x00000080] ( CPF_Edit )
 	unsigned long                                      bBlockRuleSetChange : 1;                          		// 0x004C (0x0004) [0x0000000000000003] [0x00000100] ( CPF_Edit | CPF_Const )
@@ -6055,8 +5980,8 @@ public:
 	class URuleEventDef*                               MyRuleEventDef;                                   		// 0x00B0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	TArray< class UClass* >                            AssociatedKnowledgeRecords;                       		// 0x00B4 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 	struct FString                                     FlagDebugString;                                  		// 0x00C0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       RuleName;                                         		// 0x00CC (0x0008) [0x0000000000000000]              
-	class UObject*                                     OtherEventParticipantObject;                      		// 0x00D4 (0x0004) [0x0000000000000000]              
+	struct FName                                       RuleName;                                         		// 0x00CC (0x0008) [0x0000000000000000]
+	class UObject*                                     OtherEventParticipantObject;                      		// 0x00D4 (0x0004) [0x0000000000000000]
 	struct FFlag                                       IsTimingRestrictedNow;                            		// 0x00D8 (0x0010) [0x0000000000002000]              ( CPF_Transient )
 	int                                                NumExecutions;                                    		// 0x00E8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FString                                     RuleEventDefPath;                                 		// 0x00EC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
@@ -6068,15 +5993,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3224 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3224];
 
 		return pClassPointer;
 	};
 
-	struct FString GetRuleName ( );
-	struct FName GetRuleFName ( );
-	class UObject* GetOtherEventParticipant ( );
+	struct FString GetRuleName();
+	struct FName GetRuleFName();
+	class UObject* GetOtherEventParticipant();
 };
 
 UClass* URule::pClassPointer = NULL;
@@ -6096,12 +6021,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3226 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3226];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URuleContainer::pClassPointer = NULL;
@@ -6118,12 +6042,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3228 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3228];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URulePlaceholder::pClassPointer = NULL;
@@ -6134,41 +6057,41 @@ class URuleEngine : public UObject
 {
 public:
 	struct FPointer                                    VfTable_IIFlagProvider;                           		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x0040 (0x0004) [0x0000000000000000]              
-	class AActor*                                      ActorProxy;                                       		// 0x0044 (0x0004) [0x0000000000000000]              
+	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x0040 (0x0004) [0x0000000000000000]
+	class AActor*                                      ActorProxy;                                       		// 0x0044 (0x0004) [0x0000000000000000]
 	float                                              ThinkRate;                                        		// 0x0048 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              ElapsedTime;                                      		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              TickRate;                                         		// 0x0050 (0x0004) [0x0000000000000000]              
+	float                                              ElapsedTime;                                      		// 0x004C (0x0004) [0x0000000000000000]
+	float                                              TickRate;                                         		// 0x0050 (0x0004) [0x0000000000000000]
 	class URuleSet*                                    RuleSetTemplate;                                  		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class URuleSet*                                    CurRuleSet;                                       		// 0x0058 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URuleSet*                                    PendingRuleSetTemplate;                           		// 0x005C (0x0004) [0x0000000000000000]              
+	class URuleSet*                                    PendingRuleSetTemplate;                           		// 0x005C (0x0004) [0x0000000000000000]
 	TArray< struct FFlagDefinitionInitialization >     FlagInitialization;                               		// 0x0060 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	TArray< class UFlagDefinition* >                   DynamicFlagDefinitions;                           		// 0x006C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< struct FDynamicFlagInstanceData >          DynamicFlags;                                     		// 0x0078 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x3C ];                            		// 0x0084 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.RuleEngine.DynamicFlagDefLookup
+	unsigned char                                      UnknownData00[0x3C];                            		// 0x0084 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.RuleEngine.DynamicFlagDefLookup
 	TArray< class UKnowledgeRecord* >                  KnowledgeDB;                                      		// 0x00C0 (0x000C) [0x0000000004400000]              ( CPF_NeedCtorLink | CPF_EditInline )
 	TArray< class URule* >                             RunningRules;                                     		// 0x00CC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UClass* >                            ResourcesInUse;                                   		// 0x00D8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bRulesEnabled : 1;                                		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bHasDebugFocus : 1;                               		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bVerboseLoggingEnabled : 1;                       		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000004] 
-	unsigned long                                      bInitialized : 1;                                 		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000008] 
+	unsigned long                                      bRulesEnabled : 1;                                		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bHasDebugFocus : 1;                               		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000002]
+	unsigned long                                      bVerboseLoggingEnabled : 1;                       		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000004]
+	unsigned long                                      bInitialized : 1;                                 		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000008]
 	unsigned long                                      DoLoadBalancing : 1;                              		// 0x00E4 (0x0004) [0x0000000000000002] [0x00000010] ( CPF_Const )
-	unsigned long                                      bForceFullUpdate : 1;                             		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000020] 
+	unsigned long                                      bForceFullUpdate : 1;                             		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000020]
 	unsigned long                                      OnlyIterateRulesForEvents : 1;                    		// 0x00E4 (0x0004) [0x0000000000000003] [0x00000040] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bEventsCausedKnowledgeRecordUpdate : 1;           		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000080] 
+	unsigned long                                      bEventsCausedKnowledgeRecordUpdate : 1;           		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000080]
 	unsigned long                                      EnableSnapshots : 1;                              		// 0x00E4 (0x0004) [0x0000000000000002] [0x00000100] ( CPF_Const )
-	class UAITracker*                                  MyTracker;                                        		// 0x00E8 (0x0004) [0x0000000000000000]              
+	class UAITracker*                                  MyTracker;                                        		// 0x00E8 (0x0004) [0x0000000000000000]
 	TArray< class URuleSet* >                          RuleSetStack;                                     		// 0x00EC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FEventRecord >                      QueuedRuleEvents;                                 		// 0x00F8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              LastFullUpdateTime;                               		// 0x0104 (0x0004) [0x0000000000000000]              
+	float                                              LastFullUpdateTime;                               		// 0x0104 (0x0004) [0x0000000000000000]
 	int                                                MaxRuleSetPasses;                                 		// 0x0108 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< class UClass* >                            KRCache;                                          		// 0x010C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	float                                              LastTargetIteratorTime;                           		// 0x0118 (0x0004) [0x0000000000000000]              
-	float                                              LastTargetIteratorRuleEvalDiffTime;               		// 0x011C (0x0004) [0x0000000000000000]              
-	float                                              AverageTargetIteratorRuleEvalDiffTime;            		// 0x0120 (0x0004) [0x0000000000000000]              
-	float                                              WorstTargetIteratorRuleEvalDiffTime;              		// 0x0124 (0x0004) [0x0000000000000000]              
-	float                                              ActivateTime;                                     		// 0x0128 (0x0004) [0x0000000000000000]              
+	float                                              LastTargetIteratorTime;                           		// 0x0118 (0x0004) [0x0000000000000000]
+	float                                              LastTargetIteratorRuleEvalDiffTime;               		// 0x011C (0x0004) [0x0000000000000000]
+	float                                              AverageTargetIteratorRuleEvalDiffTime;            		// 0x0120 (0x0004) [0x0000000000000000]
+	float                                              WorstTargetIteratorRuleEvalDiffTime;              		// 0x0124 (0x0004) [0x0000000000000000]
+	float                                              ActivateTime;                                     		// 0x0128 (0x0004) [0x0000000000000000]
 	TArray< struct FRuleSetReference >                 RuleSetReferences;                                		// 0x012C (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
 
 private:
@@ -6177,30 +6100,30 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3230 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3230];
 
 		return pClassPointer;
 	};
 
-	void ApplyFlagInitializationData ( TArray< struct FFlagDefinitionInitialization >* FlagsToSet );
-	bool IsResourceInUse ( class UClass* TestResourceClass );
-	class UObject* GetContextSource ( );
-	bool IsRunningRuleWhichBlocksRuleSetChange ( );
-	bool GetDynamicFlagValue ( class UFlagDefinition* FlagDefinition );
-	void SetDynamicFlagDefTrueTimed ( class UFlagDefinition* FlagDefinition, float Time );
-	void SetDynamicFlagDefValue ( class UFlagDefinition* FlagDefinition, unsigned long Value );
-	class URuleSet* GetRuleSetFromReference ( struct FName ReferenceName );
-	void ClearRuleSetStack ( );
-	void PopRuleSetSwitch ( );
-	bool PushRuleSetSwitch ( class URuleSet* NewRuleSetTemplate );
-	void SetRuleSet ( class URuleSet* NewRuleSetTemplate );
-	void SwitchActiveRuleSet ( class URuleSet* NewRuleSetTemplate );
-	void UpdateKnowledge ( class UClass* pKnowledgeRecordType );
-	int ActivateEventRuleEx ( struct FName EventDefName, TArray< class AGearboxPawn* > Participants, class AActor* Subject, unsigned long CastSizeMustMatch );
-	void CleanUpRuleEngineData ( );
-	int ActivateEventRule ( struct FName EventDefName, class AGearboxPawn* Instigator, class AActor* Subject, unsigned long CastSizeMustMatch );
-	int ActivateEventRuleByDefinition ( class URuleEventDef* EventDefinition, class UObject* OtherEventParticipantObject );
+	void ApplyFlagInitializationData(TArray< struct FFlagDefinitionInitialization >* FlagsToSet);
+	bool IsResourceInUse(class UClass* TestResourceClass);
+	class UObject* GetContextSource();
+	bool IsRunningRuleWhichBlocksRuleSetChange();
+	bool GetDynamicFlagValue(class UFlagDefinition* FlagDefinition);
+	void SetDynamicFlagDefTrueTimed(class UFlagDefinition* FlagDefinition, float Time);
+	void SetDynamicFlagDefValue(class UFlagDefinition* FlagDefinition, unsigned long Value);
+	class URuleSet* GetRuleSetFromReference(struct FName ReferenceName);
+	void ClearRuleSetStack();
+	void PopRuleSetSwitch();
+	bool PushRuleSetSwitch(class URuleSet* NewRuleSetTemplate);
+	void SetRuleSet(class URuleSet* NewRuleSetTemplate);
+	void SwitchActiveRuleSet(class URuleSet* NewRuleSetTemplate);
+	void UpdateKnowledge(class UClass* pKnowledgeRecordType);
+	int ActivateEventRuleEx(struct FName EventDefName, TArray< class AGearboxPawn* > Participants, class AActor* Subject, unsigned long CastSizeMustMatch);
+	void CleanUpRuleEngineData();
+	int ActivateEventRule(struct FName EventDefName, class AGearboxPawn* Instigator, class AActor* Subject, unsigned long CastSizeMustMatch);
+	int ActivateEventRuleByDefinition(class URuleEventDef* EventDefinition, class UObject* OtherEventParticipantObject);
 };
 
 UClass* URuleEngine::pClassPointer = NULL;
@@ -6210,8 +6133,8 @@ UClass* URuleEngine::pClassPointer = NULL;
 class UGearboxRuleEngine : public URuleEngine
 {
 public:
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x0138 (0x0004) [0x0000000000000000]              
-	class AGearboxMind*                                MyGearboxMind;                                    		// 0x013C (0x0004) [0x0000000000000000]              
+	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x0138 (0x0004) [0x0000000000000000]
+	class AGearboxMind*                                MyGearboxMind;                                    		// 0x013C (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -6219,14 +6142,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3232 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3232];
 
 		return pClassPointer;
 	};
 
-	void Initialize ( class AGearboxPawn* NewGearboxPawn, class AGearboxMind* NewMind, class UGearboxAIFactory* NewAIFactory );
-	class UObject* GetContextSource ( );
+	void Initialize(class AGearboxPawn* NewGearboxPawn, class AGearboxMind* NewMind, class UGearboxAIFactory* NewAIFactory);
+	class UObject* GetContextSource();
 };
 
 UClass* UGearboxRuleEngine::pClassPointer = NULL;
@@ -6245,12 +6168,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3234 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3234];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URuleEventDef::pClassPointer = NULL;
@@ -6260,13 +6182,13 @@ UClass* URuleEventDef::pClassPointer = NULL;
 class URuleSet : public UObject
 {
 public:
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x003C (0x0004) [0x0000000000000000]              
+	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x003C (0x0004) [0x0000000000000000]
 	TArray< class URule* >                             RuleTemplateRefs;                                 		// 0x0040 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< class URule* >                             Rules;                                            		// 0x004C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< class URulePlaceholder* >                  ToDiscard;                                        		// 0x0058 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bInitialized : 1;                                 		// 0x0064 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bNewRuleEvaluationEnabled : 1;                    		// 0x0064 (0x0004) [0x0000000000000000] [0x00000002] 
-	struct FName                                       RuleSetName;                                      		// 0x0068 (0x0008) [0x0000000000000000]              
+	unsigned long                                      bInitialized : 1;                                 		// 0x0064 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bNewRuleEvaluationEnabled : 1;                    		// 0x0064 (0x0004) [0x0000000000000000] [0x00000002]
+	struct FName                                       RuleSetName;                                      		// 0x0068 (0x0008) [0x0000000000000000]
 	TArray< struct FFlagDefinitionInitialization >     FlagsOnEntry;                                     		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< struct FFlagDefinitionInitialization >     FlagsOnExit;                                      		// 0x007C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< class URuleSet* >                          HACK_RuleSetsAllowedToFollow;                     		// 0x0088 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
@@ -6277,12 +6199,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3236 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3236];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URuleSet::pClassPointer = NULL;
@@ -6302,12 +6223,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3238 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3238];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UStateRuleSet::pClassPointer = NULL;
@@ -6324,12 +6244,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3240 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3240];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection::pClassPointer = NULL;
@@ -6346,12 +6265,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3242 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3242];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_Any::pClassPointer = NULL;
@@ -6368,12 +6286,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3244 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3244];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_AwayFromMe::pClassPointer = NULL;
@@ -6390,12 +6307,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3246 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3246];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_AwayFromTarget::pClassPointer = NULL;
@@ -6412,12 +6328,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3248 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3248];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_MyFacingDirection::pClassPointer = NULL;
@@ -6434,12 +6349,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3250 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3250];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_OppositeMyFacingDirection::pClassPointer = NULL;
@@ -6456,12 +6370,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3252 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3252];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_OppositeTargetsFacingDirection::pClassPointer = NULL;
@@ -6478,12 +6391,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3254 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3254];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_RandomLeftOrRight::pClassPointer = NULL;
@@ -6500,12 +6412,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3256 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3256];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_TargetsFacingDirection::pClassPointer = NULL;
@@ -6522,12 +6433,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3258 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3258];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_ToMyLeft::pClassPointer = NULL;
@@ -6544,12 +6454,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3260 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3260];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_ToMyRight::pClassPointer = NULL;
@@ -6566,12 +6475,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3262 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3262];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_TowardMe::pClassPointer = NULL;
@@ -6588,12 +6496,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3264 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3264];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchDirection_TowardTarget::pClassPointer = NULL;
@@ -6610,12 +6517,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3266 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3266];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchOrigin::pClassPointer = NULL;
@@ -6632,12 +6538,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3268 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3268];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchOrigin_CurrentLocation::pClassPointer = NULL;
@@ -6654,12 +6559,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3270 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3270];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchOrigin_ScriptedMoveTarget::pClassPointer = NULL;
@@ -6676,12 +6580,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3272 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3272];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USearchOrigin_TargetLocation::pClassPointer = NULL;
@@ -6691,22 +6594,22 @@ UClass* USearchOrigin_TargetLocation::pClassPointer = NULL;
 class USnapshotRecord : public USnapshotInterface
 {
 public:
-	struct FName                                       MyName;                                           		// 0x0040 (0x0008) [0x0000000000000000]              
-	struct FName                                       RuleSet;                                          		// 0x0048 (0x0008) [0x0000000000000000]              
+	struct FName                                       MyName;                                           		// 0x0040 (0x0008) [0x0000000000000000]
+	struct FName                                       RuleSet;                                          		// 0x0048 (0x0008) [0x0000000000000000]
 	TArray< struct FRuleInfo >                         CurrentRules;                                     		// 0x0050 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FRuleInfo                                   ContainedRules[ 0x2D ];                           		// 0x005C (0x0BF4) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                SelectedRuleIdx;                                  		// 0x0C50 (0x0004) [0x0000000000000000]              
-	int                                                SelectedSubRuleIdx;                               		// 0x0C54 (0x0004) [0x0000000000000000]              
+	struct FRuleInfo                                   ContainedRules[0x2D];                           		// 0x005C (0x0BF4) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	int                                                SelectedRuleIdx;                                  		// 0x0C50 (0x0004) [0x0000000000000000]
+	int                                                SelectedSubRuleIdx;                               		// 0x0C54 (0x0004) [0x0000000000000000]
 	TArray< struct FName >                             ResourcesInUse;                                   		// 0x0C58 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FName >                             Flags;                                            		// 0x0C64 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     Location;                                         		// 0x0C70 (0x000C) [0x0000000000000000]              
-	struct FVector                                     Velocity;                                         		// 0x0C7C (0x000C) [0x0000000000000000]              
-	struct FRotator                                    Rotation;                                         		// 0x0C88 (0x000C) [0x0000000000000000]              
-	struct FName                                       RuleAffected;                                     		// 0x0C94 (0x0008) [0x0000000000000000]              
-	struct FName                                       Rule2Affected;                                    		// 0x0C9C (0x0008) [0x0000000000000000]              
-	struct FName                                       SequenceAffected;                                 		// 0x0CA4 (0x0008) [0x0000000000000000]              
-	struct FName                                       Sequence2Affected;                                		// 0x0CAC (0x0008) [0x0000000000000000]              
-	unsigned char                                      Event;                                            		// 0x0CB4 (0x0001) [0x0000000000000000]              
+	struct FVector                                     Location;                                         		// 0x0C70 (0x000C) [0x0000000000000000]
+	struct FVector                                     Velocity;                                         		// 0x0C7C (0x000C) [0x0000000000000000]
+	struct FRotator                                    Rotation;                                         		// 0x0C88 (0x000C) [0x0000000000000000]
+	struct FName                                       RuleAffected;                                     		// 0x0C94 (0x0008) [0x0000000000000000]
+	struct FName                                       Rule2Affected;                                    		// 0x0C9C (0x0008) [0x0000000000000000]
+	struct FName                                       SequenceAffected;                                 		// 0x0CA4 (0x0008) [0x0000000000000000]
+	struct FName                                       Sequence2Affected;                                		// 0x0CAC (0x0008) [0x0000000000000000]
+	unsigned char                                      Event;                                            		// 0x0CB4 (0x0001) [0x0000000000000000]
 	struct FName                                       RuleStartName;                                    		// 0x0CB8 (0x0008) [0x0000000000000002]              ( CPF_Const )
 	struct FName                                       RuleEndName;                                      		// 0x0CC0 (0x0008) [0x0000000000000002]              ( CPF_Const )
 	struct FName                                       RuleInterruptName;                                		// 0x0CC8 (0x0008) [0x0000000000000002]              ( CPF_Const )
@@ -6726,12 +6629,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3274 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3274];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USnapshotRecord::pClassPointer = NULL;
@@ -6752,43 +6654,43 @@ public:
 	struct FColor                                      PotentialCoverColor;                              		// 0x0D20 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	struct FColor                                      StandardCoverColor;                               		// 0x0D24 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	class UTexture2D*                                  AIDebugTexture;                                   		// 0x0D28 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       MyPawnName;                                       		// 0x0D2C (0x0008) [0x0000000000000000]              
-	struct FName                                       MyArchetypeName;                                  		// 0x0D34 (0x0008) [0x0000000000000000]              
-	float                                              CurrentHealth;                                    		// 0x0D3C (0x0004) [0x0000000000000000]              
-	float                                              MaxHealth;                                        		// 0x0D40 (0x0004) [0x0000000000000000]              
-	float                                              DistanceToBestTarget;                             		// 0x0D44 (0x0004) [0x0000000000000000]              
+	struct FName                                       MyPawnName;                                       		// 0x0D2C (0x0008) [0x0000000000000000]
+	struct FName                                       MyArchetypeName;                                  		// 0x0D34 (0x0008) [0x0000000000000000]
+	float                                              CurrentHealth;                                    		// 0x0D3C (0x0004) [0x0000000000000000]
+	float                                              MaxHealth;                                        		// 0x0D40 (0x0004) [0x0000000000000000]
+	float                                              DistanceToBestTarget;                             		// 0x0D44 (0x0004) [0x0000000000000000]
 	TArray< struct FAwarenessInfo >                    AwarenessZones;                                   		// 0x0D48 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       AwarenessCollectionName;                          		// 0x0D54 (0x0008) [0x0000000000000000]              
-	class AActor*                                      BestTarget;                                       		// 0x0D5C (0x0004) [0x0000000000000000]              
+	struct FName                                       AwarenessCollectionName;                          		// 0x0D54 (0x0008) [0x0000000000000000]
+	class AActor*                                      BestTarget;                                       		// 0x0D5C (0x0004) [0x0000000000000000]
 	TArray< struct FLocationInfo >                     TargetLocs;                                       		// 0x0D60 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FLastVisibleInfo >                  LastVisibleTargetLocs;                            		// 0x0D6C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       AnimTree;                                         		// 0x0D78 (0x0008) [0x0000000000000000]              
+	struct FName                                       AnimTree;                                         		// 0x0D78 (0x0008) [0x0000000000000000]
 	TArray< struct FBoneAtom >                         Bones;                                            		// 0x0D80 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FLocationInfo >                     ForgottenTargets;                                 		// 0x0D8C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       NewEnemyName;                                     		// 0x0D98 (0x0008) [0x0000000000000000]              
-	struct FName                                       NewEnemyArchName;                                 		// 0x0DA0 (0x0008) [0x0000000000000000]              
-	unsigned char                                      NewEnemyAwarenessReason;                          		// 0x0DA8 (0x0001) [0x0000000000000000]              
-	unsigned char                                      CurrentMoveSpeed;                                 		// 0x0DA9 (0x0001) [0x0000000000000000]              
-	unsigned char                                      MaxDesiredMoveSpeed;                              		// 0x0DAA (0x0001) [0x0000000000000000]              
-	unsigned char                                      ReasonForMovementFinish;                          		// 0x0DAB (0x0001) [0x0000000000000000]              
+	struct FName                                       NewEnemyName;                                     		// 0x0D98 (0x0008) [0x0000000000000000]
+	struct FName                                       NewEnemyArchName;                                 		// 0x0DA0 (0x0008) [0x0000000000000000]
+	unsigned char                                      NewEnemyAwarenessReason;                          		// 0x0DA8 (0x0001) [0x0000000000000000]
+	unsigned char                                      CurrentMoveSpeed;                                 		// 0x0DA9 (0x0001) [0x0000000000000000]
+	unsigned char                                      MaxDesiredMoveSpeed;                              		// 0x0DAA (0x0001) [0x0000000000000000]
+	unsigned char                                      ReasonForMovementFinish;                          		// 0x0DAB (0x0001) [0x0000000000000000]
 	TArray< struct FDebugExposure >                    Exposure;                                         		// 0x0DAC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class USkeletalMesh*                               DummyMesh;                                        		// 0x0DB8 (0x0004) [0x0000000000000000]              
-	int                                                DummyMesh_LOD;                                    		// 0x0DBC (0x0004) [0x0000000000000000]              
+	class USkeletalMesh*                               DummyMesh;                                        		// 0x0DB8 (0x0004) [0x0000000000000000]
+	int                                                DummyMesh_LOD;                                    		// 0x0DBC (0x0004) [0x0000000000000000]
 	TArray< struct FViewConeInfo >                     TargetViewCones;                                  		// 0x0DC0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     PawnLocalDestination;                             		// 0x0DCC (0x000C) [0x0000000000000000]              
+	struct FVector                                     PawnLocalDestination;                             		// 0x0DCC (0x000C) [0x0000000000000000]
 	TArray< struct FVector >                           FailedMoveSpots;                                  		// 0x0DD8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FVector >                           RouteCache;                                       		// 0x0DE4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FVector >                           OriginalRouteCache;                               		// 0x0DF0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FSmartVector                                DesiredCoverLocation;                             		// 0x0DFC (0x001C) [0x0000000000000000]              
-	struct FSmartVector                                CurrentCoverLocation;                             		// 0x0E18 (0x001C) [0x0000000000000000]              
-	struct FSmartVector                                ScriptedMoveTargetLocation;                       		// 0x0E34 (0x001C) [0x0000000000000000]              
-	float                                              CoverSearchInnerRadius;                           		// 0x0E50 (0x0004) [0x0000000000000000]              
-	float                                              CoverSearchOuterRadius;                           		// 0x0E54 (0x0004) [0x0000000000000000]              
-	float                                              CoverSearchAngle;                                 		// 0x0E58 (0x0004) [0x0000000000000000]              
-	struct FSmartVector                                CoverSearchOrigin;                                		// 0x0E5C (0x001C) [0x0000000000000000]              
-	struct FVector                                     CoverSearchDirection;                             		// 0x0E78 (0x000C) [0x0000000000000000]              
+	struct FSmartVector                                DesiredCoverLocation;                             		// 0x0DFC (0x001C) [0x0000000000000000]
+	struct FSmartVector                                CurrentCoverLocation;                             		// 0x0E18 (0x001C) [0x0000000000000000]
+	struct FSmartVector                                ScriptedMoveTargetLocation;                       		// 0x0E34 (0x001C) [0x0000000000000000]
+	float                                              CoverSearchInnerRadius;                           		// 0x0E50 (0x0004) [0x0000000000000000]
+	float                                              CoverSearchOuterRadius;                           		// 0x0E54 (0x0004) [0x0000000000000000]
+	float                                              CoverSearchAngle;                                 		// 0x0E58 (0x0004) [0x0000000000000000]
+	struct FSmartVector                                CoverSearchOrigin;                                		// 0x0E5C (0x001C) [0x0000000000000000]
+	struct FVector                                     CoverSearchDirection;                             		// 0x0E78 (0x000C) [0x0000000000000000]
 	TArray< struct FCoverDebugInfo >                   CoverSlotDebugList;                               		// 0x0E84 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      CoverSearchWasFinalized : 1;                      		// 0x0E90 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      CoverSearchWasFinalized : 1;                      		// 0x0E90 (0x0004) [0x0000000000000000] [0x00000001]
 	struct FIconData                                   ICON_BLUELOCATION;                                		// 0x0E94 (0x0014) [0x0000000000000002]              ( CPF_Const )
 	struct FIconData                                   ICON_YELLOWLOCATION;                              		// 0x0EA8 (0x0014) [0x0000000000000002]              ( CPF_Const )
 	struct FIconData                                   ICON_QUESTIONMARK;                                		// 0x0EBC (0x0014) [0x0000000000000002]              ( CPF_Const )
@@ -6814,12 +6716,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3276 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3276];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxPawnSnapshotRecord::pClassPointer = NULL;
@@ -6844,12 +6745,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3278 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3278];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetingDefinition::pClassPointer = NULL;
@@ -6868,13 +6768,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3280 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3280];
 
 		return pClassPointer;
 	};
 
-	void eventRecordEvalCallback ( class URuleEngine* EvalRuleEngine );
+	void eventRecordEvalCallback(class URuleEngine* EvalRuleEngine);
 };
 
 UClass* UTargetIterator::pClassPointer = NULL;
@@ -6891,12 +6791,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3282 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3282];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorCalculateDistance::pClassPointer = NULL;
@@ -6913,12 +6812,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3284 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3284];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorCalculateExposure::pClassPointer = NULL;
@@ -6935,12 +6833,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3286 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3286];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorCheckAwareness::pClassPointer = NULL;
@@ -6957,12 +6854,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3288 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3288];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorCheckRemoveTarget::pClassPointer = NULL;
@@ -6979,12 +6875,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3290 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3290];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorForgetAboutTarget::pClassPointer = NULL;
@@ -7001,12 +6896,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3292 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3292];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizeTargetsIAmExposedTo::pClassPointer = NULL;
@@ -7023,12 +6917,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3294 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3294];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTI_Calc::pClassPointer = NULL;
@@ -7046,12 +6939,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3296 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3296];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTI_Prioritize::pClassPointer = NULL;
@@ -7068,12 +6960,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3298 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3298];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizeExposedTargets::pClassPointer = NULL;
@@ -7090,12 +6981,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3300 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3300];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizeHumanTargets::pClassPointer = NULL;
@@ -7113,12 +7003,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3302 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3302];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizeNearbyTarget::pClassPointer = NULL;
@@ -7135,12 +7024,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3304 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3304];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizePreviousTarget::pClassPointer = NULL;
@@ -7157,12 +7045,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3306 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3306];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizeTargetNotBeingShotAt::pClassPointer = NULL;
@@ -7179,12 +7066,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3308 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3308];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTargetIteratorPrioritizeTargetWhoShootsAtMe::pClassPointer = NULL;
@@ -7201,12 +7087,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3310 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3310];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTI_PrioritizeBonus::pClassPointer = NULL;
@@ -7224,12 +7109,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3312 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3312];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UTI_PrioritizeConditional::pClassPointer = NULL;
@@ -7247,12 +7131,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3314 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3314];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_PopulationOpportunityLink::pClassPointer = NULL;
@@ -7269,16 +7152,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3316 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3316];
 
 		return pClassPointer;
 	};
 
-	float GetInitialMovementHoldTime ( );
-	class AActor* GetInitialDestination ( );
-	unsigned char GetInitialActionType ( );
-	unsigned char GetSpawnStyleType ( );
+	float GetInitialMovementHoldTime();
+	class AActor* GetInitialDestination();
+	unsigned char GetInitialActionType();
+	unsigned char GetSpawnStyleType();
 };
 
 UClass* UIPopulationSpawnPoint::pClassPointer = NULL;
@@ -7299,15 +7182,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3318 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3318];
 
 		return pClassPointer;
 	};
 
-	bool IsAllSpawnTypesDebugEnabled ( );
-	void ToggleAllSpawnTypesDebug ( );
-	class UPopulationFactory* GetRandomFactory ( class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity );
+	bool IsAllSpawnTypesDebugEnabled();
+	void ToggleAllSpawnTypesDebug();
+	class UPopulationFactory* GetRandomFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
 };
 
 UClass* UPopulationDefinition::pClassPointer = NULL;
@@ -7331,25 +7214,25 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3320 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3320];
 
 		return pClassPointer;
 	};
 
-	struct FString eventGetDescriptionOfFactoryOutput ( );
-	bool eventShouldSavePopulationActor ( class UPopulationMaster* Master, class AActor* ActorToSave );
-	bool eventDestroyPopulationActor ( class UPopulationMaster* Master, int nOpportunityIdx, class AActor* ActorToDestroy, class UPopulationFactory* SpawnFactory, int CreationFlags, unsigned long bDontSaveActor );
-	class AActor* eventCreatePopulationActor ( class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity );
-	struct FBoxSphereBounds eventGetSpawnVisibilityBounds ( int GameStage, int Rarity );
-	class UPawnAllegiance* GetActorAllegiance ( int GameStage, int Rarity );
-	int eventGetActorSpawnCost ( int GameStage, int Rarity, unsigned long bCanSpawnTest );
-	void eventOnSpawnActor ( class AActor* aNewActor );
-	void eventSetupMatineeForActor ( class AActor* aNewActor );
-	class UPopulationFactory* GetSpawnFactory ( class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity );
-	float GetSpawnProbabilityAtThisGameStage ( int GameStage, int Rarity );
-	bool IsFactoryWithin ( class UPopulationFactory* TestFactory );
-	bool CanSpawn ( class APopulationOpportunity* SpawningOpportunity );
+	struct FString eventGetDescriptionOfFactoryOutput();
+	bool eventShouldSavePopulationActor(class UPopulationMaster* Master, class AActor* ActorToSave);
+	bool eventDestroyPopulationActor(class UPopulationMaster* Master, int nOpportunityIdx, class AActor* ActorToDestroy, class UPopulationFactory* SpawnFactory, int CreationFlags, unsigned long bDontSaveActor);
+	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
+	struct FBoxSphereBounds eventGetSpawnVisibilityBounds(int GameStage, int Rarity);
+	class UPawnAllegiance* GetActorAllegiance(int GameStage, int Rarity);
+	int eventGetActorSpawnCost(int GameStage, int Rarity, unsigned long bCanSpawnTest);
+	void eventOnSpawnActor(class AActor* aNewActor);
+	void eventSetupMatineeForActor(class AActor* aNewActor);
+	class UPopulationFactory* GetSpawnFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
+	float GetSpawnProbabilityAtThisGameStage(int GameStage, int Rarity);
+	bool IsFactoryWithin(class UPopulationFactory* TestFactory);
+	bool CanSpawn(class APopulationOpportunity* SpawningOpportunity);
 };
 
 UClass* UPopulationFactory::pClassPointer = NULL;
@@ -7367,14 +7250,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3322 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3322];
 
 		return pClassPointer;
 	};
 
-	class AActor* eventCreatePopulationActor ( class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity );
-	struct FBoxSphereBounds eventGetSpawnVisibilityBounds ( int GameStage, int Rarity );
+	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
+	struct FBoxSphereBounds eventGetSpawnVisibilityBounds(int GameStage, int Rarity);
 };
 
 UClass* UPopulationFactoryGeneric::pClassPointer = NULL;
@@ -7392,15 +7275,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3324 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3324];
 
 		return pClassPointer;
 	};
 
-	class UPopulationFactory* GetSpawnFactory ( class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity );
-	class UPawnAllegiance* GetActorAllegiance ( int GameStage, int AwesomeLevel );
-	bool IsFactoryWithin ( class UPopulationFactory* TestFactory );
+	class UPopulationFactory* GetSpawnFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
+	class UPawnAllegiance* GetActorAllegiance(int GameStage, int AwesomeLevel);
+	bool IsFactoryWithin(class UPopulationFactory* TestFactory);
 };
 
 UClass* UPopulationFactoryPopulationDefinition::pClassPointer = NULL;
@@ -7411,19 +7294,19 @@ class UPopulationMaster : public UObject
 {
 public:
 	TArray< struct FPopulationOpportunityTracker >     OpportunityList;                                  		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ActiveActorCost;                                  		// 0x0048 (0x0004) [0x0000000000000000]              
-	int                                                MaxActorCost;                                     		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              MasterThinkRate;                                  		// 0x0050 (0x0004) [0x0000000000000000]              
-	float                                              MasterTestForDestroyRate;                         		// 0x0054 (0x0004) [0x0000000000000000]              
-	float                                              IfIrrelevantDestroyTimeout;                       		// 0x0058 (0x0004) [0x0000000000000000]              
+	int                                                ActiveActorCost;                                  		// 0x0048 (0x0004) [0x0000000000000000]
+	int                                                MaxActorCost;                                     		// 0x004C (0x0004) [0x0000000000000000]
+	float                                              MasterThinkRate;                                  		// 0x0050 (0x0004) [0x0000000000000000]
+	float                                              MasterTestForDestroyRate;                         		// 0x0054 (0x0004) [0x0000000000000000]
+	float                                              IfIrrelevantDestroyTimeout;                       		// 0x0058 (0x0004) [0x0000000000000000]
 	TArray< struct FPopulationMasterStat >             PopulationMasterStats;                            		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FEncounterTracker >                 EncounterList;                                    		// 0x0068 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              SecondsElapsed;                                   		// 0x0074 (0x0004) [0x0000000000000000]              
-	float                                              NextOpportunityTickTime;                          		// 0x0078 (0x0004) [0x0000000000000000]              
-	float                                              NextDestroyTestTickTime;                          		// 0x007C (0x0004) [0x0000000000000000]              
-	float                                              PopulationRespawnDelayInSeconds;                  		// 0x0080 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bHasActorsReadyToDeleteIfSpaceIsNeeded : 1;       		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bShutdownAIWhenIrrelevant : 1;                    		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002] 
+	float                                              SecondsElapsed;                                   		// 0x0074 (0x0004) [0x0000000000000000]
+	float                                              NextOpportunityTickTime;                          		// 0x0078 (0x0004) [0x0000000000000000]
+	float                                              NextDestroyTestTickTime;                          		// 0x007C (0x0004) [0x0000000000000000]
+	float                                              PopulationRespawnDelayInSeconds;                  		// 0x0080 (0x0004) [0x0000000000000000]
+	unsigned long                                      bHasActorsReadyToDeleteIfSpaceIsNeeded : 1;       		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      bShutdownAIWhenIrrelevant : 1;                    		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002]
 
 private:
 	static UClass* pClassPointer;
@@ -7431,39 +7314,39 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3326 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3326];
 
 		return pClassPointer;
 	};
 
-	class AActor* GetActorSpawnedFromOpportunity ( class APopulationOpportunity* Opportunity, int ActorIndex );
-	void GetSavedActorDebugInfoForOpportunity ( int OpportunityIndex, TArray< struct FString >* SavedActorsDebugInfo );
-	int GetNumberOfSavedActorsForOpportunity ( int OpportunityIndex );
-	bool WillActorsOpportunityBeResetOnLevelLoad ( class AActor* TestActor );
-	void ResetRespawn ( );
-	class ULevelStreaming* GetStreamingLevelForActor ( class AActor* OpportunityInLevel );
-	bool HasCapacityToSpawnFromFactories ( int GameStage, int Rarity, TArray< class UPopulationFactory* >* TheFactories );
-	bool HasCapacityToSpawnFromFactory ( class UPopulationFactory* TheFactory, int GameStage, int Rarity );
-	bool IsPopulationSystemAtCapacity ( );
-	void StatProfileStop ( int nStat );
-	void StatProfileStart ( int nStat );
-	float GetStatProfileTime ( int nStat );
-	void AddSavedActor ( int OpportunityIdx, class AActor* TheActor, class UPopulationFactory* SpawnFactory, int CreationFlags );
-	void DisconnectEncounter ( class APopulationEncounter* Encounter );
-	void ConnectEncounter ( class APopulationEncounter* Encounter );
-	bool DisconnectOpportunity ( class APopulationOpportunity* DeactivatedOpportunity, unsigned long bSaveState );
-	bool ConnectOpportunity ( class APopulationOpportunity* ActivatedOpportunity );
-	class AWorldInfo* GetWorldInfo ( );
-	void DestroySpawnedActors ( class APopulationOpportunity* Opportunity, unsigned long bDontSaveActors );
-	void RemoveSpawnedActor ( class AActor* TheActor, unsigned long bKeepBody, unsigned long bActorDied );
-	void SetSpawnedActorsReuse ( class AActor* TheActor, unsigned long bReuse );
-	void AddExternalActor ( class AActor* SpawnedActor, class UClass* FactoryClass );
-	class AActor* SpawnActorFromOpportunity ( class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity, int OpportunityIdx, int PopOppFlags, unsigned long bCanSave, unsigned long bForceSpawn );
-	class AActor* SpawnActor ( class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity );
-	int GetPopulationOpportunityIndex ( class APopulationOpportunity* Opportunity );
-	class APopulationOpportunity* GetActorsOpportunity ( class AActor* SpawnedActor );
-	class AActor* SpawnPopulationControlledActor ( class UClass* SpawnClass, class AActor* SpawnOwner, struct FName SpawnTag, struct FVector SpawnLocation, struct FRotator SpawnRotation, class AActor* ActorTemplate, unsigned long bNoCollisionFail, unsigned long bPersistAcrossLevelTransitions );
+	class AActor* GetActorSpawnedFromOpportunity(class APopulationOpportunity* Opportunity, int ActorIndex);
+	void GetSavedActorDebugInfoForOpportunity(int OpportunityIndex, TArray< struct FString >* SavedActorsDebugInfo);
+	int GetNumberOfSavedActorsForOpportunity(int OpportunityIndex);
+	bool WillActorsOpportunityBeResetOnLevelLoad(class AActor* TestActor);
+	void ResetRespawn();
+	class ULevelStreaming* GetStreamingLevelForActor(class AActor* OpportunityInLevel);
+	bool HasCapacityToSpawnFromFactories(int GameStage, int Rarity, TArray< class UPopulationFactory* >* TheFactories);
+	bool HasCapacityToSpawnFromFactory(class UPopulationFactory* TheFactory, int GameStage, int Rarity);
+	bool IsPopulationSystemAtCapacity();
+	void StatProfileStop(int nStat);
+	void StatProfileStart(int nStat);
+	float GetStatProfileTime(int nStat);
+	void AddSavedActor(int OpportunityIdx, class AActor* TheActor, class UPopulationFactory* SpawnFactory, int CreationFlags);
+	void DisconnectEncounter(class APopulationEncounter* Encounter);
+	void ConnectEncounter(class APopulationEncounter* Encounter);
+	bool DisconnectOpportunity(class APopulationOpportunity* DeactivatedOpportunity, unsigned long bSaveState);
+	bool ConnectOpportunity(class APopulationOpportunity* ActivatedOpportunity);
+	class AWorldInfo* GetWorldInfo();
+	void DestroySpawnedActors(class APopulationOpportunity* Opportunity, unsigned long bDontSaveActors);
+	void RemoveSpawnedActor(class AActor* TheActor, unsigned long bKeepBody, unsigned long bActorDied);
+	void SetSpawnedActorsReuse(class AActor* TheActor, unsigned long bReuse);
+	void AddExternalActor(class AActor* SpawnedActor, class UClass* FactoryClass);
+	class AActor* SpawnActorFromOpportunity(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity, int OpportunityIdx, int PopOppFlags, unsigned long bCanSave, unsigned long bForceSpawn);
+	class AActor* SpawnActor(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
+	int GetPopulationOpportunityIndex(class APopulationOpportunity* Opportunity);
+	class APopulationOpportunity* GetActorsOpportunity(class AActor* SpawnedActor);
+	class AActor* SpawnPopulationControlledActor(class UClass* SpawnClass, class AActor* SpawnOwner, struct FName SpawnTag, struct FVector SpawnLocation, struct FRotator SpawnRotation, class AActor* ActorTemplate, unsigned long bNoCollisionFail, unsigned long bPersistAcrossLevelTransitions);
 };
 
 UClass* UPopulationMaster::pClassPointer = NULL;
@@ -7499,34 +7382,34 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3328 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3328];
 
 		return pClassPointer;
 	};
 
-	void ClearBodyCompositionInstance ( );
-	void ApplyPreviewBodyComposition ( );
-	class UIBodyInfoProvider* GetBodyInfoProvider ( );
-	void ChangeInstanceDataSwitch ( struct FName SwitchName, unsigned char NewValue );
-	void PostInitBodyComposition ( struct FName Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode );
-	void PreRemoveBodyComposition ( struct FName Identifier, class UObject* Value, int BodyCompositionIndex );
-	float GetNumSpawned ( );
-	float GetNumAlive ( );
-	float GetNumDied ( );
-	void eventDestroyed ( );
-	int GetRarity ( );
-	int GetGameStage ( );
-	bool GetOpportunityGameStage ( int* GameStage, int* Rarity );
-	void eventTriggerKismetAllSpawnedEvent ( );
-	void eventClearSequenceActionLink ( );
-	void eventSetSequenceActionLink ( class UGearboxSeqAct_PopulationOpportunityLink* Link );
-	void SetEnabledStatus ( unsigned long bEnable );
-	void OnToggle ( class USeqAct_Toggle* Action );
-	void GetNumLeftToSpawnAndStillAlive ( int* NumLeftToSpawn, int* NumStillAlive );
-	float GetNextSpawnTime ( );
-	void RespawnKilledActors ( float PercentageOfKilledActorsToRespawn );
-	void DoSpawning ( class UPopulationMaster* PopMaster );
+	void ClearBodyCompositionInstance();
+	void ApplyPreviewBodyComposition();
+	class UIBodyInfoProvider* GetBodyInfoProvider();
+	void ChangeInstanceDataSwitch(struct FName SwitchName, unsigned char NewValue);
+	void PostInitBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
+	void PreRemoveBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex);
+	float GetNumSpawned();
+	float GetNumAlive();
+	float GetNumDied();
+	void eventDestroyed();
+	int GetRarity();
+	int GetGameStage();
+	bool GetOpportunityGameStage(int* GameStage, int* Rarity);
+	void eventTriggerKismetAllSpawnedEvent();
+	void eventClearSequenceActionLink();
+	void eventSetSequenceActionLink(class UGearboxSeqAct_PopulationOpportunityLink* Link);
+	void SetEnabledStatus(unsigned long bEnable);
+	void OnToggle(class USeqAct_Toggle* Action);
+	void GetNumLeftToSpawnAndStillAlive(int* NumLeftToSpawn, int* NumStillAlive);
+	float GetNextSpawnTime();
+	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
+	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
 UClass* APopulationOpportunity::pClassPointer = NULL;
@@ -7555,16 +7438,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3330 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3330];
 
 		return pClassPointer;
 	};
 
-	void ApplyPreviewBodyComposition ( );
-	class UIBodyInfoProvider* GetBodyInfoProvider ( );
-	void RespawnKilledActors ( float PercentageOfKilledActorsToRespawn );
-	void DoSpawning ( class UPopulationMaster* PopMaster );
+	void ApplyPreviewBodyComposition();
+	class UIBodyInfoProvider* GetBodyInfoProvider();
+	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
+	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
 UClass* APopulationOpportunityArea::pClassPointer = NULL;
@@ -7592,17 +7475,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3332 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3332];
 
 		return pClassPointer;
 	};
 
-	void ApplyPreviewBodyComposition ( );
-	class UIBodyInfoProvider* GetBodyInfoProvider ( );
-	void CloneTimer ( );
-	void RespawnKilledActors ( float PercentageOfKilledActorsToRespawn );
-	void DoSpawning ( class UPopulationMaster* PopMaster );
+	void ApplyPreviewBodyComposition();
+	class UIBodyInfoProvider* GetBodyInfoProvider();
+	void CloneTimer();
+	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
+	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
 UClass* APopulationOpportunityCloner::pClassPointer = NULL;
@@ -7617,7 +7500,7 @@ public:
 	int                                                ParentEncounterWave;                              		// 0x01EC (0x0004) [0x0000000000220001]              ( CPF_Edit | CPF_EditConst )
 	class UPopulationDefinition*                       PopulationDef;                                    		// 0x01F0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                MaxTotalActorsFormula;                            		// 0x01F4 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	int                                                MaxTotalActors;                                   		// 0x0204 (0x0004) [0x0000000000000000]              
+	int                                                MaxTotalActors;                                   		// 0x0204 (0x0004) [0x0000000000000000]
 	int                                                MaxActiveActorsIsNormal;                          		// 0x0208 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	int                                                MaxActiveActorsThreatened;                        		// 0x020C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                RespawnDelayFormula;                              		// 0x0210 (0x0010) [0x0000000000000001]              ( CPF_Edit )
@@ -7625,12 +7508,12 @@ public:
 	unsigned long                                      bOpportunityVolume : 1;                           		// 0x0220 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
 	unsigned long                                      bOpportunityRadius : 1;                           		// 0x0220 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
 	unsigned long                                      bPlayerHasBeenDetected : 1;                       		// 0x0220 (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	unsigned long                                      bShowDebugEnabled : 1;                            		// 0x0220 (0x0004) [0x0000000000000000] [0x00000010] 
+	unsigned long                                      bShowDebugEnabled : 1;                            		// 0x0220 (0x0004) [0x0000000000000000] [0x00000010]
 	TArray< class AVolume* >                           DetectionVolumes;                                 		// 0x0224 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	float                                              DetectionRadius;                                  		// 0x0230 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              OpportunityHeight;                                		// 0x0234 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FColor                                      RadiusDebugColor;                                 		// 0x0238 (0x0004) [0x0000000000000000]              
-	float                                              RespawnDelay;                                     		// 0x023C (0x0004) [0x0000000000000000]              
+	struct FColor                                      RadiusDebugColor;                                 		// 0x0238 (0x0004) [0x0000000000000000]
+	float                                              RespawnDelay;                                     		// 0x023C (0x0004) [0x0000000000000000]
 	class UDrawSphereComponent*                        DetectionDrawSphere;                              		// 0x0240 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
 	float                                              ActivePlayerScale;                                		// 0x0244 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	TArray< class AGearboxPawn* >                      SpawnedMembers;                                   		// 0x0248 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
@@ -7644,29 +7527,29 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3334 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3334];
 
 		return pClassPointer;
 	};
 
-	void ApplyPreviewBodyComposition ( );
-	class UIBodyInfoProvider* GetBodyInfoProvider ( );
-	void eventTriggerKismetSingleDeathEvent ( );
-	void eventTriggerKismetDeathEvent ( );
-	float GetNumSpawned ( );
-	float GetNumAlive ( );
-	float GetNumDied ( );
-	bool WantsToStopListening ( );
-	class AActor* GetActor ( );
-	struct FVector GetListenerLocation ( );
-	class UPawnAllegiance* GetAllegiance ( );
-	bool ReceiveMessage ( class UGbxMessage* Message );
-	bool CaresAboutMessage ( class UGbxMessage* Message );
-	void PostBeginPlay ( );
-	void EnableDebugging ( unsigned long bEnabled );
-	void RespawnKilledActors ( float PercentageOfKilledActorsToRespawn );
-	void DoSpawning ( class UPopulationMaster* PopMaster );
+	void ApplyPreviewBodyComposition();
+	class UIBodyInfoProvider* GetBodyInfoProvider();
+	void eventTriggerKismetSingleDeathEvent();
+	void eventTriggerKismetDeathEvent();
+	float GetNumSpawned();
+	float GetNumAlive();
+	float GetNumDied();
+	bool WantsToStopListening();
+	class AActor* GetActor();
+	struct FVector GetListenerLocation();
+	class UPawnAllegiance* GetAllegiance();
+	bool ReceiveMessage(class UGbxMessage* Message);
+	bool CaresAboutMessage(class UGbxMessage* Message);
+	void PostBeginPlay();
+	void EnableDebugging(unsigned long bEnabled);
+	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
+	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
 UClass* APopulationOpportunityCombat::pClassPointer = NULL;
@@ -7694,24 +7577,24 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3336 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3336];
 
 		return pClassPointer;
 	};
 
-	void ClearBodyCompositionInstance ( );
-	void ApplyPreviewBodyComposition ( );
-	class UIBodyInfoProvider* GetBodyInfoProvider ( );
-	void ChangeInstanceDataSwitch ( struct FName SwitchName, unsigned char NewValue );
-	void PostInitBodyComposition ( struct FName Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode );
-	void PreRemoveBodyComposition ( struct FName Identifier, class UObject* Value, int BodyCompositionIndex );
-	float GetInitialMovementHoldTime ( );
-	class AActor* GetInitialDestination ( );
-	unsigned char GetInitialActionType ( );
-	unsigned char GetSpawnStyleType ( );
-	void RespawnKilledActors ( float PercentageOfKilledActorsToRespawn );
-	void DoSpawning ( class UPopulationMaster* PopMaster );
+	void ClearBodyCompositionInstance();
+	void ApplyPreviewBodyComposition();
+	class UIBodyInfoProvider* GetBodyInfoProvider();
+	void ChangeInstanceDataSwitch(struct FName SwitchName, unsigned char NewValue);
+	void PostInitBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
+	void PreRemoveBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex);
+	float GetInitialMovementHoldTime();
+	class AActor* GetInitialDestination();
+	unsigned char GetInitialActionType();
+	unsigned char GetSpawnStyleType();
+	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
+	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
 UClass* APopulationOpportunityPoint::pClassPointer = NULL;
@@ -7728,12 +7611,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3338 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3338];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationOpportunityAreaRenderingComponent::pClassPointer = NULL;
@@ -7750,12 +7632,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3340 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3340];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationOpportunityAttributeContextResolver::pClassPointer = NULL;
@@ -7772,12 +7653,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3342 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3342];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationOpportunityPointRenderingComponent::pClassPointer = NULL;
@@ -7810,22 +7690,22 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3344 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3344];
 
 		return pClassPointer;
 	};
 
-	bool CanSpawnFromFactory ( class UPopulationFactory* Factory, int GameStage, int AwesomeLevel );
-	struct FRotator GetSpawnRotation ( );
-	struct FVector GetSpawnLocation ( );
-	void ActorSpawned ( class AActor* SpawnedActor );
-	float GetInitialMovementHoldTime ( );
-	class AActor* GetInitialDestination ( );
-	void RandomizeInitialDestinations ( );
-	unsigned char GetInitialActionType ( );
-	unsigned char GetSpawnStyleType ( );
-	void OnToggle ( class USeqAct_Toggle* Action );
+	bool CanSpawnFromFactory(class UPopulationFactory* Factory, int GameStage, int AwesomeLevel);
+	struct FRotator GetSpawnRotation();
+	struct FVector GetSpawnLocation();
+	void ActorSpawned(class AActor* SpawnedActor);
+	float GetInitialMovementHoldTime();
+	class AActor* GetInitialDestination();
+	void RandomizeInitialDestinations();
+	unsigned char GetInitialActionType();
+	unsigned char GetSpawnStyleType();
+	void OnToggle(class USeqAct_Toggle* Action);
 };
 
 UClass* APopulationPoint::pClassPointer = NULL;
@@ -7844,12 +7724,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3346 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3346];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* APopulationPoint_Dynamic::pClassPointer = NULL;
@@ -7866,12 +7745,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3348 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3348];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UPopulationPointRenderingComponent::pClassPointer = NULL;
@@ -7881,7 +7759,7 @@ UClass* UPopulationPointRenderingComponent::pClassPointer = NULL;
 class USeqEvent_EncounterWaveComplete : public USequenceEvent
 {
 public:
-	int                                                CurrentWave;                                      		// 0x00C4 (0x0004) [0x0000000000000000]              
+	int                                                CurrentWave;                                      		// 0x00C4 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -7889,13 +7767,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3350 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3350];
 
 		return pClassPointer;
 	};
 
-	void NotifyWaveComplete ( int nWave );
+	void NotifyWaveComplete(int nWave);
 };
 
 UClass* USeqEvent_EncounterWaveComplete::pClassPointer = NULL;
@@ -7905,8 +7783,8 @@ UClass* USeqEvent_EncounterWaveComplete::pClassPointer = NULL;
 class USeqEvent_PopulatedActor : public USequenceEvent
 {
 public:
-	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]              
-	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]              
+	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]
+	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -7914,13 +7792,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3352 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3352];
 
 		return pClassPointer;
 	};
 
-	void eventNotifyPopulatedActor ( class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator );
+	void eventNotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
 };
 
 UClass* USeqEvent_PopulatedActor::pClassPointer = NULL;
@@ -7930,8 +7808,8 @@ UClass* USeqEvent_PopulatedActor::pClassPointer = NULL;
 class USeqEvent_PopulatedPoint : public USequenceEvent
 {
 public:
-	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]              
-	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]              
+	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]
+	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -7939,13 +7817,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3354 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3354];
 
 		return pClassPointer;
 	};
 
-	void eventNotifyPopulatedActor ( class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator );
+	void eventNotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
 };
 
 UClass* USeqEvent_PopulatedPoint::pClassPointer = NULL;
@@ -7962,12 +7840,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3356 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3356];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* AGearboxHUD::pClassPointer = NULL;
@@ -7991,33 +7868,33 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3358 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3358];
 
 		return pClassPointer;
 	};
 
-	void OnReset ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnHitByVehicle ( class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnRanOver ( class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnTimerEvent ( struct FName SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnKilledPawn ( class UObject* Killed, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnLanded ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnStopFiringWeapon ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnStartFiringWeapon ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnTargetLost ( class UObject* OldTarget, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnTargetChanged ( class UObject* OldTarget, class UObject* NewTarget, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnTargetAcquired ( class UObject* NewTarget, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnSpawned ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnTakeHeal ( class UObject* Instigator, float Damage, float ShieldDamage, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnVehicleTakeDamage ( class UObject* Instigator, class UObject* HitVehicle, float Damage, float ShieldDamage, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnTakeDamage ( class UObject* Instigator, float Damage, float ShieldDamage, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnUserCouldNotAffordSecondary ( unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnUserCouldNotAfford ( unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnSecondaryUsed ( unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnUsed ( unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void SetBehaviorProviderDefinition ( class UBehaviorProviderDefinition* NewBehaviorProviderDefinition );
-	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition ( );
+	void OnReset(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnHitByVehicle(class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnRanOver(class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTimerEvent(struct FName SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnKilledPawn(class UObject* Killed, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnLanded(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnStopFiringWeapon(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnStartFiringWeapon(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTargetLost(class UObject* OldTarget, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTargetChanged(class UObject* OldTarget, class UObject* NewTarget, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTargetAcquired(class UObject* NewTarget, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnSpawned(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTakeHeal(class UObject* Instigator, float Damage, float ShieldDamage, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnVehicleTakeDamage(class UObject* Instigator, class UObject* HitVehicle, float Damage, float ShieldDamage, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTakeDamage(class UObject* Instigator, float Damage, float ShieldDamage, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnUserCouldNotAffordSecondary(unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnUserCouldNotAfford(unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnSecondaryUsed(unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnUsed(unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void SetBehaviorProviderDefinition(class UBehaviorProviderDefinition* NewBehaviorProviderDefinition);
+	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
 UClass* UAIDefinition::pClassPointer = NULL;
@@ -8027,7 +7904,7 @@ UClass* UAIDefinition::pClassPointer = NULL;
 class UBehaviorEventFilterBase : public UObject
 {
 public:
-	unsigned long                                      ShouldBeInstanced : 1;                            		// 0x003C (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      ShouldBeInstanced : 1;                            		// 0x003C (0x0004) [0x0000000000000000] [0x00000001]
 
 private:
 	static UClass* pClassPointer;
@@ -8035,12 +7912,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3360 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3360];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UBehaviorEventFilterBase::pClassPointer = NULL;
@@ -8075,40 +7951,40 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3362 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3362];
 
 		return pClassPointer;
 	};
 
-	void RecentlyRunBehaviorsForSequence ( int PID, int ProvidersIndex, int SequencesIndex, struct FBehaviorExecutionRecord* ExecutionRecord );
-	void AllEventStateForSequence ( int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorEventState* EventState );
-	void AllWaitingThreadsForSequence ( int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorThread* Thread );
-	void AllSequencesForProvider ( int PID, int ProvidersIndex, struct FBehaviorSequenceState* SequenceState );
-	void AllProvidersForProcess ( int PID, class UBehaviorProviderDefinition** ProviderDefinition, int* ProvidersIndex );
-	void AllProcesses ( struct FBehaviorProcess* Process );
-	void GetVariableStateSummaryForSequence ( int PID, int SequencesDataIndex, TArray< struct FString >* DebugInfo );
-	void GetChunkedListSummaries ( TArray< struct FString >* DebugInfo );
-	struct FBehaviorKernelStats GetBehaviorKernelStats ( );
-	bool IsBehaviorKernelWatchingConsumer ( struct FBehaviorConsumerHandle ConsumerHandle );
-	bool IsBehaviorSequenceEnabled ( class UBehaviorProviderDefinition* ProviderDefinition, struct FName BehaviorSequenceName, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void ActivateBehaviorOutputLink ( int OutputLinkId, struct FBehaviorKernelInfo* KernelInfo );
-	void PublishBoolOutputVariable ( unsigned long Output, struct FBehaviorKernelInfo* KernelInfo );
-	void PublishObjectOutputVariable ( class UObject* Output, struct FBehaviorKernelInfo* KernelInfo );
-	void PublishVectorOutputVariable ( struct FBehaviorKernelInfo* KernelInfo, struct FVector* Output );
-	void PublishFloatOutputVariable ( float Output, struct FBehaviorKernelInfo* KernelInfo );
-	void PublishIntOutputVariable ( int Output, struct FBehaviorKernelInfo* KernelInfo );
-	void BeginNondeterministicProviderRegistration ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void ProcessReplicatedBehaviorEvent ( struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorEvent* EventData );
-	bool ProcessReplicatedBehaviorConsumerState ( struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorConsumerState* ReplicatedConsumerState );
-	void ChangeBehaviorSequenceActivationStatus ( class UBehaviorProviderDefinition* ProviderDefinition, struct FName SequenceName, unsigned char ActivationStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void ChangeBehaviorConsumerSuspensionStatus ( unsigned char SuspensionStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void BroadcastBehaviorEventFromScript ( struct FName EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray< class UBehaviorProviderDefinition* >* ProvidersToBroadcast, TArray< struct FBehaviorVariableValue >* Parameters );
-	void ActivateBehaviorEventFromScript ( class UBehaviorProviderDefinition* ProviderDefinition, struct FName EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray< struct FBehaviorVariableValue >* Parameters );
-	void RemoveBehaviorProviderFromConsumer ( class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void IntializeBehaviorProviderForConsumer ( class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void ForceUnregisterBehaviorConsumer ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	struct FBehaviorConsumerHandle RegisterBehaviorConsumer ( class UObject* BehaviorConsumer );
+	void RecentlyRunBehaviorsForSequence(int PID, int ProvidersIndex, int SequencesIndex, struct FBehaviorExecutionRecord* ExecutionRecord);
+	void AllEventStateForSequence(int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorEventState* EventState);
+	void AllWaitingThreadsForSequence(int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorThread* Thread);
+	void AllSequencesForProvider(int PID, int ProvidersIndex, struct FBehaviorSequenceState* SequenceState);
+	void AllProvidersForProcess(int PID, class UBehaviorProviderDefinition** ProviderDefinition, int* ProvidersIndex);
+	void AllProcesses(struct FBehaviorProcess* Process);
+	void GetVariableStateSummaryForSequence(int PID, int SequencesDataIndex, TArray< struct FString >* DebugInfo);
+	void GetChunkedListSummaries(TArray< struct FString >* DebugInfo);
+	struct FBehaviorKernelStats GetBehaviorKernelStats();
+	bool IsBehaviorKernelWatchingConsumer(struct FBehaviorConsumerHandle ConsumerHandle);
+	bool IsBehaviorSequenceEnabled(class UBehaviorProviderDefinition* ProviderDefinition, struct FName BehaviorSequenceName, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void ActivateBehaviorOutputLink(int OutputLinkId, struct FBehaviorKernelInfo* KernelInfo);
+	void PublishBoolOutputVariable(unsigned long Output, struct FBehaviorKernelInfo* KernelInfo);
+	void PublishObjectOutputVariable(class UObject* Output, struct FBehaviorKernelInfo* KernelInfo);
+	void PublishVectorOutputVariable(struct FBehaviorKernelInfo* KernelInfo, struct FVector* Output);
+	void PublishFloatOutputVariable(float Output, struct FBehaviorKernelInfo* KernelInfo);
+	void PublishIntOutputVariable(int Output, struct FBehaviorKernelInfo* KernelInfo);
+	void BeginNondeterministicProviderRegistration(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void ProcessReplicatedBehaviorEvent(struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorEvent* EventData);
+	bool ProcessReplicatedBehaviorConsumerState(struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorConsumerState* ReplicatedConsumerState);
+	void ChangeBehaviorSequenceActivationStatus(class UBehaviorProviderDefinition* ProviderDefinition, struct FName SequenceName, unsigned char ActivationStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void ChangeBehaviorConsumerSuspensionStatus(unsigned char SuspensionStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void BroadcastBehaviorEventFromScript(struct FName EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray< class UBehaviorProviderDefinition* >* ProvidersToBroadcast, TArray< struct FBehaviorVariableValue >* Parameters);
+	void ActivateBehaviorEventFromScript(class UBehaviorProviderDefinition* ProviderDefinition, struct FName EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray< struct FBehaviorVariableValue >* Parameters);
+	void RemoveBehaviorProviderFromConsumer(class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void IntializeBehaviorProviderForConsumer(class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void ForceUnregisterBehaviorConsumer(struct FBehaviorConsumerHandle* ConsumerHandle);
+	struct FBehaviorConsumerHandle RegisterBehaviorConsumer(class UObject* BehaviorConsumer);
 };
 
 UClass* UBehaviorKernel::pClassPointer = NULL;
@@ -8118,7 +7994,7 @@ UClass* UBehaviorKernel::pClassPointer = NULL;
 class UBehaviorProviderDefinition : public UGBXDefinition
 {
 public:
-	int                                                CurrentVersion;                                   		// 0x003C (0x0004) [0x0000000000000000]              
+	int                                                CurrentVersion;                                   		// 0x003C (0x0004) [0x0000000000000000]
 	TArray< struct FBehaviorSequenceData >             BehaviorSequences;                                		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 
 private:
@@ -8127,17 +8003,17 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3364 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3364];
 
 		return pClassPointer;
 	};
 
-	void SetObjectBehaviorVariable ( class UObject* Value, struct FBehaviorVariableValue* BehaviorVariable );
-	void SetVectorBehaviorVariable ( struct FBehaviorVariableValue* BehaviorVariable, struct FVector* Value );
-	void SetFloatBehaviorVariable ( float Value, struct FBehaviorVariableValue* BehaviorVariable );
-	void SetIntBehaviorVariable ( int Value, struct FBehaviorVariableValue* BehaviorVariable );
-	void SetBoolBehaviorVariable ( unsigned long Value, struct FBehaviorVariableValue* BehaviorVariable );
+	void SetObjectBehaviorVariable(class UObject* Value, struct FBehaviorVariableValue* BehaviorVariable);
+	void SetVectorBehaviorVariable(struct FBehaviorVariableValue* BehaviorVariable, struct FVector* Value);
+	void SetFloatBehaviorVariable(float Value, struct FBehaviorVariableValue* BehaviorVariable);
+	void SetIntBehaviorVariable(int Value, struct FBehaviorVariableValue* BehaviorVariable);
+	void SetBoolBehaviorVariable(unsigned long Value, struct FBehaviorVariableValue* BehaviorVariable);
 };
 
 UClass* UBehaviorProviderDefinition::pClassPointer = NULL;
@@ -8154,12 +8030,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3366 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3366];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIBehaviorProviderDefinition::pClassPointer = NULL;
@@ -8178,12 +8053,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3368 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3368];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UBehaviorSequenceCustomEnableCondition::pClassPointer = NULL;
@@ -8202,12 +8076,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3370 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3370];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UBehaviorSequenceEnableByMultipleConditions::pClassPointer = NULL;
@@ -8224,13 +8097,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3372 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3372];
 
 		return pClassPointer;
 	};
 
-	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle ( );
+	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
 };
 
 UClass* UIBehaviorConsumer::pClassPointer = NULL;
@@ -8247,14 +8120,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3374 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3374];
 
 		return pClassPointer;
 	};
 
-	void SetBehaviorProviderDefinition ( class UBehaviorProviderDefinition* NewBehaviorProviderDefinition );
-	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition ( );
+	void SetBehaviorProviderDefinition(class UBehaviorProviderDefinition* NewBehaviorProviderDefinition);
+	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
 UClass* UIBehaviorProvider::pClassPointer = NULL;
@@ -8271,13 +8144,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3376 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3376];
 
 		return pClassPointer;
 	};
 
-	void eventRunCustomEvent ( struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData );
+	void eventRunCustomEvent(struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData);
 };
 
 UClass* UICustomEvent::pClassPointer = NULL;
@@ -8294,15 +8167,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3378 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3378];
 
 		return pClassPointer;
 	};
 
-	bool SetTimerState ( unsigned char TimerId, struct FBehaviorTimerState TimerState );
-	bool GetTimerState ( unsigned char TimerId, struct FBehaviorTimerState* TimerState );
-	float GetTimeSeconds ( );
+	bool SetTimerState(unsigned char TimerId, struct FBehaviorTimerState TimerState);
+	bool GetTimerState(unsigned char TimerId, struct FBehaviorTimerState* TimerState);
+	float GetTimeSeconds();
 };
 
 UClass* UITimerBehavior::pClassPointer = NULL;
@@ -8340,31 +8213,31 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3380 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3380];
 
 		return pClassPointer;
 	};
 
-	float GetAnimLength ( class USkeletalMeshComponent* SMC );
-	bool eventIsPlayingLocally ( class USpecialMoveInterface* SMI );
-	class UAnimNodeSpecialMoveBlend* GetSMNode ( class USpecialMoveInterface* SMI );
-	float PlayAnim ( class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData );
-	void eventAnimFinished ( class USpecialMoveInterface* SMI, class UAnimNodeSpecialMoveBlend* BlendNode, unsigned long bInterrupted, struct FSpecialMoveData* SMData );
-	void eventClientFinished ( class USpecialMoveInterface* SMI, unsigned long bInterrupted );
-	float eventClientStarted ( class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData );
-	void eventServerFinished ( class USpecialMoveInterface* SMI, unsigned long bInterrupted );
-	void eventServerStarted ( class USpecialMoveInterface* SMI );
-	void AddAnimSet ( class USpecialMoveInterface* SMI );
-	class USkeletalMeshComponent* GetSkeletalMesh ( class USpecialMoveInterface* SMI );
-	bool eventAuthorityCanPlay ( class USpecialMoveInterface* SMI );
-	void OnTimedEvent ( struct FName SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnServerStop ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnServerStart ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnStop ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void OnStart ( struct FBehaviorConsumerHandle* ConsumerHandle );
-	void SetBehaviorProviderDefinition ( class UBehaviorProviderDefinition* NewBehaviorProviderDefinition );
-	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition ( );
+	float GetAnimLength(class USkeletalMeshComponent* SMC);
+	bool eventIsPlayingLocally(class USpecialMoveInterface* SMI);
+	class UAnimNodeSpecialMoveBlend* GetSMNode(class USpecialMoveInterface* SMI);
+	float PlayAnim(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
+	void eventAnimFinished(class USpecialMoveInterface* SMI, class UAnimNodeSpecialMoveBlend* BlendNode, unsigned long bInterrupted, struct FSpecialMoveData* SMData);
+	void eventClientFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
+	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
+	void eventServerFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
+	void eventServerStarted(class USpecialMoveInterface* SMI);
+	void AddAnimSet(class USpecialMoveInterface* SMI);
+	class USkeletalMeshComponent* GetSkeletalMesh(class USpecialMoveInterface* SMI);
+	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
+	void OnTimedEvent(struct FName SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnServerStop(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnServerStart(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnStop(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnStart(struct FBehaviorConsumerHandle* ConsumerHandle);
+	void SetBehaviorProviderDefinition(class UBehaviorProviderDefinition* NewBehaviorProviderDefinition);
+	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
 UClass* UGearboxAnimDefinition::pClassPointer = NULL;
@@ -8390,14 +8263,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3382 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3382];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
-	void TriggerDialogEvent ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters* EventData );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void TriggerDialogEvent(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters* EventData);
 };
 
 UClass* UBehavior_TriggerDialogEvent::pClassPointer = NULL;
@@ -8421,22 +8294,22 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3384 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3384];
 
 		return pClassPointer;
 	};
 
-	void SetDialogNameTag ( class UGearboxDialogNameTag* NewName );
-	struct FGearboxDialogReplicatedData GetReplicatedDialogData ( );
-	void SetReplicatedDialogData ( class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data );
-	void GetDialogGroups ( TArray< class UGearboxDialogGroup* >* Groups );
-	class UGearboxDialogComponent* GetDialogComponent ( );
-	class UGearboxDialogNameTag* GetDialogNameTag ( );
-	class AActor* GetActor ( );
-	bool CanTalk ( );
-	void eventServerDialog_TriggerEvent ( class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter );
-	void eventReplicatedEvent ( struct FName VarName );
+	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
+	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
+	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
+	void GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups);
+	class UGearboxDialogComponent* GetDialogComponent();
+	class UGearboxDialogNameTag* GetDialogNameTag();
+	class AActor* GetActor();
+	bool CanTalk();
+	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
+	void eventReplicatedEvent(struct FName VarName);
 };
 
 UClass* AGearboxDialogActor::pClassPointer = NULL;
@@ -8448,7 +8321,7 @@ class UGearboxDialogComponent : public UActorComponent
 public:
 	class UGearboxDialogEventData*                     EventData;                                        		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FAkPlayingInfo                              ClientPlayingInfo;                                		// 0x0060 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
-	unsigned long                                      bIsReattaching : 1;                               		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bIsReattaching : 1;                               		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001]
 
 private:
 	static UClass* pClassPointer;
@@ -8456,19 +8329,19 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3386 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3386];
 
 		return pClassPointer;
 	};
 
-	bool IsTalking ( );
-	void StopTalking ( class UGearboxDialogEventTag* EventTag, unsigned long bForceStop );
-	void TalkReplicated ( struct FGearboxDialogReplicatedData NewDialogData );
-	void Talk ( class UGearboxDialogAct_Talk* TalkAction );
-	void GetMatchingEvent ( class UGearboxDialogEventTag* InEventTag, unsigned long bIncludeDisabled, class UGearboxDialogNameTag* OtherNameTag, unsigned long bAllowTemplateGroups, class UGearboxDialogEvent** OutEvent, class UGearboxDialogGroup** OutGroup );
-	class UGearboxDialogEventData* TriggerEvent ( class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData );
-	class UGearboxDialogInterface* GetDialogInterface ( );
+	bool IsTalking();
+	void StopTalking(class UGearboxDialogEventTag* EventTag, unsigned long bForceStop);
+	void TalkReplicated(struct FGearboxDialogReplicatedData NewDialogData);
+	void Talk(class UGearboxDialogAct_Talk* TalkAction);
+	void GetMatchingEvent(class UGearboxDialogEventTag* InEventTag, unsigned long bIncludeDisabled, class UGearboxDialogNameTag* OtherNameTag, unsigned long bAllowTemplateGroups, class UGearboxDialogEvent** OutEvent, class UGearboxDialogGroup** OutGroup);
+	class UGearboxDialogEventData* TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData);
+	class UGearboxDialogInterface* GetDialogInterface();
 };
 
 UClass* UGearboxDialogComponent::pClassPointer = NULL;
@@ -8478,18 +8351,18 @@ UClass* UGearboxDialogComponent::pClassPointer = NULL;
 class UGearboxDialogEventData : public UObject
 {
 public:
-	struct FDialogEventInfo                            EventInfo;                                        		// 0x003C (0x0008) [0x0000000000000000]              
-	class AActor*                                      Instigator;                                       		// 0x0044 (0x0004) [0x0000000000000000]              
-	class AActor*                                      Other;                                            		// 0x0048 (0x0004) [0x0000000000000000]              
-	class UObject*                                     ObjectParameter;                                  		// 0x004C (0x0004) [0x0000000000000000]              
-	class AActor*                                      LastTalker;                                       		// 0x0050 (0x0004) [0x0000000000000000]              
-	class UGearboxDialogAct_Talk*                      LiveTalkAction;                                   		// 0x0054 (0x0004) [0x0000000000000000]              
-	int                                                LiveTalkActionDataID;                             		// 0x0058 (0x0004) [0x0000000000000000]              
-	struct FDialogEventInfo                            TemplateEventInfo;                                		// 0x005C (0x0008) [0x0000000000000000]              
-	class UGearboxDialogAct_Trigger*                   LiveTriggerAction;                                		// 0x0064 (0x0004) [0x0000000000000000]              
+	struct FDialogEventInfo                            EventInfo;                                        		// 0x003C (0x0008) [0x0000000000000000]
+	class AActor*                                      Instigator;                                       		// 0x0044 (0x0004) [0x0000000000000000]
+	class AActor*                                      Other;                                            		// 0x0048 (0x0004) [0x0000000000000000]
+	class UObject*                                     ObjectParameter;                                  		// 0x004C (0x0004) [0x0000000000000000]
+	class AActor*                                      LastTalker;                                       		// 0x0050 (0x0004) [0x0000000000000000]
+	class UGearboxDialogAct_Talk*                      LiveTalkAction;                                   		// 0x0054 (0x0004) [0x0000000000000000]
+	int                                                LiveTalkActionDataID;                             		// 0x0058 (0x0004) [0x0000000000000000]
+	struct FDialogEventInfo                            TemplateEventInfo;                                		// 0x005C (0x0008) [0x0000000000000000]
+	class UGearboxDialogAct_Trigger*                   LiveTriggerAction;                                		// 0x0064 (0x0004) [0x0000000000000000]
 	struct FAkPlayingInfo                              PlayingInfo;                                      		// 0x0068 (0x0008) [0x0000000000080000]              ( CPF_Component )
-	float                                              TalkFinishTime;                                   		// 0x0070 (0x0004) [0x0000000000000000]              
-	int                                                UseCount;                                         		// 0x0074 (0x0004) [0x0000000000000000]              
+	float                                              TalkFinishTime;                                   		// 0x0070 (0x0004) [0x0000000000000000]
+	int                                                UseCount;                                         		// 0x0074 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -8497,13 +8370,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3388 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3388];
 
 		return pClassPointer;
 	};
 
-	bool IsActive ( );
+	bool IsActive();
 };
 
 UClass* UGearboxDialogEventData::pClassPointer = NULL;
@@ -8524,12 +8397,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3390 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3390];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogEventTag::pClassPointer = NULL;
@@ -8548,12 +8420,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3392 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3392];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogGlobalsDefinition::pClassPointer = NULL;
@@ -8580,13 +8451,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3394 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3394];
 
 		return pClassPointer;
 	};
 
-	void SimpleEvent ( class AActor* Owner, class UGearboxDialogNameTag* NameTag, class UGearboxDialogEventTag* EventTag );
+	void SimpleEvent(class AActor* Owner, class UGearboxDialogNameTag* NameTag, class UGearboxDialogEventTag* EventTag);
 };
 
 UClass* UGearboxDialogGroup::pClassPointer = NULL;
@@ -8603,12 +8474,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3396 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3396];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogTemplateGroup::pClassPointer = NULL;
@@ -8635,26 +8505,26 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3398 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3398];
 
 		return pClassPointer;
 	};
 
-	void DrawDialogDebug ( class AHUD* HUD, float StartY );
-	void CheckpointRemoveReferencesBeforeDestroy ( );
-	class UGearboxDialogEventTag* GetEventTagForEventInfo ( struct FDialogEventInfo EventInfo );
-	class UGearboxDialogEventData* TriggerGroupEvent ( class UGearboxDialogGroup* Group, class UGearboxDialogEventTag* EventTag, class AActor* Instigator, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData );
-	void Cleanup ( );
-	void SetGroupEventTag ( class UGearboxDialogGroup* Group, class UGearboxDialogEventTag* EventTag );
-	class UGearboxDialogEventTag* GetGroupEventTag ( class UGearboxDialogGroup* Group );
-	void SilenceGroup ( class UGearboxDialogGroup* Group );
-	void AddGroup ( class UGearboxDialogGroup* Group );
-	void UnregisterTalker ( class AActor* Talker );
-	void RegisterTalker ( class AActor* Talker );
-	void DisableTalker ( class AActor* Talker );
-	void EnableTalker ( class AActor* Talker );
-	int GetPriority ( class UGearboxDialogPriority* InPriority );
+	void DrawDialogDebug(class AHUD* HUD, float StartY);
+	void CheckpointRemoveReferencesBeforeDestroy();
+	class UGearboxDialogEventTag* GetEventTagForEventInfo(struct FDialogEventInfo EventInfo);
+	class UGearboxDialogEventData* TriggerGroupEvent(class UGearboxDialogGroup* Group, class UGearboxDialogEventTag* EventTag, class AActor* Instigator, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData);
+	void Cleanup();
+	void SetGroupEventTag(class UGearboxDialogGroup* Group, class UGearboxDialogEventTag* EventTag);
+	class UGearboxDialogEventTag* GetGroupEventTag(class UGearboxDialogGroup* Group);
+	void SilenceGroup(class UGearboxDialogGroup* Group);
+	void AddGroup(class UGearboxDialogGroup* Group);
+	void UnregisterTalker(class AActor* Talker);
+	void RegisterTalker(class AActor* Talker);
+	void DisableTalker(class AActor* Talker);
+	void EnableTalker(class AActor* Talker);
+	int GetPriority(class UGearboxDialogPriority* InPriority);
 };
 
 UClass* UGearboxDialogManager::pClassPointer = NULL;
@@ -8673,12 +8543,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3400 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3400];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogNameTag::pClassPointer = NULL;
@@ -8695,12 +8564,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3402 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3402];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogPriority::pClassPointer = NULL;
@@ -8710,7 +8578,7 @@ UClass* UGearboxDialogPriority::pClassPointer = NULL;
 class UGearboxDialogNode : public UGearboxEditorNode
 {
 public:
-	int                                                NodeID;                                           		// 0x006C (0x0004) [0x0000000000000000]              
+	int                                                NodeID;                                           		// 0x006C (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -8718,13 +8586,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3404 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3404];
 
 		return pClassPointer;
 	};
 
-	void ActivateOutput ( int Link );
+	void ActivateOutput(int Link);
 };
 
 UClass* UGearboxDialogNode::pClassPointer = NULL;
@@ -8741,13 +8609,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3406 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3406];
 
 		return pClassPointer;
 	};
 
-	void eventActivate ( );
+	void eventActivate();
 };
 
 UClass* UGearboxDialogAction::pClassPointer = NULL;
@@ -8768,13 +8636,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3408 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3408];
 
 		return pClassPointer;
 	};
 
-	void eventActivate ( );
+	void eventActivate();
 };
 
 UClass* UGearboxDialogAct_Chance::pClassPointer = NULL;
@@ -8791,13 +8659,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3410 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3410];
 
 		return pClassPointer;
 	};
 
-	void eventActivate ( );
+	void eventActivate();
 };
 
 UClass* UGearboxDialogAct_Compare::pClassPointer = NULL;
@@ -8815,13 +8683,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3412 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3412];
 
 		return pClassPointer;
 	};
 
-	void eventActivate ( );
+	void eventActivate();
 };
 
 UClass* UGearboxDialogAct_ObjectParameterSwitch::pClassPointer = NULL;
@@ -8838,12 +8706,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3414 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3414];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogNonTemplateAction::pClassPointer = NULL;
@@ -8856,7 +8723,7 @@ public:
 	float                                              OutputDelay;                                      		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      bShowTalkers : 1;                                 		// 0x0074 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      bPreviewing : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bInstigatorTalker : 1;                            		// 0x0074 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      bInstigatorTalker : 1;                            		// 0x0074 (0x0004) [0x0000000000000000] [0x00000004]
 	TArray< struct FGearboxDialogData >                TalkData;                                         		// 0x0078 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
 private:
@@ -8865,15 +8732,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3416 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3416];
 
 		return pClassPointer;
 	};
 
-	void eventActivate ( );
-	void eventTalkFinished ( class AActor* InTalker );
-	void eventTalkStarted ( class AActor* InTalker );
+	void eventActivate();
+	void eventTalkFinished(class AActor* InTalker);
+	void eventTalkStarted(class AActor* InTalker);
 };
 
 UClass* UGearboxDialogAct_Talk::pClassPointer = NULL;
@@ -8890,12 +8757,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3418 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3418];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogTemplateAction::pClassPointer = NULL;
@@ -8914,14 +8780,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3420 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3420];
 
 		return pClassPointer;
 	};
 
-	void ActivateOutput ( int Link );
-	void eventActivate ( );
+	void ActivateOutput(int Link);
+	void eventActivate();
 };
 
 UClass* UGearboxDialogAct_Trigger::pClassPointer = NULL;
@@ -8932,7 +8798,7 @@ class UGearboxDialogEvent : public UGearboxDialogNode
 {
 public:
 	unsigned long                                      bDisabled : 1;                                    		// 0x0070 (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
-	class UGearboxDialogEventTag*                      Tag;                                              		// 0x0074 (0x0004) [0x0000000000000000]              
+	class UGearboxDialogEventTag*                      Tag;                                              		// 0x0074 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -8940,12 +8806,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3422 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3422];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogEvent::pClassPointer = NULL;
@@ -8962,12 +8827,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3424 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3424];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogTemplateEvent::pClassPointer = NULL;
@@ -8984,14 +8848,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3426 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3426];
 
 		return pClassPointer;
 	};
 
-	void ResolveToArgumentValue ( struct FString* Out_ArgumentValue );
-	void GetTalkers ( TArray< class AActor* >* Talkers );
+	void ResolveToArgumentValue(struct FString* Out_ArgumentValue);
+	void GetTalkers(TArray< class AActor* >* Talkers);
 };
 
 UClass* UGearboxDialogVariable::pClassPointer = NULL;
@@ -9008,12 +8872,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3428 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3428];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogVar_Instigator::pClassPointer = NULL;
@@ -9030,12 +8893,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3430 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3430];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogVar_LastTalker::pClassPointer = NULL;
@@ -9053,12 +8915,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3432 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3432];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogVar_NameTag::pClassPointer = NULL;
@@ -9075,12 +8936,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3434 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3434];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogVar_Other::pClassPointer = NULL;
@@ -9102,12 +8962,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3436 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3436];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxDialogVar_Random::pClassPointer = NULL;
@@ -9125,12 +8984,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3438 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3438];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_ToggleDialog::pClassPointer = NULL;
@@ -9154,12 +9012,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3440 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3440];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_TriggerDialog::pClassPointer = NULL;
@@ -9177,12 +9034,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3442 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3442];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_TriggerDialogName::pClassPointer = NULL;
@@ -9192,9 +9048,9 @@ UClass* UGearboxSeqAct_TriggerDialogName::pClassPointer = NULL;
 class UGearboxAccountActions : public UObject
 {
 public:
-	int                                                CurrentConsumeCount;                              		// 0x003C (0x0004) [0x0000000000000000]              
-	unsigned char                                      CurrentControllerId;                              		// 0x0040 (0x0001) [0x0000000000000000]              
-	class UGearboxAccountEntitlement*                  CurrentEntitlement;                               		// 0x0044 (0x0004) [0x0000000000000000]              
+	int                                                CurrentConsumeCount;                              		// 0x003C (0x0004) [0x0000000000000000]
+	unsigned char                                      CurrentControllerId;                              		// 0x0040 (0x0001) [0x0000000000000000]
+	class UGearboxAccountEntitlement*                  CurrentEntitlement;                               		// 0x0044 (0x0004) [0x0000000000000000]
 	TArray< class UGearboxAccountEntitlement* >        CurrentBulkConsumeEntitlements;                   		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< int >                                      CurrentBulkConsumeControllerIds;                  		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< int >                                      CurrentBulkConsumeCounts;                         		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -9210,34 +9066,34 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3444 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3444];
 
 		return pClassPointer;
 	};
 
-	void HandleOffersNotifiedResponse ( struct FSparkResult* Result );
-	void HandleBulkEntitlementsConsumedResponse ( struct FSparkResult* Result );
-	void HandleEntitlementConsumedResponse ( struct FSparkResult* Result );
-	void HandleCodeRedeemedResponse ( struct FSparkResult* Result );
-	void HandleResetPasswordResponse ( struct FSparkResult* Result );
-	void HandleSignUpResponse ( struct FSparkResult* Result );
-	void HandleSignInResponse ( struct FSparkResult* Result );
-	struct FArchwayResult ExtractArchwayResult ( TArray< unsigned char > Data );
-	void MarkOffersNotified ( unsigned char ControllerId );
-	bool LocallyConsumeEntitlementWithCount ( struct FName EntitlementName, int NumToConsume, unsigned char ControllerId );
-	void eventConsumeEntitlementsWithCounts ( TArray< class UGearboxAccountEntitlement* > EntitlementsToConsume, TArray< int > Counts, unsigned char ControllerId, struct FScriptDelegate EntitlementConsumedDelegate );
-	void ConsumeEntitlementWithCount ( struct FName EntitlementName, int Count, unsigned char ControllerId, struct FScriptDelegate EntitlementConsumedDelegate );
-	void RedeemCode ( struct FString Code, unsigned char ControllerId, struct FScriptDelegate CodeRedeemedDelegate );
-	void ResetPasswordGearboxAccount ( struct FString Email, unsigned char ControllerId, struct FScriptDelegate ResetPasswordDelegate );
-	struct FString EscapeJson ( struct FString Input );
-	void SignUpGearboxAccount ( struct FString Email, struct FString Password, struct FString PasswordConfirm, struct FString AgeString, unsigned char ControllerId, struct FScriptDelegate SignUpDelegate );
-	void SignInGearboxAccount ( struct FString Email, struct FString Password, unsigned char ControllerId, struct FScriptDelegate SignInDelegate );
-	void OnEntitlementConsumed ( unsigned char ConsumeResult );
-	void OnCodeRedeemed ( unsigned char RedeemResult, struct FString CustomTitle, struct FString CustomBody );
-	void OnResetPasswordGearboxAccount ( unsigned char ResetResult );
-	void OnSignUpGearboxAccount ( unsigned char SignUpResult );
-	void OnSignInGearboxAccount ( unsigned char SignInResult );
+	void HandleOffersNotifiedResponse(struct FSparkResult* Result);
+	void HandleBulkEntitlementsConsumedResponse(struct FSparkResult* Result);
+	void HandleEntitlementConsumedResponse(struct FSparkResult* Result);
+	void HandleCodeRedeemedResponse(struct FSparkResult* Result);
+	void HandleResetPasswordResponse(struct FSparkResult* Result);
+	void HandleSignUpResponse(struct FSparkResult* Result);
+	void HandleSignInResponse(struct FSparkResult* Result);
+	struct FArchwayResult ExtractArchwayResult(TArray< unsigned char > Data);
+	void MarkOffersNotified(unsigned char ControllerId);
+	bool LocallyConsumeEntitlementWithCount(struct FName EntitlementName, int NumToConsume, unsigned char ControllerId);
+	void eventConsumeEntitlementsWithCounts(TArray< class UGearboxAccountEntitlement* > EntitlementsToConsume, TArray< int > Counts, unsigned char ControllerId, struct FScriptDelegate EntitlementConsumedDelegate);
+	void ConsumeEntitlementWithCount(struct FName EntitlementName, int Count, unsigned char ControllerId, struct FScriptDelegate EntitlementConsumedDelegate);
+	void RedeemCode(struct FString Code, unsigned char ControllerId, struct FScriptDelegate CodeRedeemedDelegate);
+	void ResetPasswordGearboxAccount(struct FString Email, unsigned char ControllerId, struct FScriptDelegate ResetPasswordDelegate);
+	struct FString EscapeJson(struct FString Input);
+	void SignUpGearboxAccount(struct FString Email, struct FString Password, struct FString PasswordConfirm, struct FString AgeString, unsigned char ControllerId, struct FScriptDelegate SignUpDelegate);
+	void SignInGearboxAccount(struct FString Email, struct FString Password, unsigned char ControllerId, struct FScriptDelegate SignInDelegate);
+	void OnEntitlementConsumed(unsigned char ConsumeResult);
+	void OnCodeRedeemed(unsigned char RedeemResult, struct FString CustomTitle, struct FString CustomBody);
+	void OnResetPasswordGearboxAccount(unsigned char ResetResult);
+	void OnSignUpGearboxAccount(unsigned char SignUpResult);
+	void OnSignInGearboxAccount(unsigned char SignInResult);
 };
 
 UClass* UGearboxAccountActions::pClassPointer = NULL;
@@ -9248,10 +9104,10 @@ class UGearboxAccountData : public UObject
 {
 public:
 	struct FString                                     RequestId;                                        		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      SignedIn : 1;                                     		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      HasValidPlatform : 1;                             		// 0x0048 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      SignedIn : 1;                                     		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      HasValidPlatform : 1;                             		// 0x0048 (0x0004) [0x0000000000000000] [0x00000002]
 	struct FString                                     PlatformLoginName;                                		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FDouble                                     NextEntitlementUpdateTime;                        		// 0x0058 (0x0008) [0x0000000000000000]              
+	struct FDouble                                     NextEntitlementUpdateTime;                        		// 0x0058 (0x0008) [0x0000000000000000]
 	TArray< class UGearboxAccountEntitlement* >        Entitlements;                                     		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UGearboxAccountOffer* >              Offers;                                           		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FScriptDelegate >                   EntitlementsUpdatedDelegates;                     		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -9263,37 +9119,37 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3446 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3446];
 
 		return pClassPointer;
 	};
 
-	int CountEntitlement ( struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed );
-	int GetTotalGoldenKeyCount ( );
-	int GetGoldenKeyCount ( unsigned long bIgnoreLocallyConsumed );
-	bool HasGoldenKey ( unsigned long bIgnoreLocallyConsumed );
-	bool HasDeveloperSkin ( );
-	bool IsDeveloper ( );
-	void MarkOffersNotified ( );
-	TArray< class UGearboxAccountOffer* > GetUnnotifiedOffers ( );
-	class UGearboxAccountEntitlement* GetEntitlementWithName ( struct FName EntitlementName );
-	class UGearboxAccountEntitlement* GetEntitlementWithId ( int Id );
-	bool HasEntitlement ( struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed );
-	void RemoveEntitlement ( class UGearboxAccountEntitlement* Entitlement );
-	void ReplaceEntitlements ( TArray< struct FEntitlementResult >* NewEntitlements, TArray< struct FOfferResult >* NewOffers );
-	void ReplaceServices ( TArray< struct FServiceResult >* NewServices );
-	void HandleReloadEntitlementsResponse ( struct FSparkResult* Result );
-	bool ReloadEntitlements ( );
-	void ResetEntitlementUpdateTimer ( );
-	bool CanReloadEntitlements ( );
-	void TriggerEntitlementsUpdatedDelegates ( );
-	void ClearEntitlementsUpdatedDelegate ( struct FScriptDelegate EntitlementsUpdatedDelegate );
-	void AddEntitlementsUpdatedDelegate ( struct FScriptDelegate EntitlementsUpdatedDelegate );
-	class USparkServiceConfiguration* eventGetService ( struct FName ServiceName );
-	void Clear ( );
-	bool ExtractArchwayResultJson ( TArray< unsigned char >* Data, struct FArchwayResult* ArchwayData );
-	bool ExtractArchwayResult ( TArray< unsigned char >* Data, struct FArchwayResult* ArchwayData );
+	int CountEntitlement(struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed);
+	int GetTotalGoldenKeyCount();
+	int GetGoldenKeyCount(unsigned long bIgnoreLocallyConsumed);
+	bool HasGoldenKey(unsigned long bIgnoreLocallyConsumed);
+	bool HasDeveloperSkin();
+	bool IsDeveloper();
+	void MarkOffersNotified();
+	TArray< class UGearboxAccountOffer* > GetUnnotifiedOffers();
+	class UGearboxAccountEntitlement* GetEntitlementWithName(struct FName EntitlementName);
+	class UGearboxAccountEntitlement* GetEntitlementWithId(int Id);
+	bool HasEntitlement(struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed);
+	void RemoveEntitlement(class UGearboxAccountEntitlement* Entitlement);
+	void ReplaceEntitlements(TArray< struct FEntitlementResult >* NewEntitlements, TArray< struct FOfferResult >* NewOffers);
+	void ReplaceServices(TArray< struct FServiceResult >* NewServices);
+	void HandleReloadEntitlementsResponse(struct FSparkResult* Result);
+	bool ReloadEntitlements();
+	void ResetEntitlementUpdateTimer();
+	bool CanReloadEntitlements();
+	void TriggerEntitlementsUpdatedDelegates();
+	void ClearEntitlementsUpdatedDelegate(struct FScriptDelegate EntitlementsUpdatedDelegate);
+	void AddEntitlementsUpdatedDelegate(struct FScriptDelegate EntitlementsUpdatedDelegate);
+	class USparkServiceConfiguration* eventGetService(struct FName ServiceName);
+	void Clear();
+	bool ExtractArchwayResultJson(TArray< unsigned char >* Data, struct FArchwayResult* ArchwayData);
+	bool ExtractArchwayResult(TArray< unsigned char >* Data, struct FArchwayResult* ArchwayData);
 };
 
 UClass* UGearboxAccountData::pClassPointer = NULL;
@@ -9303,17 +9159,17 @@ UClass* UGearboxAccountData::pClassPointer = NULL;
 class UGearboxProcess : public UObject
 {
 public:
-	int                                                FirstAttemptDelay;                                		// 0x003C (0x0004) [0x0000000000000000]              
-	int                                                BaseRetrySeconds;                                 		// 0x0040 (0x0004) [0x0000000000000000]              
-	int                                                MaxRetryAttempts;                                 		// 0x0044 (0x0004) [0x0000000000000000]              
-	float                                              RetryMultiplier;                                  		// 0x0048 (0x0004) [0x0000000000000000]              
-	int                                                RetryJitter;                                      		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              CurrentRetrySeconds;                              		// 0x0050 (0x0004) [0x0000000000000000]              
-	int                                                Attempts;                                         		// 0x0054 (0x0004) [0x0000000000000000]              
-	float                                              WaitTime;                                         		// 0x0058 (0x0004) [0x0000000000000000]              
-	unsigned long                                      Waiting : 1;                                      		// 0x005C (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                CurrentStep;                                      		// 0x0060 (0x0004) [0x0000000000000000]              
-	int                                                FailureStep;                                      		// 0x0064 (0x0004) [0x0000000000000000]              
+	int                                                FirstAttemptDelay;                                		// 0x003C (0x0004) [0x0000000000000000]
+	int                                                BaseRetrySeconds;                                 		// 0x0040 (0x0004) [0x0000000000000000]
+	int                                                MaxRetryAttempts;                                 		// 0x0044 (0x0004) [0x0000000000000000]
+	float                                              RetryMultiplier;                                  		// 0x0048 (0x0004) [0x0000000000000000]
+	int                                                RetryJitter;                                      		// 0x004C (0x0004) [0x0000000000000000]
+	float                                              CurrentRetrySeconds;                              		// 0x0050 (0x0004) [0x0000000000000000]
+	int                                                Attempts;                                         		// 0x0054 (0x0004) [0x0000000000000000]
+	float                                              WaitTime;                                         		// 0x0058 (0x0004) [0x0000000000000000]
+	unsigned long                                      Waiting : 1;                                      		// 0x005C (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                CurrentStep;                                      		// 0x0060 (0x0004) [0x0000000000000000]
+	int                                                FailureStep;                                      		// 0x0064 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -9321,21 +9177,21 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3448 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3448];
 
 		return pClassPointer;
 	};
 
-	struct FStepConfiguration GetStepConfiguration ( );
-	void GotoStep ( int Step );
-	void GotoNextStep ( );
-	void GotoFirstStep ( );
-	unsigned char eventPerformStep ( );
-	void PauseLoop ( );
-	void Init ( );
-	void ContinueLoop ( );
-	void StopLoop ( );
+	struct FStepConfiguration GetStepConfiguration();
+	void GotoStep(int Step);
+	void GotoNextStep();
+	void GotoFirstStep();
+	unsigned char eventPerformStep();
+	void PauseLoop();
+	void Init();
+	void ContinueLoop();
+	void StopLoop();
 };
 
 UClass* UGearboxProcess::pClassPointer = NULL;
@@ -9345,11 +9201,11 @@ UClass* UGearboxProcess::pClassPointer = NULL;
 class USparkInitializationProcess : public UGearboxProcess
 {
 public:
-	class UGearboxAccountData*                         Data;                                             		// 0x0068 (0x0004) [0x0000000000000000]              
-	int                                                PlayerIndex;                                      		// 0x006C (0x0004) [0x0000000000000000]              
+	class UGearboxAccountData*                         Data;                                             		// 0x0068 (0x0004) [0x0000000000000000]
+	int                                                PlayerIndex;                                      		// 0x006C (0x0004) [0x0000000000000000]
 	TArray< struct FScriptDelegate >                   SparkInitializedDelegates;                        		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bPrimary : 1;                                     		// 0x007C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      ValidAccount : 1;                                 		// 0x007C (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bPrimary : 1;                                     		// 0x007C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      ValidAccount : 1;                                 		// 0x007C (0x0004) [0x0000000000000000] [0x00000002]
 	struct FString                                     AsyncTicket;                                      		// 0x0080 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
 private:
@@ -9358,32 +9214,32 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3450 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3450];
 
 		return pClassPointer;
 	};
 
-	void eventTriggerSparkInitializedDelegates ( unsigned char InitializeResult );
-	void ClearSparkInitializedDelegate ( struct FScriptDelegate SparkInitializedDelegate );
-	void AddSparkInitializedDelegate ( struct FScriptDelegate SparkInitializedDelegate );
-	struct FString GetStepName ( );
-	struct FStepConfiguration GetStepConfiguration ( );
-	bool IsInitialized ( );
-	bool IsDisabled ( );
-	bool IsInitializing ( );
-	void HandleVerificationReceived ( struct FSparkResult* Result );
-	unsigned char eventVerifyAuthentication ( );
-	unsigned char AuthenticateTicketStringWithDelegate ( struct FString ticket, struct FScriptDelegate SparkRequestCompleteDelegate );
-	void HandleAuthenticationReceived ( struct FSparkResult* Result );
-	unsigned char eventAuthenticateAccount ( );
-	struct FString GetConfigQuery ( );
-	unsigned char CompleteInitialization ( );
-	unsigned char HttpInit ( );
-	unsigned char CheckForTMS ( );
-	unsigned char PerformStep ( );
-	bool StartProcess ( );
-	void InitWithController ( unsigned char ControllerId, unsigned long bNewPrimary, struct FScriptDelegate SparkInitializedDelegate );
+	void eventTriggerSparkInitializedDelegates(unsigned char InitializeResult);
+	void ClearSparkInitializedDelegate(struct FScriptDelegate SparkInitializedDelegate);
+	void AddSparkInitializedDelegate(struct FScriptDelegate SparkInitializedDelegate);
+	struct FString GetStepName();
+	struct FStepConfiguration GetStepConfiguration();
+	bool IsInitialized();
+	bool IsDisabled();
+	bool IsInitializing();
+	void HandleVerificationReceived(struct FSparkResult* Result);
+	unsigned char eventVerifyAuthentication();
+	unsigned char AuthenticateTicketStringWithDelegate(struct FString ticket, struct FScriptDelegate SparkRequestCompleteDelegate);
+	void HandleAuthenticationReceived(struct FSparkResult* Result);
+	unsigned char eventAuthenticateAccount();
+	struct FString GetConfigQuery();
+	unsigned char CompleteInitialization();
+	unsigned char HttpInit();
+	unsigned char CheckForTMS();
+	unsigned char PerformStep();
+	bool StartProcess();
+	void InitWithController(unsigned char ControllerId, unsigned long bNewPrimary, struct FScriptDelegate SparkInitializedDelegate);
 };
 
 UClass* USparkInitializationProcess::pClassPointer = NULL;
@@ -9394,9 +9250,9 @@ class ULeviathanService : public UObject
 {
 public:
 	struct FPointer                                    VfTable_ISparkUpdateCallback;                     		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	int                                                EventBufferSize;                                  		// 0x0040 (0x0004) [0x0000000000000000]              
-	int                                                StatBufferSize;                                   		// 0x0044 (0x0004) [0x0000000000000000]              
-	int                                                AtomTableBufferSize;                              		// 0x0048 (0x0004) [0x0000000000000000]              
+	int                                                EventBufferSize;                                  		// 0x0040 (0x0004) [0x0000000000000000]
+	int                                                StatBufferSize;                                   		// 0x0044 (0x0004) [0x0000000000000000]
+	int                                                AtomTableBufferSize;                              		// 0x0048 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -9404,16 +9260,16 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3452 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3452];
 
 		return pClassPointer;
 	};
 
-	class USparkServiceConfiguration* eventGetLeviathanServiceConfiguration ( int ControllerNumber );
-	void OnSparkInitialized ( unsigned char InitializedResult );
-	void LoadServiceConfigurationForPlayer ( int SplitscreenIndex );
-	class ULeviathanService* GetLeviathanService ( );
+	class USparkServiceConfiguration* eventGetLeviathanServiceConfiguration(int ControllerNumber);
+	void OnSparkInitialized(unsigned char InitializedResult);
+	void LoadServiceConfigurationForPlayer(int SplitscreenIndex);
+	class ULeviathanService* GetLeviathanService();
 };
 
 UClass* ULeviathanService::pClassPointer = NULL;
@@ -9430,49 +9286,49 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3454 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3454];
 
 		return pClassPointer;
 	};
 
-	class USparkNews* GetNewsService ( );
-	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration ( );
-	struct FString GetTitleStorageUrl ( );
-	void ClearGearboxAccountData ( unsigned long IncludePrimaryPlayer );
-	void SignOutGearboxAccount ( unsigned char ControllerId );
-	void SignInGearboxAccount ( unsigned char ControllerId );
-	class UGearboxAccountData* eventGetGearboxAccountData ( unsigned char ControllerId );
-	bool eventIsGearboxAccountAuthenticated ( unsigned char ControllerId );
-	bool IsGearboxAccountSignedIn ( unsigned char ControllerId );
-	struct FString ConvertUtcTimeToLocalTime ( struct FString UtcTime );
-	bool ShouldUpdateEmergencyMessage ( );
-	struct FString GetEmergencyMessage ( );
-	void SetEmergencyMessage ( struct FString Message );
-	struct FString eventGetPlatformLoginNameFromSplitscreenIndex ( int SplitscreenIndex );
-	struct FString GetPlatformLoginNameFromController ( unsigned char ControllerId );
-	void IncreaseInteractionTries ( );
-	int GetInteractionTries ( );
-	int GetInteractionGraceTries ( );
-	int GetInteractionPunishmentMinWaitSeconds ( );
-	int GetInteractionMinWaitSeconds ( );
-	bool IsTmsComplete ( );
-	void SetTmsComplete ( );
-	class USparkInitializationProcess* GetSparkInitialization ( );
-	void eventRestartSparkInitialization ( unsigned long bPrimary );
-	void RestartSparkInitializationFromScript ( unsigned long bPrimary, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate );
-	void StartSparkInitialization ( unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate );
-	void StartSecondaryInitialization ( unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate );
-	struct FString GetGameName ( );
-	struct FString GetHardwareName ( );
-	struct FString GetPlatformName ( );
-	struct FString GetPlatformTicket ( int ControllerId, unsigned long bPrimary );
-	void ClearSparkConfigReceivedDelegate ( struct FScriptDelegate SparkConfigReceivedDelegate );
-	void AddSparkConfigReceivedDelegate ( struct FScriptDelegate SparkConfigReceivedDelegate );
-	void ResetInitializationStatus ( );
-	bool eventIsSparkEnabled ( );
-	int IssueSparkStringRequest ( struct FString URL, struct FString RequestData, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters );
-	int IssueSparkRequest ( struct FString URL, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters, TArray< unsigned char >* RequestData );
+	class USparkNews* GetNewsService();
+	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
+	struct FString GetTitleStorageUrl();
+	void ClearGearboxAccountData(unsigned long IncludePrimaryPlayer);
+	void SignOutGearboxAccount(unsigned char ControllerId);
+	void SignInGearboxAccount(unsigned char ControllerId);
+	class UGearboxAccountData* eventGetGearboxAccountData(unsigned char ControllerId);
+	bool eventIsGearboxAccountAuthenticated(unsigned char ControllerId);
+	bool IsGearboxAccountSignedIn(unsigned char ControllerId);
+	struct FString ConvertUtcTimeToLocalTime(struct FString UtcTime);
+	bool ShouldUpdateEmergencyMessage();
+	struct FString GetEmergencyMessage();
+	void SetEmergencyMessage(struct FString Message);
+	struct FString eventGetPlatformLoginNameFromSplitscreenIndex(int SplitscreenIndex);
+	struct FString GetPlatformLoginNameFromController(unsigned char ControllerId);
+	void IncreaseInteractionTries();
+	int GetInteractionTries();
+	int GetInteractionGraceTries();
+	int GetInteractionPunishmentMinWaitSeconds();
+	int GetInteractionMinWaitSeconds();
+	bool IsTmsComplete();
+	void SetTmsComplete();
+	class USparkInitializationProcess* GetSparkInitialization();
+	void eventRestartSparkInitialization(unsigned long bPrimary);
+	void RestartSparkInitializationFromScript(unsigned long bPrimary, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate);
+	void StartSparkInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
+	void StartSecondaryInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
+	struct FString GetGameName();
+	struct FString GetHardwareName();
+	struct FString GetPlatformName();
+	struct FString GetPlatformTicket(int ControllerId, unsigned long bPrimary);
+	void ClearSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
+	void AddSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
+	void ResetInitializationStatus();
+	bool eventIsSparkEnabled();
+	int IssueSparkStringRequest(struct FString URL, struct FString RequestData, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters);
+	int IssueSparkRequest(struct FString URL, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters, TArray< unsigned char >* RequestData);
 };
 
 UClass* USparkInterface::pClassPointer = NULL;
@@ -9484,26 +9340,26 @@ class USparkInterfaceImpl : public UObject
 public:
 	struct FPointer                                    VfTable_ISparkInterface;                          		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 	struct FPointer                                    VfTable_FTickableObject;                          		// 0x0040 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class USparkInitializationProcess*                 SparkInitialization;                              		// 0x0044 (0x0004) [0x0000000000000000]              
-	class USparkInitializationProcess*                 SecondaryInitialization;                          		// 0x0048 (0x0004) [0x0000000000000000]              
+	class USparkInitializationProcess*                 SparkInitialization;                              		// 0x0044 (0x0004) [0x0000000000000000]
+	class USparkInitializationProcess*                 SecondaryInitialization;                          		// 0x0048 (0x0004) [0x0000000000000000]
 	TArray< class UGearboxAccountData* >               Accounts;                                         		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     LeviathanServiceClassName;                        		// 0x0058 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
 	class ULeviathanService*                           LeviathanSvc;                                     		// 0x0064 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	int                                                ReadBufferSize;                                   		// 0x0068 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	unsigned long                                      TmsInitComplete : 1;                              		// 0x006C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      UpdateEmergencyMessage : 1;                       		// 0x006C (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      TmsInitComplete : 1;                              		// 0x006C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      UpdateEmergencyMessage : 1;                       		// 0x006C (0x0004) [0x0000000000000000] [0x00000002]
 	struct FString                                     EmergencyMessage;                                 		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FSparkOutstandingRequest >          Requests;                                         		// 0x007C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                LastHttpRequestRetries;                           		// 0x0088 (0x0004) [0x0000000000000000]              
-	float                                              LastHttpRequestResponseTime;                      		// 0x008C (0x0004) [0x0000000000000000]              
-	int                                                RecentHttpRequestFailures;                        		// 0x0090 (0x0004) [0x0000000000000000]              
-	int                                                InteractionMinWaitSeconds;                        		// 0x0094 (0x0004) [0x0000000000000000]              
-	int                                                InteractionGraceTries;                            		// 0x0098 (0x0004) [0x0000000000000000]              
-	int                                                InteractionPunishmentMinWaitSeconds;              		// 0x009C (0x0004) [0x0000000000000000]              
-	int                                                InteractionTries;                                 		// 0x00A0 (0x0004) [0x0000000000000000]              
+	int                                                LastHttpRequestRetries;                           		// 0x0088 (0x0004) [0x0000000000000000]
+	float                                              LastHttpRequestResponseTime;                      		// 0x008C (0x0004) [0x0000000000000000]
+	int                                                RecentHttpRequestFailures;                        		// 0x0090 (0x0004) [0x0000000000000000]
+	int                                                InteractionMinWaitSeconds;                        		// 0x0094 (0x0004) [0x0000000000000000]
+	int                                                InteractionGraceTries;                            		// 0x0098 (0x0004) [0x0000000000000000]
+	int                                                InteractionPunishmentMinWaitSeconds;              		// 0x009C (0x0004) [0x0000000000000000]
+	int                                                InteractionTries;                                 		// 0x00A0 (0x0004) [0x0000000000000000]
 	class USparkServiceConfiguration*                  TitleStorageService;                              		// 0x00A4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FString                                     TitleStorageUrl;                                  		// 0x00A8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class USparkNews*                                  NewsService;                                      		// 0x00B4 (0x0004) [0x0000000000000000]              
+	class USparkNews*                                  NewsService;                                      		// 0x00B4 (0x0004) [0x0000000000000000]
 	struct FScriptDelegate                             __OnSparkRequestComplete__Delegate;               		// 0x00B8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnSparkConfigReceived__Delegate;                		// 0x00C4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;       		// 0x00D0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -9514,62 +9370,62 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3456 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3456];
 
 		return pClassPointer;
 	};
 
-	class USparkNews* GetNewsService ( );
-	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration ( );
-	struct FString GetTitleStorageUrl ( );
-	void OnSparkInitialized ( unsigned char InitializedResult );
-	void IncreaseInteractionTries ( );
-	int GetInteractionTries ( );
-	int GetInteractionGraceTries ( );
-	int GetInteractionPunishmentMinWaitSeconds ( );
-	int GetInteractionMinWaitSeconds ( );
-	struct FString ConvertUtcTimeToLocalTime ( struct FString UtcTime );
-	bool ShouldUpdateEmergencyMessage ( );
-	struct FString GetEmergencyMessage ( );
-	void SetEmergencyMessage ( struct FString NewMessage );
-	bool IsTmsComplete ( );
-	void SetTmsComplete ( );
-	void RestartSparkInitializationFromScript ( unsigned long bPrimary, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate );
-	void eventRestartSparkInitialization ( unsigned long bPrimary );
-	void StartSparkInitialization ( unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate );
-	void ResetInitializationStatus ( );
-	void ResetSecondaryInitializationStatus ( );
-	void StartSecondaryInitialization ( unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate );
-	class USparkInitializationProcess* GetSparkInitialization ( );
-	void SignInGearboxAccount ( unsigned char ControllerId );
-	class UGearboxAccountData* eventGetGearboxAccountData ( unsigned char ControllerId );
-	void SignOutGearboxAccount ( unsigned char ControllerId );
-	bool ValidPlayerIndex ( int PlayerIndex );
-	int GetPlayerIndex ( int ControllerId );
-	void ClearGearboxAccountData ( unsigned long IncludePrimaryPlayer );
-	bool IsGearboxAccountSignedIn ( unsigned char ControllerId );
-	bool eventIsGearboxAccountAuthenticated ( unsigned char ControllerId );
-	struct FString GetGameName ( );
-	struct FString GetHardwareName ( );
-	struct FString GetPlatformName ( );
-	struct FString GetPlatformTicket ( int ControllerId, unsigned long bPrimary );
-	void ClearSparkConfigReceivedDelegate ( struct FScriptDelegate SparkConfigReceivedDelegate );
-	void AddSparkConfigReceivedDelegate ( struct FScriptDelegate SparkConfigReceivedDelegate );
-	struct FString GetPlatformLoginNameFromController ( unsigned char ControllerId );
-	struct FString eventGetPlatformLoginNameFromSplitscreenIndex ( int SplitscreenIndex );
-	struct FString eventGetPlatformLoginName ( );
-	unsigned char eventGetLoginStatus ( );
-	bool eventIsShiftEnabled ( );
-	bool eventIsSparkEnabled ( );
-	bool WithShift ( );
-	bool WithSpark ( );
-	int IssueSparkStringRequest ( struct FString URL, struct FString RequestData, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters );
-	int IssueSparkRequest ( struct FString URL, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpParameters, TArray< unsigned char >* RequestData );
-	struct FString AlternativeXboxlivePlatformId ( struct FUniqueNetId* NetId );
-	void OnSparkEmergencyMessageUpdated ( );
-	void OnSparkConfigReceived ( TArray< unsigned char > ConfigArray );
-	void OnSparkRequestComplete ( struct FSparkResult* Result );
+	class USparkNews* GetNewsService();
+	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
+	struct FString GetTitleStorageUrl();
+	void OnSparkInitialized(unsigned char InitializedResult);
+	void IncreaseInteractionTries();
+	int GetInteractionTries();
+	int GetInteractionGraceTries();
+	int GetInteractionPunishmentMinWaitSeconds();
+	int GetInteractionMinWaitSeconds();
+	struct FString ConvertUtcTimeToLocalTime(struct FString UtcTime);
+	bool ShouldUpdateEmergencyMessage();
+	struct FString GetEmergencyMessage();
+	void SetEmergencyMessage(struct FString NewMessage);
+	bool IsTmsComplete();
+	void SetTmsComplete();
+	void RestartSparkInitializationFromScript(unsigned long bPrimary, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate);
+	void eventRestartSparkInitialization(unsigned long bPrimary);
+	void StartSparkInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
+	void ResetInitializationStatus();
+	void ResetSecondaryInitializationStatus();
+	void StartSecondaryInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
+	class USparkInitializationProcess* GetSparkInitialization();
+	void SignInGearboxAccount(unsigned char ControllerId);
+	class UGearboxAccountData* eventGetGearboxAccountData(unsigned char ControllerId);
+	void SignOutGearboxAccount(unsigned char ControllerId);
+	bool ValidPlayerIndex(int PlayerIndex);
+	int GetPlayerIndex(int ControllerId);
+	void ClearGearboxAccountData(unsigned long IncludePrimaryPlayer);
+	bool IsGearboxAccountSignedIn(unsigned char ControllerId);
+	bool eventIsGearboxAccountAuthenticated(unsigned char ControllerId);
+	struct FString GetGameName();
+	struct FString GetHardwareName();
+	struct FString GetPlatformName();
+	struct FString GetPlatformTicket(int ControllerId, unsigned long bPrimary);
+	void ClearSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
+	void AddSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
+	struct FString GetPlatformLoginNameFromController(unsigned char ControllerId);
+	struct FString eventGetPlatformLoginNameFromSplitscreenIndex(int SplitscreenIndex);
+	struct FString eventGetPlatformLoginName();
+	unsigned char eventGetLoginStatus();
+	bool eventIsShiftEnabled();
+	bool eventIsSparkEnabled();
+	bool WithShift();
+	bool WithSpark();
+	int IssueSparkStringRequest(struct FString URL, struct FString RequestData, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters);
+	int IssueSparkRequest(struct FString URL, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpParameters, TArray< unsigned char >* RequestData);
+	struct FString AlternativeXboxlivePlatformId(struct FUniqueNetId* NetId);
+	void OnSparkEmergencyMessageUpdated();
+	void OnSparkConfigReceived(TArray< unsigned char > ConfigArray);
+	void OnSparkRequestComplete(struct FSparkResult* Result);
 };
 
 UClass* USparkInterfaceImpl::pClassPointer = NULL;
@@ -9579,8 +9435,8 @@ UClass* USparkInterfaceImpl::pClassPointer = NULL;
 class USparkServiceConfiguration : public UObject
 {
 public:
-	struct FName                                       ServiceName;                                      		// 0x003C (0x0008) [0x0000000000000000]              
-	struct FName                                       ConfigurationGroup;                               		// 0x0044 (0x0008) [0x0000000000000000]              
+	struct FName                                       ServiceName;                                      		// 0x003C (0x0008) [0x0000000000000000]
+	struct FName                                       ConfigurationGroup;                               		// 0x0044 (0x0008) [0x0000000000000000]
 	TArray< struct FString >                           Keys;                                             		// 0x004C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	TArray< struct FString >                           Values;                                           		// 0x0058 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     OverrideUrl;                                      		// 0x0064 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
@@ -9591,18 +9447,18 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3458 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3458];
 
 		return pClassPointer;
 	};
 
-	float GetFloatParameter ( struct FString KeyName, float DefaultValue, float MinimumValue, float MaximumValue );
-	int GetIntParameter ( struct FString KeyName, int DefaultValue, int MinimumValue, int MaximumValue );
-	struct FString GetStringParameter ( struct FString KeyName, struct FString Default );
-	struct FString GetParameter ( struct FString KeyNameToSearchFor );
-	void LoadService ( struct FServiceResult* Service );
-	void LoadOverrides ( );
+	float GetFloatParameter(struct FString KeyName, float DefaultValue, float MinimumValue, float MaximumValue);
+	int GetIntParameter(struct FString KeyName, int DefaultValue, int MinimumValue, int MaximumValue);
+	struct FString GetStringParameter(struct FString KeyName, struct FString Default);
+	struct FString GetParameter(struct FString KeyNameToSearchFor);
+	void LoadService(struct FServiceResult* Service);
+	void LoadOverrides();
 };
 
 UClass* USparkServiceConfiguration::pClassPointer = NULL;
@@ -9624,18 +9480,18 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3460 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3460];
 
 		return pClassPointer;
 	};
 
-	struct FString UTF8toString ( TArray< unsigned char > inputBytes );
-	void OnEntitlementsUpdated ( class UGearboxAccountData* GbxAccount );
-	void OnSparkEmergencyMessageUpdated ( );
-	void OnSparkInitialized ( unsigned char InitializedResult );
-	void OnSparkConfigReceived ( TArray< unsigned char > ConfigArray );
-	void OnSparkRequestComplete ( struct FSparkResult* Result );
+	struct FString UTF8toString(TArray< unsigned char > inputBytes);
+	void OnEntitlementsUpdated(class UGearboxAccountData* GbxAccount);
+	void OnSparkEmergencyMessageUpdated();
+	void OnSparkInitialized(unsigned char InitializedResult);
+	void OnSparkConfigReceived(TArray< unsigned char > ConfigArray);
+	void OnSparkRequestComplete(struct FSparkResult* Result);
 };
 
 UClass* USparkTypes::pClassPointer = NULL;
@@ -9653,12 +9509,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38884 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38884];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAction_ChangeRuleSet::pClassPointer = NULL;
@@ -9675,12 +9530,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38888 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38888];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URES_RuleSetChange::pClassPointer = NULL;
@@ -9697,13 +9551,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38891 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38891];
 
 		return pClassPointer;
 	};
 
-	void eventStopSequence ( );
+	void eventStopSequence();
 };
 
 UClass* UAction_FaceThreat::pClassPointer = NULL;
@@ -9720,12 +9574,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38898 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38898];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URES_FacingPolicy::pClassPointer = NULL;
@@ -9742,12 +9595,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38899 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38899];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAction_MoveRandom::pClassPointer = NULL;
@@ -9764,12 +9616,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38901 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38901];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAction_MoveTo::pClassPointer = NULL;
@@ -9786,12 +9637,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39129 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39129];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URES_Movement::pClassPointer = NULL;
@@ -9808,12 +9658,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39130 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39130];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAction_PopRuleSet::pClassPointer = NULL;
@@ -9831,12 +9680,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39133 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39133];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAction_PushRuleSet::pClassPointer = NULL;
@@ -9853,13 +9701,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39151 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39151];
 
 		return pClassPointer;
 	};
 
-	class UObject* GetAttributeContext ( class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource );
+	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
 UClass* UActorAttributeContextResolver::pClassPointer = NULL;
@@ -9876,13 +9724,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39267 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39267];
 
 		return pClassPointer;
 	};
 
-	class UObject* GetAttributeContext ( class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource );
+	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
 UClass* UAIComponentAttributeContextResolver::pClassPointer = NULL;
@@ -9899,12 +9747,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39586 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39586];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIStateBase::pClassPointer = NULL;
@@ -9921,12 +9768,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39588 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39588];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIState::pClassPointer = NULL;
@@ -9943,12 +9789,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39590 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39590];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIState_Priority::pClassPointer = NULL;
@@ -9965,12 +9810,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39592 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39592];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIState_Random::pClassPointer = NULL;
@@ -9987,12 +9831,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39594 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39594];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UAIState_Sequential::pClassPointer = NULL;
@@ -10012,13 +9855,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39683 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39683];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_AIHold::pClassPointer = NULL;
@@ -10037,13 +9880,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39698 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39698];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_AIPriority::pClassPointer = NULL;
@@ -10061,13 +9904,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39712 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39712];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_AITargeting::pClassPointer = NULL;
@@ -10086,13 +9929,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39735 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39735];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_ChangeAnyBehaviorSequenceState::pClassPointer = NULL;
@@ -10111,13 +9954,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39751 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39751];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_ChangeLocalBehaviorSequenceState::pClassPointer = NULL;
@@ -10127,7 +9970,7 @@ UClass* UBehavior_ChangeLocalBehaviorSequenceState::pClassPointer = NULL;
 class UBehavior_CompareBool : public UBehaviorBase
 {
 public:
-	unsigned long                                      BoolValue : 1;                                    		// 0x004C (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      BoolValue : 1;                                    		// 0x004C (0x0004) [0x0000000000000000] [0x00000001]
 
 private:
 	static UClass* pClassPointer;
@@ -10135,13 +9978,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39819 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39819];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_CompareBool::pClassPointer = NULL;
@@ -10161,13 +10004,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39831 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39831];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_CompareValues::pClassPointer = NULL;
@@ -10185,13 +10028,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39844 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39844];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_CustomEvent::pClassPointer = NULL;
@@ -10209,13 +10052,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39858 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39858];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_Delay::pClassPointer = NULL;
@@ -10234,13 +10077,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39868 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39868];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_Gate::pClassPointer = NULL;
@@ -10257,14 +10100,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39880 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39880];
 
 		return pClassPointer;
 	};
 
-	void PublishBehaviorOutput ( float Value, struct FBehaviorKernelInfo* KernelInfo );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void PublishBehaviorOutput(float Value, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_GetFloatParam::pClassPointer = NULL;
@@ -10281,14 +10124,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39894 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39894];
 
 		return pClassPointer;
 	};
 
-	void PublishBehaviorOutput ( class UObject* Value, struct FBehaviorKernelInfo* KernelInfo );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void PublishBehaviorOutput(class UObject* Value, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_GetObjectParam::pClassPointer = NULL;
@@ -10306,14 +10149,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39908 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39908];
 
 		return pClassPointer;
 	};
 
-	void PublishBehaviorOutput ( float R, float G, float B, float A, struct FBehaviorKernelInfo* KernelInfo );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void PublishBehaviorOutput(float R, float G, float B, float A, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_GetVectorParam::pClassPointer = NULL;
@@ -10334,14 +10177,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39927 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39927];
 
 		return pClassPointer;
 	};
 
-	void PublishBehaviorOutput ( float Result, struct FBehaviorKernelInfo* KernelInfo );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void PublishBehaviorOutput(float Result, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_InterpolateFloatOverTime::pClassPointer = NULL;
@@ -10364,13 +10207,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39958 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39958];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_Metronome::pClassPointer = NULL;
@@ -10390,14 +10233,14 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39973 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39973];
 
 		return pClassPointer;
 	};
 
-	void PublishBehaviorOutput ( float TimeRemaining, struct FBehaviorKernelInfo* KernelInfo );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void PublishBehaviorOutput(float TimeRemaining, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_ModifyTimer::pClassPointer = NULL;
@@ -10415,13 +10258,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40099 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40099];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_SetFloatParam::pClassPointer = NULL;
@@ -10439,13 +10282,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40110 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40110];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_SetObjectParam::pClassPointer = NULL;
@@ -10471,13 +10314,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40121 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40121];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_SetVectorParam::pClassPointer = NULL;
@@ -10499,15 +10342,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40142 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40142];
 
 		return pClassPointer;
 	};
 
-	void PlaySpecialMove ( class USpecialMoveComponent* SMC );
-	void TriggerOutput ( struct FBehaviorKernelInfo* KernelInfo );
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void PlaySpecialMove(class USpecialMoveComponent* SMC);
+	void TriggerOutput(struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_SpecialMove::pClassPointer = NULL;
@@ -10525,13 +10368,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40176 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40176];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_SpecialMoveStop::pClassPointer = NULL;
@@ -10550,13 +10393,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40190 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40190];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_StartAkAmbientSound::pClassPointer = NULL;
@@ -10575,13 +10418,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40204 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40204];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_StopAkAmbientSound::pClassPointer = NULL;
@@ -10599,13 +10442,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40218 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40218];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_StopDialog::pClassPointer = NULL;
@@ -10623,13 +10466,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40232 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40232];
 
 		return pClassPointer;
 	};
 
-	void ApplyBehaviorToContext ( class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo );
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 UClass* UBehavior_ToggleDialog::pClassPointer = NULL;
@@ -10639,10 +10482,10 @@ UClass* UBehavior_ToggleDialog::pClassPointer = NULL;
 class UCameraModifierCrossfade : public UGearboxCameraModifier
 {
 public:
-	class UGearboxCameraModifier*                      ModifierA;                                        		// 0x008C (0x0004) [0x0000000000000000]              
-	class UGearboxCameraModifier*                      ModifierB;                                        		// 0x0090 (0x0004) [0x0000000000000000]              
-	int                                                CurModifierNdx;                                   		// 0x0094 (0x0004) [0x0000000000000000]              
-	float                                              CurBlendWeight;                                   		// 0x0098 (0x0004) [0x0000000000000000]              
+	class UGearboxCameraModifier*                      ModifierA;                                        		// 0x008C (0x0004) [0x0000000000000000]
+	class UGearboxCameraModifier*                      ModifierB;                                        		// 0x0090 (0x0004) [0x0000000000000000]
+	int                                                CurModifierNdx;                                   		// 0x0094 (0x0004) [0x0000000000000000]
+	float                                              CurBlendWeight;                                   		// 0x0098 (0x0004) [0x0000000000000000]
 	float                                              BlendSpeed;                                       		// 0x009C (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                DebugInset;                                       		// 0x00A0 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	unsigned char                                      LerpMode;                                         		// 0x00A4 (0x0001) [0x0000000000000002]              ( CPF_Const )
@@ -10653,18 +10496,18 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40591 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40591];
 
 		return pClassPointer;
 	};
 
-	void DoCrossfade ( );
-	void UpdateAllLerps ( float DeltaTime, struct FTPOV* OutPOV );
-	bool ModifyCamera ( class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV );
-	void ProcessCameraBlend ( class ACamera* Camera, float AdjustedDeltaTime, struct FTPOV* OutPOV );
-	void InitializeSubModifiers ( );
-	void eventEnableModifier ( );
+	void DoCrossfade();
+	void UpdateAllLerps(float DeltaTime, struct FTPOV* OutPOV);
+	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV);
+	void ProcessCameraBlend(class ACamera* Camera, float AdjustedDeltaTime, struct FTPOV* OutPOV);
+	void InitializeSubModifiers();
+	void eventEnableModifier();
 };
 
 UClass* UCameraModifierCrossfade::pClassPointer = NULL;
@@ -10674,18 +10517,18 @@ UClass* UCameraModifierCrossfade::pClassPointer = NULL;
 class UCameraModifierLookAt : public UGearboxCameraModifier
 {
 public:
-	unsigned char                                      LookAtMode;                                       		// 0x008C (0x0001) [0x0000000000000000]              
-	unsigned long                                      bActionFinished : 1;                              		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              Duration;                                         		// 0x0094 (0x0004) [0x0000000000000000]              
-	float                                              TimeElapsed;                                      		// 0x0098 (0x0004) [0x0000000000000000]              
-	float                                              ThirdPersonPullBackDistance;                      		// 0x009C (0x0004) [0x0000000000000000]              
-	float                                              ThirdPersonPushSideDistance;                      		// 0x00A0 (0x0004) [0x0000000000000000]              
-	float                                              ThirdPersonRaiseUpDistance;                       		// 0x00A4 (0x0004) [0x0000000000000000]              
-	float                                              Zoom;                                             		// 0x00A8 (0x0004) [0x0000000000000000]              
-	float                                              TransitionInTime;                                 		// 0x00AC (0x0004) [0x0000000000000000]              
-	float                                              TransitionOutTime;                                		// 0x00B0 (0x0004) [0x0000000000000000]              
-	class AActor*                                      LookAtTarget;                                     		// 0x00B4 (0x0004) [0x0000000000000000]              
-	struct FName                                       LookAtBone;                                       		// 0x00B8 (0x0008) [0x0000000000000000]              
+	unsigned char                                      LookAtMode;                                       		// 0x008C (0x0001) [0x0000000000000000]
+	unsigned long                                      bActionFinished : 1;                              		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001]
+	float                                              Duration;                                         		// 0x0094 (0x0004) [0x0000000000000000]
+	float                                              TimeElapsed;                                      		// 0x0098 (0x0004) [0x0000000000000000]
+	float                                              ThirdPersonPullBackDistance;                      		// 0x009C (0x0004) [0x0000000000000000]
+	float                                              ThirdPersonPushSideDistance;                      		// 0x00A0 (0x0004) [0x0000000000000000]
+	float                                              ThirdPersonRaiseUpDistance;                       		// 0x00A4 (0x0004) [0x0000000000000000]
+	float                                              Zoom;                                             		// 0x00A8 (0x0004) [0x0000000000000000]
+	float                                              TransitionInTime;                                 		// 0x00AC (0x0004) [0x0000000000000000]
+	float                                              TransitionOutTime;                                		// 0x00B0 (0x0004) [0x0000000000000000]
+	class AActor*                                      LookAtTarget;                                     		// 0x00B4 (0x0004) [0x0000000000000000]
+	struct FName                                       LookAtBone;                                       		// 0x00B8 (0x0008) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -10693,26 +10536,26 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40633 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40633];
 
 		return pClassPointer;
 	};
 
-	void ExecuteFadeIfNeeded ( class AGearboxPlayerController** PC );
-	struct FVector GetDesiredLocation ( struct FTPOV* OutPOV, class AGearboxPlayerController** PC );
-	bool ModifyCamera ( class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV );
-	bool GetBoneLocation ( class AActor* Target, struct FName BoneName, struct FVector* BoneLoc );
-	void SetLookAtBone ( struct FName NewBone );
-	void SetLookAtTarget ( class AActor* newLookAtTarget );
-	void SetTargetLocation ( struct FVector NewTargetLocation, float newTransitionTimeIn, float newTransitionTimeOut );
-	void SetDuration ( float NewDuration );
-	void SetTransitionTimes ( float NewInTime, float NewOutTime );
-	void SetZoomFOV ( float newZoom );
-	void SetThirdPersonDistances ( float NewX, float NewY, float NewZ );
-	void SetLookAtMode ( unsigned char NewMode );
-	void DisableModifier ( unsigned long bImmediate );
-	void EnableModifier ( );
+	void ExecuteFadeIfNeeded(class AGearboxPlayerController** PC);
+	struct FVector GetDesiredLocation(struct FTPOV* OutPOV, class AGearboxPlayerController** PC);
+	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV);
+	bool GetBoneLocation(class AActor* Target, struct FName BoneName, struct FVector* BoneLoc);
+	void SetLookAtBone(struct FName NewBone);
+	void SetLookAtTarget(class AActor* newLookAtTarget);
+	void SetTargetLocation(struct FVector NewTargetLocation, float newTransitionTimeIn, float newTransitionTimeOut);
+	void SetDuration(float NewDuration);
+	void SetTransitionTimes(float NewInTime, float NewOutTime);
+	void SetZoomFOV(float newZoom);
+	void SetThirdPersonDistances(float NewX, float NewY, float NewZ);
+	void SetLookAtMode(unsigned char NewMode);
+	void DisableModifier(unsigned long bImmediate);
+	void EnableModifier();
 };
 
 UClass* UCameraModifierLookAt::pClassPointer = NULL;
@@ -10737,12 +10580,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40747 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40747];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UDefinitionUITestCaseDefinition::pClassPointer = NULL;
@@ -10761,20 +10603,20 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 41083 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41083];
 
 		return pClassPointer;
 	};
 
-	class USparkServiceConfiguration* Internal_GetService ( unsigned char ControllerId, class USparkInterface* Spark );
-	void CallAndClearRetrievedDelegate ( unsigned char RetrievealResult );
-	void ParseArticles ( class UJsonObject* NewsArticlesJSONObject );
-	void HandleNewsRetrievalResponse ( struct FSparkResult* Result );
-	bool GetArticle ( int Idx, struct FString* Header, struct FString* Body );
-	int GetArticleCount ( );
-	void RetrieveNews ( unsigned char ControllerId, struct FScriptDelegate RetrievalDelegate );
-	void OnNewsRetrieved ( unsigned char RetrievealResult, class USparkNews* newsObj );
+	class USparkServiceConfiguration* Internal_GetService(unsigned char ControllerId, class USparkInterface* Spark);
+	void CallAndClearRetrievedDelegate(unsigned char RetrievealResult);
+	void ParseArticles(class UJsonObject* NewsArticlesJSONObject);
+	void HandleNewsRetrievalResponse(struct FSparkResult* Result);
+	bool GetArticle(int Idx, struct FString* Header, struct FString* Body);
+	int GetArticleCount();
+	void RetrieveNews(unsigned char ControllerId, struct FScriptDelegate RetrievalDelegate);
+	void OnNewsRetrieved(unsigned char RetrievealResult, class USparkNews* newsObj);
 };
 
 UClass* USparkNews::pClassPointer = NULL;
@@ -10784,13 +10626,13 @@ UClass* USparkNews::pClassPointer = NULL;
 class UGearboxAccountEntitlement : public UObject
 {
 public:
-	struct FName                                       Identifier;                                       		// 0x003C (0x0008) [0x0000000000000000]              
-	int                                                Id;                                               		// 0x0044 (0x0004) [0x0000000000000000]              
-	unsigned long                                      Consumable : 1;                                   		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                ConsumableAmount;                                 		// 0x004C (0x0004) [0x0000000000000000]              
-	int                                                Consumed;                                         		// 0x0050 (0x0004) [0x0000000000000000]              
+	struct FName                                       Identifier;                                       		// 0x003C (0x0008) [0x0000000000000000]
+	int                                                Id;                                               		// 0x0044 (0x0004) [0x0000000000000000]
+	unsigned long                                      Consumable : 1;                                   		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001]
+	int                                                ConsumableAmount;                                 		// 0x004C (0x0004) [0x0000000000000000]
+	int                                                Consumed;                                         		// 0x0050 (0x0004) [0x0000000000000000]
 	struct FString                                     Payload;                                          		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                LocallyConsumed;                                  		// 0x0060 (0x0004) [0x0000000000000000]              
+	int                                                LocallyConsumed;                                  		// 0x0060 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -10798,12 +10640,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 41265 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41265];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxAccountEntitlement::pClassPointer = NULL;
@@ -10815,8 +10656,8 @@ class UGearboxAccountOffer : public UObject
 public:
 	struct FString                                     TitleEfigs;                                       		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     DescriptionEfigs;                                 		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                Id;                                               		// 0x0054 (0x0004) [0x0000000000000000]              
-	unsigned long                                      Notified : 1;                                     		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                Id;                                               		// 0x0054 (0x0004) [0x0000000000000000]
+	unsigned long                                      Notified : 1;                                     		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001]
 	struct FString                                     DateUnlocked;                                     		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
 private:
@@ -10825,12 +10666,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 41282 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41282];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxAccountOffer::pClassPointer = NULL;
@@ -10848,12 +10688,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 41505 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41505];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* APatrolDestination::pClassPointer = NULL;
@@ -10872,12 +10711,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 42535 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[42535];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_TargetPriority::pClassPointer = NULL;
@@ -10895,12 +10733,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 43051 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43051];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_CameraShake::pClassPointer = NULL;
@@ -10911,10 +10748,10 @@ class UGearboxSeqAct_PawnClonerLink : public USeqAct_Latent
 {
 public:
 	unsigned long                                      bEnabled : 1;                                     		// 0x00B4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bIsSpawning : 1;                                  		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bIsSpawning : 1;                                  		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000002]
 	TArray< class AActor* >                            ClonePoints;                                      		// 0x00B8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	int                                                SpawnedCount;                                     		// 0x00C4 (0x0004) [0x0000000000000000]              
-	float                                              RemainingDelay;                                   		// 0x00C8 (0x0004) [0x0000000000000000]              
+	int                                                SpawnedCount;                                     		// 0x00C4 (0x0004) [0x0000000000000000]
+	float                                              RemainingDelay;                                   		// 0x00C8 (0x0004) [0x0000000000000000]
 
 private:
 	static UClass* pClassPointer;
@@ -10922,12 +10759,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 43358 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43358];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UGearboxSeqAct_PawnClonerLink::pClassPointer = NULL;
@@ -10952,13 +10788,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 43531 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43531];
 
 		return pClassPointer;
 	};
 
-	bool eventRequiresClientInstance ( );
+	bool eventRequiresClientInstance();
 };
 
 UClass* UGFxMovieDrawStyleInstanceData::pClassPointer = NULL;
@@ -10975,12 +10811,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 43835 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43835];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqEvent_AllSpawned::pClassPointer = NULL;
@@ -10997,13 +10832,13 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44144 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44144];
 
 		return pClassPointer;
 	};
 
-	class UObject* GetAttributeContext ( class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource );
+	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
 UClass* UPopulationMasterAttributeContextResolver::pClassPointer = NULL;
@@ -11020,12 +10855,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44322 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44322];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqEvent_SinglePopulationDeath::pClassPointer = NULL;
@@ -11042,12 +10876,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44475 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44475];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URES_Rotation::pClassPointer = NULL;
@@ -11064,12 +10897,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44478 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44478];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* URES_SpecialMove::pClassPointer = NULL;
@@ -11086,12 +10918,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44556 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44556];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqEvent_ArrivedAtMoveNode::pClassPointer = NULL;
@@ -11108,12 +10939,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44561 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44561];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* USeqEvent_LeavingMoveNode::pClassPointer = NULL;
@@ -11130,12 +10960,11 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44578 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44578];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* UShowDebugHelpers::pClassPointer = NULL;
@@ -11152,17 +10981,15 @@ private:
 public:
 	static UClass* StaticClass()
 	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 44592 ];
+		if (!pClassPointer)
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44592];
 
 		return pClassPointer;
 	};
-
 };
 
 UClass* ASkeletalMeshActorGBXMatinee::pClassPointer = NULL;
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

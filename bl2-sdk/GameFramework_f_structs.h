@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -23,7 +23,7 @@
 */
 
 // Function GameFramework.GamePlayerController.ClientColorFade
-// [0x010201C0] 
+// [0x010201C0]
 struct AGamePlayerController_execClientColorFade_Parms
 {
 	struct FColor                                      FadeColor;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -56,12 +56,12 @@ struct AGamePlayerController_execDoMemLeakChecking_Parms
 struct AGamePlayerController_eventWarmupPause_Parms
 {
 	unsigned long                                      bDesiredPauseState : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// struct FColor                                   FadeColor;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	// struct FColor                                   FadeColor;                                        		// 0x0004 (0x0004) [0x0000000000000000]
 	// struct FString                                  MovieName;                                        		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GameFramework.GamePlayerController.CanUnpauseWarmup
-// [0x00020002] 
+// [0x00020002]
 struct AGamePlayerController_execCanUnpauseWarmup_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -114,14 +114,14 @@ struct AGamePlayerController_execShowLoadingMovie_Parms
 };
 
 // Function GameFramework.GamePlayerController.SetSoundMode
-// [0x00020102] 
+// [0x00020102]
 struct AGamePlayerController_execSetSoundMode_Parms
 {
 	struct FName                                       InSoundModeName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GameFramework.GamePlayerController.DoForceFeedbackForScreenShake
-// [0x00080102] 
+// [0x00080102]
 struct AGamePlayerController_execDoForceFeedbackForScreenShake_Parms
 {
 	class UCameraShake*                                ShakeData;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -136,13 +136,13 @@ struct AGamePlayerController_execGetUIPlayerIndex_Parms
 };
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshGoal_OutOfViewFrom_execRecycle_Parms
 {
 };
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.MustBeHiddenFromThisPoint
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshGoal_OutOfViewFrom_execMustBeHiddenFromThisPoint_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -157,13 +157,13 @@ struct UNavMeshGoal_OutOfViewFrom_execRecycleNative_Parms
 };
 
 // Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.Recycle
-// [0x00020002] 
+// [0x00020002]
 struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execRecycle_Parms
 {
 };
 
 // Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.BiasAgainstPolysWithinDistanceOfLocations
-// [0x00022002] 
+// [0x00022002]
 struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execBiasAgainstPolysWithinDistanceOfLocations_Parms
 {
 	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -233,7 +233,6 @@ struct APlayerCollectorGame_eventLogin_Parms
 	class APlayerController*                           ReturnValue;                                      		// 0x003C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

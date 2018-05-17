@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -23,61 +23,61 @@
 */
 
 // Function GearboxFramework.AIDebugCamera.ToggleAITree
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleAITree_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleTargetViewCones
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleTargetViewCones_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleAwarenessZones
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleAwarenessZones_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleRuleEngineLoadBalance
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleRuleEngineLoadBalance_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleCombat
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleCombat_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleShowTimers
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleShowTimers_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleResources
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleResources_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleInactiveRules
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleInactiveRules_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleRules
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleRules_Parms
 {
 };
 
 // Function GearboxFramework.AIDebugCamera.ToggleFlags
-// [0x00020002] 
+// [0x00020002]
 struct UAIDebugCamera_execToggleFlags_Parms
 {
 };
@@ -259,7 +259,7 @@ struct UBehavior_CallFunction_execCallFunction_Parms
 };
 
 // Function GearboxFramework.Behavior_CallFunction.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_CallFunction_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -271,7 +271,7 @@ struct UBehavior_CallFunction_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_ChangeRemoteBehaviorSequenceState.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ChangeRemoteBehaviorSequenceState_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -280,12 +280,12 @@ struct UBehavior_ChangeRemoteBehaviorSequenceState_execApplyBehaviorToContext_Pa
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_ChangeTimer.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ChangeTimer_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -294,12 +294,12 @@ struct UBehavior_ChangeTimer_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UITimerBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorTimerState                      TimerState;                                       		// 0x0040 (0x000C) [0x0000000000000000]              
+	// class UITimerBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorTimerState                      TimerState;                                       		// 0x0040 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_IsSequenceEnabled.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_IsSequenceEnabled_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -308,12 +308,12 @@ struct UBehavior_IsSequenceEnabled_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_PostAkEvent.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_PostAkEvent_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -322,8 +322,8 @@ struct UBehavior_PostAkEvent_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UISoundBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// class UIWorldBody*                              WorldBodyInterface;                               		// 0x0040 (0x0008) [0x0000000000000000]              
+	// class UISoundBehavior*                          ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// class UIWorldBody*                              WorldBodyInterface;                               		// 0x0040 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.BehaviorHelpers.RunAllBehaviorsForEvent
@@ -341,7 +341,7 @@ struct UBehaviorHelpers_execRunAllBehaviorsForEvent_Parms
 };
 
 // Function GearboxFramework.BehaviorHelpers.BehaviorStrategy
-// [0x00524000] 
+// [0x00524000]
 struct UBehaviorHelpers_execBehaviorStrategy_Parms
 {
 	struct FPointer                                    BehaviorSet;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -351,7 +351,7 @@ struct UBehaviorHelpers_execBehaviorStrategy_Parms
 };
 
 // Function GearboxFramework.BehaviorHelpers.BehaviorSetStrategy
-// [0x00520000] 
+// [0x00520000]
 struct UBehaviorHelpers_execBehaviorSetStrategy_Parms
 {
 	TArray< struct FPointer >                          BehaviorSetList;                                  		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -376,7 +376,7 @@ struct UBehaviorHelpers_execIsBehaviorsV2_Parms
 };
 
 // Function GearboxFramework.BehaviorHelpers.ShouldContinueExecution
-// [0x00422002] 
+// [0x00422002]
 struct UBehaviorHelpers_execShouldContinueExecution_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -387,14 +387,14 @@ struct UBehaviorHelpers_execShouldContinueExecution_Parms
 };
 
 // Function GearboxFramework.BehaviorHelpers.GetNextFireLocationSocket
-// [0x00422002] 
+// [0x00422002]
 struct UBehaviorHelpers_execGetNextFireLocationSocket_Parms
 {
 	unsigned char                                      FireSocketSelection;                              		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	TArray< struct FName >                             FireLocationSocketNames;                          		// 0x0004 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	TArray< struct FName >                             FireLocationSocketsRemaining;                     		// 0x0010 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	struct FName                                       ReturnValue;                                      		// 0x001C (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FName                                    retVal;                                           		// 0x0024 (0x0008) [0x0000000000000000]              
+	// struct FName                                    retVal;                                           		// 0x0024 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.BehaviorHelpers.GetRotationFromAttachmentLocationData
@@ -546,7 +546,7 @@ struct UGBXObjectList_execAddObject_Parms
 };
 
 // Function GearboxFramework.GearboxAIController.ForceMoveToActor
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxAIController_execForceMoveToActor_Parms
 {
 	class AActor*                                      destActor;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -604,7 +604,7 @@ struct AGearboxAIMoveNode_execClearLinks_Parms
 };
 
 // Function GearboxFramework.GearboxAIMoveNode.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct AGearboxAIMoveNode_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -627,7 +627,7 @@ struct AGearboxCameraBasic_eventEnableThirdPersonLookAt_Parms
 };
 
 // Function GearboxFramework.GearboxCameraBasic.BeginCameraLookAt
-// [0x00020100] 
+// [0x00020100]
 struct AGearboxCameraBasic_execBeginCameraLookAt_Parms
 {
 	class AActor*                                      LookAtTarget;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -641,20 +641,20 @@ struct AGearboxCameraBasic_execBeginCameraLookAt_Parms
 };
 
 // Function GearboxFramework.GearboxCameraBasic.CalcSimpleThirdPersonView
-// [0x00C20102] 
+// [0x00C20102]
 struct AGearboxCameraBasic_execCalcSimpleThirdPersonView_Parms
 {
 	struct FTViewTarget                                OutVT;                                            		// 0x0000 (0x002C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	float                                              DeltaTime;                                        		// 0x002C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FVector                                  Loc;                                              		// 0x0030 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  pos;                                              		// 0x003C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitLocation;                                      		// 0x0048 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0054 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 Rot;                                              		// 0x0060 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  Loc;                                              		// 0x0030 (0x000C) [0x0000000000000000]
+	// struct FVector                                  pos;                                              		// 0x003C (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitLocation;                                      		// 0x0048 (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0054 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 Rot;                                              		// 0x0060 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxCameraBasic.CalcBaseView
-// [0x00420102] 
+// [0x00420102]
 struct AGearboxCameraBasic_execCalcBaseView_Parms
 {
 	struct FTViewTarget                                OutVT;                                            		// 0x0000 (0x002C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -662,16 +662,16 @@ struct AGearboxCameraBasic_execCalcBaseView_Parms
 };
 
 // Function GearboxFramework.GearboxCameraBasic.UpdateViewTarget
-// [0x00C20102] 
+// [0x00C20102]
 struct AGearboxCameraBasic_execUpdateViewTarget_Parms
 {
 	struct FTViewTarget                                OutVT;                                            		// 0x0000 (0x002C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	float                                              DeltaTime;                                        		// 0x002C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FTPOV                                    OrigPOV;                                          		// 0x0034 (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    OrigPOV;                                          		// 0x0034 (0x001C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxCameraModifier.LerpFOV
-// [0x00080002] 
+// [0x00080002]
 struct UGearboxCameraModifier_execLerpFOV_Parms
 {
 	float                                              Src;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -681,7 +681,7 @@ struct UGearboxCameraModifier_execLerpFOV_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.LerpRotation
-// [0x00080002] 
+// [0x00080002]
 struct UGearboxCameraModifier_execLerpRotation_Parms
 {
 	struct FRotator                                    Src;                                              		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -691,7 +691,7 @@ struct UGearboxCameraModifier_execLerpRotation_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.LerpLocation
-// [0x00080002] 
+// [0x00080002]
 struct UGearboxCameraModifier_execLerpLocation_Parms
 {
 	struct FVector                                     Src;                                              		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -701,12 +701,12 @@ struct UGearboxCameraModifier_execLerpLocation_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.UpdateAllLerps
-// [0x00C80002] 
+// [0x00C80002]
 struct UGearboxCameraModifier_execUpdateAllLerps_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FTPOV                                       OutPOV;                                           		// 0x0004 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
-	// struct FTPOV                                    PrelimPOV;                                        		// 0x0020 (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    PrelimPOV;                                        		// 0x0020 (0x001C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxCameraModifier.UpdateMasterFadePercentage
@@ -717,28 +717,28 @@ struct UGearboxCameraModifier_execUpdateMasterFadePercentage_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.IsFadingDownwards
-// [0x00080002] 
+// [0x00080002]
 struct UGearboxCameraModifier_execIsFadingDownwards_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxCameraModifier.IsFadingUpwards
-// [0x00080002] 
+// [0x00080002]
 struct UGearboxCameraModifier_execIsFadingUpwards_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxCameraModifier.IsFadeInProgress
-// [0x00080002] 
+// [0x00080002]
 struct UGearboxCameraModifier_execIsFadeInProgress_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxCameraModifier.StartFadeOut
-// [0x00084002] 
+// [0x00084002]
 struct UGearboxCameraModifier_execStartFadeOut_Parms
 {
 	float                                              NewTimeSpan;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -747,7 +747,7 @@ struct UGearboxCameraModifier_execStartFadeOut_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.StartFadeIn
-// [0x00084002] 
+// [0x00084002]
 struct UGearboxCameraModifier_execStartFadeIn_Parms
 {
 	float                                              NewTimeSpan;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -755,7 +755,7 @@ struct UGearboxCameraModifier_execStartFadeIn_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.SetDesiredCamera
-// [0x00080102] 
+// [0x00080102]
 struct UGearboxCameraModifier_execSetDesiredCamera_Parms
 {
 	struct FVector                                     DesiredLoc;                                       		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -764,14 +764,14 @@ struct UGearboxCameraModifier_execSetDesiredCamera_Parms
 };
 
 // Function GearboxFramework.GearboxCameraModifier.SetGBXCameraOwner
-// [0x00080102] 
+// [0x00080102]
 struct UGearboxCameraModifier_execSetGBXCameraOwner_Parms
 {
 	class AGearboxCameraBasic*                         InCamera;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxCameraModifier.AddCameraModifier
-// [0x00020102] 
+// [0x00020102]
 struct UGearboxCameraModifier_execAddCameraModifier_Parms
 {
 	class ACamera*                                     Camera;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -897,14 +897,14 @@ struct AGearboxGameInfo_eventPostLogin_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.extSetLanguageExt
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execextSetLanguageExt_Parms
 {
 	struct FString                                     ClipPath;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxGFxMovie.OnClosedOnDeath
-// [0x00020000] 
+// [0x00020000]
 struct UGearboxGFxMovie_execOnClosedOnDeath_Parms
 {
 };
@@ -917,7 +917,7 @@ struct UGearboxGFxMovie_execIsShowingFlashMouse_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.extIsMouseablePlatform
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execextIsMouseablePlatform_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -930,7 +930,7 @@ struct UGearboxGFxMovie_eventSetMouseableFlag_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.GetStyleDebugString
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execGetStyleDebugString_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -939,7 +939,7 @@ struct UGearboxGFxMovie_execGetStyleDebugString_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.GetStateDebugString
-// [0x00024002] 
+// [0x00024002]
 struct UGearboxGFxMovie_execGetStateDebugString_Parms
 {
 	unsigned long                                      bIncludeFlags : 1;                                		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -1083,7 +1083,7 @@ struct UGearboxGFxMovie_execInitFromDefinition_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Apply
-// [0x00022002] 
+// [0x00022002]
 struct UGearboxGFxMovie_execMovieState_Apply_Parms
 {
 	class UGearboxGFxMovie*                            Movie;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1091,7 +1091,7 @@ struct UGearboxGFxMovie_execMovieState_Apply_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_ApplyState
-// [0x00022000] 
+// [0x00022000]
 struct UGearboxGFxMovie_execMovieState_ApplyState_Parms
 {
 	struct FName                                       TheState;                                         		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1099,7 +1099,7 @@ struct UGearboxGFxMovie_execMovieState_ApplyState_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.ApplyState
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execApplyState_Parms
 {
 	struct FString                                     StateName;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1107,32 +1107,32 @@ struct UGearboxGFxMovie_execApplyState_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.SetRenderingEnabled
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execSetRenderingEnabled_Parms
 {
 	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxGFxMovie.GotoAndStop
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execGotoAndStop_Parms
 {
 	struct FString                                     FrameLabel;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxGFxMovie.GotoAndPlay
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execGotoAndPlay_Parms
 {
 	struct FString                                     FrameLabel;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxGFxMovie.PlaySpecialUISound
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxGFxMovie_execPlaySpecialUISound_Parms
 {
 	struct FString                                     SoundString;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// struct FName                                    SoundName;                                        		// 0x000C (0x0008) [0x0000000000000000]              
+	// struct FName                                    SoundName;                                        		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxGFxMovie.PlayUISound
@@ -1227,7 +1227,7 @@ struct UGearboxGFxMovie_execGetLocalPlayer_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.OnClosed
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxGFxMovie_execOnClosed_Parms
 {
 	class UGearboxGFxMovie*                            Movie;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1251,7 +1251,7 @@ struct UGearboxGFxMovie_execSetExternalTexture_Parms
 };
 
 // Function GearboxFramework.GearboxGFxMovie.OnInputAxis
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxGFxMovie_execOnInputAxis_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1262,7 +1262,7 @@ struct UGearboxGFxMovie_execOnInputAxis_Parms
 };
 
 // Function GearboxFramework.GFxMovie_StateParent.MovieState_OnChanged
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMovie_StateParent_execMovieState_OnChanged_Parms
 {
 	unsigned long                                      bStateWasChanged : 1;                             		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1597,13 +1597,13 @@ struct AGearboxPawn_execCanTalk_Parms
 };
 
 // Function GearboxFramework.GearboxPawn.OnCoverStateChanged
-// [0x00080102] 
+// [0x00080102]
 struct AGearboxPawn_execOnCoverStateChanged_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPawn.ServerSetCoverState
-// [0x002800C2] 
+// [0x002800C2]
 struct AGearboxPawn_execServerSetCoverState_Parms
 {
 	struct FGearboxCoverState                          NewCoverState;                                    		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -1631,8 +1631,8 @@ struct AGearboxPawn_execGetMountAnimDistanceForSpeed_Parms
 struct AGearboxPawn_eventGetSpotOthersShouldLookAt_Parms
 {
 	struct FVector                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  ToReturn;                                         		// 0x000C (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 DontCare;                                         		// 0x0018 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  ToReturn;                                         		// 0x000C (0x000C) [0x0000000000000000]
+	// struct FRotator                                 DontCare;                                         		// 0x0018 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPawn.SetReplicatedSMData
@@ -1722,7 +1722,7 @@ struct AGearboxPawn_execGetNavigationHandle_Parms
 };
 
 // Function GearboxFramework.GearboxPawn.PlayHit
-// [0x00024002] 
+// [0x00024002]
 struct AGearboxPawn_execPlayHit_Parms
 {
 	class APawn*                                       SomePawn;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1741,7 +1741,7 @@ struct AGearboxPawn_eventReplicatedEvent_Parms
 };
 
 // Function GearboxFramework.GearboxPawn.Died
-// [0x00024002] 
+// [0x00024002]
 struct AGearboxPawn_execDied_Parms
 {
 	class AController*                                 Killer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1752,7 +1752,7 @@ struct AGearboxPawn_execDied_Parms
 };
 
 // Function GearboxFramework.GearboxPawn.SetMovementPhysics
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPawn_execSetMovementPhysics_Parms
 {
 };
@@ -1761,7 +1761,7 @@ struct AGearboxPawn_execSetMovementPhysics_Parms
 // [0x00020902] ( FUNC_Event )
 struct AGearboxPawn_eventPostBeginPlay_Parms
 {
-	// class UITargetable*                             SelfTargetable;                                   		// 0x0000 (0x0008) [0x0000000000000000]              
+	// class UITargetable*                             SelfTargetable;                                   		// 0x0000 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPawn.NotifyShotAtBy
@@ -1779,7 +1779,7 @@ struct AGearboxPawn_execHaveIBeenShotAtRecently_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.RequestTitleStorageFile
-// [0x00824002] 
+// [0x00824002]
 struct AGearboxPlayerController_execRequestTitleStorageFile_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1787,7 +1787,7 @@ struct AGearboxPlayerController_execRequestTitleStorageFile_Parms
 	unsigned char                                      AcceptsType;                                      		// 0x0018 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FString                                     CustomAcceptsType;                                		// 0x001C (0x000C) [0x0000000000400090]              ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
 	int                                                ReturnValue;                                      		// 0x0028 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class USparkInterface*                          Spark;                                            		// 0x002C (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x002C (0x0008) [0x0000000000000000]
 	// struct FHttpParameters                          HttpParams;                                       		// 0x0034 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  RequestUrl;                                       		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< unsigned char >                         RequestData;                                      		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -1797,7 +1797,7 @@ struct AGearboxPlayerController_execRequestTitleStorageFile_Parms
 // [0x00020202] ( FUNC_Exec )
 struct AGearboxPlayerController_execShowSparkID_Parms
 {
-	// class USparkInterface*                          Spark;                                            		// 0x0000 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0000 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.ShouldCheckRemoteControlCheckbox
@@ -1905,7 +1905,7 @@ struct AGearboxPlayerController_execAIPrevRule_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.AIDebugSetPawn
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execAIDebugSetPawn_Parms
 {
 	class AGearboxPawn*                                NewPawn;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1932,19 +1932,19 @@ struct AGearboxPlayerController_execaisetp_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyGameUnPaused
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNotifyGameUnPaused_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyGamePaused
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNotifyGamePaused_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.SetSettingsFromProfile
-// [0x00020000] 
+// [0x00020000]
 struct AGearboxPlayerController_execSetSettingsFromProfile_Parms
 {
 };
@@ -1964,12 +1964,12 @@ struct AGearboxPlayerController_execSetStorageDeviceID_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyDeviceSelectComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNotifyDeviceSelectComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	// struct FString                                  DeviceName;                                       		// 0x0008 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class UOnlinePlayerInterfaceEx*                 PlayerInterfaceEx;                                		// 0x0014 (0x0008) [0x0000000000000000]              
+	// class UOnlinePlayerInterfaceEx*                 PlayerInterfaceEx;                                		// 0x0014 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.DisplayStorageRemovedMenu
@@ -1979,13 +1979,13 @@ struct AGearboxPlayerController_eventDisplayStorageRemovedMenu_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.DisplayProfileRemovedMenu
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execDisplayProfileRemovedMenu_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyProfileWriteFromStorageChangeComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNotifyProfileWriteFromStorageChangeComplete_Parms
 {
 	unsigned char                                      LocalUser;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1993,14 +1993,14 @@ struct AGearboxPlayerController_execNotifyProfileWriteFromStorageChangeComplete_
 };
 
 // Function GearboxFramework.GearboxPlayerController.IsCurrentStorageDeviceValid
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execIsCurrentStorageDeviceValid_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyStorageDeviceChange
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNotifyStorageDeviceChange_Parms
 {
 };
@@ -2009,7 +2009,7 @@ struct AGearboxPlayerController_execNotifyStorageDeviceChange_Parms
 // [0x00020802] ( FUNC_Event )
 struct AGearboxPlayerController_eventDestroyOnlineGame_Parms
 {
-	// class UOnlineGameInterface*                     GameInterface;                                    		// 0x0000 (0x0008) [0x0000000000000000]              
+	// class UOnlineGameInterface*                     GameInterface;                                    		// 0x0000 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.ReturnToTitleScreen
@@ -2035,7 +2035,7 @@ struct AGearboxPlayerController_execGetMainMenuMapName_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyLinkStatusChange
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNotifyLinkStatusChange_Parms
 {
 	unsigned long                                      bIsConnected : 1;                                 		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -2043,25 +2043,25 @@ struct AGearboxPlayerController_execNotifyLinkStatusChange_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyLoginStatusChange
-// [0x00820002] 
+// [0x00820002]
 struct AGearboxPlayerController_execNotifyLoginStatusChange_Parms
 {
 	unsigned char                                      NewStatus;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FUniqueNetId                                NewId;                                            		// 0x0004 (0x0018) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             CurrentID;                                        		// 0x001C (0x0018) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurrentID;                                        		// 0x001C (0x0018) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyLoginChange
-// [0x00820002] 
+// [0x00820002]
 struct AGearboxPlayerController_execNotifyLoginChange_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// struct FUniqueNetId                             CurrentID;                                        		// 0x0004 (0x0018) [0x0000000000000000]              
-	// unsigned char                                   Status;                                           		// 0x0024 (0x0001) [0x0000000000000000]              
+	// struct FUniqueNetId                             CurrentID;                                        		// 0x0004 (0x0018) [0x0000000000000000]
+	// unsigned char                                   Status;                                           		// 0x0024 (0x0001) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.OnReadProfileSettingsComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execOnReadProfileSettingsComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2075,19 +2075,19 @@ struct AGearboxPlayerController_execOnReceivedNewProfile_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.ClearOnlineDelegates
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execClearOnlineDelegates_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.RegisterOnlineDelegates
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execRegisterOnlineDelegates_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.OnProfileWriteComplete
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execOnProfileWriteComplete_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -2095,13 +2095,13 @@ struct AGearboxPlayerController_execOnProfileWriteComplete_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.HidePS3WritingProfileDialog
-// [0x00020000] 
+// [0x00020000]
 struct AGearboxPlayerController_execHidePS3WritingProfileDialog_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.ShowPS3WritingProfileDialog
-// [0x00020000] 
+// [0x00020000]
 struct AGearboxPlayerController_execShowPS3WritingProfileDialog_Parms
 {
 };
@@ -2112,7 +2112,7 @@ struct AGearboxPlayerController_eventWriteProfile_Parms
 {
 	unsigned long                                      bShouldShowProfileDialog : 1;                     		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0004 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// unsigned char                                   Platform;                                         		// 0x000C (0x0001) [0x0000000000000000]              
+	// unsigned char                                   Platform;                                         		// 0x000C (0x0001) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.GetProfileSettings
@@ -2133,17 +2133,17 @@ struct AGearboxPlayerController_execGetMyControllerId_Parms
 // [0x00020802] ( FUNC_Event )
 struct AGearboxPlayerController_eventReadProfile_Parms
 {
-	// unsigned char                                   Platform;                                         		// 0x0000 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   Platform;                                         		// 0x0000 (0x0001) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.UnregisterPlayerDataStores
-// [0x00020102] 
+// [0x00020102]
 struct AGearboxPlayerController_execUnregisterPlayerDataStores_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.RegisterCustomPlayerDataStores
-// [0x00080102] 
+// [0x00080102]
 struct AGearboxPlayerController_execRegisterCustomPlayerDataStores_Parms
 {
 };
@@ -2189,13 +2189,13 @@ struct AGearboxPlayerController_eventInitInputSystem_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.NoTargetAll
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNoTargetAll_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.NoTarget
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execNoTarget_Parms
 {
 };
@@ -2215,7 +2215,7 @@ struct AGearboxPlayerController_execSetNoTargetPlayers_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.Possess
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execPossess_Parms
 {
 	class APawn*                                       aPawn;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2230,28 +2230,28 @@ struct AGearboxPlayerController_execDontTarget_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.ClientConsoleCommand
-// [0x010201C2] 
+// [0x010201C2]
 struct AGearboxPlayerController_execClientConsoleCommand_Parms
 {
 	struct FString                                     Command;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxPlayerController.IsPlayerAllowingActiveMoment
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execIsPlayerAllowingActiveMoment_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxPlayerController.IsActiveMomentRunning
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execIsActiveMomentRunning_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxPlayerController.ViewShake
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execViewShake_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2279,14 +2279,14 @@ struct AGearboxPlayerController_execCheckShake_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.StopViewShaking
-// [0x00820002] 
+// [0x00820002]
 struct AGearboxPlayerController_execStopViewShaking_Parms
 {
-	// struct FGearboxViewShakeInfo                    EmptyViewShake;                                   		// 0x0000 (0x0044) [0x0000000000000000]              
+	// struct FGearboxViewShakeInfo                    EmptyViewShake;                                   		// 0x0000 (0x0044) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.OnCameraShake
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxPlayerController_execOnCameraShake_Parms
 {
 	class UGearboxSeqAct_CameraShake*                  ShakeAction;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2300,15 +2300,15 @@ struct AGearboxPlayerController_execShakeView_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.ClientDamageShake
-// [0x018201C2] 
+// [0x018201C2]
 struct AGearboxPlayerController_execClientDamageShake_Parms
 {
 	int                                                Damage;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FGearboxViewShakeInfo                    NewViewShake;                                     		// 0x0004 (0x0044) [0x0000000000000000]              
+	// struct FGearboxViewShakeInfo                    NewViewShake;                                     		// 0x0004 (0x0044) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxPlayerController.ConsoleEcho
-// [0x00024000] 
+// [0x00024000]
 struct AGearboxPlayerController_execConsoleEcho_Parms
 {
 	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2316,13 +2316,13 @@ struct AGearboxPlayerController_execConsoleEcho_Parms
 };
 
 // Function GearboxFramework.GearboxPlayerController.Initialize
-// [0x00020102] 
+// [0x00020102]
 struct AGearboxPlayerController_execInitialize_Parms
 {
 };
 
 // Function GearboxFramework.GearboxPlayerController.PostBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct AGearboxPlayerController_execPostBeginPlay_Parms
 {
 };
@@ -2441,7 +2441,7 @@ struct UGestaltSkeletalMeshDefinition_execInitGestaltMeshDataFromParts_Parms
 };
 
 // Function GearboxFramework.GFxActorMoviePool.DisplayDebug
-// [0x00420002] 
+// [0x00420002]
 struct UGFxActorMoviePool_execDisplayDebug_Parms
 {
 	class AHUD*                                        HUD;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2476,7 +2476,7 @@ struct UGFxActorMoviePool_execMovieStateChanged_Parms
 };
 
 // Function GearboxFramework.GFxMovieDefinition.FindMovieLink
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMovieDefinition_execFindMovieLink_Parms
 {
 	struct FName                                       MovieName;                                        		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -2488,7 +2488,7 @@ struct UGFxMovieDefinition_execFindMovieLink_Parms
 struct UGFxMovieDefinition_execPostMovieStart_Parms
 {
 	class UGearboxGFxMovie*                            StartedMovie;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// struct FName                                    N;                                                		// 0x0004 (0x0008) [0x0000000000000000]              
+	// struct FName                                    N;                                                		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GFxMovieDefinition.SpawnPlayerMovie
@@ -2516,7 +2516,7 @@ struct UGFxMovieDefinition_execGetPoolStyle_Parms
 };
 
 // Function GearboxFramework.GFxMovieDrawStyle.GetStyleDebugString
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMovieDrawStyle_execGetStyleDebugString_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -2530,7 +2530,7 @@ struct UGFxMovieDrawStyleHUD_eventRequiresClientInstance_Parms
 };
 
 // Function GearboxFramework.GFxMovieDrawStyleMesh.GetStyleDebugString
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMovieDrawStyleMesh_execGetStyleDebugString_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -2606,7 +2606,7 @@ struct UGFxMovieManager_execRegisterMovie_Parms
 };
 
 // Function GearboxFramework.GFxMovieState.GetDebugString
-// [0x00024002] 
+// [0x00024002]
 struct UGFxMovieState_execGetDebugString_Parms
 {
 	class UGearboxGFxMovie*                            Movie;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2616,7 +2616,7 @@ struct UGFxMovieState_execGetDebugString_Parms
 };
 
 // Function GearboxFramework.GFxMovieState.ApplyMovieState
-// [0x00020002] 
+// [0x00020002]
 struct UGFxMovieState_execApplyMovieState_Parms
 {
 	class UGearboxGFxMovie*                            Movie;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2753,7 +2753,7 @@ struct UInterfaceGearboxCamera_eventFinishCameraLookAt_Parms
 };
 
 // Function GearboxFramework.InterfaceGearboxCamera.EnableThirdPersonLookAt
-// [0x00020000] 
+// [0x00020000]
 struct UInterfaceGearboxCamera_execEnableThirdPersonLookAt_Parms
 {
 	float                                              LookAtXOffset;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2763,7 +2763,7 @@ struct UInterfaceGearboxCamera_execEnableThirdPersonLookAt_Parms
 };
 
 // Function GearboxFramework.InterfaceGearboxCamera.BeginCameraLookAt
-// [0x00020000] 
+// [0x00020000]
 struct UInterfaceGearboxCamera_execBeginCameraLookAt_Parms
 {
 	class AActor*                                      LookAtTarget;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2857,7 +2857,7 @@ struct APopulationEncounter_eventTriggerKismetDeathEvent_Parms
 };
 
 // Function GearboxFramework.PopulationEncounter.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct APopulationEncounter_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -3652,7 +3652,7 @@ struct UAction_PawnMovementBase_execEndMovePawnToDestinationLocation_Parms
 };
 
 // Function GearboxFramework.ActionSequenceRandom.EvaluateActionList
-// [0x00020002] 
+// [0x00020002]
 struct UActionSequenceRandom_execEvaluateActionList_Parms
 {
 };
@@ -3687,10 +3687,10 @@ struct UAIComponent_execDrawAITree_Parms
 };
 
 // Function GearboxFramework.AIComponent.LogDemigodHolds
-// [0x00820002] 
+// [0x00820002]
 struct UAIComponent_execLogDemigodHolds_Parms
 {
-	// struct FAIHoldData                              HoldData;                                         		// 0x0000 (0x000C) [0x0000000000000000]              
+	// struct FAIHoldData                              HoldData;                                         		// 0x0000 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.AIComponent.ReleaseDialog
@@ -4209,7 +4209,7 @@ struct UAllegianceExpressionEvaluator_execEvaluate_Parms
 };
 
 // Function GearboxFramework.Behavior_SendGbxMessage.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_SendGbxMessage_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4218,7 +4218,7 @@ struct UBehavior_SendGbxMessage_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// struct FVector                                  MsgLocation;                                      		// 0x004C (0x000C) [0x0000000000000000]              
+	// struct FVector                                  MsgLocation;                                      		// 0x004C (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_SendGbxMessage.GetLocation
@@ -4231,7 +4231,7 @@ struct UBehavior_SendGbxMessage_execGetLocation_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0010 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FVector                                     ReturnValue;                                      		// 0x0014 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UITargetable*                             Targetable;                                       		// 0x0024 (0x0008) [0x0000000000000000]              
+	// class UITargetable*                             Targetable;                                       		// 0x0024 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_SendGbxMessage.GetMessageParameter
@@ -4247,7 +4247,7 @@ struct UBehavior_SendGbxMessage_execGetMessageParameter_Parms
 };
 
 // Function GearboxFramework.Behavior_SetFlag.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SetFlag_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4437,21 +4437,21 @@ struct AGearboxMind_execInGodMode_Parms
 };
 
 // Function GearboxFramework.GearboxMind.PawnDied
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxMind_execPawnDied_Parms
 {
 	class APawn*                                       inPawn;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxMind.OnTargetPriority
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxMind_execOnTargetPriority_Parms
 {
 	class UGearboxSeqAct_TargetPriority*               inAction;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxMind.Behavior_SetCanTarget
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxMind_execBehavior_SetCanTarget_Parms
 {
 	unsigned char                                      ChangeStatus;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -4500,7 +4500,7 @@ struct AGearboxMind_execActivateEventRule_Parms
 };
 
 // Function GearboxFramework.GearboxMind.AddHitTargetRecord
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxMind_execAddHitTargetRecord_Parms
 {
 	class AGearboxPawn*                                HitByPawn;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -4509,7 +4509,7 @@ struct AGearboxMind_execAddHitTargetRecord_Parms
 };
 
 // Function GearboxFramework.GearboxMind.StopMovement
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxMind_execStopMovement_Parms
 {
 };
@@ -4523,7 +4523,7 @@ struct AGearboxMind_eventPossess_Parms
 };
 
 // Function GearboxFramework.GearboxMind.GetGearboxRuleEngine
-// [0x00020002] 
+// [0x00020002]
 struct AGearboxMind_execGetGearboxRuleEngine_Parms
 {
 	class UGearboxRuleEngine*                          ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -5272,7 +5272,7 @@ struct URule_execGetRuleFName_Parms
 };
 
 // Function GearboxFramework.Rule.GetOtherEventParticipant
-// [0x00020002] 
+// [0x00020002]
 struct URule_execGetOtherEventParticipant_Parms
 {
 	class UObject*                                     ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -5286,7 +5286,7 @@ struct URuleEngine_execApplyFlagInitializationData_Parms
 };
 
 // Function GearboxFramework.RuleEngine.IsResourceInUse
-// [0x00020002] 
+// [0x00020002]
 struct URuleEngine_execIsResourceInUse_Parms
 {
 	class UClass*                                      TestResourceClass;                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -5441,28 +5441,28 @@ struct UTargetIterator_eventRecordEvalCallback_Parms
 };
 
 // Function GearboxFramework.IPopulationSpawnPoint.GetInitialMovementHoldTime
-// [0x00020000] 
+// [0x00020000]
 struct UIPopulationSpawnPoint_execGetInitialMovementHoldTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.IPopulationSpawnPoint.GetInitialDestination
-// [0x00020000] 
+// [0x00020000]
 struct UIPopulationSpawnPoint_execGetInitialDestination_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.IPopulationSpawnPoint.GetInitialActionType
-// [0x00020000] 
+// [0x00020000]
 struct UIPopulationSpawnPoint_execGetInitialActionType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.IPopulationSpawnPoint.GetSpawnStyleType
-// [0x00020000] 
+// [0x00020000]
 struct UIPopulationSpawnPoint_execGetSpawnStyleType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -5541,7 +5541,7 @@ struct UPopulationFactory_eventGetSpawnVisibilityBounds_Parms
 	int                                                GameStage;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	int                                                Rarity;                                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBoxSphereBounds                            ReturnValue;                                      		// 0x0008 (0x001C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FBoxSphereBounds                         Bounds;                                           		// 0x0024 (0x001C) [0x0000000000000000]              
+	// struct FBoxSphereBounds                         Bounds;                                           		// 0x0024 (0x001C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.PopulationFactory.GetActorAllegiance
@@ -5947,21 +5947,21 @@ struct APopulationOpportunity_execPreRemoveBodyComposition_Parms
 };
 
 // Function GearboxFramework.PopulationOpportunity.GetNumSpawned
-// [0x00020000] 
+// [0x00020000]
 struct APopulationOpportunity_execGetNumSpawned_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunity.GetNumAlive
-// [0x00020000] 
+// [0x00020000]
 struct APopulationOpportunity_execGetNumAlive_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunity.GetNumDied
-// [0x00020000] 
+// [0x00020000]
 struct APopulationOpportunity_execGetNumDied_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6023,7 +6023,7 @@ struct APopulationOpportunity_execSetEnabledStatus_Parms
 };
 
 // Function GearboxFramework.PopulationOpportunity.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct APopulationOpportunity_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6099,7 +6099,7 @@ struct APopulationOpportunityCloner_execGetBodyInfoProvider_Parms
 };
 
 // Function GearboxFramework.PopulationOpportunityCloner.CloneTimer
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityCloner_execCloneTimer_Parms
 {
 };
@@ -6144,21 +6144,21 @@ struct APopulationOpportunityCombat_eventTriggerKismetDeathEvent_Parms
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.GetNumSpawned
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityCombat_execGetNumSpawned_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.GetNumAlive
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityCombat_execGetNumAlive_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.GetNumDied
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityCombat_execGetNumDied_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6209,7 +6209,7 @@ struct APopulationOpportunityCombat_execCaresAboutMessage_Parms
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.PostBeginPlay
-// [0x00020102] 
+// [0x00020102]
 struct APopulationOpportunityCombat_execPostBeginPlay_Parms
 {
 };
@@ -6282,28 +6282,28 @@ struct APopulationOpportunityPoint_execPreRemoveBodyComposition_Parms
 };
 
 // Function GearboxFramework.PopulationOpportunityPoint.GetInitialMovementHoldTime
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityPoint_execGetInitialMovementHoldTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunityPoint.GetInitialDestination
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityPoint_execGetInitialDestination_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunityPoint.GetInitialActionType
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityPoint_execGetInitialActionType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationOpportunityPoint.GetSpawnStyleType
-// [0x00020002] 
+// [0x00020002]
 struct APopulationOpportunityPoint_execGetSpawnStyleType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6355,42 +6355,42 @@ struct APopulationPoint_execActorSpawned_Parms
 };
 
 // Function GearboxFramework.PopulationPoint.GetInitialMovementHoldTime
-// [0x00020002] 
+// [0x00020002]
 struct APopulationPoint_execGetInitialMovementHoldTime_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationPoint.GetInitialDestination
-// [0x00020002] 
+// [0x00020002]
 struct APopulationPoint_execGetInitialDestination_Parms
 {
 	class AActor*                                      ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationPoint.RandomizeInitialDestinations
-// [0x00020002] 
+// [0x00020002]
 struct APopulationPoint_execRandomizeInitialDestinations_Parms
 {
 	// TArray< class AActor* >                         TempDestinations;                                 		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.PopulationPoint.GetInitialActionType
-// [0x00020002] 
+// [0x00020002]
 struct APopulationPoint_execGetInitialActionType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationPoint.GetSpawnStyleType
-// [0x00020002] 
+// [0x00020002]
 struct APopulationPoint_execGetSpawnStyleType_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.PopulationPoint.OnToggle
-// [0x00020102] 
+// [0x00020102]
 struct APopulationPoint_execOnToggle_Parms
 {
 	class USeqAct_Toggle*                              Action;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -6917,7 +6917,7 @@ struct UICustomEvent_eventRunCustomEvent_Parms
 };
 
 // Function GearboxFramework.ITimerBehavior.SetTimerState
-// [0x00020000] 
+// [0x00020000]
 struct UITimerBehavior_execSetTimerState_Parms
 {
 	unsigned char                                      TimerId;                                          		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -6926,7 +6926,7 @@ struct UITimerBehavior_execSetTimerState_Parms
 };
 
 // Function GearboxFramework.ITimerBehavior.GetTimerState
-// [0x00420000] 
+// [0x00420000]
 struct UITimerBehavior_execGetTimerState_Parms
 {
 	unsigned char                                      TimerId;                                          		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -6935,7 +6935,7 @@ struct UITimerBehavior_execGetTimerState_Parms
 };
 
 // Function GearboxFramework.ITimerBehavior.GetTimeSeconds
-// [0x00020000] 
+// [0x00020000]
 struct UITimerBehavior_execGetTimeSeconds_Parms
 {
 	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -6958,7 +6958,7 @@ struct UGearboxAnimDefinition_eventIsPlayingLocally_Parms
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.GetSMNode
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAnimDefinition_execGetSMNode_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -6966,7 +6966,7 @@ struct UGearboxAnimDefinition_execGetSMNode_Parms
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.PlayAnim
-// [0x00420002] 
+// [0x00420002]
 struct UGearboxAnimDefinition_execPlayAnim_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -6990,8 +6990,8 @@ struct UGearboxAnimDefinition_eventClientFinished_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bInterrupted : 1;                                 		// 0x0008 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0010 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0018 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0010 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0018 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.ClientStarted
@@ -7001,8 +7001,8 @@ struct UGearboxAnimDefinition_eventClientStarted_Parms
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	struct FSpecialMoveData                            SMData;                                           		// 0x0008 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	float                                              ReturnValue;                                      		// 0x0024 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0028 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0030 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0028 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0030 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.ServerFinished
@@ -7011,8 +7011,8 @@ struct UGearboxAnimDefinition_eventServerFinished_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bInterrupted : 1;                                 		// 0x0008 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x000C (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0014 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x000C (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0014 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.ServerStarted
@@ -7020,12 +7020,12 @@ struct UGearboxAnimDefinition_eventServerFinished_Parms
 struct UGearboxAnimDefinition_eventServerStarted_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0008 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0008 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0010 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.AddAnimSet
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAnimDefinition_execAddAnimSet_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -7033,7 +7033,7 @@ struct UGearboxAnimDefinition_execAddAnimSet_Parms
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.GetSkeletalMesh
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAnimDefinition_execGetSkeletalMesh_Parms
 {
 	class USpecialMoveInterface*                       SMI;                                              		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -7099,7 +7099,7 @@ struct UGearboxAnimDefinition_execGetBehaviorProviderDefinition_Parms
 };
 
 // Function GearboxFramework.Behavior_TriggerDialogEvent.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_TriggerDialogEvent_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7270,17 +7270,17 @@ struct UGearboxDialogGroup_execSimpleEvent_Parms
 };
 
 // Function GearboxFramework.GearboxDialogManager.DrawDialogDebug
-// [0x00024002] 
+// [0x00024002]
 struct UGearboxDialogManager_execDrawDialogDebug_Parms
 {
 	class AHUD*                                        HUD;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              StartY;                                           		// 0x0004 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	// struct FString                                  NameTagString;                                    		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class UGearboxDialogInterface*                  Talker;                                           		// 0x0028 (0x0008) [0x0000000000000000]              
+	// class UGearboxDialogInterface*                  Talker;                                           		// 0x0028 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxDialogManager.CheckpointRemoveReferencesBeforeDestroy
-// [0x00020102] 
+// [0x00020102]
 struct UGearboxDialogManager_execCheckpointRemoveReferencesBeforeDestroy_Parms
 {
 };
@@ -7457,78 +7457,78 @@ struct UGearboxDialogVariable_execGetTalkers_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleOffersNotifiedResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleOffersNotifiedResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	// struct FArchwayResult                           Archway;                                          		// 0x0018 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleBulkEntitlementsConsumedResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleBulkEntitlementsConsumedResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	// struct FArchwayResult                           Archway;                                          		// 0x0018 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   ConsumeResult;                                    		// 0x0088 (0x0001) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]
+	// unsigned char                                   ConsumeResult;                                    		// 0x0088 (0x0001) [0x0000000000000000]
 	// struct FString                                  CurrentMessage;                                   		// 0x0090 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleEntitlementConsumedResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleEntitlementConsumedResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	// struct FArchwayResult                           Archway;                                          		// 0x0018 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   ConsumeResult;                                    		// 0x0088 (0x0001) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]
+	// unsigned char                                   ConsumeResult;                                    		// 0x0088 (0x0001) [0x0000000000000000]
 	// struct FString                                  CurrentMessage;                                   		// 0x0090 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleCodeRedeemedResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleCodeRedeemedResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	// struct FArchwayResult                           Archway;                                          		// 0x0018 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]              
-	// unsigned char                                   RedeemResult;                                     		// 0x0088 (0x0001) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0080 (0x0008) [0x0000000000000000]
+	// unsigned char                                   RedeemResult;                                     		// 0x0088 (0x0001) [0x0000000000000000]
 	// struct FString                                  CurrentMessage;                                   		// 0x008C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  CustomCaption;                                    		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  CustomPrompt;                                     		// 0x00A8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleResetPasswordResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleResetPasswordResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 	// struct FArchwayResult                           Archway;                                          		// 0x0018 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// unsigned char                                   ResetResult;                                      		// 0x007C (0x0001) [0x0000000000000000]              
+	// unsigned char                                   ResetResult;                                      		// 0x007C (0x0001) [0x0000000000000000]
 	// struct FString                                  CurrentMessage;                                   		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleSignUpResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleSignUpResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0018 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0018 (0x0008) [0x0000000000000000]
 	// struct FArchwayResult                           Archway;                                          		// 0x0020 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  CurrentMessage;                                   		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// unsigned char                                   SignUpResult;                                     		// 0x0090 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   SignUpResult;                                     		// 0x0090 (0x0001) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleSignInResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountActions_execHandleSignInResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0018 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0018 (0x0008) [0x0000000000000000]
 	// struct FArchwayResult                           Archway;                                          		// 0x0020 (0x0064) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// unsigned char                                   SignInResult;                                     		// 0x0084 (0x0001) [0x0000000000000000]              
+	// unsigned char                                   SignInResult;                                     		// 0x0084 (0x0001) [0x0000000000000000]
 	// struct FString                                  CurrentMessage;                                   		// 0x008C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -7541,11 +7541,11 @@ struct UGearboxAccountActions_execExtractArchwayResult_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.MarkOffersNotified
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountActions_execMarkOffersNotified_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	// class USparkInterface*                          Spark;                                            		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0004 (0x0008) [0x0000000000000000]
 	// struct FString                                  JsonString;                                       		// 0x0014 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  NotifiedString;                                   		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< class UGearboxAccountOffer* >           Offers;                                           		// 0x0030 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -7554,14 +7554,14 @@ struct UGearboxAccountActions_execMarkOffersNotified_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.LocallyConsumeEntitlementWithCount
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountActions_execLocallyConsumeEntitlementWithCount_Parms
 {
 	struct FName                                       EntitlementName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	int                                                NumToConsume;                                     		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      ControllerId;                                     		// 0x000C (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0010 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class USparkInterface*                          Spark;                                            		// 0x0014 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0014 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.GearboxAccountActions.ConsumeEntitlementsWithCounts
@@ -7572,7 +7572,7 @@ struct UGearboxAccountActions_eventConsumeEntitlementsWithCounts_Parms
 	TArray< int >                                      Counts;                                           		// 0x000C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned char                                      ControllerId;                                     		// 0x0018 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             EntitlementConsumedDelegate;                      		// 0x001C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0028 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0028 (0x0008) [0x0000000000000000]
 	// struct FString                                  JsonString;                                       		// 0x0038 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x0054 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x008C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -7581,27 +7581,27 @@ struct UGearboxAccountActions_eventConsumeEntitlementsWithCounts_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.ConsumeEntitlementWithCount
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountActions_execConsumeEntitlementWithCount_Parms
 {
 	struct FName                                       EntitlementName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	int                                                Count;                                            		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	unsigned char                                      ControllerId;                                     		// 0x000C (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             EntitlementConsumedDelegate;                      		// 0x0010 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x001C (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x001C (0x0008) [0x0000000000000000]
 	// struct FString                                  JsonString;                                       		// 0x002C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x004C (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.RedeemCode
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountActions_execRedeemCode_Parms
 {
 	struct FString                                     Code;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned char                                      ControllerId;                                     		// 0x000C (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             CodeRedeemedDelegate;                             		// 0x0010 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x001C (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x001C (0x0008) [0x0000000000000000]
 	// struct FString                                  JsonString;                                       		// 0x0028 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  FixedCode;                                        		// 0x0038 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x004C (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -7609,20 +7609,20 @@ struct UGearboxAccountActions_execRedeemCode_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.ResetPasswordGearboxAccount
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountActions_execResetPasswordGearboxAccount_Parms
 {
 	struct FString                                     Email;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned char                                      ControllerId;                                     		// 0x000C (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             ResetPasswordDelegate;                            		// 0x0010 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x001C (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x001C (0x0008) [0x0000000000000000]
 	// struct FString                                  ResetString;                                      		// 0x002C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x0044 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x007C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.EscapeJson
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountActions_execEscapeJson_Parms
 {
 	struct FString                                     Input;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -7631,7 +7631,7 @@ struct UGearboxAccountActions_execEscapeJson_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.SignUpGearboxAccount
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountActions_execSignUpGearboxAccount_Parms
 {
 	struct FString                                     Email;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -7640,35 +7640,35 @@ struct UGearboxAccountActions_execSignUpGearboxAccount_Parms
 	struct FString                                     AgeString;                                        		// 0x0024 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned char                                      ControllerId;                                     		// 0x0030 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             SignUpDelegate;                                   		// 0x0034 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0040 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0040 (0x0008) [0x0000000000000000]
 	// struct FString                                  SignUpString;                                     		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x006C (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x00A4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.SignInGearboxAccount
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountActions_execSignInGearboxAccount_Parms
 {
 	struct FString                                     Email;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	struct FString                                     Password;                                         		// 0x000C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned char                                      ControllerId;                                     		// 0x0018 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             SignInDelegate;                                   		// 0x001C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0028 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0028 (0x0008) [0x0000000000000000]
 	// struct FString                                  SignInString;                                     		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x0054 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x008C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountActions.OnEntitlementConsumed
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxAccountActions_execOnEntitlementConsumed_Parms
 {
 	unsigned char                                      ConsumeResult;                                    		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxAccountActions.OnCodeRedeemed
-// [0x00124000] 
+// [0x00124000]
 struct UGearboxAccountActions_execOnCodeRedeemed_Parms
 {
 	unsigned char                                      RedeemResult;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -7677,28 +7677,28 @@ struct UGearboxAccountActions_execOnCodeRedeemed_Parms
 };
 
 // Function GearboxFramework.GearboxAccountActions.OnResetPasswordGearboxAccount
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxAccountActions_execOnResetPasswordGearboxAccount_Parms
 {
 	unsigned char                                      ResetResult;                                      		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxAccountActions.OnSignUpGearboxAccount
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxAccountActions_execOnSignUpGearboxAccount_Parms
 {
 	unsigned char                                      SignUpResult;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxAccountActions.OnSignInGearboxAccount
-// [0x00120000] 
+// [0x00120000]
 struct UGearboxAccountActions_execOnSignInGearboxAccount_Parms
 {
 	unsigned char                                      SignInResult;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxAccountData.CountEntitlement
-// [0x00024002] 
+// [0x00024002]
 struct UGearboxAccountData_execCountEntitlement_Parms
 {
 	struct FName                                       EntitlementName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -7707,14 +7707,14 @@ struct UGearboxAccountData_execCountEntitlement_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.GetTotalGoldenKeyCount
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execGetTotalGoldenKeyCount_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxAccountData.GetGoldenKeyCount
-// [0x00024002] 
+// [0x00024002]
 struct UGearboxAccountData_execGetGoldenKeyCount_Parms
 {
 	unsigned long                                      bIgnoreLocallyConsumed : 1;                       		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -7722,7 +7722,7 @@ struct UGearboxAccountData_execGetGoldenKeyCount_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.HasGoldenKey
-// [0x00024002] 
+// [0x00024002]
 struct UGearboxAccountData_execHasGoldenKey_Parms
 {
 	unsigned long                                      bIgnoreLocallyConsumed : 1;                       		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
@@ -7730,27 +7730,27 @@ struct UGearboxAccountData_execHasGoldenKey_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.HasDeveloperSkin
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execHasDeveloperSkin_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxAccountData.IsDeveloper
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execIsDeveloper_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.GearboxAccountData.MarkOffersNotified
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execMarkOffersNotified_Parms
 {
 };
 
 // Function GearboxFramework.GearboxAccountData.GetUnnotifiedOffers
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execGetUnnotifiedOffers_Parms
 {
 	TArray< class UGearboxAccountOffer* >              ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
@@ -7758,7 +7758,7 @@ struct UGearboxAccountData_execGetUnnotifiedOffers_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.GetEntitlementWithName
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execGetEntitlementWithName_Parms
 {
 	struct FName                                       EntitlementName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -7766,7 +7766,7 @@ struct UGearboxAccountData_execGetEntitlementWithName_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.GetEntitlementWithId
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execGetEntitlementWithId_Parms
 {
 	int                                                Id;                                               		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -7774,7 +7774,7 @@ struct UGearboxAccountData_execGetEntitlementWithId_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.HasEntitlement
-// [0x00024002] 
+// [0x00024002]
 struct UGearboxAccountData_execHasEntitlement_Parms
 {
 	struct FName                                       EntitlementName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -7783,14 +7783,14 @@ struct UGearboxAccountData_execHasEntitlement_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.RemoveEntitlement
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execRemoveEntitlement_Parms
 {
 	class UGearboxAccountEntitlement*                  Entitlement;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.GearboxAccountData.ReplaceEntitlements
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountData_execReplaceEntitlements_Parms
 {
 	TArray< struct FEntitlementResult >                NewEntitlements;                                  		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -7807,7 +7807,7 @@ struct UGearboxAccountData_execReplaceServices_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.HandleReloadEntitlementsResponse
-// [0x00C20002] 
+// [0x00C20002]
 struct UGearboxAccountData_execHandleReloadEntitlementsResponse_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -7815,11 +7815,11 @@ struct UGearboxAccountData_execHandleReloadEntitlementsResponse_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.ReloadEntitlements
-// [0x00820002] 
+// [0x00820002]
 struct UGearboxAccountData_execReloadEntitlements_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class USparkInterface*                          Spark;                                            		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0004 (0x0008) [0x0000000000000000]
 	// struct FString                                  Params;                                           		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x002C (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -7840,21 +7840,21 @@ struct UGearboxAccountData_execCanReloadEntitlements_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.TriggerEntitlementsUpdatedDelegates
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execTriggerEntitlementsUpdatedDelegates_Parms
 {
 	// struct FScriptDelegate                          EntitlementsUpdatedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountData.ClearEntitlementsUpdatedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execClearEntitlementsUpdatedDelegate_Parms
 {
 	struct FScriptDelegate                             EntitlementsUpdatedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.GearboxAccountData.AddEntitlementsUpdatedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execAddEntitlementsUpdatedDelegate_Parms
 {
 	struct FScriptDelegate                             EntitlementsUpdatedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -7869,13 +7869,13 @@ struct UGearboxAccountData_eventGetService_Parms
 };
 
 // Function GearboxFramework.GearboxAccountData.Clear
-// [0x00020002] 
+// [0x00020002]
 struct UGearboxAccountData_execClear_Parms
 {
 };
 
 // Function GearboxFramework.GearboxAccountData.ExtractArchwayResultJson
-// [0x00422002] 
+// [0x00422002]
 struct UGearboxAccountData_execExtractArchwayResultJson_Parms
 {
 	TArray< unsigned char >                            Data;                                             		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -7964,14 +7964,14 @@ struct USparkInitializationProcess_eventTriggerSparkInitializedDelegates_Parms
 };
 
 // Function GearboxFramework.SparkInitializationProcess.ClearSparkInitializedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct USparkInitializationProcess_execClearSparkInitializedDelegate_Parms
 {
 	struct FScriptDelegate                             SparkInitializedDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInitializationProcess.AddSparkInitializedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct USparkInitializationProcess_execAddSparkInitializedDelegate_Parms
 {
 	struct FScriptDelegate                             SparkInitializedDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -7992,28 +7992,28 @@ struct USparkInitializationProcess_execGetStepConfiguration_Parms
 };
 
 // Function GearboxFramework.SparkInitializationProcess.IsInitialized
-// [0x00020002] 
+// [0x00020002]
 struct USparkInitializationProcess_execIsInitialized_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInitializationProcess.IsDisabled
-// [0x00020002] 
+// [0x00020002]
 struct USparkInitializationProcess_execIsDisabled_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInitializationProcess.IsInitializing
-// [0x00020002] 
+// [0x00020002]
 struct USparkInitializationProcess_execIsInitializing_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInitializationProcess.HandleVerificationReceived
-// [0x00C20002] 
+// [0x00C20002]
 struct USparkInitializationProcess_execHandleVerificationReceived_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8026,27 +8026,27 @@ struct USparkInitializationProcess_eventVerifyAuthentication_Parms
 {
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 	// struct FString                                  RequestId;                                        		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0014 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0014 (0x0008) [0x0000000000000000]
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x0020 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< unsigned char >                         Empty;                                            		// 0x0058 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x0064 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInitializationProcess.AuthenticateTicketStringWithDelegate
-// [0x00820002] 
+// [0x00820002]
 struct USparkInitializationProcess_execAuthenticateTicketStringWithDelegate_Parms
 {
 	struct FString                                     ticket;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	struct FScriptDelegate                             SparkRequestCompleteDelegate;                     		// 0x000C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned char                                      ReturnValue;                                      		// 0x0018 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 	// struct FString                                  Newticket;                                        		// 0x0020 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0030 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0030 (0x0008) [0x0000000000000000]
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x0038 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInitializationProcess.HandleAuthenticationReceived
-// [0x00C20002] 
+// [0x00C20002]
 struct USparkInitializationProcess_execHandleAuthenticationReceived_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8105,13 +8105,13 @@ struct USparkInitializationProcess_execStartProcess_Parms
 };
 
 // Function GearboxFramework.SparkInitializationProcess.InitWithController
-// [0x00020002] 
+// [0x00020002]
 struct USparkInitializationProcess_execInitWithController_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      bNewPrimary : 1;                                  		// 0x0004 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	struct FScriptDelegate                             SparkInitializedDelegate;                         		// 0x0008 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0014 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0014 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.LeviathanService.GetLeviathanServiceConfiguration
@@ -8120,7 +8120,7 @@ struct ULeviathanService_eventGetLeviathanServiceConfiguration_Parms
 {
 	int                                                ControllerNumber;                                 		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class USparkServiceConfiguration*                  ReturnValue;                                      		// 0x0004 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class USparkInterface*                          Spark;                                            		// 0x000C (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.LeviathanService.OnSparkInitialized
@@ -8145,7 +8145,7 @@ struct ULeviathanService_execGetLeviathanService_Parms
 };
 
 // Function GearboxFramework.SparkInterface.GetNewsService
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetNewsService_Parms
 {
 	class USparkNews*                                  ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -8166,21 +8166,21 @@ struct USparkInterface_execGetTitleStorageUrl_Parms
 };
 
 // Function GearboxFramework.SparkInterface.ClearGearboxAccountData
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execClearGearboxAccountData_Parms
 {
 	unsigned long                                      IncludePrimaryPlayer : 1;                         		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkInterface.SignOutGearboxAccount
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execSignOutGearboxAccount_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkInterface.SignInGearboxAccount
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execSignInGearboxAccount_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8203,7 +8203,7 @@ struct USparkInterface_eventIsGearboxAccountAuthenticated_Parms
 };
 
 // Function GearboxFramework.SparkInterface.IsGearboxAccountSignedIn
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execIsGearboxAccountSignedIn_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8211,7 +8211,7 @@ struct USparkInterface_execIsGearboxAccountSignedIn_Parms
 };
 
 // Function GearboxFramework.SparkInterface.ConvertUtcTimeToLocalTime
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execConvertUtcTimeToLocalTime_Parms
 {
 	struct FString                                     UtcTime;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -8219,21 +8219,21 @@ struct USparkInterface_execConvertUtcTimeToLocalTime_Parms
 };
 
 // Function GearboxFramework.SparkInterface.ShouldUpdateEmergencyMessage
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execShouldUpdateEmergencyMessage_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterface.GetEmergencyMessage
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetEmergencyMessage_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterface.SetEmergencyMessage
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execSetEmergencyMessage_Parms
 {
 	struct FString                                     Message;                                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -8248,7 +8248,7 @@ struct USparkInterface_eventGetPlatformLoginNameFromSplitscreenIndex_Parms
 };
 
 // Function GearboxFramework.SparkInterface.GetPlatformLoginNameFromController
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetPlatformLoginNameFromController_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8256,34 +8256,34 @@ struct USparkInterface_execGetPlatformLoginNameFromController_Parms
 };
 
 // Function GearboxFramework.SparkInterface.IncreaseInteractionTries
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execIncreaseInteractionTries_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterface.GetInteractionTries
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetInteractionTries_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterface.GetInteractionGraceTries
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetInteractionGraceTries_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterface.GetInteractionPunishmentMinWaitSeconds
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetInteractionPunishmentMinWaitSeconds_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterface.GetInteractionMinWaitSeconds
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetInteractionMinWaitSeconds_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -8297,13 +8297,13 @@ struct USparkInterface_execIsTmsComplete_Parms
 };
 
 // Function GearboxFramework.SparkInterface.SetTmsComplete
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execSetTmsComplete_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterface.GetSparkInitialization
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execGetSparkInitialization_Parms
 {
 	class USparkInitializationProcess*                 ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -8317,7 +8317,7 @@ struct USparkInterface_eventRestartSparkInitialization_Parms
 };
 
 // Function GearboxFramework.SparkInterface.RestartSparkInitializationFromScript
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execRestartSparkInitializationFromScript_Parms
 {
 	unsigned long                                      bPrimary : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -8326,7 +8326,7 @@ struct USparkInterface_execRestartSparkInitializationFromScript_Parms
 };
 
 // Function GearboxFramework.SparkInterface.StartSparkInitialization
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execStartSparkInitialization_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8336,7 +8336,7 @@ struct USparkInterface_execStartSparkInitialization_Parms
 };
 
 // Function GearboxFramework.SparkInterface.StartSecondaryInitialization
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execStartSecondaryInitialization_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8375,21 +8375,21 @@ struct USparkInterface_execGetPlatformTicket_Parms
 };
 
 // Function GearboxFramework.SparkInterface.ClearSparkConfigReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execClearSparkConfigReceivedDelegate_Parms
 {
 	struct FScriptDelegate                             SparkConfigReceivedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterface.AddSparkConfigReceivedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execAddSparkConfigReceivedDelegate_Parms
 {
 	struct FScriptDelegate                             SparkConfigReceivedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterface.ResetInitializationStatus
-// [0x00020000] 
+// [0x00020000]
 struct USparkInterface_execResetInitializationStatus_Parms
 {
 };
@@ -8402,7 +8402,7 @@ struct USparkInterface_eventIsSparkEnabled_Parms
 };
 
 // Function GearboxFramework.SparkInterface.IssueSparkStringRequest
-// [0x00420000] 
+// [0x00420000]
 struct USparkInterface_execIssueSparkStringRequest_Parms
 {
 	struct FHttpParameters                             HttpRequestParameters;                            		// 0x0000 (0x0038) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8413,7 +8413,7 @@ struct USparkInterface_execIssueSparkStringRequest_Parms
 };
 
 // Function GearboxFramework.SparkInterface.IssueSparkRequest
-// [0x00420000] 
+// [0x00420000]
 struct USparkInterface_execIssueSparkRequest_Parms
 {
 	struct FHttpParameters                             HttpRequestParameters;                            		// 0x0000 (0x0038) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8424,7 +8424,7 @@ struct USparkInterface_execIssueSparkRequest_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetNewsService
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetNewsService_Parms
 {
 	class USparkNews*                                  ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -8445,41 +8445,41 @@ struct USparkInterfaceImpl_execGetTitleStorageUrl_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.OnSparkInitialized
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execOnSparkInitialized_Parms
 {
 	unsigned char                                      InitializedResult;                                		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.IncreaseInteractionTries
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execIncreaseInteractionTries_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetInteractionTries
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetInteractionTries_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetInteractionGraceTries
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetInteractionGraceTries_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetInteractionPunishmentMinWaitSeconds
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetInteractionPunishmentMinWaitSeconds_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetInteractionMinWaitSeconds
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetInteractionMinWaitSeconds_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -8494,21 +8494,21 @@ struct USparkInterfaceImpl_execConvertUtcTimeToLocalTime_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.ShouldUpdateEmergencyMessage
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execShouldUpdateEmergencyMessage_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetEmergencyMessage
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetEmergencyMessage_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.SetEmergencyMessage
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execSetEmergencyMessage_Parms
 {
 	struct FString                                     NewMessage;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -8522,13 +8522,13 @@ struct USparkInterfaceImpl_execIsTmsComplete_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.SetTmsComplete
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execSetTmsComplete_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.RestartSparkInitializationFromScript
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execRestartSparkInitializationFromScript_Parms
 {
 	unsigned long                                      bPrimary : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -8544,7 +8544,7 @@ struct USparkInterfaceImpl_eventRestartSparkInitialization_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.StartSparkInitialization
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execStartSparkInitialization_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8556,19 +8556,19 @@ struct USparkInterfaceImpl_execStartSparkInitialization_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.ResetInitializationStatus
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execResetInitializationStatus_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.ResetSecondaryInitializationStatus
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execResetSecondaryInitializationStatus_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.StartSecondaryInitialization
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execStartSecondaryInitialization_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8579,14 +8579,14 @@ struct USparkInterfaceImpl_execStartSecondaryInitialization_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetSparkInitialization
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetSparkInitialization_Parms
 {
 	class USparkInitializationProcess*                 ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.SignInGearboxAccount
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execSignInGearboxAccount_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8601,14 +8601,14 @@ struct USparkInterfaceImpl_eventGetGearboxAccountData_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.SignOutGearboxAccount
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execSignOutGearboxAccount_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.ValidPlayerIndex
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execValidPlayerIndex_Parms
 {
 	int                                                PlayerIndex;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8616,7 +8616,7 @@ struct USparkInterfaceImpl_execValidPlayerIndex_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetPlayerIndex
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execGetPlayerIndex_Parms
 {
 	int                                                ControllerId;                                     		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8624,14 +8624,14 @@ struct USparkInterfaceImpl_execGetPlayerIndex_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.ClearGearboxAccountData
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execClearGearboxAccountData_Parms
 {
 	unsigned long                                      IncludePrimaryPlayer : 1;                         		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.IsGearboxAccountSignedIn
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execIsGearboxAccountSignedIn_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -8677,27 +8677,27 @@ struct USparkInterfaceImpl_execGetPlatformTicket_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.ClearSparkConfigReceivedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execClearSparkConfigReceivedDelegate_Parms
 {
 	struct FScriptDelegate                             SparkConfigReceivedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.AddSparkConfigReceivedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct USparkInterfaceImpl_execAddSparkConfigReceivedDelegate_Parms
 {
 	struct FScriptDelegate                             SparkConfigReceivedDelegate;                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetPlatformLoginNameFromController
-// [0x00820002] 
+// [0x00820002]
 struct USparkInterfaceImpl_execGetPlatformLoginNameFromController_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FString                                     ReturnValue;                                      		// 0x0004 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0014 (0x0008) [0x0000000000000000]              
-	// struct FUniqueNetId                             UniqueId;                                         		// 0x001C (0x0018) [0x0000000000000000]              
+	// class UOnlinePlayerInterface*                   PlayerInterface;                                  		// 0x0014 (0x0008) [0x0000000000000000]
+	// struct FUniqueNetId                             UniqueId;                                         		// 0x001C (0x0018) [0x0000000000000000]
 	// struct FString                                  TextNetId;                                        		// 0x0038 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// TArray< struct FString >                        SplitId;                                          		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  PlatformId;                                       		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -8784,20 +8784,20 @@ struct USparkInterfaceImpl_execAlternativeXboxlivePlatformId_Parms
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.OnSparkEmergencyMessageUpdated
-// [0x00120000] 
+// [0x00120000]
 struct USparkInterfaceImpl_execOnSparkEmergencyMessageUpdated_Parms
 {
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.OnSparkConfigReceived
-// [0x00120000] 
+// [0x00120000]
 struct USparkInterfaceImpl_execOnSparkConfigReceived_Parms
 {
 	TArray< unsigned char >                            ConfigArray;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.OnSparkRequestComplete
-// [0x00520000] 
+// [0x00520000]
 struct USparkInterfaceImpl_execOnSparkRequestComplete_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8864,34 +8864,34 @@ struct USparkTypes_execUTF8toString_Parms
 };
 
 // Function GearboxFramework.SparkTypes.OnEntitlementsUpdated
-// [0x00120000] 
+// [0x00120000]
 struct USparkTypes_execOnEntitlementsUpdated_Parms
 {
 	class UGearboxAccountData*                         GbxAccount;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkTypes.OnSparkEmergencyMessageUpdated
-// [0x00120000] 
+// [0x00120000]
 struct USparkTypes_execOnSparkEmergencyMessageUpdated_Parms
 {
 };
 
 // Function GearboxFramework.SparkTypes.OnSparkInitialized
-// [0x00120000] 
+// [0x00120000]
 struct USparkTypes_execOnSparkInitialized_Parms
 {
 	unsigned char                                      InitializedResult;                                		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.SparkTypes.OnSparkConfigReceived
-// [0x00120000] 
+// [0x00120000]
 struct USparkTypes_execOnSparkConfigReceived_Parms
 {
 	TArray< unsigned char >                            ConfigArray;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkTypes.OnSparkRequestComplete
-// [0x00520000] 
+// [0x00520000]
 struct USparkTypes_execOnSparkRequestComplete_Parms
 {
 	struct FSparkResult                                Result;                                           		// 0x0000 (0x0018) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
@@ -8904,7 +8904,7 @@ struct UAction_FaceThreat_eventStopSequence_Parms
 };
 
 // Function GearboxFramework.ActorAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UActorAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8913,17 +8913,17 @@ struct UActorAttributeContextResolver_execGetAttributeContext_Parms
 };
 
 // Function GearboxFramework.AIComponentAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UAIComponentAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     AttributeContextSource;                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     ReturnValue;                                      		// 0x0008 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// class UIAIInterface*                            AIInterface;                                      		// 0x000C (0x0008) [0x0000000000000000]              
+	// class UIAIInterface*                            AIInterface;                                      		// 0x000C (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_AIHold.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_AIHold_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8932,11 +8932,11 @@ struct UBehavior_AIHold_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAIInterface*                            AIInterface;                                      		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIAIInterface*                            AIInterface;                                      		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_AIPriority.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_AIPriority_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8945,12 +8945,12 @@ struct UBehavior_AIPriority_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAIInterface*                            AI;                                               		// 0x0038 (0x0008) [0x0000000000000000]              
-	// class UITargetable*                             Targetable;                                       		// 0x0044 (0x0008) [0x0000000000000000]              
+	// class UIAIInterface*                            AI;                                               		// 0x0038 (0x0008) [0x0000000000000000]
+	// class UITargetable*                             Targetable;                                       		// 0x0044 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_AITargeting.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_AITargeting_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8959,12 +8959,12 @@ struct UBehavior_AITargeting_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIAIInterface*                            AIInterface;                                      		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIAIInterface*                            AIInterface;                                      		// 0x0038 (0x0008) [0x0000000000000000]
 	// class UAIComponent*                             AIComp;                                           		// 0x0040 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
 // Function GearboxFramework.Behavior_ChangeAnyBehaviorSequenceState.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ChangeAnyBehaviorSequenceState_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8973,12 +8973,12 @@ struct UBehavior_ChangeAnyBehaviorSequenceState_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_ChangeLocalBehaviorSequenceState.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ChangeLocalBehaviorSequenceState_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -8987,12 +8987,12 @@ struct UBehavior_ChangeLocalBehaviorSequenceState_execApplyBehaviorToContext_Par
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       Consumer;                                         		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_CompareBool.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_CompareBool_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9004,7 +9004,7 @@ struct UBehavior_CompareBool_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_CompareValues.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_CompareValues_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9016,7 +9016,7 @@ struct UBehavior_CompareValues_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_CustomEvent.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_CustomEvent_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9025,13 +9025,13 @@ struct UBehavior_CustomEvent_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIBehaviorConsumer*                       ConsumerInterface;                                		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]              
-	// class UICustomEvent*                            ContextInterface;                                 		// 0x0044 (0x0008) [0x0000000000000000]              
+	// class UIBehaviorConsumer*                       ConsumerInterface;                                		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FBehaviorConsumerHandle                  ConsumerHandle;                                   		// 0x0040 (0x0004) [0x0000000000000000]
+	// class UICustomEvent*                            ContextInterface;                                 		// 0x0044 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_Delay.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_Delay_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9043,7 +9043,7 @@ struct UBehavior_Delay_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_Gate.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_Gate_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9055,7 +9055,7 @@ struct UBehavior_Gate_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_GetFloatParam.PublishBehaviorOutput
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_GetFloatParam_execPublishBehaviorOutput_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -9063,7 +9063,7 @@ struct UBehavior_GetFloatParam_execPublishBehaviorOutput_Parms
 };
 
 // Function GearboxFramework.Behavior_GetFloatParam.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_GetFloatParam_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9072,11 +9072,11 @@ struct UBehavior_GetFloatParam_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x003C (0x0008) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x003C (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_GetObjectParam.PublishBehaviorOutput
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_GetObjectParam_execPublishBehaviorOutput_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -9084,7 +9084,7 @@ struct UBehavior_GetObjectParam_execPublishBehaviorOutput_Parms
 };
 
 // Function GearboxFramework.Behavior_GetObjectParam.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_GetObjectParam_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9093,11 +9093,11 @@ struct UBehavior_GetObjectParam_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x003C (0x0008) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x003C (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_GetVectorParam.PublishBehaviorOutput
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_GetVectorParam_execPublishBehaviorOutput_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -9108,7 +9108,7 @@ struct UBehavior_GetVectorParam_execPublishBehaviorOutput_Parms
 };
 
 // Function GearboxFramework.Behavior_GetVectorParam.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_GetVectorParam_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9117,13 +9117,13 @@ struct UBehavior_GetVectorParam_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// struct FVector                                  VectorResult;                                     		// 0x003C (0x000C) [0x0000000000000000]              
-	// struct FLinearColor                             Result;                                           		// 0x0048 (0x0010) [0x0000000000000000]              
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0058 (0x0008) [0x0000000000000000]              
+	// struct FVector                                  VectorResult;                                     		// 0x003C (0x000C) [0x0000000000000000]
+	// struct FLinearColor                             Result;                                           		// 0x0048 (0x0010) [0x0000000000000000]
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0058 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_InterpolateFloatOverTime.PublishBehaviorOutput
-// [0x00420002] 
+// [0x00420002]
 struct UBehavior_InterpolateFloatOverTime_execPublishBehaviorOutput_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -9131,7 +9131,7 @@ struct UBehavior_InterpolateFloatOverTime_execPublishBehaviorOutput_Parms
 };
 
 // Function GearboxFramework.Behavior_InterpolateFloatOverTime.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_InterpolateFloatOverTime_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9143,7 +9143,7 @@ struct UBehavior_InterpolateFloatOverTime_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_Metronome.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_Metronome_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9155,7 +9155,7 @@ struct UBehavior_Metronome_execApplyBehaviorToContext_Parms
 };
 
 // Function GearboxFramework.Behavior_ModifyTimer.PublishBehaviorOutput
-// [0x00420002] 
+// [0x00420002]
 struct UBehavior_ModifyTimer_execPublishBehaviorOutput_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
@@ -9163,7 +9163,7 @@ struct UBehavior_ModifyTimer_execPublishBehaviorOutput_Parms
 };
 
 // Function GearboxFramework.Behavior_ModifyTimer.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_ModifyTimer_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9172,13 +9172,13 @@ struct UBehavior_ModifyTimer_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// unsigned char                                   ActualOperation;                                  		// 0x0038 (0x0001) [0x0000000000000000]              
-	// struct FBehaviorTimerState                      TimerState;                                       		// 0x003C (0x000C) [0x0000000000000000]              
-	// class UITimerBehavior*                          ContextInterface;                                 		// 0x004C (0x0008) [0x0000000000000000]              
+	// unsigned char                                   ActualOperation;                                  		// 0x0038 (0x0001) [0x0000000000000000]
+	// struct FBehaviorTimerState                      TimerState;                                       		// 0x003C (0x000C) [0x0000000000000000]
+	// class UITimerBehavior*                          ContextInterface;                                 		// 0x004C (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_SetFloatParam.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SetFloatParam_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9187,11 +9187,11 @@ struct UBehavior_SetFloatParam_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_SetObjectParam.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SetObjectParam_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9200,11 +9200,11 @@ struct UBehavior_SetObjectParam_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_SetVectorParam.ApplyBehaviorToContext
-// [0x00C80002] 
+// [0x00C80002]
 struct UBehavior_SetVectorParam_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9213,27 +9213,27 @@ struct UBehavior_SetVectorParam_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
-	// struct FLinearColor                             TempColor;                                        		// 0x0040 (0x0010) [0x0000000000000000]              
-	// struct FVector                                  TempVector;                                       		// 0x0050 (0x000C) [0x0000000000000000]              
+	// class UIParameterBehavior*                      ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
+	// struct FLinearColor                             TempColor;                                        		// 0x0040 (0x0010) [0x0000000000000000]
+	// struct FVector                                  TempVector;                                       		// 0x0050 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.Behavior_SpecialMove.PlaySpecialMove
-// [0x00020002] 
+// [0x00020002]
 struct UBehavior_SpecialMove_execPlaySpecialMove_Parms
 {
 	class USpecialMoveComponent*                       SMC;                                              		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
 };
 
 // Function GearboxFramework.Behavior_SpecialMove.TriggerOutput
-// [0x00420002] 
+// [0x00420002]
 struct UBehavior_SpecialMove_execTriggerOutput_Parms
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                       		// 0x0000 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 };
 
 // Function GearboxFramework.Behavior_SpecialMove.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SpecialMove_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9242,12 +9242,12 @@ struct UBehavior_SpecialMove_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USpecialMoveInterface*                    ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class USpecialMoveInterface*                    ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 	// class USpecialMoveComponent*                    SMC;                                              		// 0x0040 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
 // Function GearboxFramework.Behavior_SpecialMoveStop.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_SpecialMoveStop_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9256,12 +9256,12 @@ struct UBehavior_SpecialMoveStop_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USpecialMoveInterface*                    ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class USpecialMoveInterface*                    ContextInterface;                                 		// 0x0038 (0x0008) [0x0000000000000000]
 	// class USpecialMoveComponent*                    SMC;                                              		// 0x0040 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
 // Function GearboxFramework.Behavior_StartAkAmbientSound.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_StartAkAmbientSound_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9270,12 +9270,12 @@ struct UBehavior_StartAkAmbientSound_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIInstanceData*                           InstanceDataProvider;                             		// 0x003C (0x0008) [0x0000000000000000]              
+	// class UIInstanceData*                           InstanceDataProvider;                             		// 0x003C (0x0008) [0x0000000000000000]
 	// TArray< struct FInstanceDataUnion >             InstanceData;                                     		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.Behavior_StopAkAmbientSound.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_StopAkAmbientSound_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9284,12 +9284,12 @@ struct UBehavior_StopAkAmbientSound_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UIInstanceData*                           InstanceDataProvider;                             		// 0x003C (0x0008) [0x0000000000000000]              
+	// class UIInstanceData*                           InstanceDataProvider;                             		// 0x003C (0x0008) [0x0000000000000000]
 	// TArray< struct FInstanceDataUnion >             InstanceData;                                     		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.Behavior_StopDialog.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_StopDialog_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9298,12 +9298,12 @@ struct UBehavior_StopDialog_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UGearboxDialogInterface*                  DialogInterface;                                  		// 0x0038 (0x0008) [0x0000000000000000]              
+	// class UGearboxDialogInterface*                  DialogInterface;                                  		// 0x0038 (0x0008) [0x0000000000000000]
 	// class UGearboxDialogComponent*                  DialogComponent;                                  		// 0x0040 (0x0004) [0x0000000004000000]              ( CPF_EditInline )
 };
 
 // Function GearboxFramework.Behavior_ToggleDialog.ApplyBehaviorToContext
-// [0x00480002] 
+// [0x00480002]
 struct UBehavior_ToggleDialog_execApplyBehaviorToContext_Parms
 {
 	class UObject*                                     ContextObject;                                    		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9312,17 +9312,17 @@ struct UBehavior_ToggleDialog_execApplyBehaviorToContext_Parms
 	class UObject*                                     MyInstigatorObject;                               		// 0x0024 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     OtherEventParticipantObject;                      		// 0x0028 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FBehaviorParameters                         EventData;                                        		// 0x002C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class UGearboxDialogInterface*                  Dialog;                                           		// 0x0048 (0x0008) [0x0000000000000000]              
+	// class UGearboxDialogInterface*                  Dialog;                                           		// 0x0048 (0x0008) [0x0000000000000000]
 };
 
 // Function GearboxFramework.CameraModifierCrossfade.DoCrossfade
-// [0x00080002] 
+// [0x00080002]
 struct UCameraModifierCrossfade_execDoCrossfade_Parms
 {
 };
 
 // Function GearboxFramework.CameraModifierCrossfade.UpdateAllLerps
-// [0x00480002] 
+// [0x00480002]
 struct UCameraModifierCrossfade_execUpdateAllLerps_Parms
 {
 	float                                              DeltaTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9330,14 +9330,14 @@ struct UCameraModifierCrossfade_execUpdateAllLerps_Parms
 };
 
 // Function GearboxFramework.CameraModifierCrossfade.ModifyCamera
-// [0x00C20002] 
+// [0x00C20002]
 struct UCameraModifierCrossfade_execModifyCamera_Parms
 {
 	class ACamera*                                     Camera;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              DeltaTime;                                        		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FTPOV                                       OutPOV;                                           		// 0x0008 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0024 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FTPOV                                    PrelimPOV;                                        		// 0x002C (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    PrelimPOV;                                        		// 0x002C (0x001C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.CameraModifierCrossfade.ProcessCameraBlend
@@ -9347,11 +9347,11 @@ struct UCameraModifierCrossfade_execProcessCameraBlend_Parms
 	class ACamera*                                     Camera;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              AdjustedDeltaTime;                                		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FTPOV                                       OutPOV;                                           		// 0x0008 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
-	// struct FTPOV                                    TargetPOV;                                        		// 0x002C (0x001C) [0x0000000000000000]              
+	// struct FTPOV                                    TargetPOV;                                        		// 0x002C (0x001C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.CameraModifierCrossfade.InitializeSubModifiers
-// [0x00080002] 
+// [0x00080002]
 struct UCameraModifierCrossfade_execInitializeSubModifiers_Parms
 {
 };
@@ -9363,36 +9363,36 @@ struct UCameraModifierCrossfade_eventEnableModifier_Parms
 };
 
 // Function GearboxFramework.CameraModifierLookAt.ExecuteFadeIfNeeded
-// [0x00420002] 
+// [0x00420002]
 struct UCameraModifierLookAt_execExecuteFadeIfNeeded_Parms
 {
 	class AGearboxPlayerController*                    PC;                                               		// 0x0000 (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.GetDesiredLocation
-// [0x00C20002] 
+// [0x00C20002]
 struct UCameraModifierLookAt_execGetDesiredLocation_Parms
 {
 	struct FTPOV                                       OutPOV;                                           		// 0x0000 (0x001C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	class AGearboxPlayerController*                    PC;                                               		// 0x001C (0x0004) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	struct FVector                                     ReturnValue;                                      		// 0x0020 (0x000C) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  HitLocation;                                      		// 0x002C (0x000C) [0x0000000000000000]              
-	// struct FVector                                  HitNormal;                                        		// 0x0038 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  ToReturn;                                         		// 0x0044 (0x000C) [0x0000000000000000]              
-	// struct FRotator                                 AlignAxis;                                        		// 0x0050 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  HitLocation;                                      		// 0x002C (0x000C) [0x0000000000000000]
+	// struct FVector                                  HitNormal;                                        		// 0x0038 (0x000C) [0x0000000000000000]
+	// struct FVector                                  ToReturn;                                         		// 0x0044 (0x000C) [0x0000000000000000]
+	// struct FRotator                                 AlignAxis;                                        		// 0x0050 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.CameraModifierLookAt.ModifyCamera
-// [0x00C20002] 
+// [0x00C20002]
 struct UCameraModifierLookAt_execModifyCamera_Parms
 {
 	class ACamera*                                     Camera;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	float                                              DeltaTime;                                        		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	struct FTPOV                                       OutPOV;                                           		// 0x0008 (0x001C) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0024 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-	// struct FVector                                  DesiredLocation;                                  		// 0x0028 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  DestLookAt;                                       		// 0x0034 (0x000C) [0x0000000000000000]              
-	// struct FVector                                  LookLoc;                                          		// 0x0040 (0x000C) [0x0000000000000000]              
+	// struct FVector                                  DesiredLocation;                                  		// 0x0028 (0x000C) [0x0000000000000000]
+	// struct FVector                                  DestLookAt;                                       		// 0x0034 (0x000C) [0x0000000000000000]
+	// struct FVector                                  LookLoc;                                          		// 0x0040 (0x000C) [0x0000000000000000]
 };
 
 // Function GearboxFramework.CameraModifierLookAt.GetBoneLocation
@@ -9407,21 +9407,21 @@ struct UCameraModifierLookAt_execGetBoneLocation_Parms
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetLookAtBone
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetLookAtBone_Parms
 {
 	struct FName                                       NewBone;                                          		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetLookAtTarget
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetLookAtTarget_Parms
 {
 	class AActor*                                      newLookAtTarget;                                  		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetTargetLocation
-// [0x00020000] 
+// [0x00020000]
 struct UCameraModifierLookAt_execSetTargetLocation_Parms
 {
 	struct FVector                                     NewTargetLocation;                                		// 0x0000 (0x000C) [0x0000000000000080]              ( CPF_Parm )
@@ -9430,14 +9430,14 @@ struct UCameraModifierLookAt_execSetTargetLocation_Parms
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetDuration
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetDuration_Parms
 {
 	float                                              NewDuration;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetTransitionTimes
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetTransitionTimes_Parms
 {
 	float                                              NewInTime;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9445,14 +9445,14 @@ struct UCameraModifierLookAt_execSetTransitionTimes_Parms
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetZoomFOV
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetZoomFOV_Parms
 {
 	float                                              newZoom;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetThirdPersonDistances
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetThirdPersonDistances_Parms
 {
 	float                                              NewX;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9461,21 +9461,21 @@ struct UCameraModifierLookAt_execSetThirdPersonDistances_Parms
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetLookAtMode
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execSetLookAtMode_Parms
 {
 	unsigned char                                      NewMode;                                          		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.DisableModifier
-// [0x00024002] 
+// [0x00024002]
 struct UCameraModifierLookAt_execDisableModifier_Parms
 {
 	unsigned long                                      bImmediate : 1;                                   		// 0x0000 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 };
 
 // Function GearboxFramework.CameraModifierLookAt.EnableModifier
-// [0x00020002] 
+// [0x00020002]
 struct UCameraModifierLookAt_execEnableModifier_Parms
 {
 };
@@ -9515,7 +9515,7 @@ struct USparkNews_execHandleNewsRetrievalResponse_Parms
 };
 
 // Function GearboxFramework.SparkNews.GetArticle
-// [0x00420002] 
+// [0x00420002]
 struct USparkNews_execGetArticle_Parms
 {
 	int                                                Idx;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9525,25 +9525,25 @@ struct USparkNews_execGetArticle_Parms
 };
 
 // Function GearboxFramework.SparkNews.GetArticleCount
-// [0x00020002] 
+// [0x00020002]
 struct USparkNews_execGetArticleCount_Parms
 {
 	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function GearboxFramework.SparkNews.RetrieveNews
-// [0x00820002] 
+// [0x00820002]
 struct USparkNews_execRetrieveNews_Parms
 {
 	unsigned char                                      ControllerId;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             RetrievalDelegate;                                		// 0x0004 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	// class USparkInterface*                          Spark;                                            		// 0x0010 (0x0008) [0x0000000000000000]              
+	// class USparkInterface*                          Spark;                                            		// 0x0010 (0x0008) [0x0000000000000000]
 	// struct FHttpParameters                          HttpParameters;                                   		// 0x0018 (0x0038) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	// struct FString                                  URL;                                              		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function GearboxFramework.SparkNews.OnNewsRetrieved
-// [0x00120000] 
+// [0x00120000]
 struct USparkNews_execOnNewsRetrieved_Parms
 {
 	unsigned char                                      RetrievealResult;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -9558,7 +9558,7 @@ struct UGFxMovieDrawStyleInstanceData_eventRequiresClientInstance_Parms
 };
 
 // Function GearboxFramework.PopulationMasterAttributeContextResolver.GetAttributeContext
-// [0x00020002] 
+// [0x00020002]
 struct UPopulationMasterAttributeContextResolver_execGetAttributeContext_Parms
 {
 	class UAttributeDefinitionBase*                    Attribute;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -9566,7 +9566,6 @@ struct UPopulationMasterAttributeContextResolver_execGetAttributeContext_Parms
 	class UObject*                                     ReturnValue;                                      		// 0x0008 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif

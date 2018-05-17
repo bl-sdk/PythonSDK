@@ -13,7 +13,7 @@
 */
 
 #ifdef _MSC_VER
-	#pragma pack ( push, 0x4 )
+#pragma pack ( push, 0x4 )
 #endif
 
 /*
@@ -97,7 +97,7 @@ struct AInternetLink_execIsDataPending_Parms
 struct ATcpLink_eventReceivedBinary_Parms
 {
 	int                                                Count;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      B[ 0xFF ];                                        		// 0x0004 (0x00FF) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      B[0xFF];                                        		// 0x0004 (0x00FF) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.TcpLink.ReceivedLine
@@ -137,7 +137,7 @@ struct ATcpLink_eventAccepted_Parms
 struct ATcpLink_execReadBinary_Parms
 {
 	int                                                Count;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      B[ 0xFF ];                                        		// 0x0004 (0x00FF) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      B[0xFF];                                        		// 0x0004 (0x00FF) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	int                                                ReturnValue;                                      		// 0x0104 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
@@ -154,7 +154,7 @@ struct ATcpLink_execReadText_Parms
 struct ATcpLink_execSendBinary_Parms
 {
 	int                                                Count;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      B[ 0xFF ];                                        		// 0x0004 (0x00FF) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      B[0xFF];                                        		// 0x0004 (0x00FF) [0x0000000000000080]              ( CPF_Parm )
 	int                                                ReturnValue;                                      		// 0x0104 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
@@ -243,7 +243,7 @@ struct UOnlineEventsInterfaceMcp_execUploadPlayerData_Parms
 };
 
 // Function IpDrv.OnlineNewsInterfaceMcp.GetNews
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineNewsInterfaceMcp_execGetNews_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -252,21 +252,21 @@ struct UOnlineNewsInterfaceMcp_execGetNews_Parms
 };
 
 // Function IpDrv.OnlineNewsInterfaceMcp.ClearReadNewsCompletedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineNewsInterfaceMcp_execClearReadNewsCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             ReadGameNewsDelegate;                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineNewsInterfaceMcp.AddReadNewsCompletedDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineNewsInterfaceMcp_execAddReadNewsCompletedDelegate_Parms
 {
 	struct FScriptDelegate                             ReadNewsDelegate;                                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineNewsInterfaceMcp.OnReadNewsCompleted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineNewsInterfaceMcp_execOnReadNewsCompleted_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -283,21 +283,21 @@ struct UOnlineNewsInterfaceMcp_execReadNews_Parms
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ClearShareTitleFileCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileDownloadMcp_execClearShareTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShareTitleFileCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.AddShareTitleFileCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileDownloadMcp_execAddShareTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ShareTitleFileCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ShareTitleFile
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineTitleFileDownloadMcp_execShareTitleFile_Parms
 {
 	struct FString                                     FileToShare;                                      		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -320,7 +320,7 @@ struct UOnlineTitleFileDownloadMcp_execClearDownloadedFiles_Parms
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileState
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineTitleFileDownloadMcp_execGetTitleFileState_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -337,14 +337,14 @@ struct UOnlineTitleFileDownloadMcp_execGetTitleFileContents_Parms
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ClearReadTitleFileCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineTitleFileDownloadMcp_execClearReadTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.AddReadTitleFileCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineTitleFileDownloadMcp_execAddReadTitleFileCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -360,7 +360,7 @@ struct UOnlineTitleFileDownloadMcp_execReadTitleFile_Parms
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.OnShareTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineTitleFileDownloadMcp_execOnShareTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -369,7 +369,7 @@ struct UOnlineTitleFileDownloadMcp_execOnShareTitleFileComplete_Parms
 };
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.OnReadTitleFileComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineTitleFileDownloadMcp_execOnReadTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -389,12 +389,12 @@ struct UMeshBeaconClient_execSendHostNewGameSessionResponse_Parms
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	struct FName                                       SessionName;                                      		// 0x0004 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0010 (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0010 (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0060 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function IpDrv.MeshBeaconClient.OnCreateNewSessionRequestReceived
-// [0x00520000] 
+// [0x00520000]
 struct UMeshBeaconClient_execOnCreateNewSessionRequestReceived_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -403,16 +403,16 @@ struct UMeshBeaconClient_execOnCreateNewSessionRequestReceived_Parms
 };
 
 // Function IpDrv.MeshBeaconClient.OnTravelRequestReceived
-// [0x00520000] 
+// [0x00520000]
 struct UMeshBeaconClient_execOnTravelRequestReceived_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x000C (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x000C (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function IpDrv.MeshBeaconClient.OnReceivedBandwidthTestResults
-// [0x00520000] 
+// [0x00520000]
 struct UMeshBeaconClient_execOnReceivedBandwidthTestResults_Parms
 {
 	unsigned char                                      TestType;                                         		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -421,14 +421,14 @@ struct UMeshBeaconClient_execOnReceivedBandwidthTestResults_Parms
 };
 
 // Function IpDrv.MeshBeaconClient.OnReceivedBandwidthTestRequest
-// [0x00120000] 
+// [0x00120000]
 struct UMeshBeaconClient_execOnReceivedBandwidthTestRequest_Parms
 {
 	unsigned char                                      TestType;                                         		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.MeshBeaconClient.OnConnectionRequestResult
-// [0x00120000] 
+// [0x00120000]
 struct UMeshBeaconClient_execOnConnectionRequestResult_Parms
 {
 	unsigned char                                      ConnectionResult;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -460,13 +460,13 @@ struct UMeshBeaconClient_eventDestroyBeacon_Parms
 };
 
 // Function IpDrv.MeshBeaconHost.OnReceivedClientCreateNewSessionResult
-// [0x00520000] 
+// [0x00520000]
 struct UMeshBeaconHost_execOnReceivedClientCreateNewSessionResult_Parms
 {
 	unsigned long                                      bSucceeded : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 	struct FName                                       SessionName;                                      		// 0x0004 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0010 (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0010 (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function IpDrv.MeshBeaconHost.RequestClientCreateNewSession
@@ -486,11 +486,11 @@ struct UMeshBeaconHost_execTellClientsToTravel_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x000C (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x000C (0x0050) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function IpDrv.MeshBeaconHost.OnAllPendingPlayersConnected
-// [0x00120000] 
+// [0x00120000]
 struct UMeshBeaconHost_execOnAllPendingPlayersConnected_Parms
 {
 };
@@ -512,14 +512,14 @@ struct UMeshBeaconHost_execGetConnectionIndexForPlayer_Parms
 };
 
 // Function IpDrv.MeshBeaconHost.SetPendingPlayerConnections
-// [0x00420002] 
+// [0x00420002]
 struct UMeshBeaconHost_execSetPendingPlayerConnections_Parms
 {
 	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.MeshBeaconHost.OnFinishedBandwidthTest
-// [0x00520000] 
+// [0x00520000]
 struct UMeshBeaconHost_execOnFinishedBandwidthTest_Parms
 {
 	struct FUniqueNetId                                PlayerNetId;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -529,7 +529,7 @@ struct UMeshBeaconHost_execOnFinishedBandwidthTest_Parms
 };
 
 // Function IpDrv.MeshBeaconHost.OnStartedBandwidthTest
-// [0x00120000] 
+// [0x00120000]
 struct UMeshBeaconHost_execOnStartedBandwidthTest_Parms
 {
 	struct FUniqueNetId                                PlayerNetId;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
@@ -537,14 +537,14 @@ struct UMeshBeaconHost_execOnStartedBandwidthTest_Parms
 };
 
 // Function IpDrv.MeshBeaconHost.OnReceivedClientConnectionRequest
-// [0x00520000] 
+// [0x00520000]
 struct UMeshBeaconHost_execOnReceivedClientConnectionRequest_Parms
 {
 	struct FClientMeshBeaconConnection                 NewClientConnection;                              		// 0x0000 (0x0068) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.MeshBeaconHost.AllowBandwidthTesting
-// [0x00020002] 
+// [0x00020002]
 struct UMeshBeaconHost_execAllowBandwidthTesting_Parms
 {
 	unsigned long                                      bEnabled : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -601,7 +601,7 @@ struct UMeshBeaconHost_execInitHostBeacon_Parms
 };
 
 // Function IpDrv.OnlineSubsystemCommonImpl.GetRegisteredPlayers
-// [0x00420002] 
+// [0x00420002]
 struct UOnlineSubsystemCommonImpl_execGetRegisteredPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -690,161 +690,161 @@ struct UOnlineAuthInterfaceImpl_execSendAuthBlobClient_Parms
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearServerConnectionCloseDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearServerConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddServerConnectionCloseDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddServerConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearClientConnectionCloseDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearClientConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddClientConnectionCloseDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddClientConnectionCloseDelegate_Parms
 {
 	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthRetryServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthRetryServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRetryServerDelegate;                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthRetryServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthRetryServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRetryServerDelegate;                          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthKillClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthKillClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthKillClientDelegate;                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthKillClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthKillClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthKillClientDelegate;                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthCompleteServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthCompleteServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteServerDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthCompleteServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthCompleteServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteServerDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthCompleteClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthCompleteClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteClientDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthCompleteClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthCompleteClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthCompleteClientDelegate;                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthBlobReceivedServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthBlobReceivedServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedServerDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthBlobReceivedServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthBlobReceivedServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedServerDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthBlobReceivedClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthBlobReceivedClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedClientDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthBlobReceivedClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthBlobReceivedClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthBlobReceivedClientDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthRequestServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthRequestServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestServerDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthRequestServerDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthRequestServerDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestServerDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthRequestClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthRequestClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestClientDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthRequestClientDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthRequestClientDelegate_Parms
 {
 	struct FScriptDelegate                             AuthRequestClientDelegate;                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthReadyDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execClearAuthReadyDelegate_Parms
 {
 	struct FScriptDelegate                             AuthReadyDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthReadyDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineAuthInterfaceImpl_execAddAuthReadyDelegate_Parms
 {
 	struct FScriptDelegate                             AuthReadyDelegate;                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.HasPendingBootInvite
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execHasPendingBootInvite_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -857,21 +857,21 @@ struct UOnlineGameInterfaceImpl_execCancelNATNegotiation_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearQosStatusChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearQosStatusChangedDelegate_Parms
 {
 	struct FScriptDelegate                             QosStatusChangedDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddQosStatusChangedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddQosStatusChangedDelegate_Parms
 {
 	struct FScriptDelegate                             QosStatusChangedDelegate;                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnQosStatusChanged
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnQosStatusChanged_Parms
 {
 	int                                                NumComplete;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -884,16 +884,16 @@ struct UOnlineGameInterfaceImpl_execBindPlatformSpecificSessionToSearch_Parms
 {
 	unsigned char                                      SearchingPlayerNum;                               		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 	class UOnlineGameSearch*                           SearchSettings;                                   		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000080]              ( CPF_Parm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfoBySessionName
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterfaceImpl_execReadPlatformSpecificSessionInfoBySessionName_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
@@ -902,12 +902,12 @@ struct UOnlineGameInterfaceImpl_execReadPlatformSpecificSessionInfoBySessionName
 struct UOnlineGameInterfaceImpl_execReadPlatformSpecificSessionInfo_Parms
 {
 	struct FOnlineGameSearchResult                     DesiredGame;                                      		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x0008 (0x0050) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.QueryNonAdvertisedData
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execQueryNonAdvertisedData_Parms
 {
 	int                                                StartAt;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -916,21 +916,21 @@ struct UOnlineGameInterfaceImpl_execQueryNonAdvertisedData_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearJoinMigratedOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearJoinMigratedOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddJoinMigratedOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddJoinMigratedOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnJoinMigratedOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnJoinMigratedOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -938,7 +938,7 @@ struct UOnlineGameInterfaceImpl_execOnJoinMigratedOnlineGameComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.JoinMigratedOnlineGame
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterfaceImpl_execJoinMigratedOnlineGame_Parms
 {
 	unsigned char                                      PlayerNum;                                        		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -948,21 +948,21 @@ struct UOnlineGameInterfaceImpl_execJoinMigratedOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearMigrateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearMigrateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddMigrateOnlineGameCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddMigrateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnMigrateOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnMigrateOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -970,7 +970,7 @@ struct UOnlineGameInterfaceImpl_execOnMigrateOnlineGameComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.MigrateOnlineGame
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execMigrateOnlineGame_Parms
 {
 	unsigned char                                      HostingPlayerNum;                                 		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -979,21 +979,21 @@ struct UOnlineGameInterfaceImpl_execMigrateOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearRecalculateSkillRatingCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearRecalculateSkillRatingCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RecalculateSkillRatingGameCompleteDelegate;       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddRecalculateSkillRatingCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddRecalculateSkillRatingCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RecalculateSkillRatingCompleteDelegate;           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnRecalculateSkillRatingComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnRecalculateSkillRatingComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1001,7 +1001,7 @@ struct UOnlineGameInterfaceImpl_execOnRecalculateSkillRatingComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.RecalculateSkillRating
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterfaceImpl_execRecalculateSkillRating_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1010,27 +1010,27 @@ struct UOnlineGameInterfaceImpl_execRecalculateSkillRating_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearGameInviteProcessingStartedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearGameInviteProcessingStartedDelegate_Parms
 {
 	struct FScriptDelegate                             GameInviteProcessingStartedDelegate;              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddGameInviteProcessingStartedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddGameInviteProcessingStartedDelegate_Parms
 {
 	struct FScriptDelegate                             GameInviteProcessingStartedDelegate;              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnGameInviteProcessingStarted
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnGameInviteProcessingStarted_Parms
 {
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AcceptGameInvite
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAcceptGameInvite_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1039,7 +1039,7 @@ struct UOnlineGameInterfaceImpl_execAcceptGameInvite_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearGameInviteAcceptedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearGameInviteAcceptedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1047,7 +1047,7 @@ struct UOnlineGameInterfaceImpl_execClearGameInviteAcceptedDelegate_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddGameInviteAcceptedDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddGameInviteAcceptedDelegate_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1055,14 +1055,14 @@ struct UOnlineGameInterfaceImpl_execAddGameInviteAcceptedDelegate_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnGameInviteAccepted
-// [0x00520000] 
+// [0x00520000]
 struct UOnlineGameInterfaceImpl_execOnGameInviteAccepted_Parms
 {
 	struct FOnlineGameSearchResult                     InviteResult;                                     		// 0x0000 (0x0008) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetArbitratedPlayers
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execGetArbitratedPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1070,21 +1070,21 @@ struct UOnlineGameInterfaceImpl_execGetArbitratedPlayers_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearArbitrationRegistrationCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearArbitrationRegistrationCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddArbitrationRegistrationCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddArbitrationRegistrationCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnArbitrationRegistrationComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnArbitrationRegistrationComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1092,7 +1092,7 @@ struct UOnlineGameInterfaceImpl_execOnArbitrationRegistrationComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.RegisterForArbitration
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execRegisterForArbitration_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1100,21 +1100,21 @@ struct UOnlineGameInterfaceImpl_execRegisterForArbitration_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearEndOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearEndOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddEndOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddEndOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnEndOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnEndOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1130,21 +1130,21 @@ struct UOnlineGameInterfaceImpl_execEndOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearStartOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearStartOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddStartOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddStartOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnStartOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnStartOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1160,21 +1160,21 @@ struct UOnlineGameInterfaceImpl_execStartOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearUnregisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearUnregisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddUnregisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddUnregisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnUnregisterPlayerComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnUnregisterPlayerComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1183,7 +1183,7 @@ struct UOnlineGameInterfaceImpl_execOnUnregisterPlayerComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.UnregisterPlayers
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterfaceImpl_execUnregisterPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1192,7 +1192,7 @@ struct UOnlineGameInterfaceImpl_execUnregisterPlayers_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.UnregisterPlayer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execUnregisterPlayer_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1201,21 +1201,21 @@ struct UOnlineGameInterfaceImpl_execUnregisterPlayer_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearRegisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execClearRegisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddRegisterPlayerCompleteDelegate
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execAddRegisterPlayerCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnRegisterPlayerComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnRegisterPlayerComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1224,7 +1224,7 @@ struct UOnlineGameInterfaceImpl_execOnRegisterPlayerComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.RegisterPlayers
-// [0x00420000] 
+// [0x00420000]
 struct UOnlineGameInterfaceImpl_execRegisterPlayers_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1233,7 +1233,7 @@ struct UOnlineGameInterfaceImpl_execRegisterPlayers_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.RegisterPlayer
-// [0x00020000] 
+// [0x00020000]
 struct UOnlineGameInterfaceImpl_execRegisterPlayer_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1252,21 +1252,21 @@ struct UOnlineGameInterfaceImpl_execGetResolvedConnectString_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearJoinOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearJoinOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddJoinOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddJoinOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnJoinOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnJoinOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1292,21 +1292,21 @@ struct UOnlineGameInterfaceImpl_execFreeSearchResults_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearCancelFindOnlineGamesCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearCancelFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddCancelFindOnlineGamesCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddCancelFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnCancelFindOnlineGamesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnCancelFindOnlineGamesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1320,14 +1320,14 @@ struct UOnlineGameInterfaceImpl_execCancelFindOnlineGames_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearFindOnlineGamesCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddFindOnlineGamesCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddFindOnlineGamesCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1343,21 +1343,21 @@ struct UOnlineGameInterfaceImpl_execFindOnlineGames_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearDestroyOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearDestroyOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddDestroyOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddDestroyOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnDestroyOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnDestroyOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1373,21 +1373,21 @@ struct UOnlineGameInterfaceImpl_execDestroyOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearUpdateOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearUpdateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddUpdateOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddUpdateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnUpdateOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnUpdateOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1395,7 +1395,7 @@ struct UOnlineGameInterfaceImpl_execOnUpdateOnlineGameComplete_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.UpdateOnlineGame
-// [0x00024000] 
+// [0x00024000]
 struct UOnlineGameInterfaceImpl_execUpdateOnlineGame_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1405,21 +1405,21 @@ struct UOnlineGameInterfaceImpl_execUpdateOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearCreateOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execClearCreateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddCreateOnlineGameCompleteDelegate
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execAddCreateOnlineGameCompleteDelegate_Parms
 {
 	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnCreateOnlineGameComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnCreateOnlineGameComplete_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1437,14 +1437,14 @@ struct UOnlineGameInterfaceImpl_execCreateOnlineGame_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetGameSearch
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execGetGameSearch_Parms
 {
 	class UOnlineGameSearch*                           ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetGameSettings
-// [0x00020002] 
+// [0x00020002]
 struct UOnlineGameInterfaceImpl_execGetGameSettings_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -1452,7 +1452,7 @@ struct UOnlineGameInterfaceImpl_execGetGameSettings_Parms
 };
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnFindOnlineGamesComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlineGameInterfaceImpl_execOnFindOnlineGamesComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1466,7 +1466,7 @@ struct UOnlinePlaylistManager_execParseDataCenterId_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.OnReadDataCenterIdComplete
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execOnReadDataCenterIdComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1475,7 +1475,7 @@ struct UOnlinePlaylistManager_execOnReadDataCenterIdComplete_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.ReadDataCenterId
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execReadDataCenterId_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1486,11 +1486,11 @@ struct UOnlinePlaylistManager_execReadDataCenterId_Parms
 struct UOnlinePlaylistManager_eventSendPlaylistPopulationUpdate_Parms
 {
 	int                                                NumPlayers;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	// class UOnlineEventsInterface*                   EventsInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]              
+	// class UOnlineEventsInterface*                   EventsInterface;                                  		// 0x0004 (0x0008) [0x0000000000000000]
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetPopulationInfoFromPlaylist
-// [0x00420002] 
+// [0x00420002]
 struct UOnlinePlaylistManager_execGetPopulationInfoFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1506,13 +1506,13 @@ struct UOnlinePlaylistManager_execParsePlaylistPopulationData_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.OnPlaylistPopulationDataUpdated
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlaylistManager_execOnPlaylistPopulationDataUpdated_Parms
 {
 };
 
 // Function IpDrv.OnlinePlaylistManager.OnReadPlaylistPopulationComplete
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execOnReadPlaylistPopulationComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1521,20 +1521,20 @@ struct UOnlinePlaylistManager_execOnReadPlaylistPopulationComplete_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.ReadPlaylistPopulation
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execReadPlaylistPopulation_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.OnlinePlaylistManager.Reset
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execReset_Parms
 {
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetContentIdsFromPlaylist
-// [0x00420002] 
+// [0x00420002]
 struct UOnlinePlaylistManager_execGetContentIdsFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1542,7 +1542,7 @@ struct UOnlinePlaylistManager_execGetContentIdsFromPlaylist_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetInventorySwapFromPlaylist
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execGetInventorySwapFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1551,7 +1551,7 @@ struct UOnlinePlaylistManager_execGetInventorySwapFromPlaylist_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetMapCycleFromPlaylist
-// [0x00420002] 
+// [0x00420002]
 struct UOnlinePlaylistManager_execGetMapCycleFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1559,7 +1559,7 @@ struct UOnlinePlaylistManager_execGetMapCycleFromPlaylist_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetUrlFromPlaylist
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execGetUrlFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1567,7 +1567,7 @@ struct UOnlinePlaylistManager_execGetUrlFromPlaylist_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetMatchType
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execGetMatchType_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1575,7 +1575,7 @@ struct UOnlinePlaylistManager_execGetMatchType_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.IsPlaylistArbitrated
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execIsPlaylistArbitrated_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1583,7 +1583,7 @@ struct UOnlinePlaylistManager_execIsPlaylistArbitrated_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetLoadBalanceIdFromPlaylist
-// [0x00420002] 
+// [0x00420002]
 struct UOnlinePlaylistManager_execGetLoadBalanceIdFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1591,7 +1591,7 @@ struct UOnlinePlaylistManager_execGetLoadBalanceIdFromPlaylist_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetTeamInfoFromPlaylist
-// [0x00420002] 
+// [0x00420002]
 struct UOnlinePlaylistManager_execGetTeamInfoFromPlaylist_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1601,7 +1601,7 @@ struct UOnlinePlaylistManager_execGetTeamInfoFromPlaylist_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.PlaylistSupportsDedicatedServers
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execPlaylistSupportsDedicatedServers_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1609,7 +1609,7 @@ struct UOnlinePlaylistManager_execPlaylistSupportsDedicatedServers_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.HasAnyGameSettings
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execHasAnyGameSettings_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1617,7 +1617,7 @@ struct UOnlinePlaylistManager_execHasAnyGameSettings_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.GetGameSettings
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execGetGameSettings_Parms
 {
 	int                                                PlaylistId;                                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -1632,7 +1632,7 @@ struct UOnlinePlaylistManager_execFinalizePlaylistObjects_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.OnReadTitleFileComplete
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execOnReadTitleFileComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
@@ -1653,21 +1653,21 @@ struct UOnlinePlaylistManager_execDetermineFilesToDownload_Parms
 };
 
 // Function IpDrv.OnlinePlaylistManager.DownloadPlaylist
-// [0x00020002] 
+// [0x00020002]
 struct UOnlinePlaylistManager_execDownloadPlaylist_Parms
 {
 	unsigned char                                      LocalUserNum;                                     		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.OnlinePlaylistManager.OnReadPlaylistComplete
-// [0x00120000] 
+// [0x00120000]
 struct UOnlinePlaylistManager_execOnReadPlaylistComplete_Parms
 {
 	unsigned long                                      bWasSuccessful : 1;                               		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
 // Function IpDrv.PartyBeacon.OnDestroyComplete
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeacon_execOnDestroyComplete_Parms
 {
 };
@@ -1713,35 +1713,35 @@ struct UPartyBeaconClient_execRequestReservation_Parms
 };
 
 // Function IpDrv.PartyBeaconClient.OnHostHasCancelled
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconClient_execOnHostHasCancelled_Parms
 {
 };
 
 // Function IpDrv.PartyBeaconClient.OnHostIsReady
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconClient_execOnHostIsReady_Parms
 {
 };
 
 // Function IpDrv.PartyBeaconClient.OnTravelRequestReceived
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconClient_execOnTravelRequestReceived_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.PartyBeaconClient.OnReservationCountUpdated
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconClient_execOnReservationCountUpdated_Parms
 {
 	int                                                ReservationRemaining;                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.PartyBeaconClient.OnReservationRequestComplete
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconClient_execOnReservationRequestComplete_Parms
 {
 	unsigned char                                      ReservationResult;                                		// 0x0000 (0x0001) [0x0000000000000080]              ( CPF_Parm )
@@ -1755,18 +1755,18 @@ struct UPartyBeaconHost_execGetMaxAvailableTeamSize_Parms
 };
 
 // Function IpDrv.PartyBeaconHost.GetPartyLeaders
-// [0x00420002] 
+// [0x00420002]
 struct UPartyBeaconHost_execGetPartyLeaders_Parms
 {
 	TArray< struct FUniqueNetId >                      PartyLeaders;                                     		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.PartyBeaconHost.GetPlayers
-// [0x00C20002] 
+// [0x00C20002]
 struct UPartyBeaconHost_execGetPlayers_Parms
 {
 	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	// struct FPlayerReservation                       PlayerRes;                                        		// 0x0014 (0x0034) [0x0000000000000000]              
+	// struct FPlayerReservation                       PlayerRes;                                        		// 0x0014 (0x0034) [0x0000000000000000]
 };
 
 // Function IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch
@@ -1781,14 +1781,14 @@ struct UPartyBeaconHost_execAppendReservationSkillsToSearch_Parms
 struct UPartyBeaconHost_eventUnregisterParty_Parms
 {
 	struct FUniqueNetId                                PartyLeader;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
-	// struct FPlayerReservation                       PlayerRes;                                        		// 0x0024 (0x0034) [0x0000000000000000]              
+	// struct FPlayerReservation                       PlayerRes;                                        		// 0x0024 (0x0034) [0x0000000000000000]
 };
 
 // Function IpDrv.PartyBeaconHost.UnregisterPartyMembers
 // [0x00820802] ( FUNC_Event )
 struct UPartyBeaconHost_eventUnregisterPartyMembers_Parms
 {
-	// struct FPlayerReservation                       PlayerRes;                                        		// 0x000C (0x0034) [0x0000000000000000]              
+	// struct FPlayerReservation                       PlayerRes;                                        		// 0x000C (0x0034) [0x0000000000000000]
 };
 
 // Function IpDrv.PartyBeaconHost.RegisterPartyMembers
@@ -1796,11 +1796,11 @@ struct UPartyBeaconHost_eventUnregisterPartyMembers_Parms
 struct UPartyBeaconHost_eventRegisterPartyMembers_Parms
 {
 	// TArray< struct FUniqueNetId >                   Members;                                          		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	// struct FPlayerReservation                       PlayerRes;                                        		// 0x001C (0x0034) [0x0000000000000000]              
+	// struct FPlayerReservation                       PlayerRes;                                        		// 0x001C (0x0034) [0x0000000000000000]
 };
 
 // Function IpDrv.PartyBeaconHost.AreReservationsFull
-// [0x00020002] 
+// [0x00020002]
 struct UPartyBeaconHost_execAreReservationsFull_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
@@ -1824,7 +1824,7 @@ struct UPartyBeaconHost_execTellClientsToTravel_Parms
 {
 	struct FName                                       SessionName;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
 	class UClass*                                      SearchClass;                                      		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      PlatformSpecificInfo[ 0x50 ];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      PlatformSpecificInfo[0x50];                     		// 0x000C (0x0050) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.PartyBeaconHost.DestroyBeacon
@@ -1834,20 +1834,20 @@ struct UPartyBeaconHost_eventDestroyBeacon_Parms
 };
 
 // Function IpDrv.PartyBeaconHost.OnClientCancellationReceived
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconHost_execOnClientCancellationReceived_Parms
 {
 	struct FUniqueNetId                                PartyLeader;                                      		// 0x0000 (0x0018) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.PartyBeaconHost.OnReservationsFull
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconHost_execOnReservationsFull_Parms
 {
 };
 
 // Function IpDrv.PartyBeaconHost.OnReservationChange
-// [0x00120000] 
+// [0x00120000]
 struct UPartyBeaconHost_execOnReservationChange_Parms
 {
 };
@@ -1908,7 +1908,7 @@ struct UPartyBeaconHost_execPauseReservationRequests_Parms
 };
 
 // Function IpDrv.WebRequest.GetHexDigit
-// [0x00020002] 
+// [0x00020002]
 struct UWebRequest_execGetHexDigit_Parms
 {
 	struct FString                                     D;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1916,7 +1916,7 @@ struct UWebRequest_execGetHexDigit_Parms
 };
 
 // Function IpDrv.WebRequest.DecodeFormData
-// [0x00020002] 
+// [0x00020002]
 struct UWebRequest_execDecodeFormData_Parms
 {
 	struct FString                                     Data;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -1925,7 +1925,7 @@ struct UWebRequest_execDecodeFormData_Parms
 };
 
 // Function IpDrv.WebRequest.ProcessHeaderString
-// [0x00020002] 
+// [0x00020002]
 struct UWebRequest_execProcessHeaderString_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2020,28 +2020,28 @@ struct UWebRequest_execDecodeBase64_Parms
 };
 
 // Function IpDrv.WebResponse.SentResponse
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execSentResponse_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function IpDrv.WebResponse.SentText
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execSentText_Parms
 {
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function IpDrv.WebResponse.Redirect
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execRedirect_Parms
 {
 	struct FString                                     URL;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebResponse.SendStandardHeaders
-// [0x00024002] 
+// [0x00024002]
 struct UWebResponse_execSendStandardHeaders_Parms
 {
 	struct FString                                     ContentType;                                      		// 0x0000 (0x000C) [0x0000000000400090]              ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
@@ -2049,7 +2049,7 @@ struct UWebResponse_execSendStandardHeaders_Parms
 };
 
 // Function IpDrv.WebResponse.HTTPError
-// [0x00024002] 
+// [0x00024002]
 struct UWebResponse_execHTTPError_Parms
 {
 	int                                                ErrorNum;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2057,14 +2057,14 @@ struct UWebResponse_execHTTPError_Parms
 };
 
 // Function IpDrv.WebResponse.SendHeaders
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execSendHeaders_Parms
 {
 	// struct FString                                  hdr;                                              		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebResponse.AddHeader
-// [0x00024002] 
+// [0x00024002]
 struct UWebResponse_execAddHeader_Parms
 {
 	struct FString                                     Header;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2074,28 +2074,28 @@ struct UWebResponse_execAddHeader_Parms
 };
 
 // Function IpDrv.WebResponse.HTTPHeader
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execHTTPHeader_Parms
 {
 	struct FString                                     Header;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebResponse.HTTPResponse
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execHTTPResponse_Parms
 {
 	struct FString                                     Header;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebResponse.FailAuthentication
-// [0x00020002] 
+// [0x00020002]
 struct UWebResponse_execFailAuthentication_Parms
 {
 	struct FString                                     Realm;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebResponse.SendCachedFile
-// [0x00024002] 
+// [0x00024002]
 struct UWebResponse_execSendCachedFile_Parms
 {
 	struct FString                                     Filename;                                         		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2108,7 +2108,7 @@ struct UWebResponse_execSendCachedFile_Parms
 struct UWebResponse_eventSendBinary_Parms
 {
 	int                                                Count;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      B[ 0xFF ];                                        		// 0x0004 (0x00FF) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      B[0xFF];                                        		// 0x0004 (0x00FF) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function IpDrv.WebResponse.SendText
@@ -2189,7 +2189,7 @@ struct UUIDataStore_OnlinePlaylists_eventGetMatchTypeForPlaylistId_Parms
 };
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider
-// [0x00C26002] 
+// [0x00C26002]
 struct UUIDataStore_OnlinePlaylists_execGetOnlinePlaylistProvider_Parms
 {
 	struct FName                                       ProviderTag;                                      		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
@@ -2263,7 +2263,7 @@ struct UUIDataStore_OnlinePlaylists_eventInit_Parms
 };
 
 // Function IpDrv.WebApplication.PostQuery
-// [0x00020000] 
+// [0x00020000]
 struct UWebApplication_execPostQuery_Parms
 {
 	class UWebRequest*                                 Request;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2271,7 +2271,7 @@ struct UWebApplication_execPostQuery_Parms
 };
 
 // Function IpDrv.WebApplication.Query
-// [0x00020000] 
+// [0x00020000]
 struct UWebApplication_execQuery_Parms
 {
 	class UWebRequest*                                 Request;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2279,7 +2279,7 @@ struct UWebApplication_execQuery_Parms
 };
 
 // Function IpDrv.WebApplication.PreQuery
-// [0x00020002] 
+// [0x00020002]
 struct UWebApplication_execPreQuery_Parms
 {
 	class UWebRequest*                                 Request;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
@@ -2288,7 +2288,7 @@ struct UWebApplication_execPreQuery_Parms
 };
 
 // Function IpDrv.WebApplication.CleanupApp
-// [0x00020002] 
+// [0x00020002]
 struct UWebApplication_execCleanupApp_Parms
 {
 };
@@ -2300,13 +2300,13 @@ struct UWebApplication_execCleanup_Parms
 };
 
 // Function IpDrv.WebApplication.Init
-// [0x00020000] 
+// [0x00020000]
 struct UWebApplication_execInit_Parms
 {
 };
 
 // Function IpDrv.WebServer.GetApplication
-// [0x00420002] 
+// [0x00420002]
 struct AWebServer_execGetApplication_Parms
 {
 	struct FString                                     URI;                                              		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2335,10 +2335,10 @@ struct AWebServer_eventDestroyed_Parms
 };
 
 // Function IpDrv.WebServer.PostBeginPlay
-// [0x00820002] 
+// [0x00820002]
 struct AWebServer_execPostBeginPlay_Parms
 {
-	// struct FIpAddr                                  L;                                                		// 0x0008 (0x0008) [0x0000000000000000]              
+	// struct FIpAddr                                  L;                                                		// 0x0008 (0x0008) [0x0000000000000000]
 	// struct FString                                  S;                                                		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
@@ -2351,7 +2351,7 @@ struct UHelloWeb_eventQuery_Parms
 };
 
 // Function IpDrv.HelloWeb.Init
-// [0x00020002] 
+// [0x00020002]
 struct UHelloWeb_execInit_Parms
 {
 };
@@ -2373,52 +2373,52 @@ struct AWebConnection_execIsHanging_Parms
 };
 
 // Function IpDrv.WebConnection.Cleanup
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execCleanup_Parms
 {
 };
 
 // Function IpDrv.WebConnection.CheckRawBytes
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execCheckRawBytes_Parms
 {
 };
 
 // Function IpDrv.WebConnection.EndOfHeaders
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execEndOfHeaders_Parms
 {
 };
 
 // Function IpDrv.WebConnection.CreateResponseObject
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execCreateResponseObject_Parms
 {
 };
 
 // Function IpDrv.WebConnection.ProcessPost
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execProcessPost_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebConnection.ProcessGet
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execProcessGet_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebConnection.ProcessHead
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execProcessHead_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.WebConnection.ReceivedLine
-// [0x00020002] 
+// [0x00020002]
 struct AWebConnection_execReceivedLine_Parms
 {
 	struct FString                                     S;                                                		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
@@ -2450,7 +2450,6 @@ struct AWebConnection_eventAccepted_Parms
 {
 };
 
-
 #ifdef _MSC_VER
-	#pragma pack ( pop )
+#pragma pack ( pop )
 #endif
