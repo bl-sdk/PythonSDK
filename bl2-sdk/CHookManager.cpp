@@ -58,11 +58,14 @@ bool CHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcN
 
 void CHookManager::Register(const std::string& funcName, const std::string& hookName, void* funcHook)
 {
+	char funcNameChar[255];
+	strcpy(funcNameChar, funcName.c_str());
+
 	// Create pair to insert
 	tFuncNameHookPair hookPair = std::make_pair(hookName, funcHook);
 
 	// Find func
-	UFunction* function = UObject::FindObject<UFunction>(funcName);
+	UFunction* function = UObject::FindObject<UFunction>(funcNameChar);
 	if (function == nullptr)
 	{
 		// The function was not found, so we need to create a virtual hook for it
@@ -77,7 +80,10 @@ void CHookManager::Register(const std::string& funcName, const std::string& hook
 
 bool CHookManager::Remove(const std::string& funcName, const std::string& hookName)
 {
-	UFunction* function = UObject::FindObject<UFunction>(funcName);
+	char funcNameChar[255];
+	strcpy(funcNameChar, funcName.c_str());
+
+	UFunction* function = UObject::FindObject<UFunction>(funcNameChar);
 	if (function == nullptr)
 	{
 		// Function wasn't found, so virtual hook removal time!
