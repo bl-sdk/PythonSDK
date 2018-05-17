@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="dll-loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dllheader.h">
+    <ClInclude Include="dll-loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

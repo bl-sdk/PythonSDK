@@ -1,4 +1,4 @@
-#pragma once
+#include "stdafx.h"
 #include "BL2-SDK.h"
 #include "CSimpleDetour.h"
 #include "CSigScan.h"
@@ -360,17 +360,17 @@ namespace BL2SDK
 			args->BinPath);
 			*/
 
-		/*
-		if (!args->DisableCrashRpt)
-		{
-			CrashRptHelper::Initialize();
-		}
+			/*
+			if (!args->DisableCrashRpt)
+			{
+				CrashRptHelper::Initialize();
+			}
 
-		if (args->DisableAntiDebug)
-		{
-			HookAntiDebug();
-		}
-		*/
+			if (args->DisableAntiDebug)
+			{
+				HookAntiDebug();
+			}
+			*/
 
 		GameHooks::Initialize();
 
@@ -399,8 +399,6 @@ namespace BL2SDK
 		gameEngine = (UWillowGameEngine*)UObject::FindObject<UObject>("WillowGameEngine Transient.WillowGameEngine_0");
 
 		return gameEngine;
-	}
-
 	}
 
 	UPlayer* localPlayer()

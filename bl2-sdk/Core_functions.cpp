@@ -1,5 +1,5 @@
 #pragma once
-#include "BL2-SDK.h"
+#include "stdafx.h"
 /*
 #############################################################################################
 # Borderlands 2 (1.7) SDK
@@ -104,32 +104,32 @@ char* UObject::GetFullName()
 	return "(null)";
 }
 
-template< class T > static T* FindObject ( const std::string& ObjectFullName ) 
-	{ 
-		while ( ! UObject::GObjObjects() ) 
-			Sleep ( 100 ); 
+template< class T > static T* FindObject(const std::string& ObjectFullName)
+{
+	while (!UObject::GObjObjects())
+		Sleep(100);
 
-		while ( ! FName::Names() ) 
-			Sleep( 100 ); 
+	while (!FName::Names())
+		Sleep(100);
 
-		for ( int i = 0; i < UObject::GObjObjects()->Count; ++i ) 
-		{ 
-			UObject* Object = UObject::GObjObjects()->Data[ i ]; 
+	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+	{
+		UObject* Object = UObject::GObjObjects()->Data[i];
 
-			// skip no T class objects 
-			if 
-				( 
-				! Object 
-				||	! Object->IsA ( T::StaticClass() ) 
-				) 
-				continue; 
+		// skip no T class objects
+		if
+			(
+				!Object
+				|| !Object->IsA(T::StaticClass())
+				)
+			continue;
 
-			// check 
-			if (Object->GetFullName() == ObjectFullName) 
-				return (T*) Object; 
-		} 
+		// check
+		if (Object->GetFullName() == ObjectFullName)
+			return (T*)Object;
+	}
 
-		return nullptr; 
+	return nullptr;
 }
 
 UClass* UObject::FindClass(char* ClassFullName)
@@ -1050,7 +1050,6 @@ bool UObject::AddModifier(class UAttributeModifier* mod, struct FName AttributeN
 // class UObject*                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 // struct FString                 ObjectName                     ( CPF_Parm | CPF_NeedCtorLink )
 // class UClass*                  ObjectClass                    ( CPF_Parm )
-
 
 class UObject* UObject::FindObject(struct FString ObjectName, class UClass* ObjectClass)
 {

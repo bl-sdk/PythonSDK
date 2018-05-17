@@ -1,5 +1,5 @@
 #pragma once
-#include "BL2-SDK.h"
+#include "stdafx.h"
 #include "GameHooks.h"
 
 namespace GameHooks
@@ -73,4 +73,3 @@ namespace GameHooks
 		return true;
 	}
 }
-

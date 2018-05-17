@@ -3,7 +3,7 @@
 #define CHOOKMANAGER_H
 
 #pragma once
-#include "BL2-SDK.h"
+#include "stdafx.h"
 #include <string>
 #include <map>
 
