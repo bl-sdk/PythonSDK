@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#pragma once
+#include "BL2-SDK.h"
 #include "CSimpleDetour.h"
 #include "CSigScan.h"
 #include "GameHooks.h"
@@ -8,6 +9,9 @@
 
 namespace BL2SDK
 {
+	static UConsole* gameConsole = NULL;
+	static UWillowGameEngine* gameEngine = NULL;
+
 	bool injectedCallNext = false;
 	bool logAllProcessEvent = false;
 	bool logAllUnrealScriptCalls = false;
@@ -385,5 +389,24 @@ namespace BL2SDK
 	{
 		//Logging::Cleanup();
 		GameHooks::Cleanup();
+	}
+
+	UWillowGameEngine* getGameEngine()
+	{
+		if (gameEngine)
+			return gameEngine;
+
+		gameEngine = (UWillowGameEngine*)UObject::FindObject<UObject>("WillowGameEngine Transient.WillowGameEngine_0");
+
+		return gameEngine;
+	}
+
+	}
+
+	UPlayer* localPlayer()
+	{
+		UPlayer *p = (UPlayer*)UObject::FindObject<UObject>("ObjectProperty Engine.Player:Actor");
+
+		return p;
 	}
 }

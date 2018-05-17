@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#pragma once
+#include "BL2-SDK.h"
 #include "CSimpleDetour.h"
 #include "Exceptions.h"
 

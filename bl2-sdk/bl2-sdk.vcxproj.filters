@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AkAudio_classes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -155,9 +149,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -180,12 +171,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WinDrv_functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="XAudio2_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AkAudio_functions.cpp">

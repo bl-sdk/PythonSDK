@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#pragma once
+#include "BL2-SDK.h"
 #include "CSigScan.h"
 // Based off CSigScan from AlliedModders
 

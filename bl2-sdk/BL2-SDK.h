@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BL2SDK_H
 #define BL2SDK_H
 
@@ -9,6 +10,10 @@ namespace BL2SDK
 	extern void* pGCRCTable;
 	extern void* pNameHash;
 }
+
+#include <windows.h>
+#include <SDKDDKVer.h>
+#include <string>
 
 #include "GameDefines.h"
 #include "Signatures.h"
@@ -97,6 +102,9 @@ namespace BL2SDK
 	void InjectedCallNext();
 	void Initialize(/*LauncherStruct* args*/);
 	void Cleanup();
+
+	UWillowGameEngine* getGameEngine();
+	UPlayer* localPlayer();
 }
 
 #endif

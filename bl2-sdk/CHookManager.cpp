@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#pragma once
+#include "BL2-SDK.h"
 #include "CHookManager.h"
 
 void CHookManager::AddVirtualHook(const std::string& funcName, const tFuncNameHookPair& hookPair)
