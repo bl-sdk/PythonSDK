@@ -24,8 +24,8 @@ namespace BL2SDK
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
-	void LogAllProcessEventCalls(bool enabled);
-	void LogAllUnrealScriptCalls(bool enabled);
+	//void LogAllProcessEventCalls(bool enabled);
+	//void LogAllUnrealScriptCalls(bool enabled);
 	bool GetGameVersion(std::wstring& appVersion);
 	void InjectedCallNext();
 	void Initialize(/*LauncherStruct* args*/);
