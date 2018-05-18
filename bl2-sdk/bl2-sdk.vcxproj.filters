@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Detours">
+      <UniqueIdentifier>{415a8f13-7c69-472a-aec0-9956a5b042ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AkAudio_classes.h">
@@ -138,9 +141,6 @@
     <ClInclude Include="CSimpleDetour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="detours.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameHooks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -149,6 +149,12 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detours.h">
+      <Filter>Detours</Filter>
+    </ClInclude>
+    <ClInclude Include="detver.h">
+      <Filter>Detours</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -207,7 +213,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="detours.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Detours</Filter>
     </ClCompile>
+    <ClCompile Include="disasm.cpp">
+      <Filter>Detours</Filter>
+    </ClCompile>
+    <ClCompile Include="modules.cpp">
+      <Filter>Detours</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

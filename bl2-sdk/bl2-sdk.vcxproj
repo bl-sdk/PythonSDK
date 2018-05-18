@@ -117,6 +117,7 @@
     <ClInclude Include="CSigScan.h" />
     <ClInclude Include="CSimpleDetour.h" />
     <ClInclude Include="detours.h" />
+    <ClInclude Include="detver.h" />
     <ClInclude Include="Engine_classes.h" />
     <ClInclude Include="Engine_f_structs.h" />
     <ClInclude Include="Engine_structs.h" />
@@ -160,6 +161,8 @@
     <ClCompile Include="CSigScan.cpp" />
     <ClCompile Include="CSimpleDetour.cpp" />
     <ClCompile Include="detours.cpp" />
+    <ClCompile Include="disasm.cpp" />
+    <ClCompile Include="modules.cpp" />
     <ClCompile Include="Engine_functions.cpp" />
     <ClCompile Include="GameFramework_functions.cpp" />
     <ClCompile Include="GameHooks.cpp" />
@@ -178,6 +181,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

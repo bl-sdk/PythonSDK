@@ -3865,7 +3865,7 @@ public:
 	void ForceUpdateComponents(unsigned long bCollisionUpdate, unsigned long bTransformOnly);
 };
 
-UClass* AActor::pClassPointer = NULL;
+//UClass* AActor::pClassPointer = NULL;
 
 // Class Engine.Info
 // 0x0000 (0x0188 - 0x0188)
@@ -3886,7 +3886,7 @@ public:
 	};
 };
 
-UClass* AInfo::pClassPointer = NULL;
+//UClass* AInfo::pClassPointer = NULL;
 
 // Class Engine.ZoneInfo
 // 0x0010 (0x0198 - 0x0188)
@@ -3911,7 +3911,7 @@ public:
 	};
 };
 
-UClass* AZoneInfo::pClassPointer = NULL;
+//UClass* AZoneInfo::pClassPointer = NULL;
 
 // Class Engine.WorldInfo
 // 0x04F8 (0x0690 - 0x0198)
@@ -4150,7 +4150,7 @@ public:
 	void ReleaseCachedConstraintsAndEvaluators();
 };
 
-UClass* AWorldInfo::pClassPointer = NULL;
+//UClass* AWorldInfo::pClassPointer = NULL;
 
 // Class Engine.DownloadableContentEnumerator
 // 0x005C (0x0098 - 0x003C)
@@ -4767,7 +4767,7 @@ public:
 	};
 };
 
-UClass* ABrush::pClassPointer = NULL;
+//UClass* ABrush::pClassPointer = NULL;
 
 // Class Engine.BrushShape
 // 0x0000 (0x01AC - 0x01AC)
@@ -4788,7 +4788,7 @@ public:
 	};
 };
 
-UClass* ABrushShape::pClassPointer = NULL;
+//UClass* ABrushShape::pClassPointer = NULL;
 
 // Class Engine.Volume
 // 0x0010 (0x01BC - 0x01AC)
@@ -4822,7 +4822,7 @@ public:
 	bool Encompasses(class AActor* Other);
 };
 
-UClass* AVolume::pClassPointer = NULL;
+//UClass* AVolume::pClassPointer = NULL;
 
 // Class Engine.BlockingVolume
 // 0x0004 (0x01C0 - 0x01BC)
@@ -4847,7 +4847,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* ABlockingVolume::pClassPointer = NULL;
+//UClass* ABlockingVolume::pClassPointer = NULL;
 
 // Class Engine.DynamicBlockingVolume
 // 0x0004 (0x01C4 - 0x01C0)
@@ -4873,7 +4873,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ADynamicBlockingVolume::pClassPointer = NULL;
+//UClass* ADynamicBlockingVolume::pClassPointer = NULL;
 
 // Class Engine.CullDistanceVolume
 // 0x0010 (0x01CC - 0x01BC)
@@ -4896,7 +4896,7 @@ public:
 	};
 };
 
-UClass* ACullDistanceVolume::pClassPointer = NULL;
+//UClass* ACullDistanceVolume::pClassPointer = NULL;
 
 // Class Engine.LevelGridVolume
 // 0x0088 (0x0244 - 0x01BC)
@@ -4923,7 +4923,7 @@ public:
 	};
 };
 
-UClass* ALevelGridVolume::pClassPointer = NULL;
+//UClass* ALevelGridVolume::pClassPointer = NULL;
 
 // Class Engine.LevelStreamingVolume
 // 0x0018 (0x01D4 - 0x01BC)
@@ -4956,7 +4956,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* ALevelStreamingVolume::pClassPointer = NULL;
+//UClass* ALevelStreamingVolume::pClassPointer = NULL;
 
 // Class Engine.LightmassCharacterIndirectDetailVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -4977,7 +4977,7 @@ public:
 	};
 };
 
-UClass* ALightmassCharacterIndirectDetailVolume::pClassPointer = NULL;
+//UClass* ALightmassCharacterIndirectDetailVolume::pClassPointer = NULL;
 
 // Class Engine.LightmassImportanceVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -4998,7 +4998,7 @@ public:
 	};
 };
 
-UClass* ALightmassImportanceVolume::pClassPointer = NULL;
+//UClass* ALightmassImportanceVolume::pClassPointer = NULL;
 
 // Class Engine.MassiveLODOverrideVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -5019,7 +5019,7 @@ public:
 	};
 };
 
-UClass* AMassiveLODOverrideVolume::pClassPointer = NULL;
+//UClass* AMassiveLODOverrideVolume::pClassPointer = NULL;
 
 // Class Engine.NavMeshBoundsVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -5040,7 +5040,7 @@ public:
 	};
 };
 
-UClass* ANavMeshBoundsVolume::pClassPointer = NULL;
+//UClass* ANavMeshBoundsVolume::pClassPointer = NULL;
 
 // Class Engine.PathBlockingVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -5061,7 +5061,7 @@ public:
 	};
 };
 
-UClass* APathBlockingVolume::pClassPointer = NULL;
+//UClass* APathBlockingVolume::pClassPointer = NULL;
 
 // Class Engine.PhysicsVolume
 // 0x0048 (0x0204 - 0x01BC)
@@ -5131,7 +5131,7 @@ public:
 	float GetGravityZ();
 };
 
-UClass* APhysicsVolume::pClassPointer = NULL;
+//UClass* APhysicsVolume::pClassPointer = NULL;
 
 // Class Engine.DefaultPhysicsVolume
 // 0x0000 (0x0204 - 0x0204)
@@ -5154,7 +5154,7 @@ public:
 	void eventDestroyed();
 };
 
-UClass* ADefaultPhysicsVolume::pClassPointer = NULL;
+//UClass* ADefaultPhysicsVolume::pClassPointer = NULL;
 
 // Class Engine.GravityVolume
 // 0x0004 (0x0208 - 0x0204)
@@ -5176,7 +5176,7 @@ public:
 	};
 };
 
-UClass* AGravityVolume::pClassPointer = NULL;
+//UClass* AGravityVolume::pClassPointer = NULL;
 
 // Class Engine.LadderVolume
 // 0x0034 (0x0238 - 0x0204)
@@ -5212,7 +5212,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ALadderVolume::pClassPointer = NULL;
+//UClass* ALadderVolume::pClassPointer = NULL;
 
 // Class Engine.PortalVolume
 // 0x000C (0x01C8 - 0x01BC)
@@ -5234,7 +5234,7 @@ public:
 	};
 };
 
-UClass* APortalVolume::pClassPointer = NULL;
+//UClass* APortalVolume::pClassPointer = NULL;
 
 // Class Engine.PostProcessVolume
 // 0x00F4 (0x02B0 - 0x01BC)
@@ -5261,7 +5261,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* APostProcessVolume::pClassPointer = NULL;
+//UClass* APostProcessVolume::pClassPointer = NULL;
 
 // Class Engine.PrecomputedVisibilityOverrideVolume
 // 0x0018 (0x01D4 - 0x01BC)
@@ -5284,7 +5284,7 @@ public:
 	};
 };
 
-UClass* APrecomputedVisibilityOverrideVolume::pClassPointer = NULL;
+//UClass* APrecomputedVisibilityOverrideVolume::pClassPointer = NULL;
 
 // Class Engine.PrecomputedVisibilityVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -5305,7 +5305,7 @@ public:
 	};
 };
 
-UClass* APrecomputedVisibilityVolume::pClassPointer = NULL;
+//UClass* APrecomputedVisibilityVolume::pClassPointer = NULL;
 
 // Class Engine.ReverbVolume
 // 0x004C (0x0208 - 0x01BC)
@@ -5331,7 +5331,7 @@ public:
 	};
 };
 
-UClass* AReverbVolume::pClassPointer = NULL;
+//UClass* AReverbVolume::pClassPointer = NULL;
 
 // Class Engine.ShadowRelevanceVolume
 // 0x0010 (0x01CC - 0x01BC)
@@ -5354,7 +5354,7 @@ public:
 	};
 };
 
-UClass* AShadowRelevanceVolume::pClassPointer = NULL;
+//UClass* AShadowRelevanceVolume::pClassPointer = NULL;
 
 // Class Engine.TriggerVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -5378,7 +5378,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ATriggerVolume::pClassPointer = NULL;
+//UClass* ATriggerVolume::pClassPointer = NULL;
 
 // Class Engine.DynamicSMActor
 // 0x003C (0x01C4 - 0x0188)
@@ -5420,7 +5420,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ADynamicSMActor::pClassPointer = NULL;
+//UClass* ADynamicSMActor::pClassPointer = NULL;
 
 // Class Engine.InterpActor
 // 0x0030 (0x01F4 - 0x01C4)
@@ -5485,7 +5485,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AInterpActor::pClassPointer = NULL;
+//UClass* AInterpActor::pClassPointer = NULL;
 
 // Class Engine.EmitterPool
 // 0x0068 (0x01F0 - 0x0188)
@@ -5537,7 +5537,7 @@ public:
 	void OnParticleSystemFinished(class UParticleSystemComponent* PSC);
 };
 
-UClass* AEmitterPool::pClassPointer = NULL;
+//UClass* AEmitterPool::pClassPointer = NULL;
 
 // Class Engine.GBXNavMesh
 // 0x0150 (0x02D8 - 0x0188)
@@ -5585,7 +5585,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AGBXNavMesh::pClassPointer = NULL;
+//UClass* AGBXNavMesh::pClassPointer = NULL;
 
 // Class Engine.HUD
 // 0x009C (0x0224 - 0x0188)
@@ -5667,7 +5667,7 @@ public:
 	void Draw3DLine(struct FVector Start, struct FVector End, struct FColor LineColor);
 };
 
-UClass* AHUD::pClassPointer = NULL;
+//UClass* AHUD::pClassPointer = NULL;
 
 // Class Engine.IDestructibleObject
 // 0x0000 (0x0188 - 0x0188)
@@ -5688,7 +5688,7 @@ public:
 	};
 };
 
-UClass* AIDestructibleObject::pClassPointer = NULL;
+//UClass* AIDestructibleObject::pClassPointer = NULL;
 
 // Class Engine.AutoTestManager
 // 0x00CC (0x0254 - 0x0188)
@@ -5774,7 +5774,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AAutoTestManager::pClassPointer = NULL;
+//UClass* AAutoTestManager::pClassPointer = NULL;
 
 // Class Engine.CoverGroup
 // 0x0014 (0x019C - 0x0188)
@@ -5803,7 +5803,7 @@ public:
 	void EnableGroup();
 };
 
-UClass* ACoverGroup::pClassPointer = NULL;
+//UClass* ACoverGroup::pClassPointer = NULL;
 
 // Class Engine.FileWriter
 // 0x0018 (0x01A0 - 0x0188)
@@ -5834,7 +5834,7 @@ public:
 	bool OpenFile(struct FString InFilename, unsigned char InFileType, struct FString InExtension, unsigned long bUnique, unsigned long bIncludeTimeStamp);
 };
 
-UClass* AFileWriter::pClassPointer = NULL;
+//UClass* AFileWriter::pClassPointer = NULL;
 
 // Class Engine.FileLog
 // 0x0000 (0x01A0 - 0x01A0)
@@ -5858,7 +5858,7 @@ public:
 	void OpenLog(struct FString LogFilename, struct FString extension, unsigned long bUnique);
 };
 
-UClass* AFileLog::pClassPointer = NULL;
+//UClass* AFileLog::pClassPointer = NULL;
 
 // Class Engine.GameInfo
 // 0x01A8 (0x0330 - 0x0188)
@@ -6153,7 +6153,7 @@ public:
 	bool GetSupportedGameTypes(unsigned long bCheckExt, struct FString* InFilename, struct FGameTypePrefix* OutGameType);
 };
 
-UClass* AGameInfo::pClassPointer = NULL;
+//UClass* AGameInfo::pClassPointer = NULL;
 
 // Class Engine.Mutator
 // 0x0014 (0x019C - 0x0188)
@@ -6204,7 +6204,7 @@ public:
 	void eventPreBeginPlay();
 };
 
-UClass* AMutator::pClassPointer = NULL;
+//UClass* AMutator::pClassPointer = NULL;
 
 // Class Engine.PotentialClimbWatcher
 // 0x0000 (0x0188 - 0x0188)
@@ -6227,7 +6227,7 @@ public:
 	void eventTick(float DeltaTime);
 };
 
-UClass* APotentialClimbWatcher::pClassPointer = NULL;
+//UClass* APotentialClimbWatcher::pClassPointer = NULL;
 
 // Class Engine.Route
 // 0x001C (0x01A4 - 0x0188)
@@ -6256,7 +6256,7 @@ public:
 	int ResolveRouteIndex(int Idx, unsigned char RouteDirection, unsigned char* out_bComplete, unsigned char* out_bReverse);
 };
 
-UClass* ARoute::pClassPointer = NULL;
+//UClass* ARoute::pClassPointer = NULL;
 
 // Class Engine.WindPointSource
 // 0x0004 (0x018C - 0x0188)
@@ -6278,7 +6278,7 @@ public:
 	};
 };
 
-UClass* AWindPointSource::pClassPointer = NULL;
+//UClass* AWindPointSource::pClassPointer = NULL;
 
 // Class Engine.Keypoint
 // 0x0004 (0x018C - 0x0188)
@@ -6300,7 +6300,7 @@ public:
 	};
 };
 
-UClass* AKeypoint::pClassPointer = NULL;
+//UClass* AKeypoint::pClassPointer = NULL;
 
 // Class Engine.TargetPoint
 // 0x0004 (0x0190 - 0x018C)
@@ -6322,7 +6322,7 @@ public:
 	};
 };
 
-UClass* ATargetPoint::pClassPointer = NULL;
+//UClass* ATargetPoint::pClassPointer = NULL;
 
 // Class Engine.LevelLandmark
 // 0x0018 (0x01A0 - 0x0188)
@@ -6346,7 +6346,7 @@ public:
 	};
 };
 
-UClass* ALevelLandmark::pClassPointer = NULL;
+//UClass* ALevelLandmark::pClassPointer = NULL;
 
 // Class Engine.PersistentTransitionLandmark
 // 0x0024 (0x01C4 - 0x01A0)
@@ -6370,7 +6370,7 @@ public:
 	};
 };
 
-UClass* APersistentTransitionLandmark::pClassPointer = NULL;
+//UClass* APersistentTransitionLandmark::pClassPointer = NULL;
 
 // Class Engine.MaterialInstanceActor
 // 0x0004 (0x018C - 0x0188)
@@ -6392,7 +6392,7 @@ public:
 	};
 };
 
-UClass* AMaterialInstanceActor::pClassPointer = NULL;
+//UClass* AMaterialInstanceActor::pClassPointer = NULL;
 
 // Class Engine.MatineeActor
 // 0x00B4 (0x023C - 0x0188)
@@ -6428,7 +6428,7 @@ public:
 	void AddAIGroupActor(class UInterpGroupInstAI* AIGroupInst);
 };
 
-UClass* AMatineeActor::pClassPointer = NULL;
+//UClass* AMatineeActor::pClassPointer = NULL;
 
 // Class Engine.NavigationPoint
 // 0x00BC (0x0244 - 0x0188)
@@ -6536,7 +6536,7 @@ public:
 	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight);
 };
 
-UClass* ANavigationPoint::pClassPointer = NULL;
+//UClass* ANavigationPoint::pClassPointer = NULL;
 
 // Class Engine.CoverLink
 // 0x0099 (0x02DD - 0x0244)
@@ -6635,7 +6635,7 @@ public:
 	bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, unsigned char ArrayID, struct FCoverInfo* out_Info);
 };
 
-UClass* ACoverLink::pClassPointer = NULL;
+//UClass* ACoverLink::pClassPointer = NULL;
 
 // Class Engine.DoorMarker
 // 0x0010 (0x0254 - 0x0244)
@@ -6671,7 +6671,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ADoorMarker::pClassPointer = NULL;
+//UClass* ADoorMarker::pClassPointer = NULL;
 
 // Class Engine.DynamicAnchor
 // 0x0004 (0x0248 - 0x0244)
@@ -6693,7 +6693,7 @@ public:
 	};
 };
 
-UClass* ADynamicAnchor::pClassPointer = NULL;
+//UClass* ADynamicAnchor::pClassPointer = NULL;
 
 // Class Engine.Ladder
 // 0x0008 (0x024C - 0x0244)
@@ -6718,7 +6718,7 @@ public:
 	bool eventSuggestMovePreparation(class APawn* Other);
 };
 
-UClass* ALadder::pClassPointer = NULL;
+//UClass* ALadder::pClassPointer = NULL;
 
 // Class Engine.AutoLadder
 // 0x0000 (0x024C - 0x024C)
@@ -6739,7 +6739,7 @@ public:
 	};
 };
 
-UClass* AAutoLadder::pClassPointer = NULL;
+//UClass* AAutoLadder::pClassPointer = NULL;
 
 // Class Engine.LiftCenter
 // 0x0020 (0x0264 - 0x0244)
@@ -6771,7 +6771,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ALiftCenter::pClassPointer = NULL;
+//UClass* ALiftCenter::pClassPointer = NULL;
 
 // Class Engine.LiftExit
 // 0x0008 (0x024C - 0x0244)
@@ -6798,7 +6798,7 @@ public:
 	bool CanBeReachedFromLiftBy(class APawn* Other);
 };
 
-UClass* ALiftExit::pClassPointer = NULL;
+//UClass* ALiftExit::pClassPointer = NULL;
 
 // Class Engine.PathNode
 // 0x0000 (0x0244 - 0x0244)
@@ -6821,7 +6821,7 @@ public:
 	struct FString eventGetDebugAbbrev();
 };
 
-UClass* APathNode::pClassPointer = NULL;
+//UClass* APathNode::pClassPointer = NULL;
 
 // Class Engine.VolumePathNode
 // 0x0008 (0x024C - 0x0244)
@@ -6844,7 +6844,7 @@ public:
 	};
 };
 
-UClass* AVolumePathNode::pClassPointer = NULL;
+//UClass* AVolumePathNode::pClassPointer = NULL;
 
 // Class Engine.PickupFactory
 // 0x001C (0x0260 - 0x0244)
@@ -6899,7 +6899,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* APickupFactory::pClassPointer = NULL;
+//UClass* APickupFactory::pClassPointer = NULL;
 
 // Class Engine.PlayerStart
 // 0x0010 (0x0254 - 0x0244)
@@ -6929,7 +6929,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* APlayerStart::pClassPointer = NULL;
+//UClass* APlayerStart::pClassPointer = NULL;
 
 // Class Engine.PortalMarker
 // 0x0004 (0x0248 - 0x0244)
@@ -6953,7 +6953,7 @@ public:
 	bool CanTeleport(class AActor* A);
 };
 
-UClass* APortalMarker::pClassPointer = NULL;
+//UClass* APortalMarker::pClassPointer = NULL;
 
 // Class Engine.Pylon
 // 0x00B0 (0x02F4 - 0x0244)
@@ -7041,7 +7041,7 @@ public:
 	void OnPylonStatusChange();
 };
 
-UClass* APylon::pClassPointer = NULL;
+//UClass* APylon::pClassPointer = NULL;
 
 // Class Engine.AISwitchablePylon
 // 0x0004 (0x02F8 - 0x02F4)
@@ -7067,7 +7067,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AAISwitchablePylon::pClassPointer = NULL;
+//UClass* AAISwitchablePylon::pClassPointer = NULL;
 
 // Class Engine.DynamicPylon
 // 0x0004 (0x02F8 - 0x02F4)
@@ -7095,7 +7095,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* ADynamicPylon::pClassPointer = NULL;
+//UClass* ADynamicPylon::pClassPointer = NULL;
 
 // Class Engine.Teleporter
 // 0x0028 (0x026C - 0x0244)
@@ -7134,7 +7134,7 @@ public:
 	bool CanTeleport(class AActor* A);
 };
 
-UClass* ATeleporter::pClassPointer = NULL;
+//UClass* ATeleporter::pClassPointer = NULL;
 
 // Class Engine.Note
 // 0x0000 (0x0188 - 0x0188)
@@ -7155,7 +7155,7 @@ public:
 	};
 };
 
-UClass* ANote::pClassPointer = NULL;
+//UClass* ANote::pClassPointer = NULL;
 
 // Class Engine.Projectile
 // 0x006C (0x01F4 - 0x0188)
@@ -7222,7 +7222,7 @@ public:
 	bool eventEncroachingOn(class AActor* Other);
 };
 
-UClass* AProjectile::pClassPointer = NULL;
+//UClass* AProjectile::pClassPointer = NULL;
 
 // Class Engine.RigidBodyBase
 // 0x0000 (0x0188 - 0x0188)
@@ -7243,7 +7243,7 @@ public:
 	};
 };
 
-UClass* ARigidBodyBase::pClassPointer = NULL;
+//UClass* ARigidBodyBase::pClassPointer = NULL;
 
 // Class Engine.SceneCaptureActor
 // 0x0004 (0x018C - 0x0188)
@@ -7267,7 +7267,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* ASceneCaptureActor::pClassPointer = NULL;
+//UClass* ASceneCaptureActor::pClassPointer = NULL;
 
 // Class Engine.SceneCapture2DActor
 // 0x0004 (0x0190 - 0x018C)
@@ -7289,7 +7289,7 @@ public:
 	};
 };
 
-UClass* ASceneCapture2DActor::pClassPointer = NULL;
+//UClass* ASceneCapture2DActor::pClassPointer = NULL;
 
 // Class Engine.SceneCaptureCubeMapActor
 // 0x0008 (0x0194 - 0x018C)
@@ -7312,7 +7312,7 @@ public:
 	};
 };
 
-UClass* ASceneCaptureCubeMapActor::pClassPointer = NULL;
+//UClass* ASceneCaptureCubeMapActor::pClassPointer = NULL;
 
 // Class Engine.SceneCaptureReflectActor
 // 0x0008 (0x0194 - 0x018C)
@@ -7335,7 +7335,7 @@ public:
 	};
 };
 
-UClass* ASceneCaptureReflectActor::pClassPointer = NULL;
+//UClass* ASceneCaptureReflectActor::pClassPointer = NULL;
 
 // Class Engine.SceneCapturePortalActor
 // 0x0000 (0x0194 - 0x0194)
@@ -7356,7 +7356,7 @@ public:
 	};
 };
 
-UClass* ASceneCapturePortalActor::pClassPointer = NULL;
+//UClass* ASceneCapturePortalActor::pClassPointer = NULL;
 
 // Class Engine.PortalTeleporter
 // 0x0014 (0x01A8 - 0x0194)
@@ -7390,7 +7390,7 @@ public:
 	bool TransformActor(class AActor* A);
 };
 
-UClass* APortalTeleporter::pClassPointer = NULL;
+//UClass* APortalTeleporter::pClassPointer = NULL;
 
 // Class Engine.StaticMeshActorBase
 // 0x0000 (0x0188 - 0x0188)
@@ -7411,7 +7411,7 @@ public:
 	};
 };
 
-UClass* AStaticMeshActorBase::pClassPointer = NULL;
+//UClass* AStaticMeshActorBase::pClassPointer = NULL;
 
 // Class Engine.BlockingMeshCollectionActor
 // 0x0010 (0x0198 - 0x0188)
@@ -7434,7 +7434,7 @@ public:
 	};
 };
 
-UClass* ABlockingMeshCollectionActor::pClassPointer = NULL;
+//UClass* ABlockingMeshCollectionActor::pClassPointer = NULL;
 
 // Class Engine.StaticMeshActor
 // 0x0008 (0x0190 - 0x0188)
@@ -7457,7 +7457,7 @@ public:
 	};
 };
 
-UClass* AStaticMeshActor::pClassPointer = NULL;
+//UClass* AStaticMeshActor::pClassPointer = NULL;
 
 // Class Engine.StaticMeshCollectionActor
 // 0x0010 (0x0198 - 0x0188)
@@ -7480,7 +7480,7 @@ public:
 	};
 };
 
-UClass* AStaticMeshCollectionActor::pClassPointer = NULL;
+//UClass* AStaticMeshCollectionActor::pClassPointer = NULL;
 
 // Class Engine.StaticMeshActorBasedOnExtremeContent
 // 0x001C (0x01A4 - 0x0188)
@@ -7507,7 +7507,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AStaticMeshActorBasedOnExtremeContent::pClassPointer = NULL;
+//UClass* AStaticMeshActorBasedOnExtremeContent::pClassPointer = NULL;
 
 // Class Engine.TeleporterDestination
 // 0x0014 (0x019C - 0x0188)
@@ -7535,7 +7535,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* ATeleporterDestination::pClassPointer = NULL;
+//UClass* ATeleporterDestination::pClassPointer = NULL;
 
 // Class Engine.Trigger
 // 0x000C (0x0194 - 0x0188)
@@ -7569,7 +7569,7 @@ public:
 	void TriggerDetachSprites();
 };
 
-UClass* ATrigger::pClassPointer = NULL;
+//UClass* ATrigger::pClassPointer = NULL;
 
 // Class Engine.Trigger_PawnsOnly
 // 0x0000 (0x0194 - 0x0194)
@@ -7590,7 +7590,7 @@ public:
 	};
 };
 
-UClass* ATrigger_PawnsOnly::pClassPointer = NULL;
+//UClass* ATrigger_PawnsOnly::pClassPointer = NULL;
 
 // Class Engine.ActorComponent
 // 0x0011 (0x0059 - 0x0048)
@@ -7641,7 +7641,7 @@ public:
 	void SetTickGroup(unsigned char NewTickGroup);
 };
 
-UClass* UActorComponent::pClassPointer = NULL;
+//UClass* UActorComponent::pClassPointer = NULL;
 
 // Class Engine.AkComponent
 // 0x0193 (0x01EC - 0x0059)
@@ -10362,7 +10362,7 @@ public:
 	bool IsLocalPlayerController();
 };
 
-UClass* AController::pClassPointer = NULL;
+//UClass* AController::pClassPointer = NULL;
 
 // Class Engine.PlayerController
 // 0x0284 (0x08F0 - 0x066C)
@@ -10951,7 +10951,7 @@ public:
 	void SetNetSpeed(int NewSpeed);
 };
 
-UClass* APlayerController::pClassPointer = NULL;
+//UClass* APlayerController::pClassPointer = NULL;
 
 // Class Engine.CheatManager
 // 0x0020 (0x005C - 0x003C)
@@ -16386,7 +16386,7 @@ public:
 	void SetSplitNavMesh(unsigned long bNewValue);
 };
 
-UClass* AEnvironmentVolume::pClassPointer = NULL;
+//UClass* AEnvironmentVolume::pClassPointer = NULL;
 
 // Class Engine.TestSplittingVolume
 // 0x0004 (0x01C0 - 0x01BC)
@@ -16408,7 +16408,7 @@ public:
 	};
 };
 
-UClass* ATestSplittingVolume::pClassPointer = NULL;
+//UClass* ATestSplittingVolume::pClassPointer = NULL;
 
 // Class Engine.AIController
 // 0x0018 (0x0684 - 0x066C)
@@ -16445,7 +16445,7 @@ public:
 	void eventPreBeginPlay();
 };
 
-UClass* AAIController::pClassPointer = NULL;
+//UClass* AAIController::pClassPointer = NULL;
 
 // Class Engine.PathTargetPoint
 // 0x0000 (0x018C - 0x018C)
@@ -16468,7 +16468,7 @@ public:
 	bool ShouldBeHiddenBySHOW_NavigationNodes();
 };
 
-UClass* APathTargetPoint::pClassPointer = NULL;
+//UClass* APathTargetPoint::pClassPointer = NULL;
 
 // Class Engine.NavMeshObstacle
 // 0x0008 (0x0190 - 0x0188)
@@ -16501,7 +16501,7 @@ public:
 	bool eventGetObstacleBoudingShape(TArray< struct FVector >* Shape);
 };
 
-UClass* ANavMeshObstacle::pClassPointer = NULL;
+//UClass* ANavMeshObstacle::pClassPointer = NULL;
 
 // Class Engine.PylonSeed
 // 0x0008 (0x0190 - 0x0188)
@@ -16524,7 +16524,7 @@ public:
 	};
 };
 
-UClass* APylonSeed::pClassPointer = NULL;
+//UClass* APylonSeed::pClassPointer = NULL;
 
 // Class Engine.BlockingMeshActor
 // 0x0018 (0x01A0 - 0x0188)
@@ -16551,7 +16551,7 @@ public:
 	};
 };
 
-UClass* ABlockingMeshActor::pClassPointer = NULL;
+//UClass* ABlockingMeshActor::pClassPointer = NULL;
 
 // Class Engine.BlockingMeshReplicatedActor
 // 0x0004 (0x01A4 - 0x01A0)
@@ -16578,7 +16578,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ABlockingMeshReplicatedActor::pClassPointer = NULL;
+//UClass* ABlockingMeshReplicatedActor::pClassPointer = NULL;
 
 // Class Engine.CoverGroupRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -17947,7 +17947,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ASkeletalMeshActor::pClassPointer = NULL;
+//UClass* ASkeletalMeshActor::pClassPointer = NULL;
 
 // Class Engine.SkeletalMeshActorBasedOnExtremeContent
 // 0x0018 (0x01E4 - 0x01CC)
@@ -17973,7 +17973,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ASkeletalMeshActorBasedOnExtremeContent::pClassPointer = NULL;
+//UClass* ASkeletalMeshActorBasedOnExtremeContent::pClassPointer = NULL;
 
 // Class Engine.SkeletalMeshActorSpawnable
 // 0x0000 (0x01CC - 0x01CC)
@@ -17994,7 +17994,7 @@ public:
 	};
 };
 
-UClass* ASkeletalMeshActorSpawnable::pClassPointer = NULL;
+//UClass* ASkeletalMeshActorSpawnable::pClassPointer = NULL;
 
 // Class Engine.SkeletalMeshCinematicActor
 // 0x0000 (0x01CC - 0x01CC)
@@ -18015,7 +18015,7 @@ public:
 	};
 };
 
-UClass* ASkeletalMeshCinematicActor::pClassPointer = NULL;
+//UClass* ASkeletalMeshCinematicActor::pClassPointer = NULL;
 
 // Class Engine.SkeletalMeshActorMAT
 // 0x000C (0x01D8 - 0x01CC)
@@ -18051,7 +18051,7 @@ public:
 	void MAT_SetAnimWeights(TArray< struct FAnimSlotInfo > SlotInfos);
 };
 
-UClass* ASkeletalMeshActorMAT::pClassPointer = NULL;
+//UClass* ASkeletalMeshActorMAT::pClassPointer = NULL;
 
 // Class Engine.HeadTrackingComponent
 // 0x009F (0x00F8 - 0x0059)
@@ -20486,7 +20486,7 @@ public:
 	};
 };
 
-UClass* ADecalActorBase::pClassPointer = NULL;
+//UClass* ADecalActorBase::pClassPointer = NULL;
 
 // Class Engine.DecalActor
 // 0x0000 (0x018C - 0x018C)
@@ -20507,7 +20507,7 @@ public:
 	};
 };
 
-UClass* ADecalActor::pClassPointer = NULL;
+//UClass* ADecalActor::pClassPointer = NULL;
 
 // Class Engine.DecalActorMovable
 // 0x0000 (0x018C - 0x018C)
@@ -20528,7 +20528,7 @@ public:
 	};
 };
 
-UClass* ADecalActorMovable::pClassPointer = NULL;
+//UClass* ADecalActorMovable::pClassPointer = NULL;
 
 // Class Engine.DecalManager
 // 0x0058 (0x01E0 - 0x0188)
@@ -20574,7 +20574,7 @@ public:
 	void SetNumberOfDecals();
 };
 
-UClass* ADecalManager::pClassPointer = NULL;
+//UClass* ADecalManager::pClassPointer = NULL;
 
 // Class Engine.DecalComponent
 // 0x0160 (0x0370 - 0x0210)
@@ -20748,7 +20748,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AFogVolumeDensityInfo::pClassPointer = NULL;
+//UClass* AFogVolumeDensityInfo::pClassPointer = NULL;
 
 // Class Engine.FogVolumeConeDensityInfo
 // 0x0000 (0x0194 - 0x0194)
@@ -20769,7 +20769,7 @@ public:
 	};
 };
 
-UClass* AFogVolumeConeDensityInfo::pClassPointer = NULL;
+//UClass* AFogVolumeConeDensityInfo::pClassPointer = NULL;
 
 // Class Engine.FogVolumeConstantDensityInfo
 // 0x0000 (0x0194 - 0x0194)
@@ -20790,7 +20790,7 @@ public:
 	};
 };
 
-UClass* AFogVolumeConstantDensityInfo::pClassPointer = NULL;
+//UClass* AFogVolumeConstantDensityInfo::pClassPointer = NULL;
 
 // Class Engine.FogVolumeLinearHalfspaceDensityInfo
 // 0x0000 (0x0194 - 0x0194)
@@ -20811,7 +20811,7 @@ public:
 	};
 };
 
-UClass* AFogVolumeLinearHalfspaceDensityInfo::pClassPointer = NULL;
+//UClass* AFogVolumeLinearHalfspaceDensityInfo::pClassPointer = NULL;
 
 // Class Engine.FogVolumeSphericalDensityInfo
 // 0x0000 (0x0194 - 0x0194)
@@ -20832,7 +20832,7 @@ public:
 	};
 };
 
-UClass* AFogVolumeSphericalDensityInfo::pClassPointer = NULL;
+//UClass* AFogVolumeSphericalDensityInfo::pClassPointer = NULL;
 
 // Class Engine.ExponentialHeightFogComponent
 // 0x002F (0x0088 - 0x0059)
@@ -21099,7 +21099,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AApexDestructibleActor::pClassPointer = NULL;
+//UClass* AApexDestructibleActor::pClassPointer = NULL;
 
 // Class Engine.ApexComponentBase
 // 0x0014 (0x0230 - 0x021C)
@@ -26675,7 +26675,7 @@ public:
 	void eventSetTemplate(class UParticleSystem* NewTemplate, unsigned long bDestroyOnFinish);
 };
 
-UClass* AEmitter::pClassPointer = NULL;
+//UClass* AEmitter::pClassPointer = NULL;
 
 // Class Engine.EmitterCameraLensEffectBase
 // 0x0024 (0x01B8 - 0x0194)
@@ -26710,7 +26710,7 @@ public:
 	void Destroyed();
 };
 
-UClass* AEmitterCameraLensEffectBase::pClassPointer = NULL;
+//UClass* AEmitterCameraLensEffectBase::pClassPointer = NULL;
 
 // Class Engine.ParticleEventManager
 // 0x0000 (0x0188 - 0x0188)
@@ -26733,7 +26733,7 @@ public:
 	void eventHandleParticleModuleEventSendToGame(class UParticleModuleEventSendToGame* InEvent, struct FVector* InCollideDirection, struct FVector* InHitLocation, struct FVector* InHitNormal, struct FName* InBoneName);
 };
 
-UClass* AParticleEventManager::pClassPointer = NULL;
+//UClass* AParticleEventManager::pClassPointer = NULL;
 
 // Class Engine.ParticleSystemComponent
 // 0x0114 (0x0324 - 0x0210)
@@ -30400,7 +30400,7 @@ public:
 	class UPhysicalMaterial* GetKActorPhysMaterial();
 };
 
-UClass* AKActor::pClassPointer = NULL;
+//UClass* AKActor::pClassPointer = NULL;
 
 // Class Engine.KActorFromStatic
 // 0x0008 (0x0290 - 0x0288)
@@ -30435,7 +30435,7 @@ public:
 	void DisablePrecomputedLighting();
 };
 
-UClass* AKActorFromStatic::pClassPointer = NULL;
+//UClass* AKActorFromStatic::pClassPointer = NULL;
 
 // Class Engine.KActorSpawnable
 // 0x0004 (0x028C - 0x0288)
@@ -30465,7 +30465,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AKActorSpawnable::pClassPointer = NULL;
+//UClass* AKActorSpawnable::pClassPointer = NULL;
 
 // Class Engine.KActorPizazz
 // 0x0018 (0x02A4 - 0x028C)
@@ -30490,7 +30490,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AKActorPizazz::pClassPointer = NULL;
+//UClass* AKActorPizazz::pClassPointer = NULL;
 
 // Class Engine.KAsset
 // 0x0010 (0x0198 - 0x0188)
@@ -30526,7 +30526,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AKAsset::pClassPointer = NULL;
+//UClass* AKAsset::pClassPointer = NULL;
 
 // Class Engine.Pawn
 // 0x0508 (0x0690 - 0x0188)
@@ -31143,7 +31143,7 @@ public:
 	class AActor* GetTargetableActor();
 };
 
-UClass* APawn::pClassPointer = NULL;
+//UClass* APawn::pClassPointer = NULL;
 
 // Class Engine.Vehicle
 // 0x0074 (0x0704 - 0x0690)
@@ -31261,7 +31261,7 @@ public:
 	void NotifyTeamChanged();
 };
 
-UClass* AVehicle::pClassPointer = NULL;
+//UClass* AVehicle::pClassPointer = NULL;
 
 // Class Engine.SVehicle
 // 0x0124 (0x0828 - 0x0704)
@@ -31370,7 +31370,7 @@ public:
 	void AddForce(struct FVector Force);
 };
 
-UClass* ASVehicle::pClassPointer = NULL;
+//UClass* ASVehicle::pClassPointer = NULL;
 
 // Class Engine.RB_ConstraintActor
 // 0x001C (0x01A4 - 0x0188)
@@ -31407,7 +31407,7 @@ public:
 	void SetDisableCollision(unsigned long NewDisableCollision);
 };
 
-UClass* ARB_ConstraintActor::pClassPointer = NULL;
+//UClass* ARB_ConstraintActor::pClassPointer = NULL;
 
 // Class Engine.RB_LineImpulseActor
 // 0x0011 (0x0199 - 0x0188)
@@ -31439,7 +31439,7 @@ public:
 	void FireLineImpulse();
 };
 
-UClass* ARB_LineImpulseActor::pClassPointer = NULL;
+//UClass* ARB_LineImpulseActor::pClassPointer = NULL;
 
 // Class Engine.RB_RadialImpulseActor
 // 0x0009 (0x0191 - 0x0188)
@@ -31466,7 +31466,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
-UClass* ARB_RadialImpulseActor::pClassPointer = NULL;
+//UClass* ARB_RadialImpulseActor::pClassPointer = NULL;
 
 // Class Engine.RB_Thruster
 // 0x0008 (0x0190 - 0x0188)
@@ -31491,7 +31491,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* ARB_Thruster::pClassPointer = NULL;
+//UClass* ARB_Thruster::pClassPointer = NULL;
 
 // Class Engine.RB_ConstraintDrawComponent
 // 0x0004 (0x0214 - 0x0210)
@@ -32434,7 +32434,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ANxGenericForceFieldBrush::pClassPointer = NULL;
+//UClass* ANxGenericForceFieldBrush::pClassPointer = NULL;
 
 // Class Engine.RB_ForceFieldExcludeVolume
 // 0x0004 (0x01C0 - 0x01BC)
@@ -32456,7 +32456,7 @@ public:
 	};
 };
 
-UClass* ARB_ForceFieldExcludeVolume::pClassPointer = NULL;
+//UClass* ARB_ForceFieldExcludeVolume::pClassPointer = NULL;
 
 // Class Engine.NxForceField
 // 0x0040 (0x01C8 - 0x0188)
@@ -32490,7 +32490,7 @@ public:
 	void DoInitRBPhys();
 };
 
-UClass* ANxForceField::pClassPointer = NULL;
+//UClass* ANxForceField::pClassPointer = NULL;
 
 // Class Engine.NxCylindricalForceField
 // 0x002C (0x01F4 - 0x01C8)
@@ -32522,7 +32522,7 @@ public:
 	};
 };
 
-UClass* ANxCylindricalForceField::pClassPointer = NULL;
+//UClass* ANxCylindricalForceField::pClassPointer = NULL;
 
 // Class Engine.NxCylindricalForceFieldCapsule
 // 0x0004 (0x01F8 - 0x01F4)
@@ -32546,7 +32546,7 @@ public:
 	void DoInitRBPhys();
 };
 
-UClass* ANxCylindricalForceFieldCapsule::pClassPointer = NULL;
+//UClass* ANxCylindricalForceFieldCapsule::pClassPointer = NULL;
 
 // Class Engine.NxForceFieldGeneric
 // 0x00B0 (0x0278 - 0x01C8)
@@ -32589,7 +32589,7 @@ public:
 	void DoInitRBPhys();
 };
 
-UClass* ANxForceFieldGeneric::pClassPointer = NULL;
+//UClass* ANxForceFieldGeneric::pClassPointer = NULL;
 
 // Class Engine.NxForceFieldRadial
 // 0x001C (0x01E4 - 0x01C8)
@@ -32619,7 +32619,7 @@ public:
 	void DoInitRBPhys();
 };
 
-UClass* ANxForceFieldRadial::pClassPointer = NULL;
+//UClass* ANxForceFieldRadial::pClassPointer = NULL;
 
 // Class Engine.NxForceFieldTornado
 // 0x0038 (0x0200 - 0x01C8)
@@ -32656,7 +32656,7 @@ public:
 	void DoInitRBPhys();
 };
 
-UClass* ANxForceFieldTornado::pClassPointer = NULL;
+//UClass* ANxForceFieldTornado::pClassPointer = NULL;
 
 // Class Engine.NxGenericForceField
 // 0x009C (0x0264 - 0x01C8)
@@ -32692,7 +32692,7 @@ public:
 	};
 };
 
-UClass* ANxGenericForceField::pClassPointer = NULL;
+//UClass* ANxGenericForceField::pClassPointer = NULL;
 
 // Class Engine.NxGenericForceFieldBox
 // 0x0010 (0x0274 - 0x0264)
@@ -32717,7 +32717,7 @@ public:
 	void DoInitRBPhys();
 };
 
-UClass* ANxGenericForceFieldBox::pClassPointer = NULL;
+//UClass* ANxGenericForceFieldBox::pClassPointer = NULL;
 
 // Class Engine.NxGenericForceFieldCapsule
 // 0x000C (0x0270 - 0x0264)
@@ -32741,7 +32741,7 @@ public:
 	};
 };
 
-UClass* ANxGenericForceFieldCapsule::pClassPointer = NULL;
+//UClass* ANxGenericForceFieldCapsule::pClassPointer = NULL;
 
 // Class Engine.NxRadialForceField
 // 0x0014 (0x01DC - 0x01C8)
@@ -32767,7 +32767,7 @@ public:
 	};
 };
 
-UClass* ANxRadialForceField::pClassPointer = NULL;
+//UClass* ANxRadialForceField::pClassPointer = NULL;
 
 // Class Engine.NxRadialCustomForceField
 // 0x0008 (0x01E4 - 0x01DC)
@@ -32790,7 +32790,7 @@ public:
 	};
 };
 
-UClass* ANxRadialCustomForceField::pClassPointer = NULL;
+//UClass* ANxRadialCustomForceField::pClassPointer = NULL;
 
 // Class Engine.NxTornadoAngularForceField
 // 0x0030 (0x01F8 - 0x01C8)
@@ -32823,7 +32823,7 @@ public:
 	};
 };
 
-UClass* ANxTornadoAngularForceField::pClassPointer = NULL;
+//UClass* ANxTornadoAngularForceField::pClassPointer = NULL;
 
 // Class Engine.NxTornadoAngularForceFieldCapsule
 // 0x0004 (0x01FC - 0x01F8)
@@ -32845,7 +32845,7 @@ public:
 	};
 };
 
-UClass* ANxTornadoAngularForceFieldCapsule::pClassPointer = NULL;
+//UClass* ANxTornadoAngularForceFieldCapsule::pClassPointer = NULL;
 
 // Class Engine.NxTornadoForceField
 // 0x002C (0x01F4 - 0x01C8)
@@ -32877,7 +32877,7 @@ public:
 	};
 };
 
-UClass* ANxTornadoForceField::pClassPointer = NULL;
+//UClass* ANxTornadoForceField::pClassPointer = NULL;
 
 // Class Engine.NxTornadoForceFieldCapsule
 // 0x0004 (0x01F8 - 0x01F4)
@@ -32899,7 +32899,7 @@ public:
 	};
 };
 
-UClass* ANxTornadoForceFieldCapsule::pClassPointer = NULL;
+//UClass* ANxTornadoForceFieldCapsule::pClassPointer = NULL;
 
 // Class Engine.NxForceFieldSpawnable
 // 0x0004 (0x018C - 0x0188)
@@ -32923,7 +32923,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
-UClass* ANxForceFieldSpawnable::pClassPointer = NULL;
+//UClass* ANxForceFieldSpawnable::pClassPointer = NULL;
 
 // Class Engine.RB_CylindricalForceActor
 // 0x0030 (0x01B8 - 0x0188)
@@ -32962,7 +32962,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
-UClass* ARB_CylindricalForceActor::pClassPointer = NULL;
+//UClass* ARB_CylindricalForceActor::pClassPointer = NULL;
 
 // Class Engine.RB_RadialForceActor
 // 0x0020 (0x01A8 - 0x0188)
@@ -32998,7 +32998,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
-UClass* ARB_RadialForceActor::pClassPointer = NULL;
+//UClass* ARB_RadialForceActor::pClassPointer = NULL;
 
 // Class Engine.NxForceFieldComponent
 // 0x0050 (0x0260 - 0x0210)
@@ -33314,7 +33314,7 @@ public:
 	};
 };
 
-UClass* APrefabInstance::pClassPointer = NULL;
+//UClass* APrefabInstance::pClassPointer = NULL;
 
 // Class Engine.Prefab
 // 0x0020 (0x005C - 0x003C)
@@ -37173,7 +37173,7 @@ public:
 	};
 };
 
-UClass* AAmbientSound::pClassPointer = NULL;
+//UClass* AAmbientSound::pClassPointer = NULL;
 
 // Class Engine.DistributionFloatSoundParameter
 // 0x0003 (0x0070 - 0x006D)
@@ -37299,7 +37299,7 @@ public:
 	};
 };
 
-UClass* ALandscapeProxy::pClassPointer = NULL;
+//UClass* ALandscapeProxy::pClassPointer = NULL;
 
 // Class Engine.Landscape
 // 0x0124 (0x0348 - 0x0224)
@@ -37333,7 +37333,7 @@ public:
 	};
 };
 
-UClass* ALandscape::pClassPointer = NULL;
+//UClass* ALandscape::pClassPointer = NULL;
 
 // Class Engine.Terrain
 // 0x00D0 (0x0258 - 0x0188)
@@ -37401,7 +37401,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ATerrain::pClassPointer = NULL;
+//UClass* ATerrain::pClassPointer = NULL;
 
 // Class Engine.LandscapeComponent
 // 0x00B0 (0x02C0 - 0x0210)
@@ -37691,7 +37691,7 @@ public:
 	void Initialized();
 };
 
-UClass* UConsole::pClassPointer = NULL;
+//UClass* UConsole::pClassPointer = NULL;
 
 // Class Engine.Input
 // 0x006C (0x00E4 - 0x0078)
@@ -39292,7 +39292,7 @@ public:
 	};
 };
 
-UClass* AFoliageFactory::pClassPointer = NULL;
+//UClass* AFoliageFactory::pClassPointer = NULL;
 
 // Class Engine.InstancedFoliageActor
 // 0x003C (0x01C4 - 0x0188)
@@ -39314,7 +39314,7 @@ public:
 	};
 };
 
-UClass* AInstancedFoliageActor::pClassPointer = NULL;
+//UClass* AInstancedFoliageActor::pClassPointer = NULL;
 
 // Class Engine.InteractiveFoliageActor
 // 0x0058 (0x01E8 - 0x0190)
@@ -39352,7 +39352,7 @@ public:
 	void eventTakeDamage(float Damage, class AController* EventInstigator, struct FVector HitLocation, struct FVector Momentum, class UClass* DamageType, struct FTraceHitInfo HitInfo, class UIDamageCauser* DamageCauser, class UDamagePipeline* Pipeline);
 };
 
-UClass* AInteractiveFoliageActor::pClassPointer = NULL;
+//UClass* AInteractiveFoliageActor::pClassPointer = NULL;
 
 // Class Engine.FoliageComponent
 // 0x006C (0x027C - 0x0210)
@@ -39458,7 +39458,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
-UClass* AFluidInfluenceActor::pClassPointer = NULL;
+//UClass* AFluidInfluenceActor::pClassPointer = NULL;
 
 // Class Engine.FluidSurfaceActor
 // 0x0008 (0x0190 - 0x0188)
@@ -39484,7 +39484,7 @@ public:
 	void eventTakeDamage(float Damage, class AController* EventInstigator, struct FVector HitLocation, struct FVector Momentum, class UClass* DamageType, struct FTraceHitInfo HitInfo, class UIDamageCauser* DamageCauser, class UDamagePipeline* Pipeline);
 };
 
-UClass* AFluidSurfaceActor::pClassPointer = NULL;
+//UClass* AFluidSurfaceActor::pClassPointer = NULL;
 
 // Class Engine.FluidSurfaceActorMovable
 // 0x0000 (0x0190 - 0x0190)
@@ -39505,7 +39505,7 @@ public:
 	};
 };
 
-UClass* AFluidSurfaceActorMovable::pClassPointer = NULL;
+//UClass* AFluidSurfaceActorMovable::pClassPointer = NULL;
 
 // Class Engine.FluidInfluenceComponent
 // 0x0060 (0x0270 - 0x0210)
@@ -39662,7 +39662,7 @@ public:
 	void SetTemplate(class ULensFlare* NewTemplate);
 };
 
-UClass* ALensFlareSource::pClassPointer = NULL;
+//UClass* ALensFlareSource::pClassPointer = NULL;
 
 // Class Engine.LensFlareComponent
 // 0x004C (0x025C - 0x0210)
@@ -40200,7 +40200,7 @@ public:
 	void PrimarySelect(struct FVector HitLoc, struct FVector HitNormal, struct FTraceHitInfo HitInfo);
 };
 
-UClass* ADebugCameraController::pClassPointer = NULL;
+//UClass* ADebugCameraController::pClassPointer = NULL;
 
 // Class Engine.MatineePawn
 // 0x0000 (0x0690 - 0x0690)
@@ -40221,7 +40221,7 @@ public:
 	};
 };
 
-UClass* AMatineePawn::pClassPointer = NULL;
+//UClass* AMatineePawn::pClassPointer = NULL;
 
 // Class Engine.Scout
 // 0x0090 (0x0720 - 0x0690)
@@ -40277,7 +40277,7 @@ public:
 	void eventPreBeginPlay();
 };
 
-UClass* AScout::pClassPointer = NULL;
+//UClass* AScout::pClassPointer = NULL;
 
 // Class Engine.Light
 // 0x0008 (0x0190 - 0x0188)
@@ -40303,7 +40303,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ALight::pClassPointer = NULL;
+//UClass* ALight::pClassPointer = NULL;
 
 // Class Engine.DirectionalLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40324,7 +40324,7 @@ public:
 	};
 };
 
-UClass* ADirectionalLight::pClassPointer = NULL;
+//UClass* ADirectionalLight::pClassPointer = NULL;
 
 // Class Engine.DirectionalLightToggleable
 // 0x0000 (0x0190 - 0x0190)
@@ -40345,7 +40345,7 @@ public:
 	};
 };
 
-UClass* ADirectionalLightToggleable::pClassPointer = NULL;
+//UClass* ADirectionalLightToggleable::pClassPointer = NULL;
 
 // Class Engine.DominantDirectionalLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40366,7 +40366,7 @@ public:
 	};
 };
 
-UClass* ADominantDirectionalLight::pClassPointer = NULL;
+//UClass* ADominantDirectionalLight::pClassPointer = NULL;
 
 // Class Engine.DominantDirectionalLightMovable
 // 0x0000 (0x0190 - 0x0190)
@@ -40387,7 +40387,7 @@ public:
 	};
 };
 
-UClass* ADominantDirectionalLightMovable::pClassPointer = NULL;
+//UClass* ADominantDirectionalLightMovable::pClassPointer = NULL;
 
 // Class Engine.LightShafts
 // 0x0000 (0x0190 - 0x0190)
@@ -40408,7 +40408,7 @@ public:
 	};
 };
 
-UClass* ALightShafts::pClassPointer = NULL;
+//UClass* ALightShafts::pClassPointer = NULL;
 
 // Class Engine.PointLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40429,7 +40429,7 @@ public:
 	};
 };
 
-UClass* APointLight::pClassPointer = NULL;
+//UClass* APointLight::pClassPointer = NULL;
 
 // Class Engine.DominantPointLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40450,7 +40450,7 @@ public:
 	};
 };
 
-UClass* ADominantPointLight::pClassPointer = NULL;
+//UClass* ADominantPointLight::pClassPointer = NULL;
 
 // Class Engine.PointLightMovable
 // 0x0000 (0x0190 - 0x0190)
@@ -40471,7 +40471,7 @@ public:
 	};
 };
 
-UClass* APointLightMovable::pClassPointer = NULL;
+//UClass* APointLightMovable::pClassPointer = NULL;
 
 // Class Engine.PointLightToggleable
 // 0x0000 (0x0190 - 0x0190)
@@ -40496,7 +40496,7 @@ public:
 	bool ShouldSaveForCheckpoint();
 };
 
-UClass* APointLightToggleable::pClassPointer = NULL;
+//UClass* APointLightToggleable::pClassPointer = NULL;
 
 // Class Engine.SkyLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40517,7 +40517,7 @@ public:
 	};
 };
 
-UClass* ASkyLight::pClassPointer = NULL;
+//UClass* ASkyLight::pClassPointer = NULL;
 
 // Class Engine.SkyLightToggleable
 // 0x0000 (0x0190 - 0x0190)
@@ -40538,7 +40538,7 @@ public:
 	};
 };
 
-UClass* ASkyLightToggleable::pClassPointer = NULL;
+//UClass* ASkyLightToggleable::pClassPointer = NULL;
 
 // Class Engine.SpotLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40559,7 +40559,7 @@ public:
 	};
 };
 
-UClass* ASpotLight::pClassPointer = NULL;
+//UClass* ASpotLight::pClassPointer = NULL;
 
 // Class Engine.DominantSpotLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40580,7 +40580,7 @@ public:
 	};
 };
 
-UClass* ADominantSpotLight::pClassPointer = NULL;
+//UClass* ADominantSpotLight::pClassPointer = NULL;
 
 // Class Engine.GeneratedMeshAreaLight
 // 0x0000 (0x0190 - 0x0190)
@@ -40601,7 +40601,7 @@ public:
 	};
 };
 
-UClass* AGeneratedMeshAreaLight::pClassPointer = NULL;
+//UClass* AGeneratedMeshAreaLight::pClassPointer = NULL;
 
 // Class Engine.SpotLightMovable
 // 0x0000 (0x0190 - 0x0190)
@@ -40622,7 +40622,7 @@ public:
 	};
 };
 
-UClass* ASpotLightMovable::pClassPointer = NULL;
+//UClass* ASpotLightMovable::pClassPointer = NULL;
 
 // Class Engine.SpotLightToggleable
 // 0x0000 (0x0190 - 0x0190)
@@ -40647,7 +40647,7 @@ public:
 	bool ShouldSaveForCheckpoint();
 };
 
-UClass* ASpotLightToggleable::pClassPointer = NULL;
+//UClass* ASpotLightToggleable::pClassPointer = NULL;
 
 // Class Engine.StaticLightCollectionActor
 // 0x0010 (0x01A0 - 0x0190)
@@ -40670,7 +40670,7 @@ public:
 	};
 };
 
-UClass* AStaticLightCollectionActor::pClassPointer = NULL;
+//UClass* AStaticLightCollectionActor::pClassPointer = NULL;
 
 // Class Engine.LightComponent
 // 0x010B (0x0164 - 0x0059)
@@ -41788,7 +41788,7 @@ public:
 	struct FVector GetWorldSpaceTangent();
 };
 
-UClass* ASplineActor::pClassPointer = NULL;
+//UClass* ASplineActor::pClassPointer = NULL;
 
 // Class Engine.SplineLoftActor
 // 0x0048 (0x0220 - 0x01D8)
@@ -41824,7 +41824,7 @@ public:
 	void ClearLoftMesh();
 };
 
-UClass* ASplineLoftActor::pClassPointer = NULL;
+//UClass* ASplineLoftActor::pClassPointer = NULL;
 
 // Class Engine.SplineLoftActorMovable
 // 0x0000 (0x0220 - 0x0220)
@@ -41845,7 +41845,7 @@ public:
 	};
 };
 
-UClass* ASplineLoftActorMovable::pClassPointer = NULL;
+//UClass* ASplineLoftActorMovable::pClassPointer = NULL;
 
 // Class Engine.SplineComponent
 // 0x0034 (0x0244 - 0x0210)
@@ -41900,7 +41900,7 @@ public:
 	};
 };
 
-UClass* AReplicationInfo::pClassPointer = NULL;
+//UClass* AReplicationInfo::pClassPointer = NULL;
 
 // Class Engine.GameReplicationInfo
 // 0x0064 (0x01EC - 0x0188)
@@ -41959,7 +41959,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AGameReplicationInfo::pClassPointer = NULL;
+//UClass* AGameReplicationInfo::pClassPointer = NULL;
 
 // Class Engine.PlayerReplicationInfo
 // 0x00CC (0x0254 - 0x0188)
@@ -42046,7 +42046,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* APlayerReplicationInfo::pClassPointer = NULL;
+//UClass* APlayerReplicationInfo::pClassPointer = NULL;
 
 // Class Engine.TeamInfo
 // 0x001C (0x01A4 - 0x0188)
@@ -42079,7 +42079,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ATeamInfo::pClassPointer = NULL;
+//UClass* ATeamInfo::pClassPointer = NULL;
 
 // Class Engine.Camera
 // 0x0274 (0x03FC - 0x0188)
@@ -42178,7 +42178,7 @@ public:
 	class UCameraModifier* CreateCameraModifier(class UClass* ModifierClass);
 };
 
-UClass* ACamera::pClassPointer = NULL;
+//UClass* ACamera::pClassPointer = NULL;
 
 // Class Engine.CameraActor
 // 0x0100 (0x0288 - 0x0188)
@@ -42209,7 +42209,7 @@ public:
 	void GetCameraView(float DeltaTime, struct FTPOV* OutPOV);
 };
 
-UClass* ACameraActor::pClassPointer = NULL;
+//UClass* ACameraActor::pClassPointer = NULL;
 
 // Class Engine.DynamicCameraActor
 // 0x0000 (0x0288 - 0x0288)
@@ -42230,7 +42230,7 @@ public:
 	};
 };
 
-UClass* ADynamicCameraActor::pClassPointer = NULL;
+//UClass* ADynamicCameraActor::pClassPointer = NULL;
 
 // Class Engine.CameraAnim
 // 0x0114 (0x0150 - 0x003C)
@@ -42470,7 +42470,7 @@ public:
 	void AllResourcePools(class AResourcePoolManager* Mgr, class UResourcePool** Pool, class UResourcePoolDefinition** PoolDefinition);
 };
 
-UClass* AResourcePoolManager::pClassPointer = NULL;
+//UClass* AResourcePoolManager::pClassPointer = NULL;
 
 // Class Engine.WorldSoundManager
 // 0x0014 (0x019C - 0x0188)
@@ -42504,7 +42504,7 @@ public:
 	struct FAkPlayingInfo StaticPlayWorldAkEvent(class UAkEvent* InSoundCue, struct FVector SoundLocation, unsigned long bNotReplicated, unsigned long bNoRepToOwner, unsigned long bNoRepToRelevant, class UAkSwitch* InSwitch);
 };
 
-UClass* AWorldSoundManager::pClassPointer = NULL;
+//UClass* AWorldSoundManager::pClassPointer = NULL;
 
 // Class Engine.ComponentLifetimeManagerComponent
 // 0x0013 (0x006C - 0x0059)
@@ -43783,7 +43783,7 @@ public:
 	struct FName GetAreaName();
 };
 
-UClass* AHybridNavigationArea::pClassPointer = NULL;
+//UClass* AHybridNavigationArea::pClassPointer = NULL;
 
 // Class Engine.PickupableMeshActor
 // 0x0010 (0x0198 - 0x0188)
@@ -43810,7 +43810,7 @@ public:
 	void SetTarget(class AActor* TargetActor);
 };
 
-UClass* APickupableMeshActor::pClassPointer = NULL;
+//UClass* APickupableMeshActor::pClassPointer = NULL;
 
 // Class Engine.HybridNavigationAreaDebugRenderingComponent
 // 0x0004 (0x0214 - 0x0210)
@@ -44063,7 +44063,7 @@ public:
 	void AddToNavigation();
 };
 
-UClass* ADroppedPickup::pClassPointer = NULL;
+//UClass* ADroppedPickup::pClassPointer = NULL;
 
 // Class Engine.Inventory
 // 0x0040 (0x01C8 - 0x0188)
@@ -44119,7 +44119,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AInventory::pClassPointer = NULL;
+//UClass* AInventory::pClassPointer = NULL;
 
 // Class Engine.WillowInventory
 // 0x06D0 (0x0898 - 0x01C8)
@@ -44280,7 +44280,7 @@ public:
 	class AWillowInventory* CreateInventoryFromSerialNumber(class UObject* InAdditionalQueryInterfaceSource, struct FInventorySerialNumber* SerialNumber);
 };
 
-UClass* AWillowInventory::pClassPointer = NULL;
+//UClass* AWillowInventory::pClassPointer = NULL;
 
 // Class Engine.Weapon
 // 0x0114 (0x09AC - 0x0898)
@@ -44435,7 +44435,7 @@ public:
 	bool ForceWeaponToBeEquipped();
 };
 
-UClass* AWeapon::pClassPointer = NULL;
+//UClass* AWeapon::pClassPointer = NULL;
 
 // Class Engine.InventoryManager
 // 0x002C (0x01B4 - 0x0188)
@@ -44503,7 +44503,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AInventoryManager::pClassPointer = NULL;
+//UClass* AInventoryManager::pClassPointer = NULL;
 
 // Class Engine.GearboxCalloutDefinition
 // 0x0010 (0x004C - 0x003C)
@@ -45874,7 +45874,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AAccessControl::pClassPointer = NULL;
+//UClass* AAccessControl::pClassPointer = NULL;
 
 // Class Engine.Admin
 // 0x0000 (0x08F0 - 0x08F0)
@@ -45908,7 +45908,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AAdmin::pClassPointer = NULL;
+//UClass* AAdmin::pClassPointer = NULL;
 
 // Class Engine.IScaleBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -45952,7 +45952,7 @@ public:
 	};
 };
 
-UClass* AApexDestructibleActorSpawnable::pClassPointer = NULL;
+//UClass* AApexDestructibleActorSpawnable::pClassPointer = NULL;
 
 // Class Engine.EmitterSpawnable
 // 0x0004 (0x0198 - 0x0194)
@@ -45977,7 +45977,7 @@ public:
 	void eventSetTemplate(class UParticleSystem* NewTemplate, unsigned long bDestroyOnFinish);
 };
 
-UClass* AEmitterSpawnable::pClassPointer = NULL;
+//UClass* AEmitterSpawnable::pClassPointer = NULL;
 
 // Class Engine.KAssetSpawnable
 // 0x0000 (0x0198 - 0x0198)
@@ -45998,7 +45998,7 @@ public:
 	};
 };
 
-UClass* AKAssetSpawnable::pClassPointer = NULL;
+//UClass* AKAssetSpawnable::pClassPointer = NULL;
 
 // Class Engine.ActorFactorySkeletalMeshCinematic
 // 0x0000 (0x008C - 0x008C)
@@ -46179,7 +46179,7 @@ public:
 	void PurgeOldEntries();
 };
 
-UClass* ACoverReplicator::pClassPointer = NULL;
+//UClass* ACoverReplicator::pClassPointer = NULL;
 
 // Class Engine.GameMessage
 // 0x0117 (0x0160 - 0x0049)
@@ -47093,7 +47093,7 @@ public:
 	void UpdateSentText();
 };
 
-UClass* ABroadcastHandler::pClassPointer = NULL;
+//UClass* ABroadcastHandler::pClassPointer = NULL;
 
 // Class Engine.ColorScaleVolume
 // 0x0010 (0x01CC - 0x01BC)
@@ -47119,7 +47119,7 @@ public:
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, struct FVector HitLocation, struct FVector HitNormal);
 };
 
-UClass* AColorScaleVolume::pClassPointer = NULL;
+//UClass* AColorScaleVolume::pClassPointer = NULL;
 
 // Class Engine.DebugCameraHUD
 // 0x0000 (0x0224 - 0x0224)
@@ -47144,7 +47144,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ADebugCameraHUD::pClassPointer = NULL;
+//UClass* ADebugCameraHUD::pClassPointer = NULL;
 
 // Class Engine.DebugCameraInput
 // 0x0000 (0x017C - 0x017C)
@@ -47192,7 +47192,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AVolumeTimer::pClassPointer = NULL;
+//UClass* AVolumeTimer::pClassPointer = NULL;
 
 // Class Engine.SeqAct_SetDamageInstigator
 // 0x0004 (0x00A8 - 0x00A4)
@@ -47301,7 +47301,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ADynamicPhysicsVolume::pClassPointer = NULL;
+//UClass* ADynamicPhysicsVolume::pClassPointer = NULL;
 
 // Class Engine.DynamicSMActor_Spawnable
 // 0x0000 (0x01C4 - 0x01C4)
@@ -47322,7 +47322,7 @@ public:
 	};
 };
 
-UClass* ADynamicSMActor_Spawnable::pClassPointer = NULL;
+//UClass* ADynamicSMActor_Spawnable::pClassPointer = NULL;
 
 // Class Engine.DynamicTriggerVolume
 // 0x0004 (0x01C0 - 0x01BC)
@@ -47346,7 +47346,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* ADynamicTriggerVolume::pClassPointer = NULL;
+//UClass* ADynamicTriggerVolume::pClassPointer = NULL;
 
 // Class Engine.SeqAct_SetParticleSysParam
 // 0x0014 (0x00B8 - 0x00A4)
@@ -47397,7 +47397,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AExponentialHeightFog::pClassPointer = NULL;
+//UClass* AExponentialHeightFog::pClassPointer = NULL;
 
 // Class Engine.FailedConnect
 // 0x0033 (0x007C - 0x0049)
@@ -47488,7 +47488,7 @@ public:
 	};
 };
 
-UClass* AHoldingAreaDestination::pClassPointer = NULL;
+//UClass* AHoldingAreaDestination::pClassPointer = NULL;
 
 // Class Engine.HeightFog
 // 0x0008 (0x0190 - 0x0188)
@@ -47515,7 +47515,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AHeightFog::pClassPointer = NULL;
+//UClass* AHeightFog::pClassPointer = NULL;
 
 // Class Engine.IChangeBehaviorSetStateBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -47583,7 +47583,7 @@ public:
 	};
 };
 
-UClass* AInterpActor_ForCinematic::pClassPointer = NULL;
+//UClass* AInterpActor_ForCinematic::pClassPointer = NULL;
 
 // Class Engine.MaterialInstanceTimeVaryingActor
 // 0x0004 (0x018C - 0x0188)
@@ -47605,7 +47605,7 @@ public:
 	};
 };
 
-UClass* AMaterialInstanceTimeVaryingActor::pClassPointer = NULL;
+//UClass* AMaterialInstanceTimeVaryingActor::pClassPointer = NULL;
 
 // Class Engine.SeqAct_AssignController
 // 0x0004 (0x00A8 - 0x00A4)
@@ -47955,7 +47955,7 @@ public:
 	struct FString eventGetDebugAbbrev();
 };
 
-UClass* APathNode_Dynamic::pClassPointer = NULL;
+//UClass* APathNode_Dynamic::pClassPointer = NULL;
 
 // Class Engine.SeqEvent_PickupStatusChange
 // 0x0000 (0x00C4 - 0x00C4)
@@ -48021,7 +48021,7 @@ public:
 	};
 };
 
-UClass* ARadialBlurActor::pClassPointer = NULL;
+//UClass* ARadialBlurActor::pClassPointer = NULL;
 
 // Class Engine.SeqAct_ToggleConstraintDrive
 // 0x0004 (0x00A8 - 0x00A4)
@@ -48067,7 +48067,7 @@ public:
 	};
 };
 
-UClass* ARB_BSJointActor::pClassPointer = NULL;
+//UClass* ARB_BSJointActor::pClassPointer = NULL;
 
 // Class Engine.RB_ConstraintActorSpawnable
 // 0x0000 (0x01A4 - 0x01A4)
@@ -48088,7 +48088,7 @@ public:
 	};
 };
 
-UClass* ARB_ConstraintActorSpawnable::pClassPointer = NULL;
+//UClass* ARB_ConstraintActorSpawnable::pClassPointer = NULL;
 
 // Class Engine.RB_HingeActor
 // 0x0000 (0x01A4 - 0x01A4)
@@ -48109,7 +48109,7 @@ public:
 	};
 };
 
-UClass* ARB_HingeActor::pClassPointer = NULL;
+//UClass* ARB_HingeActor::pClassPointer = NULL;
 
 // Class Engine.RB_PrismaticActor
 // 0x0000 (0x01A4 - 0x01A4)
@@ -48130,7 +48130,7 @@ public:
 	};
 };
 
-UClass* ARB_PrismaticActor::pClassPointer = NULL;
+//UClass* ARB_PrismaticActor::pClassPointer = NULL;
 
 // Class Engine.RB_PulleyJointActor
 // 0x0000 (0x01A4 - 0x01A4)
@@ -48151,7 +48151,7 @@ public:
 	};
 };
 
-UClass* ARB_PulleyJointActor::pClassPointer = NULL;
+//UClass* ARB_PulleyJointActor::pClassPointer = NULL;
 
 // Class Engine.ReverbVolumeToggleable
 // 0x0000 (0x0208 - 0x0208)
@@ -48174,7 +48174,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* AReverbVolumeToggleable::pClassPointer = NULL;
+//UClass* AReverbVolumeToggleable::pClassPointer = NULL;
 
 // Class Engine.SeqAct_AddRemoveFaceFXAnimSet
 // 0x000C (0x00B0 - 0x00A4)
@@ -48443,7 +48443,7 @@ public:
 	};
 };
 
-UClass* ASkeletalMeshActorMATSpawnable::pClassPointer = NULL;
+//UClass* ASkeletalMeshActorMATSpawnable::pClassPointer = NULL;
 
 // Class Engine.SkeletalMeshActorMATWalkable
 // 0x0000 (0x01D8 - 0x01D8)
@@ -48464,7 +48464,7 @@ public:
 	};
 };
 
-UClass* ASkeletalMeshActorMATWalkable::pClassPointer = NULL;
+//UClass* ASkeletalMeshActorMATWalkable::pClassPointer = NULL;
 
 // Class Engine.Trigger_Dynamic
 // 0x0000 (0x0194 - 0x0194)
@@ -48485,7 +48485,7 @@ public:
 	};
 };
 
-UClass* ATrigger_Dynamic::pClassPointer = NULL;
+//UClass* ATrigger_Dynamic::pClassPointer = NULL;
 
 // Class Engine.Trigger_LOS
 // 0x000C (0x01A0 - 0x0194)
@@ -48509,7 +48509,7 @@ public:
 	void eventTick(float DeltaTime);
 };
 
-UClass* ATrigger_LOS::pClassPointer = NULL;
+//UClass* ATrigger_LOS::pClassPointer = NULL;
 
 // Class Engine.TriggeredPath
 // 0x0008 (0x024C - 0x0244)
@@ -48536,7 +48536,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
-UClass* ATriggeredPath::pClassPointer = NULL;
+//UClass* ATriggeredPath::pClassPointer = NULL;
 
 // Class Engine.TriggerStreamingLevel
 // 0x000C (0x01A0 - 0x0194)
@@ -48560,7 +48560,7 @@ public:
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, struct FVector HitLocation, struct FVector HitNormal);
 };
 
-UClass* ATriggerStreamingLevel::pClassPointer = NULL;
+//UClass* ATriggerStreamingLevel::pClassPointer = NULL;
 
 // Class Engine.UICharacterSummary
 // 0x0028 (0x00B0 - 0x0088)
@@ -48698,7 +48698,7 @@ public:
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, struct FVector HitLocation, struct FVector HitNormal);
 };
 
-UClass* AWaterVolume::pClassPointer = NULL;
+//UClass* AWaterVolume::pClassPointer = NULL;
 
 // Class Engine.WindDirectionalSource
 // 0x0004 (0x018C - 0x0188)
@@ -48720,7 +48720,7 @@ public:
 	};
 };
 
-UClass* AWindDirectionalSource::pClassPointer = NULL;
+//UClass* AWindDirectionalSource::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

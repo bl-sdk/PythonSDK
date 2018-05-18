@@ -831,7 +831,7 @@ PDETOUR_SYM_INFO DetourLoadImageHlp(VOID);
 #endif // IMAGEAPI
 
 #if defined(_INC_STDIO) && !defined(_CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS)
-#error detours.h must be included before stdio.h (or at least define _CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS earlier)
+//#error detours.h must be included before stdio.h (or at least define _CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS earlier)
 #endif
 #define _CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS 1
 
