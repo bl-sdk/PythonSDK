@@ -1,3 +1,4 @@
+#pragma once
 #ifndef SIGNATURES_H
 #define SIGNATURES_H
 

@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #ifndef BL2SDK_H
 #define BL2SDK_H
 
