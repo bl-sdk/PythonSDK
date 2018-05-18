@@ -19,17 +19,29 @@
 
 /*
 # ========================================================================================= #
+# Global Static Class Pointers
+# ========================================================================================= #
+*/
+
+UClass* UObject::pClassPointer = NULL;
+UClass* UField::pClassPointer = NULL;
+UClass* UStruct::pClassPointer = NULL;
+UClass* UFunction::pClassPointer = NULL;
+UClass* UState::pClassPointer = NULL;
+UClass* UClass::pClassPointer = NULL;
+UClass* UPackage::pClassPointer = NULL;
+
+/*
+# ========================================================================================= #
 # Basic Functions
 # ========================================================================================= #
 */
 
-/* //debug
 TArray< UObject* >* UObject::GObjObjects()
 {
-	TArray< UObject* >* ObjectArray = (TArray< UObject* >*) GObjects;
+	TArray< UObject* >* ObjectArray = (TArray< UObject* >*) BL2SDK::pGObjects;
 	return ObjectArray;
 }
-*/
 
 char* UObject::GetName()
 {
@@ -102,34 +114,6 @@ char* UObject::GetFullName()
 	}
 
 	return "(null)";
-}
-
-template< class T > static T* FindObject(const std::string& ObjectFullName)
-{
-	while (!UObject::GObjObjects())
-		Sleep(100);
-
-	while (!FName::Names())
-		Sleep(100);
-
-	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
-	{
-		UObject* Object = UObject::GObjObjects()->Data[i];
-
-		// skip no T class objects
-		if
-			(
-				!Object
-				|| !Object->IsA(T::StaticClass())
-				)
-			continue;
-
-		// check
-		if (Object->GetFullName() == ObjectFullName)
-			return (T*)Object;
-	}
-
-	return nullptr;
 }
 
 UClass* UObject::FindClass(char* ClassFullName)

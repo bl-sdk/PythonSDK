@@ -98,7 +98,7 @@ public:
 	};
 };
 
-UClass* AGamePawn::pClassPointer = NULL;
+//UClass* AGamePawn::pClassPointer = NULL;
 
 // Class GameFramework.GamePlayerController
 // 0x000C (0x08FC - 0x08F0)
@@ -136,7 +136,7 @@ public:
 	int GetUIPlayerIndex();
 };
 
-UClass* AGamePlayerController::pClassPointer = NULL;
+//UClass* AGamePlayerController::pClassPointer = NULL;
 
 // Class GameFramework.GameTypes
 // 0x0000 (0x003C - 0x003C)
@@ -157,7 +157,7 @@ public:
 	};
 };
 
-UClass* UGameTypes::pClassPointer = NULL;
+//UClass* UGameTypes::pClassPointer = NULL;
 
 // Class GameFramework.NavMeshGoal_OutOfViewFrom
 // 0x0014 (0x0064 - 0x0050)
@@ -185,7 +185,7 @@ public:
 	void RecycleNative();
 };
 
-UClass* UNavMeshGoal_OutOfViewFrom::pClassPointer = NULL;
+//UClass* UNavMeshGoal_OutOfViewFrom::pClassPointer = NULL;
 
 // Class GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations
 // 0x0028 (0x0078 - 0x0050)
@@ -213,7 +213,7 @@ public:
 	bool BiasAgainstPolysWithinDistanceOfLocations(class UNavigationHandle* NavHandle, struct FVector InLocation, struct FRotator InRotation, float InDistanceToCheck, TArray< struct FVector > InLocationsToCheck);
 };
 
-UClass* UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::pClassPointer = NULL;
+//UClass* UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::pClassPointer = NULL;
 
 // Class GameFramework.SeqAct_ControlGameMovie
 // 0x0014 (0x00C8 - 0x00B4)
@@ -237,7 +237,7 @@ public:
 	};
 };
 
-UClass* USeqAct_ControlGameMovie::pClassPointer = NULL;
+//UClass* USeqAct_ControlGameMovie::pClassPointer = NULL;
 
 // Class GameFramework.SeqAct_Deproject
 // 0x0028 (0x00CC - 0x00A4)
@@ -264,7 +264,7 @@ public:
 	};
 };
 
-UClass* USeqAct_Deproject::pClassPointer = NULL;
+//UClass* USeqAct_Deproject::pClassPointer = NULL;
 
 // Class GameFramework.SeqAct_ModifyProperty
 // 0x000C (0x00B0 - 0x00A4)
@@ -286,7 +286,7 @@ public:
 	};
 };
 
-UClass* USeqAct_ModifyProperty::pClassPointer = NULL;
+//UClass* USeqAct_ModifyProperty::pClassPointer = NULL;
 
 // Class GameFramework.GameSkelCtrl_Recoil
 // 0x007C (0x0118 - 0x009C)
@@ -313,7 +313,7 @@ public:
 	};
 };
 
-UClass* UGameSkelCtrl_Recoil::pClassPointer = NULL;
+//UClass* UGameSkelCtrl_Recoil::pClassPointer = NULL;
 
 // Class GameFramework.GameStateObject
 // 0x0028 (0x0080 - 0x0058)
@@ -344,7 +344,7 @@ public:
 	void eventPreProcessStream();
 };
 
-UClass* UGameStateObject::pClassPointer = NULL;
+//UClass* UGameStateObject::pClassPointer = NULL;
 
 // Class GameFramework.GameStatsAggregator
 // 0x01D8 (0x0230 - 0x0058)
@@ -382,7 +382,7 @@ public:
 	void eventPreProcessStream();
 };
 
-UClass* UGameStatsAggregator::pClassPointer = NULL;
+//UClass* UGameStatsAggregator::pClassPointer = NULL;
 
 // Class GameFramework.GameWaveForms
 // 0x0010 (0x004C - 0x003C)
@@ -407,7 +407,7 @@ public:
 	};
 };
 
-UClass* UGameWaveForms::pClassPointer = NULL;
+//UClass* UGameWaveForms::pClassPointer = NULL;
 
 // Class GameFramework.PlayerCollectorGame
 // 0x0010 (0x0340 - 0x0330)
@@ -433,7 +433,7 @@ public:
 	class APlayerController* eventLogin(struct FString Portal, struct FString Options, struct FUniqueNetId UniqueId, struct FString* ErrorMessage);
 };
 
-UClass* APlayerCollectorGame::pClassPointer = NULL;
+//UClass* APlayerCollectorGame::pClassPointer = NULL;
 
 // Class GameFramework.PMESTG_LeaveADecalBase
 // 0x0004 (0x0040 - 0x003C)
@@ -455,7 +455,7 @@ public:
 	};
 };
 
-UClass* UPMESTG_LeaveADecalBase::pClassPointer = NULL;
+//UClass* UPMESTG_LeaveADecalBase::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

@@ -1,11 +1,9 @@
 #pragma once
-#ifndef SIGSCAN_H
-#define SIGSCAN_H
-
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <string>
 
-#include "MemorySignature.h"
+struct MemorySignature;
 
 class CSigScan
 {
@@ -21,4 +19,3 @@ public:
 	void* Scan(const char* sig, const char* mask, int sigLength);
 	void* Scan(const char* sig, const char* mask);
 };
-#endif

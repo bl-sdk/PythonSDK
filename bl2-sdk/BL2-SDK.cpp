@@ -134,6 +134,7 @@ namespace BL2SDK
 		return EXCEPTION_EXECUTE_HANDLER;
 	}
 
+	/*
 	bool GetGameVersion(std::wstring& appVersion)
 	{
 		const wchar_t* filename = L"Borderlands2.exe";
@@ -171,7 +172,6 @@ namespace BL2SDK
 
 		delete[] versionInfo;
 
-		/*
 		appVersion = Util::Format(L"%d.%d.%d.%d",
 			HIWORD(fileVersionMS),
 			LOWORD(fileVersionMS),
@@ -179,8 +179,8 @@ namespace BL2SDK
 			LOWORD(fileVersionLS));
 
 		return true;
-		*/
 	}
+	*/
 
 	// TODO: Make less shit
 	void HookGame()

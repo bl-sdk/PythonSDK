@@ -2,7 +2,17 @@
 #ifndef BL2SDK_H
 #define BL2SDK_H
 
-#include "stdafx.h"
+#include <string>
+
+class UObject;
+class UFunction;
+class UClass;
+class UPackage;
+
+struct FFrame;
+struct FName;
+struct FOutputDevice;
+struct FArchive;
 
 namespace BL2SDK
 {
@@ -26,7 +36,7 @@ namespace BL2SDK
 
 	//void LogAllProcessEventCalls(bool enabled);
 	//void LogAllUnrealScriptCalls(bool enabled);
-	bool GetGameVersion(std::wstring& appVersion);
+	//bool GetGameVersion(std::wstring& appVersion);
 	void InjectedCallNext();
 	void Initialize(/*LauncherStruct* args*/);
 	void Cleanup();

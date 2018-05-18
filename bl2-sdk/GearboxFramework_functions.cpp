@@ -19,6 +19,33 @@
 
 /*
 # ========================================================================================= #
+# Global Static Class Pointers
+# ========================================================================================= #
+*/
+
+UClass* UActorFactoryClone::pClassPointer = NULL;
+UClass* UActorFactoryWireTerminal::pClassPointer = NULL;
+UClass* UAIDebugCamera::pClassPointer = NULL;
+UClass* UAITracker::pClassPointer = NULL;
+UClass* UAnimNodeSpecialMoveBlend::pClassPointer = NULL;
+UClass* UAttributeExpressionEvaluator::pClassPointer = NULL;
+UClass* UBehavior_CallFunction::pClassPointer = NULL;
+UClass* UBehavior_ChangeRemoteBehaviorSequenceState::pClassPointer = NULL;
+UClass* UBehavior_ChangeTimer::pClassPointer = NULL;
+UClass* UBehavior_IsSequenceEnabled::pClassPointer = NULL;
+UClass* UBehavior_PostAkEvent::pClassPointer = NULL;
+UClass* UBehaviorHelpers::pClassPointer = NULL;
+UClass* UCompoundExpressionEvaluator::pClassPointer = NULL;
+UClass* UConditionalAttributeValueResolver::pClassPointer = NULL;
+UClass* UConstantAttributeValueResolver::pClassPointer = NULL;
+UClass* UConstraintAttributeValueResolver::pClassPointer = NULL;
+UClass* UFeatherBoneBlendDefinition::pClassPointer = NULL;
+UClass* UGBXActorList::pClassPointer = NULL;
+UClass* UGBXObjectList::pClassPointer = NULL;
+UClass* AGearboxAIController::pClassPointer = NULL;
+//TODO: Finish these
+/*
+# ========================================================================================= #
 # Functions
 # ========================================================================================= #
 */

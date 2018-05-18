@@ -1,5 +1,5 @@
 #pragma once
-#include "stdafx.h"
+//#include "stdafx.h"
 /*
 #############################################################################################
 # Borderlands 2 (1.7) SDK
@@ -59,7 +59,7 @@ public:
 	};
 };
 
-UClass* UWindowsClient::pClassPointer = NULL;
+//UClass* UWindowsClient::pClassPointer = NULL;
 
 // Class WinDrv.XnaForceFeedbackManager
 // 0x0000 (0x0058 - 0x0058)
@@ -80,7 +80,7 @@ public:
 	};
 };
 
-UClass* UXnaForceFeedbackManager::pClassPointer = NULL;
+//UClass* UXnaForceFeedbackManager::pClassPointer = NULL;
 
 // Class WinDrv.FacebookWindows
 // 0x0038 (0x00EC - 0x00B4)
@@ -102,7 +102,7 @@ public:
 	};
 };
 
-UClass* UFacebookWindows::pClassPointer = NULL;
+//UClass* UFacebookWindows::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

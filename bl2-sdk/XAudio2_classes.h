@@ -55,8 +55,6 @@ public:
 	};
 };
 
-UClass* UXAudio2Device::pClassPointer = NULL;
-
 #ifdef _MSC_VER
 #pragma pack ( pop )
 #endif

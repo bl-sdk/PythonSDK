@@ -4312,7 +4312,7 @@ public:
 	TArray< unsigned char > ShouldUnlockAchievementFromUnlockType(unsigned char UnlockType, struct FString StringData, int IntData, unsigned long bCanBeGreater, unsigned long bCheckStringAndIntData, unsigned long bCanBeLess);
 };
 
-UClass* UAchievementUtility::pClassPointer = NULL;
+//UClass* UAchievementUtility::pClassPointer = NULL;
 
 // Class WillowGame.ActionSkill
 // 0x00AC (0x0234 - 0x0188)
@@ -4442,7 +4442,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* AActionSkill::pClassPointer = NULL;
+//UClass* AActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.ScorpioActionSkill
 // 0x0014 (0x0248 - 0x0234)
@@ -4485,7 +4485,7 @@ public:
 	void OnActionSkillStarted(class AWillowPawn* TheWillowPawn, class AController* TheController, class AWillowPawn* TheTargetPawn);
 };
 
-UClass* AScorpioActionSkill::pClassPointer = NULL;
+//UClass* AScorpioActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryInteractiveObject
 // 0x0004 (0x0080 - 0x007C)
@@ -4507,7 +4507,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryInteractiveObject::pClassPointer = NULL;
+//UClass* UActorFactoryInteractiveObject::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowElevatorButton
 // 0x0000 (0x0080 - 0x0080)
@@ -4528,7 +4528,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowElevatorButton::pClassPointer = NULL;
+//UClass* UActorFactoryWillowElevatorButton::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryMissionPickupSpawner
 // 0x0004 (0x0080 - 0x007C)
@@ -4550,7 +4550,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryMissionPickupSpawner::pClassPointer = NULL;
+//UClass* UActorFactoryMissionPickupSpawner::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryMissionPickupFailsafe
 // 0x0000 (0x0080 - 0x0080)
@@ -4571,7 +4571,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryMissionPickupFailsafe::pClassPointer = NULL;
+//UClass* UActorFactoryMissionPickupFailsafe::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryPopulationOpportunityArea
 // 0x0000 (0x007C - 0x007C)
@@ -4592,7 +4592,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryPopulationOpportunityArea::pClassPointer = NULL;
+//UClass* UActorFactoryPopulationOpportunityArea::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryPopulationOpportunityDen
 // 0x0000 (0x007C - 0x007C)
@@ -4613,7 +4613,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryPopulationOpportunityDen::pClassPointer = NULL;
+//UClass* UActorFactoryPopulationOpportunityDen::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowCoopPlayerStart
 // 0x0000 (0x007C - 0x007C)
@@ -4634,7 +4634,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowCoopPlayerStart::pClassPointer = NULL;
+//UClass* UActorFactoryWillowCoopPlayerStart::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowElevator
 // 0x0000 (0x0094 - 0x0094)
@@ -4655,7 +4655,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowElevator::pClassPointer = NULL;
+//UClass* UActorFactoryWillowElevator::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowPawn
 // 0x0004 (0x0080 - 0x007C)
@@ -4677,7 +4677,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowPawn::pClassPointer = NULL;
+//UClass* UActorFactoryWillowPawn::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowTrigger
 // 0x0000 (0x007C - 0x007C)
@@ -4698,7 +4698,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowTrigger::pClassPointer = NULL;
+//UClass* UActorFactoryWillowTrigger::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowVehicle
 // 0x0004 (0x0080 - 0x007C)
@@ -4720,7 +4720,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowVehicle::pClassPointer = NULL;
+//UClass* UActorFactoryWillowVehicle::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowVehicleFactory
 // 0x0000 (0x0080 - 0x0080)
@@ -4741,7 +4741,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowVehicleFactory::pClassPointer = NULL;
+//UClass* UActorFactoryWillowVehicleFactory::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryWillowWaypoint
 // 0x0000 (0x007C - 0x007C)
@@ -4762,7 +4762,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWillowWaypoint::pClassPointer = NULL;
+//UClass* UActorFactoryWillowWaypoint::pClassPointer = NULL;
 
 // Class WillowGame.AdvancedAxisDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -4790,7 +4790,7 @@ public:
 	};
 };
 
-UClass* UAdvancedAxisDefinition::pClassPointer = NULL;
+//UClass* UAdvancedAxisDefinition::pClassPointer = NULL;
 
 // Class WillowGame.AIPawnBalanceModifierDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -4814,7 +4814,7 @@ public:
 	};
 };
 
-UClass* UAIPawnBalanceModifierDefinition::pClassPointer = NULL;
+//UClass* UAIPawnBalanceModifierDefinition::pClassPointer = NULL;
 
 // Class WillowGame.AIResourceAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -4836,7 +4836,7 @@ public:
 	};
 };
 
-UClass* UAIResourceAttributeValueResolver::pClassPointer = NULL;
+//UClass* UAIResourceAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.AmmoDropWeightAttributeValueResolver
 // 0x0054 (0x0090 - 0x003C)
@@ -4863,7 +4863,7 @@ public:
 	};
 };
 
-UClass* UAmmoDropWeightAttributeValueResolver::pClassPointer = NULL;
+//UClass* UAmmoDropWeightAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.AmmoResourcePool
 // 0x0000 (0x0118 - 0x0118)
@@ -4887,7 +4887,7 @@ public:
 	float GetExtraAmmoRegen();
 };
 
-UClass* UAmmoResourcePool::pClassPointer = NULL;
+//UClass* UAmmoResourcePool::pClassPointer = NULL;
 
 // Class WillowGame.AmmoResourceUpgradeAttributeValueResolver
 // 0x0008 (0x0044 - 0x003C)
@@ -4910,7 +4910,7 @@ public:
 	};
 };
 
-UClass* UAmmoResourceUpgradeAttributeValueResolver::pClassPointer = NULL;
+//UClass* UAmmoResourceUpgradeAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.AssetLibraryManager
 // 0x00A8 (0x00E4 - 0x003C)
@@ -4942,7 +4942,7 @@ public:
 	int Encode(class UObject* Obj, int SKUID);
 };
 
-UClass* UAssetLibraryManager::pClassPointer = NULL;
+//UClass* UAssetLibraryManager::pClassPointer = NULL;
 
 // Class WillowGame.AttributePresentationDefinition
 // 0x0098 (0x00D4 - 0x003C)
@@ -5014,7 +5014,7 @@ public:
 	struct FString TranslateStatData(unsigned char Style, struct FModifierValuePresentationData* StatData);
 };
 
-UClass* UAttributePresentationDefinition::pClassPointer = NULL;
+//UClass* UAttributePresentationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponStatusEffectAttributePresentationDefinition
 // 0x000C (0x00E0 - 0x00D4)
@@ -5036,7 +5036,7 @@ public:
 	};
 };
 
-UClass* UWeaponStatusEffectAttributePresentationDefinition::pClassPointer = NULL;
+//UClass* UWeaponStatusEffectAttributePresentationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.AttributePresentationListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -5060,7 +5060,7 @@ public:
 	class UAttributePresentationDefinition* FindAttributePresentation(class UAttributeDefinition* Attribute);
 };
 
-UClass* UAttributePresentationListDefinition::pClassPointer = NULL;
+//UClass* UAttributePresentationListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.AttributeSlotEffectAttributeValueResolver
 // 0x000C (0x0048 - 0x003C)
@@ -5083,7 +5083,7 @@ public:
 	};
 };
 
-UClass* UAttributeSlotEffectAttributeValueResolver::pClassPointer = NULL;
+//UClass* UAttributeSlotEffectAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.AvatarAwardUtility
 // 0x0000 (0x003C - 0x003C)
@@ -5104,7 +5104,7 @@ public:
 	};
 };
 
-UClass* UAvatarAwardUtility::pClassPointer = NULL;
+//UClass* UAvatarAwardUtility::pClassPointer = NULL;
 
 // Class WillowGame.BadassAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -5126,7 +5126,7 @@ public:
 	};
 };
 
-UClass* UBadassAttributeValueResolver::pClassPointer = NULL;
+//UClass* UBadassAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.BadassRewardDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -5155,7 +5155,7 @@ public:
 	void UpdateCachedRewardIndex();
 };
 
-UClass* UBadassRewardDefinition::pClassPointer = NULL;
+//UClass* UBadassRewardDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BalanceModifierDefinition
 // 0x00B0 (0x00EC - 0x003C)
@@ -5204,7 +5204,7 @@ public:
 	float GetXPEarnedMultiplier(class AWillowPlayerController* PlayerGettingXP, unsigned char ExperienceType);
 };
 
-UClass* UBalanceModifierDefinition::pClassPointer = NULL;
+//UClass* UBalanceModifierDefinition::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ActivateInstancedMissionBehaviorSequence
 // 0x0010 (0x005C - 0x004C)
@@ -5230,7 +5230,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ActivateInstancedMissionBehaviorSequence::pClassPointer = NULL;
+//UClass* UBehavior_ActivateInstancedMissionBehaviorSequence::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ActivateMission
 // 0x0000 (0x004C - 0x004C)
@@ -5253,7 +5253,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ActivateMission::pClassPointer = NULL;
+//UClass* UBehavior_ActivateMission::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AddMissionDirectives
 // 0x000C (0x0058 - 0x004C)
@@ -5277,7 +5277,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AddMissionDirectives::pClassPointer = NULL;
+//UClass* UBehavior_AddMissionDirectives::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AddMissionTime
 // 0x0004 (0x0050 - 0x004C)
@@ -5301,7 +5301,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AddMissionTime::pClassPointer = NULL;
+//UClass* UBehavior_AddMissionTime::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AdvanceObjectiveSet
 // 0x0004 (0x0050 - 0x004C)
@@ -5325,7 +5325,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AdvanceObjectiveSet::pClassPointer = NULL;
+//UClass* UBehavior_AdvanceObjectiveSet::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AICloak
 // 0x0008 (0x0054 - 0x004C)
@@ -5350,7 +5350,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AICloak::pClassPointer = NULL;
+//UClass* UBehavior_AICloak::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AIThrowProjectileAtTarget
 // 0x005C (0x00A8 - 0x004C)
@@ -5385,7 +5385,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AIThrowProjectileAtTarget::pClassPointer = NULL;
+//UClass* UBehavior_AIThrowProjectileAtTarget::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AttemptItemCallout
 // 0x0010 (0x005C - 0x004C)
@@ -5413,7 +5413,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AttemptItemCallout::pClassPointer = NULL;
+//UClass* UBehavior_AttemptItemCallout::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AttemptStatusEffect
 // 0x0044 (0x0090 - 0x004C)
@@ -5450,7 +5450,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AttemptStatusEffect::pClassPointer = NULL;
+//UClass* UBehavior_AttemptStatusEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CauseDamage
 // 0x00A8 (0x00F4 - 0x004C)
@@ -5504,7 +5504,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CauseDamage::pClassPointer = NULL;
+//UClass* UBehavior_CauseDamage::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ClearObjective
 // 0x0004 (0x0050 - 0x004C)
@@ -5528,7 +5528,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ClearObjective::pClassPointer = NULL;
+//UClass* UBehavior_ClearObjective::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CompleteMission
 // 0x0000 (0x004C - 0x004C)
@@ -5551,7 +5551,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CompleteMission::pClassPointer = NULL;
+//UClass* UBehavior_CompleteMission::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_Conditional
 // 0x000C (0x0058 - 0x004C)
@@ -5575,7 +5575,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_Conditional::pClassPointer = NULL;
+//UClass* UBehavior_Conditional::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ConvertInstanceDataIntoPhysicsActor
 // 0x0024 (0x0070 - 0x004C)
@@ -5606,7 +5606,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ConvertInstanceDataIntoPhysicsActor::pClassPointer = NULL;
+//UClass* UBehavior_ConvertInstanceDataIntoPhysicsActor::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DecrementObjective
 // 0x0004 (0x0050 - 0x004C)
@@ -5630,7 +5630,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DecrementObjective::pClassPointer = NULL;
+//UClass* UBehavior_DecrementObjective::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_Explode
 // 0x00CC (0x0118 - 0x004C)
@@ -5688,7 +5688,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_Explode::pClassPointer = NULL;
+//UClass* UBehavior_Explode::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_FailMission
 // 0x0000 (0x004C - 0x004C)
@@ -5711,7 +5711,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_FailMission::pClassPointer = NULL;
+//UClass* UBehavior_FailMission::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GFxMovieRegister
 // 0x0014 (0x0060 - 0x004C)
@@ -5742,7 +5742,7 @@ public:
 	void AddToRoot(class UObject* Obj);
 };
 
-UClass* UBehavior_GFxMovieRegister::pClassPointer = NULL;
+//UClass* UBehavior_GFxMovieRegister::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GiveChallengeToPlayer
 // 0x0014 (0x0060 - 0x004C)
@@ -5768,7 +5768,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GiveChallengeToPlayer::pClassPointer = NULL;
+//UClass* UBehavior_GiveChallengeToPlayer::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IntMath
 // 0x0009 (0x0055 - 0x004C)
@@ -5795,7 +5795,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IntMath::pClassPointer = NULL;
+//UClass* UBehavior_IntMath::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IntSwitchRange
 // 0x000C (0x0058 - 0x004C)
@@ -5821,7 +5821,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IntSwitchRange::pClassPointer = NULL;
+//UClass* UBehavior_IntSwitchRange::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_MatchTransform
 // 0x0018 (0x0064 - 0x004C)
@@ -5847,7 +5847,7 @@ public:
 	void ApplyOffsets(class AActor* DestOwner, class UPrimitiveComponent* DestComponent, struct FVector SourceWorldLoc, struct FRotator SourceWorldRot);
 };
 
-UClass* UBehavior_MatchTransform::pClassPointer = NULL;
+//UClass* UBehavior_MatchTransform::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_MeleeAttack
 // 0x0004 (0x0050 - 0x004C)
@@ -5871,7 +5871,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_MeleeAttack::pClassPointer = NULL;
+//UClass* UBehavior_MeleeAttack::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_MissionRemoteEvent
 // 0x0008 (0x0054 - 0x004C)
@@ -5895,7 +5895,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_MissionRemoteEvent::pClassPointer = NULL;
+//UClass* UBehavior_MissionRemoteEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RandomBranch
 // 0x000C (0x0058 - 0x004C)
@@ -5919,7 +5919,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RandomBranch::pClassPointer = NULL;
+//UClass* UBehavior_RandomBranch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_Switch
 // 0x0004 (0x005C - 0x0058)
@@ -5943,7 +5943,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_Switch::pClassPointer = NULL;
+//UClass* UBehavior_Switch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RandomlySelectBehaviors
 // 0x0020 (0x006C - 0x004C)
@@ -5970,7 +5970,7 @@ public:
 	void SelectAndRunWeightedBehaviors(class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData);
 };
 
-UClass* UBehavior_RandomlySelectBehaviors::pClassPointer = NULL;
+//UClass* UBehavior_RandomlySelectBehaviors::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RemoteCustomEvent
 // 0x0040 (0x008C - 0x004C)
@@ -5996,7 +5996,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RemoteCustomEvent::pClassPointer = NULL;
+//UClass* UBehavior_RemoteCustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ScreenParticle
 // 0x0074 (0x00C0 - 0x004C)
@@ -6025,7 +6025,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ScreenParticle::pClassPointer = NULL;
+//UClass* UBehavior_ScreenParticle::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetShieldDamageResistanceType
 // 0x0004 (0x0050 - 0x004C)
@@ -6049,7 +6049,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetShieldDamageResistanceType::pClassPointer = NULL;
+//UClass* UBehavior_SetShieldDamageResistanceType::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetShieldTriggeredState
 // 0x0000 (0x004C - 0x004C)
@@ -6072,7 +6072,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetShieldTriggeredState::pClassPointer = NULL;
+//UClass* UBehavior_SetShieldTriggeredState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SimpleMath
 // 0x0009 (0x0055 - 0x004C)
@@ -6099,7 +6099,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SimpleMath::pClassPointer = NULL;
+//UClass* UBehavior_SimpleMath::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnFirstPersonParticleSystem
 // 0x0044 (0x0090 - 0x004C)
@@ -6132,7 +6132,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnFirstPersonParticleSystem::pClassPointer = NULL;
+//UClass* UBehavior_SpawnFirstPersonParticleSystem::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnFromPopulationSystem
 // 0x0060 (0x00AC - 0x004C)
@@ -6172,7 +6172,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnFromPopulationSystem::pClassPointer = NULL;
+//UClass* UBehavior_SpawnFromPopulationSystem::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnParticleSystem
 // 0x0045 (0x0091 - 0x004C)
@@ -6213,7 +6213,7 @@ public:
 	class UClass* GetEmitterClass();
 };
 
-UClass* UBehavior_SpawnParticleSystem::pClassPointer = NULL;
+//UClass* UBehavior_SpawnParticleSystem::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnProjectile
 // 0x00C0 (0x010C - 0x004C)
@@ -6277,7 +6277,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnProjectile::pClassPointer = NULL;
+//UClass* UBehavior_SpawnProjectile::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_StartMissionTimer
 // 0x0000 (0x004C - 0x004C)
@@ -6300,7 +6300,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_StartMissionTimer::pClassPointer = NULL;
+//UClass* UBehavior_StartMissionTimer::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_StopMissionTimer
 // 0x0000 (0x004C - 0x004C)
@@ -6323,7 +6323,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_StopMissionTimer::pClassPointer = NULL;
+//UClass* UBehavior_StopMissionTimer::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UpdateCollision
 // 0x0004 (0x0050 - 0x004C)
@@ -6347,7 +6347,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UpdateCollision::pClassPointer = NULL;
+//UClass* UBehavior_UpdateCollision::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UpdateMissionObjective
 // 0x0004 (0x0050 - 0x004C)
@@ -6371,7 +6371,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UpdateMissionObjective::pClassPointer = NULL;
+//UClass* UBehavior_UpdateMissionObjective::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_VectorMath
 // 0x0019 (0x0065 - 0x004C)
@@ -6398,7 +6398,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_VectorMath::pClassPointer = NULL;
+//UClass* UBehavior_VectorMath::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_VectorToLocalSpace
 // 0x0014 (0x0060 - 0x004C)
@@ -6424,7 +6424,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_VectorToLocalSpace::pClassPointer = NULL;
+//UClass* UBehavior_VectorToLocalSpace::pClassPointer = NULL;
 
 // Class WillowGame.BehaviorSequenceEnableByMission
 // 0x0027 (0x0068 - 0x0041)
@@ -6461,7 +6461,7 @@ public:
 	void eventMissionReactionLevelLoad(class AMissionTracker* Tracker, class UMissionDefinition* Mission);
 };
 
-UClass* UBehaviorSequenceEnableByMission::pClassPointer = NULL;
+//UClass* UBehaviorSequenceEnableByMission::pClassPointer = NULL;
 
 // Class WillowGame.BehaviorVolume
 // 0x007C (0x0280 - 0x0204)
@@ -6535,7 +6535,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ABehaviorVolume::pClassPointer = NULL;
+//UClass* ABehaviorVolume::pClassPointer = NULL;
 
 // Class WillowGame.BehaviorVolumeDefinition
 // 0x0020 (0x005C - 0x003C)
@@ -6572,7 +6572,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UBehaviorVolumeDefinition::pClassPointer = NULL;
+//UClass* UBehaviorVolumeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BlackMarketDefinition
 // 0x002C (0x0068 - 0x003C)
@@ -6601,7 +6601,7 @@ public:
 	bool CurrentLevelIsBelowMaxLevel(int CurrentLevel, class UBlackMarketUpgradeDefinition* UpgradeDefinition);
 };
 
-UClass* UBlackMarketDefinition::pClassPointer = NULL;
+//UClass* UBlackMarketDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BlackMarketUpgradeAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -6623,7 +6623,7 @@ public:
 	};
 };
 
-UClass* UBlackMarketUpgradeAttributeValueResolver::pClassPointer = NULL;
+//UClass* UBlackMarketUpgradeAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.BlackMarketUpgradeDefinition
 // 0x0024 (0x0060 - 0x003C)
@@ -6655,7 +6655,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UBlackMarketUpgradeDefinition::pClassPointer = NULL;
+//UClass* UBlackMarketUpgradeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BlackMarketUpgradeManager
 // 0x0008 (0x0190 - 0x0188)
@@ -6681,7 +6681,7 @@ public:
 	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
 };
 
-UClass* ABlackMarketUpgradeManager::pClassPointer = NULL;
+//UClass* ABlackMarketUpgradeManager::pClassPointer = NULL;
 
 // Class WillowGame.BodyClassDeathDefinition
 // 0x006C (0x00A8 - 0x003C)
@@ -6739,7 +6739,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UBodyClassDeathDefinition::pClassPointer = NULL;
+//UClass* UBodyClassDeathDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BodyClassDefinition
 // 0x03E4 (0x0420 - 0x003C)
@@ -6987,7 +6987,7 @@ public:
 	class UBodyClassDefinition* GetKnockbackBody();
 };
 
-UClass* UBodyClassDefinition::pClassPointer = NULL;
+//UClass* UBodyClassDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BodyHitRegionDefinition
 // 0x01A4 (0x01E0 - 0x003C)
@@ -7064,7 +7064,7 @@ public:
 	struct FImpactResponseEffect GetResponseForImpact(class UWillowImpactDefinition* ImpactType);
 };
 
-UClass* UBodyHitRegionDefinition::pClassPointer = NULL;
+//UClass* UBodyHitRegionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BodyRegionProtectionDefinition
 // 0x00A8 (0x00E4 - 0x003C)
@@ -7092,7 +7092,7 @@ public:
 	};
 };
 
-UClass* UBodyRegionProtectionDefinition::pClassPointer = NULL;
+//UClass* UBodyRegionProtectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BodyWeaponHoldDefinition
 // 0x0088 (0x00C4 - 0x003C)
@@ -7130,7 +7130,7 @@ public:
 	class USpecialMoveDefinition* GetWeaponSMD(unsigned char BodyAction, unsigned char BodyPosture, class UObject* SearchContext);
 };
 
-UClass* UBodyWeaponHoldDefinition::pClassPointer = NULL;
+//UClass* UBodyWeaponHoldDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BoundaryTurretRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -7151,7 +7151,7 @@ public:
 	};
 };
 
-UClass* UBoundaryTurretRenderingComponent::pClassPointer = NULL;
+//UClass* UBoundaryTurretRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.BulletListenerComponent
 // 0x000C (0x0228 - 0x021C)
@@ -7173,7 +7173,7 @@ public:
 	};
 };
 
-UClass* UBulletListenerComponent::pClassPointer = NULL;
+//UClass* UBulletListenerComponent::pClassPointer = NULL;
 
 // Class WillowGame.CellsNavigator
 // 0x0028 (0x0064 - 0x003C)
@@ -7205,7 +7205,7 @@ public:
 	void SetupCell(struct FString CellName, float X, float Y, float Width, float Height);
 };
 
-UClass* UCellsNavigator::pClassPointer = NULL;
+//UClass* UCellsNavigator::pClassPointer = NULL;
 
 // Class WillowGame.ChallengeCategoryDefinition
 // 0x0010 (0x004C - 0x003C)
@@ -7228,7 +7228,7 @@ public:
 	};
 };
 
-UClass* UChallengeCategoryDefinition::pClassPointer = NULL;
+//UClass* UChallengeCategoryDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ChallengeConditionDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -7252,7 +7252,7 @@ public:
 	};
 };
 
-UClass* UChallengeConditionDefinition::pClassPointer = NULL;
+//UClass* UChallengeConditionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ChallengeDefinition
 // 0x0084 (0x00C0 - 0x003C)
@@ -7298,7 +7298,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UChallengeDefinition::pClassPointer = NULL;
+//UClass* UChallengeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ChallengeFeedbackMessage
 // 0x001B (0x0064 - 0x0049)
@@ -7323,7 +7323,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UChallengeFeedbackMessage::pClassPointer = NULL;
+//UClass* UChallengeFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.ChallengeManager
 // 0x0050 (0x01D8 - 0x0188)
@@ -7354,7 +7354,7 @@ public:
 	void RegisterChallenge(struct FChallengeData* TheChallenge);
 };
 
-UClass* AChallengeManager::pClassPointer = NULL;
+//UClass* AChallengeManager::pClassPointer = NULL;
 
 // Class WillowGame.ChassisDefinition
 // 0x0074 (0x00B0 - 0x003C)
@@ -7394,7 +7394,7 @@ public:
 	void GetHitRegions(TArray< class UBodyHitRegionDefinition* >* Regions, class UBodyHitRegionDefinition** DefaultRegion);
 };
 
-UClass* UChassisDefinition::pClassPointer = NULL;
+//UClass* UChassisDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ClassDropWeightValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -7416,7 +7416,7 @@ public:
 	};
 };
 
-UClass* UClassDropWeightValueResolver::pClassPointer = NULL;
+//UClass* UClassDropWeightValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.CombatMusicManager
 // 0x0040 (0x007C - 0x003C)
@@ -7466,7 +7466,7 @@ public:
 	void PlayerTargetedByEnemy(class AActor* Player, class AWillowMind* Enemy);
 };
 
-UClass* UCombatMusicManager::pClassPointer = NULL;
+//UClass* UCombatMusicManager::pClassPointer = NULL;
 
 // Class WillowGame.CombatMusicParameters
 // 0x007C (0x00B8 - 0x003C)
@@ -7518,7 +7518,7 @@ public:
 	};
 };
 
-UClass* UCombatMusicParameters::pClassPointer = NULL;
+//UClass* UCombatMusicParameters::pClassPointer = NULL;
 
 // Class WillowGame.CoordinatedEffectDefinition
 // 0x0050 (0x008C - 0x003C)
@@ -7555,7 +7555,7 @@ public:
 	};
 };
 
-UClass* UCoordinatedEffectDefinition::pClassPointer = NULL;
+//UClass* UCoordinatedEffectDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CurrencyAttributeValueResolver
 // 0x0001 (0x003D - 0x003C)
@@ -7577,7 +7577,7 @@ public:
 	};
 };
 
-UClass* UCurrencyAttributeValueResolver::pClassPointer = NULL;
+//UClass* UCurrencyAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.CurrencyListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -7599,7 +7599,7 @@ public:
 	};
 };
 
-UClass* UCurrencyListDefinition::pClassPointer = NULL;
+//UClass* UCurrencyListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CurrentProficiencySkillAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -7622,7 +7622,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UCurrentProficiencySkillAttributeContextResolver::pClassPointer = NULL;
+//UClass* UCurrentProficiencySkillAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationData
 // 0x0010 (0x004C - 0x003C)
@@ -7651,7 +7651,7 @@ public:
 	void ApplyCustomizationToDataSets(TArray< struct FPointer > DataSets, class UObject* InstanceDataOwner);
 };
 
-UClass* UCustomizationData::pClassPointer = NULL;
+//UClass* UCustomizationData::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationData_Head
 // 0x000C (0x0058 - 0x004C)
@@ -7676,7 +7676,7 @@ public:
 	void ApplyCustomizationToInstanceDataSet(struct FPointer TheDataSet, class UObject* InstanceDataOwner);
 };
 
-UClass* UCustomizationData_Head::pClassPointer = NULL;
+//UClass* UCustomizationData_Head::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationData_Skin
 // 0x0008 (0x0054 - 0x004C)
@@ -7702,7 +7702,7 @@ public:
 	void ApplyCustomizationToInstanceDataSet(struct FPointer TheDataSet, class UObject* InstanceDataOwner);
 };
 
-UClass* UCustomizationData_Skin::pClassPointer = NULL;
+//UClass* UCustomizationData_Skin::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationDefinition
 // 0x0054 (0x0090 - 0x003C)
@@ -7747,7 +7747,7 @@ public:
 	void GetAvailableCustomizationsForPlayer(class AWillowPlayerController* PC, class UClass* RequiredType, unsigned long bDebugAllowLocked, class UWillowCharacterClassDefinition* CharacterClassOverride, TArray< class UCustomizationDefinition* >* AvailableCustomizations, TArray< int >* AvailableCustomizationsBeenSeen, int* LockedCustomizationCount);
 };
 
-UClass* UCustomizationDefinition::pClassPointer = NULL;
+//UClass* UCustomizationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationType
 // 0x0014 (0x0050 - 0x003C)
@@ -7771,7 +7771,7 @@ public:
 	};
 };
 
-UClass* UCustomizationType::pClassPointer = NULL;
+//UClass* UCustomizationType::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationType_Head
 // 0x0000 (0x0050 - 0x0050)
@@ -7792,7 +7792,7 @@ public:
 	};
 };
 
-UClass* UCustomizationType_Head::pClassPointer = NULL;
+//UClass* UCustomizationType_Head::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationType_Skin
 // 0x0000 (0x0050 - 0x0050)
@@ -7813,7 +7813,7 @@ public:
 	};
 };
 
-UClass* UCustomizationType_Skin::pClassPointer = NULL;
+//UClass* UCustomizationType_Skin::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage
 // 0x000C (0x0048 - 0x003C)
@@ -7835,7 +7835,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage::pClassPointer = NULL;
+//UClass* UCustomizationUsage::pClassPointer = NULL;
 
 // Class WillowGame.CustomSkeletalMeshComponent
 // 0x0004 (0x06B0 - 0x06AC)
@@ -7857,7 +7857,7 @@ public:
 	};
 };
 
-UClass* UCustomSkeletalMeshComponent::pClassPointer = NULL;
+//UClass* UCustomSkeletalMeshComponent::pClassPointer = NULL;
 
 // Class WillowGame.DamageOverTimeManager
 // 0x001C (0x0058 - 0x003C)
@@ -7884,7 +7884,7 @@ public:
 	void AddSourceObject(class UObject* SourceObject, struct FVector SourceLocation, class AController* InstigatedByController, class UExplosionDefinition* ExplosionDef, int ExplosionScaleIndex, class UIDamageBehavior* DamageContext, float InitialDamageRadius, float Damage, unsigned long bFullDamage, float Momentum, class UClass* DamageSource, class UDamageTypeDefinition* DamageTypeDef, class UImpactDefinition* ImpactDefinition, unsigned long bCanDamageFriendlies, class UIDamageCauser* DamageCauser, unsigned long bSkipTraceTest, class UObject* HitObject, float BarrelSourceTime, float PlantSourceTime, TArray< class AActor* > ActorsHurt);
 };
 
-UClass* UDamageOverTimeManager::pClassPointer = NULL;
+//UClass* UDamageOverTimeManager::pClassPointer = NULL;
 
 // Class WillowGame.DamageTypeAttributeValueResolver
 // 0x001C (0x0058 - 0x003C)
@@ -7907,7 +7907,7 @@ public:
 	};
 };
 
-UClass* UDamageTypeAttributeValueResolver::pClassPointer = NULL;
+//UClass* UDamageTypeAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.DefinitionGlobalsDefinition
 // 0x0014 (0x0050 - 0x003C)
@@ -7934,7 +7934,7 @@ public:
 	struct FColor GetColor(class UClass* DefClass);
 };
 
-UClass* UDefinitionGlobalsDefinition::pClassPointer = NULL;
+//UClass* UDefinitionGlobalsDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DesignerAttributeDefinition
 // 0x0024 (0x0080 - 0x005C)
@@ -7960,7 +7960,7 @@ public:
 	};
 };
 
-UClass* UDesignerAttributeDefinition::pClassPointer = NULL;
+//UClass* UDesignerAttributeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DevelopmentDownloadableContentEnumerator
 // 0x0000 (0x0098 - 0x0098)
@@ -7983,7 +7983,7 @@ public:
 	void InstallAllDLC();
 };
 
-UClass* UDevelopmentDownloadableContentEnumerator::pClassPointer = NULL;
+//UClass* UDevelopmentDownloadableContentEnumerator::pClassPointer = NULL;
 
 // Class WillowGame.DialogNameTagExpressionEvaluator
 // 0x0008 (0x0044 - 0x003C)
@@ -8008,7 +8008,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UDialogNameTagExpressionEvaluator::pClassPointer = NULL;
+//UClass* UDialogNameTagExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.DLCLegacyPlayerClassIdentifierDefinition
 // 0x0020 (0x005C - 0x003C)
@@ -8033,7 +8033,7 @@ public:
 	};
 };
 
-UClass* UDLCLegacyPlayerClassIdentifierDefinition::pClassPointer = NULL;
+//UClass* UDLCLegacyPlayerClassIdentifierDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DlcTmsHolder
 // 0x0018 (0x0054 - 0x003C)
@@ -8056,7 +8056,7 @@ public:
 	};
 };
 
-UClass* UDlcTmsHolder::pClassPointer = NULL;
+//UClass* UDlcTmsHolder::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableAssetLibraryDefinition
 // 0x0020 (0x005C - 0x003C)
@@ -8080,7 +8080,7 @@ public:
 	};
 };
 
-UClass* UDownloadableAssetLibraryDefinition::pClassPointer = NULL;
+//UClass* UDownloadableAssetLibraryDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableContentDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -8111,7 +8111,7 @@ public:
 	bool IsLicensed(class APlayerController* Controller);
 };
 
-UClass* UDownloadableContentDefinition::pClassPointer = NULL;
+//UClass* UDownloadableContentDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableBalanceModifierDefinition
 // 0x000C (0x0064 - 0x0058)
@@ -8135,7 +8135,7 @@ public:
 	};
 };
 
-UClass* UDownloadableBalanceModifierDefinition::pClassPointer = NULL;
+//UClass* UDownloadableBalanceModifierDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableCharacterDefinition
 // 0x0000 (0x0058 - 0x0058)
@@ -8158,7 +8158,7 @@ public:
 	bool CanPlayAs(class APlayerController* Controller);
 };
 
-UClass* UDownloadableCharacterDefinition::pClassPointer = NULL;
+//UClass* UDownloadableCharacterDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableCustomizationSetDefinition
 // 0x0008 (0x0060 - 0x0058)
@@ -8183,7 +8183,7 @@ public:
 	bool CanUse(class APlayerController* Controller);
 };
 
-UClass* UDownloadableCustomizationSetDefinition::pClassPointer = NULL;
+//UClass* UDownloadableCustomizationSetDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableExpansionDefinition
 // 0x0050 (0x00A8 - 0x0058)
@@ -8219,7 +8219,7 @@ public:
 	bool CanTravelTo(class APlayerController* Controller);
 };
 
-UClass* UDownloadableExpansionDefinition::pClassPointer = NULL;
+//UClass* UDownloadableExpansionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableItemSetDefinition
 // 0x001C (0x0074 - 0x0058)
@@ -8250,7 +8250,7 @@ public:
 	bool CanUse(class APlayerController* Controller);
 };
 
-UClass* UDownloadableItemSetDefinition::pClassPointer = NULL;
+//UClass* UDownloadableItemSetDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableVehicleDefinition
 // 0x0000 (0x0058 - 0x0058)
@@ -8273,7 +8273,7 @@ public:
 	bool CanDrive(class APlayerController* Controller);
 };
 
-UClass* UDownloadableVehicleDefinition::pClassPointer = NULL;
+//UClass* UDownloadableVehicleDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadablePackageDefinition
 // 0x003C (0x0078 - 0x003C)
@@ -8307,7 +8307,7 @@ public:
 	class UDownloadableContentDefinition* GetContentDefinitionById(int ContentId);
 };
 
-UClass* UDownloadablePackageDefinition::pClassPointer = NULL;
+//UClass* UDownloadablePackageDefinition::pClassPointer = NULL;
 
 // Class WillowGame.DownloadablePackageLicense
 // 0x0004 (0x0040 - 0x003C)
@@ -8329,7 +8329,7 @@ public:
 	};
 };
 
-UClass* UDownloadablePackageLicense::pClassPointer = NULL;
+//UClass* UDownloadablePackageLicense::pClassPointer = NULL;
 
 // Class WillowGame.DownloadablePackageLicenseItem
 // 0x0004 (0x0040 - 0x003C)
@@ -8351,7 +8351,7 @@ public:
 	};
 };
 
-UClass* UDownloadablePackageLicenseItem::pClassPointer = NULL;
+//UClass* UDownloadablePackageLicenseItem::pClassPointer = NULL;
 
 // Class WillowGame.GoldenKeyLicenseItem
 // 0x0008 (0x0048 - 0x0040)
@@ -8374,7 +8374,7 @@ public:
 	};
 };
 
-UClass* UGoldenKeyLicenseItem::pClassPointer = NULL;
+//UClass* UGoldenKeyLicenseItem::pClassPointer = NULL;
 
 // Class WillowGame.MarketingUnlockLicenseItem
 // 0x0004 (0x0044 - 0x0040)
@@ -8396,7 +8396,7 @@ public:
 	};
 };
 
-UClass* UMarketingUnlockLicenseItem::pClassPointer = NULL;
+//UClass* UMarketingUnlockLicenseItem::pClassPointer = NULL;
 
 // Class WillowGame.EffectCollectionDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -8420,7 +8420,7 @@ public:
 	class UParticleSystem* GetParticleEffect(class UObject* ContextObject);
 };
 
-UClass* UEffectCollectionDefinition::pClassPointer = NULL;
+//UClass* UEffectCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.EnvironmentTagDefinition
 // 0x0000 (0x003C - 0x003C)
@@ -8441,7 +8441,7 @@ public:
 	};
 };
 
-UClass* UEnvironmentTagDefinition::pClassPointer = NULL;
+//UClass* UEnvironmentTagDefinition::pClassPointer = NULL;
 
 // Class WillowGame.EquippedInventoryAttributeContextResolver
 // 0x0001 (0x003D - 0x003C)
@@ -8463,7 +8463,7 @@ public:
 	};
 };
 
-UClass* UEquippedInventoryAttributeContextResolver::pClassPointer = NULL;
+//UClass* UEquippedInventoryAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.EventFilter_OnTouch
 // 0x0004 (0x0044 - 0x0040)
@@ -8494,7 +8494,7 @@ public:
 	bool PassesAllegianceTests(class UObject* ContextObject, class UObject* Instigator, unsigned long IsPawn, unsigned long IsVehicle, unsigned long IsProjectile);
 };
 
-UClass* UEventFilter_OnTouch::pClassPointer = NULL;
+//UClass* UEventFilter_OnTouch::pClassPointer = NULL;
 
 // Class WillowGame.ExperienceResourcePool
 // 0x003C (0x0154 - 0x0118)
@@ -8526,7 +8526,7 @@ public:
 	void ApplyExpPointsToExpLevel(unsigned long bCheated);
 };
 
-UClass* UExperienceResourcePool::pClassPointer = NULL;
+//UClass* UExperienceResourcePool::pClassPointer = NULL;
 
 // Class WillowGame.ExplosionCollectionDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -8550,7 +8550,7 @@ public:
 	class UExplosionDefinition* GetExplosion(class UObject* ContextObject);
 };
 
-UClass* UExplosionCollectionDefinition::pClassPointer = NULL;
+//UClass* UExplosionCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ExplosionDefinition
 // 0x0050 (0x008C - 0x003C)
@@ -8596,7 +8596,7 @@ public:
 	void ToggleExplosionDebug();
 };
 
-UClass* UExplosionDefinition::pClassPointer = NULL;
+//UClass* UExplosionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStationsListOrder
 // 0x0010 (0x004C - 0x003C)
@@ -8619,7 +8619,7 @@ public:
 	};
 };
 
-UClass* UFastTravelStationsListOrder::pClassPointer = NULL;
+//UClass* UFastTravelStationsListOrder::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStationsLookup
 // 0x0018 (0x0054 - 0x003C)
@@ -8655,7 +8655,7 @@ public:
 	class UFastTravelStationDefinition* FindFastTravelStationLookupObject(struct FName StationDefinitionName);
 };
 
-UClass* UFastTravelStationsLookup::pClassPointer = NULL;
+//UClass* UFastTravelStationsLookup::pClassPointer = NULL;
 
 // Class WillowGame.FiringModeDefinition
 // 0x014C (0x0188 - 0x003C)
@@ -8737,7 +8737,7 @@ public:
 	int GetImpactResponseIndex(unsigned char DamageSurfaceType);
 };
 
-UClass* UFiringModeDefinition::pClassPointer = NULL;
+//UClass* UFiringModeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.FiringModeSoundDefinition
 // 0x0040 (0x007C - 0x003C)
@@ -8768,7 +8768,7 @@ public:
 	};
 };
 
-UClass* UFiringModeSoundDefinition::pClassPointer = NULL;
+//UClass* UFiringModeSoundDefinition::pClassPointer = NULL;
 
 // Class WillowGame.FlyerBlockingVolume
 // 0x0000 (0x01C0 - 0x01C0)
@@ -8791,7 +8791,7 @@ public:
 	bool StopsProjectile(class AProjectile* P);
 };
 
-UClass* AFlyerBlockingVolume::pClassPointer = NULL;
+//UClass* AFlyerBlockingVolume::pClassPointer = NULL;
 
 // Class WillowGame.FocusCameraDefinition
 // 0x0010 (0x004C - 0x003C)
@@ -8816,7 +8816,7 @@ public:
 	};
 };
 
-UClass* UFocusCameraDefinition::pClassPointer = NULL;
+//UClass* UFocusCameraDefinition::pClassPointer = NULL;
 
 // Class WillowGame.FractalViewWanderingDefinition
 // 0x0010 (0x004C - 0x003C)
@@ -8841,7 +8841,7 @@ public:
 	void GenerateNewRandomPoints();
 };
 
-UClass* UFractalViewWanderingDefinition::pClassPointer = NULL;
+//UClass* UFractalViewWanderingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GameBalanceDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -8863,7 +8863,7 @@ public:
 	};
 };
 
-UClass* UGameBalanceDefinition::pClassPointer = NULL;
+//UClass* UGameBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GameReleaseDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -8886,7 +8886,7 @@ public:
 	};
 };
 
-UClass* UGameReleaseDefinition::pClassPointer = NULL;
+//UClass* UGameReleaseDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GearLikenessMeshComponent
 // 0x000C (0x06B8 - 0x06AC)
@@ -8912,7 +8912,7 @@ public:
 	void RefreshGearLikenessComponents(class AActor* ComponentUser, unsigned char Mode, struct FInstanceDataSet* InstanceDataState, struct FReplicatedInstanceDataState* ReplicatedInstanceDataState);
 };
 
-UClass* UGearLikenessMeshComponent::pClassPointer = NULL;
+//UClass* UGearLikenessMeshComponent::pClassPointer = NULL;
 
 // Class WillowGame.GenericReviveMessageDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -8935,7 +8935,7 @@ public:
 	};
 };
 
-UClass* UGenericReviveMessageDefinition::pClassPointer = NULL;
+//UClass* UGenericReviveMessageDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GlobalAttributeValueResolver
 // 0x0001 (0x003D - 0x003C)
@@ -8960,7 +8960,7 @@ public:
 	void SetGlobalAttributeValue(unsigned char Attribute, float Value);
 };
 
-UClass* UGlobalAttributeValueResolver::pClassPointer = NULL;
+//UClass* UGlobalAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.GlobalsDefinition
 // 0x0968 (0x09AC - 0x0044)
@@ -9351,7 +9351,7 @@ public:
 	unsigned char GetRarityForLevel(int Level);
 };
 
-UClass* UGlobalsDefinition::pClassPointer = NULL;
+//UClass* UGlobalsDefinition::pClassPointer = NULL;
 
 // Class WillowGame.HitRegionHelper
 // 0x000C (0x0048 - 0x003C)
@@ -9388,7 +9388,7 @@ public:
 	void GetHitRegionHealthValues(class AActor* Owner, class UBodyHitRegionDefinition* HitRegion, float HitRegionHealthMultiplier, float* Health, float* MaxHealth);
 };
 
-UClass* UHitRegionHelper::pClassPointer = NULL;
+//UClass* UHitRegionHelper::pClassPointer = NULL;
 
 // Class WillowGame.IAnimProvider
 // 0x0000 (0x003C - 0x003C)
@@ -9411,7 +9411,7 @@ public:
 	void GetAnims(TArray< class UGearboxAnimDefinition* >* OutAnims);
 };
 
-UClass* UIAnimProvider::pClassPointer = NULL;
+//UClass* UIAnimProvider::pClassPointer = NULL;
 
 // Class WillowGame.IAttachableActor
 // 0x0000 (0x003C - 0x003C)
@@ -9437,7 +9437,7 @@ public:
 	bool IsAttached();
 };
 
-UClass* UIAttachableActor::pClassPointer = NULL;
+//UClass* UIAttachableActor::pClassPointer = NULL;
 
 // Class WillowGame.IBodyPawn
 // 0x0000 (0x003C - 0x003C)
@@ -9462,7 +9462,7 @@ public:
 	class AWillowPawn* GetAWillowPawn();
 };
 
-UClass* UIBodyPawn::pClassPointer = NULL;
+//UClass* UIBodyPawn::pClassPointer = NULL;
 
 // Class WillowGame.IControllerLocator
 // 0x0000 (0x003C - 0x003C)
@@ -9487,7 +9487,7 @@ public:
 	class AController* GetABaseController();
 };
 
-UClass* UIControllerLocator::pClassPointer = NULL;
+//UClass* UIControllerLocator::pClassPointer = NULL;
 
 // Class WillowGame.ICustomizable
 // 0x0000 (0x003C - 0x003C)
@@ -9515,7 +9515,7 @@ public:
 	void GetCustomizableInstanceDataSets(TArray< struct FPointer >* OutData);
 };
 
-UClass* UICustomizable::pClassPointer = NULL;
+//UClass* UICustomizable::pClassPointer = NULL;
 
 // Class WillowGame.IDamageable
 // 0x0000 (0x003C - 0x003C)
@@ -9545,7 +9545,7 @@ public:
 	void NotifyDamageTaken(struct FDamageEventSummary* DamageSummary);
 };
 
-UClass* UIDamageable::pClassPointer = NULL;
+//UClass* UIDamageable::pClassPointer = NULL;
 
 // Class WillowGame.IDamageSurface
 // 0x0000 (0x003C - 0x003C)
@@ -9570,7 +9570,7 @@ public:
 	unsigned char GetDefaultDamageSurfaceType();
 };
 
-UClass* UIDamageSurface::pClassPointer = NULL;
+//UClass* UIDamageSurface::pClassPointer = NULL;
 
 // Class WillowGame.IDesignerAttributeProvider
 // 0x0000 (0x003C - 0x003C)
@@ -9593,7 +9593,7 @@ public:
 	class UInstancedDesignerAttribute* eventGetInstancedDesignerAttribute(class UAttributeDefinition* Definition, struct FName DesignerAttributeName, unsigned char AttributeDataType);
 };
 
-UClass* UIDesignerAttributeProvider::pClassPointer = NULL;
+//UClass* UIDesignerAttributeProvider::pClassPointer = NULL;
 
 // Class WillowGame.IDlcLicensableObject
 // 0x0000 (0x003C - 0x003C)
@@ -9616,7 +9616,7 @@ public:
 	class UDownloadableContentDefinition* GetDownloadableContentDefinition();
 };
 
-UClass* UIDlcLicensableObject::pClassPointer = NULL;
+//UClass* UIDlcLicensableObject::pClassPointer = NULL;
 
 // Class WillowGame.IDlcLicenseObject
 // 0x0000 (0x003C - 0x003C)
@@ -9637,7 +9637,7 @@ public:
 	};
 };
 
-UClass* UIDlcLicenseObject::pClassPointer = NULL;
+//UClass* UIDlcLicenseObject::pClassPointer = NULL;
 
 // Class WillowGame.IDrunkenProjectile
 // 0x0000 (0x003C - 0x003C)
@@ -9660,7 +9660,7 @@ public:
 	void SetDrunkenRandomNumberSeed(int RandomNumberSeed);
 };
 
-UClass* UIDrunkenProjectile::pClassPointer = NULL;
+//UClass* UIDrunkenProjectile::pClassPointer = NULL;
 
 // Class WillowGame.IDynamicObstacle
 // 0x0000 (0x003C - 0x003C)
@@ -9690,7 +9690,7 @@ public:
 	bool IsObstacleActive();
 };
 
-UClass* UIDynamicObstacle::pClassPointer = NULL;
+//UClass* UIDynamicObstacle::pClassPointer = NULL;
 
 // Class WillowGame.IExtraImpactEffects
 // 0x0000 (0x003C - 0x003C)
@@ -9714,7 +9714,7 @@ public:
 	void SetExtraImpactEffect(unsigned char BulletFromClip, class UWillowImpactDefinition* Definition);
 };
 
-UClass* UIExtraImpactEffects::pClassPointer = NULL;
+//UClass* UIExtraImpactEffects::pClassPointer = NULL;
 
 // Class WillowGame.IFocusable
 // 0x0000 (0x003C - 0x003C)
@@ -9741,7 +9741,7 @@ public:
 	void BeginFocus(class APawn* User);
 };
 
-UClass* UIFocusable::pClassPointer = NULL;
+//UClass* UIFocusable::pClassPointer = NULL;
 
 // Class WillowGame.IGearLikenessConsumer
 // 0x0000 (0x003C - 0x003C)
@@ -9765,7 +9765,7 @@ public:
 	void AssumeLikenessOf(unsigned char Source, unsigned char GroupIndex, class UGearLikenessMeshComponent* MeshComp);
 };
 
-UClass* UIGearLikenessConsumer::pClassPointer = NULL;
+//UClass* UIGearLikenessConsumer::pClassPointer = NULL;
 
 // Class WillowGame.IHealable
 // 0x0000 (0x003C - 0x003C)
@@ -9790,7 +9790,7 @@ public:
 	void FullyReplenishLife();
 };
 
-UClass* UIHealable::pClassPointer = NULL;
+//UClass* UIHealable::pClassPointer = NULL;
 
 // Class WillowGame.IHitRegionConsumer
 // 0x0000 (0x003C - 0x003C)
@@ -9821,7 +9821,7 @@ public:
 	class UBodyHitRegionDefinition* GetHitRegionForTakenDamage(class AController* InstigatedBy, struct FTraceHitInfo HitInfo);
 };
 
-UClass* UIHitRegionConsumer::pClassPointer = NULL;
+//UClass* UIHitRegionConsumer::pClassPointer = NULL;
 
 // Class WillowGame.IHitRegionInfoProvider
 // 0x0000 (0x003C - 0x003C)
@@ -9844,7 +9844,7 @@ public:
 	void GetHitRegions(TArray< class UBodyHitRegionDefinition* >* Regions, class UBodyHitRegionDefinition** DefaultRegion);
 };
 
-UClass* UIHitRegionInfoProvider::pClassPointer = NULL;
+//UClass* UIHitRegionInfoProvider::pClassPointer = NULL;
 
 // Class WillowGame.IStatusEffectTarget
 // 0x0000 (0x003C - 0x003C)
@@ -9876,7 +9876,7 @@ public:
 	class UStatusEffectsComponent* GetStatusEffectsComponent();
 };
 
-UClass* UIStatusEffectTarget::pClassPointer = NULL;
+//UClass* UIStatusEffectTarget::pClassPointer = NULL;
 
 // Class WillowGame.IItemCardable
 // 0x0000 (0x003C - 0x003C)
@@ -9913,7 +9913,7 @@ public:
 	void GetInventoryStatNumberData(class AWillowInventory* CompareAgainstThing, class AWillowPlayerController* WPCContext, TArray< struct FTopStatData >* Stats);
 };
 
-UClass* UIItemCardable::pClassPointer = NULL;
+//UClass* UIItemCardable::pClassPointer = NULL;
 
 // Class WillowGame.ILevelChallengeObject
 // 0x0000 (0x003C - 0x003C)
@@ -9939,7 +9939,7 @@ public:
 	class UChallengeDefinition* GetAssociatedChallenge();
 };
 
-UClass* UILevelChallengeObject::pClassPointer = NULL;
+//UClass* UILevelChallengeObject::pClassPointer = NULL;
 
 // Class WillowGame.ILootable
 // 0x0000 (0x003C - 0x003C)
@@ -9964,7 +9964,7 @@ public:
 	bool GetAttachedLoot(TArray< struct FSpawnedAttachedLootData >* SpawnedLoot);
 };
 
-UClass* UILootable::pClassPointer = NULL;
+//UClass* UILootable::pClassPointer = NULL;
 
 // Class WillowGame.IMapDisplayInfo
 // 0x0000 (0x003C - 0x003C)
@@ -9988,7 +9988,7 @@ public:
 	struct FString eventGetMapDisplayHeader();
 };
 
-UClass* UIMapDisplayInfo::pClassPointer = NULL;
+//UClass* UIMapDisplayInfo::pClassPointer = NULL;
 
 // Class WillowGame.IMaterialFadeBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -10012,7 +10012,7 @@ public:
 	void Behavior_MaterialScalarFade(struct FName ScalarName, float StartValue, float EndValue, float FadeTime);
 };
 
-UClass* UIMaterialFadeBehavior::pClassPointer = NULL;
+//UClass* UIMaterialFadeBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IMeleeAttacker
 // 0x0000 (0x003C - 0x003C)
@@ -10044,7 +10044,7 @@ public:
 	class AActor* GetMeleeTraceSourceActor();
 };
 
-UClass* UIMeleeAttacker::pClassPointer = NULL;
+//UClass* UIMeleeAttacker::pClassPointer = NULL;
 
 // Class WillowGame.IMission
 // 0x0000 (0x003C - 0x003C)
@@ -10072,7 +10072,7 @@ public:
 	void eventMissionReactionLevelLoad(class AMissionTracker* Tracker, class UMissionDefinition* Mission);
 };
 
-UClass* UIMission::pClassPointer = NULL;
+//UClass* UIMission::pClassPointer = NULL;
 
 // Class WillowGame.IMissionDirector
 // 0x0000 (0x003C - 0x003C)
@@ -10108,7 +10108,7 @@ public:
 	void eventAddMissionDirective(unsigned long bRegisterDirector, struct FMissionDirectorData* NewDirective);
 };
 
-UClass* UIMissionDirector::pClassPointer = NULL;
+//UClass* UIMissionDirector::pClassPointer = NULL;
 
 // Class WillowGame.IMissionInventory
 // 0x0000 (0x003C - 0x003C)
@@ -10129,7 +10129,7 @@ public:
 	};
 };
 
-UClass* UIMissionInventory::pClassPointer = NULL;
+//UClass* UIMissionInventory::pClassPointer = NULL;
 
 // Class WillowGame.IMissionObjective
 // 0x0000 (0x003C - 0x003C)
@@ -10152,7 +10152,7 @@ public:
 	int eventGetObjectiveBit();
 };
 
-UClass* UIMissionObjective::pClassPointer = NULL;
+//UClass* UIMissionObjective::pClassPointer = NULL;
 
 // Class WillowGame.InjuredDefinition
 // 0x0140 (0x017C - 0x003C)
@@ -10232,7 +10232,7 @@ public:
 	};
 };
 
-UClass* UInjuredDefinition::pClassPointer = NULL;
+//UClass* UInjuredDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InputActionDefinition
 // 0x0024 (0x0060 - 0x003C)
@@ -10257,7 +10257,7 @@ public:
 	};
 };
 
-UClass* UInputActionDefinition::pClassPointer = NULL;
+//UClass* UInputActionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InputContextDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -10282,7 +10282,7 @@ public:
 	bool ContainsInputAction(class UInputActionDefinition* Action);
 };
 
-UClass* UInputContextDefinition::pClassPointer = NULL;
+//UClass* UInputContextDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InputDeviceCollectionDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -10307,7 +10307,7 @@ public:
 	};
 };
 
-UClass* UInputDeviceCollectionDefinition::pClassPointer = NULL;
+//UClass* UInputDeviceCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InputDeviceDefinition
 // 0x0020 (0x005C - 0x003C)
@@ -10331,7 +10331,7 @@ public:
 	};
 };
 
-UClass* UInputDeviceDefinition::pClassPointer = NULL;
+//UClass* UInputDeviceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InputRemappingDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -10357,7 +10357,7 @@ public:
 	};
 };
 
-UClass* UInputRemappingDefinition::pClassPointer = NULL;
+//UClass* UInputRemappingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InputSetDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -10379,7 +10379,7 @@ public:
 	};
 };
 
-UClass* UInputSetDefinition::pClassPointer = NULL;
+//UClass* UInputSetDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InRangeOfInjuredPlayerExpressionEvaluator
 // 0x0000 (0x003C - 0x003C)
@@ -10402,7 +10402,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UInRangeOfInjuredPlayerExpressionEvaluator::pClassPointer = NULL;
+//UClass* UInRangeOfInjuredPlayerExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.InstancedDesignerAttribute
 // 0x0058 (0x0094 - 0x003C)
@@ -10440,7 +10440,7 @@ public:
 	void Initialize(class UDesignerAttributeDefinition* InDefinition, class AActor* ContextSource);
 };
 
-UClass* UInstancedDesignerAttribute::pClassPointer = NULL;
+//UClass* UInstancedDesignerAttribute::pClassPointer = NULL;
 
 // Class WillowGame.InteractionIconDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -10464,7 +10464,7 @@ public:
 	};
 };
 
-UClass* UInteractionIconDefinition::pClassPointer = NULL;
+//UClass* UInteractionIconDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InteractionProxy
 // 0x0018 (0x01AC - 0x0194)
@@ -10509,7 +10509,7 @@ public:
 	void ToggleInteractionDebug();
 };
 
-UClass* AInteractionProxy::pClassPointer = NULL;
+//UClass* AInteractionProxy::pClassPointer = NULL;
 
 // Class WillowGame.PawnInteractionProxy
 // 0x0004 (0x01B0 - 0x01AC)
@@ -10537,7 +10537,7 @@ public:
 	void Initialize(class UPawnInteractionDefinition* InDefinition, class AActor* InInstigator);
 };
 
-UClass* APawnInteractionProxy::pClassPointer = NULL;
+//UClass* APawnInteractionProxy::pClassPointer = NULL;
 
 // Class WillowGame.InteractiveObjectBalanceDefinition
 // 0x0058 (0x0094 - 0x003C)
@@ -10571,7 +10571,7 @@ public:
 	class UInteractiveObjectDefinition* GetInteractiveObjectDefinitionForGameStage(int GameStage, int AwesomeLevel);
 };
 
-UClass* UInteractiveObjectBalanceDefinition::pClassPointer = NULL;
+//UClass* UInteractiveObjectBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InteractiveObjectDefinition
 // 0x0140 (0x017C - 0x003C)
@@ -10686,7 +10686,7 @@ public:
 	void OnSpawn(struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UInteractiveObjectDefinition::pClassPointer = NULL;
+//UClass* UInteractiveObjectDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSpawnStationPlatformDefinition
 // 0x0010 (0x018C - 0x017C)
@@ -10709,7 +10709,7 @@ public:
 	};
 };
 
-UClass* UVehicleSpawnStationPlatformDefinition::pClassPointer = NULL;
+//UClass* UVehicleSpawnStationPlatformDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowVendingMachineDefinition
 // 0x0000 (0x017C - 0x017C)
@@ -10732,7 +10732,7 @@ public:
 	void OnFeaturedItemSet(class UObject* FeaturedItemPickup, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UWillowVendingMachineDefinition::pClassPointer = NULL;
+//UClass* UWillowVendingMachineDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InteractiveObjectLootListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -10754,7 +10754,7 @@ public:
 	};
 };
 
-UClass* UInteractiveObjectLootListDefinition::pClassPointer = NULL;
+//UClass* UInteractiveObjectLootListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InterpTrackBehaviors
 // 0x0020 (0x0088 - 0x0068)
@@ -10784,7 +10784,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UInterpTrackBehaviors::pClassPointer = NULL;
+//UClass* UInterpTrackBehaviors::pClassPointer = NULL;
 
 // Class WillowGame.InterpTrackInstBehaviors
 // 0x000C (0x0048 - 0x003C)
@@ -10810,7 +10810,7 @@ public:
 	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
 };
 
-UClass* UInterpTrackInstBehaviors::pClassPointer = NULL;
+//UClass* UInterpTrackInstBehaviors::pClassPointer = NULL;
 
 // Class WillowGame.InventoryAttributeContextResolver
 // 0x0008 (0x0044 - 0x003C)
@@ -10835,7 +10835,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UInventoryAttributeContextResolver::pClassPointer = NULL;
+//UClass* UInventoryAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.InventoryBalanceDefinition
 // 0x0028 (0x0064 - 0x003C)
@@ -10872,7 +10872,7 @@ public:
 	class UWillowInventoryDefinition* GetInventoryDefinition();
 };
 
-UClass* UInventoryBalanceDefinition::pClassPointer = NULL;
+//UClass* UInventoryBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemBalanceDefinition
 // 0x0008 (0x006C - 0x0064)
@@ -10895,7 +10895,7 @@ public:
 	};
 };
 
-UClass* UItemBalanceDefinition::pClassPointer = NULL;
+//UClass* UItemBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ClassModBalanceDefinition
 // 0x000C (0x0078 - 0x006C)
@@ -10920,7 +10920,7 @@ public:
 	class UWillowInventoryDefinition* GetInventoryDefinitionForManufacturerGrade(class UManufacturerDefinition* Manufacturer, int ManufacturerGradeIndex);
 };
 
-UClass* UClassModBalanceDefinition::pClassPointer = NULL;
+//UClass* UClassModBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponBalanceDefinition
 // 0x0008 (0x006C - 0x0064)
@@ -10943,7 +10943,7 @@ public:
 	};
 };
 
-UClass* UWeaponBalanceDefinition::pClassPointer = NULL;
+//UClass* UWeaponBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionWeaponBalanceDefinition
 // 0x0004 (0x0070 - 0x006C)
@@ -10965,7 +10965,7 @@ public:
 	};
 };
 
-UClass* UMissionWeaponBalanceDefinition::pClassPointer = NULL;
+//UClass* UMissionWeaponBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InventoryCardGFx
 // 0x0000 (0x003C - 0x003C)
@@ -10997,7 +10997,7 @@ public:
 	void SetCardUIStats(class UWillowGFxMovie* Movie, int CardIndex, TArray< struct FTopStatData >* TopStats);
 };
 
-UClass* UInventoryCardGFx::pClassPointer = NULL;
+//UClass* UInventoryCardGFx::pClassPointer = NULL;
 
 // Class WillowGame.InventoryPartListCollectionDefinition
 // 0x0010 (0x004C - 0x003C)
@@ -11020,7 +11020,7 @@ public:
 	};
 };
 
-UClass* UInventoryPartListCollectionDefinition::pClassPointer = NULL;
+//UClass* UInventoryPartListCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemPartListCollectionDefinition
 // 0x0094 (0x00E0 - 0x004C)
@@ -11051,7 +11051,7 @@ public:
 	};
 };
 
-UClass* UItemPartListCollectionDefinition::pClassPointer = NULL;
+//UClass* UItemPartListCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponPartListCollectionDefinition
 // 0x0094 (0x00E0 - 0x004C)
@@ -11082,7 +11082,7 @@ public:
 	};
 };
 
-UClass* UWeaponPartListCollectionDefinition::pClassPointer = NULL;
+//UClass* UWeaponPartListCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.IPlayerBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -11122,7 +11122,7 @@ public:
 	void Behavior_Reload();
 };
 
-UClass* UIPlayerBehavior::pClassPointer = NULL;
+//UClass* UIPlayerBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IPlayerMaster
 // 0x0000 (0x003C - 0x003C)
@@ -11145,7 +11145,7 @@ public:
 	class AWillowPlayerController* GetPlayerMasterPlayerController();
 };
 
-UClass* UIPlayerMaster::pClassPointer = NULL;
+//UClass* UIPlayerMaster::pClassPointer = NULL;
 
 // Class WillowGame.IProjectileBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -11183,7 +11183,7 @@ public:
 	bool GetVelocity(struct FVector* ProjectileVelocity);
 };
 
-UClass* UIProjectileBehavior::pClassPointer = NULL;
+//UClass* UIProjectileBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IProjectileReflector
 // 0x0000 (0x003C - 0x003C)
@@ -11210,7 +11210,7 @@ public:
 	float GetSelfReflectionChance();
 };
 
-UClass* UIProjectileReflector::pClassPointer = NULL;
+//UClass* UIProjectileReflector::pClassPointer = NULL;
 
 // Class WillowGame.IProtectionTimer
 // 0x0000 (0x003C - 0x003C)
@@ -11235,7 +11235,7 @@ public:
 	bool IsProtectionTimerActive();
 };
 
-UClass* UIProtectionTimer::pClassPointer = NULL;
+//UClass* UIProtectionTimer::pClassPointer = NULL;
 
 // Class WillowGame.IResourcePoolOwner
 // 0x0000 (0x003C - 0x003C)
@@ -11258,7 +11258,7 @@ public:
 	bool CanSetResourcePoolValues(class UClass* ResourcePoolClass);
 };
 
-UClass* UIResourcePoolOwner::pClassPointer = NULL;
+//UClass* UIResourcePoolOwner::pClassPointer = NULL;
 
 // Class WillowGame.IScreenParticle
 // 0x0000 (0x003C - 0x003C)
@@ -11285,7 +11285,7 @@ public:
 	void ShowScreenParticle(struct FScreenParticleInitParams InitParams);
 };
 
-UClass* UIScreenParticle::pClassPointer = NULL;
+//UClass* UIScreenParticle::pClassPointer = NULL;
 
 // Class WillowGame.ISeeTargetable
 // 0x0000 (0x003C - 0x003C)
@@ -11310,7 +11310,7 @@ public:
 	bool AddTargetable(class AActor* NewTarget, unsigned long bSeeTarget, unsigned long bHearThreat, unsigned long bSmellTarget);
 };
 
-UClass* UISeeTargetable::pClassPointer = NULL;
+//UClass* UISeeTargetable::pClassPointer = NULL;
 
 // Class WillowGame.IShop
 // 0x0000 (0x003C - 0x003C)
@@ -11346,7 +11346,7 @@ public:
 	void eventResetInventory();
 };
 
-UClass* UIShop::pClassPointer = NULL;
+//UClass* UIShop::pClassPointer = NULL;
 
 // Class WillowGame.ISimpleAnimPlayer
 // 0x0000 (0x003C - 0x003C)
@@ -11367,7 +11367,7 @@ public:
 	};
 };
 
-UClass* UISimpleAnimPlayer::pClassPointer = NULL;
+//UClass* UISimpleAnimPlayer::pClassPointer = NULL;
 
 // Class WillowGame.ISkillTreeListener
 // 0x0000 (0x003C - 0x003C)
@@ -11390,7 +11390,7 @@ public:
 	void HandleSkillTreeReset(int SkillPointsReturned);
 };
 
-UClass* UISkillTreeListener::pClassPointer = NULL;
+//UClass* UISkillTreeListener::pClassPointer = NULL;
 
 // Class WillowGame.ItemDefinition
 // 0x00BC (0x023C - 0x0180)
@@ -11452,7 +11452,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UItemDefinition::pClassPointer = NULL;
+//UClass* UItemDefinition::pClassPointer = NULL;
 
 // Class WillowGame.EquipableItemDefinition
 // 0x001C (0x0258 - 0x023C)
@@ -11479,7 +11479,7 @@ public:
 	void OnEquipped(class UObject* Instigator, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UEquipableItemDefinition::pClassPointer = NULL;
+//UClass* UEquipableItemDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ArtifactDefinition
 // 0x0000 (0x0258 - 0x0258)
@@ -11502,7 +11502,7 @@ public:
 	unsigned char GetEquipmentLocation();
 };
 
-UClass* UArtifactDefinition::pClassPointer = NULL;
+//UClass* UArtifactDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ClassModDefinition
 // 0x0008 (0x0260 - 0x0258)
@@ -11530,7 +11530,7 @@ public:
 	bool PlayerClassRequirementMet(class AWillowPlayerController* WillowPC);
 };
 
-UClass* UClassModDefinition::pClassPointer = NULL;
+//UClass* UClassModDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CrossDLCClassModDefinition
 // 0x0034 (0x0294 - 0x0260)
@@ -11552,7 +11552,7 @@ public:
 	};
 };
 
-UClass* UCrossDLCClassModDefinition::pClassPointer = NULL;
+//UClass* UCrossDLCClassModDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GrenadeModDefinition
 // 0x001C (0x0274 - 0x0258)
@@ -11585,7 +11585,7 @@ public:
 	void OnGrenadeSpawned(class UObject* SpawnedProjectile, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UGrenadeModDefinition::pClassPointer = NULL;
+//UClass* UGrenadeModDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ShieldDefinition
 // 0x0020 (0x0278 - 0x0258)
@@ -11621,7 +11621,7 @@ public:
 	void OnAmmoAbsorbed(class UObject* ShieldOwner, class UObject* DamageSource, class UObject* DamageType, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UShieldDefinition::pClassPointer = NULL;
+//UClass* UShieldDefinition::pClassPointer = NULL;
 
 // Class WillowGame.UsableItemDefinition
 // 0x000C (0x0248 - 0x023C)
@@ -11648,7 +11648,7 @@ public:
 	void OnUsed(class UObject* Instigator, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UUsableItemDefinition::pClassPointer = NULL;
+//UClass* UUsableItemDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionItemDefinition
 // 0x0010 (0x0258 - 0x0248)
@@ -11679,7 +11679,7 @@ public:
 	bool ShouldPlayerAutomaticallyPickup(class APlayerController* PC);
 };
 
-UClass* UMissionItemDefinition::pClassPointer = NULL;
+//UClass* UMissionItemDefinition::pClassPointer = NULL;
 
 // Class WillowGame.UsableCustomizationItemDefinition
 // 0x0044 (0x028C - 0x0248)
@@ -11708,7 +11708,7 @@ public:
 	class UCustomizationDefinition* GetCustomizationDefinitionToUnlock(class AWillowPlayerController* WPC);
 };
 
-UClass* UUsableCustomizationItemDefinition::pClassPointer = NULL;
+//UClass* UUsableCustomizationItemDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemPartDefinition
 // 0x0054 (0x00EC - 0x0098)
@@ -11744,7 +11744,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UItemPartDefinition::pClassPointer = NULL;
+//UClass* UItemPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.EquipableItemPartDefinition
 // 0x0000 (0x00EC - 0x00EC)
@@ -11768,7 +11768,7 @@ public:
 	void OnEquipped(class UObject* Instigator, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UEquipableItemPartDefinition::pClassPointer = NULL;
+//UClass* UEquipableItemPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ArtifactPartDefinition
 // 0x0000 (0x00EC - 0x00EC)
@@ -11789,7 +11789,7 @@ public:
 	};
 };
 
-UClass* UArtifactPartDefinition::pClassPointer = NULL;
+//UClass* UArtifactPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ClassModPartDefinition
 // 0x0000 (0x00EC - 0x00EC)
@@ -11810,7 +11810,7 @@ public:
 	};
 };
 
-UClass* UClassModPartDefinition::pClassPointer = NULL;
+//UClass* UClassModPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GrenadeModPartDefinition
 // 0x0030 (0x011C - 0x00EC)
@@ -11844,7 +11844,7 @@ public:
 	void OnGrenadeSpawned(class UObject* SpawnedProjectile, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UGrenadeModPartDefinition::pClassPointer = NULL;
+//UClass* UGrenadeModPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ShieldPartDefinition
 // 0x0000 (0x00EC - 0x00EC)
@@ -11865,7 +11865,7 @@ public:
 	};
 };
 
-UClass* UShieldPartDefinition::pClassPointer = NULL;
+//UClass* UShieldPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemNamePartDefinition
 // 0x0028 (0x0114 - 0x00EC)
@@ -11892,7 +11892,7 @@ public:
 	};
 };
 
-UClass* UItemNamePartDefinition::pClassPointer = NULL;
+//UClass* UItemNamePartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.UsableItemPartDefinition
 // 0x0000 (0x00EC - 0x00EC)
@@ -11915,7 +11915,7 @@ public:
 	void OnUsed(class UObject* Instigator, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UUsableItemPartDefinition::pClassPointer = NULL;
+//UClass* UUsableItemPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionItemPartDefinition
 // 0x0000 (0x00EC - 0x00EC)
@@ -11936,7 +11936,7 @@ public:
 	};
 };
 
-UClass* UMissionItemPartDefinition::pClassPointer = NULL;
+//UClass* UMissionItemPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemPartListDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -11960,7 +11960,7 @@ public:
 	};
 };
 
-UClass* UItemPartListDefinition::pClassPointer = NULL;
+//UClass* UItemPartListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemPool
 // 0x0000 (0x003C - 0x003C)
@@ -11986,7 +11986,7 @@ public:
 	bool SpawnBalancedInventoryFromPool(class UItemPoolDefinition* Definition, int GameStage, int AwesomeLevel, class UObject* ContextSource, class UAttributeInitializationDefinition* GameStageVarianceFormula, float OuterPoolChance, unsigned long bInventoryMayDropOnDeath, TArray< class AWillowInventory* >* SpawnedInventory);
 };
 
-UClass* UItemPool::pClassPointer = NULL;
+//UClass* UItemPool::pClassPointer = NULL;
 
 // Class WillowGame.ItemPoolDefinition
 // 0x0038 (0x0074 - 0x003C)
@@ -12017,7 +12017,7 @@ public:
 	};
 };
 
-UClass* UItemPoolDefinition::pClassPointer = NULL;
+//UClass* UItemPoolDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CrossDLCItemPoolDefinition
 // 0x000C (0x0080 - 0x0074)
@@ -12039,7 +12039,7 @@ public:
 	};
 };
 
-UClass* UCrossDLCItemPoolDefinition::pClassPointer = NULL;
+//UClass* UCrossDLCItemPoolDefinition::pClassPointer = NULL;
 
 // Class WillowGame.KeyedItemPoolDefinition
 // 0x0004 (0x0078 - 0x0074)
@@ -12061,7 +12061,7 @@ public:
 	};
 };
 
-UClass* UKeyedItemPoolDefinition::pClassPointer = NULL;
+//UClass* UKeyedItemPoolDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemPoolListDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -12086,7 +12086,7 @@ public:
 	void AddToItemPoolList(TArray< struct FItemPoolInfo >* Out_ItemPoolList);
 };
 
-UClass* UItemPoolListDefinition::pClassPointer = NULL;
+//UClass* UItemPoolListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.IUpdatePostProcessOverride
 // 0x0000 (0x003C - 0x003C)
@@ -12116,7 +12116,7 @@ public:
 	int AddPostProcessOverlay(struct FPostProcessOverlay NewPostProcessOverlay);
 };
 
-UClass* UIUpdatePostProcessOverride::pClassPointer = NULL;
+//UClass* UIUpdatePostProcessOverride::pClassPointer = NULL;
 
 // Class WillowGame.IUsable
 // 0x0000 (0x003C - 0x003C)
@@ -12141,7 +12141,7 @@ public:
 	bool UseObject(class APawn* User, class UPrimitiveComponent* UsedComponent, unsigned char UsedType);
 };
 
-UClass* UIUsable::pClassPointer = NULL;
+//UClass* UIUsable::pClassPointer = NULL;
 
 // Class WillowGame.IWeaponThrow
 // 0x0000 (0x003C - 0x003C)
@@ -12164,7 +12164,7 @@ public:
 	void Behavior_WeaponThrow();
 };
 
-UClass* UIWeaponThrow::pClassPointer = NULL;
+//UClass* UIWeaponThrow::pClassPointer = NULL;
 
 // Class WillowGame.IWeatherBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -12188,7 +12188,7 @@ public:
 	void CreateWeatherSystem(class UParticleSystem* WeatherSystemTemplate, class UParticleSystem* NewScreenEffectsTemplate);
 };
 
-UClass* UIWeatherBehavior::pClassPointer = NULL;
+//UClass* UIWeatherBehavior::pClassPointer = NULL;
 
 // Class WillowGame.LcdHelper
 // 0x0004 (0x0040 - 0x003C)
@@ -12221,7 +12221,7 @@ public:
 	void NotifyLoading(unsigned long bLoading);
 };
 
-UClass* ULcdHelper::pClassPointer = NULL;
+//UClass* ULcdHelper::pClassPointer = NULL;
 
 // Class WillowGame.LevelDependencyList
 // 0x0021 (0x005D - 0x003C)
@@ -12249,7 +12249,7 @@ public:
 	struct FString GetFriendlyLevelNameFromMapName(struct FName PersistentMapName);
 };
 
-UClass* ULevelDependencyList::pClassPointer = NULL;
+//UClass* ULevelDependencyList::pClassPointer = NULL;
 
 // Class WillowGame.LevelLandmarkAnchor
 // 0x0020 (0x01C0 - 0x01A0)
@@ -12276,7 +12276,7 @@ public:
 	};
 };
 
-UClass* ALevelLandmarkAnchor::pClassPointer = NULL;
+//UClass* ALevelLandmarkAnchor::pClassPointer = NULL;
 
 // Class WillowGame.LevelLandmarkAnchorRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -12297,7 +12297,7 @@ public:
 	};
 };
 
-UClass* ULevelLandmarkAnchorRenderingComponent::pClassPointer = NULL;
+//UClass* ULevelLandmarkAnchorRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.LocalizedStringDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -12319,7 +12319,7 @@ public:
 	};
 };
 
-UClass* ULocalizedStringDefinition::pClassPointer = NULL;
+//UClass* ULocalizedStringDefinition::pClassPointer = NULL;
 
 // Class WillowGame.LockoutDefinition
 // 0x0014 (0x0050 - 0x003C)
@@ -12347,7 +12347,7 @@ public:
 	int ComputePackedSystemTime();
 };
 
-UClass* ULockoutDefinition::pClassPointer = NULL;
+//UClass* ULockoutDefinition::pClassPointer = NULL;
 
 // Class WillowGame.LookAxisDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -12374,7 +12374,7 @@ public:
 	};
 };
 
-UClass* ULookAxisDefinition::pClassPointer = NULL;
+//UClass* ULookAxisDefinition::pClassPointer = NULL;
 
 // Class WillowGame.LookingAtInjuredPlayerExpressionEvaluator
 // 0x0000 (0x003C - 0x003C)
@@ -12397,7 +12397,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* ULookingAtInjuredPlayerExpressionEvaluator::pClassPointer = NULL;
+//UClass* ULookingAtInjuredPlayerExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.LootConfigurationDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -12420,7 +12420,7 @@ public:
 	};
 };
 
-UClass* ULootConfigurationDefinition::pClassPointer = NULL;
+//UClass* ULootConfigurationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ManufacturerAttributeValueResolver
 // 0x001C (0x0058 - 0x003C)
@@ -12443,7 +12443,7 @@ public:
 	};
 };
 
-UClass* UManufacturerAttributeValueResolver::pClassPointer = NULL;
+//UClass* UManufacturerAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.MarketingUnlockDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -12467,7 +12467,7 @@ public:
 	};
 };
 
-UClass* UMarketingUnlockDefinition::pClassPointer = NULL;
+//UClass* UMarketingUnlockDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MeleeDefinition
 // 0x00D8 (0x0114 - 0x003C)
@@ -12534,7 +12534,7 @@ public:
 	void MeleeAttack(class UObject* ContextObject);
 };
 
-UClass* UMeleeDefinition::pClassPointer = NULL;
+//UClass* UMeleeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionDefinition
 // 0x018C (0x01C8 - 0x003C)
@@ -12626,7 +12626,7 @@ public:
 	int GetGameStage();
 };
 
-UClass* UMissionDefinition::pClassPointer = NULL;
+//UClass* UMissionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionDirectivesDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -12652,7 +12652,7 @@ public:
 	void CreateWaypoints(class AActor* WaypointOwner, class AMissionTracker* MissionTracker);
 };
 
-UClass* UMissionDirectivesDefinition::pClassPointer = NULL;
+//UClass* UMissionDirectivesDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionObjectiveDefinition
 // 0x0060 (0x009C - 0x003C)
@@ -12690,7 +12690,7 @@ public:
 	int TranslateObjectiveCount(int Count);
 };
 
-UClass* UMissionObjectiveDefinition::pClassPointer = NULL;
+//UClass* UMissionObjectiveDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionObjectiveSetDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -12721,7 +12721,7 @@ public:
 	bool ContainsObjective(class UMissionObjectiveDefinition* Objective);
 };
 
-UClass* UMissionObjectiveSetDefinition::pClassPointer = NULL;
+//UClass* UMissionObjectiveSetDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionObjectiveSetBranchingDefinition
 // 0x000C (0x0078 - 0x006C)
@@ -12745,7 +12745,7 @@ public:
 	bool ContainsObjective(class UMissionObjectiveDefinition* Objective);
 };
 
-UClass* UMissionObjectiveSetBranchingDefinition::pClassPointer = NULL;
+//UClass* UMissionObjectiveSetBranchingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionObjectiveSetCollectionDefinition
 // 0x000C (0x0078 - 0x006C)
@@ -12769,7 +12769,7 @@ public:
 	bool ContainsObjective(class UMissionObjectiveDefinition* Objective);
 };
 
-UClass* UMissionObjectiveSetCollectionDefinition::pClassPointer = NULL;
+//UClass* UMissionObjectiveSetCollectionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionPopulationAspect
 // 0x0034 (0x0070 - 0x003C)
@@ -12824,7 +12824,7 @@ public:
 	void eventInitialize();
 };
 
-UClass* UMissionPopulationAspect::pClassPointer = NULL;
+//UClass* UMissionPopulationAspect::pClassPointer = NULL;
 
 // Class WillowGame.MissionTracker
 // 0x03B0 (0x0538 - 0x0188)
@@ -13006,7 +13006,7 @@ public:
 	void SetMissionStatus(class UMissionDefinition* InMission, unsigned char MissionStatus, class AWillowPlayerController* WillowPC);
 };
 
-UClass* AMissionTracker::pClassPointer = NULL;
+//UClass* AMissionTracker::pClassPointer = NULL;
 
 // Class WillowGame.MovementComponent
 // 0x0003 (0x005C - 0x0059)
@@ -13029,7 +13029,7 @@ public:
 	void Init();
 };
 
-UClass* UMovementComponent::pClassPointer = NULL;
+//UClass* UMovementComponent::pClassPointer = NULL;
 
 // Class WillowGame.DrunkenBaseComponent
 // 0x0044 (0x00A0 - 0x005C)
@@ -13063,7 +13063,7 @@ public:
 	void Init();
 };
 
-UClass* UDrunkenBaseComponent::pClassPointer = NULL;
+//UClass* UDrunkenBaseComponent::pClassPointer = NULL;
 
 // Class WillowGame.DrunkenRandomComponent
 // 0x0034 (0x00D4 - 0x00A0)
@@ -13093,7 +13093,7 @@ public:
 	};
 };
 
-UClass* UDrunkenRandomComponent::pClassPointer = NULL;
+//UClass* UDrunkenRandomComponent::pClassPointer = NULL;
 
 // Class WillowGame.DrunkenWaveComponent
 // 0x0018 (0x00B8 - 0x00A0)
@@ -13118,7 +13118,7 @@ public:
 	};
 };
 
-UClass* UDrunkenWaveComponent::pClassPointer = NULL;
+//UClass* UDrunkenWaveComponent::pClassPointer = NULL;
 
 // Class WillowGame.NameListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -13140,7 +13140,7 @@ public:
 	};
 };
 
-UClass* UNameListDefinition::pClassPointer = NULL;
+//UClass* UNameListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.NPCLoadBalancer
 // 0x0024 (0x0060 - 0x003C)
@@ -13177,7 +13177,7 @@ public:
 	bool CanStartPath(class AWillowMind* InMind);
 };
 
-UClass* UNPCLoadBalancer::pClassPointer = NULL;
+//UClass* UNPCLoadBalancer::pClassPointer = NULL;
 
 // Class WillowGame.PackageAssetLibrary
 // 0x001C (0x0058 - 0x003C)
@@ -13201,7 +13201,7 @@ public:
 	};
 };
 
-UClass* UPackageAssetLibrary::pClassPointer = NULL;
+//UClass* UPackageAssetLibrary::pClassPointer = NULL;
 
 // Class WillowGame.PackageAssetSublibrary
 // 0x0024 (0x0060 - 0x003C)
@@ -13226,7 +13226,7 @@ public:
 	};
 };
 
-UClass* UPackageAssetSublibrary::pClassPointer = NULL;
+//UClass* UPackageAssetSublibrary::pClassPointer = NULL;
 
 // Class WillowGame.PassengerCameraDefinition
 // 0x005C (0x0098 - 0x003C)
@@ -13272,7 +13272,7 @@ public:
 	};
 };
 
-UClass* UPassengerCameraDefinition::pClassPointer = NULL;
+//UClass* UPassengerCameraDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PawnRelevanceUtility
 // 0x0000 (0x003C - 0x003C)
@@ -13293,7 +13293,7 @@ public:
 	};
 };
 
-UClass* UPawnRelevanceUtility::pClassPointer = NULL;
+//UClass* UPawnRelevanceUtility::pClassPointer = NULL;
 
 // Class WillowGame.PawnRelevanceUtilityCaching
 // 0x0040 (0x007C - 0x003C)
@@ -13328,7 +13328,7 @@ public:
 	};
 };
 
-UClass* UPawnRelevanceUtilityCaching::pClassPointer = NULL;
+//UClass* UPawnRelevanceUtilityCaching::pClassPointer = NULL;
 
 // Class WillowGame.PawnRelevanceUtilityFixedCost
 // 0x0024 (0x00A0 - 0x007C)
@@ -13361,7 +13361,7 @@ public:
 	void PrintBuckets();
 };
 
-UClass* UPawnRelevanceUtilityFixedCost::pClassPointer = NULL;
+//UClass* UPawnRelevanceUtilityFixedCost::pClassPointer = NULL;
 
 // Class WillowGame.PerchDefinition
 // 0x00A4 (0x00E0 - 0x003C)
@@ -13430,7 +13430,7 @@ public:
 	bool Supports(class UPopulationBodyTag* Key);
 };
 
-UClass* UPerchDefinition::pClassPointer = NULL;
+//UClass* UPerchDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PerchEditorComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -13451,7 +13451,7 @@ public:
 	};
 };
 
-UClass* UPerchEditorComponent::pClassPointer = NULL;
+//UClass* UPerchEditorComponent::pClassPointer = NULL;
 
 // Class WillowGame.PhysicsJumpConnection
 // 0x001C (0x0058 - 0x003C)
@@ -13477,7 +13477,7 @@ public:
 	};
 };
 
-UClass* UPhysicsJumpConnection::pClassPointer = NULL;
+//UClass* UPhysicsJumpConnection::pClassPointer = NULL;
 
 // Class WillowGame.PhysicsJumpNode
 // 0x0034 (0x0278 - 0x0244)
@@ -13521,7 +13521,7 @@ public:
 	int GetJumpIndex(class APhysicsJumpNode* JumpNode);
 };
 
-UClass* APhysicsJumpNode::pClassPointer = NULL;
+//UClass* APhysicsJumpNode::pClassPointer = NULL;
 
 // Class WillowGame.PhysicsJumpNodeEditorComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -13542,7 +13542,7 @@ public:
 	};
 };
 
-UClass* UPhysicsJumpNodeEditorComponent::pClassPointer = NULL;
+//UClass* UPhysicsJumpNodeEditorComponent::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBlockingVolume
 // 0x0000 (0x01C0 - 0x01C0)
@@ -13565,7 +13565,7 @@ public:
 	bool StopsProjectile(class AProjectile* P);
 };
 
-UClass* APlayerBlockingVolume::pClassPointer = NULL;
+//UClass* APlayerBlockingVolume::pClassPointer = NULL;
 
 // Class WillowGame.ExecuteBlockingVolume
 // 0x0000 (0x01C0 - 0x01C0)
@@ -13588,7 +13588,7 @@ public:
 	bool StopsProjectile(class AProjectile* P);
 };
 
-UClass* AExecuteBlockingVolume::pClassPointer = NULL;
+//UClass* AExecuteBlockingVolume::pClassPointer = NULL;
 
 // Class WillowGame.PlayerChallengeListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -13610,7 +13610,7 @@ public:
 	};
 };
 
-UClass* UPlayerChallengeListDefinition::pClassPointer = NULL;
+//UClass* UPlayerChallengeListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PlayerClassAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -13632,7 +13632,7 @@ public:
 	};
 };
 
-UClass* UPlayerClassAttributeValueResolver::pClassPointer = NULL;
+//UClass* UPlayerClassAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.PlayerClassCountAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -13657,7 +13657,7 @@ public:
 	void SetPlayerClassCountOverride(class UPlayerClassIdentifierDefinition* PlayerClassIdToOverride, int Override);
 };
 
-UClass* UPlayerClassCountAttributeValueResolver::pClassPointer = NULL;
+//UClass* UPlayerClassCountAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.PlayerClassIdentifierDefinition
 // 0x0064 (0x00A0 - 0x003C)
@@ -13696,7 +13696,7 @@ public:
 	class UDownloadableContentDefinition* GetDownloadableContentDefinition();
 };
 
-UClass* UPlayerClassIdentifierDefinition::pClassPointer = NULL;
+//UClass* UPlayerClassIdentifierDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PlayerControllerAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -13717,7 +13717,7 @@ public:
 	};
 };
 
-UClass* UPlayerControllerAttributeContextResolver::pClassPointer = NULL;
+//UClass* UPlayerControllerAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.PlayerEventProviderDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -13745,7 +13745,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UPlayerEventProviderDefinition::pClassPointer = NULL;
+//UClass* UPlayerEventProviderDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowGameInfo
 // 0x02E4 (0x0614 - 0x0330)
@@ -13971,7 +13971,7 @@ public:
 	void PreBeginPlay();
 };
 
-UClass* AWillowGameInfo::pClassPointer = NULL;
+//UClass* AWillowGameInfo::pClassPointer = NULL;
 
 // Class WillowGame.PlayerInteractionManager
 // 0x0014 (0x0050 - 0x003C)
@@ -14002,7 +14002,7 @@ public:
 	bool StartInteraction(class UPlayerInteractionServer* NewServer, TArray< class AWillowPlayerController* > Players, class AWillowPlayerController* InteractionInstigator);
 };
 
-UClass* UPlayerInteractionManager::pClassPointer = NULL;
+//UClass* UPlayerInteractionManager::pClassPointer = NULL;
 
 // Class WillowGame.PlayerInteractionServer
 // 0x0008 (0x0044 - 0x003C)
@@ -14037,7 +14037,7 @@ public:
 	void Initialize();
 };
 
-UClass* UPlayerInteractionServer::pClassPointer = NULL;
+//UClass* UPlayerInteractionServer::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSeatSwap_PlayerInteractionServer
 // 0x0008 (0x004C - 0x0044)
@@ -14066,7 +14066,7 @@ public:
 	void HandleMessage(class AWillowPlayerController* FromPlayer, int MessageData, class UObject* Data);
 };
 
-UClass* UVehicleSeatSwap_PlayerInteractionServer::pClassPointer = NULL;
+//UClass* UVehicleSeatSwap_PlayerInteractionServer::pClassPointer = NULL;
 
 // Class WillowGame.PlayerKillVolume
 // 0x0004 (0x01C0 - 0x01BC)
@@ -14094,7 +14094,7 @@ public:
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, struct FVector HitLocation, struct FVector HitNormal);
 };
 
-UClass* APlayerKillVolume::pClassPointer = NULL;
+//UClass* APlayerKillVolume::pClassPointer = NULL;
 
 // Class WillowGame.PlayerNameIdentifierDefinition
 // 0x0170 (0x01AC - 0x003C)
@@ -14161,7 +14161,7 @@ public:
 	struct FString eventGetPortraitSwfMoviePath();
 };
 
-UClass* UPlayerNameIdentifierDefinition::pClassPointer = NULL;
+//UClass* UPlayerNameIdentifierDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PlayerReplicationInfoAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -14182,7 +14182,7 @@ public:
 	};
 };
 
-UClass* UPlayerReplicationInfoAttributeContextResolver::pClassPointer = NULL;
+//UClass* UPlayerReplicationInfoAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.PlayerSaveGame
 // 0x0214 (0x0250 - 0x003C)
@@ -14259,7 +14259,7 @@ public:
 	};
 };
 
-UClass* UPlayerSaveGame::pClassPointer = NULL;
+//UClass* UPlayerSaveGame::pClassPointer = NULL;
 
 // Class WillowGame.PlayerSkillAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -14281,7 +14281,7 @@ public:
 	};
 };
 
-UClass* UPlayerSkillAttributeValueResolver::pClassPointer = NULL;
+//UClass* UPlayerSkillAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerController
 // 0x0F88 (0x197C - 0x09F4)
@@ -16498,7 +16498,7 @@ public:
 	void OnDownloadPatcherFilesComplete();
 };
 
-UClass* AWillowPlayerController::pClassPointer = NULL;
+//UClass* AWillowPlayerController::pClassPointer = NULL;
 
 // Class WillowGame.PlayerSkillTree
 // 0x0088 (0x00C4 - 0x003C)
@@ -16549,7 +16549,7 @@ public:
 	bool UpgradeSkill(class USkillDefinition* Skill);
 };
 
-UClass* UPlayerSkillTree::pClassPointer = NULL;
+//UClass* UPlayerSkillTree::pClassPointer = NULL;
 
 // Class WillowGame.PlayerStandIn
 // 0x01AC (0x0334 - 0x0188)
@@ -16624,7 +16624,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* APlayerStandIn::pClassPointer = NULL;
+//UClass* APlayerStandIn::pClassPointer = NULL;
 
 // Class WillowGame.PlayerStatAttributeValueResolver
 // 0x0008 (0x0044 - 0x003C)
@@ -16646,7 +16646,7 @@ public:
 	};
 };
 
-UClass* UPlayerStatAttributeValueResolver::pClassPointer = NULL;
+//UClass* UPlayerStatAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.PlayThroughCountAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -16668,7 +16668,7 @@ public:
 	};
 };
 
-UClass* UPlayThroughCountAttributeValueResolver::pClassPointer = NULL;
+//UClass* UPlayThroughCountAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryInteractiveObject
 // 0x0024 (0x007C - 0x0058)
@@ -16705,7 +16705,7 @@ public:
 	class UInteractiveObjectDefinition* GetObjectDefinition(int GameStage, int AwesomeLevel);
 };
 
-UClass* UPopulationFactoryInteractiveObject::pClassPointer = NULL;
+//UClass* UPopulationFactoryInteractiveObject::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryBlackMarket
 // 0x0004 (0x0080 - 0x007C)
@@ -16731,7 +16731,7 @@ public:
 	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int AwesomeLevel);
 };
 
-UClass* UPopulationFactoryBlackMarket::pClassPointer = NULL;
+//UClass* UPopulationFactoryBlackMarket::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryVendingMachine
 // 0x0060 (0x00DC - 0x007C)
@@ -16764,7 +16764,7 @@ public:
 	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int AwesomeLevel);
 };
 
-UClass* UPopulationFactoryVendingMachine::pClassPointer = NULL;
+//UClass* UPopulationFactoryVendingMachine::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryWillowProjectile
 // 0x0024 (0x007C - 0x0058)
@@ -16797,7 +16797,7 @@ public:
 	class UPawnAllegiance* GetActorAllegiance(int GameStage, int AwesomeLevel);
 };
 
-UClass* UPopulationFactoryWillowProjectile::pClassPointer = NULL;
+//UClass* UPopulationFactoryWillowProjectile::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryWillowVehicle
 // 0x0041 (0x0099 - 0x0058)
@@ -16837,7 +16837,7 @@ public:
 	class AWillowVehicle* GetVehicleArchetype(int GameStage, int AwesomeLevel);
 };
 
-UClass* UPopulationFactoryWillowVehicle::pClassPointer = NULL;
+//UClass* UPopulationFactoryWillowVehicle::pClassPointer = NULL;
 
 // Class WillowGame.PopulationOpportunityDen
 // 0x00D4 (0x02B8 - 0x01E4)
@@ -16936,7 +16936,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* APopulationOpportunityDen::pClassPointer = NULL;
+//UClass* APopulationOpportunityDen::pClassPointer = NULL;
 
 // Class WillowGame.PopulationOpportunityDen_Dynamic
 // 0x0010 (0x02C8 - 0x02B8)
@@ -16965,7 +16965,7 @@ public:
 	bool GetOpportunityGameStage(int* GameStage, int* AwesomeLevel);
 };
 
-UClass* APopulationOpportunityDen_Dynamic::pClassPointer = NULL;
+//UClass* APopulationOpportunityDen_Dynamic::pClassPointer = NULL;
 
 // Class WillowGame.PopulationOpportunityDenRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -16986,7 +16986,7 @@ public:
 	};
 };
 
-UClass* UPopulationOpportunityDenRenderingComponent::pClassPointer = NULL;
+//UClass* UPopulationOpportunityDenRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.PostureStateExpressionEvaluator
 // 0x0004 (0x0040 - 0x003C)
@@ -17013,7 +17013,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UPostureStateExpressionEvaluator::pClassPointer = NULL;
+//UClass* UPostureStateExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehaviorBase
 // 0x0000 (0x004C - 0x004C)
@@ -17034,7 +17034,7 @@ public:
 	};
 };
 
-UClass* UProjectileBehaviorBase::pClassPointer = NULL;
+//UClass* UProjectileBehaviorBase::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_Bounce
 // 0x0024 (0x0070 - 0x004C)
@@ -17061,7 +17061,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_Bounce::pClassPointer = NULL;
+//UClass* UProjectileBehavior_Bounce::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileDefinition
 // 0x0204 (0x0240 - 0x003C)
@@ -17216,7 +17216,7 @@ public:
 	void OnSpawn(class APawn* Instigator, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UProjectileDefinition::pClassPointer = NULL;
+//UClass* UProjectileDefinition::pClassPointer = NULL;
 
 // Class WillowGame.QSortComparer
 // 0x0000 (0x003C - 0x003C)
@@ -17237,7 +17237,7 @@ public:
 	};
 };
 
-UClass* UQSortComparer::pClassPointer = NULL;
+//UClass* UQSortComparer::pClassPointer = NULL;
 
 // Class WillowGame.InventoryUIStatComparer
 // 0x0008 (0x0044 - 0x003C)
@@ -17260,7 +17260,7 @@ public:
 	};
 };
 
-UClass* UInventoryUIStatComparer::pClassPointer = NULL;
+//UClass* UInventoryUIStatComparer::pClassPointer = NULL;
 
 // Class WillowGame.QSortAttributeComparer
 // 0x0008 (0x0044 - 0x003C)
@@ -17283,7 +17283,7 @@ public:
 	};
 };
 
-UClass* UQSortAttributeComparer::pClassPointer = NULL;
+//UClass* UQSortAttributeComparer::pClassPointer = NULL;
 
 // Class WillowGame.WeaponTypeComparer
 // 0x0000 (0x003C - 0x003C)
@@ -17304,7 +17304,7 @@ public:
 	};
 };
 
-UClass* UWeaponTypeComparer::pClassPointer = NULL;
+//UClass* UWeaponTypeComparer::pClassPointer = NULL;
 
 // Class WillowGame.RallyPoint
 // 0x0000 (0x0188 - 0x0188)
@@ -17325,7 +17325,7 @@ public:
 	};
 };
 
-UClass* ARallyPoint::pClassPointer = NULL;
+//UClass* ARallyPoint::pClassPointer = NULL;
 
 // Class WillowGame.RecentDropList
 // 0x0324 (0x0360 - 0x003C)
@@ -17351,7 +17351,7 @@ public:
 	void Add(int Id);
 };
 
-UClass* URecentDropList::pClassPointer = NULL;
+//UClass* URecentDropList::pClassPointer = NULL;
 
 // Class WillowGame.ResourcePoolStateAttributeValueResolver
 // 0x0001 (0x003D - 0x003C)
@@ -17373,7 +17373,7 @@ public:
 	};
 };
 
-UClass* UResourcePoolStateAttributeValueResolver::pClassPointer = NULL;
+//UClass* UResourcePoolStateAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.SaveGameChannel
 // 0x0014 (0x007C - 0x0068)
@@ -17395,7 +17395,7 @@ public:
 	};
 };
 
-UClass* USaveGameChannel::pClassPointer = NULL;
+//UClass* USaveGameChannel::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_IsInVolume
 // 0x001C (0x00C0 - 0x00A4)
@@ -17422,7 +17422,7 @@ public:
 	bool ActorIsInAnyVolumes(class AActor* inActor);
 };
 
-UClass* USeqAct_IsInVolume::pClassPointer = NULL;
+//UClass* USeqAct_IsInVolume::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_SetNameList
 // 0x0008 (0x00AC - 0x00A4)
@@ -17445,7 +17445,7 @@ public:
 	};
 };
 
-UClass* USeqAct_SetNameList::pClassPointer = NULL;
+//UClass* USeqAct_SetNameList::pClassPointer = NULL;
 
 // Class WillowGame.SeqEvent_TakeHitRegionDamage
 // 0x0044 (0x0108 - 0x00C4)
@@ -17480,7 +17480,7 @@ public:
 	bool IsValidDamageType(class UClass* inDamageType, class UBodyHitRegionDefinition* HitRegion);
 };
 
-UClass* USeqEvent_TakeHitRegionDamage::pClassPointer = NULL;
+//UClass* USeqEvent_TakeHitRegionDamage::pClassPointer = NULL;
 
 // Class WillowGame.SequenceEventEnableByMission
 // 0x0024 (0x0060 - 0x003C)
@@ -17515,7 +17515,7 @@ public:
 	void eventMissionReactionLevelLoad(class AMissionTracker* Tracker, class UMissionDefinition* Mission);
 };
 
-UClass* USequenceEventEnableByMission::pClassPointer = NULL;
+//UClass* USequenceEventEnableByMission::pClassPointer = NULL;
 
 // Class WillowGame.ShieldResourcePool
 // 0x0000 (0x0118 - 0x0118)
@@ -17536,7 +17536,7 @@ public:
 	};
 };
 
-UClass* UShieldResourcePool::pClassPointer = NULL;
+//UClass* UShieldResourcePool::pClassPointer = NULL;
 
 // Class WillowGame.ShopTimerRateValueResolver
 // 0x0000 (0x003C - 0x003C)
@@ -17557,7 +17557,7 @@ public:
 	};
 };
 
-UClass* UShopTimerRateValueResolver::pClassPointer = NULL;
+//UClass* UShopTimerRateValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.Skill
 // 0x0094 (0x00D0 - 0x003C)
@@ -17631,7 +17631,7 @@ public:
 	void OnSkillStateChanged(class USkill* AffectedSkill, unsigned long bActivated);
 };
 
-UClass* USkill::pClassPointer = NULL;
+//UClass* USkill::pClassPointer = NULL;
 
 // Class WillowGame.SkillDefinition
 // 0x00F0 (0x012C - 0x003C)
@@ -17734,7 +17734,7 @@ public:
 	void OnActivated(class AController* SkillInstigator, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* USkillDefinition::pClassPointer = NULL;
+//UClass* USkillDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SkillExpressionEvaluatorDefinition
 // 0x0004 (0x0040 - 0x003C)
@@ -17756,7 +17756,7 @@ public:
 	};
 };
 
-UClass* USkillExpressionEvaluatorDefinition::pClassPointer = NULL;
+//UClass* USkillExpressionEvaluatorDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SkillTreeBranchDefinition
 // 0x002C (0x0068 - 0x003C)
@@ -17782,7 +17782,7 @@ public:
 	};
 };
 
-UClass* USkillTreeBranchDefinition::pClassPointer = NULL;
+//UClass* USkillTreeBranchDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SkillTreeBranchLayoutDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -17804,7 +17804,7 @@ public:
 	};
 };
 
-UClass* USkillTreeBranchLayoutDefinition::pClassPointer = NULL;
+//UClass* USkillTreeBranchLayoutDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SkillTreeDefinition
 // 0x0008 (0x0044 - 0x003C)
@@ -17827,7 +17827,7 @@ public:
 	};
 };
 
-UClass* USkillTreeDefinition::pClassPointer = NULL;
+//UClass* USkillTreeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_FirstPerson
 // 0x0004 (0x00C0 - 0x00BC)
@@ -17856,7 +17856,7 @@ public:
 	class USkeletalMeshComponent* GetSkeletalMesh(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_FirstPerson::pClassPointer = NULL;
+//UClass* USpecialMove_FirstPerson::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_FirstPersonDualWieldAction
 // 0x0024 (0x00E4 - 0x00C0)
@@ -17898,7 +17898,7 @@ public:
 	float GetAnimLength(class USkeletalMeshComponent* SMC);
 };
 
-UClass* USpecialMove_FirstPersonDualWieldAction::pClassPointer = NULL;
+//UClass* USpecialMove_FirstPersonDualWieldAction::pClassPointer = NULL;
 
 // Class WillowGame.SprintDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -17923,7 +17923,7 @@ public:
 	};
 };
 
-UClass* USprintDefinition::pClassPointer = NULL;
+//UClass* USprintDefinition::pClassPointer = NULL;
 
 // Class WillowGame.StaggerDefinition
 // 0x0048 (0x0084 - 0x003C)
@@ -17958,7 +17958,7 @@ public:
 	};
 };
 
-UClass* UStaggerDefinition::pClassPointer = NULL;
+//UClass* UStaggerDefinition::pClassPointer = NULL;
 
 // Class WillowGame.StanceTypeDefinition
 // 0x0034 (0x0070 - 0x003C)
@@ -18002,7 +18002,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UStanceTypeDefinition::pClassPointer = NULL;
+//UClass* UStanceTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.StatChannel
 // 0x001C (0x0084 - 0x0068)
@@ -18024,7 +18024,7 @@ public:
 	};
 };
 
-UClass* UStatChannel::pClassPointer = NULL;
+//UClass* UStatChannel::pClassPointer = NULL;
 
 // Class WillowGame.StationTeleporterDestination
 // 0x000C (0x01A8 - 0x019C)
@@ -18055,7 +18055,7 @@ public:
 	void eventDestroyed();
 };
 
-UClass* AStationTeleporterDestination::pClassPointer = NULL;
+//UClass* AStationTeleporterDestination::pClassPointer = NULL;
 
 // Class WillowGame.StationTeleporterExitPoint
 // 0x0000 (0x018C - 0x018C)
@@ -18076,7 +18076,7 @@ public:
 	};
 };
 
-UClass* AStationTeleporterExitPoint::pClassPointer = NULL;
+//UClass* AStationTeleporterExitPoint::pClassPointer = NULL;
 
 // Class WillowGame.StationTeleporterVehicleExitPoint
 // 0x0000 (0x018C - 0x018C)
@@ -18097,7 +18097,7 @@ public:
 	};
 };
 
-UClass* AStationTeleporterVehicleExitPoint::pClassPointer = NULL;
+//UClass* AStationTeleporterVehicleExitPoint::pClassPointer = NULL;
 
 // Class WillowGame.StatusEffectChanceModifierResolver
 // 0x0000 (0x003C - 0x003C)
@@ -18120,7 +18120,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UStatusEffectChanceModifierResolver::pClassPointer = NULL;
+//UClass* UStatusEffectChanceModifierResolver::pClassPointer = NULL;
 
 // Class WillowGame.StatusEffectDefinition
 // 0x0114 (0x0150 - 0x003C)
@@ -18164,7 +18164,7 @@ public:
 	};
 };
 
-UClass* UStatusEffectDefinition::pClassPointer = NULL;
+//UClass* UStatusEffectDefinition::pClassPointer = NULL;
 
 // Class WillowGame.StatusEffectExpressionEvaluator
 // 0x0002 (0x003E - 0x003C)
@@ -18189,7 +18189,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UStatusEffectExpressionEvaluator::pClassPointer = NULL;
+//UClass* UStatusEffectExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.StatusEffectProxyActor
 // 0x0004 (0x018C - 0x0188)
@@ -18225,7 +18225,7 @@ public:
 	void eventDestroyed();
 };
 
-UClass* AStatusEffectProxyActor::pClassPointer = NULL;
+//UClass* AStatusEffectProxyActor::pClassPointer = NULL;
 
 // Class WillowGame.StatusEffectsComponent
 // 0x011F (0x0178 - 0x0059)
@@ -18340,7 +18340,7 @@ public:
 	class UBodyHitRegionDefinition* GetMostRecentEffectHitRegion();
 };
 
-UClass* UStatusEffectsComponent::pClassPointer = NULL;
+//UClass* UStatusEffectsComponent::pClassPointer = NULL;
 
 // Class WillowGame.TargetableAttributeValueResolver
 // 0x0001 (0x003D - 0x003C)
@@ -18362,7 +18362,7 @@ public:
 	};
 };
 
-UClass* UTargetableAttributeValueResolver::pClassPointer = NULL;
+//UClass* UTargetableAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.TemporalField
 // 0x0018 (0x01A0 - 0x0188)
@@ -18399,7 +18399,7 @@ public:
 	void ToggleTemporalFieldDebug();
 };
 
-UClass* ATemporalField::pClassPointer = NULL;
+//UClass* ATemporalField::pClassPointer = NULL;
 
 // Class WillowGame.TextMarkupDictionary
 // 0x0010 (0x004C - 0x003C)
@@ -18424,7 +18424,7 @@ public:
 	struct FString ResolveCustomMarkupString(struct FString StringToResolve);
 };
 
-UClass* UTextMarkupDictionary::pClassPointer = NULL;
+//UClass* UTextMarkupDictionary::pClassPointer = NULL;
 
 // Class WillowGame.TrainingMessageDefinition
 // 0x004C (0x0088 - 0x003C)
@@ -18457,7 +18457,7 @@ public:
 	};
 };
 
-UClass* UTrainingMessageDefinition::pClassPointer = NULL;
+//UClass* UTrainingMessageDefinition::pClassPointer = NULL;
 
 // Class WillowGame.TravelStationDefinition
 // 0x0038 (0x0074 - 0x003C)
@@ -18488,7 +18488,7 @@ public:
 	struct FName GetStationLevelName();
 };
 
-UClass* UTravelStationDefinition::pClassPointer = NULL;
+//UClass* UTravelStationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStationDefinition
 // 0x0025 (0x0099 - 0x0074)
@@ -18516,7 +18516,7 @@ public:
 	};
 };
 
-UClass* UFastTravelStationDefinition::pClassPointer = NULL;
+//UClass* UFastTravelStationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.LevelTravelStationDefinition
 // 0x0014 (0x0088 - 0x0074)
@@ -18541,7 +18541,7 @@ public:
 	};
 };
 
-UClass* ULevelTravelStationDefinition::pClassPointer = NULL;
+//UClass* ULevelTravelStationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.TravelStationNozzleComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -18562,7 +18562,7 @@ public:
 	};
 };
 
-UClass* UTravelStationNozzleComponent::pClassPointer = NULL;
+//UClass* UTravelStationNozzleComponent::pClassPointer = NULL;
 
 // Class WillowGame.TurnDefinition
 // 0x003C (0x0078 - 0x003C)
@@ -18589,7 +18589,7 @@ public:
 	bool UsesIdleTurns();
 };
 
-UClass* UTurnDefinition::pClassPointer = NULL;
+//UClass* UTurnDefinition::pClassPointer = NULL;
 
 // Class WillowGame.UBMGraveyardSaveData
 // 0x000C (0x0048 - 0x003C)
@@ -18618,7 +18618,7 @@ public:
 	void AddTombstone(struct FTombstoneData NewTombstoneData);
 };
 
-UClass* UUBMGraveyardSaveData::pClassPointer = NULL;
+//UClass* UUBMGraveyardSaveData::pClassPointer = NULL;
 
 // Class WillowGame.VantageNode
 // 0x001C (0x0260 - 0x0244)
@@ -18642,7 +18642,7 @@ public:
 	};
 };
 
-UClass* AVantageNode::pClassPointer = NULL;
+//UClass* AVantageNode::pClassPointer = NULL;
 
 // Class WillowGame.VehicleBalanceDefinition
 // 0x0028 (0x0064 - 0x003C)
@@ -18671,7 +18671,7 @@ public:
 	class AWillowVehicle* GetArchetypeForGameStage(int GameStage, int AwesomeLevel);
 };
 
-UClass* UVehicleBalanceDefinition::pClassPointer = NULL;
+//UClass* UVehicleBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleBlockingVolume
 // 0x0000 (0x01C0 - 0x01C0)
@@ -18694,7 +18694,7 @@ public:
 	bool StopsProjectile(class AProjectile* P);
 };
 
-UClass* AVehicleBlockingVolume::pClassPointer = NULL;
+//UClass* AVehicleBlockingVolume::pClassPointer = NULL;
 
 // Class WillowGame.VehicleChoiceModuleGFxObject
 // 0x0014 (0x008C - 0x0078)
@@ -18727,7 +18727,7 @@ public:
 	void ConfigureVehicleTypeButton(struct FString Label, unsigned long bDisabled);
 };
 
-UClass* UVehicleChoiceModuleGFxObject::pClassPointer = NULL;
+//UClass* UVehicleChoiceModuleGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.VehicleClassDefinition
 // 0x0318 (0x0354 - 0x003C)
@@ -18849,7 +18849,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UVehicleClassDefinition::pClassPointer = NULL;
+//UClass* UVehicleClassDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleCrewAnimSetLookupTable
 // 0x000C (0x0048 - 0x003C)
@@ -18871,7 +18871,7 @@ public:
 	};
 };
 
-UClass* UVehicleCrewAnimSetLookupTable::pClassPointer = NULL;
+//UClass* UVehicleCrewAnimSetLookupTable::pClassPointer = NULL;
 
 // Class WillowGame.VehicleFamilyDefinition
 // 0x0038 (0x0074 - 0x003C)
@@ -18900,7 +18900,7 @@ public:
 	struct FString GetVehiclePreviewMoviePath();
 };
 
-UClass* UVehicleFamilyDefinition::pClassPointer = NULL;
+//UClass* UVehicleFamilyDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleHandlingDefinition
 // 0x00C0 (0x00FC - 0x003C)
@@ -18950,7 +18950,7 @@ public:
 	void ApplyDefinitionToVehicle(class AWillowVehicle* Vehicle);
 };
 
-UClass* UVehicleHandlingDefinition::pClassPointer = NULL;
+//UClass* UVehicleHandlingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CarVehicleHandlingDefinition
 // 0x0054 (0x0150 - 0x00FC)
@@ -18986,7 +18986,7 @@ public:
 	};
 };
 
-UClass* UCarVehicleHandlingDefinition::pClassPointer = NULL;
+//UClass* UCarVehicleHandlingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.HoverVehicleHandlingDefinition
 // 0x0028 (0x0178 - 0x0150)
@@ -19013,7 +19013,7 @@ public:
 	};
 };
 
-UClass* UHoverVehicleHandlingDefinition::pClassPointer = NULL;
+//UClass* UHoverVehicleHandlingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.TankVehicleHandlingDefinition
 // 0x0028 (0x0178 - 0x0150)
@@ -19045,7 +19045,7 @@ public:
 	};
 };
 
-UClass* UTankVehicleHandlingDefinition::pClassPointer = NULL;
+//UClass* UTankVehicleHandlingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ChopperVehicleHandlingDefinition
 // 0x006C (0x0168 - 0x00FC)
@@ -19097,7 +19097,7 @@ public:
 	};
 };
 
-UClass* UChopperVehicleHandlingDefinition::pClassPointer = NULL;
+//UClass* UChopperVehicleHandlingDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleLifetimeManager
 // 0x003C (0x01C4 - 0x0188)
@@ -19143,7 +19143,7 @@ public:
 	void Initialize();
 };
 
-UClass* AVehicleLifetimeManager::pClassPointer = NULL;
+//UClass* AVehicleLifetimeManager::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSpawnStationVehicleDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -19170,7 +19170,7 @@ public:
 	};
 };
 
-UClass* UVehicleSpawnStationVehicleDefinition::pClassPointer = NULL;
+//UClass* UVehicleSpawnStationVehicleDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleStandIn
 // 0x0020 (0x01A8 - 0x0188)
@@ -19214,7 +19214,7 @@ public:
 	void CustomizationApplied(class UCustomizationData* Data);
 };
 
-UClass* AVehicleStandIn::pClassPointer = NULL;
+//UClass* AVehicleStandIn::pClassPointer = NULL;
 
 // Class WillowGame.VehicleWheelDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -19245,7 +19245,7 @@ public:
 	};
 };
 
-UClass* UVehicleWheelDefinition::pClassPointer = NULL;
+//UClass* UVehicleWheelDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VSSUIDefinition
 // 0x0064 (0x00A0 - 0x003C)
@@ -19283,7 +19283,7 @@ public:
 	struct FString GetHumanReadableVehicleName();
 };
 
-UClass* UVSSUIDefinition::pClassPointer = NULL;
+//UClass* UVSSUIDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WaypointComponent
 // 0x0007 (0x0060 - 0x0059)
@@ -19307,7 +19307,7 @@ public:
 	void RemoveWaypoint();
 };
 
-UClass* UWaypointComponent::pClassPointer = NULL;
+//UClass* UWaypointComponent::pClassPointer = NULL;
 
 // Class WillowGame.LevelTransitionWaypointComponent
 // 0x000C (0x006C - 0x0060)
@@ -19332,7 +19332,7 @@ public:
 	void RemoveWaypoint();
 };
 
-UClass* ULevelTransitionWaypointComponent::pClassPointer = NULL;
+//UClass* ULevelTransitionWaypointComponent::pClassPointer = NULL;
 
 // Class WillowGame.MissionDirectiveWaypointComponent
 // 0x0005 (0x0065 - 0x0060)
@@ -19357,7 +19357,7 @@ public:
 	void RemoveWaypoint();
 };
 
-UClass* UMissionDirectiveWaypointComponent::pClassPointer = NULL;
+//UClass* UMissionDirectiveWaypointComponent::pClassPointer = NULL;
 
 // Class WillowGame.FailableMissionDirectiveWaypointComponent
 // 0x0003 (0x0068 - 0x0065)
@@ -19378,7 +19378,7 @@ public:
 	};
 };
 
-UClass* UFailableMissionDirectiveWaypointComponent::pClassPointer = NULL;
+//UClass* UFailableMissionDirectiveWaypointComponent::pClassPointer = NULL;
 
 // Class WillowGame.MissionObjectiveWaypointComponent
 // 0x0014 (0x0074 - 0x0060)
@@ -19403,7 +19403,7 @@ public:
 	void RemoveWaypoint();
 };
 
-UClass* UMissionObjectiveWaypointComponent::pClassPointer = NULL;
+//UClass* UMissionObjectiveWaypointComponent::pClassPointer = NULL;
 
 // Class WillowGame.WeaponAmmoResourceAttributeValueResolver
 // 0x001C (0x0058 - 0x003C)
@@ -19426,7 +19426,7 @@ public:
 	};
 };
 
-UClass* UWeaponAmmoResourceAttributeValueResolver::pClassPointer = NULL;
+//UClass* UWeaponAmmoResourceAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.WeaponGlowEffectDefinition
 // 0x0010 (0x004C - 0x003C)
@@ -19448,7 +19448,7 @@ public:
 	};
 };
 
-UClass* UWeaponGlowEffectDefinition::pClassPointer = NULL;
+//UClass* UWeaponGlowEffectDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponPartDefinition
 // 0x0144 (0x01DC - 0x0098)
@@ -19521,7 +19521,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UWeaponPartDefinition::pClassPointer = NULL;
+//UClass* UWeaponPartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponNamePartDefinition
 // 0x0028 (0x0204 - 0x01DC)
@@ -19548,7 +19548,7 @@ public:
 	};
 };
 
-UClass* UWeaponNamePartDefinition::pClassPointer = NULL;
+//UClass* UWeaponNamePartDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponPartListDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -19572,7 +19572,7 @@ public:
 	};
 };
 
-UClass* UWeaponPartListDefinition::pClassPointer = NULL;
+//UClass* UWeaponPartListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponTypeAttributeValueResolver
 // 0x001C (0x0058 - 0x003C)
@@ -19595,7 +19595,7 @@ public:
 	};
 };
 
-UClass* UWeaponTypeAttributeValueResolver::pClassPointer = NULL;
+//UClass* UWeaponTypeAttributeValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.WeaponTypeDefinition
 // 0x0500 (0x0680 - 0x0180)
@@ -19815,7 +19815,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UWeaponTypeDefinition::pClassPointer = NULL;
+//UClass* UWeaponTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIMoveNodePathComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -19836,7 +19836,7 @@ public:
 	};
 };
 
-UClass* UWillowAIMoveNodePathComponent::pClassPointer = NULL;
+//UClass* UWillowAIMoveNodePathComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowAkComponent
 // 0x0018 (0x0204 - 0x01EC)
@@ -19861,7 +19861,7 @@ public:
 	};
 };
 
-UClass* UWillowAkComponent::pClassPointer = NULL;
+//UClass* UWillowAkComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimDefinition
 // 0x000C (0x00C8 - 0x00BC)
@@ -19894,7 +19894,7 @@ public:
 	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
 };
 
-UClass* UWillowAnimDefinition::pClassPointer = NULL;
+//UClass* UWillowAnimDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Cringe
 // 0x000C (0x00D4 - 0x00C8)
@@ -19919,7 +19919,7 @@ public:
 	float PlayAnim(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
 };
 
-UClass* USpecialMove_Cringe::pClassPointer = NULL;
+//UClass* USpecialMove_Cringe::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Motion
 // 0x0000 (0x00C8 - 0x00C8)
@@ -19940,7 +19940,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_Motion::pClassPointer = NULL;
+//UClass* USpecialMove_Motion::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Cloak
 // 0x0004 (0x00CC - 0x00C8)
@@ -19966,7 +19966,7 @@ public:
 	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
 };
 
-UClass* USpecialMove_Cloak::pClassPointer = NULL;
+//UClass* USpecialMove_Cloak::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Dodge
 // 0x0000 (0x00C8 - 0x00C8)
@@ -19987,7 +19987,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_Dodge::pClassPointer = NULL;
+//UClass* USpecialMove_Dodge::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_PhysicsJump
 // 0x0018 (0x00E0 - 0x00C8)
@@ -20025,7 +20025,7 @@ public:
 	void OnStartIdle(struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* USpecialMove_PhysicsJump::pClassPointer = NULL;
+//UClass* USpecialMove_PhysicsJump::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Turn
 // 0x0000 (0x00C8 - 0x00C8)
@@ -20046,7 +20046,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_Turn::pClassPointer = NULL;
+//UClass* USpecialMove_Turn::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Perch
 // 0x0000 (0x00C8 - 0x00C8)
@@ -20067,7 +20067,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_Perch::pClassPointer = NULL;
+//UClass* USpecialMove_Perch::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_PerchLoop
 // 0x0000 (0x00C8 - 0x00C8)
@@ -20088,7 +20088,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_PerchLoop::pClassPointer = NULL;
+//UClass* USpecialMove_PerchLoop::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_PerchRandomLoop
 // 0x000C (0x00D4 - 0x00C8)
@@ -20113,7 +20113,7 @@ public:
 	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_PerchRandomLoop::pClassPointer = NULL;
+//UClass* USpecialMove_PerchRandomLoop::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_PhaseLock
 // 0x0000 (0x00C8 - 0x00C8)
@@ -20139,7 +20139,7 @@ public:
 	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_PhaseLock::pClassPointer = NULL;
+//UClass* USpecialMove_PhaseLock::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_PopulationPoint
 // 0x0000 (0x00C8 - 0x00C8)
@@ -20160,7 +20160,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_PopulationPoint::pClassPointer = NULL;
+//UClass* USpecialMove_PopulationPoint::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Spawned
 // 0x0008 (0x00D0 - 0x00C8)
@@ -20188,7 +20188,7 @@ public:
 	void eventServerStarted(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_Spawned::pClassPointer = NULL;
+//UClass* USpecialMove_Spawned::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Vehicle
 // 0x0010 (0x00D8 - 0x00C8)
@@ -20214,7 +20214,7 @@ public:
 	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_Vehicle::pClassPointer = NULL;
+//UClass* USpecialMove_Vehicle::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_Simple
 // 0x0038 (0x0114 - 0x00DC)
@@ -20260,7 +20260,7 @@ public:
 	void Play();
 };
 
-UClass* UWillowAnimNode_Simple::pClassPointer = NULL;
+//UClass* UWillowAnimNode_Simple::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimTreeFactory
 // 0x0000 (0x0070 - 0x0070)
@@ -20281,7 +20281,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimTreeFactory::pClassPointer = NULL;
+//UClass* UWillowAnimTreeFactory::pClassPointer = NULL;
 
 // Class WillowGame.WillowAutoAimProfileDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -20308,7 +20308,7 @@ public:
 	};
 };
 
-UClass* UWillowAutoAimProfileDefinition::pClassPointer = NULL;
+//UClass* UWillowAutoAimProfileDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowAutoAimStrategy
 // 0x0079 (0x00B5 - 0x003C)
@@ -20358,7 +20358,7 @@ public:
 	void ModifyInput(class AWillowPlayerController* InPlayer, float* aTurn, float* aLookUp, float* aForward, float* aStrafe);
 };
 
-UClass* UWillowAutoAimStrategy::pClassPointer = NULL;
+//UClass* UWillowAutoAimStrategy::pClassPointer = NULL;
 
 // Class WillowGame.WillowAutoAimStrategyDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -20391,7 +20391,7 @@ public:
 	class UWillowAutoAimProfileDefinition* GetProfileDefinition(unsigned char Profile);
 };
 
-UClass* UWillowAutoAimStrategyDefinition::pClassPointer = NULL;
+//UClass* UWillowAutoAimStrategyDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowCalloutDefinition
 // 0x0004 (0x0050 - 0x004C)
@@ -20413,7 +20413,7 @@ public:
 	};
 };
 
-UClass* UWillowCalloutDefinition::pClassPointer = NULL;
+//UClass* UWillowCalloutDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowCharacterClassDefinition
 // 0x013C (0x0294 - 0x0158)
@@ -20466,7 +20466,7 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-UClass* UWillowCharacterClassDefinition::pClassPointer = NULL;
+//UClass* UWillowCharacterClassDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PlayerClassDefinition
 // 0x0124 (0x03B8 - 0x0294)
@@ -20524,7 +20524,7 @@ public:
 	TArray< unsigned char > ShouldUnlockPlayerClassAchievement(unsigned char UnlockType, int IntData, unsigned long bCanBeGreater, unsigned long bCanBeLess);
 };
 
-UClass* UPlayerClassDefinition::pClassPointer = NULL;
+//UClass* UPlayerClassDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowClanDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -20549,7 +20549,7 @@ public:
 	void ChangeObjectMaterials(class UObject* MaterialObject);
 };
 
-UClass* UWillowClanDefinition::pClassPointer = NULL;
+//UClass* UWillowClanDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowCustomizationManager
 // 0x003C (0x0078 - 0x003C)
@@ -20589,7 +20589,7 @@ public:
 	void PlayerCustomizationsUpdated(class AWillowPlayerReplicationInfo* PRI);
 };
 
-UClass* UWillowCustomizationManager::pClassPointer = NULL;
+//UClass* UWillowCustomizationManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowDamageArea
 // 0x0074 (0x01FC - 0x0188)
@@ -20643,7 +20643,7 @@ public:
 	float GetStatusEffectBaseDamage(class UObject* ObjContext);
 };
 
-UClass* AWillowDamageArea::pClassPointer = NULL;
+//UClass* AWillowDamageArea::pClassPointer = NULL;
 
 // Class WillowGame.WillowDamagePipeline
 // 0x00C0 (0x0190 - 0x00D0)
@@ -20713,7 +20713,7 @@ public:
 	struct FDamageEventSummary AdjustDamage(float IncomingDamage, float DamageSeverityPercent, class AActor* InDamagedActor, class AController* InDamageInstigator, struct FVector InHitLocation, class UClass* InDamageSource, struct FVector InHitMomentum, struct FTraceHitInfo InHitInfo);
 };
 
-UClass* UWillowDamagePipeline::pClassPointer = NULL;
+//UClass* UWillowDamagePipeline::pClassPointer = NULL;
 
 // Class WillowGame.WillowDamageType
 // 0x001C (0x0080 - 0x0064)
@@ -20750,7 +20750,7 @@ public:
 	void SpawnHitEffect(class APawn* P, float Damage, struct FVector Momentum, struct FTraceHitInfo HitInfo, struct FVector HitLocation);
 };
 
-UClass* UWillowDamageType::pClassPointer = NULL;
+//UClass* UWillowDamageType::pClassPointer = NULL;
 
 // Class WillowGame.WillowDamageSource
 // 0x0000 (0x0080 - 0x0080)
@@ -20775,7 +20775,7 @@ public:
 	void GetAmmoTheftAmounts(class UClass* DamageSource, class AController* DamageInstigator, class AController* DamageReceiver, int* InstigatedDamageAmmoTheftAmount, int* ReceivedDamageAmmoTheftAmount);
 };
 
-UClass* UWillowDamageSource::pClassPointer = NULL;
+//UClass* UWillowDamageSource::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Bullet
 // 0x0000 (0x0080 - 0x0080)
@@ -20796,7 +20796,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Bullet::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Bullet::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_MachineGun
 // 0x0000 (0x0080 - 0x0080)
@@ -20817,7 +20817,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_MachineGun::pClassPointer = NULL;
+//UClass* UWillowDmgSource_MachineGun::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Pistol
 // 0x0000 (0x0080 - 0x0080)
@@ -20838,7 +20838,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Pistol::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Pistol::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Shotgun
 // 0x0000 (0x0080 - 0x0080)
@@ -20859,7 +20859,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Shotgun::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Shotgun::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Sniper
 // 0x0000 (0x0080 - 0x0080)
@@ -20880,7 +20880,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Sniper::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Sniper::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_SubMachineGun
 // 0x0000 (0x0080 - 0x0080)
@@ -20901,7 +20901,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_SubMachineGun::pClassPointer = NULL;
+//UClass* UWillowDmgSource_SubMachineGun::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_CustomCrate
 // 0x0000 (0x0080 - 0x0080)
@@ -20922,7 +20922,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_CustomCrate::pClassPointer = NULL;
+//UClass* UWillowDmgSource_CustomCrate::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Grenade
 // 0x0000 (0x0080 - 0x0080)
@@ -20943,7 +20943,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Grenade::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Grenade::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Melee
 // 0x0000 (0x0080 - 0x0080)
@@ -20964,7 +20964,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Melee::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Melee::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Rocket
 // 0x0000 (0x0080 - 0x0080)
@@ -20985,7 +20985,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Rocket::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Rocket::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Shield
 // 0x0000 (0x0080 - 0x0080)
@@ -21006,7 +21006,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Shield::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Shield::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_ShieldNova
 // 0x0000 (0x0080 - 0x0080)
@@ -21027,7 +21027,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_ShieldNova::pClassPointer = NULL;
+//UClass* UWillowDmgSource_ShieldNova::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_ShieldSpike
 // 0x0000 (0x0080 - 0x0080)
@@ -21048,7 +21048,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_ShieldSpike::pClassPointer = NULL;
+//UClass* UWillowDmgSource_ShieldSpike::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Skill
 // 0x0000 (0x0080 - 0x0080)
@@ -21069,7 +21069,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Skill::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Skill::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_Skill_IgnoreIOs
 // 0x0000 (0x0080 - 0x0080)
@@ -21090,7 +21090,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_Skill_IgnoreIOs::pClassPointer = NULL;
+//UClass* UWillowDmgSource_Skill_IgnoreIOs::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_StatusEffect
 // 0x0000 (0x0080 - 0x0080)
@@ -21111,7 +21111,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_StatusEffect::pClassPointer = NULL;
+//UClass* UWillowDmgSource_StatusEffect::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_VehicleRanInto
 // 0x0000 (0x0080 - 0x0080)
@@ -21132,7 +21132,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_VehicleRanInto::pClassPointer = NULL;
+//UClass* UWillowDmgSource_VehicleRanInto::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_VehicleRanOver
 // 0x0000 (0x0080 - 0x0080)
@@ -21153,7 +21153,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_VehicleRanOver::pClassPointer = NULL;
+//UClass* UWillowDmgSource_VehicleRanOver::pClassPointer = NULL;
 
 // Class WillowGame.WillowDamageTypeDefinition
 // 0x00C0 (0x00FC - 0x003C)
@@ -21215,7 +21215,7 @@ public:
 	bool ApplyUpwardMomentum();
 };
 
-UClass* UWillowDamageTypeDefinition::pClassPointer = NULL;
+//UClass* UWillowDamageTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowDeclarations
 // 0x0000 (0x003C - 0x003C)
@@ -21236,7 +21236,7 @@ public:
 	};
 };
 
-UClass* UWillowDeclarations::pClassPointer = NULL;
+//UClass* UWillowDeclarations::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogAct_MissionSwitch
 // 0x0008 (0x0078 - 0x0070)
@@ -21261,7 +21261,7 @@ public:
 	void eventActivate();
 };
 
-UClass* UWillowDialogAct_MissionSwitch::pClassPointer = NULL;
+//UClass* UWillowDialogAct_MissionSwitch::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogAct_RandomBranch
 // 0x002C (0x009C - 0x0070)
@@ -21291,7 +21291,7 @@ public:
 	void eventActivate();
 };
 
-UClass* UWillowDialogAct_RandomBranch::pClassPointer = NULL;
+//UClass* UWillowDialogAct_RandomBranch::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogAct_Talk
 // 0x0008 (0x008C - 0x0084)
@@ -21318,7 +21318,7 @@ public:
 	void eventTalkStarted(class AActor* InTalker);
 };
 
-UClass* UWillowDialogAct_Talk::pClassPointer = NULL;
+//UClass* UWillowDialogAct_Talk::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogAct_Trigger
 // 0x0000 (0x0078 - 0x0078)
@@ -21339,7 +21339,7 @@ public:
 	};
 };
 
-UClass* UWillowDialogAct_Trigger::pClassPointer = NULL;
+//UClass* UWillowDialogAct_Trigger::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogEchoActor
 // 0x0020 (0x01A8 - 0x0188)
@@ -21375,7 +21375,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowDialogEchoActor::pClassPointer = NULL;
+//UClass* AWillowDialogEchoActor::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogEmoteDefinition
 // 0x0000 (0x003C - 0x003C)
@@ -21396,7 +21396,7 @@ public:
 	};
 };
 
-UClass* UWillowDialogEmoteDefinition::pClassPointer = NULL;
+//UClass* UWillowDialogEmoteDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogEventTag
 // 0x0004 (0x0048 - 0x0044)
@@ -21421,7 +21421,7 @@ public:
 	};
 };
 
-UClass* UWillowDialogEventTag::pClassPointer = NULL;
+//UClass* UWillowDialogEventTag::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogEventTagSpecialized
 // 0x0010 (0x0058 - 0x0048)
@@ -21444,7 +21444,7 @@ public:
 	};
 };
 
-UClass* UWillowDialogEventTagSpecialized::pClassPointer = NULL;
+//UClass* UWillowDialogEventTagSpecialized::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogGlobalsDefinition
 // 0x014C (0x0198 - 0x004C)
@@ -21541,7 +21541,7 @@ public:
 	class UWillowDialogGlobalsDefinition* Get();
 };
 
-UClass* UWillowDialogGlobalsDefinition::pClassPointer = NULL;
+//UClass* UWillowDialogGlobalsDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogManager
 // 0x001C (0x00DC - 0x00C0)
@@ -21572,7 +21572,7 @@ public:
 	void PlayEchoDialog(class UWillowDialogEventTag* InEvent, class UWillowDialogNameTag* InName, unsigned long bForcePlayAsPureEcho);
 };
 
-UClass* UWillowDialogManager::pClassPointer = NULL;
+//UClass* UWillowDialogManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogNameTag
 // 0x0040 (0x0088 - 0x0048)
@@ -21603,7 +21603,7 @@ public:
 	void StaticShowEchoPortrait(class UGearboxDialogInterface* DialogContext, class UWillowDialogEmoteDefinition* InEmote, class AWillowPlayerController* InInstigator);
 };
 
-UClass* UWillowDialogNameTag::pClassPointer = NULL;
+//UClass* UWillowDialogNameTag::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogVar_InstanceData
 // 0x0008 (0x0078 - 0x0070)
@@ -21625,7 +21625,7 @@ public:
 	};
 };
 
-UClass* UWillowDialogVar_InstanceData::pClassPointer = NULL;
+//UClass* UWillowDialogVar_InstanceData::pClassPointer = NULL;
 
 // Class WillowGame.WillowDialogVar_Passenger
 // 0x0000 (0x0070 - 0x0070)
@@ -21646,7 +21646,7 @@ public:
 	};
 };
 
-UClass* UWillowDialogVar_Passenger::pClassPointer = NULL;
+//UClass* UWillowDialogVar_Passenger::pClassPointer = NULL;
 
 // Class WillowGame.WillowDownloadableContentManager
 // 0x01A8 (0x0300 - 0x0158)
@@ -21727,7 +21727,7 @@ public:
 	class ULevelTravelStationDefinition* FindMatchingDlcLevelTravelDestination(class ULevelTravelStationDefinition* Source);
 };
 
-UClass* UWillowDownloadableContentManager::pClassPointer = NULL;
+//UClass* UWillowDownloadableContentManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowDynamicNavMeshConnectionPoint
 // 0x0054 (0x0298 - 0x0244)
@@ -21756,7 +21756,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* AWillowDynamicNavMeshConnectionPoint::pClassPointer = NULL;
+//UClass* AWillowDynamicNavMeshConnectionPoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowDynamicNavMeshConnectionPointRenderingComponent
 // 0x0008 (0x0218 - 0x0210)
@@ -21779,7 +21779,7 @@ public:
 	};
 };
 
-UClass* UWillowDynamicNavMeshConnectionPointRenderingComponent::pClassPointer = NULL;
+//UClass* UWillowDynamicNavMeshConnectionPointRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowDynamicPathBlockingVolume
 // 0x0014 (0x01D0 - 0x01BC)
@@ -21805,7 +21805,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* AWillowDynamicPathBlockingVolume::pClassPointer = NULL;
+//UClass* AWillowDynamicPathBlockingVolume::pClassPointer = NULL;
 
 // Class WillowGame.WillowEffectCoordinator
 // 0x0078 (0x00B4 - 0x003C)
@@ -21847,7 +21847,7 @@ public:
 	void OnEffectComplete(class UObject* Target);
 };
 
-UClass* UWillowEffectCoordinator::pClassPointer = NULL;
+//UClass* UWillowEffectCoordinator::pClassPointer = NULL;
 
 // Class WillowGame.WillowElevator
 // 0x0028 (0x021C - 0x01F4)
@@ -21884,7 +21884,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowElevator::pClassPointer = NULL;
+//UClass* AWillowElevator::pClassPointer = NULL;
 
 // Class WillowGame.WillowElevatorRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -21905,7 +21905,7 @@ public:
 	};
 };
 
-UClass* UWillowElevatorRenderingComponent::pClassPointer = NULL;
+//UClass* UWillowElevatorRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowEmitter
 // 0x0008 (0x019C - 0x0194)
@@ -21931,7 +21931,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowEmitter::pClassPointer = NULL;
+//UClass* AWillowEmitter::pClassPointer = NULL;
 
 // Class WillowGame.StatusEffectReplicatedEmitter
 // 0x001C (0x01B8 - 0x019C)
@@ -21978,7 +21978,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AStatusEffectReplicatedEmitter::pClassPointer = NULL;
+//UClass* AStatusEffectReplicatedEmitter::pClassPointer = NULL;
 
 // Class WillowGame.WillowExperiencePipeline
 // 0x0000 (0x003C - 0x003C)
@@ -22002,7 +22002,7 @@ public:
 	float CalculateExperiencePointsForKill(class AWillowPlayerController* Killer, class AActor* KilledActor, unsigned long bFatalBlowWasCriticalHit, class UClass* FatalBlowDamageSource, class UDamageTypeDefinition* FatalBlowDamageTypeDefinition);
 };
 
-UClass* UWillowExperiencePipeline::pClassPointer = NULL;
+//UClass* UWillowExperiencePipeline::pClassPointer = NULL;
 
 // Class WillowGame.WillowExposureUtilityStrategy
 // 0x0000 (0x003C - 0x003C)
@@ -22023,7 +22023,7 @@ public:
 	};
 };
 
-UClass* UWillowExposureUtilityStrategy::pClassPointer = NULL;
+//UClass* UWillowExposureUtilityStrategy::pClassPointer = NULL;
 
 // Class WillowGame.WillowForcedReachSpec
 // 0x0000 (0x0084 - 0x0084)
@@ -22046,7 +22046,7 @@ public:
 	bool eventDoSpecialMove(class AWillowPawn* WP);
 };
 
-UClass* UWillowForcedReachSpec::pClassPointer = NULL;
+//UClass* UWillowForcedReachSpec::pClassPointer = NULL;
 
 // Class WillowGame.WillowGameEngine
 // 0x0048 (0x0814 - 0x07CC)
@@ -22088,7 +22088,7 @@ public:
 	bool CanUnpause();
 };
 
-UClass* UWillowGameEngine::pClassPointer = NULL;
+//UClass* UWillowGameEngine::pClassPointer = NULL;
 
 // Class WillowGame.WillowCoopGameInfo
 // 0x0010 (0x0624 - 0x0614)
@@ -22134,7 +22134,7 @@ public:
 	void CreateTeam(int TeamIndex, struct FString TeamName);
 };
 
-UClass* AWillowCoopGameInfo::pClassPointer = NULL;
+//UClass* AWillowCoopGameInfo::pClassPointer = NULL;
 
 // Class WillowGame.WillowGameReplicationInfo
 // 0x0280 (0x046C - 0x01EC)
@@ -22273,7 +22273,7 @@ public:
 	void SetCurrentPlaythrough(class AWillowPlayerController* PrimaryWPC, int InCurrPlaythrough);
 };
 
-UClass* AWillowGameReplicationInfo::pClassPointer = NULL;
+//UClass* AWillowGameReplicationInfo::pClassPointer = NULL;
 
 // Class WillowGame.WillowGameViewportClient
 // 0x015C (0x0278 - 0x011C)
@@ -22354,7 +22354,7 @@ public:
 	void OpenMapMenu();
 };
 
-UClass* UWillowGameViewportClient::pClassPointer = NULL;
+//UClass* UWillowGameViewportClient::pClassPointer = NULL;
 
 // Class WillowGame.WillowGlobals
 // 0x00EC (0x01E0 - 0x00F4)
@@ -22468,7 +22468,7 @@ public:
 	void AddInteractiveObject(class AWillowInteractiveObject* Object);
 };
 
-UClass* UWillowGlobals::pClassPointer = NULL;
+//UClass* UWillowGlobals::pClassPointer = NULL;
 
 // Class WillowGame.WillowHUD
 // 0x02B4 (0x04D8 - 0x0224)
@@ -22680,7 +22680,7 @@ public:
 	void LoadBuildInfo();
 };
 
-UClass* AWillowHUD::pClassPointer = NULL;
+//UClass* AWillowHUD::pClassPointer = NULL;
 
 // Class WillowGame.WillowImpactDefinition
 // 0x0138 (0x0174 - 0x003C)
@@ -22709,7 +22709,7 @@ public:
 	void HandleRigidBodyImpact(class AActor* Instigator, class UPrimitiveComponent* HitComponent, class UPrimitiveComponent* OtherComponent, int ContactIndex, unsigned long bReplicateEffect, struct FCollisionImpactData* RigidCollisionData);
 };
 
-UClass* UWillowImpactDefinition::pClassPointer = NULL;
+//UClass* UWillowImpactDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowExplosionImpactDefinition
 // 0x0000 (0x0174 - 0x0174)
@@ -22730,7 +22730,7 @@ public:
 	};
 };
 
-UClass* UWillowExplosionImpactDefinition::pClassPointer = NULL;
+//UClass* UWillowExplosionImpactDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowInteractiveObject
 // 0x022C (0x03B4 - 0x0188)
@@ -23084,7 +23084,7 @@ public:
 	class AActor* GetTargetableActor();
 };
 
-UClass* AWillowInteractiveObject::pClassPointer = NULL;
+//UClass* AWillowInteractiveObject::pClassPointer = NULL;
 
 // Class WillowGame.TravelStation
 // 0x0070 (0x0424 - 0x03B4)
@@ -23148,7 +23148,7 @@ public:
 	void UpdateCollideAsEncroacher();
 };
 
-UClass* ATravelStation::pClassPointer = NULL;
+//UClass* ATravelStation::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStation
 // 0x0004 (0x0428 - 0x0424)
@@ -23176,7 +23176,7 @@ public:
 	class UTravelStationDefinition* GetTravelStationDefinition();
 };
 
-UClass* AFastTravelStation::pClassPointer = NULL;
+//UClass* AFastTravelStation::pClassPointer = NULL;
 
 // Class WillowGame.LevelTravelStation
 // 0x001C (0x0440 - 0x0424)
@@ -23207,7 +23207,7 @@ public:
 	class UTravelStationDefinition* GetTravelStationDefinition();
 };
 
-UClass* ALevelTravelStation::pClassPointer = NULL;
+//UClass* ALevelTravelStation::pClassPointer = NULL;
 
 // Class WillowGame.ResurrectTravelStation
 // 0x0000 (0x0424 - 0x0424)
@@ -23230,7 +23230,7 @@ public:
 	bool CanResurrectHere(unsigned long bIsLevelTravel);
 };
 
-UClass* AResurrectTravelStation::pClassPointer = NULL;
+//UClass* AResurrectTravelStation::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSpawnStationPlatform
 // 0x000C (0x03C0 - 0x03B4)
@@ -23264,7 +23264,7 @@ public:
 	void SetSeatOccupied(int SeatIdx, unsigned long IsOccupied);
 };
 
-UClass* AVehicleSpawnStationPlatform::pClassPointer = NULL;
+//UClass* AVehicleSpawnStationPlatform::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSpawnStationTerminal
 // 0x0008 (0x03BC - 0x03B4)
@@ -23295,7 +23295,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AVehicleSpawnStationTerminal::pClassPointer = NULL;
+//UClass* AVehicleSpawnStationTerminal::pClassPointer = NULL;
 
 // Class WillowGame.WillowElevatorButton
 // 0x0058 (0x040C - 0x03B4)
@@ -23333,7 +23333,7 @@ public:
 	bool UseObject(class APawn* User, class UPrimitiveComponent* UsedComponent, unsigned char UsedType);
 };
 
-UClass* AWillowElevatorButton::pClassPointer = NULL;
+//UClass* AWillowElevatorButton::pClassPointer = NULL;
 
 // Class WillowGame.WillowInteractiveSwitch
 // 0x0050 (0x0404 - 0x03B4)
@@ -23373,7 +23373,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowInteractiveSwitch::pClassPointer = NULL;
+//UClass* AWillowInteractiveSwitch::pClassPointer = NULL;
 
 // Class WillowGame.WillowPropObject
 // 0x0000 (0x03B4 - 0x03B4)
@@ -23396,7 +23396,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowPropObject::pClassPointer = NULL;
+//UClass* AWillowPropObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowVendingMachineBase
 // 0x0014 (0x03C8 - 0x03B4)
@@ -23442,7 +23442,7 @@ public:
 	unsigned char GetShopType();
 };
 
-UClass* AWillowVendingMachineBase::pClassPointer = NULL;
+//UClass* AWillowVendingMachineBase::pClassPointer = NULL;
 
 // Class WillowGame.WillowVendingMachine
 // 0x00DC (0x04A4 - 0x03C8)
@@ -23488,7 +23488,7 @@ public:
 	void GenerateInventory();
 };
 
-UClass* AWillowVendingMachine::pClassPointer = NULL;
+//UClass* AWillowVendingMachine::pClassPointer = NULL;
 
 // Class WillowGame.WillowVendingMachineBlackMarket
 // 0x0004 (0x03CC - 0x03C8)
@@ -23522,7 +23522,7 @@ public:
 	int GetSellingPriceForInventory(class AWillowInventory* InventoryForSale, class AWillowPlayerController* WPC, int Quantity);
 };
 
-UClass* AWillowVendingMachineBlackMarket::pClassPointer = NULL;
+//UClass* AWillowVendingMachineBlackMarket::pClassPointer = NULL;
 
 // Class WillowGame.WillowInteractiveSwitchRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -23543,7 +23543,7 @@ public:
 	};
 };
 
-UClass* UWillowInteractiveSwitchRenderingComponent::pClassPointer = NULL;
+//UClass* UWillowInteractiveSwitchRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowInventoryManager
 // 0x0084 (0x0238 - 0x01B4)
@@ -23697,7 +23697,7 @@ public:
 	void ItemActors(class UClass* BaseClass, unsigned long bOnlyReadied, class AInventory** Inv);
 };
 
-UClass* AWillowInventoryManager::pClassPointer = NULL;
+//UClass* AWillowInventoryManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowInventoryStorage
 // 0x0024 (0x0060 - 0x003C)
@@ -23748,7 +23748,7 @@ public:
 	int GetSize();
 };
 
-UClass* UWillowInventoryStorage::pClassPointer = NULL;
+//UClass* UWillowInventoryStorage::pClassPointer = NULL;
 
 // Class WillowGame.WillowItem
 // 0x00F4 (0x098C - 0x0898)
@@ -23888,7 +23888,7 @@ public:
 	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
 };
 
-UClass* AWillowItem::pClassPointer = NULL;
+//UClass* AWillowItem::pClassPointer = NULL;
 
 // Class WillowGame.WillowEquipAbleItem
 // 0x0000 (0x098C - 0x098C)
@@ -23921,7 +23921,7 @@ public:
 	void OnEquipped(class UObject* EventInstigator, TArray< class UBehaviorProviderDefinition* >* Providers);
 };
 
-UClass* AWillowEquipAbleItem::pClassPointer = NULL;
+//UClass* AWillowEquipAbleItem::pClassPointer = NULL;
 
 // Class WillowGame.WillowArtifact
 // 0x0000 (0x098C - 0x098C)
@@ -23949,7 +23949,7 @@ public:
 	unsigned char eventGetEquipmentLocation();
 };
 
-UClass* AWillowArtifact::pClassPointer = NULL;
+//UClass* AWillowArtifact::pClassPointer = NULL;
 
 // Class WillowGame.WillowClassMod
 // 0x0018 (0x09A4 - 0x098C)
@@ -23982,7 +23982,7 @@ public:
 	unsigned char eventGetEquipmentLocation();
 };
 
-UClass* AWillowClassMod::pClassPointer = NULL;
+//UClass* AWillowClassMod::pClassPointer = NULL;
 
 // Class WillowGame.WillowGrenadeMod
 // 0x0090 (0x0A1C - 0x098C)
@@ -24051,7 +24051,7 @@ public:
 	void OnGrenadeSpawned(class UObject* SpawnedProjectile, TArray< class UBehaviorProviderDefinition* >* Providers);
 };
 
-UClass* AWillowGrenadeMod::pClassPointer = NULL;
+//UClass* AWillowGrenadeMod::pClassPointer = NULL;
 
 // Class WillowGame.WillowShield
 // 0x01D8 (0x0B64 - 0x098C)
@@ -24161,7 +24161,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowShield::pClassPointer = NULL;
+//UClass* AWillowShield::pClassPointer = NULL;
 
 // Class WillowGame.WillowUsableItem
 // 0x0008 (0x0994 - 0x098C)
@@ -24199,7 +24199,7 @@ public:
 	void OnUsed(class UObject* EventInstigator, TArray< class UBehaviorProviderDefinition* >* Providers);
 };
 
-UClass* AWillowUsableItem::pClassPointer = NULL;
+//UClass* AWillowUsableItem::pClassPointer = NULL;
 
 // Class WillowGame.WillowMissionItem
 // 0x0010 (0x09A4 - 0x0994)
@@ -24232,7 +24232,7 @@ public:
 	bool ValidateDefinitions();
 };
 
-UClass* AWillowMissionItem::pClassPointer = NULL;
+//UClass* AWillowMissionItem::pClassPointer = NULL;
 
 // Class WillowGame.WillowUsableCustomizationItem
 // 0x0000 (0x0994 - 0x0994)
@@ -24263,7 +24263,7 @@ public:
 	bool ValidateDefinition();
 };
 
-UClass* AWillowUsableCustomizationItem::pClassPointer = NULL;
+//UClass* AWillowUsableCustomizationItem::pClassPointer = NULL;
 
 // Class WillowGame.WillowItemTypes
 // 0x0000 (0x003C - 0x003C)
@@ -24284,7 +24284,7 @@ public:
 	};
 };
 
-UClass* UWillowItemTypes::pClassPointer = NULL;
+//UClass* UWillowItemTypes::pClassPointer = NULL;
 
 // Class WillowGame.WillowLightProjectileManager
 // 0x0C94 (0x0E1C - 0x0188)
@@ -24336,7 +24336,7 @@ public:
 	void eventDestroyed();
 };
 
-UClass* AWillowLightProjectileManager::pClassPointer = NULL;
+//UClass* AWillowLightProjectileManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowLocalMessage
 // 0x0003 (0x004C - 0x0049)
@@ -24361,7 +24361,7 @@ public:
 	struct FString TrimWhitespace(struct FString InString);
 };
 
-UClass* UWillowLocalMessage::pClassPointer = NULL;
+//UClass* UWillowLocalMessage::pClassPointer = NULL;
 
 // Class WillowGame.LocalInventoryRefreshMessage
 // 0x0000 (0x004C - 0x004C)
@@ -24384,7 +24384,7 @@ public:
 	void ClientInventoryRefresh(class AWillowPlayerController* WPC);
 };
 
-UClass* ULocalInventoryRefreshMessage::pClassPointer = NULL;
+//UClass* ULocalInventoryRefreshMessage::pClassPointer = NULL;
 
 // Class WillowGame.LocalTrainingDefinitionMessage
 // 0x0000 (0x004C - 0x004C)
@@ -24407,7 +24407,7 @@ public:
 	void ClientTrainingDefinitionReceive(class AWillowPlayerController* WPC, class UTrainingMessageDefinition* TrainingDefinition, float Duration);
 };
 
-UClass* ULocalTrainingDefinitionMessage::pClassPointer = NULL;
+//UClass* ULocalTrainingDefinitionMessage::pClassPointer = NULL;
 
 // Class WillowGame.LocalTrainingMessage
 // 0x0004 (0x0050 - 0x004C)
@@ -24432,7 +24432,7 @@ public:
 	void ClientReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* ULocalTrainingMessage::pClassPointer = NULL;
+//UClass* ULocalTrainingMessage::pClassPointer = NULL;
 
 // Class WillowGame.ReceivedAmmoMessage
 // 0x0028 (0x0074 - 0x004C)
@@ -24462,7 +24462,7 @@ public:
 	void ClientAmmoReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, int GainedAmount);
 };
 
-UClass* UReceivedAmmoMessage::pClassPointer = NULL;
+//UClass* UReceivedAmmoMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowMapInfo
 // 0x000C (0x0048 - 0x003C)
@@ -24486,7 +24486,7 @@ public:
 	};
 };
 
-UClass* UWillowMapInfo::pClassPointer = NULL;
+//UClass* UWillowMapInfo::pClassPointer = NULL;
 
 // Class WillowGame.WillowMissionPickupSpawner
 // 0x0018 (0x01A0 - 0x0188)
@@ -24523,7 +24523,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AWillowMissionPickupSpawner::pClassPointer = NULL;
+//UClass* AWillowMissionPickupSpawner::pClassPointer = NULL;
 
 // Class WillowGame.WillowMissionPickupFailsafe
 // 0x0014 (0x01B4 - 0x01A0)
@@ -24557,7 +24557,7 @@ public:
 	void SetPickupStatus(unsigned long bPickupEnabled);
 };
 
-UClass* AWillowMissionPickupFailsafe::pClassPointer = NULL;
+//UClass* AWillowMissionPickupFailsafe::pClassPointer = NULL;
 
 // Class WillowGame.WillowObstacleUtility
 // 0x002C (0x0068 - 0x003C)
@@ -24591,7 +24591,7 @@ public:
 	void RegisterObstacle(class AActor* Obstacle);
 };
 
-UClass* UWillowObstacleUtility::pClassPointer = NULL;
+//UClass* UWillowObstacleUtility::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnDemandPackageMarker
 // 0x0000 (0x003C - 0x003C)
@@ -24612,7 +24612,7 @@ public:
 	};
 };
 
-UClass* UWillowOnDemandPackageMarker::pClassPointer = NULL;
+//UClass* UWillowOnDemandPackageMarker::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSettings_DataStore
 // 0x0000 (0x0098 - 0x0098)
@@ -24638,7 +24638,7 @@ public:
 	bool eventCreateGame(unsigned char ControllerIndex);
 };
 
-UClass* UWillowOnlineGameSettings_DataStore::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSettings_DataStore::pClassPointer = NULL;
 
 // Class WillowGame.WillowPauseTicker
 // 0x0010 (0x004C - 0x003C)
@@ -24665,7 +24665,7 @@ public:
 	void SetTimer(float Rate, unsigned long bLoop, struct FName TimerFunc, class UObject* TimerObj);
 };
 
-UClass* UWillowPauseTicker::pClassPointer = NULL;
+//UClass* UWillowPauseTicker::pClassPointer = NULL;
 
 // Class WillowGame.WillowPawn
 // 0x0968 (0x1064 - 0x06FC)
@@ -25592,7 +25592,7 @@ public:
 	unsigned char GetOpinion(class UObject* Other);
 };
 
-UClass* AWillowPawn::pClassPointer = NULL;
+//UClass* AWillowPawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIPawn
 // 0x02C0 (0x1324 - 0x1064)
@@ -25959,7 +25959,7 @@ public:
 	class AWillowAIPawn* GetAWillowAIPawn();
 };
 
-UClass* AWillowAIPawn::pClassPointer = NULL;
+//UClass* AWillowAIPawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowAICranePawn
 // 0x0058 (0x137C - 0x1324)
@@ -26002,7 +26002,7 @@ public:
 	bool Died(class AController* Killer, class UClass* DamageType, struct FVector HitLocation, class UDamagePipeline* Pipeline);
 };
 
-UClass* AWillowAICranePawn::pClassPointer = NULL;
+//UClass* AWillowAICranePawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerPawn
 // 0x02CC (0x1330 - 0x1064)
@@ -26344,7 +26344,7 @@ public:
 	void OnTargetedByAI(class AWillowMind* AIMind);
 };
 
-UClass* AWillowPlayerPawn::pClassPointer = NULL;
+//UClass* AWillowPlayerPawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowPawnInteractionDefinition
 // 0x000C (0x007C - 0x0070)
@@ -26368,7 +26368,7 @@ public:
 	};
 };
 
-UClass* UWillowPawnInteractionDefinition::pClassPointer = NULL;
+//UClass* UWillowPawnInteractionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowPersonalTeleporter
 // 0x0028 (0x01C4 - 0x019C)
@@ -26418,7 +26418,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowPersonalTeleporter::pClassPointer = NULL;
+//UClass* AWillowPersonalTeleporter::pClassPointer = NULL;
 
 // Class WillowGame.WillowPhysicalMaterialProperty
 // 0x006C (0x00A8 - 0x003C)
@@ -26461,7 +26461,7 @@ public:
 	void ToggleImpactDebug();
 };
 
-UClass* UWillowPhysicalMaterialProperty::pClassPointer = NULL;
+//UClass* UWillowPhysicalMaterialProperty::pClassPointer = NULL;
 
 // Class WillowGame.WillowPickup
 // 0x00AC (0x0270 - 0x01C4)
@@ -26596,7 +26596,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowPickup::pClassPointer = NULL;
+//UClass* AWillowPickup::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerInput
 // 0x014C (0x02C8 - 0x017C)
@@ -26685,7 +26685,7 @@ public:
 	void SetupInputDevices();
 };
 
-UClass* UWillowPlayerInput::pClassPointer = NULL;
+//UClass* UWillowPlayerInput::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerPawnDataManager
 // 0x0030 (0x006C - 0x003C)
@@ -26726,7 +26726,7 @@ public:
 	class AWillowPlayerPawn* LoadPlayerPawnData(struct FString PawnDataPath, class AWillowPlayerController* PlayerContext);
 };
 
-UClass* UWillowPlayerPawnDataManager::pClassPointer = NULL;
+//UClass* UWillowPlayerPawnDataManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerReplicationInfo
 // 0x050C (0x0760 - 0x0254)
@@ -26842,7 +26842,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowPlayerReplicationInfo::pClassPointer = NULL;
+//UClass* AWillowPlayerReplicationInfo::pClassPointer = NULL;
 
 // Class WillowGame.WillowPointLight
 // 0x001C (0x0214 - 0x01F8)
@@ -26870,7 +26870,7 @@ public:
 	void ResetLight();
 };
 
-UClass* UWillowPointLight::pClassPointer = NULL;
+//UClass* UWillowPointLight::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationDefinition
 // 0x0008 (0x005C - 0x0054)
@@ -26893,7 +26893,7 @@ public:
 	};
 };
 
-UClass* UWillowPopulationDefinition::pClassPointer = NULL;
+//UClass* UWillowPopulationDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationMaster
 // 0x0020 (0x00A8 - 0x0088)
@@ -26924,7 +26924,7 @@ public:
 	class AActor* SpawnActorFromOpportunity(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity, int OpportunityIdx, int PopOppFlags, unsigned long bCanSave, unsigned long bForceSpawn);
 };
 
-UClass* UWillowPopulationMaster::pClassPointer = NULL;
+//UClass* UWillowPopulationMaster::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationOpportunityPoint
 // 0x0009 (0x0219 - 0x0210)
@@ -26948,7 +26948,7 @@ public:
 	};
 };
 
-UClass* AWillowPopulationOpportunityPoint::pClassPointer = NULL;
+//UClass* AWillowPopulationOpportunityPoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationPoint
 // 0x0074 (0x023C - 0x01C8)
@@ -27023,7 +27023,7 @@ public:
 	void InitializeRBPhys();
 };
 
-UClass* AWillowPopulationPoint::pClassPointer = NULL;
+//UClass* AWillowPopulationPoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationPoint_Dynamic
 // 0x0000 (0x023C - 0x023C)
@@ -27044,7 +27044,7 @@ public:
 	};
 };
 
-UClass* AWillowPopulationPoint_Dynamic::pClassPointer = NULL;
+//UClass* AWillowPopulationPoint_Dynamic::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationPointDefinition
 // 0x0070 (0x00AC - 0x003C)
@@ -27090,7 +27090,7 @@ public:
 	class USpecialMove_PopulationPoint* GetPointAnim(class UPopulationBodyTag* Key, class USpecialMove_Spawned* SpawnAnim);
 };
 
-UClass* UWillowPopulationPointDefinition::pClassPointer = NULL;
+//UClass* UWillowPopulationPointDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationPointEditorComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -27111,7 +27111,7 @@ public:
 	};
 };
 
-UClass* UWillowPopulationPointEditorComponent::pClassPointer = NULL;
+//UClass* UWillowPopulationPointEditorComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowPreviewComponent
 // 0x0004 (0x06B0 - 0x06AC)
@@ -27133,7 +27133,7 @@ public:
 	};
 };
 
-UClass* UWillowPreviewComponent::pClassPointer = NULL;
+//UClass* UWillowPreviewComponent::pClassPointer = NULL;
 
 // Class WillowGame.PerchPreviewComponent
 // 0x0008 (0x06B8 - 0x06B0)
@@ -27157,7 +27157,7 @@ public:
 	};
 };
 
-UClass* UPerchPreviewComponent::pClassPointer = NULL;
+//UClass* UPerchPreviewComponent::pClassPointer = NULL;
 
 // Class WillowGame.PhysicsJumpPreviewComponent
 // 0x0008 (0x06B8 - 0x06B0)
@@ -27181,7 +27181,7 @@ public:
 	};
 };
 
-UClass* UPhysicsJumpPreviewComponent::pClassPointer = NULL;
+//UClass* UPhysicsJumpPreviewComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationPointPreviewComponent
 // 0x0008 (0x06B8 - 0x06B0)
@@ -27205,7 +27205,7 @@ public:
 	};
 };
 
-UClass* UWillowPopulationPointPreviewComponent::pClassPointer = NULL;
+//UClass* UWillowPopulationPointPreviewComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowProfileSettings
 // 0x0000 (0x0098 - 0x0098)
@@ -27228,7 +27228,7 @@ public:
 	bool IsSetToDefaults();
 };
 
-UClass* UWillowProfileSettings::pClassPointer = NULL;
+//UClass* UWillowProfileSettings::pClassPointer = NULL;
 
 // Class WillowGame.WillowProjectile
 // 0x02AC (0x04A0 - 0x01F4)
@@ -27577,7 +27577,7 @@ public:
 	bool IsEnemy(class UObject* anObject);
 };
 
-UClass* AWillowProjectile::pClassPointer = NULL;
+//UClass* AWillowProjectile::pClassPointer = NULL;
 
 // Class WillowGame.WillowServerSideProjectile
 // 0x0024 (0x04C4 - 0x04A0)
@@ -27601,7 +27601,7 @@ public:
 	};
 };
 
-UClass* AWillowServerSideProjectile::pClassPointer = NULL;
+//UClass* AWillowServerSideProjectile::pClassPointer = NULL;
 
 // Class WillowGame.WillowPursuitGrid
 // 0x0014 (0x0050 - 0x003C)
@@ -27626,7 +27626,7 @@ public:
 	void InitializeFromDefinition(class UWillowPursuitGridDefinition* GridDef);
 };
 
-UClass* UWillowPursuitGrid::pClassPointer = NULL;
+//UClass* UWillowPursuitGrid::pClassPointer = NULL;
 
 // Class WillowGame.WillowPursuitGridDefinition
 // 0x0014 (0x0050 - 0x003C)
@@ -27649,7 +27649,7 @@ public:
 	};
 };
 
-UClass* UWillowPursuitGridDefinition::pClassPointer = NULL;
+//UClass* UWillowPursuitGridDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowRegionDefinition
 // 0x0004 (0x0040 - 0x003C)
@@ -27677,7 +27677,7 @@ public:
 	bool GetRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
 };
 
-UClass* UWillowRegionDefinition::pClassPointer = NULL;
+//UClass* UWillowRegionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowReplicatedAmbientSound
 // 0x0024 (0x01AC - 0x0188)
@@ -27708,7 +27708,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* AWillowReplicatedAmbientSound::pClassPointer = NULL;
+//UClass* AWillowReplicatedAmbientSound::pClassPointer = NULL;
 
 // Class WillowGame.WillowReplicatedAmbientSoundRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -27729,7 +27729,7 @@ public:
 	};
 };
 
-UClass* UWillowReplicatedAmbientSoundRenderingComponent::pClassPointer = NULL;
+//UClass* UWillowReplicatedAmbientSoundRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowReplicatedAmbientSoundSource
 // 0x0000 (0x0188 - 0x0188)
@@ -27750,7 +27750,7 @@ public:
 	};
 };
 
-UClass* AWillowReplicatedAmbientSoundSource::pClassPointer = NULL;
+//UClass* AWillowReplicatedAmbientSoundSource::pClassPointer = NULL;
 
 // Class WillowGame.WillowSavedMove
 // 0x0004 (0x00EC - 0x00E8)
@@ -27778,7 +27778,7 @@ public:
 	void Clear();
 };
 
-UClass* UWillowSavedMove::pClassPointer = NULL;
+//UClass* UWillowSavedMove::pClassPointer = NULL;
 
 // Class WillowGame.WillowSaveGameManager
 // 0x02FC (0x0338 - 0x003C)
@@ -27883,7 +27883,7 @@ public:
 	unsigned char GetResult(unsigned char ControllerId);
 };
 
-UClass* UWillowSaveGameManager::pClassPointer = NULL;
+//UClass* UWillowSaveGameManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowScout
 // 0x0000 (0x0720 - 0x0720)
@@ -27904,7 +27904,7 @@ public:
 	};
 };
 
-UClass* AWillowScout::pClassPointer = NULL;
+//UClass* AWillowScout::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ElevatorFinished
 // 0x0004 (0x00A8 - 0x00A4)
@@ -27926,7 +27926,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ElevatorFinished::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ElevatorFinished::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_MissionSmokeTest
 // 0x0018 (0x00CC - 0x00B4)
@@ -27951,7 +27951,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_MissionSmokeTest::pClassPointer = NULL;
+//UClass* UWillowSeqAct_MissionSmokeTest::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_MoveElevator
 // 0x000C (0x00B0 - 0x00A4)
@@ -27975,7 +27975,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_MoveElevator::pClassPointer = NULL;
+//UClass* UWillowSeqAct_MoveElevator::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_ElevatorUsed
 // 0x0000 (0x00C4 - 0x00C4)
@@ -27996,7 +27996,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_ElevatorUsed::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_ElevatorUsed::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControlSpline
 // 0x0024 (0x00C0 - 0x009C)
@@ -28025,7 +28025,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControlSpline::pClassPointer = NULL;
+//UClass* UWillowSkelControlSpline::pClassPointer = NULL;
 
 // Class WillowGame.WillowSpectatorPoint
 // 0x0000 (0x0288 - 0x0288)
@@ -28049,7 +28049,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowSpectatorPoint::pClassPointer = NULL;
+//UClass* AWillowSpectatorPoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowStaggerAnimNodeBlend
 // 0x0047 (0x010C - 0x00C5)
@@ -28084,7 +28084,7 @@ public:
 	bool StopStaggerAnimation();
 };
 
-UClass* UWillowStaggerAnimNodeBlend::pClassPointer = NULL;
+//UClass* UWillowStaggerAnimNodeBlend::pClassPointer = NULL;
 
 // Class WillowGame.WillowSystemSettings
 // 0x0034 (0x0070 - 0x003C)
@@ -28127,7 +28127,7 @@ public:
 	void LoadSystemSettings(unsigned long bSkipResolutionUpdate);
 };
 
-UClass* UWillowSystemSettings::pClassPointer = NULL;
+//UClass* UWillowSystemSettings::pClassPointer = NULL;
 
 // Class WillowGame.WillowTacticalMapVolume
 // 0x0008 (0x01C4 - 0x01BC)
@@ -28150,7 +28150,7 @@ public:
 	};
 };
 
-UClass* AWillowTacticalMapVolume::pClassPointer = NULL;
+//UClass* AWillowTacticalMapVolume::pClassPointer = NULL;
 
 // Class WillowGame.WillowTradeManager
 // 0x04CC (0x0654 - 0x0188)
@@ -28257,7 +28257,7 @@ public:
 	bool CanStartOffer();
 };
 
-UClass* AWillowTradeManager::pClassPointer = NULL;
+//UClass* AWillowTradeManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowTrigger
 // 0x001C (0x01B0 - 0x0194)
@@ -28291,7 +28291,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowTrigger::pClassPointer = NULL;
+//UClass* AWillowTrigger::pClassPointer = NULL;
 
 // Class WillowGame.WillowWaypoint
 // 0x0028 (0x01D8 - 0x01B0)
@@ -28329,7 +28329,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowWaypoint::pClassPointer = NULL;
+//UClass* AWillowWaypoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowUIInteraction
 // 0x0AA8 (0x0C1C - 0x0174)
@@ -28481,7 +28481,7 @@ public:
 	int GetGameStage();
 };
 
-UClass* UWillowUIInteraction::pClassPointer = NULL;
+//UClass* UWillowUIInteraction::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleBase
 // 0x0050 (0x0878 - 0x0828)
@@ -28565,7 +28565,7 @@ public:
 	void TickReplicatedAmmoCount();
 };
 
-UClass* AWillowVehicleBase::pClassPointer = NULL;
+//UClass* AWillowVehicleBase::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicle
 // 0x049C (0x0D14 - 0x0878)
@@ -29236,7 +29236,7 @@ public:
 	void SearchForBaseBelow(float HeightBelow, class AActor** NewBase, struct FVector* HitNormal);
 };
 
-UClass* AWillowVehicle::pClassPointer = NULL;
+//UClass* AWillowVehicle::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicle_ChopperVehicle
 // 0x004C (0x0D60 - 0x0D14)
@@ -29278,7 +29278,7 @@ public:
 	void SetDriving(unsigned long bNewDriving);
 };
 
-UClass* AWillowVehicle_ChopperVehicle::pClassPointer = NULL;
+//UClass* AWillowVehicle_ChopperVehicle::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicle_FlyingVehicle
 // 0x004C (0x0D60 - 0x0D14)
@@ -29322,7 +29322,7 @@ public:
 	void UnwrapToSimObj();
 };
 
-UClass* AWillowVehicle_FlyingVehicle::pClassPointer = NULL;
+//UClass* AWillowVehicle_FlyingVehicle::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicle_Tank
 // 0x0018 (0x0D2C - 0x0D14)
@@ -29351,7 +29351,7 @@ public:
 	void CheckForCollision();
 };
 
-UClass* AWillowVehicle_Tank::pClassPointer = NULL;
+//UClass* AWillowVehicle_Tank::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicle_WheeledVehicle
 // 0x000C (0x0D20 - 0x0D14)
@@ -29385,7 +29385,7 @@ public:
 	void PreBeginPlay();
 };
 
-UClass* AWillowVehicle_WheeledVehicle::pClassPointer = NULL;
+//UClass* AWillowVehicle_WheeledVehicle::pClassPointer = NULL;
 
 // Class WillowGame.WillowWeaponPawn
 // 0x0014 (0x088C - 0x0878)
@@ -29472,7 +29472,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowWeaponPawn::pClassPointer = NULL;
+//UClass* AWillowWeaponPawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleCombatArea
 // 0x0010 (0x0198 - 0x0188)
@@ -29503,7 +29503,7 @@ public:
 	void AddToList();
 };
 
-UClass* AWillowVehicleCombatArea::pClassPointer = NULL;
+//UClass* AWillowVehicleCombatArea::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleCombatAreaRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -29524,7 +29524,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleCombatAreaRenderingComponent::pClassPointer = NULL;
+//UClass* UWillowVehicleCombatAreaRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleControlDefinition
 // 0x0002 (0x003E - 0x003C)
@@ -29547,7 +29547,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleControlDefinition::pClassPointer = NULL;
+//UClass* UWillowVehicleControlDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleFactory
 // 0x0038 (0x027C - 0x0244)
@@ -29592,7 +29592,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowVehicleFactory::pClassPointer = NULL;
+//UClass* AWillowVehicleFactory::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleSeatDefinition
 // 0x0120 (0x015C - 0x003C)
@@ -29671,7 +29671,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleSeatDefinition::pClassPointer = NULL;
+//UClass* UWillowVehicleSeatDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleSimCar
 // 0x006C (0x0134 - 0x00C8)
@@ -29715,7 +29715,7 @@ public:
 	void StretchTorqueCurve(float Multiplier);
 };
 
-UClass* UWillowVehicleSimCar::pClassPointer = NULL;
+//UClass* UWillowVehicleSimCar::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleSimChopper
 // 0x00BC (0x0150 - 0x0094)
@@ -29784,7 +29784,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleSimChopper::pClassPointer = NULL;
+//UClass* UWillowVehicleSimChopper::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleSimFly
 // 0x0008 (0x009C - 0x0094)
@@ -29807,7 +29807,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleSimFly::pClassPointer = NULL;
+//UClass* UWillowVehicleSimFly::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleSimHover
 // 0x002C (0x00F4 - 0x00C8)
@@ -29835,7 +29835,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleSimHover::pClassPointer = NULL;
+//UClass* UWillowVehicleSimHover::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleSimTank
 // 0x000C (0x0104 - 0x00F8)
@@ -29859,7 +29859,7 @@ public:
 	};
 };
 
-UClass* UWillowVehicleSimTank::pClassPointer = NULL;
+//UClass* UWillowVehicleSimTank::pClassPointer = NULL;
 
 // Class WillowGame.WillowWaterSMActor
 // 0x0000 (0x0190 - 0x0190)
@@ -29880,7 +29880,7 @@ public:
 	};
 };
 
-UClass* AWillowWaterSMActor::pClassPointer = NULL;
+//UClass* AWillowWaterSMActor::pClassPointer = NULL;
 
 // Class WillowGame.WillowWeapon
 // 0x05B4 (0x0F60 - 0x09AC)
@@ -30491,7 +30491,7 @@ public:
 	void ToggleZoomDebug();
 };
 
-UClass* AWillowWeapon::pClassPointer = NULL;
+//UClass* AWillowWeapon::pClassPointer = NULL;
 
 // Class WillowGame.WillowBuzzaxeWeapon
 // 0x000D (0x0F6D - 0x0F60)
@@ -30536,7 +30536,7 @@ public:
 	void GetZoomSocket(struct FVector* SocketLocation, struct FRotator* SocketRotation);
 };
 
-UClass* AWillowBuzzaxeWeapon::pClassPointer = NULL;
+//UClass* AWillowBuzzaxeWeapon::pClassPointer = NULL;
 
 // Class WillowGame.WillowTurretWeapon
 // 0x0024 (0x0F84 - 0x0F60)
@@ -30577,7 +30577,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowTurretWeapon::pClassPointer = NULL;
+//UClass* AWillowTurretWeapon::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicleWeapon
 // 0x0034 (0x0F94 - 0x0F60)
@@ -30655,7 +30655,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowVehicleWeapon::pClassPointer = NULL;
+//UClass* AWillowVehicleWeapon::pClassPointer = NULL;
 
 // Class WillowGame.WillowWeaponTypes
 // 0x0000 (0x003C - 0x003C)
@@ -30676,7 +30676,7 @@ public:
 	};
 };
 
-UClass* UWillowWeaponTypes::pClassPointer = NULL;
+//UClass* UWillowWeaponTypes::pClassPointer = NULL;
 
 // Class WillowGame.WillowWorldSoundManager
 // 0x0044 (0x01E0 - 0x019C)
@@ -30719,7 +30719,7 @@ public:
 	void StaticConfigureLevelMusic(class UAkEvent* StartMusicAkEvent, class UAkEvent* StopMusicAkEvent, class UAkState* AmbientAkState, class UAkState* CombatAkState);
 };
 
-UClass* AWillowWorldSoundManager::pClassPointer = NULL;
+//UClass* AWillowWorldSoundManager::pClassPointer = NULL;
 
 // Class WillowGame.WorldBody
 // 0x0090 (0x00CC - 0x003C)
@@ -30765,7 +30765,7 @@ public:
 	struct FVector GetWorldBodyLocation();
 };
 
-UClass* UWorldBody::pClassPointer = NULL;
+//UClass* UWorldBody::pClassPointer = NULL;
 
 // Class WillowGame.WorldDiscoveryArea
 // 0x0064 (0x01EC - 0x0188)
@@ -30814,7 +30814,7 @@ public:
 	struct FName GetWorldAreaShortName();
 };
 
-UClass* AWorldDiscoveryArea::pClassPointer = NULL;
+//UClass* AWorldDiscoveryArea::pClassPointer = NULL;
 
 // Class WillowGame.WorldDiscoveryAreaRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -30835,7 +30835,7 @@ public:
 	};
 };
 
-UClass* UWorldDiscoveryAreaRenderingComponent::pClassPointer = NULL;
+//UClass* UWorldDiscoveryAreaRenderingComponent::pClassPointer = NULL;
 
 // Class WillowGame.AnimNotify_CustomEvent
 // 0x0008 (0x0044 - 0x003C)
@@ -30857,7 +30857,7 @@ public:
 	};
 };
 
-UClass* UAnimNotify_CustomEvent::pClassPointer = NULL;
+//UClass* UAnimNotify_CustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.AnimNotify_DialogEvent
 // 0x0008 (0x0044 - 0x003C)
@@ -30880,7 +30880,7 @@ public:
 	};
 };
 
-UClass* UAnimNotify_DialogEvent::pClassPointer = NULL;
+//UClass* UAnimNotify_DialogEvent::pClassPointer = NULL;
 
 // Class WillowGame.AnimNotify_EnableHandIK
 // 0x0008 (0x0044 - 0x003C)
@@ -30903,7 +30903,7 @@ public:
 	};
 };
 
-UClass* UAnimNotify_EnableHandIK::pClassPointer = NULL;
+//UClass* UAnimNotify_EnableHandIK::pClassPointer = NULL;
 
 // Class WillowGame.AnimNotify_EnableHeadLookAt
 // 0x000C (0x0048 - 0x003C)
@@ -30926,7 +30926,7 @@ public:
 	};
 };
 
-UClass* UAnimNotify_EnableHeadLookAt::pClassPointer = NULL;
+//UClass* UAnimNotify_EnableHeadLookAt::pClassPointer = NULL;
 
 // Class WillowGame.AnimNotify_UseBehavior
 // 0x0011 (0x004D - 0x003C)
@@ -30955,7 +30955,7 @@ public:
 	bool PreTestNotify(class AWillowPawn* anOwner);
 };
 
-UClass* UAnimNotify_UseBehavior::pClassPointer = NULL;
+//UClass* UAnimNotify_UseBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IWeaponBoneController
 // 0x0000 (0x003C - 0x003C)
@@ -30985,7 +30985,7 @@ public:
 	struct FName GetControlName();
 };
 
-UClass* UIWeaponBoneController::pClassPointer = NULL;
+//UClass* UIWeaponBoneController::pClassPointer = NULL;
 
 // Class WillowGame.SkelControlHandModifier
 // 0x0048 (0x00E4 - 0x009C)
@@ -31009,7 +31009,7 @@ public:
 	};
 };
 
-UClass* USkelControlHandModifier::pClassPointer = NULL;
+//UClass* USkelControlHandModifier::pClassPointer = NULL;
 
 // Class WillowGame.SkelControlLeftHandGripWeapon
 // 0x0008 (0x010C - 0x0104)
@@ -31032,7 +31032,7 @@ public:
 	};
 };
 
-UClass* USkelControlLeftHandGripWeapon::pClassPointer = NULL;
+//UClass* USkelControlLeftHandGripWeapon::pClassPointer = NULL;
 
 // Class WillowGame.StanceExpressionEvaluator
 // 0x0005 (0x0041 - 0x003C)
@@ -31057,7 +31057,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UStanceExpressionEvaluator::pClassPointer = NULL;
+//UClass* UStanceExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimBlendByPosture
 // 0x0008 (0x00EC - 0x00E4)
@@ -31080,7 +31080,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimBlendByPosture::pClassPointer = NULL;
+//UClass* UWillowAnimBlendByPosture::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_AddCameraBone
 // 0x0038 (0x0110 - 0x00D8)
@@ -31107,7 +31107,7 @@ public:
 	void SetBlendTarget(float BlendTarget, float BlendTime);
 };
 
-UClass* UWillowAnimNode_AddCameraBone::pClassPointer = NULL;
+//UClass* UWillowAnimNode_AddCameraBone::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_AimState
 // 0x0014 (0x00F8 - 0x00E4)
@@ -31131,7 +31131,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNode_AimState::pClassPointer = NULL;
+//UClass* UWillowAnimNode_AimState::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_ClimbLadder
 // 0x0000 (0x00D4 - 0x00D4)
@@ -31152,7 +31152,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNode_ClimbLadder::pClassPointer = NULL;
+//UClass* UWillowAnimNode_ClimbLadder::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_Condition
 // 0x0010 (0x00E8 - 0x00D8)
@@ -31177,7 +31177,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNode_Condition::pClassPointer = NULL;
+//UClass* UWillowAnimNode_Condition::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_MovementTransition
 // 0x0030 (0x0114 - 0x00E4)
@@ -31210,7 +31210,7 @@ public:
 	bool NodeIsIdle();
 };
 
-UClass* UWillowAnimNode_MovementTransition::pClassPointer = NULL;
+//UClass* UWillowAnimNode_MovementTransition::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_Prism
 // 0x002F (0x00F4 - 0x00C5)
@@ -31243,7 +31243,7 @@ public:
 	bool NodeIsActive();
 };
 
-UClass* UWillowAnimNode_Prism::pClassPointer = NULL;
+//UClass* UWillowAnimNode_Prism::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_WeaponHold
 // 0x0004 (0x00E8 - 0x00E4)
@@ -31265,7 +31265,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNode_WeaponHold::pClassPointer = NULL;
+//UClass* UWillowAnimNode_WeaponHold::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_WeaponRecoil
 // 0x0008 (0x0114 - 0x010C)
@@ -31291,7 +31291,7 @@ public:
 	float PlayData(struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride, struct FSpecialMoveData* SMData);
 };
 
-UClass* UWillowAnimNode_WeaponRecoil::pClassPointer = NULL;
+//UClass* UWillowAnimNode_WeaponRecoil::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeAimOffset
 // 0x0030 (0x0140 - 0x0110)
@@ -31336,7 +31336,7 @@ public:
 	void ToggleAimNodeDebug();
 };
 
-UClass* UWillowAnimNodeAimOffset::pClassPointer = NULL;
+//UClass* UWillowAnimNodeAimOffset::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeAimOffset_BoundaryTurret
 // 0x0000 (0x0140 - 0x0140)
@@ -31359,7 +31359,7 @@ public:
 	struct FVector2D GetDesiredAim();
 };
 
-UClass* UWillowAnimNodeAimOffset_BoundaryTurret::pClassPointer = NULL;
+//UClass* UWillowAnimNodeAimOffset_BoundaryTurret::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendByAimState
 // 0x0008 (0x00EC - 0x00E4)
@@ -31383,7 +31383,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendByAimState::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendByAimState::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendByRotationSpeed
 // 0x0014 (0x00F8 - 0x00E4)
@@ -31410,7 +31410,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendByRotationSpeed::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendByRotationSpeed::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendByStance
 // 0x0044 (0x0128 - 0x00E4)
@@ -31442,7 +31442,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendByStance::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendByStance::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendDirectional
 // 0x0017 (0x00DC - 0x00C5)
@@ -31469,7 +31469,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendDirectional::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendDirectional::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendInjured
 // 0x0008 (0x00EC - 0x00E4)
@@ -31492,7 +31492,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendInjured::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendInjured::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendList
 // 0x000C (0x00F0 - 0x00E4)
@@ -31514,7 +31514,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendList::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendList::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_Falling
 // 0x0014 (0x0104 - 0x00F0)
@@ -31540,7 +31540,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNode_Falling::pClassPointer = NULL;
+//UClass* UWillowAnimNode_Falling::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendSwitch
 // 0x0028 (0x010C - 0x00E4)
@@ -31568,7 +31568,7 @@ public:
 	void SetCurrentSwitch(struct FName NewSwitch);
 };
 
-UClass* UWillowAnimNodeBlendSwitch::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendSwitch::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendThirdPersonMenu
 // 0x0008 (0x00EC - 0x00E4)
@@ -31591,7 +31591,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendThirdPersonMenu::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendThirdPersonMenu::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendTurning
 // 0x0020 (0x0104 - 0x00E4)
@@ -31620,7 +31620,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendTurning::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendTurning::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendVehicleDirectional
 // 0x000F (0x00D4 - 0x00C5)
@@ -31644,7 +31644,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendVehicleDirectional::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendVehicleDirectional::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeBlendWheeledPawn
 // 0x0037 (0x00FC - 0x00C5)
@@ -31678,7 +31678,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimNodeBlendWheeledPawn::pClassPointer = NULL;
+//UClass* UWillowAnimNodeBlendWheeledPawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeFeatherBlend
 // 0x0028 (0x0100 - 0x00D8)
@@ -31705,7 +31705,7 @@ public:
 	void SetBlendTarget(float BlendTarget, float BlendTime);
 };
 
-UClass* UWillowAnimNodeFeatherBlend::pClassPointer = NULL;
+//UClass* UWillowAnimNodeFeatherBlend::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeSequence
 // 0x0010 (0x0124 - 0x0114)
@@ -31733,7 +31733,7 @@ public:
 	void PlayAnimation(struct FName Sequence, float SeqRate, unsigned long bSeqLoop);
 };
 
-UClass* UWillowAnimNodeSequence::pClassPointer = NULL;
+//UClass* UWillowAnimNodeSequence::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeSequenceAdditiveBlend
 // 0x0014 (0x0128 - 0x0114)
@@ -31761,7 +31761,7 @@ public:
 	void SetAnim(struct FName Sequence);
 };
 
-UClass* UWillowAnimNodeSequenceAdditiveBlend::pClassPointer = NULL;
+//UClass* UWillowAnimNodeSequenceAdditiveBlend::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNodeSlot
 // 0x0000 (0x00EC - 0x00EC)
@@ -31784,7 +31784,7 @@ public:
 	void StopCustomAnimationOnLastFrame();
 };
 
-UClass* UWillowAnimNodeSlot::pClassPointer = NULL;
+//UClass* UWillowAnimNodeSlot::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimTree
 // 0x0018 (0x0148 - 0x0130)
@@ -31808,7 +31808,7 @@ public:
 	};
 };
 
-UClass* UWillowAnimTree::pClassPointer = NULL;
+//UClass* UWillowAnimTree::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_EyelidLook
 // 0x0034 (0x0100 - 0x00CC)
@@ -31841,7 +31841,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_EyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_EyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_LowerEyelidLook
 // 0x0000 (0x0100 - 0x0100)
@@ -31862,7 +31862,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_LowerEyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_LowerEyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_UpperEyelidLook
 // 0x0014 (0x0114 - 0x0100)
@@ -31886,7 +31886,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_UpperEyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_UpperEyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_FootPlacement
 // 0x0028 (0x0150 - 0x0128)
@@ -31913,7 +31913,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_FootPlacement::pClassPointer = NULL;
+//UClass* UWillowSkelControl_FootPlacement::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_LookAtActor
 // 0x0018 (0x0150 - 0x0138)
@@ -31939,7 +31939,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_LookAtActor::pClassPointer = NULL;
+//UClass* UWillowSkelControl_LookAtActor::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_RotateFlapFromFiring
 // 0x0020 (0x00EC - 0x00CC)
@@ -31975,7 +31975,7 @@ public:
 	struct FName GetControlName();
 };
 
-UClass* UWillowSkelControl_RotateFlapFromFiring::pClassPointer = NULL;
+//UClass* UWillowSkelControl_RotateFlapFromFiring::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_RotateWeaponBoneFromFiring
 // 0x0030 (0x00FC - 0x00CC)
@@ -32016,7 +32016,7 @@ public:
 	struct FName GetControlName();
 };
 
-UClass* UWillowSkelControl_RotateWeaponBoneFromFiring::pClassPointer = NULL;
+//UClass* UWillowSkelControl_RotateWeaponBoneFromFiring::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_RotationRate
 // 0x000C (0x00D8 - 0x00CC)
@@ -32038,7 +32038,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_RotationRate::pClassPointer = NULL;
+//UClass* UWillowSkelControl_RotationRate::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_RotationRateBySpeed
 // 0x0028 (0x0100 - 0x00D8)
@@ -32065,7 +32065,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_RotationRateBySpeed::pClassPointer = NULL;
+//UClass* UWillowSkelControl_RotationRateBySpeed::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_TurretConstrained
 // 0x0064 (0x0130 - 0x00CC)
@@ -32108,7 +32108,7 @@ public:
 	void OnTurretStatusChange(unsigned long bIsMoving);
 };
 
-UClass* UWillowSkelControl_TurretConstrained::pClassPointer = NULL;
+//UClass* UWillowSkelControl_TurretConstrained::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControlHandPlacement
 // 0x000C (0x0110 - 0x0104)
@@ -32131,7 +32131,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControlHandPlacement::pClassPointer = NULL;
+//UClass* UWillowSkelControlHandPlacement::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControlLerpSingleBone
 // 0x003C (0x0108 - 0x00CC)
@@ -32170,7 +32170,7 @@ public:
 	struct FName GetControlName();
 };
 
-UClass* UWillowSkelControlLerpSingleBone::pClassPointer = NULL;
+//UClass* UWillowSkelControlLerpSingleBone::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_AllPlayersInMesh
 // 0x0010 (0x00B4 - 0x00A4)
@@ -32197,7 +32197,7 @@ public:
 	bool PlayerIsInAMesh(class APlayerController* PC);
 };
 
-UClass* USeqAct_AllPlayersInMesh::pClassPointer = NULL;
+//UClass* USeqAct_AllPlayersInMesh::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_AttachPlayerPawnToBase
 // 0x0025 (0x00C9 - 0x00A4)
@@ -32226,7 +32226,7 @@ public:
 	};
 };
 
-UClass* USeqAct_AttachPlayerPawnToBase::pClassPointer = NULL;
+//UClass* USeqAct_AttachPlayerPawnToBase::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_ConditionallyLoadCommons
 // 0x0000 (0x00A4 - 0x00A4)
@@ -32247,7 +32247,7 @@ public:
 	};
 };
 
-UClass* USeqAct_ConditionallyLoadCommons::pClassPointer = NULL;
+//UClass* USeqAct_ConditionallyLoadCommons::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_DiscardInventory
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32272,7 +32272,7 @@ public:
 	void eventOnActivated(class AWillowPawn* WPawn);
 };
 
-UClass* USeqAct_DiscardInventory::pClassPointer = NULL;
+//UClass* USeqAct_DiscardInventory::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_DiscoverLevelChallengeObject
 // 0x0008 (0x00AC - 0x00A4)
@@ -32295,7 +32295,7 @@ public:
 	};
 };
 
-UClass* USeqAct_DiscoverLevelChallengeObject::pClassPointer = NULL;
+//UClass* USeqAct_DiscoverLevelChallengeObject::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_DisplayTrainingDefinitionMessage
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32317,7 +32317,7 @@ public:
 	};
 };
 
-UClass* USeqAct_DisplayTrainingDefinitionMessage::pClassPointer = NULL;
+//UClass* USeqAct_DisplayTrainingDefinitionMessage::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_DisplayTrainingMessage
 // 0x0030 (0x00D4 - 0x00A4)
@@ -32345,7 +32345,7 @@ public:
 	};
 };
 
-UClass* USeqAct_DisplayTrainingMessage::pClassPointer = NULL;
+//UClass* USeqAct_DisplayTrainingMessage::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_DisplayWillowHUDMessage
 // 0x0014 (0x00B8 - 0x00A4)
@@ -32369,7 +32369,7 @@ public:
 	};
 };
 
-UClass* USeqAct_DisplayWillowHUDMessage::pClassPointer = NULL;
+//UClass* USeqAct_DisplayWillowHUDMessage::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_ExecuteSkill
 // 0x0008 (0x00AC - 0x00A4)
@@ -32395,7 +32395,7 @@ public:
 	bool eventExecuteSkill(class AController* SkillInstigator, class USkillDefinition* Definition, unsigned char SequenceInput);
 };
 
-UClass* USeqAct_ExecuteSkill::pClassPointer = NULL;
+//UClass* USeqAct_ExecuteSkill::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_GetAttributeValue
 // 0x0008 (0x00AC - 0x00A4)
@@ -32418,7 +32418,7 @@ public:
 	};
 };
 
-UClass* USeqAct_GetAttributeValue::pClassPointer = NULL;
+//UClass* USeqAct_GetAttributeValue::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_LoadingMovie
 // 0x0018 (0x00BC - 0x00A4)
@@ -32444,7 +32444,7 @@ public:
 	};
 };
 
-UClass* USeqAct_LoadingMovie::pClassPointer = NULL;
+//UClass* USeqAct_LoadingMovie::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_MathBase
 // 0x0001 (0x00A5 - 0x00A4)
@@ -32466,7 +32466,7 @@ public:
 	};
 };
 
-UClass* USeqAct_MathBase::pClassPointer = NULL;
+//UClass* USeqAct_MathBase::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_MathFloat
 // 0x000F (0x00B4 - 0x00A5)
@@ -32490,7 +32490,7 @@ public:
 	};
 };
 
-UClass* USeqAct_MathFloat::pClassPointer = NULL;
+//UClass* USeqAct_MathFloat::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_MathInteger
 // 0x000F (0x00B4 - 0x00A5)
@@ -32514,7 +32514,7 @@ public:
 	};
 };
 
-UClass* USeqAct_MathInteger::pClassPointer = NULL;
+//UClass* USeqAct_MathInteger::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_ModifyHUDElement
 // 0x000C (0x00B0 - 0x00A4)
@@ -32538,7 +32538,7 @@ public:
 	};
 };
 
-UClass* USeqAct_ModifyHUDElement::pClassPointer = NULL;
+//UClass* USeqAct_ModifyHUDElement::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_PlayBinkMovie
 // 0x0010 (0x00C4 - 0x00B4)
@@ -32563,7 +32563,7 @@ public:
 	};
 };
 
-UClass* USeqAct_PlayBinkMovie::pClassPointer = NULL;
+//UClass* USeqAct_PlayBinkMovie::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_PossessForPlayer
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32586,7 +32586,7 @@ public:
 	};
 };
 
-UClass* USeqAct_PossessForPlayer::pClassPointer = NULL;
+//UClass* USeqAct_PossessForPlayer::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_PrimaryPlayerBusyDelay
 // 0x0004 (0x00B8 - 0x00B4)
@@ -32610,7 +32610,7 @@ public:
 	bool eventUpdate(float DeltaTime);
 };
 
-UClass* USeqAct_PrimaryPlayerBusyDelay::pClassPointer = NULL;
+//UClass* USeqAct_PrimaryPlayerBusyDelay::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_ProceduralSwitch
 // 0x000C (0x00B0 - 0x00A4)
@@ -32632,7 +32632,7 @@ public:
 	};
 };
 
-UClass* USeqAct_ProceduralSwitch::pClassPointer = NULL;
+//UClass* USeqAct_ProceduralSwitch::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_ProceduralSwitchNumeric
 // 0x000C (0x00B0 - 0x00A4)
@@ -32654,7 +32654,7 @@ public:
 	};
 };
 
-UClass* USeqAct_ProceduralSwitchNumeric::pClassPointer = NULL;
+//UClass* USeqAct_ProceduralSwitchNumeric::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_SetChallengeCompleted
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32676,7 +32676,7 @@ public:
 	};
 };
 
-UClass* USeqAct_SetChallengeCompleted::pClassPointer = NULL;
+//UClass* USeqAct_SetChallengeCompleted::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_SetShadowParent
 // 0x0000 (0x00A4 - 0x00A4)
@@ -32697,7 +32697,7 @@ public:
 	};
 };
 
-UClass* USeqAct_SetShadowParent::pClassPointer = NULL;
+//UClass* USeqAct_SetShadowParent::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_TimedMessage
 // 0x0004 (0x00C8 - 0x00C4)
@@ -32719,7 +32719,7 @@ public:
 	};
 };
 
-UClass* USeqAct_TimedMessage::pClassPointer = NULL;
+//UClass* USeqAct_TimedMessage::pClassPointer = NULL;
 
 // Class WillowGame.SeqCond_HasValidSaveGame
 // 0x0000 (0x008C - 0x008C)
@@ -32740,7 +32740,7 @@ public:
 	};
 };
 
-UClass* USeqCond_HasValidSaveGame::pClassPointer = NULL;
+//UClass* USeqCond_HasValidSaveGame::pClassPointer = NULL;
 
 // Class WillowGame.SeqCond_IsPlayerCharacterClass
 // 0x0000 (0x008C - 0x008C)
@@ -32761,7 +32761,7 @@ public:
 	};
 };
 
-UClass* USeqCond_IsPlayerCharacterClass::pClassPointer = NULL;
+//UClass* USeqCond_IsPlayerCharacterClass::pClassPointer = NULL;
 
 // Class WillowGame.SeqEvent_WorldDiscoveryArea
 // 0x0000 (0x00C4 - 0x00C4)
@@ -32782,7 +32782,7 @@ public:
 	};
 };
 
-UClass* USeqEvent_WorldDiscoveryArea::pClassPointer = NULL;
+//UClass* USeqEvent_WorldDiscoveryArea::pClassPointer = NULL;
 
 // Class WillowGame.SeqVar_OverpowerLevel
 // 0x0000 (0x005C - 0x005C)
@@ -32803,7 +32803,7 @@ public:
 	};
 };
 
-UClass* USeqVar_OverpowerLevel::pClassPointer = NULL;
+//UClass* USeqVar_OverpowerLevel::pClassPointer = NULL;
 
 // Class WillowGame.SeqVar_PrimaryLocalPlayer
 // 0x0000 (0x0068 - 0x0068)
@@ -32824,7 +32824,7 @@ public:
 	};
 };
 
-UClass* USeqVar_PrimaryLocalPlayer::pClassPointer = NULL;
+//UClass* USeqVar_PrimaryLocalPlayer::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ActivateInstancedBehaviorSequences
 // 0x0014 (0x00B8 - 0x00A4)
@@ -32849,7 +32849,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ActivateInstancedBehaviorSequences::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ActivateInstancedBehaviorSequences::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AIScripted
 // 0x0012 (0x00C6 - 0x00B4)
@@ -32874,7 +32874,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AIScripted::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AIScripted::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AIScriptedAnim
 // 0x000C (0x00C0 - 0x00B4)
@@ -32900,7 +32900,7 @@ public:
 	class UWillowAnimDefinition* GetAnim();
 };
 
-UClass* UWillowSeqAct_AIScriptedAnim::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AIScriptedAnim::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_CompleteMission
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32922,7 +32922,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_CompleteMission::pClassPointer = NULL;
+//UClass* UWillowSeqAct_CompleteMission::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ConfigureBossMusic
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32944,7 +32944,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ConfigureBossMusic::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ConfigureBossMusic::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ConfigureCustomAmbientMusic
 // 0x0004 (0x00A8 - 0x00A4)
@@ -32966,7 +32966,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ConfigureCustomAmbientMusic::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ConfigureCustomAmbientMusic::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ConfigureLevelMusic
 // 0x0010 (0x00B4 - 0x00A4)
@@ -32991,7 +32991,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ConfigureLevelMusic::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ConfigureLevelMusic::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_CoordinateOperations
 // 0x0018 (0x00BC - 0x00A4)
@@ -33014,7 +33014,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_CoordinateOperations::pClassPointer = NULL;
+//UClass* UWillowSeqAct_CoordinateOperations::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_DayNightCycle
 // 0x0000 (0x0178 - 0x0178)
@@ -33038,7 +33038,7 @@ public:
 	void SetTimeOfDay(float NewTimeOfDay);
 };
 
-UClass* UWillowSeqAct_DayNightCycle::pClassPointer = NULL;
+//UClass* UWillowSeqAct_DayNightCycle::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_DisableCombatMusicLogic
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33059,7 +33059,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_DisableCombatMusicLogic::pClassPointer = NULL;
+//UClass* UWillowSeqAct_DisableCombatMusicLogic::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_EnableCombatMusicLogic
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33080,7 +33080,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_EnableCombatMusicLogic::pClassPointer = NULL;
+//UClass* UWillowSeqAct_EnableCombatMusicLogic::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_GiveMission
 // 0x0004 (0x00A8 - 0x00A4)
@@ -33102,7 +33102,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_GiveMission::pClassPointer = NULL;
+//UClass* UWillowSeqAct_GiveMission::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_InterpMenu
 // 0x001C (0x0194 - 0x0178)
@@ -33132,7 +33132,7 @@ public:
 	void InputAxis(class AWillowPlayerController* WPC, float Delta, unsigned long bGamepad);
 };
 
-UClass* UWillowSeqAct_InterpMenu::pClassPointer = NULL;
+//UClass* UWillowSeqAct_InterpMenu::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_InterpPawn
 // 0x000C (0x00C0 - 0x00B4)
@@ -33156,7 +33156,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_InterpPawn::pClassPointer = NULL;
+//UClass* UWillowSeqAct_InterpPawn::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_MissionCustomEvent
 // 0x000C (0x00B0 - 0x00A4)
@@ -33179,7 +33179,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_MissionCustomEvent::pClassPointer = NULL;
+//UClass* UWillowSeqAct_MissionCustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_PrepareMapChangeFromDefinition
 // 0x000C (0x00D8 - 0x00CC)
@@ -33205,7 +33205,7 @@ public:
 	void SetPersistentMap(struct FName MapToLoad);
 };
 
-UClass* UWillowSeqAct_PrepareMapChangeFromDefinition::pClassPointer = NULL;
+//UClass* UWillowSeqAct_PrepareMapChangeFromDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_PrepareSavedMapChange
 // 0x0000 (0x00CC - 0x00CC)
@@ -33226,7 +33226,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_PrepareSavedMapChange::pClassPointer = NULL;
+//UClass* UWillowSeqAct_PrepareSavedMapChange::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_QueryTeleporterStatus
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33247,7 +33247,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_QueryTeleporterStatus::pClassPointer = NULL;
+//UClass* UWillowSeqAct_QueryTeleporterStatus::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ReleaseTeleporterHeldLevel
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33268,7 +33268,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ReleaseTeleporterHeldLevel::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ReleaseTeleporterHeldLevel::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ResurrectPlayer
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33291,7 +33291,7 @@ public:
 	void eventOnActivated(class AWillowPlayerController* aWPC);
 };
 
-UClass* UWillowSeqAct_ResurrectPlayer::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ResurrectPlayer::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_RunCustomEvent
 // 0x0010 (0x00B4 - 0x00A4)
@@ -33315,7 +33315,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_RunCustomEvent::pClassPointer = NULL;
+//UClass* UWillowSeqAct_RunCustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_SetAIFlag
 // 0x0008 (0x00AC - 0x00A4)
@@ -33338,7 +33338,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_SetAIFlag::pClassPointer = NULL;
+//UClass* UWillowSeqAct_SetAIFlag::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_SetInteractionProxyState
 // 0x0004 (0x00A8 - 0x00A4)
@@ -33362,7 +33362,7 @@ public:
 	void eventOnActivated(class AWillowMind* aWMind);
 };
 
-UClass* UWillowSeqAct_SetInteractionProxyState::pClassPointer = NULL;
+//UClass* UWillowSeqAct_SetInteractionProxyState::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_SetLockout
 // 0x0004 (0x00A8 - 0x00A4)
@@ -33384,7 +33384,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_SetLockout::pClassPointer = NULL;
+//UClass* UWillowSeqAct_SetLockout::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_SetLookAtActor
 // 0x000C (0x00B0 - 0x00A4)
@@ -33406,7 +33406,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_SetLookAtActor::pClassPointer = NULL;
+//UClass* UWillowSeqAct_SetLookAtActor::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ToggleCinematicModeAffectsAll
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33427,7 +33427,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ToggleCinematicModeAffectsAll::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ToggleCinematicModeAffectsAll::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_TogglePostRenderFor
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33448,7 +33448,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_TogglePostRenderFor::pClassPointer = NULL;
+//UClass* UWillowSeqAct_TogglePostRenderFor::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ToggleRestrictions
 // 0x0004 (0x00A8 - 0x00A4)
@@ -33471,7 +33471,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ToggleRestrictions::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ToggleRestrictions::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_TravelStationTeleport
 // 0x0000 (0x00A4 - 0x00A4)
@@ -33492,7 +33492,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_TravelStationTeleport::pClassPointer = NULL;
+//UClass* UWillowSeqAct_TravelStationTeleport::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_TurnOffCombatMusic
 // 0x0008 (0x00AC - 0x00A4)
@@ -33515,7 +33515,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_TurnOffCombatMusic::pClassPointer = NULL;
+//UClass* UWillowSeqAct_TurnOffCombatMusic::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_WaypointObjective
 // 0x0018 (0x00BC - 0x00A4)
@@ -33539,7 +33539,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_WaypointObjective::pClassPointer = NULL;
+//UClass* UWillowSeqAct_WaypointObjective::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_AnyPlayerHasMarketingUnlock
 // 0x0004 (0x0090 - 0x008C)
@@ -33561,7 +33561,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_AnyPlayerHasMarketingUnlock::pClassPointer = NULL;
+//UClass* UWillowSeqCond_AnyPlayerHasMarketingUnlock::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_CheckLockout
 // 0x0004 (0x0090 - 0x008C)
@@ -33583,7 +33583,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_CheckLockout::pClassPointer = NULL;
+//UClass* UWillowSeqCond_CheckLockout::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_GoStraightToMainMenu
 // 0x0000 (0x008C - 0x008C)
@@ -33604,7 +33604,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_GoStraightToMainMenu::pClassPointer = NULL;
+//UClass* UWillowSeqCond_GoStraightToMainMenu::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_IsCombatMusicPlaying
 // 0x0000 (0x008C - 0x008C)
@@ -33625,7 +33625,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_IsCombatMusicPlaying::pClassPointer = NULL;
+//UClass* UWillowSeqCond_IsCombatMusicPlaying::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_IsPlayerServer
 // 0x0000 (0x008C - 0x008C)
@@ -33646,7 +33646,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_IsPlayerServer::pClassPointer = NULL;
+//UClass* UWillowSeqCond_IsPlayerServer::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_MultiplePlayersInGame
 // 0x0000 (0x008C - 0x008C)
@@ -33667,7 +33667,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_MultiplePlayersInGame::pClassPointer = NULL;
+//UClass* UWillowSeqCond_MultiplePlayersInGame::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_ShouldStartNewGameCinematics
 // 0x0000 (0x008C - 0x008C)
@@ -33688,7 +33688,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_ShouldStartNewGameCinematics::pClassPointer = NULL;
+//UClass* UWillowSeqCond_ShouldStartNewGameCinematics::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_SplitScreen
 // 0x0000 (0x008C - 0x008C)
@@ -33709,7 +33709,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqCond_SplitScreen::pClassPointer = NULL;
+//UClass* UWillowSeqCond_SplitScreen::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_CombatMusicStarted
 // 0x0000 (0x00C4 - 0x00C4)
@@ -33730,7 +33730,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_CombatMusicStarted::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_CombatMusicStarted::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_CustomEvent
 // 0x0008 (0x00CC - 0x00C4)
@@ -33752,7 +33752,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_CustomEvent::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_CustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_FastTravel
 // 0x0000 (0x00C4 - 0x00C4)
@@ -33773,7 +33773,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_FastTravel::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_FastTravel::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_MissionRemoteEvent
 // 0x000C (0x00D0 - 0x00C4)
@@ -33796,7 +33796,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_MissionRemoteEvent::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_MissionRemoteEvent::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_VehicleSpawned
 // 0x0004 (0x00C8 - 0x00C4)
@@ -33818,7 +33818,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_VehicleSpawned::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_VehicleSpawned::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqVar_DayNightCycleVariable
 // 0x0000 (0x005C - 0x005C)
@@ -33839,7 +33839,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqVar_DayNightCycleVariable::pClassPointer = NULL;
+//UClass* UWillowSeqVar_DayNightCycleVariable::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqVar_DayNightCycleRate
 // 0x0000 (0x005C - 0x005C)
@@ -33860,7 +33860,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqVar_DayNightCycleRate::pClassPointer = NULL;
+//UClass* UWillowSeqVar_DayNightCycleRate::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqVar_TimeOfDay
 // 0x0000 (0x005C - 0x005C)
@@ -33881,7 +33881,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqVar_TimeOfDay::pClassPointer = NULL;
+//UClass* UWillowSeqVar_TimeOfDay::pClassPointer = NULL;
 
 // Class WillowGame.ActionSkillStateExpressionEvaluator
 // 0x0004 (0x0040 - 0x003C)
@@ -33906,7 +33906,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UActionSkillStateExpressionEvaluator::pClassPointer = NULL;
+//UClass* UActionSkillStateExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.HealthStateExpressionEvaluator
 // 0x0004 (0x0040 - 0x003C)
@@ -33932,7 +33932,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UHealthStateExpressionEvaluator::pClassPointer = NULL;
+//UClass* UHealthStateExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.NumberWeaponsEquippedExpressionEvaluator
 // 0x0004 (0x0040 - 0x003C)
@@ -33956,7 +33956,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UNumberWeaponsEquippedExpressionEvaluator::pClassPointer = NULL;
+//UClass* UNumberWeaponsEquippedExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.PlayerActionExpressionEvaluator
 // 0x000C (0x0048 - 0x003C)
@@ -33980,7 +33980,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UPlayerActionExpressionEvaluator::pClassPointer = NULL;
+//UClass* UPlayerActionExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.SkillAttributeContextResolver
 // 0x0038 (0x0074 - 0x003C)
@@ -34003,7 +34003,7 @@ public:
 	};
 };
 
-UClass* USkillAttributeContextResolver::pClassPointer = NULL;
+//UClass* USkillAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.SkillEffectManager
 // 0x001C (0x01A4 - 0x0188)
@@ -34045,7 +34045,7 @@ public:
 	void DeactivateAllSkillsForInstigator(class AController* SkillInstigator);
 };
 
-UClass* ASkillEffectManager::pClassPointer = NULL;
+//UClass* ASkillEffectManager::pClassPointer = NULL;
 
 // Class WillowGame.SkillExpressionEvaluator
 // 0x0005 (0x0041 - 0x003C)
@@ -34070,7 +34070,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* USkillExpressionEvaluator::pClassPointer = NULL;
+//UClass* USkillExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.VehiclePassengerExpressionEvaluator
 // 0x0004 (0x0040 - 0x003C)
@@ -34097,7 +34097,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UVehiclePassengerExpressionEvaluator::pClassPointer = NULL;
+//UClass* UVehiclePassengerExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.WeaponActionAvailableExpressionEvaluator
 // 0x0000 (0x003C - 0x003C)
@@ -34120,7 +34120,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UWeaponActionAvailableExpressionEvaluator::pClassPointer = NULL;
+//UClass* UWeaponActionAvailableExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.WeaponEquippedExpressionEvaluator
 // 0x0001 (0x003D - 0x003C)
@@ -34144,7 +34144,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UWeaponEquippedExpressionEvaluator::pClassPointer = NULL;
+//UClass* UWeaponEquippedExpressionEvaluator::pClassPointer = NULL;
 
 // Class WillowGame.AIPawnBalanceDefinition
 // 0x0078 (0x00B4 - 0x003C)
@@ -34188,7 +34188,7 @@ public:
 	int GetPlayThroughIndex();
 };
 
-UClass* UAIPawnBalanceDefinition::pClassPointer = NULL;
+//UClass* UAIPawnBalanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation
 // 0x0004 (0x0040 - 0x003C)
@@ -34214,7 +34214,7 @@ public:
 	bool CanPath(class UIAIInterface* AI);
 };
 
-UClass* UAttackLocation::pClassPointer = NULL;
+//UClass* UAttackLocation::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_Direct
 // 0x0000 (0x0040 - 0x0040)
@@ -34237,7 +34237,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_Direct::pClassPointer = NULL;
+//UClass* UAttackLocation_Direct::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_Height
 // 0x0008 (0x0048 - 0x0040)
@@ -34262,7 +34262,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_Height::pClassPointer = NULL;
+//UClass* UAttackLocation_Height::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_LineOfSight
 // 0x002C (0x006C - 0x0040)
@@ -34293,7 +34293,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_LineOfSight::pClassPointer = NULL;
+//UClass* UAttackLocation_LineOfSight::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_MaxDistance
 // 0x0004 (0x0044 - 0x0040)
@@ -34317,7 +34317,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_MaxDistance::pClassPointer = NULL;
+//UClass* UAttackLocation_MaxDistance::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_Move
 // 0x0008 (0x0048 - 0x0040)
@@ -34342,7 +34342,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_Move::pClassPointer = NULL;
+//UClass* UAttackLocation_Move::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_ParentDistance
 // 0x000C (0x004C - 0x0040)
@@ -34368,7 +34368,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_ParentDistance::pClassPointer = NULL;
+//UClass* UAttackLocation_ParentDistance::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_Range
 // 0x000C (0x004C - 0x0040)
@@ -34394,7 +34394,7 @@ public:
 	bool CanPath(class UIAIInterface* AI);
 };
 
-UClass* UAttackLocation_Range::pClassPointer = NULL;
+//UClass* UAttackLocation_Range::pClassPointer = NULL;
 
 // Class WillowGame.AttackLocation_Side
 // 0x0000 (0x0040 - 0x0040)
@@ -34417,7 +34417,7 @@ public:
 	bool ValidLocation(class UIAIInterface* AI, struct FVector* TestLoc);
 };
 
-UClass* UAttackLocation_Side::pClassPointer = NULL;
+//UClass* UAttackLocation_Side::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AISpawn
 // 0x0040 (0x008C - 0x004C)
@@ -34450,7 +34450,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AISpawn::pClassPointer = NULL;
+//UClass* UBehavior_AISpawn::pClassPointer = NULL;
 
 // Class WillowGame.DownloadableFixupAIPawnNamesDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -34472,7 +34472,7 @@ public:
 	};
 };
 
-UClass* UDownloadableFixupAIPawnNamesDefinition::pClassPointer = NULL;
+//UClass* UDownloadableFixupAIPawnNamesDefinition::pClassPointer = NULL;
 
 // Class WillowGame.EventFilter_OnTakeDamage
 // 0x0004 (0x0044 - 0x0040)
@@ -34494,7 +34494,7 @@ public:
 	};
 };
 
-UClass* UEventFilter_OnTakeDamage::pClassPointer = NULL;
+//UClass* UEventFilter_OnTakeDamage::pClassPointer = NULL;
 
 // Class WillowGame.FromContextFlagValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -34516,7 +34516,7 @@ public:
 	};
 };
 
-UClass* UFromContextFlagValueResolver::pClassPointer = NULL;
+//UClass* UFromContextFlagValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryWillowAIPawn
 // 0x0054 (0x00AC - 0x0058)
@@ -34560,7 +34560,7 @@ public:
 	void eventSetupMatineeForActor(class AActor* aNewActor);
 };
 
-UClass* UPopulationFactoryWillowAIPawn::pClassPointer = NULL;
+//UClass* UPopulationFactoryWillowAIPawn::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryBalancedAIPawn
 // 0x0008 (0x00B4 - 0x00AC)
@@ -34595,7 +34595,7 @@ public:
 	bool CanSpawn(class APopulationOpportunity* SpawningOpportunity);
 };
 
-UClass* UPopulationFactoryBalancedAIPawn::pClassPointer = NULL;
+//UClass* UPopulationFactoryBalancedAIPawn::pClassPointer = NULL;
 
 // Class WillowGame.PopulationFactoryWillowInventory
 // 0x0000 (0x0058 - 0x0058)
@@ -34621,7 +34621,7 @@ public:
 	bool eventShouldSavePopulationActor(class UPopulationMaster* Master, class AActor* ActorToSave);
 };
 
-UClass* UPopulationFactoryWillowInventory::pClassPointer = NULL;
+//UClass* UPopulationFactoryWillowInventory::pClassPointer = NULL;
 
 // Class WillowGame.RES_AIOperation
 // 0x0000 (0x003C - 0x003C)
@@ -34642,7 +34642,7 @@ public:
 	};
 };
 
-UClass* URES_AIOperation::pClassPointer = NULL;
+//UClass* URES_AIOperation::pClassPointer = NULL;
 
 // Class WillowGame.RES_Behavior
 // 0x0000 (0x003C - 0x003C)
@@ -34663,7 +34663,7 @@ public:
 	};
 };
 
-UClass* URES_Behavior::pClassPointer = NULL;
+//UClass* URES_Behavior::pClassPointer = NULL;
 
 // Class WillowGame.RES_CharacterDialog
 // 0x0000 (0x003C - 0x003C)
@@ -34684,7 +34684,7 @@ public:
 	};
 };
 
-UClass* URES_CharacterDialog::pClassPointer = NULL;
+//UClass* URES_CharacterDialog::pClassPointer = NULL;
 
 // Class WillowGame.RES_CustomAnimation
 // 0x0000 (0x003C - 0x003C)
@@ -34705,7 +34705,7 @@ public:
 	};
 };
 
-UClass* URES_CustomAnimation::pClassPointer = NULL;
+//UClass* URES_CustomAnimation::pClassPointer = NULL;
 
 // Class WillowGame.RES_Firing
 // 0x0000 (0x003C - 0x003C)
@@ -34726,7 +34726,7 @@ public:
 	};
 };
 
-UClass* URES_Firing::pClassPointer = NULL;
+//UClass* URES_Firing::pClassPointer = NULL;
 
 // Class WillowGame.RES_Moving
 // 0x0000 (0x003C - 0x003C)
@@ -34747,7 +34747,7 @@ public:
 	};
 };
 
-UClass* URES_Moving::pClassPointer = NULL;
+//UClass* URES_Moving::pClassPointer = NULL;
 
 // Class WillowGame.RES_Posture
 // 0x0000 (0x003C - 0x003C)
@@ -34768,7 +34768,7 @@ public:
 	};
 };
 
-UClass* URES_Posture::pClassPointer = NULL;
+//UClass* URES_Posture::pClassPointer = NULL;
 
 // Class WillowGame.RES_Skill
 // 0x0000 (0x003C - 0x003C)
@@ -34789,7 +34789,7 @@ public:
 	};
 };
 
-UClass* URES_Skill::pClassPointer = NULL;
+//UClass* URES_Skill::pClassPointer = NULL;
 
 // Class WillowGame.RES_Sound
 // 0x0000 (0x003C - 0x003C)
@@ -34810,7 +34810,7 @@ public:
 	};
 };
 
-UClass* URES_Sound::pClassPointer = NULL;
+//UClass* URES_Sound::pClassPointer = NULL;
 
 // Class WillowGame.RES_SpecialMovement
 // 0x0000 (0x003C - 0x003C)
@@ -34831,7 +34831,7 @@ public:
 	};
 };
 
-UClass* URES_SpecialMovement::pClassPointer = NULL;
+//UClass* URES_SpecialMovement::pClassPointer = NULL;
 
 // Class WillowGame.RES_SpeedChange
 // 0x0000 (0x003C - 0x003C)
@@ -34852,7 +34852,7 @@ public:
 	};
 };
 
-UClass* URES_SpeedChange::pClassPointer = NULL;
+//UClass* URES_SpeedChange::pClassPointer = NULL;
 
 // Class WillowGame.RES_UseVehicle
 // 0x0000 (0x003C - 0x003C)
@@ -34873,7 +34873,7 @@ public:
 	};
 };
 
-UClass* URES_UseVehicle::pClassPointer = NULL;
+//UClass* URES_UseVehicle::pClassPointer = NULL;
 
 // Class WillowGame.TargetMetaInfoValueResolver
 // 0x0008 (0x0044 - 0x003C)
@@ -34895,7 +34895,7 @@ public:
 	};
 };
 
-UClass* UTargetMetaInfoValueResolver::pClassPointer = NULL;
+//UClass* UTargetMetaInfoValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.TransformedFlagValueResolver
 // 0x0001 (0x003D - 0x003C)
@@ -34917,7 +34917,7 @@ public:
 	};
 };
 
-UClass* UTransformedFlagValueResolver::pClassPointer = NULL;
+//UClass* UTransformedFlagValueResolver::pClassPointer = NULL;
 
 // Class WillowGame.WillowActionSequencePawn
 // 0x0078 (0x0128 - 0x00B0)
@@ -34974,7 +34974,7 @@ public:
 	void WaitForPawnToStop();
 };
 
-UClass* UWillowActionSequencePawn::pClassPointer = NULL;
+//UClass* UWillowActionSequencePawn::pClassPointer = NULL;
 
 // Class WillowGame.Action_Burrow
 // 0x0008 (0x0130 - 0x0128)
@@ -35004,7 +35004,7 @@ public:
 	void eventStart();
 };
 
-UClass* UAction_Burrow::pClassPointer = NULL;
+//UClass* UAction_Burrow::pClassPointer = NULL;
 
 // Class WillowGame.Action_GenericAttack
 // 0x0050 (0x0180 - 0x0130)
@@ -35069,7 +35069,7 @@ public:
 	void InitData();
 };
 
-UClass* UAction_GenericAttack::pClassPointer = NULL;
+//UClass* UAction_GenericAttack::pClassPointer = NULL;
 
 // Class WillowGame.Action_AnimAttack
 // 0x0014 (0x0194 - 0x0180)
@@ -35108,7 +35108,7 @@ public:
 	void eventInit();
 };
 
-UClass* UAction_AnimAttack::pClassPointer = NULL;
+//UClass* UAction_AnimAttack::pClassPointer = NULL;
 
 // Class WillowGame.Action_BasicAttack
 // 0x0054 (0x01E8 - 0x0194)
@@ -35141,7 +35141,7 @@ public:
 	};
 };
 
-UClass* UAction_BasicAttack::pClassPointer = NULL;
+//UClass* UAction_BasicAttack::pClassPointer = NULL;
 
 // Class WillowGame.Action_LeapAtTarget
 // 0x002C (0x0214 - 0x01E8)
@@ -35174,7 +35174,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_LeapAtTarget::pClassPointer = NULL;
+//UClass* UAction_LeapAtTarget::pClassPointer = NULL;
 
 // Class WillowGame.Action_ShootTarget
 // 0x0044 (0x01C4 - 0x0180)
@@ -35202,7 +35202,7 @@ public:
 	};
 };
 
-UClass* UAction_ShootTarget::pClassPointer = NULL;
+//UClass* UAction_ShootTarget::pClassPointer = NULL;
 
 // Class WillowGame.Action_CoverAttack
 // 0x003C (0x0164 - 0x0128)
@@ -35248,7 +35248,7 @@ public:
 	void InitData();
 };
 
-UClass* UAction_CoverAttack::pClassPointer = NULL;
+//UClass* UAction_CoverAttack::pClassPointer = NULL;
 
 // Class WillowGame.Action_CombatPoint
 // 0x0034 (0x0198 - 0x0164)
@@ -35271,7 +35271,7 @@ public:
 	};
 };
 
-UClass* UAction_CombatPoint::pClassPointer = NULL;
+//UClass* UAction_CombatPoint::pClassPointer = NULL;
 
 // Class WillowGame.Action_SwoopAttack
 // 0x0054 (0x017C - 0x0128)
@@ -35319,7 +35319,7 @@ public:
 	void eventInit();
 };
 
-UClass* UAction_SwoopAttack::pClassPointer = NULL;
+//UClass* UAction_SwoopAttack::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIComponent
 // 0x00D4 (0x01C0 - 0x00EC)
@@ -35414,7 +35414,7 @@ public:
 	void ClearState();
 };
 
-UClass* UWillowAIComponent::pClassPointer = NULL;
+//UClass* UWillowAIComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIBlackboardComponent
 // 0x0004 (0x01C4 - 0x01C0)
@@ -35439,7 +35439,7 @@ public:
 	void GetTargets();
 };
 
-UClass* UWillowAIBlackboardComponent::pClassPointer = NULL;
+//UClass* UWillowAIBlackboardComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIDenComponent
 // 0x0004 (0x01C4 - 0x01C0)
@@ -35465,7 +35465,7 @@ public:
 	void FindTargets();
 };
 
-UClass* UWillowAIDenComponent::pClassPointer = NULL;
+//UClass* UWillowAIDenComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIDefinition
 // 0x001C (0x007C - 0x0060)
@@ -35496,7 +35496,7 @@ public:
 	void OnDismount(struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UWillowAIDefinition::pClassPointer = NULL;
+//UClass* UWillowAIDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIDenDefinition
 // 0x0008 (0x0068 - 0x0060)
@@ -35519,7 +35519,7 @@ public:
 	};
 };
 
-UClass* UWillowAIDenDefinition::pClassPointer = NULL;
+//UClass* UWillowAIDenDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIMoveNode
 // 0x0011 (0x01D5 - 0x01C4)
@@ -35549,7 +35549,7 @@ public:
 	void eventNotifyPathChanged();
 };
 
-UClass* AWillowAIMoveNode::pClassPointer = NULL;
+//UClass* AWillowAIMoveNode::pClassPointer = NULL;
 
 // Class WillowGame.Perch
 // 0x007F (0x0254 - 0x01D5)
@@ -35615,7 +35615,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* APerch::pClassPointer = NULL;
+//UClass* APerch::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_Cover
 // 0x0000 (0x00C8 - 0x00C8)
@@ -35638,7 +35638,7 @@ public:
 	class UAnimNodeSpecialMoveBlend* GetSMNode(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_Cover::pClassPointer = NULL;
+//UClass* USpecialMove_Cover::pClassPointer = NULL;
 
 // Class WillowGame.WillowAwarenessZoneDefinition
 // 0x0001 (0x006D - 0x006C)
@@ -35660,7 +35660,7 @@ public:
 	};
 };
 
-UClass* UWillowAwarenessZoneDefinition::pClassPointer = NULL;
+//UClass* UWillowAwarenessZoneDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowBoundaryTurret
 // 0x005C (0x01E4 - 0x0188)
@@ -35710,7 +35710,7 @@ public:
 	void eventKillPlayer(class AWillowPlayerPawn* WPP);
 };
 
-UClass* AWillowBoundaryTurret::pClassPointer = NULL;
+//UClass* AWillowBoundaryTurret::pClassPointer = NULL;
 
 // Class WillowGame.AIClassDefinition
 // 0x0104 (0x0398 - 0x0294)
@@ -35810,7 +35810,7 @@ public:
 	void OnUsed(unsigned char EventOutput, class UObject* Instigator, class UObject* UsedComponent, struct FBehaviorConsumerHandle* ConsumerHandle);
 };
 
-UClass* UAIClassDefinition::pClassPointer = NULL;
+//UClass* UAIClassDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowCombatPoint
 // 0x0010 (0x0198 - 0x0188)
@@ -35833,7 +35833,7 @@ public:
 	};
 };
 
-UClass* AWillowCombatPoint::pClassPointer = NULL;
+//UClass* AWillowCombatPoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowCoverComponent
 // 0x000B (0x0064 - 0x0059)
@@ -35870,7 +35870,7 @@ public:
 	void ActionFinished();
 };
 
-UClass* UWillowCoverComponent::pClassPointer = NULL;
+//UClass* UWillowCoverComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowCoverStanceDefinition
 // 0x0020 (0x005C - 0x003C)
@@ -35898,7 +35898,7 @@ public:
 	};
 };
 
-UClass* UWillowCoverStanceDefinition::pClassPointer = NULL;
+//UClass* UWillowCoverStanceDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowFormationComponent
 // 0x0014 (0x0224 - 0x0210)
@@ -35924,7 +35924,7 @@ public:
 	};
 };
 
-UClass* UWillowFormationComponent::pClassPointer = NULL;
+//UClass* UWillowFormationComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowMind
 // 0x00C4 (0x082C - 0x0768)
@@ -36097,7 +36097,7 @@ public:
 	void eventDestroyed();
 };
 
-UClass* AWillowMind::pClassPointer = NULL;
+//UClass* AWillowMind::pClassPointer = NULL;
 
 // Class WillowGame.WillowMindAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -36118,7 +36118,7 @@ public:
 	};
 };
 
-UClass* UWillowMindAttributeContextResolver::pClassPointer = NULL;
+//UClass* UWillowMindAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.WillowMindTargetInfo
 // 0x0054 (0x012C - 0x00D8)
@@ -36162,7 +36162,7 @@ public:
 	struct FVector GetTargetLocation();
 };
 
-UClass* UWillowMindTargetInfo::pClassPointer = NULL;
+//UClass* UWillowMindTargetInfo::pClassPointer = NULL;
 
 // Class WillowGame.WillowNavigationHandle
 // 0x00C8 (0x0368 - 0x02A0)
@@ -36245,7 +36245,7 @@ public:
 	bool CreateConstrainedPath(struct FVector DestLocation, struct FPathFindData* PathData, TArray< class UAttackLocation* >* Constraints);
 };
 
-UClass* UWillowNavigationHandle::pClassPointer = NULL;
+//UClass* UWillowNavigationHandle::pClassPointer = NULL;
 
 // Class WillowGame.WillowClientNavigationHandle
 // 0x0000 (0x0368 - 0x0368)
@@ -36266,7 +36266,7 @@ public:
 	};
 };
 
-UClass* UWillowClientNavigationHandle::pClassPointer = NULL;
+//UClass* UWillowClientNavigationHandle::pClassPointer = NULL;
 
 // Class WillowGame.WillowNavMeshPathFinder
 // 0x0000 (0x0048 - 0x0048)
@@ -36289,7 +36289,7 @@ public:
 	bool FindConstrainedPath(class UIAIInterface* AI, struct FGBXNavMeshPath* Path, struct FNavMeshPathParams* PathParams, struct FVector* SrcLocation, struct FGBXNavMeshPolyRef* SrcPoly, struct FVector* DestLocation, TArray< class UAttackLocation* >* Constraints);
 };
 
-UClass* UWillowNavMeshPathFinder::pClassPointer = NULL;
+//UClass* UWillowNavMeshPathFinder::pClassPointer = NULL;
 
 // Class WillowGame.WillowObstacleRenderComponent
 // 0x0000 (0x0210 - 0x0210)
@@ -36310,7 +36310,7 @@ public:
 	};
 };
 
-UClass* UWillowObstacleRenderComponent::pClassPointer = NULL;
+//UClass* UWillowObstacleRenderComponent::pClassPointer = NULL;
 
 // Class WillowGame.DeployableTurretActor
 // 0x0028 (0x134C - 0x1324)
@@ -36348,7 +36348,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ADeployableTurretActor::pClassPointer = NULL;
+//UClass* ADeployableTurretActor::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_DenStat
 // 0x0004 (0x00C8 - 0x00C4)
@@ -36370,7 +36370,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_DenStat::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_DenStat::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_Provoked
 // 0x0000 (0x00C4 - 0x00C4)
@@ -36391,7 +36391,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_Provoked::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_Provoked::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_CalcCanFire
 // 0x0000 (0x004C - 0x004C)
@@ -36412,7 +36412,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_CalcCanFire::pClassPointer = NULL;
+//UClass* UWillowTI_CalcCanFire::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_CalcDistances
 // 0x0000 (0x004C - 0x004C)
@@ -36433,7 +36433,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_CalcDistances::pClassPointer = NULL;
+//UClass* UWillowTI_CalcDistances::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_CalcExposure
 // 0x0000 (0x004C - 0x004C)
@@ -36454,7 +36454,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_CalcExposure::pClassPointer = NULL;
+//UClass* UWillowTI_CalcExposure::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_CalcThreat
 // 0x0000 (0x004C - 0x004C)
@@ -36475,7 +36475,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_CalcThreat::pClassPointer = NULL;
+//UClass* UWillowTI_CalcThreat::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_PrioritizeAttacking
 // 0x0008 (0x0058 - 0x0050)
@@ -36498,7 +36498,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_PrioritizeAttacking::pClassPointer = NULL;
+//UClass* UWillowTI_PrioritizeAttacking::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_PrioritizeHealth
 // 0x0001 (0x0051 - 0x0050)
@@ -36520,7 +36520,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_PrioritizeHealth::pClassPointer = NULL;
+//UClass* UWillowTI_PrioritizeHealth::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_PrioritizeIdle
 // 0x0004 (0x0054 - 0x0050)
@@ -36542,7 +36542,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_PrioritizeIdle::pClassPointer = NULL;
+//UClass* UWillowTI_PrioritizeIdle::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_PrioritizeOpinion
 // 0x0001 (0x0051 - 0x0050)
@@ -36564,7 +36564,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_PrioritizeOpinion::pClassPointer = NULL;
+//UClass* UWillowTI_PrioritizeOpinion::pClassPointer = NULL;
 
 // Class WillowGame.AIDebugDummyBase
 // 0x0020 (0x01EC - 0x01CC)
@@ -36593,7 +36593,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AAIDebugDummyBase::pClassPointer = NULL;
+//UClass* AAIDebugDummyBase::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIDebugCamera
 // 0x0018 (0x00A4 - 0x008C)
@@ -36632,7 +36632,7 @@ public:
 	void NotifyGamePaused();
 };
 
-UClass* UWillowAIDebugCamera::pClassPointer = NULL;
+//UClass* UWillowAIDebugCamera::pClassPointer = NULL;
 
 // Class WillowGame.WillowNavDebug
 // 0x0000 (0x0188 - 0x0188)
@@ -36653,7 +36653,7 @@ public:
 	};
 };
 
-UClass* AWillowNavDebug::pClassPointer = NULL;
+//UClass* AWillowNavDebug::pClassPointer = NULL;
 
 // Class WillowGame.WillowPawnSnapshotRecord
 // 0x00C4 (0x1090 - 0x0FCC)
@@ -36700,7 +36700,7 @@ public:
 	};
 };
 
-UClass* UWillowPawnSnapshotRecord::pClassPointer = NULL;
+//UClass* UWillowPawnSnapshotRecord::pClassPointer = NULL;
 
 // Class WillowGame.WillowSnapshotRecord
 // 0x0000 (0x0D00 - 0x0D00)
@@ -36721,7 +36721,7 @@ public:
 	};
 };
 
-UClass* UWillowSnapshotRecord::pClassPointer = NULL;
+//UClass* UWillowSnapshotRecord::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerSnapshotRecord
 // 0x0008 (0x0D08 - 0x0D00)
@@ -36743,7 +36743,7 @@ public:
 	};
 };
 
-UClass* UWillowPlayerSnapshotRecord::pClassPointer = NULL;
+//UClass* UWillowPlayerSnapshotRecord::pClassPointer = NULL;
 
 // Class WillowGame.HUDDefinition
 // 0x0094 (0x00D0 - 0x003C)
@@ -36794,7 +36794,7 @@ public:
 	};
 };
 
-UClass* UHUDDefinition::pClassPointer = NULL;
+//UClass* UHUDDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowRadarManager
 // 0x0448 (0x05D0 - 0x0188)
@@ -36827,7 +36827,7 @@ public:
 	void AddDynamicIcon(unsigned char IconType, class UObject* Source, float Duration);
 };
 
-UClass* AWillowRadarManager::pClassPointer = NULL;
+//UClass* AWillowRadarManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqCond_SwitchByPlatform
 // 0x0000 (0x008C - 0x008C)
@@ -36850,7 +36850,7 @@ public:
 	unsigned char eventGetPlatform();
 };
 
-UClass* UWillowSeqCond_SwitchByPlatform::pClassPointer = NULL;
+//UClass* UWillowSeqCond_SwitchByPlatform::pClassPointer = NULL;
 
 // Class WillowGame.WillowUIDataStore_StringAliasMap
 // 0x0004 (0x00D4 - 0x00D0)
@@ -36874,7 +36874,7 @@ public:
 	int GetStringWithFieldName(struct FString FieldName, struct FString* MappedString);
 };
 
-UClass* UWillowUIDataStore_StringAliasMap::pClassPointer = NULL;
+//UClass* UWillowUIDataStore_StringAliasMap::pClassPointer = NULL;
 
 // Class WillowGame.PlayerStatsNotifier
 // 0x003C (0x0078 - 0x003C)
@@ -36902,7 +36902,7 @@ public:
 	void RegisterListener(struct FTrainingData* Listener);
 };
 
-UClass* UPlayerStatsNotifier::pClassPointer = NULL;
+//UClass* UPlayerStatsNotifier::pClassPointer = NULL;
 
 // Class WillowGame.WillowBaseStats
 // 0x006C (0x01F4 - 0x0188)
@@ -36950,7 +36950,7 @@ public:
 	void NextDebugPage();
 };
 
-UClass* AWillowBaseStats::pClassPointer = NULL;
+//UClass* AWillowBaseStats::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerStats
 // 0x0004 (0x01F8 - 0x01F4)
@@ -36984,7 +36984,7 @@ public:
 	void IncrementIntStat(struct FName StatId, int IncAmount);
 };
 
-UClass* AWillowPlayerStats::pClassPointer = NULL;
+//UClass* AWillowPlayerStats::pClassPointer = NULL;
 
 // Class WillowGame.WillowVersusDuelArena
 // 0x0084 (0x020C - 0x0188)
@@ -37027,7 +37027,7 @@ public:
 	void ReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowVersusDuelArena::pClassPointer = NULL;
+//UClass* AWillowVersusDuelArena::pClassPointer = NULL;
 
 // Class WillowGame.WillowVersusDuelGlobals
 // 0x0078 (0x00B4 - 0x003C)
@@ -37065,7 +37065,7 @@ public:
 	};
 };
 
-UClass* UWillowVersusDuelGlobals::pClassPointer = NULL;
+//UClass* UWillowVersusDuelGlobals::pClassPointer = NULL;
 
 // Class WillowGame.WillowVersusDuelInfo
 // 0x005C (0x01E4 - 0x0188)
@@ -37148,7 +37148,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowVersusDuelInfo::pClassPointer = NULL;
+//UClass* AWillowVersusDuelInfo::pClassPointer = NULL;
 
 // Class WillowGame.BaseInventoryPanelGFxObject
 // 0x0034 (0x00AC - 0x0078)
@@ -37199,7 +37199,7 @@ public:
 	bool Init(class UBaseTopLevelPanelGFxObject* InParentPanel, struct FName InPanelName);
 };
 
-UClass* UBaseInventoryPanelGFxObject::pClassPointer = NULL;
+//UClass* UBaseInventoryPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.BadassPanelGFxObject
 // 0x00D0 (0x017C - 0x00AC)
@@ -37266,7 +37266,7 @@ public:
 	bool Init(class UBaseTopLevelPanelGFxObject* InParentPanel, struct FName InPanelName);
 };
 
-UClass* UBadassPanelGFxObject::pClassPointer = NULL;
+//UClass* UBadassPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.ChallengesPanelGFxObject
 // 0x007C (0x0128 - 0x00AC)
@@ -37325,7 +37325,7 @@ public:
 	void UpdateChallengeTextList();
 };
 
-UClass* UChallengesPanelGFxObject::pClassPointer = NULL;
+//UClass* UChallengesPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.InventoryListPanelGFxObject
 // 0x005C (0x0108 - 0x00AC)
@@ -37409,7 +37409,7 @@ public:
 	void InitializePlayerClasses();
 };
 
-UClass* UInventoryListPanelGFxObject::pClassPointer = NULL;
+//UClass* UInventoryListPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.BaseTopLevelPanelGFxObject
 // 0x0034 (0x00AC - 0x0078)
@@ -37473,7 +37473,7 @@ public:
 	bool OnInputKey(int ControllerId, struct FName ukey, unsigned char uevent);
 };
 
-UClass* UBaseTopLevelPanelGFxObject::pClassPointer = NULL;
+//UClass* UBaseTopLevelPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.ChallengesScreenGFxObject
 // 0x0010 (0x00BC - 0x00AC)
@@ -37516,7 +37516,7 @@ public:
 	bool Init(class UWillowInventoryGFxMovie* InParent);
 };
 
-UClass* UChallengesScreenGFxObject::pClassPointer = NULL;
+//UClass* UChallengesScreenGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.StatusMenuInventoryPanelGFxObject
 // 0x0050 (0x00FC - 0x00AC)
@@ -37627,7 +37627,7 @@ public:
 	bool Init(class UWillowInventoryGFxMovie* InParent);
 };
 
-UClass* UStatusMenuInventoryPanelGFxObject::pClassPointer = NULL;
+//UClass* UStatusMenuInventoryPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.TradingPanelGFxObject
 // 0x0024 (0x00D0 - 0x00AC)
@@ -37691,7 +37691,7 @@ public:
 	bool Init(class UWillowInventoryGFxMovie* InParent);
 };
 
-UClass* UTradingPanelGFxObject::pClassPointer = NULL;
+//UClass* UTradingPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.TwoPanelInterfaceGFxObject
 // 0x0070 (0x011C - 0x00AC)
@@ -37793,7 +37793,7 @@ public:
 	void SwitchToStartingPanel(unsigned long bSetHeader);
 };
 
-UClass* UTwoPanelInterfaceGFxObject::pClassPointer = NULL;
+//UClass* UTwoPanelInterfaceGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.DeferredDataProviderGFxObject
 // 0x0010 (0x0088 - 0x0078)
@@ -37823,7 +37823,7 @@ public:
 	void Init();
 };
 
-UClass* UDeferredDataProviderGFxObject::pClassPointer = NULL;
+//UClass* UDeferredDataProviderGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.InventoryDataProviderGFxObject
 // 0x0030 (0x00B8 - 0x0088)
@@ -37858,7 +37858,7 @@ public:
 	void Init();
 };
 
-UClass* UInventoryDataProviderGFxObject::pClassPointer = NULL;
+//UClass* UInventoryDataProviderGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.GFxTextListContainer
 // 0x0050 (0x008C - 0x003C)
@@ -37924,7 +37924,7 @@ public:
 	void Init(class UGFxMovie* Parent, class UGFxTextListDefinition* Def);
 };
 
-UClass* UGFxTextListContainer::pClassPointer = NULL;
+//UClass* UGFxTextListContainer::pClassPointer = NULL;
 
 // Class WillowGame.GFxTextListDefinition
 // 0x0060 (0x009C - 0x003C)
@@ -37955,7 +37955,7 @@ public:
 	};
 };
 
-UClass* UGFxTextListDefinition::pClassPointer = NULL;
+//UClass* UGFxTextListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.HashDisplayGFxDefinition
 // 0x0024 (0x00E0 - 0x00BC)
@@ -37983,7 +37983,7 @@ public:
 	};
 };
 
-UClass* UHashDisplayGFxDefinition::pClassPointer = NULL;
+//UClass* UHashDisplayGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.HUDScalingAnchorDefinition
 // 0x0008 (0x0044 - 0x003C)
@@ -38005,7 +38005,7 @@ public:
 	};
 };
 
-UClass* UHUDScalingAnchorDefinition::pClassPointer = NULL;
+//UClass* UHUDScalingAnchorDefinition::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_Base
 // 0x0004 (0x007C - 0x0078)
@@ -38031,7 +38031,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_Base::pClassPointer = NULL;
+//UClass* UHUDWidget_Base::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_Challenges
 // 0x0038 (0x00B4 - 0x007C)
@@ -38073,7 +38073,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_Challenges::pClassPointer = NULL;
+//UClass* UHUDWidget_Challenges::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_Crosshairs
 // 0x0024 (0x00A0 - 0x007C)
@@ -38113,7 +38113,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_Crosshairs::pClassPointer = NULL;
+//UClass* UHUDWidget_Crosshairs::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_Minimap
 // 0x00F4 (0x0170 - 0x007C)
@@ -38173,7 +38173,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_Minimap::pClassPointer = NULL;
+//UClass* UHUDWidget_Minimap::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_Missions
 // 0x00D8 (0x0154 - 0x007C)
@@ -38238,7 +38238,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_Missions::pClassPointer = NULL;
+//UClass* UHUDWidget_Missions::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_Trading
 // 0x0108 (0x0184 - 0x007C)
@@ -38295,7 +38295,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_Trading::pClassPointer = NULL;
+//UClass* UHUDWidget_Trading::pClassPointer = NULL;
 
 // Class WillowGame.HUDWidget_WorldSpace
 // 0x0098 (0x0114 - 0x007C)
@@ -38342,7 +38342,7 @@ public:
 	void Init(class UWillowHUDGFxMovie* OwnerMovie);
 };
 
-UClass* UHUDWidget_WorldSpace::pClassPointer = NULL;
+//UClass* UHUDWidget_WorldSpace::pClassPointer = NULL;
 
 // Class WillowGame.InventoryDataProviderElement
 // 0x0008 (0x0080 - 0x0078)
@@ -38365,7 +38365,7 @@ public:
 	};
 };
 
-UClass* UInventoryDataProviderElement::pClassPointer = NULL;
+//UClass* UInventoryDataProviderElement::pClassPointer = NULL;
 
 // Class WillowGame.ItemCardGFxObject
 // 0x0004 (0x007C - 0x0078)
@@ -38405,7 +38405,7 @@ public:
 	void Init();
 };
 
-UClass* UItemCardGFxObject::pClassPointer = NULL;
+//UClass* UItemCardGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.ItemOfTheDayPanelGFxObject
 // 0x000C (0x0084 - 0x0078)
@@ -38451,7 +38451,7 @@ public:
 	void Init(class UVendingMachineExGFxMovie* InVendingMachineMovie);
 };
 
-UClass* UItemOfTheDayPanelGFxObject::pClassPointer = NULL;
+//UClass* UItemOfTheDayPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.ItemPickupGFxDefinition
 // 0x001C (0x00D8 - 0x00BC)
@@ -38477,7 +38477,7 @@ public:
 	};
 };
 
-UClass* UItemPickupGFxDefinition::pClassPointer = NULL;
+//UClass* UItemPickupGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MontageGFxObject
 // 0x0028 (0x00A0 - 0x0078)
@@ -38518,7 +38518,7 @@ public:
 	void AddMontageTextures();
 };
 
-UClass* UMontageGFxObject::pClassPointer = NULL;
+//UClass* UMontageGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.ScrollingListGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -38543,7 +38543,7 @@ public:
 	void Init();
 };
 
-UClass* UScrollingListGFxObject::pClassPointer = NULL;
+//UClass* UScrollingListGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.MultitypeScrollingListGFxObject
 // 0x000C (0x0084 - 0x0078)
@@ -38575,7 +38575,7 @@ public:
 	void InitMultitype(class UIMultitypeScrollingList* InParentPanel);
 };
 
-UClass* UMultitypeScrollingListGFxObject::pClassPointer = NULL;
+//UClass* UMultitypeScrollingListGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.SkillTreeGFxDefinition
 // 0x029C (0x02D8 - 0x003C)
@@ -38663,7 +38663,7 @@ public:
 	};
 };
 
-UClass* USkillTreeGFxDefinition::pClassPointer = NULL;
+//UClass* USkillTreeGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SkillTreeGFxObject
 // 0x01A6 (0x021E - 0x0078)
@@ -38802,7 +38802,7 @@ public:
 	void Flash_SendInitialSkillData();
 };
 
-UClass* USkillTreeGFxObject::pClassPointer = NULL;
+//UClass* USkillTreeGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.StatusMenuMapGFxObject
 // 0x022C (0x02A4 - 0x0078)
@@ -38900,7 +38900,7 @@ public:
 	void InitMapFrameVars();
 };
 
-UClass* UStatusMenuMapGFxObject::pClassPointer = NULL;
+//UClass* UStatusMenuMapGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxColiseumOverlayDefinition
 // 0x002C (0x00E8 - 0x00BC)
@@ -38932,7 +38932,7 @@ public:
 	struct FString EvaluateBalanceFormula(class UAttributeInitializationDefinition* InDef, float Multiplier);
 };
 
-UClass* UWillowGFxColiseumOverlayDefinition::pClassPointer = NULL;
+//UClass* UWillowGFxColiseumOverlayDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMenuHelperSaveGame
 // 0x0058 (0x0094 - 0x003C)
@@ -38999,7 +38999,7 @@ public:
 	void OnDeleted(int InPlayerIndex, unsigned long bWasSuccessful);
 };
 
-UClass* UWillowGFxMenuHelperSaveGame::pClassPointer = NULL;
+//UClass* UWillowGFxMenuHelperSaveGame::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMovie
 // 0x0010 (0x0264 - 0x0254)
@@ -39065,7 +39065,7 @@ public:
 	void SingleArgInvokeSF(struct FString Command, struct FString Arg);
 };
 
-UClass* UWillowGFxMovie::pClassPointer = NULL;
+//UClass* UWillowGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.GearboxAccountGFxMovie
 // 0x0050 (0x02B4 - 0x0264)
@@ -39180,7 +39180,7 @@ public:
 	void GetCurrentDate(int* Month, int* Day, int* Year);
 };
 
-UClass* UGearboxAccountGFxMovie::pClassPointer = NULL;
+//UClass* UGearboxAccountGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.HashDisplayGFxMovie
 // 0x0070 (0x02D4 - 0x0264)
@@ -39243,7 +39243,7 @@ public:
 	void OnStatefulInputKey(struct FName ukey, unsigned char uevent);
 };
 
-UClass* UHashDisplayGFxMovie::pClassPointer = NULL;
+//UClass* UHashDisplayGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.ItemPickupGFxMovie
 // 0x005C (0x02C0 - 0x0264)
@@ -39296,7 +39296,7 @@ public:
 	void OnItemCardHeightCalculatedHandler(float NewHeight);
 };
 
-UClass* UItemPickupGFxMovie::pClassPointer = NULL;
+//UClass* UItemPickupGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.OnlineMessageGFxMovie
 // 0x0014 (0x0278 - 0x0264)
@@ -39336,7 +39336,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UOnlineMessageGFxMovie::pClassPointer = NULL;
+//UClass* UOnlineMessageGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.TextChatGFxMovie
 // 0x0004 (0x0268 - 0x0264)
@@ -39370,7 +39370,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UTextChatGFxMovie::pClassPointer = NULL;
+//UClass* UTextChatGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxDialogBox
 // 0x0090 (0x02F4 - 0x0264)
@@ -39465,7 +39465,7 @@ public:
 	void OnStorageDeviceChanged(unsigned long bIsValid, class UWillowGFxDialogBox* Dlg);
 };
 
-UClass* UWillowGFxDialogBox::pClassPointer = NULL;
+//UClass* UWillowGFxDialogBox::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMovie3D
 // 0x012C (0x0390 - 0x0264)
@@ -39542,7 +39542,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UWillowGFxMovie3D::pClassPointer = NULL;
+//UClass* UWillowGFxMovie3D::pClassPointer = NULL;
 
 // Class WillowGame.CharacterSelectionReduxGFxMovie
 // 0x00F0 (0x0480 - 0x0390)
@@ -39678,7 +39678,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UCharacterSelectionReduxGFxMovie::pClassPointer = NULL;
+//UClass* UCharacterSelectionReduxGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.ItemInspectionGFxMovie
 // 0x0130 (0x04C0 - 0x0390)
@@ -39767,7 +39767,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UItemInspectionGFxMovie::pClassPointer = NULL;
+//UClass* UItemInspectionGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.LANServerBrowserGFxMovie
 // 0x0048 (0x03D8 - 0x0390)
@@ -39828,7 +39828,7 @@ public:
 	bool Start(unsigned long bStartPaused);
 };
 
-UClass* ULANServerBrowserGFxMovie::pClassPointer = NULL;
+//UClass* ULANServerBrowserGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.QuestAcceptGFxMovie
 // 0x005C (0x03EC - 0x0390)
@@ -39930,7 +39930,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UQuestAcceptGFxMovie::pClassPointer = NULL;
+//UClass* UQuestAcceptGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSpawnStationGFxMovie
 // 0x00EC (0x047C - 0x0390)
@@ -40046,7 +40046,7 @@ public:
 	void CacheVehicleFamilies();
 };
 
-UClass* UVehicleSpawnStationGFxMovie::pClassPointer = NULL;
+//UClass* UVehicleSpawnStationGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.WeaponScopeGFxMovie
 // 0x005C (0x03EC - 0x0390)
@@ -40090,7 +40090,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UWeaponScopeGFxMovie::pClassPointer = NULL;
+//UClass* UWeaponScopeGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMovieCredits
 // 0x0054 (0x03E4 - 0x0390)
@@ -40144,7 +40144,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UWillowGFxMovieCredits::pClassPointer = NULL;
+//UClass* UWillowGFxMovieCredits::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxThirdPersonMovie
 // 0x00AC (0x043C - 0x0390)
@@ -40218,7 +40218,7 @@ public:
 	bool AmITheStatusMenu();
 };
 
-UClass* UWillowGFxThirdPersonMovie::pClassPointer = NULL;
+//UClass* UWillowGFxThirdPersonMovie::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationGFxMovie
 // 0x0104 (0x0540 - 0x043C)
@@ -40313,7 +40313,7 @@ public:
 	struct FString GetSonyTitleID();
 };
 
-UClass* UCustomizationGFxMovie::pClassPointer = NULL;
+//UClass* UCustomizationGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStationGFxMovie
 // 0x006C (0x04A8 - 0x043C)
@@ -40366,7 +40366,7 @@ public:
 	void HandleOpen();
 };
 
-UClass* UFastTravelStationGFxMovie::pClassPointer = NULL;
+//UClass* UFastTravelStationGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.WillowInventoryGFxMovie
 // 0x002C (0x0468 - 0x043C)
@@ -40408,7 +40408,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UWillowInventoryGFxMovie::pClassPointer = NULL;
+//UClass* UWillowInventoryGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.StatusMenuExGFxMovie
 // 0x034C (0x07B4 - 0x0468)
@@ -40722,7 +40722,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UStatusMenuExGFxMovie::pClassPointer = NULL;
+//UClass* UStatusMenuExGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.TradingGFxMovie
 // 0x0154 (0x05BC - 0x0468)
@@ -40800,7 +40800,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UTradingGFxMovie::pClassPointer = NULL;
+//UClass* UTradingGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.TwoPanelInterfaceGFxMovie
 // 0x003C (0x04A4 - 0x0468)
@@ -40862,7 +40862,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UTwoPanelInterfaceGFxMovie::pClassPointer = NULL;
+//UClass* UTwoPanelInterfaceGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.VendingMachineExGFxMovie
 // 0x016C (0x05D4 - 0x0468)
@@ -41012,7 +41012,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UVendingMachineExGFxMovie::pClassPointer = NULL;
+//UClass* UVendingMachineExGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.WillowHUDGFxMovie
 // 0x054C (0x08DC - 0x0390)
@@ -41344,7 +41344,7 @@ public:
 	bool UpdateCachedViewportInfo();
 };
 
-UClass* UWillowHUDGFxMovie::pClassPointer = NULL;
+//UClass* UWillowHUDGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMoviePressStart
 // 0x004B (0x02AF - 0x0264)
@@ -41419,7 +41419,7 @@ public:
 	void PlayAttractLoop();
 };
 
-UClass* UWillowGFxMoviePressStart::pClassPointer = NULL;
+//UClass* UWillowGFxMoviePressStart::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMovie3DDefinition
 // 0x0034 (0x00F0 - 0x00BC)
@@ -41449,7 +41449,7 @@ public:
 	};
 };
 
-UClass* UWillowGFxMovie3DDefinition::pClassPointer = NULL;
+//UClass* UWillowGFxMovie3DDefinition::pClassPointer = NULL;
 
 // Class WillowGame.BankGFxDefinition
 // 0x0034 (0x0124 - 0x00F0)
@@ -41479,7 +41479,7 @@ public:
 	};
 };
 
-UClass* UBankGFxDefinition::pClassPointer = NULL;
+//UClass* UBankGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CreditsGFxDefinition
 // 0x0070 (0x0160 - 0x00F0)
@@ -41514,7 +41514,7 @@ public:
 	};
 };
 
-UClass* UCreditsGFxDefinition::pClassPointer = NULL;
+//UClass* UCreditsGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ItemInspectionGFxMovieDefinition
 // 0x003C (0x012C - 0x00F0)
@@ -41546,7 +41546,7 @@ public:
 	};
 };
 
-UClass* UItemInspectionGFxMovieDefinition::pClassPointer = NULL;
+//UClass* UItemInspectionGFxMovieDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSpawnStationGFxDefinition
 // 0x0080 (0x0170 - 0x00F0)
@@ -41578,7 +41578,7 @@ public:
 	};
 };
 
-UClass* UVehicleSpawnStationGFxDefinition::pClassPointer = NULL;
+//UClass* UVehicleSpawnStationGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VendingMachineGFxDefinition
 // 0x00C8 (0x01B8 - 0x00F0)
@@ -41630,7 +41630,7 @@ public:
 	};
 };
 
-UClass* UVendingMachineGFxDefinition::pClassPointer = NULL;
+//UClass* UVendingMachineGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponScopeGFxDefinition
 // 0x0018 (0x0108 - 0x00F0)
@@ -41653,7 +41653,7 @@ public:
 	};
 };
 
-UClass* UWeaponScopeGFxDefinition::pClassPointer = NULL;
+//UClass* UWeaponScopeGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxThirdPersonDefinition
 // 0x0030 (0x0120 - 0x00F0)
@@ -41685,7 +41685,7 @@ public:
 	};
 };
 
-UClass* UWillowGFxThirdPersonDefinition::pClassPointer = NULL;
+//UClass* UWillowGFxThirdPersonDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationGFxDefinition
 // 0x0000 (0x0120 - 0x0120)
@@ -41706,7 +41706,7 @@ public:
 	};
 };
 
-UClass* UCustomizationGFxDefinition::pClassPointer = NULL;
+//UClass* UCustomizationGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowInventoryGFxDefinition
 // 0x0038 (0x0158 - 0x0120)
@@ -41735,7 +41735,7 @@ public:
 	};
 };
 
-UClass* UWillowInventoryGFxDefinition::pClassPointer = NULL;
+//UClass* UWillowInventoryGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.StatusMenuGFxDefinition
 // 0x0150 (0x02A8 - 0x0158)
@@ -41808,7 +41808,7 @@ public:
 	};
 };
 
-UClass* UStatusMenuGFxDefinition::pClassPointer = NULL;
+//UClass* UStatusMenuGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.TradingGFxDefinition
 // 0x0000 (0x0158 - 0x0158)
@@ -41829,7 +41829,7 @@ public:
 	};
 };
 
-UClass* UTradingGFxDefinition::pClassPointer = NULL;
+//UClass* UTradingGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowHUDGFxMovieDefinition
 // 0x0084 (0x0174 - 0x00F0)
@@ -41871,7 +41871,7 @@ public:
 	};
 };
 
-UClass* UWillowHUDGFxMovieDefinition::pClassPointer = NULL;
+//UClass* UWillowHUDGFxMovieDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMovieStatePlatform
 // 0x0010 (0x006C - 0x005C)
@@ -41894,7 +41894,7 @@ public:
 	};
 };
 
-UClass* UWillowGFxMovieStatePlatform::pClassPointer = NULL;
+//UClass* UWillowGFxMovieStatePlatform::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxMovieStateUsable
 // 0x000C (0x0068 - 0x005C)
@@ -41916,7 +41916,7 @@ public:
 	};
 };
 
-UClass* UWillowGFxMovieStateUsable::pClassPointer = NULL;
+//UClass* UWillowGFxMovieStateUsable::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxUIManager
 // 0x003C (0x0078 - 0x003C)
@@ -41969,7 +41969,7 @@ public:
 	void UpdateScreenMesh();
 };
 
-UClass* UWillowGFxUIManager::pClassPointer = NULL;
+//UClass* UWillowGFxUIManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxUIManagerDefinition
 // 0x0084 (0x00C0 - 0x003C)
@@ -42003,7 +42003,7 @@ public:
 	struct FVector GetTranslation(class AWillowPlayerController* PC);
 };
 
-UClass* UWillowGFxUIManagerDefinition::pClassPointer = NULL;
+//UClass* UWillowGFxUIManagerDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowLeviathanService
 // 0x0004 (0x0050 - 0x004C)
@@ -42065,7 +42065,7 @@ public:
 	void NewPlaySession(class AWillowPlayerController* ForPlayer);
 };
 
-UClass* UWillowLeviathanService::pClassPointer = NULL;
+//UClass* UWillowLeviathanService::pClassPointer = NULL;
 
 // Class WillowGame.Action_AimAtScanRange
 // 0x0010 (0x0138 - 0x0128)
@@ -42094,7 +42094,7 @@ public:
 	void eventStart();
 };
 
-UClass* UAction_AimAtScanRange::pClassPointer = NULL;
+//UClass* UAction_AimAtScanRange::pClassPointer = NULL;
 
 // Class WillowGame.Action_AimAtThreat
 // 0x0000 (0x0128 - 0x0128)
@@ -42118,7 +42118,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_AimAtThreat::pClassPointer = NULL;
+//UClass* UAction_AimAtThreat::pClassPointer = NULL;
 
 // Class WillowGame.BehaviorAliasLookupDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -42142,7 +42142,7 @@ public:
 	bool RunBehaviorAlias(class UBehaviorAliasDefinition* BehaviorAlias, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData);
 };
 
-UClass* UBehaviorAliasLookupDefinition::pClassPointer = NULL;
+//UClass* UBehaviorAliasLookupDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PhaseLockDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -42170,7 +42170,7 @@ public:
 	};
 };
 
-UClass* UPhaseLockDefinition::pClassPointer = NULL;
+//UClass* UPhaseLockDefinition::pClassPointer = NULL;
 
 // Class WillowGame.Action_AttackLoop
 // 0x0020 (0x0208 - 0x01E8)
@@ -42200,7 +42200,7 @@ public:
 	bool PlayAnim(class USpecialMoveDefinition* Anim, struct FName CallbackName);
 };
 
-UClass* UAction_AttackLoop::pClassPointer = NULL;
+//UClass* UAction_AttackLoop::pClassPointer = NULL;
 
 // Class WillowGame.Action_FollowPath
 // 0x0024 (0x0154 - 0x0130)
@@ -42251,7 +42251,7 @@ public:
 	void SetMoveNodeSpeed();
 };
 
-UClass* UAction_FollowPath::pClassPointer = NULL;
+//UClass* UAction_FollowPath::pClassPointer = NULL;
 
 // Class WillowGame.Action_BunkerBoss_Flight
 // 0x0088 (0x01DC - 0x0154)
@@ -42307,7 +42307,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_BunkerBoss_Flight::pClassPointer = NULL;
+//UClass* UAction_BunkerBoss_Flight::pClassPointer = NULL;
 
 // Class WillowGame.Action_Idle
 // 0x001C (0x014C - 0x0130)
@@ -42343,7 +42343,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_Idle::pClassPointer = NULL;
+//UClass* UAction_Idle::pClassPointer = NULL;
 
 // Class WillowGame.Action_BurrowIdle
 // 0x0000 (0x014C - 0x014C)
@@ -42364,7 +42364,7 @@ public:
 	};
 };
 
-UClass* UAction_BurrowIdle::pClassPointer = NULL;
+//UClass* UAction_BurrowIdle::pClassPointer = NULL;
 
 // Class WillowGame.Action_ChargeTarget
 // 0x0018 (0x0200 - 0x01E8)
@@ -42395,7 +42395,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_ChargeTarget::pClassPointer = NULL;
+//UClass* UAction_ChargeTarget::pClassPointer = NULL;
 
 // Class WillowGame.Action_CombatPerch
 // 0x0004 (0x0158 - 0x0154)
@@ -42424,7 +42424,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_CombatPerch::pClassPointer = NULL;
+//UClass* UAction_CombatPerch::pClassPointer = NULL;
 
 // Class WillowGame.Action_DeathTrap
 // 0x003C (0x0164 - 0x0128)
@@ -42473,7 +42473,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_DeathTrap::pClassPointer = NULL;
+//UClass* UAction_DeathTrap::pClassPointer = NULL;
 
 // Class WillowGame.Action_Drive_Pursuit
 // 0x008C (0x01B4 - 0x0128)
@@ -42539,7 +42539,7 @@ public:
 	void ComputeCurrentState();
 };
 
-UClass* UAction_Drive_Pursuit::pClassPointer = NULL;
+//UClass* UAction_Drive_Pursuit::pClassPointer = NULL;
 
 // Class WillowGame.Action_Drive_AlongsideTarget
 // 0x001C (0x01D0 - 0x01B4)
@@ -42570,7 +42570,7 @@ public:
 	struct FVector DetermineClosestFlankPoint();
 };
 
-UClass* UAction_Drive_AlongsideTarget::pClassPointer = NULL;
+//UClass* UAction_Drive_AlongsideTarget::pClassPointer = NULL;
 
 // Class WillowGame.Action_Drive_AvoidWall
 // 0x0040 (0x0168 - 0x0128)
@@ -42607,7 +42607,7 @@ public:
 	bool TestForCollision();
 };
 
-UClass* UAction_Drive_AvoidWall::pClassPointer = NULL;
+//UClass* UAction_Drive_AvoidWall::pClassPointer = NULL;
 
 // Class WillowGame.Action_Drive_BackUpAndAdjust
 // 0x0004 (0x016C - 0x0168)
@@ -42633,7 +42633,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_Drive_BackUpAndAdjust::pClassPointer = NULL;
+//UClass* UAction_Drive_BackUpAndAdjust::pClassPointer = NULL;
 
 // Class WillowGame.Action_Drive_GoBackToCombatArea
 // 0x0010 (0x0138 - 0x0128)
@@ -42663,7 +42663,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_Drive_GoBackToCombatArea::pClassPointer = NULL;
+//UClass* UAction_Drive_GoBackToCombatArea::pClassPointer = NULL;
 
 // Class WillowGame.Action_Drive_Pursuit_TargetOnFoot
 // 0x0050 (0x0178 - 0x0128)
@@ -42709,7 +42709,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_Drive_Pursuit_TargetOnFoot::pClassPointer = NULL;
+//UClass* UAction_Drive_Pursuit_TargetOnFoot::pClassPointer = NULL;
 
 // Class WillowGame.Action_DriveVehicle
 // 0x0040 (0x0168 - 0x0128)
@@ -42748,7 +42748,7 @@ public:
 	class AWillowAIMoveNode* GetBestPatrolNode();
 };
 
-UClass* UAction_DriveVehicle::pClassPointer = NULL;
+//UClass* UAction_DriveVehicle::pClassPointer = NULL;
 
 // Class WillowGame.Action_FinalBoss
 // 0x0000 (0x0154 - 0x0154)
@@ -42773,7 +42773,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_FinalBoss::pClassPointer = NULL;
+//UClass* UAction_FinalBoss::pClassPointer = NULL;
 
 // Class WillowGame.Action_FinalBossFly
 // 0x003C (0x0190 - 0x0154)
@@ -42808,7 +42808,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_FinalBossFly::pClassPointer = NULL;
+//UClass* UAction_FinalBossFly::pClassPointer = NULL;
 
 // Class WillowGame.Action_FlyAnimAttack
 // 0x0028 (0x0158 - 0x0130)
@@ -42852,7 +42852,7 @@ public:
 	void eventInit();
 };
 
-UClass* UAction_FlyAnimAttack::pClassPointer = NULL;
+//UClass* UAction_FlyAnimAttack::pClassPointer = NULL;
 
 // Class WillowGame.Action_GoToScriptedDestination
 // 0x0004 (0x0158 - 0x0154)
@@ -42894,7 +42894,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_GoToScriptedDestination::pClassPointer = NULL;
+//UClass* UAction_GoToScriptedDestination::pClassPointer = NULL;
 
 // Class WillowGame.Action_GrabPickup
 // 0x0020 (0x0148 - 0x0128)
@@ -42933,7 +42933,7 @@ public:
 	void eventInit();
 };
 
-UClass* UAction_GrabPickup::pClassPointer = NULL;
+//UClass* UAction_GrabPickup::pClassPointer = NULL;
 
 // Class WillowGame.WillowReplicatedEmitter
 // 0x0074 (0x0210 - 0x019C)
@@ -42982,7 +42982,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowReplicatedEmitter::pClassPointer = NULL;
+//UClass* AWillowReplicatedEmitter::pClassPointer = NULL;
 
 // Class WillowGame.Action_MortarAttack
 // 0x007C (0x0264 - 0x01E8)
@@ -43029,7 +43029,7 @@ public:
 	void eventStop();
 };
 
-UClass* UAction_MortarAttack::pClassPointer = NULL;
+//UClass* UAction_MortarAttack::pClassPointer = NULL;
 
 // Class WillowGame.ILightProjectileManagerOwner
 // 0x0000 (0x003C - 0x003C)
@@ -43052,7 +43052,7 @@ public:
 	class AWillowLightProjectileManager* GetLightProjMgrFor(class AWillowWeapon* aWeapon);
 };
 
-UClass* UILightProjectileManagerOwner::pClassPointer = NULL;
+//UClass* UILightProjectileManagerOwner::pClassPointer = NULL;
 
 // Class WillowGame.Action_MoveToFormation
 // 0x0014 (0x0144 - 0x0130)
@@ -43095,7 +43095,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_MoveToFormation::pClassPointer = NULL;
+//UClass* UAction_MoveToFormation::pClassPointer = NULL;
 
 // Class WillowGame.Action_MoveToVehicle
 // 0x0010 (0x0140 - 0x0130)
@@ -43129,7 +43129,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_MoveToVehicle::pClassPointer = NULL;
+//UClass* UAction_MoveToVehicle::pClassPointer = NULL;
 
 // Class WillowGame.Action_Patrol
 // 0x0028 (0x017C - 0x0154)
@@ -43169,7 +43169,7 @@ public:
 	void eventScriptCleanUp();
 };
 
-UClass* UAction_Patrol::pClassPointer = NULL;
+//UClass* UAction_Patrol::pClassPointer = NULL;
 
 // Class WillowGame.Action_PlayCustomAnimation
 // 0x0008 (0x0130 - 0x0128)
@@ -43200,7 +43200,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_PlayCustomAnimation::pClassPointer = NULL;
+//UClass* UAction_PlayCustomAnimation::pClassPointer = NULL;
 
 // Class WillowGame.Action_ScriptedNPC
 // 0x0004 (0x015C - 0x0158)
@@ -43240,7 +43240,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_ScriptedNPC::pClassPointer = NULL;
+//UClass* UAction_ScriptedNPC::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AISetFlight
 // 0x0001 (0x004D - 0x004C)
@@ -43264,7 +43264,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AISetFlight::pClassPointer = NULL;
+//UClass* UBehavior_AISetFlight::pClassPointer = NULL;
 
 // Class WillowGame.Action_SetFlight
 // 0x003C (0x0164 - 0x0128)
@@ -43291,7 +43291,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_SetFlight::pClassPointer = NULL;
+//UClass* UAction_SetFlight::pClassPointer = NULL;
 
 // Class WillowGame.Action_ShootThreatWhenInView
 // 0x0000 (0x0128 - 0x0128)
@@ -43315,7 +43315,7 @@ public:
 	void eventStart();
 };
 
-UClass* UAction_ShootThreatWhenInView::pClassPointer = NULL;
+//UClass* UAction_ShootThreatWhenInView::pClassPointer = NULL;
 
 // Class WillowGame.Action_SweepAttack
 // 0x0028 (0x0150 - 0x0128)
@@ -43350,7 +43350,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_SweepAttack::pClassPointer = NULL;
+//UClass* UAction_SweepAttack::pClassPointer = NULL;
 
 // Class WillowGame.Action_VehicleTurret
 // 0x0000 (0x0128 - 0x0128)
@@ -43376,7 +43376,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_VehicleTurret::pClassPointer = NULL;
+//UClass* UAction_VehicleTurret::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_TimerElapsed
 // 0x0001 (0x00C5 - 0x00C4)
@@ -43398,7 +43398,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_TimerElapsed::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_TimerElapsed::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryInteractiveSwitch
 // 0x0000 (0x0080 - 0x0080)
@@ -43419,7 +43419,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryInteractiveSwitch::pClassPointer = NULL;
+//UClass* UActorFactoryInteractiveSwitch::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryPopulationOpportunityPoint
 // 0x0000 (0x007C - 0x007C)
@@ -43440,7 +43440,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryPopulationOpportunityPoint::pClassPointer = NULL;
+//UClass* UActorFactoryPopulationOpportunityPoint::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryPropObject
 // 0x0000 (0x0080 - 0x0080)
@@ -43461,7 +43461,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryPropObject::pClassPointer = NULL;
+//UClass* UActorFactoryPropObject::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryVehicleSpawnStationPlatform
 // 0x0000 (0x0080 - 0x0080)
@@ -43482,7 +43482,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryVehicleSpawnStationPlatform::pClassPointer = NULL;
+//UClass* UActorFactoryVehicleSpawnStationPlatform::pClassPointer = NULL;
 
 // Class WillowGame.ActorFactoryVehicleSpawnStationTerminal
 // 0x0000 (0x0080 - 0x0080)
@@ -43503,7 +43503,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryVehicleSpawnStationTerminal::pClassPointer = NULL;
+//UClass* UActorFactoryVehicleSpawnStationTerminal::pClassPointer = NULL;
 
 // Class WillowGame.WillowCoopPlayerStart
 // 0x0000 (0x0254 - 0x0254)
@@ -43524,7 +43524,7 @@ public:
 	};
 };
 
-UClass* AWillowCoopPlayerStart::pClassPointer = NULL;
+//UClass* AWillowCoopPlayerStart::pClassPointer = NULL;
 
 // Class WillowGame.AIDebugDummy
 // 0x0000 (0x01EC - 0x01EC)
@@ -43545,7 +43545,7 @@ public:
 	};
 };
 
-UClass* AAIDebugDummy::pClassPointer = NULL;
+//UClass* AAIDebugDummy::pClassPointer = NULL;
 
 // Class WillowGame.AmmoPanelGFxObject
 // 0x0028 (0x00A0 - 0x0078)
@@ -43583,7 +43583,7 @@ public:
 	void Init();
 };
 
-UClass* UAmmoPanelGFxObject::pClassPointer = NULL;
+//UClass* UAmmoPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.InputContextSelectorBase
 // 0x0000 (0x003C - 0x003C)
@@ -43606,7 +43606,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* UInputContextSelectorBase::pClassPointer = NULL;
+//UClass* UInputContextSelectorBase::pClassPointer = NULL;
 
 // Class WillowGame.DefaultInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -43629,7 +43629,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* UDefaultInputContextSelector::pClassPointer = NULL;
+//UClass* UDefaultInputContextSelector::pClassPointer = NULL;
 
 // Class WillowGame.AssassinInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -43652,7 +43652,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* UAssassinInputContextSelector::pClassPointer = NULL;
+//UClass* UAssassinInputContextSelector::pClassPointer = NULL;
 
 // Class WillowGame.ExecuteActionSkill
 // 0x0160 (0x0394 - 0x0234)
@@ -43806,7 +43806,7 @@ public:
 	void OnActionSkillStarted(class AWillowPawn* TheWillowPawn, class AController* TheController, class AWillowPawn* TheTargetPawn);
 };
 
-UClass* AExecuteActionSkill::pClassPointer = NULL;
+//UClass* AExecuteActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.ValueGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -43829,7 +43829,7 @@ public:
 	void SetValue(int InValue);
 };
 
-UClass* UValueGFxObject::pClassPointer = NULL;
+//UClass* UValueGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.EridiumValueGFxObject
 // 0x000C (0x0084 - 0x0078)
@@ -43856,7 +43856,7 @@ public:
 	void SetValue(int InValue);
 };
 
-UClass* UEridiumValueGFxObject::pClassPointer = NULL;
+//UClass* UEridiumValueGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowVersusDuelMessage
 // 0x0093 (0x00DC - 0x0049)
@@ -43893,7 +43893,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UWillowVersusDuelMessage::pClassPointer = NULL;
+//UClass* UWillowVersusDuelMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxColiseumOverlayMovie
 // 0x00A8 (0x030C - 0x0264)
@@ -43990,7 +43990,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UWillowGFxColiseumOverlayMovie::pClassPointer = NULL;
+//UClass* UWillowGFxColiseumOverlayMovie::pClassPointer = NULL;
 
 // Class WillowGame.ColiseumRuleDefinition
 // 0x0024 (0x0060 - 0x003C)
@@ -44014,7 +44014,7 @@ public:
 	};
 };
 
-UClass* UColiseumRuleDefinition::pClassPointer = NULL;
+//UClass* UColiseumRuleDefinition::pClassPointer = NULL;
 
 // Class WillowGame.NxFootForceFieldComponent
 // 0x0000 (0x0274 - 0x0274)
@@ -44035,7 +44035,7 @@ public:
 	};
 };
 
-UClass* UNxFootForceFieldComponent::pClassPointer = NULL;
+//UClass* UNxFootForceFieldComponent::pClassPointer = NULL;
 
 // Class WillowGame.ITinnitusTarget
 // 0x0000 (0x003C - 0x003C)
@@ -44059,7 +44059,7 @@ public:
 	void TriggerTinnitusFromLocation(float Radius, float StrengthModifier, class UAkEvent* OverrideTinnitusEvent, struct FVector* SourceLocation);
 };
 
-UClass* UITinnitusTarget::pClassPointer = NULL;
+//UClass* UITinnitusTarget::pClassPointer = NULL;
 
 // Class WillowGame.BuzzaxeActionSkill
 // 0x0038 (0x026C - 0x0234)
@@ -44134,7 +44134,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ABuzzaxeActionSkill::pClassPointer = NULL;
+//UClass* ABuzzaxeActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.InjuredFeedbackMessage
 // 0x000C (0x0058 - 0x004C)
@@ -44158,7 +44158,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UInjuredFeedbackMessage::pClassPointer = NULL;
+//UClass* UInjuredFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowEmitterServerSide
 // 0x0000 (0x0210 - 0x0210)
@@ -44179,7 +44179,7 @@ public:
 	};
 };
 
-UClass* AWillowEmitterServerSide::pClassPointer = NULL;
+//UClass* AWillowEmitterServerSide::pClassPointer = NULL;
 
 // Class WillowGame.IRBCollisionListener
 // 0x0000 (0x003C - 0x003C)
@@ -44202,7 +44202,7 @@ public:
 	void NotifyRigidBodyCollision(class UObject* ContextObject, class UPrimitiveComponent* HitComponent, class UPrimitiveComponent* OtherComponent, int ContactSide, struct FCollisionImpactData* RigidCollisionData);
 };
 
-UClass* UIRBCollisionListener::pClassPointer = NULL;
+//UClass* UIRBCollisionListener::pClassPointer = NULL;
 
 // Class WillowGame.WillowEmit_HitEffect
 // 0x0008 (0x0218 - 0x0210)
@@ -44227,7 +44227,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* AWillowEmit_HitEffect::pClassPointer = NULL;
+//UClass* AWillowEmit_HitEffect::pClassPointer = NULL;
 
 // Class WillowGame.IAttributeEffectBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -44248,7 +44248,7 @@ public:
 	};
 };
 
-UClass* UIAttributeEffectBehavior::pClassPointer = NULL;
+//UClass* UIAttributeEffectBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IFireShotBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -44271,7 +44271,7 @@ public:
 	void Behavior_Fire(class UFiringModeDefinition* FiringModeDefinition, struct FVector Direction, class UIWorldBody* WorldBodyInterface, float DamageAmount, float DamageRadius, float Momentum, class UClass* DamageType, class UDamageTypeDefinition* DamageTypeDefinition, class UImpactDefinition* ImpactDefinition, struct FName FireSourceSocket, unsigned long bTreatDirectionAsDestination);
 };
 
-UClass* UIFireShotBehavior::pClassPointer = NULL;
+//UClass* UIFireShotBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IBehaviorAliasProvider
 // 0x0000 (0x003C - 0x003C)
@@ -44294,7 +44294,7 @@ public:
 	class UBehaviorAliasLookupDefinition* BehaviorAlias_GetLookupDefinition();
 };
 
-UClass* UIBehaviorAliasProvider::pClassPointer = NULL;
+//UClass* UIBehaviorAliasProvider::pClassPointer = NULL;
 
 // Class WillowGame.WillowEmit_BloodSpray
 // 0x0000 (0x0218 - 0x0218)
@@ -44315,7 +44315,7 @@ public:
 	};
 };
 
-UClass* AWillowEmit_BloodSpray::pClassPointer = NULL;
+//UClass* AWillowEmit_BloodSpray::pClassPointer = NULL;
 
 // Class WillowGame.DeveloperPerksDefinition
 // 0x0030 (0x006C - 0x003C)
@@ -44346,7 +44346,7 @@ public:
 	void PopulatePatchedPerkInfo();
 };
 
-UClass* UDeveloperPerksDefinition::pClassPointer = NULL;
+//UClass* UDeveloperPerksDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MissionFeedbackMessage
 // 0x003C (0x0088 - 0x004C)
@@ -44374,7 +44374,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UMissionFeedbackMessage::pClassPointer = NULL;
+//UClass* UMissionFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.DualWieldActionSkill
 // 0x0058 (0x028C - 0x0234)
@@ -44420,7 +44420,7 @@ public:
 	void OnActionSkillStarted(class AWillowPawn* TheWillowPawn, class AController* TheController, class AWillowPawn* TheTargetPawn);
 };
 
-UClass* ADualWieldActionSkill::pClassPointer = NULL;
+//UClass* ADualWieldActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_PlayerJoined
 // 0x0000 (0x00C4 - 0x00C4)
@@ -44441,7 +44441,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_PlayerJoined::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_PlayerJoined::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSettings
 // 0x0000 (0x00C8 - 0x00C8)
@@ -44474,7 +44474,7 @@ public:
 	void UpdateActiveMission(int InActiveMission);
 };
 
-UClass* UWillowOnlineGameSettings::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSettings::pClassPointer = NULL;
 
 // Class WillowGame.MarketingUnlockInventoryDefinition
 // 0x000C (0x0064 - 0x0058)
@@ -44498,7 +44498,7 @@ public:
 	bool GenerateUnlockedItems(class AWillowPlayerController* PlayerToGenerateRewardsFor, TArray< class AWillowInventory* >* GeneratedItems);
 };
 
-UClass* UMarketingUnlockInventoryDefinition::pClassPointer = NULL;
+//UClass* UMarketingUnlockInventoryDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WeaponProficiencyFeedbackMessage
 // 0x000F (0x0058 - 0x0049)
@@ -44523,7 +44523,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UWeaponProficiencyFeedbackMessage::pClassPointer = NULL;
+//UClass* UWeaponProficiencyFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.LocalWeaponMessage
 // 0x0000 (0x004C - 0x004C)
@@ -44548,7 +44548,7 @@ public:
 	void ClientWeaponReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, struct FWeaponDefinitionData WeaponInfo);
 };
 
-UClass* ULocalWeaponMessage::pClassPointer = NULL;
+//UClass* ULocalWeaponMessage::pClassPointer = NULL;
 
 // Class WillowGame.ReceivedWeaponMessage
 // 0x0018 (0x0064 - 0x004C)
@@ -44573,7 +44573,7 @@ public:
 	struct FString GetWeaponString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, struct FWeaponDefinitionData WeaponInfo, struct FColor WeaponColor);
 };
 
-UClass* UReceivedWeaponMessage::pClassPointer = NULL;
+//UClass* UReceivedWeaponMessage::pClassPointer = NULL;
 
 // Class WillowGame.LocalItemMessage
 // 0x0000 (0x004C - 0x004C)
@@ -44598,7 +44598,7 @@ public:
 	void ClientItemReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, struct FItemDefinitionData ItemInfo);
 };
 
-UClass* ULocalItemMessage::pClassPointer = NULL;
+//UClass* ULocalItemMessage::pClassPointer = NULL;
 
 // Class WillowGame.ReceivedItemMessage
 // 0x0018 (0x0064 - 0x004C)
@@ -44623,7 +44623,7 @@ public:
 	struct FString GetItemString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, struct FItemDefinitionData ItemInfo, struct FColor ItemColor);
 };
 
-UClass* UReceivedItemMessage::pClassPointer = NULL;
+//UClass* UReceivedItemMessage::pClassPointer = NULL;
 
 // Class WillowGame.ReceivedCreditsMessage
 // 0x0040 (0x008C - 0x004C)
@@ -44655,7 +44655,7 @@ public:
 	void ClientCreditReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, int GainedAmount);
 };
 
-UClass* UReceivedCreditsMessage::pClassPointer = NULL;
+//UClass* UReceivedCreditsMessage::pClassPointer = NULL;
 
 // Class WillowGame.ExperienceFeedbackMessage
 // 0x000F (0x0058 - 0x0049)
@@ -44680,7 +44680,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UExperienceFeedbackMessage::pClassPointer = NULL;
+//UClass* UExperienceFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.RotationArrowComponent
 // 0x0000 (0x021C - 0x021C)
@@ -44701,7 +44701,7 @@ public:
 	};
 };
 
-UClass* URotationArrowComponent::pClassPointer = NULL;
+//UClass* URotationArrowComponent::pClassPointer = NULL;
 
 // Class WillowGame.PlayerInteractionClient
 // 0x0000 (0x003C - 0x003C)
@@ -44727,7 +44727,7 @@ public:
 	void Initialize(int MessageData);
 };
 
-UClass* UPlayerInteractionClient::pClassPointer = NULL;
+//UClass* UPlayerInteractionClient::pClassPointer = NULL;
 
 // Class WillowGame.PersonalTeleporterDefinition
 // 0x0034 (0x0070 - 0x003C)
@@ -44759,7 +44759,7 @@ public:
 	};
 };
 
-UClass* UPersonalTeleporterDefinition::pClassPointer = NULL;
+//UClass* UPersonalTeleporterDefinition::pClassPointer = NULL;
 
 // Class WillowGame.TeleporterFeedbackMessage
 // 0x001B (0x0064 - 0x0049)
@@ -44784,7 +44784,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UTeleporterFeedbackMessage::pClassPointer = NULL;
+//UClass* UTeleporterFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.PlayerTrainingMessageListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -44806,7 +44806,7 @@ public:
 	};
 };
 
-UClass* UPlayerTrainingMessageListDefinition::pClassPointer = NULL;
+//UClass* UPlayerTrainingMessageListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SeqEvent_TrainingMessage
 // 0x0004 (0x00C8 - 0x00C4)
@@ -44828,7 +44828,7 @@ public:
 	};
 };
 
-UClass* USeqEvent_TrainingMessage::pClassPointer = NULL;
+//UClass* USeqEvent_TrainingMessage::pClassPointer = NULL;
 
 // Class WillowGame.FrontendGFxMovie
 // 0x0158 (0x04E8 - 0x0390)
@@ -45084,7 +45084,7 @@ public:
 	bool PrePopupInputHandler(int ControllerId, struct FName ukey, unsigned char uevent);
 };
 
-UClass* UFrontendGFxMovie::pClassPointer = NULL;
+//UClass* UFrontendGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.FrontendGFxMovieDefinition
 // 0x0080 (0x0170 - 0x00F0)
@@ -45123,7 +45123,7 @@ public:
 	};
 };
 
-UClass* UFrontendGFxMovieDefinition::pClassPointer = NULL;
+//UClass* UFrontendGFxMovieDefinition::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_PlayCameraAnim
 // 0x0014 (0x00B8 - 0x00A4)
@@ -45149,7 +45149,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_PlayCameraAnim::pClassPointer = NULL;
+//UClass* UWillowSeqAct_PlayCameraAnim::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_StopCameraAnim
 // 0x0004 (0x00A8 - 0x00A4)
@@ -45171,7 +45171,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_StopCameraAnim::pClassPointer = NULL;
+//UClass* UWillowSeqAct_StopCameraAnim::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_UnlockAchievement
 // 0x0008 (0x00AC - 0x00A4)
@@ -45196,7 +45196,7 @@ public:
 	void eventActivated();
 };
 
-UClass* USeqAct_UnlockAchievement::pClassPointer = NULL;
+//UClass* USeqAct_UnlockAchievement::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_ShowCharacterSelectUI
 // 0x0000 (0x00C4 - 0x00C4)
@@ -45217,7 +45217,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_ShowCharacterSelectUI::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_ShowCharacterSelectUI::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStationDiscoveryMessage
 // 0x001B (0x0064 - 0x0049)
@@ -45242,7 +45242,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UFastTravelStationDiscoveryMessage::pClassPointer = NULL;
+//UClass* UFastTravelStationDiscoveryMessage::pClassPointer = NULL;
 
 // Class WillowGame.IStorageDevice
 // 0x0000 (0x003C - 0x003C)
@@ -45265,7 +45265,7 @@ public:
 	void StorageDeviceChanged(unsigned char ControllerId, unsigned long bIsValid);
 };
 
-UClass* UIStorageDevice::pClassPointer = NULL;
+//UClass* UIStorageDevice::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_MarkEnteredRegion
 // 0x0001 (0x00A5 - 0x00A4)
@@ -45287,7 +45287,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_MarkEnteredRegion::pClassPointer = NULL;
+//UClass* UWillowSeqAct_MarkEnteredRegion::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_MarkExitedRegion
 // 0x0001 (0x00A5 - 0x00A4)
@@ -45309,7 +45309,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_MarkExitedRegion::pClassPointer = NULL;
+//UClass* UWillowSeqAct_MarkExitedRegion::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumAnnouncePenaltyBox
 // 0x0000 (0x00A4 - 0x00A4)
@@ -45330,7 +45330,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ColiseumAnnouncePenaltyBox::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumAnnouncePenaltyBox::pClassPointer = NULL;
 
 // Class WillowGame.VehicleSeatSwap_PlayerInteractionClient
 // 0x0010 (0x004C - 0x003C)
@@ -45357,7 +45357,7 @@ public:
 	void Initialize(int MessageData);
 };
 
-UClass* UVehicleSeatSwap_PlayerInteractionClient::pClassPointer = NULL;
+//UClass* UVehicleSeatSwap_PlayerInteractionClient::pClassPointer = NULL;
 
 // Class WillowGame.LobbyGFxMovie
 // 0x0008 (0x04F0 - 0x04E8)
@@ -45391,7 +45391,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* ULobbyGFxMovie::pClassPointer = NULL;
+//UClass* ULobbyGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.OptionsGFxMovie
 // 0x0038 (0x03C8 - 0x0390)
@@ -45438,7 +45438,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UOptionsGFxMovie::pClassPointer = NULL;
+//UClass* UOptionsGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_CausePlayerDeath
 // 0x0004 (0x00A8 - 0x00A4)
@@ -45460,7 +45460,7 @@ public:
 	};
 };
 
-UClass* USeqAct_CausePlayerDeath::pClassPointer = NULL;
+//UClass* USeqAct_CausePlayerDeath::pClassPointer = NULL;
 
 // Class WillowGame.ISkillBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -45486,7 +45486,7 @@ public:
 	void Behavior_ActivateSkill(class USkillDefinition* SkillToActivate, class UObject* AdditionalSkillTarget, int SkillGrade);
 };
 
-UClass* UISkillBehavior::pClassPointer = NULL;
+//UClass* UISkillBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IChallengeRecipient
 // 0x0000 (0x003C - 0x003C)
@@ -45509,7 +45509,7 @@ public:
 	void ReceiveChallenge(class UChallengeDefinition* ChalDef, unsigned long bIsCharacterLoad, unsigned long bGiveToAllPlayers);
 };
 
-UClass* UIChallengeRecipient::pClassPointer = NULL;
+//UClass* UIChallengeRecipient::pClassPointer = NULL;
 
 // Class WillowGame.WillowPlayerCamera
 // 0x0000 (0x0400 - 0x0400)
@@ -45533,7 +45533,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowPlayerCamera::pClassPointer = NULL;
+//UClass* AWillowPlayerCamera::pClassPointer = NULL;
 
 // Class WillowGame.WillowCheatManager
 // 0x008C (0x00E8 - 0x005C)
@@ -45582,7 +45582,7 @@ public:
 	};
 };
 
-UClass* UWillowCheatManager::pClassPointer = NULL;
+//UClass* UWillowCheatManager::pClassPointer = NULL;
 
 // Class WillowGame.IMultitypeScrollingList
 // 0x0000 (0x003C - 0x003C)
@@ -45606,7 +45606,7 @@ public:
 	void SetRendererInfo(int DataIndex, int RendererType, int RendererIndex);
 };
 
-UClass* UIMultitypeScrollingList::pClassPointer = NULL;
+//UClass* UIMultitypeScrollingList::pClassPointer = NULL;
 
 // Class WillowGame.TwoPanelInterfaceGFxDefinition
 // 0x000C (0x0164 - 0x0158)
@@ -45628,7 +45628,7 @@ public:
 	};
 };
 
-UClass* UTwoPanelInterfaceGFxDefinition::pClassPointer = NULL;
+//UClass* UTwoPanelInterfaceGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.IWillowStorable
 // 0x0000 (0x003C - 0x003C)
@@ -45653,7 +45653,7 @@ public:
 	bool Swap(class AWillowInventory* ThingA, class AWillowInventory* ThingB);
 };
 
-UClass* UIWillowStorable::pClassPointer = NULL;
+//UClass* UIWillowStorable::pClassPointer = NULL;
 
 // Class WillowGame.ITwoPanelInterface
 // 0x0000 (0x003C - 0x003C)
@@ -45695,7 +45695,7 @@ public:
 	bool ShouldStartOnLeftPanel();
 };
 
-UClass* UITwoPanelInterface::pClassPointer = NULL;
+//UClass* UITwoPanelInterface::pClassPointer = NULL;
 
 // Class WillowGame.BankGFxMovie
 // 0x001C (0x04C0 - 0x04A4)
@@ -45731,7 +45731,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UBankGFxMovie::pClassPointer = NULL;
+//UClass* UBankGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ActivateListenerSkill
 // 0x0004 (0x0050 - 0x004C)
@@ -45755,7 +45755,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ActivateListenerSkill::pClassPointer = NULL;
+//UClass* UBehavior_ActivateListenerSkill::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ActivateSkill
 // 0x0018 (0x0064 - 0x004C)
@@ -45782,7 +45782,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ActivateSkill::pClassPointer = NULL;
+//UClass* UBehavior_ActivateSkill::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AddInstanceData
 // 0x0010 (0x005C - 0x004C)
@@ -45807,7 +45807,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AddInstanceData::pClassPointer = NULL;
+//UClass* UBehavior_AddInstanceData::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AddInstanceDataFromBehaviorContext
 // 0x001C (0x0068 - 0x004C)
@@ -45833,7 +45833,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AddInstanceDataFromBehaviorContext::pClassPointer = NULL;
+//UClass* UBehavior_AddInstanceDataFromBehaviorContext::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AddInventoryToStorage
 // 0x0090 (0x00DC - 0x004C)
@@ -45862,7 +45862,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AddInventoryToStorage::pClassPointer = NULL;
+//UClass* UBehavior_AddInventoryToStorage::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AddObjectInstanceData
 // 0x0010 (0x005C - 0x004C)
@@ -45889,7 +45889,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AddObjectInstanceData::pClassPointer = NULL;
+//UClass* UBehavior_AddObjectInstanceData::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AdjustCameraAnimByEyeHeight
 // 0x0008 (0x0054 - 0x004C)
@@ -45914,7 +45914,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AdjustCameraAnimByEyeHeight::pClassPointer = NULL;
+//UClass* UBehavior_AdjustCameraAnimByEyeHeight::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AIChangeInventory
 // 0x0018 (0x0064 - 0x004C)
@@ -45939,7 +45939,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AIChangeInventory::pClassPointer = NULL;
+//UClass* UBehavior_AIChangeInventory::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AIFollow
 // 0x0020 (0x006C - 0x004C)
@@ -45969,7 +45969,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AIFollow::pClassPointer = NULL;
+//UClass* UBehavior_AIFollow::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AILevelUp
 // 0x0008 (0x0054 - 0x004C)
@@ -45994,7 +45994,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AILevelUp::pClassPointer = NULL;
+//UClass* UBehavior_AILevelUp::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AIPatsy
 // 0x0014 (0x0060 - 0x004C)
@@ -46019,7 +46019,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AIPatsy::pClassPointer = NULL;
+//UClass* UBehavior_AIPatsy::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AIProvoke
 // 0x0010 (0x005C - 0x004C)
@@ -46043,7 +46043,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AIProvoke::pClassPointer = NULL;
+//UClass* UBehavior_AIProvoke::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AIResetProvocation
 // 0x0000 (0x004C - 0x004C)
@@ -46066,7 +46066,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AIResetProvocation::pClassPointer = NULL;
+//UClass* UBehavior_AIResetProvocation::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AISetItemTossTarget
 // 0x0010 (0x005C - 0x004C)
@@ -46090,7 +46090,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AISetItemTossTarget::pClassPointer = NULL;
+//UClass* UBehavior_AISetItemTossTarget::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AISetWeaponFireRotation
 // 0x0004 (0x0050 - 0x004C)
@@ -46114,7 +46114,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AISetWeaponFireRotation::pClassPointer = NULL;
+//UClass* UBehavior_AISetWeaponFireRotation::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AITakeMoney
 // 0x0024 (0x0070 - 0x004C)
@@ -46141,7 +46141,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AITakeMoney::pClassPointer = NULL;
+//UClass* UBehavior_AITakeMoney::pClassPointer = NULL;
 
 // Class WillowGame.INPCBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -46165,7 +46165,7 @@ public:
 	class AWillowGrenadeMod* GetGrenadeMod();
 };
 
-UClass* UINPCBehavior::pClassPointer = NULL;
+//UClass* UINPCBehavior::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AssignBoolVariable
 // 0x0004 (0x0050 - 0x004C)
@@ -46190,7 +46190,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AssignBoolVariable::pClassPointer = NULL;
+//UClass* UBehavior_AssignBoolVariable::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AssignFloatVariable
 // 0x0004 (0x0050 - 0x004C)
@@ -46215,7 +46215,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AssignFloatVariable::pClassPointer = NULL;
+//UClass* UBehavior_AssignFloatVariable::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AssignIntVariable
 // 0x0004 (0x0050 - 0x004C)
@@ -46240,7 +46240,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AssignIntVariable::pClassPointer = NULL;
+//UClass* UBehavior_AssignIntVariable::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AssignObjectVariable
 // 0x0004 (0x0050 - 0x004C)
@@ -46265,7 +46265,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AssignObjectVariable::pClassPointer = NULL;
+//UClass* UBehavior_AssignObjectVariable::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AssignVectorVariable
 // 0x000C (0x0058 - 0x004C)
@@ -46290,7 +46290,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AssignVectorVariable::pClassPointer = NULL;
+//UClass* UBehavior_AssignVectorVariable::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AttachActor
 // 0x0024 (0x0070 - 0x004C)
@@ -46317,7 +46317,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AttachActor::pClassPointer = NULL;
+//UClass* UBehavior_AttachActor::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AttachAOEStatusEffect
 // 0x000C (0x0058 - 0x004C)
@@ -46342,7 +46342,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AttachAOEStatusEffect::pClassPointer = NULL;
+//UClass* UBehavior_AttachAOEStatusEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AttachItems
 // 0x0004 (0x0050 - 0x004C)
@@ -46366,7 +46366,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AttachItems::pClassPointer = NULL;
+//UClass* UBehavior_AttachItems::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AttributeEffect
 // 0x0010 (0x005C - 0x004C)
@@ -46391,7 +46391,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AttributeEffect::pClassPointer = NULL;
+//UClass* UBehavior_AttributeEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_AwardExperienceForMyDeath
 // 0x0000 (0x004C - 0x004C)
@@ -46414,7 +46414,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_AwardExperienceForMyDeath::pClassPointer = NULL;
+//UClass* UBehavior_AwardExperienceForMyDeath::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_BeginLifting
 // 0x0030 (0x007C - 0x004C)
@@ -46440,7 +46440,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_BeginLifting::pClassPointer = NULL;
+//UClass* UBehavior_BeginLifting::pClassPointer = NULL;
 
 // Class WillowGame.ILiftBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -46465,7 +46465,7 @@ public:
 	void SelectTarget(class AWillowPawn* NewTarget);
 };
 
-UClass* UILiftBehavior::pClassPointer = NULL;
+//UClass* UILiftBehavior::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_BoolMath
 // 0x0005 (0x0051 - 0x004C)
@@ -46492,7 +46492,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_BoolMath::pClassPointer = NULL;
+//UClass* UBehavior_BoolMath::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_BroadcastEcho
 // 0x0000 (0x004C - 0x004C)
@@ -46515,7 +46515,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_BroadcastEcho::pClassPointer = NULL;
+//UClass* UBehavior_BroadcastEcho::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CauseTinnitus
 // 0x0028 (0x0074 - 0x004C)
@@ -46542,7 +46542,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CauseTinnitus::pClassPointer = NULL;
+//UClass* UBehavior_CauseTinnitus::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeBehaviorSetState
 // 0x0009 (0x0055 - 0x004C)
@@ -46567,7 +46567,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeBehaviorSetState::pClassPointer = NULL;
+//UClass* UBehavior_ChangeBehaviorSetState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeCanTarget
 // 0x0001 (0x004D - 0x004C)
@@ -46591,7 +46591,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeCanTarget::pClassPointer = NULL;
+//UClass* UBehavior_ChangeCanTarget::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeDenAllegiance
 // 0x0004 (0x0050 - 0x004C)
@@ -46615,7 +46615,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeDenAllegiance::pClassPointer = NULL;
+//UClass* UBehavior_ChangeDenAllegiance::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeDialogName
 // 0x0004 (0x0050 - 0x004C)
@@ -46639,7 +46639,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeDialogName::pClassPointer = NULL;
+//UClass* UBehavior_ChangeDialogName::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeEnvironmentTag
 // 0x000C (0x0058 - 0x004C)
@@ -46665,7 +46665,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeEnvironmentTag::pClassPointer = NULL;
+//UClass* UBehavior_ChangeEnvironmentTag::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeInstanceDataSwitch
 // 0x0010 (0x005C - 0x004C)
@@ -46691,7 +46691,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeInstanceDataSwitch::pClassPointer = NULL;
+//UClass* UBehavior_ChangeInstanceDataSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeUsability
 // 0x0002 (0x004E - 0x004C)
@@ -46716,7 +46716,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeUsability::pClassPointer = NULL;
+//UClass* UBehavior_ChangeUsability::pClassPointer = NULL;
 
 // Class WillowGame.IChangeUsabilityBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -46740,7 +46740,7 @@ public:
 	void Behavior_ChangeUsability(unsigned char ChangeType, class UActorComponent* UsedComponent, unsigned char UsedType);
 };
 
-UClass* UIChangeUsabilityBehavior::pClassPointer = NULL;
+//UClass* UIChangeUsabilityBehavior::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeWeaponVisibility
 // 0x0008 (0x0054 - 0x004C)
@@ -46766,7 +46766,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeWeaponVisibility::pClassPointer = NULL;
+//UClass* UBehavior_ChangeWeaponVisibility::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_Charm
 // 0x0014 (0x0060 - 0x004C)
@@ -46791,7 +46791,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_Charm::pClassPointer = NULL;
+//UClass* UBehavior_Charm::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CheckMapChangeConditions
 // 0x0010 (0x005C - 0x004C)
@@ -46819,7 +46819,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CheckMapChangeConditions::pClassPointer = NULL;
+//UClass* UBehavior_CheckMapChangeConditions::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ClearStatusEffects
 // 0x0004 (0x0050 - 0x004C)
@@ -46843,7 +46843,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ClearStatusEffects::pClassPointer = NULL;
+//UClass* UBehavior_ClearStatusEffects::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CombatPerch
 // 0x0009 (0x0055 - 0x004C)
@@ -46868,7 +46868,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CombatPerch::pClassPointer = NULL;
+//UClass* UBehavior_CombatPerch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CombatPerchThrow
 // 0x0004 (0x00AC - 0x00A8)
@@ -46893,7 +46893,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CombatPerchThrow::pClassPointer = NULL;
+//UClass* UBehavior_CombatPerchThrow::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CompareFloat
 // 0x0008 (0x0054 - 0x004C)
@@ -46918,7 +46918,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CompareFloat::pClassPointer = NULL;
+//UClass* UBehavior_CompareFloat::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CompareInt
 // 0x0008 (0x0054 - 0x004C)
@@ -46943,7 +46943,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CompareInt::pClassPointer = NULL;
+//UClass* UBehavior_CompareInt::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CompareObject
 // 0x0008 (0x0054 - 0x004C)
@@ -46968,7 +46968,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CompareObject::pClassPointer = NULL;
+//UClass* UBehavior_CompareObject::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CoordinatedEffect
 // 0x0008 (0x0054 - 0x004C)
@@ -46993,7 +46993,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CoordinatedEffect::pClassPointer = NULL;
+//UClass* UBehavior_CoordinatedEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_Crane
 // 0x0001 (0x004D - 0x004C)
@@ -47022,7 +47022,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_Crane::pClassPointer = NULL;
+//UClass* UBehavior_Crane::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CreateImpactEffect
 // 0x0018 (0x0064 - 0x004C)
@@ -47050,7 +47050,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CreateImpactEffect::pClassPointer = NULL;
+//UClass* UBehavior_CreateImpactEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_CreateWeatherSystem
 // 0x0008 (0x0054 - 0x004C)
@@ -47075,7 +47075,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CreateWeatherSystem::pClassPointer = NULL;
+//UClass* UBehavior_CreateWeatherSystem::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DamageArea
 // 0x0001 (0x004D - 0x004C)
@@ -47099,7 +47099,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DamageArea::pClassPointer = NULL;
+//UClass* UBehavior_DamageArea::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DamageClassSwitch
 // 0x0004 (0x0050 - 0x004C)
@@ -47123,7 +47123,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DamageClassSwitch::pClassPointer = NULL;
+//UClass* UBehavior_DamageClassSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DamageSourceSwitch
 // 0x0004 (0x0050 - 0x004C)
@@ -47147,7 +47147,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DamageSourceSwitch::pClassPointer = NULL;
+//UClass* UBehavior_DamageSourceSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DamageSurfaceTypeSwitch
 // 0x0004 (0x0050 - 0x004C)
@@ -47171,7 +47171,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DamageSurfaceTypeSwitch::pClassPointer = NULL;
+//UClass* UBehavior_DamageSurfaceTypeSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DeactivateSkill
 // 0x0008 (0x0054 - 0x004C)
@@ -47196,7 +47196,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DeactivateSkill::pClassPointer = NULL;
+//UClass* UBehavior_DeactivateSkill::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DebugMessage
 // 0x002C (0x0078 - 0x004C)
@@ -47232,7 +47232,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DebugMessage::pClassPointer = NULL;
+//UClass* UBehavior_DebugMessage::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DestroyBeams
 // 0x0014 (0x0060 - 0x004C)
@@ -47257,7 +47257,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DestroyBeams::pClassPointer = NULL;
+//UClass* UBehavior_DestroyBeams::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DestroyBeamsForSource
 // 0x0018 (0x0064 - 0x004C)
@@ -47282,7 +47282,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DestroyBeamsForSource::pClassPointer = NULL;
+//UClass* UBehavior_DestroyBeamsForSource::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DestroyWeatherSystem
 // 0x0000 (0x004C - 0x004C)
@@ -47305,7 +47305,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DestroyWeatherSystem::pClassPointer = NULL;
+//UClass* UBehavior_DestroyWeatherSystem::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DetachActor
 // 0x0034 (0x0080 - 0x004C)
@@ -47335,7 +47335,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DetachActor::pClassPointer = NULL;
+//UClass* UBehavior_DetachActor::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DisableFallingDamage
 // 0x0004 (0x0050 - 0x004C)
@@ -47359,7 +47359,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DisableFallingDamage::pClassPointer = NULL;
+//UClass* UBehavior_DisableFallingDamage::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DiscoverLevelChallengeObject
 // 0x0008 (0x0054 - 0x004C)
@@ -47385,7 +47385,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DiscoverLevelChallengeObject::pClassPointer = NULL;
+//UClass* UBehavior_DiscoverLevelChallengeObject::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DropItems
 // 0x0058 (0x00A4 - 0x004C)
@@ -47418,7 +47418,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DropItems::pClassPointer = NULL;
+//UClass* UBehavior_DropItems::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DropProjectile
 // 0x0024 (0x0070 - 0x004C)
@@ -47445,7 +47445,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DropProjectile::pClassPointer = NULL;
+//UClass* UBehavior_DropProjectile::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_DuplicateInstanceData
 // 0x0018 (0x0064 - 0x004C)
@@ -47470,7 +47470,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_DuplicateInstanceData::pClassPointer = NULL;
+//UClass* UBehavior_DuplicateInstanceData::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_EnterVehicle
 // 0x0014 (0x0060 - 0x004C)
@@ -47495,7 +47495,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_EnterVehicle::pClassPointer = NULL;
+//UClass* UBehavior_EnterVehicle::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_FinishLifting
 // 0x0004 (0x0050 - 0x004C)
@@ -47519,7 +47519,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_FinishLifting::pClassPointer = NULL;
+//UClass* UBehavior_FinishLifting::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_FireBeam
 // 0x0080 (0x00CC - 0x004C)
@@ -47557,7 +47557,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_FireBeam::pClassPointer = NULL;
+//UClass* UBehavior_FireBeam::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_FireCustomSkillEvent
 // 0x000C (0x0058 - 0x004C)
@@ -47582,7 +47582,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_FireCustomSkillEvent::pClassPointer = NULL;
+//UClass* UBehavior_FireCustomSkillEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_FireShot
 // 0x00BC (0x0108 - 0x004C)
@@ -47625,7 +47625,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_FireShot::pClassPointer = NULL;
+//UClass* UBehavior_FireShot::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ForceDownState
 // 0x0000 (0x004C - 0x004C)
@@ -47648,7 +47648,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ForceDownState::pClassPointer = NULL;
+//UClass* UBehavior_ForceDownState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ForceInjured
 // 0x0000 (0x004C - 0x004C)
@@ -47671,7 +47671,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ForceInjured::pClassPointer = NULL;
+//UClass* UBehavior_ForceInjured::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GetClosestPlayer
 // 0x0004 (0x0050 - 0x004C)
@@ -47697,7 +47697,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GetClosestPlayer::pClassPointer = NULL;
+//UClass* UBehavior_GetClosestPlayer::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GetItemPrice
 // 0x0008 (0x0054 - 0x004C)
@@ -47723,7 +47723,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GetItemPrice::pClassPointer = NULL;
+//UClass* UBehavior_GetItemPrice::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GetPlayerStat
 // 0x0008 (0x0054 - 0x004C)
@@ -47748,7 +47748,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GetPlayerStat::pClassPointer = NULL;
+//UClass* UBehavior_GetPlayerStat::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GFxMoviePlay
 // 0x001C (0x0068 - 0x004C)
@@ -47775,7 +47775,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GFxMoviePlay::pClassPointer = NULL;
+//UClass* UBehavior_GFxMoviePlay::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GFxMovieSetState
 // 0x0008 (0x0054 - 0x004C)
@@ -47799,7 +47799,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GFxMovieSetState::pClassPointer = NULL;
+//UClass* UBehavior_GFxMovieSetState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GFxMovieStop
 // 0x0008 (0x0054 - 0x004C)
@@ -47824,7 +47824,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GFxMovieStop::pClassPointer = NULL;
+//UClass* UBehavior_GFxMovieStop::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GiveInjuredPlayerSecondWind
 // 0x0004 (0x0050 - 0x004C)
@@ -47848,7 +47848,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GiveInjuredPlayerSecondWind::pClassPointer = NULL;
+//UClass* UBehavior_GiveInjuredPlayerSecondWind::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_HasMissions
 // 0x0000 (0x004C - 0x004C)
@@ -47871,7 +47871,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_HasMissions::pClassPointer = NULL;
+//UClass* UBehavior_HasMissions::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_HeadLookHold
 // 0x0009 (0x0055 - 0x004C)
@@ -47896,7 +47896,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_HeadLookHold::pClassPointer = NULL;
+//UClass* UBehavior_HeadLookHold::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IncrementPlayerStat
 // 0x0010 (0x005C - 0x004C)
@@ -47923,7 +47923,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IncrementPlayerStat::pClassPointer = NULL;
+//UClass* UBehavior_IncrementPlayerStat::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IsCensoredMode
 // 0x0000 (0x004C - 0x004C)
@@ -47946,7 +47946,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IsCensoredMode::pClassPointer = NULL;
+//UClass* UBehavior_IsCensoredMode::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IsObjectPlayer
 // 0x0004 (0x0050 - 0x004C)
@@ -47970,7 +47970,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IsObjectPlayer::pClassPointer = NULL;
+//UClass* UBehavior_IsObjectPlayer::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IsObjectVehicle
 // 0x0004 (0x0050 - 0x004C)
@@ -47994,7 +47994,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IsObjectVehicle::pClassPointer = NULL;
+//UClass* UBehavior_IsObjectVehicle::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_LeaderCommand
 // 0x0006 (0x0052 - 0x004C)
@@ -48020,7 +48020,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_LeaderCommand::pClassPointer = NULL;
+//UClass* UBehavior_LeaderCommand::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_LeapAtTarget
 // 0x0000 (0x004C - 0x004C)
@@ -48041,7 +48041,7 @@ public:
 	};
 };
 
-UClass* UBehavior_LeapAtTarget::pClassPointer = NULL;
+//UClass* UBehavior_LeapAtTarget::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_LocalCustomEvent
 // 0x0008 (0x0054 - 0x004C)
@@ -48065,7 +48065,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_LocalCustomEvent::pClassPointer = NULL;
+//UClass* UBehavior_LocalCustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_MakeVector
 // 0x000C (0x0058 - 0x004C)
@@ -48092,7 +48092,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_MakeVector::pClassPointer = NULL;
+//UClass* UBehavior_MakeVector::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_MissionCustomEvent
 // 0x000C (0x0058 - 0x004C)
@@ -48117,7 +48117,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_MissionCustomEvent::pClassPointer = NULL;
+//UClass* UBehavior_MissionCustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_NetworkRoleSwitch
 // 0x0000 (0x004C - 0x004C)
@@ -48140,7 +48140,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_NetworkRoleSwitch::pClassPointer = NULL;
+//UClass* UBehavior_NetworkRoleSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_NotifyThoughtLockStatus
 // 0x0008 (0x0054 - 0x004C)
@@ -48165,7 +48165,7 @@ public:
 	void eventApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_NotifyThoughtLockStatus::pClassPointer = NULL;
+//UClass* UBehavior_NotifyThoughtLockStatus::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ObjectClassSwitch
 // 0x0008 (0x0054 - 0x004C)
@@ -48189,7 +48189,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ObjectClassSwitch::pClassPointer = NULL;
+//UClass* UBehavior_ObjectClassSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_OpinionSwitch
 // 0x0010 (0x005C - 0x004C)
@@ -48213,7 +48213,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_OpinionSwitch::pClassPointer = NULL;
+//UClass* UBehavior_OpinionSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_OverrideWeaponCrosshair
 // 0x000C (0x0058 - 0x004C)
@@ -48237,7 +48237,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_OverrideWeaponCrosshair::pClassPointer = NULL;
+//UClass* UBehavior_OverrideWeaponCrosshair::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PackAttack
 // 0x0000 (0x004C - 0x004C)
@@ -48258,7 +48258,7 @@ public:
 	};
 };
 
-UClass* UBehavior_PackAttack::pClassPointer = NULL;
+//UClass* UBehavior_PackAttack::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PawnLeap
 // 0x003C (0x0088 - 0x004C)
@@ -48294,7 +48294,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PawnLeap::pClassPointer = NULL;
+//UClass* UBehavior_PawnLeap::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PhaseLockHold
 // 0x0009 (0x0055 - 0x004C)
@@ -48319,7 +48319,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PhaseLockHold::pClassPointer = NULL;
+//UClass* UBehavior_PhaseLockHold::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PhysXLevel
 // 0x0000 (0x004C - 0x004C)
@@ -48342,7 +48342,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PhysXLevel::pClassPointer = NULL;
+//UClass* UBehavior_PhysXLevel::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PlayAIMissionContextDialog
 // 0x0010 (0x005C - 0x004C)
@@ -48366,7 +48366,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PlayAIMissionContextDialog::pClassPointer = NULL;
+//UClass* UBehavior_PlayAIMissionContextDialog::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PlayAnimation
 // 0x0008 (0x0054 - 0x004C)
@@ -48390,7 +48390,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PlayAnimation::pClassPointer = NULL;
+//UClass* UBehavior_PlayAnimation::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PlayHardFlinch
 // 0x0010 (0x005C - 0x004C)
@@ -48415,7 +48415,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PlayHardFlinch::pClassPointer = NULL;
+//UClass* UBehavior_PlayHardFlinch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PlayMultipleExplosionsSound
 // 0x0020 (0x006C - 0x004C)
@@ -48442,7 +48442,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PlayMultipleExplosionsSound::pClassPointer = NULL;
+//UClass* UBehavior_PlayMultipleExplosionsSound::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PostAkEventGetRTPC
 // 0x000C (0x0068 - 0x005C)
@@ -48469,7 +48469,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PostAkEventGetRTPC::pClassPointer = NULL;
+//UClass* UBehavior_PostAkEventGetRTPC::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PostProcessChain
 // 0x0020 (0x006C - 0x004C)
@@ -48496,7 +48496,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PostProcessChain::pClassPointer = NULL;
+//UClass* UBehavior_PostProcessChain::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PostProcessChain_LostShield
 // 0x0014 (0x0080 - 0x006C)
@@ -48522,7 +48522,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PostProcessChain_LostShield::pClassPointer = NULL;
+//UClass* UBehavior_PostProcessChain_LostShield::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PostProcessOverlay
 // 0x010C (0x0158 - 0x004C)
@@ -48546,7 +48546,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PostProcessOverlay::pClassPointer = NULL;
+//UClass* UBehavior_PostProcessOverlay::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_PursueNodeType
 // 0x0008 (0x0054 - 0x004C)
@@ -48570,7 +48570,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PursueNodeType::pClassPointer = NULL;
+//UClass* UBehavior_PursueNodeType::pClassPointer = NULL;
 
 // Class WillowGame.IPursuitBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -48593,7 +48593,7 @@ public:
 	void Behavior_SetPreferredNodeType(struct FName NodeType);
 };
 
-UClass* UIPursuitBehavior::pClassPointer = NULL;
+//UClass* UIPursuitBehavior::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_QueryDayNightCycle
 // 0x0000 (0x004C - 0x004C)
@@ -48616,7 +48616,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_QueryDayNightCycle::pClassPointer = NULL;
+//UClass* UBehavior_QueryDayNightCycle::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_QueuePersonalEcho
 // 0x0008 (0x0054 - 0x004C)
@@ -48641,7 +48641,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_QueuePersonalEcho::pClassPointer = NULL;
+//UClass* UBehavior_QueuePersonalEcho::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RadarIcon
 // 0x0008 (0x0054 - 0x004C)
@@ -48667,7 +48667,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RadarIcon::pClassPointer = NULL;
+//UClass* UBehavior_RadarIcon::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ReCalculateResourcePoolValues
 // 0x0004 (0x0050 - 0x004C)
@@ -48691,7 +48691,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ReCalculateResourcePoolValues::pClassPointer = NULL;
+//UClass* UBehavior_ReCalculateResourcePoolValues::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RefillResourcePool
 // 0x0038 (0x0084 - 0x004C)
@@ -48719,7 +48719,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RefillResourcePool::pClassPointer = NULL;
+//UClass* UBehavior_RefillResourcePool::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RefillWeapon
 // 0x0000 (0x004C - 0x004C)
@@ -48742,7 +48742,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RefillWeapon::pClassPointer = NULL;
+//UClass* UBehavior_RefillWeapon::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RegisterFastTravelDefinition
 // 0x0008 (0x0054 - 0x004C)
@@ -48767,7 +48767,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RegisterFastTravelDefinition::pClassPointer = NULL;
+//UClass* UBehavior_RegisterFastTravelDefinition::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RegisterTargetable
 // 0x0004 (0x0050 - 0x004C)
@@ -48791,7 +48791,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RegisterTargetable::pClassPointer = NULL;
+//UClass* UBehavior_RegisterTargetable::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ReloadComplete
 // 0x0000 (0x004C - 0x004C)
@@ -48814,7 +48814,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ReloadComplete::pClassPointer = NULL;
+//UClass* UBehavior_ReloadComplete::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RemoveInstanceData
 // 0x000C (0x0058 - 0x004C)
@@ -48838,7 +48838,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RemoveInstanceData::pClassPointer = NULL;
+//UClass* UBehavior_RemoveInstanceData::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RemoveInventoryFromStorage
 // 0x008A (0x00D6 - 0x004C)
@@ -48865,7 +48865,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RemoveInventoryFromStorage::pClassPointer = NULL;
+//UClass* UBehavior_RemoveInventoryFromStorage::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ResetActionSkillCooldown
 // 0x0000 (0x004C - 0x004C)
@@ -48888,7 +48888,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ResetActionSkillCooldown::pClassPointer = NULL;
+//UClass* UBehavior_ResetActionSkillCooldown::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ResetHitRegionHealth
 // 0x0004 (0x0050 - 0x004C)
@@ -48912,7 +48912,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ResetHitRegionHealth::pClassPointer = NULL;
+//UClass* UBehavior_ResetHitRegionHealth::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RotatePawn
 // 0x0028 (0x0074 - 0x004C)
@@ -48938,7 +48938,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_RotatePawn::pClassPointer = NULL;
+//UClass* UBehavior_RotatePawn::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RuleEvent
 // 0x0000 (0x004C - 0x004C)
@@ -48959,7 +48959,7 @@ public:
 	};
 };
 
-UClass* UBehavior_RuleEvent::pClassPointer = NULL;
+//UClass* UBehavior_RuleEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_RunBehaviorAlias
 // 0x0034 (0x0080 - 0x004C)
@@ -48984,7 +48984,7 @@ public:
 	};
 };
 
-UClass* UBehavior_RunBehaviorAlias::pClassPointer = NULL;
+//UClass* UBehavior_RunBehaviorAlias::pClassPointer = NULL;
 
 // Class WillowGame.BehaviorAliasDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -49006,7 +49006,7 @@ public:
 	};
 };
 
-UClass* UBehaviorAliasDefinition::pClassPointer = NULL;
+//UClass* UBehaviorAliasDefinition::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SelectPhaselockTarget
 // 0x0010 (0x005C - 0x004C)
@@ -49030,7 +49030,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SelectPhaselockTarget::pClassPointer = NULL;
+//UClass* UBehavior_SelectPhaselockTarget::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SendMessageToPlayers
 // 0x0008 (0x0054 - 0x004C)
@@ -49055,7 +49055,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SendMessageToPlayers::pClassPointer = NULL;
+//UClass* UBehavior_SendMessageToPlayers::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetAIFlag
 // 0x0008 (0x0054 - 0x004C)
@@ -49080,7 +49080,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetAIFlag::pClassPointer = NULL;
+//UClass* UBehavior_SetAIFlag::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetAlternateVertexWeight
 // 0x0008 (0x0054 - 0x004C)
@@ -49104,7 +49104,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetAlternateVertexWeight::pClassPointer = NULL;
+//UClass* UBehavior_SetAlternateVertexWeight::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetAnimSwitchNode
 // 0x0010 (0x005C - 0x004C)
@@ -49129,7 +49129,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetAnimSwitchNode::pClassPointer = NULL;
+//UClass* UBehavior_SetAnimSwitchNode::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetAnimTree
 // 0x0004 (0x0050 - 0x004C)
@@ -49153,7 +49153,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetAnimTree::pClassPointer = NULL;
+//UClass* UBehavior_SetAnimTree::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetBeingHealed
 // 0x0004 (0x0050 - 0x004C)
@@ -49177,7 +49177,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetBeingHealed::pClassPointer = NULL;
+//UClass* UBehavior_SetBeingHealed::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetChallengeCompleted
 // 0x000C (0x0058 - 0x004C)
@@ -49203,7 +49203,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetChallengeCompleted::pClassPointer = NULL;
+//UClass* UBehavior_SetChallengeCompleted::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetCleanupParameters
 // 0x0004 (0x0050 - 0x004C)
@@ -49227,7 +49227,7 @@ public:
 	void eventApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetCleanupParameters::pClassPointer = NULL;
+//UClass* UBehavior_SetCleanupParameters::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetCompassIcon
 // 0x0001 (0x004D - 0x004C)
@@ -49251,7 +49251,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetCompassIcon::pClassPointer = NULL;
+//UClass* UBehavior_SetCompassIcon::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetDeathDefinition
 // 0x0004 (0x0050 - 0x004C)
@@ -49275,7 +49275,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetDeathDefinition::pClassPointer = NULL;
+//UClass* UBehavior_SetDeathDefinition::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetDiscardRootMotion
 // 0x0004 (0x0050 - 0x004C)
@@ -49299,7 +49299,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetDiscardRootMotion::pClassPointer = NULL;
+//UClass* UBehavior_SetDiscardRootMotion::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetDualWieldBlendState
 // 0x0008 (0x0054 - 0x004C)
@@ -49326,7 +49326,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetDualWieldBlendState::pClassPointer = NULL;
+//UClass* UBehavior_SetDualWieldBlendState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetElevatorButtonGlowing
 // 0x0004 (0x0050 - 0x004C)
@@ -49350,7 +49350,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetElevatorButtonGlowing::pClassPointer = NULL;
+//UClass* UBehavior_SetElevatorButtonGlowing::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetExtraImpactEffect
 // 0x0008 (0x0054 - 0x004C)
@@ -49375,7 +49375,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetExtraImpactEffect::pClassPointer = NULL;
+//UClass* UBehavior_SetExtraImpactEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetExtraMuzzleEffect
 // 0x000C (0x0058 - 0x004C)
@@ -49400,7 +49400,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetExtraMuzzleEffect::pClassPointer = NULL;
+//UClass* UBehavior_SetExtraMuzzleEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetGodMode
 // 0x0004 (0x0050 - 0x004C)
@@ -49424,7 +49424,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetGodMode::pClassPointer = NULL;
+//UClass* UBehavior_SetGodMode::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetHardAttach
 // 0x0004 (0x0050 - 0x004C)
@@ -49448,7 +49448,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetHardAttach::pClassPointer = NULL;
+//UClass* UBehavior_SetHardAttach::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetInfoBarVisibility
 // 0x0004 (0x0050 - 0x004C)
@@ -49472,7 +49472,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetInfoBarVisibility::pClassPointer = NULL;
+//UClass* UBehavior_SetInfoBarVisibility::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetJackVoiceModulatorState
 // 0x0004 (0x0050 - 0x004C)
@@ -49496,7 +49496,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetJackVoiceModulatorState::pClassPointer = NULL;
+//UClass* UBehavior_SetJackVoiceModulatorState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetLookAtSpeed
 // 0x0008 (0x0054 - 0x004C)
@@ -49521,7 +49521,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetLookAtSpeed::pClassPointer = NULL;
+//UClass* UBehavior_SetLookAtSpeed::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetMaterialScalarFade
 // 0x0038 (0x0084 - 0x004C)
@@ -49549,7 +49549,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetMaterialScalarFade::pClassPointer = NULL;
+//UClass* UBehavior_SetMaterialScalarFade::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetMaterialScalarFadeForGoreDeath
 // 0x0004 (0x0088 - 0x0084)
@@ -49573,7 +49573,7 @@ public:
 	void StartFade(class UIMaterialFadeBehavior* ContextInterface, float CalcStartValue, float CalcEndValue, float CalcFadeTime);
 };
 
-UClass* UBehavior_SetMaterialScalarFadeForGoreDeath::pClassPointer = NULL;
+//UClass* UBehavior_SetMaterialScalarFadeForGoreDeath::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetMorphNodeWeight
 // 0x0010 (0x005C - 0x004C)
@@ -49599,7 +49599,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetMorphNodeWeight::pClassPointer = NULL;
+//UClass* UBehavior_SetMorphNodeWeight::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetNumBankSlots
 // 0x0004 (0x0050 - 0x004C)
@@ -49623,7 +49623,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetNumBankSlots::pClassPointer = NULL;
+//UClass* UBehavior_SetNumBankSlots::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetPawnThrottleData
 // 0x001C (0x0068 - 0x004C)
@@ -49653,7 +49653,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetPawnThrottleData::pClassPointer = NULL;
+//UClass* UBehavior_SetPawnThrottleData::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetRuleSet
 // 0x0000 (0x004C - 0x004C)
@@ -49674,7 +49674,7 @@ public:
 	};
 };
 
-UClass* UBehavior_SetRuleSet::pClassPointer = NULL;
+//UClass* UBehavior_SetRuleSet::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetRuleSetByName
 // 0x0000 (0x004C - 0x004C)
@@ -49695,7 +49695,7 @@ public:
 	};
 };
 
-UClass* UBehavior_SetRuleSetByName::pClassPointer = NULL;
+//UClass* UBehavior_SetRuleSetByName::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetShieldColor
 // 0x0008 (0x0054 - 0x004C)
@@ -49720,7 +49720,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetShieldColor::pClassPointer = NULL;
+//UClass* UBehavior_SetShieldColor::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetSkelControlLookAtActor
 // 0x0024 (0x0070 - 0x004C)
@@ -49746,7 +49746,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetSkelControlLookAtActor::pClassPointer = NULL;
+//UClass* UBehavior_SetSkelControlLookAtActor::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetSkelControlSingleBoneData
 // 0x0020 (0x006C - 0x004C)
@@ -49772,7 +49772,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetSkelControlSingleBoneData::pClassPointer = NULL;
+//UClass* UBehavior_SetSkelControlSingleBoneData::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetSkelControlTurretConstrainedValues
 // 0x0030 (0x007C - 0x004C)
@@ -49807,7 +49807,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetSkelControlTurretConstrainedValues::pClassPointer = NULL;
+//UClass* UBehavior_SetSkelControlTurretConstrainedValues::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetStance
 // 0x0008 (0x0054 - 0x004C)
@@ -49832,7 +49832,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetStance::pClassPointer = NULL;
+//UClass* UBehavior_SetStance::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetTimeOfDay
 // 0x0004 (0x0050 - 0x004C)
@@ -49856,7 +49856,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetTimeOfDay::pClassPointer = NULL;
+//UClass* UBehavior_SetTimeOfDay::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetUsabilityByMissionDirectives
 // 0x0001 (0x004D - 0x004C)
@@ -49880,7 +49880,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetUsabilityByMissionDirectives::pClassPointer = NULL;
+//UClass* UBehavior_SetUsabilityByMissionDirectives::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetUsabilityCost
 // 0x0008 (0x0054 - 0x004C)
@@ -49907,7 +49907,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetUsabilityCost::pClassPointer = NULL;
+//UClass* UBehavior_SetUsabilityCost::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetUsableIcon
 // 0x0005 (0x0051 - 0x004C)
@@ -49932,7 +49932,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetUsableIcon::pClassPointer = NULL;
+//UClass* UBehavior_SetUsableIcon::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetVehicleSimObject
 // 0x0004 (0x0050 - 0x004C)
@@ -49956,7 +49956,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetVehicleSimObject::pClassPointer = NULL;
+//UClass* UBehavior_SetVehicleSimObject::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ShowGenericReviveMessage
 // 0x0014 (0x0060 - 0x004C)
@@ -49982,7 +49982,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ShowGenericReviveMessage::pClassPointer = NULL;
+//UClass* UBehavior_ShowGenericReviveMessage::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ShowMissionInterface
 // 0x0000 (0x004C - 0x004C)
@@ -50006,7 +50006,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ShowMissionInterface::pClassPointer = NULL;
+//UClass* UBehavior_ShowMissionInterface::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ShowSelfAsTarget
 // 0x0004 (0x0050 - 0x004C)
@@ -50030,7 +50030,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ShowSelfAsTarget::pClassPointer = NULL;
+//UClass* UBehavior_ShowSelfAsTarget::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SimpleAnimPlay
 // 0x000C (0x0058 - 0x004C)
@@ -50055,7 +50055,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SimpleAnimPlay::pClassPointer = NULL;
+//UClass* UBehavior_SimpleAnimPlay::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SimpleAnimStop
 // 0x000C (0x0058 - 0x004C)
@@ -50080,7 +50080,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SimpleAnimStop::pClassPointer = NULL;
+//UClass* UBehavior_SimpleAnimStop::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnActor
 // 0x0041 (0x008D - 0x004C)
@@ -50113,7 +50113,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnActor::pClassPointer = NULL;
+//UClass* UBehavior_SpawnActor::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnDecal
 // 0x0030 (0x007C - 0x004C)
@@ -50143,7 +50143,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnDecal::pClassPointer = NULL;
+//UClass* UBehavior_SpawnDecal::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnFromVehicleSpawnStation
 // 0x0000 (0x004C - 0x004C)
@@ -50166,7 +50166,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnFromVehicleSpawnStation::pClassPointer = NULL;
+//UClass* UBehavior_SpawnFromVehicleSpawnStation::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnItems
 // 0x006C (0x00B8 - 0x004C)
@@ -50203,7 +50203,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnItems::pClassPointer = NULL;
+//UClass* UBehavior_SpawnItems::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnLoot
 // 0x001C (0x0068 - 0x004C)
@@ -50233,7 +50233,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnLoot::pClassPointer = NULL;
+//UClass* UBehavior_SpawnLoot::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnLootAroundPoint
 // 0x002D (0x0095 - 0x0068)
@@ -50261,7 +50261,7 @@ public:
 	void PlaceSpawnedItems(TArray< struct FSpawnedDroppedLootData > SpawnedLoot, class UObject* ContextObject);
 };
 
-UClass* UBehavior_SpawnLootAroundPoint::pClassPointer = NULL;
+//UClass* UBehavior_SpawnLootAroundPoint::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnLootAtPoints
 // 0x0024 (0x008C - 0x0068)
@@ -50293,7 +50293,7 @@ public:
 	void PlaceSpawnedItems(TArray< struct FSpawnedDroppedLootData > SpawnedLoot, class UObject* ContextObject);
 };
 
-UClass* UBehavior_SpawnLootAtPoints::pClassPointer = NULL;
+//UClass* UBehavior_SpawnLootAtPoints::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnParticleSystemAtWorldLocation
 // 0x003C (0x0088 - 0x004C)
@@ -50329,7 +50329,7 @@ public:
 	class UClass* GetEmitterClass();
 };
 
-UClass* UBehavior_SpawnParticleSystemAtWorldLocation::pClassPointer = NULL;
+//UClass* UBehavior_SpawnParticleSystemAtWorldLocation::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnPerch
 // 0x0018 (0x0064 - 0x004C)
@@ -50358,7 +50358,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnPerch::pClassPointer = NULL;
+//UClass* UBehavior_SpawnPerch::pClassPointer = NULL;
 
 // Class WillowGame.Perch_Dynamic
 // 0x0000 (0x0254 - 0x0254)
@@ -50379,7 +50379,7 @@ public:
 	};
 };
 
-UClass* APerch_Dynamic::pClassPointer = NULL;
+//UClass* APerch_Dynamic::pClassPointer = NULL;
 
 // Class WillowGame.WillowLocalOnlyProjectile
 // 0x0000 (0x04A0 - 0x04A0)
@@ -50400,7 +50400,7 @@ public:
 	};
 };
 
-UClass* AWillowLocalOnlyProjectile::pClassPointer = NULL;
+//UClass* AWillowLocalOnlyProjectile::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnProjectileFromImpact
 // 0x004C (0x0098 - 0x004C)
@@ -50433,7 +50433,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnProjectileFromImpact::pClassPointer = NULL;
+//UClass* UBehavior_SpawnProjectileFromImpact::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SpawnTemporalField
 // 0x003C (0x0088 - 0x004C)
@@ -50464,7 +50464,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SpawnTemporalField::pClassPointer = NULL;
+//UClass* UBehavior_SpawnTemporalField::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_StartDeathRagdoll
 // 0x0004 (0x0050 - 0x004C)
@@ -50489,7 +50489,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_StartDeathRagdoll::pClassPointer = NULL;
+//UClass* UBehavior_StartDeathRagdoll::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_StatusEffectSwitch
 // 0x0001 (0x004D - 0x004C)
@@ -50513,7 +50513,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_StatusEffectSwitch::pClassPointer = NULL;
+//UClass* UBehavior_StatusEffectSwitch::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_StopMeleeAttack
 // 0x0000 (0x004C - 0x004C)
@@ -50536,7 +50536,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_StopMeleeAttack::pClassPointer = NULL;
+//UClass* UBehavior_StopMeleeAttack::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ToggleNPCAlly
 // 0x0004 (0x0050 - 0x004C)
@@ -50560,7 +50560,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ToggleNPCAlly::pClassPointer = NULL;
+//UClass* UBehavior_ToggleNPCAlly::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ToggleObstacle
 // 0x0001 (0x004D - 0x004C)
@@ -50584,7 +50584,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ToggleObstacle::pClassPointer = NULL;
+//UClass* UBehavior_ToggleObstacle::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ToggleTelescopeOverlay
 // 0x0004 (0x0050 - 0x004C)
@@ -50609,7 +50609,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ToggleTelescopeOverlay::pClassPointer = NULL;
+//UClass* UBehavior_ToggleTelescopeOverlay::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_Transform
 // 0x0001 (0x004D - 0x004C)
@@ -50633,7 +50633,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_Transform::pClassPointer = NULL;
+//UClass* UBehavior_Transform::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UnlockAvatarAward
 // 0x0001 (0x004D - 0x004C)
@@ -50657,7 +50657,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UnlockAvatarAward::pClassPointer = NULL;
+//UClass* UBehavior_UnlockAvatarAward::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UnlockAvatarAwardForAllPlayers
 // 0x0001 (0x004D - 0x004C)
@@ -50681,7 +50681,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UnlockAvatarAwardForAllPlayers::pClassPointer = NULL;
+//UClass* UBehavior_UnlockAvatarAwardForAllPlayers::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UnlockCustomization
 // 0x0008 (0x0054 - 0x004C)
@@ -50706,7 +50706,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UnlockCustomization::pClassPointer = NULL;
+//UClass* UBehavior_UnlockCustomization::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UnlockCustomizationFromRewardPool
 // 0x0004 (0x0050 - 0x004C)
@@ -50730,7 +50730,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UnlockCustomizationFromRewardPool::pClassPointer = NULL;
+//UClass* UBehavior_UnlockCustomizationFromRewardPool::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UpgradeSkill
 // 0x0024 (0x0070 - 0x004C)
@@ -50756,7 +50756,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UpgradeSkill::pClassPointer = NULL;
+//UClass* UBehavior_UpgradeSkill::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_UseObject
 // 0x0008 (0x0054 - 0x004C)
@@ -50781,7 +50781,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_UseObject::pClassPointer = NULL;
+//UClass* UBehavior_UseObject::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_VoGScreenParticle
 // 0x0008 (0x00C8 - 0x00C0)
@@ -50805,7 +50805,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_VoGScreenParticle::pClassPointer = NULL;
+//UClass* UBehavior_VoGScreenParticle::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_WeaponBoneControl
 // 0x0009 (0x0055 - 0x004C)
@@ -50830,7 +50830,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_WeaponBoneControl::pClassPointer = NULL;
+//UClass* UBehavior_WeaponBoneControl::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_WeaponGlowEffect
 // 0x0008 (0x0054 - 0x004C)
@@ -50855,7 +50855,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_WeaponGlowEffect::pClassPointer = NULL;
+//UClass* UBehavior_WeaponGlowEffect::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_WeaponsRestriction
 // 0x0004 (0x0050 - 0x004C)
@@ -50881,7 +50881,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_WeaponsRestriction::pClassPointer = NULL;
+//UClass* UBehavior_WeaponsRestriction::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_WeaponVisibleAmmoState
 // 0x0001 (0x004D - 0x004C)
@@ -50905,7 +50905,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_WeaponVisibleAmmoState::pClassPointer = NULL;
+//UClass* UBehavior_WeaponVisibleAmmoState::pClassPointer = NULL;
 
 // Class WillowGame.ChallengesPanelDefinition
 // 0x0000 (0x003C - 0x003C)
@@ -50926,7 +50926,7 @@ public:
 	};
 };
 
-UClass* UChallengesPanelDefinition::pClassPointer = NULL;
+//UClass* UChallengesPanelDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CharacterCustomizationInfoCardGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -50958,7 +50958,7 @@ public:
 	void DisplayNameCard();
 };
 
-UClass* UCharacterCustomizationInfoCardGFxObject::pClassPointer = NULL;
+//UClass* UCharacterCustomizationInfoCardGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.CharacterCustomizationMenuGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -50988,7 +50988,7 @@ public:
 	void InitMenuEntry(int Index, unsigned long bVisible, unsigned long bDisabled, unsigned long bIsInputEntry, int MaxInputLength, struct FString Caption, struct FString Label, struct FString IconFrame);
 };
 
-UClass* UCharacterCustomizationMenuGFxObject::pClassPointer = NULL;
+//UClass* UCharacterCustomizationMenuGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.CharacterSelectCameraActor
 // 0x0000 (0x0288 - 0x0288)
@@ -51009,7 +51009,7 @@ public:
 	};
 };
 
-UClass* ACharacterSelectCameraActor::pClassPointer = NULL;
+//UClass* ACharacterSelectCameraActor::pClassPointer = NULL;
 
 // Class WillowGame.CharacterSelectionCustomizationListGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -51035,7 +51035,7 @@ public:
 	int GetSelectedIndex();
 };
 
-UClass* UCharacterSelectionCustomizationListGFxObject::pClassPointer = NULL;
+//UClass* UCharacterSelectionCustomizationListGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.CharacterSelectionGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -51071,7 +51071,7 @@ public:
 	void AddSelectableCharacter(struct FString IconMoviePath);
 };
 
-UClass* UCharacterSelectionGFxObject::pClassPointer = NULL;
+//UClass* UCharacterSelectionGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxLobbyLoadCharacter
 // 0x013C (0x03A0 - 0x0264)
@@ -51153,7 +51153,7 @@ public:
 	void OnLoadGame(struct FLoadInfo LI, int PlayerIndex);
 };
 
-UClass* UWillowGFxLobbyLoadCharacter::pClassPointer = NULL;
+//UClass* UWillowGFxLobbyLoadCharacter::pClassPointer = NULL;
 
 // Class WillowGame.ConfirmCharacterLobbyGFxMovie
 // 0x0018 (0x027C - 0x0264)
@@ -51199,7 +51199,7 @@ public:
 	void OnConfirmCharacters();
 };
 
-UClass* UConfirmCharacterLobbyGFxMovie::pClassPointer = NULL;
+//UClass* UConfirmCharacterLobbyGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.CreditsDataProviderGFxObject
 // 0x0005 (0x007D - 0x0078)
@@ -51227,7 +51227,7 @@ public:
 	void Init(class UCreditsGFxDefinition* CreditsDefinition);
 };
 
-UClass* UCreditsDataProviderGFxObject::pClassPointer = NULL;
+//UClass* UCreditsDataProviderGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.CreditsLineDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -51249,7 +51249,7 @@ public:
 	};
 };
 
-UClass* UCreditsLineDefinition::pClassPointer = NULL;
+//UClass* UCreditsLineDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CreditsGFxObject
 // 0x0008 (0x0080 - 0x0078)
@@ -51276,7 +51276,7 @@ public:
 	void Init(class UCreditsGFxDefinition* CreditsDefinition);
 };
 
-UClass* UCreditsGFxObject::pClassPointer = NULL;
+//UClass* UCreditsGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Player
 // 0x0000 (0x0048 - 0x0048)
@@ -51297,7 +51297,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Player::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Player::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Vehicle
 // 0x0000 (0x0048 - 0x0048)
@@ -51318,7 +51318,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Vehicle::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Vehicle::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Assassin
 // 0x0000 (0x0048 - 0x0048)
@@ -51339,7 +51339,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Assassin::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Assassin::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_BanditTech
 // 0x0000 (0x0048 - 0x0048)
@@ -51360,7 +51360,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_BanditTech::pClassPointer = NULL;
+//UClass* UCustomizationUsage_BanditTech::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerA
 // 0x0000 (0x0048 - 0x0048)
@@ -51381,7 +51381,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerA::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerA::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerB
 // 0x0000 (0x0048 - 0x0048)
@@ -51402,7 +51402,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerB::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerB::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerC
 // 0x0000 (0x0048 - 0x0048)
@@ -51423,7 +51423,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerC::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerC::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerD
 // 0x0000 (0x0048 - 0x0048)
@@ -51444,7 +51444,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerD::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerD::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerE
 // 0x0000 (0x0048 - 0x0048)
@@ -51465,7 +51465,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerE::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerE::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerF
 // 0x0000 (0x0048 - 0x0048)
@@ -51486,7 +51486,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerF::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerF::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerG
 // 0x0000 (0x0048 - 0x0048)
@@ -51507,7 +51507,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerG::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerG::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerH
 // 0x0000 (0x0048 - 0x0048)
@@ -51528,7 +51528,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerH::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerH::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerI
 // 0x0000 (0x0048 - 0x0048)
@@ -51549,7 +51549,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerI::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerI::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerJ
 // 0x0000 (0x0048 - 0x0048)
@@ -51570,7 +51570,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerJ::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerJ::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerK
 // 0x0000 (0x0048 - 0x0048)
@@ -51591,7 +51591,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerK::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerK::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerL
 // 0x0000 (0x0048 - 0x0048)
@@ -51612,7 +51612,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerL::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerL::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerM
 // 0x0000 (0x0048 - 0x0048)
@@ -51633,7 +51633,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerM::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerM::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerN
 // 0x0000 (0x0048 - 0x0048)
@@ -51654,7 +51654,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerN::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerN::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerO
 // 0x0000 (0x0048 - 0x0048)
@@ -51675,7 +51675,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerO::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerO::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_ExtraPlayerP
 // 0x0000 (0x0048 - 0x0048)
@@ -51696,7 +51696,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_ExtraPlayerP::pClassPointer = NULL;
+//UClass* UCustomizationUsage_ExtraPlayerP::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Hovercraft
 // 0x0000 (0x0048 - 0x0048)
@@ -51717,7 +51717,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Hovercraft::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Hovercraft::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Mercenary
 // 0x0000 (0x0048 - 0x0048)
@@ -51738,7 +51738,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Mercenary::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Mercenary::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Runner
 // 0x0000 (0x0048 - 0x0048)
@@ -51759,7 +51759,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Runner::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Runner::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Siren
 // 0x0000 (0x0048 - 0x0048)
@@ -51780,7 +51780,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Siren::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Siren::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_Soldier
 // 0x0000 (0x0048 - 0x0048)
@@ -51801,7 +51801,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_Soldier::pClassPointer = NULL;
+//UClass* UCustomizationUsage_Soldier::pClassPointer = NULL;
 
 // Class WillowGame.DeathtrapActionSkill
 // 0x0030 (0x0264 - 0x0234)
@@ -51850,7 +51850,7 @@ public:
 	void eventOnActionSkillTick(float DeltaTime);
 };
 
-UClass* ADeathtrapActionSkill::pClassPointer = NULL;
+//UClass* ADeathtrapActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.DebugArrowComponent
 // 0x0000 (0x021C - 0x021C)
@@ -51871,7 +51871,7 @@ public:
 	};
 };
 
-UClass* UDebugArrowComponent::pClassPointer = NULL;
+//UClass* UDebugArrowComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AISetItemTossTarget
 // 0x000C (0x00B0 - 0x00A4)
@@ -51893,7 +51893,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AISetItemTossTarget::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AISetItemTossTarget::pClassPointer = NULL;
 
 // Class WillowGame.DesignerAttributeContextResolver
 // 0x0018 (0x0054 - 0x003C)
@@ -51918,7 +51918,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UDesignerAttributeContextResolver::pClassPointer = NULL;
+//UClass* UDesignerAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.DynamicBehaviorVolume
 // 0x0000 (0x0280 - 0x0280)
@@ -51939,7 +51939,7 @@ public:
 	};
 };
 
-UClass* ADynamicBehaviorVolume::pClassPointer = NULL;
+//UClass* ADynamicBehaviorVolume::pClassPointer = NULL;
 
 // Class WillowGame.EndOfGameGFxMovie
 // 0x000C (0x0270 - 0x0264)
@@ -51965,7 +51965,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UEndOfGameGFxMovie::pClassPointer = NULL;
+//UClass* UEndOfGameGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.GFxMovieInteractiveObject
 // 0x0000 (0x0254 - 0x0254)
@@ -51986,7 +51986,7 @@ public:
 	};
 };
 
-UClass* UGFxMovieInteractiveObject::pClassPointer = NULL;
+//UClass* UGFxMovieInteractiveObject::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelSignGFxMovie
 // 0x0000 (0x0254 - 0x0254)
@@ -52009,7 +52009,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UFastTravelSignGFxMovie::pClassPointer = NULL;
+//UClass* UFastTravelSignGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.FastTravelStationGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -52039,7 +52039,7 @@ public:
 	void AddDLCMapLocations(struct FString DLCMapLocationsMovie);
 };
 
-UClass* UFastTravelStationGFxObject::pClassPointer = NULL;
+//UClass* UFastTravelStationGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.FixedMarker
 // 0x0010 (0x01A4 - 0x0194)
@@ -52066,7 +52066,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* AFixedMarker::pClassPointer = NULL;
+//UClass* AFixedMarker::pClassPointer = NULL;
 
 // Class WillowGame.WillowAutoTestManager
 // 0x000C (0x0260 - 0x0254)
@@ -52110,7 +52110,7 @@ public:
 	void eventPostBeginPlay();
 };
 
-UClass* AWillowAutoTestManager::pClassPointer = NULL;
+//UClass* AWillowAutoTestManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_PlayerLeft
 // 0x0000 (0x00C4 - 0x00C4)
@@ -52131,7 +52131,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_PlayerLeft::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_PlayerLeft::pClassPointer = NULL;
 
 // Class WillowGame.SeqEvent_SeamlessTravelComplete
 // 0x0000 (0x00C4 - 0x00C4)
@@ -52152,7 +52152,7 @@ public:
 	};
 };
 
-UClass* USeqEvent_SeamlessTravelComplete::pClassPointer = NULL;
+//UClass* USeqEvent_SeamlessTravelComplete::pClassPointer = NULL;
 
 // Class WillowGame.IPlayerObserver
 // 0x0000 (0x003C - 0x003C)
@@ -52176,7 +52176,7 @@ public:
 	void PlayerEnteredGame(class APlayerController* PC);
 };
 
-UClass* UIPlayerObserver::pClassPointer = NULL;
+//UClass* UIPlayerObserver::pClassPointer = NULL;
 
 // Class WillowGame.WillowGameMessage
 // 0x0033 (0x007C - 0x0049)
@@ -52204,7 +52204,7 @@ public:
 	void ClientReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UWillowGameMessage::pClassPointer = NULL;
+//UClass* UWillowGameMessage::pClassPointer = NULL;
 
 // Class WillowGame.LocalMapChangeMessage
 // 0x0000 (0x004C - 0x004C)
@@ -52228,7 +52228,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* ULocalMapChangeMessage::pClassPointer = NULL;
+//UClass* ULocalMapChangeMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_StartNewGameCinematics
 // 0x0000 (0x00C4 - 0x00C4)
@@ -52249,7 +52249,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_StartNewGameCinematics::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_StartNewGameCinematics::pClassPointer = NULL;
 
 // Class WillowGame.WillowAccessControl
 // 0x0000 (0x0298 - 0x0298)
@@ -52272,7 +52272,7 @@ public:
 	bool ForceKickPlayer(class APlayerController* C, struct FString KickReason);
 };
 
-UClass* AWillowAccessControl::pClassPointer = NULL;
+//UClass* AWillowAccessControl::pClassPointer = NULL;
 
 // Class WillowGame.SplitscreenHelper
 // 0x0024 (0x0060 - 0x003C)
@@ -52308,7 +52308,7 @@ public:
 	void HandleSplitscreenJoinSuccess(class AWillowPlayerController* SplitPC);
 };
 
-UClass* USplitscreenHelper::pClassPointer = NULL;
+//UClass* USplitscreenHelper::pClassPointer = NULL;
 
 // Class WillowGame.NetworkOptionsGFxMovie
 // 0x0014 (0x0278 - 0x0264)
@@ -52340,7 +52340,7 @@ public:
 	void OnLoad(class UNetworkOptionsGFxObject* NetworkOptionsObj);
 };
 
-UClass* UNetworkOptionsGFxMovie::pClassPointer = NULL;
+//UClass* UNetworkOptionsGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.MarketplaceGFxMovie
 // 0x01FC (0x058C - 0x0390)
@@ -52442,7 +52442,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UMarketplaceGFxMovie::pClassPointer = NULL;
+//UClass* UMarketplaceGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.MatchmakingLobbyGFxMovie
 // 0x00B8 (0x0448 - 0x0390)
@@ -52485,7 +52485,7 @@ public:
 	void OnCancel();
 };
 
-UClass* UMatchmakingLobbyGFxMovie::pClassPointer = NULL;
+//UClass* UMatchmakingLobbyGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.FrontEndPlayerListGFxObject
 // 0x0114 (0x018C - 0x0078)
@@ -52590,7 +52590,7 @@ public:
 	void Init(class UIPlayerListOwner* InOwningMovie);
 };
 
-UClass* UFrontEndPlayerListGFxObject::pClassPointer = NULL;
+//UClass* UFrontEndPlayerListGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxClikWidget
 // 0x0000 (0x0084 - 0x0084)
@@ -52615,7 +52615,7 @@ public:
 	void AddClikEvent(struct FString EventType);
 };
 
-UClass* UWillowGFxClikWidget::pClassPointer = NULL;
+//UClass* UWillowGFxClikWidget::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingList
 // 0x0044 (0x00C8 - 0x0084)
@@ -52673,7 +52673,7 @@ public:
 	void OnListChanged();
 };
 
-UClass* UWillowScrollingList::pClassPointer = NULL;
+//UClass* UWillowScrollingList::pClassPointer = NULL;
 
 // Class WillowGame.FrontendMenuGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -52699,7 +52699,7 @@ public:
 	void ApplyPriorityBlurEffect(unsigned long bRemoveEffect);
 };
 
-UClass* UFrontendMenuGFxObject::pClassPointer = NULL;
+//UClass* UFrontendMenuGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.IWillowScrollingListDataProvider
 // 0x0000 (0x003C - 0x003C)
@@ -52733,7 +52733,7 @@ public:
 	struct FString GetMenuDisplayName();
 };
 
-UClass* UIWillowScrollingListDataProvider::pClassPointer = NULL;
+//UClass* UIWillowScrollingListDataProvider::pClassPointer = NULL;
 
 // Class WillowGame.IPlayerListOwner
 // 0x0000 (0x003C - 0x003C)
@@ -52768,7 +52768,7 @@ public:
 	class AWillowPlayerController* GetWPCOwner();
 };
 
-UClass* UIPlayerListOwner::pClassPointer = NULL;
+//UClass* UIPlayerListOwner::pClassPointer = NULL;
 
 // Class WillowGame.NetworkOptionsGFxObject
 // 0x0004 (0x007C - 0x0078)
@@ -52799,7 +52799,7 @@ public:
 	void Show();
 };
 
-UClass* UNetworkOptionsGFxObject::pClassPointer = NULL;
+//UClass* UNetworkOptionsGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderBase
 // 0x0018 (0x0054 - 0x003C)
@@ -52836,7 +52836,7 @@ public:
 	struct FString GetMenuDisplayName();
 };
 
-UClass* UWillowScrollingListDataProviderBase::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderBase::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderMatchmaking
 // 0x0000 (0x0054 - 0x0054)
@@ -52860,7 +52860,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderMatchmaking::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderMatchmaking::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSearch_DataStore
 // 0x0000 (0x00B4 - 0x00B4)
@@ -52883,7 +52883,7 @@ public:
 	struct FName GetCurrentSearchName();
 };
 
-UClass* UWillowOnlineGameSearch_DataStore::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSearch_DataStore::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSearch
 // 0x0008 (0x0100 - 0x00F8)
@@ -52906,7 +52906,7 @@ public:
 	};
 };
 
-UClass* UWillowOnlineGameSearch::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSearch::pClassPointer = NULL;
 
 // Class WillowGame.TestMapsListDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -52928,7 +52928,7 @@ public:
 	};
 };
 
-UClass* UTestMapsListDefinition::pClassPointer = NULL;
+//UClass* UTestMapsListDefinition::pClassPointer = NULL;
 
 // Class WillowGame.PlayerDetailsGFxMovie
 // 0x0018 (0x027C - 0x0264)
@@ -52960,7 +52960,7 @@ public:
 	void OnLoad(class UPlayerDetailsGFxObject* PlayerDetailsObj);
 };
 
-UClass* UPlayerDetailsGFxMovie::pClassPointer = NULL;
+//UClass* UPlayerDetailsGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.PlayerDetailsGFxObject
 // 0x0004 (0x007C - 0x0078)
@@ -52996,7 +52996,7 @@ public:
 	void Show();
 };
 
-UClass* UPlayerDetailsGFxObject::pClassPointer = NULL;
+//UClass* UPlayerDetailsGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.GammaScreenGFxDefinition
 // 0x0054 (0x0144 - 0x00F0)
@@ -53018,7 +53018,7 @@ public:
 	};
 };
 
-UClass* UGammaScreenGFxDefinition::pClassPointer = NULL;
+//UClass* UGammaScreenGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.GammaScreenGFxMovie
 // 0x0000 (0x0390 - 0x0390)
@@ -53039,7 +53039,7 @@ public:
 	};
 };
 
-UClass* UGammaScreenGFxMovie::pClassPointer = NULL;
+//UClass* UGammaScreenGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.GearboxAccountGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -53092,7 +53092,7 @@ public:
 	void DisplayScreen(struct FString Screen);
 };
 
-UClass* UGearboxAccountGFxObject::pClassPointer = NULL;
+//UClass* UGearboxAccountGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.GFxMovieMissionStatus
 // 0x0004 (0x0268 - 0x0264)
@@ -53120,7 +53120,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UGFxMovieMissionStatus::pClassPointer = NULL;
+//UClass* UGFxMovieMissionStatus::pClassPointer = NULL;
 
 // Class WillowGame.GFxTextListContent
 // 0x000C (0x0048 - 0x003C)
@@ -53148,7 +53148,7 @@ public:
 	void Empty();
 };
 
-UClass* UGFxTextListContent::pClassPointer = NULL;
+//UClass* UGFxTextListContent::pClassPointer = NULL;
 
 // Class WillowGame.GraveyardGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -53173,7 +53173,7 @@ public:
 	void SetTombstoneInfo(struct FString TimePlayed, struct FString PlayerLevel, struct FString MissionsComplete, struct FString ChallengesComplete, struct FString FavoriteManufacturer, struct FString FavoriteWeaponType, struct FString KilledBy);
 };
 
-UClass* UGraveyardGFxObject::pClassPointer = NULL;
+//UClass* UGraveyardGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.HealthBarGFxObject
 // 0x0004 (0x007C - 0x0078)
@@ -53198,7 +53198,7 @@ public:
 	void SetHealth(int CurrentHealth, int MaxHealth);
 };
 
-UClass* UHealthBarGFxObject::pClassPointer = NULL;
+//UClass* UHealthBarGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowLevelTimerDefinition
 // 0x001C (0x0058 - 0x003C)
@@ -53224,7 +53224,7 @@ public:
 	};
 };
 
-UClass* UWillowLevelTimerDefinition::pClassPointer = NULL;
+//UClass* UWillowLevelTimerDefinition::pClassPointer = NULL;
 
 // Class WillowGame.HUDScaleGuideGFxMovie
 // 0x0014 (0x03A4 - 0x0390)
@@ -53255,7 +53255,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UHUDScaleGuideGFxMovie::pClassPointer = NULL;
+//UClass* UHUDScaleGuideGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.IAIBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -53276,7 +53276,7 @@ public:
 	};
 };
 
-UClass* UIAIBehavior::pClassPointer = NULL;
+//UClass* UIAIBehavior::pClassPointer = NULL;
 
 // Class WillowGame.IGFxMenuScreenTickable
 // 0x0000 (0x003C - 0x003C)
@@ -53299,7 +53299,7 @@ public:
 	void OnTick();
 };
 
-UClass* UIGFxMenuScreenTickable::pClassPointer = NULL;
+//UClass* UIGFxMenuScreenTickable::pClassPointer = NULL;
 
 // Class WillowGame.IHijackBehavior
 // 0x0000 (0x003C - 0x003C)
@@ -53320,7 +53320,7 @@ public:
 	};
 };
 
-UClass* UIHijackBehavior::pClassPointer = NULL;
+//UClass* UIHijackBehavior::pClassPointer = NULL;
 
 // Class WillowGame.InputBindingsClipGFxObject
 // 0x0004 (0x007C - 0x0078)
@@ -53352,7 +53352,7 @@ public:
 	void Show();
 };
 
-UClass* UInputBindingsClipGFxObject::pClassPointer = NULL;
+//UClass* UInputBindingsClipGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.InstanceDataContextResolver
 // 0x0008 (0x0044 - 0x003C)
@@ -53376,7 +53376,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UInstanceDataContextResolver::pClassPointer = NULL;
+//UClass* UInstanceDataContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.InventoryAttributeDefinition
 // 0x0000 (0x005C - 0x005C)
@@ -53397,7 +53397,7 @@ public:
 	};
 };
 
-UClass* UInventoryAttributeDefinition::pClassPointer = NULL;
+//UClass* UInventoryAttributeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.InventoryDefinitionAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -53420,7 +53420,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UInventoryDefinitionAttributeContextResolver::pClassPointer = NULL;
+//UClass* UInventoryDefinitionAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.VendingMachineExGFxDefinition
 // 0x0074 (0x01CC - 0x0158)
@@ -53461,7 +53461,7 @@ public:
 	};
 };
 
-UClass* UVendingMachineExGFxDefinition::pClassPointer = NULL;
+//UClass* UVendingMachineExGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.IUISubMenuNavigation
 // 0x0000 (0x003C - 0x003C)
@@ -53485,7 +53485,7 @@ public:
 	void ActivateFirstSubMenu();
 };
 
-UClass* UIUISubMenuNavigation::pClassPointer = NULL;
+//UClass* UIUISubMenuNavigation::pClassPointer = NULL;
 
 // Class WillowGame.LANServerBrowserGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -53516,7 +53516,7 @@ public:
 	void AddServerListEntry(struct FString ServerName, int CurrentPlayers, int MaxPlayers, struct FString CharInfo, struct FString MissionInfo, struct FString ConnectionStength, struct FString Ping);
 };
 
-UClass* ULANServerBrowserGFxObject::pClassPointer = NULL;
+//UClass* ULANServerBrowserGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.LatentRewardGFxMovie
 // 0x0004 (0x0394 - 0x0390)
@@ -53551,7 +53551,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* ULatentRewardGFxMovie::pClassPointer = NULL;
+//UClass* ULatentRewardGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.MissionRewardGFxObject
 // 0x0190 (0x0208 - 0x0078)
@@ -53611,7 +53611,7 @@ public:
 	void Init(class UWillowGFxMovie3D* InParent);
 };
 
-UClass* UMissionRewardGFxObject::pClassPointer = NULL;
+//UClass* UMissionRewardGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.LevelStreamingVolumeDynamic
 // 0x0000 (0x01D4 - 0x01D4)
@@ -53632,7 +53632,7 @@ public:
 	};
 };
 
-UClass* ALevelStreamingVolumeDynamic::pClassPointer = NULL;
+//UClass* ALevelStreamingVolumeDynamic::pClassPointer = NULL;
 
 // Class WillowGame.LevelTransitionGFxMovie
 // 0x0000 (0x0264 - 0x0264)
@@ -53653,7 +53653,7 @@ public:
 	};
 };
 
-UClass* ULevelTransitionGFxMovie::pClassPointer = NULL;
+//UClass* ULevelTransitionGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.LevelTransitionSignGFxMovie
 // 0x0000 (0x0254 - 0x0254)
@@ -53676,7 +53676,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* ULevelTransitionSignGFxMovie::pClassPointer = NULL;
+//UClass* ULevelTransitionSignGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.LiftActionSkill
 // 0x01AC (0x03E0 - 0x0234)
@@ -53838,7 +53838,7 @@ public:
 	void eventReplicatedEvent(struct FName VarName);
 };
 
-UClass* ALiftActionSkill::pClassPointer = NULL;
+//UClass* ALiftActionSkill::pClassPointer = NULL;
 
 // Class WillowGame.LoadCharacterLobbyGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -53868,7 +53868,7 @@ public:
 	void ClearSlots();
 };
 
-UClass* ULoadCharacterLobbyGFxObject::pClassPointer = NULL;
+//UClass* ULoadCharacterLobbyGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.MarketplaceGFxMovieDefinition
 // 0x000C (0x00FC - 0x00F0)
@@ -53890,7 +53890,7 @@ public:
 	};
 };
 
-UClass* UMarketplaceGFxMovieDefinition::pClassPointer = NULL;
+//UClass* UMarketplaceGFxMovieDefinition::pClassPointer = NULL;
 
 // Class WillowGame.MatchmakingLobbyCharacterInfoGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -53913,7 +53913,7 @@ public:
 	void SetInfo(struct FString CharName, struct FString CharLevel, struct FString CharClass, struct FString CharCurrentMission, struct FString CharPlotMission, struct FString CharPlaythrough);
 };
 
-UClass* UMatchmakingLobbyCharacterInfoGFxObject::pClassPointer = NULL;
+//UClass* UMatchmakingLobbyCharacterInfoGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.MatchmakingLobbyResultsGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -53936,7 +53936,7 @@ public:
 	void UpdateResult(int ResultIndex, struct FString MatchTypeIconFrameName, struct FString StatusIconFrameName, struct FString ResultMessage);
 };
 
-UClass* UMatchmakingLobbyResultsGFxObject::pClassPointer = NULL;
+//UClass* UMatchmakingLobbyResultsGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.MechromancerInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -53959,7 +53959,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* UMechromancerInputContextSelector::pClassPointer = NULL;
+//UClass* UMechromancerInputContextSelector::pClassPointer = NULL;
 
 // Class WillowGame.MercenaryInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -53982,7 +53982,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* UMercenaryInputContextSelector::pClassPointer = NULL;
+//UClass* UMercenaryInputContextSelector::pClassPointer = NULL;
 
 // Class WillowGame.OpenedChestMessage
 // 0x000C (0x0058 - 0x004C)
@@ -54006,7 +54006,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UOpenedChestMessage::pClassPointer = NULL;
+//UClass* UOpenedChestMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderOptionsBase
 // 0x0020 (0x0074 - 0x0054)
@@ -54047,7 +54047,7 @@ public:
 	bool FindProfileData(class AWillowPlayerController* WPCOwner, int SettingId, struct FSettingsPropertyPropertyMetaData* PropertyMetaData);
 };
 
-UClass* UWillowScrollingListDataProviderOptionsBase::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderOptionsBase::pClassPointer = NULL;
 
 // Class WillowGame.OptionsGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -54074,7 +54074,7 @@ public:
 	void SetAspectRatio(struct FString AspectRatioFrame);
 };
 
-UClass* UOptionsGFxObject::pClassPointer = NULL;
+//UClass* UOptionsGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderTopLevelOptions
 // 0x0000 (0x0054 - 0x0054)
@@ -54101,7 +54101,7 @@ public:
 	void Populate(class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderTopLevelOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderTopLevelOptions::pClassPointer = NULL;
 
 // Class WillowGame.PauseGFxMovie
 // 0x0040 (0x0528 - 0x04E8)
@@ -54160,7 +54160,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UPauseGFxMovie::pClassPointer = NULL;
+//UClass* UPauseGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.PCContextMenuObject
 // 0x007C (0x0244 - 0x01C8)
@@ -54206,7 +54206,7 @@ public:
 	void OnMenuClosed();
 };
 
-UClass* UPCContextMenuObject::pClassPointer = NULL;
+//UClass* UPCContextMenuObject::pClassPointer = NULL;
 
 // Class WillowGame.PlaceableDynamicSMActor
 // 0x0000 (0x01C4 - 0x01C4)
@@ -54227,7 +54227,7 @@ public:
 	};
 };
 
-UClass* APlaceableDynamicSMActor::pClassPointer = NULL;
+//UClass* APlaceableDynamicSMActor::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehaviorBase
 // 0x0000 (0x004C - 0x004C)
@@ -54248,7 +54248,7 @@ public:
 	};
 };
 
-UClass* UPlayerBehaviorBase::pClassPointer = NULL;
+//UClass* UPlayerBehaviorBase::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_CameraAnim
 // 0x0004 (0x0050 - 0x004C)
@@ -54272,7 +54272,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_CameraAnim::pClassPointer = NULL;
+//UClass* UPlayerBehavior_CameraAnim::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_DropItems
 // 0x0028 (0x00CC - 0x00A4)
@@ -54298,7 +54298,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_DropItems::pClassPointer = NULL;
+//UClass* UPlayerBehavior_DropItems::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_ForceFeedback
 // 0x0008 (0x0054 - 0x004C)
@@ -54323,7 +54323,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_ForceFeedback::pClassPointer = NULL;
+//UClass* UPlayerBehavior_ForceFeedback::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_Melee
 // 0x0000 (0x004C - 0x004C)
@@ -54346,7 +54346,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_Melee::pClassPointer = NULL;
+//UClass* UPlayerBehavior_Melee::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_PlayEchoCall
 // 0x0000 (0x004C - 0x004C)
@@ -54369,7 +54369,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_PlayEchoCall::pClassPointer = NULL;
+//UClass* UPlayerBehavior_PlayEchoCall::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_RegisterFastTravelStation
 // 0x0000 (0x004C - 0x004C)
@@ -54392,7 +54392,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_RegisterFastTravelStation::pClassPointer = NULL;
+//UClass* UPlayerBehavior_RegisterFastTravelStation::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_Reload
 // 0x0000 (0x004C - 0x004C)
@@ -54415,7 +54415,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_Reload::pClassPointer = NULL;
+//UClass* UPlayerBehavior_Reload::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_SetCurrentProjectile
 // 0x0004 (0x0050 - 0x004C)
@@ -54439,7 +54439,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_SetCurrentProjectile::pClassPointer = NULL;
+//UClass* UPlayerBehavior_SetCurrentProjectile::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_SpawnCurrentProjectile
 // 0x0020 (0x006C - 0x004C)
@@ -54470,7 +54470,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_SpawnCurrentProjectile::pClassPointer = NULL;
+//UClass* UPlayerBehavior_SpawnCurrentProjectile::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_SpawnTeleporter
 // 0x0004 (0x0050 - 0x004C)
@@ -54494,7 +54494,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_SpawnTeleporter::pClassPointer = NULL;
+//UClass* UPlayerBehavior_SpawnTeleporter::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_ThrowGrenade
 // 0x0000 (0x004C - 0x004C)
@@ -54517,7 +54517,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_ThrowGrenade::pClassPointer = NULL;
+//UClass* UPlayerBehavior_ThrowGrenade::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_ToggleMeleeWeapon
 // 0x0004 (0x0050 - 0x004C)
@@ -54543,7 +54543,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_ToggleMeleeWeapon::pClassPointer = NULL;
+//UClass* UPlayerBehavior_ToggleMeleeWeapon::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_ToggleRevive
 // 0x0004 (0x0050 - 0x004C)
@@ -54567,7 +54567,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_ToggleRevive::pClassPointer = NULL;
+//UClass* UPlayerBehavior_ToggleRevive::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_UnlockAchievement
 // 0x0001 (0x004D - 0x004C)
@@ -54591,7 +54591,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_UnlockAchievement::pClassPointer = NULL;
+//UClass* UPlayerBehavior_UnlockAchievement::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_UnlockAchievementForAllPlayers
 // 0x0008 (0x0054 - 0x004C)
@@ -54616,7 +54616,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_UnlockAchievementForAllPlayers::pClassPointer = NULL;
+//UClass* UPlayerBehavior_UnlockAchievementForAllPlayers::pClassPointer = NULL;
 
 // Class WillowGame.PlayerBehavior_ViewShake
 // 0x0044 (0x0090 - 0x004C)
@@ -54640,7 +54640,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UPlayerBehavior_ViewShake::pClassPointer = NULL;
+//UClass* UPlayerBehavior_ViewShake::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AIProvoke
 // 0x0004 (0x00A8 - 0x00A4)
@@ -54662,7 +54662,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AIProvoke::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AIProvoke::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AIScriptedHold
 // 0x0005 (0x00A9 - 0x00A4)
@@ -54685,7 +54685,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AIScriptedHold::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AIScriptedHold::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AIScriptedFollow
 // 0x0014 (0x00B8 - 0x00A4)
@@ -54713,7 +54713,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AIScriptedFollow::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AIScriptedFollow::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AIScriptedDeath
 // 0x0014 (0x00B8 - 0x00A4)
@@ -54739,7 +54739,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AIScriptedDeath::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AIScriptedDeath::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AICombatVolume
 // 0x000C (0x00B0 - 0x00A4)
@@ -54763,7 +54763,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AICombatVolume::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AICombatVolume::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_Attach
 // 0x0024 (0x0070 - 0x004C)
@@ -54791,7 +54791,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_Attach::pClassPointer = NULL;
+//UClass* UProjectileBehavior_Attach::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_Detonate
 // 0x0001 (0x004D - 0x004C)
@@ -54815,7 +54815,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_Detonate::pClassPointer = NULL;
+//UClass* UProjectileBehavior_Detonate::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_FindHomingTarget
 // 0x0010 (0x005C - 0x004C)
@@ -54846,7 +54846,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_FindHomingTarget::pClassPointer = NULL;
+//UClass* UProjectileBehavior_FindHomingTarget::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_LevelOff
 // 0x0008 (0x0054 - 0x004C)
@@ -54871,7 +54871,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_LevelOff::pClassPointer = NULL;
+//UClass* UProjectileBehavior_LevelOff::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_SetDamageTypeDefinition
 // 0x0004 (0x0050 - 0x004C)
@@ -54895,7 +54895,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_SetDamageTypeDefinition::pClassPointer = NULL;
+//UClass* UProjectileBehavior_SetDamageTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_SetExplosionDefinition
 // 0x0004 (0x0050 - 0x004C)
@@ -54919,7 +54919,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_SetExplosionDefinition::pClassPointer = NULL;
+//UClass* UProjectileBehavior_SetExplosionDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_SetHomingTarget
 // 0x0004 (0x0050 - 0x004C)
@@ -54943,7 +54943,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_SetHomingTarget::pClassPointer = NULL;
+//UClass* UProjectileBehavior_SetHomingTarget::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_SetProximity
 // 0x0008 (0x0054 - 0x004C)
@@ -54968,7 +54968,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_SetProximity::pClassPointer = NULL;
+//UClass* UProjectileBehavior_SetProximity::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_SetSpeed
 // 0x0008 (0x0054 - 0x004C)
@@ -54993,7 +54993,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_SetSpeed::pClassPointer = NULL;
+//UClass* UProjectileBehavior_SetSpeed::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_SetStickyGrenade
 // 0x0000 (0x004C - 0x004C)
@@ -55016,7 +55016,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_SetStickyGrenade::pClassPointer = NULL;
+//UClass* UProjectileBehavior_SetStickyGrenade::pClassPointer = NULL;
 
 // Class WillowGame.ProjectileBehavior_TagPayloadType
 // 0x0001 (0x004D - 0x004C)
@@ -55040,7 +55040,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UProjectileBehavior_TagPayloadType::pClassPointer = NULL;
+//UClass* UProjectileBehavior_TagPayloadType::pClassPointer = NULL;
 
 // Class WillowGame.ProximityActor
 // 0x000C (0x0194 - 0x0188)
@@ -55067,7 +55067,7 @@ public:
 	void SetProximitySize(float NewProximityRadius, float NewProximityHeight);
 };
 
-UClass* AProximityActor::pClassPointer = NULL;
+//UClass* AProximityActor::pClassPointer = NULL;
 
 // Class WillowGame.PS3InvitesPopupGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -55098,7 +55098,7 @@ public:
 	void AddInvite(struct FString InviterName, struct FString Message);
 };
 
-UClass* UPS3InvitesPopupGFxObject::pClassPointer = NULL;
+//UClass* UPS3InvitesPopupGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.QuestAcceptGFxDefinition
 // 0x0080 (0x0170 - 0x00F0)
@@ -55130,7 +55130,7 @@ public:
 	};
 };
 
-UClass* UQuestAcceptGFxDefinition::pClassPointer = NULL;
+//UClass* UQuestAcceptGFxDefinition::pClassPointer = NULL;
 
 // Class WillowGame.ReferenceSet
 // 0x000C (0x0048 - 0x003C)
@@ -55152,7 +55152,7 @@ public:
 	};
 };
 
-UClass* UReferenceSet::pClassPointer = NULL;
+//UClass* UReferenceSet::pClassPointer = NULL;
 
 // Class WillowGame.ResourcePoolAttributeDefinition
 // 0x0004 (0x0060 - 0x005C)
@@ -55174,7 +55174,7 @@ public:
 	};
 };
 
-UClass* UResourcePoolAttributeDefinition::pClassPointer = NULL;
+//UClass* UResourcePoolAttributeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.SeqAct_GetInstanceData
 // 0x0010 (0x00B4 - 0x00A4)
@@ -55200,7 +55200,7 @@ public:
 	void eventActivated();
 };
 
-UClass* USeqAct_GetInstanceData::pClassPointer = NULL;
+//UClass* USeqAct_GetInstanceData::pClassPointer = NULL;
 
 // Class WillowGame.SeqEvent_SpawnedMissionPickup
 // 0x0000 (0x00C4 - 0x00C4)
@@ -55221,7 +55221,7 @@ public:
 	};
 };
 
-UClass* USeqEvent_SpawnedMissionPickup::pClassPointer = NULL;
+//UClass* USeqEvent_SpawnedMissionPickup::pClassPointer = NULL;
 
 // Class WillowGame.ShieldBarGFxObject
 // 0x0004 (0x007C - 0x0078)
@@ -55246,7 +55246,7 @@ public:
 	void SetShield(int CurrentShield, int MaxShield);
 };
 
-UClass* UShieldBarGFxObject::pClassPointer = NULL;
+//UClass* UShieldBarGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.SimpleVolume
 // 0x0000 (0x01BC - 0x01BC)
@@ -55269,7 +55269,7 @@ public:
 	bool StopsProjectile(class AProjectile* P);
 };
 
-UClass* ASimpleVolume::pClassPointer = NULL;
+//UClass* ASimpleVolume::pClassPointer = NULL;
 
 // Class WillowGame.SirenInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -55292,7 +55292,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* USirenInputContextSelector::pClassPointer = NULL;
+//UClass* USirenInputContextSelector::pClassPointer = NULL;
 
 // Class WillowGame.SkillPointsFeedbackMessage
 // 0x000C (0x0058 - 0x004C)
@@ -55316,7 +55316,7 @@ public:
 	struct FString GetString(int Switch, unsigned long bPRI1HUD, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* USkillPointsFeedbackMessage::pClassPointer = NULL;
+//UClass* USkillPointsFeedbackMessage::pClassPointer = NULL;
 
 // Class WillowGame.SoldierInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -55339,7 +55339,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* USoldierInputContextSelector::pClassPointer = NULL;
+//UClass* USoldierInputContextSelector::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_WeaponAction
 // 0x0004 (0x00CC - 0x00C8)
@@ -55363,7 +55363,7 @@ public:
 	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
 };
 
-UClass* USpecialMove_WeaponAction::pClassPointer = NULL;
+//UClass* USpecialMove_WeaponAction::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_FirstAndThirdPersonAnimation
 // 0x0004 (0x00D0 - 0x00CC)
@@ -55387,7 +55387,7 @@ public:
 	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
 };
 
-UClass* USpecialMove_FirstAndThirdPersonAnimation::pClassPointer = NULL;
+//UClass* USpecialMove_FirstAndThirdPersonAnimation::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_FirstPersonOffHand
 // 0x0000 (0x00C0 - 0x00C0)
@@ -55410,7 +55410,7 @@ public:
 	void StopWeaponRecoilAnim(class USpecialMoveInterface* SMI);
 };
 
-UClass* USpecialMove_FirstPersonOffHand::pClassPointer = NULL;
+//UClass* USpecialMove_FirstPersonOffHand::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_JumpAnimStart
 // 0x0000 (0x00C4 - 0x00C4)
@@ -55431,7 +55431,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_JumpAnimStart::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_JumpAnimStart::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_JumpAnimIdle
 // 0x0000 (0x00C4 - 0x00C4)
@@ -55452,7 +55452,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_JumpAnimIdle::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_JumpAnimIdle::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_JumpAnimStop
 // 0x0000 (0x00C4 - 0x00C4)
@@ -55473,7 +55473,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_JumpAnimStop::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_JumpAnimStop::pClassPointer = NULL;
 
 // Class WillowGame.SpecialMove_WeaponActionOffHand
 // 0x0000 (0x00CC - 0x00CC)
@@ -55494,7 +55494,7 @@ public:
 	};
 };
 
-UClass* USpecialMove_WeaponActionOffHand::pClassPointer = NULL;
+//UClass* USpecialMove_WeaponActionOffHand::pClassPointer = NULL;
 
 // Class WillowGame.StashGFxMovie
 // 0x002C (0x04D0 - 0x04A4)
@@ -55533,7 +55533,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UStashGFxMovie::pClassPointer = NULL;
+//UClass* UStashGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.StatusMenuEquippedPanelGFxObject
 // 0x0024 (0x00D0 - 0x00AC)
@@ -55611,7 +55611,7 @@ public:
 	bool MoveFunction(unsigned char Dir);
 };
 
-UClass* UStatusMenuEquippedPanelGFxObject::pClassPointer = NULL;
+//UClass* UStatusMenuEquippedPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.TradingOffersPanelGFxObject
 // 0x001C (0x00C8 - 0x00AC)
@@ -55673,7 +55673,7 @@ public:
 	bool MoveFunction(unsigned char Dir);
 };
 
-UClass* UTradingOffersPanelGFxObject::pClassPointer = NULL;
+//UClass* UTradingOffersPanelGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.TurretWeaponTypeDefinition
 // 0x0000 (0x0680 - 0x0680)
@@ -55694,7 +55694,7 @@ public:
 	};
 };
 
-UClass* UTurretWeaponTypeDefinition::pClassPointer = NULL;
+//UClass* UTurretWeaponTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.UBMGameOverGFxMovie
 // 0x0008 (0x026C - 0x0264)
@@ -55723,7 +55723,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UUBMGameOverGFxMovie::pClassPointer = NULL;
+//UClass* UUBMGameOverGFxMovie::pClassPointer = NULL;
 
 // Class WillowGame.UBMGameOverGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -55746,7 +55746,7 @@ public:
 	void SetPlayerInfo(struct FString Gamertag, struct FString TimePlayed, struct FString PlayerLevel, struct FString MissionsComplete, struct FString ChallengesComplete, struct FString FavoriteManufacturer, struct FString FavoriteWeaponType, struct FString KilledBy);
 };
 
-UClass* UUBMGameOverGFxObject::pClassPointer = NULL;
+//UClass* UUBMGameOverGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.VehicleChoiceInfoCardGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -55783,7 +55783,7 @@ public:
 	void BeginAddVehicleCells();
 };
 
-UClass* UVehicleChoiceInfoCardGFxObject::pClassPointer = NULL;
+//UClass* UVehicleChoiceInfoCardGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.VehicleFamilySelectorGFxObject
 // 0x0000 (0x0078 - 0x0078)
@@ -55811,7 +55811,7 @@ public:
 	void BeginAddCells();
 };
 
-UClass* UVehicleFamilySelectorGFxObject::pClassPointer = NULL;
+//UClass* UVehicleFamilySelectorGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.VehicleWeaponTypeDefinition
 // 0x0008 (0x0688 - 0x0680)
@@ -55833,7 +55833,7 @@ public:
 	};
 };
 
-UClass* UVehicleWeaponTypeDefinition::pClassPointer = NULL;
+//UClass* UVehicleWeaponTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.VendingMachineFeedbackGFxObject
 // 0x0030 (0x00A8 - 0x0078)
@@ -55864,7 +55864,7 @@ public:
 	void TriggerPurchased();
 };
 
-UClass* UVendingMachineFeedbackGFxObject::pClassPointer = NULL;
+//UClass* UVendingMachineFeedbackGFxObject::pClassPointer = NULL;
 
 // Class WillowGame.WeaponShotDebug
 // 0x000C (0x0194 - 0x0188)
@@ -55890,7 +55890,7 @@ public:
 	void FinalizeComponentInitialization(unsigned long bHideAimArrow, unsigned long bHideShotArrow, unsigned long bHideSpreadArrow);
 };
 
-UClass* AWeaponShotDebug::pClassPointer = NULL;
+//UClass* AWeaponShotDebug::pClassPointer = NULL;
 
 // Class WillowGame.WillowAIEncounterComponent
 // 0x0000 (0x01C4 - 0x01C4)
@@ -55911,7 +55911,7 @@ public:
 	};
 };
 
-UClass* UWillowAIEncounterComponent::pClassPointer = NULL;
+//UClass* UWillowAIEncounterComponent::pClassPointer = NULL;
 
 // Class WillowGame.WillowAnimNode_Audio
 // 0x000B (0x00D0 - 0x00C5)
@@ -55938,7 +55938,7 @@ public:
 	bool IsValid();
 };
 
-UClass* UWillowAnimNode_Audio::pClassPointer = NULL;
+//UClass* UWillowAnimNode_Audio::pClassPointer = NULL;
 
 // Class WillowGame.WillowPickupMessage
 // 0x0000 (0x004C - 0x004C)
@@ -55962,7 +55962,7 @@ public:
 	void ClientReceive(class APlayerController* P, int Switch, class APlayerReplicationInfo* RelatedPRI, class APlayerReplicationInfo* RelatedPRI01, class UObject* OptionalObject);
 };
 
-UClass* UWillowPickupMessage::pClassPointer = NULL;
+//UClass* UWillowPickupMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowConsole
 // 0x0000 (0x01D0 - 0x01D0)
@@ -55983,7 +55983,7 @@ public:
 	};
 };
 
-UClass* UWillowConsole::pClassPointer = NULL;
+//UClass* UWillowConsole::pClassPointer = NULL;
 
 // Class WillowGame.WillowDamageType_Bullet
 // 0x0000 (0x0080 - 0x0080)
@@ -56004,7 +56004,7 @@ public:
 	};
 };
 
-UClass* UWillowDamageType_Bullet::pClassPointer = NULL;
+//UClass* UWillowDamageType_Bullet::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgSource_MeleeWithBlade
 // 0x0000 (0x0080 - 0x0080)
@@ -56025,7 +56025,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgSource_MeleeWithBlade::pClassPointer = NULL;
+//UClass* UWillowDmgSource_MeleeWithBlade::pClassPointer = NULL;
 
 // Class WillowGame.WillowDmgType_VehicleCollision
 // 0x0000 (0x0080 - 0x0080)
@@ -56046,7 +56046,7 @@ public:
 	};
 };
 
-UClass* UWillowDmgType_VehicleCollision::pClassPointer = NULL;
+//UClass* UWillowDmgType_VehicleCollision::pClassPointer = NULL;
 
 // Class WillowGame.WillowEmit_BodyFlame
 // 0x0000 (0x0218 - 0x0218)
@@ -56067,7 +56067,7 @@ public:
 	};
 };
 
-UClass* AWillowEmit_BodyFlame::pClassPointer = NULL;
+//UClass* AWillowEmit_BodyFlame::pClassPointer = NULL;
 
 // Class WillowGame.WillowEmitterPool
 // 0x0000 (0x01F0 - 0x01F0)
@@ -56088,7 +56088,7 @@ public:
 	};
 };
 
-UClass* AWillowEmitterPool::pClassPointer = NULL;
+//UClass* AWillowEmitterPool::pClassPointer = NULL;
 
 // Class WillowGame.WillowPendingLevelPlayerController
 // 0x0000 (0x197C - 0x197C)
@@ -56117,7 +56117,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWillowPendingLevelPlayerController::pClassPointer = NULL;
+//UClass* AWillowPendingLevelPlayerController::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxBuddyPlane
 // 0x0000 (0x0264 - 0x0264)
@@ -56138,7 +56138,7 @@ public:
 	};
 };
 
-UClass* UWillowGFxBuddyPlane::pClassPointer = NULL;
+//UClass* UWillowGFxBuddyPlane::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxEditDialog
 // 0x001C (0x0280 - 0x0264)
@@ -56177,7 +56177,7 @@ public:
 	void OnMenuItemClicked(class UWillowGFxEditDialog* EditDialog);
 };
 
-UClass* UWillowGFxEditDialog::pClassPointer = NULL;
+//UClass* UWillowGFxEditDialog::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxLobbyTools
 // 0x0014 (0x0050 - 0x003C)
@@ -56230,7 +56230,7 @@ public:
 	void Init(class UWillowGFxMovie* inMovie);
 };
 
-UClass* UWillowGFxLobbyTools::pClassPointer = NULL;
+//UClass* UWillowGFxLobbyTools::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxTrainingDialogBox
 // 0x0005 (0x02F9 - 0x02F4)
@@ -56261,7 +56261,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UWillowGFxTrainingDialogBox::pClassPointer = NULL;
+//UClass* UWillowGFxTrainingDialogBox::pClassPointer = NULL;
 
 // Class WillowGame.WillowGFxTrainingDialogBox_NoPause
 // 0x0003 (0x02FC - 0x02F9)
@@ -56282,7 +56282,7 @@ public:
 	};
 };
 
-UClass* UWillowGFxTrainingDialogBox_NoPause::pClassPointer = NULL;
+//UClass* UWillowGFxTrainingDialogBox_NoPause::pClassPointer = NULL;
 
 // Class WillowGame.WillowInteractiveObjectAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -56305,7 +56305,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UWillowInteractiveObjectAttributeContextResolver::pClassPointer = NULL;
+//UClass* UWillowInteractiveObjectAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.WillowInventoryManagerAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
@@ -56328,7 +56328,7 @@ public:
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-UClass* UWillowInventoryManagerAttributeContextResolver::pClassPointer = NULL;
+//UClass* UWillowInventoryManagerAttributeContextResolver::pClassPointer = NULL;
 
 // Class WillowGame.WillowLANGameSearch
 // 0x0000 (0x0100 - 0x0100)
@@ -56349,7 +56349,7 @@ public:
 	};
 };
 
-UClass* UWillowLANGameSearch::pClassPointer = NULL;
+//UClass* UWillowLANGameSearch::pClassPointer = NULL;
 
 // Class WillowGame.WillowLockWarningMessage
 // 0x0038 (0x0084 - 0x004C)
@@ -56380,7 +56380,7 @@ public:
 	unsigned char AnnouncementLevel(unsigned char MessageIndex);
 };
 
-UClass* UWillowLockWarningMessage::pClassPointer = NULL;
+//UClass* UWillowLockWarningMessage::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_AILookAt
 // 0x0004 (0x00A8 - 0x00A4)
@@ -56402,7 +56402,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_AILookAt::pClassPointer = NULL;
+//UClass* UWillowSeqAct_AILookAt::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSearchSpecific
 // 0x0000 (0x0100 - 0x0100)
@@ -56423,7 +56423,7 @@ public:
 	};
 };
 
-UClass* UWillowOnlineGameSearchSpecific::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSearchSpecific::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSearchNarrow
 // 0x0000 (0x0100 - 0x0100)
@@ -56444,7 +56444,7 @@ public:
 	};
 };
 
-UClass* UWillowOnlineGameSearchNarrow::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSearchNarrow::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSearchBroad
 // 0x0000 (0x0100 - 0x0100)
@@ -56465,7 +56465,7 @@ public:
 	};
 };
 
-UClass* UWillowOnlineGameSearchBroad::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSearchBroad::pClassPointer = NULL;
 
 // Class WillowGame.WillowOnlineGameSearchCustom
 // 0x0000 (0x0100 - 0x0100)
@@ -56486,7 +56486,7 @@ public:
 	};
 };
 
-UClass* UWillowOnlineGameSearchCustom::pClassPointer = NULL;
+//UClass* UWillowOnlineGameSearchCustom::pClassPointer = NULL;
 
 // Class WillowGame.WillowTeleporterExitPoint
 // 0x0004 (0x018C - 0x0188)
@@ -56508,7 +56508,7 @@ public:
 	};
 };
 
-UClass* AWillowTeleporterExitPoint::pClassPointer = NULL;
+//UClass* AWillowTeleporterExitPoint::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_DuelChallengeIssued
 // 0x0000 (0x00C4 - 0x00C4)
@@ -56529,7 +56529,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_DuelChallengeIssued::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_DuelChallengeIssued::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_DuelChallengeAccepted
 // 0x0000 (0x00C4 - 0x00C4)
@@ -56550,7 +56550,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_DuelChallengeAccepted::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_DuelChallengeAccepted::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_PlayArmAnimation
 // 0x0001 (0x00A5 - 0x00A4)
@@ -56572,7 +56572,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_PlayArmAnimation::pClassPointer = NULL;
+//UClass* UWillowSeqAct_PlayArmAnimation::pClassPointer = NULL;
 
 // Class WillowGame.WillowPopulationEncounter
 // 0x0000 (0x01CC - 0x01CC)
@@ -56603,7 +56603,7 @@ public:
 	void OnAIProvoke(class UWillowSeqAct_AIProvoke* inAction);
 };
 
-UClass* AWillowPopulationEncounter::pClassPointer = NULL;
+//UClass* AWillowPopulationEncounter::pClassPointer = NULL;
 
 // Class WillowGame.WillowReplicatedInventoryManager
 // 0x0000 (0x0238 - 0x0238)
@@ -56624,7 +56624,7 @@ public:
 	};
 };
 
-UClass* AWillowReplicatedInventoryManager::pClassPointer = NULL;
+//UClass* AWillowReplicatedInventoryManager::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderApplyRequiredOption
 // 0x0028 (0x009C - 0x0074)
@@ -56654,7 +56654,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderApplyRequiredOption::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderApplyRequiredOption::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderAudioOptions
 // 0x0000 (0x0074 - 0x0074)
@@ -56686,7 +56686,7 @@ public:
 	void Populate(class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderAudioOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderAudioOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderExtras
 // 0x0000 (0x0054 - 0x0054)
@@ -56710,7 +56710,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderExtras::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderExtras::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderFrontEnd
 // 0x0000 (0x0054 - 0x0054)
@@ -56735,7 +56735,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderFrontEnd::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderFrontEnd::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderGameOptions
 // 0x0000 (0x0074 - 0x0074)
@@ -56758,7 +56758,7 @@ public:
 	void Populate(class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderGameOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderGameOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderGamepadOptions
 // 0x00CC (0x0140 - 0x0074)
@@ -56821,7 +56821,7 @@ public:
 	void Populate(class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderGamepadOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderGamepadOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions
 // 0x0020 (0x0094 - 0x0074)
@@ -56876,7 +56876,7 @@ public:
 	void Populate(class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderKeyboardMouseOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderKeyboardMouseOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderLobby
 // 0x0000 (0x0054 - 0x0054)
@@ -56900,7 +56900,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderLobby::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderLobby::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderMapList
 // 0x0010 (0x0064 - 0x0054)
@@ -56927,7 +56927,7 @@ public:
 	struct FString GetMenuDisplayName();
 };
 
-UClass* UWillowScrollingListDataProviderMapList::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderMapList::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderPause
 // 0x0000 (0x0054 - 0x0054)
@@ -56951,7 +56951,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderPause::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderPause::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderResolutionOptions
 // 0x0000 (0x009C - 0x009C)
@@ -56974,7 +56974,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderResolutionOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderResolutionOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderVideoOptions
 // 0x0004 (0x0078 - 0x0074)
@@ -57006,7 +57006,7 @@ public:
 	void Populate(class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderVideoOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderVideoOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowScrollingListDataProviderWindowModeOptions
 // 0x0000 (0x009C - 0x009C)
@@ -57029,7 +57029,7 @@ public:
 	bool HandleClick(int EventID, class UWillowScrollingList* TheList);
 };
 
-UClass* UWillowScrollingListDataProviderWindowModeOptions::pClassPointer = NULL;
+//UClass* UWillowScrollingListDataProviderWindowModeOptions::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_BossBar
 // 0x0008 (0x00AC - 0x00A4)
@@ -57054,7 +57054,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_BossBar::pClassPointer = NULL;
+//UClass* UWillowSeqAct_BossBar::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_CleanUpPlayerVehicles
 // 0x0004 (0x00A8 - 0x00A4)
@@ -57079,7 +57079,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_CleanUpPlayerVehicles::pClassPointer = NULL;
+//UClass* UWillowSeqAct_CleanUpPlayerVehicles::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ClientFlagGet
 // 0x000C (0x00B0 - 0x00A4)
@@ -57104,7 +57104,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ClientFlagGet::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ClientFlagGet::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ClientFlagSet
 // 0x000C (0x00B0 - 0x00A4)
@@ -57129,7 +57129,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ClientFlagSet::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ClientFlagSet::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_CloseColiseumOverlay
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57152,7 +57152,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_CloseColiseumOverlay::pClassPointer = NULL;
+//UClass* UWillowSeqAct_CloseColiseumOverlay::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumAllDead
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57175,7 +57175,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumAllDead::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumAllDead::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumAwardCertificate
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57198,7 +57198,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumAwardCertificate::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumAwardCertificate::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumNotify
 // 0x0001 (0x00A5 - 0x00A4)
@@ -57222,7 +57222,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumNotify::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumNotify::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumRoundAnnounce
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57245,7 +57245,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumRoundAnnounce::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumRoundAnnounce::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumRuleAnnounce
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57268,7 +57268,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumRuleAnnounce::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumRuleAnnounce::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumStartTimer
 // 0x0001 (0x00A5 - 0x00A4)
@@ -57292,7 +57292,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumStartTimer::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumStartTimer::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ColiseumVictory
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57315,7 +57315,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_ColiseumVictory::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ColiseumVictory::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_ExitVehicle
 // 0x0010 (0x00B4 - 0x00A4)
@@ -57338,7 +57338,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_ExitVehicle::pClassPointer = NULL;
+//UClass* UWillowSeqAct_ExitVehicle::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_KillPawnBasedOnAllegiance
 // 0x0014 (0x00B8 - 0x00A4)
@@ -57369,7 +57369,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_KillPawnBasedOnAllegiance::pClassPointer = NULL;
+//UClass* UWillowSeqAct_KillPawnBasedOnAllegiance::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_MarkPlaythroughCompleted
 // 0x0000 (0x00A4 - 0x00A4)
@@ -57390,7 +57390,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqAct_MarkPlaythroughCompleted::pClassPointer = NULL;
+//UClass* UWillowSeqAct_MarkPlaythroughCompleted::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_NotifyDesignerAttribute
 // 0x000C (0x00B0 - 0x00A4)
@@ -57415,7 +57415,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_NotifyDesignerAttribute::pClassPointer = NULL;
+//UClass* UWillowSeqAct_NotifyDesignerAttribute::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_OpenColiseumOverlay
 // 0x0004 (0x00A8 - 0x00A4)
@@ -57439,7 +57439,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_OpenColiseumOverlay::pClassPointer = NULL;
+//UClass* UWillowSeqAct_OpenColiseumOverlay::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqAct_UpdateColiseumRuleOverlay
 // 0x0005 (0x00A9 - 0x00A4)
@@ -57464,7 +57464,7 @@ public:
 	void eventActivated();
 };
 
-UClass* UWillowSeqAct_UpdateColiseumRuleOverlay::pClassPointer = NULL;
+//UClass* UWillowSeqAct_UpdateColiseumRuleOverlay::pClassPointer = NULL;
 
 // Class WillowGame.WillowSeqEvent_CounterAtTarget
 // 0x0001 (0x00C5 - 0x00C4)
@@ -57486,7 +57486,7 @@ public:
 	};
 };
 
-UClass* UWillowSeqEvent_CounterAtTarget::pClassPointer = NULL;
+//UClass* UWillowSeqEvent_CounterAtTarget::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_LeftLowerEyelidLook
 // 0x0000 (0x0100 - 0x0100)
@@ -57507,7 +57507,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_LeftLowerEyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_LeftLowerEyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_LeftUpperEyelidLook
 // 0x0000 (0x0114 - 0x0114)
@@ -57528,7 +57528,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_LeftUpperEyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_LeftUpperEyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_RightLowerEyelidLook
 // 0x0000 (0x0100 - 0x0100)
@@ -57549,7 +57549,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_RightLowerEyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_RightLowerEyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowSkelControl_RightUpperEyelidLook
 // 0x0000 (0x0114 - 0x0114)
@@ -57570,7 +57570,7 @@ public:
 	};
 };
 
-UClass* UWillowSkelControl_RightUpperEyelidLook::pClassPointer = NULL;
+//UClass* UWillowSkelControl_RightUpperEyelidLook::pClassPointer = NULL;
 
 // Class WillowGame.WillowTeleporter
 // 0x0000 (0x026C - 0x026C)
@@ -57593,7 +57593,7 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-UClass* AWillowTeleporter::pClassPointer = NULL;
+//UClass* AWillowTeleporter::pClassPointer = NULL;
 
 // Class WillowGame.WillowTI_CalcCombat
 // 0x0000 (0x004C - 0x004C)
@@ -57614,7 +57614,7 @@ public:
 	};
 };
 
-UClass* UWillowTI_CalcCombat::pClassPointer = NULL;
+//UClass* UWillowTI_CalcCombat::pClassPointer = NULL;
 
 // Class WillowGame.WillowVehicle_Turret
 // 0x0000 (0x0D14 - 0x0D14)
@@ -57635,7 +57635,7 @@ public:
 	};
 };
 
-UClass* AWillowVehicle_Turret::pClassPointer = NULL;
+//UClass* AWillowVehicle_Turret::pClassPointer = NULL;
 
 // Class WillowGame.WillowVersusDuelBehavior
 // 0x0000 (0x004C - 0x004C)
@@ -57658,7 +57658,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UWillowVersusDuelBehavior::pClassPointer = NULL;
+//UClass* UWillowVersusDuelBehavior::pClassPointer = NULL;
 
 // Class WillowGame.Action_BikeMove
 // 0x003C (0x0164 - 0x0128)
@@ -57702,7 +57702,7 @@ public:
 	struct FName eventCanRun();
 };
 
-UClass* UAction_BikeMove::pClassPointer = NULL;
+//UClass* UAction_BikeMove::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ChangeSkillBehaviorSequenceState
 // 0x0010 (0x005C - 0x004C)
@@ -57728,7 +57728,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeSkillBehaviorSequenceState::pClassPointer = NULL;
+//UClass* UBehavior_ChangeSkillBehaviorSequenceState::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_GetVelocity
 // 0x0004 (0x0050 - 0x004C)
@@ -57753,7 +57753,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_GetVelocity::pClassPointer = NULL;
+//UClass* UBehavior_GetVelocity::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_IncrementOverpowerLevel
 // 0x0004 (0x0050 - 0x004C)
@@ -57777,7 +57777,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IncrementOverpowerLevel::pClassPointer = NULL;
+//UClass* UBehavior_IncrementOverpowerLevel::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ReviveInjuredPlayer
 // 0x0010 (0x005C - 0x004C)
@@ -57801,7 +57801,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ReviveInjuredPlayer::pClassPointer = NULL;
+//UClass* UBehavior_ReviveInjuredPlayer::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetAkRTPCValue
 // 0x0008 (0x0054 - 0x004C)
@@ -57826,7 +57826,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetAkRTPCValue::pClassPointer = NULL;
+//UClass* UBehavior_SetAkRTPCValue::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetDemigodMode
 // 0x0001 (0x004D - 0x004C)
@@ -57850,7 +57850,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetDemigodMode::pClassPointer = NULL;
+//UClass* UBehavior_SetDemigodMode::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SetSkillDefinitionForInjuredStrings
 // 0x0004 (0x0050 - 0x004C)
@@ -57874,7 +57874,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SetSkillDefinitionForInjuredStrings::pClassPointer = NULL;
+//UClass* UBehavior_SetSkillDefinitionForInjuredStrings::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_ShowPullThePinNotification
 // 0x0004 (0x0050 - 0x004C)
@@ -57899,7 +57899,7 @@ public:
 	class AWillowPlayerController* ResolveController(class UObject* Obj);
 };
 
-UClass* UBehavior_ShowPullThePinNotification::pClassPointer = NULL;
+//UClass* UBehavior_ShowPullThePinNotification::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_SkillCustomEvent
 // 0x000C (0x0058 - 0x004C)
@@ -57924,7 +57924,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_SkillCustomEvent::pClassPointer = NULL;
+//UClass* UBehavior_SkillCustomEvent::pClassPointer = NULL;
 
 // Class WillowGame.Behavior_WeaponThrow
 // 0x0000 (0x004C - 0x004C)
@@ -57947,7 +57947,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_WeaponThrow::pClassPointer = NULL;
+//UClass* UBehavior_WeaponThrow::pClassPointer = NULL;
 
 // Class WillowGame.BuzzaxeWeaponTypeDefinition
 // 0x0000 (0x0680 - 0x0680)
@@ -57968,7 +57968,7 @@ public:
 	};
 };
 
-UClass* UBuzzaxeWeaponTypeDefinition::pClassPointer = NULL;
+//UClass* UBuzzaxeWeaponTypeDefinition::pClassPointer = NULL;
 
 // Class WillowGame.CustomizationUsage_FanBoat
 // 0x0000 (0x0048 - 0x0048)
@@ -57989,7 +57989,7 @@ public:
 	};
 };
 
-UClass* UCustomizationUsage_FanBoat::pClassPointer = NULL;
+//UClass* UCustomizationUsage_FanBoat::pClassPointer = NULL;
 
 // Class WillowGame.PsychoInputContextSelector
 // 0x0000 (0x003C - 0x003C)
@@ -58012,7 +58012,7 @@ public:
 	struct FName SelectContext();
 };
 
-UClass* UPsychoInputContextSelector::pClassPointer = NULL;
+//UClass* UPsychoInputContextSelector::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

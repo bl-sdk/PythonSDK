@@ -142,7 +142,7 @@ public:
 	};
 };
 
-UClass* UGFxEngine::pClassPointer = NULL;
+//UClass* UGFxEngine::pClassPointer = NULL;
 
 // Class GFxUI.GFxFSCmdHandler
 // 0x0000 (0x003C - 0x003C)
@@ -165,7 +165,7 @@ public:
 	bool eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, struct FString Cmd, struct FString Arg);
 };
 
-UClass* UGFxFSCmdHandler::pClassPointer = NULL;
+//UClass* UGFxFSCmdHandler::pClassPointer = NULL;
 
 // Class GFxUI.GFxInteraction
 // 0x0004 (0x007C - 0x0078)
@@ -194,7 +194,7 @@ public:
 	class UGFxMoviePlayer* GetFocusMovie(int ControllerId);
 };
 
-UClass* UGFxInteraction::pClassPointer = NULL;
+//UClass* UGFxInteraction::pClassPointer = NULL;
 
 // Class GFxUI.GFxManager
 // 0x0004 (0x0040 - 0x003C)
@@ -221,7 +221,7 @@ public:
 	void eventInit(class UGFxManagerDefinition* Def);
 };
 
-UClass* UGFxManager::pClassPointer = NULL;
+//UClass* UGFxManager::pClassPointer = NULL;
 
 // Class GFxUI.GFxManagerDefinition
 // 0x0018 (0x0054 - 0x003C)
@@ -246,7 +246,7 @@ public:
 	};
 };
 
-UClass* UGFxManagerDefinition::pClassPointer = NULL;
+//UClass* UGFxManagerDefinition::pClassPointer = NULL;
 
 // Class GFxUI.GFxMoviePlayer
 // 0x018C (0x01C8 - 0x003C)
@@ -413,7 +413,7 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-UClass* UGFxMoviePlayer::pClassPointer = NULL;
+//UClass* UGFxMoviePlayer::pClassPointer = NULL;
 
 // Class GFxUI.GFxMovie
 // 0x0000 (0x01C8 - 0x01C8)
@@ -434,7 +434,7 @@ public:
 	};
 };
 
-UClass* UGFxMovie::pClassPointer = NULL;
+//UClass* UGFxMovie::pClassPointer = NULL;
 
 // Class GFxUI.GFxObject
 // 0x003C (0x0078 - 0x003C)
@@ -531,7 +531,7 @@ public:
 	struct FASValue Get(struct FString Member);
 };
 
-UClass* UGFxObject::pClassPointer = NULL;
+//UClass* UGFxObject::pClassPointer = NULL;
 
 // Class GFxUI.GFxClikWidget
 // 0x000C (0x0084 - 0x0078)
@@ -561,7 +561,7 @@ public:
 	void EventListener(struct FEventData Data);
 };
 
-UClass* UGFxClikWidget::pClassPointer = NULL;
+//UClass* UGFxClikWidget::pClassPointer = NULL;
 
 // Class GFxUI.GFxRawData
 // 0x0030 (0x006C - 0x003C)
@@ -586,7 +586,7 @@ public:
 	};
 };
 
-UClass* UGFxRawData::pClassPointer = NULL;
+//UClass* UGFxRawData::pClassPointer = NULL;
 
 // Class GFxUI.SwfMovie
 // 0x0048 (0x00B4 - 0x006C)
@@ -622,7 +622,7 @@ public:
 	struct FString GetPathForLoadMovie();
 };
 
-UClass* USwfMovie::pClassPointer = NULL;
+//UClass* USwfMovie::pClassPointer = NULL;
 
 // Class GFxUI.FlashMovie
 // 0x0000 (0x00B4 - 0x00B4)
@@ -643,7 +643,7 @@ public:
 	};
 };
 
-UClass* UFlashMovie::pClassPointer = NULL;
+//UClass* UFlashMovie::pClassPointer = NULL;
 
 // Class GFxUI.GFxMovieInfo
 // 0x0000 (0x00B4 - 0x00B4)
@@ -664,7 +664,7 @@ public:
 	};
 };
 
-UClass* UGFxMovieInfo::pClassPointer = NULL;
+//UClass* UGFxMovieInfo::pClassPointer = NULL;
 
 // Class GFxUI.GFxValue
 // 0x0030 (0x006C - 0x003C)
@@ -686,7 +686,7 @@ public:
 	};
 };
 
-UClass* UGFxValue::pClassPointer = NULL;
+//UClass* UGFxValue::pClassPointer = NULL;
 
 // Class GFxUI.GFxAction_CloseMovie
 // 0x0008 (0x00AC - 0x00A4)
@@ -711,7 +711,7 @@ public:
 	bool eventIsValidLevelSequenceObject();
 };
 
-UClass* UGFxAction_CloseMovie::pClassPointer = NULL;
+//UClass* UGFxAction_CloseMovie::pClassPointer = NULL;
 
 // Class GFxUI.GFxAction_GetVariable
 // 0x0010 (0x00B4 - 0x00A4)
@@ -736,7 +736,7 @@ public:
 	bool eventIsValidLevelSequenceObject();
 };
 
-UClass* UGFxAction_GetVariable::pClassPointer = NULL;
+//UClass* UGFxAction_GetVariable::pClassPointer = NULL;
 
 // Class GFxUI.GFxAction_Invoke
 // 0x001C (0x00C0 - 0x00A4)
@@ -762,7 +762,7 @@ public:
 	bool eventIsValidLevelSequenceObject();
 };
 
-UClass* UGFxAction_Invoke::pClassPointer = NULL;
+//UClass* UGFxAction_Invoke::pClassPointer = NULL;
 
 // Class GFxUI.GFxAction_OpenMovie
 // 0x0034 (0x00D8 - 0x00A4)
@@ -800,7 +800,7 @@ public:
 	bool eventIsValidLevelSequenceObject();
 };
 
-UClass* UGFxAction_OpenMovie::pClassPointer = NULL;
+//UClass* UGFxAction_OpenMovie::pClassPointer = NULL;
 
 // Class GFxUI.GFxAction_SetCaptureKeys
 // 0x0010 (0x00B4 - 0x00A4)
@@ -823,7 +823,7 @@ public:
 	};
 };
 
-UClass* UGFxAction_SetCaptureKeys::pClassPointer = NULL;
+//UClass* UGFxAction_SetCaptureKeys::pClassPointer = NULL;
 
 // Class GFxUI.GFxAction_SetVariable
 // 0x0010 (0x00B4 - 0x00A4)
@@ -848,7 +848,7 @@ public:
 	bool eventIsValidLevelSequenceObject();
 };
 
-UClass* UGFxAction_SetVariable::pClassPointer = NULL;
+//UClass* UGFxAction_SetVariable::pClassPointer = NULL;
 
 // Class GFxUI.GFxEvent_FSCommand
 // 0x0014 (0x00D8 - 0x00C4)
@@ -872,7 +872,7 @@ public:
 	};
 };
 
-UClass* UGFxEvent_FSCommand::pClassPointer = NULL;
+//UClass* UGFxEvent_FSCommand::pClassPointer = NULL;
 
 // Class GFxUI.GFxFSCmdHandler_Kismet
 // 0x0000 (0x003C - 0x003C)
@@ -895,7 +895,7 @@ public:
 	bool eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, struct FString Cmd, struct FString Arg);
 };
 
-UClass* UGFxFSCmdHandler_Kismet::pClassPointer = NULL;
+//UClass* UGFxFSCmdHandler_Kismet::pClassPointer = NULL;
 
 // Class GFxUI.GFxDataStoreSubscriber
 // 0x0008 (0x0044 - 0x003C)
@@ -927,7 +927,7 @@ public:
 	void PublishValues();
 };
 
-UClass* UGFxDataStoreSubscriber::pClassPointer = NULL;
+//UClass* UGFxDataStoreSubscriber::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

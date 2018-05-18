@@ -15,7 +15,6 @@ namespace BL2SDK
 }
 
 #include "gamedefines.h"
-#include "Signatures.h"
 
 namespace BL2SDK
 {
@@ -77,3 +76,5 @@ namespace BL2SDK
 #include "AkAudio_f_structs.h"
 #include "AkAudio_classes.h"
 //#include "AkAudio_functions.h"
+
+//#include "BL2-SDK.h"

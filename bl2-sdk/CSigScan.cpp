@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include "MemorySignature.h"
 #include "CSigScan.h"
 // Based off CSigScan from AlliedModders
 

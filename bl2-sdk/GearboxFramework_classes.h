@@ -1174,7 +1174,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryClone::pClassPointer = NULL;
+//UClass* UActorFactoryClone::pClassPointer = NULL;
 
 // Class GearboxFramework.ActorFactoryWireTerminal
 // 0x0000 (0x007C - 0x007C)
@@ -1195,7 +1195,7 @@ public:
 	};
 };
 
-UClass* UActorFactoryWireTerminal::pClassPointer = NULL;
+//UClass* UActorFactoryWireTerminal::pClassPointer = NULL;
 
 // Class GearboxFramework.AIDebugCamera
 // 0x0050 (0x008C - 0x003C)
@@ -1268,7 +1268,7 @@ public:
 	void Display(class AHUD* HUD);
 };
 
-UClass* UAIDebugCamera::pClassPointer = NULL;
+//UClass* UAIDebugCamera::pClassPointer = NULL;
 
 // Class GearboxFramework.AITracker
 // 0x00D4 (0x0110 - 0x003C)
@@ -1293,7 +1293,7 @@ public:
 	};
 };
 
-UClass* UAITracker::pClassPointer = NULL;
+//UClass* UAITracker::pClassPointer = NULL;
 
 // Class GearboxFramework.AnimNodeSpecialMoveBlend
 // 0x0020 (0x010C - 0x00EC)
@@ -1330,7 +1330,7 @@ public:
 	float Play(class UGearboxAnimDefinition* CustomAnimSMD, struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride);
 };
 
-UClass* UAnimNodeSpecialMoveBlend::pClassPointer = NULL;
+//UClass* UAnimNodeSpecialMoveBlend::pClassPointer = NULL;
 
 // Class GearboxFramework.AttributeExpressionEvaluator
 // 0x0010 (0x004C - 0x003C)
@@ -1354,7 +1354,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UAttributeExpressionEvaluator::pClassPointer = NULL;
+//UClass* UAttributeExpressionEvaluator::pClassPointer = NULL;
 
 // Class GearboxFramework.Behavior_CallFunction
 // 0x0008 (0x0054 - 0x004C)
@@ -1379,7 +1379,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_CallFunction::pClassPointer = NULL;
+//UClass* UBehavior_CallFunction::pClassPointer = NULL;
 
 // Class GearboxFramework.Behavior_ChangeRemoteBehaviorSequenceState
 // 0x0044 (0x0090 - 0x004C)
@@ -1406,7 +1406,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeRemoteBehaviorSequenceState::pClassPointer = NULL;
+//UClass* UBehavior_ChangeRemoteBehaviorSequenceState::pClassPointer = NULL;
 
 // Class GearboxFramework.Behavior_ChangeTimer
 // 0x001C (0x0068 - 0x004C)
@@ -1434,7 +1434,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_ChangeTimer::pClassPointer = NULL;
+//UClass* UBehavior_ChangeTimer::pClassPointer = NULL;
 
 // Class GearboxFramework.Behavior_IsSequenceEnabled
 // 0x0040 (0x008C - 0x004C)
@@ -1460,7 +1460,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_IsSequenceEnabled::pClassPointer = NULL;
+//UClass* UBehavior_IsSequenceEnabled::pClassPointer = NULL;
 
 // Class GearboxFramework.Behavior_PostAkEvent
 // 0x0010 (0x005C - 0x004C)
@@ -1490,7 +1490,7 @@ public:
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-UClass* UBehavior_PostAkEvent::pClassPointer = NULL;
+//UClass* UBehavior_PostAkEvent::pClassPointer = NULL;
 
 // Class GearboxFramework.BehaviorHelpers
 // 0x0018 (0x0054 - 0x003C)
@@ -1523,7 +1523,7 @@ public:
 	struct FVector GetRelativeDirection(struct FRelativeDirectionData DesiredDirection, class UIWorldBody* Source, struct FVector DefaultDirection, struct FName SpawnSocketName);
 };
 
-UClass* UBehaviorHelpers::pClassPointer = NULL;
+//UClass* UBehaviorHelpers::pClassPointer = NULL;
 
 // Class GearboxFramework.CompoundExpressionEvaluator
 // 0x000C (0x0048 - 0x003C)
@@ -1549,7 +1549,7 @@ public:
 	bool Evaluate(class UObject* ContextSource);
 };
 
-UClass* UCompoundExpressionEvaluator::pClassPointer = NULL;
+//UClass* UCompoundExpressionEvaluator::pClassPointer = NULL;
 
 // Class GearboxFramework.ConditionalAttributeValueResolver
 // 0x0020 (0x005C - 0x003C)
@@ -1571,7 +1571,7 @@ public:
 	};
 };
 
-UClass* UConditionalAttributeValueResolver::pClassPointer = NULL;
+//UClass* UConditionalAttributeValueResolver::pClassPointer = NULL;
 
 // Class GearboxFramework.ConstantAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
@@ -1593,7 +1593,7 @@ public:
 	};
 };
 
-UClass* UConstantAttributeValueResolver::pClassPointer = NULL;
+//UClass* UConstantAttributeValueResolver::pClassPointer = NULL;
 
 // Class GearboxFramework.ConstraintAttributeValueResolver
 // 0x0028 (0x0064 - 0x003C)
@@ -1615,7 +1615,7 @@ public:
 	};
 };
 
-UClass* UConstraintAttributeValueResolver::pClassPointer = NULL;
+//UClass* UConstraintAttributeValueResolver::pClassPointer = NULL;
 
 // Class GearboxFramework.FeatherBoneBlendDefinition
 // 0x000C (0x0048 - 0x003C)
@@ -1637,7 +1637,7 @@ public:
 	};
 };
 
-UClass* UFeatherBoneBlendDefinition::pClassPointer = NULL;
+//UClass* UFeatherBoneBlendDefinition::pClassPointer = NULL;
 
 // Class GearboxFramework.GBXActorList
 // 0x000C (0x0048 - 0x003C)
@@ -1670,7 +1670,7 @@ public:
 	void AddActor(class AActor* Actor, class ULevel* Level);
 };
 
-UClass* UGBXActorList::pClassPointer = NULL;
+//UClass* UGBXActorList::pClassPointer = NULL;
 
 // Class GearboxFramework.GBXObjectList
 // 0x000C (0x0048 - 0x003C)
@@ -1698,7 +1698,7 @@ public:
 	void AddObject(class UObject* TheObject);
 };
 
-UClass* UGBXObjectList::pClassPointer = NULL;
+//UClass* UGBXObjectList::pClassPointer = NULL;
 
 // Class GearboxFramework.GearboxAIController
 // 0x0000 (0x0684 - 0x0684)
@@ -1721,7 +1721,7 @@ public:
 	void ForceMoveToActor(class AActor* destActor);
 };
 
-UClass* AGearboxAIController::pClassPointer = NULL;
+//UClass* AGearboxAIController::pClassPointer = NULL;
 
 // Class GearboxFramework.GearboxAIMoveNode
 // 0x003C (0x01C4 - 0x0188)

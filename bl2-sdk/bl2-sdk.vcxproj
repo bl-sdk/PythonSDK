@@ -65,7 +65,6 @@
       <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ShowIncludes>false</ShowIncludes>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DebugInformationFormat>None</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -92,7 +91,6 @@
       <AdditionalOptions>/Zc:strictStrings- %(AdditionalOptions)</AdditionalOptions>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ShowIncludes>false</ShowIncludes>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <DebugInformationFormat>None</DebugInformationFormat>
     </ClCompile>
@@ -161,6 +159,7 @@
     <ClCompile Include="Core_functions.cpp" />
     <ClCompile Include="CSigScan.cpp" />
     <ClCompile Include="CSimpleDetour.cpp" />
+    <ClCompile Include="detours.cpp" />
     <ClCompile Include="Engine_functions.cpp" />
     <ClCompile Include="GameFramework_functions.cpp" />
     <ClCompile Include="GameHooks.cpp" />

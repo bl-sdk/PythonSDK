@@ -204,7 +204,34 @@ public:
 	char* GetNameCPP();
 	char* GetFullName();
 
-	template< class T > static T* FindObject(char* ObjectFullName);
+	template< class T > static T* FindObject(const std::string& ObjectFullName)
+	{
+		while (!UObject::GObjObjects())
+			Sleep(100);
+
+		while (!FName::Names())
+			Sleep(100);
+
+		for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjObjects()->Data[i];
+
+			// skip no T class objects
+			if
+				(
+					!Object
+					|| !Object->IsA(T::StaticClass())
+					)
+				continue;
+
+			// check
+			if (Object->GetFullName() == ObjectFullName)
+				return (T*)Object;
+		}
+
+		return nullptr;
+	}
+
 	static UClass* FindClass(char* ClassFullName);
 
 	bool IsA(UClass* pClass);
@@ -803,7 +830,7 @@ public:
 	virtual void VirtualFunction255();																			// 0x01074DF0 (0x3FC)
 };
 
-UClass* UObject::pClassPointer = NULL;
+//UClass* UObject::pClassPointer = NULL;
 
 // Class Core.TextBuffer
 // 0x0024 (0x0060 - 0x003C)
@@ -825,7 +852,7 @@ public:
 	};
 };
 
-UClass* UTextBuffer::pClassPointer = NULL;
+//UClass* UTextBuffer::pClassPointer = NULL;
 
 // Class Core.Subsystem
 // 0x0004 (0x0040 - 0x003C)
@@ -847,7 +874,7 @@ public:
 	};
 };
 
-UClass* USubsystem::pClassPointer = NULL;
+//UClass* USubsystem::pClassPointer = NULL;
 
 // Class Core.System
 // 0x0104 (0x0144 - 0x0040)
@@ -893,7 +920,7 @@ public:
 	};
 };
 
-UClass* USystem::pClassPointer = NULL;
+//UClass* USystem::pClassPointer = NULL;
 
 // Class Core.PackageMap
 // 0x0084 (0x00C0 - 0x003C)
@@ -915,7 +942,7 @@ public:
 	};
 };
 
-UClass* UPackageMap::pClassPointer = NULL;
+//UClass* UPackageMap::pClassPointer = NULL;
 
 // Class Core.ObjectSerializer
 // 0x000C (0x0048 - 0x003C)
@@ -937,7 +964,7 @@ public:
 	};
 };
 
-UClass* UObjectSerializer::pClassPointer = NULL;
+//UClass* UObjectSerializer::pClassPointer = NULL;
 
 // Class Core.ObjectRedirector
 // 0x0004 (0x0040 - 0x003C)
@@ -959,7 +986,7 @@ public:
 	};
 };
 
-UClass* UObjectRedirector::pClassPointer = NULL;
+//UClass* UObjectRedirector::pClassPointer = NULL;
 
 // Class Core.MetaData
 // 0x003C (0x0078 - 0x003C)
@@ -981,7 +1008,7 @@ public:
 	};
 };
 
-UClass* UMetaData::pClassPointer = NULL;
+//UClass* UMetaData::pClassPointer = NULL;
 
 // Class Core.Linker
 // 0x0534 (0x0570 - 0x003C)
@@ -1003,7 +1030,7 @@ public:
 	};
 };
 
-UClass* ULinker::pClassPointer = NULL;
+//UClass* ULinker::pClassPointer = NULL;
 
 // Class Core.LinkerSave
 // 0x00A8 (0x0618 - 0x0570)
@@ -1025,7 +1052,7 @@ public:
 	};
 };
 
-UClass* ULinkerSave::pClassPointer = NULL;
+//UClass* ULinkerSave::pClassPointer = NULL;
 
 // Class Core.LinkerLoad
 // 0x05C4 (0x0B34 - 0x0570)
@@ -1047,7 +1074,7 @@ public:
 	};
 };
 
-UClass* ULinkerLoad::pClassPointer = NULL;
+//UClass* ULinkerLoad::pClassPointer = NULL;
 
 // Class Core.Interface
 // 0x0000 (0x003C - 0x003C)
@@ -1068,7 +1095,7 @@ public:
 	};
 };
 
-UClass* UInterface::pClassPointer = NULL;
+//UClass* UInterface::pClassPointer = NULL;
 
 // Class Core.Field
 // 0x0004 (0x0040 - 0x003C)
@@ -1090,7 +1117,7 @@ public:
 	};
 };
 
-UClass* UField::pClassPointer = NULL;
+//UClass* UField::pClassPointer = NULL;
 
 // Class Core.Struct
 // 0x004C (0x008C - 0x0040)
@@ -1116,7 +1143,7 @@ public:
 	};
 };
 
-UClass* UStruct::pClassPointer = NULL;
+//UClass* UStruct::pClassPointer = NULL;
 
 // Class Core.ScriptStruct
 // 0x001C (0x00A8 - 0x008C)
@@ -1138,7 +1165,7 @@ public:
 	};
 };
 
-UClass* UScriptStruct::pClassPointer = NULL;
+//UClass* UScriptStruct::pClassPointer = NULL;
 
 // Class Core.Function
 // 0x0024 (0x00B0 - 0x008C)
@@ -1168,7 +1195,7 @@ public:
 	};
 };
 
-UClass* UFunction::pClassPointer = NULL;
+//UClass* UFunction::pClassPointer = NULL;
 
 // Class Core.Property
 // 0x0040 (0x0080 - 0x0040)
@@ -1190,7 +1217,7 @@ public:
 	};
 };
 
-UClass* UProperty::pClassPointer = NULL;
+//UClass* UProperty::pClassPointer = NULL;
 
 // Class Core.StructProperty
 // 0x0004 (0x0084 - 0x0080)
@@ -1212,7 +1239,7 @@ public:
 	};
 };
 
-UClass* UStructProperty::pClassPointer = NULL;
+//UClass* UStructProperty::pClassPointer = NULL;
 
 // Class Core.StrProperty
 // 0x0000 (0x0080 - 0x0080)
@@ -1233,7 +1260,7 @@ public:
 	};
 };
 
-UClass* UStrProperty::pClassPointer = NULL;
+//UClass* UStrProperty::pClassPointer = NULL;
 
 // Class Core.ObjectProperty
 // 0x0004 (0x0084 - 0x0080)
@@ -1255,7 +1282,7 @@ public:
 	};
 };
 
-UClass* UObjectProperty::pClassPointer = NULL;
+//UClass* UObjectProperty::pClassPointer = NULL;
 
 // Class Core.ComponentProperty
 // 0x0000 (0x0084 - 0x0084)
@@ -1276,7 +1303,7 @@ public:
 	};
 };
 
-UClass* UComponentProperty::pClassPointer = NULL;
+//UClass* UComponentProperty::pClassPointer = NULL;
 
 // Class Core.ClassProperty
 // 0x0004 (0x0088 - 0x0084)
@@ -1298,7 +1325,7 @@ public:
 	};
 };
 
-UClass* UClassProperty::pClassPointer = NULL;
+//UClass* UClassProperty::pClassPointer = NULL;
 
 // Class Core.NameProperty
 // 0x0000 (0x0080 - 0x0080)
@@ -1319,7 +1346,7 @@ public:
 	};
 };
 
-UClass* UNameProperty::pClassPointer = NULL;
+//UClass* UNameProperty::pClassPointer = NULL;
 
 // Class Core.MapProperty
 // 0x0008 (0x0088 - 0x0080)
@@ -1341,7 +1368,7 @@ public:
 	};
 };
 
-UClass* UMapProperty::pClassPointer = NULL;
+//UClass* UMapProperty::pClassPointer = NULL;
 
 // Class Core.IntProperty
 // 0x0000 (0x0080 - 0x0080)
@@ -1362,7 +1389,7 @@ public:
 	};
 };
 
-UClass* UIntProperty::pClassPointer = NULL;
+//UClass* UIntProperty::pClassPointer = NULL;
 
 // Class Core.IntAttributeProperty
 // 0x0008 (0x0088 - 0x0080)
@@ -1384,7 +1411,7 @@ public:
 	};
 };
 
-UClass* UIntAttributeProperty::pClassPointer = NULL;
+//UClass* UIntAttributeProperty::pClassPointer = NULL;
 
 // Class Core.InterfaceProperty
 // 0x0004 (0x0084 - 0x0080)
@@ -1406,7 +1433,7 @@ public:
 	};
 };
 
-UClass* UInterfaceProperty::pClassPointer = NULL;
+//UClass* UInterfaceProperty::pClassPointer = NULL;
 
 // Class Core.FloatProperty
 // 0x0000 (0x0080 - 0x0080)
@@ -1427,7 +1454,7 @@ public:
 	};
 };
 
-UClass* UFloatProperty::pClassPointer = NULL;
+//UClass* UFloatProperty::pClassPointer = NULL;
 
 // Class Core.FloatAttributeProperty
 // 0x0008 (0x0088 - 0x0080)
@@ -1449,7 +1476,7 @@ public:
 	};
 };
 
-UClass* UFloatAttributeProperty::pClassPointer = NULL;
+//UClass* UFloatAttributeProperty::pClassPointer = NULL;
 
 // Class Core.DelegateProperty
 // 0x0008 (0x0088 - 0x0080)
@@ -1471,7 +1498,7 @@ public:
 	};
 };
 
-UClass* UDelegateProperty::pClassPointer = NULL;
+//UClass* UDelegateProperty::pClassPointer = NULL;
 
 // Class Core.ByteProperty
 // 0x0004 (0x0084 - 0x0080)
@@ -1493,7 +1520,7 @@ public:
 	};
 };
 
-UClass* UByteProperty::pClassPointer = NULL;
+//UClass* UByteProperty::pClassPointer = NULL;
 
 // Class Core.ByteAttributeProperty
 // 0x0008 (0x008C - 0x0084)
@@ -1515,7 +1542,7 @@ public:
 	};
 };
 
-UClass* UByteAttributeProperty::pClassPointer = NULL;
+//UClass* UByteAttributeProperty::pClassPointer = NULL;
 
 // Class Core.BoolProperty
 // 0x0004 (0x0084 - 0x0080)
@@ -1537,7 +1564,7 @@ public:
 	};
 };
 
-UClass* UBoolProperty::pClassPointer = NULL;
+//UClass* UBoolProperty::pClassPointer = NULL;
 
 // Class Core.ArrayProperty
 // 0x0004 (0x0084 - 0x0080)
@@ -1559,7 +1586,7 @@ public:
 	};
 };
 
-UClass* UArrayProperty::pClassPointer = NULL;
+//UClass* UArrayProperty::pClassPointer = NULL;
 
 // Class Core.Enum
 // 0x000C (0x004C - 0x0040)
@@ -1581,7 +1608,7 @@ public:
 	};
 };
 
-UClass* UEnum::pClassPointer = NULL;
+//UClass* UEnum::pClassPointer = NULL;
 
 // Class Core.Const
 // 0x000C (0x004C - 0x0040)
@@ -1603,7 +1630,7 @@ public:
 	};
 };
 
-UClass* UConst::pClassPointer = NULL;
+//UClass* UConst::pClassPointer = NULL;
 
 // Class Core.Factory
 // 0x0034 (0x0070 - 0x003C)
@@ -1634,7 +1661,7 @@ public:
 	};
 };
 
-UClass* UFactory::pClassPointer = NULL;
+//UClass* UFactory::pClassPointer = NULL;
 
 // Class Core.TextBufferFactory
 // 0x0000 (0x0070 - 0x0070)
@@ -1655,7 +1682,7 @@ public:
 	};
 };
 
-UClass* UTextBufferFactory::pClassPointer = NULL;
+//UClass* UTextBufferFactory::pClassPointer = NULL;
 
 // Class Core.Exporter
 // 0x0028 (0x0064 - 0x003C)
@@ -1680,7 +1707,7 @@ public:
 	};
 };
 
-UClass* UExporter::pClassPointer = NULL;
+//UClass* UExporter::pClassPointer = NULL;
 
 // Class Core.Component
 // 0x000C (0x0048 - 0x003C)
@@ -1703,7 +1730,7 @@ public:
 	};
 };
 
-UClass* UComponent::pClassPointer = NULL;
+//UClass* UComponent::pClassPointer = NULL;
 
 // Class Core.DistributionVector
 // 0x0008 (0x0050 - 0x0048)
@@ -1729,7 +1756,7 @@ public:
 	struct FVector GetVectorValue(float F, int LastExtreme);
 };
 
-UClass* UDistributionVector::pClassPointer = NULL;
+//UClass* UDistributionVector::pClassPointer = NULL;
 
 // Class Core.DistributionFloat
 // 0x0008 (0x0050 - 0x0048)
@@ -1755,7 +1782,7 @@ public:
 	float GetFloatValue(float F);
 };
 
-UClass* UDistributionFloat::pClassPointer = NULL;
+//UClass* UDistributionFloat::pClassPointer = NULL;
 
 // Class Core.Commandlet
 // 0x0040 (0x007C - 0x003C)
@@ -1788,7 +1815,7 @@ public:
 	int eventMain(struct FString Params);
 };
 
-UClass* UCommandlet::pClassPointer = NULL;
+//UClass* UCommandlet::pClassPointer = NULL;
 
 // Class Core.HelpCommandlet
 // 0x0000 (0x007C - 0x007C)
@@ -1811,7 +1838,7 @@ public:
 	int eventMain(struct FString Params);
 };
 
-UClass* UHelpCommandlet::pClassPointer = NULL;
+//UClass* UHelpCommandlet::pClassPointer = NULL;
 
 // Class Core.AttributeModifier
 // 0x0008 (0x0044 - 0x003C)
@@ -1834,7 +1861,7 @@ public:
 	};
 };
 
-UClass* UAttributeModifier::pClassPointer = NULL;
+//UClass* UAttributeModifier::pClassPointer = NULL;
 
 // Class Core.State
 // 0x0044 (0x00D0 - 0x008C)
@@ -1856,7 +1883,7 @@ public:
 	};
 };
 
-UClass* UState::pClassPointer = NULL;
+//UClass* UState::pClassPointer = NULL;
 
 // Class Core.Package
 // 0x00A8 (0x00E4 - 0x003C)
@@ -1878,7 +1905,7 @@ public:
 	};
 };
 
-UClass* UPackage::pClassPointer = NULL;
+//UClass* UPackage::pClassPointer = NULL;
 
 // Class Core.Class
 // 0x0100 (0x01D0 - 0x00D0)
@@ -1900,7 +1927,7 @@ public:
 	};
 };
 
-UClass* UClass::pClassPointer = NULL;
+//UClass* UClass::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )
