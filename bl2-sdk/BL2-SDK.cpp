@@ -407,4 +407,9 @@ namespace BL2SDK
 
 		return p;
 	}
+
+	bool getIsGameInitialized() {
+		//BL2SDK::getGameEngine()->LevelChangeState;
+		return false; //check if the game has been initialized
+	}
 }

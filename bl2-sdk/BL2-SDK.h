@@ -40,6 +40,7 @@ namespace BL2SDK
 	void makeInjectedCallNext();
 	void initialize(/*LauncherStruct* args*/);
 	void cleanup();
+	bool getIsGameInitialized();
 }
 
 #endif
