@@ -55,7 +55,7 @@ namespace BL2SDK
 		}
 
 		/*
-		if (!GameHooks::ProcessEngineHooks(caller, function, parms, result))
+		if (!GameHooks::processEngineHooks(caller, function, parms, result))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -80,7 +80,7 @@ namespace BL2SDK
 		}
 
 		/*
-		if (!GameHooks::ProcessUnrealScriptHooks(caller, stack, result, function))
+		if (!GameHooks::processUnrealScriptHooks(caller, stack, result, function))
 		{
 			// UnrealScript hook manager already took care of it
 			return;
@@ -90,7 +90,7 @@ namespace BL2SDK
 		pCallFunction(caller, stack, result, function);
 	}
 
-	void InjectedCallNext()
+	void makeInjectedCallNext()
 	{
 		injectedCallNext = true;
 	}
@@ -107,7 +107,7 @@ namespace BL2SDK
 	}
 	*/
 
-	int UnrealExceptionHandler(unsigned int code, struct _EXCEPTION_POINTERS* ep)
+	int unrealExceptionHandler(unsigned int code, struct _EXCEPTION_POINTERS* ep)
 	{
 		if (IsDebuggerPresent())
 		{
@@ -135,7 +135,7 @@ namespace BL2SDK
 	}
 
 	/*
-	bool GetGameVersion(std::wstring& appVersion)
+	bool getGameVersion(std::wstring& appVersion)
 	{
 		const wchar_t* filename = L"Borderlands2.exe";
 
@@ -183,7 +183,7 @@ namespace BL2SDK
 	*/
 
 	// TODO: Make less shit
-	void HookGame()
+	void hookGame()
 	{
 		CSigScan sigscan(L"Borderlands2.exe");
 
@@ -248,7 +248,7 @@ namespace BL2SDK
 		detProcessEvent.Attach();
 
 		// Detour Unreal exception handler
-		SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, UnrealExceptionHandler);
+		SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
 		detUnrealEH.Attach();
 
 		// Detour UObject::CallFunction()
@@ -256,7 +256,7 @@ namespace BL2SDK
 		detCallFunction.Attach();
 	}
 
-	bool DevInputKeyHook(UObject* caller, UFunction* function, void* parms, void* result)
+	bool devInputKeyHook(UObject* caller, UFunction* function, void* parms, void* result)
 	{
 		UWillowGameViewportClient_execInputKey_Parms* realParms = reinterpret_cast<UWillowGameViewportClient_execInputKey_Parms*>(parms);
 
@@ -288,7 +288,7 @@ namespace BL2SDK
 
 	// This function is used to get the dimensions of the game window for Gwen's renderer
 	// It will also initialize Lua and the command system, so the SDK is essentially fully operational at this point
-	bool GetCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
+	bool getCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
 	{
 		/*
 		InitializeLua();
@@ -304,7 +304,7 @@ namespace BL2SDK
 		return true;
 	}
 
-	void InitializeGameVersions()
+	void initializeGameVersions()
 	{
 		UObject* obj = UObject::StaticClass(); // Any UObject* will do
 		EngineVersion = obj->GetEngineVersion();
@@ -327,7 +327,7 @@ namespace BL2SDK
 		//Logging::InitializeGameConsole();
 		//Logging::PrintLogHeader();
 
-		InitializeGameVersions();
+		initializeGameVersions();
 
 		// Set console key to Tilde if not already set
 		UConsole* console = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
@@ -338,12 +338,12 @@ namespace BL2SDK
 
 		GameHooks::EngineHookManager->RemoveStaticHook(function, "StartupSDK");
 
-		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:PostRender", "GetCanvas", &GetCanvasPostRender);
+		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:PostRender", "GetCanvas", &getCanvasPostRender);
 
 		return true;
 	}
 
-	void Initialize(/*LauncherStruct* args*/)
+	void initialize(/*LauncherStruct* args*/)
 	{
 		//Settings::Initialize(args);
 
@@ -363,7 +363,7 @@ namespace BL2SDK
 			/*
 			if (!args->DisableCrashRpt)
 			{
-				CrashRptHelper::Initialize();
+				CrashRptHelper::initialize();
 			}
 
 			if (args->DisableAntiDebug)
@@ -372,9 +372,9 @@ namespace BL2SDK
 			}
 			*/
 
-		GameHooks::Initialize();
+		GameHooks::initialize();
 
-		HookGame();
+		hookGame();
 		InitializePackageFix();
 
 		//LogAllProcessEventCalls(args->LogAllProcessEventCalls);
@@ -385,10 +385,10 @@ namespace BL2SDK
 
 	// This is called when the process is closing
 	// TODO: Other things might need cleaning up
-	void Cleanup()
+	void cleanup()
 	{
 		//Logging::Cleanup();
-		GameHooks::Cleanup();
+		GameHooks::cleanup();
 	}
 
 	UWillowGameEngine* getGameEngine()

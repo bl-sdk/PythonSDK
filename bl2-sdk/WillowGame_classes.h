@@ -12821,7 +12821,7 @@ public:
 	void eventOnSpawnActor(class AActor* SpawnedActor);
 	void CreateWaypointFromWaypointSetting(class AActor* WaypointActor);
 	void GrantItemsToActor(class AActor* SpawnedActor);
-	void eventInitialize();
+	void eventinitialize();
 };
 
 //UClass* UMissionPopulationAspect::pClassPointer = NULL;
@@ -14034,7 +14034,7 @@ public:
 	void HandleMessage(class AWillowPlayerController* FromPlayer, int MessageData, class UObject* Data);
 	class UClass* GetClientType();
 	int GetInitialMessageForPlayer(class AWillowPlayerController* WPC);
-	void Initialize();
+	void initialize();
 };
 
 //UClass* UPlayerInteractionServer::pClassPointer = NULL;
@@ -14060,7 +14060,7 @@ public:
 	};
 
 	bool IsValid();
-	void Initialize();
+	void initialize();
 	class UClass* GetClientType();
 	int GetInitialMessageForPlayer(class AWillowPlayerController* WPC);
 	void HandleMessage(class AWillowPlayerController* FromPlayer, int MessageData, class UObject* Data);
@@ -15590,7 +15590,7 @@ public:
 	void ClientCloseLobby();
 	void StartActionSkill();
 	void TryOpenCharacterSelectUI();
-	void ClientNotifyPostInitialize();
+	void ClientNotifyPostinitialize();
 	void ClientSetHUD(class UClass* newHUDType, unsigned long bShowLobby);
 	bool IsCurrentLevelInTheGame();
 	void ClientGFxStopMovie(struct FName MovieTag);
@@ -19140,7 +19140,7 @@ public:
 	void SetCurrentVehicleFamily(class UVehicleFamilyDefinition* InVehicleFamilyDef);
 	bool IsSpawnStationInUseByOtherThan(class APawn* TheUser);
 	void SetSpawnStationInUse(class AVehicleSpawnStationTerminal* TheTerminal, class APawn* TheUser, unsigned long InUse);
-	void Initialize();
+	void initialize();
 };
 
 //UClass* AVehicleLifetimeManager::pClassPointer = NULL;
@@ -26837,7 +26837,7 @@ public:
 	void SetUniqueId(struct FUniqueNetId PlayerUniqueId);
 	void NotifyPlayerUidUpdated();
 	void NotifyPlayerNameUpdated();
-	void RunOnceClientInitialize();
+	void RunOnceClientinitialize();
 	void ClientInitialize(class AController* C);
 	void eventReplicatedEvent(struct FName VarName);
 };

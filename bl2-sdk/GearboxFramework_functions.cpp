@@ -6613,7 +6613,7 @@ void AGearboxPlayerController::ConsoleEcho(struct FString Text, unsigned long bL
 // [0x00020102]
 // Parameters infos:
 
-void AGearboxPlayerController::Initialize()
+void AGearboxPlayerController::initialize()
 {
 	static UFunction* pFnInitialize = NULL;
 
@@ -8126,7 +8126,7 @@ void UPopulationAspect::eventOnSpawnActor(class AActor* SpawnedActor)
 // [0x00020800] ( FUNC_Event )
 // Parameters infos:
 
-void UPopulationAspect::eventInitialize()
+void UPopulationAspect::eventinitialize()
 {
 	static UFunction* pFnInitialize = NULL;
 

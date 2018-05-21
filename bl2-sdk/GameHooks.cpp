@@ -7,13 +7,13 @@ namespace GameHooks
 	CHookManager* EngineHookManager;
 	CHookManager* UnrealScriptHookManager;
 
-	void Initialize()
+	void initialize()
 	{
 		EngineHookManager = new CHookManager("EngineHooks");
 		UnrealScriptHookManager = new CHookManager("UnrealScriptHooks");
 	}
 
-	void Cleanup()
+	void cleanup()
 	{
 		delete EngineHookManager;
 		EngineHookManager = nullptr;
@@ -22,7 +22,7 @@ namespace GameHooks
 		UnrealScriptHookManager = nullptr;
 	}
 
-	bool ProcessEngineHooks(UObject* caller, UFunction* function, void* parms, void* result)
+	bool processEngineHooks(UObject* caller, UFunction* function, void* parms, void* result)
 	{
 		// Resolve any virtual hooks into static hooks
 		EngineHookManager->ResolveVirtualHooks(function);
@@ -48,7 +48,7 @@ namespace GameHooks
 		return true;
 	}
 
-	bool ProcessUnrealScriptHooks(UObject* caller, FFrame& stack, void* const result, UFunction* function)
+	bool processUnrealScriptHooks(UObject* caller, FFrame& stack, void* const result, UFunction* function)
 	{
 		// Resolve any virtual hooks into static hooks
 		UnrealScriptHookManager->ResolveVirtualHooks(function);

@@ -36,10 +36,10 @@ namespace BL2SDK
 
 	//void LogAllProcessEventCalls(bool enabled);
 	//void LogAllUnrealScriptCalls(bool enabled);
-	//bool GetGameVersion(std::wstring& appVersion);
-	void InjectedCallNext();
-	void Initialize(/*LauncherStruct* args*/);
-	void Cleanup();
+	//bool getGameVersion(std::wstring& appVersion);
+	void makeInjectedCallNext();
+	void initialize(/*LauncherStruct* args*/);
+	void cleanup();
 }
 
 #endif

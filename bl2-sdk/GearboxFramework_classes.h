@@ -2436,7 +2436,7 @@ public:
 	void ShakeView(struct FGearboxViewShakeInfo NewViewShake);
 	void ClientDamageShake(int Damage);
 	void ConsoleEcho(struct FString Text, unsigned long bLogOutput);
-	void Initialize();
+	void initialize();
 	void PostBeginPlay();
 	void TryAndSpawnLeviathanChannel(class UNetConnection* Connection);
 	void GenerateNewSessionGuid();
@@ -3369,7 +3369,7 @@ public:
 	void eventAllActorsRemoved(unsigned long bFinishedSpawning);
 	void eventOnActorDeath(class AActor* DeadActor);
 	void eventOnSpawnActor(class AActor* SpawnedActor);
-	void eventInitialize();
+	void eventinitialize();
 };
 
 UClass* UPopulationAspect::pClassPointer = NULL;

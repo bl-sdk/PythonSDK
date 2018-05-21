@@ -10859,7 +10859,7 @@ public:
 	void HandlePickup(class AInventory* Inv);
 	void SetLobbyShown(unsigned long bShown);
 	bool WasLobbyShown();
-	void ClientNotifyPostInitialize();
+	void ClientNotifyPostinitialize();
 	void ClientSetHUD(class UClass* newHUDType, unsigned long bShowLobby);
 	void PawnDied(class APawn* P);
 	void eventUnPossess();
@@ -16193,7 +16193,7 @@ public:
 	void NotifyPlayerAdded(int PlayerIndex, class ULocalPlayer* AddedPlayer);
 	void NotifyGameSessionEnded();
 	void Initialized();
-	void OnInitialize();
+	void Oninitialize();
 	void Init();
 	void eventPostRender(class UCanvas* Canvas);
 	void eventTick(float DeltaTime);
@@ -30461,7 +30461,7 @@ public:
 	void ResetComponents();
 	void eventRecycleInternal();
 	void Recycle();
-	void Initialize();
+	void initialize();
 	void eventReplicatedEvent(struct FName VarName);
 };
 
