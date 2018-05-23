@@ -10,6 +10,7 @@ class UClass;
 class UPackage;
 class UWillowGameEngine;
 class UPlayer;
+class UConsole;
 
 struct FFrame;
 struct FName;
@@ -39,12 +40,15 @@ namespace BL2SDK
 	void LogAllProcessEventCalls(bool enabled);
 	void LogAllUnrealScriptCalls(bool enabled);
 	//bool getGameVersion(std::wstring& appVersion);
-	void makeInjectedCallNext();
+	void doInjectedCallNext();
 	void initialize(/*LauncherStruct* args*/);
 	void cleanup();
 
-	UWillowGameEngine* getGameEngine();
+	void logConsole(const char* formatted);
+
+	UWillowGameEngine* willowGame();
 	UPlayer* localPlayer();
+	UConsole* console();
 	bool getIsGameInitialized();
 }
 

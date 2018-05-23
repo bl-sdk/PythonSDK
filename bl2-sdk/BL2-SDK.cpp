@@ -6,11 +6,13 @@
 #include "Exceptions.h"
 #include "Signatures.h"
 #include "PackageFix.h"
+#include "Util.h"
 
 namespace BL2SDK
 {
-	static UConsole* gameConsole = NULL;
-	static UWillowGameEngine* gameEngine = NULL;
+	static UConsole* gameConsole = nullptr;
+	static UWillowGameEngine* willowGameEngine = nullptr;
+	static UEngine * gameEngine = nullptr;
 
 	bool injectedCallNext = false;
 	bool logAllProcessEvent = false;
@@ -120,10 +122,10 @@ namespace BL2SDK
 				DebugBreak();
 			}
 		}
+		*/
 
 		// Don't ever pass it back into the engine
 		Util::CloseGame();
-		*/
 
 		return EXCEPTION_EXECUTE_HANDLER;
 	}
@@ -324,10 +326,10 @@ namespace BL2SDK
 		initializeGameVersions();
 
 		// Set console key to Tilde if not already set
-		UConsole* console = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-		if (console && (console->ConsoleKey == FName("None") || console->ConsoleKey == FName("Undefine")))
+		gameConsole = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 		{
-			console->ConsoleKey = FName("Tilde");
+			gameConsole->ConsoleKey = FName("Tilde");
 		}
 
 		GameHooks::EngineHookManager->RemoveStaticHook(function, "StartupSDK");
@@ -335,6 +337,20 @@ namespace BL2SDK
 		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:PostRender", "GetCanvas", &getCanvasPostRender);
 
 		return true;
+	}
+
+	void logConsole(const char* formatted) {
+		int length = strlen(formatted);
+
+		if (gameConsole != nullptr)
+		{
+			if (!(length == 1 && formatted[0] == '\n'))
+			{
+				std::wstring wfmt = Util::Widen(formatted);
+				BL2SDK::makeInjectedCallNext();
+				gameConsole->eventOutputText(FString((wchar_t*)wfmt.c_str()));
+			}
+		}
 	}
 
 	void initialize(/*LauncherStruct* args*/)
@@ -375,6 +391,11 @@ namespace BL2SDK
 		//logAllUnrealScriptCalls(args->logAllUnrealScriptCalls);
 
 		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameInfo:InitGame", "StartupSDK", &GameReady);
+
+		willowGame(); //initialize willowgame
+		console(); //initialize console
+
+		logConsole("Robeth's Borderlands 2 SDK initialized successfully");
 	}
 
 	// This is called when the process is closing
@@ -385,14 +406,23 @@ namespace BL2SDK
 		GameHooks::cleanup();
 	}
 
-	UWillowGameEngine* getGameEngine()
+	UWillowGameEngine* willowGame()
 	{
-		if (gameEngine)
+		if (willowGameEngine) {
+			return willowGameEngine;
+		}
+
+		willowGameEngine = (UWillowGameEngine*)UObject::FindObject<UObject>("WillowGameEngine Transient.WillowGameEngine_0");
+
+		return willowGameEngine;
+	}
+
+	UEngine * engine() {
+		if (gameEngine) {
 			return gameEngine;
+		}
 
 		gameEngine = (UWillowGameEngine*)UObject::FindObject<UObject>("WillowGameEngine Transient.WillowGameEngine_0");
-
-		return gameEngine;
 	}
 
 	UPlayer* localPlayer()
@@ -400,6 +430,17 @@ namespace BL2SDK
 		UPlayer *p = (UPlayer*)UObject::FindObject<UObject>("ObjectProperty Engine.Player:Actor");
 
 		return p;
+	}
+
+	UConsole* console()
+	{
+		if (gameConsole) {
+			return gameConsole;
+		}
+
+		UConsole* gameConsole = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+
+		return gameConsole;
 	}
 
 	bool getIsGameInitialized() {

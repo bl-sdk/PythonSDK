@@ -156,6 +156,9 @@
     <ClInclude Include="detver.h">
       <Filter>Detours</Filter>
     </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core_functions.cpp">
@@ -220,6 +223,9 @@
     </ClCompile>
     <ClCompile Include="modules.cpp">
       <Filter>Detours</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

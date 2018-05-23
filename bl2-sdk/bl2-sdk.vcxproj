@@ -143,6 +143,7 @@
     <ClInclude Include="PackageFix.h" />
     <ClInclude Include="Signatures.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Util.h" />
     <ClInclude Include="WillowGame_classes.h" />
     <ClInclude Include="WillowGame_f_structs.h" />
     <ClInclude Include="WillowGame_structs.h" />
@@ -175,6 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Util.cpp" />
     <ClCompile Include="WillowGame_functions.cpp" />
     <ClCompile Include="WinDrv_functions.cpp" />
     <ClCompile Include="XAudio2_functions.cpp">
