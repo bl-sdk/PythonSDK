@@ -8,6 +8,8 @@ class UObject;
 class UFunction;
 class UClass;
 class UPackage;
+class UWillowGameEngine;
+class UPlayer;
 
 struct FFrame;
 struct FName;
@@ -17,7 +19,7 @@ struct FArchive;
 namespace BL2SDK
 {
 	typedef void(__thiscall *tProcessEvent) (UObject*, UFunction*, void*, void*);
-	//typedef int (tUnrealEH) (unsigned int, struct _EXCEPTION_POINTERS*);
+	typedef int (tUnrealEH) (unsigned int, struct _EXCEPTION_POINTERS*);
 	typedef void(__thiscall *tCallFunction) (UObject*, FFrame&, void* const, UFunction*);
 	typedef void(__thiscall *tFrameStep) (FFrame*, UObject*, void* const);
 	typedef UObject* (*tStaticConstructObject) (UClass* inClass, UObject* outer, FName name, unsigned int flags, UObject* inTemplate, FOutputDevice* error, UObject* root, void* unk);
@@ -34,12 +36,15 @@ namespace BL2SDK
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
-	//void LogAllProcessEventCalls(bool enabled);
-	//void LogAllUnrealScriptCalls(bool enabled);
+	void LogAllProcessEventCalls(bool enabled);
+	void LogAllUnrealScriptCalls(bool enabled);
 	//bool getGameVersion(std::wstring& appVersion);
 	void makeInjectedCallNext();
 	void initialize(/*LauncherStruct* args*/);
 	void cleanup();
+
+	UWillowGameEngine* getGameEngine();
+	UPlayer* localPlayer();
 	bool getIsGameInitialized();
 }
 

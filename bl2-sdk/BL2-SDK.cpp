@@ -54,13 +54,11 @@ namespace BL2SDK
 			//Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		/*
 		if (!GameHooks::processEngineHooks(caller, function, parms, result))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
 		}
-		*/
 
 		pProcessEvent(caller, function, parms, result);
 	}
@@ -79,13 +77,11 @@ namespace BL2SDK
 			//Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		/*
 		if (!GameHooks::processUnrealScriptHooks(caller, stack, result, function))
 		{
 			// UnrealScript hook manager already took care of it
 			return;
 		}
-		*/
 
 		pCallFunction(caller, stack, result, function);
 	}
@@ -95,7 +91,6 @@ namespace BL2SDK
 		injectedCallNext = true;
 	}
 
-	/*
 	void LogAllProcessEventCalls(bool enabled)
 	{
 		logAllProcessEvent = enabled;
@@ -105,7 +100,6 @@ namespace BL2SDK
 	{
 		logAllUnrealScriptCalls = enabled;
 	}
-	*/
 
 	int unrealExceptionHandler(unsigned int code, struct _EXCEPTION_POINTERS* ep)
 	{
@@ -377,8 +371,8 @@ namespace BL2SDK
 		hookGame();
 		InitializePackageFix();
 
-		//LogAllProcessEventCalls(args->LogAllProcessEventCalls);
-		//LogAllUnrealScriptCalls(args->LogAllUnrealScriptCalls);
+		//LogAllProcessEventCalls(args->logAllProcessEventCalls);
+		//logAllUnrealScriptCalls(args->logAllUnrealScriptCalls);
 
 		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameInfo:InitGame", "StartupSDK", &GameReady);
 	}
@@ -387,7 +381,7 @@ namespace BL2SDK
 	// TODO: Other things might need cleaning up
 	void cleanup()
 	{
-		//Logging::Cleanup();
+		//Logging::cleanup();
 		GameHooks::cleanup();
 	}
 
