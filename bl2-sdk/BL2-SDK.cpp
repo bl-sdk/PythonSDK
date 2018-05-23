@@ -88,7 +88,7 @@ namespace BL2SDK
 		pCallFunction(caller, stack, result, function);
 	}
 
-	void makeInjectedCallNext()
+	void doInjectedCallNext()
 	{
 		injectedCallNext = true;
 	}
@@ -347,7 +347,7 @@ namespace BL2SDK
 			if (!(length == 1 && formatted[0] == '\n'))
 			{
 				std::wstring wfmt = Util::Widen(formatted);
-				BL2SDK::makeInjectedCallNext();
+				BL2SDK::doInjectedCallNext();
 				gameConsole->eventOutputText(FString((wchar_t*)wfmt.c_str()));
 			}
 		}

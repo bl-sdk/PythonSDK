@@ -18,9 +18,15 @@
     <ClCompile Include="dll-loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CLua.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dll-loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLua.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

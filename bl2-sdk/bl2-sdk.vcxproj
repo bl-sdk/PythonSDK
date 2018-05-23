@@ -136,6 +136,7 @@
     <ClInclude Include="IpDrv_classes.h" />
     <ClInclude Include="IpDrv_f_structs.h" />
     <ClInclude Include="IpDrv_structs.h" />
+    <ClInclude Include="Logging.h" />
     <ClInclude Include="MemorySignature.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_classes.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_f_structs.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="CSimpleDetour.cpp" />
     <ClCompile Include="detours.cpp" />
     <ClCompile Include="disasm.cpp" />
+    <ClCompile Include="Logging.cpp" />
     <ClCompile Include="modules.cpp" />
     <ClCompile Include="Engine_functions.cpp" />
     <ClCompile Include="GameFramework_functions.cpp" />
