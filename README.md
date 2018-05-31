@@ -6,4 +6,4 @@ Borderlands 2 tools for creating and loading custom plugins
 * Create a folder called "plugins" in the binaries folder
 * Copy any custom .LUA or .DLL files into the plugins folder
 
-Based off of Borderlands2SDK by McSimp, drmalc's bl2monitor, TheFeckless' UE3 SDK Generator, zeroKilo's ProxyDllMaker, and more
+Based off of Borderlands2SDK by McSimp, drmalc's bl2monitor, TheFeckless' UE3 SDK Generator, zeroKilo's ProxyDllMaker, Erik JS' ME1 ASI Loader, and more
