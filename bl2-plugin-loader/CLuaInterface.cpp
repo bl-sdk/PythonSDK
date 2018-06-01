@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CLuaInterface.h"
+#include <lfs.h>
 #include "Logging.h"
 #include "Settings.h"
 #include "Util.h"
