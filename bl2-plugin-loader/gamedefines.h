@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include "Util.h"
 #pragma once
 #include "stdafx.h"
 //#include "UHook.h"
@@ -89,11 +90,9 @@ public:
 
 	char* GetName()
 	{
-		/*
 		if (Index < 0 || Index > this->Names()->Num())
-			return "UnknownName";
+			return (char*)"UnknownName";
 		else
-		*/
 		return this->Names()->Data[Index]->Name;
 	};
 
@@ -195,14 +194,12 @@ struct FArchiveAsync : FArchive
 	INT CurrentPos;
 };
 
-/*
 struct ULinkerLoad : FArchive
 {
 	void* VfTable;
 	unsigned char Unknown[0x498];
 	FArchiveAsync* Loader;
 };
-*/
 
 struct FMalloc
 {

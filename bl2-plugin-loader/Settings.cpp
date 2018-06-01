@@ -10,22 +10,29 @@ namespace Settings
 	bool disableAntiDebug;
 	bool enableMemoryDebug;
 
-	void Initialize(LauncherStruct* args)
+	void Initialize(wchar_t * binPath_/*LauncherStruct* args*/)
 	{
+		/*
 		if (args == nullptr || args->BinPath == nullptr)
 		{
 			throw FatalSDKException(6000, "Launcher settings struct was invalid, did you use the launcher?");
 		}
+		*/
 
-		binPath = args->BinPath;
-		developerMode = args->DeveloperMode;
-		disableAntiDebug = args->DisableAntiDebug;
-		enableMemoryDebug = args->EnableMemoryDebug;
+		binPath = binPath_; //args->BinPath;
+		developerMode = false; //args->DeveloperMode;
+		disableAntiDebug = true; // args->DisableAntiDebug;
+		enableMemoryDebug = true; // args->EnableMemoryDebug;
 	}
 
 	std::wstring GetLogFilePath()
 	{
-		return GetBinFile(L"BL2SDKLog.txt");
+		return GetBinFile(L"robeth-sdk.log");
+	}
+
+	std::wstring GetConfigFile()
+	{
+		return GetBinFile(L"robeth-sdk.cfg");
 	}
 
 	std::wstring GetBinFile(const std::wstring& filename)
@@ -45,8 +52,10 @@ namespace Settings
 	std::wstring GetLuaFile(const std::wstring& filename)
 	{
 		std::wstring newPath;
-		newPath = binPath + L"lua\\" + filename;
-		return newPath;
+		wchar_t temppath[MAX_PATH + 1] = { 0 };
+		newPath = binPath + L"..\\plugins\\" + filename;
+		PathCombineW((LPWSTR)newPath.c_str(), temppath, nullptr);
+		return (std::wstring)temppath;
 	}
 
 	bool DeveloperModeEnabled()

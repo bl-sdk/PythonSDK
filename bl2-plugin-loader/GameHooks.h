@@ -12,10 +12,10 @@ namespace GameHooks
 	extern CHookManager* EngineHookManager;
 	extern CHookManager* UnrealScriptHookManager;
 
-	void initialize();
-	void cleanup();
-	bool processEngineHooks(UObject* pCaller, UFunction* pFunction, void* pParms, void* pResult);
-	bool processUnrealScriptHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function);
+	void Initialize();
+	void Cleanup();
+	bool ProcessEngineHooks(UObject* pCaller, UFunction* pFunction, void* pParms, void* pResult);
+	bool ProcessUnrealScriptHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function);
 }
 
 #endif

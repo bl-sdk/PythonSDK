@@ -5,11 +5,13 @@
 #include "Exceptions.h"
 #include "Signatures.h"
 #include "PackageFix.h"
+#include "AntiDebug.h"
 #include "Util.h"
 #include "BL2-SDK.h"
 #include "Logging.h"
 #include "Settings.h"
 #include "Exports.h"
+#include "gamedefines.h"
 
 namespace BL2SDK
 {
@@ -18,8 +20,8 @@ namespace BL2SDK
 	static UEngine * gameEngine = nullptr;
 
 	bool injectedCallNext = false;
-	bool logAllProcessEvent = false;
-	bool logAllUnrealScriptCalls = false;
+	bool logAllProcessEvent = true;
+	bool logAllUnrealScriptCalls = true;
 
 	void* pGObjects;
 	void* pGNames;
@@ -35,7 +37,7 @@ namespace BL2SDK
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
 
-	//CLua * Lua;
+	CLuaInterface * Lua;
 
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
@@ -61,7 +63,7 @@ namespace BL2SDK
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!GameHooks::processEngineHooks(caller, function, parms, result))
+		if (!GameHooks::ProcessEngineHooks(caller, function, parms, result))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -84,7 +86,7 @@ namespace BL2SDK
 			Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!GameHooks::processUnrealScriptHooks(caller, stack, result, function))
+		if (!GameHooks::ProcessUnrealScriptHooks(caller, stack, result, function))
 		{
 			// UnrealScript hook manager already took care of it
 			return;
@@ -119,15 +121,16 @@ namespace BL2SDK
 		{
 			Util::CloseGame();
 		}
+		*/
 		else if (Settings::DisableAntiDebug())
 		{
-			Util::Popup(L"Fatal Error", L"There was a fatal error - attach your debugger now.");
+			Util::Popup(L"Fatal Error", std::to_wstring(code).c_str());
 			if (IsDebuggerPresent())
 			{
 				DebugBreak();
 			}
 		}
-		*/
+		
 
 		// Don't ever pass it back into the engine
 		Util::CloseGame();
@@ -183,7 +186,6 @@ namespace BL2SDK
 		return true;
 	}
 
-	// TODO: Make less shit
 	void hookGame()
 	{
 		CSigScan sigscan(L"Borderlands2.exe");
@@ -245,27 +247,29 @@ namespace BL2SDK
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
 		// Detour UObject::ProcessEvent()
-		SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
+		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
+		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
 		detProcessEvent.Attach();
-
+		
 		// Detour Unreal exception handler
-		SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
+		//SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
+		CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
 		detUnrealEH.Attach();
-
+		
 		// Detour UObject::CallFunction()
-		SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
+		//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
+		CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);
 		detCallFunction.Attach();
 	}
 
 	void InitializeLua()
 	{
-		/*
-		Lua = new CLua();
+		Lua = new CLuaInterface();
 		LuaStatus status = Lua->InitializeModules();
 		if (status == LUA_HASH_FAILED)
 		{
 			Util::Popup(L"Lua Hash Check Failed",
-				L"A file in the 'lua/includes' folder has been modified. Please enable developer mode if you wish to modify these files. Otherwise, re-extract the SDK and replace the modified files with the orignal files.");
+				L"A file in the 'lua/include' folder has been modified. Please enable developer mode if you wish to modify these files. Otherwise, re-extract the SDK and replace the modified files with the orignal files.");
 			Util::CloseGame();
 		}
 		else if (status == LUA_MODULE_ERROR && !Settings::DeveloperModeEnabled())
@@ -279,7 +283,10 @@ namespace BL2SDK
 			Util::Popup(L"Lua Module Error",
 				L"An error occurred while loading the Lua modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Lua state.");
 		}
-		*/
+		else if (status == LUA_OK)
+		{
+			Logging::LogF("[Internal] Lua initialized successfully.\n");
+		}
 	}
 
 	bool devInputKeyHook(UObject* caller, UFunction* function, void* parms, void* result)
@@ -318,11 +325,13 @@ namespace BL2SDK
 	{
 		InitializeLua();
 
+		/*
 		if (Settings::DeveloperModeEnabled())
 		{
-			GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:InputKey", "DevInputKeyHook", &devInputKeyHook);
+			GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.InputKey", "DevInputKeyHook", &devInputKeyHook);
 			Logging::LogF("[Internal] Developer mode key hook enabled\n");
 		}
+		*/
 
 		GameHooks::EngineHookManager->RemoveStaticHook(function, "GetCanvas");
 		return true;
@@ -348,82 +357,39 @@ namespace BL2SDK
 #ifdef _DEBUG
 		Logging::InitializeExtern();
 #endif
-		Logging::InitializeGameConsole();
-		Logging::PrintLogHeader();
+		//Logging::InitializeGameConsole();
+		//Logging::PrintLogHeader();
 
-		initializeGameVersions();
+		//initializeGameVersions();
 
+		/*
 		// Set console key to Tilde if not already set
 		gameConsole = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 		{
 			gameConsole->ConsoleKey = FName("Tilde");
 		}
+		*/
 
-		GameHooks::EngineHookManager->RemoveStaticHook(function, "StartupSDK");
-
-		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:PostRender", "GetCanvas", &getCanvasPostRender);
+		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
+		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", &getCanvasPostRender);
+		//GameHooks::UnrealScriptHookManager->Register("Function GearboxFramework.LeviathanService.OnSparkInitialized", "CheckSpark", &SparkReady);
 
 		return true;
 	}
 
-	void logConsole(const char* formatted) {
-		int length = strlen(formatted);
-
-		if (gameConsole != nullptr)
-		{
-			if (!(length == 1 && formatted[0] == '\n'))
-			{
-				std::wstring wfmt = Util::Widen(formatted);
-				BL2SDK::doInjectedCallNext();
-				gameConsole->eventOutputText(FString((wchar_t*)wfmt.c_str()));
-			}
-		}
-	}
-
-	void initialize(LauncherStruct* args)
+	void initialize(wchar_t * exeBaseFolder)
 	{
-		Settings::Initialize(args);
-
-		Logging::InitializeFile(Settings::GetLogFilePath());
-		Logging::Log("[Internal] Launching SDK...\n");
-
-		Logging::LogF("[Internal] DisableAntiDebug = %d, LogAllProcessEventCalls = %d, LogAllUnrealScriptCalls = %d, DisableCrashRpt = %d, DeveloperMode = %d, MemoryDebug = %d, BinPath = \"%ls\"\n",
-			args->DisableAntiDebug,
-			args->LogAllProcessEventCalls,
-			args->LogAllUnrealScriptCalls,
-			args->DisableCrashRpt,
-			args->DeveloperMode,
-			args->EnableMemoryDebug,
-			args->BinPath);
-			
-
-			
-			if (!args->DisableCrashRpt)
-			{
-				//CrashRptHelper::initialize();
-			}
-
-			if (args->DisableAntiDebug)
-			{
-				//HookAntiDebug();
-			}
-			
-
-		GameHooks::initialize();
-
+		//HookAntiDebug();
+		GameHooks::Initialize();
 		hookGame();
 		InitializePackageFix();
 
-		LogAllProcessEventCalls(args->LogAllProcessEventCalls);
-		//logAllUnrealScriptCalls(args->LogAllUnrealScriptCalls);
+		LogAllProcessEventCalls(false);
+		LogAllUnrealScriptCalls(false);
 
-		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameInfo:InitGame", "StartupSDK", &GameReady);
-
-		willowGame(); //initialize willowgame
-		console(); //initialize console
-
-		logConsole("Robeth's Borderlands 2 SDK initialized successfully");
+		GameHooks::UnrealScriptHookManager->Register("Function Engine.Console.Initialized", "StartupSDK", &GameReady);
+		//GameHooks::UnrealScriptHookManager->Register("Function Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
 	// This is called when the process is closing
@@ -431,52 +397,9 @@ namespace BL2SDK
 	void cleanup()
 	{
 		Logging::Cleanup();
-		GameHooks::cleanup();
-		//delete Lua;
-	}
-
-	UWillowGameEngine * willowGame()
-	{
-		if (willowGameEngine) {
-			return willowGameEngine;
-		}
-
-		willowGameEngine = (UWillowGameEngine*)UObject::FindObject<UObject>("WillowGameEngine Transient.WillowGameEngine_0");
-
-		return willowGameEngine;
-	}
-
-	UEngine * engine() {
-		if (gameEngine) {
-			return gameEngine;
-		}
-
-		gameEngine = (UWillowGameEngine*)UObject::FindObject<UObject>("WillowGameEngine Transient.WillowGameEngine_0");
-
-		return gameEngine;;
-	}
-
-	UPlayer * localPlayer()
-	{
-		UPlayer * p = (UPlayer*)UObject::FindObject<UObject>("ObjectProperty Engine.Player:Actor");
-
-		return p;
-	}
-
-	UConsole * console()
-	{
-		if (gameConsole) {
-			return gameConsole;
-		}
-
-		UConsole* gameConsole = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-
-		return gameConsole;
-	}
-
-	bool getIsGameInitialized() {
-		//BL2SDK::getGameEngine()->LevelChangeState;
-		return false; //check if the game has been initialized
+		GameHooks::Cleanup();
+		delete Lua;
+		Util::CloseGame();
 	}
 
 	FFI_EXPORT void LUAFUNC_LogAllProcessEventCalls(bool enabled)

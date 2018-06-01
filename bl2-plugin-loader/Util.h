@@ -26,6 +26,8 @@ namespace Util
 	HWND getToplevelWindows();
 	DWORD GetMainThreadId(DWORD dwPid);
 	HANDLE GetMainThreadHandle(DWORD dwPid, DWORD dwDesiredAccess);
+
+	int WaitForModules(std::int32_t timeout, const std::initializer_list<std::wstring>& modules);
 }
 
 #endif

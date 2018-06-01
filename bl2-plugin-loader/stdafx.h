@@ -8,6 +8,12 @@
 #include <ShlObj.h>
 #include <string>
 
+#include <Shlwapi.h>
+#pragma comment (lib, "Shlwapi.lib")
+
+#include <lua.hpp>
+#include <luajit.h>
+
 namespace BL2SDK
 {
 	extern void* pGObjects;

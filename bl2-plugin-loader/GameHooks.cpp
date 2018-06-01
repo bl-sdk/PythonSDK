@@ -1,19 +1,20 @@
-#pragma once
 #include "stdafx.h"
 #include "GameHooks.h"
+#include "Logging.h"
+#include "Exports.h"
 
 namespace GameHooks
 {
 	CHookManager* EngineHookManager;
 	CHookManager* UnrealScriptHookManager;
 
-	void initialize()
+	void Initialize()
 	{
 		EngineHookManager = new CHookManager("EngineHooks");
 		UnrealScriptHookManager = new CHookManager("UnrealScriptHooks");
 	}
 
-	void cleanup()
+	void Cleanup()
 	{
 		delete EngineHookManager;
 		EngineHookManager = nullptr;
@@ -22,7 +23,7 @@ namespace GameHooks
 		UnrealScriptHookManager = nullptr;
 	}
 
-	bool processEngineHooks(UObject* caller, UFunction* function, void* parms, void* result)
+	bool ProcessEngineHooks(UObject* caller, UFunction* function, void* parms, void* result)
 	{
 		// Resolve any virtual hooks into static hooks
 		EngineHookManager->ResolveVirtualHooks(function);
@@ -48,7 +49,7 @@ namespace GameHooks
 		return true;
 	}
 
-	bool processUnrealScriptHooks(UObject* caller, FFrame& stack, void* const result, UFunction* function)
+	bool ProcessUnrealScriptHooks(UObject* caller, FFrame& stack, void* const result, UFunction* function)
 	{
 		// Resolve any virtual hooks into static hooks
 		UnrealScriptHookManager->ResolveVirtualHooks(function);
@@ -71,5 +72,27 @@ namespace GameHooks
 
 		// Run the function in the engine as normal
 		return true;
+	}
+
+	FFI_EXPORT void LUAFUNC_AddStaticEngineHook(UFunction* function, tProcessEventHook* funcHook)
+	{
+		CHookManager::tFuncNameHookPair hookPair = std::make_pair("LuaHook", funcHook);
+		EngineHookManager->AddStaticHook(function, hookPair);
+	}
+
+	FFI_EXPORT void LUAFUNC_RemoveStaticEngineHook(UFunction* function)
+	{
+		EngineHookManager->RemoveStaticHook(function, "LuaHook");
+	}
+
+	FFI_EXPORT void LUAFUNC_AddStaticScriptHook(UFunction* function, tCallFunctionHook* funcHook)
+	{
+		CHookManager::tFuncNameHookPair hookPair = std::make_pair("LuaHook", funcHook);
+		UnrealScriptHookManager->AddStaticHook(function, hookPair);
+	}
+
+	FFI_EXPORT void LUAFUNC_RemoveStaticScriptHook(UFunction* function)
+	{
+		UnrealScriptHookManager->RemoveStaticHook(function, "LuaHook");
 	}
 }

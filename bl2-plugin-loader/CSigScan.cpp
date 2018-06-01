@@ -2,6 +2,8 @@
 #include "stdafx.h"
 #include "MemorySignature.h"
 #include "CSigScan.h"
+#include "Util.h"
+#include "Exceptions.h"
 // Based off CSigScan from AlliedModders
 
 CSigScan::CSigScan(const wchar_t* moduleName)
@@ -9,7 +11,7 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 	m_moduleHandle = GetModuleHandle(moduleName);
 	if (m_moduleHandle == nullptr)
 	{
-		//throw FatalSDKException(3000, Util::Format("Sigscan failed (GetModuleHandle returned NULL, Error = %d)", GetLastError()));
+		throw FatalSDKException(3000, Util::Format("Sigscan failed (GetModuleHandle returned NULL, Error = %d)", GetLastError()));
 	}
 
 	void* pAddr = m_moduleHandle;
@@ -18,13 +20,13 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 
 	if (!VirtualQuery(pAddr, &mem, sizeof(mem)))
 	{
-		//throw FatalSDKException(3001, Util::Format("Sigscan failed (VirtualQuery returned NULL, Error = %d)", GetLastError()));
+		throw FatalSDKException(3001, Util::Format("Sigscan failed (VirtualQuery returned NULL, Error = %d)", GetLastError()));
 	}
 
 	m_pModuleBase = (char*)mem.AllocationBase;
 	if (m_pModuleBase == nullptr)
 	{
-		//throw FatalSDKException(3002, "Sigscan failed (mem.AllocationBase was NULL)");
+		throw FatalSDKException(3002, "Sigscan failed (mem.AllocationBase was NULL)");
 	}
 
 	IMAGE_DOS_HEADER* dos = (IMAGE_DOS_HEADER*)mem.AllocationBase;
@@ -32,7 +34,7 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 
 	if (pe->Signature != IMAGE_NT_SIGNATURE)
 	{
-		//throw FatalSDKException(3003, "Sigscan failed (pe points to a bad location)");
+		throw FatalSDKException(3003, "Sigscan failed (pe points to a bad location)");
 	}
 
 	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
@@ -72,5 +74,5 @@ void* CSigScan::Scan(const char* sig, const char* mask, int sigLength)
 		pData++;
 	}
 
-	//throw FatalSDKException(3010, Util::Format("Sigscan failed (Signature not found, Mask = %s)", Util::StringToHex(sig, sigLength).c_str()));
+	throw FatalSDKException(3010, Util::Format("Sigscan failed (Signature not found, Mask = %s)", Util::StringToHex(sig, sigLength).c_str()));
 }

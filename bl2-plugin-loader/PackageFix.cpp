@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
+#include "BL2-SDK.h"
 #include "PackageFix.h"
+#include "gamedefines.h"
 
 namespace BL2SDK
 {
@@ -29,7 +31,6 @@ namespace BL2SDK
 
 	void __stdcall FixTextureLoad()
 	{
-		/* //DEBUG
 		ULinkerLoad* Ar;
 		_asm mov Ar, esi;
 
@@ -41,11 +42,10 @@ namespace BL2SDK
 			pByteOrderSerialize(Ar, &dataSize, 4);
 			pByteOrderSerialize(Ar, &dataOffset, 4);
 
-			//Logging::LogF("[PackageFix] Skipping SourceArt: Flags = %d, Count = %d, Size = %d, Offset = %d\n", flags, elementCount, dataSize, dataOffset);
+			Logging::LogF("[PackageFix] Skipping SourceArt: Flags = %d, Count = %d, Size = %d, Offset = %d\n", flags, elementCount, dataSize, dataOffset);
 
 			Ar->Loader->CurrentPos += dataSize;
 		}
-		*/
 	}
 
 	__declspec(naked) void hkTexture2DSerialize()

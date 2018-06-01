@@ -21,7 +21,7 @@ private:
 };
 
 #define SETUP_SIMPLE_DETOUR(name, old, replacement) \
-	CSimpleDetour name(&(void * &)old, (void *)(&(void * &)replacement))
+	CSimpleDetour name(&(PVOID&)old, (void *)(&(void * &)replacement))
 
 #define SETUP_DETOUR_FUNCTION( ret, conv, name, params ) \
 	ret conv name##_H params; \

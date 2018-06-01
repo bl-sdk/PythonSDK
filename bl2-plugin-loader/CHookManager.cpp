@@ -18,7 +18,7 @@ void CHookManager::AddVirtualHook(const std::string& funcName, const tFuncNameHo
 		VirtualHooks.emplace(funcName, newMap);
 	}
 
-	//Logging::LogF("[CHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
+	Logging::LogF("[CHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
 }
 
 void CHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& hookPair)
@@ -47,12 +47,12 @@ bool CHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcN
 
 	if (removed == 0)
 	{
-		//Logging::LogF("[CHookManager] (%s) Failed to remove hook \"%s\" for function \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogF("[CHookManager] (%s) Failed to remove hook \"%s\" for function \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return false;
 	}
 	else
 	{
-		//Logging::LogF("[CHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogF("[CHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return true;
 	}
 }
@@ -106,7 +106,7 @@ bool CHookManager::RemoveVirtualHook(const std::string& funcName, const std::str
 	tiVirtualHooks iHooks = VirtualHooks.find(funcName);
 	if (iHooks == VirtualHooks.end())
 	{
-		//Logging::LogF("[CHookManager] (%s) ERROR: Failed to remove virtual hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName);
+		Logging::LogF("[CHookManager] (%s) ERROR: Failed to remove virtual hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName);
 		return false;
 	}
 
@@ -141,7 +141,7 @@ void CHookManager::ResolveVirtualHooks(UFunction* function)
 			int size = iVHooks->second.size();
 			StaticHooks.emplace(function, iVHooks->second);
 			VirtualHooks.erase(iVHooks);
-			//Logging::LogF("[CHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
+			Logging::LogF("[CHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
 		}
 	}
 }

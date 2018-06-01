@@ -3,8 +3,7 @@
 #define BL2SDK_H
 
 #include <string>
-#include "Settings.h"
-#include "CLua.h"
+#include "CLuaInterface.h"
 
 class UObject;
 class UFunction;
@@ -36,6 +35,8 @@ namespace BL2SDK
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
 
+	extern CLuaInterface * Lua;
+
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
@@ -43,15 +44,8 @@ namespace BL2SDK
 	void LogAllUnrealScriptCalls(bool enabled);
 	//bool getGameVersion(std::wstring& appVersion);
 	void doInjectedCallNext();
-	void initialize(LauncherStruct* args);
+	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
 	void cleanup();
-
-	void logConsole(const char* formatted);
-
-	UWillowGameEngine * willowGame();
-	UPlayer * localPlayer();
-	UConsole * console();
-	bool getIsGameInitialized();
 }
 
 #endif

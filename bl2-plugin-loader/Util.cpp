@@ -285,4 +285,55 @@ namespace Util
 
 		return output;
 	}
+
+	int WaitForModules(std::int32_t timeout, const std::initializer_list<std::wstring>& modules)
+	{
+		bool signaled[32] = { 0 };
+		bool success = false;
+
+		std::uint32_t totalSlept = 0;
+
+		if (timeout == 0) {
+			for (auto& mod : modules) {
+				if (GetModuleHandleW(std::data(mod)) == NULL)
+					return WAIT_TIMEOUT;
+			}
+			return WAIT_OBJECT_0;
+		}
+
+		if (timeout < 0)
+			timeout = INT32_MAX;
+
+		while (true) {
+			for (auto i = 0u; i < modules.size(); ++i) {
+				auto& module = *(modules.begin() + i);
+				if (!signaled[i] && GetModuleHandleW(std::data(module)) != NULL) {
+					signaled[i] = true;
+
+					//
+					// Checks if all modules are signaled
+					//
+					bool done = true;
+					for (auto j = 0u; j < modules.size(); ++j) {
+						if (!signaled[j]) {
+							done = false;
+							break;
+						}
+					}
+					if (done) {
+						success = true;
+						goto exit;
+					}
+				}
+			}
+			if (totalSlept > std::uint32_t(timeout)) {
+				break;
+			}
+			Sleep(10);
+			totalSlept += 10;
+		}
+
+	exit:
+		return success ? WAIT_OBJECT_0 : WAIT_TIMEOUT;
+	}
 }

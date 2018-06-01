@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "CSimpleDetour.h"
+#include "Util.h"
 #include "Exceptions.h"
 
 CSimpleDetour::CSimpleDetour(void **old, void *replacement)
@@ -12,14 +13,15 @@ CSimpleDetour::CSimpleDetour(void **old, void *replacement)
 void CSimpleDetour::Attach()
 {
 	DetourTransactionBegin();
-	DetourUpdateThread(GetCurrentThread());
+	//DetourUpdateThread(GetCurrentThread());
 
 	DetourAttach(m_fnOld, m_fnReplacement);
 
 	LONG result = DetourTransactionCommit();
 	if (result != NO_ERROR)
 	{
-		//throw FatalSDKException(4000, Util::Format("Failed to attach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result));
+		throw FatalSDKException(4000, Util::Format("Failed to attach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result));
+		MessageBox(nullptr, TEXT("ERROR"), TEXT("Failed to attach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result), MB_OK);
 	}
 
 	m_bAttached = true;
@@ -38,7 +40,7 @@ void CSimpleDetour::Detach()
 	LONG result = DetourTransactionCommit();
 	if (result != NO_ERROR)
 	{
-		//throw FatalSDKException(4001, Util::Format("Failed to detach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result));
+		throw FatalSDKException(4001, Util::Format("Failed to detach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result));
 	}
 
 	m_bAttached = false;

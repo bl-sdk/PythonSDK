@@ -2,8 +2,6 @@
 #ifndef CHOOKMANAGER_H
 #define CHOOKMANAGER_H
 
-#pragma once
-#include "stdafx.h"
 #include <string>
 #include <map>
 

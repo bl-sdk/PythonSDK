@@ -6,21 +6,19 @@
 #include "Logging.h"
 #include "Util.h"
 #include "Exceptions.h"
-//#include "generated/SDKVersion.h"
 
 namespace Logging
 {
 	HANDLE logFile = nullptr;
-	bool logToExternalConsole = false;
-	bool logToFile = false;
-	bool logToGameConsole = false;
+	bool logToExternalConsole = true;
+	bool logToFile = true;
+	bool logToGameConsole = true;
 	UConsole* gameConsole = nullptr;
 
 	void LogToFile(const char* buff, int len)
 	{
 		if (logFile != INVALID_HANDLE_VALUE)
 		{
-			// Write to the log file. 0 fucks given if it fails.
 			DWORD bytesWritten = 0;
 			WriteFile(logFile, buff, len, &bytesWritten, nullptr);
 		}

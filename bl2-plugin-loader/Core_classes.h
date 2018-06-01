@@ -1056,6 +1056,7 @@ public:
 
 // Class Core.LinkerLoad
 // 0x05C4 (0x0B34 - 0x0570)
+/*
 class ULinkerLoad : public ULinker
 {
 public:
@@ -1073,6 +1074,7 @@ public:
 		return pClassPointer;
 	};
 };
+*/
 
 //UClass* ULinkerLoad::pClassPointer = NULL;
 

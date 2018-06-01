@@ -18,7 +18,7 @@ struct LauncherStruct
 
 namespace Settings
 {
-	void Initialize(LauncherStruct* args);
+	void Initialize(wchar_t * binPath_/* LauncherStruct* args*/);
 	std::wstring GetLogFilePath();
 	std::wstring GetBinFile(const std::wstring& filename);
 	std::wstring GetTextureFile(const std::wstring& filename);
