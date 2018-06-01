@@ -5,6 +5,7 @@
 #include "Logging.h"
 #include <string>
 #include <algorithm>
+#include <lfs.h>
 
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
