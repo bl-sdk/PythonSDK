@@ -32,14 +32,9 @@ require("engine")
 local function NeedsSDKGenerated()
 	local generateSDK = true
 
-	if file.Exists("sdkgen/version.lua") then
-		include("../sdkgen/version.lua")
-
-		if SDKGEN_ENGINE_VERSION == bl2sdk.EngineVersion and
-		SDKGEN_CHANGELIST_NUMBER == bl2sdk.ChangeListNumber and
-		SDKGEN_BL2SDK_VERSION == bl2sdk.SDKVersion then
-			generateSDK = false
-		end
+	if file.Exists("include/sdk/loader.lua") then
+		include("sdk/loader.lua")
+		generateSDK = false
 	end
 
 	return generateSDK
@@ -54,7 +49,8 @@ if NeedsSDKGenerated() then
 	-- Log calls to the slow object index if we're generating the SDK
 	engine.LogSlowObjectIndex(true)
 	engine.Initialize()
-	include("sdkgen/sdkgen.lua")
+	--include("sdkgen/sdkgen.lua")
+	print("[SDKGen] SDK failed to load")
 else
 	file = nil
 	
