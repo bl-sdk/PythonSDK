@@ -1,4 +1,4 @@
-# BL2-DLL-Modding
+# BL2-SDK
 Borderlands 2 tools for creating and loading custom plugins
 
 * Rename existing binkw32.dll to bindw23.dll
