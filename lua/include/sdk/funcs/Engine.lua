@@ -3820,7 +3820,7 @@ local c = g_classFuncs
 				offset = 0
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 7777,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -3829,7 +3829,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 7776,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -4728,7 +4728,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 7630,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -4737,7 +4737,7 @@ local c = g_classFuncs
 				offset = 12
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 7629,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -4778,7 +4778,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 7624,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -4787,7 +4787,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 7623,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -15769,7 +15769,7 @@ local c = g_classFuncs
 				offset = 12
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 22373,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -15778,7 +15778,7 @@ local c = g_classFuncs
 				offset = 16
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 22372,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -15827,7 +15827,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 22366,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -15836,7 +15836,7 @@ local c = g_classFuncs
 				offset = 12
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 22365,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -35674,7 +35674,7 @@ local c = g_classFuncs
 				offset = 28
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12464,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -35715,7 +35715,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12459,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -35724,7 +35724,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 12458,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92195,7 +92195,7 @@ local c = g_classFuncs
 				offset = 0
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12132,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92204,7 +92204,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 12131,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92237,7 +92237,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12127,
 				className = "APlayerReplicationInfo",
 				castTo = ffi.typeof("struct UObject**"),
@@ -92279,7 +92279,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12122,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92288,7 +92288,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 12121,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92339,7 +92339,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12115,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92348,7 +92348,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 12114,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92390,7 +92390,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 12106,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92399,7 +92399,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 12105,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92877,7 +92877,7 @@ local c = g_classFuncs
 				offset = 0
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 25228,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -92886,7 +92886,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 25227,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -94489,7 +94489,7 @@ local c = g_classFuncs
 				offset = 0
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 36796,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -94498,7 +94498,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 36795,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -110640,7 +110640,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 22672,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -110649,7 +110649,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 22671,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112227,7 +112227,7 @@ local c = g_classFuncs
 				offset = 12
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 17665,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112236,7 +112236,7 @@ local c = g_classFuncs
 				offset = 16
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 17664,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112285,7 +112285,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 17658,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112294,7 +112294,7 @@ local c = g_classFuncs
 				offset = 12
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 17657,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112413,7 +112413,7 @@ local c = g_classFuncs
 				offset = 12
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 17642,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112422,7 +112422,7 @@ local c = g_classFuncs
 				offset = 16
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 17641,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112773,7 +112773,7 @@ local c = g_classFuncs
 				offset = 4
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_2",
 				index = 21475,
 				optional = true,
 				className = "APlayerReplicationInfo",
@@ -112782,7 +112782,7 @@ local c = g_classFuncs
 				offset = 8
 			},
 			{
-				name = "RelatedPRI",
+				name = "RelatedPRI_3",
 				index = 21474,
 				optional = true,
 				className = "APlayerReplicationInfo",
