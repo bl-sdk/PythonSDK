@@ -4,7 +4,7 @@ import re
 function_regex = re.compile(r'\[(\d+)\] Function (\w+)\.(\w+)\.(\w+).*')
 property_regex = re.compile(r'\[(\d+)\] \w+ (\w+)\.(\w+)\.(\w+)\.(\w+).*')
 functions = {}
-with open('ObjectsDump.txt') as f:
+with open('C:\\SDK_GEN\\BL2\\ObjectsDump.txt') as f:
     lookahead = None
     for line in f.readlines():
         if '] Function ' in line:
@@ -37,8 +37,8 @@ class Location(Enum):
 
 sdk_dir = 'C:\\Users\\abahb\\source\\repos\\BL2-SDK\\lua\\include\\sdk\\funcs\\'
 for module in functions.keys():
+    lines = []
     with open(sdk_dir + module + '.lua') as f:
-        with open(sdk_dir + module + '.lua.new', 'w') as f_new:
             location = Location.EXPECTING_FUNC_START
             for line in f.readlines():
                 if location == Location.EXPECTING_FUNC_START and 'g_classFuncs' in line:
@@ -68,4 +68,7 @@ for module in functions.keys():
                     index = line.split(' ')[-1].split(',')[0]
                     line = line.replace(index, str(int(functions[module]['{}.{}'.format(clas, func)]['id'])))
                     location = Location.EXPECTING_FUNC_START
-                f_new.write(line)
+                lines += [line]
+    with open(sdk_dir + module + '.lua', 'w') as f:
+        for line in lines:
+            f.write(line)
