@@ -50,21 +50,7 @@ local function CommandHook(Object, Stack, Result, Function)
 
 		local status, ret = xpcall(LuaCommands[cmdLower], CommandError, cmd, args)
 		if not status then print("Error in command: " .. ret) end
-		local console = ffi.cast("struct UConsole*", Object)
 
-		local cmp
-		if console.UConsole.HistoryTop == 0 then
-			cmp = console.UConsole.History[15]
-		else
-			cmp = console.UConsole.History[console.UConsole.HistoryTop - 1]
-		end
-
-		if cmp:IsValid() and cmdStringObject ~= cmp then
-			console.UConsole.History[console.UConsole.HistoryTop] = cmdStringObject
-			console.UConsole.HistoryTop = (console.UConsole.HistoryTop + 1) % 16
-		end
-
-		console.UConsole.HistoryCur = console.UConsole.HistoryTop
 		Stack:SkipFunction()
 		return true
 	end

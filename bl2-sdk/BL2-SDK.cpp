@@ -375,7 +375,7 @@ namespace BL2SDK
 		//HookAntiDebug();
 		GameHooks::Initialize();
 		hookGame();
-		InitializePackageFix();
+		//InitializePackageFix();
 
 		LogAllProcessEventCalls(false);
 		LogAllUnrealScriptCalls(false);
