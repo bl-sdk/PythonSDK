@@ -18,7 +18,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameObjComponent",
-				index = 37466,
+				index = 37465,
 				className = "UAkComponent",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -26,7 +26,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ListenerLocation",
-				index = 37465,
+				index = 37464,
 				type = ffi.typeof("struct FVector"),
 				castTo = ffi.typeof("struct FVector*"),
 				flags = 64,
@@ -34,7 +34,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ObjectLocation",
-				index = 37464,
+				index = 37463,
 				type = ffi.typeof("struct FVector"),
 				castTo = ffi.typeof("struct FVector*"),
 				flags = 64,
@@ -42,14 +42,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 37461,
+		index = 37460,
 		retOffset = 28,
 	}
 	g_classFuncs["UISpecialOcclusionAccumulator"]["RemoveOcclusionProvider"] = {
 		fields = {
 			{
 				name = "Source",
-				index = 37478,
+				index = 37477,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -57,13 +57,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37477,
+		index = 37476,
 	}
 	g_classFuncs["UISpecialOcclusionAccumulator"]["SetOcclusionForProvider"] = {
 		fields = {
 			{
 				name = "Source",
-				index = 37476,
+				index = 37475,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -71,7 +71,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Amount",
-				index = 37475,
+				index = 37474,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -79,13 +79,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37474,
+		index = 37473,
 	}
 	g_classFuncs["AWwiseSoundGroup"]["RemoveOcclusionProvider"] = {
 		fields = {
 			{
 				name = "Source",
-				index = 37507,
+				index = 37506,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -93,13 +93,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37506,
+		index = 37505,
 	}
 	g_classFuncs["AWwiseSoundGroup"]["SetOcclusionForProvider"] = {
 		fields = {
 			{
 				name = "Source",
-				index = 37505,
+				index = 37504,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -107,7 +107,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Amount",
-				index = 37504,
+				index = 37503,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -115,27 +115,27 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37503,
+		index = 37502,
 	}
 	g_classFuncs["AWwiseSoundGroup"]["GetOcclusionAmount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37502,
+				index = 37501,
 				castTo = ffi.typeof("float*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37501,
+		index = 37500,
 		retOffset = 0,
 	}
 	g_classFuncs["AWwiseSoundGroup"]["SetAkSwitchObject"] = {
 		fields = {
 			{
 				name = "Switch",
-				index = 37500,
+				index = 37499,
 				className = "UAkSwitch",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -143,13 +143,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37499,
+		index = 37498,
 	}
 	g_classFuncs["AWwiseSoundGroup"]["SetRTPCObjectValue"] = {
 		fields = {
 			{
 				name = "InRtpc",
-				index = 37498,
+				index = 37497,
 				className = "UAkRtpc",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -157,7 +157,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TargetValue",
-				index = 37497,
+				index = 37496,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -165,13 +165,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37496,
+		index = 37495,
 	}
 	g_classFuncs["AWwiseSoundVolume"]["RemoveOcclusionProvider"] = {
 		fields = {
 			{
 				name = "Source",
-				index = 37587,
+				index = 37586,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -179,13 +179,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37586,
+		index = 37585,
 	}
 	g_classFuncs["AWwiseSoundVolume"]["SetOcclusionForProvider"] = {
 		fields = {
 			{
 				name = "Source",
-				index = 37585,
+				index = 37584,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -193,7 +193,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Amount",
-				index = 37584,
+				index = 37583,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -201,20 +201,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37583,
+		index = 37582,
 	}
 	g_classFuncs["AWwiseSoundVolume"]["GetOcclusionAmount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37582,
+				index = 37581,
 				castTo = ffi.typeof("float*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37581,
+		index = 37580,
 		retOffset = 0,
 	}
 	g_classFuncs["AWwiseSoundVolume"]["UpdateAkComponentPosition"] = {
@@ -241,7 +241,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37576,
+		index = 37575,
 	}
 	g_classFuncs["AWwiseSoundVolume"]["GetEnvironmentalEffectsForLocation"] = {
 		fields = {
@@ -256,7 +256,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameObjComponent",
-				index = 37575,
+				index = 37574,
 				className = "UAkComponent",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -264,7 +264,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ListenerLocation",
-				index = 37574,
+				index = 37573,
 				type = ffi.typeof("struct FVector"),
 				castTo = ffi.typeof("struct FVector*"),
 				flags = 64,
@@ -272,7 +272,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ObjectLocation",
-				index = 37573,
+				index = 37572,
 				type = ffi.typeof("struct FVector"),
 				castTo = ffi.typeof("struct FVector*"),
 				flags = 64,
@@ -280,12 +280,12 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 37570,
+		index = 37569,
 		retOffset = 28,
 	}
 	g_classFuncs["AWwiseSoundVolume"]["CalculateFacePlanes"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37569,
+		index = 37568,
 	}

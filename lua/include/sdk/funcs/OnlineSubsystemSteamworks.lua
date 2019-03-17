@@ -9,14 +9,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46504,
+				index = 46503,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "OutServerIP",
 				isRet = true,
-				index = 46506,
+				index = 46505,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 0
@@ -24,14 +24,14 @@ local c = g_classFuncs
 			{
 				name = "OutServerPort",
 				isRet = true,
-				index = 46505,
+				index = 46504,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 		},
 		dataSize = 12,
-		index = 46503,
+		index = 46502,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["GetServerUniqueId"] = {
@@ -39,14 +39,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46501,
+				index = 46500,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "OutServerUID",
 				isRet = true,
-				index = 46502,
+				index = 46501,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -54,14 +54,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46500,
+		index = 46499,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndRemoteServerAuthSession"] = {
 		fields = {
 			{
 				name = "ServerUID",
-				index = 46499,
+				index = 46498,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -69,7 +69,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ServerIP",
-				index = 46498,
+				index = 46497,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -77,13 +77,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46497,
+		index = 46496,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndLocalServerAuthSession"] = {
 		fields = {
 			{
 				name = "ClientUID",
-				index = 46496,
+				index = 46495,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -91,7 +91,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientIP",
-				index = 46495,
+				index = 46494,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -99,20 +99,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46494,
+		index = 46493,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["VerifyServerAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46490,
+				index = 46489,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "ServerUID",
-				index = 46493,
+				index = 46492,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -120,7 +120,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ServerIP",
-				index = 46492,
+				index = 46491,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -128,7 +128,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "AuthBlobUID",
-				index = 46491,
+				index = 46490,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -136,7 +136,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46489,
+		index = 46488,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["CreateServerAuthSession"] = {
@@ -144,13 +144,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46484,
+				index = 46483,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "ClientUID",
-				index = 46488,
+				index = 46487,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -158,7 +158,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientIP",
-				index = 46487,
+				index = 46486,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -166,7 +166,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientPort",
-				index = 46486,
+				index = 46485,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -175,21 +175,21 @@ local c = g_classFuncs
 			{
 				name = "OutAuthBlobUID",
 				isRet = true,
-				index = 46485,
+				index = 46484,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 32
 			},
 		},
 		dataSize = 40,
-		index = 46483,
+		index = 46482,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndRemoteClientAuthSession"] = {
 		fields = {
 			{
 				name = "ClientUID",
-				index = 46482,
+				index = 46481,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -197,7 +197,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientIP",
-				index = 46481,
+				index = 46480,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -205,13 +205,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46480,
+		index = 46479,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndLocalClientAuthSession"] = {
 		fields = {
 			{
 				name = "ServerUID",
-				index = 46479,
+				index = 46478,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -219,7 +219,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ServerIP",
-				index = 46478,
+				index = 46477,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -227,7 +227,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ServerPort",
-				index = 46477,
+				index = 46476,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -235,20 +235,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 46476,
+		index = 46475,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["VerifyClientAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46471,
+				index = 46470,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "ClientUID",
-				index = 46475,
+				index = 46474,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -256,7 +256,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientIP",
-				index = 46474,
+				index = 46473,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -264,7 +264,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientPort",
-				index = 46473,
+				index = 46472,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -272,7 +272,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "AuthBlobUID",
-				index = 46472,
+				index = 46471,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -280,7 +280,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 46470,
+		index = 46469,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["CreateClientAuthSession"] = {
@@ -288,13 +288,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46464,
+				index = 46463,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 40
 			},
 			{
 				name = "ServerUID",
-				index = 46469,
+				index = 46468,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -302,7 +302,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ServerIP",
-				index = 46468,
+				index = 46467,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -310,7 +310,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ServerPort",
-				index = 46467,
+				index = 46466,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -318,7 +318,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bSecure",
-				index = 46466,
+				index = 46465,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -327,14 +327,14 @@ local c = g_classFuncs
 			{
 				name = "OutAuthBlobUID",
 				isRet = true,
-				index = 46465,
+				index = 46464,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 36
 			},
 		},
 		dataSize = 44,
-		index = 46463,
+		index = 46462,
 		retOffset = 40,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["SendAuthRequestServer"] = {
@@ -342,13 +342,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46461,
+				index = 46460,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "ServerUID",
-				index = 46462,
+				index = 46461,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -356,7 +356,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46460,
+		index = 46459,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["SendAuthRequestClient"] = {
@@ -364,13 +364,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46457,
+				index = 46456,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "ClientConnection",
-				index = 46459,
+				index = 46458,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -378,7 +378,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ClientUID",
-				index = 46458,
+				index = 46457,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -386,7 +386,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 46456,
+		index = 46455,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["GetGameSettings"] = {
@@ -394,13 +394,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46610,
+				index = 46609,
 				castTo = ffi.typeof("struct UOnlineGameSettings**"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 46611,
+				index = 46610,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -408,7 +408,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46609,
+		index = 46608,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["GetResolvedConnectString"] = {
@@ -416,13 +416,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46606,
+				index = 46605,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "SessionName",
-				index = 46608,
+				index = 46607,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -431,7 +431,7 @@ local c = g_classFuncs
 			{
 				name = "ConnectInfo",
 				isRet = true,
-				index = 46607,
+				index = 46606,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -440,7 +440,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46605,
+		index = 46604,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["BindPlatformSpecificSessionToSearch"] = {
@@ -448,13 +448,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46601,
+				index = 46600,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 88
 			},
 			{
 				name = "SearchingPlayerNum",
-				index = 46604,
+				index = 46603,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -462,7 +462,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchSettings",
-				index = 46603,
+				index = 46602,
 				className = "UOnlineGameSearch",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -470,7 +470,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlatformSpecificInfo",
-				index = 46602,
+				index = 46601,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -478,7 +478,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 92,
-		index = 46600,
+		index = 46599,
 		retOffset = 88,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ReadPlatformSpecificSessionInfoBySessionName"] = {
@@ -486,13 +486,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46597,
+				index = 46596,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 88
 			},
 			{
 				name = "SessionName",
-				index = 46599,
+				index = 46598,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -501,14 +501,14 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 46598,
+				index = 46597,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 8
 			},
 		},
 		dataSize = 92,
-		index = 46596,
+		index = 46595,
 		retOffset = 88,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ReadPlatformSpecificSessionInfo"] = {
@@ -516,14 +516,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46593,
+				index = 46592,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 88
 			},
 			{
 				name = "DesiredGame",
 				isRet = true,
-				index = 46595,
+				index = 46594,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -532,14 +532,14 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 46594,
+				index = 46593,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 8
 			},
 		},
 		dataSize = 92,
-		index = 46592,
+		index = 46591,
 		retOffset = 88,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["QueryNonAdvertisedData"] = {
@@ -547,13 +547,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46589,
+				index = 46588,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "StartAt",
-				index = 46591,
+				index = 46590,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -561,7 +561,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumberToQuery",
-				index = 46590,
+				index = 46589,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -569,14 +569,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46588,
+		index = 46587,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ClearUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
-				index = 46587,
+				index = 46586,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -584,13 +584,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46586,
+		index = 46585,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AddUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
-				index = 46585,
+				index = 46584,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -598,13 +598,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46584,
+		index = 46583,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["OnUnregisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 46583,
+				index = 46582,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -612,7 +612,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46582,
+				index = 46581,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -620,7 +620,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46581,
+				index = 46580,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -628,20 +628,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46521,
+		index = 46520,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["UnregisterPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46578,
+				index = 46577,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "SessionName",
-				index = 46580,
+				index = 46579,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -649,7 +649,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46579,
+				index = 46578,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -657,14 +657,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46577,
+		index = 46576,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ClearRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
-				index = 46576,
+				index = 46575,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -672,13 +672,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46575,
+		index = 46574,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AddRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
-				index = 46574,
+				index = 46573,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -686,13 +686,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46573,
+		index = 46572,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["OnRegisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 46572,
+				index = 46571,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -700,7 +700,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46571,
+				index = 46570,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -708,7 +708,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46570,
+				index = 46569,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -716,20 +716,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46518,
+		index = 46517,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["RegisterPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46566,
+				index = 46565,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "SessionName",
-				index = 46569,
+				index = 46568,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -737,7 +737,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46568,
+				index = 46567,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -745,7 +745,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasInvited",
-				index = 46567,
+				index = 46566,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -753,7 +753,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 46565,
+		index = 46564,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AcceptGameInvite"] = {
@@ -761,13 +761,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46562,
+				index = 46561,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 46564,
+				index = 46563,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -775,7 +775,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 46563,
+				index = 46562,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -783,7 +783,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46561,
+		index = 46560,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["OnGameInviteAccepted"] = {
@@ -791,7 +791,7 @@ local c = g_classFuncs
 			{
 				name = "InviteResult",
 				isRet = true,
-				index = 46560,
+				index = 46559,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -799,13 +799,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46515,
+		index = 46514,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ClearGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46559,
+				index = 46558,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -813,7 +813,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameInviteAcceptedDelegate",
-				index = 46558,
+				index = 46557,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -821,13 +821,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46557,
+		index = 46556,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AddGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46556,
+				index = 46555,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -835,7 +835,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameInviteAcceptedDelegate",
-				index = 46555,
+				index = 46554,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -843,20 +843,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46554,
+		index = 46553,
 	}
 	g_classFuncs["UOnlineGameInterfaceSteamworks"]["UpdateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46550,
+				index = 46549,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "SessionName",
-				index = 46553,
+				index = 46552,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -864,7 +864,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UpdatedGameSettings",
-				index = 46552,
+				index = 46551,
 				className = "UOnlineGameSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -872,7 +872,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bShouldRefreshOnlineData",
-				index = 46551,
+				index = 46550,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -881,14 +881,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46549,
+		index = 46548,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCheckDownloadableContentListDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47814,
+				index = 47813,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -896,7 +896,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "CheckDownloadableContentListDelegate",
-				index = 47816,
+				index = 47815,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -904,13 +904,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47811,
+		index = 47810,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddCheckDownloadableContentListDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47819,
+				index = 47818,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -918,7 +918,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "CheckDownloadableContentListDelegate",
-				index = 47820,
+				index = 47819,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -926,20 +926,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47813,
+		index = 47812,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CheckDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47823,
+				index = 47822,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47821,
+				index = 47820,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -947,14 +947,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 47818,
+		index = 47817,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnCheckDownloadableContentList"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47824,
+				index = 47823,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -962,7 +962,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bDownloadableContentListAvailable",
-				index = 47825,
+				index = 47824,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -970,21 +970,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47817,
+		index = 47816,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCriticalDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47808,
+				index = 47807,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47809,
+				index = 47808,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1002,7 +1002,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 17,
-		index = 47805,
+		index = 47804,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCriticalDownloadableContentList"] = {
@@ -1010,13 +1010,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47802,
+				index = 47801,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47804,
+				index = 47803,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1024,7 +1024,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "CategoryMask",
-				index = 47803,
+				index = 47802,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -1033,14 +1033,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47801,
+		index = 47800,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCriticalDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47800,
+				index = 47799,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1048,7 +1048,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadCriticalDownloadableContentListCompleteDelegate",
-				index = 47799,
+				index = 47798,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1056,13 +1056,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47798,
+		index = 47797,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCriticalDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47797,
+				index = 47796,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1070,7 +1070,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadCriticalDownloadableContentListCompleteDelegate",
-				index = 47796,
+				index = 47795,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1078,13 +1078,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47795,
+		index = 47794,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCriticalDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47794,
+				index = 47793,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1092,21 +1092,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47793,
+		index = 47792,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetHiddenDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47791,
+				index = 47790,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47792,
+				index = 47791,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1124,7 +1124,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 17,
-		index = 47788,
+		index = 47787,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadHiddenDownloadableContentList"] = {
@@ -1132,13 +1132,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47786,
+				index = 47785,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47787,
+				index = 47786,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1154,14 +1154,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47783,
+		index = 47782,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadHiddenDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47782,
+				index = 47781,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1169,7 +1169,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadHiddenDownloadableContentListCompleteDelegate",
-				index = 47781,
+				index = 47780,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1177,13 +1177,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47780,
+		index = 47779,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadHiddenDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47779,
+				index = 47778,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1191,7 +1191,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadHiddenDownloadableContentListCompleteDelegate",
-				index = 47778,
+				index = 47777,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1199,13 +1199,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47777,
+		index = 47776,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadHiddenDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47776,
+				index = 47775,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1213,21 +1213,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47775,
+		index = 47774,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47773,
+				index = 47772,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47774,
+				index = 47773,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1245,7 +1245,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 17,
-		index = 47770,
+		index = 47769,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadDownloadableContentList"] = {
@@ -1253,13 +1253,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47767,
+				index = 47766,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47769,
+				index = 47768,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1267,7 +1267,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "CategoryMask",
-				index = 47768,
+				index = 47767,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -1276,14 +1276,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47766,
+		index = 47765,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47765,
+				index = 47764,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1291,7 +1291,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadDownloadableContentListCompleteDelegate",
-				index = 47764,
+				index = 47763,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1299,13 +1299,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47763,
+		index = 47762,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47761,
+				index = 47760,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1313,7 +1313,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadDownloadableContentListCompleteDelegate",
-				index = 47760,
+				index = 47759,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1321,13 +1321,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47759,
+		index = 47758,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47758,
+				index = 47757,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1335,21 +1335,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46650,
+		index = 46649,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetSaveGamesList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47756,
+				index = 47755,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47757,
+				index = 47756,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1367,7 +1367,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 17,
-		index = 47753,
+		index = 47752,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadSaveGamesList"] = {
@@ -1375,13 +1375,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47749,
+				index = 47748,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "LocalUserNum",
-				index = 47752,
+				index = 47751,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1389,7 +1389,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47751,
+				index = 47750,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -1398,7 +1398,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFilePrefix",
-				index = 47750,
+				index = 47749,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -1407,14 +1407,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 47748,
+		index = 47747,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadSaveGamesComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47747,
+				index = 47746,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1422,7 +1422,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadSaveGamesCompleteDelegate",
-				index = 47746,
+				index = 47745,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1430,13 +1430,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47745,
+		index = 47744,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadSaveGamesComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47744,
+				index = 47743,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1444,7 +1444,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadSaveGamesCompleteDelegate",
-				index = 47743,
+				index = 47742,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1452,13 +1452,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47742,
+		index = 47741,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadSaveGamesComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47741,
+				index = 47740,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1466,20 +1466,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47740,
+		index = 47739,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearSaveGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47738,
+				index = 47737,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47739,
+				index = 47738,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1487,7 +1487,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47737,
+		index = 47736,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteSaveGame"] = {
@@ -1495,13 +1495,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47732,
+				index = 47731,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "LocalUserNum",
-				index = 47736,
+				index = 47735,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1509,7 +1509,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47735,
+				index = 47734,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1517,7 +1517,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47734,
+				index = 47733,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1525,7 +1525,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47733,
+				index = 47732,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1533,14 +1533,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 47731,
+		index = 47730,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearWriteSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47730,
+				index = 47729,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1548,7 +1548,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WriteSaveGameDataCompleteDelegate",
-				index = 47729,
+				index = 47728,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1556,13 +1556,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47728,
+		index = 47727,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddWriteSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47727,
+				index = 47726,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1570,7 +1570,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WriteSaveGameDataCompleteDelegate",
-				index = 47726,
+				index = 47725,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1578,13 +1578,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47725,
+		index = 47724,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnWriteSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47724,
+				index = 47723,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1592,7 +1592,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 47723,
+				index = 47722,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1600,7 +1600,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47722,
+				index = 47721,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1608,7 +1608,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47721,
+				index = 47720,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1616,7 +1616,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47720,
+				index = 47719,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1624,7 +1624,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47719,
+				index = 47718,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1632,20 +1632,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 47718,
+		index = 47717,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47712,
+				index = 47711,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 56
 			},
 			{
 				name = "LocalUserNum",
-				index = 47717,
+				index = 47716,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1653,7 +1653,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47716,
+				index = 47715,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1661,7 +1661,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47715,
+				index = 47714,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1669,7 +1669,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47714,
+				index = 47713,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1677,7 +1677,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47713,
+				index = 47712,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1695,14 +1695,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 60,
-		index = 47709,
+		index = 47708,
 		retOffset = 56,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47708,
+				index = 47707,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1710,7 +1710,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadSaveGameDataCompleteDelegate",
-				index = 47707,
+				index = 47706,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1718,13 +1718,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47706,
+		index = 47705,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47705,
+				index = 47704,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1732,7 +1732,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadSaveGameDataCompleteDelegate",
-				index = 47704,
+				index = 47703,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1740,13 +1740,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47703,
+		index = 47702,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47702,
+				index = 47701,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1754,7 +1754,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 47701,
+				index = 47700,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1762,7 +1762,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47700,
+				index = 47699,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1770,7 +1770,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47699,
+				index = 47698,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1778,7 +1778,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47698,
+				index = 47697,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1786,7 +1786,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47697,
+				index = 47696,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1794,20 +1794,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 47696,
+		index = 47695,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47689,
+				index = 47688,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 60
 			},
 			{
 				name = "LocalUserNum",
-				index = 47695,
+				index = 47694,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1815,7 +1815,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47694,
+				index = 47693,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1823,7 +1823,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47693,
+				index = 47692,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1831,7 +1831,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47692,
+				index = 47691,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1839,7 +1839,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47691,
+				index = 47690,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1848,7 +1848,7 @@ local c = g_classFuncs
 			{
 				name = "bIsValid",
 				isRet = true,
-				index = 47690,
+				index = 47689,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 44
@@ -1865,7 +1865,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 64,
-		index = 47686,
+		index = 47685,
 		retOffset = 60,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadSaveGameData"] = {
@@ -1873,13 +1873,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47680,
+				index = 47679,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 44
 			},
 			{
 				name = "LocalUserNum",
-				index = 47685,
+				index = 47684,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1887,7 +1887,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47684,
+				index = 47683,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1895,7 +1895,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47683,
+				index = 47682,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1903,7 +1903,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47682,
+				index = 47681,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1911,7 +1911,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47681,
+				index = 47680,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1919,14 +1919,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 47679,
+		index = 47678,
 		retOffset = 44,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetAvailableDownloadCounts"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47678,
+				index = 47677,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1935,7 +1935,7 @@ local c = g_classFuncs
 			{
 				name = "NewDownloads",
 				isRet = true,
-				index = 47677,
+				index = 47676,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 4
@@ -1943,20 +1943,20 @@ local c = g_classFuncs
 			{
 				name = "TotalDownloads",
 				isRet = true,
-				index = 47676,
+				index = 47675,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 8
 			},
 		},
 		dataSize = 12,
-		index = 47675,
+		index = 47674,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearQueryAvailableDownloadsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47674,
+				index = 47673,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1964,7 +1964,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "QueryDownloadsDelegate",
-				index = 47673,
+				index = 47672,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1972,13 +1972,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47672,
+		index = 47671,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddQueryAvailableDownloadsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47671,
+				index = 47670,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1986,7 +1986,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "QueryDownloadsDelegate",
-				index = 47670,
+				index = 47669,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1994,13 +1994,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47669,
+		index = 47668,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnQueryAvailableDownloadsComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47668,
+				index = 47667,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2008,20 +2008,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47667,
+		index = 47666,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["QueryAvailableDownloads"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47664,
+				index = 47663,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47666,
+				index = 47665,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2029,7 +2029,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "CategoryMask",
-				index = 47665,
+				index = 47664,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -2038,7 +2038,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47663,
+		index = 47662,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCrossTitleSaveGames"] = {
@@ -2046,13 +2046,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47661,
+				index = 47660,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47662,
+				index = 47661,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2060,14 +2060,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47660,
+		index = 47659,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCrossTitleSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47659,
+				index = 47658,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2075,7 +2075,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadSaveGameDataCompleteDelegate",
-				index = 47658,
+				index = 47657,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2083,13 +2083,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47657,
+		index = 47656,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCrossTitleSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47656,
+				index = 47655,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2097,7 +2097,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadSaveGameDataCompleteDelegate",
-				index = 47655,
+				index = 47654,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2105,13 +2105,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47654,
+		index = 47653,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCrossTitleSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47653,
+				index = 47652,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2119,7 +2119,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 47652,
+				index = 47651,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2127,7 +2127,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47651,
+				index = 47650,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2135,7 +2135,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47650,
+				index = 47649,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2143,7 +2143,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47649,
+				index = 47648,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2151,7 +2151,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47648,
+				index = 47647,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2159,7 +2159,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47647,
+				index = 47646,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2167,20 +2167,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47646,
+		index = 47645,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCrossTitleSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47638,
+				index = 47637,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 64
 			},
 			{
 				name = "LocalUserNum",
-				index = 47645,
+				index = 47644,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2188,7 +2188,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47644,
+				index = 47643,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2196,7 +2196,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47643,
+				index = 47642,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2204,7 +2204,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47642,
+				index = 47641,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2212,7 +2212,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47641,
+				index = 47640,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2220,7 +2220,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47640,
+				index = 47639,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2229,7 +2229,7 @@ local c = g_classFuncs
 			{
 				name = "bIsValid",
 				isRet = true,
-				index = 47639,
+				index = 47638,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 48
@@ -2246,7 +2246,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 68,
-		index = 47635,
+		index = 47634,
 		retOffset = 64,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCrossTitleSaveGameData"] = {
@@ -2254,13 +2254,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47628,
+				index = 47627,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 48
 			},
 			{
 				name = "LocalUserNum",
-				index = 47634,
+				index = 47633,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2268,7 +2268,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47633,
+				index = 47632,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2276,7 +2276,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47632,
+				index = 47631,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2284,7 +2284,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendlyName",
-				index = 47631,
+				index = 47630,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2292,7 +2292,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47630,
+				index = 47629,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2300,7 +2300,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SaveFileName",
-				index = 47629,
+				index = 47628,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2308,14 +2308,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47627,
+		index = 47626,
 		retOffset = 48,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCrossTitleContentCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47626,
+				index = 47625,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2323,7 +2323,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47625,
+				index = 47624,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2332,7 +2332,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadContentCompleteDelegate",
-				index = 47624,
+				index = 47623,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2340,13 +2340,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47623,
+		index = 47622,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCrossTitleContentCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47622,
+				index = 47621,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2354,7 +2354,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47621,
+				index = 47620,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2363,7 +2363,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadContentCompleteDelegate",
-				index = 47620,
+				index = 47619,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2371,13 +2371,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47619,
+		index = 47618,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCrossTitleContentComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47618,
+				index = 47617,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2385,21 +2385,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47617,
+		index = 47616,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCrossTitleContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47614,
+				index = 47613,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47616,
+				index = 47615,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2407,7 +2407,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47615,
+				index = 47614,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2426,14 +2426,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 17,
-		index = 47611,
+		index = 47610,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCrossTitleContentList"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47610,
+				index = 47609,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2441,7 +2441,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47609,
+				index = 47608,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2450,20 +2450,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 47608,
+		index = 47607,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCrossTitleContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47603,
+				index = 47602,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 47607,
+				index = 47606,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2471,7 +2471,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47606,
+				index = 47605,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2480,7 +2480,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47605,
+				index = 47604,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -2489,7 +2489,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47604,
+				index = 47603,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -2498,7 +2498,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47602,
+		index = 47601,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetContentList"] = {
@@ -2506,14 +2506,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47599,
+				index = 47598,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47601,
+				index = 47600,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2521,7 +2521,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47600,
+				index = 47599,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2540,14 +2540,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 17,
-		index = 47596,
+		index = 47595,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearContentList"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47595,
+				index = 47594,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2555,7 +2555,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47594,
+				index = 47593,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2564,20 +2564,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 47593,
+		index = 47592,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47589,
+				index = 47588,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47592,
+				index = 47591,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2585,7 +2585,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47591,
+				index = 47590,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2594,7 +2594,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 47590,
+				index = 47589,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -2603,14 +2603,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47588,
+		index = 47587,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadContentComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47587,
+				index = 47586,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2618,7 +2618,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47586,
+				index = 47585,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2627,7 +2627,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadContentCompleteDelegate",
-				index = 47585,
+				index = 47584,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2635,13 +2635,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47584,
+		index = 47583,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadContentComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47583,
+				index = 47582,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2649,7 +2649,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 47582,
+				index = 47581,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineContentType",
@@ -2658,7 +2658,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadContentCompleteDelegate",
-				index = 47581,
+				index = 47580,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2666,13 +2666,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47580,
+		index = 47579,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadContentComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47579,
+				index = 47578,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2680,13 +2680,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47578,
+		index = 47577,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearContentChangeDelegate"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
-				index = 47577,
+				index = 47576,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2694,7 +2694,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 47576,
+				index = 47575,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
@@ -2703,13 +2703,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 13,
-		index = 47575,
+		index = 47574,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddContentChangeDelegate"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
-				index = 47574,
+				index = 47573,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2717,7 +2717,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 47573,
+				index = 47572,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
@@ -2726,13 +2726,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 13,
-		index = 47572,
+		index = 47571,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearContentChangeDelegateEx"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
-				index = 47571,
+				index = 47570,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2740,13 +2740,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47570,
+		index = 47569,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddContentChangeDelegateEx"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
-				index = 47568,
+				index = 47567,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2754,26 +2754,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47567,
+		index = 47566,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnContentChange"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 47566,
+		index = 47565,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowRedeemCodeUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47564,
+				index = 47563,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47565,
+				index = 47564,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2781,33 +2781,33 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47563,
+		index = 47562,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DumpSteamworksSessionState"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 47562,
+		index = 47561,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DumpSessionState"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 47561,
+		index = 47560,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SetVoiceVolume"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47558,
+				index = 47557,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "VolType",
-				index = 47560,
+				index = 47559,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EVoiceVolumeType",
@@ -2816,7 +2816,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "VolumeParam",
-				index = 47559,
+				index = 47558,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -2824,14 +2824,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47557,
+		index = 47556,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearUnlockAvatarAwardCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47556,
+				index = 47555,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2839,7 +2839,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UnlockAvatarAwardCompleteDelegate",
-				index = 47555,
+				index = 47554,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2847,13 +2847,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47554,
+		index = 47553,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddUnlockAvatarAwardCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47553,
+				index = 47552,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2861,7 +2861,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UnlockAvatarAwardCompleteDelegate",
-				index = 47552,
+				index = 47551,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2869,13 +2869,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47551,
+		index = 47550,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnUnlockAvatarAwardComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47550,
+				index = 47549,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2883,20 +2883,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47549,
+		index = 47548,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetFriendJoinURL"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47545,
+				index = 47544,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 48
 			},
 			{
 				name = "FriendUID",
-				index = 47548,
+				index = 47547,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -2905,7 +2905,7 @@ local c = g_classFuncs
 			{
 				name = "ServerURL",
 				isRet = true,
-				index = 47547,
+				index = 47546,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -2915,7 +2915,7 @@ local c = g_classFuncs
 			{
 				name = "ServerUID",
 				isRet = true,
-				index = 47546,
+				index = 47545,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -2924,7 +2924,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47544,
+		index = 47543,
 		retOffset = 48,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCommandlineJoinURL"] = {
@@ -2932,13 +2932,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47540,
+				index = 47539,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "bMarkAsJoined",
-				index = 47543,
+				index = 47542,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2947,7 +2947,7 @@ local c = g_classFuncs
 			{
 				name = "ServerURL",
 				isRet = true,
-				index = 47542,
+				index = 47541,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -2957,7 +2957,7 @@ local c = g_classFuncs
 			{
 				name = "ServerUID",
 				isRet = true,
-				index = 47541,
+				index = 47540,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -2966,7 +2966,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47539,
+		index = 47538,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["Int64ToUniqueNetId"] = {
@@ -2974,13 +2974,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47536,
+				index = 47535,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "UIDString",
-				index = 47538,
+				index = 47537,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2989,7 +2989,7 @@ local c = g_classFuncs
 			{
 				name = "OutUID",
 				isRet = true,
-				index = 47537,
+				index = 47536,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -2997,7 +2997,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 47535,
+		index = 47534,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UniqueNetIdToInt64"] = {
@@ -3005,7 +3005,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47533,
+				index = 47532,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3014,7 +3014,7 @@ local c = g_classFuncs
 			{
 				name = "Uid",
 				isRet = true,
-				index = 47534,
+				index = 47533,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -3022,14 +3022,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 47532,
+		index = 47531,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["NotifyVOIPPlaybackFinished"] = {
 		fields = {
 			{
 				name = "VOIPAudioComponent",
-				index = 47531,
+				index = 47530,
 				className = "UAudioComponent",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3037,13 +3037,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47530,
+		index = 47529,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnVOIPPlaybackFinished"] = {
 		fields = {
 			{
 				name = "AC",
-				index = 47529,
+				index = 47528,
 				className = "UAudioComponent",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3051,20 +3051,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47528,
+		index = 47527,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowProfileUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47524,
+				index = 47523,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 40
 			},
 			{
 				name = "LocalUserNum",
-				index = 47527,
+				index = 47526,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3072,7 +3072,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SubURL",
-				index = 47526,
+				index = 47525,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -3081,7 +3081,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerUID",
-				index = 47525,
+				index = 47524,
 				optional = true,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -3090,7 +3090,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 47523,
+		index = 47522,
 		retOffset = 40,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UniqueNetIdToPlayerName"] = {
@@ -3098,7 +3098,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47521,
+				index = 47520,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3107,7 +3107,7 @@ local c = g_classFuncs
 			{
 				name = "Uid",
 				isRet = true,
-				index = 47522,
+				index = 47521,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -3115,7 +3115,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 47520,
+		index = 47519,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DisplayAchievementProgress"] = {
@@ -3123,13 +3123,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47516,
+				index = 47515,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "AchievementId",
-				index = 47519,
+				index = 47518,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3137,7 +3137,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProgressCount",
-				index = 47518,
+				index = 47517,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3145,7 +3145,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MaxProgress",
-				index = 47517,
+				index = 47516,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3153,7 +3153,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47515,
+		index = 47514,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CreateLeaderboard"] = {
@@ -3161,13 +3161,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47511,
+				index = 47510,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LeaderboardName",
-				index = 47514,
+				index = 47513,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3175,7 +3175,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SortType",
-				index = 47513,
+				index = 47512,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ELeaderboardSortType",
@@ -3184,7 +3184,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DisplayFormat",
-				index = 47512,
+				index = 47511,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ELeaderboardFormat",
@@ -3193,7 +3193,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47510,
+		index = 47509,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ResetStats"] = {
@@ -3201,13 +3201,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47508,
+				index = 47507,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "bResetAchievements",
-				index = 47509,
+				index = 47508,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3215,7 +3215,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47507,
+		index = 47506,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowCustomMessageUI"] = {
@@ -3223,13 +3223,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47502,
+				index = 47501,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 52
 			},
 			{
 				name = "LocalUserNum",
-				index = 47506,
+				index = 47505,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3247,7 +3247,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MessageTitle",
-				index = 47505,
+				index = 47504,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3255,7 +3255,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NonEditableMessage",
-				index = 47504,
+				index = 47503,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3263,7 +3263,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "EditableMessage",
-				index = 47503,
+				index = 47502,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -3272,14 +3272,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 56,
-		index = 47499,
+		index = 47498,
 		retOffset = 52,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCrossTitleProfileSettings"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47498,
+				index = 47497,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3287,7 +3287,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47497,
+				index = 47496,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3295,20 +3295,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47496,
+		index = 47495,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCrossTitleProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47493,
+				index = 47492,
 				castTo = ffi.typeof("struct UOnlineProfileSettings**"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47495,
+				index = 47494,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3316,7 +3316,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47494,
+				index = 47493,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3324,14 +3324,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47492,
+		index = 47491,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCrossTitleProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47491,
+				index = 47490,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3339,7 +3339,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadProfileSettingsCompleteDelegate",
-				index = 47490,
+				index = 47489,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3347,13 +3347,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47489,
+		index = 47488,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCrossTitleProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47488,
+				index = 47487,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3361,7 +3361,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadProfileSettingsCompleteDelegate",
-				index = 47487,
+				index = 47486,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3369,13 +3369,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47486,
+		index = 47485,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCrossTitleProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47485,
+				index = 47484,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3383,7 +3383,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47484,
+				index = 47483,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3391,7 +3391,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 47483,
+				index = 47482,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3399,20 +3399,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47482,
+		index = 47481,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCrossTitleProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47478,
+				index = 47477,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 47481,
+				index = 47480,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3420,7 +3420,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47480,
+				index = 47479,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3428,7 +3428,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProfileSettings",
-				index = 47479,
+				index = 47478,
 				className = "UOnlineProfileSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3436,7 +3436,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47477,
+		index = 47476,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnlockAvatarAward"] = {
@@ -3444,13 +3444,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47474,
+				index = 47473,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47476,
+				index = 47475,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3458,7 +3458,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "AvatarItemId",
-				index = 47475,
+				index = 47474,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3466,7 +3466,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47473,
+		index = 47472,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["EnumerateFilesOnRemoteStorage"] = {
@@ -3482,7 +3482,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47470,
+		index = 47469,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteFileFromRemoteStorage"] = {
@@ -3490,13 +3490,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47468,
+				index = 47467,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "Filename",
-				index = 47469,
+				index = 47468,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3504,7 +3504,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47467,
+		index = 47466,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadBytesFromRemoteStorage"] = {
@@ -3512,13 +3512,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47465,
+				index = 47464,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 47466,
+				index = 47465,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3536,7 +3536,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47462,
+		index = 47461,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadStringFromRemoteStorage"] = {
@@ -3544,13 +3544,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47459,
+				index = 47458,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 47461,
+				index = 47460,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3559,7 +3559,7 @@ local c = g_classFuncs
 			{
 				name = "Data",
 				isRet = true,
-				index = 47460,
+				index = 47459,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -3568,7 +3568,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47458,
+		index = 47457,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteBytesToRemoteStorage"] = {
@@ -3576,13 +3576,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47456,
+				index = 47455,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 47457,
+				index = 47456,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3598,7 +3598,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47453,
+		index = 47452,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteStringToRemoteStorage"] = {
@@ -3606,13 +3606,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47450,
+				index = 47449,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 47452,
+				index = 47451,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3620,7 +3620,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Data",
-				index = 47451,
+				index = 47450,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3628,7 +3628,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47449,
+		index = 47448,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetSteamClanData"] = {
@@ -3645,13 +3645,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47446,
+		index = 47445,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearGetNumberOfCurrentPlayersCompleteDelegate"] = {
 		fields = {
 			{
 				name = "GetNumberOfCurrentPlayersCompleteDelegate",
-				index = 47445,
+				index = 47444,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3659,13 +3659,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47444,
+		index = 47443,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddGetNumberOfCurrentPlayersCompleteDelegate"] = {
 		fields = {
 			{
 				name = "GetNumberOfCurrentPlayersCompleteDelegate",
-				index = 47442,
+				index = 47441,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3673,13 +3673,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47441,
+		index = 47440,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnGetNumberOfCurrentPlayersComplete"] = {
 		fields = {
 			{
 				name = "TotalPlayers",
-				index = 47440,
+				index = 47439,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3687,27 +3687,27 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47439,
+		index = 47438,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetNumberOfCurrentPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47438,
+				index = 47437,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 47437,
+		index = 47436,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineAvatar"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
-				index = 47436,
+				index = 47435,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -3715,7 +3715,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Size",
-				index = 47435,
+				index = 47434,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3723,7 +3723,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadOnlineAvatarCompleteDelegate",
-				index = 47434,
+				index = 47433,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3731,13 +3731,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 47433,
+		index = 47432,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadOnlineAvatarComplete"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
-				index = 47432,
+				index = 47431,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -3745,7 +3745,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Avatar",
-				index = 47431,
+				index = 47430,
 				className = "UTexture2D",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3753,20 +3753,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47430,
+		index = 47429,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowCustomPlayersUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47426,
+				index = 47425,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 40
 			},
 			{
 				name = "LocalUserNum",
-				index = 47429,
+				index = 47428,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3784,7 +3784,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Title",
-				index = 47428,
+				index = 47427,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3792,7 +3792,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Description",
-				index = 47427,
+				index = 47426,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3800,7 +3800,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 47423,
+		index = 47422,
 		retOffset = 40,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetAchievements"] = {
@@ -3808,14 +3808,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47420,
+				index = 47419,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 20
 			},
 			{
 				name = "LocalUserNum",
-				index = 47422,
+				index = 47421,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3833,7 +3833,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47421,
+				index = 47420,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -3842,14 +3842,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 21,
-		index = 47417,
+		index = 47416,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadAchievementsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47416,
+				index = 47415,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3857,7 +3857,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadAchievementsCompleteDelegate",
-				index = 47415,
+				index = 47414,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3865,13 +3865,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47414,
+		index = 47413,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadAchievementsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47412,
+				index = 47411,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3879,7 +3879,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadAchievementsCompleteDelegate",
-				index = 47411,
+				index = 47410,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3887,13 +3887,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47410,
+		index = 47409,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadAchievementsComplete"] = {
 		fields = {
 			{
 				name = "TitleId",
-				index = 47409,
+				index = 47408,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3901,20 +3901,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47408,
+		index = 47407,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadAchievements"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47403,
+				index = 47402,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47407,
+				index = 47406,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3922,7 +3922,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleId",
-				index = 47406,
+				index = 47405,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -3931,7 +3931,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bShouldReadText",
-				index = 47405,
+				index = 47404,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -3940,7 +3940,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bShouldReadImages",
-				index = 47404,
+				index = 47403,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -3949,7 +3949,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47402,
+		index = 47401,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowPlayersUI"] = {
@@ -3957,13 +3957,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47400,
+				index = 47399,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47401,
+				index = 47400,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3971,7 +3971,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47399,
+		index = 47398,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowFriendsInviteUI"] = {
@@ -3979,13 +3979,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47396,
+				index = 47395,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47398,
+				index = 47397,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3993,7 +3993,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 47397,
+				index = 47396,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4001,7 +4001,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47395,
+		index = 47394,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowFriendsUI"] = {
@@ -4009,13 +4009,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47393,
+				index = 47392,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47394,
+				index = 47393,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4023,14 +4023,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47392,
+		index = 47391,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearProfileDataChangedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47391,
+				index = 47390,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4038,7 +4038,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProfileDataChangedDelegate",
-				index = 47390,
+				index = 47389,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4046,13 +4046,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47389,
+		index = 47388,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddProfileDataChangedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47387,
+				index = 47386,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4060,7 +4060,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProfileDataChangedDelegate",
-				index = 47386,
+				index = 47385,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4068,26 +4068,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47385,
+		index = 47384,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnProfileDataChanged"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 47384,
+		index = 47383,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnlockGamerPicture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47381,
+				index = 47380,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47383,
+				index = 47382,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4095,7 +4095,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PictureId",
-				index = 47382,
+				index = 47381,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4103,14 +4103,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47380,
+		index = 47379,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearUnlockAchievementCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47379,
+				index = 47378,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4118,7 +4118,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UnlockAchievementCompleteDelegate",
-				index = 47378,
+				index = 47377,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4126,13 +4126,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47377,
+		index = 47376,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddUnlockAchievementCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47375,
+				index = 47374,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4140,7 +4140,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UnlockAchievementCompleteDelegate",
-				index = 47374,
+				index = 47373,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4148,13 +4148,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47373,
+		index = 47372,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnUnlockAchievementComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47372,
+				index = 47371,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4162,20 +4162,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47371,
+		index = 47370,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnlockAchievement"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47368,
+				index = 47367,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47370,
+				index = 47369,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4183,7 +4183,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "AchievementId",
-				index = 47369,
+				index = 47368,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4191,7 +4191,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47367,
+		index = 47366,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsDeviceValid"] = {
@@ -4199,13 +4199,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47364,
+				index = 47363,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "DeviceID",
-				index = 47366,
+				index = 47365,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4213,7 +4213,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SizeNeeded",
-				index = 47365,
+				index = 47364,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4222,7 +4222,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47363,
+		index = 47362,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetDeviceSelectionResults"] = {
@@ -4230,13 +4230,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47360,
+				index = 47359,
 				castTo = ffi.typeof("int*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47362,
+				index = 47361,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4245,7 +4245,7 @@ local c = g_classFuncs
 			{
 				name = "DeviceName",
 				isRet = true,
-				index = 47361,
+				index = 47360,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -4254,14 +4254,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47359,
+		index = 47358,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearDeviceSelectionDoneDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47358,
+				index = 47357,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4269,7 +4269,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceDelegate",
-				index = 47357,
+				index = 47356,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4277,13 +4277,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47356,
+		index = 47355,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddDeviceSelectionDoneDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47352,
+				index = 47351,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4291,7 +4291,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceDelegate",
-				index = 47351,
+				index = 47350,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4299,13 +4299,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47350,
+		index = 47349,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnDeviceSelectionComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47349,
+				index = 47348,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4313,20 +4313,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47348,
+		index = 47347,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowDeviceSelectionUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47343,
+				index = 47342,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47347,
+				index = 47346,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4334,7 +4334,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SizeNeeded",
-				index = 47346,
+				index = 47345,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4342,7 +4342,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bForceShow",
-				index = 47345,
+				index = 47344,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -4351,7 +4351,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bManageStorage",
-				index = 47344,
+				index = 47343,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -4360,7 +4360,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47342,
+		index = 47341,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowMembershipMarketplaceUI"] = {
@@ -4368,13 +4368,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47340,
+				index = 47339,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47341,
+				index = 47340,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4382,7 +4382,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47339,
+		index = 47338,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowContentMarketplaceUI"] = {
@@ -4390,13 +4390,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47335,
+				index = 47334,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 47338,
+				index = 47337,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4404,7 +4404,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "CategoryMask",
-				index = 47337,
+				index = 47336,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4413,7 +4413,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "OfferId",
-				index = 47336,
+				index = 47335,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4422,7 +4422,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47334,
+		index = 47333,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowInviteUI"] = {
@@ -4430,13 +4430,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47331,
+				index = 47330,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47333,
+				index = 47332,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4444,7 +4444,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InviteText",
-				index = 47332,
+				index = 47331,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -4453,7 +4453,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47330,
+		index = 47329,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowAchievementsUI"] = {
@@ -4461,13 +4461,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47328,
+				index = 47327,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47329,
+				index = 47328,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4475,7 +4475,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47327,
+		index = 47326,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowMessagesUI"] = {
@@ -4483,13 +4483,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47325,
+				index = 47324,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47326,
+				index = 47325,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4497,7 +4497,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47324,
+		index = 47323,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowGamerCardUI"] = {
@@ -4505,13 +4505,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47321,
+				index = 47320,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47323,
+				index = 47322,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4519,7 +4519,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 47322,
+				index = 47321,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4527,7 +4527,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47320,
+		index = 47319,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowFeedbackUI"] = {
@@ -4535,13 +4535,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47317,
+				index = 47316,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47319,
+				index = 47318,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4549,7 +4549,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 47318,
+				index = 47317,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4557,7 +4557,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47316,
+		index = 47315,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteMessage"] = {
@@ -4565,13 +4565,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47313,
+				index = 47312,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47315,
+				index = 47314,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4579,7 +4579,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MessageIndex",
-				index = 47314,
+				index = 47313,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4587,7 +4587,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47312,
+		index = 47311,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnmuteAll"] = {
@@ -4595,13 +4595,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47310,
+				index = 47309,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 47311,
+				index = 47310,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4609,7 +4609,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47309,
+		index = 47308,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["MuteAll"] = {
@@ -4617,13 +4617,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47306,
+				index = 47305,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 47308,
+				index = 47307,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4631,7 +4631,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bAllowFriends",
-				index = 47307,
+				index = 47306,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4639,7 +4639,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47305,
+		index = 47304,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CalcAggregateSkill"] = {
@@ -4663,7 +4663,7 @@ local c = g_classFuncs
 			{
 				name = "OutAggregateMu",
 				isRet = true,
-				index = 47304,
+				index = 47303,
 				isOutParm = true,
 				cType = ffi.typeof("struct FDouble"),
 				castTo = ffi.typeof("struct FDouble*"),
@@ -4672,7 +4672,7 @@ local c = g_classFuncs
 			{
 				name = "OutAggregateSigma",
 				isRet = true,
-				index = 47303,
+				index = 47302,
 				isOutParm = true,
 				cType = ffi.typeof("struct FDouble"),
 				castTo = ffi.typeof("struct FDouble*"),
@@ -4680,20 +4680,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 47298,
+		index = 47297,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterStatGuid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47295,
+				index = 47294,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "PlayerID",
-				index = 47297,
+				index = 47296,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4702,7 +4702,7 @@ local c = g_classFuncs
 			{
 				name = "ClientStatGuid",
 				isRet = true,
-				index = 47296,
+				index = 47295,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -4711,7 +4711,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 47294,
+		index = 47293,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetClientStatGuid"] = {
@@ -4719,7 +4719,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47293,
+				index = 47292,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -4727,14 +4727,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47292,
+		index = 47291,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearRegisterHostStatGuidCompleteDelegateDelegate"] = {
 		fields = {
 			{
 				name = "RegisterHostStatGuidCompleteDelegate",
-				index = 47291,
+				index = 47290,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4742,13 +4742,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47290,
+		index = 47289,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddRegisterHostStatGuidCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterHostStatGuidCompleteDelegate",
-				index = 47288,
+				index = 47287,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4756,13 +4756,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47287,
+		index = 47286,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnRegisterHostStatGuidComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47286,
+				index = 47285,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4770,21 +4770,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47285,
+		index = 47284,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterHostStatGuid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47283,
+				index = 47282,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "HostStatGuid",
 				isRet = true,
-				index = 47284,
+				index = 47283,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -4793,7 +4793,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47282,
+		index = 47281,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetHostStatGuid"] = {
@@ -4801,7 +4801,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47281,
+				index = 47280,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -4809,14 +4809,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47280,
+		index = 47279,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFriendMessageReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47279,
+				index = 47278,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4824,7 +4824,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MessageDelegate",
-				index = 47278,
+				index = 47277,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4832,13 +4832,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47277,
+		index = 47276,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendMessageReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47276,
+				index = 47275,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4846,7 +4846,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MessageDelegate",
-				index = 47275,
+				index = 47274,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4854,13 +4854,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47274,
+		index = 47273,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFriendMessageReceived"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47273,
+				index = 47272,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4868,7 +4868,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SendingPlayer",
-				index = 47272,
+				index = 47271,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4876,7 +4876,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SendingNick",
-				index = 47271,
+				index = 47270,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4884,7 +4884,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Message",
-				index = 47270,
+				index = 47269,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4892,13 +4892,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47269,
+		index = 47268,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetFriendMessages"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47268,
+				index = 47267,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4916,13 +4916,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47265,
+		index = 47264,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearJoinFriendGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinFriendGameCompleteDelegate",
-				index = 47264,
+				index = 47263,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4930,13 +4930,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47263,
+		index = 47262,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddJoinFriendGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinFriendGameCompleteDelegate",
-				index = 47261,
+				index = 47260,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -4944,13 +4944,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47260,
+		index = 47259,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnJoinFriendGameComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47259,
+				index = 47258,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4958,20 +4958,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47258,
+		index = 47257,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["JoinFriendGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47255,
+				index = 47254,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47257,
+				index = 47256,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4979,7 +4979,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Friend",
-				index = 47256,
+				index = 47255,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4987,14 +4987,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47254,
+		index = 47253,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReceivedGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47253,
+				index = 47252,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5002,7 +5002,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReceivedGameInviteDelegate",
-				index = 47252,
+				index = 47251,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5010,13 +5010,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47251,
+		index = 47250,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReceivedGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47249,
+				index = 47248,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5024,7 +5024,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReceivedGameInviteDelegate",
-				index = 47248,
+				index = 47247,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5032,13 +5032,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47247,
+		index = 47246,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReceivedGameInvite"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47246,
+				index = 47245,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5046,7 +5046,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InviterName",
-				index = 47245,
+				index = 47244,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5054,13 +5054,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47244,
+		index = 47243,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearSentGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47243,
+				index = 47242,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5068,7 +5068,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SentGameInviteDelegate",
-				index = 47242,
+				index = 47241,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5076,13 +5076,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47241,
+		index = 47240,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddSentGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47239,
+				index = 47238,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5090,7 +5090,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SentGameInviteDelegate",
-				index = 47238,
+				index = 47237,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5098,13 +5098,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47237,
+		index = 47236,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnSentGameInvite"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47236,
+				index = 47235,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5112,7 +5112,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 47235,
+				index = 47234,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -5120,20 +5120,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47234,
+		index = 47233,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SendGameInviteToFriends"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47231,
+				index = 47230,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47233,
+				index = 47232,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5149,7 +5149,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Text",
-				index = 47232,
+				index = 47231,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5158,7 +5158,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47228,
+		index = 47227,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SendGameInviteToFriend"] = {
@@ -5166,13 +5166,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47224,
+				index = 47223,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 40
 			},
 			{
 				name = "LocalUserNum",
-				index = 47227,
+				index = 47226,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5180,7 +5180,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Friend",
-				index = 47226,
+				index = 47225,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5188,7 +5188,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Text",
-				index = 47225,
+				index = 47224,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5197,7 +5197,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 47223,
+		index = 47222,
 		retOffset = 40,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SendMessageToFriend"] = {
@@ -5205,13 +5205,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47219,
+				index = 47218,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 40
 			},
 			{
 				name = "LocalUserNum",
-				index = 47222,
+				index = 47221,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5219,7 +5219,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Friend",
-				index = 47221,
+				index = 47220,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5227,7 +5227,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Message",
-				index = 47220,
+				index = 47219,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5235,14 +5235,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 47218,
+		index = 47217,
 		retOffset = 40,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFriendInviteReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47217,
+				index = 47216,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5250,7 +5250,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InviteDelegate",
-				index = 47216,
+				index = 47215,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5258,13 +5258,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47215,
+		index = 47214,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendInviteReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47213,
+				index = 47212,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5272,7 +5272,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InviteDelegate",
-				index = 47212,
+				index = 47211,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5280,13 +5280,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47211,
+		index = 47210,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFriendInviteReceived"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47210,
+				index = 47209,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5294,7 +5294,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RequestingPlayer",
-				index = 47209,
+				index = 47208,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5302,7 +5302,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RequestingNick",
-				index = 47208,
+				index = 47207,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5310,7 +5310,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Message",
-				index = 47207,
+				index = 47206,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5318,20 +5318,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47206,
+		index = 47205,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DenyFriendInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47203,
+				index = 47202,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47205,
+				index = 47204,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5339,7 +5339,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RequestingPlayer",
-				index = 47204,
+				index = 47203,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5347,7 +5347,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47202,
+		index = 47201,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AcceptFriendInvite"] = {
@@ -5355,13 +5355,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47199,
+				index = 47198,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47201,
+				index = 47200,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5369,7 +5369,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RequestingPlayer",
-				index = 47200,
+				index = 47199,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5377,7 +5377,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47198,
+		index = 47197,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["RemoveFriend"] = {
@@ -5385,13 +5385,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47195,
+				index = 47194,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47197,
+				index = 47196,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5399,7 +5399,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FormerFriend",
-				index = 47196,
+				index = 47195,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5407,14 +5407,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47194,
+		index = 47193,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearAddFriendByNameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47193,
+				index = 47192,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5422,7 +5422,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendDelegate",
-				index = 47192,
+				index = 47191,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5430,13 +5430,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47191,
+		index = 47190,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddAddFriendByNameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47189,
+				index = 47188,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5444,7 +5444,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendDelegate",
-				index = 47188,
+				index = 47187,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5452,13 +5452,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47187,
+		index = 47186,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnAddFriendByNameComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47186,
+				index = 47185,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -5466,20 +5466,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47185,
+		index = 47184,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendByName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47181,
+				index = 47180,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 47184,
+				index = 47183,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5487,7 +5487,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendName",
-				index = 47183,
+				index = 47182,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5495,7 +5495,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Message",
-				index = 47182,
+				index = 47181,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5504,7 +5504,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47180,
+		index = 47179,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriend"] = {
@@ -5512,13 +5512,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47176,
+				index = 47175,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 40
 			},
 			{
 				name = "LocalUserNum",
-				index = 47179,
+				index = 47178,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5526,7 +5526,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NewFriend",
-				index = 47178,
+				index = 47177,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -5534,7 +5534,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Message",
-				index = 47177,
+				index = 47176,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5543,7 +5543,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 47175,
+		index = 47174,
 		retOffset = 40,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetKeyboardInputResults"] = {
@@ -5551,7 +5551,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47171,
+				index = 47170,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -5560,21 +5560,21 @@ local c = g_classFuncs
 			{
 				name = "bWasCanceled",
 				isRet = true,
-				index = 47172,
+				index = 47171,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 0
 			},
 		},
 		dataSize = 16,
-		index = 47170,
+		index = 47169,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearKeyboardInputDoneDelegate"] = {
 		fields = {
 			{
 				name = "InputDelegate",
-				index = 47169,
+				index = 47168,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5582,13 +5582,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47168,
+		index = 47167,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddKeyboardInputDoneDelegate"] = {
 		fields = {
 			{
 				name = "InputDelegate",
-				index = 47166,
+				index = 47165,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5596,13 +5596,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47165,
+		index = 47164,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnKeyboardInputComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47164,
+				index = 47163,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -5610,20 +5610,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47163,
+		index = 47162,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowKeyboardUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47155,
+				index = 47154,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 52
 			},
 			{
 				name = "LocalUserNum",
-				index = 47162,
+				index = 47161,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5631,7 +5631,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TitleText",
-				index = 47161,
+				index = 47160,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5639,7 +5639,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DescriptionText",
-				index = 47160,
+				index = 47159,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5647,7 +5647,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "KeyboardType",
-				index = 47159,
+				index = 47158,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
@@ -5657,7 +5657,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bShouldValidate",
-				index = 47158,
+				index = 47157,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -5666,7 +5666,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DefaultText",
-				index = 47157,
+				index = 47156,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5675,7 +5675,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MaxResultLength",
-				index = 47156,
+				index = 47155,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -5684,14 +5684,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 56,
-		index = 47154,
+		index = 47153,
 		retOffset = 52,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SetOnlineStatus"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 47153,
+				index = 47152,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5699,7 +5699,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StatusId",
-				index = 47152,
+				index = 47151,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5727,14 +5727,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 47147,
+		index = 47146,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetLocalAccountNames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47146,
+				index = 47145,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
@@ -5750,7 +5750,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47143,
+		index = 47142,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteLocalAccount"] = {
@@ -5758,13 +5758,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47140,
+				index = 47139,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "UserName",
-				index = 47142,
+				index = 47141,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5772,7 +5772,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Password",
-				index = 47141,
+				index = 47140,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5781,7 +5781,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47139,
+		index = 47138,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["RenameLocalAccount"] = {
@@ -5789,13 +5789,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47135,
+				index = 47134,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "NewUserName",
-				index = 47138,
+				index = 47137,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5803,7 +5803,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "OldUserName",
-				index = 47137,
+				index = 47136,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5811,7 +5811,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Password",
-				index = 47136,
+				index = 47135,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5820,7 +5820,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 47134,
+		index = 47133,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CreateLocalAccount"] = {
@@ -5828,13 +5828,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47131,
+				index = 47130,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "UserName",
-				index = 47133,
+				index = 47132,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5842,7 +5842,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Password",
-				index = 47132,
+				index = 47131,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5851,14 +5851,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47130,
+		index = 47129,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCreateOnlineAccountCompletedDelegate"] = {
 		fields = {
 			{
 				name = "AccountCreateDelegate",
-				index = 47129,
+				index = 47128,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5866,13 +5866,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47128,
+		index = 47127,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddCreateOnlineAccountCompletedDelegate"] = {
 		fields = {
 			{
 				name = "AccountCreateDelegate",
-				index = 47126,
+				index = 47125,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -5880,13 +5880,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47125,
+		index = 47124,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnCreateOnlineAccountCompleted"] = {
 		fields = {
 			{
 				name = "ErrorStatus",
-				index = 47124,
+				index = 47123,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineAccountCreateStatus",
@@ -5895,20 +5895,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 47123,
+		index = 47122,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CreateOnlineAccount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47118,
+				index = 47117,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 48
 			},
 			{
 				name = "UserName",
-				index = 47122,
+				index = 47121,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5916,7 +5916,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Password",
-				index = 47121,
+				index = 47120,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5924,7 +5924,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "EmailAddress",
-				index = 47120,
+				index = 47119,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5932,7 +5932,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProductKey",
-				index = 47119,
+				index = 47118,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5941,7 +5941,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47117,
+		index = 47116,
 		retOffset = 48,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearDownloadedFile"] = {
@@ -5949,13 +5949,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47115,
+				index = 47114,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "Filename",
-				index = 47116,
+				index = 47115,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5963,7 +5963,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47114,
+		index = 47113,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearDownloadedFiles"] = {
@@ -5971,13 +5971,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47113,
+				index = 47112,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 47112,
+		index = 47111,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetTitleFileState"] = {
@@ -5985,14 +5985,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47109,
+				index = 47108,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 12
 			},
 			{
 				name = "Filename",
-				index = 47110,
+				index = 47109,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6000,7 +6000,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47108,
+		index = 47107,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetTitleFileContents"] = {
@@ -6008,13 +6008,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47106,
+				index = 47105,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 47107,
+				index = 47106,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6032,14 +6032,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47103,
+		index = 47102,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
-				index = 47102,
+				index = 47101,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6047,13 +6047,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47101,
+		index = 47100,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
-				index = 47099,
+				index = 47098,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6061,20 +6061,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47098,
+		index = 47097,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47095,
+				index = 47094,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 47097,
+				index = 47096,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6082,7 +6082,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FileToRead",
-				index = 47096,
+				index = 47095,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6090,14 +6090,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 47094,
+		index = 47093,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47093,
+				index = 47092,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6105,7 +6105,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47092,
+				index = 47091,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6113,13 +6113,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47091,
+		index = 47090,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
-				index = 47090,
+				index = 47089,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6127,13 +6127,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47089,
+		index = 47088,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
-				index = 47087,
+				index = 47086,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6141,20 +6141,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47086,
+		index = 47085,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShareTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47084,
+				index = 47083,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "FileToShare",
-				index = 47085,
+				index = 47084,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6162,14 +6162,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47083,
+		index = 47082,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnShareTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 47082,
+				index = 47081,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6177,7 +6177,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 47081,
+				index = 47080,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6185,7 +6185,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UGCHandle",
-				index = 47080,
+				index = 47079,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6193,13 +6193,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47079,
+		index = 47078,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearStorageDeviceChangeDelegate"] = {
 		fields = {
 			{
 				name = "StorageDeviceChangeDelegate",
-				index = 47078,
+				index = 47077,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6207,13 +6207,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47077,
+		index = 47076,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddStorageDeviceChangeDelegate"] = {
 		fields = {
 			{
 				name = "StorageDeviceChangeDelegate",
-				index = 47076,
+				index = 47075,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6221,26 +6221,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47075,
+		index = 47074,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnStorageDeviceChange"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 47074,
+		index = 47073,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetLocale"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47073,
+				index = 47072,
 				castTo = ffi.typeof("int*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 47072,
+		index = 47071,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetNATType"] = {
@@ -6248,21 +6248,21 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47071,
+				index = 47070,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ENATType",
 				offset = 0
 			},
 		},
 		dataSize = 1,
-		index = 47070,
+		index = 47069,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearConnectionStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "ConnectionStatusDelegate",
-				index = 47069,
+				index = 47068,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6270,13 +6270,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47068,
+		index = 47067,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddConnectionStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "ConnectionStatusDelegate",
-				index = 47066,
+				index = 47065,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6284,13 +6284,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47065,
+		index = 47064,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnConnectionStatusChange"] = {
 		fields = {
 			{
 				name = "ConnectionStatus",
-				index = 47064,
+				index = 47063,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineServerConnectionStatus",
@@ -6299,20 +6299,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 47063,
+		index = 47062,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsControllerConnected"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47061,
+				index = 47060,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "ControllerId",
-				index = 47062,
+				index = 47061,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -6320,14 +6320,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47060,
+		index = 47059,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearControllerChangeDelegate"] = {
 		fields = {
 			{
 				name = "ControllerChangeDelegate",
-				index = 47059,
+				index = 47058,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6335,13 +6335,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47058,
+		index = 47057,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddControllerChangeDelegate"] = {
 		fields = {
 			{
 				name = "ControllerChangeDelegate",
-				index = 47056,
+				index = 47055,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6349,13 +6349,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47055,
+		index = 47054,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnControllerChange"] = {
 		fields = {
 			{
 				name = "ControllerId",
-				index = 47054,
+				index = 47053,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -6363,7 +6363,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bIsConnected",
-				index = 47053,
+				index = 47052,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6371,13 +6371,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 47052,
+		index = 47051,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SetNetworkNotificationPosition"] = {
 		fields = {
 			{
 				name = "NewPos",
-				index = 47051,
+				index = 47050,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ENetworkNotificationPosition",
@@ -6386,28 +6386,28 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 47050,
+		index = 47049,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetNetworkNotificationPosition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47048,
+				index = 47047,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ENetworkNotificationPosition",
 				offset = 0
 			},
 		},
 		dataSize = 1,
-		index = 47047,
+		index = 47046,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearExternalUIChangeDelegate"] = {
 		fields = {
 			{
 				name = "ExternalUIDelegate",
-				index = 47046,
+				index = 47045,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6415,13 +6415,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47045,
+		index = 47044,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddExternalUIChangeDelegate"] = {
 		fields = {
 			{
 				name = "ExternalUIDelegate",
-				index = 47043,
+				index = 47042,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6429,13 +6429,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47042,
+		index = 47041,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnExternalUIChange"] = {
 		fields = {
 			{
 				name = "bIsOpening",
-				index = 47041,
+				index = 47040,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6443,13 +6443,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47040,
+		index = 47039,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLinkStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LinkStatusDelegate",
-				index = 47039,
+				index = 47038,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6457,13 +6457,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47038,
+		index = 47037,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLinkStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LinkStatusDelegate",
-				index = 47036,
+				index = 47035,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6471,13 +6471,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47035,
+		index = 47034,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLinkStatusChange"] = {
 		fields = {
 			{
 				name = "bIsConnected",
-				index = 47034,
+				index = 47033,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6485,20 +6485,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47033,
+		index = 47032,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["HasLinkConnection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47032,
+				index = 47031,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 47031,
+		index = 47030,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["eventGetPlayerUniqueNetIdFromIndex"] = {
@@ -6506,14 +6506,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47029,
+				index = 47028,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				offset = 4
 			},
 			{
 				name = "UserIndex",
-				index = 47030,
+				index = 47029,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -6521,7 +6521,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 47027,
+		index = 47026,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["eventGetPlayerNicknameFromIndex"] = {
@@ -6529,7 +6529,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47025,
+				index = 47024,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -6537,7 +6537,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UserIndex",
-				index = 47026,
+				index = 47025,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -6545,7 +6545,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47024,
+		index = 47023,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteOnlinePlayerScores"] = {
@@ -6553,13 +6553,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47021,
+				index = 47020,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "SessionName",
-				index = 47023,
+				index = 47022,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -6567,7 +6567,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LeaderboardId",
-				index = 47022,
+				index = 47021,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -6585,14 +6585,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 47018,
+		index = 47017,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFlushOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FlushOnlineStatsCompleteDelegate",
-				index = 47017,
+				index = 47016,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6600,13 +6600,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 47016,
+		index = 47015,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFlushOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FlushOnlineStatsCompleteDelegate",
-				index = 47014,
+				index = 47013,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6614,13 +6614,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47013,
+		index = 47012,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFlushOnlineStatsComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 47012,
+				index = 47011,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -6628,7 +6628,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 47011,
+				index = 47010,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6636,20 +6636,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47010,
+		index = 47009,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["FlushOnlineStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47008,
+				index = 47007,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 47009,
+				index = 47008,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -6657,7 +6657,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 47007,
+		index = 47006,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteOnlineStats"] = {
@@ -6665,13 +6665,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 47003,
+				index = 47002,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "SessionName",
-				index = 47006,
+				index = 47005,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -6679,7 +6679,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Player",
-				index = 47005,
+				index = 47004,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -6687,7 +6687,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StatsWrite",
-				index = 47004,
+				index = 47003,
 				className = "UOnlineStatsWrite",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6695,14 +6695,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 47002,
+		index = 47001,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["FreeStats"] = {
 		fields = {
 			{
 				name = "StatsRead",
-				index = 47001,
+				index = 47000,
 				className = "UOnlineStatsRead",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6710,13 +6710,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 47000,
+		index = 46999,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadOnlineStatsCompleteDelegate",
-				index = 46999,
+				index = 46998,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6724,13 +6724,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46998,
+		index = 46997,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadOnlineStatsCompleteDelegate",
-				index = 46996,
+				index = 46995,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6738,13 +6738,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46995,
+		index = 46994,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadOnlineStatsComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 46994,
+				index = 46993,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -6752,20 +6752,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46993,
+		index = 46992,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStatsByRankAroundPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46989,
+				index = 46988,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 46992,
+				index = 46991,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6773,7 +6773,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StatsRead",
-				index = 46991,
+				index = 46990,
 				className = "UOnlineStatsRead",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6781,7 +6781,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumRows",
-				index = 46990,
+				index = 46989,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -6790,7 +6790,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46988,
+		index = 46987,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStatsByRank"] = {
@@ -6798,13 +6798,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46984,
+				index = 46983,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "StatsRead",
-				index = 46987,
+				index = 46986,
 				className = "UOnlineStatsRead",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6812,7 +6812,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StartIndex",
-				index = 46986,
+				index = 46985,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -6821,7 +6821,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumToRead",
-				index = 46985,
+				index = 46984,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -6830,7 +6830,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46983,
+		index = 46982,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStatsForFriends"] = {
@@ -6838,13 +6838,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46980,
+				index = 46979,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 46982,
+				index = 46981,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6852,7 +6852,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StatsRead",
-				index = 46981,
+				index = 46980,
 				className = "UOnlineStatsRead",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6860,7 +6860,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46979,
+		index = 46978,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStats"] = {
@@ -6868,7 +6868,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46977,
+				index = 46976,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
@@ -6884,7 +6884,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StatsRead",
-				index = 46978,
+				index = 46977,
 				className = "UOnlineStatsRead",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6892,7 +6892,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46974,
+		index = 46973,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SetSpeechRecognitionObject"] = {
@@ -6900,13 +6900,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46971,
+				index = 46970,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 46973,
+				index = 46972,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6914,7 +6914,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SpeechRecogObj",
-				index = 46972,
+				index = 46971,
 				className = "USpeechRecognition",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6922,7 +6922,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46970,
+		index = 46969,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SelectVocabulary"] = {
@@ -6930,13 +6930,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46967,
+				index = 46966,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 46969,
+				index = 46968,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6944,7 +6944,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "VocabularyId",
-				index = 46968,
+				index = 46967,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -6952,14 +6952,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46966,
+		index = 46965,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearRecognitionCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46965,
+				index = 46964,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6967,7 +6967,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RecognitionDelegate",
-				index = 46964,
+				index = 46963,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6975,13 +6975,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46963,
+		index = 46962,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddRecognitionCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46961,
+				index = 46960,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -6989,7 +6989,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RecognitionDelegate",
-				index = 46960,
+				index = 46959,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -6997,26 +6997,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46959,
+		index = 46958,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnRecognitionComplete"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46958,
+		index = 46957,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetRecognitionResults"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46956,
+				index = 46955,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 46957,
+				index = 46956,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7034,7 +7034,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46953,
+		index = 46952,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["StopSpeechRecognition"] = {
@@ -7042,13 +7042,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46951,
+				index = 46950,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46952,
+				index = 46951,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7056,7 +7056,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46950,
+		index = 46949,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["StartSpeechRecognition"] = {
@@ -7064,13 +7064,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46948,
+				index = 46947,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46949,
+				index = 46948,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7078,14 +7078,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46947,
+		index = 46946,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["StopNetworkedVoice"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46946,
+				index = 46945,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7093,13 +7093,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 46945,
+		index = 46944,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["StartNetworkedVoice"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46944,
+				index = 46943,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7107,13 +7107,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 46943,
+		index = 46942,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearPlayerTalkingDelegate"] = {
 		fields = {
 			{
 				name = "TalkerDelegate",
-				index = 46942,
+				index = 46941,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7121,13 +7121,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46941,
+		index = 46940,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddPlayerTalkingDelegate"] = {
 		fields = {
 			{
 				name = "TalkerDelegate",
-				index = 46939,
+				index = 46938,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7135,13 +7135,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46938,
+		index = 46937,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnPlayerTalkingStateChange"] = {
 		fields = {
 			{
 				name = "Player",
-				index = 46937,
+				index = 46936,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7149,7 +7149,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bIsTalking",
-				index = 46936,
+				index = 46935,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -7157,20 +7157,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46935,
+		index = 46934,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnmuteRemoteTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46931,
+				index = 46930,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "LocalUserNum",
-				index = 46934,
+				index = 46933,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7178,7 +7178,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46933,
+				index = 46932,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7186,7 +7186,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bIsSystemWide",
-				index = 46932,
+				index = 46931,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -7195,7 +7195,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46930,
+		index = 46929,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["MuteRemoteTalker"] = {
@@ -7203,13 +7203,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46926,
+				index = 46925,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "LocalUserNum",
-				index = 46929,
+				index = 46928,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7217,7 +7217,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46928,
+				index = 46927,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7225,7 +7225,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bIsSystemWide",
-				index = 46927,
+				index = 46926,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -7234,7 +7234,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46925,
+		index = 46924,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["SetRemoteTalkerPriority"] = {
@@ -7242,13 +7242,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46921,
+				index = 46920,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "LocalUserNum",
-				index = 46924,
+				index = 46923,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7256,7 +7256,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46923,
+				index = 46922,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7264,7 +7264,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Priority",
-				index = 46922,
+				index = 46921,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -7272,7 +7272,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46920,
+		index = 46919,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsHeadsetPresent"] = {
@@ -7280,13 +7280,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46918,
+				index = 46917,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46919,
+				index = 46918,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7294,7 +7294,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46917,
+		index = 46916,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsRemotePlayerTalking"] = {
@@ -7302,13 +7302,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46915,
+				index = 46914,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "PlayerID",
-				index = 46916,
+				index = 46915,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7316,7 +7316,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46914,
+		index = 46913,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsLocalPlayerTalking"] = {
@@ -7324,13 +7324,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46912,
+				index = 46911,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46913,
+				index = 46912,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7338,7 +7338,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46911,
+		index = 46910,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnregisterRemoteTalker"] = {
@@ -7346,13 +7346,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46909,
+				index = 46908,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "PlayerID",
-				index = 46910,
+				index = 46909,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7360,7 +7360,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46908,
+		index = 46907,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterRemoteTalker"] = {
@@ -7368,13 +7368,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46906,
+				index = 46905,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "PlayerID",
-				index = 46907,
+				index = 46906,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7382,7 +7382,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46905,
+		index = 46904,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["UnregisterLocalTalker"] = {
@@ -7390,13 +7390,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46903,
+				index = 46902,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46904,
+				index = 46903,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7404,7 +7404,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46902,
+		index = 46901,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterLocalTalker"] = {
@@ -7412,13 +7412,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46900,
+				index = 46899,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46901,
+				index = 46900,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7426,7 +7426,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46899,
+		index = 46898,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetFriendsList"] = {
@@ -7434,14 +7434,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46895,
+				index = 46894,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 24
 			},
 			{
 				name = "LocalUserNum",
-				index = 46898,
+				index = 46897,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7459,7 +7459,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Count",
-				index = 46897,
+				index = 46896,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -7468,7 +7468,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StartingAt",
-				index = 46896,
+				index = 46895,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -7477,14 +7477,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 25,
-		index = 46892,
+		index = 46891,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadFriendsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46891,
+				index = 46890,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7492,7 +7492,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadFriendsCompleteDelegate",
-				index = 46890,
+				index = 46889,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7500,13 +7500,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46889,
+		index = 46888,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadFriendsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46887,
+				index = 46886,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7514,7 +7514,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadFriendsCompleteDelegate",
-				index = 46886,
+				index = 46885,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7522,13 +7522,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46885,
+		index = 46884,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadFriendsComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 46884,
+				index = 46883,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -7536,20 +7536,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46883,
+		index = 46882,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadFriendsList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46879,
+				index = 46878,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 46882,
+				index = 46881,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7557,7 +7557,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Count",
-				index = 46881,
+				index = 46880,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -7566,7 +7566,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StartingAt",
-				index = 46880,
+				index = 46879,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -7575,14 +7575,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46878,
+		index = 46877,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearWritePlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46877,
+				index = 46876,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7590,7 +7590,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WritePlayerStorageCompleteDelegate",
-				index = 46876,
+				index = 46875,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7598,13 +7598,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46875,
+		index = 46874,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddWritePlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46873,
+				index = 46872,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7612,7 +7612,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WritePlayerStorageCompleteDelegate",
-				index = 46872,
+				index = 46871,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7620,13 +7620,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46871,
+		index = 46870,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnWritePlayerStorageComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46870,
+				index = 46869,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7634,7 +7634,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46869,
+				index = 46868,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -7642,20 +7642,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46868,
+		index = 46867,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WritePlayerStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46864,
+				index = 46863,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 46867,
+				index = 46866,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7663,7 +7663,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerStorage",
-				index = 46866,
+				index = 46865,
 				className = "UOnlinePlayerStorage",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -7671,7 +7671,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 46865,
+				index = 46864,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -7680,7 +7680,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46863,
+		index = 46862,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetPlayerStorage"] = {
@@ -7688,13 +7688,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46860,
+				index = 46859,
 				castTo = ffi.typeof("struct UOnlinePlayerStorage**"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46861,
+				index = 46860,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7702,14 +7702,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46859,
+		index = 46858,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadPlayerStorageForNetIdCompleteDelegate"] = {
 		fields = {
 			{
 				name = "NetId",
-				index = 46858,
+				index = 46857,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7717,7 +7717,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadPlayerStorageForNetIdCompleteDelegate",
-				index = 46857,
+				index = 46856,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7725,13 +7725,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 46856,
+		index = 46855,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadPlayerStorageForNetIdCompleteDelegate"] = {
 		fields = {
 			{
 				name = "NetId",
-				index = 46854,
+				index = 46853,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7739,7 +7739,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadPlayerStorageForNetIdCompleteDelegate",
-				index = 46853,
+				index = 46852,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7747,13 +7747,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46852,
+		index = 46851,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadPlayerStorageForNetIdComplete"] = {
 		fields = {
 			{
 				name = "NetId",
-				index = 46851,
+				index = 46850,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7761,7 +7761,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46850,
+				index = 46849,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -7769,20 +7769,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46849,
+		index = 46848,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadPlayerStorageForNetId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46845,
+				index = 46844,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "LocalUserNum",
-				index = 46848,
+				index = 46847,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7790,7 +7790,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NetId",
-				index = 46847,
+				index = 46846,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -7798,7 +7798,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerStorage",
-				index = 46846,
+				index = 46845,
 				className = "UOnlinePlayerStorage",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -7806,14 +7806,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46844,
+		index = 46843,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadPlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46843,
+				index = 46842,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7821,7 +7821,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadPlayerStorageCompleteDelegate",
-				index = 46842,
+				index = 46841,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7829,13 +7829,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46841,
+		index = 46840,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadPlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46839,
+				index = 46838,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7843,7 +7843,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadPlayerStorageCompleteDelegate",
-				index = 46838,
+				index = 46837,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7851,13 +7851,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46837,
+		index = 46836,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadPlayerStorageComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46836,
+				index = 46835,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7865,7 +7865,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46835,
+				index = 46834,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -7873,20 +7873,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46834,
+		index = 46833,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadPlayerStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46830,
+				index = 46829,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 46833,
+				index = 46832,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7894,7 +7894,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerStorage",
-				index = 46832,
+				index = 46831,
 				className = "UOnlinePlayerStorage",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -7902,7 +7902,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeviceID",
-				index = 46831,
+				index = 46830,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -7911,14 +7911,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46829,
+		index = 46828,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearWriteProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46828,
+				index = 46827,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7926,7 +7926,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WriteProfileSettingsCompleteDelegate",
-				index = 46827,
+				index = 46826,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7934,13 +7934,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46826,
+		index = 46825,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddWriteProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46824,
+				index = 46823,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7948,7 +7948,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WriteProfileSettingsCompleteDelegate",
-				index = 46823,
+				index = 46822,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -7956,13 +7956,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46822,
+		index = 46821,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnWriteProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46821,
+				index = 46820,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7970,7 +7970,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46820,
+				index = 46819,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -7978,20 +7978,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46819,
+		index = 46818,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46816,
+				index = 46815,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 46818,
+				index = 46817,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -7999,7 +7999,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProfileSettings",
-				index = 46817,
+				index = 46816,
 				className = "UOnlineProfileSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -8007,7 +8007,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46815,
+		index = 46814,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetProfileSettings"] = {
@@ -8015,13 +8015,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46812,
+				index = 46811,
 				castTo = ffi.typeof("struct UOnlineProfileSettings**"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46813,
+				index = 46812,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8029,14 +8029,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46811,
+		index = 46810,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46810,
+				index = 46809,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8044,7 +8044,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadProfileSettingsCompleteDelegate",
-				index = 46809,
+				index = 46808,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8052,13 +8052,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46808,
+		index = 46807,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46804,
+				index = 46803,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8066,7 +8066,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ReadProfileSettingsCompleteDelegate",
-				index = 46803,
+				index = 46802,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8074,13 +8074,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46802,
+		index = 46801,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46801,
+				index = 46800,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8088,7 +8088,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 46800,
+				index = 46799,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -8096,20 +8096,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46799,
+		index = 46798,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46796,
+				index = 46795,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "LocalUserNum",
-				index = 46798,
+				index = 46797,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8117,7 +8117,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProfileSettings",
-				index = 46797,
+				index = 46796,
 				className = "UOnlineProfileSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -8125,14 +8125,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46795,
+		index = 46794,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFriendsChangeDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46794,
+				index = 46793,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8140,7 +8140,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendsDelegate",
-				index = 46793,
+				index = 46792,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8148,13 +8148,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46792,
+		index = 46791,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendsChangeDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46790,
+				index = 46789,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8162,7 +8162,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FriendsDelegate",
-				index = 46789,
+				index = 46788,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8170,13 +8170,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46788,
+		index = 46787,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearMutingChangeDelegate"] = {
 		fields = {
 			{
 				name = "MutingDelegate",
-				index = 46787,
+				index = 46786,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8184,13 +8184,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46786,
+		index = 46785,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddMutingChangeDelegate"] = {
 		fields = {
 			{
 				name = "MutingDelegate",
-				index = 46784,
+				index = 46783,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8198,13 +8198,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46783,
+		index = 46782,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginCancelledDelegate"] = {
 		fields = {
 			{
 				name = "CancelledDelegate",
-				index = 46782,
+				index = 46781,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8212,13 +8212,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46781,
+		index = 46780,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginCancelledDelegate"] = {
 		fields = {
 			{
 				name = "CancelledDelegate",
-				index = 46780,
+				index = 46779,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8226,13 +8226,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46779,
+		index = 46778,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginStatusDelegate",
-				index = 46778,
+				index = 46777,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8240,7 +8240,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 46777,
+				index = 46776,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8248,13 +8248,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46776,
+		index = 46775,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginStatusDelegate",
-				index = 46773,
+				index = 46772,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8262,7 +8262,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 46772,
+				index = 46771,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8270,13 +8270,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 13,
-		index = 46771,
+		index = 46770,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginStatusChange"] = {
 		fields = {
 			{
 				name = "NewStatus",
-				index = 46770,
+				index = 46769,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ELoginStatus",
@@ -8285,7 +8285,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NewId",
-				index = 46769,
+				index = 46768,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -8293,13 +8293,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46768,
+		index = 46767,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginDelegate",
-				index = 46767,
+				index = 46766,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8307,13 +8307,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46766,
+		index = 46765,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginDelegate",
-				index = 46764,
+				index = 46763,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8321,20 +8321,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46763,
+		index = 46762,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsMuted"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46760,
+				index = 46759,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 46762,
+				index = 46761,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8342,7 +8342,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46761,
+				index = 46760,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -8350,7 +8350,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 46759,
+		index = 46758,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AreAnyFriends"] = {
@@ -8358,13 +8358,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46757,
+				index = 46756,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 46758,
+				index = 46757,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8382,7 +8382,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46754,
+		index = 46753,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsFriend"] = {
@@ -8390,13 +8390,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46751,
+				index = 46750,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 46753,
+				index = 46752,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8404,7 +8404,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 46752,
+				index = 46751,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -8412,7 +8412,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 46750,
+		index = 46749,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CanShowPresenceInformation"] = {
@@ -8420,14 +8420,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46748,
+				index = 46747,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EFeaturePrivilegeLevel",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46749,
+				index = 46748,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8435,7 +8435,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46747,
+		index = 46746,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CanViewPlayerProfiles"] = {
@@ -8443,14 +8443,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46745,
+				index = 46744,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EFeaturePrivilegeLevel",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46746,
+				index = 46745,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8458,7 +8458,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46744,
+		index = 46743,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CanPurchaseContent"] = {
@@ -8466,14 +8466,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46742,
+				index = 46741,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EFeaturePrivilegeLevel",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46743,
+				index = 46742,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8481,7 +8481,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46741,
+		index = 46740,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CanDownloadUserContent"] = {
@@ -8489,14 +8489,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46739,
+				index = 46738,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EFeaturePrivilegeLevel",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46740,
+				index = 46739,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8504,7 +8504,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46738,
+		index = 46737,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CanCommunicate"] = {
@@ -8512,14 +8512,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46736,
+				index = 46735,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EFeaturePrivilegeLevel",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46737,
+				index = 46736,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8527,7 +8527,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46735,
+		index = 46734,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["CanPlayOnline"] = {
@@ -8535,14 +8535,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46733,
+				index = 46732,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EFeaturePrivilegeLevel",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46734,
+				index = 46733,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8550,14 +8550,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46732,
+		index = 46731,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearGetUserAgeGroupDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46731,
+				index = 46730,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8565,7 +8565,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GetUserAgeGroupDelegate",
-				index = 46730,
+				index = 46729,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8573,13 +8573,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46729,
+		index = 46728,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddGetUserAgeGroupDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46728,
+				index = 46727,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8587,7 +8587,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GetUserAgeGroupDelegate",
-				index = 46727,
+				index = 46726,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8595,20 +8595,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46726,
+		index = 46725,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetUserAgeGroup"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46723,
+				index = 46722,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46724,
+				index = 46723,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8616,14 +8616,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46720,
+		index = 46719,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnGetUserAgeGroup"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46719,
+				index = 46718,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8631,7 +8631,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UserAgeGroup",
-				index = 46718,
+				index = 46717,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EUserAgeGroup",
@@ -8640,14 +8640,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46717,
+		index = 46716,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetPlayerNickname"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46714,
+				index = 46713,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -8655,7 +8655,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 46715,
+				index = 46714,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8663,7 +8663,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46713,
+		index = 46712,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetUniquePlayerId"] = {
@@ -8671,13 +8671,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46709,
+				index = 46708,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "LocalUserNum",
-				index = 46711,
+				index = 46710,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8686,7 +8686,7 @@ local c = g_classFuncs
 			{
 				name = "PlayerID",
 				isRet = true,
-				index = 46710,
+				index = 46709,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -8694,7 +8694,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 46708,
+		index = 46707,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsLocalLogin"] = {
@@ -8702,13 +8702,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46706,
+				index = 46705,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46707,
+				index = 46706,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8716,7 +8716,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46705,
+		index = 46704,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["IsGuestLogin"] = {
@@ -8724,13 +8724,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46703,
+				index = 46702,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46704,
+				index = 46703,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8738,7 +8738,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46702,
+		index = 46701,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["GetLoginStatus"] = {
@@ -8746,14 +8746,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46700,
+				index = 46699,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ELoginStatus",
 				offset = 1
 			},
 			{
 				name = "LocalUserNum",
-				index = 46701,
+				index = 46700,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8761,14 +8761,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46699,
+		index = 46698,
 		retOffset = 1,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLogoutCompletedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46698,
+				index = 46697,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8776,7 +8776,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LogoutDelegate",
-				index = 46697,
+				index = 46696,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8784,13 +8784,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46696,
+		index = 46695,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLogoutCompletedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46694,
+				index = 46693,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8798,7 +8798,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LogoutDelegate",
-				index = 46693,
+				index = 46692,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8806,13 +8806,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46692,
+		index = 46691,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLogoutCompleted"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 46691,
+				index = 46690,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -8820,20 +8820,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46690,
+		index = 46689,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["Logout"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46688,
+				index = 46687,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 46689,
+				index = 46688,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8841,14 +8841,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46687,
+		index = 46686,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginFailedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46686,
+				index = 46685,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8856,7 +8856,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LoginFailedDelegate",
-				index = 46685,
+				index = 46684,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8864,13 +8864,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46684,
+		index = 46683,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginFailedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46682,
+				index = 46681,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8878,7 +8878,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LoginFailedDelegate",
-				index = 46681,
+				index = 46680,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -8886,13 +8886,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46680,
+		index = 46679,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginFailed"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46679,
+				index = 46678,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8900,7 +8900,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ErrorCode",
-				index = 46678,
+				index = 46677,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineServerConnectionStatus",
@@ -8909,20 +8909,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 2,
-		index = 46677,
+		index = 46676,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["AutoLogin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46676,
+				index = 46675,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46675,
+		index = 46674,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["Login"] = {
@@ -8930,13 +8930,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46670,
+				index = 46669,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "LocalUserNum",
-				index = 46674,
+				index = 46673,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -8944,7 +8944,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LoginName",
-				index = 46673,
+				index = 46672,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -8952,7 +8952,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Password",
-				index = 46672,
+				index = 46671,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -8960,7 +8960,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWantsLocalOnly",
-				index = 46671,
+				index = 46670,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -8969,7 +8969,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46669,
+		index = 46668,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowLoginUI"] = {
@@ -8977,13 +8977,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46665,
+				index = 46664,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "bShowOnlineOnly",
-				index = 46668,
+				index = 46667,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -8992,7 +8992,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumLoginOverride",
-				index = 46667,
+				index = 46666,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -9001,7 +9001,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bAddUser",
-				index = 46666,
+				index = 46665,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -9010,32 +9010,32 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46664,
+		index = 46663,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFriendsChange"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46663,
+		index = 46662,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnMutingChange"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46662,
+		index = 46661,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginCancelled"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46661,
+		index = 46660,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginChange"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 46660,
+				index = 46659,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -9043,25 +9043,25 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 46659,
+		index = 46658,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["eventExit"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46658,
+		index = 46657,
 	}
 	g_classFuncs["UOnlineSubsystemSteamworks"]["eventInit"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46657,
+				index = 46656,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46656,
+		index = 46655,
 		retOffset = 0,
 	}

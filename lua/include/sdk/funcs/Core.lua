@@ -98,7 +98,7 @@ local c = g_classFuncs
 			{
 				name = "FreqList",
 				isRet = true,
-				index = 5390,
+				index = 5392,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_float"),
 				castTo = ffi.typeof("struct TArray_float*"),
@@ -785,7 +785,7 @@ local c = g_classFuncs
 			{
 				name = "out_SectionNames",
 				isRet = true,
-				index = 5500,
+				index = 5503,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -3780,7 +3780,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 5987,
+				index = 5988,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
 				TArray = true,
@@ -3830,7 +3830,7 @@ local c = g_classFuncs
 			{
 				name = "Pieces",
 				isRet = true,
-				index = 5992,
+				index = 5995,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -3861,7 +3861,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "StringArray",
-				index = 5997,
+				index = 6003,
 				type = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
 				flags = 8,

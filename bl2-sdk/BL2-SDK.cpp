@@ -349,7 +349,7 @@ namespace BL2SDK
 #ifdef _DEBUG
 		Logging::InitializeExtern();
 #endif
-		//Logging::InitializeGameConsole();
+		Logging::InitializeGameConsole();
 		//Logging::PrintLogHeader();
 
 		//initializeGameVersions();
@@ -375,7 +375,7 @@ namespace BL2SDK
 		//HookAntiDebug();
 		GameHooks::Initialize();
 		hookGame();
-		InitializePackageFix();
+		//InitializePackageFix();
 
 		LogAllProcessEventCalls(false);
 		LogAllUnrealScriptCalls(false);

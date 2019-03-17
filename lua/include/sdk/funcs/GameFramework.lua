@@ -11,7 +11,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "FadeColor",
-				index = 38434,
+				index = 38433,
 				type = ffi.typeof("struct FColor"),
 				castTo = ffi.typeof("struct FColor*"),
 				flags = 64,
@@ -19,7 +19,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FromAlpha",
-				index = 38433,
+				index = 38432,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -27,7 +27,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ToAlpha",
-				index = 38432,
+				index = 38431,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -35,7 +35,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FadeTime",
-				index = 38431,
+				index = 38430,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -43,25 +43,25 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38430,
+		index = 38429,
 	}
 	g_classFuncs["AGamePlayerController"]["CallMemLeakCheck"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38429,
+		index = 38428,
 	}
 	g_classFuncs["AGamePlayerController"]["StopMemLeakChecking"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38428,
+		index = 38427,
 	}
 	g_classFuncs["AGamePlayerController"]["DoMemLeakChecking"] = {
 		fields = {
 			{
 				name = "InTimeBetweenMemLeakChecks",
-				index = 38427,
+				index = 38426,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -69,13 +69,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 38426,
+		index = 38425,
 	}
 	g_classFuncs["AGamePlayerController"]["eventWarmupPause"] = {
 		fields = {
 			{
 				name = "bDesiredPauseState",
-				index = 38425,
+				index = 38424,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -83,20 +83,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38422,
+		index = 38421,
 	}
 	g_classFuncs["AGamePlayerController"]["CanUnpauseWarmup"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38421,
+				index = 38420,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 38420,
+		index = 38419,
 		retOffset = 0,
 	}
 	g_classFuncs["AGamePlayerController"]["GetCurrentMovie"] = {
@@ -104,7 +104,7 @@ local c = g_classFuncs
 			{
 				name = "MovieName",
 				isRet = true,
-				index = 38419,
+				index = 38418,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -113,13 +113,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38418,
+		index = 38417,
 	}
 	g_classFuncs["AGamePlayerController"]["eventClientStopMovie"] = {
 		fields = {
 			{
 				name = "DelayInSeconds",
-				index = 38417,
+				index = 38416,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -127,7 +127,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bAllowMovieToFinish",
-				index = 38416,
+				index = 38415,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -135,7 +135,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bForceStopNonSkippable",
-				index = 38415,
+				index = 38414,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -143,7 +143,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bForceStopLoadingMovie",
-				index = 38414,
+				index = 38413,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -151,13 +151,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38413,
+		index = 38412,
 	}
 	g_classFuncs["AGamePlayerController"]["eventClientPlayMovie"] = {
 		fields = {
 			{
 				name = "MovieName",
-				index = 38412,
+				index = 38411,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -165,7 +165,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InStartOfRenderingMovieFrame",
-				index = 38411,
+				index = 38410,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -173,7 +173,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InEndOfRenderingMovieFrame",
-				index = 38410,
+				index = 38409,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -181,7 +181,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bRestrictPausing",
-				index = 38409,
+				index = 38408,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -189,7 +189,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bPlayOnceFromStream",
-				index = 38408,
+				index = 38407,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -197,7 +197,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bOnlyBackButtonSkipsMovie",
-				index = 38407,
+				index = 38406,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -205,19 +205,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 38406,
+		index = 38405,
 	}
 	g_classFuncs["AGamePlayerController"]["KeepPlayingLoadingMovie"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38405,
+		index = 38404,
 	}
 	g_classFuncs["AGamePlayerController"]["ShowLoadingMovie"] = {
 		fields = {
 			{
 				name = "bShowMovie",
-				index = 38404,
+				index = 38403,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -225,7 +225,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bPauseAfterHide",
-				index = 38403,
+				index = 38402,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -234,7 +234,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PauseDuration",
-				index = 38402,
+				index = 38401,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("float*"),
@@ -243,7 +243,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "KeepPlayingDuration",
-				index = 38401,
+				index = 38400,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("float*"),
@@ -252,7 +252,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bOverridePreviousDelays",
-				index = 38400,
+				index = 38399,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -261,13 +261,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38399,
+		index = 38398,
 	}
 	g_classFuncs["AGamePlayerController"]["SetSoundMode"] = {
 		fields = {
 			{
 				name = "InSoundModeName",
-				index = 38398,
+				index = 38397,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -275,13 +275,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38397,
+		index = 38396,
 	}
 	g_classFuncs["AGamePlayerController"]["DoForceFeedbackForScreenShake"] = {
 		fields = {
 			{
 				name = "ShakeData",
-				index = 38391,
+				index = 38390,
 				className = "UCameraShake",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -289,7 +289,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Scale",
-				index = 38390,
+				index = 38389,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -297,40 +297,40 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38389,
+		index = 38388,
 	}
 	g_classFuncs["AGamePlayerController"]["GetUIPlayerIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38388,
+				index = 38387,
 				castTo = ffi.typeof("int*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 38387,
+		index = 38386,
 		retOffset = 0,
 	}
 	g_classFuncs["UNavMeshGoal_OutOfViewFrom"]["Recycle"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38574,
+		index = 38573,
 	}
 	g_classFuncs["UNavMeshGoal_OutOfViewFrom"]["MustBeHiddenFromThisPoint"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38571,
+				index = 38570,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "NavHandle",
-				index = 38573,
+				index = 38572,
 				className = "UNavigationHandle",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -338,7 +338,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InOutOfViewLocation",
-				index = 38572,
+				index = 38571,
 				type = ffi.typeof("struct FVector"),
 				castTo = ffi.typeof("struct FVector*"),
 				flags = 64,
@@ -346,33 +346,33 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38570,
+		index = 38569,
 		retOffset = 16,
 	}
 	g_classFuncs["UNavMeshGoal_OutOfViewFrom"]["RecycleNative"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38569,
+		index = 38568,
 	}
 	g_classFuncs["UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations"]["Recycle"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38588,
+		index = 38587,
 	}
 	g_classFuncs["UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations"]["BiasAgainstPolysWithinDistanceOfLocations"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38583,
+				index = 38582,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 44
 			},
 			{
 				name = "NavHandle",
-				index = 38587,
+				index = 38586,
 				className = "UNavigationHandle",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -380,7 +380,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InLocation",
-				index = 38586,
+				index = 38585,
 				type = ffi.typeof("struct FVector"),
 				castTo = ffi.typeof("struct FVector*"),
 				flags = 64,
@@ -388,7 +388,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InRotation",
-				index = 38585,
+				index = 38584,
 				type = ffi.typeof("struct FRotator"),
 				castTo = ffi.typeof("struct FRotator*"),
 				flags = 64,
@@ -396,7 +396,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InDistanceToCheck",
-				index = 38584,
+				index = 38583,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -412,33 +412,33 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 38580,
+		index = 38579,
 		retOffset = 44,
 	}
 	g_classFuncs["UGameStateObject"]["Reset"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38479,
+		index = 38478,
 	}
 	g_classFuncs["UGameStateObject"]["eventPreProcessStream"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38478,
+		index = 38477,
 	}
 	g_classFuncs["UGameStatsAggregator"]["GetAggregateMappingIDs"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38556,
+				index = 38555,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "EventID",
-				index = 38559,
+				index = 38558,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -447,7 +447,7 @@ local c = g_classFuncs
 			{
 				name = "AggregateID",
 				isRet = true,
-				index = 38558,
+				index = 38557,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 4
@@ -455,39 +455,39 @@ local c = g_classFuncs
 			{
 				name = "TargetAggregateID",
 				isRet = true,
-				index = 38557,
+				index = 38556,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 8
 			},
 		},
 		dataSize = 16,
-		index = 38555,
+		index = 38554,
 		retOffset = 12,
 	}
 	g_classFuncs["UGameStatsAggregator"]["Reset"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38554,
+		index = 38553,
 	}
 	g_classFuncs["UGameStatsAggregator"]["eventPostProcessStream"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38553,
+		index = 38552,
 	}
 	g_classFuncs["UGameStatsAggregator"]["eventPreProcessStream"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38552,
+		index = 38551,
 	}
 	g_classFuncs["APlayerCollectorGame"]["eventGetSeamlessTravelActorList"] = {
 		fields = {
 			{
 				name = "bToEntry",
-				index = 38601,
+				index = 38600,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -505,20 +505,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38598,
+		index = 38597,
 	}
 	g_classFuncs["APlayerCollectorGame"]["eventLogin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38593,
+				index = 38592,
 				castTo = ffi.typeof("struct APlayerController**"),
 				offset = 60
 			},
 			{
 				name = "Portal",
-				index = 38597,
+				index = 38596,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -526,7 +526,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Options",
-				index = 38596,
+				index = 38595,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -534,7 +534,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UniqueId",
-				index = 38595,
+				index = 38594,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -543,7 +543,7 @@ local c = g_classFuncs
 			{
 				name = "ErrorMessage",
 				isRet = true,
-				index = 38594,
+				index = 38593,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -552,6 +552,6 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 68,
-		index = 38592,
+		index = 38591,
 		retOffset = 60,
 	}
