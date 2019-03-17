@@ -20,13 +20,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38339,
+				index = 38338,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "Movie",
-				index = 38343,
+				index = 38342,
 				className = "UGFxMoviePlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -34,7 +34,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Event",
-				index = 38342,
+				index = 38341,
 				className = "UGFxEvent_FSCommand",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -42,7 +42,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Cmd",
-				index = 38341,
+				index = 38340,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -50,7 +50,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 38340,
+				index = 38339,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -58,26 +58,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38338,
+		index = 38337,
 		retOffset = 32,
 	}
 	g_classFuncs["UGFxInteraction"]["CloseAllMoviePlayers"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38362,
+		index = 38361,
 	}
 	g_classFuncs["UGFxInteraction"]["NotifySplitscreenLayoutChanged"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38361,
+		index = 38360,
 	}
 	g_classFuncs["UGFxInteraction"]["NotifyPlayerRemoved"] = {
 		fields = {
 			{
 				name = "PlayerIndex",
-				index = 38360,
+				index = 38359,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -85,7 +85,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RemovedPlayer",
-				index = 38359,
+				index = 38358,
 				className = "ULocalPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -93,13 +93,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38358,
+		index = 38357,
 	}
 	g_classFuncs["UGFxInteraction"]["NotifyPlayerAdded"] = {
 		fields = {
 			{
 				name = "PlayerIndex",
-				index = 38357,
+				index = 38356,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -107,7 +107,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "AddedPlayer",
-				index = 38356,
+				index = 38355,
 				className = "ULocalPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -115,26 +115,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38355,
+		index = 38354,
 	}
 	g_classFuncs["UGFxInteraction"]["NotifyGameSessionEnded"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38354,
+		index = 38353,
 	}
 	g_classFuncs["UGFxInteraction"]["GetFocusMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38352,
+				index = 38351,
 				castTo = ffi.typeof("struct UGFxMoviePlayer**"),
 				offset = 4
 			},
 			{
 				name = "ControllerId",
-				index = 38353,
+				index = 38352,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -142,7 +142,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38351,
+		index = 38350,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxManager"]["GetFocusMovie"] = {
@@ -150,13 +150,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38377,
+				index = 38376,
 				castTo = ffi.typeof("struct UGFxMoviePlayer**"),
 				offset = 4
 			},
 			{
 				name = "ControllerId",
-				index = 38378,
+				index = 38377,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -164,7 +164,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38376,
+		index = 38375,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxManager"]["eventLookupSound"] = {
@@ -172,13 +172,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38371,
+				index = 38370,
 				castTo = ffi.typeof("struct UAkEvent**"),
 				offset = 8
 			},
 			{
 				name = "UIEvent",
-				index = 38372,
+				index = 38371,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -186,7 +186,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38370,
+		index = 38369,
 		retOffset = 8,
 	}
 	g_classFuncs["UGFxManager"]["eventShowDialog"] = {
@@ -194,14 +194,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38368,
+				index = 38367,
 				cType = ffi.typeof("struct FScriptInterface"),
 				castTo = ffi.typeof("struct FScriptInterface*"),
 				offset = 4
 			},
 			{
 				name = "PC",
-				index = 38369,
+				index = 38368,
 				className = "APlayerController",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -209,14 +209,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38367,
+		index = 38366,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxManager"]["eventInit"] = {
 		fields = {
 			{
 				name = "Def",
-				index = 38366,
+				index = 38365,
 				className = "UGFxManagerDefinition",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -224,13 +224,27 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 38365,
+		index = 38364,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["UnregisterGFxObject"] = {
 		fields = {
 			{
 				name = "anObject",
-				index = 37625,
+				index = 37624,
+				className = "UGFxObject",
+				castTo = ffi.typeof("struct UObject**"),
+				flags = 16,
+				offset = 0
+			},
+		},
+		dataSize = 4,
+		index = 37622,
+	}
+	g_classFuncs["UGFxMoviePlayer"]["RegisterGFxObject"] = {
+		fields = {
+			{
+				name = "anObject",
+				index = 37626,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -240,51 +254,37 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37623,
 	}
-	g_classFuncs["UGFxMoviePlayer"]["RegisterGFxObject"] = {
-		fields = {
-			{
-				name = "anObject",
-				index = 37627,
-				className = "UGFxObject",
-				castTo = ffi.typeof("struct UObject**"),
-				flags = 16,
-				offset = 0
-			},
-		},
-		dataSize = 4,
-		index = 37624,
-	}
 	g_classFuncs["UGFxMoviePlayer"]["SendMousePos"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37626,
+		index = 37625,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["IsShowingFlashMouse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37630,
+				index = 37629,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37628,
+		index = 37627,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["HookSaveScreenshot"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37629,
+		index = 37628,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["UpdateRenderTexture"] = {
 		fields = {
 			{
 				name = "NewRenderTexture",
-				index = 37633,
+				index = 37632,
 				className = "UTextureRenderTarget2D",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -292,20 +292,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37631,
+		index = 37630,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["OnInputKey"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37636,
+				index = 37635,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "ControllerId",
-				index = 37635,
+				index = 37634,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -313,7 +313,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ukey",
-				index = 37637,
+				index = 37636,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -321,7 +321,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "uevent",
-				index = 37638,
+				index = 37637,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EInputEvent",
@@ -330,7 +330,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 37632,
+		index = 37631,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["WantsInput"] = {
@@ -338,13 +338,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37641,
+				index = 37640,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "ukey",
-				index = 37640,
+				index = 37639,
 				optional = true,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
@@ -353,7 +353,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 37634,
+		index = 37633,
 		retOffset = 8,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["WantsControllerInput"] = {
@@ -361,13 +361,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37644,
+				index = 37643,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "ControllerId",
-				index = 37643,
+				index = 37642,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -375,7 +375,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37639,
+		index = 37638,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["InputKey"] = {
@@ -383,13 +383,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37649,
+				index = 37648,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "ControllerId",
-				index = 37646,
+				index = 37645,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -397,7 +397,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ukey",
-				index = 37647,
+				index = 37646,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -405,7 +405,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "uevent",
-				index = 37648,
+				index = 37647,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EInputEvent",
@@ -414,7 +414,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 37642,
+		index = 37641,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetGFxManager"] = {
@@ -422,13 +422,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37651,
+				index = 37650,
 				castTo = ffi.typeof("struct UGFxManager**"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37645,
+		index = 37644,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ResolveDataStoreMarkup"] = {
@@ -436,7 +436,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37654,
+				index = 37653,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -444,7 +444,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Markup",
-				index = 37653,
+				index = 37652,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -452,20 +452,34 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37650,
+		index = 37649,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["UpdateSplitscreenLayout"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37652,
+		index = 37651,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ApplyPriorityVisibilityEffect"] = {
 		fields = {
 			{
 				name = "bRemoveEffect",
-				index = 37657,
+				index = 37656,
+				type = "boolean",
+				castTo = ffi.typeof("BOOL*"),
+				flags = 32,
+				offset = 0
+			},
+		},
+		dataSize = 4,
+		index = 37654,
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ApplyPriorityBlurEffect"] = {
+		fields = {
+			{
+				name = "bRemoveEffect",
+				index = 37658,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -475,25 +489,11 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37655,
 	}
-	g_classFuncs["UGFxMoviePlayer"]["ApplyPriorityBlurEffect"] = {
-		fields = {
-			{
-				name = "bRemoveEffect",
-				index = 37659,
-				type = "boolean",
-				castTo = ffi.typeof("BOOL*"),
-				flags = 32,
-				offset = 0
-			},
-		},
-		dataSize = 4,
-		index = 37656,
-	}
 	g_classFuncs["UGFxMoviePlayer"]["eventApplyPriorityEffect"] = {
 		fields = {
 			{
 				name = "bRequestedBlurState",
-				index = 37661,
+				index = 37660,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -501,7 +501,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bRequestedHiddenState",
-				index = 37662,
+				index = 37661,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -509,13 +509,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37658,
+		index = 37657,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["PlaySoundFromTheme"] = {
 		fields = {
 			{
 				name = "EventName",
-				index = 37668,
+				index = 37667,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -523,7 +523,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SoundThemeName",
-				index = 37670,
+				index = 37669,
 				optional = true,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
@@ -532,13 +532,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37660,
+		index = 37659,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventOnFocusLost"] = {
 		fields = {
 			{
 				name = "LocalPlayerIndex",
-				index = 37675,
+				index = 37674,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -546,13 +546,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37667,
+		index = 37666,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventOnFocusGained"] = {
 		fields = {
 			{
 				name = "LocalPlayerIndex",
-				index = 37677,
+				index = 37676,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -560,13 +560,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37674,
+		index = 37673,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ConsoleCommand"] = {
 		fields = {
 			{
 				name = "Command",
-				index = 37679,
+				index = 37678,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -574,13 +574,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37676,
+		index = 37675,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetLP"] = {
 		fields = {
 			{
 				name = "LocPlay",
-				index = 37680,
+				index = 37679,
 				className = "ULocalPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -588,20 +588,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37678,
+		index = 37677,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetPC"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37682,
+				index = 37681,
 				castTo = ffi.typeof("struct APlayerController**"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37673,
+		index = 37672,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetLP"] = {
@@ -609,20 +609,20 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37684,
+				index = 37683,
 				castTo = ffi.typeof("struct ULocalPlayer**"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37681,
+		index = 37680,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["Init"] = {
 		fields = {
 			{
 				name = "LocPlay",
-				index = 37686,
+				index = 37685,
 				optional = true,
 				className = "ULocalPlayer",
 				castTo = ffi.typeof("struct UObject**"),
@@ -631,13 +631,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37683,
+		index = 37682,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetWidgetPathBinding"] = {
 		fields = {
 			{
 				name = "WidgetToBind",
-				index = 37692,
+				index = 37691,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -645,7 +645,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Path",
-				index = 37693,
+				index = 37692,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -653,26 +653,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 37685,
+		index = 37684,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventPostWidgetInit"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37691,
+		index = 37690,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventWidgetUnloaded"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37697,
+				index = 37696,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "WidgetName",
-				index = 37696,
+				index = 37695,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -680,7 +680,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WidgetPath",
-				index = 37698,
+				index = 37697,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -688,7 +688,45 @@ local c = g_classFuncs
 			},
 			{
 				name = "Widget",
-				index = 37699,
+				index = 37698,
+				className = "UGFxObject",
+				castTo = ffi.typeof("struct UObject**"),
+				flags = 16,
+				offset = 16
+			},
+		},
+		dataSize = 24,
+		index = 37693,
+		retOffset = 20,
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventWidgetInitialized"] = {
+		fields = {
+			{
+				name = "ReturnValue",
+				isRet = true,
+				index = 37701,
+				castTo = ffi.typeof("BOOL*"),
+				offset = 20
+			},
+			{
+				name = "WidgetName",
+				index = 37700,
+				type = ffi.typeof("struct FName"),
+				castTo = ffi.typeof("struct FName*"),
+				flags = 2,
+				offset = 0
+			},
+			{
+				name = "WidgetPath",
+				index = 37702,
+				type = ffi.typeof("struct FName"),
+				castTo = ffi.typeof("struct FName*"),
+				flags = 2,
+				offset = 8
+			},
+			{
+				name = "Widget",
+				index = 37703,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -699,56 +737,18 @@ local c = g_classFuncs
 		index = 37694,
 		retOffset = 20,
 	}
-	g_classFuncs["UGFxMoviePlayer"]["eventWidgetInitialized"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 37702,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 20
-			},
-			{
-				name = "WidgetName",
-				index = 37701,
-				type = ffi.typeof("struct FName"),
-				castTo = ffi.typeof("struct FName*"),
-				flags = 2,
-				offset = 0
-			},
-			{
-				name = "WidgetPath",
-				index = 37703,
-				type = ffi.typeof("struct FName"),
-				castTo = ffi.typeof("struct FName*"),
-				flags = 2,
-				offset = 8
-			},
-			{
-				name = "Widget",
-				index = 37704,
-				className = "UGFxObject",
-				castTo = ffi.typeof("struct UObject**"),
-				flags = 16,
-				offset = 16
-			},
-		},
-		dataSize = 24,
-		index = 37695,
-		retOffset = 20,
-	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScriptObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37707,
+				index = 37706,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 37706,
+				index = 37705,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -756,7 +756,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37700,
+		index = 37699,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScriptString"] = {
@@ -764,7 +764,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37710,
+				index = 37709,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -772,7 +772,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Path",
-				index = 37709,
+				index = 37708,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -780,7 +780,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37705,
+		index = 37704,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScriptFloat"] = {
@@ -788,13 +788,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37713,
+				index = 37712,
 				castTo = ffi.typeof("float*"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 37712,
+				index = 37711,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -802,7 +802,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37708,
+		index = 37707,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScriptInt"] = {
@@ -810,13 +810,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37716,
+				index = 37715,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 37715,
+				index = 37714,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -824,14 +824,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37711,
+		index = 37710,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScriptVoid"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37718,
+				index = 37717,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -839,13 +839,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 37714,
+		index = 37713,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScript"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37720,
+				index = 37719,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -853,21 +853,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 37717,
+		index = 37716,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["Invoke"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37724,
+				index = 37723,
 				cType = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				offset = 24
 			},
 			{
 				name = "Method",
-				index = 37722,
+				index = 37721,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -875,7 +875,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "args",
-				index = 37723,
+				index = 37724,
 				type = ffi.typeof("struct TArray_FASValue"),
 				castTo = ffi.typeof("struct TArray_FASValue*"),
 				flags = 8,
@@ -883,14 +883,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 37719,
+		index = 37718,
 		retOffset = 24,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ActionScriptSetFunction"] = {
 		fields = {
 			{
 				name = "Object",
-				index = 37734,
+				index = 37733,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -898,7 +898,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 37735,
+				index = 37734,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -906,20 +906,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37721,
+		index = 37720,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["CreateArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37737,
+				index = 37736,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37733,
+		index = 37732,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["CreateObject"] = {
@@ -927,13 +927,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37741,
+				index = 37740,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 16
 			},
 			{
 				name = "ASClass",
-				index = 37739,
+				index = 37738,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -941,7 +941,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 37740,
+				index = 37739,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -950,7 +950,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 37736,
+		index = 37735,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableStringArray"] = {
@@ -958,13 +958,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37746,
+				index = 37745,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37743,
+				index = 37742,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -972,7 +972,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37744,
+				index = 37743,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -980,7 +980,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 37745,
+				index = 37746,
 				type = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
 				flags = 8,
@@ -988,7 +988,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37738,
+		index = 37737,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableFloatArray"] = {
@@ -996,13 +996,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37752,
+				index = 37751,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37749,
+				index = 37748,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1010,7 +1010,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37750,
+				index = 37749,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1018,7 +1018,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 37751,
+				index = 37752,
 				type = ffi.typeof("struct TArray_float"),
 				castTo = ffi.typeof("struct TArray_float*"),
 				flags = 8,
@@ -1026,7 +1026,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37742,
+		index = 37741,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableIntArray"] = {
@@ -1034,13 +1034,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37758,
+				index = 37757,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37755,
+				index = 37754,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1048,7 +1048,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37756,
+				index = 37755,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1056,7 +1056,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 37757,
+				index = 37758,
 				type = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
 				flags = 8,
@@ -1064,7 +1064,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37748,
+		index = 37747,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableArray"] = {
@@ -1072,13 +1072,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37764,
+				index = 37763,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37761,
+				index = 37760,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1086,7 +1086,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37762,
+				index = 37761,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1094,7 +1094,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 37763,
+				index = 37764,
 				type = ffi.typeof("struct TArray_FASValue"),
 				castTo = ffi.typeof("struct TArray_FASValue*"),
 				flags = 8,
@@ -1102,7 +1102,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37754,
+		index = 37753,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableStringArray"] = {
@@ -1110,13 +1110,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37770,
+				index = 37769,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37767,
+				index = 37766,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1124,7 +1124,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37768,
+				index = 37767,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1133,7 +1133,7 @@ local c = g_classFuncs
 			{
 				name = "Arg",
 				isRet = true,
-				index = 37769,
+				index = 37770,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -1142,7 +1142,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37760,
+		index = 37759,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableFloatArray"] = {
@@ -1150,13 +1150,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37776,
+				index = 37775,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37773,
+				index = 37772,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1164,7 +1164,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37774,
+				index = 37773,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1173,7 +1173,7 @@ local c = g_classFuncs
 			{
 				name = "Arg",
 				isRet = true,
-				index = 37775,
+				index = 37776,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_float"),
 				castTo = ffi.typeof("struct TArray_float*"),
@@ -1182,7 +1182,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37766,
+		index = 37765,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableIntArray"] = {
@@ -1190,13 +1190,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37782,
+				index = 37781,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37779,
+				index = 37778,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1204,7 +1204,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37780,
+				index = 37779,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1213,7 +1213,7 @@ local c = g_classFuncs
 			{
 				name = "Arg",
 				isRet = true,
-				index = 37781,
+				index = 37782,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -1222,7 +1222,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37772,
+		index = 37771,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableArray"] = {
@@ -1230,13 +1230,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37788,
+				index = 37787,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "Path",
-				index = 37785,
+				index = 37784,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1244,7 +1244,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 37786,
+				index = 37785,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1253,7 +1253,7 @@ local c = g_classFuncs
 			{
 				name = "Arg",
 				isRet = true,
-				index = 37787,
+				index = 37788,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FASValue"),
 				castTo = ffi.typeof("struct TArray_FASValue*"),
@@ -1262,14 +1262,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 37778,
+		index = 37777,
 		retOffset = 28,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableObject"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37791,
+				index = 37790,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1277,7 +1277,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Object",
-				index = 37792,
+				index = 37791,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1285,13 +1285,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37784,
+		index = 37783,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableString"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37794,
+				index = 37793,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1299,7 +1299,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "S",
-				index = 37795,
+				index = 37794,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1307,13 +1307,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37790,
+		index = 37789,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableNumber"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37797,
+				index = 37796,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1321,7 +1321,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "F",
-				index = 37798,
+				index = 37797,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -1329,13 +1329,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37793,
+		index = 37792,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariableBool"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37800,
+				index = 37799,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1343,7 +1343,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 37801,
+				index = 37800,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1351,13 +1351,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37796,
+		index = 37795,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetVariable"] = {
 		fields = {
 			{
 				name = "Path",
-				index = 37803,
+				index = 37802,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1365,7 +1365,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 37804,
+				index = 37803,
 				type = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				flags = 64,
@@ -1373,20 +1373,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 37799,
+		index = 37798,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37808,
+				index = 37807,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 16
 			},
 			{
 				name = "Path",
-				index = 37806,
+				index = 37805,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1394,7 +1394,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 37807,
+				index = 37806,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -1403,7 +1403,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 37802,
+		index = 37801,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableString"] = {
@@ -1411,7 +1411,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37811,
+				index = 37810,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -1419,7 +1419,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Path",
-				index = 37810,
+				index = 37809,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1427,7 +1427,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37805,
+		index = 37804,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableNumber"] = {
@@ -1435,13 +1435,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37814,
+				index = 37813,
 				castTo = ffi.typeof("float*"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 37813,
+				index = 37812,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1449,7 +1449,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37809,
+		index = 37808,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariableBool"] = {
@@ -1457,13 +1457,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37817,
+				index = 37816,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 37816,
+				index = 37815,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1471,7 +1471,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37812,
+		index = 37811,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVariable"] = {
@@ -1479,14 +1479,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37820,
+				index = 37819,
 				cType = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 37819,
+				index = 37818,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1494,7 +1494,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 37815,
+		index = 37814,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventFilterAxisInput"] = {
@@ -1502,13 +1502,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37823,
+				index = 37822,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "ControllerId",
-				index = 37822,
+				index = 37821,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1516,7 +1516,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Key",
-				index = 37824,
+				index = 37823,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1524,7 +1524,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Delta",
-				index = 37825,
+				index = 37824,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -1532,7 +1532,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DeltaTime",
-				index = 37826,
+				index = 37825,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -1540,7 +1540,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 37818,
+		index = 37817,
 		retOffset = 20,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventFilterButtonInput"] = {
@@ -1548,13 +1548,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37829,
+				index = 37828,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "ControllerId",
-				index = 37828,
+				index = 37827,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1562,7 +1562,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ButtonName",
-				index = 37830,
+				index = 37829,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1570,7 +1570,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InputEvent",
-				index = 37831,
+				index = 37830,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EInputEvent",
@@ -1579,14 +1579,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 37821,
+		index = 37820,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["FlushPlayerInput"] = {
 		fields = {
 			{
 				name = "capturekeysonly",
-				index = 37833,
+				index = 37832,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1594,19 +1594,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37827,
+		index = 37826,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ClearFocusIgnoreKeys"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37832,
+		index = 37831,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["AddFocusIgnoreKey"] = {
 		fields = {
 			{
 				name = "Key",
-				index = 37836,
+				index = 37835,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1614,19 +1614,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37834,
+		index = 37833,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["ClearCaptureKeys"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37835,
+		index = 37834,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["AddCaptureKey"] = {
 		fields = {
 			{
 				name = "Key",
-				index = 37839,
+				index = 37838,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1634,13 +1634,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37837,
+		index = 37836,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetMovieCanReceiveInput"] = {
 		fields = {
 			{
 				name = "bCanReceiveInput",
-				index = 37841,
+				index = 37840,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1648,13 +1648,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37838,
+		index = 37837,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetMovieCanReceiveFocus"] = {
 		fields = {
 			{
 				name = "bCanReceiveFocus",
-				index = 37843,
+				index = 37842,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1662,13 +1662,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37840,
+		index = 37839,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetSceneDPG"] = {
 		fields = {
 			{
 				name = "NewDPG",
-				index = 37845,
+				index = 37844,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "ESceneDepthPriorityGroup",
@@ -1677,14 +1677,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 37842,
+		index = 37841,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetPerspective3D"] = {
 		fields = {
 			{
 				name = "matPersp",
 				isRet = true,
-				index = 37847,
+				index = 37846,
 				isOutParm = true,
 				cType = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
@@ -1692,14 +1692,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 64,
-		index = 37844,
+		index = 37843,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetView3D"] = {
 		fields = {
 			{
 				name = "matView",
 				isRet = true,
-				index = 37849,
+				index = 37848,
 				isOutParm = true,
 				cType = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
@@ -1707,14 +1707,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 64,
-		index = 37846,
+		index = 37845,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetVisibleFrameRect"] = {
 		fields = {
 			{
 				name = "x0",
 				isRet = true,
-				index = 37851,
+				index = 37850,
 				isOutParm = true,
 				castTo = ffi.typeof("float*"),
 				offset = 0
@@ -1722,7 +1722,7 @@ local c = g_classFuncs
 			{
 				name = "y0",
 				isRet = true,
-				index = 37852,
+				index = 37851,
 				isOutParm = true,
 				castTo = ffi.typeof("float*"),
 				offset = 4
@@ -1730,7 +1730,7 @@ local c = g_classFuncs
 			{
 				name = "X1",
 				isRet = true,
-				index = 37853,
+				index = 37852,
 				isOutParm = true,
 				castTo = ffi.typeof("float*"),
 				offset = 8
@@ -1738,20 +1738,20 @@ local c = g_classFuncs
 			{
 				name = "Y1",
 				isRet = true,
-				index = 37854,
+				index = 37853,
 				isOutParm = true,
 				castTo = ffi.typeof("float*"),
 				offset = 12
 			},
 		},
 		dataSize = 16,
-		index = 37848,
+		index = 37847,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetAlignment"] = {
 		fields = {
 			{
 				name = "A",
-				index = 37856,
+				index = 37855,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "GFxAlign",
@@ -1760,13 +1760,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 37850,
+		index = 37849,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetViewScaleMode"] = {
 		fields = {
 			{
 				name = "SM",
-				index = 37860,
+				index = 37859,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "GFxScaleMode",
@@ -1775,19 +1775,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 37855,
+		index = 37854,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventOnSetViewport"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37859,
+		index = 37858,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetViewport"] = {
 		fields = {
 			{
 				name = "X",
-				index = 37863,
+				index = 37862,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1795,7 +1795,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Y",
-				index = 37864,
+				index = 37863,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1803,7 +1803,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Width",
-				index = 37865,
+				index = 37864,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1811,7 +1811,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Height",
-				index = 37866,
+				index = 37865,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1819,27 +1819,27 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 37861,
+		index = 37860,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["GetGameViewportClient"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37868,
+				index = 37867,
 				castTo = ffi.typeof("struct UGameViewportClient**"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37862,
+		index = 37861,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetPriority"] = {
 		fields = {
 			{
 				name = "NewPriority",
-				index = 37870,
+				index = 37869,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -1847,32 +1847,32 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 37867,
+		index = 37866,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["PublishDataStoreValues"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37869,
+		index = 37868,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["RefreshDataStoreBindings"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37871,
+		index = 37870,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetExternalTexture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37876,
+				index = 37875,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "Resource",
-				index = 37874,
+				index = 37873,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -1880,7 +1880,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Texture",
-				index = 37875,
+				index = 37874,
 				className = "UTexture",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1888,14 +1888,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 37872,
+		index = 37871,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetExternalInterface"] = {
 		fields = {
 			{
 				name = "H",
-				index = 37878,
+				index = 37877,
 				className = "UObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1903,13 +1903,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37873,
+		index = 37872,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetTimingMode"] = {
 		fields = {
 			{
 				name = "Mode",
-				index = 37881,
+				index = 37880,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "GFxTimingMode",
@@ -1918,13 +1918,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 37877,
+		index = 37876,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["SetMovieInfo"] = {
 		fields = {
 			{
 				name = "Data",
-				index = 37884,
+				index = 37883,
 				className = "USwfMovie",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1932,31 +1932,46 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37880,
+		index = 37879,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventConditionalClearPause"] = {
 		fields = {
 		},
 		dataSize = 4,
-		index = 37883,
+		index = 37882,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventOnCleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37885,
+		index = 37884,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventOnClose"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 37887,
+		index = 37886,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["Close"] = {
 		fields = {
 			{
 				name = "Unload",
-				index = 37890,
+				index = 37889,
+				optional = true,
+				type = "boolean",
+				castTo = ffi.typeof("BOOL*"),
+				flags = 32,
+				offset = 0
+			},
+		},
+		dataSize = 4,
+		index = 37887,
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetPause"] = {
+		fields = {
+			{
+				name = "bPausePlayback",
+				index = 37891,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -1967,22 +1982,21 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37888,
 	}
-	g_classFuncs["UGFxMoviePlayer"]["SetPause"] = {
+	g_classFuncs["UGFxMoviePlayer"]["OnPostAdvance"] = {
 		fields = {
 			{
-				name = "bPausePlayback",
-				index = 37892,
-				optional = true,
-				type = "boolean",
-				castTo = ffi.typeof("BOOL*"),
+				name = "DeltaTime",
+				index = 37893,
+				type = "number",
+				castTo = ffi.typeof("float*"),
 				flags = 32,
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37889,
+		index = 37890,
 	}
-	g_classFuncs["UGFxMoviePlayer"]["OnPostAdvance"] = {
+	g_classFuncs["UGFxMoviePlayer"]["PostAdvance"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -1994,27 +2008,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37891,
-	}
-	g_classFuncs["UGFxMoviePlayer"]["PostAdvance"] = {
-		fields = {
-			{
-				name = "DeltaTime",
-				index = 37895,
-				type = "number",
-				castTo = ffi.typeof("float*"),
-				flags = 32,
-				offset = 0
-			},
-		},
-		dataSize = 4,
-		index = 37893,
+		index = 37892,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["Advance"] = {
 		fields = {
 			{
 				name = "Time",
-				index = 37897,
+				index = 37896,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -2022,20 +2022,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 37690,
+		index = 37689,
 	}
 	g_classFuncs["UGFxMoviePlayer"]["eventStart"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37899,
+				index = 37898,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "StartPaused",
-				index = 37898,
+				index = 37897,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -2044,7 +2044,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 37896,
+		index = 37895,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxObject"]["eventWidgetUnloaded"] = {
@@ -2052,13 +2052,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38266,
+				index = 38265,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "WidgetName",
-				index = 38269,
+				index = 38268,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2066,7 +2066,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WidgetPath",
-				index = 38268,
+				index = 38267,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2074,7 +2074,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Widget",
-				index = 38267,
+				index = 38266,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -2082,7 +2082,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38265,
+		index = 38264,
 		retOffset = 20,
 	}
 	g_classFuncs["UGFxObject"]["eventWidgetInitialized"] = {
@@ -2090,13 +2090,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38261,
+				index = 38260,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "WidgetName",
-				index = 38264,
+				index = 38263,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2104,7 +2104,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "WidgetPath",
-				index = 38263,
+				index = 38262,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2112,7 +2112,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Widget",
-				index = 38262,
+				index = 38261,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -2120,7 +2120,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38260,
+		index = 38259,
 		retOffset = 20,
 	}
 	g_classFuncs["UGFxObject"]["MouseHitTest"] = {
@@ -2128,13 +2128,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38259,
+				index = 38258,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 12,
-		index = 38258,
+		index = 38257,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxObject"]["HitTest"] = {
@@ -2142,13 +2142,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38254,
+				index = 38253,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "TestX",
-				index = 38257,
+				index = 38256,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2156,7 +2156,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestY",
-				index = 38256,
+				index = 38255,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2164,7 +2164,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bTestShape",
-				index = 38255,
+				index = 38254,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -2173,7 +2173,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38253,
+		index = 38252,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["_HitTest"] = {
@@ -2181,13 +2181,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38249,
+				index = 38248,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 			{
 				name = "TestX",
-				index = 38252,
+				index = 38251,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2195,7 +2195,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestY",
-				index = 38251,
+				index = 38250,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2203,7 +2203,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bTestShape",
-				index = 38250,
+				index = 38249,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2211,7 +2211,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38248,
+		index = 38247,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["GetNextHighestDepth"] = {
@@ -2219,33 +2219,33 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38247,
+				index = 38246,
 				castTo = ffi.typeof("float*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 38246,
+		index = 38245,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxObject"]["RemoveMovieClip"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38245,
+		index = 38244,
 	}
 	g_classFuncs["UGFxObject"]["AttachMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38240,
+				index = 38239,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 32
 			},
 			{
 				name = "symbolname",
-				index = 38244,
+				index = 38243,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2253,7 +2253,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "instancename",
-				index = 38243,
+				index = 38242,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2261,7 +2261,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Depth",
-				index = 38242,
+				index = 38241,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -2270,7 +2270,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 38241,
+				index = 38240,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -2279,7 +2279,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38239,
+		index = 38238,
 		retOffset = 32,
 	}
 	g_classFuncs["UGFxObject"]["CreateEmptyMovieClip"] = {
@@ -2287,13 +2287,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38235,
+				index = 38234,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 20
 			},
 			{
 				name = "instancename",
-				index = 38238,
+				index = 38237,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2301,7 +2301,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Depth",
-				index = 38237,
+				index = 38236,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -2310,7 +2310,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 38236,
+				index = 38235,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -2319,14 +2319,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38234,
+		index = 38233,
 		retOffset = 20,
 	}
 	g_classFuncs["UGFxObject"]["GotoAndStopI"] = {
 		fields = {
 			{
 				name = "frame",
-				index = 38233,
+				index = 38232,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2334,13 +2334,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 38232,
+		index = 38231,
 	}
 	g_classFuncs["UGFxObject"]["GotoAndStop"] = {
 		fields = {
 			{
 				name = "frame",
-				index = 38231,
+				index = 38230,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2348,13 +2348,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38230,
+		index = 38229,
 	}
 	g_classFuncs["UGFxObject"]["GotoAndPlayI"] = {
 		fields = {
 			{
 				name = "frame",
-				index = 38229,
+				index = 38228,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2362,13 +2362,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 38228,
+		index = 38227,
 	}
 	g_classFuncs["UGFxObject"]["GotoAndPlay"] = {
 		fields = {
 			{
 				name = "frame",
-				index = 38227,
+				index = 38226,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2376,7 +2376,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38226,
+		index = 38225,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptArray"] = {
 		fields = {
@@ -2391,7 +2391,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Path",
-				index = 38225,
+				index = 38224,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2399,7 +2399,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38222,
+		index = 38221,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptObject"] = {
@@ -2407,13 +2407,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38220,
+				index = 38219,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 12
 			},
 			{
 				name = "Path",
-				index = 38221,
+				index = 38220,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2421,7 +2421,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38219,
+		index = 38218,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptString"] = {
@@ -2429,7 +2429,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38217,
+				index = 38216,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -2437,7 +2437,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Method",
-				index = 38218,
+				index = 38217,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2445,7 +2445,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38216,
+		index = 38215,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptFloat"] = {
@@ -2453,13 +2453,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38214,
+				index = 38213,
 				castTo = ffi.typeof("float*"),
 				offset = 12
 			},
 			{
 				name = "Method",
-				index = 38215,
+				index = 38214,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2467,7 +2467,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38213,
+		index = 38212,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptInt"] = {
@@ -2475,13 +2475,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38211,
+				index = 38210,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 			{
 				name = "Method",
-				index = 38212,
+				index = 38211,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2489,14 +2489,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38210,
+		index = 38209,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptVoid"] = {
 		fields = {
 			{
 				name = "Method",
-				index = 38209,
+				index = 38208,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2504,21 +2504,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38208,
+		index = 38207,
 	}
 	g_classFuncs["UGFxObject"]["Invoke"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38206,
+				index = 38205,
 				cType = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				offset = 24
 			},
 			{
 				name = "Member",
-				index = 38207,
+				index = 38206,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2534,14 +2534,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 38203,
+		index = 38202,
 		retOffset = 24,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptSetFunctionOn"] = {
 		fields = {
 			{
 				name = "Target",
-				index = 38202,
+				index = 38201,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -2549,7 +2549,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38201,
+				index = 38200,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2557,13 +2557,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38200,
+		index = 38199,
 	}
 	g_classFuncs["UGFxObject"]["ActionScriptSetFunction"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38199,
+				index = 38198,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2571,13 +2571,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38198,
+		index = 38197,
 	}
 	g_classFuncs["UGFxObject"]["SetElementMemberString"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38197,
+				index = 38196,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2585,7 +2585,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38196,
+				index = 38195,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2593,7 +2593,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "S",
-				index = 38195,
+				index = 38194,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2601,13 +2601,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38194,
+		index = 38193,
 	}
 	g_classFuncs["UGFxObject"]["SetElementMemberFloat"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38193,
+				index = 38192,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2615,7 +2615,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38192,
+				index = 38191,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2623,7 +2623,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "F",
-				index = 38191,
+				index = 38190,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -2631,13 +2631,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38190,
+		index = 38189,
 	}
 	g_classFuncs["UGFxObject"]["SetElementMemberBool"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38189,
+				index = 38188,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2645,7 +2645,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38188,
+				index = 38187,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2653,7 +2653,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 38187,
+				index = 38186,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2661,13 +2661,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38186,
+		index = 38185,
 	}
 	g_classFuncs["UGFxObject"]["SetElementMemberObject"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38185,
+				index = 38184,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2675,7 +2675,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38184,
+				index = 38183,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2683,7 +2683,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "val",
-				index = 38183,
+				index = 38182,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -2691,13 +2691,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38182,
+		index = 38181,
 	}
 	g_classFuncs["UGFxObject"]["SetElementMember"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38181,
+				index = 38180,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2705,7 +2705,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38180,
+				index = 38179,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2713,7 +2713,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 38179,
+				index = 38178,
 				type = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				flags = 64,
@@ -2721,14 +2721,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 38178,
+		index = 38177,
 	}
 	g_classFuncs["UGFxObject"]["GetElementMemberString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38175,
+				index = 38174,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -2736,7 +2736,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 38177,
+				index = 38176,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2744,7 +2744,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38176,
+				index = 38175,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2752,7 +2752,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38174,
+		index = 38173,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["GetElementMemberFloat"] = {
@@ -2760,13 +2760,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38171,
+				index = 38170,
 				castTo = ffi.typeof("float*"),
 				offset = 16
 			},
 			{
 				name = "Index",
-				index = 38173,
+				index = 38172,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2774,7 +2774,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38172,
+				index = 38171,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2782,7 +2782,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38170,
+		index = 38169,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["GetElementMemberBool"] = {
@@ -2790,13 +2790,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38167,
+				index = 38166,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "Index",
-				index = 38169,
+				index = 38168,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2804,7 +2804,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38168,
+				index = 38167,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2812,7 +2812,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38166,
+		index = 38165,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["GetElementMemberObject"] = {
@@ -2820,13 +2820,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38162,
+				index = 38161,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 20
 			},
 			{
 				name = "Index",
-				index = 38165,
+				index = 38164,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2834,7 +2834,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38164,
+				index = 38163,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2842,7 +2842,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 38163,
+				index = 38162,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -2851,7 +2851,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38161,
+		index = 38160,
 		retOffset = 20,
 	}
 	g_classFuncs["UGFxObject"]["GetElementMember"] = {
@@ -2859,14 +2859,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38158,
+				index = 38157,
 				cType = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				offset = 16
 			},
 			{
 				name = "Index",
-				index = 38160,
+				index = 38159,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2874,7 +2874,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38159,
+				index = 38158,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -2882,14 +2882,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 38157,
+		index = 38156,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["SetElementColorTransform"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38156,
+				index = 38155,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2897,7 +2897,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "cxform",
-				index = 38155,
+				index = 38154,
 				type = ffi.typeof("struct FASColorTransform"),
 				castTo = ffi.typeof("struct FASColorTransform*"),
 				flags = 64,
@@ -2905,13 +2905,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38154,
+		index = 38153,
 	}
 	g_classFuncs["UGFxObject"]["SetElementPosition"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38153,
+				index = 38152,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2919,7 +2919,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "X",
-				index = 38152,
+				index = 38151,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -2927,7 +2927,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Y",
-				index = 38151,
+				index = 38150,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -2935,13 +2935,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38150,
+		index = 38149,
 	}
 	g_classFuncs["UGFxObject"]["SetElementVisible"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38149,
+				index = 38148,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2949,7 +2949,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Visible",
-				index = 38148,
+				index = 38147,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2957,13 +2957,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38147,
+		index = 38146,
 	}
 	g_classFuncs["UGFxObject"]["SetElementDisplayMatrix"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38146,
+				index = 38145,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2971,7 +2971,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "M",
-				index = 38145,
+				index = 38144,
 				type = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
 				flags = 64,
@@ -2979,13 +2979,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 80,
-		index = 38144,
+		index = 38143,
 	}
 	g_classFuncs["UGFxObject"]["SetElementDisplayInfo"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38143,
+				index = 38142,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2993,7 +2993,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "D",
-				index = 38142,
+				index = 38141,
 				type = ffi.typeof("struct FASDisplayInfo"),
 				castTo = ffi.typeof("struct FASDisplayInfo*"),
 				flags = 64,
@@ -3001,21 +3001,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 38141,
+		index = 38140,
 	}
 	g_classFuncs["UGFxObject"]["GetElementDisplayMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38139,
+				index = 38138,
 				cType = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
 				offset = 16
 			},
 			{
 				name = "Index",
-				index = 38140,
+				index = 38139,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3023,7 +3023,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 80,
-		index = 38138,
+		index = 38137,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["GetElementDisplayInfo"] = {
@@ -3031,14 +3031,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38136,
+				index = 38135,
 				cType = ffi.typeof("struct FASDisplayInfo"),
 				castTo = ffi.typeof("struct FASDisplayInfo*"),
 				offset = 4
 			},
 			{
 				name = "Index",
-				index = 38137,
+				index = 38136,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3046,14 +3046,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 38135,
+		index = 38134,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxObject"]["SetElementString"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38134,
+				index = 38133,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3061,7 +3061,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "S",
-				index = 38133,
+				index = 38132,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3069,13 +3069,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38132,
+		index = 38131,
 	}
 	g_classFuncs["UGFxObject"]["SetElementFloat"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38131,
+				index = 38130,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3083,7 +3083,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "F",
-				index = 38130,
+				index = 38129,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -3091,13 +3091,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38129,
+		index = 38128,
 	}
 	g_classFuncs["UGFxObject"]["SetElementBool"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38128,
+				index = 38127,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3105,7 +3105,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 38127,
+				index = 38126,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3113,13 +3113,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38126,
+		index = 38125,
 	}
 	g_classFuncs["UGFxObject"]["SetElementObject"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38125,
+				index = 38124,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3127,7 +3127,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "val",
-				index = 38124,
+				index = 38123,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3135,13 +3135,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38123,
+		index = 38122,
 	}
 	g_classFuncs["UGFxObject"]["SetElement"] = {
 		fields = {
 			{
 				name = "Index",
-				index = 38122,
+				index = 38121,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3149,7 +3149,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 38121,
+				index = 38120,
 				type = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				flags = 64,
@@ -3157,14 +3157,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38120,
+		index = 38119,
 	}
 	g_classFuncs["UGFxObject"]["GetElementString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38118,
+				index = 38117,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3172,7 +3172,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Index",
-				index = 38119,
+				index = 38118,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3180,7 +3180,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38117,
+		index = 38116,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxObject"]["GetElementFloat"] = {
@@ -3188,13 +3188,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38115,
+				index = 38114,
 				castTo = ffi.typeof("float*"),
 				offset = 4
 			},
 			{
 				name = "Index",
-				index = 38116,
+				index = 38115,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3202,7 +3202,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38114,
+		index = 38113,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxObject"]["GetElementBool"] = {
@@ -3210,13 +3210,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38112,
+				index = 38111,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "Index",
-				index = 38113,
+				index = 38112,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3224,7 +3224,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38111,
+		index = 38110,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxObject"]["GetElementObject"] = {
@@ -3232,13 +3232,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38108,
+				index = 38107,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 8
 			},
 			{
 				name = "Index",
-				index = 38110,
+				index = 38109,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3246,7 +3246,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 38109,
+				index = 38108,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -3255,7 +3255,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38107,
+		index = 38106,
 		retOffset = 8,
 	}
 	g_classFuncs["UGFxObject"]["GetElement"] = {
@@ -3263,14 +3263,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38105,
+				index = 38104,
 				cType = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				offset = 4
 			},
 			{
 				name = "Index",
-				index = 38106,
+				index = 38105,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3278,14 +3278,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38104,
+		index = 38103,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxObject"]["SetText"] = {
 		fields = {
 			{
 				name = "Text",
-				index = 38103,
+				index = 38102,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3293,7 +3293,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InContext",
-				index = 38102,
+				index = 38101,
 				optional = true,
 				className = "UTranslationContext",
 				castTo = ffi.typeof("struct UObject**"),
@@ -3302,14 +3302,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38101,
+		index = 38100,
 	}
 	g_classFuncs["UGFxObject"]["GetText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38100,
+				index = 38099,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3317,14 +3317,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38099,
+		index = 38098,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxObject"]["SetVisible"] = {
 		fields = {
 			{
 				name = "Visible",
-				index = 38098,
+				index = 38097,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3332,13 +3332,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 38097,
+		index = 38096,
 	}
 	g_classFuncs["UGFxObject"]["SetDisplayMatrix3D"] = {
 		fields = {
 			{
 				name = "M",
-				index = 38096,
+				index = 38095,
 				type = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
 				flags = 64,
@@ -3346,13 +3346,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 64,
-		index = 38095,
+		index = 38094,
 	}
 	g_classFuncs["UGFxObject"]["SetDisplayMatrix"] = {
 		fields = {
 			{
 				name = "M",
-				index = 38094,
+				index = 38093,
 				type = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
 				flags = 64,
@@ -3360,13 +3360,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 64,
-		index = 38093,
+		index = 38092,
 	}
 	g_classFuncs["UGFxObject"]["SetColorTransform"] = {
 		fields = {
 			{
 				name = "cxform",
-				index = 38092,
+				index = 38091,
 				type = ffi.typeof("struct FASColorTransform"),
 				castTo = ffi.typeof("struct FASColorTransform*"),
 				flags = 64,
@@ -3374,13 +3374,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 38091,
+		index = 38090,
 	}
 	g_classFuncs["UGFxObject"]["SetPosition"] = {
 		fields = {
 			{
 				name = "X",
-				index = 38090,
+				index = 38089,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -3388,7 +3388,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Y",
-				index = 38089,
+				index = 38088,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -3396,14 +3396,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38088,
+		index = 38087,
 	}
 	g_classFuncs["UGFxObject"]["SetDisplayInfo"] = {
 		fields = {
 			{
 				name = "D",
 				isRet = true,
-				index = 38087,
+				index = 38086,
 				isOutParm = true,
 				cType = ffi.typeof("struct FASDisplayInfo"),
 				castTo = ffi.typeof("struct FASDisplayInfo*"),
@@ -3411,21 +3411,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 38086,
+		index = 38085,
 	}
 	g_classFuncs["UGFxObject"]["GetDisplayMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38085,
+				index = 38084,
 				cType = ffi.typeof("struct FMatrix"),
 				castTo = ffi.typeof("struct FMatrix*"),
 				offset = 0
 			},
 		},
 		dataSize = 64,
-		index = 38084,
+		index = 38083,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxObject"]["GetColorTransform"] = {
@@ -3433,14 +3433,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38083,
+				index = 38082,
 				cType = ffi.typeof("struct FASColorTransform"),
 				castTo = ffi.typeof("struct FASColorTransform*"),
 				offset = 0
 			},
 		},
 		dataSize = 32,
-		index = 38082,
+		index = 38081,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxObject"]["GetPosition"] = {
@@ -3448,14 +3448,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38079,
+				index = 38078,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "X",
 				isRet = true,
-				index = 38081,
+				index = 38080,
 				isOutParm = true,
 				castTo = ffi.typeof("float*"),
 				offset = 0
@@ -3463,14 +3463,14 @@ local c = g_classFuncs
 			{
 				name = "Y",
 				isRet = true,
-				index = 38080,
+				index = 38079,
 				isOutParm = true,
 				castTo = ffi.typeof("float*"),
 				offset = 4
 			},
 		},
 		dataSize = 12,
-		index = 38078,
+		index = 38077,
 		retOffset = 8,
 	}
 	g_classFuncs["UGFxObject"]["GetDisplayInfo"] = {
@@ -3478,7 +3478,7 @@ local c = g_classFuncs
 			{
 				name = "D",
 				isRet = true,
-				index = 38077,
+				index = 38076,
 				isOutParm = true,
 				cType = ffi.typeof("struct FASDisplayInfo"),
 				castTo = ffi.typeof("struct FASDisplayInfo*"),
@@ -3486,14 +3486,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 44,
-		index = 38076,
+		index = 38075,
 	}
 	g_classFuncs["UGFxObject"]["TranslateString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38073,
+				index = 38072,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3501,7 +3501,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "StringToTranslate",
-				index = 38075,
+				index = 38074,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3509,7 +3509,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InContext",
-				index = 38074,
+				index = 38073,
 				optional = true,
 				className = "UTranslationContext",
 				castTo = ffi.typeof("struct UObject**"),
@@ -3518,14 +3518,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38072,
+		index = 38071,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["SetFunction"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38071,
+				index = 38070,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3533,7 +3533,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Context",
-				index = 38070,
+				index = 38069,
 				className = "UObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3541,7 +3541,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "fname",
-				index = 38069,
+				index = 38068,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3549,13 +3549,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38068,
+		index = 38067,
 	}
 	g_classFuncs["UGFxObject"]["SetObject"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38067,
+				index = 38066,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3563,7 +3563,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "val",
-				index = 38066,
+				index = 38065,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3571,13 +3571,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38065,
+		index = 38064,
 	}
 	g_classFuncs["UGFxObject"]["SetString"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38064,
+				index = 38063,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3585,7 +3585,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "S",
-				index = 38063,
+				index = 38062,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3593,7 +3593,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InContext",
-				index = 38062,
+				index = 38061,
 				optional = true,
 				className = "UTranslationContext",
 				castTo = ffi.typeof("struct UObject**"),
@@ -3602,13 +3602,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38061,
+		index = 38060,
 	}
 	g_classFuncs["UGFxObject"]["SetFloat"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38060,
+				index = 38059,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3616,7 +3616,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "F",
-				index = 38059,
+				index = 38058,
 				type = "number",
 				castTo = ffi.typeof("float*"),
 				flags = 32,
@@ -3624,13 +3624,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38058,
+		index = 38057,
 	}
 	g_classFuncs["UGFxObject"]["SetBool"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38057,
+				index = 38056,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3638,7 +3638,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 38056,
+				index = 38055,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3646,13 +3646,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38055,
+		index = 38054,
 	}
 	g_classFuncs["UGFxObject"]["Set"] = {
 		fields = {
 			{
 				name = "Member",
-				index = 38054,
+				index = 38053,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3660,7 +3660,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 38053,
+				index = 38052,
 				type = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				flags = 64,
@@ -3668,20 +3668,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38052,
+		index = 38051,
 	}
 	g_classFuncs["UGFxObject"]["GetObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38049,
+				index = 38048,
 				castTo = ffi.typeof("struct UGFxObject**"),
 				offset = 16
 			},
 			{
 				name = "Member",
-				index = 38051,
+				index = 38050,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3689,7 +3689,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Type",
-				index = 38050,
+				index = 38049,
 				optional = true,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
@@ -3698,7 +3698,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38048,
+		index = 38047,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxObject"]["GetString"] = {
@@ -3706,7 +3706,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38046,
+				index = 38045,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3714,7 +3714,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38047,
+				index = 38046,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3722,7 +3722,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38045,
+		index = 38044,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["GetFloat"] = {
@@ -3730,13 +3730,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38043,
+				index = 38042,
 				castTo = ffi.typeof("float*"),
 				offset = 12
 			},
 			{
 				name = "Member",
-				index = 38044,
+				index = 38043,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3744,7 +3744,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38042,
+		index = 38041,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["GetBool"] = {
@@ -3752,13 +3752,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38040,
+				index = 38039,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "Member",
-				index = 38041,
+				index = 38040,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3766,7 +3766,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38039,
+		index = 38038,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxObject"]["Get"] = {
@@ -3774,14 +3774,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38037,
+				index = 38036,
 				cType = ffi.typeof("struct FASValue"),
 				castTo = ffi.typeof("struct FASValue*"),
 				offset = 12
 			},
 			{
 				name = "Member",
-				index = 38038,
+				index = 38037,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3789,14 +3789,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38036,
+		index = 38035,
 		retOffset = 12,
 	}
 	g_classFuncs["UGFxClikWidget"]["ASRemoveAllEventListeners"] = {
 		fields = {
 			{
 				name = "Event",
-				index = 38300,
+				index = 38299,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3804,13 +3804,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38290,
+		index = 38289,
 	}
 	g_classFuncs["UGFxClikWidget"]["ASAddEventListener"] = {
 		fields = {
 			{
 				name = "Type",
-				index = 38299,
+				index = 38298,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3818,7 +3818,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "O",
-				index = 38298,
+				index = 38297,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3826,7 +3826,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "func",
-				index = 38297,
+				index = 38296,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3834,13 +3834,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38287,
+		index = 38286,
 	}
 	g_classFuncs["UGFxClikWidget"]["SetListener"] = {
 		fields = {
 			{
 				name = "O",
-				index = 38296,
+				index = 38295,
 				className = "UGFxObject",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3848,7 +3848,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Member",
-				index = 38295,
+				index = 38294,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3856,7 +3856,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Listener",
-				index = 38294,
+				index = 38293,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3864,14 +3864,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 38286,
+		index = 38285,
 	}
 	g_classFuncs["UGFxClikWidget"]["GetEventStringFromTypename"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38292,
+				index = 38291,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3879,7 +3879,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Typename",
-				index = 38293,
+				index = 38292,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3887,14 +3887,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 38285,
+		index = 38284,
 		retOffset = 8,
 	}
 	g_classFuncs["UGFxClikWidget"]["RemoveAllEventListeners"] = {
 		fields = {
 			{
 				name = "Event",
-				index = 38289,
+				index = 38288,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3902,13 +3902,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38288,
+		index = 38287,
 	}
 	g_classFuncs["UGFxClikWidget"]["AddEventListener"] = {
 		fields = {
 			{
 				name = "Type",
-				index = 38284,
+				index = 38283,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3916,7 +3916,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Listener",
-				index = 38283,
+				index = 38282,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3924,13 +3924,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38281,
+		index = 38280,
 	}
 	g_classFuncs["UGFxClikWidget"]["EventListener"] = {
 		fields = {
 			{
 				name = "Data",
-				index = 38279,
+				index = 38278,
 				type = ffi.typeof("struct FEventData"),
 				castTo = ffi.typeof("struct FEventData*"),
 				flags = 64,
@@ -3938,14 +3938,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38278,
+		index = 38277,
 	}
 	g_classFuncs["USwfMovie"]["GetPathForLoadMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37614,
+				index = 37613,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -3953,7 +3953,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 37613,
+		index = 37612,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxAction_CloseMovie"]["eventIsValidLevelSequenceObject"] = {
@@ -3961,13 +3961,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37618,
+				index = 37617,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37617,
+		index = 37616,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxAction_GetVariable"]["eventIsValidLevelSequenceObject"] = {
@@ -3975,13 +3975,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37622,
+				index = 37621,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37621,
+		index = 37620,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxAction_Invoke"]["eventIsValidLevelSequenceObject"] = {
@@ -3989,13 +3989,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37980,
+				index = 37979,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37979,
+		index = 37978,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxAction_OpenMovie"]["eventIsValidLevelSequenceObject"] = {
@@ -4003,13 +4003,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 37999,
+				index = 37998,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 37998,
+		index = 37997,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxAction_SetVariable"]["eventIsValidLevelSequenceObject"] = {
@@ -4017,13 +4017,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38006,
+				index = 38005,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 38005,
+		index = 38004,
 		retOffset = 0,
 	}
 	g_classFuncs["UGFxFSCmdHandler_Kismet"]["eventFSCommand"] = {
@@ -4031,13 +4031,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38345,
+				index = 38344,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "Movie",
-				index = 38349,
+				index = 38348,
 				className = "UGFxMoviePlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -4045,7 +4045,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Event",
-				index = 38348,
+				index = 38347,
 				className = "UGFxEvent_FSCommand",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -4053,7 +4053,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Cmd",
-				index = 38347,
+				index = 38346,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4061,7 +4061,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 38346,
+				index = 38345,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4069,7 +4069,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 38344,
+		index = 38343,
 		retOffset = 32,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["SaveSubscriberValue"] = {
@@ -4077,7 +4077,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38326,
+				index = 38325,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
@@ -4093,7 +4093,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BindingIndex",
-				index = 38327,
+				index = 38326,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4102,14 +4102,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 38323,
+		index = 38322,
 		retOffset = 16,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["ClearBoundDataStores"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38322,
+		index = 38321,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["GetBoundDataStores"] = {
 		fields = {
@@ -4125,13 +4125,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 38319,
+		index = 38318,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["NotifyDataStoreValueUpdated"] = {
 		fields = {
 			{
 				name = "SourceDataStore",
-				index = 38318,
+				index = 38317,
 				className = "UUIDataStore",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -4139,7 +4139,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bValuesInvalidated",
-				index = 38317,
+				index = 38316,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4147,7 +4147,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PropertyTag",
-				index = 38316,
+				index = 38315,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -4155,7 +4155,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SourceProvider",
-				index = 38315,
+				index = 38314,
 				className = "UUIDataProvider",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -4163,7 +4163,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ArrayIndex",
-				index = 38314,
+				index = 38313,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4171,20 +4171,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 38313,
+		index = 38312,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["RefreshSubscriberValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38311,
+				index = 38310,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "BindingIndex",
-				index = 38312,
+				index = 38311,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4193,7 +4193,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 38310,
+		index = 38309,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["GetDataStoreBinding"] = {
@@ -4201,7 +4201,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 38308,
+				index = 38307,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -4209,7 +4209,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BindingIndex",
-				index = 38309,
+				index = 38308,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4218,14 +4218,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38307,
+		index = 38306,
 		retOffset = 4,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["SetDataStoreBinding"] = {
 		fields = {
 			{
 				name = "MarkupText",
-				index = 38306,
+				index = 38305,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4233,7 +4233,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BindingIndex",
-				index = 38305,
+				index = 38304,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4242,11 +4242,11 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 38304,
+		index = 38303,
 	}
 	g_classFuncs["UGFxDataStoreSubscriber"]["PublishValues"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 38303,
+		index = 38302,
 	}

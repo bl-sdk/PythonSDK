@@ -3211,7 +3211,7 @@ local c = g_classFuncs
 			{
 				name = "out_EventList",
 				isRet = true,
-				index = 7875,
+				index = 7876,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceEventPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceEventPtr*"),
@@ -3260,7 +3260,7 @@ local c = g_classFuncs
 			{
 				name = "EventList",
 				isRet = true,
-				index = 7864,
+				index = 7865,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceEventPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceEventPtr*"),
@@ -3270,7 +3270,7 @@ local c = g_classFuncs
 			{
 				name = "ActivateIndices",
 				isRet = true,
-				index = 7866,
+				index = 7867,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -3289,7 +3289,7 @@ local c = g_classFuncs
 			{
 				name = "ActivatedEvents",
 				isRet = true,
-				index = 7868,
+				index = 7869,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceEventPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceEventPtr*"),
@@ -3400,7 +3400,7 @@ local c = g_classFuncs
 			{
 				name = "ActivatedEvents",
 				isRet = true,
-				index = 7837,
+				index = 7838,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceEventPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceEventPtr*"),
@@ -4596,7 +4596,7 @@ local c = g_classFuncs
 			{
 				name = "ActorsHurt",
 				isRet = true,
-				index = 7651,
+				index = 7652,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -6805,7 +6805,7 @@ local c = g_classFuncs
 			{
 				name = "out_Hits",
 				isRet = true,
-				index = 7349,
+				index = 7350,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FImpactInfo"),
 				castTo = ffi.typeof("struct TArray_FImpactInfo*"),
@@ -9356,7 +9356,7 @@ local c = g_classFuncs
 			{
 				name = "OutRewindPoints",
 				isRet = true,
-				index = 23169,
+				index = 23170,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -9591,7 +9591,7 @@ local c = g_classFuncs
 			{
 				name = "LevelNames",
 				isRet = true,
-				index = 23145,
+				index = 23146,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -9748,7 +9748,7 @@ local c = g_classFuncs
 			{
 				name = "Navs",
 				isRet = true,
-				index = 23126,
+				index = 23127,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_ANavigationPointPtr"),
 				castTo = ffi.typeof("struct TArray_ANavigationPointPtr*"),
@@ -9758,7 +9758,7 @@ local c = g_classFuncs
 			{
 				name = "Specs",
 				isRet = true,
-				index = 23128,
+				index = 23129,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UReachSpecPtr"),
 				castTo = ffi.typeof("struct TArray_UReachSpecPtr*"),
@@ -10131,7 +10131,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 23077,
+				index = 23078,
 				cType = ffi.typeof("struct TArray_USequencePtr"),
 				castTo = ffi.typeof("struct TArray_USequencePtr*"),
 				TArray = true,
@@ -10915,7 +10915,7 @@ local c = g_classFuncs
 			{
 				name = "ContentNames",
 				isRet = true,
-				index = 20195,
+				index = 20196,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -11088,7 +11088,7 @@ local c = g_classFuncs
 			{
 				name = "DLCBundles",
 				isRet = true,
-				index = 20165,
+				index = 20166,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineContent"),
 				castTo = ffi.typeof("struct TArray_FOnlineContent*"),
@@ -11098,7 +11098,7 @@ local c = g_classFuncs
 			{
 				name = "NamedDLCCompatibilityBundles",
 				isRet = true,
-				index = 20167,
+				index = 20168,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FNamedOnlineContent"),
 				castTo = ffi.typeof("struct TArray_FNamedOnlineContent*"),
@@ -11108,7 +11108,7 @@ local c = g_classFuncs
 			{
 				name = "NamedDLCBundles",
 				isRet = true,
-				index = 20169,
+				index = 20170,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FNamedOnlineContent"),
 				castTo = ffi.typeof("struct TArray_FNamedOnlineContent*"),
@@ -11118,7 +11118,7 @@ local c = g_classFuncs
 			{
 				name = "OldCompatibilityBundles",
 				isRet = true,
-				index = 20171,
+				index = 20172,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FCompatibilityOnlineContent"),
 				castTo = ffi.typeof("struct TArray_FCompatibilityOnlineContent*"),
@@ -14121,7 +14121,7 @@ local c = g_classFuncs
 			{
 				name = "TravelPoints",
 				isRet = true,
-				index = 16942,
+				index = 16943,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FVector"),
 				castTo = ffi.typeof("struct TArray_FVector*"),
@@ -15076,7 +15076,7 @@ local c = g_classFuncs
 			{
 				name = "ActorList",
 				isRet = true,
-				index = 22487,
+				index = 22488,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -18229,7 +18229,7 @@ local c = g_classFuncs
 			{
 				name = "ActorList",
 				isRet = true,
-				index = 27777,
+				index = 27778,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -18822,7 +18822,7 @@ local c = g_classFuncs
 			{
 				name = "out_NavList",
 				isRet = true,
-				index = 14525,
+				index = 14526,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_ANavigationPointPtr"),
 				castTo = ffi.typeof("struct TArray_ANavigationPointPtr*"),
@@ -19033,7 +19033,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ExcludeList",
-				index = 14500,
+				index = 14501,
 				optional = true,
 				type = ffi.typeof("struct TArray_ANavigationPointPtr"),
 				castTo = ffi.typeof("struct TArray_ANavigationPointPtr*"),
@@ -19073,7 +19073,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ExcludeList",
-				index = 14493,
+				index = 14494,
 				optional = true,
 				type = ffi.typeof("struct TArray_ANavigationPointPtr"),
 				castTo = ffi.typeof("struct TArray_ANavigationPointPtr*"),
@@ -19686,7 +19686,7 @@ local c = g_classFuncs
 			{
 				name = "Actions",
 				isRet = true,
-				index = 18765,
+				index = 18766,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -19790,7 +19790,7 @@ local c = g_classFuncs
 			{
 				name = "out_Items",
 				isRet = true,
-				index = 18751,
+				index = 18752,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -21761,7 +21761,7 @@ local c = g_classFuncs
 			{
 				name = "ActorsHurt",
 				isRet = true,
-				index = 32230,
+				index = 32231,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -22665,7 +22665,7 @@ local c = g_classFuncs
 			{
 				name = "ListenerPositions",
 				isRet = true,
-				index = 14696,
+				index = 14697,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FVector"),
 				castTo = ffi.typeof("struct TArray_FVector*"),
@@ -22675,7 +22675,7 @@ local c = g_classFuncs
 			{
 				name = "ListenerOrientations",
 				isRet = true,
-				index = 14698,
+				index = 14699,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FRotator"),
 				castTo = ffi.typeof("struct TArray_FRotator*"),
@@ -22734,7 +22734,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "Subtitles",
-				index = 14970,
+				index = 14971,
 				type = ffi.typeof("struct TArray_FSubtitleCue"),
 				castTo = ffi.typeof("struct TArray_FSubtitleCue*"),
 				flags = 8,
@@ -25500,7 +25500,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Triangles",
-				index = 18082,
+				index = 18083,
 				type = ffi.typeof("struct TArray_FCanvasUVTri"),
 				castTo = ffi.typeof("struct TArray_FCanvasUVTri*"),
 				flags = 8,
@@ -26107,7 +26107,7 @@ local c = g_classFuncs
 			{
 				name = "InstanceData",
 				isRet = true,
-				index = 10723,
+				index = 10724,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FInstanceDataUnion"),
 				castTo = ffi.typeof("struct TArray_FInstanceDataUnion*"),
@@ -31133,7 +31133,7 @@ local c = g_classFuncs
 			{
 				name = "ActorList",
 				isRet = true,
-				index = 13829,
+				index = 13830,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -33148,7 +33148,7 @@ local c = g_classFuncs
 			{
 				name = "out_useList",
 				isRet = true,
-				index = 12931,
+				index = 12932,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_ATriggerPtr"),
 				castTo = ffi.typeof("struct TArray_ATriggerPtr*"),
@@ -36545,7 +36545,7 @@ local c = g_classFuncs
 			{
 				name = "OutRegisteredPlayers",
 				isRet = true,
-				index = 12268,
+				index = 12269,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -39502,7 +39502,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "IDMappings",
-				index = 23635,
+				index = 23636,
 				type = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
 				flags = 8,
@@ -42045,7 +42045,7 @@ local c = g_classFuncs
 			{
 				name = "AnimNodeList",
 				isRet = true,
-				index = 24276,
+				index = 24277,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UAnimNodePtr"),
 				castTo = ffi.typeof("struct TArray_UAnimNodePtr*"),
@@ -43071,7 +43071,7 @@ local c = g_classFuncs
 			{
 				name = "FileData",
 				isRet = true,
-				index = 24568,
+				index = 24569,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -43872,7 +43872,7 @@ local c = g_classFuncs
 			{
 				name = "BarData",
 				isRet = true,
-				index = 15709,
+				index = 15710,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FInfoBarData"),
 				castTo = ffi.typeof("struct TArray_FInfoBarData*"),
@@ -44786,7 +44786,7 @@ local c = g_classFuncs
 			{
 				name = "FileData",
 				isRet = true,
-				index = 8742,
+				index = 8743,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -44809,7 +44809,7 @@ local c = g_classFuncs
 			{
 				name = "UniqueNetIdList",
 				isRet = true,
-				index = 8745,
+				index = 8747,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -46714,7 +46714,7 @@ local c = g_classFuncs
 			{
 				name = "Ids",
 				isRet = true,
-				index = 29933,
+				index = 29934,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -46777,7 +46777,7 @@ local c = g_classFuncs
 			{
 				name = "Value",
 				isRet = true,
-				index = 29924,
+				index = 29925,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -46808,7 +46808,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Value",
-				index = 29919,
+				index = 29920,
 				type = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
 				flags = 8,
@@ -47161,7 +47161,7 @@ local c = g_classFuncs
 			{
 				name = "Values",
 				isRet = true,
-				index = 29872,
+				index = 29873,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -49124,7 +49124,7 @@ local c = g_classFuncs
 			{
 				name = "QoSSettings",
 				isRet = true,
-				index = 8505,
+				index = 8506,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FLocalizedStringSetting"),
 				castTo = ffi.typeof("struct TArray_FLocalizedStringSetting*"),
@@ -49140,7 +49140,7 @@ local c = g_classFuncs
 			{
 				name = "QoSProps",
 				isRet = true,
-				index = 8513,
+				index = 8514,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FSettingsProperty"),
 				castTo = ffi.typeof("struct TArray_FSettingsProperty*"),
@@ -49345,7 +49345,7 @@ local c = g_classFuncs
 			{
 				name = "Props",
 				isRet = true,
-				index = 8552,
+				index = 8554,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FSettingsProperty"),
 				castTo = ffi.typeof("struct TArray_FSettingsProperty*"),
@@ -49370,7 +49370,7 @@ local c = g_classFuncs
 			{
 				name = "Settings",
 				isRet = true,
-				index = 8556,
+				index = 8558,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FLocalizedStringSetting"),
 				castTo = ffi.typeof("struct TArray_FLocalizedStringSetting*"),
@@ -50105,7 +50105,7 @@ local c = g_classFuncs
 			{
 				name = "Values",
 				isRet = true,
-				index = 8652,
+				index = 8654,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FIdToStringMapping"),
 				castTo = ffi.typeof("struct TArray_FIdToStringMapping*"),
@@ -50261,7 +50261,7 @@ local c = g_classFuncs
 			{
 				name = "OutBlob",
 				isRet = true,
-				index = 8677,
+				index = 8678,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -50396,7 +50396,7 @@ local c = g_classFuncs
 			{
 				name = "InBlob",
 				isRet = true,
-				index = 8695,
+				index = 8696,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -50526,7 +50526,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 10757,
+				index = 10760,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -51290,7 +51290,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ControllerConnectionStatusOverrides",
-				index = 36405,
+				index = 36406,
 				optional = true,
 				type = ffi.typeof("struct TArray_BOOL"),
 				castTo = ffi.typeof("struct TArray_BOOL*"),
@@ -51940,7 +51940,7 @@ local c = g_classFuncs
 			{
 				name = "Shape",
 				isRet = true,
-				index = 28101,
+				index = 28102,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FVector"),
 				castTo = ffi.typeof("struct TArray_FVector*"),
@@ -52813,7 +52813,7 @@ local c = g_classFuncs
 			{
 				name = "out_CoverList",
 				isRet = true,
-				index = 27948,
+				index = 27949,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FCoverInfo"),
 				castTo = ffi.typeof("struct TArray_FCoverInfo*"),
@@ -52973,7 +52973,7 @@ local c = g_classFuncs
 			{
 				name = "out_ValidPositions",
 				isRet = true,
-				index = 27923,
+				index = 27924,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FVector"),
 				castTo = ffi.typeof("struct TArray_FVector*"),
@@ -53032,7 +53032,7 @@ local c = g_classFuncs
 			{
 				name = "out_PolyCtrs",
 				isRet = true,
-				index = 27918,
+				index = 27919,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FVector"),
 				castTo = ffi.typeof("struct TArray_FVector*"),
@@ -53495,7 +53495,7 @@ local c = g_classFuncs
 			{
 				name = "OutPoints",
 				isRet = true,
-				index = 27857,
+				index = 27858,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FVector"),
 				castTo = ffi.typeof("struct TArray_FVector*"),
@@ -54573,7 +54573,7 @@ local c = g_classFuncs
 			{
 				name = "InGoalList",
 				isRet = true,
-				index = 28005,
+				index = 28006,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FBiasedGoalActor"),
 				castTo = ffi.typeof("struct TArray_FBiasedGoalActor*"),
@@ -56229,7 +56229,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "SlotInfos",
-				index = 34265,
+				index = 34266,
 				type = ffi.typeof("struct TArray_FAnimSlotInfo"),
 				castTo = ffi.typeof("struct TArray_FAnimSlotInfo*"),
 				flags = 8,
@@ -56438,7 +56438,7 @@ local c = g_classFuncs
 			{
 				name = "AnimNodeList",
 				isRet = true,
-				index = 15163,
+				index = 15164,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UAnimNodePtr"),
 				castTo = ffi.typeof("struct TArray_UAnimNodePtr*"),
@@ -63319,7 +63319,7 @@ local c = g_classFuncs
 			{
 				name = "ActorsHurt",
 				isRet = true,
-				index = 27582,
+				index = 27583,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -63826,7 +63826,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DestList",
-				index = 27509,
+				index = 27510,
 				type = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
 				flags = 8,
@@ -63859,7 +63859,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TeleportVolumes",
-				index = 27511,
+				index = 27512,
 				optional = true,
 				type = ffi.typeof("struct TArray_AVolumePtr"),
 				castTo = ffi.typeof("struct TArray_AVolumePtr*"),
@@ -65273,7 +65273,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Bones",
-				index = 27259,
+				index = 27260,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -65298,7 +65298,7 @@ local c = g_classFuncs
 			{
 				name = "Bones",
 				isRet = true,
-				index = 27256,
+				index = 27257,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -67922,7 +67922,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "SlotInfos",
-				index = 26908,
+				index = 26909,
 				type = ffi.typeof("struct TArray_FAnimSlotInfo"),
 				castTo = ffi.typeof("struct TArray_FAnimSlotInfo*"),
 				flags = 8,
@@ -68221,7 +68221,7 @@ local c = g_classFuncs
 			{
 				name = "CustomAnimSets",
 				isRet = true,
-				index = 26869,
+				index = 26870,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UAnimSetPtr"),
 				castTo = ffi.typeof("struct TArray_UAnimSetPtr*"),
@@ -68495,7 +68495,7 @@ local c = g_classFuncs
 			{
 				name = "BarData",
 				isRet = true,
-				index = 26832,
+				index = 26833,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FInfoBarData"),
 				castTo = ffi.typeof("struct TArray_FInfoBarData*"),
@@ -70276,7 +70276,7 @@ local c = g_classFuncs
 			{
 				name = "DebugInfo",
 				isRet = true,
-				index = 35012,
+				index = 35013,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -71417,7 +71417,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BoneNames",
-				index = 31767,
+				index = 31768,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -71447,7 +71447,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BoneNames",
-				index = 31760,
+				index = 31761,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -71548,7 +71548,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BoneNames",
-				index = 31747,
+				index = 31748,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -71595,7 +71595,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BoneNames",
-				index = 31740,
+				index = 31741,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -71880,7 +71880,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "BoneNames",
-				index = 31702,
+				index = 31703,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -73695,7 +73695,7 @@ local c = g_classFuncs
 			{
 				name = "boolVars",
 				isRet = true,
-				index = 11233,
+				index = 11234,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -73720,7 +73720,7 @@ local c = g_classFuncs
 			{
 				name = "outIData",
 				isRet = true,
-				index = 11229,
+				index = 11230,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UInterpDataPtr"),
 				castTo = ffi.typeof("struct TArray_UInterpDataPtr*"),
@@ -73745,7 +73745,7 @@ local c = g_classFuncs
 			{
 				name = "objVars",
 				isRet = true,
-				index = 11225,
+				index = 11226,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -73770,7 +73770,7 @@ local c = g_classFuncs
 			{
 				name = "out_Objects",
 				isRet = true,
-				index = 11221,
+				index = 11222,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceObjectPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceObjectPtr*"),
@@ -73871,7 +73871,7 @@ local c = g_classFuncs
 			{
 				name = "ActivateIndices",
 				isRet = true,
-				index = 33574,
+				index = 33575,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -73939,7 +73939,7 @@ local c = g_classFuncs
 			{
 				name = "OutputObjects",
 				isRet = true,
-				index = 32168,
+				index = 32169,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceObjectPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceObjectPtr*"),
@@ -73989,7 +73989,7 @@ local c = g_classFuncs
 			{
 				name = "OutputObjects",
 				isRet = true,
-				index = 32163,
+				index = 32164,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USequenceObjectPtr"),
 				castTo = ffi.typeof("struct TArray_USequenceObjectPtr*"),
@@ -74417,7 +74417,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "SavedLevels",
-				index = 33327,
+				index = 33328,
 				type = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				flags = 8,
@@ -75272,7 +75272,7 @@ local c = g_classFuncs
 			{
 				name = "Buffer",
 				isRet = true,
-				index = 34445,
+				index = 34446,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -75350,7 +75350,7 @@ local c = g_classFuncs
 			{
 				name = "out_DataStoreClasses",
 				isRet = true,
-				index = 19193,
+				index = 19194,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UClassPtr"),
 				castTo = ffi.typeof("struct TArray_UClassPtr*"),
@@ -76245,7 +76245,7 @@ local c = g_classFuncs
 			{
 				name = "out_BoundDataStores",
 				isRet = true,
-				index = 36214,
+				index = 36215,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UUIDataStorePtr"),
 				castTo = ffi.typeof("struct TArray_UUIDataStorePtr*"),
@@ -76385,7 +76385,7 @@ local c = g_classFuncs
 			{
 				name = "out_BoundDataStores",
 				isRet = true,
-				index = 36218,
+				index = 36219,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UUIDataStorePtr"),
 				castTo = ffi.typeof("struct TArray_UUIDataStorePtr*"),
@@ -76698,7 +76698,7 @@ local c = g_classFuncs
 			{
 				name = "out_Fields",
 				isRet = true,
-				index = 29982,
+				index = 29983,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUIDataProviderField"),
 				castTo = ffi.typeof("struct TArray_FUIDataProviderField*"),
@@ -78000,7 +78000,7 @@ local c = g_classFuncs
 			{
 				name = "ProviderFieldTags",
 				isRet = true,
-				index = 35870,
+				index = 35871,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -78032,7 +78032,7 @@ local c = g_classFuncs
 			{
 				name = "out_Providers",
 				isRet = true,
-				index = 35865,
+				index = 35866,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UUIResourceCombinationProviderPtr"),
 				castTo = ffi.typeof("struct TArray_UUIResourceCombinationProviderPtr*"),
@@ -78225,7 +78225,7 @@ local c = g_classFuncs
 			{
 				name = "ProviderFieldTags",
 				isRet = true,
-				index = 35920,
+				index = 35921,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -78257,7 +78257,7 @@ local c = g_classFuncs
 			{
 				name = "out_Providers",
 				isRet = true,
-				index = 35915,
+				index = 35916,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UUIResourceDataProviderPtr"),
 				castTo = ffi.typeof("struct TArray_UUIResourceDataProviderPtr*"),
@@ -78408,7 +78408,7 @@ local c = g_classFuncs
 			{
 				name = "OutProviders",
 				isRet = true,
-				index = 35991,
+				index = 35992,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UUIDataProvider_MenuItemPtr"),
 				castTo = ffi.typeof("struct TArray_UUIDataProvider_MenuItemPtr*"),
@@ -79934,7 +79934,7 @@ local c = g_classFuncs
 			{
 				name = "CollectionValues",
 				isRet = true,
-				index = 36269,
+				index = 36270,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -80002,7 +80002,7 @@ local c = g_classFuncs
 			{
 				name = "out_DataValueArray",
 				isRet = true,
-				index = 36262,
+				index = 36263,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -80052,7 +80052,7 @@ local c = g_classFuncs
 			{
 				name = "out_CellTagArray",
 				isRet = true,
-				index = 36256,
+				index = 36257,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -80526,7 +80526,7 @@ local c = g_classFuncs
 			{
 				name = "out_Fields",
 				isRet = true,
-				index = 36496,
+				index = 36497,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUIDataProviderField"),
 				castTo = ffi.typeof("struct TArray_FUIDataProviderField*"),
@@ -80544,7 +80544,7 @@ local c = g_classFuncs
 			{
 				name = "ReplacementProviders",
 				isRet = true,
-				index = 36498,
+				index = 36499,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UUIDataProviderPtr"),
 				castTo = ffi.typeof("struct TArray_UUIDataProviderPtr*"),
@@ -80568,7 +80568,7 @@ local c = g_classFuncs
 			{
 				name = "out_Fields",
 				isRet = true,
-				index = 36490,
+				index = 36491,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUIDataProviderField"),
 				castTo = ffi.typeof("struct TArray_FUIDataProviderField*"),
@@ -80710,7 +80710,7 @@ local c = g_classFuncs
 			{
 				name = "CellFieldTags",
 				isRet = true,
-				index = 36471,
+				index = 36472,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -80720,7 +80720,7 @@ local c = g_classFuncs
 			{
 				name = "ColumnHeaderDisplayText",
 				isRet = true,
-				index = 36473,
+				index = 36474,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -80851,7 +80851,7 @@ local c = g_classFuncs
 			{
 				name = "out_Elements",
 				isRet = true,
-				index = 36453,
+				index = 36454,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -80890,7 +80890,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 36445,
+				index = 36446,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
 				TArray = true,
@@ -82783,7 +82783,7 @@ local c = g_classFuncs
 			{
 				name = "AnimNodeList",
 				isRet = true,
-				index = 11778,
+				index = 11779,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UAnimNodePtr"),
 				castTo = ffi.typeof("struct TArray_UAnimNodePtr*"),
@@ -83426,7 +83426,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "BonePairs",
-				index = 11640,
+				index = 11641,
 				type = ffi.typeof("struct TArray_FBonePair"),
 				castTo = ffi.typeof("struct TArray_FBonePair*"),
 				flags = 8,
@@ -83531,7 +83531,7 @@ local c = g_classFuncs
 			{
 				name = "out_Bones",
 				isRet = true,
-				index = 11622,
+				index = 11623,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -83979,7 +83979,7 @@ local c = g_classFuncs
 			{
 				name = "BoneNames",
 				isRet = true,
-				index = 11562,
+				index = 11563,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -85544,7 +85544,7 @@ local c = g_classFuncs
 			{
 				name = "OutSet",
 				isRet = true,
-				index = 34539,
+				index = 34540,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_ASplineActorPtr"),
 				castTo = ffi.typeof("struct TArray_ASplineActorPtr*"),
@@ -85575,7 +85575,7 @@ local c = g_classFuncs
 			{
 				name = "OutRoute",
 				isRet = true,
-				index = 34534,
+				index = 34535,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_ASplineActorPtr"),
 				castTo = ffi.typeof("struct TArray_ASplineActorPtr*"),
@@ -88037,7 +88037,7 @@ local c = g_classFuncs
 			{
 				name = "DebugInfo",
 				isRet = true,
-				index = 32796,
+				index = 32797,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -88632,7 +88632,7 @@ local c = g_classFuncs
 			{
 				name = "EffectModifiers",
 				isRet = true,
-				index = 16691,
+				index = 16692,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAppliedAttributeEffect"),
 				castTo = ffi.typeof("struct TArray_FAppliedAttributeEffect*"),
@@ -88656,7 +88656,7 @@ local c = g_classFuncs
 			{
 				name = "InAttributeEffects",
 				isRet = true,
-				index = 16680,
+				index = 16681,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAttributeEffectData"),
 				castTo = ffi.typeof("struct TArray_FAttributeEffectData*"),
@@ -88666,7 +88666,7 @@ local c = g_classFuncs
 			{
 				name = "OutModifiers",
 				isRet = true,
-				index = 16682,
+				index = 16683,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAppliedAttributeEffect"),
 				castTo = ffi.typeof("struct TArray_FAppliedAttributeEffect*"),
@@ -88706,7 +88706,7 @@ local c = g_classFuncs
 			{
 				name = "SoundList",
 				isRet = true,
-				index = 16727,
+				index = 16728,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FConditionalSoundData"),
 				castTo = ffi.typeof("struct TArray_FConditionalSoundData*"),
@@ -88738,7 +88738,7 @@ local c = g_classFuncs
 			{
 				name = "SoundList",
 				isRet = true,
-				index = 16722,
+				index = 16723,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FConditionalSoundData"),
 				castTo = ffi.typeof("struct TArray_FConditionalSoundData*"),
@@ -88819,7 +88819,7 @@ local c = g_classFuncs
 			{
 				name = "Expressions",
 				isRet = true,
-				index = 16710,
+				index = 16711,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAttributeExpressionData"),
 				castTo = ffi.typeof("struct TArray_FAttributeExpressionData*"),
@@ -88910,7 +88910,7 @@ local c = g_classFuncs
 			{
 				name = "Contexts",
 				isRet = true,
-				index = 17111,
+				index = 17112,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -89473,7 +89473,7 @@ local c = g_classFuncs
 			{
 				name = "Behaviors",
 				isRet = true,
-				index = 17020,
+				index = 17021,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UBehaviorBasePtr"),
 				castTo = ffi.typeof("struct TArray_UBehaviorBasePtr*"),
@@ -89926,7 +89926,7 @@ local c = g_classFuncs
 			{
 				name = "ResolvedContexts",
 				isRet = true,
-				index = 16586,
+				index = 16587,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -90138,7 +90138,7 @@ local c = g_classFuncs
 			{
 				name = "Descriptors",
 				isRet = true,
-				index = 16660,
+				index = 16661,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -90148,7 +90148,7 @@ local c = g_classFuncs
 			{
 				name = "ResolvedContexts",
 				isRet = true,
-				index = 16662,
+				index = 16663,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -90181,7 +90181,7 @@ local c = g_classFuncs
 			{
 				name = "BaseValues",
 				isRet = true,
-				index = 16653,
+				index = 16654,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_float"),
 				castTo = ffi.typeof("struct TArray_float*"),
@@ -90191,7 +90191,7 @@ local c = g_classFuncs
 			{
 				name = "ResolvedContexts",
 				isRet = true,
-				index = 16655,
+				index = 16656,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -90224,7 +90224,7 @@ local c = g_classFuncs
 			{
 				name = "Values",
 				isRet = true,
-				index = 16646,
+				index = 16647,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_float"),
 				castTo = ffi.typeof("struct TArray_float*"),
@@ -90234,7 +90234,7 @@ local c = g_classFuncs
 			{
 				name = "ResolvedContexts",
 				isRet = true,
-				index = 16648,
+				index = 16649,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -90275,7 +90275,7 @@ local c = g_classFuncs
 			{
 				name = "Values",
 				isRet = true,
-				index = 16641,
+				index = 16642,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_float"),
 				castTo = ffi.typeof("struct TArray_float*"),
@@ -90299,7 +90299,7 @@ local c = g_classFuncs
 			{
 				name = "ResolvedContexts",
 				isRet = true,
-				index = 16637,
+				index = 16638,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -90835,7 +90835,7 @@ local c = g_classFuncs
 			{
 				name = "InstanceData",
 				isRet = true,
-				index = 9963,
+				index = 9964,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FInstanceDataUnion"),
 				castTo = ffi.typeof("struct TArray_FInstanceDataUnion*"),
@@ -91162,7 +91162,7 @@ local c = g_classFuncs
 			{
 				name = "InstanceData",
 				isRet = true,
-				index = 24634,
+				index = 24635,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FInstanceDataUnion"),
 				castTo = ffi.typeof("struct TArray_FInstanceDataUnion*"),
@@ -91289,7 +91289,7 @@ local c = g_classFuncs
 			{
 				name = "InstanceDataObjects",
 				isRet = true,
-				index = 24619,
+				index = 24620,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UObjectPtr"),
 				castTo = ffi.typeof("struct TArray_UObjectPtr*"),
@@ -91583,7 +91583,7 @@ local c = g_classFuncs
 			{
 				name = "DebugText",
 				isRet = true,
-				index = 24186,
+				index = 24187,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -91914,7 +91914,7 @@ local c = g_classFuncs
 			{
 				name = "DebugInfo",
 				isRet = true,
-				index = 35123,
+				index = 35124,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -93597,7 +93597,7 @@ local c = g_classFuncs
 			{
 				name = "ClonedComponentsAttachedToPrimaryMesh",
 				isRet = true,
-				index = 36910,
+				index = 36911,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_UPrimitiveComponentPtr"),
 				castTo = ffi.typeof("struct TArray_UPrimitiveComponentPtr*"),
@@ -94696,7 +94696,7 @@ local c = g_classFuncs
 			{
 				name = "PartMeshes",
 				isRet = true,
-				index = 36766,
+				index = 36767,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_USkeletalMeshPtr"),
 				castTo = ffi.typeof("struct TArray_USkeletalMeshPtr*"),
@@ -95025,7 +95025,7 @@ local c = g_classFuncs
 			{
 				name = "AttributeModifiers",
 				isRet = true,
-				index = 36715,
+				index = 36716,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAppliedAttributeEffect"),
 				castTo = ffi.typeof("struct TArray_FAppliedAttributeEffect*"),
@@ -95066,7 +95066,7 @@ local c = g_classFuncs
 			{
 				name = "AttributeModifiers",
 				isRet = true,
-				index = 36710,
+				index = 36711,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAppliedAttributeEffect"),
 				castTo = ffi.typeof("struct TArray_FAppliedAttributeEffect*"),
@@ -95663,7 +95663,7 @@ local c = g_classFuncs
 			{
 				name = "ImpactList",
 				isRet = true,
-				index = 37216,
+				index = 37217,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FImpactInfo"),
 				castTo = ffi.typeof("struct TArray_FImpactInfo*"),
@@ -97566,7 +97566,7 @@ local c = g_classFuncs
 			{
 				name = "PartMeshNames",
 				isRet = true,
-				index = 37356,
+				index = 37357,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FName"),
 				castTo = ffi.typeof("struct TArray_FName*"),
@@ -97846,7 +97846,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Volumes",
-				index = 33455,
+				index = 33456,
 				optional = true,
 				type = ffi.typeof("struct TArray_AVolumePtr"),
 				castTo = ffi.typeof("struct TArray_AVolumePtr*"),
@@ -99318,7 +99318,7 @@ local c = g_classFuncs
 			{
 				name = "FileContents",
 				isRet = true,
-				index = 30423,
+				index = 30424,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -99811,7 +99811,7 @@ local c = g_classFuncs
 			{
 				name = "PartyMembers",
 				isRet = true,
-				index = 29257,
+				index = 29258,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlinePartyMember"),
 				castTo = ffi.typeof("struct TArray_FOnlinePartyMember*"),
@@ -100022,7 +100022,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "Mus",
-				index = 30232,
+				index = 30233,
 				type = ffi.typeof("struct TArray_FDouble"),
 				castTo = ffi.typeof("struct TArray_FDouble*"),
 				flags = 8,
@@ -100030,7 +100030,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Sigmas",
-				index = 30234,
+				index = 30235,
 				type = ffi.typeof("struct TArray_FDouble"),
 				castTo = ffi.typeof("struct TArray_FDouble*"),
 				flags = 8,
@@ -100216,7 +100216,7 @@ local c = g_classFuncs
 			{
 				name = "PlayerScores",
 				isRet = true,
-				index = 30219,
+				index = 30220,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlinePlayerScore"),
 				castTo = ffi.typeof("struct TArray_FOnlinePlayerScore*"),
@@ -100515,7 +100515,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 30174,
+				index = 30175,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -100748,7 +100748,7 @@ local c = g_classFuncs
 			{
 				name = "Words",
 				isRet = true,
-				index = 30493,
+				index = 30494,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FSpeechRecognizedWord"),
 				castTo = ffi.typeof("struct TArray_FSpeechRecognizedWord*"),
@@ -101261,7 +101261,7 @@ local c = g_classFuncs
 			{
 				name = "DLCList",
 				isRet = true,
-				index = 28953,
+				index = 28954,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FMarketplaceContent"),
 				castTo = ffi.typeof("struct TArray_FMarketplaceContent*"),
@@ -101383,7 +101383,7 @@ local c = g_classFuncs
 			{
 				name = "DLCList",
 				isRet = true,
-				index = 28937,
+				index = 28938,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FMarketplaceContent"),
 				castTo = ffi.typeof("struct TArray_FMarketplaceContent*"),
@@ -101414,7 +101414,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "OfferIds",
-				index = 28932,
+				index = 28933,
 				type = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
 				flags = 8,
@@ -101504,7 +101504,7 @@ local c = g_classFuncs
 			{
 				name = "DLCList",
 				isRet = true,
-				index = 28920,
+				index = 28921,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FMarketplaceContent"),
 				castTo = ffi.typeof("struct TArray_FMarketplaceContent*"),
@@ -101626,7 +101626,7 @@ local c = g_classFuncs
 			{
 				name = "SaveGamesList",
 				isRet = true,
-				index = 28904,
+				index = 28905,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineContent"),
 				castTo = ffi.typeof("struct TArray_FOnlineContent*"),
@@ -101954,7 +101954,7 @@ local c = g_classFuncs
 			{
 				name = "SaveGameData",
 				isRet = true,
-				index = 28862,
+				index = 28863,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -102124,7 +102124,7 @@ local c = g_classFuncs
 			{
 				name = "SaveGameData",
 				isRet = true,
-				index = 28840,
+				index = 28841,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -102505,7 +102505,7 @@ local c = g_classFuncs
 			{
 				name = "SaveGameData",
 				isRet = true,
-				index = 28791,
+				index = 28792,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -102685,7 +102685,7 @@ local c = g_classFuncs
 			{
 				name = "ContentList",
 				isRet = true,
-				index = 28768,
+				index = 28769,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineCrossTitleContent"),
 				castTo = ffi.typeof("struct TArray_FOnlineCrossTitleContent*"),
@@ -102799,7 +102799,7 @@ local c = g_classFuncs
 			{
 				name = "ContentList",
 				isRet = true,
-				index = 28753,
+				index = 28754,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineContent"),
 				castTo = ffi.typeof("struct TArray_FOnlineContent*"),
@@ -103261,7 +103261,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 29167,
+				index = 29168,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -103401,7 +103401,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 29151,
+				index = 29152,
 				cType = ffi.typeof("struct TArray_FOnlineArbitrationRegistrant"),
 				castTo = ffi.typeof("struct TArray_FOnlineArbitrationRegistrant*"),
 				TArray = true,
@@ -103714,7 +103714,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 29118,
+				index = 29119,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -103834,7 +103834,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 29104,
+				index = 29105,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -105060,7 +105060,7 @@ local c = g_classFuncs
 			{
 				name = "Recipients",
 				isRet = true,
-				index = 29806,
+				index = 29807,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -105311,7 +105311,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 29774,
+				index = 29775,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -105858,7 +105858,7 @@ local c = g_classFuncs
 			{
 				name = "Achievements",
 				isRet = true,
-				index = 29695,
+				index = 29696,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FAchievementDetails"),
 				castTo = ffi.typeof("struct TArray_FAchievementDetails*"),
@@ -106199,7 +106199,7 @@ local c = g_classFuncs
 			{
 				name = "FriendMessages",
 				isRet = true,
-				index = 29653,
+				index = 29654,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineFriendMessage"),
 				castTo = ffi.typeof("struct TArray_FOnlineFriendMessage*"),
@@ -106433,7 +106433,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Friends",
-				index = 29622,
+				index = 29623,
 				type = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
 				flags = 8,
@@ -107000,7 +107000,7 @@ local c = g_classFuncs
 			{
 				name = "LocalizedStringSettings",
 				isRet = true,
-				index = 29549,
+				index = 29550,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FLocalizedStringSetting"),
 				castTo = ffi.typeof("struct TArray_FLocalizedStringSetting*"),
@@ -107010,7 +107010,7 @@ local c = g_classFuncs
 			{
 				name = "Properties",
 				isRet = true,
-				index = 29551,
+				index = 29552,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FSettingsProperty"),
 				castTo = ffi.typeof("struct TArray_FSettingsProperty*"),
@@ -107042,7 +107042,7 @@ local c = g_classFuncs
 			{
 				name = "Friends",
 				isRet = true,
-				index = 29542,
+				index = 29543,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineFriend"),
 				castTo = ffi.typeof("struct TArray_FOnlineFriend*"),
@@ -107987,7 +107987,7 @@ local c = g_classFuncs
 			{
 				name = "Query",
 				isRet = true,
-				index = 29423,
+				index = 29424,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FFriendsQuery"),
 				castTo = ffi.typeof("struct TArray_FFriendsQuery*"),
@@ -108671,7 +108671,7 @@ local c = g_classFuncs
 			{
 				name = "Accounts",
 				isRet = true,
-				index = 28458,
+				index = 28459,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FString"),
 				castTo = ffi.typeof("struct TArray_FString*"),
@@ -110196,7 +110196,7 @@ local c = g_classFuncs
 			{
 				name = "SlotIndices",
 				isRet = true,
-				index = 18967,
+				index = 18968,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -110289,7 +110289,7 @@ local c = g_classFuncs
 			{
 				name = "SlotIndices",
 				isRet = true,
-				index = 18954,
+				index = 18955,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -110373,7 +110373,7 @@ local c = g_classFuncs
 			{
 				name = "SlotIndices",
 				isRet = true,
-				index = 18941,
+				index = 18942,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -110457,7 +110457,7 @@ local c = g_classFuncs
 			{
 				name = "SlotIndices",
 				isRet = true,
-				index = 18928,
+				index = 18929,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_int"),
 				castTo = ffi.typeof("struct TArray_int*"),
@@ -113036,7 +113036,7 @@ local c = g_classFuncs
 			{
 				name = "ActorsHurt",
 				isRet = true,
-				index = 24392,
+				index = 24393,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_AActorPtr"),
 				castTo = ffi.typeof("struct TArray_AActorPtr*"),
@@ -113216,7 +113216,7 @@ local c = g_classFuncs
 			{
 				name = "Payload",
 				isRet = true,
-				index = 28693,
+				index = 28694,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -113409,7 +113409,7 @@ local c = g_classFuncs
 			{
 				name = "Payload",
 				isRet = true,
-				index = 28668,
+				index = 28669,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -113459,7 +113459,7 @@ local c = g_classFuncs
 			{
 				name = "ContentFiles",
 				isRet = true,
-				index = 28662,
+				index = 28663,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FCommunityContentFile"),
 				castTo = ffi.typeof("struct TArray_FCommunityContentFile*"),
@@ -113533,7 +113533,7 @@ local c = g_classFuncs
 			{
 				name = "Friends",
 				isRet = true,
-				index = 28650,
+				index = 28651,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FOnlineFriend"),
 				castTo = ffi.typeof("struct TArray_FOnlineFriend*"),
@@ -113583,7 +113583,7 @@ local c = g_classFuncs
 			{
 				name = "ContentFiles",
 				isRet = true,
-				index = 28645,
+				index = 28646,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FCommunityContentFile"),
 				castTo = ffi.typeof("struct TArray_FCommunityContentFile*"),
@@ -113747,7 +113747,7 @@ local c = g_classFuncs
 			{
 				name = "Payload",
 				isRet = true,
-				index = 28978,
+				index = 28979,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_unsigned_char"),
 				castTo = ffi.typeof("struct TArray_unsigned_char*"),
@@ -113823,7 +113823,7 @@ local c = g_classFuncs
 		fields = {
 			{
 				name = "Players",
-				index = 30159,
+				index = 30160,
 				type = ffi.typeof("struct TArray_FCurrentPlayerMet"),
 				castTo = ffi.typeof("struct TArray_FCurrentPlayerMet*"),
 				flags = 8,
@@ -113998,7 +113998,7 @@ local c = g_classFuncs
 			{
 				name = "PartyMembers",
 				isRet = true,
-				index = 30131,
+				index = 30132,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -114058,7 +114058,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 30122,
+				index = 30123,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -114074,7 +114074,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 30119,
+				index = 30120,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -114104,7 +114104,7 @@ local c = g_classFuncs
 			{
 				name = "PartyMembers",
 				isRet = true,
-				index = 30114,
+				index = 30115,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),
@@ -114213,7 +114213,7 @@ local c = g_classFuncs
 			{
 				name = "Players",
 				isRet = true,
-				index = 30339,
+				index = 30340,
 				isOutParm = true,
 				cType = ffi.typeof("struct TArray_FUniqueNetId"),
 				castTo = ffi.typeof("struct TArray_FUniqueNetId*"),

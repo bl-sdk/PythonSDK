@@ -28,13 +28,13 @@ local c = g_classFuncs
 		fields = {
 		},
 		dataSize = 0,
-		index = 45220,
+		index = 45219,
 	}
 	g_classFuncs["AInternetLink"]["eventResolved"] = {
 		fields = {
 			{
 				name = "Addr",
-				index = 45219,
+				index = 45218,
 				type = ffi.typeof("struct FIpAddr"),
 				castTo = ffi.typeof("struct FIpAddr*"),
 				flags = 64,
@@ -42,14 +42,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45218,
+		index = 45217,
 	}
 	g_classFuncs["AInternetLink"]["GetLocalIP"] = {
 		fields = {
 			{
 				name = "Arg",
 				isRet = true,
-				index = 45217,
+				index = 45216,
 				isOutParm = true,
 				cType = ffi.typeof("struct FIpAddr"),
 				castTo = ffi.typeof("struct FIpAddr*"),
@@ -57,20 +57,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45216,
+		index = 45215,
 	}
 	g_classFuncs["AInternetLink"]["StringToIpAddr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45213,
+				index = 45212,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "Str",
-				index = 45215,
+				index = 45214,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -79,7 +79,7 @@ local c = g_classFuncs
 			{
 				name = "Addr",
 				isRet = true,
-				index = 45214,
+				index = 45213,
 				isOutParm = true,
 				cType = ffi.typeof("struct FIpAddr"),
 				castTo = ffi.typeof("struct FIpAddr*"),
@@ -87,7 +87,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45212,
+		index = 45211,
 		retOffset = 20,
 	}
 	g_classFuncs["AInternetLink"]["IpAddrToString"] = {
@@ -95,7 +95,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45210,
+				index = 45209,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -103,7 +103,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Arg",
-				index = 45211,
+				index = 45210,
 				type = ffi.typeof("struct FIpAddr"),
 				castTo = ffi.typeof("struct FIpAddr*"),
 				flags = 64,
@@ -111,7 +111,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45209,
+		index = 45208,
 		retOffset = 8,
 	}
 	g_classFuncs["AInternetLink"]["GetLastError"] = {
@@ -119,20 +119,20 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45208,
+				index = 45207,
 				castTo = ffi.typeof("int*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45207,
+		index = 45206,
 		retOffset = 0,
 	}
 	g_classFuncs["AInternetLink"]["Resolve"] = {
 		fields = {
 			{
 				name = "Domain",
-				index = 45206,
+				index = 45205,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -140,20 +140,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45205,
+		index = 45204,
 	}
 	g_classFuncs["AInternetLink"]["ParseURL"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45199,
+				index = 45198,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 52
 			},
 			{
 				name = "URL",
-				index = 45204,
+				index = 45203,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -162,7 +162,7 @@ local c = g_classFuncs
 			{
 				name = "Addr",
 				isRet = true,
-				index = 45203,
+				index = 45202,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -172,7 +172,7 @@ local c = g_classFuncs
 			{
 				name = "PortNum",
 				isRet = true,
-				index = 45202,
+				index = 45201,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 24
@@ -180,7 +180,7 @@ local c = g_classFuncs
 			{
 				name = "LevelName",
 				isRet = true,
-				index = 45201,
+				index = 45200,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -190,7 +190,7 @@ local c = g_classFuncs
 			{
 				name = "EntryName",
 				isRet = true,
-				index = 45200,
+				index = 45199,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -199,7 +199,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 56,
-		index = 45198,
+		index = 45197,
 		retOffset = 52,
 	}
 	g_classFuncs["AInternetLink"]["IsDataPending"] = {
@@ -207,20 +207,20 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45197,
+				index = 45196,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45196,
+		index = 45195,
 		retOffset = 0,
 	}
 	g_classFuncs["ATcpLink"]["eventReceivedBinary"] = {
 		fields = {
 			{
 				name = "Count",
-				index = 46239,
+				index = 46238,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -228,7 +228,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 46238,
+				index = 46237,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -236,13 +236,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 259,
-		index = 46237,
+		index = 46236,
 	}
 	g_classFuncs["ATcpLink"]["eventReceivedLine"] = {
 		fields = {
 			{
 				name = "Line",
-				index = 46236,
+				index = 46235,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -250,13 +250,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46235,
+		index = 46234,
 	}
 	g_classFuncs["ATcpLink"]["eventReceivedText"] = {
 		fields = {
 			{
 				name = "Text",
-				index = 46234,
+				index = 46233,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -264,38 +264,38 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46233,
+		index = 46232,
 	}
 	g_classFuncs["ATcpLink"]["eventClosed"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46232,
+		index = 46231,
 	}
 	g_classFuncs["ATcpLink"]["eventOpened"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46231,
+		index = 46230,
 	}
 	g_classFuncs["ATcpLink"]["eventAccepted"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46230,
+		index = 46229,
 	}
 	g_classFuncs["ATcpLink"]["ReadBinary"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46227,
+				index = 46226,
 				castTo = ffi.typeof("int*"),
 				offset = 260
 			},
 			{
 				name = "Count",
-				index = 46229,
+				index = 46228,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -304,14 +304,14 @@ local c = g_classFuncs
 			{
 				name = "B",
 				isRet = true,
-				index = 46228,
+				index = 46227,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 4
 			},
 		},
 		dataSize = 264,
-		index = 46226,
+		index = 46225,
 		retOffset = 260,
 	}
 	g_classFuncs["ATcpLink"]["ReadText"] = {
@@ -319,14 +319,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46224,
+				index = 46223,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 			{
 				name = "Str",
 				isRet = true,
-				index = 46225,
+				index = 46224,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -335,7 +335,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46223,
+		index = 46222,
 		retOffset = 12,
 	}
 	g_classFuncs["ATcpLink"]["SendBinary"] = {
@@ -343,13 +343,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46220,
+				index = 46219,
 				castTo = ffi.typeof("int*"),
 				offset = 260
 			},
 			{
 				name = "Count",
-				index = 46222,
+				index = 46221,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -357,7 +357,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 46221,
+				index = 46220,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -365,7 +365,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 264,
-		index = 46219,
+		index = 46218,
 		retOffset = 260,
 	}
 	g_classFuncs["ATcpLink"]["SendText"] = {
@@ -373,13 +373,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46217,
+				index = 46216,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 			{
 				name = "Str",
-				index = 46218,
+				index = 46217,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -387,7 +387,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46216,
+		index = 46215,
 		retOffset = 12,
 	}
 	g_classFuncs["ATcpLink"]["IsConnected"] = {
@@ -395,13 +395,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46215,
+				index = 46214,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46214,
+		index = 46213,
 		retOffset = 0,
 	}
 	g_classFuncs["ATcpLink"]["Close"] = {
@@ -409,13 +409,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46213,
+				index = 46212,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46212,
+		index = 46211,
 		retOffset = 0,
 	}
 	g_classFuncs["ATcpLink"]["Open"] = {
@@ -423,13 +423,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46210,
+				index = 46209,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "Addr",
-				index = 46211,
+				index = 46210,
 				type = ffi.typeof("struct FIpAddr"),
 				castTo = ffi.typeof("struct FIpAddr*"),
 				flags = 64,
@@ -437,7 +437,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46209,
+		index = 46208,
 		retOffset = 8,
 	}
 	g_classFuncs["ATcpLink"]["Listen"] = {
@@ -445,13 +445,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46208,
+				index = 46207,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46207,
+		index = 46206,
 		retOffset = 0,
 	}
 	g_classFuncs["ATcpLink"]["BindPort"] = {
@@ -459,13 +459,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46204,
+				index = 46203,
 				castTo = ffi.typeof("int*"),
 				offset = 8
 			},
 			{
 				name = "PortNum",
-				index = 46206,
+				index = 46205,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -474,7 +474,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bUseNextAvailable",
-				index = 46205,
+				index = 46204,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -483,7 +483,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46203,
+		index = 46202,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineEventsInterfaceMcp"]["UploadMatchmakingStats"] = {
@@ -491,13 +491,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45523,
+				index = 45522,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 28
 			},
 			{
 				name = "UniqueId",
-				index = 45525,
+				index = 45524,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -505,7 +505,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "MMStats",
-				index = 45524,
+				index = 45523,
 				className = "UOnlineMatchmakingStats",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -513,7 +513,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 32,
-		index = 45522,
+		index = 45521,
 		retOffset = 28,
 	}
 	g_classFuncs["UOnlineEventsInterfaceMcp"]["UpdatePlaylistPopulation"] = {
@@ -521,13 +521,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45519,
+				index = 45518,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "PlaylistId",
-				index = 45521,
+				index = 45520,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -535,7 +535,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumPlayers",
-				index = 45520,
+				index = 45519,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -543,7 +543,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45518,
+		index = 45517,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineEventsInterfaceMcp"]["UploadGameplayEventsData"] = {
@@ -551,13 +551,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45516,
+				index = 45515,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "UniqueId",
-				index = 45517,
+				index = 45516,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -575,7 +575,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 45513,
+		index = 45512,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineEventsInterfaceMcp"]["UploadPlayerData"] = {
@@ -583,13 +583,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45508,
+				index = 45507,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 44
 			},
 			{
 				name = "UniqueId",
-				index = 45512,
+				index = 45511,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -597,7 +597,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerNick",
-				index = 45511,
+				index = 45510,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -605,7 +605,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProfileSettings",
-				index = 45510,
+				index = 45509,
 				className = "UOnlineProfileSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -613,7 +613,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerStorage",
-				index = 45509,
+				index = 45508,
 				className = "UOnlinePlayerStorage",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -621,7 +621,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 45507,
+		index = 45506,
 		retOffset = 44,
 	}
 	g_classFuncs["UOnlineNewsInterfaceMcp"]["GetNews"] = {
@@ -629,7 +629,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45829,
+				index = 45828,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -637,7 +637,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "LocalUserNum",
-				index = 45831,
+				index = 45830,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -645,7 +645,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NewsType",
-				index = 45830,
+				index = 45829,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineNewsType",
@@ -654,14 +654,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45828,
+		index = 45827,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineNewsInterfaceMcp"]["ClearReadNewsCompletedDelegate"] = {
 		fields = {
 			{
 				name = "ReadGameNewsDelegate",
-				index = 45827,
+				index = 45826,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -669,13 +669,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45826,
+		index = 45825,
 	}
 	g_classFuncs["UOnlineNewsInterfaceMcp"]["AddReadNewsCompletedDelegate"] = {
 		fields = {
 			{
 				name = "ReadNewsDelegate",
-				index = 45825,
+				index = 45824,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -683,13 +683,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45824,
+		index = 45823,
 	}
 	g_classFuncs["UOnlineNewsInterfaceMcp"]["OnReadNewsCompleted"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45823,
+				index = 45822,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -697,7 +697,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NewsType",
-				index = 45822,
+				index = 45821,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineNewsType",
@@ -706,20 +706,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 5,
-		index = 45808,
+		index = 45807,
 	}
 	g_classFuncs["UOnlineNewsInterfaceMcp"]["ReadNews"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45819,
+				index = 45818,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "LocalUserNum",
-				index = 45821,
+				index = 45820,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -727,7 +727,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NewsType",
-				index = 45820,
+				index = 45819,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineNewsType",
@@ -736,14 +736,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45818,
+		index = 45817,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
-				index = 46045,
+				index = 46044,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -751,13 +751,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46044,
+		index = 46043,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["AddShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
-				index = 46043,
+				index = 46042,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -765,20 +765,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46042,
+		index = 46041,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ShareTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46040,
+				index = 46039,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "FileToShare",
-				index = 46041,
+				index = 46040,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -786,7 +786,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46039,
+		index = 46038,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearDownloadedFile"] = {
@@ -794,13 +794,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46037,
+				index = 46036,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "Filename",
-				index = 46038,
+				index = 46037,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -808,7 +808,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46036,
+		index = 46035,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearDownloadedFiles"] = {
@@ -816,13 +816,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46035,
+				index = 46034,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46034,
+		index = 46033,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["GetTitleFileState"] = {
@@ -830,14 +830,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46032,
+				index = 46031,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EOnlineEnumerationReadState",
 				offset = 12
 			},
 			{
 				name = "Filename",
-				index = 46033,
+				index = 46032,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -845,7 +845,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46031,
+		index = 46030,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["GetTitleFileContents"] = {
@@ -853,13 +853,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46029,
+				index = 46028,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 46030,
+				index = 46029,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -877,14 +877,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46026,
+		index = 46025,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
-				index = 46025,
+				index = 46024,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -892,13 +892,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46024,
+		index = 46023,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["AddReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
-				index = 46023,
+				index = 46022,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -906,20 +906,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46022,
+		index = 46021,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ReadTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46019,
+				index = 46018,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "LocalUserNum",
-				index = 46021,
+				index = 46020,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -927,7 +927,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "FileToRead",
-				index = 46020,
+				index = 46019,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -935,14 +935,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 46018,
+		index = 46017,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["OnShareTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 46017,
+				index = 46016,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -950,7 +950,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 46016,
+				index = 46015,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -958,7 +958,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UGCHandle",
-				index = 46015,
+				index = 46014,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -966,13 +966,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46005,
+		index = 46004,
 	}
 	g_classFuncs["UOnlineTitleFileDownloadMcp"]["OnReadTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 46014,
+				index = 46013,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -980,7 +980,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 46013,
+				index = 46012,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -988,26 +988,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45997,
+		index = 45996,
 	}
 	g_classFuncs["UMeshBeacon"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45251,
+		index = 45250,
 	}
 	g_classFuncs["UMeshBeaconClient"]["SendHostNewGameSessionResponse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45312,
+				index = 45311,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 96
 			},
 			{
 				name = "bSuccess",
-				index = 45316,
+				index = 45315,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1015,7 +1015,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45315,
+				index = 45314,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1023,7 +1023,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 45314,
+				index = 45313,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -1032,21 +1032,21 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 45313,
+				index = 45312,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 16
 			},
 		},
 		dataSize = 100,
-		index = 45311,
+		index = 45310,
 		retOffset = 96,
 	}
 	g_classFuncs["UMeshBeaconClient"]["OnCreateNewSessionRequestReceived"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45310,
+				index = 45309,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1054,7 +1054,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 45309,
+				index = 45308,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -1072,13 +1072,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45253,
+		index = 45252,
 	}
 	g_classFuncs["UMeshBeaconClient"]["OnTravelRequestReceived"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45306,
+				index = 45305,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1086,7 +1086,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 45305,
+				index = 45304,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -1095,20 +1095,20 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 45304,
+				index = 45303,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 12
 			},
 		},
 		dataSize = 92,
-		index = 45255,
+		index = 45254,
 	}
 	g_classFuncs["UMeshBeaconClient"]["OnReceivedBandwidthTestResults"] = {
 		fields = {
 			{
 				name = "TestType",
-				index = 45303,
+				index = 45302,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestType",
@@ -1117,7 +1117,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestResult",
-				index = 45302,
+				index = 45301,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestResult",
@@ -1127,7 +1127,7 @@ local c = g_classFuncs
 			{
 				name = "BandwidthStats",
 				isRet = true,
-				index = 45301,
+				index = 45300,
 				isOutParm = true,
 				cType = ffi.typeof("struct FConnectionBandwidthStats"),
 				castTo = ffi.typeof("struct FConnectionBandwidthStats*"),
@@ -1135,13 +1135,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45257,
+		index = 45256,
 	}
 	g_classFuncs["UMeshBeaconClient"]["OnReceivedBandwidthTestRequest"] = {
 		fields = {
 			{
 				name = "TestType",
-				index = 45300,
+				index = 45299,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestType",
@@ -1150,13 +1150,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 45259,
+		index = 45258,
 	}
 	g_classFuncs["UMeshBeaconClient"]["OnConnectionRequestResult"] = {
 		fields = {
 			{
 				name = "ConnectionResult",
-				index = 45299,
+				index = 45298,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconConnectionResult",
@@ -1165,20 +1165,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 45261,
+		index = 45260,
 	}
 	g_classFuncs["UMeshBeaconClient"]["BeginBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45296,
+				index = 45295,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "TestType",
-				index = 45298,
+				index = 45297,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestType",
@@ -1187,7 +1187,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestBufferSize",
-				index = 45297,
+				index = 45296,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1195,7 +1195,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45295,
+		index = 45294,
 		retOffset = 8,
 	}
 	g_classFuncs["UMeshBeaconClient"]["RequestConnection"] = {
@@ -1203,14 +1203,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45291,
+				index = 45290,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 64
 			},
 			{
 				name = "DesiredHost",
 				isRet = true,
-				index = 45294,
+				index = 45293,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -1219,7 +1219,7 @@ local c = g_classFuncs
 			{
 				name = "ClientRequest",
 				isRet = true,
-				index = 45293,
+				index = 45292,
 				isOutParm = true,
 				cType = ffi.typeof("struct FClientConnectionRequest"),
 				castTo = ffi.typeof("struct FClientConnectionRequest*"),
@@ -1227,7 +1227,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bRegisterSecureAddress",
-				index = 45292,
+				index = 45291,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1235,20 +1235,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 68,
-		index = 45290,
+		index = 45289,
 		retOffset = 64,
 	}
 	g_classFuncs["UMeshBeaconClient"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45289,
+		index = 45288,
 	}
 	g_classFuncs["UMeshBeaconHost"]["OnReceivedClientCreateNewSessionResult"] = {
 		fields = {
 			{
 				name = "bSucceeded",
-				index = 45402,
+				index = 45401,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1256,7 +1256,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45401,
+				index = 45400,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1264,7 +1264,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 45400,
+				index = 45399,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -1273,27 +1273,27 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 45399,
+				index = 45398,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 16
 			},
 		},
 		dataSize = 96,
-		index = 45342,
+		index = 45341,
 	}
 	g_classFuncs["UMeshBeaconHost"]["RequestClientCreateNewSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45395,
+				index = 45394,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 48
 			},
 			{
 				name = "PlayerNetId",
-				index = 45398,
+				index = 45397,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1301,7 +1301,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45397,
+				index = 45396,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1309,7 +1309,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 45396,
+				index = 45395,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -1327,14 +1327,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 52,
-		index = 45392,
+		index = 45391,
 		retOffset = 48,
 	}
 	g_classFuncs["UMeshBeaconHost"]["TellClientsToTravel"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45391,
+				index = 45390,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1342,7 +1342,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 45390,
+				index = 45389,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -1351,27 +1351,27 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 45389,
+				index = 45388,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 12
 			},
 		},
 		dataSize = 92,
-		index = 45388,
+		index = 45387,
 	}
 	g_classFuncs["UMeshBeaconHost"]["OnAllPendingPlayersConnected"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45344,
+		index = 45343,
 	}
 	g_classFuncs["UMeshBeaconHost"]["AllPlayersConnected"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45387,
+				index = 45386,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
@@ -1387,7 +1387,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45384,
+		index = 45383,
 		retOffset = 12,
 	}
 	g_classFuncs["UMeshBeaconHost"]["GetConnectionIndexForPlayer"] = {
@@ -1395,13 +1395,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45382,
+				index = 45381,
 				castTo = ffi.typeof("int*"),
 				offset = 24
 			},
 			{
 				name = "PlayerNetId",
-				index = 45383,
+				index = 45382,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1409,7 +1409,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 45381,
+		index = 45380,
 		retOffset = 24,
 	}
 	g_classFuncs["UMeshBeaconHost"]["SetPendingPlayerConnections"] = {
@@ -1426,13 +1426,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45378,
+		index = 45377,
 	}
 	g_classFuncs["UMeshBeaconHost"]["OnFinishedBandwidthTest"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
-				index = 45377,
+				index = 45376,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1440,7 +1440,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestType",
-				index = 45376,
+				index = 45375,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestType",
@@ -1449,7 +1449,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestResult",
-				index = 45375,
+				index = 45374,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestResult",
@@ -1459,7 +1459,7 @@ local c = g_classFuncs
 			{
 				name = "BandwidthStats",
 				isRet = true,
-				index = 45374,
+				index = 45373,
 				isOutParm = true,
 				cType = ffi.typeof("struct FConnectionBandwidthStats"),
 				castTo = ffi.typeof("struct FConnectionBandwidthStats*"),
@@ -1467,13 +1467,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 45346,
+		index = 45345,
 	}
 	g_classFuncs["UMeshBeaconHost"]["OnStartedBandwidthTest"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
-				index = 45373,
+				index = 45372,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1481,7 +1481,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestType",
-				index = 45372,
+				index = 45371,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestType",
@@ -1490,14 +1490,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 25,
-		index = 45348,
+		index = 45347,
 	}
 	g_classFuncs["UMeshBeaconHost"]["OnReceivedClientConnectionRequest"] = {
 		fields = {
 			{
 				name = "NewClientConnection",
 				isRet = true,
-				index = 45371,
+				index = 45370,
 				isOutParm = true,
 				cType = ffi.typeof("struct FClientMeshBeaconConnection"),
 				castTo = ffi.typeof("struct FClientMeshBeaconConnection*"),
@@ -1505,13 +1505,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 104,
-		index = 45350,
+		index = 45349,
 	}
 	g_classFuncs["UMeshBeaconHost"]["AllowBandwidthTesting"] = {
 		fields = {
 			{
 				name = "bEnabled",
-				index = 45370,
+				index = 45369,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -1519,46 +1519,46 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 45369,
+		index = 45368,
 	}
 	g_classFuncs["UMeshBeaconHost"]["CancelPendingBandwidthTests"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45368,
+		index = 45367,
 	}
 	g_classFuncs["UMeshBeaconHost"]["HasPendingBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45367,
+				index = 45366,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45366,
+		index = 45365,
 		retOffset = 0,
 	}
 	g_classFuncs["UMeshBeaconHost"]["CancelInProgressBandwidthTests"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45365,
+		index = 45364,
 	}
 	g_classFuncs["UMeshBeaconHost"]["HasInProgressBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45364,
+				index = 45363,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45363,
+		index = 45362,
 		retOffset = 0,
 	}
 	g_classFuncs["UMeshBeaconHost"]["RequestClientBandwidthTest"] = {
@@ -1566,13 +1566,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45359,
+				index = 45358,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "PlayerNetId",
-				index = 45362,
+				index = 45361,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1580,7 +1580,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestType",
-				index = 45361,
+				index = 45360,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EMeshBeaconBandwidthTestType",
@@ -1589,7 +1589,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TestBufferSize",
-				index = 45360,
+				index = 45359,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1597,27 +1597,27 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 45358,
+		index = 45357,
 		retOffset = 32,
 	}
 	g_classFuncs["UMeshBeaconHost"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45357,
+		index = 45356,
 	}
 	g_classFuncs["UMeshBeaconHost"]["InitHostBeacon"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45355,
+				index = 45354,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "InOwningPlayerId",
-				index = 45356,
+				index = 45355,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1625,14 +1625,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 45354,
+		index = 45353,
 		retOffset = 24,
 	}
 	g_classFuncs["UOnlineSubsystemCommonImpl"]["GetRegisteredPlayers"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45994,
+				index = 45993,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1650,20 +1650,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 45991,
+		index = 45990,
 	}
 	g_classFuncs["UOnlineSubsystemCommonImpl"]["IsPlayerInSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45988,
+				index = 45987,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "SessionName",
-				index = 45990,
+				index = 45989,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -1671,7 +1671,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 45989,
+				index = 45988,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -1679,7 +1679,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 45987,
+		index = 45986,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineSubsystemCommonImpl"]["eventGetPlayerNicknameFromIndex"] = {
@@ -1687,7 +1687,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45985,
+				index = 45984,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -1695,7 +1695,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UserIndex",
-				index = 45986,
+				index = 45985,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1703,7 +1703,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45984,
+		index = 45983,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindLocalServerAuthSession"] = {
@@ -1711,13 +1711,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45492,
+				index = 45491,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 			{
 				name = "ClientConnection",
-				index = 45493,
+				index = 45492,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1725,7 +1725,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45491,
+		index = 45490,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindServerAuthSession"] = {
@@ -1733,13 +1733,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45489,
+				index = 45488,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 			{
 				name = "ServerConnection",
-				index = 45490,
+				index = 45489,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1747,7 +1747,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45488,
+		index = 45487,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindLocalClientAuthSession"] = {
@@ -1755,13 +1755,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45486,
+				index = 45485,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 			{
 				name = "ServerConnection",
-				index = 45487,
+				index = 45486,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1769,7 +1769,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45485,
+		index = 45484,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindClientAuthSession"] = {
@@ -1777,13 +1777,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45483,
+				index = 45482,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 			{
 				name = "ClientConnection",
-				index = 45484,
+				index = 45483,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1791,7 +1791,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45482,
+		index = 45481,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthRetryServer"] = {
@@ -1799,13 +1799,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45481,
+				index = 45480,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45480,
+		index = 45479,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthKillClient"] = {
@@ -1813,13 +1813,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45478,
+				index = 45477,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "ClientConnection",
-				index = 45479,
+				index = 45478,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1827,7 +1827,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45477,
+		index = 45476,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthBlobServer"] = {
@@ -1835,13 +1835,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45474,
+				index = 45473,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "ClientConnection",
-				index = 45476,
+				index = 45475,
 				className = "UPlayer",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -1849,7 +1849,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "AuthBlobUID",
-				index = 45475,
+				index = 45474,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1857,7 +1857,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45473,
+		index = 45472,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthBlobClient"] = {
@@ -1865,13 +1865,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45471,
+				index = 45470,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "AuthBlobUID",
-				index = 45472,
+				index = 45471,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -1879,14 +1879,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45470,
+		index = 45469,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearServerConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ServerConnectionCloseDelegate",
-				index = 45469,
+				index = 45468,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1894,13 +1894,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45468,
+		index = 45467,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddServerConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ServerConnectionCloseDelegate",
-				index = 45467,
+				index = 45466,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1908,13 +1908,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45466,
+		index = 45465,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearClientConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ClientConnectionCloseDelegate",
-				index = 45465,
+				index = 45464,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1922,13 +1922,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45464,
+		index = 45463,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddClientConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ClientConnectionCloseDelegate",
-				index = 45463,
+				index = 45462,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1936,13 +1936,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45462,
+		index = 45461,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthRetryServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRetryServerDelegate",
-				index = 45461,
+				index = 45460,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1950,13 +1950,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45460,
+		index = 45459,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthRetryServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRetryServerDelegate",
-				index = 45459,
+				index = 45458,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1964,13 +1964,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45458,
+		index = 45457,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthKillClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthKillClientDelegate",
-				index = 45457,
+				index = 45456,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1978,13 +1978,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45456,
+		index = 45455,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthKillClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthKillClientDelegate",
-				index = 45455,
+				index = 45454,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -1992,13 +1992,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45454,
+		index = 45453,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthCompleteServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteServerDelegate",
-				index = 45453,
+				index = 45452,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2006,13 +2006,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45452,
+		index = 45451,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthCompleteServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteServerDelegate",
-				index = 45451,
+				index = 45450,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2020,13 +2020,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45450,
+		index = 45449,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthCompleteClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteClientDelegate",
-				index = 45449,
+				index = 45448,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2034,13 +2034,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45448,
+		index = 45447,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthCompleteClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteClientDelegate",
-				index = 45447,
+				index = 45446,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2048,13 +2048,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45446,
+		index = 45445,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthBlobReceivedServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedServerDelegate",
-				index = 45445,
+				index = 45444,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2062,13 +2062,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45444,
+		index = 45443,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthBlobReceivedServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedServerDelegate",
-				index = 45443,
+				index = 45442,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2076,13 +2076,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45442,
+		index = 45441,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthBlobReceivedClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedClientDelegate",
-				index = 45441,
+				index = 45440,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2090,13 +2090,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45440,
+		index = 45439,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthBlobReceivedClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedClientDelegate",
-				index = 45439,
+				index = 45438,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2104,13 +2104,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45438,
+		index = 45437,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthRequestServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestServerDelegate",
-				index = 45437,
+				index = 45436,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2118,13 +2118,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45436,
+		index = 45435,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthRequestServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestServerDelegate",
-				index = 45435,
+				index = 45434,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2132,13 +2132,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45434,
+		index = 45433,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthRequestClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestClientDelegate",
-				index = 45433,
+				index = 45432,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2146,13 +2146,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45432,
+		index = 45431,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthRequestClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestClientDelegate",
-				index = 45431,
+				index = 45430,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2160,13 +2160,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45430,
+		index = 45429,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthReadyDelegate"] = {
 		fields = {
 			{
 				name = "AuthReadyDelegate",
-				index = 45429,
+				index = 45428,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2174,13 +2174,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45428,
+		index = 45427,
 	}
 	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthReadyDelegate"] = {
 		fields = {
 			{
 				name = "AuthReadyDelegate",
-				index = 45427,
+				index = 45426,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2188,33 +2188,33 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45426,
+		index = 45425,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["HasPendingBootInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45802,
+				index = 45801,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45801,
+		index = 45800,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["CancelNATNegotiation"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45800,
+		index = 45799,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearQosStatusChangedDelegate"] = {
 		fields = {
 			{
 				name = "QosStatusChangedDelegate",
-				index = 45799,
+				index = 45798,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2222,13 +2222,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45798,
+		index = 45797,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddQosStatusChangedDelegate"] = {
 		fields = {
 			{
 				name = "QosStatusChangedDelegate",
-				index = 45797,
+				index = 45796,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2236,13 +2236,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45796,
+		index = 45795,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnQosStatusChanged"] = {
 		fields = {
 			{
 				name = "NumComplete",
-				index = 45795,
+				index = 45794,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2250,7 +2250,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumTotal",
-				index = 45794,
+				index = 45793,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2258,20 +2258,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45560,
+		index = 45559,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["BindPlatformSpecificSessionToSearch"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45790,
+				index = 45789,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 88
 			},
 			{
 				name = "SearchingPlayerNum",
-				index = 45793,
+				index = 45792,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2279,7 +2279,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchSettings",
-				index = 45792,
+				index = 45791,
 				className = "UOnlineGameSearch",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -2287,7 +2287,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlatformSpecificInfo",
-				index = 45791,
+				index = 45790,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2295,7 +2295,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 92,
-		index = 45789,
+		index = 45788,
 		retOffset = 88,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ReadPlatformSpecificSessionInfoBySessionName"] = {
@@ -2303,13 +2303,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45786,
+				index = 45785,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 88
 			},
 			{
 				name = "SessionName",
-				index = 45788,
+				index = 45787,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2318,14 +2318,14 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 45787,
+				index = 45786,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 8
 			},
 		},
 		dataSize = 92,
-		index = 45785,
+		index = 45784,
 		retOffset = 88,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ReadPlatformSpecificSessionInfo"] = {
@@ -2333,14 +2333,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45782,
+				index = 45781,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 88
 			},
 			{
 				name = "DesiredGame",
 				isRet = true,
-				index = 45784,
+				index = 45783,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -2349,14 +2349,14 @@ local c = g_classFuncs
 			{
 				name = "PlatformSpecificInfo",
 				isRet = true,
-				index = 45783,
+				index = 45782,
 				isOutParm = true,
 				castTo = ffi.typeof("unsigned char*"),
 				offset = 8
 			},
 		},
 		dataSize = 92,
-		index = 45781,
+		index = 45780,
 		retOffset = 88,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["QueryNonAdvertisedData"] = {
@@ -2364,13 +2364,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45778,
+				index = 45777,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "StartAt",
-				index = 45780,
+				index = 45779,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2378,7 +2378,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NumberToQuery",
-				index = 45779,
+				index = 45778,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -2386,14 +2386,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45777,
+		index = 45776,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearJoinMigratedOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinMigratedOnlineGameCompleteDelegate",
-				index = 45776,
+				index = 45775,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2401,13 +2401,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45775,
+		index = 45774,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddJoinMigratedOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinMigratedOnlineGameCompleteDelegate",
-				index = 45774,
+				index = 45773,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2415,13 +2415,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45773,
+		index = 45772,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnJoinMigratedOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45772,
+				index = 45771,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2429,7 +2429,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45771,
+				index = 45770,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2437,20 +2437,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45543,
+		index = 45542,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["JoinMigratedOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45767,
+				index = 45766,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "PlayerNum",
-				index = 45770,
+				index = 45769,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2458,7 +2458,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45769,
+				index = 45768,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2467,7 +2467,7 @@ local c = g_classFuncs
 			{
 				name = "DesiredGame",
 				isRet = true,
-				index = 45768,
+				index = 45767,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -2475,14 +2475,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45766,
+		index = 45765,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearMigrateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "MigrateOnlineGameCompleteDelegate",
-				index = 45765,
+				index = 45764,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2490,13 +2490,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45764,
+		index = 45763,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddMigrateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "MigrateOnlineGameCompleteDelegate",
-				index = 45763,
+				index = 45762,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2504,13 +2504,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45762,
+		index = 45761,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnMigrateOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45761,
+				index = 45760,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2518,7 +2518,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45760,
+				index = 45759,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2526,20 +2526,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45540,
+		index = 45539,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["MigrateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45757,
+				index = 45756,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "HostingPlayerNum",
-				index = 45759,
+				index = 45758,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2547,7 +2547,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45758,
+				index = 45757,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2555,14 +2555,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45756,
+		index = 45755,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearRecalculateSkillRatingCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RecalculateSkillRatingGameCompleteDelegate",
-				index = 45755,
+				index = 45754,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2570,13 +2570,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45754,
+		index = 45753,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddRecalculateSkillRatingCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RecalculateSkillRatingCompleteDelegate",
-				index = 45753,
+				index = 45752,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2584,13 +2584,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45752,
+		index = 45751,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnRecalculateSkillRatingComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45751,
+				index = 45750,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2598,7 +2598,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45750,
+				index = 45749,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2606,20 +2606,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45546,
+		index = 45545,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["RecalculateSkillRating"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45748,
+				index = 45747,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "SessionName",
-				index = 45749,
+				index = 45748,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2637,14 +2637,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45745,
+		index = 45744,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearGameInviteProcessingStartedDelegate"] = {
 		fields = {
 			{
 				name = "GameInviteProcessingStartedDelegate",
-				index = 45744,
+				index = 45743,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2652,13 +2652,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45743,
+		index = 45742,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddGameInviteProcessingStartedDelegate"] = {
 		fields = {
 			{
 				name = "GameInviteProcessingStartedDelegate",
-				index = 45742,
+				index = 45741,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2666,26 +2666,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45741,
+		index = 45740,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnGameInviteProcessingStarted"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45565,
+		index = 45564,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AcceptGameInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45738,
+				index = 45737,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "LocalUserNum",
-				index = 45740,
+				index = 45739,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2693,7 +2693,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45739,
+				index = 45738,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2701,14 +2701,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45737,
+		index = 45736,
 		retOffset = 12,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 45736,
+				index = 45735,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2716,7 +2716,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameInviteAcceptedDelegate",
-				index = 45735,
+				index = 45734,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2724,13 +2724,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45734,
+		index = 45733,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 45733,
+				index = 45732,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -2738,7 +2738,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameInviteAcceptedDelegate",
-				index = 45732,
+				index = 45731,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2746,14 +2746,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45731,
+		index = 45730,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnGameInviteAccepted"] = {
 		fields = {
 			{
 				name = "InviteResult",
 				isRet = true,
-				index = 45730,
+				index = 45729,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -2761,7 +2761,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45567,
+		index = 45566,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["GetArbitratedPlayers"] = {
 		fields = {
@@ -2776,7 +2776,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45729,
+				index = 45728,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2784,14 +2784,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45726,
+		index = 45725,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearArbitrationRegistrationCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ArbitrationRegistrationCompleteDelegate",
-				index = 45725,
+				index = 45724,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2799,13 +2799,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45724,
+		index = 45723,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddArbitrationRegistrationCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ArbitrationRegistrationCompleteDelegate",
-				index = 45723,
+				index = 45722,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2813,13 +2813,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45722,
+		index = 45721,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnArbitrationRegistrationComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45721,
+				index = 45720,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2827,7 +2827,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45720,
+				index = 45719,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2835,20 +2835,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45569,
+		index = 45568,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["RegisterForArbitration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45718,
+				index = 45717,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 45719,
+				index = 45718,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2856,14 +2856,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45717,
+		index = 45716,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearEndOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "EndOnlineGameCompleteDelegate",
-				index = 45716,
+				index = 45715,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2871,13 +2871,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45715,
+		index = 45714,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddEndOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "EndOnlineGameCompleteDelegate",
-				index = 45714,
+				index = 45713,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2885,13 +2885,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45713,
+		index = 45712,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnEndOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45712,
+				index = 45711,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2899,7 +2899,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45711,
+				index = 45710,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2907,20 +2907,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45552,
+		index = 45551,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["EndOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45709,
+				index = 45708,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 45710,
+				index = 45709,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2928,14 +2928,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45708,
+		index = 45707,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearStartOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "StartOnlineGameCompleteDelegate",
-				index = 45707,
+				index = 45706,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2943,13 +2943,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45706,
+		index = 45705,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddStartOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "StartOnlineGameCompleteDelegate",
-				index = 45705,
+				index = 45704,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -2957,13 +2957,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45704,
+		index = 45703,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnStartOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45703,
+				index = 45702,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -2971,7 +2971,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45702,
+				index = 45701,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -2979,20 +2979,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45549,
+		index = 45548,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["StartOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45700,
+				index = 45699,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 45701,
+				index = 45700,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3000,14 +3000,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45699,
+		index = 45698,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
-				index = 45698,
+				index = 45697,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3015,13 +3015,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45697,
+		index = 45696,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
-				index = 45696,
+				index = 45695,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3029,13 +3029,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45695,
+		index = 45694,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnUnregisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45694,
+				index = 45693,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3043,7 +3043,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 45693,
+				index = 45692,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -3051,7 +3051,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45692,
+				index = 45691,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3059,20 +3059,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 45573,
+		index = 45572,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["UnregisterPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45690,
+				index = 45689,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "SessionName",
-				index = 45691,
+				index = 45690,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3090,7 +3090,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45687,
+		index = 45686,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["UnregisterPlayer"] = {
@@ -3098,13 +3098,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45684,
+				index = 45683,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 32
 			},
 			{
 				name = "SessionName",
-				index = 45686,
+				index = 45685,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3112,7 +3112,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 45685,
+				index = 45684,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -3120,14 +3120,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 45683,
+		index = 45682,
 		retOffset = 32,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
-				index = 45682,
+				index = 45681,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3135,13 +3135,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45681,
+		index = 45680,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
-				index = 45680,
+				index = 45679,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3149,13 +3149,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45679,
+		index = 45678,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnRegisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45678,
+				index = 45677,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3163,7 +3163,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 45677,
+				index = 45676,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -3171,7 +3171,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45676,
+				index = 45675,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3179,20 +3179,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 45575,
+		index = 45574,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["RegisterPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45674,
+				index = 45673,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "SessionName",
-				index = 45675,
+				index = 45674,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3210,7 +3210,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45671,
+		index = 45670,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["RegisterPlayer"] = {
@@ -3218,13 +3218,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45667,
+				index = 45666,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 36
 			},
 			{
 				name = "SessionName",
-				index = 45670,
+				index = 45669,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3232,7 +3232,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlayerID",
-				index = 45669,
+				index = 45668,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -3240,7 +3240,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasInvited",
-				index = 45668,
+				index = 45667,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3248,7 +3248,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 45666,
+		index = 45665,
 		retOffset = 36,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["GetResolvedConnectString"] = {
@@ -3256,13 +3256,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45663,
+				index = 45662,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "SessionName",
-				index = 45665,
+				index = 45664,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3271,7 +3271,7 @@ local c = g_classFuncs
 			{
 				name = "ConnectInfo",
 				isRet = true,
-				index = 45664,
+				index = 45663,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -3280,14 +3280,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45662,
+		index = 45661,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearJoinOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinOnlineGameCompleteDelegate",
-				index = 45661,
+				index = 45660,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3295,13 +3295,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45660,
+		index = 45659,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddJoinOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinOnlineGameCompleteDelegate",
-				index = 45659,
+				index = 45658,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3309,13 +3309,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45658,
+		index = 45657,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnJoinOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45657,
+				index = 45656,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3323,7 +3323,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45656,
+				index = 45655,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3331,20 +3331,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45537,
+		index = 45536,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["JoinOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45652,
+				index = 45651,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "PlayerNum",
-				index = 45655,
+				index = 45654,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3352,7 +3352,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45654,
+				index = 45653,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3361,7 +3361,7 @@ local c = g_classFuncs
 			{
 				name = "DesiredGame",
 				isRet = true,
-				index = 45653,
+				index = 45652,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -3369,7 +3369,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45651,
+		index = 45650,
 		retOffset = 20,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["FreeSearchResults"] = {
@@ -3377,13 +3377,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45649,
+				index = 45648,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "Search",
-				index = 45650,
+				index = 45649,
 				className = "UOnlineGameSearch",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3391,14 +3391,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45648,
+		index = 45647,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearCancelFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CancelFindOnlineGamesCompleteDelegate",
-				index = 45647,
+				index = 45646,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3406,13 +3406,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45646,
+		index = 45645,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddCancelFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CancelFindOnlineGamesCompleteDelegate",
-				index = 45645,
+				index = 45644,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3420,13 +3420,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45644,
+		index = 45643,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnCancelFindOnlineGamesComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45643,
+				index = 45642,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3434,27 +3434,27 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 45558,
+		index = 45557,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["CancelFindOnlineGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45642,
+				index = 45641,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45641,
+		index = 45640,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FindOnlineGamesCompleteDelegate",
-				index = 45640,
+				index = 45639,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3462,13 +3462,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45639,
+		index = 45638,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FindOnlineGamesCompleteDelegate",
-				index = 45638,
+				index = 45637,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3476,20 +3476,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45637,
+		index = 45636,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["FindOnlineGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45634,
+				index = 45633,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "SearchingPlayerNum",
-				index = 45636,
+				index = 45635,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3497,7 +3497,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchSettings",
-				index = 45635,
+				index = 45634,
 				className = "UOnlineGameSearch",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3505,14 +3505,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45633,
+		index = 45632,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearDestroyOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "DestroyOnlineGameCompleteDelegate",
-				index = 45632,
+				index = 45631,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3520,13 +3520,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45631,
+		index = 45630,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddDestroyOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "DestroyOnlineGameCompleteDelegate",
-				index = 45630,
+				index = 45629,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3534,13 +3534,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45629,
+		index = 45628,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnDestroyOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45628,
+				index = 45627,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3548,7 +3548,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45627,
+				index = 45626,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3556,20 +3556,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45534,
+		index = 45533,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["DestroyOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45625,
+				index = 45624,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 45626,
+				index = 45625,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3577,14 +3577,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45624,
+		index = 45623,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearUpdateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UpdateOnlineGameCompleteDelegate",
-				index = 45623,
+				index = 45622,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3592,13 +3592,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45622,
+		index = 45621,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddUpdateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UpdateOnlineGameCompleteDelegate",
-				index = 45621,
+				index = 45620,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3606,13 +3606,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45620,
+		index = 45619,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnUpdateOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45619,
+				index = 45618,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3620,7 +3620,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45618,
+				index = 45617,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3628,20 +3628,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45531,
+		index = 45530,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["UpdateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45614,
+				index = 45613,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "SessionName",
-				index = 45617,
+				index = 45616,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3649,7 +3649,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "UpdatedGameSettings",
-				index = 45616,
+				index = 45615,
 				className = "UOnlineGameSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3657,7 +3657,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bShouldRefreshOnlineData",
-				index = 45615,
+				index = 45614,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -3666,14 +3666,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45613,
+		index = 45612,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearCreateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CreateOnlineGameCompleteDelegate",
-				index = 45612,
+				index = 45611,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3681,13 +3681,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45611,
+		index = 45610,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["AddCreateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CreateOnlineGameCompleteDelegate",
-				index = 45610,
+				index = 45609,
 				type = ffi.typeof("struct FScriptDelegate"),
 				castTo = ffi.typeof("struct FScriptDelegate*"),
 				flags = 0,
@@ -3695,13 +3695,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45609,
+		index = 45608,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnCreateOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 45608,
+				index = 45607,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3709,7 +3709,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bWasSuccessful",
-				index = 45607,
+				index = 45606,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3717,20 +3717,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45528,
+		index = 45527,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["CreateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45603,
+				index = 45602,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "HostingPlayerNum",
-				index = 45606,
+				index = 45605,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3738,7 +3738,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SessionName",
-				index = 45605,
+				index = 45604,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3746,7 +3746,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "NewGameSettings",
-				index = 45604,
+				index = 45603,
 				className = "UOnlineGameSettings",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -3754,7 +3754,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45602,
+		index = 45601,
 		retOffset = 16,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["GetGameSearch"] = {
@@ -3762,13 +3762,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45601,
+				index = 45600,
 				castTo = ffi.typeof("struct UOnlineGameSearch**"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45600,
+		index = 45599,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["GetGameSettings"] = {
@@ -3776,13 +3776,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45598,
+				index = 45597,
 				castTo = ffi.typeof("struct UOnlineGameSettings**"),
 				offset = 8
 			},
 			{
 				name = "SessionName",
-				index = 45599,
+				index = 45598,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -3790,14 +3790,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45597,
+		index = 45596,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlineGameInterfaceImpl"]["OnFindOnlineGamesComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45596,
+				index = 45595,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3805,7 +3805,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 45555,
+		index = 45554,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["ParseDataCenterId"] = {
 		fields = {
@@ -3821,13 +3821,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45970,
+		index = 45969,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["OnReadDataCenterIdComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45969,
+				index = 45968,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3835,7 +3835,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 45968,
+				index = 45967,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3843,13 +3843,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 45965,
+		index = 45964,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["ReadDataCenterId"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 45964,
+				index = 45963,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3857,13 +3857,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45963,
+		index = 45962,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["eventSendPlaylistPopulationUpdate"] = {
 		fields = {
 			{
 				name = "NumPlayers",
-				index = 45962,
+				index = 45961,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3871,13 +3871,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45960,
+		index = 45959,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetPopulationInfoFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
-				index = 45959,
+				index = 45958,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3886,7 +3886,7 @@ local c = g_classFuncs
 			{
 				name = "WorldwideTotal",
 				isRet = true,
-				index = 45958,
+				index = 45957,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 4
@@ -3894,14 +3894,14 @@ local c = g_classFuncs
 			{
 				name = "RegionTotal",
 				isRet = true,
-				index = 45957,
+				index = 45956,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 8
 			},
 		},
 		dataSize = 16,
-		index = 45956,
+		index = 45955,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["ParsePlaylistPopulationData"] = {
 		fields = {
@@ -3917,19 +3917,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45953,
+		index = 45952,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["OnPlaylistPopulationDataUpdated"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45843,
+		index = 45842,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["OnReadPlaylistPopulationComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45952,
+				index = 45951,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -3937,7 +3937,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 45951,
+				index = 45950,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -3945,13 +3945,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 45948,
+		index = 45947,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["ReadPlaylistPopulation"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 45947,
+				index = 45946,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -3959,19 +3959,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45946,
+		index = 45945,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["Reset"] = {
 		fields = {
 		},
 		dataSize = 4,
-		index = 45945,
+		index = 45944,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetContentIdsFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
-				index = 45944,
+				index = 45943,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -3989,20 +3989,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45941,
+		index = 45940,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetInventorySwapFromPlaylist"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45938,
+				index = 45937,
 				castTo = ffi.typeof("struct UClass**"),
 				offset = 8
 			},
 			{
 				name = "PlaylistId",
-				index = 45940,
+				index = 45939,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4010,7 +4010,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SourceInventory",
-				index = 45939,
+				index = 45938,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -4018,14 +4018,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45937,
+		index = 45936,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetMapCycleFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
-				index = 45936,
+				index = 45935,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4043,14 +4043,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45933,
+		index = 45932,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetUrlFromPlaylist"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45931,
+				index = 45930,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -4058,7 +4058,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlaylistId",
-				index = 45932,
+				index = 45931,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4066,7 +4066,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45930,
+		index = 45929,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetMatchType"] = {
@@ -4074,13 +4074,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45928,
+				index = 45927,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 			{
 				name = "PlaylistId",
-				index = 45929,
+				index = 45928,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4088,7 +4088,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45927,
+		index = 45926,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["IsPlaylistArbitrated"] = {
@@ -4096,13 +4096,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45925,
+				index = 45924,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "PlaylistId",
-				index = 45926,
+				index = 45925,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4110,14 +4110,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45924,
+		index = 45923,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetLoadBalanceIdFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
-				index = 45923,
+				index = 45922,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4126,20 +4126,20 @@ local c = g_classFuncs
 			{
 				name = "LoadBalanceId",
 				isRet = true,
-				index = 45922,
+				index = 45921,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 		},
 		dataSize = 12,
-		index = 45921,
+		index = 45920,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetTeamInfoFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
-				index = 45920,
+				index = 45919,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4148,7 +4148,7 @@ local c = g_classFuncs
 			{
 				name = "TeamSize",
 				isRet = true,
-				index = 45919,
+				index = 45918,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 4
@@ -4156,7 +4156,7 @@ local c = g_classFuncs
 			{
 				name = "TeamCount",
 				isRet = true,
-				index = 45918,
+				index = 45917,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 8
@@ -4164,27 +4164,27 @@ local c = g_classFuncs
 			{
 				name = "MaxPartySize",
 				isRet = true,
-				index = 45917,
+				index = 45916,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 		},
 		dataSize = 20,
-		index = 45916,
+		index = 45915,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["PlaylistSupportsDedicatedServers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45914,
+				index = 45913,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "PlaylistId",
-				index = 45915,
+				index = 45914,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4192,7 +4192,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45913,
+		index = 45912,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["HasAnyGameSettings"] = {
@@ -4200,13 +4200,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45911,
+				index = 45910,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 4
 			},
 			{
 				name = "PlaylistId",
-				index = 45912,
+				index = 45911,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4214,7 +4214,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45910,
+		index = 45909,
 		retOffset = 4,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["GetGameSettings"] = {
@@ -4222,13 +4222,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45907,
+				index = 45906,
 				castTo = ffi.typeof("struct UOnlineGameSettings**"),
 				offset = 8
 			},
 			{
 				name = "PlaylistId",
-				index = 45909,
+				index = 45908,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4236,7 +4236,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "GameSettingsId",
-				index = 45908,
+				index = 45907,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4244,20 +4244,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45906,
+		index = 45905,
 		retOffset = 8,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["FinalizePlaylistObjects"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45905,
+		index = 45904,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["OnReadTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45904,
+				index = 45903,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4265,7 +4265,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 45903,
+				index = 45902,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4273,33 +4273,33 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 45902,
+		index = 45901,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["ShouldRefreshPlaylists"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45901,
+				index = 45900,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 45900,
+		index = 45899,
 		retOffset = 0,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["DetermineFilesToDownload"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45899,
+		index = 45898,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["DownloadPlaylist"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
-				index = 45898,
+				index = 45897,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4307,13 +4307,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45897,
+		index = 45896,
 	}
 	g_classFuncs["UOnlinePlaylistManager"]["OnReadPlaylistComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
-				index = 45896,
+				index = 45895,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4321,38 +4321,38 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 45845,
+		index = 45844,
 	}
 	g_classFuncs["UPartyBeacon"]["OnDestroyComplete"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46047,
+		index = 46046,
 	}
 	g_classFuncs["UPartyBeacon"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46071,
+		index = 46070,
 	}
 	g_classFuncs["UPartyBeaconClient"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46113,
+		index = 46112,
 	}
 	g_classFuncs["UPartyBeaconClient"]["CancelReservation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46111,
+				index = 46110,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "CancellingPartyLeader",
-				index = 46112,
+				index = 46111,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4360,7 +4360,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46110,
+		index = 46109,
 		retOffset = 24,
 	}
 	g_classFuncs["UPartyBeaconClient"]["RequestReservationUpdate"] = {
@@ -4368,14 +4368,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46107,
+				index = 46106,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 44
 			},
 			{
 				name = "DesiredHost",
 				isRet = true,
-				index = 46109,
+				index = 46108,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -4383,7 +4383,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RequestingPartyLeader",
-				index = 46108,
+				index = 46107,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4401,7 +4401,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 46104,
+		index = 46103,
 		retOffset = 44,
 	}
 	g_classFuncs["UPartyBeaconClient"]["RequestReservation"] = {
@@ -4409,14 +4409,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46101,
+				index = 46100,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 44
 			},
 			{
 				name = "DesiredHost",
 				isRet = true,
-				index = 46103,
+				index = 46102,
 				isOutParm = true,
 				cType = ffi.typeof("struct FOnlineGameSearchResult"),
 				castTo = ffi.typeof("struct FOnlineGameSearchResult*"),
@@ -4424,7 +4424,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "RequestingPartyLeader",
-				index = 46102,
+				index = 46101,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4442,26 +4442,26 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 46098,
+		index = 46097,
 		retOffset = 44,
 	}
 	g_classFuncs["UPartyBeaconClient"]["OnHostHasCancelled"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46073,
+		index = 46072,
 	}
 	g_classFuncs["UPartyBeaconClient"]["OnHostIsReady"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46075,
+		index = 46074,
 	}
 	g_classFuncs["UPartyBeaconClient"]["OnTravelRequestReceived"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 46097,
+				index = 46096,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -4469,7 +4469,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 46096,
+				index = 46095,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -4477,7 +4477,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlatformSpecificInfo",
-				index = 46095,
+				index = 46094,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4485,13 +4485,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 92,
-		index = 46077,
+		index = 46076,
 	}
 	g_classFuncs["UPartyBeaconClient"]["OnReservationCountUpdated"] = {
 		fields = {
 			{
 				name = "ReservationRemaining",
-				index = 46094,
+				index = 46093,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4499,13 +4499,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46079,
+		index = 46078,
 	}
 	g_classFuncs["UPartyBeaconClient"]["OnReservationRequestComplete"] = {
 		fields = {
 			{
 				name = "ReservationResult",
-				index = 46093,
+				index = 46092,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EPartyReservationResult",
@@ -4514,20 +4514,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 1,
-		index = 46081,
+		index = 46080,
 	}
 	g_classFuncs["UPartyBeaconHost"]["GetMaxAvailableTeamSize"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46195,
+				index = 46194,
 				castTo = ffi.typeof("int*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46194,
+		index = 46193,
 		retOffset = 0,
 	}
 	g_classFuncs["UPartyBeaconHost"]["GetPartyLeaders"] = {
@@ -4544,7 +4544,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46191,
+		index = 46190,
 	}
 	g_classFuncs["UPartyBeaconHost"]["GetPlayers"] = {
 		fields = {
@@ -4560,13 +4560,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 72,
-		index = 46187,
+		index = 46186,
 	}
 	g_classFuncs["UPartyBeaconHost"]["AppendReservationSkillsToSearch"] = {
 		fields = {
 			{
 				name = "Search",
-				index = 46186,
+				index = 46185,
 				className = "UOnlineGameSearch",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -4574,13 +4574,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46185,
+		index = 46184,
 	}
 	g_classFuncs["UPartyBeaconHost"]["eventUnregisterParty"] = {
 		fields = {
 			{
 				name = "PartyLeader",
-				index = 46184,
+				index = 46183,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4588,51 +4588,51 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 88,
-		index = 46182,
+		index = 46181,
 	}
 	g_classFuncs["UPartyBeaconHost"]["eventUnregisterPartyMembers"] = {
 		fields = {
 		},
 		dataSize = 64,
-		index = 46180,
+		index = 46179,
 	}
 	g_classFuncs["UPartyBeaconHost"]["eventRegisterPartyMembers"] = {
 		fields = {
 		},
 		dataSize = 80,
-		index = 46176,
+		index = 46175,
 	}
 	g_classFuncs["UPartyBeaconHost"]["AreReservationsFull"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46175,
+				index = 46174,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46174,
+		index = 46173,
 		retOffset = 0,
 	}
 	g_classFuncs["UPartyBeaconHost"]["TellClientsHostHasCancelled"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46173,
+		index = 46172,
 	}
 	g_classFuncs["UPartyBeaconHost"]["TellClientsHostIsReady"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46172,
+		index = 46171,
 	}
 	g_classFuncs["UPartyBeaconHost"]["TellClientsToTravel"] = {
 		fields = {
 			{
 				name = "SessionName",
-				index = 46171,
+				index = 46170,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -4640,7 +4640,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchClass",
-				index = 46170,
+				index = 46169,
 				type = ffi.typeof("struct UClass*"),
 				castTo = ffi.typeof("struct UClass**"),
 				flags = 1,
@@ -4648,7 +4648,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlatformSpecificInfo",
-				index = 46169,
+				index = 46168,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -4656,19 +4656,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 92,
-		index = 46168,
+		index = 46167,
 	}
 	g_classFuncs["UPartyBeaconHost"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46167,
+		index = 46166,
 	}
 	g_classFuncs["UPartyBeaconHost"]["OnClientCancellationReceived"] = {
 		fields = {
 			{
 				name = "PartyLeader",
-				index = 46166,
+				index = 46165,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4676,25 +4676,25 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46123,
+		index = 46122,
 	}
 	g_classFuncs["UPartyBeaconHost"]["OnReservationsFull"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46125,
+		index = 46124,
 	}
 	g_classFuncs["UPartyBeaconHost"]["OnReservationChange"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46127,
+		index = 46126,
 	}
 	g_classFuncs["UPartyBeaconHost"]["HandlePlayerLogout"] = {
 		fields = {
 			{
 				name = "PlayerID",
-				index = 46165,
+				index = 46164,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4702,7 +4702,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bMaintainParty",
-				index = 46164,
+				index = 46163,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4710,21 +4710,21 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46163,
+		index = 46162,
 	}
 	g_classFuncs["UPartyBeaconHost"]["GetExistingReservation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46161,
+				index = 46160,
 				castTo = ffi.typeof("int*"),
 				offset = 24
 			},
 			{
 				name = "PartyLeader",
 				isRet = true,
-				index = 46162,
+				index = 46161,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
@@ -4732,7 +4732,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46160,
+		index = 46159,
 		retOffset = 24,
 	}
 	g_classFuncs["UPartyBeaconHost"]["UpdatePartyReservationEntry"] = {
@@ -4740,14 +4740,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46158,
+				index = 46157,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EPartyReservationResult",
 				offset = 36
 			},
 			{
 				name = "PartyLeader",
-				index = 46159,
+				index = 46158,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4765,7 +4765,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 37,
-		index = 46155,
+		index = 46154,
 		retOffset = 36,
 	}
 	g_classFuncs["UPartyBeaconHost"]["AddPartyReservationEntry"] = {
@@ -4773,14 +4773,14 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46151,
+				index = 46150,
 				castTo = ffi.typeof("unsigned char*"),
 				enumName = "EPartyReservationResult",
 				offset = 44
 			},
 			{
 				name = "PartyLeader",
-				index = 46154,
+				index = 46153,
 				type = ffi.typeof("struct FUniqueNetId"),
 				castTo = ffi.typeof("struct FUniqueNetId*"),
 				flags = 64,
@@ -4798,7 +4798,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "TeamNum",
-				index = 46153,
+				index = 46152,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4806,7 +4806,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bIsHost",
-				index = 46152,
+				index = 46151,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4814,7 +4814,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 45,
-		index = 46148,
+		index = 46147,
 		retOffset = 44,
 	}
 	g_classFuncs["UPartyBeaconHost"]["InitHostBeacon"] = {
@@ -4822,13 +4822,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46142,
+				index = 46141,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "InNumTeams",
-				index = 46147,
+				index = 46146,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4836,7 +4836,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InNumPlayersPerTeam",
-				index = 46146,
+				index = 46145,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4844,7 +4844,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InNumReservations",
-				index = 46145,
+				index = 46144,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4852,7 +4852,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InSessionName",
-				index = 46144,
+				index = 46143,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -4860,7 +4860,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "InForceTeamNum",
-				index = 46143,
+				index = 46142,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -4869,14 +4869,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46141,
+		index = 46140,
 		retOffset = 24,
 	}
 	g_classFuncs["UPartyBeaconHost"]["PauseReservationRequests"] = {
 		fields = {
 			{
 				name = "bPause",
-				index = 46140,
+				index = 46139,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
 				flags = 32,
@@ -4884,20 +4884,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46139,
+		index = 46138,
 	}
 	g_classFuncs["UWebRequest"]["GetHexDigit"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46376,
+				index = 46375,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 			{
 				name = "D",
-				index = 46377,
+				index = 46376,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4905,14 +4905,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46375,
+		index = 46374,
 		retOffset = 12,
 	}
 	g_classFuncs["UWebRequest"]["DecodeFormData"] = {
 		fields = {
 			{
 				name = "Data",
-				index = 46374,
+				index = 46373,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4920,13 +4920,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 68,
-		index = 46371,
+		index = 46370,
 	}
 	g_classFuncs["UWebRequest"]["ProcessHeaderString"] = {
 		fields = {
 			{
 				name = "S",
-				index = 46370,
+				index = 46369,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4934,13 +4934,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46369,
+		index = 46368,
 	}
 	g_classFuncs["UWebRequest"]["Dump"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46368,
+		index = 46367,
 	}
 	g_classFuncs["UWebRequest"]["GetVariables"] = {
 		fields = {
@@ -4956,14 +4956,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46365,
+		index = 46364,
 	}
 	g_classFuncs["UWebRequest"]["GetVariableNumber"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45166,
+				index = 45165,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -4971,7 +4971,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "VariableName",
-				index = 46364,
+				index = 46363,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -4979,7 +4979,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Number",
-				index = 46363,
+				index = 46362,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -4987,7 +4987,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DefaultValue",
-				index = 46362,
+				index = 46361,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -4996,7 +4996,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 40,
-		index = 45165,
+		index = 45164,
 		retOffset = 28,
 	}
 	g_classFuncs["UWebRequest"]["GetVariableCount"] = {
@@ -5004,33 +5004,9 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45164,
+				index = 45163,
 				castTo = ffi.typeof("int*"),
 				offset = 12
-			},
-			{
-				name = "VariableName",
-				index = 46361,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 0
-			},
-		},
-		dataSize = 16,
-		index = 45163,
-		retOffset = 12,
-	}
-	g_classFuncs["UWebRequest"]["GetVariable"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 45162,
-				cType = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				TArray = true,
-				offset = 24
 			},
 			{
 				name = "VariableName",
@@ -5040,9 +5016,33 @@ local c = g_classFuncs
 				flags = 4,
 				offset = 0
 			},
+		},
+		dataSize = 16,
+		index = 45162,
+		retOffset = 12,
+	}
+	g_classFuncs["UWebRequest"]["GetVariable"] = {
+		fields = {
+			{
+				name = "ReturnValue",
+				isRet = true,
+				index = 45161,
+				cType = ffi.typeof("struct FString"),
+				castTo = ffi.typeof("struct FString*"),
+				TArray = true,
+				offset = 24
+			},
+			{
+				name = "VariableName",
+				index = 46359,
+				type = ffi.typeof("struct FString"),
+				castTo = ffi.typeof("struct FString*"),
+				flags = 4,
+				offset = 0
+			},
 			{
 				name = "DefaultValue",
-				index = 46359,
+				index = 46358,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5051,14 +5051,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 45161,
+		index = 45160,
 		retOffset = 24,
 	}
 	g_classFuncs["UWebRequest"]["AddVariable"] = {
 		fields = {
 			{
 				name = "VariableName",
-				index = 46358,
+				index = 46357,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5066,7 +5066,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Value",
-				index = 46357,
+				index = 46356,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5074,7 +5074,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46356,
+		index = 46355,
 	}
 	g_classFuncs["UWebRequest"]["GetHeaders"] = {
 		fields = {
@@ -5090,14 +5090,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46353,
+		index = 46352,
 	}
 	g_classFuncs["UWebRequest"]["GetHeader"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46350,
+				index = 46349,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -5105,7 +5105,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "HeaderName",
-				index = 46352,
+				index = 46351,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5113,7 +5113,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "DefaultValue",
-				index = 46351,
+				index = 46350,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5122,14 +5122,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46349,
+		index = 46348,
 		retOffset = 24,
 	}
 	g_classFuncs["UWebRequest"]["AddHeader"] = {
 		fields = {
 			{
 				name = "HeaderName",
-				index = 46348,
+				index = 46347,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5137,7 +5137,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Value",
-				index = 46347,
+				index = 46346,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5145,14 +5145,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46346,
+		index = 46345,
 	}
 	g_classFuncs["UWebRequest"]["EncodeBase64"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46344,
+				index = 46343,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -5160,7 +5160,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Decoded",
-				index = 46345,
+				index = 46344,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5168,7 +5168,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46343,
+		index = 46342,
 		retOffset = 12,
 	}
 	g_classFuncs["UWebRequest"]["DecodeBase64"] = {
@@ -5176,7 +5176,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46341,
+				index = 46340,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -5184,7 +5184,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Encoded",
-				index = 46342,
+				index = 46341,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5192,7 +5192,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46340,
+		index = 46339,
 		retOffset = 12,
 	}
 	g_classFuncs["UWebResponse"]["SentResponse"] = {
@@ -5200,13 +5200,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46434,
+				index = 46433,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46433,
+		index = 46432,
 		retOffset = 0,
 	}
 	g_classFuncs["UWebResponse"]["SentText"] = {
@@ -5214,20 +5214,20 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46432,
+				index = 46431,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46431,
+		index = 46430,
 		retOffset = 0,
 	}
 	g_classFuncs["UWebResponse"]["Redirect"] = {
 		fields = {
 			{
 				name = "URL",
-				index = 46430,
+				index = 46429,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5235,13 +5235,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46429,
+		index = 46428,
 	}
 	g_classFuncs["UWebResponse"]["SendStandardHeaders"] = {
 		fields = {
 			{
 				name = "ContentType",
-				index = 46427,
+				index = 46426,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5250,7 +5250,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bCache",
-				index = 46426,
+				index = 46425,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -5259,13 +5259,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46425,
+		index = 46424,
 	}
 	g_classFuncs["UWebResponse"]["HTTPError"] = {
 		fields = {
 			{
 				name = "ErrorNum",
-				index = 46424,
+				index = 46423,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5273,7 +5273,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Data",
-				index = 46423,
+				index = 46422,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5282,19 +5282,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46422,
+		index = 46421,
 	}
 	g_classFuncs["UWebResponse"]["SendHeaders"] = {
 		fields = {
 		},
 		dataSize = 12,
-		index = 46420,
+		index = 46419,
 	}
 	g_classFuncs["UWebResponse"]["AddHeader"] = {
 		fields = {
 			{
 				name = "Header",
-				index = 46419,
+				index = 46418,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5302,7 +5302,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bReplace",
-				index = 46418,
+				index = 46417,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -5311,13 +5311,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 48,
-		index = 46415,
+		index = 46414,
 	}
 	g_classFuncs["UWebResponse"]["HTTPHeader"] = {
 		fields = {
 			{
 				name = "Header",
-				index = 46414,
+				index = 46413,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5325,13 +5325,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46413,
+		index = 46412,
 	}
 	g_classFuncs["UWebResponse"]["HTTPResponse"] = {
 		fields = {
 			{
 				name = "Header",
-				index = 46412,
+				index = 46411,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5339,13 +5339,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46411,
+		index = 46410,
 	}
 	g_classFuncs["UWebResponse"]["FailAuthentication"] = {
 		fields = {
 			{
 				name = "Realm",
-				index = 46410,
+				index = 46409,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5353,20 +5353,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46409,
+		index = 46408,
 	}
 	g_classFuncs["UWebResponse"]["SendCachedFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46406,
+				index = 46405,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 24
 			},
 			{
 				name = "Filename",
-				index = 46408,
+				index = 46407,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5374,7 +5374,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ContentType",
-				index = 46407,
+				index = 46406,
 				optional = true,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5383,14 +5383,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46405,
+		index = 46404,
 		retOffset = 24,
 	}
 	g_classFuncs["UWebResponse"]["eventSendBinary"] = {
 		fields = {
 			{
 				name = "Count",
-				index = 46404,
+				index = 46403,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5398,7 +5398,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "B",
-				index = 46403,
+				index = 46402,
 				type = "number",
 				castTo = ffi.typeof("unsigned char*"),
 				flags = 32,
@@ -5406,13 +5406,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 259,
-		index = 46402,
+		index = 46401,
 	}
 	g_classFuncs["UWebResponse"]["eventSendText"] = {
 		fields = {
 			{
 				name = "Text",
-				index = 46401,
+				index = 46400,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5420,7 +5420,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bNoCRLF",
-				index = 46400,
+				index = 46399,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -5429,20 +5429,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46399,
+		index = 46398,
 	}
 	g_classFuncs["UWebResponse"]["Dump"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46398,
+		index = 46397,
 	}
 	g_classFuncs["UWebResponse"]["GetHTTPExpiration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46396,
+				index = 46395,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -5450,7 +5450,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "OffsetSeconds",
-				index = 46397,
+				index = 46396,
 				optional = true,
 				type = "number",
 				castTo = ffi.typeof("int*"),
@@ -5459,7 +5459,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46395,
+		index = 46394,
 		retOffset = 4,
 	}
 	g_classFuncs["UWebResponse"]["LoadParsedUHTM"] = {
@@ -5467,7 +5467,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46393,
+				index = 46392,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				TArray = true,
@@ -5475,7 +5475,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Filename",
-				index = 46394,
+				index = 46393,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5483,7 +5483,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46392,
+		index = 46391,
 		retOffset = 12,
 	}
 	g_classFuncs["UWebResponse"]["IncludeBinaryFile"] = {
@@ -5491,29 +5491,7 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45179,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 12
-			},
-			{
-				name = "Filename",
-				index = 46391,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 0
-			},
-		},
-		dataSize = 16,
-		index = 45178,
-		retOffset = 12,
-	}
-	g_classFuncs["UWebResponse"]["IncludeUHTM"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 45169,
+				index = 45178,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
@@ -5527,20 +5505,42 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45168,
+		index = 45177,
+		retOffset = 12,
+	}
+	g_classFuncs["UWebResponse"]["IncludeUHTM"] = {
+		fields = {
+			{
+				name = "ReturnValue",
+				isRet = true,
+				index = 45168,
+				castTo = ffi.typeof("BOOL*"),
+				offset = 12
+			},
+			{
+				name = "Filename",
+				index = 46389,
+				type = ffi.typeof("struct FString"),
+				castTo = ffi.typeof("struct FString*"),
+				flags = 4,
+				offset = 0
+			},
+		},
+		dataSize = 16,
+		index = 45167,
 		retOffset = 12,
 	}
 	g_classFuncs["UWebResponse"]["ClearSubst"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46389,
+		index = 46388,
 	}
 	g_classFuncs["UWebResponse"]["Subst"] = {
 		fields = {
 			{
 				name = "Variable",
-				index = 46388,
+				index = 46387,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5548,7 +5548,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Value",
-				index = 46387,
+				index = 46386,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5556,7 +5556,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "bClear",
-				index = 46386,
+				index = 46385,
 				optional = true,
 				type = "boolean",
 				castTo = ffi.typeof("BOOL*"),
@@ -5565,20 +5565,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 45167,
+		index = 45166,
 	}
 	g_classFuncs["UWebResponse"]["FileExists"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45177,
+				index = 45176,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 12
 			},
 			{
 				name = "Filename",
-				index = 46385,
+				index = 46384,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5586,7 +5586,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 45176,
+		index = 45175,
 		retOffset = 12,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["eventGetMatchTypeForPlaylistId"] = {
@@ -5594,13 +5594,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46293,
+				index = 46292,
 				castTo = ffi.typeof("int*"),
 				offset = 4
 			},
 			{
 				name = "PlaylistId",
-				index = 46294,
+				index = 46293,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5608,7 +5608,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 46292,
+		index = 46291,
 		retOffset = 4,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetOnlinePlaylistProvider"] = {
@@ -5616,13 +5616,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46288,
+				index = 46287,
 				castTo = ffi.typeof("struct UOnlinePlaylistProvider**"),
 				offset = 16
 			},
 			{
 				name = "ProviderTag",
-				index = 46291,
+				index = 46290,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5630,7 +5630,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "PlaylistId",
-				index = 46290,
+				index = 46289,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5639,14 +5639,14 @@ local c = g_classFuncs
 			{
 				name = "ProviderIndex",
 				isRet = true,
-				index = 46289,
+				index = 46288,
 				isOutParm = true,
 				castTo = ffi.typeof("int*"),
 				offset = 12
 			},
 		},
 		dataSize = 128,
-		index = 46286,
+		index = 46285,
 		retOffset = 16,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetPlaylistProvider"] = {
@@ -5654,13 +5654,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46282,
+				index = 46281,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 16
 			},
 			{
 				name = "ProviderTag",
-				index = 46285,
+				index = 46284,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5668,7 +5668,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProviderIndex",
-				index = 46284,
+				index = 46283,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5677,14 +5677,14 @@ local c = g_classFuncs
 			{
 				name = "out_Provider",
 				isRet = true,
-				index = 46283,
+				index = 46282,
 				isOutParm = true,
 				castTo = ffi.typeof("struct UUIResourceDataProvider**"),
 				offset = 12
 			},
 		},
 		dataSize = 20,
-		index = 46281,
+		index = 46280,
 		retOffset = 16,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["FindProviderIndexByFieldValue"] = {
@@ -5692,13 +5692,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46277,
+				index = 46276,
 				castTo = ffi.typeof("int*"),
 				offset = 116
 			},
 			{
 				name = "ProviderTag",
-				index = 46280,
+				index = 46279,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5706,7 +5706,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchField",
-				index = 46279,
+				index = 46278,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5715,7 +5715,7 @@ local c = g_classFuncs
 			{
 				name = "ValueToSearchFor",
 				isRet = true,
-				index = 46278,
+				index = 46277,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUIProviderScriptFieldValue"),
 				castTo = ffi.typeof("struct FUIProviderScriptFieldValue*"),
@@ -5723,7 +5723,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 120,
-		index = 46276,
+		index = 46275,
 		retOffset = 116,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetProviderFieldValue"] = {
@@ -5731,13 +5731,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46271,
+				index = 46270,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 120
 			},
 			{
 				name = "ProviderTag",
-				index = 46275,
+				index = 46274,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5745,7 +5745,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "SearchField",
-				index = 46274,
+				index = 46273,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5753,7 +5753,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "ProviderIndex",
-				index = 46273,
+				index = 46272,
 				type = "number",
 				castTo = ffi.typeof("int*"),
 				flags = 32,
@@ -5762,7 +5762,7 @@ local c = g_classFuncs
 			{
 				name = "out_FieldValue",
 				isRet = true,
-				index = 46272,
+				index = 46271,
 				isOutParm = true,
 				cType = ffi.typeof("struct FUIProviderScriptFieldValue"),
 				castTo = ffi.typeof("struct FUIProviderScriptFieldValue*"),
@@ -5770,7 +5770,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 124,
-		index = 46270,
+		index = 46269,
 		retOffset = 120,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetResourceProviderFields"] = {
@@ -5778,13 +5778,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46268,
+				index = 46267,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "ProviderTag",
-				index = 46269,
+				index = 46268,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5802,7 +5802,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46265,
+		index = 46264,
 		retOffset = 20,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetResourceProviders"] = {
@@ -5810,13 +5810,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46263,
+				index = 46262,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 20
 			},
 			{
 				name = "ProviderTag",
-				index = 46264,
+				index = 46263,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5834,7 +5834,7 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 24,
-		index = 46260,
+		index = 46259,
 		retOffset = 20,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetProviderCount"] = {
@@ -5842,13 +5842,13 @@ local c = g_classFuncs
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46258,
+				index = 46257,
 				castTo = ffi.typeof("int*"),
 				offset = 8
 			},
 			{
 				name = "ProviderTag",
-				index = 46259,
+				index = 46258,
 				type = ffi.typeof("struct FName"),
 				castTo = ffi.typeof("struct FName*"),
 				flags = 2,
@@ -5856,20 +5856,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46257,
+		index = 46256,
 		retOffset = 8,
 	}
 	g_classFuncs["UUIDataStore_OnlinePlaylists"]["eventInit"] = {
 		fields = {
 		},
 		dataSize = 4,
-		index = 46256,
+		index = 46255,
 	}
 	g_classFuncs["UWebApplication"]["PostQuery"] = {
 		fields = {
 			{
 				name = "Request",
-				index = 45151,
+				index = 45150,
 				className = "UWebRequest",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -5877,7 +5877,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Response",
-				index = 45150,
+				index = 45149,
 				className = "UWebResponse",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -5885,13 +5885,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45149,
+		index = 45148,
 	}
 	g_classFuncs["UWebApplication"]["Query"] = {
 		fields = {
 			{
 				name = "Request",
-				index = 45148,
+				index = 45147,
 				className = "UWebRequest",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -5899,7 +5899,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Response",
-				index = 45147,
+				index = 45146,
 				className = "UWebResponse",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -5907,20 +5907,20 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 8,
-		index = 45146,
+		index = 45145,
 	}
 	g_classFuncs["UWebApplication"]["PreQuery"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 45143,
+				index = 45142,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 8
 			},
 			{
 				name = "Request",
-				index = 45145,
+				index = 45144,
 				className = "UWebRequest",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -5928,7 +5928,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Response",
-				index = 45144,
+				index = 45143,
 				className = "UWebResponse",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -5936,39 +5936,39 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45142,
+		index = 45141,
 		retOffset = 8,
 	}
 	g_classFuncs["UWebApplication"]["CleanupApp"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45141,
+		index = 45140,
 	}
 	g_classFuncs["UWebApplication"]["Cleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45140,
+		index = 45139,
 	}
 	g_classFuncs["UWebApplication"]["Init"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45139,
+		index = 45138,
 	}
 	g_classFuncs["AWebServer"]["GetApplication"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46321,
+				index = 46320,
 				castTo = ffi.typeof("struct UWebApplication**"),
 				offset = 24
 			},
 			{
 				name = "URI",
-				index = 46452,
+				index = 46451,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -5977,7 +5977,7 @@ local c = g_classFuncs
 			{
 				name = "SubURI",
 				isRet = true,
-				index = 46451,
+				index = 46450,
 				isOutParm = true,
 				cType = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
@@ -5986,14 +5986,14 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 36,
-		index = 46320,
+		index = 46319,
 		retOffset = 24,
 	}
 	g_classFuncs["AWebServer"]["eventLostChild"] = {
 		fields = {
 			{
 				name = "C",
-				index = 46450,
+				index = 46449,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6001,13 +6001,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46449,
+		index = 46448,
 	}
 	g_classFuncs["AWebServer"]["eventGainedChild"] = {
 		fields = {
 			{
 				name = "C",
-				index = 46448,
+				index = 46447,
 				className = "AActor",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6015,25 +6015,25 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 4,
-		index = 46447,
+		index = 46446,
 	}
 	g_classFuncs["AWebServer"]["eventDestroyed"] = {
 		fields = {
 		},
 		dataSize = 4,
-		index = 46446,
+		index = 46445,
 	}
 	g_classFuncs["AWebServer"]["PostBeginPlay"] = {
 		fields = {
 		},
 		dataSize = 28,
-		index = 46443,
+		index = 46442,
 	}
 	g_classFuncs["UHelloWeb"]["eventQuery"] = {
 		fields = {
 			{
 				name = "Request",
-				index = 45157,
+				index = 45156,
 				className = "UWebRequest",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6041,7 +6041,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Response",
-				index = 45156,
+				index = 45155,
 				className = "UWebResponse",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6049,19 +6049,19 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 45155,
+		index = 45154,
 	}
 	g_classFuncs["UHelloWeb"]["Init"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 45154,
+		index = 45153,
 	}
 	g_classFuncs["UImageServer"]["eventQuery"] = {
 		fields = {
 			{
 				name = "Request",
-				index = 45175,
+				index = 45174,
 				className = "UWebRequest",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6069,7 +6069,7 @@ local c = g_classFuncs
 			},
 			{
 				name = "Response",
-				index = 45174,
+				index = 45173,
 				className = "UWebResponse",
 				castTo = ffi.typeof("struct UObject**"),
 				flags = 16,
@@ -6077,51 +6077,51 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 20,
-		index = 45172,
+		index = 45171,
 	}
 	g_classFuncs["AWebConnection"]["IsHanging"] = {
 		fields = {
 			{
 				name = "ReturnValue",
 				isRet = true,
-				index = 46335,
+				index = 46334,
 				castTo = ffi.typeof("BOOL*"),
 				offset = 0
 			},
 		},
 		dataSize = 4,
-		index = 46334,
+		index = 46333,
 		retOffset = 0,
 	}
 	g_classFuncs["AWebConnection"]["Cleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46333,
+		index = 46332,
 	}
 	g_classFuncs["AWebConnection"]["CheckRawBytes"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46331,
+		index = 46330,
 	}
 	g_classFuncs["AWebConnection"]["EndOfHeaders"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46329,
+		index = 46328,
 	}
 	g_classFuncs["AWebConnection"]["CreateResponseObject"] = {
 		fields = {
 		},
 		dataSize = 4,
-		index = 46326,
+		index = 46325,
 	}
 	g_classFuncs["AWebConnection"]["ProcessPost"] = {
 		fields = {
 			{
 				name = "S",
-				index = 46325,
+				index = 46324,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6129,13 +6129,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46324,
+		index = 46323,
 	}
 	g_classFuncs["AWebConnection"]["ProcessGet"] = {
 		fields = {
 			{
 				name = "S",
-				index = 46318,
+				index = 46317,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6143,13 +6143,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 16,
-		index = 46317,
+		index = 46316,
 	}
 	g_classFuncs["AWebConnection"]["ProcessHead"] = {
 		fields = {
 			{
 				name = "S",
-				index = 46316,
+				index = 46315,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6157,13 +6157,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46315,
+		index = 46314,
 	}
 	g_classFuncs["AWebConnection"]["ReceivedLine"] = {
 		fields = {
 			{
 				name = "S",
-				index = 46314,
+				index = 46313,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6171,13 +6171,13 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 12,
-		index = 46313,
+		index = 46312,
 	}
 	g_classFuncs["AWebConnection"]["eventReceivedText"] = {
 		fields = {
 			{
 				name = "Text",
-				index = 46312,
+				index = 46311,
 				type = ffi.typeof("struct FString"),
 				castTo = ffi.typeof("struct FString*"),
 				flags = 4,
@@ -6185,23 +6185,23 @@ local c = g_classFuncs
 			},
 		},
 		dataSize = 28,
-		index = 46310,
+		index = 46309,
 	}
 	g_classFuncs["AWebConnection"]["eventTimer"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46309,
+		index = 46308,
 	}
 	g_classFuncs["AWebConnection"]["eventClosed"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46308,
+		index = 46307,
 	}
 	g_classFuncs["AWebConnection"]["eventAccepted"] = {
 		fields = {
 		},
 		dataSize = 0,
-		index = 46306,
+		index = 46305,
 	}
