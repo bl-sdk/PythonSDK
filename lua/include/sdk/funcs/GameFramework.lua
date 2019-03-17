@@ -1,7 +1,13 @@
+g_classFuncs["AGamePlayerController"] = {}
+g_classFuncs["UNavMeshGoal_OutOfViewFrom"] = {}
+g_classFuncs["UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations"] = {}
+g_classFuncs["UGameStateObject"] = {}
+g_classFuncs["UGameStatsAggregator"] = {}
+g_classFuncs["APlayerCollectorGame"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["ClientColorFade"] = {
+	g_classFuncs["AGamePlayerController"]["ClientColorFade"] = {
 		fields = {
 			{
 				name = "FadeColor",
@@ -38,20 +44,20 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38430,
-	},
-	["CallMemLeakCheck"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["CallMemLeakCheck"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38429,
-	},
-	["StopMemLeakChecking"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["StopMemLeakChecking"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38428,
-	},
-	["DoMemLeakChecking"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["DoMemLeakChecking"] = {
 		fields = {
 			{
 				name = "InTimeBetweenMemLeakChecks",
@@ -64,8 +70,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38426,
-	},
-	["eventWarmupPause"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["eventWarmupPause"] = {
 		fields = {
 			{
 				name = "bDesiredPauseState",
@@ -78,8 +84,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 38422,
-	},
-	["CanUnpauseWarmup"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["CanUnpauseWarmup"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -92,8 +98,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38420,
 		retOffset = 0,
-	},
-	["GetCurrentMovie"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["GetCurrentMovie"] = {
 		fields = {
 			{
 				name = "MovieName",
@@ -108,8 +114,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38418,
-	},
-	["eventClientStopMovie"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["eventClientStopMovie"] = {
 		fields = {
 			{
 				name = "DelayInSeconds",
@@ -146,8 +152,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38413,
-	},
-	["eventClientPlayMovie"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["eventClientPlayMovie"] = {
 		fields = {
 			{
 				name = "MovieName",
@@ -200,14 +206,14 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 38406,
-	},
-	["KeepPlayingLoadingMovie"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["KeepPlayingLoadingMovie"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38405,
-	},
-	["ShowLoadingMovie"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["ShowLoadingMovie"] = {
 		fields = {
 			{
 				name = "bShowMovie",
@@ -256,8 +262,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 38399,
-	},
-	["SetSoundMode"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["SetSoundMode"] = {
 		fields = {
 			{
 				name = "InSoundModeName",
@@ -270,8 +276,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38397,
-	},
-	["DoForceFeedbackForScreenShake"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["DoForceFeedbackForScreenShake"] = {
 		fields = {
 			{
 				name = "ShakeData",
@@ -292,8 +298,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 38389,
-	},
-	["GetUIPlayerIndex"] = {
+	}
+	g_classFuncs["AGamePlayerController"]["GetUIPlayerIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -306,14 +312,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38387,
 		retOffset = 0,
-	},
-	["Recycle"] = {
+	}
+	g_classFuncs["UNavMeshGoal_OutOfViewFrom"]["Recycle"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38574,
-	},
-	["MustBeHiddenFromThisPoint"] = {
+	}
+	g_classFuncs["UNavMeshGoal_OutOfViewFrom"]["MustBeHiddenFromThisPoint"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -342,20 +348,20 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38570,
 		retOffset = 16,
-	},
-	["RecycleNative"] = {
+	}
+	g_classFuncs["UNavMeshGoal_OutOfViewFrom"]["RecycleNative"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38569,
-	},
-	["Recycle"] = {
+	}
+	g_classFuncs["UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations"]["Recycle"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38588,
-	},
-	["BiasAgainstPolysWithinDistanceOfLocations"] = {
+	}
+	g_classFuncs["UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations"]["BiasAgainstPolysWithinDistanceOfLocations"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -408,20 +414,20 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 38580,
 		retOffset = 44,
-	},
-	["Reset"] = {
+	}
+	g_classFuncs["UGameStateObject"]["Reset"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38479,
-	},
-	["eventPreProcessStream"] = {
+	}
+	g_classFuncs["UGameStateObject"]["eventPreProcessStream"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38478,
-	},
-	["GetAggregateMappingIDs"] = {
+	}
+	g_classFuncs["UGameStatsAggregator"]["GetAggregateMappingIDs"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -458,26 +464,26 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38555,
 		retOffset = 12,
-	},
-	["Reset"] = {
+	}
+	g_classFuncs["UGameStatsAggregator"]["Reset"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38554,
-	},
-	["eventPostProcessStream"] = {
+	}
+	g_classFuncs["UGameStatsAggregator"]["eventPostProcessStream"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38553,
-	},
-	["eventPreProcessStream"] = {
+	}
+	g_classFuncs["UGameStatsAggregator"]["eventPreProcessStream"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38552,
-	},
-	["eventGetSeamlessTravelActorList"] = {
+	}
+	g_classFuncs["APlayerCollectorGame"]["eventGetSeamlessTravelActorList"] = {
 		fields = {
 			{
 				name = "bToEntry",
@@ -500,8 +506,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38598,
-	},
-	["eventLogin"] = {
+	}
+	g_classFuncs["APlayerCollectorGame"]["eventLogin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -548,4 +554,4 @@ local c = g_classFuncs
 		dataSize = 68,
 		index = 38592,
 		retOffset = 60,
-	},
+	}

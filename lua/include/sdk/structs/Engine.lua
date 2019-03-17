@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x10 (Alignment = 1)
 struct FStaticMeshLODElement {
 	struct UMaterialInterface* Material; // 0x0 (0x4)
@@ -4907,3 +4912,4 @@ struct FWorldEventSource {
 	const unsigned long: 0;
 };
 
+]]

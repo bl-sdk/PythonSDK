@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x60 
 struct UTextBuffer_Data {
 	// Last Offset: 0x3C
@@ -330,6 +335,7 @@ struct UPackage {
 	struct UObject_Data UObject;
 	struct UPackage_Data UPackage;
 };
+]]
 
 table.insert(g_loadedClasses, { "UTextBuffer", 1, "UObject" })
 table.insert(g_loadedClasses, { "USubsystem", 6, "UObject" })

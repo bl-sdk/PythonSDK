@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x80 
 struct UActorFactoryAkAmbientSound_Data {
 	// Last Offset: 0x7C
@@ -305,6 +310,8 @@ struct AWwiseSoundVolume {
 	struct AVolume_Data AVolume;
 	struct AWwiseSoundVolume_Data AWwiseSoundVolume;
 };
+
+]]
 
 table.insert(g_loadedClasses, { "UActorFactoryAkAmbientSound", 3525, "UActorFactory" })
 table.insert(g_loadedClasses, { "AAkAmbientSound", 3527, "AKeypoint" })

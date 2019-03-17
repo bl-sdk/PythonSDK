@@ -1,9 +1,7 @@
-// 0xC 
-struct FRotator {
-	int Pitch; // 0x0 (0x4)
-	int Yaw; // 0x4 (0x4)
-	int Roll; // 0x8 (0x4)
-};
+
+local ffi = require("ffi")
+
+ffi.cdef[[
 
 // 0x8 
 struct FVector2D {
@@ -183,11 +181,6 @@ struct FTAlphaBlend {
 	float BlendTime; // 0xC (0x4)
 	const float BlendTimeToGo; // 0x10 (0x4)
 	unsigned char BlendType; // 0x14 (0x1) (Enum = AlphaBlendType)
-};
-
-// 0x4 
-struct FPointer {
-	const int Dummy; // 0x0 (0x4)
 };
 
 // 0xC 
@@ -416,12 +409,6 @@ struct FDouble {
 	const int B; // 0x4 (0x4)
 };
 
-// 0x8 
-struct FQWord {
-	const int A; // 0x0 (0x4)
-	const int B; // 0x4 (0x4)
-};
-
 // 0x1C 
 struct FRawDistributionFloat {
 	unsigned char Type; // 0x0 (0x1)
@@ -446,3 +433,4 @@ struct FRawDistributionVector {
 	struct UDistributionVector* Distribution; // 0x18 (0x4)
 };
 
+]]

@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x8 
 struct FEnvironmentalEffectInfo {
 	int EffectID; // 0x0 (0x4)
@@ -40,3 +45,4 @@ struct FOccludedVolume {
 	const unsigned long: 0;
 };
 
+]]

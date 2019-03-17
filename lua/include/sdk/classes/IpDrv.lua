@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x48 
 struct UClientBeaconAddressResolver_Data {
 	// Last Offset: 0x3C
@@ -605,6 +610,7 @@ struct AWebConnection {
 	struct ATcpLink_Data ATcpLink;
 	struct AWebConnection_Data AWebConnection;
 };
+]]
 
 table.insert(g_loadedClasses, { "UClientBeaconAddressResolver", 3465, "UObject" })
 table.insert(g_loadedClasses, { "UHTTPDownload", 3467, "UDownload" })

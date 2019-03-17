@@ -1,7 +1,10 @@
+g_classFuncs["UOnlineSubsystemSteamworks"] = {}
+g_classFuncs["UOnlineGameInterfaceSteamworks"] = {}
+g_classFuncs["UOnlineAuthInterfaceSteamworks"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["GetServerAddr"] = {
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["GetServerAddr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -30,8 +33,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46503,
 		retOffset = 8,
-	},
-	["GetServerUniqueId"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["GetServerUniqueId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -53,8 +56,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46500,
 		retOffset = 24,
-	},
-	["EndRemoteServerAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndRemoteServerAuthSession"] = {
 		fields = {
 			{
 				name = "ServerUID",
@@ -75,8 +78,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46497,
-	},
-	["EndLocalServerAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndLocalServerAuthSession"] = {
 		fields = {
 			{
 				name = "ClientUID",
@@ -97,8 +100,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46494,
-	},
-	["VerifyServerAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["VerifyServerAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -135,8 +138,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46489,
 		retOffset = 32,
-	},
-	["CreateServerAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["CreateServerAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -181,8 +184,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 46483,
 		retOffset = 36,
-	},
-	["EndRemoteClientAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndRemoteClientAuthSession"] = {
 		fields = {
 			{
 				name = "ClientUID",
@@ -203,8 +206,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46480,
-	},
-	["EndLocalClientAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["EndLocalClientAuthSession"] = {
 		fields = {
 			{
 				name = "ServerUID",
@@ -233,8 +236,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 46476,
-	},
-	["VerifyClientAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["VerifyClientAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -279,8 +282,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 46470,
 		retOffset = 36,
-	},
-	["CreateClientAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["CreateClientAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -333,8 +336,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 46463,
 		retOffset = 40,
-	},
-	["SendAuthRequestServer"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["SendAuthRequestServer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -355,8 +358,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46460,
 		retOffset = 24,
-	},
-	["SendAuthRequestClient"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceSteamworks"]["SendAuthRequestClient"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -385,8 +388,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 46456,
 		retOffset = 28,
-	},
-	["GetGameSettings"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["GetGameSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -407,8 +410,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46609,
 		retOffset = 8,
-	},
-	["GetResolvedConnectString"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["GetResolvedConnectString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -439,8 +442,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 46605,
 		retOffset = 20,
-	},
-	["BindPlatformSpecificSessionToSearch"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["BindPlatformSpecificSessionToSearch"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -477,8 +480,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 46600,
 		retOffset = 88,
-	},
-	["ReadPlatformSpecificSessionInfoBySessionName"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ReadPlatformSpecificSessionInfoBySessionName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -507,8 +510,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 46596,
 		retOffset = 88,
-	},
-	["ReadPlatformSpecificSessionInfo"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ReadPlatformSpecificSessionInfo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -538,8 +541,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 46592,
 		retOffset = 88,
-	},
-	["QueryNonAdvertisedData"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["QueryNonAdvertisedData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -568,8 +571,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46588,
 		retOffset = 8,
-	},
-	["ClearUnregisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ClearUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
@@ -582,8 +585,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46586,
-	},
-	["AddUnregisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AddUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
@@ -596,8 +599,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46584,
-	},
-	["OnUnregisterPlayerComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["OnUnregisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -626,8 +629,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 46521,
-	},
-	["UnregisterPlayer"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["UnregisterPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -656,8 +659,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46577,
 		retOffset = 32,
-	},
-	["ClearRegisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ClearRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
@@ -670,8 +673,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46575,
-	},
-	["AddRegisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AddRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
@@ -684,8 +687,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46573,
-	},
-	["OnRegisterPlayerComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["OnRegisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -714,8 +717,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 46518,
-	},
-	["RegisterPlayer"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["RegisterPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -752,8 +755,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 46565,
 		retOffset = 36,
-	},
-	["AcceptGameInvite"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AcceptGameInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -782,8 +785,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46561,
 		retOffset = 12,
-	},
-	["OnGameInviteAccepted"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["OnGameInviteAccepted"] = {
 		fields = {
 			{
 				name = "InviteResult",
@@ -797,8 +800,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 46515,
-	},
-	["ClearGameInviteAcceptedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["ClearGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -819,8 +822,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46557,
-	},
-	["AddGameInviteAcceptedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["AddGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -841,8 +844,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46554,
-	},
-	["UpdateOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceSteamworks"]["UpdateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -880,24 +883,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46549,
 		retOffset = 16,
-	},
-	["GetCountryString"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 47812,
-				cType = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				TArray = true,
-				offset = 0
-			},
-		},
-		dataSize = 12,
-		index = 47810,
-		retOffset = 0,
-	},
-	["ClearCheckDownloadableContentListDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCheckDownloadableContentListDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -918,8 +905,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47811,
-	},
-	["AddCheckDownloadableContentListDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddCheckDownloadableContentListDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -940,8 +927,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47813,
-	},
-	["CheckDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CheckDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -962,8 +949,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 47818,
 		retOffset = 4,
-	},
-	["OnCheckDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnCheckDownloadableContentList"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -984,8 +971,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 47817,
-	},
-	["GetCriticalDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCriticalDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1017,8 +1004,8 @@ local c = g_classFuncs
 		dataSize = 17,
 		index = 47805,
 		retOffset = 16,
-	},
-	["ReadCriticalDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCriticalDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1048,8 +1035,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47801,
 		retOffset = 8,
-	},
-	["ClearReadCriticalDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCriticalDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1070,8 +1057,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47798,
-	},
-	["AddReadCriticalDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCriticalDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1092,8 +1079,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47795,
-	},
-	["OnReadCriticalDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCriticalDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -1106,8 +1093,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47793,
-	},
-	["GetHiddenDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetHiddenDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1139,8 +1126,8 @@ local c = g_classFuncs
 		dataSize = 17,
 		index = 47788,
 		retOffset = 16,
-	},
-	["ReadHiddenDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadHiddenDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1169,8 +1156,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47783,
 		retOffset = 16,
-	},
-	["ClearReadHiddenDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadHiddenDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1191,8 +1178,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47780,
-	},
-	["AddReadHiddenDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadHiddenDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1213,8 +1200,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47777,
-	},
-	["OnReadHiddenDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadHiddenDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -1227,8 +1214,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47775,
-	},
-	["GetDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1260,8 +1247,8 @@ local c = g_classFuncs
 		dataSize = 17,
 		index = 47770,
 		retOffset = 16,
-	},
-	["ReadDownloadableContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadDownloadableContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1291,8 +1278,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47766,
 		retOffset = 8,
-	},
-	["ClearReadDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1313,8 +1300,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47763,
-	},
-	["AddReadDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1335,8 +1322,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47759,
-	},
-	["OnReadDownloadableContentListComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadDownloadableContentListComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -1349,8 +1336,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46650,
-	},
-	["GetSaveGamesList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetSaveGamesList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1382,8 +1369,8 @@ local c = g_classFuncs
 		dataSize = 17,
 		index = 47753,
 		retOffset = 16,
-	},
-	["ReadSaveGamesList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadSaveGamesList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1422,8 +1409,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 47748,
 		retOffset = 20,
-	},
-	["ClearReadSaveGamesComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadSaveGamesComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1444,8 +1431,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47745,
-	},
-	["AddReadSaveGamesComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadSaveGamesComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1466,8 +1453,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47742,
-	},
-	["OnReadSaveGamesComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadSaveGamesComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -1480,8 +1467,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47740,
-	},
-	["ClearSaveGames"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearSaveGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1502,8 +1489,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47737,
 		retOffset = 4,
-	},
-	["DeleteSaveGame"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteSaveGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1548,8 +1535,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 47731,
 		retOffset = 32,
-	},
-	["ClearWriteSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearWriteSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1570,8 +1557,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47728,
-	},
-	["AddWriteSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddWriteSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1592,8 +1579,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47725,
-	},
-	["OnWriteSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnWriteSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -1646,8 +1633,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 47718,
-	},
-	["WriteSaveGameData"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1710,8 +1697,8 @@ local c = g_classFuncs
 		dataSize = 60,
 		index = 47709,
 		retOffset = 56,
-	},
-	["ClearReadSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1732,8 +1719,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47706,
-	},
-	["AddReadSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1754,8 +1741,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47703,
-	},
-	["OnReadSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -1808,8 +1795,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 47696,
-	},
-	["GetSaveGameData"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1880,8 +1867,8 @@ local c = g_classFuncs
 		dataSize = 64,
 		index = 47686,
 		retOffset = 60,
-	},
-	["ReadSaveGameData"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1934,8 +1921,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 47679,
 		retOffset = 44,
-	},
-	["GetAvailableDownloadCounts"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetAvailableDownloadCounts"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1964,8 +1951,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47675,
-	},
-	["ClearQueryAvailableDownloadsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearQueryAvailableDownloadsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -1986,8 +1973,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47672,
-	},
-	["AddQueryAvailableDownloadsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddQueryAvailableDownloadsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2008,8 +1995,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47669,
-	},
-	["OnQueryAvailableDownloadsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnQueryAvailableDownloadsComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -2022,8 +2009,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47667,
-	},
-	["QueryAvailableDownloads"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["QueryAvailableDownloads"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2053,8 +2040,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47663,
 		retOffset = 8,
-	},
-	["ClearCrossTitleSaveGames"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCrossTitleSaveGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2075,8 +2062,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47660,
 		retOffset = 4,
-	},
-	["ClearReadCrossTitleSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCrossTitleSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2097,8 +2084,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47657,
-	},
-	["AddReadCrossTitleSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCrossTitleSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2119,8 +2106,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47654,
-	},
-	["OnReadCrossTitleSaveGameDataComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCrossTitleSaveGameDataComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -2181,8 +2168,8 @@ local c = g_classFuncs
 		},
 		dataSize = 52,
 		index = 47646,
-	},
-	["GetCrossTitleSaveGameData"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCrossTitleSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2261,8 +2248,8 @@ local c = g_classFuncs
 		dataSize = 68,
 		index = 47635,
 		retOffset = 64,
-	},
-	["ReadCrossTitleSaveGameData"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCrossTitleSaveGameData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2323,8 +2310,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 47627,
 		retOffset = 48,
-	},
-	["ClearReadCrossTitleContentCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCrossTitleContentCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2354,8 +2341,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47623,
-	},
-	["AddReadCrossTitleContentCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCrossTitleContentCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2385,8 +2372,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47619,
-	},
-	["OnReadCrossTitleContentComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCrossTitleContentComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -2399,8 +2386,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47617,
-	},
-	["GetCrossTitleContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCrossTitleContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2441,8 +2428,8 @@ local c = g_classFuncs
 		dataSize = 17,
 		index = 47611,
 		retOffset = 16,
-	},
-	["ClearCrossTitleContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCrossTitleContentList"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2464,8 +2451,8 @@ local c = g_classFuncs
 		},
 		dataSize = 2,
 		index = 47608,
-	},
-	["ReadCrossTitleContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCrossTitleContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2513,8 +2500,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47602,
 		retOffset = 12,
-	},
-	["GetContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2555,8 +2542,8 @@ local c = g_classFuncs
 		dataSize = 17,
 		index = 47596,
 		retOffset = 16,
-	},
-	["ClearContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearContentList"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2578,8 +2565,8 @@ local c = g_classFuncs
 		},
 		dataSize = 2,
 		index = 47593,
-	},
-	["ReadContentList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadContentList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2618,8 +2605,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47588,
 		retOffset = 8,
-	},
-	["ClearReadContentComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadContentComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2649,8 +2636,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47584,
-	},
-	["AddReadContentComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadContentComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2680,8 +2667,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47580,
-	},
-	["OnReadContentComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadContentComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -2694,8 +2681,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47578,
-	},
-	["ClearContentChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearContentChangeDelegate"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
@@ -2717,8 +2704,8 @@ local c = g_classFuncs
 		},
 		dataSize = 13,
 		index = 47575,
-	},
-	["AddContentChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddContentChangeDelegate"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
@@ -2740,8 +2727,8 @@ local c = g_classFuncs
 		},
 		dataSize = 13,
 		index = 47572,
-	},
-	["ClearContentChangeDelegateEx"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearContentChangeDelegateEx"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
@@ -2754,8 +2741,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47570,
-	},
-	["AddContentChangeDelegateEx"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddContentChangeDelegateEx"] = {
 		fields = {
 			{
 				name = "ContentDelegate",
@@ -2768,14 +2755,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47567,
-	},
-	["OnContentChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnContentChange"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 47566,
-	},
-	["ShowRedeemCodeUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowRedeemCodeUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2796,20 +2783,20 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47563,
 		retOffset = 4,
-	},
-	["DumpSteamworksSessionState"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DumpSteamworksSessionState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 47562,
-	},
-	["DumpSessionState"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DumpSessionState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 47561,
-	},
-	["SetVoiceVolume"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SetVoiceVolume"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2839,8 +2826,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47557,
 		retOffset = 8,
-	},
-	["ClearUnlockAvatarAwardCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearUnlockAvatarAwardCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2861,8 +2848,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47554,
-	},
-	["AddUnlockAvatarAwardCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddUnlockAvatarAwardCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2883,8 +2870,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47551,
-	},
-	["OnUnlockAvatarAwardComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnUnlockAvatarAwardComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -2897,8 +2884,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47549,
-	},
-	["GetFriendJoinURL"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetFriendJoinURL"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2939,8 +2926,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 47544,
 		retOffset = 48,
-	},
-	["GetCommandlineJoinURL"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCommandlineJoinURL"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2981,8 +2968,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47539,
 		retOffset = 28,
-	},
-	["Int64ToUniqueNetId"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["Int64ToUniqueNetId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3012,8 +2999,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 47535,
 		retOffset = 36,
-	},
-	["UniqueNetIdToInt64"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UniqueNetIdToInt64"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3037,8 +3024,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 47532,
 		retOffset = 24,
-	},
-	["NotifyVOIPPlaybackFinished"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["NotifyVOIPPlaybackFinished"] = {
 		fields = {
 			{
 				name = "VOIPAudioComponent",
@@ -3051,8 +3038,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47530,
-	},
-	["OnVOIPPlaybackFinished"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnVOIPPlaybackFinished"] = {
 		fields = {
 			{
 				name = "AC",
@@ -3065,8 +3052,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47528,
-	},
-	["ShowProfileUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowProfileUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3105,8 +3092,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 47523,
 		retOffset = 40,
-	},
-	["UniqueNetIdToPlayerName"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UniqueNetIdToPlayerName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3130,8 +3117,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 47520,
 		retOffset = 24,
-	},
-	["DisplayAchievementProgress"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DisplayAchievementProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3168,8 +3155,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47515,
 		retOffset = 12,
-	},
-	["CreateLeaderboard"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CreateLeaderboard"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3208,8 +3195,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47510,
 		retOffset = 16,
-	},
-	["ResetStats"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ResetStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3230,8 +3217,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47507,
 		retOffset = 4,
-	},
-	["ShowCustomMessageUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowCustomMessageUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3287,8 +3274,8 @@ local c = g_classFuncs
 		dataSize = 56,
 		index = 47499,
 		retOffset = 52,
-	},
-	["ClearCrossTitleProfileSettings"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCrossTitleProfileSettings"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3309,8 +3296,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 47496,
-	},
-	["GetCrossTitleProfileSettings"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetCrossTitleProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3339,8 +3326,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47492,
 		retOffset = 8,
-	},
-	["ClearReadCrossTitleProfileSettingsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadCrossTitleProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3361,8 +3348,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47489,
-	},
-	["AddReadCrossTitleProfileSettingsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadCrossTitleProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3383,8 +3370,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47486,
-	},
-	["OnReadCrossTitleProfileSettingsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadCrossTitleProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3413,8 +3400,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47482,
-	},
-	["ReadCrossTitleProfileSettings"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadCrossTitleProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3451,8 +3438,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47477,
 		retOffset = 12,
-	},
-	["UnlockAvatarAward"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnlockAvatarAward"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3481,8 +3468,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47473,
 		retOffset = 8,
-	},
-	["EnumerateFilesOnRemoteStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["EnumerateFilesOnRemoteStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3497,8 +3484,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47470,
 		retOffset = 0,
-	},
-	["DeleteFileFromRemoteStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteFileFromRemoteStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3519,8 +3506,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47467,
 		retOffset = 12,
-	},
-	["ReadBytesFromRemoteStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadBytesFromRemoteStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3551,8 +3538,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47462,
 		retOffset = 24,
-	},
-	["ReadStringFromRemoteStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadStringFromRemoteStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3583,8 +3570,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47458,
 		retOffset = 24,
-	},
-	["WriteBytesToRemoteStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteBytesToRemoteStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3613,8 +3600,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47453,
 		retOffset = 24,
-	},
-	["WriteStringToRemoteStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteStringToRemoteStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3643,8 +3630,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47449,
 		retOffset = 24,
-	},
-	["GetSteamClanData"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetSteamClanData"] = {
 		fields = {
 			{
 				name = "Results",
@@ -3659,8 +3646,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47446,
-	},
-	["ClearGetNumberOfCurrentPlayersCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearGetNumberOfCurrentPlayersCompleteDelegate"] = {
 		fields = {
 			{
 				name = "GetNumberOfCurrentPlayersCompleteDelegate",
@@ -3673,8 +3660,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47444,
-	},
-	["AddGetNumberOfCurrentPlayersCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddGetNumberOfCurrentPlayersCompleteDelegate"] = {
 		fields = {
 			{
 				name = "GetNumberOfCurrentPlayersCompleteDelegate",
@@ -3687,8 +3674,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47441,
-	},
-	["OnGetNumberOfCurrentPlayersComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnGetNumberOfCurrentPlayersComplete"] = {
 		fields = {
 			{
 				name = "TotalPlayers",
@@ -3701,8 +3688,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47439,
-	},
-	["GetNumberOfCurrentPlayers"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetNumberOfCurrentPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3715,8 +3702,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 47437,
 		retOffset = 0,
-	},
-	["ReadOnlineAvatar"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineAvatar"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
@@ -3745,8 +3732,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 47433,
-	},
-	["OnReadOnlineAvatarComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadOnlineAvatarComplete"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
@@ -3767,8 +3754,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 47430,
-	},
-	["ShowCustomPlayersUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowCustomPlayersUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3815,8 +3802,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 47423,
 		retOffset = 40,
-	},
-	["GetAchievements"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetAchievements"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3857,8 +3844,8 @@ local c = g_classFuncs
 		dataSize = 21,
 		index = 47417,
 		retOffset = 20,
-	},
-	["ClearReadAchievementsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadAchievementsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3879,8 +3866,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47414,
-	},
-	["AddReadAchievementsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadAchievementsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3901,8 +3888,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47410,
-	},
-	["OnReadAchievementsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadAchievementsComplete"] = {
 		fields = {
 			{
 				name = "TitleId",
@@ -3915,8 +3902,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47408,
-	},
-	["ReadAchievements"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadAchievements"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3964,8 +3951,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47402,
 		retOffset = 16,
-	},
-	["ShowPlayersUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowPlayersUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3986,8 +3973,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47399,
 		retOffset = 4,
-	},
-	["ShowFriendsInviteUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowFriendsInviteUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4016,8 +4003,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47395,
 		retOffset = 28,
-	},
-	["ShowFriendsUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowFriendsUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4038,8 +4025,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47392,
 		retOffset = 4,
-	},
-	["ClearProfileDataChangedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearProfileDataChangedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4060,8 +4047,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47389,
-	},
-	["AddProfileDataChangedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddProfileDataChangedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4082,14 +4069,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47385,
-	},
-	["OnProfileDataChanged"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnProfileDataChanged"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 47384,
-	},
-	["UnlockGamerPicture"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnlockGamerPicture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4118,8 +4105,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47380,
 		retOffset = 8,
-	},
-	["ClearUnlockAchievementCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearUnlockAchievementCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4140,8 +4127,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47377,
-	},
-	["AddUnlockAchievementCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddUnlockAchievementCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4162,8 +4149,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47373,
-	},
-	["OnUnlockAchievementComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnUnlockAchievementComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4176,8 +4163,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47371,
-	},
-	["UnlockAchievement"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnlockAchievement"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4206,8 +4193,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47367,
 		retOffset = 8,
-	},
-	["IsDeviceValid"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsDeviceValid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4237,8 +4224,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47363,
 		retOffset = 8,
-	},
-	["GetDeviceSelectionResults"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetDeviceSelectionResults"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4269,8 +4256,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47359,
 		retOffset = 16,
-	},
-	["ClearDeviceSelectionDoneDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearDeviceSelectionDoneDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4291,8 +4278,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47356,
-	},
-	["AddDeviceSelectionDoneDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddDeviceSelectionDoneDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4313,8 +4300,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47350,
-	},
-	["OnDeviceSelectionComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnDeviceSelectionComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4327,8 +4314,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47348,
-	},
-	["ShowDeviceSelectionUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowDeviceSelectionUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4375,8 +4362,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47342,
 		retOffset = 16,
-	},
-	["ShowMembershipMarketplaceUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowMembershipMarketplaceUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4397,8 +4384,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47339,
 		retOffset = 4,
-	},
-	["ShowContentMarketplaceUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowContentMarketplaceUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4437,8 +4424,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47334,
 		retOffset = 12,
-	},
-	["ShowInviteUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowInviteUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4468,8 +4455,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47330,
 		retOffset = 16,
-	},
-	["ShowAchievementsUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowAchievementsUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4490,8 +4477,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47327,
 		retOffset = 4,
-	},
-	["ShowMessagesUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowMessagesUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4512,8 +4499,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47324,
 		retOffset = 4,
-	},
-	["ShowGamerCardUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowGamerCardUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4542,8 +4529,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47320,
 		retOffset = 28,
-	},
-	["ShowFeedbackUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowFeedbackUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4572,8 +4559,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47316,
 		retOffset = 28,
-	},
-	["DeleteMessage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4602,8 +4589,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47312,
 		retOffset = 8,
-	},
-	["UnmuteAll"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnmuteAll"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4624,8 +4611,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47309,
 		retOffset = 4,
-	},
-	["MuteAll"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["MuteAll"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4654,8 +4641,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47305,
 		retOffset = 8,
-	},
-	["CalcAggregateSkill"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CalcAggregateSkill"] = {
 		fields = {
 			{
 				name = "Mus",
@@ -4694,8 +4681,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 47298,
-	},
-	["RegisterStatGuid"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterStatGuid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4726,8 +4713,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 47294,
 		retOffset = 36,
-	},
-	["GetClientStatGuid"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetClientStatGuid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4742,8 +4729,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47292,
 		retOffset = 0,
-	},
-	["ClearRegisterHostStatGuidCompleteDelegateDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearRegisterHostStatGuidCompleteDelegateDelegate"] = {
 		fields = {
 			{
 				name = "RegisterHostStatGuidCompleteDelegate",
@@ -4756,8 +4743,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47290,
-	},
-	["AddRegisterHostStatGuidCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddRegisterHostStatGuidCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterHostStatGuidCompleteDelegate",
@@ -4770,8 +4757,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47287,
-	},
-	["OnRegisterHostStatGuidComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnRegisterHostStatGuidComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4784,8 +4771,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47285,
-	},
-	["RegisterHostStatGuid"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterHostStatGuid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4808,8 +4795,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47282,
 		retOffset = 12,
-	},
-	["GetHostStatGuid"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetHostStatGuid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4824,8 +4811,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47280,
 		retOffset = 0,
-	},
-	["ClearFriendMessageReceivedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFriendMessageReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4846,8 +4833,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47277,
-	},
-	["AddFriendMessageReceivedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendMessageReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4868,8 +4855,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47274,
-	},
-	["OnFriendMessageReceived"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFriendMessageReceived"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4906,8 +4893,8 @@ local c = g_classFuncs
 		},
 		dataSize = 52,
 		index = 47269,
-	},
-	["GetFriendMessages"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetFriendMessages"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4930,8 +4917,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47265,
-	},
-	["ClearJoinFriendGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearJoinFriendGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinFriendGameCompleteDelegate",
@@ -4944,8 +4931,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47263,
-	},
-	["AddJoinFriendGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddJoinFriendGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinFriendGameCompleteDelegate",
@@ -4958,8 +4945,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47260,
-	},
-	["OnJoinFriendGameComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnJoinFriendGameComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4972,8 +4959,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47258,
-	},
-	["JoinFriendGame"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["JoinFriendGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5002,8 +4989,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47254,
 		retOffset = 28,
-	},
-	["ClearReceivedGameInviteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReceivedGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5024,8 +5011,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47251,
-	},
-	["AddReceivedGameInviteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReceivedGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5046,8 +5033,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47247,
-	},
-	["OnReceivedGameInvite"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReceivedGameInvite"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5068,8 +5055,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47244,
-	},
-	["ClearSentGameInviteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearSentGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5090,8 +5077,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47241,
-	},
-	["AddSentGameInviteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddSentGameInviteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5112,8 +5099,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47237,
-	},
-	["OnSentGameInvite"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnSentGameInvite"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5134,8 +5121,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 47234,
-	},
-	["SendGameInviteToFriends"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SendGameInviteToFriends"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5173,8 +5160,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47228,
 		retOffset = 28,
-	},
-	["SendGameInviteToFriend"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SendGameInviteToFriend"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5212,8 +5199,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 47223,
 		retOffset = 40,
-	},
-	["SendMessageToFriend"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SendMessageToFriend"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5250,8 +5237,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 47218,
 		retOffset = 40,
-	},
-	["ClearFriendInviteReceivedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFriendInviteReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5272,8 +5259,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47215,
-	},
-	["AddFriendInviteReceivedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendInviteReceivedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5294,8 +5281,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47211,
-	},
-	["OnFriendInviteReceived"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFriendInviteReceived"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5332,8 +5319,8 @@ local c = g_classFuncs
 		},
 		dataSize = 52,
 		index = 47206,
-	},
-	["DenyFriendInvite"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DenyFriendInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5362,8 +5349,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47202,
 		retOffset = 28,
-	},
-	["AcceptFriendInvite"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AcceptFriendInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5392,8 +5379,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47198,
 		retOffset = 28,
-	},
-	["RemoveFriend"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["RemoveFriend"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5422,8 +5409,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47194,
 		retOffset = 28,
-	},
-	["ClearAddFriendByNameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearAddFriendByNameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5444,8 +5431,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 47191,
-	},
-	["AddAddFriendByNameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddAddFriendByNameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5466,8 +5453,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47187,
-	},
-	["OnAddFriendByNameComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnAddFriendByNameComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -5480,8 +5467,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47185,
-	},
-	["AddFriendByName"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendByName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5519,8 +5506,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 47180,
 		retOffset = 28,
-	},
-	["AddFriend"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriend"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5558,8 +5545,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 47175,
 		retOffset = 40,
-	},
-	["GetKeyboardInputResults"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetKeyboardInputResults"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5582,8 +5569,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47170,
 		retOffset = 4,
-	},
-	["ClearKeyboardInputDoneDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearKeyboardInputDoneDelegate"] = {
 		fields = {
 			{
 				name = "InputDelegate",
@@ -5596,8 +5583,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47168,
-	},
-	["AddKeyboardInputDoneDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddKeyboardInputDoneDelegate"] = {
 		fields = {
 			{
 				name = "InputDelegate",
@@ -5610,8 +5597,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47165,
-	},
-	["OnKeyboardInputComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnKeyboardInputComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -5624,8 +5611,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47163,
-	},
-	["ShowKeyboardUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowKeyboardUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5699,8 +5686,8 @@ local c = g_classFuncs
 		dataSize = 56,
 		index = 47154,
 		retOffset = 52,
-	},
-	["SetOnlineStatus"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SetOnlineStatus"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5741,8 +5728,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 47147,
-	},
-	["GetLocalAccountNames"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetLocalAccountNames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5765,8 +5752,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47143,
 		retOffset = 12,
-	},
-	["DeleteLocalAccount"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["DeleteLocalAccount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5796,8 +5783,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47139,
 		retOffset = 24,
-	},
-	["RenameLocalAccount"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["RenameLocalAccount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5835,8 +5822,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 47134,
 		retOffset = 36,
-	},
-	["CreateLocalAccount"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CreateLocalAccount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5866,8 +5853,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47130,
 		retOffset = 24,
-	},
-	["ClearCreateOnlineAccountCompletedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearCreateOnlineAccountCompletedDelegate"] = {
 		fields = {
 			{
 				name = "AccountCreateDelegate",
@@ -5880,8 +5867,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47128,
-	},
-	["AddCreateOnlineAccountCompletedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddCreateOnlineAccountCompletedDelegate"] = {
 		fields = {
 			{
 				name = "AccountCreateDelegate",
@@ -5894,8 +5881,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47125,
-	},
-	["OnCreateOnlineAccountCompleted"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnCreateOnlineAccountCompleted"] = {
 		fields = {
 			{
 				name = "ErrorStatus",
@@ -5909,8 +5896,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 47123,
-	},
-	["CreateOnlineAccount"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CreateOnlineAccount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5956,8 +5943,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 47117,
 		retOffset = 48,
-	},
-	["ClearDownloadedFile"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearDownloadedFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5978,8 +5965,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47114,
 		retOffset = 12,
-	},
-	["ClearDownloadedFiles"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearDownloadedFiles"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5992,8 +5979,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 47112,
 		retOffset = 0,
-	},
-	["GetTitleFileState"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetTitleFileState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6015,8 +6002,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47108,
 		retOffset = 12,
-	},
-	["GetTitleFileContents"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetTitleFileContents"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6047,8 +6034,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47103,
 		retOffset = 24,
-	},
-	["ClearReadTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
@@ -6061,8 +6048,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47101,
-	},
-	["AddReadTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
@@ -6075,8 +6062,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47098,
-	},
-	["ReadTitleFile"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6105,8 +6092,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 47094,
 		retOffset = 16,
-	},
-	["OnReadTitleFileComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -6127,8 +6114,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47091,
-	},
-	["ClearShareTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
@@ -6141,8 +6128,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47089,
-	},
-	["AddShareTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
@@ -6155,8 +6142,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47086,
-	},
-	["ShareTitleFile"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShareTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6177,8 +6164,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47083,
 		retOffset = 12,
-	},
-	["OnShareTitleFileComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnShareTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -6207,8 +6194,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 47079,
-	},
-	["ClearStorageDeviceChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearStorageDeviceChangeDelegate"] = {
 		fields = {
 			{
 				name = "StorageDeviceChangeDelegate",
@@ -6221,8 +6208,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47077,
-	},
-	["AddStorageDeviceChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddStorageDeviceChangeDelegate"] = {
 		fields = {
 			{
 				name = "StorageDeviceChangeDelegate",
@@ -6235,14 +6222,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47075,
-	},
-	["OnStorageDeviceChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnStorageDeviceChange"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 47074,
-	},
-	["GetLocale"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetLocale"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6255,8 +6242,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 47072,
 		retOffset = 0,
-	},
-	["GetNATType"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetNATType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6270,8 +6257,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 47070,
 		retOffset = 0,
-	},
-	["ClearConnectionStatusChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearConnectionStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "ConnectionStatusDelegate",
@@ -6284,8 +6271,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47068,
-	},
-	["AddConnectionStatusChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddConnectionStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "ConnectionStatusDelegate",
@@ -6298,8 +6285,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47065,
-	},
-	["OnConnectionStatusChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnConnectionStatusChange"] = {
 		fields = {
 			{
 				name = "ConnectionStatus",
@@ -6313,8 +6300,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 47063,
-	},
-	["IsControllerConnected"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsControllerConnected"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6335,8 +6322,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 47060,
 		retOffset = 4,
-	},
-	["ClearControllerChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearControllerChangeDelegate"] = {
 		fields = {
 			{
 				name = "ControllerChangeDelegate",
@@ -6349,8 +6336,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47058,
-	},
-	["AddControllerChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddControllerChangeDelegate"] = {
 		fields = {
 			{
 				name = "ControllerChangeDelegate",
@@ -6363,8 +6350,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47055,
-	},
-	["OnControllerChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnControllerChange"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -6385,8 +6372,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 47052,
-	},
-	["SetNetworkNotificationPosition"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SetNetworkNotificationPosition"] = {
 		fields = {
 			{
 				name = "NewPos",
@@ -6400,8 +6387,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 47050,
-	},
-	["GetNetworkNotificationPosition"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetNetworkNotificationPosition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6415,8 +6402,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 47047,
 		retOffset = 0,
-	},
-	["ClearExternalUIChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearExternalUIChangeDelegate"] = {
 		fields = {
 			{
 				name = "ExternalUIDelegate",
@@ -6429,8 +6416,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47045,
-	},
-	["AddExternalUIChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddExternalUIChangeDelegate"] = {
 		fields = {
 			{
 				name = "ExternalUIDelegate",
@@ -6443,8 +6430,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47042,
-	},
-	["OnExternalUIChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnExternalUIChange"] = {
 		fields = {
 			{
 				name = "bIsOpening",
@@ -6457,8 +6444,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47040,
-	},
-	["ClearLinkStatusChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLinkStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LinkStatusDelegate",
@@ -6471,8 +6458,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47038,
-	},
-	["AddLinkStatusChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLinkStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LinkStatusDelegate",
@@ -6485,8 +6472,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47035,
-	},
-	["OnLinkStatusChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLinkStatusChange"] = {
 		fields = {
 			{
 				name = "bIsConnected",
@@ -6499,8 +6486,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47033,
-	},
-	["HasLinkConnection"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["HasLinkConnection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6513,8 +6500,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 47031,
 		retOffset = 0,
-	},
-	["eventGetPlayerUniqueNetIdFromIndex"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["eventGetPlayerUniqueNetIdFromIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6536,8 +6523,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 47027,
 		retOffset = 4,
-	},
-	["eventGetPlayerNicknameFromIndex"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["eventGetPlayerNicknameFromIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6560,8 +6547,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 47024,
 		retOffset = 4,
-	},
-	["WriteOnlinePlayerScores"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteOnlinePlayerScores"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6600,8 +6587,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 47018,
 		retOffset = 24,
-	},
-	["ClearFlushOnlineStatsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFlushOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FlushOnlineStatsCompleteDelegate",
@@ -6614,8 +6601,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 47016,
-	},
-	["AddFlushOnlineStatsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFlushOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FlushOnlineStatsCompleteDelegate",
@@ -6628,8 +6615,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47013,
-	},
-	["OnFlushOnlineStatsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFlushOnlineStatsComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -6650,8 +6637,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 47010,
-	},
-	["FlushOnlineStats"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["FlushOnlineStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6672,8 +6659,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 47007,
 		retOffset = 8,
-	},
-	["WriteOnlineStats"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteOnlineStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6710,8 +6697,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 47002,
 		retOffset = 36,
-	},
-	["FreeStats"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["FreeStats"] = {
 		fields = {
 			{
 				name = "StatsRead",
@@ -6724,8 +6711,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 47000,
-	},
-	["ClearReadOnlineStatsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadOnlineStatsCompleteDelegate",
@@ -6738,8 +6725,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46998,
-	},
-	["AddReadOnlineStatsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadOnlineStatsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadOnlineStatsCompleteDelegate",
@@ -6752,8 +6739,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46995,
-	},
-	["OnReadOnlineStatsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadOnlineStatsComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -6766,8 +6753,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46993,
-	},
-	["ReadOnlineStatsByRankAroundPlayer"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStatsByRankAroundPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6805,8 +6792,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46988,
 		retOffset = 12,
-	},
-	["ReadOnlineStatsByRank"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStatsByRank"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6845,8 +6832,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46983,
 		retOffset = 12,
-	},
-	["ReadOnlineStatsForFriends"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStatsForFriends"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6875,8 +6862,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46979,
 		retOffset = 8,
-	},
-	["ReadOnlineStats"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadOnlineStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6907,8 +6894,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46974,
 		retOffset = 16,
-	},
-	["SetSpeechRecognitionObject"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SetSpeechRecognitionObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6937,8 +6924,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46970,
 		retOffset = 8,
-	},
-	["SelectVocabulary"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SelectVocabulary"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6967,8 +6954,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46966,
 		retOffset = 8,
-	},
-	["ClearRecognitionCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearRecognitionCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -6989,8 +6976,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46963,
-	},
-	["AddRecognitionCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddRecognitionCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7011,14 +6998,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46959,
-	},
-	["OnRecognitionComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnRecognitionComplete"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46958,
-	},
-	["GetRecognitionResults"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetRecognitionResults"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7049,8 +7036,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46953,
 		retOffset = 16,
-	},
-	["StopSpeechRecognition"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["StopSpeechRecognition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7071,8 +7058,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46950,
 		retOffset = 4,
-	},
-	["StartSpeechRecognition"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["StartSpeechRecognition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7093,8 +7080,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46947,
 		retOffset = 4,
-	},
-	["StopNetworkedVoice"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["StopNetworkedVoice"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7107,8 +7094,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 46945,
-	},
-	["StartNetworkedVoice"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["StartNetworkedVoice"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7121,8 +7108,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 46943,
-	},
-	["ClearPlayerTalkingDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearPlayerTalkingDelegate"] = {
 		fields = {
 			{
 				name = "TalkerDelegate",
@@ -7135,8 +7122,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46941,
-	},
-	["AddPlayerTalkingDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddPlayerTalkingDelegate"] = {
 		fields = {
 			{
 				name = "TalkerDelegate",
@@ -7149,8 +7136,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46938,
-	},
-	["OnPlayerTalkingStateChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnPlayerTalkingStateChange"] = {
 		fields = {
 			{
 				name = "Player",
@@ -7171,8 +7158,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46935,
-	},
-	["UnmuteRemoteTalker"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnmuteRemoteTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7210,8 +7197,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46930,
 		retOffset = 32,
-	},
-	["MuteRemoteTalker"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["MuteRemoteTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7249,8 +7236,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46925,
 		retOffset = 32,
-	},
-	["SetRemoteTalkerPriority"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["SetRemoteTalkerPriority"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7287,8 +7274,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46920,
 		retOffset = 32,
-	},
-	["IsHeadsetPresent"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsHeadsetPresent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7309,8 +7296,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46917,
 		retOffset = 4,
-	},
-	["IsRemotePlayerTalking"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsRemotePlayerTalking"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7331,8 +7318,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46914,
 		retOffset = 24,
-	},
-	["IsLocalPlayerTalking"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsLocalPlayerTalking"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7353,8 +7340,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46911,
 		retOffset = 4,
-	},
-	["UnregisterRemoteTalker"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnregisterRemoteTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7375,8 +7362,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46908,
 		retOffset = 24,
-	},
-	["RegisterRemoteTalker"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterRemoteTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7397,8 +7384,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46905,
 		retOffset = 24,
-	},
-	["UnregisterLocalTalker"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["UnregisterLocalTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7419,8 +7406,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46902,
 		retOffset = 4,
-	},
-	["RegisterLocalTalker"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["RegisterLocalTalker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7441,8 +7428,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46899,
 		retOffset = 4,
-	},
-	["GetFriendsList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetFriendsList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7492,8 +7479,8 @@ local c = g_classFuncs
 		dataSize = 25,
 		index = 46892,
 		retOffset = 24,
-	},
-	["ClearReadFriendsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadFriendsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7514,8 +7501,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46889,
-	},
-	["AddReadFriendsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadFriendsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7536,8 +7523,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46885,
-	},
-	["OnReadFriendsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadFriendsComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -7550,8 +7537,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46883,
-	},
-	["ReadFriendsList"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadFriendsList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7590,8 +7577,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46878,
 		retOffset = 12,
-	},
-	["ClearWritePlayerStorageCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearWritePlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7612,8 +7599,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46875,
-	},
-	["AddWritePlayerStorageCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddWritePlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7634,8 +7621,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46871,
-	},
-	["OnWritePlayerStorageComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnWritePlayerStorageComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7656,8 +7643,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 46868,
-	},
-	["WritePlayerStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WritePlayerStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7695,8 +7682,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46863,
 		retOffset = 12,
-	},
-	["GetPlayerStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetPlayerStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7717,8 +7704,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46859,
 		retOffset = 4,
-	},
-	["ClearReadPlayerStorageForNetIdCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadPlayerStorageForNetIdCompleteDelegate"] = {
 		fields = {
 			{
 				name = "NetId",
@@ -7739,8 +7726,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 46856,
-	},
-	["AddReadPlayerStorageForNetIdCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadPlayerStorageForNetIdCompleteDelegate"] = {
 		fields = {
 			{
 				name = "NetId",
@@ -7761,8 +7748,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 46852,
-	},
-	["OnReadPlayerStorageForNetIdComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadPlayerStorageForNetIdComplete"] = {
 		fields = {
 			{
 				name = "NetId",
@@ -7783,8 +7770,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46849,
-	},
-	["ReadPlayerStorageForNetId"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadPlayerStorageForNetId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7821,8 +7808,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46844,
 		retOffset = 32,
-	},
-	["ClearReadPlayerStorageCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadPlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7843,8 +7830,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46841,
-	},
-	["AddReadPlayerStorageCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadPlayerStorageCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7865,8 +7852,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46837,
-	},
-	["OnReadPlayerStorageComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadPlayerStorageComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7887,8 +7874,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 46834,
-	},
-	["ReadPlayerStorage"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadPlayerStorage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7926,8 +7913,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46829,
 		retOffset = 12,
-	},
-	["ClearWriteProfileSettingsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearWriteProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7948,8 +7935,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46826,
-	},
-	["AddWriteProfileSettingsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddWriteProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7970,8 +7957,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46822,
-	},
-	["OnWriteProfileSettingsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnWriteProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -7992,8 +7979,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 46819,
-	},
-	["WriteProfileSettings"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["WriteProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8022,8 +8009,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46815,
 		retOffset = 8,
-	},
-	["GetProfileSettings"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8044,8 +8031,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46811,
 		retOffset = 4,
-	},
-	["ClearReadProfileSettingsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearReadProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8066,8 +8053,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46808,
-	},
-	["AddReadProfileSettingsCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddReadProfileSettingsCompleteDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8088,8 +8075,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46802,
-	},
-	["OnReadProfileSettingsComplete"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnReadProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8110,8 +8097,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 46799,
-	},
-	["ReadProfileSettings"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ReadProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8140,8 +8127,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46795,
 		retOffset = 8,
-	},
-	["ClearFriendsChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearFriendsChangeDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8162,8 +8149,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46792,
-	},
-	["AddFriendsChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddFriendsChangeDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8184,8 +8171,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46788,
-	},
-	["ClearMutingChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearMutingChangeDelegate"] = {
 		fields = {
 			{
 				name = "MutingDelegate",
@@ -8198,8 +8185,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46786,
-	},
-	["AddMutingChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddMutingChangeDelegate"] = {
 		fields = {
 			{
 				name = "MutingDelegate",
@@ -8212,8 +8199,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46783,
-	},
-	["ClearLoginCancelledDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginCancelledDelegate"] = {
 		fields = {
 			{
 				name = "CancelledDelegate",
@@ -8226,8 +8213,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46781,
-	},
-	["AddLoginCancelledDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginCancelledDelegate"] = {
 		fields = {
 			{
 				name = "CancelledDelegate",
@@ -8240,8 +8227,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46779,
-	},
-	["ClearLoginStatusChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginStatusDelegate",
@@ -8262,8 +8249,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46776,
-	},
-	["AddLoginStatusChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginStatusChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginStatusDelegate",
@@ -8284,8 +8271,8 @@ local c = g_classFuncs
 		},
 		dataSize = 13,
 		index = 46771,
-	},
-	["OnLoginStatusChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginStatusChange"] = {
 		fields = {
 			{
 				name = "NewStatus",
@@ -8307,8 +8294,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46768,
-	},
-	["ClearLoginChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginDelegate",
@@ -8321,8 +8308,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46766,
-	},
-	["AddLoginChangeDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginChangeDelegate"] = {
 		fields = {
 			{
 				name = "LoginDelegate",
@@ -8335,8 +8322,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46763,
-	},
-	["IsMuted"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsMuted"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8365,8 +8352,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 46759,
 		retOffset = 28,
-	},
-	["AreAnyFriends"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AreAnyFriends"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8397,8 +8384,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46754,
 		retOffset = 16,
-	},
-	["IsFriend"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsFriend"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8427,8 +8414,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 46750,
 		retOffset = 28,
-	},
-	["CanShowPresenceInformation"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CanShowPresenceInformation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8450,8 +8437,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46747,
 		retOffset = 1,
-	},
-	["CanViewPlayerProfiles"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CanViewPlayerProfiles"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8473,8 +8460,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46744,
 		retOffset = 1,
-	},
-	["CanPurchaseContent"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CanPurchaseContent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8496,8 +8483,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46741,
 		retOffset = 1,
-	},
-	["CanDownloadUserContent"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CanDownloadUserContent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8519,8 +8506,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46738,
 		retOffset = 1,
-	},
-	["CanCommunicate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CanCommunicate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8542,8 +8529,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46735,
 		retOffset = 1,
-	},
-	["CanPlayOnline"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["CanPlayOnline"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8565,8 +8552,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46732,
 		retOffset = 1,
-	},
-	["ClearGetUserAgeGroupDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearGetUserAgeGroupDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8587,8 +8574,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46729,
-	},
-	["AddGetUserAgeGroupDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddGetUserAgeGroupDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8609,8 +8596,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46726,
-	},
-	["GetUserAgeGroup"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetUserAgeGroup"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8631,8 +8618,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46720,
 		retOffset = 4,
-	},
-	["OnGetUserAgeGroup"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnGetUserAgeGroup"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8654,8 +8641,8 @@ local c = g_classFuncs
 		},
 		dataSize = 2,
 		index = 46717,
-	},
-	["GetPlayerNickname"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetPlayerNickname"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8678,8 +8665,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46713,
 		retOffset = 4,
-	},
-	["GetUniquePlayerId"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetUniquePlayerId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8709,8 +8696,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 46708,
 		retOffset = 28,
-	},
-	["IsLocalLogin"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsLocalLogin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8731,8 +8718,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46705,
 		retOffset = 4,
-	},
-	["IsGuestLogin"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["IsGuestLogin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8753,8 +8740,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46702,
 		retOffset = 4,
-	},
-	["GetLoginStatus"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["GetLoginStatus"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8776,8 +8763,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 46699,
 		retOffset = 1,
-	},
-	["ClearLogoutCompletedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLogoutCompletedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8798,8 +8785,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46696,
-	},
-	["AddLogoutCompletedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLogoutCompletedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8820,8 +8807,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46692,
-	},
-	["OnLogoutCompleted"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLogoutCompleted"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -8834,8 +8821,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46690,
-	},
-	["Logout"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["Logout"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8856,8 +8843,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46687,
 		retOffset = 4,
-	},
-	["ClearLoginFailedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ClearLoginFailedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8878,8 +8865,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 46684,
-	},
-	["AddLoginFailedDelegate"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AddLoginFailedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8900,8 +8887,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46680,
-	},
-	["OnLoginFailed"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginFailed"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -8923,8 +8910,8 @@ local c = g_classFuncs
 		},
 		dataSize = 2,
 		index = 46677,
-	},
-	["AutoLogin"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["AutoLogin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8937,8 +8924,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46675,
 		retOffset = 0,
-	},
-	["Login"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["Login"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8984,8 +8971,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46669,
 		retOffset = 32,
-	},
-	["ShowLoginUI"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["ShowLoginUI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9025,26 +9012,26 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46664,
 		retOffset = 12,
-	},
-	["OnFriendsChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnFriendsChange"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46663,
-	},
-	["OnMutingChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnMutingChange"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46662,
-	},
-	["OnLoginCancelled"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginCancelled"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46661,
-	},
-	["OnLoginChange"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["OnLoginChange"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -9057,14 +9044,14 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 46659,
-	},
-	["eventExit"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["eventExit"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46658,
-	},
-	["eventInit"] = {
+	}
+	g_classFuncs["UOnlineSubsystemSteamworks"]["eventInit"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9077,4 +9064,4 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46656,
 		retOffset = 0,
-	},
+	}

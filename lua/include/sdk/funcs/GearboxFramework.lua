@@ -1,67 +1,233 @@
+g_classFuncs["USpecialMoveComponent"] = {}
+g_classFuncs["UBehavior_SetObjectParam"] = {}
+g_classFuncs["UPopulationFactoryPopulationDefinition"] = {}
+g_classFuncs["UGearboxRenderTextureManager"] = {}
+g_classFuncs["UGearboxDialogAct_Compare"] = {}
+g_classFuncs["UBehavior_ToggleDialog"] = {}
+g_classFuncs["UBehavior_ChangeRemoteBehaviorSequenceState"] = {}
+g_classFuncs["UBehavior_SetFloatParam"] = {}
+g_classFuncs["UPawnMoveLocationRequest"] = {}
+g_classFuncs["UGearboxPlayerInput"] = {}
+g_classFuncs["UInterfaceGearboxCamera"] = {}
+g_classFuncs["UPopulationMasterAttributeContextResolver"] = {}
+g_classFuncs["UGFxMovieDrawStyleInstanceData"] = {}
+g_classFuncs["USpecialMoveDefinition"] = {}
+g_classFuncs["UCompoundExpressionEvaluator"] = {}
+g_classFuncs["UAIFactoryBase"] = {}
+g_classFuncs["UGFxMovieState"] = {}
+g_classFuncs["UIGbxMessageListener"] = {}
+g_classFuncs["UAICostExpressionEvaluator"] = {}
+g_classFuncs["UExposureUtilityBase"] = {}
+g_classFuncs["UBehavior_CustomEvent"] = {}
+g_classFuncs["UTargetIterator"] = {}
+g_classFuncs["UGBXActorList"] = {}
+g_classFuncs["UGFxMovieDrawStyle"] = {}
+g_classFuncs["UAIResourceExpressionEvaluator"] = {}
+g_classFuncs["UGearboxDialogNode"] = {}
+g_classFuncs["AGearboxDialogActor"] = {}
+g_classFuncs["UAction_FaceThreat"] = {}
+g_classFuncs["UIPopulationSpawnPoint"] = {}
+g_classFuncs["UGearboxEngine"] = {}
+g_classFuncs["UBehavior_SpecialMoveStop"] = {}
+g_classFuncs["UGearboxGFxMovie"] = {}
+g_classFuncs["APopulationOpportunityPoint"] = {}
+g_classFuncs["UPopulationFactoryGeneric"] = {}
+g_classFuncs["UBehavior_CompareValues"] = {}
+g_classFuncs["UGbxMessageManager"] = {}
+g_classFuncs["UGearboxSkeletalMeshComponent"] = {}
+g_classFuncs["USparkTypes"] = {}
+g_classFuncs["UPhysicsStateExpressionEvaluator"] = {}
+g_classFuncs["UBehavior_GetVectorParam"] = {}
+g_classFuncs["UAIComponent"] = {}
+g_classFuncs["UBehavior_GetObjectParam"] = {}
+g_classFuncs["UBehavior_StopDialog"] = {}
+g_classFuncs["UICustomEvent"] = {}
+g_classFuncs["AGearboxMind"] = {}
+g_classFuncs["UGearboxDialogManager"] = {}
+g_classFuncs["USeqEvent_EncounterWaveComplete"] = {}
+g_classFuncs["APopulationOpportunityCombat"] = {}
+g_classFuncs["UGFxMovieDrawStyleHUD"] = {}
+g_classFuncs["UPopulationDefinition"] = {}
+g_classFuncs["UITimerBehavior"] = {}
+g_classFuncs["UGearboxDialogVariable"] = {}
+g_classFuncs["UBehaviorHelpers"] = {}
+g_classFuncs["UGearboxAIFactory"] = {}
+g_classFuncs["USparkInterface"] = {}
+g_classFuncs["UPopulationAspect"] = {}
+g_classFuncs["UGFxMovieDefinition"] = {}
+g_classFuncs["UIAIInterface"] = {}
+g_classFuncs["USparkServiceConfiguration"] = {}
+g_classFuncs["APopulationOpportunity"] = {}
+g_classFuncs["UBehavior_ChangeTimer"] = {}
+g_classFuncs["UGbxMessage"] = {}
+g_classFuncs["UIRuleEngineOwner"] = {}
+g_classFuncs["UKnowledgeRecord"] = {}
+g_classFuncs["UBehavior_SendGbxMessage"] = {}
+g_classFuncs["UBehavior_AIPriority"] = {}
+g_classFuncs["UPopUpDebugBarGraph"] = {}
+g_classFuncs["AGearboxGameInfo"] = {}
+g_classFuncs["UGearboxRuleEngine"] = {}
+g_classFuncs["UGearboxCoverStateManager"] = {}
+g_classFuncs["USpecialMoveRandom"] = {}
+g_classFuncs["URuleEngine"] = {}
+g_classFuncs["UBehavior_GetFloatParam"] = {}
+g_classFuncs["UBehavior_SpecialMove"] = {}
+g_classFuncs["UActorAttributeContextResolver"] = {}
+g_classFuncs["UMindTargetInfo"] = {}
+g_classFuncs["UBehavior_StartAkAmbientSound"] = {}
+g_classFuncs["URule"] = {}
+g_classFuncs["UGFxMovieDrawStyleSplitscreen"] = {}
+g_classFuncs["UBehaviorProviderDefinition"] = {}
+g_classFuncs["APopulationEncounter"] = {}
+g_classFuncs["UGearboxDialogComponent"] = {}
+g_classFuncs["USparkInterfaceImpl"] = {}
+g_classFuncs["UBehavior_SetVectorParam"] = {}
+g_classFuncs["UBehavior_Delay"] = {}
+g_classFuncs["UBehavior_ModifyTimer"] = {}
+g_classFuncs["UGearboxAccountActions"] = {}
+g_classFuncs["UGFxMovieDrawStyleMesh"] = {}
+g_classFuncs["UAllegianceExpressionEvaluator"] = {}
+g_classFuncs["USparkNews"] = {}
+g_classFuncs["URegionDefinition"] = {}
+g_classFuncs["UBehavior_CallFunction"] = {}
+g_classFuncs["AGearboxAIMoveNode"] = {}
+g_classFuncs["UBehavior_Gate"] = {}
+g_classFuncs["UBehavior_InterpolateFloatOverTime"] = {}
+g_classFuncs["UGearboxDialogAct_Talk"] = {}
+g_classFuncs["UGFxMovieStatePlayerAware"] = {}
+g_classFuncs["UFlagExpressionEvaluator"] = {}
+g_classFuncs["UFiringZoneCollectionDefinition"] = {}
+g_classFuncs["UIBehaviorConsumer"] = {}
+g_classFuncs["UAnimNodeSpecialMoveBlend"] = {}
+g_classFuncs["UCameraModifierLookAt"] = {}
+g_classFuncs["UGearboxCameraModifier"] = {}
+g_classFuncs["UGearboxGlobals"] = {}
+g_classFuncs["UFlagDefinition"] = {}
+g_classFuncs["UGearboxDialogAct_ObjectParameterSwitch"] = {}
+g_classFuncs["UGearboxDialogAct_Chance"] = {}
+g_classFuncs["UBehaviorKernel"] = {}
+g_classFuncs["UGearboxDialogAct_Trigger"] = {}
+g_classFuncs["UGearboxDialogAction"] = {}
+g_classFuncs["UGearboxProcess"] = {}
+g_classFuncs["UCameraModifierCrossfade"] = {}
+g_classFuncs["UGFxMovieManager"] = {}
+g_classFuncs["UGBXObjectList"] = {}
+g_classFuncs["UGFxMovie_StateParent"] = {}
+g_classFuncs["USpecialMoveInterface"] = {}
+g_classFuncs["UGearboxEditorNode"] = {}
+g_classFuncs["UGestaltSkeletalMeshDefinition"] = {}
+g_classFuncs["AGearboxPawn"] = {}
+g_classFuncs["USeqAct_AllPlayersInVolume"] = {}
+g_classFuncs["UGearboxAccountData"] = {}
+g_classFuncs["UActionSequence"] = {}
+g_classFuncs["UAIDefinition"] = {}
+g_classFuncs["UBehavior_StopAkAmbientSound"] = {}
+g_classFuncs["UBehavior_AITargeting"] = {}
+g_classFuncs["UFiringBehaviorManager"] = {}
+g_classFuncs["ULeviathanService"] = {}
+g_classFuncs["UIBehaviorProvider"] = {}
+g_classFuncs["UIGFxActorMovie"] = {}
+g_classFuncs["USpecialMoveExpressionList"] = {}
+g_classFuncs["UBehavior_TriggerDialogEvent"] = {}
+g_classFuncs["AGearboxPlayerController"] = {}
+g_classFuncs["APopulationOpportunityArea"] = {}
+g_classFuncs["AGearboxCameraBasic"] = {}
+g_classFuncs["UGFxActorMoviePool"] = {}
+g_classFuncs["UGearboxAnimDefinition"] = {}
+g_classFuncs["UBehavior_SetFlag"] = {}
+g_classFuncs["URuleEngineLoadBalanceManager"] = {}
+g_classFuncs["UGearboxDialogInterface"] = {}
+g_classFuncs["UBehavior_IsSequenceEnabled"] = {}
+g_classFuncs["UGearboxDialogGroup"] = {}
+g_classFuncs["UBehavior_ChangeAnyBehaviorSequenceState"] = {}
+g_classFuncs["UBehavior_ChangeLocalBehaviorSequenceState"] = {}
+g_classFuncs["UAIComponentAttributeContextResolver"] = {}
+g_classFuncs["AWireTerminal"] = {}
+g_classFuncs["UBehavior_AIHold"] = {}
+g_classFuncs["UBehavior_PostAkEvent"] = {}
+g_classFuncs["USeqEvent_PopulatedPoint"] = {}
+g_classFuncs["UGearboxNavigationHandle"] = {}
+g_classFuncs["USeqEvent_PopulatedActor"] = {}
+g_classFuncs["UBehavior_CompareBool"] = {}
+g_classFuncs["USparkInitializationProcess"] = {}
+g_classFuncs["APopulationPoint"] = {}
+g_classFuncs["UPopulationFactory"] = {}
+g_classFuncs["APopulationOpportunityCloner"] = {}
+g_classFuncs["UBehavior_Metronome"] = {}
+g_classFuncs["UIStreamingDataEvent"] = {}
+g_classFuncs["UGearboxDialogEventData"] = {}
+g_classFuncs["UGearboxLocationRequest"] = {}
+g_classFuncs["UAIDebugCamera"] = {}
+g_classFuncs["UActionSequenceList"] = {}
+g_classFuncs["AGearboxAIController"] = {}
+g_classFuncs["UAttributeExpressionEvaluator"] = {}
+g_classFuncs["UActionSequenceRandom"] = {}
+g_classFuncs["UPopulationMaster"] = {}
+g_classFuncs["UAction_PawnMovementBase"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["ToggleAITree"] = {
+	g_classFuncs["UAIDebugCamera"]["ToggleAITree"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39369,
-	},
-	["ToggleTargetViewCones"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleTargetViewCones"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39368,
-	},
-	["ToggleAwarenessZones"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleAwarenessZones"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39367,
-	},
-	["ToggleRuleEngineLoadBalance"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleRuleEngineLoadBalance"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 39366,
-	},
-	["ToggleCombat"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleCombat"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39365,
-	},
-	["ToggleShowTimers"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleShowTimers"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39364,
-	},
-	["ToggleResources"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleResources"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39363,
-	},
-	["ToggleInactiveRules"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleInactiveRules"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39362,
-	},
-	["ToggleRules"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleRules"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39361,
-	},
-	["ToggleFlags"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["ToggleFlags"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39360,
-	},
-	["GetTracker"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["GetTracker"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -74,8 +240,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39358,
 		retOffset = 0,
-	},
-	["SetMind"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetMind"] = {
 		fields = {
 			{
 				name = "NewMind",
@@ -88,8 +254,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39356,
-	},
-	["InitDummies"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["InitDummies"] = {
 		fields = {
 			{
 				name = "NewNumDummies",
@@ -102,8 +268,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39354,
-	},
-	["WantsToDoCameraInspection"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["WantsToDoCameraInspection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -116,8 +282,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39352,
 		retOffset = 0,
-	},
-	["SetCurrentInspectedTarget"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetCurrentInspectedTarget"] = {
 		fields = {
 			{
 				name = "NewName",
@@ -130,8 +296,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39350,
-	},
-	["CompareRuleSetAndAdjustRuleIdx"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["CompareRuleSetAndAdjustRuleIdx"] = {
 		fields = {
 			{
 				name = "OldSnapshot",
@@ -152,8 +318,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39347,
-	},
-	["SetRuleEngine"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetRuleEngine"] = {
 		fields = {
 			{
 				name = "NewRuleEngine",
@@ -166,44 +332,44 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39345,
-	},
-	["SetPrevSnapshotRule"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetPrevSnapshotRule"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39344,
-	},
-	["SetNextSnapshotRule"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetNextSnapshotRule"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39343,
-	},
-	["SetPrevSnapshot"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetPrevSnapshot"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39342,
-	},
-	["SetNextSnapshot"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["SetNextSnapshot"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39341,
-	},
-	["NotifyGameUnPaused"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["NotifyGameUnPaused"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39340,
-	},
-	["NotifyGamePaused"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["NotifyGamePaused"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39339,
-	},
-	["Display"] = {
+	}
+	g_classFuncs["UAIDebugCamera"]["Display"] = {
 		fields = {
 			{
 				name = "HUD",
@@ -216,8 +382,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39337,
-	},
-	["IsPlaying"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["IsPlaying"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -238,8 +404,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39668,
 		retOffset = 4,
-	},
-	["SetRootMotion"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["SetRootMotion"] = {
 		fields = {
 			{
 				name = "RMDef",
@@ -252,8 +418,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39666,
-	},
-	["GetCurrentAnimDef"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["GetCurrentAnimDef"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -266,8 +432,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39664,
 		retOffset = 0,
-	},
-	["GetCurrentAnimName"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["GetCurrentAnimName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -281,8 +447,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39662,
 		retOffset = 0,
-	},
-	["Finish"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["Finish"] = {
 		fields = {
 			{
 				name = "bInterrupted",
@@ -295,8 +461,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39660,
-	},
-	["Stop"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["Stop"] = {
 		fields = {
 			{
 				name = "bInterrupted",
@@ -309,8 +475,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39658,
-	},
-	["PlayData"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["PlayData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -368,8 +534,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 39651,
 		retOffset = 48,
-	},
-	["Play"] = {
+	}
+	g_classFuncs["UAnimNodeSpecialMoveBlend"]["Play"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -426,8 +592,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 39644,
 		retOffset = 24,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UAttributeExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -448,8 +614,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39672,
 		retOffset = 4,
-	},
-	["CallFunction"] = {
+	}
+	g_classFuncs["UBehavior_CallFunction"]["CallFunction"] = {
 		fields = {
 			{
 				name = "inActor",
@@ -470,8 +636,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 39744,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_CallFunction"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -525,8 +691,8 @@ local c = g_classFuncs
 		},
 		dataSize = 60,
 		index = 39737,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_ChangeRemoteBehaviorSequenceState"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -580,8 +746,8 @@ local c = g_classFuncs
 		},
 		dataSize = 72,
 		index = 39780,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_ChangeTimer"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -635,8 +801,8 @@ local c = g_classFuncs
 		},
 		dataSize = 76,
 		index = 39822,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_IsSequenceEnabled"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -690,8 +856,8 @@ local c = g_classFuncs
 		},
 		dataSize = 72,
 		index = 39959,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_PostAkEvent"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -745,8 +911,8 @@ local c = g_classFuncs
 		},
 		dataSize = 84,
 		index = 40012,
-	},
-	["RunAllBehaviorsForEvent"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["RunAllBehaviorsForEvent"] = {
 		fields = {
 			{
 				name = "EventName",
@@ -819,8 +985,8 @@ local c = g_classFuncs
 		},
 		dataSize = 57,
 		index = 40335,
-	},
-	["BehaviorStrategy"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["BehaviorStrategy"] = {
 		fields = {
 			{
 				name = "BehaviorSet",
@@ -860,8 +1026,8 @@ local c = g_classFuncs
 		},
 		dataSize = 25,
 		index = 40328,
-	},
-	["BehaviorSetStrategy"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["BehaviorSetStrategy"] = {
 		fields = {
 			{
 				name = "BehaviorSetList",
@@ -876,8 +1042,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 40324,
-	},
-	["ResolveBehaviorProviderDefinitionReference"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["ResolveBehaviorProviderDefinitionReference"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -915,8 +1081,8 @@ local c = g_classFuncs
 		dataSize = 64,
 		index = 39789,
 		retOffset = 60,
-	},
-	["IsBehaviorsV2"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["IsBehaviorsV2"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -938,8 +1104,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 40021,
 		retOffset = 28,
-	},
-	["ShouldContinueExecution"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["ShouldContinueExecution"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -985,8 +1151,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 40314,
 		retOffset = 40,
-	},
-	["GetNextFireLocationSocket"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["GetNextFireLocationSocket"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1027,8 +1193,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 40306,
 		retOffset = 28,
-	},
-	["GetRotationFromAttachmentLocationData"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["GetRotationFromAttachmentLocationData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1058,8 +1224,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 40302,
 		retOffset = 40,
-	},
-	["GetRelativeDirection"] = {
+	}
+	g_classFuncs["UBehaviorHelpers"]["GetRelativeDirection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1106,8 +1272,8 @@ local c = g_classFuncs
 		dataSize = 72,
 		index = 40292,
 		retOffset = 60,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UCompoundExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1128,8 +1294,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40725,
 		retOffset = 4,
-	},
-	["RemoveAndDeleteActorsOfClassFromLevel"] = {
+	}
+	g_classFuncs["UGBXActorList"]["RemoveAndDeleteActorsOfClassFromLevel"] = {
 		fields = {
 			{
 				name = "TheClass",
@@ -1150,8 +1316,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41020,
-	},
-	["RemoveActorsOfClassFromLevel"] = {
+	}
+	g_classFuncs["UGBXActorList"]["RemoveActorsOfClassFromLevel"] = {
 		fields = {
 			{
 				name = "TheClass",
@@ -1172,8 +1338,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41017,
-	},
-	["RemoveAndDeleteActorsFromLevel"] = {
+	}
+	g_classFuncs["UGBXActorList"]["RemoveAndDeleteActorsFromLevel"] = {
 		fields = {
 			{
 				name = "Level",
@@ -1186,8 +1352,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41015,
-	},
-	["RemoveActorsFromLevel"] = {
+	}
+	g_classFuncs["UGBXActorList"]["RemoveActorsFromLevel"] = {
 		fields = {
 			{
 				name = "Level",
@@ -1200,8 +1366,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41013,
-	},
-	["FindNextActorByLevel"] = {
+	}
+	g_classFuncs["UGBXActorList"]["FindNextActorByLevel"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1230,8 +1396,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41009,
 		retOffset = 8,
-	},
-	["FindFirstActorByLevel"] = {
+	}
+	g_classFuncs["UGBXActorList"]["FindFirstActorByLevel"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1260,8 +1426,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41005,
 		retOffset = 8,
-	},
-	["FindNextActorByClass"] = {
+	}
+	g_classFuncs["UGBXActorList"]["FindNextActorByClass"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1290,8 +1456,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41001,
 		retOffset = 8,
-	},
-	["FindFirstActorByClass"] = {
+	}
+	g_classFuncs["UGBXActorList"]["FindFirstActorByClass"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1320,8 +1486,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 40997,
 		retOffset = 8,
-	},
-	["RemoveActor"] = {
+	}
+	g_classFuncs["UGBXActorList"]["RemoveActor"] = {
 		fields = {
 			{
 				name = "Actor",
@@ -1334,8 +1500,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40995,
-	},
-	["AddActor"] = {
+	}
+	g_classFuncs["UGBXActorList"]["AddActor"] = {
 		fields = {
 			{
 				name = "Actor",
@@ -1356,8 +1522,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40992,
-	},
-	["RemoveObjectsOfClass"] = {
+	}
+	g_classFuncs["UGBXObjectList"]["RemoveObjectsOfClass"] = {
 		fields = {
 			{
 				name = "TheClass",
@@ -1370,8 +1536,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41055,
-	},
-	["FindNextObjectByClass"] = {
+	}
+	g_classFuncs["UGBXObjectList"]["FindNextObjectByClass"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1400,8 +1566,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41051,
 		retOffset = 8,
-	},
-	["FindFirstObjectByClass"] = {
+	}
+	g_classFuncs["UGBXObjectList"]["FindFirstObjectByClass"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1430,8 +1596,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41047,
 		retOffset = 8,
-	},
-	["RemoveObject"] = {
+	}
+	g_classFuncs["UGBXObjectList"]["RemoveObject"] = {
 		fields = {
 			{
 				name = "TheObject",
@@ -1444,8 +1610,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41045,
-	},
-	["AddObject"] = {
+	}
+	g_classFuncs["UGBXObjectList"]["AddObject"] = {
 		fields = {
 			{
 				name = "TheObject",
@@ -1458,8 +1624,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41043,
-	},
-	["ForceMoveToActor"] = {
+	}
+	g_classFuncs["AGearboxAIController"]["ForceMoveToActor"] = {
 		fields = {
 			{
 				name = "destActor",
@@ -1472,8 +1638,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41555,
-	},
-	["DoesPatrolPathExistToPoint"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["DoesPatrolPathExistToPoint"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1494,8 +1660,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41603,
 		retOffset = 4,
-	},
-	["GetAllLinkedNodes"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["GetAllLinkedNodes"] = {
 		fields = {
 			{
 				name = "OutNodes",
@@ -1510,8 +1676,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41600,
-	},
-	["GetNextMoveNodeClosestToPoint"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["GetNextMoveNodeClosestToPoint"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1532,8 +1698,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41597,
 		retOffset = 12,
-	},
-	["GetNextMoveNode"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["GetNextMoveNode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1546,8 +1712,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41595,
 		retOffset = 0,
-	},
-	["RemoveNode"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["RemoveNode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1568,8 +1734,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41592,
 		retOffset = 4,
-	},
-	["AddNode"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["AddNode"] = {
 		fields = {
 			{
 				name = "NewNode",
@@ -1582,14 +1748,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41590,
-	},
-	["ClearLinks"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["ClearLinks"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41589,
-	},
-	["OnToggle"] = {
+	}
+	g_classFuncs["AGearboxAIMoveNode"]["OnToggle"] = {
 		fields = {
 			{
 				name = "Action",
@@ -1602,14 +1768,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41587,
-	},
-	["eventFinishCameraLookAt"] = {
+	}
+	g_classFuncs["AGearboxCameraBasic"]["eventFinishCameraLookAt"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41781,
-	},
-	["eventEnableThirdPersonLookAt"] = {
+	}
+	g_classFuncs["AGearboxCameraBasic"]["eventEnableThirdPersonLookAt"] = {
 		fields = {
 			{
 				name = "LookAtXOffset",
@@ -1647,8 +1813,8 @@ local c = g_classFuncs
 		},
 		dataSize = 13,
 		index = 41776,
-	},
-	["BeginCameraLookAt"] = {
+	}
+	g_classFuncs["AGearboxCameraBasic"]["BeginCameraLookAt"] = {
 		fields = {
 			{
 				name = "LookAtTarget",
@@ -1717,8 +1883,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 41767,
-	},
-	["CalcSimpleThirdPersonView"] = {
+	}
+	g_classFuncs["AGearboxCameraBasic"]["CalcSimpleThirdPersonView"] = {
 		fields = {
 			{
 				name = "OutVT",
@@ -1740,8 +1906,8 @@ local c = g_classFuncs
 		},
 		dataSize = 112,
 		index = 41759,
-	},
-	["CalcBaseView"] = {
+	}
+	g_classFuncs["AGearboxCameraBasic"]["CalcBaseView"] = {
 		fields = {
 			{
 				name = "OutVT",
@@ -1763,8 +1929,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 41756,
-	},
-	["UpdateViewTarget"] = {
+	}
+	g_classFuncs["AGearboxCameraBasic"]["UpdateViewTarget"] = {
 		fields = {
 			{
 				name = "OutVT",
@@ -1786,8 +1952,8 @@ local c = g_classFuncs
 		},
 		dataSize = 80,
 		index = 41752,
-	},
-	["LerpFOV"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["LerpFOV"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1824,8 +1990,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 40598,
 		retOffset = 12,
-	},
-	["LerpRotation"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["LerpRotation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1863,8 +2029,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 40593,
 		retOffset = 28,
-	},
-	["LerpLocation"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["LerpLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1902,8 +2068,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 40588,
 		retOffset = 28,
-	},
-	["UpdateAllLerps"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["UpdateAllLerps"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -1925,8 +2091,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 40584,
-	},
-	["UpdateMasterFadePercentage"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["UpdateMasterFadePercentage"] = {
 		fields = {
 			{
 				name = "AdjustedDeltaTime",
@@ -1939,8 +2105,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40582,
-	},
-	["IsFadingDownwards"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["IsFadingDownwards"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1953,8 +2119,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40580,
 		retOffset = 0,
-	},
-	["IsFadingUpwards"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["IsFadingUpwards"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1967,8 +2133,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40578,
 		retOffset = 0,
-	},
-	["IsFadeInProgress"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["IsFadeInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1981,8 +2147,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40576,
 		retOffset = 0,
-	},
-	["StartFadeOut"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["StartFadeOut"] = {
 		fields = {
 			{
 				name = "NewTimeSpan",
@@ -2014,8 +2180,8 @@ local c = g_classFuncs
 		},
 		dataSize = 9,
 		index = 40572,
-	},
-	["StartFadeIn"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["StartFadeIn"] = {
 		fields = {
 			{
 				name = "NewTimeSpan",
@@ -2038,8 +2204,8 @@ local c = g_classFuncs
 		},
 		dataSize = 5,
 		index = 40569,
-	},
-	["SetDesiredCamera"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["SetDesiredCamera"] = {
 		fields = {
 			{
 				name = "DesiredLoc",
@@ -2068,8 +2234,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 40565,
-	},
-	["SetGBXCameraOwner"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["SetGBXCameraOwner"] = {
 		fields = {
 			{
 				name = "InCamera",
@@ -2082,8 +2248,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40563,
-	},
-	["AddCameraModifier"] = {
+	}
+	g_classFuncs["UGearboxCameraModifier"]["AddCameraModifier"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2104,8 +2270,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40560,
 		retOffset = 4,
-	},
-	["eventServerDialog_TriggerEvent"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["eventServerDialog_TriggerEvent"] = {
 		fields = {
 			{
 				name = "EventTag",
@@ -2136,8 +2302,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42100,
-	},
-	["SetDialogNameTag"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["SetDialogNameTag"] = {
 		fields = {
 			{
 				name = "NewName",
@@ -2150,8 +2316,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42098,
-	},
-	["GetReplicatedDialogData"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["GetReplicatedDialogData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2165,8 +2331,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42096,
 		retOffset = 0,
-	},
-	["SetReplicatedDialogData"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["SetReplicatedDialogData"] = {
 		fields = {
 			{
 				name = "TalkAct",
@@ -2188,8 +2354,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 42093,
-	},
-	["GetDialogGroups"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["GetDialogGroups"] = {
 		fields = {
 			{
 				name = "Groups",
@@ -2204,8 +2370,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42090,
-	},
-	["GetDialogComponent"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["GetDialogComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2218,8 +2384,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40241,
 		retOffset = 0,
-	},
-	["GetDialogNameTag"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["GetDialogNameTag"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2232,8 +2398,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42088,
 		retOffset = 0,
-	},
-	["GetActor"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["GetActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2246,8 +2412,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40255,
 		retOffset = 0,
-	},
-	["CanTalk"] = {
+	}
+	g_classFuncs["UGearboxDialogInterface"]["CanTalk"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2260,8 +2426,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42086,
 		retOffset = 0,
-	},
-	["IsChild"] = {
+	}
+	g_classFuncs["UGearboxEditorNode"]["IsChild"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2282,8 +2448,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39595,
 		retOffset = 4,
-	},
-	["GetSparkInterface"] = {
+	}
+	g_classFuncs["UGearboxEngine"]["GetSparkInterface"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2297,8 +2463,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41225,
 		retOffset = 0,
-	},
-	["eventIsCurrentDeviceValid"] = {
+	}
+	g_classFuncs["UGearboxEngine"]["eventIsCurrentDeviceValid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2320,8 +2486,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 42181,
 		retOffset = 4,
-	},
-	["HasStorageDeviceBeenRemoved"] = {
+	}
+	g_classFuncs["UGearboxEngine"]["HasStorageDeviceBeenRemoved"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2334,8 +2500,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42179,
 		retOffset = 0,
-	},
-	["GetCurrentDeviceID"] = {
+	}
+	g_classFuncs["UGearboxEngine"]["GetCurrentDeviceID"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2348,8 +2514,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42177,
 		retOffset = 0,
-	},
-	["SetCurrentDeviceID"] = {
+	}
+	g_classFuncs["UGearboxEngine"]["SetCurrentDeviceID"] = {
 		fields = {
 			{
 				name = "NewDeviceID",
@@ -2371,8 +2537,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42174,
-	},
-	["eventPostLogin"] = {
+	}
+	g_classFuncs["AGearboxGameInfo"]["eventPostLogin"] = {
 		fields = {
 			{
 				name = "NewPlayer",
@@ -2385,8 +2551,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42184,
-	},
-	["extSetLanguageExt"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["extSetLanguageExt"] = {
 		fields = {
 			{
 				name = "ClipPath",
@@ -2399,14 +2565,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42383,
-	},
-	["OnClosedOnDeath"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["OnClosedOnDeath"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42382,
-	},
-	["IsShowingFlashMouse"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["IsShowingFlashMouse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2419,8 +2585,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42380,
 		retOffset = 0,
-	},
-	["extIsMouseablePlatform"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["extIsMouseablePlatform"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2433,14 +2599,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42378,
 		retOffset = 0,
-	},
-	["eventSetMouseableFlag"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventSetMouseableFlag"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42377,
-	},
-	["GetStyleDebugString"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GetStyleDebugString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2455,8 +2621,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 42371,
 		retOffset = 0,
-	},
-	["GetStateDebugString"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GetStateDebugString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2480,8 +2646,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 42366,
 		retOffset = 4,
-	},
-	["InitializeFrom"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["InitializeFrom"] = {
 		fields = {
 			{
 				name = "SrcMovie",
@@ -2494,8 +2660,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42364,
-	},
-	["RemoveStylesDrawnTo"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["RemoveStylesDrawnTo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2524,8 +2690,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 42360,
 		retOffset = 12,
-	},
-	["RemoveStyles"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["RemoveStyles"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2546,8 +2712,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42357,
 		retOffset = 8,
-	},
-	["RemoveStyle"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["RemoveStyle"] = {
 		fields = {
 			{
 				name = "Style",
@@ -2560,8 +2726,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42355,
-	},
-	["AddStyle"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["AddStyle"] = {
 		fields = {
 			{
 				name = "Style",
@@ -2574,20 +2740,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42353,
-	},
-	["ShutdownMoviePlayback"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["ShutdownMoviePlayback"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42296,
-	},
-	["InitMoviePlayback"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["InitMoviePlayback"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42294,
-	},
-	["GetRenderTexture"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GetRenderTexture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2600,8 +2766,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42351,
 		retOffset = 0,
-	},
-	["eventMovieState_OnChanged"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventMovieState_OnChanged"] = {
 		fields = {
 			{
 				name = "bStateWasChanged",
@@ -2614,8 +2780,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42348,
-	},
-	["eventMovieState_SetFromMovie"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventMovieState_SetFromMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2636,8 +2802,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42345,
 		retOffset = 4,
-	},
-	["MovieState_Copy"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_Copy"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2668,8 +2834,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 42341,
 		retOffset = 48,
-	},
-	["MovieState_Compare"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_Compare"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2700,8 +2866,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 42337,
 		retOffset = 48,
-	},
-	["MovieState_Toggle"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_Toggle"] = {
 		fields = {
 			{
 				name = "TheState",
@@ -2714,8 +2880,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42335,
-	},
-	["MovieState_Enable"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_Enable"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2745,8 +2911,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 42331,
 		retOffset = 12,
-	},
-	["MovieState_IsEnabled"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_IsEnabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2767,8 +2933,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42328,
 		retOffset = 8,
-	},
-	["MovieState_SupportsState"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_SupportsState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2789,20 +2955,20 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42325,
 		retOffset = 8,
-	},
-	["MovieState_Init"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_Init"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42324,
-	},
-	["InitFromDefinition"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["InitFromDefinition"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42323,
-	},
-	["MovieState_Apply"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_Apply"] = {
 		fields = {
 			{
 				name = "Movie",
@@ -2823,8 +2989,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42320,
-	},
-	["MovieState_ApplyState"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["MovieState_ApplyState"] = {
 		fields = {
 			{
 				name = "TheState",
@@ -2845,8 +3011,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42317,
-	},
-	["ApplyState"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["ApplyState"] = {
 		fields = {
 			{
 				name = "StateName",
@@ -2867,8 +3033,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 42314,
-	},
-	["SetRenderingEnabled"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["SetRenderingEnabled"] = {
 		fields = {
 			{
 				name = "bEnabled",
@@ -2881,8 +3047,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42312,
-	},
-	["GotoAndStop"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GotoAndStop"] = {
 		fields = {
 			{
 				name = "FrameLabel",
@@ -2895,8 +3061,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42310,
-	},
-	["GotoAndPlay"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GotoAndPlay"] = {
 		fields = {
 			{
 				name = "FrameLabel",
@@ -2909,8 +3075,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42308,
-	},
-	["PlaySpecialUISound"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["PlaySpecialUISound"] = {
 		fields = {
 			{
 				name = "SoundString",
@@ -2923,8 +3089,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 42305,
-	},
-	["eventPlayUISound"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventPlayUISound"] = {
 		fields = {
 			{
 				name = "UIEvent",
@@ -2937,8 +3103,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42303,
-	},
-	["eventSetOtherObject"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventSetOtherObject"] = {
 		fields = {
 			{
 				name = "Obj",
@@ -2951,8 +3117,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42301,
-	},
-	["GetInstanceContextObject"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GetInstanceContextObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2965,20 +3131,20 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42299,
 		retOffset = 0,
-	},
-	["eventOnTick"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventOnTick"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42298,
-	},
-	["eventOnClose"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventOnClose"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42297,
-	},
-	["eventStart"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["eventStart"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3000,8 +3166,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42291,
 		retOffset = 4,
-	},
-	["ColorizeTooltipText"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["ColorizeTooltipText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3033,8 +3199,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 42287,
 		retOffset = 16,
-	},
-	["GFxColoredText"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GFxColoredText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3077,8 +3243,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 42282,
 		retOffset = 20,
-	},
-	["SingleArgInvokeB"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["SingleArgInvokeB"] = {
 		fields = {
 			{
 				name = "Command",
@@ -3099,8 +3265,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 42279,
-	},
-	["SingleArgInvokeS"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["SingleArgInvokeS"] = {
 		fields = {
 			{
 				name = "Command",
@@ -3121,8 +3287,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 42276,
-	},
-	["SingleArgInvokeF"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["SingleArgInvokeF"] = {
 		fields = {
 			{
 				name = "Command",
@@ -3143,8 +3309,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 42273,
-	},
-	["GetLocalPlayer"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["GetLocalPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3157,8 +3323,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42271,
 		retOffset = 0,
-	},
-	["OnClosed"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["OnClosed"] = {
 		fields = {
 			{
 				name = "Movie",
@@ -3171,8 +3337,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42241,
-	},
-	["WantsControllerInput"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["WantsControllerInput"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3193,8 +3359,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42267,
 		retOffset = 4,
-	},
-	["SetExternalTexture"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["SetExternalTexture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3223,8 +3389,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42263,
 		retOffset = 16,
-	},
-	["OnInputAxis"] = {
+	}
+	g_classFuncs["UGearboxGFxMovie"]["OnInputAxis"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3269,8 +3435,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 42243,
 		retOffset = 20,
-	},
-	["MovieState_OnChanged"] = {
+	}
+	g_classFuncs["UGFxMovie_StateParent"]["MovieState_OnChanged"] = {
 		fields = {
 			{
 				name = "bStateWasChanged",
@@ -3283,8 +3449,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43521,
-	},
-	["eventStart"] = {
+	}
+	g_classFuncs["UGFxMovie_StateParent"]["eventStart"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3306,8 +3472,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43518,
 		retOffset = 4,
-	},
-	["GetBehaviorKernel"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetBehaviorKernel"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3320,8 +3486,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39044,
 		retOffset = 0,
-	},
-	["GetDialogManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetDialogManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3334,8 +3500,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39042,
 		retOffset = 0,
-	},
-	["GetPopulationRespawnDelay"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetPopulationRespawnDelay"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3348,8 +3514,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39040,
 		retOffset = 0,
-	},
-	["eventShowDialog"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["eventShowDialog"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3371,8 +3537,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39037,
 		retOffset = 4,
-	},
-	["NotifyActorDied"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["NotifyActorDied"] = {
 		fields = {
 			{
 				name = "TheActor",
@@ -3393,8 +3559,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39034,
-	},
-	["DoesLOSIntersectSpecialOccluder"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["DoesLOSIntersectSpecialOccluder"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3431,8 +3597,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 39028,
 		retOffset = 28,
-	},
-	["HasPhysXCapableGPU"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["HasPhysXCapableGPU"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3445,8 +3611,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39033,
 		retOffset = 0,
-	},
-	["GetPlatform"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetPlatform"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3460,8 +3626,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 39026,
 		retOffset = 0,
-	},
-	["ValidatePlayerName"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["ValidatePlayerName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3493,8 +3659,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39022,
 		retOffset = 16,
-	},
-	["RegisterStateKey"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["RegisterStateKey"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3531,8 +3697,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 39017,
 		retOffset = 24,
-	},
-	["DoesStateKeyExist"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["DoesStateKeyExist"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3569,8 +3735,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 39012,
 		retOffset = 24,
-	},
-	["FreeTexture2D"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["FreeTexture2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3591,8 +3757,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39009,
 		retOffset = 4,
-	},
-	["GetTexture2D"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetTexture2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3605,8 +3771,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39007,
 		retOffset = 0,
-	},
-	["GetRenderTextureManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetRenderTextureManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3619,8 +3785,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39005,
 		retOffset = 0,
-	},
-	["GetGFxManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetGFxManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3633,8 +3799,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39003,
 		retOffset = 0,
-	},
-	["GetScreenSpaceManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetScreenSpaceManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3647,8 +3813,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39001,
 		retOffset = 0,
-	},
-	["GetMessageManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetMessageManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3661,8 +3827,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38999,
 		retOffset = 0,
-	},
-	["RegDynamicTextureStreaming"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["RegDynamicTextureStreaming"] = {
 		fields = {
 			{
 				name = "A",
@@ -3684,8 +3850,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38996,
-	},
-	["GetDynamicTextureActorList"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetDynamicTextureActorList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3698,8 +3864,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38994,
 		retOffset = 0,
-	},
-	["GetPopulationMaster"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetPopulationMaster"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3712,8 +3878,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38992,
 		retOffset = 0,
-	},
-	["GetWireManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetWireManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3726,8 +3892,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38990,
 		retOffset = 0,
-	},
-	["GetGBXObjectList"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetGBXObjectList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3740,8 +3906,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38988,
 		retOffset = 0,
-	},
-	["GetGBXActorList"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetGBXActorList"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3754,8 +3920,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38986,
 		retOffset = 0,
-	},
-	["GetRuleEngineLoadBalanceManager"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetRuleEngineLoadBalanceManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3768,8 +3934,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38984,
 		retOffset = 0,
-	},
-	["GetGearboxAIFactory"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetGearboxAIFactory"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3782,8 +3948,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38982,
 		retOffset = 0,
-	},
-	["GetExposureUtility"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetExposureUtility"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3796,8 +3962,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38980,
 		retOffset = 0,
-	},
-	["GetGearboxGlobals"] = {
+	}
+	g_classFuncs["UGearboxGlobals"]["GetGearboxGlobals"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3810,8 +3976,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38978,
 		retOffset = 0,
-	},
-	["GetLastDirection"] = {
+	}
+	g_classFuncs["UGearboxLocationRequest"]["GetLastDirection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3825,8 +3991,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42403,
 		retOffset = 0,
-	},
-	["GetLastOrigin"] = {
+	}
+	g_classFuncs["UGearboxLocationRequest"]["GetLastOrigin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3840,8 +4006,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42401,
 		retOffset = 0,
-	},
-	["GetDirection"] = {
+	}
+	g_classFuncs["UGearboxLocationRequest"]["GetDirection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3871,8 +4037,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42397,
 		retOffset = 16,
-	},
-	["GetOrigin"] = {
+	}
+	g_classFuncs["UGearboxLocationRequest"]["GetOrigin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3902,8 +4068,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42393,
 		retOffset = 16,
-	},
-	["Get"] = {
+	}
+	g_classFuncs["UGearboxLocationRequest"]["Get"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3933,8 +4099,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39137,
 		retOffset = 16,
-	},
-	["Get"] = {
+	}
+	g_classFuncs["UPawnMoveLocationRequest"]["Get"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3964,8 +4130,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39136,
 		retOffset = 16,
-	},
-	["GetAimDirection"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetAimDirection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3979,8 +4145,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42874,
 		retOffset = 0,
-	},
-	["SetDialogNameTag"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["SetDialogNameTag"] = {
 		fields = {
 			{
 				name = "NewName",
@@ -3993,8 +4159,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42872,
-	},
-	["eventServerDialog_TriggerEvent"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventServerDialog_TriggerEvent"] = {
 		fields = {
 			{
 				name = "EventTag",
@@ -4025,8 +4191,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42868,
-	},
-	["GetReplicatedDialogData"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetReplicatedDialogData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4040,8 +4206,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42866,
 		retOffset = 0,
-	},
-	["SetReplicatedDialogData"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["SetReplicatedDialogData"] = {
 		fields = {
 			{
 				name = "TalkAct",
@@ -4063,8 +4229,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 42863,
-	},
-	["GetDialogGroups"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetDialogGroups"] = {
 		fields = {
 			{
 				name = "Groups",
@@ -4079,8 +4245,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42860,
-	},
-	["GetDialogComponent"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetDialogComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4093,8 +4259,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42858,
 		retOffset = 0,
-	},
-	["GetDialogNameTag"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetDialogNameTag"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4107,8 +4273,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42856,
 		retOffset = 0,
-	},
-	["CanTalk"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["CanTalk"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4121,14 +4287,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42854,
 		retOffset = 0,
-	},
-	["OnCoverStateChanged"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["OnCoverStateChanged"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42853,
-	},
-	["ServerSetCoverState"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["ServerSetCoverState"] = {
 		fields = {
 			{
 				name = "NewCoverState",
@@ -4141,8 +4307,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42851,
-	},
-	["eventSetCoverState"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventSetCoverState"] = {
 		fields = {
 			{
 				name = "NewCoverState",
@@ -4155,8 +4321,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42849,
-	},
-	["GetMountAnimDistanceForSpeed"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetMountAnimDistanceForSpeed"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4196,8 +4362,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42844,
 		retOffset = 4,
-	},
-	["eventGetSpotOthersShouldLookAt"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventGetSpotOthersShouldLookAt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4211,8 +4377,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 42840,
 		retOffset = 0,
-	},
-	["SetReplicatedSMData"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["SetReplicatedSMData"] = {
 		fields = {
 			{
 				name = "NewSMData",
@@ -4226,14 +4392,14 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 42838,
-	},
-	["eventServerSpecialMove_StopAny"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventServerSpecialMove_StopAny"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42837,
-	},
-	["eventServerSpecialMove_Stop"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventServerSpecialMove_Stop"] = {
 		fields = {
 			{
 				name = "OldSMD",
@@ -4246,8 +4412,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42835,
-	},
-	["eventServerSpecialMove_Queue"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventServerSpecialMove_Queue"] = {
 		fields = {
 			{
 				name = "NewSMD",
@@ -4305,8 +4471,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 42828,
-	},
-	["eventServerSpecialMove_Play"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventServerSpecialMove_Play"] = {
 		fields = {
 			{
 				name = "NewSMD",
@@ -4364,8 +4530,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 42821,
-	},
-	["GetDefaultRootMotionRotationMode"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetDefaultRootMotionRotationMode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4379,8 +4545,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 42819,
 		retOffset = 0,
-	},
-	["GetDefaultRootMotionMode"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetDefaultRootMotionMode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4394,8 +4560,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 42817,
 		retOffset = 0,
-	},
-	["GetSkelMesh"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetSkelMesh"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4408,8 +4574,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42815,
 		retOffset = 0,
-	},
-	["GetSMComponent"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetSMComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4422,8 +4588,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42813,
 		retOffset = 0,
-	},
-	["GetActor"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4436,8 +4602,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42811,
 		retOffset = 0,
-	},
-	["GetNavigationHandle"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["GetNavigationHandle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4450,8 +4616,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42809,
 		retOffset = 0,
-	},
-	["PlayHit"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["PlayHit"] = {
 		fields = {
 			{
 				name = "SomePawn",
@@ -4505,8 +4671,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 42802,
-	},
-	["eventReplicatedEvent"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventReplicatedEvent"] = {
 		fields = {
 			{
 				name = "VarName",
@@ -4519,8 +4685,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42800,
-	},
-	["Died"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["Died"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4566,20 +4732,20 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 42794,
 		retOffset = 24,
-	},
-	["SetMovementPhysics"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["SetMovementPhysics"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42793,
-	},
-	["eventPostBeginPlay"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["eventPostBeginPlay"] = {
 		fields = {
 		},
 		dataSize = 8,
 		index = 42791,
-	},
-	["NotifyShotAtBy"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["NotifyShotAtBy"] = {
 		fields = {
 			{
 				name = "ShootingPawn",
@@ -4592,8 +4758,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42789,
-	},
-	["HaveIBeenShotAtRecently"] = {
+	}
+	g_classFuncs["AGearboxPawn"]["HaveIBeenShotAtRecently"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4606,44 +4772,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42787,
 		retOffset = 0,
-	},
-	["eventCanPlayOnline"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 43254,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 0
-			},
-		},
-		dataSize = 8,
-		index = 43252,
-		retOffset = 0,
-	},
-	["DisplayShiftCommunicationFailedDialog"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 43253,
-	},
-	["ShowEULAScreen"] = {
-		fields = {
-			{
-				name = "EulaChain",
-				isRet = true,
-				index = 43256,
-				isOutParm = true,
-				cType = ffi.typeof("struct TArray_FEULAData"),
-				castTo = ffi.typeof("struct TArray_FEULAData*"),
-				TArray = true,
-				offset = 0
-			},
-		},
-		dataSize = 12,
-		index = 43255,
-	},
-	["RequestTitleStorageFile"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["RequestTitleStorageFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4690,14 +4820,14 @@ local c = g_classFuncs
 		dataSize = 136,
 		index = 43241,
 		retOffset = 40,
-	},
-	["ShowSparkID"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ShowSparkID"] = {
 		fields = {
 		},
 		dataSize = 12,
 		index = 43239,
-	},
-	["ShouldCheckRemoteControlCheckbox"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ShouldCheckRemoteControlCheckbox"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4727,8 +4857,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43235,
 		retOffset = 8,
-	},
-	["DisplayDebugSpark"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["DisplayDebugSpark"] = {
 		fields = {
 			{
 				name = "HUD",
@@ -4757,80 +4887,80 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43231,
-	},
-	["AITree"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AITree"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43230,
-	},
-	["AIToggleTargetViewCones"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleTargetViewCones"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43229,
-	},
-	["AIToggleAwarenessZones"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleAwarenessZones"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43228,
-	},
-	["AIToggleCombat"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleCombat"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43227,
-	},
-	["AIToggleResources"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleResources"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43226,
-	},
-	["AIToggleInactiveRules"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleInactiveRules"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43225,
-	},
-	["AIToggleRules"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleRules"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43224,
-	},
-	["AIToggleFlags"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIToggleFlags"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43223,
-	},
-	["AIDebugNextSnapshot"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIDebugNextSnapshot"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43222,
-	},
-	["AIDebugPrevSnapshot"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIDebugPrevSnapshot"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43221,
-	},
-	["ainext"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ainext"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43220,
-	},
-	["aiprev"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["aiprev"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43219,
-	},
-	["AINextRule"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AINextRule"] = {
 		fields = {
 			{
 				name = "bSkipContainers",
@@ -4844,8 +4974,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43217,
-	},
-	["AIPrevRule"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIPrevRule"] = {
 		fields = {
 			{
 				name = "bSkipContainers",
@@ -4859,8 +4989,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43215,
-	},
-	["AIDebugSetPawn"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIDebugSetPawn"] = {
 		fields = {
 			{
 				name = "NewPawn",
@@ -4873,8 +5003,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43213,
-	},
-	["AIDebugSetPawnByName"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["AIDebugSetPawnByName"] = {
 		fields = {
 			{
 				name = "NewPawnName",
@@ -4887,14 +5017,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43211,
-	},
-	["debugpawn"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["debugpawn"] = {
 		fields = {
 		},
 		dataSize = 12,
 		index = 43210,
-	},
-	["aisetp"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["aisetp"] = {
 		fields = {
 			{
 				name = "NewPawnName",
@@ -4907,26 +5037,26 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43208,
-	},
-	["NotifyGameUnPaused"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyGameUnPaused"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43207,
-	},
-	["NotifyGamePaused"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyGamePaused"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43206,
-	},
-	["SetSettingsFromProfile"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["SetSettingsFromProfile"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43205,
-	},
-	["GetStorageDeviceID"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GetStorageDeviceID"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4939,8 +5069,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43203,
 		retOffset = 0,
-	},
-	["SetStorageDeviceID"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["SetStorageDeviceID"] = {
 		fields = {
 			{
 				name = "DeviceID",
@@ -4953,8 +5083,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43201,
-	},
-	["NotifyDeviceSelectComplete"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyDeviceSelectComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4967,20 +5097,20 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 43197,
-	},
-	["eventDisplayStorageRemovedMenu"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventDisplayStorageRemovedMenu"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43196,
-	},
-	["DisplayProfileRemovedMenu"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["DisplayProfileRemovedMenu"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43195,
-	},
-	["NotifyProfileWriteFromStorageChangeComplete"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyProfileWriteFromStorageChangeComplete"] = {
 		fields = {
 			{
 				name = "LocalUser",
@@ -5001,8 +5131,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43192,
-	},
-	["IsCurrentStorageDeviceValid"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["IsCurrentStorageDeviceValid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5015,20 +5145,20 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43190,
 		retOffset = 0,
-	},
-	["NotifyStorageDeviceChange"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyStorageDeviceChange"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 43189,
-	},
-	["eventDestroyOnlineGame"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventDestroyOnlineGame"] = {
 		fields = {
 		},
 		dataSize = 8,
 		index = 43187,
-	},
-	["ReturnToTitleScreen"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ReturnToTitleScreen"] = {
 		fields = {
 			{
 				name = "bSkipSave",
@@ -5051,8 +5181,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43184,
-	},
-	["GetConnectionFailureNoticeMsg"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GetConnectionFailureNoticeMsg"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5067,8 +5197,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43182,
 		retOffset = 0,
-	},
-	["GetMainMenuMapName"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GetMainMenuMapName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5083,8 +5213,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43180,
 		retOffset = 0,
-	},
-	["NotifyLinkStatusChange"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyLinkStatusChange"] = {
 		fields = {
 			{
 				name = "bIsConnected",
@@ -5097,8 +5227,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 43177,
-	},
-	["NotifyLoginStatusChange"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyLoginStatusChange"] = {
 		fields = {
 			{
 				name = "NewStatus",
@@ -5120,8 +5250,8 @@ local c = g_classFuncs
 		},
 		dataSize = 52,
 		index = 43173,
-	},
-	["NotifyLoginChange"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NotifyLoginChange"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5134,8 +5264,8 @@ local c = g_classFuncs
 		},
 		dataSize = 37,
 		index = 43168,
-	},
-	["OnReadProfileSettingsComplete"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["OnReadProfileSettingsComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5156,26 +5286,26 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43172,
-	},
-	["OnReceivedNewProfile"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["OnReceivedNewProfile"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43258,
-	},
-	["ClearOnlineDelegates"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ClearOnlineDelegates"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 43167,
-	},
-	["RegisterOnlineDelegates"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["RegisterOnlineDelegates"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 43166,
-	},
-	["OnProfileWriteComplete"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["OnProfileWriteComplete"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -5196,20 +5326,20 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43163,
-	},
-	["HidePS3WritingProfileDialog"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["HidePS3WritingProfileDialog"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43162,
-	},
-	["ShowPS3WritingProfileDialog"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ShowPS3WritingProfileDialog"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43161,
-	},
-	["eventWriteProfile"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventWriteProfile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5231,8 +5361,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 43157,
 		retOffset = 4,
-	},
-	["eventGetProfileSettings"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventGetProfileSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5245,8 +5375,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43155,
 		retOffset = 0,
-	},
-	["GetMyControllerId"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GetMyControllerId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5259,26 +5389,26 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 43153,
 		retOffset = 0,
-	},
-	["eventReadProfile"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventReadProfile"] = {
 		fields = {
 		},
 		dataSize = 1,
 		index = 43150,
-	},
-	["UnregisterPlayerDataStores"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["UnregisterPlayerDataStores"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43152,
-	},
-	["RegisterCustomPlayerDataStores"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["RegisterCustomPlayerDataStores"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43149,
-	},
-	["SetDataStoreStringValue"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["SetDataStoreStringValue"] = {
 		fields = {
 			{
 				name = "MarkupString",
@@ -5299,8 +5429,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 43146,
-	},
-	["GetDataStoreStringValue"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GetDataStoreStringValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5323,44 +5453,44 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 43143,
 		retOffset = 12,
-	},
-	["eventClientKeepPlayingLoadingMovie"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventClientKeepPlayingLoadingMovie"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43142,
-	},
-	["ClientResetCamera"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ClientResetCamera"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43141,
-	},
-	["eventSpawnPlayerCamera"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventSpawnPlayerCamera"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43140,
-	},
-	["eventInitInputSystem"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["eventInitInputSystem"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43139,
-	},
-	["NoTargetAll"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NoTargetAll"] = {
 		fields = {
 		},
 		dataSize = 8,
 		index = 43138,
-	},
-	["NoTarget"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["NoTarget"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 43137,
-	},
-	["GetNoTargetPlayers"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GetNoTargetPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5373,8 +5503,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43133,
 		retOffset = 0,
-	},
-	["SetNoTargetPlayers"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["SetNoTargetPlayers"] = {
 		fields = {
 			{
 				name = "bNoTarget",
@@ -5387,8 +5517,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43135,
-	},
-	["Possess"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["Possess"] = {
 		fields = {
 			{
 				name = "aPawn",
@@ -5409,8 +5539,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43130,
-	},
-	["DontTarget"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["DontTarget"] = {
 		fields = {
 			{
 				name = "bModeFlag",
@@ -5423,8 +5553,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43128,
-	},
-	["ClientConsoleCommand"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ClientConsoleCommand"] = {
 		fields = {
 			{
 				name = "Command",
@@ -5437,8 +5567,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43126,
-	},
-	["IsPlayerAllowingActiveMoment"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["IsPlayerAllowingActiveMoment"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5451,8 +5581,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40708,
 		retOffset = 0,
-	},
-	["IsActiveMomentRunning"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["IsActiveMomentRunning"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5465,8 +5595,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40706,
 		retOffset = 0,
-	},
-	["ViewShake"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ViewShake"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -5479,8 +5609,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43124,
-	},
-	["UpdateShakeRotComponent"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["UpdateShakeRotComponent"] = {
 		fields = {
 			{
 				name = "Max",
@@ -5525,8 +5655,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 43118,
-	},
-	["CheckShake"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["CheckShake"] = {
 		fields = {
 			{
 				name = "MaxOffset",
@@ -5563,14 +5693,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 43113,
-	},
-	["StopViewShaking"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["StopViewShaking"] = {
 		fields = {
 		},
 		dataSize = 68,
 		index = 43111,
-	},
-	["OnCameraShake"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["OnCameraShake"] = {
 		fields = {
 			{
 				name = "ShakeAction",
@@ -5583,8 +5713,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43107,
-	},
-	["ShakeView"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ShakeView"] = {
 		fields = {
 			{
 				name = "NewViewShake",
@@ -5597,8 +5727,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 43105,
-	},
-	["ClientDamageShake"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ClientDamageShake"] = {
 		fields = {
 			{
 				name = "Damage",
@@ -5611,8 +5741,8 @@ local c = g_classFuncs
 		},
 		dataSize = 72,
 		index = 43102,
-	},
-	["ConsoleEcho"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["ConsoleEcho"] = {
 		fields = {
 			{
 				name = "Text",
@@ -5634,20 +5764,20 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 43099,
-	},
-	["Initialize"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["Initialize"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43098,
-	},
-	["PostBeginPlay"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["PostBeginPlay"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43097,
-	},
-	["TryAndSpawnLeviathanChannel"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["TryAndSpawnLeviathanChannel"] = {
 		fields = {
 			{
 				name = "Connection",
@@ -5660,14 +5790,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42186,
-	},
-	["GenerateNewSessionGuid"] = {
+	}
+	g_classFuncs["AGearboxPlayerController"]["GenerateNewSessionGuid"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43095,
-	},
-	["eventPlayerInput"] = {
+	}
+	g_classFuncs["UGearboxPlayerInput"]["eventPlayerInput"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -5680,8 +5810,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43262,
-	},
-	["SetThumbnailMesh"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["SetThumbnailMesh"] = {
 		fields = {
 			{
 				name = "Texture",
@@ -5702,8 +5832,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43349,
-	},
-	["FreeContext"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["FreeContext"] = {
 		fields = {
 			{
 				name = "Context",
@@ -5716,8 +5846,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43347,
-	},
-	["FreeThumbnail"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["FreeThumbnail"] = {
 		fields = {
 			{
 				name = "Texture",
@@ -5730,8 +5860,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43345,
-	},
-	["GetThumbnail"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["GetThumbnail"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5795,8 +5925,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 43337,
 		retOffset = 28,
-	},
-	["FreeTexture2D"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["FreeTexture2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5817,8 +5947,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43334,
 		retOffset = 4,
-	},
-	["GetTexture2D"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["GetTexture2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5831,8 +5961,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43332,
 		retOffset = 0,
-	},
-	["FreeRenderTexture"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["FreeRenderTexture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5853,8 +5983,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43329,
 		retOffset = 4,
-	},
-	["GetRenderTexture"] = {
+	}
+	g_classFuncs["UGearboxRenderTextureManager"]["GetRenderTexture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5892,8 +6022,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43324,
 		retOffset = 12,
-	},
-	["SetFOV"] = {
+	}
+	g_classFuncs["UGearboxSkeletalMeshComponent"]["SetFOV"] = {
 		fields = {
 			{
 				name = "NewFOV",
@@ -5906,8 +6036,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43444,
-	},
-	["InitGestaltAccessoryMeshDataFromParts"] = {
+	}
+	g_classFuncs["UGestaltSkeletalMeshDefinition"]["InitGestaltAccessoryMeshDataFromParts"] = {
 		fields = {
 			{
 				name = "MeshToBorrowBonesFrom",
@@ -5946,8 +6076,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 43484,
-	},
-	["InitGestaltMeshDataFromParts"] = {
+	}
+	g_classFuncs["UGestaltSkeletalMeshDefinition"]["InitGestaltMeshDataFromParts"] = {
 		fields = {
 			{
 				name = "TargetComponent",
@@ -5970,8 +6100,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 43480,
-	},
-	["DisplayDebug"] = {
+	}
+	g_classFuncs["UGFxActorMoviePool"]["DisplayDebug"] = {
 		fields = {
 			{
 				name = "HUD",
@@ -6008,8 +6138,8 @@ local c = g_classFuncs
 		},
 		dataSize = 52,
 		index = 43508,
-	},
-	["GetPoolName"] = {
+	}
+	g_classFuncs["UGFxActorMoviePool"]["GetPoolName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6032,8 +6162,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 43504,
 		retOffset = 4,
-	},
-	["PoolStyleString"] = {
+	}
+	g_classFuncs["UGFxActorMoviePool"]["PoolStyleString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6057,8 +6187,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43501,
 		retOffset = 4,
-	},
-	["MovieStateChanged"] = {
+	}
+	g_classFuncs["UGFxActorMoviePool"]["MovieStateChanged"] = {
 		fields = {
 			{
 				name = "Movie",
@@ -6071,8 +6201,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42350,
-	},
-	["FindMovieLink"] = {
+	}
+	g_classFuncs["UGFxMovieDefinition"]["FindMovieLink"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6093,8 +6223,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43567,
 		retOffset = 8,
-	},
-	["PostMovieStart"] = {
+	}
+	g_classFuncs["UGFxMovieDefinition"]["PostMovieStart"] = {
 		fields = {
 			{
 				name = "StartedMovie",
@@ -6107,8 +6237,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42295,
-	},
-	["SpawnPlayerMovie"] = {
+	}
+	g_classFuncs["UGFxMovieDefinition"]["SpawnPlayerMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6146,8 +6276,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 43560,
 		retOffset = 16,
-	},
-	["SupportsStatePooling"] = {
+	}
+	g_classFuncs["UGFxMovieDefinition"]["SupportsStatePooling"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6160,8 +6290,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43558,
 		retOffset = 0,
-	},
-	["GetPoolStyle"] = {
+	}
+	g_classFuncs["UGFxMovieDefinition"]["GetPoolStyle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6175,8 +6305,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 43514,
 		retOffset = 0,
-	},
-	["GetStyleDebugString"] = {
+	}
+	g_classFuncs["UGFxMovieDrawStyle"]["GetStyleDebugString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6191,8 +6321,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42375,
 		retOffset = 0,
-	},
-	["eventRequiresClientInstance"] = {
+	}
+	g_classFuncs["UGFxMovieDrawStyleHUD"]["eventRequiresClientInstance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6205,8 +6335,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43593,
 		retOffset = 0,
-	},
-	["GetStyleDebugString"] = {
+	}
+	g_classFuncs["UGFxMovieDrawStyleMesh"]["GetStyleDebugString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6221,8 +6351,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43619,
 		retOffset = 0,
-	},
-	["eventRequiresClientInstance"] = {
+	}
+	g_classFuncs["UGFxMovieDrawStyleMesh"]["eventRequiresClientInstance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6235,8 +6365,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43617,
 		retOffset = 0,
-	},
-	["eventRequiresClientInstance"] = {
+	}
+	g_classFuncs["UGFxMovieDrawStyleSplitscreen"]["eventRequiresClientInstance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6249,8 +6379,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43621,
 		retOffset = 0,
-	},
-	["ChangeMovieState"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["ChangeMovieState"] = {
 		fields = {
 			{
 				name = "TargetActor",
@@ -6289,8 +6419,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 43648,
-	},
-	["Unsubscribe"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["Unsubscribe"] = {
 		fields = {
 			{
 				name = "PC",
@@ -6303,8 +6433,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43646,
-	},
-	["Subscribe"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["Subscribe"] = {
 		fields = {
 			{
 				name = "PC",
@@ -6317,8 +6447,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43644,
-	},
-	["UnregisterMoviesDrawnTo"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["UnregisterMoviesDrawnTo"] = {
 		fields = {
 			{
 				name = "PrimComp",
@@ -6339,8 +6469,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43641,
-	},
-	["UnregisterTarget"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["UnregisterTarget"] = {
 		fields = {
 			{
 				name = "TargetActor",
@@ -6353,8 +6483,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43639,
-	},
-	["UnregisterMovie"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["UnregisterMovie"] = {
 		fields = {
 			{
 				name = "Definition",
@@ -6375,8 +6505,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43636,
-	},
-	["RegisterMovie"] = {
+	}
+	g_classFuncs["UGFxMovieManager"]["RegisterMovie"] = {
 		fields = {
 			{
 				name = "Definition",
@@ -6397,8 +6527,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43633,
-	},
-	["GetDebugString"] = {
+	}
+	g_classFuncs["UGFxMovieState"]["GetDebugString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6430,8 +6560,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 42187,
 		retOffset = 8,
-	},
-	["ApplyMovieState"] = {
+	}
+	g_classFuncs["UGFxMovieState"]["ApplyMovieState"] = {
 		fields = {
 			{
 				name = "Movie",
@@ -6452,8 +6582,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42188,
-	},
-	["FindMovieState"] = {
+	}
+	g_classFuncs["UGFxMovieState"]["FindMovieState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6474,8 +6604,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42199,
 		retOffset = 8,
-	},
-	["TestState"] = {
+	}
+	g_classFuncs["UGFxMovieState"]["TestState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6505,8 +6635,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 42205,
 		retOffset = 32,
-	},
-	["ToggleState"] = {
+	}
+	g_classFuncs["UGFxMovieState"]["ToggleState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6536,8 +6666,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 42208,
 		retOffset = 32,
-	},
-	["EnableState"] = {
+	}
+	g_classFuncs["UGFxMovieState"]["EnableState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6576,8 +6706,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 42217,
 		retOffset = 36,
-	},
-	["EnableState"] = {
+	}
+	g_classFuncs["UGFxMovieStatePlayerAware"]["EnableState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6616,8 +6746,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 43664,
 		retOffset = 36,
-	},
-	["InitSequence"] = {
+	}
+	g_classFuncs["UIAIInterface"]["InitSequence"] = {
 		fields = {
 			{
 				name = "NewSequence",
@@ -6630,8 +6760,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43687,
-	},
-	["GetAllegiance"] = {
+	}
+	g_classFuncs["UIAIInterface"]["GetAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6644,8 +6774,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43685,
 		retOffset = 0,
-	},
-	["GetAIDefinition"] = {
+	}
+	g_classFuncs["UIAIInterface"]["GetAIDefinition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6658,8 +6788,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43683,
 		retOffset = 0,
-	},
-	["GetAIComponent"] = {
+	}
+	g_classFuncs["UIAIInterface"]["GetAIComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6672,8 +6802,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39285,
 		retOffset = 0,
-	},
-	["GetAIParent"] = {
+	}
+	g_classFuncs["UIAIInterface"]["GetAIParent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6687,8 +6817,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43681,
 		retOffset = 0,
-	},
-	["GetAILocation"] = {
+	}
+	g_classFuncs["UIAIInterface"]["GetAILocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6702,8 +6832,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43679,
 		retOffset = 0,
-	},
-	["GetAIActor"] = {
+	}
+	g_classFuncs["UIAIInterface"]["GetAIActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6716,8 +6846,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43677,
 		retOffset = 0,
-	},
-	["CanTickAI"] = {
+	}
+	g_classFuncs["UIAIInterface"]["CanTickAI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6730,8 +6860,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43675,
 		retOffset = 0,
-	},
-	["GFx_NotifyMovieDestroy"] = {
+	}
+	g_classFuncs["UIGFxActorMovie"]["GFx_NotifyMovieDestroy"] = {
 		fields = {
 			{
 				name = "Movie",
@@ -6744,8 +6874,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43721,
-	},
-	["GFx_NotifyMovieCreate"] = {
+	}
+	g_classFuncs["UIGFxActorMovie"]["GFx_NotifyMovieCreate"] = {
 		fields = {
 			{
 				name = "Movie",
@@ -6758,8 +6888,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43719,
-	},
-	["GFx_GetMovieActor"] = {
+	}
+	g_classFuncs["UIGFxActorMovie"]["GFx_GetMovieActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6772,14 +6902,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43572,
 		retOffset = 0,
-	},
-	["eventFinishCameraLookAt"] = {
+	}
+	g_classFuncs["UInterfaceGearboxCamera"]["eventFinishCameraLookAt"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 40644,
-	},
-	["EnableThirdPersonLookAt"] = {
+	}
+	g_classFuncs["UInterfaceGearboxCamera"]["EnableThirdPersonLookAt"] = {
 		fields = {
 			{
 				name = "LookAtXOffset",
@@ -6817,8 +6947,8 @@ local c = g_classFuncs
 		},
 		dataSize = 13,
 		index = 40639,
-	},
-	["BeginCameraLookAt"] = {
+	}
+	g_classFuncs["UInterfaceGearboxCamera"]["BeginCameraLookAt"] = {
 		fields = {
 			{
 				name = "LookAtTarget",
@@ -6887,8 +7017,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 40629,
-	},
-	["eventRunStreamingDataEvent"] = {
+	}
+	g_classFuncs["UIStreamingDataEvent"]["eventRunStreamingDataEvent"] = {
 		fields = {
 			{
 				name = "EventName",
@@ -6937,8 +7067,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 43735,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UPhysicsStateExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6959,8 +7089,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43820,
 		retOffset = 4,
-	},
-	["eventDenStatRemoved"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventDenStatRemoved"] = {
 		fields = {
 			{
 				name = "DenPawn",
@@ -6973,8 +7103,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43835,
-	},
-	["eventDenStatAdded"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventDenStatAdded"] = {
 		fields = {
 			{
 				name = "DenPawn",
@@ -6987,8 +7117,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43833,
-	},
-	["eventEnabledStatusChanged"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventEnabledStatusChanged"] = {
 		fields = {
 			{
 				name = "bIsEnabled",
@@ -7009,8 +7139,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43830,
-	},
-	["eventAllActorsRemoved"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventAllActorsRemoved"] = {
 		fields = {
 			{
 				name = "bFinishedSpawning",
@@ -7023,8 +7153,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43828,
-	},
-	["eventOnActorDeath"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventOnActorDeath"] = {
 		fields = {
 			{
 				name = "DeadActor",
@@ -7037,8 +7167,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43826,
-	},
-	["eventOnSpawnActor"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventOnSpawnActor"] = {
 		fields = {
 			{
 				name = "SpawnedActor",
@@ -7051,26 +7181,26 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43824,
-	},
-	["eventInitialize"] = {
+	}
+	g_classFuncs["UPopulationAspect"]["eventInitialize"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43823,
-	},
-	["eventTriggerKismetAllSpawnedEvent"] = {
+	}
+	g_classFuncs["APopulationEncounter"]["eventTriggerKismetAllSpawnedEvent"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43898,
-	},
-	["eventTriggerKismetDeathEvent"] = {
+	}
+	g_classFuncs["APopulationEncounter"]["eventTriggerKismetDeathEvent"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43897,
-	},
-	["OnToggle"] = {
+	}
+	g_classFuncs["APopulationEncounter"]["OnToggle"] = {
 		fields = {
 			{
 				name = "Action",
@@ -7083,8 +7213,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43895,
-	},
-	["UpdateOpportunityEnabledStates"] = {
+	}
+	g_classFuncs["APopulationEncounter"]["UpdateOpportunityEnabledStates"] = {
 		fields = {
 			{
 				name = "nWave",
@@ -7105,14 +7235,14 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43892,
-	},
-	["UpdateKismetNotifications"] = {
+	}
+	g_classFuncs["APopulationEncounter"]["UpdateKismetNotifications"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43891,
-	},
-	["Display"] = {
+	}
+	g_classFuncs["UPopUpDebugBarGraph"]["Display"] = {
 		fields = {
 			{
 				name = "DeltaSeconds",
@@ -7133,8 +7263,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44508,
-	},
-	["GetValue"] = {
+	}
+	g_classFuncs["UPopUpDebugBarGraph"]["GetValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7155,8 +7285,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44505,
 		retOffset = 4,
-	},
-	["SetValue"] = {
+	}
+	g_classFuncs["UPopUpDebugBarGraph"]["SetValue"] = {
 		fields = {
 			{
 				name = "ColumnNdx",
@@ -7177,8 +7307,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44502,
-	},
-	["AddNewColumn"] = {
+	}
+	g_classFuncs["UPopUpDebugBarGraph"]["AddNewColumn"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7216,8 +7346,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 44497,
 		retOffset = 20,
-	},
-	["AddTitleText"] = {
+	}
+	g_classFuncs["UPopUpDebugBarGraph"]["AddTitleText"] = {
 		fields = {
 			{
 				name = "NewTitleText",
@@ -7230,8 +7360,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44495,
-	},
-	["GetDefaultRegionGameStage"] = {
+	}
+	g_classFuncs["URegionDefinition"]["GetDefaultRegionGameStage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7276,8 +7406,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 44531,
 		retOffset = 16,
-	},
-	["TestRegionGameStage"] = {
+	}
+	g_classFuncs["URegionDefinition"]["TestRegionGameStage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7315,8 +7445,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44526,
 		retOffset = 12,
-	},
-	["GetRegionGameStage"] = {
+	}
+	g_classFuncs["URegionDefinition"]["GetRegionGameStage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7354,8 +7484,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44521,
 		retOffset = 12,
-	},
-	["SetAsDebugging"] = {
+	}
+	g_classFuncs["URuleEngineLoadBalanceManager"]["SetAsDebugging"] = {
 		fields = {
 			{
 				name = "bSetDebugging",
@@ -7368,8 +7498,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44579,
-	},
-	["AllPlayersInVolumes"] = {
+	}
+	g_classFuncs["USeqAct_AllPlayersInVolume"]["AllPlayersInVolumes"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7382,8 +7512,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44613,
 		retOffset = 0,
-	},
-	["PlayerIsInAVolume"] = {
+	}
+	g_classFuncs["USeqAct_AllPlayersInVolume"]["PlayerIsInAVolume"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7404,8 +7534,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44610,
 		retOffset = 4,
-	},
-	["IsOwnerAlwaysNetRelevant"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["IsOwnerAlwaysNetRelevant"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7418,8 +7548,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42772,
 		retOffset = 0,
-	},
-	["CanPlayBehaviorData"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["CanPlayBehaviorData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7441,8 +7571,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42769,
 		retOffset = 16,
-	},
-	["RunBehaviors"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["RunBehaviors"] = {
 		fields = {
 			{
 				name = "SMBehaviors",
@@ -7457,8 +7587,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41722,
-	},
-	["GetCurrent"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetCurrent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7471,8 +7601,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42765,
 		retOffset = 0,
-	},
-	["GetPlayRateScale"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetPlayRateScale"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7485,8 +7615,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42763,
 		retOffset = 0,
-	},
-	["GetDuration"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetDuration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7499,8 +7629,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42761,
 		retOffset = 0,
-	},
-	["GetData"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7513,8 +7643,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42759,
 		retOffset = 0,
-	},
-	["LocalAnimFinished"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["LocalAnimFinished"] = {
 		fields = {
 			{
 				name = "SMD",
@@ -7544,14 +7674,14 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 41737,
-	},
-	["ClearQueue"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["ClearQueue"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42755,
-	},
-	["StopAnyLocal"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["StopAnyLocal"] = {
 		fields = {
 			{
 				name = "SMNodeName",
@@ -7583,8 +7713,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 42751,
-	},
-	["StopLocal"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["StopLocal"] = {
 		fields = {
 			{
 				name = "OldSMD",
@@ -7606,8 +7736,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42748,
-	},
-	["StopAny"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["StopAny"] = {
 		fields = {
 			{
 				name = "bClearQueue",
@@ -7630,8 +7760,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40200,
-	},
-	["Stop"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["Stop"] = {
 		fields = {
 			{
 				name = "OldSMD",
@@ -7662,8 +7792,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 40199,
-	},
-	["PlayLocal"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["PlayLocal"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7729,8 +7859,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 40180,
 		retOffset = 28,
-	},
-	["Queue"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["Queue"] = {
 		fields = {
 			{
 				name = "NewSMD",
@@ -7788,8 +7918,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 40186,
-	},
-	["Play"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["Play"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7855,8 +7985,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 40184,
 		retOffset = 28,
-	},
-	["RemoveFromQueue"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["RemoveFromQueue"] = {
 		fields = {
 			{
 				name = "SMD",
@@ -7869,8 +7999,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42723,
-	},
-	["IsQueued"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["IsQueued"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7891,8 +8021,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40174,
 		retOffset = 4,
-	},
-	["IsPlayingClass"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["IsPlayingClass"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7913,8 +8043,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42719,
 		retOffset = 4,
-	},
-	["IsPlayingAny"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["IsPlayingAny"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7927,8 +8057,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40182,
 		retOffset = 0,
-	},
-	["IsPlaying"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["IsPlaying"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7949,8 +8079,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40172,
 		retOffset = 4,
-	},
-	["GetAnimDelta"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetAnimDelta"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7972,8 +8102,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 42715,
 		retOffset = 4,
-	},
-	["GetSMNode"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetSMNode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7986,8 +8116,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41695,
 		retOffset = 0,
-	},
-	["PlayReplicated"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["PlayReplicated"] = {
 		fields = {
 			{
 				name = "NewSMData",
@@ -8000,8 +8130,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 42713,
-	},
-	["GetAnimLength"] = {
+	}
+	g_classFuncs["USpecialMoveComponent"]["GetAnimLength"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8040,8 +8170,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 42702,
 		retOffset = 12,
-	},
-	["eventIsPlayingLocally"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["eventIsPlayingLocally"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8062,8 +8192,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41644,
 		retOffset = 8,
-	},
-	["GetSMDToPlay"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["GetSMDToPlay"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8084,8 +8214,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41641,
 		retOffset = 8,
-	},
-	["Contains"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["Contains"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8114,8 +8244,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41637,
 		retOffset = 12,
-	},
-	["eventClientFinished"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["eventClientFinished"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -8136,8 +8266,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41634,
-	},
-	["eventServerFinished"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["eventServerFinished"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -8158,8 +8288,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41631,
-	},
-	["eventClientStarted"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["eventClientStarted"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8189,8 +8319,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 41627,
 		retOffset = 36,
-	},
-	["eventServerStarted"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["eventServerStarted"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -8203,8 +8333,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41625,
-	},
-	["IsLocalAuthority"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["IsLocalAuthority"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8225,8 +8355,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41622,
 		retOffset = 8,
-	},
-	["eventAuthorityCanPlay"] = {
+	}
+	g_classFuncs["USpecialMoveDefinition"]["eventAuthorityCanPlay"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8247,8 +8377,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41619,
 		retOffset = 8,
-	},
-	["Contains"] = {
+	}
+	g_classFuncs["USpecialMoveExpressionList"]["Contains"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8277,8 +8407,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44961,
 		retOffset = 12,
-	},
-	["GetSMDToPlay"] = {
+	}
+	g_classFuncs["USpecialMoveExpressionList"]["GetSMDToPlay"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8299,8 +8429,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44958,
 		retOffset = 8,
-	},
-	["Contains"] = {
+	}
+	g_classFuncs["USpecialMoveRandom"]["Contains"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8329,8 +8459,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44992,
 		retOffset = 12,
-	},
-	["GetSMDToPlay"] = {
+	}
+	g_classFuncs["USpecialMoveRandom"]["GetSMDToPlay"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8351,8 +8481,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44989,
 		retOffset = 8,
-	},
-	["SetReplicatedSMData"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["SetReplicatedSMData"] = {
 		fields = {
 			{
 				name = "NewSMData",
@@ -8366,14 +8496,14 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 44982,
-	},
-	["eventServerSpecialMove_StopAny"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["eventServerSpecialMove_StopAny"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44981,
-	},
-	["eventServerSpecialMove_Stop"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["eventServerSpecialMove_Stop"] = {
 		fields = {
 			{
 				name = "OldSMD",
@@ -8386,8 +8516,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44979,
-	},
-	["eventServerSpecialMove_Queue"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["eventServerSpecialMove_Queue"] = {
 		fields = {
 			{
 				name = "NewSMD",
@@ -8445,8 +8575,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 44972,
-	},
-	["eventServerSpecialMove_Play"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["eventServerSpecialMove_Play"] = {
 		fields = {
 			{
 				name = "NewSMD",
@@ -8504,8 +8634,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 44965,
-	},
-	["GetDefaultRootMotionRotationMode"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["GetDefaultRootMotionRotationMode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8519,8 +8649,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41730,
 		retOffset = 0,
-	},
-	["GetDefaultRootMotionMode"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["GetDefaultRootMotionMode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8534,8 +8664,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41728,
 		retOffset = 0,
-	},
-	["GetSkelMesh"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["GetSkelMesh"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8548,8 +8678,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41700,
 		retOffset = 0,
-	},
-	["GetSMComponent"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["GetSMComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8562,8 +8692,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40170,
 		retOffset = 0,
-	},
-	["GetActor"] = {
+	}
+	g_classFuncs["USpecialMoveInterface"]["GetActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8576,20 +8706,20 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41709,
 		retOffset = 0,
-	},
-	["eventDestroyed"] = {
+	}
+	g_classFuncs["AWireTerminal"]["eventDestroyed"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45034,
-	},
-	["NotifyModifiedTerminal"] = {
+	}
+	g_classFuncs["AWireTerminal"]["NotifyModifiedTerminal"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45033,
-	},
-	["TriggerBehavior"] = {
+	}
+	g_classFuncs["UActionSequence"]["TriggerBehavior"] = {
 		fields = {
 			{
 				name = "OutputName",
@@ -8602,8 +8732,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38876,
-	},
-	["GetRangeValue"] = {
+	}
+	g_classFuncs["UActionSequence"]["GetRangeValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8625,8 +8755,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38892,
 		retOffset = 8,
-	},
-	["RangeIsValid"] = {
+	}
+	g_classFuncs["UActionSequence"]["RangeIsValid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8648,8 +8778,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38889,
 		retOffset = 8,
-	},
-	["Finish"] = {
+	}
+	g_classFuncs["UActionSequence"]["Finish"] = {
 		fields = {
 			{
 				name = "bFailed",
@@ -8663,8 +8793,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38887,
-	},
-	["IsRunning"] = {
+	}
+	g_classFuncs["UActionSequence"]["IsRunning"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8677,14 +8807,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38885,
 		retOffset = 0,
-	},
-	["eventScriptCleanUp"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventScriptCleanUp"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38884,
-	},
-	["eventCanRun"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventCanRun"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8698,8 +8828,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38882,
 		retOffset = 0,
-	},
-	["eventActivateEvent"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventActivateEvent"] = {
 		fields = {
 			{
 				name = "EventName",
@@ -8712,32 +8842,32 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38880,
-	},
-	["eventUpdate"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventUpdate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38879,
-	},
-	["eventInit"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventInit"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38878,
-	},
-	["eventStop"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventStop"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38877,
-	},
-	["eventStart"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventStart"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38875,
-	},
-	["eventInterruptSequence"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventInterruptSequence"] = {
 		fields = {
 			{
 				name = "InterruptingSequence",
@@ -8750,20 +8880,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38872,
-	},
-	["eventStopSequence"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventStopSequence"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38871,
-	},
-	["eventStartSequence"] = {
+	}
+	g_classFuncs["UActionSequence"]["eventStartSequence"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38870,
-	},
-	["ExecuteSequence"] = {
+	}
+	g_classFuncs["UActionSequence"]["ExecuteSequence"] = {
 		fields = {
 			{
 				name = "SequenceTemplate",
@@ -8776,8 +8906,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38868,
-	},
-	["Sleep"] = {
+	}
+	g_classFuncs["UActionSequence"]["Sleep"] = {
 		fields = {
 			{
 				name = "Seconds",
@@ -8790,8 +8920,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38866,
-	},
-	["RunSubSequence"] = {
+	}
+	g_classFuncs["UActionSequence"]["RunSubSequence"] = {
 		fields = {
 			{
 				name = "SubSequence",
@@ -8804,20 +8934,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38864,
-	},
-	["InterruptLatentAction"] = {
+	}
+	g_classFuncs["UActionSequence"]["InterruptLatentAction"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38863,
-	},
-	["DoRuleSetPop"] = {
+	}
+	g_classFuncs["UActionSequence"]["DoRuleSetPop"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38862,
-	},
-	["DoRuleSetPush"] = {
+	}
+	g_classFuncs["UActionSequence"]["DoRuleSetPush"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8838,8 +8968,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38859,
 		retOffset = 4,
-	},
-	["DoRuleSetSwitch"] = {
+	}
+	g_classFuncs["UActionSequence"]["DoRuleSetSwitch"] = {
 		fields = {
 			{
 				name = "NewRuleSet",
@@ -8852,14 +8982,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38857,
-	},
-	["PreventNewRulesFromStarting"] = {
+	}
+	g_classFuncs["UActionSequence"]["PreventNewRulesFromStarting"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38856,
-	},
-	["GetRuleNative"] = {
+	}
+	g_classFuncs["UActionSequence"]["GetRuleNative"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8872,8 +9002,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38854,
 		retOffset = 0,
-	},
-	["GetActionSequence"] = {
+	}
+	g_classFuncs["UActionSequence"]["GetActionSequence"] = {
 		fields = {
 			{
 				name = "Template",
@@ -8894,8 +9024,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38851,
-	},
-	["IsInLabel"] = {
+	}
+	g_classFuncs["UActionSequence"]["IsInLabel"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8916,8 +9046,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38848,
 		retOffset = 8,
-	},
-	["IsAtomic"] = {
+	}
+	g_classFuncs["UActionSequence"]["IsAtomic"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8930,20 +9060,20 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38846,
 		retOffset = 0,
-	},
-	["StopAtomic"] = {
+	}
+	g_classFuncs["UActionSequence"]["StopAtomic"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38845,
-	},
-	["StartAtomic"] = {
+	}
+	g_classFuncs["UActionSequence"]["StartAtomic"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38844,
-	},
-	["IsActionReadyToFinish"] = {
+	}
+	g_classFuncs["UActionSequence"]["IsActionReadyToFinish"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8956,8 +9086,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38842,
 		retOffset = 0,
-	},
-	["IsActionReadyToFinish"] = {
+	}
+	g_classFuncs["UActionSequenceList"]["IsActionReadyToFinish"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8970,26 +9100,26 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39150,
 		retOffset = 0,
-	},
-	["eventPostMovement"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["eventPostMovement"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39134,
-	},
-	["eventPreMovement"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["eventPreMovement"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39133,
-	},
-	["eventPrePathFind"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["eventPrePathFind"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39132,
-	},
-	["eventInterruptSequence"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["eventInterruptSequence"] = {
 		fields = {
 			{
 				name = "InterruptingSequence",
@@ -9002,20 +9132,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39130,
-	},
-	["eventStopSequence"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["eventStopSequence"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39128,
-	},
-	["eventStartSequence"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["eventStartSequence"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39113,
-	},
-	["MovePawnToDestinationLocation"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["MovePawnToDestinationLocation"] = {
 		fields = {
 			{
 				name = "GoalLocation",
@@ -9036,8 +9166,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 39110,
-	},
-	["TakeDebugSnapshotMoveFailure"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["TakeDebugSnapshotMoveFailure"] = {
 		fields = {
 			{
 				name = "Cause",
@@ -9051,8 +9181,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 39108,
-	},
-	["SetMaxMovementSpeed"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["SetMaxMovementSpeed"] = {
 		fields = {
 			{
 				name = "NewMaxSpeed",
@@ -9066,20 +9196,20 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 39106,
-	},
-	["EndMovePawnToDestinationLocation"] = {
+	}
+	g_classFuncs["UAction_PawnMovementBase"]["EndMovePawnToDestinationLocation"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39105,
-	},
-	["EvaluateActionList"] = {
+	}
+	g_classFuncs["UActionSequenceRandom"]["EvaluateActionList"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 39161,
-	},
-	["OverrideNextSequenceToRun"] = {
+	}
+	g_classFuncs["UActionSequenceRandom"]["OverrideNextSequenceToRun"] = {
 		fields = {
 			{
 				name = "NewSequence",
@@ -9092,8 +9222,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39159,
-	},
-	["GetRandomAction"] = {
+	}
+	g_classFuncs["UActionSequenceRandom"]["GetRandomAction"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9106,8 +9236,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39157,
 		retOffset = 0,
-	},
-	["GetAIRangeTime"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetAIRangeTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9128,8 +9258,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38739,
 		retOffset = 8,
-	},
-	["DrawAITree"] = {
+	}
+	g_classFuncs["UAIComponent"]["DrawAITree"] = {
 		fields = {
 			{
 				name = "Canvas",
@@ -9142,14 +9272,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38737,
-	},
-	["LogDemigodHolds"] = {
+	}
+	g_classFuncs["UAIComponent"]["LogDemigodHolds"] = {
 		fields = {
 		},
 		dataSize = 12,
 		index = 38731,
-	},
-	["ReleaseDialog"] = {
+	}
+	g_classFuncs["UAIComponent"]["ReleaseDialog"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9170,8 +9300,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38728,
-	},
-	["HoldDialog"] = {
+	}
+	g_classFuncs["UAIComponent"]["HoldDialog"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9192,8 +9322,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38725,
-	},
-	["DialogOnHold"] = {
+	}
+	g_classFuncs["UAIComponent"]["DialogOnHold"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9206,8 +9336,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38723,
 		retOffset = 0,
-	},
-	["ReleaseGod"] = {
+	}
+	g_classFuncs["UAIComponent"]["ReleaseGod"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9228,8 +9358,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38720,
-	},
-	["HoldGod"] = {
+	}
+	g_classFuncs["UAIComponent"]["HoldGod"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9250,8 +9380,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38717,
-	},
-	["GodOnHold"] = {
+	}
+	g_classFuncs["UAIComponent"]["GodOnHold"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9264,8 +9394,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38715,
 		retOffset = 0,
-	},
-	["ReleaseDemigod"] = {
+	}
+	g_classFuncs["UAIComponent"]["ReleaseDemigod"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9286,8 +9416,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38712,
-	},
-	["HoldDemigod"] = {
+	}
+	g_classFuncs["UAIComponent"]["HoldDemigod"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9308,8 +9438,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38709,
-	},
-	["DemigodOnHold"] = {
+	}
+	g_classFuncs["UAIComponent"]["DemigodOnHold"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9322,8 +9452,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38707,
 		retOffset = 0,
-	},
-	["ReleaseMovement"] = {
+	}
+	g_classFuncs["UAIComponent"]["ReleaseMovement"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9344,8 +9474,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38704,
-	},
-	["HoldMovement"] = {
+	}
+	g_classFuncs["UAIComponent"]["HoldMovement"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9366,8 +9496,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38701,
-	},
-	["MovementOnHold"] = {
+	}
+	g_classFuncs["UAIComponent"]["MovementOnHold"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9380,8 +9510,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38699,
 		retOffset = 0,
-	},
-	["ReleaseTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["ReleaseTarget"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9402,8 +9532,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38696,
-	},
-	["HoldTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["HoldTarget"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9424,8 +9554,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38693,
-	},
-	["TargetOnHold"] = {
+	}
+	g_classFuncs["UAIComponent"]["TargetOnHold"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9438,8 +9568,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38691,
 		retOffset = 0,
-	},
-	["Release"] = {
+	}
+	g_classFuncs["UAIComponent"]["Release"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9460,8 +9590,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38688,
-	},
-	["Hold"] = {
+	}
+	g_classFuncs["UAIComponent"]["Hold"] = {
 		fields = {
 			{
 				name = "HoldName",
@@ -9482,8 +9612,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38685,
-	},
-	["OnHold"] = {
+	}
+	g_classFuncs["UAIComponent"]["OnHold"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9496,14 +9626,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38682,
 		retOffset = 0,
-	},
-	["ForceUpdateTargets"] = {
+	}
+	g_classFuncs["UAIComponent"]["ForceUpdateTargets"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38684,
-	},
-	["TargetChanged"] = {
+	}
+	g_classFuncs["UAIComponent"]["TargetChanged"] = {
 		fields = {
 			{
 				name = "OldTarget",
@@ -9524,8 +9654,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38679,
-	},
-	["SetTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["SetTarget"] = {
 		fields = {
 			{
 				name = "NewTarget",
@@ -9538,8 +9668,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38677,
-	},
-	["SetScriptedTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["SetScriptedTarget"] = {
 		fields = {
 			{
 				name = "NewScriptedTarget",
@@ -9552,8 +9682,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38675,
-	},
-	["GetTargetRecordFor"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetTargetRecordFor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9583,8 +9713,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38671,
 		retOffset = 8,
-	},
-	["GetTargetRecord"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetTargetRecord"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9606,8 +9736,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38668,
 		retOffset = 4,
-	},
-	["IsTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["IsTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9628,8 +9758,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38665,
 		retOffset = 4,
-	},
-	["GetTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9642,8 +9772,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38663,
 		retOffset = 0,
-	},
-	["HasTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["HasTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9656,8 +9786,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38661,
 		retOffset = 0,
-	},
-	["ShouldRemoveTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["ShouldRemoveTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9678,8 +9808,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38658,
 		retOffset = 4,
-	},
-	["TargetRemoved"] = {
+	}
+	g_classFuncs["UAIComponent"]["TargetRemoved"] = {
 		fields = {
 			{
 				name = "TargetRec",
@@ -9692,8 +9822,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38656,
-	},
-	["ForceRemoveTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["ForceRemoveTarget"] = {
 		fields = {
 			{
 				name = "Target",
@@ -9706,8 +9836,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38654,
-	},
-	["ValidCurrentTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["ValidCurrentTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9728,8 +9858,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38651,
 		retOffset = 4,
-	},
-	["ValidTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["ValidTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9750,8 +9880,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38648,
 		retOffset = 4,
-	},
-	["PrioritizeTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["PrioritizeTarget"] = {
 		fields = {
 			{
 				name = "TargetRec",
@@ -9764,8 +9894,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38646,
-	},
-	["CalcTargetInfo"] = {
+	}
+	g_classFuncs["UAIComponent"]["CalcTargetInfo"] = {
 		fields = {
 			{
 				name = "TargetRec",
@@ -9778,14 +9908,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38644,
-	},
-	["ChooseBestTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["ChooseBestTarget"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38643,
-	},
-	["InheritTargets"] = {
+	}
+	g_classFuncs["UAIComponent"]["InheritTargets"] = {
 		fields = {
 			{
 				name = "Parent",
@@ -9798,26 +9928,26 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38641,
-	},
-	["RemoveTargets"] = {
+	}
+	g_classFuncs["UAIComponent"]["RemoveTargets"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38640,
-	},
-	["FindTargets"] = {
+	}
+	g_classFuncs["UAIComponent"]["FindTargets"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38639,
-	},
-	["GetTargets"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetTargets"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38638,
-	},
-	["InitializeTargetRecord"] = {
+	}
+	g_classFuncs["UAIComponent"]["InitializeTargetRecord"] = {
 		fields = {
 			{
 				name = "TargetRec",
@@ -9830,8 +9960,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38636,
-	},
-	["NotifyAttackedBy"] = {
+	}
+	g_classFuncs["UAIComponent"]["NotifyAttackedBy"] = {
 		fields = {
 			{
 				name = "Attacker",
@@ -9844,8 +9974,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38634,
-	},
-	["AddTarget"] = {
+	}
+	g_classFuncs["UAIComponent"]["AddTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9866,8 +9996,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38631,
 		retOffset = 4,
-	},
-	["GetParentComponent"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetParentComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9880,8 +10010,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38629,
 		retOffset = 0,
-	},
-	["GetAllegiance"] = {
+	}
+	g_classFuncs["UAIComponent"]["GetAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9894,14 +10024,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38627,
 		retOffset = 0,
-	},
-	["ClearState"] = {
+	}
+	g_classFuncs["UAIComponent"]["ClearState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38626,
-	},
-	["ActivateEvent"] = {
+	}
+	g_classFuncs["UAIComponent"]["ActivateEvent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9922,8 +10052,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38622,
 		retOffset = 8,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UAICostExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9944,14 +10074,14 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39290,
 		retOffset = 4,
-	},
-	["FlushPools"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["FlushPools"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 39558,
-	},
-	["ReturnAIDef"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnAIDef"] = {
 		fields = {
 			{
 				name = "InAIDef",
@@ -9964,8 +10094,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39556,
-	},
-	["GetAIDef"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetAIDef"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9994,8 +10124,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39552,
 		retOffset = 8,
-	},
-	["ReturnTargetRecord"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnTargetRecord"] = {
 		fields = {
 			{
 				name = "InTargetRecord",
@@ -10008,8 +10138,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39550,
-	},
-	["GetTargetRecord"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetTargetRecord"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10038,8 +10168,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39546,
 		retOffset = 8,
-	},
-	["ReturnActionSequence"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnActionSequence"] = {
 		fields = {
 			{
 				name = "InSequence",
@@ -10052,8 +10182,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39544,
-	},
-	["GetActionSequence"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetActionSequence"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10082,8 +10212,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39540,
 		retOffset = 8,
-	},
-	["ReturnRuleSet"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnRuleSet"] = {
 		fields = {
 			{
 				name = "InRuleSet",
@@ -10096,8 +10226,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39538,
-	},
-	["GetRuleSetFromArchetype"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetRuleSetFromArchetype"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10136,8 +10266,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 39532,
 		retOffset = 20,
-	},
-	["ReturnKnowledgeRecord"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnKnowledgeRecord"] = {
 		fields = {
 			{
 				name = "InKR",
@@ -10150,8 +10280,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39530,
-	},
-	["GetKnowledgeRecordListFromArchetypes"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetKnowledgeRecordListFromArchetypes"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10182,8 +10312,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 39524,
 		retOffset = 24,
-	},
-	["GetKnowledgeRecordFromArchetype"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetKnowledgeRecordFromArchetype"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10212,8 +10342,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39520,
 		retOffset = 8,
-	},
-	["GetKnowledgeRecord"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetKnowledgeRecord"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10242,8 +10372,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39516,
 		retOffset = 8,
-	},
-	["ReturnRule"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnRule"] = {
 		fields = {
 			{
 				name = "InRule",
@@ -10256,8 +10386,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39514,
-	},
-	["GetRuleFromArchetype"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetRuleFromArchetype"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10286,8 +10416,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39510,
 		retOffset = 8,
-	},
-	["GetRule"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["GetRule"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10316,8 +10446,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 39506,
 		retOffset = 8,
-	},
-	["ReturnRuleEngine"] = {
+	}
+	g_classFuncs["UAIFactoryBase"]["ReturnRuleEngine"] = {
 		fields = {
 			{
 				name = "InRuleEngine",
@@ -10330,8 +10460,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39504,
-	},
-	["FreeRuleEngine"] = {
+	}
+	g_classFuncs["UGearboxAIFactory"]["FreeRuleEngine"] = {
 		fields = {
 			{
 				name = "InRuleEngine",
@@ -10344,8 +10474,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41570,
-	},
-	["GetRuleEngineFromTemplate"] = {
+	}
+	g_classFuncs["UGearboxAIFactory"]["GetRuleEngineFromTemplate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10374,8 +10504,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41566,
 		retOffset = 8,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UAIResourceExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10396,8 +10526,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39570,
 		retOffset = 4,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UAllegianceExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10418,8 +10548,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 39617,
 		retOffset = 4,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SendGbxMessage"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -10473,8 +10603,8 @@ local c = g_classFuncs
 		},
 		dataSize = 88,
 		index = 40091,
-	},
-	["GetLocation"] = {
+	}
+	g_classFuncs["UBehavior_SendGbxMessage"]["GetLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10529,8 +10659,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 40083,
 		retOffset = 20,
-	},
-	["GetMessageParameter"] = {
+	}
+	g_classFuncs["UBehavior_SendGbxMessage"]["GetMessageParameter"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10584,8 +10714,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 40076,
 		retOffset = 20,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SetFlag"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -10639,8 +10769,8 @@ local c = g_classFuncs
 		},
 		dataSize = 56,
 		index = 40104,
-	},
-	["CalculateVantageToPoint"] = {
+	}
+	g_classFuncs["UExposureUtilityBase"]["CalculateVantageToPoint"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10670,8 +10800,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 40779,
 		retOffset = 16,
-	},
-	["CalculateTargetExposure"] = {
+	}
+	g_classFuncs["UExposureUtilityBase"]["CalculateTargetExposure"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10700,8 +10830,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 40775,
 		retOffset = 8,
-	},
-	["eventGetTemplateClass"] = {
+	}
+	g_classFuncs["UFiringBehaviorManager"]["eventGetTemplateClass"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10722,8 +10852,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40897,
 		retOffset = 4,
-	},
-	["eventGetZoneForDistance"] = {
+	}
+	g_classFuncs["UFiringZoneCollectionDefinition"]["eventGetZoneForDistance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10744,8 +10874,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 40902,
 		retOffset = 4,
-	},
-	["ApplyFlagInitializationData"] = {
+	}
+	g_classFuncs["UFlagDefinition"]["ApplyFlagInitializationData"] = {
 		fields = {
 			{
 				name = "FlagsToSet",
@@ -10768,8 +10898,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 40925,
-	},
-	["ResolveContext"] = {
+	}
+	g_classFuncs["UFlagDefinition"]["ResolveContext"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10790,8 +10920,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40922,
 		retOffset = 4,
-	},
-	["SetTrueTimed"] = {
+	}
+	g_classFuncs["UFlagDefinition"]["SetTrueTimed"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10820,8 +10950,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 40918,
 		retOffset = 8,
-	},
-	["SetValue"] = {
+	}
+	g_classFuncs["UFlagDefinition"]["SetValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10850,8 +10980,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 40914,
 		retOffset = 8,
-	},
-	["Evaluate"] = {
+	}
+	g_classFuncs["UFlagExpressionEvaluator"]["Evaluate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10872,8 +11002,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40984,
 		retOffset = 4,
-	},
-	["InitializeFromDefinition"] = {
+	}
+	g_classFuncs["UGbxMessage"]["InitializeFromDefinition"] = {
 		fields = {
 			{
 				name = "InDefinition",
@@ -10921,8 +11051,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 40101,
-	},
-	["RemoveListener"] = {
+	}
+	g_classFuncs["UGbxMessageManager"]["RemoveListener"] = {
 		fields = {
 			{
 				name = "InListener",
@@ -10935,8 +11065,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41039,
-	},
-	["AddListener"] = {
+	}
+	g_classFuncs["UGbxMessageManager"]["AddListener"] = {
 		fields = {
 			{
 				name = "InListener",
@@ -10949,8 +11079,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41037,
-	},
-	["PostMessage"] = {
+	}
+	g_classFuncs["UGbxMessageManager"]["PostMessage"] = {
 		fields = {
 			{
 				name = "Message",
@@ -10963,8 +11093,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41035,
-	},
-	["AllocateMessage"] = {
+	}
+	g_classFuncs["UGbxMessageManager"]["AllocateMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -10977,8 +11107,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40099,
 		retOffset = 0,
-	},
-	["InitSequence"] = {
+	}
+	g_classFuncs["AGearboxMind"]["InitSequence"] = {
 		fields = {
 			{
 				name = "NewSequence",
@@ -10991,8 +11121,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42614,
-	},
-	["GetAllegiance"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11005,8 +11135,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42612,
 		retOffset = 0,
-	},
-	["GetAIDefinition"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetAIDefinition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11019,8 +11149,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42610,
 		retOffset = 0,
-	},
-	["GetAIComponent"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetAIComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11033,8 +11163,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42608,
 		retOffset = 0,
-	},
-	["GetAIParent"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetAIParent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11048,8 +11178,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42606,
 		retOffset = 0,
-	},
-	["GetAILocation"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetAILocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11063,8 +11193,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42604,
 		retOffset = 0,
-	},
-	["GetAIActor"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetAIActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11077,8 +11207,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42602,
 		retOffset = 0,
-	},
-	["CanTickAI"] = {
+	}
+	g_classFuncs["AGearboxMind"]["CanTickAI"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11091,8 +11221,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42600,
 		retOffset = 0,
-	},
-	["InGodMode"] = {
+	}
+	g_classFuncs["AGearboxMind"]["InGodMode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11105,8 +11235,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42598,
 		retOffset = 0,
-	},
-	["PawnDied"] = {
+	}
+	g_classFuncs["AGearboxMind"]["PawnDied"] = {
 		fields = {
 			{
 				name = "inPawn",
@@ -11119,8 +11249,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42596,
-	},
-	["OnTargetPriority"] = {
+	}
+	g_classFuncs["AGearboxMind"]["OnTargetPriority"] = {
 		fields = {
 			{
 				name = "inAction",
@@ -11133,8 +11263,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42591,
-	},
-	["Behavior_SetCanTarget"] = {
+	}
+	g_classFuncs["AGearboxMind"]["Behavior_SetCanTarget"] = {
 		fields = {
 			{
 				name = "ChangeStatus",
@@ -11148,8 +11278,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 42589,
-	},
-	["GetNoTargetAllEnemies"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetNoTargetAllEnemies"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11162,8 +11292,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42587,
 		retOffset = 0,
-	},
-	["SetNoTargetAllEnemies"] = {
+	}
+	g_classFuncs["AGearboxMind"]["SetNoTargetAllEnemies"] = {
 		fields = {
 			{
 				name = "bNoTarget",
@@ -11176,14 +11306,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42585,
-	},
-	["eventClearScriptedMoveTarget"] = {
+	}
+	g_classFuncs["AGearboxMind"]["eventClearScriptedMoveTarget"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42584,
-	},
-	["eventIsCloseEnoughToScriptedMoveTarget"] = {
+	}
+	g_classFuncs["AGearboxMind"]["eventIsCloseEnoughToScriptedMoveTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11196,8 +11326,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39139,
 		retOffset = 0,
-	},
-	["eventGetWeaponFireLocation"] = {
+	}
+	g_classFuncs["AGearboxMind"]["eventGetWeaponFireLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11211,8 +11341,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42582,
 		retOffset = 0,
-	},
-	["ActivateEventRule"] = {
+	}
+	g_classFuncs["AGearboxMind"]["ActivateEventRule"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11233,8 +11363,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42579,
 		retOffset = 8,
-	},
-	["AddHitTargetRecord"] = {
+	}
+	g_classFuncs["AGearboxMind"]["AddHitTargetRecord"] = {
 		fields = {
 			{
 				name = "HitByPawn",
@@ -11263,14 +11393,14 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 42575,
-	},
-	["StopMovement"] = {
+	}
+	g_classFuncs["AGearboxMind"]["StopMovement"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42574,
-	},
-	["eventPossess"] = {
+	}
+	g_classFuncs["AGearboxMind"]["eventPossess"] = {
 		fields = {
 			{
 				name = "inPawn",
@@ -11291,8 +11421,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 42571,
-	},
-	["GetGearboxRuleEngine"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetGearboxRuleEngine"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11305,8 +11435,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42569,
 		retOffset = 0,
-	},
-	["GetRuleEngine"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetRuleEngine"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11319,8 +11449,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42567,
 		retOffset = 0,
-	},
-	["NotifyShotAtBy"] = {
+	}
+	g_classFuncs["AGearboxMind"]["NotifyShotAtBy"] = {
 		fields = {
 			{
 				name = "ShootingPawn",
@@ -11333,8 +11463,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42565,
-	},
-	["FindCoverAndClaim"] = {
+	}
+	g_classFuncs["AGearboxMind"]["FindCoverAndClaim"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11397,8 +11527,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 42557,
 		retOffset = 40,
-	},
-	["UpdateRuleEngineKnowledge"] = {
+	}
+	g_classFuncs["AGearboxMind"]["UpdateRuleEngineKnowledge"] = {
 		fields = {
 			{
 				name = "aKDBClass",
@@ -11411,8 +11541,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42555,
-	},
-	["GetCurrentTargetInfo"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetCurrentTargetInfo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11433,8 +11563,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42552,
 		retOffset = 4,
-	},
-	["IsSameAllegianceMind"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsSameAllegianceMind"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11455,8 +11585,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42549,
 		retOffset = 4,
-	},
-	["IsSameAllegiance"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsSameAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11477,8 +11607,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42546,
 		retOffset = 4,
-	},
-	["IsNeutralMind"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsNeutralMind"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11499,8 +11629,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42543,
 		retOffset = 4,
-	},
-	["IsNeutral"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsNeutral"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11521,8 +11651,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42540,
 		retOffset = 4,
-	},
-	["IsFriendlyMind"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsFriendlyMind"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11543,8 +11673,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42537,
 		retOffset = 4,
-	},
-	["IsFriendly"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsFriendly"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11565,8 +11695,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42534,
 		retOffset = 4,
-	},
-	["IsEnemyMind"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsEnemyMind"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11587,8 +11717,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42531,
 		retOffset = 4,
-	},
-	["IsEnemy"] = {
+	}
+	g_classFuncs["AGearboxMind"]["IsEnemy"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11609,8 +11739,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42528,
 		retOffset = 4,
-	},
-	["WantsToWalk"] = {
+	}
+	g_classFuncs["AGearboxMind"]["WantsToWalk"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11623,8 +11753,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42526,
 		retOffset = 0,
-	},
-	["SetWantsToWalk"] = {
+	}
+	g_classFuncs["AGearboxMind"]["SetWantsToWalk"] = {
 		fields = {
 			{
 				name = "bInWantsToWalk",
@@ -11637,8 +11767,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42524,
-	},
-	["GetFacingPolicy"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetFacingPolicy"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11652,8 +11782,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 42522,
 		retOffset = 0,
-	},
-	["SetFacingPolicy"] = {
+	}
+	g_classFuncs["AGearboxMind"]["SetFacingPolicy"] = {
 		fields = {
 			{
 				name = "NewFacingPolicy",
@@ -11685,8 +11815,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 38905,
-	},
-	["GetCurrentTarget"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetCurrentTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11699,8 +11829,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38907,
 		retOffset = 0,
-	},
-	["RemoveEnemyFromQueue"] = {
+	}
+	g_classFuncs["AGearboxMind"]["RemoveEnemyFromQueue"] = {
 		fields = {
 			{
 				name = "Target",
@@ -11713,8 +11843,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42517,
-	},
-	["GetNavigationHandle"] = {
+	}
+	g_classFuncs["AGearboxMind"]["GetNavigationHandle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11727,8 +11857,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42515,
 		retOffset = 0,
-	},
-	["IsChangingDirection"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsChangingDirection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11741,8 +11871,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41924,
 		retOffset = 0,
-	},
-	["IsMantlingOverCoverInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsMantlingOverCoverInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11755,8 +11885,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41922,
 		retOffset = 0,
-	},
-	["IsReturnFromPeekInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsReturnFromPeekInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11769,8 +11899,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41920,
 		retOffset = 0,
-	},
-	["IsPeekTransitionInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsPeekTransitionInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11783,8 +11913,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41918,
 		retOffset = 0,
-	},
-	["IsPeekedUp"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsPeekedUp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11806,8 +11936,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41915,
 		retOffset = 4,
-	},
-	["IsReturnFromLeanOutInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsReturnFromLeanOutInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11820,8 +11950,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41913,
 		retOffset = 0,
-	},
-	["IsLeanOutTransitionInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsLeanOutTransitionInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11834,8 +11964,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41911,
 		retOffset = 0,
-	},
-	["IsLeanedOut"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsLeanedOut"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11857,8 +11987,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41908,
 		retOffset = 4,
-	},
-	["IsReturnFromPopUpInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsReturnFromPopUpInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11871,8 +12001,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41906,
 		retOffset = 0,
-	},
-	["IsPopUpTransitionInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsPopUpTransitionInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11885,8 +12015,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41904,
 		retOffset = 0,
-	},
-	["IsPoppedUp"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsPoppedUp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11908,8 +12038,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41901,
 		retOffset = 4,
-	},
-	["IsExecutingAnyTransition"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsExecutingAnyTransition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11922,8 +12052,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41899,
 		retOffset = 0,
-	},
-	["GetDesiredState"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetDesiredState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11937,8 +12067,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41897,
 		retOffset = 0,
-	},
-	["GetCurrentTransition"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetCurrentTransition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -11952,20 +12082,20 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41895,
 		retOffset = 0,
-	},
-	["OnMantleOverCoverAnimEnd"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["OnMantleOverCoverAnimEnd"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41894,
-	},
-	["OnTransitionAnimEndEx"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["OnTransitionAnimEndEx"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41893,
-	},
-	["OnTransitionAnimEnd"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["OnTransitionAnimEnd"] = {
 		fields = {
 			{
 				name = "Transition",
@@ -11979,20 +12109,20 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41891,
-	},
-	["OnDismountAnimEnd"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["OnDismountAnimEnd"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41890,
-	},
-	["OnMountAnimEnd"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["OnMountAnimEnd"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41889,
-	},
-	["MantleOverCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["MantleOverCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12023,8 +12153,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41885,
 		retOffset = 8,
-	},
-	["ReturnToCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["ReturnToCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12037,8 +12167,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41883,
 		retOffset = 0,
-	},
-	["LeanOutForFiring"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["LeanOutForFiring"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12060,8 +12190,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41880,
 		retOffset = 4,
-	},
-	["PopUpForFiring"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["PopUpForFiring"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12083,8 +12213,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41877,
 		retOffset = 4,
-	},
-	["Peek"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["Peek"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12097,8 +12227,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41875,
 		retOffset = 0,
-	},
-	["DetachFromCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["DetachFromCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12111,8 +12241,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41873,
 		retOffset = 0,
-	},
-	["DismountCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["DismountCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12135,8 +12265,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41870,
 		retOffset = 4,
-	},
-	["ClaimAndMountCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["ClaimAndMountCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12165,8 +12295,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41866,
 		retOffset = 8,
-	},
-	["MountDesiredCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["MountDesiredCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12179,14 +12309,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41864,
 		retOffset = 0,
-	},
-	["ClearDesiredCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["ClearDesiredCover"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41863,
-	},
-	["GetCurrentCoverLocationAndRotation"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetCurrentCoverLocationAndRotation"] = {
 		fields = {
 			{
 				name = "CoverLoc",
@@ -12209,8 +12339,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 41860,
-	},
-	["GetDesiredCoverLocationAndRotation"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetDesiredCoverLocationAndRotation"] = {
 		fields = {
 			{
 				name = "CoverLoc",
@@ -12233,8 +12363,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 41857,
-	},
-	["HasDesiredCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["HasDesiredCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12247,8 +12377,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41855,
 		retOffset = 0,
-	},
-	["GetLastCoverHeight"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetLastCoverHeight"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12262,8 +12392,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41853,
 		retOffset = 0,
-	},
-	["GetCurrentCoverHeight"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetCurrentCoverHeight"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12277,8 +12407,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41851,
 		retOffset = 0,
-	},
-	["GetDesiredCoverHeight"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetDesiredCoverHeight"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12292,8 +12422,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 41849,
 		retOffset = 0,
-	},
-	["WasCoveredFrom"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["WasCoveredFrom"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12314,8 +12444,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41846,
 		retOffset = 12,
-	},
-	["WillBeCoveredFrom"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["WillBeCoveredFrom"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12336,8 +12466,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41843,
 		retOffset = 12,
-	},
-	["IsCoveredFrom"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsCoveredFrom"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12358,8 +12488,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41840,
 		retOffset = 12,
-	},
-	["IsDismountInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsDismountInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12372,8 +12502,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41838,
 		retOffset = 0,
-	},
-	["IsMountInProgress"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsMountInProgress"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12386,8 +12516,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41836,
 		retOffset = 0,
-	},
-	["WasMountedOnCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["WasMountedOnCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12400,8 +12530,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41834,
 		retOffset = 0,
-	},
-	["IsMountedOnCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsMountedOnCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12414,8 +12544,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41832,
 		retOffset = 0,
-	},
-	["IsUsingCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["IsUsingCover"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12428,14 +12558,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41830,
 		retOffset = 0,
-	},
-	["OnCoverStateChanged"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["OnCoverStateChanged"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41829,
-	},
-	["GetLastCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetLastCover"] = {
 		fields = {
 			{
 				name = "OutCoverActor",
@@ -12456,8 +12586,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41826,
-	},
-	["GetCurrentCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetCurrentCover"] = {
 		fields = {
 			{
 				name = "OutCoverActor",
@@ -12478,8 +12608,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41823,
-	},
-	["GetDesiredCover"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["GetDesiredCover"] = {
 		fields = {
 			{
 				name = "OutCoverActor",
@@ -12500,8 +12630,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41820,
-	},
-	["FindCoverAndClaim"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["FindCoverAndClaim"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12572,8 +12702,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 41811,
 		retOffset = 44,
-	},
-	["Initialize"] = {
+	}
+	g_classFuncs["UGearboxCoverStateManager"]["Initialize"] = {
 		fields = {
 			{
 				name = "P",
@@ -12586,8 +12716,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41809,
-	},
-	["SetDesiredMovementSpeed"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["SetDesiredMovementSpeed"] = {
 		fields = {
 			{
 				name = "Speed",
@@ -12601,14 +12731,14 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 39129,
-	},
-	["ClearAnchor"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["ClearAnchor"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42692,
-	},
-	["GetNearestPositionOnNavMesh"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["GetNearestPositionOnNavMesh"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12673,8 +12803,8 @@ local c = g_classFuncs
 		dataSize = 164,
 		index = 42684,
 		retOffset = 160,
-	},
-	["GetNavMeshPolyForPoint"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["GetNavMeshPolyForPoint"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12713,8 +12843,8 @@ local c = g_classFuncs
 		dataSize = 104,
 		index = 42679,
 		retOffset = 100,
-	},
-	["IsDoingSpecialMove"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["IsDoingSpecialMove"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12727,8 +12857,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42677,
 		retOffset = 0,
-	},
-	["InFinalPoly"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["InFinalPoly"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12749,8 +12879,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 42674,
 		retOffset = 12,
-	},
-	["NeedsRegularWalkingPhysics"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["NeedsRegularWalkingPhysics"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12763,8 +12893,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42672,
 		retOffset = 0,
-	},
-	["PopulatePathfindingParamCache"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["PopulatePathfindingParamCache"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12777,8 +12907,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42670,
 		retOffset = 0,
-	},
-	["TrySpecialMove"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["TrySpecialMove"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12800,14 +12930,14 @@ local c = g_classFuncs
 		dataSize = 56,
 		index = 42667,
 		retOffset = 52,
-	},
-	["Finished"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["Finished"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42666,
-	},
-	["IsGoalValid"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["IsGoalValid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12820,14 +12950,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42664,
 		retOffset = 0,
-	},
-	["MovePawnToGoal"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["MovePawnToGoal"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42663,
-	},
-	["PathIsValid"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["PathIsValid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12858,8 +12988,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 42659,
 		retOffset = 92,
-	},
-	["IsFollowingPath"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["IsFollowingPath"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12872,8 +13002,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42657,
 		retOffset = 0,
-	},
-	["ClearPath"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["ClearPath"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12904,8 +13034,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42653,
 		retOffset = 8,
-	},
-	["FollowPath"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["FollowPath"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12927,8 +13057,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 42650,
 		retOffset = 88,
-	},
-	["CreatePathToLocation"] = {
+	}
+	g_classFuncs["UGearboxNavigationHandle"]["CreatePathToLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12976,8 +13106,8 @@ local c = g_classFuncs
 		dataSize = 116,
 		index = 42644,
 		retOffset = 112,
-	},
-	["WantsToStopListening"] = {
+	}
+	g_classFuncs["UIGbxMessageListener"]["WantsToStopListening"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -12990,8 +13120,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43717,
 		retOffset = 0,
-	},
-	["GetActor"] = {
+	}
+	g_classFuncs["UIGbxMessageListener"]["GetActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13004,8 +13134,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43715,
 		retOffset = 0,
-	},
-	["GetListenerLocation"] = {
+	}
+	g_classFuncs["UIGbxMessageListener"]["GetListenerLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13019,8 +13149,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43713,
 		retOffset = 0,
-	},
-	["GetAllegiance"] = {
+	}
+	g_classFuncs["UIGbxMessageListener"]["GetAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13033,8 +13163,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43711,
 		retOffset = 0,
-	},
-	["ReceiveMessage"] = {
+	}
+	g_classFuncs["UIGbxMessageListener"]["ReceiveMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13055,8 +13185,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43708,
 		retOffset = 4,
-	},
-	["CaresAboutMessage"] = {
+	}
+	g_classFuncs["UIGbxMessageListener"]["CaresAboutMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13077,8 +13207,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43705,
 		retOffset = 4,
-	},
-	["GetRuleEngine"] = {
+	}
+	g_classFuncs["UIRuleEngineOwner"]["GetRuleEngine"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13091,8 +13221,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43733,
 		retOffset = 0,
-	},
-	["eventRecordEvalCallback"] = {
+	}
+	g_classFuncs["UKnowledgeRecord"]["eventRecordEvalCallback"] = {
 		fields = {
 			{
 				name = "EvalRuleEngine",
@@ -13105,8 +13235,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43752,
-	},
-	["GetAverageHitTime"] = {
+	}
+	g_classFuncs["UMindTargetInfo"]["GetAverageHitTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13119,8 +13249,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43801,
 		retOffset = 0,
-	},
-	["AddHitTargetRecord"] = {
+	}
+	g_classFuncs["UMindTargetInfo"]["AddHitTargetRecord"] = {
 		fields = {
 			{
 				name = "vecNewHitLoc",
@@ -13141,8 +13271,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 43798,
-	},
-	["GetRuleName"] = {
+	}
+	g_classFuncs["URule"]["GetRuleName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13157,8 +13287,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 40929,
 		retOffset = 0,
-	},
-	["GetRuleFName"] = {
+	}
+	g_classFuncs["URule"]["GetRuleFName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13172,8 +13302,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40930,
 		retOffset = 0,
-	},
-	["GetOtherEventParticipant"] = {
+	}
+	g_classFuncs["URule"]["GetOtherEventParticipant"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13186,8 +13316,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40932,
 		retOffset = 0,
-	},
-	["ApplyFlagInitializationData"] = {
+	}
+	g_classFuncs["URuleEngine"]["ApplyFlagInitializationData"] = {
 		fields = {
 			{
 				name = "FlagsToSet",
@@ -13202,8 +13332,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43403,
-	},
-	["IsResourceInUse"] = {
+	}
+	g_classFuncs["URuleEngine"]["IsResourceInUse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13224,8 +13354,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43400,
 		retOffset = 4,
-	},
-	["GetContextSource"] = {
+	}
+	g_classFuncs["URuleEngine"]["GetContextSource"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13238,8 +13368,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43398,
 		retOffset = 0,
-	},
-	["IsRunningRuleWhichBlocksRuleSetChange"] = {
+	}
+	g_classFuncs["URuleEngine"]["IsRunningRuleWhichBlocksRuleSetChange"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13252,8 +13382,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43396,
 		retOffset = 0,
-	},
-	["GetDynamicFlagValue"] = {
+	}
+	g_classFuncs["URuleEngine"]["GetDynamicFlagValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13274,8 +13404,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43393,
 		retOffset = 4,
-	},
-	["SetDynamicFlagDefTrueTimed"] = {
+	}
+	g_classFuncs["URuleEngine"]["SetDynamicFlagDefTrueTimed"] = {
 		fields = {
 			{
 				name = "FlagDefinition",
@@ -13296,8 +13426,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43390,
-	},
-	["SetDynamicFlagDefValue"] = {
+	}
+	g_classFuncs["URuleEngine"]["SetDynamicFlagDefValue"] = {
 		fields = {
 			{
 				name = "FlagDefinition",
@@ -13318,8 +13448,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 43387,
-	},
-	["GetRuleSetFromReference"] = {
+	}
+	g_classFuncs["URuleEngine"]["GetRuleSetFromReference"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13340,20 +13470,20 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43384,
 		retOffset = 8,
-	},
-	["ClearRuleSetStack"] = {
+	}
+	g_classFuncs["URuleEngine"]["ClearRuleSetStack"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43383,
-	},
-	["PopRuleSetSwitch"] = {
+	}
+	g_classFuncs["URuleEngine"]["PopRuleSetSwitch"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43382,
-	},
-	["PushRuleSetSwitch"] = {
+	}
+	g_classFuncs["URuleEngine"]["PushRuleSetSwitch"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13374,8 +13504,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43379,
 		retOffset = 4,
-	},
-	["SetRuleSet"] = {
+	}
+	g_classFuncs["URuleEngine"]["SetRuleSet"] = {
 		fields = {
 			{
 				name = "NewRuleSetTemplate",
@@ -13388,8 +13518,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43377,
-	},
-	["SwitchActiveRuleSet"] = {
+	}
+	g_classFuncs["URuleEngine"]["SwitchActiveRuleSet"] = {
 		fields = {
 			{
 				name = "NewRuleSetTemplate",
@@ -13402,8 +13532,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43375,
-	},
-	["UpdateKnowledge"] = {
+	}
+	g_classFuncs["URuleEngine"]["UpdateKnowledge"] = {
 		fields = {
 			{
 				name = "pKnowledgeRecordType",
@@ -13416,8 +13546,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43373,
-	},
-	["ActivateEventRuleEx"] = {
+	}
+	g_classFuncs["URuleEngine"]["ActivateEventRuleEx"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13465,14 +13595,14 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 43366,
 		retOffset = 28,
-	},
-	["CleanUpRuleEngineData"] = {
+	}
+	g_classFuncs["URuleEngine"]["CleanUpRuleEngineData"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43365,
-	},
-	["ActivateEventRule"] = {
+	}
+	g_classFuncs["URuleEngine"]["ActivateEventRule"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13520,8 +13650,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 43359,
 		retOffset = 20,
-	},
-	["ActivateEventRuleByDefinition"] = {
+	}
+	g_classFuncs["URuleEngine"]["ActivateEventRuleByDefinition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13551,8 +13681,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43355,
 		retOffset = 8,
-	},
-	["Initialize"] = {
+	}
+	g_classFuncs["UGearboxRuleEngine"]["Initialize"] = {
 		fields = {
 			{
 				name = "NewGearboxPawn",
@@ -13581,8 +13711,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 43410,
-	},
-	["GetContextSource"] = {
+	}
+	g_classFuncs["UGearboxRuleEngine"]["GetContextSource"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13595,8 +13725,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43408,
 		retOffset = 0,
-	},
-	["eventRecordEvalCallback"] = {
+	}
+	g_classFuncs["UTargetIterator"]["eventRecordEvalCallback"] = {
 		fields = {
 			{
 				name = "EvalRuleEngine",
@@ -13609,8 +13739,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 45008,
-	},
-	["GetInitialMovementHoldTime"] = {
+	}
+	g_classFuncs["UIPopulationSpawnPoint"]["GetInitialMovementHoldTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13623,8 +13753,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43731,
 		retOffset = 0,
-	},
-	["GetInitialDestination"] = {
+	}
+	g_classFuncs["UIPopulationSpawnPoint"]["GetInitialDestination"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13637,8 +13767,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43729,
 		retOffset = 0,
-	},
-	["GetInitialActionType"] = {
+	}
+	g_classFuncs["UIPopulationSpawnPoint"]["GetInitialActionType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13652,8 +13782,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 43727,
 		retOffset = 0,
-	},
-	["GetSpawnStyleType"] = {
+	}
+	g_classFuncs["UIPopulationSpawnPoint"]["GetSpawnStyleType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13667,8 +13797,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 43725,
 		retOffset = 0,
-	},
-	["IsAllSpawnTypesDebugEnabled"] = {
+	}
+	g_classFuncs["UPopulationDefinition"]["IsAllSpawnTypesDebugEnabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13681,14 +13811,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43849,
 		retOffset = 0,
-	},
-	["ToggleAllSpawnTypesDebug"] = {
+	}
+	g_classFuncs["UPopulationDefinition"]["ToggleAllSpawnTypesDebug"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43848,
-	},
-	["GetRandomFactory"] = {
+	}
+	g_classFuncs["UPopulationDefinition"]["GetRandomFactory"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13725,8 +13855,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43843,
 		retOffset = 12,
-	},
-	["eventGetDescriptionOfFactoryOutput"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventGetDescriptionOfFactoryOutput"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13741,8 +13871,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43964,
 		retOffset = 0,
-	},
-	["eventShouldSavePopulationActor"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventShouldSavePopulationActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13771,8 +13901,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43960,
 		retOffset = 8,
-	},
-	["eventDestroyPopulationActor"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventDestroyPopulationActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13834,8 +13964,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 43952,
 		retOffset = 24,
-	},
-	["eventCreatePopulationActor"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventCreatePopulationActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13904,8 +14034,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 43943,
 		retOffset = 44,
-	},
-	["eventGetSpawnVisibilityBounds"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventGetSpawnVisibilityBounds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13935,8 +14065,8 @@ local c = g_classFuncs
 		dataSize = 64,
 		index = 43938,
 		retOffset = 8,
-	},
-	["GetActorAllegiance"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["GetActorAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -13965,8 +14095,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43934,
 		retOffset = 8,
-	},
-	["eventGetActorSpawnCost"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventGetActorSpawnCost"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14003,8 +14133,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43929,
 		retOffset = 12,
-	},
-	["eventOnSpawnActor"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventOnSpawnActor"] = {
 		fields = {
 			{
 				name = "aNewActor",
@@ -14017,8 +14147,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43927,
-	},
-	["eventSetupMatineeForActor"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["eventSetupMatineeForActor"] = {
 		fields = {
 			{
 				name = "aNewActor",
@@ -14031,8 +14161,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43925,
-	},
-	["GetSpawnFactory"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["GetSpawnFactory"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14069,8 +14199,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43920,
 		retOffset = 12,
-	},
-	["GetSpawnProbabilityAtThisGameStage"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["GetSpawnProbabilityAtThisGameStage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14099,8 +14229,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43916,
 		retOffset = 8,
-	},
-	["IsFactoryWithin"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["IsFactoryWithin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14121,8 +14251,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43913,
 		retOffset = 4,
-	},
-	["CanSpawn"] = {
+	}
+	g_classFuncs["UPopulationFactory"]["CanSpawn"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14143,8 +14273,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43910,
 		retOffset = 4,
-	},
-	["eventCreatePopulationActor"] = {
+	}
+	g_classFuncs["UPopulationFactoryGeneric"]["eventCreatePopulationActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14213,8 +14343,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 43971,
 		retOffset = 44,
-	},
-	["eventGetSpawnVisibilityBounds"] = {
+	}
+	g_classFuncs["UPopulationFactoryGeneric"]["eventGetSpawnVisibilityBounds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14244,8 +14374,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 43967,
 		retOffset = 8,
-	},
-	["GetSpawnFactory"] = {
+	}
+	g_classFuncs["UPopulationFactoryPopulationDefinition"]["GetSpawnFactory"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14282,8 +14412,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 43990,
 		retOffset = 12,
-	},
-	["GetActorAllegiance"] = {
+	}
+	g_classFuncs["UPopulationFactoryPopulationDefinition"]["GetActorAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14312,8 +14442,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 43986,
 		retOffset = 8,
-	},
-	["IsFactoryWithin"] = {
+	}
+	g_classFuncs["UPopulationFactoryPopulationDefinition"]["IsFactoryWithin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14334,8 +14464,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 43983,
 		retOffset = 4,
-	},
-	["GetActorSpawnedFromOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetActorSpawnedFromOpportunity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14365,8 +14495,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44204,
 		retOffset = 8,
-	},
-	["GetSavedActorDebugInfoForOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetSavedActorDebugInfoForOpportunity"] = {
 		fields = {
 			{
 				name = "OpportunityIndex",
@@ -14389,8 +14519,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44200,
-	},
-	["GetNumberOfSavedActorsForOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetNumberOfSavedActorsForOpportunity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14411,8 +14541,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44197,
 		retOffset = 4,
-	},
-	["WillActorsOpportunityBeResetOnLevelLoad"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["WillActorsOpportunityBeResetOnLevelLoad"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14433,14 +14563,14 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44194,
 		retOffset = 4,
-	},
-	["ResetRespawn"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["ResetRespawn"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44193,
-	},
-	["GetStreamingLevelForActor"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetStreamingLevelForActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14461,8 +14591,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44190,
 		retOffset = 4,
-	},
-	["HasCapacityToSpawnFromFactories"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["HasCapacityToSpawnFromFactories"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14501,8 +14631,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 44184,
 		retOffset = 20,
-	},
-	["HasCapacityToSpawnFromFactory"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["HasCapacityToSpawnFromFactory"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14539,8 +14669,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44179,
 		retOffset = 12,
-	},
-	["IsPopulationSystemAtCapacity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["IsPopulationSystemAtCapacity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14553,8 +14683,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44177,
 		retOffset = 0,
-	},
-	["StatProfileStop"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["StatProfileStop"] = {
 		fields = {
 			{
 				name = "nStat",
@@ -14567,8 +14697,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44175,
-	},
-	["StatProfileStart"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["StatProfileStart"] = {
 		fields = {
 			{
 				name = "nStat",
@@ -14581,8 +14711,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44173,
-	},
-	["GetStatProfileTime"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetStatProfileTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14603,8 +14733,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44170,
 		retOffset = 4,
-	},
-	["AddSavedActor"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["AddSavedActor"] = {
 		fields = {
 			{
 				name = "OpportunityIdx",
@@ -14641,8 +14771,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44165,
-	},
-	["DisconnectEncounter"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["DisconnectEncounter"] = {
 		fields = {
 			{
 				name = "Encounter",
@@ -14655,8 +14785,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44163,
-	},
-	["ConnectEncounter"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["ConnectEncounter"] = {
 		fields = {
 			{
 				name = "Encounter",
@@ -14669,8 +14799,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44161,
-	},
-	["DisconnectOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["DisconnectOpportunity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14699,8 +14829,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44157,
 		retOffset = 8,
-	},
-	["ConnectOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["ConnectOpportunity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14721,8 +14851,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44154,
 		retOffset = 4,
-	},
-	["GetWorldInfo"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetWorldInfo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14735,8 +14865,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44152,
 		retOffset = 0,
-	},
-	["DestroySpawnedActors"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["DestroySpawnedActors"] = {
 		fields = {
 			{
 				name = "Opportunity",
@@ -14758,8 +14888,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44149,
-	},
-	["RemoveSpawnedActor"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["RemoveSpawnedActor"] = {
 		fields = {
 			{
 				name = "TheActor",
@@ -14789,8 +14919,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44145,
-	},
-	["SetSpawnedActorsReuse"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["SetSpawnedActorsReuse"] = {
 		fields = {
 			{
 				name = "TheActor",
@@ -14811,8 +14941,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44142,
-	},
-	["AddExternalActor"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["AddExternalActor"] = {
 		fields = {
 			{
 				name = "SpawnedActor",
@@ -14833,8 +14963,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44139,
-	},
-	["SpawnActorFromOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["SpawnActorFromOpportunity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14929,8 +15059,8 @@ local c = g_classFuncs
 		dataSize = 60,
 		index = 44127,
 		retOffset = 56,
-	},
-	["SpawnActor"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["SpawnActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -14991,8 +15121,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 44119,
 		retOffset = 40,
-	},
-	["GetPopulationOpportunityIndex"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetPopulationOpportunityIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15013,8 +15143,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44116,
 		retOffset = 4,
-	},
-	["GetActorsOpportunity"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["GetActorsOpportunity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15035,8 +15165,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44113,
 		retOffset = 4,
-	},
-	["SpawnPopulationControlledActor"] = {
+	}
+	g_classFuncs["UPopulationMaster"]["SpawnPopulationControlledActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15120,20 +15250,20 @@ local c = g_classFuncs
 		dataSize = 56,
 		index = 43980,
 		retOffset = 52,
-	},
-	["ClearBodyCompositionInstance"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["ClearBodyCompositionInstance"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44261,
-	},
-	["ApplyPreviewBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["ApplyPreviewBodyComposition"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44260,
-	},
-	["GetBodyInfoProvider"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetBodyInfoProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15147,8 +15277,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44258,
 		retOffset = 0,
-	},
-	["ChangeInstanceDataSwitch"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["ChangeInstanceDataSwitch"] = {
 		fields = {
 			{
 				name = "SwitchName",
@@ -15169,8 +15299,8 @@ local c = g_classFuncs
 		},
 		dataSize = 9,
 		index = 44255,
-	},
-	["PostInitBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["PostInitBodyComposition"] = {
 		fields = {
 			{
 				name = "Identifier",
@@ -15207,8 +15337,8 @@ local c = g_classFuncs
 		},
 		dataSize = 17,
 		index = 44250,
-	},
-	["PreRemoveBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["PreRemoveBodyComposition"] = {
 		fields = {
 			{
 				name = "Identifier",
@@ -15237,8 +15367,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44246,
-	},
-	["GetNumSpawned"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetNumSpawned"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15251,8 +15381,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44244,
 		retOffset = 0,
-	},
-	["GetNumAlive"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetNumAlive"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15265,8 +15395,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44242,
 		retOffset = 0,
-	},
-	["GetNumDied"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetNumDied"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15279,14 +15409,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44240,
 		retOffset = 0,
-	},
-	["eventDestroyed"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["eventDestroyed"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44239,
-	},
-	["GetRarity"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetRarity"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15299,8 +15429,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44237,
 		retOffset = 0,
-	},
-	["GetGameStage"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetGameStage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15313,8 +15443,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44235,
 		retOffset = 0,
-	},
-	["GetOpportunityGameStage"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetOpportunityGameStage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15343,20 +15473,20 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44231,
 		retOffset = 8,
-	},
-	["eventTriggerKismetAllSpawnedEvent"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["eventTriggerKismetAllSpawnedEvent"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44230,
-	},
-	["eventClearSequenceActionLink"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["eventClearSequenceActionLink"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44229,
-	},
-	["eventSetSequenceActionLink"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["eventSetSequenceActionLink"] = {
 		fields = {
 			{
 				name = "Link",
@@ -15369,8 +15499,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44227,
-	},
-	["SetEnabledStatus"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["SetEnabledStatus"] = {
 		fields = {
 			{
 				name = "bEnable",
@@ -15383,8 +15513,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44225,
-	},
-	["OnToggle"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["OnToggle"] = {
 		fields = {
 			{
 				name = "Action",
@@ -15397,8 +15527,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44223,
-	},
-	["GetNumLeftToSpawnAndStillAlive"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetNumLeftToSpawnAndStillAlive"] = {
 		fields = {
 			{
 				name = "NumLeftToSpawn",
@@ -15419,8 +15549,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44220,
-	},
-	["GetNextSpawnTime"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["GetNextSpawnTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15433,8 +15563,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44218,
 		retOffset = 0,
-	},
-	["RespawnKilledActors"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["RespawnKilledActors"] = {
 		fields = {
 			{
 				name = "PercentageOfKilledActorsToRespawn",
@@ -15447,8 +15577,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44216,
-	},
-	["DoSpawning"] = {
+	}
+	g_classFuncs["APopulationOpportunity"]["DoSpawning"] = {
 		fields = {
 			{
 				name = "PopMaster",
@@ -15461,14 +15591,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44214,
-	},
-	["ApplyPreviewBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunityArea"]["ApplyPreviewBodyComposition"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44303,
-	},
-	["GetBodyInfoProvider"] = {
+	}
+	g_classFuncs["APopulationOpportunityArea"]["GetBodyInfoProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15482,8 +15612,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44301,
 		retOffset = 0,
-	},
-	["RespawnKilledActors"] = {
+	}
+	g_classFuncs["APopulationOpportunityArea"]["RespawnKilledActors"] = {
 		fields = {
 			{
 				name = "PercentageOfKilledActorsToRespawn",
@@ -15496,8 +15626,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44299,
-	},
-	["DoSpawning"] = {
+	}
+	g_classFuncs["APopulationOpportunityArea"]["DoSpawning"] = {
 		fields = {
 			{
 				name = "PopMaster",
@@ -15510,14 +15640,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44297,
-	},
-	["ApplyPreviewBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunityCloner"]["ApplyPreviewBodyComposition"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44322,
-	},
-	["GetBodyInfoProvider"] = {
+	}
+	g_classFuncs["APopulationOpportunityCloner"]["GetBodyInfoProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15531,14 +15661,14 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44320,
 		retOffset = 0,
-	},
-	["CloneTimer"] = {
+	}
+	g_classFuncs["APopulationOpportunityCloner"]["CloneTimer"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44319,
-	},
-	["RespawnKilledActors"] = {
+	}
+	g_classFuncs["APopulationOpportunityCloner"]["RespawnKilledActors"] = {
 		fields = {
 			{
 				name = "PercentageOfKilledActorsToRespawn",
@@ -15551,8 +15681,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44317,
-	},
-	["DoSpawning"] = {
+	}
+	g_classFuncs["APopulationOpportunityCloner"]["DoSpawning"] = {
 		fields = {
 			{
 				name = "PopMaster",
@@ -15565,14 +15695,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44315,
-	},
-	["ApplyPreviewBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["ApplyPreviewBodyComposition"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44389,
-	},
-	["GetBodyInfoProvider"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetBodyInfoProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15586,20 +15716,20 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44387,
 		retOffset = 0,
-	},
-	["eventTriggerKismetSingleDeathEvent"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["eventTriggerKismetSingleDeathEvent"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44385,
-	},
-	["eventTriggerKismetDeathEvent"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["eventTriggerKismetDeathEvent"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44384,
-	},
-	["GetNumSpawned"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetNumSpawned"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15612,8 +15742,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44382,
 		retOffset = 0,
-	},
-	["GetNumAlive"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetNumAlive"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15626,8 +15756,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44380,
 		retOffset = 0,
-	},
-	["GetNumDied"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetNumDied"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15640,8 +15770,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44378,
 		retOffset = 0,
-	},
-	["WantsToStopListening"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["WantsToStopListening"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15654,8 +15784,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44376,
 		retOffset = 0,
-	},
-	["GetActor"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15668,8 +15798,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44374,
 		retOffset = 0,
-	},
-	["GetListenerLocation"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetListenerLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15683,8 +15813,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44372,
 		retOffset = 0,
-	},
-	["GetAllegiance"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["GetAllegiance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15697,8 +15827,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44370,
 		retOffset = 0,
-	},
-	["ReceiveMessage"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["ReceiveMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15719,8 +15849,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44367,
 		retOffset = 4,
-	},
-	["CaresAboutMessage"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["CaresAboutMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15741,14 +15871,14 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44364,
 		retOffset = 4,
-	},
-	["PostBeginPlay"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["PostBeginPlay"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44363,
-	},
-	["EnableDebugging"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["EnableDebugging"] = {
 		fields = {
 			{
 				name = "bEnabled",
@@ -15761,8 +15891,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44361,
-	},
-	["RespawnKilledActors"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["RespawnKilledActors"] = {
 		fields = {
 			{
 				name = "PercentageOfKilledActorsToRespawn",
@@ -15775,8 +15905,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44359,
-	},
-	["DoSpawning"] = {
+	}
+	g_classFuncs["APopulationOpportunityCombat"]["DoSpawning"] = {
 		fields = {
 			{
 				name = "PopMaster",
@@ -15789,20 +15919,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44357,
-	},
-	["ClearBodyCompositionInstance"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["ClearBodyCompositionInstance"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44430,
-	},
-	["ApplyPreviewBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["ApplyPreviewBodyComposition"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44429,
-	},
-	["GetBodyInfoProvider"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["GetBodyInfoProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15816,8 +15946,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44427,
 		retOffset = 0,
-	},
-	["ChangeInstanceDataSwitch"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["ChangeInstanceDataSwitch"] = {
 		fields = {
 			{
 				name = "SwitchName",
@@ -15838,8 +15968,8 @@ local c = g_classFuncs
 		},
 		dataSize = 9,
 		index = 44424,
-	},
-	["PostInitBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["PostInitBodyComposition"] = {
 		fields = {
 			{
 				name = "Identifier",
@@ -15876,8 +16006,8 @@ local c = g_classFuncs
 		},
 		dataSize = 17,
 		index = 44419,
-	},
-	["PreRemoveBodyComposition"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["PreRemoveBodyComposition"] = {
 		fields = {
 			{
 				name = "Identifier",
@@ -15906,8 +16036,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44415,
-	},
-	["GetInitialMovementHoldTime"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["GetInitialMovementHoldTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15920,8 +16050,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44413,
 		retOffset = 0,
-	},
-	["GetInitialDestination"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["GetInitialDestination"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15934,8 +16064,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44411,
 		retOffset = 0,
-	},
-	["GetInitialActionType"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["GetInitialActionType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15949,8 +16079,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44409,
 		retOffset = 0,
-	},
-	["GetSpawnStyleType"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["GetSpawnStyleType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -15964,8 +16094,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44407,
 		retOffset = 0,
-	},
-	["RespawnKilledActors"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["RespawnKilledActors"] = {
 		fields = {
 			{
 				name = "PercentageOfKilledActorsToRespawn",
@@ -15978,8 +16108,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44405,
-	},
-	["DoSpawning"] = {
+	}
+	g_classFuncs["APopulationOpportunityPoint"]["DoSpawning"] = {
 		fields = {
 			{
 				name = "PopMaster",
@@ -15992,8 +16122,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44403,
-	},
-	["CanSpawnFromFactory"] = {
+	}
+	g_classFuncs["APopulationPoint"]["CanSpawnFromFactory"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16030,8 +16160,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44471,
 		retOffset = 12,
-	},
-	["GetSpawnRotation"] = {
+	}
+	g_classFuncs["APopulationPoint"]["GetSpawnRotation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16045,8 +16175,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44469,
 		retOffset = 0,
-	},
-	["GetSpawnLocation"] = {
+	}
+	g_classFuncs["APopulationPoint"]["GetSpawnLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16060,8 +16190,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44467,
 		retOffset = 0,
-	},
-	["ActorSpawned"] = {
+	}
+	g_classFuncs["APopulationPoint"]["ActorSpawned"] = {
 		fields = {
 			{
 				name = "SpawnedActor",
@@ -16074,8 +16204,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44465,
-	},
-	["GetInitialMovementHoldTime"] = {
+	}
+	g_classFuncs["APopulationPoint"]["GetInitialMovementHoldTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16088,8 +16218,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44463,
 		retOffset = 0,
-	},
-	["GetInitialDestination"] = {
+	}
+	g_classFuncs["APopulationPoint"]["GetInitialDestination"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16102,14 +16232,14 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44461,
 		retOffset = 0,
-	},
-	["RandomizeInitialDestinations"] = {
+	}
+	g_classFuncs["APopulationPoint"]["RandomizeInitialDestinations"] = {
 		fields = {
 		},
 		dataSize = 16,
 		index = 44458,
-	},
-	["GetInitialActionType"] = {
+	}
+	g_classFuncs["APopulationPoint"]["GetInitialActionType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16123,8 +16253,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44456,
 		retOffset = 0,
-	},
-	["GetSpawnStyleType"] = {
+	}
+	g_classFuncs["APopulationPoint"]["GetSpawnStyleType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16138,8 +16268,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44454,
 		retOffset = 0,
-	},
-	["OnToggle"] = {
+	}
+	g_classFuncs["APopulationPoint"]["OnToggle"] = {
 		fields = {
 			{
 				name = "Action",
@@ -16152,8 +16282,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44452,
-	},
-	["NotifyWaveComplete"] = {
+	}
+	g_classFuncs["USeqEvent_EncounterWaveComplete"]["NotifyWaveComplete"] = {
 		fields = {
 			{
 				name = "nWave",
@@ -16166,8 +16296,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44623,
-	},
-	["eventNotifyPopulatedActor"] = {
+	}
+	g_classFuncs["USeqEvent_PopulatedActor"]["eventNotifyPopulatedActor"] = {
 		fields = {
 			{
 				name = "PopulatedActor",
@@ -16204,8 +16334,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44629,
-	},
-	["eventNotifyPopulatedActor"] = {
+	}
+	g_classFuncs["USeqEvent_PopulatedPoint"]["eventNotifyPopulatedActor"] = {
 		fields = {
 			{
 				name = "PopulatedActor",
@@ -16242,8 +16372,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44636,
-	},
-	["OnReset"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnReset"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16257,8 +16387,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39460,
-	},
-	["OnHitByVehicle"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnHitByVehicle"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16280,8 +16410,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39457,
-	},
-	["OnRanOver"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnRanOver"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16303,8 +16433,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39454,
-	},
-	["OnTimerEvent"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnTimerEvent"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16326,8 +16456,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 39451,
-	},
-	["OnKilledPawn"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnKilledPawn"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16349,8 +16479,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39448,
-	},
-	["OnLanded"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnLanded"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16364,8 +16494,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39446,
-	},
-	["OnStopFiringWeapon"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnStopFiringWeapon"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16379,8 +16509,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39444,
-	},
-	["OnStartFiringWeapon"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnStartFiringWeapon"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16394,8 +16524,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39442,
-	},
-	["OnTargetLost"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnTargetLost"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16417,8 +16547,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39439,
-	},
-	["OnTargetChanged"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnTargetChanged"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16448,8 +16578,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 39435,
-	},
-	["OnTargetAcquired"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnTargetAcquired"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16471,8 +16601,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 39432,
-	},
-	["OnSpawned"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnSpawned"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16486,8 +16616,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39430,
-	},
-	["OnTakeHeal"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnTakeHeal"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16541,8 +16671,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 39423,
-	},
-	["OnVehicleTakeDamage"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnVehicleTakeDamage"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16604,8 +16734,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 39415,
-	},
-	["OnTakeDamage"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnTakeDamage"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16659,8 +16789,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 39408,
-	},
-	["OnUserCouldNotAffordSecondary"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnUserCouldNotAffordSecondary"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16699,8 +16829,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 39403,
-	},
-	["OnUserCouldNotAfford"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnUserCouldNotAfford"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16739,8 +16869,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 39398,
-	},
-	["OnSecondaryUsed"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnSecondaryUsed"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16779,8 +16909,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 39393,
-	},
-	["OnUsed"] = {
+	}
+	g_classFuncs["UAIDefinition"]["OnUsed"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -16819,8 +16949,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 39386,
-	},
-	["SetBehaviorProviderDefinition"] = {
+	}
+	g_classFuncs["UAIDefinition"]["SetBehaviorProviderDefinition"] = {
 		fields = {
 			{
 				name = "NewBehaviorProviderDefinition",
@@ -16833,8 +16963,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 39384,
-	},
-	["GetBehaviorProviderDefinition"] = {
+	}
+	g_classFuncs["UAIDefinition"]["GetBehaviorProviderDefinition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -16847,8 +16977,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39382,
 		retOffset = 0,
-	},
-	["RecentlyRunBehaviorsForSequence"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["RecentlyRunBehaviorsForSequence"] = {
 		fields = {
 			{
 				name = "PID",
@@ -16886,8 +17016,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 40535,
-	},
-	["AllEventStateForSequence"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["AllEventStateForSequence"] = {
 		fields = {
 			{
 				name = "PID",
@@ -16925,8 +17055,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 40530,
-	},
-	["AllWaitingThreadsForSequence"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["AllWaitingThreadsForSequence"] = {
 		fields = {
 			{
 				name = "PID",
@@ -16964,8 +17094,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 40525,
-	},
-	["AllSequencesForProvider"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["AllSequencesForProvider"] = {
 		fields = {
 			{
 				name = "PID",
@@ -16995,8 +17125,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 40521,
-	},
-	["AllProvidersForProcess"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["AllProvidersForProcess"] = {
 		fields = {
 			{
 				name = "PID",
@@ -17025,8 +17155,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 40517,
-	},
-	["AllProcesses"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["AllProcesses"] = {
 		fields = {
 			{
 				name = "Process",
@@ -17040,8 +17170,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 40515,
-	},
-	["GetVariableStateSummaryForSequence"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["GetVariableStateSummaryForSequence"] = {
 		fields = {
 			{
 				name = "PID",
@@ -17072,8 +17202,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 40510,
-	},
-	["GetChunkedListSummaries"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["GetChunkedListSummaries"] = {
 		fields = {
 			{
 				name = "DebugInfo",
@@ -17088,8 +17218,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 40507,
-	},
-	["GetBehaviorKernelStats"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["GetBehaviorKernelStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17103,8 +17233,8 @@ local c = g_classFuncs
 		dataSize = 104,
 		index = 40505,
 		retOffset = 0,
-	},
-	["IsBehaviorKernelWatchingConsumer"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["IsBehaviorKernelWatchingConsumer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17125,8 +17255,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40502,
 		retOffset = 4,
-	},
-	["IsBehaviorSequenceEnabled"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["IsBehaviorSequenceEnabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17164,8 +17294,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39968,
 		retOffset = 16,
-	},
-	["ActivateBehaviorOutputLink"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ActivateBehaviorOutputLink"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -17187,8 +17317,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39841,
-	},
-	["PublishBoolOutputVariable"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["PublishBoolOutputVariable"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -17210,8 +17340,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 40494,
-	},
-	["PublishObjectOutputVariable"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["PublishObjectOutputVariable"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -17233,8 +17363,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39918,
-	},
-	["PublishVectorOutputVariable"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["PublishVectorOutputVariable"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -17257,8 +17387,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 40489,
-	},
-	["PublishFloatOutputVariable"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["PublishFloatOutputVariable"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -17280,8 +17410,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39904,
-	},
-	["PublishIntOutputVariable"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["PublishIntOutputVariable"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -17303,8 +17433,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39890,
-	},
-	["BeginNondeterministicProviderRegistration"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["BeginNondeterministicProviderRegistration"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17318,8 +17448,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40483,
-	},
-	["ProcessReplicatedBehaviorEvent"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ProcessReplicatedBehaviorEvent"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17342,8 +17472,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40480,
-	},
-	["ProcessReplicatedBehaviorConsumerState"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ProcessReplicatedBehaviorConsumerState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17374,8 +17504,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 40472,
 		retOffset = 16,
-	},
-	["ChangeBehaviorSequenceActivationStatus"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ChangeBehaviorSequenceActivationStatus"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17414,8 +17544,8 @@ local c = g_classFuncs
 		},
 		dataSize = 17,
 		index = 39761,
-	},
-	["ChangeBehaviorConsumerSuspensionStatus"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ChangeBehaviorConsumerSuspensionStatus"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17438,8 +17568,8 @@ local c = g_classFuncs
 		},
 		dataSize = 5,
 		index = 40460,
-	},
-	["BroadcastBehaviorEventFromScript"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["BroadcastBehaviorEventFromScript"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17490,8 +17620,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 39868,
-	},
-	["ActivateBehaviorEventFromScript"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ActivateBehaviorEventFromScript"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17540,8 +17670,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 40446,
-	},
-	["RemoveBehaviorProviderFromConsumer"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["RemoveBehaviorProviderFromConsumer"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17563,8 +17693,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40443,
-	},
-	["IntializeBehaviorProviderForConsumer"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["IntializeBehaviorProviderForConsumer"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17586,8 +17716,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40440,
-	},
-	["ForceUnregisterBehaviorConsumer"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["ForceUnregisterBehaviorConsumer"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -17601,8 +17731,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40438,
-	},
-	["RegisterBehaviorConsumer"] = {
+	}
+	g_classFuncs["UBehaviorKernel"]["RegisterBehaviorConsumer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17624,8 +17754,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 40435,
 		retOffset = 4,
-	},
-	["SetObjectBehaviorVariable"] = {
+	}
+	g_classFuncs["UBehaviorProviderDefinition"]["SetObjectBehaviorVariable"] = {
 		fields = {
 			{
 				name = "BehaviorVariable",
@@ -17647,8 +17777,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39274,
-	},
-	["SetVectorBehaviorVariable"] = {
+	}
+	g_classFuncs["UBehaviorProviderDefinition"]["SetVectorBehaviorVariable"] = {
 		fields = {
 			{
 				name = "BehaviorVariable",
@@ -17671,8 +17801,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 39271,
-	},
-	["SetFloatBehaviorVariable"] = {
+	}
+	g_classFuncs["UBehaviorProviderDefinition"]["SetFloatBehaviorVariable"] = {
 		fields = {
 			{
 				name = "BehaviorVariable",
@@ -17694,8 +17824,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39268,
-	},
-	["SetIntBehaviorVariable"] = {
+	}
+	g_classFuncs["UBehaviorProviderDefinition"]["SetIntBehaviorVariable"] = {
 		fields = {
 			{
 				name = "BehaviorVariable",
@@ -17717,8 +17847,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39265,
-	},
-	["SetBoolBehaviorVariable"] = {
+	}
+	g_classFuncs["UBehaviorProviderDefinition"]["SetBoolBehaviorVariable"] = {
 		fields = {
 			{
 				name = "BehaviorVariable",
@@ -17740,8 +17870,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39262,
-	},
-	["GetBehaviorConsumerHandle"] = {
+	}
+	g_classFuncs["UIBehaviorConsumer"]["GetBehaviorConsumerHandle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17755,8 +17885,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39759,
 		retOffset = 0,
-	},
-	["SetBehaviorProviderDefinition"] = {
+	}
+	g_classFuncs["UIBehaviorProvider"]["SetBehaviorProviderDefinition"] = {
 		fields = {
 			{
 				name = "NewBehaviorProviderDefinition",
@@ -17769,8 +17899,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43691,
-	},
-	["GetBehaviorProviderDefinition"] = {
+	}
+	g_classFuncs["UIBehaviorProvider"]["GetBehaviorProviderDefinition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17783,8 +17913,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43689,
 		retOffset = 0,
-	},
-	["eventRunCustomEvent"] = {
+	}
+	g_classFuncs["UICustomEvent"]["eventRunCustomEvent"] = {
 		fields = {
 			{
 				name = "EventName",
@@ -17824,8 +17954,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 43700,
-	},
-	["SetTimerState"] = {
+	}
+	g_classFuncs["UITimerBehavior"]["SetTimerState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17855,8 +17985,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39793,
 		retOffset = 16,
-	},
-	["GetTimerState"] = {
+	}
+	g_classFuncs["UITimerBehavior"]["GetTimerState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17887,8 +18017,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39794,
 		retOffset = 16,
-	},
-	["GetTimeSeconds"] = {
+	}
+	g_classFuncs["UITimerBehavior"]["GetTimeSeconds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17901,8 +18031,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 39804,
 		retOffset = 0,
-	},
-	["GetAnimLength"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["GetAnimLength"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17923,8 +18053,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41748,
 		retOffset = 4,
-	},
-	["eventIsPlayingLocally"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventIsPlayingLocally"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17945,8 +18075,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41745,
 		retOffset = 8,
-	},
-	["GetSMNode"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["GetSMNode"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17967,8 +18097,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 41742,
 		retOffset = 8,
-	},
-	["PlayAnim"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["PlayAnim"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -17998,8 +18128,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 41738,
 		retOffset = 36,
-	},
-	["eventAnimFinished"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventAnimFinished"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -18037,8 +18167,8 @@ local c = g_classFuncs
 		},
 		dataSize = 44,
 		index = 41732,
-	},
-	["eventClientFinished"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventClientFinished"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -18059,8 +18189,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 41723,
-	},
-	["eventClientStarted"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventClientStarted"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18090,8 +18220,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 41716,
 		retOffset = 36,
-	},
-	["eventServerFinished"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventServerFinished"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -18112,8 +18242,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 41711,
-	},
-	["eventServerStarted"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventServerStarted"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -18126,8 +18256,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 41705,
-	},
-	["AddAnimSet"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["AddAnimSet"] = {
 		fields = {
 			{
 				name = "SMI",
@@ -18140,8 +18270,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41702,
-	},
-	["GetSkeletalMesh"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["GetSkeletalMesh"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18162,8 +18292,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41697,
 		retOffset = 8,
-	},
-	["eventAuthorityCanPlay"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["eventAuthorityCanPlay"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18184,8 +18314,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41692,
 		retOffset = 8,
-	},
-	["OnTimedEvent"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["OnTimedEvent"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -18207,8 +18337,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41689,
-	},
-	["OnServerStop"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["OnServerStop"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -18222,8 +18352,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41687,
-	},
-	["OnServerStart"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["OnServerStart"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -18237,8 +18367,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41685,
-	},
-	["OnStop"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["OnStop"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -18252,8 +18382,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41683,
-	},
-	["OnStart"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["OnStart"] = {
 		fields = {
 			{
 				name = "ConsumerHandle",
@@ -18267,8 +18397,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41681,
-	},
-	["SetBehaviorProviderDefinition"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["SetBehaviorProviderDefinition"] = {
 		fields = {
 			{
 				name = "NewBehaviorProviderDefinition",
@@ -18281,8 +18411,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41679,
-	},
-	["GetBehaviorProviderDefinition"] = {
+	}
+	g_classFuncs["UGearboxAnimDefinition"]["GetBehaviorProviderDefinition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18295,8 +18425,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41677,
 		retOffset = 0,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_TriggerDialogEvent"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -18350,8 +18480,8 @@ local c = g_classFuncs
 		},
 		dataSize = 60,
 		index = 40275,
-	},
-	["TriggerDialogEvent"] = {
+	}
+	g_classFuncs["UBehavior_TriggerDialogEvent"]["TriggerDialogEvent"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -18397,8 +18527,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 40269,
-	},
-	["SetDialogNameTag"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["SetDialogNameTag"] = {
 		fields = {
 			{
 				name = "NewName",
@@ -18411,8 +18541,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42023,
-	},
-	["GetReplicatedDialogData"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["GetReplicatedDialogData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18426,8 +18556,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 42021,
 		retOffset = 0,
-	},
-	["SetReplicatedDialogData"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["SetReplicatedDialogData"] = {
 		fields = {
 			{
 				name = "TalkAct",
@@ -18449,8 +18579,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 42018,
-	},
-	["GetDialogGroups"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["GetDialogGroups"] = {
 		fields = {
 			{
 				name = "Groups",
@@ -18465,8 +18595,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42015,
-	},
-	["GetDialogComponent"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["GetDialogComponent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18479,8 +18609,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42013,
 		retOffset = 0,
-	},
-	["GetDialogNameTag"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["GetDialogNameTag"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18493,8 +18623,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42011,
 		retOffset = 0,
-	},
-	["GetActor"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["GetActor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18507,8 +18637,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42009,
 		retOffset = 0,
-	},
-	["CanTalk"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["CanTalk"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18521,8 +18651,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 42007,
 		retOffset = 0,
-	},
-	["eventServerDialog_TriggerEvent"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["eventServerDialog_TriggerEvent"] = {
 		fields = {
 			{
 				name = "EventTag",
@@ -18553,8 +18683,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42003,
-	},
-	["eventReplicatedEvent"] = {
+	}
+	g_classFuncs["AGearboxDialogActor"]["eventReplicatedEvent"] = {
 		fields = {
 			{
 				name = "VarName",
@@ -18567,8 +18697,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42001,
-	},
-	["IsTalking"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["IsTalking"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18581,8 +18711,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41991,
 		retOffset = 0,
-	},
-	["StopTalking"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["StopTalking"] = {
 		fields = {
 			{
 				name = "EventTag",
@@ -18605,8 +18735,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 41988,
-	},
-	["TalkReplicated"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["TalkReplicated"] = {
 		fields = {
 			{
 				name = "NewDialogData",
@@ -18619,8 +18749,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 41986,
-	},
-	["Talk"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["Talk"] = {
 		fields = {
 			{
 				name = "TalkAction",
@@ -18633,8 +18763,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41978,
-	},
-	["GetMatchingEvent"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["GetMatchingEvent"] = {
 		fields = {
 			{
 				name = "InEventTag",
@@ -18690,8 +18820,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 41971,
-	},
-	["TriggerEvent"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["TriggerEvent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18739,8 +18869,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 41965,
 		retOffset = 16,
-	},
-	["GetDialogInterface"] = {
+	}
+	g_classFuncs["UGearboxDialogComponent"]["GetDialogInterface"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18754,8 +18884,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41963,
 		retOffset = 0,
-	},
-	["IsActive"] = {
+	}
+	g_classFuncs["UGearboxDialogEventData"]["IsActive"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18768,8 +18898,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 40282,
 		retOffset = 0,
-	},
-	["SimpleEvent"] = {
+	}
+	g_classFuncs["UGearboxDialogGroup"]["SimpleEvent"] = {
 		fields = {
 			{
 				name = "Owner",
@@ -18798,8 +18928,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42082,
-	},
-	["DrawDialogDebug"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["DrawDialogDebug"] = {
 		fields = {
 			{
 				name = "HUD",
@@ -18821,14 +18951,14 @@ local c = g_classFuncs
 		},
 		dataSize = 56,
 		index = 42151,
-	},
-	["CheckpointRemoveReferencesBeforeDestroy"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["CheckpointRemoveReferencesBeforeDestroy"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42150,
-	},
-	["GetEventTagForEventInfo"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["GetEventTagForEventInfo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18849,8 +18979,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 42147,
 		retOffset = 8,
-	},
-	["TriggerGroupEvent"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["TriggerGroupEvent"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18915,14 +19045,14 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 42139,
 		retOffset = 24,
-	},
-	["Cleanup"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["Cleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 42138,
-	},
-	["SetGroupEventTag"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["SetGroupEventTag"] = {
 		fields = {
 			{
 				name = "Group",
@@ -18943,8 +19073,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 42135,
-	},
-	["GetGroupEventTag"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["GetGroupEventTag"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -18965,8 +19095,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42132,
 		retOffset = 4,
-	},
-	["SilenceGroup"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["SilenceGroup"] = {
 		fields = {
 			{
 				name = "Group",
@@ -18979,8 +19109,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42130,
-	},
-	["AddGroup"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["AddGroup"] = {
 		fields = {
 			{
 				name = "Group",
@@ -18993,8 +19123,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42128,
-	},
-	["UnregisterTalker"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["UnregisterTalker"] = {
 		fields = {
 			{
 				name = "Talker",
@@ -19007,8 +19137,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42126,
-	},
-	["RegisterTalker"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["RegisterTalker"] = {
 		fields = {
 			{
 				name = "Talker",
@@ -19021,8 +19151,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42124,
-	},
-	["DisableTalker"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["DisableTalker"] = {
 		fields = {
 			{
 				name = "Talker",
@@ -19035,8 +19165,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42122,
-	},
-	["EnableTalker"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["EnableTalker"] = {
 		fields = {
 			{
 				name = "Talker",
@@ -19049,8 +19179,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 42120,
-	},
-	["GetPriority"] = {
+	}
+	g_classFuncs["UGearboxDialogManager"]["GetPriority"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19071,8 +19201,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 42117,
 		retOffset = 4,
-	},
-	["ActivateOutput"] = {
+	}
+	g_classFuncs["UGearboxDialogNode"]["ActivateOutput"] = {
 		fields = {
 			{
 				name = "Link",
@@ -19085,38 +19215,38 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41927,
-	},
-	["eventActivate"] = {
+	}
+	g_classFuncs["UGearboxDialogAction"]["eventActivate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41929,
-	},
-	["eventActivate"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Chance"]["eventActivate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41934,
-	},
-	["eventActivate"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Compare"]["eventActivate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41935,
-	},
-	["eventActivate"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_ObjectParameterSwitch"]["eventActivate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41938,
-	},
-	["eventActivate"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Talk"]["eventActivate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41954,
-	},
-	["eventTalkFinished"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Talk"]["eventTalkFinished"] = {
 		fields = {
 			{
 				name = "InTalker",
@@ -19129,8 +19259,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41952,
-	},
-	["eventTalkStarted"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Talk"]["eventTalkStarted"] = {
 		fields = {
 			{
 				name = "InTalker",
@@ -19143,8 +19273,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41950,
-	},
-	["ActivateOutput"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Trigger"]["ActivateOutput"] = {
 		fields = {
 			{
 				name = "Link",
@@ -19157,14 +19287,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41958,
-	},
-	["eventActivate"] = {
+	}
+	g_classFuncs["UGearboxDialogAct_Trigger"]["eventActivate"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41957,
-	},
-	["ResolveToArgumentValue"] = {
+	}
+	g_classFuncs["UGearboxDialogVariable"]["ResolveToArgumentValue"] = {
 		fields = {
 			{
 				name = "Out_ArgumentValue",
@@ -19179,8 +19309,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42161,
-	},
-	["GetTalkers"] = {
+	}
+	g_classFuncs["UGearboxDialogVariable"]["GetTalkers"] = {
 		fields = {
 			{
 				name = "Talkers",
@@ -19195,93 +19325,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 42158,
-	},
-	["HandleEULAInteractionCompleteResponse"] = {
-		fields = {
-			{
-				name = "Result",
-				isRet = true,
-				index = 41409,
-				isOutParm = true,
-				cType = ffi.typeof("struct FSparkResult"),
-				castTo = ffi.typeof("struct FSparkResult*"),
-				offset = 0
-			},
-		},
-		dataSize = 164,
-		index = 41407,
-	},
-	["HandleEULAInteractionComplete"] = {
-		fields = {
-			{
-				name = "ControllerId",
-				index = 41413,
-				type = "number",
-				castTo = ffi.typeof("unsigned char*"),
-				flags = 32,
-				offset = 0
-			},
-			{
-				name = "EULAState",
-				isRet = true,
-				index = 41415,
-				isOutParm = true,
-				cType = ffi.typeof("struct TArray_FEULAData"),
-				castTo = ffi.typeof("struct TArray_FEULAData*"),
-				TArray = true,
-				offset = 4
-			},
-		},
-		dataSize = 148,
-		index = 41408,
-	},
-	["HandleEULAChainResponse"] = {
-		fields = {
-			{
-				name = "Result",
-				isRet = true,
-				index = 41428,
-				isOutParm = true,
-				cType = ffi.typeof("struct FSparkResult"),
-				castTo = ffi.typeof("struct FSparkResult*"),
-				offset = 0
-			},
-		},
-		dataSize = 216,
-		index = 41412,
-	},
-	["ReadEULAChain"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 41439,
-				castTo = ffi.typeof("int*"),
-				offset = 8
-			},
-			{
-				name = "ControllerId",
-				index = 41433,
-				type = "number",
-				castTo = ffi.typeof("unsigned char*"),
-				flags = 32,
-				offset = 0
-			},
-			{
-				name = "bAllowRetries",
-				index = 41438,
-				optional = true,
-				type = "boolean",
-				castTo = ffi.typeof("BOOL*"),
-				flags = 32,
-				offset = 4
-			},
-		},
-		dataSize = 116,
-		index = 41427,
-		retOffset = 8,
-	},
-	["HandleOffersNotifiedResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleOffersNotifiedResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19295,8 +19340,8 @@ local c = g_classFuncs
 		},
 		dataSize = 164,
 		index = 41402,
-	},
-	["HandleBulkEntitlementsConsumedResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleBulkEntitlementsConsumedResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19310,8 +19355,8 @@ local c = g_classFuncs
 		},
 		dataSize = 192,
 		index = 41406,
-	},
-	["HandleEntitlementConsumedResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleEntitlementConsumedResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19325,8 +19370,8 @@ local c = g_classFuncs
 		},
 		dataSize = 184,
 		index = 41383,
-	},
-	["HandleCodeRedeemedResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleCodeRedeemedResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19340,8 +19385,8 @@ local c = g_classFuncs
 		},
 		dataSize = 208,
 		index = 41375,
-	},
-	["HandleResetPasswordResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleResetPasswordResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19355,8 +19400,8 @@ local c = g_classFuncs
 		},
 		dataSize = 172,
 		index = 41370,
-	},
-	["HandleSignUpResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleSignUpResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19370,8 +19415,8 @@ local c = g_classFuncs
 		},
 		dataSize = 184,
 		index = 41364,
-	},
-	["HandleSignInResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["HandleSignInResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -19385,8 +19430,8 @@ local c = g_classFuncs
 		},
 		dataSize = 184,
 		index = 41355,
-	},
-	["ExtractArchwayResult"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["ExtractArchwayResult"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19408,8 +19453,8 @@ local c = g_classFuncs
 		dataSize = 140,
 		index = 41309,
 		retOffset = 12,
-	},
-	["MarkOffersNotified"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["MarkOffersNotified"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -19422,8 +19467,8 @@ local c = g_classFuncs
 		},
 		dataSize = 136,
 		index = 41296,
-	},
-	["LocallyConsumeEntitlementWithCount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["LocallyConsumeEntitlementWithCount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19460,8 +19505,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 41288,
 		retOffset = 16,
-	},
-	["eventConsumeEntitlementsWithCounts"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["eventConsumeEntitlementsWithCounts"] = {
 		fields = {
 			{
 				name = "EntitlementsToConsume",
@@ -19498,8 +19543,8 @@ local c = g_classFuncs
 		},
 		dataSize = 192,
 		index = 41294,
-	},
-	["ConsumeEntitlementWithCount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["ConsumeEntitlementWithCount"] = {
 		fields = {
 			{
 				name = "EntitlementName",
@@ -19536,8 +19581,8 @@ local c = g_classFuncs
 		},
 		dataSize = 144,
 		index = 41269,
-	},
-	["RedeemCode"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["RedeemCode"] = {
 		fields = {
 			{
 				name = "Code",
@@ -19566,8 +19611,8 @@ local c = g_classFuncs
 		},
 		dataSize = 144,
 		index = 41259,
-	},
-	["ResetPasswordGearboxAccount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["ResetPasswordGearboxAccount"] = {
 		fields = {
 			{
 				name = "Email",
@@ -19596,8 +19641,8 @@ local c = g_classFuncs
 		},
 		dataSize = 136,
 		index = 41250,
-	},
-	["EscapeJson"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["EscapeJson"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19620,8 +19665,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 41246,
 		retOffset = 12,
-	},
-	["SignUpGearboxAccount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["SignUpGearboxAccount"] = {
 		fields = {
 			{
 				name = "Email",
@@ -19674,8 +19719,8 @@ local c = g_classFuncs
 		},
 		dataSize = 176,
 		index = 41234,
-	},
-	["SignInGearboxAccount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["SignInGearboxAccount"] = {
 		fields = {
 			{
 				name = "Email",
@@ -19712,8 +19757,8 @@ local c = g_classFuncs
 		},
 		dataSize = 152,
 		index = 41216,
-	},
-	["OnEntitlementConsumed"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["OnEntitlementConsumed"] = {
 		fields = {
 			{
 				name = "ConsumeResult",
@@ -19727,8 +19772,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41214,
-	},
-	["OnCodeRedeemed"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["OnCodeRedeemed"] = {
 		fields = {
 			{
 				name = "RedeemResult",
@@ -19760,8 +19805,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 41210,
-	},
-	["OnResetPasswordGearboxAccount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["OnResetPasswordGearboxAccount"] = {
 		fields = {
 			{
 				name = "ResetResult",
@@ -19775,8 +19820,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41208,
-	},
-	["OnSignUpGearboxAccount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["OnSignUpGearboxAccount"] = {
 		fields = {
 			{
 				name = "SignUpResult",
@@ -19790,8 +19835,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41206,
-	},
-	["OnSignInGearboxAccount"] = {
+	}
+	g_classFuncs["UGearboxAccountActions"]["OnSignInGearboxAccount"] = {
 		fields = {
 			{
 				name = "SignInResult",
@@ -19805,22 +19850,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41203,
-	},
-	["HasSignedAllEulas"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 41538,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 0
-			},
-		},
-		dataSize = 4,
-		index = 41537,
-		retOffset = 0,
-	},
-	["CountEntitlement"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["CountEntitlement"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19850,8 +19881,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 41533,
 		retOffset = 12,
-	},
-	["GetTotalGoldenKeyCount"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["GetTotalGoldenKeyCount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19864,8 +19895,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41531,
 		retOffset = 0,
-	},
-	["GetGoldenKeyCount"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["GetGoldenKeyCount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19887,8 +19918,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41528,
 		retOffset = 4,
-	},
-	["HasGoldenKey"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["HasGoldenKey"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19910,8 +19941,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41525,
 		retOffset = 4,
-	},
-	["HasDeveloperSkin"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["HasDeveloperSkin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19924,8 +19955,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41523,
 		retOffset = 0,
-	},
-	["IsDeveloper"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["IsDeveloper"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19938,14 +19969,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41521,
 		retOffset = 0,
-	},
-	["MarkOffersNotified"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["MarkOffersNotified"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 41520,
-	},
-	["GetUnnotifiedOffers"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["GetUnnotifiedOffers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19960,8 +19991,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 41306,
 		retOffset = 0,
-	},
-	["GetEntitlementWithName"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["GetEntitlementWithName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -19982,8 +20013,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41280,
 		retOffset = 8,
-	},
-	["GetEntitlementWithId"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["GetEntitlementWithId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20004,8 +20035,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41513,
 		retOffset = 4,
-	},
-	["HasEntitlement"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["HasEntitlement"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20035,8 +20066,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 41509,
 		retOffset = 12,
-	},
-	["RemoveEntitlement"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["RemoveEntitlement"] = {
 		fields = {
 			{
 				name = "Entitlement",
@@ -20049,8 +20080,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41507,
-	},
-	["ReplaceEntitlements"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ReplaceEntitlements"] = {
 		fields = {
 			{
 				name = "NewEntitlements",
@@ -20075,8 +20106,8 @@ local c = g_classFuncs
 		},
 		dataSize = 112,
 		index = 41494,
-	},
-	["ReplaceServices"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ReplaceServices"] = {
 		fields = {
 			{
 				name = "NewServices",
@@ -20091,8 +20122,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41491,
-	},
-	["HandleReloadEntitlementsResponse"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["HandleReloadEntitlementsResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -20106,8 +20137,8 @@ local c = g_classFuncs
 		},
 		dataSize = 152,
 		index = 41488,
-	},
-	["ReloadEntitlements"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ReloadEntitlements"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20120,14 +20151,14 @@ local c = g_classFuncs
 		dataSize = 112,
 		index = 41480,
 		retOffset = 0,
-	},
-	["ResetEntitlementUpdateTimer"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ResetEntitlementUpdateTimer"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41479,
-	},
-	["CanReloadEntitlements"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["CanReloadEntitlements"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20140,14 +20171,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41477,
 		retOffset = 0,
-	},
-	["TriggerEntitlementsUpdatedDelegates"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["TriggerEntitlementsUpdatedDelegates"] = {
 		fields = {
 		},
 		dataSize = 12,
 		index = 41475,
-	},
-	["ClearEntitlementsUpdatedDelegate"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ClearEntitlementsUpdatedDelegate"] = {
 		fields = {
 			{
 				name = "EntitlementsUpdatedDelegate",
@@ -20160,8 +20191,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 41473,
-	},
-	["AddEntitlementsUpdatedDelegate"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["AddEntitlementsUpdatedDelegate"] = {
 		fields = {
 			{
 				name = "EntitlementsUpdatedDelegate",
@@ -20174,8 +20205,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41471,
-	},
-	["eventGetService"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["eventGetService"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20196,14 +20227,14 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41230,
 		retOffset = 8,
-	},
-	["Clear"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["Clear"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41468,
-	},
-	["ExtractArchwayResultJson"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ExtractArchwayResultJson"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20235,8 +20266,8 @@ local c = g_classFuncs
 		dataSize = 260,
 		index = 41361,
 		retOffset = 140,
-	},
-	["ExtractArchwayResult"] = {
+	}
+	g_classFuncs["UGearboxAccountData"]["ExtractArchwayResult"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20268,8 +20299,8 @@ local c = g_classFuncs
 		dataSize = 144,
 		index = 41463,
 		retOffset = 140,
-	},
-	["GetStepConfiguration"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["GetStepConfiguration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20283,8 +20314,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 43293,
 		retOffset = 0,
-	},
-	["GotoStep"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["GotoStep"] = {
 		fields = {
 			{
 				name = "Step",
@@ -20297,20 +20328,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43291,
-	},
-	["GotoNextStep"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["GotoNextStep"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43290,
-	},
-	["GotoFirstStep"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["GotoFirstStep"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43289,
-	},
-	["eventPerformStep"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["eventPerformStep"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20324,32 +20355,32 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 43287,
 		retOffset = 0,
-	},
-	["PauseLoop"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["PauseLoop"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43286,
-	},
-	["Init"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["Init"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43285,
-	},
-	["ContinueLoop"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["ContinueLoop"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43284,
-	},
-	["StopLoop"] = {
+	}
+	g_classFuncs["UGearboxProcess"]["StopLoop"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 43283,
-	},
-	["eventTriggerSparkInitializedDelegates"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["eventTriggerSparkInitializedDelegates"] = {
 		fields = {
 			{
 				name = "InitializeResult",
@@ -20363,8 +20394,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44726,
-	},
-	["ClearSparkInitializedDelegate"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["ClearSparkInitializedDelegate"] = {
 		fields = {
 			{
 				name = "SparkInitializedDelegate",
@@ -20377,8 +20408,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 44724,
-	},
-	["AddSparkInitializedDelegate"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["AddSparkInitializedDelegate"] = {
 		fields = {
 			{
 				name = "SparkInitializedDelegate",
@@ -20391,8 +20422,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44722,
-	},
-	["GetStepName"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["GetStepName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20407,8 +20438,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44720,
 		retOffset = 0,
-	},
-	["GetStepConfiguration"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["GetStepConfiguration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20422,8 +20453,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 44718,
 		retOffset = 0,
-	},
-	["IsInitialized"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["IsInitialized"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20436,8 +20467,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44716,
 		retOffset = 0,
-	},
-	["IsDisabled"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["IsDisabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20450,8 +20481,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44714,
 		retOffset = 0,
-	},
-	["IsInitializing"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["IsInitializing"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20464,30 +20495,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44711,
 		retOffset = 0,
-	},
-	["UpdateAgreementsSigning"] = {
-		fields = {
-			{
-				name = "GbxAccountData",
-				index = 44729,
-				className = "UGearboxAccountData",
-				castTo = ffi.typeof("struct UObject**"),
-				flags = 16,
-				offset = 0
-			},
-			{
-				name = "NeedsSignAgreements",
-				index = 44730,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 4
-			},
-		},
-		dataSize = 16,
-		index = 44713,
-	},
-	["HandleVerificationReceived"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["HandleVerificationReceived"] = {
 		fields = {
 			{
 				name = "Result",
@@ -20501,8 +20510,8 @@ local c = g_classFuncs
 		},
 		dataSize = 152,
 		index = 44708,
-	},
-	["eventVerifyAuthentication"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["eventVerifyAuthentication"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20516,8 +20525,8 @@ local c = g_classFuncs
 		dataSize = 112,
 		index = 44700,
 		retOffset = 0,
-	},
-	["AuthenticateTicketStringWithDelegate"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["AuthenticateTicketStringWithDelegate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20547,8 +20556,8 @@ local c = g_classFuncs
 		dataSize = 128,
 		index = 44692,
 		retOffset = 24,
-	},
-	["HandleAuthenticationReceived"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["HandleAuthenticationReceived"] = {
 		fields = {
 			{
 				name = "Result",
@@ -20562,8 +20571,8 @@ local c = g_classFuncs
 		},
 		dataSize = 152,
 		index = 44689,
-	},
-	["eventAuthenticateAccount"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["eventAuthenticateAccount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20577,8 +20586,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 44685,
 		retOffset = 0,
-	},
-	["GetConfigQuery"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["GetConfigQuery"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20593,8 +20602,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44683,
 		retOffset = 0,
-	},
-	["CompleteInitialization"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["CompleteInitialization"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20608,8 +20617,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44681,
 		retOffset = 0,
-	},
-	["HttpInit"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["HttpInit"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20623,8 +20632,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44679,
 		retOffset = 0,
-	},
-	["CheckForTMS"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["CheckForTMS"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20638,8 +20647,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44677,
 		retOffset = 0,
-	},
-	["PerformStep"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["PerformStep"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20653,8 +20662,8 @@ local c = g_classFuncs
 		dataSize = 1,
 		index = 44675,
 		retOffset = 0,
-	},
-	["StartProcess"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["StartProcess"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20667,8 +20676,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44673,
 		retOffset = 0,
-	},
-	["InitWithController"] = {
+	}
+	g_classFuncs["USparkInitializationProcess"]["InitWithController"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -20697,8 +20706,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 44668,
-	},
-	["eventGetLeviathanServiceConfiguration"] = {
+	}
+	g_classFuncs["ULeviathanService"]["eventGetLeviathanServiceConfiguration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20719,8 +20728,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 43763,
 		retOffset = 4,
-	},
-	["OnSparkInitialized"] = {
+	}
+	g_classFuncs["ULeviathanService"]["OnSparkInitialized"] = {
 		fields = {
 			{
 				name = "InitializedResult",
@@ -20734,8 +20743,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 43767,
-	},
-	["LoadServiceConfigurationForPlayer"] = {
+	}
+	g_classFuncs["ULeviathanService"]["LoadServiceConfigurationForPlayer"] = {
 		fields = {
 			{
 				name = "SplitscreenIndex",
@@ -20748,8 +20757,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 43761,
-	},
-	["GetLeviathanService"] = {
+	}
+	g_classFuncs["ULeviathanService"]["GetLeviathanService"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20762,22 +20771,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43759,
 		retOffset = 0,
-	},
-	["RemoveScriptCallback"] = {
-		fields = {
-			{
-				name = "HttpRequestId",
-				index = 41095,
-				type = "number",
-				castTo = ffi.typeof("int*"),
-				flags = 32,
-				offset = 0
-			},
-		},
-		dataSize = 4,
-		index = 41093,
-	},
-	["GetNewsService"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetNewsService"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20790,8 +20785,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41094,
 		retOffset = 0,
-	},
-	["GetTitleStorageServiceConfiguration"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetTitleStorageServiceConfiguration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20804,8 +20799,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41096,
 		retOffset = 0,
-	},
-	["GetTitleStorageUrl"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetTitleStorageUrl"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20820,8 +20815,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41099,
 		retOffset = 0,
-	},
-	["ClearGearboxAccountData"] = {
+	}
+	g_classFuncs["USparkInterface"]["ClearGearboxAccountData"] = {
 		fields = {
 			{
 				name = "IncludePrimaryPlayer",
@@ -20834,8 +20829,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41101,
-	},
-	["SignOutGearboxAccount"] = {
+	}
+	g_classFuncs["USparkInterface"]["SignOutGearboxAccount"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -20848,8 +20843,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41103,
-	},
-	["SignInGearboxAccount"] = {
+	}
+	g_classFuncs["USparkInterface"]["SignInGearboxAccount"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -20862,8 +20857,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41105,
-	},
-	["eventGetGearboxAccountData"] = {
+	}
+	g_classFuncs["USparkInterface"]["eventGetGearboxAccountData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20884,8 +20879,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41107,
 		retOffset = 4,
-	},
-	["eventIsGearboxAccountAuthenticated"] = {
+	}
+	g_classFuncs["USparkInterface"]["eventIsGearboxAccountAuthenticated"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20906,8 +20901,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41109,
 		retOffset = 4,
-	},
-	["IsGearboxAccountSignedIn"] = {
+	}
+	g_classFuncs["USparkInterface"]["IsGearboxAccountSignedIn"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20928,8 +20923,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 41112,
 		retOffset = 4,
-	},
-	["ConvertUtcTimeToLocalTime"] = {
+	}
+	g_classFuncs["USparkInterface"]["ConvertUtcTimeToLocalTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20952,8 +20947,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 41115,
 		retOffset = 12,
-	},
-	["ShouldUpdateEmergencyMessage"] = {
+	}
+	g_classFuncs["USparkInterface"]["ShouldUpdateEmergencyMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20966,8 +20961,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41118,
 		retOffset = 0,
-	},
-	["GetEmergencyMessage"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetEmergencyMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -20982,8 +20977,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41121,
 		retOffset = 0,
-	},
-	["SetEmergencyMessage"] = {
+	}
+	g_classFuncs["USparkInterface"]["SetEmergencyMessage"] = {
 		fields = {
 			{
 				name = "Message",
@@ -20996,8 +20991,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41123,
-	},
-	["eventGetPlatformLoginNameFromSplitscreenIndex"] = {
+	}
+	g_classFuncs["USparkInterface"]["eventGetPlatformLoginNameFromSplitscreenIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21020,8 +21015,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41125,
 		retOffset = 4,
-	},
-	["GetPlatformLoginNameFromController"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetPlatformLoginNameFromController"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21044,14 +21039,14 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 41127,
 		retOffset = 4,
-	},
-	["IncreaseInteractionTries"] = {
+	}
+	g_classFuncs["USparkInterface"]["IncreaseInteractionTries"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41130,
-	},
-	["GetInteractionTries"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetInteractionTries"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21064,8 +21059,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41133,
 		retOffset = 0,
-	},
-	["GetInteractionGraceTries"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetInteractionGraceTries"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21078,8 +21073,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41134,
 		retOffset = 0,
-	},
-	["GetInteractionPunishmentMinWaitSeconds"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetInteractionPunishmentMinWaitSeconds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21092,8 +21087,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41136,
 		retOffset = 0,
-	},
-	["GetInteractionMinWaitSeconds"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetInteractionMinWaitSeconds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21106,8 +21101,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41138,
 		retOffset = 0,
-	},
-	["IsTmsComplete"] = {
+	}
+	g_classFuncs["USparkInterface"]["IsTmsComplete"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21120,14 +21115,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41140,
 		retOffset = 0,
-	},
-	["SetTmsComplete"] = {
+	}
+	g_classFuncs["USparkInterface"]["SetTmsComplete"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41142,
-	},
-	["GetSparkInitialization"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetSparkInitialization"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21140,8 +21135,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41144,
 		retOffset = 0,
-	},
-	["eventRestartSparkInitialization"] = {
+	}
+	g_classFuncs["USparkInterface"]["eventRestartSparkInitialization"] = {
 		fields = {
 			{
 				name = "bPrimary",
@@ -21154,8 +21149,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41145,
-	},
-	["RestartSparkInitializationFromScript"] = {
+	}
+	g_classFuncs["USparkInterface"]["RestartSparkInitializationFromScript"] = {
 		fields = {
 			{
 				name = "bPrimary",
@@ -21184,8 +21179,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 41147,
-	},
-	["StartSparkInitialization"] = {
+	}
+	g_classFuncs["USparkInterface"]["StartSparkInitialization"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -21222,8 +21217,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 41149,
-	},
-	["StartSecondaryInitialization"] = {
+	}
+	g_classFuncs["USparkInterface"]["StartSecondaryInitialization"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -21252,8 +21247,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 41153,
-	},
-	["GetGameName"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetGameName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21268,8 +21263,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41158,
 		retOffset = 0,
-	},
-	["GetHardwareName"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetHardwareName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21284,8 +21279,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41162,
 		retOffset = 0,
-	},
-	["GetPlatformName"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetPlatformName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21300,8 +21295,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 41164,
 		retOffset = 0,
-	},
-	["GetPlatformTicket"] = {
+	}
+	g_classFuncs["USparkInterface"]["GetPlatformTicket"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21332,8 +21327,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 41166,
 		retOffset = 8,
-	},
-	["ClearSparkConfigReceivedDelegate"] = {
+	}
+	g_classFuncs["USparkInterface"]["ClearSparkConfigReceivedDelegate"] = {
 		fields = {
 			{
 				name = "SparkConfigReceivedDelegate",
@@ -21346,8 +21341,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41168,
-	},
-	["AddSparkConfigReceivedDelegate"] = {
+	}
+	g_classFuncs["USparkInterface"]["AddSparkConfigReceivedDelegate"] = {
 		fields = {
 			{
 				name = "SparkConfigReceivedDelegate",
@@ -21360,14 +21355,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41172,
-	},
-	["ResetInitializationStatus"] = {
+	}
+	g_classFuncs["USparkInterface"]["ResetInitializationStatus"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41174,
-	},
-	["eventIsSparkEnabled"] = {
+	}
+	g_classFuncs["USparkInterface"]["eventIsSparkEnabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21380,8 +21375,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 41176,
 		retOffset = 0,
-	},
-	["IssueSparkStringRequest"] = {
+	}
+	g_classFuncs["USparkInterface"]["IssueSparkStringRequest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21427,8 +21422,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 41177,
 		retOffset = 92,
-	},
-	["IssueSparkRequest"] = {
+	}
+	g_classFuncs["USparkInterface"]["IssueSparkRequest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21476,22 +21471,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 41179,
 		retOffset = 92,
-	},
-	["RemoveScriptCallback"] = {
-		fields = {
-			{
-				name = "HttpRequestId",
-				index = 44904,
-				type = "number",
-				castTo = ffi.typeof("int*"),
-				flags = 32,
-				offset = 0
-			},
-		},
-		dataSize = 4,
-		index = 44902,
-	},
-	["GetNewsService"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetNewsService"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21504,8 +21485,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44903,
 		retOffset = 0,
-	},
-	["GetTitleStorageServiceConfiguration"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetTitleStorageServiceConfiguration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21518,8 +21499,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44900,
 		retOffset = 0,
-	},
-	["GetTitleStorageUrl"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetTitleStorageUrl"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21534,8 +21515,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44898,
 		retOffset = 0,
-	},
-	["OnSparkInitialized"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["OnSparkInitialized"] = {
 		fields = {
 			{
 				name = "InitializedResult",
@@ -21549,14 +21530,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44893,
-	},
-	["IncreaseInteractionTries"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["IncreaseInteractionTries"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44892,
-	},
-	["GetInteractionTries"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetInteractionTries"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21569,8 +21550,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44889,
 		retOffset = 0,
-	},
-	["GetInteractionGraceTries"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetInteractionGraceTries"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21583,8 +21564,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44886,
 		retOffset = 0,
-	},
-	["GetInteractionPunishmentMinWaitSeconds"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetInteractionPunishmentMinWaitSeconds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21597,8 +21578,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44883,
 		retOffset = 0,
-	},
-	["GetInteractionMinWaitSeconds"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetInteractionMinWaitSeconds"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21611,8 +21592,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44880,
 		retOffset = 0,
-	},
-	["ConvertUtcTimeToLocalTime"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ConvertUtcTimeToLocalTime"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21635,8 +21616,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 44877,
 		retOffset = 12,
-	},
-	["ShouldUpdateEmergencyMessage"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ShouldUpdateEmergencyMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21649,8 +21630,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44875,
 		retOffset = 0,
-	},
-	["GetEmergencyMessage"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetEmergencyMessage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21665,8 +21646,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44873,
 		retOffset = 0,
-	},
-	["SetEmergencyMessage"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["SetEmergencyMessage"] = {
 		fields = {
 			{
 				name = "NewMessage",
@@ -21679,8 +21660,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44869,
-	},
-	["IsTmsComplete"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["IsTmsComplete"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21693,14 +21674,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44867,
 		retOffset = 0,
-	},
-	["SetTmsComplete"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["SetTmsComplete"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44865,
-	},
-	["RestartSparkInitializationFromScript"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["RestartSparkInitializationFromScript"] = {
 		fields = {
 			{
 				name = "bPrimary",
@@ -21729,8 +21710,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 44861,
-	},
-	["eventRestartSparkInitialization"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventRestartSparkInitialization"] = {
 		fields = {
 			{
 				name = "bPrimary",
@@ -21743,8 +21724,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 44859,
-	},
-	["StartSparkInitialization"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["StartSparkInitialization"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -21781,20 +21762,20 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 44850,
-	},
-	["ResetInitializationStatus"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ResetInitializationStatus"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44849,
-	},
-	["ResetSecondaryInitializationStatus"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ResetSecondaryInitializationStatus"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44848,
-	},
-	["StartSecondaryInitialization"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["StartSecondaryInitialization"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -21823,8 +21804,8 @@ local c = g_classFuncs
 		},
 		dataSize = 56,
 		index = 44841,
-	},
-	["GetSparkInitialization"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetSparkInitialization"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21837,8 +21818,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44838,
 		retOffset = 0,
-	},
-	["SignInGearboxAccount"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["SignInGearboxAccount"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -21851,8 +21832,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44836,
-	},
-	["eventGetGearboxAccountData"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventGetGearboxAccountData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21873,8 +21854,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 44833,
 		retOffset = 4,
-	},
-	["SignOutGearboxAccount"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["SignOutGearboxAccount"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -21887,8 +21868,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44831,
-	},
-	["ValidPlayerIndex"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ValidPlayerIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21909,8 +21890,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44828,
 		retOffset = 4,
-	},
-	["GetPlayerIndex"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetPlayerIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21931,8 +21912,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44825,
 		retOffset = 4,
-	},
-	["ClearGearboxAccountData"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ClearGearboxAccountData"] = {
 		fields = {
 			{
 				name = "IncludePrimaryPlayer",
@@ -21945,8 +21926,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 44822,
-	},
-	["IsGearboxAccountSignedIn"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["IsGearboxAccountSignedIn"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21967,8 +21948,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44819,
 		retOffset = 4,
-	},
-	["eventIsGearboxAccountAuthenticated"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventIsGearboxAccountAuthenticated"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -21989,8 +21970,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44816,
 		retOffset = 4,
-	},
-	["GetGameName"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetGameName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22005,8 +21986,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44814,
 		retOffset = 0,
-	},
-	["GetHardwareName"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetHardwareName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22021,8 +22002,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44812,
 		retOffset = 0,
-	},
-	["GetPlatformName"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetPlatformName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22037,8 +22018,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44810,
 		retOffset = 0,
-	},
-	["GetPlatformTicket"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetPlatformTicket"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22069,8 +22050,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 44806,
 		retOffset = 8,
-	},
-	["ClearSparkConfigReceivedDelegate"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["ClearSparkConfigReceivedDelegate"] = {
 		fields = {
 			{
 				name = "SparkConfigReceivedDelegate",
@@ -22083,8 +22064,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44804,
-	},
-	["AddSparkConfigReceivedDelegate"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["AddSparkConfigReceivedDelegate"] = {
 		fields = {
 			{
 				name = "SparkConfigReceivedDelegate",
@@ -22097,8 +22078,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44802,
-	},
-	["GetPlatformLoginNameFromController"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["GetPlatformLoginNameFromController"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22121,8 +22102,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 44793,
 		retOffset = 4,
-	},
-	["eventGetPlatformLoginNameFromSplitscreenIndex"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventGetPlatformLoginNameFromSplitscreenIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22145,8 +22126,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 44790,
 		retOffset = 4,
-	},
-	["eventGetPlatformLoginName"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventGetPlatformLoginName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22161,8 +22142,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44788,
 		retOffset = 0,
-	},
-	["eventGetLoginStatus"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventGetLoginStatus"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22176,8 +22157,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 44786,
 		retOffset = 0,
-	},
-	["eventIsShiftEnabled"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventIsShiftEnabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22190,8 +22171,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44784,
 		retOffset = 0,
-	},
-	["eventIsSparkEnabled"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["eventIsSparkEnabled"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22204,8 +22185,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44782,
 		retOffset = 0,
-	},
-	["WithShift"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["WithShift"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22218,8 +22199,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44780,
 		retOffset = 0,
-	},
-	["WithSpark"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["WithSpark"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22232,8 +22213,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 44778,
 		retOffset = 0,
-	},
-	["IssueSparkStringRequest"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["IssueSparkStringRequest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22279,8 +22260,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 44772,
 		retOffset = 92,
-	},
-	["IssueSparkRequest"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["IssueSparkRequest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22328,8 +22309,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 44765,
 		retOffset = 92,
-	},
-	["AlternativeXboxlivePlatformId"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["AlternativeXboxlivePlatformId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22353,14 +22334,14 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 44762,
 		retOffset = 24,
-	},
-	["OnSparkEmergencyMessageUpdated"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["OnSparkEmergencyMessageUpdated"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44761,
-	},
-	["OnSparkConfigReceived"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["OnSparkConfigReceived"] = {
 		fields = {
 			{
 				name = "ConfigArray",
@@ -22373,8 +22354,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 44758,
-	},
-	["OnSparkRequestComplete"] = {
+	}
+	g_classFuncs["USparkInterfaceImpl"]["OnSparkRequestComplete"] = {
 		fields = {
 			{
 				name = "Result",
@@ -22388,38 +22369,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 44752,
-	},
-	["GetBoolParameter"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 44947,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 16
-			},
-			{
-				name = "KeyName",
-				index = 44945,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 0
-			},
-			{
-				name = "Default",
-				index = 44946,
-				type = "boolean",
-				castTo = ffi.typeof("BOOL*"),
-				flags = 32,
-				offset = 12
-			},
-		},
-		dataSize = 20,
-		index = 44944,
-		retOffset = 16,
-	},
-	["GetFloatParameter"] = {
+	}
+	g_classFuncs["USparkServiceConfiguration"]["GetFloatParameter"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22464,8 +22415,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 44938,
 		retOffset = 24,
-	},
-	["GetIntParameter"] = {
+	}
+	g_classFuncs["USparkServiceConfiguration"]["GetIntParameter"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22510,8 +22461,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 44895,
 		retOffset = 24,
-	},
-	["GetStringParameter"] = {
+	}
+	g_classFuncs["USparkServiceConfiguration"]["GetStringParameter"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22542,8 +22493,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 44930,
 		retOffset = 24,
-	},
-	["GetParameter"] = {
+	}
+	g_classFuncs["USparkServiceConfiguration"]["GetParameter"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22566,8 +22517,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 41232,
 		retOffset = 12,
-	},
-	["LoadService"] = {
+	}
+	g_classFuncs["USparkServiceConfiguration"]["LoadService"] = {
 		fields = {
 			{
 				name = "Service",
@@ -22581,14 +22532,14 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 44927,
-	},
-	["LoadOverrides"] = {
+	}
+	g_classFuncs["USparkServiceConfiguration"]["LoadOverrides"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 44925,
-	},
-	["UTF8toString"] = {
+	}
+	g_classFuncs["USparkTypes"]["UTF8toString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22611,8 +22562,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 41057,
 		retOffset = 12,
-	},
-	["OnEntitlementsUpdated"] = {
+	}
+	g_classFuncs["USparkTypes"]["OnEntitlementsUpdated"] = {
 		fields = {
 			{
 				name = "GbxAccount",
@@ -22625,14 +22576,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 41058,
-	},
-	["OnSparkEmergencyMessageUpdated"] = {
+	}
+	g_classFuncs["USparkTypes"]["OnSparkEmergencyMessageUpdated"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 41062,
-	},
-	["OnSparkInitialized"] = {
+	}
+	g_classFuncs["USparkTypes"]["OnSparkInitialized"] = {
 		fields = {
 			{
 				name = "InitializedResult",
@@ -22646,8 +22597,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 41064,
-	},
-	["OnSparkConfigReceived"] = {
+	}
+	g_classFuncs["USparkTypes"]["OnSparkConfigReceived"] = {
 		fields = {
 			{
 				name = "ConfigArray",
@@ -22660,8 +22611,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 41065,
-	},
-	["OnSparkRequestComplete"] = {
+	}
+	g_classFuncs["USparkTypes"]["OnSparkRequestComplete"] = {
 		fields = {
 			{
 				name = "Result",
@@ -22675,14 +22626,14 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 41072,
-	},
-	["eventStopSequence"] = {
+	}
+	g_classFuncs["UAction_FaceThreat"]["eventStopSequence"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38904,
-	},
-	["GetAttributeContext"] = {
+	}
+	g_classFuncs["UActorAttributeContextResolver"]["GetAttributeContext"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22711,8 +22662,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 39164,
 		retOffset = 8,
-	},
-	["GetAttributeContext"] = {
+	}
+	g_classFuncs["UAIComponentAttributeContextResolver"]["GetAttributeContext"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22741,8 +22692,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 39280,
 		retOffset = 8,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_AIHold"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -22796,8 +22747,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 39701,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_AIPriority"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -22851,8 +22802,8 @@ local c = g_classFuncs
 		},
 		dataSize = 76,
 		index = 39713,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_AITargeting"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -22906,8 +22857,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 39726,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_ChangeAnyBehaviorSequenceState"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -22961,8 +22912,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 39750,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_ChangeLocalBehaviorSequenceState"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23016,8 +22967,8 @@ local c = g_classFuncs
 		},
 		dataSize = 72,
 		index = 39766,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_CompareBool"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23071,8 +23022,8 @@ local c = g_classFuncs
 		},
 		dataSize = 56,
 		index = 39834,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_CompareValues"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23126,8 +23077,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 39848,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_CustomEvent"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23181,8 +23132,8 @@ local c = g_classFuncs
 		},
 		dataSize = 76,
 		index = 39858,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_Delay"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23236,8 +23187,8 @@ local c = g_classFuncs
 		},
 		dataSize = 56,
 		index = 39872,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_Gate"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23291,8 +23242,8 @@ local c = g_classFuncs
 		},
 		dataSize = 60,
 		index = 39883,
-	},
-	["PublishBehaviorOutput"] = {
+	}
+	g_classFuncs["UBehavior_GetFloatParam"]["PublishBehaviorOutput"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -23314,8 +23265,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 39901,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_GetFloatParam"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23369,8 +23320,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 39893,
-	},
-	["PublishBehaviorOutput"] = {
+	}
+	g_classFuncs["UBehavior_GetObjectParam"]["PublishBehaviorOutput"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -23392,8 +23343,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 39915,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_GetObjectParam"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23447,8 +23398,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 39907,
-	},
-	["PublishBehaviorOutput"] = {
+	}
+	g_classFuncs["UBehavior_GetVectorParam"]["PublishBehaviorOutput"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -23494,8 +23445,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 39932,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_GetVectorParam"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23549,8 +23500,8 @@ local c = g_classFuncs
 		},
 		dataSize = 96,
 		index = 39922,
-	},
-	["PublishBehaviorOutput"] = {
+	}
+	g_classFuncs["UBehavior_InterpolateFloatOverTime"]["PublishBehaviorOutput"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -23572,8 +23523,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 39951,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_InterpolateFloatOverTime"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23627,8 +23578,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 39944,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_Metronome"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23682,8 +23633,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 39977,
-	},
-	["PublishBehaviorOutput"] = {
+	}
+	g_classFuncs["UBehavior_ModifyTimer"]["PublishBehaviorOutput"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -23705,8 +23656,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 40000,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_ModifyTimer"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23760,8 +23711,8 @@ local c = g_classFuncs
 		},
 		dataSize = 84,
 		index = 39990,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SetFloatParam"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23815,8 +23766,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 40113,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SetObjectParam"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23870,8 +23821,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 40124,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SetVectorParam"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -23925,8 +23876,8 @@ local c = g_classFuncs
 		},
 		dataSize = 92,
 		index = 40143,
-	},
-	["PlaySpecialMove"] = {
+	}
+	g_classFuncs["UBehavior_SpecialMove"]["PlaySpecialMove"] = {
 		fields = {
 			{
 				name = "SMC",
@@ -23939,8 +23890,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40178,
-	},
-	["TriggerOutput"] = {
+	}
+	g_classFuncs["UBehavior_SpecialMove"]["TriggerOutput"] = {
 		fields = {
 			{
 				name = "KernelInfo",
@@ -23954,8 +23905,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 40176,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SpecialMove"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -24009,8 +23960,8 @@ local c = g_classFuncs
 		},
 		dataSize = 72,
 		index = 40161,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_SpecialMoveStop"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -24064,8 +24015,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 40190,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_StartAkAmbientSound"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -24119,8 +24070,8 @@ local c = g_classFuncs
 		},
 		dataSize = 84,
 		index = 40205,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_StopAkAmbientSound"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -24174,8 +24125,8 @@ local c = g_classFuncs
 		},
 		dataSize = 84,
 		index = 40219,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_StopDialog"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -24229,8 +24180,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 40232,
-	},
-	["ApplyBehaviorToContext"] = {
+	}
+	g_classFuncs["UBehavior_ToggleDialog"]["ApplyBehaviorToContext"] = {
 		fields = {
 			{
 				name = "ContextObject",
@@ -24284,14 +24235,14 @@ local c = g_classFuncs
 		},
 		dataSize = 80,
 		index = 40247,
-	},
-	["DoCrossfade"] = {
+	}
+	g_classFuncs["UCameraModifierCrossfade"]["DoCrossfade"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 40627,
-	},
-	["UpdateAllLerps"] = {
+	}
+	g_classFuncs["UCameraModifierCrossfade"]["UpdateAllLerps"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -24313,8 +24264,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 40624,
-	},
-	["ModifyCamera"] = {
+	}
+	g_classFuncs["UCameraModifierCrossfade"]["ModifyCamera"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24352,8 +24303,8 @@ local c = g_classFuncs
 		dataSize = 72,
 		index = 40618,
 		retOffset = 36,
-	},
-	["ProcessCameraBlend"] = {
+	}
+	g_classFuncs["UCameraModifierCrossfade"]["ProcessCameraBlend"] = {
 		fields = {
 			{
 				name = "Camera",
@@ -24383,20 +24334,20 @@ local c = g_classFuncs
 		},
 		dataSize = 76,
 		index = 40613,
-	},
-	["InitializeSubModifiers"] = {
+	}
+	g_classFuncs["UCameraModifierCrossfade"]["InitializeSubModifiers"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 40612,
-	},
-	["eventEnableModifier"] = {
+	}
+	g_classFuncs["UCameraModifierCrossfade"]["eventEnableModifier"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 40611,
-	},
-	["ExecuteFadeIfNeeded"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["ExecuteFadeIfNeeded"] = {
 		fields = {
 			{
 				name = "PC",
@@ -24409,8 +24360,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40704,
-	},
-	["GetDesiredLocation"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["GetDesiredLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24441,8 +24392,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 40696,
 		retOffset = 32,
-	},
-	["ModifyCamera"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["ModifyCamera"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24480,8 +24431,8 @@ local c = g_classFuncs
 		dataSize = 80,
 		index = 40688,
 		retOffset = 36,
-	},
-	["GetBoneLocation"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["GetBoneLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24519,8 +24470,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 40682,
 		retOffset = 24,
-	},
-	["SetLookAtBone"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetLookAtBone"] = {
 		fields = {
 			{
 				name = "NewBone",
@@ -24533,8 +24484,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40680,
-	},
-	["SetLookAtTarget"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetLookAtTarget"] = {
 		fields = {
 			{
 				name = "newLookAtTarget",
@@ -24547,8 +24498,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40678,
-	},
-	["SetTargetLocation"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetTargetLocation"] = {
 		fields = {
 			{
 				name = "NewTargetLocation",
@@ -24577,8 +24528,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 40674,
-	},
-	["SetDuration"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetDuration"] = {
 		fields = {
 			{
 				name = "NewDuration",
@@ -24591,8 +24542,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40672,
-	},
-	["SetTransitionTimes"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetTransitionTimes"] = {
 		fields = {
 			{
 				name = "NewInTime",
@@ -24613,8 +24564,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 40669,
-	},
-	["SetZoomFOV"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetZoomFOV"] = {
 		fields = {
 			{
 				name = "newZoom",
@@ -24627,8 +24578,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40667,
-	},
-	["SetThirdPersonDistances"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetThirdPersonDistances"] = {
 		fields = {
 			{
 				name = "NewX",
@@ -24657,8 +24608,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 40663,
-	},
-	["SetLookAtMode"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["SetLookAtMode"] = {
 		fields = {
 			{
 				name = "NewMode",
@@ -24672,8 +24623,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 40661,
-	},
-	["DisableModifier"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["DisableModifier"] = {
 		fields = {
 			{
 				name = "bImmediate",
@@ -24687,14 +24638,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 40659,
-	},
-	["EnableModifier"] = {
+	}
+	g_classFuncs["UCameraModifierLookAt"]["EnableModifier"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 40658,
-	},
-	["Internal_GetService"] = {
+	}
+	g_classFuncs["USparkNews"]["Internal_GetService"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24723,8 +24674,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45108,
 		retOffset = 12,
-	},
-	["CallAndClearRetrievedDelegate"] = {
+	}
+	g_classFuncs["USparkNews"]["CallAndClearRetrievedDelegate"] = {
 		fields = {
 			{
 				name = "RetrievealResult",
@@ -24738,8 +24689,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45109,
-	},
-	["ParseArticles"] = {
+	}
+	g_classFuncs["USparkNews"]["ParseArticles"] = {
 		fields = {
 			{
 				name = "NewsArticlesJSONObject",
@@ -24752,8 +24703,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 45120,
-	},
-	["HandleNewsRetrievalResponse"] = {
+	}
+	g_classFuncs["USparkNews"]["HandleNewsRetrievalResponse"] = {
 		fields = {
 			{
 				name = "Result",
@@ -24767,8 +24718,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 45117,
-	},
-	["GetArticle"] = {
+	}
+	g_classFuncs["USparkNews"]["GetArticle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24809,8 +24760,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 45112,
 		retOffset = 28,
-	},
-	["GetArticleCount"] = {
+	}
+	g_classFuncs["USparkNews"]["GetArticleCount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24823,8 +24774,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45110,
 		retOffset = 0,
-	},
-	["RetrieveNews"] = {
+	}
+	g_classFuncs["USparkNews"]["RetrieveNews"] = {
 		fields = {
 			{
 				name = "ControllerId",
@@ -24845,8 +24796,8 @@ local c = g_classFuncs
 		},
 		dataSize = 100,
 		index = 45102,
-	},
-	["OnNewsRetrieved"] = {
+	}
+	g_classFuncs["USparkNews"]["OnNewsRetrieved"] = {
 		fields = {
 			{
 				name = "RetrievealResult",
@@ -24868,8 +24819,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45099,
-	},
-	["eventRequiresClientInstance"] = {
+	}
+	g_classFuncs["UGFxMovieDrawStyleInstanceData"]["eventRequiresClientInstance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24882,8 +24833,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 43604,
 		retOffset = 0,
-	},
-	["GetAttributeContext"] = {
+	}
+	g_classFuncs["UPopulationMasterAttributeContextResolver"]["GetAttributeContext"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -24912,206 +24863,4 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 44209,
 		retOffset = 8,
-	},
-	["HandleInputKey"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 45077,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 16
-			},
-			{
-				name = "ControllerId",
-				index = 45080,
-				type = "number",
-				castTo = ffi.typeof("int*"),
-				flags = 32,
-				offset = 0
-			},
-			{
-				name = "ukey",
-				index = 45079,
-				type = ffi.typeof("struct FName"),
-				castTo = ffi.typeof("struct FName*"),
-				flags = 2,
-				offset = 4
-			},
-			{
-				name = "uevent",
-				index = 45078,
-				type = "number",
-				castTo = ffi.typeof("unsigned char*"),
-				enumName = "EInputEvent",
-				flags = 32,
-				offset = 12
-			},
-		},
-		dataSize = 20,
-		index = 45076,
-		retOffset = 16,
-	},
-	["ShowEULA"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45075,
-	},
-	["OnDeclineButtonClick"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45074,
-	},
-	["OnAcceptButtonClick"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45073,
-	},
-	["FireCompleteDelegate"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45072,
-	},
-	["extClosed"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45071,
-	},
-	["extOnDeclineButtonClick"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45070,
-	},
-	["extOnAcceptButtonClick"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45069,
-	},
-	["extOnLoad"] = {
-		fields = {
-			{
-				name = "Path",
-				index = 45068,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 0
-			},
-		},
-		dataSize = 16,
-		index = 45067,
-	},
-	["eventOnClose"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45066,
-	},
-	["eventStart"] = {
-		fields = {
-			{
-				name = "ReturnValue",
-				isRet = true,
-				index = 45064,
-				castTo = ffi.typeof("BOOL*"),
-				offset = 4
-			},
-			{
-				name = "StartPaused",
-				index = 45065,
-				optional = true,
-				type = "boolean",
-				castTo = ffi.typeof("BOOL*"),
-				flags = 32,
-				offset = 0
-			},
-		},
-		dataSize = 8,
-		index = 45063,
-		retOffset = 4,
-	},
-	["OnEULAInteractionComplete"] = {
-		fields = {
-			{
-				name = "EULAState",
-				isRet = true,
-				index = 45061,
-				isOutParm = true,
-				cType = ffi.typeof("struct TArray_FEULAData"),
-				castTo = ffi.typeof("struct TArray_FEULAData*"),
-				TArray = true,
-				offset = 0
-			},
-		},
-		dataSize = 12,
-		index = 45056,
-	},
-	["NavigateDown"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45090,
-	},
-	["NavigateUp"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45089,
-	},
-	["SetTooltipText"] = {
-		fields = {
-			{
-				name = "AcceptText",
-				index = 45088,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 0
-			},
-			{
-				name = "DeclineText",
-				index = 45087,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 12
-			},
-		},
-		dataSize = 24,
-		index = 45086,
-	},
-	["SetEULAText"] = {
-		fields = {
-			{
-				name = "Title",
-				index = 45085,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 0
-			},
-			{
-				name = "Text",
-				index = 45084,
-				type = ffi.typeof("struct FString"),
-				castTo = ffi.typeof("struct FString*"),
-				flags = 4,
-				offset = 12
-			},
-		},
-		dataSize = 24,
-		index = 45083,
-	},
-	["Init"] = {
-		fields = {
-		},
-		dataSize = 0,
-		index = 45082,
-	},
+	}

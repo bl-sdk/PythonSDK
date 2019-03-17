@@ -1,13 +1,36 @@
+g_classFuncs["UOnlineNewsInterfaceMcp"] = {}
+g_classFuncs["UWebResponse"] = {}
+g_classFuncs["UMeshBeaconHost"] = {}
+g_classFuncs["UOnlinePlaylistManager"] = {}
+g_classFuncs["UWebRequest"] = {}
+g_classFuncs["UPartyBeaconHost"] = {}
+g_classFuncs["AWebServer"] = {}
+g_classFuncs["UUIDataStore_OnlinePlaylists"] = {}
+g_classFuncs["UHelloWeb"] = {}
+g_classFuncs["UMeshBeacon"] = {}
+g_classFuncs["AInternetLink"] = {}
+g_classFuncs["UPartyBeaconClient"] = {}
+g_classFuncs["AWebConnection"] = {}
+g_classFuncs["UOnlineGameInterfaceImpl"] = {}
+g_classFuncs["ATcpLink"] = {}
+g_classFuncs["UOnlineTitleFileDownloadMcp"] = {}
+g_classFuncs["UOnlineAuthInterfaceImpl"] = {}
+g_classFuncs["UMeshBeaconClient"] = {}
+g_classFuncs["UOnlineEventsInterfaceMcp"] = {}
+g_classFuncs["UImageServer"] = {}
+g_classFuncs["UWebApplication"] = {}
+g_classFuncs["UOnlineSubsystemCommonImpl"] = {}
+g_classFuncs["UPartyBeacon"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["eventResolveFailed"] = {
+	g_classFuncs["AInternetLink"]["eventResolveFailed"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45220,
-	},
-	["eventResolved"] = {
+	}
+	g_classFuncs["AInternetLink"]["eventResolved"] = {
 		fields = {
 			{
 				name = "Addr",
@@ -20,8 +43,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45218,
-	},
-	["GetLocalIP"] = {
+	}
+	g_classFuncs["AInternetLink"]["GetLocalIP"] = {
 		fields = {
 			{
 				name = "Arg",
@@ -35,8 +58,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45216,
-	},
-	["StringToIpAddr"] = {
+	}
+	g_classFuncs["AInternetLink"]["StringToIpAddr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -66,8 +89,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45212,
 		retOffset = 20,
-	},
-	["IpAddrToString"] = {
+	}
+	g_classFuncs["AInternetLink"]["IpAddrToString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -90,8 +113,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45209,
 		retOffset = 8,
-	},
-	["GetLastError"] = {
+	}
+	g_classFuncs["AInternetLink"]["GetLastError"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -104,8 +127,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45207,
 		retOffset = 0,
-	},
-	["Resolve"] = {
+	}
+	g_classFuncs["AInternetLink"]["Resolve"] = {
 		fields = {
 			{
 				name = "Domain",
@@ -118,8 +141,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45205,
-	},
-	["ParseURL"] = {
+	}
+	g_classFuncs["AInternetLink"]["ParseURL"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -178,8 +201,8 @@ local c = g_classFuncs
 		dataSize = 56,
 		index = 45198,
 		retOffset = 52,
-	},
-	["IsDataPending"] = {
+	}
+	g_classFuncs["AInternetLink"]["IsDataPending"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -192,8 +215,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45196,
 		retOffset = 0,
-	},
-	["eventReceivedBinary"] = {
+	}
+	g_classFuncs["ATcpLink"]["eventReceivedBinary"] = {
 		fields = {
 			{
 				name = "Count",
@@ -214,8 +237,8 @@ local c = g_classFuncs
 		},
 		dataSize = 259,
 		index = 46237,
-	},
-	["eventReceivedLine"] = {
+	}
+	g_classFuncs["ATcpLink"]["eventReceivedLine"] = {
 		fields = {
 			{
 				name = "Line",
@@ -228,8 +251,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46235,
-	},
-	["eventReceivedText"] = {
+	}
+	g_classFuncs["ATcpLink"]["eventReceivedText"] = {
 		fields = {
 			{
 				name = "Text",
@@ -242,26 +265,26 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46233,
-	},
-	["eventClosed"] = {
+	}
+	g_classFuncs["ATcpLink"]["eventClosed"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46232,
-	},
-	["eventOpened"] = {
+	}
+	g_classFuncs["ATcpLink"]["eventOpened"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46231,
-	},
-	["eventAccepted"] = {
+	}
+	g_classFuncs["ATcpLink"]["eventAccepted"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46230,
-	},
-	["ReadBinary"] = {
+	}
+	g_classFuncs["ATcpLink"]["ReadBinary"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -290,8 +313,8 @@ local c = g_classFuncs
 		dataSize = 264,
 		index = 46226,
 		retOffset = 260,
-	},
-	["ReadText"] = {
+	}
+	g_classFuncs["ATcpLink"]["ReadText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -314,8 +337,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46223,
 		retOffset = 12,
-	},
-	["SendBinary"] = {
+	}
+	g_classFuncs["ATcpLink"]["SendBinary"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -344,8 +367,8 @@ local c = g_classFuncs
 		dataSize = 264,
 		index = 46219,
 		retOffset = 260,
-	},
-	["SendText"] = {
+	}
+	g_classFuncs["ATcpLink"]["SendText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -366,8 +389,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46216,
 		retOffset = 12,
-	},
-	["IsConnected"] = {
+	}
+	g_classFuncs["ATcpLink"]["IsConnected"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -380,8 +403,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46214,
 		retOffset = 0,
-	},
-	["Close"] = {
+	}
+	g_classFuncs["ATcpLink"]["Close"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -394,8 +417,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46212,
 		retOffset = 0,
-	},
-	["Open"] = {
+	}
+	g_classFuncs["ATcpLink"]["Open"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -416,8 +439,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46209,
 		retOffset = 8,
-	},
-	["Listen"] = {
+	}
+	g_classFuncs["ATcpLink"]["Listen"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -430,8 +453,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46207,
 		retOffset = 0,
-	},
-	["BindPort"] = {
+	}
+	g_classFuncs["ATcpLink"]["BindPort"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -462,8 +485,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46203,
 		retOffset = 8,
-	},
-	["UploadMatchmakingStats"] = {
+	}
+	g_classFuncs["UOnlineEventsInterfaceMcp"]["UploadMatchmakingStats"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -492,8 +515,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 45522,
 		retOffset = 28,
-	},
-	["UpdatePlaylistPopulation"] = {
+	}
+	g_classFuncs["UOnlineEventsInterfaceMcp"]["UpdatePlaylistPopulation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -522,8 +545,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45518,
 		retOffset = 8,
-	},
-	["UploadGameplayEventsData"] = {
+	}
+	g_classFuncs["UOnlineEventsInterfaceMcp"]["UploadGameplayEventsData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -554,8 +577,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 45513,
 		retOffset = 36,
-	},
-	["UploadPlayerData"] = {
+	}
+	g_classFuncs["UOnlineEventsInterfaceMcp"]["UploadPlayerData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -600,8 +623,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 45507,
 		retOffset = 44,
-	},
-	["GetNews"] = {
+	}
+	g_classFuncs["UOnlineNewsInterfaceMcp"]["GetNews"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -633,8 +656,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45828,
 		retOffset = 4,
-	},
-	["ClearReadNewsCompletedDelegate"] = {
+	}
+	g_classFuncs["UOnlineNewsInterfaceMcp"]["ClearReadNewsCompletedDelegate"] = {
 		fields = {
 			{
 				name = "ReadGameNewsDelegate",
@@ -647,8 +670,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45826,
-	},
-	["AddReadNewsCompletedDelegate"] = {
+	}
+	g_classFuncs["UOnlineNewsInterfaceMcp"]["AddReadNewsCompletedDelegate"] = {
 		fields = {
 			{
 				name = "ReadNewsDelegate",
@@ -661,8 +684,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45824,
-	},
-	["OnReadNewsCompleted"] = {
+	}
+	g_classFuncs["UOnlineNewsInterfaceMcp"]["OnReadNewsCompleted"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -684,8 +707,8 @@ local c = g_classFuncs
 		},
 		dataSize = 5,
 		index = 45808,
-	},
-	["ReadNews"] = {
+	}
+	g_classFuncs["UOnlineNewsInterfaceMcp"]["ReadNews"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -715,8 +738,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45818,
 		retOffset = 4,
-	},
-	["ClearShareTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
@@ -729,8 +752,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46044,
-	},
-	["AddShareTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["AddShareTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ShareTitleFileCompleteDelegate",
@@ -743,8 +766,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46042,
-	},
-	["ShareTitleFile"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ShareTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -765,8 +788,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46039,
 		retOffset = 12,
-	},
-	["ClearDownloadedFile"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearDownloadedFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -787,8 +810,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46036,
 		retOffset = 12,
-	},
-	["ClearDownloadedFiles"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearDownloadedFiles"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -801,8 +824,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46034,
 		retOffset = 0,
-	},
-	["GetTitleFileState"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["GetTitleFileState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -824,8 +847,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46031,
 		retOffset = 12,
-	},
-	["GetTitleFileContents"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["GetTitleFileContents"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -856,8 +879,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46026,
 		retOffset = 24,
-	},
-	["ClearReadTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ClearReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
@@ -870,8 +893,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46024,
-	},
-	["AddReadTitleFileCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["AddReadTitleFileCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ReadTitleFileCompleteDelegate",
@@ -884,8 +907,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46022,
-	},
-	["ReadTitleFile"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["ReadTitleFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -914,8 +937,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46018,
 		retOffset = 16,
-	},
-	["OnShareTitleFileComplete"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["OnShareTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -944,8 +967,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46005,
-	},
-	["OnReadTitleFileComplete"] = {
+	}
+	g_classFuncs["UOnlineTitleFileDownloadMcp"]["OnReadTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -966,14 +989,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45997,
-	},
-	["eventDestroyBeacon"] = {
+	}
+	g_classFuncs["UMeshBeacon"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45251,
-	},
-	["SendHostNewGameSessionResponse"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["SendHostNewGameSessionResponse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1018,8 +1041,8 @@ local c = g_classFuncs
 		dataSize = 100,
 		index = 45311,
 		retOffset = 96,
-	},
-	["OnCreateNewSessionRequestReceived"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["OnCreateNewSessionRequestReceived"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -1050,8 +1073,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 45253,
-	},
-	["OnTravelRequestReceived"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["OnTravelRequestReceived"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -1080,8 +1103,8 @@ local c = g_classFuncs
 		},
 		dataSize = 92,
 		index = 45255,
-	},
-	["OnReceivedBandwidthTestResults"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["OnReceivedBandwidthTestResults"] = {
 		fields = {
 			{
 				name = "TestType",
@@ -1113,8 +1136,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45257,
-	},
-	["OnReceivedBandwidthTestRequest"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["OnReceivedBandwidthTestRequest"] = {
 		fields = {
 			{
 				name = "TestType",
@@ -1128,8 +1151,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 45259,
-	},
-	["OnConnectionRequestResult"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["OnConnectionRequestResult"] = {
 		fields = {
 			{
 				name = "ConnectionResult",
@@ -1143,8 +1166,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 45261,
-	},
-	["BeginBandwidthTest"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["BeginBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1174,8 +1197,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45295,
 		retOffset = 8,
-	},
-	["RequestConnection"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["RequestConnection"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1214,14 +1237,14 @@ local c = g_classFuncs
 		dataSize = 68,
 		index = 45290,
 		retOffset = 64,
-	},
-	["eventDestroyBeacon"] = {
+	}
+	g_classFuncs["UMeshBeaconClient"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45289,
-	},
-	["OnReceivedClientCreateNewSessionResult"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["OnReceivedClientCreateNewSessionResult"] = {
 		fields = {
 			{
 				name = "bSucceeded",
@@ -1258,8 +1281,8 @@ local c = g_classFuncs
 		},
 		dataSize = 96,
 		index = 45342,
-	},
-	["RequestClientCreateNewSession"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["RequestClientCreateNewSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1306,8 +1329,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 45392,
 		retOffset = 48,
-	},
-	["TellClientsToTravel"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["TellClientsToTravel"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -1336,14 +1359,14 @@ local c = g_classFuncs
 		},
 		dataSize = 92,
 		index = 45388,
-	},
-	["OnAllPendingPlayersConnected"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["OnAllPendingPlayersConnected"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45344,
-	},
-	["AllPlayersConnected"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["AllPlayersConnected"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1366,8 +1389,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45384,
 		retOffset = 12,
-	},
-	["GetConnectionIndexForPlayer"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["GetConnectionIndexForPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1388,8 +1411,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 45381,
 		retOffset = 24,
-	},
-	["SetPendingPlayerConnections"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["SetPendingPlayerConnections"] = {
 		fields = {
 			{
 				name = "Players",
@@ -1404,8 +1427,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45378,
-	},
-	["OnFinishedBandwidthTest"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["OnFinishedBandwidthTest"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
@@ -1445,8 +1468,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 45346,
-	},
-	["OnStartedBandwidthTest"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["OnStartedBandwidthTest"] = {
 		fields = {
 			{
 				name = "PlayerNetId",
@@ -1468,8 +1491,8 @@ local c = g_classFuncs
 		},
 		dataSize = 25,
 		index = 45348,
-	},
-	["OnReceivedClientConnectionRequest"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["OnReceivedClientConnectionRequest"] = {
 		fields = {
 			{
 				name = "NewClientConnection",
@@ -1483,8 +1506,8 @@ local c = g_classFuncs
 		},
 		dataSize = 104,
 		index = 45350,
-	},
-	["AllowBandwidthTesting"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["AllowBandwidthTesting"] = {
 		fields = {
 			{
 				name = "bEnabled",
@@ -1497,14 +1520,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 45369,
-	},
-	["CancelPendingBandwidthTests"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["CancelPendingBandwidthTests"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45368,
-	},
-	["HasPendingBandwidthTest"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["HasPendingBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1517,14 +1540,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45366,
 		retOffset = 0,
-	},
-	["CancelInProgressBandwidthTests"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["CancelInProgressBandwidthTests"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45365,
-	},
-	["HasInProgressBandwidthTest"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["HasInProgressBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1537,8 +1560,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45363,
 		retOffset = 0,
-	},
-	["RequestClientBandwidthTest"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["RequestClientBandwidthTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1576,14 +1599,14 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 45358,
 		retOffset = 32,
-	},
-	["eventDestroyBeacon"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45357,
-	},
-	["InitHostBeacon"] = {
+	}
+	g_classFuncs["UMeshBeaconHost"]["InitHostBeacon"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1604,8 +1627,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 45354,
 		retOffset = 24,
-	},
-	["GetRegisteredPlayers"] = {
+	}
+	g_classFuncs["UOnlineSubsystemCommonImpl"]["GetRegisteredPlayers"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -1628,8 +1651,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 45991,
-	},
-	["IsPlayerInSession"] = {
+	}
+	g_classFuncs["UOnlineSubsystemCommonImpl"]["IsPlayerInSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1658,8 +1681,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 45987,
 		retOffset = 32,
-	},
-	["eventGetPlayerNicknameFromIndex"] = {
+	}
+	g_classFuncs["UOnlineSubsystemCommonImpl"]["eventGetPlayerNicknameFromIndex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1682,8 +1705,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45984,
 		retOffset = 4,
-	},
-	["FindLocalServerAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindLocalServerAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1704,8 +1727,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45491,
 		retOffset = 4,
-	},
-	["FindServerAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindServerAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1726,8 +1749,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45488,
 		retOffset = 4,
-	},
-	["FindLocalClientAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindLocalClientAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1748,8 +1771,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45485,
 		retOffset = 4,
-	},
-	["FindClientAuthSession"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["FindClientAuthSession"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1770,8 +1793,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45482,
 		retOffset = 4,
-	},
-	["SendAuthRetryServer"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthRetryServer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1784,8 +1807,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45480,
 		retOffset = 0,
-	},
-	["SendAuthKillClient"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthKillClient"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1806,8 +1829,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45477,
 		retOffset = 4,
-	},
-	["SendAuthBlobServer"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthBlobServer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1836,8 +1859,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45473,
 		retOffset = 8,
-	},
-	["SendAuthBlobClient"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["SendAuthBlobClient"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1858,8 +1881,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45470,
 		retOffset = 4,
-	},
-	["ClearServerConnectionCloseDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearServerConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ServerConnectionCloseDelegate",
@@ -1872,8 +1895,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45468,
-	},
-	["AddServerConnectionCloseDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddServerConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ServerConnectionCloseDelegate",
@@ -1886,8 +1909,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45466,
-	},
-	["ClearClientConnectionCloseDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearClientConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ClientConnectionCloseDelegate",
@@ -1900,8 +1923,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45464,
-	},
-	["AddClientConnectionCloseDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddClientConnectionCloseDelegate"] = {
 		fields = {
 			{
 				name = "ClientConnectionCloseDelegate",
@@ -1914,8 +1937,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45462,
-	},
-	["ClearAuthRetryServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthRetryServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRetryServerDelegate",
@@ -1928,8 +1951,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45460,
-	},
-	["AddAuthRetryServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthRetryServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRetryServerDelegate",
@@ -1942,8 +1965,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45458,
-	},
-	["ClearAuthKillClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthKillClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthKillClientDelegate",
@@ -1956,8 +1979,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45456,
-	},
-	["AddAuthKillClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthKillClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthKillClientDelegate",
@@ -1970,8 +1993,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45454,
-	},
-	["ClearAuthCompleteServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthCompleteServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteServerDelegate",
@@ -1984,8 +2007,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45452,
-	},
-	["AddAuthCompleteServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthCompleteServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteServerDelegate",
@@ -1998,8 +2021,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45450,
-	},
-	["ClearAuthCompleteClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthCompleteClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteClientDelegate",
@@ -2012,8 +2035,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45448,
-	},
-	["AddAuthCompleteClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthCompleteClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthCompleteClientDelegate",
@@ -2026,8 +2049,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45446,
-	},
-	["ClearAuthBlobReceivedServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthBlobReceivedServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedServerDelegate",
@@ -2040,8 +2063,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45444,
-	},
-	["AddAuthBlobReceivedServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthBlobReceivedServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedServerDelegate",
@@ -2054,8 +2077,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45442,
-	},
-	["ClearAuthBlobReceivedClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthBlobReceivedClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedClientDelegate",
@@ -2068,8 +2091,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45440,
-	},
-	["AddAuthBlobReceivedClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthBlobReceivedClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthBlobReceivedClientDelegate",
@@ -2082,8 +2105,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45438,
-	},
-	["ClearAuthRequestServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthRequestServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestServerDelegate",
@@ -2096,8 +2119,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45436,
-	},
-	["AddAuthRequestServerDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthRequestServerDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestServerDelegate",
@@ -2110,8 +2133,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45434,
-	},
-	["ClearAuthRequestClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthRequestClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestClientDelegate",
@@ -2124,8 +2147,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45432,
-	},
-	["AddAuthRequestClientDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthRequestClientDelegate"] = {
 		fields = {
 			{
 				name = "AuthRequestClientDelegate",
@@ -2138,8 +2161,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45430,
-	},
-	["ClearAuthReadyDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["ClearAuthReadyDelegate"] = {
 		fields = {
 			{
 				name = "AuthReadyDelegate",
@@ -2152,8 +2175,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45428,
-	},
-	["AddAuthReadyDelegate"] = {
+	}
+	g_classFuncs["UOnlineAuthInterfaceImpl"]["AddAuthReadyDelegate"] = {
 		fields = {
 			{
 				name = "AuthReadyDelegate",
@@ -2166,8 +2189,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45426,
-	},
-	["HasPendingBootInvite"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["HasPendingBootInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2180,14 +2203,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45801,
 		retOffset = 0,
-	},
-	["CancelNATNegotiation"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["CancelNATNegotiation"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45800,
-	},
-	["ClearQosStatusChangedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearQosStatusChangedDelegate"] = {
 		fields = {
 			{
 				name = "QosStatusChangedDelegate",
@@ -2200,8 +2223,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45798,
-	},
-	["AddQosStatusChangedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddQosStatusChangedDelegate"] = {
 		fields = {
 			{
 				name = "QosStatusChangedDelegate",
@@ -2214,8 +2237,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45796,
-	},
-	["OnQosStatusChanged"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnQosStatusChanged"] = {
 		fields = {
 			{
 				name = "NumComplete",
@@ -2236,8 +2259,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45560,
-	},
-	["BindPlatformSpecificSessionToSearch"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["BindPlatformSpecificSessionToSearch"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2274,8 +2297,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 45789,
 		retOffset = 88,
-	},
-	["ReadPlatformSpecificSessionInfoBySessionName"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ReadPlatformSpecificSessionInfoBySessionName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2304,8 +2327,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 45785,
 		retOffset = 88,
-	},
-	["ReadPlatformSpecificSessionInfo"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ReadPlatformSpecificSessionInfo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2335,8 +2358,8 @@ local c = g_classFuncs
 		dataSize = 92,
 		index = 45781,
 		retOffset = 88,
-	},
-	["QueryNonAdvertisedData"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["QueryNonAdvertisedData"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2365,8 +2388,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45777,
 		retOffset = 8,
-	},
-	["ClearJoinMigratedOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearJoinMigratedOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinMigratedOnlineGameCompleteDelegate",
@@ -2379,8 +2402,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45775,
-	},
-	["AddJoinMigratedOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddJoinMigratedOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinMigratedOnlineGameCompleteDelegate",
@@ -2393,8 +2416,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45773,
-	},
-	["OnJoinMigratedOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnJoinMigratedOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -2415,8 +2438,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45543,
-	},
-	["JoinMigratedOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["JoinMigratedOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2454,8 +2477,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45766,
 		retOffset = 20,
-	},
-	["ClearMigrateOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearMigrateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "MigrateOnlineGameCompleteDelegate",
@@ -2468,8 +2491,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45764,
-	},
-	["AddMigrateOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddMigrateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "MigrateOnlineGameCompleteDelegate",
@@ -2482,8 +2505,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45762,
-	},
-	["OnMigrateOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnMigrateOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -2504,8 +2527,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45540,
-	},
-	["MigrateOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["MigrateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2534,8 +2557,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45756,
 		retOffset = 12,
-	},
-	["ClearRecalculateSkillRatingCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearRecalculateSkillRatingCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RecalculateSkillRatingGameCompleteDelegate",
@@ -2548,8 +2571,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45754,
-	},
-	["AddRecalculateSkillRatingCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddRecalculateSkillRatingCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RecalculateSkillRatingCompleteDelegate",
@@ -2562,8 +2585,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45752,
-	},
-	["OnRecalculateSkillRatingComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnRecalculateSkillRatingComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -2584,8 +2607,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45546,
-	},
-	["RecalculateSkillRating"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["RecalculateSkillRating"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2616,8 +2639,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45745,
 		retOffset = 20,
-	},
-	["ClearGameInviteProcessingStartedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearGameInviteProcessingStartedDelegate"] = {
 		fields = {
 			{
 				name = "GameInviteProcessingStartedDelegate",
@@ -2630,8 +2653,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45743,
-	},
-	["AddGameInviteProcessingStartedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddGameInviteProcessingStartedDelegate"] = {
 		fields = {
 			{
 				name = "GameInviteProcessingStartedDelegate",
@@ -2644,14 +2667,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45741,
-	},
-	["OnGameInviteProcessingStarted"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnGameInviteProcessingStarted"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45565,
-	},
-	["AcceptGameInvite"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AcceptGameInvite"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2680,8 +2703,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45737,
 		retOffset = 12,
-	},
-	["ClearGameInviteAcceptedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2702,8 +2725,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45734,
-	},
-	["AddGameInviteAcceptedDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddGameInviteAcceptedDelegate"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -2724,8 +2747,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45731,
-	},
-	["OnGameInviteAccepted"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnGameInviteAccepted"] = {
 		fields = {
 			{
 				name = "InviteResult",
@@ -2739,8 +2762,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45567,
-	},
-	["GetArbitratedPlayers"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["GetArbitratedPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2763,8 +2786,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45726,
 		retOffset = 8,
-	},
-	["ClearArbitrationRegistrationCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearArbitrationRegistrationCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ArbitrationRegistrationCompleteDelegate",
@@ -2777,8 +2800,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45724,
-	},
-	["AddArbitrationRegistrationCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddArbitrationRegistrationCompleteDelegate"] = {
 		fields = {
 			{
 				name = "ArbitrationRegistrationCompleteDelegate",
@@ -2791,8 +2814,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45722,
-	},
-	["OnArbitrationRegistrationComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnArbitrationRegistrationComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -2813,8 +2836,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45569,
-	},
-	["RegisterForArbitration"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["RegisterForArbitration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2835,8 +2858,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45717,
 		retOffset = 8,
-	},
-	["ClearEndOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearEndOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "EndOnlineGameCompleteDelegate",
@@ -2849,8 +2872,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45715,
-	},
-	["AddEndOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddEndOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "EndOnlineGameCompleteDelegate",
@@ -2863,8 +2886,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45713,
-	},
-	["OnEndOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnEndOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -2885,8 +2908,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45552,
-	},
-	["EndOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["EndOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2907,8 +2930,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45708,
 		retOffset = 8,
-	},
-	["ClearStartOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearStartOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "StartOnlineGameCompleteDelegate",
@@ -2921,8 +2944,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45706,
-	},
-	["AddStartOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddStartOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "StartOnlineGameCompleteDelegate",
@@ -2935,8 +2958,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45704,
-	},
-	["OnStartOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnStartOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -2957,8 +2980,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45549,
-	},
-	["StartOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["StartOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2979,8 +3002,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45699,
 		retOffset = 8,
-	},
-	["ClearUnregisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
@@ -2993,8 +3016,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45697,
-	},
-	["AddUnregisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddUnregisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UnregisterPlayerCompleteDelegate",
@@ -3007,8 +3030,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45695,
-	},
-	["OnUnregisterPlayerComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnUnregisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -3037,8 +3060,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 45573,
-	},
-	["UnregisterPlayers"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["UnregisterPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3069,8 +3092,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45687,
 		retOffset = 20,
-	},
-	["UnregisterPlayer"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["UnregisterPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3099,8 +3122,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 45683,
 		retOffset = 32,
-	},
-	["ClearRegisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
@@ -3113,8 +3136,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45681,
-	},
-	["AddRegisterPlayerCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddRegisterPlayerCompleteDelegate"] = {
 		fields = {
 			{
 				name = "RegisterPlayerCompleteDelegate",
@@ -3127,8 +3150,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45679,
-	},
-	["OnRegisterPlayerComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnRegisterPlayerComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -3157,8 +3180,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 45575,
-	},
-	["RegisterPlayers"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["RegisterPlayers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3189,8 +3212,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45671,
 		retOffset = 20,
-	},
-	["RegisterPlayer"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["RegisterPlayer"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3227,8 +3250,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 45666,
 		retOffset = 36,
-	},
-	["GetResolvedConnectString"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["GetResolvedConnectString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3259,8 +3282,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45662,
 		retOffset = 20,
-	},
-	["ClearJoinOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearJoinOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinOnlineGameCompleteDelegate",
@@ -3273,8 +3296,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45660,
-	},
-	["AddJoinOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddJoinOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "JoinOnlineGameCompleteDelegate",
@@ -3287,8 +3310,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45658,
-	},
-	["OnJoinOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnJoinOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -3309,8 +3332,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45537,
-	},
-	["JoinOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["JoinOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3348,8 +3371,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 45651,
 		retOffset = 20,
-	},
-	["FreeSearchResults"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["FreeSearchResults"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3370,8 +3393,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 45648,
 		retOffset = 4,
-	},
-	["ClearCancelFindOnlineGamesCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearCancelFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CancelFindOnlineGamesCompleteDelegate",
@@ -3384,8 +3407,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45646,
-	},
-	["AddCancelFindOnlineGamesCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddCancelFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CancelFindOnlineGamesCompleteDelegate",
@@ -3398,8 +3421,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45644,
-	},
-	["OnCancelFindOnlineGamesComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnCancelFindOnlineGamesComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -3412,8 +3435,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 45558,
-	},
-	["CancelFindOnlineGames"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["CancelFindOnlineGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3426,8 +3449,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45641,
 		retOffset = 0,
-	},
-	["ClearFindOnlineGamesCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FindOnlineGamesCompleteDelegate",
@@ -3440,8 +3463,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45639,
-	},
-	["AddFindOnlineGamesCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddFindOnlineGamesCompleteDelegate"] = {
 		fields = {
 			{
 				name = "FindOnlineGamesCompleteDelegate",
@@ -3454,8 +3477,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45637,
-	},
-	["FindOnlineGames"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["FindOnlineGames"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3484,8 +3507,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45633,
 		retOffset = 8,
-	},
-	["ClearDestroyOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearDestroyOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "DestroyOnlineGameCompleteDelegate",
@@ -3498,8 +3521,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45631,
-	},
-	["AddDestroyOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddDestroyOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "DestroyOnlineGameCompleteDelegate",
@@ -3512,8 +3535,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45629,
-	},
-	["OnDestroyOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnDestroyOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -3534,8 +3557,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45534,
-	},
-	["DestroyOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["DestroyOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3556,8 +3579,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45624,
 		retOffset = 8,
-	},
-	["ClearUpdateOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearUpdateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UpdateOnlineGameCompleteDelegate",
@@ -3570,8 +3593,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45622,
-	},
-	["AddUpdateOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddUpdateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "UpdateOnlineGameCompleteDelegate",
@@ -3584,8 +3607,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45620,
-	},
-	["OnUpdateOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnUpdateOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -3606,8 +3629,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45531,
-	},
-	["UpdateOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["UpdateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3645,8 +3668,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45613,
 		retOffset = 16,
-	},
-	["ClearCreateOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["ClearCreateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CreateOnlineGameCompleteDelegate",
@@ -3659,8 +3682,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45611,
-	},
-	["AddCreateOnlineGameCompleteDelegate"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["AddCreateOnlineGameCompleteDelegate"] = {
 		fields = {
 			{
 				name = "CreateOnlineGameCompleteDelegate",
@@ -3673,8 +3696,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45609,
-	},
-	["OnCreateOnlineGameComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnCreateOnlineGameComplete"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -3695,8 +3718,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45528,
-	},
-	["CreateOnlineGame"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["CreateOnlineGame"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3733,8 +3756,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45602,
 		retOffset = 16,
-	},
-	["GetGameSearch"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["GetGameSearch"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3747,8 +3770,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45600,
 		retOffset = 0,
-	},
-	["GetGameSettings"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["GetGameSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3769,8 +3792,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45597,
 		retOffset = 8,
-	},
-	["OnFindOnlineGamesComplete"] = {
+	}
+	g_classFuncs["UOnlineGameInterfaceImpl"]["OnFindOnlineGamesComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -3783,8 +3806,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 45555,
-	},
-	["ParseDataCenterId"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["ParseDataCenterId"] = {
 		fields = {
 			{
 				name = "Data",
@@ -3799,8 +3822,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45970,
-	},
-	["OnReadDataCenterIdComplete"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["OnReadDataCenterIdComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -3821,8 +3844,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 45965,
-	},
-	["ReadDataCenterId"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["ReadDataCenterId"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3835,8 +3858,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45963,
-	},
-	["eventSendPlaylistPopulationUpdate"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["eventSendPlaylistPopulationUpdate"] = {
 		fields = {
 			{
 				name = "NumPlayers",
@@ -3849,8 +3872,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45960,
-	},
-	["GetPopulationInfoFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetPopulationInfoFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
@@ -3879,8 +3902,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 45956,
-	},
-	["ParsePlaylistPopulationData"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["ParsePlaylistPopulationData"] = {
 		fields = {
 			{
 				name = "Data",
@@ -3895,14 +3918,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45953,
-	},
-	["OnPlaylistPopulationDataUpdated"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["OnPlaylistPopulationDataUpdated"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45843,
-	},
-	["OnReadPlaylistPopulationComplete"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["OnReadPlaylistPopulationComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -3923,8 +3946,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 45948,
-	},
-	["ReadPlaylistPopulation"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["ReadPlaylistPopulation"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -3937,14 +3960,14 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45946,
-	},
-	["Reset"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["Reset"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 45945,
-	},
-	["GetContentIdsFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetContentIdsFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
@@ -3967,8 +3990,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 45941,
-	},
-	["GetInventorySwapFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetInventorySwapFromPlaylist"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3997,8 +4020,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45937,
 		retOffset = 8,
-	},
-	["GetMapCycleFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetMapCycleFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
@@ -4021,8 +4044,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 45933,
-	},
-	["GetUrlFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetUrlFromPlaylist"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4045,8 +4068,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45930,
 		retOffset = 4,
-	},
-	["GetMatchType"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetMatchType"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4067,8 +4090,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45927,
 		retOffset = 4,
-	},
-	["IsPlaylistArbitrated"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["IsPlaylistArbitrated"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4089,8 +4112,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45924,
 		retOffset = 4,
-	},
-	["GetLoadBalanceIdFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetLoadBalanceIdFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
@@ -4111,8 +4134,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45921,
-	},
-	["GetTeamInfoFromPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetTeamInfoFromPlaylist"] = {
 		fields = {
 			{
 				name = "PlaylistId",
@@ -4149,8 +4172,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 45916,
-	},
-	["PlaylistSupportsDedicatedServers"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["PlaylistSupportsDedicatedServers"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4171,8 +4194,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45913,
 		retOffset = 4,
-	},
-	["HasAnyGameSettings"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["HasAnyGameSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4193,8 +4216,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45910,
 		retOffset = 4,
-	},
-	["GetGameSettings"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["GetGameSettings"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4223,14 +4246,14 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 45906,
 		retOffset = 8,
-	},
-	["FinalizePlaylistObjects"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["FinalizePlaylistObjects"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45905,
-	},
-	["OnReadTitleFileComplete"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["OnReadTitleFileComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4251,8 +4274,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 45902,
-	},
-	["ShouldRefreshPlaylists"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["ShouldRefreshPlaylists"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4265,14 +4288,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 45900,
 		retOffset = 0,
-	},
-	["DetermineFilesToDownload"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["DetermineFilesToDownload"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45899,
-	},
-	["DownloadPlaylist"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["DownloadPlaylist"] = {
 		fields = {
 			{
 				name = "LocalUserNum",
@@ -4285,8 +4308,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45897,
-	},
-	["OnReadPlaylistComplete"] = {
+	}
+	g_classFuncs["UOnlinePlaylistManager"]["OnReadPlaylistComplete"] = {
 		fields = {
 			{
 				name = "bWasSuccessful",
@@ -4299,26 +4322,26 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 45845,
-	},
-	["OnDestroyComplete"] = {
+	}
+	g_classFuncs["UPartyBeacon"]["OnDestroyComplete"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46047,
-	},
-	["eventDestroyBeacon"] = {
+	}
+	g_classFuncs["UPartyBeacon"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46071,
-	},
-	["eventDestroyBeacon"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46113,
-	},
-	["CancelReservation"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["CancelReservation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4339,8 +4362,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46110,
 		retOffset = 24,
-	},
-	["RequestReservationUpdate"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["RequestReservationUpdate"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4380,8 +4403,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 46104,
 		retOffset = 44,
-	},
-	["RequestReservation"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["RequestReservation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4421,20 +4444,20 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 46098,
 		retOffset = 44,
-	},
-	["OnHostHasCancelled"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["OnHostHasCancelled"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46073,
-	},
-	["OnHostIsReady"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["OnHostIsReady"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46075,
-	},
-	["OnTravelRequestReceived"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["OnTravelRequestReceived"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -4463,8 +4486,8 @@ local c = g_classFuncs
 		},
 		dataSize = 92,
 		index = 46077,
-	},
-	["OnReservationCountUpdated"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["OnReservationCountUpdated"] = {
 		fields = {
 			{
 				name = "ReservationRemaining",
@@ -4477,8 +4500,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46079,
-	},
-	["OnReservationRequestComplete"] = {
+	}
+	g_classFuncs["UPartyBeaconClient"]["OnReservationRequestComplete"] = {
 		fields = {
 			{
 				name = "ReservationResult",
@@ -4492,8 +4515,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 46081,
-	},
-	["GetMaxAvailableTeamSize"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["GetMaxAvailableTeamSize"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4506,8 +4529,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46194,
 		retOffset = 0,
-	},
-	["GetPartyLeaders"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["GetPartyLeaders"] = {
 		fields = {
 			{
 				name = "PartyLeaders",
@@ -4522,8 +4545,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46191,
-	},
-	["GetPlayers"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["GetPlayers"] = {
 		fields = {
 			{
 				name = "Players",
@@ -4538,8 +4561,8 @@ local c = g_classFuncs
 		},
 		dataSize = 72,
 		index = 46187,
-	},
-	["AppendReservationSkillsToSearch"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["AppendReservationSkillsToSearch"] = {
 		fields = {
 			{
 				name = "Search",
@@ -4552,8 +4575,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46185,
-	},
-	["eventUnregisterParty"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["eventUnregisterParty"] = {
 		fields = {
 			{
 				name = "PartyLeader",
@@ -4566,20 +4589,20 @@ local c = g_classFuncs
 		},
 		dataSize = 88,
 		index = 46182,
-	},
-	["eventUnregisterPartyMembers"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["eventUnregisterPartyMembers"] = {
 		fields = {
 		},
 		dataSize = 64,
 		index = 46180,
-	},
-	["eventRegisterPartyMembers"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["eventRegisterPartyMembers"] = {
 		fields = {
 		},
 		dataSize = 80,
 		index = 46176,
-	},
-	["AreReservationsFull"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["AreReservationsFull"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4592,20 +4615,20 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46174,
 		retOffset = 0,
-	},
-	["TellClientsHostHasCancelled"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["TellClientsHostHasCancelled"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46173,
-	},
-	["TellClientsHostIsReady"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["TellClientsHostIsReady"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46172,
-	},
-	["TellClientsToTravel"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["TellClientsToTravel"] = {
 		fields = {
 			{
 				name = "SessionName",
@@ -4634,14 +4657,14 @@ local c = g_classFuncs
 		},
 		dataSize = 92,
 		index = 46168,
-	},
-	["eventDestroyBeacon"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["eventDestroyBeacon"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46167,
-	},
-	["OnClientCancellationReceived"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["OnClientCancellationReceived"] = {
 		fields = {
 			{
 				name = "PartyLeader",
@@ -4654,20 +4677,20 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 46123,
-	},
-	["OnReservationsFull"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["OnReservationsFull"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46125,
-	},
-	["OnReservationChange"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["OnReservationChange"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46127,
-	},
-	["HandlePlayerLogout"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["HandlePlayerLogout"] = {
 		fields = {
 			{
 				name = "PlayerID",
@@ -4688,8 +4711,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46163,
-	},
-	["GetExistingReservation"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["GetExistingReservation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4711,8 +4734,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46160,
 		retOffset = 24,
-	},
-	["UpdatePartyReservationEntry"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["UpdatePartyReservationEntry"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4744,8 +4767,8 @@ local c = g_classFuncs
 		dataSize = 37,
 		index = 46155,
 		retOffset = 36,
-	},
-	["AddPartyReservationEntry"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["AddPartyReservationEntry"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4793,8 +4816,8 @@ local c = g_classFuncs
 		dataSize = 45,
 		index = 46148,
 		retOffset = 44,
-	},
-	["InitHostBeacon"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["InitHostBeacon"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4848,8 +4871,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46141,
 		retOffset = 24,
-	},
-	["PauseReservationRequests"] = {
+	}
+	g_classFuncs["UPartyBeaconHost"]["PauseReservationRequests"] = {
 		fields = {
 			{
 				name = "bPause",
@@ -4862,8 +4885,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46139,
-	},
-	["GetHexDigit"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetHexDigit"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4884,8 +4907,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46375,
 		retOffset = 12,
-	},
-	["DecodeFormData"] = {
+	}
+	g_classFuncs["UWebRequest"]["DecodeFormData"] = {
 		fields = {
 			{
 				name = "Data",
@@ -4898,8 +4921,8 @@ local c = g_classFuncs
 		},
 		dataSize = 68,
 		index = 46371,
-	},
-	["ProcessHeaderString"] = {
+	}
+	g_classFuncs["UWebRequest"]["ProcessHeaderString"] = {
 		fields = {
 			{
 				name = "S",
@@ -4912,14 +4935,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46369,
-	},
-	["Dump"] = {
+	}
+	g_classFuncs["UWebRequest"]["Dump"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46368,
-	},
-	["GetVariables"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetVariables"] = {
 		fields = {
 			{
 				name = "varNames",
@@ -4934,8 +4957,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46365,
-	},
-	["GetVariableNumber"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetVariableNumber"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4975,8 +4998,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 45165,
 		retOffset = 28,
-	},
-	["GetVariableCount"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetVariableCount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4997,8 +5020,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45163,
 		retOffset = 12,
-	},
-	["GetVariable"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetVariable"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5030,8 +5053,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 45161,
 		retOffset = 24,
-	},
-	["AddVariable"] = {
+	}
+	g_classFuncs["UWebRequest"]["AddVariable"] = {
 		fields = {
 			{
 				name = "VariableName",
@@ -5052,8 +5075,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 46356,
-	},
-	["GetHeaders"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetHeaders"] = {
 		fields = {
 			{
 				name = "headers",
@@ -5068,8 +5091,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46353,
-	},
-	["GetHeader"] = {
+	}
+	g_classFuncs["UWebRequest"]["GetHeader"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5101,8 +5124,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46349,
 		retOffset = 24,
-	},
-	["AddHeader"] = {
+	}
+	g_classFuncs["UWebRequest"]["AddHeader"] = {
 		fields = {
 			{
 				name = "HeaderName",
@@ -5123,8 +5146,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 46346,
-	},
-	["EncodeBase64"] = {
+	}
+	g_classFuncs["UWebRequest"]["EncodeBase64"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5147,8 +5170,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 46343,
 		retOffset = 12,
-	},
-	["DecodeBase64"] = {
+	}
+	g_classFuncs["UWebRequest"]["DecodeBase64"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5171,8 +5194,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 46340,
 		retOffset = 12,
-	},
-	["SentResponse"] = {
+	}
+	g_classFuncs["UWebResponse"]["SentResponse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5185,8 +5208,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46433,
 		retOffset = 0,
-	},
-	["SentText"] = {
+	}
+	g_classFuncs["UWebResponse"]["SentText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5199,8 +5222,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46431,
 		retOffset = 0,
-	},
-	["Redirect"] = {
+	}
+	g_classFuncs["UWebResponse"]["Redirect"] = {
 		fields = {
 			{
 				name = "URL",
@@ -5213,8 +5236,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46429,
-	},
-	["SendStandardHeaders"] = {
+	}
+	g_classFuncs["UWebResponse"]["SendStandardHeaders"] = {
 		fields = {
 			{
 				name = "ContentType",
@@ -5237,8 +5260,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46425,
-	},
-	["HTTPError"] = {
+	}
+	g_classFuncs["UWebResponse"]["HTTPError"] = {
 		fields = {
 			{
 				name = "ErrorNum",
@@ -5260,14 +5283,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46422,
-	},
-	["SendHeaders"] = {
+	}
+	g_classFuncs["UWebResponse"]["SendHeaders"] = {
 		fields = {
 		},
 		dataSize = 12,
 		index = 46420,
-	},
-	["AddHeader"] = {
+	}
+	g_classFuncs["UWebResponse"]["AddHeader"] = {
 		fields = {
 			{
 				name = "Header",
@@ -5289,8 +5312,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 46415,
-	},
-	["HTTPHeader"] = {
+	}
+	g_classFuncs["UWebResponse"]["HTTPHeader"] = {
 		fields = {
 			{
 				name = "Header",
@@ -5303,8 +5326,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46413,
-	},
-	["HTTPResponse"] = {
+	}
+	g_classFuncs["UWebResponse"]["HTTPResponse"] = {
 		fields = {
 			{
 				name = "Header",
@@ -5317,8 +5340,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46411,
-	},
-	["FailAuthentication"] = {
+	}
+	g_classFuncs["UWebResponse"]["FailAuthentication"] = {
 		fields = {
 			{
 				name = "Realm",
@@ -5331,8 +5354,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46409,
-	},
-	["SendCachedFile"] = {
+	}
+	g_classFuncs["UWebResponse"]["SendCachedFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5362,8 +5385,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 46405,
 		retOffset = 24,
-	},
-	["eventSendBinary"] = {
+	}
+	g_classFuncs["UWebResponse"]["eventSendBinary"] = {
 		fields = {
 			{
 				name = "Count",
@@ -5384,8 +5407,8 @@ local c = g_classFuncs
 		},
 		dataSize = 259,
 		index = 46402,
-	},
-	["eventSendText"] = {
+	}
+	g_classFuncs["UWebResponse"]["eventSendText"] = {
 		fields = {
 			{
 				name = "Text",
@@ -5407,14 +5430,14 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46399,
-	},
-	["Dump"] = {
+	}
+	g_classFuncs["UWebResponse"]["Dump"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46398,
-	},
-	["GetHTTPExpiration"] = {
+	}
+	g_classFuncs["UWebResponse"]["GetHTTPExpiration"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5438,8 +5461,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 46395,
 		retOffset = 4,
-	},
-	["LoadParsedUHTM"] = {
+	}
+	g_classFuncs["UWebResponse"]["LoadParsedUHTM"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5462,8 +5485,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 46392,
 		retOffset = 12,
-	},
-	["IncludeBinaryFile"] = {
+	}
+	g_classFuncs["UWebResponse"]["IncludeBinaryFile"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5484,8 +5507,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45178,
 		retOffset = 12,
-	},
-	["IncludeUHTM"] = {
+	}
+	g_classFuncs["UWebResponse"]["IncludeUHTM"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5506,14 +5529,14 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45168,
 		retOffset = 12,
-	},
-	["ClearSubst"] = {
+	}
+	g_classFuncs["UWebResponse"]["ClearSubst"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46389,
-	},
-	["Subst"] = {
+	}
+	g_classFuncs["UWebResponse"]["Subst"] = {
 		fields = {
 			{
 				name = "Variable",
@@ -5543,8 +5566,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 45167,
-	},
-	["FileExists"] = {
+	}
+	g_classFuncs["UWebResponse"]["FileExists"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5565,8 +5588,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 45176,
 		retOffset = 12,
-	},
-	["eventGetMatchTypeForPlaylistId"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["eventGetMatchTypeForPlaylistId"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5587,8 +5610,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 46292,
 		retOffset = 4,
-	},
-	["GetOnlinePlaylistProvider"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetOnlinePlaylistProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5625,8 +5648,8 @@ local c = g_classFuncs
 		dataSize = 128,
 		index = 46286,
 		retOffset = 16,
-	},
-	["GetPlaylistProvider"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetPlaylistProvider"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5663,8 +5686,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 46281,
 		retOffset = 16,
-	},
-	["FindProviderIndexByFieldValue"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["FindProviderIndexByFieldValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5702,8 +5725,8 @@ local c = g_classFuncs
 		dataSize = 120,
 		index = 46276,
 		retOffset = 116,
-	},
-	["GetProviderFieldValue"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetProviderFieldValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5749,8 +5772,8 @@ local c = g_classFuncs
 		dataSize = 124,
 		index = 46270,
 		retOffset = 120,
-	},
-	["GetResourceProviderFields"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetResourceProviderFields"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5781,8 +5804,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 46265,
 		retOffset = 20,
-	},
-	["GetResourceProviders"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetResourceProviders"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5813,8 +5836,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 46260,
 		retOffset = 20,
-	},
-	["GetProviderCount"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["GetProviderCount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5835,14 +5858,14 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 46257,
 		retOffset = 8,
-	},
-	["eventInit"] = {
+	}
+	g_classFuncs["UUIDataStore_OnlinePlaylists"]["eventInit"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 46256,
-	},
-	["PostQuery"] = {
+	}
+	g_classFuncs["UWebApplication"]["PostQuery"] = {
 		fields = {
 			{
 				name = "Request",
@@ -5863,8 +5886,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45149,
-	},
-	["Query"] = {
+	}
+	g_classFuncs["UWebApplication"]["Query"] = {
 		fields = {
 			{
 				name = "Request",
@@ -5885,8 +5908,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 45146,
-	},
-	["PreQuery"] = {
+	}
+	g_classFuncs["UWebApplication"]["PreQuery"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5915,26 +5938,26 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 45142,
 		retOffset = 8,
-	},
-	["CleanupApp"] = {
+	}
+	g_classFuncs["UWebApplication"]["CleanupApp"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45141,
-	},
-	["Cleanup"] = {
+	}
+	g_classFuncs["UWebApplication"]["Cleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45140,
-	},
-	["Init"] = {
+	}
+	g_classFuncs["UWebApplication"]["Init"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45139,
-	},
-	["GetApplication"] = {
+	}
+	g_classFuncs["AWebServer"]["GetApplication"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5965,8 +5988,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 46320,
 		retOffset = 24,
-	},
-	["eventLostChild"] = {
+	}
+	g_classFuncs["AWebServer"]["eventLostChild"] = {
 		fields = {
 			{
 				name = "C",
@@ -5979,8 +6002,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46449,
-	},
-	["eventGainedChild"] = {
+	}
+	g_classFuncs["AWebServer"]["eventGainedChild"] = {
 		fields = {
 			{
 				name = "C",
@@ -5993,20 +6016,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 46447,
-	},
-	["eventDestroyed"] = {
+	}
+	g_classFuncs["AWebServer"]["eventDestroyed"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 46446,
-	},
-	["PostBeginPlay"] = {
+	}
+	g_classFuncs["AWebServer"]["PostBeginPlay"] = {
 		fields = {
 		},
 		dataSize = 28,
 		index = 46443,
-	},
-	["eventQuery"] = {
+	}
+	g_classFuncs["UHelloWeb"]["eventQuery"] = {
 		fields = {
 			{
 				name = "Request",
@@ -6027,14 +6050,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 45155,
-	},
-	["Init"] = {
+	}
+	g_classFuncs["UHelloWeb"]["Init"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 45154,
-	},
-	["eventQuery"] = {
+	}
+	g_classFuncs["UImageServer"]["eventQuery"] = {
 		fields = {
 			{
 				name = "Request",
@@ -6055,8 +6078,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 45172,
-	},
-	["IsHanging"] = {
+	}
+	g_classFuncs["AWebConnection"]["IsHanging"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6069,32 +6092,32 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 46334,
 		retOffset = 0,
-	},
-	["Cleanup"] = {
+	}
+	g_classFuncs["AWebConnection"]["Cleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46333,
-	},
-	["CheckRawBytes"] = {
+	}
+	g_classFuncs["AWebConnection"]["CheckRawBytes"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46331,
-	},
-	["EndOfHeaders"] = {
+	}
+	g_classFuncs["AWebConnection"]["EndOfHeaders"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46329,
-	},
-	["CreateResponseObject"] = {
+	}
+	g_classFuncs["AWebConnection"]["CreateResponseObject"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 46326,
-	},
-	["ProcessPost"] = {
+	}
+	g_classFuncs["AWebConnection"]["ProcessPost"] = {
 		fields = {
 			{
 				name = "S",
@@ -6107,8 +6130,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46324,
-	},
-	["ProcessGet"] = {
+	}
+	g_classFuncs["AWebConnection"]["ProcessGet"] = {
 		fields = {
 			{
 				name = "S",
@@ -6121,8 +6144,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 46317,
-	},
-	["ProcessHead"] = {
+	}
+	g_classFuncs["AWebConnection"]["ProcessHead"] = {
 		fields = {
 			{
 				name = "S",
@@ -6135,8 +6158,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46315,
-	},
-	["ReceivedLine"] = {
+	}
+	g_classFuncs["AWebConnection"]["ReceivedLine"] = {
 		fields = {
 			{
 				name = "S",
@@ -6149,8 +6172,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 46313,
-	},
-	["eventReceivedText"] = {
+	}
+	g_classFuncs["AWebConnection"]["eventReceivedText"] = {
 		fields = {
 			{
 				name = "Text",
@@ -6163,22 +6186,22 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 46310,
-	},
-	["eventTimer"] = {
+	}
+	g_classFuncs["AWebConnection"]["eventTimer"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46309,
-	},
-	["eventClosed"] = {
+	}
+	g_classFuncs["AWebConnection"]["eventClosed"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46308,
-	},
-	["eventAccepted"] = {
+	}
+	g_classFuncs["AWebConnection"]["eventAccepted"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 46306,
-	},
+	}

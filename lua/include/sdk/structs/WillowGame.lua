@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x14 
 struct FAchievementUnlockData {
 	unsigned char UnlockType; // 0x0 (0x1) (Enum = EAchievementUnlockType)
@@ -4375,3 +4380,4 @@ struct FDirChangeRateRange {
 	float SpeedRange; // 0x4 (0x4)
 };
 
+]]

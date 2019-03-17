@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x4 
 struct FRecoilParams {
 	unsigned char X; // 0x0 (0x1) (Enum = ERecoilStart)
@@ -111,3 +116,4 @@ struct FPropertyInfo {
 	struct FString PropertyValue; // 0xC (0xC)
 };
 
+]]

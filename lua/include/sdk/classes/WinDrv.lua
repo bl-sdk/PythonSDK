@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x1F0 
 struct UWindowsClient_Data {
 	// Last Offset: 0x50
@@ -36,6 +41,7 @@ struct UFacebookWindows {
 	struct UFacebookIntegration_Data UFacebookIntegration;
 	struct UFacebookWindows_Data UFacebookWindows;
 };
+]]
 
 table.insert(g_loadedClasses, { "UWindowsClient", 3566, "UClient" })
 table.insert(g_loadedClasses, { "UXnaForceFeedbackManager", 3570, "UForceFeedbackManager" })

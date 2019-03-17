@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x4C 
 struct UGFxEngine_Data {
 	// Last Offset: 0x3C
@@ -379,6 +384,7 @@ struct UGFxDataStoreSubscriber {
 	struct UObject_Data UObject;
 	struct UGFxDataStoreSubscriber_Data UGFxDataStoreSubscriber;
 };
+]]
 
 table.insert(g_loadedClasses, { "UGFxEngine", 2863, "UObject" })
 table.insert(g_loadedClasses, { "UGFxFSCmdHandler", 2865, "UObject" })

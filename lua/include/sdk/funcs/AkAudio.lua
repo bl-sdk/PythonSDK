@@ -1,7 +1,11 @@
+g_classFuncs["AWwiseSoundGroup"] = {}
+g_classFuncs["UISpecialOcclusionAccumulator"] = {}
+g_classFuncs["UIAkEnvironmentalEffectProvider"] = {}
+g_classFuncs["AWwiseSoundVolume"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["GetEnvironmentalEffectsForLocation"] = {
+	g_classFuncs["UIAkEnvironmentalEffectProvider"]["GetEnvironmentalEffectsForLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -40,8 +44,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 37461,
 		retOffset = 28,
-	},
-	["RemoveOcclusionProvider"] = {
+	}
+	g_classFuncs["UISpecialOcclusionAccumulator"]["RemoveOcclusionProvider"] = {
 		fields = {
 			{
 				name = "Source",
@@ -54,8 +58,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37477,
-	},
-	["SetOcclusionForProvider"] = {
+	}
+	g_classFuncs["UISpecialOcclusionAccumulator"]["SetOcclusionForProvider"] = {
 		fields = {
 			{
 				name = "Source",
@@ -76,8 +80,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37474,
-	},
-	["RemoveOcclusionProvider"] = {
+	}
+	g_classFuncs["AWwiseSoundGroup"]["RemoveOcclusionProvider"] = {
 		fields = {
 			{
 				name = "Source",
@@ -90,8 +94,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37506,
-	},
-	["SetOcclusionForProvider"] = {
+	}
+	g_classFuncs["AWwiseSoundGroup"]["SetOcclusionForProvider"] = {
 		fields = {
 			{
 				name = "Source",
@@ -112,8 +116,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37503,
-	},
-	["GetOcclusionAmount"] = {
+	}
+	g_classFuncs["AWwiseSoundGroup"]["GetOcclusionAmount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -126,8 +130,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37501,
 		retOffset = 0,
-	},
-	["SetAkSwitchObject"] = {
+	}
+	g_classFuncs["AWwiseSoundGroup"]["SetAkSwitchObject"] = {
 		fields = {
 			{
 				name = "Switch",
@@ -140,8 +144,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37499,
-	},
-	["SetRTPCObjectValue"] = {
+	}
+	g_classFuncs["AWwiseSoundGroup"]["SetRTPCObjectValue"] = {
 		fields = {
 			{
 				name = "InRtpc",
@@ -162,8 +166,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37496,
-	},
-	["RemoveOcclusionProvider"] = {
+	}
+	g_classFuncs["AWwiseSoundVolume"]["RemoveOcclusionProvider"] = {
 		fields = {
 			{
 				name = "Source",
@@ -176,8 +180,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37586,
-	},
-	["SetOcclusionForProvider"] = {
+	}
+	g_classFuncs["AWwiseSoundVolume"]["SetOcclusionForProvider"] = {
 		fields = {
 			{
 				name = "Source",
@@ -198,8 +202,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37583,
-	},
-	["GetOcclusionAmount"] = {
+	}
+	g_classFuncs["AWwiseSoundVolume"]["GetOcclusionAmount"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -212,8 +216,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37581,
 		retOffset = 0,
-	},
-	["UpdateAkComponentPosition"] = {
+	}
+	g_classFuncs["AWwiseSoundVolume"]["UpdateAkComponentPosition"] = {
 		fields = {
 			{
 				name = "ListenerPositions",
@@ -238,8 +242,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 37576,
-	},
-	["GetEnvironmentalEffectsForLocation"] = {
+	}
+	g_classFuncs["AWwiseSoundVolume"]["GetEnvironmentalEffectsForLocation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -278,10 +282,10 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 37570,
 		retOffset = 28,
-	},
-	["CalculateFacePlanes"] = {
+	}
+	g_classFuncs["AWwiseSoundVolume"]["CalculateFacePlanes"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37569,
-	},
+	}

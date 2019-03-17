@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x8 
 struct FServerQueryToRulesResponseMapping {
 	int Query; // 0x0 (0x4)
@@ -228,3 +233,4 @@ struct FPendingEntry {
 	struct FPointer UserData; // 0xC (0x4)
 };
 
+]]

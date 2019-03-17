@@ -1,3 +1,9 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
+
 // 0x690 
 struct AGamePawn_Data {
 	// Last Offset: 0x690
@@ -218,6 +224,7 @@ struct UPMESTG_LeaveADecalBase {
 	struct UParticleModuleEventSendToGame_Data UParticleModuleEventSendToGame;
 	struct UPMESTG_LeaveADecalBase_Data UPMESTG_LeaveADecalBase;
 };
+]]
 
 table.insert(g_loadedClasses, { "AGamePawn", 2840, "APawn" })
 table.insert(g_loadedClasses, { "AGamePlayerController", 2842, "APlayerController" })

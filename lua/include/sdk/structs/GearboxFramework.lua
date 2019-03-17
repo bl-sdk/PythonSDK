@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0xC 
 struct FAIHoldData {
 	struct FName HoldName; // 0x0 (0x8)
@@ -1506,3 +1511,4 @@ struct FNewsArticle {
 	struct FString Body; // 0xC (0xC)
 };
 
+]]

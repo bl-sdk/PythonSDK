@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x90 
 struct UActorFactoryClone_Data {
 	// Last Offset: 0x7C
@@ -5383,6 +5388,7 @@ struct UGearboxEULAGFxObject {
 	struct UGFxObject_Data UGFxObject;
 	struct UGearboxEULAGFxObject_Data UGearboxEULAGFxObject;
 };
+]]
 
 table.insert(g_loadedClasses, { "UActorFactoryClone", 2910, "UActorFactory" })
 table.insert(g_loadedClasses, { "UActorFactoryWireTerminal", 2912, "UActorFactory" })

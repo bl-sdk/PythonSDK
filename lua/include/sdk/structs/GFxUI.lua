@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0xC 
 struct FSoundThemeBinding {
 	struct FName ThemeName; // 0x0 (0x8)
@@ -100,3 +105,4 @@ struct FAkEventResolver {
 	struct UAkEvent* AkEvent; // 0x8 (0x4)
 };
 
+]]

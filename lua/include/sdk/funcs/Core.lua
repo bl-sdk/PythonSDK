@@ -1,7 +1,12 @@
+g_classFuncs["UCommandlet"] = {}
+g_classFuncs["UObject"] = {}
+g_classFuncs["UDistributionFloat"] = {}
+g_classFuncs["UHelpCommandlet"] = {}
+g_classFuncs["UDistributionVector"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["IsRelevantForDebugging"] = {
+	g_classFuncs["UObject"]["IsRelevantForDebugging"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -22,8 +27,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 5377,
 		retOffset = 4,
-	},
-	["GetGlobalDebugTarget"] = {
+	}
+	g_classFuncs["UObject"]["GetGlobalDebugTarget"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -36,8 +41,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 5378,
 		retOffset = 0,
-	},
-	["SetGlobalDebugTarget"] = {
+	}
+	g_classFuncs["UObject"]["SetGlobalDebugTarget"] = {
 		fields = {
 			{
 				name = "Target",
@@ -50,8 +55,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 5381,
-	},
-	["LogContentDebug"] = {
+	}
+	g_classFuncs["UObject"]["LogContentDebug"] = {
 		fields = {
 			{
 				name = "Message",
@@ -64,8 +69,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 5383,
-	},
-	["GetLanguage"] = {
+	}
+	g_classFuncs["UObject"]["GetLanguage"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -80,8 +85,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5385,
 		retOffset = 0,
-	},
-	["GetRandomOptionSumFrequency"] = {
+	}
+	g_classFuncs["UObject"]["GetRandomOptionSumFrequency"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -104,8 +109,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 5387,
 		retOffset = 12,
-	},
-	["GetBuildChangelistNumber"] = {
+	}
+	g_classFuncs["UObject"]["GetBuildChangelistNumber"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -118,8 +123,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 5389,
 		retOffset = 0,
-	},
-	["GetEngineVersion"] = {
+	}
+	g_classFuncs["UObject"]["GetEngineVersion"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -132,8 +137,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 5393,
 		retOffset = 0,
-	},
-	["GetSystemTime"] = {
+	}
+	g_classFuncs["UObject"]["GetSystemTime"] = {
 		fields = {
 			{
 				name = "Year",
@@ -202,8 +207,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 5395,
-	},
-	["TimeStamp"] = {
+	}
+	g_classFuncs["UObject"]["TimeStamp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -218,8 +223,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5397,
 		retOffset = 0,
-	},
-	["TransformVectorByRotation"] = {
+	}
+	g_classFuncs["UObject"]["TransformVectorByRotation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -258,8 +263,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 5406,
 		retOffset = 28,
-	},
-	["GetPackageName"] = {
+	}
+	g_classFuncs["UObject"]["GetPackageName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -273,8 +278,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 5408,
 		retOffset = 0,
-	},
-	["IsPendingKill"] = {
+	}
+	g_classFuncs["UObject"]["IsPendingKill"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -287,8 +292,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 5424,
 		retOffset = 0,
-	},
-	["ByteToFloat"] = {
+	}
+	g_classFuncs["UObject"]["ByteToFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -318,8 +323,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5426,
 		retOffset = 8,
-	},
-	["FloatToByte"] = {
+	}
+	g_classFuncs["UObject"]["FloatToByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -349,8 +354,8 @@ local c = g_classFuncs
 		dataSize = 9,
 		index = 5428,
 		retOffset = 8,
-	},
-	["UnwindHeading"] = {
+	}
+	g_classFuncs["UObject"]["UnwindHeading"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -371,8 +376,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 5432,
 		retOffset = 4,
-	},
-	["FindDeltaAngle"] = {
+	}
+	g_classFuncs["UObject"]["FindDeltaAngle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -401,8 +406,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5436,
 		retOffset = 8,
-	},
-	["GetHeadingAngle"] = {
+	}
+	g_classFuncs["UObject"]["GetHeadingAngle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -423,8 +428,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5439,
 		retOffset = 12,
-	},
-	["GetAngularDegreesFromRadians"] = {
+	}
+	g_classFuncs["UObject"]["GetAngularDegreesFromRadians"] = {
 		fields = {
 			{
 				name = "OutFOV",
@@ -438,8 +443,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 5443,
-	},
-	["GetAngularFromDotDist"] = {
+	}
+	g_classFuncs["UObject"]["GetAngularFromDotDist"] = {
 		fields = {
 			{
 				name = "OutAngDist",
@@ -461,8 +466,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 5447,
-	},
-	["GetAngularDistance"] = {
+	}
+	g_classFuncs["UObject"]["GetAngularDistance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -516,8 +521,8 @@ local c = g_classFuncs
 		dataSize = 60,
 		index = 5452,
 		retOffset = 56,
-	},
-	["GetDotDistance"] = {
+	}
+	g_classFuncs["UObject"]["GetDotDistance"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -571,8 +576,8 @@ local c = g_classFuncs
 		dataSize = 60,
 		index = 5455,
 		retOffset = 56,
-	},
-	["PointProjectToPlane"] = {
+	}
+	g_classFuncs["UObject"]["PointProjectToPlane"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -618,8 +623,8 @@ local c = g_classFuncs
 		dataSize = 60,
 		index = 5462,
 		retOffset = 48,
-	},
-	["PointDistToPlane"] = {
+	}
+	g_classFuncs["UObject"]["PointDistToPlane"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -665,8 +670,8 @@ local c = g_classFuncs
 		dataSize = 120,
 		index = 5469,
 		retOffset = 48,
-	},
-	["PointDistToSegment"] = {
+	}
+	g_classFuncs["UObject"]["PointDistToSegment"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -712,8 +717,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 5475,
 		retOffset = 48,
-	},
-	["PointDistToLine"] = {
+	}
+	g_classFuncs["UObject"]["PointDistToLine"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -759,8 +764,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 5486,
 		retOffset = 48,
-	},
-	["GetPerObjectConfigSections"] = {
+	}
+	g_classFuncs["UObject"]["GetPerObjectConfigSections"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -809,20 +814,20 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 5492,
 		retOffset = 24,
-	},
-	["StaticSaveConfig"] = {
+	}
+	g_classFuncs["UObject"]["StaticSaveConfig"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5498,
-	},
-	["SaveConfig"] = {
+	}
+	g_classFuncs["UObject"]["SaveConfig"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5505,
-	},
-	["GetAttributeModiferDescriptor"] = {
+	}
+	g_classFuncs["UObject"]["GetAttributeModiferDescriptor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -845,8 +850,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5506,
 		retOffset = 8,
-	},
-	["GetAttributeValueByName"] = {
+	}
+	g_classFuncs["UObject"]["GetAttributeValueByName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -867,8 +872,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5507,
 		retOffset = 8,
-	},
-	["RemoveModifier"] = {
+	}
+	g_classFuncs["UObject"]["RemoveModifier"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -906,8 +911,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5510,
 		retOffset = 16,
-	},
-	["AddModifier"] = {
+	}
+	g_classFuncs["UObject"]["AddModifier"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -945,8 +950,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5513,
 		retOffset = 16,
-	},
-	["FindObject"] = {
+	}
+	g_classFuncs["UObject"]["FindObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -975,8 +980,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5518,
 		retOffset = 16,
-	},
-	["DynamicLoadObject"] = {
+	}
+	g_classFuncs["UObject"]["DynamicLoadObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1014,8 +1019,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5523,
 		retOffset = 20,
-	},
-	["GetEnum"] = {
+	}
+	g_classFuncs["UObject"]["GetEnum"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1045,8 +1050,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5527,
 		retOffset = 8,
-	},
-	["Disable"] = {
+	}
+	g_classFuncs["UObject"]["Disable"] = {
 		fields = {
 			{
 				name = "ProbeFunc",
@@ -1059,8 +1064,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 5532,
-	},
-	["Enable"] = {
+	}
+	g_classFuncs["UObject"]["Enable"] = {
 		fields = {
 			{
 				name = "ProbeFunc",
@@ -1073,32 +1078,32 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 5536,
-	},
-	["eventContinuedState"] = {
+	}
+	g_classFuncs["UObject"]["eventContinuedState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5538,
-	},
-	["eventPausedState"] = {
+	}
+	g_classFuncs["UObject"]["eventPausedState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5540,
-	},
-	["eventPoppedState"] = {
+	}
+	g_classFuncs["UObject"]["eventPoppedState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5541,
-	},
-	["eventPushedState"] = {
+	}
+	g_classFuncs["UObject"]["eventPushedState"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5542,
-	},
-	["eventEndState"] = {
+	}
+	g_classFuncs["UObject"]["eventEndState"] = {
 		fields = {
 			{
 				name = "NextStateName",
@@ -1111,8 +1116,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 5543,
-	},
-	["eventBeginState"] = {
+	}
+	g_classFuncs["UObject"]["eventBeginState"] = {
 		fields = {
 			{
 				name = "PreviousStateName",
@@ -1125,8 +1130,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 5544,
-	},
-	["BreakPoint"] = {
+	}
+	g_classFuncs["UObject"]["BreakPoint"] = {
 		fields = {
 			{
 				name = "SomeObject",
@@ -1140,20 +1145,20 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 5546,
-	},
-	["PrintScriptStack"] = {
+	}
+	g_classFuncs["UObject"]["PrintScriptStack"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5548,
-	},
-	["DumpStateStack"] = {
+	}
+	g_classFuncs["UObject"]["DumpStateStack"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5550,
-	},
-	["PopState"] = {
+	}
+	g_classFuncs["UObject"]["PopState"] = {
 		fields = {
 			{
 				name = "bPopAll",
@@ -1167,8 +1172,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 5551,
-	},
-	["PushState"] = {
+	}
+	g_classFuncs["UObject"]["PushState"] = {
 		fields = {
 			{
 				name = "NewState",
@@ -1190,8 +1195,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 5552,
-	},
-	["GetStateName"] = {
+	}
+	g_classFuncs["UObject"]["GetStateName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1205,8 +1210,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 5554,
 		retOffset = 0,
-	},
-	["IsChildState"] = {
+	}
+	g_classFuncs["UObject"]["IsChildState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1235,8 +1240,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5557,
 		retOffset = 16,
-	},
-	["IsInState"] = {
+	}
+	g_classFuncs["UObject"]["IsInState"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1266,8 +1271,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5559,
 		retOffset = 12,
-	},
-	["GotoState"] = {
+	}
+	g_classFuncs["UObject"]["GotoState"] = {
 		fields = {
 			{
 				name = "NewState",
@@ -1308,8 +1313,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 5563,
-	},
-	["IsUTracing"] = {
+	}
+	g_classFuncs["UObject"]["IsUTracing"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1322,8 +1327,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 5567,
 		retOffset = 0,
-	},
-	["SetUTracing"] = {
+	}
+	g_classFuncs["UObject"]["SetUTracing"] = {
 		fields = {
 			{
 				name = "bShouldUTrace",
@@ -1336,8 +1341,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 5572,
-	},
-	["GetFuncName"] = {
+	}
+	g_classFuncs["UObject"]["GetFuncName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1351,8 +1356,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 5574,
 		retOffset = 0,
-	},
-	["DebugBreak"] = {
+	}
+	g_classFuncs["UObject"]["DebugBreak"] = {
 		fields = {
 			{
 				name = "UserFlags",
@@ -1376,8 +1381,8 @@ local c = g_classFuncs
 		},
 		dataSize = 5,
 		index = 5576,
-	},
-	["GetScriptTrace"] = {
+	}
+	g_classFuncs["UObject"]["GetScriptTrace"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1392,14 +1397,14 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5578,
 		retOffset = 0,
-	},
-	["ScriptTrace"] = {
+	}
+	g_classFuncs["UObject"]["ScriptTrace"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 5583,
-	},
-	["ParseLocalizedPropertyPath"] = {
+	}
+	g_classFuncs["UObject"]["ParseLocalizedPropertyPath"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1422,8 +1427,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 5585,
 		retOffset = 12,
-	},
-	["Localize"] = {
+	}
+	g_classFuncs["UObject"]["Localize"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1462,8 +1467,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5586,
 		retOffset = 36,
-	},
-	["LogIndentedInternal"] = {
+	}
+	g_classFuncs["UObject"]["LogIndentedInternal"] = {
 		fields = {
 			{
 				name = "S",
@@ -1493,8 +1498,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 5592,
-	},
-	["WarnInternal"] = {
+	}
+	g_classFuncs["UObject"]["WarnInternal"] = {
 		fields = {
 			{
 				name = "S",
@@ -1507,8 +1512,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 5597,
-	},
-	["LogInternal"] = {
+	}
+	g_classFuncs["UObject"]["LogInternal"] = {
 		fields = {
 			{
 				name = "S",
@@ -1530,8 +1535,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 5601,
-	},
-	["GetStringForNameBasedObjectPath"] = {
+	}
+	g_classFuncs["UObject"]["GetStringForNameBasedObjectPath"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1554,8 +1559,8 @@ local c = g_classFuncs
 		dataSize = 64,
 		index = 5603,
 		retOffset = 52,
-	},
-	["SetNameBasedObjectPath"] = {
+	}
+	g_classFuncs["UObject"]["SetNameBasedObjectPath"] = {
 		fields = {
 			{
 				name = "ObjectPath",
@@ -1577,8 +1582,8 @@ local c = g_classFuncs
 		},
 		dataSize = 56,
 		index = 5606,
-	},
-	["FlagHasBeenTrueFor"] = {
+	}
+	g_classFuncs["UObject"]["FlagHasBeenTrueFor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1608,8 +1613,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5613,
 		retOffset = 20,
-	},
-	["FlagTimeRemaining"] = {
+	}
+	g_classFuncs["UObject"]["FlagTimeRemaining"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1631,8 +1636,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5616,
 		retOffset = 16,
-	},
-	["FlagTimeSinceRaised"] = {
+	}
+	g_classFuncs["UObject"]["FlagTimeSinceRaised"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1654,8 +1659,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5629,
 		retOffset = 16,
-	},
-	["FlagSetValue"] = {
+	}
+	g_classFuncs["UObject"]["FlagSetValue"] = {
 		fields = {
 			{
 				name = "theFlag",
@@ -1686,8 +1691,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 5632,
-	},
-	["FlagIsLowered"] = {
+	}
+	g_classFuncs["UObject"]["FlagIsLowered"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1709,8 +1714,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5635,
 		retOffset = 16,
-	},
-	["FlagIsRaised"] = {
+	}
+	g_classFuncs["UObject"]["FlagIsRaised"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1732,8 +1737,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5639,
 		retOffset = 16,
-	},
-	["FlagIsFalse"] = {
+	}
+	g_classFuncs["UObject"]["FlagIsFalse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1755,8 +1760,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5642,
 		retOffset = 16,
-	},
-	["FlagIsTrue"] = {
+	}
+	g_classFuncs["UObject"]["FlagIsTrue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1778,8 +1783,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5645,
 		retOffset = 16,
-	},
-	["FlagSetTrueTimed"] = {
+	}
+	g_classFuncs["UObject"]["FlagSetTrueTimed"] = {
 		fields = {
 			{
 				name = "theFlag",
@@ -1801,8 +1806,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 5648,
-	},
-	["SmartVectTimeRemaining"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectTimeRemaining"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1824,8 +1829,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5651,
 		retOffset = 28,
-	},
-	["SmartVectTimeSinceSet"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectTimeSinceSet"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1847,8 +1852,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5654,
 		retOffset = 28,
-	},
-	["SmartVectGetVector"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectGetVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1879,8 +1884,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 5660,
 		retOffset = 40,
-	},
-	["SmartVectIsSet"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectIsSet"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1902,8 +1907,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5663,
 		retOffset = 28,
-	},
-	["SmartVectSetVectorTimed"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectSetVectorTimed"] = {
 		fields = {
 			{
 				name = "theSV",
@@ -1933,8 +1938,8 @@ local c = g_classFuncs
 		},
 		dataSize = 44,
 		index = 5667,
-	},
-	["SmartVectValue"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1957,8 +1962,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 5670,
 		retOffset = 28,
-	},
-	["SmartVectReset"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectReset"] = {
 		fields = {
 			{
 				name = "theSV",
@@ -1972,8 +1977,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 5674,
-	},
-	["SmartVectSetVector"] = {
+	}
+	g_classFuncs["UObject"]["SmartVectSetVector"] = {
 		fields = {
 			{
 				name = "theSV",
@@ -2004,8 +2009,8 @@ local c = g_classFuncs
 		},
 		dataSize = 44,
 		index = 5677,
-	},
-	["Subtract_LinearColorLinearColor"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_LinearColorLinearColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2035,8 +2040,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5679,
 		retOffset = 32,
-	},
-	["Multiply_LinearColorFloat"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_LinearColorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2066,8 +2071,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 5683,
 		retOffset = 20,
-	},
-	["ColorToLinearColor"] = {
+	}
+	g_classFuncs["UObject"]["ColorToLinearColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2089,8 +2094,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5693,
 		retOffset = 4,
-	},
-	["MakeLinearColor"] = {
+	}
+	g_classFuncs["UObject"]["MakeLinearColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2136,8 +2141,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5697,
 		retOffset = 16,
-	},
-	["GetHTMLColor"] = {
+	}
+	g_classFuncs["UObject"]["GetHTMLColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2161,8 +2166,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5705,
 		retOffset = 4,
-	},
-	["LerpColor"] = {
+	}
+	g_classFuncs["UObject"]["LerpColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2200,8 +2205,8 @@ local c = g_classFuncs
 		dataSize = 68,
 		index = 5712,
 		retOffset = 12,
-	},
-	["MakeColor"] = {
+	}
+	g_classFuncs["UObject"]["MakeColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2248,8 +2253,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5715,
 		retOffset = 4,
-	},
-	["Add_ColorColor"] = {
+	}
+	g_classFuncs["UObject"]["Add_ColorColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2279,8 +2284,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5724,
 		retOffset = 8,
-	},
-	["Multiply_ColorFloat"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_ColorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2310,8 +2315,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5731,
 		retOffset = 8,
-	},
-	["Multiply_FloatColor"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_FloatColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2341,8 +2346,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5735,
 		retOffset = 8,
-	},
-	["Subtract_ColorColor"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_ColorColor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2372,8 +2377,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5739,
 		retOffset = 8,
-	},
-	["EvalInterpCurveVector2D"] = {
+	}
+	g_classFuncs["UObject"]["EvalInterpCurveVector2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2403,8 +2408,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 5743,
 		retOffset = 20,
-	},
-	["EvalInterpCurveVector"] = {
+	}
+	g_classFuncs["UObject"]["EvalInterpCurveVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2434,8 +2439,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5747,
 		retOffset = 20,
-	},
-	["EvalInterpCurveFloat"] = {
+	}
+	g_classFuncs["UObject"]["EvalInterpCurveFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2464,8 +2469,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5765,
 		retOffset = 20,
-	},
-	["vect2d"] = {
+	}
+	g_classFuncs["UObject"]["vect2d"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2495,8 +2500,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5779,
 		retOffset = 8,
-	},
-	["GetMappedRangeValue"] = {
+	}
+	g_classFuncs["UObject"]["GetMappedRangeValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2533,8 +2538,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5792,
 		retOffset = 20,
-	},
-	["GetRangePctByValue"] = {
+	}
+	g_classFuncs["UObject"]["GetRangePctByValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2563,8 +2568,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5797,
 		retOffset = 12,
-	},
-	["GetRangeValueByPct"] = {
+	}
+	g_classFuncs["UObject"]["GetRangeValueByPct"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2593,8 +2598,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5802,
 		retOffset = 12,
-	},
-	["SubtractEqual_Vector2DVector2D"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_Vector2DVector2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2625,8 +2630,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5806,
 		retOffset = 16,
-	},
-	["AddEqual_Vector2DVector2D"] = {
+	}
+	g_classFuncs["UObject"]["AddEqual_Vector2DVector2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2657,8 +2662,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5810,
 		retOffset = 16,
-	},
-	["DivideEqual_Vector2DFloat"] = {
+	}
+	g_classFuncs["UObject"]["DivideEqual_Vector2DFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2689,8 +2694,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5814,
 		retOffset = 12,
-	},
-	["MultiplyEqual_Vector2DFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_Vector2DFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2721,8 +2726,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5818,
 		retOffset = 12,
-	},
-	["Divide_Vector2DFloat"] = {
+	}
+	g_classFuncs["UObject"]["Divide_Vector2DFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2752,8 +2757,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5822,
 		retOffset = 12,
-	},
-	["Multiply_Vector2DFloat"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_Vector2DFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2783,8 +2788,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5826,
 		retOffset = 12,
-	},
-	["Subtract_Vector2DVector2D"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_Vector2DVector2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2814,8 +2819,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5830,
 		retOffset = 16,
-	},
-	["Add_Vector2DVector2D"] = {
+	}
+	g_classFuncs["UObject"]["Add_Vector2DVector2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2845,8 +2850,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 5834,
 		retOffset = 16,
-	},
-	["Subtract_QuatQuat"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_QuatQuat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2876,8 +2881,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5838,
 		retOffset = 32,
-	},
-	["Add_QuatQuat"] = {
+	}
+	g_classFuncs["UObject"]["Add_QuatQuat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2907,8 +2912,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5842,
 		retOffset = 32,
-	},
-	["QuatSlerp"] = {
+	}
+	g_classFuncs["UObject"]["QuatSlerp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2955,8 +2960,8 @@ local c = g_classFuncs
 		dataSize = 64,
 		index = 5851,
 		retOffset = 48,
-	},
-	["QuatToRotator"] = {
+	}
+	g_classFuncs["UObject"]["QuatToRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2978,8 +2983,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 5855,
 		retOffset = 16,
-	},
-	["QuatFromRotator"] = {
+	}
+	g_classFuncs["UObject"]["QuatFromRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3001,8 +3006,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5861,
 		retOffset = 16,
-	},
-	["QuatFromAxisAndAngle"] = {
+	}
+	g_classFuncs["UObject"]["QuatFromAxisAndAngle"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3032,8 +3037,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5864,
 		retOffset = 16,
-	},
-	["QuatFindBetween"] = {
+	}
+	g_classFuncs["UObject"]["QuatFindBetween"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3063,8 +3068,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5867,
 		retOffset = 32,
-	},
-	["QuatRotateVector"] = {
+	}
+	g_classFuncs["UObject"]["QuatRotateVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3094,8 +3099,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 5871,
 		retOffset = 28,
-	},
-	["QuatInvert"] = {
+	}
+	g_classFuncs["UObject"]["QuatInvert"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3117,8 +3122,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 5875,
 		retOffset = 16,
-	},
-	["QuatDot"] = {
+	}
+	g_classFuncs["UObject"]["QuatDot"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3147,8 +3152,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 5879,
 		retOffset = 32,
-	},
-	["QuatProduct"] = {
+	}
+	g_classFuncs["UObject"]["QuatProduct"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3178,8 +3183,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 5882,
 		retOffset = 32,
-	},
-	["MatrixGetAxis"] = {
+	}
+	g_classFuncs["UObject"]["MatrixGetAxis"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3210,8 +3215,8 @@ local c = g_classFuncs
 		dataSize = 80,
 		index = 5886,
 		retOffset = 68,
-	},
-	["MatrixGetOrigin"] = {
+	}
+	g_classFuncs["UObject"]["MatrixGetOrigin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3233,8 +3238,8 @@ local c = g_classFuncs
 		dataSize = 76,
 		index = 5890,
 		retOffset = 64,
-	},
-	["MatrixGetRotator"] = {
+	}
+	g_classFuncs["UObject"]["MatrixGetRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3256,8 +3261,8 @@ local c = g_classFuncs
 		dataSize = 76,
 		index = 5905,
 		retOffset = 64,
-	},
-	["MakeRotationMatrix"] = {
+	}
+	g_classFuncs["UObject"]["MakeRotationMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3279,8 +3284,8 @@ local c = g_classFuncs
 		dataSize = 80,
 		index = 5908,
 		retOffset = 16,
-	},
-	["MakeRotationTranslationMatrix"] = {
+	}
+	g_classFuncs["UObject"]["MakeRotationTranslationMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3310,8 +3315,8 @@ local c = g_classFuncs
 		dataSize = 96,
 		index = 5911,
 		retOffset = 32,
-	},
-	["InverseTransformNormal"] = {
+	}
+	g_classFuncs["UObject"]["InverseTransformNormal"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3341,8 +3346,8 @@ local c = g_classFuncs
 		dataSize = 88,
 		index = 5914,
 		retOffset = 76,
-	},
-	["TransformNormal"] = {
+	}
+	g_classFuncs["UObject"]["TransformNormal"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3372,8 +3377,8 @@ local c = g_classFuncs
 		dataSize = 88,
 		index = 5918,
 		retOffset = 76,
-	},
-	["InverseTransformVector"] = {
+	}
+	g_classFuncs["UObject"]["InverseTransformVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3403,8 +3408,8 @@ local c = g_classFuncs
 		dataSize = 88,
 		index = 5922,
 		retOffset = 76,
-	},
-	["TransformVector"] = {
+	}
+	g_classFuncs["UObject"]["TransformVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3434,8 +3439,8 @@ local c = g_classFuncs
 		dataSize = 88,
 		index = 5926,
 		retOffset = 76,
-	},
-	["Multiply_MatrixMatrix"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_MatrixMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3465,8 +3470,8 @@ local c = g_classFuncs
 		dataSize = 192,
 		index = 5930,
 		retOffset = 128,
-	},
-	["NotEqual_NameName"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_NameName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3495,8 +3500,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5934,
 		retOffset = 16,
-	},
-	["EqualEqual_NameName"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_NameName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3525,8 +3530,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5938,
 		retOffset = 16,
-	},
-	["QueryInterface"] = {
+	}
+	g_classFuncs["UObject"]["QueryInterface"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3548,8 +3553,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5942,
 		retOffset = 4,
-	},
-	["IsA"] = {
+	}
+	g_classFuncs["UObject"]["IsA"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3570,8 +3575,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5946,
 		retOffset = 8,
-	},
-	["ClassIsChildOf"] = {
+	}
+	g_classFuncs["UObject"]["ClassIsChildOf"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3600,8 +3605,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5949,
 		retOffset = 8,
-	},
-	["NotEqual_InterfaceInterface"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_InterfaceInterface"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3630,8 +3635,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5952,
 		retOffset = 16,
-	},
-	["EqualEqual_InterfaceInterface"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_InterfaceInterface"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3660,8 +3665,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 5956,
 		retOffset = 16,
-	},
-	["NotEqual_ObjectObject"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_ObjectObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3690,8 +3695,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5960,
 		retOffset = 8,
-	},
-	["EqualEqual_ObjectObject"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_ObjectObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3720,8 +3725,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 5964,
 		retOffset = 8,
-	},
-	["GuidToString"] = {
+	}
+	g_classFuncs["UObject"]["GuidToString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3745,8 +3750,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 5968,
 		retOffset = 16,
-	},
-	["PathName"] = {
+	}
+	g_classFuncs["UObject"]["PathName"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3769,8 +3774,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 5972,
 		retOffset = 4,
-	},
-	["SplitString"] = {
+	}
+	g_classFuncs["UObject"]["SplitString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3811,8 +3816,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 5980,
 		retOffset = 28,
-	},
-	["ParseStringIntoArray"] = {
+	}
+	g_classFuncs["UObject"]["ParseStringIntoArray"] = {
 		fields = {
 			{
 				name = "BaseString",
@@ -3851,8 +3856,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 5588,
-	},
-	["JoinArray"] = {
+	}
+	g_classFuncs["UObject"]["JoinArray"] = {
 		fields = {
 			{
 				name = "StringArray",
@@ -3893,8 +3898,8 @@ local c = g_classFuncs
 		},
 		dataSize = 44,
 		index = 5990,
-	},
-	["GetRightMost"] = {
+	}
+	g_classFuncs["UObject"]["GetRightMost"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3917,8 +3922,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 5996,
 		retOffset = 12,
-	},
-	["Split"] = {
+	}
+	g_classFuncs["UObject"]["Split"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3958,8 +3963,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 6004,
 		retOffset = 28,
-	},
-	["StringHash"] = {
+	}
+	g_classFuncs["UObject"]["StringHash"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3980,8 +3985,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6007,
 		retOffset = 12,
-	},
-	["Repl"] = {
+	}
+	g_classFuncs["UObject"]["Repl"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4029,8 +4034,8 @@ local c = g_classFuncs
 		dataSize = 52,
 		index = 6012,
 		retOffset = 40,
-	},
-	["Asc"] = {
+	}
+	g_classFuncs["UObject"]["Asc"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4051,8 +4056,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6015,
 		retOffset = 12,
-	},
-	["Chr"] = {
+	}
+	g_classFuncs["UObject"]["Chr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4075,8 +4080,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6021,
 		retOffset = 4,
-	},
-	["Locs"] = {
+	}
+	g_classFuncs["UObject"]["Locs"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4099,8 +4104,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6024,
 		retOffset = 12,
-	},
-	["Caps"] = {
+	}
+	g_classFuncs["UObject"]["Caps"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4123,8 +4128,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6027,
 		retOffset = 12,
-	},
-	["Right"] = {
+	}
+	g_classFuncs["UObject"]["Right"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4155,8 +4160,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6030,
 		retOffset = 16,
-	},
-	["Left"] = {
+	}
+	g_classFuncs["UObject"]["Left"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4187,8 +4192,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6033,
 		retOffset = 16,
-	},
-	["Mid"] = {
+	}
+	g_classFuncs["UObject"]["Mid"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4228,8 +4233,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 6037,
 		retOffset = 20,
-	},
-	["InStr"] = {
+	}
+	g_classFuncs["UObject"]["InStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4285,8 +4290,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 6041,
 		retOffset = 36,
-	},
-	["Len"] = {
+	}
+	g_classFuncs["UObject"]["Len"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4307,8 +4312,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6046,
 		retOffset = 12,
-	},
-	["SubtractEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4341,8 +4346,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6053,
 		retOffset = 24,
-	},
-	["AtEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["AtEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4375,8 +4380,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6056,
 		retOffset = 24,
-	},
-	["ConcatEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["ConcatEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4409,8 +4414,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6000,
 		retOffset = 24,
-	},
-	["ComplementEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["ComplementEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4439,8 +4444,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6063,
 		retOffset = 24,
-	},
-	["NotEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4469,8 +4474,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6066,
 		retOffset = 24,
-	},
-	["EqualEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4499,8 +4504,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6070,
 		retOffset = 24,
-	},
-	["GreaterEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["GreaterEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4529,8 +4534,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6074,
 		retOffset = 24,
-	},
-	["LessEqual_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["LessEqual_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4559,8 +4564,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6078,
 		retOffset = 24,
-	},
-	["Greater_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["Greater_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4589,8 +4594,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6082,
 		retOffset = 24,
-	},
-	["Less_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["Less_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4619,8 +4624,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6086,
 		retOffset = 24,
-	},
-	["At_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["At_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4651,8 +4656,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6090,
 		retOffset = 24,
-	},
-	["Concat_StrStr"] = {
+	}
+	g_classFuncs["UObject"]["Concat_StrStr"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4683,8 +4688,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6094,
 		retOffset = 24,
-	},
-	["MakeRotator"] = {
+	}
+	g_classFuncs["UObject"]["MakeRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4722,8 +4727,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6098,
 		retOffset = 12,
-	},
-	["SClampRotAxis"] = {
+	}
+	g_classFuncs["UObject"]["SClampRotAxis"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4784,8 +4789,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 6102,
 		retOffset = 24,
-	},
-	["ClampRotAxisFromRange"] = {
+	}
+	g_classFuncs["UObject"]["ClampRotAxisFromRange"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4822,8 +4827,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6108,
 		retOffset = 12,
-	},
-	["ClampRotAxisFromBase"] = {
+	}
+	g_classFuncs["UObject"]["ClampRotAxisFromBase"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4860,8 +4865,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6118,
 		retOffset = 12,
-	},
-	["ClampRotAxis"] = {
+	}
+	g_classFuncs["UObject"]["ClampRotAxis"] = {
 		fields = {
 			{
 				name = "ViewAxis",
@@ -4898,8 +4903,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 6123,
-	},
-	["RSize"] = {
+	}
+	g_classFuncs["UObject"]["RSize"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4920,8 +4925,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6128,
 		retOffset = 12,
-	},
-	["RDiff"] = {
+	}
+	g_classFuncs["UObject"]["RDiff"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4950,8 +4955,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6133,
 		retOffset = 24,
-	},
-	["NormalizeRotAxis"] = {
+	}
+	g_classFuncs["UObject"]["NormalizeRotAxis"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4972,8 +4977,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6111,
 		retOffset = 4,
-	},
-	["RInterpTo"] = {
+	}
+	g_classFuncs["UObject"]["RInterpTo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5028,8 +5033,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 6139,
 		retOffset = 36,
-	},
-	["RTransform"] = {
+	}
+	g_classFuncs["UObject"]["RTransform"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5059,8 +5064,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6142,
 		retOffset = 24,
-	},
-	["RLerp"] = {
+	}
+	g_classFuncs["UObject"]["RLerp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5107,8 +5112,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 6149,
 		retOffset = 32,
-	},
-	["Normalize"] = {
+	}
+	g_classFuncs["UObject"]["Normalize"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5130,8 +5135,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6153,
 		retOffset = 12,
-	},
-	["OrthoRotation"] = {
+	}
+	g_classFuncs["UObject"]["OrthoRotation"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5169,8 +5174,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 6159,
 		retOffset = 36,
-	},
-	["RotRand"] = {
+	}
+	g_classFuncs["UObject"]["RotRand"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5193,8 +5198,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6162,
 		retOffset = 4,
-	},
-	["GetRotatorAxis"] = {
+	}
+	g_classFuncs["UObject"]["GetRotatorAxis"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5224,8 +5229,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6167,
 		retOffset = 16,
-	},
-	["GetUnAxes"] = {
+	}
+	g_classFuncs["UObject"]["GetUnAxes"] = {
 		fields = {
 			{
 				name = "A",
@@ -5265,8 +5270,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 6170,
-	},
-	["GetAxes"] = {
+	}
+	g_classFuncs["UObject"]["GetAxes"] = {
 		fields = {
 			{
 				name = "A",
@@ -5306,8 +5311,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 6174,
-	},
-	["ClockwiseFrom_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["ClockwiseFrom_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5336,8 +5341,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6179,
 		retOffset = 8,
-	},
-	["SubtractEqual_RotatorRotator"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_RotatorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5368,8 +5373,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6184,
 		retOffset = 24,
-	},
-	["AddEqual_RotatorRotator"] = {
+	}
+	g_classFuncs["UObject"]["AddEqual_RotatorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5400,8 +5405,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6188,
 		retOffset = 24,
-	},
-	["Subtract_RotatorRotator"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_RotatorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5431,8 +5436,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6192,
 		retOffset = 24,
-	},
-	["Add_RotatorRotator"] = {
+	}
+	g_classFuncs["UObject"]["Add_RotatorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5462,8 +5467,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6196,
 		retOffset = 24,
-	},
-	["DivideEqual_RotatorFloat"] = {
+	}
+	g_classFuncs["UObject"]["DivideEqual_RotatorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5494,8 +5499,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6200,
 		retOffset = 16,
-	},
-	["MultiplyEqual_RotatorFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_RotatorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5526,8 +5531,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6204,
 		retOffset = 16,
-	},
-	["Divide_RotatorFloat"] = {
+	}
+	g_classFuncs["UObject"]["Divide_RotatorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5557,8 +5562,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6208,
 		retOffset = 16,
-	},
-	["Multiply_FloatRotator"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_FloatRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5588,8 +5593,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6212,
 		retOffset = 16,
-	},
-	["Multiply_RotatorFloat"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_RotatorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5619,8 +5624,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6216,
 		retOffset = 16,
-	},
-	["NotEqual_RotatorRotator"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_RotatorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5649,8 +5654,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6220,
 		retOffset = 24,
-	},
-	["EqualEqual_RotatorRotator"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_RotatorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5679,8 +5684,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6224,
 		retOffset = 24,
-	},
-	["InCylinder"] = {
+	}
+	g_classFuncs["UObject"]["InCylinder"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5734,8 +5739,8 @@ local c = g_classFuncs
 		dataSize = 72,
 		index = 6228,
 		retOffset = 44,
-	},
-	["NoZDot"] = {
+	}
+	g_classFuncs["UObject"]["NoZDot"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5764,8 +5769,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6232,
 		retOffset = 24,
-	},
-	["ClampLength"] = {
+	}
+	g_classFuncs["UObject"]["ClampLength"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5795,8 +5800,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6241,
 		retOffset = 16,
-	},
-	["VInterpTo"] = {
+	}
+	g_classFuncs["UObject"]["VInterpTo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5842,8 +5847,8 @@ local c = g_classFuncs
 		dataSize = 44,
 		index = 6245,
 		retOffset = 32,
-	},
-	["IsZero"] = {
+	}
+	g_classFuncs["UObject"]["IsZero"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5864,8 +5869,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6249,
 		retOffset = 12,
-	},
-	["ProjectOnTo"] = {
+	}
+	g_classFuncs["UObject"]["ProjectOnTo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5895,8 +5900,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6255,
 		retOffset = 24,
-	},
-	["MirrorVectorByNormal"] = {
+	}
+	g_classFuncs["UObject"]["MirrorVectorByNormal"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5926,8 +5931,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6258,
 		retOffset = 24,
-	},
-	["VRandCone2"] = {
+	}
+	g_classFuncs["UObject"]["VRandCone2"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5965,8 +5970,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 6262,
 		retOffset = 20,
-	},
-	["VRandCone"] = {
+	}
+	g_classFuncs["UObject"]["VRandCone"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -5996,8 +6001,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6266,
 		retOffset = 16,
-	},
-	["VRand"] = {
+	}
+	g_classFuncs["UObject"]["VRand"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6011,8 +6016,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6271,
 		retOffset = 0,
-	},
-	["VLerp"] = {
+	}
+	g_classFuncs["UObject"]["VLerp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6050,8 +6055,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 6275,
 		retOffset = 28,
-	},
-	["Normal"] = {
+	}
+	g_classFuncs["UObject"]["Normal"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6073,8 +6078,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6277,
 		retOffset = 12,
-	},
-	["VSizeSq2D"] = {
+	}
+	g_classFuncs["UObject"]["VSizeSq2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6095,8 +6100,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6282,
 		retOffset = 12,
-	},
-	["VSizeSq"] = {
+	}
+	g_classFuncs["UObject"]["VSizeSq"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6117,8 +6122,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6285,
 		retOffset = 12,
-	},
-	["VSize2D"] = {
+	}
+	g_classFuncs["UObject"]["VSize2D"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6139,8 +6144,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6288,
 		retOffset = 12,
-	},
-	["VSize"] = {
+	}
+	g_classFuncs["UObject"]["VSize"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6161,8 +6166,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6291,
 		retOffset = 12,
-	},
-	["SubtractEqual_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6193,8 +6198,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6294,
 		retOffset = 24,
-	},
-	["AddEqual_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["AddEqual_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6225,8 +6230,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6297,
 		retOffset = 24,
-	},
-	["DivideEqual_VectorFloat"] = {
+	}
+	g_classFuncs["UObject"]["DivideEqual_VectorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6257,8 +6262,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6301,
 		retOffset = 16,
-	},
-	["MultiplyEqual_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6289,8 +6294,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6305,
 		retOffset = 24,
-	},
-	["MultiplyEqual_VectorFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_VectorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6321,8 +6326,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6309,
 		retOffset = 16,
-	},
-	["Cross_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["Cross_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6352,8 +6357,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6313,
 		retOffset = 24,
-	},
-	["Dot_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["Dot_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6382,8 +6387,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6317,
 		retOffset = 24,
-	},
-	["NotEqual_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6412,8 +6417,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6321,
 		retOffset = 24,
-	},
-	["EqualEqual_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6442,8 +6447,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6325,
 		retOffset = 24,
-	},
-	["GreaterGreater_VectorRotator"] = {
+	}
+	g_classFuncs["UObject"]["GreaterGreater_VectorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6473,8 +6478,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6329,
 		retOffset = 24,
-	},
-	["LessLess_VectorRotator"] = {
+	}
+	g_classFuncs["UObject"]["LessLess_VectorRotator"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6504,8 +6509,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6333,
 		retOffset = 24,
-	},
-	["Subtract_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6535,8 +6540,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6337,
 		retOffset = 24,
-	},
-	["Add_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["Add_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6566,8 +6571,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6341,
 		retOffset = 24,
-	},
-	["Divide_VectorFloat"] = {
+	}
+	g_classFuncs["UObject"]["Divide_VectorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6597,8 +6602,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6345,
 		retOffset = 16,
-	},
-	["Multiply_VectorVector"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_VectorVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6628,8 +6633,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 6349,
 		retOffset = 24,
-	},
-	["Multiply_FloatVector"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_FloatVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6659,8 +6664,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6353,
 		retOffset = 16,
-	},
-	["Multiply_VectorFloat"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_VectorFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6690,8 +6695,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 6357,
 		retOffset = 16,
-	},
-	["Subtract_PreVector"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_PreVector"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6713,8 +6718,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6361,
 		retOffset = 12,
-	},
-	["SmoothInterp"] = {
+	}
+	g_classFuncs["UObject"]["SmoothInterp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6759,8 +6764,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6365,
 		retOffset = 16,
-	},
-	["FInterpConstantTo"] = {
+	}
+	g_classFuncs["UObject"]["FInterpConstantTo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6805,8 +6810,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6368,
 		retOffset = 16,
-	},
-	["FInterpTo"] = {
+	}
+	g_classFuncs["UObject"]["FInterpTo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6851,8 +6856,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6114,
 		retOffset = 16,
-	},
-	["FPctByRange"] = {
+	}
+	g_classFuncs["UObject"]["FPctByRange"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6889,8 +6894,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6379,
 		retOffset = 12,
-	},
-	["RandRange"] = {
+	}
+	g_classFuncs["UObject"]["RandRange"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6919,8 +6924,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6385,
 		retOffset = 8,
-	},
-	["FInterpEaseInOut"] = {
+	}
+	g_classFuncs["UObject"]["FInterpEaseInOut"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -6965,8 +6970,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6390,
 		retOffset = 16,
-	},
-	["FInterpEaseOut"] = {
+	}
+	g_classFuncs["UObject"]["FInterpEaseOut"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7011,8 +7016,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6394,
 		retOffset = 16,
-	},
-	["FInterpEaseIn"] = {
+	}
+	g_classFuncs["UObject"]["FInterpEaseIn"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7057,8 +7062,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6400,
 		retOffset = 16,
-	},
-	["FCubicInterp"] = {
+	}
+	g_classFuncs["UObject"]["FCubicInterp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7111,8 +7116,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 6406,
 		retOffset = 20,
-	},
-	["FCeil"] = {
+	}
+	g_classFuncs["UObject"]["FCeil"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7133,8 +7138,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6412,
 		retOffset = 4,
-	},
-	["FFloor"] = {
+	}
+	g_classFuncs["UObject"]["FFloor"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7155,8 +7160,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6419,
 		retOffset = 4,
-	},
-	["Round"] = {
+	}
+	g_classFuncs["UObject"]["Round"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7177,8 +7182,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6422,
 		retOffset = 4,
-	},
-	["Lerp"] = {
+	}
+	g_classFuncs["UObject"]["Lerp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7215,8 +7220,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6425,
 		retOffset = 12,
-	},
-	["FClamp"] = {
+	}
+	g_classFuncs["UObject"]["FClamp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7253,8 +7258,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6428,
 		retOffset = 12,
-	},
-	["FMax"] = {
+	}
+	g_classFuncs["UObject"]["FMax"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7283,8 +7288,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6433,
 		retOffset = 8,
-	},
-	["FMin"] = {
+	}
+	g_classFuncs["UObject"]["FMin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7313,8 +7318,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6438,
 		retOffset = 8,
-	},
-	["FRand"] = {
+	}
+	g_classFuncs["UObject"]["FRand"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7327,8 +7332,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 6442,
 		retOffset = 0,
-	},
-	["Square"] = {
+	}
+	g_classFuncs["UObject"]["Square"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7349,8 +7354,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6446,
 		retOffset = 4,
-	},
-	["Sqrt"] = {
+	}
+	g_classFuncs["UObject"]["Sqrt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7371,8 +7376,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6448,
 		retOffset = 4,
-	},
-	["Loge"] = {
+	}
+	g_classFuncs["UObject"]["Loge"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7393,8 +7398,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6451,
 		retOffset = 4,
-	},
-	["Exp"] = {
+	}
+	g_classFuncs["UObject"]["Exp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7415,8 +7420,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6454,
 		retOffset = 4,
-	},
-	["Atan2"] = {
+	}
+	g_classFuncs["UObject"]["Atan2"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7445,8 +7450,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6457,
 		retOffset = 8,
-	},
-	["Atan"] = {
+	}
+	g_classFuncs["UObject"]["Atan"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7467,8 +7472,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6460,
 		retOffset = 4,
-	},
-	["Tan"] = {
+	}
+	g_classFuncs["UObject"]["Tan"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7489,8 +7494,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6464,
 		retOffset = 4,
-	},
-	["Acos"] = {
+	}
+	g_classFuncs["UObject"]["Acos"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7511,8 +7516,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 5445,
 		retOffset = 4,
-	},
-	["Cos"] = {
+	}
+	g_classFuncs["UObject"]["Cos"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7533,8 +7538,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6469,
 		retOffset = 4,
-	},
-	["Asin"] = {
+	}
+	g_classFuncs["UObject"]["Asin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7555,8 +7560,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6472,
 		retOffset = 4,
-	},
-	["Sin"] = {
+	}
+	g_classFuncs["UObject"]["Sin"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7577,8 +7582,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6475,
 		retOffset = 4,
-	},
-	["Abs"] = {
+	}
+	g_classFuncs["UObject"]["Abs"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7599,8 +7604,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6478,
 		retOffset = 4,
-	},
-	["SubtractEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7629,8 +7634,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6481,
 		retOffset = 8,
-	},
-	["AddEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["AddEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7659,8 +7664,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6484,
 		retOffset = 8,
-	},
-	["DivideEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["DivideEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7689,8 +7694,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6488,
 		retOffset = 8,
-	},
-	["MultiplyEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7719,8 +7724,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6492,
 		retOffset = 8,
-	},
-	["NotEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7749,8 +7754,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6496,
 		retOffset = 8,
-	},
-	["ComplementEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["ComplementEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7779,8 +7784,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6500,
 		retOffset = 8,
-	},
-	["EqualEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7809,8 +7814,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6504,
 		retOffset = 8,
-	},
-	["GreaterEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["GreaterEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7839,8 +7844,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6508,
 		retOffset = 8,
-	},
-	["LessEqual_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["LessEqual_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7869,8 +7874,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6512,
 		retOffset = 8,
-	},
-	["Greater_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Greater_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7899,8 +7904,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6516,
 		retOffset = 8,
-	},
-	["Less_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Less_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7929,8 +7934,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6520,
 		retOffset = 8,
-	},
-	["Subtract_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7959,8 +7964,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6524,
 		retOffset = 8,
-	},
-	["Add_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Add_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -7989,8 +7994,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6528,
 		retOffset = 8,
-	},
-	["Percent_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Percent_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8019,8 +8024,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6532,
 		retOffset = 8,
-	},
-	["Divide_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Divide_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8049,8 +8054,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6536,
 		retOffset = 8,
-	},
-	["Multiply_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8079,8 +8084,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6540,
 		retOffset = 8,
-	},
-	["MultiplyMultiply_FloatFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyMultiply_FloatFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8109,8 +8114,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6544,
 		retOffset = 8,
-	},
-	["Subtract_PreFloat"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_PreFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8131,8 +8136,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6548,
 		retOffset = 4,
-	},
-	["ToHex"] = {
+	}
+	g_classFuncs["UObject"]["ToHex"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8155,8 +8160,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6552,
 		retOffset = 4,
-	},
-	["Clamp"] = {
+	}
+	g_classFuncs["UObject"]["Clamp"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8193,8 +8198,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6555,
 		retOffset = 12,
-	},
-	["Max"] = {
+	}
+	g_classFuncs["UObject"]["Max"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8223,8 +8228,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6558,
 		retOffset = 8,
-	},
-	["Min"] = {
+	}
+	g_classFuncs["UObject"]["Min"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8253,8 +8258,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6563,
 		retOffset = 8,
-	},
-	["Rand"] = {
+	}
+	g_classFuncs["UObject"]["Rand"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8275,8 +8280,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6567,
 		retOffset = 4,
-	},
-	["SubtractSubtract_Int"] = {
+	}
+	g_classFuncs["UObject"]["SubtractSubtract_Int"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8297,8 +8302,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6571,
 		retOffset = 4,
-	},
-	["AddAdd_Int"] = {
+	}
+	g_classFuncs["UObject"]["AddAdd_Int"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8319,8 +8324,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6574,
 		retOffset = 4,
-	},
-	["SubtractSubtract_PreInt"] = {
+	}
+	g_classFuncs["UObject"]["SubtractSubtract_PreInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8341,8 +8346,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6577,
 		retOffset = 4,
-	},
-	["AddAdd_PreInt"] = {
+	}
+	g_classFuncs["UObject"]["AddAdd_PreInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8363,8 +8368,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6580,
 		retOffset = 4,
-	},
-	["SubtractEqual_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8393,8 +8398,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6583,
 		retOffset = 8,
-	},
-	["AddEqual_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["AddEqual_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8423,8 +8428,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6586,
 		retOffset = 8,
-	},
-	["DivideEqual_IntFloat"] = {
+	}
+	g_classFuncs["UObject"]["DivideEqual_IntFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8453,8 +8458,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6590,
 		retOffset = 8,
-	},
-	["MultiplyEqual_IntFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_IntFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8483,8 +8488,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6594,
 		retOffset = 8,
-	},
-	["Or_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Or_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8513,8 +8518,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6598,
 		retOffset = 8,
-	},
-	["Xor_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Xor_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8543,8 +8548,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6602,
 		retOffset = 8,
-	},
-	["And_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["And_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8573,8 +8578,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6606,
 		retOffset = 8,
-	},
-	["NotEqual_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8603,8 +8608,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6610,
 		retOffset = 8,
-	},
-	["EqualEqual_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8633,8 +8638,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6614,
 		retOffset = 8,
-	},
-	["GreaterEqual_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["GreaterEqual_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8663,8 +8668,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6618,
 		retOffset = 8,
-	},
-	["LessEqual_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["LessEqual_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8693,8 +8698,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6622,
 		retOffset = 8,
-	},
-	["Greater_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Greater_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8723,8 +8728,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6626,
 		retOffset = 8,
-	},
-	["Less_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Less_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8753,8 +8758,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6630,
 		retOffset = 8,
-	},
-	["GreaterGreaterGreater_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["GreaterGreaterGreater_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8783,8 +8788,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6634,
 		retOffset = 8,
-	},
-	["GreaterGreater_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["GreaterGreater_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8813,8 +8818,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6638,
 		retOffset = 8,
-	},
-	["LessLess_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["LessLess_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8843,8 +8848,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6642,
 		retOffset = 8,
-	},
-	["Subtract_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8873,8 +8878,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6646,
 		retOffset = 8,
-	},
-	["Add_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Add_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8903,8 +8908,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6650,
 		retOffset = 8,
-	},
-	["Percent_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Percent_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8933,8 +8938,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6654,
 		retOffset = 8,
-	},
-	["Divide_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Divide_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8963,8 +8968,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6658,
 		retOffset = 8,
-	},
-	["Multiply_IntInt"] = {
+	}
+	g_classFuncs["UObject"]["Multiply_IntInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -8993,8 +8998,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6662,
 		retOffset = 8,
-	},
-	["Subtract_PreInt"] = {
+	}
+	g_classFuncs["UObject"]["Subtract_PreInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9015,8 +9020,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6666,
 		retOffset = 4,
-	},
-	["Complement_PreInt"] = {
+	}
+	g_classFuncs["UObject"]["Complement_PreInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9037,8 +9042,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6670,
 		retOffset = 4,
-	},
-	["SubtractSubtract_Byte"] = {
+	}
+	g_classFuncs["UObject"]["SubtractSubtract_Byte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9059,8 +9064,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 6673,
 		retOffset = 1,
-	},
-	["AddAdd_Byte"] = {
+	}
+	g_classFuncs["UObject"]["AddAdd_Byte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9081,8 +9086,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 6676,
 		retOffset = 1,
-	},
-	["SubtractSubtract_PreByte"] = {
+	}
+	g_classFuncs["UObject"]["SubtractSubtract_PreByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9103,8 +9108,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 6679,
 		retOffset = 1,
-	},
-	["AddAdd_PreByte"] = {
+	}
+	g_classFuncs["UObject"]["AddAdd_PreByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9125,8 +9130,8 @@ local c = g_classFuncs
 		dataSize = 2,
 		index = 6682,
 		retOffset = 1,
-	},
-	["SubtractEqual_ByteByte"] = {
+	}
+	g_classFuncs["UObject"]["SubtractEqual_ByteByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9155,8 +9160,8 @@ local c = g_classFuncs
 		dataSize = 3,
 		index = 6685,
 		retOffset = 2,
-	},
-	["AddEqual_ByteByte"] = {
+	}
+	g_classFuncs["UObject"]["AddEqual_ByteByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9185,8 +9190,8 @@ local c = g_classFuncs
 		dataSize = 3,
 		index = 6688,
 		retOffset = 2,
-	},
-	["DivideEqual_ByteByte"] = {
+	}
+	g_classFuncs["UObject"]["DivideEqual_ByteByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9215,8 +9220,8 @@ local c = g_classFuncs
 		dataSize = 3,
 		index = 6692,
 		retOffset = 2,
-	},
-	["MultiplyEqual_ByteFloat"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_ByteFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9245,8 +9250,8 @@ local c = g_classFuncs
 		dataSize = 9,
 		index = 6696,
 		retOffset = 8,
-	},
-	["MultiplyEqual_ByteByte"] = {
+	}
+	g_classFuncs["UObject"]["MultiplyEqual_ByteByte"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9275,8 +9280,8 @@ local c = g_classFuncs
 		dataSize = 3,
 		index = 6700,
 		retOffset = 2,
-	},
-	["OrOr_BoolBool"] = {
+	}
+	g_classFuncs["UObject"]["OrOr_BoolBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9305,8 +9310,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6704,
 		retOffset = 8,
-	},
-	["XorXor_BoolBool"] = {
+	}
+	g_classFuncs["UObject"]["XorXor_BoolBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9335,8 +9340,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6708,
 		retOffset = 8,
-	},
-	["AndAnd_BoolBool"] = {
+	}
+	g_classFuncs["UObject"]["AndAnd_BoolBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9365,8 +9370,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6712,
 		retOffset = 8,
-	},
-	["NotEqual_BoolBool"] = {
+	}
+	g_classFuncs["UObject"]["NotEqual_BoolBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9395,8 +9400,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6716,
 		retOffset = 8,
-	},
-	["EqualEqual_BoolBool"] = {
+	}
+	g_classFuncs["UObject"]["EqualEqual_BoolBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9425,8 +9430,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 6720,
 		retOffset = 8,
-	},
-	["Not_PreBool"] = {
+	}
+	g_classFuncs["UObject"]["Not_PreBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9447,8 +9452,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6724,
 		retOffset = 4,
-	},
-	["GetVectorValue"] = {
+	}
+	g_classFuncs["UDistributionVector"]["GetVectorValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9480,8 +9485,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 6959,
 		retOffset = 8,
-	},
-	["GetFloatValue"] = {
+	}
+	g_classFuncs["UDistributionFloat"]["GetFloatValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9503,8 +9508,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 6949,
 		retOffset = 4,
-	},
-	["eventMain"] = {
+	}
+	g_classFuncs["UHelpCommandlet"]["eventMain"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9525,8 +9530,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6975,
 		retOffset = 12,
-	},
-	["eventMain"] = {
+	}
+	g_classFuncs["UCommandlet"]["eventMain"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -9547,4 +9552,4 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 6941,
 		retOffset = 12,
-	},
+	}

@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x198 
 struct UOnlineAuthInterfaceSteamworks_Data {
 	// Last Offset: 0x194
@@ -270,6 +275,7 @@ struct UIpNetConnectionSteamworks {
 	struct UTcpipConnection_Data UTcpipConnection;
 	struct UIpNetConnectionSteamworks_Data UIpNetConnectionSteamworks;
 };
+]]
 
 table.insert(g_loadedClasses, { "UOnlineAuthInterfaceSteamworks", 3575, "UOnlineAuthInterfaceImpl" })
 table.insert(g_loadedClasses, { "UOnlineGameInterfaceSteamworks", 3577, "UOnlineGameInterfaceImpl" })

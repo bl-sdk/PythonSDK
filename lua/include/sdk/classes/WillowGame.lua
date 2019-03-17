@@ -1,3 +1,9 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
+
 // 0x3C 
 struct UAchievementUtility_Data {
 	// Last Offset: 0x3C
@@ -28996,6 +29002,8 @@ struct UPsychoInputContextSelector {
 	struct UDefaultInputContextSelector_Data UDefaultInputContextSelector;
 	struct UPsychoInputContextSelector_Data UPsychoInputContextSelector;
 };
+
+]]
 
 table.insert(g_loadedClasses, { "UAchievementUtility", 3592, "UObject" })
 table.insert(g_loadedClasses, { "AActionSkill", 3594, "AActor" })

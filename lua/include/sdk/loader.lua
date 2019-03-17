@@ -1,17 +1,26 @@
-local packages = { 
+local packages = {
+"Core",
+"Engine",
+"GameFramework",
+"GfxUI",
+"GearboxFramework",
+"WillowGame",
+"AkAudio",
+"IpDrv",
+"WinDrv",
+"XAudio2",
+"OnlineSubsystemSteamworks"
 }
 
 include("TArrayTypes.lua")
 
-profiling.TrackMemory("loadsdk", "Loading everything")
-
 for _,pkg in ipairs(packages) do
 	profiling.TrackMemory("loadpackage", "Loading " .. pkg)
-	include("include/sdk/consts/" .. pkg .. ".lua")
-	include("include/sdk/enums/" .. pkg .. ".lua")
-	include("include/sdk/structs/" .. pkg .. ".lua")
-	include("include/sdk/classes/" .. pkg .. ".lua")
-	include("include/sdk/funcs/" .. pkg .. ".lua")
+	include("consts/" .. pkg .. ".lua")
+	include("enums/" .. pkg .. ".lua")
+	include("structs/" .. pkg .. ".lua")
+	include("classes/" .. pkg .. ".lua")
+	include("funcs/" .. pkg .. ".lua")
 	profiling.GetMemoryUsage("loadpackage")
 end
 

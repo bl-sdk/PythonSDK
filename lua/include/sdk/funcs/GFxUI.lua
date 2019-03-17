@@ -1,7 +1,21 @@
+g_classFuncs["UGFxAction_Invoke"] = {}
+g_classFuncs["UGFxClikWidget"] = {}
+g_classFuncs["UGFxAction_SetVariable"] = {}
+g_classFuncs["UGFxObject"] = {}
+g_classFuncs["UGFxMoviePlayer"] = {}
+g_classFuncs["UGFxAction_CloseMovie"] = {}
+g_classFuncs["UGFxDataStoreSubscriber"] = {}
+g_classFuncs["UGFxFSCmdHandler"] = {}
+g_classFuncs["UGFxFSCmdHandler_Kismet"] = {}
+g_classFuncs["USwfMovie"] = {}
+g_classFuncs["UGFxAction_GetVariable"] = {}
+g_classFuncs["UGFxAction_OpenMovie"] = {}
+g_classFuncs["UGFxManager"] = {}
+g_classFuncs["UGFxInteraction"] = {}
 local ffi = require("ffi")
 local c = g_classFuncs
 
-	["eventFSCommand"] = {
+	g_classFuncs["UGFxFSCmdHandler"]["eventFSCommand"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -46,20 +60,20 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 38338,
 		retOffset = 32,
-	},
-	["CloseAllMoviePlayers"] = {
+	}
+	g_classFuncs["UGFxInteraction"]["CloseAllMoviePlayers"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38362,
-	},
-	["NotifySplitscreenLayoutChanged"] = {
+	}
+	g_classFuncs["UGFxInteraction"]["NotifySplitscreenLayoutChanged"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38361,
-	},
-	["NotifyPlayerRemoved"] = {
+	}
+	g_classFuncs["UGFxInteraction"]["NotifyPlayerRemoved"] = {
 		fields = {
 			{
 				name = "PlayerIndex",
@@ -80,8 +94,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38358,
-	},
-	["NotifyPlayerAdded"] = {
+	}
+	g_classFuncs["UGFxInteraction"]["NotifyPlayerAdded"] = {
 		fields = {
 			{
 				name = "PlayerIndex",
@@ -102,14 +116,14 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38355,
-	},
-	["NotifyGameSessionEnded"] = {
+	}
+	g_classFuncs["UGFxInteraction"]["NotifyGameSessionEnded"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38354,
-	},
-	["GetFocusMovie"] = {
+	}
+	g_classFuncs["UGFxInteraction"]["GetFocusMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -130,8 +144,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38351,
 		retOffset = 4,
-	},
-	["GetFocusMovie"] = {
+	}
+	g_classFuncs["UGFxManager"]["GetFocusMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -152,8 +166,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38376,
 		retOffset = 4,
-	},
-	["eventLookupSound"] = {
+	}
+	g_classFuncs["UGFxManager"]["eventLookupSound"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -174,8 +188,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38370,
 		retOffset = 8,
-	},
-	["eventShowDialog"] = {
+	}
+	g_classFuncs["UGFxManager"]["eventShowDialog"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -197,8 +211,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38367,
 		retOffset = 4,
-	},
-	["eventInit"] = {
+	}
+	g_classFuncs["UGFxManager"]["eventInit"] = {
 		fields = {
 			{
 				name = "Def",
@@ -211,8 +225,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38365,
-	},
-	["UnregisterGFxObject"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["UnregisterGFxObject"] = {
 		fields = {
 			{
 				name = "anObject",
@@ -225,8 +239,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37623,
-	},
-	["RegisterGFxObject"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["RegisterGFxObject"] = {
 		fields = {
 			{
 				name = "anObject",
@@ -239,14 +253,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37624,
-	},
-	["SendMousePos"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SendMousePos"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37626,
-	},
-	["IsShowingFlashMouse"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["IsShowingFlashMouse"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -259,14 +273,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37628,
 		retOffset = 0,
-	},
-	["HookSaveScreenshot"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["HookSaveScreenshot"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37629,
-	},
-	["UpdateRenderTexture"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["UpdateRenderTexture"] = {
 		fields = {
 			{
 				name = "NewRenderTexture",
@@ -279,8 +293,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37631,
-	},
-	["OnInputKey"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["OnInputKey"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -318,8 +332,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 37632,
 		retOffset = 16,
-	},
-	["WantsInput"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["WantsInput"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -341,8 +355,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 37634,
 		retOffset = 8,
-	},
-	["WantsControllerInput"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["WantsControllerInput"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -363,8 +377,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 37639,
 		retOffset = 4,
-	},
-	["InputKey"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["InputKey"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -402,8 +416,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 37642,
 		retOffset = 16,
-	},
-	["GetGFxManager"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetGFxManager"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -416,8 +430,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37645,
 		retOffset = 0,
-	},
-	["ResolveDataStoreMarkup"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ResolveDataStoreMarkup"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -440,14 +454,14 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 37650,
 		retOffset = 12,
-	},
-	["UpdateSplitscreenLayout"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["UpdateSplitscreenLayout"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37652,
-	},
-	["ApplyPriorityVisibilityEffect"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ApplyPriorityVisibilityEffect"] = {
 		fields = {
 			{
 				name = "bRemoveEffect",
@@ -460,8 +474,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37655,
-	},
-	["ApplyPriorityBlurEffect"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ApplyPriorityBlurEffect"] = {
 		fields = {
 			{
 				name = "bRemoveEffect",
@@ -474,8 +488,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37656,
-	},
-	["eventApplyPriorityEffect"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventApplyPriorityEffect"] = {
 		fields = {
 			{
 				name = "bRequestedBlurState",
@@ -496,8 +510,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37658,
-	},
-	["PlaySoundFromTheme"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["PlaySoundFromTheme"] = {
 		fields = {
 			{
 				name = "EventName",
@@ -519,8 +533,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 37660,
-	},
-	["eventOnFocusLost"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventOnFocusLost"] = {
 		fields = {
 			{
 				name = "LocalPlayerIndex",
@@ -533,8 +547,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37667,
-	},
-	["eventOnFocusGained"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventOnFocusGained"] = {
 		fields = {
 			{
 				name = "LocalPlayerIndex",
@@ -547,8 +561,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37674,
-	},
-	["ConsoleCommand"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ConsoleCommand"] = {
 		fields = {
 			{
 				name = "Command",
@@ -561,8 +575,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37676,
-	},
-	["SetLP"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetLP"] = {
 		fields = {
 			{
 				name = "LocPlay",
@@ -575,8 +589,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37678,
-	},
-	["GetPC"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetPC"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -589,8 +603,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37673,
 		retOffset = 0,
-	},
-	["GetLP"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetLP"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -603,8 +617,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37681,
 		retOffset = 0,
-	},
-	["Init"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["Init"] = {
 		fields = {
 			{
 				name = "LocPlay",
@@ -618,8 +632,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37683,
-	},
-	["SetWidgetPathBinding"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetWidgetPathBinding"] = {
 		fields = {
 			{
 				name = "WidgetToBind",
@@ -640,14 +654,14 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 37685,
-	},
-	["eventPostWidgetInit"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventPostWidgetInit"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37691,
-	},
-	["eventWidgetUnloaded"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventWidgetUnloaded"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -684,8 +698,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 37694,
 		retOffset = 20,
-	},
-	["eventWidgetInitialized"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventWidgetInitialized"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -722,8 +736,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 37695,
 		retOffset = 20,
-	},
-	["ActionScriptObject"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScriptObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -744,8 +758,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 37700,
 		retOffset = 12,
-	},
-	["ActionScriptString"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScriptString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -768,8 +782,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 37705,
 		retOffset = 12,
-	},
-	["ActionScriptFloat"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScriptFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -790,8 +804,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 37708,
 		retOffset = 12,
-	},
-	["ActionScriptInt"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScriptInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -812,8 +826,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 37711,
 		retOffset = 12,
-	},
-	["ActionScriptVoid"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScriptVoid"] = {
 		fields = {
 			{
 				name = "Path",
@@ -826,8 +840,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 37714,
-	},
-	["ActionScript"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScript"] = {
 		fields = {
 			{
 				name = "Path",
@@ -840,8 +854,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 37717,
-	},
-	["Invoke"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["Invoke"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -871,8 +885,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 37719,
 		retOffset = 24,
-	},
-	["ActionScriptSetFunction"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ActionScriptSetFunction"] = {
 		fields = {
 			{
 				name = "Object",
@@ -893,8 +907,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37721,
-	},
-	["CreateArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["CreateArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -907,8 +921,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37733,
 		retOffset = 0,
-	},
-	["CreateObject"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["CreateObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -938,8 +952,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 37736,
 		retOffset = 16,
-	},
-	["SetVariableStringArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableStringArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -976,8 +990,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37738,
 		retOffset = 28,
-	},
-	["SetVariableFloatArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableFloatArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1014,8 +1028,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37742,
 		retOffset = 28,
-	},
-	["SetVariableIntArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableIntArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1052,8 +1066,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37748,
 		retOffset = 28,
-	},
-	["SetVariableArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1090,8 +1104,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37754,
 		retOffset = 28,
-	},
-	["GetVariableStringArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableStringArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1130,8 +1144,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37760,
 		retOffset = 28,
-	},
-	["GetVariableFloatArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableFloatArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1170,8 +1184,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37766,
 		retOffset = 28,
-	},
-	["GetVariableIntArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableIntArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1210,8 +1224,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37772,
 		retOffset = 28,
-	},
-	["GetVariableArray"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1250,8 +1264,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 37778,
 		retOffset = 28,
-	},
-	["SetVariableObject"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableObject"] = {
 		fields = {
 			{
 				name = "Path",
@@ -1272,8 +1286,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37784,
-	},
-	["SetVariableString"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableString"] = {
 		fields = {
 			{
 				name = "Path",
@@ -1294,8 +1308,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 37790,
-	},
-	["SetVariableNumber"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableNumber"] = {
 		fields = {
 			{
 				name = "Path",
@@ -1316,8 +1330,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37793,
-	},
-	["SetVariableBool"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariableBool"] = {
 		fields = {
 			{
 				name = "Path",
@@ -1338,8 +1352,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37796,
-	},
-	["SetVariable"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetVariable"] = {
 		fields = {
 			{
 				name = "Path",
@@ -1360,8 +1374,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 37799,
-	},
-	["GetVariableObject"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1391,8 +1405,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 37802,
 		retOffset = 16,
-	},
-	["GetVariableString"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1415,8 +1429,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 37805,
 		retOffset = 12,
-	},
-	["GetVariableNumber"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableNumber"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1437,8 +1451,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 37809,
 		retOffset = 12,
-	},
-	["GetVariableBool"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariableBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1459,8 +1473,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 37812,
 		retOffset = 12,
-	},
-	["GetVariable"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVariable"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1482,8 +1496,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 37815,
 		retOffset = 12,
-	},
-	["eventFilterAxisInput"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventFilterAxisInput"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1528,8 +1542,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 37818,
 		retOffset = 20,
-	},
-	["eventFilterButtonInput"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventFilterButtonInput"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1567,8 +1581,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 37821,
 		retOffset = 16,
-	},
-	["FlushPlayerInput"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["FlushPlayerInput"] = {
 		fields = {
 			{
 				name = "capturekeysonly",
@@ -1581,14 +1595,14 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37827,
-	},
-	["ClearFocusIgnoreKeys"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ClearFocusIgnoreKeys"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37832,
-	},
-	["AddFocusIgnoreKey"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["AddFocusIgnoreKey"] = {
 		fields = {
 			{
 				name = "Key",
@@ -1601,14 +1615,14 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37834,
-	},
-	["ClearCaptureKeys"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["ClearCaptureKeys"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37835,
-	},
-	["AddCaptureKey"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["AddCaptureKey"] = {
 		fields = {
 			{
 				name = "Key",
@@ -1621,8 +1635,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 37837,
-	},
-	["SetMovieCanReceiveInput"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetMovieCanReceiveInput"] = {
 		fields = {
 			{
 				name = "bCanReceiveInput",
@@ -1635,8 +1649,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37838,
-	},
-	["SetMovieCanReceiveFocus"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetMovieCanReceiveFocus"] = {
 		fields = {
 			{
 				name = "bCanReceiveFocus",
@@ -1649,8 +1663,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37840,
-	},
-	["SetSceneDPG"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetSceneDPG"] = {
 		fields = {
 			{
 				name = "NewDPG",
@@ -1664,8 +1678,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 37842,
-	},
-	["SetPerspective3D"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetPerspective3D"] = {
 		fields = {
 			{
 				name = "matPersp",
@@ -1679,8 +1693,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 37844,
-	},
-	["SetView3D"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetView3D"] = {
 		fields = {
 			{
 				name = "matView",
@@ -1694,8 +1708,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 37846,
-	},
-	["GetVisibleFrameRect"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetVisibleFrameRect"] = {
 		fields = {
 			{
 				name = "x0",
@@ -1732,8 +1746,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37848,
-	},
-	["SetAlignment"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetAlignment"] = {
 		fields = {
 			{
 				name = "A",
@@ -1747,8 +1761,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 37850,
-	},
-	["SetViewScaleMode"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetViewScaleMode"] = {
 		fields = {
 			{
 				name = "SM",
@@ -1762,14 +1776,14 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 37855,
-	},
-	["eventOnSetViewport"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventOnSetViewport"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37859,
-	},
-	["SetViewport"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetViewport"] = {
 		fields = {
 			{
 				name = "X",
@@ -1806,8 +1820,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 37861,
-	},
-	["GetGameViewportClient"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["GetGameViewportClient"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1820,8 +1834,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37862,
 		retOffset = 0,
-	},
-	["SetPriority"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetPriority"] = {
 		fields = {
 			{
 				name = "NewPriority",
@@ -1834,20 +1848,20 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 37867,
-	},
-	["PublishDataStoreValues"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["PublishDataStoreValues"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37869,
-	},
-	["RefreshDataStoreBindings"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["RefreshDataStoreBindings"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37871,
-	},
-	["SetExternalTexture"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetExternalTexture"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -1876,8 +1890,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 37872,
 		retOffset = 16,
-	},
-	["SetExternalInterface"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetExternalInterface"] = {
 		fields = {
 			{
 				name = "H",
@@ -1890,8 +1904,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37873,
-	},
-	["SetTimingMode"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetTimingMode"] = {
 		fields = {
 			{
 				name = "Mode",
@@ -1905,8 +1919,8 @@ local c = g_classFuncs
 		},
 		dataSize = 1,
 		index = 37877,
-	},
-	["SetMovieInfo"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetMovieInfo"] = {
 		fields = {
 			{
 				name = "Data",
@@ -1919,26 +1933,26 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37880,
-	},
-	["eventConditionalClearPause"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventConditionalClearPause"] = {
 		fields = {
 		},
 		dataSize = 4,
 		index = 37883,
-	},
-	["eventOnCleanup"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventOnCleanup"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37885,
-	},
-	["eventOnClose"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventOnClose"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 37887,
-	},
-	["Close"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["Close"] = {
 		fields = {
 			{
 				name = "Unload",
@@ -1952,8 +1966,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37888,
-	},
-	["SetPause"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["SetPause"] = {
 		fields = {
 			{
 				name = "bPausePlayback",
@@ -1967,8 +1981,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37889,
-	},
-	["OnPostAdvance"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["OnPostAdvance"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -1981,8 +1995,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37891,
-	},
-	["PostAdvance"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["PostAdvance"] = {
 		fields = {
 			{
 				name = "DeltaTime",
@@ -1995,8 +2009,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37893,
-	},
-	["Advance"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["Advance"] = {
 		fields = {
 			{
 				name = "Time",
@@ -2009,8 +2023,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 37690,
-	},
-	["eventStart"] = {
+	}
+	g_classFuncs["UGFxMoviePlayer"]["eventStart"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2032,8 +2046,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 37896,
 		retOffset = 4,
-	},
-	["eventWidgetUnloaded"] = {
+	}
+	g_classFuncs["UGFxObject"]["eventWidgetUnloaded"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2070,8 +2084,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38265,
 		retOffset = 20,
-	},
-	["eventWidgetInitialized"] = {
+	}
+	g_classFuncs["UGFxObject"]["eventWidgetInitialized"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2108,8 +2122,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38260,
 		retOffset = 20,
-	},
-	["MouseHitTest"] = {
+	}
+	g_classFuncs["UGFxObject"]["MouseHitTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2122,8 +2136,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38258,
 		retOffset = 0,
-	},
-	["HitTest"] = {
+	}
+	g_classFuncs["UGFxObject"]["HitTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2161,8 +2175,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38253,
 		retOffset = 12,
-	},
-	["_HitTest"] = {
+	}
+	g_classFuncs["UGFxObject"]["_HitTest"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2199,8 +2213,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38248,
 		retOffset = 12,
-	},
-	["GetNextHighestDepth"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetNextHighestDepth"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2213,14 +2227,14 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38246,
 		retOffset = 0,
-	},
-	["RemoveMovieClip"] = {
+	}
+	g_classFuncs["UGFxObject"]["RemoveMovieClip"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38245,
-	},
-	["AttachMovie"] = {
+	}
+	g_classFuncs["UGFxObject"]["AttachMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2267,8 +2281,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 38239,
 		retOffset = 32,
-	},
-	["CreateEmptyMovieClip"] = {
+	}
+	g_classFuncs["UGFxObject"]["CreateEmptyMovieClip"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2307,8 +2321,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38234,
 		retOffset = 20,
-	},
-	["GotoAndStopI"] = {
+	}
+	g_classFuncs["UGFxObject"]["GotoAndStopI"] = {
 		fields = {
 			{
 				name = "frame",
@@ -2321,8 +2335,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38232,
-	},
-	["GotoAndStop"] = {
+	}
+	g_classFuncs["UGFxObject"]["GotoAndStop"] = {
 		fields = {
 			{
 				name = "frame",
@@ -2335,8 +2349,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38230,
-	},
-	["GotoAndPlayI"] = {
+	}
+	g_classFuncs["UGFxObject"]["GotoAndPlayI"] = {
 		fields = {
 			{
 				name = "frame",
@@ -2349,8 +2363,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38228,
-	},
-	["GotoAndPlay"] = {
+	}
+	g_classFuncs["UGFxObject"]["GotoAndPlay"] = {
 		fields = {
 			{
 				name = "frame",
@@ -2363,8 +2377,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38226,
-	},
-	["ActionScriptArray"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptArray"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2387,8 +2401,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38222,
 		retOffset = 12,
-	},
-	["ActionScriptObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2409,8 +2423,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38219,
 		retOffset = 12,
-	},
-	["ActionScriptString"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2433,8 +2447,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38216,
 		retOffset = 12,
-	},
-	["ActionScriptFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2455,8 +2469,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38213,
 		retOffset = 12,
-	},
-	["ActionScriptInt"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptInt"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2477,8 +2491,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38210,
 		retOffset = 12,
-	},
-	["ActionScriptVoid"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptVoid"] = {
 		fields = {
 			{
 				name = "Method",
@@ -2491,8 +2505,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38208,
-	},
-	["Invoke"] = {
+	}
+	g_classFuncs["UGFxObject"]["Invoke"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2522,8 +2536,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 38203,
 		retOffset = 24,
-	},
-	["ActionScriptSetFunctionOn"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptSetFunctionOn"] = {
 		fields = {
 			{
 				name = "Target",
@@ -2544,8 +2558,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38200,
-	},
-	["ActionScriptSetFunction"] = {
+	}
+	g_classFuncs["UGFxObject"]["ActionScriptSetFunction"] = {
 		fields = {
 			{
 				name = "Member",
@@ -2558,8 +2572,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38198,
-	},
-	["SetElementMemberString"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementMemberString"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2588,8 +2602,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 38194,
-	},
-	["SetElementMemberFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementMemberFloat"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2618,8 +2632,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 38190,
-	},
-	["SetElementMemberBool"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementMemberBool"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2648,8 +2662,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 38186,
-	},
-	["SetElementMemberObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementMemberObject"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2678,8 +2692,8 @@ local c = g_classFuncs
 		},
 		dataSize = 20,
 		index = 38182,
-	},
-	["SetElementMember"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementMember"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2708,8 +2722,8 @@ local c = g_classFuncs
 		},
 		dataSize = 40,
 		index = 38178,
-	},
-	["GetElementMemberString"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementMemberString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2740,8 +2754,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 38174,
 		retOffset = 16,
-	},
-	["GetElementMemberFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementMemberFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2770,8 +2784,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 38170,
 		retOffset = 16,
-	},
-	["GetElementMemberBool"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementMemberBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2800,8 +2814,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 38166,
 		retOffset = 16,
-	},
-	["GetElementMemberObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementMemberObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2839,8 +2853,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38161,
 		retOffset = 20,
-	},
-	["GetElementMember"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementMember"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -2870,8 +2884,8 @@ local c = g_classFuncs
 		dataSize = 40,
 		index = 38157,
 		retOffset = 16,
-	},
-	["SetElementColorTransform"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementColorTransform"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2892,8 +2906,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 38154,
-	},
-	["SetElementPosition"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementPosition"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2922,8 +2936,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38150,
-	},
-	["SetElementVisible"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementVisible"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2944,8 +2958,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38147,
-	},
-	["SetElementDisplayMatrix"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementDisplayMatrix"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2966,8 +2980,8 @@ local c = g_classFuncs
 		},
 		dataSize = 80,
 		index = 38144,
-	},
-	["SetElementDisplayInfo"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementDisplayInfo"] = {
 		fields = {
 			{
 				name = "Index",
@@ -2988,8 +3002,8 @@ local c = g_classFuncs
 		},
 		dataSize = 48,
 		index = 38141,
-	},
-	["GetElementDisplayMatrix"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementDisplayMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3011,8 +3025,8 @@ local c = g_classFuncs
 		dataSize = 80,
 		index = 38138,
 		retOffset = 16,
-	},
-	["GetElementDisplayInfo"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementDisplayInfo"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3034,8 +3048,8 @@ local c = g_classFuncs
 		dataSize = 48,
 		index = 38135,
 		retOffset = 4,
-	},
-	["SetElementString"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementString"] = {
 		fields = {
 			{
 				name = "Index",
@@ -3056,8 +3070,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38132,
-	},
-	["SetElementFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementFloat"] = {
 		fields = {
 			{
 				name = "Index",
@@ -3078,8 +3092,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38129,
-	},
-	["SetElementBool"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementBool"] = {
 		fields = {
 			{
 				name = "Index",
@@ -3100,8 +3114,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38126,
-	},
-	["SetElementObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElementObject"] = {
 		fields = {
 			{
 				name = "Index",
@@ -3122,8 +3136,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38123,
-	},
-	["SetElement"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetElement"] = {
 		fields = {
 			{
 				name = "Index",
@@ -3144,8 +3158,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 38120,
-	},
-	["GetElementString"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3168,8 +3182,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38117,
 		retOffset = 4,
-	},
-	["GetElementFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3190,8 +3204,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38114,
 		retOffset = 4,
-	},
-	["GetElementBool"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3212,8 +3226,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38111,
 		retOffset = 4,
-	},
-	["GetElementObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElementObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3243,8 +3257,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38107,
 		retOffset = 8,
-	},
-	["GetElement"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetElement"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3266,8 +3280,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 38104,
 		retOffset = 4,
-	},
-	["SetText"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetText"] = {
 		fields = {
 			{
 				name = "Text",
@@ -3289,8 +3303,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38101,
-	},
-	["GetText"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetText"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3305,8 +3319,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38099,
 		retOffset = 0,
-	},
-	["SetVisible"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetVisible"] = {
 		fields = {
 			{
 				name = "Visible",
@@ -3319,8 +3333,8 @@ local c = g_classFuncs
 		},
 		dataSize = 4,
 		index = 38097,
-	},
-	["SetDisplayMatrix3D"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetDisplayMatrix3D"] = {
 		fields = {
 			{
 				name = "M",
@@ -3333,8 +3347,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 38095,
-	},
-	["SetDisplayMatrix"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetDisplayMatrix"] = {
 		fields = {
 			{
 				name = "M",
@@ -3347,8 +3361,8 @@ local c = g_classFuncs
 		},
 		dataSize = 64,
 		index = 38093,
-	},
-	["SetColorTransform"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetColorTransform"] = {
 		fields = {
 			{
 				name = "cxform",
@@ -3361,8 +3375,8 @@ local c = g_classFuncs
 		},
 		dataSize = 32,
 		index = 38091,
-	},
-	["SetPosition"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetPosition"] = {
 		fields = {
 			{
 				name = "X",
@@ -3383,8 +3397,8 @@ local c = g_classFuncs
 		},
 		dataSize = 8,
 		index = 38088,
-	},
-	["SetDisplayInfo"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetDisplayInfo"] = {
 		fields = {
 			{
 				name = "D",
@@ -3398,8 +3412,8 @@ local c = g_classFuncs
 		},
 		dataSize = 44,
 		index = 38086,
-	},
-	["GetDisplayMatrix"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetDisplayMatrix"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3413,8 +3427,8 @@ local c = g_classFuncs
 		dataSize = 64,
 		index = 38084,
 		retOffset = 0,
-	},
-	["GetColorTransform"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetColorTransform"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3428,8 +3442,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 38082,
 		retOffset = 0,
-	},
-	["GetPosition"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetPosition"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3458,8 +3472,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 38078,
 		retOffset = 8,
-	},
-	["GetDisplayInfo"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetDisplayInfo"] = {
 		fields = {
 			{
 				name = "D",
@@ -3473,8 +3487,8 @@ local c = g_classFuncs
 		},
 		dataSize = 44,
 		index = 38076,
-	},
-	["TranslateString"] = {
+	}
+	g_classFuncs["UGFxObject"]["TranslateString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3506,8 +3520,8 @@ local c = g_classFuncs
 		dataSize = 28,
 		index = 38072,
 		retOffset = 16,
-	},
-	["SetFunction"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetFunction"] = {
 		fields = {
 			{
 				name = "Member",
@@ -3536,8 +3550,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 38068,
-	},
-	["SetObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetObject"] = {
 		fields = {
 			{
 				name = "Member",
@@ -3558,8 +3572,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38065,
-	},
-	["SetString"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetString"] = {
 		fields = {
 			{
 				name = "Member",
@@ -3589,8 +3603,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 38061,
-	},
-	["SetFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetFloat"] = {
 		fields = {
 			{
 				name = "Member",
@@ -3611,8 +3625,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38058,
-	},
-	["SetBool"] = {
+	}
+	g_classFuncs["UGFxObject"]["SetBool"] = {
 		fields = {
 			{
 				name = "Member",
@@ -3633,8 +3647,8 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38055,
-	},
-	["Set"] = {
+	}
+	g_classFuncs["UGFxObject"]["Set"] = {
 		fields = {
 			{
 				name = "Member",
@@ -3655,8 +3669,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 38052,
-	},
-	["GetObject"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3686,8 +3700,8 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 38048,
 		retOffset = 16,
-	},
-	["GetString"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetString"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3710,8 +3724,8 @@ local c = g_classFuncs
 		dataSize = 24,
 		index = 38045,
 		retOffset = 12,
-	},
-	["GetFloat"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetFloat"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3732,8 +3746,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38042,
 		retOffset = 12,
-	},
-	["GetBool"] = {
+	}
+	g_classFuncs["UGFxObject"]["GetBool"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3754,8 +3768,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38039,
 		retOffset = 12,
-	},
-	["Get"] = {
+	}
+	g_classFuncs["UGFxObject"]["Get"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3777,8 +3791,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 38036,
 		retOffset = 12,
-	},
-	["ASRemoveAllEventListeners"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["ASRemoveAllEventListeners"] = {
 		fields = {
 			{
 				name = "Event",
@@ -3791,8 +3805,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38290,
-	},
-	["ASAddEventListener"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["ASAddEventListener"] = {
 		fields = {
 			{
 				name = "Type",
@@ -3821,8 +3835,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 38287,
-	},
-	["SetListener"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["SetListener"] = {
 		fields = {
 			{
 				name = "O",
@@ -3851,8 +3865,8 @@ local c = g_classFuncs
 		},
 		dataSize = 28,
 		index = 38286,
-	},
-	["GetEventStringFromTypename"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["GetEventStringFromTypename"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3875,8 +3889,8 @@ local c = g_classFuncs
 		dataSize = 32,
 		index = 38285,
 		retOffset = 8,
-	},
-	["RemoveAllEventListeners"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["RemoveAllEventListeners"] = {
 		fields = {
 			{
 				name = "Event",
@@ -3889,8 +3903,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38288,
-	},
-	["AddEventListener"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["AddEventListener"] = {
 		fields = {
 			{
 				name = "Type",
@@ -3911,8 +3925,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 38281,
-	},
-	["EventListener"] = {
+	}
+	g_classFuncs["UGFxClikWidget"]["EventListener"] = {
 		fields = {
 			{
 				name = "Data",
@@ -3925,8 +3939,8 @@ local c = g_classFuncs
 		},
 		dataSize = 36,
 		index = 38278,
-	},
-	["GetPathForLoadMovie"] = {
+	}
+	g_classFuncs["USwfMovie"]["GetPathForLoadMovie"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3941,8 +3955,8 @@ local c = g_classFuncs
 		dataSize = 12,
 		index = 37613,
 		retOffset = 0,
-	},
-	["eventIsValidLevelSequenceObject"] = {
+	}
+	g_classFuncs["UGFxAction_CloseMovie"]["eventIsValidLevelSequenceObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3955,8 +3969,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37617,
 		retOffset = 0,
-	},
-	["eventIsValidLevelSequenceObject"] = {
+	}
+	g_classFuncs["UGFxAction_GetVariable"]["eventIsValidLevelSequenceObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3969,8 +3983,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37621,
 		retOffset = 0,
-	},
-	["eventIsValidLevelSequenceObject"] = {
+	}
+	g_classFuncs["UGFxAction_Invoke"]["eventIsValidLevelSequenceObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3983,8 +3997,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37979,
 		retOffset = 0,
-	},
-	["eventIsValidLevelSequenceObject"] = {
+	}
+	g_classFuncs["UGFxAction_OpenMovie"]["eventIsValidLevelSequenceObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -3997,8 +4011,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 37998,
 		retOffset = 0,
-	},
-	["eventIsValidLevelSequenceObject"] = {
+	}
+	g_classFuncs["UGFxAction_SetVariable"]["eventIsValidLevelSequenceObject"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4011,8 +4025,8 @@ local c = g_classFuncs
 		dataSize = 4,
 		index = 38005,
 		retOffset = 0,
-	},
-	["eventFSCommand"] = {
+	}
+	g_classFuncs["UGFxFSCmdHandler_Kismet"]["eventFSCommand"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4057,8 +4071,8 @@ local c = g_classFuncs
 		dataSize = 36,
 		index = 38344,
 		retOffset = 32,
-	},
-	["SaveSubscriberValue"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["SaveSubscriberValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4090,14 +4104,14 @@ local c = g_classFuncs
 		dataSize = 20,
 		index = 38323,
 		retOffset = 16,
-	},
-	["ClearBoundDataStores"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["ClearBoundDataStores"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38322,
-	},
-	["GetBoundDataStores"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["GetBoundDataStores"] = {
 		fields = {
 			{
 				name = "out_BoundDataStores",
@@ -4112,8 +4126,8 @@ local c = g_classFuncs
 		},
 		dataSize = 12,
 		index = 38319,
-	},
-	["NotifyDataStoreValueUpdated"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["NotifyDataStoreValueUpdated"] = {
 		fields = {
 			{
 				name = "SourceDataStore",
@@ -4158,8 +4172,8 @@ local c = g_classFuncs
 		},
 		dataSize = 24,
 		index = 38313,
-	},
-	["RefreshSubscriberValue"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["RefreshSubscriberValue"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4181,8 +4195,8 @@ local c = g_classFuncs
 		dataSize = 8,
 		index = 38310,
 		retOffset = 4,
-	},
-	["GetDataStoreBinding"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["GetDataStoreBinding"] = {
 		fields = {
 			{
 				name = "ReturnValue",
@@ -4206,8 +4220,8 @@ local c = g_classFuncs
 		dataSize = 16,
 		index = 38307,
 		retOffset = 4,
-	},
-	["SetDataStoreBinding"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["SetDataStoreBinding"] = {
 		fields = {
 			{
 				name = "MarkupText",
@@ -4229,10 +4243,10 @@ local c = g_classFuncs
 		},
 		dataSize = 16,
 		index = 38304,
-	},
-	["PublishValues"] = {
+	}
+	g_classFuncs["UGFxDataStoreSubscriber"]["PublishValues"] = {
 		fields = {
 		},
 		dataSize = 0,
 		index = 38303,
-	},
+	}

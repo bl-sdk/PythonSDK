@@ -1,3 +1,8 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
 // 0x8 
 struct FIpAddr {
 	int Addr; // 0x0 (0x4)
@@ -172,3 +177,4 @@ struct FClientBeaconConnection {
 	struct FPointer Socket; // 0x1C (0x4)
 };
 
+]]

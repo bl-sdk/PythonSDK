@@ -1,3 +1,9 @@
+
+local ffi = require("ffi")
+
+ffi.cdef[[
+
+
 // 0x3C 
 struct UIWorldBody_Data {
 	// Last Offset: 0x3C
@@ -26708,6 +26714,8 @@ struct AWindDirectionalSource {
 	struct AInfo_Data AInfo;
 	struct AWindDirectionalSource_Data AWindDirectionalSource;
 };
+
+]]
 
 table.insert(g_loadedClasses, { "UIWorldBody", 143, "UInterface" })
 table.insert(g_loadedClasses, { "AActor", 145, "UObject" })
