@@ -55977,7 +55977,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[86557];
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[86746];
 
 		return pClassPointer;
 	};

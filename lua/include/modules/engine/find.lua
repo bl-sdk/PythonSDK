@@ -47,9 +47,9 @@ end
 local function FindObjectExactClass(objectName, class)
 	for i=0,(Objects.Count-1) do
 		local obj = Objects[i]
-		if obj == nil or class == nil then goto continue end
+		if obj == nil then goto continue end
 		if obj.UObject.Class ~= class.static then goto continue end
-
+		print(obj:GetFullName())
 		if obj:GetFullName() == objectName then
 			return obj
 		end
