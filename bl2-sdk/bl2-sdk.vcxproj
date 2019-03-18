@@ -107,7 +107,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(ProjectDir)bin</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -148,7 +148,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(ProjectDir)bin</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
