@@ -59,6 +59,13 @@ namespace Settings
 		return newPath;
 	}
 
+	std::wstring GetPythonFile(const std::wstring& filename)
+	{
+		std::wstring newPath;
+		newPath = binPath + L"..\\plugins\\python\\" + filename;
+		return newPath;
+	}
+
 	bool DeveloperModeEnabled()
 	{
 		return developerMode;

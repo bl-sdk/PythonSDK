@@ -37,7 +37,8 @@ namespace BL2SDK
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
 
-	CLuaInterface * Lua;
+	CLuaInterface *Lua;
+	CPythonInterface *Python;
 
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;

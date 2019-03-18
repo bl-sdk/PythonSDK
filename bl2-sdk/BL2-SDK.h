@@ -4,6 +4,7 @@
 
 #include <string>
 #include "CLuaInterface.h"
+#include "CPythonInterface.h"
 
 class UObject;
 class UFunction;
@@ -36,6 +37,7 @@ namespace BL2SDK
 	extern tByteOrderSerialize pByteOrderSerialize;
 
 	extern CLuaInterface * Lua;
+	extern CPythonInterface * Python;
 
 	extern int EngineVersion;
 	extern int ChangelistNumber;

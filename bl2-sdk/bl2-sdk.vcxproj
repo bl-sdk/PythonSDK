@@ -75,6 +75,8 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -83,6 +85,8 @@
     <LinkIncremental>false</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -103,7 +107,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(ProjectDir)bin</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -144,7 +148,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(ProjectDir)bin</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -176,6 +180,7 @@
     <ClCompile Include="CHookManager.cpp" />
     <ClCompile Include="CLuaInterface.cpp" />
     <ClCompile Include="Core_functions.cpp" />
+    <ClCompile Include="CPythonInterface.cpp" />
     <ClCompile Include="CSigScan.cpp" />
     <ClCompile Include="CSimpleDetour.cpp" />
     <ClCompile Include="detours.cpp" />
@@ -220,6 +225,7 @@
     <ClInclude Include="Core_classes.h" />
     <ClInclude Include="Core_f_structs.h" />
     <ClInclude Include="Core_structs.h" />
+    <ClInclude Include="CPythonInterface.h" />
     <ClInclude Include="CSigScan.h" />
     <ClInclude Include="CSimpleDetour.h" />
     <ClInclude Include="detours.h" />
