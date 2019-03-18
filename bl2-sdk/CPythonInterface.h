@@ -39,6 +39,8 @@ private:
 
 	PyObject*		m_pModule;
 	std::string		m_PythonPath;
+	std::string		m_StdoutBuffer;
+	std::string		m_StderrBuffer;
 	bool			m_modulesInitialized;
 };
 

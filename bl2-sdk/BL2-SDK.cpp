@@ -252,10 +252,10 @@ namespace BL2SDK
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
 		detProcessEvent.Attach();
 		
-		// Detour Unreal exception handler
-		//SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
-		CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
-		detUnrealEH.Attach();
+		//// Detour Unreal exception handler
+		////SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
+		//CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
+		//detUnrealEH.Attach();
 		
 		// Detour UObject::CallFunction()
 		//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
@@ -314,9 +314,8 @@ namespace BL2SDK
 			const char* name = realParms->Key.GetName();
 			if (strcmp(name, "F11") == 0)
 			{
-				// Reset the lua state
-				delete Lua;
-				InitializeLua();
+				delete Python;
+				InitializePython();
 				return false;
 			}
 			/*
