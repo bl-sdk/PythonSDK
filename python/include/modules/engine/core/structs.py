@@ -3,7 +3,8 @@ import BL2SDK
 
 ffi = FFI()
 
-ffi.cdef("""
+ffi.cdef(
+    """
 	struct TArray {
 		unsigned char* Data;
 		int Count;
@@ -74,4 +75,5 @@ ffi.cdef("""
 		struct FFrame* PreviousFrame;
 		struct FOutParmRec* OutParms;
 	};
-""")
+"""
+)

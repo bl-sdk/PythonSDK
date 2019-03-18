@@ -6,6 +6,7 @@ from .core import *
 
 # Load helpers for core engine types
 from .helpers.TArray import *
+
 # from .helpers.FString import *
 # from .helpers.UObject import *
 # from .helpers.FOutParmRec import *
@@ -13,8 +14,12 @@ from .helpers.TArray import *
 BL2SDK.engine = {}
 
 # Core engine data structures that we'll need access to
-BL2SDK.engine["Objects"] = TArray("UObjectPtr", ffi.cast("struct TArray*", BL2SDK.GObjects))
-BL2SDK.engine["Names"] = TArray("FNameEntryPtr", ffi.cast("struct TArray*", BL2SDK.GNames))
+BL2SDK.engine["Objects"] = TArray(
+    "UObjectPtr", ffi.cast("struct TArray*", BL2SDK.GObjects)
+)
+BL2SDK.engine["Names"] = TArray(
+    "FNameEntryPtr", ffi.cast("struct TArray*", BL2SDK.GNames)
+)
 
 print(BL2SDK.engine["Objects"].data[0])
 

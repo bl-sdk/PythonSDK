@@ -1,10 +1,10 @@
-
 from cffi import FFI
 import BL2SDK
 
 ffi = FFI()
 
-ffi.cdef("""
+ffi.cdef(
+    """
 	struct UObject_Data { 
 		const struct FPointer 	VfTableObject;
 		const struct UObject*	HashNext;
@@ -309,9 +309,10 @@ ffi.cdef("""
 		struct UProperty_Data 		UProperty;
 		struct UMapProperty_Data 	UMapProperty;
 	};
-""")
+"""
+)
 
-#							  Class Name -   Engine Name   - Base Class
+# 							  Class Name -   Engine Name   - Base Class
 BL2SDK.g_loadedClasses += [("UObject", "Class Core.Object", None)]
 BL2SDK.g_loadedClasses += [("UField", "Class Core.Field", "UObject")]
 BL2SDK.g_loadedClasses += [("UEnum", "Class Core.Enum", "UField")]
@@ -328,11 +329,23 @@ BL2SDK.g_loadedClasses += [("UFloatProperty", "Class Core.FloatProperty", "UProp
 BL2SDK.g_loadedClasses += [("UBoolProperty", "Class Core.BoolProperty", "UProperty")]
 BL2SDK.g_loadedClasses += [("UStrProperty", "Class Core.StrProperty", "UProperty")]
 BL2SDK.g_loadedClasses += [("UNameProperty", "Class Core.NameProperty", "UProperty")]
-BL2SDK.g_loadedClasses += [("UDelegateProperty", "Class Core.DelegateProperty", "UProperty")]
-BL2SDK.g_loadedClasses += [("UObjectProperty", "Class Core.ObjectProperty", "UProperty")]
-BL2SDK.g_loadedClasses += [("UComponentProperty", "Class Core.ComponentProperty", "UObjectProperty")]
-BL2SDK.g_loadedClasses += [("UClassProperty", "Class Core.ClassProperty", "UObjectProperty")]
-BL2SDK.g_loadedClasses += [("UInterfaceProperty", "Class Core.InterfaceProperty", "UProperty")]
-BL2SDK.g_loadedClasses += [("UStructProperty", "Class Core.StructProperty", "UProperty")]
+BL2SDK.g_loadedClasses += [
+    ("UDelegateProperty", "Class Core.DelegateProperty", "UProperty")
+]
+BL2SDK.g_loadedClasses += [
+    ("UObjectProperty", "Class Core.ObjectProperty", "UProperty")
+]
+BL2SDK.g_loadedClasses += [
+    ("UComponentProperty", "Class Core.ComponentProperty", "UObjectProperty")
+]
+BL2SDK.g_loadedClasses += [
+    ("UClassProperty", "Class Core.ClassProperty", "UObjectProperty")
+]
+BL2SDK.g_loadedClasses += [
+    ("UInterfaceProperty", "Class Core.InterfaceProperty", "UProperty")
+]
+BL2SDK.g_loadedClasses += [
+    ("UStructProperty", "Class Core.StructProperty", "UProperty")
+]
 BL2SDK.g_loadedClasses += [("UArrayProperty", "Class Core.ArrayProperty", "UProperty")]
 BL2SDK.g_loadedClasses += [("UMapProperty", "Class Core.MapProperty", "UProperty")]

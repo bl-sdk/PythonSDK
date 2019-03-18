@@ -12,16 +12,20 @@ import BL2SDK
 ffi = FFI()
 
 
-class TArray():
-	data = None
-	inner_type = None
-	def __init__(self, inner_type, cdata):
-		if inner_type in BL2SDK.g_TArrayTypes:
-			self.data = ffi.cast("struct TArray_{} *".format(inner_type), cdata)
-			self.inner_type = inner_type
+class TArray:
+    data = None
+    inner_type = None
 
-	def __getitem__(self, indices):
-		return ffi.cast("struct TArray_{}".format(self.inner_type), self.data[0].data[indices]) 
+    def __init__(self, inner_type, cdata):
+        if inner_type in BL2SDK.g_TArrayTypes:
+            self.data = ffi.cast("struct TArray_{} *".format(inner_type), cdata)
+            self.inner_type = inner_type
+
+    def __getitem__(self, indices):
+        return ffi.cast(
+            "struct TArray_{}".format(self.inner_type), self.data[0].data[indices]
+        )
+
 
 # function TArrayMT.__index(self, idx)
 # 	if type(idx) == "number" then
