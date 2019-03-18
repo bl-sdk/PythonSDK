@@ -54,14 +54,23 @@ static PyModuleDef SDKModule = {
 
 bool PythonTick(UObject* caller, UFunction* function, void* parms, void* result)
 {
+	Logging::Log("[Python] PythonTick1\n");
 	PyObject *pModule = BL2SDK::Python->GetPythonModule();
+	Logging::Log("[Python] PythonTick2\n");
 	PyObject *catcher = PyObject_GetAttrString(pModule, "catchOutErr");
+	Logging::Log("[Python] PythonTick3\n");
 	PyErr_Print();
+	Logging::Log("[Python] PythonTick4\n");
 	PyObject *output_obj = PyObject_GetAttrString(catcher, "value");
+	Logging::Log("[Python] PythonTick5\n");
 	PyObject* encoded_obj = PyUnicode_AsEncodedString(output_obj, "utf-8", "strict");
+	Logging::Log("[Python] PythonTick6\n");
 	std::string output = PyBytes_AsString(encoded_obj);
+	Logging::Log("[Python] PythonTick7\n");
 	Logging::Log(output.c_str());
+	Logging::Log("[Python] PythonTick8\n");
 	PyObject_SetAttrString(pModule, "catchOutErr", Py_BuildValue("s", ""));
+	Logging::Log("[Python] PythonTick9\n");
 	return true;
 }
 
@@ -70,7 +79,9 @@ CPythonInterface::CPythonInterface()
 	m_modulesInitialized = false;
 	InitializeState();
 
+	Logging::Log("[Python] Registering hook\n");
 	GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:Tick", "PythonGCTick", &PythonTick);
+	Logging::Log("[Python] Hook registered\n");
 }
 
 CPythonInterface::~CPythonInterface()
@@ -102,18 +113,21 @@ sys.stderr = catchOutErr\n\
 
 void CPythonInterface::InitializeState()
 {
+	Logging::LogF("[Python] InitializeState Start.\n");
 	Py_Initialize();
 	PyObject *m_pModule = PyModule_Create(&SDKModule);
 	InitLogging();
 
+	#ifdef _DEBUG
+		// And set whether we're in debug mode or not
+		PyModule_AddObject(m_pModule, "_DEBUG", Py_BuildValue("i", 1));
+	#endif
 
-#ifdef _DEBUG
-	// And set whether we're in debug mode or not
-	PyModule_AddObject(m_pModule, "_DEBUG", Py_BuildValue("i", 1));
-#endif
-
+	Logging::LogF("[Python] Setting SDK Values.\n");
 	SetSDKValues();
+	Logging::LogF("[Python] Setting Paths.\n");
 	SetPaths();
+	Logging::LogF("[Python] InitializeState Complete.\n");
 }
 
 void CPythonInterface::CleanupState()
@@ -124,12 +138,14 @@ void CPythonInterface::CleanupState()
 PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
+	Logging::LogF("[Python] InitializeModules Start.\n");
 
 	if (DoFile("include\\init.py") != 0) // Means it failed, TODO: More obvious warning for this
 	{
 		Logging::Log("[Python] Failed to initialize Lua modules\n");
 		return PYTHON_MODULE_ERROR;
 	}
+	Logging::LogF("[Python] Do I reset?.\n");
 	if (PyObject_IsTrue(PyObject_GetAttrString(m_pModule, "RESET_FLAG")))
 	{
 		CleanupState();
@@ -146,7 +162,9 @@ PythonStatus CPythonInterface::InitializeModules()
 
 void CPythonInterface::SetSDKValues()
 {
+	Logging::LogF("[Python] Set a single value.\n");
 	PyModule_AddObject(m_pModule, "GNames", Py_BuildValue("O&", BL2SDK::pGNames));
+	Logging::LogF("[Python] Set a single value.\n");
 	PyModule_AddObject(m_pModule, "GObjects", Py_BuildValue("O&", BL2SDK::pGObjects));
 	PyModule_AddObject(m_pModule, "ProcessEvent", Py_BuildValue("O&", BL2SDK::pProcessEvent));
 	PyModule_AddObject(m_pModule, "GObjHash", Py_BuildValue("O&", BL2SDK::pGObjHash));
@@ -155,6 +173,8 @@ void CPythonInterface::SetSDKValues()
 	PyModule_AddObject(m_pModule, "FrameStep", Py_BuildValue("O&", BL2SDK::pFrameStep));
 	PyModule_AddObject(m_pModule, "CallFunction", Py_BuildValue("O&", BL2SDK::pCallFunction));
 	PyModule_AddObject(m_pModule, "GMalloc", Py_BuildValue("O&", BL2SDK::pGMalloc));
+
+	Logging::LogF("[Python] Midway Setting SDK Values.\n");
 
 	PyModule_AddObject(m_pModule, "EngineVersion", Py_BuildValue("i", BL2SDK::EngineVersion));
 	PyModule_AddObject(m_pModule, "ChangeListNumber", Py_BuildValue("i", BL2SDK::ChangelistNumber));
@@ -173,15 +193,22 @@ void CPythonInterface::SetPaths()
 
 int CPythonInterface::DoFile(const std::string& filename)
 {
+	Logging::LogF("[Python] DoFile.\n");
 	return DoFileAbsolute(Util::Format("%s\\%s", m_PythonPath.c_str(), filename.c_str()));
 }
 
 int CPythonInterface::DoFileAbsolute(const std::string& path)
 {
+	Logging::LogF("[Python] DoFileAbsolute '%s'.\n", path.c_str());
 	PyObject *obj = Py_BuildValue("s", path);
+	Logging::LogF("[Python] DoFileAbsolute2.\n");
 	FILE *file = _Py_fopen_obj(obj, "r+");
+	Logging::LogF("[Python] DoFileAbsolute3.\n");
 	if (file != NULL)
+	{
+		Logging::LogF("[Python] DoFileAbsolute4.\n");
 		return PyRun_SimpleFile(file, path.c_str());
+	}
 	return -1;
 }
 

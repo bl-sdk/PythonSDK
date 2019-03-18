@@ -284,6 +284,26 @@ namespace BL2SDK
 		}
 	}
 
+	void InitializePython()
+	{
+		Python = new CPythonInterface();
+		PythonStatus status = Python->InitializeModules();
+		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
+		{
+			Util::Popup(L"Python Module Error",
+				L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
+		}
+		else if (status == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
+		{
+			Util::Popup(L"Python Module Error",
+				L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
+		}
+		else if (status == PYTHON_OK)
+		{
+			Logging::LogF("[Internal] Python initialized successfully.\n");
+		}
+	}
+
 	bool devInputKeyHook(UObject* caller, UFunction* function, void* parms, void* result)
 	{
 		UWillowGameViewportClient_execInputKey_Parms* realParms = reinterpret_cast<UWillowGameViewportClient_execInputKey_Parms*>(parms);
@@ -319,6 +339,7 @@ namespace BL2SDK
 	bool getCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
 	{
 		InitializeLua();
+		InitializePython();
 
 		if (Settings::DeveloperModeEnabled())
 		{
@@ -373,7 +394,7 @@ namespace BL2SDK
 
 	void initialize(wchar_t * exeBaseFolder)
 	{
-		//HookAntiDebug();
+		HookAntiDebug();
 		GameHooks::Initialize();
 		hookGame();
 		//InitializePackageFix();
