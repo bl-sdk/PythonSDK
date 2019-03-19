@@ -1,15 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UXAudio2Device_Data(Structure):
-    pass
-
-
-class UXAudio2Device(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -34,6 +25,12 @@ from ..classes.AkAudio import *
 from ..classes.IpDrv import *
 from ..classes.WinDrv import *
 
+class UXAudio2Device_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UXAudio2Device(BL2SDK.UObject_Base):
+    pass
 
 def init():
     UXAudio2Device_Data._fields_ = [("Unknown1", c_ubyte * 0x9C)]

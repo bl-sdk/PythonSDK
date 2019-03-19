@@ -1,71 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UOnlineAuthInterfaceSteamworks_Data(Structure):
-    pass
-
-
-class UOnlineAuthInterfaceSteamworks(Structure):
-    pass
-
-
-class UOnlineGameInterfaceSteamworks_Data(Structure):
-    pass
-
-
-class UOnlineGameInterfaceSteamworks(Structure):
-    pass
-
-
-class UOnlineLobbyInterfaceSteamworks_Data(Structure):
-    pass
-
-
-class UOnlineLobbyInterfaceSteamworks(Structure):
-    pass
-
-
-class UOnlineSubsystemSteamworks_Data(Structure):
-    pass
-
-
-class UOnlineSubsystemSteamworks(Structure):
-    pass
-
-
-class UQoSHandlerSteamworks_Data(Structure):
-    pass
-
-
-class UQoSHandlerSteamworks(Structure):
-    pass
-
-
-class USparkInterfaceSteamworks_Data(Structure):
-    pass
-
-
-class USparkInterfaceSteamworks(Structure):
-    pass
-
-
-class UIpNetDriverSteamworks_Data(Structure):
-    pass
-
-
-class UIpNetDriverSteamworks(Structure):
-    pass
-
-
-class UIpNetConnectionSteamworks_Data(Structure):
-    pass
-
-
-class UIpNetConnectionSteamworks(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -92,6 +27,68 @@ from ..classes.IpDrv import *
 from ..classes.WinDrv import *
 from ..classes.XAudio2 import *
 
+class UOnlineAuthInterfaceSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterfaceSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameInterfaceSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameInterfaceSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineLobbyInterfaceSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineLobbyInterfaceSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSubsystemSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSubsystemSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class UQoSHandlerSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UQoSHandlerSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class USparkInterfaceSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USparkInterfaceSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class UIpNetDriverSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIpNetDriverSteamworks(BL2SDK.UObject_Base):
+    pass
+
+
+class UIpNetConnectionSteamworks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIpNetConnectionSteamworks(BL2SDK.UObject_Base):
+    pass
 
 def init():
 

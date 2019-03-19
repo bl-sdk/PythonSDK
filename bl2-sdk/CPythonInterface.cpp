@@ -171,9 +171,25 @@ static PyObject* sdk_loadfile(PyObject *self, PyObject *args)
 }
 
 
+static PyObject* sdk_GetObjectFullName(PyObject *self, PyObject *args)
+{
+	UObject* obj;
+
+	if (PyArg_ParseTuple(args, "i", &obj))
+	{
+		return Py_BuildValue("s", obj->GetFullName());
+	}
+	else
+		Logging::Log("[Python] No string fed to LoadString");
+	return NULL;
+	
+}
+
+
 static PyMethodDef SDKMethods[] = {
 	{"LoadString", sdk_loadstring, METH_O, "Executes a python string from the C++ SDK."},
 	{"LoadFile", sdk_loadfile, METH_O, "Executes a python file from the C++ SDK."},
+	{"GetFullName", sdk_GetObjectFullName, METH_O, "Executes a python file from the C++ SDK."},
 	{NULL, NULL, 0, NULL}
 };
 

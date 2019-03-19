@@ -11,7 +11,7 @@ class SDKFunction():
         self.dataSize = data[1]["dataSize"]
         self.index = data[1]["index"]
         self.name = data[0]
-        self.ptr = cast(engine.Objects[0].Data[self.index], POINTER(UFunction))
+        self.ptr = cast(engine.Objects.Data[self.index], POINTER(UFunction))
         self.index = None
 
 class SDKClass():
@@ -26,7 +26,7 @@ class SDKClass():
         if isinstance(definition[1], str):
             self.static = None # TODO: cast(engine.FindClass(definition[1]), POINTER(UClass)) 
         else:
-            self.static = cast(engine.Objects[0].Data[definition[1]], POINTER(UClass))
+            self.static = cast(engine.Objects.Data[definition[1]], POINTER(UClass))
         if not self.static:
             print("Failed to find class '" + definition[0]  + "'")
 
@@ -74,23 +74,13 @@ class SDKEngine():
 BL2SDK.engine = SDKEngine()
 engine = BL2SDK.engine
 
-engine.Objects = cast(BL2SDK.GObjects, POINTER(TArray_UObjectPtr))
-engine.Names = cast(BL2SDK.GNames, POINTER(TArray_FNameEntryPtr))
+engine.Objects = cast(BL2SDK.GObjects, POINTER(TArray_UObjectPtr))[0]
+engine.Names = cast(BL2SDK.GNames, POINTER(TArray_FNameEntryPtr))[0]
 
 engine.InitializeClasses()
 engine.ResolveArgClasses()
 
-def monkeypatch(self):
-    return self.UObject.Name.Index
-
-UObject.getNameIndex = monkeypatch
-
-# for x in range(BL2SDK.engine.Objects[0].Count):
-#     obj = BL2SDK.engine.Objects[0].Data[x]
-#     if obj:
-#         index = obj[0].getNameIndex()
-#         s = BL2SDK.engine.Names[0].Data[index][0].Name
-#         if 'AnimNodeSpecialMoveBlend' == s.decode(encoding='UTF-8'):
-#             print(x,index,s)
+for x in range(1000):
+    print(BL2SDK.engine.Objects[x][0].GetName())
 
 print(engine.FindClass(UWillowConsole))

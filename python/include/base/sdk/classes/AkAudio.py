@@ -1,175 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UActorFactoryAkAmbientSound_Data(Structure):
-    pass
-
-
-class UActorFactoryAkAmbientSound(Structure):
-    pass
-
-
-class AAkAmbientSound_Data(Structure):
-    pass
-
-
-class AAkAmbientSound(Structure):
-    pass
-
-
-class UAkAmbientSoundRenderingComponent_Data(Structure):
-    pass
-
-
-class UAkAmbientSoundRenderingComponent(Structure):
-    pass
-
-
-class UIAkEnvironmentalEffectProvider_Data(Structure):
-    pass
-
-
-class UIAkEnvironmentalEffectProvider(Structure):
-    pass
-
-
-class UInterpTrackAkEvent_Data(Structure):
-    pass
-
-
-class UInterpTrackAkEvent(Structure):
-    pass
-
-
-class UInterpTrackAkRTPC_Data(Structure):
-    pass
-
-
-class UInterpTrackAkRTPC(Structure):
-    pass
-
-
-class UInterpTrackInstAkEvent_Data(Structure):
-    pass
-
-
-class UInterpTrackInstAkEvent(Structure):
-    pass
-
-
-class UInterpTrackInstAkRTPC_Data(Structure):
-    pass
-
-
-class UInterpTrackInstAkRTPC(Structure):
-    pass
-
-
-class UISpecialOcclusionAccumulator_Data(Structure):
-    pass
-
-
-class UISpecialOcclusionAccumulator(Structure):
-    pass
-
-
-class USeqAct_AkClearBanks_Data(Structure):
-    pass
-
-
-class USeqAct_AkClearBanks(Structure):
-    pass
-
-
-class USeqAct_AkLoadBank_Data(Structure):
-    pass
-
-
-class USeqAct_AkLoadBank(Structure):
-    pass
-
-
-class USeqAct_AkPostEvent_Data(Structure):
-    pass
-
-
-class USeqAct_AkPostEvent(Structure):
-    pass
-
-
-class USeqAct_AkPostTrigger_Data(Structure):
-    pass
-
-
-class USeqAct_AkPostTrigger(Structure):
-    pass
-
-
-class USeqAct_AkSetRTPCValue_Data(Structure):
-    pass
-
-
-class USeqAct_AkSetRTPCValue(Structure):
-    pass
-
-
-class USeqAct_AkSetState_Data(Structure):
-    pass
-
-
-class USeqAct_AkSetState(Structure):
-    pass
-
-
-class USeqAct_AkSetSwitch_Data(Structure):
-    pass
-
-
-class USeqAct_AkSetSwitch(Structure):
-    pass
-
-
-class USeqAct_AkStopAll_Data(Structure):
-    pass
-
-
-class USeqAct_AkStopAll(Structure):
-    pass
-
-
-class AWwiseSoundGroup_Data(Structure):
-    pass
-
-
-class AWwiseSoundGroup(Structure):
-    pass
-
-
-class UWwiseSoundGroupRenderingComponent_Data(Structure):
-    pass
-
-
-class UWwiseSoundGroupRenderingComponent(Structure):
-    pass
-
-
-class AWwiseSoundVolume_Data(Structure):
-    pass
-
-
-class AWwiseSoundVolume(Structure):
-    pass
-
-
-class TArray_AWwiseSoundVolumePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWwiseSoundVolume))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -188,6 +19,172 @@ from ..classes.GFxUI import *
 from ..classes.GearboxFramework import *
 from ..classes.WillowGame import *
 
+class UActorFactoryAkAmbientSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryAkAmbientSound(BL2SDK.UObject_Base):
+    pass
+
+
+class AAkAmbientSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAkAmbientSound(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkAmbientSoundRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkAmbientSoundRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAkEnvironmentalEffectProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAkEnvironmentalEffectProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAkEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAkEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAkRTPC_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAkRTPC(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAkEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAkEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAkRTPC_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAkRTPC(BL2SDK.UObject_Base):
+    pass
+
+
+class UISpecialOcclusionAccumulator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISpecialOcclusionAccumulator(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkClearBanks_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkClearBanks(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkLoadBank_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkLoadBank(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkPostEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkPostEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkPostTrigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkPostTrigger(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkSetRTPCValue_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkSetRTPCValue(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkSetState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkSetState(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkSetSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkSetSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkStopAll_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AkStopAll(BL2SDK.UObject_Base):
+    pass
+
+
+class AWwiseSoundGroup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWwiseSoundGroup(BL2SDK.UObject_Base):
+    pass
+
+
+class UWwiseSoundGroupRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWwiseSoundGroupRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AWwiseSoundVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWwiseSoundVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWwiseSoundVolumePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWwiseSoundVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 def init():
     UActorFactoryAkAmbientSound_Data._fields_ = [("AmbientEvent", POINTER(UAkEvent))]

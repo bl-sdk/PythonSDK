@@ -1,239 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UClientBeaconAddressResolver_Data(Structure):
-    pass
-
-
-class UClientBeaconAddressResolver(Structure):
-    pass
-
-
-class UHTTPDownload_Data(Structure):
-    pass
-
-
-class UHTTPDownload(Structure):
-    pass
-
-
-class AInternetLink_Data(Structure):
-    pass
-
-
-class AInternetLink(Structure):
-    pass
-
-
-class ATcpLink_Data(Structure):
-    pass
-
-
-class ATcpLink(Structure):
-    pass
-
-
-class UMCPBase_Data(Structure):
-    pass
-
-
-class UMCPBase(Structure):
-    pass
-
-
-class UOnlineEventsInterfaceMcp_Data(Structure):
-    pass
-
-
-class UOnlineEventsInterfaceMcp(Structure):
-    pass
-
-
-class UOnlineNewsInterfaceMcp_Data(Structure):
-    pass
-
-
-class UOnlineNewsInterfaceMcp(Structure):
-    pass
-
-
-class UOnlineTitleFileDownloadMcp_Data(Structure):
-    pass
-
-
-class UOnlineTitleFileDownloadMcp(Structure):
-    pass
-
-
-class UMeshBeacon_Data(Structure):
-    pass
-
-
-class UMeshBeacon(Structure):
-    pass
-
-
-class UMeshBeaconClient_Data(Structure):
-    pass
-
-
-class UMeshBeaconClient(Structure):
-    pass
-
-
-class UMeshBeaconHost_Data(Structure):
-    pass
-
-
-class UMeshBeaconHost(Structure):
-    pass
-
-
-class UOnlineSubsystemCommonImpl_Data(Structure):
-    pass
-
-
-class UOnlineSubsystemCommonImpl(Structure):
-    pass
-
-
-class UOnlineAuthInterfaceImpl_Data(Structure):
-    pass
-
-
-class UOnlineAuthInterfaceImpl(Structure):
-    pass
-
-
-class UOnlineGameInterfaceImpl_Data(Structure):
-    pass
-
-
-class UOnlineGameInterfaceImpl(Structure):
-    pass
-
-
-class UOnlinePlaylistManager_Data(Structure):
-    pass
-
-
-class UOnlinePlaylistManager(Structure):
-    pass
-
-
-class UPartyBeacon_Data(Structure):
-    pass
-
-
-class UPartyBeacon(Structure):
-    pass
-
-
-class UPartyBeaconClient_Data(Structure):
-    pass
-
-
-class UPartyBeaconClient(Structure):
-    pass
-
-
-class UPartyBeaconHost_Data(Structure):
-    pass
-
-
-class UPartyBeaconHost(Structure):
-    pass
-
-
-class UTcpipConnection_Data(Structure):
-    pass
-
-
-class UTcpipConnection(Structure):
-    pass
-
-
-class UTcpNetDriver_Data(Structure):
-    pass
-
-
-class UTcpNetDriver(Structure):
-    pass
-
-
-class UWebRequest_Data(Structure):
-    pass
-
-
-class UWebRequest(Structure):
-    pass
-
-
-class UWebResponse_Data(Structure):
-    pass
-
-
-class UWebResponse(Structure):
-    pass
-
-
-class UOnlinePlaylistProvider_Data(Structure):
-    pass
-
-
-class UOnlinePlaylistProvider(Structure):
-    pass
-
-
-class UUIDataStore_OnlinePlaylists_Data(Structure):
-    pass
-
-
-class UUIDataStore_OnlinePlaylists(Structure):
-    pass
-
-
-class UWebApplication_Data(Structure):
-    pass
-
-
-class UWebApplication(Structure):
-    pass
-
-
-class AWebServer_Data(Structure):
-    pass
-
-
-class AWebServer(Structure):
-    pass
-
-
-class UHelloWeb_Data(Structure):
-    pass
-
-
-class UHelloWeb(Structure):
-    pass
-
-
-class UImageServer_Data(Structure):
-    pass
-
-
-class UImageServer(Structure):
-    pass
-
-
-class AWebConnection_Data(Structure):
-    pass
-
-
-class AWebConnection(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -254,6 +21,236 @@ from ..classes.GearboxFramework import *
 from ..classes.WillowGame import *
 from ..classes.AkAudio import *
 
+class UClientBeaconAddressResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClientBeaconAddressResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UHTTPDownload_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHTTPDownload(BL2SDK.UObject_Base):
+    pass
+
+
+class AInternetLink_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInternetLink(BL2SDK.UObject_Base):
+    pass
+
+
+class ATcpLink_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATcpLink(BL2SDK.UObject_Base):
+    pass
+
+
+class UMCPBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMCPBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineEventsInterfaceMcp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineEventsInterfaceMcp(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineNewsInterfaceMcp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineNewsInterfaceMcp(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineTitleFileDownloadMcp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineTitleFileDownloadMcp(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshBeacon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshBeacon(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshBeaconClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshBeaconClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshBeaconHost_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshBeaconHost(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSubsystemCommonImpl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSubsystemCommonImpl(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterfaceImpl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterfaceImpl(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameInterfaceImpl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameInterfaceImpl(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlaylistManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlaylistManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UPartyBeacon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPartyBeacon(BL2SDK.UObject_Base):
+    pass
+
+
+class UPartyBeaconClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPartyBeaconClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UPartyBeaconHost_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPartyBeaconHost(BL2SDK.UObject_Base):
+    pass
+
+
+class UTcpipConnection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTcpipConnection(BL2SDK.UObject_Base):
+    pass
+
+
+class UTcpNetDriver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTcpNetDriver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWebRequest_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWebRequest(BL2SDK.UObject_Base):
+    pass
+
+
+class UWebResponse_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWebResponse(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlaylistProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlaylistProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlinePlaylists_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlinePlaylists(BL2SDK.UObject_Base):
+    pass
+
+
+class UWebApplication_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWebApplication(BL2SDK.UObject_Base):
+    pass
+
+
+class AWebServer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWebServer(BL2SDK.UObject_Base):
+    pass
+
+
+class UHelloWeb_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHelloWeb(BL2SDK.UObject_Base):
+    pass
+
+
+class UImageServer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UImageServer(BL2SDK.UObject_Base):
+    pass
+
+
+class AWebConnection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWebConnection(BL2SDK.UObject_Base):
+    pass
 
 def init():
 

@@ -1,31 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UWindowsClient_Data(Structure):
-    pass
-
-
-class UWindowsClient(Structure):
-    pass
-
-
-class UXnaForceFeedbackManager_Data(Structure):
-    pass
-
-
-class UXnaForceFeedbackManager(Structure):
-    pass
-
-
-class UFacebookWindows_Data(Structure):
-    pass
-
-
-class UFacebookWindows(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -47,6 +22,29 @@ from ..classes.GearboxFramework import *
 from ..classes.WillowGame import *
 from ..classes.AkAudio import *
 from ..classes.IpDrv import *
+
+class UWindowsClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWindowsClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UXnaForceFeedbackManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UXnaForceFeedbackManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UFacebookWindows_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFacebookWindows(BL2SDK.UObject_Base):
+    pass
 
 
 def init():

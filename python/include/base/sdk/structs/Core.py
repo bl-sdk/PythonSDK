@@ -6,7 +6,7 @@ class FVector2D(Structure):
     pass
 
 
-class TArray_FVector2D(Structure):
+class TArray_FVector2D(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FVector2D)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -18,7 +18,7 @@ class FVector(Structure):
     pass
 
 
-class TArray_FVector(Structure):
+class TArray_FVector(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FVector)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -26,7 +26,7 @@ class FGuid(Structure):
     pass
 
 
-class TArray_FGuid(Structure):
+class TArray_FGuid(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGuid)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -38,7 +38,7 @@ class FNameBasedObjectPath(Structure):
     pass
 
 
-class TArray_FNameBasedObjectPath(Structure):
+class TArray_FNameBasedObjectPath(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FNameBasedObjectPath)),
         ("Count", c_int),
@@ -54,7 +54,7 @@ class FQuat(Structure):
     pass
 
 
-class TArray_FQuat(Structure):
+class TArray_FQuat(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FQuat)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -62,7 +62,7 @@ class FBoneAtom(Structure):
     pass
 
 
-class TArray_FBoneAtom(Structure):
+class TArray_FBoneAtom(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FBoneAtom)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -74,7 +74,7 @@ class FLinearColor(Structure):
     pass
 
 
-class TArray_FLinearColor(Structure):
+class TArray_FLinearColor(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FLinearColor)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -82,7 +82,7 @@ class FColor(Structure):
     pass
 
 
-class TArray_FColor(Structure):
+class TArray_FColor(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FColor)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -90,7 +90,7 @@ class FInterpCurvePointVector2D(Structure):
     pass
 
 
-class TArray_FInterpCurvePointVector2D(Structure):
+class TArray_FInterpCurvePointVector2D(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FInterpCurvePointVector2D)),
         ("Count", c_int),
@@ -106,7 +106,7 @@ class FInterpCurvePointFloat(Structure):
     pass
 
 
-class TArray_FInterpCurvePointFloat(Structure):
+class TArray_FInterpCurvePointFloat(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FInterpCurvePointFloat)),
         ("Count", c_int),
@@ -126,7 +126,7 @@ class FInterpCurvePointVector(Structure):
     pass
 
 
-class TArray_FInterpCurvePointVector(Structure):
+class TArray_FInterpCurvePointVector(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FInterpCurvePointVector)),
         ("Count", c_int),
@@ -142,7 +142,7 @@ class FPlane(Structure):
     pass
 
 
-class TArray_FPlane(Structure):
+class TArray_FPlane(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPlane)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -150,7 +150,7 @@ class FMatrix(Structure):
     pass
 
 
-class TArray_FMatrix(Structure):
+class TArray_FMatrix(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FMatrix)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -190,7 +190,7 @@ class FInterpCurvePointLinearColor(Structure):
     pass
 
 
-class TArray_FInterpCurvePointLinearColor(Structure):
+class TArray_FInterpCurvePointLinearColor(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FInterpCurvePointLinearColor)),
         ("Count", c_int),
@@ -206,7 +206,7 @@ class FInterpCurvePointQuat(Structure):
     pass
 
 
-class TArray_FInterpCurvePointQuat(Structure):
+class TArray_FInterpCurvePointQuat(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FInterpCurvePointQuat)),
         ("Count", c_int),
@@ -222,7 +222,7 @@ class FInterpCurvePointTwoVectors(Structure):
     pass
 
 
-class TArray_FInterpCurvePointTwoVectors(Structure):
+class TArray_FInterpCurvePointTwoVectors(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FInterpCurvePointTwoVectors)),
         ("Count", c_int),
@@ -314,7 +314,7 @@ class FDouble(Structure):
     pass
 
 
-class TArray_FDouble(Structure):
+class TArray_FDouble(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FDouble)), ("Count", c_int), ("Max", c_int)]
 
 

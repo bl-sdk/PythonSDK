@@ -6,7 +6,7 @@ class FAIHoldData(Structure):
     pass
 
 
-class TArray_FAIHoldData(Structure):
+class TArray_FAIHoldData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FAIHoldData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -14,7 +14,7 @@ class FAIResourceData(Structure):
     pass
 
 
-class TArray_FAIResourceData(Structure):
+class TArray_FAIResourceData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FAIResourceData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -26,7 +26,7 @@ class FAITreeData(Structure):
     pass
 
 
-class TArray_FAITreeData(Structure):
+class TArray_FAITreeData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FAITreeData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -38,7 +38,7 @@ class FFlagDefinitionInitialization(Structure):
     pass
 
 
-class TArray_FFlagDefinitionInitialization(Structure):
+class TArray_FFlagDefinitionInitialization(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FFlagDefinitionInitialization)),
         ("Count", c_int),
@@ -50,7 +50,7 @@ class FCoverDebugScoringInfo(Structure):
     pass
 
 
-class TArray_FCoverDebugScoringInfo(Structure):
+class TArray_FCoverDebugScoringInfo(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FCoverDebugScoringInfo)),
         ("Count", c_int),
@@ -62,7 +62,7 @@ class FCoverDebugPriority(Structure):
     pass
 
 
-class TArray_FCoverDebugPriority(Structure):
+class TArray_FCoverDebugPriority(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FCoverDebugPriority)),
         ("Count", c_int),
@@ -74,7 +74,7 @@ class FValidNameRange(Structure):
     pass
 
 
-class TArray_FValidNameRange(Structure):
+class TArray_FValidNameRange(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FValidNameRange)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -82,7 +82,7 @@ class FObjectKey(Structure):
     pass
 
 
-class TArray_FObjectKey(Structure):
+class TArray_FObjectKey(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FObjectKey)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -90,7 +90,7 @@ class FLevelStateRecord(Structure):
     pass
 
 
-class TArray_FLevelStateRecord(Structure):
+class TArray_FLevelStateRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FLevelStateRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -98,7 +98,7 @@ class FVantageSpot(Structure):
     pass
 
 
-class TArray_FVantageSpot(Structure):
+class TArray_FVantageSpot(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FVantageSpot)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -118,7 +118,7 @@ class FPopulationActor(Structure):
     pass
 
 
-class TArray_FPopulationActor(Structure):
+class TArray_FPopulationActor(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPopulationActor)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -126,7 +126,7 @@ class FLocationInfo(Structure):
     pass
 
 
-class TArray_FLocationInfo(Structure):
+class TArray_FLocationInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FLocationInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -134,7 +134,7 @@ class FActionSequenceRandomData(Structure):
     pass
 
 
-class TArray_FActionSequenceRandomData(Structure):
+class TArray_FActionSequenceRandomData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FActionSequenceRandomData)),
         ("Count", c_int),
@@ -150,7 +150,7 @@ class FBehaviorSequenceActionData2(Structure):
     pass
 
 
-class TArray_FBehaviorSequenceActionData2(Structure):
+class TArray_FBehaviorSequenceActionData2(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorSequenceActionData2)),
         ("Count", c_int),
@@ -162,7 +162,7 @@ class FBehaviorVariableValue(Structure):
     pass
 
 
-class TArray_FBehaviorVariableValue(Structure):
+class TArray_FBehaviorVariableValue(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorVariableValue)),
         ("Count", c_int),
@@ -178,7 +178,7 @@ class FBehaviorVariableData(Structure):
     pass
 
 
-class TArray_FBehaviorVariableData(Structure):
+class TArray_FBehaviorVariableData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorVariableData)),
         ("Count", c_int),
@@ -194,7 +194,7 @@ class FBehaviorVariableLinkData(Structure):
     pass
 
 
-class TArray_FBehaviorVariableLinkData(Structure):
+class TArray_FBehaviorVariableLinkData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorVariableLinkData)),
         ("Count", c_int),
@@ -206,7 +206,7 @@ class FBehaviorActionLinkData(Structure):
     pass
 
 
-class TArray_FBehaviorActionLinkData(Structure):
+class TArray_FBehaviorActionLinkData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorActionLinkData)),
         ("Count", c_int),
@@ -218,7 +218,7 @@ class FBehaviorOutputLinkData(Structure):
     pass
 
 
-class TArray_FBehaviorOutputLinkData(Structure):
+class TArray_FBehaviorOutputLinkData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorOutputLinkData)),
         ("Count", c_int),
@@ -230,7 +230,7 @@ class FBehaviorEventData(Structure):
     pass
 
 
-class TArray_FBehaviorEventData(Structure):
+class TArray_FBehaviorEventData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FBehaviorEventData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -238,7 +238,7 @@ class FBehaviorEventData2(Structure):
     pass
 
 
-class TArray_FBehaviorEventData2(Structure):
+class TArray_FBehaviorEventData2(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorEventData2)),
         ("Count", c_int),
@@ -250,7 +250,7 @@ class FBehaviorSequenceActionData(Structure):
     pass
 
 
-class TArray_FBehaviorSequenceActionData(Structure):
+class TArray_FBehaviorSequenceActionData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorSequenceActionData)),
         ("Count", c_int),
@@ -262,7 +262,7 @@ class FBehaviorOutputLinkData2(Structure):
     pass
 
 
-class TArray_FBehaviorOutputLinkData2(Structure):
+class TArray_FBehaviorOutputLinkData2(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorOutputLinkData2)),
         ("Count", c_int),
@@ -274,7 +274,7 @@ class FBehaviorVariableLinkData2(Structure):
     pass
 
 
-class TArray_FBehaviorVariableLinkData2(Structure):
+class TArray_FBehaviorVariableLinkData2(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorVariableLinkData2)),
         ("Count", c_int),
@@ -286,7 +286,7 @@ class FBehaviorSequenceData(Structure):
     pass
 
 
-class TArray_FBehaviorSequenceData(Structure):
+class TArray_FBehaviorSequenceData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorSequenceData)),
         ("Count", c_int),
@@ -298,7 +298,7 @@ class FDebugListItem(Structure):
     pass
 
 
-class TArray_FDebugListItem(Structure):
+class TArray_FDebugListItem(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FDebugListItem)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -314,7 +314,7 @@ class FKnowledgeRecordStruct(Structure):
     pass
 
 
-class TArray_FKnowledgeRecordStruct(Structure):
+class TArray_FKnowledgeRecordStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FKnowledgeRecordStruct)),
         ("Count", c_int),
@@ -326,7 +326,7 @@ class FRuleSetRecord(Structure):
     pass
 
 
-class TArray_FRuleSetRecord(Structure):
+class TArray_FRuleSetRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FRuleSetRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -334,7 +334,7 @@ class FRuleRecord(Structure):
     pass
 
 
-class TArray_FRuleRecord(Structure):
+class TArray_FRuleRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FRuleRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -342,7 +342,7 @@ class FActionSequenceRecord(Structure):
     pass
 
 
-class TArray_FActionSequenceRecord(Structure):
+class TArray_FActionSequenceRecord(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FActionSequenceRecord)),
         ("Count", c_int),
@@ -354,7 +354,7 @@ class FTargetInfoRecord(Structure):
     pass
 
 
-class TArray_FTargetInfoRecord(Structure):
+class TArray_FTargetInfoRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FTargetInfoRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -362,7 +362,7 @@ class FAIDefinitionRecord(Structure):
     pass
 
 
-class TArray_FAIDefinitionRecord(Structure):
+class TArray_FAIDefinitionRecord(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FAIDefinitionRecord)),
         ("Count", c_int),
@@ -374,7 +374,7 @@ class FAIResourceRestriction(Structure):
     pass
 
 
-class TArray_FAIResourceRestriction(Structure):
+class TArray_FAIResourceRestriction(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FAIResourceRestriction)),
         ("Count", c_int),
@@ -386,7 +386,7 @@ class FOutputLink(Structure):
     pass
 
 
-class TArray_FOutputLink(Structure):
+class TArray_FOutputLink(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FOutputLink)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -394,7 +394,7 @@ class FVariableLink(Structure):
     pass
 
 
-class TArray_FVariableLink(Structure):
+class TArray_FVariableLink(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FVariableLink)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -402,7 +402,7 @@ class FSpecialMoveData(Structure):
     pass
 
 
-class TArray_FSpecialMoveData(Structure):
+class TArray_FSpecialMoveData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSpecialMoveData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -410,7 +410,7 @@ class FSlotAnimParameters(Structure):
     pass
 
 
-class TArray_FSlotAnimParameters(Structure):
+class TArray_FSlotAnimParameters(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FSlotAnimParameters)),
         ("Count", c_int),
@@ -450,7 +450,7 @@ class FAttachmentLocationData(Structure):
     pass
 
 
-class TArray_FAttachmentLocationData(Structure):
+class TArray_FAttachmentLocationData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FAttachmentLocationData)),
         ("Count", c_int),
@@ -462,7 +462,7 @@ class FProviderRecord(Structure):
     pass
 
 
-class TArray_FProviderRecord(Structure):
+class TArray_FProviderRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FProviderRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -518,7 +518,7 @@ class FBehaviorTriggerMessageStruct(Structure):
     pass
 
 
-class TArray_FBehaviorTriggerMessageStruct(Structure):
+class TArray_FBehaviorTriggerMessageStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FBehaviorTriggerMessageStruct)),
         ("Count", c_int),
@@ -530,7 +530,7 @@ class FExposureCacheStruct(Structure):
     pass
 
 
-class TArray_FExposureCacheStruct(Structure):
+class TArray_FExposureCacheStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FExposureCacheStruct)),
         ("Count", c_int),
@@ -542,7 +542,7 @@ class FExposureUpdateStruct(Structure):
     pass
 
 
-class TArray_FExposureUpdateStruct(Structure):
+class TArray_FExposureUpdateStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FExposureUpdateStruct)),
         ("Count", c_int),
@@ -554,7 +554,7 @@ class FBucketStruct(Structure):
     pass
 
 
-class TArray_FBucketStruct(Structure):
+class TArray_FBucketStruct(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FBucketStruct)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -562,7 +562,7 @@ class FPointExposureData(Structure):
     pass
 
 
-class TArray_FPointExposureData(Structure):
+class TArray_FPointExposureData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPointExposureData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -570,7 +570,7 @@ class FFeatherBoneBlendData(Structure):
     pass
 
 
-class TArray_FFeatherBoneBlendData(Structure):
+class TArray_FFeatherBoneBlendData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FFeatherBoneBlendData)),
         ("Count", c_int),
@@ -586,7 +586,7 @@ class FConditionalPattern(Structure):
     pass
 
 
-class TArray_FConditionalPattern(Structure):
+class TArray_FConditionalPattern(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FConditionalPattern)),
         ("Count", c_int),
@@ -598,7 +598,7 @@ class FFlagEvalConditional(Structure):
     pass
 
 
-class TArray_FFlagEvalConditional(Structure):
+class TArray_FFlagEvalConditional(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FFlagEvalConditional)),
         ("Count", c_int),
@@ -610,7 +610,7 @@ class FFlagEvalORConnector(Structure):
     pass
 
 
-class TArray_FFlagEvalORConnector(Structure):
+class TArray_FFlagEvalORConnector(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FFlagEvalORConnector)),
         ("Count", c_int),
@@ -622,7 +622,7 @@ class Fs_actorList(Structure):
     pass
 
 
-class TArray_Fs_actorList(Structure):
+class TArray_Fs_actorList(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(Fs_actorList)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -638,7 +638,7 @@ class FEULAData(Structure):
     pass
 
 
-class TArray_FEULAData(Structure):
+class TArray_FEULAData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FEULAData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -646,7 +646,7 @@ class FEntitlementResult(Structure):
     pass
 
 
-class TArray_FEntitlementResult(Structure):
+class TArray_FEntitlementResult(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FEntitlementResult)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -654,7 +654,7 @@ class FOfferResult(Structure):
     pass
 
 
-class TArray_FOfferResult(Structure):
+class TArray_FOfferResult(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FOfferResult)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -662,7 +662,7 @@ class FServiceParameterResult(Structure):
     pass
 
 
-class TArray_FServiceParameterResult(Structure):
+class TArray_FServiceParameterResult(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FServiceParameterResult)),
         ("Count", c_int),
@@ -674,7 +674,7 @@ class FServiceResult(Structure):
     pass
 
 
-class TArray_FServiceResult(Structure):
+class TArray_FServiceResult(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FServiceResult)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -686,7 +686,7 @@ class FNodeData(Structure):
     pass
 
 
-class TArray_FNodeData(Structure):
+class TArray_FNodeData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FNodeData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -694,7 +694,7 @@ class FSMBehavior(Structure):
     pass
 
 
-class TArray_FSMBehavior(Structure):
+class TArray_FSMBehavior(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSMBehavior)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -702,7 +702,7 @@ class FSMNotify(Structure):
     pass
 
 
-class TArray_FSMNotify(Structure):
+class TArray_FSMNotify(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSMNotify)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -710,7 +710,7 @@ class FTimedAnimBehaviorEvent(Structure):
     pass
 
 
-class TArray_FTimedAnimBehaviorEvent(Structure):
+class TArray_FTimedAnimBehaviorEvent(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FTimedAnimBehaviorEvent)),
         ("Count", c_int),
@@ -726,7 +726,7 @@ class FGearboxDialogData(Structure):
     pass
 
 
-class TArray_FGearboxDialogData(Structure):
+class TArray_FGearboxDialogData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGearboxDialogData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -738,7 +738,7 @@ class FOutputLinkToStruct(Structure):
     pass
 
 
-class TArray_FOutputLinkToStruct(Structure):
+class TArray_FOutputLinkToStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FOutputLinkToStruct)),
         ("Count", c_int),
@@ -750,7 +750,7 @@ class FDialogEventData(Structure):
     pass
 
 
-class TArray_FDialogEventData(Structure):
+class TArray_FDialogEventData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FDialogEventData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -762,7 +762,7 @@ class FTalkActData(Structure):
     pass
 
 
-class TArray_FTalkActData(Structure):
+class TArray_FTalkActData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FTalkActData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -770,7 +770,7 @@ class FMovieStateData(Structure):
     pass
 
 
-class TArray_FMovieStateData(Structure):
+class TArray_FMovieStateData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FMovieStateData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -786,7 +786,7 @@ class FNounAttributeState(Structure):
     pass
 
 
-class TArray_FNounAttributeState(Structure):
+class TArray_FNounAttributeState(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FNounAttributeState)),
         ("Count", c_int),
@@ -798,7 +798,7 @@ class FDynamicFlagInstanceData(Structure):
     pass
 
 
-class TArray_FDynamicFlagInstanceData(Structure):
+class TArray_FDynamicFlagInstanceData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FDynamicFlagInstanceData)),
         ("Count", c_int),
@@ -810,7 +810,7 @@ class FEventRecord(Structure):
     pass
 
 
-class TArray_FEventRecord(Structure):
+class TArray_FEventRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FEventRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -818,7 +818,7 @@ class FRuleSetReference(Structure):
     pass
 
 
-class TArray_FRuleSetReference(Structure):
+class TArray_FRuleSetReference(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FRuleSetReference)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -838,7 +838,7 @@ class FRuleInfo(Structure):
     pass
 
 
-class TArray_FRuleInfo(Structure):
+class TArray_FRuleInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FRuleInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -850,7 +850,7 @@ class FAwarenessInfo(Structure):
     pass
 
 
-class TArray_FAwarenessInfo(Structure):
+class TArray_FAwarenessInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FAwarenessInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -858,7 +858,7 @@ class FLastVisibleInfo(Structure):
     pass
 
 
-class TArray_FLastVisibleInfo(Structure):
+class TArray_FLastVisibleInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FLastVisibleInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -866,7 +866,7 @@ class FDebugExposure(Structure):
     pass
 
 
-class TArray_FDebugExposure(Structure):
+class TArray_FDebugExposure(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FDebugExposure)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -874,7 +874,7 @@ class FViewConeInfo(Structure):
     pass
 
 
-class TArray_FViewConeInfo(Structure):
+class TArray_FViewConeInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FViewConeInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -882,7 +882,7 @@ class FCoverDebugScoringData(Structure):
     pass
 
 
-class TArray_FCoverDebugScoringData(Structure):
+class TArray_FCoverDebugScoringData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FCoverDebugScoringData)),
         ("Count", c_int),
@@ -894,7 +894,7 @@ class FCoverDebugInfo(Structure):
     pass
 
 
-class TArray_FCoverDebugInfo(Structure):
+class TArray_FCoverDebugInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FCoverDebugInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -902,7 +902,7 @@ class FTargetPriorityInfo(Structure):
     pass
 
 
-class TArray_FTargetPriorityInfo(Structure):
+class TArray_FTargetPriorityInfo(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FTargetPriorityInfo)),
         ("Count", c_int),
@@ -914,7 +914,7 @@ class FTargetDebugDatum(Structure):
     pass
 
 
-class TArray_FTargetDebugDatum(Structure):
+class TArray_FTargetDebugDatum(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FTargetDebugDatum)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -922,7 +922,7 @@ class FAIHoldDebugData(Structure):
     pass
 
 
-class TArray_FAIHoldDebugData(Structure):
+class TArray_FAIHoldDebugData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FAIHoldDebugData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -938,7 +938,7 @@ class FThumbnailRenderData(Structure):
     pass
 
 
-class TArray_FThumbnailRenderData(Structure):
+class TArray_FThumbnailRenderData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FThumbnailRenderData)),
         ("Count", c_int),
@@ -950,7 +950,7 @@ class FThumbnailLightData(Structure):
     pass
 
 
-class TArray_FThumbnailLightData(Structure):
+class TArray_FThumbnailLightData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FThumbnailLightData)),
         ("Count", c_int),
@@ -962,7 +962,7 @@ class FGestaltPart(Structure):
     pass
 
 
-class TArray_FGestaltPart(Structure):
+class TArray_FGestaltPart(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGestaltPart)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -970,7 +970,7 @@ class FGestaltInfo(Structure):
     pass
 
 
-class TArray_FGestaltInfo(Structure):
+class TArray_FGestaltInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGestaltInfo)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -978,7 +978,7 @@ class FGestaltAccessoryNameEntry(Structure):
     pass
 
 
-class TArray_FGestaltAccessoryNameEntry(Structure):
+class TArray_FGestaltAccessoryNameEntry(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FGestaltAccessoryNameEntry)),
         ("Count", c_int),
@@ -990,7 +990,7 @@ class FGestaltSocketRemapEntry(Structure):
     pass
 
 
-class TArray_FGestaltSocketRemapEntry(Structure):
+class TArray_FGestaltSocketRemapEntry(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FGestaltSocketRemapEntry)),
         ("Count", c_int),
@@ -1002,7 +1002,7 @@ class FGestaltPartBoundsEntry(Structure):
     pass
 
 
-class TArray_FGestaltPartBoundsEntry(Structure):
+class TArray_FGestaltPartBoundsEntry(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FGestaltPartBoundsEntry)),
         ("Count", c_int),
@@ -1014,7 +1014,7 @@ class FGestaltPartPermutation(Structure):
     pass
 
 
-class TArray_FGestaltPartPermutation(Structure):
+class TArray_FGestaltPartPermutation(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FGestaltPartPermutation)),
         ("Count", c_int),
@@ -1026,7 +1026,7 @@ class FMovieInstanceArray(Structure):
     pass
 
 
-class TArray_FMovieInstanceArray(Structure):
+class TArray_FMovieInstanceArray(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FMovieInstanceArray)),
         ("Count", c_int),
@@ -1038,7 +1038,7 @@ class FGFxMenuLink(Structure):
     pass
 
 
-class TArray_FGFxMenuLink(Structure):
+class TArray_FGFxMenuLink(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGFxMenuLink)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1050,7 +1050,7 @@ class FHUDAnchorPoint(Structure):
     pass
 
 
-class TArray_FHUDAnchorPoint(Structure):
+class TArray_FHUDAnchorPoint(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FHUDAnchorPoint)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1062,7 +1062,7 @@ class FMovieRangeStateData(Structure):
     pass
 
 
-class TArray_FMovieRangeStateData(Structure):
+class TArray_FMovieRangeStateData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FMovieRangeStateData)),
         ("Count", c_int),
@@ -1090,7 +1090,7 @@ class FHitTargetRecord(Structure):
     pass
 
 
-class TArray_FHitTargetRecord(Structure):
+class TArray_FHitTargetRecord(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FHitTargetRecord)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1098,7 +1098,7 @@ class FPriorityDebugStruct(Structure):
     pass
 
 
-class TArray_FPriorityDebugStruct(Structure):
+class TArray_FPriorityDebugStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPriorityDebugStruct)),
         ("Count", c_int),
@@ -1114,7 +1114,7 @@ class FEncounterLimitData(Structure):
     pass
 
 
-class TArray_FEncounterLimitData(Structure):
+class TArray_FEncounterLimitData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FEncounterLimitData)),
         ("Count", c_int),
@@ -1126,7 +1126,7 @@ class FEncounterWaveData(Structure):
     pass
 
 
-class TArray_FEncounterWaveData(Structure):
+class TArray_FEncounterWaveData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FEncounterWaveData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1142,7 +1142,7 @@ class FSpawnedPopulationActor(Structure):
     pass
 
 
-class TArray_FSpawnedPopulationActor(Structure):
+class TArray_FSpawnedPopulationActor(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FSpawnedPopulationActor)),
         ("Count", c_int),
@@ -1154,7 +1154,7 @@ class FRemovedPopulationActor(Structure):
     pass
 
 
-class TArray_FRemovedPopulationActor(Structure):
+class TArray_FRemovedPopulationActor(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FRemovedPopulationActor)),
         ("Count", c_int),
@@ -1174,7 +1174,7 @@ class FPopulationOpportunityTracker(Structure):
     pass
 
 
-class TArray_FPopulationOpportunityTracker(Structure):
+class TArray_FPopulationOpportunityTracker(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPopulationOpportunityTracker)),
         ("Count", c_int),
@@ -1186,7 +1186,7 @@ class FPopulationMasterStat(Structure):
     pass
 
 
-class TArray_FPopulationMasterStat(Structure):
+class TArray_FPopulationMasterStat(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPopulationMasterStat)),
         ("Count", c_int),
@@ -1198,7 +1198,7 @@ class FEncounterWaveTracker(Structure):
     pass
 
 
-class TArray_FEncounterWaveTracker(Structure):
+class TArray_FEncounterWaveTracker(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FEncounterWaveTracker)),
         ("Count", c_int),
@@ -1210,7 +1210,7 @@ class FEncounterTracker(Structure):
     pass
 
 
-class TArray_FEncounterTracker(Structure):
+class TArray_FEncounterTracker(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FEncounterTracker)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1226,7 +1226,7 @@ class FPopulationOptionAreaPopDefData(Structure):
     pass
 
 
-class TArray_FPopulationOptionAreaPopDefData(Structure):
+class TArray_FPopulationOptionAreaPopDefData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPopulationOptionAreaPopDefData)),
         ("Count", c_int),
@@ -1238,7 +1238,7 @@ class FPopulationOptionAreaData(Structure):
     pass
 
 
-class TArray_FPopulationOptionAreaData(Structure):
+class TArray_FPopulationOptionAreaData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPopulationOptionAreaData)),
         ("Count", c_int),
@@ -1250,7 +1250,7 @@ class FPopulationOptionSpawnDefData(Structure):
     pass
 
 
-class TArray_FPopulationOptionSpawnDefData(Structure):
+class TArray_FPopulationOptionSpawnDefData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPopulationOptionSpawnDefData)),
         ("Count", c_int),
@@ -1262,7 +1262,7 @@ class FPopulationAreaOptionSpawnData(Structure):
     pass
 
 
-class TArray_FPopulationAreaOptionSpawnData(Structure):
+class TArray_FPopulationAreaOptionSpawnData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPopulationAreaOptionSpawnData)),
         ("Count", c_int),
@@ -1278,7 +1278,7 @@ class FColumnDataStruct(Structure):
     pass
 
 
-class TArray_FColumnDataStruct(Structure):
+class TArray_FColumnDataStruct(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FColumnDataStruct)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1286,7 +1286,7 @@ class FSavedRandomValue(Structure):
     pass
 
 
-class TArray_FSavedRandomValue(Structure):
+class TArray_FSavedRandomValue(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSavedRandomValue)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1294,7 +1294,7 @@ class FRuleEngineLoadBalanceStruct(Structure):
     pass
 
 
-class TArray_FRuleEngineLoadBalanceStruct(Structure):
+class TArray_FRuleEngineLoadBalanceStruct(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FRuleEngineLoadBalanceStruct)),
         ("Count", c_int),
@@ -1306,7 +1306,7 @@ class FDebugLoadBalance(Structure):
     pass
 
 
-class TArray_FDebugLoadBalance(Structure):
+class TArray_FDebugLoadBalance(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FDebugLoadBalance)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1314,7 +1314,7 @@ class FRELBManagerStats(Structure):
     pass
 
 
-class TArray_FRELBManagerStats(Structure):
+class TArray_FRELBManagerStats(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FRELBManagerStats)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1322,7 +1322,7 @@ class FDebugStringData(Structure):
     pass
 
 
-class TArray_FDebugStringData(Structure):
+class TArray_FDebugStringData(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FDebugStringData)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1334,7 +1334,7 @@ class FSparkOutstandingRequest(Structure):
     pass
 
 
-class TArray_FSparkOutstandingRequest(Structure):
+class TArray_FSparkOutstandingRequest(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FSparkOutstandingRequest)),
         ("Count", c_int),
@@ -1350,7 +1350,7 @@ class FSMExpressionList(Structure):
     pass
 
 
-class TArray_FSMExpressionList(Structure):
+class TArray_FSMExpressionList(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSMExpressionList)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1358,7 +1358,7 @@ class FSMRandomPair(Structure):
     pass
 
 
-class TArray_FSMRandomPair(Structure):
+class TArray_FSMRandomPair(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSMRandomPair)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1366,7 +1366,7 @@ class FStateAttributeData(Structure):
     pass
 
 
-class TArray_FStateAttributeData(Structure):
+class TArray_FStateAttributeData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FStateAttributeData)),
         ("Count", c_int),
@@ -1378,7 +1378,7 @@ class FWireLinkage(Structure):
     pass
 
 
-class TArray_FWireLinkage(Structure):
+class TArray_FWireLinkage(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FWireLinkage)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -1386,7 +1386,7 @@ class FNewsArticle(Structure):
     pass
 
 
-class TArray_FNewsArticle(Structure):
+class TArray_FNewsArticle(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FNewsArticle)), ("Count", c_int), ("Max", c_int)]
 
 

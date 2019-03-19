@@ -2,191 +2,197 @@ from ctypes import *
 import BL2SDK
 
 
-class UTextBuffer_Data(Structure):
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+
+from ..classes.Base import *
+
+class UTextBuffer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTextBuffer(Structure):
+class UTextBuffer(BL2SDK.UObject_Base):
     pass
 
 
-class USubsystem_Data(Structure):
+class USubsystem_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USubsystem(Structure):
+class USubsystem(BL2SDK.UObject_Base):
     pass
 
 
-class USystem_Data(Structure):
+class USystem_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USystem(Structure):
+class USystem(BL2SDK.UObject_Base):
     pass
 
 
-class UPackageMap_Data(Structure):
+class UPackageMap_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPackageMap(Structure):
+class UPackageMap(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectSerializer_Data(Structure):
+class UObjectSerializer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectSerializer(Structure):
+class UObjectSerializer(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectRedirector_Data(Structure):
+class UObjectRedirector_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectRedirector(Structure):
+class UObjectRedirector(BL2SDK.UObject_Base):
     pass
 
 
-class UMetaData_Data(Structure):
+class UMetaData_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UMetaData(Structure):
+class UMetaData(BL2SDK.UObject_Base):
     pass
 
 
-class ULinker_Data(Structure):
+class ULinker_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULinker(Structure):
+class ULinker(BL2SDK.UObject_Base):
     pass
 
 
-class ULinkerSave_Data(Structure):
+class ULinkerSave_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULinkerSave(Structure):
+class ULinkerSave(BL2SDK.UObject_Base):
     pass
 
 
-class ULinkerLoad_Data(Structure):
+class ULinkerLoad_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULinkerLoad(Structure):
+class ULinkerLoad(BL2SDK.UObject_Base):
     pass
 
 
-class UInterface_Data(Structure):
+class UInterface_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UInterface(Structure):
+class UInterface(BL2SDK.UObject_Base):
     pass
 
 
-class UIntAttributeProperty_Data(Structure):
+class UIntAttributeProperty_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIntAttributeProperty(Structure):
+class UIntAttributeProperty(BL2SDK.UObject_Base):
     pass
 
 
-class UFloatAttributeProperty_Data(Structure):
+class UFloatAttributeProperty_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFloatAttributeProperty(Structure):
+class UFloatAttributeProperty(BL2SDK.UObject_Base):
     pass
 
 
-class UByteAttributeProperty_Data(Structure):
+class UByteAttributeProperty_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UByteAttributeProperty(Structure):
+class UByteAttributeProperty(BL2SDK.UObject_Base):
     pass
 
 
-class UFactory_Data(Structure):
+class UFactory_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFactory(Structure):
+class UFactory(BL2SDK.UObject_Base):
     pass
 
 
-class UTextBufferFactory_Data(Structure):
+class UTextBufferFactory_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTextBufferFactory(Structure):
+class UTextBufferFactory(BL2SDK.UObject_Base):
     pass
 
 
-class UExporter_Data(Structure):
+class UExporter_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UExporter(Structure):
+class UExporter(BL2SDK.UObject_Base):
     pass
 
 
-class UComponent_Data(Structure):
+class UComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UComponent(Structure):
+class UComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UDistributionVector_Data(Structure):
+class UDistributionVector_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UDistributionVector(Structure):
+class UDistributionVector(BL2SDK.UObject_Base):
     pass
 
 
-class UDistributionFloat_Data(Structure):
+class UDistributionFloat_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UDistributionFloat(Structure):
+class UDistributionFloat(BL2SDK.UObject_Base):
     pass
 
 
-class UCommandlet_Data(Structure):
+class UCommandlet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UCommandlet(Structure):
+class UCommandlet(BL2SDK.UObject_Base):
     pass
 
 
-class UHelpCommandlet_Data(Structure):
+class UHelpCommandlet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UHelpCommandlet(Structure):
+class UHelpCommandlet(BL2SDK.UObject_Base):
     pass
 
 
-class UAttributeModifier_Data(Structure):
+class UAttributeModifier_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAttributeModifier(Structure):
+class UAttributeModifier(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UAttributeModifierPtr(Structure):
+class TArray_UAttributeModifierPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UAttributeModifier))),
         ("Count", c_int),
@@ -194,24 +200,16 @@ class TArray_UAttributeModifierPtr(Structure):
     ]
 
 
-class UPackage_Data(Structure):
+class UPackage_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPackage(Structure):
+class UPackage(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UPackagePtr(Structure):
+class TArray_UPackagePtr(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(POINTER(UPackage))), ("Count", c_int), ("Max", c_int)]
-
-
-from ..TArrayTypes import *
-from ..structs.Base import *
-from ..structs.Core import *
-
-from ..classes.Base import *
-
 
 def init():
 

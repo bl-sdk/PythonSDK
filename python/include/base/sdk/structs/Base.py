@@ -10,7 +10,7 @@ class FNameEntry(Structure):
     pass
 
 
-class TArray_FNameEntryPtr(Structure):
+class TArray_FNameEntryPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(FNameEntry))),
         ("Count", c_int),
@@ -26,7 +26,7 @@ class FString(Structure):
     pass
 
 
-class TArray_FString(Structure):
+class TArray_FString(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FString)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -34,7 +34,7 @@ class FScriptDelegate(Structure):
     pass
 
 
-class TArray_FScriptDelegate(Structure):
+class TArray_FScriptDelegate(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FScriptDelegate)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -42,7 +42,7 @@ class FPointer(Structure):
     pass
 
 
-class TArray_FPointer(Structure):
+class TArray_FPointer(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPointer)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -54,7 +54,7 @@ class FScriptInterface(Structure):
     pass
 
 
-class TArray_FScriptInterface(Structure):
+class TArray_FScriptInterface(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FScriptInterface)), ("Count", c_int), ("Max", c_int)]
 
 

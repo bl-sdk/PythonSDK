@@ -1,199 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UGFxEngine_Data(Structure):
-    pass
-
-
-class UGFxEngine(Structure):
-    pass
-
-
-class UGFxFSCmdHandler_Data(Structure):
-    pass
-
-
-class UGFxFSCmdHandler(Structure):
-    pass
-
-
-class UGFxInteraction_Data(Structure):
-    pass
-
-
-class UGFxInteraction(Structure):
-    pass
-
-
-class UGFxManager_Data(Structure):
-    pass
-
-
-class UGFxManager(Structure):
-    pass
-
-
-class UGFxManagerDefinition_Data(Structure):
-    pass
-
-
-class UGFxManagerDefinition(Structure):
-    pass
-
-
-class UGFxMoviePlayer_Data(Structure):
-    pass
-
-
-class UGFxMoviePlayer(Structure):
-    pass
-
-
-class UGFxMovie_Data(Structure):
-    pass
-
-
-class UGFxMovie(Structure):
-    pass
-
-
-class UGFxObject_Data(Structure):
-    pass
-
-
-class UGFxObject(Structure):
-    pass
-
-
-class TArray_UGFxObjectPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UGFxObject))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGFxClikWidget_Data(Structure):
-    pass
-
-
-class UGFxClikWidget(Structure):
-    pass
-
-
-class UGFxRawData_Data(Structure):
-    pass
-
-
-class UGFxRawData(Structure):
-    pass
-
-
-class USwfMovie_Data(Structure):
-    pass
-
-
-class USwfMovie(Structure):
-    pass
-
-
-class UFlashMovie_Data(Structure):
-    pass
-
-
-class UFlashMovie(Structure):
-    pass
-
-
-class UGFxMovieInfo_Data(Structure):
-    pass
-
-
-class UGFxMovieInfo(Structure):
-    pass
-
-
-class UGFxValue_Data(Structure):
-    pass
-
-
-class UGFxValue(Structure):
-    pass
-
-
-class UGFxAction_CloseMovie_Data(Structure):
-    pass
-
-
-class UGFxAction_CloseMovie(Structure):
-    pass
-
-
-class UGFxAction_GetVariable_Data(Structure):
-    pass
-
-
-class UGFxAction_GetVariable(Structure):
-    pass
-
-
-class UGFxAction_Invoke_Data(Structure):
-    pass
-
-
-class UGFxAction_Invoke(Structure):
-    pass
-
-
-class UGFxAction_OpenMovie_Data(Structure):
-    pass
-
-
-class UGFxAction_OpenMovie(Structure):
-    pass
-
-
-class UGFxAction_SetCaptureKeys_Data(Structure):
-    pass
-
-
-class UGFxAction_SetCaptureKeys(Structure):
-    pass
-
-
-class UGFxAction_SetVariable_Data(Structure):
-    pass
-
-
-class UGFxAction_SetVariable(Structure):
-    pass
-
-
-class UGFxEvent_FSCommand_Data(Structure):
-    pass
-
-
-class UGFxEvent_FSCommand(Structure):
-    pass
-
-
-class UGFxFSCmdHandler_Kismet_Data(Structure):
-    pass
-
-
-class UGFxFSCmdHandler_Kismet(Structure):
-    pass
-
-
-class UGFxDataStoreSubscriber_Data(Structure):
-    pass
-
-
-class UGFxDataStoreSubscriber(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -206,6 +13,196 @@ from ..classes.Core import *
 from ..classes.Engine import *
 from ..classes.GameFramework import *
 
+class UGFxEngine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxEngine(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxFSCmdHandler_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxFSCmdHandler(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxInteraction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxInteraction(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxManagerDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxManagerDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMoviePlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMoviePlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UGFxObjectPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGFxObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGFxClikWidget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxClikWidget(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxRawData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxRawData(BL2SDK.UObject_Base):
+    pass
+
+
+class USwfMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USwfMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UFlashMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFlashMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovieInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovieInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxValue_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxValue(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_CloseMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_CloseMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_GetVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_GetVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_Invoke_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_Invoke(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_OpenMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_OpenMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_SetCaptureKeys_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_SetCaptureKeys(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_SetVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxAction_SetVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxEvent_FSCommand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxEvent_FSCommand(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxFSCmdHandler_Kismet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxFSCmdHandler_Kismet(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxDataStoreSubscriber_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxDataStoreSubscriber(BL2SDK.UObject_Base):
+    pass
 
 def init():
 

@@ -1,12431 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UAchievementUtility_Data(Structure):
-    pass
-
-
-class UAchievementUtility(Structure):
-    pass
-
-
-class AActionSkill_Data(Structure):
-    pass
-
-
-class AActionSkill(Structure):
-    pass
-
-
-class AScorpioActionSkill_Data(Structure):
-    pass
-
-
-class AScorpioActionSkill(Structure):
-    pass
-
-
-class UActorFactoryInteractiveObject_Data(Structure):
-    pass
-
-
-class UActorFactoryInteractiveObject(Structure):
-    pass
-
-
-class UActorFactoryWillowElevatorButton_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowElevatorButton(Structure):
-    pass
-
-
-class UActorFactoryMissionPickupSpawner_Data(Structure):
-    pass
-
-
-class UActorFactoryMissionPickupSpawner(Structure):
-    pass
-
-
-class UActorFactoryMissionPickupFailsafe_Data(Structure):
-    pass
-
-
-class UActorFactoryMissionPickupFailsafe(Structure):
-    pass
-
-
-class UActorFactoryPopulationOpportunityArea_Data(Structure):
-    pass
-
-
-class UActorFactoryPopulationOpportunityArea(Structure):
-    pass
-
-
-class UActorFactoryPopulationOpportunityDen_Data(Structure):
-    pass
-
-
-class UActorFactoryPopulationOpportunityDen(Structure):
-    pass
-
-
-class UActorFactoryWillowCoopPlayerStart_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowCoopPlayerStart(Structure):
-    pass
-
-
-class UActorFactoryWillowElevator_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowElevator(Structure):
-    pass
-
-
-class UActorFactoryWillowPawn_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowPawn(Structure):
-    pass
-
-
-class UActorFactoryWillowTrigger_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowTrigger(Structure):
-    pass
-
-
-class UActorFactoryWillowVehicle_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowVehicle(Structure):
-    pass
-
-
-class UActorFactoryWillowVehicleFactory_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowVehicleFactory(Structure):
-    pass
-
-
-class UActorFactoryWillowWaypoint_Data(Structure):
-    pass
-
-
-class UActorFactoryWillowWaypoint(Structure):
-    pass
-
-
-class UAdvancedAxisDefinition_Data(Structure):
-    pass
-
-
-class UAdvancedAxisDefinition(Structure):
-    pass
-
-
-class UAIPawnBalanceModifierDefinition_Data(Structure):
-    pass
-
-
-class UAIPawnBalanceModifierDefinition(Structure):
-    pass
-
-
-class TArray_UAIPawnBalanceModifierDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAIPawnBalanceModifierDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAIResourceAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UAIResourceAttributeValueResolver(Structure):
-    pass
-
-
-class UAmmoDropWeightAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UAmmoDropWeightAttributeValueResolver(Structure):
-    pass
-
-
-class UAmmoResourcePool_Data(Structure):
-    pass
-
-
-class UAmmoResourcePool(Structure):
-    pass
-
-
-class UAmmoResourceUpgradeAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UAmmoResourceUpgradeAttributeValueResolver(Structure):
-    pass
-
-
-class UAssetLibraryManager_Data(Structure):
-    pass
-
-
-class UAssetLibraryManager(Structure):
-    pass
-
-
-class UAttributePresentationDefinition_Data(Structure):
-    pass
-
-
-class UAttributePresentationDefinition(Structure):
-    pass
-
-
-class TArray_UAttributePresentationDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAttributePresentationDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWeaponStatusEffectAttributePresentationDefinition_Data(Structure):
-    pass
-
-
-class UWeaponStatusEffectAttributePresentationDefinition(Structure):
-    pass
-
-
-class UAttributePresentationListDefinition_Data(Structure):
-    pass
-
-
-class UAttributePresentationListDefinition(Structure):
-    pass
-
-
-class UAttributeSlotEffectAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UAttributeSlotEffectAttributeValueResolver(Structure):
-    pass
-
-
-class UAvatarAwardUtility_Data(Structure):
-    pass
-
-
-class UAvatarAwardUtility(Structure):
-    pass
-
-
-class UBadassAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UBadassAttributeValueResolver(Structure):
-    pass
-
-
-class UBadassRewardDefinition_Data(Structure):
-    pass
-
-
-class UBadassRewardDefinition(Structure):
-    pass
-
-
-class TArray_UBadassRewardDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBadassRewardDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBalanceModifierDefinition_Data(Structure):
-    pass
-
-
-class UBalanceModifierDefinition(Structure):
-    pass
-
-
-class TArray_UBalanceModifierDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBalanceModifierDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBehavior_ActivateInstancedMissionBehaviorSequence_Data(Structure):
-    pass
-
-
-class UBehavior_ActivateInstancedMissionBehaviorSequence(Structure):
-    pass
-
-
-class UBehavior_ActivateMission_Data(Structure):
-    pass
-
-
-class UBehavior_ActivateMission(Structure):
-    pass
-
-
-class UBehavior_AddMissionDirectives_Data(Structure):
-    pass
-
-
-class UBehavior_AddMissionDirectives(Structure):
-    pass
-
-
-class UBehavior_AddMissionTime_Data(Structure):
-    pass
-
-
-class UBehavior_AddMissionTime(Structure):
-    pass
-
-
-class UBehavior_AdvanceObjectiveSet_Data(Structure):
-    pass
-
-
-class UBehavior_AdvanceObjectiveSet(Structure):
-    pass
-
-
-class UBehavior_AICloak_Data(Structure):
-    pass
-
-
-class UBehavior_AICloak(Structure):
-    pass
-
-
-class UBehavior_AIThrowProjectileAtTarget_Data(Structure):
-    pass
-
-
-class UBehavior_AIThrowProjectileAtTarget(Structure):
-    pass
-
-
-class UBehavior_AttemptItemCallout_Data(Structure):
-    pass
-
-
-class UBehavior_AttemptItemCallout(Structure):
-    pass
-
-
-class UBehavior_AttemptStatusEffect_Data(Structure):
-    pass
-
-
-class UBehavior_AttemptStatusEffect(Structure):
-    pass
-
-
-class UBehavior_CauseDamage_Data(Structure):
-    pass
-
-
-class UBehavior_CauseDamage(Structure):
-    pass
-
-
-class UBehavior_ClearObjective_Data(Structure):
-    pass
-
-
-class UBehavior_ClearObjective(Structure):
-    pass
-
-
-class UBehavior_CompleteMission_Data(Structure):
-    pass
-
-
-class UBehavior_CompleteMission(Structure):
-    pass
-
-
-class UBehavior_Conditional_Data(Structure):
-    pass
-
-
-class UBehavior_Conditional(Structure):
-    pass
-
-
-class UBehavior_ConvertInstanceDataIntoPhysicsActor_Data(Structure):
-    pass
-
-
-class UBehavior_ConvertInstanceDataIntoPhysicsActor(Structure):
-    pass
-
-
-class UBehavior_DecrementObjective_Data(Structure):
-    pass
-
-
-class UBehavior_DecrementObjective(Structure):
-    pass
-
-
-class UBehavior_Explode_Data(Structure):
-    pass
-
-
-class UBehavior_Explode(Structure):
-    pass
-
-
-class UBehavior_FailMission_Data(Structure):
-    pass
-
-
-class UBehavior_FailMission(Structure):
-    pass
-
-
-class UBehavior_GFxMovieRegister_Data(Structure):
-    pass
-
-
-class UBehavior_GFxMovieRegister(Structure):
-    pass
-
-
-class UBehavior_GiveChallengeToPlayer_Data(Structure):
-    pass
-
-
-class UBehavior_GiveChallengeToPlayer(Structure):
-    pass
-
-
-class UBehavior_IntMath_Data(Structure):
-    pass
-
-
-class UBehavior_IntMath(Structure):
-    pass
-
-
-class UBehavior_IntSwitchRange_Data(Structure):
-    pass
-
-
-class UBehavior_IntSwitchRange(Structure):
-    pass
-
-
-class UBehavior_MatchTransform_Data(Structure):
-    pass
-
-
-class UBehavior_MatchTransform(Structure):
-    pass
-
-
-class UBehavior_MeleeAttack_Data(Structure):
-    pass
-
-
-class UBehavior_MeleeAttack(Structure):
-    pass
-
-
-class UBehavior_MissionRemoteEvent_Data(Structure):
-    pass
-
-
-class UBehavior_MissionRemoteEvent(Structure):
-    pass
-
-
-class UBehavior_RandomBranch_Data(Structure):
-    pass
-
-
-class UBehavior_RandomBranch(Structure):
-    pass
-
-
-class UBehavior_Switch_Data(Structure):
-    pass
-
-
-class UBehavior_Switch(Structure):
-    pass
-
-
-class UBehavior_RandomlySelectBehaviors_Data(Structure):
-    pass
-
-
-class UBehavior_RandomlySelectBehaviors(Structure):
-    pass
-
-
-class UBehavior_RemoteCustomEvent_Data(Structure):
-    pass
-
-
-class UBehavior_RemoteCustomEvent(Structure):
-    pass
-
-
-class UBehavior_ScreenParticle_Data(Structure):
-    pass
-
-
-class UBehavior_ScreenParticle(Structure):
-    pass
-
-
-class UBehavior_SetShieldDamageResistanceType_Data(Structure):
-    pass
-
-
-class UBehavior_SetShieldDamageResistanceType(Structure):
-    pass
-
-
-class UBehavior_SetShieldTriggeredState_Data(Structure):
-    pass
-
-
-class UBehavior_SetShieldTriggeredState(Structure):
-    pass
-
-
-class UBehavior_SimpleMath_Data(Structure):
-    pass
-
-
-class UBehavior_SimpleMath(Structure):
-    pass
-
-
-class UBehavior_SpawnFirstPersonParticleSystem_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnFirstPersonParticleSystem(Structure):
-    pass
-
-
-class UBehavior_SpawnFromPopulationSystem_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnFromPopulationSystem(Structure):
-    pass
-
-
-class UBehavior_SpawnParticleSystem_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnParticleSystem(Structure):
-    pass
-
-
-class UBehavior_SpawnProjectile_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnProjectile(Structure):
-    pass
-
-
-class UBehavior_StartMissionTimer_Data(Structure):
-    pass
-
-
-class UBehavior_StartMissionTimer(Structure):
-    pass
-
-
-class UBehavior_StopMissionTimer_Data(Structure):
-    pass
-
-
-class UBehavior_StopMissionTimer(Structure):
-    pass
-
-
-class UBehavior_UpdateCollision_Data(Structure):
-    pass
-
-
-class UBehavior_UpdateCollision(Structure):
-    pass
-
-
-class UBehavior_UpdateMissionObjective_Data(Structure):
-    pass
-
-
-class UBehavior_UpdateMissionObjective(Structure):
-    pass
-
-
-class UBehavior_VectorMath_Data(Structure):
-    pass
-
-
-class UBehavior_VectorMath(Structure):
-    pass
-
-
-class UBehavior_VectorToLocalSpace_Data(Structure):
-    pass
-
-
-class UBehavior_VectorToLocalSpace(Structure):
-    pass
-
-
-class UBehaviorSequenceEnableByMission_Data(Structure):
-    pass
-
-
-class UBehaviorSequenceEnableByMission(Structure):
-    pass
-
-
-class ABehaviorVolume_Data(Structure):
-    pass
-
-
-class ABehaviorVolume(Structure):
-    pass
-
-
-class UBehaviorVolumeDefinition_Data(Structure):
-    pass
-
-
-class UBehaviorVolumeDefinition(Structure):
-    pass
-
-
-class UBlackMarketDefinition_Data(Structure):
-    pass
-
-
-class UBlackMarketDefinition(Structure):
-    pass
-
-
-class UBlackMarketUpgradeAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UBlackMarketUpgradeAttributeValueResolver(Structure):
-    pass
-
-
-class UBlackMarketUpgradeDefinition_Data(Structure):
-    pass
-
-
-class UBlackMarketUpgradeDefinition(Structure):
-    pass
-
-
-class TArray_UBlackMarketUpgradeDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBlackMarketUpgradeDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ABlackMarketUpgradeManager_Data(Structure):
-    pass
-
-
-class ABlackMarketUpgradeManager(Structure):
-    pass
-
-
-class UBodyClassDeathDefinition_Data(Structure):
-    pass
-
-
-class UBodyClassDeathDefinition(Structure):
-    pass
-
-
-class UBodyClassDefinition_Data(Structure):
-    pass
-
-
-class UBodyClassDefinition(Structure):
-    pass
-
-
-class UBodyHitRegionDefinition_Data(Structure):
-    pass
-
-
-class UBodyHitRegionDefinition(Structure):
-    pass
-
-
-class TArray_UBodyHitRegionDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBodyHitRegionDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBodyRegionProtectionDefinition_Data(Structure):
-    pass
-
-
-class UBodyRegionProtectionDefinition(Structure):
-    pass
-
-
-class UBodyWeaponHoldDefinition_Data(Structure):
-    pass
-
-
-class UBodyWeaponHoldDefinition(Structure):
-    pass
-
-
-class TArray_UBodyWeaponHoldDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBodyWeaponHoldDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBoundaryTurretRenderingComponent_Data(Structure):
-    pass
-
-
-class UBoundaryTurretRenderingComponent(Structure):
-    pass
-
-
-class UBulletListenerComponent_Data(Structure):
-    pass
-
-
-class UBulletListenerComponent(Structure):
-    pass
-
-
-class UCellsNavigator_Data(Structure):
-    pass
-
-
-class UCellsNavigator(Structure):
-    pass
-
-
-class UChallengeCategoryDefinition_Data(Structure):
-    pass
-
-
-class UChallengeCategoryDefinition(Structure):
-    pass
-
-
-class UChallengeConditionDefinition_Data(Structure):
-    pass
-
-
-class UChallengeConditionDefinition(Structure):
-    pass
-
-
-class TArray_UChallengeConditionDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UChallengeConditionDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UChallengeDefinition_Data(Structure):
-    pass
-
-
-class UChallengeDefinition(Structure):
-    pass
-
-
-class TArray_UChallengeDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UChallengeDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UChallengeFeedbackMessage_Data(Structure):
-    pass
-
-
-class UChallengeFeedbackMessage(Structure):
-    pass
-
-
-class AChallengeManager_Data(Structure):
-    pass
-
-
-class AChallengeManager(Structure):
-    pass
-
-
-class UChassisDefinition_Data(Structure):
-    pass
-
-
-class UChassisDefinition(Structure):
-    pass
-
-
-class UClassDropWeightValueResolver_Data(Structure):
-    pass
-
-
-class UClassDropWeightValueResolver(Structure):
-    pass
-
-
-class UCombatMusicManager_Data(Structure):
-    pass
-
-
-class UCombatMusicManager(Structure):
-    pass
-
-
-class UCombatMusicParameters_Data(Structure):
-    pass
-
-
-class UCombatMusicParameters(Structure):
-    pass
-
-
-class UCoordinatedEffectDefinition_Data(Structure):
-    pass
-
-
-class UCoordinatedEffectDefinition(Structure):
-    pass
-
-
-class UCurrencyAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UCurrencyAttributeValueResolver(Structure):
-    pass
-
-
-class UCurrencyListDefinition_Data(Structure):
-    pass
-
-
-class UCurrencyListDefinition(Structure):
-    pass
-
-
-class UCurrentProficiencySkillAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UCurrentProficiencySkillAttributeContextResolver(Structure):
-    pass
-
-
-class UCustomizationData_Data(Structure):
-    pass
-
-
-class UCustomizationData(Structure):
-    pass
-
-
-class UCustomizationData_Head_Data(Structure):
-    pass
-
-
-class UCustomizationData_Head(Structure):
-    pass
-
-
-class UCustomizationData_Skin_Data(Structure):
-    pass
-
-
-class UCustomizationData_Skin(Structure):
-    pass
-
-
-class UCustomizationDefinition_Data(Structure):
-    pass
-
-
-class UCustomizationDefinition(Structure):
-    pass
-
-
-class TArray_UCustomizationDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UCustomizationDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCustomizationType_Data(Structure):
-    pass
-
-
-class UCustomizationType(Structure):
-    pass
-
-
-class UCustomizationType_Head_Data(Structure):
-    pass
-
-
-class UCustomizationType_Head(Structure):
-    pass
-
-
-class UCustomizationType_Skin_Data(Structure):
-    pass
-
-
-class UCustomizationType_Skin(Structure):
-    pass
-
-
-class UCustomizationUsage_Data(Structure):
-    pass
-
-
-class UCustomizationUsage(Structure):
-    pass
-
-
-class UCustomSkeletalMeshComponent_Data(Structure):
-    pass
-
-
-class UCustomSkeletalMeshComponent(Structure):
-    pass
-
-
-class UDamageOverTimeManager_Data(Structure):
-    pass
-
-
-class UDamageOverTimeManager(Structure):
-    pass
-
-
-class UDamageTypeAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UDamageTypeAttributeValueResolver(Structure):
-    pass
-
-
-class UDefinitionGlobalsDefinition_Data(Structure):
-    pass
-
-
-class UDefinitionGlobalsDefinition(Structure):
-    pass
-
-
-class UDesignerAttributeDefinition_Data(Structure):
-    pass
-
-
-class UDesignerAttributeDefinition(Structure):
-    pass
-
-
-class UDevelopmentDownloadableContentEnumerator_Data(Structure):
-    pass
-
-
-class UDevelopmentDownloadableContentEnumerator(Structure):
-    pass
-
-
-class UDialogNameTagExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UDialogNameTagExpressionEvaluator(Structure):
-    pass
-
-
-class UDLCLegacyPlayerClassIdentifierDefinition_Data(Structure):
-    pass
-
-
-class UDLCLegacyPlayerClassIdentifierDefinition(Structure):
-    pass
-
-
-class TArray_UDLCLegacyPlayerClassIdentifierDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDLCLegacyPlayerClassIdentifierDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDlcTmsHolder_Data(Structure):
-    pass
-
-
-class UDlcTmsHolder(Structure):
-    pass
-
-
-class UDownloadableAssetLibraryDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableAssetLibraryDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableAssetLibraryDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableAssetLibraryDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableContentDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableContentDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableContentDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableContentDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableBalanceModifierDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableBalanceModifierDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableBalanceModifierDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableBalanceModifierDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableCharacterDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableCharacterDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableCharacterDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableCharacterDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableCustomizationSetDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableCustomizationSetDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableCustomizationSetDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableCustomizationSetDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableExpansionDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableExpansionDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableExpansionDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableExpansionDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableItemSetDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableItemSetDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableItemSetDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableItemSetDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadableVehicleDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableVehicleDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadableVehicleDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadableVehicleDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadablePackageDefinition_Data(Structure):
-    pass
-
-
-class UDownloadablePackageDefinition(Structure):
-    pass
-
-
-class TArray_UDownloadablePackageDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadablePackageDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDownloadablePackageLicense_Data(Structure):
-    pass
-
-
-class UDownloadablePackageLicense(Structure):
-    pass
-
-
-class UDownloadablePackageLicenseItem_Data(Structure):
-    pass
-
-
-class UDownloadablePackageLicenseItem(Structure):
-    pass
-
-
-class TArray_UDownloadablePackageLicenseItemPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDownloadablePackageLicenseItem))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGoldenKeyLicenseItem_Data(Structure):
-    pass
-
-
-class UGoldenKeyLicenseItem(Structure):
-    pass
-
-
-class UMarketingUnlockLicenseItem_Data(Structure):
-    pass
-
-
-class UMarketingUnlockLicenseItem(Structure):
-    pass
-
-
-class UEffectCollectionDefinition_Data(Structure):
-    pass
-
-
-class UEffectCollectionDefinition(Structure):
-    pass
-
-
-class UEnvironmentTagDefinition_Data(Structure):
-    pass
-
-
-class UEnvironmentTagDefinition(Structure):
-    pass
-
-
-class UEquippedInventoryAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UEquippedInventoryAttributeContextResolver(Structure):
-    pass
-
-
-class UEventFilter_OnTouch_Data(Structure):
-    pass
-
-
-class UEventFilter_OnTouch(Structure):
-    pass
-
-
-class UExperienceResourcePool_Data(Structure):
-    pass
-
-
-class UExperienceResourcePool(Structure):
-    pass
-
-
-class UExplosionCollectionDefinition_Data(Structure):
-    pass
-
-
-class UExplosionCollectionDefinition(Structure):
-    pass
-
-
-class UExplosionDefinition_Data(Structure):
-    pass
-
-
-class UExplosionDefinition(Structure):
-    pass
-
-
-class UFastTravelStationsListOrder_Data(Structure):
-    pass
-
-
-class UFastTravelStationsListOrder(Structure):
-    pass
-
-
-class UFastTravelStationsLookup_Data(Structure):
-    pass
-
-
-class UFastTravelStationsLookup(Structure):
-    pass
-
-
-class UFiringModeDefinition_Data(Structure):
-    pass
-
-
-class UFiringModeDefinition(Structure):
-    pass
-
-
-class UFiringModeSoundDefinition_Data(Structure):
-    pass
-
-
-class UFiringModeSoundDefinition(Structure):
-    pass
-
-
-class AFlyerBlockingVolume_Data(Structure):
-    pass
-
-
-class AFlyerBlockingVolume(Structure):
-    pass
-
-
-class UFocusCameraDefinition_Data(Structure):
-    pass
-
-
-class UFocusCameraDefinition(Structure):
-    pass
-
-
-class UFractalViewWanderingDefinition_Data(Structure):
-    pass
-
-
-class UFractalViewWanderingDefinition(Structure):
-    pass
-
-
-class UGameBalanceDefinition_Data(Structure):
-    pass
-
-
-class UGameBalanceDefinition(Structure):
-    pass
-
-
-class TArray_UGameBalanceDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UGameBalanceDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGameReleaseDefinition_Data(Structure):
-    pass
-
-
-class UGameReleaseDefinition(Structure):
-    pass
-
-
-class UGearLikenessMeshComponent_Data(Structure):
-    pass
-
-
-class UGearLikenessMeshComponent(Structure):
-    pass
-
-
-class UGenericReviveMessageDefinition_Data(Structure):
-    pass
-
-
-class UGenericReviveMessageDefinition(Structure):
-    pass
-
-
-class UGlobalAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UGlobalAttributeValueResolver(Structure):
-    pass
-
-
-class UGlobalsDefinition_Data(Structure):
-    pass
-
-
-class UGlobalsDefinition(Structure):
-    pass
-
-
-class UHitRegionHelper_Data(Structure):
-    pass
-
-
-class UHitRegionHelper(Structure):
-    pass
-
-
-class UIAnimProvider_Data(Structure):
-    pass
-
-
-class UIAnimProvider(Structure):
-    pass
-
-
-class UIAttachableActor_Data(Structure):
-    pass
-
-
-class UIAttachableActor(Structure):
-    pass
-
-
-class UIBodyPawn_Data(Structure):
-    pass
-
-
-class UIBodyPawn(Structure):
-    pass
-
-
-class UIControllerLocator_Data(Structure):
-    pass
-
-
-class UIControllerLocator(Structure):
-    pass
-
-
-class UICustomizable_Data(Structure):
-    pass
-
-
-class UICustomizable(Structure):
-    pass
-
-
-class UIDamageable_Data(Structure):
-    pass
-
-
-class UIDamageable(Structure):
-    pass
-
-
-class UIDamageSurface_Data(Structure):
-    pass
-
-
-class UIDamageSurface(Structure):
-    pass
-
-
-class UIDesignerAttributeProvider_Data(Structure):
-    pass
-
-
-class UIDesignerAttributeProvider(Structure):
-    pass
-
-
-class UIDlcLicensableObject_Data(Structure):
-    pass
-
-
-class UIDlcLicensableObject(Structure):
-    pass
-
-
-class UIDlcLicenseObject_Data(Structure):
-    pass
-
-
-class UIDlcLicenseObject(Structure):
-    pass
-
-
-class UIDrunkenProjectile_Data(Structure):
-    pass
-
-
-class UIDrunkenProjectile(Structure):
-    pass
-
-
-class UIDynamicObstacle_Data(Structure):
-    pass
-
-
-class UIDynamicObstacle(Structure):
-    pass
-
-
-class UIExtraImpactEffects_Data(Structure):
-    pass
-
-
-class UIExtraImpactEffects(Structure):
-    pass
-
-
-class UIFocusable_Data(Structure):
-    pass
-
-
-class UIFocusable(Structure):
-    pass
-
-
-class UIGearLikenessConsumer_Data(Structure):
-    pass
-
-
-class UIGearLikenessConsumer(Structure):
-    pass
-
-
-class UIHealable_Data(Structure):
-    pass
-
-
-class UIHealable(Structure):
-    pass
-
-
-class UIHitRegionConsumer_Data(Structure):
-    pass
-
-
-class UIHitRegionConsumer(Structure):
-    pass
-
-
-class UIHitRegionInfoProvider_Data(Structure):
-    pass
-
-
-class UIHitRegionInfoProvider(Structure):
-    pass
-
-
-class UIStatusEffectTarget_Data(Structure):
-    pass
-
-
-class UIStatusEffectTarget(Structure):
-    pass
-
-
-class UIItemCardable_Data(Structure):
-    pass
-
-
-class UIItemCardable(Structure):
-    pass
-
-
-class UILevelChallengeObject_Data(Structure):
-    pass
-
-
-class UILevelChallengeObject(Structure):
-    pass
-
-
-class UILootable_Data(Structure):
-    pass
-
-
-class UILootable(Structure):
-    pass
-
-
-class UIMapDisplayInfo_Data(Structure):
-    pass
-
-
-class UIMapDisplayInfo(Structure):
-    pass
-
-
-class UIMaterialFadeBehavior_Data(Structure):
-    pass
-
-
-class UIMaterialFadeBehavior(Structure):
-    pass
-
-
-class UIMeleeAttacker_Data(Structure):
-    pass
-
-
-class UIMeleeAttacker(Structure):
-    pass
-
-
-class UIMission_Data(Structure):
-    pass
-
-
-class UIMission(Structure):
-    pass
-
-
-class UIMissionDirector_Data(Structure):
-    pass
-
-
-class UIMissionDirector(Structure):
-    pass
-
-
-class UIMissionInventory_Data(Structure):
-    pass
-
-
-class UIMissionInventory(Structure):
-    pass
-
-
-class UIMissionObjective_Data(Structure):
-    pass
-
-
-class UIMissionObjective(Structure):
-    pass
-
-
-class UInjuredDefinition_Data(Structure):
-    pass
-
-
-class UInjuredDefinition(Structure):
-    pass
-
-
-class UInputActionDefinition_Data(Structure):
-    pass
-
-
-class UInputActionDefinition(Structure):
-    pass
-
-
-class TArray_UInputActionDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInputActionDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInputContextDefinition_Data(Structure):
-    pass
-
-
-class UInputContextDefinition(Structure):
-    pass
-
-
-class TArray_UInputContextDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInputContextDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInputDeviceCollectionDefinition_Data(Structure):
-    pass
-
-
-class UInputDeviceCollectionDefinition(Structure):
-    pass
-
-
-class UInputDeviceDefinition_Data(Structure):
-    pass
-
-
-class UInputDeviceDefinition(Structure):
-    pass
-
-
-class TArray_UInputDeviceDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInputDeviceDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInputRemappingDefinition_Data(Structure):
-    pass
-
-
-class UInputRemappingDefinition(Structure):
-    pass
-
-
-class TArray_UInputRemappingDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInputRemappingDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInputSetDefinition_Data(Structure):
-    pass
-
-
-class UInputSetDefinition(Structure):
-    pass
-
-
-class TArray_UInputSetDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInputSetDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInRangeOfInjuredPlayerExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UInRangeOfInjuredPlayerExpressionEvaluator(Structure):
-    pass
-
-
-class UInstancedDesignerAttribute_Data(Structure):
-    pass
-
-
-class UInstancedDesignerAttribute(Structure):
-    pass
-
-
-class TArray_UInstancedDesignerAttributePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInstancedDesignerAttribute))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInteractionIconDefinition_Data(Structure):
-    pass
-
-
-class UInteractionIconDefinition(Structure):
-    pass
-
-
-class AInteractionProxy_Data(Structure):
-    pass
-
-
-class AInteractionProxy(Structure):
-    pass
-
-
-class APawnInteractionProxy_Data(Structure):
-    pass
-
-
-class APawnInteractionProxy(Structure):
-    pass
-
-
-class UInteractiveObjectBalanceDefinition_Data(Structure):
-    pass
-
-
-class UInteractiveObjectBalanceDefinition(Structure):
-    pass
-
-
-class UInteractiveObjectDefinition_Data(Structure):
-    pass
-
-
-class UInteractiveObjectDefinition(Structure):
-    pass
-
-
-class UVehicleSpawnStationPlatformDefinition_Data(Structure):
-    pass
-
-
-class UVehicleSpawnStationPlatformDefinition(Structure):
-    pass
-
-
-class UWillowVendingMachineDefinition_Data(Structure):
-    pass
-
-
-class UWillowVendingMachineDefinition(Structure):
-    pass
-
-
-class UInteractiveObjectLootListDefinition_Data(Structure):
-    pass
-
-
-class UInteractiveObjectLootListDefinition(Structure):
-    pass
-
-
-class TArray_UInteractiveObjectLootListDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInteractiveObjectLootListDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInterpTrackBehaviors_Data(Structure):
-    pass
-
-
-class UInterpTrackBehaviors(Structure):
-    pass
-
-
-class UInterpTrackInstBehaviors_Data(Structure):
-    pass
-
-
-class UInterpTrackInstBehaviors(Structure):
-    pass
-
-
-class UInventoryAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UInventoryAttributeContextResolver(Structure):
-    pass
-
-
-class UInventoryBalanceDefinition_Data(Structure):
-    pass
-
-
-class UInventoryBalanceDefinition(Structure):
-    pass
-
-
-class TArray_UInventoryBalanceDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInventoryBalanceDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UItemBalanceDefinition_Data(Structure):
-    pass
-
-
-class UItemBalanceDefinition(Structure):
-    pass
-
-
-class UClassModBalanceDefinition_Data(Structure):
-    pass
-
-
-class UClassModBalanceDefinition(Structure):
-    pass
-
-
-class UWeaponBalanceDefinition_Data(Structure):
-    pass
-
-
-class UWeaponBalanceDefinition(Structure):
-    pass
-
-
-class UMissionWeaponBalanceDefinition_Data(Structure):
-    pass
-
-
-class UMissionWeaponBalanceDefinition(Structure):
-    pass
-
-
-class TArray_UMissionWeaponBalanceDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMissionWeaponBalanceDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInventoryCardGFx_Data(Structure):
-    pass
-
-
-class UInventoryCardGFx(Structure):
-    pass
-
-
-class UInventoryPartListCollectionDefinition_Data(Structure):
-    pass
-
-
-class UInventoryPartListCollectionDefinition(Structure):
-    pass
-
-
-class UItemPartListCollectionDefinition_Data(Structure):
-    pass
-
-
-class UItemPartListCollectionDefinition(Structure):
-    pass
-
-
-class UWeaponPartListCollectionDefinition_Data(Structure):
-    pass
-
-
-class UWeaponPartListCollectionDefinition(Structure):
-    pass
-
-
-class UIPlayerBehavior_Data(Structure):
-    pass
-
-
-class UIPlayerBehavior(Structure):
-    pass
-
-
-class UIPlayerMaster_Data(Structure):
-    pass
-
-
-class UIPlayerMaster(Structure):
-    pass
-
-
-class UIProjectileBehavior_Data(Structure):
-    pass
-
-
-class UIProjectileBehavior(Structure):
-    pass
-
-
-class UIProjectileReflector_Data(Structure):
-    pass
-
-
-class UIProjectileReflector(Structure):
-    pass
-
-
-class UIProtectionTimer_Data(Structure):
-    pass
-
-
-class UIProtectionTimer(Structure):
-    pass
-
-
-class UIResourcePoolOwner_Data(Structure):
-    pass
-
-
-class UIResourcePoolOwner(Structure):
-    pass
-
-
-class UIScreenParticle_Data(Structure):
-    pass
-
-
-class UIScreenParticle(Structure):
-    pass
-
-
-class UISeeTargetable_Data(Structure):
-    pass
-
-
-class UISeeTargetable(Structure):
-    pass
-
-
-class UIShop_Data(Structure):
-    pass
-
-
-class UIShop(Structure):
-    pass
-
-
-class UISimpleAnimPlayer_Data(Structure):
-    pass
-
-
-class UISimpleAnimPlayer(Structure):
-    pass
-
-
-class UISkillTreeListener_Data(Structure):
-    pass
-
-
-class UISkillTreeListener(Structure):
-    pass
-
-
-class UItemDefinition_Data(Structure):
-    pass
-
-
-class UItemDefinition(Structure):
-    pass
-
-
-class UEquipableItemDefinition_Data(Structure):
-    pass
-
-
-class UEquipableItemDefinition(Structure):
-    pass
-
-
-class UArtifactDefinition_Data(Structure):
-    pass
-
-
-class UArtifactDefinition(Structure):
-    pass
-
-
-class UClassModDefinition_Data(Structure):
-    pass
-
-
-class UClassModDefinition(Structure):
-    pass
-
-
-class TArray_UClassModDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UClassModDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCrossDLCClassModDefinition_Data(Structure):
-    pass
-
-
-class UCrossDLCClassModDefinition(Structure):
-    pass
-
-
-class UGrenadeModDefinition_Data(Structure):
-    pass
-
-
-class UGrenadeModDefinition(Structure):
-    pass
-
-
-class UShieldDefinition_Data(Structure):
-    pass
-
-
-class UShieldDefinition(Structure):
-    pass
-
-
-class UUsableItemDefinition_Data(Structure):
-    pass
-
-
-class UUsableItemDefinition(Structure):
-    pass
-
-
-class UMissionItemDefinition_Data(Structure):
-    pass
-
-
-class UMissionItemDefinition(Structure):
-    pass
-
-
-class UUsableCustomizationItemDefinition_Data(Structure):
-    pass
-
-
-class UUsableCustomizationItemDefinition(Structure):
-    pass
-
-
-class UItemPartDefinition_Data(Structure):
-    pass
-
-
-class UItemPartDefinition(Structure):
-    pass
-
-
-class UEquipableItemPartDefinition_Data(Structure):
-    pass
-
-
-class UEquipableItemPartDefinition(Structure):
-    pass
-
-
-class UArtifactPartDefinition_Data(Structure):
-    pass
-
-
-class UArtifactPartDefinition(Structure):
-    pass
-
-
-class UClassModPartDefinition_Data(Structure):
-    pass
-
-
-class UClassModPartDefinition(Structure):
-    pass
-
-
-class UGrenadeModPartDefinition_Data(Structure):
-    pass
-
-
-class UGrenadeModPartDefinition(Structure):
-    pass
-
-
-class UShieldPartDefinition_Data(Structure):
-    pass
-
-
-class UShieldPartDefinition(Structure):
-    pass
-
-
-class UItemNamePartDefinition_Data(Structure):
-    pass
-
-
-class UItemNamePartDefinition(Structure):
-    pass
-
-
-class TArray_UItemNamePartDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UItemNamePartDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUsableItemPartDefinition_Data(Structure):
-    pass
-
-
-class UUsableItemPartDefinition(Structure):
-    pass
-
-
-class UMissionItemPartDefinition_Data(Structure):
-    pass
-
-
-class UMissionItemPartDefinition(Structure):
-    pass
-
-
-class UItemPartListDefinition_Data(Structure):
-    pass
-
-
-class UItemPartListDefinition(Structure):
-    pass
-
-
-class UItemPool_Data(Structure):
-    pass
-
-
-class UItemPool(Structure):
-    pass
-
-
-class UItemPoolDefinition_Data(Structure):
-    pass
-
-
-class UItemPoolDefinition(Structure):
-    pass
-
-
-class TArray_UItemPoolDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UItemPoolDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCrossDLCItemPoolDefinition_Data(Structure):
-    pass
-
-
-class UCrossDLCItemPoolDefinition(Structure):
-    pass
-
-
-class UKeyedItemPoolDefinition_Data(Structure):
-    pass
-
-
-class UKeyedItemPoolDefinition(Structure):
-    pass
-
-
-class TArray_UKeyedItemPoolDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UKeyedItemPoolDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UItemPoolListDefinition_Data(Structure):
-    pass
-
-
-class UItemPoolListDefinition(Structure):
-    pass
-
-
-class TArray_UItemPoolListDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UItemPoolListDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UIUpdatePostProcessOverride_Data(Structure):
-    pass
-
-
-class UIUpdatePostProcessOverride(Structure):
-    pass
-
-
-class UIUsable_Data(Structure):
-    pass
-
-
-class UIUsable(Structure):
-    pass
-
-
-class UIWeaponThrow_Data(Structure):
-    pass
-
-
-class UIWeaponThrow(Structure):
-    pass
-
-
-class UIWeatherBehavior_Data(Structure):
-    pass
-
-
-class UIWeatherBehavior(Structure):
-    pass
-
-
-class ULcdHelper_Data(Structure):
-    pass
-
-
-class ULcdHelper(Structure):
-    pass
-
-
-class ULevelDependencyList_Data(Structure):
-    pass
-
-
-class ULevelDependencyList(Structure):
-    pass
-
-
-class ALevelLandmarkAnchor_Data(Structure):
-    pass
-
-
-class ALevelLandmarkAnchor(Structure):
-    pass
-
-
-class ULevelLandmarkAnchorRenderingComponent_Data(Structure):
-    pass
-
-
-class ULevelLandmarkAnchorRenderingComponent(Structure):
-    pass
-
-
-class ULocalizedStringDefinition_Data(Structure):
-    pass
-
-
-class ULocalizedStringDefinition(Structure):
-    pass
-
-
-class ULockoutDefinition_Data(Structure):
-    pass
-
-
-class ULockoutDefinition(Structure):
-    pass
-
-
-class ULookAxisDefinition_Data(Structure):
-    pass
-
-
-class ULookAxisDefinition(Structure):
-    pass
-
-
-class ULookingAtInjuredPlayerExpressionEvaluator_Data(Structure):
-    pass
-
-
-class ULookingAtInjuredPlayerExpressionEvaluator(Structure):
-    pass
-
-
-class ULootConfigurationDefinition_Data(Structure):
-    pass
-
-
-class ULootConfigurationDefinition(Structure):
-    pass
-
-
-class UManufacturerAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UManufacturerAttributeValueResolver(Structure):
-    pass
-
-
-class UMarketingUnlockDefinition_Data(Structure):
-    pass
-
-
-class UMarketingUnlockDefinition(Structure):
-    pass
-
-
-class TArray_UMarketingUnlockDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMarketingUnlockDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMeleeDefinition_Data(Structure):
-    pass
-
-
-class UMeleeDefinition(Structure):
-    pass
-
-
-class UMissionDefinition_Data(Structure):
-    pass
-
-
-class UMissionDefinition(Structure):
-    pass
-
-
-class TArray_UMissionDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMissionDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMissionDirectivesDefinition_Data(Structure):
-    pass
-
-
-class UMissionDirectivesDefinition(Structure):
-    pass
-
-
-class UMissionObjectiveDefinition_Data(Structure):
-    pass
-
-
-class UMissionObjectiveDefinition(Structure):
-    pass
-
-
-class TArray_UMissionObjectiveDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMissionObjectiveDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMissionObjectiveSetDefinition_Data(Structure):
-    pass
-
-
-class UMissionObjectiveSetDefinition(Structure):
-    pass
-
-
-class TArray_UMissionObjectiveSetDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMissionObjectiveSetDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMissionObjectiveSetBranchingDefinition_Data(Structure):
-    pass
-
-
-class UMissionObjectiveSetBranchingDefinition(Structure):
-    pass
-
-
-class UMissionObjectiveSetCollectionDefinition_Data(Structure):
-    pass
-
-
-class UMissionObjectiveSetCollectionDefinition(Structure):
-    pass
-
-
-class UMissionPopulationAspect_Data(Structure):
-    pass
-
-
-class UMissionPopulationAspect(Structure):
-    pass
-
-
-class AMissionTracker_Data(Structure):
-    pass
-
-
-class AMissionTracker(Structure):
-    pass
-
-
-class UMovementComponent_Data(Structure):
-    pass
-
-
-class UMovementComponent(Structure):
-    pass
-
-
-class UDrunkenBaseComponent_Data(Structure):
-    pass
-
-
-class UDrunkenBaseComponent(Structure):
-    pass
-
-
-class UDrunkenRandomComponent_Data(Structure):
-    pass
-
-
-class UDrunkenRandomComponent(Structure):
-    pass
-
-
-class UDrunkenWaveComponent_Data(Structure):
-    pass
-
-
-class UDrunkenWaveComponent(Structure):
-    pass
-
-
-class UNameListDefinition_Data(Structure):
-    pass
-
-
-class UNameListDefinition(Structure):
-    pass
-
-
-class UNPCLoadBalancer_Data(Structure):
-    pass
-
-
-class UNPCLoadBalancer(Structure):
-    pass
-
-
-class UPackageAssetLibrary_Data(Structure):
-    pass
-
-
-class UPackageAssetLibrary(Structure):
-    pass
-
-
-class UPackageAssetSublibrary_Data(Structure):
-    pass
-
-
-class UPackageAssetSublibrary(Structure):
-    pass
-
-
-class TArray_UPackageAssetSublibraryPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPackageAssetSublibrary))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPassengerCameraDefinition_Data(Structure):
-    pass
-
-
-class UPassengerCameraDefinition(Structure):
-    pass
-
-
-class UPawnRelevanceUtility_Data(Structure):
-    pass
-
-
-class UPawnRelevanceUtility(Structure):
-    pass
-
-
-class UPawnRelevanceUtilityCaching_Data(Structure):
-    pass
-
-
-class UPawnRelevanceUtilityCaching(Structure):
-    pass
-
-
-class UPawnRelevanceUtilityFixedCost_Data(Structure):
-    pass
-
-
-class UPawnRelevanceUtilityFixedCost(Structure):
-    pass
-
-
-class UPerchDefinition_Data(Structure):
-    pass
-
-
-class UPerchDefinition(Structure):
-    pass
-
-
-class UPerchEditorComponent_Data(Structure):
-    pass
-
-
-class UPerchEditorComponent(Structure):
-    pass
-
-
-class UPhysicsJumpConnection_Data(Structure):
-    pass
-
-
-class UPhysicsJumpConnection(Structure):
-    pass
-
-
-class TArray_UPhysicsJumpConnectionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPhysicsJumpConnection))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class APhysicsJumpNode_Data(Structure):
-    pass
-
-
-class APhysicsJumpNode(Structure):
-    pass
-
-
-class UPhysicsJumpNodeEditorComponent_Data(Structure):
-    pass
-
-
-class UPhysicsJumpNodeEditorComponent(Structure):
-    pass
-
-
-class APlayerBlockingVolume_Data(Structure):
-    pass
-
-
-class APlayerBlockingVolume(Structure):
-    pass
-
-
-class AExecuteBlockingVolume_Data(Structure):
-    pass
-
-
-class AExecuteBlockingVolume(Structure):
-    pass
-
-
-class UPlayerChallengeListDefinition_Data(Structure):
-    pass
-
-
-class UPlayerChallengeListDefinition(Structure):
-    pass
-
-
-class UPlayerClassAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UPlayerClassAttributeValueResolver(Structure):
-    pass
-
-
-class UPlayerClassCountAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UPlayerClassCountAttributeValueResolver(Structure):
-    pass
-
-
-class UPlayerClassIdentifierDefinition_Data(Structure):
-    pass
-
-
-class UPlayerClassIdentifierDefinition(Structure):
-    pass
-
-
-class TArray_UPlayerClassIdentifierDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPlayerClassIdentifierDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPlayerControllerAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UPlayerControllerAttributeContextResolver(Structure):
-    pass
-
-
-class UPlayerEventProviderDefinition_Data(Structure):
-    pass
-
-
-class UPlayerEventProviderDefinition(Structure):
-    pass
-
-
-class AWillowGameInfo_Data(Structure):
-    pass
-
-
-class AWillowGameInfo(Structure):
-    pass
-
-
-class UPlayerInteractionManager_Data(Structure):
-    pass
-
-
-class UPlayerInteractionManager(Structure):
-    pass
-
-
-class UPlayerInteractionServer_Data(Structure):
-    pass
-
-
-class UPlayerInteractionServer(Structure):
-    pass
-
-
-class UVehicleSeatSwap_PlayerInteractionServer_Data(Structure):
-    pass
-
-
-class UVehicleSeatSwap_PlayerInteractionServer(Structure):
-    pass
-
-
-class APlayerKillVolume_Data(Structure):
-    pass
-
-
-class APlayerKillVolume(Structure):
-    pass
-
-
-class UPlayerNameIdentifierDefinition_Data(Structure):
-    pass
-
-
-class UPlayerNameIdentifierDefinition(Structure):
-    pass
-
-
-class TArray_UPlayerNameIdentifierDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPlayerNameIdentifierDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPlayerReplicationInfoAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UPlayerReplicationInfoAttributeContextResolver(Structure):
-    pass
-
-
-class UPlayerSaveGame_Data(Structure):
-    pass
-
-
-class UPlayerSaveGame(Structure):
-    pass
-
-
-class UPlayerSkillAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UPlayerSkillAttributeValueResolver(Structure):
-    pass
-
-
-class AWillowPlayerController_Data(Structure):
-    pass
-
-
-class AWillowPlayerController(Structure):
-    pass
-
-
-class TArray_AWillowPlayerControllerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowPlayerController))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPlayerSkillTree_Data(Structure):
-    pass
-
-
-class UPlayerSkillTree(Structure):
-    pass
-
-
-class APlayerStandIn_Data(Structure):
-    pass
-
-
-class APlayerStandIn(Structure):
-    pass
-
-
-class TArray_APlayerStandInPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(APlayerStandIn))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPlayerStatAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UPlayerStatAttributeValueResolver(Structure):
-    pass
-
-
-class UPlayThroughCountAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UPlayThroughCountAttributeValueResolver(Structure):
-    pass
-
-
-class UPopulationFactoryInteractiveObject_Data(Structure):
-    pass
-
-
-class UPopulationFactoryInteractiveObject(Structure):
-    pass
-
-
-class UPopulationFactoryBlackMarket_Data(Structure):
-    pass
-
-
-class UPopulationFactoryBlackMarket(Structure):
-    pass
-
-
-class UPopulationFactoryVendingMachine_Data(Structure):
-    pass
-
-
-class UPopulationFactoryVendingMachine(Structure):
-    pass
-
-
-class UPopulationFactoryWillowProjectile_Data(Structure):
-    pass
-
-
-class UPopulationFactoryWillowProjectile(Structure):
-    pass
-
-
-class UPopulationFactoryWillowVehicle_Data(Structure):
-    pass
-
-
-class UPopulationFactoryWillowVehicle(Structure):
-    pass
-
-
-class APopulationOpportunityDen_Data(Structure):
-    pass
-
-
-class APopulationOpportunityDen(Structure):
-    pass
-
-
-class TArray_APopulationOpportunityDenPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(APopulationOpportunityDen))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class APopulationOpportunityDen_Dynamic_Data(Structure):
-    pass
-
-
-class APopulationOpportunityDen_Dynamic(Structure):
-    pass
-
-
-class UPopulationOpportunityDenRenderingComponent_Data(Structure):
-    pass
-
-
-class UPopulationOpportunityDenRenderingComponent(Structure):
-    pass
-
-
-class UPostureStateExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UPostureStateExpressionEvaluator(Structure):
-    pass
-
-
-class UProjectileBehaviorBase_Data(Structure):
-    pass
-
-
-class UProjectileBehaviorBase(Structure):
-    pass
-
-
-class UProjectileBehavior_Bounce_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_Bounce(Structure):
-    pass
-
-
-class UProjectileDefinition_Data(Structure):
-    pass
-
-
-class UProjectileDefinition(Structure):
-    pass
-
-
-class UQSortComparer_Data(Structure):
-    pass
-
-
-class UQSortComparer(Structure):
-    pass
-
-
-class UInventoryUIStatComparer_Data(Structure):
-    pass
-
-
-class UInventoryUIStatComparer(Structure):
-    pass
-
-
-class UQSortAttributeComparer_Data(Structure):
-    pass
-
-
-class UQSortAttributeComparer(Structure):
-    pass
-
-
-class UWeaponTypeComparer_Data(Structure):
-    pass
-
-
-class UWeaponTypeComparer(Structure):
-    pass
-
-
-class ARallyPoint_Data(Structure):
-    pass
-
-
-class ARallyPoint(Structure):
-    pass
-
-
-class TArray_ARallyPointPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ARallyPoint))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class URecentDropList_Data(Structure):
-    pass
-
-
-class URecentDropList(Structure):
-    pass
-
-
-class UResourcePoolStateAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UResourcePoolStateAttributeValueResolver(Structure):
-    pass
-
-
-class USaveGameChannel_Data(Structure):
-    pass
-
-
-class USaveGameChannel(Structure):
-    pass
-
-
-class USeqAct_IsInVolume_Data(Structure):
-    pass
-
-
-class USeqAct_IsInVolume(Structure):
-    pass
-
-
-class USeqAct_SetNameList_Data(Structure):
-    pass
-
-
-class USeqAct_SetNameList(Structure):
-    pass
-
-
-class USeqEvent_TakeHitRegionDamage_Data(Structure):
-    pass
-
-
-class USeqEvent_TakeHitRegionDamage(Structure):
-    pass
-
-
-class USequenceEventEnableByMission_Data(Structure):
-    pass
-
-
-class USequenceEventEnableByMission(Structure):
-    pass
-
-
-class UShieldResourcePool_Data(Structure):
-    pass
-
-
-class UShieldResourcePool(Structure):
-    pass
-
-
-class UShopTimerRateValueResolver_Data(Structure):
-    pass
-
-
-class UShopTimerRateValueResolver(Structure):
-    pass
-
-
-class USkill_Data(Structure):
-    pass
-
-
-class USkill(Structure):
-    pass
-
-
-class TArray_USkillPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(USkill))), ("Count", c_int), ("Max", c_int)]
-
-
-class USkillDefinition_Data(Structure):
-    pass
-
-
-class USkillDefinition(Structure):
-    pass
-
-
-class TArray_USkillDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkillDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkillExpressionEvaluatorDefinition_Data(Structure):
-    pass
-
-
-class USkillExpressionEvaluatorDefinition(Structure):
-    pass
-
-
-class TArray_USkillExpressionEvaluatorDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkillExpressionEvaluatorDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkillTreeBranchDefinition_Data(Structure):
-    pass
-
-
-class USkillTreeBranchDefinition(Structure):
-    pass
-
-
-class TArray_USkillTreeBranchDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkillTreeBranchDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkillTreeBranchLayoutDefinition_Data(Structure):
-    pass
-
-
-class USkillTreeBranchLayoutDefinition(Structure):
-    pass
-
-
-class USkillTreeDefinition_Data(Structure):
-    pass
-
-
-class USkillTreeDefinition(Structure):
-    pass
-
-
-class USpecialMove_FirstPerson_Data(Structure):
-    pass
-
-
-class USpecialMove_FirstPerson(Structure):
-    pass
-
-
-class USpecialMove_FirstPersonDualWieldAction_Data(Structure):
-    pass
-
-
-class USpecialMove_FirstPersonDualWieldAction(Structure):
-    pass
-
-
-class USprintDefinition_Data(Structure):
-    pass
-
-
-class USprintDefinition(Structure):
-    pass
-
-
-class UStaggerDefinition_Data(Structure):
-    pass
-
-
-class UStaggerDefinition(Structure):
-    pass
-
-
-class UStanceTypeDefinition_Data(Structure):
-    pass
-
-
-class UStanceTypeDefinition(Structure):
-    pass
-
-
-class TArray_UStanceTypeDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UStanceTypeDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UStatChannel_Data(Structure):
-    pass
-
-
-class UStatChannel(Structure):
-    pass
-
-
-class AStationTeleporterDestination_Data(Structure):
-    pass
-
-
-class AStationTeleporterDestination(Structure):
-    pass
-
-
-class AStationTeleporterExitPoint_Data(Structure):
-    pass
-
-
-class AStationTeleporterExitPoint(Structure):
-    pass
-
-
-class AStationTeleporterVehicleExitPoint_Data(Structure):
-    pass
-
-
-class AStationTeleporterVehicleExitPoint(Structure):
-    pass
-
-
-class UStatusEffectChanceModifierResolver_Data(Structure):
-    pass
-
-
-class UStatusEffectChanceModifierResolver(Structure):
-    pass
-
-
-class UStatusEffectDefinition_Data(Structure):
-    pass
-
-
-class UStatusEffectDefinition(Structure):
-    pass
-
-
-class TArray_UStatusEffectDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UStatusEffectDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UStatusEffectExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UStatusEffectExpressionEvaluator(Structure):
-    pass
-
-
-class AStatusEffectProxyActor_Data(Structure):
-    pass
-
-
-class AStatusEffectProxyActor(Structure):
-    pass
-
-
-class UStatusEffectsComponent_Data(Structure):
-    pass
-
-
-class UStatusEffectsComponent(Structure):
-    pass
-
-
-class UTargetableAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UTargetableAttributeValueResolver(Structure):
-    pass
-
-
-class ATemporalField_Data(Structure):
-    pass
-
-
-class ATemporalField(Structure):
-    pass
-
-
-class UTextMarkupDictionary_Data(Structure):
-    pass
-
-
-class UTextMarkupDictionary(Structure):
-    pass
-
-
-class UTrainingMessageDefinition_Data(Structure):
-    pass
-
-
-class UTrainingMessageDefinition(Structure):
-    pass
-
-
-class TArray_UTrainingMessageDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTrainingMessageDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTravelStationDefinition_Data(Structure):
-    pass
-
-
-class UTravelStationDefinition(Structure):
-    pass
-
-
-class UFastTravelStationDefinition_Data(Structure):
-    pass
-
-
-class UFastTravelStationDefinition(Structure):
-    pass
-
-
-class TArray_UFastTravelStationDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UFastTravelStationDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ULevelTravelStationDefinition_Data(Structure):
-    pass
-
-
-class ULevelTravelStationDefinition(Structure):
-    pass
-
-
-class TArray_ULevelTravelStationDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULevelTravelStationDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTravelStationNozzleComponent_Data(Structure):
-    pass
-
-
-class UTravelStationNozzleComponent(Structure):
-    pass
-
-
-class UTurnDefinition_Data(Structure):
-    pass
-
-
-class UTurnDefinition(Structure):
-    pass
-
-
-class UUBMGraveyardSaveData_Data(Structure):
-    pass
-
-
-class UUBMGraveyardSaveData(Structure):
-    pass
-
-
-class AVantageNode_Data(Structure):
-    pass
-
-
-class AVantageNode(Structure):
-    pass
-
-
-class UVehicleBalanceDefinition_Data(Structure):
-    pass
-
-
-class UVehicleBalanceDefinition(Structure):
-    pass
-
-
-class AVehicleBlockingVolume_Data(Structure):
-    pass
-
-
-class AVehicleBlockingVolume(Structure):
-    pass
-
-
-class UVehicleChoiceModuleGFxObject_Data(Structure):
-    pass
-
-
-class UVehicleChoiceModuleGFxObject(Structure):
-    pass
-
-
-class UVehicleClassDefinition_Data(Structure):
-    pass
-
-
-class UVehicleClassDefinition(Structure):
-    pass
-
-
-class UVehicleCrewAnimSetLookupTable_Data(Structure):
-    pass
-
-
-class UVehicleCrewAnimSetLookupTable(Structure):
-    pass
-
-
-class UVehicleFamilyDefinition_Data(Structure):
-    pass
-
-
-class UVehicleFamilyDefinition(Structure):
-    pass
-
-
-class TArray_UVehicleFamilyDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UVehicleFamilyDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UVehicleHandlingDefinition_Data(Structure):
-    pass
-
-
-class UVehicleHandlingDefinition(Structure):
-    pass
-
-
-class UCarVehicleHandlingDefinition_Data(Structure):
-    pass
-
-
-class UCarVehicleHandlingDefinition(Structure):
-    pass
-
-
-class UHoverVehicleHandlingDefinition_Data(Structure):
-    pass
-
-
-class UHoverVehicleHandlingDefinition(Structure):
-    pass
-
-
-class UTankVehicleHandlingDefinition_Data(Structure):
-    pass
-
-
-class UTankVehicleHandlingDefinition(Structure):
-    pass
-
-
-class UChopperVehicleHandlingDefinition_Data(Structure):
-    pass
-
-
-class UChopperVehicleHandlingDefinition(Structure):
-    pass
-
-
-class AVehicleLifetimeManager_Data(Structure):
-    pass
-
-
-class AVehicleLifetimeManager(Structure):
-    pass
-
-
-class UVehicleSpawnStationVehicleDefinition_Data(Structure):
-    pass
-
-
-class UVehicleSpawnStationVehicleDefinition(Structure):
-    pass
-
-
-class AVehicleStandIn_Data(Structure):
-    pass
-
-
-class AVehicleStandIn(Structure):
-    pass
-
-
-class UVehicleWheelDefinition_Data(Structure):
-    pass
-
-
-class UVehicleWheelDefinition(Structure):
-    pass
-
-
-class UVSSUIDefinition_Data(Structure):
-    pass
-
-
-class UVSSUIDefinition(Structure):
-    pass
-
-
-class TArray_UVSSUIDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UVSSUIDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWaypointComponent_Data(Structure):
-    pass
-
-
-class UWaypointComponent(Structure):
-    pass
-
-
-class TArray_UWaypointComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWaypointComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ULevelTransitionWaypointComponent_Data(Structure):
-    pass
-
-
-class ULevelTransitionWaypointComponent(Structure):
-    pass
-
-
-class UMissionDirectiveWaypointComponent_Data(Structure):
-    pass
-
-
-class UMissionDirectiveWaypointComponent(Structure):
-    pass
-
-
-class UFailableMissionDirectiveWaypointComponent_Data(Structure):
-    pass
-
-
-class UFailableMissionDirectiveWaypointComponent(Structure):
-    pass
-
-
-class UMissionObjectiveWaypointComponent_Data(Structure):
-    pass
-
-
-class UMissionObjectiveWaypointComponent(Structure):
-    pass
-
-
-class TArray_UMissionObjectiveWaypointComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMissionObjectiveWaypointComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWeaponAmmoResourceAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UWeaponAmmoResourceAttributeValueResolver(Structure):
-    pass
-
-
-class UWeaponGlowEffectDefinition_Data(Structure):
-    pass
-
-
-class UWeaponGlowEffectDefinition(Structure):
-    pass
-
-
-class UWeaponPartDefinition_Data(Structure):
-    pass
-
-
-class UWeaponPartDefinition(Structure):
-    pass
-
-
-class UWeaponNamePartDefinition_Data(Structure):
-    pass
-
-
-class UWeaponNamePartDefinition(Structure):
-    pass
-
-
-class TArray_UWeaponNamePartDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWeaponNamePartDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWeaponPartListDefinition_Data(Structure):
-    pass
-
-
-class UWeaponPartListDefinition(Structure):
-    pass
-
-
-class UWeaponTypeAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UWeaponTypeAttributeValueResolver(Structure):
-    pass
-
-
-class UWeaponTypeDefinition_Data(Structure):
-    pass
-
-
-class UWeaponTypeDefinition(Structure):
-    pass
-
-
-class UWillowAIMoveNodePathComponent_Data(Structure):
-    pass
-
-
-class UWillowAIMoveNodePathComponent(Structure):
-    pass
-
-
-class UWillowAkComponent_Data(Structure):
-    pass
-
-
-class UWillowAkComponent(Structure):
-    pass
-
-
-class UWillowAnimDefinition_Data(Structure):
-    pass
-
-
-class UWillowAnimDefinition(Structure):
-    pass
-
-
-class USpecialMove_Cringe_Data(Structure):
-    pass
-
-
-class USpecialMove_Cringe(Structure):
-    pass
-
-
-class TArray_USpecialMove_CringePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USpecialMove_Cringe))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USpecialMove_Motion_Data(Structure):
-    pass
-
-
-class USpecialMove_Motion(Structure):
-    pass
-
-
-class TArray_USpecialMove_MotionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USpecialMove_Motion))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USpecialMove_Cloak_Data(Structure):
-    pass
-
-
-class USpecialMove_Cloak(Structure):
-    pass
-
-
-class TArray_USpecialMove_CloakPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USpecialMove_Cloak))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USpecialMove_Dodge_Data(Structure):
-    pass
-
-
-class USpecialMove_Dodge(Structure):
-    pass
-
-
-class TArray_USpecialMove_DodgePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USpecialMove_Dodge))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USpecialMove_PhysicsJump_Data(Structure):
-    pass
-
-
-class USpecialMove_PhysicsJump(Structure):
-    pass
-
-
-class USpecialMove_Turn_Data(Structure):
-    pass
-
-
-class USpecialMove_Turn(Structure):
-    pass
-
-
-class USpecialMove_Perch_Data(Structure):
-    pass
-
-
-class USpecialMove_Perch(Structure):
-    pass
-
-
-class USpecialMove_PerchLoop_Data(Structure):
-    pass
-
-
-class USpecialMove_PerchLoop(Structure):
-    pass
-
-
-class USpecialMove_PerchRandomLoop_Data(Structure):
-    pass
-
-
-class USpecialMove_PerchRandomLoop(Structure):
-    pass
-
-
-class USpecialMove_PhaseLock_Data(Structure):
-    pass
-
-
-class USpecialMove_PhaseLock(Structure):
-    pass
-
-
-class USpecialMove_PopulationPoint_Data(Structure):
-    pass
-
-
-class USpecialMove_PopulationPoint(Structure):
-    pass
-
-
-class USpecialMove_Spawned_Data(Structure):
-    pass
-
-
-class USpecialMove_Spawned(Structure):
-    pass
-
-
-class USpecialMove_Vehicle_Data(Structure):
-    pass
-
-
-class USpecialMove_Vehicle(Structure):
-    pass
-
-
-class TArray_USpecialMove_VehiclePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USpecialMove_Vehicle))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowAnimNode_Simple_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_Simple(Structure):
-    pass
-
-
-class TArray_UWillowAnimNode_SimplePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWillowAnimNode_Simple))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowAnimTreeFactory_Data(Structure):
-    pass
-
-
-class UWillowAnimTreeFactory(Structure):
-    pass
-
-
-class UWillowAutoAimProfileDefinition_Data(Structure):
-    pass
-
-
-class UWillowAutoAimProfileDefinition(Structure):
-    pass
-
-
-class UWillowAutoAimStrategy_Data(Structure):
-    pass
-
-
-class UWillowAutoAimStrategy(Structure):
-    pass
-
-
-class UWillowAutoAimStrategyDefinition_Data(Structure):
-    pass
-
-
-class UWillowAutoAimStrategyDefinition(Structure):
-    pass
-
-
-class UWillowCalloutDefinition_Data(Structure):
-    pass
-
-
-class UWillowCalloutDefinition(Structure):
-    pass
-
-
-class UWillowCharacterClassDefinition_Data(Structure):
-    pass
-
-
-class UWillowCharacterClassDefinition(Structure):
-    pass
-
-
-class UPlayerClassDefinition_Data(Structure):
-    pass
-
-
-class UPlayerClassDefinition(Structure):
-    pass
-
-
-class UWillowClanDefinition_Data(Structure):
-    pass
-
-
-class UWillowClanDefinition(Structure):
-    pass
-
-
-class UWillowCustomizationManager_Data(Structure):
-    pass
-
-
-class UWillowCustomizationManager(Structure):
-    pass
-
-
-class AWillowDamageArea_Data(Structure):
-    pass
-
-
-class AWillowDamageArea(Structure):
-    pass
-
-
-class UWillowDamagePipeline_Data(Structure):
-    pass
-
-
-class UWillowDamagePipeline(Structure):
-    pass
-
-
-class UWillowDamageType_Data(Structure):
-    pass
-
-
-class UWillowDamageType(Structure):
-    pass
-
-
-class UWillowDamageSource_Data(Structure):
-    pass
-
-
-class UWillowDamageSource(Structure):
-    pass
-
-
-class UWillowDmgSource_Bullet_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Bullet(Structure):
-    pass
-
-
-class UWillowDmgSource_MachineGun_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_MachineGun(Structure):
-    pass
-
-
-class UWillowDmgSource_Pistol_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Pistol(Structure):
-    pass
-
-
-class UWillowDmgSource_Shotgun_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Shotgun(Structure):
-    pass
-
-
-class UWillowDmgSource_Sniper_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Sniper(Structure):
-    pass
-
-
-class UWillowDmgSource_SubMachineGun_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_SubMachineGun(Structure):
-    pass
-
-
-class UWillowDmgSource_CustomCrate_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_CustomCrate(Structure):
-    pass
-
-
-class UWillowDmgSource_Grenade_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Grenade(Structure):
-    pass
-
-
-class UWillowDmgSource_Melee_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Melee(Structure):
-    pass
-
-
-class UWillowDmgSource_Rocket_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Rocket(Structure):
-    pass
-
-
-class UWillowDmgSource_Shield_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Shield(Structure):
-    pass
-
-
-class UWillowDmgSource_ShieldNova_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_ShieldNova(Structure):
-    pass
-
-
-class UWillowDmgSource_ShieldSpike_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_ShieldSpike(Structure):
-    pass
-
-
-class UWillowDmgSource_Skill_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Skill(Structure):
-    pass
-
-
-class UWillowDmgSource_Skill_IgnoreIOs_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_Skill_IgnoreIOs(Structure):
-    pass
-
-
-class UWillowDmgSource_StatusEffect_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_StatusEffect(Structure):
-    pass
-
-
-class UWillowDmgSource_VehicleRanInto_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_VehicleRanInto(Structure):
-    pass
-
-
-class UWillowDmgSource_VehicleRanOver_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_VehicleRanOver(Structure):
-    pass
-
-
-class UWillowDamageTypeDefinition_Data(Structure):
-    pass
-
-
-class UWillowDamageTypeDefinition(Structure):
-    pass
-
-
-class UWillowDeclarations_Data(Structure):
-    pass
-
-
-class UWillowDeclarations(Structure):
-    pass
-
-
-class UWillowDialogAct_MissionSwitch_Data(Structure):
-    pass
-
-
-class UWillowDialogAct_MissionSwitch(Structure):
-    pass
-
-
-class UWillowDialogAct_RandomBranch_Data(Structure):
-    pass
-
-
-class UWillowDialogAct_RandomBranch(Structure):
-    pass
-
-
-class UWillowDialogAct_Talk_Data(Structure):
-    pass
-
-
-class UWillowDialogAct_Talk(Structure):
-    pass
-
-
-class UWillowDialogAct_Trigger_Data(Structure):
-    pass
-
-
-class UWillowDialogAct_Trigger(Structure):
-    pass
-
-
-class AWillowDialogEchoActor_Data(Structure):
-    pass
-
-
-class AWillowDialogEchoActor(Structure):
-    pass
-
-
-class TArray_AWillowDialogEchoActorPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowDialogEchoActor))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowDialogEmoteDefinition_Data(Structure):
-    pass
-
-
-class UWillowDialogEmoteDefinition(Structure):
-    pass
-
-
-class UWillowDialogEventTag_Data(Structure):
-    pass
-
-
-class UWillowDialogEventTag(Structure):
-    pass
-
-
-class UWillowDialogEventTagSpecialized_Data(Structure):
-    pass
-
-
-class UWillowDialogEventTagSpecialized(Structure):
-    pass
-
-
-class UWillowDialogGlobalsDefinition_Data(Structure):
-    pass
-
-
-class UWillowDialogGlobalsDefinition(Structure):
-    pass
-
-
-class UWillowDialogManager_Data(Structure):
-    pass
-
-
-class UWillowDialogManager(Structure):
-    pass
-
-
-class UWillowDialogNameTag_Data(Structure):
-    pass
-
-
-class UWillowDialogNameTag(Structure):
-    pass
-
-
-class UWillowDialogVar_InstanceData_Data(Structure):
-    pass
-
-
-class UWillowDialogVar_InstanceData(Structure):
-    pass
-
-
-class UWillowDialogVar_Passenger_Data(Structure):
-    pass
-
-
-class UWillowDialogVar_Passenger(Structure):
-    pass
-
-
-class UWillowDownloadableContentManager_Data(Structure):
-    pass
-
-
-class UWillowDownloadableContentManager(Structure):
-    pass
-
-
-class AWillowDynamicNavMeshConnectionPoint_Data(Structure):
-    pass
-
-
-class AWillowDynamicNavMeshConnectionPoint(Structure):
-    pass
-
-
-class TArray_AWillowDynamicNavMeshConnectionPointPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowDynamicNavMeshConnectionPoint))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowDynamicNavMeshConnectionPointRenderingComponent_Data(Structure):
-    pass
-
-
-class UWillowDynamicNavMeshConnectionPointRenderingComponent(Structure):
-    pass
-
-
-class AWillowDynamicPathBlockingVolume_Data(Structure):
-    pass
-
-
-class AWillowDynamicPathBlockingVolume(Structure):
-    pass
-
-
-class UWillowEffectCoordinator_Data(Structure):
-    pass
-
-
-class UWillowEffectCoordinator(Structure):
-    pass
-
-
-class AWillowElevator_Data(Structure):
-    pass
-
-
-class AWillowElevator(Structure):
-    pass
-
-
-class TArray_AWillowElevatorPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowElevator))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowElevatorRenderingComponent_Data(Structure):
-    pass
-
-
-class UWillowElevatorRenderingComponent(Structure):
-    pass
-
-
-class AWillowEmitter_Data(Structure):
-    pass
-
-
-class AWillowEmitter(Structure):
-    pass
-
-
-class AStatusEffectReplicatedEmitter_Data(Structure):
-    pass
-
-
-class AStatusEffectReplicatedEmitter(Structure):
-    pass
-
-
-class TArray_AStatusEffectReplicatedEmitterPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AStatusEffectReplicatedEmitter))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowExperiencePipeline_Data(Structure):
-    pass
-
-
-class UWillowExperiencePipeline(Structure):
-    pass
-
-
-class UWillowExposureUtilityStrategy_Data(Structure):
-    pass
-
-
-class UWillowExposureUtilityStrategy(Structure):
-    pass
-
-
-class UWillowForcedReachSpec_Data(Structure):
-    pass
-
-
-class UWillowForcedReachSpec(Structure):
-    pass
-
-
-class UWillowGameEngine_Data(Structure):
-    pass
-
-
-class UWillowGameEngine(Structure):
-    pass
-
-
-class AWillowCoopGameInfo_Data(Structure):
-    pass
-
-
-class AWillowCoopGameInfo(Structure):
-    pass
-
-
-class AWillowGameReplicationInfo_Data(Structure):
-    pass
-
-
-class AWillowGameReplicationInfo(Structure):
-    pass
-
-
-class UWillowGameViewportClient_Data(Structure):
-    pass
-
-
-class UWillowGameViewportClient(Structure):
-    pass
-
-
-class UWillowGlobals_Data(Structure):
-    pass
-
-
-class UWillowGlobals(Structure):
-    pass
-
-
-class AWillowHUD_Data(Structure):
-    pass
-
-
-class AWillowHUD(Structure):
-    pass
-
-
-class UWillowImpactDefinition_Data(Structure):
-    pass
-
-
-class UWillowImpactDefinition(Structure):
-    pass
-
-
-class TArray_UWillowImpactDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWillowImpactDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowExplosionImpactDefinition_Data(Structure):
-    pass
-
-
-class UWillowExplosionImpactDefinition(Structure):
-    pass
-
-
-class AWillowInteractiveObject_Data(Structure):
-    pass
-
-
-class AWillowInteractiveObject(Structure):
-    pass
-
-
-class TArray_AWillowInteractiveObjectPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowInteractiveObject))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ATravelStation_Data(Structure):
-    pass
-
-
-class ATravelStation(Structure):
-    pass
-
-
-class AFastTravelStation_Data(Structure):
-    pass
-
-
-class AFastTravelStation(Structure):
-    pass
-
-
-class ALevelTravelStation_Data(Structure):
-    pass
-
-
-class ALevelTravelStation(Structure):
-    pass
-
-
-class AResurrectTravelStation_Data(Structure):
-    pass
-
-
-class AResurrectTravelStation(Structure):
-    pass
-
-
-class AVehicleSpawnStationPlatform_Data(Structure):
-    pass
-
-
-class AVehicleSpawnStationPlatform(Structure):
-    pass
-
-
-class AVehicleSpawnStationTerminal_Data(Structure):
-    pass
-
-
-class AVehicleSpawnStationTerminal(Structure):
-    pass
-
-
-class AWillowElevatorButton_Data(Structure):
-    pass
-
-
-class AWillowElevatorButton(Structure):
-    pass
-
-
-class TArray_AWillowElevatorButtonPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowElevatorButton))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowInteractiveSwitch_Data(Structure):
-    pass
-
-
-class AWillowInteractiveSwitch(Structure):
-    pass
-
-
-class AWillowPropObject_Data(Structure):
-    pass
-
-
-class AWillowPropObject(Structure):
-    pass
-
-
-class AWillowVendingMachineBase_Data(Structure):
-    pass
-
-
-class AWillowVendingMachineBase(Structure):
-    pass
-
-
-class AWillowVendingMachine_Data(Structure):
-    pass
-
-
-class AWillowVendingMachine(Structure):
-    pass
-
-
-class AWillowVendingMachineBlackMarket_Data(Structure):
-    pass
-
-
-class AWillowVendingMachineBlackMarket(Structure):
-    pass
-
-
-class UWillowInteractiveSwitchRenderingComponent_Data(Structure):
-    pass
-
-
-class UWillowInteractiveSwitchRenderingComponent(Structure):
-    pass
-
-
-class AWillowInventoryManager_Data(Structure):
-    pass
-
-
-class AWillowInventoryManager(Structure):
-    pass
-
-
-class UWillowInventoryStorage_Data(Structure):
-    pass
-
-
-class UWillowInventoryStorage(Structure):
-    pass
-
-
-class AWillowItem_Data(Structure):
-    pass
-
-
-class AWillowItem(Structure):
-    pass
-
-
-class TArray_AWillowItemPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowItem))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowEquipAbleItem_Data(Structure):
-    pass
-
-
-class AWillowEquipAbleItem(Structure):
-    pass
-
-
-class AWillowArtifact_Data(Structure):
-    pass
-
-
-class AWillowArtifact(Structure):
-    pass
-
-
-class AWillowClassMod_Data(Structure):
-    pass
-
-
-class AWillowClassMod(Structure):
-    pass
-
-
-class AWillowGrenadeMod_Data(Structure):
-    pass
-
-
-class AWillowGrenadeMod(Structure):
-    pass
-
-
-class AWillowShield_Data(Structure):
-    pass
-
-
-class AWillowShield(Structure):
-    pass
-
-
-class AWillowUsableItem_Data(Structure):
-    pass
-
-
-class AWillowUsableItem(Structure):
-    pass
-
-
-class AWillowMissionItem_Data(Structure):
-    pass
-
-
-class AWillowMissionItem(Structure):
-    pass
-
-
-class AWillowUsableCustomizationItem_Data(Structure):
-    pass
-
-
-class AWillowUsableCustomizationItem(Structure):
-    pass
-
-
-class UWillowItemTypes_Data(Structure):
-    pass
-
-
-class UWillowItemTypes(Structure):
-    pass
-
-
-class AWillowLightProjectileManager_Data(Structure):
-    pass
-
-
-class AWillowLightProjectileManager(Structure):
-    pass
-
-
-class UWillowLocalMessage_Data(Structure):
-    pass
-
-
-class UWillowLocalMessage(Structure):
-    pass
-
-
-class ULocalInventoryRefreshMessage_Data(Structure):
-    pass
-
-
-class ULocalInventoryRefreshMessage(Structure):
-    pass
-
-
-class ULocalTrainingDefinitionMessage_Data(Structure):
-    pass
-
-
-class ULocalTrainingDefinitionMessage(Structure):
-    pass
-
-
-class ULocalTrainingMessage_Data(Structure):
-    pass
-
-
-class ULocalTrainingMessage(Structure):
-    pass
-
-
-class UReceivedAmmoMessage_Data(Structure):
-    pass
-
-
-class UReceivedAmmoMessage(Structure):
-    pass
-
-
-class UWillowMapInfo_Data(Structure):
-    pass
-
-
-class UWillowMapInfo(Structure):
-    pass
-
-
-class AWillowMissionPickupSpawner_Data(Structure):
-    pass
-
-
-class AWillowMissionPickupSpawner(Structure):
-    pass
-
-
-class AWillowMissionPickupFailsafe_Data(Structure):
-    pass
-
-
-class AWillowMissionPickupFailsafe(Structure):
-    pass
-
-
-class UWillowObstacleUtility_Data(Structure):
-    pass
-
-
-class UWillowObstacleUtility(Structure):
-    pass
-
-
-class UWillowOnDemandPackageMarker_Data(Structure):
-    pass
-
-
-class UWillowOnDemandPackageMarker(Structure):
-    pass
-
-
-class UWillowOnlineGameSettings_DataStore_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSettings_DataStore(Structure):
-    pass
-
-
-class UWillowPauseTicker_Data(Structure):
-    pass
-
-
-class UWillowPauseTicker(Structure):
-    pass
-
-
-class AWillowPawn_Data(Structure):
-    pass
-
-
-class AWillowPawn(Structure):
-    pass
-
-
-class TArray_AWillowPawnPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowPawn))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowAIPawn_Data(Structure):
-    pass
-
-
-class AWillowAIPawn(Structure):
-    pass
-
-
-class AWillowAICranePawn_Data(Structure):
-    pass
-
-
-class AWillowAICranePawn(Structure):
-    pass
-
-
-class AWillowPlayerPawn_Data(Structure):
-    pass
-
-
-class AWillowPlayerPawn(Structure):
-    pass
-
-
-class TArray_AWillowPlayerPawnPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowPlayerPawn))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowPawnInteractionDefinition_Data(Structure):
-    pass
-
-
-class UWillowPawnInteractionDefinition(Structure):
-    pass
-
-
-class AWillowPersonalTeleporter_Data(Structure):
-    pass
-
-
-class AWillowPersonalTeleporter(Structure):
-    pass
-
-
-class UWillowPhysicalMaterialProperty_Data(Structure):
-    pass
-
-
-class UWillowPhysicalMaterialProperty(Structure):
-    pass
-
-
-class AWillowPickup_Data(Structure):
-    pass
-
-
-class AWillowPickup(Structure):
-    pass
-
-
-class TArray_AWillowPickupPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowPickup))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowPlayerInput_Data(Structure):
-    pass
-
-
-class UWillowPlayerInput(Structure):
-    pass
-
-
-class UWillowPlayerPawnDataManager_Data(Structure):
-    pass
-
-
-class UWillowPlayerPawnDataManager(Structure):
-    pass
-
-
-class AWillowPlayerReplicationInfo_Data(Structure):
-    pass
-
-
-class AWillowPlayerReplicationInfo(Structure):
-    pass
-
-
-class UWillowPointLight_Data(Structure):
-    pass
-
-
-class UWillowPointLight(Structure):
-    pass
-
-
-class UWillowPopulationDefinition_Data(Structure):
-    pass
-
-
-class UWillowPopulationDefinition(Structure):
-    pass
-
-
-class UWillowPopulationMaster_Data(Structure):
-    pass
-
-
-class UWillowPopulationMaster(Structure):
-    pass
-
-
-class AWillowPopulationOpportunityPoint_Data(Structure):
-    pass
-
-
-class AWillowPopulationOpportunityPoint(Structure):
-    pass
-
-
-class AWillowPopulationPoint_Data(Structure):
-    pass
-
-
-class AWillowPopulationPoint(Structure):
-    pass
-
-
-class AWillowPopulationPoint_Dynamic_Data(Structure):
-    pass
-
-
-class AWillowPopulationPoint_Dynamic(Structure):
-    pass
-
-
-class UWillowPopulationPointDefinition_Data(Structure):
-    pass
-
-
-class UWillowPopulationPointDefinition(Structure):
-    pass
-
-
-class UWillowPopulationPointEditorComponent_Data(Structure):
-    pass
-
-
-class UWillowPopulationPointEditorComponent(Structure):
-    pass
-
-
-class UWillowPreviewComponent_Data(Structure):
-    pass
-
-
-class UWillowPreviewComponent(Structure):
-    pass
-
-
-class UPerchPreviewComponent_Data(Structure):
-    pass
-
-
-class UPerchPreviewComponent(Structure):
-    pass
-
-
-class UPhysicsJumpPreviewComponent_Data(Structure):
-    pass
-
-
-class UPhysicsJumpPreviewComponent(Structure):
-    pass
-
-
-class UWillowPopulationPointPreviewComponent_Data(Structure):
-    pass
-
-
-class UWillowPopulationPointPreviewComponent(Structure):
-    pass
-
-
-class UWillowProfileSettings_Data(Structure):
-    pass
-
-
-class UWillowProfileSettings(Structure):
-    pass
-
-
-class AWillowProjectile_Data(Structure):
-    pass
-
-
-class AWillowProjectile(Structure):
-    pass
-
-
-class TArray_AWillowProjectilePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowProjectile))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowServerSideProjectile_Data(Structure):
-    pass
-
-
-class AWillowServerSideProjectile(Structure):
-    pass
-
-
-class UWillowPursuitGrid_Data(Structure):
-    pass
-
-
-class UWillowPursuitGrid(Structure):
-    pass
-
-
-class TArray_UWillowPursuitGridPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWillowPursuitGrid))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowPursuitGridDefinition_Data(Structure):
-    pass
-
-
-class UWillowPursuitGridDefinition(Structure):
-    pass
-
-
-class UWillowRegionDefinition_Data(Structure):
-    pass
-
-
-class UWillowRegionDefinition(Structure):
-    pass
-
-
-class AWillowReplicatedAmbientSound_Data(Structure):
-    pass
-
-
-class AWillowReplicatedAmbientSound(Structure):
-    pass
-
-
-class UWillowReplicatedAmbientSoundRenderingComponent_Data(Structure):
-    pass
-
-
-class UWillowReplicatedAmbientSoundRenderingComponent(Structure):
-    pass
-
-
-class AWillowReplicatedAmbientSoundSource_Data(Structure):
-    pass
-
-
-class AWillowReplicatedAmbientSoundSource(Structure):
-    pass
-
-
-class TArray_AWillowReplicatedAmbientSoundSourcePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowReplicatedAmbientSoundSource))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowSavedMove_Data(Structure):
-    pass
-
-
-class UWillowSavedMove(Structure):
-    pass
-
-
-class UWillowSaveGameManager_Data(Structure):
-    pass
-
-
-class UWillowSaveGameManager(Structure):
-    pass
-
-
-class AWillowScout_Data(Structure):
-    pass
-
-
-class AWillowScout(Structure):
-    pass
-
-
-class UWillowSeqAct_ElevatorFinished_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ElevatorFinished(Structure):
-    pass
-
-
-class UWillowSeqAct_MissionSmokeTest_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_MissionSmokeTest(Structure):
-    pass
-
-
-class UWillowSeqAct_MoveElevator_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_MoveElevator(Structure):
-    pass
-
-
-class UWillowSeqEvent_ElevatorUsed_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_ElevatorUsed(Structure):
-    pass
-
-
-class UWillowSkelControlSpline_Data(Structure):
-    pass
-
-
-class UWillowSkelControlSpline(Structure):
-    pass
-
-
-class AWillowSpectatorPoint_Data(Structure):
-    pass
-
-
-class AWillowSpectatorPoint(Structure):
-    pass
-
-
-class TArray_AWillowSpectatorPointPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowSpectatorPoint))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowStaggerAnimNodeBlend_Data(Structure):
-    pass
-
-
-class UWillowStaggerAnimNodeBlend(Structure):
-    pass
-
-
-class UWillowSystemSettings_Data(Structure):
-    pass
-
-
-class UWillowSystemSettings(Structure):
-    pass
-
-
-class AWillowTacticalMapVolume_Data(Structure):
-    pass
-
-
-class AWillowTacticalMapVolume(Structure):
-    pass
-
-
-class AWillowTradeManager_Data(Structure):
-    pass
-
-
-class AWillowTradeManager(Structure):
-    pass
-
-
-class AWillowTrigger_Data(Structure):
-    pass
-
-
-class AWillowTrigger(Structure):
-    pass
-
-
-class AWillowWaypoint_Data(Structure):
-    pass
-
-
-class AWillowWaypoint(Structure):
-    pass
-
-
-class UWillowUIInteraction_Data(Structure):
-    pass
-
-
-class UWillowUIInteraction(Structure):
-    pass
-
-
-class AWillowVehicleBase_Data(Structure):
-    pass
-
-
-class AWillowVehicleBase(Structure):
-    pass
-
-
-class AWillowVehicle_Data(Structure):
-    pass
-
-
-class AWillowVehicle(Structure):
-    pass
-
-
-class TArray_AWillowVehiclePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowVehicle))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowVehicle_ChopperVehicle_Data(Structure):
-    pass
-
-
-class AWillowVehicle_ChopperVehicle(Structure):
-    pass
-
-
-class AWillowVehicle_FlyingVehicle_Data(Structure):
-    pass
-
-
-class AWillowVehicle_FlyingVehicle(Structure):
-    pass
-
-
-class AWillowVehicle_Tank_Data(Structure):
-    pass
-
-
-class AWillowVehicle_Tank(Structure):
-    pass
-
-
-class AWillowVehicle_WheeledVehicle_Data(Structure):
-    pass
-
-
-class AWillowVehicle_WheeledVehicle(Structure):
-    pass
-
-
-class AWillowWeaponPawn_Data(Structure):
-    pass
-
-
-class AWillowWeaponPawn(Structure):
-    pass
-
-
-class AWillowVehicleCombatArea_Data(Structure):
-    pass
-
-
-class AWillowVehicleCombatArea(Structure):
-    pass
-
-
-class UWillowVehicleCombatAreaRenderingComponent_Data(Structure):
-    pass
-
-
-class UWillowVehicleCombatAreaRenderingComponent(Structure):
-    pass
-
-
-class UWillowVehicleControlDefinition_Data(Structure):
-    pass
-
-
-class UWillowVehicleControlDefinition(Structure):
-    pass
-
-
-class AWillowVehicleFactory_Data(Structure):
-    pass
-
-
-class AWillowVehicleFactory(Structure):
-    pass
-
-
-class UWillowVehicleSeatDefinition_Data(Structure):
-    pass
-
-
-class UWillowVehicleSeatDefinition(Structure):
-    pass
-
-
-class UWillowVehicleSimCar_Data(Structure):
-    pass
-
-
-class UWillowVehicleSimCar(Structure):
-    pass
-
-
-class UWillowVehicleSimChopper_Data(Structure):
-    pass
-
-
-class UWillowVehicleSimChopper(Structure):
-    pass
-
-
-class UWillowVehicleSimFly_Data(Structure):
-    pass
-
-
-class UWillowVehicleSimFly(Structure):
-    pass
-
-
-class UWillowVehicleSimHover_Data(Structure):
-    pass
-
-
-class UWillowVehicleSimHover(Structure):
-    pass
-
-
-class UWillowVehicleSimTank_Data(Structure):
-    pass
-
-
-class UWillowVehicleSimTank(Structure):
-    pass
-
-
-class AWillowWaterSMActor_Data(Structure):
-    pass
-
-
-class AWillowWaterSMActor(Structure):
-    pass
-
-
-class AWillowWeapon_Data(Structure):
-    pass
-
-
-class AWillowWeapon(Structure):
-    pass
-
-
-class TArray_AWillowWeaponPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowWeapon))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowBuzzaxeWeapon_Data(Structure):
-    pass
-
-
-class AWillowBuzzaxeWeapon(Structure):
-    pass
-
-
-class AWillowTurretWeapon_Data(Structure):
-    pass
-
-
-class AWillowTurretWeapon(Structure):
-    pass
-
-
-class AWillowVehicleWeapon_Data(Structure):
-    pass
-
-
-class AWillowVehicleWeapon(Structure):
-    pass
-
-
-class UWillowWeaponTypes_Data(Structure):
-    pass
-
-
-class UWillowWeaponTypes(Structure):
-    pass
-
-
-class AWillowWorldSoundManager_Data(Structure):
-    pass
-
-
-class AWillowWorldSoundManager(Structure):
-    pass
-
-
-class UWorldBody_Data(Structure):
-    pass
-
-
-class UWorldBody(Structure):
-    pass
-
-
-class AWorldDiscoveryArea_Data(Structure):
-    pass
-
-
-class AWorldDiscoveryArea(Structure):
-    pass
-
-
-class UWorldDiscoveryAreaRenderingComponent_Data(Structure):
-    pass
-
-
-class UWorldDiscoveryAreaRenderingComponent(Structure):
-    pass
-
-
-class UAnimNotify_CustomEvent_Data(Structure):
-    pass
-
-
-class UAnimNotify_CustomEvent(Structure):
-    pass
-
-
-class UAnimNotify_DialogEvent_Data(Structure):
-    pass
-
-
-class UAnimNotify_DialogEvent(Structure):
-    pass
-
-
-class UAnimNotify_EnableHandIK_Data(Structure):
-    pass
-
-
-class UAnimNotify_EnableHandIK(Structure):
-    pass
-
-
-class UAnimNotify_EnableHeadLookAt_Data(Structure):
-    pass
-
-
-class UAnimNotify_EnableHeadLookAt(Structure):
-    pass
-
-
-class UAnimNotify_UseBehavior_Data(Structure):
-    pass
-
-
-class UAnimNotify_UseBehavior(Structure):
-    pass
-
-
-class UIWeaponBoneController_Data(Structure):
-    pass
-
-
-class UIWeaponBoneController(Structure):
-    pass
-
-
-class USkelControlHandModifier_Data(Structure):
-    pass
-
-
-class USkelControlHandModifier(Structure):
-    pass
-
-
-class USkelControlLeftHandGripWeapon_Data(Structure):
-    pass
-
-
-class USkelControlLeftHandGripWeapon(Structure):
-    pass
-
-
-class UStanceExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UStanceExpressionEvaluator(Structure):
-    pass
-
-
-class UWillowAnimBlendByPosture_Data(Structure):
-    pass
-
-
-class UWillowAnimBlendByPosture(Structure):
-    pass
-
-
-class UWillowAnimNode_AddCameraBone_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_AddCameraBone(Structure):
-    pass
-
-
-class UWillowAnimNode_AimState_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_AimState(Structure):
-    pass
-
-
-class UWillowAnimNode_ClimbLadder_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_ClimbLadder(Structure):
-    pass
-
-
-class UWillowAnimNode_Condition_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_Condition(Structure):
-    pass
-
-
-class UWillowAnimNode_MovementTransition_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_MovementTransition(Structure):
-    pass
-
-
-class UWillowAnimNode_Prism_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_Prism(Structure):
-    pass
-
-
-class UWillowAnimNode_WeaponHold_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_WeaponHold(Structure):
-    pass
-
-
-class UWillowAnimNode_WeaponRecoil_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_WeaponRecoil(Structure):
-    pass
-
-
-class UWillowAnimNodeAimOffset_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeAimOffset(Structure):
-    pass
-
-
-class UWillowAnimNodeAimOffset_BoundaryTurret_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeAimOffset_BoundaryTurret(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendByAimState_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendByAimState(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendByRotationSpeed_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendByRotationSpeed(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendByStance_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendByStance(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendDirectional_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendDirectional(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendInjured_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendInjured(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendList_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendList(Structure):
-    pass
-
-
-class UWillowAnimNode_Falling_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_Falling(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendSwitch_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendSwitch(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendThirdPersonMenu_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendThirdPersonMenu(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendTurning_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendTurning(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendVehicleDirectional_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendVehicleDirectional(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendWheeledPawn_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeBlendWheeledPawn(Structure):
-    pass
-
-
-class UWillowAnimNodeFeatherBlend_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeFeatherBlend(Structure):
-    pass
-
-
-class UWillowAnimNodeSequence_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeSequence(Structure):
-    pass
-
-
-class UWillowAnimNodeSequenceAdditiveBlend_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeSequenceAdditiveBlend(Structure):
-    pass
-
-
-class UWillowAnimNodeSlot_Data(Structure):
-    pass
-
-
-class UWillowAnimNodeSlot(Structure):
-    pass
-
-
-class UWillowAnimTree_Data(Structure):
-    pass
-
-
-class UWillowAnimTree(Structure):
-    pass
-
-
-class UWillowSkelControl_EyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_EyelidLook(Structure):
-    pass
-
-
-class UWillowSkelControl_LowerEyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_LowerEyelidLook(Structure):
-    pass
-
-
-class UWillowSkelControl_UpperEyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_UpperEyelidLook(Structure):
-    pass
-
-
-class UWillowSkelControl_FootPlacement_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_FootPlacement(Structure):
-    pass
-
-
-class UWillowSkelControl_LookAtActor_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_LookAtActor(Structure):
-    pass
-
-
-class UWillowSkelControl_RotateFlapFromFiring_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_RotateFlapFromFiring(Structure):
-    pass
-
-
-class UWillowSkelControl_RotateWeaponBoneFromFiring_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_RotateWeaponBoneFromFiring(Structure):
-    pass
-
-
-class UWillowSkelControl_RotationRate_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_RotationRate(Structure):
-    pass
-
-
-class UWillowSkelControl_RotationRateBySpeed_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_RotationRateBySpeed(Structure):
-    pass
-
-
-class UWillowSkelControl_TurretConstrained_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_TurretConstrained(Structure):
-    pass
-
-
-class TArray_UWillowSkelControl_TurretConstrainedPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWillowSkelControl_TurretConstrained))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowSkelControlHandPlacement_Data(Structure):
-    pass
-
-
-class UWillowSkelControlHandPlacement(Structure):
-    pass
-
-
-class UWillowSkelControlLerpSingleBone_Data(Structure):
-    pass
-
-
-class UWillowSkelControlLerpSingleBone(Structure):
-    pass
-
-
-class USeqAct_AllPlayersInMesh_Data(Structure):
-    pass
-
-
-class USeqAct_AllPlayersInMesh(Structure):
-    pass
-
-
-class USeqAct_AttachPlayerPawnToBase_Data(Structure):
-    pass
-
-
-class USeqAct_AttachPlayerPawnToBase(Structure):
-    pass
-
-
-class USeqAct_ConditionallyLoadCommons_Data(Structure):
-    pass
-
-
-class USeqAct_ConditionallyLoadCommons(Structure):
-    pass
-
-
-class USeqAct_DiscardInventory_Data(Structure):
-    pass
-
-
-class USeqAct_DiscardInventory(Structure):
-    pass
-
-
-class USeqAct_DiscoverLevelChallengeObject_Data(Structure):
-    pass
-
-
-class USeqAct_DiscoverLevelChallengeObject(Structure):
-    pass
-
-
-class USeqAct_DisplayTrainingDefinitionMessage_Data(Structure):
-    pass
-
-
-class USeqAct_DisplayTrainingDefinitionMessage(Structure):
-    pass
-
-
-class USeqAct_DisplayTrainingMessage_Data(Structure):
-    pass
-
-
-class USeqAct_DisplayTrainingMessage(Structure):
-    pass
-
-
-class USeqAct_DisplayWillowHUDMessage_Data(Structure):
-    pass
-
-
-class USeqAct_DisplayWillowHUDMessage(Structure):
-    pass
-
-
-class USeqAct_ExecuteSkill_Data(Structure):
-    pass
-
-
-class USeqAct_ExecuteSkill(Structure):
-    pass
-
-
-class USeqAct_GetAttributeValue_Data(Structure):
-    pass
-
-
-class USeqAct_GetAttributeValue(Structure):
-    pass
-
-
-class USeqAct_LoadingMovie_Data(Structure):
-    pass
-
-
-class USeqAct_LoadingMovie(Structure):
-    pass
-
-
-class USeqAct_MathBase_Data(Structure):
-    pass
-
-
-class USeqAct_MathBase(Structure):
-    pass
-
-
-class USeqAct_MathFloat_Data(Structure):
-    pass
-
-
-class USeqAct_MathFloat(Structure):
-    pass
-
-
-class USeqAct_MathInteger_Data(Structure):
-    pass
-
-
-class USeqAct_MathInteger(Structure):
-    pass
-
-
-class USeqAct_ModifyHUDElement_Data(Structure):
-    pass
-
-
-class USeqAct_ModifyHUDElement(Structure):
-    pass
-
-
-class USeqAct_PlayBinkMovie_Data(Structure):
-    pass
-
-
-class USeqAct_PlayBinkMovie(Structure):
-    pass
-
-
-class USeqAct_PossessForPlayer_Data(Structure):
-    pass
-
-
-class USeqAct_PossessForPlayer(Structure):
-    pass
-
-
-class USeqAct_PrimaryPlayerBusyDelay_Data(Structure):
-    pass
-
-
-class USeqAct_PrimaryPlayerBusyDelay(Structure):
-    pass
-
-
-class USeqAct_ProceduralSwitch_Data(Structure):
-    pass
-
-
-class USeqAct_ProceduralSwitch(Structure):
-    pass
-
-
-class USeqAct_ProceduralSwitchNumeric_Data(Structure):
-    pass
-
-
-class USeqAct_ProceduralSwitchNumeric(Structure):
-    pass
-
-
-class USeqAct_SetChallengeCompleted_Data(Structure):
-    pass
-
-
-class USeqAct_SetChallengeCompleted(Structure):
-    pass
-
-
-class USeqAct_SetShadowParent_Data(Structure):
-    pass
-
-
-class USeqAct_SetShadowParent(Structure):
-    pass
-
-
-class USeqAct_TimedMessage_Data(Structure):
-    pass
-
-
-class USeqAct_TimedMessage(Structure):
-    pass
-
-
-class USeqCond_HasValidSaveGame_Data(Structure):
-    pass
-
-
-class USeqCond_HasValidSaveGame(Structure):
-    pass
-
-
-class USeqCond_IsPlayerCharacterClass_Data(Structure):
-    pass
-
-
-class USeqCond_IsPlayerCharacterClass(Structure):
-    pass
-
-
-class USeqEvent_WorldDiscoveryArea_Data(Structure):
-    pass
-
-
-class USeqEvent_WorldDiscoveryArea(Structure):
-    pass
-
-
-class USeqVar_OverpowerLevel_Data(Structure):
-    pass
-
-
-class USeqVar_OverpowerLevel(Structure):
-    pass
-
-
-class USeqVar_PrimaryLocalPlayer_Data(Structure):
-    pass
-
-
-class USeqVar_PrimaryLocalPlayer(Structure):
-    pass
-
-
-class UWillowSeqAct_ActivateInstancedBehaviorSequences_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ActivateInstancedBehaviorSequences(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScripted_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScripted(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedAnim_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedAnim(Structure):
-    pass
-
-
-class UWillowSeqAct_CompleteMission_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_CompleteMission(Structure):
-    pass
-
-
-class UWillowSeqAct_ConfigureBossMusic_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ConfigureBossMusic(Structure):
-    pass
-
-
-class UWillowSeqAct_ConfigureCustomAmbientMusic_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ConfigureCustomAmbientMusic(Structure):
-    pass
-
-
-class UWillowSeqAct_ConfigureLevelMusic_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ConfigureLevelMusic(Structure):
-    pass
-
-
-class UWillowSeqAct_CoordinateOperations_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_CoordinateOperations(Structure):
-    pass
-
-
-class UWillowSeqAct_DayNightCycle_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_DayNightCycle(Structure):
-    pass
-
-
-class UWillowSeqAct_DisableCombatMusicLogic_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_DisableCombatMusicLogic(Structure):
-    pass
-
-
-class UWillowSeqAct_EnableCombatMusicLogic_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_EnableCombatMusicLogic(Structure):
-    pass
-
-
-class UWillowSeqAct_GiveMission_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_GiveMission(Structure):
-    pass
-
-
-class UWillowSeqAct_InterpMenu_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_InterpMenu(Structure):
-    pass
-
-
-class UWillowSeqAct_InterpPawn_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_InterpPawn(Structure):
-    pass
-
-
-class UWillowSeqAct_MissionCustomEvent_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_MissionCustomEvent(Structure):
-    pass
-
-
-class UWillowSeqAct_PrepareMapChangeFromDefinition_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_PrepareMapChangeFromDefinition(Structure):
-    pass
-
-
-class UWillowSeqAct_PrepareSavedMapChange_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_PrepareSavedMapChange(Structure):
-    pass
-
-
-class UWillowSeqAct_QueryTeleporterStatus_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_QueryTeleporterStatus(Structure):
-    pass
-
-
-class UWillowSeqAct_ReleaseTeleporterHeldLevel_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ReleaseTeleporterHeldLevel(Structure):
-    pass
-
-
-class UWillowSeqAct_ResurrectPlayer_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ResurrectPlayer(Structure):
-    pass
-
-
-class UWillowSeqAct_RunCustomEvent_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_RunCustomEvent(Structure):
-    pass
-
-
-class UWillowSeqAct_SetAIFlag_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_SetAIFlag(Structure):
-    pass
-
-
-class UWillowSeqAct_SetInteractionProxyState_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_SetInteractionProxyState(Structure):
-    pass
-
-
-class UWillowSeqAct_SetLockout_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_SetLockout(Structure):
-    pass
-
-
-class UWillowSeqAct_SetLookAtActor_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_SetLookAtActor(Structure):
-    pass
-
-
-class UWillowSeqAct_ToggleCinematicModeAffectsAll_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ToggleCinematicModeAffectsAll(Structure):
-    pass
-
-
-class UWillowSeqAct_TogglePostRenderFor_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_TogglePostRenderFor(Structure):
-    pass
-
-
-class UWillowSeqAct_ToggleRestrictions_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ToggleRestrictions(Structure):
-    pass
-
-
-class UWillowSeqAct_TravelStationTeleport_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_TravelStationTeleport(Structure):
-    pass
-
-
-class UWillowSeqAct_TurnOffCombatMusic_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_TurnOffCombatMusic(Structure):
-    pass
-
-
-class UWillowSeqAct_WaypointObjective_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_WaypointObjective(Structure):
-    pass
-
-
-class UWillowSeqCond_AnyPlayerHasMarketingUnlock_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_AnyPlayerHasMarketingUnlock(Structure):
-    pass
-
-
-class UWillowSeqCond_CheckLockout_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_CheckLockout(Structure):
-    pass
-
-
-class UWillowSeqCond_GoStraightToMainMenu_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_GoStraightToMainMenu(Structure):
-    pass
-
-
-class UWillowSeqCond_IsCombatMusicPlaying_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_IsCombatMusicPlaying(Structure):
-    pass
-
-
-class UWillowSeqCond_IsPlayerServer_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_IsPlayerServer(Structure):
-    pass
-
-
-class UWillowSeqCond_MultiplePlayersInGame_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_MultiplePlayersInGame(Structure):
-    pass
-
-
-class UWillowSeqCond_ShouldStartNewGameCinematics_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_ShouldStartNewGameCinematics(Structure):
-    pass
-
-
-class UWillowSeqCond_SplitScreen_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_SplitScreen(Structure):
-    pass
-
-
-class UWillowSeqEvent_CombatMusicStarted_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_CombatMusicStarted(Structure):
-    pass
-
-
-class UWillowSeqEvent_CustomEvent_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_CustomEvent(Structure):
-    pass
-
-
-class UWillowSeqEvent_FastTravel_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_FastTravel(Structure):
-    pass
-
-
-class UWillowSeqEvent_MissionRemoteEvent_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_MissionRemoteEvent(Structure):
-    pass
-
-
-class UWillowSeqEvent_VehicleSpawned_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_VehicleSpawned(Structure):
-    pass
-
-
-class UWillowSeqVar_DayNightCycleVariable_Data(Structure):
-    pass
-
-
-class UWillowSeqVar_DayNightCycleVariable(Structure):
-    pass
-
-
-class UWillowSeqVar_DayNightCycleRate_Data(Structure):
-    pass
-
-
-class UWillowSeqVar_DayNightCycleRate(Structure):
-    pass
-
-
-class UWillowSeqVar_TimeOfDay_Data(Structure):
-    pass
-
-
-class UWillowSeqVar_TimeOfDay(Structure):
-    pass
-
-
-class UActionSkillStateExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UActionSkillStateExpressionEvaluator(Structure):
-    pass
-
-
-class UHealthStateExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UHealthStateExpressionEvaluator(Structure):
-    pass
-
-
-class UNumberWeaponsEquippedExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UNumberWeaponsEquippedExpressionEvaluator(Structure):
-    pass
-
-
-class UPlayerActionExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UPlayerActionExpressionEvaluator(Structure):
-    pass
-
-
-class USkillAttributeContextResolver_Data(Structure):
-    pass
-
-
-class USkillAttributeContextResolver(Structure):
-    pass
-
-
-class ASkillEffectManager_Data(Structure):
-    pass
-
-
-class ASkillEffectManager(Structure):
-    pass
-
-
-class USkillExpressionEvaluator_Data(Structure):
-    pass
-
-
-class USkillExpressionEvaluator(Structure):
-    pass
-
-
-class UVehiclePassengerExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UVehiclePassengerExpressionEvaluator(Structure):
-    pass
-
-
-class UWeaponActionAvailableExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UWeaponActionAvailableExpressionEvaluator(Structure):
-    pass
-
-
-class UWeaponEquippedExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UWeaponEquippedExpressionEvaluator(Structure):
-    pass
-
-
-class UAIPawnBalanceDefinition_Data(Structure):
-    pass
-
-
-class UAIPawnBalanceDefinition(Structure):
-    pass
-
-
-class UAttackLocation_Data(Structure):
-    pass
-
-
-class UAttackLocation(Structure):
-    pass
-
-
-class TArray_UAttackLocationPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAttackLocation))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAttackLocation_Direct_Data(Structure):
-    pass
-
-
-class UAttackLocation_Direct(Structure):
-    pass
-
-
-class UAttackLocation_Height_Data(Structure):
-    pass
-
-
-class UAttackLocation_Height(Structure):
-    pass
-
-
-class UAttackLocation_LineOfSight_Data(Structure):
-    pass
-
-
-class UAttackLocation_LineOfSight(Structure):
-    pass
-
-
-class UAttackLocation_MaxDistance_Data(Structure):
-    pass
-
-
-class UAttackLocation_MaxDistance(Structure):
-    pass
-
-
-class UAttackLocation_Move_Data(Structure):
-    pass
-
-
-class UAttackLocation_Move(Structure):
-    pass
-
-
-class UAttackLocation_ParentDistance_Data(Structure):
-    pass
-
-
-class UAttackLocation_ParentDistance(Structure):
-    pass
-
-
-class UAttackLocation_Range_Data(Structure):
-    pass
-
-
-class UAttackLocation_Range(Structure):
-    pass
-
-
-class UAttackLocation_Side_Data(Structure):
-    pass
-
-
-class UAttackLocation_Side(Structure):
-    pass
-
-
-class UBehavior_AISpawn_Data(Structure):
-    pass
-
-
-class UBehavior_AISpawn(Structure):
-    pass
-
-
-class UDownloadableFixupAIPawnNamesDefinition_Data(Structure):
-    pass
-
-
-class UDownloadableFixupAIPawnNamesDefinition(Structure):
-    pass
-
-
-class UEventFilter_OnTakeDamage_Data(Structure):
-    pass
-
-
-class UEventFilter_OnTakeDamage(Structure):
-    pass
-
-
-class UFromContextFlagValueResolver_Data(Structure):
-    pass
-
-
-class UFromContextFlagValueResolver(Structure):
-    pass
-
-
-class UPopulationFactoryWillowAIPawn_Data(Structure):
-    pass
-
-
-class UPopulationFactoryWillowAIPawn(Structure):
-    pass
-
-
-class UPopulationFactoryBalancedAIPawn_Data(Structure):
-    pass
-
-
-class UPopulationFactoryBalancedAIPawn(Structure):
-    pass
-
-
-class UPopulationFactoryWillowInventory_Data(Structure):
-    pass
-
-
-class UPopulationFactoryWillowInventory(Structure):
-    pass
-
-
-class URES_AIOperation_Data(Structure):
-    pass
-
-
-class URES_AIOperation(Structure):
-    pass
-
-
-class URES_Behavior_Data(Structure):
-    pass
-
-
-class URES_Behavior(Structure):
-    pass
-
-
-class URES_CharacterDialog_Data(Structure):
-    pass
-
-
-class URES_CharacterDialog(Structure):
-    pass
-
-
-class URES_CustomAnimation_Data(Structure):
-    pass
-
-
-class URES_CustomAnimation(Structure):
-    pass
-
-
-class URES_Firing_Data(Structure):
-    pass
-
-
-class URES_Firing(Structure):
-    pass
-
-
-class URES_Moving_Data(Structure):
-    pass
-
-
-class URES_Moving(Structure):
-    pass
-
-
-class URES_Posture_Data(Structure):
-    pass
-
-
-class URES_Posture(Structure):
-    pass
-
-
-class URES_Skill_Data(Structure):
-    pass
-
-
-class URES_Skill(Structure):
-    pass
-
-
-class URES_Sound_Data(Structure):
-    pass
-
-
-class URES_Sound(Structure):
-    pass
-
-
-class URES_SpecialMovement_Data(Structure):
-    pass
-
-
-class URES_SpecialMovement(Structure):
-    pass
-
-
-class URES_SpeedChange_Data(Structure):
-    pass
-
-
-class URES_SpeedChange(Structure):
-    pass
-
-
-class URES_UseVehicle_Data(Structure):
-    pass
-
-
-class URES_UseVehicle(Structure):
-    pass
-
-
-class UTargetMetaInfoValueResolver_Data(Structure):
-    pass
-
-
-class UTargetMetaInfoValueResolver(Structure):
-    pass
-
-
-class UTransformedFlagValueResolver_Data(Structure):
-    pass
-
-
-class UTransformedFlagValueResolver(Structure):
-    pass
-
-
-class UWillowActionSequencePawn_Data(Structure):
-    pass
-
-
-class UWillowActionSequencePawn(Structure):
-    pass
-
-
-class UAction_Burrow_Data(Structure):
-    pass
-
-
-class UAction_Burrow(Structure):
-    pass
-
-
-class UAction_GenericAttack_Data(Structure):
-    pass
-
-
-class UAction_GenericAttack(Structure):
-    pass
-
-
-class UAction_AnimAttack_Data(Structure):
-    pass
-
-
-class UAction_AnimAttack(Structure):
-    pass
-
-
-class UAction_BasicAttack_Data(Structure):
-    pass
-
-
-class UAction_BasicAttack(Structure):
-    pass
-
-
-class UAction_LeapAtTarget_Data(Structure):
-    pass
-
-
-class UAction_LeapAtTarget(Structure):
-    pass
-
-
-class UAction_ShootTarget_Data(Structure):
-    pass
-
-
-class UAction_ShootTarget(Structure):
-    pass
-
-
-class UAction_CoverAttack_Data(Structure):
-    pass
-
-
-class UAction_CoverAttack(Structure):
-    pass
-
-
-class UAction_CombatPoint_Data(Structure):
-    pass
-
-
-class UAction_CombatPoint(Structure):
-    pass
-
-
-class UAction_SwoopAttack_Data(Structure):
-    pass
-
-
-class UAction_SwoopAttack(Structure):
-    pass
-
-
-class UWillowAIComponent_Data(Structure):
-    pass
-
-
-class UWillowAIComponent(Structure):
-    pass
-
-
-class UWillowAIBlackboardComponent_Data(Structure):
-    pass
-
-
-class UWillowAIBlackboardComponent(Structure):
-    pass
-
-
-class TArray_UWillowAIBlackboardComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UWillowAIBlackboardComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowAIDenComponent_Data(Structure):
-    pass
-
-
-class UWillowAIDenComponent(Structure):
-    pass
-
-
-class UWillowAIDefinition_Data(Structure):
-    pass
-
-
-class UWillowAIDefinition(Structure):
-    pass
-
-
-class UWillowAIDenDefinition_Data(Structure):
-    pass
-
-
-class UWillowAIDenDefinition(Structure):
-    pass
-
-
-class AWillowAIMoveNode_Data(Structure):
-    pass
-
-
-class AWillowAIMoveNode(Structure):
-    pass
-
-
-class APerch_Data(Structure):
-    pass
-
-
-class APerch(Structure):
-    pass
-
-
-class TArray_APerchPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(APerch))), ("Count", c_int), ("Max", c_int)]
-
-
-class USpecialMove_Cover_Data(Structure):
-    pass
-
-
-class USpecialMove_Cover(Structure):
-    pass
-
-
-class UWillowAwarenessZoneDefinition_Data(Structure):
-    pass
-
-
-class UWillowAwarenessZoneDefinition(Structure):
-    pass
-
-
-class AWillowBoundaryTurret_Data(Structure):
-    pass
-
-
-class AWillowBoundaryTurret(Structure):
-    pass
-
-
-class TArray_AWillowBoundaryTurretPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowBoundaryTurret))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAIClassDefinition_Data(Structure):
-    pass
-
-
-class UAIClassDefinition(Structure):
-    pass
-
-
-class AWillowCombatPoint_Data(Structure):
-    pass
-
-
-class AWillowCombatPoint(Structure):
-    pass
-
-
-class UWillowCoverComponent_Data(Structure):
-    pass
-
-
-class UWillowCoverComponent(Structure):
-    pass
-
-
-class UWillowCoverStanceDefinition_Data(Structure):
-    pass
-
-
-class UWillowCoverStanceDefinition(Structure):
-    pass
-
-
-class UWillowFormationComponent_Data(Structure):
-    pass
-
-
-class UWillowFormationComponent(Structure):
-    pass
-
-
-class AWillowMind_Data(Structure):
-    pass
-
-
-class AWillowMind(Structure):
-    pass
-
-
-class TArray_AWillowMindPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowMind))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowMindAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UWillowMindAttributeContextResolver(Structure):
-    pass
-
-
-class UWillowMindTargetInfo_Data(Structure):
-    pass
-
-
-class UWillowMindTargetInfo(Structure):
-    pass
-
-
-class UWillowNavigationHandle_Data(Structure):
-    pass
-
-
-class UWillowNavigationHandle(Structure):
-    pass
-
-
-class UWillowClientNavigationHandle_Data(Structure):
-    pass
-
-
-class UWillowClientNavigationHandle(Structure):
-    pass
-
-
-class UWillowNavMeshPathFinder_Data(Structure):
-    pass
-
-
-class UWillowNavMeshPathFinder(Structure):
-    pass
-
-
-class UWillowObstacleRenderComponent_Data(Structure):
-    pass
-
-
-class UWillowObstacleRenderComponent(Structure):
-    pass
-
-
-class ADeployableTurretActor_Data(Structure):
-    pass
-
-
-class ADeployableTurretActor(Structure):
-    pass
-
-
-class UWillowSeqEvent_DenStat_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_DenStat(Structure):
-    pass
-
-
-class UWillowSeqEvent_Provoked_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_Provoked(Structure):
-    pass
-
-
-class UWillowTI_CalcCanFire_Data(Structure):
-    pass
-
-
-class UWillowTI_CalcCanFire(Structure):
-    pass
-
-
-class UWillowTI_CalcDistances_Data(Structure):
-    pass
-
-
-class UWillowTI_CalcDistances(Structure):
-    pass
-
-
-class UWillowTI_CalcExposure_Data(Structure):
-    pass
-
-
-class UWillowTI_CalcExposure(Structure):
-    pass
-
-
-class UWillowTI_CalcThreat_Data(Structure):
-    pass
-
-
-class UWillowTI_CalcThreat(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeAttacking_Data(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeAttacking(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeHealth_Data(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeHealth(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeIdle_Data(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeIdle(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeOpinion_Data(Structure):
-    pass
-
-
-class UWillowTI_PrioritizeOpinion(Structure):
-    pass
-
-
-class AAIDebugDummyBase_Data(Structure):
-    pass
-
-
-class AAIDebugDummyBase(Structure):
-    pass
-
-
-class TArray_AAIDebugDummyBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AAIDebugDummyBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowAIDebugCamera_Data(Structure):
-    pass
-
-
-class UWillowAIDebugCamera(Structure):
-    pass
-
-
-class AWillowNavDebug_Data(Structure):
-    pass
-
-
-class AWillowNavDebug(Structure):
-    pass
-
-
-class UWillowPawnSnapshotRecord_Data(Structure):
-    pass
-
-
-class UWillowPawnSnapshotRecord(Structure):
-    pass
-
-
-class UWillowSnapshotRecord_Data(Structure):
-    pass
-
-
-class UWillowSnapshotRecord(Structure):
-    pass
-
-
-class UWillowPlayerSnapshotRecord_Data(Structure):
-    pass
-
-
-class UWillowPlayerSnapshotRecord(Structure):
-    pass
-
-
-class UHUDDefinition_Data(Structure):
-    pass
-
-
-class UHUDDefinition(Structure):
-    pass
-
-
-class AWillowRadarManager_Data(Structure):
-    pass
-
-
-class AWillowRadarManager(Structure):
-    pass
-
-
-class UWillowSeqCond_SwitchByPlatform_Data(Structure):
-    pass
-
-
-class UWillowSeqCond_SwitchByPlatform(Structure):
-    pass
-
-
-class UWillowUIDataStore_StringAliasMap_Data(Structure):
-    pass
-
-
-class UWillowUIDataStore_StringAliasMap(Structure):
-    pass
-
-
-class UPlayerStatsNotifier_Data(Structure):
-    pass
-
-
-class UPlayerStatsNotifier(Structure):
-    pass
-
-
-class AWillowBaseStats_Data(Structure):
-    pass
-
-
-class AWillowBaseStats(Structure):
-    pass
-
-
-class AWillowPlayerStats_Data(Structure):
-    pass
-
-
-class AWillowPlayerStats(Structure):
-    pass
-
-
-class AWillowVersusDuelArena_Data(Structure):
-    pass
-
-
-class AWillowVersusDuelArena(Structure):
-    pass
-
-
-class UWillowVersusDuelGlobals_Data(Structure):
-    pass
-
-
-class UWillowVersusDuelGlobals(Structure):
-    pass
-
-
-class AWillowVersusDuelInfo_Data(Structure):
-    pass
-
-
-class AWillowVersusDuelInfo(Structure):
-    pass
-
-
-class UBaseInventoryPanelGFxObject_Data(Structure):
-    pass
-
-
-class UBaseInventoryPanelGFxObject(Structure):
-    pass
-
-
-class UBadassPanelGFxObject_Data(Structure):
-    pass
-
-
-class UBadassPanelGFxObject(Structure):
-    pass
-
-
-class UChallengesPanelGFxObject_Data(Structure):
-    pass
-
-
-class UChallengesPanelGFxObject(Structure):
-    pass
-
-
-class UInventoryListPanelGFxObject_Data(Structure):
-    pass
-
-
-class UInventoryListPanelGFxObject(Structure):
-    pass
-
-
-class UBaseTopLevelPanelGFxObject_Data(Structure):
-    pass
-
-
-class UBaseTopLevelPanelGFxObject(Structure):
-    pass
-
-
-class UChallengesScreenGFxObject_Data(Structure):
-    pass
-
-
-class UChallengesScreenGFxObject(Structure):
-    pass
-
-
-class UStatusMenuInventoryPanelGFxObject_Data(Structure):
-    pass
-
-
-class UStatusMenuInventoryPanelGFxObject(Structure):
-    pass
-
-
-class UTradingPanelGFxObject_Data(Structure):
-    pass
-
-
-class UTradingPanelGFxObject(Structure):
-    pass
-
-
-class UTwoPanelInterfaceGFxObject_Data(Structure):
-    pass
-
-
-class UTwoPanelInterfaceGFxObject(Structure):
-    pass
-
-
-class UDeferredDataProviderGFxObject_Data(Structure):
-    pass
-
-
-class UDeferredDataProviderGFxObject(Structure):
-    pass
-
-
-class UInventoryDataProviderGFxObject_Data(Structure):
-    pass
-
-
-class UInventoryDataProviderGFxObject(Structure):
-    pass
-
-
-class UGFxTextListContainer_Data(Structure):
-    pass
-
-
-class UGFxTextListContainer(Structure):
-    pass
-
-
-class UGFxTextListDefinition_Data(Structure):
-    pass
-
-
-class UGFxTextListDefinition(Structure):
-    pass
-
-
-class UHashDisplayGFxDefinition_Data(Structure):
-    pass
-
-
-class UHashDisplayGFxDefinition(Structure):
-    pass
-
-
-class UHUDScalingAnchorDefinition_Data(Structure):
-    pass
-
-
-class UHUDScalingAnchorDefinition(Structure):
-    pass
-
-
-class UHUDWidget_Base_Data(Structure):
-    pass
-
-
-class UHUDWidget_Base(Structure):
-    pass
-
-
-class UHUDWidget_Challenges_Data(Structure):
-    pass
-
-
-class UHUDWidget_Challenges(Structure):
-    pass
-
-
-class UHUDWidget_Crosshairs_Data(Structure):
-    pass
-
-
-class UHUDWidget_Crosshairs(Structure):
-    pass
-
-
-class UHUDWidget_Minimap_Data(Structure):
-    pass
-
-
-class UHUDWidget_Minimap(Structure):
-    pass
-
-
-class UHUDWidget_Missions_Data(Structure):
-    pass
-
-
-class UHUDWidget_Missions(Structure):
-    pass
-
-
-class UHUDWidget_Trading_Data(Structure):
-    pass
-
-
-class UHUDWidget_Trading(Structure):
-    pass
-
-
-class UHUDWidget_WorldSpace_Data(Structure):
-    pass
-
-
-class UHUDWidget_WorldSpace(Structure):
-    pass
-
-
-class UInventoryDataProviderElement_Data(Structure):
-    pass
-
-
-class UInventoryDataProviderElement(Structure):
-    pass
-
-
-class UItemCardGFxObject_Data(Structure):
-    pass
-
-
-class UItemCardGFxObject(Structure):
-    pass
-
-
-class UItemOfTheDayPanelGFxObject_Data(Structure):
-    pass
-
-
-class UItemOfTheDayPanelGFxObject(Structure):
-    pass
-
-
-class UItemPickupGFxDefinition_Data(Structure):
-    pass
-
-
-class UItemPickupGFxDefinition(Structure):
-    pass
-
-
-class UMontageGFxObject_Data(Structure):
-    pass
-
-
-class UMontageGFxObject(Structure):
-    pass
-
-
-class UScrollingListGFxObject_Data(Structure):
-    pass
-
-
-class UScrollingListGFxObject(Structure):
-    pass
-
-
-class UMultitypeScrollingListGFxObject_Data(Structure):
-    pass
-
-
-class UMultitypeScrollingListGFxObject(Structure):
-    pass
-
-
-class USkillTreeGFxDefinition_Data(Structure):
-    pass
-
-
-class USkillTreeGFxDefinition(Structure):
-    pass
-
-
-class USkillTreeGFxObject_Data(Structure):
-    pass
-
-
-class USkillTreeGFxObject(Structure):
-    pass
-
-
-class UStatusMenuMapGFxObject_Data(Structure):
-    pass
-
-
-class UStatusMenuMapGFxObject(Structure):
-    pass
-
-
-class UWillowGFxColiseumOverlayDefinition_Data(Structure):
-    pass
-
-
-class UWillowGFxColiseumOverlayDefinition(Structure):
-    pass
-
-
-class UWillowGFxMenuHelperSaveGame_Data(Structure):
-    pass
-
-
-class UWillowGFxMenuHelperSaveGame(Structure):
-    pass
-
-
-class UWillowGFxMovie_Data(Structure):
-    pass
-
-
-class UWillowGFxMovie(Structure):
-    pass
-
-
-class UGearboxAccountGFxMovie_Data(Structure):
-    pass
-
-
-class UGearboxAccountGFxMovie(Structure):
-    pass
-
-
-class UHashDisplayGFxMovie_Data(Structure):
-    pass
-
-
-class UHashDisplayGFxMovie(Structure):
-    pass
-
-
-class UItemPickupGFxMovie_Data(Structure):
-    pass
-
-
-class UItemPickupGFxMovie(Structure):
-    pass
-
-
-class UOnlineMessageGFxMovie_Data(Structure):
-    pass
-
-
-class UOnlineMessageGFxMovie(Structure):
-    pass
-
-
-class UTextChatGFxMovie_Data(Structure):
-    pass
-
-
-class UTextChatGFxMovie(Structure):
-    pass
-
-
-class UWillowGFxDialogBox_Data(Structure):
-    pass
-
-
-class UWillowGFxDialogBox(Structure):
-    pass
-
-
-class UWillowGFxMovie3D_Data(Structure):
-    pass
-
-
-class UWillowGFxMovie3D(Structure):
-    pass
-
-
-class UCharacterSelectionReduxGFxMovie_Data(Structure):
-    pass
-
-
-class UCharacterSelectionReduxGFxMovie(Structure):
-    pass
-
-
-class UItemInspectionGFxMovie_Data(Structure):
-    pass
-
-
-class UItemInspectionGFxMovie(Structure):
-    pass
-
-
-class ULANServerBrowserGFxMovie_Data(Structure):
-    pass
-
-
-class ULANServerBrowserGFxMovie(Structure):
-    pass
-
-
-class UQuestAcceptGFxMovie_Data(Structure):
-    pass
-
-
-class UQuestAcceptGFxMovie(Structure):
-    pass
-
-
-class UVehicleSpawnStationGFxMovie_Data(Structure):
-    pass
-
-
-class UVehicleSpawnStationGFxMovie(Structure):
-    pass
-
-
-class UWeaponScopeGFxMovie_Data(Structure):
-    pass
-
-
-class UWeaponScopeGFxMovie(Structure):
-    pass
-
-
-class UWillowGFxMovieCredits_Data(Structure):
-    pass
-
-
-class UWillowGFxMovieCredits(Structure):
-    pass
-
-
-class UWillowGFxThirdPersonMovie_Data(Structure):
-    pass
-
-
-class UWillowGFxThirdPersonMovie(Structure):
-    pass
-
-
-class UCustomizationGFxMovie_Data(Structure):
-    pass
-
-
-class UCustomizationGFxMovie(Structure):
-    pass
-
-
-class UFastTravelStationGFxMovie_Data(Structure):
-    pass
-
-
-class UFastTravelStationGFxMovie(Structure):
-    pass
-
-
-class UWillowInventoryGFxMovie_Data(Structure):
-    pass
-
-
-class UWillowInventoryGFxMovie(Structure):
-    pass
-
-
-class UStatusMenuExGFxMovie_Data(Structure):
-    pass
-
-
-class UStatusMenuExGFxMovie(Structure):
-    pass
-
-
-class UTradingGFxMovie_Data(Structure):
-    pass
-
-
-class UTradingGFxMovie(Structure):
-    pass
-
-
-class UTwoPanelInterfaceGFxMovie_Data(Structure):
-    pass
-
-
-class UTwoPanelInterfaceGFxMovie(Structure):
-    pass
-
-
-class UVendingMachineExGFxMovie_Data(Structure):
-    pass
-
-
-class UVendingMachineExGFxMovie(Structure):
-    pass
-
-
-class UWillowHUDGFxMovie_Data(Structure):
-    pass
-
-
-class UWillowHUDGFxMovie(Structure):
-    pass
-
-
-class UWillowGFxMoviePressStart_Data(Structure):
-    pass
-
-
-class UWillowGFxMoviePressStart(Structure):
-    pass
-
-
-class UWillowGFxMovie3DDefinition_Data(Structure):
-    pass
-
-
-class UWillowGFxMovie3DDefinition(Structure):
-    pass
-
-
-class UBankGFxDefinition_Data(Structure):
-    pass
-
-
-class UBankGFxDefinition(Structure):
-    pass
-
-
-class UCreditsGFxDefinition_Data(Structure):
-    pass
-
-
-class UCreditsGFxDefinition(Structure):
-    pass
-
-
-class UItemInspectionGFxMovieDefinition_Data(Structure):
-    pass
-
-
-class UItemInspectionGFxMovieDefinition(Structure):
-    pass
-
-
-class UVehicleSpawnStationGFxDefinition_Data(Structure):
-    pass
-
-
-class UVehicleSpawnStationGFxDefinition(Structure):
-    pass
-
-
-class UVendingMachineGFxDefinition_Data(Structure):
-    pass
-
-
-class UVendingMachineGFxDefinition(Structure):
-    pass
-
-
-class UWeaponScopeGFxDefinition_Data(Structure):
-    pass
-
-
-class UWeaponScopeGFxDefinition(Structure):
-    pass
-
-
-class UWillowGFxThirdPersonDefinition_Data(Structure):
-    pass
-
-
-class UWillowGFxThirdPersonDefinition(Structure):
-    pass
-
-
-class UCustomizationGFxDefinition_Data(Structure):
-    pass
-
-
-class UCustomizationGFxDefinition(Structure):
-    pass
-
-
-class UWillowInventoryGFxDefinition_Data(Structure):
-    pass
-
-
-class UWillowInventoryGFxDefinition(Structure):
-    pass
-
-
-class UStatusMenuGFxDefinition_Data(Structure):
-    pass
-
-
-class UStatusMenuGFxDefinition(Structure):
-    pass
-
-
-class UTradingGFxDefinition_Data(Structure):
-    pass
-
-
-class UTradingGFxDefinition(Structure):
-    pass
-
-
-class UWillowHUDGFxMovieDefinition_Data(Structure):
-    pass
-
-
-class UWillowHUDGFxMovieDefinition(Structure):
-    pass
-
-
-class UWillowGFxMovieStatePlatform_Data(Structure):
-    pass
-
-
-class UWillowGFxMovieStatePlatform(Structure):
-    pass
-
-
-class UWillowGFxMovieStateUsable_Data(Structure):
-    pass
-
-
-class UWillowGFxMovieStateUsable(Structure):
-    pass
-
-
-class UWillowGFxUIManager_Data(Structure):
-    pass
-
-
-class UWillowGFxUIManager(Structure):
-    pass
-
-
-class UWillowGFxUIManagerDefinition_Data(Structure):
-    pass
-
-
-class UWillowGFxUIManagerDefinition(Structure):
-    pass
-
-
-class UWillowLeviathanService_Data(Structure):
-    pass
-
-
-class UWillowLeviathanService(Structure):
-    pass
-
-
-class UAction_AimAtScanRange_Data(Structure):
-    pass
-
-
-class UAction_AimAtScanRange(Structure):
-    pass
-
-
-class UAction_AimAtThreat_Data(Structure):
-    pass
-
-
-class UAction_AimAtThreat(Structure):
-    pass
-
-
-class UBehaviorAliasLookupDefinition_Data(Structure):
-    pass
-
-
-class UBehaviorAliasLookupDefinition(Structure):
-    pass
-
-
-class UPhaseLockDefinition_Data(Structure):
-    pass
-
-
-class UPhaseLockDefinition(Structure):
-    pass
-
-
-class UAction_AttackLoop_Data(Structure):
-    pass
-
-
-class UAction_AttackLoop(Structure):
-    pass
-
-
-class UAction_FollowPath_Data(Structure):
-    pass
-
-
-class UAction_FollowPath(Structure):
-    pass
-
-
-class UAction_BunkerBoss_Flight_Data(Structure):
-    pass
-
-
-class UAction_BunkerBoss_Flight(Structure):
-    pass
-
-
-class UAction_Idle_Data(Structure):
-    pass
-
-
-class UAction_Idle(Structure):
-    pass
-
-
-class UAction_BurrowIdle_Data(Structure):
-    pass
-
-
-class UAction_BurrowIdle(Structure):
-    pass
-
-
-class UAction_ChargeTarget_Data(Structure):
-    pass
-
-
-class UAction_ChargeTarget(Structure):
-    pass
-
-
-class UAction_CombatPerch_Data(Structure):
-    pass
-
-
-class UAction_CombatPerch(Structure):
-    pass
-
-
-class UAction_DeathTrap_Data(Structure):
-    pass
-
-
-class UAction_DeathTrap(Structure):
-    pass
-
-
-class UAction_Drive_Pursuit_Data(Structure):
-    pass
-
-
-class UAction_Drive_Pursuit(Structure):
-    pass
-
-
-class UAction_Drive_AlongsideTarget_Data(Structure):
-    pass
-
-
-class UAction_Drive_AlongsideTarget(Structure):
-    pass
-
-
-class UAction_Drive_AvoidWall_Data(Structure):
-    pass
-
-
-class UAction_Drive_AvoidWall(Structure):
-    pass
-
-
-class UAction_Drive_BackUpAndAdjust_Data(Structure):
-    pass
-
-
-class UAction_Drive_BackUpAndAdjust(Structure):
-    pass
-
-
-class UAction_Drive_GoBackToCombatArea_Data(Structure):
-    pass
-
-
-class UAction_Drive_GoBackToCombatArea(Structure):
-    pass
-
-
-class UAction_Drive_Pursuit_TargetOnFoot_Data(Structure):
-    pass
-
-
-class UAction_Drive_Pursuit_TargetOnFoot(Structure):
-    pass
-
-
-class UAction_DriveVehicle_Data(Structure):
-    pass
-
-
-class UAction_DriveVehicle(Structure):
-    pass
-
-
-class UAction_FinalBoss_Data(Structure):
-    pass
-
-
-class UAction_FinalBoss(Structure):
-    pass
-
-
-class UAction_FinalBossFly_Data(Structure):
-    pass
-
-
-class UAction_FinalBossFly(Structure):
-    pass
-
-
-class UAction_FlyAnimAttack_Data(Structure):
-    pass
-
-
-class UAction_FlyAnimAttack(Structure):
-    pass
-
-
-class UAction_GoToScriptedDestination_Data(Structure):
-    pass
-
-
-class UAction_GoToScriptedDestination(Structure):
-    pass
-
-
-class UAction_GrabPickup_Data(Structure):
-    pass
-
-
-class UAction_GrabPickup(Structure):
-    pass
-
-
-class AWillowReplicatedEmitter_Data(Structure):
-    pass
-
-
-class AWillowReplicatedEmitter(Structure):
-    pass
-
-
-class UAction_MortarAttack_Data(Structure):
-    pass
-
-
-class UAction_MortarAttack(Structure):
-    pass
-
-
-class UILightProjectileManagerOwner_Data(Structure):
-    pass
-
-
-class UILightProjectileManagerOwner(Structure):
-    pass
-
-
-class UAction_MoveToFormation_Data(Structure):
-    pass
-
-
-class UAction_MoveToFormation(Structure):
-    pass
-
-
-class UAction_MoveToVehicle_Data(Structure):
-    pass
-
-
-class UAction_MoveToVehicle(Structure):
-    pass
-
-
-class UAction_Patrol_Data(Structure):
-    pass
-
-
-class UAction_Patrol(Structure):
-    pass
-
-
-class UAction_PlayCustomAnimation_Data(Structure):
-    pass
-
-
-class UAction_PlayCustomAnimation(Structure):
-    pass
-
-
-class UAction_ScriptedNPC_Data(Structure):
-    pass
-
-
-class UAction_ScriptedNPC(Structure):
-    pass
-
-
-class UBehavior_AISetFlight_Data(Structure):
-    pass
-
-
-class UBehavior_AISetFlight(Structure):
-    pass
-
-
-class UAction_SetFlight_Data(Structure):
-    pass
-
-
-class UAction_SetFlight(Structure):
-    pass
-
-
-class UAction_ShootThreatWhenInView_Data(Structure):
-    pass
-
-
-class UAction_ShootThreatWhenInView(Structure):
-    pass
-
-
-class UAction_SweepAttack_Data(Structure):
-    pass
-
-
-class UAction_SweepAttack(Structure):
-    pass
-
-
-class UAction_VehicleTurret_Data(Structure):
-    pass
-
-
-class UAction_VehicleTurret(Structure):
-    pass
-
-
-class UWillowSeqEvent_TimerElapsed_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_TimerElapsed(Structure):
-    pass
-
-
-class UActorFactoryInteractiveSwitch_Data(Structure):
-    pass
-
-
-class UActorFactoryInteractiveSwitch(Structure):
-    pass
-
-
-class UActorFactoryPopulationOpportunityPoint_Data(Structure):
-    pass
-
-
-class UActorFactoryPopulationOpportunityPoint(Structure):
-    pass
-
-
-class UActorFactoryPropObject_Data(Structure):
-    pass
-
-
-class UActorFactoryPropObject(Structure):
-    pass
-
-
-class UActorFactoryVehicleSpawnStationPlatform_Data(Structure):
-    pass
-
-
-class UActorFactoryVehicleSpawnStationPlatform(Structure):
-    pass
-
-
-class UActorFactoryVehicleSpawnStationTerminal_Data(Structure):
-    pass
-
-
-class UActorFactoryVehicleSpawnStationTerminal(Structure):
-    pass
-
-
-class AWillowCoopPlayerStart_Data(Structure):
-    pass
-
-
-class AWillowCoopPlayerStart(Structure):
-    pass
-
-
-class AAIDebugDummy_Data(Structure):
-    pass
-
-
-class AAIDebugDummy(Structure):
-    pass
-
-
-class UAmmoPanelGFxObject_Data(Structure):
-    pass
-
-
-class UAmmoPanelGFxObject(Structure):
-    pass
-
-
-class UInputContextSelectorBase_Data(Structure):
-    pass
-
-
-class UInputContextSelectorBase(Structure):
-    pass
-
-
-class UDefaultInputContextSelector_Data(Structure):
-    pass
-
-
-class UDefaultInputContextSelector(Structure):
-    pass
-
-
-class UAssassinInputContextSelector_Data(Structure):
-    pass
-
-
-class UAssassinInputContextSelector(Structure):
-    pass
-
-
-class AExecuteActionSkill_Data(Structure):
-    pass
-
-
-class AExecuteActionSkill(Structure):
-    pass
-
-
-class UValueGFxObject_Data(Structure):
-    pass
-
-
-class UValueGFxObject(Structure):
-    pass
-
-
-class UEridiumValueGFxObject_Data(Structure):
-    pass
-
-
-class UEridiumValueGFxObject(Structure):
-    pass
-
-
-class UWillowVersusDuelMessage_Data(Structure):
-    pass
-
-
-class UWillowVersusDuelMessage(Structure):
-    pass
-
-
-class UWillowGFxColiseumOverlayMovie_Data(Structure):
-    pass
-
-
-class UWillowGFxColiseumOverlayMovie(Structure):
-    pass
-
-
-class UColiseumRuleDefinition_Data(Structure):
-    pass
-
-
-class UColiseumRuleDefinition(Structure):
-    pass
-
-
-class UNxFootForceFieldComponent_Data(Structure):
-    pass
-
-
-class UNxFootForceFieldComponent(Structure):
-    pass
-
-
-class UITinnitusTarget_Data(Structure):
-    pass
-
-
-class UITinnitusTarget(Structure):
-    pass
-
-
-class ABuzzaxeActionSkill_Data(Structure):
-    pass
-
-
-class ABuzzaxeActionSkill(Structure):
-    pass
-
-
-class UInjuredFeedbackMessage_Data(Structure):
-    pass
-
-
-class UInjuredFeedbackMessage(Structure):
-    pass
-
-
-class AWillowEmitterServerSide_Data(Structure):
-    pass
-
-
-class AWillowEmitterServerSide(Structure):
-    pass
-
-
-class UIRBCollisionListener_Data(Structure):
-    pass
-
-
-class UIRBCollisionListener(Structure):
-    pass
-
-
-class AWillowEmit_HitEffect_Data(Structure):
-    pass
-
-
-class AWillowEmit_HitEffect(Structure):
-    pass
-
-
-class UIAttributeEffectBehavior_Data(Structure):
-    pass
-
-
-class UIAttributeEffectBehavior(Structure):
-    pass
-
-
-class UIFireShotBehavior_Data(Structure):
-    pass
-
-
-class UIFireShotBehavior(Structure):
-    pass
-
-
-class UIBehaviorAliasProvider_Data(Structure):
-    pass
-
-
-class UIBehaviorAliasProvider(Structure):
-    pass
-
-
-class AWillowEmit_BloodSpray_Data(Structure):
-    pass
-
-
-class AWillowEmit_BloodSpray(Structure):
-    pass
-
-
-class UDeveloperPerksDefinition_Data(Structure):
-    pass
-
-
-class UDeveloperPerksDefinition(Structure):
-    pass
-
-
-class UMissionFeedbackMessage_Data(Structure):
-    pass
-
-
-class UMissionFeedbackMessage(Structure):
-    pass
-
-
-class ADualWieldActionSkill_Data(Structure):
-    pass
-
-
-class ADualWieldActionSkill(Structure):
-    pass
-
-
-class UWillowSeqEvent_PlayerJoined_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_PlayerJoined(Structure):
-    pass
-
-
-class UWillowOnlineGameSettings_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSettings(Structure):
-    pass
-
-
-class UMarketingUnlockInventoryDefinition_Data(Structure):
-    pass
-
-
-class UMarketingUnlockInventoryDefinition(Structure):
-    pass
-
-
-class UWeaponProficiencyFeedbackMessage_Data(Structure):
-    pass
-
-
-class UWeaponProficiencyFeedbackMessage(Structure):
-    pass
-
-
-class ULocalWeaponMessage_Data(Structure):
-    pass
-
-
-class ULocalWeaponMessage(Structure):
-    pass
-
-
-class UReceivedWeaponMessage_Data(Structure):
-    pass
-
-
-class UReceivedWeaponMessage(Structure):
-    pass
-
-
-class ULocalItemMessage_Data(Structure):
-    pass
-
-
-class ULocalItemMessage(Structure):
-    pass
-
-
-class UReceivedItemMessage_Data(Structure):
-    pass
-
-
-class UReceivedItemMessage(Structure):
-    pass
-
-
-class UReceivedCreditsMessage_Data(Structure):
-    pass
-
-
-class UReceivedCreditsMessage(Structure):
-    pass
-
-
-class UExperienceFeedbackMessage_Data(Structure):
-    pass
-
-
-class UExperienceFeedbackMessage(Structure):
-    pass
-
-
-class URotationArrowComponent_Data(Structure):
-    pass
-
-
-class URotationArrowComponent(Structure):
-    pass
-
-
-class UPlayerInteractionClient_Data(Structure):
-    pass
-
-
-class UPlayerInteractionClient(Structure):
-    pass
-
-
-class UPersonalTeleporterDefinition_Data(Structure):
-    pass
-
-
-class UPersonalTeleporterDefinition(Structure):
-    pass
-
-
-class UTeleporterFeedbackMessage_Data(Structure):
-    pass
-
-
-class UTeleporterFeedbackMessage(Structure):
-    pass
-
-
-class UPlayerTrainingMessageListDefinition_Data(Structure):
-    pass
-
-
-class UPlayerTrainingMessageListDefinition(Structure):
-    pass
-
-
-class USeqEvent_TrainingMessage_Data(Structure):
-    pass
-
-
-class USeqEvent_TrainingMessage(Structure):
-    pass
-
-
-class UFrontendGFxMovie_Data(Structure):
-    pass
-
-
-class UFrontendGFxMovie(Structure):
-    pass
-
-
-class UFrontendGFxMovieDefinition_Data(Structure):
-    pass
-
-
-class UFrontendGFxMovieDefinition(Structure):
-    pass
-
-
-class UWillowSeqAct_PlayCameraAnim_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_PlayCameraAnim(Structure):
-    pass
-
-
-class UWillowSeqAct_StopCameraAnim_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_StopCameraAnim(Structure):
-    pass
-
-
-class USeqAct_UnlockAchievement_Data(Structure):
-    pass
-
-
-class USeqAct_UnlockAchievement(Structure):
-    pass
-
-
-class UWillowSeqEvent_ShowCharacterSelectUI_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_ShowCharacterSelectUI(Structure):
-    pass
-
-
-class UFastTravelStationDiscoveryMessage_Data(Structure):
-    pass
-
-
-class UFastTravelStationDiscoveryMessage(Structure):
-    pass
-
-
-class UIStorageDevice_Data(Structure):
-    pass
-
-
-class UIStorageDevice(Structure):
-    pass
-
-
-class UWillowSeqAct_MarkEnteredRegion_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_MarkEnteredRegion(Structure):
-    pass
-
-
-class UWillowSeqAct_MarkExitedRegion_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_MarkExitedRegion(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumAnnouncePenaltyBox_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumAnnouncePenaltyBox(Structure):
-    pass
-
-
-class UVehicleSeatSwap_PlayerInteractionClient_Data(Structure):
-    pass
-
-
-class UVehicleSeatSwap_PlayerInteractionClient(Structure):
-    pass
-
-
-class ULobbyGFxMovie_Data(Structure):
-    pass
-
-
-class ULobbyGFxMovie(Structure):
-    pass
-
-
-class UOptionsGFxMovie_Data(Structure):
-    pass
-
-
-class UOptionsGFxMovie(Structure):
-    pass
-
-
-class USeqAct_CausePlayerDeath_Data(Structure):
-    pass
-
-
-class USeqAct_CausePlayerDeath(Structure):
-    pass
-
-
-class UISkillBehavior_Data(Structure):
-    pass
-
-
-class UISkillBehavior(Structure):
-    pass
-
-
-class UIChallengeRecipient_Data(Structure):
-    pass
-
-
-class UIChallengeRecipient(Structure):
-    pass
-
-
-class AWillowPlayerCamera_Data(Structure):
-    pass
-
-
-class AWillowPlayerCamera(Structure):
-    pass
-
-
-class UWillowCheatManager_Data(Structure):
-    pass
-
-
-class UWillowCheatManager(Structure):
-    pass
-
-
-class UIMultitypeScrollingList_Data(Structure):
-    pass
-
-
-class UIMultitypeScrollingList(Structure):
-    pass
-
-
-class UTwoPanelInterfaceGFxDefinition_Data(Structure):
-    pass
-
-
-class UTwoPanelInterfaceGFxDefinition(Structure):
-    pass
-
-
-class UIWillowStorable_Data(Structure):
-    pass
-
-
-class UIWillowStorable(Structure):
-    pass
-
-
-class UITwoPanelInterface_Data(Structure):
-    pass
-
-
-class UITwoPanelInterface(Structure):
-    pass
-
-
-class UBankGFxMovie_Data(Structure):
-    pass
-
-
-class UBankGFxMovie(Structure):
-    pass
-
-
-class UBehavior_ActivateListenerSkill_Data(Structure):
-    pass
-
-
-class UBehavior_ActivateListenerSkill(Structure):
-    pass
-
-
-class UBehavior_ActivateSkill_Data(Structure):
-    pass
-
-
-class UBehavior_ActivateSkill(Structure):
-    pass
-
-
-class UBehavior_AddInstanceData_Data(Structure):
-    pass
-
-
-class UBehavior_AddInstanceData(Structure):
-    pass
-
-
-class UBehavior_AddInstanceDataFromBehaviorContext_Data(Structure):
-    pass
-
-
-class UBehavior_AddInstanceDataFromBehaviorContext(Structure):
-    pass
-
-
-class UBehavior_AddInventoryToStorage_Data(Structure):
-    pass
-
-
-class UBehavior_AddInventoryToStorage(Structure):
-    pass
-
-
-class UBehavior_AddObjectInstanceData_Data(Structure):
-    pass
-
-
-class UBehavior_AddObjectInstanceData(Structure):
-    pass
-
-
-class UBehavior_AdjustCameraAnimByEyeHeight_Data(Structure):
-    pass
-
-
-class UBehavior_AdjustCameraAnimByEyeHeight(Structure):
-    pass
-
-
-class UBehavior_AIChangeInventory_Data(Structure):
-    pass
-
-
-class UBehavior_AIChangeInventory(Structure):
-    pass
-
-
-class UBehavior_AIFollow_Data(Structure):
-    pass
-
-
-class UBehavior_AIFollow(Structure):
-    pass
-
-
-class UBehavior_AILevelUp_Data(Structure):
-    pass
-
-
-class UBehavior_AILevelUp(Structure):
-    pass
-
-
-class UBehavior_AIPatsy_Data(Structure):
-    pass
-
-
-class UBehavior_AIPatsy(Structure):
-    pass
-
-
-class UBehavior_AIProvoke_Data(Structure):
-    pass
-
-
-class UBehavior_AIProvoke(Structure):
-    pass
-
-
-class UBehavior_AIResetProvocation_Data(Structure):
-    pass
-
-
-class UBehavior_AIResetProvocation(Structure):
-    pass
-
-
-class UBehavior_AISetItemTossTarget_Data(Structure):
-    pass
-
-
-class UBehavior_AISetItemTossTarget(Structure):
-    pass
-
-
-class UBehavior_AISetWeaponFireRotation_Data(Structure):
-    pass
-
-
-class UBehavior_AISetWeaponFireRotation(Structure):
-    pass
-
-
-class UBehavior_AITakeMoney_Data(Structure):
-    pass
-
-
-class UBehavior_AITakeMoney(Structure):
-    pass
-
-
-class UINPCBehavior_Data(Structure):
-    pass
-
-
-class UINPCBehavior(Structure):
-    pass
-
-
-class UBehavior_AssignBoolVariable_Data(Structure):
-    pass
-
-
-class UBehavior_AssignBoolVariable(Structure):
-    pass
-
-
-class UBehavior_AssignFloatVariable_Data(Structure):
-    pass
-
-
-class UBehavior_AssignFloatVariable(Structure):
-    pass
-
-
-class UBehavior_AssignIntVariable_Data(Structure):
-    pass
-
-
-class UBehavior_AssignIntVariable(Structure):
-    pass
-
-
-class UBehavior_AssignObjectVariable_Data(Structure):
-    pass
-
-
-class UBehavior_AssignObjectVariable(Structure):
-    pass
-
-
-class UBehavior_AssignVectorVariable_Data(Structure):
-    pass
-
-
-class UBehavior_AssignVectorVariable(Structure):
-    pass
-
-
-class UBehavior_AttachActor_Data(Structure):
-    pass
-
-
-class UBehavior_AttachActor(Structure):
-    pass
-
-
-class UBehavior_AttachAOEStatusEffect_Data(Structure):
-    pass
-
-
-class UBehavior_AttachAOEStatusEffect(Structure):
-    pass
-
-
-class UBehavior_AttachItems_Data(Structure):
-    pass
-
-
-class UBehavior_AttachItems(Structure):
-    pass
-
-
-class UBehavior_AttributeEffect_Data(Structure):
-    pass
-
-
-class UBehavior_AttributeEffect(Structure):
-    pass
-
-
-class UBehavior_AwardExperienceForMyDeath_Data(Structure):
-    pass
-
-
-class UBehavior_AwardExperienceForMyDeath(Structure):
-    pass
-
-
-class UBehavior_BeginLifting_Data(Structure):
-    pass
-
-
-class UBehavior_BeginLifting(Structure):
-    pass
-
-
-class UILiftBehavior_Data(Structure):
-    pass
-
-
-class UILiftBehavior(Structure):
-    pass
-
-
-class UBehavior_BoolMath_Data(Structure):
-    pass
-
-
-class UBehavior_BoolMath(Structure):
-    pass
-
-
-class UBehavior_BroadcastEcho_Data(Structure):
-    pass
-
-
-class UBehavior_BroadcastEcho(Structure):
-    pass
-
-
-class UBehavior_CauseTinnitus_Data(Structure):
-    pass
-
-
-class UBehavior_CauseTinnitus(Structure):
-    pass
-
-
-class UBehavior_ChangeBehaviorSetState_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeBehaviorSetState(Structure):
-    pass
-
-
-class UBehavior_ChangeCanTarget_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeCanTarget(Structure):
-    pass
-
-
-class UBehavior_ChangeDenAllegiance_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeDenAllegiance(Structure):
-    pass
-
-
-class UBehavior_ChangeDialogName_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeDialogName(Structure):
-    pass
-
-
-class UBehavior_ChangeEnvironmentTag_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeEnvironmentTag(Structure):
-    pass
-
-
-class UBehavior_ChangeInstanceDataSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeInstanceDataSwitch(Structure):
-    pass
-
-
-class UBehavior_ChangeUsability_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeUsability(Structure):
-    pass
-
-
-class UIChangeUsabilityBehavior_Data(Structure):
-    pass
-
-
-class UIChangeUsabilityBehavior(Structure):
-    pass
-
-
-class UBehavior_ChangeWeaponVisibility_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeWeaponVisibility(Structure):
-    pass
-
-
-class UBehavior_Charm_Data(Structure):
-    pass
-
-
-class UBehavior_Charm(Structure):
-    pass
-
-
-class UBehavior_CheckMapChangeConditions_Data(Structure):
-    pass
-
-
-class UBehavior_CheckMapChangeConditions(Structure):
-    pass
-
-
-class UBehavior_ClearStatusEffects_Data(Structure):
-    pass
-
-
-class UBehavior_ClearStatusEffects(Structure):
-    pass
-
-
-class UBehavior_CombatPerch_Data(Structure):
-    pass
-
-
-class UBehavior_CombatPerch(Structure):
-    pass
-
-
-class UBehavior_CombatPerchThrow_Data(Structure):
-    pass
-
-
-class UBehavior_CombatPerchThrow(Structure):
-    pass
-
-
-class UBehavior_CompareFloat_Data(Structure):
-    pass
-
-
-class UBehavior_CompareFloat(Structure):
-    pass
-
-
-class UBehavior_CompareInt_Data(Structure):
-    pass
-
-
-class UBehavior_CompareInt(Structure):
-    pass
-
-
-class UBehavior_CompareObject_Data(Structure):
-    pass
-
-
-class UBehavior_CompareObject(Structure):
-    pass
-
-
-class UBehavior_CoordinatedEffect_Data(Structure):
-    pass
-
-
-class UBehavior_CoordinatedEffect(Structure):
-    pass
-
-
-class UBehavior_Crane_Data(Structure):
-    pass
-
-
-class UBehavior_Crane(Structure):
-    pass
-
-
-class UBehavior_CreateImpactEffect_Data(Structure):
-    pass
-
-
-class UBehavior_CreateImpactEffect(Structure):
-    pass
-
-
-class UBehavior_CreateWeatherSystem_Data(Structure):
-    pass
-
-
-class UBehavior_CreateWeatherSystem(Structure):
-    pass
-
-
-class UBehavior_DamageArea_Data(Structure):
-    pass
-
-
-class UBehavior_DamageArea(Structure):
-    pass
-
-
-class UBehavior_DamageClassSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_DamageClassSwitch(Structure):
-    pass
-
-
-class UBehavior_DamageSourceSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_DamageSourceSwitch(Structure):
-    pass
-
-
-class UBehavior_DamageSurfaceTypeSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_DamageSurfaceTypeSwitch(Structure):
-    pass
-
-
-class UBehavior_DeactivateSkill_Data(Structure):
-    pass
-
-
-class UBehavior_DeactivateSkill(Structure):
-    pass
-
-
-class UBehavior_DebugMessage_Data(Structure):
-    pass
-
-
-class UBehavior_DebugMessage(Structure):
-    pass
-
-
-class UBehavior_DestroyBeams_Data(Structure):
-    pass
-
-
-class UBehavior_DestroyBeams(Structure):
-    pass
-
-
-class UBehavior_DestroyBeamsForSource_Data(Structure):
-    pass
-
-
-class UBehavior_DestroyBeamsForSource(Structure):
-    pass
-
-
-class UBehavior_DestroyWeatherSystem_Data(Structure):
-    pass
-
-
-class UBehavior_DestroyWeatherSystem(Structure):
-    pass
-
-
-class UBehavior_DetachActor_Data(Structure):
-    pass
-
-
-class UBehavior_DetachActor(Structure):
-    pass
-
-
-class UBehavior_DisableFallingDamage_Data(Structure):
-    pass
-
-
-class UBehavior_DisableFallingDamage(Structure):
-    pass
-
-
-class UBehavior_DiscoverLevelChallengeObject_Data(Structure):
-    pass
-
-
-class UBehavior_DiscoverLevelChallengeObject(Structure):
-    pass
-
-
-class UBehavior_DropItems_Data(Structure):
-    pass
-
-
-class UBehavior_DropItems(Structure):
-    pass
-
-
-class UBehavior_DropProjectile_Data(Structure):
-    pass
-
-
-class UBehavior_DropProjectile(Structure):
-    pass
-
-
-class UBehavior_DuplicateInstanceData_Data(Structure):
-    pass
-
-
-class UBehavior_DuplicateInstanceData(Structure):
-    pass
-
-
-class UBehavior_EnterVehicle_Data(Structure):
-    pass
-
-
-class UBehavior_EnterVehicle(Structure):
-    pass
-
-
-class UBehavior_FinishLifting_Data(Structure):
-    pass
-
-
-class UBehavior_FinishLifting(Structure):
-    pass
-
-
-class UBehavior_FireBeam_Data(Structure):
-    pass
-
-
-class UBehavior_FireBeam(Structure):
-    pass
-
-
-class UBehavior_FireCustomSkillEvent_Data(Structure):
-    pass
-
-
-class UBehavior_FireCustomSkillEvent(Structure):
-    pass
-
-
-class UBehavior_FireShot_Data(Structure):
-    pass
-
-
-class UBehavior_FireShot(Structure):
-    pass
-
-
-class UBehavior_ForceDownState_Data(Structure):
-    pass
-
-
-class UBehavior_ForceDownState(Structure):
-    pass
-
-
-class UBehavior_ForceInjured_Data(Structure):
-    pass
-
-
-class UBehavior_ForceInjured(Structure):
-    pass
-
-
-class UBehavior_GetClosestPlayer_Data(Structure):
-    pass
-
-
-class UBehavior_GetClosestPlayer(Structure):
-    pass
-
-
-class UBehavior_GetItemPrice_Data(Structure):
-    pass
-
-
-class UBehavior_GetItemPrice(Structure):
-    pass
-
-
-class UBehavior_GetPlayerStat_Data(Structure):
-    pass
-
-
-class UBehavior_GetPlayerStat(Structure):
-    pass
-
-
-class UBehavior_GFxMoviePlay_Data(Structure):
-    pass
-
-
-class UBehavior_GFxMoviePlay(Structure):
-    pass
-
-
-class UBehavior_GFxMovieSetState_Data(Structure):
-    pass
-
-
-class UBehavior_GFxMovieSetState(Structure):
-    pass
-
-
-class UBehavior_GFxMovieStop_Data(Structure):
-    pass
-
-
-class UBehavior_GFxMovieStop(Structure):
-    pass
-
-
-class UBehavior_GiveInjuredPlayerSecondWind_Data(Structure):
-    pass
-
-
-class UBehavior_GiveInjuredPlayerSecondWind(Structure):
-    pass
-
-
-class UBehavior_HasMissions_Data(Structure):
-    pass
-
-
-class UBehavior_HasMissions(Structure):
-    pass
-
-
-class UBehavior_HeadLookHold_Data(Structure):
-    pass
-
-
-class UBehavior_HeadLookHold(Structure):
-    pass
-
-
-class UBehavior_IncrementPlayerStat_Data(Structure):
-    pass
-
-
-class UBehavior_IncrementPlayerStat(Structure):
-    pass
-
-
-class UBehavior_IsCensoredMode_Data(Structure):
-    pass
-
-
-class UBehavior_IsCensoredMode(Structure):
-    pass
-
-
-class UBehavior_IsObjectPlayer_Data(Structure):
-    pass
-
-
-class UBehavior_IsObjectPlayer(Structure):
-    pass
-
-
-class UBehavior_IsObjectVehicle_Data(Structure):
-    pass
-
-
-class UBehavior_IsObjectVehicle(Structure):
-    pass
-
-
-class UBehavior_LeaderCommand_Data(Structure):
-    pass
-
-
-class UBehavior_LeaderCommand(Structure):
-    pass
-
-
-class UBehavior_LeapAtTarget_Data(Structure):
-    pass
-
-
-class UBehavior_LeapAtTarget(Structure):
-    pass
-
-
-class UBehavior_LocalCustomEvent_Data(Structure):
-    pass
-
-
-class UBehavior_LocalCustomEvent(Structure):
-    pass
-
-
-class UBehavior_MakeVector_Data(Structure):
-    pass
-
-
-class UBehavior_MakeVector(Structure):
-    pass
-
-
-class UBehavior_MissionCustomEvent_Data(Structure):
-    pass
-
-
-class UBehavior_MissionCustomEvent(Structure):
-    pass
-
-
-class UBehavior_NetworkRoleSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_NetworkRoleSwitch(Structure):
-    pass
-
-
-class UBehavior_NotifyThoughtLockStatus_Data(Structure):
-    pass
-
-
-class UBehavior_NotifyThoughtLockStatus(Structure):
-    pass
-
-
-class UBehavior_ObjectClassSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_ObjectClassSwitch(Structure):
-    pass
-
-
-class UBehavior_OpinionSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_OpinionSwitch(Structure):
-    pass
-
-
-class UBehavior_OverrideWeaponCrosshair_Data(Structure):
-    pass
-
-
-class UBehavior_OverrideWeaponCrosshair(Structure):
-    pass
-
-
-class UBehavior_PackAttack_Data(Structure):
-    pass
-
-
-class UBehavior_PackAttack(Structure):
-    pass
-
-
-class UBehavior_PawnLeap_Data(Structure):
-    pass
-
-
-class UBehavior_PawnLeap(Structure):
-    pass
-
-
-class UBehavior_PhaseLockHold_Data(Structure):
-    pass
-
-
-class UBehavior_PhaseLockHold(Structure):
-    pass
-
-
-class UBehavior_PhysXLevel_Data(Structure):
-    pass
-
-
-class UBehavior_PhysXLevel(Structure):
-    pass
-
-
-class UBehavior_PlayAIMissionContextDialog_Data(Structure):
-    pass
-
-
-class UBehavior_PlayAIMissionContextDialog(Structure):
-    pass
-
-
-class UBehavior_PlayAnimation_Data(Structure):
-    pass
-
-
-class UBehavior_PlayAnimation(Structure):
-    pass
-
-
-class UBehavior_PlayHardFlinch_Data(Structure):
-    pass
-
-
-class UBehavior_PlayHardFlinch(Structure):
-    pass
-
-
-class UBehavior_PlayMultipleExplosionsSound_Data(Structure):
-    pass
-
-
-class UBehavior_PlayMultipleExplosionsSound(Structure):
-    pass
-
-
-class UBehavior_PostAkEventGetRTPC_Data(Structure):
-    pass
-
-
-class UBehavior_PostAkEventGetRTPC(Structure):
-    pass
-
-
-class UBehavior_PostProcessChain_Data(Structure):
-    pass
-
-
-class UBehavior_PostProcessChain(Structure):
-    pass
-
-
-class UBehavior_PostProcessChain_LostShield_Data(Structure):
-    pass
-
-
-class UBehavior_PostProcessChain_LostShield(Structure):
-    pass
-
-
-class UBehavior_PostProcessOverlay_Data(Structure):
-    pass
-
-
-class UBehavior_PostProcessOverlay(Structure):
-    pass
-
-
-class UBehavior_PursueNodeType_Data(Structure):
-    pass
-
-
-class UBehavior_PursueNodeType(Structure):
-    pass
-
-
-class UIPursuitBehavior_Data(Structure):
-    pass
-
-
-class UIPursuitBehavior(Structure):
-    pass
-
-
-class UBehavior_QueryDayNightCycle_Data(Structure):
-    pass
-
-
-class UBehavior_QueryDayNightCycle(Structure):
-    pass
-
-
-class UBehavior_QueuePersonalEcho_Data(Structure):
-    pass
-
-
-class UBehavior_QueuePersonalEcho(Structure):
-    pass
-
-
-class UBehavior_RadarIcon_Data(Structure):
-    pass
-
-
-class UBehavior_RadarIcon(Structure):
-    pass
-
-
-class UBehavior_ReCalculateResourcePoolValues_Data(Structure):
-    pass
-
-
-class UBehavior_ReCalculateResourcePoolValues(Structure):
-    pass
-
-
-class UBehavior_RefillResourcePool_Data(Structure):
-    pass
-
-
-class UBehavior_RefillResourcePool(Structure):
-    pass
-
-
-class UBehavior_RefillWeapon_Data(Structure):
-    pass
-
-
-class UBehavior_RefillWeapon(Structure):
-    pass
-
-
-class UBehavior_RegisterFastTravelDefinition_Data(Structure):
-    pass
-
-
-class UBehavior_RegisterFastTravelDefinition(Structure):
-    pass
-
-
-class UBehavior_RegisterTargetable_Data(Structure):
-    pass
-
-
-class UBehavior_RegisterTargetable(Structure):
-    pass
-
-
-class UBehavior_ReloadComplete_Data(Structure):
-    pass
-
-
-class UBehavior_ReloadComplete(Structure):
-    pass
-
-
-class UBehavior_RemoveInstanceData_Data(Structure):
-    pass
-
-
-class UBehavior_RemoveInstanceData(Structure):
-    pass
-
-
-class UBehavior_RemoveInventoryFromStorage_Data(Structure):
-    pass
-
-
-class UBehavior_RemoveInventoryFromStorage(Structure):
-    pass
-
-
-class UBehavior_ResetActionSkillCooldown_Data(Structure):
-    pass
-
-
-class UBehavior_ResetActionSkillCooldown(Structure):
-    pass
-
-
-class UBehavior_ResetHitRegionHealth_Data(Structure):
-    pass
-
-
-class UBehavior_ResetHitRegionHealth(Structure):
-    pass
-
-
-class UBehavior_RotatePawn_Data(Structure):
-    pass
-
-
-class UBehavior_RotatePawn(Structure):
-    pass
-
-
-class UBehavior_RuleEvent_Data(Structure):
-    pass
-
-
-class UBehavior_RuleEvent(Structure):
-    pass
-
-
-class UBehavior_RunBehaviorAlias_Data(Structure):
-    pass
-
-
-class UBehavior_RunBehaviorAlias(Structure):
-    pass
-
-
-class UBehaviorAliasDefinition_Data(Structure):
-    pass
-
-
-class UBehaviorAliasDefinition(Structure):
-    pass
-
-
-class UBehavior_SelectPhaselockTarget_Data(Structure):
-    pass
-
-
-class UBehavior_SelectPhaselockTarget(Structure):
-    pass
-
-
-class UBehavior_SendMessageToPlayers_Data(Structure):
-    pass
-
-
-class UBehavior_SendMessageToPlayers(Structure):
-    pass
-
-
-class UBehavior_SetAIFlag_Data(Structure):
-    pass
-
-
-class UBehavior_SetAIFlag(Structure):
-    pass
-
-
-class UBehavior_SetAlternateVertexWeight_Data(Structure):
-    pass
-
-
-class UBehavior_SetAlternateVertexWeight(Structure):
-    pass
-
-
-class UBehavior_SetAnimSwitchNode_Data(Structure):
-    pass
-
-
-class UBehavior_SetAnimSwitchNode(Structure):
-    pass
-
-
-class UBehavior_SetAnimTree_Data(Structure):
-    pass
-
-
-class UBehavior_SetAnimTree(Structure):
-    pass
-
-
-class UBehavior_SetBeingHealed_Data(Structure):
-    pass
-
-
-class UBehavior_SetBeingHealed(Structure):
-    pass
-
-
-class UBehavior_SetChallengeCompleted_Data(Structure):
-    pass
-
-
-class UBehavior_SetChallengeCompleted(Structure):
-    pass
-
-
-class UBehavior_SetCleanupParameters_Data(Structure):
-    pass
-
-
-class UBehavior_SetCleanupParameters(Structure):
-    pass
-
-
-class UBehavior_SetCompassIcon_Data(Structure):
-    pass
-
-
-class UBehavior_SetCompassIcon(Structure):
-    pass
-
-
-class UBehavior_SetDeathDefinition_Data(Structure):
-    pass
-
-
-class UBehavior_SetDeathDefinition(Structure):
-    pass
-
-
-class UBehavior_SetDiscardRootMotion_Data(Structure):
-    pass
-
-
-class UBehavior_SetDiscardRootMotion(Structure):
-    pass
-
-
-class UBehavior_SetDualWieldBlendState_Data(Structure):
-    pass
-
-
-class UBehavior_SetDualWieldBlendState(Structure):
-    pass
-
-
-class UBehavior_SetElevatorButtonGlowing_Data(Structure):
-    pass
-
-
-class UBehavior_SetElevatorButtonGlowing(Structure):
-    pass
-
-
-class UBehavior_SetExtraImpactEffect_Data(Structure):
-    pass
-
-
-class UBehavior_SetExtraImpactEffect(Structure):
-    pass
-
-
-class UBehavior_SetExtraMuzzleEffect_Data(Structure):
-    pass
-
-
-class UBehavior_SetExtraMuzzleEffect(Structure):
-    pass
-
-
-class UBehavior_SetGodMode_Data(Structure):
-    pass
-
-
-class UBehavior_SetGodMode(Structure):
-    pass
-
-
-class UBehavior_SetHardAttach_Data(Structure):
-    pass
-
-
-class UBehavior_SetHardAttach(Structure):
-    pass
-
-
-class UBehavior_SetInfoBarVisibility_Data(Structure):
-    pass
-
-
-class UBehavior_SetInfoBarVisibility(Structure):
-    pass
-
-
-class UBehavior_SetJackVoiceModulatorState_Data(Structure):
-    pass
-
-
-class UBehavior_SetJackVoiceModulatorState(Structure):
-    pass
-
-
-class UBehavior_SetLookAtSpeed_Data(Structure):
-    pass
-
-
-class UBehavior_SetLookAtSpeed(Structure):
-    pass
-
-
-class UBehavior_SetMaterialScalarFade_Data(Structure):
-    pass
-
-
-class UBehavior_SetMaterialScalarFade(Structure):
-    pass
-
-
-class UBehavior_SetMaterialScalarFadeForGoreDeath_Data(Structure):
-    pass
-
-
-class UBehavior_SetMaterialScalarFadeForGoreDeath(Structure):
-    pass
-
-
-class UBehavior_SetMorphNodeWeight_Data(Structure):
-    pass
-
-
-class UBehavior_SetMorphNodeWeight(Structure):
-    pass
-
-
-class UBehavior_SetNumBankSlots_Data(Structure):
-    pass
-
-
-class UBehavior_SetNumBankSlots(Structure):
-    pass
-
-
-class UBehavior_SetPawnThrottleData_Data(Structure):
-    pass
-
-
-class UBehavior_SetPawnThrottleData(Structure):
-    pass
-
-
-class UBehavior_SetRuleSet_Data(Structure):
-    pass
-
-
-class UBehavior_SetRuleSet(Structure):
-    pass
-
-
-class UBehavior_SetRuleSetByName_Data(Structure):
-    pass
-
-
-class UBehavior_SetRuleSetByName(Structure):
-    pass
-
-
-class UBehavior_SetShieldColor_Data(Structure):
-    pass
-
-
-class UBehavior_SetShieldColor(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlLookAtActor_Data(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlLookAtActor(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlSingleBoneData_Data(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlSingleBoneData(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlTurretConstrainedValues_Data(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlTurretConstrainedValues(Structure):
-    pass
-
-
-class UBehavior_SetStance_Data(Structure):
-    pass
-
-
-class UBehavior_SetStance(Structure):
-    pass
-
-
-class UBehavior_SetTimeOfDay_Data(Structure):
-    pass
-
-
-class UBehavior_SetTimeOfDay(Structure):
-    pass
-
-
-class UBehavior_SetUsabilityByMissionDirectives_Data(Structure):
-    pass
-
-
-class UBehavior_SetUsabilityByMissionDirectives(Structure):
-    pass
-
-
-class UBehavior_SetUsabilityCost_Data(Structure):
-    pass
-
-
-class UBehavior_SetUsabilityCost(Structure):
-    pass
-
-
-class UBehavior_SetUsableIcon_Data(Structure):
-    pass
-
-
-class UBehavior_SetUsableIcon(Structure):
-    pass
-
-
-class UBehavior_SetVehicleSimObject_Data(Structure):
-    pass
-
-
-class UBehavior_SetVehicleSimObject(Structure):
-    pass
-
-
-class UBehavior_ShowGenericReviveMessage_Data(Structure):
-    pass
-
-
-class UBehavior_ShowGenericReviveMessage(Structure):
-    pass
-
-
-class UBehavior_ShowMissionInterface_Data(Structure):
-    pass
-
-
-class UBehavior_ShowMissionInterface(Structure):
-    pass
-
-
-class UBehavior_ShowSelfAsTarget_Data(Structure):
-    pass
-
-
-class UBehavior_ShowSelfAsTarget(Structure):
-    pass
-
-
-class UBehavior_SimpleAnimPlay_Data(Structure):
-    pass
-
-
-class UBehavior_SimpleAnimPlay(Structure):
-    pass
-
-
-class UBehavior_SimpleAnimStop_Data(Structure):
-    pass
-
-
-class UBehavior_SimpleAnimStop(Structure):
-    pass
-
-
-class UBehavior_SpawnActor_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnActor(Structure):
-    pass
-
-
-class UBehavior_SpawnDecal_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnDecal(Structure):
-    pass
-
-
-class UBehavior_SpawnFromVehicleSpawnStation_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnFromVehicleSpawnStation(Structure):
-    pass
-
-
-class UBehavior_SpawnItems_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnItems(Structure):
-    pass
-
-
-class UBehavior_SpawnLoot_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnLoot(Structure):
-    pass
-
-
-class UBehavior_SpawnLootAroundPoint_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnLootAroundPoint(Structure):
-    pass
-
-
-class UBehavior_SpawnLootAtPoints_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnLootAtPoints(Structure):
-    pass
-
-
-class UBehavior_SpawnParticleSystemAtWorldLocation_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnParticleSystemAtWorldLocation(Structure):
-    pass
-
-
-class UBehavior_SpawnPerch_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnPerch(Structure):
-    pass
-
-
-class APerch_Dynamic_Data(Structure):
-    pass
-
-
-class APerch_Dynamic(Structure):
-    pass
-
-
-class AWillowLocalOnlyProjectile_Data(Structure):
-    pass
-
-
-class AWillowLocalOnlyProjectile(Structure):
-    pass
-
-
-class UBehavior_SpawnProjectileFromImpact_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnProjectileFromImpact(Structure):
-    pass
-
-
-class UBehavior_SpawnTemporalField_Data(Structure):
-    pass
-
-
-class UBehavior_SpawnTemporalField(Structure):
-    pass
-
-
-class UBehavior_StartDeathRagdoll_Data(Structure):
-    pass
-
-
-class UBehavior_StartDeathRagdoll(Structure):
-    pass
-
-
-class UBehavior_StatusEffectSwitch_Data(Structure):
-    pass
-
-
-class UBehavior_StatusEffectSwitch(Structure):
-    pass
-
-
-class UBehavior_StopMeleeAttack_Data(Structure):
-    pass
-
-
-class UBehavior_StopMeleeAttack(Structure):
-    pass
-
-
-class UBehavior_ToggleNPCAlly_Data(Structure):
-    pass
-
-
-class UBehavior_ToggleNPCAlly(Structure):
-    pass
-
-
-class UBehavior_ToggleObstacle_Data(Structure):
-    pass
-
-
-class UBehavior_ToggleObstacle(Structure):
-    pass
-
-
-class UBehavior_ToggleTelescopeOverlay_Data(Structure):
-    pass
-
-
-class UBehavior_ToggleTelescopeOverlay(Structure):
-    pass
-
-
-class UBehavior_Transform_Data(Structure):
-    pass
-
-
-class UBehavior_Transform(Structure):
-    pass
-
-
-class UBehavior_UnlockAvatarAward_Data(Structure):
-    pass
-
-
-class UBehavior_UnlockAvatarAward(Structure):
-    pass
-
-
-class UBehavior_UnlockAvatarAwardForAllPlayers_Data(Structure):
-    pass
-
-
-class UBehavior_UnlockAvatarAwardForAllPlayers(Structure):
-    pass
-
-
-class UBehavior_UnlockCustomization_Data(Structure):
-    pass
-
-
-class UBehavior_UnlockCustomization(Structure):
-    pass
-
-
-class UBehavior_UnlockCustomizationFromRewardPool_Data(Structure):
-    pass
-
-
-class UBehavior_UnlockCustomizationFromRewardPool(Structure):
-    pass
-
-
-class UBehavior_UpgradeSkill_Data(Structure):
-    pass
-
-
-class UBehavior_UpgradeSkill(Structure):
-    pass
-
-
-class UBehavior_UseObject_Data(Structure):
-    pass
-
-
-class UBehavior_UseObject(Structure):
-    pass
-
-
-class UBehavior_VoGScreenParticle_Data(Structure):
-    pass
-
-
-class UBehavior_VoGScreenParticle(Structure):
-    pass
-
-
-class UBehavior_WeaponBoneControl_Data(Structure):
-    pass
-
-
-class UBehavior_WeaponBoneControl(Structure):
-    pass
-
-
-class UBehavior_WeaponGlowEffect_Data(Structure):
-    pass
-
-
-class UBehavior_WeaponGlowEffect(Structure):
-    pass
-
-
-class UBehavior_WeaponsRestriction_Data(Structure):
-    pass
-
-
-class UBehavior_WeaponsRestriction(Structure):
-    pass
-
-
-class UBehavior_WeaponVisibleAmmoState_Data(Structure):
-    pass
-
-
-class UBehavior_WeaponVisibleAmmoState(Structure):
-    pass
-
-
-class UChallengesPanelDefinition_Data(Structure):
-    pass
-
-
-class UChallengesPanelDefinition(Structure):
-    pass
-
-
-class UCharacterCustomizationInfoCardGFxObject_Data(Structure):
-    pass
-
-
-class UCharacterCustomizationInfoCardGFxObject(Structure):
-    pass
-
-
-class UCharacterCustomizationMenuGFxObject_Data(Structure):
-    pass
-
-
-class UCharacterCustomizationMenuGFxObject(Structure):
-    pass
-
-
-class ACharacterSelectCameraActor_Data(Structure):
-    pass
-
-
-class ACharacterSelectCameraActor(Structure):
-    pass
-
-
-class UCharacterSelectionCustomizationListGFxObject_Data(Structure):
-    pass
-
-
-class UCharacterSelectionCustomizationListGFxObject(Structure):
-    pass
-
-
-class UCharacterSelectionGFxObject_Data(Structure):
-    pass
-
-
-class UCharacterSelectionGFxObject(Structure):
-    pass
-
-
-class UWillowGFxLobbyLoadCharacter_Data(Structure):
-    pass
-
-
-class UWillowGFxLobbyLoadCharacter(Structure):
-    pass
-
-
-class UConfirmCharacterLobbyGFxMovie_Data(Structure):
-    pass
-
-
-class UConfirmCharacterLobbyGFxMovie(Structure):
-    pass
-
-
-class UCreditsDataProviderGFxObject_Data(Structure):
-    pass
-
-
-class UCreditsDataProviderGFxObject(Structure):
-    pass
-
-
-class UCreditsLineDefinition_Data(Structure):
-    pass
-
-
-class UCreditsLineDefinition(Structure):
-    pass
-
-
-class UCreditsGFxObject_Data(Structure):
-    pass
-
-
-class UCreditsGFxObject(Structure):
-    pass
-
-
-class UCustomizationUsage_Player_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Player(Structure):
-    pass
-
-
-class UCustomizationUsage_Vehicle_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Vehicle(Structure):
-    pass
-
-
-class UCustomizationUsage_Assassin_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Assassin(Structure):
-    pass
-
-
-class UCustomizationUsage_BanditTech_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_BanditTech(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerA_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerA(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerB_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerB(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerC_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerC(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerD_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerD(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerE_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerE(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerF_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerF(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerG_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerG(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerH_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerH(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerI_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerI(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerJ_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerJ(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerK_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerK(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerL_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerL(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerM_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerM(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerN_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerN(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerO_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerO(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerP_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_ExtraPlayerP(Structure):
-    pass
-
-
-class UCustomizationUsage_Hovercraft_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Hovercraft(Structure):
-    pass
-
-
-class UCustomizationUsage_Mercenary_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Mercenary(Structure):
-    pass
-
-
-class UCustomizationUsage_Runner_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Runner(Structure):
-    pass
-
-
-class UCustomizationUsage_Siren_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Siren(Structure):
-    pass
-
-
-class UCustomizationUsage_Soldier_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_Soldier(Structure):
-    pass
-
-
-class ADeathtrapActionSkill_Data(Structure):
-    pass
-
-
-class ADeathtrapActionSkill(Structure):
-    pass
-
-
-class UDebugArrowComponent_Data(Structure):
-    pass
-
-
-class UDebugArrowComponent(Structure):
-    pass
-
-
-class UWillowSeqAct_AISetItemTossTarget_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AISetItemTossTarget(Structure):
-    pass
-
-
-class UDesignerAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UDesignerAttributeContextResolver(Structure):
-    pass
-
-
-class ADynamicBehaviorVolume_Data(Structure):
-    pass
-
-
-class ADynamicBehaviorVolume(Structure):
-    pass
-
-
-class UEndOfGameGFxMovie_Data(Structure):
-    pass
-
-
-class UEndOfGameGFxMovie(Structure):
-    pass
-
-
-class UGFxMovieInteractiveObject_Data(Structure):
-    pass
-
-
-class UGFxMovieInteractiveObject(Structure):
-    pass
-
-
-class UFastTravelSignGFxMovie_Data(Structure):
-    pass
-
-
-class UFastTravelSignGFxMovie(Structure):
-    pass
-
-
-class UFastTravelStationGFxObject_Data(Structure):
-    pass
-
-
-class UFastTravelStationGFxObject(Structure):
-    pass
-
-
-class AFixedMarker_Data(Structure):
-    pass
-
-
-class AFixedMarker(Structure):
-    pass
-
-
-class AWillowAutoTestManager_Data(Structure):
-    pass
-
-
-class AWillowAutoTestManager(Structure):
-    pass
-
-
-class UWillowSeqEvent_PlayerLeft_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_PlayerLeft(Structure):
-    pass
-
-
-class USeqEvent_SeamlessTravelComplete_Data(Structure):
-    pass
-
-
-class USeqEvent_SeamlessTravelComplete(Structure):
-    pass
-
-
-class UIPlayerObserver_Data(Structure):
-    pass
-
-
-class UIPlayerObserver(Structure):
-    pass
-
-
-class UWillowGameMessage_Data(Structure):
-    pass
-
-
-class UWillowGameMessage(Structure):
-    pass
-
-
-class ULocalMapChangeMessage_Data(Structure):
-    pass
-
-
-class ULocalMapChangeMessage(Structure):
-    pass
-
-
-class UWillowSeqEvent_StartNewGameCinematics_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_StartNewGameCinematics(Structure):
-    pass
-
-
-class AWillowAccessControl_Data(Structure):
-    pass
-
-
-class AWillowAccessControl(Structure):
-    pass
-
-
-class USplitscreenHelper_Data(Structure):
-    pass
-
-
-class USplitscreenHelper(Structure):
-    pass
-
-
-class UNetworkOptionsGFxMovie_Data(Structure):
-    pass
-
-
-class UNetworkOptionsGFxMovie(Structure):
-    pass
-
-
-class UMarketplaceGFxMovie_Data(Structure):
-    pass
-
-
-class UMarketplaceGFxMovie(Structure):
-    pass
-
-
-class UMatchmakingLobbyGFxMovie_Data(Structure):
-    pass
-
-
-class UMatchmakingLobbyGFxMovie(Structure):
-    pass
-
-
-class UFrontEndPlayerListGFxObject_Data(Structure):
-    pass
-
-
-class UFrontEndPlayerListGFxObject(Structure):
-    pass
-
-
-class UWillowGFxClikWidget_Data(Structure):
-    pass
-
-
-class UWillowGFxClikWidget(Structure):
-    pass
-
-
-class UWillowScrollingList_Data(Structure):
-    pass
-
-
-class UWillowScrollingList(Structure):
-    pass
-
-
-class UFrontendMenuGFxObject_Data(Structure):
-    pass
-
-
-class UFrontendMenuGFxObject(Structure):
-    pass
-
-
-class UIWillowScrollingListDataProvider_Data(Structure):
-    pass
-
-
-class UIWillowScrollingListDataProvider(Structure):
-    pass
-
-
-class UIPlayerListOwner_Data(Structure):
-    pass
-
-
-class UIPlayerListOwner(Structure):
-    pass
-
-
-class UNetworkOptionsGFxObject_Data(Structure):
-    pass
-
-
-class UNetworkOptionsGFxObject(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderBase_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderBase(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderMatchmaking_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderMatchmaking(Structure):
-    pass
-
-
-class UWillowOnlineGameSearch_DataStore_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSearch_DataStore(Structure):
-    pass
-
-
-class UWillowOnlineGameSearch_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSearch(Structure):
-    pass
-
-
-class UTestMapsListDefinition_Data(Structure):
-    pass
-
-
-class UTestMapsListDefinition(Structure):
-    pass
-
-
-class UPlayerDetailsGFxMovie_Data(Structure):
-    pass
-
-
-class UPlayerDetailsGFxMovie(Structure):
-    pass
-
-
-class UPlayerDetailsGFxObject_Data(Structure):
-    pass
-
-
-class UPlayerDetailsGFxObject(Structure):
-    pass
-
-
-class UGammaScreenGFxDefinition_Data(Structure):
-    pass
-
-
-class UGammaScreenGFxDefinition(Structure):
-    pass
-
-
-class UGammaScreenGFxMovie_Data(Structure):
-    pass
-
-
-class UGammaScreenGFxMovie(Structure):
-    pass
-
-
-class UGearboxAccountGFxObject_Data(Structure):
-    pass
-
-
-class UGearboxAccountGFxObject(Structure):
-    pass
-
-
-class UGFxMovieMissionStatus_Data(Structure):
-    pass
-
-
-class UGFxMovieMissionStatus(Structure):
-    pass
-
-
-class UGFxTextListContent_Data(Structure):
-    pass
-
-
-class UGFxTextListContent(Structure):
-    pass
-
-
-class UGraveyardGFxObject_Data(Structure):
-    pass
-
-
-class UGraveyardGFxObject(Structure):
-    pass
-
-
-class UHealthBarGFxObject_Data(Structure):
-    pass
-
-
-class UHealthBarGFxObject(Structure):
-    pass
-
-
-class UWillowLevelTimerDefinition_Data(Structure):
-    pass
-
-
-class UWillowLevelTimerDefinition(Structure):
-    pass
-
-
-class UHUDScaleGuideGFxMovie_Data(Structure):
-    pass
-
-
-class UHUDScaleGuideGFxMovie(Structure):
-    pass
-
-
-class UIAIBehavior_Data(Structure):
-    pass
-
-
-class UIAIBehavior(Structure):
-    pass
-
-
-class UIGFxMenuScreenTickable_Data(Structure):
-    pass
-
-
-class UIGFxMenuScreenTickable(Structure):
-    pass
-
-
-class UIHijackBehavior_Data(Structure):
-    pass
-
-
-class UIHijackBehavior(Structure):
-    pass
-
-
-class UInputBindingsClipGFxObject_Data(Structure):
-    pass
-
-
-class UInputBindingsClipGFxObject(Structure):
-    pass
-
-
-class UInstanceDataContextResolver_Data(Structure):
-    pass
-
-
-class UInstanceDataContextResolver(Structure):
-    pass
-
-
-class UInventoryAttributeDefinition_Data(Structure):
-    pass
-
-
-class UInventoryAttributeDefinition(Structure):
-    pass
-
-
-class UInventoryDefinitionAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UInventoryDefinitionAttributeContextResolver(Structure):
-    pass
-
-
-class UVendingMachineExGFxDefinition_Data(Structure):
-    pass
-
-
-class UVendingMachineExGFxDefinition(Structure):
-    pass
-
-
-class UIUISubMenuNavigation_Data(Structure):
-    pass
-
-
-class UIUISubMenuNavigation(Structure):
-    pass
-
-
-class ULANServerBrowserGFxObject_Data(Structure):
-    pass
-
-
-class ULANServerBrowserGFxObject(Structure):
-    pass
-
-
-class ULatentRewardGFxMovie_Data(Structure):
-    pass
-
-
-class ULatentRewardGFxMovie(Structure):
-    pass
-
-
-class UMissionRewardGFxObject_Data(Structure):
-    pass
-
-
-class UMissionRewardGFxObject(Structure):
-    pass
-
-
-class ALevelStreamingVolumeDynamic_Data(Structure):
-    pass
-
-
-class ALevelStreamingVolumeDynamic(Structure):
-    pass
-
-
-class ULevelTransitionGFxMovie_Data(Structure):
-    pass
-
-
-class ULevelTransitionGFxMovie(Structure):
-    pass
-
-
-class ULevelTransitionSignGFxMovie_Data(Structure):
-    pass
-
-
-class ULevelTransitionSignGFxMovie(Structure):
-    pass
-
-
-class ALiftActionSkill_Data(Structure):
-    pass
-
-
-class ALiftActionSkill(Structure):
-    pass
-
-
-class ULoadCharacterLobbyGFxObject_Data(Structure):
-    pass
-
-
-class ULoadCharacterLobbyGFxObject(Structure):
-    pass
-
-
-class UMarketplaceGFxMovieDefinition_Data(Structure):
-    pass
-
-
-class UMarketplaceGFxMovieDefinition(Structure):
-    pass
-
-
-class UMatchmakingLobbyCharacterInfoGFxObject_Data(Structure):
-    pass
-
-
-class UMatchmakingLobbyCharacterInfoGFxObject(Structure):
-    pass
-
-
-class UMatchmakingLobbyResultsGFxObject_Data(Structure):
-    pass
-
-
-class UMatchmakingLobbyResultsGFxObject(Structure):
-    pass
-
-
-class UMechromancerInputContextSelector_Data(Structure):
-    pass
-
-
-class UMechromancerInputContextSelector(Structure):
-    pass
-
-
-class UMercenaryInputContextSelector_Data(Structure):
-    pass
-
-
-class UMercenaryInputContextSelector(Structure):
-    pass
-
-
-class UOpenedChestMessage_Data(Structure):
-    pass
-
-
-class UOpenedChestMessage(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderOptionsBase_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderOptionsBase(Structure):
-    pass
-
-
-class UOptionsGFxObject_Data(Structure):
-    pass
-
-
-class UOptionsGFxObject(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderTopLevelOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderTopLevelOptions(Structure):
-    pass
-
-
-class UPauseGFxMovie_Data(Structure):
-    pass
-
-
-class UPauseGFxMovie(Structure):
-    pass
-
-
-class UPCContextMenuObject_Data(Structure):
-    pass
-
-
-class UPCContextMenuObject(Structure):
-    pass
-
-
-class APlaceableDynamicSMActor_Data(Structure):
-    pass
-
-
-class APlaceableDynamicSMActor(Structure):
-    pass
-
-
-class UPlayerBehaviorBase_Data(Structure):
-    pass
-
-
-class UPlayerBehaviorBase(Structure):
-    pass
-
-
-class UPlayerBehavior_CameraAnim_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_CameraAnim(Structure):
-    pass
-
-
-class UPlayerBehavior_DropItems_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_DropItems(Structure):
-    pass
-
-
-class UPlayerBehavior_ForceFeedback_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_ForceFeedback(Structure):
-    pass
-
-
-class UPlayerBehavior_Melee_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_Melee(Structure):
-    pass
-
-
-class UPlayerBehavior_PlayEchoCall_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_PlayEchoCall(Structure):
-    pass
-
-
-class UPlayerBehavior_RegisterFastTravelStation_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_RegisterFastTravelStation(Structure):
-    pass
-
-
-class UPlayerBehavior_Reload_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_Reload(Structure):
-    pass
-
-
-class UPlayerBehavior_SetCurrentProjectile_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_SetCurrentProjectile(Structure):
-    pass
-
-
-class UPlayerBehavior_SpawnCurrentProjectile_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_SpawnCurrentProjectile(Structure):
-    pass
-
-
-class UPlayerBehavior_SpawnTeleporter_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_SpawnTeleporter(Structure):
-    pass
-
-
-class UPlayerBehavior_ThrowGrenade_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_ThrowGrenade(Structure):
-    pass
-
-
-class UPlayerBehavior_ToggleMeleeWeapon_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_ToggleMeleeWeapon(Structure):
-    pass
-
-
-class UPlayerBehavior_ToggleRevive_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_ToggleRevive(Structure):
-    pass
-
-
-class UPlayerBehavior_UnlockAchievement_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_UnlockAchievement(Structure):
-    pass
-
-
-class UPlayerBehavior_UnlockAchievementForAllPlayers_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_UnlockAchievementForAllPlayers(Structure):
-    pass
-
-
-class UPlayerBehavior_ViewShake_Data(Structure):
-    pass
-
-
-class UPlayerBehavior_ViewShake(Structure):
-    pass
-
-
-class UWillowSeqAct_AIProvoke_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AIProvoke(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedHold_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedHold(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedFollow_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedFollow(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedDeath_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AIScriptedDeath(Structure):
-    pass
-
-
-class UWillowSeqAct_AICombatVolume_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AICombatVolume(Structure):
-    pass
-
-
-class UProjectileBehavior_Attach_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_Attach(Structure):
-    pass
-
-
-class UProjectileBehavior_Detonate_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_Detonate(Structure):
-    pass
-
-
-class UProjectileBehavior_FindHomingTarget_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_FindHomingTarget(Structure):
-    pass
-
-
-class UProjectileBehavior_LevelOff_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_LevelOff(Structure):
-    pass
-
-
-class UProjectileBehavior_SetDamageTypeDefinition_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_SetDamageTypeDefinition(Structure):
-    pass
-
-
-class UProjectileBehavior_SetExplosionDefinition_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_SetExplosionDefinition(Structure):
-    pass
-
-
-class UProjectileBehavior_SetHomingTarget_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_SetHomingTarget(Structure):
-    pass
-
-
-class UProjectileBehavior_SetProximity_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_SetProximity(Structure):
-    pass
-
-
-class UProjectileBehavior_SetSpeed_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_SetSpeed(Structure):
-    pass
-
-
-class UProjectileBehavior_SetStickyGrenade_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_SetStickyGrenade(Structure):
-    pass
-
-
-class UProjectileBehavior_TagPayloadType_Data(Structure):
-    pass
-
-
-class UProjectileBehavior_TagPayloadType(Structure):
-    pass
-
-
-class AProximityActor_Data(Structure):
-    pass
-
-
-class AProximityActor(Structure):
-    pass
-
-
-class UPS3InvitesPopupGFxObject_Data(Structure):
-    pass
-
-
-class UPS3InvitesPopupGFxObject(Structure):
-    pass
-
-
-class UQuestAcceptGFxDefinition_Data(Structure):
-    pass
-
-
-class UQuestAcceptGFxDefinition(Structure):
-    pass
-
-
-class UReferenceSet_Data(Structure):
-    pass
-
-
-class UReferenceSet(Structure):
-    pass
-
-
-class UResourcePoolAttributeDefinition_Data(Structure):
-    pass
-
-
-class UResourcePoolAttributeDefinition(Structure):
-    pass
-
-
-class USeqAct_GetInstanceData_Data(Structure):
-    pass
-
-
-class USeqAct_GetInstanceData(Structure):
-    pass
-
-
-class USeqEvent_SpawnedMissionPickup_Data(Structure):
-    pass
-
-
-class USeqEvent_SpawnedMissionPickup(Structure):
-    pass
-
-
-class UShieldBarGFxObject_Data(Structure):
-    pass
-
-
-class UShieldBarGFxObject(Structure):
-    pass
-
-
-class ASimpleVolume_Data(Structure):
-    pass
-
-
-class ASimpleVolume(Structure):
-    pass
-
-
-class USirenInputContextSelector_Data(Structure):
-    pass
-
-
-class USirenInputContextSelector(Structure):
-    pass
-
-
-class USkillPointsFeedbackMessage_Data(Structure):
-    pass
-
-
-class USkillPointsFeedbackMessage(Structure):
-    pass
-
-
-class USoldierInputContextSelector_Data(Structure):
-    pass
-
-
-class USoldierInputContextSelector(Structure):
-    pass
-
-
-class USpecialMove_WeaponAction_Data(Structure):
-    pass
-
-
-class USpecialMove_WeaponAction(Structure):
-    pass
-
-
-class USpecialMove_FirstAndThirdPersonAnimation_Data(Structure):
-    pass
-
-
-class USpecialMove_FirstAndThirdPersonAnimation(Structure):
-    pass
-
-
-class USpecialMove_FirstPersonOffHand_Data(Structure):
-    pass
-
-
-class USpecialMove_FirstPersonOffHand(Structure):
-    pass
-
-
-class UWillowSeqEvent_JumpAnimStart_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_JumpAnimStart(Structure):
-    pass
-
-
-class UWillowSeqEvent_JumpAnimIdle_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_JumpAnimIdle(Structure):
-    pass
-
-
-class UWillowSeqEvent_JumpAnimStop_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_JumpAnimStop(Structure):
-    pass
-
-
-class USpecialMove_WeaponActionOffHand_Data(Structure):
-    pass
-
-
-class USpecialMove_WeaponActionOffHand(Structure):
-    pass
-
-
-class UStashGFxMovie_Data(Structure):
-    pass
-
-
-class UStashGFxMovie(Structure):
-    pass
-
-
-class UStatusMenuEquippedPanelGFxObject_Data(Structure):
-    pass
-
-
-class UStatusMenuEquippedPanelGFxObject(Structure):
-    pass
-
-
-class UTradingOffersPanelGFxObject_Data(Structure):
-    pass
-
-
-class UTradingOffersPanelGFxObject(Structure):
-    pass
-
-
-class UTurretWeaponTypeDefinition_Data(Structure):
-    pass
-
-
-class UTurretWeaponTypeDefinition(Structure):
-    pass
-
-
-class UUBMGameOverGFxMovie_Data(Structure):
-    pass
-
-
-class UUBMGameOverGFxMovie(Structure):
-    pass
-
-
-class UUBMGameOverGFxObject_Data(Structure):
-    pass
-
-
-class UUBMGameOverGFxObject(Structure):
-    pass
-
-
-class UVehicleChoiceInfoCardGFxObject_Data(Structure):
-    pass
-
-
-class UVehicleChoiceInfoCardGFxObject(Structure):
-    pass
-
-
-class UVehicleFamilySelectorGFxObject_Data(Structure):
-    pass
-
-
-class UVehicleFamilySelectorGFxObject(Structure):
-    pass
-
-
-class UVehicleWeaponTypeDefinition_Data(Structure):
-    pass
-
-
-class UVehicleWeaponTypeDefinition(Structure):
-    pass
-
-
-class UVendingMachineFeedbackGFxObject_Data(Structure):
-    pass
-
-
-class UVendingMachineFeedbackGFxObject(Structure):
-    pass
-
-
-class AWeaponShotDebug_Data(Structure):
-    pass
-
-
-class AWeaponShotDebug(Structure):
-    pass
-
-
-class TArray_AWeaponShotDebugPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWeaponShotDebug))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UWillowAIEncounterComponent_Data(Structure):
-    pass
-
-
-class UWillowAIEncounterComponent(Structure):
-    pass
-
-
-class UWillowAnimNode_Audio_Data(Structure):
-    pass
-
-
-class UWillowAnimNode_Audio(Structure):
-    pass
-
-
-class UWillowPickupMessage_Data(Structure):
-    pass
-
-
-class UWillowPickupMessage(Structure):
-    pass
-
-
-class UWillowConsole_Data(Structure):
-    pass
-
-
-class UWillowConsole(Structure):
-    pass
-
-
-class UWillowDamageType_Bullet_Data(Structure):
-    pass
-
-
-class UWillowDamageType_Bullet(Structure):
-    pass
-
-
-class UWillowDmgSource_MeleeWithBlade_Data(Structure):
-    pass
-
-
-class UWillowDmgSource_MeleeWithBlade(Structure):
-    pass
-
-
-class UWillowDmgType_VehicleCollision_Data(Structure):
-    pass
-
-
-class UWillowDmgType_VehicleCollision(Structure):
-    pass
-
-
-class AWillowEmit_BodyFlame_Data(Structure):
-    pass
-
-
-class AWillowEmit_BodyFlame(Structure):
-    pass
-
-
-class AWillowEmitterPool_Data(Structure):
-    pass
-
-
-class AWillowEmitterPool(Structure):
-    pass
-
-
-class AWillowPendingLevelPlayerController_Data(Structure):
-    pass
-
-
-class AWillowPendingLevelPlayerController(Structure):
-    pass
-
-
-class UWillowGFxBuddyPlane_Data(Structure):
-    pass
-
-
-class UWillowGFxBuddyPlane(Structure):
-    pass
-
-
-class UWillowGFxEditDialog_Data(Structure):
-    pass
-
-
-class UWillowGFxEditDialog(Structure):
-    pass
-
-
-class UWillowGFxLobbyTools_Data(Structure):
-    pass
-
-
-class UWillowGFxLobbyTools(Structure):
-    pass
-
-
-class UWillowGFxTrainingDialogBox_Data(Structure):
-    pass
-
-
-class UWillowGFxTrainingDialogBox(Structure):
-    pass
-
-
-class UWillowGFxTrainingDialogBox_NoPause_Data(Structure):
-    pass
-
-
-class UWillowGFxTrainingDialogBox_NoPause(Structure):
-    pass
-
-
-class UWillowInteractiveObjectAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UWillowInteractiveObjectAttributeContextResolver(Structure):
-    pass
-
-
-class UWillowInventoryManagerAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UWillowInventoryManagerAttributeContextResolver(Structure):
-    pass
-
-
-class UWillowLANGameSearch_Data(Structure):
-    pass
-
-
-class UWillowLANGameSearch(Structure):
-    pass
-
-
-class UWillowLockWarningMessage_Data(Structure):
-    pass
-
-
-class UWillowLockWarningMessage(Structure):
-    pass
-
-
-class UWillowSeqAct_AILookAt_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_AILookAt(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchSpecific_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchSpecific(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchNarrow_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchNarrow(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchBroad_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchBroad(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchCustom_Data(Structure):
-    pass
-
-
-class UWillowOnlineGameSearchCustom(Structure):
-    pass
-
-
-class AWillowTeleporterExitPoint_Data(Structure):
-    pass
-
-
-class AWillowTeleporterExitPoint(Structure):
-    pass
-
-
-class UWillowSeqEvent_DuelChallengeIssued_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_DuelChallengeIssued(Structure):
-    pass
-
-
-class UWillowSeqEvent_DuelChallengeAccepted_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_DuelChallengeAccepted(Structure):
-    pass
-
-
-class UWillowSeqAct_PlayArmAnimation_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_PlayArmAnimation(Structure):
-    pass
-
-
-class AWillowPopulationEncounter_Data(Structure):
-    pass
-
-
-class AWillowPopulationEncounter(Structure):
-    pass
-
-
-class AWillowReplicatedInventoryManager_Data(Structure):
-    pass
-
-
-class AWillowReplicatedInventoryManager(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderApplyRequiredOption_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderApplyRequiredOption(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderAudioOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderAudioOptions(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderExtras_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderExtras(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderFrontEnd_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderFrontEnd(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderGameOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderGameOptions(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderGamepadOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderGamepadOptions(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderKeyboardMouseOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderKeyboardMouseOptions(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderLobby_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderLobby(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderMapList_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderMapList(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderPause_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderPause(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderResolutionOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderResolutionOptions(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderVideoOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderVideoOptions(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderWindowModeOptions_Data(Structure):
-    pass
-
-
-class UWillowScrollingListDataProviderWindowModeOptions(Structure):
-    pass
-
-
-class UWillowSeqAct_BossBar_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_BossBar(Structure):
-    pass
-
-
-class UWillowSeqAct_CleanUpPlayerVehicles_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_CleanUpPlayerVehicles(Structure):
-    pass
-
-
-class UWillowSeqAct_ClientFlagGet_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ClientFlagGet(Structure):
-    pass
-
-
-class UWillowSeqAct_ClientFlagSet_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ClientFlagSet(Structure):
-    pass
-
-
-class UWillowSeqAct_CloseColiseumOverlay_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_CloseColiseumOverlay(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumAllDead_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumAllDead(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumAwardCertificate_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumAwardCertificate(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumNotify_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumNotify(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumRoundAnnounce_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumRoundAnnounce(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumRuleAnnounce_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumRuleAnnounce(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumStartTimer_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumStartTimer(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumVictory_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ColiseumVictory(Structure):
-    pass
-
-
-class UWillowSeqAct_ExitVehicle_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_ExitVehicle(Structure):
-    pass
-
-
-class UWillowSeqAct_KillPawnBasedOnAllegiance_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_KillPawnBasedOnAllegiance(Structure):
-    pass
-
-
-class UWillowSeqAct_MarkPlaythroughCompleted_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_MarkPlaythroughCompleted(Structure):
-    pass
-
-
-class UWillowSeqAct_NotifyDesignerAttribute_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_NotifyDesignerAttribute(Structure):
-    pass
-
-
-class UWillowSeqAct_OpenColiseumOverlay_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_OpenColiseumOverlay(Structure):
-    pass
-
-
-class UWillowSeqAct_UpdateColiseumRuleOverlay_Data(Structure):
-    pass
-
-
-class UWillowSeqAct_UpdateColiseumRuleOverlay(Structure):
-    pass
-
-
-class UWillowSeqEvent_CounterAtTarget_Data(Structure):
-    pass
-
-
-class UWillowSeqEvent_CounterAtTarget(Structure):
-    pass
-
-
-class UWillowSkelControl_LeftLowerEyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_LeftLowerEyelidLook(Structure):
-    pass
-
-
-class UWillowSkelControl_LeftUpperEyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_LeftUpperEyelidLook(Structure):
-    pass
-
-
-class UWillowSkelControl_RightLowerEyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_RightLowerEyelidLook(Structure):
-    pass
-
-
-class UWillowSkelControl_RightUpperEyelidLook_Data(Structure):
-    pass
-
-
-class UWillowSkelControl_RightUpperEyelidLook(Structure):
-    pass
-
-
-class AWillowTeleporter_Data(Structure):
-    pass
-
-
-class AWillowTeleporter(Structure):
-    pass
-
-
-class UWillowTI_CalcCombat_Data(Structure):
-    pass
-
-
-class UWillowTI_CalcCombat(Structure):
-    pass
-
-
-class AWillowVehicle_Turret_Data(Structure):
-    pass
-
-
-class AWillowVehicle_Turret(Structure):
-    pass
-
-
-class UWillowVersusDuelBehavior_Data(Structure):
-    pass
-
-
-class UWillowVersusDuelBehavior(Structure):
-    pass
-
-
-class UAction_BikeMove_Data(Structure):
-    pass
-
-
-class UAction_BikeMove(Structure):
-    pass
-
-
-class UBehavior_ChangeSkillBehaviorSequenceState_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeSkillBehaviorSequenceState(Structure):
-    pass
-
-
-class UBehavior_GetVelocity_Data(Structure):
-    pass
-
-
-class UBehavior_GetVelocity(Structure):
-    pass
-
-
-class UBehavior_IncrementOverpowerLevel_Data(Structure):
-    pass
-
-
-class UBehavior_IncrementOverpowerLevel(Structure):
-    pass
-
-
-class UBehavior_ReviveInjuredPlayer_Data(Structure):
-    pass
-
-
-class UBehavior_ReviveInjuredPlayer(Structure):
-    pass
-
-
-class UBehavior_SetAkRTPCValue_Data(Structure):
-    pass
-
-
-class UBehavior_SetAkRTPCValue(Structure):
-    pass
-
-
-class UBehavior_SetDemigodMode_Data(Structure):
-    pass
-
-
-class UBehavior_SetDemigodMode(Structure):
-    pass
-
-
-class UBehavior_SetSkillDefinitionForInjuredStrings_Data(Structure):
-    pass
-
-
-class UBehavior_SetSkillDefinitionForInjuredStrings(Structure):
-    pass
-
-
-class UBehavior_ShowPullThePinNotification_Data(Structure):
-    pass
-
-
-class UBehavior_ShowPullThePinNotification(Structure):
-    pass
-
-
-class UBehavior_SkillCustomEvent_Data(Structure):
-    pass
-
-
-class UBehavior_SkillCustomEvent(Structure):
-    pass
-
-
-class UBehavior_WeaponThrow_Data(Structure):
-    pass
-
-
-class UBehavior_WeaponThrow(Structure):
-    pass
-
-
-class UBuzzaxeWeaponTypeDefinition_Data(Structure):
-    pass
-
-
-class UBuzzaxeWeaponTypeDefinition(Structure):
-    pass
-
-
-class UCustomizationUsage_FanBoat_Data(Structure):
-    pass
-
-
-class UCustomizationUsage_FanBoat(Structure):
-    pass
-
-
-class UPsychoInputContextSelector_Data(Structure):
-    pass
-
-
-class UPsychoInputContextSelector(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -12443,6 +18,12428 @@ from ..classes.GFxUI import *
 from ..classes.GearboxFramework import *
 from ..classes.AkAudio import *
 
+class UAchievementUtility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAchievementUtility(BL2SDK.UObject_Base):
+    pass
+
+
+class AActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class AScorpioActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AScorpioActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryInteractiveObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryInteractiveObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowElevatorButton_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowElevatorButton(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryMissionPickupSpawner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryMissionPickupSpawner(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryMissionPickupFailsafe_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryMissionPickupFailsafe(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPopulationOpportunityArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPopulationOpportunityArea(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPopulationOpportunityDen_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPopulationOpportunityDen(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowCoopPlayerStart_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowCoopPlayerStart(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowElevator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowElevator(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowTrigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowTrigger(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowVehicleFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowVehicleFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowWaypoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryWillowWaypoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UAdvancedAxisDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAdvancedAxisDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UAIPawnBalanceModifierDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAIPawnBalanceModifierDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAIPawnBalanceModifierDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAIPawnBalanceModifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAIResourceAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAIResourceAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoDropWeightAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoDropWeightAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoResourcePool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoResourcePool(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoResourceUpgradeAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoResourceUpgradeAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UAssetLibraryManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAssetLibraryManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributePresentationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributePresentationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAttributePresentationDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributePresentationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWeaponStatusEffectAttributePresentationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponStatusEffectAttributePresentationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributePresentationListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributePresentationListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeSlotEffectAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeSlotEffectAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UAvatarAwardUtility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAvatarAwardUtility(BL2SDK.UObject_Base):
+    pass
+
+
+class UBadassAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBadassAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UBadassRewardDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBadassRewardDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBadassRewardDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBadassRewardDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBalanceModifierDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBalanceModifierDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBalanceModifierDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBalanceModifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBehavior_ActivateInstancedMissionBehaviorSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateInstancedMissionBehaviorSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddMissionDirectives_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddMissionDirectives(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddMissionTime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddMissionTime(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AdvanceObjectiveSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AdvanceObjectiveSet(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AICloak_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AICloak(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIThrowProjectileAtTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIThrowProjectileAtTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttemptItemCallout_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttemptItemCallout(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttemptStatusEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttemptStatusEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CauseDamage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CauseDamage(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ClearObjective_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ClearObjective(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompleteMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompleteMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Conditional_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Conditional(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ConvertInstanceDataIntoPhysicsActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ConvertInstanceDataIntoPhysicsActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DecrementObjective_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DecrementObjective(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Explode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Explode(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FailMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FailMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMovieRegister_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMovieRegister(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GiveChallengeToPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GiveChallengeToPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IntMath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IntMath(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IntSwitchRange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IntSwitchRange(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MatchTransform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MatchTransform(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MeleeAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MeleeAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MissionRemoteEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MissionRemoteEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RandomBranch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RandomBranch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Switch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Switch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RandomlySelectBehaviors_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RandomlySelectBehaviors(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoteCustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoteCustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ScreenParticle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ScreenParticle(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetShieldDamageResistanceType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetShieldDamageResistanceType(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetShieldTriggeredState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetShieldTriggeredState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SimpleMath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SimpleMath(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnFirstPersonParticleSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnFirstPersonParticleSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnFromPopulationSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnFromPopulationSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnParticleSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnParticleSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StartMissionTimer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StartMissionTimer(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StopMissionTimer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StopMissionTimer(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UpdateCollision_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UpdateCollision(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UpdateMissionObjective_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UpdateMissionObjective(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_VectorMath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_VectorMath(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_VectorToLocalSpace_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_VectorToLocalSpace(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorSequenceEnableByMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorSequenceEnableByMission(BL2SDK.UObject_Base):
+    pass
+
+
+class ABehaviorVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABehaviorVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorVolumeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorVolumeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlackMarketDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlackMarketDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlackMarketUpgradeAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlackMarketUpgradeAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlackMarketUpgradeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlackMarketUpgradeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBlackMarketUpgradeDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBlackMarketUpgradeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ABlackMarketUpgradeManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlackMarketUpgradeManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyClassDeathDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyClassDeathDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyClassDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyClassDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyHitRegionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyHitRegionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBodyHitRegionDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBodyHitRegionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBodyRegionProtectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyRegionProtectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyWeaponHoldDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBodyWeaponHoldDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBodyWeaponHoldDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBodyWeaponHoldDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBoundaryTurretRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBoundaryTurretRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBulletListenerComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBulletListenerComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UCellsNavigator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCellsNavigator(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengeCategoryDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengeCategoryDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengeConditionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengeConditionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UChallengeConditionDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UChallengeConditionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UChallengeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UChallengeDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UChallengeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UChallengeFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengeFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class AChallengeManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AChallengeManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UChassisDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChassisDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassDropWeightValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassDropWeightValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UCombatMusicManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCombatMusicManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UCombatMusicParameters_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCombatMusicParameters(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoordinatedEffectDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoordinatedEffectDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurrencyAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurrencyAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurrencyListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurrencyListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurrentProficiencySkillAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurrentProficiencySkillAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationData(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationData_Head_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationData_Head(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationData_Skin_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationData_Skin(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UCustomizationDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCustomizationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCustomizationType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationType(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationType_Head_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationType_Head(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationType_Skin_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationType_Skin(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomSkeletalMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomSkeletalMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageOverTimeManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageOverTimeManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageTypeAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageTypeAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UDefinitionGlobalsDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDefinitionGlobalsDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UDesignerAttributeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDesignerAttributeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UDevelopmentDownloadableContentEnumerator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDevelopmentDownloadableContentEnumerator(BL2SDK.UObject_Base):
+    pass
+
+
+class UDialogNameTagExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDialogNameTagExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UDLCLegacyPlayerClassIdentifierDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDLCLegacyPlayerClassIdentifierDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDLCLegacyPlayerClassIdentifierDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDLCLegacyPlayerClassIdentifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDlcTmsHolder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDlcTmsHolder(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableAssetLibraryDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableAssetLibraryDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableAssetLibraryDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableAssetLibraryDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableContentDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableContentDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableContentDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableBalanceModifierDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableBalanceModifierDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableBalanceModifierDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableBalanceModifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableCharacterDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableCharacterDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableCharacterDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableCharacterDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableCustomizationSetDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableCustomizationSetDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableCustomizationSetDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableCustomizationSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableExpansionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableExpansionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableExpansionDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableExpansionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableItemSetDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableItemSetDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableItemSetDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableItemSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadableVehicleDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableVehicleDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadableVehicleDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableVehicleDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadablePackageDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadablePackageDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadablePackageDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadablePackageDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDownloadablePackageLicense_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadablePackageLicense(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadablePackageLicenseItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadablePackageLicenseItem(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDownloadablePackageLicenseItemPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadablePackageLicenseItem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGoldenKeyLicenseItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGoldenKeyLicenseItem(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketingUnlockLicenseItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketingUnlockLicenseItem(BL2SDK.UObject_Base):
+    pass
+
+
+class UEffectCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEffectCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UEnvironmentTagDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEnvironmentTagDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UEquippedInventoryAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEquippedInventoryAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UEventFilter_OnTouch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEventFilter_OnTouch(BL2SDK.UObject_Base):
+    pass
+
+
+class UExperienceResourcePool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExperienceResourcePool(BL2SDK.UObject_Base):
+    pass
+
+
+class UExplosionCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExplosionCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UExplosionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExplosionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationsListOrder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationsListOrder(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationsLookup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationsLookup(BL2SDK.UObject_Base):
+    pass
+
+
+class UFiringModeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFiringModeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UFiringModeSoundDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFiringModeSoundDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AFlyerBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFlyerBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UFocusCameraDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFocusCameraDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UFractalViewWanderingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFractalViewWanderingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UGameBalanceDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGameBalanceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGameReleaseDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameReleaseDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearLikenessMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearLikenessMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UGenericReviveMessageDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGenericReviveMessageDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGlobalAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGlobalAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UGlobalsDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGlobalsDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UHitRegionHelper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHitRegionHelper(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAnimProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAnimProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAttachableActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAttachableActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBodyPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBodyPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UIControllerLocator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIControllerLocator(BL2SDK.UObject_Base):
+    pass
+
+
+class UICustomizable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UICustomizable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageSurface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageSurface(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDesignerAttributeProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDesignerAttributeProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDlcLicensableObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDlcLicensableObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDlcLicenseObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDlcLicenseObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDrunkenProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDrunkenProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDynamicObstacle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDynamicObstacle(BL2SDK.UObject_Base):
+    pass
+
+
+class UIExtraImpactEffects_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIExtraImpactEffects(BL2SDK.UObject_Base):
+    pass
+
+
+class UIFocusable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIFocusable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGearLikenessConsumer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGearLikenessConsumer(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHealable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHealable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHitRegionConsumer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHitRegionConsumer(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHitRegionInfoProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHitRegionInfoProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UIStatusEffectTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIStatusEffectTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UIItemCardable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIItemCardable(BL2SDK.UObject_Base):
+    pass
+
+
+class UILevelChallengeObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UILevelChallengeObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UILootable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UILootable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMapDisplayInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMapDisplayInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMaterialFadeBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMaterialFadeBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMeleeAttacker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMeleeAttacker(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMissionDirector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMissionDirector(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMissionInventory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMissionInventory(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMissionObjective_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMissionObjective(BL2SDK.UObject_Base):
+    pass
+
+
+class UInjuredDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInjuredDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputActionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputActionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInputActionDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputActionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInputContextDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputContextDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInputContextDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputContextDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInputDeviceCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputDeviceCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputDeviceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputDeviceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInputDeviceDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputDeviceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInputRemappingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputRemappingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInputRemappingDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputRemappingDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInputSetDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputSetDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInputSetDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInRangeOfInjuredPlayerExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInRangeOfInjuredPlayerExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstancedDesignerAttribute_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstancedDesignerAttribute(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInstancedDesignerAttributePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInstancedDesignerAttribute))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInteractionIconDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractionIconDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AInteractionProxy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInteractionProxy(BL2SDK.UObject_Base):
+    pass
+
+
+class APawnInteractionProxy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APawnInteractionProxy(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveObjectBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveObjectBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveObjectDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveObjectDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationPlatformDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationPlatformDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVendingMachineDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVendingMachineDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveObjectLootListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveObjectLootListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInteractiveObjectLootListDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInteractiveObjectLootListDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInterpTrackBehaviors_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackBehaviors(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstBehaviors_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstBehaviors(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInventoryBalanceDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInventoryBalanceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UItemBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassModBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassModBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionWeaponBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionWeaponBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMissionWeaponBalanceDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionWeaponBalanceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInventoryCardGFx_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryCardGFx(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryPartListCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryPartListCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPartListCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPartListCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponPartListCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponPartListCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerMaster_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerMaster(BL2SDK.UObject_Base):
+    pass
+
+
+class UIProjectileBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIProjectileBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIProjectileReflector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIProjectileReflector(BL2SDK.UObject_Base):
+    pass
+
+
+class UIProtectionTimer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIProtectionTimer(BL2SDK.UObject_Base):
+    pass
+
+
+class UIResourcePoolOwner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIResourcePoolOwner(BL2SDK.UObject_Base):
+    pass
+
+
+class UIScreenParticle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIScreenParticle(BL2SDK.UObject_Base):
+    pass
+
+
+class UISeeTargetable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISeeTargetable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIShop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIShop(BL2SDK.UObject_Base):
+    pass
+
+
+class UISimpleAnimPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISimpleAnimPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UISkillTreeListener_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISkillTreeListener(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UEquipableItemDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEquipableItemDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UArtifactDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UArtifactDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassModDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassModDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UClassModDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UClassModDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCrossDLCClassModDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCrossDLCClassModDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGrenadeModDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGrenadeModDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UUsableItemDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUsableItemDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionItemDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionItemDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UUsableCustomizationItemDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUsableCustomizationItemDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UEquipableItemPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEquipableItemPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UArtifactPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UArtifactPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassModPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClassModPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGrenadeModPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGrenadeModPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemNamePartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemNamePartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UItemNamePartDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UItemNamePartDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUsableItemPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUsableItemPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionItemPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionItemPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPartListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPartListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPool(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPoolDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPoolDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UItemPoolDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UItemPoolDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCrossDLCItemPoolDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCrossDLCItemPoolDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UKeyedItemPoolDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UKeyedItemPoolDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UKeyedItemPoolDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UKeyedItemPoolDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UItemPoolListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPoolListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UItemPoolListDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UItemPoolListDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UIUpdatePostProcessOverride_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIUpdatePostProcessOverride(BL2SDK.UObject_Base):
+    pass
+
+
+class UIUsable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIUsable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWeaponThrow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWeaponThrow(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWeatherBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWeatherBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class ULcdHelper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULcdHelper(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelDependencyList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelDependencyList(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelLandmarkAnchor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelLandmarkAnchor(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelLandmarkAnchorRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelLandmarkAnchorRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalizedStringDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalizedStringDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class ULockoutDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULockoutDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class ULookAxisDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULookAxisDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class ULookingAtInjuredPlayerExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULookingAtInjuredPlayerExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class ULootConfigurationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULootConfigurationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UManufacturerAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UManufacturerAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketingUnlockDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketingUnlockDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMarketingUnlockDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMarketingUnlockDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMeleeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeleeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMissionDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMissionDirectivesDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionDirectivesDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMissionObjectiveDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionObjectiveDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMissionObjectiveSetDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveSetDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMissionObjectiveSetDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionObjectiveSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMissionObjectiveSetBranchingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveSetBranchingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveSetCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveSetCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionPopulationAspect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionPopulationAspect(BL2SDK.UObject_Base):
+    pass
+
+
+class AMissionTracker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMissionTracker(BL2SDK.UObject_Base):
+    pass
+
+
+class UMovementComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMovementComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrunkenBaseComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrunkenBaseComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrunkenRandomComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrunkenRandomComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrunkenWaveComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrunkenWaveComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UNameListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNameListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UNPCLoadBalancer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNPCLoadBalancer(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageAssetLibrary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageAssetLibrary(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageAssetSublibrary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageAssetSublibrary(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPackageAssetSublibraryPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPackageAssetSublibrary))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPassengerCameraDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPassengerCameraDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnRelevanceUtility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnRelevanceUtility(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnRelevanceUtilityCaching_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnRelevanceUtilityCaching(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnRelevanceUtilityFixedCost_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnRelevanceUtilityFixedCost(BL2SDK.UObject_Base):
+    pass
+
+
+class UPerchDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPerchDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPerchEditorComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPerchEditorComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsJumpConnection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsJumpConnection(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPhysicsJumpConnectionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPhysicsJumpConnection))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class APhysicsJumpNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APhysicsJumpNode(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsJumpNodeEditorComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsJumpNodeEditorComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AExecuteBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AExecuteBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerChallengeListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerChallengeListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassCountAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassCountAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassIdentifierDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassIdentifierDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPlayerClassIdentifierDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPlayerClassIdentifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPlayerControllerAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerControllerAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerEventProviderDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerEventProviderDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowGameInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowGameInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInteractionManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInteractionManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInteractionServer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInteractionServer(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSeatSwap_PlayerInteractionServer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSeatSwap_PlayerInteractionServer(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerKillVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerKillVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerNameIdentifierDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerNameIdentifierDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPlayerNameIdentifierDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPlayerNameIdentifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPlayerReplicationInfoAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerReplicationInfoAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerSaveGame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerSaveGame(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerSkillAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerSkillAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerController(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowPlayerControllerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPlayerController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPlayerSkillTree_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerSkillTree(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerStandIn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerStandIn(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APlayerStandInPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APlayerStandIn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPlayerStatAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerStatAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayThroughCountAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayThroughCountAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryInteractiveObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryInteractiveObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryBlackMarket_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryBlackMarket(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryVendingMachine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryVendingMachine(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class APopulationOpportunityDen_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APopulationOpportunityDen(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APopulationOpportunityDenPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APopulationOpportunityDen))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class APopulationOpportunityDen_Dynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APopulationOpportunityDen_Dynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationOpportunityDenRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationOpportunityDenRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPostureStateExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPostureStateExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehaviorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehaviorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_Bounce_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_Bounce(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UQSortComparer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UQSortComparer(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryUIStatComparer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryUIStatComparer(BL2SDK.UObject_Base):
+    pass
+
+
+class UQSortAttributeComparer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UQSortAttributeComparer(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponTypeComparer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponTypeComparer(BL2SDK.UObject_Base):
+    pass
+
+
+class ARallyPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARallyPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ARallyPointPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ARallyPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class URecentDropList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URecentDropList(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolStateAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolStateAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class USaveGameChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USaveGameChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_IsInVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_IsInVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetNameList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetNameList(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_TakeHitRegionDamage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_TakeHitRegionDamage(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceEventEnableByMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceEventEnableByMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldResourcePool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldResourcePool(BL2SDK.UObject_Base):
+    pass
+
+
+class UShopTimerRateValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShopTimerRateValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class USkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkill(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkillPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(USkill))), ("Count", c_int), ("Max", c_int)]
+
+
+class USkillDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkillDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkillDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkillExpressionEvaluatorDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillExpressionEvaluatorDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkillExpressionEvaluatorDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkillExpressionEvaluatorDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkillTreeBranchDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeBranchDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkillTreeBranchDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkillTreeBranchDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkillTreeBranchLayoutDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeBranchLayoutDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstPerson_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstPerson(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstPersonDualWieldAction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstPersonDualWieldAction(BL2SDK.UObject_Base):
+    pass
+
+
+class USprintDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USprintDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaggerDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaggerDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UStanceTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStanceTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UStanceTypeDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UStanceTypeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UStatChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class AStationTeleporterDestination_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStationTeleporterDestination(BL2SDK.UObject_Base):
+    pass
+
+
+class AStationTeleporterExitPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStationTeleporterExitPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class AStationTeleporterVehicleExitPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStationTeleporterVehicleExitPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectChanceModifierResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectChanceModifierResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UStatusEffectDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UStatusEffectDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UStatusEffectExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class AStatusEffectProxyActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStatusEffectProxyActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectsComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusEffectsComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UTargetableAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTargetableAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class ATemporalField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATemporalField(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextMarkupDictionary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextMarkupDictionary(BL2SDK.UObject_Base):
+    pass
+
+
+class UTrainingMessageDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTrainingMessageDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTrainingMessageDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTrainingMessageDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTravelStationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTravelStationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UFastTravelStationDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFastTravelStationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ULevelTravelStationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelTravelStationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULevelTravelStationDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULevelTravelStationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTravelStationNozzleComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTravelStationNozzleComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UTurnDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTurnDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UUBMGraveyardSaveData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUBMGraveyardSaveData(BL2SDK.UObject_Base):
+    pass
+
+
+class AVantageNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVantageNode(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleChoiceModuleGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleChoiceModuleGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleClassDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleClassDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleCrewAnimSetLookupTable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleCrewAnimSetLookupTable(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleFamilyDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleFamilyDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UVehicleFamilyDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UVehicleFamilyDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UVehicleHandlingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleHandlingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCarVehicleHandlingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCarVehicleHandlingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UHoverVehicleHandlingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHoverVehicleHandlingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UTankVehicleHandlingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTankVehicleHandlingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UChopperVehicleHandlingDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChopperVehicleHandlingDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleLifetimeManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleLifetimeManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationVehicleDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationVehicleDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleStandIn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleStandIn(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleWheelDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleWheelDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UVSSUIDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVSSUIDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UVSSUIDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UVSSUIDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWaypointComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWaypointComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWaypointComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWaypointComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ULevelTransitionWaypointComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelTransitionWaypointComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionDirectiveWaypointComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionDirectiveWaypointComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFailableMissionDirectiveWaypointComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFailableMissionDirectiveWaypointComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveWaypointComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionObjectiveWaypointComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMissionObjectiveWaypointComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionObjectiveWaypointComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWeaponAmmoResourceAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponAmmoResourceAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponGlowEffectDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponGlowEffectDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponNamePartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponNamePartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWeaponNamePartDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWeaponNamePartDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWeaponPartListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponPartListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponTypeAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponTypeAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIMoveNodePathComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIMoveNodePathComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAkComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAkComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Cringe_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Cringe(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USpecialMove_CringePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Cringe))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USpecialMove_Motion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Motion(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USpecialMove_MotionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Motion))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USpecialMove_Cloak_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Cloak(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USpecialMove_CloakPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Cloak))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USpecialMove_Dodge_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Dodge(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USpecialMove_DodgePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Dodge))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USpecialMove_PhysicsJump_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PhysicsJump(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Turn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Turn(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Perch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Perch(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PerchLoop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PerchLoop(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PerchRandomLoop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PerchRandomLoop(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PhaseLock_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PhaseLock(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PopulationPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_PopulationPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Spawned_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Spawned(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Vehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Vehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USpecialMove_VehiclePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Vehicle))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowAnimNode_Simple_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Simple(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWillowAnimNode_SimplePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowAnimNode_Simple))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowAnimTreeFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimTreeFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAutoAimProfileDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAutoAimProfileDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAutoAimStrategy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAutoAimStrategy(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAutoAimStrategyDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAutoAimStrategyDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCalloutDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCalloutDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCharacterClassDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCharacterClassDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerClassDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowClanDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowClanDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCustomizationManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCustomizationManager(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDamageArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDamageArea(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamagePipeline_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamagePipeline(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageType(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageSource(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Bullet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Bullet(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_MachineGun_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_MachineGun(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Pistol_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Pistol(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Shotgun_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Shotgun(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Sniper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Sniper(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_SubMachineGun_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_SubMachineGun(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_CustomCrate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_CustomCrate(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Grenade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Grenade(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Melee_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Melee(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Rocket_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Rocket(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Shield_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Shield(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_ShieldNova_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_ShieldNova(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_ShieldSpike_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_ShieldSpike(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Skill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Skill(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Skill_IgnoreIOs_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_Skill_IgnoreIOs(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_StatusEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_StatusEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_VehicleRanInto_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_VehicleRanInto(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_VehicleRanOver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_VehicleRanOver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDeclarations_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDeclarations(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_MissionSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_MissionSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_RandomBranch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_RandomBranch(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_Talk_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_Talk(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_Trigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogAct_Trigger(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDialogEchoActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDialogEchoActor(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowDialogEchoActorPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowDialogEchoActor))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowDialogEmoteDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogEmoteDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogEventTag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogEventTag(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogEventTagSpecialized_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogEventTagSpecialized(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogGlobalsDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogGlobalsDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogNameTag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogNameTag(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogVar_InstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogVar_InstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogVar_Passenger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDialogVar_Passenger(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDownloadableContentManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDownloadableContentManager(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDynamicNavMeshConnectionPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDynamicNavMeshConnectionPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowDynamicNavMeshConnectionPointPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowDynamicNavMeshConnectionPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowDynamicNavMeshConnectionPointRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDynamicNavMeshConnectionPointRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDynamicPathBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowDynamicPathBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowEffectCoordinator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowEffectCoordinator(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowElevator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowElevator(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowElevatorPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowElevator))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowElevatorRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowElevatorRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class AStatusEffectReplicatedEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStatusEffectReplicatedEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AStatusEffectReplicatedEmitterPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AStatusEffectReplicatedEmitter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowExperiencePipeline_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowExperiencePipeline(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowExposureUtilityStrategy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowExposureUtilityStrategy(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowForcedReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowForcedReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGameEngine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGameEngine(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowCoopGameInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowCoopGameInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowGameReplicationInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowGameReplicationInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGameViewportClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGameViewportClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGlobals_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGlobals(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowHUD_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowHUD(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowImpactDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowImpactDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWillowImpactDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowImpactDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowExplosionImpactDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowExplosionImpactDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowInteractiveObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowInteractiveObject(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowInteractiveObjectPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowInteractiveObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ATravelStation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATravelStation(BL2SDK.UObject_Base):
+    pass
+
+
+class AFastTravelStation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFastTravelStation(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelTravelStation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelTravelStation(BL2SDK.UObject_Base):
+    pass
+
+
+class AResurrectTravelStation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AResurrectTravelStation(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleSpawnStationPlatform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleSpawnStationPlatform(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleSpawnStationTerminal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicleSpawnStationTerminal(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowElevatorButton_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowElevatorButton(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowElevatorButtonPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowElevatorButton))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowInteractiveSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowInteractiveSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPropObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPropObject(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVendingMachineBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVendingMachineBase(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVendingMachine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVendingMachine(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVendingMachineBlackMarket_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVendingMachineBlackMarket(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInteractiveSwitchRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInteractiveSwitchRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowInventoryManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowInventoryManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryStorage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryStorage(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowItem(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowItemPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowItem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowEquipAbleItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEquipAbleItem(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowArtifact_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowArtifact(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowClassMod_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowClassMod(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowGrenadeMod_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowGrenadeMod(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowShield_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowShield(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowUsableItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowUsableItem(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMissionItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMissionItem(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowUsableCustomizationItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowUsableCustomizationItem(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowItemTypes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowItemTypes(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowLightProjectileManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowLightProjectileManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLocalMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLocalMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalInventoryRefreshMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalInventoryRefreshMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalTrainingDefinitionMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalTrainingDefinitionMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalTrainingMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalTrainingMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedAmmoMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedAmmoMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowMapInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowMapInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMissionPickupSpawner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMissionPickupSpawner(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMissionPickupFailsafe_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMissionPickupFailsafe(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowObstacleUtility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowObstacleUtility(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnDemandPackageMarker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnDemandPackageMarker(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSettings_DataStore_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSettings_DataStore(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPauseTicker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPauseTicker(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowPawnPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPawn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowAIPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAIPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAICranePawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAICranePawn(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowPlayerPawnPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPlayerPawn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowPawnInteractionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPawnInteractionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPersonalTeleporter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPersonalTeleporter(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPhysicalMaterialProperty_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPhysicalMaterialProperty(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPickup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPickup(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowPickupPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPickup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowPlayerInput_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPlayerInput(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPlayerPawnDataManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPlayerPawnDataManager(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerReplicationInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerReplicationInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPointLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPointLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationMaster_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationMaster(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationOpportunityPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationOpportunityPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationPoint_Dynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationPoint_Dynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationPointDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationPointDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationPointEditorComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationPointEditorComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPreviewComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPreviewComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPerchPreviewComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPerchPreviewComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsJumpPreviewComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsJumpPreviewComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationPointPreviewComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPopulationPointPreviewComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowProfileSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowProfileSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowProjectilePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowProjectile))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowServerSideProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowServerSideProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPursuitGrid_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPursuitGrid(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWillowPursuitGridPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowPursuitGrid))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowPursuitGridDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPursuitGridDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowRegionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowRegionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedAmbientSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedAmbientSound(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowReplicatedAmbientSoundRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowReplicatedAmbientSoundRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedAmbientSoundSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedAmbientSoundSource(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowReplicatedAmbientSoundSourcePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowReplicatedAmbientSoundSource))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowSavedMove_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSavedMove(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSaveGameManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSaveGameManager(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowScout_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowScout(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ElevatorFinished_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ElevatorFinished(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MissionSmokeTest_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MissionSmokeTest(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MoveElevator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MoveElevator(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_ElevatorUsed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_ElevatorUsed(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControlSpline_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControlSpline(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowSpectatorPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowSpectatorPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowSpectatorPointPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowSpectatorPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowStaggerAnimNodeBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowStaggerAnimNodeBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSystemSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSystemSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTacticalMapVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTacticalMapVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTradeManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTradeManager(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTrigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTrigger(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWaypoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWaypoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowUIInteraction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowUIInteraction(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleBase(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowVehiclePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowVehicle))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowVehicle_ChopperVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_ChopperVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_FlyingVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_FlyingVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_Tank_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_Tank(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_WheeledVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_WheeledVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWeaponPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWeaponPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleCombatArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleCombatArea(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleCombatAreaRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleCombatAreaRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleControlDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleControlDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSeatDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSeatDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimCar_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimCar(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimChopper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimChopper(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimFly_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimFly(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimHover_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimHover(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimTank_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVehicleSimTank(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWaterSMActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWaterSMActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowWeaponPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowWeapon))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowBuzzaxeWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowBuzzaxeWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTurretWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTurretWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicleWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowWeaponTypes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowWeaponTypes(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWorldSoundManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowWorldSoundManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWorldBody_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWorldBody(BL2SDK.UObject_Base):
+    pass
+
+
+class AWorldDiscoveryArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWorldDiscoveryArea(BL2SDK.UObject_Base):
+    pass
+
+
+class UWorldDiscoveryAreaRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWorldDiscoveryAreaRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_CustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_CustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_DialogEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_DialogEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_EnableHandIK_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_EnableHandIK(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_EnableHeadLookAt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_EnableHeadLookAt(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_UseBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_UseBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWeaponBoneController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWeaponBoneController(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlHandModifier_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlHandModifier(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlLeftHandGripWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlLeftHandGripWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class UStanceExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStanceExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimBlendByPosture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimBlendByPosture(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_AddCameraBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_AddCameraBone(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_AimState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_AimState(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_ClimbLadder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_ClimbLadder(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Condition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Condition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_MovementTransition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_MovementTransition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Prism_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Prism(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_WeaponHold_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_WeaponHold(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_WeaponRecoil_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_WeaponRecoil(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeAimOffset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeAimOffset(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeAimOffset_BoundaryTurret_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeAimOffset_BoundaryTurret(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendByAimState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendByAimState(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendByRotationSpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendByRotationSpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendByStance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendByStance(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendDirectional_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendDirectional(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendInjured_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendInjured(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendList(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Falling_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Falling(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendThirdPersonMenu_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendThirdPersonMenu(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendTurning_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendTurning(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendVehicleDirectional_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendVehicleDirectional(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendWheeledPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeBlendWheeledPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeFeatherBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeFeatherBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeSequenceAdditiveBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeSequenceAdditiveBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeSlot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNodeSlot(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimTree_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimTree(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_EyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_EyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LowerEyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LowerEyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_UpperEyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_UpperEyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_FootPlacement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_FootPlacement(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LookAtActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LookAtActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotateFlapFromFiring_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotateFlapFromFiring(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotateWeaponBoneFromFiring_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotateWeaponBoneFromFiring(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotationRate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotationRate(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotationRateBySpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RotationRateBySpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_TurretConstrained_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_TurretConstrained(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWillowSkelControl_TurretConstrainedPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowSkelControl_TurretConstrained))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowSkelControlHandPlacement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControlHandPlacement(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControlLerpSingleBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControlLerpSingleBone(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AllPlayersInMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AllPlayersInMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AttachPlayerPawnToBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AttachPlayerPawnToBase(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ConditionallyLoadCommons_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ConditionallyLoadCommons(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DiscardInventory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DiscardInventory(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DiscoverLevelChallengeObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DiscoverLevelChallengeObject(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DisplayTrainingDefinitionMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DisplayTrainingDefinitionMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DisplayTrainingMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DisplayTrainingMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DisplayWillowHUDMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DisplayWillowHUDMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ExecuteSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ExecuteSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetAttributeValue_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetAttributeValue(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LoadingMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LoadingMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MathBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MathBase(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MathFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MathFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MathInteger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MathInteger(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyHUDElement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyHUDElement(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayBinkMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayBinkMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PossessForPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PossessForPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PrimaryPlayerBusyDelay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PrimaryPlayerBusyDelay(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ProceduralSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ProceduralSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ProceduralSwitchNumeric_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ProceduralSwitchNumeric(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetChallengeCompleted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetChallengeCompleted(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetShadowParent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetShadowParent(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_TimedMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_TimedMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_HasValidSaveGame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_HasValidSaveGame(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsPlayerCharacterClass_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsPlayerCharacterClass(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_WorldDiscoveryArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_WorldDiscoveryArea(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_OverpowerLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_OverpowerLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_PrimaryLocalPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_PrimaryLocalPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ActivateInstancedBehaviorSequences_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ActivateInstancedBehaviorSequences(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScripted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScripted(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CompleteMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CompleteMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ConfigureBossMusic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ConfigureBossMusic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ConfigureCustomAmbientMusic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ConfigureCustomAmbientMusic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ConfigureLevelMusic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ConfigureLevelMusic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CoordinateOperations_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CoordinateOperations(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_DayNightCycle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_DayNightCycle(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_DisableCombatMusicLogic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_DisableCombatMusicLogic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_EnableCombatMusicLogic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_EnableCombatMusicLogic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_GiveMission_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_GiveMission(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_InterpMenu_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_InterpMenu(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_InterpPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_InterpPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MissionCustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MissionCustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PrepareMapChangeFromDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PrepareMapChangeFromDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PrepareSavedMapChange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PrepareSavedMapChange(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_QueryTeleporterStatus_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_QueryTeleporterStatus(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ReleaseTeleporterHeldLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ReleaseTeleporterHeldLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ResurrectPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ResurrectPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_RunCustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_RunCustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetAIFlag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetAIFlag(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetInteractionProxyState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetInteractionProxyState(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetLockout_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetLockout(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetLookAtActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_SetLookAtActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ToggleCinematicModeAffectsAll_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ToggleCinematicModeAffectsAll(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_TogglePostRenderFor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_TogglePostRenderFor(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ToggleRestrictions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ToggleRestrictions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_TravelStationTeleport_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_TravelStationTeleport(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_TurnOffCombatMusic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_TurnOffCombatMusic(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_WaypointObjective_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_WaypointObjective(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_AnyPlayerHasMarketingUnlock_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_AnyPlayerHasMarketingUnlock(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_CheckLockout_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_CheckLockout(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_GoStraightToMainMenu_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_GoStraightToMainMenu(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_IsCombatMusicPlaying_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_IsCombatMusicPlaying(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_IsPlayerServer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_IsPlayerServer(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_MultiplePlayersInGame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_MultiplePlayersInGame(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_ShouldStartNewGameCinematics_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_ShouldStartNewGameCinematics(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_SplitScreen_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_SplitScreen(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_CombatMusicStarted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_CombatMusicStarted(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_CustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_CustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_FastTravel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_FastTravel(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_MissionRemoteEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_MissionRemoteEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_VehicleSpawned_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_VehicleSpawned(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqVar_DayNightCycleVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqVar_DayNightCycleVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqVar_DayNightCycleRate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqVar_DayNightCycleRate(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqVar_TimeOfDay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqVar_TimeOfDay(BL2SDK.UObject_Base):
+    pass
+
+
+class UActionSkillStateExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActionSkillStateExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UHealthStateExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHealthStateExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UNumberWeaponsEquippedExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNumberWeaponsEquippedExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerActionExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerActionExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkillEffectManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkillEffectManager(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehiclePassengerExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehiclePassengerExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponActionAvailableExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponActionAvailableExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponEquippedExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponEquippedExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UAIPawnBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAIPawnBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAttackLocationPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttackLocation))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAttackLocation_Direct_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Direct(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Height_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Height(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_LineOfSight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_LineOfSight(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_MaxDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_MaxDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Move_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Move(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_ParentDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_ParentDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Range_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Range(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Side_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttackLocation_Side(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISpawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISpawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableFixupAIPawnNamesDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableFixupAIPawnNamesDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UEventFilter_OnTakeDamage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEventFilter_OnTakeDamage(BL2SDK.UObject_Base):
+    pass
+
+
+class UFromContextFlagValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFromContextFlagValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowAIPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowAIPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryBalancedAIPawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryBalancedAIPawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowInventory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPopulationFactoryWillowInventory(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_AIOperation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_AIOperation(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Behavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Behavior(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_CharacterDialog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_CharacterDialog(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_CustomAnimation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_CustomAnimation(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Firing_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Firing(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Moving_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Moving(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Posture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Posture(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Skill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Skill(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Sound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_Sound(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_SpecialMovement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_SpecialMovement(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_SpeedChange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_SpeedChange(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_UseVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URES_UseVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UTargetMetaInfoValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTargetMetaInfoValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UTransformedFlagValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTransformedFlagValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowActionSequencePawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowActionSequencePawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Burrow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Burrow(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_GenericAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_GenericAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AnimAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AnimAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BasicAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BasicAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_LeapAtTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_LeapAtTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ShootTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ShootTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_CoverAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_CoverAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_CombatPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_CombatPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_SwoopAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_SwoopAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIBlackboardComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIBlackboardComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UWillowAIBlackboardComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowAIBlackboardComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowAIDenComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIDenComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIDenDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIDenDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAIMoveNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAIMoveNode(BL2SDK.UObject_Base):
+    pass
+
+
+class APerch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APerch(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APerchPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(APerch))), ("Count", c_int), ("Max", c_int)]
+
+
+class USpecialMove_Cover_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_Cover(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAwarenessZoneDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAwarenessZoneDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowBoundaryTurret_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowBoundaryTurret(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowBoundaryTurretPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowBoundaryTurret))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAIClassDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAIClassDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowCombatPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowCombatPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCoverComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCoverComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCoverStanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCoverStanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowFormationComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowFormationComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMind_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowMind(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowMindPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowMind))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowMindAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowMindAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowMindTargetInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowMindTargetInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowNavigationHandle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowNavigationHandle(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowClientNavigationHandle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowClientNavigationHandle(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowNavMeshPathFinder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowNavMeshPathFinder(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowObstacleRenderComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowObstacleRenderComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ADeployableTurretActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADeployableTurretActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_DenStat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_DenStat(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_Provoked_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_Provoked(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcCanFire_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcCanFire(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcDistances_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcDistances(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcExposure_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcExposure(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcThreat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcThreat(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeAttacking_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeAttacking(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeHealth_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeHealth(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeIdle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeIdle(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeOpinion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_PrioritizeOpinion(BL2SDK.UObject_Base):
+    pass
+
+
+class AAIDebugDummyBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAIDebugDummyBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AAIDebugDummyBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AAIDebugDummyBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowAIDebugCamera_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIDebugCamera(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowNavDebug_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowNavDebug(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPawnSnapshotRecord_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPawnSnapshotRecord(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSnapshotRecord_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSnapshotRecord(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPlayerSnapshotRecord_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPlayerSnapshotRecord(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowRadarManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowRadarManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_SwitchByPlatform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqCond_SwitchByPlatform(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowUIDataStore_StringAliasMap_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowUIDataStore_StringAliasMap(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerStatsNotifier_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerStatsNotifier(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowBaseStats_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowBaseStats(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerStats_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerStats(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVersusDuelArena_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVersusDuelArena(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVersusDuelGlobals_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVersusDuelGlobals(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVersusDuelInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVersusDuelInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseInventoryPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseInventoryPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UBadassPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBadassPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengesPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengesPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryListPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryListPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseTopLevelPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseTopLevelPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengesScreenGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengesScreenGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuInventoryPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuInventoryPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UTwoPanelInterfaceGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTwoPanelInterfaceGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UDeferredDataProviderGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDeferredDataProviderGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryDataProviderGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryDataProviderGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxTextListContainer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxTextListContainer(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxTextListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxTextListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UHashDisplayGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHashDisplayGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDScalingAnchorDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDScalingAnchorDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Base_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Base(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Challenges_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Challenges(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Crosshairs_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Crosshairs(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Minimap_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Minimap(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Missions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Missions(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Trading_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_Trading(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_WorldSpace_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDWidget_WorldSpace(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryDataProviderElement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryDataProviderElement(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemCardGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemCardGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemOfTheDayPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemOfTheDayPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPickupGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPickupGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMontageGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMontageGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UScrollingListGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UScrollingListGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UMultitypeScrollingListGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMultitypeScrollingListGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillTreeGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuMapGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuMapGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxColiseumOverlayDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxColiseumOverlayDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMenuHelperSaveGame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMenuHelperSaveGame(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxAccountGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxAccountGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UHashDisplayGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHashDisplayGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPickupGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemPickupGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineMessageGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineMessageGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextChatGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextChatGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxDialogBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxDialogBox(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovie3D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovie3D(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterSelectionReduxGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterSelectionReduxGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemInspectionGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemInspectionGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class ULANServerBrowserGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULANServerBrowserGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UQuestAcceptGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UQuestAcceptGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponScopeGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponScopeGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovieCredits_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovieCredits(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxThirdPersonMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxThirdPersonMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuExGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuExGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UTwoPanelInterfaceGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTwoPanelInterfaceGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineExGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineExGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowHUDGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowHUDGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMoviePressStart_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMoviePressStart(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovie3DDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovie3DDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBankGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBankGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemInspectionGFxMovieDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UItemInspectionGFxMovieDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSpawnStationGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponScopeGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponScopeGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxThirdPersonDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxThirdPersonDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowHUDGFxMovieDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowHUDGFxMovieDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovieStatePlatform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovieStatePlatform(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovieStateUsable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxMovieStateUsable(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxUIManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxUIManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxUIManagerDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxUIManagerDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLeviathanService_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLeviathanService(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AimAtScanRange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AimAtScanRange(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AimAtThreat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AimAtThreat(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorAliasLookupDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorAliasLookupDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhaseLockDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhaseLockDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AttackLoop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_AttackLoop(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FollowPath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FollowPath(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BunkerBoss_Flight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BunkerBoss_Flight(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Idle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Idle(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BurrowIdle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BurrowIdle(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ChargeTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ChargeTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_CombatPerch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_CombatPerch(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_DeathTrap_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_DeathTrap(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_Pursuit_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_Pursuit(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_AlongsideTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_AlongsideTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_AvoidWall_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_AvoidWall(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_BackUpAndAdjust_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_BackUpAndAdjust(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_GoBackToCombatArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_GoBackToCombatArea(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_Pursuit_TargetOnFoot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Drive_Pursuit_TargetOnFoot(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_DriveVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_DriveVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FinalBoss_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FinalBoss(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FinalBossFly_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FinalBossFly(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FlyAnimAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_FlyAnimAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_GoToScriptedDestination_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_GoToScriptedDestination(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_GrabPickup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_GrabPickup(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_MortarAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_MortarAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UILightProjectileManagerOwner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UILightProjectileManagerOwner(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_MoveToFormation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_MoveToFormation(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_MoveToVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_MoveToVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Patrol_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_Patrol(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_PlayCustomAnimation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_PlayCustomAnimation(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ScriptedNPC_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ScriptedNPC(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISetFlight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISetFlight(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_SetFlight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_SetFlight(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ShootThreatWhenInView_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_ShootThreatWhenInView(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_SweepAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_SweepAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_VehicleTurret_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_VehicleTurret(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_TimerElapsed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_TimerElapsed(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryInteractiveSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryInteractiveSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPopulationOpportunityPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPopulationOpportunityPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPropObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPropObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryVehicleSpawnStationPlatform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryVehicleSpawnStationPlatform(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryVehicleSpawnStationTerminal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryVehicleSpawnStationTerminal(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowCoopPlayerStart_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowCoopPlayerStart(BL2SDK.UObject_Base):
+    pass
+
+
+class AAIDebugDummy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAIDebugDummy(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmmoPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputContextSelectorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputContextSelectorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UDefaultInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDefaultInputContextSelector(BL2SDK.UObject_Base):
+    pass
+
+
+class UAssassinInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAssassinInputContextSelector(BL2SDK.UObject_Base):
+    pass
+
+
+class AExecuteActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AExecuteActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UValueGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UValueGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UEridiumValueGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEridiumValueGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVersusDuelMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVersusDuelMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxColiseumOverlayMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxColiseumOverlayMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UColiseumRuleDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UColiseumRuleDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxFootForceFieldComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxFootForceFieldComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UITinnitusTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UITinnitusTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class ABuzzaxeActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABuzzaxeActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UInjuredFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInjuredFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmitterServerSide_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmitterServerSide(BL2SDK.UObject_Base):
+    pass
+
+
+class UIRBCollisionListener_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIRBCollisionListener(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmit_HitEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmit_HitEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAttributeEffectBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAttributeEffectBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIFireShotBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIFireShotBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBehaviorAliasProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBehaviorAliasProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmit_BloodSpray_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmit_BloodSpray(BL2SDK.UObject_Base):
+    pass
+
+
+class UDeveloperPerksDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDeveloperPerksDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ADualWieldActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADualWieldActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_PlayerJoined_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_PlayerJoined(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketingUnlockInventoryDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketingUnlockInventoryDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponProficiencyFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponProficiencyFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalWeaponMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalWeaponMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedWeaponMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedWeaponMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalItemMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalItemMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedItemMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedItemMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedCreditsMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReceivedCreditsMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UExperienceFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExperienceFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class URotationArrowComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URotationArrowComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInteractionClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInteractionClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UPersonalTeleporterDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPersonalTeleporterDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UTeleporterFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTeleporterFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerTrainingMessageListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerTrainingMessageListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_TrainingMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_TrainingMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontendGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontendGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontendGFxMovieDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontendGFxMovieDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PlayCameraAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PlayCameraAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_StopCameraAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_StopCameraAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_UnlockAchievement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_UnlockAchievement(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_ShowCharacterSelectUI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_ShowCharacterSelectUI(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationDiscoveryMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationDiscoveryMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UIStorageDevice_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIStorageDevice(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MarkEnteredRegion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MarkEnteredRegion(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MarkExitedRegion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MarkExitedRegion(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumAnnouncePenaltyBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumAnnouncePenaltyBox(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSeatSwap_PlayerInteractionClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleSeatSwap_PlayerInteractionClient(BL2SDK.UObject_Base):
+    pass
+
+
+class ULobbyGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULobbyGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UOptionsGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOptionsGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CausePlayerDeath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CausePlayerDeath(BL2SDK.UObject_Base):
+    pass
+
+
+class UISkillBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISkillBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChallengeRecipient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChallengeRecipient(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerCamera_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPlayerCamera(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCheatManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowCheatManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMultitypeScrollingList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMultitypeScrollingList(BL2SDK.UObject_Base):
+    pass
+
+
+class UTwoPanelInterfaceGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTwoPanelInterfaceGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWillowStorable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWillowStorable(BL2SDK.UObject_Base):
+    pass
+
+
+class UITwoPanelInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UITwoPanelInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UBankGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBankGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateListenerSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateListenerSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ActivateSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddInstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddInstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddInstanceDataFromBehaviorContext_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddInstanceDataFromBehaviorContext(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddInventoryToStorage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddInventoryToStorage(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddObjectInstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AddObjectInstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AdjustCameraAnimByEyeHeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AdjustCameraAnimByEyeHeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIChangeInventory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIChangeInventory(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIFollow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIFollow(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AILevelUp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AILevelUp(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIPatsy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIPatsy(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIProvoke_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIProvoke(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIResetProvocation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AIResetProvocation(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISetItemTossTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISetItemTossTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISetWeaponFireRotation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AISetWeaponFireRotation(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AITakeMoney_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AITakeMoney(BL2SDK.UObject_Base):
+    pass
+
+
+class UINPCBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UINPCBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignBoolVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignBoolVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignFloatVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignFloatVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignIntVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignIntVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignObjectVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignObjectVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignVectorVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AssignVectorVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttachActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttachActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttachAOEStatusEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttachAOEStatusEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttachItems_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttachItems(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttributeEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AttributeEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AwardExperienceForMyDeath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_AwardExperienceForMyDeath(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_BeginLifting_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_BeginLifting(BL2SDK.UObject_Base):
+    pass
+
+
+class UILiftBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UILiftBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_BoolMath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_BoolMath(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_BroadcastEcho_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_BroadcastEcho(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CauseTinnitus_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CauseTinnitus(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeBehaviorSetState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeBehaviorSetState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCanTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCanTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeDenAllegiance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeDenAllegiance(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeDialogName_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeDialogName(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeEnvironmentTag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeEnvironmentTag(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeInstanceDataSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeInstanceDataSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeUsability_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeUsability(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChangeUsabilityBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChangeUsabilityBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeWeaponVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeWeaponVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Charm_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Charm(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CheckMapChangeConditions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CheckMapChangeConditions(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ClearStatusEffects_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ClearStatusEffects(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CombatPerch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CombatPerch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CombatPerchThrow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CombatPerchThrow(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompareFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompareFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompareInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompareInt(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompareObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CompareObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CoordinatedEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CoordinatedEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Crane_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Crane(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CreateImpactEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CreateImpactEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CreateWeatherSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CreateWeatherSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageArea(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageClassSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageClassSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageSourceSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageSourceSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageSurfaceTypeSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DamageSurfaceTypeSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DeactivateSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DeactivateSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DebugMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DebugMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DestroyBeams_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DestroyBeams(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DestroyBeamsForSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DestroyBeamsForSource(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DestroyWeatherSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DestroyWeatherSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DetachActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DetachActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DisableFallingDamage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DisableFallingDamage(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DiscoverLevelChallengeObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DiscoverLevelChallengeObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DropItems_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DropItems(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DropProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DropProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DuplicateInstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_DuplicateInstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_EnterVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_EnterVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FinishLifting_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FinishLifting(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FireBeam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FireBeam(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FireCustomSkillEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FireCustomSkillEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FireShot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FireShot(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ForceDownState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ForceDownState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ForceInjured_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ForceInjured(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetClosestPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetClosestPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetItemPrice_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetItemPrice(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetPlayerStat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetPlayerStat(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMoviePlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMoviePlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMovieSetState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMovieSetState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMovieStop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GFxMovieStop(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GiveInjuredPlayerSecondWind_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GiveInjuredPlayerSecondWind(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_HasMissions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_HasMissions(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_HeadLookHold_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_HeadLookHold(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IncrementPlayerStat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IncrementPlayerStat(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IsCensoredMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IsCensoredMode(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IsObjectPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IsObjectPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IsObjectVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IsObjectVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_LeaderCommand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_LeaderCommand(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_LeapAtTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_LeapAtTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_LocalCustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_LocalCustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MakeVector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MakeVector(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MissionCustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_MissionCustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_NetworkRoleSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_NetworkRoleSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_NotifyThoughtLockStatus_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_NotifyThoughtLockStatus(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ObjectClassSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ObjectClassSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_OpinionSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_OpinionSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_OverrideWeaponCrosshair_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_OverrideWeaponCrosshair(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PackAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PackAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PawnLeap_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PawnLeap(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PhaseLockHold_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PhaseLockHold(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PhysXLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PhysXLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayAIMissionContextDialog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayAIMissionContextDialog(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayAnimation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayAnimation(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayHardFlinch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayHardFlinch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayMultipleExplosionsSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlayMultipleExplosionsSound(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostAkEventGetRTPC_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostAkEventGetRTPC(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostProcessChain_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostProcessChain(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostProcessChain_LostShield_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostProcessChain_LostShield(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostProcessOverlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PostProcessOverlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PursueNodeType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PursueNodeType(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPursuitBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPursuitBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_QueryDayNightCycle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_QueryDayNightCycle(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_QueuePersonalEcho_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_QueuePersonalEcho(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RadarIcon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RadarIcon(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ReCalculateResourcePoolValues_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ReCalculateResourcePoolValues(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RefillResourcePool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RefillResourcePool(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RefillWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RefillWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RegisterFastTravelDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RegisterFastTravelDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RegisterTargetable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RegisterTargetable(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ReloadComplete_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ReloadComplete(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoveInstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoveInstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoveInventoryFromStorage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoveInventoryFromStorage(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ResetActionSkillCooldown_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ResetActionSkillCooldown(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ResetHitRegionHealth_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ResetHitRegionHealth(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RotatePawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RotatePawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RuleEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RuleEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RunBehaviorAlias_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RunBehaviorAlias(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorAliasDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorAliasDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SelectPhaselockTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SelectPhaselockTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SendMessageToPlayers_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SendMessageToPlayers(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAIFlag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAIFlag(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAlternateVertexWeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAlternateVertexWeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAnimSwitchNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAnimSwitchNode(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAnimTree_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAnimTree(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetBeingHealed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetBeingHealed(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetChallengeCompleted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetChallengeCompleted(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetCleanupParameters_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetCleanupParameters(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetCompassIcon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetCompassIcon(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDeathDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDeathDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDiscardRootMotion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDiscardRootMotion(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDualWieldBlendState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDualWieldBlendState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetElevatorButtonGlowing_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetElevatorButtonGlowing(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetExtraImpactEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetExtraImpactEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetExtraMuzzleEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetExtraMuzzleEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetGodMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetGodMode(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetHardAttach_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetHardAttach(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetInfoBarVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetInfoBarVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetJackVoiceModulatorState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetJackVoiceModulatorState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetLookAtSpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetLookAtSpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMaterialScalarFade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMaterialScalarFade(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMaterialScalarFadeForGoreDeath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMaterialScalarFadeForGoreDeath(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMorphNodeWeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMorphNodeWeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetNumBankSlots_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetNumBankSlots(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetPawnThrottleData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetPawnThrottleData(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetRuleSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetRuleSet(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetRuleSetByName_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetRuleSetByName(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetShieldColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetShieldColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlLookAtActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlLookAtActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlSingleBoneData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlSingleBoneData(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlTurretConstrainedValues_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlTurretConstrainedValues(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetStance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetStance(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetTimeOfDay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetTimeOfDay(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetUsabilityByMissionDirectives_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetUsabilityByMissionDirectives(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetUsabilityCost_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetUsabilityCost(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetUsableIcon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetUsableIcon(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetVehicleSimObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetVehicleSimObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowGenericReviveMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowGenericReviveMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowMissionInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowMissionInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowSelfAsTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowSelfAsTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SimpleAnimPlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SimpleAnimPlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SimpleAnimStop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SimpleAnimStop(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnDecal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnDecal(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnFromVehicleSpawnStation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnFromVehicleSpawnStation(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnItems_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnItems(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnLoot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnLoot(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnLootAroundPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnLootAroundPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnLootAtPoints_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnLootAtPoints(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnParticleSystemAtWorldLocation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnParticleSystemAtWorldLocation(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnPerch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnPerch(BL2SDK.UObject_Base):
+    pass
+
+
+class APerch_Dynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APerch_Dynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowLocalOnlyProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowLocalOnlyProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnProjectileFromImpact_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnProjectileFromImpact(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnTemporalField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SpawnTemporalField(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StartDeathRagdoll_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StartDeathRagdoll(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StatusEffectSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StatusEffectSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StopMeleeAttack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_StopMeleeAttack(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleNPCAlly_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleNPCAlly(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleObstacle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleObstacle(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleTelescopeOverlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleTelescopeOverlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Transform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Transform(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockAvatarAward_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockAvatarAward(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockAvatarAwardForAllPlayers_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockAvatarAwardForAllPlayers(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockCustomization_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockCustomization(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockCustomizationFromRewardPool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UnlockCustomizationFromRewardPool(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UpgradeSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UpgradeSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UseObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_UseObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_VoGScreenParticle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_VoGScreenParticle(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponBoneControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponBoneControl(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponGlowEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponGlowEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponsRestriction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponsRestriction(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponVisibleAmmoState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponVisibleAmmoState(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengesPanelDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChallengesPanelDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterCustomizationInfoCardGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterCustomizationInfoCardGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterCustomizationMenuGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterCustomizationMenuGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class ACharacterSelectCameraActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACharacterSelectCameraActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterSelectionCustomizationListGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterSelectionCustomizationListGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterSelectionGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterSelectionGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxLobbyLoadCharacter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxLobbyLoadCharacter(BL2SDK.UObject_Base):
+    pass
+
+
+class UConfirmCharacterLobbyGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UConfirmCharacterLobbyGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsDataProviderGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsDataProviderGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsLineDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsLineDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCreditsGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Player_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Player(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Vehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Vehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Assassin_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Assassin(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_BanditTech_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_BanditTech(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerA_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerA(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerB_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerB(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerC_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerC(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerD_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerD(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerE_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerE(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerF_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerF(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerG_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerG(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerH_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerH(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerI(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerJ_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerJ(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerK_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerK(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerL_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerL(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerM_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerM(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerN_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerN(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerO_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerO(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerP_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_ExtraPlayerP(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Hovercraft_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Hovercraft(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Mercenary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Mercenary(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Runner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Runner(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Siren_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Siren(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Soldier_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_Soldier(BL2SDK.UObject_Base):
+    pass
+
+
+class ADeathtrapActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADeathtrapActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class UDebugArrowComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDebugArrowComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AISetItemTossTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AISetItemTossTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UDesignerAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDesignerAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicBehaviorVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicBehaviorVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UEndOfGameGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEndOfGameGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovieInteractiveObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovieInteractiveObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelSignGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelSignGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFastTravelStationGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class AFixedMarker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFixedMarker(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAutoTestManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAutoTestManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_PlayerLeft_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_PlayerLeft(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SeamlessTravelComplete_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SeamlessTravelComplete(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerObserver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerObserver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGameMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGameMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalMapChangeMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalMapChangeMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_StartNewGameCinematics_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_StartNewGameCinematics(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAccessControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowAccessControl(BL2SDK.UObject_Base):
+    pass
+
+
+class USplitscreenHelper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USplitscreenHelper(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetworkOptionsGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetworkOptionsGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketplaceGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketplaceGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UMatchmakingLobbyGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMatchmakingLobbyGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontEndPlayerListGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontEndPlayerListGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxClikWidget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxClikWidget(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingList(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontendMenuGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFrontendMenuGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWillowScrollingListDataProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWillowScrollingListDataProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerListOwner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPlayerListOwner(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetworkOptionsGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetworkOptionsGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderMatchmaking_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderMatchmaking(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearch_DataStore_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearch_DataStore(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearch(BL2SDK.UObject_Base):
+    pass
+
+
+class UTestMapsListDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTestMapsListDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerDetailsGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerDetailsGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerDetailsGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerDetailsGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UGammaScreenGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGammaScreenGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGammaScreenGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGammaScreenGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxAccountGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxAccountGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovieMissionStatus_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxMovieMissionStatus(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxTextListContent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGFxTextListContent(BL2SDK.UObject_Base):
+    pass
+
+
+class UGraveyardGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGraveyardGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UHealthBarGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHealthBarGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLevelTimerDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLevelTimerDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDScaleGuideGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHUDScaleGuideGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAIBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAIBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGFxMenuScreenTickable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGFxMenuScreenTickable(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHijackBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIHijackBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputBindingsClipGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInputBindingsClipGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstanceDataContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstanceDataContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryAttributeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryAttributeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryDefinitionAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryDefinitionAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineExGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineExGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UIUISubMenuNavigation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIUISubMenuNavigation(BL2SDK.UObject_Base):
+    pass
+
+
+class ULANServerBrowserGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULANServerBrowserGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class ULatentRewardGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULatentRewardGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionRewardGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMissionRewardGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelStreamingVolumeDynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelStreamingVolumeDynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelTransitionGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelTransitionGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelTransitionSignGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelTransitionSignGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class ALiftActionSkill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALiftActionSkill(BL2SDK.UObject_Base):
+    pass
+
+
+class ULoadCharacterLobbyGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULoadCharacterLobbyGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketplaceGFxMovieDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMarketplaceGFxMovieDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMatchmakingLobbyCharacterInfoGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMatchmakingLobbyCharacterInfoGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UMatchmakingLobbyResultsGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMatchmakingLobbyResultsGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UMechromancerInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMechromancerInputContextSelector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMercenaryInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMercenaryInputContextSelector(BL2SDK.UObject_Base):
+    pass
+
+
+class UOpenedChestMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOpenedChestMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderOptionsBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderOptionsBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UOptionsGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOptionsGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderTopLevelOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderTopLevelOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UPauseGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPauseGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UPCContextMenuObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPCContextMenuObject(BL2SDK.UObject_Base):
+    pass
+
+
+class APlaceableDynamicSMActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlaceableDynamicSMActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehaviorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehaviorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_CameraAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_CameraAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_DropItems_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_DropItems(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ForceFeedback_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ForceFeedback(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_Melee_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_Melee(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_PlayEchoCall_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_PlayEchoCall(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_RegisterFastTravelStation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_RegisterFastTravelStation(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_Reload_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_Reload(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_SetCurrentProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_SetCurrentProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_SpawnCurrentProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_SpawnCurrentProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_SpawnTeleporter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_SpawnTeleporter(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ThrowGrenade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ThrowGrenade(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ToggleMeleeWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ToggleMeleeWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ToggleRevive_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ToggleRevive(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_UnlockAchievement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_UnlockAchievement(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_UnlockAchievementForAllPlayers_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_UnlockAchievementForAllPlayers(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ViewShake_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerBehavior_ViewShake(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIProvoke_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIProvoke(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedHold_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedHold(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedFollow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedFollow(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedDeath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AIScriptedDeath(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AICombatVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AICombatVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_Attach_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_Attach(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_Detonate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_Detonate(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_FindHomingTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_FindHomingTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_LevelOff_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_LevelOff(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetDamageTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetDamageTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetExplosionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetExplosionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetHomingTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetHomingTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetProximity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetProximity(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetSpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetSpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetStickyGrenade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_SetStickyGrenade(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_TagPayloadType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileBehavior_TagPayloadType(BL2SDK.UObject_Base):
+    pass
+
+
+class AProximityActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AProximityActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UPS3InvitesPopupGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPS3InvitesPopupGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UQuestAcceptGFxDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UQuestAcceptGFxDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UReferenceSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReferenceSet(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolAttributeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolAttributeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetInstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetInstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SpawnedMissionPickup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SpawnedMissionPickup(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldBarGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShieldBarGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class ASimpleVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASimpleVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class USirenInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USirenInputContextSelector(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillPointsFeedbackMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkillPointsFeedbackMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class USoldierInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USoldierInputContextSelector(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_WeaponAction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_WeaponAction(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstAndThirdPersonAnimation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstAndThirdPersonAnimation(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstPersonOffHand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_FirstPersonOffHand(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_JumpAnimStart_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_JumpAnimStart(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_JumpAnimIdle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_JumpAnimIdle(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_JumpAnimStop_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_JumpAnimStop(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_WeaponActionOffHand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpecialMove_WeaponActionOffHand(BL2SDK.UObject_Base):
+    pass
+
+
+class UStashGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStashGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuEquippedPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStatusMenuEquippedPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingOffersPanelGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTradingOffersPanelGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UTurretWeaponTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTurretWeaponTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UUBMGameOverGFxMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUBMGameOverGFxMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UUBMGameOverGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUBMGameOverGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleChoiceInfoCardGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleChoiceInfoCardGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleFamilySelectorGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleFamilySelectorGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleWeaponTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleWeaponTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineFeedbackGFxObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVendingMachineFeedbackGFxObject(BL2SDK.UObject_Base):
+    pass
+
+
+class AWeaponShotDebug_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWeaponShotDebug(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWeaponShotDebugPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWeaponShotDebug))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UWillowAIEncounterComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAIEncounterComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Audio_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowAnimNode_Audio(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPickupMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowPickupMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowConsole_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowConsole(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageType_Bullet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDamageType_Bullet(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_MeleeWithBlade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgSource_MeleeWithBlade(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgType_VehicleCollision_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowDmgType_VehicleCollision(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmit_BodyFlame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmit_BodyFlame(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmitterPool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowEmitterPool(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPendingLevelPlayerController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPendingLevelPlayerController(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxBuddyPlane_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxBuddyPlane(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxEditDialog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxEditDialog(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxLobbyTools_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxLobbyTools(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxTrainingDialogBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxTrainingDialogBox(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxTrainingDialogBox_NoPause_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowGFxTrainingDialogBox_NoPause(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInteractiveObjectAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInteractiveObjectAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryManagerAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryManagerAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLANGameSearch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLANGameSearch(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLockWarningMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowLockWarningMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AILookAt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_AILookAt(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchSpecific_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchSpecific(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchNarrow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchNarrow(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchBroad_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchBroad(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchCustom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowOnlineGameSearchCustom(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTeleporterExitPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTeleporterExitPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_DuelChallengeIssued_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_DuelChallengeIssued(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_DuelChallengeAccepted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_DuelChallengeAccepted(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PlayArmAnimation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_PlayArmAnimation(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationEncounter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowPopulationEncounter(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedInventoryManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowReplicatedInventoryManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderApplyRequiredOption_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderApplyRequiredOption(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderAudioOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderAudioOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderExtras_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderExtras(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderFrontEnd_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderFrontEnd(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderGameOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderGameOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderGamepadOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderGamepadOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderKeyboardMouseOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderKeyboardMouseOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderLobby_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderLobby(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderMapList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderMapList(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderPause_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderPause(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderResolutionOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderResolutionOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderVideoOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderVideoOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderWindowModeOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowScrollingListDataProviderWindowModeOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_BossBar_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_BossBar(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CleanUpPlayerVehicles_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CleanUpPlayerVehicles(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ClientFlagGet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ClientFlagGet(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ClientFlagSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ClientFlagSet(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CloseColiseumOverlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_CloseColiseumOverlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumAllDead_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumAllDead(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumAwardCertificate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumAwardCertificate(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumNotify_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumNotify(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumRoundAnnounce_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumRoundAnnounce(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumRuleAnnounce_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumRuleAnnounce(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumStartTimer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumStartTimer(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumVictory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ColiseumVictory(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ExitVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_ExitVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_KillPawnBasedOnAllegiance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_KillPawnBasedOnAllegiance(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MarkPlaythroughCompleted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_MarkPlaythroughCompleted(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_NotifyDesignerAttribute_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_NotifyDesignerAttribute(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_OpenColiseumOverlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_OpenColiseumOverlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_UpdateColiseumRuleOverlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqAct_UpdateColiseumRuleOverlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_CounterAtTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSeqEvent_CounterAtTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LeftLowerEyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LeftLowerEyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LeftUpperEyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_LeftUpperEyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RightLowerEyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RightLowerEyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RightUpperEyelidLook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowSkelControl_RightUpperEyelidLook(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTeleporter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowTeleporter(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcCombat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowTI_CalcCombat(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_Turret_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowVehicle_Turret(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVersusDuelBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowVersusDuelBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BikeMove_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAction_BikeMove(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeSkillBehaviorSequenceState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeSkillBehaviorSequenceState(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetVelocity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_GetVelocity(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IncrementOverpowerLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_IncrementOverpowerLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ReviveInjuredPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ReviveInjuredPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAkRTPCValue_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetAkRTPCValue(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDemigodMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetDemigodMode(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkillDefinitionForInjuredStrings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkillDefinitionForInjuredStrings(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowPullThePinNotification_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ShowPullThePinNotification(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SkillCustomEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SkillCustomEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponThrow_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_WeaponThrow(BL2SDK.UObject_Base):
+    pass
+
+
+class UBuzzaxeWeaponTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBuzzaxeWeaponTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_FanBoat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomizationUsage_FanBoat(BL2SDK.UObject_Base):
+    pass
+
+
+class UPsychoInputContextSelector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPsychoInputContextSelector(BL2SDK.UObject_Base):
+    pass
 
 def init():
     UAchievementUtility_Data._fields_ = []

@@ -2,118 +2,6 @@ from ctypes import *
 import BL2SDK
 
 
-class AGamePawn_Data(Structure):
-    pass
-
-
-class AGamePawn(Structure):
-    pass
-
-
-class AGamePlayerController_Data(Structure):
-    pass
-
-
-class AGamePlayerController(Structure):
-    pass
-
-
-class UGameTypes_Data(Structure):
-    pass
-
-
-class UGameTypes(Structure):
-    pass
-
-
-class UNavMeshGoal_OutOfViewFrom_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_OutOfViewFrom(Structure):
-    pass
-
-
-class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Data(Structure):
-    pass
-
-
-class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(Structure):
-    pass
-
-
-class USeqAct_ControlGameMovie_Data(Structure):
-    pass
-
-
-class USeqAct_ControlGameMovie(Structure):
-    pass
-
-
-class USeqAct_Deproject_Data(Structure):
-    pass
-
-
-class USeqAct_Deproject(Structure):
-    pass
-
-
-class USeqAct_ModifyProperty_Data(Structure):
-    pass
-
-
-class USeqAct_ModifyProperty(Structure):
-    pass
-
-
-class UGameSkelCtrl_Recoil_Data(Structure):
-    pass
-
-
-class UGameSkelCtrl_Recoil(Structure):
-    pass
-
-
-class UGameStateObject_Data(Structure):
-    pass
-
-
-class UGameStateObject(Structure):
-    pass
-
-
-class UGameStatsAggregator_Data(Structure):
-    pass
-
-
-class UGameStatsAggregator(Structure):
-    pass
-
-
-class UGameWaveForms_Data(Structure):
-    pass
-
-
-class UGameWaveForms(Structure):
-    pass
-
-
-class APlayerCollectorGame_Data(Structure):
-    pass
-
-
-class APlayerCollectorGame(Structure):
-    pass
-
-
-class UPMESTG_LeaveADecalBase_Data(Structure):
-    pass
-
-
-class UPMESTG_LeaveADecalBase(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -124,6 +12,116 @@ from ..classes.Base import *
 from ..classes.Core import *
 from ..classes.Engine import *
 
+class AGamePawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGamePawn(BL2SDK.UObject_Base):
+    pass
+
+
+class AGamePlayerController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGamePlayerController(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameTypes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameTypes(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_OutOfViewFrom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_OutOfViewFrom(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ControlGameMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ControlGameMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Deproject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Deproject(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyProperty_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyProperty(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameSkelCtrl_Recoil_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameSkelCtrl_Recoil(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameStateObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameStateObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameStatsAggregator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameStatsAggregator(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameWaveForms_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameWaveForms(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerCollectorGame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerCollectorGame(BL2SDK.UObject_Base):
+    pass
+
+
+class UPMESTG_LeaveADecalBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPMESTG_LeaveADecalBase(BL2SDK.UObject_Base):
+    pass
 
 def init():
 

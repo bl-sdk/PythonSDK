@@ -1,12703 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-
-class UIWorldBody_Data(Structure):
-    pass
-
-
-class UIWorldBody(Structure):
-    pass
-
-
-class AActor_Data(Structure):
-    pass
-
-
-class AActor(Structure):
-    pass
-
-
-class TArray_AActorPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(AActor))), ("Count", c_int), ("Max", c_int)]
-
-
-class AInfo_Data(Structure):
-    pass
-
-
-class AInfo(Structure):
-    pass
-
-
-class AZoneInfo_Data(Structure):
-    pass
-
-
-class AZoneInfo(Structure):
-    pass
-
-
-class AWorldInfo_Data(Structure):
-    pass
-
-
-class AWorldInfo(Structure):
-    pass
-
-
-class UDownloadableContentEnumerator_Data(Structure):
-    pass
-
-
-class UDownloadableContentEnumerator(Structure):
-    pass
-
-
-class UDownloadableContentManager_Data(Structure):
-    pass
-
-
-class UDownloadableContentManager(Structure):
-    pass
-
-
-class UDownloadableContentOfferEnumerator_Data(Structure):
-    pass
-
-
-class UDownloadableContentOfferEnumerator(Structure):
-    pass
-
-
-class UEngine_Data(Structure):
-    pass
-
-
-class UEngine(Structure):
-    pass
-
-
-class UGameEngine_Data(Structure):
-    pass
-
-
-class UGameEngine(Structure):
-    pass
-
-
-class UInGameAdManager_Data(Structure):
-    pass
-
-
-class UInGameAdManager(Structure):
-    pass
-
-
-class UEngineBaseTypes_Data(Structure):
-    pass
-
-
-class UEngineBaseTypes(Structure):
-    pass
-
-
-class ABrush_Data(Structure):
-    pass
-
-
-class ABrush(Structure):
-    pass
-
-
-class ABrushShape_Data(Structure):
-    pass
-
-
-class ABrushShape(Structure):
-    pass
-
-
-class AVolume_Data(Structure):
-    pass
-
-
-class AVolume(Structure):
-    pass
-
-
-class TArray_AVolumePtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(AVolume))), ("Count", c_int), ("Max", c_int)]
-
-
-class ABlockingVolume_Data(Structure):
-    pass
-
-
-class ABlockingVolume(Structure):
-    pass
-
-
-class ADynamicBlockingVolume_Data(Structure):
-    pass
-
-
-class ADynamicBlockingVolume(Structure):
-    pass
-
-
-class ACullDistanceVolume_Data(Structure):
-    pass
-
-
-class ACullDistanceVolume(Structure):
-    pass
-
-
-class ALevelGridVolume_Data(Structure):
-    pass
-
-
-class ALevelGridVolume(Structure):
-    pass
-
-
-class ALevelStreamingVolume_Data(Structure):
-    pass
-
-
-class ALevelStreamingVolume(Structure):
-    pass
-
-
-class TArray_ALevelStreamingVolumePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ALevelStreamingVolume))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ALightmassCharacterIndirectDetailVolume_Data(Structure):
-    pass
-
-
-class ALightmassCharacterIndirectDetailVolume(Structure):
-    pass
-
-
-class ALightmassImportanceVolume_Data(Structure):
-    pass
-
-
-class ALightmassImportanceVolume(Structure):
-    pass
-
-
-class AMassiveLODOverrideVolume_Data(Structure):
-    pass
-
-
-class AMassiveLODOverrideVolume(Structure):
-    pass
-
-
-class TArray_AMassiveLODOverrideVolumePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AMassiveLODOverrideVolume))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ANavMeshBoundsVolume_Data(Structure):
-    pass
-
-
-class ANavMeshBoundsVolume(Structure):
-    pass
-
-
-class APathBlockingVolume_Data(Structure):
-    pass
-
-
-class APathBlockingVolume(Structure):
-    pass
-
-
-class APhysicsVolume_Data(Structure):
-    pass
-
-
-class APhysicsVolume(Structure):
-    pass
-
-
-class ADefaultPhysicsVolume_Data(Structure):
-    pass
-
-
-class ADefaultPhysicsVolume(Structure):
-    pass
-
-
-class AGravityVolume_Data(Structure):
-    pass
-
-
-class AGravityVolume(Structure):
-    pass
-
-
-class ALadderVolume_Data(Structure):
-    pass
-
-
-class ALadderVolume(Structure):
-    pass
-
-
-class APortalVolume_Data(Structure):
-    pass
-
-
-class APortalVolume(Structure):
-    pass
-
-
-class TArray_APortalVolumePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(APortalVolume))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class APostProcessVolume_Data(Structure):
-    pass
-
-
-class APostProcessVolume(Structure):
-    pass
-
-
-class APrecomputedVisibilityOverrideVolume_Data(Structure):
-    pass
-
-
-class APrecomputedVisibilityOverrideVolume(Structure):
-    pass
-
-
-class APrecomputedVisibilityVolume_Data(Structure):
-    pass
-
-
-class APrecomputedVisibilityVolume(Structure):
-    pass
-
-
-class AReverbVolume_Data(Structure):
-    pass
-
-
-class AReverbVolume(Structure):
-    pass
-
-
-class AShadowRelevanceVolume_Data(Structure):
-    pass
-
-
-class AShadowRelevanceVolume(Structure):
-    pass
-
-
-class ATriggerVolume_Data(Structure):
-    pass
-
-
-class ATriggerVolume(Structure):
-    pass
-
-
-class ADynamicSMActor_Data(Structure):
-    pass
-
-
-class ADynamicSMActor(Structure):
-    pass
-
-
-class TArray_ADynamicSMActorPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ADynamicSMActor))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AInterpActor_Data(Structure):
-    pass
-
-
-class AInterpActor(Structure):
-    pass
-
-
-class AEmitterPool_Data(Structure):
-    pass
-
-
-class AEmitterPool(Structure):
-    pass
-
-
-class AGBXNavMesh_Data(Structure):
-    pass
-
-
-class AGBXNavMesh(Structure):
-    pass
-
-
-class AHUD_Data(Structure):
-    pass
-
-
-class AHUD(Structure):
-    pass
-
-
-class AIDestructibleObject_Data(Structure):
-    pass
-
-
-class AIDestructibleObject(Structure):
-    pass
-
-
-class AAutoTestManager_Data(Structure):
-    pass
-
-
-class AAutoTestManager(Structure):
-    pass
-
-
-class ACoverGroup_Data(Structure):
-    pass
-
-
-class ACoverGroup(Structure):
-    pass
-
-
-class AFileWriter_Data(Structure):
-    pass
-
-
-class AFileWriter(Structure):
-    pass
-
-
-class AFileLog_Data(Structure):
-    pass
-
-
-class AFileLog(Structure):
-    pass
-
-
-class AGameInfo_Data(Structure):
-    pass
-
-
-class AGameInfo(Structure):
-    pass
-
-
-class AMutator_Data(Structure):
-    pass
-
-
-class AMutator(Structure):
-    pass
-
-
-class APotentialClimbWatcher_Data(Structure):
-    pass
-
-
-class APotentialClimbWatcher(Structure):
-    pass
-
-
-class ARoute_Data(Structure):
-    pass
-
-
-class ARoute(Structure):
-    pass
-
-
-class AWindPointSource_Data(Structure):
-    pass
-
-
-class AWindPointSource(Structure):
-    pass
-
-
-class AKeypoint_Data(Structure):
-    pass
-
-
-class AKeypoint(Structure):
-    pass
-
-
-class ATargetPoint_Data(Structure):
-    pass
-
-
-class ATargetPoint(Structure):
-    pass
-
-
-class ALevelLandmark_Data(Structure):
-    pass
-
-
-class ALevelLandmark(Structure):
-    pass
-
-
-class APersistentTransitionLandmark_Data(Structure):
-    pass
-
-
-class APersistentTransitionLandmark(Structure):
-    pass
-
-
-class AMaterialInstanceActor_Data(Structure):
-    pass
-
-
-class AMaterialInstanceActor(Structure):
-    pass
-
-
-class AMatineeActor_Data(Structure):
-    pass
-
-
-class AMatineeActor(Structure):
-    pass
-
-
-class ANavigationPoint_Data(Structure):
-    pass
-
-
-class ANavigationPoint(Structure):
-    pass
-
-
-class TArray_ANavigationPointPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ANavigationPoint))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ACoverLink_Data(Structure):
-    pass
-
-
-class ACoverLink(Structure):
-    pass
-
-
-class TArray_ACoverLinkPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ACoverLink))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ADoorMarker_Data(Structure):
-    pass
-
-
-class ADoorMarker(Structure):
-    pass
-
-
-class ADynamicAnchor_Data(Structure):
-    pass
-
-
-class ADynamicAnchor(Structure):
-    pass
-
-
-class ALadder_Data(Structure):
-    pass
-
-
-class ALadder(Structure):
-    pass
-
-
-class AAutoLadder_Data(Structure):
-    pass
-
-
-class AAutoLadder(Structure):
-    pass
-
-
-class ALiftCenter_Data(Structure):
-    pass
-
-
-class ALiftCenter(Structure):
-    pass
-
-
-class ALiftExit_Data(Structure):
-    pass
-
-
-class ALiftExit(Structure):
-    pass
-
-
-class APathNode_Data(Structure):
-    pass
-
-
-class APathNode(Structure):
-    pass
-
-
-class AVolumePathNode_Data(Structure):
-    pass
-
-
-class AVolumePathNode(Structure):
-    pass
-
-
-class APickupFactory_Data(Structure):
-    pass
-
-
-class APickupFactory(Structure):
-    pass
-
-
-class APlayerStart_Data(Structure):
-    pass
-
-
-class APlayerStart(Structure):
-    pass
-
-
-class APortalMarker_Data(Structure):
-    pass
-
-
-class APortalMarker(Structure):
-    pass
-
-
-class APylon_Data(Structure):
-    pass
-
-
-class APylon(Structure):
-    pass
-
-
-class TArray_APylonPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(APylon))), ("Count", c_int), ("Max", c_int)]
-
-
-class AAISwitchablePylon_Data(Structure):
-    pass
-
-
-class AAISwitchablePylon(Structure):
-    pass
-
-
-class ADynamicPylon_Data(Structure):
-    pass
-
-
-class ADynamicPylon(Structure):
-    pass
-
-
-class ATeleporter_Data(Structure):
-    pass
-
-
-class ATeleporter(Structure):
-    pass
-
-
-class ANote_Data(Structure):
-    pass
-
-
-class ANote(Structure):
-    pass
-
-
-class AProjectile_Data(Structure):
-    pass
-
-
-class AProjectile(Structure):
-    pass
-
-
-class ARigidBodyBase_Data(Structure):
-    pass
-
-
-class ARigidBodyBase(Structure):
-    pass
-
-
-class ASceneCaptureActor_Data(Structure):
-    pass
-
-
-class ASceneCaptureActor(Structure):
-    pass
-
-
-class ASceneCapture2DActor_Data(Structure):
-    pass
-
-
-class ASceneCapture2DActor(Structure):
-    pass
-
-
-class ASceneCaptureCubeMapActor_Data(Structure):
-    pass
-
-
-class ASceneCaptureCubeMapActor(Structure):
-    pass
-
-
-class ASceneCaptureReflectActor_Data(Structure):
-    pass
-
-
-class ASceneCaptureReflectActor(Structure):
-    pass
-
-
-class ASceneCapturePortalActor_Data(Structure):
-    pass
-
-
-class ASceneCapturePortalActor(Structure):
-    pass
-
-
-class APortalTeleporter_Data(Structure):
-    pass
-
-
-class APortalTeleporter(Structure):
-    pass
-
-
-class TArray_APortalTeleporterPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(APortalTeleporter))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AStaticMeshActorBase_Data(Structure):
-    pass
-
-
-class AStaticMeshActorBase(Structure):
-    pass
-
-
-class ABlockingMeshCollectionActor_Data(Structure):
-    pass
-
-
-class ABlockingMeshCollectionActor(Structure):
-    pass
-
-
-class AStaticMeshActor_Data(Structure):
-    pass
-
-
-class AStaticMeshActor(Structure):
-    pass
-
-
-class AStaticMeshCollectionActor_Data(Structure):
-    pass
-
-
-class AStaticMeshCollectionActor(Structure):
-    pass
-
-
-class AStaticMeshActorBasedOnExtremeContent_Data(Structure):
-    pass
-
-
-class AStaticMeshActorBasedOnExtremeContent(Structure):
-    pass
-
-
-class ATeleporterDestination_Data(Structure):
-    pass
-
-
-class ATeleporterDestination(Structure):
-    pass
-
-
-class ATrigger_Data(Structure):
-    pass
-
-
-class ATrigger(Structure):
-    pass
-
-
-class TArray_ATriggerPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(ATrigger))), ("Count", c_int), ("Max", c_int)]
-
-
-class ATrigger_PawnsOnly_Data(Structure):
-    pass
-
-
-class ATrigger_PawnsOnly(Structure):
-    pass
-
-
-class UActorComponent_Data(Structure):
-    pass
-
-
-class UActorComponent(Structure):
-    pass
-
-
-class TArray_UActorComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UActorComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAkComponent_Data(Structure):
-    pass
-
-
-class UAkComponent(Structure):
-    pass
-
-
-class TArray_UAkComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAkComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAudioComponent_Data(Structure):
-    pass
-
-
-class UAudioComponent(Structure):
-    pass
-
-
-class TArray_UAudioComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAudioComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UHeightFogComponent_Data(Structure):
-    pass
-
-
-class UHeightFogComponent(Structure):
-    pass
-
-
-class UPrimitiveComponent_Data(Structure):
-    pass
-
-
-class UPrimitiveComponent(Structure):
-    pass
-
-
-class TArray_UPrimitiveComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPrimitiveComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UArrowComponent_Data(Structure):
-    pass
-
-
-class UArrowComponent(Structure):
-    pass
-
-
-class UBrushComponent_Data(Structure):
-    pass
-
-
-class UBrushComponent(Structure):
-    pass
-
-
-class UCameraConeComponent_Data(Structure):
-    pass
-
-
-class UCameraConeComponent(Structure):
-    pass
-
-
-class UCylinderComponent_Data(Structure):
-    pass
-
-
-class UCylinderComponent(Structure):
-    pass
-
-
-class TArray_UCylinderComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UCylinderComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USphereComponent_Data(Structure):
-    pass
-
-
-class USphereComponent(Structure):
-    pass
-
-
-class UDrawBoxComponent_Data(Structure):
-    pass
-
-
-class UDrawBoxComponent(Structure):
-    pass
-
-
-class UDrawCapsuleComponent_Data(Structure):
-    pass
-
-
-class UDrawCapsuleComponent(Structure):
-    pass
-
-
-class UDrawConeComponent_Data(Structure):
-    pass
-
-
-class UDrawConeComponent(Structure):
-    pass
-
-
-class UDrawCylinderComponent_Data(Structure):
-    pass
-
-
-class UDrawCylinderComponent(Structure):
-    pass
-
-
-class UDrawFrustumComponent_Data(Structure):
-    pass
-
-
-class UDrawFrustumComponent(Structure):
-    pass
-
-
-class UDrawQuadComponent_Data(Structure):
-    pass
-
-
-class UDrawQuadComponent(Structure):
-    pass
-
-
-class UDrawSphereComponent_Data(Structure):
-    pass
-
-
-class UDrawSphereComponent(Structure):
-    pass
-
-
-class UDrawPylonRadiusComponent_Data(Structure):
-    pass
-
-
-class UDrawPylonRadiusComponent(Structure):
-    pass
-
-
-class UDrawSoundRadiusComponent_Data(Structure):
-    pass
-
-
-class UDrawSoundRadiusComponent(Structure):
-    pass
-
-
-class UGBXNavMeshRenderingComponent_Data(Structure):
-    pass
-
-
-class UGBXNavMeshRenderingComponent(Structure):
-    pass
-
-
-class ULevelGridVolumeRenderingComponent_Data(Structure):
-    pass
-
-
-class ULevelGridVolumeRenderingComponent(Structure):
-    pass
-
-
-class ULineBatchComponent_Data(Structure):
-    pass
-
-
-class ULineBatchComponent(Structure):
-    pass
-
-
-class UModelComponent_Data(Structure):
-    pass
-
-
-class UModelComponent(Structure):
-    pass
-
-
-class USocketComponent_Data(Structure):
-    pass
-
-
-class USocketComponent(Structure):
-    pass
-
-
-class UHomingTargetComponent_Data(Structure):
-    pass
-
-
-class UHomingTargetComponent(Structure):
-    pass
-
-
-class USpriteComponent_Data(Structure):
-    pass
-
-
-class USpriteComponent(Structure):
-    pass
-
-
-class USpriteRTTComponent_Data(Structure):
-    pass
-
-
-class USpriteRTTComponent(Structure):
-    pass
-
-
-class URadialBlurComponent_Data(Structure):
-    pass
-
-
-class URadialBlurComponent(Structure):
-    pass
-
-
-class USceneCaptureComponent_Data(Structure):
-    pass
-
-
-class USceneCaptureComponent(Structure):
-    pass
-
-
-class USceneCapture2DComponent_Data(Structure):
-    pass
-
-
-class USceneCapture2DComponent(Structure):
-    pass
-
-
-class USceneCapture2DHitMaskComponent_Data(Structure):
-    pass
-
-
-class USceneCapture2DHitMaskComponent(Structure):
-    pass
-
-
-class USceneCaptureCubeMapComponent_Data(Structure):
-    pass
-
-
-class USceneCaptureCubeMapComponent(Structure):
-    pass
-
-
-class USceneCapturePortalComponent_Data(Structure):
-    pass
-
-
-class USceneCapturePortalComponent(Structure):
-    pass
-
-
-class USceneCaptureReflectComponent_Data(Structure):
-    pass
-
-
-class USceneCaptureReflectComponent(Structure):
-    pass
-
-
-class UWindDirectionalSourceComponent_Data(Structure):
-    pass
-
-
-class UWindDirectionalSourceComponent(Structure):
-    pass
-
-
-class UWindPointSourceComponent_Data(Structure):
-    pass
-
-
-class UWindPointSourceComponent(Structure):
-    pass
-
-
-class UActorFactory_Data(Structure):
-    pass
-
-
-class UActorFactory(Structure):
-    pass
-
-
-class UActorFactoryActor_Data(Structure):
-    pass
-
-
-class UActorFactoryActor(Structure):
-    pass
-
-
-class UActorFactoryAI_Data(Structure):
-    pass
-
-
-class UActorFactoryAI(Structure):
-    pass
-
-
-class UActorFactoryApexDestructible_Data(Structure):
-    pass
-
-
-class UActorFactoryApexDestructible(Structure):
-    pass
-
-
-class UActorFactoryArchetype_Data(Structure):
-    pass
-
-
-class UActorFactoryArchetype(Structure):
-    pass
-
-
-class UActorFactoryCoverLink_Data(Structure):
-    pass
-
-
-class UActorFactoryCoverLink(Structure):
-    pass
-
-
-class UActorFactoryDominantDirectionalLight_Data(Structure):
-    pass
-
-
-class UActorFactoryDominantDirectionalLight(Structure):
-    pass
-
-
-class UActorFactoryDominantDirectionalLightMovable_Data(Structure):
-    pass
-
-
-class UActorFactoryDominantDirectionalLightMovable(Structure):
-    pass
-
-
-class UActorFactoryDynamicSM_Data(Structure):
-    pass
-
-
-class UActorFactoryDynamicSM(Structure):
-    pass
-
-
-class UActorFactoryMover_Data(Structure):
-    pass
-
-
-class UActorFactoryMover(Structure):
-    pass
-
-
-class UActorFactoryRigidBody_Data(Structure):
-    pass
-
-
-class UActorFactoryRigidBody(Structure):
-    pass
-
-
-class UActorFactoryEmitter_Data(Structure):
-    pass
-
-
-class UActorFactoryEmitter(Structure):
-    pass
-
-
-class UActorFactoryLensFlare_Data(Structure):
-    pass
-
-
-class UActorFactoryLensFlare(Structure):
-    pass
-
-
-class UActorFactoryLight_Data(Structure):
-    pass
-
-
-class UActorFactoryLight(Structure):
-    pass
-
-
-class UActorFactoryPathNode_Data(Structure):
-    pass
-
-
-class UActorFactoryPathNode(Structure):
-    pass
-
-
-class UActorFactoryPhysicsAsset_Data(Structure):
-    pass
-
-
-class UActorFactoryPhysicsAsset(Structure):
-    pass
-
-
-class UActorFactoryPlayerStart_Data(Structure):
-    pass
-
-
-class UActorFactoryPlayerStart(Structure):
-    pass
-
-
-class UActorFactoryPylon_Data(Structure):
-    pass
-
-
-class UActorFactoryPylon(Structure):
-    pass
-
-
-class UActorFactorySkeletalMesh_Data(Structure):
-    pass
-
-
-class UActorFactorySkeletalMesh(Structure):
-    pass
-
-
-class UActorFactoryStaticMesh_Data(Structure):
-    pass
-
-
-class UActorFactoryStaticMesh(Structure):
-    pass
-
-
-class UActorFactoryTrigger_Data(Structure):
-    pass
-
-
-class UActorFactoryTrigger(Structure):
-    pass
-
-
-class UActorFactoryVehicle_Data(Structure):
-    pass
-
-
-class UActorFactoryVehicle(Structure):
-    pass
-
-
-class UActorFactoryCustomPropertyEditorDelegate_Data(Structure):
-    pass
-
-
-class UActorFactoryCustomPropertyEditorDelegate(Structure):
-    pass
-
-
-class UAkAudioDevice_Data(Structure):
-    pass
-
-
-class UAkAudioDevice(Structure):
-    pass
-
-
-class UAkBaseSoundObject_Data(Structure):
-    pass
-
-
-class UAkBaseSoundObject(Structure):
-    pass
-
-
-class USoundCue_Data(Structure):
-    pass
-
-
-class USoundCue(Structure):
-    pass
-
-
-class TArray_USoundCuePtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(USoundCue))), ("Count", c_int), ("Max", c_int)]
-
-
-class UAkObject_Data(Structure):
-    pass
-
-
-class UAkObject(Structure):
-    pass
-
-
-class UAkBank_Data(Structure):
-    pass
-
-
-class UAkBank(Structure):
-    pass
-
-
-class UAkDialogueEvent_Data(Structure):
-    pass
-
-
-class UAkDialogueEvent(Structure):
-    pass
-
-
-class UAkEffect_Data(Structure):
-    pass
-
-
-class UAkEffect(Structure):
-    pass
-
-
-class UAkEvent_Data(Structure):
-    pass
-
-
-class UAkEvent(Structure):
-    pass
-
-
-class TArray_UAkEventPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(UAkEvent))), ("Count", c_int), ("Max", c_int)]
-
-
-class UAkRtpc_Data(Structure):
-    pass
-
-
-class UAkRtpc(Structure):
-    pass
-
-
-class UAkState_Data(Structure):
-    pass
-
-
-class UAkState(Structure):
-    pass
-
-
-class UAkStateGroup_Data(Structure):
-    pass
-
-
-class UAkStateGroup(Structure):
-    pass
-
-
-class UAkSwitch_Data(Structure):
-    pass
-
-
-class UAkSwitch(Structure):
-    pass
-
-
-class UAkSwitchGroup_Data(Structure):
-    pass
-
-
-class UAkSwitchGroup(Structure):
-    pass
-
-
-class UAkTrigger_Data(Structure):
-    pass
-
-
-class UAkTrigger(Structure):
-    pass
-
-
-class UBookMark_Data(Structure):
-    pass
-
-
-class UBookMark(Structure):
-    pass
-
-
-class UBookMark2D_Data(Structure):
-    pass
-
-
-class UBookMark2D(Structure):
-    pass
-
-
-class UKismetBookMark_Data(Structure):
-    pass
-
-
-class UKismetBookMark(Structure):
-    pass
-
-
-class UCanvas_Data(Structure):
-    pass
-
-
-class UCanvas(Structure):
-    pass
-
-
-class UChannel_Data(Structure):
-    pass
-
-
-class UChannel(Structure):
-    pass
-
-
-class UActorChannel_Data(Structure):
-    pass
-
-
-class UActorChannel(Structure):
-    pass
-
-
-class UControlChannel_Data(Structure):
-    pass
-
-
-class UControlChannel(Structure):
-    pass
-
-
-class UFileChannel_Data(Structure):
-    pass
-
-
-class UFileChannel(Structure):
-    pass
-
-
-class UVoiceChannel_Data(Structure):
-    pass
-
-
-class UVoiceChannel(Structure):
-    pass
-
-
-class AController_Data(Structure):
-    pass
-
-
-class AController(Structure):
-    pass
-
-
-class TArray_AControllerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AController))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class APlayerController_Data(Structure):
-    pass
-
-
-class APlayerController(Structure):
-    pass
-
-
-class TArray_APlayerControllerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(APlayerController))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCheatManager_Data(Structure):
-    pass
-
-
-class UCheatManager(Structure):
-    pass
-
-
-class UClient_Data(Structure):
-    pass
-
-
-class UClient(Structure):
-    pass
-
-
-class UClipPadEntry_Data(Structure):
-    pass
-
-
-class UClipPadEntry(Structure):
-    pass
-
-
-class UCodecMovie_Data(Structure):
-    pass
-
-
-class UCodecMovie(Structure):
-    pass
-
-
-class UCodecMovieBink_Data(Structure):
-    pass
-
-
-class UCodecMovieBink(Structure):
-    pass
-
-
-class UCodecMovieFallback_Data(Structure):
-    pass
-
-
-class UCodecMovieFallback(Structure):
-    pass
-
-
-class UCurveEdPresetCurve_Data(Structure):
-    pass
-
-
-class UCurveEdPresetCurve(Structure):
-    pass
-
-
-class UCustomPropertyItemHandler_Data(Structure):
-    pass
-
-
-class UCustomPropertyItemHandler(Structure):
-    pass
-
-
-class UDamageAdjuster_Data(Structure):
-    pass
-
-
-class UDamageAdjuster(Structure):
-    pass
-
-
-class UDamagePipeline_Data(Structure):
-    pass
-
-
-class UDamagePipeline(Structure):
-    pass
-
-
-class TArray_UDamagePipelinePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDamagePipeline))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDamageType_Data(Structure):
-    pass
-
-
-class UDamageType(Structure):
-    pass
-
-
-class UKillZDamageType_Data(Structure):
-    pass
-
-
-class UKillZDamageType(Structure):
-    pass
-
-
-class UDistributionFloatConstant_Data(Structure):
-    pass
-
-
-class UDistributionFloatConstant(Structure):
-    pass
-
-
-class UDistributionFloatParameterBase_Data(Structure):
-    pass
-
-
-class UDistributionFloatParameterBase(Structure):
-    pass
-
-
-class UDistributionFloatConstantCurve_Data(Structure):
-    pass
-
-
-class UDistributionFloatConstantCurve(Structure):
-    pass
-
-
-class UDistributionFloatUniform_Data(Structure):
-    pass
-
-
-class UDistributionFloatUniform(Structure):
-    pass
-
-
-class UDistributionFloatUniformCurve_Data(Structure):
-    pass
-
-
-class UDistributionFloatUniformCurve(Structure):
-    pass
-
-
-class UDistributionVectorConstant_Data(Structure):
-    pass
-
-
-class UDistributionVectorConstant(Structure):
-    pass
-
-
-class UDistributionVectorParameterBase_Data(Structure):
-    pass
-
-
-class UDistributionVectorParameterBase(Structure):
-    pass
-
-
-class UDistributionVectorConstantCurve_Data(Structure):
-    pass
-
-
-class UDistributionVectorConstantCurve(Structure):
-    pass
-
-
-class UDistributionVectorUniform_Data(Structure):
-    pass
-
-
-class UDistributionVectorUniform(Structure):
-    pass
-
-
-class UDistributionVectorUniformCurve_Data(Structure):
-    pass
-
-
-class UDistributionVectorUniformCurve(Structure):
-    pass
-
-
-class UDownload_Data(Structure):
-    pass
-
-
-class UDownload(Structure):
-    pass
-
-
-class UChannelDownload_Data(Structure):
-    pass
-
-
-class UChannelDownload(Structure):
-    pass
-
-
-class UEdCoordSystem_Data(Structure):
-    pass
-
-
-class UEdCoordSystem(Structure):
-    pass
-
-
-class UEditorLinkSelectionInterface_Data(Structure):
-    pass
-
-
-class UEditorLinkSelectionInterface(Structure):
-    pass
-
-
-class UEngineTypes_Data(Structure):
-    pass
-
-
-class UEngineTypes(Structure):
-    pass
-
-
-class UFacebookIntegration_Data(Structure):
-    pass
-
-
-class UFacebookIntegration(Structure):
-    pass
-
-
-class UFaceFXAnimSet_Data(Structure):
-    pass
-
-
-class UFaceFXAnimSet(Structure):
-    pass
-
-
-class TArray_UFaceFXAnimSetPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UFaceFXAnimSet))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UFaceFXAsset_Data(Structure):
-    pass
-
-
-class UFaceFXAsset(Structure):
-    pass
-
-
-class UFont_Data(Structure):
-    pass
-
-
-class UFont(Structure):
-    pass
-
-
-class TArray_UFontPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(UFont))), ("Count", c_int), ("Max", c_int)]
-
-
-class UMultiFont_Data(Structure):
-    pass
-
-
-class UMultiFont(Structure):
-    pass
-
-
-class UFontImportOptions_Data(Structure):
-    pass
-
-
-class UFontImportOptions(Structure):
-    pass
-
-
-class UForceFeedbackManager_Data(Structure):
-    pass
-
-
-class UForceFeedbackManager(Structure):
-    pass
-
-
-class UForceFeedbackWaveform_Data(Structure):
-    pass
-
-
-class UForceFeedbackWaveform(Structure):
-    pass
-
-
-class UGameplayEvents_Data(Structure):
-    pass
-
-
-class UGameplayEvents(Structure):
-    pass
-
-
-class UGameplayEventsReader_Data(Structure):
-    pass
-
-
-class UGameplayEventsReader(Structure):
-    pass
-
-
-class UGameplayEventsWriter_Data(Structure):
-    pass
-
-
-class UGameplayEventsWriter(Structure):
-    pass
-
-
-class UGameplayEventsHandler_Data(Structure):
-    pass
-
-
-class UGameplayEventsHandler(Structure):
-    pass
-
-
-class TArray_UGameplayEventsHandlerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UGameplayEventsHandler))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGameViewportClient_Data(Structure):
-    pass
-
-
-class UGameViewportClient(Structure):
-    pass
-
-
-class UGBXCrossLevelReferenceContainer_Data(Structure):
-    pass
-
-
-class UGBXCrossLevelReferenceContainer(Structure):
-    pass
-
-
-class TArray_UGBXCrossLevelReferenceContainerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UGBXCrossLevelReferenceContainer))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGBXDefinition_Data(Structure):
-    pass
-
-
-class UGBXDefinition(Structure):
-    pass
-
-
-class TArray_UGBXDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UGBXDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBaseHitRegionDefinition_Data(Structure):
-    pass
-
-
-class UBaseHitRegionDefinition(Structure):
-    pass
-
-
-class UDamageTypeDefinition_Data(Structure):
-    pass
-
-
-class UDamageTypeDefinition(Structure):
-    pass
-
-
-class TArray_UDamageTypeDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDamageTypeDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UEngineInteractionIconDefinition_Data(Structure):
-    pass
-
-
-class UEngineInteractionIconDefinition(Structure):
-    pass
-
-
-class UPawnAllegiance_Data(Structure):
-    pass
-
-
-class UPawnAllegiance(Structure):
-    pass
-
-
-class TArray_UPawnAllegiancePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPawnAllegiance))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPawnInteractionDefinition_Data(Structure):
-    pass
-
-
-class UPawnInteractionDefinition(Structure):
-    pass
-
-
-class UGBXNavMeshPathModifier_Data(Structure):
-    pass
-
-
-class UGBXNavMeshPathModifier(Structure):
-    pass
-
-
-class TArray_UGBXNavMeshPathModifierPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UGBXNavMeshPathModifier))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGBXNavMeshPathModifier_Simplify_Data(Structure):
-    pass
-
-
-class UGBXNavMeshPathModifier_Simplify(Structure):
-    pass
-
-
-class UGBXNavMeshPathModifier_SmoothTurns_Data(Structure):
-    pass
-
-
-class UGBXNavMeshPathModifier_SmoothTurns(Structure):
-    pass
-
-
-class UGearboxEngineGlobals_Data(Structure):
-    pass
-
-
-class UGearboxEngineGlobals(Structure):
-    pass
-
-
-class UGenericParamListStatEntry_Data(Structure):
-    pass
-
-
-class UGenericParamListStatEntry(Structure):
-    pass
-
-
-class UGuidCache_Data(Structure):
-    pass
-
-
-class UGuidCache(Structure):
-    pass
-
-
-class UIAnimBehavior_Data(Structure):
-    pass
-
-
-class UIAnimBehavior(Structure):
-    pass
-
-
-class UIAttributeSlotEffectProvider_Data(Structure):
-    pass
-
-
-class UIAttributeSlotEffectProvider(Structure):
-    pass
-
-
-class UIBalancedActor_Data(Structure):
-    pass
-
-
-class UIBalancedActor(Structure):
-    pass
-
-
-class UIBodyCompositionInstance_Data(Structure):
-    pass
-
-
-class UIBodyCompositionInstance(Structure):
-    pass
-
-
-class UIBodyInfoProvider_Data(Structure):
-    pass
-
-
-class UIBodyInfoProvider(Structure):
-    pass
-
-
-class UIDamageCauser_Data(Structure):
-    pass
-
-
-class UIDamageCauser(Structure):
-    pass
-
-
-class UIDialogBox_Data(Structure):
-    pass
-
-
-class UIDialogBox(Structure):
-    pass
-
-
-class UIFaceFXActor_Data(Structure):
-    pass
-
-
-class UIFaceFXActor(Structure):
-    pass
-
-
-class UIGBXNavMeshBuildEvents_Data(Structure):
-    pass
-
-
-class UIGBXNavMeshBuildEvents(Structure):
-    pass
-
-
-class UIGBXNavMeshSeed_Data(Structure):
-    pass
-
-
-class UIGBXNavMeshSeed(Structure):
-    pass
-
-
-class UIGBXNavMeshSpecialMove_Data(Structure):
-    pass
-
-
-class UIGBXNavMeshSpecialMove(Structure):
-    pass
-
-
-class UIKilledBehavior_Data(Structure):
-    pass
-
-
-class UIKilledBehavior(Structure):
-    pass
-
-
-class UIniLocPatcher_Data(Structure):
-    pass
-
-
-class UIniLocPatcher(Structure):
-    pass
-
-
-class UInterface_NavigationHandle_Data(Structure):
-    pass
-
-
-class UInterface_NavigationHandle(Structure):
-    pass
-
-
-class UInterface_Speaker_Data(Structure):
-    pass
-
-
-class UInterface_Speaker(Structure):
-    pass
-
-
-class UInterpCurveEdSetup_Data(Structure):
-    pass
-
-
-class UInterpCurveEdSetup(Structure):
-    pass
-
-
-class UInterpTrack_Data(Structure):
-    pass
-
-
-class UInterpTrack(Structure):
-    pass
-
-
-class TArray_UInterpTrackPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInterpTrack))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UIResourcePoolProvider_Data(Structure):
-    pass
-
-
-class UIResourcePoolProvider(Structure):
-    pass
-
-
-class UISpawnActor_Data(Structure):
-    pass
-
-
-class UISpawnActor(Structure):
-    pass
-
-
-class UISpecialOcclusionProvider_Data(Structure):
-    pass
-
-
-class UISpecialOcclusionProvider(Structure):
-    pass
-
-
-class UITargetable_Data(Structure):
-    pass
-
-
-class UITargetable(Structure):
-    pass
-
-
-class UJsonObject_Data(Structure):
-    pass
-
-
-class UJsonObject(Structure):
-    pass
-
-
-class TArray_UJsonObjectPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UJsonObject))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UKMeshProps_Data(Structure):
-    pass
-
-
-class UKMeshProps(Structure):
-    pass
-
-
-class ULevelBase_Data(Structure):
-    pass
-
-
-class ULevelBase(Structure):
-    pass
-
-
-class ULevel_Data(Structure):
-    pass
-
-
-class ULevel(Structure):
-    pass
-
-
-class TArray_ULevelPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(ULevel))), ("Count", c_int), ("Max", c_int)]
-
-
-class UPendingLevel_Data(Structure):
-    pass
-
-
-class UPendingLevel(Structure):
-    pass
-
-
-class UDemoPlayPendingLevel_Data(Structure):
-    pass
-
-
-class UDemoPlayPendingLevel(Structure):
-    pass
-
-
-class UNetPendingLevel_Data(Structure):
-    pass
-
-
-class UNetPendingLevel(Structure):
-    pass
-
-
-class ULevelStreaming_Data(Structure):
-    pass
-
-
-class ULevelStreaming(Structure):
-    pass
-
-
-class TArray_ULevelStreamingPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULevelStreaming))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ULevelStreamingAlwaysLoaded_Data(Structure):
-    pass
-
-
-class ULevelStreamingAlwaysLoaded(Structure):
-    pass
-
-
-class ULevelStreamingDistance_Data(Structure):
-    pass
-
-
-class ULevelStreamingDistance(Structure):
-    pass
-
-
-class ULevelStreamingKismet_Data(Structure):
-    pass
-
-
-class ULevelStreamingKismet(Structure):
-    pass
-
-
-class ULevelStreamingPersistent_Data(Structure):
-    pass
-
-
-class ULevelStreamingPersistent(Structure):
-    pass
-
-
-class ULightmappedSurfaceCollection_Data(Structure):
-    pass
-
-
-class ULightmappedSurfaceCollection(Structure):
-    pass
-
-
-class ULightmassPrimitiveSettingsObject_Data(Structure):
-    pass
-
-
-class ULightmassPrimitiveSettingsObject(Structure):
-    pass
-
-
-class ULine_Data(Structure):
-    pass
-
-
-class ULine(Structure):
-    pass
-
-
-class TArray_ULinePtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(ULine))), ("Count", c_int), ("Max", c_int)]
-
-
-class ULineData_Data(Structure):
-    pass
-
-
-class ULineData(Structure):
-    pass
-
-
-class ULineSegment_Data(Structure):
-    pass
-
-
-class ULineSegment(Structure):
-    pass
-
-
-class TArray_ULineSegmentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULineSegment))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMapInfo_Data(Structure):
-    pass
-
-
-class UMapInfo(Structure):
-    pass
-
-
-class USurface_Data(Structure):
-    pass
-
-
-class USurface(Structure):
-    pass
-
-
-class UMaterialInterface_Data(Structure):
-    pass
-
-
-class UMaterialInterface(Structure):
-    pass
-
-
-class TArray_UMaterialInterfacePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMaterialInterface))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMaterial_Data(Structure):
-    pass
-
-
-class UMaterial(Structure):
-    pass
-
-
-class UMaterialExpression_Data(Structure):
-    pass
-
-
-class UMaterialExpression(Structure):
-    pass
-
-
-class TArray_UMaterialExpressionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMaterialExpression))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UModel_Data(Structure):
-    pass
-
-
-class UModel(Structure):
-    pass
-
-
-class UMusicTrackDataStructures_Data(Structure):
-    pass
-
-
-class UMusicTrackDataStructures(Structure):
-    pass
-
-
-class UNavigationMeshBase_Data(Structure):
-    pass
-
-
-class UNavigationMeshBase(Structure):
-    pass
-
-
-class UNetDriver_Data(Structure):
-    pass
-
-
-class UNetDriver(Structure):
-    pass
-
-
-class UDemoRecDriver_Data(Structure):
-    pass
-
-
-class UDemoRecDriver(Structure):
-    pass
-
-
-class UObjectReferencer_Data(Structure):
-    pass
-
-
-class UObjectReferencer(Structure):
-    pass
-
-
-class TArray_UObjectReferencerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UObjectReferencer))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UOnlineSubsystem_Data(Structure):
-    pass
-
-
-class UOnlineSubsystem(Structure):
-    pass
-
-
-class UOnlineAuthInterfaceBaseImpl_Data(Structure):
-    pass
-
-
-class UOnlineAuthInterfaceBaseImpl(Structure):
-    pass
-
-
-class UOnlineMatchmakingStats_Data(Structure):
-    pass
-
-
-class UOnlineMatchmakingStats(Structure):
-    pass
-
-
-class UOnlinePlayerStorage_Data(Structure):
-    pass
-
-
-class UOnlinePlayerStorage(Structure):
-    pass
-
-
-class UOnlineProfileSettings_Data(Structure):
-    pass
-
-
-class UOnlineProfileSettings(Structure):
-    pass
-
-
-class UOnlineStats_Data(Structure):
-    pass
-
-
-class UOnlineStats(Structure):
-    pass
-
-
-class UOnlineStatsRead_Data(Structure):
-    pass
-
-
-class UOnlineStatsRead(Structure):
-    pass
-
-
-class TArray_UOnlineStatsReadPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UOnlineStatsRead))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UOnlineStatsWrite_Data(Structure):
-    pass
-
-
-class UOnlineStatsWrite(Structure):
-    pass
-
-
-class UPackageMapLevel_Data(Structure):
-    pass
-
-
-class UPackageMapLevel(Structure):
-    pass
-
-
-class UPackageMapSeekFree_Data(Structure):
-    pass
-
-
-class UPackageMapSeekFree(Structure):
-    pass
-
-
-class UPatchScriptCommandlet_Data(Structure):
-    pass
-
-
-class UPatchScriptCommandlet(Structure):
-    pass
-
-
-class UPlayer_Data(Structure):
-    pass
-
-
-class UPlayer(Structure):
-    pass
-
-
-class ULocalPlayer_Data(Structure):
-    pass
-
-
-class ULocalPlayer(Structure):
-    pass
-
-
-class TArray_ULocalPlayerPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULocalPlayer))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UNetConnection_Data(Structure):
-    pass
-
-
-class UNetConnection(Structure):
-    pass
-
-
-class UChildConnection_Data(Structure):
-    pass
-
-
-class UChildConnection(Structure):
-    pass
-
-
-class TArray_UChildConnectionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UChildConnection))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDemoRecConnection_Data(Structure):
-    pass
-
-
-class UDemoRecConnection(Structure):
-    pass
-
-
-class UPolys_Data(Structure):
-    pass
-
-
-class UPolys(Structure):
-    pass
-
-
-class UPostProcessChain_Data(Structure):
-    pass
-
-
-class UPostProcessChain(Structure):
-    pass
-
-
-class TArray_UPostProcessChainPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPostProcessChain))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPostProcessEffect_Data(Structure):
-    pass
-
-
-class UPostProcessEffect(Structure):
-    pass
-
-
-class TArray_UPostProcessEffectPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPostProcessEffect))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAccumulateAlphaEffect_Data(Structure):
-    pass
-
-
-class UAccumulateAlphaEffect(Structure):
-    pass
-
-
-class UAmbientOcclusionEffect_Data(Structure):
-    pass
-
-
-class UAmbientOcclusionEffect(Structure):
-    pass
-
-
-class UBlurEffect_Data(Structure):
-    pass
-
-
-class UBlurEffect(Structure):
-    pass
-
-
-class UDOFEffect_Data(Structure):
-    pass
-
-
-class UDOFEffect(Structure):
-    pass
-
-
-class UDOFAndBloomEffect_Data(Structure):
-    pass
-
-
-class UDOFAndBloomEffect(Structure):
-    pass
-
-
-class UDOFBloomMotionBlurEffect_Data(Structure):
-    pass
-
-
-class UDOFBloomMotionBlurEffect(Structure):
-    pass
-
-
-class UUberPostProcessEffect_Data(Structure):
-    pass
-
-
-class UUberPostProcessEffect(Structure):
-    pass
-
-
-class UDwTriovizImplEffect_Data(Structure):
-    pass
-
-
-class UDwTriovizImplEffect(Structure):
-    pass
-
-
-class UFXAAEffect_Data(Structure):
-    pass
-
-
-class UFXAAEffect(Structure):
-    pass
-
-
-class UMaterialEffect_Data(Structure):
-    pass
-
-
-class UMaterialEffect(Structure):
-    pass
-
-
-class UMotionBlurEffect_Data(Structure):
-    pass
-
-
-class UMotionBlurEffect(Structure):
-    pass
-
-
-class UPrimitiveComponentFactory_Data(Structure):
-    pass
-
-
-class UPrimitiveComponentFactory(Structure):
-    pass
-
-
-class UMeshComponentFactory_Data(Structure):
-    pass
-
-
-class UMeshComponentFactory(Structure):
-    pass
-
-
-class UStaticMeshComponentFactory_Data(Structure):
-    pass
-
-
-class UStaticMeshComponentFactory(Structure):
-    pass
-
-
-class UReachSpec_Data(Structure):
-    pass
-
-
-class UReachSpec(Structure):
-    pass
-
-
-class TArray_UReachSpecPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UReachSpec))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAdvancedReachSpec_Data(Structure):
-    pass
-
-
-class UAdvancedReachSpec(Structure):
-    pass
-
-
-class UCeilingReachSpec_Data(Structure):
-    pass
-
-
-class UCeilingReachSpec(Structure):
-    pass
-
-
-class UForcedReachSpec_Data(Structure):
-    pass
-
-
-class UForcedReachSpec(Structure):
-    pass
-
-
-class UCoverSlipReachSpec_Data(Structure):
-    pass
-
-
-class UCoverSlipReachSpec(Structure):
-    pass
-
-
-class UFloorToCeilingReachSpec_Data(Structure):
-    pass
-
-
-class UFloorToCeilingReachSpec(Structure):
-    pass
-
-
-class UMantleReachSpec_Data(Structure):
-    pass
-
-
-class UMantleReachSpec(Structure):
-    pass
-
-
-class USlotToSlotReachSpec_Data(Structure):
-    pass
-
-
-class USlotToSlotReachSpec(Structure):
-    pass
-
-
-class USwatTurnReachSpec_Data(Structure):
-    pass
-
-
-class USwatTurnReachSpec(Structure):
-    pass
-
-
-class UWallTransReachSpec_Data(Structure):
-    pass
-
-
-class UWallTransReachSpec(Structure):
-    pass
-
-
-class ULadderReachSpec_Data(Structure):
-    pass
-
-
-class ULadderReachSpec(Structure):
-    pass
-
-
-class UProscribedReachSpec_Data(Structure):
-    pass
-
-
-class UProscribedReachSpec(Structure):
-    pass
-
-
-class UTeleportReachSpec_Data(Structure):
-    pass
-
-
-class UTeleportReachSpec(Structure):
-    pass
-
-
-class USavedMove_Data(Structure):
-    pass
-
-
-class USavedMove(Structure):
-    pass
-
-
-class USaveGameSummary_Data(Structure):
-    pass
-
-
-class USaveGameSummary(Structure):
-    pass
-
-
-class USelection_Data(Structure):
-    pass
-
-
-class USelection(Structure):
-    pass
-
-
-class UServerCommandlet_Data(Structure):
-    pass
-
-
-class UServerCommandlet(Structure):
-    pass
-
-
-class USettings_Data(Structure):
-    pass
-
-
-class USettings(Structure):
-    pass
-
-
-class UOnlineGameSearch_Data(Structure):
-    pass
-
-
-class UOnlineGameSearch(Structure):
-    pass
-
-
-class UOnlineGameSettings_Data(Structure):
-    pass
-
-
-class UOnlineGameSettings(Structure):
-    pass
-
-
-class UShaderCache_Data(Structure):
-    pass
-
-
-class UShaderCache(Structure):
-    pass
-
-
-class UShadowMap1D_Data(Structure):
-    pass
-
-
-class UShadowMap1D(Structure):
-    pass
-
-
-class UShadowMap2D_Data(Structure):
-    pass
-
-
-class UShadowMap2D(Structure):
-    pass
-
-
-class TArray_UShadowMap2DPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UShadowMap2D))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USmokeTestCommandlet_Data(Structure):
-    pass
-
-
-class USmokeTestCommandlet(Structure):
-    pass
-
-
-class USnapshotInterface_Data(Structure):
-    pass
-
-
-class USnapshotInterface(Structure):
-    pass
-
-
-class USpeechRecognition_Data(Structure):
-    pass
-
-
-class USpeechRecognition(Structure):
-    pass
-
-
-class UStaticMesh_Data(Structure):
-    pass
-
-
-class UStaticMesh(Structure):
-    pass
-
-
-class URB_BodySetup_Data(Structure):
-    pass
-
-
-class URB_BodySetup(Structure):
-    pass
-
-
-class TArray_URB_BodySetupPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(URB_BodySetup))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTexture_Data(Structure):
-    pass
-
-
-class UTexture(Structure):
-    pass
-
-
-class TArray_UTexturePtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(UTexture))), ("Count", c_int), ("Max", c_int)]
-
-
-class UTexture2D_Data(Structure):
-    pass
-
-
-class UTexture2D(Structure):
-    pass
-
-
-class TArray_UTexture2DPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTexture2D))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ULightMapTexture2D_Data(Structure):
-    pass
-
-
-class ULightMapTexture2D(Structure):
-    pass
-
-
-class UShadowMapTexture2D_Data(Structure):
-    pass
-
-
-class UShadowMapTexture2D(Structure):
-    pass
-
-
-class UTranslationContext_Data(Structure):
-    pass
-
-
-class UTranslationContext(Structure):
-    pass
-
-
-class UTranslatorTag_Data(Structure):
-    pass
-
-
-class UTranslatorTag(Structure):
-    pass
-
-
-class TArray_UTranslatorTagPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTranslatorTag))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UStringsTag_Data(Structure):
-    pass
-
-
-class UStringsTag(Structure):
-    pass
-
-
-class UUIRoot_Data(Structure):
-    pass
-
-
-class UUIRoot(Structure):
-    pass
-
-
-class UInteraction_Data(Structure):
-    pass
-
-
-class UInteraction(Structure):
-    pass
-
-
-class TArray_UInteractionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInteraction))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIInteraction_Data(Structure):
-    pass
-
-
-class UUIInteraction(Structure):
-    pass
-
-
-class UUIManager_Data(Structure):
-    pass
-
-
-class UUIManager(Structure):
-    pass
-
-
-class UVertex_Data(Structure):
-    pass
-
-
-class UVertex(Structure):
-    pass
-
-
-class TArray_UVertexPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(UVertex))), ("Count", c_int), ("Max", c_int)]
-
-
-class UWaveFormBase_Data(Structure):
-    pass
-
-
-class UWaveFormBase(Structure):
-    pass
-
-
-class UWorld_Data(Structure):
-    pass
-
-
-class UWorld(Structure):
-    pass
-
-
-class AEnvironmentVolume_Data(Structure):
-    pass
-
-
-class AEnvironmentVolume(Structure):
-    pass
-
-
-class TArray_AEnvironmentVolumePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AEnvironmentVolume))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ATestSplittingVolume_Data(Structure):
-    pass
-
-
-class ATestSplittingVolume(Structure):
-    pass
-
-
-class AAIController_Data(Structure):
-    pass
-
-
-class AAIController(Structure):
-    pass
-
-
-class APathTargetPoint_Data(Structure):
-    pass
-
-
-class APathTargetPoint(Structure):
-    pass
-
-
-class ANavMeshObstacle_Data(Structure):
-    pass
-
-
-class ANavMeshObstacle(Structure):
-    pass
-
-
-class APylonSeed_Data(Structure):
-    pass
-
-
-class APylonSeed(Structure):
-    pass
-
-
-class ABlockingMeshActor_Data(Structure):
-    pass
-
-
-class ABlockingMeshActor(Structure):
-    pass
-
-
-class ABlockingMeshReplicatedActor_Data(Structure):
-    pass
-
-
-class ABlockingMeshReplicatedActor(Structure):
-    pass
-
-
-class UCoverGroupRenderingComponent_Data(Structure):
-    pass
-
-
-class UCoverGroupRenderingComponent(Structure):
-    pass
-
-
-class UMeshComponent_Data(Structure):
-    pass
-
-
-class UMeshComponent(Structure):
-    pass
-
-
-class UStaticMeshComponent_Data(Structure):
-    pass
-
-
-class UStaticMeshComponent(Structure):
-    pass
-
-
-class TArray_UStaticMeshComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UStaticMeshComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCoverMeshComponent_Data(Structure):
-    pass
-
-
-class UCoverMeshComponent(Structure):
-    pass
-
-
-class UNavMeshRenderingComponent_Data(Structure):
-    pass
-
-
-class UNavMeshRenderingComponent(Structure):
-    pass
-
-
-class UPathRenderingComponent_Data(Structure):
-    pass
-
-
-class UPathRenderingComponent(Structure):
-    pass
-
-
-class URouteRenderingComponent_Data(Structure):
-    pass
-
-
-class URouteRenderingComponent(Structure):
-    pass
-
-
-class UAutoNavMeshPathObstacleUnregister_Data(Structure):
-    pass
-
-
-class UAutoNavMeshPathObstacleUnregister(Structure):
-    pass
-
-
-class UGBXNavMeshPathFinder_Data(Structure):
-    pass
-
-
-class UGBXNavMeshPathFinder(Structure):
-    pass
-
-
-class UIGBXNavMeshObstacle_Data(Structure):
-    pass
-
-
-class UIGBXNavMeshObstacle(Structure):
-    pass
-
-
-class UInterface_NavMeshPathObject_Data(Structure):
-    pass
-
-
-class UInterface_NavMeshPathObject(Structure):
-    pass
-
-
-class UInterface_NavMeshPathSwitch_Data(Structure):
-    pass
-
-
-class UInterface_NavMeshPathSwitch(Structure):
-    pass
-
-
-class UInterface_NavMeshPathObstacle_Data(Structure):
-    pass
-
-
-class UInterface_NavMeshPathObstacle(Structure):
-    pass
-
-
-class UNavigationHandle_Data(Structure):
-    pass
-
-
-class UNavigationHandle(Structure):
-    pass
-
-
-class UNavMeshGoal_Filter_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_Filter(Structure):
-    pass
-
-
-class TArray_UNavMeshGoal_FilterPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UNavMeshGoal_Filter))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UNavMeshGoalFilter_MinPathDistance_Data(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_MinPathDistance(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_NotNearOtherAI_Data(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_NotNearOtherAI(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_OutOfViewFrom_Data(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_OutOfViewFrom(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_OutSideOfDotProductWedge_Data(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_OutSideOfDotProductWedge(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_PolyEncompassesAI_Data(Structure):
-    pass
-
-
-class UNavMeshGoalFilter_PolyEncompassesAI(Structure):
-    pass
-
-
-class UNavMeshPathConstraint_Data(Structure):
-    pass
-
-
-class UNavMeshPathConstraint(Structure):
-    pass
-
-
-class UNavMeshPath_AlongLine_Data(Structure):
-    pass
-
-
-class UNavMeshPath_AlongLine(Structure):
-    pass
-
-
-class UNavMeshPath_EnforceTwoWayEdges_Data(Structure):
-    pass
-
-
-class UNavMeshPath_EnforceTwoWayEdges(Structure):
-    pass
-
-
-class UNavMeshPath_MinDistBetweenSpecsOfType_Data(Structure):
-    pass
-
-
-class UNavMeshPath_MinDistBetweenSpecsOfType(Structure):
-    pass
-
-
-class UNavMeshPath_SameCoverLink_Data(Structure):
-    pass
-
-
-class UNavMeshPath_SameCoverLink(Structure):
-    pass
-
-
-class UNavMeshPath_Toward_Data(Structure):
-    pass
-
-
-class UNavMeshPath_Toward(Structure):
-    pass
-
-
-class UNavMeshPath_WithinDistanceEnvelope_Data(Structure):
-    pass
-
-
-class UNavMeshPath_WithinDistanceEnvelope(Structure):
-    pass
-
-
-class UNavMeshPath_WithinTraversalDist_Data(Structure):
-    pass
-
-
-class UNavMeshPath_WithinTraversalDist(Structure):
-    pass
-
-
-class UNavMeshPathGoalEvaluator_Data(Structure):
-    pass
-
-
-class UNavMeshPathGoalEvaluator(Structure):
-    pass
-
-
-class UNavMeshGoal_At_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_At(Structure):
-    pass
-
-
-class UNavMeshGoal_ClosestActorInList_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_ClosestActorInList(Structure):
-    pass
-
-
-class UNavMeshGoal_GenericFilterContainer_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_GenericFilterContainer(Structure):
-    pass
-
-
-class UNavMeshGoal_Null_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_Null(Structure):
-    pass
-
-
-class UNavMeshGoal_PolyEncompassesAI_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_PolyEncompassesAI(Structure):
-    pass
-
-
-class UNavMeshGoal_Random_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_Random(Structure):
-    pass
-
-
-class UNavMeshGoal_WithinDistanceEnvelope_Data(Structure):
-    pass
-
-
-class UNavMeshGoal_WithinDistanceEnvelope(Structure):
-    pass
-
-
-class UPathConstraint_Data(Structure):
-    pass
-
-
-class UPathConstraint(Structure):
-    pass
-
-
-class UPath_AlongLine_Data(Structure):
-    pass
-
-
-class UPath_AlongLine(Structure):
-    pass
-
-
-class UPath_AvoidInEscapableNodes_Data(Structure):
-    pass
-
-
-class UPath_AvoidInEscapableNodes(Structure):
-    pass
-
-
-class UPath_MinDistBetweenSpecsOfType_Data(Structure):
-    pass
-
-
-class UPath_MinDistBetweenSpecsOfType(Structure):
-    pass
-
-
-class UPath_TowardGoal_Data(Structure):
-    pass
-
-
-class UPath_TowardGoal(Structure):
-    pass
-
-
-class UPath_TowardPoint_Data(Structure):
-    pass
-
-
-class UPath_TowardPoint(Structure):
-    pass
-
-
-class UPath_WithinDistanceEnvelope_Data(Structure):
-    pass
-
-
-class UPath_WithinDistanceEnvelope(Structure):
-    pass
-
-
-class UPath_WithinTraversalDist_Data(Structure):
-    pass
-
-
-class UPath_WithinTraversalDist(Structure):
-    pass
-
-
-class UPathGoalEvaluator_Data(Structure):
-    pass
-
-
-class UPathGoalEvaluator(Structure):
-    pass
-
-
-class UGoal_AtActor_Data(Structure):
-    pass
-
-
-class UGoal_AtActor(Structure):
-    pass
-
-
-class UGoal_Null_Data(Structure):
-    pass
-
-
-class UGoal_Null(Structure):
-    pass
-
-
-class ASkeletalMeshActor_Data(Structure):
-    pass
-
-
-class ASkeletalMeshActor(Structure):
-    pass
-
-
-class ASkeletalMeshActorBasedOnExtremeContent_Data(Structure):
-    pass
-
-
-class ASkeletalMeshActorBasedOnExtremeContent(Structure):
-    pass
-
-
-class ASkeletalMeshActorSpawnable_Data(Structure):
-    pass
-
-
-class ASkeletalMeshActorSpawnable(Structure):
-    pass
-
-
-class ASkeletalMeshCinematicActor_Data(Structure):
-    pass
-
-
-class ASkeletalMeshCinematicActor(Structure):
-    pass
-
-
-class ASkeletalMeshActorMAT_Data(Structure):
-    pass
-
-
-class ASkeletalMeshActorMAT(Structure):
-    pass
-
-
-class UHeadTrackingComponent_Data(Structure):
-    pass
-
-
-class UHeadTrackingComponent(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_Automatic_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_Automatic(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_BitwiseCompressOnly_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_BitwiseCompressOnly(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_GBXCustom_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_GBXCustom(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_LeastDestructive_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_LeastDestructive(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RemoveEverySecondKey_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RemoveEverySecondKey(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RemoveLinearKeys_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RemoveLinearKeys(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_PerTrackCompression_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_PerTrackCompression(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RemoveTrivialKeys_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RemoveTrivialKeys(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RevertToRaw_Data(Structure):
-    pass
-
-
-class UAnimationCompressionAlgorithm_RevertToRaw(Structure):
-    pass
-
-
-class UAnimMetaData_Data(Structure):
-    pass
-
-
-class UAnimMetaData(Structure):
-    pass
-
-
-class TArray_UAnimMetaDataPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAnimMetaData))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAnimMetaData_SkelControl_Data(Structure):
-    pass
-
-
-class UAnimMetaData_SkelControl(Structure):
-    pass
-
-
-class UAnimMetaData_SkelControlKeyFrame_Data(Structure):
-    pass
-
-
-class UAnimMetaData_SkelControlKeyFrame(Structure):
-    pass
-
-
-class UAnimNotify_Data(Structure):
-    pass
-
-
-class UAnimNotify(Structure):
-    pass
-
-
-class UAnimNotify_AkEvent_Data(Structure):
-    pass
-
-
-class UAnimNotify_AkEvent(Structure):
-    pass
-
-
-class UAnimNotify_CameraEffect_Data(Structure):
-    pass
-
-
-class UAnimNotify_CameraEffect(Structure):
-    pass
-
-
-class UAnimNotify_ClothingMaxDistanceScale_Data(Structure):
-    pass
-
-
-class UAnimNotify_ClothingMaxDistanceScale(Structure):
-    pass
-
-
-class UAnimNotify_Footstep_Data(Structure):
-    pass
-
-
-class UAnimNotify_Footstep(Structure):
-    pass
-
-
-class UAnimNotify_ForceField_Data(Structure):
-    pass
-
-
-class UAnimNotify_ForceField(Structure):
-    pass
-
-
-class UAnimNotify_Kismet_Data(Structure):
-    pass
-
-
-class UAnimNotify_Kismet(Structure):
-    pass
-
-
-class UAnimNotify_PlayParticleEffect_Data(Structure):
-    pass
-
-
-class UAnimNotify_PlayParticleEffect(Structure):
-    pass
-
-
-class UAnimNotify_Rumble_Data(Structure):
-    pass
-
-
-class UAnimNotify_Rumble(Structure):
-    pass
-
-
-class UAnimNotify_Script_Data(Structure):
-    pass
-
-
-class UAnimNotify_Script(Structure):
-    pass
-
-
-class UAnimNotify_Scripted_Data(Structure):
-    pass
-
-
-class UAnimNotify_Scripted(Structure):
-    pass
-
-
-class UAnimNotify_PawnMaterialParam_Data(Structure):
-    pass
-
-
-class UAnimNotify_PawnMaterialParam(Structure):
-    pass
-
-
-class UAnimNotify_ViewShake_Data(Structure):
-    pass
-
-
-class UAnimNotify_ViewShake(Structure):
-    pass
-
-
-class UAnimNotify_Sound_Data(Structure):
-    pass
-
-
-class UAnimNotify_Sound(Structure):
-    pass
-
-
-class UAnimNotify_SoundSpatial_Data(Structure):
-    pass
-
-
-class UAnimNotify_SoundSpatial(Structure):
-    pass
-
-
-class UAnimNotify_Trails_Data(Structure):
-    pass
-
-
-class UAnimNotify_Trails(Structure):
-    pass
-
-
-class UAnimObject_Data(Structure):
-    pass
-
-
-class UAnimObject(Structure):
-    pass
-
-
-class UAnimNode_Data(Structure):
-    pass
-
-
-class UAnimNode(Structure):
-    pass
-
-
-class TArray_UAnimNodePtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(UAnimNode))), ("Count", c_int), ("Max", c_int)]
-
-
-class UAnimNodeBlendBase_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendBase(Structure):
-    pass
-
-
-class TArray_UAnimNodeBlendBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAnimNodeBlendBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAnimNode_MultiBlendPerBone_Data(Structure):
-    pass
-
-
-class UAnimNode_MultiBlendPerBone(Structure):
-    pass
-
-
-class UAnimNodeAimOffset_Data(Structure):
-    pass
-
-
-class UAnimNodeAimOffset(Structure):
-    pass
-
-
-class UAnimNodeBlend_Data(Structure):
-    pass
-
-
-class UAnimNodeBlend(Structure):
-    pass
-
-
-class UAnimNodeAdditiveBlending_Data(Structure):
-    pass
-
-
-class UAnimNodeAdditiveBlending(Structure):
-    pass
-
-
-class UAnimNodeBlendPerBone_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendPerBone(Structure):
-    pass
-
-
-class UAnimNodeCrossfader_Data(Structure):
-    pass
-
-
-class UAnimNodeCrossfader(Structure):
-    pass
-
-
-class UAnimNodePlayCustomAnim_Data(Structure):
-    pass
-
-
-class UAnimNodePlayCustomAnim(Structure):
-    pass
-
-
-class UAnimNodeBlendDirectional_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendDirectional(Structure):
-    pass
-
-
-class UAnimNodeBlendList_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendList(Structure):
-    pass
-
-
-class UAnimNodeBlendByBase_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendByBase(Structure):
-    pass
-
-
-class UAnimNodeBlendByPhysics_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendByPhysics(Structure):
-    pass
-
-
-class UAnimNodeBlendByPosture_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendByPosture(Structure):
-    pass
-
-
-class UAnimNodeBlendByProperty_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendByProperty(Structure):
-    pass
-
-
-class UAnimNodeBlendBySpeed_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendBySpeed(Structure):
-    pass
-
-
-class UAnimNodeRandom_Data(Structure):
-    pass
-
-
-class UAnimNodeRandom(Structure):
-    pass
-
-
-class UAnimNodeBlendMultiBone_Data(Structure):
-    pass
-
-
-class UAnimNodeBlendMultiBone(Structure):
-    pass
-
-
-class UAnimNodeMirror_Data(Structure):
-    pass
-
-
-class UAnimNodeMirror(Structure):
-    pass
-
-
-class UAnimNodeScalePlayRate_Data(Structure):
-    pass
-
-
-class UAnimNodeScalePlayRate(Structure):
-    pass
-
-
-class UAnimNodeScaleRateBySpeed_Data(Structure):
-    pass
-
-
-class UAnimNodeScaleRateBySpeed(Structure):
-    pass
-
-
-class UAnimNodeSlot_Data(Structure):
-    pass
-
-
-class UAnimNodeSlot(Structure):
-    pass
-
-
-class TArray_UAnimNodeSlotPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAnimNodeSlot))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAnimNodeSynch_Data(Structure):
-    pass
-
-
-class UAnimNodeSynch(Structure):
-    pass
-
-
-class UAnimTree_Data(Structure):
-    pass
-
-
-class UAnimTree(Structure):
-    pass
-
-
-class UAnimNodeSequence_Data(Structure):
-    pass
-
-
-class UAnimNodeSequence(Structure):
-    pass
-
-
-class TArray_UAnimNodeSequencePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAnimNodeSequence))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAnimNodeSequenceBlendBase_Data(Structure):
-    pass
-
-
-class UAnimNodeSequenceBlendBase(Structure):
-    pass
-
-
-class UAnimNodeSequenceBlendByAim_Data(Structure):
-    pass
-
-
-class UAnimNodeSequenceBlendByAim(Structure):
-    pass
-
-
-class UMorphNodeBase_Data(Structure):
-    pass
-
-
-class UMorphNodeBase(Structure):
-    pass
-
-
-class TArray_UMorphNodeBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMorphNodeBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMorphNodeMultiPose_Data(Structure):
-    pass
-
-
-class UMorphNodeMultiPose(Structure):
-    pass
-
-
-class UMorphNodePose_Data(Structure):
-    pass
-
-
-class UMorphNodePose(Structure):
-    pass
-
-
-class UMorphNodeWeightBase_Data(Structure):
-    pass
-
-
-class UMorphNodeWeightBase(Structure):
-    pass
-
-
-class UMorphNodeWeight_Data(Structure):
-    pass
-
-
-class UMorphNodeWeight(Structure):
-    pass
-
-
-class UMorphNodeWeightByBoneAngle_Data(Structure):
-    pass
-
-
-class UMorphNodeWeightByBoneAngle(Structure):
-    pass
-
-
-class UMorphNodeWeightByBoneRotation_Data(Structure):
-    pass
-
-
-class UMorphNodeWeightByBoneRotation(Structure):
-    pass
-
-
-class USkelControlBase_Data(Structure):
-    pass
-
-
-class USkelControlBase(Structure):
-    pass
-
-
-class TArray_USkelControlBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkelControlBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkelControl_CCD_IK_Data(Structure):
-    pass
-
-
-class USkelControl_CCD_IK(Structure):
-    pass
-
-
-class USkelControl_Multiply_Data(Structure):
-    pass
-
-
-class USkelControl_Multiply(Structure):
-    pass
-
-
-class USkelControl_TwistBone_Data(Structure):
-    pass
-
-
-class USkelControl_TwistBone(Structure):
-    pass
-
-
-class USkelControlLimb_Data(Structure):
-    pass
-
-
-class USkelControlLimb(Structure):
-    pass
-
-
-class USkelControlFootPlacement_Data(Structure):
-    pass
-
-
-class USkelControlFootPlacement(Structure):
-    pass
-
-
-class USkelControlLookAt_Data(Structure):
-    pass
-
-
-class USkelControlLookAt(Structure):
-    pass
-
-
-class TArray_USkelControlLookAtPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkelControlLookAt))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkelControlSingleBone_Data(Structure):
-    pass
-
-
-class USkelControlSingleBone(Structure):
-    pass
-
-
-class USkelControlHandlebars_Data(Structure):
-    pass
-
-
-class USkelControlHandlebars(Structure):
-    pass
-
-
-class USkelControlWheel_Data(Structure):
-    pass
-
-
-class USkelControlWheel(Structure):
-    pass
-
-
-class USkelControlSpline_Data(Structure):
-    pass
-
-
-class USkelControlSpline(Structure):
-    pass
-
-
-class USkelControlTrail_Data(Structure):
-    pass
-
-
-class USkelControlTrail(Structure):
-    pass
-
-
-class UAnimSequence_Data(Structure):
-    pass
-
-
-class UAnimSequence(Structure):
-    pass
-
-
-class TArray_UAnimSequencePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAnimSequence))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UAnimSet_Data(Structure):
-    pass
-
-
-class UAnimSet(Structure):
-    pass
-
-
-class TArray_UAnimSetPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(UAnimSet))), ("Count", c_int), ("Max", c_int)]
-
-
-class UMorphTarget_Data(Structure):
-    pass
-
-
-class UMorphTarget(Structure):
-    pass
-
-
-class TArray_UMorphTargetPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMorphTarget))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMorphTargetSet_Data(Structure):
-    pass
-
-
-class UMorphTargetSet(Structure):
-    pass
-
-
-class TArray_UMorphTargetSetPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMorphTargetSet))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMorphWeightSequence_Data(Structure):
-    pass
-
-
-class UMorphWeightSequence(Structure):
-    pass
-
-
-class ADecalActorBase_Data(Structure):
-    pass
-
-
-class ADecalActorBase(Structure):
-    pass
-
-
-class ADecalActor_Data(Structure):
-    pass
-
-
-class ADecalActor(Structure):
-    pass
-
-
-class ADecalActorMovable_Data(Structure):
-    pass
-
-
-class ADecalActorMovable(Structure):
-    pass
-
-
-class ADecalManager_Data(Structure):
-    pass
-
-
-class ADecalManager(Structure):
-    pass
-
-
-class UDecalComponent_Data(Structure):
-    pass
-
-
-class UDecalComponent(Structure):
-    pass
-
-
-class TArray_UDecalComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UDecalComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UActorFactoryDecal_Data(Structure):
-    pass
-
-
-class UActorFactoryDecal(Structure):
-    pass
-
-
-class UActorFactoryDecalMovable_Data(Structure):
-    pass
-
-
-class UActorFactoryDecalMovable(Structure):
-    pass
-
-
-class UDecalMaterial_Data(Structure):
-    pass
-
-
-class UDecalMaterial(Structure):
-    pass
-
-
-class AFogVolumeDensityInfo_Data(Structure):
-    pass
-
-
-class AFogVolumeDensityInfo(Structure):
-    pass
-
-
-class AFogVolumeConeDensityInfo_Data(Structure):
-    pass
-
-
-class AFogVolumeConeDensityInfo(Structure):
-    pass
-
-
-class AFogVolumeConstantDensityInfo_Data(Structure):
-    pass
-
-
-class AFogVolumeConstantDensityInfo(Structure):
-    pass
-
-
-class AFogVolumeLinearHalfspaceDensityInfo_Data(Structure):
-    pass
-
-
-class AFogVolumeLinearHalfspaceDensityInfo(Structure):
-    pass
-
-
-class AFogVolumeSphericalDensityInfo_Data(Structure):
-    pass
-
-
-class AFogVolumeSphericalDensityInfo(Structure):
-    pass
-
-
-class UExponentialHeightFogComponent_Data(Structure):
-    pass
-
-
-class UExponentialHeightFogComponent(Structure):
-    pass
-
-
-class UFogVolumeDensityComponent_Data(Structure):
-    pass
-
-
-class UFogVolumeDensityComponent(Structure):
-    pass
-
-
-class UFogVolumeConeDensityComponent_Data(Structure):
-    pass
-
-
-class UFogVolumeConeDensityComponent(Structure):
-    pass
-
-
-class UFogVolumeConstantDensityComponent_Data(Structure):
-    pass
-
-
-class UFogVolumeConstantDensityComponent(Structure):
-    pass
-
-
-class UFogVolumeLinearHalfspaceDensityComponent_Data(Structure):
-    pass
-
-
-class UFogVolumeLinearHalfspaceDensityComponent(Structure):
-    pass
-
-
-class UFogVolumeSphericalDensityComponent_Data(Structure):
-    pass
-
-
-class UFogVolumeSphericalDensityComponent(Structure):
-    pass
-
-
-class UActorFactoryFogVolumeConstantDensityInfo_Data(Structure):
-    pass
-
-
-class UActorFactoryFogVolumeConstantDensityInfo(Structure):
-    pass
-
-
-class UActorFactoryFogVolumeLinearHalfspaceDensityInfo_Data(Structure):
-    pass
-
-
-class UActorFactoryFogVolumeLinearHalfspaceDensityInfo(Structure):
-    pass
-
-
-class UActorFactoryFogVolumeSphericalDensityInfo_Data(Structure):
-    pass
-
-
-class UActorFactoryFogVolumeSphericalDensityInfo(Structure):
-    pass
-
-
-class AApexDestructibleActor_Data(Structure):
-    pass
-
-
-class AApexDestructibleActor(Structure):
-    pass
-
-
-class UApexComponentBase_Data(Structure):
-    pass
-
-
-class UApexComponentBase(Structure):
-    pass
-
-
-class TArray_UApexComponentBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UApexComponentBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UApexDynamicComponent_Data(Structure):
-    pass
-
-
-class UApexDynamicComponent(Structure):
-    pass
-
-
-class UApexStaticComponent_Data(Structure):
-    pass
-
-
-class UApexStaticComponent(Structure):
-    pass
-
-
-class UApexStaticDestructibleComponent_Data(Structure):
-    pass
-
-
-class UApexStaticDestructibleComponent(Structure):
-    pass
-
-
-class UBlockingMeshComponent_Data(Structure):
-    pass
-
-
-class UBlockingMeshComponent(Structure):
-    pass
-
-
-class TArray_UBlockingMeshComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBlockingMeshComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInstancedStaticMeshComponent_Data(Structure):
-    pass
-
-
-class UInstancedStaticMeshComponent(Structure):
-    pass
-
-
-class USplineMeshComponent_Data(Structure):
-    pass
-
-
-class USplineMeshComponent(Structure):
-    pass
-
-
-class TArray_USplineMeshComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USplineMeshComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UApexAsset_Data(Structure):
-    pass
-
-
-class UApexAsset(Structure):
-    pass
-
-
-class UApexClothingAsset_Data(Structure):
-    pass
-
-
-class UApexClothingAsset(Structure):
-    pass
-
-
-class TArray_UApexClothingAssetPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UApexClothingAsset))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UApexDestructibleAsset_Data(Structure):
-    pass
-
-
-class UApexDestructibleAsset(Structure):
-    pass
-
-
-class UApexGenericAsset_Data(Structure):
-    pass
-
-
-class UApexGenericAsset(Structure):
-    pass
-
-
-class UInterpFilter_Data(Structure):
-    pass
-
-
-class UInterpFilter(Structure):
-    pass
-
-
-class UInterpFilter_Classes_Data(Structure):
-    pass
-
-
-class UInterpFilter_Classes(Structure):
-    pass
-
-
-class UInterpFilter_Custom_Data(Structure):
-    pass
-
-
-class UInterpFilter_Custom(Structure):
-    pass
-
-
-class UInterpGroup_Data(Structure):
-    pass
-
-
-class UInterpGroup(Structure):
-    pass
-
-
-class TArray_UInterpGroupPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInterpGroup))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInterpGroupAI_Data(Structure):
-    pass
-
-
-class UInterpGroupAI(Structure):
-    pass
-
-
-class UInterpGroupDirector_Data(Structure):
-    pass
-
-
-class UInterpGroupDirector(Structure):
-    pass
-
-
-class UInterpGroupInst_Data(Structure):
-    pass
-
-
-class UInterpGroupInst(Structure):
-    pass
-
-
-class TArray_UInterpGroupInstPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInterpGroupInst))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInterpGroupInstAI_Data(Structure):
-    pass
-
-
-class UInterpGroupInstAI(Structure):
-    pass
-
-
-class UInterpGroupInstDirector_Data(Structure):
-    pass
-
-
-class UInterpGroupInstDirector(Structure):
-    pass
-
-
-class UInterpTrackBoolProp_Data(Structure):
-    pass
-
-
-class UInterpTrackBoolProp(Structure):
-    pass
-
-
-class UInterpTrackComment_Data(Structure):
-    pass
-
-
-class UInterpTrackComment(Structure):
-    pass
-
-
-class UInterpTrackDirector_Data(Structure):
-    pass
-
-
-class UInterpTrackDirector(Structure):
-    pass
-
-
-class UInterpTrackEvent_Data(Structure):
-    pass
-
-
-class UInterpTrackEvent(Structure):
-    pass
-
-
-class UInterpTrackFaceFX_Data(Structure):
-    pass
-
-
-class UInterpTrackFaceFX(Structure):
-    pass
-
-
-class UInterpTrackFloatBase_Data(Structure):
-    pass
-
-
-class UInterpTrackFloatBase(Structure):
-    pass
-
-
-class UInterpTrackAnimControl_Data(Structure):
-    pass
-
-
-class UInterpTrackAnimControl(Structure):
-    pass
-
-
-class UInterpTrackFade_Data(Structure):
-    pass
-
-
-class UInterpTrackFade(Structure):
-    pass
-
-
-class UInterpTrackFloatMaterialParam_Data(Structure):
-    pass
-
-
-class UInterpTrackFloatMaterialParam(Structure):
-    pass
-
-
-class UInterpTrackFloatParticleParam_Data(Structure):
-    pass
-
-
-class UInterpTrackFloatParticleParam(Structure):
-    pass
-
-
-class UInterpTrackFloatProp_Data(Structure):
-    pass
-
-
-class UInterpTrackFloatProp(Structure):
-    pass
-
-
-class UInterpTrackMorphWeight_Data(Structure):
-    pass
-
-
-class UInterpTrackMorphWeight(Structure):
-    pass
-
-
-class UInterpTrackMoveAxis_Data(Structure):
-    pass
-
-
-class UInterpTrackMoveAxis(Structure):
-    pass
-
-
-class UInterpTrackSkelControlScale_Data(Structure):
-    pass
-
-
-class UInterpTrackSkelControlScale(Structure):
-    pass
-
-
-class UInterpTrackSkelControlStrength_Data(Structure):
-    pass
-
-
-class UInterpTrackSkelControlStrength(Structure):
-    pass
-
-
-class UInterpTrackSlomo_Data(Structure):
-    pass
-
-
-class UInterpTrackSlomo(Structure):
-    pass
-
-
-class UInterpTrackHeadTracking_Data(Structure):
-    pass
-
-
-class UInterpTrackHeadTracking(Structure):
-    pass
-
-
-class UInterpTrackLinearColorBase_Data(Structure):
-    pass
-
-
-class UInterpTrackLinearColorBase(Structure):
-    pass
-
-
-class UInterpTrackLinearColorProp_Data(Structure):
-    pass
-
-
-class UInterpTrackLinearColorProp(Structure):
-    pass
-
-
-class UInterpTrackMove_Data(Structure):
-    pass
-
-
-class UInterpTrackMove(Structure):
-    pass
-
-
-class UInterpTrackParticleReplay_Data(Structure):
-    pass
-
-
-class UInterpTrackParticleReplay(Structure):
-    pass
-
-
-class UInterpTrackTeleport_Data(Structure):
-    pass
-
-
-class UInterpTrackTeleport(Structure):
-    pass
-
-
-class UInterpTrackToggle_Data(Structure):
-    pass
-
-
-class UInterpTrackToggle(Structure):
-    pass
-
-
-class UInterpTrackVectorBase_Data(Structure):
-    pass
-
-
-class UInterpTrackVectorBase(Structure):
-    pass
-
-
-class UInterpTrackAudioMaster_Data(Structure):
-    pass
-
-
-class UInterpTrackAudioMaster(Structure):
-    pass
-
-
-class UInterpTrackColorProp_Data(Structure):
-    pass
-
-
-class UInterpTrackColorProp(Structure):
-    pass
-
-
-class UInterpTrackColorScale_Data(Structure):
-    pass
-
-
-class UInterpTrackColorScale(Structure):
-    pass
-
-
-class UInterpTrackSound_Data(Structure):
-    pass
-
-
-class UInterpTrackSound(Structure):
-    pass
-
-
-class UInterpTrackVectorMaterialParam_Data(Structure):
-    pass
-
-
-class UInterpTrackVectorMaterialParam(Structure):
-    pass
-
-
-class UInterpTrackVectorProp_Data(Structure):
-    pass
-
-
-class UInterpTrackVectorProp(Structure):
-    pass
-
-
-class UInterpTrackVisibility_Data(Structure):
-    pass
-
-
-class UInterpTrackVisibility(Structure):
-    pass
-
-
-class UInterpTrackInst_Data(Structure):
-    pass
-
-
-class UInterpTrackInst(Structure):
-    pass
-
-
-class TArray_UInterpTrackInstPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInterpTrackInst))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInterpTrackInstAnimControl_Data(Structure):
-    pass
-
-
-class UInterpTrackInstAnimControl(Structure):
-    pass
-
-
-class UInterpTrackInstAudioMaster_Data(Structure):
-    pass
-
-
-class UInterpTrackInstAudioMaster(Structure):
-    pass
-
-
-class UInterpTrackInstColorScale_Data(Structure):
-    pass
-
-
-class UInterpTrackInstColorScale(Structure):
-    pass
-
-
-class UInterpTrackInstComment_Data(Structure):
-    pass
-
-
-class UInterpTrackInstComment(Structure):
-    pass
-
-
-class UInterpTrackInstDirector_Data(Structure):
-    pass
-
-
-class UInterpTrackInstDirector(Structure):
-    pass
-
-
-class UInterpTrackInstEvent_Data(Structure):
-    pass
-
-
-class UInterpTrackInstEvent(Structure):
-    pass
-
-
-class UInterpTrackInstFaceFX_Data(Structure):
-    pass
-
-
-class UInterpTrackInstFaceFX(Structure):
-    pass
-
-
-class UInterpTrackInstFade_Data(Structure):
-    pass
-
-
-class UInterpTrackInstFade(Structure):
-    pass
-
-
-class UInterpTrackInstFloatMaterialParam_Data(Structure):
-    pass
-
-
-class UInterpTrackInstFloatMaterialParam(Structure):
-    pass
-
-
-class UInterpTrackInstFloatParticleParam_Data(Structure):
-    pass
-
-
-class UInterpTrackInstFloatParticleParam(Structure):
-    pass
-
-
-class UInterpTrackInstHeadTracking_Data(Structure):
-    pass
-
-
-class UInterpTrackInstHeadTracking(Structure):
-    pass
-
-
-class UInterpTrackInstMorphWeight_Data(Structure):
-    pass
-
-
-class UInterpTrackInstMorphWeight(Structure):
-    pass
-
-
-class UInterpTrackInstMove_Data(Structure):
-    pass
-
-
-class UInterpTrackInstMove(Structure):
-    pass
-
-
-class UInterpTrackInstParticleReplay_Data(Structure):
-    pass
-
-
-class UInterpTrackInstParticleReplay(Structure):
-    pass
-
-
-class UInterpTrackInstProperty_Data(Structure):
-    pass
-
-
-class UInterpTrackInstProperty(Structure):
-    pass
-
-
-class UInterpTrackInstBoolProp_Data(Structure):
-    pass
-
-
-class UInterpTrackInstBoolProp(Structure):
-    pass
-
-
-class UInterpTrackInstColorProp_Data(Structure):
-    pass
-
-
-class UInterpTrackInstColorProp(Structure):
-    pass
-
-
-class UInterpTrackInstFloatProp_Data(Structure):
-    pass
-
-
-class UInterpTrackInstFloatProp(Structure):
-    pass
-
-
-class UInterpTrackInstLinearColorProp_Data(Structure):
-    pass
-
-
-class UInterpTrackInstLinearColorProp(Structure):
-    pass
-
-
-class UInterpTrackInstVectorProp_Data(Structure):
-    pass
-
-
-class UInterpTrackInstVectorProp(Structure):
-    pass
-
-
-class UInterpTrackInstSkelControlScale_Data(Structure):
-    pass
-
-
-class UInterpTrackInstSkelControlScale(Structure):
-    pass
-
-
-class UInterpTrackInstSkelControlStrength_Data(Structure):
-    pass
-
-
-class UInterpTrackInstSkelControlStrength(Structure):
-    pass
-
-
-class UInterpTrackInstSlomo_Data(Structure):
-    pass
-
-
-class UInterpTrackInstSlomo(Structure):
-    pass
-
-
-class UInterpTrackInstSound_Data(Structure):
-    pass
-
-
-class UInterpTrackInstSound(Structure):
-    pass
-
-
-class UInterpTrackInstTeleport_Data(Structure):
-    pass
-
-
-class UInterpTrackInstTeleport(Structure):
-    pass
-
-
-class UInterpTrackInstToggle_Data(Structure):
-    pass
-
-
-class UInterpTrackInstToggle(Structure):
-    pass
-
-
-class UInterpTrackInstVectorMaterialParam_Data(Structure):
-    pass
-
-
-class UInterpTrackInstVectorMaterialParam(Structure):
-    pass
-
-
-class UInterpTrackInstVisibility_Data(Structure):
-    pass
-
-
-class UInterpTrackInstVisibility(Structure):
-    pass
-
-
-class UMaterialExpressionAbs_Data(Structure):
-    pass
-
-
-class UMaterialExpressionAbs(Structure):
-    pass
-
-
-class UMaterialExpressionAdd_Data(Structure):
-    pass
-
-
-class UMaterialExpressionAdd(Structure):
-    pass
-
-
-class UMaterialExpressionAppendVector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionAppendVector(Structure):
-    pass
-
-
-class UMaterialExpressionArcCosine_Data(Structure):
-    pass
-
-
-class UMaterialExpressionArcCosine(Structure):
-    pass
-
-
-class UMaterialExpressionArcSine_Data(Structure):
-    pass
-
-
-class UMaterialExpressionArcSine(Structure):
-    pass
-
-
-class UMaterialExpressionArcTangent_Data(Structure):
-    pass
-
-
-class UMaterialExpressionArcTangent(Structure):
-    pass
-
-
-class UMaterialExpressionArcTangent2_Data(Structure):
-    pass
-
-
-class UMaterialExpressionArcTangent2(Structure):
-    pass
-
-
-class UMaterialExpressionBlendModeBase_Data(Structure):
-    pass
-
-
-class UMaterialExpressionBlendModeBase(Structure):
-    pass
-
-
-class UMaterialExpressionzColorBurn_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzColorBurn(Structure):
-    pass
-
-
-class UMaterialExpressionzColorDodge_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzColorDodge(Structure):
-    pass
-
-
-class UMaterialExpressionzExclusion_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzExclusion(Structure):
-    pass
-
-
-class UMaterialExpressionzHardLight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzHardLight(Structure):
-    pass
-
-
-class UMaterialExpressionzLinearBurn_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzLinearBurn(Structure):
-    pass
-
-
-class UMaterialExpressionzLinearLight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzLinearLight(Structure):
-    pass
-
-
-class UMaterialExpressionzOverlay_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzOverlay(Structure):
-    pass
-
-
-class UMaterialExpressionzPinLight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzPinLight(Structure):
-    pass
-
-
-class UMaterialExpressionzScreen_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzScreen(Structure):
-    pass
-
-
-class UMaterialExpressionzSoftLight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzSoftLight(Structure):
-    pass
-
-
-class UMaterialExpressionzVividLight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionzVividLight(Structure):
-    pass
-
-
-class UMaterialExpressionBumpOffset_Data(Structure):
-    pass
-
-
-class UMaterialExpressionBumpOffset(Structure):
-    pass
-
-
-class UMaterialExpressionBumpOffsetEx_Data(Structure):
-    pass
-
-
-class UMaterialExpressionBumpOffsetEx(Structure):
-    pass
-
-
-class UMaterialExpressionBumpOffsetSloped_Data(Structure):
-    pass
-
-
-class UMaterialExpressionBumpOffsetSloped(Structure):
-    pass
-
-
-class UMaterialExpressionCameraVector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCameraVector(Structure):
-    pass
-
-
-class UMaterialExpressionCameraWorldPosition_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCameraWorldPosition(Structure):
-    pass
-
-
-class UMaterialExpressionCeil_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCeil(Structure):
-    pass
-
-
-class UMaterialExpressionClamp_Data(Structure):
-    pass
-
-
-class UMaterialExpressionClamp(Structure):
-    pass
-
-
-class UMaterialExpressionComment_Data(Structure):
-    pass
-
-
-class UMaterialExpressionComment(Structure):
-    pass
-
-
-class UMaterialExpressionComponentMask_Data(Structure):
-    pass
-
-
-class UMaterialExpressionComponentMask(Structure):
-    pass
-
-
-class UMaterialExpressionCompound_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCompound(Structure):
-    pass
-
-
-class UMaterialExpressionConstant_Data(Structure):
-    pass
-
-
-class UMaterialExpressionConstant(Structure):
-    pass
-
-
-class UMaterialExpressionConstant2Vector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionConstant2Vector(Structure):
-    pass
-
-
-class UMaterialExpressionConstant3Vector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionConstant3Vector(Structure):
-    pass
-
-
-class UMaterialExpressionConstant4Vector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionConstant4Vector(Structure):
-    pass
-
-
-class UMaterialExpressionConstantBiasScale_Data(Structure):
-    pass
-
-
-class UMaterialExpressionConstantBiasScale(Structure):
-    pass
-
-
-class UMaterialExpressionConstantClamp_Data(Structure):
-    pass
-
-
-class UMaterialExpressionConstantClamp(Structure):
-    pass
-
-
-class UMaterialExpressionCosine_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCosine(Structure):
-    pass
-
-
-class UMaterialExpressionCrossProduct_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCrossProduct(Structure):
-    pass
-
-
-class UMaterialExpressionCustom_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCustom(Structure):
-    pass
-
-
-class UMaterialExpressionCustomTexture_Data(Structure):
-    pass
-
-
-class UMaterialExpressionCustomTexture(Structure):
-    pass
-
-
-class UMaterialExpressionDdx_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDdx(Structure):
-    pass
-
-
-class UMaterialExpressionDdy_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDdy(Structure):
-    pass
-
-
-class UMaterialExpressionDegrees_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDegrees(Structure):
-    pass
-
-
-class UMaterialExpressionDepthBiasedAlpha_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDepthBiasedAlpha(Structure):
-    pass
-
-
-class UMaterialExpressionDepthBiasedBlend_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDepthBiasedBlend(Structure):
-    pass
-
-
-class UMaterialExpressionDepthOfFieldFunction_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDepthOfFieldFunction(Structure):
-    pass
-
-
-class UMaterialExpressionDeriveNormalZ_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDeriveNormalZ(Structure):
-    pass
-
-
-class UMaterialExpressionDesaturation_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDesaturation(Structure):
-    pass
-
-
-class UMaterialExpressionDestColor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDestColor(Structure):
-    pass
-
-
-class UMaterialExpressionDestDepth_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDestDepth(Structure):
-    pass
-
-
-class UMaterialExpressionDistance_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDistance(Structure):
-    pass
-
-
-class UMaterialExpressionDivide_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDivide(Structure):
-    pass
-
-
-class UMaterialExpressionDominantSkyLight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDominantSkyLight(Structure):
-    pass
-
-
-class UMaterialExpressionDotProduct_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDotProduct(Structure):
-    pass
-
-
-class UMaterialExpressionDynamicParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDynamicParameter(Structure):
-    pass
-
-
-class UMaterialExpressionMeshEmitterDynamicParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMeshEmitterDynamicParameter(Structure):
-    pass
-
-
-class UMaterialExpressionExp_Data(Structure):
-    pass
-
-
-class UMaterialExpressionExp(Structure):
-    pass
-
-
-class UMaterialExpressionExp2_Data(Structure):
-    pass
-
-
-class UMaterialExpressionExp2(Structure):
-    pass
-
-
-class UMaterialExpressionFloor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFloor(Structure):
-    pass
-
-
-class UMaterialExpressionFluidNormal_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFluidNormal(Structure):
-    pass
-
-
-class UMaterialExpressionFmod_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFmod(Structure):
-    pass
-
-
-class UMaterialExpressionFoliageImpulseDirection_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFoliageImpulseDirection(Structure):
-    pass
-
-
-class UMaterialExpressionFoliageNormalizedRotationAxisAndAngle_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFoliageNormalizedRotationAxisAndAngle(Structure):
-    pass
-
-
-class UMaterialExpressionFontSample_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFontSample(Structure):
-    pass
-
-
-class UMaterialExpressionFontSampleParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFontSampleParameter(Structure):
-    pass
-
-
-class UMaterialExpressionFrac_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFrac(Structure):
-    pass
-
-
-class UMaterialExpressionFresnel_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFresnel(Structure):
-    pass
-
-
-class UMaterialExpressionGradient_Data(Structure):
-    pass
-
-
-class UMaterialExpressionGradient(Structure):
-    pass
-
-
-class UMaterialExpressionIf_Data(Structure):
-    pass
-
-
-class UMaterialExpressionIf(Structure):
-    pass
-
-
-class UMaterialExpressionLength_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLength(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareIntensity_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareIntensity(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareOcclusion_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareOcclusion(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareRadialDistance_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareRadialDistance(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareRayDistance_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareRayDistance(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareSourceDistance_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLensFlareSourceDistance(Structure):
-    pass
-
-
-class UMaterialExpressionLightmapUVs_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLightmapUVs(Structure):
-    pass
-
-
-class UMaterialExpressionLightmassReplace_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLightmassReplace(Structure):
-    pass
-
-
-class UMaterialExpressionLightVector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLightVector(Structure):
-    pass
-
-
-class UMaterialExpressionLinearInterpolate_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLinearInterpolate(Structure):
-    pass
-
-
-class UMaterialExpressionLog_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLog(Structure):
-    pass
-
-
-class UMaterialExpressionLog10_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLog10(Structure):
-    pass
-
-
-class UMaterialExpressionLog2_Data(Structure):
-    pass
-
-
-class UMaterialExpressionLog2(Structure):
-    pass
-
-
-class UMaterialExpressionMax_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMax(Structure):
-    pass
-
-
-class UMaterialExpressionMeshEmitterVertexColor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMeshEmitterVertexColor(Structure):
-    pass
-
-
-class UMaterialExpressionMin_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMin(Structure):
-    pass
-
-
-class UMaterialExpressionMultiply_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMultiply(Structure):
-    pass
-
-
-class UMaterialExpressionMultiplyAndAdd_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMultiplyAndAdd(Structure):
-    pass
-
-
-class UMaterialExpressionNormalize_Data(Structure):
-    pass
-
-
-class UMaterialExpressionNormalize(Structure):
-    pass
-
-
-class UMaterialExpressionObjectOrientation_Data(Structure):
-    pass
-
-
-class UMaterialExpressionObjectOrientation(Structure):
-    pass
-
-
-class UMaterialExpressionObjectRadius_Data(Structure):
-    pass
-
-
-class UMaterialExpressionObjectRadius(Structure):
-    pass
-
-
-class UMaterialExpressionObjectWorldPosition_Data(Structure):
-    pass
-
-
-class UMaterialExpressionObjectWorldPosition(Structure):
-    pass
-
-
-class UMaterialExpressionOcclusionPercentage_Data(Structure):
-    pass
-
-
-class UMaterialExpressionOcclusionPercentage(Structure):
-    pass
-
-
-class UMaterialExpressionOneMinus_Data(Structure):
-    pass
-
-
-class UMaterialExpressionOneMinus(Structure):
-    pass
-
-
-class UMaterialExpressionPanner_Data(Structure):
-    pass
-
-
-class UMaterialExpressionPanner(Structure):
-    pass
-
-
-class UMaterialExpressionParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionParameter(Structure):
-    pass
-
-
-class UMaterialExpressionScalarParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionScalarParameter(Structure):
-    pass
-
-
-class UMaterialExpressionStaticComponentMaskParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionStaticComponentMaskParameter(Structure):
-    pass
-
-
-class UMaterialExpressionStaticSwitchParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionStaticSwitchParameter(Structure):
-    pass
-
-
-class UMaterialExpressionVectorParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionVectorParameter(Structure):
-    pass
-
-
-class UMaterialExpressionParticleMacroUV_Data(Structure):
-    pass
-
-
-class UMaterialExpressionParticleMacroUV(Structure):
-    pass
-
-
-class UMaterialExpressionPerInstanceRandom_Data(Structure):
-    pass
-
-
-class UMaterialExpressionPerInstanceRandom(Structure):
-    pass
-
-
-class UMaterialExpressionPixelDepth_Data(Structure):
-    pass
-
-
-class UMaterialExpressionPixelDepth(Structure):
-    pass
-
-
-class UMaterialExpressionPower_Data(Structure):
-    pass
-
-
-class UMaterialExpressionPower(Structure):
-    pass
-
-
-class UMaterialExpressionRadians_Data(Structure):
-    pass
-
-
-class UMaterialExpressionRadians(Structure):
-    pass
-
-
-class UMaterialExpressionRecipSquareRoot_Data(Structure):
-    pass
-
-
-class UMaterialExpressionRecipSquareRoot(Structure):
-    pass
-
-
-class UMaterialExpressionReflectionVector_Data(Structure):
-    pass
-
-
-class UMaterialExpressionReflectionVector(Structure):
-    pass
-
-
-class UMaterialExpressionRotate3D_Data(Structure):
-    pass
-
-
-class UMaterialExpressionRotate3D(Structure):
-    pass
-
-
-class UMaterialExpressionRotateAboutAxis_Data(Structure):
-    pass
-
-
-class UMaterialExpressionRotateAboutAxis(Structure):
-    pass
-
-
-class UMaterialExpressionRotator_Data(Structure):
-    pass
-
-
-class UMaterialExpressionRotator(Structure):
-    pass
-
-
-class UMaterialExpressionSaturate_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSaturate(Structure):
-    pass
-
-
-class UMaterialExpressionSceneDepth_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSceneDepth(Structure):
-    pass
-
-
-class UMaterialExpressionSceneTexture_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSceneTexture(Structure):
-    pass
-
-
-class UMaterialExpressionScreenPosition_Data(Structure):
-    pass
-
-
-class UMaterialExpressionScreenPosition(Structure):
-    pass
-
-
-class UMaterialExpressionSine_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSine(Structure):
-    pass
-
-
-class UMaterialExpressionSphereMask_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSphereMask(Structure):
-    pass
-
-
-class UMaterialExpressionSPHFluidNormal_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSPHFluidNormal(Structure):
-    pass
-
-
-class UMaterialExpressionSPHFluidThickness_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSPHFluidThickness(Structure):
-    pass
-
-
-class UMaterialExpressionSPHFluidVertexColor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSPHFluidVertexColor(Structure):
-    pass
-
-
-class UMaterialExpressionSquareRoot_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSquareRoot(Structure):
-    pass
-
-
-class UMaterialExpressionSteepParallaxOffset_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSteepParallaxOffset(Structure):
-    pass
-
-
-class UMaterialExpressionSubtract_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSubtract(Structure):
-    pass
-
-
-class UMaterialExpressionSwizzle_Data(Structure):
-    pass
-
-
-class UMaterialExpressionSwizzle(Structure):
-    pass
-
-
-class UMaterialExpressionTangent_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTangent(Structure):
-    pass
-
-
-class UMaterialExpressionTerrainLayerCoords_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTerrainLayerCoords(Structure):
-    pass
-
-
-class UMaterialExpressionTerrainLayerWeight_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTerrainLayerWeight(Structure):
-    pass
-
-
-class UMaterialExpressionTerrainTextureCoordinate_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTerrainTextureCoordinate(Structure):
-    pass
-
-
-class UMaterialExpressionTextureCoordinate_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureCoordinate(Structure):
-    pass
-
-
-class UMaterialExpressionTextureDimensions_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureDimensions(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSample_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSample(Structure):
-    pass
-
-
-class UMaterialExpressionDepthBiasBlend_Data(Structure):
-    pass
-
-
-class UMaterialExpressionDepthBiasBlend(Structure):
-    pass
-
-
-class UMaterialExpressionFlipBookSample_Data(Structure):
-    pass
-
-
-class UMaterialExpressionFlipBookSample(Structure):
-    pass
-
-
-class UMaterialExpressionMeshSubUV_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMeshSubUV(Structure):
-    pass
-
-
-class UMaterialExpressionMeshSubUVBlend_Data(Structure):
-    pass
-
-
-class UMaterialExpressionMeshSubUVBlend(Structure):
-    pass
-
-
-class UMaterialExpressionParticleSubUV_Data(Structure):
-    pass
-
-
-class UMaterialExpressionParticleSubUV(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameter_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameter(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameter2D_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameter2D(Structure):
-    pass
-
-
-class UMaterialExpressionAntialiasedTextureMask_Data(Structure):
-    pass
-
-
-class UMaterialExpressionAntialiasedTextureMask(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterMeshSubUV_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterMeshSubUV(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterMeshSubUVBlend_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterMeshSubUVBlend(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterSubUV_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterSubUV(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterCube_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterCube(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterMovie_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterMovie(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterNormal_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSampleParameterNormal(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSplat_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTextureSplat(Structure):
-    pass
-
-
-class UMaterialExpressionTime_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTime(Structure):
-    pass
-
-
-class UMaterialExpressionTransform_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTransform(Structure):
-    pass
-
-
-class UMaterialExpressionTransformPosition_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTransformPosition(Structure):
-    pass
-
-
-class UMaterialExpressionTwoSidedSign_Data(Structure):
-    pass
-
-
-class UMaterialExpressionTwoSidedSign(Structure):
-    pass
-
-
-class UMaterialExpressionVectorIf_Data(Structure):
-    pass
-
-
-class UMaterialExpressionVectorIf(Structure):
-    pass
-
-
-class UMaterialExpressionVertexColor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionVertexColor(Structure):
-    pass
-
-
-class UMaterialExpressionWindDirectionAndSpeed_Data(Structure):
-    pass
-
-
-class UMaterialExpressionWindDirectionAndSpeed(Structure):
-    pass
-
-
-class UMaterialExpressionWorldAmbientColor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionWorldAmbientColor(Structure):
-    pass
-
-
-class UMaterialExpressionWorldLightColor_Data(Structure):
-    pass
-
-
-class UMaterialExpressionWorldLightColor(Structure):
-    pass
-
-
-class UMaterialExpressionWorldNormal_Data(Structure):
-    pass
-
-
-class UMaterialExpressionWorldNormal(Structure):
-    pass
-
-
-class UMaterialExpressionWorldPosition_Data(Structure):
-    pass
-
-
-class UMaterialExpressionWorldPosition(Structure):
-    pass
-
-
-class UMaterialInstance_Data(Structure):
-    pass
-
-
-class UMaterialInstance(Structure):
-    pass
-
-
-class UMaterialInstanceConstant_Data(Structure):
-    pass
-
-
-class UMaterialInstanceConstant(Structure):
-    pass
-
-
-class TArray_UMaterialInstanceConstantPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UMaterialInstanceConstant))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UMaterialInstanceTimeVarying_Data(Structure):
-    pass
-
-
-class UMaterialInstanceTimeVarying(Structure):
-    pass
-
-
-class AEmitter_Data(Structure):
-    pass
-
-
-class AEmitter(Structure):
-    pass
-
-
-class AEmitterCameraLensEffectBase_Data(Structure):
-    pass
-
-
-class AEmitterCameraLensEffectBase(Structure):
-    pass
-
-
-class TArray_AEmitterCameraLensEffectBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AEmitterCameraLensEffectBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AParticleEventManager_Data(Structure):
-    pass
-
-
-class AParticleEventManager(Structure):
-    pass
-
-
-class UParticleSystemComponent_Data(Structure):
-    pass
-
-
-class UParticleSystemComponent(Structure):
-    pass
-
-
-class TArray_UParticleSystemComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleSystemComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDistributionFloatParticleParameter_Data(Structure):
-    pass
-
-
-class UDistributionFloatParticleParameter(Structure):
-    pass
-
-
-class UDistributionVectorParticleParameter_Data(Structure):
-    pass
-
-
-class UDistributionVectorParticleParameter(Structure):
-    pass
-
-
-class UParticleEmitter_Data(Structure):
-    pass
-
-
-class UParticleEmitter(Structure):
-    pass
-
-
-class TArray_UParticleEmitterPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleEmitter))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleSpriteEmitter_Data(Structure):
-    pass
-
-
-class UParticleSpriteEmitter(Structure):
-    pass
-
-
-class UParticleLODLevel_Data(Structure):
-    pass
-
-
-class UParticleLODLevel(Structure):
-    pass
-
-
-class TArray_UParticleLODLevelPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleLODLevel))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleModule_Data(Structure):
-    pass
-
-
-class UParticleModule(Structure):
-    pass
-
-
-class TArray_UParticleModulePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleModule))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleModuleAccelerationBase_Data(Structure):
-    pass
-
-
-class UParticleModuleAccelerationBase(Structure):
-    pass
-
-
-class UParticleModuleAcceleration_Data(Structure):
-    pass
-
-
-class UParticleModuleAcceleration(Structure):
-    pass
-
-
-class UParticleModuleAccelerationOverLifetime_Data(Structure):
-    pass
-
-
-class UParticleModuleAccelerationOverLifetime(Structure):
-    pass
-
-
-class UParticleModuleAttractorBase_Data(Structure):
-    pass
-
-
-class UParticleModuleAttractorBase(Structure):
-    pass
-
-
-class UParticleModuleAttractorLine_Data(Structure):
-    pass
-
-
-class UParticleModuleAttractorLine(Structure):
-    pass
-
-
-class UParticleModuleAttractorParticle_Data(Structure):
-    pass
-
-
-class UParticleModuleAttractorParticle(Structure):
-    pass
-
-
-class UParticleModuleAttractorPoint_Data(Structure):
-    pass
-
-
-class UParticleModuleAttractorPoint(Structure):
-    pass
-
-
-class UParticleModuleBeamBase_Data(Structure):
-    pass
-
-
-class UParticleModuleBeamBase(Structure):
-    pass
-
-
-class UParticleModuleBeamModifier_Data(Structure):
-    pass
-
-
-class UParticleModuleBeamModifier(Structure):
-    pass
-
-
-class UParticleModuleBeamNoise_Data(Structure):
-    pass
-
-
-class UParticleModuleBeamNoise(Structure):
-    pass
-
-
-class UParticleModuleBeamSource_Data(Structure):
-    pass
-
-
-class UParticleModuleBeamSource(Structure):
-    pass
-
-
-class UParticleModuleBeamTarget_Data(Structure):
-    pass
-
-
-class UParticleModuleBeamTarget(Structure):
-    pass
-
-
-class UParticleModuleBeamTrace_Data(Structure):
-    pass
-
-
-class UParticleModuleBeamTrace(Structure):
-    pass
-
-
-class UParticleModuleCameraBase_Data(Structure):
-    pass
-
-
-class UParticleModuleCameraBase(Structure):
-    pass
-
-
-class UParticleModuleCameraOffset_Data(Structure):
-    pass
-
-
-class UParticleModuleCameraOffset(Structure):
-    pass
-
-
-class UParticleModuleCollisionBase_Data(Structure):
-    pass
-
-
-class UParticleModuleCollisionBase(Structure):
-    pass
-
-
-class UParticleModuleCollision_Data(Structure):
-    pass
-
-
-class UParticleModuleCollision(Structure):
-    pass
-
-
-class UParticleModuleCollisionActor_Data(Structure):
-    pass
-
-
-class UParticleModuleCollisionActor(Structure):
-    pass
-
-
-class UParticleModuleColorBase_Data(Structure):
-    pass
-
-
-class UParticleModuleColorBase(Structure):
-    pass
-
-
-class UParticleModuleColor_Data(Structure):
-    pass
-
-
-class UParticleModuleColor(Structure):
-    pass
-
-
-class UParticleModuleColor_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleColor_Seeded(Structure):
-    pass
-
-
-class UParticleModuleColorByParameter_Data(Structure):
-    pass
-
-
-class UParticleModuleColorByParameter(Structure):
-    pass
-
-
-class UParticleModuleColorOverLife_Data(Structure):
-    pass
-
-
-class UParticleModuleColorOverLife(Structure):
-    pass
-
-
-class UParticleModuleColorScaleOverDensity_Data(Structure):
-    pass
-
-
-class UParticleModuleColorScaleOverDensity(Structure):
-    pass
-
-
-class UParticleModuleColorScaleOverLife_Data(Structure):
-    pass
-
-
-class UParticleModuleColorScaleOverLife(Structure):
-    pass
-
-
-class UParticleModuleEventBase_Data(Structure):
-    pass
-
-
-class UParticleModuleEventBase(Structure):
-    pass
-
-
-class UParticleModuleEventGenerator_Data(Structure):
-    pass
-
-
-class UParticleModuleEventGenerator(Structure):
-    pass
-
-
-class UParticleModuleEventGeneratorDecal_Data(Structure):
-    pass
-
-
-class UParticleModuleEventGeneratorDecal(Structure):
-    pass
-
-
-class UParticleModuleEventReceiverBase_Data(Structure):
-    pass
-
-
-class UParticleModuleEventReceiverBase(Structure):
-    pass
-
-
-class TArray_UParticleModuleEventReceiverBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleModuleEventReceiverBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleModuleEventReceiverKillParticles_Data(Structure):
-    pass
-
-
-class UParticleModuleEventReceiverKillParticles(Structure):
-    pass
-
-
-class UParticleModuleEventReceiverSpawn_Data(Structure):
-    pass
-
-
-class UParticleModuleEventReceiverSpawn(Structure):
-    pass
-
-
-class UParticleModuleForceFieldBase_Data(Structure):
-    pass
-
-
-class UParticleModuleForceFieldBase(Structure):
-    pass
-
-
-class UParticleModuleKillBase_Data(Structure):
-    pass
-
-
-class UParticleModuleKillBase(Structure):
-    pass
-
-
-class UParticleModuleKillBox_Data(Structure):
-    pass
-
-
-class UParticleModuleKillBox(Structure):
-    pass
-
-
-class UParticleModuleKillHeight_Data(Structure):
-    pass
-
-
-class UParticleModuleKillHeight(Structure):
-    pass
-
-
-class UParticleModuleLifetimeBase_Data(Structure):
-    pass
-
-
-class UParticleModuleLifetimeBase(Structure):
-    pass
-
-
-class UParticleModuleLifetime_Data(Structure):
-    pass
-
-
-class UParticleModuleLifetime(Structure):
-    pass
-
-
-class UParticleModuleLifetime_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleLifetime_Seeded(Structure):
-    pass
-
-
-class UParticleModuleLocationBase_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationBase(Structure):
-    pass
-
-
-class UParticleModuleLocation_Data(Structure):
-    pass
-
-
-class UParticleModuleLocation(Structure):
-    pass
-
-
-class UParticleModuleLocation_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleLocation_Seeded(Structure):
-    pass
-
-
-class UParticleModuleLocationBoneSocket_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationBoneSocket(Structure):
-    pass
-
-
-class UParticleModuleLocationDirect_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationDirect(Structure):
-    pass
-
-
-class UParticleModuleLocationEmitter_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationEmitter(Structure):
-    pass
-
-
-class UParticleModuleLocationEmitterDirect_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationEmitterDirect(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveBase_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveBase(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveCylinder_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveCylinder(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveCylinder_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveCylinder_Seeded(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveSphere_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveSphere(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveSphere_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationPrimitiveSphere_Seeded(Structure):
-    pass
-
-
-class UParticleModuleLocationSkelVertSurface_Data(Structure):
-    pass
-
-
-class UParticleModuleLocationSkelVertSurface(Structure):
-    pass
-
-
-class UParticleModuleSourceMovement_Data(Structure):
-    pass
-
-
-class UParticleModuleSourceMovement(Structure):
-    pass
-
-
-class UParticleModuleMaterialBase_Data(Structure):
-    pass
-
-
-class UParticleModuleMaterialBase(Structure):
-    pass
-
-
-class UParticleModuleMaterialByParameter_Data(Structure):
-    pass
-
-
-class UParticleModuleMaterialByParameter(Structure):
-    pass
-
-
-class UParticleModuleMeshMaterial_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshMaterial(Structure):
-    pass
-
-
-class UParticleModuleOrbitBase_Data(Structure):
-    pass
-
-
-class UParticleModuleOrbitBase(Structure):
-    pass
-
-
-class UParticleModuleOrbit_Data(Structure):
-    pass
-
-
-class UParticleModuleOrbit(Structure):
-    pass
-
-
-class TArray_UParticleModuleOrbitPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleModuleOrbit))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleModuleOrientationBase_Data(Structure):
-    pass
-
-
-class UParticleModuleOrientationBase(Structure):
-    pass
-
-
-class UParticleModuleOrientationAxisLock_Data(Structure):
-    pass
-
-
-class UParticleModuleOrientationAxisLock(Structure):
-    pass
-
-
-class UParticleModuleParameterBase_Data(Structure):
-    pass
-
-
-class UParticleModuleParameterBase(Structure):
-    pass
-
-
-class UParticleModuleParameterDynamic_Data(Structure):
-    pass
-
-
-class UParticleModuleParameterDynamic(Structure):
-    pass
-
-
-class UParticleModuleParameterDynamic_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleParameterDynamic_Seeded(Structure):
-    pass
-
-
-class UParticleModuleRequired_Data(Structure):
-    pass
-
-
-class UParticleModuleRequired(Structure):
-    pass
-
-
-class UParticleModuleRotationBase_Data(Structure):
-    pass
-
-
-class UParticleModuleRotationBase(Structure):
-    pass
-
-
-class UParticleModuleMeshRotation_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshRotation(Structure):
-    pass
-
-
-class UParticleModuleMeshRotation_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshRotation_Seeded(Structure):
-    pass
-
-
-class UParticleModuleRotation_Data(Structure):
-    pass
-
-
-class UParticleModuleRotation(Structure):
-    pass
-
-
-class UParticleModuleRotation_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleRotation_Seeded(Structure):
-    pass
-
-
-class UParticleModuleRotationOverLifetime_Data(Structure):
-    pass
-
-
-class UParticleModuleRotationOverLifetime(Structure):
-    pass
-
-
-class UParticleModuleRotationRateBase_Data(Structure):
-    pass
-
-
-class UParticleModuleRotationRateBase(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRate_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRate(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRate_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRate_Seeded(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRateMultiplyLife_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRateMultiplyLife(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRateOverLife_Data(Structure):
-    pass
-
-
-class UParticleModuleMeshRotationRateOverLife(Structure):
-    pass
-
-
-class UParticleModuleRotationRate_Data(Structure):
-    pass
-
-
-class UParticleModuleRotationRate(Structure):
-    pass
-
-
-class UParticleModuleRotationRate_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleRotationRate_Seeded(Structure):
-    pass
-
-
-class UParticleModuleRotationRateMultiplyLife_Data(Structure):
-    pass
-
-
-class UParticleModuleRotationRateMultiplyLife(Structure):
-    pass
-
-
-class UParticleModuleSizeBase_Data(Structure):
-    pass
-
-
-class UParticleModuleSizeBase(Structure):
-    pass
-
-
-class UParticleModuleSize_Data(Structure):
-    pass
-
-
-class UParticleModuleSize(Structure):
-    pass
-
-
-class UParticleModuleSize_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleSize_Seeded(Structure):
-    pass
-
-
-class UParticleModuleSizeMultiplyLife_Data(Structure):
-    pass
-
-
-class UParticleModuleSizeMultiplyLife(Structure):
-    pass
-
-
-class UParticleModuleSizeMultiplyVelocity_Data(Structure):
-    pass
-
-
-class UParticleModuleSizeMultiplyVelocity(Structure):
-    pass
-
-
-class UParticleModuleSizeScale_Data(Structure):
-    pass
-
-
-class UParticleModuleSizeScale(Structure):
-    pass
-
-
-class UParticleModuleSizeScaleByTime_Data(Structure):
-    pass
-
-
-class UParticleModuleSizeScaleByTime(Structure):
-    pass
-
-
-class UParticleModuleSizeScaleOverDensity_Data(Structure):
-    pass
-
-
-class UParticleModuleSizeScaleOverDensity(Structure):
-    pass
-
-
-class UParticleModuleSpawnBase_Data(Structure):
-    pass
-
-
-class UParticleModuleSpawnBase(Structure):
-    pass
-
-
-class TArray_UParticleModuleSpawnBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleModuleSpawnBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleModuleSpawn_Data(Structure):
-    pass
-
-
-class UParticleModuleSpawn(Structure):
-    pass
-
-
-class UParticleModuleSpawnPerUnit_Data(Structure):
-    pass
-
-
-class UParticleModuleSpawnPerUnit(Structure):
-    pass
-
-
-class UParticleModuleStoreSpawnTimeBase_Data(Structure):
-    pass
-
-
-class UParticleModuleStoreSpawnTimeBase(Structure):
-    pass
-
-
-class UParticleModuleStoreSpawnTime_Data(Structure):
-    pass
-
-
-class UParticleModuleStoreSpawnTime(Structure):
-    pass
-
-
-class UParticleModuleSubUVBase_Data(Structure):
-    pass
-
-
-class UParticleModuleSubUVBase(Structure):
-    pass
-
-
-class UParticleModuleSubUV_Data(Structure):
-    pass
-
-
-class UParticleModuleSubUV(Structure):
-    pass
-
-
-class UParticleModuleSubUVMovie_Data(Structure):
-    pass
-
-
-class UParticleModuleSubUVMovie(Structure):
-    pass
-
-
-class UParticleModuleSubUVDirect_Data(Structure):
-    pass
-
-
-class UParticleModuleSubUVDirect(Structure):
-    pass
-
-
-class UParticleModuleSubUVSelect_Data(Structure):
-    pass
-
-
-class UParticleModuleSubUVSelect(Structure):
-    pass
-
-
-class UParticleModuleTrailBase_Data(Structure):
-    pass
-
-
-class UParticleModuleTrailBase(Structure):
-    pass
-
-
-class UParticleModuleTrailSource_Data(Structure):
-    pass
-
-
-class UParticleModuleTrailSource(Structure):
-    pass
-
-
-class UParticleModuleTrailSpawn_Data(Structure):
-    pass
-
-
-class UParticleModuleTrailSpawn(Structure):
-    pass
-
-
-class UParticleModuleTrailTaper_Data(Structure):
-    pass
-
-
-class UParticleModuleTrailTaper(Structure):
-    pass
-
-
-class UParticleModuleTypeDataBase_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataBase(Structure):
-    pass
-
-
-class UParticleModuleTypeDataAnimTrail_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataAnimTrail(Structure):
-    pass
-
-
-class UParticleModuleTypeDataApex_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataApex(Structure):
-    pass
-
-
-class UParticleModuleTypeDataBeam_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataBeam(Structure):
-    pass
-
-
-class UParticleModuleTypeDataBeam2_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataBeam2(Structure):
-    pass
-
-
-class UParticleModuleTypeDataMesh_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataMesh(Structure):
-    pass
-
-
-class UParticleModuleTypeDataMeshPhysX_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataMeshPhysX(Structure):
-    pass
-
-
-class UParticleModuleTypeDataPhysX_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataPhysX(Structure):
-    pass
-
-
-class UParticleModuleTypeDataRibbon_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataRibbon(Structure):
-    pass
-
-
-class UParticleModuleTypeDataTrail_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataTrail(Structure):
-    pass
-
-
-class UParticleModuleTypeDataTrail2_Data(Structure):
-    pass
-
-
-class UParticleModuleTypeDataTrail2(Structure):
-    pass
-
-
-class UParticleModuleUberBase_Data(Structure):
-    pass
-
-
-class UParticleModuleUberBase(Structure):
-    pass
-
-
-class UParticleModuleUberLTISIVCL_Data(Structure):
-    pass
-
-
-class UParticleModuleUberLTISIVCL(Structure):
-    pass
-
-
-class UParticleModuleUberLTISIVCLIL_Data(Structure):
-    pass
-
-
-class UParticleModuleUberLTISIVCLIL(Structure):
-    pass
-
-
-class UParticleModuleUberLTISIVCLILIRSSBLIRR_Data(Structure):
-    pass
-
-
-class UParticleModuleUberLTISIVCLILIRSSBLIRR(Structure):
-    pass
-
-
-class UParticleModuleUberRainDrops_Data(Structure):
-    pass
-
-
-class UParticleModuleUberRainDrops(Structure):
-    pass
-
-
-class UParticleModuleUberRainImpacts_Data(Structure):
-    pass
-
-
-class UParticleModuleUberRainImpacts(Structure):
-    pass
-
-
-class UParticleModuleUberRainSplashA_Data(Structure):
-    pass
-
-
-class UParticleModuleUberRainSplashA(Structure):
-    pass
-
-
-class UParticleModuleUberRainSplashB_Data(Structure):
-    pass
-
-
-class UParticleModuleUberRainSplashB(Structure):
-    pass
-
-
-class UParticleModuleVelocityBase_Data(Structure):
-    pass
-
-
-class UParticleModuleVelocityBase(Structure):
-    pass
-
-
-class UParticleModuleVelocity_Data(Structure):
-    pass
-
-
-class UParticleModuleVelocity(Structure):
-    pass
-
-
-class UParticleModuleVelocity_Seeded_Data(Structure):
-    pass
-
-
-class UParticleModuleVelocity_Seeded(Structure):
-    pass
-
-
-class UParticleModuleVelocityInheritParent_Data(Structure):
-    pass
-
-
-class UParticleModuleVelocityInheritParent(Structure):
-    pass
-
-
-class UParticleModuleVelocityOverLifetime_Data(Structure):
-    pass
-
-
-class UParticleModuleVelocityOverLifetime(Structure):
-    pass
-
-
-class UParticleModuleEventSendToGame_Data(Structure):
-    pass
-
-
-class UParticleModuleEventSendToGame(Structure):
-    pass
-
-
-class TArray_UParticleModuleEventSendToGamePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleModuleEventSendToGame))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleSystem_Data(Structure):
-    pass
-
-
-class UParticleSystem(Structure):
-    pass
-
-
-class TArray_UParticleSystemPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleSystem))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UParticleSystemReplay_Data(Structure):
-    pass
-
-
-class UParticleSystemReplay(Structure):
-    pass
-
-
-class TArray_UParticleSystemReplayPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UParticleSystemReplay))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPhysXParticleSystem_Data(Structure):
-    pass
-
-
-class UPhysXParticleSystem(Structure):
-    pass
-
-
-class AKActor_Data(Structure):
-    pass
-
-
-class AKActor(Structure):
-    pass
-
-
-class AKActorFromStatic_Data(Structure):
-    pass
-
-
-class AKActorFromStatic(Structure):
-    pass
-
-
-class AKActorSpawnable_Data(Structure):
-    pass
-
-
-class AKActorSpawnable(Structure):
-    pass
-
-
-class AKActorPizazz_Data(Structure):
-    pass
-
-
-class AKActorPizazz(Structure):
-    pass
-
-
-class AKAsset_Data(Structure):
-    pass
-
-
-class AKAsset(Structure):
-    pass
-
-
-class APawn_Data(Structure):
-    pass
-
-
-class APawn(Structure):
-    pass
-
-
-class TArray_APawnPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(APawn))), ("Count", c_int), ("Max", c_int)]
-
-
-class AVehicle_Data(Structure):
-    pass
-
-
-class AVehicle(Structure):
-    pass
-
-
-class ASVehicle_Data(Structure):
-    pass
-
-
-class ASVehicle(Structure):
-    pass
-
-
-class ARB_ConstraintActor_Data(Structure):
-    pass
-
-
-class ARB_ConstraintActor(Structure):
-    pass
-
-
-class ARB_LineImpulseActor_Data(Structure):
-    pass
-
-
-class ARB_LineImpulseActor(Structure):
-    pass
-
-
-class ARB_RadialImpulseActor_Data(Structure):
-    pass
-
-
-class ARB_RadialImpulseActor(Structure):
-    pass
-
-
-class ARB_Thruster_Data(Structure):
-    pass
-
-
-class ARB_Thruster(Structure):
-    pass
-
-
-class URB_ConstraintDrawComponent_Data(Structure):
-    pass
-
-
-class URB_ConstraintDrawComponent(Structure):
-    pass
-
-
-class URB_RadialImpulseComponent_Data(Structure):
-    pass
-
-
-class URB_RadialImpulseComponent(Structure):
-    pass
-
-
-class URB_Handle_Data(Structure):
-    pass
-
-
-class URB_Handle(Structure):
-    pass
-
-
-class URB_Spring_Data(Structure):
-    pass
-
-
-class URB_Spring(Structure):
-    pass
-
-
-class USVehicleSimBase_Data(Structure):
-    pass
-
-
-class USVehicleSimBase(Structure):
-    pass
-
-
-class USVehicleSimCar_Data(Structure):
-    pass
-
-
-class USVehicleSimCar(Structure):
-    pass
-
-
-class USVehicleSimTank_Data(Structure):
-    pass
-
-
-class USVehicleSimTank(Structure):
-    pass
-
-
-class UActorFactoryApexClothing_Data(Structure):
-    pass
-
-
-class UActorFactoryApexClothing(Structure):
-    pass
-
-
-class UApexDestructibleDamageParameters_Data(Structure):
-    pass
-
-
-class UApexDestructibleDamageParameters(Structure):
-    pass
-
-
-class UFractureMaterial_Data(Structure):
-    pass
-
-
-class UFractureMaterial(Structure):
-    pass
-
-
-class TArray_UFractureMaterialPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UFractureMaterial))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPhysicalMaterial_Data(Structure):
-    pass
-
-
-class UPhysicalMaterial(Structure):
-    pass
-
-
-class TArray_UPhysicalMaterialPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPhysicalMaterial))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UPhysicalMaterialPropertyBase_Data(Structure):
-    pass
-
-
-class UPhysicalMaterialPropertyBase(Structure):
-    pass
-
-
-class UPhysicsAsset_Data(Structure):
-    pass
-
-
-class UPhysicsAsset(Structure):
-    pass
-
-
-class UPhysicsAssetInstance_Data(Structure):
-    pass
-
-
-class UPhysicsAssetInstance(Structure):
-    pass
-
-
-class UPhysicsLODVerticalEmitter_Data(Structure):
-    pass
-
-
-class UPhysicsLODVerticalEmitter(Structure):
-    pass
-
-
-class URB_BodyInstance_Data(Structure):
-    pass
-
-
-class URB_BodyInstance(Structure):
-    pass
-
-
-class TArray_URB_BodyInstancePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(URB_BodyInstance))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class URB_ConstraintInstance_Data(Structure):
-    pass
-
-
-class URB_ConstraintInstance(Structure):
-    pass
-
-
-class TArray_URB_ConstraintInstancePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(URB_ConstraintInstance))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class URB_ConstraintSetup_Data(Structure):
-    pass
-
-
-class URB_ConstraintSetup(Structure):
-    pass
-
-
-class TArray_URB_ConstraintSetupPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(URB_ConstraintSetup))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class URB_BSJointSetup_Data(Structure):
-    pass
-
-
-class URB_BSJointSetup(Structure):
-    pass
-
-
-class URB_DistanceJointSetup_Data(Structure):
-    pass
-
-
-class URB_DistanceJointSetup(Structure):
-    pass
-
-
-class URB_HingeSetup_Data(Structure):
-    pass
-
-
-class URB_HingeSetup(Structure):
-    pass
-
-
-class URB_PrismaticSetup_Data(Structure):
-    pass
-
-
-class URB_PrismaticSetup(Structure):
-    pass
-
-
-class URB_PulleyJointSetup_Data(Structure):
-    pass
-
-
-class URB_PulleyJointSetup(Structure):
-    pass
-
-
-class URB_SkelJointSetup_Data(Structure):
-    pass
-
-
-class URB_SkelJointSetup(Structure):
-    pass
-
-
-class URB_StayUprightSetup_Data(Structure):
-    pass
-
-
-class URB_StayUprightSetup(Structure):
-    pass
-
-
-class USVehicleWheel_Data(Structure):
-    pass
-
-
-class USVehicleWheel(Structure):
-    pass
-
-
-class TArray_USVehicleWheelPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USVehicleWheel))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ANxGenericForceFieldBrush_Data(Structure):
-    pass
-
-
-class ANxGenericForceFieldBrush(Structure):
-    pass
-
-
-class ARB_ForceFieldExcludeVolume_Data(Structure):
-    pass
-
-
-class ARB_ForceFieldExcludeVolume(Structure):
-    pass
-
-
-class ANxForceField_Data(Structure):
-    pass
-
-
-class ANxForceField(Structure):
-    pass
-
-
-class ANxCylindricalForceField_Data(Structure):
-    pass
-
-
-class ANxCylindricalForceField(Structure):
-    pass
-
-
-class ANxCylindricalForceFieldCapsule_Data(Structure):
-    pass
-
-
-class ANxCylindricalForceFieldCapsule(Structure):
-    pass
-
-
-class ANxForceFieldGeneric_Data(Structure):
-    pass
-
-
-class ANxForceFieldGeneric(Structure):
-    pass
-
-
-class ANxForceFieldRadial_Data(Structure):
-    pass
-
-
-class ANxForceFieldRadial(Structure):
-    pass
-
-
-class ANxForceFieldTornado_Data(Structure):
-    pass
-
-
-class ANxForceFieldTornado(Structure):
-    pass
-
-
-class ANxGenericForceField_Data(Structure):
-    pass
-
-
-class ANxGenericForceField(Structure):
-    pass
-
-
-class ANxGenericForceFieldBox_Data(Structure):
-    pass
-
-
-class ANxGenericForceFieldBox(Structure):
-    pass
-
-
-class ANxGenericForceFieldCapsule_Data(Structure):
-    pass
-
-
-class ANxGenericForceFieldCapsule(Structure):
-    pass
-
-
-class ANxRadialForceField_Data(Structure):
-    pass
-
-
-class ANxRadialForceField(Structure):
-    pass
-
-
-class ANxRadialCustomForceField_Data(Structure):
-    pass
-
-
-class ANxRadialCustomForceField(Structure):
-    pass
-
-
-class ANxTornadoAngularForceField_Data(Structure):
-    pass
-
-
-class ANxTornadoAngularForceField(Structure):
-    pass
-
-
-class ANxTornadoAngularForceFieldCapsule_Data(Structure):
-    pass
-
-
-class ANxTornadoAngularForceFieldCapsule(Structure):
-    pass
-
-
-class ANxTornadoForceField_Data(Structure):
-    pass
-
-
-class ANxTornadoForceField(Structure):
-    pass
-
-
-class ANxTornadoForceFieldCapsule_Data(Structure):
-    pass
-
-
-class ANxTornadoForceFieldCapsule(Structure):
-    pass
-
-
-class ANxForceFieldSpawnable_Data(Structure):
-    pass
-
-
-class ANxForceFieldSpawnable(Structure):
-    pass
-
-
-class ARB_CylindricalForceActor_Data(Structure):
-    pass
-
-
-class ARB_CylindricalForceActor(Structure):
-    pass
-
-
-class ARB_RadialForceActor_Data(Structure):
-    pass
-
-
-class ARB_RadialForceActor(Structure):
-    pass
-
-
-class UNxForceFieldComponent_Data(Structure):
-    pass
-
-
-class UNxForceFieldComponent(Structure):
-    pass
-
-
-class UNxForceFieldCylindricalComponent_Data(Structure):
-    pass
-
-
-class UNxForceFieldCylindricalComponent(Structure):
-    pass
-
-
-class UNxForceFieldGenericComponent_Data(Structure):
-    pass
-
-
-class UNxForceFieldGenericComponent(Structure):
-    pass
-
-
-class UNxForceFieldRadialComponent_Data(Structure):
-    pass
-
-
-class UNxForceFieldRadialComponent(Structure):
-    pass
-
-
-class UNxForceFieldTornadoComponent_Data(Structure):
-    pass
-
-
-class UNxForceFieldTornadoComponent(Structure):
-    pass
-
-
-class UForceFieldShape_Data(Structure):
-    pass
-
-
-class UForceFieldShape(Structure):
-    pass
-
-
-class UForceFieldShapeBox_Data(Structure):
-    pass
-
-
-class UForceFieldShapeBox(Structure):
-    pass
-
-
-class UForceFieldShapeCapsule_Data(Structure):
-    pass
-
-
-class UForceFieldShapeCapsule(Structure):
-    pass
-
-
-class UForceFieldShapeSphere_Data(Structure):
-    pass
-
-
-class UForceFieldShapeSphere(Structure):
-    pass
-
-
-class APrefabInstance_Data(Structure):
-    pass
-
-
-class APrefabInstance(Structure):
-    pass
-
-
-class UPrefab_Data(Structure):
-    pass
-
-
-class UPrefab(Structure):
-    pass
-
-
-class USequenceObject_Data(Structure):
-    pass
-
-
-class USequenceObject(Structure):
-    pass
-
-
-class TArray_USequenceObjectPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USequenceObject))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USequenceOp_Data(Structure):
-    pass
-
-
-class USequenceOp(Structure):
-    pass
-
-
-class TArray_USequenceOpPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USequenceOp))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USequenceEvent_Data(Structure):
-    pass
-
-
-class USequenceEvent(Structure):
-    pass
-
-
-class TArray_USequenceEventPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USequenceEvent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USequenceEventCustomEnableCondition_Data(Structure):
-    pass
-
-
-class USequenceEventCustomEnableCondition(Structure):
-    pass
-
-
-class USequenceFrame_Data(Structure):
-    pass
-
-
-class USequenceFrame(Structure):
-    pass
-
-
-class USavingSequenceFrame_Data(Structure):
-    pass
-
-
-class USavingSequenceFrame(Structure):
-    pass
-
-
-class USequenceFrameWrapped_Data(Structure):
-    pass
-
-
-class USequenceFrameWrapped(Structure):
-    pass
-
-
-class USeqDef_Base_Data(Structure):
-    pass
-
-
-class USeqDef_Base(Structure):
-    pass
-
-
-class USequence_Data(Structure):
-    pass
-
-
-class USequence(Structure):
-    pass
-
-
-class TArray_USequencePtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(USequence))), ("Count", c_int), ("Max", c_int)]
-
-
-class UPrefabSequence_Data(Structure):
-    pass
-
-
-class UPrefabSequence(Structure):
-    pass
-
-
-class UPrefabSequenceContainer_Data(Structure):
-    pass
-
-
-class UPrefabSequenceContainer(Structure):
-    pass
-
-
-class USequenceDefinition_Data(Structure):
-    pass
-
-
-class USequenceDefinition(Structure):
-    pass
-
-
-class USequenceAction_Data(Structure):
-    pass
-
-
-class USequenceAction(Structure):
-    pass
-
-
-class USeqAct_ActivateRemoteEvent_Data(Structure):
-    pass
-
-
-class USeqAct_ActivateRemoteEvent(Structure):
-    pass
-
-
-class USeqAct_AndGate_Data(Structure):
-    pass
-
-
-class USeqAct_AndGate(Structure):
-    pass
-
-
-class USeqAct_ApplyBehavior_Data(Structure):
-    pass
-
-
-class USeqAct_ApplyBehavior(Structure):
-    pass
-
-
-class USeqAct_ApplySoundNode_Data(Structure):
-    pass
-
-
-class USeqAct_ApplySoundNode(Structure):
-    pass
-
-
-class USeqAct_AttachToEvent_Data(Structure):
-    pass
-
-
-class USeqAct_AttachToEvent(Structure):
-    pass
-
-
-class USeqAct_CameraFade_Data(Structure):
-    pass
-
-
-class USeqAct_CameraFade(Structure):
-    pass
-
-
-class USeqAct_CameraLookAt_Data(Structure):
-    pass
-
-
-class USeqAct_CameraLookAt(Structure):
-    pass
-
-
-class USeqAct_ChangeCollision_Data(Structure):
-    pass
-
-
-class USeqAct_ChangeCollision(Structure):
-    pass
-
-
-class USeqAct_CommitMapChange_Data(Structure):
-    pass
-
-
-class USeqAct_CommitMapChange(Structure):
-    pass
-
-
-class USeqAct_ConsoleCommand_Data(Structure):
-    pass
-
-
-class USeqAct_ConsoleCommand(Structure):
-    pass
-
-
-class USeqAct_ConvertToString_Data(Structure):
-    pass
-
-
-class USeqAct_ConvertToString(Structure):
-    pass
-
-
-class USeqAct_DrawText_Data(Structure):
-    pass
-
-
-class USeqAct_DrawText(Structure):
-    pass
-
-
-class USeqAct_FinishSequence_Data(Structure):
-    pass
-
-
-class USeqAct_FinishSequence(Structure):
-    pass
-
-
-class USeqAct_Gate_Data(Structure):
-    pass
-
-
-class USeqAct_Gate(Structure):
-    pass
-
-
-class USeqAct_GetDistance_Data(Structure):
-    pass
-
-
-class USeqAct_GetDistance(Structure):
-    pass
-
-
-class USeqAct_GetLocationAndRotation_Data(Structure):
-    pass
-
-
-class USeqAct_GetLocationAndRotation(Structure):
-    pass
-
-
-class USeqAct_GetProperty_Data(Structure):
-    pass
-
-
-class USeqAct_GetProperty(Structure):
-    pass
-
-
-class USeqAct_GetVectorComponents_Data(Structure):
-    pass
-
-
-class USeqAct_GetVectorComponents(Structure):
-    pass
-
-
-class USeqAct_GetVelocity_Data(Structure):
-    pass
-
-
-class USeqAct_GetVelocity(Structure):
-    pass
-
-
-class USeqAct_HeadTrackingControl_Data(Structure):
-    pass
-
-
-class USeqAct_HeadTrackingControl(Structure):
-    pass
-
-
-class USeqAct_IsInObjectList_Data(Structure):
-    pass
-
-
-class USeqAct_IsInObjectList(Structure):
-    pass
-
-
-class USeqAct_Latent_Data(Structure):
-    pass
-
-
-class USeqAct_Latent(Structure):
-    pass
-
-
-class TArray_USeqAct_LatentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USeqAct_Latent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USeqAct_ActorFactory_Data(Structure):
-    pass
-
-
-class USeqAct_ActorFactory(Structure):
-    pass
-
-
-class USeqAct_ActorFactoryEx_Data(Structure):
-    pass
-
-
-class USeqAct_ActorFactoryEx(Structure):
-    pass
-
-
-class USeqAct_ProjectileFactory_Data(Structure):
-    pass
-
-
-class USeqAct_ProjectileFactory(Structure):
-    pass
-
-
-class USeqAct_AIMoveToActor_Data(Structure):
-    pass
-
-
-class USeqAct_AIMoveToActor(Structure):
-    pass
-
-
-class USeqAct_Delay_Data(Structure):
-    pass
-
-
-class USeqAct_Delay(Structure):
-    pass
-
-
-class USeqAct_DelaySwitch_Data(Structure):
-    pass
-
-
-class USeqAct_DelaySwitch(Structure):
-    pass
-
-
-class USeqAct_ForceGarbageCollection_Data(Structure):
-    pass
-
-
-class USeqAct_ForceGarbageCollection(Structure):
-    pass
-
-
-class USeqAct_Interp_Data(Structure):
-    pass
-
-
-class USeqAct_Interp(Structure):
-    pass
-
-
-class USeqAct_LevelStreamingBase_Data(Structure):
-    pass
-
-
-class USeqAct_LevelStreamingBase(Structure):
-    pass
-
-
-class USeqAct_LevelStreaming_Data(Structure):
-    pass
-
-
-class USeqAct_LevelStreaming(Structure):
-    pass
-
-
-class USeqAct_MultiLevelStreaming_Data(Structure):
-    pass
-
-
-class USeqAct_MultiLevelStreaming(Structure):
-    pass
-
-
-class USeqAct_LevelVisibility_Data(Structure):
-    pass
-
-
-class USeqAct_LevelVisibility(Structure):
-    pass
-
-
-class USeqAct_PlaySound_Data(Structure):
-    pass
-
-
-class USeqAct_PlaySound(Structure):
-    pass
-
-
-class USeqAct_PrepareMapChange_Data(Structure):
-    pass
-
-
-class USeqAct_PrepareMapChange(Structure):
-    pass
-
-
-class USeqAct_SetDOFParams_Data(Structure):
-    pass
-
-
-class USeqAct_SetDOFParams(Structure):
-    pass
-
-
-class USeqAct_SetMotionBlurParams_Data(Structure):
-    pass
-
-
-class USeqAct_SetMotionBlurParams(Structure):
-    pass
-
-
-class USeqAct_StreamInTextures_Data(Structure):
-    pass
-
-
-class USeqAct_StreamInTextures(Structure):
-    pass
-
-
-class USeqAct_WaitForLevelsVisible_Data(Structure):
-    pass
-
-
-class USeqAct_WaitForLevelsVisible(Structure):
-    pass
-
-
-class USeqAct_Log_Data(Structure):
-    pass
-
-
-class USeqAct_Log(Structure):
-    pass
-
-
-class USeqAct_ModifyCover_Data(Structure):
-    pass
-
-
-class USeqAct_ModifyCover(Structure):
-    pass
-
-
-class USeqAct_ModifyHealth_Data(Structure):
-    pass
-
-
-class USeqAct_ModifyHealth(Structure):
-    pass
-
-
-class USeqAct_ParticleEventGenerator_Data(Structure):
-    pass
-
-
-class USeqAct_ParticleEventGenerator(Structure):
-    pass
-
-
-class USeqAct_PhysXSwitch_Data(Structure):
-    pass
-
-
-class USeqAct_PhysXSwitch(Structure):
-    pass
-
-
-class USeqAct_PlayCameraAnim_Data(Structure):
-    pass
-
-
-class USeqAct_PlayCameraAnim(Structure):
-    pass
-
-
-class USeqAct_PlayFaceFXAnim_Data(Structure):
-    pass
-
-
-class USeqAct_PlayFaceFXAnim(Structure):
-    pass
-
-
-class USeqAct_PlayMusicTrack_Data(Structure):
-    pass
-
-
-class USeqAct_PlayMusicTrack(Structure):
-    pass
-
-
-class USeqAct_Possess_Data(Structure):
-    pass
-
-
-class USeqAct_Possess(Structure):
-    pass
-
-
-class USeqAct_SetApexClothingParam_Data(Structure):
-    pass
-
-
-class USeqAct_SetApexClothingParam(Structure):
-    pass
-
-
-class USeqAct_SetBlockRigidBody_Data(Structure):
-    pass
-
-
-class USeqAct_SetBlockRigidBody(Structure):
-    pass
-
-
-class USeqAct_SetCameraTarget_Data(Structure):
-    pass
-
-
-class USeqAct_SetCameraTarget(Structure):
-    pass
-
-
-class USeqAct_SetMaterial_Data(Structure):
-    pass
-
-
-class USeqAct_SetMaterial(Structure):
-    pass
-
-
-class USeqAct_SetMatInstScalarParam_Data(Structure):
-    pass
-
-
-class USeqAct_SetMatInstScalarParam(Structure):
-    pass
-
-
-class USeqAct_SetMesh_Data(Structure):
-    pass
-
-
-class USeqAct_SetMesh(Structure):
-    pass
-
-
-class USeqAct_SetPhysics_Data(Structure):
-    pass
-
-
-class USeqAct_SetPhysics(Structure):
-    pass
-
-
-class USeqAct_SetRigidBodyIgnoreVehicles_Data(Structure):
-    pass
-
-
-class USeqAct_SetRigidBodyIgnoreVehicles(Structure):
-    pass
-
-
-class USeqAct_SetSequenceVariable_Data(Structure):
-    pass
-
-
-class USeqAct_SetSequenceVariable(Structure):
-    pass
-
-
-class USeqAct_AccessObjectList_Data(Structure):
-    pass
-
-
-class USeqAct_AccessObjectList(Structure):
-    pass
-
-
-class USeqAct_AddFloat_Data(Structure):
-    pass
-
-
-class USeqAct_AddFloat(Structure):
-    pass
-
-
-class USeqAct_AddInt_Data(Structure):
-    pass
-
-
-class USeqAct_AddInt(Structure):
-    pass
-
-
-class USeqAct_CastToFloat_Data(Structure):
-    pass
-
-
-class USeqAct_CastToFloat(Structure):
-    pass
-
-
-class USeqAct_CastToInt_Data(Structure):
-    pass
-
-
-class USeqAct_CastToInt(Structure):
-    pass
-
-
-class USeqAct_DivideFloat_Data(Structure):
-    pass
-
-
-class USeqAct_DivideFloat(Structure):
-    pass
-
-
-class USeqAct_DivideInt_Data(Structure):
-    pass
-
-
-class USeqAct_DivideInt(Structure):
-    pass
-
-
-class USeqAct_ModifyObjectList_Data(Structure):
-    pass
-
-
-class USeqAct_ModifyObjectList(Structure):
-    pass
-
-
-class USeqAct_MultiplyFloat_Data(Structure):
-    pass
-
-
-class USeqAct_MultiplyFloat(Structure):
-    pass
-
-
-class USeqAct_MultiplyInt_Data(Structure):
-    pass
-
-
-class USeqAct_MultiplyInt(Structure):
-    pass
-
-
-class USeqAct_SetBool_Data(Structure):
-    pass
-
-
-class USeqAct_SetBool(Structure):
-    pass
-
-
-class USeqAct_SetFloat_Data(Structure):
-    pass
-
-
-class USeqAct_SetFloat(Structure):
-    pass
-
-
-class USeqAct_SetInt_Data(Structure):
-    pass
-
-
-class USeqAct_SetInt(Structure):
-    pass
-
-
-class USeqAct_SetLocation_Data(Structure):
-    pass
-
-
-class USeqAct_SetLocation(Structure):
-    pass
-
-
-class USeqAct_SetObject_Data(Structure):
-    pass
-
-
-class USeqAct_SetObject(Structure):
-    pass
-
-
-class USeqAct_SetString_Data(Structure):
-    pass
-
-
-class USeqAct_SetString(Structure):
-    pass
-
-
-class USeqAct_SubtractFloat_Data(Structure):
-    pass
-
-
-class USeqAct_SubtractFloat(Structure):
-    pass
-
-
-class USeqAct_SubtractInt_Data(Structure):
-    pass
-
-
-class USeqAct_SubtractInt(Structure):
-    pass
-
-
-class USeqAct_SetVectorComponents_Data(Structure):
-    pass
-
-
-class USeqAct_SetVectorComponents(Structure):
-    pass
-
-
-class USeqAct_Switch_Data(Structure):
-    pass
-
-
-class USeqAct_Switch(Structure):
-    pass
-
-
-class USeqAct_RandomSwitch_Data(Structure):
-    pass
-
-
-class USeqAct_RandomSwitch(Structure):
-    pass
-
-
-class USeqAct_Timer_Data(Structure):
-    pass
-
-
-class USeqAct_Timer(Structure):
-    pass
-
-
-class USeqAct_Toggle_Data(Structure):
-    pass
-
-
-class USeqAct_Toggle(Structure):
-    pass
-
-
-class USeqAct_Trace_Data(Structure):
-    pass
-
-
-class USeqAct_Trace(Structure):
-    pass
-
-
-class USequenceCondition_Data(Structure):
-    pass
-
-
-class USequenceCondition(Structure):
-    pass
-
-
-class USeqCond_CompareBool_Data(Structure):
-    pass
-
-
-class USeqCond_CompareBool(Structure):
-    pass
-
-
-class USeqCond_CompareFloat_Data(Structure):
-    pass
-
-
-class USeqCond_CompareFloat(Structure):
-    pass
-
-
-class USeqCond_CompareInt_Data(Structure):
-    pass
-
-
-class USeqCond_CompareInt(Structure):
-    pass
-
-
-class USeqCond_CompareObject_Data(Structure):
-    pass
-
-
-class USeqCond_CompareObject(Structure):
-    pass
-
-
-class USeqCond_GetServerType_Data(Structure):
-    pass
-
-
-class USeqCond_GetServerType(Structure):
-    pass
-
-
-class USeqCond_Increment_Data(Structure):
-    pass
-
-
-class USeqCond_Increment(Structure):
-    pass
-
-
-class USeqCond_IncrementFloat_Data(Structure):
-    pass
-
-
-class USeqCond_IncrementFloat(Structure):
-    pass
-
-
-class USeqCond_IsAlive_Data(Structure):
-    pass
-
-
-class USeqCond_IsAlive(Structure):
-    pass
-
-
-class USeqCond_IsBenchmarking_Data(Structure):
-    pass
-
-
-class USeqCond_IsBenchmarking(Structure):
-    pass
-
-
-class USeqCond_IsConsole_Data(Structure):
-    pass
-
-
-class USeqCond_IsConsole(Structure):
-    pass
-
-
-class USeqCond_IsInCombat_Data(Structure):
-    pass
-
-
-class USeqCond_IsInCombat(Structure):
-    pass
-
-
-class USeqCond_IsLoggedIn_Data(Structure):
-    pass
-
-
-class USeqCond_IsLoggedIn(Structure):
-    pass
-
-
-class USeqCond_IsPIE_Data(Structure):
-    pass
-
-
-class USeqCond_IsPIE(Structure):
-    pass
-
-
-class USeqCond_IsSameTeam_Data(Structure):
-    pass
-
-
-class USeqCond_IsSameTeam(Structure):
-    pass
-
-
-class USeqCond_MatureLanguage_Data(Structure):
-    pass
-
-
-class USeqCond_MatureLanguage(Structure):
-    pass
-
-
-class USeqCond_ShowGore_Data(Structure):
-    pass
-
-
-class USeqCond_ShowGore(Structure):
-    pass
-
-
-class USeqCond_SwitchBase_Data(Structure):
-    pass
-
-
-class USeqCond_SwitchBase(Structure):
-    pass
-
-
-class USeqCond_SwitchClass_Data(Structure):
-    pass
-
-
-class USeqCond_SwitchClass(Structure):
-    pass
-
-
-class USeqCond_SwitchObject_Data(Structure):
-    pass
-
-
-class USeqCond_SwitchObject(Structure):
-    pass
-
-
-class USeqCond_SwitchPlatform_Data(Structure):
-    pass
-
-
-class USeqCond_SwitchPlatform(Structure):
-    pass
-
-
-class USeqEvent_AISeeEnemy_Data(Structure):
-    pass
-
-
-class USeqEvent_AISeeEnemy(Structure):
-    pass
-
-
-class USeqEvent_AnimNotify_Data(Structure):
-    pass
-
-
-class USeqEvent_AnimNotify(Structure):
-    pass
-
-
-class USeqEvent_Console_Data(Structure):
-    pass
-
-
-class USeqEvent_Console(Structure):
-    pass
-
-
-class USeqEvent_ConstraintBroken_Data(Structure):
-    pass
-
-
-class USeqEvent_ConstraintBroken(Structure):
-    pass
-
-
-class USeqEvent_Destroyed_Data(Structure):
-    pass
-
-
-class USeqEvent_Destroyed(Structure):
-    pass
-
-
-class USeqEvent_LevelLoaded_Data(Structure):
-    pass
-
-
-class USeqEvent_LevelLoaded(Structure):
-    pass
-
-
-class USeqEvent_Mover_Data(Structure):
-    pass
-
-
-class USeqEvent_Mover(Structure):
-    pass
-
-
-class USeqEvent_ParticleEvent_Data(Structure):
-    pass
-
-
-class USeqEvent_ParticleEvent(Structure):
-    pass
-
-
-class USeqEvent_ProjectileLanded_Data(Structure):
-    pass
-
-
-class USeqEvent_ProjectileLanded(Structure):
-    pass
-
-
-class USeqEvent_RemoteEvent_Data(Structure):
-    pass
-
-
-class USeqEvent_RemoteEvent(Structure):
-    pass
-
-
-class USeqEvent_RigidBodyCollision_Data(Structure):
-    pass
-
-
-class USeqEvent_RigidBodyCollision(Structure):
-    pass
-
-
-class USeqEvent_SeeDeath_Data(Structure):
-    pass
-
-
-class USeqEvent_SeeDeath(Structure):
-    pass
-
-
-class USeqEvent_SequenceActivated_Data(Structure):
-    pass
-
-
-class USeqEvent_SequenceActivated(Structure):
-    pass
-
-
-class USeqEvent_TakeDamage_Data(Structure):
-    pass
-
-
-class USeqEvent_TakeDamage(Structure):
-    pass
-
-
-class USeqEvent_Touch_Data(Structure):
-    pass
-
-
-class USeqEvent_Touch(Structure):
-    pass
-
-
-class USeqEvent_Used_Data(Structure):
-    pass
-
-
-class USeqEvent_Used(Structure):
-    pass
-
-
-class USequenceVariable_Data(Structure):
-    pass
-
-
-class USequenceVariable(Structure):
-    pass
-
-
-class TArray_USequenceVariablePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USequenceVariable))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UInterpData_Data(Structure):
-    pass
-
-
-class UInterpData(Structure):
-    pass
-
-
-class TArray_UInterpDataPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UInterpData))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USeqVar_Bool_Data(Structure):
-    pass
-
-
-class USeqVar_Bool(Structure):
-    pass
-
-
-class USeqVar_External_Data(Structure):
-    pass
-
-
-class USeqVar_External(Structure):
-    pass
-
-
-class USeqVar_Float_Data(Structure):
-    pass
-
-
-class USeqVar_Float(Structure):
-    pass
-
-
-class USeqVar_RandomFloat_Data(Structure):
-    pass
-
-
-class USeqVar_RandomFloat(Structure):
-    pass
-
-
-class USeqVar_Int_Data(Structure):
-    pass
-
-
-class USeqVar_Int(Structure):
-    pass
-
-
-class USeqVar_RandomInt_Data(Structure):
-    pass
-
-
-class USeqVar_RandomInt(Structure):
-    pass
-
-
-class USeqVar_Named_Data(Structure):
-    pass
-
-
-class USeqVar_Named(Structure):
-    pass
-
-
-class USeqVar_Object_Data(Structure):
-    pass
-
-
-class USeqVar_Object(Structure):
-    pass
-
-
-class USeqVar_Character_Data(Structure):
-    pass
-
-
-class USeqVar_Character(Structure):
-    pass
-
-
-class USeqVar_Group_Data(Structure):
-    pass
-
-
-class USeqVar_Group(Structure):
-    pass
-
-
-class USeqVar_ObjectList_Data(Structure):
-    pass
-
-
-class USeqVar_ObjectList(Structure):
-    pass
-
-
-class USeqVar_ObjectVolume_Data(Structure):
-    pass
-
-
-class USeqVar_ObjectVolume(Structure):
-    pass
-
-
-class USeqVar_Player_Data(Structure):
-    pass
-
-
-class USeqVar_Player(Structure):
-    pass
-
-
-class USeqVar_String_Data(Structure):
-    pass
-
-
-class USeqVar_String(Structure):
-    pass
-
-
-class USeqVar_Vector_Data(Structure):
-    pass
-
-
-class USeqVar_Vector(Structure):
-    pass
-
-
-class AAmbientSound_Data(Structure):
-    pass
-
-
-class AAmbientSound(Structure):
-    pass
-
-
-class UDistributionFloatSoundParameter_Data(Structure):
-    pass
-
-
-class UDistributionFloatSoundParameter(Structure):
-    pass
-
-
-class USoundNode_Data(Structure):
-    pass
-
-
-class USoundNode(Structure):
-    pass
-
-
-class TArray_USoundNodePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USoundNode))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USoundNodeWave_Data(Structure):
-    pass
-
-
-class USoundNodeWave(Structure):
-    pass
-
-
-class ALandscapeProxy_Data(Structure):
-    pass
-
-
-class ALandscapeProxy(Structure):
-    pass
-
-
-class ALandscape_Data(Structure):
-    pass
-
-
-class ALandscape(Structure):
-    pass
-
-
-class ATerrain_Data(Structure):
-    pass
-
-
-class ATerrain(Structure):
-    pass
-
-
-class ULandscapeComponent_Data(Structure):
-    pass
-
-
-class ULandscapeComponent(Structure):
-    pass
-
-
-class TArray_ULandscapeComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULandscapeComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ULandscapeHeightfieldCollisionComponent_Data(Structure):
-    pass
-
-
-class ULandscapeHeightfieldCollisionComponent(Structure):
-    pass
-
-
-class TArray_ULandscapeHeightfieldCollisionComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULandscapeHeightfieldCollisionComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTerrainComponent_Data(Structure):
-    pass
-
-
-class UTerrainComponent(Structure):
-    pass
-
-
-class TArray_UTerrainComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTerrainComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTerrainWeightMapTexture_Data(Structure):
-    pass
-
-
-class UTerrainWeightMapTexture(Structure):
-    pass
-
-
-class TArray_UTerrainWeightMapTexturePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTerrainWeightMapTexture))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTerrainLayerSetup_Data(Structure):
-    pass
-
-
-class UTerrainLayerSetup(Structure):
-    pass
-
-
-class UTerrainMaterial_Data(Structure):
-    pass
-
-
-class UTerrainMaterial(Structure):
-    pass
-
-
-class UDataStoreClient_Data(Structure):
-    pass
-
-
-class UDataStoreClient(Structure):
-    pass
-
-
-class UConsole_Data(Structure):
-    pass
-
-
-class UConsole(Structure):
-    pass
-
-
-class UInput_Data(Structure):
-    pass
-
-
-class UInput(Structure):
-    pass
-
-
-class UPlayerInput_Data(Structure):
-    pass
-
-
-class UPlayerInput(Structure):
-    pass
-
-
-class UPlayerManagerInteraction_Data(Structure):
-    pass
-
-
-class UPlayerManagerInteraction(Structure):
-    pass
-
-
-class UUISceneClient_Data(Structure):
-    pass
-
-
-class UUISceneClient(Structure):
-    pass
-
-
-class UUISoundTheme_Data(Structure):
-    pass
-
-
-class UUISoundTheme(Structure):
-    pass
-
-
-class UUIDataStoreSubscriber_Data(Structure):
-    pass
-
-
-class UUIDataStoreSubscriber(Structure):
-    pass
-
-
-class UUIDataStorePublisher_Data(Structure):
-    pass
-
-
-class UUIDataStorePublisher(Structure):
-    pass
-
-
-class UUIListElementCellProvider_Data(Structure):
-    pass
-
-
-class UUIListElementCellProvider(Structure):
-    pass
-
-
-class UUIListElementProvider_Data(Structure):
-    pass
-
-
-class UUIListElementProvider(Structure):
-    pass
-
-
-class UUIDataProvider_Data(Structure):
-    pass
-
-
-class UUIDataProvider(Structure):
-    pass
-
-
-class TArray_UUIDataProviderPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIDataProvider))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIConfigProvider_Data(Structure):
-    pass
-
-
-class UUIConfigProvider(Structure):
-    pass
-
-
-class UUIConfigFileProvider_Data(Structure):
-    pass
-
-
-class UUIConfigFileProvider(Structure):
-    pass
-
-
-class TArray_UUIConfigFileProviderPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIConfigFileProvider))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIConfigSectionProvider_Data(Structure):
-    pass
-
-
-class UUIConfigSectionProvider(Structure):
-    pass
-
-
-class TArray_UUIConfigSectionProviderPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIConfigSectionProvider))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIDataProvider_OnlinePlayerDataBase_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePlayerDataBase(Structure):
-    pass
-
-
-class UUIDataProvider_OnlineFriendMessages_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlineFriendMessages(Structure):
-    pass
-
-
-class UUIDataProvider_OnlineFriends_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlineFriends(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePartyChatList_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePartyChatList(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePlayerStorage_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePlayerStorage(Structure):
-    pass
-
-
-class UUIDataProvider_OnlineProfileSettings_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlineProfileSettings(Structure):
-    pass
-
-
-class UUIDataProvider_PlayerAchievements_Data(Structure):
-    pass
-
-
-class UUIDataProvider_PlayerAchievements(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePlayerStorageArray_Data(Structure):
-    pass
-
-
-class UUIDataProvider_OnlinePlayerStorageArray(Structure):
-    pass
-
-
-class UUIDataProvider_SettingsArray_Data(Structure):
-    pass
-
-
-class UUIDataProvider_SettingsArray(Structure):
-    pass
-
-
-class UUIDataStore_Data(Structure):
-    pass
-
-
-class UUIDataStore(Structure):
-    pass
-
-
-class TArray_UUIDataStorePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIDataStore))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIDataStore_DynamicResource_Data(Structure):
-    pass
-
-
-class UUIDataStore_DynamicResource(Structure):
-    pass
-
-
-class UUIDataStore_Fonts_Data(Structure):
-    pass
-
-
-class UUIDataStore_Fonts(Structure):
-    pass
-
-
-class UUIDataStore_GameResource_Data(Structure):
-    pass
-
-
-class UUIDataStore_GameResource(Structure):
-    pass
-
-
-class UUIDataStore_MenuItems_Data(Structure):
-    pass
-
-
-class UUIDataStore_MenuItems(Structure):
-    pass
-
-
-class UUIDataStore_GameState_Data(Structure):
-    pass
-
-
-class UUIDataStore_GameState(Structure):
-    pass
-
-
-class UUIDataStore_Registry_Data(Structure):
-    pass
-
-
-class UUIDataStore_Registry(Structure):
-    pass
-
-
-class UUIDataStore_Remote_Data(Structure):
-    pass
-
-
-class UUIDataStore_Remote(Structure):
-    pass
-
-
-class UUIDataStore_OnlineGameSearch_Data(Structure):
-    pass
-
-
-class UUIDataStore_OnlineGameSearch(Structure):
-    pass
-
-
-class UUIDataStore_OnlinePlayerData_Data(Structure):
-    pass
-
-
-class UUIDataStore_OnlinePlayerData(Structure):
-    pass
-
-
-class UUIDataStore_OnlineStats_Data(Structure):
-    pass
-
-
-class UUIDataStore_OnlineStats(Structure):
-    pass
-
-
-class UUIDataStore_Settings_Data(Structure):
-    pass
-
-
-class UUIDataStore_Settings(Structure):
-    pass
-
-
-class UUIDataStore_OnlineGameSettings_Data(Structure):
-    pass
-
-
-class UUIDataStore_OnlineGameSettings(Structure):
-    pass
-
-
-class UUIDataStore_StringBase_Data(Structure):
-    pass
-
-
-class UUIDataStore_StringBase(Structure):
-    pass
-
-
-class UUIDataStore_InputAlias_Data(Structure):
-    pass
-
-
-class UUIDataStore_InputAlias(Structure):
-    pass
-
-
-class UUIDataStore_StringAliasMap_Data(Structure):
-    pass
-
-
-class UUIDataStore_StringAliasMap(Structure):
-    pass
-
-
-class UUIDataStore_Strings_Data(Structure):
-    pass
-
-
-class UUIDataStore_Strings(Structure):
-    pass
-
-
-class UUIDynamicFieldProvider_Data(Structure):
-    pass
-
-
-class UUIDynamicFieldProvider(Structure):
-    pass
-
-
-class UUIPropertyDataProvider_Data(Structure):
-    pass
-
-
-class UUIPropertyDataProvider(Structure):
-    pass
-
-
-class UUIDynamicDataProvider_Data(Structure):
-    pass
-
-
-class UUIDynamicDataProvider(Structure):
-    pass
-
-
-class UUIDataProvider_Settings_Data(Structure):
-    pass
-
-
-class UUIDataProvider_Settings(Structure):
-    pass
-
-
-class TArray_UUIDataProvider_SettingsPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIDataProvider_Settings))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIResourceDataProvider_Data(Structure):
-    pass
-
-
-class UUIResourceDataProvider(Structure):
-    pass
-
-
-class TArray_UUIResourceDataProviderPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIResourceDataProvider))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIDataProvider_MenuItem_Data(Structure):
-    pass
-
-
-class UUIDataProvider_MenuItem(Structure):
-    pass
-
-
-class TArray_UUIDataProvider_MenuItemPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIDataProvider_MenuItem))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UUIMapSummary_Data(Structure):
-    pass
-
-
-class UUIMapSummary(Structure):
-    pass
-
-
-class UUIResourceCombinationProvider_Data(Structure):
-    pass
-
-
-class UUIResourceCombinationProvider(Structure):
-    pass
-
-
-class TArray_UUIResourceCombinationProviderPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UUIResourceCombinationProvider))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGameUISceneClient_Data(Structure):
-    pass
-
-
-class UGameUISceneClient(Structure):
-    pass
-
-
-class UScene_Data(Structure):
-    pass
-
-
-class UScene(Structure):
-    pass
-
-
-class AFoliageFactory_Data(Structure):
-    pass
-
-
-class AFoliageFactory(Structure):
-    pass
-
-
-class AInstancedFoliageActor_Data(Structure):
-    pass
-
-
-class AInstancedFoliageActor(Structure):
-    pass
-
-
-class AInteractiveFoliageActor_Data(Structure):
-    pass
-
-
-class AInteractiveFoliageActor(Structure):
-    pass
-
-
-class UFoliageComponent_Data(Structure):
-    pass
-
-
-class UFoliageComponent(Structure):
-    pass
-
-
-class UInteractiveFoliageComponent_Data(Structure):
-    pass
-
-
-class UInteractiveFoliageComponent(Structure):
-    pass
-
-
-class UActorFactoryInteractiveFoliage_Data(Structure):
-    pass
-
-
-class UActorFactoryInteractiveFoliage(Structure):
-    pass
-
-
-class AFluidInfluenceActor_Data(Structure):
-    pass
-
-
-class AFluidInfluenceActor(Structure):
-    pass
-
-
-class AFluidSurfaceActor_Data(Structure):
-    pass
-
-
-class AFluidSurfaceActor(Structure):
-    pass
-
-
-class AFluidSurfaceActorMovable_Data(Structure):
-    pass
-
-
-class AFluidSurfaceActorMovable(Structure):
-    pass
-
-
-class UFluidInfluenceComponent_Data(Structure):
-    pass
-
-
-class UFluidInfluenceComponent(Structure):
-    pass
-
-
-class UFluidSurfaceComponent_Data(Structure):
-    pass
-
-
-class UFluidSurfaceComponent(Structure):
-    pass
-
-
-class ALensFlareSource_Data(Structure):
-    pass
-
-
-class ALensFlareSource(Structure):
-    pass
-
-
-class ULensFlareComponent_Data(Structure):
-    pass
-
-
-class ULensFlareComponent(Structure):
-    pass
-
-
-class ULensFlare_Data(Structure):
-    pass
-
-
-class ULensFlare(Structure):
-    pass
-
-
-class UTextureFlipBook_Data(Structure):
-    pass
-
-
-class UTextureFlipBook(Structure):
-    pass
-
-
-class UTexture2DComposite_Data(Structure):
-    pass
-
-
-class UTexture2DComposite(Structure):
-    pass
-
-
-class UTexture2DDynamic_Data(Structure):
-    pass
-
-
-class UTexture2DDynamic(Structure):
-    pass
-
-
-class UTextureCube_Data(Structure):
-    pass
-
-
-class UTextureCube(Structure):
-    pass
-
-
-class UTextureMovie_Data(Structure):
-    pass
-
-
-class UTextureMovie(Structure):
-    pass
-
-
-class TArray_UTextureMoviePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTextureMovie))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UTextureRenderTarget_Data(Structure):
-    pass
-
-
-class UTextureRenderTarget(Structure):
-    pass
-
-
-class UTextureRenderTarget2D_Data(Structure):
-    pass
-
-
-class UTextureRenderTarget2D(Structure):
-    pass
-
-
-class TArray_UTextureRenderTarget2DPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UTextureRenderTarget2D))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UScriptedTexture_Data(Structure):
-    pass
-
-
-class UScriptedTexture(Structure):
-    pass
-
-
-class UTextureRenderTargetCube_Data(Structure):
-    pass
-
-
-class UTextureRenderTargetCube(Structure):
-    pass
-
-
-class UAudioDevice_Data(Structure):
-    pass
-
-
-class UAudioDevice(Structure):
-    pass
-
-
-class USoundClass_Data(Structure):
-    pass
-
-
-class USoundClass(Structure):
-    pass
-
-
-class USoundMode_Data(Structure):
-    pass
-
-
-class USoundMode(Structure):
-    pass
-
-
-class ADebugCameraController_Data(Structure):
-    pass
-
-
-class ADebugCameraController(Structure):
-    pass
-
-
-class AMatineePawn_Data(Structure):
-    pass
-
-
-class AMatineePawn(Structure):
-    pass
-
-
-class AScout_Data(Structure):
-    pass
-
-
-class AScout(Structure):
-    pass
-
-
-class ALight_Data(Structure):
-    pass
-
-
-class ALight(Structure):
-    pass
-
-
-class ADirectionalLight_Data(Structure):
-    pass
-
-
-class ADirectionalLight(Structure):
-    pass
-
-
-class ADirectionalLightToggleable_Data(Structure):
-    pass
-
-
-class ADirectionalLightToggleable(Structure):
-    pass
-
-
-class ADominantDirectionalLight_Data(Structure):
-    pass
-
-
-class ADominantDirectionalLight(Structure):
-    pass
-
-
-class ADominantDirectionalLightMovable_Data(Structure):
-    pass
-
-
-class ADominantDirectionalLightMovable(Structure):
-    pass
-
-
-class ALightShafts_Data(Structure):
-    pass
-
-
-class ALightShafts(Structure):
-    pass
-
-
-class APointLight_Data(Structure):
-    pass
-
-
-class APointLight(Structure):
-    pass
-
-
-class ADominantPointLight_Data(Structure):
-    pass
-
-
-class ADominantPointLight(Structure):
-    pass
-
-
-class APointLightMovable_Data(Structure):
-    pass
-
-
-class APointLightMovable(Structure):
-    pass
-
-
-class APointLightToggleable_Data(Structure):
-    pass
-
-
-class APointLightToggleable(Structure):
-    pass
-
-
-class ASkyLight_Data(Structure):
-    pass
-
-
-class ASkyLight(Structure):
-    pass
-
-
-class ASkyLightToggleable_Data(Structure):
-    pass
-
-
-class ASkyLightToggleable(Structure):
-    pass
-
-
-class ASpotLight_Data(Structure):
-    pass
-
-
-class ASpotLight(Structure):
-    pass
-
-
-class ADominantSpotLight_Data(Structure):
-    pass
-
-
-class ADominantSpotLight(Structure):
-    pass
-
-
-class AGeneratedMeshAreaLight_Data(Structure):
-    pass
-
-
-class AGeneratedMeshAreaLight(Structure):
-    pass
-
-
-class ASpotLightMovable_Data(Structure):
-    pass
-
-
-class ASpotLightMovable(Structure):
-    pass
-
-
-class ASpotLightToggleable_Data(Structure):
-    pass
-
-
-class ASpotLightToggleable(Structure):
-    pass
-
-
-class AStaticLightCollectionActor_Data(Structure):
-    pass
-
-
-class AStaticLightCollectionActor(Structure):
-    pass
-
-
-class ULightComponent_Data(Structure):
-    pass
-
-
-class ULightComponent(Structure):
-    pass
-
-
-class TArray_ULightComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ULightComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UDirectionalLightComponent_Data(Structure):
-    pass
-
-
-class UDirectionalLightComponent(Structure):
-    pass
-
-
-class UDominantDirectionalLightComponent_Data(Structure):
-    pass
-
-
-class UDominantDirectionalLightComponent(Structure):
-    pass
-
-
-class ULightShaftComponent_Data(Structure):
-    pass
-
-
-class ULightShaftComponent(Structure):
-    pass
-
-
-class UPointLightComponent_Data(Structure):
-    pass
-
-
-class UPointLightComponent(Structure):
-    pass
-
-
-class UDominantPointLightComponent_Data(Structure):
-    pass
-
-
-class UDominantPointLightComponent(Structure):
-    pass
-
-
-class USpotLightComponent_Data(Structure):
-    pass
-
-
-class USpotLightComponent(Structure):
-    pass
-
-
-class UDominantSpotLightComponent_Data(Structure):
-    pass
-
-
-class UDominantSpotLightComponent(Structure):
-    pass
-
-
-class USkyLightComponent_Data(Structure):
-    pass
-
-
-class USkyLightComponent(Structure):
-    pass
-
-
-class USphericalHarmonicLightComponent_Data(Structure):
-    pass
-
-
-class USphericalHarmonicLightComponent(Structure):
-    pass
-
-
-class ULightEnvironmentComponent_Data(Structure):
-    pass
-
-
-class ULightEnvironmentComponent(Structure):
-    pass
-
-
-class UDynamicLightEnvironmentComponent_Data(Structure):
-    pass
-
-
-class UDynamicLightEnvironmentComponent(Structure):
-    pass
-
-
-class UParticleLightEnvironmentComponent_Data(Structure):
-    pass
-
-
-class UParticleLightEnvironmentComponent(Structure):
-    pass
-
-
-class UDrawLightConeComponent_Data(Structure):
-    pass
-
-
-class UDrawLightConeComponent(Structure):
-    pass
-
-
-class UDrawLightRadiusComponent_Data(Structure):
-    pass
-
-
-class UDrawLightRadiusComponent(Structure):
-    pass
-
-
-class ULightFunction_Data(Structure):
-    pass
-
-
-class ULightFunction(Structure):
-    pass
-
-
-class USkeletalMeshComponent_Data(Structure):
-    pass
-
-
-class USkeletalMeshComponent(Structure):
-    pass
-
-
-class TArray_USkeletalMeshComponentPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkeletalMeshComponent))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkeletalMesh_Data(Structure):
-    pass
-
-
-class USkeletalMesh(Structure):
-    pass
-
-
-class TArray_USkeletalMeshPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkeletalMesh))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class USkeletalMeshSocket_Data(Structure):
-    pass
-
-
-class USkeletalMeshSocket(Structure):
-    pass
-
-
-class TArray_USkeletalMeshSocketPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(USkeletalMeshSocket))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ASplineActor_Data(Structure):
-    pass
-
-
-class ASplineActor(Structure):
-    pass
-
-
-class TArray_ASplineActorPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ASplineActor))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ASplineLoftActor_Data(Structure):
-    pass
-
-
-class ASplineLoftActor(Structure):
-    pass
-
-
-class ASplineLoftActorMovable_Data(Structure):
-    pass
-
-
-class ASplineLoftActorMovable(Structure):
-    pass
-
-
-class USplineComponent_Data(Structure):
-    pass
-
-
-class USplineComponent(Structure):
-    pass
-
-
-class AReplicationInfo_Data(Structure):
-    pass
-
-
-class AReplicationInfo(Structure):
-    pass
-
-
-class AGameReplicationInfo_Data(Structure):
-    pass
-
-
-class AGameReplicationInfo(Structure):
-    pass
-
-
-class APlayerReplicationInfo_Data(Structure):
-    pass
-
-
-class APlayerReplicationInfo(Structure):
-    pass
-
-
-class TArray_APlayerReplicationInfoPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(APlayerReplicationInfo))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class ATeamInfo_Data(Structure):
-    pass
-
-
-class ATeamInfo(Structure):
-    pass
-
-
-class TArray_ATeamInfoPtr(Structure):
-    _fields_ = [("Data", POINTER(POINTER(ATeamInfo))), ("Count", c_int), ("Max", c_int)]
-
-
-class ACamera_Data(Structure):
-    pass
-
-
-class ACamera(Structure):
-    pass
-
-
-class ACameraActor_Data(Structure):
-    pass
-
-
-class ACameraActor(Structure):
-    pass
-
-
-class ADynamicCameraActor_Data(Structure):
-    pass
-
-
-class ADynamicCameraActor(Structure):
-    pass
-
-
-class UCameraAnim_Data(Structure):
-    pass
-
-
-class UCameraAnim(Structure):
-    pass
-
-
-class UCameraAnimInst_Data(Structure):
-    pass
-
-
-class UCameraAnimInst(Structure):
-    pass
-
-
-class TArray_UCameraAnimInstPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UCameraAnimInst))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCameraModifier_Data(Structure):
-    pass
-
-
-class UCameraModifier(Structure):
-    pass
-
-
-class TArray_UCameraModifierPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UCameraModifier))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UCameraModifier_CameraShake_Data(Structure):
-    pass
-
-
-class UCameraModifier_CameraShake(Structure):
-    pass
-
-
-class UCameraShake_Data(Structure):
-    pass
-
-
-class UCameraShake(Structure):
-    pass
-
-
-class AResourcePoolManager_Data(Structure):
-    pass
-
-
-class AResourcePoolManager(Structure):
-    pass
-
-
-class AWorldSoundManager_Data(Structure):
-    pass
-
-
-class AWorldSoundManager(Structure):
-    pass
-
-
-class UComponentLifetimeManagerComponent_Data(Structure):
-    pass
-
-
-class UComponentLifetimeManagerComponent(Structure):
-    pass
-
-
-class UAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UAttributeContextResolver(Structure):
-    pass
-
-
-class TArray_UAttributeContextResolverPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAttributeContextResolver))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBalancedActorAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UBalancedActorAttributeContextResolver(Structure):
-    pass
-
-
-class UCharacterClassAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UCharacterClassAttributeContextResolver(Structure):
-    pass
-
-
-class UControllerAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UControllerAttributeContextResolver(Structure):
-    pass
-
-
-class UGameInfoAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UGameInfoAttributeContextResolver(Structure):
-    pass
-
-
-class UOffHandWeaponAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UOffHandWeaponAttributeContextResolver(Structure):
-    pass
-
-
-class UPawnAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UPawnAttributeContextResolver(Structure):
-    pass
-
-
-class UResourcePoolAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UResourcePoolAttributeContextResolver(Structure):
-    pass
-
-
-class UWeaponAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UWeaponAttributeContextResolver(Structure):
-    pass
-
-
-class UWeaponResourcePoolAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UWeaponResourcePoolAttributeContextResolver(Structure):
-    pass
-
-
-class UAttributeEffect_Data(Structure):
-    pass
-
-
-class UAttributeEffect(Structure):
-    pass
-
-
-class UAttributeExpression_Data(Structure):
-    pass
-
-
-class UAttributeExpression(Structure):
-    pass
-
-
-class UAttributeMultiContextResolver_Data(Structure):
-    pass
-
-
-class UAttributeMultiContextResolver(Structure):
-    pass
-
-
-class UWeaponAttributeMultiContextResolver_Data(Structure):
-    pass
-
-
-class UWeaponAttributeMultiContextResolver(Structure):
-    pass
-
-
-class UAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UAttributeValueResolver(Structure):
-    pass
-
-
-class TArray_UAttributeValueResolverPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UAttributeValueResolver))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UObjectPropertyAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UObjectPropertyAttributeValueResolver(Structure):
-    pass
-
-
-class UReadOnlyObjectPropertyAttributeValueResolver_Data(Structure):
-    pass
-
-
-class UReadOnlyObjectPropertyAttributeValueResolver(Structure):
-    pass
-
-
-class UBehaviorBase_Data(Structure):
-    pass
-
-
-class UBehaviorBase(Structure):
-    pass
-
-
-class TArray_UBehaviorBasePtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UBehaviorBase))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UBehavior_Kill_Data(Structure):
-    pass
-
-
-class UBehavior_Kill(Structure):
-    pass
-
-
-class UBehavior_PlaySound_Data(Structure):
-    pass
-
-
-class UBehavior_PlaySound(Structure):
-    pass
-
-
-class UBehavior_RemoteEvent_Data(Structure):
-    pass
-
-
-class UBehavior_RemoteEvent(Structure):
-    pass
-
-
-class UExpressionEvaluator_Data(Structure):
-    pass
-
-
-class UExpressionEvaluator(Structure):
-    pass
-
-
-class TArray_UExpressionEvaluatorPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UExpressionEvaluator))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UExpressionTree_Data(Structure):
-    pass
-
-
-class UExpressionTree(Structure):
-    pass
-
-
-class UAttributeDefinitionBase_Data(Structure):
-    pass
-
-
-class UAttributeDefinitionBase(Structure):
-    pass
-
-
-class UAttributeDefinition_Data(Structure):
-    pass
-
-
-class UAttributeDefinition(Structure):
-    pass
-
-
-class UNestedAttributeDefinition_Data(Structure):
-    pass
-
-
-class UNestedAttributeDefinition(Structure):
-    pass
-
-
-class UAttributeDefinitionMultiContext_Data(Structure):
-    pass
-
-
-class UAttributeDefinitionMultiContext(Structure):
-    pass
-
-
-class UAttributeInitializationDefinition_Data(Structure):
-    pass
-
-
-class UAttributeInitializationDefinition(Structure):
-    pass
-
-
-class UBaseBalanceDefinition_Data(Structure):
-    pass
-
-
-class UBaseBalanceDefinition(Structure):
-    pass
-
-
-class UCharacterClassDefinition_Data(Structure):
-    pass
-
-
-class UCharacterClassDefinition(Structure):
-    pass
-
-
-class UExpressionEvaluatorDefinition_Data(Structure):
-    pass
-
-
-class UExpressionEvaluatorDefinition(Structure):
-    pass
-
-
-class UGestaltPartMatricesCollectionDefinition_Data(Structure):
-    pass
-
-
-class UGestaltPartMatricesCollectionDefinition(Structure):
-    pass
-
-
-class UImpactDefinition_Data(Structure):
-    pass
-
-
-class UImpactDefinition(Structure):
-    pass
-
-
-class TArray_UImpactDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UImpactDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UResourceDefinition_Data(Structure):
-    pass
-
-
-class UResourceDefinition(Structure):
-    pass
-
-
-class UResourcePoolDefinition_Data(Structure):
-    pass
-
-
-class UResourcePoolDefinition(Structure):
-    pass
-
-
-class TArray_UResourcePoolDefinitionPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UResourcePoolDefinition))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UGestaltPartMatrices_Data(Structure):
-    pass
-
-
-class UGestaltPartMatrices(Structure):
-    pass
-
-
-class UICounterBehavior_Data(Structure):
-    pass
-
-
-class UICounterBehavior(Structure):
-    pass
-
-
-class UIInstanceData_Data(Structure):
-    pass
-
-
-class UIInstanceData(Structure):
-    pass
-
-
-class UInstanceDataHelper_Data(Structure):
-    pass
-
-
-class UInstanceDataHelper(Structure):
-    pass
-
-
-class UPackageReferencer_Data(Structure):
-    pass
-
-
-class UPackageReferencer(Structure):
-    pass
-
-
-class UPersistentGameDataManager_Data(Structure):
-    pass
-
-
-class UPersistentGameDataManager(Structure):
-    pass
-
-
-class UPersistentSequenceData_Data(Structure):
-    pass
-
-
-class UPersistentSequenceData(Structure):
-    pass
-
-
-class TArray_UPersistentSequenceDataPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(UPersistentSequenceData))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class UResourcePool_Data(Structure):
-    pass
-
-
-class UResourcePool(Structure):
-    pass
-
-
-class UHealthResourcePool_Data(Structure):
-    pass
-
-
-class UHealthResourcePool(Structure):
-    pass
-
-
-class UTargetableList_Data(Structure):
-    pass
-
-
-class UTargetableList(Structure):
-    pass
-
-
-class AHybridNavigationArea_Data(Structure):
-    pass
-
-
-class AHybridNavigationArea(Structure):
-    pass
-
-
-class APickupableMeshActor_Data(Structure):
-    pass
-
-
-class APickupableMeshActor(Structure):
-    pass
-
-
-class UHybridNavigationAreaDebugRenderingComponent_Data(Structure):
-    pass
-
-
-class UHybridNavigationAreaDebugRenderingComponent(Structure):
-    pass
-
-
-class UHybridNavigationVisualizationComponent_Data(Structure):
-    pass
-
-
-class UHybridNavigationVisualizationComponent(Structure):
-    pass
-
-
-class UInventoryCardPresentationDefinition_Data(Structure):
-    pass
-
-
-class UInventoryCardPresentationDefinition(Structure):
-    pass
-
-
-class UManufacturerDefinition_Data(Structure):
-    pass
-
-
-class UManufacturerDefinition(Structure):
-    pass
-
-
-class ULevelStreamingDomino_Data(Structure):
-    pass
-
-
-class ULevelStreamingDomino(Structure):
-    pass
-
-
-class ULocalMessage_Data(Structure):
-    pass
-
-
-class ULocalMessage(Structure):
-    pass
-
-
-class UEdgeDetectionPostProcessEffect_Data(Structure):
-    pass
-
-
-class UEdgeDetectionPostProcessEffect(Structure):
-    pass
-
-
-class ADroppedPickup_Data(Structure):
-    pass
-
-
-class ADroppedPickup(Structure):
-    pass
-
-
-class TArray_ADroppedPickupPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(ADroppedPickup))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AInventory_Data(Structure):
-    pass
-
-
-class AInventory(Structure):
-    pass
-
-
-class TArray_AInventoryPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AInventory))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWillowInventory_Data(Structure):
-    pass
-
-
-class AWillowInventory(Structure):
-    pass
-
-
-class TArray_AWillowInventoryPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(AWillowInventory))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
-class AWeapon_Data(Structure):
-    pass
-
-
-class AWeapon(Structure):
-    pass
-
-
-class AInventoryManager_Data(Structure):
-    pass
-
-
-class AInventoryManager(Structure):
-    pass
-
-
-class UGearboxCalloutDefinition_Data(Structure):
-    pass
-
-
-class UGearboxCalloutDefinition(Structure):
-    pass
-
-
-class UWillowInventoryDefinition_Data(Structure):
-    pass
-
-
-class UWillowInventoryDefinition(Structure):
-    pass
-
-
-class UWillowInventoryPartDefinition_Data(Structure):
-    pass
-
-
-class UWillowInventoryPartDefinition(Structure):
-    pass
-
-
-class UIPickupable_Data(Structure):
-    pass
-
-
-class UIPickupable(Structure):
-    pass
-
-
-class USeqEvent_HitWall_Data(Structure):
-    pass
-
-
-class USeqEvent_HitWall(Structure):
-    pass
-
-
-class USeqAct_Destroy_Data(Structure):
-    pass
-
-
-class USeqAct_Destroy(Structure):
-    pass
-
-
-class USeqAct_Teleport_Data(Structure):
-    pass
-
-
-class USeqAct_Teleport(Structure):
-    pass
-
-
-class USeqAct_SetVelocity_Data(Structure):
-    pass
-
-
-class USeqAct_SetVelocity(Structure):
-    pass
-
-
-class USeqAct_ToggleHidden_Data(Structure):
-    pass
-
-
-class USeqAct_ToggleHidden(Structure):
-    pass
-
-
-class USeqAct_AttachToActor_Data(Structure):
-    pass
-
-
-class USeqAct_AttachToActor(Structure):
-    pass
-
-
-class UIConsoleCommandBehavior_Data(Structure):
-    pass
-
-
-class UIConsoleCommandBehavior(Structure):
-    pass
-
-
-class UIAppearanceBehavior_Data(Structure):
-    pass
-
-
-class UIAppearanceBehavior(Structure):
-    pass
-
-
-class UIPhysicsBehavior_Data(Structure):
-    pass
-
-
-class UIPhysicsBehavior(Structure):
-    pass
-
-
-class UIChangeCollisionBehavior_Data(Structure):
-    pass
-
-
-class UIChangeCollisionBehavior(Structure):
-    pass
-
-
-class UIDestroyBehavior_Data(Structure):
-    pass
-
-
-class UIDestroyBehavior(Structure):
-    pass
-
-
-class UISoundBehavior_Data(Structure):
-    pass
-
-
-class UISoundBehavior(Structure):
-    pass
-
-
-class UOnlineAuthInterface_Data(Structure):
-    pass
-
-
-class UOnlineAuthInterface(Structure):
-    pass
-
-
-class UOnlineTitleFileInterface_Data(Structure):
-    pass
-
-
-class UOnlineTitleFileInterface(Structure):
-    pass
-
-
-class UOnlinePartyChatInterface_Data(Structure):
-    pass
-
-
-class UOnlinePartyChatInterface(Structure):
-    pass
-
-
-class UOnlineNewsInterface_Data(Structure):
-    pass
-
-
-class UOnlineNewsInterface(Structure):
-    pass
-
-
-class UOnlineStatsInterface_Data(Structure):
-    pass
-
-
-class UOnlineStatsInterface(Structure):
-    pass
-
-
-class UOnlineVoiceInterface_Data(Structure):
-    pass
-
-
-class UOnlineVoiceInterface(Structure):
-    pass
-
-
-class UOnlineContentInterface_Data(Structure):
-    pass
-
-
-class UOnlineContentInterface(Structure):
-    pass
-
-
-class UOnlineGameInterface_Data(Structure):
-    pass
-
-
-class UOnlineGameInterface(Structure):
-    pass
-
-
-class UOnlineSystemInterface_Data(Structure):
-    pass
-
-
-class UOnlineSystemInterface(Structure):
-    pass
-
-
-class UOnlinePlayerInterfaceEx_Data(Structure):
-    pass
-
-
-class UOnlinePlayerInterfaceEx(Structure):
-    pass
-
-
-class UOnlinePlayerInterface_Data(Structure):
-    pass
-
-
-class UOnlinePlayerInterface(Structure):
-    pass
-
-
-class UOnlineAccountInterface_Data(Structure):
-    pass
-
-
-class UOnlineAccountInterface(Structure):
-    pass
-
-
-class AAccessControl_Data(Structure):
-    pass
-
-
-class AAccessControl(Structure):
-    pass
-
-
-class AAdmin_Data(Structure):
-    pass
-
-
-class AAdmin(Structure):
-    pass
-
-
-class UIScaleBehavior_Data(Structure):
-    pass
-
-
-class UIScaleBehavior(Structure):
-    pass
-
-
-class AApexDestructibleActorSpawnable_Data(Structure):
-    pass
-
-
-class AApexDestructibleActorSpawnable(Structure):
-    pass
-
-
-class AEmitterSpawnable_Data(Structure):
-    pass
-
-
-class AEmitterSpawnable(Structure):
-    pass
-
-
-class AKAssetSpawnable_Data(Structure):
-    pass
-
-
-class AKAssetSpawnable(Structure):
-    pass
-
-
-class UActorFactorySkeletalMeshCinematic_Data(Structure):
-    pass
-
-
-class UActorFactorySkeletalMeshCinematic(Structure):
-    pass
-
-
-class UActorFactorySkeletalMeshMAT_Data(Structure):
-    pass
-
-
-class UActorFactorySkeletalMeshMAT(Structure):
-    pass
-
-
-class USeqEvent_Death_Data(Structure):
-    pass
-
-
-class USeqEvent_Death(Structure):
-    pass
-
-
-class USeqAct_ToggleGodMode_Data(Structure):
-    pass
-
-
-class USeqAct_ToggleGodMode(Structure):
-    pass
-
-
-class USeqAct_ControlMovieTexture_Data(Structure):
-    pass
-
-
-class USeqAct_ControlMovieTexture(Structure):
-    pass
-
-
-class UIParameterBehavior_Data(Structure):
-    pass
-
-
-class UIParameterBehavior(Structure):
-    pass
-
-
-class ACoverReplicator_Data(Structure):
-    pass
-
-
-class ACoverReplicator(Structure):
-    pass
-
-
-class UGameMessage_Data(Structure):
-    pass
-
-
-class UGameMessage(Structure):
-    pass
-
-
-class UDmgType_Suicided_Data(Structure):
-    pass
-
-
-class UDmgType_Suicided(Structure):
-    pass
-
-
-class USeqAct_ToggleInput_Data(Structure):
-    pass
-
-
-class USeqAct_ToggleInput(Structure):
-    pass
-
-
-class USeqAct_ToggleHUD_Data(Structure):
-    pass
-
-
-class USeqAct_ToggleHUD(Structure):
-    pass
-
-
-class USeqAct_ForceFeedback_Data(Structure):
-    pass
-
-
-class USeqAct_ForceFeedback(Structure):
-    pass
-
-
-class USeqAct_ToggleCinematicMode_Data(Structure):
-    pass
-
-
-class USeqAct_ToggleCinematicMode(Structure):
-    pass
-
-
-class USeqAct_FlyThroughHasEnded_Data(Structure):
-    pass
-
-
-class USeqAct_FlyThroughHasEnded(Structure):
-    pass
-
-
-class USeqAct_SetSoundMode_Data(Structure):
-    pass
-
-
-class USeqAct_SetSoundMode(Structure):
-    pass
-
-
-class UAnimNotify_PlayFaceFXAnim_Data(Structure):
-    pass
-
-
-class UAnimNotify_PlayFaceFXAnim(Structure):
-    pass
-
-
-class UBehavior_ChangeAllegiance_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeAllegiance(Structure):
-    pass
-
-
-class UBehavior_ChangeBoneVisibility_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeBoneVisibility(Structure):
-    pass
-
-
-class UBehavior_ChangeCollision_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeCollision(Structure):
-    pass
-
-
-class UBehavior_ChangeCollisionSize_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeCollisionSize(Structure):
-    pass
-
-
-class UBehavior_ChangeCounter_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeCounter(Structure):
-    pass
-
-
-class UBehavior_ChangeParticleSystemActiveState_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeParticleSystemActiveState(Structure):
-    pass
-
-
-class UIParticleSystemBehavior_Data(Structure):
-    pass
-
-
-class UIParticleSystemBehavior(Structure):
-    pass
-
-
-class UBehavior_ChangeScale_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeScale(Structure):
-    pass
-
-
-class UBehavior_ChangeSpin_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeSpin(Structure):
-    pass
-
-
-class UIBasicBehavior_Data(Structure):
-    pass
-
-
-class UIBasicBehavior(Structure):
-    pass
-
-
-class UBehavior_ChangeVisibility_Data(Structure):
-    pass
-
-
-class UBehavior_ChangeVisibility(Structure):
-    pass
-
-
-class UBehavior_ClientConsoleCommand_Data(Structure):
-    pass
-
-
-class UBehavior_ClientConsoleCommand(Structure):
-    pass
-
-
-class UBehavior_ConsoleCommand_Data(Structure):
-    pass
-
-
-class UBehavior_ConsoleCommand(Structure):
-    pass
-
-
-class UBehavior_CustomAnimation_Data(Structure):
-    pass
-
-
-class UBehavior_CustomAnimation(Structure):
-    pass
-
-
-class UBehavior_Destroy_Data(Structure):
-    pass
-
-
-class UBehavior_Destroy(Structure):
-    pass
-
-
-class UBehavior_FollowAllegiance_Data(Structure):
-    pass
-
-
-class UBehavior_FollowAllegiance(Structure):
-    pass
-
-
-class UBehavior_RandomlyRunBehaviors_Data(Structure):
-    pass
-
-
-class UBehavior_RandomlyRunBehaviors(Structure):
-    pass
-
-
-class UBehavior_RunBehaviorCollection_Data(Structure):
-    pass
-
-
-class UBehavior_RunBehaviorCollection(Structure):
-    pass
-
-
-class UBehaviorCollectionDefinition_Data(Structure):
-    pass
-
-
-class UBehaviorCollectionDefinition(Structure):
-    pass
-
-
-class UBehavior_SetMaterialParameters_Data(Structure):
-    pass
-
-
-class UBehavior_SetMaterialParameters(Structure):
-    pass
-
-
-class UIMaterialBehavior_Data(Structure):
-    pass
-
-
-class UIMaterialBehavior(Structure):
-    pass
-
-
-class UBehavior_SetParticleSystemParameters_Data(Structure):
-    pass
-
-
-class UBehavior_SetParticleSystemParameters(Structure):
-    pass
-
-
-class UBehavior_SetPhysics_Data(Structure):
-    pass
-
-
-class UBehavior_SetPhysics(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlActive_Data(Structure):
-    pass
-
-
-class UBehavior_SetSkelControlActive(Structure):
-    pass
-
-
-class UBehavior_ToggleVisibility_Data(Structure):
-    pass
-
-
-class UBehavior_ToggleVisibility(Structure):
-    pass
-
-
-class ABroadcastHandler_Data(Structure):
-    pass
-
-
-class ABroadcastHandler(Structure):
-    pass
-
-
-class AColorScaleVolume_Data(Structure):
-    pass
-
-
-class AColorScaleVolume(Structure):
-    pass
-
-
-class ADebugCameraHUD_Data(Structure):
-    pass
-
-
-class ADebugCameraHUD(Structure):
-    pass
-
-
-class UDebugCameraInput_Data(Structure):
-    pass
-
-
-class UDebugCameraInput(Structure):
-    pass
-
-
-class AVolumeTimer_Data(Structure):
-    pass
-
-
-class AVolumeTimer(Structure):
-    pass
-
-
-class USeqAct_SetDamageInstigator_Data(Structure):
-    pass
-
-
-class USeqAct_SetDamageInstigator(Structure):
-    pass
-
-
-class UDmgType_Crushed_Data(Structure):
-    pass
-
-
-class UDmgType_Crushed(Structure):
-    pass
-
-
-class UDmgType_Fell_Data(Structure):
-    pass
-
-
-class UDmgType_Fell(Structure):
-    pass
-
-
-class UDmgType_Telefragged_Data(Structure):
-    pass
-
-
-class UDmgType_Telefragged(Structure):
-    pass
-
-
-class ADynamicPhysicsVolume_Data(Structure):
-    pass
-
-
-class ADynamicPhysicsVolume(Structure):
-    pass
-
-
-class ADynamicSMActor_Spawnable_Data(Structure):
-    pass
-
-
-class ADynamicSMActor_Spawnable(Structure):
-    pass
-
-
-class ADynamicTriggerVolume_Data(Structure):
-    pass
-
-
-class ADynamicTriggerVolume(Structure):
-    pass
-
-
-class USeqAct_SetParticleSysParam_Data(Structure):
-    pass
-
-
-class USeqAct_SetParticleSysParam(Structure):
-    pass
-
-
-class AExponentialHeightFog_Data(Structure):
-    pass
-
-
-class AExponentialHeightFog(Structure):
-    pass
-
-
-class UFailedConnect_Data(Structure):
-    pass
-
-
-class UFailedConnect(Structure):
-    pass
-
-
-class USeqEvent_PlayerSpawned_Data(Structure):
-    pass
-
-
-class USeqEvent_PlayerSpawned(Structure):
-    pass
-
-
-class UGameReplicationInfoAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UGameReplicationInfoAttributeContextResolver(Structure):
-    pass
-
-
-class AHoldingAreaDestination_Data(Structure):
-    pass
-
-
-class AHoldingAreaDestination(Structure):
-    pass
-
-
-class AHeightFog_Data(Structure):
-    pass
-
-
-class AHeightFog(Structure):
-    pass
-
-
-class UIChangeBehaviorSetStateBehavior_Data(Structure):
-    pass
-
-
-class UIChangeBehaviorSetStateBehavior(Structure):
-    pass
-
-
-class UIDamageBehavior_Data(Structure):
-    pass
-
-
-class UIDamageBehavior(Structure):
-    pass
-
-
-class AInterpActor_ForCinematic_Data(Structure):
-    pass
-
-
-class AInterpActor_ForCinematic(Structure):
-    pass
-
-
-class AMaterialInstanceTimeVaryingActor_Data(Structure):
-    pass
-
-
-class AMaterialInstanceTimeVaryingActor(Structure):
-    pass
-
-
-class USeqAct_AssignController_Data(Structure):
-    pass
-
-
-class USeqAct_AssignController(Structure):
-    pass
-
-
-class UOnlineCommunityContentInterface_Data(Structure):
-    pass
-
-
-class UOnlineCommunityContentInterface(Structure):
-    pass
-
-
-class UOnlineEventsInterface_Data(Structure):
-    pass
-
-
-class UOnlineEventsInterface(Structure):
-    pass
-
-
-class UOnlinePlaylistGameTypeProvider_Data(Structure):
-    pass
-
-
-class UOnlinePlaylistGameTypeProvider(Structure):
-    pass
-
-
-class UOnlineRecentPlayersList_Data(Structure):
-    pass
-
-
-class UOnlineRecentPlayersList(Structure):
-    pass
-
-
-class UOnlineSuppliedUIInterface_Data(Structure):
-    pass
-
-
-class UOnlineSuppliedUIInterface(Structure):
-    pass
-
-
-class UOwnerAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UOwnerAttributeContextResolver(Structure):
-    pass
-
-
-class UParameterBehaviorBase_Data(Structure):
-    pass
-
-
-class UParameterBehaviorBase(Structure):
-    pass
-
-
-class UParticleModuleForceFieldCylindrical_Data(Structure):
-    pass
-
-
-class UParticleModuleForceFieldCylindrical(Structure):
-    pass
-
-
-class UParticleModuleForceFieldGeneric_Data(Structure):
-    pass
-
-
-class UParticleModuleForceFieldGeneric(Structure):
-    pass
-
-
-class UParticleModuleForceFieldRadial_Data(Structure):
-    pass
-
-
-class UParticleModuleForceFieldRadial(Structure):
-    pass
-
-
-class UParticleModuleForceFieldTornado_Data(Structure):
-    pass
-
-
-class UParticleModuleForceFieldTornado(Structure):
-    pass
-
-
-class APathNode_Dynamic_Data(Structure):
-    pass
-
-
-class APathNode_Dynamic(Structure):
-    pass
-
-
-class USeqEvent_PickupStatusChange_Data(Structure):
-    pass
-
-
-class USeqEvent_PickupStatusChange(Structure):
-    pass
-
-
-class UProjectileAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UProjectileAttributeContextResolver(Structure):
-    pass
-
-
-class ARadialBlurActor_Data(Structure):
-    pass
-
-
-class ARadialBlurActor(Structure):
-    pass
-
-
-class USeqAct_ToggleConstraintDrive_Data(Structure):
-    pass
-
-
-class USeqAct_ToggleConstraintDrive(Structure):
-    pass
-
-
-class ARB_BSJointActor_Data(Structure):
-    pass
-
-
-class ARB_BSJointActor(Structure):
-    pass
-
-
-class ARB_ConstraintActorSpawnable_Data(Structure):
-    pass
-
-
-class ARB_ConstraintActorSpawnable(Structure):
-    pass
-
-
-class ARB_HingeActor_Data(Structure):
-    pass
-
-
-class ARB_HingeActor(Structure):
-    pass
-
-
-class ARB_PrismaticActor_Data(Structure):
-    pass
-
-
-class ARB_PrismaticActor(Structure):
-    pass
-
-
-class ARB_PulleyJointActor_Data(Structure):
-    pass
-
-
-class ARB_PulleyJointActor(Structure):
-    pass
-
-
-class AReverbVolumeToggleable_Data(Structure):
-    pass
-
-
-class AReverbVolumeToggleable(Structure):
-    pass
-
-
-class USeqAct_AddRemoveFaceFXAnimSet_Data(Structure):
-    pass
-
-
-class USeqAct_AddRemoveFaceFXAnimSet(Structure):
-    pass
-
-
-class USeqAct_AIAbortMoveToActor_Data(Structure):
-    pass
-
-
-class USeqAct_AIAbortMoveToActor(Structure):
-    pass
-
-
-class USeqAct_MITV_Activate_Data(Structure):
-    pass
-
-
-class USeqAct_MITV_Activate(Structure):
-    pass
-
-
-class USeqAct_SetSkelControlTarget_Data(Structure):
-    pass
-
-
-class USeqAct_SetSkelControlTarget(Structure):
-    pass
-
-
-class USeqAct_SetVector_Data(Structure):
-    pass
-
-
-class USeqAct_SetVector(Structure):
-    pass
-
-
-class USeqAct_UpdatePhysBonesFromAnim_Data(Structure):
-    pass
-
-
-class USeqAct_UpdatePhysBonesFromAnim(Structure):
-    pass
-
-
-class USeqEvent_AIReachedRouteActor_Data(Structure):
-    pass
-
-
-class USeqEvent_AIReachedRouteActor(Structure):
-    pass
-
-
-class USeqEvent_LOS_Data(Structure):
-    pass
-
-
-class USeqEvent_LOS(Structure):
-    pass
-
-
-class USeqVar_Byte_Data(Structure):
-    pass
-
-
-class USeqVar_Byte(Structure):
-    pass
-
-
-class USeqVar_Name_Data(Structure):
-    pass
-
-
-class USeqVar_Name(Structure):
-    pass
-
-
-class USeqVar_Union_Data(Structure):
-    pass
-
-
-class USeqVar_Union(Structure):
-    pass
-
-
-class ASkeletalMeshActorMATSpawnable_Data(Structure):
-    pass
-
-
-class ASkeletalMeshActorMATSpawnable(Structure):
-    pass
-
-
-class ASkeletalMeshActorMATWalkable_Data(Structure):
-    pass
-
-
-class ASkeletalMeshActorMATWalkable(Structure):
-    pass
-
-
-class ATrigger_Dynamic_Data(Structure):
-    pass
-
-
-class ATrigger_Dynamic(Structure):
-    pass
-
-
-class ATrigger_LOS_Data(Structure):
-    pass
-
-
-class ATrigger_LOS(Structure):
-    pass
-
-
-class ATriggeredPath_Data(Structure):
-    pass
-
-
-class ATriggeredPath(Structure):
-    pass
-
-
-class ATriggerStreamingLevel_Data(Structure):
-    pass
-
-
-class ATriggerStreamingLevel(Structure):
-    pass
-
-
-class UUICharacterSummary_Data(Structure):
-    pass
-
-
-class UUICharacterSummary(Structure):
-    pass
-
-
-class UUIGameInfoSummary_Data(Structure):
-    pass
-
-
-class UUIGameInfoSummary(Structure):
-    pass
-
-
-class UUIWeaponSummary_Data(Structure):
-    pass
-
-
-class UUIWeaponSummary(Structure):
-    pass
-
-
-class UVehicleAttributeContextResolver_Data(Structure):
-    pass
-
-
-class UVehicleAttributeContextResolver(Structure):
-    pass
-
-
-class AWaterVolume_Data(Structure):
-    pass
-
-
-class AWaterVolume(Structure):
-    pass
-
-
-class AWindDirectionalSource_Data(Structure):
-    pass
-
-
-class AWindDirectionalSource(Structure):
-    pass
-
-
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
@@ -12706,6 +9,12700 @@ from ..structs.Engine import *
 from ..classes.Base import *
 from ..classes.Core import *
 
+class UIWorldBody_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIWorldBody(BL2SDK.UObject_Base):
+    pass
+
+
+class AActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AActor(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AActorPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(AActor))), ("Count", c_int), ("Max", c_int)]
+
+
+class AInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AZoneInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AZoneInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AWorldInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWorldInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentEnumerator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentEnumerator(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentOfferEnumerator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownloadableContentOfferEnumerator(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngine(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameEngine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameEngine(BL2SDK.UObject_Base):
+    pass
+
+
+class UInGameAdManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInGameAdManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngineBaseTypes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngineBaseTypes(BL2SDK.UObject_Base):
+    pass
+
+
+class ABrush_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABrush(BL2SDK.UObject_Base):
+    pass
+
+
+class ABrushShape_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABrushShape(BL2SDK.UObject_Base):
+    pass
+
+
+class AVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AVolumePtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(AVolume))), ("Count", c_int), ("Max", c_int)]
+
+
+class ABlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ACullDistanceVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACullDistanceVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelGridVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelGridVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelStreamingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelStreamingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ALevelStreamingVolumePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ALevelStreamingVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ALightmassCharacterIndirectDetailVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALightmassCharacterIndirectDetailVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ALightmassImportanceVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALightmassImportanceVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AMassiveLODOverrideVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMassiveLODOverrideVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AMassiveLODOverrideVolumePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AMassiveLODOverrideVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ANavMeshBoundsVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANavMeshBoundsVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class APathBlockingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APathBlockingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class APhysicsVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APhysicsVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ADefaultPhysicsVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADefaultPhysicsVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AGravityVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGravityVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ALadderVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALadderVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class APortalVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APortalVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APortalVolumePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APortalVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class APostProcessVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APostProcessVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class APrecomputedVisibilityOverrideVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APrecomputedVisibilityOverrideVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class APrecomputedVisibilityVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APrecomputedVisibilityVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AReverbVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AReverbVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AShadowRelevanceVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AShadowRelevanceVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ATriggerVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATriggerVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicSMActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicSMActor(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ADynamicSMActorPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ADynamicSMActor))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AInterpActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInterpActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitterPool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitterPool(BL2SDK.UObject_Base):
+    pass
+
+
+class AGBXNavMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGBXNavMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class AHUD_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AHUD(BL2SDK.UObject_Base):
+    pass
+
+
+class AIDestructibleObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AIDestructibleObject(BL2SDK.UObject_Base):
+    pass
+
+
+class AAutoTestManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAutoTestManager(BL2SDK.UObject_Base):
+    pass
+
+
+class ACoverGroup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACoverGroup(BL2SDK.UObject_Base):
+    pass
+
+
+class AFileWriter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFileWriter(BL2SDK.UObject_Base):
+    pass
+
+
+class AFileLog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFileLog(BL2SDK.UObject_Base):
+    pass
+
+
+class AGameInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGameInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AMutator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMutator(BL2SDK.UObject_Base):
+    pass
+
+
+class APotentialClimbWatcher_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APotentialClimbWatcher(BL2SDK.UObject_Base):
+    pass
+
+
+class ARoute_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARoute(BL2SDK.UObject_Base):
+    pass
+
+
+class AWindPointSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWindPointSource(BL2SDK.UObject_Base):
+    pass
+
+
+class AKeypoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKeypoint(BL2SDK.UObject_Base):
+    pass
+
+
+class ATargetPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATargetPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelLandmark_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALevelLandmark(BL2SDK.UObject_Base):
+    pass
+
+
+class APersistentTransitionLandmark_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APersistentTransitionLandmark(BL2SDK.UObject_Base):
+    pass
+
+
+class AMaterialInstanceActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMaterialInstanceActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AMatineeActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMatineeActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ANavigationPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANavigationPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ANavigationPointPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ANavigationPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ACoverLink_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACoverLink(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ACoverLinkPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ACoverLink))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ADoorMarker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADoorMarker(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicAnchor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicAnchor(BL2SDK.UObject_Base):
+    pass
+
+
+class ALadder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALadder(BL2SDK.UObject_Base):
+    pass
+
+
+class AAutoLadder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAutoLadder(BL2SDK.UObject_Base):
+    pass
+
+
+class ALiftCenter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALiftCenter(BL2SDK.UObject_Base):
+    pass
+
+
+class ALiftExit_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALiftExit(BL2SDK.UObject_Base):
+    pass
+
+
+class APathNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APathNode(BL2SDK.UObject_Base):
+    pass
+
+
+class AVolumePathNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVolumePathNode(BL2SDK.UObject_Base):
+    pass
+
+
+class APickupFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APickupFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerStart_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerStart(BL2SDK.UObject_Base):
+    pass
+
+
+class APortalMarker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APortalMarker(BL2SDK.UObject_Base):
+    pass
+
+
+class APylon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APylon(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APylonPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(APylon))), ("Count", c_int), ("Max", c_int)]
+
+
+class AAISwitchablePylon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAISwitchablePylon(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicPylon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicPylon(BL2SDK.UObject_Base):
+    pass
+
+
+class ATeleporter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATeleporter(BL2SDK.UObject_Base):
+    pass
+
+
+class ANote_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANote(BL2SDK.UObject_Base):
+    pass
+
+
+class AProjectile_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AProjectile(BL2SDK.UObject_Base):
+    pass
+
+
+class ARigidBodyBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARigidBodyBase(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCaptureActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCaptureActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCapture2DActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCapture2DActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCaptureCubeMapActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCaptureCubeMapActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCaptureReflectActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCaptureReflectActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCapturePortalActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASceneCapturePortalActor(BL2SDK.UObject_Base):
+    pass
+
+
+class APortalTeleporter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APortalTeleporter(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APortalTeleporterPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APortalTeleporter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AStaticMeshActorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshActorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingMeshCollectionActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingMeshCollectionActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshCollectionActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshCollectionActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshActorBasedOnExtremeContent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticMeshActorBasedOnExtremeContent(BL2SDK.UObject_Base):
+    pass
+
+
+class ATeleporterDestination_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATeleporterDestination(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ATriggerPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(ATrigger))), ("Count", c_int), ("Max", c_int)]
+
+
+class ATrigger_PawnsOnly_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger_PawnsOnly(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UActorComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UActorComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAkComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAkComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAkComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAudioComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAudioComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAudioComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAudioComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UHeightFogComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHeightFogComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrimitiveComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrimitiveComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPrimitiveComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPrimitiveComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UArrowComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UArrowComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBrushComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBrushComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraConeComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraConeComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UCylinderComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCylinderComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UCylinderComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCylinderComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USphereComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USphereComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawBoxComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawBoxComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawCapsuleComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawCapsuleComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawConeComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawConeComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawCylinderComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawCylinderComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawFrustumComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawFrustumComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawQuadComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawQuadComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawSphereComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawSphereComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawPylonRadiusComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawPylonRadiusComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawSoundRadiusComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawSoundRadiusComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelGridVolumeRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelGridVolumeRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULineBatchComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULineBatchComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UModelComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UModelComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USocketComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USocketComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UHomingTargetComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHomingTargetComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USpriteComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpriteComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USpriteRTTComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpriteRTTComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class URadialBlurComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URadialBlurComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCaptureComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCaptureComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCapture2DComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCapture2DComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCapture2DHitMaskComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCapture2DHitMaskComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCaptureCubeMapComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCaptureCubeMapComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCapturePortalComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCapturePortalComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCaptureReflectComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USceneCaptureReflectComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWindDirectionalSourceComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWindDirectionalSourceComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UWindPointSourceComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWindPointSourceComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryAI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryAI(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryApexDestructible_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryApexDestructible(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryArchetype_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryArchetype(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryCoverLink_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryCoverLink(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDominantDirectionalLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDominantDirectionalLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDominantDirectionalLightMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDominantDirectionalLightMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDynamicSM_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDynamicSM(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryMover_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryMover(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryRigidBody_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryRigidBody(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryLensFlare_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryLensFlare(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPathNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPathNode(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPhysicsAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPhysicsAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPlayerStart_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPlayerStart(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPylon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryPylon(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactorySkeletalMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactorySkeletalMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryStaticMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryStaticMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryTrigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryTrigger(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryCustomPropertyEditorDelegate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryCustomPropertyEditorDelegate(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkAudioDevice_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkAudioDevice(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkBaseSoundObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkBaseSoundObject(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundCue_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundCue(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USoundCuePtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(USoundCue))), ("Count", c_int), ("Max", c_int)]
+
+
+class UAkObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkBank_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkBank(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkDialogueEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkDialogueEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAkEventPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(UAkEvent))), ("Count", c_int), ("Max", c_int)]
+
+
+class UAkRtpc_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkRtpc(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkState(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkStateGroup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkStateGroup(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkSwitchGroup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkSwitchGroup(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkTrigger_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAkTrigger(BL2SDK.UObject_Base):
+    pass
+
+
+class UBookMark_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBookMark(BL2SDK.UObject_Base):
+    pass
+
+
+class UBookMark2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBookMark2D(BL2SDK.UObject_Base):
+    pass
+
+
+class UKismetBookMark_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UKismetBookMark(BL2SDK.UObject_Base):
+    pass
+
+
+class UCanvas_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCanvas(BL2SDK.UObject_Base):
+    pass
+
+
+class UChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class UControlChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UControlChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class UFileChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFileChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class UVoiceChannel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVoiceChannel(BL2SDK.UObject_Base):
+    pass
+
+
+class AController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AController(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AControllerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class APlayerController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerController(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APlayerControllerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APlayerController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCheatManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCheatManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UClipPadEntry_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UClipPadEntry(BL2SDK.UObject_Base):
+    pass
+
+
+class UCodecMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCodecMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UCodecMovieBink_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCodecMovieBink(BL2SDK.UObject_Base):
+    pass
+
+
+class UCodecMovieFallback_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCodecMovieFallback(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurveEdPresetCurve_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCurveEdPresetCurve(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomPropertyItemHandler_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCustomPropertyItemHandler(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageAdjuster_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageAdjuster(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamagePipeline_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamagePipeline(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDamagePipelinePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDamagePipeline))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDamageType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageType(BL2SDK.UObject_Base):
+    pass
+
+
+class UKillZDamageType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UKillZDamageType(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatConstant_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatConstant(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatParameterBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatParameterBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatConstantCurve_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatConstantCurve(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatUniform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatUniform(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatUniformCurve_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatUniformCurve(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorConstant_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorConstant(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorParameterBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorParameterBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorConstantCurve_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorConstantCurve(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorUniform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorUniform(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorUniformCurve_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorUniformCurve(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownload_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDownload(BL2SDK.UObject_Base):
+    pass
+
+
+class UChannelDownload_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChannelDownload(BL2SDK.UObject_Base):
+    pass
+
+
+class UEdCoordSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEdCoordSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UEditorLinkSelectionInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEditorLinkSelectionInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngineTypes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngineTypes(BL2SDK.UObject_Base):
+    pass
+
+
+class UFacebookIntegration_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFacebookIntegration(BL2SDK.UObject_Base):
+    pass
+
+
+class UFaceFXAnimSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFaceFXAnimSet(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UFaceFXAnimSetPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFaceFXAnimSet))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UFaceFXAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFaceFXAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class UFont_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFont(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UFontPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(UFont))), ("Count", c_int), ("Max", c_int)]
+
+
+class UMultiFont_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMultiFont(BL2SDK.UObject_Base):
+    pass
+
+
+class UFontImportOptions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFontImportOptions(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFeedbackManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFeedbackManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFeedbackWaveform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFeedbackWaveform(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEvents_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEvents(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEventsReader_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEventsReader(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEventsWriter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEventsWriter(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEventsHandler_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameplayEventsHandler(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UGameplayEventsHandlerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGameplayEventsHandler))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGameViewportClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameViewportClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXCrossLevelReferenceContainer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXCrossLevelReferenceContainer(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UGBXCrossLevelReferenceContainerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGBXCrossLevelReferenceContainer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGBXDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UGBXDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGBXDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBaseHitRegionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseHitRegionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageTypeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDamageTypeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDamageTypeDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDamageTypeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UEngineInteractionIconDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEngineInteractionIconDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnAllegiance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnAllegiance(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPawnAllegiancePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPawnAllegiance))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPawnInteractionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnInteractionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathModifier_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathModifier(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UGBXNavMeshPathModifierPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGBXNavMeshPathModifier))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGBXNavMeshPathModifier_Simplify_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathModifier_Simplify(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathModifier_SmoothTurns_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathModifier_SmoothTurns(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxEngineGlobals_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxEngineGlobals(BL2SDK.UObject_Base):
+    pass
+
+
+class UGenericParamListStatEntry_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGenericParamListStatEntry(BL2SDK.UObject_Base):
+    pass
+
+
+class UGuidCache_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGuidCache(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAnimBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAnimBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAttributeSlotEffectProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAttributeSlotEffectProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBalancedActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBalancedActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBodyCompositionInstance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBodyCompositionInstance(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBodyInfoProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBodyInfoProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageCauser_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageCauser(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDialogBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDialogBox(BL2SDK.UObject_Base):
+    pass
+
+
+class UIFaceFXActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIFaceFXActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshBuildEvents_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshBuildEvents(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshSeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshSeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshSpecialMove_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshSpecialMove(BL2SDK.UObject_Base):
+    pass
+
+
+class UIKilledBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIKilledBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIniLocPatcher_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIniLocPatcher(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavigationHandle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavigationHandle(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_Speaker_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_Speaker(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpCurveEdSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpCurveEdSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrack(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInterpTrackPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpTrack))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UIResourcePoolProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIResourcePoolProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UISpawnActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISpawnActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UISpecialOcclusionProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISpecialOcclusionProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UITargetable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UITargetable(BL2SDK.UObject_Base):
+    pass
+
+
+class UJsonObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UJsonObject(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UJsonObjectPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UJsonObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UKMeshProps_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UKMeshProps(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelBase(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevel(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULevelPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(ULevel))), ("Count", c_int), ("Max", c_int)]
+
+
+class UPendingLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPendingLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UDemoPlayPendingLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDemoPlayPendingLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetPendingLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetPendingLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreaming_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreaming(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULevelStreamingPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULevelStreaming))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ULevelStreamingAlwaysLoaded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingAlwaysLoaded(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingKismet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingKismet(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingPersistent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingPersistent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightmappedSurfaceCollection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightmappedSurfaceCollection(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightmassPrimitiveSettingsObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightmassPrimitiveSettingsObject(BL2SDK.UObject_Base):
+    pass
+
+
+class ULine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULine(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULinePtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(ULine))), ("Count", c_int), ("Max", c_int)]
+
+
+class ULineData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULineData(BL2SDK.UObject_Base):
+    pass
+
+
+class ULineSegment_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULineSegment(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULineSegmentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULineSegment))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMapInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMapInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class USurface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USurface(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMaterialInterfacePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMaterialInterface))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpression_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpression(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMaterialExpressionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMaterialExpression))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UModel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UModel(BL2SDK.UObject_Base):
+    pass
+
+
+class UMusicTrackDataStructures_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMusicTrackDataStructures(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavigationMeshBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavigationMeshBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetDriver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetDriver(BL2SDK.UObject_Base):
+    pass
+
+
+class UDemoRecDriver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDemoRecDriver(BL2SDK.UObject_Base):
+    pass
+
+
+class UObjectReferencer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UObjectReferencer(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UObjectReferencerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UObjectReferencer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UOnlineSubsystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSubsystem(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterfaceBaseImpl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterfaceBaseImpl(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineMatchmakingStats_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineMatchmakingStats(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlayerStorage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlayerStorage(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineProfileSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineProfileSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStats_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStats(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStatsRead_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStatsRead(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UOnlineStatsReadPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UOnlineStatsRead))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UOnlineStatsWrite_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStatsWrite(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageMapLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageMapLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageMapSeekFree_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageMapSeekFree(BL2SDK.UObject_Base):
+    pass
+
+
+class UPatchScriptCommandlet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPatchScriptCommandlet(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalPlayer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalPlayer(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULocalPlayerPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULocalPlayer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UNetConnection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNetConnection(BL2SDK.UObject_Base):
+    pass
+
+
+class UChildConnection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UChildConnection(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UChildConnectionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UChildConnection))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDemoRecConnection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDemoRecConnection(BL2SDK.UObject_Base):
+    pass
+
+
+class UPolys_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPolys(BL2SDK.UObject_Base):
+    pass
+
+
+class UPostProcessChain_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPostProcessChain(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPostProcessChainPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPostProcessChain))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPostProcessEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPostProcessEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPostProcessEffectPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPostProcessEffect))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAccumulateAlphaEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAccumulateAlphaEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmbientOcclusionEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAmbientOcclusionEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlurEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlurEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UDOFEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDOFEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UDOFAndBloomEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDOFAndBloomEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UDOFBloomMotionBlurEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDOFBloomMotionBlurEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UUberPostProcessEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUberPostProcessEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UDwTriovizImplEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDwTriovizImplEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UFXAAEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFXAAEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UMotionBlurEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMotionBlurEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrimitiveComponentFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrimitiveComponentFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshComponentFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshComponentFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaticMeshComponentFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaticMeshComponentFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class UReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UReachSpecPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UReachSpec))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAdvancedReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAdvancedReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UCeilingReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCeilingReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UForcedReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForcedReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoverSlipReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoverSlipReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UFloorToCeilingReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFloorToCeilingReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UMantleReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMantleReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class USlotToSlotReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USlotToSlotReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class USwatTurnReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USwatTurnReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UWallTransReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWallTransReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class ULadderReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULadderReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UProscribedReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProscribedReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class UTeleportReachSpec_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTeleportReachSpec(BL2SDK.UObject_Base):
+    pass
+
+
+class USavedMove_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USavedMove(BL2SDK.UObject_Base):
+    pass
+
+
+class USaveGameSummary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USaveGameSummary(BL2SDK.UObject_Base):
+    pass
+
+
+class USelection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USelection(BL2SDK.UObject_Base):
+    pass
+
+
+class UServerCommandlet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UServerCommandlet(BL2SDK.UObject_Base):
+    pass
+
+
+class USettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USettings(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameSearch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameSearch(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class UShaderCache_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShaderCache(BL2SDK.UObject_Base):
+    pass
+
+
+class UShadowMap1D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShadowMap1D(BL2SDK.UObject_Base):
+    pass
+
+
+class UShadowMap2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShadowMap2D(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UShadowMap2DPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UShadowMap2D))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USmokeTestCommandlet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USmokeTestCommandlet(BL2SDK.UObject_Base):
+    pass
+
+
+class USnapshotInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USnapshotInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class USpeechRecognition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpeechRecognition(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaticMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaticMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_BodySetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_BodySetup(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_URB_BodySetupPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_BodySetup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTexture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTexture(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTexturePtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(UTexture))), ("Count", c_int), ("Max", c_int)]
+
+
+class UTexture2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTexture2D(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTexture2DPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTexture2D))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ULightMapTexture2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightMapTexture2D(BL2SDK.UObject_Base):
+    pass
+
+
+class UShadowMapTexture2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UShadowMapTexture2D(BL2SDK.UObject_Base):
+    pass
+
+
+class UTranslationContext_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTranslationContext(BL2SDK.UObject_Base):
+    pass
+
+
+class UTranslatorTag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTranslatorTag(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTranslatorTagPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTranslatorTag))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UStringsTag_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStringsTag(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIRoot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIRoot(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteraction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteraction(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInteractionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInteraction))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIInteraction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIInteraction(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UVertex_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVertex(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UVertexPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(UVertex))), ("Count", c_int), ("Max", c_int)]
+
+
+class UWaveFormBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWaveFormBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UWorld_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWorld(BL2SDK.UObject_Base):
+    pass
+
+
+class AEnvironmentVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AEnvironmentVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AEnvironmentVolumePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AEnvironmentVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ATestSplittingVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATestSplittingVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AAIController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAIController(BL2SDK.UObject_Base):
+    pass
+
+
+class APathTargetPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APathTargetPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class ANavMeshObstacle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANavMeshObstacle(BL2SDK.UObject_Base):
+    pass
+
+
+class APylonSeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APylonSeed(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingMeshActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingMeshActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingMeshReplicatedActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABlockingMeshReplicatedActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoverGroupRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoverGroupRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaticMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UStaticMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UStaticMeshComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UStaticMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCoverMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCoverMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPathRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPathRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class URouteRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URouteRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAutoNavMeshPathObstacleUnregister_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAutoNavMeshPathObstacleUnregister(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathFinder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGBXNavMeshPathFinder(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshObstacle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIGBXNavMeshObstacle(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavMeshPathObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavMeshPathObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavMeshPathSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavMeshPathSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavMeshPathObstacle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterface_NavMeshPathObstacle(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavigationHandle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavigationHandle(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_Filter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_Filter(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UNavMeshGoal_FilterPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UNavMeshGoal_Filter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UNavMeshGoalFilter_MinPathDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_MinPathDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_NotNearOtherAI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_NotNearOtherAI(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_OutOfViewFrom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_OutOfViewFrom(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_OutSideOfDotProductWedge_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_OutSideOfDotProductWedge(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_PolyEncompassesAI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoalFilter_PolyEncompassesAI(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPathConstraint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPathConstraint(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_AlongLine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_AlongLine(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_EnforceTwoWayEdges_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_EnforceTwoWayEdges(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_MinDistBetweenSpecsOfType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_MinDistBetweenSpecsOfType(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_SameCoverLink_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_SameCoverLink(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_Toward_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_Toward(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_WithinDistanceEnvelope_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_WithinDistanceEnvelope(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_WithinTraversalDist_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPath_WithinTraversalDist(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPathGoalEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshPathGoalEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_At_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_At(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_ClosestActorInList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_ClosestActorInList(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_GenericFilterContainer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_GenericFilterContainer(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_Null_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_Null(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_PolyEncompassesAI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_PolyEncompassesAI(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_Random_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_Random(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_WithinDistanceEnvelope_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNavMeshGoal_WithinDistanceEnvelope(BL2SDK.UObject_Base):
+    pass
+
+
+class UPathConstraint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPathConstraint(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_AlongLine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_AlongLine(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_AvoidInEscapableNodes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_AvoidInEscapableNodes(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_MinDistBetweenSpecsOfType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_MinDistBetweenSpecsOfType(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_TowardGoal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_TowardGoal(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_TowardPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_TowardPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_WithinDistanceEnvelope_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_WithinDistanceEnvelope(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_WithinTraversalDist_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPath_WithinTraversalDist(BL2SDK.UObject_Base):
+    pass
+
+
+class UPathGoalEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPathGoalEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class UGoal_AtActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGoal_AtActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UGoal_Null_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGoal_Null(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorBasedOnExtremeContent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorBasedOnExtremeContent(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshCinematicActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshCinematicActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorMAT_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorMAT(BL2SDK.UObject_Base):
+    pass
+
+
+class UHeadTrackingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHeadTrackingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_Automatic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_Automatic(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_BitwiseCompressOnly_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_BitwiseCompressOnly(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_GBXCustom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_GBXCustom(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_LeastDestructive_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_LeastDestructive(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RemoveEverySecondKey_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RemoveEverySecondKey(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RemoveLinearKeys_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RemoveLinearKeys(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_PerTrackCompression_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_PerTrackCompression(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RemoveTrivialKeys_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RemoveTrivialKeys(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RevertToRaw_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimationCompressionAlgorithm_RevertToRaw(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimMetaData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimMetaData(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimMetaDataPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimMetaData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAnimMetaData_SkelControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimMetaData_SkelControl(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimMetaData_SkelControlKeyFrame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimMetaData_SkelControlKeyFrame(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_AkEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_AkEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_CameraEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_CameraEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_ClothingMaxDistanceScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_ClothingMaxDistanceScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Footstep_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Footstep(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_ForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_ForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Kismet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Kismet(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_PlayParticleEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_PlayParticleEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Rumble_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Rumble(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Script_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Script(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Scripted_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Scripted(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_PawnMaterialParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_PawnMaterialParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_ViewShake_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_ViewShake(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Sound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Sound(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_SoundSpatial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_SoundSpatial(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Trails_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_Trails(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimObject(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNode(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimNodePtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(UAnimNode))), ("Count", c_int), ("Max", c_int)]
+
+
+class UAnimNodeBlendBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimNodeBlendBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimNodeBlendBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAnimNode_MultiBlendPerBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNode_MultiBlendPerBone(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeAimOffset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeAimOffset(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeAdditiveBlending_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeAdditiveBlending(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendPerBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendPerBone(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeCrossfader_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeCrossfader(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodePlayCustomAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodePlayCustomAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendDirectional_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendDirectional(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendList(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByPhysics_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByPhysics(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByPosture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByPosture(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByProperty_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendByProperty(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendBySpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendBySpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeRandom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeRandom(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendMultiBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeBlendMultiBone(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeMirror_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeMirror(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeScalePlayRate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeScalePlayRate(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeScaleRateBySpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeScaleRateBySpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSlot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSlot(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimNodeSlotPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimNodeSlot))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAnimNodeSynch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSynch(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimTree_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimTree(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimNodeSequencePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimNodeSequence))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAnimNodeSequenceBlendBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSequenceBlendBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSequenceBlendByAim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNodeSequenceBlendByAim(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMorphNodeBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMorphNodeBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMorphNodeMultiPose_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeMultiPose(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodePose_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodePose(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeightBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeightBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeightByBoneAngle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeightByBoneAngle(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeightByBoneRotation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphNodeWeightByBoneRotation(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkelControlBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkelControlBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkelControl_CCD_IK_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControl_CCD_IK(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControl_Multiply_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControl_Multiply(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControl_TwistBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControl_TwistBone(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlLimb_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlLimb(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlFootPlacement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlFootPlacement(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlLookAt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlLookAt(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkelControlLookAtPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkelControlLookAt))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkelControlSingleBone_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlSingleBone(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlHandlebars_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlHandlebars(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlWheel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlWheel(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlSpline_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlSpline(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlTrail_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkelControlTrail(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimSequencePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimSequence))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UAnimSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimSet(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAnimSetPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(UAnimSet))), ("Count", c_int), ("Max", c_int)]
+
+
+class UMorphTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMorphTargetPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMorphTarget))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMorphTargetSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphTargetSet(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMorphTargetSetPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMorphTargetSet))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMorphWeightSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMorphWeightSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalActorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalActorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalActorMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalActorMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADecalManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UDecalComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDecalComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UDecalComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDecalComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UActorFactoryDecal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDecal(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDecalMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryDecalMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class UDecalMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDecalMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeConeDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeConeDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeConstantDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeConstantDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeLinearHalfspaceDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeLinearHalfspaceDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeSphericalDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFogVolumeSphericalDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UExponentialHeightFogComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExponentialHeightFogComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeDensityComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeDensityComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeConeDensityComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeConeDensityComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeConstantDensityComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeConstantDensityComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeLinearHalfspaceDensityComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeLinearHalfspaceDensityComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeSphericalDensityComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFogVolumeSphericalDensityComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryFogVolumeConstantDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryFogVolumeConstantDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryFogVolumeLinearHalfspaceDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryFogVolumeLinearHalfspaceDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryFogVolumeSphericalDensityInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryFogVolumeSphericalDensityInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AApexDestructibleActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AApexDestructibleActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexComponentBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexComponentBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UApexComponentBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UApexComponentBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UApexDynamicComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexDynamicComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexStaticComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexStaticComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexStaticDestructibleComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexStaticDestructibleComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlockingMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBlockingMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBlockingMeshComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBlockingMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInstancedStaticMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstancedStaticMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USplineMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USplineMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USplineMeshComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USplineMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UApexAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexClothingAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexClothingAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UApexClothingAssetPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UApexClothingAsset))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UApexDestructibleAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexDestructibleAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexGenericAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexGenericAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpFilter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpFilter(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpFilter_Classes_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpFilter_Classes(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpFilter_Custom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpFilter_Custom(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroup(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInterpGroupPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpGroup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInterpGroupAI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupAI(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupDirector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupDirector(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupInst_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupInst(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInterpGroupInstPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpGroupInst))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInterpGroupInstAI_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupInstAI(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupInstDirector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpGroupInstDirector(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackBoolProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackBoolProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackComment_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackComment(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackDirector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackDirector(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFaceFX_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFaceFX(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAnimControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAnimControl(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFade(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatMaterialParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatMaterialParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatParticleParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatParticleParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackFloatProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackMorphWeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackMorphWeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackMoveAxis_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackMoveAxis(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSkelControlScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSkelControlScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSkelControlStrength_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSkelControlStrength(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSlomo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSlomo(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackHeadTracking_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackHeadTracking(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackLinearColorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackLinearColorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackLinearColorProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackLinearColorProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackMove_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackMove(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackParticleReplay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackParticleReplay(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackTeleport_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackTeleport(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackToggle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackToggle(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVectorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVectorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAudioMaster_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackAudioMaster(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackColorProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackColorProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackColorScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackColorScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackSound(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVectorMaterialParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVectorMaterialParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVectorProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVectorProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInst_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInst(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInterpTrackInstPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpTrackInst))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInterpTrackInstAnimControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAnimControl(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAudioMaster_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstAudioMaster(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstColorScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstColorScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstComment_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstComment(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstDirector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstDirector(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFaceFX_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFaceFX(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFade(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFloatMaterialParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFloatMaterialParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFloatParticleParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFloatParticleParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstHeadTracking_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstHeadTracking(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstMorphWeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstMorphWeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstMove_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstMove(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstParticleReplay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstParticleReplay(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstProperty_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstProperty(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstBoolProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstBoolProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstColorProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstColorProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFloatProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstFloatProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstLinearColorProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstLinearColorProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstVectorProp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstVectorProp(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSkelControlScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSkelControlScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSkelControlStrength_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSkelControlStrength(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSlomo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSlomo(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstSound(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstTeleport_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstTeleport(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstToggle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstToggle(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstVectorMaterialParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstVectorMaterialParam(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpTrackInstVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAbs_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAbs(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAdd_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAdd(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAppendVector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAppendVector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcCosine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcCosine(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcSine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcSine(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcTangent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcTangent(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcTangent2_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionArcTangent2(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBlendModeBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBlendModeBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzColorBurn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzColorBurn(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzColorDodge_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzColorDodge(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzExclusion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzExclusion(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzHardLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzHardLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzLinearBurn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzLinearBurn(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzLinearLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzLinearLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzOverlay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzOverlay(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzPinLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzPinLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzScreen_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzScreen(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzSoftLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzSoftLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzVividLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionzVividLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBumpOffset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBumpOffset(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBumpOffsetEx_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBumpOffsetEx(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBumpOffsetSloped_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionBumpOffsetSloped(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCameraVector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCameraVector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCameraWorldPosition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCameraWorldPosition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCeil_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCeil(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionClamp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionClamp(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionComment_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionComment(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionComponentMask_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionComponentMask(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCompound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCompound(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant2Vector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant2Vector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant3Vector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant3Vector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant4Vector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstant4Vector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstantBiasScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstantBiasScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstantClamp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionConstantClamp(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCosine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCosine(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCrossProduct_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCrossProduct(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCustom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCustom(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCustomTexture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionCustomTexture(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDdx_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDdx(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDdy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDdy(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDegrees_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDegrees(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthBiasedAlpha_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthBiasedAlpha(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthBiasedBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthBiasedBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthOfFieldFunction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthOfFieldFunction(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDeriveNormalZ_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDeriveNormalZ(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDesaturation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDesaturation(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDestColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDestColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDestDepth_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDestDepth(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDivide_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDivide(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDominantSkyLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDominantSkyLight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDotProduct_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDotProduct(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDynamicParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDynamicParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshEmitterDynamicParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshEmitterDynamicParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionExp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionExp(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionExp2_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionExp2(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFloor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFloor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFluidNormal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFluidNormal(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFmod_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFmod(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFoliageImpulseDirection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFoliageImpulseDirection(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFoliageNormalizedRotationAxisAndAngle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFoliageNormalizedRotationAxisAndAngle(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFontSample_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFontSample(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFontSampleParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFontSampleParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFrac_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFrac(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFresnel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFresnel(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionGradient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionGradient(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionIf_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionIf(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLength_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLength(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareIntensity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareIntensity(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareOcclusion_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareOcclusion(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareRadialDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareRadialDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareRayDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareRayDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareSourceDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLensFlareSourceDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLightmapUVs_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLightmapUVs(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLightmassReplace_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLightmassReplace(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLightVector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLightVector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLinearInterpolate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLinearInterpolate(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLog(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLog10_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLog10(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLog2_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionLog2(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMax_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMax(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshEmitterVertexColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshEmitterVertexColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMin_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMin(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMultiply_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMultiply(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMultiplyAndAdd_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMultiplyAndAdd(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionNormalize_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionNormalize(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionObjectOrientation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionObjectOrientation(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionObjectRadius_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionObjectRadius(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionObjectWorldPosition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionObjectWorldPosition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionOcclusionPercentage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionOcclusionPercentage(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionOneMinus_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionOneMinus(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPanner_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPanner(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionScalarParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionScalarParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionStaticComponentMaskParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionStaticComponentMaskParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionStaticSwitchParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionStaticSwitchParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionVectorParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionVectorParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionParticleMacroUV_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionParticleMacroUV(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPerInstanceRandom_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPerInstanceRandom(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPixelDepth_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPixelDepth(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPower_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionPower(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRadians_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRadians(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRecipSquareRoot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRecipSquareRoot(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionReflectionVector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionReflectionVector(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRotate3D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRotate3D(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRotateAboutAxis_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRotateAboutAxis(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRotator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionRotator(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSaturate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSaturate(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSceneDepth_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSceneDepth(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSceneTexture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSceneTexture(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionScreenPosition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionScreenPosition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSine(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSphereMask_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSphereMask(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSPHFluidNormal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSPHFluidNormal(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSPHFluidThickness_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSPHFluidThickness(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSPHFluidVertexColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSPHFluidVertexColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSquareRoot_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSquareRoot(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSteepParallaxOffset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSteepParallaxOffset(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSubtract_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSubtract(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSwizzle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionSwizzle(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTangent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTangent(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTerrainLayerCoords_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTerrainLayerCoords(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTerrainLayerWeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTerrainLayerWeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTerrainTextureCoordinate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTerrainTextureCoordinate(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureCoordinate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureCoordinate(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureDimensions_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureDimensions(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSample_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSample(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthBiasBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionDepthBiasBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFlipBookSample_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionFlipBookSample(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshSubUV_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshSubUV(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshSubUVBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionMeshSubUVBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionParticleSubUV_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionParticleSubUV(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameter2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameter2D(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAntialiasedTextureMask_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionAntialiasedTextureMask(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterMeshSubUV_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterMeshSubUV(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterMeshSubUVBlend_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterMeshSubUVBlend(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterSubUV_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterSubUV(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterCube_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterCube(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterNormal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSampleParameterNormal(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSplat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTextureSplat(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTime(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTransform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTransform(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTransformPosition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTransformPosition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTwoSidedSign_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionTwoSidedSign(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionVectorIf_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionVectorIf(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionVertexColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionVertexColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWindDirectionAndSpeed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWindDirectionAndSpeed(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldAmbientColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldAmbientColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldLightColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldLightColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldNormal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldNormal(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldPosition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialExpressionWorldPosition(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInstance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInstance(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInstanceConstant_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInstanceConstant(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UMaterialInstanceConstantPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMaterialInstanceConstant))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UMaterialInstanceTimeVarying_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UMaterialInstanceTimeVarying(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitterCameraLensEffectBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitterCameraLensEffectBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AEmitterCameraLensEffectBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AEmitterCameraLensEffectBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AParticleEventManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AParticleEventManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleSystemComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleSystemComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleSystemComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleSystemComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDistributionFloatParticleParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatParticleParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorParticleParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionVectorParticleParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleEmitterPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleEmitter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleSpriteEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleSpriteEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleLODLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleLODLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleLODLevelPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleLODLevel))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleModule_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModule(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleModulePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModule))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleModuleAccelerationBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAccelerationBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAcceleration_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAcceleration(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAccelerationOverLifetime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAccelerationOverLifetime(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorLine_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorLine(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorParticle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorParticle(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorPoint_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleAttractorPoint(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamModifier_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamModifier(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamNoise_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamNoise(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamSource(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamTrace_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleBeamTrace(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCameraBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCameraBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCameraOffset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCameraOffset(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCollisionBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCollisionBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCollision_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCollision(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCollisionActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleCollisionActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColor(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColor_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColor_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorByParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorByParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorOverLife_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorOverLife(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorScaleOverDensity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorScaleOverDensity(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorScaleOverLife_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleColorScaleOverLife(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventGenerator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventGenerator(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventGeneratorDecal_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventGeneratorDecal(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventReceiverBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventReceiverBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleModuleEventReceiverBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleEventReceiverBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleModuleEventReceiverKillParticles_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventReceiverKillParticles(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventReceiverSpawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventReceiverSpawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleKillBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleKillBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleKillBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleKillBox(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleKillHeight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleKillHeight(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLifetimeBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLifetimeBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLifetime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLifetime(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLifetime_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLifetime_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocation(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocation_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocation_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationBoneSocket_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationBoneSocket(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationDirect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationDirect(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationEmitterDirect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationEmitterDirect(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveCylinder_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveCylinder(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveCylinder_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveCylinder_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveSphere_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveSphere(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveSphere_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationPrimitiveSphere_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationSkelVertSurface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleLocationSkelVertSurface(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSourceMovement_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSourceMovement(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMaterialBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMaterialBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMaterialByParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMaterialByParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrbitBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrbitBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrbit_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrbit(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleModuleOrbitPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleOrbit))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleModuleOrientationBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrientationBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrientationAxisLock_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleOrientationAxisLock(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleParameterBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleParameterBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleParameterDynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleParameterDynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleParameterDynamic_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleParameterDynamic_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRequired_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRequired(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotation(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotation_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotation_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotation(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotation_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotation_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationOverLifetime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationOverLifetime(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRateBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRateBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRate(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRate_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRate_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRateMultiplyLife_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRateMultiplyLife(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRateOverLife_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleMeshRotationRateOverLife(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRate(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRate_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRate_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRateMultiplyLife_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleRotationRateMultiplyLife(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSize_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSize(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSize_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSize_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeMultiplyLife_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeMultiplyLife(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeMultiplyVelocity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeMultiplyVelocity(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeScaleByTime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeScaleByTime(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeScaleOverDensity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSizeScaleOverDensity(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSpawnBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSpawnBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleModuleSpawnBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleSpawnBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleModuleSpawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSpawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSpawnPerUnit_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSpawnPerUnit(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleStoreSpawnTimeBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleStoreSpawnTimeBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleStoreSpawnTime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleStoreSpawnTime(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUV_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUV(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVDirect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVDirect(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVSelect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleSubUVSelect(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailSource(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailSpawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailSpawn(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailTaper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTrailTaper(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataAnimTrail_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataAnimTrail(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataApex_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataApex(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataBeam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataBeam(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataBeam2_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataBeam2(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataMeshPhysX_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataMeshPhysX(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataPhysX_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataPhysX(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataRibbon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataRibbon(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataTrail_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataTrail(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataTrail2_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleTypeDataTrail2(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberLTISIVCL_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberLTISIVCL(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberLTISIVCLIL_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberLTISIVCLIL(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberLTISIVCLILIRSSBLIRR_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberLTISIVCLILIRSSBLIRR(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainDrops_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainDrops(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainImpacts_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainImpacts(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainSplashA_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainSplashA(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainSplashB_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleUberRainSplashB(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocityBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocityBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocity(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocity_Seeded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocity_Seeded(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocityInheritParent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocityInheritParent(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocityOverLifetime_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleVelocityOverLifetime(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventSendToGame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleEventSendToGame(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleModuleEventSendToGamePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleEventSendToGame))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleSystemPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleSystem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UParticleSystemReplay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleSystemReplay(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UParticleSystemReplayPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleSystemReplay))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPhysXParticleSystem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysXParticleSystem(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActorFromStatic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActorFromStatic(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActorSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActorSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActorPizazz_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKActorPizazz(BL2SDK.UObject_Base):
+    pass
+
+
+class AKAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class APawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APawn(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APawnPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(APawn))), ("Count", c_int), ("Max", c_int)]
+
+
+class AVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class ASVehicle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASVehicle(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_ConstraintActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_ConstraintActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_LineImpulseActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_LineImpulseActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_RadialImpulseActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_RadialImpulseActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_Thruster_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_Thruster(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_ConstraintDrawComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_ConstraintDrawComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_RadialImpulseComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_RadialImpulseComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_Handle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_Handle(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_Spring_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_Spring(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleSimBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleSimBase(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleSimCar_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleSimCar(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleSimTank_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleSimTank(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryApexClothing_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryApexClothing(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexDestructibleDamageParameters_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UApexDestructibleDamageParameters(BL2SDK.UObject_Base):
+    pass
+
+
+class UFractureMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFractureMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UFractureMaterialPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFractureMaterial))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPhysicalMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicalMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPhysicalMaterialPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPhysicalMaterial))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UPhysicalMaterialPropertyBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicalMaterialPropertyBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsAsset_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsAsset(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsAssetInstance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsAssetInstance(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsLODVerticalEmitter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPhysicsLODVerticalEmitter(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_BodyInstance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_BodyInstance(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_URB_BodyInstancePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_BodyInstance))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class URB_ConstraintInstance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_ConstraintInstance(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_URB_ConstraintInstancePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_ConstraintInstance))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class URB_ConstraintSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_ConstraintSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_URB_ConstraintSetupPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_ConstraintSetup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class URB_BSJointSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_BSJointSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_DistanceJointSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_DistanceJointSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_HingeSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_HingeSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_PrismaticSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_PrismaticSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_PulleyJointSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_PulleyJointSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_SkelJointSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_SkelJointSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_StayUprightSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class URB_StayUprightSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleWheel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USVehicleWheel(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USVehicleWheelPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USVehicleWheel))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ANxGenericForceFieldBrush_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceFieldBrush(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_ForceFieldExcludeVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_ForceFieldExcludeVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxCylindricalForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxCylindricalForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxCylindricalForceFieldCapsule_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxCylindricalForceFieldCapsule(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldGeneric_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldGeneric(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldRadial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldRadial(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldTornado_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldTornado(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceFieldBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceFieldBox(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceFieldCapsule_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxGenericForceFieldCapsule(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxRadialForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxRadialForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxRadialCustomForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxRadialCustomForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoAngularForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoAngularForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoAngularForceFieldCapsule_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoAngularForceFieldCapsule(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoForceField_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoForceField(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoForceFieldCapsule_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxTornadoForceFieldCapsule(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ANxForceFieldSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_CylindricalForceActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_CylindricalForceActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_RadialForceActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_RadialForceActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldCylindricalComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldCylindricalComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldGenericComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldGenericComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldRadialComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldRadialComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldTornadoComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNxForceFieldTornadoComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShape_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShape(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShapeBox_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShapeBox(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShapeCapsule_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShapeCapsule(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShapeSphere_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UForceFieldShapeSphere(BL2SDK.UObject_Base):
+    pass
+
+
+class APrefabInstance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APrefabInstance(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrefab_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrefab(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceObject(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USequenceObjectPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USequenceOp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceOp(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USequenceOpPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceOp))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USequenceEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USequenceEventPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceEvent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USequenceEventCustomEnableCondition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceEventCustomEnableCondition(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceFrame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceFrame(BL2SDK.UObject_Base):
+    pass
+
+
+class USavingSequenceFrame_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USavingSequenceFrame(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceFrameWrapped_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceFrameWrapped(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqDef_Base_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqDef_Base(BL2SDK.UObject_Base):
+    pass
+
+
+class USequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequence(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USequencePtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(USequence))), ("Count", c_int), ("Max", c_int)]
+
+
+class UPrefabSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrefabSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrefabSequenceContainer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPrefabSequenceContainer(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceAction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceAction(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ActivateRemoteEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ActivateRemoteEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AndGate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AndGate(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ApplyBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ApplyBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ApplySoundNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ApplySoundNode(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AttachToEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AttachToEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CameraFade_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CameraFade(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CameraLookAt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CameraLookAt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ChangeCollision_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ChangeCollision(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CommitMapChange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CommitMapChange(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ConsoleCommand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ConsoleCommand(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ConvertToString_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ConvertToString(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DrawText_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DrawText(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_FinishSequence_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_FinishSequence(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Gate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Gate(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetDistance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetDistance(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetLocationAndRotation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetLocationAndRotation(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetProperty_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetProperty(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetVectorComponents_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetVectorComponents(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetVelocity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_GetVelocity(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_HeadTrackingControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_HeadTrackingControl(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_IsInObjectList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_IsInObjectList(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Latent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Latent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USeqAct_LatentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USeqAct_Latent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USeqAct_ActorFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ActorFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ActorFactoryEx_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ActorFactoryEx(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ProjectileFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ProjectileFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AIMoveToActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AIMoveToActor(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Delay_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Delay(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DelaySwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DelaySwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ForceGarbageCollection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ForceGarbageCollection(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Interp_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Interp(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LevelStreamingBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LevelStreamingBase(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LevelStreaming_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LevelStreaming(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MultiLevelStreaming_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MultiLevelStreaming(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LevelVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_LevelVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlaySound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlaySound(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PrepareMapChange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PrepareMapChange(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetDOFParams_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetDOFParams(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMotionBlurParams_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMotionBlurParams(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_StreamInTextures_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_StreamInTextures(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_WaitForLevelsVisible_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_WaitForLevelsVisible(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Log_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Log(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyCover_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyCover(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyHealth_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyHealth(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ParticleEventGenerator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ParticleEventGenerator(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PhysXSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PhysXSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayCameraAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayCameraAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayFaceFXAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayFaceFXAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayMusicTrack_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_PlayMusicTrack(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Possess_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Possess(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetApexClothingParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetApexClothingParam(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetBlockRigidBody_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetBlockRigidBody(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetCameraTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetCameraTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMatInstScalarParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMatInstScalarParam(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetPhysics_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetPhysics(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetRigidBodyIgnoreVehicles_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetRigidBodyIgnoreVehicles(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetSequenceVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetSequenceVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AccessObjectList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AccessObjectList(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AddFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AddFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AddInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AddInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CastToFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CastToFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CastToInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_CastToInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DivideFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DivideFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DivideInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_DivideInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyObjectList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ModifyObjectList(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MultiplyFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MultiplyFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MultiplyInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MultiplyInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetBool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetBool(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetLocation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetLocation(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetObject(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetString_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetString(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SubtractFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SubtractFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SubtractInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SubtractInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetVectorComponents_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetVectorComponents(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Switch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Switch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_RandomSwitch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_RandomSwitch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Timer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Timer(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Toggle_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Toggle(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Trace_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Trace(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceCondition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceCondition(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareBool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareBool(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_CompareObject(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_GetServerType_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_GetServerType(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_Increment_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_Increment(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IncrementFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IncrementFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsAlive_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsAlive(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsBenchmarking_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsBenchmarking(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsConsole_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsConsole(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsInCombat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsInCombat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsLoggedIn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsLoggedIn(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsPIE_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsPIE(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsSameTeam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_IsSameTeam(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_MatureLanguage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_MatureLanguage(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_ShowGore_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_ShowGore(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchBase(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchClass_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchClass(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchObject_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchObject(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchPlatform_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqCond_SwitchPlatform(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_AISeeEnemy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_AISeeEnemy(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_AnimNotify_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_AnimNotify(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Console_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Console(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_ConstraintBroken_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_ConstraintBroken(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Destroyed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Destroyed(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_LevelLoaded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_LevelLoaded(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Mover_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Mover(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_ParticleEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_ParticleEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_ProjectileLanded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_ProjectileLanded(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_RemoteEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_RemoteEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_RigidBodyCollision_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_RigidBodyCollision(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SeeDeath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SeeDeath(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SequenceActivated_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_SequenceActivated(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_TakeDamage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_TakeDamage(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Touch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Touch(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Used_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Used(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceVariable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USequenceVariable(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USequenceVariablePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceVariable))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UInterpData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInterpData(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UInterpDataPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USeqVar_Bool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Bool(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_External_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_External(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Float_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Float(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_RandomFloat_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_RandomFloat(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Int_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Int(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_RandomInt_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_RandomInt(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Named_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Named(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Object_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Object(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Character_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Character(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Group_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Group(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_ObjectList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_ObjectList(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_ObjectVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_ObjectVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Player_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Player(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_String_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_String(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Vector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Vector(BL2SDK.UObject_Base):
+    pass
+
+
+class AAmbientSound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAmbientSound(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatSoundParameter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDistributionFloatSoundParameter(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundNode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundNode(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USoundNodePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USoundNode))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USoundNodeWave_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundNodeWave(BL2SDK.UObject_Base):
+    pass
+
+
+class ALandscapeProxy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALandscapeProxy(BL2SDK.UObject_Base):
+    pass
+
+
+class ALandscape_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALandscape(BL2SDK.UObject_Base):
+    pass
+
+
+class ATerrain_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATerrain(BL2SDK.UObject_Base):
+    pass
+
+
+class ULandscapeComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULandscapeComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULandscapeComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULandscapeComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ULandscapeHeightfieldCollisionComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULandscapeHeightfieldCollisionComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULandscapeHeightfieldCollisionComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULandscapeHeightfieldCollisionComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTerrainComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTerrainComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTerrainComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTerrainComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTerrainWeightMapTexture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTerrainWeightMapTexture(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTerrainWeightMapTexturePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTerrainWeightMapTexture))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTerrainLayerSetup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTerrainLayerSetup(BL2SDK.UObject_Base):
+    pass
+
+
+class UTerrainMaterial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTerrainMaterial(BL2SDK.UObject_Base):
+    pass
+
+
+class UDataStoreClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDataStoreClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UConsole_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UConsole(BL2SDK.UObject_Base):
+    pass
+
+
+class UInput_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInput(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInput_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerInput(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerManagerInteraction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPlayerManagerInteraction(BL2SDK.UObject_Base):
+    pass
+
+
+class UUISceneClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUISceneClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UUISoundTheme_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUISoundTheme(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStoreSubscriber_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStoreSubscriber(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStorePublisher_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStorePublisher(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIListElementCellProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIListElementCellProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIListElementProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIListElementProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIDataProviderPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIConfigProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIConfigProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIConfigFileProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIConfigFileProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIConfigFileProviderPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIConfigFileProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIConfigSectionProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIConfigSectionProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIConfigSectionProviderPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIConfigSectionProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIDataProvider_OnlinePlayerDataBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePlayerDataBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlineFriendMessages_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlineFriendMessages(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlineFriends_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlineFriends(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePartyChatList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePartyChatList(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePlayerStorage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePlayerStorage(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlineProfileSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlineProfileSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_PlayerAchievements_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_PlayerAchievements(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePlayerStorageArray_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_OnlinePlayerStorageArray(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_SettingsArray_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_SettingsArray(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIDataStorePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataStore))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIDataStore_DynamicResource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_DynamicResource(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Fonts_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Fonts(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_GameResource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_GameResource(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_MenuItems_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_MenuItems(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_GameState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_GameState(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Registry_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Registry(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Remote_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Remote(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlineGameSearch_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlineGameSearch(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlinePlayerData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlinePlayerData(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlineStats_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlineStats(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Settings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Settings(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlineGameSettings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_OnlineGameSettings(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_StringBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_StringBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_InputAlias_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_InputAlias(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_StringAliasMap_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_StringAliasMap(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Strings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataStore_Strings(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDynamicFieldProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDynamicFieldProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIPropertyDataProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIPropertyDataProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDynamicDataProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDynamicDataProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_Settings_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_Settings(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIDataProvider_SettingsPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataProvider_Settings))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIResourceDataProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIResourceDataProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIResourceDataProviderPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIResourceDataProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIDataProvider_MenuItem_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIDataProvider_MenuItem(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIDataProvider_MenuItemPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataProvider_MenuItem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UUIMapSummary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIMapSummary(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIResourceCombinationProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIResourceCombinationProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UUIResourceCombinationProviderPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIResourceCombinationProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGameUISceneClient_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameUISceneClient(BL2SDK.UObject_Base):
+    pass
+
+
+class UScene_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UScene(BL2SDK.UObject_Base):
+    pass
+
+
+class AFoliageFactory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFoliageFactory(BL2SDK.UObject_Base):
+    pass
+
+
+class AInstancedFoliageActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInstancedFoliageActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AInteractiveFoliageActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInteractiveFoliageActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UFoliageComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFoliageComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveFoliageComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInteractiveFoliageComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryInteractiveFoliage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactoryInteractiveFoliage(BL2SDK.UObject_Base):
+    pass
+
+
+class AFluidInfluenceActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFluidInfluenceActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AFluidSurfaceActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFluidSurfaceActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AFluidSurfaceActorMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AFluidSurfaceActorMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class UFluidInfluenceComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFluidInfluenceComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UFluidSurfaceComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFluidSurfaceComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ALensFlareSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALensFlareSource(BL2SDK.UObject_Base):
+    pass
+
+
+class ULensFlareComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULensFlareComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULensFlare_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULensFlare(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureFlipBook_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureFlipBook(BL2SDK.UObject_Base):
+    pass
+
+
+class UTexture2DComposite_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTexture2DComposite(BL2SDK.UObject_Base):
+    pass
+
+
+class UTexture2DDynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTexture2DDynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureCube_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureCube(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureMovie_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureMovie(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTextureMoviePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTextureMovie))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UTextureRenderTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureRenderTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureRenderTarget2D_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureRenderTarget2D(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UTextureRenderTarget2DPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTextureRenderTarget2D))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UScriptedTexture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UScriptedTexture(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureRenderTargetCube_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTextureRenderTargetCube(BL2SDK.UObject_Base):
+    pass
+
+
+class UAudioDevice_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAudioDevice(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundClass_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundClass(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USoundMode(BL2SDK.UObject_Base):
+    pass
+
+
+class ADebugCameraController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADebugCameraController(BL2SDK.UObject_Base):
+    pass
+
+
+class AMatineePawn_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMatineePawn(BL2SDK.UObject_Base):
+    pass
+
+
+class AScout_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AScout(BL2SDK.UObject_Base):
+    pass
+
+
+class ALight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALight(BL2SDK.UObject_Base):
+    pass
+
+
+class ADirectionalLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADirectionalLight(BL2SDK.UObject_Base):
+    pass
+
+
+class ADirectionalLightToggleable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADirectionalLightToggleable(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantDirectionalLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantDirectionalLight(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantDirectionalLightMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantDirectionalLightMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class ALightShafts_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ALightShafts(BL2SDK.UObject_Base):
+    pass
+
+
+class APointLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APointLight(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantPointLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantPointLight(BL2SDK.UObject_Base):
+    pass
+
+
+class APointLightMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APointLightMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class APointLightToggleable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APointLightToggleable(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkyLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkyLight(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkyLightToggleable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkyLightToggleable(BL2SDK.UObject_Base):
+    pass
+
+
+class ASpotLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASpotLight(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantSpotLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADominantSpotLight(BL2SDK.UObject_Base):
+    pass
+
+
+class AGeneratedMeshAreaLight_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGeneratedMeshAreaLight(BL2SDK.UObject_Base):
+    pass
+
+
+class ASpotLightMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASpotLightMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class ASpotLightToggleable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASpotLightToggleable(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticLightCollectionActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AStaticLightCollectionActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ULightComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULightComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UDirectionalLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDirectionalLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDominantDirectionalLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDominantDirectionalLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightShaftComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightShaftComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UPointLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPointLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDominantPointLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDominantPointLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USpotLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USpotLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDominantSpotLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDominantSpotLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USkyLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkyLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class USphericalHarmonicLightComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USphericalHarmonicLightComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightEnvironmentComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightEnvironmentComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDynamicLightEnvironmentComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDynamicLightEnvironmentComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleLightEnvironmentComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleLightEnvironmentComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawLightConeComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawLightConeComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawLightRadiusComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDrawLightRadiusComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightFunction_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULightFunction(BL2SDK.UObject_Base):
+    pass
+
+
+class USkeletalMeshComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkeletalMeshComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkeletalMeshComponentPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkeletalMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkeletalMesh_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkeletalMesh(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkeletalMeshPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkeletalMesh))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class USkeletalMeshSocket_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USkeletalMeshSocket(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_USkeletalMeshSocketPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkeletalMeshSocket))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ASplineActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASplineActor(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ASplineActorPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ASplineActor))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ASplineLoftActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASplineLoftActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ASplineLoftActorMovable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASplineLoftActorMovable(BL2SDK.UObject_Base):
+    pass
+
+
+class USplineComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USplineComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class AReplicationInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AReplicationInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class AGameReplicationInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AGameReplicationInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerReplicationInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APlayerReplicationInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_APlayerReplicationInfoPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APlayerReplicationInfo))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class ATeamInfo_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATeamInfo(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ATeamInfoPtr(BL2SDK.TArray_Base):
+    _fields_ = [("Data", POINTER(POINTER(ATeamInfo))), ("Count", c_int), ("Max", c_int)]
+
+
+class ACamera_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACamera(BL2SDK.UObject_Base):
+    pass
+
+
+class ACameraActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACameraActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicCameraActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicCameraActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraAnimInst_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraAnimInst(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UCameraAnimInstPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCameraAnimInst))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCameraModifier_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraModifier(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UCameraModifierPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCameraModifier))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UCameraModifier_CameraShake_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraModifier_CameraShake(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraShake_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCameraShake(BL2SDK.UObject_Base):
+    pass
+
+
+class AResourcePoolManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AResourcePoolManager(BL2SDK.UObject_Base):
+    pass
+
+
+class AWorldSoundManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWorldSoundManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UComponentLifetimeManagerComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UComponentLifetimeManagerComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAttributeContextResolverPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributeContextResolver))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBalancedActorAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBalancedActorAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterClassAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterClassAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UControllerAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UControllerAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameInfoAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameInfoAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UOffHandWeaponAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOffHandWeaponAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPawnAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponResourcePoolAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponResourcePoolAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeExpression_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeExpression(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeMultiContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeMultiContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponAttributeMultiContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWeaponAttributeMultiContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UAttributeValueResolverPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributeValueResolver))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UObjectPropertyAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UObjectPropertyAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UReadOnlyObjectPropertyAttributeValueResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UReadOnlyObjectPropertyAttributeValueResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UBehaviorBasePtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBehaviorBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UBehavior_Kill_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Kill(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlaySound_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_PlaySound(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoteEvent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RemoteEvent(BL2SDK.UObject_Base):
+    pass
+
+
+class UExpressionEvaluator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExpressionEvaluator(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UExpressionEvaluatorPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UExpressionEvaluator))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UExpressionTree_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExpressionTree(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeDefinitionBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeDefinitionBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UNestedAttributeDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UNestedAttributeDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeDefinitionMultiContext_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeDefinitionMultiContext(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeInitializationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAttributeInitializationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseBalanceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBaseBalanceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterClassDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UCharacterClassDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UExpressionEvaluatorDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UExpressionEvaluatorDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UGestaltPartMatricesCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGestaltPartMatricesCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UImpactDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UImpactDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UImpactDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UImpactDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UResourceDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourceDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePoolDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UResourcePoolDefinitionPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UResourcePoolDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UGestaltPartMatrices_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGestaltPartMatrices(BL2SDK.UObject_Base):
+    pass
+
+
+class UICounterBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UICounterBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIInstanceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIInstanceData(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstanceDataHelper_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInstanceDataHelper(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageReferencer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPackageReferencer(BL2SDK.UObject_Base):
+    pass
+
+
+class UPersistentGameDataManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPersistentGameDataManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UPersistentSequenceData_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UPersistentSequenceData(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_UPersistentSequenceDataPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPersistentSequenceData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class UResourcePool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UResourcePool(BL2SDK.UObject_Base):
+    pass
+
+
+class UHealthResourcePool_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHealthResourcePool(BL2SDK.UObject_Base):
+    pass
+
+
+class UTargetableList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UTargetableList(BL2SDK.UObject_Base):
+    pass
+
+
+class AHybridNavigationArea_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AHybridNavigationArea(BL2SDK.UObject_Base):
+    pass
+
+
+class APickupableMeshActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APickupableMeshActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UHybridNavigationAreaDebugRenderingComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHybridNavigationAreaDebugRenderingComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UHybridNavigationVisualizationComponent_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UHybridNavigationVisualizationComponent(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryCardPresentationDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UInventoryCardPresentationDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UManufacturerDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UManufacturerDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingDomino_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULevelStreamingDomino(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ULocalMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UEdgeDetectionPostProcessEffect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UEdgeDetectionPostProcessEffect(BL2SDK.UObject_Base):
+    pass
+
+
+class ADroppedPickup_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADroppedPickup(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_ADroppedPickupPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ADroppedPickup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AInventory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInventory(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AInventoryPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AInventory))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWillowInventory_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWillowInventory(BL2SDK.UObject_Base):
+    pass
+
+
+class TArray_AWillowInventoryPtr(BL2SDK.TArray_Base):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowInventory))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
+class AWeapon_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWeapon(BL2SDK.UObject_Base):
+    pass
+
+
+class AInventoryManager_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInventoryManager(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxCalloutDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGearboxCalloutDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryPartDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UWillowInventoryPartDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPickupable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPickupable(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_HitWall_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_HitWall(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Destroy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Destroy(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Teleport_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_Teleport(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetVelocity_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetVelocity(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleHidden_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleHidden(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AttachToActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AttachToActor(BL2SDK.UObject_Base):
+    pass
+
+
+class UIConsoleCommandBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIConsoleCommandBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAppearanceBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIAppearanceBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPhysicsBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIPhysicsBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChangeCollisionBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChangeCollisionBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDestroyBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDestroyBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UISoundBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UISoundBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAuthInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineTitleFileInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineTitleFileInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePartyChatInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePartyChatInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineNewsInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineNewsInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStatsInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineStatsInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineVoiceInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineVoiceInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineContentInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineContentInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineGameInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSystemInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSystemInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlayerInterfaceEx_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlayerInterfaceEx(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlayerInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlayerInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAccountInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineAccountInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class AAccessControl_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAccessControl(BL2SDK.UObject_Base):
+    pass
+
+
+class AAdmin_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AAdmin(BL2SDK.UObject_Base):
+    pass
+
+
+class UIScaleBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIScaleBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class AApexDestructibleActorSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AApexDestructibleActorSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitterSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AEmitterSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class AKAssetSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AKAssetSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactorySkeletalMeshCinematic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactorySkeletalMeshCinematic(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactorySkeletalMeshMAT_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UActorFactorySkeletalMeshMAT(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Death_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_Death(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleGodMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleGodMode(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ControlMovieTexture_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ControlMovieTexture(BL2SDK.UObject_Base):
+    pass
+
+
+class UIParameterBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIParameterBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class ACoverReplicator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ACoverReplicator(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameMessage_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameMessage(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Suicided_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Suicided(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleInput_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleInput(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleHUD_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleHUD(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ForceFeedback_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ForceFeedback(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleCinematicMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleCinematicMode(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_FlyThroughHasEnded_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_FlyThroughHasEnded(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetSoundMode_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetSoundMode(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_PlayFaceFXAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UAnimNotify_PlayFaceFXAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeAllegiance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeAllegiance(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeBoneVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeBoneVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCollision_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCollision(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCollisionSize_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCollisionSize(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCounter_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeCounter(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeParticleSystemActiveState_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeParticleSystemActiveState(BL2SDK.UObject_Base):
+    pass
+
+
+class UIParticleSystemBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIParticleSystemBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeScale_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeScale(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeSpin_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeSpin(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBasicBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIBasicBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ChangeVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ClientConsoleCommand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ClientConsoleCommand(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ConsoleCommand_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ConsoleCommand(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CustomAnimation_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_CustomAnimation(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Destroy_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_Destroy(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FollowAllegiance_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_FollowAllegiance(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RandomlyRunBehaviors_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RandomlyRunBehaviors(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RunBehaviorCollection_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_RunBehaviorCollection(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorCollectionDefinition_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehaviorCollectionDefinition(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMaterialParameters_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetMaterialParameters(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMaterialBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIMaterialBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetParticleSystemParameters_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetParticleSystemParameters(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetPhysics_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetPhysics(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlActive_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_SetSkelControlActive(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleVisibility_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UBehavior_ToggleVisibility(BL2SDK.UObject_Base):
+    pass
+
+
+class ABroadcastHandler_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ABroadcastHandler(BL2SDK.UObject_Base):
+    pass
+
+
+class AColorScaleVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AColorScaleVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ADebugCameraHUD_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADebugCameraHUD(BL2SDK.UObject_Base):
+    pass
+
+
+class UDebugCameraInput_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDebugCameraInput(BL2SDK.UObject_Base):
+    pass
+
+
+class AVolumeTimer_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AVolumeTimer(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetDamageInstigator_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetDamageInstigator(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Crushed_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Crushed(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Fell_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Fell(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Telefragged_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UDmgType_Telefragged(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicPhysicsVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicPhysicsVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicSMActor_Spawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicSMActor_Spawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicTriggerVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ADynamicTriggerVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetParticleSysParam_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetParticleSysParam(BL2SDK.UObject_Base):
+    pass
+
+
+class AExponentialHeightFog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AExponentialHeightFog(BL2SDK.UObject_Base):
+    pass
+
+
+class UFailedConnect_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UFailedConnect(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_PlayerSpawned_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_PlayerSpawned(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameReplicationInfoAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UGameReplicationInfoAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class AHoldingAreaDestination_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AHoldingAreaDestination(BL2SDK.UObject_Base):
+    pass
+
+
+class AHeightFog_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AHeightFog(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChangeBehaviorSetStateBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIChangeBehaviorSetStateBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageBehavior_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UIDamageBehavior(BL2SDK.UObject_Base):
+    pass
+
+
+class AInterpActor_ForCinematic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AInterpActor_ForCinematic(BL2SDK.UObject_Base):
+    pass
+
+
+class AMaterialInstanceTimeVaryingActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AMaterialInstanceTimeVaryingActor(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AssignController_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AssignController(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineCommunityContentInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineCommunityContentInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineEventsInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineEventsInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlaylistGameTypeProvider_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlinePlaylistGameTypeProvider(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineRecentPlayersList_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineRecentPlayersList(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSuppliedUIInterface_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOnlineSuppliedUIInterface(BL2SDK.UObject_Base):
+    pass
+
+
+class UOwnerAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UOwnerAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class UParameterBehaviorBase_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParameterBehaviorBase(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldCylindrical_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldCylindrical(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldGeneric_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldGeneric(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldRadial_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldRadial(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldTornado_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UParticleModuleForceFieldTornado(BL2SDK.UObject_Base):
+    pass
+
+
+class APathNode_Dynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class APathNode_Dynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_PickupStatusChange_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_PickupStatusChange(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UProjectileAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class ARadialBlurActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARadialBlurActor(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleConstraintDrive_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_ToggleConstraintDrive(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_BSJointActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_BSJointActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_ConstraintActorSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_ConstraintActorSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_HingeActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_HingeActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_PrismaticActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_PrismaticActor(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_PulleyJointActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ARB_PulleyJointActor(BL2SDK.UObject_Base):
+    pass
+
+
+class AReverbVolumeToggleable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AReverbVolumeToggleable(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AddRemoveFaceFXAnimSet_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AddRemoveFaceFXAnimSet(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AIAbortMoveToActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_AIAbortMoveToActor(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MITV_Activate_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_MITV_Activate(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetSkelControlTarget_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetSkelControlTarget(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetVector_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_SetVector(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_UpdatePhysBonesFromAnim_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqAct_UpdatePhysBonesFromAnim(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_AIReachedRouteActor_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_AIReachedRouteActor(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_LOS_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqEvent_LOS(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Byte_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Byte(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Name_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Name(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Union_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class USeqVar_Union(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorMATSpawnable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorMATSpawnable(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorMATWalkable_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ASkeletalMeshActorMATWalkable(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger_Dynamic_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger_Dynamic(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger_LOS_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATrigger_LOS(BL2SDK.UObject_Base):
+    pass
+
+
+class ATriggeredPath_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATriggeredPath(BL2SDK.UObject_Base):
+    pass
+
+
+class ATriggerStreamingLevel_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class ATriggerStreamingLevel(BL2SDK.UObject_Base):
+    pass
+
+
+class UUICharacterSummary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUICharacterSummary(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIGameInfoSummary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIGameInfoSummary(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIWeaponSummary_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UUIWeaponSummary(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleAttributeContextResolver_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class UVehicleAttributeContextResolver(BL2SDK.UObject_Base):
+    pass
+
+
+class AWaterVolume_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWaterVolume(BL2SDK.UObject_Base):
+    pass
+
+
+class AWindDirectionalSource_Data(BL2SDK.UObject_Base):
+    pass
+
+
+class AWindDirectionalSource(BL2SDK.UObject_Base):
+    pass
 
 def init():
 

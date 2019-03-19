@@ -6,7 +6,7 @@ class FIpAddr(Structure):
     pass
 
 
-class TArray_FIpAddr(Structure):
+class TArray_FIpAddr(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FIpAddr)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -14,7 +14,7 @@ class FConnectionBandwidthStats(Structure):
     pass
 
 
-class TArray_FConnectionBandwidthStats(Structure):
+class TArray_FConnectionBandwidthStats(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FConnectionBandwidthStats)),
         ("Count", c_int),
@@ -26,7 +26,7 @@ class FPlayerMember(Structure):
     pass
 
 
-class TArray_FPlayerMember(Structure):
+class TArray_FPlayerMember(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPlayerMember)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -46,7 +46,7 @@ class FClientMeshBeaconConnection(Structure):
     pass
 
 
-class TArray_FClientMeshBeaconConnection(Structure):
+class TArray_FClientMeshBeaconConnection(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FClientMeshBeaconConnection)),
         ("Count", c_int),
@@ -58,7 +58,7 @@ class FEventUploadConfig(Structure):
     pass
 
 
-class TArray_FEventUploadConfig(Structure):
+class TArray_FEventUploadConfig(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FEventUploadConfig)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -66,7 +66,7 @@ class FNewsCacheEntry(Structure):
     pass
 
 
-class TArray_FNewsCacheEntry(Structure):
+class TArray_FNewsCacheEntry(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FNewsCacheEntry)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -74,7 +74,7 @@ class FConfiguredGameSetting(Structure):
     pass
 
 
-class TArray_FConfiguredGameSetting(Structure):
+class TArray_FConfiguredGameSetting(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FConfiguredGameSetting)),
         ("Count", c_int),
@@ -86,7 +86,7 @@ class FInventorySwap(Structure):
     pass
 
 
-class TArray_FInventorySwap(Structure):
+class TArray_FInventorySwap(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FInventorySwap)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -94,7 +94,7 @@ class FPlaylist(Structure):
     pass
 
 
-class TArray_FPlaylist(Structure):
+class TArray_FPlaylist(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPlaylist)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -102,7 +102,7 @@ class FPlaylistPopulation(Structure):
     pass
 
 
-class TArray_FPlaylistPopulation(Structure):
+class TArray_FPlaylistPopulation(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPlaylistPopulation)),
         ("Count", c_int),
@@ -114,7 +114,7 @@ class FTitleFileMcp(Structure):
     pass
 
 
-class TArray_FTitleFileMcp(Structure):
+class TArray_FTitleFileMcp(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FTitleFileMcp)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -122,7 +122,7 @@ class FFileNameToURLMapping(Structure):
     pass
 
 
-class TArray_FFileNameToURLMapping(Structure):
+class TArray_FFileNameToURLMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FFileNameToURLMapping)),
         ("Count", c_int),
@@ -134,7 +134,7 @@ class FPlayerReservation(Structure):
     pass
 
 
-class TArray_FPlayerReservation(Structure):
+class TArray_FPlayerReservation(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPlayerReservation)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -142,7 +142,7 @@ class FPartyReservation(Structure):
     pass
 
 
-class TArray_FPartyReservation(Structure):
+class TArray_FPartyReservation(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPartyReservation)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -150,7 +150,7 @@ class FClientBeaconConnection(Structure):
     pass
 
 
-class TArray_FClientBeaconConnection(Structure):
+class TArray_FClientBeaconConnection(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FClientBeaconConnection)),
         ("Count", c_int),

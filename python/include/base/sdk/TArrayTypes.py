@@ -2,11 +2,11 @@ from ctypes import *
 import BL2SDK
 
 
-class TArray_float(Structure):
+class TArray_float(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(c_float)), ("Count", c_int), ("Max", c_int)]
 
 
-class TArray_unsigned_char(Structure):
+class TArray_unsigned_char(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(c_ubyte)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -14,15 +14,15 @@ class FRotator(Structure):
     _fields_ = [("Pitch", c_int), ("Yaw", c_int), ("Roll", c_int)]
 
 
-class TArray_FRotator(Structure):
+class TArray_FRotator(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FRotator)), ("Count", c_int), ("Max", c_int)]
 
 
-class TArray_int(Structure):
+class TArray_int(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(c_int)), ("Count", c_int), ("Max", c_int)]
 
 
-class TArray_BOOL(Structure):
+class TArray_BOOL(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(c_bool)), ("Count", c_int), ("Max", c_int)]
 
 

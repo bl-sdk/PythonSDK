@@ -6,7 +6,7 @@ class FSoundThemeBinding(Structure):
     pass
 
 
-class TArray_FSoundThemeBinding(Structure):
+class TArray_FSoundThemeBinding(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FSoundThemeBinding)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -14,7 +14,7 @@ class FASValue(Structure):
     pass
 
 
-class TArray_FASValue(Structure):
+class TArray_FASValue(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FASValue)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -22,7 +22,7 @@ class FGFxWidgetBinding(Structure):
     pass
 
 
-class TArray_FGFxWidgetBinding(Structure):
+class TArray_FGFxWidgetBinding(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGFxWidgetBinding)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -30,7 +30,7 @@ class FGFxDataStoreBinding(Structure):
     pass
 
 
-class TArray_FGFxDataStoreBinding(Structure):
+class TArray_FGFxDataStoreBinding(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FGFxDataStoreBinding)),
         ("Count", c_int),
@@ -42,7 +42,7 @@ class FExternalTexture(Structure):
     pass
 
 
-class TArray_FExternalTexture(Structure):
+class TArray_FExternalTexture(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FExternalTexture)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -62,7 +62,7 @@ class FGCReference(Structure):
     pass
 
 
-class TArray_FGCReference(Structure):
+class TArray_FGCReference(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGCReference)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -70,7 +70,7 @@ class FAkEventResolver(Structure):
     pass
 
 
-class TArray_FAkEventResolver(Structure):
+class TArray_FAkEventResolver(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FAkEventResolver)), ("Count", c_int), ("Max", c_int)]
 
 

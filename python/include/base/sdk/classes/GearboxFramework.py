@@ -1,176 +1,175 @@
 from ctypes import *
 import BL2SDK
 
-
-class UActorFactoryClone_Data(Structure):
+class UActorFactoryClone_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActorFactoryClone(Structure):
+class UActorFactoryClone(BL2SDK.UObject_Base):
     pass
 
 
-class UActorFactoryWireTerminal_Data(Structure):
+class UActorFactoryWireTerminal_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActorFactoryWireTerminal(Structure):
+class UActorFactoryWireTerminal(BL2SDK.UObject_Base):
     pass
 
 
-class UAIDebugCamera_Data(Structure):
+class UAIDebugCamera_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIDebugCamera(Structure):
+class UAIDebugCamera(BL2SDK.UObject_Base):
     pass
 
 
-class UAITracker_Data(Structure):
+class UAITracker_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAITracker(Structure):
+class UAITracker(BL2SDK.UObject_Base):
     pass
 
 
-class UAnimNodeSpecialMoveBlend_Data(Structure):
+class UAnimNodeSpecialMoveBlend_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAnimNodeSpecialMoveBlend(Structure):
+class UAnimNodeSpecialMoveBlend(BL2SDK.UObject_Base):
     pass
 
 
-class UAttributeExpressionEvaluator_Data(Structure):
+class UAttributeExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAttributeExpressionEvaluator(Structure):
+class UAttributeExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CallFunction_Data(Structure):
+class UBehavior_CallFunction_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CallFunction(Structure):
+class UBehavior_CallFunction(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeRemoteBehaviorSequenceState_Data(Structure):
+class UBehavior_ChangeRemoteBehaviorSequenceState_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeRemoteBehaviorSequenceState(Structure):
+class UBehavior_ChangeRemoteBehaviorSequenceState(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeTimer_Data(Structure):
+class UBehavior_ChangeTimer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeTimer(Structure):
+class UBehavior_ChangeTimer(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_IsSequenceEnabled_Data(Structure):
+class UBehavior_IsSequenceEnabled_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_IsSequenceEnabled(Structure):
+class UBehavior_IsSequenceEnabled(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_PostAkEvent_Data(Structure):
+class UBehavior_PostAkEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_PostAkEvent(Structure):
+class UBehavior_PostAkEvent(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorHelpers_Data(Structure):
+class UBehaviorHelpers_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorHelpers(Structure):
+class UBehaviorHelpers(BL2SDK.UObject_Base):
     pass
 
 
-class UCompoundExpressionEvaluator_Data(Structure):
+class UCompoundExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UCompoundExpressionEvaluator(Structure):
+class UCompoundExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UConditionalAttributeValueResolver_Data(Structure):
+class UConditionalAttributeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UConditionalAttributeValueResolver(Structure):
+class UConditionalAttributeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UConstantAttributeValueResolver_Data(Structure):
+class UConstantAttributeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UConstantAttributeValueResolver(Structure):
+class UConstantAttributeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UConstraintAttributeValueResolver_Data(Structure):
+class UConstraintAttributeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UConstraintAttributeValueResolver(Structure):
+class UConstraintAttributeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UFeatherBoneBlendDefinition_Data(Structure):
+class UFeatherBoneBlendDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFeatherBoneBlendDefinition(Structure):
+class UFeatherBoneBlendDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGBXActorList_Data(Structure):
+class UGBXActorList_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGBXActorList(Structure):
+class UGBXActorList(BL2SDK.UObject_Base):
     pass
 
 
-class UGBXObjectList_Data(Structure):
+class UGBXObjectList_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGBXObjectList(Structure):
+class UGBXObjectList(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxAIController_Data(Structure):
+class AGearboxAIController_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxAIController(Structure):
+class AGearboxAIController(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxAIMoveNode_Data(Structure):
+class AGearboxAIMoveNode_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxAIMoveNode(Structure):
+class AGearboxAIMoveNode(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_AGearboxAIMoveNodePtr(Structure):
+class TArray_AGearboxAIMoveNodePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(AGearboxAIMoveNode))),
         ("Count", c_int),
@@ -178,47 +177,47 @@ class TArray_AGearboxAIMoveNodePtr(Structure):
     ]
 
 
-class AGearboxCameraBasic_Data(Structure):
+class AGearboxCameraBasic_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxCameraBasic(Structure):
+class AGearboxCameraBasic(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxCameraModifier_Data(Structure):
+class UGearboxCameraModifier_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxCameraModifier(Structure):
+class UGearboxCameraModifier(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxCheatManager_Data(Structure):
+class UGearboxCheatManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxCheatManager(Structure):
+class UGearboxCheatManager(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogInterface_Data(Structure):
+class UGearboxDialogInterface_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogInterface(Structure):
+class UGearboxDialogInterface(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEditorNode_Data(Structure):
+class UGearboxEditorNode_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEditorNode(Structure):
+class UGearboxEditorNode(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxEditorNodePtr(Structure):
+class TArray_UGearboxEditorNodePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxEditorNode))),
         ("Count", c_int),
@@ -226,31 +225,31 @@ class TArray_UGearboxEditorNodePtr(Structure):
     ]
 
 
-class UGearboxEngine_Data(Structure):
+class UGearboxEngine_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEngine(Structure):
+class UGearboxEngine(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxGameInfo_Data(Structure):
+class AGearboxGameInfo_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxGameInfo(Structure):
+class AGearboxGameInfo(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxGFxMovie_Data(Structure):
+class UGearboxGFxMovie_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxGFxMovie(Structure):
+class UGearboxGFxMovie(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxGFxMoviePtr(Structure):
+class TArray_UGearboxGFxMoviePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxGFxMovie))),
         ("Count", c_int),
@@ -258,55 +257,55 @@ class TArray_UGearboxGFxMoviePtr(Structure):
     ]
 
 
-class UGFxMovie_StateParent_Data(Structure):
+class UGFxMovie_StateParent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovie_StateParent(Structure):
+class UGFxMovie_StateParent(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxGlobals_Data(Structure):
+class UGearboxGlobals_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxGlobals(Structure):
+class UGearboxGlobals(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxGlobalsDefinition_Data(Structure):
+class UGearboxGlobalsDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxGlobalsDefinition(Structure):
+class UGearboxGlobalsDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxLocationRequest_Data(Structure):
+class UGearboxLocationRequest_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxLocationRequest(Structure):
+class UGearboxLocationRequest(BL2SDK.UObject_Base):
     pass
 
 
-class UPawnMoveLocationRequest_Data(Structure):
+class UPawnMoveLocationRequest_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPawnMoveLocationRequest(Structure):
+class UPawnMoveLocationRequest(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxPawn_Data(Structure):
+class AGearboxPawn_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxPawn(Structure):
+class AGearboxPawn(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_AGearboxPawnPtr(Structure):
+class TArray_AGearboxPawnPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(AGearboxPawn))),
         ("Count", c_int),
@@ -314,15 +313,15 @@ class TArray_AGearboxPawnPtr(Structure):
     ]
 
 
-class AGearboxPlayerController_Data(Structure):
+class AGearboxPlayerController_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxPlayerController(Structure):
+class AGearboxPlayerController(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_AGearboxPlayerControllerPtr(Structure):
+class TArray_AGearboxPlayerControllerPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(AGearboxPlayerController))),
         ("Count", c_int),
@@ -330,87 +329,87 @@ class TArray_AGearboxPlayerControllerPtr(Structure):
     ]
 
 
-class UGearboxPlayerInput_Data(Structure):
+class UGearboxPlayerInput_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxPlayerInput(Structure):
+class UGearboxPlayerInput(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxPlayerReplicationInfo_Data(Structure):
+class AGearboxPlayerReplicationInfo_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxPlayerReplicationInfo(Structure):
+class AGearboxPlayerReplicationInfo(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxProfileSettings_Data(Structure):
+class UGearboxProfileSettings_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxProfileSettings(Structure):
+class UGearboxProfileSettings(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxRenderTextureManager_Data(Structure):
+class UGearboxRenderTextureManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxRenderTextureManager(Structure):
+class UGearboxRenderTextureManager(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_DestroyPopulationActors_Data(Structure):
+class UGearboxSeqAct_DestroyPopulationActors_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_DestroyPopulationActors(Structure):
+class UGearboxSeqAct_DestroyPopulationActors(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_ResetPopulationCount_Data(Structure):
+class UGearboxSeqAct_ResetPopulationCount_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_ResetPopulationCount(Structure):
+class UGearboxSeqAct_ResetPopulationCount(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSkeletalMeshComponent_Data(Structure):
+class UGearboxSkeletalMeshComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSkeletalMeshComponent(Structure):
+class UGearboxSkeletalMeshComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxStaticMeshComponent_Data(Structure):
+class UGearboxStaticMeshComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxStaticMeshComponent(Structure):
+class UGearboxStaticMeshComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UGestaltSkeletalMeshDefinition_Data(Structure):
+class UGestaltSkeletalMeshDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGestaltSkeletalMeshDefinition(Structure):
+class UGestaltSkeletalMeshDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxActorMoviePool_Data(Structure):
+class UGFxActorMoviePool_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxActorMoviePool(Structure):
+class UGFxActorMoviePool(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGFxActorMoviePoolPtr(Structure):
+class TArray_UGFxActorMoviePoolPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGFxActorMoviePool))),
         ("Count", c_int),
@@ -418,31 +417,31 @@ class TArray_UGFxActorMoviePoolPtr(Structure):
     ]
 
 
-class UGFxMovieDefinition_Data(Structure):
+class UGFxMovieDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDefinition(Structure):
+class UGFxMovieDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEULAGFxMovieDefinition_Data(Structure):
+class UGearboxEULAGFxMovieDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEULAGFxMovieDefinition(Structure):
+class UGearboxEULAGFxMovieDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyle_Data(Structure):
+class UGFxMovieDrawStyle_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyle(Structure):
+class UGFxMovieDrawStyle(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGFxMovieDrawStylePtr(Structure):
+class TArray_UGFxMovieDrawStylePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGFxMovieDrawStyle))),
         ("Count", c_int),
@@ -450,71 +449,71 @@ class TArray_UGFxMovieDrawStylePtr(Structure):
     ]
 
 
-class UGFxMovieDrawStyleHUD_Data(Structure):
+class UGFxMovieDrawStyleHUD_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleHUD(Structure):
+class UGFxMovieDrawStyleHUD(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleRTT_Data(Structure):
+class UGFxMovieDrawStyleRTT_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleRTT(Structure):
+class UGFxMovieDrawStyleRTT(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleComponent_Data(Structure):
+class UGFxMovieDrawStyleComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleComponent(Structure):
+class UGFxMovieDrawStyleComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleMesh_Data(Structure):
+class UGFxMovieDrawStyleMesh_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleMesh(Structure):
+class UGFxMovieDrawStyleMesh(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleSprite_Data(Structure):
+class UGFxMovieDrawStyleSprite_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleSprite(Structure):
+class UGFxMovieDrawStyleSprite(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleSplitscreen_Data(Structure):
+class UGFxMovieDrawStyleSplitscreen_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleSplitscreen(Structure):
+class UGFxMovieDrawStyleSplitscreen(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieManager_Data(Structure):
+class UGFxMovieManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieManager(Structure):
+class UGFxMovieManager(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieState_Data(Structure):
+class UGFxMovieState_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieState(Structure):
+class UGFxMovieState(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGFxMovieStatePtr(Structure):
+class TArray_UGFxMovieStatePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGFxMovieState))),
         ("Count", c_int),
@@ -522,143 +521,143 @@ class TArray_UGFxMovieStatePtr(Structure):
     ]
 
 
-class UGFxMovieStateCustom_Data(Structure):
+class UGFxMovieStateCustom_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieStateCustom(Structure):
+class UGFxMovieStateCustom(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieStateFlags_Data(Structure):
+class UGFxMovieStateFlags_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieStateFlags(Structure):
+class UGFxMovieStateFlags(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieStatePlayerAware_Data(Structure):
+class UGFxMovieStatePlayerAware_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieStatePlayerAware(Structure):
+class UGFxMovieStatePlayerAware(BL2SDK.UObject_Base):
     pass
 
 
-class UIAIInterface_Data(Structure):
+class UIAIInterface_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIAIInterface(Structure):
+class UIAIInterface(BL2SDK.UObject_Base):
     pass
 
 
-class UIConstructObject_Data(Structure):
+class UIConstructObject_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIConstructObject(Structure):
+class UIConstructObject(BL2SDK.UObject_Base):
     pass
 
 
-class UIGFxActorMovie_Data(Structure):
+class UIGFxActorMovie_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIGFxActorMovie(Structure):
+class UIGFxActorMovie(BL2SDK.UObject_Base):
     pass
 
 
-class UINounAttributeProvider_Data(Structure):
+class UINounAttributeProvider_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UINounAttributeProvider(Structure):
+class UINounAttributeProvider(BL2SDK.UObject_Base):
     pass
 
 
-class UInterfaceGearboxCamera_Data(Structure):
+class UInterfaceGearboxCamera_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UInterfaceGearboxCamera(Structure):
+class UInterfaceGearboxCamera(BL2SDK.UObject_Base):
     pass
 
 
-class UIStreamingDataEvent_Data(Structure):
+class UIStreamingDataEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIStreamingDataEvent(Structure):
+class UIStreamingDataEvent(BL2SDK.UObject_Base):
     pass
 
 
-class ULeviathanChannel_Data(Structure):
+class ULeviathanChannel_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULeviathanChannel(Structure):
+class ULeviathanChannel(BL2SDK.UObject_Base):
     pass
 
 
-class UNoContextNeededAttributeContextResolver_Data(Structure):
+class UNoContextNeededAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UNoContextNeededAttributeContextResolver(Structure):
+class UNoContextNeededAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UNounAttributeValueResolver_Data(Structure):
+class UNounAttributeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UNounAttributeValueResolver(Structure):
+class UNounAttributeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectFunctionAttributeValueResolver_Data(Structure):
+class UObjectFunctionAttributeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectFunctionAttributeValueResolver(Structure):
+class UObjectFunctionAttributeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectPropertyContextResolver_Data(Structure):
+class UObjectPropertyContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectPropertyContextResolver(Structure):
+class UObjectPropertyContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UPhysicsStateExpressionEvaluator_Data(Structure):
+class UPhysicsStateExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPhysicsStateExpressionEvaluator(Structure):
+class UPhysicsStateExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationAspect_Data(Structure):
+class UPopulationAspect_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationAspect(Structure):
+class UPopulationAspect(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationBodyTag_Data(Structure):
+class UPopulationBodyTag_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationBodyTag(Structure):
+class UPopulationBodyTag(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UPopulationBodyTagPtr(Structure):
+class TArray_UPopulationBodyTagPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UPopulationBodyTag))),
         ("Count", c_int),
@@ -666,15 +665,15 @@ class TArray_UPopulationBodyTagPtr(Structure):
     ]
 
 
-class APopulationEncounter_Data(Structure):
+class APopulationEncounter_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationEncounter(Structure):
+class APopulationEncounter(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_APopulationEncounterPtr(Structure):
+class TArray_APopulationEncounterPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(APopulationEncounter))),
         ("Count", c_int),
@@ -682,31 +681,31 @@ class TArray_APopulationEncounterPtr(Structure):
     ]
 
 
-class UPopulationEncounterRenderingComponent_Data(Structure):
+class UPopulationEncounterRenderingComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationEncounterRenderingComponent(Structure):
+class UPopulationEncounterRenderingComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityCombatRenderingComponent_Data(Structure):
+class UPopulationOpportunityCombatRenderingComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityCombatRenderingComponent(Structure):
+class UPopulationOpportunityCombatRenderingComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationSpawnedActorTagDefinition_Data(Structure):
+class UPopulationSpawnedActorTagDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationSpawnedActorTagDefinition(Structure):
+class UPopulationSpawnedActorTagDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UPopulationSpawnedActorTagDefinitionPtr(Structure):
+class TArray_UPopulationSpawnedActorTagDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UPopulationSpawnedActorTagDefinition))),
         ("Count", c_int),
@@ -714,111 +713,111 @@ class TArray_UPopulationSpawnedActorTagDefinitionPtr(Structure):
     ]
 
 
-class UPopUpDebugBarGraph_Data(Structure):
+class UPopUpDebugBarGraph_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopUpDebugBarGraph(Structure):
+class UPopUpDebugBarGraph(BL2SDK.UObject_Base):
     pass
 
 
-class URandomAttributeValueResolver_Data(Structure):
+class URandomAttributeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URandomAttributeValueResolver(Structure):
+class URandomAttributeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class URegionDefinition_Data(Structure):
+class URegionDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URegionDefinition(Structure):
+class URegionDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class URootMotionDefinition_Data(Structure):
+class URootMotionDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URootMotionDefinition(Structure):
+class URootMotionDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEngineLoadBalanceManager_Data(Structure):
+class URuleEngineLoadBalanceManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEngineLoadBalanceManager(Structure):
+class URuleEngineLoadBalanceManager(BL2SDK.UObject_Base):
     pass
 
 
-class UScreenSpaceManager_Data(Structure):
+class UScreenSpaceManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UScreenSpaceManager(Structure):
+class UScreenSpaceManager(BL2SDK.UObject_Base):
     pass
 
 
-class USeqAct_AllPlayersInVolume_Data(Structure):
+class USeqAct_AllPlayersInVolume_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqAct_AllPlayersInVolume(Structure):
+class USeqAct_AllPlayersInVolume(BL2SDK.UObject_Base):
     pass
 
 
-class USeqCond_CompareLocation_Data(Structure):
+class USeqCond_CompareLocation_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqCond_CompareLocation(Structure):
+class USeqCond_CompareLocation(BL2SDK.UObject_Base):
     pass
 
 
-class USeqCond_CompareString_Data(Structure):
+class USeqCond_CompareString_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqCond_CompareString(Structure):
+class USeqCond_CompareString(BL2SDK.UObject_Base):
     pass
 
 
-class USeqCond_GetLanguage_Data(Structure):
+class USeqCond_GetLanguage_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqCond_GetLanguage(Structure):
+class USeqCond_GetLanguage(BL2SDK.UObject_Base):
     pass
 
 
-class USimpleMathValueResolver_Data(Structure):
+class USimpleMathValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USimpleMathValueResolver(Structure):
+class USimpleMathValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveComponent_Data(Structure):
+class USpecialMoveComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveComponent(Structure):
+class USpecialMoveComponent(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveDefinition_Data(Structure):
+class USpecialMoveDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveDefinition(Structure):
+class USpecialMoveDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_USpecialMoveDefinitionPtr(Structure):
+class TArray_USpecialMoveDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(USpecialMoveDefinition))),
         ("Count", c_int),
@@ -826,199 +825,199 @@ class TArray_USpecialMoveDefinitionPtr(Structure):
     ]
 
 
-class USpecialMoveExpressionList_Data(Structure):
+class USpecialMoveExpressionList_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveExpressionList(Structure):
+class USpecialMoveExpressionList(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveRandom_Data(Structure):
+class USpecialMoveRandom_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveRandom(Structure):
+class USpecialMoveRandom(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveInterface_Data(Structure):
+class USpecialMoveInterface_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USpecialMoveInterface(Structure):
+class USpecialMoveInterface(BL2SDK.UObject_Base):
     pass
 
 
-class UStateAttributeResolver_Data(Structure):
+class UStateAttributeResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UStateAttributeResolver(Structure):
+class UStateAttributeResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UTimeValueResolver_Data(Structure):
+class UTimeValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTimeValueResolver(Structure):
+class UTimeValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class AWireManager_Data(Structure):
+class AWireManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AWireManager(Structure):
+class AWireManager(BL2SDK.UObject_Base):
     pass
 
 
-class AWireTerminal_Data(Structure):
+class AWireTerminal_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AWireTerminal(Structure):
+class AWireTerminal(BL2SDK.UObject_Base):
     pass
 
 
-class AWiringActor_Data(Structure):
+class AWiringActor_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AWiringActor(Structure):
+class AWiringActor(BL2SDK.UObject_Base):
     pass
 
 
-class UWiringMesh_Data(Structure):
+class UWiringMesh_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UWiringMesh(Structure):
+class UWiringMesh(BL2SDK.UObject_Base):
     pass
 
 
-class UActionResource_Data(Structure):
+class UActionResource_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActionResource(Structure):
+class UActionResource(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequence_Data(Structure):
+class UActionSequence_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequence(Structure):
+class UActionSequence(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequenceList_Data(Structure):
+class UActionSequenceList_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequenceList(Structure):
+class UActionSequenceList(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequencePawn_Data(Structure):
+class UActionSequencePawn_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequencePawn(Structure):
+class UActionSequencePawn(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_PawnMovementBase_Data(Structure):
+class UAction_PawnMovementBase_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_PawnMovementBase(Structure):
+class UAction_PawnMovementBase(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequenceRandom_Data(Structure):
+class UActionSequenceRandom_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActionSequenceRandom(Structure):
+class UActionSequenceRandom(BL2SDK.UObject_Base):
     pass
 
 
-class UAIComponent_Data(Structure):
+class UAIComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIComponent(Structure):
+class UAIComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UAICostExpressionEvaluator_Data(Structure):
+class UAICostExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAICostExpressionEvaluator(Structure):
+class UAICostExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UAIFactoryBase_Data(Structure):
+class UAIFactoryBase_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIFactoryBase(Structure):
+class UAIFactoryBase(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAIFactory_Data(Structure):
+class UGearboxAIFactory_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAIFactory(Structure):
+class UGearboxAIFactory(BL2SDK.UObject_Base):
     pass
 
 
-class UAIResource_Data(Structure):
+class UAIResource_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIResource(Structure):
+class UAIResource(BL2SDK.UObject_Base):
     pass
 
 
-class UAIResourceExpressionEvaluator_Data(Structure):
+class UAIResourceExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIResourceExpressionEvaluator(Structure):
+class UAIResourceExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UAllegianceExpressionEvaluator_Data(Structure):
+class UAllegianceExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAllegianceExpressionEvaluator(Structure):
+class UAllegianceExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UAwarenessZoneCollectionDefinition_Data(Structure):
+class UAwarenessZoneCollectionDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAwarenessZoneCollectionDefinition(Structure):
+class UAwarenessZoneCollectionDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UAwarenessZoneDefinition_Data(Structure):
+class UAwarenessZoneDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAwarenessZoneDefinition(Structure):
+class UAwarenessZoneDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UAwarenessZoneDefinitionPtr(Structure):
+class TArray_UAwarenessZoneDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UAwarenessZoneDefinition))),
         ("Count", c_int),
@@ -1026,103 +1025,103 @@ class TArray_UAwarenessZoneDefinitionPtr(Structure):
     ]
 
 
-class UBehavior_SendGbxMessage_Data(Structure):
+class UBehavior_SendGbxMessage_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SendGbxMessage(Structure):
+class UBehavior_SendGbxMessage(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetFlag_Data(Structure):
+class UBehavior_SetFlag_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetFlag(Structure):
+class UBehavior_SetFlag(BL2SDK.UObject_Base):
     pass
 
 
-class UBestTargetAttributeContextResolver_Data(Structure):
+class UBestTargetAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBestTargetAttributeContextResolver(Structure):
+class UBestTargetAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UCharacterClassMessageDefinition_Data(Structure):
+class UCharacterClassMessageDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UCharacterClassMessageDefinition(Structure):
+class UCharacterClassMessageDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UCoverSearchCriteria_Data(Structure):
+class UCoverSearchCriteria_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UCoverSearchCriteria(Structure):
+class UCoverSearchCriteria(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityBase_Data(Structure):
+class UExposureUtilityBase_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityBase(Structure):
+class UExposureUtilityBase(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityBasicCaching_Data(Structure):
+class UExposureUtilityBasicCaching_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityBasicCaching(Structure):
+class UExposureUtilityBasicCaching(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityFixedCost_Data(Structure):
+class UExposureUtilityFixedCost_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityFixedCost(Structure):
+class UExposureUtilityFixedCost(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityStrategy_Data(Structure):
+class UExposureUtilityStrategy_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UExposureUtilityStrategy(Structure):
+class UExposureUtilityStrategy(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringBehaviorDefinition_Data(Structure):
+class UFiringBehaviorDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringBehaviorDefinition(Structure):
+class UFiringBehaviorDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringBehaviorManager_Data(Structure):
+class UFiringBehaviorManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringBehaviorManager(Structure):
+class UFiringBehaviorManager(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringCondition_Data(Structure):
+class UFiringCondition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringCondition(Structure):
+class UFiringCondition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UFiringConditionPtr(Structure):
+class TArray_UFiringConditionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UFiringCondition))),
         ("Count", c_int),
@@ -1130,63 +1129,63 @@ class TArray_UFiringConditionPtr(Structure):
     ]
 
 
-class UFireCond_IsPlayerTarget_Data(Structure):
+class UFireCond_IsPlayerTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFireCond_IsPlayerTarget(Structure):
+class UFireCond_IsPlayerTarget(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringPattern_Data(Structure):
+class UFiringPattern_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringPattern(Structure):
+class UFiringPattern(BL2SDK.UObject_Base):
     pass
 
 
-class UFirePatt_Cone_Data(Structure):
+class UFirePatt_Cone_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFirePatt_Cone(Structure):
+class UFirePatt_Cone(BL2SDK.UObject_Base):
     pass
 
 
-class UFirePatt_ShrinkingCone_Data(Structure):
+class UFirePatt_ShrinkingCone_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFirePatt_ShrinkingCone(Structure):
+class UFirePatt_ShrinkingCone(BL2SDK.UObject_Base):
     pass
 
 
-class UFirePatt_StrafeOver_Data(Structure):
+class UFirePatt_StrafeOver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFirePatt_StrafeOver(Structure):
+class UFirePatt_StrafeOver(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringZoneCollectionDefinition_Data(Structure):
+class UFiringZoneCollectionDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringZoneCollectionDefinition(Structure):
+class UFiringZoneCollectionDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringZoneDefinition_Data(Structure):
+class UFiringZoneDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFiringZoneDefinition(Structure):
+class UFiringZoneDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UFiringZoneDefinitionPtr(Structure):
+class TArray_UFiringZoneDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UFiringZoneDefinition))),
         ("Count", c_int),
@@ -1194,15 +1193,15 @@ class TArray_UFiringZoneDefinitionPtr(Structure):
     ]
 
 
-class UFlagDefinition_Data(Structure):
+class UFlagDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFlagDefinition(Structure):
+class UFlagDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UFlagDefinitionPtr(Structure):
+class TArray_UFlagDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UFlagDefinition))),
         ("Count", c_int),
@@ -1210,63 +1209,63 @@ class TArray_UFlagDefinitionPtr(Structure):
     ]
 
 
-class UFlagExpressionEvaluator_Data(Structure):
+class UFlagExpressionEvaluator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFlagExpressionEvaluator(Structure):
+class UFlagExpressionEvaluator(BL2SDK.UObject_Base):
     pass
 
 
-class UFlagValueResolver_Data(Structure):
+class UFlagValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UFlagValueResolver(Structure):
+class UFlagValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UMultipleFlagValueResolver_Data(Structure):
+class UMultipleFlagValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UMultipleFlagValueResolver(Structure):
+class UMultipleFlagValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectFunctionFlagValueResolver_Data(Structure):
+class UObjectFunctionFlagValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectFunctionFlagValueResolver(Structure):
+class UObjectFunctionFlagValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectPropertyFlagValueResolver_Data(Structure):
+class UObjectPropertyFlagValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UObjectPropertyFlagValueResolver(Structure):
+class UObjectPropertyFlagValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEngineFlagValueResolver_Data(Structure):
+class URuleEngineFlagValueResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEngineFlagValueResolver(Structure):
+class URuleEngineFlagValueResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UGbxMessage_Data(Structure):
+class UGbxMessage_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGbxMessage(Structure):
+class UGbxMessage(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGbxMessagePtr(Structure):
+class TArray_UGbxMessagePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGbxMessage))),
         ("Count", c_int),
@@ -1274,103 +1273,103 @@ class TArray_UGbxMessagePtr(Structure):
     ]
 
 
-class UGbxMessageDefinition_Data(Structure):
+class UGbxMessageDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGbxMessageDefinition(Structure):
+class UGbxMessageDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGbxMessageManager_Data(Structure):
+class UGbxMessageManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGbxMessageManager(Structure):
+class UGbxMessageManager(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxMind_Data(Structure):
+class AGearboxMind_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxMind(Structure):
+class AGearboxMind(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAIMoveNodeRenderComponent_Data(Structure):
+class UGearboxAIMoveNodeRenderComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAIMoveNodeRenderComponent(Structure):
+class UGearboxAIMoveNodeRenderComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxCoverStateManager_Data(Structure):
+class UGearboxCoverStateManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxCoverStateManager(Structure):
+class UGearboxCoverStateManager(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxMindAttributeContextResolver_Data(Structure):
+class UGearboxMindAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxMindAttributeContextResolver(Structure):
+class UGearboxMindAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxNavigationHandle_Data(Structure):
+class UGearboxNavigationHandle_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxNavigationHandle(Structure):
+class UGearboxNavigationHandle(BL2SDK.UObject_Base):
     pass
 
 
-class UIFlagProvider_Data(Structure):
+class UIFlagProvider_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIFlagProvider(Structure):
+class UIFlagProvider(BL2SDK.UObject_Base):
     pass
 
 
-class UIFlagProviderGroup_Data(Structure):
+class UIFlagProviderGroup_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIFlagProviderGroup(Structure):
+class UIFlagProviderGroup(BL2SDK.UObject_Base):
     pass
 
 
-class UIGbxMessageListener_Data(Structure):
+class UIGbxMessageListener_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIGbxMessageListener(Structure):
+class UIGbxMessageListener(BL2SDK.UObject_Base):
     pass
 
 
-class UIRuleEngineOwner_Data(Structure):
+class UIRuleEngineOwner_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIRuleEngineOwner(Structure):
+class UIRuleEngineOwner(BL2SDK.UObject_Base):
     pass
 
 
-class UKnowledgeRecord_Data(Structure):
+class UKnowledgeRecord_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UKnowledgeRecord(Structure):
+class UKnowledgeRecord(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UKnowledgeRecordPtr(Structure):
+class TArray_UKnowledgeRecordPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UKnowledgeRecord))),
         ("Count", c_int),
@@ -1378,39 +1377,39 @@ class TArray_UKnowledgeRecordPtr(Structure):
     ]
 
 
-class ULocationFilter_Data(Structure):
+class ULocationFilter_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULocationFilter(Structure):
+class ULocationFilter(BL2SDK.UObject_Base):
     pass
 
 
-class ULocationFilter_MustHaveLOS_Data(Structure):
+class ULocationFilter_MustHaveLOS_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULocationFilter_MustHaveLOS(Structure):
+class ULocationFilter_MustHaveLOS(BL2SDK.UObject_Base):
     pass
 
 
-class ULocationFilter_MustNotHaveLOS_Data(Structure):
+class ULocationFilter_MustNotHaveLOS_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULocationFilter_MustNotHaveLOS(Structure):
+class ULocationFilter_MustNotHaveLOS(BL2SDK.UObject_Base):
     pass
 
 
-class UMindTargetInfo_Data(Structure):
+class UMindTargetInfo_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UMindTargetInfo(Structure):
+class UMindTargetInfo(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UMindTargetInfoPtr(Structure):
+class TArray_UMindTargetInfoPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UMindTargetInfo))),
         ("Count", c_int),
@@ -1418,35 +1417,35 @@ class TArray_UMindTargetInfoPtr(Structure):
     ]
 
 
-class URule_Data(Structure):
+class URule_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URule(Structure):
+class URule(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_URulePtr(Structure):
+class TArray_URulePtr(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(POINTER(URule))), ("Count", c_int), ("Max", c_int)]
 
 
-class URuleContainer_Data(Structure):
+class URuleContainer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URuleContainer(Structure):
+class URuleContainer(BL2SDK.UObject_Base):
     pass
 
 
-class URulePlaceholder_Data(Structure):
+class URulePlaceholder_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URulePlaceholder(Structure):
+class URulePlaceholder(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_URulePlaceholderPtr(Structure):
+class TArray_URulePlaceholderPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(URulePlaceholder))),
         ("Count", c_int),
@@ -1454,287 +1453,287 @@ class TArray_URulePlaceholderPtr(Structure):
     ]
 
 
-class URuleEngine_Data(Structure):
+class URuleEngine_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEngine(Structure):
+class URuleEngine(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxRuleEngine_Data(Structure):
+class UGearboxRuleEngine_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxRuleEngine(Structure):
+class UGearboxRuleEngine(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEventDef_Data(Structure):
+class URuleEventDef_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URuleEventDef(Structure):
+class URuleEventDef(BL2SDK.UObject_Base):
     pass
 
 
-class URuleSet_Data(Structure):
+class URuleSet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URuleSet(Structure):
+class URuleSet(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_URuleSetPtr(Structure):
+class TArray_URuleSetPtr(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(POINTER(URuleSet))), ("Count", c_int), ("Max", c_int)]
 
 
-class UStateRuleSet_Data(Structure):
+class UStateRuleSet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UStateRuleSet(Structure):
+class UStateRuleSet(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_Data(Structure):
+class USearchDirection_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection(Structure):
+class USearchDirection(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_Any_Data(Structure):
+class USearchDirection_Any_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_Any(Structure):
+class USearchDirection_Any(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_AwayFromMe_Data(Structure):
+class USearchDirection_AwayFromMe_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_AwayFromMe(Structure):
+class USearchDirection_AwayFromMe(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_AwayFromTarget_Data(Structure):
+class USearchDirection_AwayFromTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_AwayFromTarget(Structure):
+class USearchDirection_AwayFromTarget(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_MyFacingDirection_Data(Structure):
+class USearchDirection_MyFacingDirection_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_MyFacingDirection(Structure):
+class USearchDirection_MyFacingDirection(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_OppositeMyFacingDirection_Data(Structure):
+class USearchDirection_OppositeMyFacingDirection_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_OppositeMyFacingDirection(Structure):
+class USearchDirection_OppositeMyFacingDirection(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_OppositeTargetsFacingDirection_Data(Structure):
+class USearchDirection_OppositeTargetsFacingDirection_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_OppositeTargetsFacingDirection(Structure):
+class USearchDirection_OppositeTargetsFacingDirection(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_RandomLeftOrRight_Data(Structure):
+class USearchDirection_RandomLeftOrRight_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_RandomLeftOrRight(Structure):
+class USearchDirection_RandomLeftOrRight(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_TargetsFacingDirection_Data(Structure):
+class USearchDirection_TargetsFacingDirection_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_TargetsFacingDirection(Structure):
+class USearchDirection_TargetsFacingDirection(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_ToMyLeft_Data(Structure):
+class USearchDirection_ToMyLeft_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_ToMyLeft(Structure):
+class USearchDirection_ToMyLeft(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_ToMyRight_Data(Structure):
+class USearchDirection_ToMyRight_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_ToMyRight(Structure):
+class USearchDirection_ToMyRight(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_TowardMe_Data(Structure):
+class USearchDirection_TowardMe_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_TowardMe(Structure):
+class USearchDirection_TowardMe(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_TowardTarget_Data(Structure):
+class USearchDirection_TowardTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchDirection_TowardTarget(Structure):
+class USearchDirection_TowardTarget(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_Data(Structure):
+class USearchOrigin_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin(Structure):
+class USearchOrigin(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_CurrentLocation_Data(Structure):
+class USearchOrigin_CurrentLocation_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_CurrentLocation(Structure):
+class USearchOrigin_CurrentLocation(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_ScriptedMoveTarget_Data(Structure):
+class USearchOrigin_ScriptedMoveTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_ScriptedMoveTarget(Structure):
+class USearchOrigin_ScriptedMoveTarget(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_TargetLocation_Data(Structure):
+class USearchOrigin_TargetLocation_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USearchOrigin_TargetLocation(Structure):
+class USearchOrigin_TargetLocation(BL2SDK.UObject_Base):
     pass
 
 
-class USnapshotRecord_Data(Structure):
+class USnapshotRecord_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USnapshotRecord(Structure):
+class USnapshotRecord(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxPawnSnapshotRecord_Data(Structure):
+class UGearboxPawnSnapshotRecord_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxPawnSnapshotRecord(Structure):
+class UGearboxPawnSnapshotRecord(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetingDefinition_Data(Structure):
+class UTargetingDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetingDefinition(Structure):
+class UTargetingDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIterator_Data(Structure):
+class UTargetIterator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIterator(Structure):
+class UTargetIterator(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCalculateDistance_Data(Structure):
+class UTargetIteratorCalculateDistance_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCalculateDistance(Structure):
+class UTargetIteratorCalculateDistance(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCalculateExposure_Data(Structure):
+class UTargetIteratorCalculateExposure_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCalculateExposure(Structure):
+class UTargetIteratorCalculateExposure(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCheckAwareness_Data(Structure):
+class UTargetIteratorCheckAwareness_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCheckAwareness(Structure):
+class UTargetIteratorCheckAwareness(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCheckRemoveTarget_Data(Structure):
+class UTargetIteratorCheckRemoveTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorCheckRemoveTarget(Structure):
+class UTargetIteratorCheckRemoveTarget(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorForgetAboutTarget_Data(Structure):
+class UTargetIteratorForgetAboutTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorForgetAboutTarget(Structure):
+class UTargetIteratorForgetAboutTarget(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeTargetsIAmExposedTo_Data(Structure):
+class UTargetIteratorPrioritizeTargetsIAmExposedTo_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeTargetsIAmExposedTo(Structure):
+class UTargetIteratorPrioritizeTargetsIAmExposedTo(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_Calc_Data(Structure):
+class UTI_Calc_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_Calc(Structure):
+class UTI_Calc(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UTI_CalcPtr(Structure):
+class TArray_UTI_CalcPtr(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(POINTER(UTI_Calc))), ("Count", c_int), ("Max", c_int)]
 
 
-class UTI_Prioritize_Data(Structure):
+class UTI_Prioritize_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_Prioritize(Structure):
+class UTI_Prioritize(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UTI_PrioritizePtr(Structure):
+class TArray_UTI_PrioritizePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UTI_Prioritize))),
         ("Count", c_int),
@@ -1742,103 +1741,103 @@ class TArray_UTI_PrioritizePtr(Structure):
     ]
 
 
-class UTargetIteratorPrioritizeExposedTargets_Data(Structure):
+class UTargetIteratorPrioritizeExposedTargets_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeExposedTargets(Structure):
+class UTargetIteratorPrioritizeExposedTargets(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeHumanTargets_Data(Structure):
+class UTargetIteratorPrioritizeHumanTargets_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeHumanTargets(Structure):
+class UTargetIteratorPrioritizeHumanTargets(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeNearbyTarget_Data(Structure):
+class UTargetIteratorPrioritizeNearbyTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeNearbyTarget(Structure):
+class UTargetIteratorPrioritizeNearbyTarget(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizePreviousTarget_Data(Structure):
+class UTargetIteratorPrioritizePreviousTarget_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizePreviousTarget(Structure):
+class UTargetIteratorPrioritizePreviousTarget(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeTargetNotBeingShotAt_Data(Structure):
+class UTargetIteratorPrioritizeTargetNotBeingShotAt_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeTargetNotBeingShotAt(Structure):
+class UTargetIteratorPrioritizeTargetNotBeingShotAt(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeTargetWhoShootsAtMe_Data(Structure):
+class UTargetIteratorPrioritizeTargetWhoShootsAtMe_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTargetIteratorPrioritizeTargetWhoShootsAtMe(Structure):
+class UTargetIteratorPrioritizeTargetWhoShootsAtMe(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_PrioritizeBonus_Data(Structure):
+class UTI_PrioritizeBonus_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_PrioritizeBonus(Structure):
+class UTI_PrioritizeBonus(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_PrioritizeConditional_Data(Structure):
+class UTI_PrioritizeConditional_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UTI_PrioritizeConditional(Structure):
+class UTI_PrioritizeConditional(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_PopulationOpportunityLink_Data(Structure):
+class UGearboxSeqAct_PopulationOpportunityLink_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_PopulationOpportunityLink(Structure):
+class UGearboxSeqAct_PopulationOpportunityLink(BL2SDK.UObject_Base):
     pass
 
 
-class UIPopulationSpawnPoint_Data(Structure):
+class UIPopulationSpawnPoint_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIPopulationSpawnPoint(Structure):
+class UIPopulationSpawnPoint(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationDefinition_Data(Structure):
+class UPopulationDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationDefinition(Structure):
+class UPopulationDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationFactory_Data(Structure):
+class UPopulationFactory_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationFactory(Structure):
+class UPopulationFactory(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UPopulationFactoryPtr(Structure):
+class TArray_UPopulationFactoryPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UPopulationFactory))),
         ("Count", c_int),
@@ -1846,39 +1845,39 @@ class TArray_UPopulationFactoryPtr(Structure):
     ]
 
 
-class UPopulationFactoryGeneric_Data(Structure):
+class UPopulationFactoryGeneric_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationFactoryGeneric(Structure):
+class UPopulationFactoryGeneric(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationFactoryPopulationDefinition_Data(Structure):
+class UPopulationFactoryPopulationDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationFactoryPopulationDefinition(Structure):
+class UPopulationFactoryPopulationDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationMaster_Data(Structure):
+class UPopulationMaster_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationMaster(Structure):
+class UPopulationMaster(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunity_Data(Structure):
+class APopulationOpportunity_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunity(Structure):
+class APopulationOpportunity(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_APopulationOpportunityPtr(Structure):
+class TArray_APopulationOpportunityPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(APopulationOpportunity))),
         ("Count", c_int),
@@ -1886,71 +1885,71 @@ class TArray_APopulationOpportunityPtr(Structure):
     ]
 
 
-class APopulationOpportunityArea_Data(Structure):
+class APopulationOpportunityArea_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityArea(Structure):
+class APopulationOpportunityArea(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityCloner_Data(Structure):
+class APopulationOpportunityCloner_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityCloner(Structure):
+class APopulationOpportunityCloner(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityCombat_Data(Structure):
+class APopulationOpportunityCombat_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityCombat(Structure):
+class APopulationOpportunityCombat(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityPoint_Data(Structure):
+class APopulationOpportunityPoint_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationOpportunityPoint(Structure):
+class APopulationOpportunityPoint(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityAreaRenderingComponent_Data(Structure):
+class UPopulationOpportunityAreaRenderingComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityAreaRenderingComponent(Structure):
+class UPopulationOpportunityAreaRenderingComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityAttributeContextResolver_Data(Structure):
+class UPopulationOpportunityAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityAttributeContextResolver(Structure):
+class UPopulationOpportunityAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityPointRenderingComponent_Data(Structure):
+class UPopulationOpportunityPointRenderingComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationOpportunityPointRenderingComponent(Structure):
+class UPopulationOpportunityPointRenderingComponent(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationPoint_Data(Structure):
+class APopulationPoint_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationPoint(Structure):
+class APopulationPoint(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_APopulationPointPtr(Structure):
+class TArray_APopulationPointPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(APopulationPoint))),
         ("Count", c_int),
@@ -1958,87 +1957,87 @@ class TArray_APopulationPointPtr(Structure):
     ]
 
 
-class APopulationPoint_Dynamic_Data(Structure):
+class APopulationPoint_Dynamic_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APopulationPoint_Dynamic(Structure):
+class APopulationPoint_Dynamic(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationPointRenderingComponent_Data(Structure):
+class UPopulationPointRenderingComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationPointRenderingComponent(Structure):
+class UPopulationPointRenderingComponent(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_EncounterWaveComplete_Data(Structure):
+class USeqEvent_EncounterWaveComplete_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_EncounterWaveComplete(Structure):
+class USeqEvent_EncounterWaveComplete(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_PopulatedActor_Data(Structure):
+class USeqEvent_PopulatedActor_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_PopulatedActor(Structure):
+class USeqEvent_PopulatedActor(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_PopulatedPoint_Data(Structure):
+class USeqEvent_PopulatedPoint_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_PopulatedPoint(Structure):
+class USeqEvent_PopulatedPoint(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxHUD_Data(Structure):
+class AGearboxHUD_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxHUD(Structure):
+class AGearboxHUD(BL2SDK.UObject_Base):
     pass
 
 
-class UAIDefinition_Data(Structure):
+class UAIDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIDefinition(Structure):
+class UAIDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorEventFilterBase_Data(Structure):
+class UBehaviorEventFilterBase_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorEventFilterBase(Structure):
+class UBehaviorEventFilterBase(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorKernel_Data(Structure):
+class UBehaviorKernel_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorKernel(Structure):
+class UBehaviorKernel(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorProviderDefinition_Data(Structure):
+class UBehaviorProviderDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorProviderDefinition(Structure):
+class UBehaviorProviderDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UBehaviorProviderDefinitionPtr(Structure):
+class TArray_UBehaviorProviderDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UBehaviorProviderDefinition))),
         ("Count", c_int),
@@ -2046,23 +2045,23 @@ class TArray_UBehaviorProviderDefinitionPtr(Structure):
     ]
 
 
-class UAIBehaviorProviderDefinition_Data(Structure):
+class UAIBehaviorProviderDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIBehaviorProviderDefinition(Structure):
+class UAIBehaviorProviderDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorSequenceCustomEnableCondition_Data(Structure):
+class UBehaviorSequenceCustomEnableCondition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorSequenceCustomEnableCondition(Structure):
+class UBehaviorSequenceCustomEnableCondition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UBehaviorSequenceCustomEnableConditionPtr(Structure):
+class TArray_UBehaviorSequenceCustomEnableConditionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UBehaviorSequenceCustomEnableCondition))),
         ("Count", c_int),
@@ -2070,55 +2069,55 @@ class TArray_UBehaviorSequenceCustomEnableConditionPtr(Structure):
     ]
 
 
-class UBehaviorSequenceEnableByMultipleConditions_Data(Structure):
+class UBehaviorSequenceEnableByMultipleConditions_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehaviorSequenceEnableByMultipleConditions(Structure):
+class UBehaviorSequenceEnableByMultipleConditions(BL2SDK.UObject_Base):
     pass
 
 
-class UIBehaviorConsumer_Data(Structure):
+class UIBehaviorConsumer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIBehaviorConsumer(Structure):
+class UIBehaviorConsumer(BL2SDK.UObject_Base):
     pass
 
 
-class UIBehaviorProvider_Data(Structure):
+class UIBehaviorProvider_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UIBehaviorProvider(Structure):
+class UIBehaviorProvider(BL2SDK.UObject_Base):
     pass
 
 
-class UICustomEvent_Data(Structure):
+class UICustomEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UICustomEvent(Structure):
+class UICustomEvent(BL2SDK.UObject_Base):
     pass
 
 
-class UITimerBehavior_Data(Structure):
+class UITimerBehavior_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UITimerBehavior(Structure):
+class UITimerBehavior(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAnimDefinition_Data(Structure):
+class UGearboxAnimDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAnimDefinition(Structure):
+class UGearboxAnimDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxAnimDefinitionPtr(Structure):
+class TArray_UGearboxAnimDefinitionPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxAnimDefinition))),
         ("Count", c_int),
@@ -2126,39 +2125,39 @@ class TArray_UGearboxAnimDefinitionPtr(Structure):
     ]
 
 
-class UBehavior_TriggerDialogEvent_Data(Structure):
+class UBehavior_TriggerDialogEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_TriggerDialogEvent(Structure):
+class UBehavior_TriggerDialogEvent(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxDialogActor_Data(Structure):
+class AGearboxDialogActor_Data(BL2SDK.UObject_Base):
     pass
 
 
-class AGearboxDialogActor(Structure):
+class AGearboxDialogActor(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogComponent_Data(Structure):
+class UGearboxDialogComponent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogComponent(Structure):
+class UGearboxDialogComponent(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogEventData_Data(Structure):
+class UGearboxDialogEventData_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogEventData(Structure):
+class UGearboxDialogEventData(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxDialogEventDataPtr(Structure):
+class TArray_UGearboxDialogEventDataPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxDialogEventData))),
         ("Count", c_int),
@@ -2166,15 +2165,15 @@ class TArray_UGearboxDialogEventDataPtr(Structure):
     ]
 
 
-class UGearboxDialogEventTag_Data(Structure):
+class UGearboxDialogEventTag_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogEventTag(Structure):
+class UGearboxDialogEventTag(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxDialogEventTagPtr(Structure):
+class TArray_UGearboxDialogEventTagPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxDialogEventTag))),
         ("Count", c_int),
@@ -2182,23 +2181,23 @@ class TArray_UGearboxDialogEventTagPtr(Structure):
     ]
 
 
-class UGearboxDialogGlobalsDefinition_Data(Structure):
+class UGearboxDialogGlobalsDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogGlobalsDefinition(Structure):
+class UGearboxDialogGlobalsDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogGroup_Data(Structure):
+class UGearboxDialogGroup_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogGroup(Structure):
+class UGearboxDialogGroup(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxDialogGroupPtr(Structure):
+class TArray_UGearboxDialogGroupPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxDialogGroup))),
         ("Count", c_int),
@@ -2206,31 +2205,31 @@ class TArray_UGearboxDialogGroupPtr(Structure):
     ]
 
 
-class UGearboxDialogTemplateGroup_Data(Structure):
+class UGearboxDialogTemplateGroup_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogTemplateGroup(Structure):
+class UGearboxDialogTemplateGroup(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogManager_Data(Structure):
+class UGearboxDialogManager_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogManager(Structure):
+class UGearboxDialogManager(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogNameTag_Data(Structure):
+class UGearboxDialogNameTag_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogNameTag(Structure):
+class UGearboxDialogNameTag(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxDialogNameTagPtr(Structure):
+class TArray_UGearboxDialogNameTagPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxDialogNameTag))),
         ("Count", c_int),
@@ -2238,15 +2237,15 @@ class TArray_UGearboxDialogNameTagPtr(Structure):
     ]
 
 
-class UGearboxDialogPriority_Data(Structure):
+class UGearboxDialogPriority_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogPriority(Structure):
+class UGearboxDialogPriority(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxDialogPriorityPtr(Structure):
+class TArray_UGearboxDialogPriorityPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxDialogPriority))),
         ("Count", c_int),
@@ -2254,15 +2253,15 @@ class TArray_UGearboxDialogPriorityPtr(Structure):
     ]
 
 
-class UGearboxDialogNode_Data(Structure):
+class UGearboxDialogNode_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogNode(Structure):
+class UGearboxDialogNode(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxDialogNodePtr(Structure):
+class TArray_UGearboxDialogNodePtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxDialogNode))),
         ("Count", c_int),
@@ -2270,175 +2269,175 @@ class TArray_UGearboxDialogNodePtr(Structure):
     ]
 
 
-class UGearboxDialogAction_Data(Structure):
+class UGearboxDialogAction_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAction(Structure):
+class UGearboxDialogAction(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Chance_Data(Structure):
+class UGearboxDialogAct_Chance_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Chance(Structure):
+class UGearboxDialogAct_Chance(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Compare_Data(Structure):
+class UGearboxDialogAct_Compare_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Compare(Structure):
+class UGearboxDialogAct_Compare(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_ObjectParameterSwitch_Data(Structure):
+class UGearboxDialogAct_ObjectParameterSwitch_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_ObjectParameterSwitch(Structure):
+class UGearboxDialogAct_ObjectParameterSwitch(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogNonTemplateAction_Data(Structure):
+class UGearboxDialogNonTemplateAction_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogNonTemplateAction(Structure):
+class UGearboxDialogNonTemplateAction(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Talk_Data(Structure):
+class UGearboxDialogAct_Talk_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Talk(Structure):
+class UGearboxDialogAct_Talk(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogTemplateAction_Data(Structure):
+class UGearboxDialogTemplateAction_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogTemplateAction(Structure):
+class UGearboxDialogTemplateAction(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Trigger_Data(Structure):
+class UGearboxDialogAct_Trigger_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogAct_Trigger(Structure):
+class UGearboxDialogAct_Trigger(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogEvent_Data(Structure):
+class UGearboxDialogEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogEvent(Structure):
+class UGearboxDialogEvent(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogTemplateEvent_Data(Structure):
+class UGearboxDialogTemplateEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogTemplateEvent(Structure):
+class UGearboxDialogTemplateEvent(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVariable_Data(Structure):
+class UGearboxDialogVariable_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVariable(Structure):
+class UGearboxDialogVariable(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_Instigator_Data(Structure):
+class UGearboxDialogVar_Instigator_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_Instigator(Structure):
+class UGearboxDialogVar_Instigator(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_LastTalker_Data(Structure):
+class UGearboxDialogVar_LastTalker_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_LastTalker(Structure):
+class UGearboxDialogVar_LastTalker(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_NameTag_Data(Structure):
+class UGearboxDialogVar_NameTag_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_NameTag(Structure):
+class UGearboxDialogVar_NameTag(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_Other_Data(Structure):
+class UGearboxDialogVar_Other_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_Other(Structure):
+class UGearboxDialogVar_Other(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_Random_Data(Structure):
+class UGearboxDialogVar_Random_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxDialogVar_Random(Structure):
+class UGearboxDialogVar_Random(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_ToggleDialog_Data(Structure):
+class UGearboxSeqAct_ToggleDialog_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_ToggleDialog(Structure):
+class UGearboxSeqAct_ToggleDialog(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_TriggerDialog_Data(Structure):
+class UGearboxSeqAct_TriggerDialog_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_TriggerDialog(Structure):
+class UGearboxSeqAct_TriggerDialog(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_TriggerDialogName_Data(Structure):
+class UGearboxSeqAct_TriggerDialogName_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_TriggerDialogName(Structure):
+class UGearboxSeqAct_TriggerDialogName(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountActions_Data(Structure):
+class UGearboxAccountActions_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountActions(Structure):
+class UGearboxAccountActions(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountData_Data(Structure):
+class UGearboxAccountData_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountData(Structure):
+class UGearboxAccountData(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxAccountDataPtr(Structure):
+class TArray_UGearboxAccountDataPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxAccountData))),
         ("Count", c_int),
@@ -2446,55 +2445,55 @@ class TArray_UGearboxAccountDataPtr(Structure):
     ]
 
 
-class UGearboxProcess_Data(Structure):
+class UGearboxProcess_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxProcess(Structure):
+class UGearboxProcess(BL2SDK.UObject_Base):
     pass
 
 
-class USparkInitializationProcess_Data(Structure):
+class USparkInitializationProcess_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USparkInitializationProcess(Structure):
+class USparkInitializationProcess(BL2SDK.UObject_Base):
     pass
 
 
-class ULeviathanService_Data(Structure):
+class ULeviathanService_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ULeviathanService(Structure):
+class ULeviathanService(BL2SDK.UObject_Base):
     pass
 
 
-class USparkInterface_Data(Structure):
+class USparkInterface_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USparkInterface(Structure):
+class USparkInterface(BL2SDK.UObject_Base):
     pass
 
 
-class USparkInterfaceImpl_Data(Structure):
+class USparkInterfaceImpl_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USparkInterfaceImpl(Structure):
+class USparkInterfaceImpl(BL2SDK.UObject_Base):
     pass
 
 
-class USparkServiceConfiguration_Data(Structure):
+class USparkServiceConfiguration_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USparkServiceConfiguration(Structure):
+class USparkServiceConfiguration(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_USparkServiceConfigurationPtr(Structure):
+class TArray_USparkServiceConfigurationPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(USparkServiceConfiguration))),
         ("Count", c_int),
@@ -2502,383 +2501,383 @@ class TArray_USparkServiceConfigurationPtr(Structure):
     ]
 
 
-class USparkTypes_Data(Structure):
+class USparkTypes_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USparkTypes(Structure):
+class USparkTypes(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_ChangeRuleSet_Data(Structure):
+class UAction_ChangeRuleSet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_ChangeRuleSet(Structure):
+class UAction_ChangeRuleSet(BL2SDK.UObject_Base):
     pass
 
 
-class URES_RuleSetChange_Data(Structure):
+class URES_RuleSetChange_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URES_RuleSetChange(Structure):
+class URES_RuleSetChange(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_FaceThreat_Data(Structure):
+class UAction_FaceThreat_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_FaceThreat(Structure):
+class UAction_FaceThreat(BL2SDK.UObject_Base):
     pass
 
 
-class URES_FacingPolicy_Data(Structure):
+class URES_FacingPolicy_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URES_FacingPolicy(Structure):
+class URES_FacingPolicy(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_MoveRandom_Data(Structure):
+class UAction_MoveRandom_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_MoveRandom(Structure):
+class UAction_MoveRandom(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_MoveTo_Data(Structure):
+class UAction_MoveTo_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_MoveTo(Structure):
+class UAction_MoveTo(BL2SDK.UObject_Base):
     pass
 
 
-class URES_Movement_Data(Structure):
+class URES_Movement_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URES_Movement(Structure):
+class URES_Movement(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_PopRuleSet_Data(Structure):
+class UAction_PopRuleSet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_PopRuleSet(Structure):
+class UAction_PopRuleSet(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_PushRuleSet_Data(Structure):
+class UAction_PushRuleSet_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAction_PushRuleSet(Structure):
+class UAction_PushRuleSet(BL2SDK.UObject_Base):
     pass
 
 
-class UActorAttributeContextResolver_Data(Structure):
+class UActorAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UActorAttributeContextResolver(Structure):
+class UActorAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UAIComponentAttributeContextResolver_Data(Structure):
+class UAIComponentAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIComponentAttributeContextResolver(Structure):
+class UAIComponentAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class UAIStateBase_Data(Structure):
+class UAIStateBase_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIStateBase(Structure):
+class UAIStateBase(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Data(Structure):
+class UAIState_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState(Structure):
+class UAIState(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Priority_Data(Structure):
+class UAIState_Priority_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Priority(Structure):
+class UAIState_Priority(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Random_Data(Structure):
+class UAIState_Random_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Random(Structure):
+class UAIState_Random(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Sequential_Data(Structure):
+class UAIState_Sequential_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UAIState_Sequential(Structure):
+class UAIState_Sequential(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_AIHold_Data(Structure):
+class UBehavior_AIHold_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_AIHold(Structure):
+class UBehavior_AIHold(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_AIPriority_Data(Structure):
+class UBehavior_AIPriority_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_AIPriority(Structure):
+class UBehavior_AIPriority(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_AITargeting_Data(Structure):
+class UBehavior_AITargeting_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_AITargeting(Structure):
+class UBehavior_AITargeting(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeAnyBehaviorSequenceState_Data(Structure):
+class UBehavior_ChangeAnyBehaviorSequenceState_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeAnyBehaviorSequenceState(Structure):
+class UBehavior_ChangeAnyBehaviorSequenceState(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeLocalBehaviorSequenceState_Data(Structure):
+class UBehavior_ChangeLocalBehaviorSequenceState_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ChangeLocalBehaviorSequenceState(Structure):
+class UBehavior_ChangeLocalBehaviorSequenceState(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CompareBool_Data(Structure):
+class UBehavior_CompareBool_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CompareBool(Structure):
+class UBehavior_CompareBool(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CompareValues_Data(Structure):
+class UBehavior_CompareValues_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CompareValues(Structure):
+class UBehavior_CompareValues(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CustomEvent_Data(Structure):
+class UBehavior_CustomEvent_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_CustomEvent(Structure):
+class UBehavior_CustomEvent(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_Delay_Data(Structure):
+class UBehavior_Delay_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_Delay(Structure):
+class UBehavior_Delay(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_Gate_Data(Structure):
+class UBehavior_Gate_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_Gate(Structure):
+class UBehavior_Gate(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_GetFloatParam_Data(Structure):
+class UBehavior_GetFloatParam_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_GetFloatParam(Structure):
+class UBehavior_GetFloatParam(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_GetObjectParam_Data(Structure):
+class UBehavior_GetObjectParam_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_GetObjectParam(Structure):
+class UBehavior_GetObjectParam(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_GetVectorParam_Data(Structure):
+class UBehavior_GetVectorParam_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_GetVectorParam(Structure):
+class UBehavior_GetVectorParam(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_InterpolateFloatOverTime_Data(Structure):
+class UBehavior_InterpolateFloatOverTime_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_InterpolateFloatOverTime(Structure):
+class UBehavior_InterpolateFloatOverTime(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_Metronome_Data(Structure):
+class UBehavior_Metronome_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_Metronome(Structure):
+class UBehavior_Metronome(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ModifyTimer_Data(Structure):
+class UBehavior_ModifyTimer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ModifyTimer(Structure):
+class UBehavior_ModifyTimer(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetFloatParam_Data(Structure):
+class UBehavior_SetFloatParam_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetFloatParam(Structure):
+class UBehavior_SetFloatParam(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetObjectParam_Data(Structure):
+class UBehavior_SetObjectParam_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetObjectParam(Structure):
+class UBehavior_SetObjectParam(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetVectorParam_Data(Structure):
+class UBehavior_SetVectorParam_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SetVectorParam(Structure):
+class UBehavior_SetVectorParam(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SpecialMove_Data(Structure):
+class UBehavior_SpecialMove_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SpecialMove(Structure):
+class UBehavior_SpecialMove(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SpecialMoveStop_Data(Structure):
+class UBehavior_SpecialMoveStop_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_SpecialMoveStop(Structure):
+class UBehavior_SpecialMoveStop(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_StartAkAmbientSound_Data(Structure):
+class UBehavior_StartAkAmbientSound_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_StartAkAmbientSound(Structure):
+class UBehavior_StartAkAmbientSound(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_StopAkAmbientSound_Data(Structure):
+class UBehavior_StopAkAmbientSound_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_StopAkAmbientSound(Structure):
+class UBehavior_StopAkAmbientSound(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_StopDialog_Data(Structure):
+class UBehavior_StopDialog_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_StopDialog(Structure):
+class UBehavior_StopDialog(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ToggleDialog_Data(Structure):
+class UBehavior_ToggleDialog_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UBehavior_ToggleDialog(Structure):
+class UBehavior_ToggleDialog(BL2SDK.UObject_Base):
     pass
 
 
-class UCameraModifierCrossfade_Data(Structure):
+class UCameraModifierCrossfade_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UCameraModifierCrossfade(Structure):
+class UCameraModifierCrossfade(BL2SDK.UObject_Base):
     pass
 
 
-class UCameraModifierLookAt_Data(Structure):
+class UCameraModifierLookAt_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UCameraModifierLookAt(Structure):
+class UCameraModifierLookAt(BL2SDK.UObject_Base):
     pass
 
 
-class UDefinitionUITestCaseDefinition_Data(Structure):
+class UDefinitionUITestCaseDefinition_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UDefinitionUITestCaseDefinition(Structure):
+class UDefinitionUITestCaseDefinition(BL2SDK.UObject_Base):
     pass
 
 
-class USparkNews_Data(Structure):
+class USparkNews_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USparkNews(Structure):
+class USparkNews(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountEntitlement_Data(Structure):
+class UGearboxAccountEntitlement_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountEntitlement(Structure):
+class UGearboxAccountEntitlement(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxAccountEntitlementPtr(Structure):
+class TArray_UGearboxAccountEntitlementPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxAccountEntitlement))),
         ("Count", c_int),
@@ -2886,15 +2885,15 @@ class TArray_UGearboxAccountEntitlementPtr(Structure):
     ]
 
 
-class UGearboxAccountOffer_Data(Structure):
+class UGearboxAccountOffer_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxAccountOffer(Structure):
+class UGearboxAccountOffer(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_UGearboxAccountOfferPtr(Structure):
+class TArray_UGearboxAccountOfferPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(UGearboxAccountOffer))),
         ("Count", c_int),
@@ -2902,15 +2901,15 @@ class TArray_UGearboxAccountOfferPtr(Structure):
     ]
 
 
-class APatrolDestination_Data(Structure):
+class APatrolDestination_Data(BL2SDK.UObject_Base):
     pass
 
 
-class APatrolDestination(Structure):
+class APatrolDestination(BL2SDK.UObject_Base):
     pass
 
 
-class TArray_APatrolDestinationPtr(Structure):
+class TArray_APatrolDestinationPtr(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(POINTER(APatrolDestination))),
         ("Count", c_int),
@@ -2918,123 +2917,123 @@ class TArray_APatrolDestinationPtr(Structure):
     ]
 
 
-class UGearboxSeqAct_TargetPriority_Data(Structure):
+class UGearboxSeqAct_TargetPriority_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_TargetPriority(Structure):
+class UGearboxSeqAct_TargetPriority(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_CameraShake_Data(Structure):
+class UGearboxSeqAct_CameraShake_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_CameraShake(Structure):
+class UGearboxSeqAct_CameraShake(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_PawnClonerLink_Data(Structure):
+class UGearboxSeqAct_PawnClonerLink_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxSeqAct_PawnClonerLink(Structure):
+class UGearboxSeqAct_PawnClonerLink(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleInstanceData_Data(Structure):
+class UGFxMovieDrawStyleInstanceData_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGFxMovieDrawStyleInstanceData(Structure):
+class UGFxMovieDrawStyleInstanceData(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_AllSpawned_Data(Structure):
+class USeqEvent_AllSpawned_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_AllSpawned(Structure):
+class USeqEvent_AllSpawned(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationMasterAttributeContextResolver_Data(Structure):
+class UPopulationMasterAttributeContextResolver_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UPopulationMasterAttributeContextResolver(Structure):
+class UPopulationMasterAttributeContextResolver(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_SinglePopulationDeath_Data(Structure):
+class USeqEvent_SinglePopulationDeath_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_SinglePopulationDeath(Structure):
+class USeqEvent_SinglePopulationDeath(BL2SDK.UObject_Base):
     pass
 
 
-class URES_Rotation_Data(Structure):
+class URES_Rotation_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URES_Rotation(Structure):
+class URES_Rotation(BL2SDK.UObject_Base):
     pass
 
 
-class URES_SpecialMove_Data(Structure):
+class URES_SpecialMove_Data(BL2SDK.UObject_Base):
     pass
 
 
-class URES_SpecialMove(Structure):
+class URES_SpecialMove(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_ArrivedAtMoveNode_Data(Structure):
+class USeqEvent_ArrivedAtMoveNode_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_ArrivedAtMoveNode(Structure):
+class USeqEvent_ArrivedAtMoveNode(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_LeavingMoveNode_Data(Structure):
+class USeqEvent_LeavingMoveNode_Data(BL2SDK.UObject_Base):
     pass
 
 
-class USeqEvent_LeavingMoveNode(Structure):
+class USeqEvent_LeavingMoveNode(BL2SDK.UObject_Base):
     pass
 
 
-class UShowDebugHelpers_Data(Structure):
+class UShowDebugHelpers_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UShowDebugHelpers(Structure):
+class UShowDebugHelpers(BL2SDK.UObject_Base):
     pass
 
 
-class ASkeletalMeshActorGBXMatinee_Data(Structure):
+class ASkeletalMeshActorGBXMatinee_Data(BL2SDK.UObject_Base):
     pass
 
 
-class ASkeletalMeshActorGBXMatinee(Structure):
+class ASkeletalMeshActorGBXMatinee(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEULAGFxMovie_Data(Structure):
+class UGearboxEULAGFxMovie_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEULAGFxMovie(Structure):
+class UGearboxEULAGFxMovie(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEULAGFxObject_Data(Structure):
+class UGearboxEULAGFxObject_Data(BL2SDK.UObject_Base):
     pass
 
 
-class UGearboxEULAGFxObject(Structure):
+class UGearboxEULAGFxObject(BL2SDK.UObject_Base):
     pass
 
 
@@ -3053,7 +3052,6 @@ from ..classes.Engine import *
 from ..classes.GameFramework import *
 from ..classes.GFxUI import *
 from ..classes.AkAudio import *
-
 
 def init():
     UActorFactoryClone_Data._fields_ = [

@@ -22,7 +22,7 @@ class FAggregateEventMapping(Structure):
     pass
 
 
-class TArray_FAggregateEventMapping(Structure):
+class TArray_FAggregateEventMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FAggregateEventMapping)),
         ("Count", c_int),
@@ -34,7 +34,7 @@ class FGameEvents(Structure):
     pass
 
 
-class TArray_FGameEvents(Structure):
+class TArray_FGameEvents(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FGameEvents)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -62,7 +62,7 @@ class FTeamEvents(Structure):
     pass
 
 
-class TArray_FTeamEvents(Structure):
+class TArray_FTeamEvents(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FTeamEvents)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -70,7 +70,7 @@ class FPlayerEvents(Structure):
     pass
 
 
-class TArray_FPlayerEvents(Structure):
+class TArray_FPlayerEvents(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPlayerEvents)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -82,7 +82,7 @@ class FPropertyInfo(Structure):
     pass
 
 
-class TArray_FPropertyInfo(Structure):
+class TArray_FPropertyInfo(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPropertyInfo)), ("Count", c_int), ("Max", c_int)]
 
 

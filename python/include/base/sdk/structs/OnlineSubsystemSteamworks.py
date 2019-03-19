@@ -6,7 +6,7 @@ class FServerQueryToRulesResponseMapping(Structure):
     pass
 
 
-class TArray_FServerQueryToRulesResponseMapping(Structure):
+class TArray_FServerQueryToRulesResponseMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FServerQueryToRulesResponseMapping)),
         ("Count", c_int),
@@ -18,7 +18,7 @@ class FServerQueryToPingResponseMapping(Structure):
     pass
 
 
-class TArray_FServerQueryToPingResponseMapping(Structure):
+class TArray_FServerQueryToPingResponseMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FServerQueryToPingResponseMapping)),
         ("Count", c_int),
@@ -30,7 +30,7 @@ class FClientFilterORClause(Structure):
     pass
 
 
-class TArray_FClientFilterORClause(Structure):
+class TArray_FClientFilterORClause(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FClientFilterORClause)),
         ("Count", c_int),
@@ -42,7 +42,7 @@ class FFilterKeyToSteamKeyMapping(Structure):
     pass
 
 
-class TArray_FFilterKeyToSteamKeyMapping(Structure):
+class TArray_FFilterKeyToSteamKeyMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FFilterKeyToSteamKeyMapping)),
         ("Count", c_int),
@@ -58,7 +58,7 @@ class FLeaderboardTemplate(Structure):
     pass
 
 
-class TArray_FLeaderboardTemplate(Structure):
+class TArray_FLeaderboardTemplate(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FLeaderboardTemplate)),
         ("Count", c_int),
@@ -70,7 +70,7 @@ class FDeferredLeaderboardRead(Structure):
     pass
 
 
-class TArray_FDeferredLeaderboardRead(Structure):
+class TArray_FDeferredLeaderboardRead(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FDeferredLeaderboardRead)),
         ("Count", c_int),
@@ -82,7 +82,7 @@ class FDeferredLeaderboardWrite(Structure):
     pass
 
 
-class TArray_FDeferredLeaderboardWrite(Structure):
+class TArray_FDeferredLeaderboardWrite(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FDeferredLeaderboardWrite)),
         ("Count", c_int),
@@ -94,7 +94,7 @@ class FLeaderboardEntry(Structure):
     pass
 
 
-class TArray_FLeaderboardEntry(Structure):
+class TArray_FLeaderboardEntry(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FLeaderboardEntry)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -102,7 +102,7 @@ class FViewIdToLeaderboardName(Structure):
     pass
 
 
-class TArray_FViewIdToLeaderboardName(Structure):
+class TArray_FViewIdToLeaderboardName(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FViewIdToLeaderboardName)),
         ("Count", c_int),
@@ -114,7 +114,7 @@ class FSteamPlayerClanData(Structure):
     pass
 
 
-class TArray_FSteamPlayerClanData(Structure):
+class TArray_FSteamPlayerClanData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FSteamPlayerClanData)),
         ("Count", c_int),
@@ -130,7 +130,7 @@ class FMarketplaceOfferData(Structure):
     pass
 
 
-class TArray_FMarketplaceOfferData(Structure):
+class TArray_FMarketplaceOfferData(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FMarketplaceOfferData)),
         ("Count", c_int),
@@ -150,7 +150,7 @@ class FAchievementProgressStat(Structure):
     pass
 
 
-class TArray_FAchievementProgressStat(Structure):
+class TArray_FAchievementProgressStat(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FAchievementProgressStat)),
         ("Count", c_int),
@@ -162,7 +162,7 @@ class FAchievementMappingInfo(Structure):
     pass
 
 
-class TArray_FAchievementMappingInfo(Structure):
+class TArray_FAchievementMappingInfo(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FAchievementMappingInfo)),
         ("Count", c_int),
@@ -174,7 +174,7 @@ class FQueuedAvatarRequest(Structure):
     pass
 
 
-class TArray_FQueuedAvatarRequest(Structure):
+class TArray_FQueuedAvatarRequest(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FQueuedAvatarRequest)),
         ("Count", c_int),
@@ -186,7 +186,7 @@ class FTitleFileMapping(Structure):
     pass
 
 
-class TArray_FTitleFileMapping(Structure):
+class TArray_FTitleFileMapping(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FTitleFileMapping)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -198,7 +198,7 @@ class FOnlineStatusContextMapping(Structure):
     pass
 
 
-class TArray_FOnlineStatusContextMapping(Structure):
+class TArray_FOnlineStatusContextMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FOnlineStatusContextMapping)),
         ("Count", c_int),
@@ -210,7 +210,7 @@ class FOnlineStatusPropertyMapping(Structure):
     pass
 
 
-class TArray_FOnlineStatusPropertyMapping(Structure):
+class TArray_FOnlineStatusPropertyMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FOnlineStatusPropertyMapping)),
         ("Count", c_int),
@@ -222,7 +222,7 @@ class FOnlineStatusMapping(Structure):
     pass
 
 
-class TArray_FOnlineStatusMapping(Structure):
+class TArray_FOnlineStatusMapping(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FOnlineStatusMapping)),
         ("Count", c_int),
@@ -234,7 +234,7 @@ class FPropertyToColumn(Structure):
     pass
 
 
-class TArray_FPropertyToColumn(Structure):
+class TArray_FPropertyToColumn(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPropertyToColumn)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -242,7 +242,7 @@ class FPlayerStat(Structure):
     pass
 
 
-class TArray_FPlayerStat(Structure):
+class TArray_FPlayerStat(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPlayerStat)), ("Count", c_int), ("Max", c_int)]
 
 
@@ -250,7 +250,7 @@ class FPendingPlayerStats(Structure):
     pass
 
 
-class TArray_FPendingPlayerStats(Structure):
+class TArray_FPendingPlayerStats(BL2SDK.TArray_Base):
     _fields_ = [
         ("Data", POINTER(FPendingPlayerStats)),
         ("Count", c_int),
@@ -274,7 +274,7 @@ class FPendingEntry(Structure):
     pass
 
 
-class TArray_FPendingEntry(Structure):
+class TArray_FPendingEntry(BL2SDK.TArray_Base):
     _fields_ = [("Data", POINTER(FPendingEntry)), ("Count", c_int), ("Max", c_int)]
 
 
