@@ -1,4 +1,2 @@
-from cffi import FFI
+from ctypes import *
 import BL2SDK
-
-ffi = FFI()

@@ -80,7 +80,9 @@ engine.Names = cast(BL2SDK.GNames, POINTER(TArray_FNameEntryPtr))[0]
 engine.InitializeClasses()
 engine.ResolveArgClasses()
 
+# for obj in BL2SDK.engine.Objects:
+
 for x in range(1000):
-    print(BL2SDK.engine.Objects[x][0].GetName())
+    print(BL2SDK.engine.Objects[x][0].GetFullName())
 
 print(engine.FindClass(UWillowConsole))

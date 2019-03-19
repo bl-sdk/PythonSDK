@@ -71,7 +71,7 @@ def call_function(funcData, obj, *args):
             codeProp[0] = cast(BL2SDK.engine.Objects[v.index], POINTER(UProperty))
             nextCodeOffset = nextCodeOffset + 9
 
-            if (v.flags & FUNCPARM_LUATYPE) and not isinstance(v.type, pyArg):
+            if (v.flags & FUNCPARM_LUATYPE) and not isinstance(pyArg, v.type):
                 print("Arg #{} ({}) expects the Python type {}".format(argNum, v.name, v.type))
                 return
             elif (v.flags & FUNCPARM_CLASS):
@@ -90,13 +90,13 @@ def call_function(funcData, obj, *args):
                         print("Arg #{} ({}): Name for {} not found".format(argNum, v.name, pyArg))
                         return
                     pyArg = name
-                elif not isinstance(v.type, pyArg):
+                elif not isinstance(pyArg, v.type):
                     print("Arg #{} ({}) expects a name".format(argNum, v.name))
                     return
             elif (v.flags & FUNCPARM_STRING):
                 if isinstance(pyArg, str):
                     pyArg = FString.GetFromLuaString(pyArg) #TODO
-                elif notisinstance(pyArg, v.type):
+                elif not isinstance(pyArg, v.type):
                     print("Arg #{} ({}) expects a string".format(argNum, v.name))
                     return
             elif (v.flags & FUNCPARM_TARRAY):
@@ -104,10 +104,10 @@ def call_function(funcData, obj, *args):
                     # TODO: Convert table, set pyArg to struct
                     print("NYI: Converting lua table to TArray")
                     return
-                elif not isinstance(v.type, pyArg):
+                elif not isinstance(pyArg, v.type):
                     print("Arg #{} ({}) expects a {}".format(argNum, v.name, v.type)))
                     return
-            elif (v.flags & FUNCPARM_STRUCT) and not isinstance(v.type, pyArg):
+            elif (v.flags & FUNCPARM_STRUCT) and not isinstance(pyArg, v.type):
                 print("Arg #{} ({}) expects a {".format(argNum, v.name, tostring(v.type)))
                 return
             elif (v.flags & FUNCPARM_OBJPOINTER):

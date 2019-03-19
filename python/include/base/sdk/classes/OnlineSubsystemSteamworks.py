@@ -26,6 +26,7 @@ from ..classes.AkAudio import *
 from ..classes.IpDrv import *
 from ..classes.WinDrv import *
 from ..classes.XAudio2 import *
+from ..classes.OnlineSubsystemSteamworks import *
 
 class UOnlineAuthInterfaceSteamworks_Data(BL2SDK.UObject_Base):
     pass
