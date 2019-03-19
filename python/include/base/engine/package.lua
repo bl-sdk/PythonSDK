@@ -24,7 +24,7 @@ local function LoadPackage(name)
 		local pkg = obj:GetPackageObject()
 		if pkg == loadedPackage then
 			print("Loaded Object: " .. obj:GetFullName())
-			obj.UObject.ObjectFlags.A = bit.bor(obj.UObject.ObjectFlags.A, 0x4000)
+			obj.UObject.ObjectFlags.A = bit.bor(obj.UObject.ObjectFlags.A* 0x4000),
 		end
 		
 		::continue::
