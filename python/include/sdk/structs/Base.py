@@ -10,6 +10,14 @@ class FNameEntry(Structure):
     pass
 
 
+class TArray_FNameEntryPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(FNameEntry))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FName(Structure):
     pass
 
@@ -18,12 +26,24 @@ class FString(Structure):
     pass
 
 
+class TArray_FString(Structure):
+    _fields_ = [("Data", POINTER(FString)), ("Count", c_int), ("Max", c_int)]
+
+
 class FScriptDelegate(Structure):
     pass
 
 
+class TArray_FScriptDelegate(Structure):
+    _fields_ = [("Data", POINTER(FScriptDelegate)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPointer(Structure):
     pass
+
+
+class TArray_FPointer(Structure):
+    _fields_ = [("Data", POINTER(FPointer)), ("Count", c_int), ("Max", c_int)]
 
 
 class FQWord(Structure):
@@ -32,6 +52,10 @@ class FQWord(Structure):
 
 class FScriptInterface(Structure):
     pass
+
+
+class TArray_FScriptInterface(Structure):
+    _fields_ = [("Data", POINTER(FScriptInterface)), ("Count", c_int), ("Max", c_int)]
 
 
 class FOutputDevice(Structure):
@@ -48,6 +72,14 @@ class FFrame(Structure):
 
 class FNameEntry(Structure):
     pass
+
+
+class TArray_FNameEntryPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(FNameEntry))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 from ..classes.Base import *

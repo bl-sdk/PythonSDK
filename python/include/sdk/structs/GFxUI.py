@@ -6,20 +6,44 @@ class FSoundThemeBinding(Structure):
     pass
 
 
+class TArray_FSoundThemeBinding(Structure):
+    _fields_ = [("Data", POINTER(FSoundThemeBinding)), ("Count", c_int), ("Max", c_int)]
+
+
 class FASValue(Structure):
     pass
+
+
+class TArray_FASValue(Structure):
+    _fields_ = [("Data", POINTER(FASValue)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGFxWidgetBinding(Structure):
     pass
 
 
+class TArray_FGFxWidgetBinding(Structure):
+    _fields_ = [("Data", POINTER(FGFxWidgetBinding)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGFxDataStoreBinding(Structure):
     pass
 
 
+class TArray_FGFxDataStoreBinding(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGFxDataStoreBinding)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FExternalTexture(Structure):
     pass
+
+
+class TArray_FExternalTexture(Structure):
+    _fields_ = [("Data", POINTER(FExternalTexture)), ("Count", c_int), ("Max", c_int)]
 
 
 class FASDisplayInfo(Structure):
@@ -38,8 +62,16 @@ class FGCReference(Structure):
     pass
 
 
+class TArray_FGCReference(Structure):
+    _fields_ = [("Data", POINTER(FGCReference)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAkEventResolver(Structure):
     pass
+
+
+class TArray_FAkEventResolver(Structure):
+    _fields_ = [("Data", POINTER(FAkEventResolver)), ("Count", c_int), ("Max", c_int)]
 
 
 from ..TArrayTypes import *

@@ -22,8 +22,20 @@ class FAggregateEventMapping(Structure):
     pass
 
 
+class TArray_FAggregateEventMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAggregateEventMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGameEvents(Structure):
     pass
+
+
+class TArray_FGameEvents(Structure):
+    _fields_ = [("Data", POINTER(FGameEvents)), ("Count", c_int), ("Max", c_int)]
 
 
 class FEventsBase(Structure):
@@ -50,8 +62,16 @@ class FTeamEvents(Structure):
     pass
 
 
+class TArray_FTeamEvents(Structure):
+    _fields_ = [("Data", POINTER(FTeamEvents)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPlayerEvents(Structure):
     pass
+
+
+class TArray_FPlayerEvents(Structure):
+    _fields_ = [("Data", POINTER(FPlayerEvents)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGameEvent(Structure):
@@ -60,6 +80,10 @@ class FGameEvent(Structure):
 
 class FPropertyInfo(Structure):
     pass
+
+
+class TArray_FPropertyInfo(Structure):
+    _fields_ = [("Data", POINTER(FPropertyInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 from ..TArrayTypes import *

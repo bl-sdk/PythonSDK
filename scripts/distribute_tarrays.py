@@ -21,33 +21,33 @@ tarrays_file = 'C:/Program Files (x86)/Steam/steamapps/common/Borderlands 2/Bina
 tarrays = {}
 
 header = "._fields_ = "
+template = """class {}(Structure):\n\
+    pass\n\n"""
 
 with open(tarrays_file) as f:
     lines = f.readlines()
     for index, line in enumerate(lines):
         if header in line:
             tarray_type = lines[index + 1].split('(')[-1].split(')')[0]
-            tarrays[tarray_type] = ''.join(lines[index : index + 5])
+            tarrays[tarray_type] = 'class ' + ''.join(lines[index : index + 5]).replace('._fields_','(Structure)\n    _fields_')
 
-print(tarrays)
-
-# for module in modules:
-#     lens = []
-#     with open(dir_path_lua + module + '.lua') as f:
-#         for line in f.readlines():
-#             if '[0x' in line:
-#                 lens += [line.split('0x')[1].split(']')[0]]
-#     i = 0
-#     lines = []
-#     with open(dir_path_python + module + '.py') as f:
-#         for line in f.readlines():
-#             if '0x' in line:
-#                 if '0x)' in line:
-#                     print(line)
-#                     line = line.replace('0x)', '0x{})'.format(lens[i]))
-#                     print(line)
-#                 i = i + 1
-#             lines.append(line)
-#     with open(dir_path_python + module + '.py', 'w') as f:
-#         for line in lines:
-#             f.write(line)
+for module in modules:
+    lines = []
+    found = []
+    top = []
+    done = False
+    with open(dir_path_structs + module + '.py') as f:
+        after = None
+        for line in f.readlines():
+            lines.append(line)
+            if 'class ' in line:
+                defining = line.split(' ')[1].split('(')[0]
+                if defining in tarrays.keys():
+                    found.append(defining)
+                    after = defining
+            if line == '\n' and after:
+                lines.append(tarrays[after])
+                after = None
+    with open(dir_path_structs + module + '.py', 'w') as f:
+        for l in lines:
+            f.write(l)

@@ -186,12 +186,24 @@ class UAttributeModifier(Structure):
     pass
 
 
+class TArray_UAttributeModifierPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributeModifier))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPackage_Data(Structure):
     pass
 
 
 class UPackage(Structure):
     pass
+
+
+class TArray_UPackagePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UPackage))), ("Count", c_int), ("Max", c_int)]
 
 
 from ..TArrayTypes import *

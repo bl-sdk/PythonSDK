@@ -6,8 +6,20 @@ class FStaticMeshLODElement(Structure):
     pass
 
 
+class TArray_FStaticMeshLODElement(Structure):
+    _fields_ = [
+        ("Data", POINTER(FStaticMeshLODElement)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FStaticMeshLODInfo(Structure):
     pass
+
+
+class TArray_FStaticMeshLODInfo(Structure):
+    _fields_ = [("Data", POINTER(FStaticMeshLODInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAnimSlotDesc(Structure):
@@ -22,6 +34,14 @@ class FRigidBodyContactInfo(Structure):
     pass
 
 
+class TArray_FRigidBodyContactInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FRigidBodyContactInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FCollisionImpactData(Structure):
     pass
 
@@ -32,6 +52,10 @@ class FPhysEffectInfo(Structure):
 
 class FActorReference(Structure):
     pass
+
+
+class TArray_FActorReference(Structure):
+    _fields_ = [("Data", POINTER(FActorReference)), ("Count", c_int), ("Max", c_int)]
 
 
 class FNavReference(Structure):
@@ -54,16 +78,32 @@ class FImpactInfo(Structure):
     pass
 
 
+class TArray_FImpactInfo(Structure):
+    _fields_ = [("Data", POINTER(FImpactInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAkPlayingInfo(Structure):
     pass
+
+
+class TArray_FAkPlayingInfo(Structure):
+    _fields_ = [("Data", POINTER(FAkPlayingInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSeqOpInputLink(Structure):
     pass
 
 
+class TArray_FSeqOpInputLink(Structure):
+    _fields_ = [("Data", POINTER(FSeqOpInputLink)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAnimSlotInfo(Structure):
     pass
+
+
+class TArray_FAnimSlotInfo(Structure):
+    _fields_ = [("Data", POINTER(FAnimSlotInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FTraceNotifyInfo(Structure):
@@ -74,12 +114,28 @@ class FTimerData(Structure):
     pass
 
 
+class TArray_FTimerData(Structure):
+    _fields_ = [("Data", POINTER(FTimerData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FKeyValuePair(Structure):
     pass
 
 
+class TArray_FKeyValuePair(Structure):
+    _fields_ = [("Data", POINTER(FKeyValuePair)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPlayerResponseLine(Structure):
     pass
+
+
+class TArray_FPlayerResponseLine(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPlayerResponseLine)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FServerResponseLine(Structure):
@@ -90,56 +146,136 @@ class FLocalizedStringSetting(Structure):
     pass
 
 
+class TArray_FLocalizedStringSetting(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLocalizedStringSetting)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSettingsData(Structure):
     pass
+
+
+class TArray_FSettingsData(Structure):
+    _fields_ = [("Data", POINTER(FSettingsData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSettingsProperty(Structure):
     pass
 
 
+class TArray_FSettingsProperty(Structure):
+    _fields_ = [("Data", POINTER(FSettingsProperty)), ("Count", c_int), ("Max", c_int)]
+
+
 class FIdToStringMapping(Structure):
     pass
+
+
+class TArray_FIdToStringMapping(Structure):
+    _fields_ = [("Data", POINTER(FIdToStringMapping)), ("Count", c_int), ("Max", c_int)]
 
 
 class FStringIdToStringMapping(Structure):
     pass
 
 
+class TArray_FStringIdToStringMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FStringIdToStringMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FLocalizedStringSettingMetaData(Structure):
     pass
+
+
+class TArray_FLocalizedStringSettingMetaData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLocalizedStringSettingMetaData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FSettingsPropertyPropertyMetaData(Structure):
     pass
 
 
+class TArray_FSettingsPropertyPropertyMetaData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSettingsPropertyPropertyMetaData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FUniqueNetId(Structure):
     pass
+
+
+class TArray_FUniqueNetId(Structure):
+    _fields_ = [("Data", POINTER(FUniqueNetId)), ("Count", c_int), ("Max", c_int)]
 
 
 class FOnlineRegistrant(Structure):
     pass
 
 
+class TArray_FOnlineRegistrant(Structure):
+    _fields_ = [("Data", POINTER(FOnlineRegistrant)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOnlineArbitrationRegistrant(Structure):
     pass
+
+
+class TArray_FOnlineArbitrationRegistrant(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineArbitrationRegistrant)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FNamedSession(Structure):
     pass
 
 
+class TArray_FNamedSession(Structure):
+    _fields_ = [("Data", POINTER(FNamedSession)), ("Count", c_int), ("Max", c_int)]
+
+
 class FNamedInterface(Structure):
     pass
+
+
+class TArray_FNamedInterface(Structure):
+    _fields_ = [("Data", POINTER(FNamedInterface)), ("Count", c_int), ("Max", c_int)]
 
 
 class FOnlinePartyMember(Structure):
     pass
 
 
+class TArray_FOnlinePartyMember(Structure):
+    _fields_ = [("Data", POINTER(FOnlinePartyMember)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAchievementDetails(Structure):
     pass
+
+
+class TArray_FAchievementDetails(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAchievementDetails)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FCommunityContentMetadata(Structure):
@@ -150,20 +286,48 @@ class FCommunityContentFile(Structure):
     pass
 
 
+class TArray_FCommunityContentFile(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCommunityContentFile)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTitleFile(Structure):
     pass
+
+
+class TArray_FTitleFile(Structure):
+    _fields_ = [("Data", POINTER(FTitleFile)), ("Count", c_int), ("Max", c_int)]
 
 
 class FNamedInterfaceDef(Structure):
     pass
 
 
+class TArray_FNamedInterfaceDef(Structure):
+    _fields_ = [("Data", POINTER(FNamedInterfaceDef)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOnlineFriendMessage(Structure):
     pass
 
 
+class TArray_FOnlineFriendMessage(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineFriendMessage)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FRemoteTalker(Structure):
     pass
+
+
+class TArray_FRemoteTalker(Structure):
+    _fields_ = [("Data", POINTER(FRemoteTalker)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLocalTalker(Structure):
@@ -174,16 +338,40 @@ class FOnlinePlayerScore(Structure):
     pass
 
 
+class TArray_FOnlinePlayerScore(Structure):
+    _fields_ = [("Data", POINTER(FOnlinePlayerScore)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSpeechRecognizedWord(Structure):
     pass
+
+
+class TArray_FSpeechRecognizedWord(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSpeechRecognizedWord)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FMarketplaceContent(Structure):
     pass
 
 
+class TArray_FMarketplaceContent(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMarketplaceContent)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAppIdLicenseInfo(Structure):
     pass
+
+
+class TArray_FAppIdLicenseInfo(Structure):
+    _fields_ = [("Data", POINTER(FAppIdLicenseInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FTOCInfo(Structure):
@@ -194,6 +382,10 @@ class FOnlineContent(Structure):
     pass
 
 
+class TArray_FOnlineContent(Structure):
+    _fields_ = [("Data", POINTER(FOnlineContent)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOnlineContentNameInfo(Structure):
     pass
 
@@ -202,20 +394,52 @@ class FNamedOnlineContent(Structure):
     pass
 
 
+class TArray_FNamedOnlineContent(Structure):
+    _fields_ = [
+        ("Data", POINTER(FNamedOnlineContent)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FCompatibilityOnlineContent(Structure):
     pass
+
+
+class TArray_FCompatibilityOnlineContent(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCompatibilityOnlineContent)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FOnlineFriend(Structure):
     pass
 
 
+class TArray_FOnlineFriend(Structure):
+    _fields_ = [("Data", POINTER(FOnlineFriend)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOnlineCrossTitleContent(Structure):
     pass
 
 
+class TArray_FOnlineCrossTitleContent(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineCrossTitleContent)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FFriendsQuery(Structure):
     pass
+
+
+class TArray_FFriendsQuery(Structure):
+    _fields_ = [("Data", POINTER(FFriendsQuery)), ("Count", c_int), ("Max", c_int)]
 
 
 class FBaseAuthSession(Structure):
@@ -226,16 +450,32 @@ class FLocalAuthSession(Structure):
     pass
 
 
+class TArray_FLocalAuthSession(Structure):
+    _fields_ = [("Data", POINTER(FLocalAuthSession)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAuthSession(Structure):
     pass
+
+
+class TArray_FAuthSession(Structure):
+    _fields_ = [("Data", POINTER(FAuthSession)), ("Count", c_int), ("Max", c_int)]
 
 
 class FPendingClientAuth(Structure):
     pass
 
 
+class TArray_FPendingClientAuth(Structure):
+    _fields_ = [("Data", POINTER(FPendingClientAuth)), ("Count", c_int), ("Max", c_int)]
+
+
 class FServerAuthRetry(Structure):
     pass
+
+
+class TArray_FServerAuthRetry(Structure):
+    _fields_ = [("Data", POINTER(FServerAuthRetry)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRBCollisionChannelContainer(Structure):
@@ -250,6 +490,14 @@ class FMaterialViewRelevance(Structure):
     pass
 
 
+class TArray_FMaterialViewRelevance(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMaterialViewRelevance)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FReplicatedInstanceDataState(Structure):
     pass
 
@@ -262,6 +510,10 @@ class FInstanceDataUnion(Structure):
     pass
 
 
+class TArray_FInstanceDataUnion(Structure):
+    _fields_ = [("Data", POINTER(FInstanceDataUnion)), ("Count", c_int), ("Max", c_int)]
+
+
 class FInstanceDataSet(Structure):
     pass
 
@@ -270,16 +522,44 @@ class FVisiblePortalInfo(Structure):
     pass
 
 
+class TArray_FVisiblePortalInfo(Structure):
+    _fields_ = [("Data", POINTER(FVisiblePortalInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOnlineGameSearchParameter(Structure):
     pass
+
+
+class TArray_FOnlineGameSearchParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineGameSearchParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FOnlineGameSearchORClause(Structure):
     pass
 
 
+class TArray_FOnlineGameSearchORClause(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineGameSearchORClause)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FOnlineGameSearchSortClause(Structure):
     pass
+
+
+class TArray_FOnlineGameSearchSortClause(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineGameSearchSortClause)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FOnlineGameSearchQuery(Structure):
@@ -294,8 +574,24 @@ class FNamedObjectProperty(Structure):
     pass
 
 
+class TArray_FNamedObjectProperty(Structure):
+    _fields_ = [
+        ("Data", POINTER(FNamedObjectProperty)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FOnlineGameSearchResult(Structure):
     pass
+
+
+class TArray_FOnlineGameSearchResult(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineGameSearchResult)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FTViewTarget(Structure):
@@ -326,56 +622,128 @@ class FSeqOpOutputInputLink(Structure):
     pass
 
 
+class TArray_FSeqOpOutputInputLink(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSeqOpOutputInputLink)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSeqOpOutputLink(Structure):
     pass
+
+
+class TArray_FSeqOpOutputLink(Structure):
+    _fields_ = [("Data", POINTER(FSeqOpOutputLink)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSeqVarLink(Structure):
     pass
 
 
+class TArray_FSeqVarLink(Structure):
+    _fields_ = [("Data", POINTER(FSeqVarLink)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSeqEventLink(Structure):
     pass
+
+
+class TArray_FSeqEventLink(Structure):
+    _fields_ = [("Data", POINTER(FSeqEventLink)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDebugTextInfo(Structure):
     pass
 
 
+class TArray_FDebugTextInfo(Structure):
+    _fields_ = [("Data", POINTER(FDebugTextInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FBonePair(Structure):
     pass
+
+
+class TArray_FBonePair(Structure):
+    _fields_ = [("Data", POINTER(FBonePair)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAnimBlendChild(Structure):
     pass
 
 
+class TArray_FAnimBlendChild(Structure):
+    _fields_ = [("Data", POINTER(FAnimBlendChild)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSkelMeshComponentLODInfo(Structure):
     pass
+
+
+class TArray_FSkelMeshComponentLODInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSkelMeshComponentLODInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAttachment(Structure):
     pass
 
 
+class TArray_FAttachment(Structure):
+    _fields_ = [("Data", POINTER(FAttachment)), ("Count", c_int), ("Max", c_int)]
+
+
 class FActiveMorph(Structure):
     pass
+
+
+class TArray_FActiveMorph(Structure):
+    _fields_ = [("Data", POINTER(FActiveMorph)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGestaltLODModelFragment(Structure):
     pass
 
 
+class TArray_FGestaltLODModelFragment(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltLODModelFragment)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGestaltLODModel(Structure):
     pass
+
+
+class TArray_FGestaltLODModel(Structure):
+    _fields_ = [("Data", POINTER(FGestaltLODModel)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSocketRemapEntry(Structure):
     pass
 
 
+class TArray_FSocketRemapEntry(Structure):
+    _fields_ = [("Data", POINTER(FSocketRemapEntry)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGestaltAccessoryEntry(Structure):
     pass
+
+
+class TArray_FGestaltAccessoryEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltAccessoryEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGestaltDataContainer(Structure):
@@ -386,6 +754,10 @@ class FConnectedPeerInfo(Structure):
     pass
 
 
+class TArray_FConnectedPeerInfo(Structure):
+    _fields_ = [("Data", POINTER(FConnectedPeerInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FClientAdjustment(Structure):
     pass
 
@@ -394,8 +766,20 @@ class FKismetDrawTextInfo(Structure):
     pass
 
 
+class TArray_FKismetDrawTextInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FKismetDrawTextInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FConsoleMessage(Structure):
     pass
+
+
+class TArray_FConsoleMessage(Structure):
+    _fields_ = [("Data", POINTER(FConsoleMessage)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAutomatedTestingDatum(Structure):
@@ -406,8 +790,16 @@ class FInputEntry(Structure):
     pass
 
 
+class TArray_FInputEntry(Structure):
+    _fields_ = [("Data", POINTER(FInputEntry)), ("Count", c_int), ("Max", c_int)]
+
+
 class FInputMatchRequest(Structure):
     pass
+
+
+class TArray_FInputMatchRequest(Structure):
+    _fields_ = [("Data", POINTER(FInputMatchRequest)), ("Count", c_int), ("Max", c_int)]
 
 
 class FNavigationOctreeObject(Structure):
@@ -426,6 +818,10 @@ class FNavMeshPathSize(Structure):
     pass
 
 
+class TArray_FNavMeshPathSize(Structure):
+    _fields_ = [("Data", POINTER(FNavMeshPathSize)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPolyReference(Structure):
     pass
 
@@ -442,20 +838,40 @@ class FDialogueArgument(Structure):
     pass
 
 
+class TArray_FDialogueArgument(Structure):
+    _fields_ = [("Data", POINTER(FDialogueArgument)), ("Count", c_int), ("Max", c_int)]
+
+
 class FKSphereElem(Structure):
     pass
+
+
+class TArray_FKSphereElem(Structure):
+    _fields_ = [("Data", POINTER(FKSphereElem)), ("Count", c_int), ("Max", c_int)]
 
 
 class FKBoxElem(Structure):
     pass
 
 
+class TArray_FKBoxElem(Structure):
+    _fields_ = [("Data", POINTER(FKBoxElem)), ("Count", c_int), ("Max", c_int)]
+
+
 class FKSphylElem(Structure):
     pass
 
 
+class TArray_FKSphylElem(Structure):
+    _fields_ = [("Data", POINTER(FKSphylElem)), ("Count", c_int), ("Max", c_int)]
+
+
 class FKConvexElem(Structure):
     pass
+
+
+class TArray_FKConvexElem(Structure):
+    _fields_ = [("Data", POINTER(FKConvexElem)), ("Count", c_int), ("Max", c_int)]
 
 
 class FKAggregateGeom(Structure):
@@ -470,6 +886,10 @@ class FGeomSelection(Structure):
     pass
 
 
+class TArray_FGeomSelection(Structure):
+    _fields_ = [("Data", POINTER(FGeomSelection)), ("Count", c_int), ("Max", c_int)]
+
+
 class FInteriorSettings(Structure):
     pass
 
@@ -482,8 +902,20 @@ class FAudioComponentParam(Structure):
     pass
 
 
+class TArray_FAudioComponentParam(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAudioComponentParam)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSubtitleCue(Structure):
     pass
+
+
+class TArray_FSubtitleCue(Structure):
+    _fields_ = [("Data", POINTER(FSubtitleCue)), ("Count", c_int), ("Max", c_int)]
 
 
 class FCompressedTrack(Structure):
@@ -494,36 +926,80 @@ class FDeltaTrackInfo(Structure):
     pass
 
 
+class TArray_FDeltaTrackInfo(Structure):
+    _fields_ = [("Data", POINTER(FDeltaTrackInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FCurveTrack(Structure):
     pass
+
+
+class TArray_FCurveTrack(Structure):
+    _fields_ = [("Data", POINTER(FCurveTrack)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRotationTrack(Structure):
     pass
 
 
+class TArray_FRotationTrack(Structure):
+    _fields_ = [("Data", POINTER(FRotationTrack)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTranslationTrack(Structure):
     pass
+
+
+class TArray_FTranslationTrack(Structure):
+    _fields_ = [("Data", POINTER(FTranslationTrack)), ("Count", c_int), ("Max", c_int)]
 
 
 class FTimeModifier(Structure):
     pass
 
 
+class TArray_FTimeModifier(Structure):
+    _fields_ = [("Data", POINTER(FTimeModifier)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSkelControlModifier(Structure):
     pass
+
+
+class TArray_FSkelControlModifier(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSkelControlModifier)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAnimNotifyEvent(Structure):
     pass
 
 
+class TArray_FAnimNotifyEvent(Structure):
+    _fields_ = [("Data", POINTER(FAnimNotifyEvent)), ("Count", c_int), ("Max", c_int)]
+
+
 class FRawAnimSequenceTrack(Structure):
     pass
 
 
+class TArray_FRawAnimSequenceTrack(Structure):
+    _fields_ = [
+        ("Data", POINTER(FRawAnimSequenceTrack)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FCurveKey(Structure):
     pass
+
+
+class TArray_FCurveKey(Structure):
+    _fields_ = [("Data", POINTER(FCurveKey)), ("Count", c_int), ("Max", c_int)]
 
 
 class FWeightNodeRule(Structure):
@@ -534,12 +1010,24 @@ class FWeightRule(Structure):
     pass
 
 
+class TArray_FWeightRule(Structure):
+    _fields_ = [("Data", POINTER(FWeightRule)), ("Count", c_int), ("Max", c_int)]
+
+
 class FBranchInfo(Structure):
     pass
 
 
+class TArray_FBranchInfo(Structure):
+    _fields_ = [("Data", POINTER(FBranchInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPerBoneMaskInfo(Structure):
     pass
+
+
+class TArray_FPerBoneMaskInfo(Structure):
+    _fields_ = [("Data", POINTER(FPerBoneMaskInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAimTransform(Structure):
@@ -550,16 +1038,36 @@ class FAimComponent(Structure):
     pass
 
 
+class TArray_FAimComponent(Structure):
+    _fields_ = [("Data", POINTER(FAimComponent)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAimOffsetProfile(Structure):
     pass
+
+
+class TArray_FAimOffsetProfile(Structure):
+    _fields_ = [("Data", POINTER(FAimOffsetProfile)), ("Count", c_int), ("Max", c_int)]
 
 
 class FChildBoneBlendInfo(Structure):
     pass
 
 
+class TArray_FChildBoneBlendInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FChildBoneBlendInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FRandomAnimInfo(Structure):
     pass
+
+
+class TArray_FRandomAnimInfo(Structure):
+    _fields_ = [("Data", POINTER(FRandomAnimInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAnimInfo(Structure):
@@ -570,20 +1078,40 @@ class FAnimBlendInfo(Structure):
     pass
 
 
+class TArray_FAnimBlendInfo(Structure):
+    _fields_ = [("Data", POINTER(FAnimBlendInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSynchGroup(Structure):
     pass
+
+
+class TArray_FSynchGroup(Structure):
+    _fields_ = [("Data", POINTER(FSynchGroup)), ("Count", c_int), ("Max", c_int)]
 
 
 class FOpinionData(Structure):
     pass
 
 
+class TArray_FOpinionData(Structure):
+    _fields_ = [("Data", POINTER(FOpinionData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FInfoBarData(Structure):
     pass
 
 
+class TArray_FInfoBarData(Structure):
+    _fields_ = [("Data", POINTER(FInfoBarData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FLocalizedSubtitle(Structure):
     pass
+
+
+class TArray_FLocalizedSubtitle(Structure):
+    _fields_ = [("Data", POINTER(FLocalizedSubtitle)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLightMapRef(Structure):
@@ -600,6 +1128,14 @@ class FLightmassLightSettings(Structure):
 
 class FScalarParameterInterpStruct(Structure):
     pass
+
+
+class TArray_FScalarParameterInterpStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FScalarParameterInterpStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FLightmassPointLightSettings(Structure):
@@ -642,20 +1178,44 @@ class FTrailSamplePoint(Structure):
     pass
 
 
+class TArray_FTrailSamplePoint(Structure):
+    _fields_ = [("Data", POINTER(FTrailSamplePoint)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTrailSample(Structure):
     pass
+
+
+class TArray_FTrailSample(Structure):
+    _fields_ = [("Data", POINTER(FTrailSample)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAnimSetMeshLinkup(Structure):
     pass
 
 
+class TArray_FAnimSetMeshLinkup(Structure):
+    _fields_ = [("Data", POINTER(FAnimSetMeshLinkup)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAnimGroup(Structure):
     pass
 
 
+class TArray_FAnimGroup(Structure):
+    _fields_ = [("Data", POINTER(FAnimGroup)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSkelControlListHead(Structure):
     pass
+
+
+class TArray_FSkelControlListHead(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSkelControlListHead)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FPreviewSkelMeshStruct(Structure):
@@ -682,6 +1242,14 @@ class FNxDestructibleDepthParameters(Structure):
     pass
 
 
+class TArray_FNxDestructibleDepthParameters(Structure):
+    _fields_ = [
+        ("Data", POINTER(FNxDestructibleDepthParameters)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FNxDestructibleParameters(Structure):
     pass
 
@@ -694,28 +1262,80 @@ class FDamagePair(Structure):
     pass
 
 
+class TArray_FDamagePair(Structure):
+    _fields_ = [("Data", POINTER(FDamagePair)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAttributePriorityData(Structure):
     pass
+
+
+class TArray_FAttributePriorityData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributePriorityData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAppliedAttributeEffect(Structure):
     pass
 
 
+class TArray_FAppliedAttributeEffect(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAppliedAttributeEffect)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAttributeInitializationData(Structure):
     pass
+
+
+class TArray_FAttributeInitializationData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributeInitializationData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAttributeEffectData(Structure):
     pass
 
 
+class TArray_FAttributeEffectData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributeEffectData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAttributeExpressionData(Structure):
     pass
 
 
+class TArray_FAttributeExpressionData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributeExpressionData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FConditionalSoundData(Structure):
     pass
+
+
+class TArray_FConditionalSoundData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FConditionalSoundData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBalanceFormula(Structure):
@@ -734,6 +1354,14 @@ class FConditionalValueExpression(Structure):
     pass
 
 
+class TArray_FConditionalValueExpression(Structure):
+    _fields_ = [
+        ("Data", POINTER(FConditionalValueExpression)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FConditionalInitializationExpressions(Structure):
     pass
 
@@ -742,8 +1370,20 @@ class FAttributeBaseValueData(Structure):
     pass
 
 
+class TArray_FAttributeBaseValueData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributeBaseValueData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FListener(Structure):
     pass
+
+
+class TArray_FListener(Structure):
+    _fields_ = [("Data", POINTER(FListener)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAudioClassInfo(Structure):
@@ -762,8 +1402,24 @@ class FBehaviorContextData(Structure):
     pass
 
 
+class TArray_FBehaviorContextData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorContextData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorParameterUnion(Structure):
     pass
+
+
+class TArray_FBehaviorParameterUnion(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorParameterUnion)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBehaviorParameters(Structure):
@@ -794,40 +1450,120 @@ class FIndependentSelectionData(Structure):
     pass
 
 
+class TArray_FIndependentSelectionData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FIndependentSelectionData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FScalarMaterialParameter(Structure):
     pass
+
+
+class TArray_FScalarMaterialParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FScalarMaterialParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FVectorMaterialParameter(Structure):
     pass
 
 
+class TArray_FVectorMaterialParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FVectorMaterialParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTextureMaterialParameter(Structure):
     pass
+
+
+class TArray_FTextureMaterialParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTextureMaterialParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FScalarParticleSystemParameter(Structure):
     pass
 
 
+class TArray_FScalarParticleSystemParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FScalarParticleSystemParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FVectorParticleSystemParameter(Structure):
     pass
+
+
+class TArray_FVectorParticleSystemParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FVectorParticleSystemParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FColorParticleSystemParameter(Structure):
     pass
 
 
+class TArray_FColorParticleSystemParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FColorParticleSystemParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FMaterialParticleSystemParameter(Structure):
     pass
+
+
+class TArray_FMaterialParticleSystemParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMaterialParticleSystemParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FActorParticleSystemParameter(Structure):
     pass
 
 
+class TArray_FActorParticleSystemParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FActorParticleSystemParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FStaticMeshComponentLODInfo(Structure):
     pass
+
+
+class TArray_FStaticMeshComponentLODInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FStaticMeshComponentLODInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FPaintedVertex(Structure):
@@ -848,6 +1584,14 @@ class FROscillator(Structure):
 
 class FCameraShakeInstance(Structure):
     pass
+
+
+class TArray_FCameraShakeInstance(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCameraShakeInstance)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FTextureGroupContainer(Structure):
@@ -878,6 +1622,10 @@ class FCanvasUVTri(Structure):
     pass
 
 
+class TArray_FCanvasUVTri(Structure):
+    _fields_ = [("Data", POINTER(FCanvasUVTri)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTextSizingParameters(Structure):
     pass
 
@@ -900,6 +1648,14 @@ class FTextureCoordinates(Structure):
 
 class FUIProviderScriptFieldValue(Structure):
     pass
+
+
+class TArray_FUIProviderScriptFieldValue(Structure):
+    _fields_ = [
+        ("Data", POINTER(FUIProviderScriptFieldValue)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FUIProviderFieldValue(Structure):
@@ -926,12 +1682,28 @@ class FUIAxisEmulationDefinition(Structure):
     pass
 
 
+class TArray_FUIAxisEmulationDefinition(Structure):
+    _fields_ = [
+        ("Data", POINTER(FUIAxisEmulationDefinition)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FRawInputKeyEventData(Structure):
     pass
 
 
 class FAutoCompleteCommand(Structure):
     pass
+
+
+class TArray_FAutoCompleteCommand(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAutoCompleteCommand)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAutoCompleteNode(Structure):
@@ -950,8 +1722,16 @@ class FFireLink(Structure):
     pass
 
 
+class TArray_FFireLink(Structure):
+    _fields_ = [("Data", POINTER(FFireLink)), ("Count", c_int), ("Max", c_int)]
+
+
 class FDynamicLinkInfo(Structure):
     pass
+
+
+class TArray_FDynamicLinkInfo(Structure):
+    _fields_ = [("Data", POINTER(FDynamicLinkInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FCoverReference(Structure):
@@ -966,32 +1746,80 @@ class FSlotMoveRef(Structure):
     pass
 
 
+class TArray_FSlotMoveRef(Structure):
+    _fields_ = [("Data", POINTER(FSlotMoveRef)), ("Count", c_int), ("Max", c_int)]
+
+
 class FCoverInfo(Structure):
     pass
+
+
+class TArray_FCoverInfo(Structure):
+    _fields_ = [("Data", POINTER(FCoverInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FCoverSlot(Structure):
     pass
 
 
+class TArray_FCoverSlot(Structure):
+    _fields_ = [("Data", POINTER(FCoverSlot)), ("Count", c_int), ("Max", c_int)]
+
+
 class FCoverMeshes(Structure):
     pass
+
+
+class TArray_FCoverMeshes(Structure):
+    _fields_ = [("Data", POINTER(FCoverMeshes)), ("Count", c_int), ("Max", c_int)]
 
 
 class FManualCoverTypeInfo(Structure):
     pass
 
 
+class TArray_FManualCoverTypeInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FManualCoverTypeInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FCoverReplicationInfo(Structure):
     pass
+
+
+class TArray_FCoverReplicationInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCoverReplicationInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FCullDistanceSizePair(Structure):
     pass
 
 
+class TArray_FCullDistanceSizePair(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCullDistanceSizePair)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPresetGeneratedPoint(Structure):
     pass
+
+
+class TArray_FPresetGeneratedPoint(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPresetGeneratedPoint)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FDamageInfo(Structure):
@@ -1010,16 +1838,36 @@ class FPlayerDataStoreGroup(Structure):
     pass
 
 
+class TArray_FPlayerDataStoreGroup(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPlayerDataStoreGroup)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FKeyBind(Structure):
     pass
+
+
+class TArray_FKeyBind(Structure):
+    _fields_ = [("Data", POINTER(FKeyBind)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDecalReceiver(Structure):
     pass
 
 
+class TArray_FDecalReceiver(Structure):
+    _fields_ = [("Data", POINTER(FDecalReceiver)), ("Count", c_int), ("Max", c_int)]
+
+
 class FActiveDecalInfo(Structure):
     pass
+
+
+class TArray_FActiveDecalInfo(Structure):
+    _fields_ = [("Data", POINTER(FActiveDecalInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLightmassMaterialInterfaceSettings(Structure):
@@ -1054,8 +1902,20 @@ class FMarketplaceOffer(Structure):
     pass
 
 
+class TArray_FMarketplaceOffer(Structure):
+    _fields_ = [("Data", POINTER(FMarketplaceOffer)), ("Count", c_int), ("Max", c_int)]
+
+
 class FInstalledContentInfo(Structure):
     pass
+
+
+class TArray_FInstalledContentInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInstalledContentInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FMarketplaceOfferDownloadState(Structure):
@@ -1064,6 +1924,14 @@ class FMarketplaceOfferDownloadState(Structure):
 
 class FRejectedContentInfo(Structure):
     pass
+
+
+class TArray_FRejectedContentInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FRejectedContentInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FDlcContentId(Structure):
@@ -1090,8 +1958,20 @@ class FViewParticleEmitterInstanceMotionBlurInfo(Structure):
     pass
 
 
+class TArray_FViewParticleEmitterInstanceMotionBlurInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FViewParticleEmitterInstanceMotionBlurInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FParticleSysParam(Structure):
     pass
+
+
+class TArray_FParticleSysParam(Structure):
+    _fields_ = [("Data", POINTER(FParticleSysParam)), ("Count", c_int), ("Max", c_int)]
 
 
 class FParticleEventData(Structure):
@@ -1102,20 +1982,60 @@ class FParticleEventSpawnData(Structure):
     pass
 
 
+class TArray_FParticleEventSpawnData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEventSpawnData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FParticleEventDeathData(Structure):
     pass
+
+
+class TArray_FParticleEventDeathData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEventDeathData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FParticleEventCollideData(Structure):
     pass
 
 
+class TArray_FParticleEventCollideData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEventCollideData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FParticleEventTraceData(Structure):
     pass
 
 
+class TArray_FParticleEventTraceData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEventTraceData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FParticleEventKismetData(Structure):
     pass
+
+
+class TArray_FParticleEventKismetData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEventKismetData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FParticleEmitterInstanceMotionBlurInfo(Structure):
@@ -1134,32 +2054,76 @@ class FEmitterBaseInfo(Structure):
     pass
 
 
+class TArray_FEmitterBaseInfo(Structure):
+    _fields_ = [("Data", POINTER(FEmitterBaseInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FParticleSystemLOD(Structure):
     pass
+
+
+class TArray_FParticleSystemLOD(Structure):
+    _fields_ = [("Data", POINTER(FParticleSystemLOD)), ("Count", c_int), ("Max", c_int)]
 
 
 class FStatColorMapEntry(Structure):
     pass
 
 
+class TArray_FStatColorMapEntry(Structure):
+    _fields_ = [("Data", POINTER(FStatColorMapEntry)), ("Count", c_int), ("Max", c_int)]
+
+
 class FStatColorMapping(Structure):
     pass
+
+
+class TArray_FStatColorMapping(Structure):
+    _fields_ = [("Data", POINTER(FStatColorMapping)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDropNoteInfo(Structure):
     pass
 
 
+class TArray_FDropNoteInfo(Structure):
+    _fields_ = [("Data", POINTER(FDropNoteInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPrimitiveMaterialRef(Structure):
     pass
+
+
+class TArray_FPrimitiveMaterialRef(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPrimitiveMaterialRef)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FPostProcessMaterialRef(Structure):
     pass
 
 
+class TArray_FPostProcessMaterialRef(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPostProcessMaterialRef)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FMaterialReferenceList(Structure):
     pass
+
+
+class TArray_FMaterialReferenceList(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMaterialReferenceList)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FVelocityObstacleStat(Structure):
@@ -1168,6 +2132,14 @@ class FVelocityObstacleStat(Structure):
 
 class FGroupAnimationAndSoundIdentifier(Structure):
     pass
+
+
+class TArray_FGroupAnimationAndSoundIdentifier(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGroupAnimationAndSoundIdentifier)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AFogVolumeDensityInfo_FCheckpointRecord(Structure):
@@ -1182,8 +2154,20 @@ class FStoredFoliageInstance(Structure):
     pass
 
 
+class TArray_FStoredFoliageInstance(Structure):
+    _fields_ = [
+        ("Data", POINTER(FStoredFoliageInstance)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FFoliageMesh(Structure):
     pass
+
+
+class TArray_FFoliageMesh(Structure):
+    _fields_ = [("Data", POINTER(FFoliageMesh)), ("Count", c_int), ("Max", c_int)]
 
 
 class FFontImportOptionsData(Structure):
@@ -1194,24 +2178,56 @@ class FFontCharacter(Structure):
     pass
 
 
+class TArray_FFontCharacter(Structure):
+    _fields_ = [("Data", POINTER(FFontCharacter)), ("Count", c_int), ("Max", c_int)]
+
+
 class FWaveformSample(Structure):
     pass
+
+
+class TArray_FWaveformSample(Structure):
+    _fields_ = [("Data", POINTER(FWaveformSample)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLevelStreamingStatus(Structure):
     pass
 
 
+class TArray_FLevelStreamingStatus(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLevelStreamingStatus)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FFullyLoadedPackagesInfo(Structure):
     pass
+
+
+class TArray_FFullyLoadedPackagesInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFullyLoadedPackagesInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FNamedNetDriver(Structure):
     pass
 
 
+class TArray_FNamedNetDriver(Structure):
+    _fields_ = [("Data", POINTER(FNamedNetDriver)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAnimTag(Structure):
     pass
+
+
+class TArray_FAnimTag(Structure):
+    _fields_ = [("Data", POINTER(FAnimTag)), ("Count", c_int), ("Max", c_int)]
 
 
 class FURL(Structure):
@@ -1222,40 +2238,104 @@ class FGameClassShortName(Structure):
     pass
 
 
+class TArray_FGameClassShortName(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGameClassShortName)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGameTypePrefix(Structure):
     pass
+
+
+class TArray_FGameTypePrefix(Structure):
+    _fields_ = [("Data", POINTER(FGameTypePrefix)), ("Count", c_int), ("Max", c_int)]
 
 
 class FPlayerInformation(Structure):
     pass
 
 
+class TArray_FPlayerInformation(Structure):
+    _fields_ = [("Data", POINTER(FPlayerInformation)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTeamInformation(Structure):
     pass
+
+
+class TArray_FTeamInformation(Structure):
+    _fields_ = [("Data", POINTER(FTeamInformation)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGameStatGroup(Structure):
     pass
 
 
+class TArray_FGameStatGroup(Structure):
+    _fields_ = [("Data", POINTER(FGameStatGroup)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGameplayEventMetaData(Structure):
     pass
+
+
+class TArray_FGameplayEventMetaData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGameplayEventMetaData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FWeaponClassEventData(Structure):
     pass
 
 
+class TArray_FWeaponClassEventData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FWeaponClassEventData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDamageClassEventData(Structure):
     pass
+
+
+class TArray_FDamageClassEventData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FDamageClassEventData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FProjectileClassEventData(Structure):
     pass
 
 
+class TArray_FProjectileClassEventData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FProjectileClassEventData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPawnClassEventData(Structure):
     pass
+
+
+class TArray_FPawnClassEventData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPawnClassEventData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGameplayEventsHeader(Structure):
@@ -1294,6 +2374,10 @@ class FNavigationArea(Structure):
     pass
 
 
+class TArray_FNavigationArea(Structure):
+    _fields_ = [("Data", POINTER(FNavigationArea)), ("Count", c_int), ("Max", c_int)]
+
+
 class FWorldFractureSettings(Structure):
     pass
 
@@ -1308,6 +2392,14 @@ class FLightmassWorldInfoSettings(Structure):
 
 class FScreenMessageString(Structure):
     pass
+
+
+class TArray_FScreenMessageString(Structure):
+    _fields_ = [
+        ("Data", POINTER(FScreenMessageString)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FApexModuleDestructibleSettings(Structure):
@@ -1326,8 +2418,20 @@ class FCompartmentRunList(Structure):
     pass
 
 
+class TArray_FCompartmentRunList(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCompartmentRunList)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FNetViewer(Structure):
     pass
+
+
+class TArray_FNetViewer(Structure):
+    _fields_ = [("Data", POINTER(FNetViewer)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLevelGroup(Structure):
@@ -1342,44 +2446,120 @@ class FPerPlayerSplitscreenData(Structure):
     pass
 
 
+class TArray_FPerPlayerSplitscreenData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPerPlayerSplitscreenData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSplitscreenData(Structure):
     pass
+
+
+class TArray_FSplitscreenData(Structure):
+    _fields_ = [("Data", POINTER(FSplitscreenData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDebugDisplayProperty(Structure):
     pass
 
 
+class TArray_FDebugDisplayProperty(Structure):
+    _fields_ = [
+        ("Data", POINTER(FDebugDisplayProperty)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGBXConnectedNavMesh(Structure):
     pass
+
+
+class TArray_FGBXConnectedNavMesh(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXConnectedNavMesh)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGBXNavMeshVertex(Structure):
     pass
 
 
+class TArray_FGBXNavMeshVertex(Structure):
+    _fields_ = [("Data", POINTER(FGBXNavMeshVertex)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGBXNavMeshPoly(Structure):
     pass
+
+
+class TArray_FGBXNavMeshPoly(Structure):
+    _fields_ = [("Data", POINTER(FGBXNavMeshPoly)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGBXNavmeshCrossLevelConnection(Structure):
     pass
 
 
+class TArray_FGBXNavmeshCrossLevelConnection(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavmeshCrossLevelConnection)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGBXNavMeshSpecialMove(Structure):
     pass
+
+
+class TArray_FGBXNavMeshSpecialMove(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavMeshSpecialMove)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGBXNavMeshPolyData(Structure):
     pass
 
 
+class TArray_FGBXNavMeshPolyData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavMeshPolyData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGBXNavMeshPathSize(Structure):
     pass
 
 
+class TArray_FGBXNavMeshPathSize(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavMeshPathSize)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGBXNavMeshObstacleData(Structure):
     pass
+
+
+class TArray_FGBXNavMeshObstacleData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavMeshObstacleData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGBXNavMeshPolyRef(Structure):
@@ -1388,6 +2568,14 @@ class FGBXNavMeshPolyRef(Structure):
 
 class FGBXNavMeshLookupCell(Structure):
     pass
+
+
+class TArray_FGBXNavMeshLookupCell(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavMeshLookupCell)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGBXNavMeshPolyLookup(Structure):
@@ -1402,8 +2590,24 @@ class FIGBXNavMeshObstaclePointer(Structure):
     pass
 
 
+class TArray_FIGBXNavMeshObstaclePointer(Structure):
+    _fields_ = [
+        ("Data", POINTER(FIGBXNavMeshObstaclePointer)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGBXNavMeshPathPoint(Structure):
     pass
+
+
+class TArray_FGBXNavMeshPathPoint(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGBXNavMeshPathPoint)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGBXNavMeshPath(Structure):
@@ -1422,6 +2626,10 @@ class FEdgePointer(Structure):
     pass
 
 
+class TArray_FEdgePointer(Structure):
+    _fields_ = [("Data", POINTER(FEdgePointer)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPathStore(Structure):
     pass
 
@@ -1430,24 +2638,64 @@ class FPlayerOwnedComponent(Structure):
     pass
 
 
+class TArray_FPlayerOwnedComponent(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPlayerOwnedComponent)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAkCallBackGetRTPC(Structure):
     pass
+
+
+class TArray_FAkCallBackGetRTPC(Structure):
+    _fields_ = [("Data", POINTER(FAkCallBackGetRTPC)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGestaltAccessoryPartEntry(Structure):
     pass
 
 
+class TArray_FGestaltAccessoryPartEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltAccessoryPartEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGestaltAccessoryGroupEntry(Structure):
     pass
+
+
+class TArray_FGestaltAccessoryGroupEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltAccessoryGroupEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGestaltAccessoryMeshEntry(Structure):
     pass
 
 
+class TArray_FGestaltAccessoryMeshEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltAccessoryMeshEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGPMCollection(Structure):
     pass
+
+
+class TArray_FGPMCollection(Structure):
+    _fields_ = [("Data", POINTER(FGPMCollection)), ("Count", c_int), ("Max", c_int)]
 
 
 class FActorToLookAt(Structure):
@@ -1458,8 +2706,24 @@ class FHybridNavVisualizationVert(Structure):
     pass
 
 
+class TArray_FHybridNavVisualizationVert(Structure):
+    _fields_ = [
+        ("Data", POINTER(FHybridNavVisualizationVert)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FHybridNavVisualizationVertsForNavPoint(Structure):
     pass
+
+
+class TArray_FHybridNavVisualizationVertsForNavPoint(Structure):
+    _fields_ = [
+        ("Data", POINTER(FHybridNavVisualizationVertsForNavPoint)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FHybridNavVisualizationPerfStats(Structure):
@@ -1478,8 +2742,20 @@ class FIniLocFileEntry(Structure):
     pass
 
 
+class TArray_FIniLocFileEntry(Structure):
+    _fields_ = [("Data", POINTER(FIniLocFileEntry)), ("Count", c_int), ("Max", c_int)]
+
+
 class FBodyInstanceDataUnion(Structure):
     pass
+
+
+class TArray_FBodyInstanceDataUnion(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBodyInstanceDataUnion)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBodyCompositionData(Structure):
@@ -1490,8 +2766,24 @@ class FInstancedStaticMeshInstanceData(Structure):
     pass
 
 
+class TArray_FInstancedStaticMeshInstanceData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInstancedStaticMeshInstanceData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FInstancedStaticMeshMappingInfo(Structure):
     pass
+
+
+class TArray_FInstancedStaticMeshMappingInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInstancedStaticMeshMappingInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AInterpActor_FCheckpointRecord(Structure):
@@ -1502,12 +2794,28 @@ class FCurveEdEntry(Structure):
     pass
 
 
+class TArray_FCurveEdEntry(Structure):
+    _fields_ = [("Data", POINTER(FCurveEdEntry)), ("Count", c_int), ("Max", c_int)]
+
+
 class FCurveEdTab(Structure):
     pass
 
 
+class TArray_FCurveEdTab(Structure):
+    _fields_ = [("Data", POINTER(FCurveEdTab)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAnimSetBakeAndPruneStatus(Structure):
     pass
+
+
+class TArray_FAnimSetBakeAndPruneStatus(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAnimSetBakeAndPruneStatus)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FInterpEdSelKey(Structure):
@@ -1526,52 +2834,120 @@ class FAnimControlTrackKey(Structure):
     pass
 
 
+class TArray_FAnimControlTrackKey(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAnimControlTrackKey)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBoolTrackKey(Structure):
     pass
+
+
+class TArray_FBoolTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FBoolTrackKey)), ("Count", c_int), ("Max", c_int)]
 
 
 class FCommentTrackKey(Structure):
     pass
 
 
+class TArray_FCommentTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FCommentTrackKey)), ("Count", c_int), ("Max", c_int)]
+
+
 class FDirectorTrackCut(Structure):
     pass
+
+
+class TArray_FDirectorTrackCut(Structure):
+    _fields_ = [("Data", POINTER(FDirectorTrackCut)), ("Count", c_int), ("Max", c_int)]
 
 
 class FEventTrackKey(Structure):
     pass
 
 
+class TArray_FEventTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FEventTrackKey)), ("Count", c_int), ("Max", c_int)]
+
+
 class FFaceFXTrackKey(Structure):
     pass
+
+
+class TArray_FFaceFXTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FFaceFXTrackKey)), ("Count", c_int), ("Max", c_int)]
 
 
 class FFaceFXSoundCueKey(Structure):
     pass
 
 
+class TArray_FFaceFXSoundCueKey(Structure):
+    _fields_ = [("Data", POINTER(FFaceFXSoundCueKey)), ("Count", c_int), ("Max", c_int)]
+
+
 class FHeadTrackingKey(Structure):
     pass
+
+
+class TArray_FHeadTrackingKey(Structure):
+    _fields_ = [("Data", POINTER(FHeadTrackingKey)), ("Count", c_int), ("Max", c_int)]
 
 
 class FFloatMaterialParamMICData(Structure):
     pass
 
 
+class TArray_FFloatMaterialParamMICData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFloatMaterialParamMICData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FToggleTrackKey(Structure):
     pass
+
+
+class TArray_FToggleTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FToggleTrackKey)), ("Count", c_int), ("Max", c_int)]
 
 
 class FVectorMaterialParamMICData(Structure):
     pass
 
 
+class TArray_FVectorMaterialParamMICData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FVectorMaterialParamMICData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FVisibilityTrackKey(Structure):
     pass
 
 
+class TArray_FVisibilityTrackKey(Structure):
+    _fields_ = [
+        ("Data", POINTER(FVisibilityTrackKey)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FInterpLookupPoint(Structure):
     pass
+
+
+class TArray_FInterpLookupPoint(Structure):
+    _fields_ = [("Data", POINTER(FInterpLookupPoint)), ("Count", c_int), ("Max", c_int)]
 
 
 class FInterpLookupTrack(Structure):
@@ -1582,12 +2958,28 @@ class FParticleReplayTrackKey(Structure):
     pass
 
 
+class TArray_FParticleReplayTrackKey(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleReplayTrackKey)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSoundTrackKey(Structure):
     pass
 
 
+class TArray_FSoundTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FSoundTrackKey)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTeleportKeyData(Structure):
     pass
+
+
+class TArray_FTeleportKeyData(Structure):
+    _fields_ = [("Data", POINTER(FTeleportKeyData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FImpulseData(Structure):
@@ -1602,6 +2994,14 @@ class FLandscapeLayerInfo(Structure):
     pass
 
 
+class TArray_FLandscapeLayerInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLandscapeLayerInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FLandscapeAddCollision(Structure):
     pass
 
@@ -1610,8 +3010,20 @@ class FWeightmapLayerAllocationInfo(Structure):
     pass
 
 
+class TArray_FWeightmapLayerAllocationInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FWeightmapLayerAllocationInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FLensFlareElement(Structure):
     pass
+
+
+class TArray_FLensFlareElement(Structure):
+    _fields_ = [("Data", POINTER(FLensFlareElement)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLensFlareElementCurvePair(Structure):
@@ -1620,6 +3032,14 @@ class FLensFlareElementCurvePair(Structure):
 
 class FLensFlareElementMaterials(Structure):
     pass
+
+
+class TArray_FLensFlareElementMaterials(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLensFlareElementMaterials)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FLensFlareElementInstance(Structure):
@@ -1638,8 +3058,24 @@ class FPostProcessSettingsOverride(Structure):
     pass
 
 
+class TArray_FPostProcessSettingsOverride(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPostProcessSettingsOverride)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FWorldLightingOverride(Structure):
     pass
+
+
+class TArray_FWorldLightingOverride(Structure):
+    _fields_ = [
+        ("Data", POINTER(FWorldLightingOverride)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FCurrentPostProcessVolumeInfo(Structure):
@@ -1654,8 +3090,24 @@ class FManufacturerGradeData(Structure):
     pass
 
 
+class TArray_FManufacturerGradeData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FManufacturerGradeData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FManufacturerCustomGradeWeightData(Structure):
     pass
+
+
+class TArray_FManufacturerCustomGradeWeightData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FManufacturerCustomGradeWeightData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FExpressionInput(Structure):
@@ -1666,20 +3118,56 @@ class FCustomInput(Structure):
     pass
 
 
+class TArray_FCustomInput(Structure):
+    _fields_ = [("Data", POINTER(FCustomInput)), ("Count", c_int), ("Max", c_int)]
+
+
 class FFontParameterValue(Structure):
     pass
+
+
+class TArray_FFontParameterValue(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFontParameterValue)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FScalarParameterValue(Structure):
     pass
 
 
+class TArray_FScalarParameterValue(Structure):
+    _fields_ = [
+        ("Data", POINTER(FScalarParameterValue)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTextureParameterValue(Structure):
     pass
 
 
+class TArray_FTextureParameterValue(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTextureParameterValue)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FVectorParameterValue(Structure):
     pass
+
+
+class TArray_FVectorParameterValue(Structure):
+    _fields_ = [
+        ("Data", POINTER(FVectorParameterValue)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FParameterValueOverTime(Structure):
@@ -1690,28 +3178,72 @@ class FFontParameterValueOverTime(Structure):
     pass
 
 
+class TArray_FFontParameterValueOverTime(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFontParameterValueOverTime)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FScalarParameterValueOverTime(Structure):
     pass
+
+
+class TArray_FScalarParameterValueOverTime(Structure):
+    _fields_ = [
+        ("Data", POINTER(FScalarParameterValueOverTime)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FTextureParameterValueOverTime(Structure):
     pass
 
 
+class TArray_FTextureParameterValueOverTime(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTextureParameterValueOverTime)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FVectorParameterValueOverTime(Structure):
     pass
+
+
+class TArray_FVectorParameterValueOverTime(Structure):
+    _fields_ = [
+        ("Data", POINTER(FVectorParameterValueOverTime)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FMorphNodeConn(Structure):
     pass
 
 
+class TArray_FMorphNodeConn(Structure):
+    _fields_ = [("Data", POINTER(FMorphNodeConn)), ("Count", c_int), ("Max", c_int)]
+
+
 class FBoneAngleMorph(Structure):
     pass
 
 
+class TArray_FBoneAngleMorph(Structure):
+    _fields_ = [("Data", POINTER(FBoneAngleMorph)), ("Count", c_int), ("Max", c_int)]
+
+
 class FBiasedGoalActor(Structure):
     pass
+
+
+class TArray_FBiasedGoalActor(Structure):
+    _fields_ = [("Data", POINTER(FBiasedGoalActor)), ("Count", c_int), ("Max", c_int)]
 
 
 class ANavMeshObstacle_FCheckpointRecord(Structure):
@@ -1726,32 +3258,72 @@ class FOnlineProfileSetting(Structure):
     pass
 
 
+class TArray_FOnlineProfileSetting(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineProfileSetting)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FUIDataProviderField(Structure):
     pass
+
+
+class TArray_FUIDataProviderField(Structure):
+    _fields_ = [
+        ("Data", POINTER(FUIDataProviderField)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FRecentParty(Structure):
     pass
 
 
+class TArray_FRecentParty(Structure):
+    _fields_ = [("Data", POINTER(FRecentParty)), ("Count", c_int), ("Max", c_int)]
+
+
 class FCurrentPlayerMet(Structure):
     pass
+
+
+class TArray_FCurrentPlayerMet(Structure):
+    _fields_ = [("Data", POINTER(FCurrentPlayerMet)), ("Count", c_int), ("Max", c_int)]
 
 
 class FOnlineStatsColumn(Structure):
     pass
 
 
+class TArray_FOnlineStatsColumn(Structure):
+    _fields_ = [("Data", POINTER(FOnlineStatsColumn)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOnlineStatsRow(Structure):
     pass
+
+
+class TArray_FOnlineStatsRow(Structure):
+    _fields_ = [("Data", POINTER(FOnlineStatsRow)), ("Count", c_int), ("Max", c_int)]
 
 
 class FColumnMetaData(Structure):
     pass
 
 
+class TArray_FColumnMetaData(Structure):
+    _fields_ = [("Data", POINTER(FColumnMetaData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FParticleBurst(Structure):
     pass
+
+
+class TArray_FParticleBurst(Structure):
+    _fields_ = [("Data", POINTER(FParticleBurst)), ("Count", c_int), ("Max", c_int)]
 
 
 class FParticleCurvePair(Structure):
@@ -1770,8 +3342,24 @@ class FParticleEvent_GenerateInfo(Structure):
     pass
 
 
+class TArray_FParticleEvent_GenerateInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEvent_GenerateInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FLocationBoneSocketInfo(Structure):
     pass
+
+
+class TArray_FLocationBoneSocketInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLocationBoneSocketInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FOrbitOptions(Structure):
@@ -1780,6 +3368,14 @@ class FOrbitOptions(Structure):
 
 class FEmitterDynamicParameter(Structure):
     pass
+
+
+class TArray_FEmitterDynamicParameter(Structure):
+    _fields_ = [
+        ("Data", POINTER(FEmitterDynamicParameter)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBeamTargetData(Structure):
@@ -1798,8 +3394,24 @@ class FParticleEmitterReplayFrame(Structure):
     pass
 
 
+class TArray_FParticleEmitterReplayFrame(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleEmitterReplayFrame)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FParticleSystemReplayFrame(Structure):
     pass
+
+
+class TArray_FParticleSystemReplayFrame(Structure):
+    _fields_ = [
+        ("Data", POINTER(FParticleSystemReplayFrame)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FPersistentData(Structure):
@@ -1822,16 +3434,40 @@ class FActivateOp(Structure):
     pass
 
 
+class TArray_FActivateOp(Structure):
+    _fields_ = [("Data", POINTER(FActivateOp)), ("Count", c_int), ("Max", c_int)]
+
+
 class FQueuedActivationInfo(Structure):
     pass
+
+
+class TArray_FQueuedActivationInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FQueuedActivationInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FKCachedConvexDataElement(Structure):
     pass
 
 
+class TArray_FKCachedConvexDataElement(Structure):
+    _fields_ = [
+        ("Data", POINTER(FKCachedConvexDataElement)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FKCachedConvexData(Structure):
     pass
+
+
+class TArray_FKCachedConvexData(Structure):
+    _fields_ = [("Data", POINTER(FKCachedConvexData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FLinearDOFSetup(Structure):
@@ -1850,8 +3486,16 @@ class FPathSizeInfo(Structure):
     pass
 
 
+class TArray_FPathSizeInfo(Structure):
+    _fields_ = [("Data", POINTER(FPathSizeInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FCameraCutInfo(Structure):
     pass
+
+
+class TArray_FCameraCutInfo(Structure):
+    _fields_ = [("Data", POINTER(FCameraCutInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSavedTransform(Structure):
@@ -1862,36 +3506,96 @@ class FLevelStreamingNameCombo(Structure):
     pass
 
 
+class TArray_FLevelStreamingNameCombo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLevelStreamingNameCombo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSwitchClassInfo(Structure):
     pass
+
+
+class TArray_FSwitchClassInfo(Structure):
+    _fields_ = [("Data", POINTER(FSwitchClassInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSwitchObjectCase(Structure):
     pass
 
 
+class TArray_FSwitchObjectCase(Structure):
+    _fields_ = [("Data", POINTER(FSwitchObjectCase)), ("Count", c_int), ("Max", c_int)]
+
+
 class FShadowRelevanceSizePair(Structure):
     pass
+
+
+class TArray_FShadowRelevanceSizePair(Structure):
+    _fields_ = [
+        ("Data", POINTER(FShadowRelevanceSizePair)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FSoftBodyTetraLink(Structure):
     pass
 
 
+class TArray_FSoftBodyTetraLink(Structure):
+    _fields_ = [("Data", POINTER(FSoftBodyTetraLink)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSoftBodySpecialBoneInfo(Structure):
     pass
+
+
+class TArray_FSoftBodySpecialBoneInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSoftBodySpecialBoneInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FClothSpecialBoneInfo(Structure):
     pass
 
 
+class TArray_FClothSpecialBoneInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FClothSpecialBoneInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTriangleSortSettings(Structure):
     pass
 
 
+class TArray_FTriangleSortSettings(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTriangleSortSettings)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSkeletalMeshLODInfo(Structure):
     pass
+
+
+class TArray_FSkeletalMeshLODInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSkeletalMeshLODInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBoneMirrorExport(Structure):
@@ -1902,8 +3606,20 @@ class FBoneMirrorInfo(Structure):
     pass
 
 
+class TArray_FBoneMirrorInfo(Structure):
+    _fields_ = [("Data", POINTER(FBoneMirrorInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSkelMeshActorControlTarget(Structure):
     pass
+
+
+class TArray_FSkelMeshActorControlTarget(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSkelMeshActorControlTarget)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ASkeletalMeshActor_FCheckpointRecord(Structure):
@@ -1912,6 +3628,14 @@ class ASkeletalMeshActor_FCheckpointRecord(Structure):
 
 class FSkelMaterialSetterDatum(Structure):
     pass
+
+
+class TArray_FSkelMaterialSetterDatum(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSkelMaterialSetterDatum)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FSoundClassEditorData(Structure):
@@ -1930,6 +3654,14 @@ class FSoundClassAdjuster(Structure):
     pass
 
 
+class TArray_FSoundClassAdjuster(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSoundClassAdjuster)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAudioEQEffect(Structure):
     pass
 
@@ -1938,8 +3670,16 @@ class FRecognisableWord(Structure):
     pass
 
 
+class TArray_FRecognisableWord(Structure):
+    _fields_ = [("Data", POINTER(FRecognisableWord)), ("Count", c_int), ("Max", c_int)]
+
+
 class FRecogVocabulary(Structure):
     pass
+
+
+class TArray_FRecogVocabulary(Structure):
+    _fields_ = [("Data", POINTER(FRecogVocabulary)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRecogUserData(Structure):
@@ -1948,6 +3688,10 @@ class FRecogUserData(Structure):
 
 class FSplineConnection(Structure):
     pass
+
+
+class TArray_FSplineConnection(Structure):
+    _fields_ = [("Data", POINTER(FSplineConnection)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSplineMeshParams(Structure):
@@ -1962,6 +3706,14 @@ class FSMMaterialSetterDatum(Structure):
     pass
 
 
+class TArray_FSMMaterialSetterDatum(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSMMaterialSetterDatum)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FVehicleState(Structure):
     pass
 
@@ -1974,36 +3726,84 @@ class FTerrainHeight(Structure):
     pass
 
 
+class TArray_FTerrainHeight(Structure):
+    _fields_ = [("Data", POINTER(FTerrainHeight)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTerrainInfoData(Structure):
     pass
+
+
+class TArray_FTerrainInfoData(Structure):
+    _fields_ = [("Data", POINTER(FTerrainInfoData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FTerrainLayer(Structure):
     pass
 
 
+class TArray_FTerrainLayer(Structure):
+    _fields_ = [("Data", POINTER(FTerrainLayer)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTerrainDecorationInstance(Structure):
     pass
+
+
+class TArray_FTerrainDecorationInstance(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTerrainDecorationInstance)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FTerrainDecoration(Structure):
     pass
 
 
+class TArray_FTerrainDecoration(Structure):
+    _fields_ = [("Data", POINTER(FTerrainDecoration)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTerrainDecoLayer(Structure):
     pass
+
+
+class TArray_FTerrainDecoLayer(Structure):
+    _fields_ = [("Data", POINTER(FTerrainDecoLayer)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAlphaMap(Structure):
     pass
 
 
+class TArray_FAlphaMap(Structure):
+    _fields_ = [("Data", POINTER(FAlphaMap)), ("Count", c_int), ("Max", c_int)]
+
+
 class ATerrain_FTerrainWeightedMaterial(Structure):
     pass
 
 
+class TArray_ATerrain_FTerrainWeightedMaterial(Structure):
+    _fields_ = [
+        ("Data", POINTER(ATerrain_FTerrainWeightedMaterial)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSelectedTerrainVertex(Structure):
     pass
+
+
+class TArray_FSelectedTerrainVertex(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSelectedTerrainVertex)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FTerrainMaterialResource(Structure):
@@ -2030,8 +3830,24 @@ class FTerrainFilteredMaterial(Structure):
     pass
 
 
+class TArray_FTerrainFilteredMaterial(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTerrainFilteredMaterial)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTerrainFoliageMesh(Structure):
     pass
+
+
+class TArray_FTerrainFoliageMesh(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTerrainFoliageMesh)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UTerrainWeightMapTexture_FTerrainWeightedMaterial(Structure):
@@ -2042,6 +3858,14 @@ class FSourceTexture2DRegion(Structure):
     pass
 
 
+class TArray_FSourceTexture2DRegion(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSourceTexture2DRegion)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ATrigger_FCheckpointRecord(Structure):
     pass
 
@@ -2050,20 +3874,60 @@ class FLevelStreamingData(Structure):
     pass
 
 
+class TArray_FLevelStreamingData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLevelStreamingData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPlayerStorageArrayProvider(Structure):
     pass
+
+
+class TArray_FPlayerStorageArrayProvider(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPlayerStorageArrayProvider)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FSettingsArrayProvider(Structure):
     pass
 
 
+class TArray_FSettingsArrayProvider(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSettingsArrayProvider)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDynamicResourceProviderDefinition(Structure):
     pass
 
 
+class TArray_FDynamicResourceProviderDefinition(Structure):
+    _fields_ = [
+        ("Data", POINTER(FDynamicResourceProviderDefinition)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGameResourceDataProvider(Structure):
     pass
+
+
+class TArray_FGameResourceDataProvider(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGameResourceDataProvider)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FUIInputKeyData(Structure):
@@ -2074,12 +3938,28 @@ class FUIDataStoreInputAlias(Structure):
     pass
 
 
+class TArray_FUIDataStoreInputAlias(Structure):
+    _fields_ = [
+        ("Data", POINTER(FUIDataStoreInputAlias)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGameSearchCfg(Structure):
     pass
 
 
+class TArray_FGameSearchCfg(Structure):
+    _fields_ = [("Data", POINTER(FGameSearchCfg)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGameSettingsCfg(Structure):
     pass
+
+
+class TArray_FGameSettingsCfg(Structure):
+    _fields_ = [("Data", POINTER(FGameSettingsCfg)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRankMetaData(Structure):
@@ -2094,6 +3974,10 @@ class FUIMenuInputMap(Structure):
     pass
 
 
+class TArray_FUIMenuInputMap(Structure):
+    _fields_ = [("Data", POINTER(FUIMenuInputMap)), ("Count", c_int), ("Max", c_int)]
+
+
 class FUIKeyRepeatData(Structure):
     pass
 
@@ -2106,20 +3990,52 @@ class FSoundEventMapping(Structure):
     pass
 
 
+class TArray_FSoundEventMapping(Structure):
+    _fields_ = [("Data", POINTER(FSoundEventMapping)), ("Count", c_int), ("Max", c_int)]
+
+
 class FUIStatData(Structure):
     pass
+
+
+class TArray_FUIStatData(Structure):
+    _fields_ = [("Data", POINTER(FUIStatData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAttributeSlotEffectData(Structure):
     pass
 
 
+class TArray_FAttributeSlotEffectData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributeSlotEffectData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAttributeSlotUpgradeData(Structure):
     pass
 
 
+class TArray_FAttributeSlotUpgradeData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttributeSlotUpgradeData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FInventorySerialNumber(Structure):
     pass
+
+
+class TArray_FInventorySerialNumber(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInventorySerialNumber)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAttributeSlotData(Structure):
@@ -2128,6 +4044,10 @@ class FAttributeSlotData(Structure):
 
 class FWorldEventSource(Structure):
     pass
+
+
+class TArray_FWorldEventSource(Structure):
+    _fields_ = [("Data", POINTER(FWorldEventSource)), ("Count", c_int), ("Max", c_int)]
 
 
 from ..structs.Base import *

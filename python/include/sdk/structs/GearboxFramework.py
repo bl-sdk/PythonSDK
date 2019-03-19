@@ -6,8 +6,16 @@ class FAIHoldData(Structure):
     pass
 
 
+class TArray_FAIHoldData(Structure):
+    _fields_ = [("Data", POINTER(FAIHoldData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAIResourceData(Structure):
     pass
+
+
+class TArray_FAIResourceData(Structure):
+    _fields_ = [("Data", POINTER(FAIResourceData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FAIRange(Structure):
@@ -18,6 +26,10 @@ class FAITreeData(Structure):
     pass
 
 
+class TArray_FAITreeData(Structure):
+    _fields_ = [("Data", POINTER(FAITreeData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPriorityData(Structure):
     pass
 
@@ -26,28 +38,68 @@ class FFlagDefinitionInitialization(Structure):
     pass
 
 
+class TArray_FFlagDefinitionInitialization(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFlagDefinitionInitialization)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FCoverDebugScoringInfo(Structure):
     pass
+
+
+class TArray_FCoverDebugScoringInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCoverDebugScoringInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FCoverDebugPriority(Structure):
     pass
 
 
+class TArray_FCoverDebugPriority(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCoverDebugPriority)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FValidNameRange(Structure):
     pass
+
+
+class TArray_FValidNameRange(Structure):
+    _fields_ = [("Data", POINTER(FValidNameRange)), ("Count", c_int), ("Max", c_int)]
 
 
 class FObjectKey(Structure):
     pass
 
 
+class TArray_FObjectKey(Structure):
+    _fields_ = [("Data", POINTER(FObjectKey)), ("Count", c_int), ("Max", c_int)]
+
+
 class FLevelStateRecord(Structure):
     pass
 
 
+class TArray_FLevelStateRecord(Structure):
+    _fields_ = [("Data", POINTER(FLevelStateRecord)), ("Count", c_int), ("Max", c_int)]
+
+
 class FVantageSpot(Structure):
     pass
+
+
+class TArray_FVantageSpot(Structure):
+    _fields_ = [("Data", POINTER(FVantageSpot)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGearboxCoverState(Structure):
@@ -66,12 +118,28 @@ class FPopulationActor(Structure):
     pass
 
 
+class TArray_FPopulationActor(Structure):
+    _fields_ = [("Data", POINTER(FPopulationActor)), ("Count", c_int), ("Max", c_int)]
+
+
 class FLocationInfo(Structure):
     pass
 
 
+class TArray_FLocationInfo(Structure):
+    _fields_ = [("Data", POINTER(FLocationInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FActionSequenceRandomData(Structure):
     pass
+
+
+class TArray_FActionSequenceRandomData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FActionSequenceRandomData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FSubarrayData(Structure):
@@ -82,8 +150,24 @@ class FBehaviorSequenceActionData2(Structure):
     pass
 
 
+class TArray_FBehaviorSequenceActionData2(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorSequenceActionData2)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorVariableValue(Structure):
     pass
+
+
+class TArray_FBehaviorVariableValue(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorVariableValue)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBehaviorVariableValueUnion_Mirror(Structure):
@@ -94,6 +178,14 @@ class FBehaviorVariableData(Structure):
     pass
 
 
+class TArray_FBehaviorVariableData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorVariableData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorEventUserData(Structure):
     pass
 
@@ -102,40 +194,112 @@ class FBehaviorVariableLinkData(Structure):
     pass
 
 
+class TArray_FBehaviorVariableLinkData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorVariableLinkData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorActionLinkData(Structure):
     pass
+
+
+class TArray_FBehaviorActionLinkData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorActionLinkData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBehaviorOutputLinkData(Structure):
     pass
 
 
+class TArray_FBehaviorOutputLinkData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorOutputLinkData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorEventData(Structure):
     pass
+
+
+class TArray_FBehaviorEventData(Structure):
+    _fields_ = [("Data", POINTER(FBehaviorEventData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FBehaviorEventData2(Structure):
     pass
 
 
+class TArray_FBehaviorEventData2(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorEventData2)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorSequenceActionData(Structure):
     pass
+
+
+class TArray_FBehaviorSequenceActionData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorSequenceActionData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBehaviorOutputLinkData2(Structure):
     pass
 
 
+class TArray_FBehaviorOutputLinkData2(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorOutputLinkData2)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBehaviorVariableLinkData2(Structure):
     pass
+
+
+class TArray_FBehaviorVariableLinkData2(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorVariableLinkData2)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FBehaviorSequenceData(Structure):
     pass
 
 
+class TArray_FBehaviorSequenceData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorSequenceData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDebugListItem(Structure):
     pass
+
+
+class TArray_FDebugListItem(Structure):
+    _fields_ = [("Data", POINTER(FDebugListItem)), ("Count", c_int), ("Max", c_int)]
 
 
 class FBehaviorConsumerHandle(Structure):
@@ -150,44 +314,108 @@ class FKnowledgeRecordStruct(Structure):
     pass
 
 
+class TArray_FKnowledgeRecordStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FKnowledgeRecordStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FRuleSetRecord(Structure):
     pass
+
+
+class TArray_FRuleSetRecord(Structure):
+    _fields_ = [("Data", POINTER(FRuleSetRecord)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRuleRecord(Structure):
     pass
 
 
+class TArray_FRuleRecord(Structure):
+    _fields_ = [("Data", POINTER(FRuleRecord)), ("Count", c_int), ("Max", c_int)]
+
+
 class FActionSequenceRecord(Structure):
     pass
+
+
+class TArray_FActionSequenceRecord(Structure):
+    _fields_ = [
+        ("Data", POINTER(FActionSequenceRecord)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FTargetInfoRecord(Structure):
     pass
 
 
+class TArray_FTargetInfoRecord(Structure):
+    _fields_ = [("Data", POINTER(FTargetInfoRecord)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAIDefinitionRecord(Structure):
     pass
+
+
+class TArray_FAIDefinitionRecord(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAIDefinitionRecord)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAIResourceRestriction(Structure):
     pass
 
 
+class TArray_FAIResourceRestriction(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAIResourceRestriction)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FOutputLink(Structure):
     pass
+
+
+class TArray_FOutputLink(Structure):
+    _fields_ = [("Data", POINTER(FOutputLink)), ("Count", c_int), ("Max", c_int)]
 
 
 class FVariableLink(Structure):
     pass
 
 
+class TArray_FVariableLink(Structure):
+    _fields_ = [("Data", POINTER(FVariableLink)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSpecialMoveData(Structure):
     pass
 
 
+class TArray_FSpecialMoveData(Structure):
+    _fields_ = [("Data", POINTER(FSpecialMoveData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSlotAnimParameters(Structure):
     pass
+
+
+class TArray_FSlotAnimParameters(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSlotAnimParameters)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FSpecializedBehaviorEvent(Structure):
@@ -222,8 +450,20 @@ class FAttachmentLocationData(Structure):
     pass
 
 
+class TArray_FAttachmentLocationData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAttachmentLocationData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FProviderRecord(Structure):
     pass
+
+
+class TArray_FProviderRecord(Structure):
+    _fields_ = [("Data", POINTER(FProviderRecord)), ("Count", c_int), ("Max", c_int)]
 
 
 class FBehaviorExecutionRecord(Structure):
@@ -278,24 +518,64 @@ class FBehaviorTriggerMessageStruct(Structure):
     pass
 
 
+class TArray_FBehaviorTriggerMessageStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FBehaviorTriggerMessageStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FExposureCacheStruct(Structure):
     pass
+
+
+class TArray_FExposureCacheStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FExposureCacheStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FExposureUpdateStruct(Structure):
     pass
 
 
+class TArray_FExposureUpdateStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FExposureUpdateStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FBucketStruct(Structure):
     pass
+
+
+class TArray_FBucketStruct(Structure):
+    _fields_ = [("Data", POINTER(FBucketStruct)), ("Count", c_int), ("Max", c_int)]
 
 
 class FPointExposureData(Structure):
     pass
 
 
+class TArray_FPointExposureData(Structure):
+    _fields_ = [("Data", POINTER(FPointExposureData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FFeatherBoneBlendData(Structure):
     pass
+
+
+class TArray_FFeatherBoneBlendData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFeatherBoneBlendData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FFiringBehaviorBurstInfo(Structure):
@@ -306,16 +586,44 @@ class FConditionalPattern(Structure):
     pass
 
 
+class TArray_FConditionalPattern(Structure):
+    _fields_ = [
+        ("Data", POINTER(FConditionalPattern)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FFlagEvalConditional(Structure):
     pass
+
+
+class TArray_FFlagEvalConditional(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFlagEvalConditional)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FFlagEvalORConnector(Structure):
     pass
 
 
+class TArray_FFlagEvalORConnector(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFlagEvalORConnector)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class Fs_actorList(Structure):
     pass
+
+
+class TArray_Fs_actorList(Structure):
+    _fields_ = [("Data", POINTER(Fs_actorList)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSparkResult(Structure):
@@ -330,20 +638,44 @@ class FEULAData(Structure):
     pass
 
 
+class TArray_FEULAData(Structure):
+    _fields_ = [("Data", POINTER(FEULAData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FEntitlementResult(Structure):
     pass
+
+
+class TArray_FEntitlementResult(Structure):
+    _fields_ = [("Data", POINTER(FEntitlementResult)), ("Count", c_int), ("Max", c_int)]
 
 
 class FOfferResult(Structure):
     pass
 
 
+class TArray_FOfferResult(Structure):
+    _fields_ = [("Data", POINTER(FOfferResult)), ("Count", c_int), ("Max", c_int)]
+
+
 class FServiceParameterResult(Structure):
     pass
 
 
+class TArray_FServiceParameterResult(Structure):
+    _fields_ = [
+        ("Data", POINTER(FServiceParameterResult)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FServiceResult(Structure):
     pass
+
+
+class TArray_FServiceResult(Structure):
+    _fields_ = [("Data", POINTER(FServiceResult)), ("Count", c_int), ("Max", c_int)]
 
 
 class FArchwayResult(Structure):
@@ -354,16 +686,36 @@ class FNodeData(Structure):
     pass
 
 
+class TArray_FNodeData(Structure):
+    _fields_ = [("Data", POINTER(FNodeData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSMBehavior(Structure):
     pass
+
+
+class TArray_FSMBehavior(Structure):
+    _fields_ = [("Data", POINTER(FSMBehavior)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSMNotify(Structure):
     pass
 
 
+class TArray_FSMNotify(Structure):
+    _fields_ = [("Data", POINTER(FSMNotify)), ("Count", c_int), ("Max", c_int)]
+
+
 class FTimedAnimBehaviorEvent(Structure):
     pass
+
+
+class TArray_FTimedAnimBehaviorEvent(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTimedAnimBehaviorEvent)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FCoverSpotInfo(Structure):
@@ -374,6 +726,10 @@ class FGearboxDialogData(Structure):
     pass
 
 
+class TArray_FGearboxDialogData(Structure):
+    _fields_ = [("Data", POINTER(FGearboxDialogData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGearboxDialogReplicatedData(Structure):
     pass
 
@@ -382,8 +738,20 @@ class FOutputLinkToStruct(Structure):
     pass
 
 
+class TArray_FOutputLinkToStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOutputLinkToStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDialogEventData(Structure):
     pass
+
+
+class TArray_FDialogEventData(Structure):
+    _fields_ = [("Data", POINTER(FDialogEventData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDialogEventInfo(Structure):
@@ -394,8 +762,16 @@ class FTalkActData(Structure):
     pass
 
 
+class TArray_FTalkActData(Structure):
+    _fields_ = [("Data", POINTER(FTalkActData)), ("Count", c_int), ("Max", c_int)]
+
+
 class FMovieStateData(Structure):
     pass
+
+
+class TArray_FMovieStateData(Structure):
+    _fields_ = [("Data", POINTER(FMovieStateData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FMovieStateStruct(Structure):
@@ -410,16 +786,40 @@ class FNounAttributeState(Structure):
     pass
 
 
+class TArray_FNounAttributeState(Structure):
+    _fields_ = [
+        ("Data", POINTER(FNounAttributeState)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDynamicFlagInstanceData(Structure):
     pass
+
+
+class TArray_FDynamicFlagInstanceData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FDynamicFlagInstanceData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FEventRecord(Structure):
     pass
 
 
+class TArray_FEventRecord(Structure):
+    _fields_ = [("Data", POINTER(FEventRecord)), ("Count", c_int), ("Max", c_int)]
+
+
 class FRuleSetReference(Structure):
     pass
+
+
+class TArray_FRuleSetReference(Structure):
+    _fields_ = [("Data", POINTER(FRuleSetReference)), ("Count", c_int), ("Max", c_int)]
 
 
 class FTargetIteratorData(Structure):
@@ -438,6 +838,10 @@ class FRuleInfo(Structure):
     pass
 
 
+class TArray_FRuleInfo(Structure):
+    _fields_ = [("Data", POINTER(FRuleInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FIconData(Structure):
     pass
 
@@ -446,36 +850,80 @@ class FAwarenessInfo(Structure):
     pass
 
 
+class TArray_FAwarenessInfo(Structure):
+    _fields_ = [("Data", POINTER(FAwarenessInfo)), ("Count", c_int), ("Max", c_int)]
+
+
 class FLastVisibleInfo(Structure):
     pass
+
+
+class TArray_FLastVisibleInfo(Structure):
+    _fields_ = [("Data", POINTER(FLastVisibleInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDebugExposure(Structure):
     pass
 
 
+class TArray_FDebugExposure(Structure):
+    _fields_ = [("Data", POINTER(FDebugExposure)), ("Count", c_int), ("Max", c_int)]
+
+
 class FViewConeInfo(Structure):
     pass
+
+
+class TArray_FViewConeInfo(Structure):
+    _fields_ = [("Data", POINTER(FViewConeInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FCoverDebugScoringData(Structure):
     pass
 
 
+class TArray_FCoverDebugScoringData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FCoverDebugScoringData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FCoverDebugInfo(Structure):
     pass
+
+
+class TArray_FCoverDebugInfo(Structure):
+    _fields_ = [("Data", POINTER(FCoverDebugInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FTargetPriorityInfo(Structure):
     pass
 
 
+class TArray_FTargetPriorityInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FTargetPriorityInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTargetDebugDatum(Structure):
     pass
 
 
+class TArray_FTargetDebugDatum(Structure):
+    _fields_ = [("Data", POINTER(FTargetDebugDatum)), ("Count", c_int), ("Max", c_int)]
+
+
 class FAIHoldDebugData(Structure):
     pass
+
+
+class TArray_FAIHoldDebugData(Structure):
+    _fields_ = [("Data", POINTER(FAIHoldDebugData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGearboxViewShakeInfo(Structure):
@@ -490,40 +938,108 @@ class FThumbnailRenderData(Structure):
     pass
 
 
+class TArray_FThumbnailRenderData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FThumbnailRenderData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FThumbnailLightData(Structure):
     pass
+
+
+class TArray_FThumbnailLightData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FThumbnailLightData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGestaltPart(Structure):
     pass
 
 
+class TArray_FGestaltPart(Structure):
+    _fields_ = [("Data", POINTER(FGestaltPart)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGestaltInfo(Structure):
     pass
+
+
+class TArray_FGestaltInfo(Structure):
+    _fields_ = [("Data", POINTER(FGestaltInfo)), ("Count", c_int), ("Max", c_int)]
 
 
 class FGestaltAccessoryNameEntry(Structure):
     pass
 
 
+class TArray_FGestaltAccessoryNameEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltAccessoryNameEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGestaltSocketRemapEntry(Structure):
     pass
+
+
+class TArray_FGestaltSocketRemapEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltSocketRemapEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FGestaltPartBoundsEntry(Structure):
     pass
 
 
+class TArray_FGestaltPartBoundsEntry(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltPartBoundsEntry)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGestaltPartPermutation(Structure):
     pass
+
+
+class TArray_FGestaltPartPermutation(Structure):
+    _fields_ = [
+        ("Data", POINTER(FGestaltPartPermutation)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FMovieInstanceArray(Structure):
     pass
 
 
+class TArray_FMovieInstanceArray(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMovieInstanceArray)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FGFxMenuLink(Structure):
     pass
+
+
+class TArray_FGFxMenuLink(Structure):
+    _fields_ = [("Data", POINTER(FGFxMenuLink)), ("Count", c_int), ("Max", c_int)]
 
 
 class FHUDCoordValue(Structure):
@@ -534,12 +1050,24 @@ class FHUDAnchorPoint(Structure):
     pass
 
 
+class TArray_FHUDAnchorPoint(Structure):
+    _fields_ = [("Data", POINTER(FHUDAnchorPoint)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGearboxGFxPlayParameters(Structure):
     pass
 
 
 class FMovieRangeStateData(Structure):
     pass
+
+
+class TArray_FMovieRangeStateData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMovieRangeStateData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FAttributeValuePair(Structure):
@@ -562,8 +1090,20 @@ class FHitTargetRecord(Structure):
     pass
 
 
+class TArray_FHitTargetRecord(Structure):
+    _fields_ = [("Data", POINTER(FHitTargetRecord)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPriorityDebugStruct(Structure):
     pass
+
+
+class TArray_FPriorityDebugStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPriorityDebugStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FEncounterLimitState(Structure):
@@ -574,8 +1114,20 @@ class FEncounterLimitData(Structure):
     pass
 
 
+class TArray_FEncounterLimitData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FEncounterLimitData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FEncounterWaveData(Structure):
     pass
+
+
+class TArray_FEncounterWaveData(Structure):
+    _fields_ = [("Data", POINTER(FEncounterWaveData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSpawnOption(Structure):
@@ -590,8 +1142,24 @@ class FSpawnedPopulationActor(Structure):
     pass
 
 
+class TArray_FSpawnedPopulationActor(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSpawnedPopulationActor)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FRemovedPopulationActor(Structure):
     pass
+
+
+class TArray_FRemovedPopulationActor(Structure):
+    _fields_ = [
+        ("Data", POINTER(FRemovedPopulationActor)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FOpportunitySavedState(Structure):
@@ -606,16 +1174,44 @@ class FPopulationOpportunityTracker(Structure):
     pass
 
 
+class TArray_FPopulationOpportunityTracker(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPopulationOpportunityTracker)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPopulationMasterStat(Structure):
     pass
+
+
+class TArray_FPopulationMasterStat(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPopulationMasterStat)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FEncounterWaveTracker(Structure):
     pass
 
 
+class TArray_FEncounterWaveTracker(Structure):
+    _fields_ = [
+        ("Data", POINTER(FEncounterWaveTracker)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FEncounterTracker(Structure):
     pass
+
+
+class TArray_FEncounterTracker(Structure):
+    _fields_ = [("Data", POINTER(FEncounterTracker)), ("Count", c_int), ("Max", c_int)]
 
 
 class FPopulationOpportunityStat(Structure):
@@ -630,16 +1226,48 @@ class FPopulationOptionAreaPopDefData(Structure):
     pass
 
 
+class TArray_FPopulationOptionAreaPopDefData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPopulationOptionAreaPopDefData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPopulationOptionAreaData(Structure):
     pass
+
+
+class TArray_FPopulationOptionAreaData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPopulationOptionAreaData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FPopulationOptionSpawnDefData(Structure):
     pass
 
 
+class TArray_FPopulationOptionSpawnDefData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPopulationOptionSpawnDefData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPopulationAreaOptionSpawnData(Structure):
     pass
+
+
+class TArray_FPopulationAreaOptionSpawnData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPopulationAreaOptionSpawnData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FPopulationOptionSpawnData(Structure):
@@ -650,24 +1278,52 @@ class FColumnDataStruct(Structure):
     pass
 
 
+class TArray_FColumnDataStruct(Structure):
+    _fields_ = [("Data", POINTER(FColumnDataStruct)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSavedRandomValue(Structure):
     pass
+
+
+class TArray_FSavedRandomValue(Structure):
+    _fields_ = [("Data", POINTER(FSavedRandomValue)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRuleEngineLoadBalanceStruct(Structure):
     pass
 
 
+class TArray_FRuleEngineLoadBalanceStruct(Structure):
+    _fields_ = [
+        ("Data", POINTER(FRuleEngineLoadBalanceStruct)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDebugLoadBalance(Structure):
     pass
+
+
+class TArray_FDebugLoadBalance(Structure):
+    _fields_ = [("Data", POINTER(FDebugLoadBalance)), ("Count", c_int), ("Max", c_int)]
 
 
 class FRELBManagerStats(Structure):
     pass
 
 
+class TArray_FRELBManagerStats(Structure):
+    _fields_ = [("Data", POINTER(FRELBManagerStats)), ("Count", c_int), ("Max", c_int)]
+
+
 class FDebugStringData(Structure):
     pass
+
+
+class TArray_FDebugStringData(Structure):
+    _fields_ = [("Data", POINTER(FDebugStringData)), ("Count", c_int), ("Max", c_int)]
 
 
 class FDebugEntryData(Structure):
@@ -678,6 +1334,14 @@ class FSparkOutstandingRequest(Structure):
     pass
 
 
+class TArray_FSparkOutstandingRequest(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSparkOutstandingRequest)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSparkMicropatch(Structure):
     pass
 
@@ -686,20 +1350,44 @@ class FSMExpressionList(Structure):
     pass
 
 
+class TArray_FSMExpressionList(Structure):
+    _fields_ = [("Data", POINTER(FSMExpressionList)), ("Count", c_int), ("Max", c_int)]
+
+
 class FSMRandomPair(Structure):
     pass
+
+
+class TArray_FSMRandomPair(Structure):
+    _fields_ = [("Data", POINTER(FSMRandomPair)), ("Count", c_int), ("Max", c_int)]
 
 
 class FStateAttributeData(Structure):
     pass
 
 
+class TArray_FStateAttributeData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FStateAttributeData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FWireLinkage(Structure):
     pass
 
 
+class TArray_FWireLinkage(Structure):
+    _fields_ = [("Data", POINTER(FWireLinkage)), ("Count", c_int), ("Max", c_int)]
+
+
 class FNewsArticle(Structure):
     pass
+
+
+class TArray_FNewsArticle(Structure):
+    _fields_ = [("Data", POINTER(FNewsArticle)), ("Count", c_int), ("Max", c_int)]
 
 
 from ..TArrayTypes import *

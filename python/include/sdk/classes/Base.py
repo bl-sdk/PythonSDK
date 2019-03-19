@@ -10,12 +10,17 @@ class UObject(Structure):
     pass
 
 
+class TArray_UObjectPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UObject))), ("Count", c_int), ("Max", c_int)]
+
+
 class UField_Data(Structure):
     pass
 
 
 class UField(Structure):
     pass
+
 
 class UEnum_Data(Structure):
     pass
@@ -75,6 +80,10 @@ class UClass_Data(Structure):
 
 class UClass(Structure):
     pass
+
+
+class TArray_UClassPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UClass))), ("Count", c_int), ("Max", c_int)]
 
 
 class UProperty_Data(Structure):
@@ -196,12 +205,16 @@ class UMapProperty_Data(Structure):
 class UMapProperty(Structure):
     pass
 
+
 from ..structs.Base import *
+
 
 class TArray_FName(Structure):
     _fields_ = [("Data", POINTER(FName)), ("Count", c_int), ("Max", c_int)]
 
+
 from ..TArrayTypes import *
+
 
 def init():
     UObject_Data._fields_ = [

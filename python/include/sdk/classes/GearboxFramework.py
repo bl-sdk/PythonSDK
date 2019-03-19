@@ -170,6 +170,14 @@ class AGearboxAIMoveNode(Structure):
     pass
 
 
+class TArray_AGearboxAIMoveNodePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AGearboxAIMoveNode))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AGearboxCameraBasic_Data(Structure):
     pass
 
@@ -210,6 +218,14 @@ class UGearboxEditorNode(Structure):
     pass
 
 
+class TArray_UGearboxEditorNodePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxEditorNode))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGearboxEngine_Data(Structure):
     pass
 
@@ -232,6 +248,14 @@ class UGearboxGFxMovie_Data(Structure):
 
 class UGearboxGFxMovie(Structure):
     pass
+
+
+class TArray_UGearboxGFxMoviePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxGFxMovie))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGFxMovie_StateParent_Data(Structure):
@@ -282,12 +306,28 @@ class AGearboxPawn(Structure):
     pass
 
 
+class TArray_AGearboxPawnPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AGearboxPawn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AGearboxPlayerController_Data(Structure):
     pass
 
 
 class AGearboxPlayerController(Structure):
     pass
+
+
+class TArray_AGearboxPlayerControllerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AGearboxPlayerController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGearboxPlayerInput_Data(Structure):
@@ -370,6 +410,14 @@ class UGFxActorMoviePool(Structure):
     pass
 
 
+class TArray_UGFxActorMoviePoolPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGFxActorMoviePool))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGFxMovieDefinition_Data(Structure):
     pass
 
@@ -392,6 +440,14 @@ class UGFxMovieDrawStyle_Data(Structure):
 
 class UGFxMovieDrawStyle(Structure):
     pass
+
+
+class TArray_UGFxMovieDrawStylePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGFxMovieDrawStyle))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGFxMovieDrawStyleHUD_Data(Structure):
@@ -456,6 +512,14 @@ class UGFxMovieState_Data(Structure):
 
 class UGFxMovieState(Structure):
     pass
+
+
+class TArray_UGFxMovieStatePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGFxMovieState))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGFxMovieStateCustom_Data(Structure):
@@ -594,12 +658,28 @@ class UPopulationBodyTag(Structure):
     pass
 
 
+class TArray_UPopulationBodyTagPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPopulationBodyTag))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class APopulationEncounter_Data(Structure):
     pass
 
 
 class APopulationEncounter(Structure):
     pass
+
+
+class TArray_APopulationEncounterPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APopulationEncounter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UPopulationEncounterRenderingComponent_Data(Structure):
@@ -624,6 +704,14 @@ class UPopulationSpawnedActorTagDefinition_Data(Structure):
 
 class UPopulationSpawnedActorTagDefinition(Structure):
     pass
+
+
+class TArray_UPopulationSpawnedActorTagDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPopulationSpawnedActorTagDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UPopUpDebugBarGraph_Data(Structure):
@@ -728,6 +816,14 @@ class USpecialMoveDefinition_Data(Structure):
 
 class USpecialMoveDefinition(Structure):
     pass
+
+
+class TArray_USpecialMoveDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMoveDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USpecialMoveExpressionList_Data(Structure):
@@ -922,6 +1018,14 @@ class UAwarenessZoneDefinition(Structure):
     pass
 
 
+class TArray_UAwarenessZoneDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAwarenessZoneDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UBehavior_SendGbxMessage_Data(Structure):
     pass
 
@@ -1018,6 +1122,14 @@ class UFiringCondition(Structure):
     pass
 
 
+class TArray_UFiringConditionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFiringCondition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UFireCond_IsPlayerTarget_Data(Structure):
     pass
 
@@ -1074,12 +1186,28 @@ class UFiringZoneDefinition(Structure):
     pass
 
 
+class TArray_UFiringZoneDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFiringZoneDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UFlagDefinition_Data(Structure):
     pass
 
 
 class UFlagDefinition(Structure):
     pass
+
+
+class TArray_UFlagDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFlagDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UFlagExpressionEvaluator_Data(Structure):
@@ -1136,6 +1264,14 @@ class UGbxMessage_Data(Structure):
 
 class UGbxMessage(Structure):
     pass
+
+
+class TArray_UGbxMessagePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGbxMessage))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGbxMessageDefinition_Data(Structure):
@@ -1234,6 +1370,14 @@ class UKnowledgeRecord(Structure):
     pass
 
 
+class TArray_UKnowledgeRecordPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UKnowledgeRecord))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ULocationFilter_Data(Structure):
     pass
 
@@ -1266,12 +1410,24 @@ class UMindTargetInfo(Structure):
     pass
 
 
+class TArray_UMindTargetInfoPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMindTargetInfo))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class URule_Data(Structure):
     pass
 
 
 class URule(Structure):
     pass
+
+
+class TArray_URulePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(URule))), ("Count", c_int), ("Max", c_int)]
 
 
 class URuleContainer_Data(Structure):
@@ -1288,6 +1444,14 @@ class URulePlaceholder_Data(Structure):
 
 class URulePlaceholder(Structure):
     pass
+
+
+class TArray_URulePlaceholderPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URulePlaceholder))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class URuleEngine_Data(Structure):
@@ -1320,6 +1484,10 @@ class URuleSet_Data(Structure):
 
 class URuleSet(Structure):
     pass
+
+
+class TArray_URuleSetPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(URuleSet))), ("Count", c_int), ("Max", c_int)]
 
 
 class UStateRuleSet_Data(Structure):
@@ -1554,12 +1722,24 @@ class UTI_Calc(Structure):
     pass
 
 
+class TArray_UTI_CalcPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UTI_Calc))), ("Count", c_int), ("Max", c_int)]
+
+
 class UTI_Prioritize_Data(Structure):
     pass
 
 
 class UTI_Prioritize(Structure):
     pass
+
+
+class TArray_UTI_PrioritizePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTI_Prioritize))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UTargetIteratorPrioritizeExposedTargets_Data(Structure):
@@ -1658,6 +1838,14 @@ class UPopulationFactory(Structure):
     pass
 
 
+class TArray_UPopulationFactoryPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPopulationFactory))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPopulationFactoryGeneric_Data(Structure):
     pass
 
@@ -1688,6 +1876,14 @@ class APopulationOpportunity_Data(Structure):
 
 class APopulationOpportunity(Structure):
     pass
+
+
+class TArray_APopulationOpportunityPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APopulationOpportunity))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class APopulationOpportunityArea_Data(Structure):
@@ -1752,6 +1948,14 @@ class APopulationPoint_Data(Structure):
 
 class APopulationPoint(Structure):
     pass
+
+
+class TArray_APopulationPointPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APopulationPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class APopulationPoint_Dynamic_Data(Structure):
@@ -1834,6 +2038,14 @@ class UBehaviorProviderDefinition(Structure):
     pass
 
 
+class TArray_UBehaviorProviderDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBehaviorProviderDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAIBehaviorProviderDefinition_Data(Structure):
     pass
 
@@ -1848,6 +2060,14 @@ class UBehaviorSequenceCustomEnableCondition_Data(Structure):
 
 class UBehaviorSequenceCustomEnableCondition(Structure):
     pass
+
+
+class TArray_UBehaviorSequenceCustomEnableConditionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBehaviorSequenceCustomEnableCondition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UBehaviorSequenceEnableByMultipleConditions_Data(Structure):
@@ -1898,6 +2118,14 @@ class UGearboxAnimDefinition(Structure):
     pass
 
 
+class TArray_UGearboxAnimDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxAnimDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UBehavior_TriggerDialogEvent_Data(Structure):
     pass
 
@@ -1930,12 +2158,28 @@ class UGearboxDialogEventData(Structure):
     pass
 
 
+class TArray_UGearboxDialogEventDataPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxDialogEventData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGearboxDialogEventTag_Data(Structure):
     pass
 
 
 class UGearboxDialogEventTag(Structure):
     pass
+
+
+class TArray_UGearboxDialogEventTagPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxDialogEventTag))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGearboxDialogGlobalsDefinition_Data(Structure):
@@ -1952,6 +2196,14 @@ class UGearboxDialogGroup_Data(Structure):
 
 class UGearboxDialogGroup(Structure):
     pass
+
+
+class TArray_UGearboxDialogGroupPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxDialogGroup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGearboxDialogTemplateGroup_Data(Structure):
@@ -1978,6 +2230,14 @@ class UGearboxDialogNameTag(Structure):
     pass
 
 
+class TArray_UGearboxDialogNameTagPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxDialogNameTag))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGearboxDialogPriority_Data(Structure):
     pass
 
@@ -1986,12 +2246,28 @@ class UGearboxDialogPriority(Structure):
     pass
 
 
+class TArray_UGearboxDialogPriorityPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxDialogPriority))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGearboxDialogNode_Data(Structure):
     pass
 
 
 class UGearboxDialogNode(Structure):
     pass
+
+
+class TArray_UGearboxDialogNodePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxDialogNode))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGearboxDialogAction_Data(Structure):
@@ -2162,6 +2438,14 @@ class UGearboxAccountData(Structure):
     pass
 
 
+class TArray_UGearboxAccountDataPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxAccountData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGearboxProcess_Data(Structure):
     pass
 
@@ -2208,6 +2492,14 @@ class USparkServiceConfiguration_Data(Structure):
 
 class USparkServiceConfiguration(Structure):
     pass
+
+
+class TArray_USparkServiceConfigurationPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USparkServiceConfiguration))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USparkTypes_Data(Structure):
@@ -2586,6 +2878,14 @@ class UGearboxAccountEntitlement(Structure):
     pass
 
 
+class TArray_UGearboxAccountEntitlementPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxAccountEntitlement))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGearboxAccountOffer_Data(Structure):
     pass
 
@@ -2594,12 +2894,28 @@ class UGearboxAccountOffer(Structure):
     pass
 
 
+class TArray_UGearboxAccountOfferPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGearboxAccountOffer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class APatrolDestination_Data(Structure):
     pass
 
 
 class APatrolDestination(Structure):
     pass
+
+
+class TArray_APatrolDestinationPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APatrolDestination))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGearboxSeqAct_TargetPriority_Data(Structure):

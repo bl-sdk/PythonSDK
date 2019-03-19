@@ -66,6 +66,14 @@ class UGFxObject(Structure):
     pass
 
 
+class TArray_UGFxObjectPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGFxObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGFxClikWidget_Data(Structure):
     pass
 

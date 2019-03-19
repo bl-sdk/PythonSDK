@@ -146,6 +146,14 @@ class UAIPawnBalanceModifierDefinition(Structure):
     pass
 
 
+class TArray_UAIPawnBalanceModifierDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAIPawnBalanceModifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAIResourceAttributeValueResolver_Data(Structure):
     pass
 
@@ -192,6 +200,14 @@ class UAttributePresentationDefinition_Data(Structure):
 
 class UAttributePresentationDefinition(Structure):
     pass
+
+
+class TArray_UAttributePresentationDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributePresentationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWeaponStatusEffectAttributePresentationDefinition_Data(Structure):
@@ -242,12 +258,28 @@ class UBadassRewardDefinition(Structure):
     pass
 
 
+class TArray_UBadassRewardDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBadassRewardDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UBalanceModifierDefinition_Data(Structure):
     pass
 
 
 class UBalanceModifierDefinition(Structure):
     pass
+
+
+class TArray_UBalanceModifierDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBalanceModifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UBehavior_ActivateInstancedMissionBehaviorSequence_Data(Structure):
@@ -634,6 +666,14 @@ class UBlackMarketUpgradeDefinition(Structure):
     pass
 
 
+class TArray_UBlackMarketUpgradeDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBlackMarketUpgradeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ABlackMarketUpgradeManager_Data(Structure):
     pass
 
@@ -666,6 +706,14 @@ class UBodyHitRegionDefinition(Structure):
     pass
 
 
+class TArray_UBodyHitRegionDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBodyHitRegionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UBodyRegionProtectionDefinition_Data(Structure):
     pass
 
@@ -680,6 +728,14 @@ class UBodyWeaponHoldDefinition_Data(Structure):
 
 class UBodyWeaponHoldDefinition(Structure):
     pass
+
+
+class TArray_UBodyWeaponHoldDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBodyWeaponHoldDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UBoundaryTurretRenderingComponent_Data(Structure):
@@ -722,12 +778,28 @@ class UChallengeConditionDefinition(Structure):
     pass
 
 
+class TArray_UChallengeConditionDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UChallengeConditionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UChallengeDefinition_Data(Structure):
     pass
 
 
 class UChallengeDefinition(Structure):
     pass
+
+
+class TArray_UChallengeDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UChallengeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UChallengeFeedbackMessage_Data(Structure):
@@ -842,6 +914,14 @@ class UCustomizationDefinition(Structure):
     pass
 
 
+class TArray_UCustomizationDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCustomizationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UCustomizationType_Data(Structure):
     pass
 
@@ -938,6 +1018,14 @@ class UDLCLegacyPlayerClassIdentifierDefinition(Structure):
     pass
 
 
+class TArray_UDLCLegacyPlayerClassIdentifierDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDLCLegacyPlayerClassIdentifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDlcTmsHolder_Data(Structure):
     pass
 
@@ -954,12 +1042,28 @@ class UDownloadableAssetLibraryDefinition(Structure):
     pass
 
 
+class TArray_UDownloadableAssetLibraryDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableAssetLibraryDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDownloadableContentDefinition_Data(Structure):
     pass
 
 
 class UDownloadableContentDefinition(Structure):
     pass
+
+
+class TArray_UDownloadableContentDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableContentDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDownloadableBalanceModifierDefinition_Data(Structure):
@@ -970,12 +1074,28 @@ class UDownloadableBalanceModifierDefinition(Structure):
     pass
 
 
+class TArray_UDownloadableBalanceModifierDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableBalanceModifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDownloadableCharacterDefinition_Data(Structure):
     pass
 
 
 class UDownloadableCharacterDefinition(Structure):
     pass
+
+
+class TArray_UDownloadableCharacterDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableCharacterDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDownloadableCustomizationSetDefinition_Data(Structure):
@@ -986,12 +1106,28 @@ class UDownloadableCustomizationSetDefinition(Structure):
     pass
 
 
+class TArray_UDownloadableCustomizationSetDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableCustomizationSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDownloadableExpansionDefinition_Data(Structure):
     pass
 
 
 class UDownloadableExpansionDefinition(Structure):
     pass
+
+
+class TArray_UDownloadableExpansionDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableExpansionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDownloadableItemSetDefinition_Data(Structure):
@@ -1002,6 +1138,14 @@ class UDownloadableItemSetDefinition(Structure):
     pass
 
 
+class TArray_UDownloadableItemSetDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableItemSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDownloadableVehicleDefinition_Data(Structure):
     pass
 
@@ -1010,12 +1154,28 @@ class UDownloadableVehicleDefinition(Structure):
     pass
 
 
+class TArray_UDownloadableVehicleDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadableVehicleDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDownloadablePackageDefinition_Data(Structure):
     pass
 
 
 class UDownloadablePackageDefinition(Structure):
     pass
+
+
+class TArray_UDownloadablePackageDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadablePackageDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDownloadablePackageLicense_Data(Structure):
@@ -1032,6 +1192,14 @@ class UDownloadablePackageLicenseItem_Data(Structure):
 
 class UDownloadablePackageLicenseItem(Structure):
     pass
+
+
+class TArray_UDownloadablePackageLicenseItemPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDownloadablePackageLicenseItem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGoldenKeyLicenseItem_Data(Structure):
@@ -1168,6 +1336,14 @@ class UGameBalanceDefinition_Data(Structure):
 
 class UGameBalanceDefinition(Structure):
     pass
+
+
+class TArray_UGameBalanceDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGameBalanceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGameReleaseDefinition_Data(Structure):
@@ -1466,12 +1642,28 @@ class UInputActionDefinition(Structure):
     pass
 
 
+class TArray_UInputActionDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputActionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInputContextDefinition_Data(Structure):
     pass
 
 
 class UInputContextDefinition(Structure):
     pass
+
+
+class TArray_UInputContextDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputContextDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UInputDeviceCollectionDefinition_Data(Structure):
@@ -1490,6 +1682,14 @@ class UInputDeviceDefinition(Structure):
     pass
 
 
+class TArray_UInputDeviceDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputDeviceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInputRemappingDefinition_Data(Structure):
     pass
 
@@ -1498,12 +1698,28 @@ class UInputRemappingDefinition(Structure):
     pass
 
 
+class TArray_UInputRemappingDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputRemappingDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInputSetDefinition_Data(Structure):
     pass
 
 
 class UInputSetDefinition(Structure):
     pass
+
+
+class TArray_UInputSetDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInputSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UInRangeOfInjuredPlayerExpressionEvaluator_Data(Structure):
@@ -1520,6 +1736,14 @@ class UInstancedDesignerAttribute_Data(Structure):
 
 class UInstancedDesignerAttribute(Structure):
     pass
+
+
+class TArray_UInstancedDesignerAttributePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInstancedDesignerAttribute))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UInteractionIconDefinition_Data(Structure):
@@ -1586,6 +1810,14 @@ class UInteractiveObjectLootListDefinition(Structure):
     pass
 
 
+class TArray_UInteractiveObjectLootListDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInteractiveObjectLootListDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInterpTrackBehaviors_Data(Structure):
     pass
 
@@ -1618,6 +1850,14 @@ class UInventoryBalanceDefinition(Structure):
     pass
 
 
+class TArray_UInventoryBalanceDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInventoryBalanceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UItemBalanceDefinition_Data(Structure):
     pass
 
@@ -1648,6 +1888,14 @@ class UMissionWeaponBalanceDefinition_Data(Structure):
 
 class UMissionWeaponBalanceDefinition(Structure):
     pass
+
+
+class TArray_UMissionWeaponBalanceDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionWeaponBalanceDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UInventoryCardGFx_Data(Structure):
@@ -1802,6 +2050,14 @@ class UClassModDefinition(Structure):
     pass
 
 
+class TArray_UClassModDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UClassModDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UCrossDLCClassModDefinition_Data(Structure):
     pass
 
@@ -1906,6 +2162,14 @@ class UItemNamePartDefinition(Structure):
     pass
 
 
+class TArray_UItemNamePartDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UItemNamePartDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UUsableItemPartDefinition_Data(Structure):
     pass
 
@@ -1946,6 +2210,14 @@ class UItemPoolDefinition(Structure):
     pass
 
 
+class TArray_UItemPoolDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UItemPoolDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UCrossDLCItemPoolDefinition_Data(Structure):
     pass
 
@@ -1962,12 +2234,28 @@ class UKeyedItemPoolDefinition(Structure):
     pass
 
 
+class TArray_UKeyedItemPoolDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UKeyedItemPoolDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UItemPoolListDefinition_Data(Structure):
     pass
 
 
 class UItemPoolListDefinition(Structure):
     pass
+
+
+class TArray_UItemPoolListDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UItemPoolListDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UIUpdatePostProcessOverride_Data(Structure):
@@ -2090,6 +2378,14 @@ class UMarketingUnlockDefinition(Structure):
     pass
 
 
+class TArray_UMarketingUnlockDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMarketingUnlockDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UMeleeDefinition_Data(Structure):
     pass
 
@@ -2104,6 +2400,14 @@ class UMissionDefinition_Data(Structure):
 
 class UMissionDefinition(Structure):
     pass
+
+
+class TArray_UMissionDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UMissionDirectivesDefinition_Data(Structure):
@@ -2122,12 +2426,28 @@ class UMissionObjectiveDefinition(Structure):
     pass
 
 
+class TArray_UMissionObjectiveDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionObjectiveDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UMissionObjectiveSetDefinition_Data(Structure):
     pass
 
 
 class UMissionObjectiveSetDefinition(Structure):
     pass
+
+
+class TArray_UMissionObjectiveSetDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionObjectiveSetDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UMissionObjectiveSetBranchingDefinition_Data(Structure):
@@ -2226,6 +2546,14 @@ class UPackageAssetSublibrary(Structure):
     pass
 
 
+class TArray_UPackageAssetSublibraryPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPackageAssetSublibrary))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPassengerCameraDefinition_Data(Structure):
     pass
 
@@ -2280,6 +2608,14 @@ class UPhysicsJumpConnection_Data(Structure):
 
 class UPhysicsJumpConnection(Structure):
     pass
+
+
+class TArray_UPhysicsJumpConnectionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPhysicsJumpConnection))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class APhysicsJumpNode_Data(Structure):
@@ -2346,6 +2682,14 @@ class UPlayerClassIdentifierDefinition(Structure):
     pass
 
 
+class TArray_UPlayerClassIdentifierDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPlayerClassIdentifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPlayerControllerAttributeContextResolver_Data(Structure):
     pass
 
@@ -2410,6 +2754,14 @@ class UPlayerNameIdentifierDefinition(Structure):
     pass
 
 
+class TArray_UPlayerNameIdentifierDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPlayerNameIdentifierDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPlayerReplicationInfoAttributeContextResolver_Data(Structure):
     pass
 
@@ -2442,6 +2794,14 @@ class AWillowPlayerController(Structure):
     pass
 
 
+class TArray_AWillowPlayerControllerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPlayerController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPlayerSkillTree_Data(Structure):
     pass
 
@@ -2456,6 +2816,14 @@ class APlayerStandIn_Data(Structure):
 
 class APlayerStandIn(Structure):
     pass
+
+
+class TArray_APlayerStandInPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APlayerStandIn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UPlayerStatAttributeValueResolver_Data(Structure):
@@ -2520,6 +2888,14 @@ class APopulationOpportunityDen_Data(Structure):
 
 class APopulationOpportunityDen(Structure):
     pass
+
+
+class TArray_APopulationOpportunityDenPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APopulationOpportunityDen))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class APopulationOpportunityDen_Dynamic_Data(Structure):
@@ -2610,6 +2986,14 @@ class ARallyPoint(Structure):
     pass
 
 
+class TArray_ARallyPointPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ARallyPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class URecentDropList_Data(Structure):
     pass
 
@@ -2690,12 +3074,24 @@ class USkill(Structure):
     pass
 
 
+class TArray_USkillPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(USkill))), ("Count", c_int), ("Max", c_int)]
+
+
 class USkillDefinition_Data(Structure):
     pass
 
 
 class USkillDefinition(Structure):
     pass
+
+
+class TArray_USkillDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkillDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USkillExpressionEvaluatorDefinition_Data(Structure):
@@ -2706,12 +3102,28 @@ class USkillExpressionEvaluatorDefinition(Structure):
     pass
 
 
+class TArray_USkillExpressionEvaluatorDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkillExpressionEvaluatorDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USkillTreeBranchDefinition_Data(Structure):
     pass
 
 
 class USkillTreeBranchDefinition(Structure):
     pass
+
+
+class TArray_USkillTreeBranchDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkillTreeBranchDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USkillTreeBranchLayoutDefinition_Data(Structure):
@@ -2770,6 +3182,14 @@ class UStanceTypeDefinition(Structure):
     pass
 
 
+class TArray_UStanceTypeDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UStanceTypeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UStatChannel_Data(Structure):
     pass
 
@@ -2816,6 +3236,14 @@ class UStatusEffectDefinition_Data(Structure):
 
 class UStatusEffectDefinition(Structure):
     pass
+
+
+class TArray_UStatusEffectDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UStatusEffectDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UStatusEffectExpressionEvaluator_Data(Structure):
@@ -2874,6 +3302,14 @@ class UTrainingMessageDefinition(Structure):
     pass
 
 
+class TArray_UTrainingMessageDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTrainingMessageDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UTravelStationDefinition_Data(Structure):
     pass
 
@@ -2890,12 +3326,28 @@ class UFastTravelStationDefinition(Structure):
     pass
 
 
+class TArray_UFastTravelStationDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFastTravelStationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ULevelTravelStationDefinition_Data(Structure):
     pass
 
 
 class ULevelTravelStationDefinition(Structure):
     pass
+
+
+class TArray_ULevelTravelStationDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULevelTravelStationDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UTravelStationNozzleComponent_Data(Structure):
@@ -2978,6 +3430,14 @@ class UVehicleFamilyDefinition(Structure):
     pass
 
 
+class TArray_UVehicleFamilyDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UVehicleFamilyDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UVehicleHandlingDefinition_Data(Structure):
     pass
 
@@ -3058,12 +3518,28 @@ class UVSSUIDefinition(Structure):
     pass
 
 
+class TArray_UVSSUIDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UVSSUIDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWaypointComponent_Data(Structure):
     pass
 
 
 class UWaypointComponent(Structure):
     pass
+
+
+class TArray_UWaypointComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWaypointComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ULevelTransitionWaypointComponent_Data(Structure):
@@ -3098,6 +3574,14 @@ class UMissionObjectiveWaypointComponent(Structure):
     pass
 
 
+class TArray_UMissionObjectiveWaypointComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMissionObjectiveWaypointComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWeaponAmmoResourceAttributeValueResolver_Data(Structure):
     pass
 
@@ -3128,6 +3612,14 @@ class UWeaponNamePartDefinition_Data(Structure):
 
 class UWeaponNamePartDefinition(Structure):
     pass
+
+
+class TArray_UWeaponNamePartDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWeaponNamePartDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWeaponPartListDefinition_Data(Structure):
@@ -3186,12 +3678,28 @@ class USpecialMove_Cringe(Structure):
     pass
 
 
+class TArray_USpecialMove_CringePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Cringe))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USpecialMove_Motion_Data(Structure):
     pass
 
 
 class USpecialMove_Motion(Structure):
     pass
+
+
+class TArray_USpecialMove_MotionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Motion))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USpecialMove_Cloak_Data(Structure):
@@ -3202,12 +3710,28 @@ class USpecialMove_Cloak(Structure):
     pass
 
 
+class TArray_USpecialMove_CloakPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Cloak))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USpecialMove_Dodge_Data(Structure):
     pass
 
 
 class USpecialMove_Dodge(Structure):
     pass
+
+
+class TArray_USpecialMove_DodgePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Dodge))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USpecialMove_PhysicsJump_Data(Structure):
@@ -3282,12 +3806,28 @@ class USpecialMove_Vehicle(Structure):
     pass
 
 
+class TArray_USpecialMove_VehiclePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USpecialMove_Vehicle))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowAnimNode_Simple_Data(Structure):
     pass
 
 
 class UWillowAnimNode_Simple(Structure):
     pass
+
+
+class TArray_UWillowAnimNode_SimplePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowAnimNode_Simple))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowAnimTreeFactory_Data(Structure):
@@ -3594,6 +4134,14 @@ class AWillowDialogEchoActor(Structure):
     pass
 
 
+class TArray_AWillowDialogEchoActorPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowDialogEchoActor))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowDialogEmoteDefinition_Data(Structure):
     pass
 
@@ -3674,6 +4222,14 @@ class AWillowDynamicNavMeshConnectionPoint(Structure):
     pass
 
 
+class TArray_AWillowDynamicNavMeshConnectionPointPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowDynamicNavMeshConnectionPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowDynamicNavMeshConnectionPointRenderingComponent_Data(Structure):
     pass
 
@@ -3706,6 +4262,14 @@ class AWillowElevator(Structure):
     pass
 
 
+class TArray_AWillowElevatorPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowElevator))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowElevatorRenderingComponent_Data(Structure):
     pass
 
@@ -3728,6 +4292,14 @@ class AStatusEffectReplicatedEmitter_Data(Structure):
 
 class AStatusEffectReplicatedEmitter(Structure):
     pass
+
+
+class TArray_AStatusEffectReplicatedEmitterPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AStatusEffectReplicatedEmitter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowExperiencePipeline_Data(Structure):
@@ -3810,6 +4382,14 @@ class UWillowImpactDefinition(Structure):
     pass
 
 
+class TArray_UWillowImpactDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowImpactDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowExplosionImpactDefinition_Data(Structure):
     pass
 
@@ -3824,6 +4404,14 @@ class AWillowInteractiveObject_Data(Structure):
 
 class AWillowInteractiveObject(Structure):
     pass
+
+
+class TArray_AWillowInteractiveObjectPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowInteractiveObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ATravelStation_Data(Structure):
@@ -3880,6 +4468,14 @@ class AWillowElevatorButton_Data(Structure):
 
 class AWillowElevatorButton(Structure):
     pass
+
+
+class TArray_AWillowElevatorButtonPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowElevatorButton))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AWillowInteractiveSwitch_Data(Structure):
@@ -3952,6 +4548,14 @@ class AWillowItem_Data(Structure):
 
 class AWillowItem(Structure):
     pass
+
+
+class TArray_AWillowItemPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowItem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AWillowEquipAbleItem_Data(Structure):
@@ -4138,6 +4742,14 @@ class AWillowPawn(Structure):
     pass
 
 
+class TArray_AWillowPawnPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPawn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AWillowAIPawn_Data(Structure):
     pass
 
@@ -4160,6 +4772,14 @@ class AWillowPlayerPawn_Data(Structure):
 
 class AWillowPlayerPawn(Structure):
     pass
+
+
+class TArray_AWillowPlayerPawnPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPlayerPawn))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowPawnInteractionDefinition_Data(Structure):
@@ -4192,6 +4812,14 @@ class AWillowPickup_Data(Structure):
 
 class AWillowPickup(Structure):
     pass
+
+
+class TArray_AWillowPickupPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowPickup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowPlayerInput_Data(Structure):
@@ -4330,6 +4958,14 @@ class AWillowProjectile(Structure):
     pass
 
 
+class TArray_AWillowProjectilePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowProjectile))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AWillowServerSideProjectile_Data(Structure):
     pass
 
@@ -4344,6 +4980,14 @@ class UWillowPursuitGrid_Data(Structure):
 
 class UWillowPursuitGrid(Structure):
     pass
+
+
+class TArray_UWillowPursuitGridPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowPursuitGrid))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowPursuitGridDefinition_Data(Structure):
@@ -4384,6 +5028,14 @@ class AWillowReplicatedAmbientSoundSource_Data(Structure):
 
 class AWillowReplicatedAmbientSoundSource(Structure):
     pass
+
+
+class TArray_AWillowReplicatedAmbientSoundSourcePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowReplicatedAmbientSoundSource))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowSavedMove_Data(Structure):
@@ -4458,6 +5110,14 @@ class AWillowSpectatorPoint(Structure):
     pass
 
 
+class TArray_AWillowSpectatorPointPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowSpectatorPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowStaggerAnimNodeBlend_Data(Structure):
     pass
 
@@ -4528,6 +5188,14 @@ class AWillowVehicle_Data(Structure):
 
 class AWillowVehicle(Structure):
     pass
+
+
+class TArray_AWillowVehiclePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowVehicle))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AWillowVehicle_ChopperVehicle_Data(Structure):
@@ -4664,6 +5332,14 @@ class AWillowWeapon_Data(Structure):
 
 class AWillowWeapon(Structure):
     pass
+
+
+class TArray_AWillowWeaponPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowWeapon))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AWillowBuzzaxeWeapon_Data(Structure):
@@ -5104,6 +5780,14 @@ class UWillowSkelControl_TurretConstrained_Data(Structure):
 
 class UWillowSkelControl_TurretConstrained(Structure):
     pass
+
+
+class TArray_UWillowSkelControl_TurretConstrainedPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowSkelControl_TurretConstrained))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowSkelControlHandPlacement_Data(Structure):
@@ -5818,6 +6502,14 @@ class UAttackLocation(Structure):
     pass
 
 
+class TArray_UAttackLocationPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttackLocation))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAttackLocation_Direct_Data(Structure):
     pass
 
@@ -6146,6 +6838,14 @@ class UWillowAIBlackboardComponent(Structure):
     pass
 
 
+class TArray_UWillowAIBlackboardComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UWillowAIBlackboardComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UWillowAIDenComponent_Data(Structure):
     pass
 
@@ -6186,6 +6886,10 @@ class APerch(Structure):
     pass
 
 
+class TArray_APerchPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(APerch))), ("Count", c_int), ("Max", c_int)]
+
+
 class USpecialMove_Cover_Data(Structure):
     pass
 
@@ -6208,6 +6912,14 @@ class AWillowBoundaryTurret_Data(Structure):
 
 class AWillowBoundaryTurret(Structure):
     pass
+
+
+class TArray_AWillowBoundaryTurretPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowBoundaryTurret))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UAIClassDefinition_Data(Structure):
@@ -6256,6 +6968,14 @@ class AWillowMind_Data(Structure):
 
 class AWillowMind(Structure):
     pass
+
+
+class TArray_AWillowMindPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowMind))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowMindAttributeContextResolver_Data(Structure):
@@ -6400,6 +7120,14 @@ class AAIDebugDummyBase_Data(Structure):
 
 class AAIDebugDummyBase(Structure):
     pass
+
+
+class TArray_AAIDebugDummyBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AAIDebugDummyBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowAIDebugCamera_Data(Structure):
@@ -11016,6 +11744,14 @@ class AWeaponShotDebug_Data(Structure):
 
 class AWeaponShotDebug(Structure):
     pass
+
+
+class TArray_AWeaponShotDebugPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWeaponShotDebug))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UWillowAIEncounterComponent_Data(Structure):

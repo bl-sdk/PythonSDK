@@ -6,6 +6,10 @@ class FVector2D(Structure):
     pass
 
 
+class TArray_FVector2D(Structure):
+    _fields_ = [("Data", POINTER(FVector2D)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPlane2D(Structure):
     pass
 
@@ -14,8 +18,16 @@ class FVector(Structure):
     pass
 
 
+class TArray_FVector(Structure):
+    _fields_ = [("Data", POINTER(FVector)), ("Count", c_int), ("Max", c_int)]
+
+
 class FGuid(Structure):
     pass
+
+
+class TArray_FGuid(Structure):
+    _fields_ = [("Data", POINTER(FGuid)), ("Count", c_int), ("Max", c_int)]
 
 
 class FVector4(Structure):
@@ -26,6 +38,14 @@ class FNameBasedObjectPath(Structure):
     pass
 
 
+class TArray_FNameBasedObjectPath(Structure):
+    _fields_ = [
+        ("Data", POINTER(FNameBasedObjectPath)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FFlag(Structure):
     pass
 
@@ -34,8 +54,16 @@ class FQuat(Structure):
     pass
 
 
+class TArray_FQuat(Structure):
+    _fields_ = [("Data", POINTER(FQuat)), ("Count", c_int), ("Max", c_int)]
+
+
 class FBoneAtom(Structure):
     pass
+
+
+class TArray_FBoneAtom(Structure):
+    _fields_ = [("Data", POINTER(FBoneAtom)), ("Count", c_int), ("Max", c_int)]
 
 
 class FSmartVector(Structure):
@@ -46,12 +74,28 @@ class FLinearColor(Structure):
     pass
 
 
+class TArray_FLinearColor(Structure):
+    _fields_ = [("Data", POINTER(FLinearColor)), ("Count", c_int), ("Max", c_int)]
+
+
 class FColor(Structure):
     pass
 
 
+class TArray_FColor(Structure):
+    _fields_ = [("Data", POINTER(FColor)), ("Count", c_int), ("Max", c_int)]
+
+
 class FInterpCurvePointVector2D(Structure):
     pass
+
+
+class TArray_FInterpCurvePointVector2D(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInterpCurvePointVector2D)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FInterpCurveVector2D(Structure):
@@ -60,6 +104,14 @@ class FInterpCurveVector2D(Structure):
 
 class FInterpCurvePointFloat(Structure):
     pass
+
+
+class TArray_FInterpCurvePointFloat(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInterpCurvePointFloat)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FInterpCurveFloat(Structure):
@@ -74,6 +126,14 @@ class FInterpCurvePointVector(Structure):
     pass
 
 
+class TArray_FInterpCurvePointVector(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInterpCurvePointVector)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FInterpCurveVector(Structure):
     pass
 
@@ -82,8 +142,16 @@ class FPlane(Structure):
     pass
 
 
+class TArray_FPlane(Structure):
+    _fields_ = [("Data", POINTER(FPlane)), ("Count", c_int), ("Max", c_int)]
+
+
 class FMatrix(Structure):
     pass
+
+
+class TArray_FMatrix(Structure):
+    _fields_ = [("Data", POINTER(FMatrix)), ("Count", c_int), ("Max", c_int)]
 
 
 class FBoxSphereBounds(Structure):
@@ -122,6 +190,14 @@ class FInterpCurvePointLinearColor(Structure):
     pass
 
 
+class TArray_FInterpCurvePointLinearColor(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInterpCurvePointLinearColor)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FInterpCurveLinearColor(Structure):
     pass
 
@@ -130,12 +206,28 @@ class FInterpCurvePointQuat(Structure):
     pass
 
 
+class TArray_FInterpCurvePointQuat(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInterpCurvePointQuat)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FInterpCurveQuat(Structure):
     pass
 
 
 class FInterpCurvePointTwoVectors(Structure):
     pass
+
+
+class TArray_FInterpCurvePointTwoVectors(Structure):
+    _fields_ = [
+        ("Data", POINTER(FInterpCurvePointTwoVectors)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FInterpCurveTwoVectors(Structure):
@@ -222,6 +314,10 @@ class FDouble(Structure):
     pass
 
 
+class TArray_FDouble(Structure):
+    _fields_ = [("Data", POINTER(FDouble)), ("Count", c_int), ("Max", c_int)]
+
+
 class FRawDistributionFloat(Structure):
     pass
 
@@ -290,11 +386,6 @@ def init():
         ("InterpMode", c_ubyte),
     ]
 
-    TArray_FInterpCurvePointVector2D._fields_ = [
-        ("Data", POINTER(FInterpCurvePointVector2D)),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
     FInterpCurveVector2D._fields_ = [
         ("Points", TArray_FInterpCurvePointVector2D),
         ("InterpMethod", c_ubyte),

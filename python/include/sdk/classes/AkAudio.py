@@ -162,6 +162,14 @@ class AWwiseSoundVolume(Structure):
     pass
 
 
+class TArray_AWwiseSoundVolumePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWwiseSoundVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *

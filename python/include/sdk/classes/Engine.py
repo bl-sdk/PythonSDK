@@ -18,6 +18,10 @@ class AActor(Structure):
     pass
 
 
+class TArray_AActorPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(AActor))), ("Count", c_int), ("Max", c_int)]
+
+
 class AInfo_Data(Structure):
     pass
 
@@ -122,6 +126,10 @@ class AVolume(Structure):
     pass
 
 
+class TArray_AVolumePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(AVolume))), ("Count", c_int), ("Max", c_int)]
+
+
 class ABlockingVolume_Data(Structure):
     pass
 
@@ -162,6 +170,14 @@ class ALevelStreamingVolume(Structure):
     pass
 
 
+class TArray_ALevelStreamingVolumePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ALevelStreamingVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ALightmassCharacterIndirectDetailVolume_Data(Structure):
     pass
 
@@ -184,6 +200,14 @@ class AMassiveLODOverrideVolume_Data(Structure):
 
 class AMassiveLODOverrideVolume(Structure):
     pass
+
+
+class TArray_AMassiveLODOverrideVolumePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AMassiveLODOverrideVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ANavMeshBoundsVolume_Data(Structure):
@@ -242,6 +266,14 @@ class APortalVolume(Structure):
     pass
 
 
+class TArray_APortalVolumePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APortalVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class APostProcessVolume_Data(Structure):
     pass
 
@@ -296,6 +328,14 @@ class ADynamicSMActor_Data(Structure):
 
 class ADynamicSMActor(Structure):
     pass
+
+
+class TArray_ADynamicSMActorPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ADynamicSMActor))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AInterpActor_Data(Structure):
@@ -466,12 +506,28 @@ class ANavigationPoint(Structure):
     pass
 
 
+class TArray_ANavigationPointPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ANavigationPoint))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ACoverLink_Data(Structure):
     pass
 
 
 class ACoverLink(Structure):
     pass
+
+
+class TArray_ACoverLinkPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ACoverLink))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ADoorMarker_Data(Structure):
@@ -570,6 +626,10 @@ class APylon(Structure):
     pass
 
 
+class TArray_APylonPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(APylon))), ("Count", c_int), ("Max", c_int)]
+
+
 class AAISwitchablePylon_Data(Structure):
     pass
 
@@ -666,6 +726,14 @@ class APortalTeleporter(Structure):
     pass
 
 
+class TArray_APortalTeleporterPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APortalTeleporter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AStaticMeshActorBase_Data(Structure):
     pass
 
@@ -722,6 +790,10 @@ class ATrigger(Structure):
     pass
 
 
+class TArray_ATriggerPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(ATrigger))), ("Count", c_int), ("Max", c_int)]
+
+
 class ATrigger_PawnsOnly_Data(Structure):
     pass
 
@@ -738,6 +810,14 @@ class UActorComponent(Structure):
     pass
 
 
+class TArray_UActorComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UActorComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAkComponent_Data(Structure):
     pass
 
@@ -746,12 +826,28 @@ class UAkComponent(Structure):
     pass
 
 
+class TArray_UAkComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAkComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAudioComponent_Data(Structure):
     pass
 
 
 class UAudioComponent(Structure):
     pass
+
+
+class TArray_UAudioComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAudioComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UHeightFogComponent_Data(Structure):
@@ -768,6 +864,14 @@ class UPrimitiveComponent_Data(Structure):
 
 class UPrimitiveComponent(Structure):
     pass
+
+
+class TArray_UPrimitiveComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPrimitiveComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UArrowComponent_Data(Structure):
@@ -800,6 +904,14 @@ class UCylinderComponent_Data(Structure):
 
 class UCylinderComponent(Structure):
     pass
+
+
+class TArray_UCylinderComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCylinderComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USphereComponent_Data(Structure):
@@ -1226,6 +1338,10 @@ class USoundCue(Structure):
     pass
 
 
+class TArray_USoundCuePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(USoundCue))), ("Count", c_int), ("Max", c_int)]
+
+
 class UAkObject_Data(Structure):
     pass
 
@@ -1264,6 +1380,10 @@ class UAkEvent_Data(Structure):
 
 class UAkEvent(Structure):
     pass
+
+
+class TArray_UAkEventPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UAkEvent))), ("Count", c_int), ("Max", c_int)]
 
 
 class UAkRtpc_Data(Structure):
@@ -1394,12 +1514,28 @@ class AController(Structure):
     pass
 
 
+class TArray_AControllerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class APlayerController_Data(Structure):
     pass
 
 
 class APlayerController(Structure):
     pass
+
+
+class TArray_APlayerControllerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APlayerController))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UCheatManager_Data(Structure):
@@ -1480,6 +1616,14 @@ class UDamagePipeline_Data(Structure):
 
 class UDamagePipeline(Structure):
     pass
+
+
+class TArray_UDamagePipelinePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDamagePipeline))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDamageType_Data(Structure):
@@ -1634,6 +1778,14 @@ class UFaceFXAnimSet(Structure):
     pass
 
 
+class TArray_UFaceFXAnimSetPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFaceFXAnimSet))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UFaceFXAsset_Data(Structure):
     pass
 
@@ -1648,6 +1800,10 @@ class UFont_Data(Structure):
 
 class UFont(Structure):
     pass
+
+
+class TArray_UFontPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UFont))), ("Count", c_int), ("Max", c_int)]
 
 
 class UMultiFont_Data(Structure):
@@ -1714,6 +1870,14 @@ class UGameplayEventsHandler(Structure):
     pass
 
 
+class TArray_UGameplayEventsHandlerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGameplayEventsHandler))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGameViewportClient_Data(Structure):
     pass
 
@@ -1730,12 +1894,28 @@ class UGBXCrossLevelReferenceContainer(Structure):
     pass
 
 
+class TArray_UGBXCrossLevelReferenceContainerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGBXCrossLevelReferenceContainer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UGBXDefinition_Data(Structure):
     pass
 
 
 class UGBXDefinition(Structure):
     pass
+
+
+class TArray_UGBXDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGBXDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UBaseHitRegionDefinition_Data(Structure):
@@ -1754,6 +1934,14 @@ class UDamageTypeDefinition(Structure):
     pass
 
 
+class TArray_UDamageTypeDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDamageTypeDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UEngineInteractionIconDefinition_Data(Structure):
     pass
 
@@ -1770,6 +1958,14 @@ class UPawnAllegiance(Structure):
     pass
 
 
+class TArray_UPawnAllegiancePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPawnAllegiance))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPawnInteractionDefinition_Data(Structure):
     pass
 
@@ -1784,6 +1980,14 @@ class UGBXNavMeshPathModifier_Data(Structure):
 
 class UGBXNavMeshPathModifier(Structure):
     pass
+
+
+class TArray_UGBXNavMeshPathModifierPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UGBXNavMeshPathModifier))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGBXNavMeshPathModifier_Simplify_Data(Structure):
@@ -1962,6 +2166,14 @@ class UInterpTrack(Structure):
     pass
 
 
+class TArray_UInterpTrackPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpTrack))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UIResourcePoolProvider_Data(Structure):
     pass
 
@@ -2002,6 +2214,14 @@ class UJsonObject(Structure):
     pass
 
 
+class TArray_UJsonObjectPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UJsonObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UKMeshProps_Data(Structure):
     pass
 
@@ -2024,6 +2244,10 @@ class ULevel_Data(Structure):
 
 class ULevel(Structure):
     pass
+
+
+class TArray_ULevelPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(ULevel))), ("Count", c_int), ("Max", c_int)]
 
 
 class UPendingLevel_Data(Structure):
@@ -2056,6 +2280,14 @@ class ULevelStreaming_Data(Structure):
 
 class ULevelStreaming(Structure):
     pass
+
+
+class TArray_ULevelStreamingPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULevelStreaming))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ULevelStreamingAlwaysLoaded_Data(Structure):
@@ -2114,6 +2346,10 @@ class ULine(Structure):
     pass
 
 
+class TArray_ULinePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(ULine))), ("Count", c_int), ("Max", c_int)]
+
+
 class ULineData_Data(Structure):
     pass
 
@@ -2128,6 +2364,14 @@ class ULineSegment_Data(Structure):
 
 class ULineSegment(Structure):
     pass
+
+
+class TArray_ULineSegmentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULineSegment))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UMapInfo_Data(Structure):
@@ -2154,6 +2398,14 @@ class UMaterialInterface(Structure):
     pass
 
 
+class TArray_UMaterialInterfacePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMaterialInterface))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UMaterial_Data(Structure):
     pass
 
@@ -2168,6 +2420,14 @@ class UMaterialExpression_Data(Structure):
 
 class UMaterialExpression(Structure):
     pass
+
+
+class TArray_UMaterialExpressionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMaterialExpression))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UModel_Data(Structure):
@@ -2216,6 +2476,14 @@ class UObjectReferencer_Data(Structure):
 
 class UObjectReferencer(Structure):
     pass
+
+
+class TArray_UObjectReferencerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UObjectReferencer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UOnlineSubsystem_Data(Structure):
@@ -2274,6 +2542,14 @@ class UOnlineStatsRead(Structure):
     pass
 
 
+class TArray_UOnlineStatsReadPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UOnlineStatsRead))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UOnlineStatsWrite_Data(Structure):
     pass
 
@@ -2322,6 +2598,14 @@ class ULocalPlayer(Structure):
     pass
 
 
+class TArray_ULocalPlayerPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULocalPlayer))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UNetConnection_Data(Structure):
     pass
 
@@ -2336,6 +2620,14 @@ class UChildConnection_Data(Structure):
 
 class UChildConnection(Structure):
     pass
+
+
+class TArray_UChildConnectionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UChildConnection))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDemoRecConnection_Data(Structure):
@@ -2362,12 +2654,28 @@ class UPostProcessChain(Structure):
     pass
 
 
+class TArray_UPostProcessChainPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPostProcessChain))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPostProcessEffect_Data(Structure):
     pass
 
 
 class UPostProcessEffect(Structure):
     pass
+
+
+class TArray_UPostProcessEffectPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPostProcessEffect))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UAccumulateAlphaEffect_Data(Structure):
@@ -2488,6 +2796,14 @@ class UReachSpec_Data(Structure):
 
 class UReachSpec(Structure):
     pass
+
+
+class TArray_UReachSpecPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UReachSpec))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UAdvancedReachSpec_Data(Structure):
@@ -2666,6 +2982,14 @@ class UShadowMap2D(Structure):
     pass
 
 
+class TArray_UShadowMap2DPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UShadowMap2D))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USmokeTestCommandlet_Data(Structure):
     pass
 
@@ -2706,6 +3030,14 @@ class URB_BodySetup(Structure):
     pass
 
 
+class TArray_URB_BodySetupPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_BodySetup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UTexture_Data(Structure):
     pass
 
@@ -2714,12 +3046,24 @@ class UTexture(Structure):
     pass
 
 
+class TArray_UTexturePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UTexture))), ("Count", c_int), ("Max", c_int)]
+
+
 class UTexture2D_Data(Structure):
     pass
 
 
 class UTexture2D(Structure):
     pass
+
+
+class TArray_UTexture2DPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTexture2D))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ULightMapTexture2D_Data(Structure):
@@ -2754,6 +3098,14 @@ class UTranslatorTag(Structure):
     pass
 
 
+class TArray_UTranslatorTagPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTranslatorTag))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UStringsTag_Data(Structure):
     pass
 
@@ -2776,6 +3128,14 @@ class UInteraction_Data(Structure):
 
 class UInteraction(Structure):
     pass
+
+
+class TArray_UInteractionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInteraction))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UUIInteraction_Data(Structure):
@@ -2802,6 +3162,10 @@ class UVertex(Structure):
     pass
 
 
+class TArray_UVertexPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UVertex))), ("Count", c_int), ("Max", c_int)]
+
+
 class UWaveFormBase_Data(Structure):
     pass
 
@@ -2824,6 +3188,14 @@ class AEnvironmentVolume_Data(Structure):
 
 class AEnvironmentVolume(Structure):
     pass
+
+
+class TArray_AEnvironmentVolumePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AEnvironmentVolume))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ATestSplittingVolume_Data(Structure):
@@ -2904,6 +3276,14 @@ class UStaticMeshComponent_Data(Structure):
 
 class UStaticMeshComponent(Structure):
     pass
+
+
+class TArray_UStaticMeshComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UStaticMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UCoverMeshComponent_Data(Structure):
@@ -3000,6 +3380,14 @@ class UNavMeshGoal_Filter_Data(Structure):
 
 class UNavMeshGoal_Filter(Structure):
     pass
+
+
+class TArray_UNavMeshGoal_FilterPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UNavMeshGoal_Filter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UNavMeshGoalFilter_MinPathDistance_Data(Structure):
@@ -3394,6 +3782,14 @@ class UAnimMetaData(Structure):
     pass
 
 
+class TArray_UAnimMetaDataPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimMetaData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAnimMetaData_SkelControl_Data(Structure):
     pass
 
@@ -3554,12 +3950,24 @@ class UAnimNode(Structure):
     pass
 
 
+class TArray_UAnimNodePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UAnimNode))), ("Count", c_int), ("Max", c_int)]
+
+
 class UAnimNodeBlendBase_Data(Structure):
     pass
 
 
 class UAnimNodeBlendBase(Structure):
     pass
+
+
+class TArray_UAnimNodeBlendBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimNodeBlendBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UAnimNode_MultiBlendPerBone_Data(Structure):
@@ -3722,6 +4130,14 @@ class UAnimNodeSlot(Structure):
     pass
 
 
+class TArray_UAnimNodeSlotPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimNodeSlot))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAnimNodeSynch_Data(Structure):
     pass
 
@@ -3746,6 +4162,14 @@ class UAnimNodeSequence(Structure):
     pass
 
 
+class TArray_UAnimNodeSequencePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimNodeSequence))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAnimNodeSequenceBlendBase_Data(Structure):
     pass
 
@@ -3768,6 +4192,14 @@ class UMorphNodeBase_Data(Structure):
 
 class UMorphNodeBase(Structure):
     pass
+
+
+class TArray_UMorphNodeBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMorphNodeBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UMorphNodeMultiPose_Data(Structure):
@@ -3826,6 +4258,14 @@ class USkelControlBase(Structure):
     pass
 
 
+class TArray_USkelControlBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkelControlBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USkelControl_CCD_IK_Data(Structure):
     pass
 
@@ -3872,6 +4312,14 @@ class USkelControlLookAt_Data(Structure):
 
 class USkelControlLookAt(Structure):
     pass
+
+
+class TArray_USkelControlLookAtPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkelControlLookAt))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USkelControlSingleBone_Data(Structure):
@@ -3922,12 +4370,24 @@ class UAnimSequence(Structure):
     pass
 
 
+class TArray_UAnimSequencePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAnimSequence))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UAnimSet_Data(Structure):
     pass
 
 
 class UAnimSet(Structure):
     pass
+
+
+class TArray_UAnimSetPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(UAnimSet))), ("Count", c_int), ("Max", c_int)]
 
 
 class UMorphTarget_Data(Structure):
@@ -3938,12 +4398,28 @@ class UMorphTarget(Structure):
     pass
 
 
+class TArray_UMorphTargetPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMorphTarget))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UMorphTargetSet_Data(Structure):
     pass
 
 
 class UMorphTargetSet(Structure):
     pass
+
+
+class TArray_UMorphTargetSetPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMorphTargetSet))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UMorphWeightSequence_Data(Structure):
@@ -3992,6 +4468,14 @@ class UDecalComponent_Data(Structure):
 
 class UDecalComponent(Structure):
     pass
+
+
+class TArray_UDecalComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UDecalComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UActorFactoryDecal_Data(Structure):
@@ -4146,6 +4630,14 @@ class UApexComponentBase(Structure):
     pass
 
 
+class TArray_UApexComponentBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UApexComponentBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UApexDynamicComponent_Data(Structure):
     pass
 
@@ -4178,6 +4670,14 @@ class UBlockingMeshComponent(Structure):
     pass
 
 
+class TArray_UBlockingMeshComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBlockingMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInstancedStaticMeshComponent_Data(Structure):
     pass
 
@@ -4194,6 +4694,14 @@ class USplineMeshComponent(Structure):
     pass
 
 
+class TArray_USplineMeshComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USplineMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UApexAsset_Data(Structure):
     pass
 
@@ -4208,6 +4716,14 @@ class UApexClothingAsset_Data(Structure):
 
 class UApexClothingAsset(Structure):
     pass
+
+
+class TArray_UApexClothingAssetPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UApexClothingAsset))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UApexDestructibleAsset_Data(Structure):
@@ -4258,6 +4774,14 @@ class UInterpGroup(Structure):
     pass
 
 
+class TArray_UInterpGroupPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpGroup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInterpGroupAI_Data(Structure):
     pass
 
@@ -4280,6 +4804,14 @@ class UInterpGroupInst_Data(Structure):
 
 class UInterpGroupInst(Structure):
     pass
+
+
+class TArray_UInterpGroupInstPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpGroupInst))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UInterpGroupInstAI_Data(Structure):
@@ -4552,6 +5084,14 @@ class UInterpTrackInst_Data(Structure):
 
 class UInterpTrackInst(Structure):
     pass
+
+
+class TArray_UInterpTrackInstPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpTrackInst))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UInterpTrackInstAnimControl_Data(Structure):
@@ -6026,6 +6566,14 @@ class UMaterialInstanceConstant(Structure):
     pass
 
 
+class TArray_UMaterialInstanceConstantPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UMaterialInstanceConstant))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UMaterialInstanceTimeVarying_Data(Structure):
     pass
 
@@ -6050,6 +6598,14 @@ class AEmitterCameraLensEffectBase(Structure):
     pass
 
 
+class TArray_AEmitterCameraLensEffectBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AEmitterCameraLensEffectBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AParticleEventManager_Data(Structure):
     pass
 
@@ -6064,6 +6620,14 @@ class UParticleSystemComponent_Data(Structure):
 
 class UParticleSystemComponent(Structure):
     pass
+
+
+class TArray_UParticleSystemComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleSystemComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UDistributionFloatParticleParameter_Data(Structure):
@@ -6090,6 +6654,14 @@ class UParticleEmitter(Structure):
     pass
 
 
+class TArray_UParticleEmitterPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleEmitter))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UParticleSpriteEmitter_Data(Structure):
     pass
 
@@ -6106,12 +6678,28 @@ class UParticleLODLevel(Structure):
     pass
 
 
+class TArray_UParticleLODLevelPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleLODLevel))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UParticleModule_Data(Structure):
     pass
 
 
 class UParticleModule(Structure):
     pass
+
+
+class TArray_UParticleModulePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModule))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UParticleModuleAccelerationBase_Data(Structure):
@@ -6346,6 +6934,14 @@ class UParticleModuleEventReceiverBase(Structure):
     pass
 
 
+class TArray_UParticleModuleEventReceiverBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleEventReceiverBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UParticleModuleEventReceiverKillParticles_Data(Structure):
     pass
 
@@ -6568,6 +7164,14 @@ class UParticleModuleOrbit_Data(Structure):
 
 class UParticleModuleOrbit(Structure):
     pass
+
+
+class TArray_UParticleModuleOrbitPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleOrbit))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UParticleModuleOrientationBase_Data(Structure):
@@ -6800,6 +7404,14 @@ class UParticleModuleSpawnBase_Data(Structure):
 
 class UParticleModuleSpawnBase(Structure):
     pass
+
+
+class TArray_UParticleModuleSpawnBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleSpawnBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UParticleModuleSpawn_Data(Structure):
@@ -7106,6 +7718,14 @@ class UParticleModuleEventSendToGame(Structure):
     pass
 
 
+class TArray_UParticleModuleEventSendToGamePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleModuleEventSendToGame))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UParticleSystem_Data(Structure):
     pass
 
@@ -7114,12 +7734,28 @@ class UParticleSystem(Structure):
     pass
 
 
+class TArray_UParticleSystemPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleSystem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UParticleSystemReplay_Data(Structure):
     pass
 
 
 class UParticleSystemReplay(Structure):
     pass
+
+
+class TArray_UParticleSystemReplayPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UParticleSystemReplay))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UPhysXParticleSystem_Data(Structure):
@@ -7176,6 +7812,10 @@ class APawn_Data(Structure):
 
 class APawn(Structure):
     pass
+
+
+class TArray_APawnPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(APawn))), ("Count", c_int), ("Max", c_int)]
 
 
 class AVehicle_Data(Structure):
@@ -7306,12 +7946,28 @@ class UFractureMaterial(Structure):
     pass
 
 
+class TArray_UFractureMaterialPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UFractureMaterial))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UPhysicalMaterial_Data(Structure):
     pass
 
 
 class UPhysicalMaterial(Structure):
     pass
+
+
+class TArray_UPhysicalMaterialPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPhysicalMaterial))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UPhysicalMaterialPropertyBase_Data(Structure):
@@ -7354,6 +8010,14 @@ class URB_BodyInstance(Structure):
     pass
 
 
+class TArray_URB_BodyInstancePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_BodyInstance))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class URB_ConstraintInstance_Data(Structure):
     pass
 
@@ -7362,12 +8026,28 @@ class URB_ConstraintInstance(Structure):
     pass
 
 
+class TArray_URB_ConstraintInstancePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_ConstraintInstance))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class URB_ConstraintSetup_Data(Structure):
     pass
 
 
 class URB_ConstraintSetup(Structure):
     pass
+
+
+class TArray_URB_ConstraintSetupPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(URB_ConstraintSetup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class URB_BSJointSetup_Data(Structure):
@@ -7432,6 +8112,14 @@ class USVehicleWheel_Data(Structure):
 
 class USVehicleWheel(Structure):
     pass
+
+
+class TArray_USVehicleWheelPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USVehicleWheel))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ANxGenericForceFieldBrush_Data(Structure):
@@ -7690,6 +8378,14 @@ class USequenceObject(Structure):
     pass
 
 
+class TArray_USequenceObjectPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceObject))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USequenceOp_Data(Structure):
     pass
 
@@ -7698,12 +8394,28 @@ class USequenceOp(Structure):
     pass
 
 
+class TArray_USequenceOpPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceOp))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USequenceEvent_Data(Structure):
     pass
 
 
 class USequenceEvent(Structure):
     pass
+
+
+class TArray_USequenceEventPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceEvent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USequenceEventCustomEnableCondition_Data(Structure):
@@ -7752,6 +8464,10 @@ class USequence_Data(Structure):
 
 class USequence(Structure):
     pass
+
+
+class TArray_USequencePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(USequence))), ("Count", c_int), ("Max", c_int)]
 
 
 class UPrefabSequence_Data(Structure):
@@ -7960,6 +8676,14 @@ class USeqAct_Latent_Data(Structure):
 
 class USeqAct_Latent(Structure):
     pass
+
+
+class TArray_USeqAct_LatentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USeqAct_Latent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USeqAct_ActorFactory_Data(Structure):
@@ -8746,12 +9470,28 @@ class USequenceVariable(Structure):
     pass
 
 
+class TArray_USequenceVariablePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USequenceVariable))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UInterpData_Data(Structure):
     pass
 
 
 class UInterpData(Structure):
     pass
+
+
+class TArray_UInterpDataPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UInterpData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USeqVar_Bool_Data(Structure):
@@ -8898,6 +9638,14 @@ class USoundNode(Structure):
     pass
 
 
+class TArray_USoundNodePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USoundNode))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USoundNodeWave_Data(Structure):
     pass
 
@@ -8938,12 +9686,28 @@ class ULandscapeComponent(Structure):
     pass
 
 
+class TArray_ULandscapeComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULandscapeComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ULandscapeHeightfieldCollisionComponent_Data(Structure):
     pass
 
 
 class ULandscapeHeightfieldCollisionComponent(Structure):
     pass
+
+
+class TArray_ULandscapeHeightfieldCollisionComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULandscapeHeightfieldCollisionComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UTerrainComponent_Data(Structure):
@@ -8954,12 +9718,28 @@ class UTerrainComponent(Structure):
     pass
 
 
+class TArray_UTerrainComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTerrainComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UTerrainWeightMapTexture_Data(Structure):
     pass
 
 
 class UTerrainWeightMapTexture(Structure):
     pass
+
+
+class TArray_UTerrainWeightMapTexturePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTerrainWeightMapTexture))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UTerrainLayerSetup_Data(Structure):
@@ -9074,6 +9854,14 @@ class UUIDataProvider(Structure):
     pass
 
 
+class TArray_UUIDataProviderPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UUIConfigProvider_Data(Structure):
     pass
 
@@ -9090,12 +9878,28 @@ class UUIConfigFileProvider(Structure):
     pass
 
 
+class TArray_UUIConfigFileProviderPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIConfigFileProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UUIConfigSectionProvider_Data(Structure):
     pass
 
 
 class UUIConfigSectionProvider(Structure):
     pass
+
+
+class TArray_UUIConfigSectionProviderPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIConfigSectionProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UUIDataProvider_OnlinePlayerDataBase_Data(Structure):
@@ -9176,6 +9980,14 @@ class UUIDataStore_Data(Structure):
 
 class UUIDataStore(Structure):
     pass
+
+
+class TArray_UUIDataStorePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataStore))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UUIDataStore_DynamicResource_Data(Structure):
@@ -9338,6 +10150,14 @@ class UUIDataProvider_Settings(Structure):
     pass
 
 
+class TArray_UUIDataProvider_SettingsPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataProvider_Settings))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UUIResourceDataProvider_Data(Structure):
     pass
 
@@ -9346,12 +10166,28 @@ class UUIResourceDataProvider(Structure):
     pass
 
 
+class TArray_UUIResourceDataProviderPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIResourceDataProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UUIDataProvider_MenuItem_Data(Structure):
     pass
 
 
 class UUIDataProvider_MenuItem(Structure):
     pass
+
+
+class TArray_UUIDataProvider_MenuItemPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIDataProvider_MenuItem))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UUIMapSummary_Data(Structure):
@@ -9368,6 +10204,14 @@ class UUIResourceCombinationProvider_Data(Structure):
 
 class UUIResourceCombinationProvider(Structure):
     pass
+
+
+class TArray_UUIResourceCombinationProviderPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UUIResourceCombinationProvider))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGameUISceneClient_Data(Structure):
@@ -9538,6 +10382,14 @@ class UTextureMovie(Structure):
     pass
 
 
+class TArray_UTextureMoviePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTextureMovie))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UTextureRenderTarget_Data(Structure):
     pass
 
@@ -9552,6 +10404,14 @@ class UTextureRenderTarget2D_Data(Structure):
 
 class UTextureRenderTarget2D(Structure):
     pass
+
+
+class TArray_UTextureRenderTarget2DPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UTextureRenderTarget2D))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UScriptedTexture_Data(Structure):
@@ -9770,6 +10630,14 @@ class ULightComponent(Structure):
     pass
 
 
+class TArray_ULightComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ULightComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UDirectionalLightComponent_Data(Structure):
     pass
 
@@ -9898,12 +10766,28 @@ class USkeletalMeshComponent(Structure):
     pass
 
 
+class TArray_USkeletalMeshComponentPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkeletalMeshComponent))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class USkeletalMesh_Data(Structure):
     pass
 
 
 class USkeletalMesh(Structure):
     pass
+
+
+class TArray_USkeletalMeshPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkeletalMesh))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class USkeletalMeshSocket_Data(Structure):
@@ -9914,12 +10798,28 @@ class USkeletalMeshSocket(Structure):
     pass
 
 
+class TArray_USkeletalMeshSocketPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(USkeletalMeshSocket))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ASplineActor_Data(Structure):
     pass
 
 
 class ASplineActor(Structure):
     pass
+
+
+class TArray_ASplineActorPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ASplineActor))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class ASplineLoftActor_Data(Structure):
@@ -9970,12 +10870,24 @@ class APlayerReplicationInfo(Structure):
     pass
 
 
+class TArray_APlayerReplicationInfoPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(APlayerReplicationInfo))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class ATeamInfo_Data(Structure):
     pass
 
 
 class ATeamInfo(Structure):
     pass
+
+
+class TArray_ATeamInfoPtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(ATeamInfo))), ("Count", c_int), ("Max", c_int)]
 
 
 class ACamera_Data(Structure):
@@ -10018,12 +10930,28 @@ class UCameraAnimInst(Structure):
     pass
 
 
+class TArray_UCameraAnimInstPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCameraAnimInst))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UCameraModifier_Data(Structure):
     pass
 
 
 class UCameraModifier(Structure):
     pass
+
+
+class TArray_UCameraModifierPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UCameraModifier))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UCameraModifier_CameraShake_Data(Structure):
@@ -10072,6 +11000,14 @@ class UAttributeContextResolver_Data(Structure):
 
 class UAttributeContextResolver(Structure):
     pass
+
+
+class TArray_UAttributeContextResolverPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributeContextResolver))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UBalancedActorAttributeContextResolver_Data(Structure):
@@ -10186,6 +11122,14 @@ class UAttributeValueResolver(Structure):
     pass
 
 
+class TArray_UAttributeValueResolverPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UAttributeValueResolver))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UObjectPropertyAttributeValueResolver_Data(Structure):
     pass
 
@@ -10208,6 +11152,14 @@ class UBehaviorBase_Data(Structure):
 
 class UBehaviorBase(Structure):
     pass
+
+
+class TArray_UBehaviorBasePtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UBehaviorBase))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UBehavior_Kill_Data(Structure):
@@ -10240,6 +11192,14 @@ class UExpressionEvaluator_Data(Structure):
 
 class UExpressionEvaluator(Structure):
     pass
+
+
+class TArray_UExpressionEvaluatorPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UExpressionEvaluator))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UExpressionTree_Data(Structure):
@@ -10330,6 +11290,14 @@ class UImpactDefinition(Structure):
     pass
 
 
+class TArray_UImpactDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UImpactDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class UResourceDefinition_Data(Structure):
     pass
 
@@ -10344,6 +11312,14 @@ class UResourcePoolDefinition_Data(Structure):
 
 class UResourcePoolDefinition(Structure):
     pass
+
+
+class TArray_UResourcePoolDefinitionPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UResourcePoolDefinition))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UGestaltPartMatrices_Data(Structure):
@@ -10400,6 +11376,14 @@ class UPersistentSequenceData_Data(Structure):
 
 class UPersistentSequenceData(Structure):
     pass
+
+
+class TArray_UPersistentSequenceDataPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(UPersistentSequenceData))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class UResourcePool_Data(Structure):
@@ -10506,6 +11490,14 @@ class ADroppedPickup(Structure):
     pass
 
 
+class TArray_ADroppedPickupPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(ADroppedPickup))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AInventory_Data(Structure):
     pass
 
@@ -10514,12 +11506,28 @@ class AInventory(Structure):
     pass
 
 
+class TArray_AInventoryPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AInventory))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class AWillowInventory_Data(Structure):
     pass
 
 
 class AWillowInventory(Structure):
     pass
+
+
+class TArray_AWillowInventoryPtr(Structure):
+    _fields_ = [
+        ("Data", POINTER(POINTER(AWillowInventory))),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class AWeapon_Data(Structure):

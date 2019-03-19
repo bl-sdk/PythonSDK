@@ -6,20 +6,48 @@ class FEnvironmentalEffectInfo(Structure):
     pass
 
 
+class TArray_FEnvironmentalEffectInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FEnvironmentalEffectInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAkEventTrackKey(Structure):
     pass
+
+
+class TArray_FAkEventTrackKey(Structure):
+    _fields_ = [("Data", POINTER(FAkEventTrackKey)), ("Count", c_int), ("Max", c_int)]
 
 
 class FEnvironmentalEffectSetting(Structure):
     pass
 
 
+class TArray_FEnvironmentalEffectSetting(Structure):
+    _fields_ = [
+        ("Data", POINTER(FEnvironmentalEffectSetting)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FRTPCSetting(Structure):
     pass
 
 
+class TArray_FRTPCSetting(Structure):
+    _fields_ = [("Data", POINTER(FRTPCSetting)), ("Count", c_int), ("Max", c_int)]
+
+
 class FOccludedVolume(Structure):
     pass
+
+
+class TArray_FOccludedVolume(Structure):
+    _fields_ = [("Data", POINTER(FOccludedVolume)), ("Count", c_int), ("Max", c_int)]
 
 
 from ..TArrayTypes import *

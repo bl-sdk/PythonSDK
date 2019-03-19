@@ -6,16 +6,48 @@ class FServerQueryToRulesResponseMapping(Structure):
     pass
 
 
+class TArray_FServerQueryToRulesResponseMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FServerQueryToRulesResponseMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FServerQueryToPingResponseMapping(Structure):
     pass
+
+
+class TArray_FServerQueryToPingResponseMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FServerQueryToPingResponseMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FClientFilterORClause(Structure):
     pass
 
 
+class TArray_FClientFilterORClause(Structure):
+    _fields_ = [
+        ("Data", POINTER(FClientFilterORClause)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FFilterKeyToSteamKeyMapping(Structure):
     pass
+
+
+class TArray_FFilterKeyToSteamKeyMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FFilterKeyToSteamKeyMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FLeaderboardHandle(Structure):
@@ -26,24 +58,68 @@ class FLeaderboardTemplate(Structure):
     pass
 
 
+class TArray_FLeaderboardTemplate(Structure):
+    _fields_ = [
+        ("Data", POINTER(FLeaderboardTemplate)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FDeferredLeaderboardRead(Structure):
     pass
+
+
+class TArray_FDeferredLeaderboardRead(Structure):
+    _fields_ = [
+        ("Data", POINTER(FDeferredLeaderboardRead)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FDeferredLeaderboardWrite(Structure):
     pass
 
 
+class TArray_FDeferredLeaderboardWrite(Structure):
+    _fields_ = [
+        ("Data", POINTER(FDeferredLeaderboardWrite)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FLeaderboardEntry(Structure):
     pass
+
+
+class TArray_FLeaderboardEntry(Structure):
+    _fields_ = [("Data", POINTER(FLeaderboardEntry)), ("Count", c_int), ("Max", c_int)]
 
 
 class FViewIdToLeaderboardName(Structure):
     pass
 
 
+class TArray_FViewIdToLeaderboardName(Structure):
+    _fields_ = [
+        ("Data", POINTER(FViewIdToLeaderboardName)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FSteamPlayerClanData(Structure):
     pass
+
+
+class TArray_FSteamPlayerClanData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FSteamPlayerClanData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FMarketplaceListCache(Structure):
@@ -52,6 +128,14 @@ class FMarketplaceListCache(Structure):
 
 class FMarketplaceOfferData(Structure):
     pass
+
+
+class TArray_FMarketplaceOfferData(Structure):
+    _fields_ = [
+        ("Data", POINTER(FMarketplaceOfferData)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FProfileSettingsCache(Structure):
@@ -66,16 +150,44 @@ class FAchievementProgressStat(Structure):
     pass
 
 
+class TArray_FAchievementProgressStat(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAchievementProgressStat)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FAchievementMappingInfo(Structure):
     pass
+
+
+class TArray_FAchievementMappingInfo(Structure):
+    _fields_ = [
+        ("Data", POINTER(FAchievementMappingInfo)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FQueuedAvatarRequest(Structure):
     pass
 
 
+class TArray_FQueuedAvatarRequest(Structure):
+    _fields_ = [
+        ("Data", POINTER(FQueuedAvatarRequest)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FTitleFileMapping(Structure):
     pass
+
+
+class TArray_FTitleFileMapping(Structure):
+    _fields_ = [("Data", POINTER(FTitleFileMapping)), ("Count", c_int), ("Max", c_int)]
 
 
 class FControllerConnectionState(Structure):
@@ -86,24 +198,64 @@ class FOnlineStatusContextMapping(Structure):
     pass
 
 
+class TArray_FOnlineStatusContextMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineStatusContextMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FOnlineStatusPropertyMapping(Structure):
     pass
+
+
+class TArray_FOnlineStatusPropertyMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineStatusPropertyMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FOnlineStatusMapping(Structure):
     pass
 
 
+class TArray_FOnlineStatusMapping(Structure):
+    _fields_ = [
+        ("Data", POINTER(FOnlineStatusMapping)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
+
+
 class FPropertyToColumn(Structure):
     pass
+
+
+class TArray_FPropertyToColumn(Structure):
+    _fields_ = [("Data", POINTER(FPropertyToColumn)), ("Count", c_int), ("Max", c_int)]
 
 
 class FPlayerStat(Structure):
     pass
 
 
+class TArray_FPlayerStat(Structure):
+    _fields_ = [("Data", POINTER(FPlayerStat)), ("Count", c_int), ("Max", c_int)]
+
+
 class FPendingPlayerStats(Structure):
     pass
+
+
+class TArray_FPendingPlayerStats(Structure):
+    _fields_ = [
+        ("Data", POINTER(FPendingPlayerStats)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
 
 
 class FListenEntry(Structure):
@@ -120,6 +272,10 @@ class FRequestEntry(Structure):
 
 class FPendingEntry(Structure):
     pass
+
+
+class TArray_FPendingEntry(Structure):
+    _fields_ = [("Data", POINTER(FPendingEntry)), ("Count", c_int), ("Max", c_int)]
 
 
 from ..TArrayTypes import *
