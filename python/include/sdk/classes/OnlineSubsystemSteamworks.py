@@ -3,25 +3,113 @@ import BL2SDK
 
 
 class UOnlineAuthInterfaceSteamworks_Data(Structure):
-    _fields_ = [("AuthCallbackBridge", FPointer)]
+    pass
 
 
 class UOnlineAuthInterfaceSteamworks(Structure):
-    _fields_ = [
+    pass
+
+
+class UOnlineGameInterfaceSteamworks_Data(Structure):
+    pass
+
+
+class UOnlineGameInterfaceSteamworks(Structure):
+    pass
+
+
+class UOnlineLobbyInterfaceSteamworks_Data(Structure):
+    pass
+
+
+class UOnlineLobbyInterfaceSteamworks(Structure):
+    pass
+
+
+class UOnlineSubsystemSteamworks_Data(Structure):
+    pass
+
+
+class UOnlineSubsystemSteamworks(Structure):
+    pass
+
+
+class UQoSHandlerSteamworks_Data(Structure):
+    pass
+
+
+class UQoSHandlerSteamworks(Structure):
+    pass
+
+
+class USparkInterfaceSteamworks_Data(Structure):
+    pass
+
+
+class USparkInterfaceSteamworks(Structure):
+    pass
+
+
+class UIpNetDriverSteamworks_Data(Structure):
+    pass
+
+
+class UIpNetDriverSteamworks(Structure):
+    pass
+
+
+class UIpNetConnectionSteamworks_Data(Structure):
+    pass
+
+
+class UIpNetConnectionSteamworks(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+from ..structs.GearboxFramework import *
+from ..structs.WillowGame import *
+from ..structs.AkAudio import *
+from ..structs.IpDrv import *
+from ..structs.WinDrv import *
+from ..structs.XAudio2 import *
+from ..structs.OnlineSubsystemSteamworks import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.GearboxFramework import *
+from ..classes.WillowGame import *
+from ..classes.AkAudio import *
+from ..classes.IpDrv import *
+from ..classes.WinDrv import *
+from ..classes.XAudio2 import *
+
+
+def init():
+
+    UOnlineAuthInterfaceSteamworks_Data._fields_ = [("AuthCallbackBridge", FPointer)]
+
+    UOnlineAuthInterfaceSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("UOnlineAuthInterfaceBaseImpl", UOnlineAuthInterfaceBaseImpl_Data),
         ("UOnlineAuthInterfaceImpl", UOnlineAuthInterfaceImpl_Data),
         ("UOnlineAuthInterfaceSteamworks", UOnlineAuthInterfaceSteamworks_Data),
     ]
 
-
-class UOnlineGameInterfaceSteamworks_Data(Structure):
-    _fields_ = [
+    UOnlineGameInterfaceSteamworks_Data._fields_ = [
         ("QueryToRulesResponseMap", TArray_FServerQueryToRulesResponseMapping),
         ("QueryToPingResponseMap", TArray_FServerQueryToPingResponseMapping),
         ("ServerListResponse", FPointer),
         ("CurrentMatchmakingType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("CurrentMatchmakingQuery", FPointer),
         ("GameInviteAcceptedDelegates", TArray_FScriptDelegate),
         ("InviteGameSearch", POINTER(UOnlineGameSearch)),
@@ -29,7 +117,6 @@ class UOnlineGameInterfaceSteamworks_Data(Structure):
         ("UnregisterPlayerCompleteDelegates", TArray_FScriptDelegate),
         ("ActiveClientsideFilters", TArray_FClientFilterORClause),
         ("bFilterEngineBuild", c_bool, 1),
-        ("", c_ulong, 0),
         ("FilterKeyToSteamKeyMap", TArray_FFilterKeyToSteamKeyMapping),
         ("ServerSessionName", FName),
         ("__OnGameInviteAccepted__Delegate", FScriptDelegate),
@@ -37,28 +124,20 @@ class UOnlineGameInterfaceSteamworks_Data(Structure):
         ("__OnUnregisterPlayerComplete__Delegate", FScriptDelegate),
     ]
 
-
-class UOnlineGameInterfaceSteamworks(Structure):
-    _fields_ = [
+    UOnlineGameInterfaceSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("UOnlineGameInterfaceImpl", UOnlineGameInterfaceImpl_Data),
         ("UOnlineGameInterfaceSteamworks", UOnlineGameInterfaceSteamworks_Data),
     ]
 
+    UOnlineLobbyInterfaceSteamworks_Data._fields_ = []
 
-class UOnlineLobbyInterfaceSteamworks_Data(Structure):
-    _fields_ = []
-
-
-class UOnlineLobbyInterfaceSteamworks(Structure):
-    _fields_ = [
+    UOnlineLobbyInterfaceSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("UOnlineLobbyInterfaceSteamworks", UOnlineLobbyInterfaceSteamworks_Data),
     ]
 
-
-class UOnlineSubsystemSteamworks_Data(Structure):
-    _fields_ = [
+    UOnlineSubsystemSteamworks_Data._fields_ = [
         ("CallbackBridge", FPointer),
         ("AsyncTasks", TArray_FPointer),
         ("bStoringAchievement", c_bool, 1),
@@ -69,7 +148,6 @@ class UOnlineSubsystemSteamworks_Data(Structure):
         ("bShouldUseMcp", c_bool, 1),
         ("bIncrementStatValues", c_bool, 1),
         ("bEnableSteamQoS", c_bool, 1),
-        ("", c_ulong, 0),
         ("TotalGSStatsStoresPending", c_int),
         ("UserStatsReceivedState", c_ubyte),
         ("LoggedInStatus", c_ubyte),
@@ -211,18 +289,14 @@ class UOnlineSubsystemSteamworks_Data(Structure):
         ("__OnCheckDownloadableContentList__Delegate", FScriptDelegate),
     ]
 
-
-class UOnlineSubsystemSteamworks(Structure):
-    _fields_ = [
+    UOnlineSubsystemSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("UOnlineSubsystem", UOnlineSubsystem_Data),
         ("UOnlineSubsystemCommonImpl", UOnlineSubsystemCommonImpl_Data),
         ("UOnlineSubsystemSteamworks", UOnlineSubsystemSteamworks_Data),
     ]
 
-
-class UQoSHandlerSteamworks_Data(Structure):
-    _fields_ = [
+    UQoSHandlerSteamworks_Data._fields_ = [
         ("MaxQoSRequest", c_int),
         ("MaxQoSListen", c_int),
         ("NumPingProbes", c_int),
@@ -231,38 +305,27 @@ class UQoSHandlerSteamworks_Data(Structure):
         ("ChallengeTimeout", c_float),
         ("ListenTimeout", c_float),
         ("bEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("ListenEntries", FMap_Mirror),
         ("RequestEntries", FMap_Mirror),
         ("PendingRequests", TArray_FPendingEntry),
     ]
 
-
-class UQoSHandlerSteamworks(Structure):
-    _fields_ = [
+    UQoSHandlerSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("UQoSHandlerSteamworks", UQoSHandlerSteamworks_Data),
     ]
 
+    USparkInterfaceSteamworks_Data._fields_ = []
 
-class USparkInterfaceSteamworks_Data(Structure):
-    _fields_ = []
-
-
-class USparkInterfaceSteamworks(Structure):
-    _fields_ = [
+    USparkInterfaceSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("USparkInterfaceImpl", USparkInterfaceImpl_Data),
         ("USparkInterfaceSteamworks", USparkInterfaceSteamworks_Data),
     ]
 
+    UIpNetDriverSteamworks_Data._fields_ = []
 
-class UIpNetDriverSteamworks_Data(Structure):
-    _fields_ = []
-
-
-class UIpNetDriverSteamworks(Structure):
-    _fields_ = [
+    UIpNetDriverSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("USubsystem", USubsystem_Data),
         ("UNetDriver", UNetDriver_Data),
@@ -270,13 +333,9 @@ class UIpNetDriverSteamworks(Structure):
         ("UIpNetDriverSteamworks", UIpNetDriverSteamworks_Data),
     ]
 
+    UIpNetConnectionSteamworks_Data._fields_ = []
 
-class UIpNetConnectionSteamworks_Data(Structure):
-    _fields_ = []
-
-
-class UIpNetConnectionSteamworks(Structure):
-    _fields_ = [
+    UIpNetConnectionSteamworks._fields_ = [
         ("UObject", UObject_Data),
         ("UPlayer", UPlayer_Data),
         ("UNetConnection", UNetConnection_Data),
@@ -284,18 +343,19 @@ class UIpNetConnectionSteamworks(Structure):
         ("UIpNetConnectionSteamworks", UIpNetConnectionSteamworks_Data),
     ]
 
-
-BL2SDK.g_loadedClasses += [
-    ("UOnlineAuthInterfaceSteamworks", 3575, "UOnlineAuthInterfaceImpl")
-]
-BL2SDK.g_loadedClasses += [
-    ("UOnlineGameInterfaceSteamworks", 3577, "UOnlineGameInterfaceImpl")
-]
-BL2SDK.g_loadedClasses += [("UOnlineLobbyInterfaceSteamworks", 3579, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UOnlineSubsystemSteamworks", 3581, "UOnlineSubsystemCommonImpl")
-]
-BL2SDK.g_loadedClasses += [("UQoSHandlerSteamworks", 3583, "UObject")]
-BL2SDK.g_loadedClasses += [("USparkInterfaceSteamworks", 3585, "USparkInterfaceImpl")]
-BL2SDK.g_loadedClasses += [("UIpNetDriverSteamworks", 3587, "UTcpNetDriver")]
-BL2SDK.g_loadedClasses += [("UIpNetConnectionSteamworks", 3589, "UTcpipConnection")]
+    BL2SDK.g_loadedClasses += [
+        ("UOnlineAuthInterfaceSteamworks", 3575, "UOnlineAuthInterfaceImpl")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UOnlineGameInterfaceSteamworks", 3577, "UOnlineGameInterfaceImpl")
+    ]
+    BL2SDK.g_loadedClasses += [("UOnlineLobbyInterfaceSteamworks", 3579, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UOnlineSubsystemSteamworks", 3581, "UOnlineSubsystemCommonImpl")
+    ]
+    BL2SDK.g_loadedClasses += [("UQoSHandlerSteamworks", 3583, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("USparkInterfaceSteamworks", 3585, "USparkInterfaceImpl")
+    ]
+    BL2SDK.g_loadedClasses += [("UIpNetDriverSteamworks", 3587, "UTcpNetDriver")]
+    BL2SDK.g_loadedClasses += [("UIpNetConnectionSteamworks", 3589, "UTcpipConnection")]

@@ -3,32 +3,84 @@ import BL2SDK
 
 
 class FSoundThemeBinding(Structure):
-    _fields_ = [("ThemeName", FName), ("Theme", POINTER(UUISoundTheme))]
+    pass
 
 
 class FASValue(Structure):
-    _fields_ = [
+    pass
+
+
+class FGFxWidgetBinding(Structure):
+    pass
+
+
+class FGFxDataStoreBinding(Structure):
+    pass
+
+
+class FExternalTexture(Structure):
+    pass
+
+
+class FASDisplayInfo(Structure):
+    pass
+
+
+class FASColorTransform(Structure):
+    pass
+
+
+class FEventData(Structure):
+    pass
+
+
+class FGCReference(Structure):
+    pass
+
+
+class FAkEventResolver(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+
+
+def init():
+
+    FSoundThemeBinding._fields_ = [
+        ("ThemeName", FName),
+        ("Theme", POINTER(UUISoundTheme)),
+    ]
+
+    FASValue._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("B", c_bool, 1),
-        ("", c_ulong, 0),
         ("N", c_float),
         ("S", FString),
     ]
 
+    FGFxWidgetBinding._fields_ = [
+        ("WidgetName", FName),
+        ("WidgetClass", POINTER(UClass)),
+    ]
 
-class FGFxWidgetBinding(Structure):
-    _fields_ = [("WidgetName", FName), ("WidgetClass", POINTER(UClass))]
-
-
-class FGFxDataStoreBinding(Structure):
-    _fields_ = [
+    FGFxDataStoreBinding._fields_ = [
         ("DataSource", FUIDataStoreBinding),
         ("VarPath", FString),
         ("ModelId", FString),
         ("ControlId", FString),
         ("bEditable", c_bool, 1),
-        ("", c_ulong, 0),
         ("CellTags", TArray_FName),
         ("ModelIdUtf8", TArray_unsigned_char),
         ("ControlIdUtf8", TArray_unsigned_char),
@@ -38,13 +90,9 @@ class FGFxDataStoreBinding(Structure):
         ("ControlRef", FPointer),
     ]
 
+    FExternalTexture._fields_ = [("Resource", FString), ("Texture", POINTER(UTexture))]
 
-class FExternalTexture(Structure):
-    _fields_ = [("Resource", FString), ("Texture", POINTER(UTexture))]
-
-
-class FASDisplayInfo(Structure):
-    _fields_ = [
+    FASDisplayInfo._fields_ = [
         ("X", c_float),
         ("Y", c_float),
         ("Z", c_float),
@@ -67,16 +115,11 @@ class FASDisplayInfo(Structure):
         ("hasZScale", c_bool, 1),
         ("hasAlpha", c_bool, 1),
         ("hasVisible", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FASColorTransform._fields_ = [("Multiply", FLinearColor), ("Add", FLinearColor)]
 
-class FASColorTransform(Structure):
-    _fields_ = [("Multiply", FLinearColor), ("Add", FLinearColor)]
-
-
-class FEventData(Structure):
-    _fields_ = [
+    FEventData._fields_ = [
         ("Type", FString),
         ("Data", c_int),
         ("mouseIndex", c_int),
@@ -86,10 +129,10 @@ class FEventData(Structure):
         ("controllerIdx", c_int),
     ]
 
+    FGCReference._fields_ = [
+        ("m_object", POINTER(UObject)),
+        ("m_count", c_int),
+        ("m_statid", c_int),
+    ]
 
-class FGCReference(Structure):
-    _fields_ = [("m_object", POINTER(UObject)), ("m_count", c_int), ("m_statid", c_int)]
-
-
-class FAkEventResolver(Structure):
-    _fields_ = [("Interaction", FName), ("AkEvent", POINTER(UAkEvent))]
+    FAkEventResolver._fields_ = [("Interaction", FName), ("AkEvent", POINTER(UAkEvent))]

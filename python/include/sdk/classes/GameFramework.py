@@ -3,28 +3,145 @@ import BL2SDK
 
 
 class AGamePawn_Data(Structure):
-    _fields_ = []
+    pass
 
 
 class AGamePawn(Structure):
-    _fields_ = [
+    pass
+
+
+class AGamePlayerController_Data(Structure):
+    pass
+
+
+class AGamePlayerController(Structure):
+    pass
+
+
+class UGameTypes_Data(Structure):
+    pass
+
+
+class UGameTypes(Structure):
+    pass
+
+
+class UNavMeshGoal_OutOfViewFrom_Data(Structure):
+    pass
+
+
+class UNavMeshGoal_OutOfViewFrom(Structure):
+    pass
+
+
+class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Data(Structure):
+    pass
+
+
+class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(Structure):
+    pass
+
+
+class USeqAct_ControlGameMovie_Data(Structure):
+    pass
+
+
+class USeqAct_ControlGameMovie(Structure):
+    pass
+
+
+class USeqAct_Deproject_Data(Structure):
+    pass
+
+
+class USeqAct_Deproject(Structure):
+    pass
+
+
+class USeqAct_ModifyProperty_Data(Structure):
+    pass
+
+
+class USeqAct_ModifyProperty(Structure):
+    pass
+
+
+class UGameSkelCtrl_Recoil_Data(Structure):
+    pass
+
+
+class UGameSkelCtrl_Recoil(Structure):
+    pass
+
+
+class UGameStateObject_Data(Structure):
+    pass
+
+
+class UGameStateObject(Structure):
+    pass
+
+
+class UGameStatsAggregator_Data(Structure):
+    pass
+
+
+class UGameStatsAggregator(Structure):
+    pass
+
+
+class UGameWaveForms_Data(Structure):
+    pass
+
+
+class UGameWaveForms(Structure):
+    pass
+
+
+class APlayerCollectorGame_Data(Structure):
+    pass
+
+
+class APlayerCollectorGame(Structure):
+    pass
+
+
+class UPMESTG_LeaveADecalBase_Data(Structure):
+    pass
+
+
+class UPMESTG_LeaveADecalBase(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+
+
+def init():
+
+    AGamePawn_Data._fields_ = []
+
+    AGamePawn._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("APawn", APawn_Data),
         ("AGamePawn", AGamePawn_Data),
     ]
 
-
-class AGamePlayerController_Data(Structure):
-    _fields_ = [
+    AGamePlayerController_Data._fields_ = [
         ("CurrentSoundMode", FName),
         ("bIsWarmupPaused", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class AGamePlayerController(Structure):
-    _fields_ = [
+    AGamePlayerController._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AController", AController_Data),
@@ -32,43 +149,30 @@ class AGamePlayerController(Structure):
         ("AGamePlayerController", AGamePlayerController_Data),
     ]
 
+    UGameTypes_Data._fields_ = []
 
-class UGameTypes_Data(Structure):
-    _fields_ = []
+    UGameTypes._fields_ = [("UObject", UObject_Data), ("UGameTypes", UGameTypes_Data)]
 
-
-class UGameTypes(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGameTypes", UGameTypes_Data)]
-
-
-class UNavMeshGoal_OutOfViewFrom_Data(Structure):
-    _fields_ = [
+    UNavMeshGoal_OutOfViewFrom_Data._fields_ = [
         ("GoalPoly", FPointer),
         ("OutOfViewLocation", FVector),
         ("bShowDebug", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UNavMeshGoal_OutOfViewFrom(Structure):
-    _fields_ = [
+    UNavMeshGoal_OutOfViewFrom._fields_ = [
         ("UObject", UObject_Data),
         ("UNavMeshPathGoalEvaluator", UNavMeshPathGoalEvaluator_Data),
         ("UNavMeshGoal_OutOfViewFrom", UNavMeshGoal_OutOfViewFrom_Data),
     ]
 
-
-class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Data(Structure):
-    _fields_ = [
+    UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Data._fields_ = [
         ("Location", FVector),
         ("Rotation", FVector),
         ("DistanceToCheck", c_float),
         ("LocationsToCheck", TArray_FVector),
     ]
 
-
-class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(Structure):
-    _fields_ = [
+    UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations._fields_ = [
         ("UObject", UObject_Data),
         ("UNavMeshPathConstraint", UNavMeshPathConstraint_Data),
         (
@@ -77,17 +181,13 @@ class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(Structure):
         ),
     ]
 
-
-class USeqAct_ControlGameMovie_Data(Structure):
-    _fields_ = [
+    USeqAct_ControlGameMovie_Data._fields_ = [
         ("MovieName", FString),
         ("StartOfRenderingMovieFrame", c_int),
         ("EndOfRenderingMovieFrame", c_int),
     ]
 
-
-class USeqAct_ControlGameMovie(Structure):
-    _fields_ = [
+    USeqAct_ControlGameMovie._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -96,9 +196,7 @@ class USeqAct_ControlGameMovie(Structure):
         ("USeqAct_ControlGameMovie", USeqAct_ControlGameMovie_Data),
     ]
 
-
-class USeqAct_Deproject_Data(Structure):
-    _fields_ = [
+    USeqAct_Deproject_Data._fields_ = [
         ("ScreenX", c_float),
         ("ScreenY", c_float),
         ("TraceDistance", c_float),
@@ -107,9 +205,7 @@ class USeqAct_Deproject_Data(Structure):
         ("HitNormal", FVector),
     ]
 
-
-class USeqAct_Deproject(Structure):
-    _fields_ = [
+    USeqAct_Deproject._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -117,13 +213,9 @@ class USeqAct_Deproject(Structure):
         ("USeqAct_Deproject", USeqAct_Deproject_Data),
     ]
 
+    USeqAct_ModifyProperty_Data._fields_ = [("Properties", TArray_FPropertyInfo)]
 
-class USeqAct_ModifyProperty_Data(Structure):
-    _fields_ = [("Properties", TArray_FPropertyInfo)]
-
-
-class USeqAct_ModifyProperty(Structure):
-    _fields_ = [
+    USeqAct_ModifyProperty._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -131,52 +223,40 @@ class USeqAct_ModifyProperty(Structure):
         ("USeqAct_ModifyProperty", USeqAct_ModifyProperty_Data),
     ]
 
-
-class UGameSkelCtrl_Recoil_Data(Structure):
-    _fields_ = [
+    UGameSkelCtrl_Recoil_Data._fields_ = [
         ("bBoneSpaceRecoil", c_bool, 1),
         ("bPlayRecoil", c_bool, 1),
         ("bOldPlayRecoil", c_bool, 1),
         ("bApplyControl", c_bool, 1),
-        ("", c_ulong, 0),
         ("Recoil", FRecoilDef),
         ("Aim", FVector2D),
     ]
 
-
-class UGameSkelCtrl_Recoil(Structure):
-    _fields_ = [
+    UGameSkelCtrl_Recoil._fields_ = [
         ("UObject", UObject_Data),
         ("UAnimObject", UAnimObject_Data),
         ("USkelControlBase", USkelControlBase_Data),
         ("UGameSkelCtrl_Recoil", UGameSkelCtrl_Recoil_Data),
     ]
 
-
-class UGameStateObject_Data(Structure):
-    _fields_ = [
+    UGameStateObject_Data._fields_ = [
         ("TeamStates", FArray_Mirror),
         ("PlayerStates", FArray_Mirror),
         ("SessionType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bIsMatchStarted", c_bool, 1),
         ("bIsRoundStarted", c_bool, 1),
-        ("", c_ulong, 0),
         ("RoundNumber", c_int),
         ("MaxRoundNumber", c_int),
     ]
 
-
-class UGameStateObject(Structure):
-    _fields_ = [
+    UGameStateObject._fields_ = [
         ("UObject", UObject_Data),
         ("UGameplayEventsHandler", UGameplayEventsHandler_Data),
         ("UGameStateObject", UGameStateObject_Data),
     ]
 
-
-class UGameStatsAggregator_Data(Structure):
-    _fields_ = [
+    UGameStatsAggregator_Data._fields_ = [
         ("GameState", POINTER(UGameStateObject)),
         ("AggregatesList", TArray_FAggregateEventMapping),
         ("AggregateEventsMapping", FMap_Mirror),
@@ -191,34 +271,30 @@ class UGameStatsAggregator_Data(Structure):
         ("AllDamageEvents", FDamageEvents),
     ]
 
-
-class UGameStatsAggregator(Structure):
-    _fields_ = [
+    UGameStatsAggregator._fields_ = [
         ("UObject", UObject_Data),
         ("UGameplayEventsHandler", UGameplayEventsHandler_Data),
         ("UGameStatsAggregator", UGameStatsAggregator_Data),
     ]
 
-
-class UGameWaveForms_Data(Structure):
-    _fields_ = [
+    UGameWaveForms_Data._fields_ = [
         ("CameraShakeMediumShort", POINTER(UForceFeedbackWaveform)),
         ("CameraShakeMediumLong", POINTER(UForceFeedbackWaveform)),
         ("CameraShakeBigShort", POINTER(UForceFeedbackWaveform)),
         ("CameraShakeBigLong", POINTER(UForceFeedbackWaveform)),
     ]
 
+    UGameWaveForms._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGameWaveForms", UGameWaveForms_Data),
+    ]
 
-class UGameWaveForms(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGameWaveForms", UGameWaveForms_Data)]
+    APlayerCollectorGame_Data._fields_ = [
+        ("NumberOfClientsToWaitFor", c_int),
+        ("URLToLoad", FString),
+    ]
 
-
-class APlayerCollectorGame_Data(Structure):
-    _fields_ = [("NumberOfClientsToWaitFor", c_int), ("URLToLoad", FString)]
-
-
-class APlayerCollectorGame(Structure):
-    _fields_ = [
+    APlayerCollectorGame._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -226,40 +302,37 @@ class APlayerCollectorGame(Structure):
         ("APlayerCollectorGame", APlayerCollectorGame_Data),
     ]
 
+    UPMESTG_LeaveADecalBase_Data._fields_ = [
+        ("PhysicalMaterialPropertyClass", POINTER(UClass))
+    ]
 
-class UPMESTG_LeaveADecalBase_Data(Structure):
-    _fields_ = [("PhysicalMaterialPropertyClass", POINTER(UClass))]
-
-
-class UPMESTG_LeaveADecalBase(Structure):
-    _fields_ = [
+    UPMESTG_LeaveADecalBase._fields_ = [
         ("UObject", UObject_Data),
         ("UParticleModuleEventSendToGame", UParticleModuleEventSendToGame_Data),
         ("UPMESTG_LeaveADecalBase", UPMESTG_LeaveADecalBase_Data),
     ]
 
-
-BL2SDK.g_loadedClasses += [("AGamePawn", 2840, "APawn")]
-BL2SDK.g_loadedClasses += [("AGamePlayerController", 2842, "APlayerController")]
-BL2SDK.g_loadedClasses += [("UGameTypes", 2844, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UNavMeshGoal_OutOfViewFrom", 2846, "UNavMeshPathGoalEvaluator")
-]
-BL2SDK.g_loadedClasses += [
-    (
-        "UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations",
-        2848,
-        "UNavMeshPathConstraint",
-    )
-]
-BL2SDK.g_loadedClasses += [("USeqAct_ControlGameMovie", 2850, "USeqAct_Latent")]
-BL2SDK.g_loadedClasses += [("USeqAct_Deproject", 2852, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("USeqAct_ModifyProperty", 2854, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGameSkelCtrl_Recoil", 2856, "USkelControlBase")]
-BL2SDK.g_loadedClasses += [("UGameStateObject", 2858, "UGameplayEventsHandler")]
-BL2SDK.g_loadedClasses += [("UGameStatsAggregator", 2860, "UGameplayEventsHandler")]
-BL2SDK.g_loadedClasses += [("UGameWaveForms", 38391, "UObject")]
-BL2SDK.g_loadedClasses += [("APlayerCollectorGame", 38588, "AGameInfo")]
-BL2SDK.g_loadedClasses += [
-    ("UPMESTG_LeaveADecalBase", 38602, "UParticleModuleEventSendToGame")
-]
+    BL2SDK.g_loadedClasses += [("AGamePawn", 2840, "APawn")]
+    BL2SDK.g_loadedClasses += [("AGamePlayerController", 2842, "APlayerController")]
+    BL2SDK.g_loadedClasses += [("UGameTypes", 2844, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UNavMeshGoal_OutOfViewFrom", 2846, "UNavMeshPathGoalEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        (
+            "UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations",
+            2848,
+            "UNavMeshPathConstraint",
+        )
+    ]
+    BL2SDK.g_loadedClasses += [("USeqAct_ControlGameMovie", 2850, "USeqAct_Latent")]
+    BL2SDK.g_loadedClasses += [("USeqAct_Deproject", 2852, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("USeqAct_ModifyProperty", 2854, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGameSkelCtrl_Recoil", 2856, "USkelControlBase")]
+    BL2SDK.g_loadedClasses += [("UGameStateObject", 2858, "UGameplayEventsHandler")]
+    BL2SDK.g_loadedClasses += [("UGameStatsAggregator", 2860, "UGameplayEventsHandler")]
+    BL2SDK.g_loadedClasses += [("UGameWaveForms", 38391, "UObject")]
+    BL2SDK.g_loadedClasses += [("APlayerCollectorGame", 38588, "AGameInfo")]
+    BL2SDK.g_loadedClasses += [
+        ("UPMESTG_LeaveADecalBase", 38602, "UParticleModuleEventSendToGame")
+    ]

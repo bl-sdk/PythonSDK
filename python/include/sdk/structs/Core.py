@@ -3,31 +3,257 @@ import BL2SDK
 
 
 class FVector2D(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float)]
+    pass
 
 
 class FPlane2D(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float), ("W", c_float)]
+    pass
 
 
 class FVector(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float)]
+    pass
 
 
 class FGuid(Structure):
-    _fields_ = [("A", c_int), ("B", c_int), ("C", c_int), ("D", c_int)]
+    pass
 
 
 class FVector4(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float), ("W", c_float)]
+    pass
 
 
 class FNameBasedObjectPath(Structure):
-    _fields_ = [("PathComponentNames", FName * 6), ("IsSubobjectMask", c_ubyte)]
+    pass
 
 
 class FFlag(Structure):
-    _fields_ = [
+    pass
+
+
+class FQuat(Structure):
+    pass
+
+
+class FBoneAtom(Structure):
+    pass
+
+
+class FSmartVector(Structure):
+    pass
+
+
+class FLinearColor(Structure):
+    pass
+
+
+class FColor(Structure):
+    pass
+
+
+class FInterpCurvePointVector2D(Structure):
+    pass
+
+
+class FInterpCurveVector2D(Structure):
+    pass
+
+
+class FInterpCurvePointFloat(Structure):
+    pass
+
+
+class FInterpCurveFloat(Structure):
+    pass
+
+
+class FCylinder(Structure):
+    pass
+
+
+class FInterpCurvePointVector(Structure):
+    pass
+
+
+class FInterpCurveVector(Structure):
+    pass
+
+
+class FPlane(Structure):
+    pass
+
+
+class FMatrix(Structure):
+    pass
+
+
+class FBoxSphereBounds(Structure):
+    pass
+
+
+class FTwoVectors(Structure):
+    pass
+
+
+class FTAlphaBlend(Structure):
+    pass
+
+
+class FArray_Mirror(Structure):
+    pass
+
+
+class FStableArray_Mirror(Structure):
+    pass
+
+
+class FOctreeElementId(Structure):
+    pass
+
+
+class FRenderCommandFence(Structure):
+    pass
+
+
+class FRawDistribution(Structure):
+    pass
+
+
+class FInterpCurvePointLinearColor(Structure):
+    pass
+
+
+class FInterpCurveLinearColor(Structure):
+    pass
+
+
+class FInterpCurvePointQuat(Structure):
+    pass
+
+
+class FInterpCurveQuat(Structure):
+    pass
+
+
+class FInterpCurvePointTwoVectors(Structure):
+    pass
+
+
+class FInterpCurveTwoVectors(Structure):
+    pass
+
+
+class FBox(Structure):
+    pass
+
+
+class FTPOV(Structure):
+    pass
+
+
+class FSHVector(Structure):
+    pass
+
+
+class FSHVectorRGB(Structure):
+    pass
+
+
+class FIntPoint3D(Structure):
+    pass
+
+
+class FIntPoint(Structure):
+    pass
+
+
+class FPackedNormal(Structure):
+    pass
+
+
+class FChunkedList_Mirror(Structure):
+    pass
+
+
+class FIndirectArray_Mirror(Structure):
+    pass
+
+
+class FInlinePointerArray_Mirror(Structure):
+    pass
+
+
+class FFColorVertexBuffer_Mirror(Structure):
+    pass
+
+
+class FRenderCommandFence_Mirror(Structure):
+    pass
+
+
+class FUntypedBulkData_Mirror(Structure):
+    pass
+
+
+class FBitArray_Mirror(Structure):
+    pass
+
+
+class FSparseArray_Mirror(Structure):
+    pass
+
+
+class FSet_Mirror(Structure):
+    pass
+
+
+class FMultiMap_Mirror(Structure):
+    pass
+
+
+class FMap_Mirror(Structure):
+    pass
+
+
+class FThreadSafeCounter(Structure):
+    pass
+
+
+class FDouble(Structure):
+    pass
+
+
+class FRawDistributionFloat(Structure):
+    pass
+
+
+class FRawDistributionVector(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+
+
+def init():
+    FVector2D._fields_ = [("X", c_float), ("Y", c_float)]
+
+    FPlane2D._fields_ = [("X", c_float), ("Y", c_float), ("W", c_float)]
+
+    FVector._fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float)]
+
+    FGuid._fields_ = [("A", c_int), ("B", c_int), ("C", c_int), ("D", c_int)]
+
+    FVector4._fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float), ("W", c_float)]
+
+    FNameBasedObjectPath._fields_ = [
+        ("PathComponentNames", FName * 6),
+        ("IsSubobjectMask", c_ubyte),
+    ]
+
+    FFlag._fields_ = [
         ("Value", c_ubyte),
         ("Raised", c_ubyte),
         ("Lowered", c_ubyte),
@@ -37,29 +263,26 @@ class FFlag(Structure):
         ("Duration", c_float),
     ]
 
+    FQuat._fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float), ("W", c_float)]
 
-class FQuat(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float), ("W", c_float)]
+    FBoneAtom._fields_ = [
+        ("Rotation", FQuat),
+        ("Translation", FVector),
+        ("Scale", c_float),
+    ]
 
+    FSmartVector._fields_ = [("Vector", FVector), ("Flag", FFlag)]
 
-class FBoneAtom(Structure):
-    _fields_ = [("Rotation", FQuat), ("Translation", FVector), ("Scale", c_float)]
+    FLinearColor._fields_ = [
+        ("R", c_float),
+        ("G", c_float),
+        ("B", c_float),
+        ("A", c_float),
+    ]
 
+    FColor._fields_ = [("B", c_ubyte), ("G", c_ubyte), ("R", c_ubyte), ("A", c_ubyte)]
 
-class FSmartVector(Structure):
-    _fields_ = [("Vector", FVector), ("Flag", FFlag)]
-
-
-class FLinearColor(Structure):
-    _fields_ = [("R", c_float), ("G", c_float), ("B", c_float), ("A", c_float)]
-
-
-class FColor(Structure):
-    _fields_ = [("B", c_ubyte), ("G", c_ubyte), ("R", c_ubyte), ("A", c_ubyte)]
-
-
-class FInterpCurvePointVector2D(Structure):
-    _fields_ = [
+    FInterpCurvePointVector2D._fields_ = [
         ("InVal", c_float),
         ("OutVal", FVector2D),
         ("ArriveTangent", FVector2D),
@@ -67,13 +290,12 @@ class FInterpCurvePointVector2D(Structure):
         ("InterpMode", c_ubyte),
     ]
 
+    FInterpCurveVector2D._fields_ = [
+        ("Points", TArray_FInterpCurvePointVector2D),
+        ("InterpMethod", c_ubyte),
+    ]
 
-class FInterpCurveVector2D(Structure):
-    _fields_ = [("Points", TArray_FInterpCurvePointVector2D), ("InterpMethod", c_ubyte)]
-
-
-class FInterpCurvePointFloat(Structure):
-    _fields_ = [
+    FInterpCurvePointFloat._fields_ = [
         ("InVal", c_float),
         ("OutVal", c_float),
         ("ArriveTangent", c_float),
@@ -81,17 +303,14 @@ class FInterpCurvePointFloat(Structure):
         ("InterpMode", c_ubyte),
     ]
 
+    FInterpCurveFloat._fields_ = [
+        ("Points", TArray_FInterpCurvePointFloat),
+        ("InterpMethod", c_ubyte),
+    ]
 
-class FInterpCurveFloat(Structure):
-    _fields_ = [("Points", TArray_FInterpCurvePointFloat), ("InterpMethod", c_ubyte)]
+    FCylinder._fields_ = [("Radius", c_float), ("Height", c_float)]
 
-
-class FCylinder(Structure):
-    _fields_ = [("Radius", c_float), ("Height", c_float)]
-
-
-class FInterpCurvePointVector(Structure):
-    _fields_ = [
+    FInterpCurvePointVector._fields_ = [
         ("InVal", c_float),
         ("OutVal", FVector),
         ("ArriveTangent", FVector),
@@ -99,34 +318,29 @@ class FInterpCurvePointVector(Structure):
         ("InterpMode", c_ubyte),
     ]
 
+    FInterpCurveVector._fields_ = [
+        ("Points", TArray_FInterpCurvePointVector),
+        ("InterpMethod", c_ubyte),
+    ]
 
-class FInterpCurveVector(Structure):
-    _fields_ = [("Points", TArray_FInterpCurvePointVector), ("InterpMethod", c_ubyte)]
+    FPlane._fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float), ("W", c_float)]
 
-
-class FPlane(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float), ("W", c_float)]
-
-
-class FMatrix(Structure):
-    _fields_ = [
+    FMatrix._fields_ = [
         ("XPlane", FPlane),
         ("YPlane", FPlane),
         ("ZPlane", FPlane),
         ("WPlane", FPlane),
     ]
 
+    FBoxSphereBounds._fields_ = [
+        ("Origin", FVector),
+        ("BoxExtent", FVector),
+        ("SphereRadius", c_float),
+    ]
 
-class FBoxSphereBounds(Structure):
-    _fields_ = [("Origin", FVector), ("BoxExtent", FVector), ("SphereRadius", c_float)]
+    FTwoVectors._fields_ = [("v1", FVector), ("v2", FVector)]
 
-
-class FTwoVectors(Structure):
-    _fields_ = [("v1", FVector), ("v2", FVector)]
-
-
-class FTAlphaBlend(Structure):
-    _fields_ = [
+    FTAlphaBlend._fields_ = [
         ("AlphaIn", c_float),
         ("AlphaOut", c_float),
         ("AlphaTarget", c_float),
@@ -135,31 +349,25 @@ class FTAlphaBlend(Structure):
         ("BlendType", c_ubyte),
     ]
 
+    FArray_Mirror._fields_ = [
+        ("Data", FPointer),
+        ("ArrayNum", c_int),
+        ("ArrayMax", c_int),
+    ]
 
-class FArray_Mirror(Structure):
-    _fields_ = [("Data", FPointer), ("ArrayNum", int), ("ArrayMax", int)]
-
-
-class FStableArray_Mirror(Structure):
-    _fields_ = [
-        ("ArrayNumInUse", int),
-        ("ArrayNumAllocated", int),
-        ("ArrayCapacity", int),
-        ("FreeListHeadIndex", int),
+    FStableArray_Mirror._fields_ = [
+        ("ArrayNumInUse", c_int),
+        ("ArrayNumAllocated", c_int),
+        ("ArrayCapacity", c_int),
+        ("FreeListHeadIndex", c_int),
         ("Chunks", FArray_Mirror),
     ]
 
+    FOctreeElementId._fields_ = [("Node", FPointer), ("ElementIndex", c_int)]
 
-class FOctreeElementId(Structure):
-    _fields_ = [("Node", FPointer), ("ElementIndex", int)]
+    FRenderCommandFence._fields_ = [("NumPendingFences", c_int)]
 
-
-class FRenderCommandFence(Structure):
-    _fields_ = [("NumPendingFences", int)]
-
-
-class FRawDistribution(Structure):
-    _fields_ = [
+    FRawDistribution._fields_ = [
         ("Type", c_ubyte),
         ("Op", c_ubyte),
         ("LookupTableNumElements", c_ubyte),
@@ -169,9 +377,7 @@ class FRawDistribution(Structure):
         ("LookupTableStartTime", c_float),
     ]
 
-
-class FInterpCurvePointLinearColor(Structure):
-    _fields_ = [
+    FInterpCurvePointLinearColor._fields_ = [
         ("InVal", c_float),
         ("OutVal", FLinearColor),
         ("ArriveTangent", FLinearColor),
@@ -179,31 +385,26 @@ class FInterpCurvePointLinearColor(Structure):
         ("InterpMode", c_ubyte),
     ]
 
-
-class FInterpCurveLinearColor(Structure):
-    _fields_ = [
+    FInterpCurveLinearColor._fields_ = [
         ("Points", TArray_FInterpCurvePointLinearColor),
         ("InterpMethod", c_ubyte),
     ]
 
-
-class FInterpCurvePointQuat(Structure):
-    _fields_ = [
+    FInterpCurvePointQuat._fields_ = [
         ("InVal", c_float),
-        ("Unknown1", c_ubyte, 0xC),
+        ("Unknown1", c_ubyte * 0xC),
         ("OutVal", FQuat),
         ("ArriveTangent", FQuat),
         ("LeaveTangent", FQuat),
         ("InterpMode", c_ubyte),
     ]
 
+    FInterpCurveQuat._fields_ = [
+        ("Points", TArray_FInterpCurvePointQuat),
+        ("InterpMethod", c_ubyte),
+    ]
 
-class FInterpCurveQuat(Structure):
-    _fields_ = [("Points", TArray_FInterpCurvePointQuat), ("InterpMethod", c_ubyte)]
-
-
-class FInterpCurvePointTwoVectors(Structure):
-    _fields_ = [
+    FInterpCurvePointTwoVectors._fields_ = [
         ("InVal", c_float),
         ("OutVal", FTwoVectors),
         ("ArriveTangent", FTwoVectors),
@@ -211,131 +412,99 @@ class FInterpCurvePointTwoVectors(Structure):
         ("InterpMode", c_ubyte),
     ]
 
-
-class FInterpCurveTwoVectors(Structure):
-    _fields_ = [
+    FInterpCurveTwoVectors._fields_ = [
         ("Points", TArray_FInterpCurvePointTwoVectors),
         ("InterpMethod", c_ubyte),
     ]
 
+    FBox._fields_ = [("Min", FVector), ("Max", FVector), ("IsValid", c_ubyte)]
 
-class FBox(Structure):
-    _fields_ = [("Min", FVector), ("Max", FVector), ("IsValid", c_ubyte)]
+    FTPOV._fields_ = [("Location", FVector), ("Rotation", FRotator), ("FOV", c_float)]
 
+    FSHVector._fields_ = [("V", c_float * 9), ("Padding", c_float * 3)]
 
-class FTPOV(Structure):
-    _fields_ = [("Location", FVector), ("Rotation", FRotator), ("FOV", c_float)]
+    FSHVectorRGB._fields_ = [("R", FSHVector), ("G", FSHVector), ("B", FSHVector)]
 
+    FIntPoint3D._fields_ = [("X", c_int), ("Y", c_int), ("Z", c_int)]
 
-class FSHVector(Structure):
-    _fields_ = [("V", c_float * 9), ("Padding", c_float * 3)]
+    FIntPoint._fields_ = [("X", c_int), ("Y", c_int)]
 
+    FPackedNormal._fields_ = [
+        ("X", c_ubyte),
+        ("Y", c_ubyte),
+        ("Z", c_ubyte),
+        ("W", c_ubyte),
+    ]
 
-class FSHVectorRGB(Structure):
-    _fields_ = [("R", FSHVector), ("G", FSHVector), ("B", FSHVector)]
+    FChunkedList_Mirror._fields_ = [("Members", FPointer)]
 
+    FIndirectArray_Mirror._fields_ = [
+        ("Data", FPointer),
+        ("ArrayNum", c_int),
+        ("ArrayMax", c_int),
+    ]
 
-class FIntPoint3D(Structure):
-    _fields_ = [("X", c_int), ("Y", c_int), ("Z", c_int)]
+    FInlinePointerArray_Mirror._fields_ = [
+        ("InlineData", FPointer),
+        ("SecondaryData", FArray_Mirror),
+    ]
 
-
-class FIntPoint(Structure):
-    _fields_ = [("X", c_int), ("Y", c_int)]
-
-
-class FPackedNormal(Structure):
-    _fields_ = [("X", c_ubyte), ("Y", c_ubyte), ("Z", c_ubyte), ("W", c_ubyte)]
-
-
-class FChunkedList_Mirror(Structure):
-    _fields_ = [("Members", FPointer)]
-
-
-class FIndirectArray_Mirror(Structure):
-    _fields_ = [("Data", FPointer), ("ArrayNum", int), ("ArrayMax", int)]
-
-
-class FInlinePointerArray_Mirror(Structure):
-    _fields_ = [("InlineData", FPointer), ("SecondaryData", FArray_Mirror)]
-
-
-class FFColorVertexBuffer_Mirror(Structure):
-    _fields_ = [
+    FFColorVertexBuffer_Mirror._fields_ = [
         ("VfTable", FPointer),
         ("VertexData", FPointer),
-        ("Data", int),
-        ("Stride", int),
-        ("NumVertices", int),
+        ("Data", c_int),
+        ("Stride", c_int),
+        ("NumVertices", c_int),
     ]
 
+    FRenderCommandFence_Mirror._fields_ = [("NumPendingFences", c_int)]
 
-class FRenderCommandFence_Mirror(Structure):
-    _fields_ = [("NumPendingFences", int)]
-
-
-class FUntypedBulkData_Mirror(Structure):
-    _fields_ = [
+    FUntypedBulkData_Mirror._fields_ = [
         ("VfTable", FPointer),
-        ("BulkDataFlags", int),
-        ("ElementCount", int),
-        ("BulkDataOffsetInFile", int),
-        ("BulkDataSizeOnDisk", int),
-        ("SavedBulkDataFlags", int),
-        ("SavedElementCount", int),
-        ("SavedBulkDataOffsetInFile", int),
-        ("SavedBulkDataSizeOnDisk", int),
+        ("BulkDataFlags", c_int),
+        ("ElementCount", c_int),
+        ("BulkDataOffsetInFile", c_int),
+        ("BulkDataSizeOnDisk", c_int),
+        ("SavedBulkDataFlags", c_int),
+        ("SavedElementCount", c_int),
+        ("SavedBulkDataOffsetInFile", c_int),
+        ("SavedBulkDataSizeOnDisk", c_int),
         ("BulkData", FPointer),
-        ("LockStatus", int),
+        ("LockStatus", c_int),
         ("AttachedAr", FPointer),
-        ("bShouldFreeOnEmpty", int),
+        ("bShouldFreeOnEmpty", c_int),
     ]
 
-
-class FBitArray_Mirror(Structure):
-    _fields_ = [
+    FBitArray_Mirror._fields_ = [
         ("IndirectData", FPointer),
-        ("InlineData", int * 4),
-        ("NumBits", int),
-        ("MaxBits", int),
+        ("InlineData", c_int * 4),
+        ("NumBits", c_int),
+        ("MaxBits", c_int),
     ]
 
-
-class FSparseArray_Mirror(Structure):
-    _fields_ = [
+    FSparseArray_Mirror._fields_ = [
         ("Elements", TArray_int),
         ("AllocationFlags", FBitArray_Mirror),
-        ("FirstFreeIndex", int),
-        ("NumFreeIndices", int),
+        ("FirstFreeIndex", c_int),
+        ("NumFreeIndices", c_int),
     ]
 
-
-class FSet_Mirror(Structure):
-    _fields_ = [
+    FSet_Mirror._fields_ = [
         ("Elements", FSparseArray_Mirror),
-        ("InlineHash", int),
+        ("InlineHash", c_int),
         ("Hash", FPointer),
-        ("HashSize", int),
+        ("HashSize", c_int),
     ]
 
+    FMultiMap_Mirror._fields_ = [("Pairs", FSet_Mirror)]
 
-class FMultiMap_Mirror(Structure):
-    _fields_ = [("Pairs", FSet_Mirror)]
+    FMap_Mirror._fields_ = [("Pairs", FSet_Mirror)]
 
+    FThreadSafeCounter._fields_ = [("Value", c_int)]
 
-class FMap_Mirror(Structure):
-    _fields_ = [("Pairs", FSet_Mirror)]
+    FDouble._fields_ = [("A", c_int), ("B", c_int)]
 
-
-class FThreadSafeCounter(Structure):
-    _fields_ = [("Value", int)]
-
-
-class FDouble(Structure):
-    _fields_ = [("A", int), ("B", int)]
-
-
-class FRawDistributionFloat(Structure):
-    _fields_ = [
+    FRawDistributionFloat._fields_ = [
         ("Type", c_ubyte),
         ("Op", c_ubyte),
         ("LookupTableNumElements", c_ubyte),
@@ -346,9 +515,7 @@ class FRawDistributionFloat(Structure):
         ("Distribution", POINTER(UDistributionFloat)),
     ]
 
-
-class FRawDistributionVector(Structure):
-    _fields_ = [
+    FRawDistributionVector._fields_ = [
         ("Type", c_ubyte),
         ("Op", c_ubyte),
         ("LookupTableNumElements", c_ubyte),

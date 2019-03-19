@@ -3,26 +3,736 @@ import BL2SDK
 
 
 class FAIHoldData(Structure):
-    _fields_ = [("HoldName", FName), ("HoldTag", POINTER(UObject))]
+    pass
 
 
 class FAIResourceData(Structure):
-    _fields_ = [
+    pass
+
+
+class FAIRange(Structure):
+    pass
+
+
+class FAITreeData(Structure):
+    pass
+
+
+class FPriorityData(Structure):
+    pass
+
+
+class FFlagDefinitionInitialization(Structure):
+    pass
+
+
+class FCoverDebugScoringInfo(Structure):
+    pass
+
+
+class FCoverDebugPriority(Structure):
+    pass
+
+
+class FValidNameRange(Structure):
+    pass
+
+
+class FObjectKey(Structure):
+    pass
+
+
+class FLevelStateRecord(Structure):
+    pass
+
+
+class FVantageSpot(Structure):
+    pass
+
+
+class FGearboxCoverState(Structure):
+    pass
+
+
+class FGearboxCoverTransition(Structure):
+    pass
+
+
+class FCoverCandidate(Structure):
+    pass
+
+
+class FPopulationActor(Structure):
+    pass
+
+
+class FLocationInfo(Structure):
+    pass
+
+
+class FActionSequenceRandomData(Structure):
+    pass
+
+
+class FSubarrayData(Structure):
+    pass
+
+
+class FBehaviorSequenceActionData2(Structure):
+    pass
+
+
+class FBehaviorVariableValue(Structure):
+    pass
+
+
+class FBehaviorVariableValueUnion_Mirror(Structure):
+    pass
+
+
+class FBehaviorVariableData(Structure):
+    pass
+
+
+class FBehaviorEventUserData(Structure):
+    pass
+
+
+class FBehaviorVariableLinkData(Structure):
+    pass
+
+
+class FBehaviorActionLinkData(Structure):
+    pass
+
+
+class FBehaviorOutputLinkData(Structure):
+    pass
+
+
+class FBehaviorEventData(Structure):
+    pass
+
+
+class FBehaviorEventData2(Structure):
+    pass
+
+
+class FBehaviorSequenceActionData(Structure):
+    pass
+
+
+class FBehaviorOutputLinkData2(Structure):
+    pass
+
+
+class FBehaviorVariableLinkData2(Structure):
+    pass
+
+
+class FBehaviorSequenceData(Structure):
+    pass
+
+
+class FDebugListItem(Structure):
+    pass
+
+
+class FBehaviorConsumerHandle(Structure):
+    pass
+
+
+class FTimeStampedRecord(Structure):
+    pass
+
+
+class FKnowledgeRecordStruct(Structure):
+    pass
+
+
+class FRuleSetRecord(Structure):
+    pass
+
+
+class FRuleRecord(Structure):
+    pass
+
+
+class FActionSequenceRecord(Structure):
+    pass
+
+
+class FTargetInfoRecord(Structure):
+    pass
+
+
+class FAIDefinitionRecord(Structure):
+    pass
+
+
+class FAIResourceRestriction(Structure):
+    pass
+
+
+class FOutputLink(Structure):
+    pass
+
+
+class FVariableLink(Structure):
+    pass
+
+
+class FSpecialMoveData(Structure):
+    pass
+
+
+class FSlotAnimParameters(Structure):
+    pass
+
+
+class FSpecializedBehaviorEvent(Structure):
+    pass
+
+
+class FBehaviorTimerState(Structure):
+    pass
+
+
+class FTimerEventReactionDataSpecialized(Structure):
+    pass
+
+
+class FTimerBehaviorUserState(Structure):
+    pass
+
+
+class FTimerEventReactionData(Structure):
+    pass
+
+
+class FGbxMessageSimpleMetaData(Structure):
+    pass
+
+
+class FRelativeDirectionData(Structure):
+    pass
+
+
+class FAttachmentLocationData(Structure):
+    pass
+
+
+class FProviderRecord(Structure):
+    pass
+
+
+class FBehaviorExecutionRecord(Structure):
+    pass
+
+
+class FBehaviorThread(Structure):
+    pass
+
+
+class FBehaviorEventState(Structure):
+    pass
+
+
+class FBehaviorVariableState(Structure):
+    pass
+
+
+class FBehaviorSequenceState(Structure):
+    pass
+
+
+class FBehaviorProcess(Structure):
+    pass
+
+
+class FProviderRemovalRequest(Structure):
+    pass
+
+
+class FBehaviorKernelArrayStats(Structure):
+    pass
+
+
+class FBehaviorKernelStats(Structure):
+    pass
+
+
+class FReplicatedBehaviorConsumerState(Structure):
+    pass
+
+
+class FReplicatedBehaviorEvent(Structure):
+    pass
+
+
+class FLinkedBehaviorSequence(Structure):
+    pass
+
+
+class FBehaviorTriggerMessageStruct(Structure):
+    pass
+
+
+class FExposureCacheStruct(Structure):
+    pass
+
+
+class FExposureUpdateStruct(Structure):
+    pass
+
+
+class FBucketStruct(Structure):
+    pass
+
+
+class FPointExposureData(Structure):
+    pass
+
+
+class FFeatherBoneBlendData(Structure):
+    pass
+
+
+class FFiringBehaviorBurstInfo(Structure):
+    pass
+
+
+class FConditionalPattern(Structure):
+    pass
+
+
+class FFlagEvalConditional(Structure):
+    pass
+
+
+class FFlagEvalORConnector(Structure):
+    pass
+
+
+class Fs_actorList(Structure):
+    pass
+
+
+class FSparkResult(Structure):
+    pass
+
+
+class FHttpParameters(Structure):
+    pass
+
+
+class FEULAData(Structure):
+    pass
+
+
+class FEntitlementResult(Structure):
+    pass
+
+
+class FOfferResult(Structure):
+    pass
+
+
+class FServiceParameterResult(Structure):
+    pass
+
+
+class FServiceResult(Structure):
+    pass
+
+
+class FArchwayResult(Structure):
+    pass
+
+
+class FNodeData(Structure):
+    pass
+
+
+class FSMBehavior(Structure):
+    pass
+
+
+class FSMNotify(Structure):
+    pass
+
+
+class FTimedAnimBehaviorEvent(Structure):
+    pass
+
+
+class FCoverSpotInfo(Structure):
+    pass
+
+
+class FGearboxDialogData(Structure):
+    pass
+
+
+class FGearboxDialogReplicatedData(Structure):
+    pass
+
+
+class FOutputLinkToStruct(Structure):
+    pass
+
+
+class FDialogEventData(Structure):
+    pass
+
+
+class FDialogEventInfo(Structure):
+    pass
+
+
+class FTalkActData(Structure):
+    pass
+
+
+class FMovieStateData(Structure):
+    pass
+
+
+class FMovieStateStruct(Structure):
+    pass
+
+
+class FReplicatedNounAttributeState(Structure):
+    pass
+
+
+class FNounAttributeState(Structure):
+    pass
+
+
+class FDynamicFlagInstanceData(Structure):
+    pass
+
+
+class FEventRecord(Structure):
+    pass
+
+
+class FRuleSetReference(Structure):
+    pass
+
+
+class FTargetIteratorData(Structure):
+    pass
+
+
+class FPathFindData(Structure):
+    pass
+
+
+class FReplicatedSpecialMoveData(Structure):
+    pass
+
+
+class FRuleInfo(Structure):
+    pass
+
+
+class FIconData(Structure):
+    pass
+
+
+class FAwarenessInfo(Structure):
+    pass
+
+
+class FLastVisibleInfo(Structure):
+    pass
+
+
+class FDebugExposure(Structure):
+    pass
+
+
+class FViewConeInfo(Structure):
+    pass
+
+
+class FCoverDebugScoringData(Structure):
+    pass
+
+
+class FCoverDebugInfo(Structure):
+    pass
+
+
+class FTargetPriorityInfo(Structure):
+    pass
+
+
+class FTargetDebugDatum(Structure):
+    pass
+
+
+class FAIHoldDebugData(Structure):
+    pass
+
+
+class FGearboxViewShakeInfo(Structure):
+    pass
+
+
+class FStepConfiguration(Structure):
+    pass
+
+
+class FThumbnailRenderData(Structure):
+    pass
+
+
+class FThumbnailLightData(Structure):
+    pass
+
+
+class FGestaltPart(Structure):
+    pass
+
+
+class FGestaltInfo(Structure):
+    pass
+
+
+class FGestaltAccessoryNameEntry(Structure):
+    pass
+
+
+class FGestaltSocketRemapEntry(Structure):
+    pass
+
+
+class FGestaltPartBoundsEntry(Structure):
+    pass
+
+
+class FGestaltPartPermutation(Structure):
+    pass
+
+
+class FMovieInstanceArray(Structure):
+    pass
+
+
+class FGFxMenuLink(Structure):
+    pass
+
+
+class FHUDCoordValue(Structure):
+    pass
+
+
+class FHUDAnchorPoint(Structure):
+    pass
+
+
+class FGearboxGFxPlayParameters(Structure):
+    pass
+
+
+class FMovieRangeStateData(Structure):
+    pass
+
+
+class FAttributeValuePair(Structure):
+    pass
+
+
+class FSpecialMoveValuePair(Structure):
+    pass
+
+
+class FCustomEventReactionData(Structure):
+    pass
+
+
+class FCustomEventReactionDataSpecialized(Structure):
+    pass
+
+
+class FHitTargetRecord(Structure):
+    pass
+
+
+class FPriorityDebugStruct(Structure):
+    pass
+
+
+class FEncounterLimitState(Structure):
+    pass
+
+
+class FEncounterLimitData(Structure):
+    pass
+
+
+class FEncounterWaveData(Structure):
+    pass
+
+
+class FSpawnOption(Structure):
+    pass
+
+
+class FDestructionParameters(Structure):
+    pass
+
+
+class FSpawnedPopulationActor(Structure):
+    pass
+
+
+class FRemovedPopulationActor(Structure):
+    pass
+
+
+class FOpportunitySavedState(Structure):
+    pass
+
+
+class FOpportunityCleanupParameters(Structure):
+    pass
+
+
+class FPopulationOpportunityTracker(Structure):
+    pass
+
+
+class FPopulationMasterStat(Structure):
+    pass
+
+
+class FEncounterWaveTracker(Structure):
+    pass
+
+
+class FEncounterTracker(Structure):
+    pass
+
+
+class FPopulationOpportunityStat(Structure):
+    pass
+
+
+class FPopulationOpportunitySavedActor(Structure):
+    pass
+
+
+class FPopulationOptionAreaPopDefData(Structure):
+    pass
+
+
+class FPopulationOptionAreaData(Structure):
+    pass
+
+
+class FPopulationOptionSpawnDefData(Structure):
+    pass
+
+
+class FPopulationAreaOptionSpawnData(Structure):
+    pass
+
+
+class FPopulationOptionSpawnData(Structure):
+    pass
+
+
+class FColumnDataStruct(Structure):
+    pass
+
+
+class FSavedRandomValue(Structure):
+    pass
+
+
+class FRuleEngineLoadBalanceStruct(Structure):
+    pass
+
+
+class FDebugLoadBalance(Structure):
+    pass
+
+
+class FRELBManagerStats(Structure):
+    pass
+
+
+class FDebugStringData(Structure):
+    pass
+
+
+class FDebugEntryData(Structure):
+    pass
+
+
+class FSparkOutstandingRequest(Structure):
+    pass
+
+
+class FSparkMicropatch(Structure):
+    pass
+
+
+class FSMExpressionList(Structure):
+    pass
+
+
+class FSMRandomPair(Structure):
+    pass
+
+
+class FStateAttributeData(Structure):
+    pass
+
+
+class FWireLinkage(Structure):
+    pass
+
+
+class FNewsArticle(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.GearboxFramework import *
+
+
+def init():
+
+    FAIHoldData._fields_ = [("HoldName", FName), ("HoldTag", POINTER(UObject))]
+
+    FAIResourceData._fields_ = [
         ("Resource", POINTER(UAIResource)),
         ("CanRun", TArray_FPointer),
         ("Running", TArray_FPointer),
     ]
 
+    FAIRange._fields_ = [("MinVal", c_float), ("MaxVal", c_float)]
 
-class FAIRange(Structure):
-    _fields_ = [("MinVal", c_float), ("MaxVal", c_float)]
-
-
-class FAITreeData(Structure):
-    _fields_ = [
+    FAITreeData._fields_ = [
         ("AI", FScriptInterface),
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Children", TArray_int),
         ("Resource", POINTER(UAIResource)),
         ("CanRunIf", POINTER(UExpressionEvaluator)),
@@ -30,86 +740,67 @@ class FAITreeData(Structure):
         ("TimedReset", FAIRange),
         ("TimedFail", FAIRange),
         ("bStopIfCannotRun", c_bool, 1),
-        ("", c_ulong, 0),
-        ("ActiveChild", int),
-        ("NextActiveChild", int),
+        ("ActiveChild", c_int),
+        ("NextActiveChild", c_int),
         ("LastFailTime", c_float),
         ("NextTimedRun", c_float),
         ("NextTimedFail", c_float),
         ("NextTimedResource", c_float),
         ("bHoldingResource", c_bool, 1),
-        ("", c_ulong, 0),
         ("Action", POINTER(UActionSequence)),
         ("LoopCount", c_int),
         ("LastRandomChild", c_int),
-        ("Weights", TArray_c_float),
+        ("Weights", TArray_float),
         ("LoopCountMax", TArray_int),
         ("bInterrupt", c_bool, 1),
-        ("", c_ulong, 0),
         ("Conditions", TArray_UExpressionEvaluatorPtr),
         ("NextSequentialChild", c_int),
-        ("PosX", int),
-        ("PosY", int),
+        ("PosX", c_int),
+        ("PosY", c_int),
         ("NodeName", FString),
         ("ActionFailName", FName),
         ("FailReason", c_ubyte),
     ]
 
+    FPriorityData._fields_ = [
+        ("Description", FString),
+        ("Condition", POINTER(UExpressionEvaluator)),
+    ]
 
-class FPriorityData(Structure):
-    _fields_ = [("Description", FString), ("Condition", POINTER(UExpressionEvaluator))]
-
-
-class FFlagDefinitionInitialization(Structure):
-    _fields_ = [
+    FFlagDefinitionInitialization._fields_ = [
         ("FlagToSet", POINTER(UFlagDefinition)),
         ("ChanceTrue", FAttributeInitializationData),
         ("ProbabilityTrue", c_float),
         ("Duration", FAttributeInitializationData),
     ]
 
+    FCoverDebugScoringInfo._fields_ = [("PriorityName", FName), ("Score", c_float)]
 
-class FCoverDebugScoringInfo(Structure):
-    _fields_ = [("PriorityName", FName), ("Score", c_float)]
-
-
-class FCoverDebugPriority(Structure):
-    _fields_ = [
+    FCoverDebugPriority._fields_ = [
         ("Score", c_float),
         ("Distance", c_float),
         ("IsACandidate", c_bool, 1),
         ("IsBestCandidate", c_bool, 1),
-        ("", c_ulong, 0),
         ("TheCoverActor", POINTER(AActor)),
         ("SlotNdx", c_int),
         ("FailString", FString),
         ("ScoringInfo", TArray_FCoverDebugScoringInfo),
     ]
 
+    FValidNameRange._fields_ = [("Start", c_int), ("End", c_int)]
 
-class FValidNameRange(Structure):
-    _fields_ = [("Start", c_int), ("End", c_int)]
+    FObjectKey._fields_ = [("ObjectName", FName), ("AdditionalKey", FName)]
 
-
-class FObjectKey(Structure):
-    _fields_ = [("ObjectName", FName), ("AdditionalKey", FName)]
-
-
-class FLevelStateRecord(Structure):
-    _fields_ = [
+    FLevelStateRecord._fields_ = [
         ("LevelName", FName),
         ("LevelLoaded", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ObjectKeys", TArray_FObjectKey),
     ]
 
+    FVantageSpot._fields_ = [("Location", FVector), ("VantageType", c_ubyte)]
 
-class FVantageSpot(Structure):
-    _fields_ = [("Location", FVector), ("VantageType", c_ubyte)]
-
-
-class FGearboxCoverState(Structure):
-    _fields_ = [
+    FGearboxCoverState._fields_ = [
         ("TheCoverActor", POINTER(AActor)),
         ("SlotIndex", c_int),
         ("State", c_ubyte),
@@ -118,127 +809,97 @@ class FGearboxCoverState(Structure):
         ("ExtendedMetaData", c_ubyte),
     ]
 
-
-class FGearboxCoverTransition(Structure):
-    _fields_ = [
+    FGearboxCoverTransition._fields_ = [
         ("Action", c_ubyte),
         ("ExtendedAction", c_ubyte),
         ("Padding", c_ubyte * 2),
     ]
 
-
-class FCoverCandidate(Structure):
-    _fields_ = [
+    FCoverCandidate._fields_ = [
         ("TheCoverActor", POINTER(AActor)),
         ("SlotNdx", c_int),
         ("Score", c_float),
     ]
 
-
-class FPopulationActor(Structure):
-    _fields_ = [
+    FPopulationActor._fields_ = [
         ("SpawnFactory", POINTER(UPopulationFactory)),
         ("Probability", FAttributeInitializationData),
         ("MaxActiveAtOneTime", FAttributeInitializationData),
         ("TestVisibility", c_bool, 1),
         ("TestFOV", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FLocationInfo._fields_ = [("Location", FVector), ("IsPlayerInfo", c_bool, 1)]
 
-class FLocationInfo(Structure):
-    _fields_ = [("Location", FVector), ("IsPlayerInfo", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FActionSequenceRandomData(Structure):
-    _fields_ = [
+    FActionSequenceRandomData._fields_ = [
         ("ProbabilityData", FAttributeInitializationData),
         ("ActionToRunWhenTrue", POINTER(UActionSequence)),
     ]
 
+    FSubarrayData._fields_ = [("ArrayIndexAndLength", c_int)]
 
-class FSubarrayData(Structure):
-    _fields_ = [("ArrayIndexAndLength", int)]
-
-
-class FBehaviorSequenceActionData2(Structure):
-    _fields_ = [
+    FBehaviorSequenceActionData2._fields_ = [
         ("Behavior", POINTER(UBehaviorBase)),
         ("LinkedVariables", FSubarrayData),
         ("OutputLinks", FSubarrayData),
     ]
 
-
-class FBehaviorVariableValue(Structure):
-    _fields_ = [
-        ("IntValue", int),
+    FBehaviorVariableValue._fields_ = [
+        ("IntValue", c_int),
         ("FloatValue", c_float),
         ("VectorValue", FVector),
         ("ObjectValue", POINTER(UObject)),
         ("VariableType", c_ubyte),
     ]
 
+    FBehaviorVariableValueUnion_Mirror._fields_ = [("Data", FPointer)]
 
-class FBehaviorVariableValueUnion_Mirror(Structure):
-    _fields_ = [("Data", FPointer)]
-
-
-class FBehaviorVariableData(Structure):
-    _fields_ = [
+    FBehaviorVariableData._fields_ = [
         ("Name", FName),
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Value", FBehaviorVariableValueUnion_Mirror),
     ]
 
-
-class FBehaviorEventUserData(Structure):
-    _fields_ = [
+    FBehaviorEventUserData._fields_ = [
         ("EventName", FName),
         ("bEnabled", c_bool, 1),
         ("bReplicate", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxTriggerCount", c_int),
         ("ReTriggerDelay", c_float),
         ("FilterObject", POINTER(UBehaviorEventFilterBase)),
     ]
 
-
-class FBehaviorVariableLinkData(Structure):
-    _fields_ = [
+    FBehaviorVariableLinkData._fields_ = [
         ("PropertyName", FName),
-        ("ConnectionIndex", int),
+        ("ConnectionIndex", c_int),
         ("LinkedVariables", TArray_int),
         ("CachedProperty", POINTER(UProperty)),
     ]
 
+    FBehaviorActionLinkData._fields_ = [
+        ("LinkedBehavior", c_int),
+        ("ActivateDelay", c_float),
+    ]
 
-class FBehaviorActionLinkData(Structure):
-    _fields_ = [("LinkedBehavior", int), ("ActivateDelay", c_float)]
+    FBehaviorOutputLinkData._fields_ = [
+        ("LinkId", c_int),
+        ("LinkedActions", TArray_FBehaviorActionLinkData),
+    ]
 
-
-class FBehaviorOutputLinkData(Structure):
-    _fields_ = [("LinkId", int), ("LinkedActions", TArray_FBehaviorActionLinkData)]
-
-
-class FBehaviorEventData(Structure):
-    _fields_ = [
+    FBehaviorEventData._fields_ = [
         ("UserData", FBehaviorEventUserData),
         ("OutputVariables", TArray_FBehaviorVariableLinkData),
         ("OutputLinks", TArray_FBehaviorOutputLinkData),
     ]
 
-
-class FBehaviorEventData2(Structure):
-    _fields_ = [
+    FBehaviorEventData2._fields_ = [
         ("UserData", FBehaviorEventUserData),
         ("OutputVariables", FSubarrayData),
         ("OutputLinks", FSubarrayData),
     ]
 
-
-class FBehaviorSequenceActionData(Structure):
-    _fields_ = [
+    FBehaviorSequenceActionData._fields_ = [
         ("Behavior", POINTER(UBehaviorBase)),
         ("ContextVariables", FBehaviorVariableLinkData),
         ("LinkedVariables", TArray_FBehaviorVariableLinkData),
@@ -246,28 +907,24 @@ class FBehaviorSequenceActionData(Structure):
         ("OutputLinks", TArray_FBehaviorOutputLinkData),
     ]
 
+    FBehaviorOutputLinkData2._fields_ = [
+        ("LinkIdAndLinkedBehavior", c_int),
+        ("ActivateDelay", c_float),
+    ]
 
-class FBehaviorOutputLinkData2(Structure):
-    _fields_ = [("LinkIdAndLinkedBehavior", int), ("ActivateDelay", c_float)]
-
-
-class FBehaviorVariableLinkData2(Structure):
-    _fields_ = [
+    FBehaviorVariableLinkData2._fields_ = [
         ("PropertyName", FName),
         ("VariableLinkType", c_ubyte),
         ("ConnectionIndex", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("LinkedVariables", FSubarrayData),
         ("CachedProperty", POINTER(UProperty)),
     ]
 
-
-class FBehaviorSequenceData(Structure):
-    _fields_ = [
+    FBehaviorSequenceData._fields_ = [
         ("BehaviorSequenceName", FName),
         ("bEnabledOnSpawn", c_bool, 1),
         ("bSequenceEnabledMutex", c_bool, 1),
-        ("", c_ulong, 0),
         ("CustomEnableCondition", POINTER(UBehaviorSequenceCustomEnableCondition)),
         ("EventData", TArray_FBehaviorEventData),
         ("EventData2", TArray_FBehaviorEventData2),
@@ -279,11 +936,9 @@ class FBehaviorSequenceData(Structure):
         ("ConsolidatedLinkedVariables", TArray_int),
     ]
 
-
-class FDebugListItem(Structure):
-    _fields_ = [
+    FDebugListItem._fields_ = [
         ("DisplayType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Location", FVector),
         ("Location2", FVector),
         ("Location3", FVector),
@@ -298,81 +953,57 @@ class FDebugListItem(Structure):
         ("Alignment", c_ubyte),
     ]
 
+    FBehaviorConsumerHandle._fields_ = [("PID", c_int)]
 
-class FBehaviorConsumerHandle(Structure):
-    _fields_ = [("PID", c_int)]
+    FTimeStampedRecord._fields_ = [("DeathTimeStamp", c_float)]
 
-
-class FTimeStampedRecord(Structure):
-    _fields_ = [("DeathTimeStamp", c_float)]
-
-
-class FKnowledgeRecordStruct(Structure):
-    _fields_ = [
+    FKnowledgeRecordStruct._fields_ = [
         ("DeathTimeStamp", c_float),
         ("TheObj", POINTER(UKnowledgeRecord)),
         ("InUse", c_ubyte),
     ]
 
-
-class FRuleSetRecord(Structure):
-    _fields_ = [
+    FRuleSetRecord._fields_ = [
         ("DeathTimeStamp", c_float),
         ("TheObj", POINTER(URuleSet)),
         ("InUse", c_ubyte),
     ]
 
-
-class FRuleRecord(Structure):
-    _fields_ = [
+    FRuleRecord._fields_ = [
         ("DeathTimeStamp", c_float),
         ("TheObj", POINTER(URule)),
         ("InUse", c_ubyte),
     ]
 
-
-class FActionSequenceRecord(Structure):
-    _fields_ = [
+    FActionSequenceRecord._fields_ = [
         ("DeathTimeStamp", c_float),
         ("TheObj", POINTER(UActionSequence)),
         ("InUse", c_ubyte),
     ]
 
-
-class FTargetInfoRecord(Structure):
-    _fields_ = [
+    FTargetInfoRecord._fields_ = [
         ("DeathTimeStamp", c_float),
         ("TheObj", POINTER(UMindTargetInfo)),
         ("InUse", c_ubyte),
     ]
 
-
-class FAIDefinitionRecord(Structure):
-    _fields_ = [
+    FAIDefinitionRecord._fields_ = [
         ("DeathTimeStamp", c_float),
         ("TheObj", POINTER(UAIDefinition)),
         ("InUse", c_ubyte),
     ]
 
-
-class FAIResourceRestriction(Structure):
-    _fields_ = [
-        ("MaxUsers", int),
-        ("MinUsers", int),
+    FAIResourceRestriction._fields_ = [
+        ("MaxUsers", c_int),
+        ("MinUsers", c_int),
         ("Resource", POINTER(UAIResource)),
     ]
 
+    FOutputLink._fields_ = [("Links", TArray_UGearboxEditorNodePtr)]
 
-class FOutputLink(Structure):
-    _fields_ = [("Links", TArray_UGearboxEditorNodePtr)]
+    FVariableLink._fields_ = [("Links", TArray_UGearboxEditorNodePtr)]
 
-
-class FVariableLink(Structure):
-    _fields_ = [("Links", TArray_UGearboxEditorNodePtr)]
-
-
-class FSpecialMoveData(Structure):
-    _fields_ = [
+    FSpecialMoveData._fields_ = [
         ("Data", POINTER(UObject)),
         ("PlayRateScale", c_float),
         ("Duration", c_float),
@@ -381,9 +1012,7 @@ class FSpecialMoveData(Structure):
         ("SMD", POINTER(USpecialMoveDefinition)),
     ]
 
-
-class FSlotAnimParameters(Structure):
-    _fields_ = [
+    FSlotAnimParameters._fields_ = [
         ("SMData", FSpecialMoveData),
         ("CustomAnimDef", POINTER(UGearboxAnimDefinition)),
         ("CustomAnimName", FName),
@@ -392,71 +1021,50 @@ class FSlotAnimParameters(Structure):
         ("TransformReqBoneIndex", c_int),
     ]
 
+    FSpecializedBehaviorEvent._fields_ = [("EventName", FName)]
 
-class FSpecializedBehaviorEvent(Structure):
-    _fields_ = [("EventName", FName)]
-
-
-class FBehaviorTimerState(Structure):
-    _fields_ = [
+    FBehaviorTimerState._fields_ = [
         ("bIsRunning", c_bool, 1),
-        ("", c_ulong, 0),
         ("Delay", c_float),
         ("EventTime", c_float),
     ]
 
+    FTimerEventReactionDataSpecialized._fields_ = [("EventName", FName)]
 
-class FTimerEventReactionDataSpecialized(Structure):
-    _fields_ = [("EventName", FName)]
+    FTimerBehaviorUserState._fields_ = [("Timers", FBehaviorTimerState * 3)]
 
-
-class FTimerBehaviorUserState(Structure):
-    _fields_ = [("Timers", FBehaviorTimerState * 3)]
-
-
-class FTimerEventReactionData(Structure):
-    _fields_ = [
+    FTimerEventReactionData._fields_ = [
         ("EventType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Behaviors", TArray_UBehaviorBasePtr),
     ]
 
-
-class FGbxMessageSimpleMetaData(Structure):
-    _fields_ = [
+    FGbxMessageSimpleMetaData._fields_ = [
         ("FloatData", c_float),
         ("IntData", c_int),
         ("NameData", FName),
         ("VectorData", FVector),
     ]
 
-
-class FRelativeDirectionData(Structure):
-    _fields_ = [
+    FRelativeDirectionData._fields_ = [
         ("Direction", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ConeAroundDirection", FAttributeInitializationData),
         ("AdditionalRotation", FRotator),
     ]
 
-
-class FAttachmentLocationData(Structure):
-    _fields_ = [
+    FAttachmentLocationData._fields_ = [
         ("Location", FVector),
         ("AttachmentBase", FScriptInterface),
         ("AttachmentName", FName),
     ]
 
-
-class FProviderRecord(Structure):
-    _fields_ = [
+    FProviderRecord._fields_ = [
         ("ProviderDefinition", POINTER(UBehaviorProviderDefinition)),
         ("ReferenceCount", c_int),
     ]
 
-
-class FBehaviorExecutionRecord(Structure):
-    _fields_ = [
+    FBehaviorExecutionRecord._fields_ = [
         ("OwningProcessID", c_int),
         ("ProvidersIndex", c_int),
         ("SequencesDataIndex", c_int),
@@ -465,11 +1073,9 @@ class FBehaviorExecutionRecord(Structure):
         ("TimeOfExecution", c_float),
     ]
 
-
-class FBehaviorThread(Structure):
-    _fields_ = [
+    FBehaviorThread._fields_ = [
         ("ThreadState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("OwningProcessID", c_int),
         ("ThreadSequenceState", FPointer),
         ("NextBehavior", c_int),
@@ -477,28 +1083,21 @@ class FBehaviorThread(Structure):
         ("BehaviorStartedTime", c_float),
     ]
 
-
-class FBehaviorEventState(Structure):
-    _fields_ = [
+    FBehaviorEventState._fields_ = [
         ("TriggerCount", c_int),
         ("LastTriggerTime", c_float),
         ("FilterObject", POINTER(UBehaviorEventFilterBase)),
     ]
 
-
-class FBehaviorVariableState(Structure):
-    _fields_ = [
+    FBehaviorVariableState._fields_ = [
         ("Name", FName),
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Value", FBehaviorVariableValueUnion_Mirror),
     ]
 
-
-class FBehaviorSequenceState(Structure):
-    _fields_ = [
+    FBehaviorSequenceState._fields_ = [
         ("bIsEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("ProvidersIndex", c_int),
         ("SequencesDataIndex", c_int),
         ("SequenceEnabledBitIndex", c_int),
@@ -506,9 +1105,7 @@ class FBehaviorSequenceState(Structure):
         ("VariableStateHead", FPointer),
     ]
 
-
-class FBehaviorProcess(Structure):
-    _fields_ = [
+    FBehaviorProcess._fields_ = [
         ("Owner", POINTER(UObject)),
         ("ProcessID", c_int),
         ("SequenceEnabledBitField", c_int),
@@ -521,22 +1118,19 @@ class FBehaviorProcess(Structure):
         ("Variables", FChunkedList_Mirror),
     ]
 
+    FProviderRemovalRequest._fields_ = [
+        ("ConsumerHandle", FBehaviorConsumerHandle),
+        ("ProvidersIndex", c_int),
+    ]
 
-class FProviderRemovalRequest(Structure):
-    _fields_ = [("ConsumerHandle", FBehaviorConsumerHandle), ("ProvidersIndex", c_int)]
-
-
-class FBehaviorKernelArrayStats(Structure):
-    _fields_ = [
+    FBehaviorKernelArrayStats._fields_ = [
         ("UsedSlots", c_int),
         ("UnusedSlots", c_int),
         ("PeakUsage", c_int),
         ("ContainerSlack", c_int),
     ]
 
-
-class FBehaviorKernelStats(Structure):
-    _fields_ = [
+    FBehaviorKernelStats._fields_ = [
         ("NumProcessesCreated", c_int),
         ("NumThreadsCreated", c_int),
         ("NumWaitingThreads", c_int),
@@ -553,45 +1147,33 @@ class FBehaviorKernelStats(Structure):
         ("MemoryUsedBySlack", c_int),
     ]
 
-
-class FReplicatedBehaviorConsumerState(Structure):
-    _fields_ = [
+    FReplicatedBehaviorConsumerState._fields_ = [
         ("bIsProcessSuspended", c_bool, 1),
-        ("", c_ulong, 0),
         ("BehaviorSequenceEnabledFlags", c_int),
         ("bNeedToApplyThisState", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FReplicatedBehaviorEvent(Structure):
-    _fields_ = [
+    FReplicatedBehaviorEvent._fields_ = [
         ("SequenceIndex", c_ubyte),
         ("EventCounter", c_ubyte),
         ("EventIndex", c_ubyte),
         ("EventOutput", c_ubyte),
     ]
 
-
-class FLinkedBehaviorSequence(Structure):
-    _fields_ = [
+    FLinkedBehaviorSequence._fields_ = [
         ("ConsumerHandle", FBehaviorConsumerHandle),
         ("SequenceState", FPointer),
     ]
 
-
-class FBehaviorTriggerMessageStruct(Structure):
-    _fields_ = [
+    FBehaviorTriggerMessageStruct._fields_ = [
         ("MessageDefinition", POINTER(UGbxMessageDefinition)),
         ("Instigator", c_ubyte),
         ("OtherEventParticipant", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("Behaviors", TArray_UBehaviorBasePtr),
     ]
 
-
-class FExposureCacheStruct(Structure):
-    _fields_ = [
+    FExposureCacheStruct._fields_ = [
         ("FromPawnName", FName),
         ("ToActorName", FName),
         ("TimeCached", c_float),
@@ -602,9 +1184,7 @@ class FExposureCacheStruct(Structure):
         ("Vantage", TArray_FVantageSpot),
     ]
 
-
-class FExposureUpdateStruct(Structure):
-    _fields_ = [
+    FExposureUpdateStruct._fields_ = [
         ("FromPawn", POINTER(AGearboxPawn)),
         ("ToActor", POINTER(AActor)),
         ("TimeRequested", c_float),
@@ -613,9 +1193,7 @@ class FExposureUpdateStruct(Structure):
         ("ShouldRemove", c_ubyte),
     ]
 
-
-class FBucketStruct(Structure):
-    _fields_ = [
+    FBucketStruct._fields_ = [
         ("NdxToStartCheckFrom", c_int),
         ("DistanceSquared", c_float),
         ("MaxLineChecksPerFrame", c_int),
@@ -623,9 +1201,7 @@ class FBucketStruct(Structure):
         ("Exposures", TArray_FExposureUpdateStruct),
     ]
 
-
-class FPointExposureData(Structure):
-    _fields_ = [
+    FPointExposureData._fields_ = [
         ("Looker", POINTER(AActor)),
         ("Point", FVector),
         ("Point2", FVector),
@@ -634,13 +1210,12 @@ class FPointExposureData(Structure):
         ("LastUpdateTime", c_float),
     ]
 
+    FFeatherBoneBlendData._fields_ = [
+        ("StartBoneName", FName),
+        ("BlendWeight", c_float),
+    ]
 
-class FFeatherBoneBlendData(Structure):
-    _fields_ = [("StartBoneName", FName), ("BlendWeight", c_float)]
-
-
-class FFiringBehaviorBurstInfo(Structure):
-    _fields_ = [
+    FFiringBehaviorBurstInfo._fields_ = [
         ("Instigator", POINTER(AGearboxPawn)),
         ("InstigatorWeapon", POINTER(AWeapon)),
         ("TargetActor", POINTER(AActor)),
@@ -650,109 +1225,80 @@ class FFiringBehaviorBurstInfo(Structure):
         ("FireType", c_ubyte),
     ]
 
-
-class FConditionalPattern(Structure):
-    _fields_ = [
+    FConditionalPattern._fields_ = [
         ("Conditions", TArray_UFiringConditionPtr),
         ("Pattern", POINTER(UFiringPattern)),
     ]
 
-
-class FFlagEvalConditional(Structure):
-    _fields_ = [
+    FFlagEvalConditional._fields_ = [
         ("FlagEvalType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("FlagDefinition", POINTER(UFlagDefinition)),
         ("TimeSeconds", FAttributeInitializationData),
     ]
 
+    FFlagEvalORConnector._fields_ = [("ANDChain", TArray_FFlagEvalConditional)]
 
-class FFlagEvalORConnector(Structure):
-    _fields_ = [("ANDChain", TArray_FFlagEvalConditional)]
+    Fs_actorList._fields_ = [("LevelName", FName), ("Actor", POINTER(AActor))]
 
-
-class Fs_actorList(Structure):
-    _fields_ = [("LevelName", FName), ("Actor", POINTER(AActor))]
-
-
-class FSparkResult(Structure):
-    _fields_ = [
+    FSparkResult._fields_ = [
         ("RequestSucceeded", c_bool, 1),
-        ("", c_ulong, 0),
         ("ErrorCode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("HttpStatusCode", c_int),
         ("ResponseBody", TArray_unsigned_char),
     ]
 
-
-class FHttpParameters(Structure):
-    _fields_ = [
+    FHttpParameters._fields_ = [
         ("ServiceConfiguration", POINTER(USparkServiceConfiguration)),
         ("SubService", FString),
         ("ContentType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("CustomContentType", FString),
         ("AcceptsType", c_ubyte),
-        ("Unknown2", c_ubyte, 0x3),
+        ("Unknown2", c_ubyte * 0x3),
         ("CustomAcceptsType", FString),
         ("Method", c_ubyte),
-        ("Unknown3", c_ubyte, 0x3),
+        ("Unknown3", c_ubyte * 0x3),
         ("IsResponseDesired", c_bool, 1),
         ("NoRetry", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FEULAData(Structure):
-    _fields_ = [
+    FEULAData._fields_ = [
         ("Id", c_int),
         ("Version", FString),
         ("Title", FString),
         ("Text", FString),
         ("bLocalSigned", c_bool, 1),
         ("bSeen", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FEntitlementResult(Structure):
-    _fields_ = [
+    FEntitlementResult._fields_ = [
         ("Identifier", FName),
         ("Payload", FString),
         ("Id", c_int),
         ("Consumable", c_bool, 1),
-        ("", c_ulong, 0),
         ("Consumed", c_int),
         ("ConsumableAmount", c_int),
     ]
 
-
-class FOfferResult(Structure):
-    _fields_ = [
+    FOfferResult._fields_ = [
         ("TitleEfigs", FString),
         ("DescriptionEfigs", FString),
         ("Id", c_int),
         ("Notified", c_bool, 1),
-        ("", c_ulong, 0),
         ("DateUnlocked", FString),
     ]
 
+    FServiceParameterResult._fields_ = [("Key", FString), ("Value", FString)]
 
-class FServiceParameterResult(Structure):
-    _fields_ = [("Key", FString), ("Value", FString)]
-
-
-class FServiceResult(Structure):
-    _fields_ = [
+    FServiceResult._fields_ = [
         ("ServiceName", FName),
         ("ConfigurationGroup", FName),
         ("Parameters", TArray_FServiceParameterResult),
     ]
 
-
-class FArchwayResult(Structure):
-    _fields_ = [
+    FArchwayResult._fields_ = [
         ("RequestId", FString),
         ("GearboxUserToken", FString),
         ("GearboxUserEmail", FString),
@@ -765,50 +1311,36 @@ class FArchwayResult(Structure):
         ("DisableSpark", c_bool, 1),
         ("TimeOut", c_bool, 1),
         ("HasShiftAccount", c_bool, 1),
-        ("", c_ulong, 0),
         ("EmergencyMessage", FString),
         ("NeedsSignAgreements", FString),
         ("EulaArray", POINTER(UJsonObject)),
         ("SupportId", FString),
     ]
 
+    FNodeData._fields_ = [("Node", POINTER(AGearboxAIMoveNode)), ("Weight", c_float)]
 
-class FNodeData(Structure):
-    _fields_ = [("Node", POINTER(AGearboxAIMoveNode)), ("Weight", c_float)]
-
-
-class FSMBehavior(Structure):
-    _fields_ = [
+    FSMBehavior._fields_ = [
         ("PlayServer", c_bool, 1),
         ("PlayClient", c_bool, 1),
         ("PlayLocal", c_bool, 1),
-        ("", c_ulong, 0),
         ("Behaviors", TArray_UBehaviorBasePtr),
     ]
 
-
-class FSMNotify(Structure):
-    _fields_ = [
+    FSMNotify._fields_ = [
         ("PlayServer", c_bool, 1),
         ("PlayClient", c_bool, 1),
         ("PlayLocal", c_bool, 1),
-        ("", c_ulong, 0),
         ("Behaviors", TArray_UBehaviorBasePtr),
         ("Time", c_float),
     ]
 
-
-class FTimedAnimBehaviorEvent(Structure):
-    _fields_ = [
+    FTimedAnimBehaviorEvent._fields_ = [
         ("EventName", FName),
         ("Time", c_float),
         ("bServerOnly", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FCoverSpotInfo(Structure):
-    _fields_ = [
+    FCoverSpotInfo._fields_ = [
         ("TheCoverActor", POINTER(AActor)),
         ("CoverSlotIndex", c_int),
         ("CoverSpotWorldLocation", FVector),
@@ -818,18 +1350,14 @@ class FCoverSpotInfo(Structure):
         ("ExtendedInfo3", c_ubyte),
     ]
 
-
-class FGearboxDialogData(Structure):
-    _fields_ = [
+    FGearboxDialogData._fields_ = [
         ("NameTag", POINTER(UGearboxDialogNameTag)),
         ("TalkAkEvent", POINTER(UAkEvent)),
         ("AkAudioUniqueID", c_int),
         ("Pitch", c_float),
     ]
 
-
-class FGearboxDialogReplicatedData(Structure):
-    _fields_ = [
+    FGearboxDialogReplicatedData._fields_ = [
         ("Pitch", c_float),
         ("TalkAkEvent", POINTER(UAkEvent)),
         ("AkAudioUniqueID", c_int),
@@ -837,115 +1365,93 @@ class FGearboxDialogReplicatedData(Structure):
         ("EventTag", POINTER(UGearboxDialogEventTag)),
     ]
 
+    FOutputLinkToStruct._fields_ = [
+        ("FromNodeID", c_int),
+        ("LinkNumber", c_int),
+        ("ToNodeID", c_int),
+    ]
 
-class FOutputLinkToStruct(Structure):
-    _fields_ = [("FromNodeID", c_int), ("LinkNumber", c_int), ("ToNodeID", c_int)]
-
-
-class FDialogEventData(Structure):
-    _fields_ = [
+    FDialogEventData._fields_ = [
         ("Tag", POINTER(UGearboxDialogEventTag)),
         ("bEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("OutputAction", POINTER(UGearboxDialogAction)),
     ]
 
+    FDialogEventInfo._fields_ = [
+        ("Event", POINTER(UGearboxDialogEvent)),
+        ("NodeID", c_int),
+    ]
 
-class FDialogEventInfo(Structure):
-    _fields_ = [("Event", POINTER(UGearboxDialogEvent)), ("NodeID", c_int)]
-
-
-class FTalkActData(Structure):
-    _fields_ = [
+    FTalkActData._fields_ = [
         ("OutputDelay", c_float),
         ("TalkData", TArray_FGearboxDialogData),
         ("TalkerVariable", POINTER(UGearboxDialogVariable)),
         ("OutputAction", POINTER(UGearboxDialogAction)),
         ("bInstigatorTalker", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FMovieStateData(Structure):
-    _fields_ = [
+    FMovieStateData._fields_ = [
         ("State", FName),
         ("Mode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Context", FString),
         ("ASArgs", TArray_FASValue),
     ]
 
+    FMovieStateStruct._fields_ = [("States", TArray_FName), ("Flags", TArray_FName)]
 
-class FMovieStateStruct(Structure):
-    _fields_ = [("States", TArray_FName), ("Flags", TArray_FName)]
-
-
-class FReplicatedNounAttributeState(Structure):
-    _fields_ = [
+    FReplicatedNounAttributeState._fields_ = [
         ("NounName", FName),
         ("Value", c_float),
         ("bOnlyRelevantToOwner", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FNounAttributeState(Structure):
-    _fields_ = [
+    FNounAttributeState._fields_ = [
         ("NounName", FName),
         ("Value", c_float),
         ("BaseValue", c_float),
         ("ModifierStack", TArray_UAttributeModifierPtr),
         ("ReplicationStrategy", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("IndexInReplicationArray", c_int),
     ]
 
+    FDynamicFlagInstanceData._fields_ = [
+        ("DynamicFlag", FFlag),
+        ("LastEvaluatedExpressionTime", c_float),
+    ]
 
-class FDynamicFlagInstanceData(Structure):
-    _fields_ = [("DynamicFlag", FFlag), ("LastEvaluatedExpressionTime", c_float)]
-
-
-class FEventRecord(Structure):
-    _fields_ = [
+    FEventRecord._fields_ = [
         ("EventDefinition", POINTER(URuleEventDef)),
         ("OtherEventParticipantObject", POINTER(UObject)),
     ]
 
+    FRuleSetReference._fields_ = [
+        ("ReferenceName", FName),
+        ("ReferenceRuleSet", POINTER(URuleSet)),
+    ]
 
-class FRuleSetReference(Structure):
-    _fields_ = [("ReferenceName", FName), ("ReferenceRuleSet", POINTER(URuleSet))]
+    FTargetIteratorData._fields_ = [("Iterator", POINTER(UClass)), ("Weight", c_float)]
 
-
-class FTargetIteratorData(Structure):
-    _fields_ = [("Iterator", POINTER(UClass)), ("Weight", c_float)]
-
-
-class FPathFindData(Structure):
-    _fields_ = [
+    FPathFindData._fields_ = [
         ("Path", FGBXNavMeshPath),
         ("FinalDest", FBasedPosition),
         ("bFinalDestIsActor", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxRangeToDest", c_float),
         ("AnchorPoly", FGBXNavMeshPolyRef),
         ("bCanArriveEarly", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FReplicatedSpecialMoveData(Structure):
-    _fields_ = [
+    FReplicatedSpecialMoveData._fields_ = [
         ("Data", POINTER(UObject)),
         ("PlayRateScale", c_float),
         ("Duration", c_float),
         ("DirtyCounter", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SMD", POINTER(USpecialMoveDefinition)),
     ]
 
-
-class FRuleInfo(Structure):
-    _fields_ = [
+    FRuleInfo._fields_ = [
         ("RuleName", FName),
         ("RuleNameString", FString),
         ("RunningSequence", FString),
@@ -954,15 +1460,12 @@ class FRuleInfo(Structure):
         ("bHasFinishedCode", c_bool, 1),
         ("bIsDisabled", c_bool, 1),
         ("bIsContainer", c_bool, 1),
-        ("", c_ulong, 0),
         ("ColorCodedStrings", TArray_FString),
         ("ContainerRuleStartNdx", c_int),
         ("ContainerRuleNumSubRules", c_int),
     ]
 
-
-class FIconData(Structure):
-    _fields_ = [
+    FIconData._fields_ = [
         ("U", c_float),
         ("V", c_float),
         ("UL", c_float),
@@ -970,56 +1473,43 @@ class FIconData(Structure):
         ("Scale", c_float),
     ]
 
-
-class FAwarenessInfo(Structure):
-    _fields_ = [
+    FAwarenessInfo._fields_ = [
         ("Location", FVector),
         ("Radius", c_float),
         ("AwarenessZoneName", FName),
         ("IsInfinitelyFarAway", c_bool, 1),
-        ("", c_ulong, 0),
         ("ZoneColor", FColor),
     ]
 
+    FLastVisibleInfo._fields_ = [
+        ("LastVisibleLocation", FVector),
+        ("CurrentLocation", FVector),
+    ]
 
-class FLastVisibleInfo(Structure):
-    _fields_ = [("LastVisibleLocation", FVector), ("CurrentLocation", FVector)]
-
-
-class FDebugExposure(Structure):
-    _fields_ = [
+    FDebugExposure._fields_ = [
         ("TargetExposure", c_float),
         ("MyExposure", c_float),
         ("InWorldLocation", FVector),
         ("IsPlayerInfo", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FViewConeInfo(Structure):
-    _fields_ = [
+    FViewConeInfo._fields_ = [
         ("ConeOrigin", FVector),
         ("ConeDirection", FVector),
         ("ConeAngle", c_float),
         ("ConeLength", c_float),
         ("ConeColor", FColor),
         ("Has360DegreesAwareness", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FCoverDebugScoringData._fields_ = [("PriorityName", FName), ("Score", c_float)]
 
-class FCoverDebugScoringData(Structure):
-    _fields_ = [("PriorityName", FName), ("Score", c_float)]
-
-
-class FCoverDebugInfo(Structure):
-    _fields_ = [
+    FCoverDebugInfo._fields_ = [
         ("CoverRegionName", FName),
         ("Score", c_float),
         ("Distance", c_float),
         ("IsACandidate", c_bool, 1),
         ("IsBestCandidate", c_bool, 1),
-        ("", c_ulong, 0),
         ("FailString", FString),
         ("LeftEndPoint", FVector),
         ("RightEndPoint", FVector),
@@ -1027,33 +1517,24 @@ class FCoverDebugInfo(Structure):
         ("ScoringInfo", TArray_FCoverDebugScoringData),
     ]
 
-
-class FTargetPriorityInfo(Structure):
-    _fields_ = [
+    FTargetPriorityInfo._fields_ = [
         ("TargetName", FName),
         ("ShortName", FString),
         ("Value", c_float),
         ("BarColor", FColor),
     ]
 
-
-class FTargetDebugDatum(Structure):
-    _fields_ = [
+    FTargetDebugDatum._fields_ = [
         ("bCurrent", c_bool, 1),
         ("bIsPlayer", c_bool, 1),
-        ("", c_ulong, 0),
         ("TargetName", FString),
         ("TotalPriority", c_float),
         ("PriorityData", TArray_FTargetPriorityInfo),
     ]
 
+    FAIHoldDebugData._fields_ = [("HoldName", FName), ("HoldTag", FString)]
 
-class FAIHoldDebugData(Structure):
-    _fields_ = [("HoldName", FName), ("HoldTag", FString)]
-
-
-class FGearboxViewShakeInfo(Structure):
-    _fields_ = [
+    FGearboxViewShakeInfo._fields_ = [
         ("OffsetMag", FVector),
         ("OffsetRate", FVector),
         ("OffsetTime", c_float),
@@ -1065,9 +1546,7 @@ class FGearboxViewShakeInfo(Structure):
         ("FOVTime", c_float),
     ]
 
-
-class FStepConfiguration(Structure):
-    _fields_ = [
+    FStepConfiguration._fields_ = [
         ("FirstAttemptDelay", c_int),
         ("BaseRetrySeconds", c_int),
         ("RetryMultiplier", c_float),
@@ -1075,30 +1554,27 @@ class FStepConfiguration(Structure):
         ("RetryJitter", c_int),
     ]
 
-
-class FThumbnailRenderData(Structure):
-    _fields_ = [
+    FThumbnailRenderData._fields_ = [
         ("Context", FName),
         ("RenderTarget", POINTER(UTextureRenderTarget2D)),
         ("ResultTexture", POINTER(UTexture)),
         ("UpdateType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Mesh", POINTER(UMeshComponent)),
-        ("TextureSizeX", int),
-        ("TextureSizeY", int),
-        ("SizeX", int),
-        ("SizeY", int),
+        ("TextureSizeX", c_int),
+        ("TextureSizeY", c_int),
+        ("SizeX", c_int),
+        ("SizeY", c_int),
         ("ReferencedTextures", TArray_UTexturePtr),
         ("StopStreamTexturesTime", c_float),
     ]
 
+    FThumbnailLightData._fields_ = [
+        ("Direction", FRotator),
+        ("Light", POINTER(ULightComponent)),
+    ]
 
-class FThumbnailLightData(Structure):
-    _fields_ = [("Direction", FRotator), ("Light", POINTER(ULightComponent))]
-
-
-class FGestaltPart(Structure):
-    _fields_ = [
+    FGestaltPart._fields_ = [
         ("SkeletalMeshFragment", POINTER(USkeletalMesh)),
         ("SkeletalMeshFragmentName", FName),
         ("MaterialIndex", c_int),
@@ -1106,137 +1582,117 @@ class FGestaltPart(Structure):
         ("NumPrimitives", c_int),
     ]
 
+    FGestaltInfo._fields_ = [("Parts", TArray_FGestaltPart)]
 
-class FGestaltInfo(Structure):
-    _fields_ = [("Parts", TArray_FGestaltPart)]
+    FGestaltAccessoryNameEntry._fields_ = [("SkeletalMeshFragmentName", FName)]
 
-
-class FGestaltAccessoryNameEntry(Structure):
-    _fields_ = [("SkeletalMeshFragmentName", FName)]
-
-
-class FGestaltSocketRemapEntry(Structure):
-    _fields_ = [
+    FGestaltSocketRemapEntry._fields_ = [
         ("SkeletalMeshFragment", POINTER(USkeletalMesh)),
         ("SkeletalMeshFragmentName", FName),
         ("OriginalSocketName", FName),
         ("MangledSocketName", FName),
     ]
 
-
-class FGestaltPartBoundsEntry(Structure):
-    _fields_ = [
+    FGestaltPartBoundsEntry._fields_ = [
         ("SkeletalMeshFragmentName", FName),
         ("ReferencePoseBounds", FBoxSphereBounds),
     ]
 
+    FGestaltPartPermutation._fields_ = [
+        ("MeshName", FName),
+        ("GroupName", FName),
+        ("PartName", FName),
+    ]
 
-class FGestaltPartPermutation(Structure):
-    _fields_ = [("MeshName", FName), ("GroupName", FName), ("PartName", FName)]
-
-
-class FMovieInstanceArray(Structure):
-    _fields_ = [
+    FMovieInstanceArray._fields_ = [
         ("Movies", TArray_UGearboxGFxMoviePtr),
         ("PoolParent", POINTER(UGearboxGFxMovie)),
     ]
 
+    FGFxMenuLink._fields_ = [
+        ("MenuName", FName),
+        ("Definition", POINTER(UGFxMovieDefinition)),
+    ]
 
-class FGFxMenuLink(Structure):
-    _fields_ = [("MenuName", FName), ("Definition", POINTER(UGFxMovieDefinition))]
-
-
-class FHUDCoordValue(Structure):
-    _fields_ = [
+    FHUDCoordValue._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Value", c_float),
         ("CurrentValue", c_float),
         ("bCacheValid", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FHUDAnchorPoint(Structure):
-    _fields_ = [
+    FHUDAnchorPoint._fields_ = [
         ("MoviePoint", c_ubyte),
         ("ScreenPoint", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("Offset", FHUDCoordValue * 2),
     ]
 
-
-class FGearboxGFxPlayParameters(Structure):
-    _fields_ = [
+    FGearboxGFxPlayParameters._fields_ = [
         ("Definition", POINTER(UGFxMovieDefinition)),
         ("OtherObject", POINTER(UObject)),
         ("PlayerOwner", POINTER(APlayerController)),
     ]
 
-
-class FMovieRangeStateData(Structure):
-    _fields_ = [
+    FMovieRangeStateData._fields_ = [
         ("State", FName),
         ("Mode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Context", FString),
         ("ASArgs", TArray_FASValue),
         ("Distance", c_float),
     ]
 
+    FAttributeValuePair._fields_ = [
+        ("Key", FName),
+        ("Value", FAttributeInitializationData),
+    ]
 
-class FAttributeValuePair(Structure):
-    _fields_ = [("Key", FName), ("Value", FAttributeInitializationData)]
+    FSpecialMoveValuePair._fields_ = [
+        ("Key", FName),
+        ("Value", POINTER(USpecialMoveDefinition)),
+    ]
 
-
-class FSpecialMoveValuePair(Structure):
-    _fields_ = [("Key", FName), ("Value", POINTER(USpecialMoveDefinition))]
-
-
-class FCustomEventReactionData(Structure):
-    _fields_ = [
+    FCustomEventReactionData._fields_ = [
         ("EventName", FName),
         ("bReplicateEvent", c_bool, 1),
-        ("", c_ulong, 0),
         ("Behaviors", TArray_UBehaviorBasePtr),
     ]
 
+    FCustomEventReactionDataSpecialized._fields_ = [
+        ("EventName", FName),
+        ("bReplicateEvent", c_bool, 1),
+    ]
 
-class FCustomEventReactionDataSpecialized(Structure):
-    _fields_ = [("EventName", FName), ("bReplicateEvent", c_bool, 1), ("", c_ulong, 0)]
+    FHitTargetRecord._fields_ = [
+        ("vecHitLoc", FVector),
+        ("flDamage", c_float),
+        ("flHitTime", c_float),
+    ]
 
-
-class FHitTargetRecord(Structure):
-    _fields_ = [("vecHitLoc", FVector), ("flDamage", c_float), ("flHitTime", c_float)]
-
-
-class FPriorityDebugStruct(Structure):
-    _fields_ = [
+    FPriorityDebugStruct._fields_ = [
         ("IteratorName", FName),
         ("ShortName", FString),
         ("PriorityValue", c_float),
         ("AutomaticTopPriority", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FEncounterLimitState._fields_ = [
+        ("NumTotalSpawned", c_int),
+        ("NumCurrentlyActive", c_int),
+    ]
 
-class FEncounterLimitState(Structure):
-    _fields_ = [("NumTotalSpawned", c_int), ("NumCurrentlyActive", c_int)]
-
-
-class FEncounterLimitData(Structure):
-    _fields_ = [
+    FEncounterLimitData._fields_ = [
         ("ActorTags", TArray_UPopulationSpawnedActorTagDefinitionPtr),
         ("MaxTotalToSpawn", FAttributeInitializationData),
         ("MaxActiveAtATime", FAttributeInitializationData),
         ("ConstraintType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("LimitState", FEncounterLimitState),
     ]
 
-
-class FEncounterWaveData(Structure):
-    _fields_ = [
+    FEncounterWaveData._fields_ = [
         ("InitialDelay", c_float),
         ("PercentToComplete", c_float),
         ("EncounterPopulationDef", POINTER(UPopulationDefinition)),
@@ -1244,23 +1700,16 @@ class FEncounterWaveData(Structure):
         ("SpawnLimits", TArray_FEncounterLimitData),
         ("WaveComplete", c_bool, 1),
         ("AllKilledInWave", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FSpawnOption(Structure):
-    _fields_ = [
+    FSpawnOption._fields_ = [
         ("Factory", POINTER(UPopulationFactory)),
         ("ComputedProbability", c_float),
     ]
 
+    FDestructionParameters._fields_ = [("bActorExemptFromIrrelevancyTests", c_bool, 1)]
 
-class FDestructionParameters(Structure):
-    _fields_ = [("bActorExemptFromIrrelevancyTests", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FSpawnedPopulationActor(Structure):
-    _fields_ = [
+    FSpawnedPopulationActor._fields_ = [
         ("SpawnedActor", POINTER(AActor)),
         ("SpawnFactory", POINTER(UPopulationFactory)),
         ("FactoryDestructionParams", FDestructionParameters),
@@ -1271,41 +1720,30 @@ class FSpawnedPopulationActor(Structure):
         ("bIsDead", c_bool, 1),
         ("bCanSave", c_bool, 1),
         ("bShouldRemove", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FRemovedPopulationActor(Structure):
-    _fields_ = [
+    FRemovedPopulationActor._fields_ = [
         ("bReuseActor", c_bool, 1),
-        ("", c_ulong, 0),
         ("CreationFlags", c_int),
         ("FactoryPath", FNameBasedObjectPath),
     ]
 
-
-class FOpportunitySavedState(Structure):
-    _fields_ = [
+    FOpportunitySavedState._fields_ = [
         ("SelectedSpawnIdx", c_int),
         ("NumTotalActors", c_int),
         ("MaxActiveActors", c_ubyte),
         ("NumActiveActors", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("NextSpawnTime", c_float),
     ]
 
-
-class FOpportunityCleanupParameters(Structure):
-    _fields_ = [
+    FOpportunityCleanupParameters._fields_ = [
         ("bCleanupActorsWhenIrrelevant", c_bool, 1),
         ("bRequireOpportunityToBeInactive", c_bool, 1),
-        ("", c_ulong, 0),
         ("ActorIrrelvantDistance", c_float),
     ]
 
-
-class FPopulationOpportunityTracker(Structure):
-    _fields_ = [
+    FPopulationOpportunityTracker._fields_ = [
         ("OpportunityOutermostName", FName),
         ("OpportunityName", FName),
         ("LoadedOpportunity", POINTER(APopulationOpportunity)),
@@ -1314,18 +1752,15 @@ class FPopulationOpportunityTracker(Structure):
         ("ActorsRemovedWhileUnloaded", TArray_FRemovedPopulationActor),
         ("DynamicOpportunity", c_bool, 1),
         ("bHasSavedState", c_bool, 1),
-        ("", c_ulong, 0),
         ("bTotalResetOnLevelLoad", c_ubyte),
         ("RespawnStyle", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("RespawnDelayStartTime", c_float),
         ("SavedState", FOpportunitySavedState),
         ("OpportunityCleanupParams", FOpportunityCleanupParameters),
     ]
 
-
-class FPopulationMasterStat(Structure):
-    _fields_ = [
+    FPopulationMasterStat._fields_ = [
         ("StatName", FName),
         ("StatTime", c_float),
         ("StatMaxTime", c_float),
@@ -1333,34 +1768,25 @@ class FPopulationMasterStat(Structure):
         ("IterationStartTime", c_int),
     ]
 
-
-class FEncounterWaveTracker(Structure):
-    _fields_ = [
+    FEncounterWaveTracker._fields_ = [
         ("nWaveIdx", c_int),
         ("nLimitStateIdx", c_int),
         ("LimitSaveState", FEncounterLimitState),
     ]
 
-
-class FEncounterTracker(Structure):
-    _fields_ = [
+    FEncounterTracker._fields_ = [
         ("LoadedEncounter", POINTER(APopulationEncounter)),
         ("EncountersLevel", POINTER(ULevelStreaming)),
         ("EncounterPath", FNameBasedObjectPath),
         ("bNeedsKismetUpdate", c_bool, 1),
-        ("", c_ulong, 0),
         ("EncounterCompletionSaveState", TArray_unsigned_char),
         ("EncounterSaveState", TArray_FEncounterWaveTracker),
         ("RespawnDelayStartTime", c_float),
     ]
 
+    FPopulationOpportunityStat._fields_ = [("PercentNodeReduction", c_float)]
 
-class FPopulationOpportunityStat(Structure):
-    _fields_ = [("PercentNodeReduction", c_float)]
-
-
-class FPopulationOpportunitySavedActor(Structure):
-    _fields_ = [
+    FPopulationOpportunitySavedActor._fields_ = [
         ("FactoryPath", FNameBasedObjectPath),
         ("TimeActorSaved", c_float),
         ("SpawnActorLocation", FVector),
@@ -1369,9 +1795,7 @@ class FPopulationOpportunitySavedActor(Structure):
         ("CustomActorData", POINTER(UObject)),
     ]
 
-
-class FPopulationOptionAreaPopDefData(Structure):
-    _fields_ = [
+    FPopulationOptionAreaPopDefData._fields_ = [
         ("PopulationDef", POINTER(UPopulationDefinition)),
         ("MaxTotalActorsFormula", FAttributeInitializationData),
         ("MaxTotalActors", c_int),
@@ -1380,29 +1804,23 @@ class FPopulationOptionAreaPopDefData(Structure):
         ("RespawnDelayAfterDeath", c_float),
     ]
 
-
-class FPopulationOptionAreaData(Structure):
-    _fields_ = [
+    FPopulationOptionAreaData._fields_ = [
         ("ExpressionDef", POINTER(UExpressionEvaluatorDefinition)),
         ("PopulationDefinitions", TArray_FPopulationOptionAreaPopDefData),
     ]
 
-
-class FPopulationOptionSpawnDefData(Structure):
-    _fields_ = [
+    FPopulationOptionSpawnDefData._fields_ = [
         ("PopulationDefName", FString),
         ("NumTotalActors", c_int),
         ("NumActiveActors", c_int),
         ("NextSpawnTime", c_float),
     ]
 
+    FPopulationAreaOptionSpawnData._fields_ = [
+        ("Data", TArray_FPopulationOptionSpawnDefData)
+    ]
 
-class FPopulationAreaOptionSpawnData(Structure):
-    _fields_ = [("Data", TArray_FPopulationOptionSpawnDefData)]
-
-
-class FPopulationOptionSpawnData(Structure):
-    _fields_ = [
+    FPopulationOptionSpawnData._fields_ = [
         ("PopulationDefName", FString),
         ("MaxActiveActors", c_int),
         ("NumTotalActors", c_int),
@@ -1410,40 +1828,33 @@ class FPopulationOptionSpawnData(Structure):
         ("NextSpawnTime", c_float),
     ]
 
+    FColumnDataStruct._fields_ = [
+        ("HeaderText", FString),
+        ("Value", c_float),
+        ("BarColor", FColor),
+    ]
 
-class FColumnDataStruct(Structure):
-    _fields_ = [("HeaderText", FString), ("Value", c_float), ("BarColor", FColor)]
-
-
-class FSavedRandomValue(Structure):
-    _fields_ = [
+    FSavedRandomValue._fields_ = [
         ("ContextName", FName),
         ("SavedValue", c_float),
         ("ExpirationTime", c_float),
     ]
 
-
-class FRuleEngineLoadBalanceStruct(Structure):
-    _fields_ = [
+    FRuleEngineLoadBalanceStruct._fields_ = [
         ("RuleEngine", POINTER(URuleEngine)),
         ("TimeSinceLastUpdate", c_float),
         ("Priority", c_int),
     ]
 
-
-class FDebugLoadBalance(Structure):
-    _fields_ = [
+    FDebugLoadBalance._fields_ = [
         ("RuleEngine", FName),
         ("bIsInQueue", c_bool, 1),
-        ("", c_ulong, 0),
         ("TimeSinceUpdate", c_float),
         ("TimeToDoLastUpdate", c_float),
         ("Priority", c_int),
     ]
 
-
-class FRELBManagerStats(Structure):
-    _fields_ = [
+    FRELBManagerStats._fields_ = [
         ("TotalTimeUpdated", c_float),
         ("MaxTimeUpdating", c_float),
         ("NumUpdated", c_int),
@@ -1452,23 +1863,16 @@ class FRELBManagerStats(Structure):
         ("HighestPriority", c_int),
     ]
 
+    FDebugStringData._fields_ = [("DebugStr", FString), ("StrColor", FColor)]
 
-class FDebugStringData(Structure):
-    _fields_ = [("DebugStr", FString), ("StrColor", FColor)]
+    FDebugEntryData._fields_ = [("DebugStrs", TArray_FDebugStringData)]
 
-
-class FDebugEntryData(Structure):
-    _fields_ = [("DebugStrs", TArray_FDebugStringData)]
-
-
-class FSparkOutstandingRequest(Structure):
-    _fields_ = [
+    FSparkOutstandingRequest._fields_ = [
         ("State", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SleepUntil", FDouble),
         ("WantResponse", c_bool, 1),
         ("ScriptCallback", c_bool, 1),
-        ("", c_ulong, 0),
         ("RequestCompleteDelegate", FScriptDelegate),
         ("RequestIdentifier", c_int),
         ("SparkUpdateCallback", FPointer),
@@ -1485,48 +1889,41 @@ class FSparkOutstandingRequest(Structure):
         ("Accept", FString),
         ("ContentType", FString),
         ("Method", c_ubyte),
-        ("Unknown2", c_ubyte, 0x3),
+        ("Unknown2", c_ubyte * 0x3),
         ("URL", FString),
         ("RequestStartTime", FDouble),
     ]
 
-
-class FSparkMicropatch(Structure):
-    _fields_ = [
+    FSparkMicropatch._fields_ = [
         ("ObjectPath", FString),
         ("PropertyPath", FString),
         ("OriginalValue", FString),
         ("NewValue", FString),
         ("bApplied", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FSMExpressionList(Structure):
-    _fields_ = [
+    FSMExpressionList._fields_ = [
         ("Expression", POINTER(UExpressionEvaluator)),
         ("SMD", POINTER(USpecialMoveDefinition)),
     ]
 
+    FSMRandomPair._fields_ = [
+        ("Weight", c_float),
+        ("SMD", POINTER(USpecialMoveDefinition)),
+    ]
 
-class FSMRandomPair(Structure):
-    _fields_ = [("Weight", c_float), ("SMD", POINTER(USpecialMoveDefinition))]
+    FStateAttributeData._fields_ = [
+        ("Key", FName),
+        ("Attribute", POINTER(UAttributeDefinition)),
+    ]
 
-
-class FStateAttributeData(Structure):
-    _fields_ = [("Key", FName), ("Attribute", POINTER(UAttributeDefinition))]
-
-
-class FWireLinkage(Structure):
-    _fields_ = [
+    FWireLinkage._fields_ = [
         ("Offset", FVector),
         ("Width", c_float),
         ("Slack", c_float),
         ("Segments", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Link", c_int),
     ]
 
-
-class FNewsArticle(Structure):
-    _fields_ = [("Header", FString), ("Body", FString)]
+    FNewsArticle._fields_ = [("Header", FString), ("Body", FString)]

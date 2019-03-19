@@ -3,15 +3,50 @@ import BL2SDK
 
 
 class FEnvironmentalEffectInfo(Structure):
-    _fields_ = [("EffectID", c_int), ("Volume", c_float)]
+    pass
 
 
 class FAkEventTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("Event", POINTER(UAkEvent))]
+    pass
 
 
 class FEnvironmentalEffectSetting(Structure):
-    _fields_ = [
+    pass
+
+
+class FRTPCSetting(Structure):
+    pass
+
+
+class FOccludedVolume(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+from ..structs.GearboxFramework import *
+from ..structs.WillowGame import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.GearboxFramework import *
+from ..classes.WillowGame import *
+from ..classes.AkAudio import *
+
+
+def init():
+    FEnvironmentalEffectInfo._fields_ = [("EffectID", c_int), ("Volume", c_float)]
+
+    FAkEventTrackKey._fields_ = [("Time", c_float), ("Event", POINTER(UAkEvent))]
+
+    FEnvironmentalEffectSetting._fields_ = [
         ("Effect", POINTER(UAkEffect)),
         ("Volume", c_float),
         ("FadeDistance", c_float),
@@ -19,9 +54,7 @@ class FEnvironmentalEffectSetting(Structure):
         ("MaxDistance", c_float),
     ]
 
-
-class FRTPCSetting(Structure):
-    _fields_ = [
+    FRTPCSetting._fields_ = [
         ("Target", POINTER(AActor)),
         ("AkRtpc", POINTER(UAkRtpc)),
         ("ValueAtMaxRange", c_float),
@@ -30,14 +63,11 @@ class FRTPCSetting(Structure):
         ("LastEvalValue", c_float),
     ]
 
-
-class FOccludedVolume(Structure):
-    _fields_ = [
+    FOccludedVolume._fields_ = [
         ("SoundVolume", POINTER(AWwiseSoundVolume)),
         ("Target", FScriptInterface),
         ("MaxOcclusion", c_float),
         ("FadeDistance", c_float),
         ("bFadeIn", c_bool, 1),
         ("bExternalFade", c_bool, 1),
-        ("", c_ulong, 0),
     ]

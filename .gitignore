@@ -2,3 +2,4 @@
 [Rr]elease
 .vs
 *.dll
+*.pyc

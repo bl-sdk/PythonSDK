@@ -3,41 +3,211 @@ import BL2SDK
 
 
 class UActorFactoryAkAmbientSound_Data(Structure):
-    _fields_ = [("AmbientEvent", POINTER(UAkEvent))]
+    pass
 
 
 class UActorFactoryAkAmbientSound(Structure):
-    _fields_ = [
+    pass
+
+
+class AAkAmbientSound_Data(Structure):
+    pass
+
+
+class AAkAmbientSound(Structure):
+    pass
+
+
+class UAkAmbientSoundRenderingComponent_Data(Structure):
+    pass
+
+
+class UAkAmbientSoundRenderingComponent(Structure):
+    pass
+
+
+class UIAkEnvironmentalEffectProvider_Data(Structure):
+    pass
+
+
+class UIAkEnvironmentalEffectProvider(Structure):
+    pass
+
+
+class UInterpTrackAkEvent_Data(Structure):
+    pass
+
+
+class UInterpTrackAkEvent(Structure):
+    pass
+
+
+class UInterpTrackAkRTPC_Data(Structure):
+    pass
+
+
+class UInterpTrackAkRTPC(Structure):
+    pass
+
+
+class UInterpTrackInstAkEvent_Data(Structure):
+    pass
+
+
+class UInterpTrackInstAkEvent(Structure):
+    pass
+
+
+class UInterpTrackInstAkRTPC_Data(Structure):
+    pass
+
+
+class UInterpTrackInstAkRTPC(Structure):
+    pass
+
+
+class UISpecialOcclusionAccumulator_Data(Structure):
+    pass
+
+
+class UISpecialOcclusionAccumulator(Structure):
+    pass
+
+
+class USeqAct_AkClearBanks_Data(Structure):
+    pass
+
+
+class USeqAct_AkClearBanks(Structure):
+    pass
+
+
+class USeqAct_AkLoadBank_Data(Structure):
+    pass
+
+
+class USeqAct_AkLoadBank(Structure):
+    pass
+
+
+class USeqAct_AkPostEvent_Data(Structure):
+    pass
+
+
+class USeqAct_AkPostEvent(Structure):
+    pass
+
+
+class USeqAct_AkPostTrigger_Data(Structure):
+    pass
+
+
+class USeqAct_AkPostTrigger(Structure):
+    pass
+
+
+class USeqAct_AkSetRTPCValue_Data(Structure):
+    pass
+
+
+class USeqAct_AkSetRTPCValue(Structure):
+    pass
+
+
+class USeqAct_AkSetState_Data(Structure):
+    pass
+
+
+class USeqAct_AkSetState(Structure):
+    pass
+
+
+class USeqAct_AkSetSwitch_Data(Structure):
+    pass
+
+
+class USeqAct_AkSetSwitch(Structure):
+    pass
+
+
+class USeqAct_AkStopAll_Data(Structure):
+    pass
+
+
+class USeqAct_AkStopAll(Structure):
+    pass
+
+
+class AWwiseSoundGroup_Data(Structure):
+    pass
+
+
+class AWwiseSoundGroup(Structure):
+    pass
+
+
+class UWwiseSoundGroupRenderingComponent_Data(Structure):
+    pass
+
+
+class UWwiseSoundGroupRenderingComponent(Structure):
+    pass
+
+
+class AWwiseSoundVolume_Data(Structure):
+    pass
+
+
+class AWwiseSoundVolume(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+from ..structs.GearboxFramework import *
+from ..structs.WillowGame import *
+from ..structs.AkAudio import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.GearboxFramework import *
+from ..classes.WillowGame import *
+
+
+def init():
+    UActorFactoryAkAmbientSound_Data._fields_ = [("AmbientEvent", POINTER(UAkEvent))]
+
+    UActorFactoryAkAmbientSound._fields_ = [
         ("UObject", UObject_Data),
         ("UActorFactory", UActorFactory_Data),
         ("UActorFactoryAkAmbientSound", UActorFactoryAkAmbientSound_Data),
     ]
 
-
-class AAkAmbientSound_Data(Structure):
-    _fields_ = [
+    AAkAmbientSound_Data._fields_ = [
         ("PlayEvent", POINTER(UAkEvent)),
         ("Group", POINTER(AWwiseSoundGroup)),
         ("bIsRegistered", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class AAkAmbientSound(Structure):
-    _fields_ = [
+    AAkAmbientSound._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AKeypoint", AKeypoint_Data),
         ("AAkAmbientSound", AAkAmbientSound_Data),
     ]
 
+    UAkAmbientSoundRenderingComponent_Data._fields_ = [
+        ("bShowOnlyIfSelected", c_bool, 1)
+    ]
 
-class UAkAmbientSoundRenderingComponent_Data(Structure):
-    _fields_ = [("bShowOnlyIfSelected", c_bool, 1), ("", c_ulong, 0)]
-
-
-class UAkAmbientSoundRenderingComponent(Structure):
-    _fields_ = [
+    UAkAmbientSoundRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -45,86 +215,58 @@ class UAkAmbientSoundRenderingComponent(Structure):
         ("UAkAmbientSoundRenderingComponent", UAkAmbientSoundRenderingComponent_Data),
     ]
 
+    UIAkEnvironmentalEffectProvider_Data._fields_ = []
 
-class UIAkEnvironmentalEffectProvider_Data(Structure):
-    _fields_ = []
-
-
-class UIAkEnvironmentalEffectProvider(Structure):
-    _fields_ = [
+    UIAkEnvironmentalEffectProvider._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIAkEnvironmentalEffectProvider", UIAkEnvironmentalEffectProvider_Data),
     ]
 
+    UInterpTrackAkEvent_Data._fields_ = [("AkEvents", TArray_FAkEventTrackKey)]
 
-class UInterpTrackAkEvent_Data(Structure):
-    _fields_ = [("AkEvents", TArray_FAkEventTrackKey)]
-
-
-class UInterpTrackAkEvent(Structure):
-    _fields_ = [
+    UInterpTrackAkEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UInterpTrack", UInterpTrack_Data),
         ("UInterpTrackAkEvent", UInterpTrackAkEvent_Data),
     ]
 
+    UInterpTrackAkRTPC_Data._fields_ = [("AkRtpc", POINTER(UAkRtpc))]
 
-class UInterpTrackAkRTPC_Data(Structure):
-    _fields_ = [("AkRtpc", POINTER(UAkRtpc))]
-
-
-class UInterpTrackAkRTPC(Structure):
-    _fields_ = [
+    UInterpTrackAkRTPC._fields_ = [
         ("UObject", UObject_Data),
         ("UInterpTrack", UInterpTrack_Data),
         ("UInterpTrackFloatBase", UInterpTrackFloatBase_Data),
         ("UInterpTrackAkRTPC", UInterpTrackAkRTPC_Data),
     ]
 
+    UInterpTrackInstAkEvent_Data._fields_ = [("LastUpdatePosition", c_float)]
 
-class UInterpTrackInstAkEvent_Data(Structure):
-    _fields_ = [("LastUpdatePosition", c_float)]
-
-
-class UInterpTrackInstAkEvent(Structure):
-    _fields_ = [
+    UInterpTrackInstAkEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UInterpTrackInst", UInterpTrackInst_Data),
         ("UInterpTrackInstAkEvent", UInterpTrackInstAkEvent_Data),
     ]
 
+    UInterpTrackInstAkRTPC_Data._fields_ = []
 
-class UInterpTrackInstAkRTPC_Data(Structure):
-    _fields_ = []
-
-
-class UInterpTrackInstAkRTPC(Structure):
-    _fields_ = [
+    UInterpTrackInstAkRTPC._fields_ = [
         ("UObject", UObject_Data),
         ("UInterpTrackInst", UInterpTrackInst_Data),
         ("UInterpTrackInstAkRTPC", UInterpTrackInstAkRTPC_Data),
     ]
 
+    UISpecialOcclusionAccumulator_Data._fields_ = []
 
-class UISpecialOcclusionAccumulator_Data(Structure):
-    _fields_ = []
-
-
-class UISpecialOcclusionAccumulator(Structure):
-    _fields_ = [
+    UISpecialOcclusionAccumulator._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UISpecialOcclusionAccumulator", UISpecialOcclusionAccumulator_Data),
     ]
 
+    USeqAct_AkClearBanks_Data._fields_ = []
 
-class USeqAct_AkClearBanks_Data(Structure):
-    _fields_ = []
-
-
-class USeqAct_AkClearBanks(Structure):
-    _fields_ = [
+    USeqAct_AkClearBanks._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -132,13 +274,9 @@ class USeqAct_AkClearBanks(Structure):
         ("USeqAct_AkClearBanks", USeqAct_AkClearBanks_Data),
     ]
 
+    USeqAct_AkLoadBank_Data._fields_ = []
 
-class USeqAct_AkLoadBank_Data(Structure):
-    _fields_ = []
-
-
-class USeqAct_AkLoadBank(Structure):
-    _fields_ = [
+    USeqAct_AkLoadBank._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -147,19 +285,14 @@ class USeqAct_AkLoadBank(Structure):
         ("USeqAct_AkLoadBank", USeqAct_AkLoadBank_Data),
     ]
 
-
-class USeqAct_AkPostEvent_Data(Structure):
-    _fields_ = [
+    USeqAct_AkPostEvent_Data._fields_ = [
         ("ActivePlayingIds", TArray_FAkPlayingInfo),
         ("Event", POINTER(UAkEvent)),
         ("bPlayOneInstanceFromAllLocations", c_bool, 1),
         ("bTreatAllLocationsAsOneSource", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class USeqAct_AkPostEvent(Structure):
-    _fields_ = [
+    USeqAct_AkPostEvent._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -168,13 +301,9 @@ class USeqAct_AkPostEvent(Structure):
         ("USeqAct_AkPostEvent", USeqAct_AkPostEvent_Data),
     ]
 
+    USeqAct_AkPostTrigger_Data._fields_ = [("AkTrigger", POINTER(UAkTrigger))]
 
-class USeqAct_AkPostTrigger_Data(Structure):
-    _fields_ = [("AkTrigger", POINTER(UAkTrigger))]
-
-
-class USeqAct_AkPostTrigger(Structure):
-    _fields_ = [
+    USeqAct_AkPostTrigger._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -182,18 +311,13 @@ class USeqAct_AkPostTrigger(Structure):
         ("USeqAct_AkPostTrigger", USeqAct_AkPostTrigger_Data),
     ]
 
-
-class USeqAct_AkSetRTPCValue_Data(Structure):
-    _fields_ = [
+    USeqAct_AkSetRTPCValue_Data._fields_ = [
         ("AkRtpc", POINTER(UAkRtpc)),
         ("Value", c_float),
         ("Running", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class USeqAct_AkSetRTPCValue(Structure):
-    _fields_ = [
+    USeqAct_AkSetRTPCValue._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -202,13 +326,9 @@ class USeqAct_AkSetRTPCValue(Structure):
         ("USeqAct_AkSetRTPCValue", USeqAct_AkSetRTPCValue_Data),
     ]
 
+    USeqAct_AkSetState_Data._fields_ = [("State", POINTER(UAkState))]
 
-class USeqAct_AkSetState_Data(Structure):
-    _fields_ = [("State", POINTER(UAkState))]
-
-
-class USeqAct_AkSetState(Structure):
-    _fields_ = [
+    USeqAct_AkSetState._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -216,13 +336,9 @@ class USeqAct_AkSetState(Structure):
         ("USeqAct_AkSetState", USeqAct_AkSetState_Data),
     ]
 
+    USeqAct_AkSetSwitch_Data._fields_ = [("AkSwitch", POINTER(UAkSwitch))]
 
-class USeqAct_AkSetSwitch_Data(Structure):
-    _fields_ = [("AkSwitch", POINTER(UAkSwitch))]
-
-
-class USeqAct_AkSetSwitch(Structure):
-    _fields_ = [
+    USeqAct_AkSetSwitch._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -230,13 +346,9 @@ class USeqAct_AkSetSwitch(Structure):
         ("USeqAct_AkSetSwitch", USeqAct_AkSetSwitch_Data),
     ]
 
+    USeqAct_AkStopAll_Data._fields_ = []
 
-class USeqAct_AkStopAll_Data(Structure):
-    _fields_ = []
-
-
-class USeqAct_AkStopAll(Structure):
-    _fields_ = [
+    USeqAct_AkStopAll._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -244,31 +356,23 @@ class USeqAct_AkStopAll(Structure):
         ("USeqAct_AkStopAll", USeqAct_AkStopAll_Data),
     ]
 
-
-class AWwiseSoundGroup_Data(Structure):
-    _fields_ = [
+    AWwiseSoundGroup_Data._fields_ = [
         ("VfTable_IISpecialOcclusionProvider", FPointer),
         ("VfTable_IISpecialOcclusionAccumulator", FPointer),
         ("Members", TArray_AActorPtr),
         ("ActiveOccluders", FMap_Mirror),
     ]
 
-
-class AWwiseSoundGroup(Structure):
-    _fields_ = [
+    AWwiseSoundGroup._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AKeypoint", AKeypoint_Data),
         ("AWwiseSoundGroup", AWwiseSoundGroup_Data),
     ]
 
+    UWwiseSoundGroupRenderingComponent_Data._fields_ = []
 
-class UWwiseSoundGroupRenderingComponent_Data(Structure):
-    _fields_ = []
-
-
-class UWwiseSoundGroupRenderingComponent(Structure):
-    _fields_ = [
+    UWwiseSoundGroupRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -276,9 +380,7 @@ class UWwiseSoundGroupRenderingComponent(Structure):
         ("UWwiseSoundGroupRenderingComponent", UWwiseSoundGroupRenderingComponent_Data),
     ]
 
-
-class AWwiseSoundVolume_Data(Structure):
-    _fields_ = [
+    AWwiseSoundVolume_Data._fields_ = [
         ("VfTable_IIAkEnvironmentalEffectProvider", FPointer),
         ("VfTable_IISpecialOcclusionProvider", FPointer),
         ("VfTable_IISpecialOcclusionAccumulator", FPointer),
@@ -287,7 +389,6 @@ class AWwiseSoundVolume_Data(Structure):
         ("bAutomaticallySetPlayAndStopDistances", c_bool, 1),
         ("bPlaySoundsFromAllSubBrushes", c_bool, 1),
         ("bEffectBankLoaded", c_bool, 1),
-        ("", c_ulong, 0),
         ("AutoPlayDistance", c_float),
         ("AutoStopDistance", c_float),
         ("ParentVolume", POINTER(AWwiseSoundVolume)),
@@ -315,9 +416,7 @@ class AWwiseSoundVolume_Data(Structure):
         ("EffectSoundBankLoadDistance", c_float),
     ]
 
-
-class AWwiseSoundVolume(Structure):
-    _fields_ = [
+    AWwiseSoundVolume._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("ABrush", ABrush_Data),
@@ -325,28 +424,27 @@ class AWwiseSoundVolume(Structure):
         ("AWwiseSoundVolume", AWwiseSoundVolume_Data),
     ]
 
-
-BL2SDK.g_loadedClasses += [("UActorFactoryAkAmbientSound", 3525, "UActorFactory")]
-BL2SDK.g_loadedClasses += [("AAkAmbientSound", 3527, "AKeypoint")]
-BL2SDK.g_loadedClasses += [
-    ("UAkAmbientSoundRenderingComponent", 3529, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [("UIAkEnvironmentalEffectProvider", 3531, "UInterface")]
-BL2SDK.g_loadedClasses += [("UInterpTrackAkEvent", 3533, "UInterpTrack")]
-BL2SDK.g_loadedClasses += [("UInterpTrackAkRTPC", 3535, "UInterpTrackFloatBase")]
-BL2SDK.g_loadedClasses += [("UInterpTrackInstAkEvent", 3537, "UInterpTrackInst")]
-BL2SDK.g_loadedClasses += [("UInterpTrackInstAkRTPC", 3539, "UInterpTrackInst")]
-BL2SDK.g_loadedClasses += [("UISpecialOcclusionAccumulator", 3541, "UInterface")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkClearBanks", 3543, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkLoadBank", 3545, "USeqAct_Latent")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkPostEvent", 3547, "USeqAct_Latent")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkPostTrigger", 3549, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkSetRTPCValue", 3551, "USeqAct_Latent")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkSetState", 3553, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkSetSwitch", 3555, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("USeqAct_AkStopAll", 3557, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("AWwiseSoundGroup", 3559, "AKeypoint")]
-BL2SDK.g_loadedClasses += [
-    ("UWwiseSoundGroupRenderingComponent", 3561, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [("AWwiseSoundVolume", 3563, "AVolume")]
+    BL2SDK.g_loadedClasses += [("UActorFactoryAkAmbientSound", 3525, "UActorFactory")]
+    BL2SDK.g_loadedClasses += [("AAkAmbientSound", 3527, "AKeypoint")]
+    BL2SDK.g_loadedClasses += [
+        ("UAkAmbientSoundRenderingComponent", 3529, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [("UIAkEnvironmentalEffectProvider", 3531, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UInterpTrackAkEvent", 3533, "UInterpTrack")]
+    BL2SDK.g_loadedClasses += [("UInterpTrackAkRTPC", 3535, "UInterpTrackFloatBase")]
+    BL2SDK.g_loadedClasses += [("UInterpTrackInstAkEvent", 3537, "UInterpTrackInst")]
+    BL2SDK.g_loadedClasses += [("UInterpTrackInstAkRTPC", 3539, "UInterpTrackInst")]
+    BL2SDK.g_loadedClasses += [("UISpecialOcclusionAccumulator", 3541, "UInterface")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkClearBanks", 3543, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkLoadBank", 3545, "USeqAct_Latent")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkPostEvent", 3547, "USeqAct_Latent")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkPostTrigger", 3549, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkSetRTPCValue", 3551, "USeqAct_Latent")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkSetState", 3553, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkSetSwitch", 3555, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AkStopAll", 3557, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("AWwiseSoundGroup", 3559, "AKeypoint")]
+    BL2SDK.g_loadedClasses += [
+        ("UWwiseSoundGroupRenderingComponent", 3561, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [("AWwiseSoundVolume", 3563, "AVolume")]

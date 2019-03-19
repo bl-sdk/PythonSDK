@@ -3,65 +3,252 @@ import BL2SDK
 
 
 class UGFxEngine_Data(Structure):
-    _fields_ = [("GCReferences", TArray_FGCReference), ("RefCount", c_int)]
+    pass
 
 
 class UGFxEngine(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxEngine", UGFxEngine_Data)]
+    pass
 
 
 class UGFxFSCmdHandler_Data(Structure):
-    _fields_ = []
+    pass
 
 
 class UGFxFSCmdHandler(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxFSCmdHandler", UGFxFSCmdHandler_Data)]
+    pass
 
 
 class UGFxInteraction_Data(Structure):
-    _fields_ = [("VfTable_FCallbackEventDevice", FPointer)]
+    pass
 
 
 class UGFxInteraction(Structure):
-    _fields_ = [
+    pass
+
+
+class UGFxManager_Data(Structure):
+    pass
+
+
+class UGFxManager(Structure):
+    pass
+
+
+class UGFxManagerDefinition_Data(Structure):
+    pass
+
+
+class UGFxManagerDefinition(Structure):
+    pass
+
+
+class UGFxMoviePlayer_Data(Structure):
+    pass
+
+
+class UGFxMoviePlayer(Structure):
+    pass
+
+
+class UGFxMovie_Data(Structure):
+    pass
+
+
+class UGFxMovie(Structure):
+    pass
+
+
+class UGFxObject_Data(Structure):
+    pass
+
+
+class UGFxObject(Structure):
+    pass
+
+
+class UGFxClikWidget_Data(Structure):
+    pass
+
+
+class UGFxClikWidget(Structure):
+    pass
+
+
+class UGFxRawData_Data(Structure):
+    pass
+
+
+class UGFxRawData(Structure):
+    pass
+
+
+class USwfMovie_Data(Structure):
+    pass
+
+
+class USwfMovie(Structure):
+    pass
+
+
+class UFlashMovie_Data(Structure):
+    pass
+
+
+class UFlashMovie(Structure):
+    pass
+
+
+class UGFxMovieInfo_Data(Structure):
+    pass
+
+
+class UGFxMovieInfo(Structure):
+    pass
+
+
+class UGFxValue_Data(Structure):
+    pass
+
+
+class UGFxValue(Structure):
+    pass
+
+
+class UGFxAction_CloseMovie_Data(Structure):
+    pass
+
+
+class UGFxAction_CloseMovie(Structure):
+    pass
+
+
+class UGFxAction_GetVariable_Data(Structure):
+    pass
+
+
+class UGFxAction_GetVariable(Structure):
+    pass
+
+
+class UGFxAction_Invoke_Data(Structure):
+    pass
+
+
+class UGFxAction_Invoke(Structure):
+    pass
+
+
+class UGFxAction_OpenMovie_Data(Structure):
+    pass
+
+
+class UGFxAction_OpenMovie(Structure):
+    pass
+
+
+class UGFxAction_SetCaptureKeys_Data(Structure):
+    pass
+
+
+class UGFxAction_SetCaptureKeys(Structure):
+    pass
+
+
+class UGFxAction_SetVariable_Data(Structure):
+    pass
+
+
+class UGFxAction_SetVariable(Structure):
+    pass
+
+
+class UGFxEvent_FSCommand_Data(Structure):
+    pass
+
+
+class UGFxEvent_FSCommand(Structure):
+    pass
+
+
+class UGFxFSCmdHandler_Kismet_Data(Structure):
+    pass
+
+
+class UGFxFSCmdHandler_Kismet(Structure):
+    pass
+
+
+class UGFxDataStoreSubscriber_Data(Structure):
+    pass
+
+
+class UGFxDataStoreSubscriber(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+
+
+def init():
+
+    UGFxEngine_Data._fields_ = [
+        ("GCReferences", TArray_FGCReference),
+        ("RefCount", c_int),
+    ]
+
+    UGFxEngine._fields_ = [("UObject", UObject_Data), ("UGFxEngine", UGFxEngine_Data)]
+
+    UGFxFSCmdHandler_Data._fields_ = []
+
+    UGFxFSCmdHandler._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGFxFSCmdHandler", UGFxFSCmdHandler_Data),
+    ]
+
+    UGFxInteraction_Data._fields_ = [("VfTable_FCallbackEventDevice", FPointer)]
+
+    UGFxInteraction._fields_ = [
         ("UObject", UObject_Data),
         ("UUIRoot", UUIRoot_Data),
         ("UInteraction", UInteraction_Data),
         ("UGFxInteraction", UGFxInteraction_Data),
     ]
 
+    UGFxManager_Data._fields_ = [("MyDefinition", POINTER(UGFxManagerDefinition))]
 
-class UGFxManager_Data(Structure):
-    _fields_ = [("MyDefinition", POINTER(UGFxManagerDefinition))]
+    UGFxManager._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGFxManager", UGFxManager_Data),
+    ]
 
-
-class UGFxManager(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxManager", UGFxManager_Data)]
-
-
-class UGFxManagerDefinition_Data(Structure):
-    _fields_ = [
+    UGFxManagerDefinition_Data._fields_ = [
         ("ManagerClass", POINTER(UClass)),
         ("GFxDialogBox", FScriptInterface),
         ("InteractionSounds", TArray_FAkEventResolver),
     ]
 
-
-class UGFxManagerDefinition(Structure):
-    _fields_ = [
+    UGFxManagerDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGFxManagerDefinition", UGFxManagerDefinition_Data),
     ]
 
-
-class UGFxMoviePlayer_Data(Structure):
-    _fields_ = [
+    UGFxMoviePlayer_Data._fields_ = [
         ("pMovie", FPointer),
         ("pCaptureKeys", FPointer),
         ("pFocusIgnoreKeys", FPointer),
-        ("Unknown1", c_ubyte, 0x3C),
-        ("Unknown2", c_ubyte, 0x3C),
+        ("Unknown1", c_ubyte * 0x3C),
+        ("Unknown2", c_ubyte * 0x3C),
         ("NextASUObject", c_int),
         ("MovieInfo", POINTER(USwfMovie)),
         ("bMovieIsOpen", c_bool, 1),
@@ -90,7 +277,6 @@ class UGFxMoviePlayer_Data(Structure):
         ("bIsPriorityHidden", c_bool, 1),
         ("bIgnoreVisibilityEffect", c_bool, 1),
         ("bIgnoreBlurEffect", c_bool, 1),
-        ("", c_ulong, 0),
         ("RenderTexture", POINTER(UTextureRenderTarget2D)),
         ("LocalPlayerOwnerIndex", c_int),
         ("ExternalInterface", POINTER(UObject)),
@@ -105,8 +291,8 @@ class UGFxMoviePlayer_Data(Structure):
         ("DataStoreBindings", TArray_FGFxDataStoreBinding),
         ("DataStoreSubscriber", POINTER(UGFxDataStoreSubscriber)),
         ("WidgetBindings", TArray_FGFxWidgetBinding),
-        ("Unknown3", c_ubyte, 0x3C),
-        ("Unknown4", c_ubyte, 0x3C),
+        ("Unknown3", c_ubyte * 0x3C),
+        ("Unknown4", c_ubyte * 0x3C),
         ("SplitscreenLayoutObject", POINTER(UGFxObject)),
         ("SplitscreenLayoutYAdjust", c_int),
         ("DepthPriority", c_int),
@@ -115,128 +301,97 @@ class UGFxMoviePlayer_Data(Structure):
         ("__OnInputKey__Delegate", FScriptDelegate),
     ]
 
+    UGFxMoviePlayer._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGFxMoviePlayer", UGFxMoviePlayer_Data),
+    ]
 
-class UGFxMoviePlayer(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxMoviePlayer", UGFxMoviePlayer_Data)]
+    UGFxMovie_Data._fields_ = []
 
-
-class UGFxMovie_Data(Structure):
-    _fields_ = []
-
-
-class UGFxMovie(Structure):
-    _fields_ = [
+    UGFxMovie._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMoviePlayer", UGFxMoviePlayer_Data),
         ("UGFxMovie", UGFxMovie_Data),
     ]
 
+    UGFxObject_Data._fields_ = [
+        ("Value", c_int * 12),
+        ("SubWidgetBindings", TArray_FGFxWidgetBinding),
+    ]
 
-class UGFxObject_Data(Structure):
-    _fields_ = [("Value", int * 12), ("SubWidgetBindings", TArray_FGFxWidgetBinding)]
+    UGFxObject._fields_ = [("UObject", UObject_Data), ("UGFxObject", UGFxObject_Data)]
 
+    UGFxClikWidget_Data._fields_ = [("__EventListener__Delegate", FScriptDelegate)]
 
-class UGFxObject(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxObject", UGFxObject_Data)]
-
-
-class UGFxClikWidget_Data(Structure):
-    _fields_ = [("__EventListener__Delegate", FScriptDelegate)]
-
-
-class UGFxClikWidget(Structure):
-    _fields_ = [
+    UGFxClikWidget._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxObject", UGFxObject_Data),
         ("UGFxClikWidget", UGFxClikWidget_Data),
     ]
 
-
-class UGFxRawData_Data(Structure):
-    _fields_ = [
+    UGFxRawData_Data._fields_ = [
         ("RawData", TArray_unsigned_char),
         ("ReferencedSwfs", TArray_FString),
         ("References", TArray_UObjectPtr),
         ("UserReferences", TArray_UObjectPtr),
     ]
 
+    UGFxRawData._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGFxRawData", UGFxRawData_Data),
+    ]
 
-class UGFxRawData(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxRawData", UGFxRawData_Data)]
-
-
-class USwfMovie_Data(Structure):
-    _fields_ = [
+    USwfMovie_Data._fields_ = [
         ("bUsesFontlib", c_bool, 1),
         ("bSetSRGBOnImportedTextures", c_bool, 1),
         ("bPackTextures", c_bool, 1),
         ("bPreload", c_bool, 1),
         ("bDoNotPlaceInVM", c_bool, 1),
-        ("", c_ulong, 0),
         ("PackTextureSize", c_int),
         ("TextureRescale", c_ubyte),
         ("DesiredMemArena", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("TextureFormat", FString),
         ("RTTextures", c_int),
         ("RTVideoTextures", c_int),
-        ("MovieInfo", int * 9),
+        ("MovieInfo", c_int * 9),
         ("pMovieDef", FPointer),
     ]
 
-
-class USwfMovie(Structure):
-    _fields_ = [
+    USwfMovie._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxRawData", UGFxRawData_Data),
         ("USwfMovie", USwfMovie_Data),
     ]
 
+    UFlashMovie_Data._fields_ = []
 
-class UFlashMovie_Data(Structure):
-    _fields_ = []
-
-
-class UFlashMovie(Structure):
-    _fields_ = [
+    UFlashMovie._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxRawData", UGFxRawData_Data),
         ("USwfMovie", USwfMovie_Data),
         ("UFlashMovie", UFlashMovie_Data),
     ]
 
+    UGFxMovieInfo_Data._fields_ = []
 
-class UGFxMovieInfo_Data(Structure):
-    _fields_ = []
-
-
-class UGFxMovieInfo(Structure):
-    _fields_ = [
+    UGFxMovieInfo._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxRawData", UGFxRawData_Data),
         ("USwfMovie", USwfMovie_Data),
         ("UGFxMovieInfo", UGFxMovieInfo_Data),
     ]
 
+    UGFxValue_Data._fields_ = [("Value", c_int * 12)]
 
-class UGFxValue_Data(Structure):
-    _fields_ = [("Value", int * 12)]
+    UGFxValue._fields_ = [("UObject", UObject_Data), ("UGFxValue", UGFxValue_Data)]
 
-
-class UGFxValue(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxValue", UGFxValue_Data)]
-
-
-class UGFxAction_CloseMovie_Data(Structure):
-    _fields_ = [
+    UGFxAction_CloseMovie_Data._fields_ = [
         ("Movie", POINTER(UGFxMoviePlayer)),
         ("bUnload", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UGFxAction_CloseMovie(Structure):
-    _fields_ = [
+    UGFxAction_CloseMovie._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -244,13 +399,12 @@ class UGFxAction_CloseMovie(Structure):
         ("UGFxAction_CloseMovie", UGFxAction_CloseMovie_Data),
     ]
 
+    UGFxAction_GetVariable_Data._fields_ = [
+        ("Movie", POINTER(UGFxMoviePlayer)),
+        ("Variable", FString),
+    ]
 
-class UGFxAction_GetVariable_Data(Structure):
-    _fields_ = [("Movie", POINTER(UGFxMoviePlayer)), ("Variable", FString)]
-
-
-class UGFxAction_GetVariable(Structure):
-    _fields_ = [
+    UGFxAction_GetVariable._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -258,17 +412,13 @@ class UGFxAction_GetVariable(Structure):
         ("UGFxAction_GetVariable", UGFxAction_GetVariable_Data),
     ]
 
-
-class UGFxAction_Invoke_Data(Structure):
-    _fields_ = [
+    UGFxAction_Invoke_Data._fields_ = [
         ("Movie", POINTER(UGFxMoviePlayer)),
         ("MethodName", FString),
         ("Arguments", TArray_FASValue),
     ]
 
-
-class UGFxAction_Invoke(Structure):
-    _fields_ = [
+    UGFxAction_Invoke._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -276,9 +426,7 @@ class UGFxAction_Invoke(Structure):
         ("UGFxAction_Invoke", UGFxAction_Invoke_Data),
     ]
 
-
-class UGFxAction_OpenMovie_Data(Structure):
-    _fields_ = [
+    UGFxAction_OpenMovie_Data._fields_ = [
         ("Movie", POINTER(USwfMovie)),
         ("MoviePlayerClass", POINTER(UClass)),
         ("MoviePlayer", POINTER(UGFxMoviePlayer)),
@@ -288,19 +436,16 @@ class UGFxAction_OpenMovie_Data(Structure):
         ("bStartPaused", c_bool, 1),
         ("bEnableGammaCorrection", c_bool, 1),
         ("bDisplayWithHudOff", c_bool, 1),
-        ("", c_ulong, 0),
         ("RenderTextureMode", c_ubyte),
         ("ScaleMode", c_ubyte),
         ("AlignMode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x1),
+        ("Unknown1", c_ubyte * 0x1),
         ("RenderTexture", POINTER(UTextureRenderTarget2D)),
         ("CaptureKeys", TArray_FName),
         ("FocusIgnoreKeys", TArray_FName),
     ]
 
-
-class UGFxAction_OpenMovie(Structure):
-    _fields_ = [
+    UGFxAction_OpenMovie._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -308,13 +453,12 @@ class UGFxAction_OpenMovie(Structure):
         ("UGFxAction_OpenMovie", UGFxAction_OpenMovie_Data),
     ]
 
+    UGFxAction_SetCaptureKeys_Data._fields_ = [
+        ("Movie", POINTER(UGFxMoviePlayer)),
+        ("CaptureKeys", TArray_FName),
+    ]
 
-class UGFxAction_SetCaptureKeys_Data(Structure):
-    _fields_ = [("Movie", POINTER(UGFxMoviePlayer)), ("CaptureKeys", TArray_FName)]
-
-
-class UGFxAction_SetCaptureKeys(Structure):
-    _fields_ = [
+    UGFxAction_SetCaptureKeys._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -322,13 +466,12 @@ class UGFxAction_SetCaptureKeys(Structure):
         ("UGFxAction_SetCaptureKeys", UGFxAction_SetCaptureKeys_Data),
     ]
 
+    UGFxAction_SetVariable_Data._fields_ = [
+        ("Movie", POINTER(UGFxMoviePlayer)),
+        ("Variable", FString),
+    ]
 
-class UGFxAction_SetVariable_Data(Structure):
-    _fields_ = [("Movie", POINTER(UGFxMoviePlayer)), ("Variable", FString)]
-
-
-class UGFxAction_SetVariable(Structure):
-    _fields_ = [
+    UGFxAction_SetVariable._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -336,17 +479,13 @@ class UGFxAction_SetVariable(Structure):
         ("UGFxAction_SetVariable", UGFxAction_SetVariable_Data),
     ]
 
-
-class UGFxEvent_FSCommand_Data(Structure):
-    _fields_ = [
+    UGFxEvent_FSCommand_Data._fields_ = [
         ("Movie", POINTER(USwfMovie)),
         ("FSCommand", FString),
         ("Handler", POINTER(UGFxFSCmdHandler_Kismet)),
     ]
 
-
-class UGFxEvent_FSCommand(Structure):
-    _fields_ = [
+    UGFxEvent_FSCommand._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -354,53 +493,44 @@ class UGFxEvent_FSCommand(Structure):
         ("UGFxEvent_FSCommand", UGFxEvent_FSCommand_Data),
     ]
 
+    UGFxFSCmdHandler_Kismet_Data._fields_ = []
 
-class UGFxFSCmdHandler_Kismet_Data(Structure):
-    _fields_ = []
-
-
-class UGFxFSCmdHandler_Kismet(Structure):
-    _fields_ = [
+    UGFxFSCmdHandler_Kismet._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxFSCmdHandler", UGFxFSCmdHandler_Data),
         ("UGFxFSCmdHandler_Kismet", UGFxFSCmdHandler_Kismet_Data),
     ]
 
-
-class UGFxDataStoreSubscriber_Data(Structure):
-    _fields_ = [
+    UGFxDataStoreSubscriber_Data._fields_ = [
         ("VfTable_IUIDataStorePublisher", FPointer),
         ("Movie", POINTER(UGFxMoviePlayer)),
     ]
 
-
-class UGFxDataStoreSubscriber(Structure):
-    _fields_ = [
+    UGFxDataStoreSubscriber._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxDataStoreSubscriber", UGFxDataStoreSubscriber_Data),
     ]
 
-
-BL2SDK.g_loadedClasses += [("UGFxEngine", 2863, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxFSCmdHandler", 2865, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxInteraction", 2867, "UInteraction")]
-BL2SDK.g_loadedClasses += [("UGFxManager", 2869, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxManagerDefinition", 2871, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGFxMoviePlayer", 2873, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxMovie", 2875, "UGFxMoviePlayer")]
-BL2SDK.g_loadedClasses += [("UGFxObject", 2877, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxClikWidget", 2879, "UGFxObject")]
-BL2SDK.g_loadedClasses += [("UGFxRawData", 2881, "UObject")]
-BL2SDK.g_loadedClasses += [("USwfMovie", 2883, "UGFxRawData")]
-BL2SDK.g_loadedClasses += [("UFlashMovie", 2885, "USwfMovie")]
-BL2SDK.g_loadedClasses += [("UGFxMovieInfo", 2887, "USwfMovie")]
-BL2SDK.g_loadedClasses += [("UGFxValue", 2889, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxAction_CloseMovie", 2891, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGFxAction_GetVariable", 2893, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGFxAction_Invoke", 2895, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGFxAction_OpenMovie", 2897, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGFxAction_SetCaptureKeys", 2899, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGFxAction_SetVariable", 2901, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGFxEvent_FSCommand", 2903, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("UGFxFSCmdHandler_Kismet", 2905, "UGFxFSCmdHandler")]
-BL2SDK.g_loadedClasses += [("UGFxDataStoreSubscriber", 2907, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxEngine", 2863, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxFSCmdHandler", 2865, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxInteraction", 2867, "UInteraction")]
+    BL2SDK.g_loadedClasses += [("UGFxManager", 2869, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxManagerDefinition", 2871, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UGFxMoviePlayer", 2873, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxMovie", 2875, "UGFxMoviePlayer")]
+    BL2SDK.g_loadedClasses += [("UGFxObject", 2877, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxClikWidget", 2879, "UGFxObject")]
+    BL2SDK.g_loadedClasses += [("UGFxRawData", 2881, "UObject")]
+    BL2SDK.g_loadedClasses += [("USwfMovie", 2883, "UGFxRawData")]
+    BL2SDK.g_loadedClasses += [("UFlashMovie", 2885, "USwfMovie")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieInfo", 2887, "USwfMovie")]
+    BL2SDK.g_loadedClasses += [("UGFxValue", 2889, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxAction_CloseMovie", 2891, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGFxAction_GetVariable", 2893, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGFxAction_Invoke", 2895, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGFxAction_OpenMovie", 2897, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGFxAction_SetCaptureKeys", 2899, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGFxAction_SetVariable", 2901, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGFxEvent_FSCommand", 2903, "USequenceEvent")]
+    BL2SDK.g_loadedClasses += [("UGFxFSCmdHandler_Kismet", 2905, "UGFxFSCmdHandler")]
+    BL2SDK.g_loadedClasses += [("UGFxDataStoreSubscriber", 2907, "UObject")]

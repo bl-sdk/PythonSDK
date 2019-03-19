@@ -3,168 +3,296 @@ import BL2SDK
 
 
 class FServerQueryToRulesResponseMapping(Structure):
-    _fields_ = [("Query", c_int), ("Response", FPointer)]
+    pass
 
 
 class FServerQueryToPingResponseMapping(Structure):
-    _fields_ = [("Query", c_int), ("Response", FPointer)]
+    pass
 
 
 class FClientFilterORClause(Structure):
-    _fields_ = [("OrParams", FMultiMap_Mirror)]
+    pass
 
 
 class FFilterKeyToSteamKeyMapping(Structure):
-    _fields_ = [
-        ("KeyId", c_int),
-        ("KeyType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
-        ("RawKey", FString),
-        ("SteamKey", FString),
-        ("bReverseFilter", c_bool, 1),
-        ("", c_ulong, 0),
-        ("IgnoreValue", FString),
-    ]
+    pass
 
 
 class FLeaderboardHandle(Structure):
-    _fields_ = [("Dud", FQWord)]
+    pass
 
 
 class FLeaderboardTemplate(Structure):
-    _fields_ = [
-        ("LeaderboardName", FString),
-        ("UpdateType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
-        ("LeaderboardSize", int),
-        ("SortType", c_ubyte),
-        ("DisplayFormat", c_ubyte),
-        ("Unknown2", c_ubyte, 0x2),
-        ("LeaderboardRef", FLeaderboardHandle),
-        ("bLeaderboardInitializing", c_bool, 1),
-        ("bLeaderboardInitiated", c_bool, 1),
-        ("", c_ulong, 0),
-    ]
+    pass
 
 
 class FDeferredLeaderboardRead(Structure):
-    _fields_ = [
+    pass
+
+
+class FDeferredLeaderboardWrite(Structure):
+    pass
+
+
+class FLeaderboardEntry(Structure):
+    pass
+
+
+class FViewIdToLeaderboardName(Structure):
+    pass
+
+
+class FSteamPlayerClanData(Structure):
+    pass
+
+
+class FMarketplaceListCache(Structure):
+    pass
+
+
+class FMarketplaceOfferData(Structure):
+    pass
+
+
+class FProfileSettingsCache(Structure):
+    pass
+
+
+class FDeviceIdCache(Structure):
+    pass
+
+
+class FAchievementProgressStat(Structure):
+    pass
+
+
+class FAchievementMappingInfo(Structure):
+    pass
+
+
+class FQueuedAvatarRequest(Structure):
+    pass
+
+
+class FTitleFileMapping(Structure):
+    pass
+
+
+class FControllerConnectionState(Structure):
+    pass
+
+
+class FOnlineStatusContextMapping(Structure):
+    pass
+
+
+class FOnlineStatusPropertyMapping(Structure):
+    pass
+
+
+class FOnlineStatusMapping(Structure):
+    pass
+
+
+class FPropertyToColumn(Structure):
+    pass
+
+
+class FPlayerStat(Structure):
+    pass
+
+
+class FPendingPlayerStats(Structure):
+    pass
+
+
+class FListenEntry(Structure):
+    pass
+
+
+class FQoSResults(Structure):
+    pass
+
+
+class FRequestEntry(Structure):
+    pass
+
+
+class FPendingEntry(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+from ..structs.GearboxFramework import *
+from ..structs.WillowGame import *
+from ..structs.AkAudio import *
+from ..structs.IpDrv import *
+from ..structs.WinDrv import *
+from ..structs.XAudio2 import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.GearboxFramework import *
+from ..classes.WillowGame import *
+from ..classes.AkAudio import *
+from ..classes.IpDrv import *
+from ..classes.WinDrv import *
+from ..classes.XAudio2 import *
+from ..classes.OnlineSubsystemSteamworks import *
+
+
+def init():
+
+    FServerQueryToRulesResponseMapping._fields_ = [
+        ("Query", c_int),
+        ("Response", FPointer),
+    ]
+
+    FServerQueryToPingResponseMapping._fields_ = [
+        ("Query", c_int),
+        ("Response", FPointer),
+    ]
+
+    FClientFilterORClause._fields_ = [("OrParams", FMultiMap_Mirror)]
+
+    FFilterKeyToSteamKeyMapping._fields_ = [
+        ("KeyId", c_int),
+        ("KeyType", c_ubyte),
+        ("Unknown1", c_ubyte * 0x3),
+        ("RawKey", FString),
+        ("SteamKey", FString),
+        ("bReverseFilter", c_bool, 1),
+        ("IgnoreValue", FString),
+    ]
+
+    FLeaderboardHandle._fields_ = [("Dud", FQWord)]
+
+    FLeaderboardTemplate._fields_ = [
+        ("LeaderboardName", FString),
+        ("UpdateType", c_ubyte),
+        ("Unknown1", c_ubyte * 0x3),
+        ("LeaderboardSize", c_int),
+        ("SortType", c_ubyte),
+        ("DisplayFormat", c_ubyte),
+        ("Unknown2", c_ubyte * 0x2),
+        ("LeaderboardRef", FLeaderboardHandle),
+        ("bLeaderboardInitializing", c_bool, 1),
+        ("bLeaderboardInitiated", c_bool, 1),
+    ]
+
+    FDeferredLeaderboardRead._fields_ = [
         ("LeaderboardName", FString),
         ("RequestType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Start", c_int),
         ("End", c_int),
     ]
 
+    FDeferredLeaderboardWrite._fields_ = [
+        ("LeaderboardName", FString),
+        ("Score", c_int),
+    ]
 
-class FDeferredLeaderboardWrite(Structure):
-    _fields_ = [("LeaderboardName", FString), ("Score", c_int)]
+    FLeaderboardEntry._fields_ = [
+        ("PlayerUID", FUniqueNetId),
+        ("Rank", c_int),
+        ("Score", c_int),
+    ]
 
+    FViewIdToLeaderboardName._fields_ = [
+        ("ViewId", c_int),
+        ("LeaderboardName", FString),
+    ]
 
-class FLeaderboardEntry(Structure):
-    _fields_ = [("PlayerUID", FUniqueNetId), ("Rank", c_int), ("Score", c_int)]
+    FSteamPlayerClanData._fields_ = [("ClanName", FString), ("ClanTag", FString)]
 
-
-class FViewIdToLeaderboardName(Structure):
-    _fields_ = [("ViewId", c_int), ("LeaderboardName", FString)]
-
-
-class FSteamPlayerClanData(Structure):
-    _fields_ = [("ClanName", FString), ("ClanTag", FString)]
-
-
-class FMarketplaceListCache(Structure):
-    _fields_ = [
+    FMarketplaceListCache._fields_ = [
         ("Content", TArray_FMarketplaceContent),
         ("ReadState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ReadCompleteDelegates", TArray_FScriptDelegate),
     ]
 
+    FMarketplaceOfferData._fields_ = [
+        ("OfferId", c_int),
+        ("Category", c_int),
+        ("SellTextLocKey", FString),
+    ]
 
-class FMarketplaceOfferData(Structure):
-    _fields_ = [("OfferId", c_int), ("Category", c_int), ("SellTextLocKey", FString)]
-
-
-class FProfileSettingsCache(Structure):
-    _fields_ = [
+    FProfileSettingsCache._fields_ = [
         ("Profile", POINTER(UOnlineProfileSettings)),
         ("ReadDelegates", TArray_FScriptDelegate),
         ("WriteDelegates", TArray_FScriptDelegate),
         ("ProfileDataChangedDelegates", TArray_FScriptDelegate),
     ]
 
-
-class FDeviceIdCache(Structure):
-    _fields_ = [
+    FDeviceIdCache._fields_ = [
         ("DeviceID", c_int),
         ("DeviceSelectionMulticast", FScriptDelegate),
         ("DeviceSelectionDelegates", TArray_FScriptDelegate),
     ]
 
-
-class FAchievementProgressStat(Structure):
-    _fields_ = [
+    FAchievementProgressStat._fields_ = [
         ("AchievementId", c_int),
         ("Progress", c_int),
         ("MaxProgress", c_int),
         ("bUnlock", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FAchievementMappingInfo(Structure):
-    _fields_ = [
+    FAchievementMappingInfo._fields_ = [
         ("AchievementId", c_int),
         ("AchievementName", FName),
         ("ViewId", c_int),
         ("ProgressCount", c_int),
         ("MaxProgress", c_int),
         ("bAutoUnlock", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FQueuedAvatarRequest(Structure):
-    _fields_ = [
+    FQueuedAvatarRequest._fields_ = [
         ("CheckTime", c_float),
-        ("NumberOfAttempts", int),
+        ("NumberOfAttempts", c_int),
         ("PlayerNetId", FUniqueNetId),
-        ("Size", int),
+        ("Size", c_int),
         ("ReadOnlineAvatarCompleteDelegate", FScriptDelegate),
     ]
 
+    FTitleFileMapping._fields_ = [("Filename", FString), ("UGCHandle", FString)]
 
-class FTitleFileMapping(Structure):
-    _fields_ = [("Filename", FString), ("UGCHandle", FString)]
+    FControllerConnectionState._fields_ = [
+        ("bIsControllerConnected", c_int),
+        ("bLastIsControllerConnected", c_int),
+    ]
 
+    FOnlineStatusContextMapping._fields_ = [
+        ("KeyString", FString),
+        ("ContextId", c_int),
+    ]
 
-class FControllerConnectionState(Structure):
-    _fields_ = [("bIsControllerConnected", int), ("bLastIsControllerConnected", int)]
+    FOnlineStatusPropertyMapping._fields_ = [
+        ("KeyString", FString),
+        ("PropertyId", c_int),
+        ("EncodeId", c_int),
+    ]
 
+    FOnlineStatusMapping._fields_ = [("StatusId", c_int), ("StatusString", FString)]
 
-class FOnlineStatusContextMapping(Structure):
-    _fields_ = [("KeyString", FString), ("ContextId", c_int)]
+    FPropertyToColumn._fields_ = [("PropertyId", c_int), ("ColumnId", c_int)]
 
+    FPlayerStat._fields_ = [
+        ("ViewId", c_int),
+        ("PropertyId", c_int),
+        ("Data", FSettingsData),
+    ]
 
-class FOnlineStatusPropertyMapping(Structure):
-    _fields_ = [("KeyString", FString), ("PropertyId", c_int), ("EncodeId", c_int)]
-
-
-class FOnlineStatusMapping(Structure):
-    _fields_ = [("StatusId", c_int), ("StatusString", FString)]
-
-
-class FPropertyToColumn(Structure):
-    _fields_ = [("PropertyId", c_int), ("ColumnId", c_int)]
-
-
-class FPlayerStat(Structure):
-    _fields_ = [("ViewId", c_int), ("PropertyId", c_int), ("Data", FSettingsData)]
-
-
-class FPendingPlayerStats(Structure):
-    _fields_ = [
+    FPendingPlayerStats._fields_ = [
         ("Player", FUniqueNetId),
         ("PlayerName", FString),
         ("StatGuid", FString),
@@ -173,36 +301,28 @@ class FPendingPlayerStats(Structure):
         ("Place", FString),
     ]
 
-
-class FListenEntry(Structure):
-    _fields_ = [
+    FListenEntry._fields_ = [
         ("RemoteId", FQWord),
         ("Status", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ActiveTimestamp", FDouble),
     ]
 
+    FQoSResults._fields_ = [("PingTimes", TArray_FDouble), ("PingInMs", c_int)]
 
-class FQoSResults(Structure):
-    _fields_ = [("PingTimes", TArray_FDouble), ("PingInMs", c_int)]
-
-
-class FRequestEntry(Structure):
-    _fields_ = [
+    FRequestEntry._fields_ = [
         ("RemoteId", FQWord),
         ("NumProbesSent", c_int),
         ("ChallengeTimestamp", FDouble),
         ("PingTimestamp", FDouble),
         ("Status", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Results", FQoSResults),
         ("CallbackFunc", FPointer),
         ("UserData", FPointer),
     ]
 
-
-class FPendingEntry(Structure):
-    _fields_ = [
+    FPendingEntry._fields_ = [
         ("RemoteId", FQWord),
         ("CallbackFunc", FPointer),
         ("UserData", FPointer),

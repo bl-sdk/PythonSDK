@@ -3,31 +3,2763 @@ import BL2SDK
 
 
 class UActorFactoryClone_Data(Structure):
-    _fields_ = [("CloneArchetype", TArray_AGearboxPawnPtr), ("NewCloneTag", FName)]
+    pass
 
 
 class UActorFactoryClone(Structure):
-    _fields_ = [
+    pass
+
+
+class UActorFactoryWireTerminal_Data(Structure):
+    pass
+
+
+class UActorFactoryWireTerminal(Structure):
+    pass
+
+
+class UAIDebugCamera_Data(Structure):
+    pass
+
+
+class UAIDebugCamera(Structure):
+    pass
+
+
+class UAITracker_Data(Structure):
+    pass
+
+
+class UAITracker(Structure):
+    pass
+
+
+class UAnimNodeSpecialMoveBlend_Data(Structure):
+    pass
+
+
+class UAnimNodeSpecialMoveBlend(Structure):
+    pass
+
+
+class UAttributeExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UAttributeExpressionEvaluator(Structure):
+    pass
+
+
+class UBehavior_CallFunction_Data(Structure):
+    pass
+
+
+class UBehavior_CallFunction(Structure):
+    pass
+
+
+class UBehavior_ChangeRemoteBehaviorSequenceState_Data(Structure):
+    pass
+
+
+class UBehavior_ChangeRemoteBehaviorSequenceState(Structure):
+    pass
+
+
+class UBehavior_ChangeTimer_Data(Structure):
+    pass
+
+
+class UBehavior_ChangeTimer(Structure):
+    pass
+
+
+class UBehavior_IsSequenceEnabled_Data(Structure):
+    pass
+
+
+class UBehavior_IsSequenceEnabled(Structure):
+    pass
+
+
+class UBehavior_PostAkEvent_Data(Structure):
+    pass
+
+
+class UBehavior_PostAkEvent(Structure):
+    pass
+
+
+class UBehaviorHelpers_Data(Structure):
+    pass
+
+
+class UBehaviorHelpers(Structure):
+    pass
+
+
+class UCompoundExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UCompoundExpressionEvaluator(Structure):
+    pass
+
+
+class UConditionalAttributeValueResolver_Data(Structure):
+    pass
+
+
+class UConditionalAttributeValueResolver(Structure):
+    pass
+
+
+class UConstantAttributeValueResolver_Data(Structure):
+    pass
+
+
+class UConstantAttributeValueResolver(Structure):
+    pass
+
+
+class UConstraintAttributeValueResolver_Data(Structure):
+    pass
+
+
+class UConstraintAttributeValueResolver(Structure):
+    pass
+
+
+class UFeatherBoneBlendDefinition_Data(Structure):
+    pass
+
+
+class UFeatherBoneBlendDefinition(Structure):
+    pass
+
+
+class UGBXActorList_Data(Structure):
+    pass
+
+
+class UGBXActorList(Structure):
+    pass
+
+
+class UGBXObjectList_Data(Structure):
+    pass
+
+
+class UGBXObjectList(Structure):
+    pass
+
+
+class AGearboxAIController_Data(Structure):
+    pass
+
+
+class AGearboxAIController(Structure):
+    pass
+
+
+class AGearboxAIMoveNode_Data(Structure):
+    pass
+
+
+class AGearboxAIMoveNode(Structure):
+    pass
+
+
+class AGearboxCameraBasic_Data(Structure):
+    pass
+
+
+class AGearboxCameraBasic(Structure):
+    pass
+
+
+class UGearboxCameraModifier_Data(Structure):
+    pass
+
+
+class UGearboxCameraModifier(Structure):
+    pass
+
+
+class UGearboxCheatManager_Data(Structure):
+    pass
+
+
+class UGearboxCheatManager(Structure):
+    pass
+
+
+class UGearboxDialogInterface_Data(Structure):
+    pass
+
+
+class UGearboxDialogInterface(Structure):
+    pass
+
+
+class UGearboxEditorNode_Data(Structure):
+    pass
+
+
+class UGearboxEditorNode(Structure):
+    pass
+
+
+class UGearboxEngine_Data(Structure):
+    pass
+
+
+class UGearboxEngine(Structure):
+    pass
+
+
+class AGearboxGameInfo_Data(Structure):
+    pass
+
+
+class AGearboxGameInfo(Structure):
+    pass
+
+
+class UGearboxGFxMovie_Data(Structure):
+    pass
+
+
+class UGearboxGFxMovie(Structure):
+    pass
+
+
+class UGFxMovie_StateParent_Data(Structure):
+    pass
+
+
+class UGFxMovie_StateParent(Structure):
+    pass
+
+
+class UGearboxGlobals_Data(Structure):
+    pass
+
+
+class UGearboxGlobals(Structure):
+    pass
+
+
+class UGearboxGlobalsDefinition_Data(Structure):
+    pass
+
+
+class UGearboxGlobalsDefinition(Structure):
+    pass
+
+
+class UGearboxLocationRequest_Data(Structure):
+    pass
+
+
+class UGearboxLocationRequest(Structure):
+    pass
+
+
+class UPawnMoveLocationRequest_Data(Structure):
+    pass
+
+
+class UPawnMoveLocationRequest(Structure):
+    pass
+
+
+class AGearboxPawn_Data(Structure):
+    pass
+
+
+class AGearboxPawn(Structure):
+    pass
+
+
+class AGearboxPlayerController_Data(Structure):
+    pass
+
+
+class AGearboxPlayerController(Structure):
+    pass
+
+
+class UGearboxPlayerInput_Data(Structure):
+    pass
+
+
+class UGearboxPlayerInput(Structure):
+    pass
+
+
+class AGearboxPlayerReplicationInfo_Data(Structure):
+    pass
+
+
+class AGearboxPlayerReplicationInfo(Structure):
+    pass
+
+
+class UGearboxProfileSettings_Data(Structure):
+    pass
+
+
+class UGearboxProfileSettings(Structure):
+    pass
+
+
+class UGearboxRenderTextureManager_Data(Structure):
+    pass
+
+
+class UGearboxRenderTextureManager(Structure):
+    pass
+
+
+class UGearboxSeqAct_DestroyPopulationActors_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_DestroyPopulationActors(Structure):
+    pass
+
+
+class UGearboxSeqAct_ResetPopulationCount_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_ResetPopulationCount(Structure):
+    pass
+
+
+class UGearboxSkeletalMeshComponent_Data(Structure):
+    pass
+
+
+class UGearboxSkeletalMeshComponent(Structure):
+    pass
+
+
+class UGearboxStaticMeshComponent_Data(Structure):
+    pass
+
+
+class UGearboxStaticMeshComponent(Structure):
+    pass
+
+
+class UGestaltSkeletalMeshDefinition_Data(Structure):
+    pass
+
+
+class UGestaltSkeletalMeshDefinition(Structure):
+    pass
+
+
+class UGFxActorMoviePool_Data(Structure):
+    pass
+
+
+class UGFxActorMoviePool(Structure):
+    pass
+
+
+class UGFxMovieDefinition_Data(Structure):
+    pass
+
+
+class UGFxMovieDefinition(Structure):
+    pass
+
+
+class UGearboxEULAGFxMovieDefinition_Data(Structure):
+    pass
+
+
+class UGearboxEULAGFxMovieDefinition(Structure):
+    pass
+
+
+class UGFxMovieDrawStyle_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyle(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleHUD_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleHUD(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleRTT_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleRTT(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleComponent_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleComponent(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleMesh_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleMesh(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleSprite_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleSprite(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleSplitscreen_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleSplitscreen(Structure):
+    pass
+
+
+class UGFxMovieManager_Data(Structure):
+    pass
+
+
+class UGFxMovieManager(Structure):
+    pass
+
+
+class UGFxMovieState_Data(Structure):
+    pass
+
+
+class UGFxMovieState(Structure):
+    pass
+
+
+class UGFxMovieStateCustom_Data(Structure):
+    pass
+
+
+class UGFxMovieStateCustom(Structure):
+    pass
+
+
+class UGFxMovieStateFlags_Data(Structure):
+    pass
+
+
+class UGFxMovieStateFlags(Structure):
+    pass
+
+
+class UGFxMovieStatePlayerAware_Data(Structure):
+    pass
+
+
+class UGFxMovieStatePlayerAware(Structure):
+    pass
+
+
+class UIAIInterface_Data(Structure):
+    pass
+
+
+class UIAIInterface(Structure):
+    pass
+
+
+class UIConstructObject_Data(Structure):
+    pass
+
+
+class UIConstructObject(Structure):
+    pass
+
+
+class UIGFxActorMovie_Data(Structure):
+    pass
+
+
+class UIGFxActorMovie(Structure):
+    pass
+
+
+class UINounAttributeProvider_Data(Structure):
+    pass
+
+
+class UINounAttributeProvider(Structure):
+    pass
+
+
+class UInterfaceGearboxCamera_Data(Structure):
+    pass
+
+
+class UInterfaceGearboxCamera(Structure):
+    pass
+
+
+class UIStreamingDataEvent_Data(Structure):
+    pass
+
+
+class UIStreamingDataEvent(Structure):
+    pass
+
+
+class ULeviathanChannel_Data(Structure):
+    pass
+
+
+class ULeviathanChannel(Structure):
+    pass
+
+
+class UNoContextNeededAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UNoContextNeededAttributeContextResolver(Structure):
+    pass
+
+
+class UNounAttributeValueResolver_Data(Structure):
+    pass
+
+
+class UNounAttributeValueResolver(Structure):
+    pass
+
+
+class UObjectFunctionAttributeValueResolver_Data(Structure):
+    pass
+
+
+class UObjectFunctionAttributeValueResolver(Structure):
+    pass
+
+
+class UObjectPropertyContextResolver_Data(Structure):
+    pass
+
+
+class UObjectPropertyContextResolver(Structure):
+    pass
+
+
+class UPhysicsStateExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UPhysicsStateExpressionEvaluator(Structure):
+    pass
+
+
+class UPopulationAspect_Data(Structure):
+    pass
+
+
+class UPopulationAspect(Structure):
+    pass
+
+
+class UPopulationBodyTag_Data(Structure):
+    pass
+
+
+class UPopulationBodyTag(Structure):
+    pass
+
+
+class APopulationEncounter_Data(Structure):
+    pass
+
+
+class APopulationEncounter(Structure):
+    pass
+
+
+class UPopulationEncounterRenderingComponent_Data(Structure):
+    pass
+
+
+class UPopulationEncounterRenderingComponent(Structure):
+    pass
+
+
+class UPopulationOpportunityCombatRenderingComponent_Data(Structure):
+    pass
+
+
+class UPopulationOpportunityCombatRenderingComponent(Structure):
+    pass
+
+
+class UPopulationSpawnedActorTagDefinition_Data(Structure):
+    pass
+
+
+class UPopulationSpawnedActorTagDefinition(Structure):
+    pass
+
+
+class UPopUpDebugBarGraph_Data(Structure):
+    pass
+
+
+class UPopUpDebugBarGraph(Structure):
+    pass
+
+
+class URandomAttributeValueResolver_Data(Structure):
+    pass
+
+
+class URandomAttributeValueResolver(Structure):
+    pass
+
+
+class URegionDefinition_Data(Structure):
+    pass
+
+
+class URegionDefinition(Structure):
+    pass
+
+
+class URootMotionDefinition_Data(Structure):
+    pass
+
+
+class URootMotionDefinition(Structure):
+    pass
+
+
+class URuleEngineLoadBalanceManager_Data(Structure):
+    pass
+
+
+class URuleEngineLoadBalanceManager(Structure):
+    pass
+
+
+class UScreenSpaceManager_Data(Structure):
+    pass
+
+
+class UScreenSpaceManager(Structure):
+    pass
+
+
+class USeqAct_AllPlayersInVolume_Data(Structure):
+    pass
+
+
+class USeqAct_AllPlayersInVolume(Structure):
+    pass
+
+
+class USeqCond_CompareLocation_Data(Structure):
+    pass
+
+
+class USeqCond_CompareLocation(Structure):
+    pass
+
+
+class USeqCond_CompareString_Data(Structure):
+    pass
+
+
+class USeqCond_CompareString(Structure):
+    pass
+
+
+class USeqCond_GetLanguage_Data(Structure):
+    pass
+
+
+class USeqCond_GetLanguage(Structure):
+    pass
+
+
+class USimpleMathValueResolver_Data(Structure):
+    pass
+
+
+class USimpleMathValueResolver(Structure):
+    pass
+
+
+class USpecialMoveComponent_Data(Structure):
+    pass
+
+
+class USpecialMoveComponent(Structure):
+    pass
+
+
+class USpecialMoveDefinition_Data(Structure):
+    pass
+
+
+class USpecialMoveDefinition(Structure):
+    pass
+
+
+class USpecialMoveExpressionList_Data(Structure):
+    pass
+
+
+class USpecialMoveExpressionList(Structure):
+    pass
+
+
+class USpecialMoveRandom_Data(Structure):
+    pass
+
+
+class USpecialMoveRandom(Structure):
+    pass
+
+
+class USpecialMoveInterface_Data(Structure):
+    pass
+
+
+class USpecialMoveInterface(Structure):
+    pass
+
+
+class UStateAttributeResolver_Data(Structure):
+    pass
+
+
+class UStateAttributeResolver(Structure):
+    pass
+
+
+class UTimeValueResolver_Data(Structure):
+    pass
+
+
+class UTimeValueResolver(Structure):
+    pass
+
+
+class AWireManager_Data(Structure):
+    pass
+
+
+class AWireManager(Structure):
+    pass
+
+
+class AWireTerminal_Data(Structure):
+    pass
+
+
+class AWireTerminal(Structure):
+    pass
+
+
+class AWiringActor_Data(Structure):
+    pass
+
+
+class AWiringActor(Structure):
+    pass
+
+
+class UWiringMesh_Data(Structure):
+    pass
+
+
+class UWiringMesh(Structure):
+    pass
+
+
+class UActionResource_Data(Structure):
+    pass
+
+
+class UActionResource(Structure):
+    pass
+
+
+class UActionSequence_Data(Structure):
+    pass
+
+
+class UActionSequence(Structure):
+    pass
+
+
+class UActionSequenceList_Data(Structure):
+    pass
+
+
+class UActionSequenceList(Structure):
+    pass
+
+
+class UActionSequencePawn_Data(Structure):
+    pass
+
+
+class UActionSequencePawn(Structure):
+    pass
+
+
+class UAction_PawnMovementBase_Data(Structure):
+    pass
+
+
+class UAction_PawnMovementBase(Structure):
+    pass
+
+
+class UActionSequenceRandom_Data(Structure):
+    pass
+
+
+class UActionSequenceRandom(Structure):
+    pass
+
+
+class UAIComponent_Data(Structure):
+    pass
+
+
+class UAIComponent(Structure):
+    pass
+
+
+class UAICostExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UAICostExpressionEvaluator(Structure):
+    pass
+
+
+class UAIFactoryBase_Data(Structure):
+    pass
+
+
+class UAIFactoryBase(Structure):
+    pass
+
+
+class UGearboxAIFactory_Data(Structure):
+    pass
+
+
+class UGearboxAIFactory(Structure):
+    pass
+
+
+class UAIResource_Data(Structure):
+    pass
+
+
+class UAIResource(Structure):
+    pass
+
+
+class UAIResourceExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UAIResourceExpressionEvaluator(Structure):
+    pass
+
+
+class UAllegianceExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UAllegianceExpressionEvaluator(Structure):
+    pass
+
+
+class UAwarenessZoneCollectionDefinition_Data(Structure):
+    pass
+
+
+class UAwarenessZoneCollectionDefinition(Structure):
+    pass
+
+
+class UAwarenessZoneDefinition_Data(Structure):
+    pass
+
+
+class UAwarenessZoneDefinition(Structure):
+    pass
+
+
+class UBehavior_SendGbxMessage_Data(Structure):
+    pass
+
+
+class UBehavior_SendGbxMessage(Structure):
+    pass
+
+
+class UBehavior_SetFlag_Data(Structure):
+    pass
+
+
+class UBehavior_SetFlag(Structure):
+    pass
+
+
+class UBestTargetAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UBestTargetAttributeContextResolver(Structure):
+    pass
+
+
+class UCharacterClassMessageDefinition_Data(Structure):
+    pass
+
+
+class UCharacterClassMessageDefinition(Structure):
+    pass
+
+
+class UCoverSearchCriteria_Data(Structure):
+    pass
+
+
+class UCoverSearchCriteria(Structure):
+    pass
+
+
+class UExposureUtilityBase_Data(Structure):
+    pass
+
+
+class UExposureUtilityBase(Structure):
+    pass
+
+
+class UExposureUtilityBasicCaching_Data(Structure):
+    pass
+
+
+class UExposureUtilityBasicCaching(Structure):
+    pass
+
+
+class UExposureUtilityFixedCost_Data(Structure):
+    pass
+
+
+class UExposureUtilityFixedCost(Structure):
+    pass
+
+
+class UExposureUtilityStrategy_Data(Structure):
+    pass
+
+
+class UExposureUtilityStrategy(Structure):
+    pass
+
+
+class UFiringBehaviorDefinition_Data(Structure):
+    pass
+
+
+class UFiringBehaviorDefinition(Structure):
+    pass
+
+
+class UFiringBehaviorManager_Data(Structure):
+    pass
+
+
+class UFiringBehaviorManager(Structure):
+    pass
+
+
+class UFiringCondition_Data(Structure):
+    pass
+
+
+class UFiringCondition(Structure):
+    pass
+
+
+class UFireCond_IsPlayerTarget_Data(Structure):
+    pass
+
+
+class UFireCond_IsPlayerTarget(Structure):
+    pass
+
+
+class UFiringPattern_Data(Structure):
+    pass
+
+
+class UFiringPattern(Structure):
+    pass
+
+
+class UFirePatt_Cone_Data(Structure):
+    pass
+
+
+class UFirePatt_Cone(Structure):
+    pass
+
+
+class UFirePatt_ShrinkingCone_Data(Structure):
+    pass
+
+
+class UFirePatt_ShrinkingCone(Structure):
+    pass
+
+
+class UFirePatt_StrafeOver_Data(Structure):
+    pass
+
+
+class UFirePatt_StrafeOver(Structure):
+    pass
+
+
+class UFiringZoneCollectionDefinition_Data(Structure):
+    pass
+
+
+class UFiringZoneCollectionDefinition(Structure):
+    pass
+
+
+class UFiringZoneDefinition_Data(Structure):
+    pass
+
+
+class UFiringZoneDefinition(Structure):
+    pass
+
+
+class UFlagDefinition_Data(Structure):
+    pass
+
+
+class UFlagDefinition(Structure):
+    pass
+
+
+class UFlagExpressionEvaluator_Data(Structure):
+    pass
+
+
+class UFlagExpressionEvaluator(Structure):
+    pass
+
+
+class UFlagValueResolver_Data(Structure):
+    pass
+
+
+class UFlagValueResolver(Structure):
+    pass
+
+
+class UMultipleFlagValueResolver_Data(Structure):
+    pass
+
+
+class UMultipleFlagValueResolver(Structure):
+    pass
+
+
+class UObjectFunctionFlagValueResolver_Data(Structure):
+    pass
+
+
+class UObjectFunctionFlagValueResolver(Structure):
+    pass
+
+
+class UObjectPropertyFlagValueResolver_Data(Structure):
+    pass
+
+
+class UObjectPropertyFlagValueResolver(Structure):
+    pass
+
+
+class URuleEngineFlagValueResolver_Data(Structure):
+    pass
+
+
+class URuleEngineFlagValueResolver(Structure):
+    pass
+
+
+class UGbxMessage_Data(Structure):
+    pass
+
+
+class UGbxMessage(Structure):
+    pass
+
+
+class UGbxMessageDefinition_Data(Structure):
+    pass
+
+
+class UGbxMessageDefinition(Structure):
+    pass
+
+
+class UGbxMessageManager_Data(Structure):
+    pass
+
+
+class UGbxMessageManager(Structure):
+    pass
+
+
+class AGearboxMind_Data(Structure):
+    pass
+
+
+class AGearboxMind(Structure):
+    pass
+
+
+class UGearboxAIMoveNodeRenderComponent_Data(Structure):
+    pass
+
+
+class UGearboxAIMoveNodeRenderComponent(Structure):
+    pass
+
+
+class UGearboxCoverStateManager_Data(Structure):
+    pass
+
+
+class UGearboxCoverStateManager(Structure):
+    pass
+
+
+class UGearboxMindAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UGearboxMindAttributeContextResolver(Structure):
+    pass
+
+
+class UGearboxNavigationHandle_Data(Structure):
+    pass
+
+
+class UGearboxNavigationHandle(Structure):
+    pass
+
+
+class UIFlagProvider_Data(Structure):
+    pass
+
+
+class UIFlagProvider(Structure):
+    pass
+
+
+class UIFlagProviderGroup_Data(Structure):
+    pass
+
+
+class UIFlagProviderGroup(Structure):
+    pass
+
+
+class UIGbxMessageListener_Data(Structure):
+    pass
+
+
+class UIGbxMessageListener(Structure):
+    pass
+
+
+class UIRuleEngineOwner_Data(Structure):
+    pass
+
+
+class UIRuleEngineOwner(Structure):
+    pass
+
+
+class UKnowledgeRecord_Data(Structure):
+    pass
+
+
+class UKnowledgeRecord(Structure):
+    pass
+
+
+class ULocationFilter_Data(Structure):
+    pass
+
+
+class ULocationFilter(Structure):
+    pass
+
+
+class ULocationFilter_MustHaveLOS_Data(Structure):
+    pass
+
+
+class ULocationFilter_MustHaveLOS(Structure):
+    pass
+
+
+class ULocationFilter_MustNotHaveLOS_Data(Structure):
+    pass
+
+
+class ULocationFilter_MustNotHaveLOS(Structure):
+    pass
+
+
+class UMindTargetInfo_Data(Structure):
+    pass
+
+
+class UMindTargetInfo(Structure):
+    pass
+
+
+class URule_Data(Structure):
+    pass
+
+
+class URule(Structure):
+    pass
+
+
+class URuleContainer_Data(Structure):
+    pass
+
+
+class URuleContainer(Structure):
+    pass
+
+
+class URulePlaceholder_Data(Structure):
+    pass
+
+
+class URulePlaceholder(Structure):
+    pass
+
+
+class URuleEngine_Data(Structure):
+    pass
+
+
+class URuleEngine(Structure):
+    pass
+
+
+class UGearboxRuleEngine_Data(Structure):
+    pass
+
+
+class UGearboxRuleEngine(Structure):
+    pass
+
+
+class URuleEventDef_Data(Structure):
+    pass
+
+
+class URuleEventDef(Structure):
+    pass
+
+
+class URuleSet_Data(Structure):
+    pass
+
+
+class URuleSet(Structure):
+    pass
+
+
+class UStateRuleSet_Data(Structure):
+    pass
+
+
+class UStateRuleSet(Structure):
+    pass
+
+
+class USearchDirection_Data(Structure):
+    pass
+
+
+class USearchDirection(Structure):
+    pass
+
+
+class USearchDirection_Any_Data(Structure):
+    pass
+
+
+class USearchDirection_Any(Structure):
+    pass
+
+
+class USearchDirection_AwayFromMe_Data(Structure):
+    pass
+
+
+class USearchDirection_AwayFromMe(Structure):
+    pass
+
+
+class USearchDirection_AwayFromTarget_Data(Structure):
+    pass
+
+
+class USearchDirection_AwayFromTarget(Structure):
+    pass
+
+
+class USearchDirection_MyFacingDirection_Data(Structure):
+    pass
+
+
+class USearchDirection_MyFacingDirection(Structure):
+    pass
+
+
+class USearchDirection_OppositeMyFacingDirection_Data(Structure):
+    pass
+
+
+class USearchDirection_OppositeMyFacingDirection(Structure):
+    pass
+
+
+class USearchDirection_OppositeTargetsFacingDirection_Data(Structure):
+    pass
+
+
+class USearchDirection_OppositeTargetsFacingDirection(Structure):
+    pass
+
+
+class USearchDirection_RandomLeftOrRight_Data(Structure):
+    pass
+
+
+class USearchDirection_RandomLeftOrRight(Structure):
+    pass
+
+
+class USearchDirection_TargetsFacingDirection_Data(Structure):
+    pass
+
+
+class USearchDirection_TargetsFacingDirection(Structure):
+    pass
+
+
+class USearchDirection_ToMyLeft_Data(Structure):
+    pass
+
+
+class USearchDirection_ToMyLeft(Structure):
+    pass
+
+
+class USearchDirection_ToMyRight_Data(Structure):
+    pass
+
+
+class USearchDirection_ToMyRight(Structure):
+    pass
+
+
+class USearchDirection_TowardMe_Data(Structure):
+    pass
+
+
+class USearchDirection_TowardMe(Structure):
+    pass
+
+
+class USearchDirection_TowardTarget_Data(Structure):
+    pass
+
+
+class USearchDirection_TowardTarget(Structure):
+    pass
+
+
+class USearchOrigin_Data(Structure):
+    pass
+
+
+class USearchOrigin(Structure):
+    pass
+
+
+class USearchOrigin_CurrentLocation_Data(Structure):
+    pass
+
+
+class USearchOrigin_CurrentLocation(Structure):
+    pass
+
+
+class USearchOrigin_ScriptedMoveTarget_Data(Structure):
+    pass
+
+
+class USearchOrigin_ScriptedMoveTarget(Structure):
+    pass
+
+
+class USearchOrigin_TargetLocation_Data(Structure):
+    pass
+
+
+class USearchOrigin_TargetLocation(Structure):
+    pass
+
+
+class USnapshotRecord_Data(Structure):
+    pass
+
+
+class USnapshotRecord(Structure):
+    pass
+
+
+class UGearboxPawnSnapshotRecord_Data(Structure):
+    pass
+
+
+class UGearboxPawnSnapshotRecord(Structure):
+    pass
+
+
+class UTargetingDefinition_Data(Structure):
+    pass
+
+
+class UTargetingDefinition(Structure):
+    pass
+
+
+class UTargetIterator_Data(Structure):
+    pass
+
+
+class UTargetIterator(Structure):
+    pass
+
+
+class UTargetIteratorCalculateDistance_Data(Structure):
+    pass
+
+
+class UTargetIteratorCalculateDistance(Structure):
+    pass
+
+
+class UTargetIteratorCalculateExposure_Data(Structure):
+    pass
+
+
+class UTargetIteratorCalculateExposure(Structure):
+    pass
+
+
+class UTargetIteratorCheckAwareness_Data(Structure):
+    pass
+
+
+class UTargetIteratorCheckAwareness(Structure):
+    pass
+
+
+class UTargetIteratorCheckRemoveTarget_Data(Structure):
+    pass
+
+
+class UTargetIteratorCheckRemoveTarget(Structure):
+    pass
+
+
+class UTargetIteratorForgetAboutTarget_Data(Structure):
+    pass
+
+
+class UTargetIteratorForgetAboutTarget(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeTargetsIAmExposedTo_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeTargetsIAmExposedTo(Structure):
+    pass
+
+
+class UTI_Calc_Data(Structure):
+    pass
+
+
+class UTI_Calc(Structure):
+    pass
+
+
+class UTI_Prioritize_Data(Structure):
+    pass
+
+
+class UTI_Prioritize(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeExposedTargets_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeExposedTargets(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeHumanTargets_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeHumanTargets(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeNearbyTarget_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeNearbyTarget(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizePreviousTarget_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizePreviousTarget(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeTargetNotBeingShotAt_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeTargetNotBeingShotAt(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeTargetWhoShootsAtMe_Data(Structure):
+    pass
+
+
+class UTargetIteratorPrioritizeTargetWhoShootsAtMe(Structure):
+    pass
+
+
+class UTI_PrioritizeBonus_Data(Structure):
+    pass
+
+
+class UTI_PrioritizeBonus(Structure):
+    pass
+
+
+class UTI_PrioritizeConditional_Data(Structure):
+    pass
+
+
+class UTI_PrioritizeConditional(Structure):
+    pass
+
+
+class UGearboxSeqAct_PopulationOpportunityLink_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_PopulationOpportunityLink(Structure):
+    pass
+
+
+class UIPopulationSpawnPoint_Data(Structure):
+    pass
+
+
+class UIPopulationSpawnPoint(Structure):
+    pass
+
+
+class UPopulationDefinition_Data(Structure):
+    pass
+
+
+class UPopulationDefinition(Structure):
+    pass
+
+
+class UPopulationFactory_Data(Structure):
+    pass
+
+
+class UPopulationFactory(Structure):
+    pass
+
+
+class UPopulationFactoryGeneric_Data(Structure):
+    pass
+
+
+class UPopulationFactoryGeneric(Structure):
+    pass
+
+
+class UPopulationFactoryPopulationDefinition_Data(Structure):
+    pass
+
+
+class UPopulationFactoryPopulationDefinition(Structure):
+    pass
+
+
+class UPopulationMaster_Data(Structure):
+    pass
+
+
+class UPopulationMaster(Structure):
+    pass
+
+
+class APopulationOpportunity_Data(Structure):
+    pass
+
+
+class APopulationOpportunity(Structure):
+    pass
+
+
+class APopulationOpportunityArea_Data(Structure):
+    pass
+
+
+class APopulationOpportunityArea(Structure):
+    pass
+
+
+class APopulationOpportunityCloner_Data(Structure):
+    pass
+
+
+class APopulationOpportunityCloner(Structure):
+    pass
+
+
+class APopulationOpportunityCombat_Data(Structure):
+    pass
+
+
+class APopulationOpportunityCombat(Structure):
+    pass
+
+
+class APopulationOpportunityPoint_Data(Structure):
+    pass
+
+
+class APopulationOpportunityPoint(Structure):
+    pass
+
+
+class UPopulationOpportunityAreaRenderingComponent_Data(Structure):
+    pass
+
+
+class UPopulationOpportunityAreaRenderingComponent(Structure):
+    pass
+
+
+class UPopulationOpportunityAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UPopulationOpportunityAttributeContextResolver(Structure):
+    pass
+
+
+class UPopulationOpportunityPointRenderingComponent_Data(Structure):
+    pass
+
+
+class UPopulationOpportunityPointRenderingComponent(Structure):
+    pass
+
+
+class APopulationPoint_Data(Structure):
+    pass
+
+
+class APopulationPoint(Structure):
+    pass
+
+
+class APopulationPoint_Dynamic_Data(Structure):
+    pass
+
+
+class APopulationPoint_Dynamic(Structure):
+    pass
+
+
+class UPopulationPointRenderingComponent_Data(Structure):
+    pass
+
+
+class UPopulationPointRenderingComponent(Structure):
+    pass
+
+
+class USeqEvent_EncounterWaveComplete_Data(Structure):
+    pass
+
+
+class USeqEvent_EncounterWaveComplete(Structure):
+    pass
+
+
+class USeqEvent_PopulatedActor_Data(Structure):
+    pass
+
+
+class USeqEvent_PopulatedActor(Structure):
+    pass
+
+
+class USeqEvent_PopulatedPoint_Data(Structure):
+    pass
+
+
+class USeqEvent_PopulatedPoint(Structure):
+    pass
+
+
+class AGearboxHUD_Data(Structure):
+    pass
+
+
+class AGearboxHUD(Structure):
+    pass
+
+
+class UAIDefinition_Data(Structure):
+    pass
+
+
+class UAIDefinition(Structure):
+    pass
+
+
+class UBehaviorEventFilterBase_Data(Structure):
+    pass
+
+
+class UBehaviorEventFilterBase(Structure):
+    pass
+
+
+class UBehaviorKernel_Data(Structure):
+    pass
+
+
+class UBehaviorKernel(Structure):
+    pass
+
+
+class UBehaviorProviderDefinition_Data(Structure):
+    pass
+
+
+class UBehaviorProviderDefinition(Structure):
+    pass
+
+
+class UAIBehaviorProviderDefinition_Data(Structure):
+    pass
+
+
+class UAIBehaviorProviderDefinition(Structure):
+    pass
+
+
+class UBehaviorSequenceCustomEnableCondition_Data(Structure):
+    pass
+
+
+class UBehaviorSequenceCustomEnableCondition(Structure):
+    pass
+
+
+class UBehaviorSequenceEnableByMultipleConditions_Data(Structure):
+    pass
+
+
+class UBehaviorSequenceEnableByMultipleConditions(Structure):
+    pass
+
+
+class UIBehaviorConsumer_Data(Structure):
+    pass
+
+
+class UIBehaviorConsumer(Structure):
+    pass
+
+
+class UIBehaviorProvider_Data(Structure):
+    pass
+
+
+class UIBehaviorProvider(Structure):
+    pass
+
+
+class UICustomEvent_Data(Structure):
+    pass
+
+
+class UICustomEvent(Structure):
+    pass
+
+
+class UITimerBehavior_Data(Structure):
+    pass
+
+
+class UITimerBehavior(Structure):
+    pass
+
+
+class UGearboxAnimDefinition_Data(Structure):
+    pass
+
+
+class UGearboxAnimDefinition(Structure):
+    pass
+
+
+class UBehavior_TriggerDialogEvent_Data(Structure):
+    pass
+
+
+class UBehavior_TriggerDialogEvent(Structure):
+    pass
+
+
+class AGearboxDialogActor_Data(Structure):
+    pass
+
+
+class AGearboxDialogActor(Structure):
+    pass
+
+
+class UGearboxDialogComponent_Data(Structure):
+    pass
+
+
+class UGearboxDialogComponent(Structure):
+    pass
+
+
+class UGearboxDialogEventData_Data(Structure):
+    pass
+
+
+class UGearboxDialogEventData(Structure):
+    pass
+
+
+class UGearboxDialogEventTag_Data(Structure):
+    pass
+
+
+class UGearboxDialogEventTag(Structure):
+    pass
+
+
+class UGearboxDialogGlobalsDefinition_Data(Structure):
+    pass
+
+
+class UGearboxDialogGlobalsDefinition(Structure):
+    pass
+
+
+class UGearboxDialogGroup_Data(Structure):
+    pass
+
+
+class UGearboxDialogGroup(Structure):
+    pass
+
+
+class UGearboxDialogTemplateGroup_Data(Structure):
+    pass
+
+
+class UGearboxDialogTemplateGroup(Structure):
+    pass
+
+
+class UGearboxDialogManager_Data(Structure):
+    pass
+
+
+class UGearboxDialogManager(Structure):
+    pass
+
+
+class UGearboxDialogNameTag_Data(Structure):
+    pass
+
+
+class UGearboxDialogNameTag(Structure):
+    pass
+
+
+class UGearboxDialogPriority_Data(Structure):
+    pass
+
+
+class UGearboxDialogPriority(Structure):
+    pass
+
+
+class UGearboxDialogNode_Data(Structure):
+    pass
+
+
+class UGearboxDialogNode(Structure):
+    pass
+
+
+class UGearboxDialogAction_Data(Structure):
+    pass
+
+
+class UGearboxDialogAction(Structure):
+    pass
+
+
+class UGearboxDialogAct_Chance_Data(Structure):
+    pass
+
+
+class UGearboxDialogAct_Chance(Structure):
+    pass
+
+
+class UGearboxDialogAct_Compare_Data(Structure):
+    pass
+
+
+class UGearboxDialogAct_Compare(Structure):
+    pass
+
+
+class UGearboxDialogAct_ObjectParameterSwitch_Data(Structure):
+    pass
+
+
+class UGearboxDialogAct_ObjectParameterSwitch(Structure):
+    pass
+
+
+class UGearboxDialogNonTemplateAction_Data(Structure):
+    pass
+
+
+class UGearboxDialogNonTemplateAction(Structure):
+    pass
+
+
+class UGearboxDialogAct_Talk_Data(Structure):
+    pass
+
+
+class UGearboxDialogAct_Talk(Structure):
+    pass
+
+
+class UGearboxDialogTemplateAction_Data(Structure):
+    pass
+
+
+class UGearboxDialogTemplateAction(Structure):
+    pass
+
+
+class UGearboxDialogAct_Trigger_Data(Structure):
+    pass
+
+
+class UGearboxDialogAct_Trigger(Structure):
+    pass
+
+
+class UGearboxDialogEvent_Data(Structure):
+    pass
+
+
+class UGearboxDialogEvent(Structure):
+    pass
+
+
+class UGearboxDialogTemplateEvent_Data(Structure):
+    pass
+
+
+class UGearboxDialogTemplateEvent(Structure):
+    pass
+
+
+class UGearboxDialogVariable_Data(Structure):
+    pass
+
+
+class UGearboxDialogVariable(Structure):
+    pass
+
+
+class UGearboxDialogVar_Instigator_Data(Structure):
+    pass
+
+
+class UGearboxDialogVar_Instigator(Structure):
+    pass
+
+
+class UGearboxDialogVar_LastTalker_Data(Structure):
+    pass
+
+
+class UGearboxDialogVar_LastTalker(Structure):
+    pass
+
+
+class UGearboxDialogVar_NameTag_Data(Structure):
+    pass
+
+
+class UGearboxDialogVar_NameTag(Structure):
+    pass
+
+
+class UGearboxDialogVar_Other_Data(Structure):
+    pass
+
+
+class UGearboxDialogVar_Other(Structure):
+    pass
+
+
+class UGearboxDialogVar_Random_Data(Structure):
+    pass
+
+
+class UGearboxDialogVar_Random(Structure):
+    pass
+
+
+class UGearboxSeqAct_ToggleDialog_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_ToggleDialog(Structure):
+    pass
+
+
+class UGearboxSeqAct_TriggerDialog_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_TriggerDialog(Structure):
+    pass
+
+
+class UGearboxSeqAct_TriggerDialogName_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_TriggerDialogName(Structure):
+    pass
+
+
+class UGearboxAccountActions_Data(Structure):
+    pass
+
+
+class UGearboxAccountActions(Structure):
+    pass
+
+
+class UGearboxAccountData_Data(Structure):
+    pass
+
+
+class UGearboxAccountData(Structure):
+    pass
+
+
+class UGearboxProcess_Data(Structure):
+    pass
+
+
+class UGearboxProcess(Structure):
+    pass
+
+
+class USparkInitializationProcess_Data(Structure):
+    pass
+
+
+class USparkInitializationProcess(Structure):
+    pass
+
+
+class ULeviathanService_Data(Structure):
+    pass
+
+
+class ULeviathanService(Structure):
+    pass
+
+
+class USparkInterface_Data(Structure):
+    pass
+
+
+class USparkInterface(Structure):
+    pass
+
+
+class USparkInterfaceImpl_Data(Structure):
+    pass
+
+
+class USparkInterfaceImpl(Structure):
+    pass
+
+
+class USparkServiceConfiguration_Data(Structure):
+    pass
+
+
+class USparkServiceConfiguration(Structure):
+    pass
+
+
+class USparkTypes_Data(Structure):
+    pass
+
+
+class USparkTypes(Structure):
+    pass
+
+
+class UAction_ChangeRuleSet_Data(Structure):
+    pass
+
+
+class UAction_ChangeRuleSet(Structure):
+    pass
+
+
+class URES_RuleSetChange_Data(Structure):
+    pass
+
+
+class URES_RuleSetChange(Structure):
+    pass
+
+
+class UAction_FaceThreat_Data(Structure):
+    pass
+
+
+class UAction_FaceThreat(Structure):
+    pass
+
+
+class URES_FacingPolicy_Data(Structure):
+    pass
+
+
+class URES_FacingPolicy(Structure):
+    pass
+
+
+class UAction_MoveRandom_Data(Structure):
+    pass
+
+
+class UAction_MoveRandom(Structure):
+    pass
+
+
+class UAction_MoveTo_Data(Structure):
+    pass
+
+
+class UAction_MoveTo(Structure):
+    pass
+
+
+class URES_Movement_Data(Structure):
+    pass
+
+
+class URES_Movement(Structure):
+    pass
+
+
+class UAction_PopRuleSet_Data(Structure):
+    pass
+
+
+class UAction_PopRuleSet(Structure):
+    pass
+
+
+class UAction_PushRuleSet_Data(Structure):
+    pass
+
+
+class UAction_PushRuleSet(Structure):
+    pass
+
+
+class UActorAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UActorAttributeContextResolver(Structure):
+    pass
+
+
+class UAIComponentAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UAIComponentAttributeContextResolver(Structure):
+    pass
+
+
+class UAIStateBase_Data(Structure):
+    pass
+
+
+class UAIStateBase(Structure):
+    pass
+
+
+class UAIState_Data(Structure):
+    pass
+
+
+class UAIState(Structure):
+    pass
+
+
+class UAIState_Priority_Data(Structure):
+    pass
+
+
+class UAIState_Priority(Structure):
+    pass
+
+
+class UAIState_Random_Data(Structure):
+    pass
+
+
+class UAIState_Random(Structure):
+    pass
+
+
+class UAIState_Sequential_Data(Structure):
+    pass
+
+
+class UAIState_Sequential(Structure):
+    pass
+
+
+class UBehavior_AIHold_Data(Structure):
+    pass
+
+
+class UBehavior_AIHold(Structure):
+    pass
+
+
+class UBehavior_AIPriority_Data(Structure):
+    pass
+
+
+class UBehavior_AIPriority(Structure):
+    pass
+
+
+class UBehavior_AITargeting_Data(Structure):
+    pass
+
+
+class UBehavior_AITargeting(Structure):
+    pass
+
+
+class UBehavior_ChangeAnyBehaviorSequenceState_Data(Structure):
+    pass
+
+
+class UBehavior_ChangeAnyBehaviorSequenceState(Structure):
+    pass
+
+
+class UBehavior_ChangeLocalBehaviorSequenceState_Data(Structure):
+    pass
+
+
+class UBehavior_ChangeLocalBehaviorSequenceState(Structure):
+    pass
+
+
+class UBehavior_CompareBool_Data(Structure):
+    pass
+
+
+class UBehavior_CompareBool(Structure):
+    pass
+
+
+class UBehavior_CompareValues_Data(Structure):
+    pass
+
+
+class UBehavior_CompareValues(Structure):
+    pass
+
+
+class UBehavior_CustomEvent_Data(Structure):
+    pass
+
+
+class UBehavior_CustomEvent(Structure):
+    pass
+
+
+class UBehavior_Delay_Data(Structure):
+    pass
+
+
+class UBehavior_Delay(Structure):
+    pass
+
+
+class UBehavior_Gate_Data(Structure):
+    pass
+
+
+class UBehavior_Gate(Structure):
+    pass
+
+
+class UBehavior_GetFloatParam_Data(Structure):
+    pass
+
+
+class UBehavior_GetFloatParam(Structure):
+    pass
+
+
+class UBehavior_GetObjectParam_Data(Structure):
+    pass
+
+
+class UBehavior_GetObjectParam(Structure):
+    pass
+
+
+class UBehavior_GetVectorParam_Data(Structure):
+    pass
+
+
+class UBehavior_GetVectorParam(Structure):
+    pass
+
+
+class UBehavior_InterpolateFloatOverTime_Data(Structure):
+    pass
+
+
+class UBehavior_InterpolateFloatOverTime(Structure):
+    pass
+
+
+class UBehavior_Metronome_Data(Structure):
+    pass
+
+
+class UBehavior_Metronome(Structure):
+    pass
+
+
+class UBehavior_ModifyTimer_Data(Structure):
+    pass
+
+
+class UBehavior_ModifyTimer(Structure):
+    pass
+
+
+class UBehavior_SetFloatParam_Data(Structure):
+    pass
+
+
+class UBehavior_SetFloatParam(Structure):
+    pass
+
+
+class UBehavior_SetObjectParam_Data(Structure):
+    pass
+
+
+class UBehavior_SetObjectParam(Structure):
+    pass
+
+
+class UBehavior_SetVectorParam_Data(Structure):
+    pass
+
+
+class UBehavior_SetVectorParam(Structure):
+    pass
+
+
+class UBehavior_SpecialMove_Data(Structure):
+    pass
+
+
+class UBehavior_SpecialMove(Structure):
+    pass
+
+
+class UBehavior_SpecialMoveStop_Data(Structure):
+    pass
+
+
+class UBehavior_SpecialMoveStop(Structure):
+    pass
+
+
+class UBehavior_StartAkAmbientSound_Data(Structure):
+    pass
+
+
+class UBehavior_StartAkAmbientSound(Structure):
+    pass
+
+
+class UBehavior_StopAkAmbientSound_Data(Structure):
+    pass
+
+
+class UBehavior_StopAkAmbientSound(Structure):
+    pass
+
+
+class UBehavior_StopDialog_Data(Structure):
+    pass
+
+
+class UBehavior_StopDialog(Structure):
+    pass
+
+
+class UBehavior_ToggleDialog_Data(Structure):
+    pass
+
+
+class UBehavior_ToggleDialog(Structure):
+    pass
+
+
+class UCameraModifierCrossfade_Data(Structure):
+    pass
+
+
+class UCameraModifierCrossfade(Structure):
+    pass
+
+
+class UCameraModifierLookAt_Data(Structure):
+    pass
+
+
+class UCameraModifierLookAt(Structure):
+    pass
+
+
+class UDefinitionUITestCaseDefinition_Data(Structure):
+    pass
+
+
+class UDefinitionUITestCaseDefinition(Structure):
+    pass
+
+
+class USparkNews_Data(Structure):
+    pass
+
+
+class USparkNews(Structure):
+    pass
+
+
+class UGearboxAccountEntitlement_Data(Structure):
+    pass
+
+
+class UGearboxAccountEntitlement(Structure):
+    pass
+
+
+class UGearboxAccountOffer_Data(Structure):
+    pass
+
+
+class UGearboxAccountOffer(Structure):
+    pass
+
+
+class APatrolDestination_Data(Structure):
+    pass
+
+
+class APatrolDestination(Structure):
+    pass
+
+
+class UGearboxSeqAct_TargetPriority_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_TargetPriority(Structure):
+    pass
+
+
+class UGearboxSeqAct_CameraShake_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_CameraShake(Structure):
+    pass
+
+
+class UGearboxSeqAct_PawnClonerLink_Data(Structure):
+    pass
+
+
+class UGearboxSeqAct_PawnClonerLink(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleInstanceData_Data(Structure):
+    pass
+
+
+class UGFxMovieDrawStyleInstanceData(Structure):
+    pass
+
+
+class USeqEvent_AllSpawned_Data(Structure):
+    pass
+
+
+class USeqEvent_AllSpawned(Structure):
+    pass
+
+
+class UPopulationMasterAttributeContextResolver_Data(Structure):
+    pass
+
+
+class UPopulationMasterAttributeContextResolver(Structure):
+    pass
+
+
+class USeqEvent_SinglePopulationDeath_Data(Structure):
+    pass
+
+
+class USeqEvent_SinglePopulationDeath(Structure):
+    pass
+
+
+class URES_Rotation_Data(Structure):
+    pass
+
+
+class URES_Rotation(Structure):
+    pass
+
+
+class URES_SpecialMove_Data(Structure):
+    pass
+
+
+class URES_SpecialMove(Structure):
+    pass
+
+
+class USeqEvent_ArrivedAtMoveNode_Data(Structure):
+    pass
+
+
+class USeqEvent_ArrivedAtMoveNode(Structure):
+    pass
+
+
+class USeqEvent_LeavingMoveNode_Data(Structure):
+    pass
+
+
+class USeqEvent_LeavingMoveNode(Structure):
+    pass
+
+
+class UShowDebugHelpers_Data(Structure):
+    pass
+
+
+class UShowDebugHelpers(Structure):
+    pass
+
+
+class ASkeletalMeshActorGBXMatinee_Data(Structure):
+    pass
+
+
+class ASkeletalMeshActorGBXMatinee(Structure):
+    pass
+
+
+class UGearboxEULAGFxMovie_Data(Structure):
+    pass
+
+
+class UGearboxEULAGFxMovie(Structure):
+    pass
+
+
+class UGearboxEULAGFxObject_Data(Structure):
+    pass
+
+
+class UGearboxEULAGFxObject(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+from ..structs.GearboxFramework import *
+from ..structs.AkAudio import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.AkAudio import *
+
+
+def init():
+    UActorFactoryClone_Data._fields_ = [
+        ("CloneArchetype", TArray_AGearboxPawnPtr),
+        ("NewCloneTag", FName),
+    ]
+
+    UActorFactoryClone._fields_ = [
         ("UObject", UObject_Data),
         ("UActorFactory", UActorFactory_Data),
         ("UActorFactoryClone", UActorFactoryClone_Data),
     ]
 
+    UActorFactoryWireTerminal_Data._fields_ = []
 
-class UActorFactoryWireTerminal_Data(Structure):
-    _fields_ = []
-
-
-class UActorFactoryWireTerminal(Structure):
-    _fields_ = [
+    UActorFactoryWireTerminal._fields_ = [
         ("UObject", UObject_Data),
         ("UActorFactory", UActorFactory_Data),
         ("UActorFactoryWireTerminal", UActorFactoryWireTerminal_Data),
     ]
 
-
-class UAIDebugCamera_Data(Structure):
-    _fields_ = [
+    UAIDebugCamera_Data._fields_ = [
         ("Mind", POINTER(AGearboxMind)),
         ("RuleEngine", POINTER(URuleEngine)),
         ("DisplayList", TArray_FDebugListItem),
@@ -42,7 +2774,6 @@ class UAIDebugCamera_Data(Structure):
         ("bShowTargetViewCones", c_bool, 1),
         ("bShowTimers", c_bool, 1),
         ("bShowAITree", c_bool, 1),
-        ("", c_ulong, 0),
         ("SnapshotNdx", c_int),
         ("CurSnapshot", POINTER(USnapshotRecord)),
         ("PopUpGraphTop", POINTER(UPopUpDebugBarGraph)),
@@ -58,39 +2789,31 @@ class UAIDebugCamera_Data(Structure):
         ("LastColumnDrawnTo", c_int),
     ]
 
+    UAIDebugCamera._fields_ = [
+        ("UObject", UObject_Data),
+        ("UAIDebugCamera", UAIDebugCamera_Data),
+    ]
 
-class UAIDebugCamera(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UAIDebugCamera", UAIDebugCamera_Data)]
-
-
-class UAITracker_Data(Structure):
-    _fields_ = [
+    UAITracker_Data._fields_ = [
         ("Snapshots", POINTER(USnapshotRecord) * 50),
         ("SnapshotSize", c_int),
         ("SnapshotIndex", c_int),
         ("DebugOwner", POINTER(AActor)),
     ]
 
+    UAITracker._fields_ = [("UObject", UObject_Data), ("UAITracker", UAITracker_Data)]
 
-class UAITracker(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UAITracker", UAITracker_Data)]
-
-
-class UAnimNodeSpecialMoveBlend_Data(Structure):
-    _fields_ = [
+    UAnimNodeSpecialMoveBlend_Data._fields_ = [
         ("AnimState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SavedBlendOutTime", c_float),
         ("SMI", FScriptInterface),
         ("AnimParameters", TArray_FSlotAnimParameters),
         ("bForceLocalSpaceBlend", c_bool, 1),
         ("IssueNotifiesWhenZeroWeight", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UAnimNodeSpecialMoveBlend(Structure):
-    _fields_ = [
+    UAnimNodeSpecialMoveBlend._fields_ = [
         ("UObject", UObject_Data),
         ("UAnimObject", UAnimObject_Data),
         ("UAnimNode", UAnimNode_Data),
@@ -99,43 +2822,33 @@ class UAnimNodeSpecialMoveBlend(Structure):
         ("UAnimNodeSpecialMoveBlend", UAnimNodeSpecialMoveBlend_Data),
     ]
 
+    UAttributeExpressionEvaluator_Data._fields_ = [
+        ("Expression", FAttributeExpressionData)
+    ]
 
-class UAttributeExpressionEvaluator_Data(Structure):
-    _fields_ = [("Expression", FAttributeExpressionData)]
-
-
-class UAttributeExpressionEvaluator(Structure):
-    _fields_ = [
+    UAttributeExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UAttributeExpressionEvaluator", UAttributeExpressionEvaluator_Data),
     ]
 
+    UBehavior_CallFunction_Data._fields_ = [("FunctionName", FName)]
 
-class UBehavior_CallFunction_Data(Structure):
-    _fields_ = [("FunctionName", FName)]
-
-
-class UBehavior_CallFunction(Structure):
-    _fields_ = [
+    UBehavior_CallFunction._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_CallFunction", UBehavior_CallFunction_Data),
     ]
 
-
-class UBehavior_ChangeRemoteBehaviorSequenceState_Data(Structure):
-    _fields_ = [
+    UBehavior_ChangeRemoteBehaviorSequenceState_Data._fields_ = [
         ("Action", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SequenceName", FName),
         ("SequenceProvider", POINTER(UObject)),
         ("ProviderDefinitionPathName", FNameBasedObjectPath),
     ]
 
-
-class UBehavior_ChangeRemoteBehaviorSequenceState(Structure):
-    _fields_ = [
+    UBehavior_ChangeRemoteBehaviorSequenceState._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         (
@@ -144,162 +2857,125 @@ class UBehavior_ChangeRemoteBehaviorSequenceState(Structure):
         ),
     ]
 
-
-class UBehavior_ChangeTimer_Data(Structure):
-    _fields_ = [
+    UBehavior_ChangeTimer_Data._fields_ = [
         ("TimerId", c_ubyte),
         ("Reaction", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("bSetNewTimerDelay", c_bool, 1),
-        ("", c_ulong, 0),
         ("NewTimerDelayFormula", FAttributeInitializationData),
         ("NewTimerDelay", c_float),
     ]
 
-
-class UBehavior_ChangeTimer(Structure):
-    _fields_ = [
+    UBehavior_ChangeTimer._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_ChangeTimer", UBehavior_ChangeTimer_Data),
     ]
 
-
-class UBehavior_IsSequenceEnabled_Data(Structure):
-    _fields_ = [
+    UBehavior_IsSequenceEnabled_Data._fields_ = [
         ("SequenceName", FName),
         ("SequenceProvider", POINTER(UObject)),
         ("ProviderDefinitionPathName", FNameBasedObjectPath),
     ]
 
-
-class UBehavior_IsSequenceEnabled(Structure):
-    _fields_ = [
+    UBehavior_IsSequenceEnabled._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_IsSequenceEnabled", UBehavior_IsSequenceEnabled_Data),
     ]
 
-
-class UBehavior_PostAkEvent_Data(Structure):
-    _fields_ = [
+    UBehavior_PostAkEvent_Data._fields_ = [
         ("Event", POINTER(UAkEvent)),
         ("bReplicateEvent", c_bool, 1),
         ("bForLocalPlayerOnly", c_bool, 1),
         ("bForcePlayImmediate", c_bool, 1),
         ("bPlayFromActor", c_bool, 1),
         ("bLatentWhenNoConnections", c_bool, 1),
-        ("", c_ulong, 0),
         ("PlayingInfo", FAkPlayingInfo),
     ]
 
-
-class UBehavior_PostAkEvent(Structure):
-    _fields_ = [
+    UBehavior_PostAkEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_PostAkEvent", UBehavior_PostAkEvent_Data),
     ]
 
-
-class UBehaviorHelpers_Data(Structure):
-    _fields_ = [
+    UBehaviorHelpers_Data._fields_ = [
         ("__BehaviorSetStrategy__Delegate", FScriptDelegate),
         ("__BehaviorStrategy__Delegate", FScriptDelegate),
     ]
 
+    UBehaviorHelpers._fields_ = [
+        ("UObject", UObject_Data),
+        ("UBehaviorHelpers", UBehaviorHelpers_Data),
+    ]
 
-class UBehaviorHelpers(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UBehaviorHelpers", UBehaviorHelpers_Data)]
-
-
-class UCompoundExpressionEvaluator_Data(Structure):
-    _fields_ = [
+    UCompoundExpressionEvaluator_Data._fields_ = [
         ("Expression1", POINTER(UExpressionEvaluator)),
         ("Operator", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Expression2", POINTER(UExpressionEvaluator)),
     ]
 
-
-class UCompoundExpressionEvaluator(Structure):
-    _fields_ = [
+    UCompoundExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UCompoundExpressionEvaluator", UCompoundExpressionEvaluator_Data),
     ]
 
+    UConditionalAttributeValueResolver_Data._fields_ = [
+        ("ValueExpressions", FConditionalInitializationExpressions)
+    ]
 
-class UConditionalAttributeValueResolver_Data(Structure):
-    _fields_ = [("ValueExpressions", FConditionalInitializationExpressions)]
-
-
-class UConditionalAttributeValueResolver(Structure):
-    _fields_ = [
+    UConditionalAttributeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("UConditionalAttributeValueResolver", UConditionalAttributeValueResolver_Data),
     ]
 
+    UConstantAttributeValueResolver_Data._fields_ = [("ConstantValue", c_float)]
 
-class UConstantAttributeValueResolver_Data(Structure):
-    _fields_ = [("ConstantValue", c_float)]
-
-
-class UConstantAttributeValueResolver(Structure):
-    _fields_ = [
+    UConstantAttributeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("UConstantAttributeValueResolver", UConstantAttributeValueResolver_Data),
     ]
 
+    UConstraintAttributeValueResolver_Data._fields_ = [("Constraints", FRange)]
 
-class UConstraintAttributeValueResolver_Data(Structure):
-    _fields_ = [("Constraints", FRange)]
-
-
-class UConstraintAttributeValueResolver(Structure):
-    _fields_ = [
+    UConstraintAttributeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("UConstraintAttributeValueResolver", UConstraintAttributeValueResolver_Data),
     ]
 
+    UFeatherBoneBlendDefinition_Data._fields_ = [
+        ("BoneBlends", TArray_FFeatherBoneBlendData)
+    ]
 
-class UFeatherBoneBlendDefinition_Data(Structure):
-    _fields_ = [("BoneBlends", TArray_FFeatherBoneBlendData)]
-
-
-class UFeatherBoneBlendDefinition(Structure):
-    _fields_ = [
+    UFeatherBoneBlendDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UFeatherBoneBlendDefinition", UFeatherBoneBlendDefinition_Data),
     ]
 
+    UGBXActorList_Data._fields_ = [("ActorList", TArray_Fs_actorList)]
 
-class UGBXActorList_Data(Structure):
-    _fields_ = [("ActorList", TArray_Fs_actorList)]
+    UGBXActorList._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGBXActorList", UGBXActorList_Data),
+    ]
 
+    UGBXObjectList_Data._fields_ = [("ObjectList", TArray_UObjectPtr)]
 
-class UGBXActorList(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGBXActorList", UGBXActorList_Data)]
+    UGBXObjectList._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGBXObjectList", UGBXObjectList_Data),
+    ]
 
+    AGearboxAIController_Data._fields_ = []
 
-class UGBXObjectList_Data(Structure):
-    _fields_ = [("ObjectList", TArray_UObjectPtr)]
-
-
-class UGBXObjectList(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGBXObjectList", UGBXObjectList_Data)]
-
-
-class AGearboxAIController_Data(Structure):
-    _fields_ = []
-
-
-class AGearboxAIController(Structure):
-    _fields_ = [
+    AGearboxAIController._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AController", AController_Data),
@@ -307,12 +2983,9 @@ class AGearboxAIController(Structure):
         ("AGearboxAIController", AGearboxAIController_Data),
     ]
 
-
-class AGearboxAIMoveNode_Data(Structure):
-    _fields_ = [
+    AGearboxAIMoveNode_Data._fields_ = [
         ("bEnabled", c_bool, 1),
         ("bFaceNodeDirection", c_bool, 1),
-        ("", c_ulong, 0),
         ("NextNodes", TArray_FNodeData),
         ("PreviousNodes", TArray_AGearboxAIMoveNodePtr),
         ("HoldTime", c_float),
@@ -321,30 +2994,22 @@ class AGearboxAIMoveNode_Data(Structure):
         ("Sprite", POINTER(USpriteComponent)),
     ]
 
-
-class AGearboxAIMoveNode(Structure):
-    _fields_ = [
+    AGearboxAIMoveNode._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AGearboxAIMoveNode", AGearboxAIMoveNode_Data),
     ]
 
+    AGearboxCameraBasic_Data._fields_ = [("VfTable_IInterfaceGearboxCamera", FPointer)]
 
-class AGearboxCameraBasic_Data(Structure):
-    _fields_ = [("VfTable_IInterfaceGearboxCamera", FPointer)]
-
-
-class AGearboxCameraBasic(Structure):
-    _fields_ = [
+    AGearboxCameraBasic._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("ACamera", ACamera_Data),
         ("AGearboxCameraBasic", AGearboxCameraBasic_Data),
     ]
 
-
-class UGearboxCameraModifier_Data(Structure):
-    _fields_ = [
+    UGearboxCameraModifier_Data._fields_ = [
         ("GBXCameraOwner", POINTER(AGearboxCameraBasic)),
         ("DesiredPOV", FTPOV),
         ("MasterFadeValue", c_float),
@@ -354,47 +3019,34 @@ class UGearboxCameraModifier_Data(Structure):
         ("FadingUpwards", c_bool, 1),
         ("DisableWhenFadedOut", c_bool, 1),
         ("AdjustForTimeDilation", c_bool, 1),
-        ("", c_ulong, 0),
         ("FadeMode", c_ubyte),
     ]
 
-
-class UGearboxCameraModifier(Structure):
-    _fields_ = [
+    UGearboxCameraModifier._fields_ = [
         ("UObject", UObject_Data),
         ("UCameraModifier", UCameraModifier_Data),
         ("UGearboxCameraModifier", UGearboxCameraModifier_Data),
     ]
 
+    UGearboxCheatManager_Data._fields_ = []
 
-class UGearboxCheatManager_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxCheatManager(Structure):
-    _fields_ = [
+    UGearboxCheatManager._fields_ = [
         ("UObject", UObject_Data),
         ("UCheatManager", UCheatManager_Data),
         ("UGearboxCheatManager", UGearboxCheatManager_Data),
     ]
 
+    UGearboxDialogInterface_Data._fields_ = []
 
-class UGearboxDialogInterface_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogInterface(Structure):
-    _fields_ = [
+    UGearboxDialogInterface._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UGearboxDialogInterface", UGearboxDialogInterface_Data),
     ]
 
-
-class UGearboxEditorNode_Data(Structure):
-    _fields_ = [
+    UGearboxEditorNode_Data._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("OutputLinks", TArray_FOutputLink),
         ("InputLinks", TArray_UGearboxEditorNodePtr),
         ("VariableLinks", TArray_FVariableLink),
@@ -405,31 +3057,23 @@ class UGearboxEditorNode_Data(Structure):
         ("bAllowMultipleInputs", c_bool, 1),
         ("bAllowMultipleOutputs", c_bool, 1),
         ("bAllowMultipleVariables", c_bool, 1),
-        ("", c_ulong, 0),
         ("SliderPosition", c_float),
     ]
 
-
-class UGearboxEditorNode(Structure):
-    _fields_ = [
+    UGearboxEditorNode._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
     ]
 
-
-class UGearboxEngine_Data(Structure):
-    _fields_ = [
+    UGearboxEngine_Data._fields_ = [
         ("CurrentUserID", c_int),
         ("CurrentDeviceID", c_int),
         ("bHasSelectedValidStorageDevice", c_bool, 1),
-        ("", c_ulong, 0),
         ("DefaultSparkInterfaceName", FString),
         ("SparkInterface", FScriptInterface),
     ]
 
-
-class UGearboxEngine(Structure):
-    _fields_ = [
+    UGearboxEngine._fields_ = [
         ("UObject", UObject_Data),
         ("USubsystem", USubsystem_Data),
         ("UEngine", UEngine_Data),
@@ -437,13 +3081,9 @@ class UGearboxEngine(Structure):
         ("UGearboxEngine", UGearboxEngine_Data),
     ]
 
+    AGearboxGameInfo_Data._fields_ = []
 
-class AGearboxGameInfo_Data(Structure):
-    _fields_ = []
-
-
-class AGearboxGameInfo(Structure):
-    _fields_ = [
+    AGearboxGameInfo._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -451,9 +3091,7 @@ class AGearboxGameInfo(Structure):
         ("AGearboxGameInfo", AGearboxGameInfo_Data),
     ]
 
-
-class UGearboxGFxMovie_Data(Structure):
-    _fields_ = [
+    UGearboxGFxMovie_Data._fields_ = [
         ("InteractionOverrideSounds", TArray_FAkEventResolver),
         ("TickRateSeconds", c_float),
         ("bTickScript", c_bool, 1),
@@ -463,7 +3101,6 @@ class UGearboxGFxMovie_Data(Structure):
         ("bIsUsingFlashMouse", c_bool, 1),
         ("bBlockingMovie", c_bool, 1),
         ("bCloseOnDeath", c_bool, 1),
-        ("", c_ulong, 0),
         ("AllStyles", TArray_UGFxMovieDrawStylePtr),
         ("MyDefinition", POINTER(UGFxMovieDefinition)),
         ("MyPool", POINTER(UGFxActorMoviePool)),
@@ -479,22 +3116,16 @@ class UGearboxGFxMovie_Data(Structure):
         ("__OnClosed__Delegate", FScriptDelegate),
     ]
 
-
-class UGearboxGFxMovie(Structure):
-    _fields_ = [
+    UGearboxGFxMovie._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMoviePlayer", UGFxMoviePlayer_Data),
         ("UGFxMovie", UGFxMovie_Data),
         ("UGearboxGFxMovie", UGearboxGFxMovie_Data),
     ]
 
+    UGFxMovie_StateParent_Data._fields_ = [("StateClass", POINTER(UClass))]
 
-class UGFxMovie_StateParent_Data(Structure):
-    _fields_ = [("StateClass", POINTER(UClass))]
-
-
-class UGFxMovie_StateParent(Structure):
-    _fields_ = [
+    UGFxMovie_StateParent._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMoviePlayer", UGFxMoviePlayer_Data),
         ("UGFxMovie", UGFxMovie_Data),
@@ -502,9 +3133,7 @@ class UGFxMovie_StateParent(Structure):
         ("UGFxMovie_StateParent", UGFxMovie_StateParent_Data),
     ]
 
-
-class UGearboxGlobals_Data(Structure):
-    _fields_ = [
+    UGearboxGlobals_Data._fields_ = [
         ("TheGlobalsDefinition", POINTER(UGearboxGlobalsDefinition)),
         ("ExposureUtilityClass", POINTER(UClass)),
         ("ExposureUtilityStrategyClass", POINTER(UClass)),
@@ -529,33 +3158,25 @@ class UGearboxGlobals_Data(Structure):
         ("TheDialogManager", POINTER(UGearboxDialogManager)),
     ]
 
-
-class UGearboxGlobals(Structure):
-    _fields_ = [
+    UGearboxGlobals._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEngineGlobals", UGearboxEngineGlobals_Data),
         ("UGearboxGlobals", UGearboxGlobals_Data),
     ]
 
-
-class UGearboxGlobalsDefinition_Data(Structure):
-    _fields_ = [
+    UGearboxGlobalsDefinition_Data._fields_ = [
         ("RespawnDelayInSeconds", c_float),
         ("Dialog", POINTER(UGearboxDialogGlobalsDefinition)),
         ("EulaMovieDefinition", POINTER(UGFxMovieDefinition)),
     ]
 
-
-class UGearboxGlobalsDefinition(Structure):
-    _fields_ = [
+    UGearboxGlobalsDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGearboxGlobalsDefinition", UGearboxGlobalsDefinition_Data),
     ]
 
-
-class UGearboxLocationRequest_Data(Structure):
-    _fields_ = [
+    UGearboxLocationRequest_Data._fields_ = [
         ("SearchOrigin", POINTER(USearchOrigin)),
         ("DirectionFromOrigin", POINTER(USearchDirection)),
         ("LocationFilterTest", POINTER(ULocationFilter)),
@@ -563,23 +3184,18 @@ class UGearboxLocationRequest_Data(Structure):
         ("MinDistanceFromOrigin", FAttributeInitializationData),
         ("MaxDistanceFromOrigin", FAttributeInitializationData),
         ("SearchRandomness", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SearchOriginResult", FVector),
         ("SearchDirectionResult", FVector),
     ]
 
-
-class UGearboxLocationRequest(Structure):
-    _fields_ = [
+    UGearboxLocationRequest._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxLocationRequest", UGearboxLocationRequest_Data),
     ]
 
-
-class UPawnMoveLocationRequest_Data(Structure):
-    _fields_ = [
+    UPawnMoveLocationRequest_Data._fields_ = [
         ("GoToCover", c_bool, 1),
-        ("", c_ulong, 0),
         ("CoverSearchFilter", c_ubyte),
         ("RepathOption", c_ubyte),
         ("CoverFailureResponse", c_ubyte),
@@ -589,22 +3205,17 @@ class UPawnMoveLocationRequest_Data(Structure):
         ("OverrideDistanceForCover", FAttributeInitializationData),
     ]
 
-
-class UPawnMoveLocationRequest(Structure):
-    _fields_ = [
+    UPawnMoveLocationRequest._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxLocationRequest", UGearboxLocationRequest_Data),
         ("UPawnMoveLocationRequest", UPawnMoveLocationRequest_Data),
     ]
 
-
-class AGearboxPawn_Data(Structure):
-    _fields_ = [
+    AGearboxPawn_Data._fields_ = [
         ("VfTable_ISpecialMoveInterface", FPointer),
         ("VfTable_IGearboxDialogInterface", FPointer),
         ("NPCSightBone", FName),
         ("bWantsToMove", c_bool, 1),
-        ("", c_ulong, 0),
         ("SMComponent", POINTER(USpecialMoveComponent)),
         ("ReplicatedSMData", FReplicatedSpecialMoveData),
         ("HasBeenShotAtRecently", FFlag),
@@ -615,9 +3226,7 @@ class AGearboxPawn_Data(Structure):
         ("DyingScream", FAkPlayingInfo),
     ]
 
-
-class AGearboxPawn(Structure):
-    _fields_ = [
+    AGearboxPawn._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("APawn", APawn_Data),
@@ -625,9 +3234,7 @@ class AGearboxPawn(Structure):
         ("AGearboxPawn", AGearboxPawn_Data),
     ]
 
-
-class AGearboxPlayerController_Data(Structure):
-    _fields_ = [
+    AGearboxPlayerController_Data._fields_ = [
         ("CurrentViewShake", FGearboxViewShakeInfo),
         ("BaseDamageShake", FGearboxViewShakeInfo),
         ("ShakeOffset", FVector),
@@ -635,7 +3242,6 @@ class AGearboxPlayerController_Data(Structure):
         ("ShakeFOV", c_float),
         ("bWantsToShowStorageMenu", c_bool, 1),
         ("bShouldCheckForProfileDeviceRemoval", c_bool, 1),
-        ("", c_ulong, 0),
         ("AIDebugCam", POINTER(UAIDebugCamera)),
         ("PreviousDebugPawn", POINTER(AGearboxPawn)),
         ("AIDebugCamClass", POINTER(UClass)),
@@ -651,9 +3257,7 @@ class AGearboxPlayerController_Data(Structure):
         ("CachedProfileSettings", POINTER(UGearboxProfileSettings)),
     ]
 
-
-class AGearboxPlayerController(Structure):
-    _fields_ = [
+    AGearboxPlayerController._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AController", AController_Data),
@@ -662,13 +3266,9 @@ class AGearboxPlayerController(Structure):
         ("AGearboxPlayerController", AGearboxPlayerController_Data),
     ]
 
+    UGearboxPlayerInput_Data._fields_ = []
 
-class UGearboxPlayerInput_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxPlayerInput(Structure):
-    _fields_ = [
+    UGearboxPlayerInput._fields_ = [
         ("UObject", UObject_Data),
         ("UUIRoot", UUIRoot_Data),
         ("UInteraction", UInteraction_Data),
@@ -677,13 +3277,13 @@ class UGearboxPlayerInput(Structure):
         ("UGearboxPlayerInput", UGearboxPlayerInput_Data),
     ]
 
+    AGearboxPlayerReplicationInfo_Data._fields_ = [
+        ("Difficulty", c_ubyte),
+        ("Unknown1", c_ubyte * 0x3),
+        ("Dummy", c_int),
+    ]
 
-class AGearboxPlayerReplicationInfo_Data(Structure):
-    _fields_ = [("Difficulty", c_ubyte), ("Unknown1", c_ubyte, 0x3), ("Dummy", c_int)]
-
-
-class AGearboxPlayerReplicationInfo(Structure):
-    _fields_ = [
+    AGearboxPlayerReplicationInfo._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -692,22 +3292,16 @@ class AGearboxPlayerReplicationInfo(Structure):
         ("AGearboxPlayerReplicationInfo", AGearboxPlayerReplicationInfo_Data),
     ]
 
+    UGearboxProfileSettings_Data._fields_ = []
 
-class UGearboxProfileSettings_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxProfileSettings(Structure):
-    _fields_ = [
+    UGearboxProfileSettings._fields_ = [
         ("UObject", UObject_Data),
         ("UOnlinePlayerStorage", UOnlinePlayerStorage_Data),
         ("UOnlineProfileSettings", UOnlineProfileSettings_Data),
         ("UGearboxProfileSettings", UGearboxProfileSettings_Data),
     ]
 
-
-class UGearboxRenderTextureManager_Data(Structure):
-    _fields_ = [
+    UGearboxRenderTextureManager_Data._fields_ = [
         ("FreeList2D", TArray_UTexture2DPtr),
         ("FreeList", TArray_UTextureRenderTarget2DPtr),
         ("HoldDuration", c_float),
@@ -717,27 +3311,20 @@ class UGearboxRenderTextureManager_Data(Structure):
         ("ThumbnailTextureArea", c_float),
     ]
 
-
-class UGearboxRenderTextureManager(Structure):
-    _fields_ = [
+    UGearboxRenderTextureManager._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxRenderTextureManager", UGearboxRenderTextureManager_Data),
     ]
 
-
-class UGearboxSeqAct_DestroyPopulationActors_Data(Structure):
-    _fields_ = [
+    UGearboxSeqAct_DestroyPopulationActors_Data._fields_ = [
         ("SaveDestroyedActors", c_bool, 1),
         ("DisablePopulationSpawners", c_bool, 1),
         ("bActorsDestroyed", c_bool, 1),
-        ("", c_ulong, 0),
         ("Opportunities", TArray_APopulationOpportunityPtr),
         ("Encounters", TArray_APopulationEncounterPtr),
     ]
 
-
-class UGearboxSeqAct_DestroyPopulationActors(Structure):
-    _fields_ = [
+    UGearboxSeqAct_DestroyPopulationActors._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -749,13 +3336,9 @@ class UGearboxSeqAct_DestroyPopulationActors(Structure):
         ),
     ]
 
+    UGearboxSeqAct_ResetPopulationCount_Data._fields_ = []
 
-class UGearboxSeqAct_ResetPopulationCount_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxSeqAct_ResetPopulationCount(Structure):
-    _fields_ = [
+    UGearboxSeqAct_ResetPopulationCount._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -766,13 +3349,9 @@ class UGearboxSeqAct_ResetPopulationCount(Structure):
         ),
     ]
 
+    UGearboxSkeletalMeshComponent_Data._fields_ = [("FOV", c_float)]
 
-class UGearboxSkeletalMeshComponent_Data(Structure):
-    _fields_ = [("FOV", c_float)]
-
-
-class UGearboxSkeletalMeshComponent(Structure):
-    _fields_ = [
+    UGearboxSkeletalMeshComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -782,13 +3361,9 @@ class UGearboxSkeletalMeshComponent(Structure):
         ("UGearboxSkeletalMeshComponent", UGearboxSkeletalMeshComponent_Data),
     ]
 
+    UGearboxStaticMeshComponent_Data._fields_ = [("FOV", c_float)]
 
-class UGearboxStaticMeshComponent_Data(Structure):
-    _fields_ = [("FOV", c_float)]
-
-
-class UGearboxStaticMeshComponent(Structure):
-    _fields_ = [
+    UGearboxStaticMeshComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -798,44 +3373,33 @@ class UGearboxStaticMeshComponent(Structure):
         ("UGearboxStaticMeshComponent", UGearboxStaticMeshComponent_Data),
     ]
 
-
-class UGestaltSkeletalMeshDefinition_Data(Structure):
-    _fields_ = [
+    UGestaltSkeletalMeshDefinition_Data._fields_ = [
         ("GestaltSkeletalMesh", POINTER(USkeletalMesh)),
         ("bStaticMeshRigidBodyMesh", c_bool, 1),
-        ("", c_ulong, 0),
         ("GestaltInfos", TArray_FGestaltInfo),
         ("GestaltAccessoryNames", TArray_FGestaltAccessoryNameEntry),
         ("GestaltSocketMappings", TArray_FGestaltSocketRemapEntry),
         ("GestaltPartBounds", TArray_FGestaltPartBoundsEntry),
     ]
 
-
-class UGestaltSkeletalMeshDefinition(Structure):
-    _fields_ = [
+    UGestaltSkeletalMeshDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGestaltSkeletalMeshDefinition", UGestaltSkeletalMeshDefinition_Data),
     ]
 
-
-class UGFxActorMoviePool_Data(Structure):
-    _fields_ = [
+    UGFxActorMoviePool_Data._fields_ = [
         ("MovieDefinition", POINTER(UGFxMovieDefinition)),
         ("Pools", TArray_FMovieInstanceArray),
         ("MovieTargets", TArray_FScriptInterface),
     ]
 
-
-class UGFxActorMoviePool(Structure):
-    _fields_ = [
+    UGFxActorMoviePool._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxActorMoviePool", UGFxActorMoviePool_Data),
     ]
 
-
-class UGFxMovieDefinition_Data(Structure):
-    _fields_ = [
+    UGFxMovieDefinition_Data._fields_ = [
         ("SwfMovie", POINTER(USwfMovie)),
         ("SwfMovieClass", POINTER(UClass)),
         ("Movie", POINTER(UGearboxGFxMovie)),
@@ -847,7 +3411,6 @@ class UGFxMovieDefinition_Data(Structure):
         ("bOverrideWorldLighting", c_bool, 1),
         ("bInputOwnerOnly", c_bool, 1),
         ("bInputAllKeys", c_bool, 1),
-        ("", c_ulong, 0),
         ("FadeInSeconds", c_float),
         ("FadeOutSeconds", c_float),
         ("WorldLightingDirectionOffset", FRotator),
@@ -858,7 +3421,7 @@ class UGFxMovieDefinition_Data(Structure):
         ("AlignMode", c_ubyte),
         ("TimingMode", c_ubyte),
         ("RenderTextureMode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Pool", FName),
         ("CustomStates", TArray_UGFxMovieStatePtr),
         ("AutoActivateStates", TArray_FName),
@@ -868,84 +3431,65 @@ class UGFxMovieDefinition_Data(Structure):
         ("BaseMovieStates", TArray_UGFxMovieStatePtr),
     ]
 
-
-class UGFxMovieDefinition(Structure):
-    _fields_ = [
+    UGFxMovieDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGFxMovieDefinition", UGFxMovieDefinition_Data),
     ]
 
+    UGearboxEULAGFxMovieDefinition_Data._fields_ = []
 
-class UGearboxEULAGFxMovieDefinition_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxEULAGFxMovieDefinition(Structure):
-    _fields_ = [
+    UGearboxEULAGFxMovieDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGFxMovieDefinition", UGFxMovieDefinition_Data),
         ("UGearboxEULAGFxMovieDefinition", UGearboxEULAGFxMovieDefinition_Data),
     ]
 
+    UGFxMovieDrawStyle_Data._fields_ = [
+        ("Movie", POINTER(UGearboxGFxMovie)),
+        ("TargetActor", FScriptInterface),
+    ]
 
-class UGFxMovieDrawStyle_Data(Structure):
-    _fields_ = [("Movie", POINTER(UGearboxGFxMovie)), ("TargetActor", FScriptInterface)]
-
-
-class UGFxMovieDrawStyle(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyle._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
     ]
 
-
-class UGFxMovieDrawStyleHUD_Data(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleHUD_Data._fields_ = [
         ("AnchorPoints", TArray_FHUDAnchorPoint),
         ("MovieDimensions", FHUDCoordValue * 2),
         ("bCacheValid", c_bool, 1),
-        ("", c_ulong, 0),
         ("MovieScreenPos", c_float * 4),
     ]
 
-
-class UGFxMovieDrawStyleHUD(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleHUD._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleHUD", UGFxMovieDrawStyleHUD_Data),
     ]
 
+    UGFxMovieDrawStyleRTT_Data._fields_ = [
+        ("TextureSize", c_int),
+        ("RenderTextureMode", c_ubyte),
+    ]
 
-class UGFxMovieDrawStyleRTT_Data(Structure):
-    _fields_ = [("TextureSize", c_int), ("RenderTextureMode", c_ubyte)]
-
-
-class UGFxMovieDrawStyleRTT(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleRTT._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleRTT", UGFxMovieDrawStyleRTT_Data),
     ]
 
+    UGFxMovieDrawStyleComponent_Data._fields_ = []
 
-class UGFxMovieDrawStyleComponent_Data(Structure):
-    _fields_ = []
-
-
-class UGFxMovieDrawStyleComponent(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleRTT", UGFxMovieDrawStyleRTT_Data),
         ("UGFxMovieDrawStyleComponent", UGFxMovieDrawStyleComponent_Data),
     ]
 
-
-class UGFxMovieDrawStyleMesh_Data(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleMesh_Data._fields_ = [
         ("MeshComponentArchetype", POINTER(UMeshComponent)),
         ("UseStaticMesh", POINTER(UStaticMesh)),
         ("UseSkeletalMesh", POINTER(USkeletalMesh)),
@@ -958,9 +3502,7 @@ class UGFxMovieDrawStyleMesh_Data(Structure):
         ("OriginalMaterial", POINTER(UMaterialInterface)),
     ]
 
-
-class UGFxMovieDrawStyleMesh(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleMesh._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleRTT", UGFxMovieDrawStyleRTT_Data),
@@ -968,13 +3510,12 @@ class UGFxMovieDrawStyleMesh(Structure):
         ("UGFxMovieDrawStyleMesh", UGFxMovieDrawStyleMesh_Data),
     ]
 
+    UGFxMovieDrawStyleSprite_Data._fields_ = [
+        ("SpriteSize", c_int),
+        ("TheSprite", POINTER(USpriteRTTComponent)),
+    ]
 
-class UGFxMovieDrawStyleSprite_Data(Structure):
-    _fields_ = [("SpriteSize", c_int), ("TheSprite", POINTER(USpriteRTTComponent))]
-
-
-class UGFxMovieDrawStyleSprite(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleSprite._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleRTT", UGFxMovieDrawStyleRTT_Data),
@@ -982,174 +3523,124 @@ class UGFxMovieDrawStyleSprite(Structure):
         ("UGFxMovieDrawStyleSprite", UGFxMovieDrawStyleSprite_Data),
     ]
 
+    UGFxMovieDrawStyleSplitscreen_Data._fields_ = []
 
-class UGFxMovieDrawStyleSplitscreen_Data(Structure):
-    _fields_ = []
-
-
-class UGFxMovieDrawStyleSplitscreen(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleSplitscreen._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleSplitscreen", UGFxMovieDrawStyleSplitscreen_Data),
     ]
 
-
-class UGFxMovieManager_Data(Structure):
-    _fields_ = [
+    UGFxMovieManager_Data._fields_ = [
         ("Subscribers", TArray_AGearboxPlayerControllerPtr),
         ("MoviePools", TArray_UGFxActorMoviePoolPtr),
     ]
 
+    UGFxMovieManager._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGFxMovieManager", UGFxMovieManager_Data),
+    ]
 
-class UGFxMovieManager(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxMovieManager", UGFxMovieManager_Data)]
-
-
-class UGFxMovieState_Data(Structure):
-    _fields_ = [
+    UGFxMovieState_Data._fields_ = [
         ("StateName", FName),
         ("DefaultState", FName),
         ("StateType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("AllStates", TArray_FMovieStateData),
     ]
 
+    UGFxMovieState._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGFxMovieState", UGFxMovieState_Data),
+    ]
 
-class UGFxMovieState(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGFxMovieState", UGFxMovieState_Data)]
+    UGFxMovieStateCustom_Data._fields_ = [("CustomStates", TArray_FMovieStateData)]
 
-
-class UGFxMovieStateCustom_Data(Structure):
-    _fields_ = [("CustomStates", TArray_FMovieStateData)]
-
-
-class UGFxMovieStateCustom(Structure):
-    _fields_ = [
+    UGFxMovieStateCustom._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieState", UGFxMovieState_Data),
         ("UGFxMovieStateCustom", UGFxMovieStateCustom_Data),
     ]
 
+    UGFxMovieStateFlags_Data._fields_ = [("CustomFlags", TArray_FName)]
 
-class UGFxMovieStateFlags_Data(Structure):
-    _fields_ = [("CustomFlags", TArray_FName)]
-
-
-class UGFxMovieStateFlags(Structure):
-    _fields_ = [
+    UGFxMovieStateFlags._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieState", UGFxMovieState_Data),
         ("UGFxMovieStateFlags", UGFxMovieStateFlags_Data),
     ]
 
-
-class UGFxMovieStatePlayerAware_Data(Structure):
-    _fields_ = [
+    UGFxMovieStatePlayerAware_Data._fields_ = [
         ("LookAtThreshold", c_float),
         ("LookStates", TArray_FMovieStateData),
         ("RangeStates", TArray_FMovieRangeStateData),
     ]
 
-
-class UGFxMovieStatePlayerAware(Structure):
-    _fields_ = [
+    UGFxMovieStatePlayerAware._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieState", UGFxMovieState_Data),
         ("UGFxMovieStatePlayerAware", UGFxMovieStatePlayerAware_Data),
     ]
 
+    UIAIInterface_Data._fields_ = []
 
-class UIAIInterface_Data(Structure):
-    _fields_ = []
-
-
-class UIAIInterface(Structure):
-    _fields_ = [
+    UIAIInterface._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIAIInterface", UIAIInterface_Data),
     ]
 
+    UIConstructObject_Data._fields_ = []
 
-class UIConstructObject_Data(Structure):
-    _fields_ = []
-
-
-class UIConstructObject(Structure):
-    _fields_ = [
+    UIConstructObject._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIConstructObject", UIConstructObject_Data),
     ]
 
+    UIGFxActorMovie_Data._fields_ = []
 
-class UIGFxActorMovie_Data(Structure):
-    _fields_ = []
-
-
-class UIGFxActorMovie(Structure):
-    _fields_ = [
+    UIGFxActorMovie._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIGFxActorMovie", UIGFxActorMovie_Data),
     ]
 
+    UINounAttributeProvider_Data._fields_ = []
 
-class UINounAttributeProvider_Data(Structure):
-    _fields_ = []
-
-
-class UINounAttributeProvider(Structure):
-    _fields_ = [
+    UINounAttributeProvider._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UINounAttributeProvider", UINounAttributeProvider_Data),
     ]
 
+    UInterfaceGearboxCamera_Data._fields_ = []
 
-class UInterfaceGearboxCamera_Data(Structure):
-    _fields_ = []
-
-
-class UInterfaceGearboxCamera(Structure):
-    _fields_ = [
+    UInterfaceGearboxCamera._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UInterfaceGearboxCamera", UInterfaceGearboxCamera_Data),
     ]
 
+    UIStreamingDataEvent_Data._fields_ = []
 
-class UIStreamingDataEvent_Data(Structure):
-    _fields_ = []
-
-
-class UIStreamingDataEvent(Structure):
-    _fields_ = [
+    UIStreamingDataEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIStreamingDataEvent", UIStreamingDataEvent_Data),
     ]
 
+    ULeviathanChannel_Data._fields_ = [("Unknown1", c_ubyte * 0x10)]
 
-class ULeviathanChannel_Data(Structure):
-    _fields_ = [("Unknown1", c_ubyte, 0x10)]
-
-
-class ULeviathanChannel(Structure):
-    _fields_ = [
+    ULeviathanChannel._fields_ = [
         ("UObject", UObject_Data),
         ("UChannel", UChannel_Data),
         ("ULeviathanChannel", ULeviathanChannel_Data),
     ]
 
+    UNoContextNeededAttributeContextResolver_Data._fields_ = []
 
-class UNoContextNeededAttributeContextResolver_Data(Structure):
-    _fields_ = []
-
-
-class UNoContextNeededAttributeContextResolver(Structure):
-    _fields_ = [
+    UNoContextNeededAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         (
@@ -1158,29 +3649,21 @@ class UNoContextNeededAttributeContextResolver(Structure):
         ),
     ]
 
-
-class UNounAttributeValueResolver_Data(Structure):
-    _fields_ = [
+    UNounAttributeValueResolver_Data._fields_ = [
         ("ReplicationStrategy", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("DefaultValue", FAttributeInitializationData),
     ]
 
-
-class UNounAttributeValueResolver(Structure):
-    _fields_ = [
+    UNounAttributeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("UNounAttributeValueResolver", UNounAttributeValueResolver_Data),
     ]
 
+    UObjectFunctionAttributeValueResolver_Data._fields_ = [("FunctionCall", FString)]
 
-class UObjectFunctionAttributeValueResolver_Data(Structure):
-    _fields_ = [("FunctionCall", FString)]
-
-
-class UObjectFunctionAttributeValueResolver(Structure):
-    _fields_ = [
+    UObjectFunctionAttributeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         (
@@ -1189,61 +3672,42 @@ class UObjectFunctionAttributeValueResolver(Structure):
         ),
     ]
 
+    UObjectPropertyContextResolver_Data._fields_ = [("PropertyName", FName)]
 
-class UObjectPropertyContextResolver_Data(Structure):
-    _fields_ = [("PropertyName", FName)]
-
-
-class UObjectPropertyContextResolver(Structure):
-    _fields_ = [
+    UObjectPropertyContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         ("UObjectPropertyContextResolver", UObjectPropertyContextResolver_Data),
     ]
 
-
-class UPhysicsStateExpressionEvaluator_Data(Structure):
-    _fields_ = [
+    UPhysicsStateExpressionEvaluator_Data._fields_ = [
         ("PhysicsState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bIsInState", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UPhysicsStateExpressionEvaluator(Structure):
-    _fields_ = [
+    UPhysicsStateExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UPhysicsStateExpressionEvaluator", UPhysicsStateExpressionEvaluator_Data),
     ]
 
+    UPopulationAspect_Data._fields_ = []
 
-class UPopulationAspect_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationAspect(Structure):
-    _fields_ = [
+    UPopulationAspect._fields_ = [
         ("UObject", UObject_Data),
         ("UPopulationAspect", UPopulationAspect_Data),
     ]
 
+    UPopulationBodyTag_Data._fields_ = []
 
-class UPopulationBodyTag_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationBodyTag(Structure):
-    _fields_ = [
+    UPopulationBodyTag._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UPopulationBodyTag", UPopulationBodyTag_Data),
     ]
 
-
-class APopulationEncounter_Data(Structure):
-    _fields_ = [
+    APopulationEncounter_Data._fields_ = [
         ("EncounterPopulationDef", POINTER(UPopulationDefinition)),
         ("MemberOutposts", TArray_APopulationOpportunityPtr),
         ("MemberOpportunities", TArray_APopulationOpportunityPtr),
@@ -1252,29 +3716,22 @@ class APopulationEncounter_Data(Structure):
         ("AutoEnableOpportunities", c_bool, 1),
         ("bWaitingForNextWave", c_bool, 1),
         ("bIsWaitingForRespawn", c_bool, 1),
-        ("", c_ulong, 0),
         ("Waves", TArray_FEncounterWaveData),
         ("CurrentWave", c_int),
         ("TimeToStartNextWave", c_float),
         ("RespawnDelayStartTime", c_float),
     ]
 
-
-class APopulationEncounter(Structure):
-    _fields_ = [
+    APopulationEncounter._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
         ("APopulationEncounter", APopulationEncounter_Data),
     ]
 
+    UPopulationEncounterRenderingComponent_Data._fields_ = []
 
-class UPopulationEncounterRenderingComponent_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationEncounterRenderingComponent(Structure):
-    _fields_ = [
+    UPopulationEncounterRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -1285,13 +3742,9 @@ class UPopulationEncounterRenderingComponent(Structure):
         ),
     ]
 
+    UPopulationOpportunityCombatRenderingComponent_Data._fields_ = []
 
-class UPopulationOpportunityCombatRenderingComponent_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationOpportunityCombatRenderingComponent(Structure):
-    _fields_ = [
+    UPopulationOpportunityCombatRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -1302,13 +3755,9 @@ class UPopulationOpportunityCombatRenderingComponent(Structure):
         ),
     ]
 
+    UPopulationSpawnedActorTagDefinition_Data._fields_ = []
 
-class UPopulationSpawnedActorTagDefinition_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationSpawnedActorTagDefinition(Structure):
-    _fields_ = [
+    UPopulationSpawnedActorTagDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         (
@@ -1317,9 +3766,7 @@ class UPopulationSpawnedActorTagDefinition(Structure):
         ),
     ]
 
-
-class UPopUpDebugBarGraph_Data(Structure):
-    _fields_ = [
+    UPopUpDebugBarGraph_Data._fields_ = [
         ("Columns", TArray_FColumnDataStruct),
         ("TitleText", FString),
         ("BaseLineColor", FColor),
@@ -1334,112 +3781,82 @@ class UPopUpDebugBarGraph_Data(Structure):
         ("ColumnValueTextOffsetY", c_float),
     ]
 
-
-class UPopUpDebugBarGraph(Structure):
-    _fields_ = [
+    UPopUpDebugBarGraph._fields_ = [
         ("UObject", UObject_Data),
         ("UPopUpDebugBarGraph", UPopUpDebugBarGraph_Data),
     ]
 
-
-class URandomAttributeValueResolver_Data(Structure):
-    _fields_ = [
+    URandomAttributeValueResolver_Data._fields_ = [
         ("bUseIntegerRandomization", c_bool, 1),
-        ("", c_ulong, 0),
         ("LowerBound", FAttributeInitializationData),
         ("UpperBound", FAttributeInitializationData),
         ("ValueLifetime", FAttributeInitializationData),
         ("SavedRandomValues", TArray_FSavedRandomValue),
     ]
 
-
-class URandomAttributeValueResolver(Structure):
-    _fields_ = [
+    URandomAttributeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("URandomAttributeValueResolver", URandomAttributeValueResolver_Data),
     ]
 
+    URegionDefinition_Data._fields_ = []
 
-class URegionDefinition_Data(Structure):
-    _fields_ = []
-
-
-class URegionDefinition(Structure):
-    _fields_ = [
+    URegionDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("URegionDefinition", URegionDefinition_Data),
     ]
 
-
-class URootMotionDefinition_Data(Structure):
-    _fields_ = [
+    URootMotionDefinition_Data._fields_ = [
         ("RootMotionMode", c_ubyte),
         ("RootBoneOption", c_ubyte * 3),
         ("RootRotationMode", c_ubyte),
         ("RootRotationOption", c_ubyte * 3),
     ]
 
-
-class URootMotionDefinition(Structure):
-    _fields_ = [
+    URootMotionDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("URootMotionDefinition", URootMotionDefinition_Data),
     ]
 
-
-class URuleEngineLoadBalanceManager_Data(Structure):
-    _fields_ = [
+    URuleEngineLoadBalanceManager_Data._fields_ = [
         ("NumTimeSpentThisFrame", c_float),
         ("LastTimeFullUpdate", c_float),
         ("WaitingEngines", TArray_FRuleEngineLoadBalanceStruct),
         ("DebugEngines", TArray_FDebugLoadBalance),
         ("ManagerStats", TArray_FRELBManagerStats),
         ("bIsDebugging", c_bool, 1),
-        ("", c_ulong, 0),
         ("MSPosition", c_int),
     ]
 
-
-class URuleEngineLoadBalanceManager(Structure):
-    _fields_ = [
+    URuleEngineLoadBalanceManager._fields_ = [
         ("UObject", UObject_Data),
         ("URuleEngineLoadBalanceManager", URuleEngineLoadBalanceManager_Data),
     ]
 
-
-class UScreenSpaceManager_Data(Structure):
-    _fields_ = [
+    UScreenSpaceManager_Data._fields_ = [
         ("pLocalPlayer", POINTER(ULocalPlayer)),
         ("ViewWidth", c_int),
         ("ViewHeight", c_int),
-        ("Unknown1", c_ubyte, 0x8),
+        ("Unknown1", c_ubyte * 0x8),
         ("ViewProjectionMatrix", FMatrix),
         ("bMatricesUpToDate", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UScreenSpaceManager(Structure):
-    _fields_ = [
+    UScreenSpaceManager._fields_ = [
         ("UObject", UObject_Data),
         ("UScreenSpaceManager", UScreenSpaceManager_Data),
     ]
 
-
-class USeqAct_AllPlayersInVolume_Data(Structure):
-    _fields_ = [
+    USeqAct_AllPlayersInVolume_Data._fields_ = [
         ("Volumes", TArray_AVolumePtr),
         ("bAllActorsInVolumes", c_bool, 1),
         ("bCheckForAllPlayers", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class USeqAct_AllPlayersInVolume(Structure):
-    _fields_ = [
+    USeqAct_AllPlayersInVolume._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -1447,13 +3864,9 @@ class USeqAct_AllPlayersInVolume(Structure):
         ("USeqAct_AllPlayersInVolume", USeqAct_AllPlayersInVolume_Data),
     ]
 
+    USeqCond_CompareLocation_Data._fields_ = [("CheckRadius", c_float)]
 
-class USeqCond_CompareLocation_Data(Structure):
-    _fields_ = [("CheckRadius", c_float)]
-
-
-class USeqCond_CompareLocation(Structure):
-    _fields_ = [
+    USeqCond_CompareLocation._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -1461,13 +3874,9 @@ class USeqCond_CompareLocation(Structure):
         ("USeqCond_CompareLocation", USeqCond_CompareLocation_Data),
     ]
 
+    USeqCond_CompareString_Data._fields_ = [("bCaseSensitive", c_bool, 1)]
 
-class USeqCond_CompareString_Data(Structure):
-    _fields_ = [("bCaseSensitive", c_bool, 1), ("", c_ulong, 0)]
-
-
-class USeqCond_CompareString(Structure):
-    _fields_ = [
+    USeqCond_CompareString._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -1475,13 +3884,9 @@ class USeqCond_CompareString(Structure):
         ("USeqCond_CompareString", USeqCond_CompareString_Data),
     ]
 
+    USeqCond_GetLanguage_Data._fields_ = [("LangList", TArray_FString)]
 
-class USeqCond_GetLanguage_Data(Structure):
-    _fields_ = [("LangList", TArray_FString)]
-
-
-class USeqCond_GetLanguage(Structure):
-    _fields_ = [
+    USeqCond_GetLanguage._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -1489,29 +3894,22 @@ class USeqCond_GetLanguage(Structure):
         ("USeqCond_GetLanguage", USeqCond_GetLanguage_Data),
     ]
 
-
-class USimpleMathValueResolver_Data(Structure):
-    _fields_ = [
+    USimpleMathValueResolver_Data._fields_ = [
         ("Arg1Option", c_ubyte),
         ("Operand", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("Arg1Attribute", FAttributeInitializationData),
         ("Argument", FAttributeInitializationData),
     ]
 
-
-class USimpleMathValueResolver(Structure):
-    _fields_ = [
+    USimpleMathValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("USimpleMathValueResolver", USimpleMathValueResolver_Data),
     ]
 
-
-class USpecialMoveComponent_Data(Structure):
-    _fields_ = [
+    USpecialMoveComponent_Data._fields_ = [
         ("bLocalPlay", c_bool, 1),
-        ("", c_ulong, 0),
         ("StartTime", c_float),
         ("SMI", FScriptInterface),
         ("CurrentSMData", FSpecialMoveData),
@@ -1519,127 +3917,92 @@ class USpecialMoveComponent_Data(Structure):
         ("SMBlendNode", POINTER(UAnimNodeSpecialMoveBlend)),
     ]
 
-
-class USpecialMoveComponent(Structure):
-    _fields_ = [
+    USpecialMoveComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
         ("USpecialMoveComponent", USpecialMoveComponent_Data),
     ]
 
-
-class USpecialMoveDefinition_Data(Structure):
-    _fields_ = [
+    USpecialMoveDefinition_Data._fields_ = [
         ("NextSpecialMove", POINTER(USpecialMoveDefinition)),
         ("StopExpression", POINTER(UExpressionEvaluator)),
         ("bOwnerAlwaysRelevant", c_bool, 1),
         ("bClientHasAuthority", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class USpecialMoveDefinition(Structure):
-    _fields_ = [
+    USpecialMoveDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("USpecialMoveDefinition", USpecialMoveDefinition_Data),
     ]
 
+    USpecialMoveExpressionList_Data._fields_ = [
+        ("SpecialMoveList", TArray_FSMExpressionList)
+    ]
 
-class USpecialMoveExpressionList_Data(Structure):
-    _fields_ = [("SpecialMoveList", TArray_FSMExpressionList)]
-
-
-class USpecialMoveExpressionList(Structure):
-    _fields_ = [
+    USpecialMoveExpressionList._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("USpecialMoveDefinition", USpecialMoveDefinition_Data),
         ("USpecialMoveExpressionList", USpecialMoveExpressionList_Data),
     ]
 
+    USpecialMoveRandom_Data._fields_ = [("RandomList", TArray_FSMRandomPair)]
 
-class USpecialMoveRandom_Data(Structure):
-    _fields_ = [("RandomList", TArray_FSMRandomPair)]
-
-
-class USpecialMoveRandom(Structure):
-    _fields_ = [
+    USpecialMoveRandom._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("USpecialMoveDefinition", USpecialMoveDefinition_Data),
         ("USpecialMoveRandom", USpecialMoveRandom_Data),
     ]
 
+    USpecialMoveInterface_Data._fields_ = []
 
-class USpecialMoveInterface_Data(Structure):
-    _fields_ = []
-
-
-class USpecialMoveInterface(Structure):
-    _fields_ = [
+    USpecialMoveInterface._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("USpecialMoveInterface", USpecialMoveInterface_Data),
     ]
 
+    UStateAttributeResolver_Data._fields_ = [("NameKey", FName)]
 
-class UStateAttributeResolver_Data(Structure):
-    _fields_ = [("NameKey", FName)]
-
-
-class UStateAttributeResolver(Structure):
-    _fields_ = [
+    UStateAttributeResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("UStateAttributeResolver", UStateAttributeResolver_Data),
     ]
 
-
-class UTimeValueResolver_Data(Structure):
-    _fields_ = [
+    UTimeValueResolver_Data._fields_ = [
         ("TimeMode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bNormalizeTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("StartTime", FAttributeInitializationData),
         ("TotalTime", FAttributeInitializationData),
     ]
 
-
-class UTimeValueResolver(Structure):
-    _fields_ = [
+    UTimeValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeValueResolver", UAttributeValueResolver_Data),
         ("UTimeValueResolver", UTimeValueResolver_Data),
     ]
 
+    AWireManager_Data._fields_ = [("DefaultMaterial", POINTER(UMaterialInterface))]
 
-class AWireManager_Data(Structure):
-    _fields_ = [("DefaultMaterial", POINTER(UMaterialInterface))]
-
-
-class AWireManager(Structure):
-    _fields_ = [
+    AWireManager._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AWireManager", AWireManager_Data),
     ]
 
-
-class AWireTerminal_Data(Structure):
-    _fields_ = [
+    AWireTerminal_Data._fields_ = [
         ("NextTerminal", POINTER(AWireTerminal)),
         ("Linkages", TArray_FWireLinkage),
         ("WireMaterial", POINTER(UMaterialInterface)),
         ("bTerminalDirty", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class AWireTerminal(Structure):
-    _fields_ = [
+    AWireTerminal._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AStaticMeshActorBase", AStaticMeshActorBase_Data),
@@ -1647,13 +4010,9 @@ class AWireTerminal(Structure):
         ("AWireTerminal", AWireTerminal_Data),
     ]
 
+    AWiringActor_Data._fields_ = []
 
-class AWiringActor_Data(Structure):
-    _fields_ = []
-
-
-class AWiringActor(Structure):
-    _fields_ = [
+    AWiringActor._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AStaticMeshActorBase", AStaticMeshActorBase_Data),
@@ -1661,29 +4020,22 @@ class AWiringActor(Structure):
         ("AWiringActor", AWiringActor_Data),
     ]
 
+    UWiringMesh_Data._fields_ = [("Unknown1", c_ubyte * 0x240)]
 
-class UWiringMesh_Data(Structure):
-    _fields_ = [("Unknown1", c_ubyte, 0x240)]
-
-
-class UWiringMesh(Structure):
-    _fields_ = [
+    UWiringMesh._fields_ = [
         ("UObject", UObject_Data),
         ("UStaticMesh", UStaticMesh_Data),
         ("UWiringMesh", UWiringMesh_Data),
     ]
 
+    UActionResource_Data._fields_ = []
 
-class UActionResource_Data(Structure):
-    _fields_ = []
+    UActionResource._fields_ = [
+        ("UObject", UObject_Data),
+        ("UActionResource", UActionResource_Data),
+    ]
 
-
-class UActionResource(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UActionResource", UActionResource_Data)]
-
-
-class UActionSequence_Data(Structure):
-    _fields_ = [
+    UActionSequence_Data._fields_ = [
         ("ResourcesUsed", TArray_UClassPtr),
         ("MyRuleEngine", POINTER(URuleEngine)),
         ("AttachedRule", POINTER(URule)),
@@ -1692,7 +4044,6 @@ class UActionSequence_Data(Structure):
         ("bDoWorkFinished", c_bool, 1),
         ("bInAtomicSection", c_bool, 1),
         ("bDoNotLoadBalance", c_bool, 1),
-        ("", c_ulong, 0),
         ("ParentSequence", POINTER(UActionSequence)),
         ("ChildSequence", POINTER(UActionSequence)),
         ("TheAIFactory", POINTER(UAIFactoryBase)),
@@ -1705,40 +4056,31 @@ class UActionSequence_Data(Structure):
         ("BehaviorName", FName),
     ]
 
+    UActionSequence._fields_ = [
+        ("UObject", UObject_Data),
+        ("UActionSequence", UActionSequence_Data),
+    ]
 
-class UActionSequence(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UActionSequence", UActionSequence_Data)]
+    UActionSequenceList_Data._fields_ = [("CurrentIndex", c_int)]
 
-
-class UActionSequenceList_Data(Structure):
-    _fields_ = [("CurrentIndex", c_int)]
-
-
-class UActionSequenceList(Structure):
-    _fields_ = [
+    UActionSequenceList._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequenceList", UActionSequenceList_Data),
     ]
 
-
-class UActionSequencePawn_Data(Structure):
-    _fields_ = [
+    UActionSequencePawn_Data._fields_ = [
         ("MyGearboxMind", POINTER(AGearboxMind)),
         ("MyGearboxPawn", POINTER(AGearboxPawn)),
     ]
 
-
-class UActionSequencePawn(Structure):
-    _fields_ = [
+    UActionSequencePawn._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
     ]
 
-
-class UAction_PawnMovementBase_Data(Structure):
-    _fields_ = [
+    UAction_PawnMovementBase_Data._fields_ = [
         ("CachedSearchOrigin", FVector),
         ("CoverCheckThrottle", FFlag),
         ("CoverCheckThrottleInterval", c_float),
@@ -1746,7 +4088,6 @@ class UAction_PawnMovementBase_Data(Structure):
         ("Interrupted", c_bool, 1),
         ("GoToCover", c_bool, 1),
         ("UsePreciseArrival", c_bool, 1),
-        ("", c_ulong, 0),
         ("NewGoalLocation", FVector),
         ("OneMoveRequest", POINTER(UPawnMoveLocationRequest)),
         ("MoveRequestClass", POINTER(UClass)),
@@ -1756,7 +4097,7 @@ class UAction_PawnMovementBase_Data(Structure):
         ("CoverSearchFilter", c_ubyte),
         ("CoverFailureResponse", c_ubyte),
         ("RepathOption", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SearchOrigin", POINTER(USearchOrigin)),
         ("DirectionFromOrigin", POINTER(USearchDirection)),
         ("DirectionCone", c_float),
@@ -1768,34 +4109,27 @@ class UAction_PawnMovementBase_Data(Structure):
         ("FailureEvent", POINTER(URuleEventDef)),
     ]
 
-
-class UAction_PawnMovementBase(Structure):
-    _fields_ = [
+    UAction_PawnMovementBase._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
         ("UAction_PawnMovementBase", UAction_PawnMovementBase_Data),
     ]
 
+    UActionSequenceRandom_Data._fields_ = [
+        ("ActionList", TArray_FActionSequenceRandomData)
+    ]
 
-class UActionSequenceRandom_Data(Structure):
-    _fields_ = [("ActionList", TArray_FActionSequenceRandomData)]
-
-
-class UActionSequenceRandom(Structure):
-    _fields_ = [
+    UActionSequenceRandom._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequenceRandom", UActionSequenceRandom_Data),
     ]
 
-
-class UAIComponent_Data(Structure):
-    _fields_ = [
+    UAIComponent_Data._fields_ = [
         ("UpdateRate", c_float),
         ("AI", FScriptInterface),
         ("bInitialized", c_bool, 1),
-        ("", c_ulong, 0),
         ("AIDef", POINTER(UAIDefinition)),
         ("LastStateUpdateTime", c_float),
         ("CurrentState", FPointer),
@@ -1814,30 +4148,25 @@ class UAIComponent_Data(Structure):
         ("DialogHolds", TArray_FAIHoldData),
     ]
 
-
-class UAIComponent(Structure):
-    _fields_ = [
+    UAIComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
         ("UAIComponent", UAIComponent_Data),
     ]
 
+    UAICostExpressionEvaluator_Data._fields_ = [
+        ("Multiplier", c_int),
+        ("PopDef", POINTER(UPopulationDefinition)),
+    ]
 
-class UAICostExpressionEvaluator_Data(Structure):
-    _fields_ = [("Multiplier", c_int), ("PopDef", POINTER(UPopulationDefinition))]
-
-
-class UAICostExpressionEvaluator(Structure):
-    _fields_ = [
+    UAICostExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UAICostExpressionEvaluator", UAICostExpressionEvaluator_Data),
     ]
 
-
-class UAIFactoryBase_Data(Structure):
-    _fields_ = [
+    UAIFactoryBase_Data._fields_ = [
         ("KnowledgeRecordList", TArray_FKnowledgeRecordStruct),
         ("RuleSets", TArray_FRuleSetRecord),
         ("Rules", TArray_FRuleRecord),
@@ -1847,98 +4176,76 @@ class UAIFactoryBase_Data(Structure):
         ("TimeStampedRecordLifetime", c_float),
     ]
 
+    UAIFactoryBase._fields_ = [
+        ("UObject", UObject_Data),
+        ("UAIFactoryBase", UAIFactoryBase_Data),
+    ]
 
-class UAIFactoryBase(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UAIFactoryBase", UAIFactoryBase_Data)]
+    UGearboxAIFactory_Data._fields_ = []
 
-
-class UGearboxAIFactory_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxAIFactory(Structure):
-    _fields_ = [
+    UGearboxAIFactory._fields_ = [
         ("UObject", UObject_Data),
         ("UAIFactoryBase", UAIFactoryBase_Data),
         ("UGearboxAIFactory", UGearboxAIFactory_Data),
     ]
 
-
-class UAIResource_Data(Structure):
-    _fields_ = [
+    UAIResource_Data._fields_ = [
         ("ResourceRestrictions", TArray_FAIResourceRestriction),
         ("MaxUsers", c_int),
         ("MinUsers", c_int),
     ]
 
-
-class UAIResource(Structure):
-    _fields_ = [
+    UAIResource._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UAIResource", UAIResource_Data),
     ]
 
-
-class UAIResourceExpressionEvaluator_Data(Structure):
-    _fields_ = [
+    UAIResourceExpressionEvaluator_Data._fields_ = [
         ("Option", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Resource", POINTER(UAIResource)),
     ]
 
-
-class UAIResourceExpressionEvaluator(Structure):
-    _fields_ = [
+    UAIResourceExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UAIResourceExpressionEvaluator", UAIResourceExpressionEvaluator_Data),
     ]
 
-
-class UAllegianceExpressionEvaluator_Data(Structure):
-    _fields_ = [
+    UAllegianceExpressionEvaluator_Data._fields_ = [
         ("AllegianceCheck", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Allegiance", POINTER(UPawnAllegiance)),
     ]
 
-
-class UAllegianceExpressionEvaluator(Structure):
-    _fields_ = [
+    UAllegianceExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UAllegianceExpressionEvaluator", UAllegianceExpressionEvaluator_Data),
     ]
 
-
-class UAwarenessZoneCollectionDefinition_Data(Structure):
-    _fields_ = [
+    UAwarenessZoneCollectionDefinition_Data._fields_ = [
         ("DefaultAwarenessZones", TArray_UAwarenessZoneDefinitionPtr),
         ("CollectionName", FName),
     ]
 
-
-class UAwarenessZoneCollectionDefinition(Structure):
-    _fields_ = [
+    UAwarenessZoneCollectionDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UAwarenessZoneCollectionDefinition", UAwarenessZoneCollectionDefinition_Data),
     ]
 
-
-class UAwarenessZoneDefinition_Data(Structure):
-    _fields_ = [
+    UAwarenessZoneDefinition_Data._fields_ = [
         ("ZoneName", FString),
         ("OuterRimInfinitelyFarAway", c_bool, 1),
         ("ViewConeOnlyUsedForUnknownTargets", c_bool, 1),
         ("NeverForgetHiddenThreats", c_bool, 1),
-        ("", c_ulong, 0),
         ("OuterRimDistance", c_float),
         ("ViewConeStyle", c_ubyte),
         ("SpecialExposureBehavior", c_ubyte),
         ("HearingBehavior", c_ubyte),
-        ("Unknown1", c_ubyte, 0x1),
+        ("Unknown1", c_ubyte * 0x1),
         ("ViewConeFieldOfViewInDegrees", c_float),
         ("MinExposureRatingConsideredVisible", c_float),
         ("ForgetHiddenThreatsAfterXSeconds", c_float),
@@ -1947,52 +4254,40 @@ class UAwarenessZoneDefinition_Data(Structure):
         ("TimeFiringAtLastKnownLocation", c_float),
     ]
 
-
-class UAwarenessZoneDefinition(Structure):
-    _fields_ = [
+    UAwarenessZoneDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UAwarenessZoneDefinition", UAwarenessZoneDefinition_Data),
     ]
 
-
-class UBehavior_SendGbxMessage_Data(Structure):
-    _fields_ = [
+    UBehavior_SendGbxMessage_Data._fields_ = [
         ("MessageDefinition", POINTER(UGbxMessageDefinition)),
         ("AssignSenderTo", c_ubyte),
         ("AssignSubjectTo", c_ubyte),
         ("TakeLocationFrom", c_ubyte),
-        ("Unknown1", c_ubyte, 0x1),
+        ("Unknown1", c_ubyte * 0x1),
         ("MetaData", FGbxMessageSimpleMetaData),
     ]
 
-
-class UBehavior_SendGbxMessage(Structure):
-    _fields_ = [
+    UBehavior_SendGbxMessage._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_SendGbxMessage", UBehavior_SendGbxMessage_Data),
     ]
 
+    UBehavior_SetFlag_Data._fields_ = [
+        ("FlagsToSet", TArray_FFlagDefinitionInitialization)
+    ]
 
-class UBehavior_SetFlag_Data(Structure):
-    _fields_ = [("FlagsToSet", TArray_FFlagDefinitionInitialization)]
-
-
-class UBehavior_SetFlag(Structure):
-    _fields_ = [
+    UBehavior_SetFlag._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_SetFlag", UBehavior_SetFlag_Data),
     ]
 
+    UBestTargetAttributeContextResolver_Data._fields_ = [("bGetTargetInfo", c_bool, 1)]
 
-class UBestTargetAttributeContextResolver_Data(Structure):
-    _fields_ = [("bGetTargetInfo", c_bool, 1), ("", c_ulong, 0)]
-
-
-class UBestTargetAttributeContextResolver(Structure):
-    _fields_ = [
+    UBestTargetAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         (
@@ -2001,21 +4296,17 @@ class UBestTargetAttributeContextResolver(Structure):
         ),
     ]
 
+    UCharacterClassMessageDefinition_Data._fields_ = [
+        ("BehaviorTriggers", TArray_FBehaviorTriggerMessageStruct)
+    ]
 
-class UCharacterClassMessageDefinition_Data(Structure):
-    _fields_ = [("BehaviorTriggers", TArray_FBehaviorTriggerMessageStruct)]
-
-
-class UCharacterClassMessageDefinition(Structure):
-    _fields_ = [
+    UCharacterClassMessageDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UCharacterClassMessageDefinition", UCharacterClassMessageDefinition_Data),
     ]
 
-
-class UCoverSearchCriteria_Data(Structure):
-    _fields_ = [
+    UCoverSearchCriteria_Data._fields_ = [
         ("DoDistanceToOriginCandidateTest", c_bool, 1),
         ("DoProvidesCoverCandidateTest", c_bool, 1),
         ("DoDistanceToThreatCandidateTest", c_bool, 1),
@@ -2030,7 +4321,6 @@ class UCoverSearchCriteria_Data(Structure):
         ("DoScoringForVantageOnAnyTarget", c_bool, 1),
         ("DoScoringForUnoccupiedLink", c_bool, 1),
         ("DoScoringForNonBlacklistedCover", c_bool, 1),
-        ("", c_ulong, 0),
         ("DistanceToOriginCandidateTestMax", c_float),
         ("DistanceToThreatCandidateTest", c_float),
         ("MinDistanceToOrigin", c_float),
@@ -2047,34 +4337,24 @@ class UCoverSearchCriteria_Data(Structure):
         ("ScoreNonBlacklistedCover", c_float),
     ]
 
-
-class UCoverSearchCriteria(Structure):
-    _fields_ = [
+    UCoverSearchCriteria._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UCoverSearchCriteria", UCoverSearchCriteria_Data),
     ]
 
-
-class UExposureUtilityBase_Data(Structure):
-    _fields_ = [
+    UExposureUtilityBase_Data._fields_ = [
         ("ExposureEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("ExposureStrategy", POINTER(UExposureUtilityStrategy)),
     ]
 
-
-class UExposureUtilityBase(Structure):
-    _fields_ = [
+    UExposureUtilityBase._fields_ = [
         ("UObject", UObject_Data),
         ("UExposureUtilityBase", UExposureUtilityBase_Data),
     ]
 
-
-class UExposureUtilityBasicCaching_Data(Structure):
-    _fields_ = [
+    UExposureUtilityBasicCaching_Data._fields_ = [
         ("CachingEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxCacheTime", c_float),
         ("DistanceClose", c_float),
         ("DistanceMed", c_float),
@@ -2090,17 +4370,13 @@ class UExposureUtilityBasicCaching_Data(Structure):
         ("CachedExposures", TArray_FExposureCacheStruct),
     ]
 
-
-class UExposureUtilityBasicCaching(Structure):
-    _fields_ = [
+    UExposureUtilityBasicCaching._fields_ = [
         ("UObject", UObject_Data),
         ("UExposureUtilityBase", UExposureUtilityBase_Data),
         ("UExposureUtilityBasicCaching", UExposureUtilityBasicCaching_Data),
     ]
 
-
-class UExposureUtilityFixedCost_Data(Structure):
-    _fields_ = [
+    UExposureUtilityFixedCost_Data._fields_ = [
         ("CloseDistanceSquared", c_float),
         ("MedDistanceSquared", c_float),
         ("MaxLineChecksPerFrame", c_int),
@@ -2117,48 +4393,37 @@ class UExposureUtilityFixedCost_Data(Structure):
         ("PointData", TArray_FPointExposureData),
     ]
 
-
-class UExposureUtilityFixedCost(Structure):
-    _fields_ = [
+    UExposureUtilityFixedCost._fields_ = [
         ("UObject", UObject_Data),
         ("UExposureUtilityBase", UExposureUtilityBase_Data),
         ("UExposureUtilityBasicCaching", UExposureUtilityBasicCaching_Data),
         ("UExposureUtilityFixedCost", UExposureUtilityFixedCost_Data),
     ]
 
+    UExposureUtilityStrategy_Data._fields_ = []
 
-class UExposureUtilityStrategy_Data(Structure):
-    _fields_ = []
-
-
-class UExposureUtilityStrategy(Structure):
-    _fields_ = [
+    UExposureUtilityStrategy._fields_ = [
         ("UObject", UObject_Data),
         ("UExposureUtilityStrategy", UExposureUtilityStrategy_Data),
     ]
 
+    UFiringBehaviorDefinition_Data._fields_ = [
+        ("ConditionalPatterns", TArray_FConditionalPattern)
+    ]
 
-class UFiringBehaviorDefinition_Data(Structure):
-    _fields_ = [("ConditionalPatterns", TArray_FConditionalPattern)]
-
-
-class UFiringBehaviorDefinition(Structure):
-    _fields_ = [
+    UFiringBehaviorDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UFiringBehaviorDefinition", UFiringBehaviorDefinition_Data),
     ]
 
-
-class UFiringBehaviorManager_Data(Structure):
-    _fields_ = [
+    UFiringBehaviorManager_Data._fields_ = [
         ("CurrentFiringPattern", POINTER(UFiringPattern)),
         ("CurrentTargetExposure", c_float),
         ("NumShotsThisBurst", c_int),
         ("CachedTargetPoint", FVector),
         ("bHasTargetPoint", c_bool, 1),
         ("bSetupWithZoneCollection", c_bool, 1),
-        ("", c_ulong, 0),
         ("CurrentZoneCollection", POINTER(UFiringZoneCollectionDefinition)),
         ("CurrentZone", POINTER(UFiringZoneDefinition)),
         ("CurrentBehavior", POINTER(UFiringBehaviorDefinition)),
@@ -2167,60 +4432,48 @@ class UFiringBehaviorManager_Data(Structure):
         ("DefaultFiringPatternTemplate", POINTER(UFiringPattern)),
     ]
 
-
-class UFiringBehaviorManager(Structure):
-    _fields_ = [
+    UFiringBehaviorManager._fields_ = [
         ("UObject", UObject_Data),
         ("UFiringBehaviorManager", UFiringBehaviorManager_Data),
     ]
 
+    UFiringCondition_Data._fields_ = []
 
-class UFiringCondition_Data(Structure):
-    _fields_ = []
+    UFiringCondition._fields_ = [
+        ("UObject", UObject_Data),
+        ("UFiringCondition", UFiringCondition_Data),
+    ]
 
+    UFireCond_IsPlayerTarget_Data._fields_ = []
 
-class UFiringCondition(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UFiringCondition", UFiringCondition_Data)]
-
-
-class UFireCond_IsPlayerTarget_Data(Structure):
-    _fields_ = []
-
-
-class UFireCond_IsPlayerTarget(Structure):
-    _fields_ = [
+    UFireCond_IsPlayerTarget._fields_ = [
         ("UObject", UObject_Data),
         ("UFiringCondition", UFiringCondition_Data),
         ("UFireCond_IsPlayerTarget", UFireCond_IsPlayerTarget_Data),
     ]
 
-
-class UFiringPattern_Data(Structure):
-    _fields_ = [
+    UFiringPattern_Data._fields_ = [
         ("bIsHarmlessToPawns", c_bool, 1),
         ("bAllowFakeShots", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    UFiringPattern._fields_ = [
+        ("UObject", UObject_Data),
+        ("UFiringPattern", UFiringPattern_Data),
+    ]
 
-class UFiringPattern(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UFiringPattern", UFiringPattern_Data)]
+    UFirePatt_Cone_Data._fields_ = [
+        ("ConeDegrees", c_float),
+        ("ShotSpreadType", c_ubyte),
+    ]
 
-
-class UFirePatt_Cone_Data(Structure):
-    _fields_ = [("ConeDegrees", c_float), ("ShotSpreadType", c_ubyte)]
-
-
-class UFirePatt_Cone(Structure):
-    _fields_ = [
+    UFirePatt_Cone._fields_ = [
         ("UObject", UObject_Data),
         ("UFiringPattern", UFiringPattern_Data),
         ("UFirePatt_Cone", UFirePatt_Cone_Data),
     ]
 
-
-class UFirePatt_ShrinkingCone_Data(Structure):
-    _fields_ = [
+    UFirePatt_ShrinkingCone_Data._fields_ = [
         ("CurrentAccuracyConeDeg", c_float),
         ("LastDesiredAim", FRotator),
         ("MaxAccuracyConeDeg", c_float),
@@ -2228,17 +4481,13 @@ class UFirePatt_ShrinkingCone_Data(Structure):
         ("ShotSpreadType", c_ubyte),
     ]
 
-
-class UFirePatt_ShrinkingCone(Structure):
-    _fields_ = [
+    UFirePatt_ShrinkingCone._fields_ = [
         ("UObject", UObject_Data),
         ("UFiringPattern", UFiringPattern_Data),
         ("UFirePatt_ShrinkingCone", UFirePatt_ShrinkingCone_Data),
     ]
 
-
-class UFirePatt_StrafeOver_Data(Structure):
-    _fields_ = [
+    UFirePatt_StrafeOver_Data._fields_ = [
         ("CurrentAimRotation", FRotator),
         ("PitchDeltaPerShot", c_float),
         ("MaxYawDeltaPerShot", c_float),
@@ -2249,141 +4498,105 @@ class UFirePatt_StrafeOver_Data(Structure):
         ("TargetPosition", c_float),
     ]
 
-
-class UFirePatt_StrafeOver(Structure):
-    _fields_ = [
+    UFirePatt_StrafeOver._fields_ = [
         ("UObject", UObject_Data),
         ("UFiringPattern", UFiringPattern_Data),
         ("UFirePatt_StrafeOver", UFirePatt_StrafeOver_Data),
     ]
 
+    UFiringZoneCollectionDefinition_Data._fields_ = [
+        ("Zones", TArray_UFiringZoneDefinitionPtr)
+    ]
 
-class UFiringZoneCollectionDefinition_Data(Structure):
-    _fields_ = [("Zones", TArray_UFiringZoneDefinitionPtr)]
-
-
-class UFiringZoneCollectionDefinition(Structure):
-    _fields_ = [
+    UFiringZoneCollectionDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UFiringZoneCollectionDefinition", UFiringZoneCollectionDefinition_Data),
     ]
 
-
-class UFiringZoneDefinition_Data(Structure):
-    _fields_ = [
+    UFiringZoneDefinition_Data._fields_ = [
         ("ZoneName", FString),
         ("OuterRimInfinitelyFarAway", c_bool, 1),
-        ("", c_ulong, 0),
         ("OuterRimDistance", c_float),
         ("ZoneColor", FColor),
         ("FiringBehavior", POINTER(UFiringBehaviorDefinition)),
     ]
 
-
-class UFiringZoneDefinition(Structure):
-    _fields_ = [
+    UFiringZoneDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UFiringZoneDefinition", UFiringZoneDefinition_Data),
     ]
 
-
-class UFlagDefinition_Data(Structure):
-    _fields_ = [
+    UFlagDefinition_Data._fields_ = [
         ("EvaluationExpression", POINTER(UExpressionEvaluator)),
         ("ContextResolverChain", TArray_UAttributeContextResolverPtr),
         ("ValueResolver", POINTER(UFlagValueResolver)),
     ]
 
-
-class UFlagDefinition(Structure):
-    _fields_ = [
+    UFlagDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UFlagDefinition", UFlagDefinition_Data),
     ]
 
-
-class UFlagExpressionEvaluator_Data(Structure):
-    _fields_ = [
+    UFlagExpressionEvaluator_Data._fields_ = [
         ("FlagChain", TArray_FFlagEvalConditional),
         ("FlagChainOperator", c_ubyte),
     ]
 
-
-class UFlagExpressionEvaluator(Structure):
-    _fields_ = [
+    UFlagExpressionEvaluator._fields_ = [
         ("UObject", UObject_Data),
         ("UExpressionEvaluator", UExpressionEvaluator_Data),
         ("UFlagExpressionEvaluator", UFlagExpressionEvaluator_Data),
     ]
 
+    UFlagValueResolver_Data._fields_ = []
 
-class UFlagValueResolver_Data(Structure):
-    _fields_ = []
-
-
-class UFlagValueResolver(Structure):
-    _fields_ = [
+    UFlagValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UFlagValueResolver", UFlagValueResolver_Data),
     ]
 
-
-class UMultipleFlagValueResolver_Data(Structure):
-    _fields_ = [
+    UMultipleFlagValueResolver_Data._fields_ = [
         ("FlagToLookUp", POINTER(UFlagDefinition)),
         ("AggregationType", c_ubyte),
     ]
 
-
-class UMultipleFlagValueResolver(Structure):
-    _fields_ = [
+    UMultipleFlagValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UFlagValueResolver", UFlagValueResolver_Data),
         ("UMultipleFlagValueResolver", UMultipleFlagValueResolver_Data),
     ]
 
+    UObjectFunctionFlagValueResolver_Data._fields_ = [
+        ("CheckRate", c_float),
+        ("FunctionCall", FString),
+    ]
 
-class UObjectFunctionFlagValueResolver_Data(Structure):
-    _fields_ = [("CheckRate", c_float), ("FunctionCall", FString)]
-
-
-class UObjectFunctionFlagValueResolver(Structure):
-    _fields_ = [
+    UObjectFunctionFlagValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UFlagValueResolver", UFlagValueResolver_Data),
         ("UObjectFunctionFlagValueResolver", UObjectFunctionFlagValueResolver_Data),
     ]
 
+    UObjectPropertyFlagValueResolver_Data._fields_ = [("PropertyName", FName)]
 
-class UObjectPropertyFlagValueResolver_Data(Structure):
-    _fields_ = [("PropertyName", FName)]
-
-
-class UObjectPropertyFlagValueResolver(Structure):
-    _fields_ = [
+    UObjectPropertyFlagValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UFlagValueResolver", UFlagValueResolver_Data),
         ("UObjectPropertyFlagValueResolver", UObjectPropertyFlagValueResolver_Data),
     ]
 
+    URuleEngineFlagValueResolver_Data._fields_ = []
 
-class URuleEngineFlagValueResolver_Data(Structure):
-    _fields_ = []
-
-
-class URuleEngineFlagValueResolver(Structure):
-    _fields_ = [
+    URuleEngineFlagValueResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UFlagValueResolver", UFlagValueResolver_Data),
         ("URuleEngineFlagValueResolver", URuleEngineFlagValueResolver_Data),
     ]
 
-
-class UGbxMessage_Data(Structure):
-    _fields_ = [
+    UGbxMessage_Data._fields_ = [
         ("Definition", POINTER(UGbxMessageDefinition)),
         ("NameKey", FName),
         ("Sender", POINTER(UObject)),
@@ -2400,7 +4613,6 @@ class UGbxMessage_Data(Structure):
         ("HasLocation", c_bool, 1),
         ("HasRadius", c_bool, 1),
         ("SendRepeatedly", c_bool, 1),
-        ("", c_ulong, 0),
         ("MessageLocation", FVector),
         ("BroadcastRadius", c_float),
         ("DeliverTime", c_float),
@@ -2413,13 +4625,12 @@ class UGbxMessage_Data(Structure):
         ("DupeCriteria", TArray_unsigned_char),
     ]
 
+    UGbxMessage._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGbxMessage", UGbxMessage_Data),
+    ]
 
-class UGbxMessage(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGbxMessage", UGbxMessage_Data)]
-
-
-class UGbxMessageDefinition_Data(Structure):
-    _fields_ = [
+    UGbxMessageDefinition_Data._fields_ = [
         ("NameKey", FName),
         ("HasLocation", c_bool, 1),
         ("HasRadius", c_bool, 1),
@@ -2428,7 +4639,6 @@ class UGbxMessageDefinition_Data(Structure):
         ("IntendedForEnemies", c_bool, 1),
         ("AllowRepeatSends", c_bool, 1),
         ("LimitedReception", c_bool, 1),
-        ("", c_ulong, 0),
         ("Radius", FAttributeInitializationData),
         ("SecondsBetweenSends", c_float),
         ("MaxTimeToKeepSending", c_float),
@@ -2436,17 +4646,13 @@ class UGbxMessageDefinition_Data(Structure):
         ("MaxRecipients", c_int),
     ]
 
-
-class UGbxMessageDefinition(Structure):
-    _fields_ = [
+    UGbxMessageDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGbxMessageDefinition", UGbxMessageDefinition_Data),
     ]
 
-
-class UGbxMessageManager_Data(Structure):
-    _fields_ = [
+    UGbxMessageManager_Data._fields_ = [
         ("Listeners", TArray_FScriptInterface),
         ("MessagesToSend", TArray_UGbxMessagePtr),
         ("SentMessagesRecently", FFlag),
@@ -2454,23 +4660,18 @@ class UGbxMessageManager_Data(Structure):
         ("MaxMessagesPerDistribution", c_int),
     ]
 
-
-class UGbxMessageManager(Structure):
-    _fields_ = [
+    UGbxMessageManager._fields_ = [
         ("UObject", UObject_Data),
         ("UGbxMessageManager", UGbxMessageManager_Data),
     ]
 
-
-class AGearboxMind_Data(Structure):
-    _fields_ = [
+    AGearboxMind_Data._fields_ = [
         ("VfTable_IIRuleEngineOwner", FPointer),
         ("VfTable_IINounAttributeProvider", FPointer),
         ("VfTable_IIFlagProvider", FPointer),
         ("VfTable_IIAIInterface", FPointer),
         ("bDisabledDueToPopulationIrrelevance", c_bool, 1),
         ("bWantsToWalk", c_bool, 1),
-        ("", c_ulong, 0),
         ("MyRuleEngine", POINTER(UGearboxRuleEngine)),
         ("RuleEngineTemplate", POINTER(UGearboxRuleEngine)),
         ("MyGearboxPawn", POINTER(AGearboxPawn)),
@@ -2496,13 +4697,11 @@ class AGearboxMind_Data(Structure):
         ("MyTracker", POINTER(UAITracker)),
         ("DynamicFlagDefinitions", TArray_UFlagDefinitionPtr),
         ("DynamicFlags", TArray_FDynamicFlagInstanceData),
-        ("Unknown1", c_ubyte, 0x3C),
+        ("Unknown1", c_ubyte * 0x3C),
         ("AIComponent", POINTER(UAIComponent)),
     ]
 
-
-class AGearboxMind(Structure):
-    _fields_ = [
+    AGearboxMind._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AController", AController_Data),
@@ -2511,13 +4710,9 @@ class AGearboxMind(Structure):
         ("AGearboxMind", AGearboxMind_Data),
     ]
 
+    UGearboxAIMoveNodeRenderComponent_Data._fields_ = []
 
-class UGearboxAIMoveNodeRenderComponent_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxAIMoveNodeRenderComponent(Structure):
-    _fields_ = [
+    UGearboxAIMoveNodeRenderComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -2525,9 +4720,7 @@ class UGearboxAIMoveNodeRenderComponent(Structure):
         ("UGearboxAIMoveNodeRenderComponent", UGearboxAIMoveNodeRenderComponent_Data),
     ]
 
-
-class UGearboxCoverStateManager_Data(Structure):
-    _fields_ = [
+    UGearboxCoverStateManager_Data._fields_ = [
         ("MyGearboxPawn", POINTER(AGearboxPawn)),
         ("DesiredCoverState", FGearboxCoverState),
         ("CurrentCoverState", FGearboxCoverState),
@@ -2538,7 +4731,6 @@ class UGearboxCoverStateManager_Data(Structure):
         ("LastCoverInfo", FCoverSpotInfo),
         ("PawnCrouchedPriorToMount", c_bool, 1),
         ("CoverDebugSearchWasFinalized", c_bool, 1),
-        ("", c_ulong, 0),
         ("CoverDebugInnerRadius", c_float),
         ("CoverDebugOuterRadius", c_float),
         ("CoverDebugSearchAngle", c_float),
@@ -2549,20 +4741,14 @@ class UGearboxCoverStateManager_Data(Structure):
         ("VerticalCoverAngleDegrees", c_float),
     ]
 
-
-class UGearboxCoverStateManager(Structure):
-    _fields_ = [
+    UGearboxCoverStateManager._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxCoverStateManager", UGearboxCoverStateManager_Data),
     ]
 
+    UGearboxMindAttributeContextResolver_Data._fields_ = []
 
-class UGearboxMindAttributeContextResolver_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxMindAttributeContextResolver(Structure):
-    _fields_ = [
+    UGearboxMindAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         (
@@ -2571,17 +4757,14 @@ class UGearboxMindAttributeContextResolver(Structure):
         ),
     ]
 
-
-class UGearboxNavigationHandle_Data(Structure):
-    _fields_ = [
+    UGearboxNavigationHandle_Data._fields_ = [
         ("DesiredMovementSpeed", c_ubyte),
         ("ActiveSpecialNavMeshMove", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("bFollowingPath", c_bool, 1),
         ("bReachedDestination", c_bool, 1),
         ("bSpecialMovementFinished", c_bool, 1),
         ("bClearPathAfterSpecialMove", c_bool, 1),
-        ("", c_ulong, 0),
         ("CurrentGoal", FBasedPosition),
         ("CurrentPath", FPathFindData),
         ("Anchor", FGBXNavMeshPolyRef),
@@ -2599,65 +4782,45 @@ class UGearboxNavigationHandle_Data(Structure):
         ("NearPathCheckDistRate", c_float),
     ]
 
-
-class UGearboxNavigationHandle(Structure):
-    _fields_ = [
+    UGearboxNavigationHandle._fields_ = [
         ("UObject", UObject_Data),
         ("UNavigationHandle", UNavigationHandle_Data),
         ("UGearboxNavigationHandle", UGearboxNavigationHandle_Data),
     ]
 
+    UIFlagProvider_Data._fields_ = []
 
-class UIFlagProvider_Data(Structure):
-    _fields_ = []
-
-
-class UIFlagProvider(Structure):
-    _fields_ = [
+    UIFlagProvider._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIFlagProvider", UIFlagProvider_Data),
     ]
 
+    UIFlagProviderGroup_Data._fields_ = []
 
-class UIFlagProviderGroup_Data(Structure):
-    _fields_ = []
-
-
-class UIFlagProviderGroup(Structure):
-    _fields_ = [
+    UIFlagProviderGroup._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIFlagProviderGroup", UIFlagProviderGroup_Data),
     ]
 
+    UIGbxMessageListener_Data._fields_ = []
 
-class UIGbxMessageListener_Data(Structure):
-    _fields_ = []
-
-
-class UIGbxMessageListener(Structure):
-    _fields_ = [
+    UIGbxMessageListener._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIGbxMessageListener", UIGbxMessageListener_Data),
     ]
 
+    UIRuleEngineOwner_Data._fields_ = []
 
-class UIRuleEngineOwner_Data(Structure):
-    _fields_ = []
-
-
-class UIRuleEngineOwner(Structure):
-    _fields_ = [
+    UIRuleEngineOwner._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIRuleEngineOwner", UIRuleEngineOwner_Data),
     ]
 
-
-class UKnowledgeRecord_Data(Structure):
-    _fields_ = [
+    UKnowledgeRecord_Data._fields_ = [
         ("TheAIFactory", POINTER(UAIFactoryBase)),
         ("TheName", FName),
         ("KCategory", c_ubyte),
@@ -2669,52 +4832,41 @@ class UKnowledgeRecord_Data(Structure):
         ("FlagIndex", c_int),
     ]
 
+    UKnowledgeRecord._fields_ = [
+        ("UObject", UObject_Data),
+        ("UKnowledgeRecord", UKnowledgeRecord_Data),
+    ]
 
-class UKnowledgeRecord(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UKnowledgeRecord", UKnowledgeRecord_Data)]
+    ULocationFilter_Data._fields_ = []
 
+    ULocationFilter._fields_ = [
+        ("UObject", UObject_Data),
+        ("ULocationFilter", ULocationFilter_Data),
+    ]
 
-class ULocationFilter_Data(Structure):
-    _fields_ = []
+    ULocationFilter_MustHaveLOS_Data._fields_ = []
 
-
-class ULocationFilter(Structure):
-    _fields_ = [("UObject", UObject_Data), ("ULocationFilter", ULocationFilter_Data)]
-
-
-class ULocationFilter_MustHaveLOS_Data(Structure):
-    _fields_ = []
-
-
-class ULocationFilter_MustHaveLOS(Structure):
-    _fields_ = [
+    ULocationFilter_MustHaveLOS._fields_ = [
         ("UObject", UObject_Data),
         ("ULocationFilter", ULocationFilter_Data),
         ("ULocationFilter_MustHaveLOS", ULocationFilter_MustHaveLOS_Data),
     ]
 
+    ULocationFilter_MustNotHaveLOS_Data._fields_ = []
 
-class ULocationFilter_MustNotHaveLOS_Data(Structure):
-    _fields_ = []
-
-
-class ULocationFilter_MustNotHaveLOS(Structure):
-    _fields_ = [
+    ULocationFilter_MustNotHaveLOS._fields_ = [
         ("UObject", UObject_Data),
         ("ULocationFilter", ULocationFilter_Data),
         ("ULocationFilter_MustNotHaveLOS", ULocationFilter_MustNotHaveLOS_Data),
     ]
 
-
-class UMindTargetInfo_Data(Structure):
-    _fields_ = [
+    UMindTargetInfo_Data._fields_ = [
         ("Target", POINTER(AActor)),
         ("Distance", c_float),
         ("bShouldRemove", c_bool, 1),
         ("bCanSeeOrHearTarget", c_bool, 1),
-        ("", c_ulong, 0),
         ("bCanFireAt", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Priority", c_float),
         ("OnePriority", c_float),
         ("TargetExposureToMe", c_float),
@@ -2730,13 +4882,12 @@ class UMindTargetInfo_Data(Structure):
         ("BonusPriority", c_float),
     ]
 
+    UMindTargetInfo._fields_ = [
+        ("UObject", UObject_Data),
+        ("UMindTargetInfo", UMindTargetInfo_Data),
+    ]
 
-class UMindTargetInfo(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UMindTargetInfo", UMindTargetInfo_Data)]
-
-
-class URule_Data(Structure):
-    _fields_ = [
+    URule_Data._fields_ = [
         ("MyRuleEngine", POINTER(URuleEngine)),
         ("Priority", c_int),
         ("BasePriority", c_int),
@@ -2751,9 +4902,8 @@ class URule_Data(Structure):
         ("bRestartable", c_bool, 1),
         ("bBlockRuleSetChange", c_bool, 1),
         ("WasTransferred", c_bool, 1),
-        ("", c_ulong, 0),
         ("ExecutionPattern", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("TimeToWaitBeforeFirstExecution", FAttributeInitializationData),
         ("TimeToWaitBeforeNextExecution", FAttributeInitializationData),
         ("MaxTimeToExecute", FAttributeInitializationData),
@@ -2775,42 +4925,29 @@ class URule_Data(Structure):
         ("StartExecutionTimeStamp", c_float),
     ]
 
+    URule._fields_ = [("UObject", UObject_Data), ("URule", URule_Data)]
 
-class URule(Structure):
-    _fields_ = [("UObject", UObject_Data), ("URule", URule_Data)]
-
-
-class URuleContainer_Data(Structure):
-    _fields_ = [
+    URuleContainer_Data._fields_ = [
         ("RuleSetTemplate", POINTER(URuleSet)),
         ("CurRuleSet", POINTER(URuleSet)),
         ("AllowAllEventsThrough", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class URuleContainer(Structure):
-    _fields_ = [
+    URuleContainer._fields_ = [
         ("UObject", UObject_Data),
         ("URule", URule_Data),
         ("URuleContainer", URuleContainer_Data),
     ]
 
+    URulePlaceholder_Data._fields_ = []
 
-class URulePlaceholder_Data(Structure):
-    _fields_ = []
-
-
-class URulePlaceholder(Structure):
-    _fields_ = [
+    URulePlaceholder._fields_ = [
         ("UObject", UObject_Data),
         ("URule", URule_Data),
         ("URulePlaceholder", URulePlaceholder_Data),
     ]
 
-
-class URuleEngine_Data(Structure):
-    _fields_ = [
+    URuleEngine_Data._fields_ = [
         ("VfTable_IIFlagProvider", FPointer),
         ("TheAIFactory", POINTER(UAIFactoryBase)),
         ("ActorProxy", POINTER(AActor)),
@@ -2823,7 +4960,7 @@ class URuleEngine_Data(Structure):
         ("FlagInitialization", TArray_FFlagDefinitionInitialization),
         ("DynamicFlagDefinitions", TArray_UFlagDefinitionPtr),
         ("DynamicFlags", TArray_FDynamicFlagInstanceData),
-        ("Unknown1", c_ubyte, 0x3C),
+        ("Unknown1", c_ubyte * 0x3C),
         ("KnowledgeDB", TArray_UKnowledgeRecordPtr),
         ("RunningRules", TArray_URulePtr),
         ("ResourcesInUse", TArray_UClassPtr),
@@ -2836,7 +4973,6 @@ class URuleEngine_Data(Structure):
         ("OnlyIterateRulesForEvents", c_bool, 1),
         ("bEventsCausedKnowledgeRecordUpdate", c_bool, 1),
         ("EnableSnapshots", c_bool, 1),
-        ("", c_ulong, 0),
         ("MyTracker", POINTER(UAITracker)),
         ("RuleSetStack", TArray_URuleSetPtr),
         ("QueuedRuleEvents", TArray_FEventRecord),
@@ -2851,140 +4987,102 @@ class URuleEngine_Data(Structure):
         ("RuleSetReferences", TArray_FRuleSetReference),
     ]
 
+    URuleEngine._fields_ = [
+        ("UObject", UObject_Data),
+        ("URuleEngine", URuleEngine_Data),
+    ]
 
-class URuleEngine(Structure):
-    _fields_ = [("UObject", UObject_Data), ("URuleEngine", URuleEngine_Data)]
-
-
-class UGearboxRuleEngine_Data(Structure):
-    _fields_ = [
+    UGearboxRuleEngine_Data._fields_ = [
         ("MyGearboxPawn", POINTER(AGearboxPawn)),
         ("MyGearboxMind", POINTER(AGearboxMind)),
     ]
 
-
-class UGearboxRuleEngine(Structure):
-    _fields_ = [
+    UGearboxRuleEngine._fields_ = [
         ("UObject", UObject_Data),
         ("URuleEngine", URuleEngine_Data),
         ("UGearboxRuleEngine", UGearboxRuleEngine_Data),
     ]
 
-
-class URuleEventDef_Data(Structure):
-    _fields_ = [
+    URuleEventDef_Data._fields_ = [
         ("EventDefName", FName),
         ("FlagActionOnEventTrigger", FFlagDefinitionInitialization),
     ]
 
-
-class URuleEventDef(Structure):
-    _fields_ = [
+    URuleEventDef._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("URuleEventDef", URuleEventDef_Data),
     ]
 
-
-class URuleSet_Data(Structure):
-    _fields_ = [
+    URuleSet_Data._fields_ = [
         ("TheAIFactory", POINTER(UAIFactoryBase)),
         ("RuleTemplateRefs", TArray_URulePtr),
         ("Rules", TArray_URulePtr),
         ("ToDiscard", TArray_URulePlaceholderPtr),
         ("bInitialized", c_bool, 1),
         ("bNewRuleEvaluationEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("RuleSetName", FName),
         ("FlagsOnEntry", TArray_FFlagDefinitionInitialization),
         ("FlagsOnExit", TArray_FFlagDefinitionInitialization),
         ("HACK_RuleSetsAllowedToFollow", TArray_URuleSetPtr),
     ]
 
+    URuleSet._fields_ = [("UObject", UObject_Data), ("URuleSet", URuleSet_Data)]
 
-class URuleSet(Structure):
-    _fields_ = [("UObject", UObject_Data), ("URuleSet", URuleSet_Data)]
-
-
-class UStateRuleSet_Data(Structure):
-    _fields_ = [
+    UStateRuleSet_Data._fields_ = [
         ("StateRules", TArray_URulePtr),
         ("bShowPawnInRadarWhenActive", c_bool, 1),
-        ("", c_ulong, 0),
         ("StateAttributeMap", TArray_FStateAttributeData),
     ]
 
-
-class UStateRuleSet(Structure):
-    _fields_ = [
+    UStateRuleSet._fields_ = [
         ("UObject", UObject_Data),
         ("URuleSet", URuleSet_Data),
         ("UStateRuleSet", UStateRuleSet_Data),
     ]
 
+    USearchDirection_Data._fields_ = []
 
-class USearchDirection_Data(Structure):
-    _fields_ = []
+    USearchDirection._fields_ = [
+        ("UObject", UObject_Data),
+        ("USearchDirection", USearchDirection_Data),
+    ]
 
+    USearchDirection_Any_Data._fields_ = []
 
-class USearchDirection(Structure):
-    _fields_ = [("UObject", UObject_Data), ("USearchDirection", USearchDirection_Data)]
-
-
-class USearchDirection_Any_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_Any(Structure):
-    _fields_ = [
+    USearchDirection_Any._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_Any", USearchDirection_Any_Data),
     ]
 
+    USearchDirection_AwayFromMe_Data._fields_ = []
 
-class USearchDirection_AwayFromMe_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_AwayFromMe(Structure):
-    _fields_ = [
+    USearchDirection_AwayFromMe._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_AwayFromMe", USearchDirection_AwayFromMe_Data),
     ]
 
+    USearchDirection_AwayFromTarget_Data._fields_ = []
 
-class USearchDirection_AwayFromTarget_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_AwayFromTarget(Structure):
-    _fields_ = [
+    USearchDirection_AwayFromTarget._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_AwayFromTarget", USearchDirection_AwayFromTarget_Data),
     ]
 
+    USearchDirection_MyFacingDirection_Data._fields_ = []
 
-class USearchDirection_MyFacingDirection_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_MyFacingDirection(Structure):
-    _fields_ = [
+    USearchDirection_MyFacingDirection._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_MyFacingDirection", USearchDirection_MyFacingDirection_Data),
     ]
 
+    USearchDirection_OppositeMyFacingDirection_Data._fields_ = []
 
-class USearchDirection_OppositeMyFacingDirection_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_OppositeMyFacingDirection(Structure):
-    _fields_ = [
+    USearchDirection_OppositeMyFacingDirection._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         (
@@ -2993,13 +5091,9 @@ class USearchDirection_OppositeMyFacingDirection(Structure):
         ),
     ]
 
+    USearchDirection_OppositeTargetsFacingDirection_Data._fields_ = []
 
-class USearchDirection_OppositeTargetsFacingDirection_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_OppositeTargetsFacingDirection(Structure):
-    _fields_ = [
+    USearchDirection_OppositeTargetsFacingDirection._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         (
@@ -3008,25 +5102,17 @@ class USearchDirection_OppositeTargetsFacingDirection(Structure):
         ),
     ]
 
+    USearchDirection_RandomLeftOrRight_Data._fields_ = []
 
-class USearchDirection_RandomLeftOrRight_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_RandomLeftOrRight(Structure):
-    _fields_ = [
+    USearchDirection_RandomLeftOrRight._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_RandomLeftOrRight", USearchDirection_RandomLeftOrRight_Data),
     ]
 
+    USearchDirection_TargetsFacingDirection_Data._fields_ = []
 
-class USearchDirection_TargetsFacingDirection_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_TargetsFacingDirection(Structure):
-    _fields_ = [
+    USearchDirection_TargetsFacingDirection._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         (
@@ -3035,101 +5121,70 @@ class USearchDirection_TargetsFacingDirection(Structure):
         ),
     ]
 
+    USearchDirection_ToMyLeft_Data._fields_ = []
 
-class USearchDirection_ToMyLeft_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_ToMyLeft(Structure):
-    _fields_ = [
+    USearchDirection_ToMyLeft._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_ToMyLeft", USearchDirection_ToMyLeft_Data),
     ]
 
+    USearchDirection_ToMyRight_Data._fields_ = []
 
-class USearchDirection_ToMyRight_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_ToMyRight(Structure):
-    _fields_ = [
+    USearchDirection_ToMyRight._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_ToMyRight", USearchDirection_ToMyRight_Data),
     ]
 
+    USearchDirection_TowardMe_Data._fields_ = []
 
-class USearchDirection_TowardMe_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_TowardMe(Structure):
-    _fields_ = [
+    USearchDirection_TowardMe._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_TowardMe", USearchDirection_TowardMe_Data),
     ]
 
+    USearchDirection_TowardTarget_Data._fields_ = []
 
-class USearchDirection_TowardTarget_Data(Structure):
-    _fields_ = []
-
-
-class USearchDirection_TowardTarget(Structure):
-    _fields_ = [
+    USearchDirection_TowardTarget._fields_ = [
         ("UObject", UObject_Data),
         ("USearchDirection", USearchDirection_Data),
         ("USearchDirection_TowardTarget", USearchDirection_TowardTarget_Data),
     ]
 
+    USearchOrigin_Data._fields_ = []
 
-class USearchOrigin_Data(Structure):
-    _fields_ = []
+    USearchOrigin._fields_ = [
+        ("UObject", UObject_Data),
+        ("USearchOrigin", USearchOrigin_Data),
+    ]
 
+    USearchOrigin_CurrentLocation_Data._fields_ = []
 
-class USearchOrigin(Structure):
-    _fields_ = [("UObject", UObject_Data), ("USearchOrigin", USearchOrigin_Data)]
-
-
-class USearchOrigin_CurrentLocation_Data(Structure):
-    _fields_ = []
-
-
-class USearchOrigin_CurrentLocation(Structure):
-    _fields_ = [
+    USearchOrigin_CurrentLocation._fields_ = [
         ("UObject", UObject_Data),
         ("USearchOrigin", USearchOrigin_Data),
         ("USearchOrigin_CurrentLocation", USearchOrigin_CurrentLocation_Data),
     ]
 
+    USearchOrigin_ScriptedMoveTarget_Data._fields_ = []
 
-class USearchOrigin_ScriptedMoveTarget_Data(Structure):
-    _fields_ = []
-
-
-class USearchOrigin_ScriptedMoveTarget(Structure):
-    _fields_ = [
+    USearchOrigin_ScriptedMoveTarget._fields_ = [
         ("UObject", UObject_Data),
         ("USearchOrigin", USearchOrigin_Data),
         ("USearchOrigin_ScriptedMoveTarget", USearchOrigin_ScriptedMoveTarget_Data),
     ]
 
+    USearchOrigin_TargetLocation_Data._fields_ = []
 
-class USearchOrigin_TargetLocation_Data(Structure):
-    _fields_ = []
-
-
-class USearchOrigin_TargetLocation(Structure):
-    _fields_ = [
+    USearchOrigin_TargetLocation._fields_ = [
         ("UObject", UObject_Data),
         ("USearchOrigin", USearchOrigin_Data),
         ("USearchOrigin_TargetLocation", USearchOrigin_TargetLocation_Data),
     ]
 
-
-class USnapshotRecord_Data(Structure):
-    _fields_ = [
+    USnapshotRecord_Data._fields_ = [
         ("MyName", FName),
         ("RuleSet", FName),
         ("CurrentRules", TArray_FRuleInfo),
@@ -3146,7 +5201,7 @@ class USnapshotRecord_Data(Structure):
         ("SequenceAffected", FName),
         ("Sequence2Affected", FName),
         ("Event", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("RuleStartName", FName),
         ("RuleEndName", FName),
         ("RuleInterruptName", FName),
@@ -3161,17 +5216,13 @@ class USnapshotRecord_Data(Structure):
         ("ResourcesColor", FColor),
     ]
 
-
-class USnapshotRecord(Structure):
-    _fields_ = [
+    USnapshotRecord._fields_ = [
         ("UObject", UObject_Data),
         ("USnapshotInterface", USnapshotInterface_Data),
         ("USnapshotRecord", USnapshotRecord_Data),
     ]
 
-
-class UGearboxPawnSnapshotRecord_Data(Structure):
-    _fields_ = [
+    UGearboxPawnSnapshotRecord_Data._fields_ = [
         ("PawnIconZOffset", c_float),
         ("PawnExposureZOffset", c_float),
         ("CollectionNameOffset", c_float),
@@ -3220,7 +5271,6 @@ class UGearboxPawnSnapshotRecord_Data(Structure):
         ("CoverSearchDirection", FVector),
         ("CoverSlotDebugList", TArray_FCoverDebugInfo),
         ("CoverSearchWasFinalized", c_bool, 1),
-        ("", c_ulong, 0),
         ("ICON_BLUELOCATION", FIconData),
         ("ICON_YELLOWLOCATION", FIconData),
         ("ICON_QUESTIONMARK", FIconData),
@@ -3241,116 +5291,84 @@ class UGearboxPawnSnapshotRecord_Data(Structure):
         ("GodHolds", TArray_FAIHoldDebugData),
     ]
 
-
-class UGearboxPawnSnapshotRecord(Structure):
-    _fields_ = [
+    UGearboxPawnSnapshotRecord._fields_ = [
         ("UObject", UObject_Data),
         ("USnapshotInterface", USnapshotInterface_Data),
         ("USnapshotRecord", USnapshotRecord_Data),
         ("UGearboxPawnSnapshotRecord", UGearboxPawnSnapshotRecord_Data),
     ]
 
-
-class UTargetingDefinition_Data(Structure):
-    _fields_ = [
+    UTargetingDefinition_Data._fields_ = [
         ("Knowledge", TArray_UTI_CalcPtr),
         ("Prioritization", TArray_UTI_PrioritizePtr),
         ("CanTargetIf", POINTER(UExpressionEvaluator)),
         ("StopTargetingIf", POINTER(UExpressionEvaluator)),
         ("bCanTargetFriendlies", c_bool, 1),
         ("bOverrideSearchRadius", c_bool, 1),
-        ("", c_ulong, 0),
         ("CanTargetFriendliesIf", POINTER(UExpressionEvaluator)),
         ("SearchRadius", c_float),
     ]
 
-
-class UTargetingDefinition(Structure):
-    _fields_ = [
+    UTargetingDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UTargetingDefinition", UTargetingDefinition_Data),
     ]
 
-
-class UTargetIterator_Data(Structure):
-    _fields_ = [
+    UTargetIterator_Data._fields_ = [
         ("IteratorType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("BarGraphShortName", FString),
     ]
 
+    UTargetIterator._fields_ = [
+        ("UObject", UObject_Data),
+        ("UTargetIterator", UTargetIterator_Data),
+    ]
 
-class UTargetIterator(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UTargetIterator", UTargetIterator_Data)]
+    UTargetIteratorCalculateDistance_Data._fields_ = []
 
-
-class UTargetIteratorCalculateDistance_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorCalculateDistance(Structure):
-    _fields_ = [
+    UTargetIteratorCalculateDistance._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTargetIteratorCalculateDistance", UTargetIteratorCalculateDistance_Data),
     ]
 
+    UTargetIteratorCalculateExposure_Data._fields_ = []
 
-class UTargetIteratorCalculateExposure_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorCalculateExposure(Structure):
-    _fields_ = [
+    UTargetIteratorCalculateExposure._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTargetIteratorCalculateExposure", UTargetIteratorCalculateExposure_Data),
     ]
 
+    UTargetIteratorCheckAwareness_Data._fields_ = []
 
-class UTargetIteratorCheckAwareness_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorCheckAwareness(Structure):
-    _fields_ = [
+    UTargetIteratorCheckAwareness._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTargetIteratorCheckAwareness", UTargetIteratorCheckAwareness_Data),
     ]
 
+    UTargetIteratorCheckRemoveTarget_Data._fields_ = []
 
-class UTargetIteratorCheckRemoveTarget_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorCheckRemoveTarget(Structure):
-    _fields_ = [
+    UTargetIteratorCheckRemoveTarget._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTargetIteratorCheckRemoveTarget", UTargetIteratorCheckRemoveTarget_Data),
     ]
 
+    UTargetIteratorForgetAboutTarget_Data._fields_ = []
 
-class UTargetIteratorForgetAboutTarget_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorForgetAboutTarget(Structure):
-    _fields_ = [
+    UTargetIteratorForgetAboutTarget._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTargetIteratorForgetAboutTarget", UTargetIteratorForgetAboutTarget_Data),
     ]
 
+    UTargetIteratorPrioritizeTargetsIAmExposedTo_Data._fields_ = []
 
-class UTargetIteratorPrioritizeTargetsIAmExposedTo_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorPrioritizeTargetsIAmExposedTo(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizeTargetsIAmExposedTo._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         (
@@ -3359,37 +5377,25 @@ class UTargetIteratorPrioritizeTargetsIAmExposedTo(Structure):
         ),
     ]
 
+    UTI_Calc_Data._fields_ = []
 
-class UTI_Calc_Data(Structure):
-    _fields_ = []
-
-
-class UTI_Calc(Structure):
-    _fields_ = [
+    UTI_Calc._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Calc", UTI_Calc_Data),
     ]
 
+    UTI_Prioritize_Data._fields_ = [("Weight", c_float)]
 
-class UTI_Prioritize_Data(Structure):
-    _fields_ = [("Weight", c_float)]
-
-
-class UTI_Prioritize(Structure):
-    _fields_ = [
+    UTI_Prioritize._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
     ]
 
+    UTargetIteratorPrioritizeExposedTargets_Data._fields_ = []
 
-class UTargetIteratorPrioritizeExposedTargets_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorPrioritizeExposedTargets(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizeExposedTargets._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
@@ -3399,13 +5405,9 @@ class UTargetIteratorPrioritizeExposedTargets(Structure):
         ),
     ]
 
+    UTargetIteratorPrioritizeHumanTargets_Data._fields_ = []
 
-class UTargetIteratorPrioritizeHumanTargets_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorPrioritizeHumanTargets(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizeHumanTargets._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
@@ -3415,13 +5417,9 @@ class UTargetIteratorPrioritizeHumanTargets(Structure):
         ),
     ]
 
+    UTargetIteratorPrioritizeNearbyTarget_Data._fields_ = [("MaxDistance", c_float)]
 
-class UTargetIteratorPrioritizeNearbyTarget_Data(Structure):
-    _fields_ = [("MaxDistance", c_float)]
-
-
-class UTargetIteratorPrioritizeNearbyTarget(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizeNearbyTarget._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
@@ -3431,13 +5429,9 @@ class UTargetIteratorPrioritizeNearbyTarget(Structure):
         ),
     ]
 
+    UTargetIteratorPrioritizePreviousTarget_Data._fields_ = []
 
-class UTargetIteratorPrioritizePreviousTarget_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorPrioritizePreviousTarget(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizePreviousTarget._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
@@ -3447,13 +5441,9 @@ class UTargetIteratorPrioritizePreviousTarget(Structure):
         ),
     ]
 
+    UTargetIteratorPrioritizeTargetNotBeingShotAt_Data._fields_ = []
 
-class UTargetIteratorPrioritizeTargetNotBeingShotAt_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorPrioritizeTargetNotBeingShotAt(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizeTargetNotBeingShotAt._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
@@ -3463,13 +5453,9 @@ class UTargetIteratorPrioritizeTargetNotBeingShotAt(Structure):
         ),
     ]
 
+    UTargetIteratorPrioritizeTargetWhoShootsAtMe_Data._fields_ = []
 
-class UTargetIteratorPrioritizeTargetWhoShootsAtMe_Data(Structure):
-    _fields_ = []
-
-
-class UTargetIteratorPrioritizeTargetWhoShootsAtMe(Structure):
-    _fields_ = [
+    UTargetIteratorPrioritizeTargetWhoShootsAtMe._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
@@ -3479,39 +5465,31 @@ class UTargetIteratorPrioritizeTargetWhoShootsAtMe(Structure):
         ),
     ]
 
+    UTI_PrioritizeBonus_Data._fields_ = []
 
-class UTI_PrioritizeBonus_Data(Structure):
-    _fields_ = []
-
-
-class UTI_PrioritizeBonus(Structure):
-    _fields_ = [
+    UTI_PrioritizeBonus._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
         ("UTI_PrioritizeBonus", UTI_PrioritizeBonus_Data),
     ]
 
+    UTI_PrioritizeConditional_Data._fields_ = [
+        ("Condition", POINTER(UExpressionEvaluator))
+    ]
 
-class UTI_PrioritizeConditional_Data(Structure):
-    _fields_ = [("Condition", POINTER(UExpressionEvaluator))]
-
-
-class UTI_PrioritizeConditional(Structure):
-    _fields_ = [
+    UTI_PrioritizeConditional._fields_ = [
         ("UObject", UObject_Data),
         ("UTargetIterator", UTargetIterator_Data),
         ("UTI_Prioritize", UTI_Prioritize_Data),
         ("UTI_PrioritizeConditional", UTI_PrioritizeConditional_Data),
     ]
 
+    UGearboxSeqAct_PopulationOpportunityLink_Data._fields_ = [
+        ("CloneOpportunities", TArray_APopulationOpportunityPtr)
+    ]
 
-class UGearboxSeqAct_PopulationOpportunityLink_Data(Structure):
-    _fields_ = [("CloneOpportunities", TArray_APopulationOpportunityPtr)]
-
-
-class UGearboxSeqAct_PopulationOpportunityLink(Structure):
-    _fields_ = [
+    UGearboxSeqAct_PopulationOpportunityLink._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -3523,76 +5501,56 @@ class UGearboxSeqAct_PopulationOpportunityLink(Structure):
         ),
     ]
 
+    UIPopulationSpawnPoint_Data._fields_ = []
 
-class UIPopulationSpawnPoint_Data(Structure):
-    _fields_ = []
-
-
-class UIPopulationSpawnPoint(Structure):
-    _fields_ = [
+    UIPopulationSpawnPoint._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIPopulationSpawnPoint", UIPopulationSpawnPoint_Data),
     ]
 
-
-class UPopulationDefinition_Data(Structure):
-    _fields_ = [
+    UPopulationDefinition_Data._fields_ = [
         ("VfTable_IIConstructObject", FPointer),
         ("ActorArchetypeList", TArray_FPopulationActor),
         ("RespawnStyle", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bTotalResetOnLevelLoad", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UPopulationDefinition(Structure):
-    _fields_ = [
+    UPopulationDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UPopulationDefinition", UPopulationDefinition_Data),
     ]
 
-
-class UPopulationFactory_Data(Structure):
-    _fields_ = [
+    UPopulationFactory_Data._fields_ = [
         ("VfTable_IIConstructObject", FPointer),
         ("OnActorSpawn", TArray_UBehaviorBasePtr),
         ("DestructionParams", FDestructionParameters),
         ("bIsCriticalActor", c_bool, 1),
         ("bUseSavedLocationWhenRestored", c_bool, 1),
         ("UseCostOverride", c_bool, 1),
-        ("", c_ulong, 0),
         ("SpawnCostOverride", c_int),
     ]
 
-
-class UPopulationFactory(Structure):
-    _fields_ = [
+    UPopulationFactory._fields_ = [
         ("UObject", UObject_Data),
         ("UPopulationFactory", UPopulationFactory_Data),
     ]
 
+    UPopulationFactoryGeneric_Data._fields_ = [("ActorArchetype", POINTER(AActor))]
 
-class UPopulationFactoryGeneric_Data(Structure):
-    _fields_ = [("ActorArchetype", POINTER(AActor))]
-
-
-class UPopulationFactoryGeneric(Structure):
-    _fields_ = [
+    UPopulationFactoryGeneric._fields_ = [
         ("UObject", UObject_Data),
         ("UPopulationFactory", UPopulationFactory_Data),
         ("UPopulationFactoryGeneric", UPopulationFactoryGeneric_Data),
     ]
 
+    UPopulationFactoryPopulationDefinition_Data._fields_ = [
+        ("PopulationDef", POINTER(UPopulationDefinition))
+    ]
 
-class UPopulationFactoryPopulationDefinition_Data(Structure):
-    _fields_ = [("PopulationDef", POINTER(UPopulationDefinition))]
-
-
-class UPopulationFactoryPopulationDefinition(Structure):
-    _fields_ = [
+    UPopulationFactoryPopulationDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UPopulationFactory", UPopulationFactory_Data),
         (
@@ -3601,9 +5559,7 @@ class UPopulationFactoryPopulationDefinition(Structure):
         ),
     ]
 
-
-class UPopulationMaster_Data(Structure):
-    _fields_ = [
+    UPopulationMaster_Data._fields_ = [
         ("OpportunityList", TArray_FPopulationOpportunityTracker),
         ("ActiveActorCost", c_int),
         ("MaxActorCost", c_int),
@@ -3618,26 +5574,20 @@ class UPopulationMaster_Data(Structure):
         ("PopulationRespawnDelayInSeconds", c_float),
         ("bHasActorsReadyToDeleteIfSpaceIsNeeded", c_bool, 1),
         ("bShutdownAIWhenIrrelevant", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UPopulationMaster(Structure):
-    _fields_ = [
+    UPopulationMaster._fields_ = [
         ("UObject", UObject_Data),
         ("UPopulationMaster", UPopulationMaster_Data),
     ]
 
-
-class APopulationOpportunity_Data(Structure):
-    _fields_ = [
+    APopulationOpportunity_Data._fields_ = [
         ("VfTable_IIBodyCompositionInstance", FPointer),
         ("CleanupParams", FOpportunityCleanupParameters),
         ("IsEnabled", c_bool, 1),
         ("bNoRespawning", c_bool, 1),
         ("bIsWaitingForRespawn", c_bool, 1),
         ("bUseRandomSpawns", c_bool, 1),
-        ("", c_ulong, 0),
         ("SpawnPoints", TArray_APopulationPointPtr),
         ("StreamingLevel", POINTER(ULevelStreaming)),
         ("SystemID", c_int),
@@ -3653,25 +5603,20 @@ class APopulationOpportunity_Data(Structure):
         ("InclusiveSpawnList", TArray_int),
     ]
 
-
-class APopulationOpportunity(Structure):
-    _fields_ = [
+    APopulationOpportunity._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
         ("APopulationOpportunity", APopulationOpportunity_Data),
     ]
 
-
-class APopulationOpportunityArea_Data(Structure):
-    _fields_ = [
+    APopulationOpportunityArea_Data._fields_ = [
         ("SpawnOptions", TArray_FPopulationOptionAreaData),
         ("bContinueSpawningAfterPlayerDetected", c_bool, 1),
         ("bOpportunityVolume", c_bool, 1),
         ("bOpportunityRadius", c_bool, 1),
         ("bOpportunityLevel", c_bool, 1),
         ("bPlayerHasBeenDetected", c_bool, 1),
-        ("", c_ulong, 0),
         ("DetectionVolumes", TArray_AVolumePtr),
         ("DetectionRadius", c_float),
         ("SelectedSpawnIdx", c_int),
@@ -3680,9 +5625,7 @@ class APopulationOpportunityArea_Data(Structure):
         ("NumPlayersDetected", c_int),
     ]
 
-
-class APopulationOpportunityArea(Structure):
-    _fields_ = [
+    APopulationOpportunityArea._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -3690,27 +5633,22 @@ class APopulationOpportunityArea(Structure):
         ("APopulationOpportunityArea", APopulationOpportunityArea_Data),
     ]
 
-
-class APopulationOpportunityCloner_Data(Structure):
-    _fields_ = [
+    APopulationOpportunityCloner_Data._fields_ = [
         ("Conditions", POINTER(UExpressionEvaluator)),
         ("SpawnFactory", POINTER(UPopulationFactory)),
         ("MaxTotalActors", c_int),
         ("MaxActiveActors", c_int),
         ("RespawnStyle", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bTotalResetOnLevelLoad", c_bool, 1),
         ("bReadyToSpawn", c_bool, 1),
-        ("", c_ulong, 0),
         ("RespawnDelay", c_float),
         ("RespawnDelayAfterDeath", c_float),
         ("NumTotalActors", c_int),
         ("NumActiveActors", c_int),
     ]
 
-
-class APopulationOpportunityCloner(Structure):
-    _fields_ = [
+    APopulationOpportunityCloner._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -3718,9 +5656,7 @@ class APopulationOpportunityCloner(Structure):
         ("APopulationOpportunityCloner", APopulationOpportunityCloner_Data),
     ]
 
-
-class APopulationOpportunityCombat_Data(Structure):
-    _fields_ = [
+    APopulationOpportunityCombat_Data._fields_ = [
         ("VfTable_IIGbxMessageListener", FPointer),
         ("ParentEncounter", POINTER(APopulationEncounter)),
         ("ParentEncounterWave", c_int),
@@ -3735,7 +5671,6 @@ class APopulationOpportunityCombat_Data(Structure):
         ("bOpportunityRadius", c_bool, 1),
         ("bPlayerHasBeenDetected", c_bool, 1),
         ("bShowDebugEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("DetectionVolumes", TArray_AVolumePtr),
         ("DetectionRadius", c_float),
         ("OpportunityHeight", c_float),
@@ -3749,9 +5684,7 @@ class APopulationOpportunityCombat_Data(Structure):
         ("NumPlayersDetected", c_int),
     ]
 
-
-class APopulationOpportunityCombat(Structure):
-    _fields_ = [
+    APopulationOpportunityCombat._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -3759,9 +5692,7 @@ class APopulationOpportunityCombat(Structure):
         ("APopulationOpportunityCombat", APopulationOpportunityCombat_Data),
     ]
 
-
-class APopulationOpportunityPoint_Data(Structure):
-    _fields_ = [
+    APopulationOpportunityPoint_Data._fields_ = [
         ("VfTable_IIPopulationSpawnPoint", FPointer),
         ("PopulationDef", POINTER(UPopulationDefinition)),
         ("SpawnAndCullRadius", c_float),
@@ -3770,16 +5701,13 @@ class APopulationOpportunityPoint_Data(Structure):
         ("bHasSpawned", c_bool, 1),
         ("bActiveSpawn", c_bool, 1),
         ("bDetectedPlayer", c_bool, 1),
-        ("", c_ulong, 0),
         ("AISpawnStyle", c_ubyte),
         ("InitialAction", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("InitialActionDestinations", TArray_AActorPtr),
     ]
 
-
-class APopulationOpportunityPoint(Structure):
-    _fields_ = [
+    APopulationOpportunityPoint._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AInfo", AInfo_Data),
@@ -3787,13 +5715,9 @@ class APopulationOpportunityPoint(Structure):
         ("APopulationOpportunityPoint", APopulationOpportunityPoint_Data),
     ]
 
+    UPopulationOpportunityAreaRenderingComponent_Data._fields_ = []
 
-class UPopulationOpportunityAreaRenderingComponent_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationOpportunityAreaRenderingComponent(Structure):
-    _fields_ = [
+    UPopulationOpportunityAreaRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -3804,13 +5728,9 @@ class UPopulationOpportunityAreaRenderingComponent(Structure):
         ),
     ]
 
+    UPopulationOpportunityAttributeContextResolver_Data._fields_ = []
 
-class UPopulationOpportunityAttributeContextResolver_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationOpportunityAttributeContextResolver(Structure):
-    _fields_ = [
+    UPopulationOpportunityAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         (
@@ -3819,13 +5739,9 @@ class UPopulationOpportunityAttributeContextResolver(Structure):
         ),
     ]
 
+    UPopulationOpportunityPointRenderingComponent_Data._fields_ = []
 
-class UPopulationOpportunityPointRenderingComponent_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationOpportunityPointRenderingComponent(Structure):
-    _fields_ = [
+    UPopulationOpportunityPointRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -3836,15 +5752,13 @@ class UPopulationOpportunityPointRenderingComponent(Structure):
         ),
     ]
 
-
-class APopulationPoint_Data(Structure):
-    _fields_ = [
+    APopulationPoint_Data._fields_ = [
         ("VfTable_IIPopulationSpawnPoint", FPointer),
         ("Flags", c_int),
         ("AISpawnStyle", c_ubyte),
         ("InitialAction", c_ubyte),
         ("ConstraintType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x1),
+        ("Unknown1", c_ubyte * 0x1),
         ("InitialActionDestinations", TArray_AActorPtr),
         ("InitialMovementHoldTime", c_float),
         ("bAttachSpawnedToBase", c_bool, 1),
@@ -3852,45 +5766,33 @@ class APopulationPoint_Data(Structure):
         ("bDisableAfterUse", c_bool, 1),
         ("TestVisibility", c_bool, 1),
         ("TestFOV", c_bool, 1),
-        ("", c_ulong, 0),
         ("InitialDestinationIndex", c_int),
         ("TagsToUseWithConstraint", TArray_UPopulationSpawnedActorTagDefinitionPtr),
         ("OnSpawnCustomizations", TArray_UBehaviorBasePtr),
         ("MinSpawnDistance", c_float),
     ]
 
-
-class APopulationPoint(Structure):
-    _fields_ = [
+    APopulationPoint._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("APopulationPoint", APopulationPoint_Data),
     ]
 
-
-class APopulationPoint_Dynamic_Data(Structure):
-    _fields_ = [
+    APopulationPoint_Dynamic_Data._fields_ = [
         ("DynamicPointName", FName),
         ("bSaveAsInstanceDataOnBase", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class APopulationPoint_Dynamic(Structure):
-    _fields_ = [
+    APopulationPoint_Dynamic._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("APopulationPoint", APopulationPoint_Data),
         ("APopulationPoint_Dynamic", APopulationPoint_Dynamic_Data),
     ]
 
+    UPopulationPointRenderingComponent_Data._fields_ = []
 
-class UPopulationPointRenderingComponent_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationPointRenderingComponent(Structure):
-    _fields_ = [
+    UPopulationPointRenderingComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
@@ -3898,13 +5800,9 @@ class UPopulationPointRenderingComponent(Structure):
         ("UPopulationPointRenderingComponent", UPopulationPointRenderingComponent_Data),
     ]
 
+    USeqEvent_EncounterWaveComplete_Data._fields_ = [("CurrentWave", c_int)]
 
-class USeqEvent_EncounterWaveComplete_Data(Structure):
-    _fields_ = [("CurrentWave", c_int)]
-
-
-class USeqEvent_EncounterWaveComplete(Structure):
-    _fields_ = [
+    USeqEvent_EncounterWaveComplete._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -3912,16 +5810,12 @@ class USeqEvent_EncounterWaveComplete(Structure):
         ("USeqEvent_EncounterWaveComplete", USeqEvent_EncounterWaveComplete_Data),
     ]
 
-
-class USeqEvent_PopulatedActor_Data(Structure):
-    _fields_ = [
+    USeqEvent_PopulatedActor_Data._fields_ = [
         ("DestPopulationOpportunity", POINTER(APopulationOpportunity)),
         ("SpawnPoint", POINTER(AActor)),
     ]
 
-
-class USeqEvent_PopulatedActor(Structure):
-    _fields_ = [
+    USeqEvent_PopulatedActor._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -3929,16 +5823,12 @@ class USeqEvent_PopulatedActor(Structure):
         ("USeqEvent_PopulatedActor", USeqEvent_PopulatedActor_Data),
     ]
 
-
-class USeqEvent_PopulatedPoint_Data(Structure):
-    _fields_ = [
+    USeqEvent_PopulatedPoint_Data._fields_ = [
         ("DestPopulationOpportunity", POINTER(APopulationOpportunity)),
         ("SpawnPoint", POINTER(AActor)),
     ]
 
-
-class USeqEvent_PopulatedPoint(Structure):
-    _fields_ = [
+    USeqEvent_PopulatedPoint._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -3946,50 +5836,38 @@ class USeqEvent_PopulatedPoint(Structure):
         ("USeqEvent_PopulatedPoint", USeqEvent_PopulatedPoint_Data),
     ]
 
+    AGearboxHUD_Data._fields_ = []
 
-class AGearboxHUD_Data(Structure):
-    _fields_ = []
-
-
-class AGearboxHUD(Structure):
-    _fields_ = [
+    AGearboxHUD._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AHUD", AHUD_Data),
         ("AGearboxHUD", AGearboxHUD_Data),
     ]
 
-
-class UAIDefinition_Data(Structure):
-    _fields_ = [
+    UAIDefinition_Data._fields_ = [
         ("VfTable_IIBehaviorProvider", FPointer),
         ("BehaviorProviderDefinition", POINTER(UBehaviorProviderDefinition)),
         ("AIBehaviorProviderDefinition", POINTER(UAIBehaviorProviderDefinition)),
         ("bHealOnReset", c_bool, 1),
-        ("", c_ulong, 0),
         ("NodeList", TArray_FAITreeData),
         ("TargetSearchRadius", c_float),
         ("TargetingDef", POINTER(UTargetingDefinition)),
     ]
 
+    UAIDefinition._fields_ = [
+        ("UObject", UObject_Data),
+        ("UAIDefinition", UAIDefinition_Data),
+    ]
 
-class UAIDefinition(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UAIDefinition", UAIDefinition_Data)]
+    UBehaviorEventFilterBase_Data._fields_ = [("ShouldBeInstanced", c_bool, 1)]
 
-
-class UBehaviorEventFilterBase_Data(Structure):
-    _fields_ = [("ShouldBeInstanced", c_bool, 1), ("", c_ulong, 0)]
-
-
-class UBehaviorEventFilterBase(Structure):
-    _fields_ = [
+    UBehaviorEventFilterBase._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorEventFilterBase", UBehaviorEventFilterBase_Data),
     ]
 
-
-class UBehaviorKernel_Data(Structure):
-    _fields_ = [
+    UBehaviorKernel_Data._fields_ = [
         ("Processes", FStableArray_Mirror),
         ("ProcessDeathList", FChunkedList_Mirror),
         ("WaitingThreads", FChunkedList_Mirror),
@@ -4010,48 +5888,37 @@ class UBehaviorKernel_Data(Structure):
         ("EventFilterObjects", TArray_UObjectPtr),
     ]
 
+    UBehaviorKernel._fields_ = [
+        ("UObject", UObject_Data),
+        ("UBehaviorKernel", UBehaviorKernel_Data),
+    ]
 
-class UBehaviorKernel(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UBehaviorKernel", UBehaviorKernel_Data)]
-
-
-class UBehaviorProviderDefinition_Data(Structure):
-    _fields_ = [
+    UBehaviorProviderDefinition_Data._fields_ = [
         ("CurrentVersion", c_int),
         ("BehaviorSequences", TArray_FBehaviorSequenceData),
     ]
 
-
-class UBehaviorProviderDefinition(Structure):
-    _fields_ = [
+    UBehaviorProviderDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UBehaviorProviderDefinition", UBehaviorProviderDefinition_Data),
     ]
 
+    UAIBehaviorProviderDefinition_Data._fields_ = []
 
-class UAIBehaviorProviderDefinition_Data(Structure):
-    _fields_ = []
-
-
-class UAIBehaviorProviderDefinition(Structure):
-    _fields_ = [
+    UAIBehaviorProviderDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UBehaviorProviderDefinition", UBehaviorProviderDefinition_Data),
         ("UAIBehaviorProviderDefinition", UAIBehaviorProviderDefinition_Data),
     ]
 
-
-class UBehaviorSequenceCustomEnableCondition_Data(Structure):
-    _fields_ = [
+    UBehaviorSequenceCustomEnableCondition_Data._fields_ = [
         ("LinkedBehaviorSequences", FChunkedList_Mirror),
         ("BehaviorKernelInstanceTagForTransientState", c_ubyte),
     ]
 
-
-class UBehaviorSequenceCustomEnableCondition(Structure):
-    _fields_ = [
+    UBehaviorSequenceCustomEnableCondition._fields_ = [
         ("UObject", UObject_Data),
         (
             "UBehaviorSequenceCustomEnableCondition",
@@ -4059,16 +5926,12 @@ class UBehaviorSequenceCustomEnableCondition(Structure):
         ),
     ]
 
-
-class UBehaviorSequenceEnableByMultipleConditions_Data(Structure):
-    _fields_ = [
+    UBehaviorSequenceEnableByMultipleConditions_Data._fields_ = [
         ("EnableConditions", TArray_UBehaviorSequenceCustomEnableConditionPtr),
         ("Operator", c_ubyte),
     ]
 
-
-class UBehaviorSequenceEnableByMultipleConditions(Structure):
-    _fields_ = [
+    UBehaviorSequenceEnableByMultipleConditions._fields_ = [
         ("UObject", UObject_Data),
         (
             "UBehaviorSequenceCustomEnableCondition",
@@ -4080,71 +5943,52 @@ class UBehaviorSequenceEnableByMultipleConditions(Structure):
         ),
     ]
 
+    UIBehaviorConsumer_Data._fields_ = []
 
-class UIBehaviorConsumer_Data(Structure):
-    _fields_ = []
-
-
-class UIBehaviorConsumer(Structure):
-    _fields_ = [
+    UIBehaviorConsumer._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIBehaviorConsumer", UIBehaviorConsumer_Data),
     ]
 
+    UIBehaviorProvider_Data._fields_ = []
 
-class UIBehaviorProvider_Data(Structure):
-    _fields_ = []
-
-
-class UIBehaviorProvider(Structure):
-    _fields_ = [
+    UIBehaviorProvider._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UIBehaviorProvider", UIBehaviorProvider_Data),
     ]
 
+    UICustomEvent_Data._fields_ = []
 
-class UICustomEvent_Data(Structure):
-    _fields_ = []
-
-
-class UICustomEvent(Structure):
-    _fields_ = [
+    UICustomEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UICustomEvent", UICustomEvent_Data),
     ]
 
+    UITimerBehavior_Data._fields_ = []
 
-class UITimerBehavior_Data(Structure):
-    _fields_ = []
-
-
-class UITimerBehavior(Structure):
-    _fields_ = [
+    UITimerBehavior._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("UITimerBehavior", UITimerBehavior_Data),
     ]
 
-
-class UGearboxAnimDefinition_Data(Structure):
-    _fields_ = [
+    UGearboxAnimDefinition_Data._fields_ = [
         ("VfTable_IIBehaviorProvider", FPointer),
         ("AnimName", FName),
         ("BlendInTime", c_float),
         ("BlendOutTime", c_float),
         ("PlayRate", c_float),
         ("EndingCondition", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("AnimSet", POINTER(UAnimSet)),
         ("bMirrored", c_bool, 1),
         ("BlendPerBone", c_bool, 1),
         ("DisableAnimSequenceNotifies", c_bool, 1),
         ("bOnlyPlayNotifiesWhileActive", c_bool, 1),
         ("bReverseAnimSearchOrder", c_bool, 1),
-        ("", c_ulong, 0),
         ("AnimNodeName", FName),
         ("RootMotionDef", POINTER(URootMotionDefinition)),
         ("BoneBlendDef", POINTER(UFeatherBoneBlendDefinition)),
@@ -4156,18 +6000,14 @@ class UGearboxAnimDefinition_Data(Structure):
         ("BehaviorProviderDefinition", POINTER(UBehaviorProviderDefinition)),
     ]
 
-
-class UGearboxAnimDefinition(Structure):
-    _fields_ = [
+    UGearboxAnimDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("USpecialMoveDefinition", USpecialMoveDefinition_Data),
         ("UGearboxAnimDefinition", UGearboxAnimDefinition_Data),
     ]
 
-
-class UBehavior_TriggerDialogEvent_Data(Structure):
-    _fields_ = [
+    UBehavior_TriggerDialogEvent_Data._fields_ = [
         ("EventTag", POINTER(UGearboxDialogEventTag)),
         ("Group", POINTER(UGearboxDialogGroup)),
         ("NameTag", POINTER(UGearboxDialogNameTag)),
@@ -4175,22 +6015,17 @@ class UBehavior_TriggerDialogEvent_Data(Structure):
         ("bForcePlayImmediate", c_bool, 1),
         ("bCheckCanPreview", c_bool, 1),
         ("bCanPreview", c_bool, 1),
-        ("", c_ulong, 0),
         ("MyEventData", POINTER(UGearboxDialogEventData)),
         ("MyDataUseCount", c_int),
     ]
 
-
-class UBehavior_TriggerDialogEvent(Structure):
-    _fields_ = [
+    UBehavior_TriggerDialogEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_TriggerDialogEvent", UBehavior_TriggerDialogEvent_Data),
     ]
 
-
-class AGearboxDialogActor_Data(Structure):
-    _fields_ = [
+    AGearboxDialogActor_Data._fields_ = [
         ("VfTable_IGearboxDialogInterface", FPointer),
         ("DialogGroups", TArray_UGearboxDialogGroupPtr),
         ("NameTag", POINTER(UGearboxDialogNameTag)),
@@ -4200,35 +6035,26 @@ class AGearboxDialogActor_Data(Structure):
         ("CurrentNameTag", POINTER(UGearboxDialogNameTag)),
     ]
 
-
-class AGearboxDialogActor(Structure):
-    _fields_ = [
+    AGearboxDialogActor._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("AGearboxDialogActor", AGearboxDialogActor_Data),
     ]
 
-
-class UGearboxDialogComponent_Data(Structure):
-    _fields_ = [
+    UGearboxDialogComponent_Data._fields_ = [
         ("EventData", POINTER(UGearboxDialogEventData)),
         ("ClientPlayingInfo", FAkPlayingInfo),
         ("bIsReattaching", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UGearboxDialogComponent(Structure):
-    _fields_ = [
+    UGearboxDialogComponent._fields_ = [
         ("UObject", UObject_Data),
         ("UComponent", UComponent_Data),
         ("UActorComponent", UActorComponent_Data),
         ("UGearboxDialogComponent", UGearboxDialogComponent_Data),
     ]
 
-
-class UGearboxDialogEventData_Data(Structure):
-    _fields_ = [
+    UGearboxDialogEventData_Data._fields_ = [
         ("EventInfo", FDialogEventInfo),
         ("Instigator", POINTER(AActor)),
         ("Other", POINTER(AActor)),
@@ -4243,49 +6069,36 @@ class UGearboxDialogEventData_Data(Structure):
         ("UseCount", c_int),
     ]
 
-
-class UGearboxDialogEventData(Structure):
-    _fields_ = [
+    UGearboxDialogEventData._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxDialogEventData", UGearboxDialogEventData_Data),
     ]
 
-
-class UGearboxDialogEventTag_Data(Structure):
-    _fields_ = [
+    UGearboxDialogEventTag_Data._fields_ = [
         ("bGroupEvent", c_bool, 1),
         ("bSoundEffect", c_bool, 1),
         ("bIsDeathScream", c_bool, 1),
-        ("", c_ulong, 0),
         ("Priority", POINTER(UGearboxDialogPriority)),
     ]
 
-
-class UGearboxDialogEventTag(Structure):
-    _fields_ = [
+    UGearboxDialogEventTag._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGearboxDialogEventTag", UGearboxDialogEventTag_Data),
     ]
 
-
-class UGearboxDialogGlobalsDefinition_Data(Structure):
-    _fields_ = [
+    UGearboxDialogGlobalsDefinition_Data._fields_ = [
         ("PitchRTPC", POINTER(UAkRtpc)),
         ("Priorities", TArray_UGearboxDialogPriorityPtr),
     ]
 
-
-class UGearboxDialogGlobalsDefinition(Structure):
-    _fields_ = [
+    UGearboxDialogGlobalsDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGearboxDialogGlobalsDefinition", UGearboxDialogGlobalsDefinition_Data),
     ]
 
-
-class UGearboxDialogGroup_Data(Structure):
-    _fields_ = [
+    UGearboxDialogGroup_Data._fields_ = [
         ("EventTagPackages", TArray_UPackagePtr),
         ("NameTags", TArray_UGearboxDialogNameTagPtr),
         ("EventTags", TArray_UGearboxDialogEventTagPtr),
@@ -4298,31 +6111,22 @@ class UGearboxDialogGroup_Data(Structure):
         ("TalkActs", TArray_FTalkActData),
     ]
 
-
-class UGearboxDialogGroup(Structure):
-    _fields_ = [
+    UGearboxDialogGroup._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxDialogGroup", UGearboxDialogGroup_Data),
     ]
 
+    UGearboxDialogTemplateGroup_Data._fields_ = []
 
-class UGearboxDialogTemplateGroup_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogTemplateGroup(Structure):
-    _fields_ = [
+    UGearboxDialogTemplateGroup._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxDialogGroup", UGearboxDialogGroup_Data),
         ("UGearboxDialogTemplateGroup", UGearboxDialogTemplateGroup_Data),
     ]
 
-
-class UGearboxDialogManager_Data(Structure):
-    _fields_ = [
+    UGearboxDialogManager_Data._fields_ = [
         ("bEnabled", c_bool, 1),
         ("bShowDebug", c_bool, 1),
-        ("", c_ulong, 0),
         ("Talkers", TArray_AActorPtr),
         ("DisabledTalkers", TArray_AActorPtr),
         ("Groups", TArray_UGearboxDialogGroupPtr),
@@ -4333,74 +6137,55 @@ class UGearboxDialogManager_Data(Structure):
         ("EventDataClass", POINTER(UClass)),
     ]
 
-
-class UGearboxDialogManager(Structure):
-    _fields_ = [
+    UGearboxDialogManager._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxDialogManager", UGearboxDialogManager_Data),
     ]
 
+    UGearboxDialogNameTag_Data._fields_ = [
+        ("NameTag", FName),
+        ("ParentTag", POINTER(UGearboxDialogNameTag)),
+    ]
 
-class UGearboxDialogNameTag_Data(Structure):
-    _fields_ = [("NameTag", FName), ("ParentTag", POINTER(UGearboxDialogNameTag))]
-
-
-class UGearboxDialogNameTag(Structure):
-    _fields_ = [
+    UGearboxDialogNameTag._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGearboxDialogNameTag", UGearboxDialogNameTag_Data),
     ]
 
+    UGearboxDialogPriority_Data._fields_ = []
 
-class UGearboxDialogPriority_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogPriority(Structure):
-    _fields_ = [
+    UGearboxDialogPriority._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UGearboxDialogPriority", UGearboxDialogPriority_Data),
     ]
 
+    UGearboxDialogNode_Data._fields_ = [("NodeID", c_int)]
 
-class UGearboxDialogNode_Data(Structure):
-    _fields_ = [("NodeID", c_int)]
-
-
-class UGearboxDialogNode(Structure):
-    _fields_ = [
+    UGearboxDialogNode._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
     ]
 
+    UGearboxDialogAction_Data._fields_ = []
 
-class UGearboxDialogAction_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogAction(Structure):
-    _fields_ = [
+    UGearboxDialogAction._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
         ("UGearboxDialogAction", UGearboxDialogAction_Data),
     ]
 
-
-class UGearboxDialogAct_Chance_Data(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Chance_Data._fields_ = [
         ("Chance", c_float),
         ("QuietTimeMin", c_float),
         ("QuietTimeMax", c_float),
         ("NextFireTime", c_float),
     ]
 
-
-class UGearboxDialogAct_Chance(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Chance._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4408,13 +6193,9 @@ class UGearboxDialogAct_Chance(Structure):
         ("UGearboxDialogAct_Chance", UGearboxDialogAct_Chance_Data),
     ]
 
+    UGearboxDialogAct_Compare_Data._fields_ = []
 
-class UGearboxDialogAct_Compare_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogAct_Compare(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Compare._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4422,13 +6203,11 @@ class UGearboxDialogAct_Compare(Structure):
         ("UGearboxDialogAct_Compare", UGearboxDialogAct_Compare_Data),
     ]
 
+    UGearboxDialogAct_ObjectParameterSwitch_Data._fields_ = [
+        ("Outputs", TArray_UObjectPtr)
+    ]
 
-class UGearboxDialogAct_ObjectParameterSwitch_Data(Structure):
-    _fields_ = [("Outputs", TArray_UObjectPtr)]
-
-
-class UGearboxDialogAct_ObjectParameterSwitch(Structure):
-    _fields_ = [
+    UGearboxDialogAct_ObjectParameterSwitch._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4439,13 +6218,9 @@ class UGearboxDialogAct_ObjectParameterSwitch(Structure):
         ),
     ]
 
+    UGearboxDialogNonTemplateAction_Data._fields_ = []
 
-class UGearboxDialogNonTemplateAction_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogNonTemplateAction(Structure):
-    _fields_ = [
+    UGearboxDialogNonTemplateAction._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4453,20 +6228,15 @@ class UGearboxDialogNonTemplateAction(Structure):
         ("UGearboxDialogNonTemplateAction", UGearboxDialogNonTemplateAction_Data),
     ]
 
-
-class UGearboxDialogAct_Talk_Data(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Talk_Data._fields_ = [
         ("OutputDelay", c_float),
         ("bShowTalkers", c_bool, 1),
         ("bPreviewing", c_bool, 1),
         ("bInstigatorTalker", c_bool, 1),
-        ("", c_ulong, 0),
         ("TalkData", TArray_FGearboxDialogData),
     ]
 
-
-class UGearboxDialogAct_Talk(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Talk._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4475,13 +6245,9 @@ class UGearboxDialogAct_Talk(Structure):
         ("UGearboxDialogAct_Talk", UGearboxDialogAct_Talk_Data),
     ]
 
+    UGearboxDialogTemplateAction_Data._fields_ = []
 
-class UGearboxDialogTemplateAction_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogTemplateAction(Structure):
-    _fields_ = [
+    UGearboxDialogTemplateAction._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4489,17 +6255,12 @@ class UGearboxDialogTemplateAction(Structure):
         ("UGearboxDialogTemplateAction", UGearboxDialogTemplateAction_Data),
     ]
 
-
-class UGearboxDialogAct_Trigger_Data(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Trigger_Data._fields_ = [
         ("DialogEvent", POINTER(UGearboxDialogEventTag)),
         ("bPreviewing", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UGearboxDialogAct_Trigger(Structure):
-    _fields_ = [
+    UGearboxDialogAct_Trigger._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4508,30 +6269,21 @@ class UGearboxDialogAct_Trigger(Structure):
         ("UGearboxDialogAct_Trigger", UGearboxDialogAct_Trigger_Data),
     ]
 
-
-class UGearboxDialogEvent_Data(Structure):
-    _fields_ = [
+    UGearboxDialogEvent_Data._fields_ = [
         ("bDisabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("Tag", POINTER(UGearboxDialogEventTag)),
     ]
 
-
-class UGearboxDialogEvent(Structure):
-    _fields_ = [
+    UGearboxDialogEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
         ("UGearboxDialogEvent", UGearboxDialogEvent_Data),
     ]
 
+    UGearboxDialogTemplateEvent_Data._fields_ = []
 
-class UGearboxDialogTemplateEvent_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogTemplateEvent(Structure):
-    _fields_ = [
+    UGearboxDialogTemplateEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4539,26 +6291,18 @@ class UGearboxDialogTemplateEvent(Structure):
         ("UGearboxDialogTemplateEvent", UGearboxDialogTemplateEvent_Data),
     ]
 
+    UGearboxDialogVariable_Data._fields_ = []
 
-class UGearboxDialogVariable_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogVariable(Structure):
-    _fields_ = [
+    UGearboxDialogVariable._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
         ("UGearboxDialogVariable", UGearboxDialogVariable_Data),
     ]
 
+    UGearboxDialogVar_Instigator_Data._fields_ = []
 
-class UGearboxDialogVar_Instigator_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogVar_Instigator(Structure):
-    _fields_ = [
+    UGearboxDialogVar_Instigator._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4566,13 +6310,9 @@ class UGearboxDialogVar_Instigator(Structure):
         ("UGearboxDialogVar_Instigator", UGearboxDialogVar_Instigator_Data),
     ]
 
+    UGearboxDialogVar_LastTalker_Data._fields_ = []
 
-class UGearboxDialogVar_LastTalker_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogVar_LastTalker(Structure):
-    _fields_ = [
+    UGearboxDialogVar_LastTalker._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4580,13 +6320,11 @@ class UGearboxDialogVar_LastTalker(Structure):
         ("UGearboxDialogVar_LastTalker", UGearboxDialogVar_LastTalker_Data),
     ]
 
+    UGearboxDialogVar_NameTag_Data._fields_ = [
+        ("NameTag", POINTER(UGearboxDialogNameTag))
+    ]
 
-class UGearboxDialogVar_NameTag_Data(Structure):
-    _fields_ = [("NameTag", POINTER(UGearboxDialogNameTag))]
-
-
-class UGearboxDialogVar_NameTag(Structure):
-    _fields_ = [
+    UGearboxDialogVar_NameTag._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4594,13 +6332,9 @@ class UGearboxDialogVar_NameTag(Structure):
         ("UGearboxDialogVar_NameTag", UGearboxDialogVar_NameTag_Data),
     ]
 
+    UGearboxDialogVar_Other_Data._fields_ = []
 
-class UGearboxDialogVar_Other_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxDialogVar_Other(Structure):
-    _fields_ = [
+    UGearboxDialogVar_Other._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4608,20 +6342,15 @@ class UGearboxDialogVar_Other(Structure):
         ("UGearboxDialogVar_Other", UGearboxDialogVar_Other_Data),
     ]
 
-
-class UGearboxDialogVar_Random_Data(Structure):
-    _fields_ = [
+    UGearboxDialogVar_Random_Data._fields_ = [
         ("bNotOther", c_bool, 1),
         ("bNotInstigator", c_bool, 1),
         ("bNotLastTalker", c_bool, 1),
-        ("", c_ulong, 0),
         ("Allegiance", POINTER(UPawnAllegiance)),
         ("DistanceLimit", FAttributeInitializationData),
     ]
 
-
-class UGearboxDialogVar_Random(Structure):
-    _fields_ = [
+    UGearboxDialogVar_Random._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UGearboxDialogNode", UGearboxDialogNode_Data),
@@ -4629,13 +6358,9 @@ class UGearboxDialogVar_Random(Structure):
         ("UGearboxDialogVar_Random", UGearboxDialogVar_Random_Data),
     ]
 
+    UGearboxSeqAct_ToggleDialog_Data._fields_ = [("bDialogEnabled", c_bool, 1)]
 
-class UGearboxSeqAct_ToggleDialog_Data(Structure):
-    _fields_ = [("bDialogEnabled", c_bool, 1), ("", c_ulong, 0)]
-
-
-class UGearboxSeqAct_ToggleDialog(Structure):
-    _fields_ = [
+    UGearboxSeqAct_ToggleDialog._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -4643,9 +6368,7 @@ class UGearboxSeqAct_ToggleDialog(Structure):
         ("UGearboxSeqAct_ToggleDialog", UGearboxSeqAct_ToggleDialog_Data),
     ]
 
-
-class UGearboxSeqAct_TriggerDialog_Data(Structure):
-    _fields_ = [
+    UGearboxSeqAct_TriggerDialog_Data._fields_ = [
         ("Other", POINTER(AActor)),
         ("EventTag", POINTER(UGearboxDialogEventTag)),
         ("NameTag", POINTER(UGearboxDialogNameTag)),
@@ -4653,12 +6376,9 @@ class UGearboxSeqAct_TriggerDialog_Data(Structure):
         ("MyDataUseCount", c_int),
         ("bCheckCanPreview", c_bool, 1),
         ("bCanPreview", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UGearboxSeqAct_TriggerDialog(Structure):
-    _fields_ = [
+    UGearboxSeqAct_TriggerDialog._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -4667,13 +6387,11 @@ class UGearboxSeqAct_TriggerDialog(Structure):
         ("UGearboxSeqAct_TriggerDialog", UGearboxSeqAct_TriggerDialog_Data),
     ]
 
+    UGearboxSeqAct_TriggerDialogName_Data._fields_ = [
+        ("Group", POINTER(UGearboxDialogGroup))
+    ]
 
-class UGearboxSeqAct_TriggerDialogName_Data(Structure):
-    _fields_ = [("Group", POINTER(UGearboxDialogGroup))]
-
-
-class UGearboxSeqAct_TriggerDialogName(Structure):
-    _fields_ = [
+    UGearboxSeqAct_TriggerDialogName._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -4683,12 +6401,10 @@ class UGearboxSeqAct_TriggerDialogName(Structure):
         ("UGearboxSeqAct_TriggerDialogName", UGearboxSeqAct_TriggerDialogName_Data),
     ]
 
-
-class UGearboxAccountActions_Data(Structure):
-    _fields_ = [
+    UGearboxAccountActions_Data._fields_ = [
         ("CurrentConsumeCount", c_int),
         ("CurrentControllerId", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("CurrentEntitlement", POINTER(UGearboxAccountEntitlement)),
         ("CurrentBulkConsumeEntitlements", TArray_UGearboxAccountEntitlementPtr),
         ("CurrentBulkConsumeControllerIds", TArray_int),
@@ -4700,20 +6416,15 @@ class UGearboxAccountActions_Data(Structure):
         ("__OnEntitlementConsumed__Delegate", FScriptDelegate),
     ]
 
-
-class UGearboxAccountActions(Structure):
-    _fields_ = [
+    UGearboxAccountActions._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxAccountActions", UGearboxAccountActions_Data),
     ]
 
-
-class UGearboxAccountData_Data(Structure):
-    _fields_ = [
+    UGearboxAccountData_Data._fields_ = [
         ("RequestId", FString),
         ("SignedIn", c_bool, 1),
         ("HasValidPlatform", c_bool, 1),
-        ("", c_ulong, 0),
         ("PlatformLoginName", FString),
         ("NextEntitlementUpdateTime", FDouble),
         ("Entitlements", TArray_UGearboxAccountEntitlementPtr),
@@ -4721,20 +6432,16 @@ class UGearboxAccountData_Data(Structure):
         ("EntitlementsUpdatedDelegates", TArray_FScriptDelegate),
         ("Services", TArray_USparkServiceConfigurationPtr),
         ("AgreementsSigning", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SupportId", FString),
     ]
 
-
-class UGearboxAccountData(Structure):
-    _fields_ = [
+    UGearboxAccountData._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxAccountData", UGearboxAccountData_Data),
     ]
 
-
-class UGearboxProcess_Data(Structure):
-    _fields_ = [
+    UGearboxProcess_Data._fields_ = [
         ("FirstAttemptDelay", c_int),
         ("BaseRetrySeconds", c_int),
         ("MaxRetryAttempts", c_int),
@@ -4744,66 +6451,51 @@ class UGearboxProcess_Data(Structure):
         ("Attempts", c_int),
         ("WaitTime", c_float),
         ("Waiting", c_bool, 1),
-        ("", c_ulong, 0),
         ("CurrentStep", c_int),
         ("FailureStep", c_int),
     ]
 
+    UGearboxProcess._fields_ = [
+        ("UObject", UObject_Data),
+        ("UGearboxProcess", UGearboxProcess_Data),
+    ]
 
-class UGearboxProcess(Structure):
-    _fields_ = [("UObject", UObject_Data), ("UGearboxProcess", UGearboxProcess_Data)]
-
-
-class USparkInitializationProcess_Data(Structure):
-    _fields_ = [
+    USparkInitializationProcess_Data._fields_ = [
         ("Data", POINTER(UGearboxAccountData)),
         ("PlayerIndex", c_int),
         ("SparkInitializedDelegates", TArray_FScriptDelegate),
         ("bPrimary", c_bool, 1),
         ("ValidAccount", c_bool, 1),
-        ("", c_ulong, 0),
         ("AsyncTicket", FString),
     ]
 
-
-class USparkInitializationProcess(Structure):
-    _fields_ = [
+    USparkInitializationProcess._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxProcess", UGearboxProcess_Data),
         ("USparkInitializationProcess", USparkInitializationProcess_Data),
     ]
 
-
-class ULeviathanService_Data(Structure):
-    _fields_ = [
+    ULeviathanService_Data._fields_ = [
         ("VfTable_ISparkUpdateCallback", FPointer),
         ("EventBufferSize", c_int),
         ("StatBufferSize", c_int),
         ("AtomTableBufferSize", c_int),
     ]
 
-
-class ULeviathanService(Structure):
-    _fields_ = [
+    ULeviathanService._fields_ = [
         ("UObject", UObject_Data),
         ("ULeviathanService", ULeviathanService_Data),
     ]
 
+    USparkInterface_Data._fields_ = []
 
-class USparkInterface_Data(Structure):
-    _fields_ = []
-
-
-class USparkInterface(Structure):
-    _fields_ = [
+    USparkInterface._fields_ = [
         ("UObject", UObject_Data),
         ("UInterface", UInterface_Data),
         ("USparkInterface", USparkInterface_Data),
     ]
 
-
-class USparkInterfaceImpl_Data(Structure):
-    _fields_ = [
+    USparkInterfaceImpl_Data._fields_ = [
         ("VfTable_ISparkInterface", FPointer),
         ("VfTable_FTickableObject", FPointer),
         ("SparkInitialization", POINTER(USparkInitializationProcess)),
@@ -4814,7 +6506,6 @@ class USparkInterfaceImpl_Data(Structure):
         ("ReadBufferSize", c_int),
         ("TmsInitComplete", c_bool, 1),
         ("UpdateEmergencyMessage", c_bool, 1),
-        ("", c_ulong, 0),
         ("EmergencyMessage", FString),
         ("Requests", TArray_FSparkOutstandingRequest),
         ("LastHttpRequestRetries", c_int),
@@ -4832,16 +6523,12 @@ class USparkInterfaceImpl_Data(Structure):
         ("__OnSparkEmergencyMessageUpdated__Delegate", FScriptDelegate),
     ]
 
-
-class USparkInterfaceImpl(Structure):
-    _fields_ = [
+    USparkInterfaceImpl._fields_ = [
         ("UObject", UObject_Data),
         ("USparkInterfaceImpl", USparkInterfaceImpl_Data),
     ]
 
-
-class USparkServiceConfiguration_Data(Structure):
-    _fields_ = [
+    USparkServiceConfiguration_Data._fields_ = [
         ("ServiceName", FName),
         ("ConfigurationGroup", FName),
         ("Keys", TArray_FString),
@@ -4849,16 +6536,12 @@ class USparkServiceConfiguration_Data(Structure):
         ("OverrideUrl", FString),
     ]
 
-
-class USparkServiceConfiguration(Structure):
-    _fields_ = [
+    USparkServiceConfiguration._fields_ = [
         ("UObject", UObject_Data),
         ("USparkServiceConfiguration", USparkServiceConfiguration_Data),
     ]
 
-
-class USparkTypes_Data(Structure):
-    _fields_ = [
+    USparkTypes_Data._fields_ = [
         ("__OnSparkRequestComplete__Delegate", FScriptDelegate),
         ("__OnSparkConfigReceived__Delegate", FScriptDelegate),
         ("__OnSparkInitialized__Delegate", FScriptDelegate),
@@ -4866,142 +6549,99 @@ class USparkTypes_Data(Structure):
         ("__OnEntitlementsUpdated__Delegate", FScriptDelegate),
     ]
 
+    USparkTypes._fields_ = [
+        ("UObject", UObject_Data),
+        ("USparkTypes", USparkTypes_Data),
+    ]
 
-class USparkTypes(Structure):
-    _fields_ = [("UObject", UObject_Data), ("USparkTypes", USparkTypes_Data)]
+    UAction_ChangeRuleSet_Data._fields_ = [("NewRuleSet", POINTER(URuleSet))]
 
-
-class UAction_ChangeRuleSet_Data(Structure):
-    _fields_ = [("NewRuleSet", POINTER(URuleSet))]
-
-
-class UAction_ChangeRuleSet(Structure):
-    _fields_ = [
+    UAction_ChangeRuleSet._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UAction_ChangeRuleSet", UAction_ChangeRuleSet_Data),
     ]
 
+    URES_RuleSetChange_Data._fields_ = []
 
-class URES_RuleSetChange_Data(Structure):
-    _fields_ = []
-
-
-class URES_RuleSetChange(Structure):
-    _fields_ = [
+    URES_RuleSetChange._fields_ = [
         ("UObject", UObject_Data),
         ("UActionResource", UActionResource_Data),
         ("URES_RuleSetChange", URES_RuleSetChange_Data),
     ]
 
+    UAction_FaceThreat_Data._fields_ = []
 
-class UAction_FaceThreat_Data(Structure):
-    _fields_ = []
-
-
-class UAction_FaceThreat(Structure):
-    _fields_ = [
+    UAction_FaceThreat._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
         ("UAction_FaceThreat", UAction_FaceThreat_Data),
     ]
 
+    URES_FacingPolicy_Data._fields_ = []
 
-class URES_FacingPolicy_Data(Structure):
-    _fields_ = []
-
-
-class URES_FacingPolicy(Structure):
-    _fields_ = [
+    URES_FacingPolicy._fields_ = [
         ("UObject", UObject_Data),
         ("UActionResource", UActionResource_Data),
         ("URES_FacingPolicy", URES_FacingPolicy_Data),
     ]
 
+    UAction_MoveRandom_Data._fields_ = []
 
-class UAction_MoveRandom_Data(Structure):
-    _fields_ = []
-
-
-class UAction_MoveRandom(Structure):
-    _fields_ = [
+    UAction_MoveRandom._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
         ("UAction_MoveRandom", UAction_MoveRandom_Data),
     ]
 
+    UAction_MoveTo_Data._fields_ = []
 
-class UAction_MoveTo_Data(Structure):
-    _fields_ = []
-
-
-class UAction_MoveTo(Structure):
-    _fields_ = [
+    UAction_MoveTo._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
         ("UAction_MoveTo", UAction_MoveTo_Data),
     ]
 
+    URES_Movement_Data._fields_ = []
 
-class URES_Movement_Data(Structure):
-    _fields_ = []
-
-
-class URES_Movement(Structure):
-    _fields_ = [
+    URES_Movement._fields_ = [
         ("UObject", UObject_Data),
         ("UActionResource", UActionResource_Data),
         ("URES_Movement", URES_Movement_Data),
     ]
 
+    UAction_PopRuleSet_Data._fields_ = []
 
-class UAction_PopRuleSet_Data(Structure):
-    _fields_ = []
-
-
-class UAction_PopRuleSet(Structure):
-    _fields_ = [
+    UAction_PopRuleSet._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
         ("UAction_PopRuleSet", UAction_PopRuleSet_Data),
     ]
 
+    UAction_PushRuleSet_Data._fields_ = [("NewRuleSet", POINTER(URuleSet))]
 
-class UAction_PushRuleSet_Data(Structure):
-    _fields_ = [("NewRuleSet", POINTER(URuleSet))]
-
-
-class UAction_PushRuleSet(Structure):
-    _fields_ = [
+    UAction_PushRuleSet._fields_ = [
         ("UObject", UObject_Data),
         ("UActionSequence", UActionSequence_Data),
         ("UActionSequencePawn", UActionSequencePawn_Data),
         ("UAction_PushRuleSet", UAction_PushRuleSet_Data),
     ]
 
+    UActorAttributeContextResolver_Data._fields_ = []
 
-class UActorAttributeContextResolver_Data(Structure):
-    _fields_ = []
-
-
-class UActorAttributeContextResolver(Structure):
-    _fields_ = [
+    UActorAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         ("UActorAttributeContextResolver", UActorAttributeContextResolver_Data),
     ]
 
+    UAIComponentAttributeContextResolver_Data._fields_ = []
 
-class UAIComponentAttributeContextResolver_Data(Structure):
-    _fields_ = []
-
-
-class UAIComponentAttributeContextResolver(Structure):
-    _fields_ = [
+    UAIComponentAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         (
@@ -5010,117 +6650,90 @@ class UAIComponentAttributeContextResolver(Structure):
         ),
     ]
 
+    UAIStateBase_Data._fields_ = []
 
-class UAIStateBase_Data(Structure):
-    _fields_ = []
-
-
-class UAIStateBase(Structure):
-    _fields_ = [
+    UAIStateBase._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UAIStateBase", UAIStateBase_Data),
     ]
 
+    UAIState_Data._fields_ = []
 
-class UAIState_Data(Structure):
-    _fields_ = []
-
-
-class UAIState(Structure):
-    _fields_ = [
+    UAIState._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UAIStateBase", UAIStateBase_Data),
         ("UAIState", UAIState_Data),
     ]
 
+    UAIState_Priority_Data._fields_ = []
 
-class UAIState_Priority_Data(Structure):
-    _fields_ = []
-
-
-class UAIState_Priority(Structure):
-    _fields_ = [
+    UAIState_Priority._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UAIStateBase", UAIStateBase_Data),
         ("UAIState_Priority", UAIState_Priority_Data),
     ]
 
+    UAIState_Random_Data._fields_ = []
 
-class UAIState_Random_Data(Structure):
-    _fields_ = []
-
-
-class UAIState_Random(Structure):
-    _fields_ = [
+    UAIState_Random._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UAIStateBase", UAIStateBase_Data),
         ("UAIState_Random", UAIState_Random_Data),
     ]
 
+    UAIState_Sequential_Data._fields_ = []
 
-class UAIState_Sequential_Data(Structure):
-    _fields_ = []
-
-
-class UAIState_Sequential(Structure):
-    _fields_ = [
+    UAIState_Sequential._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxEditorNode", UGearboxEditorNode_Data),
         ("UAIStateBase", UAIStateBase_Data),
         ("UAIState_Sequential", UAIState_Sequential_Data),
     ]
 
+    UBehavior_AIHold_Data._fields_ = [
+        ("Reason", FName),
+        ("Action", c_ubyte),
+        ("Type", c_ubyte),
+    ]
 
-class UBehavior_AIHold_Data(Structure):
-    _fields_ = [("Reason", FName), ("Action", c_ubyte), ("Type", c_ubyte)]
-
-
-class UBehavior_AIHold(Structure):
-    _fields_ = [
+    UBehavior_AIHold._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_AIHold", UBehavior_AIHold_Data),
     ]
 
+    UBehavior_AIPriority_Data._fields_ = [
+        ("PriorityModifier", c_float),
+        ("Target", FBehaviorContextData),
+    ]
 
-class UBehavior_AIPriority_Data(Structure):
-    _fields_ = [("PriorityModifier", c_float), ("Target", FBehaviorContextData)]
-
-
-class UBehavior_AIPriority(Structure):
-    _fields_ = [
+    UBehavior_AIPriority._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_AIPriority", UBehavior_AIPriority_Data),
     ]
 
+    UBehavior_AITargeting_Data._fields_ = [
+        ("NewTargetingDefinition", POINTER(UTargetingDefinition))
+    ]
 
-class UBehavior_AITargeting_Data(Structure):
-    _fields_ = [("NewTargetingDefinition", POINTER(UTargetingDefinition))]
-
-
-class UBehavior_AITargeting(Structure):
-    _fields_ = [
+    UBehavior_AITargeting._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_AITargeting", UBehavior_AITargeting_Data),
     ]
 
-
-class UBehavior_ChangeAnyBehaviorSequenceState_Data(Structure):
-    _fields_ = [
+    UBehavior_ChangeAnyBehaviorSequenceState_Data._fields_ = [
         ("Action", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SequenceName", FName),
     ]
 
-
-class UBehavior_ChangeAnyBehaviorSequenceState(Structure):
-    _fields_ = [
+    UBehavior_ChangeAnyBehaviorSequenceState._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         (
@@ -5129,17 +6742,13 @@ class UBehavior_ChangeAnyBehaviorSequenceState(Structure):
         ),
     ]
 
-
-class UBehavior_ChangeLocalBehaviorSequenceState_Data(Structure):
-    _fields_ = [
+    UBehavior_ChangeLocalBehaviorSequenceState_Data._fields_ = [
         ("Action", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SequenceName", FName),
     ]
 
-
-class UBehavior_ChangeLocalBehaviorSequenceState(Structure):
-    _fields_ = [
+    UBehavior_ChangeLocalBehaviorSequenceState._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         (
@@ -5148,192 +6757,137 @@ class UBehavior_ChangeLocalBehaviorSequenceState(Structure):
         ),
     ]
 
+    UBehavior_CompareBool_Data._fields_ = [("BoolValue", c_bool, 1)]
 
-class UBehavior_CompareBool_Data(Structure):
-    _fields_ = [("BoolValue", c_bool, 1), ("", c_ulong, 0)]
-
-
-class UBehavior_CompareBool(Structure):
-    _fields_ = [
+    UBehavior_CompareBool._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_CompareBool", UBehavior_CompareBool_Data),
     ]
 
-
-class UBehavior_CompareValues_Data(Structure):
-    _fields_ = [
+    UBehavior_CompareValues_Data._fields_ = [
         ("ValueA", FAttributeInitializationData),
         ("ContextB", FBehaviorContextData),
         ("ValueB", FAttributeInitializationData),
     ]
 
-
-class UBehavior_CompareValues(Structure):
-    _fields_ = [
+    UBehavior_CompareValues._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_CompareValues", UBehavior_CompareValues_Data),
     ]
 
+    UBehavior_CustomEvent_Data._fields_ = [("CustomEventName", FName)]
 
-class UBehavior_CustomEvent_Data(Structure):
-    _fields_ = [("CustomEventName", FName)]
-
-
-class UBehavior_CustomEvent(Structure):
-    _fields_ = [
+    UBehavior_CustomEvent._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_CustomEvent", UBehavior_CustomEvent_Data),
     ]
 
+    UBehavior_Delay_Data._fields_ = [("Delay", c_float)]
 
-class UBehavior_Delay_Data(Structure):
-    _fields_ = [("Delay", c_float)]
-
-
-class UBehavior_Delay(Structure):
-    _fields_ = [
+    UBehavior_Delay._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_Delay", UBehavior_Delay_Data),
     ]
 
+    UBehavior_Gate_Data._fields_ = [("GateCount", c_int), ("ActivationCount", c_int)]
 
-class UBehavior_Gate_Data(Structure):
-    _fields_ = [("GateCount", c_int), ("ActivationCount", c_int)]
-
-
-class UBehavior_Gate(Structure):
-    _fields_ = [
+    UBehavior_Gate._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_Gate", UBehavior_Gate_Data),
     ]
 
+    UBehavior_GetFloatParam_Data._fields_ = []
 
-class UBehavior_GetFloatParam_Data(Structure):
-    _fields_ = []
-
-
-class UBehavior_GetFloatParam(Structure):
-    _fields_ = [
+    UBehavior_GetFloatParam._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UParameterBehaviorBase", UParameterBehaviorBase_Data),
         ("UBehavior_GetFloatParam", UBehavior_GetFloatParam_Data),
     ]
 
+    UBehavior_GetObjectParam_Data._fields_ = []
 
-class UBehavior_GetObjectParam_Data(Structure):
-    _fields_ = []
-
-
-class UBehavior_GetObjectParam(Structure):
-    _fields_ = [
+    UBehavior_GetObjectParam._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UParameterBehaviorBase", UParameterBehaviorBase_Data),
         ("UBehavior_GetObjectParam", UBehavior_GetObjectParam_Data),
     ]
 
+    UBehavior_GetVectorParam_Data._fields_ = [("bTreatAsVector", c_bool, 1)]
 
-class UBehavior_GetVectorParam_Data(Structure):
-    _fields_ = [("bTreatAsVector", c_bool, 1), ("", c_ulong, 0)]
-
-
-class UBehavior_GetVectorParam(Structure):
-    _fields_ = [
+    UBehavior_GetVectorParam._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UParameterBehaviorBase", UParameterBehaviorBase_Data),
         ("UBehavior_GetVectorParam", UBehavior_GetVectorParam_Data),
     ]
 
-
-class UBehavior_InterpolateFloatOverTime_Data(Structure):
-    _fields_ = [
+    UBehavior_InterpolateFloatOverTime_Data._fields_ = [
         ("Duration", c_float),
         ("UpdateInterval", c_float),
         ("EndingValue", c_float),
         ("BeginningValue", c_float),
     ]
 
-
-class UBehavior_InterpolateFloatOverTime(Structure):
-    _fields_ = [
+    UBehavior_InterpolateFloatOverTime._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_InterpolateFloatOverTime", UBehavior_InterpolateFloatOverTime_Data),
     ]
 
-
-class UBehavior_Metronome_Data(Structure):
-    _fields_ = [
+    UBehavior_Metronome_Data._fields_ = [
         ("bUseTickCount", c_bool, 1),
         ("bUseDuration", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxTickCount", c_int),
         ("CurrentTickCount", c_int),
         ("Duration", c_float),
         ("TickInterval", c_float),
     ]
 
-
-class UBehavior_Metronome(Structure):
-    _fields_ = [
+    UBehavior_Metronome._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_Metronome", UBehavior_Metronome_Data),
     ]
 
-
-class UBehavior_ModifyTimer_Data(Structure):
-    _fields_ = [
+    UBehavior_ModifyTimer_Data._fields_ = [
         ("TimerId", c_ubyte),
         ("Operation", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("NewTimerDelay", FAttributeInitializationData),
     ]
 
-
-class UBehavior_ModifyTimer(Structure):
-    _fields_ = [
+    UBehavior_ModifyTimer._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_ModifyTimer", UBehavior_ModifyTimer_Data),
     ]
 
+    UBehavior_SetFloatParam_Data._fields_ = [("Value", c_float)]
 
-class UBehavior_SetFloatParam_Data(Structure):
-    _fields_ = [("Value", c_float)]
-
-
-class UBehavior_SetFloatParam(Structure):
-    _fields_ = [
+    UBehavior_SetFloatParam._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UParameterBehaviorBase", UParameterBehaviorBase_Data),
         ("UBehavior_SetFloatParam", UBehavior_SetFloatParam_Data),
     ]
 
+    UBehavior_SetObjectParam_Data._fields_ = [("Value", POINTER(UObject))]
 
-class UBehavior_SetObjectParam_Data(Structure):
-    _fields_ = [("Value", POINTER(UObject))]
-
-
-class UBehavior_SetObjectParam(Structure):
-    _fields_ = [
+    UBehavior_SetObjectParam._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UParameterBehaviorBase", UParameterBehaviorBase_Data),
         ("UBehavior_SetObjectParam", UBehavior_SetObjectParam_Data),
     ]
 
-
-class UBehavior_SetVectorParam_Data(Structure):
-    _fields_ = [
+    UBehavior_SetVectorParam_Data._fields_ = [
         ("RValue", c_float),
         ("GValue", c_float),
         ("bValue", c_float),
@@ -5343,106 +6897,78 @@ class UBehavior_SetVectorParam_Data(Structure):
         ("bKeepB", c_bool, 1),
         ("bKeepA", c_bool, 1),
         ("bTreatAsVector", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class UBehavior_SetVectorParam(Structure):
-    _fields_ = [
+    UBehavior_SetVectorParam._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UParameterBehaviorBase", UParameterBehaviorBase_Data),
         ("UBehavior_SetVectorParam", UBehavior_SetVectorParam_Data),
     ]
 
-
-class UBehavior_SpecialMove_Data(Structure):
-    _fields_ = [
+    UBehavior_SpecialMove_Data._fields_ = [
         ("SpecialMove", POINTER(USpecialMoveDefinition)),
         ("bStopCurrentMove", c_bool, 1),
         ("bQueueIfCannotPlay", c_bool, 1),
         ("bLocal", c_bool, 1),
-        ("", c_ulong, 0),
         ("Duration", c_float),
     ]
 
-
-class UBehavior_SpecialMove(Structure):
-    _fields_ = [
+    UBehavior_SpecialMove._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_SpecialMove", UBehavior_SpecialMove_Data),
     ]
 
+    UBehavior_SpecialMoveStop_Data._fields_ = [
+        ("SpecificMove", POINTER(USpecialMoveDefinition))
+    ]
 
-class UBehavior_SpecialMoveStop_Data(Structure):
-    _fields_ = [("SpecificMove", POINTER(USpecialMoveDefinition))]
-
-
-class UBehavior_SpecialMoveStop(Structure):
-    _fields_ = [
+    UBehavior_SpecialMoveStop._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_SpecialMoveStop", UBehavior_SpecialMoveStop_Data),
     ]
 
-
-class UBehavior_StartAkAmbientSound_Data(Structure):
-    _fields_ = [
+    UBehavior_StartAkAmbientSound_Data._fields_ = [
         ("AkEvent", POINTER(UAkEvent)),
         ("SoundGroup", POINTER(AWwiseSoundGroup)),
     ]
 
-
-class UBehavior_StartAkAmbientSound(Structure):
-    _fields_ = [
+    UBehavior_StartAkAmbientSound._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_StartAkAmbientSound", UBehavior_StartAkAmbientSound_Data),
     ]
 
-
-class UBehavior_StopAkAmbientSound_Data(Structure):
-    _fields_ = [
+    UBehavior_StopAkAmbientSound_Data._fields_ = [
         ("AkEvent", POINTER(UAkEvent)),
         ("SoundGroup", POINTER(AWwiseSoundGroup)),
     ]
 
-
-class UBehavior_StopAkAmbientSound(Structure):
-    _fields_ = [
+    UBehavior_StopAkAmbientSound._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_StopAkAmbientSound", UBehavior_StopAkAmbientSound_Data),
     ]
 
+    UBehavior_StopDialog_Data._fields_ = [("EventTag", POINTER(UGearboxDialogEventTag))]
 
-class UBehavior_StopDialog_Data(Structure):
-    _fields_ = [("EventTag", POINTER(UGearboxDialogEventTag))]
-
-
-class UBehavior_StopDialog(Structure):
-    _fields_ = [
+    UBehavior_StopDialog._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_StopDialog", UBehavior_StopDialog_Data),
     ]
 
+    UBehavior_ToggleDialog_Data._fields_ = [("Option", c_ubyte)]
 
-class UBehavior_ToggleDialog_Data(Structure):
-    _fields_ = [("Option", c_ubyte)]
-
-
-class UBehavior_ToggleDialog(Structure):
-    _fields_ = [
+    UBehavior_ToggleDialog._fields_ = [
         ("UObject", UObject_Data),
         ("UBehaviorBase", UBehaviorBase_Data),
         ("UBehavior_ToggleDialog", UBehavior_ToggleDialog_Data),
     ]
 
-
-class UCameraModifierCrossfade_Data(Structure):
-    _fields_ = [
+    UCameraModifierCrossfade_Data._fields_ = [
         ("ModifierA", POINTER(UGearboxCameraModifier)),
         ("ModifierB", POINTER(UGearboxCameraModifier)),
         ("CurModifierNdx", c_int),
@@ -5452,22 +6978,17 @@ class UCameraModifierCrossfade_Data(Structure):
         ("LerpMode", c_ubyte),
     ]
 
-
-class UCameraModifierCrossfade(Structure):
-    _fields_ = [
+    UCameraModifierCrossfade._fields_ = [
         ("UObject", UObject_Data),
         ("UCameraModifier", UCameraModifier_Data),
         ("UGearboxCameraModifier", UGearboxCameraModifier_Data),
         ("UCameraModifierCrossfade", UCameraModifierCrossfade_Data),
     ]
 
-
-class UCameraModifierLookAt_Data(Structure):
-    _fields_ = [
+    UCameraModifierLookAt_Data._fields_ = [
         ("LookAtMode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bActionFinished", c_bool, 1),
-        ("", c_ulong, 0),
         ("Duration", c_float),
         ("TimeElapsed", c_float),
         ("ThirdPersonPullBackDistance", c_float),
@@ -5480,18 +7001,14 @@ class UCameraModifierLookAt_Data(Structure):
         ("LookAtBone", FName),
     ]
 
-
-class UCameraModifierLookAt(Structure):
-    _fields_ = [
+    UCameraModifierLookAt._fields_ = [
         ("UObject", UObject_Data),
         ("UCameraModifier", UCameraModifier_Data),
         ("UGearboxCameraModifier", UGearboxCameraModifier_Data),
         ("UCameraModifierLookAt", UCameraModifierLookAt_Data),
     ]
 
-
-class UDefinitionUITestCaseDefinition_Data(Structure):
-    _fields_ = [
+    UDefinitionUITestCaseDefinition_Data._fields_ = [
         ("ConstantFloat", c_float),
         ("ConstantFloatArray", TArray_float),
         ("Float", c_float),
@@ -5502,82 +7019,63 @@ class UDefinitionUITestCaseDefinition_Data(Structure):
         ("ArrayOfReferences", TArray_UGBXDefinitionPtr),
     ]
 
-
-class UDefinitionUITestCaseDefinition(Structure):
-    _fields_ = [
+    UDefinitionUITestCaseDefinition._fields_ = [
         ("UObject", UObject_Data),
         ("UGBXDefinition", UGBXDefinition_Data),
         ("UDefinitionUITestCaseDefinition", UDefinitionUITestCaseDefinition_Data),
     ]
 
-
-class USparkNews_Data(Structure):
-    _fields_ = [
+    USparkNews_Data._fields_ = [
         ("Articles", TArray_FNewsArticle),
         ("__OnNewsRetrieved__Delegate", FScriptDelegate),
     ]
 
+    USparkNews._fields_ = [("UObject", UObject_Data), ("USparkNews", USparkNews_Data)]
 
-class USparkNews(Structure):
-    _fields_ = [("UObject", UObject_Data), ("USparkNews", USparkNews_Data)]
-
-
-class UGearboxAccountEntitlement_Data(Structure):
-    _fields_ = [
+    UGearboxAccountEntitlement_Data._fields_ = [
         ("Identifier", FName),
         ("Id", c_int),
         ("Consumable", c_bool, 1),
-        ("", c_ulong, 0),
         ("ConsumableAmount", c_int),
         ("Consumed", c_int),
         ("Payload", FString),
         ("LocallyConsumed", c_int),
     ]
 
-
-class UGearboxAccountEntitlement(Structure):
-    _fields_ = [
+    UGearboxAccountEntitlement._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxAccountEntitlement", UGearboxAccountEntitlement_Data),
     ]
 
-
-class UGearboxAccountOffer_Data(Structure):
-    _fields_ = [
+    UGearboxAccountOffer_Data._fields_ = [
         ("TitleEfigs", FString),
         ("DescriptionEfigs", FString),
         ("Id", c_int),
         ("Notified", c_bool, 1),
-        ("", c_ulong, 0),
         ("DateUnlocked", FString),
     ]
 
-
-class UGearboxAccountOffer(Structure):
-    _fields_ = [
+    UGearboxAccountOffer._fields_ = [
         ("UObject", UObject_Data),
         ("UGearboxAccountOffer", UGearboxAccountOffer_Data),
     ]
 
+    APatrolDestination_Data._fields_ = [
+        ("NextPatrolPoints", TArray_APatrolDestinationPtr)
+    ]
 
-class APatrolDestination_Data(Structure):
-    _fields_ = [("NextPatrolPoints", TArray_APatrolDestinationPtr)]
-
-
-class APatrolDestination(Structure):
-    _fields_ = [
+    APatrolDestination._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("APatrolDestination", APatrolDestination_Data),
     ]
 
+    UGearboxSeqAct_TargetPriority_Data._fields_ = [
+        ("AITargets", TArray_AActorPtr),
+        ("PriorityModifier", c_float),
+    ]
 
-class UGearboxSeqAct_TargetPriority_Data(Structure):
-    _fields_ = [("AITargets", TArray_AActorPtr), ("PriorityModifier", c_float)]
-
-
-class UGearboxSeqAct_TargetPriority(Structure):
-    _fields_ = [
+    UGearboxSeqAct_TargetPriority._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5585,13 +7083,9 @@ class UGearboxSeqAct_TargetPriority(Structure):
         ("UGearboxSeqAct_TargetPriority", UGearboxSeqAct_TargetPriority_Data),
     ]
 
+    UGearboxSeqAct_CameraShake_Data._fields_ = [("CameraShake", FGearboxViewShakeInfo)]
 
-class UGearboxSeqAct_CameraShake_Data(Structure):
-    _fields_ = [("CameraShake", FGearboxViewShakeInfo)]
-
-
-class UGearboxSeqAct_CameraShake(Structure):
-    _fields_ = [
+    UGearboxSeqAct_CameraShake._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5599,20 +7093,15 @@ class UGearboxSeqAct_CameraShake(Structure):
         ("UGearboxSeqAct_CameraShake", UGearboxSeqAct_CameraShake_Data),
     ]
 
-
-class UGearboxSeqAct_PawnClonerLink_Data(Structure):
-    _fields_ = [
+    UGearboxSeqAct_PawnClonerLink_Data._fields_ = [
         ("bEnabled", c_bool, 1),
         ("bIsSpawning", c_bool, 1),
-        ("", c_ulong, 0),
         ("ClonePoints", TArray_AActorPtr),
         ("SpawnedCount", c_int),
         ("RemainingDelay", c_float),
     ]
 
-
-class UGearboxSeqAct_PawnClonerLink(Structure):
-    _fields_ = [
+    UGearboxSeqAct_PawnClonerLink._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5621,13 +7110,10 @@ class UGearboxSeqAct_PawnClonerLink(Structure):
         ("UGearboxSeqAct_PawnClonerLink", UGearboxSeqAct_PawnClonerLink_Data),
     ]
 
-
-class UGFxMovieDrawStyleInstanceData_Data(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleInstanceData_Data._fields_ = [
         ("ComponentIDName", FName),
         ("MatIndexName", FName),
         ("bAlwaysInstance", c_bool, 1),
-        ("", c_ulong, 0),
         ("MatiSource", POINTER(UMaterial)),
         ("TextureParameterName", FName),
         ("Component", POINTER(UMeshComponent)),
@@ -5635,22 +7121,16 @@ class UGFxMovieDrawStyleInstanceData_Data(Structure):
         ("Mati", POINTER(UMaterialInstanceConstant)),
     ]
 
-
-class UGFxMovieDrawStyleInstanceData(Structure):
-    _fields_ = [
+    UGFxMovieDrawStyleInstanceData._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMovieDrawStyle", UGFxMovieDrawStyle_Data),
         ("UGFxMovieDrawStyleRTT", UGFxMovieDrawStyleRTT_Data),
         ("UGFxMovieDrawStyleInstanceData", UGFxMovieDrawStyleInstanceData_Data),
     ]
 
+    USeqEvent_AllSpawned_Data._fields_ = []
 
-class USeqEvent_AllSpawned_Data(Structure):
-    _fields_ = []
-
-
-class USeqEvent_AllSpawned(Structure):
-    _fields_ = [
+    USeqEvent_AllSpawned._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5658,13 +7138,9 @@ class USeqEvent_AllSpawned(Structure):
         ("USeqEvent_AllSpawned", USeqEvent_AllSpawned_Data),
     ]
 
+    UPopulationMasterAttributeContextResolver_Data._fields_ = []
 
-class UPopulationMasterAttributeContextResolver_Data(Structure):
-    _fields_ = []
-
-
-class UPopulationMasterAttributeContextResolver(Structure):
-    _fields_ = [
+    UPopulationMasterAttributeContextResolver._fields_ = [
         ("UObject", UObject_Data),
         ("UAttributeContextResolver", UAttributeContextResolver_Data),
         (
@@ -5673,13 +7149,9 @@ class UPopulationMasterAttributeContextResolver(Structure):
         ),
     ]
 
+    USeqEvent_SinglePopulationDeath_Data._fields_ = []
 
-class USeqEvent_SinglePopulationDeath_Data(Structure):
-    _fields_ = []
-
-
-class USeqEvent_SinglePopulationDeath(Structure):
-    _fields_ = [
+    USeqEvent_SinglePopulationDeath._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5687,37 +7159,25 @@ class USeqEvent_SinglePopulationDeath(Structure):
         ("USeqEvent_SinglePopulationDeath", USeqEvent_SinglePopulationDeath_Data),
     ]
 
+    URES_Rotation_Data._fields_ = []
 
-class URES_Rotation_Data(Structure):
-    _fields_ = []
-
-
-class URES_Rotation(Structure):
-    _fields_ = [
+    URES_Rotation._fields_ = [
         ("UObject", UObject_Data),
         ("UActionResource", UActionResource_Data),
         ("URES_Rotation", URES_Rotation_Data),
     ]
 
+    URES_SpecialMove_Data._fields_ = []
 
-class URES_SpecialMove_Data(Structure):
-    _fields_ = []
-
-
-class URES_SpecialMove(Structure):
-    _fields_ = [
+    URES_SpecialMove._fields_ = [
         ("UObject", UObject_Data),
         ("UActionResource", UActionResource_Data),
         ("URES_SpecialMove", URES_SpecialMove_Data),
     ]
 
+    USeqEvent_ArrivedAtMoveNode_Data._fields_ = []
 
-class USeqEvent_ArrivedAtMoveNode_Data(Structure):
-    _fields_ = []
-
-
-class USeqEvent_ArrivedAtMoveNode(Structure):
-    _fields_ = [
+    USeqEvent_ArrivedAtMoveNode._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5725,13 +7185,9 @@ class USeqEvent_ArrivedAtMoveNode(Structure):
         ("USeqEvent_ArrivedAtMoveNode", USeqEvent_ArrivedAtMoveNode_Data),
     ]
 
+    USeqEvent_LeavingMoveNode_Data._fields_ = []
 
-class USeqEvent_LeavingMoveNode_Data(Structure):
-    _fields_ = []
-
-
-class USeqEvent_LeavingMoveNode(Structure):
-    _fields_ = [
+    USeqEvent_LeavingMoveNode._fields_ = [
         ("UObject", UObject_Data),
         ("USequenceObject", USequenceObject_Data),
         ("USequenceOp", USequenceOp_Data),
@@ -5739,44 +7195,32 @@ class USeqEvent_LeavingMoveNode(Structure):
         ("USeqEvent_LeavingMoveNode", USeqEvent_LeavingMoveNode_Data),
     ]
 
+    UShowDebugHelpers_Data._fields_ = []
 
-class UShowDebugHelpers_Data(Structure):
-    _fields_ = []
-
-
-class UShowDebugHelpers(Structure):
-    _fields_ = [
+    UShowDebugHelpers._fields_ = [
         ("UObject", UObject_Data),
         ("UShowDebugHelpers", UShowDebugHelpers_Data),
     ]
 
+    ASkeletalMeshActorGBXMatinee_Data._fields_ = []
 
-class ASkeletalMeshActorGBXMatinee_Data(Structure):
-    _fields_ = []
-
-
-class ASkeletalMeshActorGBXMatinee(Structure):
-    _fields_ = [
+    ASkeletalMeshActorGBXMatinee._fields_ = [
         ("UObject", UObject_Data),
         ("AActor", AActor_Data),
         ("ASkeletalMeshActor", ASkeletalMeshActor_Data),
         ("ASkeletalMeshActorGBXMatinee", ASkeletalMeshActorGBXMatinee_Data),
     ]
 
-
-class UGearboxEULAGFxMovie_Data(Structure):
-    _fields_ = [
+    UGearboxEULAGFxMovie_Data._fields_ = [
         ("GearboxEULAObj", POINTER(UGearboxEULAGFxObject)),
         ("CurrentControllerId", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("EULAs", TArray_FEULAData),
         ("EULAIndexToDisplay", c_int),
         ("__OnEULAInteractionComplete__Delegate", FScriptDelegate),
     ]
 
-
-class UGearboxEULAGFxMovie(Structure):
-    _fields_ = [
+    UGearboxEULAGFxMovie._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxMoviePlayer", UGFxMoviePlayer_Data),
         ("UGFxMovie", UGFxMovie_Data),
@@ -5784,542 +7228,611 @@ class UGearboxEULAGFxMovie(Structure):
         ("UGearboxEULAGFxMovie", UGearboxEULAGFxMovie_Data),
     ]
 
+    UGearboxEULAGFxObject_Data._fields_ = []
 
-class UGearboxEULAGFxObject_Data(Structure):
-    _fields_ = []
-
-
-class UGearboxEULAGFxObject(Structure):
-    _fields_ = [
+    UGearboxEULAGFxObject._fields_ = [
         ("UObject", UObject_Data),
         ("UGFxObject", UGFxObject_Data),
         ("UGearboxEULAGFxObject", UGearboxEULAGFxObject_Data),
     ]
 
-
-BL2SDK.g_loadedClasses += [("UActorFactoryClone", 2910, "UActorFactory")]
-BL2SDK.g_loadedClasses += [("UActorFactoryWireTerminal", 2912, "UActorFactory")]
-BL2SDK.g_loadedClasses += [("UAIDebugCamera", 2914, "UObject")]
-BL2SDK.g_loadedClasses += [("UAITracker", 2916, "UObject")]
-BL2SDK.g_loadedClasses += [("UAnimNodeSpecialMoveBlend", 2918, "UAnimNodeSlot")]
-BL2SDK.g_loadedClasses += [
-    ("UAttributeExpressionEvaluator", 2920, "UExpressionEvaluator")
-]
-BL2SDK.g_loadedClasses += [("UBehavior_CallFunction", 2922, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_ChangeRemoteBehaviorSequenceState", 2924, "UBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [("UBehavior_ChangeTimer", 2926, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_IsSequenceEnabled", 2928, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_PostAkEvent", 2930, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehaviorHelpers", 2932, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UCompoundExpressionEvaluator", 2934, "UExpressionEvaluator")
-]
-BL2SDK.g_loadedClasses += [
-    ("UConditionalAttributeValueResolver", 2936, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UConstantAttributeValueResolver", 2938, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UConstraintAttributeValueResolver", 2940, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [("UFeatherBoneBlendDefinition", 2942, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGBXActorList", 2944, "UObject")]
-BL2SDK.g_loadedClasses += [("UGBXObjectList", 2946, "UObject")]
-BL2SDK.g_loadedClasses += [("AGearboxAIController", 2948, "AAIController")]
-BL2SDK.g_loadedClasses += [("AGearboxAIMoveNode", 2950, "AActor")]
-BL2SDK.g_loadedClasses += [("AGearboxCameraBasic", 2952, "ACamera")]
-BL2SDK.g_loadedClasses += [("UGearboxCameraModifier", 2954, "UCameraModifier")]
-BL2SDK.g_loadedClasses += [("UGearboxCheatManager", 2956, "UCheatManager")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogInterface", 2958, "UInterface")]
-BL2SDK.g_loadedClasses += [("UGearboxEditorNode", 2960, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxEngine", 2962, "UGameEngine")]
-BL2SDK.g_loadedClasses += [("AGearboxGameInfo", 2964, "AGameInfo")]
-BL2SDK.g_loadedClasses += [("UGearboxGFxMovie", 2966, "UGFxMovie")]
-BL2SDK.g_loadedClasses += [("UGFxMovie_StateParent", 2968, "UGearboxGFxMovie")]
-BL2SDK.g_loadedClasses += [("UGearboxGlobals", 2970, "UGearboxEngineGlobals")]
-BL2SDK.g_loadedClasses += [("UGearboxGlobalsDefinition", 2972, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGearboxLocationRequest", 2974, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UPawnMoveLocationRequest", 2976, "UGearboxLocationRequest")
-]
-BL2SDK.g_loadedClasses += [("AGearboxPawn", 2978, "AGamePawn")]
-BL2SDK.g_loadedClasses += [("AGearboxPlayerController", 2980, "AGamePlayerController")]
-BL2SDK.g_loadedClasses += [("UGearboxPlayerInput", 2982, "UPlayerInput")]
-BL2SDK.g_loadedClasses += [
-    ("AGearboxPlayerReplicationInfo", 2984, "APlayerReplicationInfo")
-]
-BL2SDK.g_loadedClasses += [("UGearboxProfileSettings", 2986, "UOnlineProfileSettings")]
-BL2SDK.g_loadedClasses += [("UGearboxRenderTextureManager", 2988, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxSeqAct_DestroyPopulationActors", 2990, "USeqAct_Latent")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxSeqAct_ResetPopulationCount", 2992, "USequenceAction")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxSkeletalMeshComponent", 2994, "USkeletalMeshComponent")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxStaticMeshComponent", 2996, "UStaticMeshComponent")
-]
-BL2SDK.g_loadedClasses += [("UGestaltSkeletalMeshDefinition", 2998, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGFxActorMoviePool", 3000, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxMovieDefinition", 3002, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxEULAGFxMovieDefinition", 3004, "UGFxMovieDefinition")
-]
-BL2SDK.g_loadedClasses += [("UGFxMovieDrawStyle", 3006, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxMovieDrawStyleHUD", 3008, "UGFxMovieDrawStyle")]
-BL2SDK.g_loadedClasses += [("UGFxMovieDrawStyleRTT", 3010, "UGFxMovieDrawStyle")]
-BL2SDK.g_loadedClasses += [
-    ("UGFxMovieDrawStyleComponent", 3012, "UGFxMovieDrawStyleRTT")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGFxMovieDrawStyleMesh", 3014, "UGFxMovieDrawStyleComponent")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGFxMovieDrawStyleSprite", 3016, "UGFxMovieDrawStyleComponent")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGFxMovieDrawStyleSplitscreen", 3018, "UGFxMovieDrawStyle")
-]
-BL2SDK.g_loadedClasses += [("UGFxMovieManager", 3020, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxMovieState", 3022, "UObject")]
-BL2SDK.g_loadedClasses += [("UGFxMovieStateCustom", 3024, "UGFxMovieState")]
-BL2SDK.g_loadedClasses += [("UGFxMovieStateFlags", 3026, "UGFxMovieState")]
-BL2SDK.g_loadedClasses += [("UGFxMovieStatePlayerAware", 3028, "UGFxMovieState")]
-BL2SDK.g_loadedClasses += [("UIAIInterface", 3030, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIConstructObject", 3032, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIGFxActorMovie", 3034, "UInterface")]
-BL2SDK.g_loadedClasses += [("UINounAttributeProvider", 3036, "UInterface")]
-BL2SDK.g_loadedClasses += [("UInterfaceGearboxCamera", 3038, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIStreamingDataEvent", 3040, "UInterface")]
-BL2SDK.g_loadedClasses += [("ULeviathanChannel", 3042, "UChannel")]
-BL2SDK.g_loadedClasses += [
-    ("UNoContextNeededAttributeContextResolver", 3044, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UNounAttributeValueResolver", 3046, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UObjectFunctionAttributeValueResolver", 3048, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UObjectPropertyContextResolver", 3050, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UPhysicsStateExpressionEvaluator", 3052, "UExpressionEvaluator")
-]
-BL2SDK.g_loadedClasses += [("UPopulationAspect", 3054, "UObject")]
-BL2SDK.g_loadedClasses += [("UPopulationBodyTag", 3056, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("APopulationEncounter", 3058, "AInfo")]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationEncounterRenderingComponent", 3060, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationOpportunityCombatRenderingComponent", 3062, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationSpawnedActorTagDefinition", 3064, "UGBXDefinition")
-]
-BL2SDK.g_loadedClasses += [("UPopUpDebugBarGraph", 3066, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("URandomAttributeValueResolver", 3068, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [("URegionDefinition", 3070, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("URootMotionDefinition", 3072, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("URuleEngineLoadBalanceManager", 3074, "UObject")]
-BL2SDK.g_loadedClasses += [("UScreenSpaceManager", 3076, "UObject")]
-BL2SDK.g_loadedClasses += [("USeqAct_AllPlayersInVolume", 3078, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("USeqCond_CompareLocation", 3080, "USequenceCondition")]
-BL2SDK.g_loadedClasses += [("USeqCond_CompareString", 3082, "USequenceCondition")]
-BL2SDK.g_loadedClasses += [("USeqCond_GetLanguage", 3084, "USequenceCondition")]
-BL2SDK.g_loadedClasses += [
-    ("USimpleMathValueResolver", 3086, "UAttributeValueResolver")
-]
-BL2SDK.g_loadedClasses += [("USpecialMoveComponent", 3088, "UActorComponent")]
-BL2SDK.g_loadedClasses += [("USpecialMoveDefinition", 3090, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [
-    ("USpecialMoveExpressionList", 3092, "USpecialMoveDefinition")
-]
-BL2SDK.g_loadedClasses += [("USpecialMoveRandom", 3094, "USpecialMoveDefinition")]
-BL2SDK.g_loadedClasses += [("USpecialMoveInterface", 3096, "UInterface")]
-BL2SDK.g_loadedClasses += [("UStateAttributeResolver", 3098, "UAttributeValueResolver")]
-BL2SDK.g_loadedClasses += [("UTimeValueResolver", 3100, "UAttributeValueResolver")]
-BL2SDK.g_loadedClasses += [("AWireManager", 3102, "AActor")]
-BL2SDK.g_loadedClasses += [("AWireTerminal", 3104, "AStaticMeshActor")]
-BL2SDK.g_loadedClasses += [("AWiringActor", 3106, "AStaticMeshActor")]
-BL2SDK.g_loadedClasses += [("UWiringMesh", 3108, "UStaticMesh")]
-BL2SDK.g_loadedClasses += [("UActionResource", 3110, "UObject")]
-BL2SDK.g_loadedClasses += [("UActionSequence", 3112, "UObject")]
-BL2SDK.g_loadedClasses += [("UActionSequenceList", 3114, "UActionSequence")]
-BL2SDK.g_loadedClasses += [("UActionSequencePawn", 3116, "UActionSequence")]
-BL2SDK.g_loadedClasses += [("UAction_PawnMovementBase", 3118, "UActionSequencePawn")]
-BL2SDK.g_loadedClasses += [("UActionSequenceRandom", 3120, "UActionSequence")]
-BL2SDK.g_loadedClasses += [("UAIComponent", 3122, "UActorComponent")]
-BL2SDK.g_loadedClasses += [("UAICostExpressionEvaluator", 3124, "UExpressionEvaluator")]
-BL2SDK.g_loadedClasses += [("UAIFactoryBase", 3126, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxAIFactory", 3128, "UAIFactoryBase")]
-BL2SDK.g_loadedClasses += [("UAIResource", 3130, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [
-    ("UAIResourceExpressionEvaluator", 3132, "UExpressionEvaluator")
-]
-BL2SDK.g_loadedClasses += [
-    ("UAllegianceExpressionEvaluator", 3134, "UExpressionEvaluator")
-]
-BL2SDK.g_loadedClasses += [
-    ("UAwarenessZoneCollectionDefinition", 3136, "UGBXDefinition")
-]
-BL2SDK.g_loadedClasses += [("UAwarenessZoneDefinition", 3138, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UBehavior_SendGbxMessage", 3140, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_SetFlag", 3142, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [
-    ("UBestTargetAttributeContextResolver", 3144, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [("UCharacterClassMessageDefinition", 3146, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UCoverSearchCriteria", 3148, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UExposureUtilityBase", 3150, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UExposureUtilityBasicCaching", 3152, "UExposureUtilityBase")
-]
-BL2SDK.g_loadedClasses += [
-    ("UExposureUtilityFixedCost", 3154, "UExposureUtilityBasicCaching")
-]
-BL2SDK.g_loadedClasses += [("UExposureUtilityStrategy", 3156, "UObject")]
-BL2SDK.g_loadedClasses += [("UFiringBehaviorDefinition", 3158, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UFiringBehaviorManager", 3160, "UObject")]
-BL2SDK.g_loadedClasses += [("UFiringCondition", 3162, "UObject")]
-BL2SDK.g_loadedClasses += [("UFireCond_IsPlayerTarget", 3164, "UFiringCondition")]
-BL2SDK.g_loadedClasses += [("UFiringPattern", 3166, "UObject")]
-BL2SDK.g_loadedClasses += [("UFirePatt_Cone", 3168, "UFiringPattern")]
-BL2SDK.g_loadedClasses += [("UFirePatt_ShrinkingCone", 3170, "UFiringPattern")]
-BL2SDK.g_loadedClasses += [("UFirePatt_StrafeOver", 3172, "UFiringPattern")]
-BL2SDK.g_loadedClasses += [("UFiringZoneCollectionDefinition", 3174, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UFiringZoneDefinition", 3176, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UFlagDefinition", 3178, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UFlagExpressionEvaluator", 3180, "UExpressionEvaluator")]
-BL2SDK.g_loadedClasses += [("UFlagValueResolver", 3182, "UObject")]
-BL2SDK.g_loadedClasses += [("UMultipleFlagValueResolver", 3184, "UFlagValueResolver")]
-BL2SDK.g_loadedClasses += [
-    ("UObjectFunctionFlagValueResolver", 3186, "UFlagValueResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UObjectPropertyFlagValueResolver", 3188, "UFlagValueResolver")
-]
-BL2SDK.g_loadedClasses += [("URuleEngineFlagValueResolver", 3190, "UFlagValueResolver")]
-BL2SDK.g_loadedClasses += [("UGbxMessage", 3192, "UObject")]
-BL2SDK.g_loadedClasses += [("UGbxMessageDefinition", 3194, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGbxMessageManager", 3196, "UObject")]
-BL2SDK.g_loadedClasses += [("AGearboxMind", 3198, "AGearboxAIController")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxAIMoveNodeRenderComponent", 3200, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [("UGearboxCoverStateManager", 3202, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxMindAttributeContextResolver", 3204, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [("UGearboxNavigationHandle", 3206, "UNavigationHandle")]
-BL2SDK.g_loadedClasses += [("UIFlagProvider", 3208, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIFlagProviderGroup", 3210, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIGbxMessageListener", 3212, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIRuleEngineOwner", 3214, "UInterface")]
-BL2SDK.g_loadedClasses += [("UKnowledgeRecord", 3216, "UObject")]
-BL2SDK.g_loadedClasses += [("ULocationFilter", 3218, "UObject")]
-BL2SDK.g_loadedClasses += [("ULocationFilter_MustHaveLOS", 3220, "ULocationFilter")]
-BL2SDK.g_loadedClasses += [("ULocationFilter_MustNotHaveLOS", 3222, "ULocationFilter")]
-BL2SDK.g_loadedClasses += [("UMindTargetInfo", 3224, "UObject")]
-BL2SDK.g_loadedClasses += [("URule", 3226, "UObject")]
-BL2SDK.g_loadedClasses += [("URuleContainer", 3228, "URule")]
-BL2SDK.g_loadedClasses += [("URulePlaceholder", 3230, "URule")]
-BL2SDK.g_loadedClasses += [("URuleEngine", 3232, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxRuleEngine", 3234, "URuleEngine")]
-BL2SDK.g_loadedClasses += [("URuleEventDef", 3236, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("URuleSet", 3238, "UObject")]
-BL2SDK.g_loadedClasses += [("UStateRuleSet", 3240, "URuleSet")]
-BL2SDK.g_loadedClasses += [("USearchDirection", 3242, "UObject")]
-BL2SDK.g_loadedClasses += [("USearchDirection_Any", 3244, "USearchDirection")]
-BL2SDK.g_loadedClasses += [("USearchDirection_AwayFromMe", 3246, "USearchDirection")]
-BL2SDK.g_loadedClasses += [
-    ("USearchDirection_AwayFromTarget", 3248, "USearchDirection")
-]
-BL2SDK.g_loadedClasses += [
-    ("USearchDirection_MyFacingDirection", 3250, "USearchDirection")
-]
-BL2SDK.g_loadedClasses += [
-    ("USearchDirection_OppositeMyFacingDirection", 3252, "USearchDirection")
-]
-BL2SDK.g_loadedClasses += [
-    ("USearchDirection_OppositeTargetsFacingDirection", 3254, "USearchDirection")
-]
-BL2SDK.g_loadedClasses += [
-    ("USearchDirection_RandomLeftOrRight", 3256, "USearchDirection")
-]
-BL2SDK.g_loadedClasses += [
-    ("USearchDirection_TargetsFacingDirection", 3258, "USearchDirection")
-]
-BL2SDK.g_loadedClasses += [("USearchDirection_ToMyLeft", 3260, "USearchDirection")]
-BL2SDK.g_loadedClasses += [("USearchDirection_ToMyRight", 3262, "USearchDirection")]
-BL2SDK.g_loadedClasses += [("USearchDirection_TowardMe", 3264, "USearchDirection")]
-BL2SDK.g_loadedClasses += [("USearchDirection_TowardTarget", 3266, "USearchDirection")]
-BL2SDK.g_loadedClasses += [("USearchOrigin", 3268, "UObject")]
-BL2SDK.g_loadedClasses += [("USearchOrigin_CurrentLocation", 3270, "USearchOrigin")]
-BL2SDK.g_loadedClasses += [("USearchOrigin_ScriptedMoveTarget", 3272, "USearchOrigin")]
-BL2SDK.g_loadedClasses += [("USearchOrigin_TargetLocation", 3274, "USearchOrigin")]
-BL2SDK.g_loadedClasses += [("USnapshotRecord", 3276, "USnapshotInterface")]
-BL2SDK.g_loadedClasses += [("UGearboxPawnSnapshotRecord", 3278, "USnapshotRecord")]
-BL2SDK.g_loadedClasses += [("UTargetingDefinition", 3280, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UTargetIterator", 3282, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorCalculateDistance", 3284, "UTargetIterator")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorCalculateExposure", 3286, "UTargetIterator")
-]
-BL2SDK.g_loadedClasses += [("UTargetIteratorCheckAwareness", 3288, "UTargetIterator")]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorCheckRemoveTarget", 3290, "UTargetIterator")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorForgetAboutTarget", 3292, "UTargetIterator")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizeTargetsIAmExposedTo", 3294, "UTargetIterator")
-]
-BL2SDK.g_loadedClasses += [("UTI_Calc", 3296, "UTargetIterator")]
-BL2SDK.g_loadedClasses += [("UTI_Prioritize", 3298, "UTargetIterator")]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizeExposedTargets", 3300, "UTI_Prioritize")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizeHumanTargets", 3302, "UTI_Prioritize")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizeNearbyTarget", 3304, "UTI_Prioritize")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizePreviousTarget", 3306, "UTI_Prioritize")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizeTargetNotBeingShotAt", 3308, "UTI_Prioritize")
-]
-BL2SDK.g_loadedClasses += [
-    ("UTargetIteratorPrioritizeTargetWhoShootsAtMe", 3310, "UTI_Prioritize")
-]
-BL2SDK.g_loadedClasses += [("UTI_PrioritizeBonus", 3312, "UTI_Prioritize")]
-BL2SDK.g_loadedClasses += [("UTI_PrioritizeConditional", 3314, "UTI_Prioritize")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxSeqAct_PopulationOpportunityLink", 3316, "USeqAct_Latent")
-]
-BL2SDK.g_loadedClasses += [("UIPopulationSpawnPoint", 3318, "UInterface")]
-BL2SDK.g_loadedClasses += [("UPopulationDefinition", 3320, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UPopulationFactory", 3322, "UObject")]
-BL2SDK.g_loadedClasses += [("UPopulationFactoryGeneric", 3324, "UPopulationFactory")]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationFactoryPopulationDefinition", 3326, "UPopulationFactory")
-]
-BL2SDK.g_loadedClasses += [("UPopulationMaster", 3328, "UObject")]
-BL2SDK.g_loadedClasses += [("APopulationOpportunity", 3330, "AInfo")]
-BL2SDK.g_loadedClasses += [
-    ("APopulationOpportunityArea", 3332, "APopulationOpportunity")
-]
-BL2SDK.g_loadedClasses += [
-    ("APopulationOpportunityCloner", 3334, "APopulationOpportunity")
-]
-BL2SDK.g_loadedClasses += [
-    ("APopulationOpportunityCombat", 3336, "APopulationOpportunity")
-]
-BL2SDK.g_loadedClasses += [
-    ("APopulationOpportunityPoint", 3338, "APopulationOpportunity")
-]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationOpportunityAreaRenderingComponent", 3340, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [
-    (
-        "UPopulationOpportunityAttributeContextResolver",
-        3342,
-        "UAttributeContextResolver",
-    )
-]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationOpportunityPointRenderingComponent", 3344, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [("APopulationPoint", 3346, "AActor")]
-BL2SDK.g_loadedClasses += [("APopulationPoint_Dynamic", 3348, "APopulationPoint")]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationPointRenderingComponent", 3350, "UPrimitiveComponent")
-]
-BL2SDK.g_loadedClasses += [("USeqEvent_EncounterWaveComplete", 3352, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("USeqEvent_PopulatedActor", 3354, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("USeqEvent_PopulatedPoint", 3356, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("AGearboxHUD", 3358, "AHUD")]
-BL2SDK.g_loadedClasses += [("UAIDefinition", 3360, "UObject")]
-BL2SDK.g_loadedClasses += [("UBehaviorEventFilterBase", 3362, "UObject")]
-BL2SDK.g_loadedClasses += [("UBehaviorKernel", 3364, "UObject")]
-BL2SDK.g_loadedClasses += [("UBehaviorProviderDefinition", 3366, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [
-    ("UAIBehaviorProviderDefinition", 3368, "UBehaviorProviderDefinition")
-]
-BL2SDK.g_loadedClasses += [("UBehaviorSequenceCustomEnableCondition", 3370, "UObject")]
-BL2SDK.g_loadedClasses += [
-    (
-        "UBehaviorSequenceEnableByMultipleConditions",
-        3372,
-        "UBehaviorSequenceCustomEnableCondition",
-    )
-]
-BL2SDK.g_loadedClasses += [("UIBehaviorConsumer", 3374, "UInterface")]
-BL2SDK.g_loadedClasses += [("UIBehaviorProvider", 3376, "UInterface")]
-BL2SDK.g_loadedClasses += [("UICustomEvent", 3378, "UInterface")]
-BL2SDK.g_loadedClasses += [("UITimerBehavior", 3380, "UInterface")]
-BL2SDK.g_loadedClasses += [("UGearboxAnimDefinition", 3382, "USpecialMoveDefinition")]
-BL2SDK.g_loadedClasses += [("UBehavior_TriggerDialogEvent", 3384, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("AGearboxDialogActor", 3386, "AActor")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogComponent", 3388, "UActorComponent")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogEventData", 3390, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogEventTag", 3392, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogGlobalsDefinition", 3394, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogGroup", 3396, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogTemplateGroup", 3398, "UGearboxDialogGroup")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogManager", 3400, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogNameTag", 3402, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogPriority", 3404, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogNode", 3406, "UGearboxEditorNode")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogAction", 3408, "UGearboxDialogNode")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogAct_Chance", 3410, "UGearboxDialogAction")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogAct_Compare", 3412, "UGearboxDialogAction")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogAct_ObjectParameterSwitch", 3414, "UGearboxDialogAction")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogNonTemplateAction", 3416, "UGearboxDialogAction")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogAct_Talk", 3418, "UGearboxDialogNonTemplateAction")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogTemplateAction", 3420, "UGearboxDialogAction")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogAct_Trigger", 3422, "UGearboxDialogTemplateAction")
-]
-BL2SDK.g_loadedClasses += [("UGearboxDialogEvent", 3424, "UGearboxDialogNode")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogTemplateEvent", 3426, "UGearboxDialogEvent")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogVariable", 3428, "UGearboxDialogNode")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogVar_Instigator", 3430, "UGearboxDialogVariable")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogVar_LastTalker", 3432, "UGearboxDialogVariable")
-]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxDialogVar_NameTag", 3434, "UGearboxDialogVariable")
-]
-BL2SDK.g_loadedClasses += [("UGearboxDialogVar_Other", 3436, "UGearboxDialogVariable")]
-BL2SDK.g_loadedClasses += [("UGearboxDialogVar_Random", 3438, "UGearboxDialogVariable")]
-BL2SDK.g_loadedClasses += [("UGearboxSeqAct_ToggleDialog", 3440, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGearboxSeqAct_TriggerDialog", 3442, "USeqAct_Latent")]
-BL2SDK.g_loadedClasses += [
-    ("UGearboxSeqAct_TriggerDialogName", 3444, "UGearboxSeqAct_TriggerDialog")
-]
-BL2SDK.g_loadedClasses += [("UGearboxAccountActions", 3446, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxAccountData", 3448, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxProcess", 3450, "UObject")]
-BL2SDK.g_loadedClasses += [("USparkInitializationProcess", 3452, "UGearboxProcess")]
-BL2SDK.g_loadedClasses += [("ULeviathanService", 3454, "UObject")]
-BL2SDK.g_loadedClasses += [("USparkInterface", 3456, "UInterface")]
-BL2SDK.g_loadedClasses += [("USparkInterfaceImpl", 3458, "UObject")]
-BL2SDK.g_loadedClasses += [("USparkServiceConfiguration", 3460, "UObject")]
-BL2SDK.g_loadedClasses += [("USparkTypes", 3462, "UObject")]
-BL2SDK.g_loadedClasses += [("UAction_ChangeRuleSet", 38895, "UActionSequence")]
-BL2SDK.g_loadedClasses += [("URES_RuleSetChange", 38899, "UActionResource")]
-BL2SDK.g_loadedClasses += [("UAction_FaceThreat", 38902, "UActionSequencePawn")]
-BL2SDK.g_loadedClasses += [("URES_FacingPolicy", 38909, "UActionResource")]
-BL2SDK.g_loadedClasses += [("UAction_MoveRandom", 38910, "UActionSequencePawn")]
-BL2SDK.g_loadedClasses += [("UAction_MoveTo", 38912, "UActionSequencePawn")]
-BL2SDK.g_loadedClasses += [("URES_Movement", 39140, "UActionResource")]
-BL2SDK.g_loadedClasses += [("UAction_PopRuleSet", 39141, "UActionSequencePawn")]
-BL2SDK.g_loadedClasses += [("UAction_PushRuleSet", 39144, "UActionSequencePawn")]
-BL2SDK.g_loadedClasses += [
-    ("UActorAttributeContextResolver", 39162, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [
-    ("UAIComponentAttributeContextResolver", 39278, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [("UAIStateBase", 39597, "UGearboxEditorNode")]
-BL2SDK.g_loadedClasses += [("UAIState", 39599, "UAIStateBase")]
-BL2SDK.g_loadedClasses += [("UAIState_Priority", 39601, "UAIStateBase")]
-BL2SDK.g_loadedClasses += [("UAIState_Random", 39603, "UAIStateBase")]
-BL2SDK.g_loadedClasses += [("UAIState_Sequential", 39605, "UAIStateBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_AIHold", 39694, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_AIPriority", 39709, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_AITargeting", 39723, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_ChangeAnyBehaviorSequenceState", 39746, "UBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_ChangeLocalBehaviorSequenceState", 39762, "UBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [("UBehavior_CompareBool", 39830, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_CompareValues", 39842, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_CustomEvent", 39855, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_Delay", 39869, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_Gate", 39879, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_GetFloatParam", 39891, "UParameterBehaviorBase")]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_GetObjectParam", 39905, "UParameterBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_GetVectorParam", 39919, "UParameterBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_InterpolateFloatOverTime", 39938, "UBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [("UBehavior_Metronome", 39969, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_ModifyTimer", 39984, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_SetFloatParam", 40110, "UParameterBehaviorBase")]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_SetObjectParam", 40121, "UParameterBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [
-    ("UBehavior_SetVectorParam", 40132, "UParameterBehaviorBase")
-]
-BL2SDK.g_loadedClasses += [("UBehavior_SpecialMove", 40153, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_SpecialMoveStop", 40187, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_StartAkAmbientSound", 40201, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_StopAkAmbientSound", 40215, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_StopDialog", 40229, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [("UBehavior_ToggleDialog", 40243, "UBehaviorBase")]
-BL2SDK.g_loadedClasses += [
-    ("UCameraModifierCrossfade", 40602, "UGearboxCameraModifier")
-]
-BL2SDK.g_loadedClasses += [("UCameraModifierLookAt", 40644, "UGearboxCameraModifier")]
-BL2SDK.g_loadedClasses += [("UDefinitionUITestCaseDefinition", 40758, "UGBXDefinition")]
-BL2SDK.g_loadedClasses += [("USparkNews", 41097, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxAccountEntitlement", 41281, "UObject")]
-BL2SDK.g_loadedClasses += [("UGearboxAccountOffer", 41298, "UObject")]
-BL2SDK.g_loadedClasses += [("APatrolDestination", 41561, "AActor")]
-BL2SDK.g_loadedClasses += [("UGearboxSeqAct_TargetPriority", 42592, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGearboxSeqAct_CameraShake", 43108, "USequenceAction")]
-BL2SDK.g_loadedClasses += [("UGearboxSeqAct_PawnClonerLink", 43421, "USeqAct_Latent")]
-BL2SDK.g_loadedClasses += [
-    ("UGFxMovieDrawStyleInstanceData", 43594, "UGFxMovieDrawStyleRTT")
-]
-BL2SDK.g_loadedClasses += [("USeqEvent_AllSpawned", 43898, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [
-    ("UPopulationMasterAttributeContextResolver", 44207, "UAttributeContextResolver")
-]
-BL2SDK.g_loadedClasses += [("USeqEvent_SinglePopulationDeath", 44385, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("URES_Rotation", 44538, "UActionResource")]
-BL2SDK.g_loadedClasses += [("URES_SpecialMove", 44541, "UActionResource")]
-BL2SDK.g_loadedClasses += [("USeqEvent_ArrivedAtMoveNode", 44619, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("USeqEvent_LeavingMoveNode", 44624, "USequenceEvent")]
-BL2SDK.g_loadedClasses += [("UShowDebugHelpers", 44641, "UObject")]
-BL2SDK.g_loadedClasses += [
-    ("ASkeletalMeshActorGBXMatinee", 44655, "ASkeletalMeshActor")
-]
-BL2SDK.g_loadedClasses += [("UGearboxEULAGFxMovie", 45051, "UGearboxGFxMovie")]
-BL2SDK.g_loadedClasses += [("UGearboxEULAGFxObject", 45059, "UGFxObject")]
+    BL2SDK.g_loadedClasses += [("UActorFactoryClone", 2910, "UActorFactory")]
+    BL2SDK.g_loadedClasses += [("UActorFactoryWireTerminal", 2912, "UActorFactory")]
+    BL2SDK.g_loadedClasses += [("UAIDebugCamera", 2914, "UObject")]
+    BL2SDK.g_loadedClasses += [("UAITracker", 2916, "UObject")]
+    BL2SDK.g_loadedClasses += [("UAnimNodeSpecialMoveBlend", 2918, "UAnimNodeSlot")]
+    BL2SDK.g_loadedClasses += [
+        ("UAttributeExpressionEvaluator", 2920, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_CallFunction", 2922, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_ChangeRemoteBehaviorSequenceState", 2924, "UBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_ChangeTimer", 2926, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_IsSequenceEnabled", 2928, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_PostAkEvent", 2930, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehaviorHelpers", 2932, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UCompoundExpressionEvaluator", 2934, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UConditionalAttributeValueResolver", 2936, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UConstantAttributeValueResolver", 2938, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UConstraintAttributeValueResolver", 2940, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("UFeatherBoneBlendDefinition", 2942, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UGBXActorList", 2944, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGBXObjectList", 2946, "UObject")]
+    BL2SDK.g_loadedClasses += [("AGearboxAIController", 2948, "AAIController")]
+    BL2SDK.g_loadedClasses += [("AGearboxAIMoveNode", 2950, "AActor")]
+    BL2SDK.g_loadedClasses += [("AGearboxCameraBasic", 2952, "ACamera")]
+    BL2SDK.g_loadedClasses += [("UGearboxCameraModifier", 2954, "UCameraModifier")]
+    BL2SDK.g_loadedClasses += [("UGearboxCheatManager", 2956, "UCheatManager")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogInterface", 2958, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UGearboxEditorNode", 2960, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxEngine", 2962, "UGameEngine")]
+    BL2SDK.g_loadedClasses += [("AGearboxGameInfo", 2964, "AGameInfo")]
+    BL2SDK.g_loadedClasses += [("UGearboxGFxMovie", 2966, "UGFxMovie")]
+    BL2SDK.g_loadedClasses += [("UGFxMovie_StateParent", 2968, "UGearboxGFxMovie")]
+    BL2SDK.g_loadedClasses += [("UGearboxGlobals", 2970, "UGearboxEngineGlobals")]
+    BL2SDK.g_loadedClasses += [("UGearboxGlobalsDefinition", 2972, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UGearboxLocationRequest", 2974, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UPawnMoveLocationRequest", 2976, "UGearboxLocationRequest")
+    ]
+    BL2SDK.g_loadedClasses += [("AGearboxPawn", 2978, "AGamePawn")]
+    BL2SDK.g_loadedClasses += [
+        ("AGearboxPlayerController", 2980, "AGamePlayerController")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxPlayerInput", 2982, "UPlayerInput")]
+    BL2SDK.g_loadedClasses += [
+        ("AGearboxPlayerReplicationInfo", 2984, "APlayerReplicationInfo")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxProfileSettings", 2986, "UOnlineProfileSettings")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxRenderTextureManager", 2988, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSeqAct_DestroyPopulationActors", 2990, "USeqAct_Latent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSeqAct_ResetPopulationCount", 2992, "USequenceAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSkeletalMeshComponent", 2994, "USkeletalMeshComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxStaticMeshComponent", 2996, "UStaticMeshComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGestaltSkeletalMeshDefinition", 2998, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UGFxActorMoviePool", 3000, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieDefinition", 3002, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxEULAGFxMovieDefinition", 3004, "UGFxMovieDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UGFxMovieDrawStyle", 3006, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieDrawStyleHUD", 3008, "UGFxMovieDrawStyle")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieDrawStyleRTT", 3010, "UGFxMovieDrawStyle")]
+    BL2SDK.g_loadedClasses += [
+        ("UGFxMovieDrawStyleComponent", 3012, "UGFxMovieDrawStyleRTT")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGFxMovieDrawStyleMesh", 3014, "UGFxMovieDrawStyleComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGFxMovieDrawStyleSprite", 3016, "UGFxMovieDrawStyleComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGFxMovieDrawStyleSplitscreen", 3018, "UGFxMovieDrawStyle")
+    ]
+    BL2SDK.g_loadedClasses += [("UGFxMovieManager", 3020, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieState", 3022, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieStateCustom", 3024, "UGFxMovieState")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieStateFlags", 3026, "UGFxMovieState")]
+    BL2SDK.g_loadedClasses += [("UGFxMovieStatePlayerAware", 3028, "UGFxMovieState")]
+    BL2SDK.g_loadedClasses += [("UIAIInterface", 3030, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIConstructObject", 3032, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIGFxActorMovie", 3034, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UINounAttributeProvider", 3036, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UInterfaceGearboxCamera", 3038, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIStreamingDataEvent", 3040, "UInterface")]
+    BL2SDK.g_loadedClasses += [("ULeviathanChannel", 3042, "UChannel")]
+    BL2SDK.g_loadedClasses += [
+        ("UNoContextNeededAttributeContextResolver", 3044, "UAttributeContextResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UNounAttributeValueResolver", 3046, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UObjectFunctionAttributeValueResolver", 3048, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UObjectPropertyContextResolver", 3050, "UAttributeContextResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UPhysicsStateExpressionEvaluator", 3052, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [("UPopulationAspect", 3054, "UObject")]
+    BL2SDK.g_loadedClasses += [("UPopulationBodyTag", 3056, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("APopulationEncounter", 3058, "AInfo")]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationEncounterRenderingComponent", 3060, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationOpportunityCombatRenderingComponent", 3062, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationSpawnedActorTagDefinition", 3064, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UPopUpDebugBarGraph", 3066, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("URandomAttributeValueResolver", 3068, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("URegionDefinition", 3070, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("URootMotionDefinition", 3072, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("URuleEngineLoadBalanceManager", 3074, "UObject")]
+    BL2SDK.g_loadedClasses += [("UScreenSpaceManager", 3076, "UObject")]
+    BL2SDK.g_loadedClasses += [("USeqAct_AllPlayersInVolume", 3078, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("USeqCond_CompareLocation", 3080, "USequenceCondition")]
+    BL2SDK.g_loadedClasses += [("USeqCond_CompareString", 3082, "USequenceCondition")]
+    BL2SDK.g_loadedClasses += [("USeqCond_GetLanguage", 3084, "USequenceCondition")]
+    BL2SDK.g_loadedClasses += [
+        ("USimpleMathValueResolver", 3086, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("USpecialMoveComponent", 3088, "UActorComponent")]
+    BL2SDK.g_loadedClasses += [("USpecialMoveDefinition", 3090, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [
+        ("USpecialMoveExpressionList", 3092, "USpecialMoveDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("USpecialMoveRandom", 3094, "USpecialMoveDefinition")]
+    BL2SDK.g_loadedClasses += [("USpecialMoveInterface", 3096, "UInterface")]
+    BL2SDK.g_loadedClasses += [
+        ("UStateAttributeResolver", 3098, "UAttributeValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("UTimeValueResolver", 3100, "UAttributeValueResolver")]
+    BL2SDK.g_loadedClasses += [("AWireManager", 3102, "AActor")]
+    BL2SDK.g_loadedClasses += [("AWireTerminal", 3104, "AStaticMeshActor")]
+    BL2SDK.g_loadedClasses += [("AWiringActor", 3106, "AStaticMeshActor")]
+    BL2SDK.g_loadedClasses += [("UWiringMesh", 3108, "UStaticMesh")]
+    BL2SDK.g_loadedClasses += [("UActionResource", 3110, "UObject")]
+    BL2SDK.g_loadedClasses += [("UActionSequence", 3112, "UObject")]
+    BL2SDK.g_loadedClasses += [("UActionSequenceList", 3114, "UActionSequence")]
+    BL2SDK.g_loadedClasses += [("UActionSequencePawn", 3116, "UActionSequence")]
+    BL2SDK.g_loadedClasses += [
+        ("UAction_PawnMovementBase", 3118, "UActionSequencePawn")
+    ]
+    BL2SDK.g_loadedClasses += [("UActionSequenceRandom", 3120, "UActionSequence")]
+    BL2SDK.g_loadedClasses += [("UAIComponent", 3122, "UActorComponent")]
+    BL2SDK.g_loadedClasses += [
+        ("UAICostExpressionEvaluator", 3124, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [("UAIFactoryBase", 3126, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxAIFactory", 3128, "UAIFactoryBase")]
+    BL2SDK.g_loadedClasses += [("UAIResource", 3130, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [
+        ("UAIResourceExpressionEvaluator", 3132, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UAllegianceExpressionEvaluator", 3134, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UAwarenessZoneCollectionDefinition", 3136, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UAwarenessZoneDefinition", 3138, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UBehavior_SendGbxMessage", 3140, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_SetFlag", 3142, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UBestTargetAttributeContextResolver", 3144, "UAttributeContextResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UCharacterClassMessageDefinition", 3146, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UCoverSearchCriteria", 3148, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UExposureUtilityBase", 3150, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UExposureUtilityBasicCaching", 3152, "UExposureUtilityBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UExposureUtilityFixedCost", 3154, "UExposureUtilityBasicCaching")
+    ]
+    BL2SDK.g_loadedClasses += [("UExposureUtilityStrategy", 3156, "UObject")]
+    BL2SDK.g_loadedClasses += [("UFiringBehaviorDefinition", 3158, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UFiringBehaviorManager", 3160, "UObject")]
+    BL2SDK.g_loadedClasses += [("UFiringCondition", 3162, "UObject")]
+    BL2SDK.g_loadedClasses += [("UFireCond_IsPlayerTarget", 3164, "UFiringCondition")]
+    BL2SDK.g_loadedClasses += [("UFiringPattern", 3166, "UObject")]
+    BL2SDK.g_loadedClasses += [("UFirePatt_Cone", 3168, "UFiringPattern")]
+    BL2SDK.g_loadedClasses += [("UFirePatt_ShrinkingCone", 3170, "UFiringPattern")]
+    BL2SDK.g_loadedClasses += [("UFirePatt_StrafeOver", 3172, "UFiringPattern")]
+    BL2SDK.g_loadedClasses += [
+        ("UFiringZoneCollectionDefinition", 3174, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UFiringZoneDefinition", 3176, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UFlagDefinition", 3178, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [
+        ("UFlagExpressionEvaluator", 3180, "UExpressionEvaluator")
+    ]
+    BL2SDK.g_loadedClasses += [("UFlagValueResolver", 3182, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UMultipleFlagValueResolver", 3184, "UFlagValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UObjectFunctionFlagValueResolver", 3186, "UFlagValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UObjectPropertyFlagValueResolver", 3188, "UFlagValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("URuleEngineFlagValueResolver", 3190, "UFlagValueResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("UGbxMessage", 3192, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGbxMessageDefinition", 3194, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UGbxMessageManager", 3196, "UObject")]
+    BL2SDK.g_loadedClasses += [("AGearboxMind", 3198, "AGearboxAIController")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxAIMoveNodeRenderComponent", 3200, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxCoverStateManager", 3202, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxMindAttributeContextResolver", 3204, "UAttributeContextResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxNavigationHandle", 3206, "UNavigationHandle")]
+    BL2SDK.g_loadedClasses += [("UIFlagProvider", 3208, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIFlagProviderGroup", 3210, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIGbxMessageListener", 3212, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIRuleEngineOwner", 3214, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UKnowledgeRecord", 3216, "UObject")]
+    BL2SDK.g_loadedClasses += [("ULocationFilter", 3218, "UObject")]
+    BL2SDK.g_loadedClasses += [("ULocationFilter_MustHaveLOS", 3220, "ULocationFilter")]
+    BL2SDK.g_loadedClasses += [
+        ("ULocationFilter_MustNotHaveLOS", 3222, "ULocationFilter")
+    ]
+    BL2SDK.g_loadedClasses += [("UMindTargetInfo", 3224, "UObject")]
+    BL2SDK.g_loadedClasses += [("URule", 3226, "UObject")]
+    BL2SDK.g_loadedClasses += [("URuleContainer", 3228, "URule")]
+    BL2SDK.g_loadedClasses += [("URulePlaceholder", 3230, "URule")]
+    BL2SDK.g_loadedClasses += [("URuleEngine", 3232, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxRuleEngine", 3234, "URuleEngine")]
+    BL2SDK.g_loadedClasses += [("URuleEventDef", 3236, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("URuleSet", 3238, "UObject")]
+    BL2SDK.g_loadedClasses += [("UStateRuleSet", 3240, "URuleSet")]
+    BL2SDK.g_loadedClasses += [("USearchDirection", 3242, "UObject")]
+    BL2SDK.g_loadedClasses += [("USearchDirection_Any", 3244, "USearchDirection")]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_AwayFromMe", 3246, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_AwayFromTarget", 3248, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_MyFacingDirection", 3250, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_OppositeMyFacingDirection", 3252, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_OppositeTargetsFacingDirection", 3254, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_RandomLeftOrRight", 3256, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_TargetsFacingDirection", 3258, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [("USearchDirection_ToMyLeft", 3260, "USearchDirection")]
+    BL2SDK.g_loadedClasses += [("USearchDirection_ToMyRight", 3262, "USearchDirection")]
+    BL2SDK.g_loadedClasses += [("USearchDirection_TowardMe", 3264, "USearchDirection")]
+    BL2SDK.g_loadedClasses += [
+        ("USearchDirection_TowardTarget", 3266, "USearchDirection")
+    ]
+    BL2SDK.g_loadedClasses += [("USearchOrigin", 3268, "UObject")]
+    BL2SDK.g_loadedClasses += [("USearchOrigin_CurrentLocation", 3270, "USearchOrigin")]
+    BL2SDK.g_loadedClasses += [
+        ("USearchOrigin_ScriptedMoveTarget", 3272, "USearchOrigin")
+    ]
+    BL2SDK.g_loadedClasses += [("USearchOrigin_TargetLocation", 3274, "USearchOrigin")]
+    BL2SDK.g_loadedClasses += [("USnapshotRecord", 3276, "USnapshotInterface")]
+    BL2SDK.g_loadedClasses += [("UGearboxPawnSnapshotRecord", 3278, "USnapshotRecord")]
+    BL2SDK.g_loadedClasses += [("UTargetingDefinition", 3280, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UTargetIterator", 3282, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorCalculateDistance", 3284, "UTargetIterator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorCalculateExposure", 3286, "UTargetIterator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorCheckAwareness", 3288, "UTargetIterator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorCheckRemoveTarget", 3290, "UTargetIterator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorForgetAboutTarget", 3292, "UTargetIterator")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizeTargetsIAmExposedTo", 3294, "UTargetIterator")
+    ]
+    BL2SDK.g_loadedClasses += [("UTI_Calc", 3296, "UTargetIterator")]
+    BL2SDK.g_loadedClasses += [("UTI_Prioritize", 3298, "UTargetIterator")]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizeExposedTargets", 3300, "UTI_Prioritize")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizeHumanTargets", 3302, "UTI_Prioritize")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizeNearbyTarget", 3304, "UTI_Prioritize")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizePreviousTarget", 3306, "UTI_Prioritize")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizeTargetNotBeingShotAt", 3308, "UTI_Prioritize")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UTargetIteratorPrioritizeTargetWhoShootsAtMe", 3310, "UTI_Prioritize")
+    ]
+    BL2SDK.g_loadedClasses += [("UTI_PrioritizeBonus", 3312, "UTI_Prioritize")]
+    BL2SDK.g_loadedClasses += [("UTI_PrioritizeConditional", 3314, "UTI_Prioritize")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSeqAct_PopulationOpportunityLink", 3316, "USeqAct_Latent")
+    ]
+    BL2SDK.g_loadedClasses += [("UIPopulationSpawnPoint", 3318, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UPopulationDefinition", 3320, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UPopulationFactory", 3322, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationFactoryGeneric", 3324, "UPopulationFactory")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationFactoryPopulationDefinition", 3326, "UPopulationFactory")
+    ]
+    BL2SDK.g_loadedClasses += [("UPopulationMaster", 3328, "UObject")]
+    BL2SDK.g_loadedClasses += [("APopulationOpportunity", 3330, "AInfo")]
+    BL2SDK.g_loadedClasses += [
+        ("APopulationOpportunityArea", 3332, "APopulationOpportunity")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("APopulationOpportunityCloner", 3334, "APopulationOpportunity")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("APopulationOpportunityCombat", 3336, "APopulationOpportunity")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("APopulationOpportunityPoint", 3338, "APopulationOpportunity")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationOpportunityAreaRenderingComponent", 3340, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        (
+            "UPopulationOpportunityAttributeContextResolver",
+            3342,
+            "UAttributeContextResolver",
+        )
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationOpportunityPointRenderingComponent", 3344, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [("APopulationPoint", 3346, "AActor")]
+    BL2SDK.g_loadedClasses += [("APopulationPoint_Dynamic", 3348, "APopulationPoint")]
+    BL2SDK.g_loadedClasses += [
+        ("UPopulationPointRenderingComponent", 3350, "UPrimitiveComponent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USeqEvent_EncounterWaveComplete", 3352, "USequenceEvent")
+    ]
+    BL2SDK.g_loadedClasses += [("USeqEvent_PopulatedActor", 3354, "USequenceEvent")]
+    BL2SDK.g_loadedClasses += [("USeqEvent_PopulatedPoint", 3356, "USequenceEvent")]
+    BL2SDK.g_loadedClasses += [("AGearboxHUD", 3358, "AHUD")]
+    BL2SDK.g_loadedClasses += [("UAIDefinition", 3360, "UObject")]
+    BL2SDK.g_loadedClasses += [("UBehaviorEventFilterBase", 3362, "UObject")]
+    BL2SDK.g_loadedClasses += [("UBehaviorKernel", 3364, "UObject")]
+    BL2SDK.g_loadedClasses += [("UBehaviorProviderDefinition", 3366, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [
+        ("UAIBehaviorProviderDefinition", 3368, "UBehaviorProviderDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehaviorSequenceCustomEnableCondition", 3370, "UObject")
+    ]
+    BL2SDK.g_loadedClasses += [
+        (
+            "UBehaviorSequenceEnableByMultipleConditions",
+            3372,
+            "UBehaviorSequenceCustomEnableCondition",
+        )
+    ]
+    BL2SDK.g_loadedClasses += [("UIBehaviorConsumer", 3374, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UIBehaviorProvider", 3376, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UICustomEvent", 3378, "UInterface")]
+    BL2SDK.g_loadedClasses += [("UITimerBehavior", 3380, "UInterface")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxAnimDefinition", 3382, "USpecialMoveDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_TriggerDialogEvent", 3384, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("AGearboxDialogActor", 3386, "AActor")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogComponent", 3388, "UActorComponent")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogEventData", 3390, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogEventTag", 3392, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogGlobalsDefinition", 3394, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogGroup", 3396, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogTemplateGroup", 3398, "UGearboxDialogGroup")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogManager", 3400, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogNameTag", 3402, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogPriority", 3404, "UGBXDefinition")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogNode", 3406, "UGearboxEditorNode")]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogAction", 3408, "UGearboxDialogNode")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogAct_Chance", 3410, "UGearboxDialogAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogAct_Compare", 3412, "UGearboxDialogAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogAct_ObjectParameterSwitch", 3414, "UGearboxDialogAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogNonTemplateAction", 3416, "UGearboxDialogAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogAct_Talk", 3418, "UGearboxDialogNonTemplateAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogTemplateAction", 3420, "UGearboxDialogAction")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogAct_Trigger", 3422, "UGearboxDialogTemplateAction")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogEvent", 3424, "UGearboxDialogNode")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogTemplateEvent", 3426, "UGearboxDialogEvent")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxDialogVariable", 3428, "UGearboxDialogNode")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogVar_Instigator", 3430, "UGearboxDialogVariable")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogVar_LastTalker", 3432, "UGearboxDialogVariable")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogVar_NameTag", 3434, "UGearboxDialogVariable")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogVar_Other", 3436, "UGearboxDialogVariable")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxDialogVar_Random", 3438, "UGearboxDialogVariable")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxSeqAct_ToggleDialog", 3440, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [("UGearboxSeqAct_TriggerDialog", 3442, "USeqAct_Latent")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSeqAct_TriggerDialogName", 3444, "UGearboxSeqAct_TriggerDialog")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxAccountActions", 3446, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxAccountData", 3448, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxProcess", 3450, "UObject")]
+    BL2SDK.g_loadedClasses += [("USparkInitializationProcess", 3452, "UGearboxProcess")]
+    BL2SDK.g_loadedClasses += [("ULeviathanService", 3454, "UObject")]
+    BL2SDK.g_loadedClasses += [("USparkInterface", 3456, "UInterface")]
+    BL2SDK.g_loadedClasses += [("USparkInterfaceImpl", 3458, "UObject")]
+    BL2SDK.g_loadedClasses += [("USparkServiceConfiguration", 3460, "UObject")]
+    BL2SDK.g_loadedClasses += [("USparkTypes", 3462, "UObject")]
+    BL2SDK.g_loadedClasses += [("UAction_ChangeRuleSet", 38895, "UActionSequence")]
+    BL2SDK.g_loadedClasses += [("URES_RuleSetChange", 38899, "UActionResource")]
+    BL2SDK.g_loadedClasses += [("UAction_FaceThreat", 38902, "UActionSequencePawn")]
+    BL2SDK.g_loadedClasses += [("URES_FacingPolicy", 38909, "UActionResource")]
+    BL2SDK.g_loadedClasses += [("UAction_MoveRandom", 38910, "UActionSequencePawn")]
+    BL2SDK.g_loadedClasses += [("UAction_MoveTo", 38912, "UActionSequencePawn")]
+    BL2SDK.g_loadedClasses += [("URES_Movement", 39140, "UActionResource")]
+    BL2SDK.g_loadedClasses += [("UAction_PopRuleSet", 39141, "UActionSequencePawn")]
+    BL2SDK.g_loadedClasses += [("UAction_PushRuleSet", 39144, "UActionSequencePawn")]
+    BL2SDK.g_loadedClasses += [
+        ("UActorAttributeContextResolver", 39162, "UAttributeContextResolver")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UAIComponentAttributeContextResolver", 39278, "UAttributeContextResolver")
+    ]
+    BL2SDK.g_loadedClasses += [("UAIStateBase", 39597, "UGearboxEditorNode")]
+    BL2SDK.g_loadedClasses += [("UAIState", 39599, "UAIStateBase")]
+    BL2SDK.g_loadedClasses += [("UAIState_Priority", 39601, "UAIStateBase")]
+    BL2SDK.g_loadedClasses += [("UAIState_Random", 39603, "UAIStateBase")]
+    BL2SDK.g_loadedClasses += [("UAIState_Sequential", 39605, "UAIStateBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_AIHold", 39694, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_AIPriority", 39709, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_AITargeting", 39723, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_ChangeAnyBehaviorSequenceState", 39746, "UBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_ChangeLocalBehaviorSequenceState", 39762, "UBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_CompareBool", 39830, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_CompareValues", 39842, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_CustomEvent", 39855, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_Delay", 39869, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_Gate", 39879, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_GetFloatParam", 39891, "UParameterBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_GetObjectParam", 39905, "UParameterBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_GetVectorParam", 39919, "UParameterBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_InterpolateFloatOverTime", 39938, "UBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_Metronome", 39969, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_ModifyTimer", 39984, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_SetFloatParam", 40110, "UParameterBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_SetObjectParam", 40121, "UParameterBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_SetVectorParam", 40132, "UParameterBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_SpecialMove", 40153, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_SpecialMoveStop", 40187, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UBehavior_StartAkAmbientSound", 40201, "UBehaviorBase")
+    ]
+    BL2SDK.g_loadedClasses += [("UBehavior_StopAkAmbientSound", 40215, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_StopDialog", 40229, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [("UBehavior_ToggleDialog", 40243, "UBehaviorBase")]
+    BL2SDK.g_loadedClasses += [
+        ("UCameraModifierCrossfade", 40602, "UGearboxCameraModifier")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UCameraModifierLookAt", 40644, "UGearboxCameraModifier")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UDefinitionUITestCaseDefinition", 40758, "UGBXDefinition")
+    ]
+    BL2SDK.g_loadedClasses += [("USparkNews", 41097, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxAccountEntitlement", 41281, "UObject")]
+    BL2SDK.g_loadedClasses += [("UGearboxAccountOffer", 41298, "UObject")]
+    BL2SDK.g_loadedClasses += [("APatrolDestination", 41561, "AActor")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSeqAct_TargetPriority", 42592, "USequenceAction")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxSeqAct_CameraShake", 43108, "USequenceAction")]
+    BL2SDK.g_loadedClasses += [
+        ("UGearboxSeqAct_PawnClonerLink", 43421, "USeqAct_Latent")
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("UGFxMovieDrawStyleInstanceData", 43594, "UGFxMovieDrawStyleRTT")
+    ]
+    BL2SDK.g_loadedClasses += [("USeqEvent_AllSpawned", 43898, "USequenceEvent")]
+    BL2SDK.g_loadedClasses += [
+        (
+            "UPopulationMasterAttributeContextResolver",
+            44207,
+            "UAttributeContextResolver",
+        )
+    ]
+    BL2SDK.g_loadedClasses += [
+        ("USeqEvent_SinglePopulationDeath", 44385, "USequenceEvent")
+    ]
+    BL2SDK.g_loadedClasses += [("URES_Rotation", 44538, "UActionResource")]
+    BL2SDK.g_loadedClasses += [("URES_SpecialMove", 44541, "UActionResource")]
+    BL2SDK.g_loadedClasses += [("USeqEvent_ArrivedAtMoveNode", 44619, "USequenceEvent")]
+    BL2SDK.g_loadedClasses += [("USeqEvent_LeavingMoveNode", 44624, "USequenceEvent")]
+    BL2SDK.g_loadedClasses += [("UShowDebugHelpers", 44641, "UObject")]
+    BL2SDK.g_loadedClasses += [
+        ("ASkeletalMeshActorGBXMatinee", 44655, "ASkeletalMeshActor")
+    ]
+    BL2SDK.g_loadedClasses += [("UGearboxEULAGFxMovie", 45051, "UGearboxGFxMovie")]
+    BL2SDK.g_loadedClasses += [("UGearboxEULAGFxObject", 45059, "UGFxObject")]

@@ -3,37 +3,2164 @@ import BL2SDK
 
 
 class FStaticMeshLODElement(Structure):
-    _fields_ = [
-        ("Material", POINTER(UMaterialInterface)),
-        ("bEnableShadowCasting", c_bool, 1),
-        ("", c_ulong, 0),
-        ("Unknown1", c_ubyte, 0x4),
-        ("bEnableCollision", c_bool, 1),
-        ("", c_ulong, 0),
-    ]
+    pass
 
 
 class FStaticMeshLODInfo(Structure):
-    _fields_ = [("Elements", TArray_FStaticMeshLODElement)]
+    pass
 
 
 class FAnimSlotDesc(Structure):
-    _fields_ = [("SlotName", FName), ("NumChannels", c_int)]
+    pass
 
 
 class FRigidBodyState(Structure):
-    _fields_ = [
+    pass
+
+
+class FRigidBodyContactInfo(Structure):
+    pass
+
+
+class FCollisionImpactData(Structure):
+    pass
+
+
+class FPhysEffectInfo(Structure):
+    pass
+
+
+class FActorReference(Structure):
+    pass
+
+
+class FNavReference(Structure):
+    pass
+
+
+class FBasedPosition(Structure):
+    pass
+
+
+class FResourcePoolReference(Structure):
+    pass
+
+
+class FTraceHitInfo(Structure):
+    pass
+
+
+class FImpactInfo(Structure):
+    pass
+
+
+class FAkPlayingInfo(Structure):
+    pass
+
+
+class FSeqOpInputLink(Structure):
+    pass
+
+
+class FAnimSlotInfo(Structure):
+    pass
+
+
+class FTraceNotifyInfo(Structure):
+    pass
+
+
+class FTimerData(Structure):
+    pass
+
+
+class FKeyValuePair(Structure):
+    pass
+
+
+class FPlayerResponseLine(Structure):
+    pass
+
+
+class FServerResponseLine(Structure):
+    pass
+
+
+class FLocalizedStringSetting(Structure):
+    pass
+
+
+class FSettingsData(Structure):
+    pass
+
+
+class FSettingsProperty(Structure):
+    pass
+
+
+class FIdToStringMapping(Structure):
+    pass
+
+
+class FStringIdToStringMapping(Structure):
+    pass
+
+
+class FLocalizedStringSettingMetaData(Structure):
+    pass
+
+
+class FSettingsPropertyPropertyMetaData(Structure):
+    pass
+
+
+class FUniqueNetId(Structure):
+    pass
+
+
+class FOnlineRegistrant(Structure):
+    pass
+
+
+class FOnlineArbitrationRegistrant(Structure):
+    pass
+
+
+class FNamedSession(Structure):
+    pass
+
+
+class FNamedInterface(Structure):
+    pass
+
+
+class FOnlinePartyMember(Structure):
+    pass
+
+
+class FAchievementDetails(Structure):
+    pass
+
+
+class FCommunityContentMetadata(Structure):
+    pass
+
+
+class FCommunityContentFile(Structure):
+    pass
+
+
+class FTitleFile(Structure):
+    pass
+
+
+class FNamedInterfaceDef(Structure):
+    pass
+
+
+class FOnlineFriendMessage(Structure):
+    pass
+
+
+class FRemoteTalker(Structure):
+    pass
+
+
+class FLocalTalker(Structure):
+    pass
+
+
+class FOnlinePlayerScore(Structure):
+    pass
+
+
+class FSpeechRecognizedWord(Structure):
+    pass
+
+
+class FMarketplaceContent(Structure):
+    pass
+
+
+class FAppIdLicenseInfo(Structure):
+    pass
+
+
+class FTOCInfo(Structure):
+    pass
+
+
+class FOnlineContent(Structure):
+    pass
+
+
+class FOnlineContentNameInfo(Structure):
+    pass
+
+
+class FNamedOnlineContent(Structure):
+    pass
+
+
+class FCompatibilityOnlineContent(Structure):
+    pass
+
+
+class FOnlineFriend(Structure):
+    pass
+
+
+class FOnlineCrossTitleContent(Structure):
+    pass
+
+
+class FFriendsQuery(Structure):
+    pass
+
+
+class FBaseAuthSession(Structure):
+    pass
+
+
+class FLocalAuthSession(Structure):
+    pass
+
+
+class FAuthSession(Structure):
+    pass
+
+
+class FPendingClientAuth(Structure):
+    pass
+
+
+class FServerAuthRetry(Structure):
+    pass
+
+
+class FRBCollisionChannelContainer(Structure):
+    pass
+
+
+class FLightingChannelContainer(Structure):
+    pass
+
+
+class FMaterialViewRelevance(Structure):
+    pass
+
+
+class FReplicatedInstanceDataState(Structure):
+    pass
+
+
+class FComponentData(Structure):
+    pass
+
+
+class FInstanceDataUnion(Structure):
+    pass
+
+
+class FInstanceDataSet(Structure):
+    pass
+
+
+class FVisiblePortalInfo(Structure):
+    pass
+
+
+class FOnlineGameSearchParameter(Structure):
+    pass
+
+
+class FOnlineGameSearchORClause(Structure):
+    pass
+
+
+class FOnlineGameSearchSortClause(Structure):
+    pass
+
+
+class FOnlineGameSearchQuery(Structure):
+    pass
+
+
+class FOverrideSkill(Structure):
+    pass
+
+
+class FNamedObjectProperty(Structure):
+    pass
+
+
+class FOnlineGameSearchResult(Structure):
+    pass
+
+
+class FTViewTarget(Structure):
+    pass
+
+
+class FTCameraCache(Structure):
+    pass
+
+
+class FViewTargetTransitionParams(Structure):
+    pass
+
+
+class FLUTBlender(Structure):
+    pass
+
+
+class FPostProcessSettings(Structure):
+    pass
+
+
+class FRenderingPerformanceOverrides(Structure):
+    pass
+
+
+class FSeqOpOutputInputLink(Structure):
+    pass
+
+
+class FSeqOpOutputLink(Structure):
+    pass
+
+
+class FSeqVarLink(Structure):
+    pass
+
+
+class FSeqEventLink(Structure):
+    pass
+
+
+class FDebugTextInfo(Structure):
+    pass
+
+
+class FBonePair(Structure):
+    pass
+
+
+class FAnimBlendChild(Structure):
+    pass
+
+
+class FSkelMeshComponentLODInfo(Structure):
+    pass
+
+
+class FAttachment(Structure):
+    pass
+
+
+class FActiveMorph(Structure):
+    pass
+
+
+class FGestaltLODModelFragment(Structure):
+    pass
+
+
+class FGestaltLODModel(Structure):
+    pass
+
+
+class FSocketRemapEntry(Structure):
+    pass
+
+
+class FGestaltAccessoryEntry(Structure):
+    pass
+
+
+class FGestaltDataContainer(Structure):
+    pass
+
+
+class FConnectedPeerInfo(Structure):
+    pass
+
+
+class FClientAdjustment(Structure):
+    pass
+
+
+class FKismetDrawTextInfo(Structure):
+    pass
+
+
+class FConsoleMessage(Structure):
+    pass
+
+
+class FAutomatedTestingDatum(Structure):
+    pass
+
+
+class FInputEntry(Structure):
+    pass
+
+
+class FInputMatchRequest(Structure):
+    pass
+
+
+class FNavigationOctreeObject(Structure):
+    pass
+
+
+class ANavigationPoint_FCheckpointRecord(Structure):
+    pass
+
+
+class FAreaTestSortedPoint(Structure):
+    pass
+
+
+class FNavMeshPathSize(Structure):
+    pass
+
+
+class FPolyReference(Structure):
+    pass
+
+
+class FPendingSubtitleInfo(Structure):
+    pass
+
+
+class FPendingFaceFXInfo(Structure):
+    pass
+
+
+class FDialogueArgument(Structure):
+    pass
+
+
+class FKSphereElem(Structure):
+    pass
+
+
+class FKBoxElem(Structure):
+    pass
+
+
+class FKSphylElem(Structure):
+    pass
+
+
+class FKConvexElem(Structure):
+    pass
+
+
+class FKAggregateGeom(Structure):
+    pass
+
+
+class FKCachedConvexData_Mirror(Structure):
+    pass
+
+
+class FGeomSelection(Structure):
+    pass
+
+
+class FInteriorSettings(Structure):
+    pass
+
+
+class FReverbSettings(Structure):
+    pass
+
+
+class FAudioComponentParam(Structure):
+    pass
+
+
+class FSubtitleCue(Structure):
+    pass
+
+
+class FCompressedTrack(Structure):
+    pass
+
+
+class FDeltaTrackInfo(Structure):
+    pass
+
+
+class FCurveTrack(Structure):
+    pass
+
+
+class FRotationTrack(Structure):
+    pass
+
+
+class FTranslationTrack(Structure):
+    pass
+
+
+class FTimeModifier(Structure):
+    pass
+
+
+class FSkelControlModifier(Structure):
+    pass
+
+
+class FAnimNotifyEvent(Structure):
+    pass
+
+
+class FRawAnimSequenceTrack(Structure):
+    pass
+
+
+class FCurveKey(Structure):
+    pass
+
+
+class FWeightNodeRule(Structure):
+    pass
+
+
+class FWeightRule(Structure):
+    pass
+
+
+class FBranchInfo(Structure):
+    pass
+
+
+class FPerBoneMaskInfo(Structure):
+    pass
+
+
+class FAimTransform(Structure):
+    pass
+
+
+class FAimComponent(Structure):
+    pass
+
+
+class FAimOffsetProfile(Structure):
+    pass
+
+
+class FChildBoneBlendInfo(Structure):
+    pass
+
+
+class FRandomAnimInfo(Structure):
+    pass
+
+
+class FAnimInfo(Structure):
+    pass
+
+
+class FAnimBlendInfo(Structure):
+    pass
+
+
+class FSynchGroup(Structure):
+    pass
+
+
+class FOpinionData(Structure):
+    pass
+
+
+class FInfoBarData(Structure):
+    pass
+
+
+class FLocalizedSubtitle(Structure):
+    pass
+
+
+class FLightMapRef(Structure):
+    pass
+
+
+class FDominantShadowInfo(Structure):
+    pass
+
+
+class FLightmassLightSettings(Structure):
+    pass
+
+
+class FScalarParameterInterpStruct(Structure):
+    pass
+
+
+class FLightmassPointLightSettings(Structure):
+    pass
+
+
+class FLightmassDirectionalLightSettings(Structure):
+    pass
+
+
+class FLightmassPrimitiveSettings(Structure):
+    pass
+
+
+class FLightmassDebugOptions(Structure):
+    pass
+
+
+class FSwarmDebugOptions(Structure):
+    pass
+
+
+class FRootMotionCurve(Structure):
+    pass
+
+
+class FRecentDamageTracker(Structure):
+    pass
+
+
+class FBalanceDefSpawnedActorState(Structure):
+    pass
+
+
+class FTrailSocketSamplePoint(Structure):
+    pass
+
+
+class FTrailSamplePoint(Structure):
+    pass
+
+
+class FTrailSample(Structure):
+    pass
+
+
+class FAnimSetMeshLinkup(Structure):
+    pass
+
+
+class FAnimGroup(Structure):
+    pass
+
+
+class FSkelControlListHead(Structure):
+    pass
+
+
+class FPreviewSkelMeshStruct(Structure):
+    pass
+
+
+class FPreviewSocketStruct(Structure):
+    pass
+
+
+class FPreviewAnimSetsStruct(Structure):
+    pass
+
+
+class F_ModifyHealthParams(Structure):
+    pass
+
+
+class FNxDestructibleParametersFlag(Structure):
+    pass
+
+
+class FNxDestructibleDepthParameters(Structure):
+    pass
+
+
+class FNxDestructibleParameters(Structure):
+    pass
+
+
+class FDamageParameters(Structure):
+    pass
+
+
+class FDamagePair(Structure):
+    pass
+
+
+class FAttributePriorityData(Structure):
+    pass
+
+
+class FAppliedAttributeEffect(Structure):
+    pass
+
+
+class FAttributeInitializationData(Structure):
+    pass
+
+
+class FAttributeEffectData(Structure):
+    pass
+
+
+class FAttributeExpressionData(Structure):
+    pass
+
+
+class FConditionalSoundData(Structure):
+    pass
+
+
+class FBalanceFormula(Structure):
+    pass
+
+
+class FVariance(Structure):
+    pass
+
+
+class FRange(Structure):
+    pass
+
+
+class FConditionalValueExpression(Structure):
+    pass
+
+
+class FConditionalInitializationExpressions(Structure):
+    pass
+
+
+class FAttributeBaseValueData(Structure):
+    pass
+
+
+class FListener(Structure):
+    pass
+
+
+class FAudioClassInfo(Structure):
+    pass
+
+
+class FGameStageRangeData(Structure):
+    pass
+
+
+class FGameStageGradeWeightData(Structure):
+    pass
+
+
+class FBehaviorContextData(Structure):
+    pass
+
+
+class FBehaviorParameterUnion(Structure):
+    pass
+
+
+class FBehaviorParameters(Structure):
+    pass
+
+
+class FBehaviorOutputLinkDescriptionData(Structure):
+    pass
+
+
+class FBehaviorKernelInfo(Structure):
+    pass
+
+
+class FCounterEventReactionData(Structure):
+    pass
+
+
+class FBehaviorCounterState(Structure):
+    pass
+
+
+class FCounterBehaviorUserState(Structure):
+    pass
+
+
+class FIndependentSelectionData(Structure):
+    pass
+
+
+class FScalarMaterialParameter(Structure):
+    pass
+
+
+class FVectorMaterialParameter(Structure):
+    pass
+
+
+class FTextureMaterialParameter(Structure):
+    pass
+
+
+class FScalarParticleSystemParameter(Structure):
+    pass
+
+
+class FVectorParticleSystemParameter(Structure):
+    pass
+
+
+class FColorParticleSystemParameter(Structure):
+    pass
+
+
+class FMaterialParticleSystemParameter(Structure):
+    pass
+
+
+class FActorParticleSystemParameter(Structure):
+    pass
+
+
+class FStaticMeshComponentLODInfo(Structure):
+    pass
+
+
+class FPaintedVertex(Structure):
+    pass
+
+
+class FFOscillator(Structure):
+    pass
+
+
+class FVOscillator(Structure):
+    pass
+
+
+class FROscillator(Structure):
+    pass
+
+
+class FCameraShakeInstance(Structure):
+    pass
+
+
+class FTextureGroupContainer(Structure):
+    pass
+
+
+class FTexture2DMipMap(Structure):
+    pass
+
+
+class FTextureLinkedListMirror(Structure):
+    pass
+
+
+class FCanvasIcon(Structure):
+    pass
+
+
+class FDepthFieldGlowInfo(Structure):
+    pass
+
+
+class FFontRenderInfo(Structure):
+    pass
+
+
+class FCanvasUVTri(Structure):
+    pass
+
+
+class FTextSizingParameters(Structure):
+    pass
+
+
+class FWrappedStringElement(Structure):
+    pass
+
+
+class FDamageTypeResistance(Structure):
+    pass
+
+
+class FUIRangeData(Structure):
+    pass
+
+
+class FTextureCoordinates(Structure):
+    pass
+
+
+class FUIProviderScriptFieldValue(Structure):
+    pass
+
+
+class FUIProviderFieldValue(Structure):
+    pass
+
+
+class FInputKeyAction(Structure):
+    pass
+
+
+class FUIDataStoreBinding(Structure):
+    pass
+
+
+class FInputEventParameters(Structure):
+    pass
+
+
+class FSubscribedInputEventParameters(Structure):
+    pass
+
+
+class FUIAxisEmulationDefinition(Structure):
+    pass
+
+
+class FRawInputKeyEventData(Structure):
+    pass
+
+
+class FAutoCompleteCommand(Structure):
+    pass
+
+
+class FAutoCompleteNode(Structure):
+    pass
+
+
+class FCovPosInfo(Structure):
+    pass
+
+
+class FFireLinkItem(Structure):
+    pass
+
+
+class FFireLink(Structure):
+    pass
+
+
+class FDynamicLinkInfo(Structure):
+    pass
+
+
+class FCoverReference(Structure):
+    pass
+
+
+class FExposedLink(Structure):
+    pass
+
+
+class FSlotMoveRef(Structure):
+    pass
+
+
+class FCoverInfo(Structure):
+    pass
+
+
+class FCoverSlot(Structure):
+    pass
+
+
+class FCoverMeshes(Structure):
+    pass
+
+
+class FManualCoverTypeInfo(Structure):
+    pass
+
+
+class FCoverReplicationInfo(Structure):
+    pass
+
+
+class FCullDistanceSizePair(Structure):
+    pass
+
+
+class FPresetGeneratedPoint(Structure):
+    pass
+
+
+class FDamageInfo(Structure):
+    pass
+
+
+class FReflectionInfo(Structure):
+    pass
+
+
+class FDamageEventSummary(Structure):
+    pass
+
+
+class FPlayerDataStoreGroup(Structure):
+    pass
+
+
+class FKeyBind(Structure):
+    pass
+
+
+class FDecalReceiver(Structure):
+    pass
+
+
+class FActiveDecalInfo(Structure):
+    pass
+
+
+class FLightmassMaterialInterfaceSettings(Structure):
+    pass
+
+
+class FMaterialInput(Structure):
+    pass
+
+
+class FColorMaterialInput(Structure):
+    pass
+
+
+class FScalarMaterialInput(Structure):
+    pass
+
+
+class FVectorMaterialInput(Structure):
+    pass
+
+
+class FVector2MaterialInput(Structure):
+    pass
+
+
+class APhysicsVolume_FCheckpointRecord(Structure):
+    pass
+
+
+class FMarketplaceOffer(Structure):
+    pass
+
+
+class FInstalledContentInfo(Structure):
+    pass
+
+
+class FMarketplaceOfferDownloadState(Structure):
+    pass
+
+
+class FRejectedContentInfo(Structure):
+    pass
+
+
+class FDlcContentId(Structure):
+    pass
+
+
+class FDlcContentInfo(Structure):
+    pass
+
+
+class FDlcCompatibilityData(Structure):
+    pass
+
+
+class FDlcCompatibilityDataEx(Structure):
+    pass
+
+
+class ADynamicBlockingVolume_FCheckpointRecord(Structure):
+    pass
+
+
+class FViewParticleEmitterInstanceMotionBlurInfo(Structure):
+    pass
+
+
+class FParticleSysParam(Structure):
+    pass
+
+
+class FParticleEventData(Structure):
+    pass
+
+
+class FParticleEventSpawnData(Structure):
+    pass
+
+
+class FParticleEventDeathData(Structure):
+    pass
+
+
+class FParticleEventCollideData(Structure):
+    pass
+
+
+class FParticleEventTraceData(Structure):
+    pass
+
+
+class FParticleEventKismetData(Structure):
+    pass
+
+
+class FParticleEmitterInstanceMotionBlurInfo(Structure):
+    pass
+
+
+class FParticleEmitterInstance(Structure):
+    pass
+
+
+class AEmitter_FCheckpointRecord(Structure):
+    pass
+
+
+class FEmitterBaseInfo(Structure):
+    pass
+
+
+class FParticleSystemLOD(Structure):
+    pass
+
+
+class FStatColorMapEntry(Structure):
+    pass
+
+
+class FStatColorMapping(Structure):
+    pass
+
+
+class FDropNoteInfo(Structure):
+    pass
+
+
+class FPrimitiveMaterialRef(Structure):
+    pass
+
+
+class FPostProcessMaterialRef(Structure):
+    pass
+
+
+class FMaterialReferenceList(Structure):
+    pass
+
+
+class FVelocityObstacleStat(Structure):
+    pass
+
+
+class FGroupAnimationAndSoundIdentifier(Structure):
+    pass
+
+
+class AFogVolumeDensityInfo_FCheckpointRecord(Structure):
+    pass
+
+
+class FFoliageInstanceBase(Structure):
+    pass
+
+
+class FStoredFoliageInstance(Structure):
+    pass
+
+
+class FFoliageMesh(Structure):
+    pass
+
+
+class FFontImportOptionsData(Structure):
+    pass
+
+
+class FFontCharacter(Structure):
+    pass
+
+
+class FWaveformSample(Structure):
+    pass
+
+
+class FLevelStreamingStatus(Structure):
+    pass
+
+
+class FFullyLoadedPackagesInfo(Structure):
+    pass
+
+
+class FNamedNetDriver(Structure):
+    pass
+
+
+class FAnimTag(Structure):
+    pass
+
+
+class FURL(Structure):
+    pass
+
+
+class FGameClassShortName(Structure):
+    pass
+
+
+class FGameTypePrefix(Structure):
+    pass
+
+
+class FPlayerInformation(Structure):
+    pass
+
+
+class FTeamInformation(Structure):
+    pass
+
+
+class FGameStatGroup(Structure):
+    pass
+
+
+class FGameplayEventMetaData(Structure):
+    pass
+
+
+class FWeaponClassEventData(Structure):
+    pass
+
+
+class FDamageClassEventData(Structure):
+    pass
+
+
+class FProjectileClassEventData(Structure):
+    pass
+
+
+class FPawnClassEventData(Structure):
+    pass
+
+
+class FGameplayEventsHeader(Structure):
+    pass
+
+
+class FGameSessionInformation(Structure):
+    pass
+
+
+class FMusicStateInfo(Structure):
+    pass
+
+
+class FMusicTrackStruct(Structure):
+    pass
+
+
+class FNavMeshPathGoalEvaluatorCacheDatum(Structure):
+    pass
+
+
+class FPhysXEmitterVerticalProperties(Structure):
+    pass
+
+
+class FPhysXVerticalProperties(Structure):
+    pass
+
+
+class FHostMigrationState(Structure):
+    pass
+
+
+class FNavigationArea(Structure):
+    pass
+
+
+class FWorldFractureSettings(Structure):
+    pass
+
+
+class FNavMeshPathConstraintCacheDatum(Structure):
+    pass
+
+
+class FLightmassWorldInfoSettings(Structure):
+    pass
+
+
+class FScreenMessageString(Structure):
+    pass
+
+
+class FApexModuleDestructibleSettings(Structure):
+    pass
+
+
+class FPhysXSimulationProperties(Structure):
+    pass
+
+
+class FPhysXSceneProperties(Structure):
+    pass
+
+
+class FCompartmentRunList(Structure):
+    pass
+
+
+class FNetViewer(Structure):
+    pass
+
+
+class FLevelGroup(Structure):
+    pass
+
+
+class FTitleSafeZoneArea(Structure):
+    pass
+
+
+class FPerPlayerSplitscreenData(Structure):
+    pass
+
+
+class FSplitscreenData(Structure):
+    pass
+
+
+class FDebugDisplayProperty(Structure):
+    pass
+
+
+class FGBXConnectedNavMesh(Structure):
+    pass
+
+
+class FGBXNavMeshVertex(Structure):
+    pass
+
+
+class FGBXNavMeshPoly(Structure):
+    pass
+
+
+class FGBXNavmeshCrossLevelConnection(Structure):
+    pass
+
+
+class FGBXNavMeshSpecialMove(Structure):
+    pass
+
+
+class FGBXNavMeshPolyData(Structure):
+    pass
+
+
+class FGBXNavMeshPathSize(Structure):
+    pass
+
+
+class FGBXNavMeshObstacleData(Structure):
+    pass
+
+
+class FGBXNavMeshPolyRef(Structure):
+    pass
+
+
+class FGBXNavMeshLookupCell(Structure):
+    pass
+
+
+class FGBXNavMeshPolyLookup(Structure):
+    pass
+
+
+class FGBXLineCheckResult(Structure):
+    pass
+
+
+class FIGBXNavMeshObstaclePointer(Structure):
+    pass
+
+
+class FGBXNavMeshPathPoint(Structure):
+    pass
+
+
+class FGBXNavMeshPath(Structure):
+    pass
+
+
+class FNavMeshPathParams(Structure):
+    pass
+
+
+class FPolySegmentSpan(Structure):
+    pass
+
+
+class FEdgePointer(Structure):
+    pass
+
+
+class FPathStore(Structure):
+    pass
+
+
+class FPlayerOwnedComponent(Structure):
+    pass
+
+
+class FAkCallBackGetRTPC(Structure):
+    pass
+
+
+class FGestaltAccessoryPartEntry(Structure):
+    pass
+
+
+class FGestaltAccessoryGroupEntry(Structure):
+    pass
+
+
+class FGestaltAccessoryMeshEntry(Structure):
+    pass
+
+
+class FGPMCollection(Structure):
+    pass
+
+
+class FActorToLookAt(Structure):
+    pass
+
+
+class FHybridNavVisualizationVert(Structure):
+    pass
+
+
+class FHybridNavVisualizationVertsForNavPoint(Structure):
+    pass
+
+
+class FHybridNavVisualizationPerfStats(Structure):
+    pass
+
+
+class FReplicatedCoordinatedEffect(Structure):
+    pass
+
+
+class FGBXNavMeshSpecialMoveConnection(Structure):
+    pass
+
+
+class FIniLocFileEntry(Structure):
+    pass
+
+
+class FBodyInstanceDataUnion(Structure):
+    pass
+
+
+class FBodyCompositionData(Structure):
+    pass
+
+
+class FInstancedStaticMeshInstanceData(Structure):
+    pass
+
+
+class FInstancedStaticMeshMappingInfo(Structure):
+    pass
+
+
+class AInterpActor_FCheckpointRecord(Structure):
+    pass
+
+
+class FCurveEdEntry(Structure):
+    pass
+
+
+class FCurveEdTab(Structure):
+    pass
+
+
+class FAnimSetBakeAndPruneStatus(Structure):
+    pass
+
+
+class FInterpEdSelKey(Structure):
+    pass
+
+
+class FSubTrackGroup(Structure):
+    pass
+
+
+class FSupportedSubTrackInfo(Structure):
+    pass
+
+
+class FAnimControlTrackKey(Structure):
+    pass
+
+
+class FBoolTrackKey(Structure):
+    pass
+
+
+class FCommentTrackKey(Structure):
+    pass
+
+
+class FDirectorTrackCut(Structure):
+    pass
+
+
+class FEventTrackKey(Structure):
+    pass
+
+
+class FFaceFXTrackKey(Structure):
+    pass
+
+
+class FFaceFXSoundCueKey(Structure):
+    pass
+
+
+class FHeadTrackingKey(Structure):
+    pass
+
+
+class FFloatMaterialParamMICData(Structure):
+    pass
+
+
+class FToggleTrackKey(Structure):
+    pass
+
+
+class FVectorMaterialParamMICData(Structure):
+    pass
+
+
+class FVisibilityTrackKey(Structure):
+    pass
+
+
+class FInterpLookupPoint(Structure):
+    pass
+
+
+class FInterpLookupTrack(Structure):
+    pass
+
+
+class FParticleReplayTrackKey(Structure):
+    pass
+
+
+class FSoundTrackKey(Structure):
+    pass
+
+
+class FTeleportKeyData(Structure):
+    pass
+
+
+class FImpulseData(Structure):
+    pass
+
+
+class FLandscapeWeightmapUsage(Structure):
+    pass
+
+
+class FLandscapeLayerInfo(Structure):
+    pass
+
+
+class FLandscapeAddCollision(Structure):
+    pass
+
+
+class FWeightmapLayerAllocationInfo(Structure):
+    pass
+
+
+class FLensFlareElement(Structure):
+    pass
+
+
+class FLensFlareElementCurvePair(Structure):
+    pass
+
+
+class FLensFlareElementMaterials(Structure):
+    pass
+
+
+class FLensFlareElementInstance(Structure):
+    pass
+
+
+class FLevelGridCellCoordinate(Structure):
+    pass
+
+
+class ALevelStreamingVolume_FCheckpointRecord(Structure):
+    pass
+
+
+class FPostProcessSettingsOverride(Structure):
+    pass
+
+
+class FWorldLightingOverride(Structure):
+    pass
+
+
+class FCurrentPostProcessVolumeInfo(Structure):
+    pass
+
+
+class FSynchronizedActorVisibilityHistory(Structure):
+    pass
+
+
+class FManufacturerGradeData(Structure):
+    pass
+
+
+class FManufacturerCustomGradeWeightData(Structure):
+    pass
+
+
+class FExpressionInput(Structure):
+    pass
+
+
+class FCustomInput(Structure):
+    pass
+
+
+class FFontParameterValue(Structure):
+    pass
+
+
+class FScalarParameterValue(Structure):
+    pass
+
+
+class FTextureParameterValue(Structure):
+    pass
+
+
+class FVectorParameterValue(Structure):
+    pass
+
+
+class FParameterValueOverTime(Structure):
+    pass
+
+
+class FFontParameterValueOverTime(Structure):
+    pass
+
+
+class FScalarParameterValueOverTime(Structure):
+    pass
+
+
+class FTextureParameterValueOverTime(Structure):
+    pass
+
+
+class FVectorParameterValueOverTime(Structure):
+    pass
+
+
+class FMorphNodeConn(Structure):
+    pass
+
+
+class FBoneAngleMorph(Structure):
+    pass
+
+
+class FBiasedGoalActor(Structure):
+    pass
+
+
+class ANavMeshObstacle_FCheckpointRecord(Structure):
+    pass
+
+
+class FMMStats_Timer(Structure):
+    pass
+
+
+class FOnlineProfileSetting(Structure):
+    pass
+
+
+class FUIDataProviderField(Structure):
+    pass
+
+
+class FRecentParty(Structure):
+    pass
+
+
+class FCurrentPlayerMet(Structure):
+    pass
+
+
+class FOnlineStatsColumn(Structure):
+    pass
+
+
+class FOnlineStatsRow(Structure):
+    pass
+
+
+class FColumnMetaData(Structure):
+    pass
+
+
+class FParticleBurst(Structure):
+    pass
+
+
+class FParticleCurvePair(Structure):
+    pass
+
+
+class FParticleRandomSeedInfo(Structure):
+    pass
+
+
+class FBeamModifierOptions(Structure):
+    pass
+
+
+class FParticleEvent_GenerateInfo(Structure):
+    pass
+
+
+class FLocationBoneSocketInfo(Structure):
+    pass
+
+
+class FOrbitOptions(Structure):
+    pass
+
+
+class FEmitterDynamicParameter(Structure):
+    pass
+
+
+class FBeamTargetData(Structure):
+    pass
+
+
+class FPhysXEmitterVerticalLodProperties(Structure):
+    pass
+
+
+class FLODSoloTrack(Structure):
+    pass
+
+
+class FParticleEmitterReplayFrame(Structure):
+    pass
+
+
+class FParticleSystemReplayFrame(Structure):
+    pass
+
+
+class FPersistentData(Structure):
+    pass
+
+
+class FPersistentSequenceEventData(Structure):
+    pass
+
+
+class FPersistentSeqAct_InterpData(Structure):
+    pass
+
+
+class APointLightToggleable_FCheckpointRecord(Structure):
+    pass
+
+
+class FActivateOp(Structure):
+    pass
+
+
+class FQueuedActivationInfo(Structure):
+    pass
+
+
+class FKCachedConvexDataElement(Structure):
+    pass
+
+
+class FKCachedConvexData(Structure):
+    pass
+
+
+class FLinearDOFSetup(Structure):
+    pass
+
+
+class FResourcePoolIdentityState(Structure):
+    pass
+
+
+class FRarelyChangedPoolState(Structure):
+    pass
+
+
+class FPathSizeInfo(Structure):
+    pass
+
+
+class FCameraCutInfo(Structure):
+    pass
+
+
+class FSavedTransform(Structure):
+    pass
+
+
+class FLevelStreamingNameCombo(Structure):
+    pass
+
+
+class FSwitchClassInfo(Structure):
+    pass
+
+
+class FSwitchObjectCase(Structure):
+    pass
+
+
+class FShadowRelevanceSizePair(Structure):
+    pass
+
+
+class FSoftBodyTetraLink(Structure):
+    pass
+
+
+class FSoftBodySpecialBoneInfo(Structure):
+    pass
+
+
+class FClothSpecialBoneInfo(Structure):
+    pass
+
+
+class FTriangleSortSettings(Structure):
+    pass
+
+
+class FSkeletalMeshLODInfo(Structure):
+    pass
+
+
+class FBoneMirrorExport(Structure):
+    pass
+
+
+class FBoneMirrorInfo(Structure):
+    pass
+
+
+class FSkelMeshActorControlTarget(Structure):
+    pass
+
+
+class ASkeletalMeshActor_FCheckpointRecord(Structure):
+    pass
+
+
+class FSkelMaterialSetterDatum(Structure):
+    pass
+
+
+class FSoundClassEditorData(Structure):
+    pass
+
+
+class FSoundClassProperties(Structure):
+    pass
+
+
+class FSoundNodeEditorData(Structure):
+    pass
+
+
+class FSoundClassAdjuster(Structure):
+    pass
+
+
+class FAudioEQEffect(Structure):
+    pass
+
+
+class FRecognisableWord(Structure):
+    pass
+
+
+class FRecogVocabulary(Structure):
+    pass
+
+
+class FRecogUserData(Structure):
+    pass
+
+
+class FSplineConnection(Structure):
+    pass
+
+
+class FSplineMeshParams(Structure):
+    pass
+
+
+class ASpotLightToggleable_FCheckpointRecord(Structure):
+    pass
+
+
+class FSMMaterialSetterDatum(Structure):
+    pass
+
+
+class FVehicleState(Structure):
+    pass
+
+
+class FSearchState(Structure):
+    pass
+
+
+class FTerrainHeight(Structure):
+    pass
+
+
+class FTerrainInfoData(Structure):
+    pass
+
+
+class FTerrainLayer(Structure):
+    pass
+
+
+class FTerrainDecorationInstance(Structure):
+    pass
+
+
+class FTerrainDecoration(Structure):
+    pass
+
+
+class FTerrainDecoLayer(Structure):
+    pass
+
+
+class FAlphaMap(Structure):
+    pass
+
+
+class ATerrain_FTerrainWeightedMaterial(Structure):
+    pass
+
+
+class FSelectedTerrainVertex(Structure):
+    pass
+
+
+class FTerrainMaterialResource(Structure):
+    pass
+
+
+class FCachedTerrainMaterialArray(Structure):
+    pass
+
+
+class FTerrainBVTree(Structure):
+    pass
+
+
+class FTerrainkDOPTree(Structure):
+    pass
+
+
+class FFilterLimit(Structure):
+    pass
+
+
+class FTerrainFilteredMaterial(Structure):
+    pass
+
+
+class FTerrainFoliageMesh(Structure):
+    pass
+
+
+class UTerrainWeightMapTexture_FTerrainWeightedMaterial(Structure):
+    pass
+
+
+class FSourceTexture2DRegion(Structure):
+    pass
+
+
+class ATrigger_FCheckpointRecord(Structure):
+    pass
+
+
+class FLevelStreamingData(Structure):
+    pass
+
+
+class FPlayerStorageArrayProvider(Structure):
+    pass
+
+
+class FSettingsArrayProvider(Structure):
+    pass
+
+
+class FDynamicResourceProviderDefinition(Structure):
+    pass
+
+
+class FGameResourceDataProvider(Structure):
+    pass
+
+
+class FUIInputKeyData(Structure):
+    pass
+
+
+class FUIDataStoreInputAlias(Structure):
+    pass
+
+
+class FGameSearchCfg(Structure):
+    pass
+
+
+class FGameSettingsCfg(Structure):
+    pass
+
+
+class FRankMetaData(Structure):
+    pass
+
+
+class FPlayerNickMetaData(Structure):
+    pass
+
+
+class FUIMenuInputMap(Structure):
+    pass
+
+
+class FUIKeyRepeatData(Structure):
+    pass
+
+
+class FUIAxisEmulationData(Structure):
+    pass
+
+
+class FSoundEventMapping(Structure):
+    pass
+
+
+class FUIStatData(Structure):
+    pass
+
+
+class FAttributeSlotEffectData(Structure):
+    pass
+
+
+class FAttributeSlotUpgradeData(Structure):
+    pass
+
+
+class FInventorySerialNumber(Structure):
+    pass
+
+
+class FAttributeSlotData(Structure):
+    pass
+
+
+class FWorldEventSource(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+
+
+def init():
+    FStaticMeshLODElement._fields_ = [
+        ("Material", POINTER(UMaterialInterface)),
+        ("bEnableShadowCasting", c_bool, 1),
+        ("Unknown1", c_ubyte * 0x4),
+        ("bEnableCollision", c_bool, 1),
+    ]
+
+    FStaticMeshLODInfo._fields_ = [("Elements", TArray_FStaticMeshLODElement)]
+
+    FAnimSlotDesc._fields_ = [("SlotName", FName), ("NumChannels", c_int)]
+
+    FRigidBodyState._fields_ = [
         ("Position", FVector),
-        ("Unknown1", c_ubyte, 0x4),
+        ("Unknown1", c_ubyte * 0x4),
         ("Quaternion", FQuat),
         ("LinVel", FVector),
         ("AngVel", FVector),
         ("bNewData", c_ubyte),
     ]
 
-
-class FRigidBodyContactInfo(Structure):
-    _fields_ = [
+    FRigidBodyContactInfo._fields_ = [
         ("ContactPosition", FVector),
         ("ContactNormal", FVector),
         ("ContactPenetration", c_float),
@@ -41,17 +2168,13 @@ class FRigidBodyContactInfo(Structure):
         ("PhysMaterial", POINTER(UPhysicalMaterial) * 2),
     ]
 
-
-class FCollisionImpactData(Structure):
-    _fields_ = [
+    FCollisionImpactData._fields_ = [
         ("ContactInfos", TArray_FRigidBodyContactInfo),
         ("TotalNormalForceVector", FVector),
         ("TotalFrictionForceVector", FVector),
     ]
 
-
-class FPhysEffectInfo(Structure):
-    _fields_ = [
+    FPhysEffectInfo._fields_ = [
         ("Threshold", c_float),
         ("ReFireDelay", c_float),
         ("Effect", POINTER(UParticleSystem)),
@@ -59,17 +2182,11 @@ class FPhysEffectInfo(Structure):
         ("ImpactDefinition", POINTER(UImpactDefinition)),
     ]
 
+    FActorReference._fields_ = [("Actor", POINTER(AActor)), ("Guid", FGuid)]
 
-class FActorReference(Structure):
-    _fields_ = [("Actor", POINTER(AActor)), ("Guid", FGuid)]
+    FNavReference._fields_ = [("Nav", POINTER(ANavigationPoint)), ("Guid", FGuid)]
 
-
-class FNavReference(Structure):
-    _fields_ = [("Nav", POINTER(ANavigationPoint)), ("Guid", FGuid)]
-
-
-class FBasedPosition(Structure):
-    _fields_ = [
+    FBasedPosition._fields_ = [
         ("Base", POINTER(AActor)),
         ("Position", FVector),
         ("CachedBaseLocation", FVector),
@@ -77,19 +2194,15 @@ class FBasedPosition(Structure):
         ("CachedTransPosition", FVector),
     ]
 
-
-class FResourcePoolReference(Structure):
-    _fields_ = [
+    FResourcePoolReference._fields_ = [
         ("PoolManager", POINTER(AResourcePoolManager)),
         ("PoolIndexInManager", c_ubyte),
         ("PoolGUID", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("Data", POINTER(UResourcePool)),
     ]
 
-
-class FTraceHitInfo(Structure):
-    _fields_ = [
+    FTraceHitInfo._fields_ = [
         ("Material", POINTER(UMaterial)),
         ("PhysMaterial", POINTER(UPhysicalMaterial)),
         ("Item", c_int),
@@ -98,9 +2211,7 @@ class FTraceHitInfo(Structure):
         ("HitComponent", POINTER(UPrimitiveComponent)),
     ]
 
-
-class FImpactInfo(Structure):
-    _fields_ = [
+    FImpactInfo._fields_ = [
         ("HitActor", POINTER(AActor)),
         ("HitLocation", FVector),
         ("HitNormal", FVector),
@@ -110,13 +2221,12 @@ class FImpactInfo(Structure):
         ("EndTrace", FVector),
     ]
 
+    FAkPlayingInfo._fields_ = [
+        ("SourceComponent", POINTER(UAkComponent)),
+        ("AkPlayingId", c_int),
+    ]
 
-class FAkPlayingInfo(Structure):
-    _fields_ = [("SourceComponent", POINTER(UAkComponent)), ("AkPlayingId", c_int)]
-
-
-class FSeqOpInputLink(Structure):
-    _fields_ = [
+    FSeqOpInputLink._fields_ = [
         ("LinkDesc", FString),
         ("QueuedActivations", c_int),
         ("LinkedOp", POINTER(USequenceOp)),
@@ -127,17 +2237,12 @@ class FSeqOpInputLink(Structure):
         ("bDisabled", c_bool, 1),
         ("bDisabledPIE", c_bool, 1),
         ("bHasImpulse", c_bool, 1),
-        ("", c_ulong, 0),
         ("ActivateDelay", c_float),
     ]
 
+    FAnimSlotInfo._fields_ = [("SlotName", FName), ("ChannelWeights", TArray_float)]
 
-class FAnimSlotInfo(Structure):
-    _fields_ = [("SlotName", FName), ("ChannelWeights", TArray_float)]
-
-
-class FTraceNotifyInfo(Structure):
-    _fields_ = [
+    FTraceNotifyInfo._fields_ = [
         ("ActorToNotify", POINTER(AActor)),
         ("ActorCallingTrace", POINTER(AActor)),
         ("ComponentHit", POINTER(UComponent)),
@@ -150,12 +2255,9 @@ class FTraceNotifyInfo(Structure):
         ("TraceFlags", c_int),
     ]
 
-
-class FTimerData(Structure):
-    _fields_ = [
+    FTimerData._fields_ = [
         ("bLoop", c_bool, 1),
         ("bPaused", c_bool, 1),
-        ("", c_ulong, 0),
         ("FuncName", FName),
         ("Rate", c_float),
         ("Count", c_float),
@@ -163,13 +2265,9 @@ class FTimerData(Structure):
         ("TimerObj", POINTER(UObject)),
     ]
 
+    FKeyValuePair._fields_ = [("Key", FString), ("Value", FString)]
 
-class FKeyValuePair(Structure):
-    _fields_ = [("Key", FString), ("Value", FString)]
-
-
-class FPlayerResponseLine(Structure):
-    _fields_ = [
+    FPlayerResponseLine._fields_ = [
         ("PlayerNum", c_int),
         ("PlayerID", c_int),
         ("PlayerName", FString),
@@ -179,9 +2277,7 @@ class FPlayerResponseLine(Structure):
         ("PlayerInfo", TArray_FKeyValuePair),
     ]
 
-
-class FServerResponseLine(Structure):
-    _fields_ = [
+    FServerResponseLine._fields_ = [
         ("ServerID", c_int),
         ("IP", FString),
         ("Port", c_int),
@@ -196,57 +2292,46 @@ class FServerResponseLine(Structure):
         ("PlayerInfo", TArray_FPlayerResponseLine),
     ]
 
+    FLocalizedStringSetting._fields_ = [
+        ("Id", c_int),
+        ("ValueIndex", c_int),
+        ("AdvertisementType", c_ubyte),
+    ]
 
-class FLocalizedStringSetting(Structure):
-    _fields_ = [("Id", c_int), ("ValueIndex", c_int), ("AdvertisementType", c_ubyte)]
-
-
-class FSettingsData(Structure):
-    _fields_ = [
+    FSettingsData._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
-        ("Value1", int),
+        ("Unknown1", c_ubyte * 0x3),
+        ("Value1", c_int),
         ("Value2", FPointer),
     ]
 
-
-class FSettingsProperty(Structure):
-    _fields_ = [
+    FSettingsProperty._fields_ = [
         ("PropertyId", c_int),
         ("Data", FSettingsData),
         ("AdvertisementType", c_ubyte),
     ]
 
+    FIdToStringMapping._fields_ = [("Id", c_int), ("Name", FString)]
 
-class FIdToStringMapping(Structure):
-    _fields_ = [("Id", int), ("Name", FString)]
-
-
-class FStringIdToStringMapping(Structure):
-    _fields_ = [
-        ("Id", int),
+    FStringIdToStringMapping._fields_ = [
+        ("Id", c_int),
         ("Name", FName),
         ("bIsWildcard", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FLocalizedStringSettingMetaData(Structure):
-    _fields_ = [
-        ("Id", int),
+    FLocalizedStringSettingMetaData._fields_ = [
+        ("Id", c_int),
         ("Name", FName),
         ("ColumnHeaderText", FString),
         ("ValueMappings", TArray_FStringIdToStringMapping),
     ]
 
-
-class FSettingsPropertyPropertyMetaData(Structure):
-    _fields_ = [
-        ("Id", int),
+    FSettingsPropertyPropertyMetaData._fields_ = [
+        ("Id", c_int),
         ("Name", FName),
         ("ColumnHeaderText", FString),
         ("MappingType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ValueMappings", TArray_FIdToStringMapping),
         ("PredefinedValues", TArray_FSettingsData),
         ("MinVal", c_float),
@@ -254,25 +2339,17 @@ class FSettingsPropertyPropertyMetaData(Structure):
         ("RangeIncrement", c_float),
     ]
 
+    FUniqueNetId._fields_ = [("Uid", FQWord), ("NpId", c_ubyte * 16)]
 
-class FUniqueNetId(Structure):
-    _fields_ = [("Uid", FQWord), ("NpId", c_ubyte * 16)]
+    FOnlineRegistrant._fields_ = [("PlayerNetId", FUniqueNetId)]
 
-
-class FOnlineRegistrant(Structure):
-    _fields_ = [("PlayerNetId", FUniqueNetId)]
-
-
-class FOnlineArbitrationRegistrant(Structure):
-    _fields_ = [
+    FOnlineArbitrationRegistrant._fields_ = [
         ("PlayerNetId", FUniqueNetId),
         ("MachineId", FQWord),
-        ("Trustworthiness", int),
+        ("Trustworthiness", c_int),
     ]
 
-
-class FNamedSession(Structure):
-    _fields_ = [
+    FNamedSession._fields_ = [
         ("SessionName", FName),
         ("SessionInfo", FPointer),
         ("GameSettings", POINTER(UOnlineGameSettings)),
@@ -280,36 +2357,32 @@ class FNamedSession(Structure):
         ("ArbitrationRegistrants", TArray_FOnlineArbitrationRegistrant),
     ]
 
+    FNamedInterface._fields_ = [
+        ("InterfaceName", FName),
+        ("InterfaceObject", POINTER(UObject)),
+    ]
 
-class FNamedInterface(Structure):
-    _fields_ = [("InterfaceName", FName), ("InterfaceObject", POINTER(UObject))]
-
-
-class FOnlinePartyMember(Structure):
-    _fields_ = [
+    FOnlinePartyMember._fields_ = [
         ("UniqueId", FUniqueNetId),
         ("NickName", FString),
         ("LocalUserNum", c_ubyte),
         ("NatType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
-        ("TitleId", int),
+        ("Unknown1", c_ubyte * 0x2),
+        ("TitleId", c_int),
         ("bIsLocal", c_bool, 1),
         ("bIsInPartyVoice", c_bool, 1),
         ("bIsTalking", c_bool, 1),
         ("bIsInGameSession", c_bool, 1),
         ("bIsPlayingThisGame", c_bool, 1),
-        ("", c_ulong, 0),
         ("SessionId", FQWord),
-        ("Data1", int),
-        ("Data2", int),
-        ("Data3", int),
-        ("Data4", int),
+        ("Data1", c_int),
+        ("Data2", c_int),
+        ("Data3", c_int),
+        ("Data4", c_int),
     ]
 
-
-class FAchievementDetails(Structure):
-    _fields_ = [
-        ("Id", int),
+    FAchievementDetails._fields_ = [
+        ("Id", c_int),
         ("AchievementName", FString),
         ("Description", FString),
         ("HowTo", FString),
@@ -318,20 +2391,18 @@ class FAchievementDetails(Structure):
         ("DayEarned", c_ubyte),
         ("YearEarned", c_ubyte),
         ("DayOfWeekEarned", c_ubyte),
-        ("GamerPoints", int),
+        ("GamerPoints", c_int),
         ("bIsSecret", c_bool, 1),
         ("bWasAchievedOnline", c_bool, 1),
         ("bWasAchievedOffline", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FCommunityContentMetadata._fields_ = [
+        ("ContentType", c_int),
+        ("MetadataItems", TArray_FSettingsProperty),
+    ]
 
-class FCommunityContentMetadata(Structure):
-    _fields_ = [("ContentType", c_int), ("MetadataItems", TArray_FSettingsProperty)]
-
-
-class FCommunityContentFile(Structure):
-    _fields_ = [
+    FCommunityContentFile._fields_ = [
         ("ContentId", c_int),
         ("FileId", c_int),
         ("ContentType", c_int),
@@ -344,66 +2415,58 @@ class FCommunityContentFile(Structure):
         ("LocalFilePath", FString),
     ]
 
-
-class FTitleFile(Structure):
-    _fields_ = [
+    FTitleFile._fields_ = [
         ("Filename", FString),
         ("AsyncState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Data", TArray_unsigned_char),
     ]
 
+    FNamedInterfaceDef._fields_ = [
+        ("InterfaceName", FName),
+        ("InterfaceClassName", FString),
+    ]
 
-class FNamedInterfaceDef(Structure):
-    _fields_ = [("InterfaceName", FName), ("InterfaceClassName", FString)]
-
-
-class FOnlineFriendMessage(Structure):
-    _fields_ = [
+    FOnlineFriendMessage._fields_ = [
         ("SendingPlayerId", FUniqueNetId),
         ("SendingPlayerNick", FString),
         ("bIsFriendInvite", c_bool, 1),
         ("bIsGameInvite", c_bool, 1),
         ("bWasAccepted", c_bool, 1),
         ("bWasDenied", c_bool, 1),
-        ("", c_ulong, 0),
         ("Message", FString),
     ]
 
-
-class FRemoteTalker(Structure):
-    _fields_ = [
+    FRemoteTalker._fields_ = [
         ("TalkerId", FUniqueNetId),
         ("LastNotificationTime", c_float),
         ("bWasTalking", c_bool, 1),
         ("bIsTalking", c_bool, 1),
         ("bIsRegistered", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FLocalTalker(Structure):
-    _fields_ = [
+    FLocalTalker._fields_ = [
         ("bHasVoice", c_bool, 1),
         ("bHasNetworkedVoice", c_bool, 1),
         ("bIsRecognizingSpeech", c_bool, 1),
         ("bWasTalking", c_bool, 1),
         ("bIsTalking", c_bool, 1),
         ("bIsRegistered", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FOnlinePlayerScore._fields_ = [
+        ("PlayerID", FUniqueNetId),
+        ("TeamID", c_int),
+        ("Score", c_int),
+    ]
 
-class FOnlinePlayerScore(Structure):
-    _fields_ = [("PlayerID", FUniqueNetId), ("TeamID", c_int), ("Score", c_int)]
+    FSpeechRecognizedWord._fields_ = [
+        ("WordId", c_int),
+        ("WordText", FString),
+        ("Confidence", c_float),
+    ]
 
-
-class FSpeechRecognizedWord(Structure):
-    _fields_ = [("WordId", c_int), ("WordText", FString), ("Confidence", c_float)]
-
-
-class FMarketplaceContent(Structure):
-    _fields_ = [
+    FMarketplaceContent._fields_ = [
         ("UserIndex", c_int),
         ("OfferId", c_int),
         ("PreviewOfferId", c_int),
@@ -411,13 +2474,11 @@ class FMarketplaceContent(Structure):
         ("OfferType", c_int),
         ("ContentId", TArray_unsigned_char),
         ("bIsUnrestrictedLicense", c_bool, 1),
-        ("", c_ulong, 0),
         ("LicenseMask", c_int),
         ("TitleId", c_int),
         ("ContentCategory", c_int),
         ("TitleName", FString),
         ("bUserHasPurchased", c_bool, 1),
-        ("", c_ulong, 0),
         ("PackageSize", c_int),
         ("InstallSize", c_int),
         ("SellText", FString),
@@ -428,22 +2489,15 @@ class FMarketplaceContent(Structure):
         ("OfferIdText", FString),
     ]
 
+    FAppIdLicenseInfo._fields_ = [("AppID", c_int), ("LicenseMask", c_int)]
 
-class FAppIdLicenseInfo(Structure):
-    _fields_ = [("AppID", c_int), ("LicenseMask", c_int)]
+    FTOCInfo._fields_ = [("TOC", FString), ("RootPath", FString), ("Path", FString)]
 
-
-class FTOCInfo(Structure):
-    _fields_ = [("TOC", FString), ("RootPath", FString), ("Path", FString)]
-
-
-class FOnlineContent(Structure):
-    _fields_ = [
+    FOnlineContent._fields_ = [
         ("ContentType", c_ubyte),
         ("UserIndex", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("bIsCorrupt", c_bool, 1),
-        ("", c_ulong, 0),
         ("DeviceID", c_int),
         ("LicenseMask", c_int),
         ("FriendlyName", FString),
@@ -455,22 +2509,17 @@ class FOnlineContent(Structure):
         ("TOCInfo", FTOCInfo),
     ]
 
-
-class FOnlineContentNameInfo(Structure):
-    _fields_ = [
+    FOnlineContentNameInfo._fields_ = [
         ("ContentName", FString),
         ("EngineVersion", c_int),
         ("CookedVersionID", FGuid),
     ]
 
-
-class FNamedOnlineContent(Structure):
-    _fields_ = [
+    FNamedOnlineContent._fields_ = [
         ("ContentType", c_ubyte),
         ("UserIndex", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("bIsCorrupt", c_bool, 1),
-        ("", c_ulong, 0),
         ("DeviceID", c_int),
         ("LicenseMask", c_int),
         ("FriendlyName", FString),
@@ -484,24 +2533,20 @@ class FNamedOnlineContent(Structure):
         ("NamedContentType", c_ubyte),
     ]
 
-
-class FCompatibilityOnlineContent(Structure):
-    _fields_ = [
+    FCompatibilityOnlineContent._fields_ = [
         ("VersionNumber", c_int),
         ("Container", FNamedOnlineContent),
         ("Content", TArray_FNamedOnlineContent),
     ]
 
-
-class FOnlineFriend(Structure):
-    _fields_ = [
+    FOnlineFriend._fields_ = [
         ("UniqueId", FUniqueNetId),
         ("SessionId", FQWord),
         ("SessionInfo", FString),
         ("NickName", FString),
         ("PresenceInfo", FString),
         ("FriendState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bIsOnline", c_bool, 1),
         ("bIsPlaying", c_bool, 1),
         ("bIsPlayingThisGame", c_bool, 1),
@@ -511,17 +2556,13 @@ class FOnlineFriend(Structure):
         ("bHasInvitedYou", c_bool, 1),
         ("bHaveRequested", c_bool, 1),
         ("bHasRequestedYou", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FOnlineCrossTitleContent(Structure):
-    _fields_ = [
+    FOnlineCrossTitleContent._fields_ = [
         ("ContentType", c_ubyte),
         ("UserIndex", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("bIsCorrupt", c_bool, 1),
-        ("", c_ulong, 0),
         ("DeviceID", c_int),
         ("LicenseMask", c_int),
         ("FriendlyName", FString),
@@ -534,54 +2575,40 @@ class FOnlineCrossTitleContent(Structure):
         ("TitleId", c_int),
     ]
 
+    FFriendsQuery._fields_ = [("UniqueId", FUniqueNetId), ("bIsFriend", c_bool, 1)]
 
-class FFriendsQuery(Structure):
-    _fields_ = [("UniqueId", FUniqueNetId), ("bIsFriend", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FBaseAuthSession(Structure):
-    _fields_ = [
-        ("EndPointIP", int),
-        ("EndPointPort", int),
+    FBaseAuthSession._fields_ = [
+        ("EndPointIP", c_int),
+        ("EndPointPort", c_int),
         ("EndPointUID", FUniqueNetId),
     ]
 
-
-class FLocalAuthSession(Structure):
-    _fields_ = [
-        ("EndPointIP", int),
-        ("EndPointPort", int),
+    FLocalAuthSession._fields_ = [
+        ("EndPointIP", c_int),
+        ("EndPointPort", c_int),
         ("EndPointUID", FUniqueNetId),
-        ("SessionUID", int),
+        ("SessionUID", c_int),
     ]
 
-
-class FAuthSession(Structure):
-    _fields_ = [
-        ("EndPointIP", int),
-        ("EndPointPort", int),
+    FAuthSession._fields_ = [
+        ("EndPointIP", c_int),
+        ("EndPointPort", c_int),
         ("EndPointUID", FUniqueNetId),
         ("AuthStatus", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
-        ("AuthBlobUID", int),
+        ("Unknown1", c_ubyte * 0x3),
+        ("AuthBlobUID", c_int),
     ]
 
-
-class FPendingClientAuth(Structure):
-    _fields_ = [
+    FPendingClientAuth._fields_ = [
         ("ClientConnection", POINTER(UPlayer)),
         ("ClientUID", FUniqueNetId),
         ("AuthTimestamp", c_float),
         ("AuthRetryCount", c_int),
     ]
 
+    FServerAuthRetry._fields_ = [("ClientUID", FUniqueNetId), ("AuthRetryCount", c_int)]
 
-class FServerAuthRetry(Structure):
-    _fields_ = [("ClientUID", FUniqueNetId), ("AuthRetryCount", c_int)]
-
-
-class FRBCollisionChannelContainer(Structure):
-    _fields_ = [
+    FRBCollisionChannelContainer._fields_ = [
         ("Default", c_bool, 1),
         ("Nothing", c_bool, 1),
         ("Pawn", c_bool, 1),
@@ -607,12 +2634,9 @@ class FRBCollisionChannelContainer(Structure):
         ("PlayerVehicleEnemyVehicle", c_bool, 1),
         ("TossedItemsPlayerVehicleEnemyVehicle", c_bool, 1),
         ("WillowPickup", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FLightingChannelContainer(Structure):
-    _fields_ = [
+    FLightingChannelContainer._fields_ = [
         ("bInitialized", c_bool, 1),
         ("BSP", c_bool, 1),
         ("Static", c_bool, 1),
@@ -641,50 +2665,38 @@ class FLightingChannelContainer(Structure):
         ("Gameplay", c_bool, 1),
         ("Crowd", c_bool, 1),
         ("PhysX", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FMaterialViewRelevance(Structure):
-    _fields_ = [
+    FMaterialViewRelevance._fields_ = [
         ("bOpaque", c_bool, 1),
         ("bTranslucent", c_bool, 1),
         ("bDistortion", c_bool, 1),
         ("bOneLayerDistortionRelevance", c_bool, 1),
         ("bLit", c_bool, 1),
         ("bUsesSceneColor", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FReplicatedInstanceDataState(Structure):
-    _fields_ = [
+    FReplicatedInstanceDataState._fields_ = [
         ("SwitchStateBitField", c_int),
         ("ActiveSwitchValues", c_int),
         ("RemovedBodyCompositionPartsBitField", c_int),
         ("bNeedToApplyThisState", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FComponentData(Structure):
-    _fields_ = [
+    FComponentData._fields_ = [
         ("Component", POINTER(UActorComponent)),
         ("CollisionType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bAttachToMesh", c_bool, 1),
         ("bIsUsable", c_bool, 1),
         ("bIsSecondaryUsable", c_bool, 1),
-        ("", c_ulong, 0),
         ("MeshSocketName", FName),
         ("HitRegionDefinition", POINTER(UBaseHitRegionDefinition)),
         ("InteractIcon", POINTER(UEngineInteractionIconDefinition)),
         ("SecondaryInteractIcon", POINTER(UEngineInteractionIconDefinition)),
     ]
 
-
-class FInstanceDataUnion(Structure):
-    _fields_ = [
+    FInstanceDataUnion._fields_ = [
         ("Name", FName),
         ("Type", c_ubyte),
         ("Replication", c_ubyte),
@@ -692,7 +2704,6 @@ class FInstanceDataUnion(Structure):
         ("BitsRequiredForMaxSwitchValue", c_ubyte),
         ("Bool", c_bool, 1),
         ("DeleteByOwner", c_bool, 1),
-        ("", c_ulong, 0),
         ("Int", c_int),
         ("Float", c_float),
         ("Vector", FVector),
@@ -702,17 +2713,14 @@ class FInstanceDataUnion(Structure):
         ("BodyCompositionIndex", c_int),
     ]
 
+    FInstanceDataSet._fields_ = [("Data", TArray_FInstanceDataUnion)]
 
-class FInstanceDataSet(Structure):
-    _fields_ = [("Data", TArray_FInstanceDataUnion)]
+    FVisiblePortalInfo._fields_ = [
+        ("Source", POINTER(AActor)),
+        ("Destination", POINTER(AActor)),
+    ]
 
-
-class FVisiblePortalInfo(Structure):
-    _fields_ = [("Source", POINTER(AActor)), ("Destination", POINTER(AActor))]
-
-
-class FOnlineGameSearchParameter(Structure):
-    _fields_ = [
+    FOnlineGameSearchParameter._fields_ = [
         ("EntryId", c_int),
         ("CompareValueId", c_int),
         ("ObjectPropertyName", FName),
@@ -720,49 +2728,40 @@ class FOnlineGameSearchParameter(Structure):
         ("ComparisonType", c_ubyte),
     ]
 
+    FOnlineGameSearchORClause._fields_ = [
+        ("OrParams", TArray_FOnlineGameSearchParameter)
+    ]
 
-class FOnlineGameSearchORClause(Structure):
-    _fields_ = [("OrParams", TArray_FOnlineGameSearchParameter)]
-
-
-class FOnlineGameSearchSortClause(Structure):
-    _fields_ = [
+    FOnlineGameSearchSortClause._fields_ = [
         ("EntryId", c_int),
         ("ObjectPropertyName", FName),
         ("EntryType", c_ubyte),
         ("SortType", c_ubyte),
     ]
 
-
-class FOnlineGameSearchQuery(Structure):
-    _fields_ = [
+    FOnlineGameSearchQuery._fields_ = [
         ("OrClauses", TArray_FOnlineGameSearchORClause),
         ("SortClauses", TArray_FOnlineGameSearchSortClause),
     ]
 
-
-class FOverrideSkill(Structure):
-    _fields_ = [
+    FOverrideSkill._fields_ = [
         ("LeaderboardId", c_int),
         ("Players", TArray_FUniqueNetId),
         ("Mus", TArray_FDouble),
         ("Sigmas", TArray_FDouble),
     ]
 
+    FNamedObjectProperty._fields_ = [
+        ("ObjectPropertyName", FName),
+        ("ObjectPropertyValue", FString),
+    ]
 
-class FNamedObjectProperty(Structure):
-    _fields_ = [("ObjectPropertyName", FName), ("ObjectPropertyValue", FString)]
-
-
-class FOnlineGameSearchResult(Structure):
-    _fields_ = [
+    FOnlineGameSearchResult._fields_ = [
         ("GameSettings", POINTER(UOnlineGameSettings)),
         ("PlatformData", FPointer),
     ]
 
-
-class FTViewTarget(Structure):
-    _fields_ = [
+    FTViewTarget._fields_ = [
         ("Target", POINTER(AActor)),
         ("Controller", POINTER(AController)),
         ("POV", FTPOV),
@@ -770,33 +2769,23 @@ class FTViewTarget(Structure):
         ("PRI", POINTER(APlayerReplicationInfo)),
     ]
 
+    FTCameraCache._fields_ = [("TimeStamp", c_float), ("POV", FTPOV)]
 
-class FTCameraCache(Structure):
-    _fields_ = [("TimeStamp", c_float), ("POV", FTPOV)]
-
-
-class FViewTargetTransitionParams(Structure):
-    _fields_ = [
+    FViewTargetTransitionParams._fields_ = [
         ("BlendTime", c_float),
         ("BlendFunction", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("BlendExp", c_float),
         ("bLockOutgoing", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FLUTBlender(Structure):
-    _fields_ = [
+    FLUTBlender._fields_ = [
         ("LUTTextures", TArray_UTexturePtr),
         ("LUTWeights", TArray_float),
         ("bHasChanged", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FPostProcessSettings(Structure):
-    _fields_ = [
+    FPostProcessSettings._fields_ = [
         ("bOverride_EnableBloom", c_bool, 1),
         ("bOverride_EnableDOF", c_bool, 1),
         ("bOverride_EnableMotionBlur", c_bool, 1),
@@ -846,7 +2835,6 @@ class FPostProcessSettings(Structure):
         ("bEnableSceneEffect", c_bool, 1),
         ("bAllowAmbientOcclusion", c_bool, 1),
         ("bOverrideRimShaderColor", c_bool, 1),
-        ("", c_ulong, 0),
         ("Bloom_Scale", c_float),
         ("Bloom_Threshold", c_float),
         ("Bloom_Tint", FColor),
@@ -859,7 +2847,7 @@ class FPostProcessSettings(Structure):
         ("DOF_MinBlurAmount", c_float),
         ("DOF_MaxFarBlurAmount", c_float),
         ("DOF_FocusType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("DOF_FocusInnerRadius", c_float),
         ("DOF_FocusDistance", c_float),
         ("DOF_FocusPosition", FVector),
@@ -870,7 +2858,6 @@ class FPostProcessSettings(Structure):
         ("MotionBlur_MaxVelocity", c_float),
         ("MotionBlur_Amount", c_float),
         ("MotionBlur_FullMotionBlur", c_bool, 1),
-        ("", c_ulong, 0),
         ("MotionBlur_CameraRotationThreshold", c_float),
         ("MotionBlur_CameraTranslationThreshold", c_float),
         ("MotionBlur_InterpolationDuration", c_float),
@@ -888,24 +2875,20 @@ class FPostProcessSettings(Structure):
         ("ColorGradingLUT", FLUTBlender),
     ]
 
-
-class FRenderingPerformanceOverrides(Structure):
-    _fields_ = [
+    FRenderingPerformanceOverrides._fields_ = [
         ("bAllowAmbientOcclusion", c_bool, 1),
         ("bAllowDominantWholeSceneDynamicShadows", c_bool, 1),
         ("bAllowMotionBlurSkinning", c_bool, 1),
         ("bAllowTemporalAA", c_bool, 1),
         ("bAllowLightShafts", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FSeqOpOutputInputLink._fields_ = [
+        ("LinkedOp", POINTER(USequenceOp)),
+        ("InputLinkIdx", c_int),
+    ]
 
-class FSeqOpOutputInputLink(Structure):
-    _fields_ = [("LinkedOp", POINTER(USequenceOp)), ("InputLinkIdx", c_int)]
-
-
-class FSeqOpOutputLink(Structure):
-    _fields_ = [
+    FSeqOpOutputLink._fields_ = [
         ("Links", TArray_FSeqOpOutputInputLink),
         ("LinkDesc", FString),
         ("bHasImpulse", c_bool, 1),
@@ -916,14 +2899,11 @@ class FSeqOpOutputLink(Structure):
         ("bHidden", c_bool, 1),
         ("bIsActivated", c_bool, 1),
         ("bMoving", c_bool, 1),
-        ("", c_ulong, 0),
         ("LinkedOp", POINTER(USequenceOp)),
         ("ActivateDelay", c_float),
     ]
 
-
-class FSeqVarLink(Structure):
-    _fields_ = [
+    FSeqVarLink._fields_ = [
         ("ExpectedType", POINTER(UClass)),
         ("LinkedVariables", TArray_USequenceVariablePtr),
         ("LinkDesc", FString),
@@ -937,27 +2917,21 @@ class FSeqVarLink(Structure):
         ("bClampedMin", c_bool, 1),
         ("bMoving", c_bool, 1),
         ("bAllowAnyType", c_bool, 1),
-        ("", c_ulong, 0),
         ("MinVars", c_int),
         ("MaxVars", c_int),
         ("CachedProperty", POINTER(UProperty)),
     ]
 
-
-class FSeqEventLink(Structure):
-    _fields_ = [
+    FSeqEventLink._fields_ = [
         ("LinkedEvents", TArray_USequenceEventPtr),
         ("LinkDesc", FString),
         ("bHidden", c_bool, 1),
         ("bMoving", c_bool, 1),
         ("bClampedMax", c_bool, 1),
         ("bClampedMin", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FDebugTextInfo(Structure):
-    _fields_ = [
+    FDebugTextInfo._fields_ = [
         ("SrcActor", POINTER(AActor)),
         ("SrcActorOffset", FVector),
         ("SrcActorDesiredOffset", FVector),
@@ -967,43 +2941,32 @@ class FDebugTextInfo(Structure):
         ("TextColor", FColor),
         ("bAbsoluteLocation", c_bool, 1),
         ("bKeepAttachedToActor", c_bool, 1),
-        ("", c_ulong, 0),
         ("OrigActorLocation", FVector),
         ("Font", POINTER(UFont)),
     ]
 
+    FBonePair._fields_ = [("Bones", FName * 2)]
 
-class FBonePair(Structure):
-    _fields_ = [("Bones", FName * 2)]
-
-
-class FAnimBlendChild(Structure):
-    _fields_ = [
+    FAnimBlendChild._fields_ = [
         ("Name", FName),
         ("Anim", POINTER(UAnimNode)),
         ("Weight", c_float),
         ("BlendWeight", c_float),
         ("bMirrorSkeleton", c_bool, 1),
         ("bIsAdditive", c_bool, 1),
-        ("", c_ulong, 0),
         ("AdditiveWeightScale", c_float),
     ]
 
-
-class FSkelMeshComponentLODInfo(Structure):
-    _fields_ = [
+    FSkelMeshComponentLODInfo._fields_ = [
         ("HiddenMaterials", TArray_BOOL),
         ("bNeedsInstanceWeightUpdate", c_bool, 1),
         ("bAlwaysUseInstanceWeights", c_bool, 1),
-        ("", c_ulong, 0),
         ("InstanceWeightUsage", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
-        ("InstanceWeightIdx", int),
+        ("Unknown1", c_ubyte * 0x3),
+        ("InstanceWeightIdx", c_int),
     ]
 
-
-class FAttachment(Structure):
-    _fields_ = [
+    FAttachment._fields_ = [
         ("Component", POINTER(UActorComponent)),
         ("BoneName", FName),
         ("RelativeLocation", FVector),
@@ -1011,37 +2974,28 @@ class FAttachment(Structure):
         ("RelativeScale", FVector),
     ]
 
+    FActiveMorph._fields_ = [("Target", POINTER(UMorphTarget)), ("Weight", c_float)]
 
-class FActiveMorph(Structure):
-    _fields_ = [("Target", POINTER(UMorphTarget)), ("Weight", c_float)]
-
-
-class FGestaltLODModelFragment(Structure):
-    _fields_ = [
+    FGestaltLODModelFragment._fields_ = [
         ("MaterialIndex", c_int),
         ("FirstIndex", c_int),
         ("NumPrimitives", c_int),
     ]
 
+    FGestaltLODModel._fields_ = [("GestaltFragments", TArray_FGestaltLODModelFragment)]
 
-class FGestaltLODModel(Structure):
-    _fields_ = [("GestaltFragments", TArray_FGestaltLODModelFragment)]
+    FSocketRemapEntry._fields_ = [
+        ("OriginalSocketName", FName),
+        ("MangledSocketName", FName),
+    ]
 
-
-class FSocketRemapEntry(Structure):
-    _fields_ = [("OriginalSocketName", FName), ("MangledSocketName", FName)]
-
-
-class FGestaltAccessoryEntry(Structure):
-    _fields_ = [
+    FGestaltAccessoryEntry._fields_ = [
         ("TransformIndex", c_int),
         ("OriginalBoneIndex", c_int),
         ("GPUBoneIndex", c_int),
     ]
 
-
-class FGestaltDataContainer(Structure):
-    _fields_ = [
+    FGestaltDataContainer._fields_ = [
         ("SkeletalMesh", POINTER(USkeletalMesh)),
         ("LODModelData", TArray_FGestaltLODModel),
         ("SocketMappings", TArray_FSocketRemapEntry),
@@ -1050,22 +3004,17 @@ class FGestaltDataContainer(Structure):
         ("ReferencePoseBounds", FBoxSphereBounds),
     ]
 
-
-class FConnectedPeerInfo(Structure):
-    _fields_ = [
+    FConnectedPeerInfo._fields_ = [
         ("PlayerID", FUniqueNetId),
         ("NatType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bLostConnectionToHost", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FClientAdjustment(Structure):
-    _fields_ = [
+    FClientAdjustment._fields_ = [
         ("TimeStamp", c_float),
         ("newPhysics", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("NewLoc", FVector),
         ("NewVel", FVector),
         ("NewBase", POINTER(AActor)),
@@ -1073,9 +3022,7 @@ class FClientAdjustment(Structure):
         ("bAckGoodMove", c_ubyte),
     ]
 
-
-class FKismetDrawTextInfo(Structure):
-    _fields_ = [
+    FKismetDrawTextInfo._fields_ = [
         ("MessageText", FString),
         ("AppendedText", FString),
         ("MessageFont", POINTER(UFont)),
@@ -1085,32 +3032,27 @@ class FKismetDrawTextInfo(Structure):
         ("MessageEndTime", c_float),
     ]
 
-
-class FConsoleMessage(Structure):
-    _fields_ = [
+    FConsoleMessage._fields_ = [
         ("Text", FString),
         ("TextColor", FColor),
         ("MessageLife", c_float),
         ("PRI", POINTER(APlayerReplicationInfo)),
     ]
 
+    FAutomatedTestingDatum._fields_ = [
+        ("NumberOfMatchesPlayed", c_int),
+        ("NumMapListCyclesDone", c_int),
+    ]
 
-class FAutomatedTestingDatum(Structure):
-    _fields_ = [("NumberOfMatchesPlayed", c_int), ("NumMapListCyclesDone", c_int)]
-
-
-class FInputEntry(Structure):
-    _fields_ = [
+    FInputEntry._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Value", c_float),
         ("TimeDelta", c_float),
         ("Action", c_ubyte),
     ]
 
-
-class FInputMatchRequest(Structure):
-    _fields_ = [
+    FInputMatchRequest._fields_ = [
         ("Inputs", TArray_FInputEntry),
         ("MatchActor", POINTER(AActor)),
         ("MatchFuncName", FName),
@@ -1121,9 +3063,7 @@ class FInputMatchRequest(Structure):
         ("LastMatchTime", c_float),
     ]
 
-
-class FNavigationOctreeObject(Structure):
-    _fields_ = [
+    FNavigationOctreeObject._fields_ = [
         ("BoundingBox", FBox),
         ("BoxCenter", FVector),
         ("OctreeNode", FPointer),
@@ -1131,87 +3071,68 @@ class FNavigationOctreeObject(Structure):
         ("OwnerType", c_ubyte),
     ]
 
+    ANavigationPoint_FCheckpointRecord._fields_ = [
+        ("bDisabled", c_bool, 1),
+        ("bBlocked", c_bool, 1),
+    ]
 
-class ANavigationPoint_FCheckpointRecord(Structure):
-    _fields_ = [("bDisabled", c_bool, 1), ("bBlocked", c_bool, 1), ("", c_ulong, 0)]
+    FAreaTestSortedPoint._fields_ = [
+        ("Nav", POINTER(ANavigationPoint)),
+        ("DistSq", c_float),
+    ]
 
-
-class FAreaTestSortedPoint(Structure):
-    _fields_ = [("Nav", POINTER(ANavigationPoint)), ("DistSq", c_float)]
-
-
-class FNavMeshPathSize(Structure):
-    _fields_ = [
+    FNavMeshPathSize._fields_ = [
         ("Size", c_float),
         ("Height", c_float),
         ("PolyColor", FColor),
         ("ObstacleColor", FColor),
     ]
 
-
-class FPolyReference(Structure):
-    _fields_ = [
+    FPolyReference._fields_ = [
         ("OwningPylon", FActorReference),
         ("PolyId", c_int),
         ("CachedPoly", FPointer),
     ]
 
-
-class FPendingSubtitleInfo(Structure):
-    _fields_ = [
+    FPendingSubtitleInfo._fields_ = [
         ("PendingSubtitlePlayingInfoPtr", FPointer),
         ("OriginalFileName", FString),
         ("StreamedSubtitleData", TArray_unsigned_char),
     ]
 
-
-class FPendingFaceFXInfo(Structure):
-    _fields_ = [
+    FPendingFaceFXInfo._fields_ = [
         ("PendingFaceFXPlayingInfoPtr", FPointer),
         ("AnimName", FString),
         ("RawData", TArray_unsigned_char),
     ]
 
+    FDialogueArgument._fields_ = [("Source", c_ubyte)]
 
-class FDialogueArgument(Structure):
-    _fields_ = [("Source", c_ubyte)]
-
-
-class FKSphereElem(Structure):
-    _fields_ = [
+    FKSphereElem._fields_ = [
         ("TM", FMatrix),
         ("Radius", c_float),
         ("bNoRBCollision", c_bool, 1),
         ("bPerPolyShape", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FKBoxElem(Structure):
-    _fields_ = [
+    FKBoxElem._fields_ = [
         ("TM", FMatrix),
         ("X", c_float),
         ("Y", c_float),
         ("Z", c_float),
         ("bNoRBCollision", c_bool, 1),
         ("bPerPolyShape", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FKSphylElem(Structure):
-    _fields_ = [
+    FKSphylElem._fields_ = [
         ("TM", FMatrix),
         ("Radius", c_float),
         ("Length", c_float),
         ("bNoRBCollision", c_bool, 1),
         ("bPerPolyShape", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FKConvexElem(Structure):
-    _fields_ = [
+    FKConvexElem._fields_ = [
         ("VertexData", TArray_FVector),
         ("PermutedVertexData", TArray_FPlane),
         ("FaceTriData", TArray_int),
@@ -1221,31 +3142,25 @@ class FKConvexElem(Structure):
         ("ElemBox", FBox),
     ]
 
-
-class FKAggregateGeom(Structure):
-    _fields_ = [
+    FKAggregateGeom._fields_ = [
         ("SphereElems", TArray_FKSphereElem),
         ("BoxElems", TArray_FKBoxElem),
         ("SphylElems", TArray_FKSphylElem),
         ("ConvexElems", TArray_FKConvexElem),
         ("RenderInfo", FPointer),
         ("bSkipCloseAndParallelChecks", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FKCachedConvexData_Mirror._fields_ = [("CachedConvexElements", TArray_int)]
 
-class FKCachedConvexData_Mirror(Structure):
-    _fields_ = [("CachedConvexElements", TArray_int)]
+    FGeomSelection._fields_ = [
+        ("Type", c_int),
+        ("Index", c_int),
+        ("SelectionIndex", c_int),
+    ]
 
-
-class FGeomSelection(Structure):
-    _fields_ = [("Type", c_int), ("Index", c_int), ("SelectionIndex", c_int)]
-
-
-class FInteriorSettings(Structure):
-    _fields_ = [
+    FInteriorSettings._fields_ = [
         ("bIsWorldInfo", c_bool, 1),
-        ("", c_ulong, 0),
         ("ExteriorVolume", c_float),
         ("ExteriorTime", c_float),
         ("ExteriorLPF", c_float),
@@ -1256,13 +3171,10 @@ class FInteriorSettings(Structure):
         ("InteriorLPFTime", c_float),
     ]
 
-
-class FReverbSettings(Structure):
-    _fields_ = [
+    FReverbSettings._fields_ = [
         ("bApplyReverb", c_bool, 1),
-        ("", c_ulong, 0),
         ("ReverbType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Volume", c_float),
         ("FadeTime", c_float),
         ("ReflectionsDelayOverride", c_float),
@@ -1270,94 +3182,71 @@ class FReverbSettings(Structure):
         ("DecayHighFrequencyRatioOverride", c_float),
     ]
 
-
-class FAudioComponentParam(Structure):
-    _fields_ = [
+    FAudioComponentParam._fields_ = [
         ("ParamName", FName),
         ("FloatParam", c_float),
         ("WaveParam", POINTER(USoundNodeWave)),
     ]
 
+    FSubtitleCue._fields_ = [("Text", FString), ("Time", c_float)]
 
-class FSubtitleCue(Structure):
-    _fields_ = [("Text", FString), ("Time", c_float)]
-
-
-class FCompressedTrack(Structure):
-    _fields_ = [
+    FCompressedTrack._fields_ = [
         ("ByteStream", TArray_unsigned_char),
         ("Times", TArray_float),
         ("Mins", c_float * 3),
         ("Ranges", c_float * 3),
     ]
 
-
-class FDeltaTrackInfo(Structure):
-    _fields_ = [
+    FDeltaTrackInfo._fields_ = [
         ("RotKey", FQuat * 2),
         ("PosKey", FVector * 2),
-        ("RotKeyIndex", int * 2),
-        ("PosKeyIndex", int * 2),
+        ("RotKeyIndex", c_int * 2),
+        ("PosKeyIndex", c_int * 2),
     ]
 
+    FCurveTrack._fields_ = [("CurveName", FName), ("CurveWeights", TArray_float)]
 
-class FCurveTrack(Structure):
-    _fields_ = [("CurveName", FName), ("CurveWeights", TArray_float)]
+    FRotationTrack._fields_ = [("RotKeys", TArray_FQuat), ("Times", TArray_float)]
 
+    FTranslationTrack._fields_ = [("PosKeys", TArray_FVector), ("Times", TArray_float)]
 
-class FRotationTrack(Structure):
-    _fields_ = [("RotKeys", TArray_FQuat), ("Times", TArray_float)]
+    FTimeModifier._fields_ = [("Time", c_float), ("TargetStrength", c_float)]
 
+    FSkelControlModifier._fields_ = [
+        ("SkelControlName", FName),
+        ("Modifiers", TArray_FTimeModifier),
+    ]
 
-class FTranslationTrack(Structure):
-    _fields_ = [("PosKeys", TArray_FVector), ("Times", TArray_float)]
-
-
-class FTimeModifier(Structure):
-    _fields_ = [("Time", c_float), ("TargetStrength", c_float)]
-
-
-class FSkelControlModifier(Structure):
-    _fields_ = [("SkelControlName", FName), ("Modifiers", TArray_FTimeModifier)]
-
-
-class FAnimNotifyEvent(Structure):
-    _fields_ = [
+    FAnimNotifyEvent._fields_ = [
         ("Time", c_float),
         ("Notify", POINTER(UAnimNotify)),
         ("Duration", c_float),
     ]
 
+    FRawAnimSequenceTrack._fields_ = [
+        ("PosKeys", TArray_FVector),
+        ("RotKeys", TArray_FQuat),
+    ]
 
-class FRawAnimSequenceTrack(Structure):
-    _fields_ = [("PosKeys", TArray_FVector), ("RotKeys", TArray_FQuat)]
+    FCurveKey._fields_ = [("CurveName", FName), ("Weight", c_float)]
 
-
-class FCurveKey(Structure):
-    _fields_ = [("CurveName", FName), ("Weight", c_float)]
-
-
-class FWeightNodeRule(Structure):
-    _fields_ = [
+    FWeightNodeRule._fields_ = [
         ("NodeName", FName),
         ("CachedNode", POINTER(UAnimNodeBlendBase)),
         ("CachedSlotNode", POINTER(UAnimNodeSlot)),
         ("WeightCheck", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ChildIndex", c_int),
     ]
 
+    FWeightRule._fields_ = [
+        ("FirstNode", FWeightNodeRule),
+        ("SecondNode", FWeightNodeRule),
+    ]
 
-class FWeightRule(Structure):
-    _fields_ = [("FirstNode", FWeightNodeRule), ("SecondNode", FWeightNodeRule)]
+    FBranchInfo._fields_ = [("BoneName", FName), ("PerBoneWeightIncrease", c_float)]
 
-
-class FBranchInfo(Structure):
-    _fields_ = [("BoneName", FName), ("PerBoneWeightIncrease", c_float)]
-
-
-class FPerBoneMaskInfo(Structure):
-    _fields_ = [
+    FPerBoneMaskInfo._fields_ = [
         ("BranchList", TArray_FBranchInfo),
         ("DesiredWeight", c_float),
         ("BlendTimeToGo", c_float),
@@ -1365,51 +3254,43 @@ class FPerBoneMaskInfo(Structure):
         ("bWeightBasedOnNodeRules", c_bool, 1),
         ("bDisableForNonLocalHumanPlayers", c_bool, 1),
         ("bPendingBlend", c_bool, 1),
-        ("", c_ulong, 0),
         ("PerBoneWeights", TArray_float),
         ("TransformReqBone", TArray_unsigned_char),
         ("TransformReqBoneIndex", c_int),
     ]
 
+    FAimTransform._fields_ = [("Quaternion", FQuat), ("Translation", FVector)]
 
-class FAimTransform(Structure):
-    _fields_ = [("Quaternion", FQuat), ("Translation", FVector)]
-
-
-class FAimComponent(Structure):
-    _fields_ = [
+    FAimComponent._fields_ = [
         ("BoneName", FName),
-        ("Unknown1", c_ubyte, 0x8),
+        ("Unknown1", c_ubyte * 0x8),
         ("LU", FAimTransform),
-        ("Unknown2", c_ubyte, 0x4),
+        ("Unknown2", c_ubyte * 0x4),
         ("LC", FAimTransform),
-        ("Unknown3", c_ubyte, 0x4),
+        ("Unknown3", c_ubyte * 0x4),
         ("LD", FAimTransform),
-        ("Unknown4", c_ubyte, 0x4),
+        ("Unknown4", c_ubyte * 0x4),
         ("CU", FAimTransform),
-        ("Unknown5", c_ubyte, 0x4),
+        ("Unknown5", c_ubyte * 0x4),
         ("CC", FAimTransform),
-        ("Unknown6", c_ubyte, 0x4),
+        ("Unknown6", c_ubyte * 0x4),
         ("CD", FAimTransform),
-        ("Unknown7", c_ubyte, 0x4),
+        ("Unknown7", c_ubyte * 0x4),
         ("RU", FAimTransform),
-        ("Unknown8", c_ubyte, 0x4),
+        ("Unknown8", c_ubyte * 0x4),
         ("RC", FAimTransform),
-        ("Unknown9", c_ubyte, 0x4),
+        ("Unknown9", c_ubyte * 0x4),
         ("RD", FAimTransform),
-        ("Unknown10", c_ubyte, 0x4),
+        ("Unknown10", c_ubyte * 0x4),
     ]
 
-
-class FAimOffsetProfile(Structure):
-    _fields_ = [
+    FAimOffsetProfile._fields_ = [
         ("ProfileName", FName),
         ("HorizontalRange", FVector2D),
         ("VerticalRange", FVector2D),
         ("AimComponents", TArray_FAimComponent),
         ("AimTransformsCache", TArray_FBoneAtom),
         ("bDirtyAimTransformsCache", c_bool, 1),
-        ("", c_ulong, 0),
         ("AnimName_LU", FName),
         ("AnimName_LC", FName),
         ("AnimName_LD", FName),
@@ -1421,9 +3302,7 @@ class FAimOffsetProfile(Structure):
         ("AnimName_RD", FName),
     ]
 
-
-class FChildBoneBlendInfo(Structure):
-    _fields_ = [
+    FChildBoneBlendInfo._fields_ = [
         ("TargetPerBoneWeight", TArray_float),
         ("InitTargetStartBone", FName),
         ("InitPerBoneIncrease", c_float),
@@ -1432,81 +3311,63 @@ class FChildBoneBlendInfo(Structure):
         ("TargetRequiredBones", TArray_unsigned_char),
     ]
 
-
-class FRandomAnimInfo(Structure):
-    _fields_ = [
+    FRandomAnimInfo._fields_ = [
         ("Chance", c_float),
         ("LoopCountMin", c_ubyte),
         ("LoopCountMax", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("BlendInTime", c_float),
         ("PlayRateRange", FVector2D),
         ("bStillFrame", c_bool, 1),
-        ("", c_ulong, 0),
         ("LoopCount", c_ubyte),
-        ("Unknown2", c_ubyte, 0x3),
+        ("Unknown2", c_ubyte * 0x3),
         ("LastPosition", c_float),
     ]
 
-
-class FAnimInfo(Structure):
-    _fields_ = [
+    FAnimInfo._fields_ = [
         ("AnimSeqName", FName),
         ("AnimSeq", POINTER(UAnimSequence)),
-        ("AnimLinkupIndex", int),
+        ("AnimLinkupIndex", c_int),
     ]
 
+    FAnimBlendInfo._fields_ = [
+        ("AnimName", FName),
+        ("AnimInfo", FAnimInfo),
+        ("Weight", c_float),
+    ]
 
-class FAnimBlendInfo(Structure):
-    _fields_ = [("AnimName", FName), ("AnimInfo", FAnimInfo), ("Weight", c_float)]
-
-
-class FSynchGroup(Structure):
-    _fields_ = [
+    FSynchGroup._fields_ = [
         ("SeqNodes", TArray_UAnimNodeSequencePtr),
         ("MasterNode", POINTER(UAnimNodeSequence)),
         ("GroupName", FName),
         ("bFireSlaveNotifies", c_bool, 1),
-        ("", c_ulong, 0),
         ("RateScale", c_float),
     ]
 
-
-class FOpinionData(Structure):
-    _fields_ = [
+    FOpinionData._fields_ = [
         ("Opinion", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Allegiance", POINTER(UPawnAllegiance)),
     ]
 
-
-class FInfoBarData(Structure):
-    _fields_ = [
+    FInfoBarData._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Amount", c_float),
         ("bFullyArmored", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FLocalizedSubtitle(Structure):
-    _fields_ = [
+    FLocalizedSubtitle._fields_ = [
         ("LanguageExt", FString),
         ("Subtitles", TArray_FSubtitleCue),
         ("bMature", c_bool, 1),
         ("bManualWordWrap", c_bool, 1),
         ("bSingleLine", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FLightMapRef._fields_ = [("Reference", FPointer)]
 
-class FLightMapRef(Structure):
-    _fields_ = [("Reference", FPointer)]
-
-
-class FDominantShadowInfo(Structure):
-    _fields_ = [
+    FDominantShadowInfo._fields_ = [
         ("WorldToLight", FMatrix),
         ("LightToWorld", FMatrix),
         ("LightSpaceImportanceBounds", FBox),
@@ -1514,49 +3375,38 @@ class FDominantShadowInfo(Structure):
         ("ShadowMapSizeY", c_int),
     ]
 
-
-class FLightmassLightSettings(Structure):
-    _fields_ = [
+    FLightmassLightSettings._fields_ = [
         ("IndirectLightingScale", c_float),
         ("IndirectLightingSaturation", c_float),
         ("ShadowExponent", c_float),
     ]
 
-
-class FScalarParameterInterpStruct(Structure):
-    _fields_ = [
+    FScalarParameterInterpStruct._fields_ = [
         ("ParameterName", FName),
         ("ParameterValue", c_float),
         ("InterpTime", c_float),
         ("WarmupTime", c_float),
     ]
 
-
-class FLightmassPointLightSettings(Structure):
-    _fields_ = [
+    FLightmassPointLightSettings._fields_ = [
         ("IndirectLightingScale", c_float),
         ("IndirectLightingSaturation", c_float),
         ("ShadowExponent", c_float),
         ("LightSourceRadius", c_float),
     ]
 
-
-class FLightmassDirectionalLightSettings(Structure):
-    _fields_ = [
+    FLightmassDirectionalLightSettings._fields_ = [
         ("IndirectLightingScale", c_float),
         ("IndirectLightingSaturation", c_float),
         ("ShadowExponent", c_float),
         ("LightSourceAngle", c_float),
     ]
 
-
-class FLightmassPrimitiveSettings(Structure):
-    _fields_ = [
+    FLightmassPrimitiveSettings._fields_ = [
         ("bUseTwoSidedLighting", c_bool, 1),
         ("bShadowIndirectOnly", c_bool, 1),
         ("bUseEmissiveForStaticLighting", c_bool, 1),
         ("bGenerateVolumeLightingSamples", c_bool, 1),
-        ("", c_ulong, 0),
         ("EmissiveLightFalloffExponent", c_float),
         ("EmissiveLightExplicitInfluenceRadius", c_float),
         ("EmissiveBoost", c_float),
@@ -1565,13 +3415,10 @@ class FLightmassPrimitiveSettings(Structure):
         ("FullyOccludedSamplesFraction", c_float),
     ]
 
-
-class FLightmassDebugOptions(Structure):
-    _fields_ = [
+    FLightmassDebugOptions._fields_ = [
         ("bDebugMode", c_bool, 1),
         ("bStatsEnabled", c_bool, 1),
         ("bGatherBSPSurfacesAcrossComponents", c_bool, 1),
-        ("", c_ulong, 0),
         ("CoplanarTolerance", c_float),
         ("bUseDeterministicLighting", c_bool, 1),
         ("bUseImmediateImport", c_bool, 1),
@@ -1585,75 +3432,53 @@ class FLightmassDebugOptions(Structure):
         ("bUseRandomColors", c_bool, 1),
         ("bColorBordersGreen", c_bool, 1),
         ("bColorByExecutionTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("ExecutionTimeDivisor", c_float),
         ("bInitialized", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FSwarmDebugOptions(Structure):
-    _fields_ = [
+    FSwarmDebugOptions._fields_ = [
         ("bDistributionEnabled", c_bool, 1),
         ("bForceContentExport", c_bool, 1),
         ("bInitialized", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FRootMotionCurve(Structure):
-    _fields_ = [
+    FRootMotionCurve._fields_ = [
         ("AnimName", FName),
         ("Curve", FInterpCurveVector),
         ("MaxCurveTime", c_float),
     ]
 
-
-class FRecentDamageTracker(Structure):
-    _fields_ = [
+    FRecentDamageTracker._fields_ = [
         ("TotalDamage", c_float),
         ("HealthDamage", c_float),
         ("ShieldDamage", c_float),
     ]
 
-
-class FBalanceDefSpawnedActorState(Structure):
-    _fields_ = [
+    FBalanceDefSpawnedActorState._fields_ = [
         ("BalanceDefinition", POINTER(UBaseBalanceDefinition)),
         ("GradeIndex", c_int),
         ("bGradeCustomizationsApplied", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FTrailSocketSamplePoint._fields_ = [("Position", FVector), ("Velocity", FVector)]
 
-class FTrailSocketSamplePoint(Structure):
-    _fields_ = [("Position", FVector), ("Velocity", FVector)]
-
-
-class FTrailSamplePoint(Structure):
-    _fields_ = [
+    FTrailSamplePoint._fields_ = [
         ("RelativeTime", c_float),
         ("FirstEdgeSample", FTrailSocketSamplePoint),
         ("ControlPointSample", FTrailSocketSamplePoint),
         ("SecondEdgeSample", FTrailSocketSamplePoint),
     ]
 
-
-class FTrailSample(Structure):
-    _fields_ = [
+    FTrailSample._fields_ = [
         ("RelativeTime", c_float),
         ("FirstEdgeSample", FVector),
         ("ControlPointSample", FVector),
         ("SecondEdgeSample", FVector),
     ]
 
+    FAnimSetMeshLinkup._fields_ = [("BoneToTrackTable", TArray_int)]
 
-class FAnimSetMeshLinkup(Structure):
-    _fields_ = [("BoneToTrackTable", TArray_int)]
-
-
-class FAnimGroup(Structure):
-    _fields_ = [
+    FAnimGroup._fields_ = [
         ("SeqNodes", TArray_UAnimNodeSequencePtr),
         ("SynchMaster", POINTER(UAnimNodeSequence)),
         ("NotifyMaster", POINTER(UAnimNodeSequence)),
@@ -1662,36 +3487,31 @@ class FAnimGroup(Structure):
         ("SynchPctPosition", c_float),
     ]
 
+    FSkelControlListHead._fields_ = [
+        ("BoneName", FName),
+        ("ControlHead", POINTER(USkelControlBase)),
+    ]
 
-class FSkelControlListHead(Structure):
-    _fields_ = [("BoneName", FName), ("ControlHead", POINTER(USkelControlBase))]
-
-
-class FPreviewSkelMeshStruct(Structure):
-    _fields_ = [
+    FPreviewSkelMeshStruct._fields_ = [
         ("DisplayName", FName),
         ("PreviewSkelMesh", POINTER(USkeletalMesh)),
         ("PreviewMorphSets", TArray_UMorphTargetSetPtr),
     ]
 
-
-class FPreviewSocketStruct(Structure):
-    _fields_ = [
+    FPreviewSocketStruct._fields_ = [
         ("DisplayName", FName),
         ("SocketName", FName),
         ("PreviewSkelMesh", POINTER(USkeletalMesh)),
         ("PreviewStaticMesh", POINTER(UStaticMesh)),
     ]
 
+    FPreviewAnimSetsStruct._fields_ = [
+        ("DisplayName", FName),
+        ("PreviewAnimSets", TArray_UAnimSetPtr),
+    ]
 
-class FPreviewAnimSetsStruct(Structure):
-    _fields_ = [("DisplayName", FName), ("PreviewAnimSets", TArray_UAnimSetPtr)]
-
-
-class F_ModifyHealthParams(Structure):
-    _fields_ = [
+    F_ModifyHealthParams._fields_ = [
         ("bHeal", c_bool, 1),
-        ("", c_ulong, 0),
         ("DamageAmount", c_float),
         ("EventInstigator", POINTER(AController)),
         ("HitLocation", FVector),
@@ -1701,9 +3521,7 @@ class F_ModifyHealthParams(Structure):
         ("ImpactDefinition", POINTER(UImpactDefinition)),
     ]
 
-
-class FNxDestructibleParametersFlag(Structure):
-    _fields_ = [
+    FNxDestructibleParametersFlag._fields_ = [
         ("ACCUMULATE_DAMAGE", c_bool, 1),
         ("ASSET_DEFINED_SUPPORT", c_bool, 1),
         ("WORLD_SUPPORT", c_bool, 1),
@@ -1712,12 +3530,9 @@ class FNxDestructibleParametersFlag(Structure):
         ("CRUMBLE_SMALLEST_CHUNKS", c_bool, 1),
         ("ACCURATE_RAYCASTS", c_bool, 1),
         ("USE_VALID_BOUNDS", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FNxDestructibleDepthParameters(Structure):
-    _fields_ = [
+    FNxDestructibleDepthParameters._fields_ = [
         ("TAKE_IMPACT_DAMAGE", c_bool, 1),
         ("IGNORE_POSE_UPDATES", c_bool, 1),
         ("IGNORE_RAYCAST_CALLBACKS", c_bool, 1),
@@ -1726,12 +3541,9 @@ class FNxDestructibleDepthParameters(Structure):
         ("USER_FLAG", c_bool, 1),
         ("USER_FLAG", c_bool, 1),
         ("USER_FLAG", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FNxDestructibleParameters(Structure):
-    _fields_ = [
+    FNxDestructibleParameters._fields_ = [
         ("DamageThreshold", c_float),
         ("DamageToRadius", c_float),
         ("DamageCap", c_float),
@@ -1741,7 +3553,6 @@ class FNxDestructibleParameters(Structure):
         ("DamageToPercentDeformation", c_float),
         ("DeformationPercentLimit", c_float),
         ("bFormExtendedStructures", c_bool, 1),
-        ("", c_ulong, 0),
         ("SupportDepth", c_int),
         ("DebrisDepth", c_int),
         ("EssentialDepth", c_int),
@@ -1759,130 +3570,95 @@ class FNxDestructibleParameters(Structure):
         ("DepthParameters", TArray_FNxDestructibleDepthParameters),
     ]
 
-
-class FDamageParameters(Structure):
-    _fields_ = [
+    FDamageParameters._fields_ = [
         ("OverrideMode", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("BaseDamage", c_float),
         ("Radius", c_float),
         ("Momentum", c_float),
     ]
 
+    FDamagePair._fields_ = [("DamageCauserName", FName), ("Params", FDamageParameters)]
 
-class FDamagePair(Structure):
-    _fields_ = [("DamageCauserName", FName), ("Params", FDamageParameters)]
-
-
-class FAttributePriorityData(Structure):
-    _fields_ = [
+    FAttributePriorityData._fields_ = [
         ("Attribute", POINTER(UAttributeDefinition)),
         ("PriorityIncrease", c_float),
     ]
 
-
-class FAppliedAttributeEffect(Structure):
-    _fields_ = [
+    FAppliedAttributeEffect._fields_ = [
         ("Context", POINTER(UObject)),
         ("Attribute", POINTER(UAttributeDefinition)),
         ("Modifier", POINTER(UAttributeModifier)),
     ]
 
-
-class FAttributeInitializationData(Structure):
-    _fields_ = [
+    FAttributeInitializationData._fields_ = [
         ("BaseValueConstant", c_float),
         ("BaseValueAttribute", POINTER(UAttributeDefinition)),
         ("InitializationDefinition", POINTER(UAttributeInitializationDefinition)),
         ("BaseValueScaleConstant", c_float),
     ]
 
-
-class FAttributeEffectData(Structure):
-    _fields_ = [
+    FAttributeEffectData._fields_ = [
         ("AttributeToModify", POINTER(UAttributeDefinition)),
         ("ModifierType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("BaseModifierValue", FAttributeInitializationData),
     ]
 
-
-class FAttributeExpressionData(Structure):
-    _fields_ = [
+    FAttributeExpressionData._fields_ = [
         ("AttributeOperand1", POINTER(UAttributeDefinition)),
         ("ComparisonOperator", c_ubyte),
         ("Operand2Usage", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("AttributeOperand2", POINTER(UAttributeDefinition)),
         ("ConstantOperand2", c_float),
     ]
 
-
-class FConditionalSoundData(Structure):
-    _fields_ = [
+    FConditionalSoundData._fields_ = [
         ("Event", POINTER(UAkEvent)),
         ("Cue", POINTER(USoundCue)),
         ("Expressions", TArray_FAttributeExpressionData),
     ]
 
-
-class FBalanceFormula(Structure):
-    _fields_ = [
+    FBalanceFormula._fields_ = [
         ("bEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("Multiplier", FAttributeInitializationData),
         ("Level", FAttributeInitializationData),
         ("Power", FAttributeInitializationData),
         ("Offset", FAttributeInitializationData),
     ]
 
-
-class FVariance(Structure):
-    _fields_ = [
+    FVariance._fields_ = [
         ("bEnabled", c_bool, 1),
         ("bUseIntegerRandomization", c_bool, 1),
-        ("", c_ulong, 0),
         ("LowerBound", FAttributeInitializationData),
         ("UpperBound", FAttributeInitializationData),
     ]
 
-
-class FRange(Structure):
-    _fields_ = [
+    FRange._fields_ = [
         ("bEnableMinValueRestriction", c_bool, 1),
-        ("", c_ulong, 0),
         ("MinValue", FAttributeInitializationData),
         ("bEnableMaxValueRestriction", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxValue", FAttributeInitializationData),
     ]
 
-
-class FConditionalValueExpression(Structure):
-    _fields_ = [
+    FConditionalValueExpression._fields_ = [
         ("BaseValueIfTrue", FAttributeInitializationData),
         ("Expressions", TArray_FAttributeExpressionData),
     ]
 
-
-class FConditionalInitializationExpressions(Structure):
-    _fields_ = [
+    FConditionalInitializationExpressions._fields_ = [
         ("bEnabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("ConditionalExpressionList", TArray_FConditionalValueExpression),
         ("DefaultBaseValue", FAttributeInitializationData),
     ]
 
-
-class FAttributeBaseValueData(Structure):
-    _fields_ = [
+    FAttributeBaseValueData._fields_ = [
         ("Attribute", POINTER(UAttributeDefinition)),
         ("BaseValue", FAttributeInitializationData),
     ]
 
-
-class FListener(Structure):
-    _fields_ = [
+    FListener._fields_ = [
         ("PortalVolume", POINTER(APortalVolume)),
         ("Location", FVector),
         ("Up", FVector),
@@ -1890,56 +3666,40 @@ class FListener(Structure):
         ("Front", FVector),
     ]
 
-
-class FAudioClassInfo(Structure):
-    _fields_ = [
-        ("NumResident", int),
-        ("SizeResident", int),
-        ("NumRealTime", int),
-        ("SizeRealTime", int),
+    FAudioClassInfo._fields_ = [
+        ("NumResident", c_int),
+        ("SizeResident", c_int),
+        ("NumRealTime", c_int),
+        ("SizeRealTime", c_int),
     ]
 
+    FGameStageRangeData._fields_ = [("MinGameStage", c_int), ("MaxGameStage", c_int)]
 
-class FGameStageRangeData(Structure):
-    _fields_ = [("MinGameStage", int), ("MaxGameStage", int)]
-
-
-class FGameStageGradeWeightData(Structure):
-    _fields_ = [
+    FGameStageGradeWeightData._fields_ = [
         ("GameStageRequirement", FGameStageRangeData),
         ("MinSpawnProbabilityModifier", FAttributeInitializationData),
         ("MaxSpawnProbabilityModifier", FAttributeInitializationData),
     ]
 
-
-class FBehaviorContextData(Structure):
-    _fields_ = [
+    FBehaviorContextData._fields_ = [
         ("InstancedDataContextName", FName),
         ("ContextObject", POINTER(UObject)),
         ("BehaviorContext", c_ubyte),
         ("bSupportsDefaultOutputLink", c_ubyte),
     ]
 
-
-class FBehaviorParameterUnion(Structure):
-    _fields_ = [
+    FBehaviorParameterUnion._fields_ = [
         ("ParameterName", FName),
         ("VectorData", FVector),
         ("ActorData", POINTER(AActor)),
         ("ImpactInfoData", FImpactInfo),
     ]
 
+    FBehaviorParameters._fields_ = [("Parameters", TArray_FBehaviorParameterUnion)]
 
-class FBehaviorParameters(Structure):
-    _fields_ = [("Parameters", TArray_FBehaviorParameterUnion)]
+    FBehaviorOutputLinkDescriptionData._fields_ = [("LinkId", c_int)]
 
-
-class FBehaviorOutputLinkDescriptionData(Structure):
-    _fields_ = [("LinkId", c_int)]
-
-
-class FBehaviorKernelInfo(Structure):
-    _fields_ = [
+    FBehaviorKernelInfo._fields_ = [
         ("StateForThreadRunningThisBehavior", FPointer),
         ("WorldTime", c_float),
         ("ExecutionTime", c_float),
@@ -1948,116 +3708,98 @@ class FBehaviorKernelInfo(Structure):
         ("NextExecutionDelayTime", c_float),
         ("bHasLinkedOutputs", c_bool, 1),
         ("bIsInitialRunOfThisBehavior", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FCounterEventReactionData(Structure):
-    _fields_ = [
+    FCounterEventReactionData._fields_ = [
         ("EventType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Behaviors", TArray_UBehaviorBasePtr),
     ]
 
+    FBehaviorCounterState._fields_ = [("CurrentValue", c_int), ("Target", c_int)]
 
-class FBehaviorCounterState(Structure):
-    _fields_ = [("CurrentValue", c_int), ("Target", c_int)]
+    FCounterBehaviorUserState._fields_ = [("Counters", FBehaviorCounterState * 2)]
 
-
-class FCounterBehaviorUserState(Structure):
-    _fields_ = [("Counters", FBehaviorCounterState * 2)]
-
-
-class FIndependentSelectionData(Structure):
-    _fields_ = [
+    FIndependentSelectionData._fields_ = [
         ("Probability", FAttributeInitializationData),
         ("Behaviors", TArray_UBehaviorBasePtr),
     ]
 
-
-class FScalarMaterialParameter(Structure):
-    _fields_ = [
+    FScalarMaterialParameter._fields_ = [
         ("Name", FName),
         ("Value", c_float),
         ("ValueFromAttribute", FAttributeInitializationData),
     ]
 
-
-class FVectorMaterialParameter(Structure):
-    _fields_ = [
+    FVectorMaterialParameter._fields_ = [
         ("Name", FName),
         ("Value", FLinearColor),
         ("VectorScale", FAttributeInitializationData),
     ]
 
+    FTextureMaterialParameter._fields_ = [("Name", FName), ("Value", POINTER(UTexture))]
 
-class FTextureMaterialParameter(Structure):
-    _fields_ = [("Name", FName), ("Value", POINTER(UTexture))]
+    FScalarParticleSystemParameter._fields_ = [
+        ("Name", FName),
+        ("Value", FAttributeInitializationData),
+    ]
 
-
-class FScalarParticleSystemParameter(Structure):
-    _fields_ = [("Name", FName), ("Value", FAttributeInitializationData)]
-
-
-class FVectorParticleSystemParameter(Structure):
-    _fields_ = [
+    FVectorParticleSystemParameter._fields_ = [
         ("Name", FName),
         ("Value", FVector),
         ("VectorScale", FAttributeInitializationData),
     ]
 
+    FColorParticleSystemParameter._fields_ = [("Name", FName), ("Value", FColor)]
 
-class FColorParticleSystemParameter(Structure):
-    _fields_ = [("Name", FName), ("Value", FColor)]
+    FMaterialParticleSystemParameter._fields_ = [
+        ("Name", FName),
+        ("Value", POINTER(UMaterialInterface)),
+    ]
 
+    FActorParticleSystemParameter._fields_ = [
+        ("Name", FName),
+        ("Context", FBehaviorContextData),
+    ]
 
-class FMaterialParticleSystemParameter(Structure):
-    _fields_ = [("Name", FName), ("Value", POINTER(UMaterialInterface))]
-
-
-class FActorParticleSystemParameter(Structure):
-    _fields_ = [("Name", FName), ("Context", FBehaviorContextData)]
-
-
-class FStaticMeshComponentLODInfo(Structure):
-    _fields_ = [
+    FStaticMeshComponentLODInfo._fields_ = [
         ("ShadowMaps", TArray_UShadowMap2DPtr),
         ("ShadowVertexBuffers", TArray_UObjectPtr),
         ("LightMap", FPointer),
         ("OverrideVertexColors", FPointer),
     ]
 
+    FPaintedVertex._fields_ = [
+        ("Position", FVector),
+        ("Normal", FPackedNormal),
+        ("Color", FColor),
+    ]
 
-class FPaintedVertex(Structure):
-    _fields_ = [("Position", FVector), ("Normal", FPackedNormal), ("Color", FColor)]
-
-
-class FFOscillator(Structure):
-    _fields_ = [
+    FFOscillator._fields_ = [
         ("Amplitude", c_float),
         ("Frequency", c_float),
         ("InitialOffset", c_ubyte),
     ]
 
+    FVOscillator._fields_ = [
+        ("X", FFOscillator),
+        ("Y", FFOscillator),
+        ("Z", FFOscillator),
+    ]
 
-class FVOscillator(Structure):
-    _fields_ = [("X", FFOscillator), ("Y", FFOscillator), ("Z", FFOscillator)]
+    FROscillator._fields_ = [
+        ("Pitch", FFOscillator),
+        ("Yaw", FFOscillator),
+        ("Roll", FFOscillator),
+    ]
 
-
-class FROscillator(Structure):
-    _fields_ = [("Pitch", FFOscillator), ("Yaw", FFOscillator), ("Roll", FFOscillator)]
-
-
-class FCameraShakeInstance(Structure):
-    _fields_ = [
+    FCameraShakeInstance._fields_ = [
         ("SourceShake", POINTER(UCameraShake)),
         ("SourceShakeName", FName),
         ("OscillatorTimeRemaining", c_float),
         ("bBlendingIn", c_bool, 1),
-        ("", c_ulong, 0),
         ("CurrentBlendInTime", c_float),
         ("bBlendingOut", c_bool, 1),
-        ("", c_ulong, 0),
         ("CurrentBlendOutTime", c_float),
         ("LocSinOffset", FVector),
         ("RotSinOffset", FVector),
@@ -2065,13 +3807,11 @@ class FCameraShakeInstance(Structure):
         ("Scale", c_float),
         ("AnimInst", POINTER(UCameraAnimInst)),
         ("PlaySpace", c_ubyte),
-        ("Unknown1", c_ubyte, 0xB),
+        ("Unknown1", c_ubyte * 0xB),
         ("UserPlaySpaceMatrix", FMatrix),
     ]
 
-
-class FTextureGroupContainer(Structure):
-    _fields_ = [
+    FTextureGroupContainer._fields_ = [
         ("TEXTUREGROUP_World", c_bool, 1),
         ("TEXTUREGROUP_WorldNormalMap", c_bool, 1),
         ("TEXTUREGROUP_WorldSpecular", c_bool, 1),
@@ -2100,20 +3840,21 @@ class FTextureGroupContainer(Structure):
         ("TEXTUREGROUP_Terrain_Weightmap", c_bool, 1),
         ("TEXTUREGROUP_ImageBasedReflection", c_bool, 1),
         ("TEXTUREGROUP_Bokeh", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FTexture2DMipMap._fields_ = [
+        ("Data", FUntypedBulkData_Mirror),
+        ("SizeX", c_int),
+        ("SizeY", c_int),
+    ]
 
-class FTexture2DMipMap(Structure):
-    _fields_ = [("Data", FUntypedBulkData_Mirror), ("SizeX", c_int), ("SizeY", c_int)]
+    FTextureLinkedListMirror._fields_ = [
+        ("Element", FPointer),
+        ("Next", FPointer),
+        ("PrevLink", FPointer),
+    ]
 
-
-class FTextureLinkedListMirror(Structure):
-    _fields_ = [("Element", FPointer), ("Next", FPointer), ("PrevLink", FPointer)]
-
-
-class FCanvasIcon(Structure):
-    _fields_ = [
+    FCanvasIcon._fields_ = [
         ("Texture", POINTER(UTexture)),
         ("U", c_float),
         ("V", c_float),
@@ -2121,28 +3862,20 @@ class FCanvasIcon(Structure):
         ("VL", c_float),
     ]
 
-
-class FDepthFieldGlowInfo(Structure):
-    _fields_ = [
+    FDepthFieldGlowInfo._fields_ = [
         ("bEnableGlow", c_bool, 1),
-        ("", c_ulong, 0),
         ("GlowColor", FLinearColor),
         ("GlowOuterRadius", FVector2D),
         ("GlowInnerRadius", FVector2D),
     ]
 
-
-class FFontRenderInfo(Structure):
-    _fields_ = [
+    FFontRenderInfo._fields_ = [
         ("bClipText", c_bool, 1),
         ("bEnableShadow", c_bool, 1),
-        ("", c_ulong, 0),
         ("GlowInfo", FDepthFieldGlowInfo),
     ]
 
-
-class FCanvasUVTri(Structure):
-    _fields_ = [
+    FCanvasUVTri._fields_ = [
         ("V0_Pos", FVector2D),
         ("V0_UV", FVector2D),
         ("V1_Pos", FVector2D),
@@ -2151,9 +3884,7 @@ class FCanvasUVTri(Structure):
         ("V2_UV", FVector2D),
     ]
 
-
-class FTextSizingParameters(Structure):
-    _fields_ = [
+    FTextSizingParameters._fields_ = [
         ("DrawX", c_float),
         ("DrawY", c_float),
         ("DrawXL", c_float),
@@ -2164,38 +3895,32 @@ class FTextSizingParameters(Structure):
         ("ViewportHeight", c_float),
     ]
 
+    FWrappedStringElement._fields_ = [("Value", FString), ("LineExtent", FVector2D)]
 
-class FWrappedStringElement(Structure):
-    _fields_ = [("Value", FString), ("LineExtent", FVector2D)]
-
-
-class FDamageTypeResistance(Structure):
-    _fields_ = [
+    FDamageTypeResistance._fields_ = [
         ("ResistanceToImpact", FAttributeInitializationData),
         ("ResistanceToStatusEffect", FAttributeInitializationData),
     ]
 
-
-class FUIRangeData(Structure):
-    _fields_ = [
+    FUIRangeData._fields_ = [
         ("CurrentValue", c_float),
         ("MinValue", c_float),
         ("MaxValue", c_float),
         ("NudgeValue", c_float),
         ("bIntRange", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FTextureCoordinates._fields_ = [
+        ("U", c_float),
+        ("V", c_float),
+        ("UL", c_float),
+        ("VL", c_float),
+    ]
 
-class FTextureCoordinates(Structure):
-    _fields_ = [("U", c_float), ("V", c_float), ("UL", c_float), ("VL", c_float)]
-
-
-class FUIProviderScriptFieldValue(Structure):
-    _fields_ = [
+    FUIProviderScriptFieldValue._fields_ = [
         ("PropertyTag", FName),
         ("PropertyType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("StringValue", FString),
         ("ImageValue", POINTER(USurface)),
         ("ArrayValue", TArray_int),
@@ -2204,12 +3929,10 @@ class FUIProviderScriptFieldValue(Structure):
         ("AtlasCoordinates", FTextureCoordinates),
     ]
 
-
-class FUIProviderFieldValue(Structure):
-    _fields_ = [
+    FUIProviderFieldValue._fields_ = [
         ("PropertyTag", FName),
         ("PropertyType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("StringValue", FString),
         ("ImageValue", POINTER(USurface)),
         ("ArrayValue", TArray_int),
@@ -2219,91 +3942,73 @@ class FUIProviderFieldValue(Structure):
         ("CustomStringNode", FPointer),
     ]
 
-
-class FInputKeyAction(Structure):
-    _fields_ = [
+    FInputKeyAction._fields_ = [
         ("InputKeyName", FName),
         ("InputKeyState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("TriggeredOps", TArray_FSeqOpOutputInputLink),
         ("ActionsToExecute", TArray_USequenceOpPtr),
     ]
 
-
-class FUIDataStoreBinding(Structure):
-    _fields_ = [
+    FUIDataStoreBinding._fields_ = [
         ("Subscriber", FScriptInterface),
         ("RequiredFieldType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("MarkupString", FString),
-        ("BindingIndex", int),
+        ("BindingIndex", c_int),
         ("DataStoreName", FName),
         ("DataStoreField", FName),
         ("ResolvedDataStore", POINTER(UUIDataStore)),
     ]
 
-
-class FInputEventParameters(Structure):
-    _fields_ = [
-        ("PlayerIndex", int),
-        ("ControllerId", int),
+    FInputEventParameters._fields_ = [
+        ("PlayerIndex", c_int),
+        ("ControllerId", c_int),
         ("InputKeyName", FName),
         ("EventType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("InputDelta", c_float),
         ("DeltaTime", c_float),
         ("bAltPressed", c_bool, 1),
         ("bCtrlPressed", c_bool, 1),
         ("bShiftPressed", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FSubscribedInputEventParameters(Structure):
-    _fields_ = [
-        ("PlayerIndex", int),
-        ("ControllerId", int),
+    FSubscribedInputEventParameters._fields_ = [
+        ("PlayerIndex", c_int),
+        ("ControllerId", c_int),
         ("InputKeyName", FName),
         ("EventType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("InputDelta", c_float),
         ("DeltaTime", c_float),
         ("bAltPressed", c_bool, 1),
         ("bCtrlPressed", c_bool, 1),
         ("bShiftPressed", c_bool, 1),
-        ("", c_ulong, 0),
         ("InputAliasName", FName),
     ]
 
-
-class FUIAxisEmulationDefinition(Structure):
-    _fields_ = [
+    FUIAxisEmulationDefinition._fields_ = [
         ("AxisInputKey", FName),
         ("AdjacentAxisInputKey", FName),
         ("bEmulateButtonPress", c_bool, 1),
-        ("", c_ulong, 0),
         ("InputKeyToEmulate", FName * 2),
     ]
 
+    FRawInputKeyEventData._fields_ = [
+        ("InputKeyName", FName),
+        ("ModifierKeyFlags", c_ubyte),
+    ]
 
-class FRawInputKeyEventData(Structure):
-    _fields_ = [("InputKeyName", FName), ("ModifierKeyFlags", c_ubyte)]
+    FAutoCompleteCommand._fields_ = [("Command", FString), ("Desc", FString)]
 
-
-class FAutoCompleteCommand(Structure):
-    _fields_ = [("Command", FString), ("Desc", FString)]
-
-
-class FAutoCompleteNode(Structure):
-    _fields_ = [
+    FAutoCompleteNode._fields_ = [
         ("IndexChar", c_int),
         ("AutoCompleteListIndices", TArray_int),
         ("ChildNodes", TArray_FPointer),
     ]
 
-
-class FCovPosInfo(Structure):
-    _fields_ = [
+    FCovPosInfo._fields_ = [
         ("Link", POINTER(ACoverLink)),
         ("LtSlotIdx", c_int),
         ("RtSlotIdx", c_int),
@@ -2313,58 +4018,51 @@ class FCovPosInfo(Structure):
         ("Tangent", FVector),
     ]
 
-
-class FFireLinkItem(Structure):
-    _fields_ = [
+    FFireLinkItem._fields_ = [
         ("SrcType", c_ubyte),
         ("SrcAction", c_ubyte),
         ("DestType", c_ubyte),
         ("DestAction", c_ubyte),
     ]
 
-
-class FFireLink(Structure):
-    _fields_ = [
+    FFireLink._fields_ = [
         ("Interactions", TArray_unsigned_char),
-        ("PackedProperties_CoverPairRefAndDynamicInfo", int),
+        ("PackedProperties_CoverPairRefAndDynamicInfo", c_int),
         ("bFallbackLink", c_bool, 1),
         ("bDynamicIndexInited", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FDynamicLinkInfo._fields_ = [
+        ("LastTargetLocation", FVector),
+        ("LastSrcLocation", FVector),
+    ]
 
-class FDynamicLinkInfo(Structure):
-    _fields_ = [("LastTargetLocation", FVector), ("LastSrcLocation", FVector)]
+    FCoverReference._fields_ = [
+        ("Actor", POINTER(AActor)),
+        ("Guid", FGuid),
+        ("SlotIdx", c_int),
+    ]
 
+    FExposedLink._fields_ = [
+        ("TargetActor", FCoverReference),
+        ("ExposedScale", c_ubyte),
+    ]
 
-class FCoverReference(Structure):
-    _fields_ = [("Actor", POINTER(AActor)), ("Guid", FGuid), ("SlotIdx", c_int)]
-
-
-class FExposedLink(Structure):
-    _fields_ = [("TargetActor", FCoverReference), ("ExposedScale", c_ubyte)]
-
-
-class FSlotMoveRef(Structure):
-    _fields_ = [
+    FSlotMoveRef._fields_ = [
         ("Poly", FPolyReference),
         ("Dest", FBasedPosition),
         ("Direction", c_int),
     ]
 
+    FCoverInfo._fields_ = [("Link", POINTER(ACoverLink)), ("SlotIdx", c_int)]
 
-class FCoverInfo(Structure):
-    _fields_ = [("Link", POINTER(ACoverLink)), ("SlotIdx", c_int)]
-
-
-class FCoverSlot(Structure):
-    _fields_ = [
+    FCoverSlot._fields_ = [
         ("SlotOwner", POINTER(APawn)),
         ("SlotValidAfterTime", c_float),
         ("ForceCoverType", c_ubyte),
         ("CoverType", c_ubyte),
         ("LocationDescription", c_ubyte),
-        ("Unknown1", c_ubyte, 0x1),
+        ("Unknown1", c_ubyte * 0x1),
         ("LocationOffset", FVector),
         ("RotationOffset", FRotator),
         ("Actions", TArray_unsigned_char),
@@ -2398,12 +4096,9 @@ class FCoverSlot(Structure):
         ("bDestructible", c_bool, 1),
         ("bSelected", c_bool, 1),
         ("bFailedToFindSurface", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FCoverMeshes(Structure):
-    _fields_ = [
+    FCoverMeshes._fields_ = [
         ("Base", POINTER(UStaticMesh)),
         ("LeanLeft", POINTER(UStaticMesh)),
         ("LeanRight", POINTER(UStaticMesh)),
@@ -2419,13 +4114,12 @@ class FCoverMeshes(Structure):
         ("PlayerOnly", POINTER(UStaticMesh)),
     ]
 
+    FManualCoverTypeInfo._fields_ = [
+        ("SlotIndex", c_ubyte),
+        ("ManualCoverType", c_ubyte),
+    ]
 
-class FManualCoverTypeInfo(Structure):
-    _fields_ = [("SlotIndex", c_ubyte), ("ManualCoverType", c_ubyte)]
-
-
-class FCoverReplicationInfo(Structure):
-    _fields_ = [
+    FCoverReplicationInfo._fields_ = [
         ("Link", POINTER(ACoverLink)),
         ("SlotsEnabled", TArray_unsigned_char),
         ("SlotsDisabled", TArray_unsigned_char),
@@ -2433,25 +4127,18 @@ class FCoverReplicationInfo(Structure):
         ("SlotsCoverTypeChanged", TArray_FManualCoverTypeInfo),
     ]
 
+    FCullDistanceSizePair._fields_ = [("Size", c_float), ("CullDistance", c_float)]
 
-class FCullDistanceSizePair(Structure):
-    _fields_ = [("Size", c_float), ("CullDistance", c_float)]
-
-
-class FPresetGeneratedPoint(Structure):
-    _fields_ = [
+    FPresetGeneratedPoint._fields_ = [
         ("KeyIn", c_float),
         ("KeyOut", c_float),
         ("TangentsValid", c_bool, 1),
-        ("", c_ulong, 0),
         ("TangentIn", c_float),
         ("TangentOut", c_float),
         ("IntepMode", c_ubyte),
     ]
 
-
-class FDamageInfo(Structure):
-    _fields_ = [
+    FDamageInfo._fields_ = [
         ("Instigator", POINTER(AController)),
         ("HitLocation", FVector),
         ("DamageType", POINTER(UClass)),
@@ -2459,23 +4146,17 @@ class FDamageInfo(Structure):
         ("ImpactDefinition", POINTER(UImpactDefinition)),
     ]
 
-
-class FReflectionInfo(Structure):
-    _fields_ = [
+    FReflectionInfo._fields_ = [
         ("ReflectionType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ReflectedDamageScale", c_float),
         ("ReflectedDamageToReflector", c_float),
         ("bReflectTowardAttacker", c_bool, 1),
-        ("", c_ulong, 0),
         ("ReflectedInaccuracyModifier", c_float),
         ("bReflectProjectiles", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FDamageEventSummary(Structure):
-    _fields_ = [
+    FDamageEventSummary._fields_ = [
         ("InitialDamage", c_float),
         ("AIDamageScaleReduction", c_float),
         ("DamageSourceReduction", c_float),
@@ -2500,22 +4181,17 @@ class FDamageEventSummary(Structure):
         ("bWasMaxShield", c_bool, 1),
         ("bWasMaxHealth", c_bool, 1),
         ("bWasOneShotKill", c_bool, 1),
-        ("", c_ulong, 0),
         ("ReflectionData", FReflectionInfo),
         ("DamageTakenSkillEventsTriggered", c_ubyte * 8),
         ("DamageDealtSkillEventsTriggered", c_ubyte * 8),
     ]
 
-
-class FPlayerDataStoreGroup(Structure):
-    _fields_ = [
+    FPlayerDataStoreGroup._fields_ = [
         ("PlayerOwner", POINTER(ULocalPlayer)),
         ("DataStores", TArray_UUIDataStorePtr),
     ]
 
-
-class FKeyBind(Structure):
-    _fields_ = [
+    FKeyBind._fields_ = [
         ("Name", FName),
         ("Command", FString),
         ("Control", c_bool, 1),
@@ -2526,20 +4202,19 @@ class FKeyBind(Structure):
         ("bIgnoreCtrl", c_bool, 1),
         ("bIgnoreShift", c_bool, 1),
         ("bIgnoreAlt", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FDecalReceiver._fields_ = [
+        ("Component", POINTER(UPrimitiveComponent)),
+        ("RenderData", FPointer),
+    ]
 
-class FDecalReceiver(Structure):
-    _fields_ = [("Component", POINTER(UPrimitiveComponent)), ("RenderData", FPointer)]
+    FActiveDecalInfo._fields_ = [
+        ("Decal", POINTER(UDecalComponent)),
+        ("LifetimeRemaining", c_float),
+    ]
 
-
-class FActiveDecalInfo(Structure):
-    _fields_ = [("Decal", POINTER(UDecalComponent)), ("LifetimeRemaining", c_float)]
-
-
-class FLightmassMaterialInterfaceSettings(Structure):
-    _fields_ = [
+    FLightmassMaterialInterfaceSettings._fields_ = [
         ("DistanceFieldPenumbraScale", c_float),
         ("bCastShadowAsMasked", c_bool, 1),
         ("bOverrideCastShadowAsMasked", c_bool, 1),
@@ -2548,12 +4223,9 @@ class FLightmassMaterialInterfaceSettings(Structure):
         ("bOverrideSpecularBoost", c_bool, 1),
         ("bOverrideExportResolutionScale", c_bool, 1),
         ("bOverrideDistanceFieldPenumbraScale", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FMaterialInput(Structure):
-    _fields_ = [
+    FMaterialInput._fields_ = [
         ("Expression", POINTER(UMaterialExpression)),
         ("Mask", c_int),
         ("MaskR", c_int),
@@ -2563,9 +4235,7 @@ class FMaterialInput(Structure):
         ("GCC64_Padding", c_int),
     ]
 
-
-class FColorMaterialInput(Structure):
-    _fields_ = [
+    FColorMaterialInput._fields_ = [
         ("Expression", POINTER(UMaterialExpression)),
         ("Mask", c_int),
         ("MaskR", c_int),
@@ -2574,13 +4244,10 @@ class FColorMaterialInput(Structure):
         ("MaskA", c_int),
         ("GCC64_Padding", c_int),
         ("UseConstant", c_bool, 1),
-        ("", c_ulong, 0),
         ("Constant", FColor),
     ]
 
-
-class FScalarMaterialInput(Structure):
-    _fields_ = [
+    FScalarMaterialInput._fields_ = [
         ("Expression", POINTER(UMaterialExpression)),
         ("Mask", c_int),
         ("MaskR", c_int),
@@ -2589,13 +4256,10 @@ class FScalarMaterialInput(Structure):
         ("MaskA", c_int),
         ("GCC64_Padding", c_int),
         ("UseConstant", c_bool, 1),
-        ("", c_ulong, 0),
         ("Constant", c_float),
     ]
 
-
-class FVectorMaterialInput(Structure):
-    _fields_ = [
+    FVectorMaterialInput._fields_ = [
         ("Expression", POINTER(UMaterialExpression)),
         ("Mask", c_int),
         ("MaskR", c_int),
@@ -2604,13 +4268,10 @@ class FVectorMaterialInput(Structure):
         ("MaskA", c_int),
         ("GCC64_Padding", c_int),
         ("UseConstant", c_bool, 1),
-        ("", c_ulong, 0),
         ("Constant", FVector),
     ]
 
-
-class FVector2MaterialInput(Structure):
-    _fields_ = [
+    FVector2MaterialInput._fields_ = [
         ("Expression", POINTER(UMaterialExpression)),
         ("Mask", c_int),
         ("MaskR", c_int),
@@ -2619,110 +4280,93 @@ class FVector2MaterialInput(Structure):
         ("MaskA", c_int),
         ("GCC64_Padding", c_int),
         ("UseConstant", c_bool, 1),
-        ("", c_ulong, 0),
         ("ConstantX", c_float),
         ("ConstantY", c_float),
     ]
 
+    APhysicsVolume_FCheckpointRecord._fields_ = [
+        ("bPainCausing", c_bool, 1),
+        ("bActive", c_bool, 1),
+    ]
 
-class APhysicsVolume_FCheckpointRecord(Structure):
-    _fields_ = [("bPainCausing", c_bool, 1), ("bActive", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FMarketplaceOffer(Structure):
-    _fields_ = [
+    FMarketplaceOffer._fields_ = [
         ("OfferId", c_int),
         ("ContentCategory", c_int),
         ("OfferName", FString),
         ("ContentId", TArray_unsigned_char),
         ("bIsUnrestrictedLicense", c_bool, 1),
-        ("", c_ulong, 0),
         ("LicenseMask", c_int),
         ("bUserHasPurchased", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FInstalledContentInfo(Structure):
-    _fields_ = [
+    FInstalledContentInfo._fields_ = [
         ("ContentType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ContentName", FString),
         ("ContentPath", FString),
         ("Filename", FString),
         ("DeviceID", c_int),
         ("LicenseMask", c_int),
         ("bHasSeen", c_bool, 1),
-        ("", c_ulong, 0),
         ("CachedAppIdInfo", TArray_FAppIdLicenseInfo),
     ]
 
-
-class FMarketplaceOfferDownloadState(Structure):
-    _fields_ = [
+    FMarketplaceOfferDownloadState._fields_ = [
         ("bIsDownloaded", c_bool, 1),
         ("bIsInstalled", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FRejectedContentInfo(Structure):
-    _fields_ = [
+    FRejectedContentInfo._fields_ = [
         ("ContentType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ContentName", FString),
         ("ContentPath", FString),
         ("Filename", FString),
         ("DeviceID", c_int),
         ("LicenseMask", c_int),
         ("bHasSeen", c_bool, 1),
-        ("", c_ulong, 0),
         ("CachedAppIdInfo", TArray_FAppIdLicenseInfo),
         ("Result", c_ubyte),
     ]
 
+    FDlcContentId._fields_ = [("PackageId", c_int), ("ContentId", c_int)]
 
-class FDlcContentId(Structure):
-    _fields_ = [("PackageId", c_int), ("ContentId", c_int)]
-
-
-class FDlcContentInfo(Structure):
-    _fields_ = [
+    FDlcContentInfo._fields_ = [
         ("ContentId", FDlcContentId),
         ("bIsInstalled", c_bool, 1),
         ("bIsLicensed", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FDlcCompatibilityData._fields_ = [
+        ("A", c_int),
+        ("B", c_int),
+        ("C", c_int),
+        ("D", c_int),
+    ]
 
-class FDlcCompatibilityData(Structure):
-    _fields_ = [("A", c_int), ("B", c_int), ("C", c_int), ("D", c_int)]
+    FDlcCompatibilityDataEx._fields_ = [
+        ("A", c_int),
+        ("B", c_int),
+        ("C", c_int),
+        ("D", c_int),
+    ]
 
-
-class FDlcCompatibilityDataEx(Structure):
-    _fields_ = [("A", c_int), ("B", c_int), ("C", c_int), ("D", c_int)]
-
-
-class ADynamicBlockingVolume_FCheckpointRecord(Structure):
-    _fields_ = [
+    ADynamicBlockingVolume_FCheckpointRecord._fields_ = [
         ("Location", FVector),
         ("Rotation", FRotator),
         ("bCollideActors", c_bool, 1),
         ("bBlockActors", c_bool, 1),
         ("bNeedsReplication", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FViewParticleEmitterInstanceMotionBlurInfo._fields_ = [
+        ("EmitterInstanceMBInfoMap", FMap_Mirror)
+    ]
 
-class FViewParticleEmitterInstanceMotionBlurInfo(Structure):
-    _fields_ = [("EmitterInstanceMBInfoMap", FMap_Mirror)]
-
-
-class FParticleSysParam(Structure):
-    _fields_ = [
+    FParticleSysParam._fields_ = [
         ("Name", FName),
         ("ParamType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Scalar", c_float),
         ("Scalar_Low", c_float),
         ("Vector", FVector),
@@ -2733,9 +4377,7 @@ class FParticleSysParam(Structure):
         ("Socket", FName),
     ]
 
-
-class FParticleEventData(Structure):
-    _fields_ = [
+    FParticleEventData._fields_ = [
         ("Type", c_int),
         ("EventName", FName),
         ("EmitterTime", c_float),
@@ -2744,9 +4386,7 @@ class FParticleEventData(Structure):
         ("Velocity", FVector),
     ]
 
-
-class FParticleEventSpawnData(Structure):
-    _fields_ = [
+    FParticleEventSpawnData._fields_ = [
         ("Type", c_int),
         ("EventName", FName),
         ("EmitterTime", c_float),
@@ -2755,9 +4395,7 @@ class FParticleEventSpawnData(Structure):
         ("Velocity", FVector),
     ]
 
-
-class FParticleEventDeathData(Structure):
-    _fields_ = [
+    FParticleEventDeathData._fields_ = [
         ("Type", c_int),
         ("EventName", FName),
         ("EmitterTime", c_float),
@@ -2767,9 +4405,7 @@ class FParticleEventDeathData(Structure):
         ("ParticleTime", c_float),
     ]
 
-
-class FParticleEventCollideData(Structure):
-    _fields_ = [
+    FParticleEventCollideData._fields_ = [
         ("Type", c_int),
         ("EventName", FName),
         ("EmitterTime", c_float),
@@ -2783,9 +4419,7 @@ class FParticleEventCollideData(Structure):
         ("BoneName", FName),
     ]
 
-
-class FParticleEventTraceData(Structure):
-    _fields_ = [
+    FParticleEventTraceData._fields_ = [
         ("Type", c_int),
         ("EventName", FName),
         ("EmitterTime", c_float),
@@ -2795,9 +4429,7 @@ class FParticleEventTraceData(Structure):
         ("ParticleTime", c_float),
     ]
 
-
-class FParticleEventKismetData(Structure):
-    _fields_ = [
+    FParticleEventKismetData._fields_ = [
         ("Type", c_int),
         ("EventName", FName),
         ("EmitterTime", c_float),
@@ -2805,94 +4437,70 @@ class FParticleEventKismetData(Structure):
         ("Direction", FVector),
         ("Velocity", FVector),
         ("UsePSysCompLocation", c_bool, 1),
-        ("", c_ulong, 0),
         ("Normal", FVector),
     ]
 
+    FParticleEmitterInstanceMotionBlurInfo._fields_ = [
+        ("ParticleMBInfoMap", FMap_Mirror)
+    ]
 
-class FParticleEmitterInstanceMotionBlurInfo(Structure):
-    _fields_ = [("ParticleMBInfoMap", FMap_Mirror)]
+    FParticleEmitterInstance._fields_ = []
 
+    AEmitter_FCheckpointRecord._fields_ = [("bIsActive", c_bool, 1)]
 
-class FParticleEmitterInstance(Structure):
-    _fields_ = []
-
-
-class AEmitter_FCheckpointRecord(Structure):
-    _fields_ = [("bIsActive", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FEmitterBaseInfo(Structure):
-    _fields_ = [
+    FEmitterBaseInfo._fields_ = [
         ("PSC", POINTER(UParticleSystemComponent)),
         ("Base", POINTER(AActor)),
         ("RelativeLocation", FVector),
         ("RelativeRotation", FRotator),
         ("bInheritBaseScale", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FParticleSystemLOD._fields_ = [("bLit", c_bool, 1)]
 
-class FParticleSystemLOD(Structure):
-    _fields_ = [("bLit", c_bool, 1), ("", c_ulong, 0)]
+    FStatColorMapEntry._fields_ = [("In", c_float), ("Out", FColor)]
 
-
-class FStatColorMapEntry(Structure):
-    _fields_ = [("In", c_float), ("Out", FColor)]
-
-
-class FStatColorMapping(Structure):
-    _fields_ = [
+    FStatColorMapping._fields_ = [
         ("StatName", FString),
         ("ColorMap", TArray_FStatColorMapEntry),
         ("DisableBlend", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FDropNoteInfo._fields_ = [
+        ("Location", FVector),
+        ("Rotation", FRotator),
+        ("Comment", FString),
+    ]
 
-class FDropNoteInfo(Structure):
-    _fields_ = [("Location", FVector), ("Rotation", FRotator), ("Comment", FString)]
+    FPrimitiveMaterialRef._fields_ = [
+        ("Primitive", POINTER(UPrimitiveComponent)),
+        ("MaterialIndex", c_int),
+    ]
 
+    FPostProcessMaterialRef._fields_ = [("Effect", POINTER(UMaterialEffect))]
 
-class FPrimitiveMaterialRef(Structure):
-    _fields_ = [("Primitive", POINTER(UPrimitiveComponent)), ("MaterialIndex", c_int)]
-
-
-class FPostProcessMaterialRef(Structure):
-    _fields_ = [("Effect", POINTER(UMaterialEffect))]
-
-
-class FMaterialReferenceList(Structure):
-    _fields_ = [
+    FMaterialReferenceList._fields_ = [
         ("TargetMaterial", POINTER(UMaterialInterface)),
         ("AffectedMaterialRefs", TArray_FPrimitiveMaterialRef),
         ("AffectedPPChainMaterialRefs", TArray_FPostProcessMaterialRef),
     ]
 
-
-class FVelocityObstacleStat(Structure):
-    _fields_ = [
+    FVelocityObstacleStat._fields_ = [
         ("Position", FVector),
         ("Velocity", FVector),
         ("Radius", c_float),
         ("Priority", c_int),
     ]
 
-
-class FGroupAnimationAndSoundIdentifier(Structure):
-    _fields_ = [
+    FGroupAnimationAndSoundIdentifier._fields_ = [
         ("SoundNodeWaveName", FString),
         ("FaceFXGroupName", FString),
         ("FaceFXAnimName", FString),
     ]
 
+    AFogVolumeDensityInfo_FCheckpointRecord._fields_ = [("bEnabled", c_bool, 1)]
 
-class AFogVolumeDensityInfo_FCheckpointRecord(Structure):
-    _fields_ = [("bEnabled", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FFoliageInstanceBase(Structure):
-    _fields_ = [
+    FFoliageInstanceBase._fields_ = [
         ("Location", FVector),
         ("XAxis", FVector),
         ("YAxis", FVector),
@@ -2900,9 +4508,7 @@ class FFoliageInstanceBase(Structure):
         ("DistanceFactorSquared", c_float),
     ]
 
-
-class FStoredFoliageInstance(Structure):
-    _fields_ = [
+    FStoredFoliageInstance._fields_ = [
         ("Location", FVector),
         ("XAxis", FVector),
         ("YAxis", FVector),
@@ -2911,9 +4517,7 @@ class FStoredFoliageInstance(Structure):
         ("StaticLighting", FColor * 3),
     ]
 
-
-class FFoliageMesh(Structure):
-    _fields_ = [
+    FFoliageMesh._fields_ = [
         ("InstanceStaticMesh", POINTER(UStaticMesh)),
         ("Material", POINTER(UMaterialInterface)),
         ("MaxDrawRadius", c_float),
@@ -2929,13 +4533,10 @@ class FFoliageMesh(Structure):
         ("bCreateInstancesOnBSP", c_bool, 1),
         ("bCreateInstancesOnStaticMeshes", c_bool, 1),
         ("bCreateInstancesOnTerrain", c_bool, 1),
-        ("", c_ulong, 0),
         ("Component", POINTER(UFoliageComponent)),
     ]
 
-
-class FFontImportOptionsData(Structure):
-    _fields_ = [
+    FFontImportOptionsData._fields_ = [
         ("FontName", FString),
         ("Height", c_float),
         ("bEnableAntialiasing", c_bool, 1),
@@ -2943,19 +4544,16 @@ class FFontImportOptionsData(Structure):
         ("bEnableItalic", c_bool, 1),
         ("bEnableUnderline", c_bool, 1),
         ("bAlphaOnly", c_bool, 1),
-        ("", c_ulong, 0),
         ("CharacterSet", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Chars", FString),
         ("UnicodeRange", FString),
         ("CharsFilePath", FString),
         ("CharsFileWildcard", FString),
         ("bCreatePrintableOnly", c_bool, 1),
         ("bIncludeASCIIRange", c_bool, 1),
-        ("", c_ulong, 0),
         ("ForegroundColor", FLinearColor),
         ("bEnableDropShadow", c_bool, 1),
-        ("", c_ulong, 0),
         ("TexturePageWidth", c_int),
         ("TexturePageMaxHeight", c_int),
         ("XPadding", c_int),
@@ -2965,29 +4563,23 @@ class FFontImportOptionsData(Structure):
         ("ExtendBoxRight", c_int),
         ("ExtendBoxLeft", c_int),
         ("bEnableLegacyMode", c_bool, 1),
-        ("", c_ulong, 0),
         ("Kerning", c_int),
         ("bUseDistanceFieldAlpha", c_bool, 1),
-        ("", c_ulong, 0),
         ("DistanceFieldScaleFactor", c_int),
         ("DistanceFieldScanRadiusScale", c_float),
     ]
 
-
-class FFontCharacter(Structure):
-    _fields_ = [
+    FFontCharacter._fields_ = [
         ("StartU", c_int),
         ("StartV", c_int),
         ("USize", c_int),
         ("VSize", c_int),
         ("TextureIndex", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("VerticalOffset", c_int),
     ]
 
-
-class FWaveformSample(Structure):
-    _fields_ = [
+    FWaveformSample._fields_ = [
         ("LeftAmplitude", c_ubyte),
         ("RightAmplitude", c_ubyte),
         ("LeftFunction", c_ubyte),
@@ -2995,36 +4587,25 @@ class FWaveformSample(Structure):
         ("Duration", c_float),
     ]
 
-
-class FLevelStreamingStatus(Structure):
-    _fields_ = [
+    FLevelStreamingStatus._fields_ = [
         ("PackageName", FName),
         ("bShouldBeLoaded", c_bool, 1),
         ("bShouldBeVisible", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FFullyLoadedPackagesInfo(Structure):
-    _fields_ = [
+    FFullyLoadedPackagesInfo._fields_ = [
         ("FullyLoadType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Tag", FString),
         ("PackagesToLoad", TArray_FName),
         ("LoadedObjects", TArray_UObjectPtr),
     ]
 
+    FNamedNetDriver._fields_ = [("NetDriverName", FName), ("NetDriver", FPointer)]
 
-class FNamedNetDriver(Structure):
-    _fields_ = [("NetDriverName", FName), ("NetDriver", FPointer)]
+    FAnimTag._fields_ = [("Tag", FString), ("Contains", TArray_FString)]
 
-
-class FAnimTag(Structure):
-    _fields_ = [("Tag", FString), ("Contains", TArray_FString)]
-
-
-class FURL(Structure):
-    _fields_ = [
+    FURL._fields_ = [
         ("Protocol", FString),
         ("Host", FString),
         ("Port", c_int),
@@ -3034,86 +4615,64 @@ class FURL(Structure):
         ("Valid", c_int),
     ]
 
+    FGameClassShortName._fields_ = [("ShortName", FString), ("GameClassName", FString)]
 
-class FGameClassShortName(Structure):
-    _fields_ = [("ShortName", FString), ("GameClassName", FString)]
-
-
-class FGameTypePrefix(Structure):
-    _fields_ = [
+    FGameTypePrefix._fields_ = [
         ("Prefix", FString),
         ("bUsesCommonPackage", c_bool, 1),
-        ("", c_ulong, 0),
         ("GameType", FString),
         ("AdditionalGameTypes", TArray_FString),
         ("ForcedObjects", TArray_FString),
     ]
 
-
-class FPlayerInformation(Structure):
-    _fields_ = [
+    FPlayerInformation._fields_ = [
         ("ControllerName", FName),
         ("PlayerName", FString),
         ("UniqueId", FUniqueNetId),
         ("bIsBot", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FTeamInformation(Structure):
-    _fields_ = [
+    FTeamInformation._fields_ = [
         ("TeamIndex", c_int),
         ("TeamName", FString),
         ("TeamColor", FColor),
         ("MaxSize", c_int),
     ]
 
-
-class FGameStatGroup(Structure):
-    _fields_ = [("Group", c_ubyte), ("Unknown1", c_ubyte, 0x3), ("Level", c_int)]
-
-
-class FGameplayEventMetaData(Structure):
-    _fields_ = [
-        ("EventID", int),
-        ("EventName", FName),
-        ("StatGroup", FGameStatGroup),
-        ("EventDataType", int),
+    FGameStatGroup._fields_ = [
+        ("Group", c_ubyte),
+        ("Unknown1", c_ubyte * 0x3),
+        ("Level", c_int),
     ]
 
+    FGameplayEventMetaData._fields_ = [
+        ("EventID", c_int),
+        ("EventName", FName),
+        ("StatGroup", FGameStatGroup),
+        ("EventDataType", c_int),
+    ]
 
-class FWeaponClassEventData(Structure):
-    _fields_ = [("WeaponClassName", FName)]
+    FWeaponClassEventData._fields_ = [("WeaponClassName", FName)]
 
+    FDamageClassEventData._fields_ = [("DamageClassName", FName)]
 
-class FDamageClassEventData(Structure):
-    _fields_ = [("DamageClassName", FName)]
+    FProjectileClassEventData._fields_ = [("ProjectileClassName", FName)]
 
+    FPawnClassEventData._fields_ = [("PawnClassName", FName)]
 
-class FProjectileClassEventData(Structure):
-    _fields_ = [("ProjectileClassName", FName)]
-
-
-class FPawnClassEventData(Structure):
-    _fields_ = [("PawnClassName", FName)]
-
-
-class FGameplayEventsHeader(Structure):
-    _fields_ = [
-        ("EngineVersion", int),
-        ("StatsWriterVersion", int),
-        ("StreamOffset", int),
-        ("AggregateOffset", int),
-        ("FooterOffset", int),
-        ("TotalStreamSize", int),
-        ("FileSize", int),
+    FGameplayEventsHeader._fields_ = [
+        ("EngineVersion", c_int),
+        ("StatsWriterVersion", c_int),
+        ("StreamOffset", c_int),
+        ("AggregateOffset", c_int),
+        ("FooterOffset", c_int),
+        ("TotalStreamSize", c_int),
+        ("FileSize", c_int),
         ("FilterClass", FString),
         ("Flags", c_int),
     ]
 
-
-class FGameSessionInformation(Structure):
-    _fields_ = [
+    FGameSessionInformation._fields_ = [
         ("AppTitleID", c_int),
         ("PlatformType", c_int),
         ("Language", FString),
@@ -3121,33 +4680,27 @@ class FGameSessionInformation(Structure):
         ("GameplaySessionStartTime", c_float),
         ("GameplaySessionEndTime", c_float),
         ("bGameplaySessionInProgress", c_bool, 1),
-        ("", c_ulong, 0),
         ("GameplaySessionID", FString),
         ("GameClassName", FString),
         ("MapName", FString),
         ("MapURL", FString),
-        ("SessionInstance", int),
-        ("GameTypeId", int),
+        ("SessionInstance", c_int),
+        ("GameTypeId", c_int),
         ("OwningNetId", FUniqueNetId),
         ("PlaylistId", c_int),
     ]
 
-
-class FMusicStateInfo(Structure):
-    _fields_ = [
+    FMusicStateInfo._fields_ = [
         ("State", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("CustomCombatMusicAkState", POINTER(UAkState)),
         ("CustomAmbientMusicAkState", POINTER(UAkState)),
     ]
 
-
-class FMusicTrackStruct(Structure):
-    _fields_ = [
+    FMusicTrackStruct._fields_ = [
         ("TheSoundCue", POINTER(USoundCue)),
         ("bAutoPlay", c_bool, 1),
         ("bPersistentAcrossLevels", c_bool, 1),
-        ("", c_ulong, 0),
         ("FadeInTime", c_float),
         ("FadeInVolumeLevel", c_float),
         ("FadeOutTime", c_float),
@@ -3155,65 +4708,50 @@ class FMusicTrackStruct(Structure):
         ("MP3Filename", FString),
     ]
 
+    FNavMeshPathGoalEvaluatorCacheDatum._fields_ = [
+        ("ListIdx", c_int),
+        ("List", POINTER(UNavMeshPathGoalEvaluator) * 5),
+    ]
 
-class FNavMeshPathGoalEvaluatorCacheDatum(Structure):
-    _fields_ = [("ListIdx", c_int), ("List", POINTER(UNavMeshPathGoalEvaluator) * 5)]
-
-
-class FPhysXEmitterVerticalProperties(Structure):
-    _fields_ = [
+    FPhysXEmitterVerticalProperties._fields_ = [
         ("bDisableLod", c_bool, 1),
-        ("", c_ulong, 0),
         ("ParticlesLodMin", c_int),
         ("ParticlesLodMax", c_int),
         ("PacketsPerPhysXParticleSystemMax", c_int),
         ("bApplyCylindricalPacketCulling", c_bool, 1),
-        ("", c_ulong, 0),
         ("SpawnLodVsFifoBias", c_float),
     ]
 
+    FPhysXVerticalProperties._fields_ = [("Emitters", FPhysXEmitterVerticalProperties)]
 
-class FPhysXVerticalProperties(Structure):
-    _fields_ = [("Emitters", FPhysXEmitterVerticalProperties)]
-
-
-class FHostMigrationState(Structure):
-    _fields_ = [
+    FHostMigrationState._fields_ = [
         ("HostMigrationProgress", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("HostMigrationElapsedTime", c_float),
         ("HostMigrationTravelCountdown", c_float),
         ("HostMigrationTravelURL", FString),
         ("bHostMigrationEnabled", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FNavigationArea._fields_ = [("AreaName", FName), ("AreaColor", FColor)]
 
-class FNavigationArea(Structure):
-    _fields_ = [("AreaName", FName), ("AreaColor", FColor)]
-
-
-class FWorldFractureSettings(Structure):
-    _fields_ = [
+    FWorldFractureSettings._fields_ = [
         ("ChanceOfPhysicsChunkOverride", c_float),
         ("bEnableChanceOfPhysicsChunkOverride", c_bool, 1),
         ("bLimitExplosionChunkSize", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxExplosionChunkSize", c_float),
         ("bLimitDamageChunkSize", c_bool, 1),
-        ("", c_ulong, 0),
         ("MaxDamageChunkSize", c_float),
         ("MaxNumFacturedChunksToSpawnInAFrame", c_int),
         ("FractureExplosionVelScale", c_float),
     ]
 
+    FNavMeshPathConstraintCacheDatum._fields_ = [
+        ("ListIdx", c_int),
+        ("List", POINTER(UNavMeshPathConstraint) * 5),
+    ]
 
-class FNavMeshPathConstraintCacheDatum(Structure):
-    _fields_ = [("ListIdx", c_int), ("List", POINTER(UNavMeshPathConstraint) * 5)]
-
-
-class FLightmassWorldInfoSettings(Structure):
-    _fields_ = [
+    FLightmassWorldInfoSettings._fields_ = [
         ("StaticLightingLevelScale", c_float),
         ("NumIndirectLightingBounces", c_int),
         ("EnvironmentColor", FColor),
@@ -3223,7 +4761,6 @@ class FLightmassWorldInfoSettings(Structure):
         ("SpecularBoost", c_float),
         ("IndirectNormalInfluenceBoost", c_float),
         ("bUseAmbientOcclusion", c_bool, 1),
-        ("", c_ulong, 0),
         ("DirectIlluminationOcclusionFraction", c_float),
         ("IndirectIlluminationOcclusionFraction", c_float),
         ("OcclusionExponent", c_float),
@@ -3232,12 +4769,9 @@ class FLightmassWorldInfoSettings(Structure):
         ("bVisualizeMaterialDiffuse", c_bool, 1),
         ("bVisualizeAmbientOcclusion", c_bool, 1),
         ("bCompressShadowmap", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FScreenMessageString(Structure):
-    _fields_ = [
+    FScreenMessageString._fields_ = [
         ("Key", FQWord),
         ("ScreenMessage", FString),
         ("DisplayColor", FColor),
@@ -3245,29 +4779,21 @@ class FScreenMessageString(Structure):
         ("CurrentTimeDisplayed", c_float),
     ]
 
-
-class FApexModuleDestructibleSettings(Structure):
-    _fields_ = [
+    FApexModuleDestructibleSettings._fields_ = [
         ("MaxChunkIslandCount", c_int),
         ("MaxRrbActorCount", c_int),
         ("MaxChunkSeparationLOD", c_float),
         ("bOverrideMaxChunkSeparationLOD", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FPhysXSimulationProperties(Structure):
-    _fields_ = [
+    FPhysXSimulationProperties._fields_ = [
         ("bUseHardware", c_bool, 1),
         ("bFixedTimeStep", c_bool, 1),
-        ("", c_ulong, 0),
         ("TimeStep", c_float),
         ("MaxSubSteps", c_int),
     ]
 
-
-class FPhysXSceneProperties(Structure):
-    _fields_ = [
+    FPhysXSceneProperties._fields_ = [
         ("PrimaryScene", FPhysXSimulationProperties),
         ("CompartmentRigidBody", FPhysXSimulationProperties),
         ("CompartmentFluid", FPhysXSimulationProperties),
@@ -3275,94 +4801,67 @@ class FPhysXSceneProperties(Structure):
         ("CompartmentSoftBody", FPhysXSimulationProperties),
     ]
 
-
-class FCompartmentRunList(Structure):
-    _fields_ = [
+    FCompartmentRunList._fields_ = [
         ("RigidBody", c_bool, 1),
         ("Fluid", c_bool, 1),
         ("Cloth", c_bool, 1),
         ("SoftBody", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FNetViewer(Structure):
-    _fields_ = [
+    FNetViewer._fields_ = [
         ("InViewer", POINTER(APlayerController)),
         ("Viewer", POINTER(AActor)),
         ("ViewLocation", FVector),
         ("ViewDir", FVector),
     ]
 
-
-class FLevelGroup(Structure):
-    _fields_ = [
+    FLevelGroup._fields_ = [
         ("bCollapsed", c_bool, 1),
-        ("", c_ulong, 0),
         ("GroupColor", FColor),
         ("Levels", TArray_int),
         ("LevelGridVolumes", TArray_FString),
         ("GroupName", FString),
     ]
 
-
-class FTitleSafeZoneArea(Structure):
-    _fields_ = [
+    FTitleSafeZoneArea._fields_ = [
         ("MaxPercentX", c_float),
         ("MaxPercentY", c_float),
         ("RecommendedPercentX", c_float),
         ("RecommendedPercentY", c_float),
     ]
 
-
-class FPerPlayerSplitscreenData(Structure):
-    _fields_ = [
+    FPerPlayerSplitscreenData._fields_ = [
         ("SizeX", c_float),
         ("SizeY", c_float),
         ("OriginX", c_float),
         ("OriginY", c_float),
     ]
 
+    FSplitscreenData._fields_ = [("PlayerData", TArray_FPerPlayerSplitscreenData)]
 
-class FSplitscreenData(Structure):
-    _fields_ = [("PlayerData", TArray_FPerPlayerSplitscreenData)]
-
-
-class FDebugDisplayProperty(Structure):
-    _fields_ = [
+    FDebugDisplayProperty._fields_ = [
         ("Obj", POINTER(UObject)),
         ("PropertyName", FName),
         ("bSpecialProperty", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FGBXConnectedNavMesh._fields_ = [("Mesh", POINTER(AGBXNavMesh)), ("MeshID", c_int)]
 
-class FGBXConnectedNavMesh(Structure):
-    _fields_ = [("Mesh", POINTER(AGBXNavMesh)), ("MeshID", c_int)]
+    FGBXNavMeshVertex._fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float)]
 
-
-class FGBXNavMeshVertex(Structure):
-    _fields_ = [("X", c_float), ("Y", c_float), ("Z", c_float)]
-
-
-class FGBXNavMeshPoly(Structure):
-    _fields_ = [
+    FGBXNavMeshPoly._fields_ = [
         ("Verts", c_ubyte * 6),
         ("ConnectedPolys", c_ubyte * 6),
         ("PolyDataIdx", c_ubyte * 2),
     ]
 
-
-class FGBXNavmeshCrossLevelConnection(Structure):
-    _fields_ = [
+    FGBXNavmeshCrossLevelConnection._fields_ = [
         ("EdgeIdx", c_ubyte * 2),
         ("ConnectedNavmeshIdx", c_ubyte * 2),
         ("PolyIdx", c_ubyte * 2),
     ]
 
-
-class FGBXNavMeshSpecialMove(Structure):
-    _fields_ = [
+    FGBXNavMeshSpecialMove._fields_ = [
         ("DestinationPolyIdx", c_int),
         ("DestinationMeshIdx", c_int),
         ("CrossLevelMoverIdx", c_int),
@@ -3372,17 +4871,13 @@ class FGBXNavMeshSpecialMove(Structure):
         ("LocalSpaceDestLocation", FVector),
     ]
 
-
-class FGBXNavMeshPolyData(Structure):
-    _fields_ = [
+    FGBXNavMeshPolyData._fields_ = [
         ("CrossLevelConnections", TArray_FGBXNavmeshCrossLevelConnection),
         ("SpecialMoves", TArray_FGBXNavMeshSpecialMove),
         ("Obstacles", c_ubyte * 12),
     ]
 
-
-class FGBXNavMeshPathSize(Structure):
-    _fields_ = [
+    FGBXNavMeshPathSize._fields_ = [
         ("Radius", c_float),
         ("Height", c_float),
         ("DrawColor", FColor),
@@ -3390,24 +4885,19 @@ class FGBXNavMeshPathSize(Structure):
         ("StartIndex", c_int),
     ]
 
-
-class FGBXNavMeshObstacleData(Structure):
-    _fields_ = [
+    FGBXNavMeshObstacleData._fields_ = [
         ("Obstacle", POINTER(UGBXCrossLevelReferenceContainer)),
         ("MinAffectedPathSize", c_int),
     ]
 
+    FGBXNavMeshPolyRef._fields_ = [
+        ("NavMesh", POINTER(AGBXNavMesh)),
+        ("PolyIdx", c_int),
+    ]
 
-class FGBXNavMeshPolyRef(Structure):
-    _fields_ = [("NavMesh", POINTER(AGBXNavMesh)), ("PolyIdx", c_int)]
+    FGBXNavMeshLookupCell._fields_ = [("IntersectingPolys", FArray_Mirror)]
 
-
-class FGBXNavMeshLookupCell(Structure):
-    _fields_ = [("IntersectingPolys", FArray_Mirror)]
-
-
-class FGBXNavMeshPolyLookup(Structure):
-    _fields_ = [
+    FGBXNavMeshPolyLookup._fields_ = [
         ("XCells", c_int),
         ("YCells", c_int),
         ("Origin", FVector),
@@ -3416,17 +4906,15 @@ class FGBXNavMeshPolyLookup(Structure):
         ("Cells", TArray_FGBXNavMeshLookupCell),
     ]
 
+    FGBXLineCheckResult._fields_ = [
+        ("Location", FVector),
+        ("Normal", FVector),
+        ("Time", c_float),
+    ]
 
-class FGBXLineCheckResult(Structure):
-    _fields_ = [("Location", FVector), ("Normal", FVector), ("Time", c_float)]
+    FIGBXNavMeshObstaclePointer._fields_ = [("Dummy", FPointer)]
 
-
-class FIGBXNavMeshObstaclePointer(Structure):
-    _fields_ = [("Dummy", FPointer)]
-
-
-class FGBXNavMeshPathPoint(Structure):
-    _fields_ = [
+    FGBXNavMeshPathPoint._fields_ = [
         ("Poly", FGBXNavMeshPolyRef),
         ("Location", FVector),
         ("SpecialMoveId", c_int),
@@ -3434,21 +4922,18 @@ class FGBXNavMeshPathPoint(Structure):
         ("CrossedObstacles", TArray_FIGBXNavMeshObstaclePointer),
     ]
 
+    FGBXNavMeshPath._fields_ = [
+        ("PathPoints", TArray_FGBXNavMeshPathPoint),
+        ("CurrentPathIdx", c_int),
+    ]
 
-class FGBXNavMeshPath(Structure):
-    _fields_ = [("PathPoints", TArray_FGBXNavMeshPathPoint), ("CurrentPathIdx", c_int)]
-
-
-class FNavMeshPathParams(Structure):
-    _fields_ = [
+    FNavMeshPathParams._fields_ = [
         ("Interface", FPointer),
         ("bCanMantle", c_bool, 1),
         ("bCanPhysicsJump", c_bool, 1),
-        ("", c_ulong, 0),
         ("PhysicsJumpCostMultiplier", c_float),
         ("bNeedsMantleValidityTest", c_bool, 1),
         ("bAbleToSearch", c_bool, 1),
-        ("", c_ulong, 0),
         ("SearchExtent", FVector),
         ("SearchLaneMultiplier", c_float),
         ("SearchStart", FVector),
@@ -3461,90 +4946,68 @@ class FNavMeshPathParams(Structure):
         ("LookInterpRate", c_float),
     ]
 
+    FPolySegmentSpan._fields_ = [("Poly", FPointer), ("P1", FVector), ("P2", FVector)]
 
-class FPolySegmentSpan(Structure):
-    _fields_ = [("Poly", FPointer), ("P1", FVector), ("P2", FVector)]
+    FEdgePointer._fields_ = [("Dummy", FPointer)]
 
+    FPathStore._fields_ = [
+        ("EdgeList", TArray_FEdgePointer),
+        ("PathDistances", TArray_float),
+    ]
 
-class FEdgePointer(Structure):
-    _fields_ = [("Dummy", FPointer)]
-
-
-class FPathStore(Structure):
-    _fields_ = [("EdgeList", TArray_FEdgePointer), ("PathDistances", TArray_c_float)]
-
-
-class FPlayerOwnedComponent(Structure):
-    _fields_ = [
+    FPlayerOwnedComponent._fields_ = [
         ("PlayerOwner", POINTER(AActor)),
         ("Component", POINTER(UActorComponent)),
     ]
 
-
-class FAkCallBackGetRTPC(Structure):
-    _fields_ = [
+    FAkCallBackGetRTPC._fields_ = [
         ("RTPC", POINTER(UAkRtpc)),
         ("Owner", POINTER(UObject)),
         ("Component", POINTER(UAkComponent)),
         ("CallbackValue", c_float),
     ]
 
+    FGestaltAccessoryPartEntry._fields_ = [
+        ("PartName", FName),
+        ("BoneName", FName),
+        ("MatrixIndex", c_int),
+    ]
 
-class FGestaltAccessoryPartEntry(Structure):
-    _fields_ = [("PartName", FName), ("BoneName", FName), ("MatrixIndex", c_int)]
-
-
-class FGestaltAccessoryGroupEntry(Structure):
-    _fields_ = [
+    FGestaltAccessoryGroupEntry._fields_ = [
         ("GroupName", FName),
         ("GestaltAccessoryPartList", TArray_FGestaltAccessoryPartEntry),
     ]
 
-
-class FGestaltAccessoryMeshEntry(Structure):
-    _fields_ = [
+    FGestaltAccessoryMeshEntry._fields_ = [
         ("MeshName", FName),
         ("GestaltAccessoryGroupList", TArray_FGestaltAccessoryGroupEntry),
     ]
 
+    FGPMCollection._fields_ = [("CollectionData", POINTER(UGestaltPartMatrices))]
 
-class FGPMCollection(Structure):
-    _fields_ = [("CollectionData", POINTER(UGestaltPartMatrices))]
-
-
-class FActorToLookAt(Structure):
-    _fields_ = [
+    FActorToLookAt._fields_ = [
         ("Actor", POINTER(AActor)),
         ("Rating", c_float),
         ("EnteredTime", c_float),
         ("LastKnownDistance", c_float),
         ("StartTimeBeingLookedAt", c_float),
         ("CurrentlyBeingLookedAt", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FHybridNavVisualizationVert(Structure):
-    _fields_ = [
+    FHybridNavVisualizationVert._fields_ = [
         ("Vert", FVector),
         ("bValidSegmentEndpoint", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FHybridNavVisualizationVertsForNavPoint(Structure):
-    _fields_ = [
+    FHybridNavVisualizationVertsForNavPoint._fields_ = [
         ("Verts", TArray_FHybridNavVisualizationVert),
         ("bWasDrawn", c_bool, 1),
-        ("", c_ulong, 0),
         ("FirstVertDrawn", FVector),
         ("LastVertDrawn", FVector),
         ("VerticalReach", c_float),
     ]
 
-
-class FHybridNavVisualizationPerfStats(Structure):
-    _fields_ = [
+    FHybridNavVisualizationPerfStats._fields_ = [
         ("VisualizationBuildingStartTime", c_int),
         ("VisualizationBuildingEndTime", c_int),
         ("CyclesBuildingVisualization", c_int),
@@ -3558,13 +5021,9 @@ class FHybridNavVisualizationPerfStats(Structure):
         ("NumClosestNodeTests", c_int),
     ]
 
+    FReplicatedCoordinatedEffect._fields_ = [("Effects", c_int), ("Targets", c_int)]
 
-class FReplicatedCoordinatedEffect(Structure):
-    _fields_ = [("Effects", c_int), ("Targets", c_int)]
-
-
-class FGBXNavMeshSpecialMoveConnection(Structure):
-    _fields_ = [
+    FGBXNavMeshSpecialMoveConnection._fields_ = [
         ("SrcPoly", FGBXNavMeshPolyRef),
         ("SrcLocation", FVector),
         ("DestPoly", FGBXNavMeshPolyRef),
@@ -3572,67 +5031,50 @@ class FGBXNavMeshSpecialMoveConnection(Structure):
         ("MoveId", c_int),
     ]
 
-
-class FIniLocFileEntry(Structure):
-    _fields_ = [
+    FIniLocFileEntry._fields_ = [
         ("Filename", FString),
         ("bIsUnicode", c_bool, 1),
-        ("", c_ulong, 0),
         ("ReadState", c_ubyte),
     ]
 
-
-class FBodyInstanceDataUnion(Structure):
-    _fields_ = [
+    FBodyInstanceDataUnion._fields_ = [
         ("Data", FInstanceDataUnion),
         ("ParentAttachmentIdentifier", FName),
         ("AttachmentBaseInstanceDataIndex", c_int),
         ("SwitchIdentifier", c_ubyte),
     ]
 
-
-class FBodyCompositionData(Structure):
-    _fields_ = [
+    FBodyCompositionData._fields_ = [
         ("Attachments", TArray_FBodyInstanceDataUnion),
         ("MaxExpectedComponents", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("HasHomingTargetComponents", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FInstancedStaticMeshInstanceData(Structure):
-    _fields_ = [
+    FInstancedStaticMeshInstanceData._fields_ = [
         ("Transform", FMatrix),
         ("LightmapUVBias", FVector2D),
         ("ShadowmapUVBias", FVector2D),
     ]
 
-
-class FInstancedStaticMeshMappingInfo(Structure):
-    _fields_ = [
+    FInstancedStaticMeshMappingInfo._fields_ = [
         ("Mapping", FPointer),
         ("LightMap", FPointer),
         ("LightmapTexture", POINTER(UTexture2D)),
         ("ShadowmapTexture", POINTER(UShadowMap2D)),
     ]
 
-
-class AInterpActor_FCheckpointRecord(Structure):
-    _fields_ = [
+    AInterpActor_FCheckpointRecord._fields_ = [
         ("Location", FVector),
         ("Rotation", FRotator),
         ("CollisionType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bHidden", c_bool, 1),
         ("bIsShutdown", c_bool, 1),
         ("bNeedsPositionReplication", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FCurveEdEntry(Structure):
-    _fields_ = [
+    FCurveEdEntry._fields_ = [
         ("CurveObject", POINTER(UObject)),
         ("CurveColor", FColor),
         ("CurveName", FString),
@@ -3644,9 +5086,7 @@ class FCurveEdEntry(Structure):
         ("ClampHigh", c_float),
     ]
 
-
-class FCurveEdTab(Structure):
-    _fields_ = [
+    FCurveEdTab._fields_ = [
         ("TabName", FString),
         ("Curves", TArray_FCurveEdEntry),
         ("ViewStartInput", c_float),
@@ -3655,45 +5095,33 @@ class FCurveEdTab(Structure):
         ("ViewEndOutput", c_float),
     ]
 
-
-class FAnimSetBakeAndPruneStatus(Structure):
-    _fields_ = [
+    FAnimSetBakeAndPruneStatus._fields_ = [
         ("AnimSetName", FString),
         ("bReferencedButUnused", c_bool, 1),
         ("bSkipBakeAndPrune", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FInterpEdSelKey(Structure):
-    _fields_ = [
+    FInterpEdSelKey._fields_ = [
         ("Group", POINTER(UInterpGroup)),
         ("Track", POINTER(UInterpTrack)),
         ("KeyIndex", c_int),
         ("UnsnappedPosition", c_float),
     ]
 
-
-class FSubTrackGroup(Structure):
-    _fields_ = [
+    FSubTrackGroup._fields_ = [
         ("GroupName", FString),
         ("TrackIndices", TArray_int),
         ("bIsCollapsed", c_bool, 1),
         ("bIsSelected", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FSupportedSubTrackInfo(Structure):
-    _fields_ = [
+    FSupportedSubTrackInfo._fields_ = [
         ("SupportedClass", POINTER(UClass)),
         ("SubTrackName", FString),
         ("GroupIndex", c_int),
     ]
 
-
-class FAnimControlTrackKey(Structure):
-    _fields_ = [
+    FAnimControlTrackKey._fields_ = [
         ("StartTime", c_float),
         ("AnimSeqName", FName),
         ("AnimStartOffset", c_float),
@@ -3701,138 +5129,101 @@ class FAnimControlTrackKey(Structure):
         ("AnimPlayRate", c_float),
         ("bLooping", c_bool, 1),
         ("bReverse", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FBoolTrackKey._fields_ = [("Time", c_float), ("Value", c_bool, 1)]
 
-class FBoolTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("Value", c_bool, 1), ("", c_ulong, 0)]
+    FCommentTrackKey._fields_ = [("Time", c_float), ("Comment", FString)]
 
-
-class FCommentTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("Comment", FString)]
-
-
-class FDirectorTrackCut(Structure):
-    _fields_ = [
+    FDirectorTrackCut._fields_ = [
         ("Time", c_float),
         ("TransitionTime", c_float),
         ("TargetCamGroup", FName),
     ]
 
+    FEventTrackKey._fields_ = [("Time", c_float), ("EventName", FName)]
 
-class FEventTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("EventName", FName)]
-
-
-class FFaceFXTrackKey(Structure):
-    _fields_ = [
+    FFaceFXTrackKey._fields_ = [
         ("StartTime", c_float),
         ("FaceFXGroupName", FString),
         ("FaceFXSeqName", FString),
     ]
 
-
-class FFaceFXSoundCueKey(Structure):
-    _fields_ = [
+    FFaceFXSoundCueKey._fields_ = [
         ("FaceFXSoundCue", POINTER(USoundCue)),
         ("FaceFXAkEvent", POINTER(UAkEvent)),
     ]
 
+    FHeadTrackingKey._fields_ = [("Time", c_float), ("Action", c_ubyte)]
 
-class FHeadTrackingKey(Structure):
-    _fields_ = [("Time", c_float), ("Action", c_ubyte)]
-
-
-class FFloatMaterialParamMICData(Structure):
-    _fields_ = [
+    FFloatMaterialParamMICData._fields_ = [
         ("MICs", TArray_UMaterialInstanceConstantPtr),
-        ("MICResetFloats", TArray_c_float),
+        ("MICResetFloats", TArray_float),
     ]
 
+    FToggleTrackKey._fields_ = [("Time", c_float), ("ToggleAction", c_ubyte)]
 
-class FToggleTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("ToggleAction", c_ubyte)]
-
-
-class FVectorMaterialParamMICData(Structure):
-    _fields_ = [
+    FVectorMaterialParamMICData._fields_ = [
         ("MICs", TArray_UMaterialInstanceConstantPtr),
         ("MICResetVectors", TArray_FVector),
     ]
 
+    FVisibilityTrackKey._fields_ = [
+        ("Time", c_float),
+        ("Action", c_ubyte),
+        ("ActiveCondition", c_ubyte),
+    ]
 
-class FVisibilityTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("Action", c_ubyte), ("ActiveCondition", c_ubyte)]
+    FInterpLookupPoint._fields_ = [("GroupName", FName), ("Time", c_float)]
 
+    FInterpLookupTrack._fields_ = [("Points", TArray_FInterpLookupPoint)]
 
-class FInterpLookupPoint(Structure):
-    _fields_ = [("GroupName", FName), ("Time", c_float)]
+    FParticleReplayTrackKey._fields_ = [
+        ("Time", c_float),
+        ("Duration", c_float),
+        ("ClipIDNumber", c_int),
+    ]
 
-
-class FInterpLookupTrack(Structure):
-    _fields_ = [("Points", TArray_FInterpLookupPoint)]
-
-
-class FParticleReplayTrackKey(Structure):
-    _fields_ = [("Time", c_float), ("Duration", c_float), ("ClipIDNumber", c_int)]
-
-
-class FSoundTrackKey(Structure):
-    _fields_ = [
+    FSoundTrackKey._fields_ = [
         ("Time", c_float),
         ("Volume", c_float),
         ("Pitch", c_float),
         ("Sound", POINTER(USoundCue)),
     ]
 
-
-class FTeleportKeyData(Structure):
-    _fields_ = [
+    FTeleportKeyData._fields_ = [
         ("KeyTime", c_float),
         ("LocationKey", FVector),
         ("RotationKey", FRotator),
     ]
 
+    FImpulseData._fields_ = [("Impulse", FVector), ("Source", FVector)]
 
-class FImpulseData(Structure):
-    _fields_ = [("Impulse", FVector), ("Source", FVector)]
+    FLandscapeWeightmapUsage._fields_ = [
+        ("ChannelUsage", POINTER(ULandscapeComponent) * 4)
+    ]
 
-
-class FLandscapeWeightmapUsage(Structure):
-    _fields_ = [("ChannelUsage", POINTER(ULandscapeComponent) * 4)]
-
-
-class FLandscapeLayerInfo(Structure):
-    _fields_ = [
+    FLandscapeLayerInfo._fields_ = [
         ("LayerName", FName),
         ("Hardness", c_float),
         ("bNoWeightBlend", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FLandscapeAddCollision._fields_ = []
 
-class FLandscapeAddCollision(Structure):
-    _fields_ = []
-
-
-class FWeightmapLayerAllocationInfo(Structure):
-    _fields_ = [
+    FWeightmapLayerAllocationInfo._fields_ = [
         ("LayerName", FName),
         ("WeightmapTextureIndex", c_ubyte),
         ("WeightmapTextureChannel", c_ubyte),
     ]
 
-
-class FLensFlareElement(Structure):
-    _fields_ = [
+    FLensFlareElement._fields_ = [
         ("ElementName", FName),
         ("RayDistance", c_float),
         ("bIsEnabled", c_bool, 1),
         ("bUseSourceDistance", c_bool, 1),
         ("bNormalizeRadialDistance", c_bool, 1),
         ("bModulateColorBySource", c_bool, 1),
-        ("", c_ulong, 0),
         ("Size", FVector),
         ("LFMaterials", TArray_UMaterialInterfacePtr),
         ("LFMaterialIndex", FRawDistributionFloat),
@@ -3840,7 +5231,6 @@ class FLensFlareElement(Structure):
         ("AxisScaling", FRawDistributionVector),
         ("Rotation", FRawDistributionFloat),
         ("bOrientTowardsSource", c_bool, 1),
-        ("", c_ulong, 0),
         ("Color", FRawDistributionVector),
         ("Alpha", FRawDistributionFloat),
         ("Offset", FRawDistributionVector),
@@ -3849,33 +5239,25 @@ class FLensFlareElement(Structure):
         ("DistMap_Alpha", FRawDistributionFloat),
     ]
 
+    FLensFlareElementCurvePair._fields_ = [
+        ("CurveName", FString),
+        ("CurveObject", POINTER(UObject)),
+    ]
 
-class FLensFlareElementCurvePair(Structure):
-    _fields_ = [("CurveName", FString), ("CurveObject", POINTER(UObject))]
+    FLensFlareElementMaterials._fields_ = [
+        ("ElementMaterials", TArray_UMaterialInterfacePtr)
+    ]
 
+    FLensFlareElementInstance._fields_ = []
 
-class FLensFlareElementMaterials(Structure):
-    _fields_ = [("ElementMaterials", TArray_UMaterialInterfacePtr)]
+    FLevelGridCellCoordinate._fields_ = [("X", c_int), ("Y", c_int), ("Z", c_int)]
 
+    ALevelStreamingVolume_FCheckpointRecord._fields_ = [("bDisabled", c_bool, 1)]
 
-class FLensFlareElementInstance(Structure):
-    _fields_ = []
-
-
-class FLevelGridCellCoordinate(Structure):
-    _fields_ = [("X", c_int), ("Y", c_int), ("Z", c_int)]
-
-
-class ALevelStreamingVolume_FCheckpointRecord(Structure):
-    _fields_ = [("bDisabled", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FPostProcessSettingsOverride(Structure):
-    _fields_ = [
+    FPostProcessSettingsOverride._fields_ = [
         ("Settings", FPostProcessSettings),
         ("bBlendingIn", c_bool, 1),
         ("bBlendingOut", c_bool, 1),
-        ("", c_ulong, 0),
         ("CurrentBlendInTime", c_float),
         ("CurrentBlendOutTime", c_float),
         ("BlendInDuration", c_float),
@@ -3883,45 +5265,35 @@ class FPostProcessSettingsOverride(Structure):
         ("BlendStartTime", c_float),
     ]
 
-
-class FWorldLightingOverride(Structure):
-    _fields_ = [
+    FWorldLightingOverride._fields_ = [
         ("DirectionOffset", FRotator),
         ("FadeInTime", c_float),
         ("FadeOutTime", c_float),
         ("RemainingFadeTime", c_float),
         ("RemovalRequested", c_bool, 1),
-        ("", c_ulong, 0),
         ("pMovie", FPointer),
     ]
 
-
-class FCurrentPostProcessVolumeInfo(Structure):
-    _fields_ = [
+    FCurrentPostProcessVolumeInfo._fields_ = [
         ("LastSettings", FPostProcessSettings),
         ("LastVolumeUsed", POINTER(APostProcessVolume)),
         ("BlendStartTime", c_float),
         ("LastBlendTime", c_float),
     ]
 
+    FSynchronizedActorVisibilityHistory._fields_ = [
+        ("State", FPointer),
+        ("CriticalSection", FPointer),
+    ]
 
-class FSynchronizedActorVisibilityHistory(Structure):
-    _fields_ = [("State", FPointer), ("CriticalSection", FPointer)]
+    FManufacturerGradeData._fields_ = [("DisplayName", FString)]
 
-
-class FManufacturerGradeData(Structure):
-    _fields_ = [("DisplayName", FString)]
-
-
-class FManufacturerCustomGradeWeightData(Structure):
-    _fields_ = [
+    FManufacturerCustomGradeWeightData._fields_ = [
         ("Manufacturer", POINTER(UManufacturerDefinition)),
         ("DefaultWeightIndex", c_ubyte),
     ]
 
-
-class FExpressionInput(Structure):
-    _fields_ = [
+    FExpressionInput._fields_ = [
         ("Expression", POINTER(UMaterialExpression)),
         ("Mask", c_int),
         ("MaskR", c_int),
@@ -3931,368 +5303,274 @@ class FExpressionInput(Structure):
         ("GCC64_Padding", c_int),
     ]
 
+    FCustomInput._fields_ = [("InputName", FString), ("Input", FExpressionInput)]
 
-class FCustomInput(Structure):
-    _fields_ = [("InputName", FString), ("Input", FExpressionInput)]
-
-
-class FFontParameterValue(Structure):
-    _fields_ = [
+    FFontParameterValue._fields_ = [
         ("ParameterName", FName),
         ("FontValue", POINTER(UFont)),
         ("FontPage", c_int),
         ("ExpressionGUID", FGuid),
     ]
 
-
-class FScalarParameterValue(Structure):
-    _fields_ = [
+    FScalarParameterValue._fields_ = [
         ("ParameterName", FName),
         ("ParameterValue", c_float),
         ("ExpressionGUID", FGuid),
     ]
 
-
-class FTextureParameterValue(Structure):
-    _fields_ = [
+    FTextureParameterValue._fields_ = [
         ("ParameterName", FName),
         ("ParameterValue", POINTER(UTexture)),
         ("ExpressionGUID", FGuid),
     ]
 
-
-class FVectorParameterValue(Structure):
-    _fields_ = [
+    FVectorParameterValue._fields_ = [
         ("ParameterName", FName),
         ("ParameterValue", FLinearColor),
         ("ExpressionGUID", FGuid),
     ]
 
-
-class FParameterValueOverTime(Structure):
-    _fields_ = [
+    FParameterValueOverTime._fields_ = [
         ("ExpressionGUID", FGuid),
         ("StartTime", c_float),
         ("ParameterName", FName),
         ("bLoop", c_bool, 1),
         ("bAutoActivate", c_bool, 1),
-        ("", c_ulong, 0),
         ("CycleTime", c_float),
         ("bNormalizeTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("OffsetTime", c_float),
         ("bOffsetFromEnd", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FFontParameterValueOverTime(Structure):
-    _fields_ = [
+    FFontParameterValueOverTime._fields_ = [
         ("ExpressionGUID", FGuid),
         ("StartTime", c_float),
         ("ParameterName", FName),
         ("bLoop", c_bool, 1),
         ("bAutoActivate", c_bool, 1),
-        ("", c_ulong, 0),
         ("CycleTime", c_float),
         ("bNormalizeTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("OffsetTime", c_float),
         ("bOffsetFromEnd", c_bool, 1),
-        ("", c_ulong, 0),
         ("FontValue", POINTER(UFont)),
         ("FontPage", c_int),
     ]
 
-
-class FScalarParameterValueOverTime(Structure):
-    _fields_ = [
+    FScalarParameterValueOverTime._fields_ = [
         ("ExpressionGUID", FGuid),
         ("StartTime", c_float),
         ("ParameterName", FName),
         ("bLoop", c_bool, 1),
         ("bAutoActivate", c_bool, 1),
-        ("", c_ulong, 0),
         ("CycleTime", c_float),
         ("bNormalizeTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("OffsetTime", c_float),
         ("bOffsetFromEnd", c_bool, 1),
-        ("", c_ulong, 0),
         ("ParameterValue", c_float),
         ("ParameterValueCurve", FInterpCurveFloat),
     ]
 
-
-class FTextureParameterValueOverTime(Structure):
-    _fields_ = [
+    FTextureParameterValueOverTime._fields_ = [
         ("ExpressionGUID", FGuid),
         ("StartTime", c_float),
         ("ParameterName", FName),
         ("bLoop", c_bool, 1),
         ("bAutoActivate", c_bool, 1),
-        ("", c_ulong, 0),
         ("CycleTime", c_float),
         ("bNormalizeTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("OffsetTime", c_float),
         ("bOffsetFromEnd", c_bool, 1),
-        ("", c_ulong, 0),
         ("ParameterValue", POINTER(UTexture)),
     ]
 
-
-class FVectorParameterValueOverTime(Structure):
-    _fields_ = [
+    FVectorParameterValueOverTime._fields_ = [
         ("ExpressionGUID", FGuid),
         ("StartTime", c_float),
         ("ParameterName", FName),
         ("bLoop", c_bool, 1),
         ("bAutoActivate", c_bool, 1),
-        ("", c_ulong, 0),
         ("CycleTime", c_float),
         ("bNormalizeTime", c_bool, 1),
-        ("", c_ulong, 0),
         ("OffsetTime", c_float),
         ("bOffsetFromEnd", c_bool, 1),
-        ("", c_ulong, 0),
         ("ParameterValue", FLinearColor),
         ("ParameterValueCurve", FInterpCurveVector),
     ]
 
-
-class FMorphNodeConn(Structure):
-    _fields_ = [
+    FMorphNodeConn._fields_ = [
         ("ChildNodes", TArray_UMorphNodeBasePtr),
         ("ConnName", FName),
         ("DrawY", c_int),
     ]
 
+    FBoneAngleMorph._fields_ = [("Angle", c_float), ("TargetWeight", c_float)]
 
-class FBoneAngleMorph(Structure):
-    _fields_ = [("Angle", c_float), ("TargetWeight", c_float)]
+    FBiasedGoalActor._fields_ = [("Goal", POINTER(AActor)), ("ExtraCost", c_int)]
 
+    ANavMeshObstacle_FCheckpointRecord._fields_ = [("bEnabled", c_bool, 1)]
 
-class FBiasedGoalActor(Structure):
-    _fields_ = [("Goal", POINTER(AActor)), ("ExtraCost", c_int)]
+    FMMStats_Timer._fields_ = [("bInProgress", c_bool, 1), ("MSecs", FDouble)]
 
-
-class ANavMeshObstacle_FCheckpointRecord(Structure):
-    _fields_ = [("bEnabled", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FMMStats_Timer(Structure):
-    _fields_ = [("bInProgress", c_bool, 1), ("", c_ulong, 0), ("MSecs", FDouble)]
-
-
-class FOnlineProfileSetting(Structure):
-    _fields_ = [
+    FOnlineProfileSetting._fields_ = [
         ("Owner", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ProfileSetting", FSettingsProperty),
     ]
 
-
-class FUIDataProviderField(Structure):
-    _fields_ = [
+    FUIDataProviderField._fields_ = [
         ("FieldTag", FName),
         ("FieldType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("FieldProviders", TArray_UUIDataProviderPtr),
     ]
 
+    FRecentParty._fields_ = [
+        ("PartyLeader", FUniqueNetId),
+        ("PartyMembers", TArray_FUniqueNetId),
+    ]
 
-class FRecentParty(Structure):
-    _fields_ = [("PartyLeader", FUniqueNetId), ("PartyMembers", TArray_FUniqueNetId)]
+    FCurrentPlayerMet._fields_ = [
+        ("TeamNum", c_int),
+        ("Skill", c_int),
+        ("NetId", FUniqueNetId),
+    ]
 
+    FOnlineStatsColumn._fields_ = [("ColumnNo", c_int), ("StatValue", FSettingsData)]
 
-class FCurrentPlayerMet(Structure):
-    _fields_ = [("TeamNum", c_int), ("Skill", c_int), ("NetId", FUniqueNetId)]
-
-
-class FOnlineStatsColumn(Structure):
-    _fields_ = [("ColumnNo", c_int), ("StatValue", FSettingsData)]
-
-
-class FOnlineStatsRow(Structure):
-    _fields_ = [
+    FOnlineStatsRow._fields_ = [
         ("PlayerID", FUniqueNetId),
         ("Rank", FSettingsData),
         ("NickName", FString),
         ("Columns", TArray_FOnlineStatsColumn),
     ]
 
+    FColumnMetaData._fields_ = [("Id", c_int), ("Name", FName), ("ColumnName", FString)]
 
-class FColumnMetaData(Structure):
-    _fields_ = [("Id", int), ("Name", FName), ("ColumnName", FString)]
-
-
-class FParticleBurst(Structure):
-    _fields_ = [
+    FParticleBurst._fields_ = [
         ("Count", c_int),
         ("CountLow", c_int),
         ("Time", c_float),
         ("CountDistribution", FRawDistributionFloat),
     ]
 
+    FParticleCurvePair._fields_ = [
+        ("CurveName", FString),
+        ("CurveObject", POINTER(UObject)),
+    ]
 
-class FParticleCurvePair(Structure):
-    _fields_ = [("CurveName", FString), ("CurveObject", POINTER(UObject))]
-
-
-class FParticleRandomSeedInfo(Structure):
-    _fields_ = [
+    FParticleRandomSeedInfo._fields_ = [
         ("ParameterName", FName),
         ("bGetSeedFromInstance", c_bool, 1),
         ("bInstanceSeedIsIndex", c_bool, 1),
         ("bResetSeedOnEmitterLooping", c_bool, 1),
-        ("", c_ulong, 0),
         ("RandomSeeds", TArray_int),
     ]
 
-
-class FBeamModifierOptions(Structure):
-    _fields_ = [
+    FBeamModifierOptions._fields_ = [
         ("bModify", c_bool, 1),
         ("bScale", c_bool, 1),
         ("bLock", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FParticleEvent_GenerateInfo(Structure):
-    _fields_ = [
+    FParticleEvent_GenerateInfo._fields_ = [
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Frequency", c_int),
         ("LowFreq", c_int),
         ("ParticleFrequency", c_int),
         ("FirstTimeOnly", c_bool, 1),
         ("LastTimeOnly", c_bool, 1),
         ("UseReflectedImpactVector", c_bool, 1),
-        ("", c_ulong, 0),
         ("CustomName", FName),
         ("ParticleModuleEventsToSendToGame", TArray_UParticleModuleEventSendToGamePtr),
     ]
 
+    FLocationBoneSocketInfo._fields_ = [("BoneSocketName", FName), ("Offset", FVector)]
 
-class FLocationBoneSocketInfo(Structure):
-    _fields_ = [("BoneSocketName", FName), ("Offset", FVector)]
-
-
-class FOrbitOptions(Structure):
-    _fields_ = [
+    FOrbitOptions._fields_ = [
         ("bProcessDuringSpawn", c_bool, 1),
         ("bProcessDuringUpdate", c_bool, 1),
         ("bUseEmitterTime", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FEmitterDynamicParameter(Structure):
-    _fields_ = [
+    FEmitterDynamicParameter._fields_ = [
         ("ParamName", FName),
         ("bUseEmitterTime", c_bool, 1),
         ("bSpawnTimeOnly", c_bool, 1),
-        ("", c_ulong, 0),
         ("ValueMethod", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bScaleVelocityByParamValue", c_bool, 1),
-        ("", c_ulong, 0),
         ("ParamValue", FRawDistributionFloat),
     ]
 
+    FBeamTargetData._fields_ = [("TargetName", FName), ("TargetPercentage", c_float)]
 
-class FBeamTargetData(Structure):
-    _fields_ = [("TargetName", FName), ("TargetPercentage", c_float)]
-
-
-class FPhysXEmitterVerticalLodProperties(Structure):
-    _fields_ = [
+    FPhysXEmitterVerticalLodProperties._fields_ = [
         ("WeightForFifo", c_float),
         ("WeightForSpawnLod", c_float),
         ("SpawnLodRateVsLifeBias", c_float),
         ("RelativeFadeoutTime", c_float),
     ]
 
+    FLODSoloTrack._fields_ = [("SoloEnableSetting", TArray_unsigned_char)]
 
-class FLODSoloTrack(Structure):
-    _fields_ = [("SoloEnableSetting", TArray_unsigned_char)]
-
-
-class FParticleEmitterReplayFrame(Structure):
-    _fields_ = [
-        ("EmitterType", int),
-        ("OriginalEmitterIndex", int),
+    FParticleEmitterReplayFrame._fields_ = [
+        ("EmitterType", c_int),
+        ("OriginalEmitterIndex", c_int),
         ("FrameState", FPointer),
     ]
 
+    FParticleSystemReplayFrame._fields_ = [
+        ("Emitters", TArray_FParticleEmitterReplayFrame)
+    ]
 
-class FParticleSystemReplayFrame(Structure):
-    _fields_ = [("Emitters", TArray_FParticleEmitterReplayFrame)]
+    FPersistentData._fields_ = [("VfTable", FPointer)]
 
+    FPersistentSequenceEventData._fields_ = [
+        ("VfTable", FPointer),
+        ("TriggerCount", c_int),
+    ]
 
-class FPersistentData(Structure):
-    _fields_ = [("VfTable", FPointer)]
+    FPersistentSeqAct_InterpData._fields_ = [
+        ("VfTable", FPointer),
+        ("Position", c_float),
+    ]
 
+    APointLightToggleable_FCheckpointRecord._fields_ = [("bEnabled", c_bool, 1)]
 
-class FPersistentSequenceEventData(Structure):
-    _fields_ = [("VfTable", FPointer), ("TriggerCount", c_int)]
-
-
-class FPersistentSeqAct_InterpData(Structure):
-    _fields_ = [("VfTable", FPointer), ("Position", c_float)]
-
-
-class APointLightToggleable_FCheckpointRecord(Structure):
-    _fields_ = [("bEnabled", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FActivateOp(Structure):
-    _fields_ = [
+    FActivateOp._fields_ = [
         ("ActivatorOp", POINTER(USequenceOp)),
         ("Op", POINTER(USequenceOp)),
         ("InputIdx", c_int),
         ("RemainingDelay", c_float),
     ]
 
-
-class FQueuedActivationInfo(Structure):
-    _fields_ = [
+    FQueuedActivationInfo._fields_ = [
         ("ActivatedEvent", POINTER(USequenceEvent)),
         ("InOriginator", POINTER(AActor)),
         ("InInstigator", POINTER(AActor)),
         ("ActivateIndices", TArray_int),
         ("bPushTop", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FKCachedConvexDataElement._fields_ = [("ConvexElementData", TArray_unsigned_char)]
 
-class FKCachedConvexDataElement(Structure):
-    _fields_ = [("ConvexElementData", TArray_unsigned_char)]
+    FKCachedConvexData._fields_ = [
+        ("CachedConvexElements", TArray_FKCachedConvexDataElement)
+    ]
 
-
-class FKCachedConvexData(Structure):
-    _fields_ = [("CachedConvexElements", TArray_FKCachedConvexDataElement)]
-
-
-class FLinearDOFSetup(Structure):
-    _fields_ = [
+    FLinearDOFSetup._fields_ = [
         ("bLimited", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("LimitSize", c_float),
     ]
 
-
-class FResourcePoolIdentityState(Structure):
-    _fields_ = [
+    FResourcePoolIdentityState._fields_ = [
         ("PoolDefinition", POINTER(UResourcePoolDefinition)),
         ("PoolGUID", c_ubyte),
     ]
 
-
-class FRarelyChangedPoolState(Structure):
-    _fields_ = [
+    FRarelyChangedPoolState._fields_ = [
         ("ConsumptionRate", c_float),
         ("ActiveRegenerationRate", c_float),
         ("OnIdleRegenerationRate", c_float),
@@ -4300,9 +5578,7 @@ class FRarelyChangedPoolState(Structure):
         ("PassiveRegenerationRate", c_float),
     ]
 
-
-class FPathSizeInfo(Structure):
-    _fields_ = [
+    FPathSizeInfo._fields_ = [
         ("Desc", FName),
         ("Radius", c_float),
         ("Height", c_float),
@@ -4310,73 +5586,53 @@ class FPathSizeInfo(Structure):
         ("PathColor", c_ubyte),
     ]
 
+    FCameraCutInfo._fields_ = [("Location", FVector), ("TimeStamp", c_float)]
 
-class FCameraCutInfo(Structure):
-    _fields_ = [("Location", FVector), ("TimeStamp", c_float)]
+    FSavedTransform._fields_ = [("Location", FVector), ("Rotation", FRotator)]
 
+    FLevelStreamingNameCombo._fields_ = [
+        ("Level", POINTER(ULevelStreaming)),
+        ("LevelName", FName),
+    ]
 
-class FSavedTransform(Structure):
-    _fields_ = [("Location", FVector), ("Rotation", FRotator)]
+    FSwitchClassInfo._fields_ = [("ClassName", FName), ("bFallThru", c_ubyte)]
 
-
-class FLevelStreamingNameCombo(Structure):
-    _fields_ = [("Level", POINTER(ULevelStreaming)), ("LevelName", FName)]
-
-
-class FSwitchClassInfo(Structure):
-    _fields_ = [("ClassName", FName), ("bFallThru", c_ubyte)]
-
-
-class FSwitchObjectCase(Structure):
-    _fields_ = [
+    FSwitchObjectCase._fields_ = [
         ("ObjectValue", POINTER(UObject)),
         ("bFallThru", c_bool, 1),
         ("bDefaultValue", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FShadowRelevanceSizePair(Structure):
-    _fields_ = [
+    FShadowRelevanceSizePair._fields_ = [
         ("Size", c_float),
         ("DynamicShadowCastRelevance", c_ubyte),
         ("OverrideStaticShadowSettings", c_ubyte),
     ]
 
+    FSoftBodyTetraLink._fields_ = [("Index", c_int), ("Bary", FVector)]
 
-class FSoftBodyTetraLink(Structure):
-    _fields_ = [("Index", c_int), ("Bary", FVector)]
-
-
-class FSoftBodySpecialBoneInfo(Structure):
-    _fields_ = [
+    FSoftBodySpecialBoneInfo._fields_ = [
         ("BoneName", FName),
         ("BoneType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("AttachedVertexIndices", TArray_int),
     ]
 
-
-class FClothSpecialBoneInfo(Structure):
-    _fields_ = [
+    FClothSpecialBoneInfo._fields_ = [
         ("BoneName", FName),
         ("BoneType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("AttachedVertexIndices", TArray_int),
     ]
 
-
-class FTriangleSortSettings(Structure):
-    _fields_ = [
+    FTriangleSortSettings._fields_ = [
         ("TriangleSorting", c_ubyte),
         ("CustomLeftRightAxis", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("CustomLeftRightBoneName", FName),
     ]
 
-
-class FSkeletalMeshLODInfo(Structure):
-    _fields_ = [
+    FSkeletalMeshLODInfo._fields_ = [
         ("DisplayFactor", c_float),
         ("LODHysteresis", c_float),
         ("LODMaterialMap", TArray_int),
@@ -4384,47 +5640,37 @@ class FSkeletalMeshLODInfo(Structure):
         ("TriangleSorting", TArray_unsigned_char),
         ("TriangleSortSettings", TArray_FTriangleSortSettings),
         ("bDisableCompressions", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FBoneMirrorExport(Structure):
-    _fields_ = [
+    FBoneMirrorExport._fields_ = [
         ("BoneName", FName),
         ("SourceBoneName", FName),
         ("BoneFlipAxis", c_ubyte),
     ]
 
+    FBoneMirrorInfo._fields_ = [("SourceIndex", c_int), ("BoneFlipAxis", c_ubyte)]
 
-class FBoneMirrorInfo(Structure):
-    _fields_ = [("SourceIndex", c_int), ("BoneFlipAxis", c_ubyte)]
+    FSkelMeshActorControlTarget._fields_ = [
+        ("ControlName", FName),
+        ("TargetActor", POINTER(AActor)),
+    ]
 
-
-class FSkelMeshActorControlTarget(Structure):
-    _fields_ = [("ControlName", FName), ("TargetActor", POINTER(AActor))]
-
-
-class ASkeletalMeshActor_FCheckpointRecord(Structure):
-    _fields_ = [
+    ASkeletalMeshActor_FCheckpointRecord._fields_ = [
         ("bReplicated", c_bool, 1),
         ("bHidden", c_bool, 1),
         ("bSavedPosition", c_bool, 1),
-        ("", c_ulong, 0),
         ("Location", FVector),
         ("Rotation", FRotator),
     ]
 
+    FSkelMaterialSetterDatum._fields_ = [
+        ("MaterialIndex", c_int),
+        ("TheMaterial", POINTER(UMaterialInterface)),
+    ]
 
-class FSkelMaterialSetterDatum(Structure):
-    _fields_ = [("MaterialIndex", c_int), ("TheMaterial", POINTER(UMaterialInterface))]
+    FSoundClassEditorData._fields_ = [("NodePosX", c_int), ("NodePosY", c_int)]
 
-
-class FSoundClassEditorData(Structure):
-    _fields_ = [("NodePosX", int), ("NodePosY", int)]
-
-
-class FSoundClassProperties(Structure):
-    _fields_ = [
+    FSoundClassProperties._fields_ = [
         ("Volume", c_float),
         ("Pitch", c_float),
         ("StereoBleed", c_float),
@@ -4440,29 +5686,21 @@ class FSoundClassProperties(Structure):
         ("bCenterChannelOnly", c_bool, 1),
         ("bIsDialog", c_bool, 1),
         ("bIsAmbience", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FSoundNodeEditorData._fields_ = [("NodePosX", c_int), ("NodePosY", c_int)]
 
-class FSoundNodeEditorData(Structure):
-    _fields_ = [("NodePosX", int), ("NodePosY", int)]
-
-
-class FSoundClassAdjuster(Structure):
-    _fields_ = [
+    FSoundClassAdjuster._fields_ = [
         ("SoundClassName", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("SoundClass", FName),
         ("VolumeAdjuster", c_float),
         ("PitchAdjuster", c_float),
         ("bApplyToChildren", c_bool, 1),
-        ("", c_ulong, 0),
         ("VoiceCenterChannelVolumeAdjuster", c_float),
     ]
 
-
-class FAudioEQEffect(Structure):
-    _fields_ = [
+    FAudioEQEffect._fields_ = [
         ("RootTime", FDouble),
         ("HFFrequency", c_float),
         ("HFGain", c_float),
@@ -4473,13 +5711,13 @@ class FAudioEQEffect(Structure):
         ("LFGain", c_float),
     ]
 
+    FRecognisableWord._fields_ = [
+        ("Id", c_int),
+        ("ReferenceWord", FString),
+        ("PhoneticWord", FString),
+    ]
 
-class FRecognisableWord(Structure):
-    _fields_ = [("Id", c_int), ("ReferenceWord", FString), ("PhoneticWord", FString)]
-
-
-class FRecogVocabulary(Structure):
-    _fields_ = [
+    FRecogVocabulary._fields_ = [
         ("WhoDictionary", TArray_FRecognisableWord),
         ("WhatDictionary", TArray_FRecognisableWord),
         ("WhereDictionary", TArray_FRecognisableWord),
@@ -4488,20 +5726,17 @@ class FRecogVocabulary(Structure):
         ("WorkingVocabData", TArray_unsigned_char),
     ]
 
+    FRecogUserData._fields_ = [
+        ("ActiveVocabularies", c_int),
+        ("UserData", TArray_unsigned_char),
+    ]
 
-class FRecogUserData(Structure):
-    _fields_ = [("ActiveVocabularies", c_int), ("UserData", TArray_unsigned_char)]
-
-
-class FSplineConnection(Structure):
-    _fields_ = [
+    FSplineConnection._fields_ = [
         ("SplineComponent", POINTER(USplineComponent)),
         ("ConnectTo", POINTER(ASplineActor)),
     ]
 
-
-class FSplineMeshParams(Structure):
-    _fields_ = [
+    FSplineMeshParams._fields_ = [
         ("StartPos", FVector),
         ("StartTangent", FVector),
         ("StartScale", FVector2D),
@@ -4514,63 +5749,48 @@ class FSplineMeshParams(Structure):
         ("EndOffset", FVector2D),
     ]
 
+    ASpotLightToggleable_FCheckpointRecord._fields_ = [("bEnabled", c_bool, 1)]
 
-class ASpotLightToggleable_FCheckpointRecord(Structure):
-    _fields_ = [("bEnabled", c_bool, 1), ("", c_ulong, 0)]
+    FSMMaterialSetterDatum._fields_ = [
+        ("MaterialIndex", c_int),
+        ("TheMaterial", POINTER(UMaterialInterface)),
+    ]
 
-
-class FSMMaterialSetterDatum(Structure):
-    _fields_ = [("MaterialIndex", c_int), ("TheMaterial", POINTER(UMaterialInterface))]
-
-
-class FVehicleState(Structure):
-    _fields_ = [
+    FVehicleState._fields_ = [
         ("RBState", FRigidBodyState),
-        ("Unknown1", c_ubyte, 0x4),
+        ("Unknown1", c_ubyte * 0x4),
         ("ServerBrake", c_ubyte),
         ("ServerGas", c_ubyte),
         ("ServerSteering", c_ubyte),
         ("ServerRise", c_ubyte),
         ("bServerHandbrake", c_bool, 1),
-        ("", c_ulong, 0),
         ("ServerView", c_int),
     ]
 
-
-class FSearchState(Structure):
-    _fields_ = [
+    FSearchState._fields_ = [
         ("Subject", FScriptInterface),
         ("Type", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("ListIndex", c_int),
         ("CurrentList", TArray_FScriptInterface),
     ]
 
+    FTerrainHeight._fields_ = []
 
-class FTerrainHeight(Structure):
-    _fields_ = []
+    FTerrainInfoData._fields_ = []
 
-
-class FTerrainInfoData(Structure):
-    _fields_ = []
-
-
-class FTerrainLayer(Structure):
-    _fields_ = [
+    FTerrainLayer._fields_ = [
         ("Name", FString),
         ("Setup", POINTER(UTerrainLayerSetup)),
         ("AlphaMapIndex", c_int),
         ("Highlighted", c_bool, 1),
         ("WireframeHighlighted", c_bool, 1),
         ("Hidden", c_bool, 1),
-        ("", c_ulong, 0),
         ("HighlightColor", FColor),
         ("WireframeColor", FColor),
     ]
 
-
-class FTerrainDecorationInstance(Structure):
-    _fields_ = [
+    FTerrainDecorationInstance._fields_ = [
         ("Component", POINTER(UPrimitiveComponent)),
         ("X", c_float),
         ("Y", c_float),
@@ -4578,9 +5798,7 @@ class FTerrainDecorationInstance(Structure):
         ("Yaw", c_int),
     ]
 
-
-class FTerrainDecoration(Structure):
-    _fields_ = [
+    FTerrainDecoration._fields_ = [
         ("Factory", POINTER(UPrimitiveComponentFactory)),
         ("MinScale", c_float),
         ("MaxScale", c_float),
@@ -4590,57 +5808,35 @@ class FTerrainDecoration(Structure):
         ("Instances", TArray_FTerrainDecorationInstance),
     ]
 
-
-class FTerrainDecoLayer(Structure):
-    _fields_ = [
+    FTerrainDecoLayer._fields_ = [
         ("Name", FString),
         ("Decorations", TArray_FTerrainDecoration),
         ("AlphaMapIndex", c_int),
     ]
 
+    FAlphaMap._fields_ = []
 
-class FAlphaMap(Structure):
-    _fields_ = []
+    ATerrain_FTerrainWeightedMaterial._fields_ = []
 
+    FSelectedTerrainVertex._fields_ = [("X", c_int), ("Y", c_int), ("Weight", c_int)]
 
-class ATerrain_FTerrainWeightedMaterial(Structure):
-    _fields_ = []
+    FTerrainMaterialResource._fields_ = []
 
+    FCachedTerrainMaterialArray._fields_ = [("CachedMaterials", TArray_FPointer)]
 
-class FSelectedTerrainVertex(Structure):
-    _fields_ = [("X", c_int), ("Y", c_int), ("Weight", c_int)]
+    FTerrainBVTree._fields_ = [("Nodes", TArray_int)]
 
+    FTerrainkDOPTree._fields_ = [("Nodes", TArray_int), ("Triangles", TArray_int)]
 
-class FTerrainMaterialResource(Structure):
-    _fields_ = []
-
-
-class FCachedTerrainMaterialArray(Structure):
-    _fields_ = [("CachedMaterials", TArray_FPointer)]
-
-
-class FTerrainBVTree(Structure):
-    _fields_ = [("Nodes", TArray_int)]
-
-
-class FTerrainkDOPTree(Structure):
-    _fields_ = [("Nodes", TArray_int), ("Triangles", TArray_int)]
-
-
-class FFilterLimit(Structure):
-    _fields_ = [
+    FFilterLimit._fields_ = [
         ("Enabled", c_bool, 1),
-        ("", c_ulong, 0),
         ("Base", c_float),
         ("NoiseScale", c_float),
         ("NoiseAmount", c_float),
     ]
 
-
-class FTerrainFilteredMaterial(Structure):
-    _fields_ = [
+    FTerrainFilteredMaterial._fields_ = [
         ("UseNoise", c_bool, 1),
-        ("", c_ulong, 0),
         ("NoiseScale", c_float),
         ("NoisePercent", c_float),
         ("MinHeight", FFilterLimit),
@@ -4651,9 +5847,7 @@ class FTerrainFilteredMaterial(Structure):
         ("Material", POINTER(UTerrainMaterial)),
     ]
 
-
-class FTerrainFoliageMesh(Structure):
-    _fields_ = [
+    FTerrainFoliageMesh._fields_ = [
         ("StaticMesh", POINTER(UStaticMesh)),
         ("Material", POINTER(UMaterialInterface)),
         ("Density", c_int),
@@ -4670,13 +5864,9 @@ class FTerrainFoliageMesh(Structure):
         ("SlopeRotationBlend", c_float),
     ]
 
+    UTerrainWeightMapTexture_FTerrainWeightedMaterial._fields_ = []
 
-class UTerrainWeightMapTexture_FTerrainWeightedMaterial(Structure):
-    _fields_ = []
-
-
-class FSourceTexture2DRegion(Structure):
-    _fields_ = [
+    FSourceTexture2DRegion._fields_ = [
         ("OffsetX", c_int),
         ("OffsetY", c_int),
         ("SizeX", c_int),
@@ -4684,68 +5874,51 @@ class FSourceTexture2DRegion(Structure):
         ("Texture2D", POINTER(UTexture2D)),
     ]
 
+    ATrigger_FCheckpointRecord._fields_ = [("bCollideActors", c_bool, 1)]
 
-class ATrigger_FCheckpointRecord(Structure):
-    _fields_ = [("bCollideActors", c_bool, 1), ("", c_ulong, 0)]
-
-
-class FLevelStreamingData(Structure):
-    _fields_ = [
+    FLevelStreamingData._fields_ = [
         ("bShouldBeLoaded", c_bool, 1),
         ("bShouldBeVisible", c_bool, 1),
         ("bShouldBlockOnLoad", c_bool, 1),
-        ("", c_ulong, 0),
         ("Level", POINTER(ULevelStreaming)),
     ]
 
-
-class FPlayerStorageArrayProvider(Structure):
-    _fields_ = [
+    FPlayerStorageArrayProvider._fields_ = [
         ("PlayerStorageId", c_int),
         ("PlayerStorageName", FName),
         ("Provider", POINTER(UUIDataProvider_OnlinePlayerStorageArray)),
     ]
 
-
-class FSettingsArrayProvider(Structure):
-    _fields_ = [
+    FSettingsArrayProvider._fields_ = [
         ("SettingsId", c_int),
         ("SettingsName", FName),
         ("Provider", POINTER(UUIDataProvider_SettingsArray)),
     ]
 
-
-class FDynamicResourceProviderDefinition(Structure):
-    _fields_ = [
+    FDynamicResourceProviderDefinition._fields_ = [
         ("ProviderTag", FName),
         ("ProviderClassName", FString),
         ("ProviderClass", POINTER(UClass)),
     ]
 
-
-class FGameResourceDataProvider(Structure):
-    _fields_ = [
+    FGameResourceDataProvider._fields_ = [
         ("ProviderTag", FName),
         ("ProviderClassName", FString),
         ("bExpandProviders", c_bool, 1),
-        ("", c_ulong, 0),
         ("ProviderClass", POINTER(UClass)),
     ]
 
-
-class FUIInputKeyData(Structure):
-    _fields_ = [
+    FUIInputKeyData._fields_ = [
         ("InputKeyData", FRawInputKeyEventData),
         ("ButtonFontMarkupString", FString),
     ]
 
+    FUIDataStoreInputAlias._fields_ = [
+        ("AliasName", FName),
+        ("PlatformInputKeys", FUIInputKeyData * 3),
+    ]
 
-class FUIDataStoreInputAlias(Structure):
-    _fields_ = [("AliasName", FName), ("PlatformInputKeys", FUIInputKeyData * 3)]
-
-
-class FGameSearchCfg(Structure):
-    _fields_ = [
+    FGameSearchCfg._fields_ = [
         ("GameSearchClass", POINTER(UClass)),
         ("DefaultGameSettingsClass", POINTER(UClass)),
         ("SearchResultsProviderClass", POINTER(UClass)),
@@ -4755,104 +5928,88 @@ class FGameSearchCfg(Structure):
         ("SearchName", FName),
     ]
 
-
-class FGameSettingsCfg(Structure):
-    _fields_ = [
+    FGameSettingsCfg._fields_ = [
         ("GameSettingsClass", POINTER(UClass)),
         ("Provider", POINTER(UUIDataProvider_Settings)),
         ("GameSettings", POINTER(UOnlineGameSettings)),
         ("SettingsName", FName),
     ]
 
+    FRankMetaData._fields_ = [("RankName", FName), ("RankColumnName", FString)]
 
-class FRankMetaData(Structure):
-    _fields_ = [("RankName", FName), ("RankColumnName", FString)]
+    FPlayerNickMetaData._fields_ = [
+        ("PlayerNickName", FName),
+        ("PlayerNickColumnName", FString),
+    ]
 
+    FUIMenuInputMap._fields_ = [
+        ("FieldName", FName),
+        ("Set", FName),
+        ("MappedText", FString),
+    ]
 
-class FPlayerNickMetaData(Structure):
-    _fields_ = [("PlayerNickName", FName), ("PlayerNickColumnName", FString)]
+    FUIKeyRepeatData._fields_ = [
+        ("CurrentRepeatKey", FName),
+        ("NextRepeatTime", FDouble),
+    ]
 
-
-class FUIMenuInputMap(Structure):
-    _fields_ = [("FieldName", FName), ("Set", FName), ("MappedText", FString)]
-
-
-class FUIKeyRepeatData(Structure):
-    _fields_ = [("CurrentRepeatKey", FName), ("NextRepeatTime", FDouble)]
-
-
-class FUIAxisEmulationData(Structure):
-    _fields_ = [
+    FUIAxisEmulationData._fields_ = [
         ("CurrentRepeatKey", FName),
         ("NextRepeatTime", FDouble),
         ("bEnabled", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
+    FSoundEventMapping._fields_ = [
+        ("SoundEventName", FName),
+        ("SoundToPlay", POINTER(USoundCue)),
+    ]
 
-class FSoundEventMapping(Structure):
-    _fields_ = [("SoundEventName", FName), ("SoundToPlay", POINTER(USoundCue))]
-
-
-class FUIStatData(Structure):
-    _fields_ = [
+    FUIStatData._fields_ = [
         ("bDisplayAsModifierOnly", c_bool, 1),
-        ("", c_ulong, 0),
         ("AttributeStyle", c_ubyte),
         ("SupplementalAttributeStyle", c_ubyte),
         ("StatCombinationMethod", c_ubyte),
-        ("Unknown1", c_ubyte, 0x1),
+        ("Unknown1", c_ubyte * 0x1),
         ("Attribute", POINTER(UAttributeDefinition)),
         ("ConstraintAttribute", POINTER(UAttributeDefinition)),
         ("SupplementalAttributeExpression", FAttributeExpressionData),
         ("SupplementalAttributeToAppend", POINTER(UAttributeDefinition)),
     ]
 
-
-class FAttributeSlotEffectData(Structure):
-    _fields_ = [
+    FAttributeSlotEffectData._fields_ = [
         ("SlotName", FName),
         ("bExternalSlot", c_bool, 1),
         ("bRunEffectsAsSkill", c_bool, 1),
-        ("", c_ulong, 0),
         ("AttributeToModify", POINTER(UAttributeDefinition)),
         ("ConstraintAttribute", POINTER(UAttributeDefinition)),
         ("ModifierType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("BaseModifierValue", FAttributeInitializationData),
         ("PerGradeUpgrade", FAttributeInitializationData),
         ("bIncludeInFunStats", c_bool, 1),
         ("bIncludeAlliesAsTarget", c_bool, 1),
         ("bEnforceMinimumGrade", c_bool, 1),
         ("bEnforceMaximumGrade", c_bool, 1),
-        ("", c_ulong, 0),
-        ("MinimumGrade", int),
-        ("MaximumGrade", int),
+        ("MinimumGrade", c_int),
+        ("MaximumGrade", c_int),
         ("TargetInstanceDataName", FName),
     ]
 
-
-class FAttributeSlotUpgradeData(Structure):
-    _fields_ = [
+    FAttributeSlotUpgradeData._fields_ = [
         ("SlotName", FName),
-        ("GradeIncrease", int),
+        ("GradeIncrease", c_int),
         ("bActivateSlot", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FInventorySerialNumber(Structure):
-    _fields_ = [
+    FInventorySerialNumber._fields_ = [
         ("Buffer", c_ubyte * 40),
         ("State", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("RunningCounter", c_int),
         ("EncryptedLength", c_int),
     ]
 
-
-class FAttributeSlotData(Structure):
-    _fields_ = [
+    FAttributeSlotData._fields_ = [
         ("SlotName", FName),
         ("bExternalSlot", c_bool, 1),
         ("bRunEffectsAsSkill", c_bool, 1),
@@ -4861,28 +6018,24 @@ class FAttributeSlotData(Structure):
         ("bIncludeInModifierText", c_bool, 1),
         ("bEnforceMinimumGrade", c_bool, 1),
         ("bEnforceMaximumGrade", c_bool, 1),
-        ("", c_ulong, 0),
-        ("MinimumGrade", int),
-        ("MaximumGrade", int),
+        ("MinimumGrade", c_int),
+        ("MaximumGrade", c_int),
         ("TargetInstanceDataName", FName),
-        ("EffectGrade", int),
+        ("EffectGrade", c_int),
         ("AttributeToModify", POINTER(UAttributeDefinition)),
         ("ConstraintAttribute", POINTER(UAttributeDefinition)),
         ("ModifierType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("BaseModifierValue", FAttributeInitializationData),
         ("PerGradeUpgrade", FAttributeInitializationData),
         ("ComputedModifierValue", c_float),
     ]
 
-
-class FWorldEventSource(Structure):
-    _fields_ = [
+    FWorldEventSource._fields_ = [
         ("AkEvent", POINTER(UAkEvent)),
         ("GroupActor", POINTER(AActor)),
         ("AkComponents", TArray_UAkComponentPtr),
         ("Sources", TArray_AActorPtr),
         ("LastUpdateTime", c_float),
         ("bNeedsUpdate", c_bool, 1),
-        ("", c_ulong, 0),
     ]

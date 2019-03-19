@@ -3,51 +3,138 @@ import BL2SDK
 
 
 class FIpAddr(Structure):
-    _fields_ = [("Addr", c_int), ("Port", c_int)]
+    pass
 
 
 class FConnectionBandwidthStats(Structure):
-    _fields_ = [
+    pass
+
+
+class FPlayerMember(Structure):
+    pass
+
+
+class FClientBandwidthTestData(Structure):
+    pass
+
+
+class FClientConnectionRequest(Structure):
+    pass
+
+
+class FClientConnectionBandwidthTestData(Structure):
+    pass
+
+
+class FClientMeshBeaconConnection(Structure):
+    pass
+
+
+class FEventUploadConfig(Structure):
+    pass
+
+
+class FNewsCacheEntry(Structure):
+    pass
+
+
+class FConfiguredGameSetting(Structure):
+    pass
+
+
+class FInventorySwap(Structure):
+    pass
+
+
+class FPlaylist(Structure):
+    pass
+
+
+class FPlaylistPopulation(Structure):
+    pass
+
+
+class FTitleFileMcp(Structure):
+    pass
+
+
+class FFileNameToURLMapping(Structure):
+    pass
+
+
+class FPlayerReservation(Structure):
+    pass
+
+
+class FPartyReservation(Structure):
+    pass
+
+
+class FClientBeaconConnection(Structure):
+    pass
+
+
+from ..TArrayTypes import *
+from ..structs.Base import *
+from ..structs.Core import *
+from ..structs.Engine import *
+from ..structs.GameFramework import *
+from ..structs.GFxUI import *
+from ..structs.GearboxFramework import *
+from ..structs.WillowGame import *
+from ..structs.AkAudio import *
+
+from ..classes.Base import *
+from ..classes.Core import *
+from ..classes.Engine import *
+from ..classes.GameFramework import *
+from ..classes.GFxUI import *
+from ..classes.GearboxFramework import *
+from ..classes.WillowGame import *
+from ..classes.AkAudio import *
+from ..classes.IpDrv import *
+
+
+def init():
+
+    FIpAddr._fields_ = [("Addr", c_int), ("Port", c_int)]
+
+    FConnectionBandwidthStats._fields_ = [
         ("UpstreamRate", c_int),
         ("DownstreamRate", c_int),
         ("RoundtripLatency", c_int),
     ]
 
+    FPlayerMember._fields_ = [
+        ("TeamNum", c_int),
+        ("Skill", c_int),
+        ("NetId", FUniqueNetId),
+    ]
 
-class FPlayerMember(Structure):
-    _fields_ = [("TeamNum", c_int), ("Skill", c_int), ("NetId", FUniqueNetId)]
-
-
-class FClientBandwidthTestData(Structure):
-    _fields_ = [
+    FClientBandwidthTestData._fields_ = [
         ("TestType", c_ubyte),
         ("CurrentState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("NumBytesToSendTotal", c_int),
         ("NumBytesSentTotal", c_int),
         ("NumBytesSentLast", c_int),
         ("ElapsedTestTime", c_float),
     ]
 
-
-class FClientConnectionRequest(Structure):
-    _fields_ = [
+    FClientConnectionRequest._fields_ = [
         ("PlayerNetId", FUniqueNetId),
         ("NatType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bCanHostVs", c_bool, 1),
-        ("", c_ulong, 0),
         ("GoodHostRatio", c_float),
         ("BandwidthHistory", TArray_FConnectionBandwidthStats),
         ("MinutesSinceLastTest", c_int),
     ]
 
-
-class FClientConnectionBandwidthTestData(Structure):
-    _fields_ = [
+    FClientConnectionBandwidthTestData._fields_ = [
         ("CurrentState", c_ubyte),
         ("TestType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("BytesTotalNeeded", c_int),
         ("BytesReceived", c_int),
         ("RequestTestStartTime", FDouble),
@@ -55,65 +142,49 @@ class FClientConnectionBandwidthTestData(Structure):
         ("BandwidthStats", FConnectionBandwidthStats),
     ]
 
-
-class FClientMeshBeaconConnection(Structure):
-    _fields_ = [
+    FClientMeshBeaconConnection._fields_ = [
         ("PlayerNetId", FUniqueNetId),
         ("ElapsedHeartbeatTime", c_float),
         ("Socket", FPointer),
         ("bConnectionAccepted", c_bool, 1),
-        ("", c_ulong, 0),
         ("BandwidthTest", FClientConnectionBandwidthTestData),
         ("NatType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("bCanHostVs", c_bool, 1),
-        ("", c_ulong, 0),
         ("GoodHostRatio", c_float),
         ("BandwidthHistory", TArray_FConnectionBandwidthStats),
         ("MinutesSinceLastTest", c_int),
     ]
 
-
-class FEventUploadConfig(Structure):
-    _fields_ = [
+    FEventUploadConfig._fields_ = [
         ("UploadType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("UploadUrl", FString),
         ("TimeOut", c_float),
         ("bUseCompression", c_bool, 1),
-        ("", c_ulong, 0),
     ]
 
-
-class FNewsCacheEntry(Structure):
-    _fields_ = [
+    FNewsCacheEntry._fields_ = [
         ("NewsUrl", FString),
         ("ReadState", c_ubyte),
         ("NewsType", c_ubyte),
-        ("Unknown1", c_ubyte, 0x2),
+        ("Unknown1", c_ubyte * 0x2),
         ("NewsItem", FString),
         ("TimeOut", c_float),
         ("bIsUnicode", c_bool, 1),
-        ("", c_ulong, 0),
         ("HttpDownloader", FPointer),
     ]
 
-
-class FConfiguredGameSetting(Structure):
-    _fields_ = [
+    FConfiguredGameSetting._fields_ = [
         ("GameSettingId", c_int),
         ("GameSettingsClassName", FString),
         ("URL", FString),
         ("GameSettings", POINTER(UOnlineGameSettings)),
     ]
 
+    FInventorySwap._fields_ = [("Original", FName), ("SwapTo", FString)]
 
-class FInventorySwap(Structure):
-    _fields_ = [("Original", FName), ("SwapTo", FString)]
-
-
-class FPlaylist(Structure):
-    _fields_ = [
+    FPlaylist._fields_ = [
         ("ConfiguredGames", TArray_FConfiguredGameSetting),
         ("PlaylistId", c_int),
         ("LoadBalanceId", c_int),
@@ -126,36 +197,27 @@ class FPlaylist(Structure):
         ("URL", FString),
         ("MatchType", c_int),
         ("bDisableDedicatedServerSearches", c_bool, 1),
-        ("", c_ulong, 0),
         ("MapCycle", TArray_FName),
         ("InventorySwaps", TArray_FInventorySwap),
     ]
 
-
-class FPlaylistPopulation(Structure):
-    _fields_ = [
+    FPlaylistPopulation._fields_ = [
         ("PlaylistId", c_int),
         ("WorldwideTotal", c_int),
         ("RegionTotal", c_int),
     ]
 
-
-class FTitleFileMcp(Structure):
-    _fields_ = [
+    FTitleFileMcp._fields_ = [
         ("Filename", FString),
         ("AsyncState", c_ubyte),
-        ("Unknown1", c_ubyte, 0x3),
+        ("Unknown1", c_ubyte * 0x3),
         ("Data", TArray_unsigned_char),
         ("HttpDownloader", FPointer),
     ]
 
+    FFileNameToURLMapping._fields_ = [("Filename", FName), ("UrlMapping", FName)]
 
-class FFileNameToURLMapping(Structure):
-    _fields_ = [("Filename", FName), ("UrlMapping", FName)]
-
-
-class FPlayerReservation(Structure):
-    _fields_ = [
+    FPlayerReservation._fields_ = [
         ("NetId", FUniqueNetId),
         ("Skill", c_int),
         ("XpLevel", c_int),
@@ -164,17 +226,13 @@ class FPlayerReservation(Structure):
         ("ElapsedSessionTime", c_float),
     ]
 
-
-class FPartyReservation(Structure):
-    _fields_ = [
+    FPartyReservation._fields_ = [
         ("TeamNum", c_int),
         ("PartyLeader", FUniqueNetId),
         ("PartyMembers", TArray_FPlayerReservation),
     ]
 
-
-class FClientBeaconConnection(Structure):
-    _fields_ = [
+    FClientBeaconConnection._fields_ = [
         ("PartyLeader", FUniqueNetId),
         ("ElapsedHeartbeatTime", c_float),
         ("Socket", FPointer),
