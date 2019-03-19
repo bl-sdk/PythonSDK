@@ -1,149 +1,96 @@
 from ctypes import *
 import BL2SDK
 
-# Import core data structures
-from .core import *
+from ..sdk.classes.Base import TArray_UObjectPtr, UFunction, UClass, UObject
+from ..sdk.structs.Base import TArray_FNameEntryPtr
+from ..sdk.classes.WillowGame import UWillowConsole
 
-# Load helpers for core engine types
-from .helpers.TArray import *
+class SDKFunction():
+    def __init__(self, engine, data):
+        self.fields = data[1]["fields"]
+        self.dataSize = data[1]["dataSize"]
+        self.index = data[1]["index"]
+        self.name = data[0]
+        self.ptr = cast(engine.Objects[0].Data[self.index], POINTER(UFunction))
+        self.index = None
 
-# from .helpers.FString import *
-# from .helpers.UObject import *
-# from .helpers.FOutParmRec import *
+class SDKClass():
+    base = None
+    funcs = {}
+    def __init__(self, engine, definition):
+        self.name = definition[0]
+        if definition[2]:
+            self.base = engine.Classes[definition[2]]
+        if definition[0] in BL2SDK.g_classFuncs.keys():
+            self.funcs = BL2SDK.g_classFuncs[definition[0]]
+        if isinstance(definition[1], str):
+            self.static = None # TODO: cast(engine.FindClass(definition[1]), POINTER(UClass)) 
+        else:
+            self.static = cast(engine.Objects[0].Data[definition[1]], POINTER(UClass))
+        if not self.static:
+            print("Failed to find class '" + definition[0]  + "'")
 
-from ..sdk.structs.Base import TArray 
+class SDKEngine():
+    def __init__(self):
+        self.Objects = None
+        self.FNameEntryPtr = None
+        self._FuncsInternal = {}
+        self.Classes = {}
+        self._ClassesInternal = {}
 
-BL2SDK.engine = {}
+    def InitializeFunctions(self, funcs):
+        for func in funcs.items():
+            sdk_func = SDKFunction(self, func)
+            self._FuncsInternal[addressof(sdk_func.ptr)] = sdk_func
+        return len(funcs)
 
-# Core engine data structures that we'll need access to
-BL2SDK.engine["Objects"] = cast(BL2SDK.GObjects, POINTER(TArray))
-print(BL2SDK.engine["Objects"][0].Data)
+    def InitializeClasses(self):
+        funcCount = 0
+        for loaded_class in BL2SDK.g_loadedClasses:
+            sdk_class = SDKClass(self, loaded_class)
+            if sdk_class.static:
+                self._ClassesInternal[addressof(sdk_class.static)] = sdk_class
+            self.Classes[sdk_class.name] = sdk_class
+            funcCount = funcCount + self.InitializeFunctions(sdk_class.funcs)
+
+        print("[Python] {} classes initialized".format(len(BL2SDK.g_loadedClasses)))
+        print("[Python] {} functions initialized".format(funcCount))
+
+        g_loadedClasses = None
+        g_classFuncs = None
+
+    def ResolveArgClasses(self):
+        for ptr, sdk_func in self._FuncsInternal.items():
+            for index, field in enumerate(sdk_func.fields):
+                if "className" in field:
+                    sdk_func.fields[index]["class"] = self.Classes[field["className"]]
+                    del sdk_func.fields[index]["className"]
+
+    def FindClass(self, class_def):
+        name = class_def.__name__
+        return self.Classes[name]
 
 
-# BL2SDK.engine["Names"] = TArray(
-#     "FNameEntryPtr", ffi.cast("struct TArray*", BL2SDK.GNames)
-# )
+BL2SDK.engine = SDKEngine()
+engine = BL2SDK.engine
 
+engine.Objects = cast(BL2SDK.GObjects, POINTER(TArray_UObjectPtr))
+engine.Names = cast(BL2SDK.GNames, POINTER(TArray_FNameEntryPtr))
 
-# engine._ClassesInternal = {} -- maps a class pointer to its metadata
-# engine.Classes = {} -- maps a name to a class
+engine.InitializeClasses()
+engine.ResolveArgClasses()
 
-# engine._FuncsInternal = {} -- maps a function pointer to its metadata
+def monkeypatch(self):
+    return self.UObject.Name.Index
 
-# require("engine.hash")
-# require("engine.find")
-# require("engine.funcmt")
-# require("engine.objectmt")
-# require("engine.package")
+UObject.getNameIndex = monkeypatch
 
-# require("engine.helpers.FName")
-# FFrame = require("engine.helpers.FFrame")
+# for x in range(BL2SDK.engine.Objects[0].Count):
+#     obj = BL2SDK.engine.Objects[0].Data[x]
+#     if obj:
+#         index = obj[0].getNameIndex()
+#         s = BL2SDK.engine.Names[0].Data[index][0].Name
+#         if 'AnimNodeSpecialMoveBlend' == s.decode(encoding='UTF-8'):
+#             print(x,index,s)
 
-# ffi.cdef[[
-# void LUAFUNC_LogAllProcessEventCalls(bool enabled);
-# void LUAFUNC_LogAllUnrealScriptCalls(bool enabled);
-# ]]
-
-# function engine.LogAllProcessEventCalls(enabled)
-#     ffi.C.LUAFUNC_LogAllProcessEventCalls(enabled)
-# end
-
-# function engine.LogAllUnrealScriptCalls(enabled)
-#     ffi.C.LUAFUNC_LogAllUnrealScriptCalls(enabled)
-# end
-
-# local function InitializeFunctions(funcsTable)
-#     if funcsTable == nil then return 0 end
-
-#     -- Foreach function, get its pointer and add it to the _FuncsInternal map
-#     local count = 0
-#     for _,funcData in pairs(funcsTable) do
-#         funcData.ptr = ffi.cast("struct UFunction*", engine.Objects[funcData.index])
-#         funcData.index = nil
-
-#         engine._FuncsInternal[PtrToNum(funcData.ptr)] = funcData
-#         count = count + 1
-#     end
-
-#     return count
-# end
-
-# local function InitializeClasses()
-#     for i=1,#g_loadedClasses do
-#         ffi.metatype("struct " .. g_loadedClasses[i][1], engine.UObjectMT) -- Everything is a UObject, so set its MT on everything
-#         ffi.metatype("struct " .. g_loadedClasses[i][1] .. "_Data", engine.UObjectDataMT) -- Makes the _Data types return nil
-#     end
-
-#     local funcCount = 0
-
-#     for i=1,#g_loadedClasses do
-#         local class = g_loadedClasses[i] -- 1 = name, 2 = Full Name, 3 = Base name
-
-#         local members = {
-#             name = class[1],
-#             base = engine.Classes[class[3]],
-#             ptrType = ffi.typeof("struct " .. class[1] .. "*"),
-#             funcs = g_classFuncs[class[1]] or {}
-#         }
-
-#         -- If it's a string, it's a full name and we need to search.
-#         if type(class[2]) == "string" then
-#             members.static = ffi.cast("struct UClass*", engine.FindClass(class[2]))
-#         else -- Otherwise it's just an offset and we can just get it out of the array
-#             members.static = ffi.cast("struct UClass*", engine.Objects[class[2]])
-#         end
-
-#         if members.static == nil then
-#             error("Failed to find class '" .. class[1]  .. "'")
-#         end
-
-#         engine._ClassesInternal[PtrToNum(members.static)] = members
-#         engine.Classes[class[1]] = members
-
-#         funcCount = funcCount + InitializeFunctions(members.funcs)
-#     end
-
-#     print(string.format("[Lua] %d classes initialized", #g_loadedClasses))
-#     print(string.format("[Lua] %d functions initialized", funcCount))
-
-#     g_loadedClasses = nil
-#     g_classFuncs = nil
-# end
-
-# local function InitializeTArrays()
-#     for i=1,#g_TArrayTypes do
-#         ffi.metatype("struct TArray_" .. g_TArrayTypes[i], TArray.BaseMT)
-#     end
-
-#     print(string.format("[Lua] %d TArray types initialized", #g_TArrayTypes))
-
-#     g_TArrayTypes = nil
-# end
-
-# local function ResolveArgClasses()
-#     for _,funcData in pairs(engine._FuncsInternal) do
-#         for _,arg in ipairs(funcData.fields) do
-#             if arg.className ~= nil then
-#                 arg.class = engine.Classes[arg.className]
-#                 arg.className = nil
-#             end
-#         end
-#     end
-# end
-
-# function engine.Initialize()
-#     profiling.StartTimer("engineinit", "Engine Initialization")
-
-#     print("[Lua] Initializing engine classes...")
-
-#     -- Initialize metatables on all classes
-#     InitializeClasses()
-
-#     -- Add the TArray metatable to all the template types
-#     InitializeTArrays()
-
-#     -- Resolve the classes in the function arguments
-#     ResolveArgClasses()
-
-#     profiling.StopTimer("engineinit")
-# end
+print(engine.FindClass(UWillowConsole))

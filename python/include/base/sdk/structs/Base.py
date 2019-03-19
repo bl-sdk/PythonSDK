@@ -70,18 +70,6 @@ class FFrame(Structure):
     pass
 
 
-class FNameEntry(Structure):
-    pass
-
-
-class TArray_FNameEntryPtr(Structure):
-    _fields_ = [
-        ("Data", POINTER(POINTER(FNameEntry))),
-        ("Count", c_int),
-        ("Max", c_int),
-    ]
-
-
 from ..classes.Base import *
 
 

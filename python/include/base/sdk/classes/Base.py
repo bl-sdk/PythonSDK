@@ -213,6 +213,10 @@ class TArray_FName(Structure):
     _fields_ = [("Data", POINTER(FName)), ("Count", c_int), ("Max", c_int)]
 
 
+class TArray_FNamePtr(Structure):
+    _fields_ = [("Data", POINTER(POINTER(FName))), ("Count", c_int), ("Max", c_int)]
+
+
 from ..TArrayTypes import *
 
 
