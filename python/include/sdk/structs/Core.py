@@ -290,6 +290,11 @@ def init():
         ("InterpMode", c_ubyte),
     ]
 
+    TArray_FInterpCurvePointVector2D._fields_ = [
+        ("Data", POINTER(FInterpCurvePointVector2D)),
+        ("Count", c_int),
+        ("Max", c_int),
+    ]
     FInterpCurveVector2D._fields_ = [
         ("Points", TArray_FInterpCurvePointVector2D),
         ("InterpMethod", c_ubyte),

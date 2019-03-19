@@ -4479,8 +4479,31 @@ class TArray_UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStat
 ):
     pass
 
+from .structs.Base import *
+from .structs.Core import *
+from .structs.Engine import *
+from .structs.GameFramework import *
+from .structs.GFxUI import *
+from .structs.GearboxFramework import *
+from .structs.WillowGame import *
+from .structs.AkAudio import *
+from .structs.IpDrv import *
+from .structs.WinDrv import *
+from .structs.XAudio2 import *
 
-def __init__():
+from .classes.Base import *
+from .classes.Core import *
+from .classes.Engine import *
+from .classes.GameFramework import *
+from .classes.GFxUI import *
+from .classes.GearboxFramework import *
+from .classes.WillowGame import *
+from .classes.AkAudio import *
+from .classes.IpDrv import *
+from .classes.WinDrv import *
+from .classes.XAudio2 import *
+
+def init():
     TArray_FInterpCurvePointVector2D._fields_ = [
         ("Data", POINTER(FInterpCurvePointVector2D)),
         ("Count", c_int),
@@ -10689,12 +10712,7 @@ def __init__():
     ]
 
     TArray_UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData._fields_ = [
-        (
-            "Data",
-            POINTER(
-                UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData
-            ),
-        ),
+        ("Data", POINTER(UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData)),
         ("Count", c_int),
         ("Max", c_int),
     ]

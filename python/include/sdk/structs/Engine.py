@@ -2130,13 +2130,13 @@ class FWorldEventSource(Structure):
     pass
 
 
-from ..TArrayTypes import *
 from ..structs.Base import *
 from ..structs.Core import *
 
 from ..classes.Base import *
 from ..classes.Core import *
 from ..classes.Engine import *
+from ..TArrayTypes import *
 
 
 def init():

@@ -9,6 +9,7 @@ from . import enums
 from . import structs
 from . import classes
 from . import funcs
+from . import TArrayTypes
 
 structs.Base.init()
 structs.Core.init()
@@ -33,3 +34,5 @@ classes.IpDrv.init()
 classes.WinDrv.init()
 classes.XAudio2.init()
 classes.OnlineSubsystemSteamworks.init()
+
+TArrayTypes.init()

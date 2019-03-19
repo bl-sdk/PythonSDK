@@ -1,9 +1,6 @@
 from ctypes import *
 import BL2SDK
 
-from ..TArrayTypes import *
-from ..structs.Base import *
-
 
 class UObject_Data(Structure):
     pass
@@ -19,11 +16,6 @@ class UField_Data(Structure):
 
 class UField(Structure):
     pass
-
-
-class TArray_FName(Structure):
-    _fields_ = [("Data", POINTER(FName)), ("Count", c_int), ("Max", c_int)]
-
 
 class UEnum_Data(Structure):
     pass
@@ -204,6 +196,12 @@ class UMapProperty_Data(Structure):
 class UMapProperty(Structure):
     pass
 
+from ..structs.Base import *
+
+class TArray_FName(Structure):
+    _fields_ = [("Data", POINTER(FName)), ("Count", c_int), ("Max", c_int)]
+
+from ..TArrayTypes import *
 
 def init():
     UObject_Data._fields_ = [
