@@ -1,4 +1,7 @@
 #pragma once
+#ifndef CORECLASSES_H
+#define CORECLASSES_H
+
 #include "stdafx.h"
 /*
 #############################################################################################
@@ -1933,4 +1936,6 @@ public:
 
 #ifdef _MSC_VER
 #pragma pack ( pop )
+#endif
+
 #endif

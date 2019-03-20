@@ -2,14 +2,6 @@
 #ifndef CPYTHONINTERFACE_H
 #define CPYTHONINTERFACE_H
 
-#ifdef _DEBUG
-#undef _DEBUG
-#include <Python.h>
-#define _DEBUG
-#else
-#include <Python.h>
-#endif
-
 enum PythonStatus
 {
 	PYTHON_OK,
@@ -38,6 +30,7 @@ private:
 	int				DoFileAbsolute(const std::string& path);
 
 	PyObject*		m_pModule;
+	boost::python::object m_mainNamespace;
 	std::string		m_PythonPath;
 	std::string		m_StdoutBuffer;
 	std::string		m_StderrBuffer;

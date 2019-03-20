@@ -10,6 +10,18 @@
 #include <functional>
 #include <iostream>
 #include <string>
+#include <cstdlib>
+
+void Export_classes();
+void Export_structs();
+
+using namespace boost::python;
+
+BOOST_PYTHON_MODULE(bl2sdk)
+{
+	Export_classes();
+	Export_structs();
+}
 
 
 namespace emb
@@ -233,13 +245,26 @@ PyMODINIT_FUNC PyInit_bl2()
 	return module;
 }
 
+int setenv(const char *name, const char *value, int overwrite)
+{
+	int errcode = 0;
+	if (!overwrite) {
+		size_t envsize = 0;
+		errcode = getenv_s(&envsize, NULL, 0, name);
+		if (errcode || envsize) return errcode;
+	}
+	return _putenv_s(name, value);
+}
+
 void CPythonInterface::InitializeState()
 {
 	PyImport_AppendInittab("emb", emb::PyInit_emb);
 	PyImport_AppendInittab("BL2SDK", PyInit_bl2);
+	PyImport_AppendInittab((char*)"bl2sdk", PyInit_bl2sdk);
 	Py_Initialize();
 	PyImport_ImportModule("emb");
 	PyImport_ImportModule("BL2SDK");
+	PyImport_ImportModule("hello");
 	emb::set_stdout();
 	m_pModule = PyState_FindModule(&SDKModule);
 
@@ -254,7 +279,7 @@ void CPythonInterface::InitializeState()
 
 void CPythonInterface::CleanupState()
 {
-	Py_Finalize();
+	//Py_Finalize();
 }
 
 PythonStatus CPythonInterface::InitializeModules()
@@ -304,8 +329,9 @@ void CPythonInterface::SetSDKValues()
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
-	const char *pythonString = Util::Format("import sys;sys.path.append(r'%s'.replace('\\\\', '/'))", m_PythonPath.c_str()).c_str();
-	PyRun_SimpleString(pythonString);
+	Logging::LogF(m_PythonPath.c_str());
+	/*const char *pythonString = Util::Format("import sys;sys.path.append(r'%s'.replace('\\\\', '/'))", m_PythonPath.c_str()).c_str();
+	PyRun_SimpleString(pythonString);*/
 }
 
 int CPythonInterface::DoFile(const std::string& filename)
@@ -321,6 +347,7 @@ int CPythonInterface::DoFileAbsolute(const std::string& path)
 	{
 		int response = PyRun_SimpleFile(file, path.c_str());
 		std::fclose(file);
+		return 0;
 	}
 	return -1;
 }

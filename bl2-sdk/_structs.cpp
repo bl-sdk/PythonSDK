@@ -1,0 +1,10451 @@
+#include "stdafx.h"
+
+
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_structs()
+{
+    class_< FPointer >("FPointer", init<  >())
+        .def(init< const FPointer& >())
+        .def_readwrite("Dummy", &FPointer::Dummy)
+    ;
+
+    class_< FQWord >("FQWord", init<  >())
+        .def(init< const FQWord& >())
+        .def_readwrite("A", &FQWord::A)
+        .def_readwrite("B", &FQWord::B)
+    ;
+
+    class_< FVector >("FVector", init<  >())
+        .def(init< const FVector& >())
+        .def_readwrite("X", &FVector::X)
+        .def_readwrite("Y", &FVector::Y)
+        .def_readwrite("Z", &FVector::Z)
+    ;
+
+    class_< FRotator >("FRotator", init<  >())
+        .def(init< const FRotator& >())
+        .def_readwrite("Pitch", &FRotator::Pitch)
+        .def_readwrite("Yaw", &FRotator::Yaw)
+        .def_readwrite("Roll", &FRotator::Roll)
+    ;
+
+    class_< FVector2D >("FVector2D", init<  >())
+        .def(init< const FVector2D& >())
+        .def_readwrite("X", &FVector2D::X)
+        .def_readwrite("Y", &FVector2D::Y)
+    ;
+
+    class_< FNameBasedObjectPath >("FNameBasedObjectPath", init<  >())
+        .def(init< const FNameBasedObjectPath& >())
+        .def_readwrite("PathComponentNames", &FNameBasedObjectPath::PathComponentNames)
+        .def_readwrite("IsSubobjectMask", &FNameBasedObjectPath::IsSubobjectMask)
+    ;
+
+    class_< FFlag >("FFlag", init<  >())
+        .def(init< const FFlag& >())
+        .def_readwrite("Value", &FFlag::Value)
+        .def_readwrite("Raised", &FFlag::Raised)
+        .def_readwrite("Lowered", &FFlag::Lowered)
+        .def_readwrite("Padding", &FFlag::Padding)
+        .def_readwrite("RaisedTime", &FFlag::RaisedTime)
+        .def_readwrite("LoweredTime", &FFlag::LoweredTime)
+        .def_readwrite("Duration", &FFlag::Duration)
+    ;
+
+    class_< FSmartVector >("FSmartVector", init<  >())
+        .def(init< const FSmartVector& >())
+        .def_readwrite("Vector", &FSmartVector::Vector)
+        .def_readwrite("Flag", &FSmartVector::Flag)
+    ;
+
+    class_< FLinearColor >("FLinearColor", init<  >())
+        .def(init< const FLinearColor& >())
+        .def_readwrite("R", &FLinearColor::R)
+        .def_readwrite("G", &FLinearColor::G)
+        .def_readwrite("B", &FLinearColor::B)
+        .def_readwrite("A", &FLinearColor::A)
+    ;
+
+    class_< FColor >("FColor", init<  >())
+        .def(init< const FColor& >())
+        .def_readwrite("B", &FColor::B)
+        .def_readwrite("G", &FColor::G)
+        .def_readwrite("R", &FColor::R)
+        .def_readwrite("A", &FColor::A)
+    ;
+
+    class_< FInterpCurveVector2D >("FInterpCurveVector2D", init<  >())
+        .def(init< const FInterpCurveVector2D& >())
+        .def_readwrite("Points", &FInterpCurveVector2D::Points)
+        .def_readwrite("InterpMethod", &FInterpCurveVector2D::InterpMethod)
+    ;
+
+    class_< FInterpCurvePointVector2D >("FInterpCurvePointVector2D", init<  >())
+        .def(init< const FInterpCurvePointVector2D& >())
+        .def_readwrite("InVal", &FInterpCurvePointVector2D::InVal)
+        .def_readwrite("OutVal", &FInterpCurvePointVector2D::OutVal)
+        .def_readwrite("ArriveTangent", &FInterpCurvePointVector2D::ArriveTangent)
+        .def_readwrite("LeaveTangent", &FInterpCurvePointVector2D::LeaveTangent)
+        .def_readwrite("InterpMode", &FInterpCurvePointVector2D::InterpMode)
+    ;
+
+    class_< FInterpCurveVector >("FInterpCurveVector", init<  >())
+        .def(init< const FInterpCurveVector& >())
+        .def_readwrite("Points", &FInterpCurveVector::Points)
+        .def_readwrite("InterpMethod", &FInterpCurveVector::InterpMethod)
+    ;
+
+    class_< FInterpCurvePointVector >("FInterpCurvePointVector", init<  >())
+        .def(init< const FInterpCurvePointVector& >())
+        .def_readwrite("InVal", &FInterpCurvePointVector::InVal)
+        .def_readwrite("OutVal", &FInterpCurvePointVector::OutVal)
+        .def_readwrite("ArriveTangent", &FInterpCurvePointVector::ArriveTangent)
+        .def_readwrite("LeaveTangent", &FInterpCurvePointVector::LeaveTangent)
+        .def_readwrite("InterpMode", &FInterpCurvePointVector::InterpMode)
+    ;
+
+    class_< FInterpCurveFloat >("FInterpCurveFloat", init<  >())
+        .def(init< const FInterpCurveFloat& >())
+        .def_readwrite("Points", &FInterpCurveFloat::Points)
+        .def_readwrite("InterpMethod", &FInterpCurveFloat::InterpMethod)
+    ;
+
+    class_< FInterpCurvePointFloat >("FInterpCurvePointFloat", init<  >())
+        .def(init< const FInterpCurvePointFloat& >())
+        .def_readwrite("InVal", &FInterpCurvePointFloat::InVal)
+        .def_readwrite("OutVal", &FInterpCurvePointFloat::OutVal)
+        .def_readwrite("ArriveTangent", &FInterpCurvePointFloat::ArriveTangent)
+        .def_readwrite("LeaveTangent", &FInterpCurvePointFloat::LeaveTangent)
+        .def_readwrite("InterpMode", &FInterpCurvePointFloat::InterpMode)
+    ;
+
+    class_< FQuat >("FQuat", init<  >())
+        .def(init< const FQuat& >())
+        .def_readwrite("X", &FQuat::X)
+        .def_readwrite("Y", &FQuat::Y)
+        .def_readwrite("Z", &FQuat::Z)
+        .def_readwrite("W", &FQuat::W)
+    ;
+
+    class_< FMatrix >("FMatrix", init<  >())
+        .def(init< const FMatrix& >())
+        .def_readwrite("XPlane", &FMatrix::XPlane)
+        .def_readwrite("YPlane", &FMatrix::YPlane)
+        .def_readwrite("ZPlane", &FMatrix::ZPlane)
+        .def_readwrite("WPlane", &FMatrix::WPlane)
+    ;
+
+    class_< FPlane, bases< FVector >  >("FPlane", init<  >())
+        .def(init< const FPlane& >())
+        .def_readwrite("W", &FPlane::W)
+    ;
+
+    class_< FGuid >("FGuid", init<  >())
+        .def(init< const FGuid& >())
+        .def_readwrite("A", &FGuid::A)
+        .def_readwrite("B", &FGuid::B)
+        .def_readwrite("C", &FGuid::C)
+        .def_readwrite("D", &FGuid::D)
+    ;
+
+    class_< FRenderCommandFence >("FRenderCommandFence", init<  >())
+        .def(init< const FRenderCommandFence& >())
+        .def_readwrite("NumPendingFences", &FRenderCommandFence::NumPendingFences)
+    ;
+
+    class_< FBox >("FBox", init<  >())
+        .def(init< const FBox& >())
+        .def_readwrite("Min", &FBox::Min)
+        .def_readwrite("Max", &FBox::Max)
+        .def_readwrite("IsValid", &FBox::IsValid)
+    ;
+
+    class_< FBoxSphereBounds >("FBoxSphereBounds", init<  >())
+        .def(init< const FBoxSphereBounds& >())
+        .def_readwrite("Origin", &FBoxSphereBounds::Origin)
+        .def_readwrite("BoxExtent", &FBoxSphereBounds::BoxExtent)
+        .def_readwrite("SphereRadius", &FBoxSphereBounds::SphereRadius)
+    ;
+
+    class_< FRenderCommandFence_Mirror >("FRenderCommandFence_Mirror", init<  >())
+        .def(init< const FRenderCommandFence_Mirror& >())
+        .def_readwrite("NumPendingFences", &FRenderCommandFence_Mirror::NumPendingFences)
+    ;
+
+    class_< FIndirectArray_Mirror >("FIndirectArray_Mirror", init<  >())
+        .def(init< const FIndirectArray_Mirror& >())
+        .def_readwrite("Data", &FIndirectArray_Mirror::Data)
+        .def_readwrite("ArrayNum", &FIndirectArray_Mirror::ArrayNum)
+        .def_readwrite("ArrayMax", &FIndirectArray_Mirror::ArrayMax)
+    ;
+
+    class_< FThreadSafeCounter >("FThreadSafeCounter", init<  >())
+        .def(init< const FThreadSafeCounter& >())
+        .def_readwrite("Value", &FThreadSafeCounter::Value)
+    ;
+
+    class_< FRawDistributionFloat >("FRawDistributionFloat", init<  >())
+        .def(init< const FRawDistributionFloat& >())
+        .def_readwrite("Distribution", &FRawDistributionFloat::Distribution)
+        .def_readwrite("Type", &FRawDistribution::Type)
+        .def_readwrite("Op", &FRawDistribution::Op)
+        .def_readwrite("LookupTableNumElements", &FRawDistribution::LookupTableNumElements)
+        .def_readwrite("LookupTableChunkSize", &FRawDistribution::LookupTableChunkSize)
+        .def_readwrite("LookupTable", &FRawDistribution::LookupTable)
+        .def_readwrite("LookupTableTimeScale", &FRawDistribution::LookupTableTimeScale)
+        .def_readwrite("LookupTableStartTime", &FRawDistribution::LookupTableStartTime)
+    ;
+
+    class_< FRawDistribution >("FRawDistribution", init<  >())
+        .def(init< const FRawDistribution& >())
+        .def_readwrite("Type", &FRawDistribution::Type)
+        .def_readwrite("Op", &FRawDistribution::Op)
+        .def_readwrite("LookupTableNumElements", &FRawDistribution::LookupTableNumElements)
+        .def_readwrite("LookupTableChunkSize", &FRawDistribution::LookupTableChunkSize)
+        .def_readwrite("LookupTable", &FRawDistribution::LookupTable)
+        .def_readwrite("LookupTableTimeScale", &FRawDistribution::LookupTableTimeScale)
+        .def_readwrite("LookupTableStartTime", &FRawDistribution::LookupTableStartTime)
+    ;
+
+    class_< FRawDistributionVector, bases< FRawDistribution >  >("FRawDistributionVector", init<  >())
+        .def(init< const FRawDistributionVector& >())
+        .def_readwrite("Distribution", &FRawDistributionVector::Distribution)
+    ;
+
+    class_< FBoneAtom >("FBoneAtom", init<  >())
+        .def(init< const FBoneAtom& >())
+        .def_readwrite("Rotation", &FBoneAtom::Rotation)
+        .def_readwrite("Translation", &FBoneAtom::Translation)
+        .def_readwrite("Scale", &FBoneAtom::Scale)
+    ;
+
+    class_< FMap_Mirror >("FMap_Mirror", init<  >())
+        .def(init< const FMap_Mirror& >())
+        .def_readwrite("Pairs", &FMap_Mirror::Pairs)
+    ;
+
+    class_< FSet_Mirror >("FSet_Mirror", init<  >())
+        .def(init< const FSet_Mirror& >())
+        .def_readwrite("Elements", &FSet_Mirror::Elements)
+        .def_readwrite("InlineHash", &FSet_Mirror::InlineHash)
+        .def_readwrite("Hash", &FSet_Mirror::Hash)
+        .def_readwrite("HashSize", &FSet_Mirror::HashSize)
+    ;
+
+    class_< FSparseArray_Mirror >("FSparseArray_Mirror", init<  >())
+        .def(init< const FSparseArray_Mirror& >())
+        .def_readwrite("Elements", &FSparseArray_Mirror::Elements)
+        .def_readwrite("AllocationFlags", &FSparseArray_Mirror::AllocationFlags)
+        .def_readwrite("FirstFreeIndex", &FSparseArray_Mirror::FirstFreeIndex)
+        .def_readwrite("NumFreeIndices", &FSparseArray_Mirror::NumFreeIndices)
+    ;
+
+    class_< FBitArray_Mirror >("FBitArray_Mirror", init<  >())
+        .def(init< const FBitArray_Mirror& >())
+        .def_readwrite("IndirectData", &FBitArray_Mirror::IndirectData)
+        .def_readwrite("InlineData", &FBitArray_Mirror::InlineData)
+        .def_readwrite("NumBits", &FBitArray_Mirror::NumBits)
+        .def_readwrite("MaxBits", &FBitArray_Mirror::MaxBits)
+    ;
+
+    class_< FArray_Mirror >("FArray_Mirror", init<  >())
+        .def(init< const FArray_Mirror& >())
+        .def_readwrite("Data", &FArray_Mirror::Data)
+        .def_readwrite("ArrayNum", &FArray_Mirror::ArrayNum)
+        .def_readwrite("ArrayMax", &FArray_Mirror::ArrayMax)
+    ;
+
+    class_< FUntypedBulkData_Mirror >("FUntypedBulkData_Mirror", init<  >())
+        .def(init< const FUntypedBulkData_Mirror& >())
+        .def_readwrite("VfTable", &FUntypedBulkData_Mirror::VfTable)
+        .def_readwrite("BulkDataFlags", &FUntypedBulkData_Mirror::BulkDataFlags)
+        .def_readwrite("ElementCount", &FUntypedBulkData_Mirror::ElementCount)
+        .def_readwrite("BulkDataOffsetInFile", &FUntypedBulkData_Mirror::BulkDataOffsetInFile)
+        .def_readwrite("BulkDataSizeOnDisk", &FUntypedBulkData_Mirror::BulkDataSizeOnDisk)
+        .def_readwrite("SavedBulkDataFlags", &FUntypedBulkData_Mirror::SavedBulkDataFlags)
+        .def_readwrite("SavedElementCount", &FUntypedBulkData_Mirror::SavedElementCount)
+        .def_readwrite("SavedBulkDataOffsetInFile", &FUntypedBulkData_Mirror::SavedBulkDataOffsetInFile)
+        .def_readwrite("SavedBulkDataSizeOnDisk", &FUntypedBulkData_Mirror::SavedBulkDataSizeOnDisk)
+        .def_readwrite("BulkData", &FUntypedBulkData_Mirror::BulkData)
+        .def_readwrite("LockStatus", &FUntypedBulkData_Mirror::LockStatus)
+        .def_readwrite("AttachedAr", &FUntypedBulkData_Mirror::AttachedAr)
+    ;
+
+    class_< FMultiMap_Mirror >("FMultiMap_Mirror", init<  >())
+        .def(init< const FMultiMap_Mirror& >())
+        .def_readwrite("Pairs", &FMultiMap_Mirror::Pairs)
+    ;
+
+    class_< FDouble >("FDouble", init<  >())
+        .def(init< const FDouble& >())
+        .def_readwrite("A", &FDouble::A)
+        .def_readwrite("B", &FDouble::B)
+    ;
+
+    class_< FOctreeElementId >("FOctreeElementId", init<  >())
+        .def(init< const FOctreeElementId& >())
+        .def_readwrite("Node", &FOctreeElementId::Node)
+        .def_readwrite("ElementIndex", &FOctreeElementId::ElementIndex)
+    ;
+
+    class_< FCylinder >("FCylinder", init<  >())
+        .def(init< const FCylinder& >())
+        .def_readwrite("Radius", &FCylinder::Radius)
+        .def_readwrite("Height", &FCylinder::Height)
+    ;
+
+    class_< FTPOV >("FTPOV", init<  >())
+        .def(init< const FTPOV& >())
+        .def_readwrite("Location", &FTPOV::Location)
+        .def_readwrite("Rotation", &FTPOV::Rotation)
+        .def_readwrite("FOV", &FTPOV::FOV)
+    ;
+
+    class_< FIntPoint >("FIntPoint", init<  >())
+        .def(init< const FIntPoint& >())
+        .def_readwrite("X", &FIntPoint::X)
+        .def_readwrite("Y", &FIntPoint::Y)
+    ;
+
+    class_< FChunkedList_Mirror >("FChunkedList_Mirror", init<  >())
+        .def(init< const FChunkedList_Mirror& >())
+        .def_readwrite("Members", &FChunkedList_Mirror::Members)
+    ;
+
+    class_< FStableArray_Mirror >("FStableArray_Mirror", init<  >())
+        .def(init< const FStableArray_Mirror& >())
+        .def_readwrite("ArrayNumInUse", &FStableArray_Mirror::ArrayNumInUse)
+        .def_readwrite("ArrayNumAllocated", &FStableArray_Mirror::ArrayNumAllocated)
+        .def_readwrite("ArrayCapacity", &FStableArray_Mirror::ArrayCapacity)
+        .def_readwrite("FreeListHeadIndex", &FStableArray_Mirror::FreeListHeadIndex)
+        .def_readwrite("Chunks", &FStableArray_Mirror::Chunks)
+    ;
+
+    class_< FTAlphaBlend >("FTAlphaBlend", init<  >())
+        .def(init< const FTAlphaBlend& >())
+        .def_readwrite("AlphaIn", &FTAlphaBlend::AlphaIn)
+        .def_readwrite("AlphaOut", &FTAlphaBlend::AlphaOut)
+        .def_readwrite("AlphaTarget", &FTAlphaBlend::AlphaTarget)
+        .def_readwrite("BlendTime", &FTAlphaBlend::BlendTime)
+        .def_readwrite("BlendTimeToGo", &FTAlphaBlend::BlendTimeToGo)
+        .def_readwrite("BlendType", &FTAlphaBlend::BlendType)
+    ;
+
+    class_< FTwoVectors >("FTwoVectors", init<  >())
+        .def(init< const FTwoVectors& >())
+        .def_readwrite("v1", &FTwoVectors::v1)
+        .def_readwrite("v2", &FTwoVectors::v2)
+    ;
+
+    class_< FPlane2D, bases< FVector2D >  >("FPlane2D", init<  >())
+        .def(init< const FPlane2D& >())
+        .def_readwrite("W", &FPlane2D::W)
+    ;
+
+    class_< FVector4 >("FVector4", init<  >())
+        .def(init< const FVector4& >())
+        .def_readwrite("X", &FVector4::X)
+        .def_readwrite("Y", &FVector4::Y)
+        .def_readwrite("Z", &FVector4::Z)
+        .def_readwrite("W", &FVector4::W)
+    ;
+
+    class_< FSHVectorRGB >("FSHVectorRGB", init<  >())
+        .def(init< const FSHVectorRGB& >())
+        .def_readwrite("R", &FSHVectorRGB::R)
+        .def_readwrite("G", &FSHVectorRGB::G)
+        .def_readwrite("B", &FSHVectorRGB::B)
+    ;
+
+    class_< FSHVector >("FSHVector", init<  >())
+        .def(init< const FSHVector& >())
+        .def_readwrite("V", &FSHVector::V)
+        .def_readwrite("Padding", &FSHVector::Padding)
+    ;
+
+    class_< FInterpCurvePointLinearColor >("FInterpCurvePointLinearColor", init<  >())
+        .def(init< const FInterpCurvePointLinearColor& >())
+        .def_readwrite("InVal", &FInterpCurvePointLinearColor::InVal)
+        .def_readwrite("OutVal", &FInterpCurvePointLinearColor::OutVal)
+        .def_readwrite("ArriveTangent", &FInterpCurvePointLinearColor::ArriveTangent)
+        .def_readwrite("LeaveTangent", &FInterpCurvePointLinearColor::LeaveTangent)
+        .def_readwrite("InterpMode", &FInterpCurvePointLinearColor::InterpMode)
+    ;
+
+    class_< FInterpCurveTwoVectors >("FInterpCurveTwoVectors", init<  >())
+        .def(init< const FInterpCurveTwoVectors& >())
+        .def_readwrite("Points", &FInterpCurveTwoVectors::Points)
+        .def_readwrite("InterpMethod", &FInterpCurveTwoVectors::InterpMethod)
+    ;
+
+    class_< FInterpCurvePointTwoVectors >("FInterpCurvePointTwoVectors", init<  >())
+        .def(init< const FInterpCurvePointTwoVectors& >())
+        .def_readwrite("InVal", &FInterpCurvePointTwoVectors::InVal)
+        .def_readwrite("OutVal", &FInterpCurvePointTwoVectors::OutVal)
+        .def_readwrite("ArriveTangent", &FInterpCurvePointTwoVectors::ArriveTangent)
+        .def_readwrite("LeaveTangent", &FInterpCurvePointTwoVectors::LeaveTangent)
+        .def_readwrite("InterpMode", &FInterpCurvePointTwoVectors::InterpMode)
+    ;
+
+    class_< FPackedNormal >("FPackedNormal", init<  >())
+        .def(init< const FPackedNormal& >())
+        .def_readwrite("X", &FPackedNormal::X)
+        .def_readwrite("Y", &FPackedNormal::Y)
+        .def_readwrite("Z", &FPackedNormal::Z)
+        .def_readwrite("W", &FPackedNormal::W)
+    ;
+
+    class_< FInterpCurveLinearColor >("FInterpCurveLinearColor", init<  >())
+        .def(init< const FInterpCurveLinearColor& >())
+        .def_readwrite("Points", &FInterpCurveLinearColor::Points)
+        .def_readwrite("InterpMethod", &FInterpCurveLinearColor::InterpMethod)
+    ;
+
+    class_< FInterpCurvePointQuat >("FInterpCurvePointQuat", init<  >())
+        .def(init< const FInterpCurvePointQuat& >())
+        .def_readwrite("InVal", &FInterpCurvePointQuat::InVal)
+        .def_readwrite("UnknownData00", &FInterpCurvePointQuat::UnknownData00)
+        .def_readwrite("OutVal", &FInterpCurvePointQuat::OutVal)
+        .def_readwrite("ArriveTangent", &FInterpCurvePointQuat::ArriveTangent)
+        .def_readwrite("LeaveTangent", &FInterpCurvePointQuat::LeaveTangent)
+        .def_readwrite("InterpMode", &FInterpCurvePointQuat::InterpMode)
+    ;
+
+    class_< FFColorVertexBuffer_Mirror >("FFColorVertexBuffer_Mirror", init<  >())
+        .def(init< const FFColorVertexBuffer_Mirror& >())
+        .def_readwrite("VfTable", &FFColorVertexBuffer_Mirror::VfTable)
+        .def_readwrite("VertexData", &FFColorVertexBuffer_Mirror::VertexData)
+        .def_readwrite("Data", &FFColorVertexBuffer_Mirror::Data)
+        .def_readwrite("Stride", &FFColorVertexBuffer_Mirror::Stride)
+        .def_readwrite("NumVertices", &FFColorVertexBuffer_Mirror::NumVertices)
+    ;
+
+    class_< FInterpCurveQuat >("FInterpCurveQuat", init<  >())
+        .def(init< const FInterpCurveQuat& >())
+        .def_readwrite("Points", &FInterpCurveQuat::Points)
+        .def_readwrite("InterpMethod", &FInterpCurveQuat::InterpMethod)
+    ;
+
+    class_< FInlinePointerArray_Mirror >("FInlinePointerArray_Mirror", init<  >())
+        .def(init< const FInlinePointerArray_Mirror& >())
+        .def_readwrite("InlineData", &FInlinePointerArray_Mirror::InlineData)
+        .def_readwrite("SecondaryData", &FInlinePointerArray_Mirror::SecondaryData)
+    ;
+
+    class_< FIntPoint3D >("FIntPoint3D", init<  >())
+        .def(init< const FIntPoint3D& >())
+        .def_readwrite("X", &FIntPoint3D::X)
+        .def_readwrite("Y", &FIntPoint3D::Y)
+        .def_readwrite("Z", &FIntPoint3D::Z)
+    ;
+
+    class_< FTimerData >("FTimerData", init<  >())
+        .def(init< const FTimerData& >())
+        .def_readwrite("FuncName", &FTimerData::FuncName)
+        .def_readwrite("Rate", &FTimerData::Rate)
+        .def_readwrite("Count", &FTimerData::Count)
+        .def_readwrite("TimerTimeDilation", &FTimerData::TimerTimeDilation)
+        .def_readwrite("TimerObj", &FTimerData::TimerObj)
+    ;
+
+    class_< FNavigationOctreeObject >("FNavigationOctreeObject", init<  >())
+        .def(init< const FNavigationOctreeObject& >())
+        .def_readwrite("BoundingBox", &FNavigationOctreeObject::BoundingBox)
+        .def_readwrite("BoxCenter", &FNavigationOctreeObject::BoxCenter)
+        .def_readwrite("OctreeNode", &FNavigationOctreeObject::OctreeNode)
+        .def_readwrite("Owner", &FNavigationOctreeObject::Owner)
+        .def_readwrite("OwnerType", &FNavigationOctreeObject::OwnerType)
+    ;
+
+    class_< FActorReference >("FActorReference", init<  >())
+        .def(init< const FActorReference& >())
+        .def_readwrite("Actor", &FActorReference::Actor)
+        .def_readwrite("Guid", &FActorReference::Guid)
+    ;
+
+    class_< FLightmassMaterialInterfaceSettings >("FLightmassMaterialInterfaceSettings", init<  >())
+        .def(init< const FLightmassMaterialInterfaceSettings& >())
+        .def_readwrite("DistanceFieldPenumbraScale", &FLightmassMaterialInterfaceSettings::DistanceFieldPenumbraScale)
+    ;
+
+    class_< FFontCharacter >("FFontCharacter", init<  >())
+        .def(init< const FFontCharacter& >())
+        .def_readwrite("StartU", &FFontCharacter::StartU)
+        .def_readwrite("StartV", &FFontCharacter::StartV)
+        .def_readwrite("USize", &FFontCharacter::USize)
+        .def_readwrite("VSize", &FFontCharacter::VSize)
+        .def_readwrite("TextureIndex", &FFontCharacter::TextureIndex)
+        .def_readwrite("VerticalOffset", &FFontCharacter::VerticalOffset)
+    ;
+
+    class_< FTextureLinkedListMirror >("FTextureLinkedListMirror", init<  >())
+        .def(init< const FTextureLinkedListMirror& >())
+        .def_readwrite("Element", &FTextureLinkedListMirror::Element)
+        .def_readwrite("Next", &FTextureLinkedListMirror::Next)
+        .def_readwrite("PrevLink", &FTextureLinkedListMirror::PrevLink)
+    ;
+
+    class_< FFontImportOptionsData >("FFontImportOptionsData", init<  >())
+        .def(init< const FFontImportOptionsData& >())
+        .def_readwrite("FontName", &FFontImportOptionsData::FontName)
+        .def_readwrite("Height", &FFontImportOptionsData::Height)
+        .def_readwrite("CharacterSet", &FFontImportOptionsData::CharacterSet)
+        .def_readwrite("Chars", &FFontImportOptionsData::Chars)
+        .def_readwrite("UnicodeRange", &FFontImportOptionsData::UnicodeRange)
+        .def_readwrite("CharsFilePath", &FFontImportOptionsData::CharsFilePath)
+        .def_readwrite("CharsFileWildcard", &FFontImportOptionsData::CharsFileWildcard)
+        .def_readwrite("ForegroundColor", &FFontImportOptionsData::ForegroundColor)
+        .def_readwrite("TexturePageWidth", &FFontImportOptionsData::TexturePageWidth)
+        .def_readwrite("TexturePageMaxHeight", &FFontImportOptionsData::TexturePageMaxHeight)
+        .def_readwrite("XPadding", &FFontImportOptionsData::XPadding)
+        .def_readwrite("YPadding", &FFontImportOptionsData::YPadding)
+        .def_readwrite("ExtendBoxTop", &FFontImportOptionsData::ExtendBoxTop)
+        .def_readwrite("ExtendBoxBottom", &FFontImportOptionsData::ExtendBoxBottom)
+        .def_readwrite("ExtendBoxRight", &FFontImportOptionsData::ExtendBoxRight)
+        .def_readwrite("ExtendBoxLeft", &FFontImportOptionsData::ExtendBoxLeft)
+        .def_readwrite("Kerning", &FFontImportOptionsData::Kerning)
+        .def_readwrite("DistanceFieldScaleFactor", &FFontImportOptionsData::DistanceFieldScaleFactor)
+        .def_readwrite("DistanceFieldScanRadiusScale", &FFontImportOptionsData::DistanceFieldScanRadiusScale)
+    ;
+
+    class_< FParticleBurst >("FParticleBurst", init<  >())
+        .def(init< const FParticleBurst& >())
+        .def_readwrite("Count", &FParticleBurst::Count)
+        .def_readwrite("CountLow", &FParticleBurst::CountLow)
+        .def_readwrite("Time", &FParticleBurst::Time)
+        .def_readwrite("CountDistribution", &FParticleBurst::CountDistribution)
+    ;
+
+    class_< FParticleEvent_GenerateInfo >("FParticleEvent_GenerateInfo", init<  >())
+        .def(init< const FParticleEvent_GenerateInfo& >())
+        .def_readwrite("Type", &FParticleEvent_GenerateInfo::Type)
+        .def_readwrite("Frequency", &FParticleEvent_GenerateInfo::Frequency)
+        .def_readwrite("LowFreq", &FParticleEvent_GenerateInfo::LowFreq)
+        .def_readwrite("ParticleFrequency", &FParticleEvent_GenerateInfo::ParticleFrequency)
+        .def_readwrite("FirstTimeOnly", &FParticleEvent_GenerateInfo::FirstTimeOnly)
+        .def_readwrite("LastTimeOnly", &FParticleEvent_GenerateInfo::LastTimeOnly)
+        .def_readwrite("UseReflectedImpactVector", &FParticleEvent_GenerateInfo::UseReflectedImpactVector)
+        .def_readwrite("CustomName", &FParticleEvent_GenerateInfo::CustomName)
+        .def_readwrite("ParticleModuleEventsToSendToGame", &FParticleEvent_GenerateInfo::ParticleModuleEventsToSendToGame)
+    ;
+
+    class_< FOrbitOptions >("FOrbitOptions", init<  >())
+        .def(init< const FOrbitOptions& >())
+    ;
+
+    class_< FFontParameterValue >("FFontParameterValue", init<  >())
+        .def(init< const FFontParameterValue& >())
+        .def_readwrite("ParameterName", &FFontParameterValue::ParameterName)
+        .def_readwrite("FontValue", &FFontParameterValue::FontValue)
+        .def_readwrite("FontPage", &FFontParameterValue::FontPage)
+        .def_readwrite("ExpressionGUID", &FFontParameterValue::ExpressionGUID)
+    ;
+
+    class_< FScalarParameterValue >("FScalarParameterValue", init<  >())
+        .def(init< const FScalarParameterValue& >())
+        .def_readwrite("ParameterName", &FScalarParameterValue::ParameterName)
+        .def_readwrite("ParameterValue", &FScalarParameterValue::ParameterValue)
+        .def_readwrite("ExpressionGUID", &FScalarParameterValue::ExpressionGUID)
+    ;
+
+    class_< FTextureParameterValue >("FTextureParameterValue", init<  >())
+        .def(init< const FTextureParameterValue& >())
+        .def_readwrite("ParameterName", &FTextureParameterValue::ParameterName)
+        .def_readwrite("ParameterValue", &FTextureParameterValue::ParameterValue)
+        .def_readwrite("ExpressionGUID", &FTextureParameterValue::ExpressionGUID)
+    ;
+
+    class_< FVectorParameterValue >("FVectorParameterValue", init<  >())
+        .def(init< const FVectorParameterValue& >())
+        .def_readwrite("ParameterName", &FVectorParameterValue::ParameterName)
+        .def_readwrite("ParameterValue", &FVectorParameterValue::ParameterValue)
+        .def_readwrite("ExpressionGUID", &FVectorParameterValue::ExpressionGUID)
+    ;
+
+    class_< FFontParameterValueOverTime >("FFontParameterValueOverTime", init<  >())
+        .def(init< const FFontParameterValueOverTime& >())
+        .def_readwrite("FontValue", &FFontParameterValueOverTime::FontValue)
+        .def_readwrite("FontPage", &FFontParameterValueOverTime::FontPage)
+        .def_readwrite("ExpressionGUID", &FParameterValueOverTime::ExpressionGUID)
+        .def_readwrite("StartTime", &FParameterValueOverTime::StartTime)
+        .def_readwrite("ParameterName", &FParameterValueOverTime::ParameterName)
+        .def_readwrite("CycleTime", &FParameterValueOverTime::CycleTime)
+        .def_readwrite("OffsetTime", &FParameterValueOverTime::OffsetTime)
+    ;
+
+    class_< FParameterValueOverTime >("FParameterValueOverTime", init<  >())
+        .def(init< const FParameterValueOverTime& >())
+        .def_readwrite("ExpressionGUID", &FParameterValueOverTime::ExpressionGUID)
+        .def_readwrite("StartTime", &FParameterValueOverTime::StartTime)
+        .def_readwrite("ParameterName", &FParameterValueOverTime::ParameterName)
+        .def_readwrite("CycleTime", &FParameterValueOverTime::CycleTime)
+        .def_readwrite("OffsetTime", &FParameterValueOverTime::OffsetTime)
+    ;
+
+    class_< FScalarParameterValueOverTime, bases< FParameterValueOverTime >  >("FScalarParameterValueOverTime", init<  >())
+        .def(init< const FScalarParameterValueOverTime& >())
+        .def_readwrite("ParameterValue", &FScalarParameterValueOverTime::ParameterValue)
+        .def_readwrite("ParameterValueCurve", &FScalarParameterValueOverTime::ParameterValueCurve)
+    ;
+
+    class_< FTextureParameterValueOverTime, bases< FParameterValueOverTime >  >("FTextureParameterValueOverTime", init<  >())
+        .def(init< const FTextureParameterValueOverTime& >())
+        .def_readwrite("ParameterValue", &FTextureParameterValueOverTime::ParameterValue)
+    ;
+
+    class_< FVectorParameterValueOverTime, bases< FParameterValueOverTime >  >("FVectorParameterValueOverTime", init<  >())
+        .def(init< const FVectorParameterValueOverTime& >())
+        .def_readwrite("ParameterValue", &FVectorParameterValueOverTime::ParameterValue)
+        .def_readwrite("ParameterValueCurve", &FVectorParameterValueOverTime::ParameterValueCurve)
+    ;
+
+    class_< FStaticMeshLODInfo >("FStaticMeshLODInfo", init<  >())
+        .def(init< const FStaticMeshLODInfo& >())
+        .def_readwrite("Elements", &FStaticMeshLODInfo::Elements)
+    ;
+
+    class_< FStaticMeshLODElement >("FStaticMeshLODElement", init<  >())
+        .def(init< const FStaticMeshLODElement& >())
+        .def_readwrite("Material", &FStaticMeshLODElement::Material)
+        .def_readwrite("UnknownData00", &FStaticMeshLODElement::UnknownData00)
+    ;
+
+    class_< FKAggregateGeom >("FKAggregateGeom", init<  >())
+        .def(init< const FKAggregateGeom& >())
+        .def_readwrite("SphereElems", &FKAggregateGeom::SphereElems)
+        .def_readwrite("BoxElems", &FKAggregateGeom::BoxElems)
+        .def_readwrite("SphylElems", &FKAggregateGeom::SphylElems)
+        .def_readwrite("ConvexElems", &FKAggregateGeom::ConvexElems)
+        .def_readwrite("RenderInfo", &FKAggregateGeom::RenderInfo)
+    ;
+
+    class_< FKSphereElem >("FKSphereElem", init<  >())
+        .def(init< const FKSphereElem& >())
+        .def_readwrite("TM", &FKSphereElem::TM)
+        .def_readwrite("Radius", &FKSphereElem::Radius)
+    ;
+
+    class_< FKBoxElem >("FKBoxElem", init<  >())
+        .def(init< const FKBoxElem& >())
+        .def_readwrite("TM", &FKBoxElem::TM)
+        .def_readwrite("X", &FKBoxElem::X)
+        .def_readwrite("Y", &FKBoxElem::Y)
+        .def_readwrite("Z", &FKBoxElem::Z)
+    ;
+
+    class_< FKSphylElem >("FKSphylElem", init<  >())
+        .def(init< const FKSphylElem& >())
+        .def_readwrite("TM", &FKSphylElem::TM)
+        .def_readwrite("Radius", &FKSphylElem::Radius)
+        .def_readwrite("Length", &FKSphylElem::Length)
+    ;
+
+    class_< FKConvexElem >("FKConvexElem", init<  >())
+        .def(init< const FKConvexElem& >())
+        .def_readwrite("VertexData", &FKConvexElem::VertexData)
+        .def_readwrite("PermutedVertexData", &FKConvexElem::PermutedVertexData)
+        .def_readwrite("FaceTriData", &FKConvexElem::FaceTriData)
+        .def_readwrite("EdgeDirections", &FKConvexElem::EdgeDirections)
+        .def_readwrite("FaceNormalDirections", &FKConvexElem::FaceNormalDirections)
+        .def_readwrite("FacePlaneData", &FKConvexElem::FacePlaneData)
+        .def_readwrite("ElemBox", &FKConvexElem::ElemBox)
+    ;
+
+    class_< FKCachedConvexData >("FKCachedConvexData", init<  >())
+        .def(init< const FKCachedConvexData& >())
+        .def_readwrite("CachedConvexElements", &FKCachedConvexData::CachedConvexElements)
+    ;
+
+    class_< FKCachedConvexDataElement >("FKCachedConvexDataElement", init<  >())
+        .def(init< const FKCachedConvexDataElement& >())
+        .def_readwrite("ConvexElementData", &FKCachedConvexDataElement::ConvexElementData)
+    ;
+
+    class_< FStaticMeshComponentLODInfo >("FStaticMeshComponentLODInfo", init<  >())
+        .def(init< const FStaticMeshComponentLODInfo& >())
+        .def_readwrite("ShadowMaps", &FStaticMeshComponentLODInfo::ShadowMaps)
+        .def_readwrite("ShadowVertexBuffers", &FStaticMeshComponentLODInfo::ShadowVertexBuffers)
+        .def_readwrite("LightMap", &FStaticMeshComponentLODInfo::LightMap)
+        .def_readwrite("OverrideVertexColors", &FStaticMeshComponentLODInfo::OverrideVertexColors)
+    ;
+
+    class_< FInstancedStaticMeshInstanceData >("FInstancedStaticMeshInstanceData", init<  >())
+        .def(init< const FInstancedStaticMeshInstanceData& >())
+        .def_readwrite("Transform", &FInstancedStaticMeshInstanceData::Transform)
+        .def_readwrite("LightmapUVBias", &FInstancedStaticMeshInstanceData::LightmapUVBias)
+        .def_readwrite("ShadowmapUVBias", &FInstancedStaticMeshInstanceData::ShadowmapUVBias)
+    ;
+
+    class_< FInstancedStaticMeshMappingInfo >("FInstancedStaticMeshMappingInfo", init<  >())
+        .def(init< const FInstancedStaticMeshMappingInfo& >())
+        .def_readwrite("Mapping", &FInstancedStaticMeshMappingInfo::Mapping)
+        .def_readwrite("LightMap", &FInstancedStaticMeshMappingInfo::LightMap)
+        .def_readwrite("LightmapTexture", &FInstancedStaticMeshMappingInfo::LightmapTexture)
+        .def_readwrite("ShadowmapTexture", &FInstancedStaticMeshMappingInfo::ShadowmapTexture)
+    ;
+
+    class_< FBoneMirrorInfo >("FBoneMirrorInfo", init<  >())
+        .def(init< const FBoneMirrorInfo& >())
+        .def_readwrite("SourceIndex", &FBoneMirrorInfo::SourceIndex)
+        .def_readwrite("BoneFlipAxis", &FBoneMirrorInfo::BoneFlipAxis)
+    ;
+
+    class_< FSkeletalMeshLODInfo >("FSkeletalMeshLODInfo", init<  >())
+        .def(init< const FSkeletalMeshLODInfo& >())
+        .def_readwrite("DisplayFactor", &FSkeletalMeshLODInfo::DisplayFactor)
+        .def_readwrite("LODHysteresis", &FSkeletalMeshLODInfo::LODHysteresis)
+        .def_readwrite("LODMaterialMap", &FSkeletalMeshLODInfo::LODMaterialMap)
+        .def_readwrite("TriangleSorting", &FSkeletalMeshLODInfo::TriangleSorting)
+        .def_readwrite("TriangleSortSettings", &FSkeletalMeshLODInfo::TriangleSortSettings)
+    ;
+
+    class_< FTriangleSortSettings >("FTriangleSortSettings", init<  >())
+        .def(init< const FTriangleSortSettings& >())
+        .def_readwrite("TriangleSorting", &FTriangleSortSettings::TriangleSorting)
+        .def_readwrite("CustomLeftRightAxis", &FTriangleSortSettings::CustomLeftRightAxis)
+        .def_readwrite("CustomLeftRightBoneName", &FTriangleSortSettings::CustomLeftRightBoneName)
+    ;
+
+    class_< FGroupAnimationAndSoundIdentifier >("FGroupAnimationAndSoundIdentifier", init<  >())
+        .def(init< const FGroupAnimationAndSoundIdentifier& >())
+        .def_readwrite("SoundNodeWaveName", &FGroupAnimationAndSoundIdentifier::SoundNodeWaveName)
+        .def_readwrite("FaceFXGroupName", &FGroupAnimationAndSoundIdentifier::FaceFXGroupName)
+        .def_readwrite("FaceFXAnimName", &FGroupAnimationAndSoundIdentifier::FaceFXAnimName)
+    ;
+
+    class_< FClothSpecialBoneInfo >("FClothSpecialBoneInfo", init<  >())
+        .def(init< const FClothSpecialBoneInfo& >())
+        .def_readwrite("BoneName", &FClothSpecialBoneInfo::BoneName)
+        .def_readwrite("BoneType", &FClothSpecialBoneInfo::BoneType)
+        .def_readwrite("AttachedVertexIndices", &FClothSpecialBoneInfo::AttachedVertexIndices)
+    ;
+
+    class_< FSoftBodyTetraLink >("FSoftBodyTetraLink", init<  >())
+        .def(init< const FSoftBodyTetraLink& >())
+        .def_readwrite("Index", &FSoftBodyTetraLink::Index)
+        .def_readwrite("Bary", &FSoftBodyTetraLink::Bary)
+    ;
+
+    class_< FSoftBodySpecialBoneInfo >("FSoftBodySpecialBoneInfo", init<  >())
+        .def(init< const FSoftBodySpecialBoneInfo& >())
+        .def_readwrite("BoneName", &FSoftBodySpecialBoneInfo::BoneName)
+        .def_readwrite("BoneType", &FSoftBodySpecialBoneInfo::BoneType)
+        .def_readwrite("AttachedVertexIndices", &FSoftBodySpecialBoneInfo::AttachedVertexIndices)
+    ;
+
+    class_< FGestaltDataContainer >("FGestaltDataContainer", init<  >())
+        .def(init< const FGestaltDataContainer& >())
+        .def_readwrite("SkeletalMesh", &FGestaltDataContainer::SkeletalMesh)
+        .def_readwrite("LODModelData", &FGestaltDataContainer::LODModelData)
+        .def_readwrite("SocketMappings", &FGestaltDataContainer::SocketMappings)
+        .def_readwrite("GestaltAccessoryList", &FGestaltDataContainer::GestaltAccessoryList)
+        .def_readwrite("GestaltPartMatricesContainer", &FGestaltDataContainer::GestaltPartMatricesContainer)
+        .def_readwrite("ReferencePoseBounds", &FGestaltDataContainer::ReferencePoseBounds)
+    ;
+
+    class_< FGestaltLODModel >("FGestaltLODModel", init<  >())
+        .def(init< const FGestaltLODModel& >())
+        .def_readwrite("GestaltFragments", &FGestaltLODModel::GestaltFragments)
+    ;
+
+    class_< FGestaltLODModelFragment >("FGestaltLODModelFragment", init<  >())
+        .def(init< const FGestaltLODModelFragment& >())
+        .def_readwrite("MaterialIndex", &FGestaltLODModelFragment::MaterialIndex)
+        .def_readwrite("FirstIndex", &FGestaltLODModelFragment::FirstIndex)
+        .def_readwrite("NumPrimitives", &FGestaltLODModelFragment::NumPrimitives)
+    ;
+
+    class_< FSocketRemapEntry >("FSocketRemapEntry", init<  >())
+        .def(init< const FSocketRemapEntry& >())
+        .def_readwrite("OriginalSocketName", &FSocketRemapEntry::OriginalSocketName)
+        .def_readwrite("MangledSocketName", &FSocketRemapEntry::MangledSocketName)
+    ;
+
+    class_< FGestaltAccessoryEntry >("FGestaltAccessoryEntry", init<  >())
+        .def(init< const FGestaltAccessoryEntry& >())
+        .def_readwrite("TransformIndex", &FGestaltAccessoryEntry::TransformIndex)
+        .def_readwrite("OriginalBoneIndex", &FGestaltAccessoryEntry::OriginalBoneIndex)
+        .def_readwrite("GPUBoneIndex", &FGestaltAccessoryEntry::GPUBoneIndex)
+    ;
+
+    class_< FGestaltAccessoryMeshEntry >("FGestaltAccessoryMeshEntry", init<  >())
+        .def(init< const FGestaltAccessoryMeshEntry& >())
+        .def_readwrite("MeshName", &FGestaltAccessoryMeshEntry::MeshName)
+        .def_readwrite("GestaltAccessoryGroupList", &FGestaltAccessoryMeshEntry::GestaltAccessoryGroupList)
+    ;
+
+    class_< FGestaltAccessoryGroupEntry >("FGestaltAccessoryGroupEntry", init<  >())
+        .def(init< const FGestaltAccessoryGroupEntry& >())
+        .def_readwrite("GroupName", &FGestaltAccessoryGroupEntry::GroupName)
+        .def_readwrite("GestaltAccessoryPartList", &FGestaltAccessoryGroupEntry::GestaltAccessoryPartList)
+    ;
+
+    class_< FGestaltAccessoryPartEntry >("FGestaltAccessoryPartEntry", init<  >())
+        .def(init< const FGestaltAccessoryPartEntry& >())
+        .def_readwrite("PartName", &FGestaltAccessoryPartEntry::PartName)
+        .def_readwrite("BoneName", &FGestaltAccessoryPartEntry::BoneName)
+        .def_readwrite("MatrixIndex", &FGestaltAccessoryPartEntry::MatrixIndex)
+    ;
+
+    class_< FCurveKey >("FCurveKey", init<  >())
+        .def(init< const FCurveKey& >())
+        .def_readwrite("CurveName", &FCurveKey::CurveName)
+        .def_readwrite("Weight", &FCurveKey::Weight)
+    ;
+
+    class_< FAnimBlendChild >("FAnimBlendChild", init<  >())
+        .def(init< const FAnimBlendChild& >())
+        .def_readwrite("Name", &FAnimBlendChild::Name)
+        .def_readwrite("Anim", &FAnimBlendChild::Anim)
+        .def_readwrite("Weight", &FAnimBlendChild::Weight)
+        .def_readwrite("BlendWeight", &FAnimBlendChild::BlendWeight)
+        .def_readwrite("AdditiveWeightScale", &FAnimBlendChild::AdditiveWeightScale)
+    ;
+
+    class_< FAnimGroup >("FAnimGroup", init<  >())
+        .def(init< const FAnimGroup& >())
+        .def_readwrite("SeqNodes", &FAnimGroup::SeqNodes)
+        .def_readwrite("SynchMaster", &FAnimGroup::SynchMaster)
+        .def_readwrite("NotifyMaster", &FAnimGroup::NotifyMaster)
+        .def_readwrite("GroupName", &FAnimGroup::GroupName)
+        .def_readwrite("RateScale", &FAnimGroup::RateScale)
+        .def_readwrite("SynchPctPosition", &FAnimGroup::SynchPctPosition)
+    ;
+
+    class_< FAnimNotifyEvent >("FAnimNotifyEvent", init<  >())
+        .def(init< const FAnimNotifyEvent& >())
+        .def_readwrite("Time", &FAnimNotifyEvent::Time)
+        .def_readwrite("Notify", &FAnimNotifyEvent::Notify)
+        .def_readwrite("Duration", &FAnimNotifyEvent::Duration)
+    ;
+
+    class_< FSkelControlModifier >("FSkelControlModifier", init<  >())
+        .def(init< const FSkelControlModifier& >())
+        .def_readwrite("SkelControlName", &FSkelControlModifier::SkelControlName)
+        .def_readwrite("Modifiers", &FSkelControlModifier::Modifiers)
+    ;
+
+    class_< FTimeModifier >("FTimeModifier", init<  >())
+        .def(init< const FTimeModifier& >())
+        .def_readwrite("Time", &FTimeModifier::Time)
+        .def_readwrite("TargetStrength", &FTimeModifier::TargetStrength)
+    ;
+
+    class_< FRawAnimSequenceTrack >("FRawAnimSequenceTrack", init<  >())
+        .def(init< const FRawAnimSequenceTrack& >())
+        .def_readwrite("PosKeys", &FRawAnimSequenceTrack::PosKeys)
+        .def_readwrite("RotKeys", &FRawAnimSequenceTrack::RotKeys)
+    ;
+
+    class_< FTranslationTrack >("FTranslationTrack", init<  >())
+        .def(init< const FTranslationTrack& >())
+        .def_readwrite("PosKeys", &FTranslationTrack::PosKeys)
+        .def_readwrite("Times", &FTranslationTrack::Times)
+    ;
+
+    class_< FRotationTrack >("FRotationTrack", init<  >())
+        .def(init< const FRotationTrack& >())
+        .def_readwrite("RotKeys", &FRotationTrack::RotKeys)
+        .def_readwrite("Times", &FRotationTrack::Times)
+    ;
+
+    class_< FCurveTrack >("FCurveTrack", init<  >())
+        .def(init< const FCurveTrack& >())
+        .def_readwrite("CurveName", &FCurveTrack::CurveName)
+        .def_readwrite("CurveWeights", &FCurveTrack::CurveWeights)
+    ;
+
+    class_< FDeltaTrackInfo >("FDeltaTrackInfo", init<  >())
+        .def(init< const FDeltaTrackInfo& >())
+        .def_readwrite("RotKey", &FDeltaTrackInfo::RotKey)
+        .def_readwrite("PosKey", &FDeltaTrackInfo::PosKey)
+        .def_readwrite("RotKeyIndex", &FDeltaTrackInfo::RotKeyIndex)
+        .def_readwrite("PosKeyIndex", &FDeltaTrackInfo::PosKeyIndex)
+    ;
+
+    class_< FAnimSetMeshLinkup >("FAnimSetMeshLinkup", init<  >())
+        .def(init< const FAnimSetMeshLinkup& >())
+        .def_readwrite("BoneToTrackTable", &FAnimSetMeshLinkup::BoneToTrackTable)
+    ;
+
+    class_< FPostProcessSettings >("FPostProcessSettings", init<  >())
+        .def(init< const FPostProcessSettings& >())
+        .def_readwrite("Bloom_Scale", &FPostProcessSettings::Bloom_Scale)
+        .def_readwrite("Bloom_Threshold", &FPostProcessSettings::Bloom_Threshold)
+        .def_readwrite("Bloom_Tint", &FPostProcessSettings::Bloom_Tint)
+        .def_readwrite("Bloom_ScreenBlendThreshold", &FPostProcessSettings::Bloom_ScreenBlendThreshold)
+        .def_readwrite("Bloom_InterpolationDuration", &FPostProcessSettings::Bloom_InterpolationDuration)
+        .def_readwrite("DOF_BlurBloomKernelSize", &FPostProcessSettings::DOF_BlurBloomKernelSize)
+        .def_readwrite("DOF_FalloffExponent", &FPostProcessSettings::DOF_FalloffExponent)
+        .def_readwrite("DOF_BlurKernelSize", &FPostProcessSettings::DOF_BlurKernelSize)
+        .def_readwrite("DOF_MaxNearBlurAmount", &FPostProcessSettings::DOF_MaxNearBlurAmount)
+        .def_readwrite("DOF_MinBlurAmount", &FPostProcessSettings::DOF_MinBlurAmount)
+        .def_readwrite("DOF_MaxFarBlurAmount", &FPostProcessSettings::DOF_MaxFarBlurAmount)
+        .def_readwrite("DOF_FocusType", &FPostProcessSettings::DOF_FocusType)
+        .def_readwrite("DOF_FocusInnerRadius", &FPostProcessSettings::DOF_FocusInnerRadius)
+        .def_readwrite("DOF_FocusDistance", &FPostProcessSettings::DOF_FocusDistance)
+        .def_readwrite("DOF_FocusPosition", &FPostProcessSettings::DOF_FocusPosition)
+        .def_readwrite("DOF_TunnelVisionScale", &FPostProcessSettings::DOF_TunnelVisionScale)
+        .def_readwrite("DOF_TunnelVisionYOffset", &FPostProcessSettings::DOF_TunnelVisionYOffset)
+        .def_readwrite("DOF_InterpolationDuration", &FPostProcessSettings::DOF_InterpolationDuration)
+        .def_readwrite("DOF_BokehTexture", &FPostProcessSettings::DOF_BokehTexture)
+        .def_readwrite("MotionBlur_MaxVelocity", &FPostProcessSettings::MotionBlur_MaxVelocity)
+        .def_readwrite("MotionBlur_Amount", &FPostProcessSettings::MotionBlur_Amount)
+        .def_readwrite("MotionBlur_FullMotionBlur", &FPostProcessSettings::MotionBlur_FullMotionBlur)
+        .def_readwrite("MotionBlur_CameraRotationThreshold", &FPostProcessSettings::MotionBlur_CameraRotationThreshold)
+        .def_readwrite("MotionBlur_CameraTranslationThreshold", &FPostProcessSettings::MotionBlur_CameraTranslationThreshold)
+        .def_readwrite("MotionBlur_InterpolationDuration", &FPostProcessSettings::MotionBlur_InterpolationDuration)
+        .def_readwrite("Scene_Desaturation", &FPostProcessSettings::Scene_Desaturation)
+        .def_readwrite("Scene_Colorize", &FPostProcessSettings::Scene_Colorize)
+        .def_readwrite("Scene_TonemapperScale", &FPostProcessSettings::Scene_TonemapperScale)
+        .def_readwrite("Scene_ImageGrainScale", &FPostProcessSettings::Scene_ImageGrainScale)
+        .def_readwrite("Scene_HighLights", &FPostProcessSettings::Scene_HighLights)
+        .def_readwrite("Scene_MidTones", &FPostProcessSettings::Scene_MidTones)
+        .def_readwrite("Scene_Shadows", &FPostProcessSettings::Scene_Shadows)
+        .def_readwrite("Scene_InterpolationDuration", &FPostProcessSettings::Scene_InterpolationDuration)
+        .def_readwrite("RimShader_Color", &FPostProcessSettings::RimShader_Color)
+        .def_readwrite("RimShader_InterpolationDuration", &FPostProcessSettings::RimShader_InterpolationDuration)
+        .def_readwrite("ColorGrading_LookupTable", &FPostProcessSettings::ColorGrading_LookupTable)
+        .def_readwrite("ColorGradingLUT", &FPostProcessSettings::ColorGradingLUT)
+    ;
+
+    class_< FLUTBlender >("FLUTBlender", init<  >())
+        .def(init< const FLUTBlender& >())
+        .def_readwrite("LUTTextures", &FLUTBlender::LUTTextures)
+        .def_readwrite("LUTWeights", &FLUTBlender::LUTWeights)
+    ;
+
+    class_< FInterpLookupTrack >("FInterpLookupTrack", init<  >())
+        .def(init< const FInterpLookupTrack& >())
+        .def_readwrite("Points", &FInterpLookupTrack::Points)
+    ;
+
+    class_< FInterpLookupPoint >("FInterpLookupPoint", init<  >())
+        .def(init< const FInterpLookupPoint& >())
+        .def_readwrite("GroupName", &FInterpLookupPoint::GroupName)
+        .def_readwrite("Time", &FInterpLookupPoint::Time)
+    ;
+
+    class_< FSkelControlListHead >("FSkelControlListHead", init<  >())
+        .def(init< const FSkelControlListHead& >())
+        .def_readwrite("BoneName", &FSkelControlListHead::BoneName)
+        .def_readwrite("ControlHead", &FSkelControlListHead::ControlHead)
+    ;
+
+    class_< FLinearDOFSetup >("FLinearDOFSetup", init<  >())
+        .def(init< const FLinearDOFSetup& >())
+        .def_readwrite("LimitSize", &FLinearDOFSetup::LimitSize)
+    ;
+
+    class_< FActiveMorph >("FActiveMorph", init<  >())
+        .def(init< const FActiveMorph& >())
+        .def_readwrite("Target", &FActiveMorph::Target)
+        .def_readwrite("Weight", &FActiveMorph::Weight)
+    ;
+
+    class_< FAttachment >("FAttachment", init<  >())
+        .def(init< const FAttachment& >())
+        .def_readwrite("Component", &FAttachment::Component)
+        .def_readwrite("BoneName", &FAttachment::BoneName)
+        .def_readwrite("RelativeLocation", &FAttachment::RelativeLocation)
+        .def_readwrite("RelativeRotation", &FAttachment::RelativeRotation)
+        .def_readwrite("RelativeScale", &FAttachment::RelativeScale)
+    ;
+
+    class_< FBonePair >("FBonePair", init<  >())
+        .def(init< const FBonePair& >())
+        .def_readwrite("Bones", &FBonePair::Bones)
+    ;
+
+    class_< FSkelMeshComponentLODInfo >("FSkelMeshComponentLODInfo", init<  >())
+        .def(init< const FSkelMeshComponentLODInfo& >())
+        .def_readwrite("HiddenMaterials", &FSkelMeshComponentLODInfo::HiddenMaterials)
+        .def_readwrite("InstanceWeightUsage", &FSkelMeshComponentLODInfo::InstanceWeightUsage)
+        .def_readwrite("InstanceWeightIdx", &FSkelMeshComponentLODInfo::InstanceWeightIdx)
+    ;
+
+    class_< FRBCollisionChannelContainer >("FRBCollisionChannelContainer", init<  >())
+        .def(init< const FRBCollisionChannelContainer& >())
+        .def_readwrite("Default", &FRBCollisionChannelContainer::Default)
+        .def_readwrite("Nothing", &FRBCollisionChannelContainer::Nothing)
+        .def_readwrite("Pawn", &FRBCollisionChannelContainer::Pawn)
+        .def_readwrite("Vehicle", &FRBCollisionChannelContainer::Vehicle)
+        .def_readwrite("Water", &FRBCollisionChannelContainer::Water)
+        .def_readwrite("GameplayPhysics", &FRBCollisionChannelContainer::GameplayPhysics)
+        .def_readwrite("EffectPhysics", &FRBCollisionChannelContainer::EffectPhysics)
+        .def_readwrite("Untitled1", &FRBCollisionChannelContainer::Untitled1)
+        .def_readwrite("Untitled2", &FRBCollisionChannelContainer::Untitled2)
+        .def_readwrite("TossedItems", &FRBCollisionChannelContainer::TossedItems)
+        .def_readwrite("TossedItemsPlayerVehicle", &FRBCollisionChannelContainer::TossedItemsPlayerVehicle)
+        .def_readwrite("Cloth", &FRBCollisionChannelContainer::Cloth)
+        .def_readwrite("FluidDrain", &FRBCollisionChannelContainer::FluidDrain)
+        .def_readwrite("SoftBody", &FRBCollisionChannelContainer::SoftBody)
+        .def_readwrite("FracturedMeshPart", &FRBCollisionChannelContainer::FracturedMeshPart)
+        .def_readwrite("BlockingVolume", &FRBCollisionChannelContainer::BlockingVolume)
+        .def_readwrite("DeadPawn", &FRBCollisionChannelContainer::DeadPawn)
+        .def_readwrite("Clothing", &FRBCollisionChannelContainer::Clothing)
+        .def_readwrite("ClothingCollision", &FRBCollisionChannelContainer::ClothingCollision)
+        .def_readwrite("TossedItemsEnemyVehicle", &FRBCollisionChannelContainer::TossedItemsEnemyVehicle)
+        .def_readwrite("PlayerVehicle", &FRBCollisionChannelContainer::PlayerVehicle)
+        .def_readwrite("EnemyVehicle", &FRBCollisionChannelContainer::EnemyVehicle)
+        .def_readwrite("PlayerVehicleEnemyVehicle", &FRBCollisionChannelContainer::PlayerVehicleEnemyVehicle)
+        .def_readwrite("TossedItemsPlayerVehicleEnemyVehicle", &FRBCollisionChannelContainer::TossedItemsPlayerVehicleEnemyVehicle)
+        .def_readwrite("WillowPickup", &FRBCollisionChannelContainer::WillowPickup)
+    ;
+
+    class_< FColorMaterialInput >("FColorMaterialInput", init<  >())
+        .def(init< const FColorMaterialInput& >())
+        .def_readwrite("UseConstant", &FColorMaterialInput::UseConstant)
+        .def_readwrite("Constant", &FColorMaterialInput::Constant)
+        .def_readwrite("Expression", &FMaterialInput::Expression)
+        .def_readwrite("Mask", &FMaterialInput::Mask)
+        .def_readwrite("MaskR", &FMaterialInput::MaskR)
+        .def_readwrite("MaskG", &FMaterialInput::MaskG)
+        .def_readwrite("MaskB", &FMaterialInput::MaskB)
+        .def_readwrite("MaskA", &FMaterialInput::MaskA)
+        .def_readwrite("GCC64_Padding", &FMaterialInput::GCC64_Padding)
+    ;
+
+    class_< FMaterialInput >("FMaterialInput", init<  >())
+        .def(init< const FMaterialInput& >())
+        .def_readwrite("Expression", &FMaterialInput::Expression)
+        .def_readwrite("Mask", &FMaterialInput::Mask)
+        .def_readwrite("MaskR", &FMaterialInput::MaskR)
+        .def_readwrite("MaskG", &FMaterialInput::MaskG)
+        .def_readwrite("MaskB", &FMaterialInput::MaskB)
+        .def_readwrite("MaskA", &FMaterialInput::MaskA)
+        .def_readwrite("GCC64_Padding", &FMaterialInput::GCC64_Padding)
+    ;
+
+    class_< FScalarMaterialInput, bases< FMaterialInput >  >("FScalarMaterialInput", init<  >())
+        .def(init< const FScalarMaterialInput& >())
+        .def_readwrite("UseConstant", &FScalarMaterialInput::UseConstant)
+        .def_readwrite("Constant", &FScalarMaterialInput::Constant)
+    ;
+
+    class_< FVectorMaterialInput, bases< FMaterialInput >  >("FVectorMaterialInput", init<  >())
+        .def(init< const FVectorMaterialInput& >())
+        .def_readwrite("UseConstant", &FVectorMaterialInput::UseConstant)
+        .def_readwrite("Constant", &FVectorMaterialInput::Constant)
+    ;
+
+    class_< FVector2MaterialInput, bases< FMaterialInput >  >("FVector2MaterialInput", init<  >())
+        .def(init< const FVector2MaterialInput& >())
+        .def_readwrite("UseConstant", &FVector2MaterialInput::UseConstant)
+        .def_readwrite("ConstantX", &FVector2MaterialInput::ConstantX)
+        .def_readwrite("ConstantY", &FVector2MaterialInput::ConstantY)
+    ;
+
+    class_< FAudioComponentParam >("FAudioComponentParam", init<  >())
+        .def(init< const FAudioComponentParam& >())
+        .def_readwrite("ParamName", &FAudioComponentParam::ParamName)
+        .def_readwrite("FloatParam", &FAudioComponentParam::FloatParam)
+        .def_readwrite("WaveParam", &FAudioComponentParam::WaveParam)
+    ;
+
+    class_< FSubtitleCue >("FSubtitleCue", init<  >())
+        .def(init< const FSubtitleCue& >())
+        .def_readwrite("Text", &FSubtitleCue::Text)
+        .def_readwrite("Time", &FSubtitleCue::Time)
+    ;
+
+    class_< FLocalizedSubtitle >("FLocalizedSubtitle", init<  >())
+        .def(init< const FLocalizedSubtitle& >())
+        .def_readwrite("LanguageExt", &FLocalizedSubtitle::LanguageExt)
+        .def_readwrite("Subtitles", &FLocalizedSubtitle::Subtitles)
+    ;
+
+    class_< FKCachedConvexData_Mirror >("FKCachedConvexData_Mirror", init<  >())
+        .def(init< const FKCachedConvexData_Mirror& >())
+        .def_readwrite("CachedConvexElements", &FKCachedConvexData_Mirror::CachedConvexElements)
+    ;
+
+    class_< FGeomSelection >("FGeomSelection", init<  >())
+        .def(init< const FGeomSelection& >())
+        .def_readwrite("Type", &FGeomSelection::Type)
+        .def_readwrite("Index", &FGeomSelection::Index)
+        .def_readwrite("SelectionIndex", &FGeomSelection::SelectionIndex)
+    ;
+
+    class_< FOpinionData >("FOpinionData", init<  >())
+        .def(init< const FOpinionData& >())
+        .def_readwrite("Opinion", &FOpinionData::Opinion)
+        .def_readwrite("Allegiance", &FOpinionData::Allegiance)
+    ;
+
+    class_< FInfoBarData >("FInfoBarData", init<  >())
+        .def(init< const FInfoBarData& >())
+        .def_readwrite("Type", &FInfoBarData::Type)
+        .def_readwrite("Amount", &FInfoBarData::Amount)
+    ;
+
+    class_< FActivateOp >("FActivateOp", init<  >())
+        .def(init< const FActivateOp& >())
+        .def_readwrite("ActivatorOp", &FActivateOp::ActivatorOp)
+        .def_readwrite("Op", &FActivateOp::Op)
+        .def_readwrite("InputIdx", &FActivateOp::InputIdx)
+        .def_readwrite("RemainingDelay", &FActivateOp::RemainingDelay)
+    ;
+
+    class_< FQueuedActivationInfo >("FQueuedActivationInfo", init<  >())
+        .def(init< const FQueuedActivationInfo& >())
+        .def_readwrite("ActivatedEvent", &FQueuedActivationInfo::ActivatedEvent)
+        .def_readwrite("InOriginator", &FQueuedActivationInfo::InOriginator)
+        .def_readwrite("InInstigator", &FQueuedActivationInfo::InInstigator)
+        .def_readwrite("ActivateIndices", &FQueuedActivationInfo::ActivateIndices)
+    ;
+
+    class_< FReverbSettings >("FReverbSettings", init<  >())
+        .def(init< const FReverbSettings& >())
+        .def_readwrite("ReverbType", &FReverbSettings::ReverbType)
+        .def_readwrite("Volume", &FReverbSettings::Volume)
+        .def_readwrite("FadeTime", &FReverbSettings::FadeTime)
+        .def_readwrite("ReflectionsDelayOverride", &FReverbSettings::ReflectionsDelayOverride)
+        .def_readwrite("LateDelayOverride", &FReverbSettings::LateDelayOverride)
+        .def_readwrite("DecayHighFrequencyRatioOverride", &FReverbSettings::DecayHighFrequencyRatioOverride)
+    ;
+
+    class_< FInteriorSettings >("FInteriorSettings", init<  >())
+        .def(init< const FInteriorSettings& >())
+        .def_readwrite("ExteriorVolume", &FInteriorSettings::ExteriorVolume)
+        .def_readwrite("ExteriorTime", &FInteriorSettings::ExteriorTime)
+        .def_readwrite("ExteriorLPF", &FInteriorSettings::ExteriorLPF)
+        .def_readwrite("ExteriorLPFTime", &FInteriorSettings::ExteriorLPFTime)
+        .def_readwrite("InteriorVolume", &FInteriorSettings::InteriorVolume)
+        .def_readwrite("InteriorTime", &FInteriorSettings::InteriorTime)
+        .def_readwrite("InteriorLPF", &FInteriorSettings::InteriorLPF)
+        .def_readwrite("InteriorLPFTime", &FInteriorSettings::InteriorLPFTime)
+    ;
+
+    class_< FWorldEventSource >("FWorldEventSource", init<  >())
+        .def(init< const FWorldEventSource& >())
+        .def_readwrite("AkEvent", &FWorldEventSource::AkEvent)
+        .def_readwrite("GroupActor", &FWorldEventSource::GroupActor)
+        .def_readwrite("AkComponents", &FWorldEventSource::AkComponents)
+        .def_readwrite("Sources", &FWorldEventSource::Sources)
+        .def_readwrite("LastUpdateTime", &FWorldEventSource::LastUpdateTime)
+    ;
+
+    class_< FPendingFaceFXInfo >("FPendingFaceFXInfo", init<  >())
+        .def(init< const FPendingFaceFXInfo& >())
+        .def_readwrite("PendingFaceFXPlayingInfoPtr", &FPendingFaceFXInfo::PendingFaceFXPlayingInfoPtr)
+        .def_readwrite("AnimName", &FPendingFaceFXInfo::AnimName)
+        .def_readwrite("RawData", &FPendingFaceFXInfo::RawData)
+    ;
+
+    class_< FPendingSubtitleInfo >("FPendingSubtitleInfo", init<  >())
+        .def(init< const FPendingSubtitleInfo& >())
+        .def_readwrite("PendingSubtitlePlayingInfoPtr", &FPendingSubtitleInfo::PendingSubtitlePlayingInfoPtr)
+        .def_readwrite("OriginalFileName", &FPendingSubtitleInfo::OriginalFileName)
+        .def_readwrite("StreamedSubtitleData", &FPendingSubtitleInfo::StreamedSubtitleData)
+    ;
+
+    class_< FAkPlayingInfo >("FAkPlayingInfo", init<  >())
+        .def(init< const FAkPlayingInfo& >())
+        .def_readwrite("SourceComponent", &FAkPlayingInfo::SourceComponent)
+        .def_readwrite("AkPlayingId", &FAkPlayingInfo::AkPlayingId)
+    ;
+
+    class_< ALevelStreamingVolume_FCheckpointRecord >("ALevelStreamingVolume_FCheckpointRecord", init<  >())
+        .def(init< const ALevelStreamingVolume_FCheckpointRecord& >())
+    ;
+
+    class_< FUniqueNetId >("FUniqueNetId", init<  >())
+        .def(init< const FUniqueNetId& >())
+        .def_readwrite("Uid", &FUniqueNetId::Uid)
+        .def_readwrite("NpId", &FUniqueNetId::NpId)
+    ;
+
+    class_< FAutomatedTestingDatum >("FAutomatedTestingDatum", init<  >())
+        .def(init< const FAutomatedTestingDatum& >())
+        .def_readwrite("NumberOfMatchesPlayed", &FAutomatedTestingDatum::NumberOfMatchesPlayed)
+        .def_readwrite("NumMapListCyclesDone", &FAutomatedTestingDatum::NumMapListCyclesDone)
+    ;
+
+    class_< FAttributeInitializationData >("FAttributeInitializationData", init<  >())
+        .def(init< const FAttributeInitializationData& >())
+        .def_readwrite("BaseValueConstant", &FAttributeInitializationData::BaseValueConstant)
+        .def_readwrite("BaseValueAttribute", &FAttributeInitializationData::BaseValueAttribute)
+        .def_readwrite("InitializationDefinition", &FAttributeInitializationData::InitializationDefinition)
+        .def_readwrite("BaseValueScaleConstant", &FAttributeInitializationData::BaseValueScaleConstant)
+    ;
+
+    class_< FBalanceFormula >("FBalanceFormula", init<  >())
+        .def(init< const FBalanceFormula& >())
+        .def_readwrite("Multiplier", &FBalanceFormula::Multiplier)
+        .def_readwrite("Level", &FBalanceFormula::Level)
+        .def_readwrite("Power", &FBalanceFormula::Power)
+        .def_readwrite("Offset", &FBalanceFormula::Offset)
+    ;
+
+    class_< FConditionalInitializationExpressions >("FConditionalInitializationExpressions", init<  >())
+        .def(init< const FConditionalInitializationExpressions& >())
+        .def_readwrite("ConditionalExpressionList", &FConditionalInitializationExpressions::ConditionalExpressionList)
+        .def_readwrite("DefaultBaseValue", &FConditionalInitializationExpressions::DefaultBaseValue)
+    ;
+
+    class_< FConditionalValueExpression >("FConditionalValueExpression", init<  >())
+        .def(init< const FConditionalValueExpression& >())
+        .def_readwrite("BaseValueIfTrue", &FConditionalValueExpression::BaseValueIfTrue)
+        .def_readwrite("Expressions", &FConditionalValueExpression::Expressions)
+    ;
+
+    class_< FAttributeExpressionData >("FAttributeExpressionData", init<  >())
+        .def(init< const FAttributeExpressionData& >())
+        .def_readwrite("AttributeOperand1", &FAttributeExpressionData::AttributeOperand1)
+        .def_readwrite("ComparisonOperator", &FAttributeExpressionData::ComparisonOperator)
+        .def_readwrite("Operand2Usage", &FAttributeExpressionData::Operand2Usage)
+        .def_readwrite("AttributeOperand2", &FAttributeExpressionData::AttributeOperand2)
+        .def_readwrite("ConstantOperand2", &FAttributeExpressionData::ConstantOperand2)
+    ;
+
+    class_< FVariance >("FVariance", init<  >())
+        .def(init< const FVariance& >())
+        .def_readwrite("LowerBound", &FVariance::LowerBound)
+        .def_readwrite("UpperBound", &FVariance::UpperBound)
+    ;
+
+    class_< FRange >("FRange", init<  >())
+        .def(init< const FRange& >())
+        .def_readwrite("MinValue", &FRange::MinValue)
+        .def_readwrite("MaxValue", &FRange::MaxValue)
+    ;
+
+    class_< FBehaviorContextData >("FBehaviorContextData", init<  >())
+        .def(init< const FBehaviorContextData& >())
+        .def_readwrite("InstancedDataContextName", &FBehaviorContextData::InstancedDataContextName)
+        .def_readwrite("ContextObject", &FBehaviorContextData::ContextObject)
+        .def_readwrite("BehaviorContext", &FBehaviorContextData::BehaviorContext)
+    ;
+
+    class_< FBehaviorParameters >("FBehaviorParameters", init<  >())
+        .def(init< const FBehaviorParameters& >())
+        .def_readwrite("Parameters", &FBehaviorParameters::Parameters)
+    ;
+
+    class_< FBehaviorParameterUnion >("FBehaviorParameterUnion", init<  >())
+        .def(init< const FBehaviorParameterUnion& >())
+        .def_readwrite("ParameterName", &FBehaviorParameterUnion::ParameterName)
+        .def_readwrite("VectorData", &FBehaviorParameterUnion::VectorData)
+        .def_readwrite("ActorData", &FBehaviorParameterUnion::ActorData)
+        .def_readwrite("ImpactInfoData", &FBehaviorParameterUnion::ImpactInfoData)
+    ;
+
+    class_< FImpactInfo >("FImpactInfo", init<  >())
+        .def(init< const FImpactInfo& >())
+        .def_readwrite("HitActor", &FImpactInfo::HitActor)
+        .def_readwrite("HitLocation", &FImpactInfo::HitLocation)
+        .def_readwrite("HitNormal", &FImpactInfo::HitNormal)
+        .def_readwrite("RayDir", &FImpactInfo::RayDir)
+        .def_readwrite("StartTrace", &FImpactInfo::StartTrace)
+        .def_readwrite("HitInfo", &FImpactInfo::HitInfo)
+        .def_readwrite("EndTrace", &FImpactInfo::EndTrace)
+    ;
+
+    class_< FTraceHitInfo >("FTraceHitInfo", init<  >())
+        .def(init< const FTraceHitInfo& >())
+        .def_readwrite("Material", &FTraceHitInfo::Material)
+        .def_readwrite("PhysMaterial", &FTraceHitInfo::PhysMaterial)
+        .def_readwrite("Item", &FTraceHitInfo::Item)
+        .def_readwrite("LevelIndex", &FTraceHitInfo::LevelIndex)
+        .def_readwrite("BoneName", &FTraceHitInfo::BoneName)
+        .def_readwrite("HitComponent", &FTraceHitInfo::HitComponent)
+    ;
+
+    class_< FBehaviorKernelInfo >("FBehaviorKernelInfo", init<  >())
+        .def(init< const FBehaviorKernelInfo& >())
+        .def_readwrite("StateForThreadRunningThisBehavior", &FBehaviorKernelInfo::StateForThreadRunningThisBehavior)
+        .def_readwrite("WorldTime", &FBehaviorKernelInfo::WorldTime)
+        .def_readwrite("ExecutionTime", &FBehaviorKernelInfo::ExecutionTime)
+        .def_readwrite("WorldDeltaTime", &FBehaviorKernelInfo::WorldDeltaTime)
+        .def_readwrite("ExecutionDelayError", &FBehaviorKernelInfo::ExecutionDelayError)
+        .def_readwrite("NextExecutionDelayTime", &FBehaviorKernelInfo::NextExecutionDelayTime)
+    ;
+
+    class_< FResourcePoolIdentityState >("FResourcePoolIdentityState", init<  >())
+        .def(init< const FResourcePoolIdentityState& >())
+        .def_readwrite("PoolDefinition", &FResourcePoolIdentityState::PoolDefinition)
+        .def_readwrite("PoolGUID", &FResourcePoolIdentityState::PoolGUID)
+    ;
+
+    class_< FRarelyChangedPoolState >("FRarelyChangedPoolState", init<  >())
+        .def(init< const FRarelyChangedPoolState& >())
+        .def_readwrite("ConsumptionRate", &FRarelyChangedPoolState::ConsumptionRate)
+        .def_readwrite("ActiveRegenerationRate", &FRarelyChangedPoolState::ActiveRegenerationRate)
+        .def_readwrite("OnIdleRegenerationRate", &FRarelyChangedPoolState::OnIdleRegenerationRate)
+        .def_readwrite("OnIdleRegenerationDelay", &FRarelyChangedPoolState::OnIdleRegenerationDelay)
+        .def_readwrite("PassiveRegenerationRate", &FRarelyChangedPoolState::PassiveRegenerationRate)
+    ;
+
+    class_< FResourcePoolReference >("FResourcePoolReference", init<  >())
+        .def(init< const FResourcePoolReference& >())
+        .def_readwrite("PoolManager", &FResourcePoolReference::PoolManager)
+        .def_readwrite("PoolIndexInManager", &FResourcePoolReference::PoolIndexInManager)
+        .def_readwrite("PoolGUID", &FResourcePoolReference::PoolGUID)
+        .def_readwrite("Data", &FResourcePoolReference::Data)
+    ;
+
+    class_< FMusicStateInfo >("FMusicStateInfo", init<  >())
+        .def(init< const FMusicStateInfo& >())
+        .def_readwrite("State", &FMusicStateInfo::State)
+        .def_readwrite("CustomCombatMusicAkState", &FMusicStateInfo::CustomCombatMusicAkState)
+        .def_readwrite("CustomAmbientMusicAkState", &FMusicStateInfo::CustomAmbientMusicAkState)
+    ;
+
+    class_< FRecentDamageTracker >("FRecentDamageTracker", init<  >())
+        .def(init< const FRecentDamageTracker& >())
+        .def_readwrite("TotalDamage", &FRecentDamageTracker::TotalDamage)
+        .def_readwrite("HealthDamage", &FRecentDamageTracker::HealthDamage)
+        .def_readwrite("ShieldDamage", &FRecentDamageTracker::ShieldDamage)
+    ;
+
+    class_< FConditionalSoundData >("FConditionalSoundData", init<  >())
+        .def(init< const FConditionalSoundData& >())
+        .def_readwrite("Event", &FConditionalSoundData::Event)
+        .def_readwrite("Cue", &FConditionalSoundData::Cue)
+        .def_readwrite("Expressions", &FConditionalSoundData::Expressions)
+    ;
+
+    class_< FUIStatData >("FUIStatData", init<  >())
+        .def(init< const FUIStatData& >())
+        .def_readwrite("AttributeStyle", &FUIStatData::AttributeStyle)
+        .def_readwrite("SupplementalAttributeStyle", &FUIStatData::SupplementalAttributeStyle)
+        .def_readwrite("StatCombinationMethod", &FUIStatData::StatCombinationMethod)
+        .def_readwrite("Attribute", &FUIStatData::Attribute)
+        .def_readwrite("ConstraintAttribute", &FUIStatData::ConstraintAttribute)
+        .def_readwrite("SupplementalAttributeExpression", &FUIStatData::SupplementalAttributeExpression)
+        .def_readwrite("SupplementalAttributeToAppend", &FUIStatData::SupplementalAttributeToAppend)
+    ;
+
+    class_< FAttributeSlotEffectData >("FAttributeSlotEffectData", init<  >())
+        .def(init< const FAttributeSlotEffectData& >())
+        .def_readwrite("SlotName", &FAttributeSlotEffectData::SlotName)
+        .def_readwrite("AttributeToModify", &FAttributeSlotEffectData::AttributeToModify)
+        .def_readwrite("ConstraintAttribute", &FAttributeSlotEffectData::ConstraintAttribute)
+        .def_readwrite("ModifierType", &FAttributeSlotEffectData::ModifierType)
+        .def_readwrite("BaseModifierValue", &FAttributeSlotEffectData::BaseModifierValue)
+        .def_readwrite("PerGradeUpgrade", &FAttributeSlotEffectData::PerGradeUpgrade)
+        .def_readwrite("MinimumGrade", &FAttributeSlotEffectData::MinimumGrade)
+        .def_readwrite("MaximumGrade", &FAttributeSlotEffectData::MaximumGrade)
+        .def_readwrite("TargetInstanceDataName", &FAttributeSlotEffectData::TargetInstanceDataName)
+    ;
+
+    class_< FAttributeSlotUpgradeData >("FAttributeSlotUpgradeData", init<  >())
+        .def(init< const FAttributeSlotUpgradeData& >())
+        .def_readwrite("SlotName", &FAttributeSlotUpgradeData::SlotName)
+        .def_readwrite("GradeIncrease", &FAttributeSlotUpgradeData::GradeIncrease)
+    ;
+
+    class_< FCollisionImpactData >("FCollisionImpactData", init<  >())
+        .def(init< const FCollisionImpactData& >())
+        .def_readwrite("ContactInfos", &FCollisionImpactData::ContactInfos)
+        .def_readwrite("TotalNormalForceVector", &FCollisionImpactData::TotalNormalForceVector)
+        .def_readwrite("TotalFrictionForceVector", &FCollisionImpactData::TotalFrictionForceVector)
+    ;
+
+    class_< FRigidBodyContactInfo >("FRigidBodyContactInfo", init<  >())
+        .def(init< const FRigidBodyContactInfo& >())
+        .def_readwrite("ContactPosition", &FRigidBodyContactInfo::ContactPosition)
+        .def_readwrite("ContactNormal", &FRigidBodyContactInfo::ContactNormal)
+        .def_readwrite("ContactPenetration", &FRigidBodyContactInfo::ContactPenetration)
+        .def_readwrite("ContactVelocity", &FRigidBodyContactInfo::ContactVelocity)
+        .def_readwrite("PhysMaterial", &FRigidBodyContactInfo::PhysMaterial)
+    ;
+
+    class_< FLightMapRef >("FLightMapRef", init<  >())
+        .def(init< const FLightMapRef& >())
+        .def_readwrite("Reference", &FLightMapRef::Reference)
+    ;
+
+    class_< FDamageEventSummary >("FDamageEventSummary", init<  >())
+        .def(init< const FDamageEventSummary& >())
+        .def_readwrite("InitialDamage", &FDamageEventSummary::InitialDamage)
+        .def_readwrite("AIDamageScaleReduction", &FDamageEventSummary::AIDamageScaleReduction)
+        .def_readwrite("DamageSourceReduction", &FDamageEventSummary::DamageSourceReduction)
+        .def_readwrite("InstigatorDamageTypeReduction", &FDamageEventSummary::InstigatorDamageTypeReduction)
+        .def_readwrite("ExpLevelDifferenceReduction", &FDamageEventSummary::ExpLevelDifferenceReduction)
+        .def_readwrite("RecipientDamageTypeReduction", &FDamageEventSummary::RecipientDamageTypeReduction)
+        .def_readwrite("HitRegionReduction", &FDamageEventSummary::HitRegionReduction)
+        .def_readwrite("ShieldReduction", &FDamageEventSummary::ShieldReduction)
+        .def_readwrite("IntrinsicArmorReduction", &FDamageEventSummary::IntrinsicArmorReduction)
+        .def_readwrite("DamageSurfaceReduction", &FDamageEventSummary::DamageSurfaceReduction)
+        .def_readwrite("HitRegionCapReduction", &FDamageEventSummary::HitRegionCapReduction)
+        .def_readwrite("ProtectionTimerReduction", &FDamageEventSummary::ProtectionTimerReduction)
+        .def_readwrite("ProjectileReflectionReduction", &FDamageEventSummary::ProjectileReflectionReduction)
+        .def_readwrite("DamageSeverityPercent", &FDamageEventSummary::DamageSeverityPercent)
+        .def_readwrite("DamageDealtToShields", &FDamageEventSummary::DamageDealtToShields)
+        .def_readwrite("ExtraDamageDealtDueToAmplify", &FDamageEventSummary::ExtraDamageDealtDueToAmplify)
+        .def_readwrite("FinalDamage", &FDamageEventSummary::FinalDamage)
+        .def_readwrite("PreviousHealth", &FDamageEventSummary::PreviousHealth)
+        .def_readwrite("HitRegion", &FDamageEventSummary::HitRegion)
+        .def_readwrite("ReflectionData", &FDamageEventSummary::ReflectionData)
+        .def_readwrite("DamageTakenSkillEventsTriggered", &FDamageEventSummary::DamageTakenSkillEventsTriggered)
+        .def_readwrite("DamageDealtSkillEventsTriggered", &FDamageEventSummary::DamageDealtSkillEventsTriggered)
+    ;
+
+    class_< FReflectionInfo >("FReflectionInfo", init<  >())
+        .def(init< const FReflectionInfo& >())
+        .def_readwrite("ReflectionType", &FReflectionInfo::ReflectionType)
+        .def_readwrite("ReflectedDamageScale", &FReflectionInfo::ReflectedDamageScale)
+        .def_readwrite("ReflectedDamageToReflector", &FReflectionInfo::ReflectedDamageToReflector)
+        .def_readwrite("ReflectedInaccuracyModifier", &FReflectionInfo::ReflectedInaccuracyModifier)
+    ;
+
+    class_< FManufacturerGradeData >("FManufacturerGradeData", init<  >())
+        .def(init< const FManufacturerGradeData& >())
+        .def_readwrite("DisplayName", &FManufacturerGradeData::DisplayName)
+    ;
+
+    class_< FConsoleMessage >("FConsoleMessage", init<  >())
+        .def(init< const FConsoleMessage& >())
+        .def_readwrite("Text", &FConsoleMessage::Text)
+        .def_readwrite("TextColor", &FConsoleMessage::TextColor)
+        .def_readwrite("MessageLife", &FConsoleMessage::MessageLife)
+        .def_readwrite("PRI", &FConsoleMessage::PRI)
+    ;
+
+    class_< FCanvasIcon >("FCanvasIcon", init<  >())
+        .def(init< const FCanvasIcon& >())
+        .def_readwrite("Texture", &FCanvasIcon::Texture)
+        .def_readwrite("U", &FCanvasIcon::U)
+        .def_readwrite("V", &FCanvasIcon::V)
+        .def_readwrite("UL", &FCanvasIcon::UL)
+        .def_readwrite("VL", &FCanvasIcon::VL)
+    ;
+
+    class_< FFontRenderInfo >("FFontRenderInfo", init<  >())
+        .def(init< const FFontRenderInfo& >())
+        .def_readwrite("GlowInfo", &FFontRenderInfo::GlowInfo)
+    ;
+
+    class_< FDepthFieldGlowInfo >("FDepthFieldGlowInfo", init<  >())
+        .def(init< const FDepthFieldGlowInfo& >())
+        .def_readwrite("GlowColor", &FDepthFieldGlowInfo::GlowColor)
+        .def_readwrite("GlowOuterRadius", &FDepthFieldGlowInfo::GlowOuterRadius)
+        .def_readwrite("GlowInnerRadius", &FDepthFieldGlowInfo::GlowInnerRadius)
+    ;
+
+    class_< FCanvasUVTri >("FCanvasUVTri", init<  >())
+        .def(init< const FCanvasUVTri& >())
+        .def_readwrite("V0_Pos", &FCanvasUVTri::V0_Pos)
+        .def_readwrite("V0_UV", &FCanvasUVTri::V0_UV)
+        .def_readwrite("V1_Pos", &FCanvasUVTri::V1_Pos)
+        .def_readwrite("V1_UV", &FCanvasUVTri::V1_UV)
+        .def_readwrite("V2_Pos", &FCanvasUVTri::V2_Pos)
+        .def_readwrite("V2_UV", &FCanvasUVTri::V2_UV)
+    ;
+
+    class_< FKismetDrawTextInfo >("FKismetDrawTextInfo", init<  >())
+        .def(init< const FKismetDrawTextInfo& >())
+        .def_readwrite("MessageText", &FKismetDrawTextInfo::MessageText)
+        .def_readwrite("AppendedText", &FKismetDrawTextInfo::AppendedText)
+        .def_readwrite("MessageFont", &FKismetDrawTextInfo::MessageFont)
+        .def_readwrite("MessageFontScale", &FKismetDrawTextInfo::MessageFontScale)
+        .def_readwrite("MessageOffset", &FKismetDrawTextInfo::MessageOffset)
+        .def_readwrite("MessageColor", &FKismetDrawTextInfo::MessageColor)
+        .def_readwrite("MessageEndTime", &FKismetDrawTextInfo::MessageEndTime)
+    ;
+
+    class_< FAttributeSlotData >("FAttributeSlotData", init<  >())
+        .def(init< const FAttributeSlotData& >())
+        .def_readwrite("SlotName", &FAttributeSlotData::SlotName)
+        .def_readwrite("MinimumGrade", &FAttributeSlotData::MinimumGrade)
+        .def_readwrite("MaximumGrade", &FAttributeSlotData::MaximumGrade)
+        .def_readwrite("TargetInstanceDataName", &FAttributeSlotData::TargetInstanceDataName)
+        .def_readwrite("EffectGrade", &FAttributeSlotData::EffectGrade)
+        .def_readwrite("AttributeToModify", &FAttributeSlotData::AttributeToModify)
+        .def_readwrite("ConstraintAttribute", &FAttributeSlotData::ConstraintAttribute)
+        .def_readwrite("ModifierType", &FAttributeSlotData::ModifierType)
+        .def_readwrite("BaseModifierValue", &FAttributeSlotData::BaseModifierValue)
+        .def_readwrite("PerGradeUpgrade", &FAttributeSlotData::PerGradeUpgrade)
+        .def_readwrite("ComputedModifierValue", &FAttributeSlotData::ComputedModifierValue)
+    ;
+
+    class_< FAppliedAttributeEffect >("FAppliedAttributeEffect", init<  >())
+        .def(init< const FAppliedAttributeEffect& >())
+        .def_readwrite("Context", &FAppliedAttributeEffect::Context)
+        .def_readwrite("Attribute", &FAppliedAttributeEffect::Attribute)
+        .def_readwrite("Modifier", &FAppliedAttributeEffect::Modifier)
+    ;
+
+    class_< FInventorySerialNumber >("FInventorySerialNumber", init<  >())
+        .def(init< const FInventorySerialNumber& >())
+        .def_readwrite("Buffer", &FInventorySerialNumber::Buffer)
+        .def_readwrite("State", &FInventorySerialNumber::State)
+        .def_readwrite("RunningCounter", &FInventorySerialNumber::RunningCounter)
+        .def_readwrite("EncryptedLength", &FInventorySerialNumber::EncryptedLength)
+    ;
+
+    class_< FAchievementDetails >("FAchievementDetails", init<  >())
+        .def(init< const FAchievementDetails& >())
+        .def_readwrite("Id", &FAchievementDetails::Id)
+        .def_readwrite("AchievementName", &FAchievementDetails::AchievementName)
+        .def_readwrite("Description", &FAchievementDetails::Description)
+        .def_readwrite("HowTo", &FAchievementDetails::HowTo)
+        .def_readwrite("Image", &FAchievementDetails::Image)
+        .def_readwrite("MonthEarned", &FAchievementDetails::MonthEarned)
+        .def_readwrite("DayEarned", &FAchievementDetails::DayEarned)
+        .def_readwrite("YearEarned", &FAchievementDetails::YearEarned)
+        .def_readwrite("DayOfWeekEarned", &FAchievementDetails::DayOfWeekEarned)
+        .def_readwrite("GamerPoints", &FAchievementDetails::GamerPoints)
+    ;
+
+    class_< FOnlineFriendMessage >("FOnlineFriendMessage", init<  >())
+        .def(init< const FOnlineFriendMessage& >())
+        .def_readwrite("SendingPlayerId", &FOnlineFriendMessage::SendingPlayerId)
+        .def_readwrite("SendingPlayerNick", &FOnlineFriendMessage::SendingPlayerNick)
+        .def_readwrite("Message", &FOnlineFriendMessage::Message)
+    ;
+
+    class_< FLocalizedStringSetting >("FLocalizedStringSetting", init<  >())
+        .def(init< const FLocalizedStringSetting& >())
+        .def_readwrite("Id", &FLocalizedStringSetting::Id)
+        .def_readwrite("ValueIndex", &FLocalizedStringSetting::ValueIndex)
+        .def_readwrite("AdvertisementType", &FLocalizedStringSetting::AdvertisementType)
+    ;
+
+    class_< FSettingsProperty >("FSettingsProperty", init<  >())
+        .def(init< const FSettingsProperty& >())
+        .def_readwrite("PropertyId", &FSettingsProperty::PropertyId)
+        .def_readwrite("Data", &FSettingsProperty::Data)
+        .def_readwrite("AdvertisementType", &FSettingsProperty::AdvertisementType)
+    ;
+
+    class_< FSettingsData >("FSettingsData", init<  >())
+        .def(init< const FSettingsData& >())
+        .def_readwrite("Type", &FSettingsData::Type)
+        .def_readwrite("Value1", &FSettingsData::Value1)
+        .def_readwrite("Value2", &FSettingsData::Value2)
+    ;
+
+    class_< FOnlineFriend >("FOnlineFriend", init<  >())
+        .def(init< const FOnlineFriend& >())
+        .def_readwrite("UniqueId", &FOnlineFriend::UniqueId)
+        .def_readwrite("SessionId", &FOnlineFriend::SessionId)
+        .def_readwrite("SessionInfo", &FOnlineFriend::SessionInfo)
+        .def_readwrite("NickName", &FOnlineFriend::NickName)
+        .def_readwrite("PresenceInfo", &FOnlineFriend::PresenceInfo)
+        .def_readwrite("FriendState", &FOnlineFriend::FriendState)
+    ;
+
+    class_< FOnlineProfileSetting >("FOnlineProfileSetting", init<  >())
+        .def(init< const FOnlineProfileSetting& >())
+        .def_readwrite("Owner", &FOnlineProfileSetting::Owner)
+        .def_readwrite("ProfileSetting", &FOnlineProfileSetting::ProfileSetting)
+    ;
+
+    class_< FSettingsPropertyPropertyMetaData >("FSettingsPropertyPropertyMetaData", init<  >())
+        .def(init< const FSettingsPropertyPropertyMetaData& >())
+        .def_readwrite("Id", &FSettingsPropertyPropertyMetaData::Id)
+        .def_readwrite("Name", &FSettingsPropertyPropertyMetaData::Name)
+        .def_readwrite("ColumnHeaderText", &FSettingsPropertyPropertyMetaData::ColumnHeaderText)
+        .def_readwrite("MappingType", &FSettingsPropertyPropertyMetaData::MappingType)
+        .def_readwrite("ValueMappings", &FSettingsPropertyPropertyMetaData::ValueMappings)
+        .def_readwrite("PredefinedValues", &FSettingsPropertyPropertyMetaData::PredefinedValues)
+        .def_readwrite("MinVal", &FSettingsPropertyPropertyMetaData::MinVal)
+        .def_readwrite("MaxVal", &FSettingsPropertyPropertyMetaData::MaxVal)
+        .def_readwrite("RangeIncrement", &FSettingsPropertyPropertyMetaData::RangeIncrement)
+    ;
+
+    class_< FIdToStringMapping >("FIdToStringMapping", init<  >())
+        .def(init< const FIdToStringMapping& >())
+        .def_readwrite("Id", &FIdToStringMapping::Id)
+        .def_readwrite("Name", &FIdToStringMapping::Name)
+    ;
+
+    class_< FFriendsQuery >("FFriendsQuery", init<  >())
+        .def(init< const FFriendsQuery& >())
+        .def_readwrite("UniqueId", &FFriendsQuery::UniqueId)
+    ;
+
+    class_< FOnlineGameSearchResult >("FOnlineGameSearchResult", init<  >())
+        .def(init< const FOnlineGameSearchResult& >())
+        .def_readwrite("GameSettings", &FOnlineGameSearchResult::GameSettings)
+        .def_readwrite("PlatformData", &FOnlineGameSearchResult::PlatformData)
+    ;
+
+    class_< FLocalizedStringSettingMetaData >("FLocalizedStringSettingMetaData", init<  >())
+        .def(init< const FLocalizedStringSettingMetaData& >())
+        .def_readwrite("Id", &FLocalizedStringSettingMetaData::Id)
+        .def_readwrite("Name", &FLocalizedStringSettingMetaData::Name)
+        .def_readwrite("ColumnHeaderText", &FLocalizedStringSettingMetaData::ColumnHeaderText)
+        .def_readwrite("ValueMappings", &FLocalizedStringSettingMetaData::ValueMappings)
+    ;
+
+    class_< FStringIdToStringMapping >("FStringIdToStringMapping", init<  >())
+        .def(init< const FStringIdToStringMapping& >())
+        .def_readwrite("Id", &FStringIdToStringMapping::Id)
+        .def_readwrite("Name", &FStringIdToStringMapping::Name)
+    ;
+
+    class_< FOnlineArbitrationRegistrant >("FOnlineArbitrationRegistrant", init<  >())
+        .def(init< const FOnlineArbitrationRegistrant& >())
+        .def_readwrite("MachineId", &FOnlineArbitrationRegistrant::MachineId)
+        .def_readwrite("Trustworthiness", &FOnlineArbitrationRegistrant::Trustworthiness)
+        .def_readwrite("PlayerNetId", &FOnlineRegistrant::PlayerNetId)
+    ;
+
+    class_< FOnlineRegistrant >("FOnlineRegistrant", init<  >())
+        .def(init< const FOnlineRegistrant& >())
+        .def_readwrite("PlayerNetId", &FOnlineRegistrant::PlayerNetId)
+    ;
+
+    class_< FOverrideSkill >("FOverrideSkill", init<  >())
+        .def(init< const FOverrideSkill& >())
+        .def_readwrite("LeaderboardId", &FOverrideSkill::LeaderboardId)
+        .def_readwrite("Players", &FOverrideSkill::Players)
+        .def_readwrite("Mus", &FOverrideSkill::Mus)
+        .def_readwrite("Sigmas", &FOverrideSkill::Sigmas)
+    ;
+
+    class_< FNamedObjectProperty >("FNamedObjectProperty", init<  >())
+        .def(init< const FNamedObjectProperty& >())
+        .def_readwrite("ObjectPropertyName", &FNamedObjectProperty::ObjectPropertyName)
+        .def_readwrite("ObjectPropertyValue", &FNamedObjectProperty::ObjectPropertyValue)
+    ;
+
+    class_< FOnlineGameSearchQuery >("FOnlineGameSearchQuery", init<  >())
+        .def(init< const FOnlineGameSearchQuery& >())
+        .def_readwrite("OrClauses", &FOnlineGameSearchQuery::OrClauses)
+        .def_readwrite("SortClauses", &FOnlineGameSearchQuery::SortClauses)
+    ;
+
+    class_< FOnlineGameSearchORClause >("FOnlineGameSearchORClause", init<  >())
+        .def(init< const FOnlineGameSearchORClause& >())
+        .def_readwrite("OrParams", &FOnlineGameSearchORClause::OrParams)
+    ;
+
+    class_< FOnlineGameSearchParameter >("FOnlineGameSearchParameter", init<  >())
+        .def(init< const FOnlineGameSearchParameter& >())
+        .def_readwrite("EntryId", &FOnlineGameSearchParameter::EntryId)
+        .def_readwrite("CompareValueId", &FOnlineGameSearchParameter::CompareValueId)
+        .def_readwrite("ObjectPropertyName", &FOnlineGameSearchParameter::ObjectPropertyName)
+        .def_readwrite("EntryType", &FOnlineGameSearchParameter::EntryType)
+        .def_readwrite("ComparisonType", &FOnlineGameSearchParameter::ComparisonType)
+    ;
+
+    class_< FOnlineGameSearchSortClause >("FOnlineGameSearchSortClause", init<  >())
+        .def(init< const FOnlineGameSearchSortClause& >())
+        .def_readwrite("EntryId", &FOnlineGameSearchSortClause::EntryId)
+        .def_readwrite("ObjectPropertyName", &FOnlineGameSearchSortClause::ObjectPropertyName)
+        .def_readwrite("EntryType", &FOnlineGameSearchSortClause::EntryType)
+        .def_readwrite("SortType", &FOnlineGameSearchSortClause::SortType)
+    ;
+
+    class_< FMarketplaceContent >("FMarketplaceContent", init<  >())
+        .def(init< const FMarketplaceContent& >())
+        .def_readwrite("UserIndex", &FMarketplaceContent::UserIndex)
+        .def_readwrite("OfferId", &FMarketplaceContent::OfferId)
+        .def_readwrite("PreviewOfferId", &FMarketplaceContent::PreviewOfferId)
+        .def_readwrite("OfferName", &FMarketplaceContent::OfferName)
+        .def_readwrite("OfferType", &FMarketplaceContent::OfferType)
+        .def_readwrite("ContentId", &FMarketplaceContent::ContentId)
+        .def_readwrite("LicenseMask", &FMarketplaceContent::LicenseMask)
+        .def_readwrite("TitleId", &FMarketplaceContent::TitleId)
+        .def_readwrite("ContentCategory", &FMarketplaceContent::ContentCategory)
+        .def_readwrite("TitleName", &FMarketplaceContent::TitleName)
+        .def_readwrite("PackageSize", &FMarketplaceContent::PackageSize)
+        .def_readwrite("InstallSize", &FMarketplaceContent::InstallSize)
+        .def_readwrite("SellText", &FMarketplaceContent::SellText)
+        .def_readwrite("AssetId", &FMarketplaceContent::AssetId)
+        .def_readwrite("PurchaseQuantity", &FMarketplaceContent::PurchaseQuantity)
+        .def_readwrite("PointsPrice", &FMarketplaceContent::PointsPrice)
+        .def_readwrite("PriceText", &FMarketplaceContent::PriceText)
+        .def_readwrite("OfferIdText", &FMarketplaceContent::OfferIdText)
+    ;
+
+    class_< FOnlineContent >("FOnlineContent", init<  >())
+        .def(init< const FOnlineContent& >())
+        .def_readwrite("ContentType", &FOnlineContent::ContentType)
+        .def_readwrite("UserIndex", &FOnlineContent::UserIndex)
+        .def_readwrite("DeviceID", &FOnlineContent::DeviceID)
+        .def_readwrite("LicenseMask", &FOnlineContent::LicenseMask)
+        .def_readwrite("FriendlyName", &FOnlineContent::FriendlyName)
+        .def_readwrite("Filename", &FOnlineContent::Filename)
+        .def_readwrite("ContentPath", &FOnlineContent::ContentPath)
+        .def_readwrite("ContentPackages", &FOnlineContent::ContentPackages)
+        .def_readwrite("ContentFiles", &FOnlineContent::ContentFiles)
+        .def_readwrite("CachedAppIdInfo", &FOnlineContent::CachedAppIdInfo)
+        .def_readwrite("TOCInfo", &FOnlineContent::TOCInfo)
+    ;
+
+    class_< FAppIdLicenseInfo >("FAppIdLicenseInfo", init<  >())
+        .def(init< const FAppIdLicenseInfo& >())
+        .def_readwrite("AppID", &FAppIdLicenseInfo::AppID)
+        .def_readwrite("LicenseMask", &FAppIdLicenseInfo::LicenseMask)
+    ;
+
+    class_< FTOCInfo >("FTOCInfo", init<  >())
+        .def(init< const FTOCInfo& >())
+        .def_readwrite("TOC", &FTOCInfo::TOC)
+        .def_readwrite("RootPath", &FTOCInfo::RootPath)
+        .def_readwrite("Path", &FTOCInfo::Path)
+    ;
+
+    class_< FOnlineCrossTitleContent, bases< FOnlineContent >  >("FOnlineCrossTitleContent", init<  >())
+        .def(init< const FOnlineCrossTitleContent& >())
+        .def_readwrite("TitleId", &FOnlineCrossTitleContent::TitleId)
+    ;
+
+    class_< FRecogVocabulary >("FRecogVocabulary", init<  >())
+        .def(init< const FRecogVocabulary& >())
+        .def_readwrite("WhoDictionary", &FRecogVocabulary::WhoDictionary)
+        .def_readwrite("WhatDictionary", &FRecogVocabulary::WhatDictionary)
+        .def_readwrite("WhereDictionary", &FRecogVocabulary::WhereDictionary)
+        .def_readwrite("VocabName", &FRecogVocabulary::VocabName)
+        .def_readwrite("VocabData", &FRecogVocabulary::VocabData)
+        .def_readwrite("WorkingVocabData", &FRecogVocabulary::WorkingVocabData)
+    ;
+
+    class_< FRecognisableWord >("FRecognisableWord", init<  >())
+        .def(init< const FRecognisableWord& >())
+        .def_readwrite("Id", &FRecognisableWord::Id)
+        .def_readwrite("ReferenceWord", &FRecognisableWord::ReferenceWord)
+        .def_readwrite("PhoneticWord", &FRecognisableWord::PhoneticWord)
+    ;
+
+    class_< FRecogUserData >("FRecogUserData", init<  >())
+        .def(init< const FRecogUserData& >())
+        .def_readwrite("ActiveVocabularies", &FRecogUserData::ActiveVocabularies)
+        .def_readwrite("UserData", &FRecogUserData::UserData)
+    ;
+
+    class_< FSpeechRecognizedWord >("FSpeechRecognizedWord", init<  >())
+        .def(init< const FSpeechRecognizedWord& >())
+        .def_readwrite("WordId", &FSpeechRecognizedWord::WordId)
+        .def_readwrite("WordText", &FSpeechRecognizedWord::WordText)
+        .def_readwrite("Confidence", &FSpeechRecognizedWord::Confidence)
+    ;
+
+    class_< FOnlinePlayerScore >("FOnlinePlayerScore", init<  >())
+        .def(init< const FOnlinePlayerScore& >())
+        .def_readwrite("PlayerID", &FOnlinePlayerScore::PlayerID)
+        .def_readwrite("TeamID", &FOnlinePlayerScore::TeamID)
+        .def_readwrite("Score", &FOnlinePlayerScore::Score)
+    ;
+
+    class_< FOnlineStatsRow >("FOnlineStatsRow", init<  >())
+        .def(init< const FOnlineStatsRow& >())
+        .def_readwrite("PlayerID", &FOnlineStatsRow::PlayerID)
+        .def_readwrite("Rank", &FOnlineStatsRow::Rank)
+        .def_readwrite("NickName", &FOnlineStatsRow::NickName)
+        .def_readwrite("Columns", &FOnlineStatsRow::Columns)
+    ;
+
+    class_< FOnlineStatsColumn >("FOnlineStatsColumn", init<  >())
+        .def(init< const FOnlineStatsColumn& >())
+        .def_readwrite("ColumnNo", &FOnlineStatsColumn::ColumnNo)
+        .def_readwrite("StatValue", &FOnlineStatsColumn::StatValue)
+    ;
+
+    class_< FColumnMetaData >("FColumnMetaData", init<  >())
+        .def(init< const FColumnMetaData& >())
+        .def_readwrite("Id", &FColumnMetaData::Id)
+        .def_readwrite("Name", &FColumnMetaData::Name)
+        .def_readwrite("ColumnName", &FColumnMetaData::ColumnName)
+    ;
+
+    class_< FOnlinePartyMember >("FOnlinePartyMember", init<  >())
+        .def(init< const FOnlinePartyMember& >())
+        .def_readwrite("UniqueId", &FOnlinePartyMember::UniqueId)
+        .def_readwrite("NickName", &FOnlinePartyMember::NickName)
+        .def_readwrite("LocalUserNum", &FOnlinePartyMember::LocalUserNum)
+        .def_readwrite("NatType", &FOnlinePartyMember::NatType)
+        .def_readwrite("TitleId", &FOnlinePartyMember::TitleId)
+        .def_readwrite("SessionId", &FOnlinePartyMember::SessionId)
+        .def_readwrite("Data1", &FOnlinePartyMember::Data1)
+        .def_readwrite("Data2", &FOnlinePartyMember::Data2)
+        .def_readwrite("Data3", &FOnlinePartyMember::Data3)
+        .def_readwrite("Data4", &FOnlinePartyMember::Data4)
+    ;
+
+    class_< FNamedInterface >("FNamedInterface", init<  >())
+        .def(init< const FNamedInterface& >())
+        .def_readwrite("InterfaceName", &FNamedInterface::InterfaceName)
+        .def_readwrite("InterfaceObject", &FNamedInterface::InterfaceObject)
+    ;
+
+    class_< FNamedInterfaceDef >("FNamedInterfaceDef", init<  >())
+        .def(init< const FNamedInterfaceDef& >())
+        .def_readwrite("InterfaceName", &FNamedInterfaceDef::InterfaceName)
+        .def_readwrite("InterfaceClassName", &FNamedInterfaceDef::InterfaceClassName)
+    ;
+
+    class_< FNamedSession >("FNamedSession", init<  >())
+        .def(init< const FNamedSession& >())
+        .def_readwrite("SessionName", &FNamedSession::SessionName)
+        .def_readwrite("SessionInfo", &FNamedSession::SessionInfo)
+        .def_readwrite("GameSettings", &FNamedSession::GameSettings)
+        .def_readwrite("Registrants", &FNamedSession::Registrants)
+        .def_readwrite("ArbitrationRegistrants", &FNamedSession::ArbitrationRegistrants)
+    ;
+
+    class_< FIniLocFileEntry >("FIniLocFileEntry", init<  >())
+        .def(init< const FIniLocFileEntry& >())
+        .def_readwrite("Filename", &FIniLocFileEntry::Filename)
+        .def_readwrite("ReadState", &FIniLocFileEntry::ReadState)
+    ;
+
+    class_< FAuthSession >("FAuthSession", init<  >())
+        .def(init< const FAuthSession& >())
+        .def_readwrite("AuthStatus", &FAuthSession::AuthStatus)
+        .def_readwrite("AuthBlobUID", &FAuthSession::AuthBlobUID)
+        .def_readwrite("EndPointIP", &FBaseAuthSession::EndPointIP)
+        .def_readwrite("EndPointPort", &FBaseAuthSession::EndPointPort)
+        .def_readwrite("EndPointUID", &FBaseAuthSession::EndPointUID)
+    ;
+
+    class_< FBaseAuthSession >("FBaseAuthSession", init<  >())
+        .def(init< const FBaseAuthSession& >())
+        .def_readwrite("EndPointIP", &FBaseAuthSession::EndPointIP)
+        .def_readwrite("EndPointPort", &FBaseAuthSession::EndPointPort)
+        .def_readwrite("EndPointUID", &FBaseAuthSession::EndPointUID)
+    ;
+
+    class_< FLocalAuthSession, bases< FBaseAuthSession >  >("FLocalAuthSession", init<  >())
+        .def(init< const FLocalAuthSession& >())
+        .def_readwrite("SessionUID", &FLocalAuthSession::SessionUID)
+    ;
+
+    class_< FPendingClientAuth >("FPendingClientAuth", init<  >())
+        .def(init< const FPendingClientAuth& >())
+        .def_readwrite("ClientConnection", &FPendingClientAuth::ClientConnection)
+        .def_readwrite("ClientUID", &FPendingClientAuth::ClientUID)
+        .def_readwrite("AuthTimestamp", &FPendingClientAuth::AuthTimestamp)
+        .def_readwrite("AuthRetryCount", &FPendingClientAuth::AuthRetryCount)
+    ;
+
+    class_< FServerAuthRetry >("FServerAuthRetry", init<  >())
+        .def(init< const FServerAuthRetry& >())
+        .def_readwrite("ClientUID", &FServerAuthRetry::ClientUID)
+        .def_readwrite("AuthRetryCount", &FServerAuthRetry::AuthRetryCount)
+    ;
+
+    class_< FCoverReplicationInfo >("FCoverReplicationInfo", init<  >())
+        .def(init< const FCoverReplicationInfo& >())
+        .def_readwrite("Link", &FCoverReplicationInfo::Link)
+        .def_readwrite("SlotsEnabled", &FCoverReplicationInfo::SlotsEnabled)
+        .def_readwrite("SlotsDisabled", &FCoverReplicationInfo::SlotsDisabled)
+        .def_readwrite("SlotsAdjusted", &FCoverReplicationInfo::SlotsAdjusted)
+        .def_readwrite("SlotsCoverTypeChanged", &FCoverReplicationInfo::SlotsCoverTypeChanged)
+    ;
+
+    class_< FCoverSlot >("FCoverSlot", init<  >())
+        .def(init< const FCoverSlot& >())
+        .def_readwrite("SlotOwner", &FCoverSlot::SlotOwner)
+        .def_readwrite("SlotValidAfterTime", &FCoverSlot::SlotValidAfterTime)
+        .def_readwrite("ForceCoverType", &FCoverSlot::ForceCoverType)
+        .def_readwrite("CoverType", &FCoverSlot::CoverType)
+        .def_readwrite("LocationDescription", &FCoverSlot::LocationDescription)
+        .def_readwrite("LocationOffset", &FCoverSlot::LocationOffset)
+        .def_readwrite("RotationOffset", &FCoverSlot::RotationOffset)
+        .def_readwrite("Actions", &FCoverSlot::Actions)
+        .def_readwrite("FireLinks", &FCoverSlot::FireLinks)
+        .def_readwrite("RejectedFireLinks", &FCoverSlot::RejectedFireLinks)
+        .def_readwrite("ExposedCoverPackedProperties", &FCoverSlot::ExposedCoverPackedProperties)
+        .def_readwrite("TurnTargetPackedProperties", &FCoverSlot::TurnTargetPackedProperties)
+        .def_readwrite("SlipRefs", &FCoverSlot::SlipRefs)
+        .def_readwrite("OverlapClaimsList", &FCoverSlot::OverlapClaimsList)
+    ;
+
+    class_< FFireLink >("FFireLink", init<  >())
+        .def(init< const FFireLink& >())
+        .def_readwrite("Interactions", &FFireLink::Interactions)
+        .def_readwrite("PackedProperties_CoverPairRefAndDynamicInfo", &FFireLink::PackedProperties_CoverPairRefAndDynamicInfo)
+    ;
+
+    class_< FSlotMoveRef >("FSlotMoveRef", init<  >())
+        .def(init< const FSlotMoveRef& >())
+        .def_readwrite("Poly", &FSlotMoveRef::Poly)
+        .def_readwrite("Dest", &FSlotMoveRef::Dest)
+        .def_readwrite("Direction", &FSlotMoveRef::Direction)
+    ;
+
+    class_< FPolyReference >("FPolyReference", init<  >())
+        .def(init< const FPolyReference& >())
+        .def_readwrite("OwningPylon", &FPolyReference::OwningPylon)
+        .def_readwrite("PolyId", &FPolyReference::PolyId)
+        .def_readwrite("CachedPoly", &FPolyReference::CachedPoly)
+    ;
+
+    class_< FBasedPosition >("FBasedPosition", init<  >())
+        .def(init< const FBasedPosition& >())
+        .def_readwrite("Base", &FBasedPosition::Base)
+        .def_readwrite("Position", &FBasedPosition::Position)
+        .def_readwrite("CachedBaseLocation", &FBasedPosition::CachedBaseLocation)
+        .def_readwrite("CachedBaseRotation", &FBasedPosition::CachedBaseRotation)
+        .def_readwrite("CachedTransPosition", &FBasedPosition::CachedTransPosition)
+    ;
+
+    class_< FCoverInfo >("FCoverInfo", init<  >())
+        .def(init< const FCoverInfo& >())
+        .def_readwrite("Link", &FCoverInfo::Link)
+        .def_readwrite("SlotIdx", &FCoverInfo::SlotIdx)
+    ;
+
+    class_< FDynamicLinkInfo >("FDynamicLinkInfo", init<  >())
+        .def(init< const FDynamicLinkInfo& >())
+        .def_readwrite("LastTargetLocation", &FDynamicLinkInfo::LastTargetLocation)
+        .def_readwrite("LastSrcLocation", &FDynamicLinkInfo::LastSrcLocation)
+    ;
+
+    class_< FPathSizeInfo >("FPathSizeInfo", init<  >())
+        .def(init< const FPathSizeInfo& >())
+        .def_readwrite("Desc", &FPathSizeInfo::Desc)
+        .def_readwrite("Radius", &FPathSizeInfo::Radius)
+        .def_readwrite("Height", &FPathSizeInfo::Height)
+        .def_readwrite("CrouchHeight", &FPathSizeInfo::CrouchHeight)
+        .def_readwrite("PathColor", &FPathSizeInfo::PathColor)
+    ;
+
+    class_< ANavigationPoint_FCheckpointRecord >("ANavigationPoint_FCheckpointRecord", init<  >())
+        .def(init< const ANavigationPoint_FCheckpointRecord& >())
+    ;
+
+    class_< FManualCoverTypeInfo >("FManualCoverTypeInfo", init<  >())
+        .def(init< const FManualCoverTypeInfo& >())
+        .def_readwrite("SlotIndex", &FManualCoverTypeInfo::SlotIndex)
+        .def_readwrite("ManualCoverType", &FManualCoverTypeInfo::ManualCoverType)
+    ;
+
+    class_< FGameClassShortName >("FGameClassShortName", init<  >())
+        .def(init< const FGameClassShortName& >())
+        .def_readwrite("ShortName", &FGameClassShortName::ShortName)
+        .def_readwrite("GameClassName", &FGameClassShortName::GameClassName)
+    ;
+
+    class_< FGameTypePrefix >("FGameTypePrefix", init<  >())
+        .def(init< const FGameTypePrefix& >())
+        .def_readwrite("Prefix", &FGameTypePrefix::Prefix)
+        .def_readwrite("GameType", &FGameTypePrefix::GameType)
+        .def_readwrite("AdditionalGameTypes", &FGameTypePrefix::AdditionalGameTypes)
+        .def_readwrite("ForcedObjects", &FGameTypePrefix::ForcedObjects)
+    ;
+
+    class_< FNavMeshPathSize >("FNavMeshPathSize", init<  >())
+        .def(init< const FNavMeshPathSize& >())
+        .def_readwrite("Size", &FNavMeshPathSize::Size)
+        .def_readwrite("Height", &FNavMeshPathSize::Height)
+        .def_readwrite("PolyColor", &FNavMeshPathSize::PolyColor)
+        .def_readwrite("ObstacleColor", &FNavMeshPathSize::ObstacleColor)
+    ;
+
+    class_< FGBXConnectedNavMesh >("FGBXConnectedNavMesh", init<  >())
+        .def(init< const FGBXConnectedNavMesh& >())
+        .def_readwrite("Mesh", &FGBXConnectedNavMesh::Mesh)
+        .def_readwrite("MeshID", &FGBXConnectedNavMesh::MeshID)
+    ;
+
+    class_< FGBXNavMeshVertex, bases< FVector >  >("FGBXNavMeshVertex", init<  >())
+        .def(init< const FGBXNavMeshVertex& >())
+    ;
+
+    class_< FGBXNavMeshPoly >("FGBXNavMeshPoly", init<  >())
+        .def(init< const FGBXNavMeshPoly& >())
+        .def_readwrite("Verts", &FGBXNavMeshPoly::Verts)
+        .def_readwrite("ConnectedPolys", &FGBXNavMeshPoly::ConnectedPolys)
+        .def_readwrite("PolyDataIdx", &FGBXNavMeshPoly::PolyDataIdx)
+    ;
+
+    class_< FGBXNavMeshPolyData >("FGBXNavMeshPolyData", init<  >())
+        .def(init< const FGBXNavMeshPolyData& >())
+        .def_readwrite("CrossLevelConnections", &FGBXNavMeshPolyData::CrossLevelConnections)
+        .def_readwrite("SpecialMoves", &FGBXNavMeshPolyData::SpecialMoves)
+        .def_readwrite("Obstacles", &FGBXNavMeshPolyData::Obstacles)
+    ;
+
+    class_< FGBXNavmeshCrossLevelConnection >("FGBXNavmeshCrossLevelConnection", init<  >())
+        .def(init< const FGBXNavmeshCrossLevelConnection& >())
+        .def_readwrite("EdgeIdx", &FGBXNavmeshCrossLevelConnection::EdgeIdx)
+        .def_readwrite("ConnectedNavmeshIdx", &FGBXNavmeshCrossLevelConnection::ConnectedNavmeshIdx)
+        .def_readwrite("PolyIdx", &FGBXNavmeshCrossLevelConnection::PolyIdx)
+    ;
+
+    class_< FGBXNavMeshSpecialMove >("FGBXNavMeshSpecialMove", init<  >())
+        .def(init< const FGBXNavMeshSpecialMove& >())
+        .def_readwrite("DestinationPolyIdx", &FGBXNavMeshSpecialMove::DestinationPolyIdx)
+        .def_readwrite("DestinationMeshIdx", &FGBXNavMeshSpecialMove::DestinationMeshIdx)
+        .def_readwrite("CrossLevelMoverIdx", &FGBXNavMeshSpecialMove::CrossLevelMoverIdx)
+        .def_readwrite("ActorSpecialMoveId", &FGBXNavMeshSpecialMove::ActorSpecialMoveId)
+        .def_readwrite("Mover", &FGBXNavMeshSpecialMove::Mover)
+        .def_readwrite("UnknownData00", &FGBXNavMeshSpecialMove::UnknownData00)
+        .def_readwrite("LocalSpaceSrcLocation", &FGBXNavMeshSpecialMove::LocalSpaceSrcLocation)
+        .def_readwrite("LocalSpaceDestLocation", &FGBXNavMeshSpecialMove::LocalSpaceDestLocation)
+    ;
+
+    class_< FGBXNavMeshPathSize >("FGBXNavMeshPathSize", init<  >())
+        .def(init< const FGBXNavMeshPathSize& >())
+        .def_readwrite("Radius", &FGBXNavMeshPathSize::Radius)
+        .def_readwrite("Height", &FGBXNavMeshPathSize::Height)
+        .def_readwrite("DrawColor", &FGBXNavMeshPathSize::DrawColor)
+        .def_readwrite("ObstacleDrawColor", &FGBXNavMeshPathSize::ObstacleDrawColor)
+        .def_readwrite("StartIndex", &FGBXNavMeshPathSize::StartIndex)
+    ;
+
+    class_< FGBXNavMeshObstacleData >("FGBXNavMeshObstacleData", init<  >())
+        .def(init< const FGBXNavMeshObstacleData& >())
+        .def_readwrite("Obstacle", &FGBXNavMeshObstacleData::Obstacle)
+        .def_readwrite("MinAffectedPathSize", &FGBXNavMeshObstacleData::MinAffectedPathSize)
+    ;
+
+    class_< FGBXNavMeshPolyLookup >("FGBXNavMeshPolyLookup", init<  >())
+        .def(init< const FGBXNavMeshPolyLookup& >())
+        .def_readwrite("XCells", &FGBXNavMeshPolyLookup::XCells)
+        .def_readwrite("YCells", &FGBXNavMeshPolyLookup::YCells)
+        .def_readwrite("Origin", &FGBXNavMeshPolyLookup::Origin)
+        .def_readwrite("CellSize", &FGBXNavMeshPolyLookup::CellSize)
+        .def_readwrite("CellIndices", &FGBXNavMeshPolyLookup::CellIndices)
+        .def_readwrite("Cells", &FGBXNavMeshPolyLookup::Cells)
+    ;
+
+    class_< FGBXNavMeshLookupCell >("FGBXNavMeshLookupCell", init<  >())
+        .def(init< const FGBXNavMeshLookupCell& >())
+        .def_readwrite("IntersectingPolys", &FGBXNavMeshLookupCell::IntersectingPolys)
+    ;
+
+    class_< FNetViewer >("FNetViewer", init<  >())
+        .def(init< const FNetViewer& >())
+        .def_readwrite("InViewer", &FNetViewer::InViewer)
+        .def_readwrite("Viewer", &FNetViewer::Viewer)
+        .def_readwrite("ViewLocation", &FNetViewer::ViewLocation)
+        .def_readwrite("ViewDir", &FNetViewer::ViewDir)
+    ;
+
+    class_< FEmitterBaseInfo >("FEmitterBaseInfo", init<  >())
+        .def(init< const FEmitterBaseInfo& >())
+        .def_readwrite("PSC", &FEmitterBaseInfo::PSC)
+        .def_readwrite("Base", &FEmitterBaseInfo::Base)
+        .def_readwrite("RelativeLocation", &FEmitterBaseInfo::RelativeLocation)
+        .def_readwrite("RelativeRotation", &FEmitterBaseInfo::RelativeRotation)
+    ;
+
+    class_< FActiveDecalInfo >("FActiveDecalInfo", init<  >())
+        .def(init< const FActiveDecalInfo& >())
+        .def_readwrite("Decal", &FActiveDecalInfo::Decal)
+        .def_readwrite("LifetimeRemaining", &FActiveDecalInfo::LifetimeRemaining)
+    ;
+
+    class_< FPhysXSceneProperties >("FPhysXSceneProperties", init<  >())
+        .def(init< const FPhysXSceneProperties& >())
+        .def_readwrite("PrimaryScene", &FPhysXSceneProperties::PrimaryScene)
+        .def_readwrite("CompartmentRigidBody", &FPhysXSceneProperties::CompartmentRigidBody)
+        .def_readwrite("CompartmentFluid", &FPhysXSceneProperties::CompartmentFluid)
+        .def_readwrite("CompartmentCloth", &FPhysXSceneProperties::CompartmentCloth)
+        .def_readwrite("CompartmentSoftBody", &FPhysXSceneProperties::CompartmentSoftBody)
+    ;
+
+    class_< FPhysXSimulationProperties >("FPhysXSimulationProperties", init<  >())
+        .def(init< const FPhysXSimulationProperties& >())
+        .def_readwrite("TimeStep", &FPhysXSimulationProperties::TimeStep)
+        .def_readwrite("MaxSubSteps", &FPhysXSimulationProperties::MaxSubSteps)
+    ;
+
+    class_< FCompartmentRunList >("FCompartmentRunList", init<  >())
+        .def(init< const FCompartmentRunList& >())
+        .def_readwrite("RigidBody", &FCompartmentRunList::RigidBody)
+        .def_readwrite("Fluid", &FCompartmentRunList::Fluid)
+        .def_readwrite("Cloth", &FCompartmentRunList::Cloth)
+        .def_readwrite("SoftBody", &FCompartmentRunList::SoftBody)
+    ;
+
+    class_< FApexModuleDestructibleSettings >("FApexModuleDestructibleSettings", init<  >())
+        .def(init< const FApexModuleDestructibleSettings& >())
+        .def_readwrite("MaxChunkIslandCount", &FApexModuleDestructibleSettings::MaxChunkIslandCount)
+        .def_readwrite("MaxRrbActorCount", &FApexModuleDestructibleSettings::MaxRrbActorCount)
+        .def_readwrite("MaxChunkSeparationLOD", &FApexModuleDestructibleSettings::MaxChunkSeparationLOD)
+    ;
+
+    class_< FPhysXVerticalProperties >("FPhysXVerticalProperties", init<  >())
+        .def(init< const FPhysXVerticalProperties& >())
+        .def_readwrite("Emitters", &FPhysXVerticalProperties::Emitters)
+    ;
+
+    class_< FPhysXEmitterVerticalProperties >("FPhysXEmitterVerticalProperties", init<  >())
+        .def(init< const FPhysXEmitterVerticalProperties& >())
+        .def_readwrite("ParticlesLodMin", &FPhysXEmitterVerticalProperties::ParticlesLodMin)
+        .def_readwrite("ParticlesLodMax", &FPhysXEmitterVerticalProperties::ParticlesLodMax)
+        .def_readwrite("PacketsPerPhysXParticleSystemMax", &FPhysXEmitterVerticalProperties::PacketsPerPhysXParticleSystemMax)
+        .def_readwrite("SpawnLodVsFifoBias", &FPhysXEmitterVerticalProperties::SpawnLodVsFifoBias)
+    ;
+
+    class_< FScreenMessageString >("FScreenMessageString", init<  >())
+        .def(init< const FScreenMessageString& >())
+        .def_readwrite("Key", &FScreenMessageString::Key)
+        .def_readwrite("ScreenMessage", &FScreenMessageString::ScreenMessage)
+        .def_readwrite("DisplayColor", &FScreenMessageString::DisplayColor)
+        .def_readwrite("TimeToDisplay", &FScreenMessageString::TimeToDisplay)
+        .def_readwrite("CurrentTimeDisplayed", &FScreenMessageString::CurrentTimeDisplayed)
+    ;
+
+    class_< FLightmassWorldInfoSettings >("FLightmassWorldInfoSettings", init<  >())
+        .def(init< const FLightmassWorldInfoSettings& >())
+        .def_readwrite("StaticLightingLevelScale", &FLightmassWorldInfoSettings::StaticLightingLevelScale)
+        .def_readwrite("NumIndirectLightingBounces", &FLightmassWorldInfoSettings::NumIndirectLightingBounces)
+        .def_readwrite("EnvironmentColor", &FLightmassWorldInfoSettings::EnvironmentColor)
+        .def_readwrite("EnvironmentIntensity", &FLightmassWorldInfoSettings::EnvironmentIntensity)
+        .def_readwrite("EmissiveBoost", &FLightmassWorldInfoSettings::EmissiveBoost)
+        .def_readwrite("DiffuseBoost", &FLightmassWorldInfoSettings::DiffuseBoost)
+        .def_readwrite("SpecularBoost", &FLightmassWorldInfoSettings::SpecularBoost)
+        .def_readwrite("IndirectNormalInfluenceBoost", &FLightmassWorldInfoSettings::IndirectNormalInfluenceBoost)
+        .def_readwrite("DirectIlluminationOcclusionFraction", &FLightmassWorldInfoSettings::DirectIlluminationOcclusionFraction)
+        .def_readwrite("IndirectIlluminationOcclusionFraction", &FLightmassWorldInfoSettings::IndirectIlluminationOcclusionFraction)
+        .def_readwrite("OcclusionExponent", &FLightmassWorldInfoSettings::OcclusionExponent)
+        .def_readwrite("FullyOccludedSamplesFraction", &FLightmassWorldInfoSettings::FullyOccludedSamplesFraction)
+        .def_readwrite("MaxOcclusionDistance", &FLightmassWorldInfoSettings::MaxOcclusionDistance)
+    ;
+
+    class_< FHostMigrationState >("FHostMigrationState", init<  >())
+        .def(init< const FHostMigrationState& >())
+        .def_readwrite("HostMigrationProgress", &FHostMigrationState::HostMigrationProgress)
+        .def_readwrite("HostMigrationElapsedTime", &FHostMigrationState::HostMigrationElapsedTime)
+        .def_readwrite("HostMigrationTravelCountdown", &FHostMigrationState::HostMigrationTravelCountdown)
+        .def_readwrite("HostMigrationTravelURL", &FHostMigrationState::HostMigrationTravelURL)
+    ;
+
+    class_< FNavigationArea >("FNavigationArea", init<  >())
+        .def(init< const FNavigationArea& >())
+        .def_readwrite("AreaName", &FNavigationArea::AreaName)
+        .def_readwrite("AreaColor", &FNavigationArea::AreaColor)
+    ;
+
+    class_< FWorldFractureSettings >("FWorldFractureSettings", init<  >())
+        .def(init< const FWorldFractureSettings& >())
+        .def_readwrite("ChanceOfPhysicsChunkOverride", &FWorldFractureSettings::ChanceOfPhysicsChunkOverride)
+        .def_readwrite("MaxExplosionChunkSize", &FWorldFractureSettings::MaxExplosionChunkSize)
+        .def_readwrite("MaxDamageChunkSize", &FWorldFractureSettings::MaxDamageChunkSize)
+        .def_readwrite("MaxNumFacturedChunksToSpawnInAFrame", &FWorldFractureSettings::MaxNumFacturedChunksToSpawnInAFrame)
+        .def_readwrite("FractureExplosionVelScale", &FWorldFractureSettings::FractureExplosionVelScale)
+    ;
+
+    class_< APhysicsVolume_FCheckpointRecord >("APhysicsVolume_FCheckpointRecord", init<  >())
+        .def(init< const APhysicsVolume_FCheckpointRecord& >())
+    ;
+
+    class_< FPathStore >("FPathStore", init<  >())
+        .def(init< const FPathStore& >())
+        .def_readwrite("EdgeList", &FPathStore::EdgeList)
+        .def_readwrite("PathDistances", &FPathStore::PathDistances)
+    ;
+
+    class_< FEdgePointer >("FEdgePointer", init<  >())
+        .def(init< const FEdgePointer& >())
+        .def_readwrite("Dummy", &FEdgePointer::Dummy)
+    ;
+
+    class_< FNavMeshPathParams >("FNavMeshPathParams", init<  >())
+        .def(init< const FNavMeshPathParams& >())
+        .def_readwrite("Interface", &FNavMeshPathParams::Interface)
+        .def_readwrite("PhysicsJumpCostMultiplier", &FNavMeshPathParams::PhysicsJumpCostMultiplier)
+        .def_readwrite("SearchExtent", &FNavMeshPathParams::SearchExtent)
+        .def_readwrite("SearchLaneMultiplier", &FNavMeshPathParams::SearchLaneMultiplier)
+        .def_readwrite("SearchStart", &FNavMeshPathParams::SearchStart)
+        .def_readwrite("MaxDropHeight", &FNavMeshPathParams::MaxDropHeight)
+        .def_readwrite("MinWalkableZ", &FNavMeshPathParams::MinWalkableZ)
+        .def_readwrite("MaxHoverDistance", &FNavMeshPathParams::MaxHoverDistance)
+        .def_readwrite("ObstaclesToIgnore", &FNavMeshPathParams::ObstaclesToIgnore)
+        .def_readwrite("LookAheadDistance", &FNavMeshPathParams::LookAheadDistance)
+        .def_readwrite("CornerCutDistance", &FNavMeshPathParams::CornerCutDistance)
+        .def_readwrite("LookInterpRate", &FNavMeshPathParams::LookInterpRate)
+    ;
+
+    class_< FSeqOpInputLink >("FSeqOpInputLink", init<  >())
+        .def(init< const FSeqOpInputLink& >())
+        .def_readwrite("LinkDesc", &FSeqOpInputLink::LinkDesc)
+        .def_readwrite("QueuedActivations", &FSeqOpInputLink::QueuedActivations)
+        .def_readwrite("LinkedOp", &FSeqOpInputLink::LinkedOp)
+        .def_readwrite("ActivateDelay", &FSeqOpInputLink::ActivateDelay)
+    ;
+
+    class_< FSeqOpOutputLink >("FSeqOpOutputLink", init<  >())
+        .def(init< const FSeqOpOutputLink& >())
+        .def_readwrite("Links", &FSeqOpOutputLink::Links)
+        .def_readwrite("LinkDesc", &FSeqOpOutputLink::LinkDesc)
+        .def_readwrite("LinkedOp", &FSeqOpOutputLink::LinkedOp)
+        .def_readwrite("ActivateDelay", &FSeqOpOutputLink::ActivateDelay)
+    ;
+
+    class_< FSeqOpOutputInputLink >("FSeqOpOutputInputLink", init<  >())
+        .def(init< const FSeqOpOutputInputLink& >())
+        .def_readwrite("LinkedOp", &FSeqOpOutputInputLink::LinkedOp)
+        .def_readwrite("InputLinkIdx", &FSeqOpOutputInputLink::InputLinkIdx)
+    ;
+
+    class_< FSeqVarLink >("FSeqVarLink", init<  >())
+        .def(init< const FSeqVarLink& >())
+        .def_readwrite("ExpectedType", &FSeqVarLink::ExpectedType)
+        .def_readwrite("LinkedVariables", &FSeqVarLink::LinkedVariables)
+        .def_readwrite("LinkDesc", &FSeqVarLink::LinkDesc)
+        .def_readwrite("LinkVar", &FSeqVarLink::LinkVar)
+        .def_readwrite("PropertyName", &FSeqVarLink::PropertyName)
+        .def_readwrite("MinVars", &FSeqVarLink::MinVars)
+        .def_readwrite("MaxVars", &FSeqVarLink::MaxVars)
+        .def_readwrite("CachedProperty", &FSeqVarLink::CachedProperty)
+    ;
+
+    class_< FSeqEventLink >("FSeqEventLink", init<  >())
+        .def(init< const FSeqEventLink& >())
+        .def_readwrite("LinkedEvents", &FSeqEventLink::LinkedEvents)
+        .def_readwrite("LinkDesc", &FSeqEventLink::LinkDesc)
+    ;
+
+    class_< FCurveEdTab >("FCurveEdTab", init<  >())
+        .def(init< const FCurveEdTab& >())
+        .def_readwrite("TabName", &FCurveEdTab::TabName)
+        .def_readwrite("Curves", &FCurveEdTab::Curves)
+        .def_readwrite("ViewStartInput", &FCurveEdTab::ViewStartInput)
+        .def_readwrite("ViewEndInput", &FCurveEdTab::ViewEndInput)
+        .def_readwrite("ViewStartOutput", &FCurveEdTab::ViewStartOutput)
+        .def_readwrite("ViewEndOutput", &FCurveEdTab::ViewEndOutput)
+    ;
+
+    class_< FCurveEdEntry >("FCurveEdEntry", init<  >())
+        .def(init< const FCurveEdEntry& >())
+        .def_readwrite("CurveObject", &FCurveEdEntry::CurveObject)
+        .def_readwrite("CurveColor", &FCurveEdEntry::CurveColor)
+        .def_readwrite("CurveName", &FCurveEdEntry::CurveName)
+        .def_readwrite("ClampLow", &FCurveEdEntry::ClampLow)
+        .def_readwrite("ClampHigh", &FCurveEdEntry::ClampHigh)
+    ;
+
+    class_< FAnimSetBakeAndPruneStatus >("FAnimSetBakeAndPruneStatus", init<  >())
+        .def(init< const FAnimSetBakeAndPruneStatus& >())
+        .def_readwrite("AnimSetName", &FAnimSetBakeAndPruneStatus::AnimSetName)
+    ;
+
+    class_< FMorphNodeConn >("FMorphNodeConn", init<  >())
+        .def(init< const FMorphNodeConn& >())
+        .def_readwrite("ChildNodes", &FMorphNodeConn::ChildNodes)
+        .def_readwrite("ConnName", &FMorphNodeConn::ConnName)
+        .def_readwrite("DrawY", &FMorphNodeConn::DrawY)
+    ;
+
+    class_< FViewParticleEmitterInstanceMotionBlurInfo >("FViewParticleEmitterInstanceMotionBlurInfo", init<  >())
+        .def(init< const FViewParticleEmitterInstanceMotionBlurInfo& >())
+        .def_readwrite("EmitterInstanceMBInfoMap", &FViewParticleEmitterInstanceMotionBlurInfo::EmitterInstanceMBInfoMap)
+    ;
+
+    class_< FParticleSysParam >("FParticleSysParam", init<  >())
+        .def(init< const FParticleSysParam& >())
+        .def_readwrite("Name", &FParticleSysParam::Name)
+        .def_readwrite("ParamType", &FParticleSysParam::ParamType)
+        .def_readwrite("Scalar", &FParticleSysParam::Scalar)
+        .def_readwrite("Scalar_Low", &FParticleSysParam::Scalar_Low)
+        .def_readwrite("Vector", &FParticleSysParam::Vector)
+        .def_readwrite("Vector_Low", &FParticleSysParam::Vector_Low)
+        .def_readwrite("Color", &FParticleSysParam::Color)
+        .def_readwrite("Actor", &FParticleSysParam::Actor)
+        .def_readwrite("Material", &FParticleSysParam::Material)
+        .def_readwrite("Socket", &FParticleSysParam::Socket)
+    ;
+
+    class_< FMaterialViewRelevance >("FMaterialViewRelevance", init<  >())
+        .def(init< const FMaterialViewRelevance& >())
+    ;
+
+    class_< FParticleSystemReplayFrame >("FParticleSystemReplayFrame", init<  >())
+        .def(init< const FParticleSystemReplayFrame& >())
+        .def_readwrite("Emitters", &FParticleSystemReplayFrame::Emitters)
+    ;
+
+    class_< FParticleEmitterReplayFrame >("FParticleEmitterReplayFrame", init<  >())
+        .def(init< const FParticleEmitterReplayFrame& >())
+        .def_readwrite("EmitterType", &FParticleEmitterReplayFrame::EmitterType)
+        .def_readwrite("OriginalEmitterIndex", &FParticleEmitterReplayFrame::OriginalEmitterIndex)
+        .def_readwrite("FrameState", &FParticleEmitterReplayFrame::FrameState)
+    ;
+
+    class_< FParticleEventSpawnData >("FParticleEventSpawnData", init<  >())
+        .def(init< const FParticleEventSpawnData& >())
+        .def_readwrite("Type", &FParticleEventData::Type)
+        .def_readwrite("EventName", &FParticleEventData::EventName)
+        .def_readwrite("EmitterTime", &FParticleEventData::EmitterTime)
+        .def_readwrite("Location", &FParticleEventData::Location)
+        .def_readwrite("Direction", &FParticleEventData::Direction)
+        .def_readwrite("Velocity", &FParticleEventData::Velocity)
+    ;
+
+    class_< FParticleEventData >("FParticleEventData", init<  >())
+        .def(init< const FParticleEventData& >())
+        .def_readwrite("Type", &FParticleEventData::Type)
+        .def_readwrite("EventName", &FParticleEventData::EventName)
+        .def_readwrite("EmitterTime", &FParticleEventData::EmitterTime)
+        .def_readwrite("Location", &FParticleEventData::Location)
+        .def_readwrite("Direction", &FParticleEventData::Direction)
+        .def_readwrite("Velocity", &FParticleEventData::Velocity)
+    ;
+
+    class_< FParticleEventDeathData, bases< FParticleEventData >  >("FParticleEventDeathData", init<  >())
+        .def(init< const FParticleEventDeathData& >())
+        .def_readwrite("ParticleTime", &FParticleEventDeathData::ParticleTime)
+    ;
+
+    class_< FParticleEventCollideData, bases< FParticleEventData >  >("FParticleEventCollideData", init<  >())
+        .def(init< const FParticleEventCollideData& >())
+        .def_readwrite("ParticleTime", &FParticleEventCollideData::ParticleTime)
+        .def_readwrite("Normal", &FParticleEventCollideData::Normal)
+        .def_readwrite("Time", &FParticleEventCollideData::Time)
+        .def_readwrite("Item", &FParticleEventCollideData::Item)
+        .def_readwrite("BoneName", &FParticleEventCollideData::BoneName)
+    ;
+
+    class_< FParticleEventTraceData, bases< FParticleEventData >  >("FParticleEventTraceData", init<  >())
+        .def(init< const FParticleEventTraceData& >())
+        .def_readwrite("ParticleTime", &FParticleEventTraceData::ParticleTime)
+    ;
+
+    class_< FParticleEventKismetData, bases< FParticleEventData >  >("FParticleEventKismetData", init<  >())
+        .def(init< const FParticleEventKismetData& >())
+        .def_readwrite("UsePSysCompLocation", &FParticleEventKismetData::UsePSysCompLocation)
+        .def_readwrite("Normal", &FParticleEventKismetData::Normal)
+    ;
+
+    class_< FParticleSystemLOD >("FParticleSystemLOD", init<  >())
+        .def(init< const FParticleSystemLOD& >())
+    ;
+
+    class_< FPhysEffectInfo >("FPhysEffectInfo", init<  >())
+        .def(init< const FPhysEffectInfo& >())
+        .def_readwrite("Threshold", &FPhysEffectInfo::Threshold)
+        .def_readwrite("ReFireDelay", &FPhysEffectInfo::ReFireDelay)
+        .def_readwrite("Effect", &FPhysEffectInfo::Effect)
+        .def_readwrite("Sound", &FPhysEffectInfo::Sound)
+        .def_readwrite("ImpactDefinition", &FPhysEffectInfo::ImpactDefinition)
+    ;
+
+    class_< FDecalReceiver >("FDecalReceiver", init<  >())
+        .def(init< const FDecalReceiver& >())
+        .def_readwrite("Component", &FDecalReceiver::Component)
+        .def_readwrite("RenderData", &FDecalReceiver::RenderData)
+    ;
+
+    class_< FLightingChannelContainer >("FLightingChannelContainer", init<  >())
+        .def(init< const FLightingChannelContainer& >())
+        .def_readwrite("BSP", &FLightingChannelContainer::BSP)
+        .def_readwrite("Static", &FLightingChannelContainer::Static)
+        .def_readwrite("Dynamic", &FLightingChannelContainer::Dynamic)
+        .def_readwrite("CompositeDynamic", &FLightingChannelContainer::CompositeDynamic)
+        .def_readwrite("Skybox", &FLightingChannelContainer::Skybox)
+        .def_readwrite("Unnamed", &FLightingChannelContainer::Unnamed)
+        .def_readwrite("Unnamed01", &FLightingChannelContainer::Unnamed01)
+        .def_readwrite("Unnamed02", &FLightingChannelContainer::Unnamed02)
+        .def_readwrite("Unnamed03", &FLightingChannelContainer::Unnamed03)
+        .def_readwrite("Unnamed04", &FLightingChannelContainer::Unnamed04)
+        .def_readwrite("Unnamed05", &FLightingChannelContainer::Unnamed05)
+        .def_readwrite("Cinematic", &FLightingChannelContainer::Cinematic)
+        .def_readwrite("Cinematic01", &FLightingChannelContainer::Cinematic01)
+        .def_readwrite("Cinematic02", &FLightingChannelContainer::Cinematic02)
+        .def_readwrite("Cinematic03", &FLightingChannelContainer::Cinematic03)
+        .def_readwrite("Cinematic04", &FLightingChannelContainer::Cinematic04)
+        .def_readwrite("Cinematic05", &FLightingChannelContainer::Cinematic05)
+        .def_readwrite("Cinematic06", &FLightingChannelContainer::Cinematic06)
+        .def_readwrite("Cinematic07", &FLightingChannelContainer::Cinematic07)
+        .def_readwrite("Cinematic08", &FLightingChannelContainer::Cinematic08)
+        .def_readwrite("Cinematic09", &FLightingChannelContainer::Cinematic09)
+        .def_readwrite("Gameplay", &FLightingChannelContainer::Gameplay)
+        .def_readwrite("Gameplay01", &FLightingChannelContainer::Gameplay01)
+        .def_readwrite("Gameplay02", &FLightingChannelContainer::Gameplay02)
+        .def_readwrite("Gameplay03", &FLightingChannelContainer::Gameplay03)
+        .def_readwrite("Crowd", &FLightingChannelContainer::Crowd)
+        .def_readwrite("PhysX", &FLightingChannelContainer::PhysX)
+    ;
+
+    class_< FSynchGroup >("FSynchGroup", init<  >())
+        .def(init< const FSynchGroup& >())
+        .def_readwrite("SeqNodes", &FSynchGroup::SeqNodes)
+        .def_readwrite("MasterNode", &FSynchGroup::MasterNode)
+        .def_readwrite("GroupName", &FSynchGroup::GroupName)
+        .def_readwrite("RateScale", &FSynchGroup::RateScale)
+    ;
+
+    class_< FScalarParameterInterpStruct >("FScalarParameterInterpStruct", init<  >())
+        .def(init< const FScalarParameterInterpStruct& >())
+        .def_readwrite("ParameterName", &FScalarParameterInterpStruct::ParameterName)
+        .def_readwrite("ParameterValue", &FScalarParameterInterpStruct::ParameterValue)
+        .def_readwrite("InterpTime", &FScalarParameterInterpStruct::InterpTime)
+        .def_readwrite("WarmupTime", &FScalarParameterInterpStruct::WarmupTime)
+    ;
+
+    class_< FRootMotionCurve >("FRootMotionCurve", init<  >())
+        .def(init< const FRootMotionCurve& >())
+        .def_readwrite("AnimName", &FRootMotionCurve::AnimName)
+        .def_readwrite("Curve", &FRootMotionCurve::Curve)
+        .def_readwrite("MaxCurveTime", &FRootMotionCurve::MaxCurveTime)
+    ;
+
+    class_< FBalanceDefSpawnedActorState >("FBalanceDefSpawnedActorState", init<  >())
+        .def(init< const FBalanceDefSpawnedActorState& >())
+        .def_readwrite("BalanceDefinition", &FBalanceDefSpawnedActorState::BalanceDefinition)
+        .def_readwrite("GradeIndex", &FBalanceDefSpawnedActorState::GradeIndex)
+    ;
+
+    class_< FDamageTypeResistance >("FDamageTypeResistance", init<  >())
+        .def(init< const FDamageTypeResistance& >())
+        .def_readwrite("ResistanceToImpact", &FDamageTypeResistance::ResistanceToImpact)
+        .def_readwrite("ResistanceToStatusEffect", &FDamageTypeResistance::ResistanceToStatusEffect)
+    ;
+
+    class_< FCameraCutInfo >("FCameraCutInfo", init<  >())
+        .def(init< const FCameraCutInfo& >())
+        .def_readwrite("Location", &FCameraCutInfo::Location)
+        .def_readwrite("TimeStamp", &FCameraCutInfo::TimeStamp)
+    ;
+
+    class_< FRenderingPerformanceOverrides >("FRenderingPerformanceOverrides", init<  >())
+        .def(init< const FRenderingPerformanceOverrides& >())
+    ;
+
+    class_< FAnimSlotInfo >("FAnimSlotInfo", init<  >())
+        .def(init< const FAnimSlotInfo& >())
+        .def_readwrite("SlotName", &FAnimSlotInfo::SlotName)
+        .def_readwrite("ChannelWeights", &FAnimSlotInfo::ChannelWeights)
+    ;
+
+    class_< FTrailSamplePoint >("FTrailSamplePoint", init<  >())
+        .def(init< const FTrailSamplePoint& >())
+        .def_readwrite("RelativeTime", &FTrailSamplePoint::RelativeTime)
+        .def_readwrite("FirstEdgeSample", &FTrailSamplePoint::FirstEdgeSample)
+        .def_readwrite("ControlPointSample", &FTrailSamplePoint::ControlPointSample)
+        .def_readwrite("SecondEdgeSample", &FTrailSamplePoint::SecondEdgeSample)
+    ;
+
+    class_< FTrailSocketSamplePoint >("FTrailSocketSamplePoint", init<  >())
+        .def(init< const FTrailSocketSamplePoint& >())
+        .def_readwrite("Position", &FTrailSocketSamplePoint::Position)
+        .def_readwrite("Velocity", &FTrailSocketSamplePoint::Velocity)
+    ;
+
+    class_< FTrailSample >("FTrailSample", init<  >())
+        .def(init< const FTrailSample& >())
+        .def_readwrite("RelativeTime", &FTrailSample::RelativeTime)
+        .def_readwrite("FirstEdgeSample", &FTrailSample::FirstEdgeSample)
+        .def_readwrite("ControlPointSample", &FTrailSample::ControlPointSample)
+        .def_readwrite("SecondEdgeSample", &FTrailSample::SecondEdgeSample)
+    ;
+
+    class_< FVehicleState >("FVehicleState", init<  >())
+        .def(init< const FVehicleState& >())
+        .def_readwrite("RBState", &FVehicleState::RBState)
+        .def_readwrite("ServerBrake", &FVehicleState::ServerBrake)
+        .def_readwrite("ServerGas", &FVehicleState::ServerGas)
+        .def_readwrite("ServerSteering", &FVehicleState::ServerSteering)
+        .def_readwrite("ServerRise", &FVehicleState::ServerRise)
+        .def_readwrite("ServerView", &FVehicleState::ServerView)
+    ;
+
+    class_< FRigidBodyState >("FRigidBodyState", init<  >())
+        .def(init< const FRigidBodyState& >())
+        .def_readwrite("Position", &FRigidBodyState::Position)
+        .def_readwrite("UnknownData00", &FRigidBodyState::UnknownData00)
+        .def_readwrite("Quaternion", &FRigidBodyState::Quaternion)
+        .def_readwrite("LinVel", &FRigidBodyState::LinVel)
+        .def_readwrite("AngVel", &FRigidBodyState::AngVel)
+    ;
+
+    class_< AInterpActor_FCheckpointRecord >("AInterpActor_FCheckpointRecord", init<  >())
+        .def(init< const AInterpActor_FCheckpointRecord& >())
+        .def_readwrite("Location", &AInterpActor_FCheckpointRecord::Location)
+        .def_readwrite("Rotation", &AInterpActor_FCheckpointRecord::Rotation)
+        .def_readwrite("CollisionType", &AInterpActor_FCheckpointRecord::CollisionType)
+    ;
+
+    class_< FVisiblePortalInfo >("FVisiblePortalInfo", init<  >())
+        .def(init< const FVisiblePortalInfo& >())
+        .def_readwrite("Source", &FVisiblePortalInfo::Source)
+        .def_readwrite("Destination", &FVisiblePortalInfo::Destination)
+    ;
+
+    class_< FInstanceDataUnion >("FInstanceDataUnion", init<  >())
+        .def(init< const FInstanceDataUnion& >())
+        .def_readwrite("Name", &FInstanceDataUnion::Name)
+        .def_readwrite("Type", &FInstanceDataUnion::Type)
+        .def_readwrite("Replication", &FInstanceDataUnion::Replication)
+        .def_readwrite("MaxSwitchValue", &FInstanceDataUnion::MaxSwitchValue)
+        .def_readwrite("BitsRequiredForMaxSwitchValue", &FInstanceDataUnion::BitsRequiredForMaxSwitchValue)
+        .def_readwrite("Bool", &FInstanceDataUnion::Bool)
+        .def_readwrite("DeleteByOwner", &FInstanceDataUnion::DeleteByOwner)
+        .def_readwrite("Int", &FInstanceDataUnion::Int)
+        .def_readwrite("Float", &FInstanceDataUnion::Float)
+        .def_readwrite("Vector", &FInstanceDataUnion::Vector)
+        .def_readwrite("Object", &FInstanceDataUnion::Object)
+        .def_readwrite("ComponentData", &FInstanceDataUnion::ComponentData)
+        .def_readwrite("String", &FInstanceDataUnion::String)
+        .def_readwrite("BodyCompositionIndex", &FInstanceDataUnion::BodyCompositionIndex)
+    ;
+
+    class_< FComponentData >("FComponentData", init<  >())
+        .def(init< const FComponentData& >())
+        .def_readwrite("Component", &FComponentData::Component)
+        .def_readwrite("CollisionType", &FComponentData::CollisionType)
+        .def_readwrite("MeshSocketName", &FComponentData::MeshSocketName)
+        .def_readwrite("HitRegionDefinition", &FComponentData::HitRegionDefinition)
+        .def_readwrite("InteractIcon", &FComponentData::InteractIcon)
+        .def_readwrite("SecondaryInteractIcon", &FComponentData::SecondaryInteractIcon)
+    ;
+
+    class_< ATrigger_FCheckpointRecord >("ATrigger_FCheckpointRecord", init<  >())
+        .def(init< const ATrigger_FCheckpointRecord& >())
+    ;
+
+    class_< FTCameraCache >("FTCameraCache", init<  >())
+        .def(init< const FTCameraCache& >())
+        .def_readwrite("TimeStamp", &FTCameraCache::TimeStamp)
+        .def_readwrite("POV", &FTCameraCache::POV)
+    ;
+
+    class_< FTViewTarget >("FTViewTarget", init<  >())
+        .def(init< const FTViewTarget& >())
+        .def_readwrite("Target", &FTViewTarget::Target)
+        .def_readwrite("Controller", &FTViewTarget::Controller)
+        .def_readwrite("POV", &FTViewTarget::POV)
+        .def_readwrite("AspectRatio", &FTViewTarget::AspectRatio)
+        .def_readwrite("PRI", &FTViewTarget::PRI)
+    ;
+
+    class_< FViewTargetTransitionParams >("FViewTargetTransitionParams", init<  >())
+        .def(init< const FViewTargetTransitionParams& >())
+        .def_readwrite("BlendTime", &FViewTargetTransitionParams::BlendTime)
+        .def_readwrite("BlendFunction", &FViewTargetTransitionParams::BlendFunction)
+        .def_readwrite("BlendExp", &FViewTargetTransitionParams::BlendExp)
+    ;
+
+    class_< AEmitter_FCheckpointRecord >("AEmitter_FCheckpointRecord", init<  >())
+        .def(init< const AEmitter_FCheckpointRecord& >())
+    ;
+
+    class_< FCameraShakeInstance >("FCameraShakeInstance", init<  >())
+        .def(init< const FCameraShakeInstance& >())
+        .def_readwrite("SourceShake", &FCameraShakeInstance::SourceShake)
+        .def_readwrite("SourceShakeName", &FCameraShakeInstance::SourceShakeName)
+        .def_readwrite("OscillatorTimeRemaining", &FCameraShakeInstance::OscillatorTimeRemaining)
+        .def_readwrite("CurrentBlendInTime", &FCameraShakeInstance::CurrentBlendInTime)
+        .def_readwrite("CurrentBlendOutTime", &FCameraShakeInstance::CurrentBlendOutTime)
+        .def_readwrite("LocSinOffset", &FCameraShakeInstance::LocSinOffset)
+        .def_readwrite("RotSinOffset", &FCameraShakeInstance::RotSinOffset)
+        .def_readwrite("FOVSinOffset", &FCameraShakeInstance::FOVSinOffset)
+        .def_readwrite("Scale", &FCameraShakeInstance::Scale)
+        .def_readwrite("AnimInst", &FCameraShakeInstance::AnimInst)
+        .def_readwrite("PlaySpace", &FCameraShakeInstance::PlaySpace)
+        .def_readwrite("UnknownData00", &FCameraShakeInstance::UnknownData00)
+        .def_readwrite("UserPlaySpaceMatrix", &FCameraShakeInstance::UserPlaySpaceMatrix)
+    ;
+
+    class_< FROscillator >("FROscillator", init<  >())
+        .def(init< const FROscillator& >())
+        .def_readwrite("Pitch", &FROscillator::Pitch)
+        .def_readwrite("Yaw", &FROscillator::Yaw)
+        .def_readwrite("Roll", &FROscillator::Roll)
+    ;
+
+    class_< FFOscillator >("FFOscillator", init<  >())
+        .def(init< const FFOscillator& >())
+        .def_readwrite("Amplitude", &FFOscillator::Amplitude)
+        .def_readwrite("Frequency", &FFOscillator::Frequency)
+        .def_readwrite("InitialOffset", &FFOscillator::InitialOffset)
+    ;
+
+    class_< FVOscillator >("FVOscillator", init<  >())
+        .def(init< const FVOscillator& >())
+        .def_readwrite("X", &FVOscillator::X)
+        .def_readwrite("Y", &FVOscillator::Y)
+        .def_readwrite("Z", &FVOscillator::Z)
+    ;
+
+    class_< FClientAdjustment >("FClientAdjustment", init<  >())
+        .def(init< const FClientAdjustment& >())
+        .def_readwrite("TimeStamp", &FClientAdjustment::TimeStamp)
+        .def_readwrite("newPhysics", &FClientAdjustment::newPhysics)
+        .def_readwrite("NewLoc", &FClientAdjustment::NewLoc)
+        .def_readwrite("NewVel", &FClientAdjustment::NewVel)
+        .def_readwrite("NewBase", &FClientAdjustment::NewBase)
+        .def_readwrite("NewFloor", &FClientAdjustment::NewFloor)
+    ;
+
+    class_< FUIProviderFieldValue >("FUIProviderFieldValue", init<  >())
+        .def(init< const FUIProviderFieldValue& >())
+        .def_readwrite("CustomStringNode", &FUIProviderFieldValue::CustomStringNode)
+        .def_readwrite("PropertyTag", &FUIProviderScriptFieldValue::PropertyTag)
+        .def_readwrite("PropertyType", &FUIProviderScriptFieldValue::PropertyType)
+        .def_readwrite("StringValue", &FUIProviderScriptFieldValue::StringValue)
+        .def_readwrite("ImageValue", &FUIProviderScriptFieldValue::ImageValue)
+        .def_readwrite("ArrayValue", &FUIProviderScriptFieldValue::ArrayValue)
+        .def_readwrite("RangeValue", &FUIProviderScriptFieldValue::RangeValue)
+        .def_readwrite("NetIdValue", &FUIProviderScriptFieldValue::NetIdValue)
+        .def_readwrite("AtlasCoordinates", &FUIProviderScriptFieldValue::AtlasCoordinates)
+    ;
+
+    class_< FUIProviderScriptFieldValue >("FUIProviderScriptFieldValue", init<  >())
+        .def(init< const FUIProviderScriptFieldValue& >())
+        .def_readwrite("PropertyTag", &FUIProviderScriptFieldValue::PropertyTag)
+        .def_readwrite("PropertyType", &FUIProviderScriptFieldValue::PropertyType)
+        .def_readwrite("StringValue", &FUIProviderScriptFieldValue::StringValue)
+        .def_readwrite("ImageValue", &FUIProviderScriptFieldValue::ImageValue)
+        .def_readwrite("ArrayValue", &FUIProviderScriptFieldValue::ArrayValue)
+        .def_readwrite("RangeValue", &FUIProviderScriptFieldValue::RangeValue)
+        .def_readwrite("NetIdValue", &FUIProviderScriptFieldValue::NetIdValue)
+        .def_readwrite("AtlasCoordinates", &FUIProviderScriptFieldValue::AtlasCoordinates)
+    ;
+
+    class_< FUIRangeData >("FUIRangeData", init<  >())
+        .def(init< const FUIRangeData& >())
+        .def_readwrite("CurrentValue", &FUIRangeData::CurrentValue)
+        .def_readwrite("MinValue", &FUIRangeData::MinValue)
+        .def_readwrite("MaxValue", &FUIRangeData::MaxValue)
+        .def_readwrite("NudgeValue", &FUIRangeData::NudgeValue)
+    ;
+
+    class_< FTextureCoordinates >("FTextureCoordinates", init<  >())
+        .def(init< const FTextureCoordinates& >())
+        .def_readwrite("U", &FTextureCoordinates::U)
+        .def_readwrite("V", &FTextureCoordinates::V)
+        .def_readwrite("UL", &FTextureCoordinates::UL)
+        .def_readwrite("VL", &FTextureCoordinates::VL)
+    ;
+
+    class_< FUIDataProviderField >("FUIDataProviderField", init<  >())
+        .def(init< const FUIDataProviderField& >())
+        .def_readwrite("FieldTag", &FUIDataProviderField::FieldTag)
+        .def_readwrite("FieldType", &FUIDataProviderField::FieldType)
+        .def_readwrite("FieldProviders", &FUIDataProviderField::FieldProviders)
+    ;
+
+    class_< FPlayerDataStoreGroup >("FPlayerDataStoreGroup", init<  >())
+        .def(init< const FPlayerDataStoreGroup& >())
+        .def_readwrite("PlayerOwner", &FPlayerDataStoreGroup::PlayerOwner)
+        .def_readwrite("DataStores", &FPlayerDataStoreGroup::DataStores)
+    ;
+
+    class_< FUIKeyRepeatData >("FUIKeyRepeatData", init<  >())
+        .def(init< const FUIKeyRepeatData& >())
+        .def_readwrite("CurrentRepeatKey", &FUIKeyRepeatData::CurrentRepeatKey)
+        .def_readwrite("NextRepeatTime", &FUIKeyRepeatData::NextRepeatTime)
+    ;
+
+    class_< FUIAxisEmulationDefinition >("FUIAxisEmulationDefinition", init<  >())
+        .def(init< const FUIAxisEmulationDefinition& >())
+        .def_readwrite("AxisInputKey", &FUIAxisEmulationDefinition::AxisInputKey)
+        .def_readwrite("AdjacentAxisInputKey", &FUIAxisEmulationDefinition::AdjacentAxisInputKey)
+        .def_readwrite("InputKeyToEmulate", &FUIAxisEmulationDefinition::InputKeyToEmulate)
+    ;
+
+    class_< FUIAxisEmulationData, bases< FUIKeyRepeatData >  >("FUIAxisEmulationData", init<  >())
+        .def(init< const FUIAxisEmulationData& >())
+    ;
+
+    class_< FKeyBind >("FKeyBind", init<  >())
+        .def(init< const FKeyBind& >())
+        .def_readwrite("Name", &FKeyBind::Name)
+        .def_readwrite("Command", &FKeyBind::Command)
+        .def_readwrite("Control", &FKeyBind::Control)
+        .def_readwrite("Shift", &FKeyBind::Shift)
+        .def_readwrite("Alt", &FKeyBind::Alt)
+        .def_readwrite("LeftTrigger", &FKeyBind::LeftTrigger)
+        .def_readwrite("RightTrigger", &FKeyBind::RightTrigger)
+    ;
+
+    class_< FWaveformSample >("FWaveformSample", init<  >())
+        .def(init< const FWaveformSample& >())
+        .def_readwrite("LeftAmplitude", &FWaveformSample::LeftAmplitude)
+        .def_readwrite("RightAmplitude", &FWaveformSample::RightAmplitude)
+        .def_readwrite("LeftFunction", &FWaveformSample::LeftFunction)
+        .def_readwrite("RightFunction", &FWaveformSample::RightFunction)
+        .def_readwrite("Duration", &FWaveformSample::Duration)
+    ;
+
+    class_< FConnectedPeerInfo >("FConnectedPeerInfo", init<  >())
+        .def(init< const FConnectedPeerInfo& >())
+        .def_readwrite("PlayerID", &FConnectedPeerInfo::PlayerID)
+        .def_readwrite("NatType", &FConnectedPeerInfo::NatType)
+    ;
+
+    class_< FPlayerStorageArrayProvider >("FPlayerStorageArrayProvider", init<  >())
+        .def(init< const FPlayerStorageArrayProvider& >())
+        .def_readwrite("PlayerStorageId", &FPlayerStorageArrayProvider::PlayerStorageId)
+        .def_readwrite("PlayerStorageName", &FPlayerStorageArrayProvider::PlayerStorageName)
+        .def_readwrite("Provider", &FPlayerStorageArrayProvider::Provider)
+    ;
+
+    class_< FUIMenuInputMap >("FUIMenuInputMap", init<  >())
+        .def(init< const FUIMenuInputMap& >())
+        .def_readwrite("FieldName", &FUIMenuInputMap::FieldName)
+        .def_readwrite("Set", &FUIMenuInputMap::Set)
+        .def_readwrite("MappedText", &FUIMenuInputMap::MappedText)
+    ;
+
+    class_< FInputMatchRequest >("FInputMatchRequest", init<  >())
+        .def(init< const FInputMatchRequest& >())
+        .def_readwrite("Inputs", &FInputMatchRequest::Inputs)
+        .def_readwrite("MatchActor", &FInputMatchRequest::MatchActor)
+        .def_readwrite("MatchFuncName", &FInputMatchRequest::MatchFuncName)
+        .def_readwrite("MatchDelegate", &FInputMatchRequest::MatchDelegate)
+        .def_readwrite("FailedFuncName", &FInputMatchRequest::FailedFuncName)
+        .def_readwrite("RequestName", &FInputMatchRequest::RequestName)
+        .def_readwrite("MatchIdx", &FInputMatchRequest::MatchIdx)
+        .def_readwrite("LastMatchTime", &FInputMatchRequest::LastMatchTime)
+    ;
+
+    class_< FInputEntry >("FInputEntry", init<  >())
+        .def(init< const FInputEntry& >())
+        .def_readwrite("Type", &FInputEntry::Type)
+        .def_readwrite("Value", &FInputEntry::Value)
+        .def_readwrite("TimeDelta", &FInputEntry::TimeDelta)
+        .def_readwrite("Action", &FInputEntry::Action)
+    ;
+
+    class_< FDebugTextInfo >("FDebugTextInfo", init<  >())
+        .def(init< const FDebugTextInfo& >())
+        .def_readwrite("SrcActor", &FDebugTextInfo::SrcActor)
+        .def_readwrite("SrcActorOffset", &FDebugTextInfo::SrcActorOffset)
+        .def_readwrite("SrcActorDesiredOffset", &FDebugTextInfo::SrcActorDesiredOffset)
+        .def_readwrite("DebugText", &FDebugTextInfo::DebugText)
+        .def_readwrite("TimeRemaining", &FDebugTextInfo::TimeRemaining)
+        .def_readwrite("Duration", &FDebugTextInfo::Duration)
+        .def_readwrite("TextColor", &FDebugTextInfo::TextColor)
+        .def_readwrite("OrigActorLocation", &FDebugTextInfo::OrigActorLocation)
+        .def_readwrite("Font", &FDebugTextInfo::Font)
+    ;
+
+    class_< FAudioEQEffect >("FAudioEQEffect", init<  >())
+        .def(init< const FAudioEQEffect& >())
+        .def_readwrite("RootTime", &FAudioEQEffect::RootTime)
+        .def_readwrite("HFFrequency", &FAudioEQEffect::HFFrequency)
+        .def_readwrite("HFGain", &FAudioEQEffect::HFGain)
+        .def_readwrite("MFCutoffFrequency", &FAudioEQEffect::MFCutoffFrequency)
+        .def_readwrite("MFBandwidth", &FAudioEQEffect::MFBandwidth)
+        .def_readwrite("MFGain", &FAudioEQEffect::MFGain)
+        .def_readwrite("LFFrequency", &FAudioEQEffect::LFFrequency)
+        .def_readwrite("LFGain", &FAudioEQEffect::LFGain)
+    ;
+
+    class_< FSoundClassAdjuster >("FSoundClassAdjuster", init<  >())
+        .def(init< const FSoundClassAdjuster& >())
+        .def_readwrite("SoundClassName", &FSoundClassAdjuster::SoundClassName)
+        .def_readwrite("SoundClass", &FSoundClassAdjuster::SoundClass)
+        .def_readwrite("VolumeAdjuster", &FSoundClassAdjuster::VolumeAdjuster)
+        .def_readwrite("PitchAdjuster", &FSoundClassAdjuster::PitchAdjuster)
+        .def_readwrite("VoiceCenterChannelVolumeAdjuster", &FSoundClassAdjuster::VoiceCenterChannelVolumeAdjuster)
+    ;
+
+    class_< FAutoCompleteCommand >("FAutoCompleteCommand", init<  >())
+        .def(init< const FAutoCompleteCommand& >())
+        .def_readwrite("Command", &FAutoCompleteCommand::Command)
+        .def_readwrite("Desc", &FAutoCompleteCommand::Desc)
+    ;
+
+    class_< FAutoCompleteNode >("FAutoCompleteNode", init<  >())
+        .def(init< const FAutoCompleteNode& >())
+        .def_readwrite("IndexChar", &FAutoCompleteNode::IndexChar)
+        .def_readwrite("AutoCompleteListIndices", &FAutoCompleteNode::AutoCompleteListIndices)
+        .def_readwrite("ChildNodes", &FAutoCompleteNode::ChildNodes)
+    ;
+
+    class_< FTitleSafeZoneArea >("FTitleSafeZoneArea", init<  >())
+        .def(init< const FTitleSafeZoneArea& >())
+        .def_readwrite("MaxPercentX", &FTitleSafeZoneArea::MaxPercentX)
+        .def_readwrite("MaxPercentY", &FTitleSafeZoneArea::MaxPercentY)
+        .def_readwrite("RecommendedPercentX", &FTitleSafeZoneArea::RecommendedPercentX)
+        .def_readwrite("RecommendedPercentY", &FTitleSafeZoneArea::RecommendedPercentY)
+    ;
+
+    class_< FSplitscreenData >("FSplitscreenData", init<  >())
+        .def(init< const FSplitscreenData& >())
+        .def_readwrite("PlayerData", &FSplitscreenData::PlayerData)
+    ;
+
+    class_< FPerPlayerSplitscreenData >("FPerPlayerSplitscreenData", init<  >())
+        .def(init< const FPerPlayerSplitscreenData& >())
+        .def_readwrite("SizeX", &FPerPlayerSplitscreenData::SizeX)
+        .def_readwrite("SizeY", &FPerPlayerSplitscreenData::SizeY)
+        .def_readwrite("OriginX", &FPerPlayerSplitscreenData::OriginX)
+        .def_readwrite("OriginY", &FPerPlayerSplitscreenData::OriginY)
+    ;
+
+    class_< FDebugDisplayProperty >("FDebugDisplayProperty", init<  >())
+        .def(init< const FDebugDisplayProperty& >())
+        .def_readwrite("Obj", &FDebugDisplayProperty::Obj)
+        .def_readwrite("PropertyName", &FDebugDisplayProperty::PropertyName)
+    ;
+
+    class_< FSynchronizedActorVisibilityHistory >("FSynchronizedActorVisibilityHistory", init<  >())
+        .def(init< const FSynchronizedActorVisibilityHistory& >())
+        .def_readwrite("State", &FSynchronizedActorVisibilityHistory::State)
+        .def_readwrite("CriticalSection", &FSynchronizedActorVisibilityHistory::CriticalSection)
+    ;
+
+    class_< FCurrentPostProcessVolumeInfo >("FCurrentPostProcessVolumeInfo", init<  >())
+        .def(init< const FCurrentPostProcessVolumeInfo& >())
+        .def_readwrite("LastSettings", &FCurrentPostProcessVolumeInfo::LastSettings)
+        .def_readwrite("LastVolumeUsed", &FCurrentPostProcessVolumeInfo::LastVolumeUsed)
+        .def_readwrite("BlendStartTime", &FCurrentPostProcessVolumeInfo::BlendStartTime)
+        .def_readwrite("LastBlendTime", &FCurrentPostProcessVolumeInfo::LastBlendTime)
+    ;
+
+    class_< FPostProcessSettingsOverride >("FPostProcessSettingsOverride", init<  >())
+        .def(init< const FPostProcessSettingsOverride& >())
+        .def_readwrite("Settings", &FPostProcessSettingsOverride::Settings)
+        .def_readwrite("CurrentBlendInTime", &FPostProcessSettingsOverride::CurrentBlendInTime)
+        .def_readwrite("CurrentBlendOutTime", &FPostProcessSettingsOverride::CurrentBlendOutTime)
+        .def_readwrite("BlendInDuration", &FPostProcessSettingsOverride::BlendInDuration)
+        .def_readwrite("BlendOutDuration", &FPostProcessSettingsOverride::BlendOutDuration)
+        .def_readwrite("BlendStartTime", &FPostProcessSettingsOverride::BlendStartTime)
+    ;
+
+    class_< FWorldLightingOverride >("FWorldLightingOverride", init<  >())
+        .def(init< const FWorldLightingOverride& >())
+        .def_readwrite("DirectionOffset", &FWorldLightingOverride::DirectionOffset)
+        .def_readwrite("FadeInTime", &FWorldLightingOverride::FadeInTime)
+        .def_readwrite("FadeOutTime", &FWorldLightingOverride::FadeOutTime)
+        .def_readwrite("RemainingFadeTime", &FWorldLightingOverride::RemainingFadeTime)
+        .def_readwrite("RemovalRequested", &FWorldLightingOverride::RemovalRequested)
+        .def_readwrite("pMovie", &FWorldLightingOverride::pMovie)
+    ;
+
+    class_< FExpressionInput >("FExpressionInput", init<  >())
+        .def(init< const FExpressionInput& >())
+        .def_readwrite("Expression", &FExpressionInput::Expression)
+        .def_readwrite("Mask", &FExpressionInput::Mask)
+        .def_readwrite("MaskR", &FExpressionInput::MaskR)
+        .def_readwrite("MaskG", &FExpressionInput::MaskG)
+        .def_readwrite("MaskB", &FExpressionInput::MaskB)
+        .def_readwrite("MaskA", &FExpressionInput::MaskA)
+        .def_readwrite("GCC64_Padding", &FExpressionInput::GCC64_Padding)
+    ;
+
+    class_< FGameStageGradeWeightData >("FGameStageGradeWeightData", init<  >())
+        .def(init< const FGameStageGradeWeightData& >())
+        .def_readwrite("GameStageRequirement", &FGameStageGradeWeightData::GameStageRequirement)
+        .def_readwrite("MinSpawnProbabilityModifier", &FGameStageGradeWeightData::MinSpawnProbabilityModifier)
+        .def_readwrite("MaxSpawnProbabilityModifier", &FGameStageGradeWeightData::MaxSpawnProbabilityModifier)
+    ;
+
+    class_< FGameStageRangeData >("FGameStageRangeData", init<  >())
+        .def(init< const FGameStageRangeData& >())
+        .def_readwrite("MinGameStage", &FGameStageRangeData::MinGameStage)
+        .def_readwrite("MaxGameStage", &FGameStageRangeData::MaxGameStage)
+    ;
+
+    class_< FGBXNavMeshPath >("FGBXNavMeshPath", init<  >())
+        .def(init< const FGBXNavMeshPath& >())
+        .def_readwrite("PathPoints", &FGBXNavMeshPath::PathPoints)
+        .def_readwrite("CurrentPathIdx", &FGBXNavMeshPath::CurrentPathIdx)
+    ;
+
+    class_< FGBXNavMeshPathPoint >("FGBXNavMeshPathPoint", init<  >())
+        .def(init< const FGBXNavMeshPathPoint& >())
+        .def_readwrite("Poly", &FGBXNavMeshPathPoint::Poly)
+        .def_readwrite("Location", &FGBXNavMeshPathPoint::Location)
+        .def_readwrite("SpecialMoveId", &FGBXNavMeshPathPoint::SpecialMoveId)
+        .def_readwrite("NextPathObjectDistance", &FGBXNavMeshPathPoint::NextPathObjectDistance)
+        .def_readwrite("CrossedObstacles", &FGBXNavMeshPathPoint::CrossedObstacles)
+    ;
+
+    class_< FGBXNavMeshPolyRef >("FGBXNavMeshPolyRef", init<  >())
+        .def(init< const FGBXNavMeshPolyRef& >())
+        .def_readwrite("NavMesh", &FGBXNavMeshPolyRef::NavMesh)
+        .def_readwrite("PolyIdx", &FGBXNavMeshPolyRef::PolyIdx)
+    ;
+
+    class_< FIGBXNavMeshObstaclePointer >("FIGBXNavMeshObstaclePointer", init<  >())
+        .def(init< const FIGBXNavMeshObstaclePointer& >())
+        .def_readwrite("Dummy", &FIGBXNavMeshObstaclePointer::Dummy)
+    ;
+
+    class_< FAttributeEffectData >("FAttributeEffectData", init<  >())
+        .def(init< const FAttributeEffectData& >())
+        .def_readwrite("AttributeToModify", &FAttributeEffectData::AttributeToModify)
+        .def_readwrite("ModifierType", &FAttributeEffectData::ModifierType)
+        .def_readwrite("BaseModifierValue", &FAttributeEffectData::BaseModifierValue)
+    ;
+
+    class_< FAttributePriorityData >("FAttributePriorityData", init<  >())
+        .def(init< const FAttributePriorityData& >())
+        .def_readwrite("Attribute", &FAttributePriorityData::Attribute)
+        .def_readwrite("PriorityIncrease", &FAttributePriorityData::PriorityIncrease)
+    ;
+
+    class_< FManufacturerCustomGradeWeightData >("FManufacturerCustomGradeWeightData", init<  >())
+        .def(init< const FManufacturerCustomGradeWeightData& >())
+        .def_readwrite("Manufacturer", &FManufacturerCustomGradeWeightData::Manufacturer)
+        .def_readwrite("DefaultWeightIndex", &FManufacturerCustomGradeWeightData::DefaultWeightIndex)
+    ;
+
+    class_< FDlcContentId >("FDlcContentId", init<  >())
+        .def(init< const FDlcContentId& >())
+        .def_readwrite("PackageId", &FDlcContentId::PackageId)
+        .def_readwrite("ContentId", &FDlcContentId::ContentId)
+    ;
+
+    class_< FAttributeBaseValueData >("FAttributeBaseValueData", init<  >())
+        .def(init< const FAttributeBaseValueData& >())
+        .def_readwrite("Attribute", &FAttributeBaseValueData::Attribute)
+        .def_readwrite("BaseValue", &FAttributeBaseValueData::BaseValue)
+    ;
+
+    class_< FSoundEventMapping >("FSoundEventMapping", init<  >())
+        .def(init< const FSoundEventMapping& >())
+        .def_readwrite("SoundEventName", &FSoundEventMapping::SoundEventName)
+        .def_readwrite("SoundToPlay", &FSoundEventMapping::SoundToPlay)
+    ;
+
+    class_< FUIDataStoreBinding >("FUIDataStoreBinding", init<  >())
+        .def(init< const FUIDataStoreBinding& >())
+        .def_readwrite("Subscriber", &FUIDataStoreBinding::Subscriber)
+        .def_readwrite("UnknownData00", &FUIDataStoreBinding::UnknownData00)
+        .def_readwrite("RequiredFieldType", &FUIDataStoreBinding::RequiredFieldType)
+        .def_readwrite("MarkupString", &FUIDataStoreBinding::MarkupString)
+        .def_readwrite("BindingIndex", &FUIDataStoreBinding::BindingIndex)
+        .def_readwrite("DataStoreName", &FUIDataStoreBinding::DataStoreName)
+        .def_readwrite("DataStoreField", &FUIDataStoreBinding::DataStoreField)
+        .def_readwrite("ResolvedDataStore", &FUIDataStoreBinding::ResolvedDataStore)
+    ;
+
+    class_< FBodyCompositionData >("FBodyCompositionData", init<  >())
+        .def(init< const FBodyCompositionData& >())
+        .def_readwrite("Attachments", &FBodyCompositionData::Attachments)
+        .def_readwrite("MaxExpectedComponents", &FBodyCompositionData::MaxExpectedComponents)
+        .def_readwrite("HasHomingTargetComponents", &FBodyCompositionData::HasHomingTargetComponents)
+    ;
+
+    class_< FBodyInstanceDataUnion >("FBodyInstanceDataUnion", init<  >())
+        .def(init< const FBodyInstanceDataUnion& >())
+        .def_readwrite("Data", &FBodyInstanceDataUnion::Data)
+        .def_readwrite("ParentAttachmentIdentifier", &FBodyInstanceDataUnion::ParentAttachmentIdentifier)
+        .def_readwrite("AttachmentBaseInstanceDataIndex", &FBodyInstanceDataUnion::AttachmentBaseInstanceDataIndex)
+        .def_readwrite("SwitchIdentifier", &FBodyInstanceDataUnion::SwitchIdentifier)
+    ;
+
+    class_< FLightmassPointLightSettings >("FLightmassPointLightSettings", init<  >())
+        .def(init< const FLightmassPointLightSettings& >())
+        .def_readwrite("LightSourceRadius", &FLightmassPointLightSettings::LightSourceRadius)
+        .def_readwrite("IndirectLightingScale", &FLightmassLightSettings::IndirectLightingScale)
+        .def_readwrite("IndirectLightingSaturation", &FLightmassLightSettings::IndirectLightingSaturation)
+        .def_readwrite("ShadowExponent", &FLightmassLightSettings::ShadowExponent)
+    ;
+
+    class_< FLightmassLightSettings >("FLightmassLightSettings", init<  >())
+        .def(init< const FLightmassLightSettings& >())
+        .def_readwrite("IndirectLightingScale", &FLightmassLightSettings::IndirectLightingScale)
+        .def_readwrite("IndirectLightingSaturation", &FLightmassLightSettings::IndirectLightingSaturation)
+        .def_readwrite("ShadowExponent", &FLightmassLightSettings::ShadowExponent)
+    ;
+
+    class_< FInstanceDataSet >("FInstanceDataSet", init<  >())
+        .def(init< const FInstanceDataSet& >())
+        .def_readwrite("Data", &FInstanceDataSet::Data)
+    ;
+
+    class_< FReplicatedInstanceDataState >("FReplicatedInstanceDataState", init<  >())
+        .def(init< const FReplicatedInstanceDataState& >())
+        .def_readwrite("SwitchStateBitField", &FReplicatedInstanceDataState::SwitchStateBitField)
+        .def_readwrite("ActiveSwitchValues", &FReplicatedInstanceDataState::ActiveSwitchValues)
+        .def_readwrite("RemovedBodyCompositionPartsBitField", &FReplicatedInstanceDataState::RemovedBodyCompositionPartsBitField)
+    ;
+
+    class_< FSearchState >("FSearchState", init<  >())
+        .def(init< const FSearchState& >())
+        .def_readwrite("Subject", &FSearchState::Subject)
+        .def_readwrite("UnknownData00", &FSearchState::UnknownData00)
+        .def_readwrite("Type", &FSearchState::Type)
+        .def_readwrite("ListIndex", &FSearchState::ListIndex)
+        .def_readwrite("CurrentList", &FSearchState::CurrentList)
+    ;
+
+    class_< FPlayerOwnedComponent >("FPlayerOwnedComponent", init<  >())
+        .def(init< const FPlayerOwnedComponent& >())
+        .def_readwrite("PlayerOwner", &FPlayerOwnedComponent::PlayerOwner)
+        .def_readwrite("Component", &FPlayerOwnedComponent::Component)
+    ;
+
+    class_< FAkCallBackGetRTPC >("FAkCallBackGetRTPC", init<  >())
+        .def(init< const FAkCallBackGetRTPC& >())
+        .def_readwrite("RTPC", &FAkCallBackGetRTPC::RTPC)
+        .def_readwrite("Owner", &FAkCallBackGetRTPC::Owner)
+        .def_readwrite("Component", &FAkCallBackGetRTPC::Component)
+        .def_readwrite("CallbackValue", &FAkCallBackGetRTPC::CallbackValue)
+    ;
+
+    class_< FLightmassDirectionalLightSettings, bases< FLightmassLightSettings >  >("FLightmassDirectionalLightSettings", init<  >())
+        .def(init< const FLightmassDirectionalLightSettings& >())
+        .def_readwrite("LightSourceAngle", &FLightmassDirectionalLightSettings::LightSourceAngle)
+    ;
+
+    class_< FDominantShadowInfo >("FDominantShadowInfo", init<  >())
+        .def(init< const FDominantShadowInfo& >())
+        .def_readwrite("WorldToLight", &FDominantShadowInfo::WorldToLight)
+        .def_readwrite("LightToWorld", &FDominantShadowInfo::LightToWorld)
+        .def_readwrite("LightSpaceImportanceBounds", &FDominantShadowInfo::LightSpaceImportanceBounds)
+        .def_readwrite("ShadowMapSizeX", &FDominantShadowInfo::ShadowMapSizeX)
+        .def_readwrite("ShadowMapSizeY", &FDominantShadowInfo::ShadowMapSizeY)
+    ;
+
+    class_< FReplicatedCoordinatedEffect >("FReplicatedCoordinatedEffect", init<  >())
+        .def(init< const FReplicatedCoordinatedEffect& >())
+        .def_readwrite("Effects", &FReplicatedCoordinatedEffect::Effects)
+        .def_readwrite("Targets", &FReplicatedCoordinatedEffect::Targets)
+    ;
+
+    class_< FCounterBehaviorUserState >("FCounterBehaviorUserState", init<  >())
+        .def(init< const FCounterBehaviorUserState& >())
+        .def_readwrite("Counters", &FCounterBehaviorUserState::Counters)
+    ;
+
+    class_< FBehaviorCounterState >("FBehaviorCounterState", init<  >())
+        .def(init< const FBehaviorCounterState& >())
+        .def_readwrite("CurrentValue", &FBehaviorCounterState::CurrentValue)
+        .def_readwrite("Target", &FBehaviorCounterState::Target)
+    ;
+
+    class_< FSplineConnection >("FSplineConnection", init<  >())
+        .def(init< const FSplineConnection& >())
+        .def_readwrite("SplineComponent", &FSplineConnection::SplineComponent)
+        .def_readwrite("ConnectTo", &FSplineConnection::ConnectTo)
+    ;
+
+    class_< FSkelMeshActorControlTarget >("FSkelMeshActorControlTarget", init<  >())
+        .def(init< const FSkelMeshActorControlTarget& >())
+        .def_readwrite("ControlName", &FSkelMeshActorControlTarget::ControlName)
+        .def_readwrite("TargetActor", &FSkelMeshActorControlTarget::TargetActor)
+    ;
+
+    class_< ASkeletalMeshActor_FCheckpointRecord >("ASkeletalMeshActor_FCheckpointRecord", init<  >())
+        .def(init< const ASkeletalMeshActor_FCheckpointRecord& >())
+        .def_readwrite("Location", &ASkeletalMeshActor_FCheckpointRecord::Location)
+        .def_readwrite("Rotation", &ASkeletalMeshActor_FCheckpointRecord::Rotation)
+    ;
+
+    class_< FGameSearchCfg >("FGameSearchCfg", init<  >())
+        .def(init< const FGameSearchCfg& >())
+        .def_readwrite("GameSearchClass", &FGameSearchCfg::GameSearchClass)
+        .def_readwrite("DefaultGameSettingsClass", &FGameSearchCfg::DefaultGameSettingsClass)
+        .def_readwrite("SearchResultsProviderClass", &FGameSearchCfg::SearchResultsProviderClass)
+        .def_readwrite("DesiredSettingsProvider", &FGameSearchCfg::DesiredSettingsProvider)
+        .def_readwrite("SearchResults", &FGameSearchCfg::SearchResults)
+        .def_readwrite("Search", &FGameSearchCfg::Search)
+        .def_readwrite("SearchName", &FGameSearchCfg::SearchName)
+    ;
+
+    class_< FSettingsArrayProvider >("FSettingsArrayProvider", init<  >())
+        .def(init< const FSettingsArrayProvider& >())
+        .def_readwrite("SettingsId", &FSettingsArrayProvider::SettingsId)
+        .def_readwrite("SettingsName", &FSettingsArrayProvider::SettingsName)
+        .def_readwrite("Provider", &FSettingsArrayProvider::Provider)
+    ;
+
+    class_< FGameSettingsCfg >("FGameSettingsCfg", init<  >())
+        .def(init< const FGameSettingsCfg& >())
+        .def_readwrite("GameSettingsClass", &FGameSettingsCfg::GameSettingsClass)
+        .def_readwrite("Provider", &FGameSettingsCfg::Provider)
+        .def_readwrite("GameSettings", &FGameSettingsCfg::GameSettings)
+        .def_readwrite("SettingsName", &FGameSettingsCfg::SettingsName)
+    ;
+
+    class_< FAimOffsetProfile >("FAimOffsetProfile", init<  >())
+        .def(init< const FAimOffsetProfile& >())
+        .def_readwrite("ProfileName", &FAimOffsetProfile::ProfileName)
+        .def_readwrite("HorizontalRange", &FAimOffsetProfile::HorizontalRange)
+        .def_readwrite("VerticalRange", &FAimOffsetProfile::VerticalRange)
+        .def_readwrite("AimComponents", &FAimOffsetProfile::AimComponents)
+        .def_readwrite("AimTransformsCache", &FAimOffsetProfile::AimTransformsCache)
+        .def_readwrite("AnimName_LU", &FAimOffsetProfile::AnimName_LU)
+        .def_readwrite("AnimName_LC", &FAimOffsetProfile::AnimName_LC)
+        .def_readwrite("AnimName_LD", &FAimOffsetProfile::AnimName_LD)
+        .def_readwrite("AnimName_CU", &FAimOffsetProfile::AnimName_CU)
+        .def_readwrite("AnimName_CC", &FAimOffsetProfile::AnimName_CC)
+        .def_readwrite("AnimName_CD", &FAimOffsetProfile::AnimName_CD)
+        .def_readwrite("AnimName_RU", &FAimOffsetProfile::AnimName_RU)
+        .def_readwrite("AnimName_RC", &FAimOffsetProfile::AnimName_RC)
+        .def_readwrite("AnimName_RD", &FAimOffsetProfile::AnimName_RD)
+    ;
+
+    class_< FAimComponent >("FAimComponent", init<  >())
+        .def(init< const FAimComponent& >())
+        .def_readwrite("BoneName", &FAimComponent::BoneName)
+        .def_readwrite("UnknownData00", &FAimComponent::UnknownData00)
+        .def_readwrite("LU", &FAimComponent::LU)
+        .def_readwrite("LC", &FAimComponent::LC)
+        .def_readwrite("LD", &FAimComponent::LD)
+        .def_readwrite("CU", &FAimComponent::CU)
+        .def_readwrite("CC", &FAimComponent::CC)
+        .def_readwrite("CD", &FAimComponent::CD)
+        .def_readwrite("RU", &FAimComponent::RU)
+        .def_readwrite("RC", &FAimComponent::RC)
+        .def_readwrite("RD", &FAimComponent::RD)
+    ;
+
+    class_< FAimTransform >("FAimTransform", init<  >())
+        .def(init< const FAimTransform& >())
+        .def_readwrite("Quaternion", &FAimTransform::Quaternion)
+        .def_readwrite("Translation", &FAimTransform::Translation)
+    ;
+
+    class_< FPersistentSequenceEventData >("FPersistentSequenceEventData", init<  >())
+        .def(init< const FPersistentSequenceEventData& >())
+        .def_readwrite("TriggerCount", &FPersistentSequenceEventData::TriggerCount)
+        .def_readwrite("VfTable", &FPersistentData::VfTable)
+    ;
+
+    class_< FPersistentData >("FPersistentData", init<  >())
+        .def(init< const FPersistentData& >())
+        .def_readwrite("VfTable", &FPersistentData::VfTable)
+    ;
+
+    class_< FPersistentSeqAct_InterpData, bases< FPersistentData >  >("FPersistentSeqAct_InterpData", init<  >())
+        .def(init< const FPersistentSeqAct_InterpData& >())
+        .def_readwrite("Position", &FPersistentSeqAct_InterpData::Position)
+    ;
+
+    class_< FWeightmapLayerAllocationInfo >("FWeightmapLayerAllocationInfo", init<  >())
+        .def(init< const FWeightmapLayerAllocationInfo& >())
+        .def_readwrite("LayerName", &FWeightmapLayerAllocationInfo::LayerName)
+        .def_readwrite("WeightmapTextureIndex", &FWeightmapLayerAllocationInfo::WeightmapTextureIndex)
+        .def_readwrite("WeightmapTextureChannel", &FWeightmapLayerAllocationInfo::WeightmapTextureChannel)
+    ;
+
+    class_< FSelectedTerrainVertex >("FSelectedTerrainVertex", init<  >())
+        .def(init< const FSelectedTerrainVertex& >())
+        .def_readwrite("X", &FSelectedTerrainVertex::X)
+        .def_readwrite("Y", &FSelectedTerrainVertex::Y)
+        .def_readwrite("Weight", &FSelectedTerrainVertex::Weight)
+    ;
+
+    class_< FSwitchObjectCase >("FSwitchObjectCase", init<  >())
+        .def(init< const FSwitchObjectCase& >())
+        .def_readwrite("ObjectValue", &FSwitchObjectCase::ObjectValue)
+    ;
+
+    class_< FSwitchClassInfo >("FSwitchClassInfo", init<  >())
+        .def(init< const FSwitchClassInfo& >())
+        .def_readwrite("ClassName", &FSwitchClassInfo::ClassName)
+    ;
+
+    class_< FLevelStreamingNameCombo >("FLevelStreamingNameCombo", init<  >())
+        .def(init< const FLevelStreamingNameCombo& >())
+        .def_readwrite("Level", &FLevelStreamingNameCombo::Level)
+        .def_readwrite("LevelName", &FLevelStreamingNameCombo::LevelName)
+    ;
+
+    class_< FGPMCollection >("FGPMCollection", init<  >())
+        .def(init< const FGPMCollection& >())
+        .def_readwrite("CollectionData", &FGPMCollection::CollectionData)
+    ;
+
+    class_< FParticleRandomSeedInfo >("FParticleRandomSeedInfo", init<  >())
+        .def(init< const FParticleRandomSeedInfo& >())
+        .def_readwrite("ParameterName", &FParticleRandomSeedInfo::ParameterName)
+        .def_readwrite("RandomSeeds", &FParticleRandomSeedInfo::RandomSeeds)
+    ;
+
+    class_< FBeamModifierOptions >("FBeamModifierOptions", init<  >())
+        .def(init< const FBeamModifierOptions& >())
+    ;
+
+    class_< APointLightToggleable_FCheckpointRecord >("APointLightToggleable_FCheckpointRecord", init<  >())
+        .def(init< const APointLightToggleable_FCheckpointRecord& >())
+    ;
+
+    class_< ASpotLightToggleable_FCheckpointRecord >("ASpotLightToggleable_FCheckpointRecord", init<  >())
+        .def(init< const ASpotLightToggleable_FCheckpointRecord& >())
+    ;
+
+    class_< FRecentParty >("FRecentParty", init<  >())
+        .def(init< const FRecentParty& >())
+        .def_readwrite("PartyLeader", &FRecentParty::PartyLeader)
+        .def_readwrite("PartyMembers", &FRecentParty::PartyMembers)
+    ;
+
+    class_< FCurrentPlayerMet >("FCurrentPlayerMet", init<  >())
+        .def(init< const FCurrentPlayerMet& >())
+        .def_readwrite("TeamNum", &FCurrentPlayerMet::TeamNum)
+        .def_readwrite("Skill", &FCurrentPlayerMet::Skill)
+        .def_readwrite("NetId", &FCurrentPlayerMet::NetId)
+    ;
+
+    class_< FRandomAnimInfo >("FRandomAnimInfo", init<  >())
+        .def(init< const FRandomAnimInfo& >())
+        .def_readwrite("Chance", &FRandomAnimInfo::Chance)
+        .def_readwrite("LoopCountMin", &FRandomAnimInfo::LoopCountMin)
+        .def_readwrite("LoopCountMax", &FRandomAnimInfo::LoopCountMax)
+        .def_readwrite("BlendInTime", &FRandomAnimInfo::BlendInTime)
+        .def_readwrite("PlayRateRange", &FRandomAnimInfo::PlayRateRange)
+        .def_readwrite("LoopCount", &FRandomAnimInfo::LoopCount)
+        .def_readwrite("LastPosition", &FRandomAnimInfo::LastPosition)
+    ;
+
+    class_< FAnimBlendInfo >("FAnimBlendInfo", init<  >())
+        .def(init< const FAnimBlendInfo& >())
+        .def_readwrite("AnimName", &FAnimBlendInfo::AnimName)
+        .def_readwrite("AnimInfo", &FAnimBlendInfo::AnimInfo)
+        .def_readwrite("Weight", &FAnimBlendInfo::Weight)
+    ;
+
+    class_< FAnimInfo >("FAnimInfo", init<  >())
+        .def(init< const FAnimInfo& >())
+        .def_readwrite("AnimSeqName", &FAnimInfo::AnimSeqName)
+        .def_readwrite("AnimSeq", &FAnimInfo::AnimSeq)
+        .def_readwrite("AnimLinkupIndex", &FAnimInfo::AnimLinkupIndex)
+    ;
+
+    class_< FPreviewSocketStruct >("FPreviewSocketStruct", init<  >())
+        .def(init< const FPreviewSocketStruct& >())
+        .def_readwrite("DisplayName", &FPreviewSocketStruct::DisplayName)
+        .def_readwrite("SocketName", &FPreviewSocketStruct::SocketName)
+        .def_readwrite("PreviewSkelMesh", &FPreviewSocketStruct::PreviewSkelMesh)
+        .def_readwrite("PreviewStaticMesh", &FPreviewSocketStruct::PreviewStaticMesh)
+    ;
+
+    class_< FPlayerNickMetaData >("FPlayerNickMetaData", init<  >())
+        .def(init< const FPlayerNickMetaData& >())
+        .def_readwrite("PlayerNickName", &FPlayerNickMetaData::PlayerNickName)
+        .def_readwrite("PlayerNickColumnName", &FPlayerNickMetaData::PlayerNickColumnName)
+    ;
+
+    class_< FRankMetaData >("FRankMetaData", init<  >())
+        .def(init< const FRankMetaData& >())
+        .def_readwrite("RankName", &FRankMetaData::RankName)
+        .def_readwrite("RankColumnName", &FRankMetaData::RankColumnName)
+    ;
+
+    class_< FAlphaMap >("FAlphaMap", init<  >())
+        .def(init< const FAlphaMap& >())
+    ;
+
+    class_< FTerrainBVTree >("FTerrainBVTree", init<  >())
+        .def(init< const FTerrainBVTree& >())
+        .def_readwrite("Nodes", &FTerrainBVTree::Nodes)
+    ;
+
+    class_< FNamedOnlineContent, bases< FOnlineContent >  >("FNamedOnlineContent", init<  >())
+        .def(init< const FNamedOnlineContent& >())
+        .def_readwrite("NameInfo", &FNamedOnlineContent::NameInfo)
+        .def_readwrite("NamedContentType", &FNamedOnlineContent::NamedContentType)
+    ;
+
+    class_< FOnlineContentNameInfo >("FOnlineContentNameInfo", init<  >())
+        .def(init< const FOnlineContentNameInfo& >())
+        .def_readwrite("ContentName", &FOnlineContentNameInfo::ContentName)
+        .def_readwrite("EngineVersion", &FOnlineContentNameInfo::EngineVersion)
+        .def_readwrite("CookedVersionID", &FOnlineContentNameInfo::CookedVersionID)
+    ;
+
+    class_< FCompatibilityOnlineContent >("FCompatibilityOnlineContent", init<  >())
+        .def(init< const FCompatibilityOnlineContent& >())
+        .def_readwrite("VersionNumber", &FCompatibilityOnlineContent::VersionNumber)
+        .def_readwrite("Container", &FCompatibilityOnlineContent::Container)
+        .def_readwrite("Content", &FCompatibilityOnlineContent::Content)
+    ;
+
+    class_< FSubscribedInputEventParameters >("FSubscribedInputEventParameters", init<  >())
+        .def(init< const FSubscribedInputEventParameters& >())
+        .def_readwrite("InputAliasName", &FSubscribedInputEventParameters::InputAliasName)
+        .def_readwrite("PlayerIndex", &FInputEventParameters::PlayerIndex)
+        .def_readwrite("ControllerId", &FInputEventParameters::ControllerId)
+        .def_readwrite("InputKeyName", &FInputEventParameters::InputKeyName)
+        .def_readwrite("EventType", &FInputEventParameters::EventType)
+        .def_readwrite("InputDelta", &FInputEventParameters::InputDelta)
+        .def_readwrite("DeltaTime", &FInputEventParameters::DeltaTime)
+    ;
+
+    class_< FInputEventParameters >("FInputEventParameters", init<  >())
+        .def(init< const FInputEventParameters& >())
+        .def_readwrite("PlayerIndex", &FInputEventParameters::PlayerIndex)
+        .def_readwrite("ControllerId", &FInputEventParameters::ControllerId)
+        .def_readwrite("InputKeyName", &FInputEventParameters::InputKeyName)
+        .def_readwrite("EventType", &FInputEventParameters::EventType)
+        .def_readwrite("InputDelta", &FInputEventParameters::InputDelta)
+        .def_readwrite("DeltaTime", &FInputEventParameters::DeltaTime)
+    ;
+
+    class_< FTerrainHeight >("FTerrainHeight", init<  >())
+        .def(init< const FTerrainHeight& >())
+    ;
+
+    class_< FTerrainInfoData >("FTerrainInfoData", init<  >())
+        .def(init< const FTerrainInfoData& >())
+    ;
+
+    class_< FTerrainLayer >("FTerrainLayer", init<  >())
+        .def(init< const FTerrainLayer& >())
+        .def_readwrite("Name", &FTerrainLayer::Name)
+        .def_readwrite("Setup", &FTerrainLayer::Setup)
+        .def_readwrite("AlphaMapIndex", &FTerrainLayer::AlphaMapIndex)
+        .def_readwrite("Highlighted", &FTerrainLayer::Highlighted)
+        .def_readwrite("WireframeHighlighted", &FTerrainLayer::WireframeHighlighted)
+        .def_readwrite("Hidden", &FTerrainLayer::Hidden)
+        .def_readwrite("HighlightColor", &FTerrainLayer::HighlightColor)
+        .def_readwrite("WireframeColor", &FTerrainLayer::WireframeColor)
+    ;
+
+    class_< FTerrainFilteredMaterial >("FTerrainFilteredMaterial", init<  >())
+        .def(init< const FTerrainFilteredMaterial& >())
+        .def_readwrite("UseNoise", &FTerrainFilteredMaterial::UseNoise)
+        .def_readwrite("NoiseScale", &FTerrainFilteredMaterial::NoiseScale)
+        .def_readwrite("NoisePercent", &FTerrainFilteredMaterial::NoisePercent)
+        .def_readwrite("MinHeight", &FTerrainFilteredMaterial::MinHeight)
+        .def_readwrite("MaxHeight", &FTerrainFilteredMaterial::MaxHeight)
+        .def_readwrite("MinSlope", &FTerrainFilteredMaterial::MinSlope)
+        .def_readwrite("MaxSlope", &FTerrainFilteredMaterial::MaxSlope)
+        .def_readwrite("Alpha", &FTerrainFilteredMaterial::Alpha)
+        .def_readwrite("Material", &FTerrainFilteredMaterial::Material)
+    ;
+
+    class_< FFilterLimit >("FFilterLimit", init<  >())
+        .def(init< const FFilterLimit& >())
+        .def_readwrite("Enabled", &FFilterLimit::Enabled)
+        .def_readwrite("Base", &FFilterLimit::Base)
+        .def_readwrite("NoiseScale", &FFilterLimit::NoiseScale)
+        .def_readwrite("NoiseAmount", &FFilterLimit::NoiseAmount)
+    ;
+
+    class_< FTerrainFoliageMesh >("FTerrainFoliageMesh", init<  >())
+        .def(init< const FTerrainFoliageMesh& >())
+        .def_readwrite("StaticMesh", &FTerrainFoliageMesh::StaticMesh)
+        .def_readwrite("Material", &FTerrainFoliageMesh::Material)
+        .def_readwrite("Density", &FTerrainFoliageMesh::Density)
+        .def_readwrite("MaxDrawRadius", &FTerrainFoliageMesh::MaxDrawRadius)
+        .def_readwrite("MinTransitionRadius", &FTerrainFoliageMesh::MinTransitionRadius)
+        .def_readwrite("MinScale", &FTerrainFoliageMesh::MinScale)
+        .def_readwrite("MaxScale", &FTerrainFoliageMesh::MaxScale)
+        .def_readwrite("MinUniformScale", &FTerrainFoliageMesh::MinUniformScale)
+        .def_readwrite("MaxUniformScale", &FTerrainFoliageMesh::MaxUniformScale)
+        .def_readwrite("MinThinningRadius", &FTerrainFoliageMesh::MinThinningRadius)
+        .def_readwrite("Seed", &FTerrainFoliageMesh::Seed)
+        .def_readwrite("SwayScale", &FTerrainFoliageMesh::SwayScale)
+        .def_readwrite("AlphaMapThreshold", &FTerrainFoliageMesh::AlphaMapThreshold)
+        .def_readwrite("SlopeRotationBlend", &FTerrainFoliageMesh::SlopeRotationBlend)
+    ;
+
+    class_< FTerrainDecoLayer >("FTerrainDecoLayer", init<  >())
+        .def(init< const FTerrainDecoLayer& >())
+        .def_readwrite("Name", &FTerrainDecoLayer::Name)
+        .def_readwrite("Decorations", &FTerrainDecoLayer::Decorations)
+        .def_readwrite("AlphaMapIndex", &FTerrainDecoLayer::AlphaMapIndex)
+    ;
+
+    class_< FTerrainDecoration >("FTerrainDecoration", init<  >())
+        .def(init< const FTerrainDecoration& >())
+        .def_readwrite("Factory", &FTerrainDecoration::Factory)
+        .def_readwrite("MinScale", &FTerrainDecoration::MinScale)
+        .def_readwrite("MaxScale", &FTerrainDecoration::MaxScale)
+        .def_readwrite("Density", &FTerrainDecoration::Density)
+        .def_readwrite("SlopeRotationBlend", &FTerrainDecoration::SlopeRotationBlend)
+        .def_readwrite("RandSeed", &FTerrainDecoration::RandSeed)
+        .def_readwrite("Instances", &FTerrainDecoration::Instances)
+    ;
+
+    class_< FTerrainDecorationInstance >("FTerrainDecorationInstance", init<  >())
+        .def(init< const FTerrainDecorationInstance& >())
+        .def_readwrite("Component", &FTerrainDecorationInstance::Component)
+        .def_readwrite("X", &FTerrainDecorationInstance::X)
+        .def_readwrite("Y", &FTerrainDecorationInstance::Y)
+        .def_readwrite("Scale", &FTerrainDecorationInstance::Scale)
+        .def_readwrite("Yaw", &FTerrainDecorationInstance::Yaw)
+    ;
+
+    class_< ATerrain_FTerrainWeightedMaterial >("ATerrain_FTerrainWeightedMaterial", init<  >())
+        .def(init< const ATerrain_FTerrainWeightedMaterial& >())
+    ;
+
+    class_< FCachedTerrainMaterialArray >("FCachedTerrainMaterialArray", init<  >())
+        .def(init< const FCachedTerrainMaterialArray& >())
+        .def_readwrite("CachedMaterials", &FCachedTerrainMaterialArray::CachedMaterials)
+    ;
+
+    class_< FMarketplaceOffer >("FMarketplaceOffer", init<  >())
+        .def(init< const FMarketplaceOffer& >())
+        .def_readwrite("OfferId", &FMarketplaceOffer::OfferId)
+        .def_readwrite("ContentCategory", &FMarketplaceOffer::ContentCategory)
+        .def_readwrite("OfferName", &FMarketplaceOffer::OfferName)
+        .def_readwrite("ContentId", &FMarketplaceOffer::ContentId)
+        .def_readwrite("LicenseMask", &FMarketplaceOffer::LicenseMask)
+    ;
+
+    class_< FInstalledContentInfo >("FInstalledContentInfo", init<  >())
+        .def(init< const FInstalledContentInfo& >())
+        .def_readwrite("ContentType", &FInstalledContentInfo::ContentType)
+        .def_readwrite("ContentName", &FInstalledContentInfo::ContentName)
+        .def_readwrite("ContentPath", &FInstalledContentInfo::ContentPath)
+        .def_readwrite("Filename", &FInstalledContentInfo::Filename)
+        .def_readwrite("DeviceID", &FInstalledContentInfo::DeviceID)
+        .def_readwrite("LicenseMask", &FInstalledContentInfo::LicenseMask)
+        .def_readwrite("CachedAppIdInfo", &FInstalledContentInfo::CachedAppIdInfo)
+    ;
+
+    class_< FRejectedContentInfo, bases< FInstalledContentInfo >  >("FRejectedContentInfo", init<  >())
+        .def(init< const FRejectedContentInfo& >())
+        .def_readwrite("Result", &FRejectedContentInfo::Result)
+    ;
+
+    class_< FStatColorMapping >("FStatColorMapping", init<  >())
+        .def(init< const FStatColorMapping& >())
+        .def_readwrite("StatName", &FStatColorMapping::StatName)
+        .def_readwrite("ColorMap", &FStatColorMapping::ColorMap)
+        .def_readwrite("DisableBlend", &FStatColorMapping::DisableBlend)
+    ;
+
+    class_< FStatColorMapEntry >("FStatColorMapEntry", init<  >())
+        .def(init< const FStatColorMapEntry& >())
+        .def_readwrite("In", &FStatColorMapEntry::In)
+        .def_readwrite("Out", &FStatColorMapEntry::Out)
+    ;
+
+    class_< FDamagePair >("FDamagePair", init<  >())
+        .def(init< const FDamagePair& >())
+        .def_readwrite("DamageCauserName", &FDamagePair::DamageCauserName)
+        .def_readwrite("Params", &FDamagePair::Params)
+    ;
+
+    class_< FDamageParameters >("FDamageParameters", init<  >())
+        .def(init< const FDamageParameters& >())
+        .def_readwrite("OverrideMode", &FDamageParameters::OverrideMode)
+        .def_readwrite("BaseDamage", &FDamageParameters::BaseDamage)
+        .def_readwrite("Radius", &FDamageParameters::Radius)
+        .def_readwrite("Momentum", &FDamageParameters::Momentum)
+    ;
+
+    class_< FDropNoteInfo >("FDropNoteInfo", init<  >())
+        .def(init< const FDropNoteInfo& >())
+        .def_readwrite("Location", &FDropNoteInfo::Location)
+        .def_readwrite("Rotation", &FDropNoteInfo::Rotation)
+        .def_readwrite("Comment", &FDropNoteInfo::Comment)
+    ;
+
+    class_< FListener >("FListener", init<  >())
+        .def(init< const FListener& >())
+        .def_readwrite("PortalVolume", &FListener::PortalVolume)
+        .def_readwrite("Location", &FListener::Location)
+        .def_readwrite("Up", &FListener::Up)
+        .def_readwrite("Right", &FListener::Right)
+        .def_readwrite("Front", &FListener::Front)
+    ;
+
+    class_< FSoundClassProperties >("FSoundClassProperties", init<  >())
+        .def(init< const FSoundClassProperties& >())
+        .def_readwrite("Volume", &FSoundClassProperties::Volume)
+        .def_readwrite("Pitch", &FSoundClassProperties::Pitch)
+        .def_readwrite("StereoBleed", &FSoundClassProperties::StereoBleed)
+        .def_readwrite("LFEBleed", &FSoundClassProperties::LFEBleed)
+        .def_readwrite("VoiceCenterChannelVolume", &FSoundClassProperties::VoiceCenterChannelVolume)
+        .def_readwrite("RadioFilterVolume", &FSoundClassProperties::RadioFilterVolume)
+        .def_readwrite("RadioFilterVolumeThreshold", &FSoundClassProperties::RadioFilterVolumeThreshold)
+    ;
+
+    class_< FURL >("FURL", init<  >())
+        .def(init< const FURL& >())
+        .def_readwrite("Protocol", &FURL::Protocol)
+        .def_readwrite("Host", &FURL::Host)
+        .def_readwrite("Port", &FURL::Port)
+        .def_readwrite("Map", &FURL::Map)
+        .def_readwrite("Op", &FURL::Op)
+        .def_readwrite("Portal", &FURL::Portal)
+        .def_readwrite("Valid", &FURL::Valid)
+    ;
+
+    class_< FLevelStreamingStatus >("FLevelStreamingStatus", init<  >())
+        .def(init< const FLevelStreamingStatus& >())
+        .def_readwrite("PackageName", &FLevelStreamingStatus::PackageName)
+    ;
+
+    class_< FFullyLoadedPackagesInfo >("FFullyLoadedPackagesInfo", init<  >())
+        .def(init< const FFullyLoadedPackagesInfo& >())
+        .def_readwrite("FullyLoadType", &FFullyLoadedPackagesInfo::FullyLoadType)
+        .def_readwrite("Tag", &FFullyLoadedPackagesInfo::Tag)
+        .def_readwrite("PackagesToLoad", &FFullyLoadedPackagesInfo::PackagesToLoad)
+        .def_readwrite("LoadedObjects", &FFullyLoadedPackagesInfo::LoadedObjects)
+    ;
+
+    class_< FNamedNetDriver >("FNamedNetDriver", init<  >())
+        .def(init< const FNamedNetDriver& >())
+        .def_readwrite("NetDriverName", &FNamedNetDriver::NetDriverName)
+        .def_readwrite("NetDriver", &FNamedNetDriver::NetDriver)
+    ;
+
+    class_< FAnimTag >("FAnimTag", init<  >())
+        .def(init< const FAnimTag& >())
+        .def_readwrite("Tag", &FAnimTag::Tag)
+        .def_readwrite("Contains", &FAnimTag::Contains)
+    ;
+
+    class_< FMarketplaceOfferDownloadState >("FMarketplaceOfferDownloadState", init<  >())
+        .def(init< const FMarketplaceOfferDownloadState& >())
+    ;
+
+    class_< FDlcCompatibilityData >("FDlcCompatibilityData", init<  >())
+        .def(init< const FDlcCompatibilityData& >())
+        .def_readwrite("A", &FDlcCompatibilityData::A)
+        .def_readwrite("B", &FDlcCompatibilityData::B)
+        .def_readwrite("C", &FDlcCompatibilityData::C)
+        .def_readwrite("D", &FDlcCompatibilityData::D)
+    ;
+
+    class_< FDlcCompatibilityDataEx, bases< FDlcCompatibilityData >  >("FDlcCompatibilityDataEx", init<  >())
+        .def(init< const FDlcCompatibilityDataEx& >())
+    ;
+
+    class_< FTraceNotifyInfo >("FTraceNotifyInfo", init<  >())
+        .def(init< const FTraceNotifyInfo& >())
+        .def_readwrite("ActorToNotify", &FTraceNotifyInfo::ActorToNotify)
+        .def_readwrite("ActorCallingTrace", &FTraceNotifyInfo::ActorCallingTrace)
+        .def_readwrite("ComponentHit", &FTraceNotifyInfo::ComponentHit)
+        .def_readwrite("HitTime", &FTraceNotifyInfo::HitTime)
+        .def_readwrite("HitLocation", &FTraceNotifyInfo::HitLocation)
+        .def_readwrite("HitNormal", &FTraceNotifyInfo::HitNormal)
+        .def_readwrite("End", &FTraceNotifyInfo::End)
+        .def_readwrite("Start", &FTraceNotifyInfo::Start)
+        .def_readwrite("Extent", &FTraceNotifyInfo::Extent)
+        .def_readwrite("TraceFlags", &FTraceNotifyInfo::TraceFlags)
+    ;
+
+    class_< FPresetGeneratedPoint >("FPresetGeneratedPoint", init<  >())
+        .def(init< const FPresetGeneratedPoint& >())
+        .def_readwrite("KeyIn", &FPresetGeneratedPoint::KeyIn)
+        .def_readwrite("KeyOut", &FPresetGeneratedPoint::KeyOut)
+        .def_readwrite("TangentsValid", &FPresetGeneratedPoint::TangentsValid)
+        .def_readwrite("TangentIn", &FPresetGeneratedPoint::TangentIn)
+        .def_readwrite("TangentOut", &FPresetGeneratedPoint::TangentOut)
+        .def_readwrite("IntepMode", &FPresetGeneratedPoint::IntepMode)
+    ;
+
+    class_< FRemoteTalker >("FRemoteTalker", init<  >())
+        .def(init< const FRemoteTalker& >())
+        .def_readwrite("TalkerId", &FRemoteTalker::TalkerId)
+        .def_readwrite("LastNotificationTime", &FRemoteTalker::LastNotificationTime)
+    ;
+
+    class_< FNxDestructibleParametersFlag >("FNxDestructibleParametersFlag", init<  >())
+        .def(init< const FNxDestructibleParametersFlag& >())
+        .def_readwrite("ACCUMULATE_DAMAGE", &FNxDestructibleParametersFlag::ACCUMULATE_DAMAGE)
+        .def_readwrite("ASSET_DEFINED_SUPPORT", &FNxDestructibleParametersFlag::ASSET_DEFINED_SUPPORT)
+        .def_readwrite("WORLD_SUPPORT", &FNxDestructibleParametersFlag::WORLD_SUPPORT)
+        .def_readwrite("DEBRIS_TIMEOUT", &FNxDestructibleParametersFlag::DEBRIS_TIMEOUT)
+        .def_readwrite("DEBRIS_MAX_SEPARATION", &FNxDestructibleParametersFlag::DEBRIS_MAX_SEPARATION)
+        .def_readwrite("CRUMBLE_SMALLEST_CHUNKS", &FNxDestructibleParametersFlag::CRUMBLE_SMALLEST_CHUNKS)
+        .def_readwrite("ACCURATE_RAYCASTS", &FNxDestructibleParametersFlag::ACCURATE_RAYCASTS)
+        .def_readwrite("USE_VALID_BOUNDS", &FNxDestructibleParametersFlag::USE_VALID_BOUNDS)
+    ;
+
+    class_< F_ModifyHealthParams >("F_ModifyHealthParams", init<  >())
+        .def(init< const F_ModifyHealthParams& >())
+        .def_readwrite("DamageAmount", &F_ModifyHealthParams::DamageAmount)
+        .def_readwrite("EventInstigator", &F_ModifyHealthParams::EventInstigator)
+        .def_readwrite("HitLocation", &F_ModifyHealthParams::HitLocation)
+        .def_readwrite("Momentum", &F_ModifyHealthParams::Momentum)
+        .def_readwrite("DamageType", &F_ModifyHealthParams::DamageType)
+        .def_readwrite("DamageTypeDefinition", &F_ModifyHealthParams::DamageTypeDefinition)
+        .def_readwrite("ImpactDefinition", &F_ModifyHealthParams::ImpactDefinition)
+    ;
+
+    class_< UTerrainWeightMapTexture_FTerrainWeightedMaterial >("UTerrainWeightMapTexture_FTerrainWeightedMaterial", init<  >())
+        .def(init< const UTerrainWeightMapTexture_FTerrainWeightedMaterial& >())
+    ;
+
+    class_< FSourceTexture2DRegion >("FSourceTexture2DRegion", init<  >())
+        .def(init< const FSourceTexture2DRegion& >())
+        .def_readwrite("OffsetX", &FSourceTexture2DRegion::OffsetX)
+        .def_readwrite("OffsetY", &FSourceTexture2DRegion::OffsetY)
+        .def_readwrite("SizeX", &FSourceTexture2DRegion::SizeX)
+        .def_readwrite("SizeY", &FSourceTexture2DRegion::SizeY)
+        .def_readwrite("Texture2D", &FSourceTexture2DRegion::Texture2D)
+    ;
+
+    class_< FCoverReference, bases< FActorReference >  >("FCoverReference", init<  >())
+        .def(init< const FCoverReference& >())
+        .def_readwrite("SlotIdx", &FCoverReference::SlotIdx)
+    ;
+
+    class_< FExposedLink >("FExposedLink", init<  >())
+        .def(init< const FExposedLink& >())
+        .def_readwrite("TargetActor", &FExposedLink::TargetActor)
+        .def_readwrite("ExposedScale", &FExposedLink::ExposedScale)
+    ;
+
+    class_< FScalarMaterialParameter >("FScalarMaterialParameter", init<  >())
+        .def(init< const FScalarMaterialParameter& >())
+        .def_readwrite("Name", &FScalarMaterialParameter::Name)
+        .def_readwrite("Value", &FScalarMaterialParameter::Value)
+        .def_readwrite("ValueFromAttribute", &FScalarMaterialParameter::ValueFromAttribute)
+    ;
+
+    class_< FIndependentSelectionData >("FIndependentSelectionData", init<  >())
+        .def(init< const FIndependentSelectionData& >())
+        .def_readwrite("Probability", &FIndependentSelectionData::Probability)
+        .def_readwrite("Behaviors", &FIndependentSelectionData::Behaviors)
+    ;
+
+    class_< FTextureMaterialParameter >("FTextureMaterialParameter", init<  >())
+        .def(init< const FTextureMaterialParameter& >())
+        .def_readwrite("Name", &FTextureMaterialParameter::Name)
+        .def_readwrite("Value", &FTextureMaterialParameter::Value)
+    ;
+
+    class_< FVectorMaterialParameter >("FVectorMaterialParameter", init<  >())
+        .def(init< const FVectorMaterialParameter& >())
+        .def_readwrite("Name", &FVectorMaterialParameter::Name)
+        .def_readwrite("Value", &FVectorMaterialParameter::Value)
+        .def_readwrite("VectorScale", &FVectorMaterialParameter::VectorScale)
+    ;
+
+    class_< FLightmassPrimitiveSettings >("FLightmassPrimitiveSettings", init<  >())
+        .def(init< const FLightmassPrimitiveSettings& >())
+        .def_readwrite("EmissiveLightFalloffExponent", &FLightmassPrimitiveSettings::EmissiveLightFalloffExponent)
+        .def_readwrite("EmissiveLightExplicitInfluenceRadius", &FLightmassPrimitiveSettings::EmissiveLightExplicitInfluenceRadius)
+        .def_readwrite("EmissiveBoost", &FLightmassPrimitiveSettings::EmissiveBoost)
+        .def_readwrite("DiffuseBoost", &FLightmassPrimitiveSettings::DiffuseBoost)
+        .def_readwrite("SpecularBoost", &FLightmassPrimitiveSettings::SpecularBoost)
+        .def_readwrite("FullyOccludedSamplesFraction", &FLightmassPrimitiveSettings::FullyOccludedSamplesFraction)
+    ;
+
+    class_< FLightmassDebugOptions >("FLightmassDebugOptions", init<  >())
+        .def(init< const FLightmassDebugOptions& >())
+        .def_readwrite("CoplanarTolerance", &FLightmassDebugOptions::CoplanarTolerance)
+        .def_readwrite("ExecutionTimeDivisor", &FLightmassDebugOptions::ExecutionTimeDivisor)
+    ;
+
+    class_< FScalarParticleSystemParameter >("FScalarParticleSystemParameter", init<  >())
+        .def(init< const FScalarParticleSystemParameter& >())
+        .def_readwrite("Name", &FScalarParticleSystemParameter::Name)
+        .def_readwrite("Value", &FScalarParticleSystemParameter::Value)
+    ;
+
+    class_< FVectorParticleSystemParameter >("FVectorParticleSystemParameter", init<  >())
+        .def(init< const FVectorParticleSystemParameter& >())
+        .def_readwrite("Name", &FVectorParticleSystemParameter::Name)
+        .def_readwrite("Value", &FVectorParticleSystemParameter::Value)
+        .def_readwrite("VectorScale", &FVectorParticleSystemParameter::VectorScale)
+    ;
+
+    class_< FColorParticleSystemParameter >("FColorParticleSystemParameter", init<  >())
+        .def(init< const FColorParticleSystemParameter& >())
+        .def_readwrite("Name", &FColorParticleSystemParameter::Name)
+        .def_readwrite("Value", &FColorParticleSystemParameter::Value)
+    ;
+
+    class_< FMaterialParticleSystemParameter >("FMaterialParticleSystemParameter", init<  >())
+        .def(init< const FMaterialParticleSystemParameter& >())
+        .def_readwrite("Name", &FMaterialParticleSystemParameter::Name)
+        .def_readwrite("Value", &FMaterialParticleSystemParameter::Value)
+    ;
+
+    class_< FActorParticleSystemParameter >("FActorParticleSystemParameter", init<  >())
+        .def(init< const FActorParticleSystemParameter& >())
+        .def_readwrite("Name", &FActorParticleSystemParameter::Name)
+        .def_readwrite("Context", &FActorParticleSystemParameter::Context)
+    ;
+
+    class_< FPerBoneMaskInfo >("FPerBoneMaskInfo", init<  >())
+        .def(init< const FPerBoneMaskInfo& >())
+        .def_readwrite("BranchList", &FPerBoneMaskInfo::BranchList)
+        .def_readwrite("DesiredWeight", &FPerBoneMaskInfo::DesiredWeight)
+        .def_readwrite("BlendTimeToGo", &FPerBoneMaskInfo::BlendTimeToGo)
+        .def_readwrite("WeightRuleList", &FPerBoneMaskInfo::WeightRuleList)
+        .def_readwrite("PerBoneWeights", &FPerBoneMaskInfo::PerBoneWeights)
+        .def_readwrite("TransformReqBone", &FPerBoneMaskInfo::TransformReqBone)
+        .def_readwrite("TransformReqBoneIndex", &FPerBoneMaskInfo::TransformReqBoneIndex)
+    ;
+
+    class_< FBranchInfo >("FBranchInfo", init<  >())
+        .def(init< const FBranchInfo& >())
+        .def_readwrite("BoneName", &FBranchInfo::BoneName)
+        .def_readwrite("PerBoneWeightIncrease", &FBranchInfo::PerBoneWeightIncrease)
+    ;
+
+    class_< FWeightRule >("FWeightRule", init<  >())
+        .def(init< const FWeightRule& >())
+        .def_readwrite("FirstNode", &FWeightRule::FirstNode)
+        .def_readwrite("SecondNode", &FWeightRule::SecondNode)
+    ;
+
+    class_< FWeightNodeRule >("FWeightNodeRule", init<  >())
+        .def(init< const FWeightNodeRule& >())
+        .def_readwrite("NodeName", &FWeightNodeRule::NodeName)
+        .def_readwrite("CachedNode", &FWeightNodeRule::CachedNode)
+        .def_readwrite("CachedSlotNode", &FWeightNodeRule::CachedSlotNode)
+        .def_readwrite("WeightCheck", &FWeightNodeRule::WeightCheck)
+        .def_readwrite("ChildIndex", &FWeightNodeRule::ChildIndex)
+    ;
+
+    class_< FNavMeshPathGoalEvaluatorCacheDatum >("FNavMeshPathGoalEvaluatorCacheDatum", init<  >())
+        .def(init< const FNavMeshPathGoalEvaluatorCacheDatum& >())
+        .def_readwrite("ListIdx", &FNavMeshPathGoalEvaluatorCacheDatum::ListIdx)
+        .def_readwrite("List", &FNavMeshPathGoalEvaluatorCacheDatum::List)
+    ;
+
+    class_< FMusicTrackStruct >("FMusicTrackStruct", init<  >())
+        .def(init< const FMusicTrackStruct& >())
+        .def_readwrite("TheSoundCue", &FMusicTrackStruct::TheSoundCue)
+        .def_readwrite("FadeInTime", &FMusicTrackStruct::FadeInTime)
+        .def_readwrite("FadeInVolumeLevel", &FMusicTrackStruct::FadeInVolumeLevel)
+        .def_readwrite("FadeOutTime", &FMusicTrackStruct::FadeOutTime)
+        .def_readwrite("FadeOutVolumeLevel", &FMusicTrackStruct::FadeOutVolumeLevel)
+        .def_readwrite("MP3Filename", &FMusicTrackStruct::MP3Filename)
+    ;
+
+    class_< FLocalTalker >("FLocalTalker", init<  >())
+        .def(init< const FLocalTalker& >())
+    ;
+
+    class_< FTitleFile >("FTitleFile", init<  >())
+        .def(init< const FTitleFile& >())
+        .def_readwrite("Filename", &FTitleFile::Filename)
+        .def_readwrite("AsyncState", &FTitleFile::AsyncState)
+        .def_readwrite("Data", &FTitleFile::Data)
+    ;
+
+    class_< FAnimSlotDesc >("FAnimSlotDesc", init<  >())
+        .def(init< const FAnimSlotDesc& >())
+        .def_readwrite("SlotName", &FAnimSlotDesc::SlotName)
+        .def_readwrite("NumChannels", &FAnimSlotDesc::NumChannels)
+    ;
+
+    class_< FGameStatGroup >("FGameStatGroup", init<  >())
+        .def(init< const FGameStatGroup& >())
+        .def_readwrite("Group", &FGameStatGroup::Group)
+        .def_readwrite("Level", &FGameStatGroup::Level)
+    ;
+
+    class_< FGameplayEventsHeader >("FGameplayEventsHeader", init<  >())
+        .def(init< const FGameplayEventsHeader& >())
+        .def_readwrite("EngineVersion", &FGameplayEventsHeader::EngineVersion)
+        .def_readwrite("StatsWriterVersion", &FGameplayEventsHeader::StatsWriterVersion)
+        .def_readwrite("StreamOffset", &FGameplayEventsHeader::StreamOffset)
+        .def_readwrite("AggregateOffset", &FGameplayEventsHeader::AggregateOffset)
+        .def_readwrite("FooterOffset", &FGameplayEventsHeader::FooterOffset)
+        .def_readwrite("TotalStreamSize", &FGameplayEventsHeader::TotalStreamSize)
+        .def_readwrite("FileSize", &FGameplayEventsHeader::FileSize)
+        .def_readwrite("FilterClass", &FGameplayEventsHeader::FilterClass)
+        .def_readwrite("Flags", &FGameplayEventsHeader::Flags)
+    ;
+
+    class_< FGameSessionInformation >("FGameSessionInformation", init<  >())
+        .def(init< const FGameSessionInformation& >())
+        .def_readwrite("AppTitleID", &FGameSessionInformation::AppTitleID)
+        .def_readwrite("PlatformType", &FGameSessionInformation::PlatformType)
+        .def_readwrite("Language", &FGameSessionInformation::Language)
+        .def_readwrite("GameplaySessionTimestamp", &FGameSessionInformation::GameplaySessionTimestamp)
+        .def_readwrite("GameplaySessionStartTime", &FGameSessionInformation::GameplaySessionStartTime)
+        .def_readwrite("GameplaySessionEndTime", &FGameSessionInformation::GameplaySessionEndTime)
+        .def_readwrite("GameplaySessionID", &FGameSessionInformation::GameplaySessionID)
+        .def_readwrite("GameClassName", &FGameSessionInformation::GameClassName)
+        .def_readwrite("MapName", &FGameSessionInformation::MapName)
+        .def_readwrite("MapURL", &FGameSessionInformation::MapURL)
+        .def_readwrite("SessionInstance", &FGameSessionInformation::SessionInstance)
+        .def_readwrite("GameTypeId", &FGameSessionInformation::GameTypeId)
+        .def_readwrite("OwningNetId", &FGameSessionInformation::OwningNetId)
+        .def_readwrite("PlaylistId", &FGameSessionInformation::PlaylistId)
+    ;
+
+    class_< FPlayerInformation >("FPlayerInformation", init<  >())
+        .def(init< const FPlayerInformation& >())
+        .def_readwrite("ControllerName", &FPlayerInformation::ControllerName)
+        .def_readwrite("PlayerName", &FPlayerInformation::PlayerName)
+        .def_readwrite("UniqueId", &FPlayerInformation::UniqueId)
+    ;
+
+    class_< FTeamInformation >("FTeamInformation", init<  >())
+        .def(init< const FTeamInformation& >())
+        .def_readwrite("TeamIndex", &FTeamInformation::TeamIndex)
+        .def_readwrite("TeamName", &FTeamInformation::TeamName)
+        .def_readwrite("TeamColor", &FTeamInformation::TeamColor)
+        .def_readwrite("MaxSize", &FTeamInformation::MaxSize)
+    ;
+
+    class_< FGameplayEventMetaData >("FGameplayEventMetaData", init<  >())
+        .def(init< const FGameplayEventMetaData& >())
+        .def_readwrite("EventID", &FGameplayEventMetaData::EventID)
+        .def_readwrite("EventName", &FGameplayEventMetaData::EventName)
+        .def_readwrite("StatGroup", &FGameplayEventMetaData::StatGroup)
+        .def_readwrite("EventDataType", &FGameplayEventMetaData::EventDataType)
+    ;
+
+    class_< FWeaponClassEventData >("FWeaponClassEventData", init<  >())
+        .def(init< const FWeaponClassEventData& >())
+        .def_readwrite("WeaponClassName", &FWeaponClassEventData::WeaponClassName)
+    ;
+
+    class_< FDamageClassEventData >("FDamageClassEventData", init<  >())
+        .def(init< const FDamageClassEventData& >())
+        .def_readwrite("DamageClassName", &FDamageClassEventData::DamageClassName)
+    ;
+
+    class_< FProjectileClassEventData >("FProjectileClassEventData", init<  >())
+        .def(init< const FProjectileClassEventData& >())
+        .def_readwrite("ProjectileClassName", &FProjectileClassEventData::ProjectileClassName)
+    ;
+
+    class_< FPawnClassEventData >("FPawnClassEventData", init<  >())
+        .def(init< const FPawnClassEventData& >())
+        .def_readwrite("PawnClassName", &FPawnClassEventData::PawnClassName)
+    ;
+
+    class_< FHybridNavVisualizationVertsForNavPoint >("FHybridNavVisualizationVertsForNavPoint", init<  >())
+        .def(init< const FHybridNavVisualizationVertsForNavPoint& >())
+        .def_readwrite("Verts", &FHybridNavVisualizationVertsForNavPoint::Verts)
+        .def_readwrite("FirstVertDrawn", &FHybridNavVisualizationVertsForNavPoint::FirstVertDrawn)
+        .def_readwrite("LastVertDrawn", &FHybridNavVisualizationVertsForNavPoint::LastVertDrawn)
+        .def_readwrite("VerticalReach", &FHybridNavVisualizationVertsForNavPoint::VerticalReach)
+    ;
+
+    class_< FHybridNavVisualizationVert >("FHybridNavVisualizationVert", init<  >())
+        .def(init< const FHybridNavVisualizationVert& >())
+        .def_readwrite("Vert", &FHybridNavVisualizationVert::Vert)
+    ;
+
+    class_< FHybridNavVisualizationPerfStats >("FHybridNavVisualizationPerfStats", init<  >())
+        .def(init< const FHybridNavVisualizationPerfStats& >())
+        .def_readwrite("VisualizationBuildingStartTime", &FHybridNavVisualizationPerfStats::VisualizationBuildingStartTime)
+        .def_readwrite("VisualizationBuildingEndTime", &FHybridNavVisualizationPerfStats::VisualizationBuildingEndTime)
+        .def_readwrite("CyclesBuildingVisualization", &FHybridNavVisualizationPerfStats::CyclesBuildingVisualization)
+        .def_readwrite("NumberOfNodesConsidered", &FHybridNavVisualizationPerfStats::NumberOfNodesConsidered)
+        .def_readwrite("NumberOfTraces", &FHybridNavVisualizationPerfStats::NumberOfTraces)
+        .def_readwrite("NumberOfEndPointAttempts", &FHybridNavVisualizationPerfStats::NumberOfEndPointAttempts)
+        .def_readwrite("NumberOfSideAttempts", &FHybridNavVisualizationPerfStats::NumberOfSideAttempts)
+        .def_readwrite("NumberOfNodesInVisualization", &FHybridNavVisualizationPerfStats::NumberOfNodesInVisualization)
+        .def_readwrite("NumberOfPointsInVisualization", &FHybridNavVisualizationPerfStats::NumberOfPointsInVisualization)
+        .def_readwrite("NumClosestNodesRequests", &FHybridNavVisualizationPerfStats::NumClosestNodesRequests)
+        .def_readwrite("NumClosestNodeTests", &FHybridNavVisualizationPerfStats::NumClosestNodeTests)
+    ;
+
+    class_< FCommunityContentFile >("FCommunityContentFile", init<  >())
+        .def(init< const FCommunityContentFile& >())
+        .def_readwrite("ContentId", &FCommunityContentFile::ContentId)
+        .def_readwrite("FileId", &FCommunityContentFile::FileId)
+        .def_readwrite("ContentType", &FCommunityContentFile::ContentType)
+        .def_readwrite("FileSize", &FCommunityContentFile::FileSize)
+        .def_readwrite("Owner", &FCommunityContentFile::Owner)
+        .def_readwrite("DownloadCount", &FCommunityContentFile::DownloadCount)
+        .def_readwrite("AverageRating", &FCommunityContentFile::AverageRating)
+        .def_readwrite("RatingCount", &FCommunityContentFile::RatingCount)
+        .def_readwrite("LastRatingGiven", &FCommunityContentFile::LastRatingGiven)
+        .def_readwrite("LocalFilePath", &FCommunityContentFile::LocalFilePath)
+    ;
+
+    class_< FCommunityContentMetadata >("FCommunityContentMetadata", init<  >())
+        .def(init< const FCommunityContentMetadata& >())
+        .def_readwrite("ContentType", &FCommunityContentMetadata::ContentType)
+        .def_readwrite("MetadataItems", &FCommunityContentMetadata::MetadataItems)
+    ;
+
+    class_< FDialogueArgument >("FDialogueArgument", init<  >())
+        .def(init< const FDialogueArgument& >())
+        .def_readwrite("Source", &FDialogueArgument::Source)
+    ;
+
+    class_< FMaterialReferenceList >("FMaterialReferenceList", init<  >())
+        .def(init< const FMaterialReferenceList& >())
+        .def_readwrite("TargetMaterial", &FMaterialReferenceList::TargetMaterial)
+        .def_readwrite("AffectedMaterialRefs", &FMaterialReferenceList::AffectedMaterialRefs)
+        .def_readwrite("AffectedPPChainMaterialRefs", &FMaterialReferenceList::AffectedPPChainMaterialRefs)
+    ;
+
+    class_< FPrimitiveMaterialRef >("FPrimitiveMaterialRef", init<  >())
+        .def(init< const FPrimitiveMaterialRef& >())
+        .def_readwrite("Primitive", &FPrimitiveMaterialRef::Primitive)
+        .def_readwrite("MaterialIndex", &FPrimitiveMaterialRef::MaterialIndex)
+    ;
+
+    class_< FPostProcessMaterialRef >("FPostProcessMaterialRef", init<  >())
+        .def(init< const FPostProcessMaterialRef& >())
+        .def_readwrite("Effect", &FPostProcessMaterialRef::Effect)
+    ;
+
+    class_< FLensFlareElement >("FLensFlareElement", init<  >())
+        .def(init< const FLensFlareElement& >())
+        .def_readwrite("ElementName", &FLensFlareElement::ElementName)
+        .def_readwrite("RayDistance", &FLensFlareElement::RayDistance)
+        .def_readwrite("Size", &FLensFlareElement::Size)
+        .def_readwrite("LFMaterials", &FLensFlareElement::LFMaterials)
+        .def_readwrite("LFMaterialIndex", &FLensFlareElement::LFMaterialIndex)
+        .def_readwrite("Scaling", &FLensFlareElement::Scaling)
+        .def_readwrite("AxisScaling", &FLensFlareElement::AxisScaling)
+        .def_readwrite("Rotation", &FLensFlareElement::Rotation)
+        .def_readwrite("Color", &FLensFlareElement::Color)
+        .def_readwrite("Alpha", &FLensFlareElement::Alpha)
+        .def_readwrite("Offset", &FLensFlareElement::Offset)
+        .def_readwrite("DistMap_Scale", &FLensFlareElement::DistMap_Scale)
+        .def_readwrite("DistMap_Color", &FLensFlareElement::DistMap_Color)
+        .def_readwrite("DistMap_Alpha", &FLensFlareElement::DistMap_Alpha)
+    ;
+
+    class_< FLensFlareElementMaterials >("FLensFlareElementMaterials", init<  >())
+        .def(init< const FLensFlareElementMaterials& >())
+        .def_readwrite("ElementMaterials", &FLensFlareElementMaterials::ElementMaterials)
+    ;
+
+    class_< FPhysXEmitterVerticalLodProperties >("FPhysXEmitterVerticalLodProperties", init<  >())
+        .def(init< const FPhysXEmitterVerticalLodProperties& >())
+        .def_readwrite("WeightForFifo", &FPhysXEmitterVerticalLodProperties::WeightForFifo)
+        .def_readwrite("WeightForSpawnLod", &FPhysXEmitterVerticalLodProperties::WeightForSpawnLod)
+        .def_readwrite("SpawnLodRateVsLifeBias", &FPhysXEmitterVerticalLodProperties::SpawnLodRateVsLifeBias)
+        .def_readwrite("RelativeFadeoutTime", &FPhysXEmitterVerticalLodProperties::RelativeFadeoutTime)
+    ;
+
+    class_< FLandscapeAddCollision >("FLandscapeAddCollision", init<  >())
+        .def(init< const FLandscapeAddCollision& >())
+    ;
+
+    class_< FLensFlareElementCurvePair >("FLensFlareElementCurvePair", init<  >())
+        .def(init< const FLensFlareElementCurvePair& >())
+        .def_readwrite("CurveName", &FLensFlareElementCurvePair::CurveName)
+        .def_readwrite("CurveObject", &FLensFlareElementCurvePair::CurveObject)
+    ;
+
+    class_< FCustomInput >("FCustomInput", init<  >())
+        .def(init< const FCustomInput& >())
+        .def_readwrite("InputName", &FCustomInput::InputName)
+        .def_readwrite("Input", &FCustomInput::Input)
+    ;
+
+    class_< AFogVolumeDensityInfo_FCheckpointRecord >("AFogVolumeDensityInfo_FCheckpointRecord", init<  >())
+        .def(init< const AFogVolumeDensityInfo_FCheckpointRecord& >())
+    ;
+
+    class_< FVelocityObstacleStat >("FVelocityObstacleStat", init<  >())
+        .def(init< const FVelocityObstacleStat& >())
+        .def_readwrite("Position", &FVelocityObstacleStat::Position)
+        .def_readwrite("Velocity", &FVelocityObstacleStat::Velocity)
+        .def_readwrite("Radius", &FVelocityObstacleStat::Radius)
+        .def_readwrite("Priority", &FVelocityObstacleStat::Priority)
+    ;
+
+    class_< FFoliageMesh >("FFoliageMesh", init<  >())
+        .def(init< const FFoliageMesh& >())
+        .def_readwrite("InstanceStaticMesh", &FFoliageMesh::InstanceStaticMesh)
+        .def_readwrite("Material", &FFoliageMesh::Material)
+        .def_readwrite("MaxDrawRadius", &FFoliageMesh::MaxDrawRadius)
+        .def_readwrite("MinTransitionRadius", &FFoliageMesh::MinTransitionRadius)
+        .def_readwrite("MinThinningRadius", &FFoliageMesh::MinThinningRadius)
+        .def_readwrite("MinScale", &FFoliageMesh::MinScale)
+        .def_readwrite("MaxScale", &FFoliageMesh::MaxScale)
+        .def_readwrite("MinUniformScale", &FFoliageMesh::MinUniformScale)
+        .def_readwrite("MaxUniformScale", &FFoliageMesh::MaxUniformScale)
+        .def_readwrite("SwayScale", &FFoliageMesh::SwayScale)
+        .def_readwrite("Seed", &FFoliageMesh::Seed)
+        .def_readwrite("SurfaceAreaPerInstance", &FFoliageMesh::SurfaceAreaPerInstance)
+        .def_readwrite("Component", &FFoliageMesh::Component)
+    ;
+
+    class_< FStoredFoliageInstance >("FStoredFoliageInstance", init<  >())
+        .def(init< const FStoredFoliageInstance& >())
+        .def_readwrite("StaticLighting", &FStoredFoliageInstance::StaticLighting)
+        .def_readwrite("Location", &FFoliageInstanceBase::Location)
+        .def_readwrite("XAxis", &FFoliageInstanceBase::XAxis)
+        .def_readwrite("YAxis", &FFoliageInstanceBase::YAxis)
+        .def_readwrite("ZAxis", &FFoliageInstanceBase::ZAxis)
+        .def_readwrite("DistanceFactorSquared", &FFoliageInstanceBase::DistanceFactorSquared)
+    ;
+
+    class_< FFoliageInstanceBase >("FFoliageInstanceBase", init<  >())
+        .def(init< const FFoliageInstanceBase& >())
+        .def_readwrite("Location", &FFoliageInstanceBase::Location)
+        .def_readwrite("XAxis", &FFoliageInstanceBase::XAxis)
+        .def_readwrite("YAxis", &FFoliageInstanceBase::YAxis)
+        .def_readwrite("ZAxis", &FFoliageInstanceBase::ZAxis)
+        .def_readwrite("DistanceFactorSquared", &FFoliageInstanceBase::DistanceFactorSquared)
+    ;
+
+    class_< FHeadTrackingKey >("FHeadTrackingKey", init<  >())
+        .def(init< const FHeadTrackingKey& >())
+        .def_readwrite("Time", &FHeadTrackingKey::Time)
+        .def_readwrite("Action", &FHeadTrackingKey::Action)
+    ;
+
+    class_< FLevelGroup >("FLevelGroup", init<  >())
+        .def(init< const FLevelGroup& >())
+        .def_readwrite("GroupColor", &FLevelGroup::GroupColor)
+        .def_readwrite("Levels", &FLevelGroup::Levels)
+        .def_readwrite("LevelGridVolumes", &FLevelGroup::LevelGridVolumes)
+        .def_readwrite("GroupName", &FLevelGroup::GroupName)
+    ;
+
+    class_< FActorToLookAt >("FActorToLookAt", init<  >())
+        .def(init< const FActorToLookAt& >())
+        .def_readwrite("Actor", &FActorToLookAt::Actor)
+        .def_readwrite("Rating", &FActorToLookAt::Rating)
+        .def_readwrite("EnteredTime", &FActorToLookAt::EnteredTime)
+        .def_readwrite("LastKnownDistance", &FActorToLookAt::LastKnownDistance)
+        .def_readwrite("StartTimeBeingLookedAt", &FActorToLookAt::StartTimeBeingLookedAt)
+        .def_readwrite("CurrentlyBeingLookedAt", &FActorToLookAt::CurrentlyBeingLookedAt)
+    ;
+
+    class_< FImpulseData >("FImpulseData", init<  >())
+        .def(init< const FImpulseData& >())
+        .def_readwrite("Impulse", &FImpulseData::Impulse)
+        .def_readwrite("Source", &FImpulseData::Source)
+    ;
+
+    class_< FLandscapeWeightmapUsage >("FLandscapeWeightmapUsage", init<  >())
+        .def(init< const FLandscapeWeightmapUsage& >())
+        .def_readwrite("ChannelUsage", &FLandscapeWeightmapUsage::ChannelUsage)
+    ;
+
+    class_< FAnimControlTrackKey >("FAnimControlTrackKey", init<  >())
+        .def(init< const FAnimControlTrackKey& >())
+        .def_readwrite("StartTime", &FAnimControlTrackKey::StartTime)
+        .def_readwrite("AnimSeqName", &FAnimControlTrackKey::AnimSeqName)
+        .def_readwrite("AnimStartOffset", &FAnimControlTrackKey::AnimStartOffset)
+        .def_readwrite("AnimEndOffset", &FAnimControlTrackKey::AnimEndOffset)
+        .def_readwrite("AnimPlayRate", &FAnimControlTrackKey::AnimPlayRate)
+    ;
+
+    class_< FChildBoneBlendInfo >("FChildBoneBlendInfo", init<  >())
+        .def(init< const FChildBoneBlendInfo& >())
+        .def_readwrite("TargetPerBoneWeight", &FChildBoneBlendInfo::TargetPerBoneWeight)
+        .def_readwrite("InitTargetStartBone", &FChildBoneBlendInfo::InitTargetStartBone)
+        .def_readwrite("InitPerBoneIncrease", &FChildBoneBlendInfo::InitPerBoneIncrease)
+        .def_readwrite("OldStartBone", &FChildBoneBlendInfo::OldStartBone)
+        .def_readwrite("OldBoneIncrease", &FChildBoneBlendInfo::OldBoneIncrease)
+        .def_readwrite("TargetRequiredBones", &FChildBoneBlendInfo::TargetRequiredBones)
+    ;
+
+    class_< FCoverMeshes >("FCoverMeshes", init<  >())
+        .def(init< const FCoverMeshes& >())
+        .def_readwrite("Base", &FCoverMeshes::Base)
+        .def_readwrite("LeanLeft", &FCoverMeshes::LeanLeft)
+        .def_readwrite("LeanRight", &FCoverMeshes::LeanRight)
+        .def_readwrite("LeanLeftPref", &FCoverMeshes::LeanLeftPref)
+        .def_readwrite("LeanRightPref", &FCoverMeshes::LeanRightPref)
+        .def_readwrite("Climb", &FCoverMeshes::Climb)
+        .def_readwrite("Mantle", &FCoverMeshes::Mantle)
+        .def_readwrite("SlipLeft", &FCoverMeshes::SlipLeft)
+        .def_readwrite("SlipRight", &FCoverMeshes::SlipRight)
+        .def_readwrite("SwatLeft", &FCoverMeshes::SwatLeft)
+        .def_readwrite("SwatRight", &FCoverMeshes::SwatRight)
+        .def_readwrite("PopUp", &FCoverMeshes::PopUp)
+        .def_readwrite("PlayerOnly", &FCoverMeshes::PlayerOnly)
+    ;
+
+    class_< FDirectorTrackCut >("FDirectorTrackCut", init<  >())
+        .def(init< const FDirectorTrackCut& >())
+        .def_readwrite("Time", &FDirectorTrackCut::Time)
+        .def_readwrite("TransitionTime", &FDirectorTrackCut::TransitionTime)
+        .def_readwrite("TargetCamGroup", &FDirectorTrackCut::TargetCamGroup)
+    ;
+
+    class_< FEventTrackKey >("FEventTrackKey", init<  >())
+        .def(init< const FEventTrackKey& >())
+        .def_readwrite("Time", &FEventTrackKey::Time)
+        .def_readwrite("EventName", &FEventTrackKey::EventName)
+    ;
+
+    class_< FFaceFXTrackKey >("FFaceFXTrackKey", init<  >())
+        .def(init< const FFaceFXTrackKey& >())
+        .def_readwrite("StartTime", &FFaceFXTrackKey::StartTime)
+        .def_readwrite("FaceFXGroupName", &FFaceFXTrackKey::FaceFXGroupName)
+        .def_readwrite("FaceFXSeqName", &FFaceFXTrackKey::FaceFXSeqName)
+    ;
+
+    class_< FFaceFXSoundCueKey >("FFaceFXSoundCueKey", init<  >())
+        .def(init< const FFaceFXSoundCueKey& >())
+        .def_readwrite("FaceFXSoundCue", &FFaceFXSoundCueKey::FaceFXSoundCue)
+        .def_readwrite("FaceFXAkEvent", &FFaceFXSoundCueKey::FaceFXAkEvent)
+    ;
+
+    class_< FBoolTrackKey >("FBoolTrackKey", init<  >())
+        .def(init< const FBoolTrackKey& >())
+        .def_readwrite("Time", &FBoolTrackKey::Time)
+        .def_readwrite("Value", &FBoolTrackKey::Value)
+    ;
+
+    class_< FCommentTrackKey >("FCommentTrackKey", init<  >())
+        .def(init< const FCommentTrackKey& >())
+        .def_readwrite("Time", &FCommentTrackKey::Time)
+        .def_readwrite("Comment", &FCommentTrackKey::Comment)
+    ;
+
+    class_< FBoneAngleMorph >("FBoneAngleMorph", init<  >())
+        .def(init< const FBoneAngleMorph& >())
+        .def_readwrite("Angle", &FBoneAngleMorph::Angle)
+        .def_readwrite("TargetWeight", &FBoneAngleMorph::TargetWeight)
+    ;
+
+    class_< FInputKeyAction >("FInputKeyAction", init<  >())
+        .def(init< const FInputKeyAction& >())
+        .def_readwrite("InputKeyName", &FInputKeyAction::InputKeyName)
+        .def_readwrite("InputKeyState", &FInputKeyAction::InputKeyState)
+        .def_readwrite("TriggeredOps", &FInputKeyAction::TriggeredOps)
+        .def_readwrite("ActionsToExecute", &FInputKeyAction::ActionsToExecute)
+    ;
+
+    class_< FVisibilityTrackKey >("FVisibilityTrackKey", init<  >())
+        .def(init< const FVisibilityTrackKey& >())
+        .def_readwrite("Time", &FVisibilityTrackKey::Time)
+        .def_readwrite("Action", &FVisibilityTrackKey::Action)
+        .def_readwrite("ActiveCondition", &FVisibilityTrackKey::ActiveCondition)
+    ;
+
+    class_< FCullDistanceSizePair >("FCullDistanceSizePair", init<  >())
+        .def(init< const FCullDistanceSizePair& >())
+        .def_readwrite("Size", &FCullDistanceSizePair::Size)
+        .def_readwrite("CullDistance", &FCullDistanceSizePair::CullDistance)
+    ;
+
+    class_< FEmitterDynamicParameter >("FEmitterDynamicParameter", init<  >())
+        .def(init< const FEmitterDynamicParameter& >())
+        .def_readwrite("ParamName", &FEmitterDynamicParameter::ParamName)
+        .def_readwrite("ValueMethod", &FEmitterDynamicParameter::ValueMethod)
+        .def_readwrite("ParamValue", &FEmitterDynamicParameter::ParamValue)
+    ;
+
+    class_< FLevelStreamingData >("FLevelStreamingData", init<  >())
+        .def(init< const FLevelStreamingData& >())
+        .def_readwrite("Level", &FLevelStreamingData::Level)
+    ;
+
+    class_< FSwarmDebugOptions >("FSwarmDebugOptions", init<  >())
+        .def(init< const FSwarmDebugOptions& >())
+    ;
+
+    class_< FNavMeshPathConstraintCacheDatum >("FNavMeshPathConstraintCacheDatum", init<  >())
+        .def(init< const FNavMeshPathConstraintCacheDatum& >())
+        .def_readwrite("ListIdx", &FNavMeshPathConstraintCacheDatum::ListIdx)
+        .def_readwrite("List", &FNavMeshPathConstraintCacheDatum::List)
+    ;
+
+    class_< FBiasedGoalActor >("FBiasedGoalActor", init<  >())
+        .def(init< const FBiasedGoalActor& >())
+        .def_readwrite("Goal", &FBiasedGoalActor::Goal)
+        .def_readwrite("ExtraCost", &FBiasedGoalActor::ExtraCost)
+    ;
+
+    class_< FPaintedVertex >("FPaintedVertex", init<  >())
+        .def(init< const FPaintedVertex& >())
+        .def_readwrite("Position", &FPaintedVertex::Position)
+        .def_readwrite("Normal", &FPaintedVertex::Normal)
+        .def_readwrite("Color", &FPaintedVertex::Color)
+    ;
+
+    class_< FAreaTestSortedPoint >("FAreaTestSortedPoint", init<  >())
+        .def(init< const FAreaTestSortedPoint& >())
+        .def_readwrite("Nav", &FAreaTestSortedPoint::Nav)
+        .def_readwrite("DistSq", &FAreaTestSortedPoint::DistSq)
+    ;
+
+    class_< FTerrainMaterialResource >("FTerrainMaterialResource", init<  >())
+        .def(init< const FTerrainMaterialResource& >())
+    ;
+
+    class_< FDamageInfo >("FDamageInfo", init<  >())
+        .def(init< const FDamageInfo& >())
+        .def_readwrite("Instigator", &FDamageInfo::Instigator)
+        .def_readwrite("HitLocation", &FDamageInfo::HitLocation)
+        .def_readwrite("DamageType", &FDamageInfo::DamageType)
+        .def_readwrite("DamageTypeDefinition", &FDamageInfo::DamageTypeDefinition)
+        .def_readwrite("ImpactDefinition", &FDamageInfo::ImpactDefinition)
+    ;
+
+    class_< FLensFlareElementInstance >("FLensFlareElementInstance", init<  >())
+        .def(init< const FLensFlareElementInstance& >())
+    ;
+
+    class_< FLevelGridCellCoordinate >("FLevelGridCellCoordinate", init<  >())
+        .def(init< const FLevelGridCellCoordinate& >())
+        .def_readwrite("X", &FLevelGridCellCoordinate::X)
+        .def_readwrite("Y", &FLevelGridCellCoordinate::Y)
+        .def_readwrite("Z", &FLevelGridCellCoordinate::Z)
+    ;
+
+    class_< FFloatMaterialParamMICData >("FFloatMaterialParamMICData", init<  >())
+        .def(init< const FFloatMaterialParamMICData& >())
+        .def_readwrite("MICs", &FFloatMaterialParamMICData::MICs)
+        .def_readwrite("MICResetFloats", &FFloatMaterialParamMICData::MICResetFloats)
+    ;
+
+    class_< FLandscapeLayerInfo >("FLandscapeLayerInfo", init<  >())
+        .def(init< const FLandscapeLayerInfo& >())
+        .def_readwrite("LayerName", &FLandscapeLayerInfo::LayerName)
+        .def_readwrite("Hardness", &FLandscapeLayerInfo::Hardness)
+    ;
+
+    class_< FTeleportKeyData >("FTeleportKeyData", init<  >())
+        .def(init< const FTeleportKeyData& >())
+        .def_readwrite("KeyTime", &FTeleportKeyData::KeyTime)
+        .def_readwrite("LocationKey", &FTeleportKeyData::LocationKey)
+        .def_readwrite("RotationKey", &FTeleportKeyData::RotationKey)
+    ;
+
+    class_< FParticleReplayTrackKey >("FParticleReplayTrackKey", init<  >())
+        .def(init< const FParticleReplayTrackKey& >())
+        .def_readwrite("Time", &FParticleReplayTrackKey::Time)
+        .def_readwrite("Duration", &FParticleReplayTrackKey::Duration)
+        .def_readwrite("ClipIDNumber", &FParticleReplayTrackKey::ClipIDNumber)
+    ;
+
+    class_< FSoundNodeEditorData >("FSoundNodeEditorData", init<  >())
+        .def(init< const FSoundNodeEditorData& >())
+        .def_readwrite("NodePosX", &FSoundNodeEditorData::NodePosX)
+        .def_readwrite("NodePosY", &FSoundNodeEditorData::NodePosY)
+    ;
+
+    class_< FSplineMeshParams >("FSplineMeshParams", init<  >())
+        .def(init< const FSplineMeshParams& >())
+        .def_readwrite("StartPos", &FSplineMeshParams::StartPos)
+        .def_readwrite("StartTangent", &FSplineMeshParams::StartTangent)
+        .def_readwrite("StartScale", &FSplineMeshParams::StartScale)
+        .def_readwrite("StartRoll", &FSplineMeshParams::StartRoll)
+        .def_readwrite("StartOffset", &FSplineMeshParams::StartOffset)
+        .def_readwrite("EndPos", &FSplineMeshParams::EndPos)
+        .def_readwrite("EndTangent", &FSplineMeshParams::EndTangent)
+        .def_readwrite("EndScale", &FSplineMeshParams::EndScale)
+        .def_readwrite("EndRoll", &FSplineMeshParams::EndRoll)
+        .def_readwrite("EndOffset", &FSplineMeshParams::EndOffset)
+    ;
+
+    class_< FShadowRelevanceSizePair >("FShadowRelevanceSizePair", init<  >())
+        .def(init< const FShadowRelevanceSizePair& >())
+        .def_readwrite("Size", &FShadowRelevanceSizePair::Size)
+        .def_readwrite("DynamicShadowCastRelevance", &FShadowRelevanceSizePair::DynamicShadowCastRelevance)
+        .def_readwrite("OverrideStaticShadowSettings", &FShadowRelevanceSizePair::OverrideStaticShadowSettings)
+    ;
+
+    class_< FLocationBoneSocketInfo >("FLocationBoneSocketInfo", init<  >())
+        .def(init< const FLocationBoneSocketInfo& >())
+        .def_readwrite("BoneSocketName", &FLocationBoneSocketInfo::BoneSocketName)
+        .def_readwrite("Offset", &FLocationBoneSocketInfo::Offset)
+    ;
+
+    class_< FVectorMaterialParamMICData >("FVectorMaterialParamMICData", init<  >())
+        .def(init< const FVectorMaterialParamMICData& >())
+        .def_readwrite("MICs", &FVectorMaterialParamMICData::MICs)
+        .def_readwrite("MICResetVectors", &FVectorMaterialParamMICData::MICResetVectors)
+    ;
+
+    class_< FSoundTrackKey >("FSoundTrackKey", init<  >())
+        .def(init< const FSoundTrackKey& >())
+        .def_readwrite("Time", &FSoundTrackKey::Time)
+        .def_readwrite("Volume", &FSoundTrackKey::Volume)
+        .def_readwrite("Pitch", &FSoundTrackKey::Pitch)
+        .def_readwrite("Sound", &FSoundTrackKey::Sound)
+    ;
+
+    class_< FNxDestructibleParameters >("FNxDestructibleParameters", init<  >())
+        .def(init< const FNxDestructibleParameters& >())
+        .def_readwrite("DamageThreshold", &FNxDestructibleParameters::DamageThreshold)
+        .def_readwrite("DamageToRadius", &FNxDestructibleParameters::DamageToRadius)
+        .def_readwrite("DamageCap", &FNxDestructibleParameters::DamageCap)
+        .def_readwrite("ForceToDamage", &FNxDestructibleParameters::ForceToDamage)
+        .def_readwrite("ImpactVelocityThreshold", &FNxDestructibleParameters::ImpactVelocityThreshold)
+        .def_readwrite("MaterialStrength", &FNxDestructibleParameters::MaterialStrength)
+        .def_readwrite("DamageToPercentDeformation", &FNxDestructibleParameters::DamageToPercentDeformation)
+        .def_readwrite("DeformationPercentLimit", &FNxDestructibleParameters::DeformationPercentLimit)
+        .def_readwrite("SupportDepth", &FNxDestructibleParameters::SupportDepth)
+        .def_readwrite("DebrisDepth", &FNxDestructibleParameters::DebrisDepth)
+        .def_readwrite("EssentialDepth", &FNxDestructibleParameters::EssentialDepth)
+        .def_readwrite("DebrisLifetimeMin", &FNxDestructibleParameters::DebrisLifetimeMin)
+        .def_readwrite("DebrisLifetimeMax", &FNxDestructibleParameters::DebrisLifetimeMax)
+        .def_readwrite("DebrisMaxSeparationMin", &FNxDestructibleParameters::DebrisMaxSeparationMin)
+        .def_readwrite("DebrisMaxSeparationMax", &FNxDestructibleParameters::DebrisMaxSeparationMax)
+        .def_readwrite("ValidBounds", &FNxDestructibleParameters::ValidBounds)
+        .def_readwrite("MaxChunkSpeed", &FNxDestructibleParameters::MaxChunkSpeed)
+        .def_readwrite("MassScaleExponent", &FNxDestructibleParameters::MassScaleExponent)
+        .def_readwrite("Flags", &FNxDestructibleParameters::Flags)
+        .def_readwrite("GrbVolumeLimit", &FNxDestructibleParameters::GrbVolumeLimit)
+        .def_readwrite("GrbParticleSpacing", &FNxDestructibleParameters::GrbParticleSpacing)
+        .def_readwrite("FractureImpulseScale", &FNxDestructibleParameters::FractureImpulseScale)
+        .def_readwrite("DepthParameters", &FNxDestructibleParameters::DepthParameters)
+    ;
+
+    class_< FNxDestructibleDepthParameters >("FNxDestructibleDepthParameters", init<  >())
+        .def(init< const FNxDestructibleDepthParameters& >())
+        .def_readwrite("TAKE_IMPACT_DAMAGE", &FNxDestructibleDepthParameters::TAKE_IMPACT_DAMAGE)
+        .def_readwrite("IGNORE_POSE_UPDATES", &FNxDestructibleDepthParameters::IGNORE_POSE_UPDATES)
+        .def_readwrite("IGNORE_RAYCAST_CALLBACKS", &FNxDestructibleDepthParameters::IGNORE_RAYCAST_CALLBACKS)
+        .def_readwrite("IGNORE_CONTACT_CALLBACKS", &FNxDestructibleDepthParameters::IGNORE_CONTACT_CALLBACKS)
+        .def_readwrite("USER_FLAG", &FNxDestructibleDepthParameters::USER_FLAG)
+        .def_readwrite("USER_FLAG01", &FNxDestructibleDepthParameters::USER_FLAG01)
+        .def_readwrite("USER_FLAG02", &FNxDestructibleDepthParameters::USER_FLAG02)
+        .def_readwrite("USER_FLAG03", &FNxDestructibleDepthParameters::USER_FLAG03)
+    ;
+
+    class_< FNavReference >("FNavReference", init<  >())
+        .def(init< const FNavReference& >())
+        .def_readwrite("Nav", &FNavReference::Nav)
+        .def_readwrite("Guid", &FNavReference::Guid)
+    ;
+
+    class_< FUIDataStoreInputAlias >("FUIDataStoreInputAlias", init<  >())
+        .def(init< const FUIDataStoreInputAlias& >())
+        .def_readwrite("AliasName", &FUIDataStoreInputAlias::AliasName)
+        .def_readwrite("PlatformInputKeys", &FUIDataStoreInputAlias::PlatformInputKeys)
+    ;
+
+    class_< FUIInputKeyData >("FUIInputKeyData", init<  >())
+        .def(init< const FUIInputKeyData& >())
+        .def_readwrite("InputKeyData", &FUIInputKeyData::InputKeyData)
+        .def_readwrite("ButtonFontMarkupString", &FUIInputKeyData::ButtonFontMarkupString)
+    ;
+
+    class_< FRawInputKeyEventData >("FRawInputKeyEventData", init<  >())
+        .def(init< const FRawInputKeyEventData& >())
+        .def_readwrite("InputKeyName", &FRawInputKeyEventData::InputKeyName)
+        .def_readwrite("ModifierKeyFlags", &FRawInputKeyEventData::ModifierKeyFlags)
+    ;
+
+    class_< FPolySegmentSpan >("FPolySegmentSpan", init<  >())
+        .def(init< const FPolySegmentSpan& >())
+        .def_readwrite("Poly", &FPolySegmentSpan::Poly)
+        .def_readwrite("P1", &FPolySegmentSpan::P1)
+        .def_readwrite("P2", &FPolySegmentSpan::P2)
+    ;
+
+    class_< FToggleTrackKey >("FToggleTrackKey", init<  >())
+        .def(init< const FToggleTrackKey& >())
+        .def_readwrite("Time", &FToggleTrackKey::Time)
+        .def_readwrite("ToggleAction", &FToggleTrackKey::ToggleAction)
+    ;
+
+    class_< FSMMaterialSetterDatum >("FSMMaterialSetterDatum", init<  >())
+        .def(init< const FSMMaterialSetterDatum& >())
+        .def_readwrite("MaterialIndex", &FSMMaterialSetterDatum::MaterialIndex)
+        .def_readwrite("TheMaterial", &FSMMaterialSetterDatum::TheMaterial)
+    ;
+
+    class_< FSavedTransform >("FSavedTransform", init<  >())
+        .def(init< const FSavedTransform& >())
+        .def_readwrite("Location", &FSavedTransform::Location)
+        .def_readwrite("Rotation", &FSavedTransform::Rotation)
+    ;
+
+    class_< FParticleCurvePair >("FParticleCurvePair", init<  >())
+        .def(init< const FParticleCurvePair& >())
+        .def_readwrite("CurveName", &FParticleCurvePair::CurveName)
+        .def_readwrite("CurveObject", &FParticleCurvePair::CurveObject)
+    ;
+
+    class_< FSkelMaterialSetterDatum >("FSkelMaterialSetterDatum", init<  >())
+        .def(init< const FSkelMaterialSetterDatum& >())
+        .def_readwrite("MaterialIndex", &FSkelMaterialSetterDatum::MaterialIndex)
+        .def_readwrite("TheMaterial", &FSkelMaterialSetterDatum::TheMaterial)
+    ;
+
+    class_< FCounterEventReactionData >("FCounterEventReactionData", init<  >())
+        .def(init< const FCounterEventReactionData& >())
+        .def_readwrite("EventType", &FCounterEventReactionData::EventType)
+        .def_readwrite("Behaviors", &FCounterEventReactionData::Behaviors)
+    ;
+
+    class_< FTerrainkDOPTree >("FTerrainkDOPTree", init<  >())
+        .def(init< const FTerrainkDOPTree& >())
+        .def_readwrite("Nodes", &FTerrainkDOPTree::Nodes)
+        .def_readwrite("Triangles", &FTerrainkDOPTree::Triangles)
+    ;
+
+    class_< FKeyValuePair >("FKeyValuePair", init<  >())
+        .def(init< const FKeyValuePair& >())
+        .def_readwrite("Key", &FKeyValuePair::Key)
+        .def_readwrite("Value", &FKeyValuePair::Value)
+    ;
+
+    class_< FGameResourceDataProvider >("FGameResourceDataProvider", init<  >())
+        .def(init< const FGameResourceDataProvider& >())
+        .def_readwrite("ProviderTag", &FGameResourceDataProvider::ProviderTag)
+        .def_readwrite("ProviderClassName", &FGameResourceDataProvider::ProviderClassName)
+        .def_readwrite("ProviderClass", &FGameResourceDataProvider::ProviderClass)
+    ;
+
+    class_< FDynamicResourceProviderDefinition >("FDynamicResourceProviderDefinition", init<  >())
+        .def(init< const FDynamicResourceProviderDefinition& >())
+        .def_readwrite("ProviderTag", &FDynamicResourceProviderDefinition::ProviderTag)
+        .def_readwrite("ProviderClassName", &FDynamicResourceProviderDefinition::ProviderClassName)
+        .def_readwrite("ProviderClass", &FDynamicResourceProviderDefinition::ProviderClass)
+    ;
+
+    class_< FMMStats_Timer >("FMMStats_Timer", init<  >())
+        .def(init< const FMMStats_Timer& >())
+        .def_readwrite("MSecs", &FMMStats_Timer::MSecs)
+    ;
+
+    class_< FLODSoloTrack >("FLODSoloTrack", init<  >())
+        .def(init< const FLODSoloTrack& >())
+        .def_readwrite("SoloEnableSetting", &FLODSoloTrack::SoloEnableSetting)
+    ;
+
+    class_< FBeamTargetData >("FBeamTargetData", init<  >())
+        .def(init< const FBeamTargetData& >())
+        .def_readwrite("TargetName", &FBeamTargetData::TargetName)
+        .def_readwrite("TargetPercentage", &FBeamTargetData::TargetPercentage)
+    ;
+
+    class_< FServerResponseLine >("FServerResponseLine", init<  >())
+        .def(init< const FServerResponseLine& >())
+        .def_readwrite("ServerID", &FServerResponseLine::ServerID)
+        .def_readwrite("IP", &FServerResponseLine::IP)
+        .def_readwrite("Port", &FServerResponseLine::Port)
+        .def_readwrite("QueryPort", &FServerResponseLine::QueryPort)
+        .def_readwrite("ServerName", &FServerResponseLine::ServerName)
+        .def_readwrite("MapName", &FServerResponseLine::MapName)
+        .def_readwrite("GameType", &FServerResponseLine::GameType)
+        .def_readwrite("CurrentPlayers", &FServerResponseLine::CurrentPlayers)
+        .def_readwrite("MaxPlayers", &FServerResponseLine::MaxPlayers)
+        .def_readwrite("Ping", &FServerResponseLine::Ping)
+        .def_readwrite("ServerInfo", &FServerResponseLine::ServerInfo)
+        .def_readwrite("PlayerInfo", &FServerResponseLine::PlayerInfo)
+    ;
+
+    class_< FPlayerResponseLine >("FPlayerResponseLine", init<  >())
+        .def(init< const FPlayerResponseLine& >())
+        .def_readwrite("PlayerNum", &FPlayerResponseLine::PlayerNum)
+        .def_readwrite("PlayerID", &FPlayerResponseLine::PlayerID)
+        .def_readwrite("PlayerName", &FPlayerResponseLine::PlayerName)
+        .def_readwrite("Ping", &FPlayerResponseLine::Ping)
+        .def_readwrite("Score", &FPlayerResponseLine::Score)
+        .def_readwrite("StatsID", &FPlayerResponseLine::StatsID)
+        .def_readwrite("PlayerInfo", &FPlayerResponseLine::PlayerInfo)
+    ;
+
+    class_< FGBXNavMeshSpecialMoveConnection >("FGBXNavMeshSpecialMoveConnection", init<  >())
+        .def(init< const FGBXNavMeshSpecialMoveConnection& >())
+        .def_readwrite("SrcPoly", &FGBXNavMeshSpecialMoveConnection::SrcPoly)
+        .def_readwrite("SrcLocation", &FGBXNavMeshSpecialMoveConnection::SrcLocation)
+        .def_readwrite("DestPoly", &FGBXNavMeshSpecialMoveConnection::DestPoly)
+        .def_readwrite("DestLocation", &FGBXNavMeshSpecialMoveConnection::DestLocation)
+        .def_readwrite("MoveId", &FGBXNavMeshSpecialMoveConnection::MoveId)
+    ;
+
+    class_< ADynamicBlockingVolume_FCheckpointRecord >("ADynamicBlockingVolume_FCheckpointRecord", init<  >())
+        .def(init< const ADynamicBlockingVolume_FCheckpointRecord& >())
+        .def_readwrite("Location", &ADynamicBlockingVolume_FCheckpointRecord::Location)
+        .def_readwrite("Rotation", &ADynamicBlockingVolume_FCheckpointRecord::Rotation)
+    ;
+
+    class_< FAudioClassInfo >("FAudioClassInfo", init<  >())
+        .def(init< const FAudioClassInfo& >())
+        .def_readwrite("NumResident", &FAudioClassInfo::NumResident)
+        .def_readwrite("SizeResident", &FAudioClassInfo::SizeResident)
+        .def_readwrite("NumRealTime", &FAudioClassInfo::NumRealTime)
+        .def_readwrite("SizeRealTime", &FAudioClassInfo::SizeRealTime)
+    ;
+
+    class_< ANavMeshObstacle_FCheckpointRecord >("ANavMeshObstacle_FCheckpointRecord", init<  >())
+        .def(init< const ANavMeshObstacle_FCheckpointRecord& >())
+    ;
+
+    class_< FSupportedSubTrackInfo >("FSupportedSubTrackInfo", init<  >())
+        .def(init< const FSupportedSubTrackInfo& >())
+        .def_readwrite("SupportedClass", &FSupportedSubTrackInfo::SupportedClass)
+        .def_readwrite("SubTrackName", &FSupportedSubTrackInfo::SubTrackName)
+        .def_readwrite("GroupIndex", &FSupportedSubTrackInfo::GroupIndex)
+    ;
+
+    class_< FTextureGroupContainer >("FTextureGroupContainer", init<  >())
+        .def(init< const FTextureGroupContainer& >())
+        .def_readwrite("TEXTUREGROUP_World", &FTextureGroupContainer::TEXTUREGROUP_World)
+        .def_readwrite("TEXTUREGROUP_WorldNormalMap", &FTextureGroupContainer::TEXTUREGROUP_WorldNormalMap)
+        .def_readwrite("TEXTUREGROUP_WorldSpecular", &FTextureGroupContainer::TEXTUREGROUP_WorldSpecular)
+        .def_readwrite("TEXTUREGROUP_Character", &FTextureGroupContainer::TEXTUREGROUP_Character)
+        .def_readwrite("TEXTUREGROUP_CharacterNormalMap", &FTextureGroupContainer::TEXTUREGROUP_CharacterNormalMap)
+        .def_readwrite("TEXTUREGROUP_CharacterSpecular", &FTextureGroupContainer::TEXTUREGROUP_CharacterSpecular)
+        .def_readwrite("TEXTUREGROUP_Weapon", &FTextureGroupContainer::TEXTUREGROUP_Weapon)
+        .def_readwrite("TEXTUREGROUP_WeaponNormalMap", &FTextureGroupContainer::TEXTUREGROUP_WeaponNormalMap)
+        .def_readwrite("TEXTUREGROUP_WeaponSpecular", &FTextureGroupContainer::TEXTUREGROUP_WeaponSpecular)
+        .def_readwrite("TEXTUREGROUP_Vehicle", &FTextureGroupContainer::TEXTUREGROUP_Vehicle)
+        .def_readwrite("TEXTUREGROUP_VehicleNormalMap", &FTextureGroupContainer::TEXTUREGROUP_VehicleNormalMap)
+        .def_readwrite("TEXTUREGROUP_VehicleSpecular", &FTextureGroupContainer::TEXTUREGROUP_VehicleSpecular)
+        .def_readwrite("TEXTUREGROUP_Cinematic", &FTextureGroupContainer::TEXTUREGROUP_Cinematic)
+        .def_readwrite("TEXTUREGROUP_Effects", &FTextureGroupContainer::TEXTUREGROUP_Effects)
+        .def_readwrite("TEXTUREGROUP_EffectsNotFiltered", &FTextureGroupContainer::TEXTUREGROUP_EffectsNotFiltered)
+        .def_readwrite("TEXTUREGROUP_Skybox", &FTextureGroupContainer::TEXTUREGROUP_Skybox)
+        .def_readwrite("TEXTUREGROUP_UI", &FTextureGroupContainer::TEXTUREGROUP_UI)
+        .def_readwrite("TEXTUREGROUP_Lightmap", &FTextureGroupContainer::TEXTUREGROUP_Lightmap)
+        .def_readwrite("TEXTUREGROUP_RenderTarget", &FTextureGroupContainer::TEXTUREGROUP_RenderTarget)
+        .def_readwrite("TEXTUREGROUP_MobileFlattened", &FTextureGroupContainer::TEXTUREGROUP_MobileFlattened)
+        .def_readwrite("TEXTUREGROUP_ProcBuilding_Face", &FTextureGroupContainer::TEXTUREGROUP_ProcBuilding_Face)
+        .def_readwrite("TEXTUREGROUP_ProcBuilding_LightMap", &FTextureGroupContainer::TEXTUREGROUP_ProcBuilding_LightMap)
+        .def_readwrite("TEXTUREGROUP_Shadowmap", &FTextureGroupContainer::TEXTUREGROUP_Shadowmap)
+        .def_readwrite("TEXTUREGROUP_ColorLookupTable", &FTextureGroupContainer::TEXTUREGROUP_ColorLookupTable)
+        .def_readwrite("TEXTUREGROUP_Terrain_Heightmap", &FTextureGroupContainer::TEXTUREGROUP_Terrain_Heightmap)
+        .def_readwrite("TEXTUREGROUP_Terrain_Weightmap", &FTextureGroupContainer::TEXTUREGROUP_Terrain_Weightmap)
+        .def_readwrite("TEXTUREGROUP_ImageBasedReflection", &FTextureGroupContainer::TEXTUREGROUP_ImageBasedReflection)
+        .def_readwrite("TEXTUREGROUP_Bokeh", &FTextureGroupContainer::TEXTUREGROUP_Bokeh)
+    ;
+
+    class_< FWrappedStringElement >("FWrappedStringElement", init<  >())
+        .def(init< const FWrappedStringElement& >())
+        .def_readwrite("Value", &FWrappedStringElement::Value)
+        .def_readwrite("LineExtent", &FWrappedStringElement::LineExtent)
+    ;
+
+    class_< FTextSizingParameters >("FTextSizingParameters", init<  >())
+        .def(init< const FTextSizingParameters& >())
+        .def_readwrite("DrawX", &FTextSizingParameters::DrawX)
+        .def_readwrite("DrawY", &FTextSizingParameters::DrawY)
+        .def_readwrite("DrawXL", &FTextSizingParameters::DrawXL)
+        .def_readwrite("DrawYL", &FTextSizingParameters::DrawYL)
+        .def_readwrite("Scaling", &FTextSizingParameters::Scaling)
+        .def_readwrite("DrawFont", &FTextSizingParameters::DrawFont)
+        .def_readwrite("SpacingAdjust", &FTextSizingParameters::SpacingAdjust)
+        .def_readwrite("ViewportHeight", &FTextSizingParameters::ViewportHeight)
+    ;
+
+    class_< FCompressedTrack >("FCompressedTrack", init<  >())
+        .def(init< const FCompressedTrack& >())
+        .def_readwrite("ByteStream", &FCompressedTrack::ByteStream)
+        .def_readwrite("Times", &FCompressedTrack::Times)
+        .def_readwrite("Mins", &FCompressedTrack::Mins)
+        .def_readwrite("Ranges", &FCompressedTrack::Ranges)
+    ;
+
+    class_< FSoundClassEditorData >("FSoundClassEditorData", init<  >())
+        .def(init< const FSoundClassEditorData& >())
+        .def_readwrite("NodePosX", &FSoundClassEditorData::NodePosX)
+        .def_readwrite("NodePosY", &FSoundClassEditorData::NodePosY)
+    ;
+
+    class_< FBehaviorOutputLinkDescriptionData >("FBehaviorOutputLinkDescriptionData", init<  >())
+        .def(init< const FBehaviorOutputLinkDescriptionData& >())
+        .def_readwrite("LinkId", &FBehaviorOutputLinkDescriptionData::LinkId)
+    ;
+
+    class_< FParticleEmitterInstanceMotionBlurInfo >("FParticleEmitterInstanceMotionBlurInfo", init<  >())
+        .def(init< const FParticleEmitterInstanceMotionBlurInfo& >())
+        .def_readwrite("ParticleMBInfoMap", &FParticleEmitterInstanceMotionBlurInfo::ParticleMBInfoMap)
+    ;
+
+    class_< FParticleEmitterInstance >("FParticleEmitterInstance", init<  >())
+        .def(init< const FParticleEmitterInstance& >())
+    ;
+
+    class_< FPreviewAnimSetsStruct >("FPreviewAnimSetsStruct", init<  >())
+        .def(init< const FPreviewAnimSetsStruct& >())
+        .def_readwrite("DisplayName", &FPreviewAnimSetsStruct::DisplayName)
+        .def_readwrite("PreviewAnimSets", &FPreviewAnimSetsStruct::PreviewAnimSets)
+    ;
+
+    class_< FPreviewSkelMeshStruct >("FPreviewSkelMeshStruct", init<  >())
+        .def(init< const FPreviewSkelMeshStruct& >())
+        .def_readwrite("DisplayName", &FPreviewSkelMeshStruct::DisplayName)
+        .def_readwrite("PreviewSkelMesh", &FPreviewSkelMeshStruct::PreviewSkelMesh)
+        .def_readwrite("PreviewMorphSets", &FPreviewSkelMeshStruct::PreviewMorphSets)
+    ;
+
+    class_< FGBXLineCheckResult >("FGBXLineCheckResult", init<  >())
+        .def(init< const FGBXLineCheckResult& >())
+        .def_readwrite("Location", &FGBXLineCheckResult::Location)
+        .def_readwrite("Normal", &FGBXLineCheckResult::Normal)
+        .def_readwrite("Time", &FGBXLineCheckResult::Time)
+    ;
+
+    class_< FDlcContentInfo >("FDlcContentInfo", init<  >())
+        .def(init< const FDlcContentInfo& >())
+        .def_readwrite("ContentId", &FDlcContentInfo::ContentId)
+    ;
+
+    class_< FCovPosInfo >("FCovPosInfo", init<  >())
+        .def(init< const FCovPosInfo& >())
+        .def_readwrite("Link", &FCovPosInfo::Link)
+        .def_readwrite("LtSlotIdx", &FCovPosInfo::LtSlotIdx)
+        .def_readwrite("RtSlotIdx", &FCovPosInfo::RtSlotIdx)
+        .def_readwrite("LtToRtPct", &FCovPosInfo::LtToRtPct)
+        .def_readwrite("Location", &FCovPosInfo::Location)
+        .def_readwrite("Normal", &FCovPosInfo::Normal)
+        .def_readwrite("Tangent", &FCovPosInfo::Tangent)
+    ;
+
+    class_< FFireLinkItem >("FFireLinkItem", init<  >())
+        .def(init< const FFireLinkItem& >())
+        .def_readwrite("SrcType", &FFireLinkItem::SrcType)
+        .def_readwrite("SrcAction", &FFireLinkItem::SrcAction)
+        .def_readwrite("DestType", &FFireLinkItem::DestType)
+        .def_readwrite("DestAction", &FFireLinkItem::DestAction)
+    ;
+
+    class_< FSubTrackGroup >("FSubTrackGroup", init<  >())
+        .def(init< const FSubTrackGroup& >())
+        .def_readwrite("GroupName", &FSubTrackGroup::GroupName)
+        .def_readwrite("TrackIndices", &FSubTrackGroup::TrackIndices)
+    ;
+
+    class_< FInterpEdSelKey >("FInterpEdSelKey", init<  >())
+        .def(init< const FInterpEdSelKey& >())
+        .def_readwrite("Group", &FInterpEdSelKey::Group)
+        .def_readwrite("Track", &FInterpEdSelKey::Track)
+        .def_readwrite("KeyIndex", &FInterpEdSelKey::KeyIndex)
+        .def_readwrite("UnsnappedPosition", &FInterpEdSelKey::UnsnappedPosition)
+    ;
+
+    class_< FTexture2DMipMap >("FTexture2DMipMap", init<  >())
+        .def(init< const FTexture2DMipMap& >())
+        .def_readwrite("Data", &FTexture2DMipMap::Data)
+        .def_readwrite("SizeX", &FTexture2DMipMap::SizeX)
+        .def_readwrite("SizeY", &FTexture2DMipMap::SizeY)
+    ;
+
+    class_< FBoneMirrorExport >("FBoneMirrorExport", init<  >())
+        .def(init< const FBoneMirrorExport& >())
+        .def_readwrite("BoneName", &FBoneMirrorExport::BoneName)
+        .def_readwrite("SourceBoneName", &FBoneMirrorExport::SourceBoneName)
+        .def_readwrite("BoneFlipAxis", &FBoneMirrorExport::BoneFlipAxis)
+    ;
+
+    class_< FPropertyInfo >("FPropertyInfo", init<  >())
+        .def(init< const FPropertyInfo& >())
+        .def_readwrite("PropertyName", &FPropertyInfo::PropertyName)
+        .def_readwrite("PropertyValue", &FPropertyInfo::PropertyValue)
+    ;
+
+    class_< FProjectileEvents >("FProjectileEvents", init<  >())
+        .def(init< const FProjectileEvents& >())
+        .def_readwrite("TotalEvents", &FEventsBase::TotalEvents)
+        .def_readwrite("EventsByClass", &FEventsBase::EventsByClass)
+    ;
+
+    class_< FEventsBase >("FEventsBase", init<  >())
+        .def(init< const FEventsBase& >())
+        .def_readwrite("TotalEvents", &FEventsBase::TotalEvents)
+        .def_readwrite("EventsByClass", &FEventsBase::EventsByClass)
+    ;
+
+    class_< FGameEvents >("FGameEvents", init<  >())
+        .def(init< const FGameEvents& >())
+        .def_readwrite("Events", &FGameEvents::Events)
+    ;
+
+    class_< FDamageEvents, bases< FEventsBase >  >("FDamageEvents", init<  >())
+        .def(init< const FDamageEvents& >())
+    ;
+
+    class_< FPlayerState >("FPlayerState", init<  >())
+        .def(init< const FPlayerState& >())
+        .def_readwrite("PlayerIndex", &FPlayerState::PlayerIndex)
+        .def_readwrite("CurrentTeamIndex", &FPlayerState::CurrentTeamIndex)
+        .def_readwrite("TimeSpawned", &FPlayerState::TimeSpawned)
+        .def_readwrite("TimeAliveSinceLastDeath", &FPlayerState::TimeAliveSinceLastDeath)
+    ;
+
+    class_< FTeamState >("FTeamState", init<  >())
+        .def(init< const FTeamState& >())
+        .def_readwrite("TeamIndex", &FTeamState::TeamIndex)
+        .def_readwrite("PlayerIndices", &FTeamState::PlayerIndices)
+    ;
+
+    class_< FAggregateEventMapping >("FAggregateEventMapping", init<  >())
+        .def(init< const FAggregateEventMapping& >())
+        .def_readwrite("EventID", &FAggregateEventMapping::EventID)
+        .def_readwrite("AggregateID", &FAggregateEventMapping::AggregateID)
+        .def_readwrite("TargetAggregateID", &FAggregateEventMapping::TargetAggregateID)
+    ;
+
+    class_< FTeamEvents >("FTeamEvents", init<  >())
+        .def(init< const FTeamEvents& >())
+        .def_readwrite("TotalEvents", &FTeamEvents::TotalEvents)
+        .def_readwrite("WeaponEvents", &FTeamEvents::WeaponEvents)
+        .def_readwrite("DamageAsPlayerEvents", &FTeamEvents::DamageAsPlayerEvents)
+        .def_readwrite("DamageAsTargetEvents", &FTeamEvents::DamageAsTargetEvents)
+        .def_readwrite("ProjectileEvents", &FTeamEvents::ProjectileEvents)
+        .def_readwrite("PawnEvents", &FTeamEvents::PawnEvents)
+    ;
+
+    class_< FWeaponEvents, bases< FEventsBase >  >("FWeaponEvents", init<  >())
+        .def(init< const FWeaponEvents& >())
+    ;
+
+    class_< FPawnEvents, bases< FEventsBase >  >("FPawnEvents", init<  >())
+        .def(init< const FPawnEvents& >())
+    ;
+
+    class_< FPlayerEvents >("FPlayerEvents", init<  >())
+        .def(init< const FPlayerEvents& >())
+        .def_readwrite("TotalEvents", &FPlayerEvents::TotalEvents)
+        .def_readwrite("WeaponEvents", &FPlayerEvents::WeaponEvents)
+        .def_readwrite("DamageAsPlayerEvents", &FPlayerEvents::DamageAsPlayerEvents)
+        .def_readwrite("DamageAsTargetEvents", &FPlayerEvents::DamageAsTargetEvents)
+        .def_readwrite("ProjectileEvents", &FPlayerEvents::ProjectileEvents)
+        .def_readwrite("PawnEvents", &FPlayerEvents::PawnEvents)
+    ;
+
+    class_< FRecoilDef >("FRecoilDef", init<  >())
+        .def(init< const FRecoilDef& >())
+        .def_readwrite("TimeToGo", &FRecoilDef::TimeToGo)
+        .def_readwrite("TimeDuration", &FRecoilDef::TimeDuration)
+        .def_readwrite("RotAmplitude", &FRecoilDef::RotAmplitude)
+        .def_readwrite("RotFrequency", &FRecoilDef::RotFrequency)
+        .def_readwrite("RotSinOffset", &FRecoilDef::RotSinOffset)
+        .def_readwrite("RotParams", &FRecoilDef::RotParams)
+        .def_readwrite("RotOffset", &FRecoilDef::RotOffset)
+        .def_readwrite("LocAmplitude", &FRecoilDef::LocAmplitude)
+        .def_readwrite("LocFrequency", &FRecoilDef::LocFrequency)
+        .def_readwrite("LocSinOffset", &FRecoilDef::LocSinOffset)
+        .def_readwrite("LocParams", &FRecoilDef::LocParams)
+        .def_readwrite("LocOffset", &FRecoilDef::LocOffset)
+    ;
+
+    class_< FRecoilParams >("FRecoilParams", init<  >())
+        .def(init< const FRecoilParams& >())
+        .def_readwrite("X", &FRecoilParams::X)
+        .def_readwrite("Y", &FRecoilParams::Y)
+        .def_readwrite("Z", &FRecoilParams::Z)
+        .def_readwrite("Padding", &FRecoilParams::Padding)
+    ;
+
+    class_< FGameEvent >("FGameEvent", init<  >())
+        .def(init< const FGameEvent& >())
+        .def_readwrite("EventCountByTimePeriod", &FGameEvent::EventCountByTimePeriod)
+    ;
+
+    class_< FGFxWidgetBinding >("FGFxWidgetBinding", init<  >())
+        .def(init< const FGFxWidgetBinding& >())
+        .def_readwrite("WidgetName", &FGFxWidgetBinding::WidgetName)
+        .def_readwrite("WidgetClass", &FGFxWidgetBinding::WidgetClass)
+    ;
+
+    class_< FASValue >("FASValue", init<  >())
+        .def(init< const FASValue& >())
+        .def_readwrite("Type", &FASValue::Type)
+        .def_readwrite("B", &FASValue::B)
+        .def_readwrite("N", &FASValue::N)
+        .def_readwrite("S", &FASValue::S)
+    ;
+
+    class_< FASColorTransform >("FASColorTransform", init<  >())
+        .def(init< const FASColorTransform& >())
+        .def_readwrite("Multiply", &FASColorTransform::Multiply)
+        .def_readwrite("Add", &FASColorTransform::Add)
+    ;
+
+    class_< FASDisplayInfo >("FASDisplayInfo", init<  >())
+        .def(init< const FASDisplayInfo& >())
+        .def_readwrite("X", &FASDisplayInfo::X)
+        .def_readwrite("Y", &FASDisplayInfo::Y)
+        .def_readwrite("Z", &FASDisplayInfo::Z)
+        .def_readwrite("Rotation", &FASDisplayInfo::Rotation)
+        .def_readwrite("XRotation", &FASDisplayInfo::XRotation)
+        .def_readwrite("YRotation", &FASDisplayInfo::YRotation)
+        .def_readwrite("XScale", &FASDisplayInfo::XScale)
+        .def_readwrite("YScale", &FASDisplayInfo::YScale)
+        .def_readwrite("ZScale", &FASDisplayInfo::ZScale)
+        .def_readwrite("Alpha", &FASDisplayInfo::Alpha)
+        .def_readwrite("Visible", &FASDisplayInfo::Visible)
+        .def_readwrite("hasX", &FASDisplayInfo::hasX)
+        .def_readwrite("hasY", &FASDisplayInfo::hasY)
+        .def_readwrite("hasZ", &FASDisplayInfo::hasZ)
+        .def_readwrite("hasRotation", &FASDisplayInfo::hasRotation)
+        .def_readwrite("hasXRotation", &FASDisplayInfo::hasXRotation)
+        .def_readwrite("hasYRotation", &FASDisplayInfo::hasYRotation)
+        .def_readwrite("hasXScale", &FASDisplayInfo::hasXScale)
+        .def_readwrite("hasYScale", &FASDisplayInfo::hasYScale)
+        .def_readwrite("hasZScale", &FASDisplayInfo::hasZScale)
+        .def_readwrite("hasAlpha", &FASDisplayInfo::hasAlpha)
+        .def_readwrite("hasVisible", &FASDisplayInfo::hasVisible)
+    ;
+
+    class_< FExternalTexture >("FExternalTexture", init<  >())
+        .def(init< const FExternalTexture& >())
+        .def_readwrite("Resource", &FExternalTexture::Resource)
+        .def_readwrite("Texture", &FExternalTexture::Texture)
+    ;
+
+    class_< FSoundThemeBinding >("FSoundThemeBinding", init<  >())
+        .def(init< const FSoundThemeBinding& >())
+        .def_readwrite("ThemeName", &FSoundThemeBinding::ThemeName)
+        .def_readwrite("Theme", &FSoundThemeBinding::Theme)
+    ;
+
+    class_< FGFxDataStoreBinding >("FGFxDataStoreBinding", init<  >())
+        .def(init< const FGFxDataStoreBinding& >())
+        .def_readwrite("DataSource", &FGFxDataStoreBinding::DataSource)
+        .def_readwrite("VarPath", &FGFxDataStoreBinding::VarPath)
+        .def_readwrite("ModelId", &FGFxDataStoreBinding::ModelId)
+        .def_readwrite("ControlId", &FGFxDataStoreBinding::ControlId)
+        .def_readwrite("CellTags", &FGFxDataStoreBinding::CellTags)
+        .def_readwrite("ModelIdUtf8", &FGFxDataStoreBinding::ModelIdUtf8)
+        .def_readwrite("ControlIdUtf8", &FGFxDataStoreBinding::ControlIdUtf8)
+        .def_readwrite("ListDataProvider", &FGFxDataStoreBinding::ListDataProvider)
+        .def_readwrite("UnknownData00", &FGFxDataStoreBinding::UnknownData00)
+        .def_readwrite("FullCellTags", &FGFxDataStoreBinding::FullCellTags)
+        .def_readwrite("ModelRef", &FGFxDataStoreBinding::ModelRef)
+        .def_readwrite("ControlRef", &FGFxDataStoreBinding::ControlRef)
+    ;
+
+    class_< FAkEventResolver >("FAkEventResolver", init<  >())
+        .def(init< const FAkEventResolver& >())
+        .def_readwrite("Interaction", &FAkEventResolver::Interaction)
+        .def_readwrite("AkEvent", &FAkEventResolver::AkEvent)
+    ;
+
+    class_< FEventData >("FEventData", init<  >())
+        .def(init< const FEventData& >())
+        .def_readwrite("Type", &FEventData::Type)
+        .def_readwrite("Data", &FEventData::Data)
+        .def_readwrite("mouseIndex", &FEventData::mouseIndex)
+        .def_readwrite("Button", &FEventData::Button)
+        .def_readwrite("Index", &FEventData::Index)
+        .def_readwrite("lastIndex", &FEventData::lastIndex)
+        .def_readwrite("controllerIdx", &FEventData::controllerIdx)
+    ;
+
+    class_< FGCReference >("FGCReference", init<  >())
+        .def(init< const FGCReference& >())
+        .def_readwrite("m_object", &FGCReference::m_object)
+        .def_readwrite("m_count", &FGCReference::m_count)
+        .def_readwrite("m_statid", &FGCReference::m_statid)
+    ;
+
+    class_< FSpecializedBehaviorEvent >("FSpecializedBehaviorEvent", init<  >())
+        .def(init< const FSpecializedBehaviorEvent& >())
+        .def_readwrite("EventName", &FSpecializedBehaviorEvent::EventName)
+    ;
+
+    class_< FSpecialMoveData >("FSpecialMoveData", init<  >())
+        .def(init< const FSpecialMoveData& >())
+        .def_readwrite("Data", &FSpecialMoveData::Data)
+        .def_readwrite("PlayRateScale", &FSpecialMoveData::PlayRateScale)
+        .def_readwrite("Duration", &FSpecialMoveData::Duration)
+        .def_readwrite("CallbackName", &FSpecialMoveData::CallbackName)
+        .def_readwrite("CallbackObject", &FSpecialMoveData::CallbackObject)
+        .def_readwrite("SMD", &FSpecialMoveData::SMD)
+    ;
+
+    class_< FSlotAnimParameters >("FSlotAnimParameters", init<  >())
+        .def(init< const FSlotAnimParameters& >())
+        .def_readwrite("SMData", &FSlotAnimParameters::SMData)
+        .def_readwrite("CustomAnimDef", &FSlotAnimParameters::CustomAnimDef)
+        .def_readwrite("CustomAnimName", &FSlotAnimParameters::CustomAnimName)
+        .def_readwrite("PerBoneWeights", &FSlotAnimParameters::PerBoneWeights)
+        .def_readwrite("TransformReqBone", &FSlotAnimParameters::TransformReqBone)
+        .def_readwrite("TransformReqBoneIndex", &FSlotAnimParameters::TransformReqBoneIndex)
+    ;
+
+    class_< FFeatherBoneBlendData >("FFeatherBoneBlendData", init<  >())
+        .def(init< const FFeatherBoneBlendData& >())
+        .def_readwrite("StartBoneName", &FFeatherBoneBlendData::StartBoneName)
+        .def_readwrite("BlendWeight", &FFeatherBoneBlendData::BlendWeight)
+    ;
+
+    class_< FSMBehavior >("FSMBehavior", init<  >())
+        .def(init< const FSMBehavior& >())
+        .def_readwrite("PlayServer", &FSMBehavior::PlayServer)
+        .def_readwrite("PlayClient", &FSMBehavior::PlayClient)
+        .def_readwrite("PlayLocal", &FSMBehavior::PlayLocal)
+        .def_readwrite("Behaviors", &FSMBehavior::Behaviors)
+    ;
+
+    class_< FSMNotify, bases< FSMBehavior >  >("FSMNotify", init<  >())
+        .def(init< const FSMNotify& >())
+        .def_readwrite("Time", &FSMNotify::Time)
+    ;
+
+    class_< FTimedAnimBehaviorEvent, bases< FSpecializedBehaviorEvent >  >("FTimedAnimBehaviorEvent", init<  >())
+        .def(init< const FTimedAnimBehaviorEvent& >())
+        .def_readwrite("Time", &FTimedAnimBehaviorEvent::Time)
+    ;
+
+    class_< FBehaviorSequenceData >("FBehaviorSequenceData", init<  >())
+        .def(init< const FBehaviorSequenceData& >())
+        .def_readwrite("BehaviorSequenceName", &FBehaviorSequenceData::BehaviorSequenceName)
+        .def_readwrite("CustomEnableCondition", &FBehaviorSequenceData::CustomEnableCondition)
+        .def_readwrite("EventData", &FBehaviorSequenceData::EventData)
+        .def_readwrite("EventData2", &FBehaviorSequenceData::EventData2)
+        .def_readwrite("BehaviorData", &FBehaviorSequenceData::BehaviorData)
+        .def_readwrite("BehaviorData2", &FBehaviorSequenceData::BehaviorData2)
+        .def_readwrite("VariableData", &FBehaviorSequenceData::VariableData)
+        .def_readwrite("ConsolidatedOutputLinkData", &FBehaviorSequenceData::ConsolidatedOutputLinkData)
+        .def_readwrite("ConsolidatedVariableLinkData", &FBehaviorSequenceData::ConsolidatedVariableLinkData)
+        .def_readwrite("ConsolidatedLinkedVariables", &FBehaviorSequenceData::ConsolidatedLinkedVariables)
+    ;
+
+    class_< FBehaviorEventData >("FBehaviorEventData", init<  >())
+        .def(init< const FBehaviorEventData& >())
+        .def_readwrite("UserData", &FBehaviorEventData::UserData)
+        .def_readwrite("OutputVariables", &FBehaviorEventData::OutputVariables)
+        .def_readwrite("OutputLinks", &FBehaviorEventData::OutputLinks)
+    ;
+
+    class_< FBehaviorEventUserData >("FBehaviorEventUserData", init<  >())
+        .def(init< const FBehaviorEventUserData& >())
+        .def_readwrite("EventName", &FBehaviorEventUserData::EventName)
+        .def_readwrite("MaxTriggerCount", &FBehaviorEventUserData::MaxTriggerCount)
+        .def_readwrite("ReTriggerDelay", &FBehaviorEventUserData::ReTriggerDelay)
+        .def_readwrite("FilterObject", &FBehaviorEventUserData::FilterObject)
+    ;
+
+    class_< FBehaviorVariableLinkData >("FBehaviorVariableLinkData", init<  >())
+        .def(init< const FBehaviorVariableLinkData& >())
+        .def_readwrite("PropertyName", &FBehaviorVariableLinkData::PropertyName)
+        .def_readwrite("ConnectionIndex", &FBehaviorVariableLinkData::ConnectionIndex)
+        .def_readwrite("LinkedVariables", &FBehaviorVariableLinkData::LinkedVariables)
+        .def_readwrite("CachedProperty", &FBehaviorVariableLinkData::CachedProperty)
+    ;
+
+    class_< FBehaviorOutputLinkData >("FBehaviorOutputLinkData", init<  >())
+        .def(init< const FBehaviorOutputLinkData& >())
+        .def_readwrite("LinkId", &FBehaviorOutputLinkData::LinkId)
+        .def_readwrite("LinkedActions", &FBehaviorOutputLinkData::LinkedActions)
+    ;
+
+    class_< FBehaviorActionLinkData >("FBehaviorActionLinkData", init<  >())
+        .def(init< const FBehaviorActionLinkData& >())
+        .def_readwrite("LinkedBehavior", &FBehaviorActionLinkData::LinkedBehavior)
+        .def_readwrite("ActivateDelay", &FBehaviorActionLinkData::ActivateDelay)
+    ;
+
+    class_< FBehaviorEventData2 >("FBehaviorEventData2", init<  >())
+        .def(init< const FBehaviorEventData2& >())
+        .def_readwrite("UserData", &FBehaviorEventData2::UserData)
+        .def_readwrite("OutputVariables", &FBehaviorEventData2::OutputVariables)
+        .def_readwrite("OutputLinks", &FBehaviorEventData2::OutputLinks)
+    ;
+
+    class_< FSubarrayData >("FSubarrayData", init<  >())
+        .def(init< const FSubarrayData& >())
+        .def_readwrite("ArrayIndexAndLength", &FSubarrayData::ArrayIndexAndLength)
+    ;
+
+    class_< FBehaviorSequenceActionData >("FBehaviorSequenceActionData", init<  >())
+        .def(init< const FBehaviorSequenceActionData& >())
+        .def_readwrite("Behavior", &FBehaviorSequenceActionData::Behavior)
+        .def_readwrite("ContextVariables", &FBehaviorSequenceActionData::ContextVariables)
+        .def_readwrite("LinkedVariables", &FBehaviorSequenceActionData::LinkedVariables)
+        .def_readwrite("OutputVariables", &FBehaviorSequenceActionData::OutputVariables)
+        .def_readwrite("OutputLinks", &FBehaviorSequenceActionData::OutputLinks)
+    ;
+
+    class_< FBehaviorSequenceActionData2 >("FBehaviorSequenceActionData2", init<  >())
+        .def(init< const FBehaviorSequenceActionData2& >())
+        .def_readwrite("Behavior", &FBehaviorSequenceActionData2::Behavior)
+        .def_readwrite("LinkedVariables", &FBehaviorSequenceActionData2::LinkedVariables)
+        .def_readwrite("OutputLinks", &FBehaviorSequenceActionData2::OutputLinks)
+    ;
+
+    class_< FBehaviorVariableData >("FBehaviorVariableData", init<  >())
+        .def(init< const FBehaviorVariableData& >())
+        .def_readwrite("Name", &FBehaviorVariableData::Name)
+        .def_readwrite("Type", &FBehaviorVariableData::Type)
+        .def_readwrite("Value", &FBehaviorVariableData::Value)
+    ;
+
+    class_< FBehaviorVariableValueUnion_Mirror >("FBehaviorVariableValueUnion_Mirror", init<  >())
+        .def(init< const FBehaviorVariableValueUnion_Mirror& >())
+        .def_readwrite("Data", &FBehaviorVariableValueUnion_Mirror::Data)
+    ;
+
+    class_< FBehaviorOutputLinkData2 >("FBehaviorOutputLinkData2", init<  >())
+        .def(init< const FBehaviorOutputLinkData2& >())
+        .def_readwrite("LinkIdAndLinkedBehavior", &FBehaviorOutputLinkData2::LinkIdAndLinkedBehavior)
+        .def_readwrite("ActivateDelay", &FBehaviorOutputLinkData2::ActivateDelay)
+    ;
+
+    class_< FBehaviorVariableLinkData2 >("FBehaviorVariableLinkData2", init<  >())
+        .def(init< const FBehaviorVariableLinkData2& >())
+        .def_readwrite("PropertyName", &FBehaviorVariableLinkData2::PropertyName)
+        .def_readwrite("VariableLinkType", &FBehaviorVariableLinkData2::VariableLinkType)
+        .def_readwrite("ConnectionIndex", &FBehaviorVariableLinkData2::ConnectionIndex)
+        .def_readwrite("LinkedVariables", &FBehaviorVariableLinkData2::LinkedVariables)
+        .def_readwrite("CachedProperty", &FBehaviorVariableLinkData2::CachedProperty)
+    ;
+
+    class_< FBehaviorVariableValue >("FBehaviorVariableValue", init<  >())
+        .def(init< const FBehaviorVariableValue& >())
+        .def_readwrite("IntValue", &FBehaviorVariableValue::IntValue)
+        .def_readwrite("FloatValue", &FBehaviorVariableValue::FloatValue)
+        .def_readwrite("VectorValue", &FBehaviorVariableValue::VectorValue)
+        .def_readwrite("ObjectValue", &FBehaviorVariableValue::ObjectValue)
+        .def_readwrite("VariableType", &FBehaviorVariableValue::VariableType)
+    ;
+
+    class_< FBehaviorConsumerHandle >("FBehaviorConsumerHandle", init<  >())
+        .def(init< const FBehaviorConsumerHandle& >())
+        .def_readwrite("PID", &FBehaviorConsumerHandle::PID)
+    ;
+
+    class_< FReplicatedSpecialMoveData >("FReplicatedSpecialMoveData", init<  >())
+        .def(init< const FReplicatedSpecialMoveData& >())
+        .def_readwrite("Data", &FReplicatedSpecialMoveData::Data)
+        .def_readwrite("PlayRateScale", &FReplicatedSpecialMoveData::PlayRateScale)
+        .def_readwrite("Duration", &FReplicatedSpecialMoveData::Duration)
+        .def_readwrite("DirtyCounter", &FReplicatedSpecialMoveData::DirtyCounter)
+        .def_readwrite("SMD", &FReplicatedSpecialMoveData::SMD)
+    ;
+
+    class_< FGearboxCoverState >("FGearboxCoverState", init<  >())
+        .def(init< const FGearboxCoverState& >())
+        .def_readwrite("TheCoverActor", &FGearboxCoverState::TheCoverActor)
+        .def_readwrite("SlotIndex", &FGearboxCoverState::SlotIndex)
+        .def_readwrite("State", &FGearboxCoverState::State)
+        .def_readwrite("ExtendedState", &FGearboxCoverState::ExtendedState)
+        .def_readwrite("MetaData", &FGearboxCoverState::MetaData)
+        .def_readwrite("ExtendedMetaData", &FGearboxCoverState::ExtendedMetaData)
+    ;
+
+    class_< FGearboxCoverTransition >("FGearboxCoverTransition", init<  >())
+        .def(init< const FGearboxCoverTransition& >())
+        .def_readwrite("Action", &FGearboxCoverTransition::Action)
+        .def_readwrite("ExtendedAction", &FGearboxCoverTransition::ExtendedAction)
+        .def_readwrite("Padding", &FGearboxCoverTransition::Padding)
+    ;
+
+    class_< FCoverSpotInfo >("FCoverSpotInfo", init<  >())
+        .def(init< const FCoverSpotInfo& >())
+        .def_readwrite("TheCoverActor", &FCoverSpotInfo::TheCoverActor)
+        .def_readwrite("CoverSlotIndex", &FCoverSpotInfo::CoverSlotIndex)
+        .def_readwrite("CoverSpotWorldLocation", &FCoverSpotInfo::CoverSpotWorldLocation)
+        .def_readwrite("CoverHeight", &FCoverSpotInfo::CoverHeight)
+        .def_readwrite("ExtendedInfo1", &FCoverSpotInfo::ExtendedInfo1)
+        .def_readwrite("ExtendedInfo2", &FCoverSpotInfo::ExtendedInfo2)
+        .def_readwrite("ExtendedInfo3", &FCoverSpotInfo::ExtendedInfo3)
+    ;
+
+    class_< FCoverDebugPriority >("FCoverDebugPriority", init<  >())
+        .def(init< const FCoverDebugPriority& >())
+        .def_readwrite("Score", &FCoverDebugPriority::Score)
+        .def_readwrite("Distance", &FCoverDebugPriority::Distance)
+        .def_readwrite("IsACandidate", &FCoverDebugPriority::IsACandidate)
+        .def_readwrite("IsBestCandidate", &FCoverDebugPriority::IsBestCandidate)
+        .def_readwrite("TheCoverActor", &FCoverDebugPriority::TheCoverActor)
+        .def_readwrite("SlotNdx", &FCoverDebugPriority::SlotNdx)
+        .def_readwrite("FailString", &FCoverDebugPriority::FailString)
+        .def_readwrite("ScoringInfo", &FCoverDebugPriority::ScoringInfo)
+    ;
+
+    class_< FCoverDebugScoringInfo >("FCoverDebugScoringInfo", init<  >())
+        .def(init< const FCoverDebugScoringInfo& >())
+        .def_readwrite("PriorityName", &FCoverDebugScoringInfo::PriorityName)
+        .def_readwrite("Score", &FCoverDebugScoringInfo::Score)
+    ;
+
+    class_< FKnowledgeRecordStruct >("FKnowledgeRecordStruct", init<  >())
+        .def(init< const FKnowledgeRecordStruct& >())
+        .def_readwrite("TheObj", &FKnowledgeRecordStruct::TheObj)
+        .def_readwrite("InUse", &FKnowledgeRecordStruct::InUse)
+        .def_readwrite("DeathTimeStamp", &FTimeStampedRecord::DeathTimeStamp)
+    ;
+
+    class_< FTimeStampedRecord >("FTimeStampedRecord", init<  >())
+        .def(init< const FTimeStampedRecord& >())
+        .def_readwrite("DeathTimeStamp", &FTimeStampedRecord::DeathTimeStamp)
+    ;
+
+    class_< FRuleSetRecord, bases< FTimeStampedRecord >  >("FRuleSetRecord", init<  >())
+        .def(init< const FRuleSetRecord& >())
+        .def_readwrite("TheObj", &FRuleSetRecord::TheObj)
+        .def_readwrite("InUse", &FRuleSetRecord::InUse)
+    ;
+
+    class_< FFlagDefinitionInitialization >("FFlagDefinitionInitialization", init<  >())
+        .def(init< const FFlagDefinitionInitialization& >())
+        .def_readwrite("FlagToSet", &FFlagDefinitionInitialization::FlagToSet)
+        .def_readwrite("ChanceTrue", &FFlagDefinitionInitialization::ChanceTrue)
+        .def_readwrite("ProbabilityTrue", &FFlagDefinitionInitialization::ProbabilityTrue)
+        .def_readwrite("Duration", &FFlagDefinitionInitialization::Duration)
+    ;
+
+    class_< FAITreeData >("FAITreeData", init<  >())
+        .def(init< const FAITreeData& >())
+        .def_readwrite("AI", &FAITreeData::AI)
+        .def_readwrite("UnknownData00", &FAITreeData::UnknownData00)
+        .def_readwrite("Type", &FAITreeData::Type)
+        .def_readwrite("Children", &FAITreeData::Children)
+        .def_readwrite("Resource", &FAITreeData::Resource)
+        .def_readwrite("CanRunIf", &FAITreeData::CanRunIf)
+        .def_readwrite("TimedStart", &FAITreeData::TimedStart)
+        .def_readwrite("TimedReset", &FAITreeData::TimedReset)
+        .def_readwrite("TimedFail", &FAITreeData::TimedFail)
+        .def_readwrite("ActiveChild", &FAITreeData::ActiveChild)
+        .def_readwrite("NextActiveChild", &FAITreeData::NextActiveChild)
+        .def_readwrite("LastFailTime", &FAITreeData::LastFailTime)
+        .def_readwrite("NextTimedRun", &FAITreeData::NextTimedRun)
+        .def_readwrite("NextTimedFail", &FAITreeData::NextTimedFail)
+        .def_readwrite("NextTimedResource", &FAITreeData::NextTimedResource)
+        .def_readwrite("Action", &FAITreeData::Action)
+        .def_readwrite("LoopCount", &FAITreeData::LoopCount)
+        .def_readwrite("LastRandomChild", &FAITreeData::LastRandomChild)
+        .def_readwrite("Weights", &FAITreeData::Weights)
+        .def_readwrite("LoopCountMax", &FAITreeData::LoopCountMax)
+        .def_readwrite("Conditions", &FAITreeData::Conditions)
+        .def_readwrite("NextSequentialChild", &FAITreeData::NextSequentialChild)
+        .def_readwrite("PosX", &FAITreeData::PosX)
+        .def_readwrite("PosY", &FAITreeData::PosY)
+        .def_readwrite("NodeName", &FAITreeData::NodeName)
+        .def_readwrite("ActionFailName", &FAITreeData::ActionFailName)
+        .def_readwrite("FailReason", &FAITreeData::FailReason)
+    ;
+
+    class_< FAIResourceRestriction >("FAIResourceRestriction", init<  >())
+        .def(init< const FAIResourceRestriction& >())
+        .def_readwrite("MaxUsers", &FAIResourceRestriction::MaxUsers)
+        .def_readwrite("MinUsers", &FAIResourceRestriction::MinUsers)
+        .def_readwrite("Resource", &FAIResourceRestriction::Resource)
+    ;
+
+    class_< FAIRange >("FAIRange", init<  >())
+        .def(init< const FAIRange& >())
+        .def_readwrite("MinVal", &FAIRange::MinVal)
+        .def_readwrite("MaxVal", &FAIRange::MaxVal)
+    ;
+
+    class_< FAIResourceData >("FAIResourceData", init<  >())
+        .def(init< const FAIResourceData& >())
+        .def_readwrite("Resource", &FAIResourceData::Resource)
+        .def_readwrite("CanRun", &FAIResourceData::CanRun)
+        .def_readwrite("Running", &FAIResourceData::Running)
+    ;
+
+    class_< FHitTargetRecord >("FHitTargetRecord", init<  >())
+        .def(init< const FHitTargetRecord& >())
+        .def_readwrite("vecHitLoc", &FHitTargetRecord::vecHitLoc)
+        .def_readwrite("flDamage", &FHitTargetRecord::flDamage)
+        .def_readwrite("flHitTime", &FHitTargetRecord::flHitTime)
+    ;
+
+    class_< FPriorityDebugStruct >("FPriorityDebugStruct", init<  >())
+        .def(init< const FPriorityDebugStruct& >())
+        .def_readwrite("IteratorName", &FPriorityDebugStruct::IteratorName)
+        .def_readwrite("ShortName", &FPriorityDebugStruct::ShortName)
+        .def_readwrite("PriorityValue", &FPriorityDebugStruct::PriorityValue)
+        .def_readwrite("AutomaticTopPriority", &FPriorityDebugStruct::AutomaticTopPriority)
+    ;
+
+    class_< FAIHoldData >("FAIHoldData", init<  >())
+        .def(init< const FAIHoldData& >())
+        .def_readwrite("HoldName", &FAIHoldData::HoldName)
+        .def_readwrite("HoldTag", &FAIHoldData::HoldTag)
+    ;
+
+    class_< FFlagEvalORConnector >("FFlagEvalORConnector", init<  >())
+        .def(init< const FFlagEvalORConnector& >())
+        .def_readwrite("ANDChain", &FFlagEvalORConnector::ANDChain)
+    ;
+
+    class_< FFlagEvalConditional >("FFlagEvalConditional", init<  >())
+        .def(init< const FFlagEvalConditional& >())
+        .def_readwrite("FlagEvalType", &FFlagEvalConditional::FlagEvalType)
+        .def_readwrite("FlagDefinition", &FFlagEvalConditional::FlagDefinition)
+        .def_readwrite("TimeSeconds", &FFlagEvalConditional::TimeSeconds)
+    ;
+
+    class_< FRuleRecord, bases< FTimeStampedRecord >  >("FRuleRecord", init<  >())
+        .def(init< const FRuleRecord& >())
+        .def_readwrite("TheObj", &FRuleRecord::TheObj)
+        .def_readwrite("InUse", &FRuleRecord::InUse)
+    ;
+
+    class_< FActionSequenceRecord, bases< FTimeStampedRecord >  >("FActionSequenceRecord", init<  >())
+        .def(init< const FActionSequenceRecord& >())
+        .def_readwrite("TheObj", &FActionSequenceRecord::TheObj)
+        .def_readwrite("InUse", &FActionSequenceRecord::InUse)
+    ;
+
+    class_< FTargetInfoRecord, bases< FTimeStampedRecord >  >("FTargetInfoRecord", init<  >())
+        .def(init< const FTargetInfoRecord& >())
+        .def_readwrite("TheObj", &FTargetInfoRecord::TheObj)
+        .def_readwrite("InUse", &FTargetInfoRecord::InUse)
+    ;
+
+    class_< FAIDefinitionRecord, bases< FTimeStampedRecord >  >("FAIDefinitionRecord", init<  >())
+        .def(init< const FAIDefinitionRecord& >())
+        .def_readwrite("TheObj", &FAIDefinitionRecord::TheObj)
+        .def_readwrite("InUse", &FAIDefinitionRecord::InUse)
+    ;
+
+    class_< FDynamicFlagInstanceData >("FDynamicFlagInstanceData", init<  >())
+        .def(init< const FDynamicFlagInstanceData& >())
+        .def_readwrite("DynamicFlag", &FDynamicFlagInstanceData::DynamicFlag)
+        .def_readwrite("LastEvaluatedExpressionTime", &FDynamicFlagInstanceData::LastEvaluatedExpressionTime)
+    ;
+
+    class_< FRuleInfo >("FRuleInfo", init<  >())
+        .def(init< const FRuleInfo& >())
+        .def_readwrite("RuleName", &FRuleInfo::RuleName)
+        .def_readwrite("RuleNameString", &FRuleInfo::RuleNameString)
+        .def_readwrite("RunningSequence", &FRuleInfo::RunningSequence)
+        .def_readwrite("LatentAction", &FRuleInfo::LatentAction)
+        .def_readwrite("ColorCodedStrings", &FRuleInfo::ColorCodedStrings)
+        .def_readwrite("ContainerRuleStartNdx", &FRuleInfo::ContainerRuleStartNdx)
+        .def_readwrite("ContainerRuleNumSubRules", &FRuleInfo::ContainerRuleNumSubRules)
+    ;
+
+    class_< FEventRecord >("FEventRecord", init<  >())
+        .def(init< const FEventRecord& >())
+        .def_readwrite("EventDefinition", &FEventRecord::EventDefinition)
+        .def_readwrite("OtherEventParticipantObject", &FEventRecord::OtherEventParticipantObject)
+    ;
+
+    class_< FRuleSetReference >("FRuleSetReference", init<  >())
+        .def(init< const FRuleSetReference& >())
+        .def_readwrite("ReferenceName", &FRuleSetReference::ReferenceName)
+        .def_readwrite("ReferenceRuleSet", &FRuleSetReference::ReferenceRuleSet)
+    ;
+
+    class_< FNounAttributeState >("FNounAttributeState", init<  >())
+        .def(init< const FNounAttributeState& >())
+        .def_readwrite("NounName", &FNounAttributeState::NounName)
+        .def_readwrite("Value", &FNounAttributeState::Value)
+        .def_readwrite("BaseValue", &FNounAttributeState::BaseValue)
+        .def_readwrite("ModifierStack", &FNounAttributeState::ModifierStack)
+        .def_readwrite("ReplicationStrategy", &FNounAttributeState::ReplicationStrategy)
+        .def_readwrite("IndexInReplicationArray", &FNounAttributeState::IndexInReplicationArray)
+    ;
+
+    class_< FPathFindData >("FPathFindData", init<  >())
+        .def(init< const FPathFindData& >())
+        .def_readwrite("Path", &FPathFindData::Path)
+        .def_readwrite("FinalDest", &FPathFindData::FinalDest)
+        .def_readwrite("MaxRangeToDest", &FPathFindData::MaxRangeToDest)
+        .def_readwrite("AnchorPoly", &FPathFindData::AnchorPoly)
+    ;
+
+    class_< FDialogEventInfo >("FDialogEventInfo", init<  >())
+        .def(init< const FDialogEventInfo& >())
+        .def_readwrite("Event", &FDialogEventInfo::Event)
+        .def_readwrite("NodeID", &FDialogEventInfo::NodeID)
+    ;
+
+    class_< FOutputLink >("FOutputLink", init<  >())
+        .def(init< const FOutputLink& >())
+        .def_readwrite("Links", &FOutputLink::Links)
+    ;
+
+    class_< FVariableLink >("FVariableLink", init<  >())
+        .def(init< const FVariableLink& >())
+        .def_readwrite("Links", &FVariableLink::Links)
+    ;
+
+    class_< FGearboxDialogData >("FGearboxDialogData", init<  >())
+        .def(init< const FGearboxDialogData& >())
+        .def_readwrite("NameTag", &FGearboxDialogData::NameTag)
+        .def_readwrite("TalkAkEvent", &FGearboxDialogData::TalkAkEvent)
+        .def_readwrite("AkAudioUniqueID", &FGearboxDialogData::AkAudioUniqueID)
+        .def_readwrite("Pitch", &FGearboxDialogData::Pitch)
+    ;
+
+    class_< FGearboxDialogReplicatedData >("FGearboxDialogReplicatedData", init<  >())
+        .def(init< const FGearboxDialogReplicatedData& >())
+        .def_readwrite("Pitch", &FGearboxDialogReplicatedData::Pitch)
+        .def_readwrite("TalkAkEvent", &FGearboxDialogReplicatedData::TalkAkEvent)
+        .def_readwrite("AkAudioUniqueID", &FGearboxDialogReplicatedData::AkAudioUniqueID)
+        .def_readwrite("TalkAct", &FGearboxDialogReplicatedData::TalkAct)
+        .def_readwrite("EventTag", &FGearboxDialogReplicatedData::EventTag)
+    ;
+
+    class_< FOutputLinkToStruct >("FOutputLinkToStruct", init<  >())
+        .def(init< const FOutputLinkToStruct& >())
+        .def_readwrite("FromNodeID", &FOutputLinkToStruct::FromNodeID)
+        .def_readwrite("LinkNumber", &FOutputLinkToStruct::LinkNumber)
+        .def_readwrite("ToNodeID", &FOutputLinkToStruct::ToNodeID)
+    ;
+
+    class_< FDialogEventData >("FDialogEventData", init<  >())
+        .def(init< const FDialogEventData& >())
+        .def_readwrite("Tag", &FDialogEventData::Tag)
+        .def_readwrite("OutputAction", &FDialogEventData::OutputAction)
+    ;
+
+    class_< FTalkActData >("FTalkActData", init<  >())
+        .def(init< const FTalkActData& >())
+        .def_readwrite("OutputDelay", &FTalkActData::OutputDelay)
+        .def_readwrite("TalkData", &FTalkActData::TalkData)
+        .def_readwrite("TalkerVariable", &FTalkActData::TalkerVariable)
+        .def_readwrite("OutputAction", &FTalkActData::OutputAction)
+    ;
+
+    class_< FGestaltInfo >("FGestaltInfo", init<  >())
+        .def(init< const FGestaltInfo& >())
+        .def_readwrite("Parts", &FGestaltInfo::Parts)
+    ;
+
+    class_< FGestaltPart >("FGestaltPart", init<  >())
+        .def(init< const FGestaltPart& >())
+        .def_readwrite("SkeletalMeshFragment", &FGestaltPart::SkeletalMeshFragment)
+        .def_readwrite("SkeletalMeshFragmentName", &FGestaltPart::SkeletalMeshFragmentName)
+        .def_readwrite("MaterialIndex", &FGestaltPart::MaterialIndex)
+        .def_readwrite("FirstIndex", &FGestaltPart::FirstIndex)
+        .def_readwrite("NumPrimitives", &FGestaltPart::NumPrimitives)
+    ;
+
+    class_< FGestaltAccessoryNameEntry >("FGestaltAccessoryNameEntry", init<  >())
+        .def(init< const FGestaltAccessoryNameEntry& >())
+        .def_readwrite("SkeletalMeshFragmentName", &FGestaltAccessoryNameEntry::SkeletalMeshFragmentName)
+    ;
+
+    class_< FGestaltSocketRemapEntry >("FGestaltSocketRemapEntry", init<  >())
+        .def(init< const FGestaltSocketRemapEntry& >())
+        .def_readwrite("SkeletalMeshFragment", &FGestaltSocketRemapEntry::SkeletalMeshFragment)
+        .def_readwrite("SkeletalMeshFragmentName", &FGestaltSocketRemapEntry::SkeletalMeshFragmentName)
+        .def_readwrite("OriginalSocketName", &FGestaltSocketRemapEntry::OriginalSocketName)
+        .def_readwrite("MangledSocketName", &FGestaltSocketRemapEntry::MangledSocketName)
+    ;
+
+    class_< FGestaltPartBoundsEntry >("FGestaltPartBoundsEntry", init<  >())
+        .def(init< const FGestaltPartBoundsEntry& >())
+        .def_readwrite("SkeletalMeshFragmentName", &FGestaltPartBoundsEntry::SkeletalMeshFragmentName)
+        .def_readwrite("ReferencePoseBounds", &FGestaltPartBoundsEntry::ReferencePoseBounds)
+    ;
+
+    class_< FGestaltPartPermutation >("FGestaltPartPermutation", init<  >())
+        .def(init< const FGestaltPartPermutation& >())
+        .def_readwrite("MeshName", &FGestaltPartPermutation::MeshName)
+        .def_readwrite("GroupName", &FGestaltPartPermutation::GroupName)
+        .def_readwrite("PartName", &FGestaltPartPermutation::PartName)
+    ;
+
+    class_< FGearboxViewShakeInfo >("FGearboxViewShakeInfo", init<  >())
+        .def(init< const FGearboxViewShakeInfo& >())
+        .def_readwrite("OffsetMag", &FGearboxViewShakeInfo::OffsetMag)
+        .def_readwrite("OffsetRate", &FGearboxViewShakeInfo::OffsetRate)
+        .def_readwrite("OffsetTime", &FGearboxViewShakeInfo::OffsetTime)
+        .def_readwrite("RotMag", &FGearboxViewShakeInfo::RotMag)
+        .def_readwrite("RotRate", &FGearboxViewShakeInfo::RotRate)
+        .def_readwrite("RotTime", &FGearboxViewShakeInfo::RotTime)
+        .def_readwrite("FOVMag", &FGearboxViewShakeInfo::FOVMag)
+        .def_readwrite("FOVRate", &FGearboxViewShakeInfo::FOVRate)
+        .def_readwrite("FOVTime", &FGearboxViewShakeInfo::FOVTime)
+    ;
+
+    class_< FDebugListItem >("FDebugListItem", init<  >())
+        .def(init< const FDebugListItem& >())
+        .def_readwrite("DisplayType", &FDebugListItem::DisplayType)
+        .def_readwrite("Location", &FDebugListItem::Location)
+        .def_readwrite("Location2", &FDebugListItem::Location2)
+        .def_readwrite("Location3", &FDebugListItem::Location3)
+        .def_readwrite("Texture", &FDebugListItem::Texture)
+        .def_readwrite("U", &FDebugListItem::U)
+        .def_readwrite("V", &FDebugListItem::V)
+        .def_readwrite("UL", &FDebugListItem::UL)
+        .def_readwrite("VL", &FDebugListItem::VL)
+        .def_readwrite("Scale", &FDebugListItem::Scale)
+        .def_readwrite("TextString", &FDebugListItem::TextString)
+        .def_readwrite("TextColor", &FDebugListItem::TextColor)
+        .def_readwrite("Alignment", &FDebugListItem::Alignment)
+    ;
+
+    class_< FColumnDataStruct >("FColumnDataStruct", init<  >())
+        .def(init< const FColumnDataStruct& >())
+        .def_readwrite("HeaderText", &FColumnDataStruct::HeaderText)
+        .def_readwrite("Value", &FColumnDataStruct::Value)
+        .def_readwrite("BarColor", &FColumnDataStruct::BarColor)
+    ;
+
+    class_< FMovieInstanceArray >("FMovieInstanceArray", init<  >())
+        .def(init< const FMovieInstanceArray& >())
+        .def_readwrite("Movies", &FMovieInstanceArray::Movies)
+        .def_readwrite("PoolParent", &FMovieInstanceArray::PoolParent)
+    ;
+
+    class_< FMovieStateStruct >("FMovieStateStruct", init<  >())
+        .def(init< const FMovieStateStruct& >())
+        .def_readwrite("States", &FMovieStateStruct::States)
+        .def_readwrite("Flags", &FMovieStateStruct::Flags)
+    ;
+
+    class_< FMovieStateData >("FMovieStateData", init<  >())
+        .def(init< const FMovieStateData& >())
+        .def_readwrite("State", &FMovieStateData::State)
+        .def_readwrite("Mode", &FMovieStateData::Mode)
+        .def_readwrite("Context", &FMovieStateData::Context)
+        .def_readwrite("ASArgs", &FMovieStateData::ASArgs)
+    ;
+
+    class_< FGFxMenuLink >("FGFxMenuLink", init<  >())
+        .def(init< const FGFxMenuLink& >())
+        .def_readwrite("MenuName", &FGFxMenuLink::MenuName)
+        .def_readwrite("Definition", &FGFxMenuLink::Definition)
+    ;
+
+    class_< FRuleEngineLoadBalanceStruct >("FRuleEngineLoadBalanceStruct", init<  >())
+        .def(init< const FRuleEngineLoadBalanceStruct& >())
+        .def_readwrite("RuleEngine", &FRuleEngineLoadBalanceStruct::RuleEngine)
+        .def_readwrite("TimeSinceLastUpdate", &FRuleEngineLoadBalanceStruct::TimeSinceLastUpdate)
+        .def_readwrite("Priority", &FRuleEngineLoadBalanceStruct::Priority)
+    ;
+
+    class_< FDebugLoadBalance >("FDebugLoadBalance", init<  >())
+        .def(init< const FDebugLoadBalance& >())
+        .def_readwrite("RuleEngine", &FDebugLoadBalance::RuleEngine)
+        .def_readwrite("TimeSinceUpdate", &FDebugLoadBalance::TimeSinceUpdate)
+        .def_readwrite("TimeToDoLastUpdate", &FDebugLoadBalance::TimeToDoLastUpdate)
+        .def_readwrite("Priority", &FDebugLoadBalance::Priority)
+    ;
+
+    class_< FRELBManagerStats >("FRELBManagerStats", init<  >())
+        .def(init< const FRELBManagerStats& >())
+        .def_readwrite("TotalTimeUpdated", &FRELBManagerStats::TotalTimeUpdated)
+        .def_readwrite("MaxTimeUpdating", &FRELBManagerStats::MaxTimeUpdating)
+        .def_readwrite("NumUpdated", &FRELBManagerStats::NumUpdated)
+        .def_readwrite("AveragePriority", &FRELBManagerStats::AveragePriority)
+        .def_readwrite("LowestPriority", &FRELBManagerStats::LowestPriority)
+        .def_readwrite("HighestPriority", &FRELBManagerStats::HighestPriority)
+    ;
+
+    class_< Fs_actorList >("Fs_actorList", init<  >())
+        .def(init< const Fs_actorList& >())
+        .def_readwrite("LevelName", &Fs_actorList::LevelName)
+        .def_readwrite("Actor", &Fs_actorList::Actor)
+    ;
+
+    class_< FValidNameRange >("FValidNameRange", init<  >())
+        .def(init< const FValidNameRange& >())
+        .def_readwrite("Start", &FValidNameRange::Start)
+        .def_readwrite("End", &FValidNameRange::End)
+    ;
+
+    class_< FGbxMessageSimpleMetaData >("FGbxMessageSimpleMetaData", init<  >())
+        .def(init< const FGbxMessageSimpleMetaData& >())
+        .def_readwrite("FloatData", &FGbxMessageSimpleMetaData::FloatData)
+        .def_readwrite("IntData", &FGbxMessageSimpleMetaData::IntData)
+        .def_readwrite("NameData", &FGbxMessageSimpleMetaData::NameData)
+        .def_readwrite("VectorData", &FGbxMessageSimpleMetaData::VectorData)
+    ;
+
+    class_< FPopulationOpportunityTracker >("FPopulationOpportunityTracker", init<  >())
+        .def(init< const FPopulationOpportunityTracker& >())
+        .def_readwrite("OpportunityOutermostName", &FPopulationOpportunityTracker::OpportunityOutermostName)
+        .def_readwrite("OpportunityName", &FPopulationOpportunityTracker::OpportunityName)
+        .def_readwrite("LoadedOpportunity", &FPopulationOpportunityTracker::LoadedOpportunity)
+        .def_readwrite("SpawnedActors", &FPopulationOpportunityTracker::SpawnedActors)
+        .def_readwrite("SavedActorsList", &FPopulationOpportunityTracker::SavedActorsList)
+        .def_readwrite("ActorsRemovedWhileUnloaded", &FPopulationOpportunityTracker::ActorsRemovedWhileUnloaded)
+        .def_readwrite("DynamicOpportunity", &FPopulationOpportunityTracker::DynamicOpportunity)
+        .def_readwrite("RespawnStyle", &FPopulationOpportunityTracker::RespawnStyle)
+        .def_readwrite("RespawnDelayStartTime", &FPopulationOpportunityTracker::RespawnDelayStartTime)
+        .def_readwrite("SavedState", &FPopulationOpportunityTracker::SavedState)
+        .def_readwrite("OpportunityCleanupParams", &FPopulationOpportunityTracker::OpportunityCleanupParams)
+    ;
+
+    class_< FOpportunityCleanupParameters >("FOpportunityCleanupParameters", init<  >())
+        .def(init< const FOpportunityCleanupParameters& >())
+        .def_readwrite("ActorIrrelvantDistance", &FOpportunityCleanupParameters::ActorIrrelvantDistance)
+    ;
+
+    class_< FDestructionParameters >("FDestructionParameters", init<  >())
+        .def(init< const FDestructionParameters& >())
+    ;
+
+    class_< FSpawnedPopulationActor >("FSpawnedPopulationActor", init<  >())
+        .def(init< const FSpawnedPopulationActor& >())
+        .def_readwrite("SpawnedActor", &FSpawnedPopulationActor::SpawnedActor)
+        .def_readwrite("SpawnFactory", &FSpawnedPopulationActor::SpawnFactory)
+        .def_readwrite("FactoryDestructionParams", &FSpawnedPopulationActor::FactoryDestructionParams)
+        .def_readwrite("flLastInRadiusOrVisible", &FSpawnedPopulationActor::flLastInRadiusOrVisible)
+        .def_readwrite("SpawnCost", &FSpawnedPopulationActor::SpawnCost)
+        .def_readwrite("CreationFlags", &FSpawnedPopulationActor::CreationFlags)
+        .def_readwrite("Reuse", &FSpawnedPopulationActor::Reuse)
+    ;
+
+    class_< FRemovedPopulationActor >("FRemovedPopulationActor", init<  >())
+        .def(init< const FRemovedPopulationActor& >())
+        .def_readwrite("CreationFlags", &FRemovedPopulationActor::CreationFlags)
+        .def_readwrite("FactoryPath", &FRemovedPopulationActor::FactoryPath)
+    ;
+
+    class_< FOpportunitySavedState >("FOpportunitySavedState", init<  >())
+        .def(init< const FOpportunitySavedState& >())
+        .def_readwrite("SelectedSpawnIdx", &FOpportunitySavedState::SelectedSpawnIdx)
+        .def_readwrite("NumTotalActors", &FOpportunitySavedState::NumTotalActors)
+        .def_readwrite("MaxActiveActors", &FOpportunitySavedState::MaxActiveActors)
+        .def_readwrite("NumActiveActors", &FOpportunitySavedState::NumActiveActors)
+        .def_readwrite("NextSpawnTime", &FOpportunitySavedState::NextSpawnTime)
+    ;
+
+    class_< FPopulationMasterStat >("FPopulationMasterStat", init<  >())
+        .def(init< const FPopulationMasterStat& >())
+        .def_readwrite("StatName", &FPopulationMasterStat::StatName)
+        .def_readwrite("StatTime", &FPopulationMasterStat::StatTime)
+        .def_readwrite("StatMaxTime", &FPopulationMasterStat::StatMaxTime)
+        .def_readwrite("StatIterations", &FPopulationMasterStat::StatIterations)
+        .def_readwrite("IterationStartTime", &FPopulationMasterStat::IterationStartTime)
+    ;
+
+    class_< FEncounterTracker >("FEncounterTracker", init<  >())
+        .def(init< const FEncounterTracker& >())
+        .def_readwrite("LoadedEncounter", &FEncounterTracker::LoadedEncounter)
+        .def_readwrite("EncountersLevel", &FEncounterTracker::EncountersLevel)
+        .def_readwrite("EncounterPath", &FEncounterTracker::EncounterPath)
+        .def_readwrite("EncounterCompletionSaveState", &FEncounterTracker::EncounterCompletionSaveState)
+        .def_readwrite("EncounterSaveState", &FEncounterTracker::EncounterSaveState)
+        .def_readwrite("RespawnDelayStartTime", &FEncounterTracker::RespawnDelayStartTime)
+    ;
+
+    class_< FPopulationActor >("FPopulationActor", init<  >())
+        .def(init< const FPopulationActor& >())
+        .def_readwrite("SpawnFactory", &FPopulationActor::SpawnFactory)
+        .def_readwrite("Probability", &FPopulationActor::Probability)
+        .def_readwrite("MaxActiveAtOneTime", &FPopulationActor::MaxActiveAtOneTime)
+        .def_readwrite("TestVisibility", &FPopulationActor::TestVisibility)
+        .def_readwrite("TestFOV", &FPopulationActor::TestFOV)
+    ;
+
+    class_< FEncounterLimitData >("FEncounterLimitData", init<  >())
+        .def(init< const FEncounterLimitData& >())
+        .def_readwrite("ActorTags", &FEncounterLimitData::ActorTags)
+        .def_readwrite("MaxTotalToSpawn", &FEncounterLimitData::MaxTotalToSpawn)
+        .def_readwrite("MaxActiveAtATime", &FEncounterLimitData::MaxActiveAtATime)
+        .def_readwrite("ConstraintType", &FEncounterLimitData::ConstraintType)
+        .def_readwrite("LimitState", &FEncounterLimitData::LimitState)
+    ;
+
+    class_< FEncounterLimitState >("FEncounterLimitState", init<  >())
+        .def(init< const FEncounterLimitState& >())
+        .def_readwrite("NumTotalSpawned", &FEncounterLimitState::NumTotalSpawned)
+        .def_readwrite("NumCurrentlyActive", &FEncounterLimitState::NumCurrentlyActive)
+    ;
+
+    class_< FEncounterWaveData >("FEncounterWaveData", init<  >())
+        .def(init< const FEncounterWaveData& >())
+        .def_readwrite("InitialDelay", &FEncounterWaveData::InitialDelay)
+        .def_readwrite("PercentToComplete", &FEncounterWaveData::PercentToComplete)
+        .def_readwrite("EncounterPopulationDef", &FEncounterWaveData::EncounterPopulationDef)
+        .def_readwrite("MemberOpportunities", &FEncounterWaveData::MemberOpportunities)
+        .def_readwrite("SpawnLimits", &FEncounterWaveData::SpawnLimits)
+        .def_readwrite("WaveComplete", &FEncounterWaveData::WaveComplete)
+        .def_readwrite("AllKilledInWave", &FEncounterWaveData::AllKilledInWave)
+    ;
+
+    class_< FEncounterWaveTracker >("FEncounterWaveTracker", init<  >())
+        .def(init< const FEncounterWaveTracker& >())
+        .def_readwrite("nWaveIdx", &FEncounterWaveTracker::nWaveIdx)
+        .def_readwrite("nLimitStateIdx", &FEncounterWaveTracker::nLimitStateIdx)
+        .def_readwrite("LimitSaveState", &FEncounterWaveTracker::LimitSaveState)
+    ;
+
+    class_< FProviderRecord >("FProviderRecord", init<  >())
+        .def(init< const FProviderRecord& >())
+        .def_readwrite("ProviderDefinition", &FProviderRecord::ProviderDefinition)
+        .def_readwrite("ReferenceCount", &FProviderRecord::ReferenceCount)
+    ;
+
+    class_< FBehaviorExecutionRecord >("FBehaviorExecutionRecord", init<  >())
+        .def(init< const FBehaviorExecutionRecord& >())
+        .def_readwrite("OwningProcessID", &FBehaviorExecutionRecord::OwningProcessID)
+        .def_readwrite("ProvidersIndex", &FBehaviorExecutionRecord::ProvidersIndex)
+        .def_readwrite("SequencesDataIndex", &FBehaviorExecutionRecord::SequencesDataIndex)
+        .def_readwrite("BehaviorNumber", &FBehaviorExecutionRecord::BehaviorNumber)
+        .def_readwrite("BehaviorName", &FBehaviorExecutionRecord::BehaviorName)
+        .def_readwrite("TimeOfExecution", &FBehaviorExecutionRecord::TimeOfExecution)
+    ;
+
+    class_< FBehaviorEventState >("FBehaviorEventState", init<  >())
+        .def(init< const FBehaviorEventState& >())
+        .def_readwrite("TriggerCount", &FBehaviorEventState::TriggerCount)
+        .def_readwrite("LastTriggerTime", &FBehaviorEventState::LastTriggerTime)
+        .def_readwrite("FilterObject", &FBehaviorEventState::FilterObject)
+    ;
+
+    class_< FBehaviorThread >("FBehaviorThread", init<  >())
+        .def(init< const FBehaviorThread& >())
+        .def_readwrite("ThreadState", &FBehaviorThread::ThreadState)
+        .def_readwrite("OwningProcessID", &FBehaviorThread::OwningProcessID)
+        .def_readwrite("ThreadSequenceState", &FBehaviorThread::ThreadSequenceState)
+        .def_readwrite("NextBehavior", &FBehaviorThread::NextBehavior)
+        .def_readwrite("ActivateTime", &FBehaviorThread::ActivateTime)
+        .def_readwrite("BehaviorStartedTime", &FBehaviorThread::BehaviorStartedTime)
+    ;
+
+    class_< FBehaviorSequenceState >("FBehaviorSequenceState", init<  >())
+        .def(init< const FBehaviorSequenceState& >())
+        .def_readwrite("ProvidersIndex", &FBehaviorSequenceState::ProvidersIndex)
+        .def_readwrite("SequencesDataIndex", &FBehaviorSequenceState::SequencesDataIndex)
+        .def_readwrite("SequenceEnabledBitIndex", &FBehaviorSequenceState::SequenceEnabledBitIndex)
+        .def_readwrite("EventStateHead", &FBehaviorSequenceState::EventStateHead)
+        .def_readwrite("VariableStateHead", &FBehaviorSequenceState::VariableStateHead)
+    ;
+
+    class_< FBehaviorProcess >("FBehaviorProcess", init<  >())
+        .def(init< const FBehaviorProcess& >())
+        .def_readwrite("Owner", &FBehaviorProcess::Owner)
+        .def_readwrite("ProcessID", &FBehaviorProcess::ProcessID)
+        .def_readwrite("SequenceEnabledBitField", &FBehaviorProcess::SequenceEnabledBitField)
+        .def_readwrite("ProcessState", &FBehaviorProcess::ProcessState)
+        .def_readwrite("NextSequenceEnabledBitIndexToUse", &FBehaviorProcess::NextSequenceEnabledBitIndexToUse)
+        .def_readwrite("NumPendingProviderRemovalRequests", &FBehaviorProcess::NumPendingProviderRemovalRequests)
+        .def_readwrite("Sequences", &FBehaviorProcess::Sequences)
+        .def_readwrite("Events", &FBehaviorProcess::Events)
+        .def_readwrite("Variables", &FBehaviorProcess::Variables)
+    ;
+
+    class_< FBehaviorKernelStats >("FBehaviorKernelStats", init<  >())
+        .def(init< const FBehaviorKernelStats& >())
+        .def_readwrite("NumProcessesCreated", &FBehaviorKernelStats::NumProcessesCreated)
+        .def_readwrite("NumThreadsCreated", &FBehaviorKernelStats::NumThreadsCreated)
+        .def_readwrite("NumWaitingThreads", &FBehaviorKernelStats::NumWaitingThreads)
+        .def_readwrite("NumEventsActivated", &FBehaviorKernelStats::NumEventsActivated)
+        .def_readwrite("NumEventsIgnored", &FBehaviorKernelStats::NumEventsIgnored)
+        .def_readwrite("NumBehaviorsRun", &FBehaviorKernelStats::NumBehaviorsRun)
+        .def_readwrite("ProcessListStats", &FBehaviorKernelStats::ProcessListStats)
+        .def_readwrite("ProviderListStats", &FBehaviorKernelStats::ProviderListStats)
+        .def_readwrite("ObjectVariablesListStats", &FBehaviorKernelStats::ObjectVariablesListStats)
+        .def_readwrite("DynamicBehaviorsListStats", &FBehaviorKernelStats::DynamicBehaviorsListStats)
+        .def_readwrite("ProvidersIndexFreeListLength", &FBehaviorKernelStats::ProvidersIndexFreeListLength)
+        .def_readwrite("ObjectVariablesFreeListLength", &FBehaviorKernelStats::ObjectVariablesFreeListLength)
+        .def_readwrite("TotalMemoryUsed", &FBehaviorKernelStats::TotalMemoryUsed)
+        .def_readwrite("MemoryUsedBySlack", &FBehaviorKernelStats::MemoryUsedBySlack)
+    ;
+
+    class_< FBehaviorKernelArrayStats >("FBehaviorKernelArrayStats", init<  >())
+        .def(init< const FBehaviorKernelArrayStats& >())
+        .def_readwrite("UsedSlots", &FBehaviorKernelArrayStats::UsedSlots)
+        .def_readwrite("UnusedSlots", &FBehaviorKernelArrayStats::UnusedSlots)
+        .def_readwrite("PeakUsage", &FBehaviorKernelArrayStats::PeakUsage)
+        .def_readwrite("ContainerSlack", &FBehaviorKernelArrayStats::ContainerSlack)
+    ;
+
+    class_< FReplicatedBehaviorEvent >("FReplicatedBehaviorEvent", init<  >())
+        .def(init< const FReplicatedBehaviorEvent& >())
+        .def_readwrite("SequenceIndex", &FReplicatedBehaviorEvent::SequenceIndex)
+        .def_readwrite("EventCounter", &FReplicatedBehaviorEvent::EventCounter)
+        .def_readwrite("EventIndex", &FReplicatedBehaviorEvent::EventIndex)
+        .def_readwrite("EventOutput", &FReplicatedBehaviorEvent::EventOutput)
+    ;
+
+    class_< FReplicatedBehaviorConsumerState >("FReplicatedBehaviorConsumerState", init<  >())
+        .def(init< const FReplicatedBehaviorConsumerState& >())
+        .def_readwrite("BehaviorSequenceEnabledFlags", &FReplicatedBehaviorConsumerState::BehaviorSequenceEnabledFlags)
+    ;
+
+    class_< FThumbnailRenderData >("FThumbnailRenderData", init<  >())
+        .def(init< const FThumbnailRenderData& >())
+        .def_readwrite("Context", &FThumbnailRenderData::Context)
+        .def_readwrite("RenderTarget", &FThumbnailRenderData::RenderTarget)
+        .def_readwrite("ResultTexture", &FThumbnailRenderData::ResultTexture)
+        .def_readwrite("UpdateType", &FThumbnailRenderData::UpdateType)
+        .def_readwrite("Mesh", &FThumbnailRenderData::Mesh)
+        .def_readwrite("TextureSizeX", &FThumbnailRenderData::TextureSizeX)
+        .def_readwrite("TextureSizeY", &FThumbnailRenderData::TextureSizeY)
+        .def_readwrite("SizeX", &FThumbnailRenderData::SizeX)
+        .def_readwrite("SizeY", &FThumbnailRenderData::SizeY)
+        .def_readwrite("ReferencedTextures", &FThumbnailRenderData::ReferencedTextures)
+        .def_readwrite("StopStreamTexturesTime", &FThumbnailRenderData::StopStreamTexturesTime)
+    ;
+
+    class_< FThumbnailLightData >("FThumbnailLightData", init<  >())
+        .def(init< const FThumbnailLightData& >())
+        .def_readwrite("Direction", &FThumbnailLightData::Direction)
+        .def_readwrite("Light", &FThumbnailLightData::Light)
+    ;
+
+    class_< FLevelStateRecord >("FLevelStateRecord", init<  >())
+        .def(init< const FLevelStateRecord& >())
+        .def_readwrite("LevelName", &FLevelStateRecord::LevelName)
+        .def_readwrite("LevelLoaded", &FLevelStateRecord::LevelLoaded)
+        .def_readwrite("ObjectKeys", &FLevelStateRecord::ObjectKeys)
+    ;
+
+    class_< FObjectKey >("FObjectKey", init<  >())
+        .def(init< const FObjectKey& >())
+        .def_readwrite("ObjectName", &FObjectKey::ObjectName)
+        .def_readwrite("AdditionalKey", &FObjectKey::AdditionalKey)
+    ;
+
+    class_< FTimerBehaviorUserState >("FTimerBehaviorUserState", init<  >())
+        .def(init< const FTimerBehaviorUserState& >())
+        .def_readwrite("Timers", &FTimerBehaviorUserState::Timers)
+    ;
+
+    class_< FBehaviorTimerState >("FBehaviorTimerState", init<  >())
+        .def(init< const FBehaviorTimerState& >())
+        .def_readwrite("Delay", &FBehaviorTimerState::Delay)
+        .def_readwrite("EventTime", &FBehaviorTimerState::EventTime)
+    ;
+
+    class_< FNodeData >("FNodeData", init<  >())
+        .def(init< const FNodeData& >())
+        .def_readwrite("Node", &FNodeData::Node)
+        .def_readwrite("Weight", &FNodeData::Weight)
+    ;
+
+    class_< FReplicatedNounAttributeState >("FReplicatedNounAttributeState", init<  >())
+        .def(init< const FReplicatedNounAttributeState& >())
+        .def_readwrite("NounName", &FReplicatedNounAttributeState::NounName)
+        .def_readwrite("Value", &FReplicatedNounAttributeState::Value)
+    ;
+
+    class_< FSparkResult >("FSparkResult", init<  >())
+        .def(init< const FSparkResult& >())
+        .def_readwrite("RequestSucceeded", &FSparkResult::RequestSucceeded)
+        .def_readwrite("ErrorCode", &FSparkResult::ErrorCode)
+        .def_readwrite("HttpStatusCode", &FSparkResult::HttpStatusCode)
+        .def_readwrite("ResponseBody", &FSparkResult::ResponseBody)
+    ;
+
+    class_< FNewsArticle >("FNewsArticle", init<  >())
+        .def(init< const FNewsArticle& >())
+        .def_readwrite("Header", &FNewsArticle::Header)
+        .def_readwrite("Body", &FNewsArticle::Body)
+    ;
+
+    class_< FServiceResult >("FServiceResult", init<  >())
+        .def(init< const FServiceResult& >())
+        .def_readwrite("ServiceName", &FServiceResult::ServiceName)
+        .def_readwrite("ConfigurationGroup", &FServiceResult::ConfigurationGroup)
+        .def_readwrite("Parameters", &FServiceResult::Parameters)
+    ;
+
+    class_< FServiceParameterResult >("FServiceParameterResult", init<  >())
+        .def(init< const FServiceParameterResult& >())
+        .def_readwrite("Key", &FServiceParameterResult::Key)
+        .def_readwrite("Value", &FServiceParameterResult::Value)
+    ;
+
+    class_< FEntitlementResult >("FEntitlementResult", init<  >())
+        .def(init< const FEntitlementResult& >())
+        .def_readwrite("Identifier", &FEntitlementResult::Identifier)
+        .def_readwrite("Payload", &FEntitlementResult::Payload)
+        .def_readwrite("Id", &FEntitlementResult::Id)
+        .def_readwrite("Consumable", &FEntitlementResult::Consumable)
+        .def_readwrite("Consumed", &FEntitlementResult::Consumed)
+        .def_readwrite("ConsumableAmount", &FEntitlementResult::ConsumableAmount)
+    ;
+
+    class_< FOfferResult >("FOfferResult", init<  >())
+        .def(init< const FOfferResult& >())
+        .def_readwrite("TitleEfigs", &FOfferResult::TitleEfigs)
+        .def_readwrite("DescriptionEfigs", &FOfferResult::DescriptionEfigs)
+        .def_readwrite("Id", &FOfferResult::Id)
+        .def_readwrite("Notified", &FOfferResult::Notified)
+        .def_readwrite("DateUnlocked", &FOfferResult::DateUnlocked)
+    ;
+
+    class_< FArchwayResult >("FArchwayResult", init<  >())
+        .def(init< const FArchwayResult& >())
+        .def_readwrite("RequestId", &FArchwayResult::RequestId)
+        .def_readwrite("GearboxUserToken", &FArchwayResult::GearboxUserToken)
+        .def_readwrite("GearboxUserEmail", &FArchwayResult::GearboxUserEmail)
+        .def_readwrite("Messages", &FArchwayResult::Messages)
+        .def_readwrite("Entitlements", &FArchwayResult::Entitlements)
+        .def_readwrite("Offers", &FArchwayResult::Offers)
+        .def_readwrite("Services", &FArchwayResult::Services)
+        .def_readwrite("InProgress", &FArchwayResult::InProgress)
+        .def_readwrite("Success", &FArchwayResult::Success)
+        .def_readwrite("DisableSpark", &FArchwayResult::DisableSpark)
+        .def_readwrite("TimeOut", &FArchwayResult::TimeOut)
+        .def_readwrite("HasShiftAccount", &FArchwayResult::HasShiftAccount)
+        .def_readwrite("EmergencyMessage", &FArchwayResult::EmergencyMessage)
+    ;
+
+    class_< FStepConfiguration >("FStepConfiguration", init<  >())
+        .def(init< const FStepConfiguration& >())
+        .def_readwrite("FirstAttemptDelay", &FStepConfiguration::FirstAttemptDelay)
+        .def_readwrite("BaseRetrySeconds", &FStepConfiguration::BaseRetrySeconds)
+        .def_readwrite("RetryMultiplier", &FStepConfiguration::RetryMultiplier)
+        .def_readwrite("MaxRetryAttempts", &FStepConfiguration::MaxRetryAttempts)
+        .def_readwrite("RetryJitter", &FStepConfiguration::RetryJitter)
+    ;
+
+    class_< FHttpParameters >("FHttpParameters", init<  >())
+        .def(init< const FHttpParameters& >())
+        .def_readwrite("ServiceConfiguration", &FHttpParameters::ServiceConfiguration)
+        .def_readwrite("SubService", &FHttpParameters::SubService)
+        .def_readwrite("ContentType", &FHttpParameters::ContentType)
+        .def_readwrite("CustomContentType", &FHttpParameters::CustomContentType)
+        .def_readwrite("AcceptsType", &FHttpParameters::AcceptsType)
+        .def_readwrite("CustomAcceptsType", &FHttpParameters::CustomAcceptsType)
+        .def_readwrite("Method", &FHttpParameters::Method)
+        .def_readwrite("IsResponseDesired", &FHttpParameters::IsResponseDesired)
+    ;
+
+    class_< FExposureUpdateStruct >("FExposureUpdateStruct", init<  >())
+        .def(init< const FExposureUpdateStruct& >())
+        .def_readwrite("FromPawn", &FExposureUpdateStruct::FromPawn)
+        .def_readwrite("ToActor", &FExposureUpdateStruct::ToActor)
+        .def_readwrite("TimeRequested", &FExposureUpdateStruct::TimeRequested)
+        .def_readwrite("Exposure", &FExposureUpdateStruct::Exposure)
+        .def_readwrite("Vantage", &FExposureUpdateStruct::Vantage)
+        .def_readwrite("ShouldRemove", &FExposureUpdateStruct::ShouldRemove)
+    ;
+
+    class_< FVantageSpot >("FVantageSpot", init<  >())
+        .def(init< const FVantageSpot& >())
+        .def_readwrite("Location", &FVantageSpot::Location)
+        .def_readwrite("VantageType", &FVantageSpot::VantageType)
+    ;
+
+    class_< FCustomEventReactionDataSpecialized, bases< FSpecializedBehaviorEvent >  >("FCustomEventReactionDataSpecialized", init<  >())
+        .def(init< const FCustomEventReactionDataSpecialized& >())
+    ;
+
+    class_< FWireLinkage >("FWireLinkage", init<  >())
+        .def(init< const FWireLinkage& >())
+        .def_readwrite("Offset", &FWireLinkage::Offset)
+        .def_readwrite("Width", &FWireLinkage::Width)
+        .def_readwrite("Slack", &FWireLinkage::Slack)
+        .def_readwrite("Segments", &FWireLinkage::Segments)
+        .def_readwrite("Link", &FWireLinkage::Link)
+    ;
+
+    class_< FSMRandomPair >("FSMRandomPair", init<  >())
+        .def(init< const FSMRandomPair& >())
+        .def_readwrite("Weight", &FSMRandomPair::Weight)
+        .def_readwrite("SMD", &FSMRandomPair::SMD)
+    ;
+
+    class_< FStateAttributeData >("FStateAttributeData", init<  >())
+        .def(init< const FStateAttributeData& >())
+        .def_readwrite("Key", &FStateAttributeData::Key)
+        .def_readwrite("Attribute", &FStateAttributeData::Attribute)
+    ;
+
+    class_< FSMExpressionList >("FSMExpressionList", init<  >())
+        .def(init< const FSMExpressionList& >())
+        .def_readwrite("Expression", &FSMExpressionList::Expression)
+        .def_readwrite("SMD", &FSMExpressionList::SMD)
+    ;
+
+    class_< FActionSequenceRandomData >("FActionSequenceRandomData", init<  >())
+        .def(init< const FActionSequenceRandomData& >())
+        .def_readwrite("ProbabilityData", &FActionSequenceRandomData::ProbabilityData)
+        .def_readwrite("ActionToRunWhenTrue", &FActionSequenceRandomData::ActionToRunWhenTrue)
+    ;
+
+    class_< FRelativeDirectionData >("FRelativeDirectionData", init<  >())
+        .def(init< const FRelativeDirectionData& >())
+        .def_readwrite("Direction", &FRelativeDirectionData::Direction)
+        .def_readwrite("ConeAroundDirection", &FRelativeDirectionData::ConeAroundDirection)
+        .def_readwrite("AdditionalRotation", &FRelativeDirectionData::AdditionalRotation)
+    ;
+
+    class_< FAttachmentLocationData >("FAttachmentLocationData", init<  >())
+        .def(init< const FAttachmentLocationData& >())
+        .def_readwrite("Location", &FAttachmentLocationData::Location)
+        .def_readwrite("AttachmentBase", &FAttachmentLocationData::AttachmentBase)
+        .def_readwrite("UnknownData00", &FAttachmentLocationData::UnknownData00)
+        .def_readwrite("AttachmentName", &FAttachmentLocationData::AttachmentName)
+    ;
+
+    class_< FSavedRandomValue >("FSavedRandomValue", init<  >())
+        .def(init< const FSavedRandomValue& >())
+        .def_readwrite("ContextName", &FSavedRandomValue::ContextName)
+        .def_readwrite("SavedValue", &FSavedRandomValue::SavedValue)
+        .def_readwrite("ExpirationTime", &FSavedRandomValue::ExpirationTime)
+    ;
+
+    class_< FPopulationOptionAreaPopDefData >("FPopulationOptionAreaPopDefData", init<  >())
+        .def(init< const FPopulationOptionAreaPopDefData& >())
+        .def_readwrite("PopulationDef", &FPopulationOptionAreaPopDefData::PopulationDef)
+        .def_readwrite("MaxTotalActorsFormula", &FPopulationOptionAreaPopDefData::MaxTotalActorsFormula)
+        .def_readwrite("MaxTotalActors", &FPopulationOptionAreaPopDefData::MaxTotalActors)
+        .def_readwrite("MaxActiveActors", &FPopulationOptionAreaPopDefData::MaxActiveActors)
+        .def_readwrite("RespawnDelay", &FPopulationOptionAreaPopDefData::RespawnDelay)
+        .def_readwrite("RespawnDelayAfterDeath", &FPopulationOptionAreaPopDefData::RespawnDelayAfterDeath)
+    ;
+
+    class_< FCoverDebugScoringData >("FCoverDebugScoringData", init<  >())
+        .def(init< const FCoverDebugScoringData& >())
+        .def_readwrite("PriorityName", &FCoverDebugScoringData::PriorityName)
+        .def_readwrite("Score", &FCoverDebugScoringData::Score)
+    ;
+
+    class_< FTargetIteratorData >("FTargetIteratorData", init<  >())
+        .def(init< const FTargetIteratorData& >())
+        .def_readwrite("Iterator", &FTargetIteratorData::Iterator)
+        .def_readwrite("Weight", &FTargetIteratorData::Weight)
+    ;
+
+    class_< FConditionalPattern >("FConditionalPattern", init<  >())
+        .def(init< const FConditionalPattern& >())
+        .def_readwrite("Conditions", &FConditionalPattern::Conditions)
+        .def_readwrite("Pattern", &FConditionalPattern::Pattern)
+    ;
+
+    class_< FPointExposureData >("FPointExposureData", init<  >())
+        .def(init< const FPointExposureData& >())
+        .def_readwrite("Looker", &FPointExposureData::Looker)
+        .def_readwrite("Point", &FPointExposureData::Point)
+        .def_readwrite("Point2", &FPointExposureData::Point2)
+        .def_readwrite("Exposure", &FPointExposureData::Exposure)
+        .def_readwrite("LastCheckTime", &FPointExposureData::LastCheckTime)
+        .def_readwrite("LastUpdateTime", &FPointExposureData::LastUpdateTime)
+    ;
+
+    class_< FSparkOutstandingRequest >("FSparkOutstandingRequest", init<  >())
+        .def(init< const FSparkOutstandingRequest& >())
+        .def_readwrite("State", &FSparkOutstandingRequest::State)
+        .def_readwrite("SleepUntil", &FSparkOutstandingRequest::SleepUntil)
+        .def_readwrite("WantResponse", &FSparkOutstandingRequest::WantResponse)
+        .def_readwrite("ScriptCallback", &FSparkOutstandingRequest::ScriptCallback)
+        .def_readwrite("RequestCompleteDelegate", &FSparkOutstandingRequest::RequestCompleteDelegate)
+        .def_readwrite("RequestIdentifier", &FSparkOutstandingRequest::RequestIdentifier)
+        .def_readwrite("SparkUpdateCallback", &FSparkOutstandingRequest::SparkUpdateCallback)
+        .def_readwrite("HttpRequest", &FSparkOutstandingRequest::HttpRequest)
+        .def_readwrite("RequestBody", &FSparkOutstandingRequest::RequestBody)
+        .def_readwrite("ResponseBody", &FSparkOutstandingRequest::ResponseBody)
+        .def_readwrite("RetryNumber", &FSparkOutstandingRequest::RetryNumber)
+        .def_readwrite("BaseRetryIntervalSeconds", &FSparkOutstandingRequest::BaseRetryIntervalSeconds)
+        .def_readwrite("MaxRetryAttempts", &FSparkOutstandingRequest::MaxRetryAttempts)
+        .def_readwrite("RetryMultiplier", &FSparkOutstandingRequest::RetryMultiplier)
+        .def_readwrite("RetryJitter", &FSparkOutstandingRequest::RetryJitter)
+        .def_readwrite("HttpTimeout", &FSparkOutstandingRequest::HttpTimeout)
+        .def_readwrite("ReadBufferSize", &FSparkOutstandingRequest::ReadBufferSize)
+        .def_readwrite("Accept", &FSparkOutstandingRequest::Accept)
+        .def_readwrite("ContentType", &FSparkOutstandingRequest::ContentType)
+        .def_readwrite("Method", &FSparkOutstandingRequest::Method)
+        .def_readwrite("URL", &FSparkOutstandingRequest::URL)
+        .def_readwrite("RequestStartTime", &FSparkOutstandingRequest::RequestStartTime)
+    ;
+
+    class_< FCoverCandidate >("FCoverCandidate", init<  >())
+        .def(init< const FCoverCandidate& >())
+        .def_readwrite("TheCoverActor", &FCoverCandidate::TheCoverActor)
+        .def_readwrite("SlotNdx", &FCoverCandidate::SlotNdx)
+        .def_readwrite("Score", &FCoverCandidate::Score)
+    ;
+
+    class_< FPopulationOptionSpawnData >("FPopulationOptionSpawnData", init<  >())
+        .def(init< const FPopulationOptionSpawnData& >())
+        .def_readwrite("PopulationDefName", &FPopulationOptionSpawnData::PopulationDefName)
+        .def_readwrite("MaxActiveActors", &FPopulationOptionSpawnData::MaxActiveActors)
+        .def_readwrite("NumTotalActors", &FPopulationOptionSpawnData::NumTotalActors)
+        .def_readwrite("NumActiveActors", &FPopulationOptionSpawnData::NumActiveActors)
+        .def_readwrite("NextSpawnTime", &FPopulationOptionSpawnData::NextSpawnTime)
+    ;
+
+    class_< FAwarenessInfo >("FAwarenessInfo", init<  >())
+        .def(init< const FAwarenessInfo& >())
+        .def_readwrite("Location", &FAwarenessInfo::Location)
+        .def_readwrite("Radius", &FAwarenessInfo::Radius)
+        .def_readwrite("AwarenessZoneName", &FAwarenessInfo::AwarenessZoneName)
+        .def_readwrite("IsInfinitelyFarAway", &FAwarenessInfo::IsInfinitelyFarAway)
+        .def_readwrite("ZoneColor", &FAwarenessInfo::ZoneColor)
+    ;
+
+    class_< FLocationInfo >("FLocationInfo", init<  >())
+        .def(init< const FLocationInfo& >())
+        .def_readwrite("Location", &FLocationInfo::Location)
+        .def_readwrite("IsPlayerInfo", &FLocationInfo::IsPlayerInfo)
+    ;
+
+    class_< FLastVisibleInfo >("FLastVisibleInfo", init<  >())
+        .def(init< const FLastVisibleInfo& >())
+        .def_readwrite("LastVisibleLocation", &FLastVisibleInfo::LastVisibleLocation)
+        .def_readwrite("CurrentLocation", &FLastVisibleInfo::CurrentLocation)
+    ;
+
+    class_< FDebugExposure >("FDebugExposure", init<  >())
+        .def(init< const FDebugExposure& >())
+        .def_readwrite("TargetExposure", &FDebugExposure::TargetExposure)
+        .def_readwrite("MyExposure", &FDebugExposure::MyExposure)
+        .def_readwrite("InWorldLocation", &FDebugExposure::InWorldLocation)
+        .def_readwrite("IsPlayerInfo", &FDebugExposure::IsPlayerInfo)
+    ;
+
+    class_< FViewConeInfo >("FViewConeInfo", init<  >())
+        .def(init< const FViewConeInfo& >())
+        .def_readwrite("ConeOrigin", &FViewConeInfo::ConeOrigin)
+        .def_readwrite("ConeDirection", &FViewConeInfo::ConeDirection)
+        .def_readwrite("ConeAngle", &FViewConeInfo::ConeAngle)
+        .def_readwrite("ConeLength", &FViewConeInfo::ConeLength)
+        .def_readwrite("ConeColor", &FViewConeInfo::ConeColor)
+        .def_readwrite("Has360DegreesAwareness", &FViewConeInfo::Has360DegreesAwareness)
+    ;
+
+    class_< FCoverDebugInfo >("FCoverDebugInfo", init<  >())
+        .def(init< const FCoverDebugInfo& >())
+        .def_readwrite("CoverRegionName", &FCoverDebugInfo::CoverRegionName)
+        .def_readwrite("Score", &FCoverDebugInfo::Score)
+        .def_readwrite("Distance", &FCoverDebugInfo::Distance)
+        .def_readwrite("IsACandidate", &FCoverDebugInfo::IsACandidate)
+        .def_readwrite("IsBestCandidate", &FCoverDebugInfo::IsBestCandidate)
+        .def_readwrite("FailString", &FCoverDebugInfo::FailString)
+        .def_readwrite("LeftEndPoint", &FCoverDebugInfo::LeftEndPoint)
+        .def_readwrite("RightEndPoint", &FCoverDebugInfo::RightEndPoint)
+        .def_readwrite("CoverDirection", &FCoverDebugInfo::CoverDirection)
+        .def_readwrite("ScoringInfo", &FCoverDebugInfo::ScoringInfo)
+    ;
+
+    class_< FIconData >("FIconData", init<  >())
+        .def(init< const FIconData& >())
+        .def_readwrite("U", &FIconData::U)
+        .def_readwrite("V", &FIconData::V)
+        .def_readwrite("UL", &FIconData::UL)
+        .def_readwrite("VL", &FIconData::VL)
+        .def_readwrite("Scale", &FIconData::Scale)
+    ;
+
+    class_< FTargetDebugDatum >("FTargetDebugDatum", init<  >())
+        .def(init< const FTargetDebugDatum& >())
+        .def_readwrite("TargetName", &FTargetDebugDatum::TargetName)
+        .def_readwrite("TotalPriority", &FTargetDebugDatum::TotalPriority)
+        .def_readwrite("PriorityData", &FTargetDebugDatum::PriorityData)
+    ;
+
+    class_< FTargetPriorityInfo >("FTargetPriorityInfo", init<  >())
+        .def(init< const FTargetPriorityInfo& >())
+        .def_readwrite("TargetName", &FTargetPriorityInfo::TargetName)
+        .def_readwrite("ShortName", &FTargetPriorityInfo::ShortName)
+        .def_readwrite("Value", &FTargetPriorityInfo::Value)
+        .def_readwrite("BarColor", &FTargetPriorityInfo::BarColor)
+    ;
+
+    class_< FAIHoldDebugData >("FAIHoldDebugData", init<  >())
+        .def(init< const FAIHoldDebugData& >())
+        .def_readwrite("HoldName", &FAIHoldDebugData::HoldName)
+        .def_readwrite("HoldTag", &FAIHoldDebugData::HoldTag)
+    ;
+
+    class_< FBehaviorTriggerMessageStruct >("FBehaviorTriggerMessageStruct", init<  >())
+        .def(init< const FBehaviorTriggerMessageStruct& >())
+        .def_readwrite("MessageDefinition", &FBehaviorTriggerMessageStruct::MessageDefinition)
+        .def_readwrite("Instigator", &FBehaviorTriggerMessageStruct::Instigator)
+        .def_readwrite("OtherEventParticipant", &FBehaviorTriggerMessageStruct::OtherEventParticipant)
+        .def_readwrite("Behaviors", &FBehaviorTriggerMessageStruct::Behaviors)
+    ;
+
+    class_< FLinkedBehaviorSequence >("FLinkedBehaviorSequence", init<  >())
+        .def(init< const FLinkedBehaviorSequence& >())
+        .def_readwrite("ConsumerHandle", &FLinkedBehaviorSequence::ConsumerHandle)
+        .def_readwrite("SequenceState", &FLinkedBehaviorSequence::SequenceState)
+    ;
+
+    class_< FDebugStringData >("FDebugStringData", init<  >())
+        .def(init< const FDebugStringData& >())
+        .def_readwrite("DebugStr", &FDebugStringData::DebugStr)
+        .def_readwrite("StrColor", &FDebugStringData::StrColor)
+    ;
+
+    class_< FFiringBehaviorBurstInfo >("FFiringBehaviorBurstInfo", init<  >())
+        .def(init< const FFiringBehaviorBurstInfo& >())
+        .def_readwrite("Instigator", &FFiringBehaviorBurstInfo::Instigator)
+        .def_readwrite("InstigatorWeapon", &FFiringBehaviorBurstInfo::InstigatorWeapon)
+        .def_readwrite("TargetActor", &FFiringBehaviorBurstInfo::TargetActor)
+        .def_readwrite("NumShots", &FFiringBehaviorBurstInfo::NumShots)
+        .def_readwrite("RefireRate", &FFiringBehaviorBurstInfo::RefireRate)
+        .def_readwrite("TargetInfo", &FFiringBehaviorBurstInfo::TargetInfo)
+        .def_readwrite("FireType", &FFiringBehaviorBurstInfo::FireType)
+    ;
+
+    class_< FSpawnOption >("FSpawnOption", init<  >())
+        .def(init< const FSpawnOption& >())
+        .def_readwrite("Factory", &FSpawnOption::Factory)
+        .def_readwrite("ComputedProbability", &FSpawnOption::ComputedProbability)
+    ;
+
+    class_< FSparkMicropatch >("FSparkMicropatch", init<  >())
+        .def(init< const FSparkMicropatch& >())
+        .def_readwrite("ObjectPath", &FSparkMicropatch::ObjectPath)
+        .def_readwrite("PropertyPath", &FSparkMicropatch::PropertyPath)
+        .def_readwrite("OriginalValue", &FSparkMicropatch::OriginalValue)
+        .def_readwrite("NewValue", &FSparkMicropatch::NewValue)
+    ;
+
+    class_< FExposureCacheStruct >("FExposureCacheStruct", init<  >())
+        .def(init< const FExposureCacheStruct& >())
+        .def_readwrite("FromPawnName", &FExposureCacheStruct::FromPawnName)
+        .def_readwrite("ToActorName", &FExposureCacheStruct::ToActorName)
+        .def_readwrite("TimeCached", &FExposureCacheStruct::TimeCached)
+        .def_readwrite("NextUpdateTime", &FExposureCacheStruct::NextUpdateTime)
+        .def_readwrite("Exposure", &FExposureCacheStruct::Exposure)
+        .def_readwrite("FromLoc", &FExposureCacheStruct::FromLoc)
+        .def_readwrite("ToLoc", &FExposureCacheStruct::ToLoc)
+        .def_readwrite("Vantage", &FExposureCacheStruct::Vantage)
+    ;
+
+    class_< FBucketStruct >("FBucketStruct", init<  >())
+        .def(init< const FBucketStruct& >())
+        .def_readwrite("NdxToStartCheckFrom", &FBucketStruct::NdxToStartCheckFrom)
+        .def_readwrite("DistanceSquared", &FBucketStruct::DistanceSquared)
+        .def_readwrite("MaxLineChecksPerFrame", &FBucketStruct::MaxLineChecksPerFrame)
+        .def_readwrite("MaxIterationsPerFrame", &FBucketStruct::MaxIterationsPerFrame)
+        .def_readwrite("Exposures", &FBucketStruct::Exposures)
+    ;
+
+    class_< FPopulationOpportunitySavedActor >("FPopulationOpportunitySavedActor", init<  >())
+        .def(init< const FPopulationOpportunitySavedActor& >())
+        .def_readwrite("FactoryPath", &FPopulationOpportunitySavedActor::FactoryPath)
+        .def_readwrite("TimeActorSaved", &FPopulationOpportunitySavedActor::TimeActorSaved)
+        .def_readwrite("SpawnActorLocation", &FPopulationOpportunitySavedActor::SpawnActorLocation)
+        .def_readwrite("SpawnActorRotation", &FPopulationOpportunitySavedActor::SpawnActorRotation)
+        .def_readwrite("CreationFlags", &FPopulationOpportunitySavedActor::CreationFlags)
+        .def_readwrite("CustomActorData", &FPopulationOpportunitySavedActor::CustomActorData)
+    ;
+
+    class_< FPopulationOpportunityStat >("FPopulationOpportunityStat", init<  >())
+        .def(init< const FPopulationOpportunityStat& >())
+        .def_readwrite("PercentNodeReduction", &FPopulationOpportunityStat::PercentNodeReduction)
+    ;
+
+    class_< FPopulationOptionAreaData >("FPopulationOptionAreaData", init<  >())
+        .def(init< const FPopulationOptionAreaData& >())
+        .def_readwrite("ExpressionDef", &FPopulationOptionAreaData::ExpressionDef)
+        .def_readwrite("PopulationDefinitions", &FPopulationOptionAreaData::PopulationDefinitions)
+    ;
+
+    class_< FTimerEventReactionData >("FTimerEventReactionData", init<  >())
+        .def(init< const FTimerEventReactionData& >())
+        .def_readwrite("EventType", &FTimerEventReactionData::EventType)
+        .def_readwrite("Behaviors", &FTimerEventReactionData::Behaviors)
+    ;
+
+    class_< FTimerEventReactionDataSpecialized, bases< FSpecializedBehaviorEvent >  >("FTimerEventReactionDataSpecialized", init<  >())
+        .def(init< const FTimerEventReactionDataSpecialized& >())
+    ;
+
+    class_< FMovieRangeStateData, bases< FMovieStateData >  >("FMovieRangeStateData", init<  >())
+        .def(init< const FMovieRangeStateData& >())
+        .def_readwrite("Distance", &FMovieRangeStateData::Distance)
+    ;
+
+    class_< FPopulationOptionSpawnDefData >("FPopulationOptionSpawnDefData", init<  >())
+        .def(init< const FPopulationOptionSpawnDefData& >())
+        .def_readwrite("PopulationDefName", &FPopulationOptionSpawnDefData::PopulationDefName)
+        .def_readwrite("NumTotalActors", &FPopulationOptionSpawnDefData::NumTotalActors)
+        .def_readwrite("NumActiveActors", &FPopulationOptionSpawnDefData::NumActiveActors)
+        .def_readwrite("NextSpawnTime", &FPopulationOptionSpawnDefData::NextSpawnTime)
+    ;
+
+    class_< FAttributeValuePair >("FAttributeValuePair", init<  >())
+        .def(init< const FAttributeValuePair& >())
+        .def_readwrite("Key", &FAttributeValuePair::Key)
+        .def_readwrite("Value", &FAttributeValuePair::Value)
+    ;
+
+    class_< FHUDAnchorPoint >("FHUDAnchorPoint", init<  >())
+        .def(init< const FHUDAnchorPoint& >())
+        .def_readwrite("MoviePoint", &FHUDAnchorPoint::MoviePoint)
+        .def_readwrite("ScreenPoint", &FHUDAnchorPoint::ScreenPoint)
+        .def_readwrite("Offset", &FHUDAnchorPoint::Offset)
+    ;
+
+    class_< FHUDCoordValue >("FHUDCoordValue", init<  >())
+        .def(init< const FHUDCoordValue& >())
+        .def_readwrite("Type", &FHUDCoordValue::Type)
+        .def_readwrite("Value", &FHUDCoordValue::Value)
+        .def_readwrite("CurrentValue", &FHUDCoordValue::CurrentValue)
+    ;
+
+    class_< FDebugEntryData >("FDebugEntryData", init<  >())
+        .def(init< const FDebugEntryData& >())
+        .def_readwrite("DebugStrs", &FDebugEntryData::DebugStrs)
+    ;
+
+    class_< FPopulationAreaOptionSpawnData >("FPopulationAreaOptionSpawnData", init<  >())
+        .def(init< const FPopulationAreaOptionSpawnData& >())
+        .def_readwrite("Data", &FPopulationAreaOptionSpawnData::Data)
+    ;
+
+    class_< FPriorityData >("FPriorityData", init<  >())
+        .def(init< const FPriorityData& >())
+        .def_readwrite("Description", &FPriorityData::Description)
+        .def_readwrite("Condition", &FPriorityData::Condition)
+    ;
+
+    class_< FSpecialMoveValuePair >("FSpecialMoveValuePair", init<  >())
+        .def(init< const FSpecialMoveValuePair& >())
+        .def_readwrite("Key", &FSpecialMoveValuePair::Key)
+        .def_readwrite("Value", &FSpecialMoveValuePair::Value)
+    ;
+
+    class_< FCustomEventReactionData >("FCustomEventReactionData", init<  >())
+        .def(init< const FCustomEventReactionData& >())
+        .def_readwrite("EventName", &FCustomEventReactionData::EventName)
+        .def_readwrite("Behaviors", &FCustomEventReactionData::Behaviors)
+    ;
+
+    class_< FGearboxGFxPlayParameters >("FGearboxGFxPlayParameters", init<  >())
+        .def(init< const FGearboxGFxPlayParameters& >())
+        .def_readwrite("Definition", &FGearboxGFxPlayParameters::Definition)
+        .def_readwrite("OtherObject", &FGearboxGFxPlayParameters::OtherObject)
+        .def_readwrite("PlayerOwner", &FGearboxGFxPlayParameters::PlayerOwner)
+    ;
+
+    class_< FBehaviorVariableState >("FBehaviorVariableState", init<  >())
+        .def(init< const FBehaviorVariableState& >())
+        .def_readwrite("Name", &FBehaviorVariableState::Name)
+        .def_readwrite("Type", &FBehaviorVariableState::Type)
+        .def_readwrite("Value", &FBehaviorVariableState::Value)
+    ;
+
+    class_< FProviderRemovalRequest >("FProviderRemovalRequest", init<  >())
+        .def(init< const FProviderRemovalRequest& >())
+        .def_readwrite("ConsumerHandle", &FProviderRemovalRequest::ConsumerHandle)
+        .def_readwrite("ProvidersIndex", &FProviderRemovalRequest::ProvidersIndex)
+    ;
+
+    class_< FInventoryManufacturerBalanceData >("FInventoryManufacturerBalanceData", init<  >())
+        .def(init< const FInventoryManufacturerBalanceData& >())
+        .def_readwrite("Manufacturer", &FInventoryManufacturerBalanceData::Manufacturer)
+        .def_readwrite("Grades", &FInventoryManufacturerBalanceData::Grades)
+    ;
+
+    class_< FInventoryGameStageGradeWeightData, bases< FGameStageGradeWeightData >  >("FInventoryGameStageGradeWeightData", init<  >())
+        .def(init< const FInventoryGameStageGradeWeightData& >())
+        .def_readwrite("GradeModifiers", &FInventoryGameStageGradeWeightData::GradeModifiers)
+    ;
+
+    class_< FInventoryGradeModifierData >("FInventoryGradeModifierData", init<  >())
+        .def(init< const FInventoryGradeModifierData& >())
+        .def_readwrite("ExpLevel", &FInventoryGradeModifierData::ExpLevel)
+        .def_readwrite("CustomInventoryDefinition", &FInventoryGradeModifierData::CustomInventoryDefinition)
+    ;
+
+    class_< FBehaviorKeyFrameEventData, bases< FSpecializedBehaviorEvent >  >("FBehaviorKeyFrameEventData", init<  >())
+        .def(init< const FBehaviorKeyFrameEventData& >())
+        .def_readwrite("KeyTime", &FBehaviorKeyFrameEventData::KeyTime)
+    ;
+
+    class_< FBreathingLoopInfo >("FBreathingLoopInfo", init<  >())
+        .def(init< const FBreathingLoopInfo& >())
+        .def_readwrite("Condition", &FBreathingLoopInfo::Condition)
+        .def_readwrite("StartAkEvent", &FBreathingLoopInfo::StartAkEvent)
+        .def_readwrite("StopAkEvent", &FBreathingLoopInfo::StopAkEvent)
+    ;
+
+    class_< FCreditsLine >("FCreditsLine", init<  >())
+        .def(init< const FCreditsLine& >())
+        .def_readwrite("LineType", &FCreditsLine::LineType)
+        .def_readwrite("Text", &FCreditsLine::Text)
+    ;
+
+    class_< FAvailableTrackedSkill >("FAvailableTrackedSkill", init<  >())
+        .def(init< const FAvailableTrackedSkill& >())
+        .def_readwrite("SkillDef", &FAvailableTrackedSkill::SkillDef)
+        .def_readwrite("RemappedSlot", &FAvailableTrackedSkill::RemappedSlot)
+    ;
+
+    class_< FSkillEffectData >("FSkillEffectData", init<  >())
+        .def(init< const FSkillEffectData& >())
+        .def_readwrite("AttributeToModify", &FSkillEffectData::AttributeToModify)
+        .def_readwrite("EffectTarget", &FSkillEffectData::EffectTarget)
+        .def_readwrite("TargetInstanceDataName", &FSkillEffectData::TargetInstanceDataName)
+        .def_readwrite("TargetCriteria", &FSkillEffectData::TargetCriteria)
+        .def_readwrite("ModifierType", &FSkillEffectData::ModifierType)
+        .def_readwrite("BaseModifierValue", &FSkillEffectData::BaseModifierValue)
+        .def_readwrite("GradeToStartApplyingEffect", &FSkillEffectData::GradeToStartApplyingEffect)
+        .def_readwrite("PerGradeUpgradeInterval", &FSkillEffectData::PerGradeUpgradeInterval)
+        .def_readwrite("PerGradeUpgrade", &FSkillEffectData::PerGradeUpgrade)
+        .def_readwrite("BonusUpgradeList", &FSkillEffectData::BonusUpgradeList)
+    ;
+
+    class_< FBonusAttributeModifierUpgrade >("FBonusAttributeModifierUpgrade", init<  >())
+        .def(init< const FBonusAttributeModifierUpgrade& >())
+        .def_readwrite("GradeToApplyAt", &FBonusAttributeModifierUpgrade::GradeToApplyAt)
+        .def_readwrite("Modifier", &FBonusAttributeModifierUpgrade::Modifier)
+    ;
+
+    class_< FSkillConstraintData >("FSkillConstraintData", init<  >())
+        .def(init< const FSkillConstraintData& >())
+        .def_readwrite("OnFailure", &FSkillConstraintData::OnFailure)
+        .def_readwrite("Evaluator", &FSkillConstraintData::Evaluator)
+        .def_readwrite("EvaluatorDefinitions", &FSkillConstraintData::EvaluatorDefinitions)
+    ;
+
+    class_< FAttributePresentationValueRemappingData >("FAttributePresentationValueRemappingData", init<  >())
+        .def(init< const FAttributePresentationValueRemappingData& >())
+        .def_readwrite("InputValueMn", &FAttributePresentationValueRemappingData::InputValueMn)
+        .def_readwrite("InputValueMx", &FAttributePresentationValueRemappingData::InputValueMx)
+        .def_readwrite("OutputValueMn", &FAttributePresentationValueRemappingData::OutputValueMn)
+        .def_readwrite("OutputValueMx", &FAttributePresentationValueRemappingData::OutputValueMx)
+    ;
+
+    class_< FModifierValuePresentationData >("FModifierValuePresentationData", init<  >())
+        .def(init< const FModifierValuePresentationData& >())
+        .def_readwrite("AttributePresentation", &FModifierValuePresentationData::AttributePresentation)
+        .def_readwrite("OptionalConstraintPresentation", &FModifierValuePresentationData::OptionalConstraintPresentation)
+        .def_readwrite("ModifierValue", &FModifierValuePresentationData::ModifierValue)
+    ;
+
+    class_< FTechDeathData, bases< FSpecializedBehaviorEvent >  >("FTechDeathData", init<  >())
+        .def(init< const FTechDeathData& >())
+        .def_readwrite("DamageTypeTriggers", &FTechDeathData::DamageTypeTriggers)
+        .def_readwrite("DeathAnimation", &FTechDeathData::DeathAnimation)
+    ;
+
+    class_< FGoreTriggerData >("FGoreTriggerData", init<  >())
+        .def(init< const FGoreTriggerData& >())
+        .def_readwrite("DamageTypeTrigger", &FGoreTriggerData::DamageTypeTrigger)
+        .def_readwrite("DamageSourceTrigger", &FGoreTriggerData::DamageSourceTrigger)
+        .def_readwrite("HealthPctDamageThreshold", &FGoreTriggerData::HealthPctDamageThreshold)
+    ;
+
+    class_< FItemDefinitionData >("FItemDefinitionData", init<  >())
+        .def(init< const FItemDefinitionData& >())
+        .def_readwrite("ItemDefinition", &FItemDefinitionData::ItemDefinition)
+        .def_readwrite("BalanceDefinition", &FItemDefinitionData::BalanceDefinition)
+        .def_readwrite("ManufacturerDefinition", &FItemDefinitionData::ManufacturerDefinition)
+        .def_readwrite("ManufacturerGradeIndex", &FItemDefinitionData::ManufacturerGradeIndex)
+        .def_readwrite("AlphaItemPartDefinition", &FItemDefinitionData::AlphaItemPartDefinition)
+        .def_readwrite("BetaItemPartDefinition", &FItemDefinitionData::BetaItemPartDefinition)
+        .def_readwrite("GammaItemPartDefinition", &FItemDefinitionData::GammaItemPartDefinition)
+        .def_readwrite("DeltaItemPartDefinition", &FItemDefinitionData::DeltaItemPartDefinition)
+        .def_readwrite("EpsilonItemPartDefinition", &FItemDefinitionData::EpsilonItemPartDefinition)
+        .def_readwrite("ZetaItemPartDefinition", &FItemDefinitionData::ZetaItemPartDefinition)
+        .def_readwrite("EtaItemPartDefinition", &FItemDefinitionData::EtaItemPartDefinition)
+        .def_readwrite("ThetaItemPartDefinition", &FItemDefinitionData::ThetaItemPartDefinition)
+        .def_readwrite("MaterialItemPartDefinition", &FItemDefinitionData::MaterialItemPartDefinition)
+        .def_readwrite("PrefixItemNamePartDefinition", &FItemDefinitionData::PrefixItemNamePartDefinition)
+        .def_readwrite("TitleItemNamePartDefinition", &FItemDefinitionData::TitleItemNamePartDefinition)
+        .def_readwrite("GameStage", &FItemDefinitionData::GameStage)
+        .def_readwrite("UniqueId", &FItemDefinitionData::UniqueId)
+    ;
+
+    class_< FImpactResponseEffect >("FImpactResponseEffect", init<  >())
+        .def(init< const FImpactResponseEffect& >())
+        .def_readwrite("CensoredEffectAlternative", &FImpactResponseEffect::CensoredEffectAlternative)
+        .def_readwrite("DamageModifierPercent", &FImpactResponseEffect::DamageModifierPercent)
+        .def_readwrite("ImpactEvent", &FImpactResponseEffect::ImpactEvent)
+        .def_readwrite("AINoiseLevel", &FImpactResponseEffect::AINoiseLevel)
+        .def_readwrite("ParticleTemplate", &FImpactResponseEffect::ParticleTemplate)
+        .def_readwrite("MaxEffectDistance", &FImpactResponseEffect::MaxEffectDistance)
+        .def_readwrite("DecalMaterials", &FImpactResponseEffect::DecalMaterials)
+        .def_readwrite("DecalWidth", &FImpactResponseEffect::DecalWidth)
+        .def_readwrite("DecalHeight", &FImpactResponseEffect::DecalHeight)
+        .def_readwrite("DecalMinScale", &FImpactResponseEffect::DecalMinScale)
+        .def_readwrite("DecalMaxScale", &FImpactResponseEffect::DecalMaxScale)
+        .def_readwrite("DecalDepth", &FImpactResponseEffect::DecalDepth)
+        .def_readwrite("DecalRandomRotation", &FImpactResponseEffect::DecalRandomRotation)
+        .def_readwrite("DecalCreateNewMaterialInstanceConstant", &FImpactResponseEffect::DecalCreateNewMaterialInstanceConstant)
+        .def_readwrite("ImpactFlashLightClass", &FImpactResponseEffect::ImpactFlashLightClass)
+        .def_readwrite("EffectParameters", &FImpactResponseEffect::EffectParameters)
+    ;
+
+    class_< FImpactResponseParameters >("FImpactResponseParameters", init<  >())
+        .def(init< const FImpactResponseParameters& >())
+        .def_readwrite("ParticleParameters", &FImpactResponseParameters::ParticleParameters)
+        .def_readwrite("FontParameterValues", &FImpactResponseParameters::FontParameterValues)
+        .def_readwrite("ScalarParameterValues", &FImpactResponseParameters::ScalarParameterValues)
+        .def_readwrite("TextureParameterValues", &FImpactResponseParameters::TextureParameterValues)
+        .def_readwrite("VectorParameterValues", &FImpactResponseParameters::VectorParameterValues)
+        .def_readwrite("RtpcParameterValues", &FImpactResponseParameters::RtpcParameterValues)
+    ;
+
+    class_< FRtpcParameterValue >("FRtpcParameterValue", init<  >())
+        .def(init< const FRtpcParameterValue& >())
+        .def_readwrite("AkRtpc", &FRtpcParameterValue::AkRtpc)
+        .def_readwrite("Value", &FRtpcParameterValue::Value)
+    ;
+
+    class_< FItemPartGradeWeightData >("FItemPartGradeWeightData", init<  >())
+        .def(init< const FItemPartGradeWeightData& >())
+        .def_readwrite("Part", &FItemPartGradeWeightData::Part)
+        .def_readwrite("Manufacturers", &FItemPartGradeWeightData::Manufacturers)
+        .def_readwrite("MinGameStageIndex", &FItemPartGradeWeightData::MinGameStageIndex)
+        .def_readwrite("MaxGameStageIndex", &FItemPartGradeWeightData::MaxGameStageIndex)
+        .def_readwrite("DefaultWeightIndex", &FItemPartGradeWeightData::DefaultWeightIndex)
+    ;
+
+    class_< FItemBehaviorSet >("FItemBehaviorSet", init<  >())
+        .def(init< const FItemBehaviorSet& >())
+        .def_readwrite("OnUsed", &FItemBehaviorSet::OnUsed)
+    ;
+
+    class_< FBalancedInventoryData >("FBalancedInventoryData", init<  >())
+        .def(init< const FBalancedInventoryData& >())
+        .def_readwrite("ItmPoolDefinition", &FBalancedInventoryData::ItmPoolDefinition)
+        .def_readwrite("InvBalanceDefinition", &FBalancedInventoryData::InvBalanceDefinition)
+        .def_readwrite("Probability", &FBalancedInventoryData::Probability)
+    ;
+
+    class_< FCustomizationItemData >("FCustomizationItemData", init<  >())
+        .def(init< const FCustomizationItemData& >())
+        .def_readwrite("ItemPoolKey", &FCustomizationItemData::ItemPoolKey)
+        .def_readwrite("CustomizationItemPool", &FCustomizationItemData::CustomizationItemPool)
+    ;
+
+    class_< FProfileDefinition >("FProfileDefinition", init<  >())
+        .def(init< const FProfileDefinition& >())
+        .def_readwrite("Profile", &FProfileDefinition::Profile)
+        .def_readwrite("Definition", &FProfileDefinition::Definition)
+    ;
+
+    class_< FLockOnProfile >("FLockOnProfile", init<  >())
+        .def(init< const FLockOnProfile& >())
+        .def_readwrite("Target", &FLockOnProfile::Target)
+        .def_readwrite("UnknownData00", &FLockOnProfile::UnknownData00)
+        .def_readwrite("Intersection", &FLockOnProfile::Intersection)
+        .def_readwrite("MagneticCenterToIntersect", &FLockOnProfile::MagneticCenterToIntersect)
+    ;
+
+    class_< FAttributeCategory >("FAttributeCategory", init<  >())
+        .def(init< const FAttributeCategory& >())
+        .def_readwrite("Category", &FAttributeCategory::Category)
+        .def_readwrite("Attributes", &FAttributeCategory::Attributes)
+    ;
+
+    class_< FDeathByWeaponStatID >("FDeathByWeaponStatID", init<  >())
+        .def(init< const FDeathByWeaponStatID& >())
+        .def_readwrite("DamageCauserType", &FDeathByWeaponStatID::DamageCauserType)
+        .def_readwrite("StatId", &FDeathByWeaponStatID::StatId)
+    ;
+
+    class_< FDeathByDamageTypeStatID >("FDeathByDamageTypeStatID", init<  >())
+        .def(init< const FDeathByDamageTypeStatID& >())
+        .def_readwrite("DamageType", &FDeathByDamageTypeStatID::DamageType)
+        .def_readwrite("StatId", &FDeathByDamageTypeStatID::StatId)
+    ;
+
+    class_< FDeathByWeaponDamageStatID >("FDeathByWeaponDamageStatID", init<  >())
+        .def(init< const FDeathByWeaponDamageStatID& >())
+        .def_readwrite("DamageType", &FDeathByWeaponDamageStatID::DamageType)
+        .def_readwrite("DamageCauserType", &FDeathByWeaponDamageStatID::DamageCauserType)
+        .def_readwrite("StatId", &FDeathByWeaponDamageStatID::StatId)
+    ;
+
+    class_< FPlayerUIPreferences >("FPlayerUIPreferences", init<  >())
+        .def(init< const FPlayerUIPreferences& >())
+        .def_readwrite("CharacterName", &FPlayerUIPreferences::CharacterName)
+        .def_readwrite("PrimaryColor", &FPlayerUIPreferences::PrimaryColor)
+        .def_readwrite("SecondaryColor", &FPlayerUIPreferences::SecondaryColor)
+        .def_readwrite("TertiaryColor", &FPlayerUIPreferences::TertiaryColor)
+    ;
+
+    class_< FSkillSaveGameData >("FSkillSaveGameData", init<  >())
+        .def(init< const FSkillSaveGameData& >())
+        .def_readwrite("SkillDefinition", &FSkillSaveGameData::SkillDefinition)
+        .def_readwrite("Grade", &FSkillSaveGameData::Grade)
+        .def_readwrite("GradePoints", &FSkillSaveGameData::GradePoints)
+        .def_readwrite("EquippedSlotIndex", &FSkillSaveGameData::EquippedSlotIndex)
+    ;
+
+    class_< FResourceSaveGameData >("FResourceSaveGameData", init<  >())
+        .def(init< const FResourceSaveGameData& >())
+        .def_readwrite("ResourceDefinition", &FResourceSaveGameData::ResourceDefinition)
+        .def_readwrite("ResourcePoolDefinition", &FResourceSaveGameData::ResourcePoolDefinition)
+        .def_readwrite("Amount", &FResourceSaveGameData::Amount)
+        .def_readwrite("UpgradeLevel", &FResourceSaveGameData::UpgradeLevel)
+    ;
+
+    class_< FInventorySaveGameData >("FInventorySaveGameData", init<  >())
+        .def(init< const FInventorySaveGameData& >())
+        .def_readwrite("DefinitionData", &FInventorySaveGameData::DefinitionData)
+        .def_readwrite("Quantity", &FInventorySaveGameData::Quantity)
+        .def_readwrite("Mark", &FInventorySaveGameData::Mark)
+    ;
+
+    class_< FUnloadableDlcItemSaveGameData >("FUnloadableDlcItemSaveGameData", init<  >())
+        .def(init< const FUnloadableDlcItemSaveGameData& >())
+        .def_readwrite("SerialNumber", &FUnloadableDlcItemSaveGameData::SerialNumber)
+        .def_readwrite("Quantity", &FUnloadableDlcItemSaveGameData::Quantity)
+        .def_readwrite("Mark", &FUnloadableDlcItemSaveGameData::Mark)
+    ;
+
+    class_< FInventorySlotSaveGameData >("FInventorySlotSaveGameData", init<  >())
+        .def(init< const FInventorySlotSaveGameData& >())
+        .def_readwrite("InventorySlotMax_Misc", &FInventorySlotSaveGameData::InventorySlotMax_Misc)
+        .def_readwrite("WeaponReadyMax", &FInventorySlotSaveGameData::WeaponReadyMax)
+        .def_readwrite("NumQuickSlotsFlourished", &FInventorySlotSaveGameData::NumQuickSlotsFlourished)
+    ;
+
+    class_< FWeaponSaveGameData >("FWeaponSaveGameData", init<  >())
+        .def(init< const FWeaponSaveGameData& >())
+        .def_readwrite("WeaponDefinitionData", &FWeaponSaveGameData::WeaponDefinitionData)
+        .def_readwrite("QuickSlot", &FWeaponSaveGameData::QuickSlot)
+        .def_readwrite("Mark", &FWeaponSaveGameData::Mark)
+    ;
+
+    class_< FWeaponDefinitionData >("FWeaponDefinitionData", init<  >())
+        .def(init< const FWeaponDefinitionData& >())
+        .def_readwrite("WeaponTypeDefinition", &FWeaponDefinitionData::WeaponTypeDefinition)
+        .def_readwrite("BalanceDefinition", &FWeaponDefinitionData::BalanceDefinition)
+        .def_readwrite("ManufacturerDefinition", &FWeaponDefinitionData::ManufacturerDefinition)
+        .def_readwrite("ManufacturerGradeIndex", &FWeaponDefinitionData::ManufacturerGradeIndex)
+        .def_readwrite("BodyPartDefinition", &FWeaponDefinitionData::BodyPartDefinition)
+        .def_readwrite("GripPartDefinition", &FWeaponDefinitionData::GripPartDefinition)
+        .def_readwrite("BarrelPartDefinition", &FWeaponDefinitionData::BarrelPartDefinition)
+        .def_readwrite("SightPartDefinition", &FWeaponDefinitionData::SightPartDefinition)
+        .def_readwrite("StockPartDefinition", &FWeaponDefinitionData::StockPartDefinition)
+        .def_readwrite("ElementalPartDefinition", &FWeaponDefinitionData::ElementalPartDefinition)
+        .def_readwrite("Accessory1PartDefinition", &FWeaponDefinitionData::Accessory1PartDefinition)
+        .def_readwrite("Accessory2PartDefinition", &FWeaponDefinitionData::Accessory2PartDefinition)
+        .def_readwrite("MaterialPartDefinition", &FWeaponDefinitionData::MaterialPartDefinition)
+        .def_readwrite("PrefixPartDefinition", &FWeaponDefinitionData::PrefixPartDefinition)
+        .def_readwrite("TitlePartDefinition", &FWeaponDefinitionData::TitlePartDefinition)
+        .def_readwrite("GameStage", &FWeaponDefinitionData::GameStage)
+        .def_readwrite("UniqueId", &FWeaponDefinitionData::UniqueId)
+    ;
+
+    class_< FDamageSurfaceTypeModifier >("FDamageSurfaceTypeModifier", init<  >())
+        .def(init< const FDamageSurfaceTypeModifier& >())
+        .def_readwrite("SurfaceType", &FDamageSurfaceTypeModifier::SurfaceType)
+        .def_readwrite("BaseChance", &FDamageSurfaceTypeModifier::BaseChance)
+        .def_readwrite("BaseSpreadChance", &FDamageSurfaceTypeModifier::BaseSpreadChance)
+        .def_readwrite("SpreadChanceDecayMultiplier", &FDamageSurfaceTypeModifier::SpreadChanceDecayMultiplier)
+    ;
+
+    class_< FScreenParticleInitParams >("FScreenParticleInitParams", init<  >())
+        .def(init< const FScreenParticleInitParams& >())
+        .def_readwrite("Template", &FScreenParticleInitParams::Template)
+        .def_readwrite("ScreenParticleModifiers", &FScreenParticleInitParams::ScreenParticleModifiers)
+        .def_readwrite("TemplateScreenParticleMaterial", &FScreenParticleInitParams::TemplateScreenParticleMaterial)
+        .def_readwrite("MatParamName", &FScreenParticleInitParams::MatParamName)
+        .def_readwrite("ParticleTag", &FScreenParticleInitParams::ParticleTag)
+        .def_readwrite("ContentDims", &FScreenParticleInitParams::ContentDims)
+        .def_readwrite("ParticleDepth", &FScreenParticleInitParams::ParticleDepth)
+        .def_readwrite("ScalingMode", &FScreenParticleInitParams::ScalingMode)
+        .def_readwrite("StopParamsOT", &FScreenParticleInitParams::StopParamsOT)
+    ;
+
+    class_< FScreenParticleModifier >("FScreenParticleModifier", init<  >())
+        .def(init< const FScreenParticleModifier& >())
+        .def_readwrite("ScalarParams", &FScreenParticleModifier::ScalarParams)
+        .def_readwrite("CachedValue", &FScreenParticleModifier::CachedValue)
+    ;
+
+    class_< FAttributeScalarParam >("FAttributeScalarParam", init<  >())
+        .def(init< const FAttributeScalarParam& >())
+        .def_readwrite("ParamName", &FAttributeScalarParam::ParamName)
+        .def_readwrite("Input", &FAttributeScalarParam::Input)
+        .def_readwrite("MinInput", &FAttributeScalarParam::MinInput)
+        .def_readwrite("MaxInput", &FAttributeScalarParam::MaxInput)
+        .def_readwrite("MinOutput", &FAttributeScalarParam::MinOutput)
+        .def_readwrite("MaxOutput", &FAttributeScalarParam::MaxOutput)
+        .def_readwrite("ScalarParamOperand", &FAttributeScalarParam::ScalarParamOperand)
+        .def_readwrite("CurrentValue", &FAttributeScalarParam::CurrentValue)
+    ;
+
+    class_< FAttributeDefinitionDefault >("FAttributeDefinitionDefault", init<  >())
+        .def(init< const FAttributeDefinitionDefault& >())
+        .def_readwrite("Attribute", &FAttributeDefinitionDefault::Attribute)
+        .def_readwrite("DefaultValue", &FAttributeDefinitionDefault::DefaultValue)
+    ;
+
+    class_< FScreenParticleParamOverTime >("FScreenParticleParamOverTime", init<  >())
+        .def(init< const FScreenParticleParamOverTime& >())
+        .def_readwrite("ScalarParams", &FScreenParticleParamOverTime::ScalarParams)
+        .def_readwrite("VectorParams", &FScreenParticleParamOverTime::VectorParams)
+    ;
+
+    class_< FScreenParticleScalarParamOverTime >("FScreenParticleScalarParamOverTime", init<  >())
+        .def(init< const FScreenParticleScalarParamOverTime& >())
+        .def_readwrite("ParameterName", &FScreenParticleScalarParamOverTime::ParameterName)
+        .def_readwrite("TotalTime", &FScreenParticleScalarParamOverTime::TotalTime)
+        .def_readwrite("StartValue", &FScreenParticleScalarParamOverTime::StartValue)
+        .def_readwrite("EndValue", &FScreenParticleScalarParamOverTime::EndValue)
+        .def_readwrite("LastValue", &FScreenParticleScalarParamOverTime::LastValue)
+    ;
+
+    class_< FScreenParticleVectorParamOverTime >("FScreenParticleVectorParamOverTime", init<  >())
+        .def(init< const FScreenParticleVectorParamOverTime& >())
+        .def_readwrite("ParameterName", &FScreenParticleVectorParamOverTime::ParameterName)
+        .def_readwrite("TotalTime", &FScreenParticleVectorParamOverTime::TotalTime)
+        .def_readwrite("VectorStartValue", &FScreenParticleVectorParamOverTime::VectorStartValue)
+        .def_readwrite("VectorEndValue", &FScreenParticleVectorParamOverTime::VectorEndValue)
+        .def_readwrite("LastValue", &FScreenParticleVectorParamOverTime::LastValue)
+    ;
+
+    class_< FPlayerRecentDamageEventData >("FPlayerRecentDamageEventData", init<  >())
+        .def(init< const FPlayerRecentDamageEventData& >())
+        .def_readwrite("DamageTypeDefinition", &FPlayerRecentDamageEventData::DamageTypeDefinition)
+        .def_readwrite("DamageLocation", &FPlayerRecentDamageEventData::DamageLocation)
+        .def_readwrite("TotalDamageForDamageType", &FPlayerRecentDamageEventData::TotalDamageForDamageType)
+        .def_readwrite("DamageEventFlags", &FPlayerRecentDamageEventData::DamageEventFlags)
+        .def_readwrite("DamageTime", &FPlayerRecentDamageEventData::DamageTime)
+        .def_readwrite("DamagedActor", &FPlayerRecentDamageEventData::DamagedActor)
+    ;
+
+    class_< FConditionalAnimationData >("FConditionalAnimationData", init<  >())
+        .def(init< const FConditionalAnimationData& >())
+        .def_readwrite("Expression", &FConditionalAnimationData::Expression)
+        .def_readwrite("AnimationName", &FConditionalAnimationData::AnimationName)
+        .def_readwrite("CameraAnim", &FConditionalAnimationData::CameraAnim)
+        .def_readwrite("AnimSet", &FConditionalAnimationData::AnimSet)
+    ;
+
+    class_< FExplosionScaleData >("FExplosionScaleData", init<  >())
+        .def(init< const FExplosionScaleData& >())
+        .def_readwrite("ExplosionPSTemplate", &FExplosionScaleData::ExplosionPSTemplate)
+        .def_readwrite("MinRadius", &FExplosionScaleData::MinRadius)
+        .def_readwrite("MaxRadius", &FExplosionScaleData::MaxRadius)
+        .def_readwrite("MinParticleScale", &FExplosionScaleData::MinParticleScale)
+        .def_readwrite("MaxParticleScale", &FExplosionScaleData::MaxParticleScale)
+        .def_readwrite("ExplosionAkEvent", &FExplosionScaleData::ExplosionAkEvent)
+        .def_readwrite("CameraAnim", &FExplosionScaleData::CameraAnim)
+        .def_readwrite("MinCameraEffectDistance", &FExplosionScaleData::MinCameraEffectDistance)
+        .def_readwrite("MaxCameraEffectDistance", &FExplosionScaleData::MaxCameraEffectDistance)
+        .def_readwrite("FFWaveform", &FExplosionScaleData::FFWaveform)
+        .def_readwrite("ImpactEffect", &FExplosionScaleData::ImpactEffect)
+        .def_readwrite("MaxDamageDuration", &FExplosionScaleData::MaxDamageDuration)
+        .def_readwrite("DamageInterval", &FExplosionScaleData::DamageInterval)
+    ;
+
+    class_< FRecentExplosion >("FRecentExplosion", init<  >())
+        .def(init< const FRecentExplosion& >())
+        .def_readwrite("ExplosionInstigatorName", &FRecentExplosion::ExplosionInstigatorName)
+        .def_readwrite("ExplosionLocation", &FRecentExplosion::ExplosionLocation)
+        .def_readwrite("ExpirationTime", &FRecentExplosion::ExpirationTime)
+    ;
+
+    class_< FHomingRadiusThreshold >("FHomingRadiusThreshold", init<  >())
+        .def(init< const FHomingRadiusThreshold& >())
+        .def_readwrite("Radius", &FHomingRadiusThreshold::Radius)
+        .def_readwrite("MaxAngleCos", &FHomingRadiusThreshold::MaxAngleCos)
+        .def_readwrite("Behaviors", &FHomingRadiusThreshold::Behaviors)
+    ;
+
+    class_< FConditionalExplosionData >("FConditionalExplosionData", init<  >())
+        .def(init< const FConditionalExplosionData& >())
+        .def_readwrite("Expression", &FConditionalExplosionData::Expression)
+        .def_readwrite("Explosion", &FConditionalExplosionData::Explosion)
+    ;
+
+    class_< FConditionalParticleEffectData >("FConditionalParticleEffectData", init<  >())
+        .def(init< const FConditionalParticleEffectData& >())
+        .def_readwrite("Expression", &FConditionalParticleEffectData::Expression)
+        .def_readwrite("ParticleEffect", &FConditionalParticleEffectData::ParticleEffect)
+    ;
+
+    class_< FBulletImpactEventData >("FBulletImpactEventData", init<  >())
+        .def(init< const FBulletImpactEventData& >())
+        .def_readwrite("DamageSurfaceType", &FBulletImpactEventData::DamageSurfaceType)
+        .def_readwrite("Behaviors", &FBulletImpactEventData::Behaviors)
+    ;
+
+    class_< FBulletTimerEvent >("FBulletTimerEvent", init<  >())
+        .def(init< const FBulletTimerEvent& >())
+        .def_readwrite("Time", &FBulletTimerEvent::Time)
+        .def_readwrite("Response", &FBulletTimerEvent::Response)
+    ;
+
+    class_< FBulletEventResponse >("FBulletEventResponse", init<  >())
+        .def(init< const FBulletEventResponse& >())
+        .def_readwrite("SplitNum", &FBulletEventResponse::SplitNum)
+        .def_readwrite("SplitAngle", &FBulletEventResponse::SplitAngle)
+        .def_readwrite("SplitAngleOffset", &FBulletEventResponse::SplitAngleOffset)
+        .def_readwrite("SplitDistance", &FBulletEventResponse::SplitDistance)
+        .def_readwrite("SplitFire", &FBulletEventResponse::SplitFire)
+        .def_readwrite("NewSpeed", &FBulletEventResponse::NewSpeed)
+        .def_readwrite("Behaviors", &FBulletEventResponse::Behaviors)
+    ;
+
+    class_< FFiringPatternLine >("FFiringPatternLine", init<  >())
+        .def(init< const FFiringPatternLine& >())
+        .def_readwrite("StartPoint", &FFiringPatternLine::StartPoint)
+        .def_readwrite("EndPoint", &FFiringPatternLine::EndPoint)
+        .def_readwrite("CustomWaveMotion", &FFiringPatternLine::CustomWaveMotion)
+    ;
+
+    class_< FWaveMotionData >("FWaveMotionData", init<  >())
+        .def(init< const FWaveMotionData& >())
+        .def_readwrite("WaveFreq", &FWaveMotionData::WaveFreq)
+        .def_readwrite("WaveAmp", &FWaveMotionData::WaveAmp)
+        .def_readwrite("WavePhase", &FWaveMotionData::WavePhase)
+    ;
+
+    class_< FLightValues >("FLightValues", init<  >())
+        .def(init< const FLightValues& >())
+        .def_readwrite("StartTime", &FLightValues::StartTime)
+        .def_readwrite("Radius", &FLightValues::Radius)
+        .def_readwrite("Brightness", &FLightValues::Brightness)
+        .def_readwrite("LightColor", &FLightValues::LightColor)
+    ;
+
+    class_< FWeaponBoneControllerData >("FWeaponBoneControllerData", init<  >())
+        .def(init< const FWeaponBoneControllerData& >())
+        .def_readwrite("BoneName", &FWeaponBoneControllerData::BoneName)
+        .def_readwrite("ControlType", &FWeaponBoneControllerData::ControlType)
+        .def_readwrite("ControlTemplate", &FWeaponBoneControllerData::ControlTemplate)
+    ;
+
+    class_< FWeaponPartAttachmentData >("FWeaponPartAttachmentData", init<  >())
+        .def(init< const FWeaponPartAttachmentData& >())
+        .def_readwrite("FirstPersonAttachmentSocket", &FWeaponPartAttachmentData::FirstPersonAttachmentSocket)
+        .def_readwrite("ThirdPersonAttachmentSocket", &FWeaponPartAttachmentData::ThirdPersonAttachmentSocket)
+        .def_readwrite("FirstPersonOffHandAttachmentSocket", &FWeaponPartAttachmentData::FirstPersonOffHandAttachmentSocket)
+        .def_readwrite("ThirdPersonOffHandAttachmentSocket", &FWeaponPartAttachmentData::ThirdPersonOffHandAttachmentSocket)
+    ;
+
+    class_< FPartGradeWeightData >("FPartGradeWeightData", init<  >())
+        .def(init< const FPartGradeWeightData& >())
+        .def_readwrite("Part", &FPartGradeWeightData::Part)
+        .def_readwrite("Manufacturers", &FPartGradeWeightData::Manufacturers)
+        .def_readwrite("MinGameStageIndex", &FPartGradeWeightData::MinGameStageIndex)
+        .def_readwrite("MaxGameStageIndex", &FPartGradeWeightData::MaxGameStageIndex)
+        .def_readwrite("DefaultWeightIndex", &FPartGradeWeightData::DefaultWeightIndex)
+    ;
+
+    class_< FUnloadableDlcWeaponSaveGameData >("FUnloadableDlcWeaponSaveGameData", init<  >())
+        .def(init< const FUnloadableDlcWeaponSaveGameData& >())
+        .def_readwrite("SerialNumber", &FUnloadableDlcWeaponSaveGameData::SerialNumber)
+        .def_readwrite("QuickSlot", &FUnloadableDlcWeaponSaveGameData::QuickSlot)
+        .def_readwrite("Mark", &FUnloadableDlcWeaponSaveGameData::Mark)
+    ;
+
+    class_< FMissionPlaythroughSaveGameData >("FMissionPlaythroughSaveGameData", init<  >())
+        .def(init< const FMissionPlaythroughSaveGameData& >())
+        .def_readwrite("PlayThroughNumber", &FMissionPlaythroughSaveGameData::PlayThroughNumber)
+        .def_readwrite("MissionData", &FMissionPlaythroughSaveGameData::MissionData)
+        .def_readwrite("UnloadableDlcMissionData", &FMissionPlaythroughSaveGameData::UnloadableDlcMissionData)
+        .def_readwrite("PendingMissionRewards", &FMissionPlaythroughSaveGameData::PendingMissionRewards)
+        .def_readwrite("UnloadableDlcPendingMissionRewards", &FMissionPlaythroughSaveGameData::UnloadableDlcPendingMissionRewards)
+        .def_readwrite("ActiveMission", &FMissionPlaythroughSaveGameData::ActiveMission)
+        .def_readwrite("FilteredMissions", &FMissionPlaythroughSaveGameData::FilteredMissions)
+    ;
+
+    class_< FMissionStatusPlayerData >("FMissionStatusPlayerData", init<  >())
+        .def(init< const FMissionStatusPlayerData& >())
+        .def_readwrite("MissionDef", &FMissionStatusPlayerData::MissionDef)
+        .def_readwrite("Status", &FMissionStatusPlayerData::Status)
+        .def_readwrite("ObjectivesProgress", &FMissionStatusPlayerData::ObjectivesProgress)
+        .def_readwrite("ActiveObjectiveSet", &FMissionStatusPlayerData::ActiveObjectiveSet)
+        .def_readwrite("SubObjectiveSets", &FMissionStatusPlayerData::SubObjectiveSets)
+        .def_readwrite("GameStage", &FMissionStatusPlayerData::GameStage)
+    ;
+
+    class_< FDlcLevelTravelPair >("FDlcLevelTravelPair", init<  >())
+        .def(init< const FDlcLevelTravelPair& >())
+        .def_readwrite("NonDlcStationDef", &FDlcLevelTravelPair::NonDlcStationDef)
+        .def_readwrite("DlcStationDef", &FDlcLevelTravelPair::DlcStationDef)
+    ;
+
+    class_< FPersistentMapDependencies >("FPersistentMapDependencies", init<  >())
+        .def(init< const FPersistentMapDependencies& >())
+        .def_readwrite("PersistentMap", &FPersistentMapDependencies::PersistentMap)
+        .def_readwrite("SecondaryMaps", &FPersistentMapDependencies::SecondaryMaps)
+        .def_readwrite("ConnectedPersistents", &FPersistentMapDependencies::ConnectedPersistents)
+        .def_readwrite("LevelName", &FPersistentMapDependencies::LevelName)
+        .def_readwrite("GameReleaseDef", &FPersistentMapDependencies::GameReleaseDef)
+        .def_readwrite("DiscoveryAchievements", &FPersistentMapDependencies::DiscoveryAchievements)
+    ;
+
+    class_< FConditionLevel >("FConditionLevel", init<  >())
+        .def(init< const FConditionLevel& >())
+        .def_readwrite("ConditionDefinitions", &FConditionLevel::ConditionDefinitions)
+        .def_readwrite("ProgressNotificationOverride", &FConditionLevel::ProgressNotificationOverride)
+        .def_readwrite("CompletedAttributeEffects", &FConditionLevel::CompletedAttributeEffects)
+        .def_readwrite("BadassPointReward", &FConditionLevel::BadassPointReward)
+        .def_readwrite("RewardItemPool", &FConditionLevel::RewardItemPool)
+        .def_readwrite("RewardTextKey", &FConditionLevel::RewardTextKey)
+    ;
+
+    class_< FBalanceModification >("FBalanceModification", init<  >())
+        .def(init< const FBalanceModification& >())
+        .def_readwrite("MinEffectiveLevel", &FBalanceModification::MinEffectiveLevel)
+        .def_readwrite("EnemyHealthMultiplier", &FBalanceModification::EnemyHealthMultiplier)
+        .def_readwrite("BadassEnemyHealthMultiplier", &FBalanceModification::BadassEnemyHealthMultiplier)
+        .def_readwrite("EnemyShieldStrengthMultiplier", &FBalanceModification::EnemyShieldStrengthMultiplier)
+        .def_readwrite("BadassEnemyShieldStrengthMultiplier", &FBalanceModification::BadassEnemyShieldStrengthMultiplier)
+        .def_readwrite("EnemyDamageMultiplier", &FBalanceModification::EnemyDamageMultiplier)
+        .def_readwrite("BadassEnemyDamageMultiplier", &FBalanceModification::BadassEnemyDamageMultiplier)
+        .def_readwrite("XPGainedFromCombatMultiplier", &FBalanceModification::XPGainedFromCombatMultiplier)
+        .def_readwrite("XPGainedFromQuestsMultiplier", &FBalanceModification::XPGainedFromQuestsMultiplier)
+        .def_readwrite("BadassRankGainMultiplier", &FBalanceModification::BadassRankGainMultiplier)
+        .def_readwrite("AmplifiedDamageMultiplier", &FBalanceModification::AmplifiedDamageMultiplier)
+        .def_readwrite("PlayerVehicleWeaponDamageMultiplier", &FBalanceModification::PlayerVehicleWeaponDamageMultiplier)
+        .def_readwrite("AttributeEffectsForSpawnedEnemies", &FBalanceModification::AttributeEffectsForSpawnedEnemies)
+        .def_readwrite("AttributeEffectsForPlayers", &FBalanceModification::AttributeEffectsForPlayers)
+        .def_readwrite("AmmoDropsPerPlayerMultiplier", &FBalanceModification::AmmoDropsPerPlayerMultiplier)
+        .def_readwrite("GearDrops_CommonWeightModifier_PT3_BaseValueOverride", &FBalanceModification::GearDrops_CommonWeightModifier_PT3_BaseValueOverride)
+        .def_readwrite("ChestItemPool_Weight_2_Uncommon_PT3_Multiplier", &FBalanceModification::ChestItemPool_Weight_2_Uncommon_PT3_Multiplier)
+        .def_readwrite("StatusEffectChanceScales", &FBalanceModification::StatusEffectChanceScales)
+        .def_readwrite("AIDamageScaleByLevelDifference", &FBalanceModification::AIDamageScaleByLevelDifference)
+    ;
+
+    class_< FLevelBasedStatusEffectChanceScale >("FLevelBasedStatusEffectChanceScale", init<  >())
+        .def(init< const FLevelBasedStatusEffectChanceScale& >())
+        .def_readwrite("LevelDifference", &FLevelBasedStatusEffectChanceScale::LevelDifference)
+        .def_readwrite("HigherLevelChanceScale", &FLevelBasedStatusEffectChanceScale::HigherLevelChanceScale)
+        .def_readwrite("LowerLevelChanceScale", &FLevelBasedStatusEffectChanceScale::LowerLevelChanceScale)
+    ;
+
+    class_< FLevelBasedDamageScale >("FLevelBasedDamageScale", init<  >())
+        .def(init< const FLevelBasedDamageScale& >())
+        .def_readwrite("LevelDifference", &FLevelBasedDamageScale::LevelDifference)
+        .def_readwrite("HigherLevelAttackerDmgScale", &FLevelBasedDamageScale::HigherLevelAttackerDmgScale)
+        .def_readwrite("LowerLevelAttackerDmgScale", &FLevelBasedDamageScale::LowerLevelAttackerDmgScale)
+    ;
+
+    class_< FBlackMarketPostLaunchUpgradeData >("FBlackMarketPostLaunchUpgradeData", init<  >())
+        .def(init< const FBlackMarketPostLaunchUpgradeData& >())
+        .def_readwrite("EridiumCostForUpgrade", &FBlackMarketPostLaunchUpgradeData::EridiumCostForUpgrade)
+    ;
+
+    class_< FMapSpecificBalanceModificationList >("FMapSpecificBalanceModificationList", init<  >())
+        .def(init< const FMapSpecificBalanceModificationList& >())
+        .def_readwrite("MapName", &FMapSpecificBalanceModificationList::MapName)
+        .def_readwrite("AIPawnBalanceModifiers", &FMapSpecificBalanceModificationList::AIPawnBalanceModifiers)
+    ;
+
+    class_< FAIPawnPlaythroughThreeData >("FAIPawnPlaythroughThreeData", init<  >())
+        .def(init< const FAIPawnPlaythroughThreeData& >())
+        .def_readwrite("AIPawnBalanceDefinitionFullObjectName", &FAIPawnPlaythroughThreeData::AIPawnBalanceDefinitionFullObjectName)
+        .def_readwrite("DisplayName", &FAIPawnPlaythroughThreeData::DisplayName)
+        .def_readwrite("TransformedNames", &FAIPawnPlaythroughThreeData::TransformedNames)
+    ;
+
+    class_< FAITransformedName >("FAITransformedName", init<  >())
+        .def(init< const FAITransformedName& >())
+        .def_readwrite("Type", &FAITransformedName::Type)
+        .def_readwrite("TransformedName", &FAITransformedName::TransformedName)
+        .def_readwrite("TransformedKillStat", &FAITransformedName::TransformedKillStat)
+    ;
+
+    class_< FExtraWeaponSlot >("FExtraWeaponSlot", init<  >())
+        .def(init< const FExtraWeaponSlot& >())
+        .def_readwrite("Socket", &FExtraWeaponSlot::Socket)
+        .def_readwrite("Mesh", &FExtraWeaponSlot::Mesh)
+        .def_readwrite("MuzzleFlash", &FExtraWeaponSlot::MuzzleFlash)
+        .def_readwrite("AltMuzzleFlashes", &FExtraWeaponSlot::AltMuzzleFlashes)
+        .def_readwrite("MuzzleFlashLight", &FExtraWeaponSlot::MuzzleFlashLight)
+    ;
+
+    class_< FLockOnTargetStateStruct >("FLockOnTargetStateStruct", init<  >())
+        .def(init< const FLockOnTargetStateStruct& >())
+        .def_readwrite("CurrentTarget", &FLockOnTargetStateStruct::CurrentTarget)
+        .def_readwrite("StartTime", &FLockOnTargetStateStruct::StartTime)
+        .def_readwrite("LockOnRequested", &FLockOnTargetStateStruct::LockOnRequested)
+        .def_readwrite("LockOnInProgress", &FLockOnTargetStateStruct::LockOnInProgress)
+        .def_readwrite("CoolDownStartTime", &FLockOnTargetStateStruct::CoolDownStartTime)
+    ;
+
+    class_< FReplicatedInventoryCardData >("FReplicatedInventoryCardData", init<  >())
+        .def(init< const FReplicatedInventoryCardData& >())
+        .def_readwrite("ModifierValue", &FReplicatedInventoryCardData::ModifierValue)
+        .def_readwrite("ModifierStatIndex", &FReplicatedInventoryCardData::ModifierStatIndex)
+    ;
+
+    class_< FWeaponCustomPartTypeData >("FWeaponCustomPartTypeData", init<  >())
+        .def(init< const FWeaponCustomPartTypeData& >())
+        .def_readwrite("WeightedParts", &FWeaponCustomPartTypeData::WeightedParts)
+    ;
+
+    class_< FWeaponBoneControllerInstance >("FWeaponBoneControllerInstance", init<  >())
+        .def(init< const FWeaponBoneControllerInstance& >())
+        .def_readwrite("SourcePartType", &FWeaponBoneControllerInstance::SourcePartType)
+        .def_readwrite("BoneControlType", &FWeaponBoneControllerInstance::BoneControlType)
+        .def_readwrite("BoneController", &FWeaponBoneControllerInstance::BoneController)
+        .def_readwrite("UnknownData00", &FWeaponBoneControllerInstance::UnknownData00)
+    ;
+
+    class_< FShellCasingImpact >("FShellCasingImpact", init<  >())
+        .def(init< const FShellCasingImpact& >())
+        .def_readwrite("ImpactTime", &FShellCasingImpact::ImpactTime)
+        .def_readwrite("ImpactLocation", &FShellCasingImpact::ImpactLocation)
+    ;
+
+    class_< FWeaponMemento >("FWeaponMemento", init<  >())
+        .def(init< const FWeaponMemento& >())
+        .def_readwrite("SerialNumber", &FWeaponMemento::SerialNumber)
+        .def_readwrite("StoredAmmo", &FWeaponMemento::StoredAmmo)
+    ;
+
+    class_< FKillMissionData >("FKillMissionData", init<  >())
+        .def(init< const FKillMissionData& >())
+        .def_readwrite("DamageCauserType", &FKillMissionData::DamageCauserType)
+        .def_readwrite("DamageType", &FKillMissionData::DamageType)
+        .def_readwrite("HitRegionName", &FKillMissionData::HitRegionName)
+    ;
+
+    class_< FDamageReactionData, bases< FSpecializedBehaviorEvent >  >("FDamageReactionData", init<  >())
+        .def(init< const FDamageReactionData& >())
+        .def_readwrite("DamageTriggers", &FDamageReactionData::DamageTriggers)
+        .def_readwrite("PercentOfHealthTrigger", &FDamageReactionData::PercentOfHealthTrigger)
+        .def_readwrite("DamageSpecialMove", &FDamageReactionData::DamageSpecialMove)
+        .def_readwrite("ReactionBehaviors", &FDamageReactionData::ReactionBehaviors)
+    ;
+
+    class_< FInteractiveObjectReplicatedStateData >("FInteractiveObjectReplicatedStateData", init<  >())
+        .def(init< const FInteractiveObjectReplicatedStateData& >())
+        .def_readwrite("ReplicatedBehaviorConsumerState", &FInteractiveObjectReplicatedStateData::ReplicatedBehaviorConsumerState)
+        .def_readwrite("ReplicatedInstanceDataState", &FInteractiveObjectReplicatedStateData::ReplicatedInstanceDataState)
+    ;
+
+    class_< FActiveStatusEffect >("FActiveStatusEffect", init<  >())
+        .def(init< const FActiveStatusEffect& >())
+        .def_readwrite("Duration", &FActiveStatusEffect::Duration)
+        .def_readwrite("TotalElapsedTime", &FActiveStatusEffect::TotalElapsedTime)
+        .def_readwrite("AccumulatedTime", &FActiveStatusEffect::AccumulatedTime)
+        .def_readwrite("DamagePerSecond", &FActiveStatusEffect::DamagePerSecond)
+        .def_readwrite("EventInstigator", &FActiveStatusEffect::EventInstigator)
+        .def_readwrite("DamageCauser", &FActiveStatusEffect::DamageCauser)
+        .def_readwrite("UnknownData00", &FActiveStatusEffect::UnknownData00)
+        .def_readwrite("DamageSource", &FActiveStatusEffect::DamageSource)
+        .def_readwrite("StatusEffectDefinition", &FActiveStatusEffect::StatusEffectDefinition)
+        .def_readwrite("HitRegion", &FActiveStatusEffect::HitRegion)
+        .def_readwrite("HitInfo", &FActiveStatusEffect::HitInfo)
+        .def_readwrite("DamageNumberSocket", &FActiveStatusEffect::DamageNumberSocket)
+        .def_readwrite("AccumulatedSpreadTime", &FActiveStatusEffect::AccumulatedSpreadTime)
+        .def_readwrite("SpreadTimeInterval", &FActiveStatusEffect::SpreadTimeInterval)
+        .def_readwrite("SpreadCount", &FActiveStatusEffect::SpreadCount)
+        .def_readwrite("SpreadAttempt", &FActiveStatusEffect::SpreadAttempt)
+        .def_readwrite("SpreadRadius", &FActiveStatusEffect::SpreadRadius)
+        .def_readwrite("TravelledRegions", &FActiveStatusEffect::TravelledRegions)
+        .def_readwrite("TravelledTargets", &FActiveStatusEffect::TravelledTargets)
+        .def_readwrite("OwnerComponent", &FActiveStatusEffect::OwnerComponent)
+        .def_readwrite("SpreadCap", &FActiveStatusEffect::SpreadCap)
+    ;
+
+    class_< FHitRegionEmitters >("FHitRegionEmitters", init<  >())
+        .def(init< const FHitRegionEmitters& >())
+        .def_readwrite("Emitters", &FHitRegionEmitters::Emitters)
+        .def_readwrite("HitRegion", &FHitRegionEmitters::HitRegion)
+        .def_readwrite("TimeWaitingToDie", &FHitRegionEmitters::TimeWaitingToDie)
+    ;
+
+    class_< FSocketEmitter >("FSocketEmitter", init<  >())
+        .def(init< const FSocketEmitter& >())
+        .def_readwrite("Emitter", &FSocketEmitter::Emitter)
+        .def_readwrite("SocketName", &FSocketEmitter::SocketName)
+    ;
+
+    class_< FEffectSoundData >("FEffectSoundData", init<  >())
+        .def(init< const FEffectSoundData& >())
+        .def_readwrite("Type", &FEffectSoundData::Type)
+        .def_readwrite("AkPlayingId", &FEffectSoundData::AkPlayingId)
+    ;
+
+    class_< FOngoingEffectInfo >("FOngoingEffectInfo", init<  >())
+        .def(init< const FOngoingEffectInfo& >())
+        .def_readwrite("TotalDamageDealtToHealth", &FOngoingEffectInfo::TotalDamageDealtToHealth)
+        .def_readwrite("TotalDamageDealtToShields", &FOngoingEffectInfo::TotalDamageDealtToShields)
+        .def_readwrite("Duration", &FOngoingEffectInfo::Duration)
+    ;
+
+    class_< FMissionDirectorData >("FMissionDirectorData", init<  >())
+        .def(init< const FMissionDirectorData& >())
+        .def_readwrite("MissionDefinition", &FMissionDirectorData::MissionDefinition)
+        .def_readwrite("BranchEnding", &FMissionDirectorData::BranchEnding)
+    ;
+
+    class_< FMissionData >("FMissionData", init<  >())
+        .def(init< const FMissionData& >())
+        .def_readwrite("MissionDef", &FMissionData::MissionDef)
+        .def_readwrite("Status", &FMissionData::Status)
+        .def_readwrite("ObjectivesProgress", &FMissionData::ObjectivesProgress)
+        .def_readwrite("ActiveObjectiveSet", &FMissionData::ActiveObjectiveSet)
+        .def_readwrite("SubObjectiveSets", &FMissionData::SubObjectiveSets)
+    ;
+
+    class_< FMissionObserversData >("FMissionObserversData", init<  >())
+        .def(init< const FMissionObserversData& >())
+        .def_readwrite("Mission", &FMissionObserversData::Mission)
+        .def_readwrite("Observers", &FMissionObserversData::Observers)
+    ;
+
+    class_< FReplicatedMissionDirectiveData >("FReplicatedMissionDirectiveData", init<  >())
+        .def(init< const FReplicatedMissionDirectiveData& >())
+        .def_readwrite("MissionDirector", &FReplicatedMissionDirectiveData::MissionDirector)
+        .def_readwrite("UnknownData00", &FReplicatedMissionDirectiveData::UnknownData00)
+        .def_readwrite("MissionDirective", &FReplicatedMissionDirectiveData::MissionDirective)
+    ;
+
+    class_< FMissionWaypointsData >("FMissionWaypointsData", init<  >())
+        .def(init< const FMissionWaypointsData& >())
+        .def_readwrite("Mission", &FMissionWaypointsData::Mission)
+        .def_readwrite("Waypoints", &FMissionWaypointsData::Waypoints)
+    ;
+
+    class_< FLevelTransitionData >("FLevelTransitionData", init<  >())
+        .def(init< const FLevelTransitionData& >())
+        .def_readwrite("TargetLevel", &FLevelTransitionData::TargetLevel)
+        .def_readwrite("LevelTransition", &FLevelTransitionData::LevelTransition)
+    ;
+
+    class_< FTimedMissionData >("FTimedMissionData", init<  >())
+        .def(init< const FTimedMissionData& >())
+        .def_readwrite("Mission", &FTimedMissionData::Mission)
+        .def_readwrite("SecondsLeft", &FTimedMissionData::SecondsLeft)
+    ;
+
+    class_< FDefendMissionData >("FDefendMissionData", init<  >())
+        .def(init< const FDefendMissionData& >())
+        .def_readwrite("Objective", &FDefendMissionData::Objective)
+        .def_readwrite("Target", &FDefendMissionData::Target)
+        .def_readwrite("UnknownData00", &FDefendMissionData::UnknownData00)
+    ;
+
+    class_< FDefendTargetData >("FDefendTargetData", init<  >())
+        .def(init< const FDefendTargetData& >())
+        .def_readwrite("Objective", &FDefendTargetData::Objective)
+        .def_readwrite("PercentHealth", &FDefendTargetData::PercentHealth)
+    ;
+
+    class_< FBlockedMissionData >("FBlockedMissionData", init<  >())
+        .def(init< const FBlockedMissionData& >())
+        .def_readwrite("BlockedMission", &FBlockedMissionData::BlockedMission)
+        .def_readwrite("MissionBlockers", &FBlockedMissionData::MissionBlockers)
+    ;
+
+    class_< FObjectiveUpdateData >("FObjectiveUpdateData", init<  >())
+        .def(init< const FObjectiveUpdateData& >())
+        .def_readwrite("Objective", &FObjectiveUpdateData::Objective)
+        .def_readwrite("ObjectiveBit", &FObjectiveUpdateData::ObjectiveBit)
+    ;
+
+    class_< FMinimapIconHelper_Director >("FMinimapIconHelper_Director", init<  >())
+        .def(init< const FMinimapIconHelper_Director& >())
+        .def_readwrite("Director", &FMinimapIconHelper_Director::Director)
+        .def_readwrite("UnknownData00", &FMinimapIconHelper_Director::UnknownData00)
+        .def_readwrite("Location", &FMinimapIconHelper_Director::Location)
+        .def_readwrite("ActionableMissionDefinition", &FMinimapIconHelper_Director::ActionableMissionDefinition)
+    ;
+
+    class_< FMissionKickoffData >("FMissionKickoffData", init<  >())
+        .def(init< const FMissionKickoffData& >())
+        .def_readwrite("Mission", &FMissionKickoffData::Mission)
+        .def_readwrite("PlayerThatAcceptedMission", &FMissionKickoffData::PlayerThatAcceptedMission)
+    ;
+
+    class_< FSpawnedDroppedLootData >("FSpawnedDroppedLootData", init<  >())
+        .def(init< const FSpawnedDroppedLootData& >())
+        .def_readwrite("Inv", &FSpawnedDroppedLootData::Inv)
+    ;
+
+    class_< FHitActorData >("FHitActorData", init<  >())
+        .def(init< const FHitActorData& >())
+        .def_readwrite("HitActor", &FHitActorData::HitActor)
+        .def_readwrite("HitInfo", &FHitActorData::HitInfo)
+        .def_readwrite("HitLocation", &FHitActorData::HitLocation)
+        .def_readwrite("HitLocationRelativeToHitActor", &FHitActorData::HitLocationRelativeToHitActor)
+        .def_readwrite("HitNormal", &FHitActorData::HitNormal)
+    ;
+
+    class_< FObstacleData >("FObstacleData", init<  >())
+        .def(init< const FObstacleData& >())
+        .def_readwrite("Actor", &FObstacleData::Actor)
+        .def_readwrite("Leader", &FObstacleData::Leader)
+        .def_readwrite("Radius", &FObstacleData::Radius)
+        .def_readwrite("HalfHeight", &FObstacleData::HalfHeight)
+        .def_readwrite("MaxSpeed", &FObstacleData::MaxSpeed)
+        .def_readwrite("Location", &FObstacleData::Location)
+        .def_readwrite("Velocity", &FObstacleData::Velocity)
+        .def_readwrite("OldVelocity", &FObstacleData::OldVelocity)
+        .def_readwrite("LastOffset", &FObstacleData::LastOffset)
+        .def_readwrite("IDO", &FObstacleData::IDO)
+        .def_readwrite("UnknownData00", &FObstacleData::UnknownData00)
+    ;
+
+    class_< FTrajectoryData >("FTrajectoryData", init<  >())
+        .def(init< const FTrajectoryData& >())
+        .def_readwrite("Speed", &FTrajectoryData::Speed)
+        .def_readwrite("AnglePct", &FTrajectoryData::AnglePct)
+        .def_readwrite("Angle", &FTrajectoryData::Angle)
+        .def_readwrite("Error", &FTrajectoryData::Error)
+        .def_readwrite("Offset", &FTrajectoryData::Offset)
+        .def_readwrite("PredictDistMax", &FTrajectoryData::PredictDistMax)
+    ;
+
+    class_< FReplicatedMissionFilterData >("FReplicatedMissionFilterData", init<  >())
+        .def(init< const FReplicatedMissionFilterData& >())
+        .def_readwrite("Mission", &FReplicatedMissionFilterData::Mission)
+    ;
+
+    class_< FReplicatedMissionObjectiveData >("FReplicatedMissionObjectiveData", init<  >())
+        .def(init< const FReplicatedMissionObjectiveData& >())
+        .def_readwrite("Objective", &FReplicatedMissionObjectiveData::Objective)
+        .def_readwrite("ObjectiveBit", &FReplicatedMissionObjectiveData::ObjectiveBit)
+    ;
+
+    class_< FReplicatedMissionStatusData >("FReplicatedMissionStatusData", init<  >())
+        .def(init< const FReplicatedMissionStatusData& >())
+        .def_readwrite("Mission", &FReplicatedMissionStatusData::Mission)
+        .def_readwrite("Status", &FReplicatedMissionStatusData::Status)
+    ;
+
+    class_< FReplicatedMissionData >("FReplicatedMissionData", init<  >())
+        .def(init< const FReplicatedMissionData& >())
+        .def_readwrite("Mission", &FReplicatedMissionData::Mission)
+        .def_readwrite("Status", &FReplicatedMissionData::Status)
+        .def_readwrite("ActiveObjectiveSet", &FReplicatedMissionData::ActiveObjectiveSet)
+        .def_readwrite("SubObjectiveSets", &FReplicatedMissionData::SubObjectiveSets)
+        .def_readwrite("SecondsLeft", &FReplicatedMissionData::SecondsLeft)
+        .def_readwrite("ObjectiveCounts", &FReplicatedMissionData::ObjectiveCounts)
+        .def_readwrite("GameStage", &FReplicatedMissionData::GameStage)
+    ;
+
+    class_< FLootConfigurationData >("FLootConfigurationData", init<  >())
+        .def(init< const FLootConfigurationData& >())
+        .def_readwrite("ConfigurationName", &FLootConfigurationData::ConfigurationName)
+        .def_readwrite("LootGameStageVarianceFormula", &FLootConfigurationData::LootGameStageVarianceFormula)
+        .def_readwrite("Weight", &FLootConfigurationData::Weight)
+        .def_readwrite("ItemAttachments", &FLootConfigurationData::ItemAttachments)
+    ;
+
+    class_< FLootAttachmentData >("FLootAttachmentData", init<  >())
+        .def(init< const FLootAttachmentData& >())
+        .def_readwrite("ItemPool", &FLootAttachmentData::ItemPool)
+        .def_readwrite("PoolProbability", &FLootAttachmentData::PoolProbability)
+        .def_readwrite("AttachmentPointName", &FLootAttachmentData::AttachmentPointName)
+    ;
+
+    class_< FHitRegionDamage >("FHitRegionDamage", init<  >())
+        .def(init< const FHitRegionDamage& >())
+        .def_readwrite("BodyHitRegion", &FHitRegionDamage::BodyHitRegion)
+        .def_readwrite("Damage", &FHitRegionDamage::Damage)
+        .def_readwrite("RecentDamage", &FHitRegionDamage::RecentDamage)
+        .def_readwrite("LastPctHealthForRunDamageTriggeredBehaviors", &FHitRegionDamage::LastPctHealthForRunDamageTriggeredBehaviors)
+        .def_readwrite("LastPctHealthForRunHealingTriggeredBehaviors", &FHitRegionDamage::LastPctHealthForRunHealingTriggeredBehaviors)
+    ;
+
+    class_< FSimpleAnimData >("FSimpleAnimData", init<  >())
+        .def(init< const FSimpleAnimData& >())
+        .def_readwrite("AnimName", &FSimpleAnimData::AnimName)
+        .def_readwrite("Tree", &FSimpleAnimData::Tree)
+        .def_readwrite("Nodes", &FSimpleAnimData::Nodes)
+    ;
+
+    class_< FSpawnedAttachedLootData >("FSpawnedAttachedLootData", init<  >())
+        .def(init< const FSpawnedAttachedLootData& >())
+        .def_readwrite("Inv", &FSpawnedAttachedLootData::Inv)
+        .def_readwrite("AttachmentPointName", &FSpawnedAttachedLootData::AttachmentPointName)
+    ;
+
+    class_< FLoadingMovieExceptionInfo >("FLoadingMovieExceptionInfo", init<  >())
+        .def(init< const FLoadingMovieExceptionInfo& >())
+        .def_readwrite("PersistentMapName", &FLoadingMovieExceptionInfo::PersistentMapName)
+        .def_readwrite("Tag", &FLoadingMovieExceptionInfo::Tag)
+    ;
+
+    class_< FCoordinatedEffectProcess >("FCoordinatedEffectProcess", init<  >())
+        .def(init< const FCoordinatedEffectProcess& >())
+        .def_readwrite("Target", &FCoordinatedEffectProcess::Target)
+        .def_readwrite("Threads", &FCoordinatedEffectProcess::Threads)
+        .def_readwrite("Player0MatIndex", &FCoordinatedEffectProcess::Player0MatIndex)
+        .def_readwrite("Player1MatIndex", &FCoordinatedEffectProcess::Player1MatIndex)
+    ;
+
+    class_< FCoordinatedEffectThread >("FCoordinatedEffectThread", init<  >())
+        .def(init< const FCoordinatedEffectThread& >())
+        .def_readwrite("EffectDefinition", &FCoordinatedEffectThread::EffectDefinition)
+        .def_readwrite("IgnoreInstanceData", &FCoordinatedEffectThread::IgnoreInstanceData)
+        .def_readwrite("LatentFloat", &FCoordinatedEffectThread::LatentFloat)
+        .def_readwrite("TargetFloat", &FCoordinatedEffectThread::TargetFloat)
+        .def_readwrite("ParticleSpeedMultiplier", &FCoordinatedEffectThread::ParticleSpeedMultiplier)
+        .def_readwrite("CriticalParticleEffects", &FCoordinatedEffectThread::CriticalParticleEffects)
+        .def_readwrite("ParticleEffects", &FCoordinatedEffectThread::ParticleEffects)
+        .def_readwrite("AudioEffects", &FCoordinatedEffectThread::AudioEffects)
+        .def_readwrite("HiddenParticles", &FCoordinatedEffectThread::HiddenParticles)
+        .def_readwrite("EffectOwner", &FCoordinatedEffectThread::EffectOwner)
+        .def_readwrite("EffectID", &FCoordinatedEffectThread::EffectID)
+        .def_readwrite("EffectCompleteDelegate", &FCoordinatedEffectThread::EffectCompleteDelegate)
+    ;
+
+    class_< FCoordinatedParticleSystemDefinition >("FCoordinatedParticleSystemDefinition", init<  >())
+        .def(init< const FCoordinatedParticleSystemDefinition& >())
+        .def_readwrite("ParticleSystem", &FCoordinatedParticleSystemDefinition::ParticleSystem)
+        .def_readwrite("LocationOffset", &FCoordinatedParticleSystemDefinition::LocationOffset)
+        .def_readwrite("RotationOffset", &FCoordinatedParticleSystemDefinition::RotationOffset)
+        .def_readwrite("TriggerTime", &FCoordinatedParticleSystemDefinition::TriggerTime)
+        .def_readwrite("ParticleScale", &FCoordinatedParticleSystemDefinition::ParticleScale)
+        .def_readwrite("Parameters", &FCoordinatedParticleSystemDefinition::Parameters)
+        .def_readwrite("VectorParameters", &FCoordinatedParticleSystemDefinition::VectorParameters)
+        .def_readwrite("ScaleByObjectSize", &FCoordinatedParticleSystemDefinition::ScaleByObjectSize)
+    ;
+
+    class_< FCoordinatedScalarParameter >("FCoordinatedScalarParameter", init<  >())
+        .def(init< const FCoordinatedScalarParameter& >())
+        .def_readwrite("ParamName", &FCoordinatedScalarParameter::ParamName)
+        .def_readwrite("ParamValueOverTime", &FCoordinatedScalarParameter::ParamValueOverTime)
+        .def_readwrite("BoundsScale", &FCoordinatedScalarParameter::BoundsScale)
+    ;
+
+    class_< FCoordinatedVectorParameter >("FCoordinatedVectorParameter", init<  >())
+        .def(init< const FCoordinatedVectorParameter& >())
+        .def_readwrite("ParamName", &FCoordinatedVectorParameter::ParamName)
+        .def_readwrite("ParamValueOverTime", &FCoordinatedVectorParameter::ParamValueOverTime)
+    ;
+
+    class_< FCoordinatedAudioDefinition >("FCoordinatedAudioDefinition", init<  >())
+        .def(init< const FCoordinatedAudioDefinition& >())
+        .def_readwrite("TriggerEvent", &FCoordinatedAudioDefinition::TriggerEvent)
+        .def_readwrite("TriggerTime", &FCoordinatedAudioDefinition::TriggerTime)
+        .def_readwrite("RTPC", &FCoordinatedAudioDefinition::RTPC)
+        .def_readwrite("RTPCOverTime", &FCoordinatedAudioDefinition::RTPCOverTime)
+    ;
+
+    class_< FCoordinatedEffectIndices >("FCoordinatedEffectIndices", init<  >())
+        .def(init< const FCoordinatedEffectIndices& >())
+        .def_readwrite("StartingIndex", &FCoordinatedEffectIndices::StartingIndex)
+        .def_readwrite("EndingIndex", &FCoordinatedEffectIndices::EndingIndex)
+    ;
+
+    class_< FObstaclePoint >("FObstaclePoint", init<  >())
+        .def(init< const FObstaclePoint& >())
+        .def_readwrite("Value", &FObstaclePoint::Value)
+        .def_readwrite("Offset", &FObstaclePoint::Offset)
+    ;
+
+    class_< FPendingCustomization >("FPendingCustomization", init<  >())
+        .def(init< const FPendingCustomization& >())
+        .def_readwrite("Definition", &FPendingCustomization::Definition)
+        .def_readwrite("Targets", &FPendingCustomization::Targets)
+    ;
+
+    class_< FProductCustomizationInfo >("FProductCustomizationInfo", init<  >())
+        .def(init< const FProductCustomizationInfo& >())
+        .def_readwrite("ProductID", &FProductCustomizationInfo::ProductID)
+        .def_readwrite("NumUnlockableCustomizations", &FProductCustomizationInfo::NumUnlockableCustomizations)
+        .def_readwrite("NumCustomizations", &FProductCustomizationInfo::NumCustomizations)
+    ;
+
+    class_< FCustomizationSizeMapping >("FCustomizationSizeMapping", init<  >())
+        .def(init< const FCustomizationSizeMapping& >())
+        .def_readwrite("ProductID", &FCustomizationSizeMapping::ProductID)
+        .def_readwrite("NumCustomizations", &FCustomizationSizeMapping::NumCustomizations)
+    ;
+
+    class_< FExtraMuzzleEffect >("FExtraMuzzleEffect", init<  >())
+        .def(init< const FExtraMuzzleEffect& >())
+        .def_readwrite("Particles", &FExtraMuzzleEffect::Particles)
+        .def_readwrite("Sound", &FExtraMuzzleEffect::Sound)
+    ;
+
+    class_< FSpeedTravelData >("FSpeedTravelData", init<  >())
+        .def(init< const FSpeedTravelData& >())
+        .def_readwrite("OriginLeaveTime", &FSpeedTravelData::OriginLeaveTime)
+        .def_readwrite("OriginRegion", &FSpeedTravelData::OriginRegion)
+    ;
+
+    class_< FWeatherSystemEffects >("FWeatherSystemEffects", init<  >())
+        .def(init< const FWeatherSystemEffects& >())
+        .def_readwrite("WeatherSystemTemplate", &FWeatherSystemEffects::WeatherSystemTemplate)
+        .def_readwrite("ScreenEffectsTemplate", &FWeatherSystemEffects::ScreenEffectsTemplate)
+    ;
+
+    class_< FAttachmentData >("FAttachmentData", init<  >())
+        .def(init< const FAttachmentData& >())
+        .def_readwrite("AttachmentBase", &FAttachmentData::AttachmentBase)
+        .def_readwrite("AttachmentBaseBoneName", &FAttachmentData::AttachmentBaseBoneName)
+        .def_readwrite("AttachmentRelativeOffset", &FAttachmentData::AttachmentRelativeOffset)
+        .def_readwrite("AttachmentRelativeRotation", &FAttachmentData::AttachmentRelativeRotation)
+        .def_readwrite("AttachmentPhysicsMode", &FAttachmentData::AttachmentPhysicsMode)
+    ;
+
+    class_< FPopulationOptionDenSpawnData >("FPopulationOptionDenSpawnData", init<  >())
+        .def(init< const FPopulationOptionDenSpawnData& >())
+        .def_readwrite("PopulationDefName", &FPopulationOptionDenSpawnData::PopulationDefName)
+        .def_readwrite("MaxActiveActors", &FPopulationOptionDenSpawnData::MaxActiveActors)
+        .def_readwrite("NumTotalActors", &FPopulationOptionDenSpawnData::NumTotalActors)
+        .def_readwrite("NumActiveActors", &FPopulationOptionDenSpawnData::NumActiveActors)
+        .def_readwrite("NextSpawnTime", &FPopulationOptionDenSpawnData::NextSpawnTime)
+        .def_readwrite("NumTotalExternalActors", &FPopulationOptionDenSpawnData::NumTotalExternalActors)
+        .def_readwrite("NumActiveExternalActors", &FPopulationOptionDenSpawnData::NumActiveExternalActors)
+    ;
+
+    class_< FPerchAnimData >("FPerchAnimData", init<  >())
+        .def(init< const FPerchAnimData& >())
+        .def_readwrite("Key", &FPerchAnimData::Key)
+        .def_readwrite("StartAnim", &FPerchAnimData::StartAnim)
+        .def_readwrite("StopAnim", &FPerchAnimData::StopAnim)
+        .def_readwrite("IdleAnim", &FPerchAnimData::IdleAnim)
+    ;
+
+    class_< FCombatZone >("FCombatZone", init<  >())
+        .def(init< const FCombatZone& >())
+        .def_readwrite("Index", &FCombatZone::Index)
+        .def_readwrite("Bounds", &FCombatZone::Bounds)
+    ;
+
+    class_< FCoverExposureData >("FCoverExposureData", init<  >())
+        .def(init< const FCoverExposureData& >())
+    ;
+
+    class_< FClanMaterialData >("FClanMaterialData", init<  >())
+        .def(init< const FClanMaterialData& >())
+        .def_readwrite("SourceMaterial", &FClanMaterialData::SourceMaterial)
+        .def_readwrite("ReplacementMaterial", &FClanMaterialData::ReplacementMaterial)
+    ;
+
+    class_< FClanSwitchData >("FClanSwitchData", init<  >())
+        .def(init< const FClanSwitchData& >())
+        .def_readwrite("SwitchName", &FClanSwitchData::SwitchName)
+        .def_readwrite("SwitchValue", &FClanSwitchData::SwitchValue)
+    ;
+
+    class_< FRagdollDeathImpulseStruct >("FRagdollDeathImpulseStruct", init<  >())
+        .def(init< const FRagdollDeathImpulseStruct& >())
+        .def_readwrite("Impulse", &FRagdollDeathImpulseStruct::Impulse)
+        .def_readwrite("Offset", &FRagdollDeathImpulseStruct::Offset)
+        .def_readwrite("BoneName", &FRagdollDeathImpulseStruct::BoneName)
+        .def_readwrite("VelocityRatherThanForce", &FRagdollDeathImpulseStruct::VelocityRatherThanForce)
+        .def_readwrite("TransformImpulseByVelocityDirection", &FRagdollDeathImpulseStruct::TransformImpulseByVelocityDirection)
+    ;
+
+    class_< FStaggerStateData >("FStaggerStateData", init<  >())
+        .def(init< const FStaggerStateData& >())
+        .def_readwrite("State", &FStaggerStateData::State)
+        .def_readwrite("StaggerStartTime", &FStaggerStateData::StaggerStartTime)
+        .def_readwrite("StaggerEndTime", &FStaggerStateData::StaggerEndTime)
+        .def_readwrite("StaggerEndRagdollTime", &FStaggerStateData::StaggerEndRagdollTime)
+        .def_readwrite("StaggerRecoveryStartTime", &FStaggerStateData::StaggerRecoveryStartTime)
+        .def_readwrite("NextUnstaggerCheckTime", &FStaggerStateData::NextUnstaggerCheckTime)
+        .def_readwrite("PreviousOverridePhysicalMaterial", &FStaggerStateData::PreviousOverridePhysicalMaterial)
+        .def_readwrite("PreviousCollisionChannel", &FStaggerStateData::PreviousCollisionChannel)
+        .def_readwrite("PreviousCollisionComponent", &FStaggerStateData::PreviousCollisionComponent)
+        .def_readwrite("StaggerInstigator", &FStaggerStateData::StaggerInstigator)
+        .def_readwrite("RestaggeredCount", &FStaggerStateData::RestaggeredCount)
+    ;
+
+    class_< FReferencePointComparisonData >("FReferencePointComparisonData", init<  >())
+        .def(init< const FReferencePointComparisonData& >())
+        .def_readwrite("A", &FReferencePointComparisonData::A)
+        .def_readwrite("B", &FReferencePointComparisonData::B)
+    ;
+
+    class_< FReferencePoint >("FReferencePoint", init<  >())
+        .def(init< const FReferencePoint& >())
+        .def_readwrite("Type", &FReferencePoint::Type)
+        .def_readwrite("Name", &FReferencePoint::Name)
+    ;
+
+    class_< FWillowCoverState >("FWillowCoverState", init<  >())
+        .def(init< const FWillowCoverState& >())
+        .def_readwrite("Action", &FWillowCoverState::Action)
+        .def_readwrite("Cover", &FWillowCoverState::Cover)
+        .def_readwrite("Stance", &FWillowCoverState::Stance)
+    ;
+
+    class_< FPerchStateData >("FPerchStateData", init<  >())
+        .def(init< const FPerchStateData& >())
+        .def_readwrite("AttachmentName", &FPerchStateData::AttachmentName)
+        .def_readwrite("StaticMesh", &FPerchStateData::StaticMesh)
+        .def_readwrite("SkelMesh", &FPerchStateData::SkelMesh)
+        .def_readwrite("LocOffset", &FPerchStateData::LocOffset)
+        .def_readwrite("RotOffset", &FPerchStateData::RotOffset)
+        .def_readwrite("Scale", &FPerchStateData::Scale)
+        .def_readwrite("Actor", &FPerchStateData::Actor)
+    ;
+
+    class_< FDamageLocationData >("FDamageLocationData", init<  >())
+        .def(init< const FDamageLocationData& >())
+        .def_readwrite("Time", &FDamageLocationData::Time)
+        .def_readwrite("Location", &FDamageLocationData::Location)
+    ;
+
+    class_< FSplineAnimPathData >("FSplineAnimPathData", init<  >())
+        .def(init< const FSplineAnimPathData& >())
+        .def_readwrite("StartSpline", &FSplineAnimPathData::StartSpline)
+        .def_readwrite("AnimSeqName", &FSplineAnimPathData::AnimSeqName)
+    ;
+
+    class_< FTurnData >("FTurnData", init<  >())
+        .def(init< const FTurnData& >())
+        .def_readwrite("MinRepeatTime", &FTurnData::MinRepeatTime)
+        .def_readwrite("Left", &FTurnData::Left)
+        .def_readwrite("Right", &FTurnData::Right)
+        .def_readwrite("Left01", &FTurnData::Left01)
+        .def_readwrite("Right01", &FTurnData::Right01)
+        .def_readwrite("Left02", &FTurnData::Left02)
+        .def_readwrite("Right02", &FTurnData::Right02)
+    ;
+
+    class_< FBehaviorAliasReference >("FBehaviorAliasReference", init<  >())
+        .def(init< const FBehaviorAliasReference& >())
+        .def_readwrite("BehaviorAlias", &FBehaviorAliasReference::BehaviorAlias)
+        .def_readwrite("BehaviorList", &FBehaviorAliasReference::BehaviorList)
+    ;
+
+    class_< FBodyWeaponActionPostureData >("FBodyWeaponActionPostureData", init<  >())
+        .def(init< const FBodyWeaponActionPostureData& >())
+        .def_readwrite("Posture", &FBodyWeaponActionPostureData::Posture)
+        .def_readwrite("Actions", &FBodyWeaponActionPostureData::Actions)
+    ;
+
+    class_< FBodyWeaponActionData >("FBodyWeaponActionData", init<  >())
+        .def(init< const FBodyWeaponActionData& >())
+        .def_readwrite("Action", &FBodyWeaponActionData::Action)
+        .def_readwrite("Expression", &FBodyWeaponActionData::Expression)
+        .def_readwrite("Animations", &FBodyWeaponActionData::Animations)
+    ;
+
+    class_< FConditionalAnimData >("FConditionalAnimData", init<  >())
+        .def(init< const FConditionalAnimData& >())
+        .def_readwrite("Expression", &FConditionalAnimData::Expression)
+        .def_readwrite("SpecialMove", &FConditionalAnimData::SpecialMove)
+    ;
+
+    class_< FBodyHandIKHoldData >("FBodyHandIKHoldData", init<  >())
+        .def(init< const FBodyHandIKHoldData& >())
+        .def_readwrite("JointLocation", &FBodyHandIKHoldData::JointLocation)
+        .def_readwrite("HandLocation", &FBodyHandIKHoldData::HandLocation)
+        .def_readwrite("HandRotation", &FBodyHandIKHoldData::HandRotation)
+    ;
+
+    class_< FCustomBodyHandIKHoldData >("FCustomBodyHandIKHoldData", init<  >())
+        .def(init< const FCustomBodyHandIKHoldData& >())
+        .def_readwrite("HoldName", &FCustomBodyHandIKHoldData::HoldName)
+        .def_readwrite("IKData", &FCustomBodyHandIKHoldData::IKData)
+    ;
+
+    class_< FPainDialogLine >("FPainDialogLine", init<  >())
+        .def(init< const FPainDialogLine& >())
+        .def_readwrite("DET_Pain", &FPainDialogLine::DET_Pain)
+        .def_readwrite("DamageThresholdPct", &FPainDialogLine::DamageThresholdPct)
+        .def_readwrite("ChanceToPlay", &FPainDialogLine::ChanceToPlay)
+        .def_readwrite("AkEvent", &FPainDialogLine::AkEvent)
+        .def_readwrite("FlinchAnimType", &FPainDialogLine::FlinchAnimType)
+        .def_readwrite("FlinchImpulseStrength", &FPainDialogLine::FlinchImpulseStrength)
+        .def_readwrite("PainBehaviors", &FPainDialogLine::PainBehaviors)
+    ;
+
+    class_< FStaggeredRecoveryRotationData >("FStaggeredRecoveryRotationData", init<  >())
+        .def(init< const FStaggeredRecoveryRotationData& >())
+        .def_readwrite("BoneName", &FStaggeredRecoveryRotationData::BoneName)
+        .def_readwrite("BoneAxis", &FStaggeredRecoveryRotationData::BoneAxis)
+    ;
+
+    class_< FCustomCringeData >("FCustomCringeData", init<  >())
+        .def(init< const FCustomCringeData& >())
+        .def_readwrite("DamageType", &FCustomCringeData::DamageType)
+        .def_readwrite("Cringes", &FCustomCringeData::Cringes)
+    ;
+
+    class_< FInjuredLoopOverride >("FInjuredLoopOverride", init<  >())
+        .def(init< const FInjuredLoopOverride& >())
+        .def_readwrite("NameTag", &FInjuredLoopOverride::NameTag)
+        .def_readwrite("StartAkEvent", &FInjuredLoopOverride::StartAkEvent)
+    ;
+
+    class_< FEchoPortraitInfo >("FEchoPortraitInfo", init<  >())
+        .def(init< const FEchoPortraitInfo& >())
+        .def_readwrite("PortraitType", &FEchoPortraitInfo::PortraitType)
+        .def_readwrite("ScaleformPortrait", &FEchoPortraitInfo::ScaleformPortrait)
+        .def_readwrite("VideoPortrait", &FEchoPortraitInfo::VideoPortrait)
+    ;
+
+    class_< FScaleformPortraitData >("FScaleformPortraitData", init<  >())
+        .def(init< const FScaleformPortraitData& >())
+        .def_readwrite("ScaleformName", &FScaleformPortraitData::ScaleformName)
+        .def_readwrite("PortraitMovie", &FScaleformPortraitData::PortraitMovie)
+    ;
+
+    class_< FVideoPortraitData >("FVideoPortraitData", init<  >())
+        .def(init< const FVideoPortraitData& >())
+        .def_readwrite("VideoMovie", &FVideoPortraitData::VideoMovie)
+    ;
+
+    class_< FEmotePortraitInfo >("FEmotePortraitInfo", init<  >())
+        .def(init< const FEmotePortraitInfo& >())
+        .def_readwrite("Emote", &FEmotePortraitInfo::Emote)
+        .def_readwrite("EmotePortrait", &FEmotePortraitInfo::EmotePortrait)
+    ;
+
+    class_< FEmoteStance >("FEmoteStance", init<  >())
+        .def(init< const FEmoteStance& >())
+        .def_readwrite("Emote", &FEmoteStance::Emote)
+        .def_readwrite("StanceSpecialMove", &FEmoteStance::StanceSpecialMove)
+    ;
+
+    class_< FVehicleCrewMappingStruct >("FVehicleCrewMappingStruct", init<  >())
+        .def(init< const FVehicleCrewMappingStruct& >())
+        .def_readwrite("VehicleArchetypeName", &FVehicleCrewMappingStruct::VehicleArchetypeName)
+        .def_readwrite("AnimSet", &FVehicleCrewMappingStruct::AnimSet)
+    ;
+
+    class_< FFadePickupParticle >("FFadePickupParticle", init<  >())
+        .def(init< const FFadePickupParticle& >())
+        .def_readwrite("SourceActor", &FFadePickupParticle::SourceActor)
+        .def_readwrite("Particle", &FFadePickupParticle::Particle)
+        .def_readwrite("FadeEndTime", &FFadePickupParticle::FadeEndTime)
+    ;
+
+    class_< FLoadInfo >("FLoadInfo", init<  >())
+        .def(init< const FLoadInfo& >())
+        .def_readwrite("CharacterData", &FLoadInfo::CharacterData)
+        .def_readwrite("LoadInfoReady", &FLoadInfo::LoadInfoReady)
+        .def_readwrite("LoadSucceeded", &FLoadInfo::LoadSucceeded)
+        .def_readwrite("LoadCancelled", &FLoadInfo::LoadCancelled)
+    ;
+
+    class_< FPlayerSaveData >("FPlayerSaveData", init<  >())
+        .def(init< const FPlayerSaveData& >())
+        .def_readwrite("FilePath", &FPlayerSaveData::FilePath)
+        .def_readwrite("TimeStamp", &FPlayerSaveData::TimeStamp)
+        .def_readwrite("PlayerClassDefName", &FPlayerSaveData::PlayerClassDefName)
+        .def_readwrite("ClassName", &FPlayerSaveData::ClassName)
+        .def_readwrite("CharacterName", &FPlayerSaveData::CharacterName)
+        .def_readwrite("ExpLevel", &FPlayerSaveData::ExpLevel)
+        .def_readwrite("CurrencyOnHand", &FPlayerSaveData::CurrencyOnHand)
+        .def_readwrite("UICharacterName", &FPlayerSaveData::UICharacterName)
+        .def_readwrite("PlaythroughsCompleted", &FPlayerSaveData::PlaythroughsCompleted)
+        .def_readwrite("LastVisitedTeleporter", &FPlayerSaveData::LastVisitedTeleporter)
+        .def_readwrite("ActiveMissionNumber", &FPlayerSaveData::ActiveMissionNumber)
+        .def_readwrite("PlotMissionNumber", &FPlayerSaveData::PlotMissionNumber)
+        .def_readwrite("TotalPlayTime", &FPlayerSaveData::TotalPlayTime)
+        .def_readwrite("LastPlaythroughNumber", &FPlayerSaveData::LastPlaythroughNumber)
+        .def_readwrite("LastSaveDate", &FPlayerSaveData::LastSaveDate)
+        .def_readwrite("SaveGuid", &FPlayerSaveData::SaveGuid)
+        .def_readwrite("SaveGameFileId", &FPlayerSaveData::SaveGameFileId)
+        .def_readwrite("ExpPoints", &FPlayerSaveData::ExpPoints)
+    ;
+
+    class_< FCurrencyState >("FCurrencyState", init<  >())
+        .def(init< const FCurrencyState& >())
+        .def_readwrite("FormOfCurrency", &FCurrencyState::FormOfCurrency)
+        .def_readwrite("StatName", &FCurrencyState::StatName)
+        .def_readwrite("CurrentAmount", &FCurrencyState::CurrentAmount)
+        .def_readwrite("LastKnownAmount", &FCurrencyState::LastKnownAmount)
+    ;
+
+    class_< FReplicatedStandInGear >("FReplicatedStandInGear", init<  >())
+        .def(init< const FReplicatedStandInGear& >())
+        .def_readwrite("Weapon1Data", &FReplicatedStandInGear::Weapon1Data)
+        .def_readwrite("Weapon2Data", &FReplicatedStandInGear::Weapon2Data)
+        .def_readwrite("ShieldData", &FReplicatedStandInGear::ShieldData)
+        .def_readwrite("GrenadeModData", &FReplicatedStandInGear::GrenadeModData)
+        .def_readwrite("ClassModData", &FReplicatedStandInGear::ClassModData)
+    ;
+
+    class_< FTrackedSkillState >("FTrackedSkillState", init<  >())
+        .def(init< const FTrackedSkillState& >())
+        .def_readwrite("SkillDef", &FTrackedSkillState::SkillDef)
+        .def_readwrite("PackedStackCountAndPercentComplete", &FTrackedSkillState::PackedStackCountAndPercentComplete)
+    ;
+
+    class_< FCriticalTextMessageArray >("FCriticalTextMessageArray", init<  >())
+        .def(init< const FCriticalTextMessageArray& >())
+        .def_readwrite("MessageArray", &FCriticalTextMessageArray::MessageArray)
+    ;
+
+    class_< FCriticalTextMessage >("FCriticalTextMessage", init<  >())
+        .def(init< const FCriticalTextMessage& >())
+        .def_readwrite("Message", &FCriticalTextMessage::Message)
+        .def_readwrite("Title", &FCriticalTextMessage::Title)
+        .def_readwrite("DestroyTime", &FCriticalTextMessage::DestroyTime)
+        .def_readwrite("DrawColor", &FCriticalTextMessage::DrawColor)
+    ;
+
+    class_< FCachedWeaponInfo >("FCachedWeaponInfo", init<  >())
+        .def(init< const FCachedWeaponInfo& >())
+        .def_readwrite("CachedClipSize", &FCachedWeaponInfo::CachedClipSize)
+        .def_readwrite("CachedAmmoInClip", &FCachedWeaponInfo::CachedAmmoInClip)
+        .def_readwrite("CachedAmmoNotInClip", &FCachedWeaponInfo::CachedAmmoNotInClip)
+        .def_readwrite("CachedWeaponIsReloading", &FCachedWeaponInfo::CachedWeaponIsReloading)
+        .def_readwrite("CachedWeaponType", &FCachedWeaponInfo::CachedWeaponType)
+        .def_readwrite("CachedWeaponTypeDLCClip", &FCachedWeaponInfo::CachedWeaponTypeDLCClip)
+        .def_readwrite("IsReloadIconDisplayed", &FCachedWeaponInfo::IsReloadIconDisplayed)
+        .def_readwrite("IsInteractionIconDisplayed", &FCachedWeaponInfo::IsInteractionIconDisplayed)
+    ;
+
+    class_< FCellContentData >("FCellContentData", init<  >())
+        .def(init< const FCellContentData& >())
+        .def_readwrite("Tex", &FCellContentData::Tex)
+        .def_readwrite("Mesh", &FCellContentData::Mesh)
+        .def_readwrite("Inv", &FCellContentData::Inv)
+        .def_readwrite("ExtArrayIndex", &FCellContentData::ExtArrayIndex)
+    ;
+
+    class_< FHUDInteractionIcon >("FHUDInteractionIcon", init<  >())
+        .def(init< const FHUDInteractionIcon& >())
+        .def_readwrite("Icons", &FHUDInteractionIcon::Icons)
+    ;
+
+    class_< FInteractionIconWithOverrides >("FInteractionIconWithOverrides", init<  >())
+        .def(init< const FInteractionIconWithOverrides& >())
+        .def_readwrite("IconDef", &FInteractionIconWithOverrides::IconDef)
+        .def_readwrite("OverrideIconDef", &FInteractionIconWithOverrides::OverrideIconDef)
+        .def_readwrite("CostsCurrencyType", &FInteractionIconWithOverrides::CostsCurrencyType)
+        .def_readwrite("CostsAmount", &FInteractionIconWithOverrides::CostsAmount)
+    ;
+
+    class_< FMissionWidgetMessage >("FMissionWidgetMessage", init<  >())
+        .def(init< const FMissionWidgetMessage& >())
+        .def_readwrite("Type", &FMissionWidgetMessage::Type)
+        .def_readwrite("Category", &FMissionWidgetMessage::Category)
+        .def_readwrite("MissDef", &FMissionWidgetMessage::MissDef)
+        .def_readwrite("ObjDef", &FMissionWidgetMessage::ObjDef)
+        .def_readwrite("Slot", &FMissionWidgetMessage::Slot)
+        .def_readwrite("SwapFromSlot", &FMissionWidgetMessage::SwapFromSlot)
+        .def_readwrite("ModuleNum", &FMissionWidgetMessage::ModuleNum)
+        .def_readwrite("EventTime", &FMissionWidgetMessage::EventTime)
+    ;
+
+    class_< FMinimapObjectiveIconClip >("FMinimapObjectiveIconClip", init<  >())
+        .def(init< const FMinimapObjectiveIconClip& >())
+        .def_readwrite("OptionalClip", &FMinimapObjectiveIconClip::OptionalClip)
+        .def_readwrite("AboveClip", &FMinimapObjectiveIconClip::AboveClip)
+        .def_readwrite("BelowClip", &FMinimapObjectiveIconClip::BelowClip)
+        .def_readwrite("Object", &FMinimapIconClip::Object)
+        .def_readwrite("MapPos", &FMinimapIconClip::MapPos)
+    ;
+
+    class_< FMinimapIconClip >("FMinimapIconClip", init<  >())
+        .def(init< const FMinimapIconClip& >())
+        .def_readwrite("Object", &FMinimapIconClip::Object)
+        .def_readwrite("MapPos", &FMinimapIconClip::MapPos)
+    ;
+
+    class_< FScaledHUDElement >("FScaledHUDElement", init<  >())
+        .def(init< const FScaledHUDElement& >())
+        .def_readwrite("ElementName", &FScaledHUDElement::ElementName)
+        .def_readwrite("Anchor", &FScaledHUDElement::Anchor)
+    ;
+
+    class_< FInjuredStringReplacementSet >("FInjuredStringReplacementSet", init<  >())
+        .def(init< const FInjuredStringReplacementSet& >())
+        .def_readwrite("Skills", &FInjuredStringReplacementSet::Skills)
+        .def_readwrite("NewPlayerInjuredString", &FInjuredStringReplacementSet::NewPlayerInjuredString)
+        .def_readwrite("NewInjuredTooltipString1", &FInjuredStringReplacementSet::NewInjuredTooltipString1)
+        .def_readwrite("NewInjuredTooltipString2", &FInjuredStringReplacementSet::NewInjuredTooltipString2)
+    ;
+
+    class_< FObjectiveIcon >("FObjectiveIcon", init<  >())
+        .def(init< const FObjectiveIcon& >())
+        .def_readwrite("TransitionStartTime", &FObjectiveIcon::TransitionStartTime)
+        .def_readwrite("LastLocation", &FObjectiveIcon::LastLocation)
+        .def_readwrite("FadeAlpha", &FObjectiveIcon::FadeAlpha)
+        .def_readwrite("FadeScale", &FObjectiveIcon::FadeScale)
+        .def_readwrite("ObjectiveClip", &FObjectiveIcon::ObjectiveClip)
+        .def_readwrite("AboveClip", &FObjectiveIcon::AboveClip)
+        .def_readwrite("BelowClip", &FObjectiveIcon::BelowClip)
+        .def_readwrite("OptionalClip", &FObjectiveIcon::OptionalClip)
+        .def_readwrite("IconClip", &FWorldSpaceIcon::IconClip)
+        .def_readwrite("ArrowClip", &FWorldSpaceIcon::ArrowClip)
+        .def_readwrite("NextOcclusionTestTime", &FWorldSpaceIcon::NextOcclusionTestTime)
+        .def_readwrite("CachedTextboxWidth", &FWorldSpaceIcon::CachedTextboxWidth)
+        .def_readwrite("CachedTextboxHeight", &FWorldSpaceIcon::CachedTextboxHeight)
+    ;
+
+    class_< FWorldSpaceIcon >("FWorldSpaceIcon", init<  >())
+        .def(init< const FWorldSpaceIcon& >())
+        .def_readwrite("IconClip", &FWorldSpaceIcon::IconClip)
+        .def_readwrite("ArrowClip", &FWorldSpaceIcon::ArrowClip)
+        .def_readwrite("NextOcclusionTestTime", &FWorldSpaceIcon::NextOcclusionTestTime)
+        .def_readwrite("CachedTextboxWidth", &FWorldSpaceIcon::CachedTextboxWidth)
+        .def_readwrite("CachedTextboxHeight", &FWorldSpaceIcon::CachedTextboxHeight)
+    ;
+
+    class_< FPlayerIcon, bases< FWorldSpaceIcon >  >("FPlayerIcon", init<  >())
+        .def(init< const FPlayerIcon& >())
+        .def_readwrite("TextClip", &FPlayerIcon::TextClip)
+        .def_readwrite("StateClip", &FPlayerIcon::StateClip)
+    ;
+
+    class_< FActiveWaypointData >("FActiveWaypointData", init<  >())
+        .def(init< const FActiveWaypointData& >())
+        .def_readwrite("WaypointLocation", &FActiveWaypointData::WaypointLocation)
+        .def_readwrite("WaypointActor", &FActiveWaypointData::WaypointActor)
+        .def_readwrite("WaypointObjective", &FActiveWaypointData::WaypointObjective)
+    ;
+
+    class_< FActiveAreaWaypointData >("FActiveAreaWaypointData", init<  >())
+        .def(init< const FActiveAreaWaypointData& >())
+        .def_readwrite("WaypointLocation", &FActiveAreaWaypointData::WaypointLocation)
+        .def_readwrite("WaypointRadius", &FActiveAreaWaypointData::WaypointRadius)
+        .def_readwrite("WaypointObjective", &FActiveAreaWaypointData::WaypointObjective)
+    ;
+
+    class_< FServerDynamicRadarIconData >("FServerDynamicRadarIconData", init<  >())
+        .def(init< const FServerDynamicRadarIconData& >())
+        .def_readwrite("SourceObject", &FServerDynamicRadarIconData::SourceObject)
+        .def_readwrite("Duration", &FServerDynamicRadarIconData::Duration)
+        .def_readwrite("StartTime", &FServerDynamicRadarIconData::StartTime)
+    ;
+
+    class_< FRemoteDynamicRadarIconData >("FRemoteDynamicRadarIconData", init<  >())
+        .def(init< const FRemoteDynamicRadarIconData& >())
+        .def_readwrite("IconType", &FRemoteDynamicRadarIconData::IconType)
+        .def_readwrite("Location", &FRemoteDynamicRadarIconData::Location)
+    ;
+
+    class_< FDuelTeamPair >("FDuelTeamPair", init<  >())
+        .def(init< const FDuelTeamPair& >())
+        .def_readwrite("ChallengerTeam", &FDuelTeamPair::ChallengerTeam)
+        .def_readwrite("CompetitorTeam", &FDuelTeamPair::CompetitorTeam)
+    ;
+
+    class_< FDuelTeamInfo >("FDuelTeamInfo", init<  >())
+        .def(init< const FDuelTeamInfo& >())
+        .def_readwrite("TeamAllegiance", &FDuelTeamInfo::TeamAllegiance)
+        .def_readwrite("TeamColor", &FDuelTeamInfo::TeamColor)
+    ;
+
+    class_< FTempProfileStruct >("FTempProfileStruct", init<  >())
+        .def(init< const FTempProfileStruct& >())
+        .def_readwrite("Allegiance", &FTempProfileStruct::Allegiance)
+        .def_readwrite("Health", &FTempProfileStruct::Health)
+        .def_readwrite("Shield", &FTempProfileStruct::Shield)
+        .def_readwrite("Weapons", &FTempProfileStruct::Weapons)
+    ;
+
+    class_< FTempWeaponStruct >("FTempWeaponStruct", init<  >())
+        .def(init< const FTempWeaponStruct& >())
+        .def_readwrite("DefinitionData", &FTempWeaponStruct::DefinitionData)
+        .def_readwrite("Ammo", &FTempWeaponStruct::Ammo)
+    ;
+
+    class_< FTradeSlot >("FTradeSlot", init<  >())
+        .def(init< const FTradeSlot& >())
+        .def_readwrite("Status", &FTradeSlot::Status)
+        .def_readwrite("WeaponData", &FTradeSlot::WeaponData)
+        .def_readwrite("ItemData", &FTradeSlot::ItemData)
+        .def_readwrite("Quantity", &FTradeSlot::Quantity)
+        .def_readwrite("WInv", &FTradeSlot::WInv)
+    ;
+
+    class_< FTrackedSkillIconState >("FTrackedSkillIconState", init<  >())
+        .def(init< const FTrackedSkillIconState& >())
+        .def_readwrite("Type", &FTrackedSkillIconState::Type)
+        .def_readwrite("Icon", &FTrackedSkillIconState::Icon)
+        .def_readwrite("PercentComplete", &FTrackedSkillIconState::PercentComplete)
+        .def_readwrite("StackCount", &FTrackedSkillIconState::StackCount)
+    ;
+
+    class_< FTopStatData >("FTopStatData", init<  >())
+        .def(init< const FTopStatData& >())
+        .def_readwrite("LabelText", &FTopStatData::LabelText)
+        .def_readwrite("ValueText", &FTopStatData::ValueText)
+        .def_readwrite("AuxText", &FTopStatData::AuxText)
+        .def_readwrite("Arrow", &FTopStatData::Arrow)
+        .def_readwrite("IconName", &FTopStatData::IconName)
+    ;
+
+    class_< FLabelToLinkageMapping >("FLabelToLinkageMapping", init<  >())
+        .def(init< const FLabelToLinkageMapping& >())
+        .def_readwrite("LabelName", &FLabelToLinkageMapping::LabelName)
+        .def_readwrite("LinkageName", &FLabelToLinkageMapping::LinkageName)
+    ;
+
+    class_< FThirdPersonMenuView >("FThirdPersonMenuView", init<  >())
+        .def(init< const FThirdPersonMenuView& >())
+        .def_readwrite("RelativeCameraLocation", &FThirdPersonMenuView::RelativeCameraLocation)
+        .def_readwrite("RelativeCameraRotation", &FThirdPersonMenuView::RelativeCameraRotation)
+        .def_readwrite("RelativeMenuLocation", &FThirdPersonMenuView::RelativeMenuLocation)
+        .def_readwrite("RelativeMenuRotation", &FThirdPersonMenuView::RelativeMenuRotation)
+        .def_readwrite("CameraYawMin", &FThirdPersonMenuView::CameraYawMin)
+        .def_readwrite("CameraYawMax", &FThirdPersonMenuView::CameraYawMax)
+        .def_readwrite("VerticalSplitscreenCameraOffset", &FThirdPersonMenuView::VerticalSplitscreenCameraOffset)
+        .def_readwrite("VerticalSplitscreenCameraSpread", &FThirdPersonMenuView::VerticalSplitscreenCameraSpread)
+        .def_readwrite("FocusBoneName", &FThirdPersonMenuView::FocusBoneName)
+        .def_readwrite("FocusScreenYaw", &FThirdPersonMenuView::FocusScreenYaw)
+    ;
+
+    class_< FPanelInfo >("FPanelInfo", init<  >())
+        .def(init< const FPanelInfo& >())
+        .def_readwrite("PanelName", &FPanelInfo::PanelName)
+        .def_readwrite("PanelFocused", &FPanelInfo::PanelFocused)
+        .def_readwrite("PanelUnfocused", &FPanelInfo::PanelUnfocused)
+        .def_readwrite("PanelCompare", &FPanelInfo::PanelCompare)
+        .def_readwrite("PanelBackground", &FPanelInfo::PanelBackground)
+        .def_readwrite("CellWidth", &FPanelInfo::CellWidth)
+        .def_readwrite("CellHeight", &FPanelInfo::CellHeight)
+        .def_readwrite("TextureWidth", &FPanelInfo::TextureWidth)
+        .def_readwrite("TextureHeight", &FPanelInfo::TextureHeight)
+    ;
+
+    class_< FCardInfo >("FCardInfo", init<  >())
+        .def(init< const FCardInfo& >())
+        .def_readwrite("CardName", &FCardInfo::CardName)
+        .def_readwrite("CellWidth", &FCardInfo::CellWidth)
+        .def_readwrite("CellHeight", &FCardInfo::CellHeight)
+        .def_readwrite("TextureWidth", &FCardInfo::TextureWidth)
+        .def_readwrite("TextureHeight", &FCardInfo::TextureHeight)
+        .def_readwrite("MainPlayerLinkageName", &FCardInfo::MainPlayerLinkageName)
+        .def_readwrite("SplitPlayerLinkageName", &FCardInfo::SplitPlayerLinkageName)
+        .def_readwrite("CompareSettings", &FCardInfo::CompareSettings)
+    ;
+
+    class_< FCardInfoRelativeToPanel >("FCardInfoRelativeToPanel", init<  >())
+        .def(init< const FCardInfoRelativeToPanel& >())
+        .def_readwrite("PanelName", &FCardInfoRelativeToPanel::PanelName)
+        .def_readwrite("ComparePosition", &FCardInfoRelativeToPanel::ComparePosition)
+        .def_readwrite("CompareScale", &FCardInfoRelativeToPanel::CompareScale)
+    ;
+
+    class_< FChestData >("FChestData", init<  >())
+        .def(init< const FChestData& >())
+        .def_readwrite("InventoryClass", &FChestData::InventoryClass)
+        .def_readwrite("InventorySerialNumber", &FChestData::InventorySerialNumber)
+        .def_readwrite("Inventory", &FChestData::Inventory)
+    ;
+
+    class_< FItemCardInfo >("FItemCardInfo", init<  >())
+        .def(init< const FItemCardInfo& >())
+        .def_readwrite("CardName", &FItemCardInfo::CardName)
+        .def_readwrite("ContentIdx", &FItemCardInfo::ContentIdx)
+        .def_readwrite("ItemCard", &FItemCardInfo::ItemCard)
+    ;
+
+    class_< FHeavyInventoryElement >("FHeavyInventoryElement", init<  >())
+        .def(init< const FHeavyInventoryElement& >())
+        .def_readwrite("Text", &FHeavyInventoryElement::Text)
+        .def_readwrite("Color", &FHeavyInventoryElement::Color)
+        .def_readwrite("Data", &FHeavyInventoryElement::Data)
+    ;
+
+    class_< FSortableDataElement >("FSortableDataElement", init<  >())
+        .def(init< const FSortableDataElement& >())
+        .def_readwrite("OneTimeIdx", &FSortableDataElement::OneTimeIdx)
+        .def_readwrite("CategoryIdx", &FSortableDataElement::CategoryIdx)
+        .def_readwrite("Data", &FSortableDataElement::Data)
+    ;
+
+    class_< FSortFilterConfiguration >("FSortFilterConfiguration", init<  >())
+        .def(init< const FSortFilterConfiguration& >())
+        .def_readwrite("SortType", &FSortFilterConfiguration::SortType)
+        .def_readwrite("FilterType", &FSortFilterConfiguration::FilterType)
+        .def_readwrite("CategoryType", &FSortFilterConfiguration::CategoryType)
+        .def_readwrite("SortTitleLookupKey", &FSortFilterConfiguration::SortTitleLookupKey)
+    ;
+
+    class_< FDirectionData >("FDirectionData", init<  >())
+        .def(init< const FDirectionData& >())
+        .def_readwrite("This", &FDirectionData::This)
+        .def_readwrite("Left", &FDirectionData::Left)
+        .def_readwrite("Right", &FDirectionData::Right)
+        .def_readwrite("Up", &FDirectionData::Up)
+        .def_readwrite("Down", &FDirectionData::Down)
+    ;
+
+    class_< FMissionStatusPresentation >("FMissionStatusPresentation", init<  >())
+        .def(init< const FMissionStatusPresentation& >())
+        .def_readwrite("TextColor", &FMissionStatusPresentation::TextColor)
+        .def_readwrite("IconFrame", &FMissionStatusPresentation::IconFrame)
+    ;
+
+    class_< FStatusMenuMissionEligibilityData >("FStatusMenuMissionEligibilityData", init<  >())
+        .def(init< const FStatusMenuMissionEligibilityData& >())
+        .def_readwrite("MissionDef", &FStatusMenuMissionEligibilityData::MissionDef)
+        .def_readwrite("MissionStatus", &FStatusMenuMissionEligibilityData::MissionStatus)
+    ;
+
+    class_< FCachedInvData >("FCachedInvData", init<  >())
+        .def(init< const FCachedInvData& >())
+        .def_readwrite("Inv", &FCachedInvData::Inv)
+        .def_readwrite("TrashOrFavorite", &FCachedInvData::TrashOrFavorite)
+    ;
+
+    class_< Fartifact_datum >("Fartifact_datum", init<  >())
+        .def(init< const Fartifact_datum& >())
+        .def_readwrite("SkillIndex", &Fartifact_datum::SkillIndex)
+        .def_readwrite("Grade", &Fartifact_datum::Grade)
+        .def_readwrite("Name", &Fartifact_datum::Name)
+    ;
+
+    class_< FSkillTreeUICell >("FSkillTreeUICell", init<  >())
+        .def(init< const FSkillTreeUICell& >())
+        .def_readwrite("BranchNum", &FSkillTreeUICell::BranchNum)
+        .def_readwrite("TierNum", &FSkillTreeUICell::TierNum)
+        .def_readwrite("CellNum", &FSkillTreeUICell::CellNum)
+        .def_readwrite("Clip_Cell", &FSkillTreeUICell::Clip_Cell)
+        .def_readwrite("Clip_Highlight", &FSkillTreeUICell::Clip_Highlight)
+        .def_readwrite("Clip_Outline", &FSkillTreeUICell::Clip_Outline)
+        .def_readwrite("Clip_Overclocked", &FSkillTreeUICell::Clip_Overclocked)
+    ;
+
+    class_< FMapObjectData >("FMapObjectData", init<  >())
+        .def(init< const FMapObjectData& >())
+        .def_readwrite("Player", &FMapObjectData::Player)
+        .def_readwrite("Vehicle", &FMapObjectData::Vehicle)
+        .def_readwrite("Landmark", &FMapObjectData::Landmark)
+        .def_readwrite("ClientInteractiveObject", &FMapObjectData::ClientInteractiveObject)
+        .def_readwrite("WPRI", &FMapObjectData::WPRI)
+        .def_readwrite("WaypointIndex", &FMapObjectData::WaypointIndex)
+        .def_readwrite("CustomObjectLoc", &FMapObjectData::CustomObjectLoc)
+        .def_readwrite("TransformedLocation", &FMapObjectData::TransformedLocation)
+        .def_readwrite("Angle", &FMapObjectData::Angle)
+        .def_readwrite("Scale", &FMapObjectData::Scale)
+        .def_readwrite("AS_IconClipPath", &FMapObjectData::AS_IconClipPath)
+        .def_readwrite("AS_IconClipFrame", &FMapObjectData::AS_IconClipFrame)
+        .def_readwrite("AS_IconClipInnerFrame", &FMapObjectData::AS_IconClipInnerFrame)
+        .def_readwrite("AS_IconPath", &FMapObjectData::AS_IconPath)
+        .def_readwrite("InfoBoxTitle", &FMapObjectData::InfoBoxTitle)
+        .def_readwrite("InfoBoxDesc", &FMapObjectData::InfoBoxDesc)
+    ;
+
+    class_< FClipRect >("FClipRect", init<  >())
+        .def(init< const FClipRect& >())
+        .def_readwrite("Top", &FClipRect::Top)
+        .def_readwrite("Right", &FClipRect::Right)
+        .def_readwrite("Bottom", &FClipRect::Bottom)
+        .def_readwrite("Left", &FClipRect::Left)
+    ;
+
+    class_< FOneTimeDataElement >("FOneTimeDataElement", init<  >())
+        .def(init< const FOneTimeDataElement& >())
+        .def_readwrite("Text", &FOneTimeDataElement::Text)
+        .def_readwrite("Icon", &FOneTimeDataElement::Icon)
+        .def_readwrite("IconOverride", &FOneTimeDataElement::IconOverride)
+        .def_readwrite("TextColor", &FOneTimeDataElement::TextColor)
+        .def_readwrite("Data", &FOneTimeDataElement::Data)
+    ;
+
+    class_< FGFxTextEntry >("FGFxTextEntry", init<  >())
+        .def(init< const FGFxTextEntry& >())
+        .def_readwrite("ArrayIdx", &FGFxTextEntry::ArrayIdx)
+        .def_readwrite("Kind", &FGFxTextEntry::Kind)
+    ;
+
+    class_< FPCContextMenuItem >("FPCContextMenuItem", init<  >())
+        .def(init< const FPCContextMenuItem& >())
+        .def_readwrite("Caption", &FPCContextMenuItem::Caption)
+        .def_readwrite("Action", &FPCContextMenuItem::Action)
+    ;
+
+    class_< FMissionRewardPresentationData >("FMissionRewardPresentationData", init<  >())
+        .def(init< const FMissionRewardPresentationData& >())
+        .def_readwrite("PresentationDefinition", &FMissionRewardPresentationData::PresentationDefinition)
+        .def_readwrite("Rarity", &FMissionRewardPresentationData::Rarity)
+    ;
+
+    class_< FPendingMissionRewardData >("FPendingMissionRewardData", init<  >())
+        .def(init< const FPendingMissionRewardData& >())
+        .def_readwrite("Mission", &FPendingMissionRewardData::Mission)
+        .def_readwrite("WeaponRewards", &FPendingMissionRewardData::WeaponRewards)
+        .def_readwrite("ItemRewards", &FPendingMissionRewardData::ItemRewards)
+    ;
+
+    class_< FPlayerLineInfo >("FPlayerLineInfo", init<  >())
+        .def(init< const FPlayerLineInfo& >())
+        .def_readwrite("Avatar", &FPlayerLineInfo::Avatar)
+        .def_readwrite("PRI", &FPlayerLineInfo::PRI)
+        .def_readwrite("PlayerID", &FPlayerLineInfo::PlayerID)
+        .def_readwrite("RoundKills", &FPlayerLineInfo::RoundKills)
+        .def_readwrite("TotalKills", &FPlayerLineInfo::TotalKills)
+    ;
+
+    class_< FHUDWidget_ChallengeData >("FHUDWidget_ChallengeData", init<  >())
+        .def(init< const FHUDWidget_ChallengeData& >())
+        .def_readwrite("Challenge", &FHUDWidget_ChallengeData::Challenge)
+        .def_readwrite("LevelIndex", &FHUDWidget_ChallengeData::LevelIndex)
+        .def_readwrite("ConditionIndex", &FHUDWidget_ChallengeData::ConditionIndex)
+        .def_readwrite("CurrStatVal", &FHUDWidget_ChallengeData::CurrStatVal)
+        .def_readwrite("GoalStatVal", &FHUDWidget_ChallengeData::GoalStatVal)
+    ;
+
+    class_< FtMenuData >("FtMenuData", init<  >())
+        .def(init< const FtMenuData& >())
+        .def_readwrite("ColumnText", &FtMenuData::ColumnText)
+        .def_readwrite("PrimaryActionCmd", &FtMenuData::PrimaryActionCmd)
+        .def_readwrite("SecondaryActionCmd", &FtMenuData::SecondaryActionCmd)
+        .def_readwrite("TertiaryActionCmd", &FtMenuData::TertiaryActionCmd)
+        .def_readwrite("QuaternaryActionCmd", &FtMenuData::QuaternaryActionCmd)
+        .def_readwrite("QuinaryActionCmd", &FtMenuData::QuinaryActionCmd)
+        .def_readwrite("OverCmd", &FtMenuData::OverCmd)
+        .def_readwrite("LeaveCmd", &FtMenuData::LeaveCmd)
+        .def_readwrite("Data", &FtMenuData::Data)
+        .def_readwrite("HintFontSize", &FtMenuData::HintFontSize)
+        .def_readwrite("Hint", &FtMenuData::Hint)
+        .def_readwrite("ItemDetail", &FtMenuData::ItemDetail)
+        .def_readwrite("DescriptionBoxStr", &FtMenuData::DescriptionBoxStr)
+    ;
+
+    class_< FColumnData >("FColumnData", init<  >())
+        .def(init< const FColumnData& >())
+        .def_readwrite("Text", &FColumnData::Text)
+        .def_readwrite("HAlign", &FColumnData::HAlign)
+        .def_readwrite("TextColor", &FColumnData::TextColor)
+    ;
+
+    class_< FMenuHeaderData >("FMenuHeaderData", init<  >())
+        .def(init< const FMenuHeaderData& >())
+        .def_readwrite("Header", &FMenuHeaderData::Header)
+        .def_readwrite("Width", &FMenuHeaderData::Width)
+        .def_readwrite("InterfaceName", &FMenuHeaderData::InterfaceName)
+        .def_readwrite("FontSize", &FMenuHeaderData::FontSize)
+        .def_readwrite("TextColor", &FMenuHeaderData::TextColor)
+        .def_readwrite("TextHighlightColor", &FMenuHeaderData::TextHighlightColor)
+        .def_readwrite("IconColor", &FMenuHeaderData::IconColor)
+        .def_readwrite("IconU", &FMenuHeaderData::IconU)
+        .def_readwrite("IconV", &FMenuHeaderData::IconV)
+        .def_readwrite("IconUL", &FMenuHeaderData::IconUL)
+        .def_readwrite("IconVL", &FMenuHeaderData::IconVL)
+    ;
+
+    class_< FDebugConsoleCommand >("FDebugConsoleCommand", init<  >())
+        .def(init< const FDebugConsoleCommand& >())
+        .def_readwrite("MenuName", &FDebugConsoleCommand::MenuName)
+        .def_readwrite("CommandName", &FDebugConsoleCommand::CommandName)
+        .def_readwrite("Description", &FDebugConsoleCommand::Description)
+        .def_readwrite("Command", &FDebugConsoleCommand::Command)
+    ;
+
+    class_< FtMenuLayout >("FtMenuLayout", init<  >())
+        .def(init< const FtMenuLayout& >())
+        .def_readwrite("Background", &FtMenuLayout::Background)
+        .def_readwrite("BackgroundXPos", &FtMenuLayout::BackgroundXPos)
+        .def_readwrite("BackgroundYPos", &FtMenuLayout::BackgroundYPos)
+        .def_readwrite("BackgroundXL", &FtMenuLayout::BackgroundXL)
+        .def_readwrite("BackgroundYL", &FtMenuLayout::BackgroundYL)
+        .def_readwrite("ColumnDataYL", &FtMenuLayout::ColumnDataYL)
+        .def_readwrite("ItemDetailYL", &FtMenuLayout::ItemDetailYL)
+        .def_readwrite("DescriptionBoxHeader", &FtMenuLayout::DescriptionBoxHeader)
+        .def_readwrite("DescriptionBoxHeaderHAlign", &FtMenuLayout::DescriptionBoxHeaderHAlign)
+        .def_readwrite("DescriptionBoxXPos", &FtMenuLayout::DescriptionBoxXPos)
+        .def_readwrite("DescriptionBoxYPos", &FtMenuLayout::DescriptionBoxYPos)
+        .def_readwrite("DescriptionBoxXL", &FtMenuLayout::DescriptionBoxXL)
+        .def_readwrite("TitlePos", &FtMenuLayout::TitlePos)
+        .def_readwrite("HintPos", &FtMenuLayout::HintPos)
+        .def_readwrite("ColumnPadding", &FtMenuLayout::ColumnPadding)
+        .def_readwrite("ColumnLayout", &FtMenuLayout::ColumnLayout)
+        .def_readwrite("ColumnDataFont", &FtMenuLayout::ColumnDataFont)
+    ;
+
+    class_< FtMenuTextPos >("FtMenuTextPos", init<  >())
+        .def(init< const FtMenuTextPos& >())
+        .def_readwrite("TextHAlign", &FtMenuTextPos::TextHAlign)
+        .def_readwrite("TextXPos", &FtMenuTextPos::TextXPos)
+        .def_readwrite("TextVAlign", &FtMenuTextPos::TextVAlign)
+        .def_readwrite("TextYPos", &FtMenuTextPos::TextYPos)
+    ;
+
+    class_< FColumnLayoutData >("FColumnLayoutData", init<  >())
+        .def(init< const FColumnLayoutData& >())
+        .def_readwrite("HeaderHAlign", &FColumnLayoutData::HeaderHAlign)
+        .def_readwrite("Header", &FColumnLayoutData::Header)
+        .def_readwrite("Width", &FColumnLayoutData::Width)
+        .def_readwrite("DataHAlign", &FColumnLayoutData::DataHAlign)
+    ;
+
+    class_< FNetworkChannelData >("FNetworkChannelData", init<  >())
+        .def(init< const FNetworkChannelData& >())
+        .def_readwrite("ChannelName", &FNetworkChannelData::ChannelName)
+        .def_readwrite("StateName", &FNetworkChannelData::StateName)
+        .def_readwrite("ActorClass", &FNetworkChannelData::ActorClass)
+        .def_readwrite("ActorClassName", &FNetworkChannelData::ActorClassName)
+        .def_readwrite("Role", &FNetworkChannelData::Role)
+        .def_readwrite("RemoteRole", &FNetworkChannelData::RemoteRole)
+        .def_readwrite("ActorClassCount", &FNetworkChannelData::ActorClassCount)
+        .def_readwrite("ActorClassPercent", &FNetworkChannelData::ActorClassPercent)
+    ;
+
+    class_< FItemBuilderData >("FItemBuilderData", init<  >())
+        .def(init< const FItemBuilderData& >())
+        .def_readwrite("TabName", &FItemBuilderData::TabName)
+        .def_readwrite("ItemName", &FItemBuilderData::ItemName)
+        .def_readwrite("BuildItemMessage", &FItemBuilderData::BuildItemMessage)
+        .def_readwrite("InventoryDefinitionClassName", &FItemBuilderData::InventoryDefinitionClassName)
+        .def_readwrite("InventoryBalanceDefinitionNames", &FItemBuilderData::InventoryBalanceDefinitionNames)
+    ;
+
+    class_< FItemBuilderBalanceDefinition >("FItemBuilderBalanceDefinition", init<  >())
+        .def(init< const FItemBuilderBalanceDefinition& >())
+        .def_readwrite("InventoryDefinitionClass", &FItemBuilderBalanceDefinition::InventoryDefinitionClass)
+        .def_readwrite("BalanceDefinitions", &FItemBuilderBalanceDefinition::BalanceDefinitions)
+    ;
+
+    class_< FItemSettings >("FItemSettings", init<  >())
+        .def(init< const FItemSettings& >())
+        .def_readwrite("ItemDefinition", &FItemSettings::ItemDefinition)
+        .def_readwrite("BalanceDefinition", &FItemSettings::BalanceDefinition)
+        .def_readwrite("ManufacturerDefinition", &FItemSettings::ManufacturerDefinition)
+        .def_readwrite("ManufacturerGradeIndex", &FItemSettings::ManufacturerGradeIndex)
+        .def_readwrite("Level", &FItemSettings::Level)
+        .def_readwrite("GenericParts", &FItemSettings::GenericParts)
+        .def_readwrite("CurrentPartBeingSet", &FItemSettings::CurrentPartBeingSet)
+        .def_readwrite("ItemBuilderIndex", &FItemSettings::ItemBuilderIndex)
+        .def_readwrite("ActiveSubmenuForThisItem", &FItemSettings::ActiveSubmenuForThisItem)
+    ;
+
+    class_< FGearBuilderInventoryPartSlot >("FGearBuilderInventoryPartSlot", init<  >())
+        .def(init< const FGearBuilderInventoryPartSlot& >())
+        .def_readwrite("PartName", &FGearBuilderInventoryPartSlot::PartName)
+        .def_readwrite("SelectedPart", &FGearBuilderInventoryPartSlot::SelectedPart)
+        .def_readwrite("WeightedPartList", &FGearBuilderInventoryPartSlot::WeightedPartList)
+    ;
+
+    class_< FGearBuilderWeightedInventoryPart >("FGearBuilderWeightedInventoryPart", init<  >())
+        .def(init< const FGearBuilderWeightedInventoryPart& >())
+        .def_readwrite("Part", &FGearBuilderWeightedInventoryPart::Part)
+        .def_readwrite("Weight", &FGearBuilderWeightedInventoryPart::Weight)
+        .def_readwrite("ProbabilityOfPickingThisPart", &FGearBuilderWeightedInventoryPart::ProbabilityOfPickingThisPart)
+    ;
+
+    class_< FWeaponSettings >("FWeaponSettings", init<  >())
+        .def(init< const FWeaponSettings& >())
+        .def_readwrite("WeaponTypeDefinition", &FWeaponSettings::WeaponTypeDefinition)
+        .def_readwrite("BalanceDefinition", &FWeaponSettings::BalanceDefinition)
+        .def_readwrite("ManufacturerDefinition", &FWeaponSettings::ManufacturerDefinition)
+        .def_readwrite("ManufacturerGradeIndex", &FWeaponSettings::ManufacturerGradeIndex)
+        .def_readwrite("Level", &FWeaponSettings::Level)
+        .def_readwrite("GenericParts", &FWeaponSettings::GenericParts)
+        .def_readwrite("CurrentPartBeingSet", &FWeaponSettings::CurrentPartBeingSet)
+    ;
+
+    class_< FGearBuilderWeaponPartSlot >("FGearBuilderWeaponPartSlot", init<  >())
+        .def(init< const FGearBuilderWeaponPartSlot& >())
+        .def_readwrite("PartName", &FGearBuilderWeaponPartSlot::PartName)
+        .def_readwrite("SelectedPart", &FGearBuilderWeaponPartSlot::SelectedPart)
+        .def_readwrite("WeightedPartList", &FGearBuilderWeaponPartSlot::WeightedPartList)
+    ;
+
+    class_< FGearBuilderWeightedWeaponPart >("FGearBuilderWeightedWeaponPart", init<  >())
+        .def(init< const FGearBuilderWeightedWeaponPart& >())
+        .def_readwrite("Part", &FGearBuilderWeightedWeaponPart::Part)
+        .def_readwrite("Weight", &FGearBuilderWeightedWeaponPart::Weight)
+        .def_readwrite("ProbabilityOfPickingThisPart", &FGearBuilderWeightedWeaponPart::ProbabilityOfPickingThisPart)
+    ;
+
+    class_< FGearBuilderCustomizationUsageData >("FGearBuilderCustomizationUsageData", init<  >())
+        .def(init< const FGearBuilderCustomizationUsageData& >())
+        .def_readwrite("Usage", &FGearBuilderCustomizationUsageData::Usage)
+        .def_readwrite("CustomizationBalanceDefinitions", &FGearBuilderCustomizationUsageData::CustomizationBalanceDefinitions)
+    ;
+
+    class_< FGearBuilderCustomizationData >("FGearBuilderCustomizationData", init<  >())
+        .def(init< const FGearBuilderCustomizationData& >())
+        .def_readwrite("SortValue", &FGearBuilderCustomizationData::SortValue)
+        .def_readwrite("BalanceDefinition", &FGearBuilderCustomizationData::BalanceDefinition)
+    ;
+
+    class_< FVehicleGameStageGradeWeightData, bases< FGameStageGradeWeightData >  >("FVehicleGameStageGradeWeightData", init<  >())
+        .def(init< const FVehicleGameStageGradeWeightData& >())
+        .def_readwrite("GradeModifiers", &FVehicleGameStageGradeWeightData::GradeModifiers)
+    ;
+
+    class_< FVehicleGradeModifierData >("FVehicleGradeModifierData", init<  >())
+        .def(init< const FVehicleGradeModifierData& >())
+        .def_readwrite("CustomVehicle", &FVehicleGradeModifierData::CustomVehicle)
+        .def_readwrite("DisplayName", &FVehicleGradeModifierData::DisplayName)
+        .def_readwrite("ExpLevel", &FVehicleGradeModifierData::ExpLevel)
+        .def_readwrite("OnSpawnCustomizations", &FVehicleGradeModifierData::OnSpawnCustomizations)
+    ;
+
+    class_< FItemPoolInfo >("FItemPoolInfo", init<  >())
+        .def(init< const FItemPoolInfo& >())
+        .def_readwrite("ItemPool", &FItemPoolInfo::ItemPool)
+        .def_readwrite("PoolProbability", &FItemPoolInfo::PoolProbability)
+    ;
+
+    class_< FVehicleDefaultCrewStruct >("FVehicleDefaultCrewStruct", init<  >())
+        .def(init< const FVehicleDefaultCrewStruct& >())
+        .def_readwrite("PopulationDefForRole", &FVehicleDefaultCrewStruct::PopulationDefForRole)
+        .def_readwrite("Role", &FVehicleDefaultCrewStruct::Role)
+        .def_readwrite("ProbabilityOfSpawn", &FVehicleDefaultCrewStruct::ProbabilityOfSpawn)
+        .def_readwrite("OverrideDefaultSeat", &FVehicleDefaultCrewStruct::OverrideDefaultSeat)
+        .def_readwrite("PreferredSeat", &FVehicleDefaultCrewStruct::PreferredSeat)
+    ;
+
+    class_< FTier >("FTier", init<  >())
+        .def(init< const FTier& >())
+        .def_readwrite("Skills", &FTier::Skills)
+        .def_readwrite("PointsToUnlockNextTier", &FTier::PointsToUnlockNextTier)
+    ;
+
+    class_< FTierLayout >("FTierLayout", init<  >())
+        .def(init< const FTierLayout& >())
+    ;
+
+    class_< FPickupMemento >("FPickupMemento", init<  >())
+        .def(init< const FPickupMemento& >())
+        .def_readwrite("Rotation", &FPickupMemento::Rotation)
+    ;
+
+    class_< FVSSUsageTracking >("FVSSUsageTracking", init<  >())
+        .def(init< const FVSSUsageTracking& >())
+        .def_readwrite("TheTerminal", &FVSSUsageTracking::TheTerminal)
+        .def_readwrite("ThePlayerName", &FVSSUsageTracking::ThePlayerName)
+    ;
+
+    class_< FVehicleCrewAnimSetMapping >("FVehicleCrewAnimSetMapping", init<  >())
+        .def(init< const FVehicleCrewAnimSetMapping& >())
+        .def_readwrite("CharacterName", &FVehicleCrewAnimSetMapping::CharacterName)
+        .def_readwrite("TheAnimSet", &FVehicleCrewAnimSetMapping::TheAnimSet)
+    ;
+
+    class_< FNPCList >("FNPCList", init<  >())
+        .def(init< const FNPCList& >())
+        .def_readwrite("Mind", &FNPCList::Mind)
+        .def_readwrite("LastPathTime", &FNPCList::LastPathTime)
+        .def_readwrite("PathRequestTime", &FNPCList::PathRequestTime)
+        .def_readwrite("Score", &FNPCList::Score)
+    ;
+
+    class_< FSourceObjectData >("FSourceObjectData", init<  >())
+        .def(init< const FSourceObjectData& >())
+        .def_readwrite("UniqueId", &FSourceObjectData::UniqueId)
+        .def_readwrite("SourceObject", &FSourceObjectData::SourceObject)
+        .def_readwrite("SourceLocation", &FSourceObjectData::SourceLocation)
+        .def_readwrite("InstigatedByController", &FSourceObjectData::InstigatedByController)
+        .def_readwrite("DamageContext", &FSourceObjectData::DamageContext)
+        .def_readwrite("UnknownData00", &FSourceObjectData::UnknownData00)
+        .def_readwrite("StartDamageTime", &FSourceObjectData::StartDamageTime)
+        .def_readwrite("TimeElapsedSinceLastDamage", &FSourceObjectData::TimeElapsedSinceLastDamage)
+        .def_readwrite("ExplosionDef", &FSourceObjectData::ExplosionDef)
+        .def_readwrite("ExplosionScaleIndex", &FSourceObjectData::ExplosionScaleIndex)
+        .def_readwrite("InitialDamageRadius", &FSourceObjectData::InitialDamageRadius)
+        .def_readwrite("Damage", &FSourceObjectData::Damage)
+        .def_readwrite("Momentum", &FSourceObjectData::Momentum)
+        .def_readwrite("DamageSource", &FSourceObjectData::DamageSource)
+        .def_readwrite("DamageTypeDef", &FSourceObjectData::DamageTypeDef)
+        .def_readwrite("ImpactDefinition", &FSourceObjectData::ImpactDefinition)
+        .def_readwrite("DamageCauser", &FSourceObjectData::DamageCauser)
+        .def_readwrite("UnknownData01", &FSourceObjectData::UnknownData01)
+        .def_readwrite("HitObject", &FSourceObjectData::HitObject)
+        .def_readwrite("BarrelSourceTime", &FSourceObjectData::BarrelSourceTime)
+        .def_readwrite("PlantSourceTime", &FSourceObjectData::PlantSourceTime)
+    ;
+
+    class_< FDamageOnlyOnceData >("FDamageOnlyOnceData", init<  >())
+        .def(init< const FDamageOnlyOnceData& >())
+        .def_readwrite("UniqueId", &FDamageOnlyOnceData::UniqueId)
+        .def_readwrite("HurtActor", &FDamageOnlyOnceData::HurtActor)
+    ;
+
+    class_< FCurrencyPresentation >("FCurrencyPresentation", init<  >())
+        .def(init< const FCurrencyPresentation& >())
+        .def_readwrite("Type", &FCurrencyPresentation::Type)
+        .def_readwrite("WidgetFrame", &FCurrencyPresentation::WidgetFrame)
+        .def_readwrite("WidgetClip", &FCurrencyPresentation::WidgetClip)
+    ;
+
+    class_< FAssetLibConfig >("FAssetLibConfig", init<  >())
+        .def(init< const FAssetLibConfig& >())
+        .def_readwrite("SublibraryBits", &FAssetLibConfig::SublibraryBits)
+        .def_readwrite("AssetBits", &FAssetLibConfig::AssetBits)
+        .def_readwrite("Desc", &FAssetLibConfig::Desc)
+        .def_readwrite("LibraryType", &FAssetLibConfig::LibraryType)
+    ;
+
+    class_< FSKULibrarySet >("FSKULibrarySet", init<  >())
+        .def(init< const FSKULibrarySet& >())
+        .def_readwrite("Id", &FSKULibrarySet::Id)
+        .def_readwrite("NameID", &FSKULibrarySet::NameID)
+        .def_readwrite("LibrarySetPackage", &FSKULibrarySet::LibrarySetPackage)
+        .def_readwrite("CachedDlcALDefRef", &FSKULibrarySet::CachedDlcALDefRef)
+    ;
+
+    class_< FSKURuntimeLibrarySet >("FSKURuntimeLibrarySet", init<  >())
+        .def(init< const FSKURuntimeLibrarySet& >())
+        .def_readwrite("Id", &FSKURuntimeLibrarySet::Id)
+        .def_readwrite("Libraries", &FSKURuntimeLibrarySet::Libraries)
+    ;
+
+    class_< FLegacyCustomizationItemData >("FLegacyCustomizationItemData", init<  >())
+        .def(init< const FLegacyCustomizationItemData& >())
+        .def_readwrite("ItemPoolDefPath", &FLegacyCustomizationItemData::ItemPoolDefPath)
+        .def_readwrite("ItemPoolKey", &FLegacyCustomizationItemData::ItemPoolKey)
+        .def_readwrite("CustomizationItemPool", &FLegacyCustomizationItemData::CustomizationItemPool)
+    ;
+
+    class_< FInputAxisData >("FInputAxisData", init<  >())
+        .def(init< const FInputAxisData& >())
+        .def_readwrite("AxisName", &FInputAxisData::AxisName)
+        .def_readwrite("InputDeviceHandler", &FInputAxisData::InputDeviceHandler)
+        .def_readwrite("ParameterPtr", &FInputAxisData::ParameterPtr)
+        .def_readwrite("AccelState", &FInputAxisData::AccelState)
+    ;
+
+    class_< FInputDeviceAxisAddress >("FInputDeviceAxisAddress", init<  >())
+        .def(init< const FInputDeviceAxisAddress& >())
+        .def_readwrite("SourceDevice", &FInputDeviceAxisAddress::SourceDevice)
+        .def_readwrite("SourceIndex", &FInputDeviceAxisAddress::SourceIndex)
+    ;
+
+    class_< FInputDeviceAxisData >("FInputDeviceAxisData", init<  >())
+        .def(init< const FInputDeviceAxisData& >())
+        .def_readwrite("AxisName", &FInputDeviceAxisData::AxisName)
+        .def_readwrite("AxisParameter", &FInputDeviceAxisData::AxisParameter)
+        .def_readwrite("DeadZone", &FInputDeviceAxisData::DeadZone)
+        .def_readwrite("Speed", &FInputDeviceAxisData::Speed)
+        .def_readwrite("AbsoluteAxis", &FInputDeviceAxisData::AbsoluteAxis)
+        .def_readwrite("InvertMultiplier", &FInputDeviceAxisData::InvertMultiplier)
+        .def_readwrite("ActionName", &FInputDeviceAxisData::ActionName)
+        .def_readwrite("Caption", &FInputDeviceAxisData::Caption)
+        .def_readwrite("KeyBindGroup", &FInputDeviceAxisData::KeyBindGroup)
+    ;
+
+    class_< FLookAxisDefinitionData >("FLookAxisDefinitionData", init<  >())
+        .def(init< const FLookAxisDefinitionData& >())
+        .def_readwrite("Horizontal", &FLookAxisDefinitionData::Horizontal)
+        .def_readwrite("Vertical", &FLookAxisDefinitionData::Vertical)
+    ;
+
+    class_< FInputDeviceButtonData >("FInputDeviceButtonData", init<  >())
+        .def(init< const FInputDeviceButtonData& >())
+        .def_readwrite("KeyName", &FInputDeviceButtonData::KeyName)
+        .def_readwrite("PressActions", &FInputDeviceButtonData::PressActions)
+        .def_readwrite("TapActions", &FInputDeviceButtonData::TapActions)
+        .def_readwrite("HoldActions", &FInputDeviceButtonData::HoldActions)
+        .def_readwrite("Caption", &FInputDeviceButtonData::Caption)
+        .def_readwrite("KeyBindGroup", &FInputDeviceButtonData::KeyBindGroup)
+        .def_readwrite("RemapToDefaultLayoutInputAction", &FInputDeviceButtonData::RemapToDefaultLayoutInputAction)
+    ;
+
+    class_< FAccelStateData >("FAccelStateData", init<  >())
+        .def(init< const FAccelStateData& >())
+        .def_readwrite("Warmup", &FAccelStateData::Warmup)
+        .def_readwrite("CurrentSpeed", &FAccelStateData::CurrentSpeed)
+        .def_readwrite("Direction", &FAccelStateData::Direction)
+    ;
+
+    class_< FDeviceLookAxisData >("FDeviceLookAxisData", init<  >())
+        .def(init< const FDeviceLookAxisData& >())
+        .def_readwrite("SourceDevice", &FDeviceLookAxisData::SourceDevice)
+        .def_readwrite("LookXAxisName", &FDeviceLookAxisData::LookXAxisName)
+        .def_readwrite("LookYAxisName", &FDeviceLookAxisData::LookYAxisName)
+    ;
+
+    class_< FInputButtonData >("FInputButtonData", init<  >())
+        .def(init< const FInputButtonData& >())
+        .def_readwrite("InputDeviceHandlers", &FInputButtonData::InputDeviceHandlers)
+        .def_readwrite("ButtonName", &FInputButtonData::ButtonName)
+        .def_readwrite("State", &FInputButtonData::State)
+        .def_readwrite("LastPressedTime", &FInputButtonData::LastPressedTime)
+    ;
+
+    class_< FInputDeviceButtonAddress >("FInputDeviceButtonAddress", init<  >())
+        .def(init< const FInputDeviceButtonAddress& >())
+        .def_readwrite("SourceDevice", &FInputDeviceButtonAddress::SourceDevice)
+        .def_readwrite("SourceIndex", &FInputDeviceButtonAddress::SourceIndex)
+        .def_readwrite("RemappedButton", &FInputDeviceButtonAddress::RemappedButton)
+    ;
+
+    class_< FKeyRebindingData >("FKeyRebindingData", init<  >())
+        .def(init< const FKeyRebindingData& >())
+        .def_readwrite("DefaultKeyName", &FKeyRebindingData::DefaultKeyName)
+        .def_readwrite("RemappedKeyName", &FKeyRebindingData::RemappedKeyName)
+    ;
+
+    class_< FKillSkillDuration >("FKillSkillDuration", init<  >())
+        .def(init< const FKillSkillDuration& >())
+        .def_readwrite("Players", &FKillSkillDuration::Players)
+        .def_readwrite("Duration", &FKillSkillDuration::Duration)
+    ;
+
+    class_< FDamageTypeExpModifier >("FDamageTypeExpModifier", init<  >())
+        .def(init< const FDamageTypeExpModifier& >())
+        .def_readwrite("DamageSource", &FDamageTypeExpModifier::DamageSource)
+        .def_readwrite("TypeDefinition", &FDamageTypeExpModifier::TypeDefinition)
+        .def_readwrite("Multiplier", &FDamageTypeExpModifier::Multiplier)
+    ;
+
+    class_< FLevelBasedExpScale >("FLevelBasedExpScale", init<  >())
+        .def(init< const FLevelBasedExpScale& >())
+        .def_readwrite("LevelDifference", &FLevelBasedExpScale::LevelDifference)
+        .def_readwrite("HigherLevelEnemyExpScale", &FLevelBasedExpScale::HigherLevelEnemyExpScale)
+        .def_readwrite("LowerLevelEnemyExpScale", &FLevelBasedExpScale::LowerLevelEnemyExpScale)
+    ;
+
+    class_< FExpAwardWeight >("FExpAwardWeight", init<  >())
+        .def(init< const FExpAwardWeight& >())
+        .def_readwrite("Players", &FExpAwardWeight::Players)
+        .def_readwrite("KillerExpBonus", &FExpAwardWeight::KillerExpBonus)
+        .def_readwrite("ExpWeight", &FExpAwardWeight::ExpWeight)
+    ;
+
+    class_< FRarityLevelColor >("FRarityLevelColor", init<  >())
+        .def(init< const FRarityLevelColor& >())
+        .def_readwrite("MinLevel", &FRarityLevelColor::MinLevel)
+        .def_readwrite("MaxLevel", &FRarityLevelColor::MaxLevel)
+        .def_readwrite("Color", &FRarityLevelColor::Color)
+        .def_readwrite("DropLifeSpanType", &FRarityLevelColor::DropLifeSpanType)
+        .def_readwrite("RarityRating", &FRarityLevelColor::RarityRating)
+    ;
+
+    class_< FPlayThroughData >("FPlayThroughData", init<  >())
+        .def(init< const FPlayThroughData& >())
+        .def_readwrite("PlayThroughNumber", &FPlayThroughData::PlayThroughNumber)
+        .def_readwrite("BalanceDefinitions", &FPlayThroughData::BalanceDefinitions)
+    ;
+
+    class_< FRegionBalanceData >("FRegionBalanceData", init<  >())
+        .def(init< const FRegionBalanceData& >())
+        .def_readwrite("Region", &FRegionBalanceData::Region)
+        .def_readwrite("MinDefaultGameStage", &FRegionBalanceData::MinDefaultGameStage)
+        .def_readwrite("MaxDefaultGameStage", &FRegionBalanceData::MaxDefaultGameStage)
+        .def_readwrite("DefaultAwesomeLevel", &FRegionBalanceData::DefaultAwesomeLevel)
+        .def_readwrite("GameStageIncreaseAbovePlayer", &FRegionBalanceData::GameStageIncreaseAbovePlayer)
+        .def_readwrite("MissionOverrides", &FRegionBalanceData::MissionOverrides)
+    ;
+
+    class_< FMissionStateBalanceAdjustment >("FMissionStateBalanceAdjustment", init<  >())
+        .def(init< const FMissionStateBalanceAdjustment& >())
+        .def_readwrite("Mission", &FMissionStateBalanceAdjustment::Mission)
+        .def_readwrite("MinGameStage", &FMissionStateBalanceAdjustment::MinGameStage)
+        .def_readwrite("MaxGameStage", &FMissionStateBalanceAdjustment::MaxGameStage)
+        .def_readwrite("AwesomeLevel", &FMissionStateBalanceAdjustment::AwesomeLevel)
+    ;
+
+    class_< FStatusEffectTypeCommonProperties >("FStatusEffectTypeCommonProperties", init<  >())
+        .def(init< const FStatusEffectTypeCommonProperties& >())
+        .def_readwrite("StatusEffectType", &FStatusEffectTypeCommonProperties::StatusEffectType)
+        .def_readwrite("EffectStartAkEvent", &FStatusEffectTypeCommonProperties::EffectStartAkEvent)
+        .def_readwrite("EffectStopAkEvent", &FStatusEffectTypeCommonProperties::EffectStopAkEvent)
+    ;
+
+    class_< FTextMarkupEntry >("FTextMarkupEntry", init<  >())
+        .def(init< const FTextMarkupEntry& >())
+        .def_readwrite("MarkupTag", &FTextMarkupEntry::MarkupTag)
+        .def_readwrite("HTMLMarkupBeginText", &FTextMarkupEntry::HTMLMarkupBeginText)
+        .def_readwrite("HTMLMarkupEndText", &FTextMarkupEntry::HTMLMarkupEndText)
+        .def_readwrite("MarkupBeginTag", &FTextMarkupEntry::MarkupBeginTag)
+        .def_readwrite("MarkupEndTag", &FTextMarkupEntry::MarkupEndTag)
+    ;
+
+    class_< FDeveloperData >("FDeveloperData", init<  >())
+        .def(init< const FDeveloperData& >())
+        .def_readwrite("Gamertag", &FDeveloperData::Gamertag)
+        .def_readwrite("UniqueId", &FDeveloperData::UniqueId)
+        .def_readwrite("Platform", &FDeveloperData::Platform)
+        .def_readwrite("UnlocksGamerpics", &FDeveloperData::UnlocksGamerpics)
+    ;
+
+    class_< FPerkData >("FPerkData", init<  >())
+        .def(init< const FPerkData& >())
+        .def_readwrite("ButtonChain", &FPerkData::ButtonChain)
+        .def_readwrite("Command", &FPerkData::Command)
+    ;
+
+    class_< FAchievementUnlockData >("FAchievementUnlockData", init<  >())
+        .def(init< const FAchievementUnlockData& >())
+        .def_readwrite("UnlockType", &FAchievementUnlockData::UnlockType)
+        .def_readwrite("Achievement", &FAchievementUnlockData::Achievement)
+        .def_readwrite("StringData", &FAchievementUnlockData::StringData)
+        .def_readwrite("IntData", &FAchievementUnlockData::IntData)
+    ;
+
+    class_< FSlaughterMissionChain >("FSlaughterMissionChain", init<  >())
+        .def(init< const FSlaughterMissionChain& >())
+        .def_readwrite("SlaughterMissions", &FSlaughterMissionChain::SlaughterMissions)
+    ;
+
+    class_< FInputContextData >("FInputContextData", init<  >())
+        .def(init< const FInputContextData& >())
+        .def_readwrite("ContextName", &FInputContextData::ContextName)
+        .def_readwrite("Definition", &FInputContextData::Definition)
+    ;
+
+    class_< FInputRemappingAxisData >("FInputRemappingAxisData", init<  >())
+        .def(init< const FInputRemappingAxisData& >())
+        .def_readwrite("DefaultAxisName", &FInputRemappingAxisData::DefaultAxisName)
+        .def_readwrite("RemappedAxisName", &FInputRemappingAxisData::RemappedAxisName)
+        .def_readwrite("RemappedAxisParameter", &FInputRemappingAxisData::RemappedAxisParameter)
+        .def_readwrite("Caption", &FInputRemappingAxisData::Caption)
+    ;
+
+    class_< FInputRemappingButtonData >("FInputRemappingButtonData", init<  >())
+        .def(init< const FInputRemappingButtonData& >())
+        .def_readwrite("DefaultKeyName", &FInputRemappingButtonData::DefaultKeyName)
+        .def_readwrite("RemappedKeyName", &FInputRemappingButtonData::RemappedKeyName)
+        .def_readwrite("RemappedPressActions", &FInputRemappingButtonData::RemappedPressActions)
+        .def_readwrite("RemappedTapActions", &FInputRemappingButtonData::RemappedTapActions)
+        .def_readwrite("RemappedHoldActions", &FInputRemappingButtonData::RemappedHoldActions)
+        .def_readwrite("Caption", &FInputRemappingButtonData::Caption)
+    ;
+
+    class_< FTombstoneData >("FTombstoneData", init<  >())
+        .def(init< const FTombstoneData& >())
+        .def_readwrite("TotalTimePlayed", &FTombstoneData::TotalTimePlayed)
+        .def_readwrite("CharacterLevel", &FTombstoneData::CharacterLevel)
+        .def_readwrite("PercentMissionsComplete", &FTombstoneData::PercentMissionsComplete)
+        .def_readwrite("PercentChallengesComplete", &FTombstoneData::PercentChallengesComplete)
+        .def_readwrite("CharacterName", &FTombstoneData::CharacterName)
+        .def_readwrite("FavoriteManufacturer", &FTombstoneData::FavoriteManufacturer)
+        .def_readwrite("FavoriteWeaponType", &FTombstoneData::FavoriteWeaponType)
+        .def_readwrite("KilledByDescription", &FTombstoneData::KilledByDescription)
+        .def_readwrite("ScreenshotFilename", &FTombstoneData::ScreenshotFilename)
+    ;
+
+    class_< FLightProjectile >("FLightProjectile", init<  >())
+        .def(init< const FLightProjectile& >())
+        .def_readwrite("Location", &FLightProjectile::Location)
+        .def_readwrite("PartLocation", &FLightProjectile::PartLocation)
+        .def_readwrite("Velocity", &FLightProjectile::Velocity)
+        .def_readwrite("PartRef", &FLightProjectile::PartRef)
+        .def_readwrite("AudioRef", &FLightProjectile::AudioRef)
+        .def_readwrite("FireDef", &FLightProjectile::FireDef)
+        .def_readwrite("StartTime", &FLightProjectile::StartTime)
+        .def_readwrite("NumRicochets", &FLightProjectile::NumRicochets)
+        .def_readwrite("LastTraceTime", &FLightProjectile::LastTraceTime)
+        .def_readwrite("LastSafeTraceStartLocation", &FLightProjectile::LastSafeTraceStartLocation)
+        .def_readwrite("LastHitActor", &FLightProjectile::LastHitActor)
+        .def_readwrite("Instigator", &FLightProjectile::Instigator)
+        .def_readwrite("Damage", &FLightProjectile::Damage)
+        .def_readwrite("FiringPatternIdx", &FLightProjectile::FiringPatternIdx)
+        .def_readwrite("BulletFromClipType", &FLightProjectile::BulletFromClipType)
+        .def_readwrite("PenetrationCount", &FLightProjectile::PenetrationCount)
+        .def_readwrite("Id", &FLightProjectile::Id)
+        .def_readwrite("StartTrace", &FLightProjectile::StartTrace)
+        .def_readwrite("EndTrace", &FLightProjectile::EndTrace)
+        .def_readwrite("OriginalStartTrace", &FLightProjectile::OriginalStartTrace)
+    ;
+
+    class_< FReplicatedLightProjectile >("FReplicatedLightProjectile", init<  >())
+        .def(init< const FReplicatedLightProjectile& >())
+        .def_readwrite("Id", &FReplicatedLightProjectile::Id)
+        .def_readwrite("StartTrace", &FReplicatedLightProjectile::StartTrace)
+        .def_readwrite("EndTrace", &FReplicatedLightProjectile::EndTrace)
+        .def_readwrite("ReflectSpeed", &FReplicatedLightProjectile::ReflectSpeed)
+        .def_readwrite("FireDef", &FReplicatedLightProjectile::FireDef)
+        .def_readwrite("FiringPatternIdx", &FReplicatedLightProjectile::FiringPatternIdx)
+        .def_readwrite("Instigator", &FReplicatedLightProjectile::Instigator)
+        .def_readwrite("StartTime", &FReplicatedLightProjectile::StartTime)
+    ;
+
+    class_< FBeamState >("FBeamState", init<  >())
+        .def(init< const FBeamState& >())
+        .def_readwrite("BeamIndex", &FBeamState::BeamIndex)
+        .def_readwrite("ServerOnlyState", &FBeamState::ServerOnlyState)
+        .def_readwrite("CoreBeamState", &FBeamState::CoreBeamState)
+        .def_readwrite("PartRef", &FBeamState::PartRef)
+        .def_readwrite("BeamAudioInfo", &FBeamState::BeamAudioInfo)
+        .def_readwrite("BeamImpactAudioInfo", &FBeamState::BeamImpactAudioInfo)
+        .def_readwrite("CurrentStartPoint", &FBeamState::CurrentStartPoint)
+        .def_readwrite("CurrentEndPoint", &FBeamState::CurrentEndPoint)
+        .def_readwrite("CurrentStartTangent", &FBeamState::CurrentStartTangent)
+        .def_readwrite("CurrentEndTangent", &FBeamState::CurrentEndTangent)
+        .def_readwrite("CurrentDirection", &FBeamState::CurrentDirection)
+        .def_readwrite("LastImpactLocation", &FBeamState::LastImpactLocation)
+    ;
+
+    class_< FServerBeamState >("FServerBeamState", init<  >())
+        .def(init< const FServerBeamState& >())
+        .def_readwrite("DamageData", &FServerBeamState::DamageData)
+        .def_readwrite("DamageInstigator", &FServerBeamState::DamageInstigator)
+        .def_readwrite("StartTime", &FServerBeamState::StartTime)
+        .def_readwrite("LockTime", &FServerBeamState::LockTime)
+        .def_readwrite("NextTraceTime", &FServerBeamState::NextTraceTime)
+        .def_readwrite("BeamNetUpdateTime", &FServerBeamState::BeamNetUpdateTime)
+        .def_readwrite("LastDamageApplicationTime", &FServerBeamState::LastDamageApplicationTime)
+        .def_readwrite("LastDamagedActor", &FServerBeamState::LastDamagedActor)
+        .def_readwrite("NextRandomBoneTime", &FServerBeamState::NextRandomBoneTime)
+        .def_readwrite("ParentBeamIndex", &FServerBeamState::ParentBeamIndex)
+        .def_readwrite("ChildBeamsIndicies", &FServerBeamState::ChildBeamsIndicies)
+    ;
+
+    class_< FBeamDamageData >("FBeamDamageData", init<  >())
+        .def(init< const FBeamDamageData& >())
+        .def_readwrite("Momentum", &FBeamDamageData::Momentum)
+        .def_readwrite("Amount", &FBeamDamageData::Amount)
+        .def_readwrite("Radius", &FBeamDamageData::Radius)
+        .def_readwrite("Source", &FBeamDamageData::Source)
+        .def_readwrite("TypeDefinition", &FBeamDamageData::TypeDefinition)
+        .def_readwrite("BarrelSourceTime", &FBeamDamageData::BarrelSourceTime)
+        .def_readwrite("PlantSourceTime", &FBeamDamageData::PlantSourceTime)
+        .def_readwrite("DamageCauser", &FBeamDamageData::DamageCauser)
+        .def_readwrite("UnknownData00", &FBeamDamageData::UnknownData00)
+    ;
+
+    class_< FReplicatedBeamState >("FReplicatedBeamState", init<  >())
+        .def(init< const FReplicatedBeamState& >())
+        .def_readwrite("FireDef", &FReplicatedBeamState::FireDef)
+        .def_readwrite("ImpactDefinition", &FReplicatedBeamState::ImpactDefinition)
+        .def_readwrite("SourceData", &FReplicatedBeamState::SourceData)
+        .def_readwrite("TargetData", &FReplicatedBeamState::TargetData)
+    ;
+
+    class_< FBeamLocationData >("FBeamLocationData", init<  >())
+        .def(init< const FBeamLocationData& >())
+        .def_readwrite("Actor", &FBeamLocationData::Actor)
+        .def_readwrite("Socket", &FBeamLocationData::Socket)
+        .def_readwrite("Offset", &FBeamLocationData::Offset)
+        .def_readwrite("WorldBody", &FBeamLocationData::WorldBody)
+        .def_readwrite("UnknownData00", &FBeamLocationData::UnknownData00)
+    ;
+
+    class_< FReplicatedBeamEndPoints >("FReplicatedBeamEndPoints", init<  >())
+        .def(init< const FReplicatedBeamEndPoints& >())
+        .def_readwrite("StartPoint", &FReplicatedBeamEndPoints::StartPoint)
+        .def_readwrite("EndPoint", &FReplicatedBeamEndPoints::EndPoint)
+    ;
+
+    class_< FCameraLerpKeyFrame >("FCameraLerpKeyFrame", init<  >())
+        .def(init< const FCameraLerpKeyFrame& >())
+        .def_readwrite("Alpha", &FCameraLerpKeyFrame::Alpha)
+        .def_readwrite("CameraTargetThisKeyFrame", &FCameraLerpKeyFrame::CameraTargetThisKeyFrame)
+        .def_readwrite("CameraRotationBehavior", &FCameraLerpKeyFrame::CameraRotationBehavior)
+        .def_readwrite("BaseCameraPosition", &FCameraLerpKeyFrame::BaseCameraPosition)
+        .def_readwrite("CameraOffset", &FCameraLerpKeyFrame::CameraOffset)
+        .def_readwrite("ForcedCameraRotation", &FCameraLerpKeyFrame::ForcedCameraRotation)
+    ;
+
+    class_< FVehicleSeatInstance >("FVehicleSeatInstance", init<  >())
+        .def(init< const FVehicleSeatInstance& >())
+        .def_readwrite("StoragePawn", &FVehicleSeatInstance::StoragePawn)
+        .def_readwrite("LastStoragePawn", &FVehicleSeatInstance::LastStoragePawn)
+        .def_readwrite("SeatPawn", &FVehicleSeatInstance::SeatPawn)
+        .def_readwrite("Gun", &FVehicleSeatInstance::Gun)
+        .def_readwrite("GunMesh", &FVehicleSeatInstance::GunMesh)
+        .def_readwrite("GunDefinition", &FVehicleSeatInstance::GunDefinition)
+        .def_readwrite("BarrelIndex", &FVehicleSeatInstance::BarrelIndex)
+        .def_readwrite("WeaponRotationName", &FVehicleSeatInstance::WeaponRotationName)
+        .def_readwrite("FlashLocationName", &FVehicleSeatInstance::FlashLocationName)
+        .def_readwrite("FlashCountName", &FVehicleSeatInstance::FlashCountName)
+        .def_readwrite("FiringModeName", &FVehicleSeatInstance::FiringModeName)
+        .def_readwrite("AttachedWeaponName", &FVehicleSeatInstance::AttachedWeaponName)
+        .def_readwrite("TurretControllers", &FVehicleSeatInstance::TurretControllers)
+        .def_readwrite("WeaponFireSMD", &FVehicleSeatInstance::WeaponFireSMD)
+        .def_readwrite("OldPositions", &FVehicleSeatInstance::OldPositions)
+        .def_readwrite("SmoothedCameraOffset", &FVehicleSeatInstance::SmoothedCameraOffset)
+        .def_readwrite("IncomingSeatIndex", &FVehicleSeatInstance::IncomingSeatIndex)
+        .def_readwrite("SeatLockTime", &FVehicleSeatInstance::SeatLockTime)
+    ;
+
+    class_< FTurretConstraintData >("FTurretConstraintData", init<  >())
+        .def(init< const FTurretConstraintData& >())
+        .def_readwrite("PitchConstraint", &FTurretConstraintData::PitchConstraint)
+        .def_readwrite("YawConstraint", &FTurretConstraintData::YawConstraint)
+        .def_readwrite("RollConstraint", &FTurretConstraintData::RollConstraint)
+    ;
+
+    class_< FTimePosition >("FTimePosition", init<  >())
+        .def(init< const FTimePosition& >())
+        .def_readwrite("Position", &FTimePosition::Position)
+        .def_readwrite("Time", &FTimePosition::Time)
+    ;
+
+    class_< FVirtualSeatStruct >("FVirtualSeatStruct", init<  >())
+        .def(init< const FVirtualSeatStruct& >())
+        .def_readwrite("NameKey", &FVirtualSeatStruct::NameKey)
+        .def_readwrite("CurrentRealSeat", &FVirtualSeatStruct::CurrentRealSeat)
+    ;
+
+    class_< FVehicleEffect >("FVehicleEffect", init<  >())
+        .def(init< const FVehicleEffect& >())
+        .def_readwrite("EffectStartTag", &FVehicleEffect::EffectStartTag)
+        .def_readwrite("EffectEndTag", &FVehicleEffect::EffectEndTag)
+        .def_readwrite("EffectTemplate", &FVehicleEffect::EffectTemplate)
+        .def_readwrite("EffectSocket", &FVehicleEffect::EffectSocket)
+        .def_readwrite("EffectRef", &FVehicleEffect::EffectRef)
+        .def_readwrite("EffectAudioStartAkEvent", &FVehicleEffect::EffectAudioStartAkEvent)
+        .def_readwrite("EffectAudioStopAkEvent", &FVehicleEffect::EffectAudioStopAkEvent)
+    ;
+
+    class_< FFDamageMorphTargets >("FFDamageMorphTargets", init<  >())
+        .def(init< const FFDamageMorphTargets& >())
+        .def_readwrite("MorphNodeName", &FFDamageMorphTargets::MorphNodeName)
+        .def_readwrite("MorphNode", &FFDamageMorphTargets::MorphNode)
+        .def_readwrite("LinkedMorphNodeName", &FFDamageMorphTargets::LinkedMorphNodeName)
+        .def_readwrite("LinkedMorphNodeIndex", &FFDamageMorphTargets::LinkedMorphNodeIndex)
+        .def_readwrite("AssociatedSkelControl", &FFDamageMorphTargets::AssociatedSkelControl)
+        .def_readwrite("InfluenceBone", &FFDamageMorphTargets::InfluenceBone)
+        .def_readwrite("Health", &FFDamageMorphTargets::Health)
+        .def_readwrite("DamagePropNames", &FFDamageMorphTargets::DamagePropNames)
+    ;
+
+    class_< FSuspensionSound >("FSuspensionSound", init<  >())
+        .def(init< const FSuspensionSound& >())
+        .def_readwrite("LastSuspensionTravel", &FSuspensionSound::LastSuspensionTravel)
+        .def_readwrite("LastPlayTime", &FSuspensionSound::LastPlayTime)
+        .def_readwrite("PlayingInfo", &FSuspensionSound::PlayingInfo)
+    ;
+
+    class_< FPursuitNode >("FPursuitNode", init<  >())
+        .def(init< const FPursuitNode& >())
+        .def_readwrite("RelativeLocation", &FPursuitNode::RelativeLocation)
+        .def_readwrite("RelativeDistance", &FPursuitNode::RelativeDistance)
+        .def_readwrite("EvasiveActionDistance", &FPursuitNode::EvasiveActionDistance)
+        .def_readwrite("NodeType", &FPursuitNode::NodeType)
+        .def_readwrite("LastReservedTime", &FPursuitNode::LastReservedTime)
+        .def_readwrite("ReservedBy", &FPursuitNode::ReservedBy)
+        .def_readwrite("AIAlertDistance", &FPursuitNode::AIAlertDistance)
+        .def_readwrite("AIAlertFlagDef", &FPursuitNode::AIAlertFlagDef)
+    ;
+
+    class_< FPursuitNodeData >("FPursuitNodeData", init<  >())
+        .def(init< const FPursuitNodeData& >())
+        .def_readwrite("RelativeLocation", &FPursuitNodeData::RelativeLocation)
+        .def_readwrite("NodeType", &FPursuitNodeData::NodeType)
+        .def_readwrite("EvasiveActionDistance", &FPursuitNodeData::EvasiveActionDistance)
+        .def_readwrite("AIAlertDistance", &FPursuitNodeData::AIAlertDistance)
+        .def_readwrite("AIAlertFlagDef", &FPursuitNodeData::AIAlertFlagDef)
+    ;
+
+    class_< FIndexPair >("FIndexPair", init<  >())
+        .def(init< const FIndexPair& >())
+        .def_readwrite("Index1", &FIndexPair::Index1)
+        .def_readwrite("Index2", &FIndexPair::Index2)
+    ;
+
+    class_< FVehicleHandlingWheelData >("FVehicleHandlingWheelData", init<  >())
+        .def(init< const FVehicleHandlingWheelData& >())
+        .def_readwrite("BoneName", &FVehicleHandlingWheelData::BoneName)
+        .def_readwrite("WheelDef", &FVehicleHandlingWheelData::WheelDef)
+    ;
+
+    class_< FFishtailingInfo >("FFishtailingInfo", init<  >())
+        .def(init< const FFishtailingInfo& >())
+        .def_readwrite("ContactPoint", &FFishtailingInfo::ContactPoint)
+        .def_readwrite("Impulse", &FFishtailingInfo::Impulse)
+    ;
+
+    class_< FCollisionDamageCalculation >("FCollisionDamageCalculation", init<  >())
+        .def(init< const FCollisionDamageCalculation& >())
+        .def_readwrite("DamageType", &FCollisionDamageCalculation::DamageType)
+        .def_readwrite("DamageTypes", &FCollisionDamageCalculation::DamageTypes)
+        .def_readwrite("Formula", &FCollisionDamageCalculation::Formula)
+        .def_readwrite("MomentumFactor", &FCollisionDamageCalculation::MomentumFactor)
+        .def_readwrite("AddZMomentum", &FCollisionDamageCalculation::AddZMomentum)
+    ;
+
+    class_< FDamageTypeBySpeedStruct >("FDamageTypeBySpeedStruct", init<  >())
+        .def(init< const FDamageTypeBySpeedStruct& >())
+        .def_readwrite("Speed", &FDamageTypeBySpeedStruct::Speed)
+        .def_readwrite("DamageType", &FDamageTypeBySpeedStruct::DamageType)
+    ;
+
+    class_< FVehicleSeatDefinition >("FVehicleSeatDefinition", init<  >())
+        .def(init< const FVehicleSeatDefinition& >())
+        .def_readwrite("SeatDefinition", &FVehicleSeatDefinition::SeatDefinition)
+        .def_readwrite("WeaponBalanceDefinition", &FVehicleSeatDefinition::WeaponBalanceDefinition)
+        .def_readwrite("WeaponFireSMD", &FVehicleSeatDefinition::WeaponFireSMD)
+        .def_readwrite("NextSeatIndex", &FVehicleSeatDefinition::NextSeatIndex)
+        .def_readwrite("Anim_SeatSwap", &FVehicleSeatDefinition::Anim_SeatSwap)
+        .def_readwrite("SeatAIDef", &FVehicleSeatDefinition::SeatAIDef)
+        .def_readwrite("SeatInteractTextDefinition", &FVehicleSeatDefinition::SeatInteractTextDefinition)
+        .def_readwrite("GunSocket", &FVehicleSeatDefinition::GunSocket)
+        .def_readwrite("SeatNameEnter", &FVehicleSeatDefinition::SeatNameEnter)
+        .def_readwrite("SeatNameExit", &FVehicleSeatDefinition::SeatNameExit)
+    ;
+
+    class_< FVStatusEffectResistance >("FVStatusEffectResistance", init<  >())
+        .def(init< const FVStatusEffectResistance& >())
+        .def_readwrite("ChanceResistance", &FVStatusEffectResistance::ChanceResistance)
+        .def_readwrite("DurationResistance", &FVStatusEffectResistance::DurationResistance)
+    ;
+
+    class_< FMissionStatusData >("FMissionStatusData", init<  >())
+        .def(init< const FMissionStatusData& >())
+        .def_readwrite("MissionDefinition", &FMissionStatusData::MissionDefinition)
+        .def_readwrite("MissionStatus", &FMissionStatusData::MissionStatus)
+        .def_readwrite("MissionObjective", &FMissionStatusData::MissionObjective)
+        .def_readwrite("ObjectiveStatus", &FMissionStatusData::ObjectiveStatus)
+    ;
+
+    class_< FObjectiveDependencyData >("FObjectiveDependencyData", init<  >())
+        .def(init< const FObjectiveDependencyData& >())
+        .def_readwrite("Objective", &FObjectiveDependencyData::Objective)
+        .def_readwrite("Status", &FObjectiveDependencyData::Status)
+    ;
+
+    class_< FRewardData >("FRewardData", init<  >())
+        .def(init< const FRewardData& >())
+        .def_readwrite("ExperienceRewardPercentage", &FRewardData::ExperienceRewardPercentage)
+        .def_readwrite("CurrencyRewardType", &FRewardData::CurrencyRewardType)
+        .def_readwrite("CreditRewardMultiplier", &FRewardData::CreditRewardMultiplier)
+        .def_readwrite("OtherCurrencyReward", &FRewardData::OtherCurrencyReward)
+        .def_readwrite("RewardItems", &FRewardData::RewardItems)
+        .def_readwrite("RewardItemPools", &FRewardData::RewardItemPools)
+    ;
+
+    class_< FUnloadableDlcMissionStatusData >("FUnloadableDlcMissionStatusData", init<  >())
+        .def(init< const FUnloadableDlcMissionStatusData& >())
+        .def_readwrite("MissionDefName", &FUnloadableDlcMissionStatusData::MissionDefName)
+        .def_readwrite("Status", &FUnloadableDlcMissionStatusData::Status)
+        .def_readwrite("DlcPackageId", &FUnloadableDlcMissionStatusData::DlcPackageId)
+        .def_readwrite("ObjectivesProgress", &FUnloadableDlcMissionStatusData::ObjectivesProgress)
+        .def_readwrite("ActiveObjectiveSetIndex", &FUnloadableDlcMissionStatusData::ActiveObjectiveSetIndex)
+        .def_readwrite("SubObjectiveSetsIndices", &FUnloadableDlcMissionStatusData::SubObjectiveSetsIndices)
+        .def_readwrite("GameStage", &FUnloadableDlcMissionStatusData::GameStage)
+        .def_readwrite("NeedsRewards", &FUnloadableDlcMissionStatusData::NeedsRewards)
+        .def_readwrite("HeardKickoff", &FUnloadableDlcMissionStatusData::HeardKickoff)
+    ;
+
+    class_< FUnloadableDlcPendingRewardData >("FUnloadableDlcPendingRewardData", init<  >())
+        .def(init< const FUnloadableDlcPendingRewardData& >())
+        .def_readwrite("MissionDefName", &FUnloadableDlcPendingRewardData::MissionDefName)
+        .def_readwrite("WeaponRewards", &FUnloadableDlcPendingRewardData::WeaponRewards)
+        .def_readwrite("ItemRewards", &FUnloadableDlcPendingRewardData::ItemRewards)
+        .def_readwrite("DlcPackageId", &FUnloadableDlcPendingRewardData::DlcPackageId)
+    ;
+
+    class_< FExpansionData >("FExpansionData", init<  >())
+        .def(init< const FExpansionData& >())
+        .def_readwrite("Tag", &FExpansionData::Tag)
+        .def_readwrite("Data", &FExpansionData::Data)
+    ;
+
+    class_< FUnloadableDlcChallengeData >("FUnloadableDlcChallengeData", init<  >())
+        .def(init< const FUnloadableDlcChallengeData& >())
+        .def_readwrite("ChallengeDefName", &FUnloadableDlcChallengeData::ChallengeDefName)
+        .def_readwrite("DlcPackageId", &FUnloadableDlcChallengeData::DlcPackageId)
+    ;
+
+    class_< FRegionGameStageData >("FRegionGameStageData", init<  >())
+        .def(init< const FRegionGameStageData& >())
+        .def_readwrite("RegionDef", &FRegionGameStageData::RegionDef)
+        .def_readwrite("GameStage", &FRegionGameStageData::GameStage)
+        .def_readwrite("PlaythroughIdx", &FRegionGameStageData::PlaythroughIdx)
+    ;
+
+    class_< FUnloadableDlcRegionGameStageData >("FUnloadableDlcRegionGameStageData", init<  >())
+        .def(init< const FUnloadableDlcRegionGameStageData& >())
+        .def_readwrite("RegionDefName", &FUnloadableDlcRegionGameStageData::RegionDefName)
+        .def_readwrite("GameStage", &FUnloadableDlcRegionGameStageData::GameStage)
+        .def_readwrite("PlaythroughIdx", &FUnloadableDlcRegionGameStageData::PlaythroughIdx)
+        .def_readwrite("DlcPackageId", &FUnloadableDlcRegionGameStageData::DlcPackageId)
+    ;
+
+    class_< FWorldDiscoveryData >("FWorldDiscoveryData", init<  >())
+        .def(init< const FWorldDiscoveryData& >())
+        .def_readwrite("DiscoveryName", &FWorldDiscoveryData::DiscoveryName)
+        .def_readwrite("HasBeenUncovered", &FWorldDiscoveryData::HasBeenUncovered)
+    ;
+
+    class_< FOneOffLevelChallengeData >("FOneOffLevelChallengeData", init<  >())
+        .def(init< const FOneOffLevelChallengeData& >())
+        .def_readwrite("PackageId", &FOneOffLevelChallengeData::PackageId)
+        .def_readwrite("ContentId", &FOneOffLevelChallengeData::ContentId)
+        .def_readwrite("Completion", &FOneOffLevelChallengeData::Completion)
+    ;
+
+    class_< FBankSlot >("FBankSlot", init<  >())
+        .def(init< const FBankSlot& >())
+        .def_readwrite("InventorySerialNumber", &FBankSlot::InventorySerialNumber)
+    ;
+
+    class_< FLockoutData >("FLockoutData", init<  >())
+        .def(init< const FLockoutData& >())
+        .def_readwrite("LockoutDef", &FLockoutData::LockoutDef)
+        .def_readwrite("LockoutTime", &FLockoutData::LockoutTime)
+    ;
+
+    class_< FUnloadableDlcLockoutData >("FUnloadableDlcLockoutData", init<  >())
+        .def(init< const FUnloadableDlcLockoutData& >())
+        .def_readwrite("LockoutDefName", &FUnloadableDlcLockoutData::LockoutDefName)
+        .def_readwrite("LockoutTime", &FUnloadableDlcLockoutData::LockoutTime)
+        .def_readwrite("DlcPackageId", &FUnloadableDlcLockoutData::DlcPackageId)
+    ;
+
+    class_< FChosenVehicleCustomization >("FChosenVehicleCustomization", init<  >())
+        .def(init< const FChosenVehicleCustomization& >())
+        .def_readwrite("FamilyDef", &FChosenVehicleCustomization::FamilyDef)
+        .def_readwrite("CustomizationDef", &FChosenVehicleCustomization::CustomizationDef)
+    ;
+
+    class_< FPlayerClassAchievementUnlockData >("FPlayerClassAchievementUnlockData", init<  >())
+        .def(init< const FPlayerClassAchievementUnlockData& >())
+        .def_readwrite("UnlockType", &FPlayerClassAchievementUnlockData::UnlockType)
+        .def_readwrite("Achievement", &FPlayerClassAchievementUnlockData::Achievement)
+        .def_readwrite("IntData", &FPlayerClassAchievementUnlockData::IntData)
+    ;
+
+    class_< FPlayerSkillTreeBranchData >("FPlayerSkillTreeBranchData", init<  >())
+        .def(init< const FPlayerSkillTreeBranchData& >())
+        .def_readwrite("Definition", &FPlayerSkillTreeBranchData::Definition)
+        .def_readwrite("BranchPointsToUnlockNextBranch", &FPlayerSkillTreeBranchData::BranchPointsToUnlockNextBranch)
+        .def_readwrite("Index", &FPlayerSkillTreeBranchData::Index)
+        .def_readwrite("ParentBranchIndex", &FPlayerSkillTreeBranchData::ParentBranchIndex)
+        .def_readwrite("PrevBranchIndex", &FPlayerSkillTreeBranchData::PrevBranchIndex)
+        .def_readwrite("NextBranchIndex", &FPlayerSkillTreeBranchData::NextBranchIndex)
+        .def_readwrite("ChildBranchIndices", &FPlayerSkillTreeBranchData::ChildBranchIndices)
+        .def_readwrite("TierIndices", &FPlayerSkillTreeBranchData::TierIndices)
+        .def_readwrite("Owner", &FPlayerSkillTreeBranchData::Owner)
+    ;
+
+    class_< FPlayerSkillTreeTierData >("FPlayerSkillTreeTierData", init<  >())
+        .def(init< const FPlayerSkillTreeTierData& >())
+        .def_readwrite("SkillIndices", &FPlayerSkillTreeTierData::SkillIndices)
+        .def_readwrite("BranchPointsToUnlockTier", &FPlayerSkillTreeTierData::BranchPointsToUnlockTier)
+        .def_readwrite("Index", &FPlayerSkillTreeTierData::Index)
+        .def_readwrite("PrevTierIndex", &FPlayerSkillTreeTierData::PrevTierIndex)
+        .def_readwrite("NextTierIndex", &FPlayerSkillTreeTierData::NextTierIndex)
+        .def_readwrite("ParentBranchIndex", &FPlayerSkillTreeTierData::ParentBranchIndex)
+        .def_readwrite("TierNumber", &FPlayerSkillTreeTierData::TierNumber)
+        .def_readwrite("Owner", &FPlayerSkillTreeTierData::Owner)
+    ;
+
+    class_< FPlayerSkillTreeSkillData >("FPlayerSkillTreeSkillData", init<  >())
+        .def(init< const FPlayerSkillTreeSkillData& >())
+        .def_readwrite("Definition", &FPlayerSkillTreeSkillData::Definition)
+        .def_readwrite("Index", &FPlayerSkillTreeSkillData::Index)
+        .def_readwrite("PrevSkillIndex", &FPlayerSkillTreeSkillData::PrevSkillIndex)
+        .def_readwrite("NextSkillIndex", &FPlayerSkillTreeSkillData::NextSkillIndex)
+        .def_readwrite("ParentTierIndex", &FPlayerSkillTreeSkillData::ParentTierIndex)
+        .def_readwrite("PrevSkillTypeIndex", &FPlayerSkillTreeSkillData::PrevSkillTypeIndex)
+        .def_readwrite("NextSkillTypeIndex", &FPlayerSkillTreeSkillData::NextSkillTypeIndex)
+        .def_readwrite("Grade", &FPlayerSkillTreeSkillData::Grade)
+        .def_readwrite("Owner", &FPlayerSkillTreeSkillData::Owner)
+    ;
+
+    class_< FSkillTreeTierLayoutData >("FSkillTreeTierLayoutData", init<  >())
+        .def(init< const FSkillTreeTierLayoutData& >())
+        .def_readwrite("ParentBranchDefinition", &FSkillTreeTierLayoutData::ParentBranchDefinition)
+        .def_readwrite("TierNumber", &FSkillTreeTierLayoutData::TierNumber)
+        .def_readwrite("DependencyBranchDefinition", &FSkillTreeTierLayoutData::DependencyBranchDefinition)
+        .def_readwrite("DependencyTierNumber", &FSkillTreeTierLayoutData::DependencyTierNumber)
+        .def_readwrite("Skills", &FSkillTreeTierLayoutData::Skills)
+    ;
+
+    class_< FSkillTreeTierStateData >("FSkillTreeTierStateData", init<  >())
+        .def(init< const FSkillTreeTierStateData& >())
+        .def_readwrite("ParentBranchDefinition", &FSkillTreeTierStateData::ParentBranchDefinition)
+        .def_readwrite("TierNumber", &FSkillTreeTierStateData::TierNumber)
+        .def_readwrite("PointsSpentInTier", &FSkillTreeTierStateData::PointsSpentInTier)
+    ;
+
+    class_< FSkillTreeBranchStateData >("FSkillTreeBranchStateData", init<  >())
+        .def(init< const FSkillTreeBranchStateData& >())
+        .def_readwrite("BranchDefinition", &FSkillTreeBranchStateData::BranchDefinition)
+        .def_readwrite("PointsSpentInBranch", &FSkillTreeBranchStateData::PointsSpentInBranch)
+        .def_readwrite("MaxPointsForBranch", &FSkillTreeBranchStateData::MaxPointsForBranch)
+    ;
+
+    class_< FSkillTreeSkillStateData >("FSkillTreeSkillStateData", init<  >())
+        .def(init< const FSkillTreeSkillStateData& >())
+        .def_readwrite("SkillDefinition", &FSkillTreeSkillStateData::SkillDefinition)
+        .def_readwrite("ParentBranchDefinition", &FSkillTreeSkillStateData::ParentBranchDefinition)
+        .def_readwrite("TierNumber", &FSkillTreeSkillStateData::TierNumber)
+        .def_readwrite("SkillGrade", &FSkillTreeSkillStateData::SkillGrade)
+    ;
+
+    class_< FShopItemData >("FShopItemData", init<  >())
+        .def(init< const FShopItemData& >())
+        .def_readwrite("Item", &FShopItemData::Item)
+        .def_readwrite("Price", &FShopItemData::Price)
+        .def_readwrite("ItemStatus", &FShopItemData::ItemStatus)
+    ;
+
+    class_< FPostProcessOverlayInfo >("FPostProcessOverlayInfo", init<  >())
+        .def(init< const FPostProcessOverlayInfo& >())
+        .def_readwrite("PostProcessOverlay", &FPostProcessOverlayInfo::PostProcessOverlay)
+        .def_readwrite("SceneInterpolationPhaseTime", &FPostProcessOverlayInfo::SceneInterpolationPhaseTime)
+        .def_readwrite("SceneInterpolationDuration", &FPostProcessOverlayInfo::SceneInterpolationDuration)
+        .def_readwrite("PostProcessOverlayPhase", &FPostProcessOverlayInfo::PostProcessOverlayPhase)
+    ;
+
+    class_< FPostProcessOverlay >("FPostProcessOverlay", init<  >())
+        .def(init< const FPostProcessOverlay& >())
+        .def_readwrite("OverlayName", &FPostProcessOverlay::OverlayName)
+        .def_readwrite("DestPostProcessOverlay", &FPostProcessOverlay::DestPostProcessOverlay)
+        .def_readwrite("MinTransitionInDuration", &FPostProcessOverlay::MinTransitionInDuration)
+        .def_readwrite("MinTransitionHoldDuration", &FPostProcessOverlay::MinTransitionHoldDuration)
+        .def_readwrite("MinTransitionOutDuration", &FPostProcessOverlay::MinTransitionOutDuration)
+        .def_readwrite("MaxTransitionInDuration", &FPostProcessOverlay::MaxTransitionInDuration)
+        .def_readwrite("MaxTransitionHoldDuration", &FPostProcessOverlay::MaxTransitionHoldDuration)
+        .def_readwrite("MaxTransitionOutDuration", &FPostProcessOverlay::MaxTransitionOutDuration)
+        .def_readwrite("ClearOverlayQueueAfterTransition", &FPostProcessOverlay::ClearOverlayQueueAfterTransition)
+    ;
+
+    class_< FPostProcessChainRecord >("FPostProcessChainRecord", init<  >())
+        .def(init< const FPostProcessChainRecord& >())
+        .def_readwrite("Template", &FPostProcessChainRecord::Template)
+        .def_readwrite("Instance", &FPostProcessChainRecord::Instance)
+        .def_readwrite("AppliedModifiers", &FPostProcessChainRecord::AppliedModifiers)
+        .def_readwrite("PopWhenScalarParamIsMaxedOut", &FPostProcessChainRecord::PopWhenScalarParamIsMaxedOut)
+        .def_readwrite("DOFEffectModifier", &FPostProcessChainRecord::DOFEffectModifier)
+        .def_readwrite("NextDOFUpdateTime", &FPostProcessChainRecord::NextDOFUpdateTime)
+    ;
+
+    class_< FMaterialEffectModifier >("FMaterialEffectModifier", init<  >())
+        .def(init< const FMaterialEffectModifier& >())
+        .def_readwrite("EffectName", &FMaterialEffectModifier::EffectName)
+        .def_readwrite("ScalarParams", &FMaterialEffectModifier::ScalarParams)
+        .def_readwrite("CachedValue", &FMaterialEffectModifier::CachedValue)
+        .def_readwrite("MaterialInstance", &FMaterialEffectModifier::MaterialInstance)
+    ;
+
+    class_< FDOFEffectModifierData >("FDOFEffectModifierData", init<  >())
+        .def(init< const FDOFEffectModifierData& >())
+        .def_readwrite("AutoRelcalculateFocusDistance", &FDOFEffectModifierData::AutoRelcalculateFocusDistance)
+        .def_readwrite("RecalculateFocusDistanceRate", &FDOFEffectModifierData::RecalculateFocusDistanceRate)
+        .def_readwrite("FocusDistanceLerpRate", &FDOFEffectModifierData::FocusDistanceLerpRate)
+    ;
+
+    class_< FWillowStatProperty >("FWillowStatProperty", init<  >())
+        .def(init< const FWillowStatProperty& >())
+        .def_readwrite("Id", &FWillowStatProperty::Id)
+        .def_readwrite("Data", &FWillowStatProperty::Data)
+        .def_readwrite("MaxData", &FWillowStatProperty::MaxData)
+        .def_readwrite("ChallengeBaseData", &FWillowStatProperty::ChallengeBaseData)
+        .def_readwrite("OnlineId", &FWillowStatProperty::OnlineId)
+    ;
+
+    class_< FSpeedKillData >("FSpeedKillData", init<  >())
+        .def(init< const FSpeedKillData& >())
+        .def_readwrite("VictimName", &FSpeedKillData::VictimName)
+        .def_readwrite("VictimKillTime", &FSpeedKillData::VictimKillTime)
+    ;
+
+    class_< FDialogBoxLayout >("FDialogBoxLayout", init<  >())
+        .def(init< const FDialogBoxLayout& >())
+        .def_readwrite("LayoutTag", &FDialogBoxLayout::LayoutTag)
+        .def_readwrite("CancelTag", &FDialogBoxLayout::CancelTag)
+        .def_readwrite("Buttons", &FDialogBoxLayout::Buttons)
+    ;
+
+    class_< FDialogBoxButton >("FDialogBoxButton", init<  >())
+        .def(init< const FDialogBoxButton& >())
+        .def_readwrite("Caption", &FDialogBoxButton::Caption)
+        .def_readwrite("TipText", &FDialogBoxButton::TipText)
+        .def_readwrite("Tag", &FDialogBoxButton::Tag)
+        .def_readwrite("Keys", &FDialogBoxButton::Keys)
+        .def_readwrite("OnButtonClicked", &FDialogBoxButton::OnButtonClicked)
+    ;
+
+    class_< FLungeData >("FLungeData", init<  >())
+        .def(init< const FLungeData& >())
+        .def_readwrite("Target", &FLungeData::Target)
+        .def_readwrite("Length", &FLungeData::Length)
+        .def_readwrite("Start", &FLungeData::Start)
+        .def_readwrite("SavedAccelRate", &FLungeData::SavedAccelRate)
+    ;
+
+    class_< FLurchData >("FLurchData", init<  >())
+        .def(init< const FLurchData& >())
+        .def_readwrite("StartTime", &FLurchData::StartTime)
+        .def_readwrite("LocMagnitude", &FLurchData::LocMagnitude)
+        .def_readwrite("RotMagnitude", &FLurchData::RotMagnitude)
+        .def_readwrite("Duration", &FLurchData::Duration)
+        .def_readwrite("FalloffRate", &FLurchData::FalloffRate)
+    ;
+
+    class_< FScreenParticleRecord >("FScreenParticleRecord", init<  >())
+        .def(init< const FScreenParticleRecord& >())
+        .def_readwrite("Tag", &FScreenParticleRecord::Tag)
+        .def_readwrite("Template", &FScreenParticleRecord::Template)
+        .def_readwrite("MatParamName", &FScreenParticleRecord::MatParamName)
+        .def_readwrite("Component", &FScreenParticleRecord::Component)
+        .def_readwrite("AppliedModifiers", &FScreenParticleRecord::AppliedModifiers)
+        .def_readwrite("ContentDims", &FScreenParticleRecord::ContentDims)
+        .def_readwrite("ParticleDepth", &FScreenParticleRecord::ParticleDepth)
+        .def_readwrite("ScalingMode", &FScreenParticleRecord::ScalingMode)
+        .def_readwrite("StopParamsOT", &FScreenParticleRecord::StopParamsOT)
+        .def_readwrite("StopTime", &FScreenParticleRecord::StopTime)
+    ;
+
+    class_< FMissionPlaythroughData >("FMissionPlaythroughData", init<  >())
+        .def(init< const FMissionPlaythroughData& >())
+        .def_readwrite("MissionList", &FMissionPlaythroughData::MissionList)
+        .def_readwrite("UnloadableDlcMissionList", &FMissionPlaythroughData::UnloadableDlcMissionList)
+        .def_readwrite("UnloadableDlcPendingMissionRewards", &FMissionPlaythroughData::UnloadableDlcPendingMissionRewards)
+        .def_readwrite("FilteredMissions", &FMissionPlaythroughData::FilteredMissions)
+        .def_readwrite("ActiveMission", &FMissionPlaythroughData::ActiveMission)
+        .def_readwrite("PlayThroughNumber", &FMissionPlaythroughData::PlayThroughNumber)
+    ;
+
+    class_< FMenuItemCallback >("FMenuItemCallback", init<  >())
+        .def(init< const FMenuItemCallback& >())
+        .def_readwrite("Tag", &FMenuItemCallback::Tag)
+        .def_readwrite("OnClicked", &FMenuItemCallback::OnClicked)
+    ;
+
+    class_< FRecentlyResistedAttackData >("FRecentlyResistedAttackData", init<  >())
+        .def(init< const FRecentlyResistedAttackData& >())
+        .def_readwrite("DamagedActor", &FRecentlyResistedAttackData::DamagedActor)
+        .def_readwrite("DamageType", &FRecentlyResistedAttackData::DamageType)
+        .def_readwrite("LastResistTime", &FRecentlyResistedAttackData::LastResistTime)
+    ;
+
+    class_< FTaggedGFxMovie >("FTaggedGFxMovie", init<  >())
+        .def(init< const FTaggedGFxMovie& >())
+        .def_readwrite("Movie", &FTaggedGFxMovie::Movie)
+        .def_readwrite("Tag", &FTaggedGFxMovie::Tag)
+    ;
+
+    class_< FChallengeData >("FChallengeData", init<  >())
+        .def(init< const FChallengeData& >())
+        .def_readwrite("PCOwner", &FChallengeData::PCOwner)
+        .def_readwrite("ChallengeDefinition", &FChallengeData::ChallengeDefinition)
+    ;
+
+    class_< FCustomizationUnlockData >("FCustomizationUnlockData", init<  >())
+        .def(init< const FCustomizationUnlockData& >())
+        .def_readwrite("ProductID", &FCustomizationUnlockData::ProductID)
+        .def_readwrite("NumUnlockedCustomizations", &FCustomizationUnlockData::NumUnlockedCustomizations)
+        .def_readwrite("UnlockedMask", &FCustomizationUnlockData::UnlockedMask)
+    ;
+
+    class_< FPauseTimerData >("FPauseTimerData", init<  >())
+        .def(init< const FPauseTimerData& >())
+        .def_readwrite("FuncName", &FPauseTimerData::FuncName)
+        .def_readwrite("Rate", &FPauseTimerData::Rate)
+        .def_readwrite("Count", &FPauseTimerData::Count)
+        .def_readwrite("TimerObj", &FPauseTimerData::TimerObj)
+    ;
+
+    class_< FPendingClientTrainingMessage >("FPendingClientTrainingMessage", init<  >())
+        .def(init< const FPendingClientTrainingMessage& >())
+        .def_readwrite("Message", &FPendingClientTrainingMessage::Message)
+        .def_readwrite("TrainingDefinition", &FPendingClientTrainingMessage::TrainingDefinition)
+        .def_readwrite("Duration", &FPendingClientTrainingMessage::Duration)
+    ;
+
+    class_< FPendingMissionRewardsData >("FPendingMissionRewardsData", init<  >())
+        .def(init< const FPendingMissionRewardsData& >())
+        .def_readwrite("PendingMissionRewards", &FPendingMissionRewardsData::PendingMissionRewards)
+        .def_readwrite("PlaythroughIndex", &FPendingMissionRewardsData::PlaythroughIndex)
+    ;
+
+    class_< FGoldenKeySource >("FGoldenKeySource", init<  >())
+        .def(init< const FGoldenKeySource& >())
+        .def_readwrite("SourceId", &FGoldenKeySource::SourceId)
+        .def_readwrite("NumKeys", &FGoldenKeySource::NumKeys)
+        .def_readwrite("NumKeysSpent", &FGoldenKeySource::NumKeysSpent)
+        .def_readwrite("Empty", &FGoldenKeySource::Empty)
+    ;
+
+    class_< FLoadCharacterData >("FLoadCharacterData", init<  >())
+        .def(init< const FLoadCharacterData& >())
+        .def_readwrite("SaveDataId", &FLoadCharacterData::SaveDataId)
+        .def_readwrite("CharLevel", &FLoadCharacterData::CharLevel)
+        .def_readwrite("CharName", &FLoadCharacterData::CharName)
+        .def_readwrite("CharClass", &FLoadCharacterData::CharClass)
+        .def_readwrite("PlayThrough", &FLoadCharacterData::PlayThrough)
+        .def_readwrite("ActiveMission", &FLoadCharacterData::ActiveMission)
+        .def_readwrite("PlotMission", &FLoadCharacterData::PlotMission)
+        .def_readwrite("CharSaveDate", &FLoadCharacterData::CharSaveDate)
+        .def_readwrite("CharPlayedTime", &FLoadCharacterData::CharPlayedTime)
+        .def_readwrite("CharPlayedTimeInt", &FLoadCharacterData::CharPlayedTimeInt)
+        .def_readwrite("SaveGuid", &FLoadCharacterData::SaveGuid)
+        .def_readwrite("DlcCharDef", &FLoadCharacterData::DlcCharDef)
+    ;
+
+    class_< FTestMapsListDatum >("FTestMapsListDatum", init<  >())
+        .def(init< const FTestMapsListDatum& >())
+        .def_readwrite("MapDisplayName", &FTestMapsListDatum::MapDisplayName)
+        .def_readwrite("MapName", &FTestMapsListDatum::MapName)
+    ;
+
+    class_< FDataProviderInfo >("FDataProviderInfo", init<  >())
+        .def(init< const FDataProviderInfo& >())
+        .def_readwrite("DataProvider", &FDataProviderInfo::DataProvider)
+        .def_readwrite("UnknownData00", &FDataProviderInfo::UnknownData00)
+        .def_readwrite("SelectedIndex", &FDataProviderInfo::SelectedIndex)
+    ;
+
+    class_< FSystemOption >("FSystemOption", init<  >())
+        .def(init< const FSystemOption& >())
+        .def_readwrite("Name", &FSystemOption::Name)
+        .def_readwrite("ValueCount", &FSystemOption::ValueCount)
+        .def_readwrite("CurrValue", &FSystemOption::CurrValue)
+        .def_readwrite("ValueStrings", &FSystemOption::ValueStrings)
+    ;
+
+    class_< FResolution >("FResolution", init<  >())
+        .def(init< const FResolution& >())
+        .def_readwrite("Width", &FResolution::Width)
+        .def_readwrite("Height", &FResolution::Height)
+    ;
+
+    class_< FDescriptionEntry >("FDescriptionEntry", init<  >())
+        .def(init< const FDescriptionEntry& >())
+        .def_readwrite("EventID", &FDescriptionEntry::EventID)
+        .def_readwrite("Description", &FDescriptionEntry::Description)
+    ;
+
+    class_< FMatchmakingResultEntry >("FMatchmakingResultEntry", init<  >())
+        .def(init< const FMatchmakingResultEntry& >())
+        .def_readwrite("MatchTypeIconFrameName", &FMatchmakingResultEntry::MatchTypeIconFrameName)
+        .def_readwrite("StatusIconFrameName", &FMatchmakingResultEntry::StatusIconFrameName)
+        .def_readwrite("Message", &FMatchmakingResultEntry::Message)
+    ;
+
+    class_< FResultEntry >("FResultEntry", init<  >())
+        .def(init< const FResultEntry& >())
+        .def_readwrite("Game", &FResultEntry::Game)
+        .def_readwrite("Name", &FResultEntry::Name)
+        .def_readwrite("ExpLevel", &FResultEntry::ExpLevel)
+        .def_readwrite("Mission", &FResultEntry::Mission)
+        .def_readwrite("PlayThrough", &FResultEntry::PlayThrough)
+        .def_readwrite("NumPlayers", &FResultEntry::NumPlayers)
+        .def_readwrite("MaxPlayers", &FResultEntry::MaxPlayers)
+        .def_readwrite("Ping", &FResultEntry::Ping)
+    ;
+
+    class_< FMarketPlaceFilter >("FMarketPlaceFilter", init<  >())
+        .def(init< const FMarketPlaceFilter& >())
+        .def_readwrite("Tag", &FMarketPlaceFilter::Tag)
+        .def_readwrite("Caption", &FMarketPlaceFilter::Caption)
+        .def_readwrite("Filter", &FMarketPlaceFilter::Filter)
+    ;
+
+    class_< FMessageOfTheDay >("FMessageOfTheDay", init<  >())
+        .def(init< const FMessageOfTheDay& >())
+        .def_readwrite("Header", &FMessageOfTheDay::Header)
+        .def_readwrite("Body", &FMessageOfTheDay::Body)
+        .def_readwrite("DisplayTime", &FMessageOfTheDay::DisplayTime)
+    ;
+
+    class_< FTrainingData >("FTrainingData", init<  >())
+        .def(init< const FTrainingData& >())
+        .def_readwrite("PCOwner", &FTrainingData::PCOwner)
+        .def_readwrite("TrainingDefinition", &FTrainingData::TrainingDefinition)
+    ;
+
+    class_< FPostProcessChainOptions >("FPostProcessChainOptions", init<  >())
+        .def(init< const FPostProcessChainOptions& >())
+        .def_readwrite("MaterialEffectModifiers", &FPostProcessChainOptions::MaterialEffectModifiers)
+        .def_readwrite("DOFEffectModifier", &FPostProcessChainOptions::DOFEffectModifier)
+    ;
+
+    class_< FSubtitleProfile >("FSubtitleProfile", init<  >())
+        .def(init< const FSubtitleProfile& >())
+        .def_readwrite("MinX", &FSubtitleProfile::MinX)
+        .def_readwrite("MaxX", &FSubtitleProfile::MaxX)
+        .def_readwrite("MinY", &FSubtitleProfile::MinY)
+        .def_readwrite("MaxY", &FSubtitleProfile::MaxY)
+    ;
+
+    class_< FLoginState >("FLoginState", init<  >())
+        .def(init< const FLoginState& >())
+        .def_readwrite("LoginName", &FLoginState::LoginName)
+    ;
+
+    class_< FGamepadState >("FGamepadState", init<  >())
+        .def(init< const FGamepadState& >())
+    ;
+
+    class_< FAppliedSkillEffect >("FAppliedSkillEffect", init<  >())
+        .def(init< const FAppliedSkillEffect& >())
+        .def_readwrite("EffectData", &FAppliedSkillEffect::EffectData)
+        .def_readwrite("Contexts", &FAppliedSkillEffect::Contexts)
+        .def_readwrite("Modifier", &FAppliedSkillEffect::Modifier)
+    ;
+
+    class_< FSkillActionData >("FSkillActionData", init<  >())
+        .def(init< const FSkillActionData& >())
+        .def_readwrite("ClientConsoleCommand", &FSkillActionData::ClientConsoleCommand)
+        .def_readwrite("GradeType", &FSkillActionData::GradeType)
+        .def_readwrite("HardcodedGrade", &FSkillActionData::HardcodedGrade)
+        .def_readwrite("SkillToActivate", &FSkillActionData::SkillToActivate)
+        .def_readwrite("SkillToDeactivate", &FSkillActionData::SkillToDeactivate)
+        .def_readwrite("AkEvent", &FSkillActionData::AkEvent)
+    ;
+
+    class_< FDeferredSkillActivationData >("FDeferredSkillActivationData", init<  >())
+        .def(init< const FDeferredSkillActivationData& >())
+        .def_readwrite("SkillInstigator", &FDeferredSkillActivationData::SkillInstigator)
+        .def_readwrite("Definition", &FDeferredSkillActivationData::Definition)
+        .def_readwrite("AdditionalSkillTarget", &FDeferredSkillActivationData::AdditionalSkillTarget)
+        .def_readwrite("SkillGrade", &FDeferredSkillActivationData::SkillGrade)
+        .def_readwrite("StateChangeDelegate", &FDeferredSkillActivationData::StateChangeDelegate)
+    ;
+
+    class_< FItemCustomPartTypeData >("FItemCustomPartTypeData", init<  >())
+        .def(init< const FItemCustomPartTypeData& >())
+        .def_readwrite("WeightedParts", &FItemCustomPartTypeData::WeightedParts)
+    ;
+
+    class_< FUIStatModifierData >("FUIStatModifierData", init<  >())
+        .def(init< const FUIStatModifierData& >())
+        .def_readwrite("AttributePresentation", &FUIStatModifierData::AttributePresentation)
+        .def_readwrite("ConstraintAttributePresentation", &FUIStatModifierData::ConstraintAttributePresentation)
+        .def_readwrite("AttributeStyle", &FUIStatModifierData::AttributeStyle)
+        .def_readwrite("ModifierTotal", &FUIStatModifierData::ModifierTotal)
+        .def_readwrite("CompareModifierTotal", &FUIStatModifierData::CompareModifierTotal)
+        .def_readwrite("DefinitionIndex", &FUIStatModifierData::DefinitionIndex)
+        .def_readwrite("SupplementalAttributePresentation", &FUIStatModifierData::SupplementalAttributePresentation)
+        .def_readwrite("SupplementalAttributeStyle", &FUIStatModifierData::SupplementalAttributeStyle)
+        .def_readwrite("SupplementalModifierTotal", &FUIStatModifierData::SupplementalModifierTotal)
+        .def_readwrite("StatCombinationMethod", &FUIStatModifierData::StatCombinationMethod)
+    ;
+
+    class_< FItemMemento >("FItemMemento", init<  >())
+        .def(init< const FItemMemento& >())
+        .def_readwrite("SerialNumber", &FItemMemento::SerialNumber)
+    ;
+
+    class_< FHolsteredGearDisplaySlot >("FHolsteredGearDisplaySlot", init<  >())
+        .def(init< const FHolsteredGearDisplaySlot& >())
+        .def_readwrite("State", &FHolsteredGearDisplaySlot::State)
+        .def_readwrite("Item", &FHolsteredGearDisplaySlot::Item)
+    ;
+
+    class_< FBloodSplatterTrace >("FBloodSplatterTrace", init<  >())
+        .def(init< const FBloodSplatterTrace& >())
+        .def_readwrite("HitRegion", &FBloodSplatterTrace::HitRegion)
+        .def_readwrite("HitLocation", &FBloodSplatterTrace::HitLocation)
+        .def_readwrite("Momentum", &FBloodSplatterTrace::Momentum)
+        .def_readwrite("DamageSeverityPercent", &FBloodSplatterTrace::DamageSeverityPercent)
+    ;
+
+    class_< FMeleeOverTimeState >("FMeleeOverTimeState", init<  >())
+        .def(init< const FMeleeOverTimeState& >())
+        .def_readwrite("MeleeDefinition", &FMeleeOverTimeState::MeleeDefinition)
+        .def_readwrite("MeleeStartTime", &FMeleeOverTimeState::MeleeStartTime)
+        .def_readwrite("TimeElapsedSinceLastMelee", &FMeleeOverTimeState::TimeElapsedSinceLastMelee)
+        .def_readwrite("HitActors", &FMeleeOverTimeState::HitActors)
+        .def_readwrite("MeleeStartLocation", &FMeleeOverTimeState::MeleeStartLocation)
+        .def_readwrite("MeleeStartRotation", &FMeleeOverTimeState::MeleeStartRotation)
+    ;
+
+    class_< FGoreEffect >("FGoreEffect", init<  >())
+        .def(init< const FGoreEffect& >())
+        .def_readwrite("HitRegion", &FGoreEffect::HitRegion)
+        .def_readwrite("GoreDataIndex", &FGoreEffect::GoreDataIndex)
+        .def_readwrite("InstigatedBy", &FGoreEffect::InstigatedBy)
+        .def_readwrite("HitLocation", &FGoreEffect::HitLocation)
+        .def_readwrite("Momentum", &FGoreEffect::Momentum)
+    ;
+
+    class_< FMaterialScalarFadeReplication >("FMaterialScalarFadeReplication", init<  >())
+        .def(init< const FMaterialScalarFadeReplication& >())
+        .def_readwrite("Name", &FMaterialScalarFadeReplication::Name)
+        .def_readwrite("StartValue", &FMaterialScalarFadeReplication::StartValue)
+        .def_readwrite("EndValue", &FMaterialScalarFadeReplication::EndValue)
+        .def_readwrite("FadeTime", &FMaterialScalarFadeReplication::FadeTime)
+    ;
+
+    class_< FActionSkillCustomEventReplicationData >("FActionSkillCustomEventReplicationData", init<  >())
+        .def(init< const FActionSkillCustomEventReplicationData& >())
+        .def_readwrite("EventCountForReplication", &FActionSkillCustomEventReplicationData::EventCountForReplication)
+        .def_readwrite("EventName", &FActionSkillCustomEventReplicationData::EventName)
+    ;
+
+    class_< FSkillEventResponseData >("FSkillEventResponseData", init<  >())
+        .def(init< const FSkillEventResponseData& >())
+        .def_readwrite("EventType", &FSkillEventResponseData::EventType)
+        .def_readwrite("Action", &FSkillEventResponseData::Action)
+    ;
+
+    class_< FNamedSkillEvent >("FNamedSkillEvent", init<  >())
+        .def(init< const FNamedSkillEvent& >())
+        .def_readwrite("EventName", &FNamedSkillEvent::EventName)
+        .def_readwrite("RequiredSkills", &FNamedSkillEvent::RequiredSkills)
+        .def_readwrite("EventResponses", &FNamedSkillEvent::EventResponses)
+        .def_readwrite("RequiredActionSkillState", &FNamedSkillEvent::RequiredActionSkillState)
+    ;
+
+    class_< FSkillDamageEventData, bases< FSpecializedBehaviorEvent >  >("FSkillDamageEventData", init<  >())
+        .def(init< const FSkillDamageEventData& >())
+        .def_readwrite("EventType", &FSkillDamageEventData::EventType)
+        .def_readwrite("EventConstraints", &FSkillDamageEventData::EventConstraints)
+    ;
+
+    class_< FSkillDamagedEventConstraintData >("FSkillDamagedEventConstraintData", init<  >())
+        .def(init< const FSkillDamagedEventConstraintData& >())
+        .def_readwrite("DamageTypeConstraint", &FSkillDamagedEventConstraintData::DamageTypeConstraint)
+        .def_readwrite("DamageSourceConstraint", &FSkillDamagedEventConstraintData::DamageSourceConstraint)
+    ;
+
+    class_< FSkillKillEventData, bases< FSpecializedBehaviorEvent >  >("FSkillKillEventData", init<  >())
+        .def(init< const FSkillKillEventData& >())
+        .def_readwrite("EventType", &FSkillKillEventData::EventType)
+        .def_readwrite("EventConstraints", &FSkillKillEventData::EventConstraints)
+    ;
+
+    class_< FDOFEffectData >("FDOFEffectData", init<  >())
+        .def(init< const FDOFEffectData& >())
+        .def_readwrite("FalloffExponent", &FDOFEffectData::FalloffExponent)
+        .def_readwrite("BlurKernelSize", &FDOFEffectData::BlurKernelSize)
+        .def_readwrite("MaxNearBlurAmount", &FDOFEffectData::MaxNearBlurAmount)
+        .def_readwrite("MaxFarBlurAmount", &FDOFEffectData::MaxFarBlurAmount)
+        .def_readwrite("ModulateBlurColor", &FDOFEffectData::ModulateBlurColor)
+        .def_readwrite("FocusType", &FDOFEffectData::FocusType)
+        .def_readwrite("FocusInnerRadius", &FDOFEffectData::FocusInnerRadius)
+        .def_readwrite("FocusDistance", &FDOFEffectData::FocusDistance)
+        .def_readwrite("FocusPosition", &FDOFEffectData::FocusPosition)
+    ;
+
+    class_< FFlashTextEntry >("FFlashTextEntry", init<  >())
+        .def(init< const FFlashTextEntry& >())
+        .def_readwrite("TextEntry", &FFlashTextEntry::TextEntry)
+        .def_readwrite("IconFrameLabel", &FFlashTextEntry::IconFrameLabel)
+        .def_readwrite("ArrayType", &FFlashTextEntry::ArrayType)
+        .def_readwrite("Obj", &FFlashTextEntry::Obj)
+    ;
+
+    class_< FCreditsTextureInfo >("FCreditsTextureInfo", init<  >())
+        .def(init< const FCreditsTextureInfo& >())
+        .def_readwrite("TexturePath", &FCreditsTextureInfo::TexturePath)
+    ;
+
+    class_< FEmitterTemplateOptions >("FEmitterTemplateOptions", init<  >())
+        .def(init< const FEmitterTemplateOptions& >())
+        .def_readwrite("DefaultTemplate", &FEmitterTemplateOptions::DefaultTemplate)
+        .def_readwrite("CensoredTemplateAlternative", &FEmitterTemplateOptions::CensoredTemplateAlternative)
+    ;
+
+    class_< FFloatParameter >("FFloatParameter", init<  >())
+        .def(init< const FFloatParameter& >())
+        .def_readwrite("Name", &FFloatParameter::Name)
+        .def_readwrite("Value", &FFloatParameter::Value)
+    ;
+
+    class_< FVectorParameter >("FVectorParameter", init<  >())
+        .def(init< const FVectorParameter& >())
+        .def_readwrite("Name", &FVectorParameter::Name)
+        .def_readwrite("Value", &FVectorParameter::Value)
+    ;
+
+    class_< FColorParameter >("FColorParameter", init<  >())
+        .def(init< const FColorParameter& >())
+        .def_readwrite("Name", &FColorParameter::Name)
+        .def_readwrite("Value", &FColorParameter::Value)
+    ;
+
+    class_< FAttributePresentationDamageTypeMapping >("FAttributePresentationDamageTypeMapping", init<  >())
+        .def(init< const FAttributePresentationDamageTypeMapping& >())
+        .def_readwrite("Presentation", &FAttributePresentationDamageTypeMapping::Presentation)
+        .def_readwrite("DamageType", &FAttributePresentationDamageTypeMapping::DamageType)
+    ;
+
+    class_< FRemoveObject >("FRemoveObject", init<  >())
+        .def(init< const FRemoveObject& >())
+        .def_readwrite("Name", &FRemoveObject::Name)
+    ;
+
+    class_< FBehaviorsSelectionData >("FBehaviorsSelectionData", init<  >())
+        .def(init< const FBehaviorsSelectionData& >())
+        .def_readwrite("Weight", &FBehaviorsSelectionData::Weight)
+        .def_readwrite("Behaviors", &FBehaviorsSelectionData::Behaviors)
+    ;
+
+    class_< FKeyBindInfo >("FKeyBindInfo", init<  >())
+        .def(init< const FKeyBindInfo& >())
+        .def_readwrite("Tag", &FKeyBindInfo::Tag)
+        .def_readwrite("ActionName", &FKeyBindInfo::ActionName)
+        .def_readwrite("Caption", &FKeyBindInfo::Caption)
+        .def_readwrite("CurrentKey", &FKeyBindInfo::CurrentKey)
+        .def_readwrite("Object", &FKeyBindInfo::Object)
+    ;
+
+    class_< FMissionRewardData >("FMissionRewardData", init<  >())
+        .def(init< const FMissionRewardData& >())
+        .def_readwrite("MissionDef", &FMissionRewardData::MissionDef)
+    ;
+
+    class_< FCombatPointSearchData >("FCombatPointSearchData", init<  >())
+        .def(init< const FCombatPointSearchData& >())
+        .def_readwrite("PointRadius", &FCombatPointSearchData::PointRadius)
+        .def_readwrite("ZoneMoveDist", &FCombatZoneSearchData::ZoneMoveDist)
+        .def_readwrite("ZoneTimeLimit", &FCombatZoneSearchData::ZoneTimeLimit)
+        .def_readwrite("TargetRange", &FCombatZoneSearchData::TargetRange)
+        .def_readwrite("MinHeight", &FCombatZoneSearchData::MinHeight)
+        .def_readwrite("LineOfSight", &FCombatZoneSearchData::LineOfSight)
+        .def_readwrite("LineOfSightTimeLimit", &FCombatZoneSearchData::LineOfSightTimeLimit)
+    ;
+
+    class_< FCombatZoneSearchData >("FCombatZoneSearchData", init<  >())
+        .def(init< const FCombatZoneSearchData& >())
+        .def_readwrite("ZoneMoveDist", &FCombatZoneSearchData::ZoneMoveDist)
+        .def_readwrite("ZoneTimeLimit", &FCombatZoneSearchData::ZoneTimeLimit)
+        .def_readwrite("TargetRange", &FCombatZoneSearchData::TargetRange)
+        .def_readwrite("MinHeight", &FCombatZoneSearchData::MinHeight)
+        .def_readwrite("LineOfSight", &FCombatZoneSearchData::LineOfSight)
+        .def_readwrite("LineOfSightTimeLimit", &FCombatZoneSearchData::LineOfSightTimeLimit)
+    ;
+
+    class_< FSeasonPassPackageCount >("FSeasonPassPackageCount", init<  >())
+        .def(init< const FSeasonPassPackageCount& >())
+        .def_readwrite("SeasonPassId", &FSeasonPassPackageCount::SeasonPassId)
+        .def_readwrite("PackageCount", &FSeasonPassPackageCount::PackageCount)
+    ;
+
+    class_< FSeasonPassOfferUnion >("FSeasonPassOfferUnion", init<  >())
+        .def(init< const FSeasonPassOfferUnion& >())
+        .def_readwrite("AssociatedSeasonPassOfferId", &FSeasonPassOfferUnion::AssociatedSeasonPassOfferId)
+        .def_readwrite("PaidOfferId", &FSeasonPassOfferUnion::PaidOfferId)
+        .def_readwrite("FreeOfferId", &FSeasonPassOfferUnion::FreeOfferId)
+        .def_readwrite("SeasonPassId", &FSeasonPassOfferUnion::SeasonPassId)
+    ;
+
+    class_< FSaveResult >("FSaveResult", init<  >())
+        .def(init< const FSaveResult& >())
+        .def_readwrite("charID", &FSaveResult::charID)
+        .def_readwrite("Data", &FSaveResult::Data)
+    ;
+
+    class_< FSwoopAttackData >("FSwoopAttackData", init<  >())
+        .def(init< const FSwoopAttackData& >())
+        .def_readwrite("Distance", &FSwoopAttackData::Distance)
+    ;
+
+    class_< FInteractiveObjectGameStageGradeWeightData, bases< FGameStageGradeWeightData >  >("FInteractiveObjectGameStageGradeWeightData", init<  >())
+        .def(init< const FInteractiveObjectGameStageGradeWeightData& >())
+        .def_readwrite("GradeModifiers", &FInteractiveObjectGameStageGradeWeightData::GradeModifiers)
+    ;
+
+    class_< FInteractiveObjectGradeModifierData >("FInteractiveObjectGradeModifierData", init<  >())
+        .def(init< const FInteractiveObjectGradeModifierData& >())
+        .def_readwrite("CustomInteractiveObject", &FInteractiveObjectGradeModifierData::CustomInteractiveObject)
+        .def_readwrite("DisplayName", &FInteractiveObjectGradeModifierData::DisplayName)
+        .def_readwrite("ExpLevel", &FInteractiveObjectGradeModifierData::ExpLevel)
+        .def_readwrite("IncludedCustomLootLists", &FInteractiveObjectGradeModifierData::IncludedCustomLootLists)
+        .def_readwrite("CustomLoot", &FInteractiveObjectGradeModifierData::CustomLoot)
+    ;
+
+    class_< FMissionStateSelectionData >("FMissionStateSelectionData", init<  >())
+        .def(init< const FMissionStateSelectionData& >())
+    ;
+
+    class_< FMissionObjectiveStateSelectionData >("FMissionObjectiveStateSelectionData", init<  >())
+        .def(init< const FMissionObjectiveStateSelectionData& >())
+    ;
+
+    class_< FImpactResponseData >("FImpactResponseData", init<  >())
+        .def(init< const FImpactResponseData& >())
+        .def_readwrite("ImpactType", &FImpactResponseData::ImpactType)
+        .def_readwrite("ResponseEffect", &FImpactResponseData::ResponseEffect)
+    ;
+
+    class_< FLiftBodyPair >("FLiftBodyPair", init<  >())
+        .def(init< const FLiftBodyPair& >())
+        .def_readwrite("BodyTag", &FLiftBodyPair::BodyTag)
+        .def_readwrite("PhaseLockDef", &FLiftBodyPair::PhaseLockDef)
+    ;
+
+    class_< FActiveInteraction >("FActiveInteraction", init<  >())
+        .def(init< const FActiveInteraction& >())
+        .def_readwrite("TimeLength", &FActiveInteraction::TimeLength)
+        .def_readwrite("TimeRemaining", &FActiveInteraction::TimeRemaining)
+        .def_readwrite("InteractionServer", &FActiveInteraction::InteractionServer)
+        .def_readwrite("Players", &FActiveInteraction::Players)
+        .def_readwrite("Instigator", &FActiveInteraction::Instigator)
+        .def_readwrite("IsValid", &FActiveInteraction::IsValid)
+    ;
+
+    class_< FTargetedPlayerState >("FTargetedPlayerState", init<  >())
+        .def(init< const FTargetedPlayerState& >())
+        .def_readwrite("Enemy", &FTargetedPlayerState::Enemy)
+        .def_readwrite("Player", &FTargetedPlayerState::Player)
+        .def_readwrite("InitialThreat", &FTargetedPlayerState::InitialThreat)
+        .def_readwrite("StoppedTargetingPlayerTime", &FTargetedPlayerState::StoppedTargetingPlayerTime)
+    ;
+
+    class_< FWaypointActorData >("FWaypointActorData", init<  >())
+        .def(init< const FWaypointActorData& >())
+        .def_readwrite("WaypointActor", &FWaypointActorData::WaypointActor)
+        .def_readwrite("WaypointObjective", &FWaypointActorData::WaypointObjective)
+        .def_readwrite("Waypoints", &FWaypointActorData::Waypoints)
+    ;
+
+    class_< FAreaWaypointData >("FAreaWaypointData", init<  >())
+        .def(init< const FAreaWaypointData& >())
+        .def_readwrite("WaypointActor", &FAreaWaypointData::WaypointActor)
+        .def_readwrite("WaypointRadius", &FAreaWaypointData::WaypointRadius)
+        .def_readwrite("WaypointObjective", &FAreaWaypointData::WaypointObjective)
+    ;
+
+    class_< FColiseumPlayerInfo >("FColiseumPlayerInfo", init<  >())
+        .def(init< const FColiseumPlayerInfo& >())
+        .def_readwrite("WPC", &FColiseumPlayerInfo::WPC)
+        .def_readwrite("Stats", &FColiseumPlayerInfo::Stats)
+    ;
+
+    class_< FColiseumStat >("FColiseumStat", init<  >())
+        .def(init< const FColiseumStat& >())
+        .def_readwrite("StatType", &FColiseumStat::StatType)
+        .def_readwrite("StatValue", &FColiseumStat::StatValue)
+    ;
+
+    class_< FDLCMissionData >("FDLCMissionData", init<  >())
+        .def(init< const FDLCMissionData& >())
+        .def_readwrite("MinMissionNumber", &FDLCMissionData::MinMissionNumber)
+        .def_readwrite("MaxMissionNumber", &FDLCMissionData::MaxMissionNumber)
+        .def_readwrite("MissionNameLocKey", &FDLCMissionData::MissionNameLocKey)
+    ;
+
+    class_< FCompatibilityVersionInfo >("FCompatibilityVersionInfo", init<  >())
+        .def(init< const FCompatibilityVersionInfo& >())
+        .def_readwrite("CurrentCompatPackVersion", &FCompatibilityVersionInfo::CurrentCompatPackVersion)
+        .def_readwrite("CurrentCompatibilityMask", &FCompatibilityVersionInfo::CurrentCompatibilityMask)
+    ;
+
+    class_< FTaggedMarketplaceContent >("FTaggedMarketplaceContent", init<  >())
+        .def(init< const FTaggedMarketplaceContent& >())
+        .def_readwrite("Tag", &FTaggedMarketplaceContent::Tag)
+        .def_readwrite("OfferId", &FTaggedMarketplaceContent::OfferId)
+        .def_readwrite("OfferIdText", &FTaggedMarketplaceContent::OfferIdText)
+        .def_readwrite("OfferName", &FTaggedMarketplaceContent::OfferName)
+        .def_readwrite("SellText", &FTaggedMarketplaceContent::SellText)
+        .def_readwrite("ContentCategory", &FTaggedMarketplaceContent::ContentCategory)
+        .def_readwrite("PackageId", &FTaggedMarketplaceContent::PackageId)
+        .def_readwrite("ContentId", &FTaggedMarketplaceContent::ContentId)
+    ;
+
+    class_< FPremiumCustomizationInfo >("FPremiumCustomizationInfo", init<  >())
+        .def(init< const FPremiumCustomizationInfo& >())
+        .def_readwrite("OfferId", &FPremiumCustomizationInfo::OfferId)
+        .def_readwrite("PackageId", &FPremiumCustomizationInfo::PackageId)
+        .def_readwrite("ContentId", &FPremiumCustomizationInfo::ContentId)
+        .def_readwrite("PS3TitleId", &FPremiumCustomizationInfo::PS3TitleId)
+    ;
+
+    class_< FVehicleSpawnStationSlot >("FVehicleSpawnStationSlot", init<  >())
+        .def(init< const FVehicleSpawnStationSlot& >())
+        .def_readwrite("PooledVehicles", &FVehicleSpawnStationSlot::PooledVehicles)
+        .def_readwrite("PooledVehicleIndex", &FVehicleSpawnStationSlot::PooledVehicleIndex)
+    ;
+
+    class_< FVehicleSpawnStationPooledVehicle >("FVehicleSpawnStationPooledVehicle", init<  >())
+        .def(init< const FVehicleSpawnStationPooledVehicle& >())
+        .def_readwrite("SpawnedVehicle", &FVehicleSpawnStationPooledVehicle::SpawnedVehicle)
+        .def_readwrite("SpawnVehicleDef", &FVehicleSpawnStationPooledVehicle::SpawnVehicleDef)
+    ;
+
+    class_< FPopOppSummary >("FPopOppSummary", init<  >())
+        .def(init< const FPopOppSummary& >())
+        .def_readwrite("Summary", &FPopOppSummary::Summary)
+        .def_readwrite("Count", &FPopOppSummary::Count)
+    ;
+
+    class_< FSpawnAnimPair >("FSpawnAnimPair", init<  >())
+        .def(init< const FSpawnAnimPair& >())
+        .def_readwrite("SpawnedAnim", &FSpawnAnimPair::SpawnedAnim)
+        .def_readwrite("PointAnim", &FSpawnAnimPair::PointAnim)
+    ;
+
+    class_< FSpawnAnimData >("FSpawnAnimData", init<  >())
+        .def(init< const FSpawnAnimData& >())
+        .def_readwrite("Key", &FSpawnAnimData::Key)
+        .def_readwrite("AnimPairs", &FSpawnAnimData::AnimPairs)
+        .def_readwrite("PreviewMeshOffset", &FSpawnAnimData::PreviewMeshOffset)
+        .def_readwrite("PreviewMeshScale", &FSpawnAnimData::PreviewMeshScale)
+    ;
+
+    class_< FBalancedInventoryDataMirror >("FBalancedInventoryDataMirror", init<  >())
+        .def(init< const FBalancedInventoryDataMirror& >())
+        .def_readwrite("ObjectName", &FBalancedInventoryDataMirror::ObjectName)
+        .def_readwrite("ObjectPath", &FBalancedInventoryDataMirror::ObjectPath)
+    ;
+
+    class_< FPopulatedAIPawnMemento >("FPopulatedAIPawnMemento", init<  >())
+        .def(init< const FPopulatedAIPawnMemento& >())
+        .def_readwrite("PawnWeapons", &FPopulatedAIPawnMemento::PawnWeapons)
+        .def_readwrite("PawnItems", &FPopulatedAIPawnMemento::PawnItems)
+    ;
+
+    class_< FAIPawnPlaythroughData >("FAIPawnPlaythroughData", init<  >())
+        .def(init< const FAIPawnPlaythroughData& >())
+        .def_readwrite("PlayThrough", &FAIPawnPlaythroughData::PlayThrough)
+        .def_readwrite("DisplayName", &FAIPawnPlaythroughData::DisplayName)
+        .def_readwrite("TransformedNames", &FAIPawnPlaythroughData::TransformedNames)
+        .def_readwrite("OnSpawnCustomizations", &FAIPawnPlaythroughData::OnSpawnCustomizations)
+        .def_readwrite("AttributeStartingValues", &FAIPawnPlaythroughData::AttributeStartingValues)
+        .def_readwrite("CustomItemPoolIncludedLists", &FAIPawnPlaythroughData::CustomItemPoolIncludedLists)
+        .def_readwrite("CustomItemPoolList", &FAIPawnPlaythroughData::CustomItemPoolList)
+        .def_readwrite("MeshMaterial", &FAIPawnPlaythroughData::MeshMaterial)
+    ;
+
+    class_< FAIPawnGameStageGradeWeightData, bases< FGameStageGradeWeightData >  >("FAIPawnGameStageGradeWeightData", init<  >())
+        .def(init< const FAIPawnGameStageGradeWeightData& >())
+        .def_readwrite("GradeModifiers", &FAIPawnGameStageGradeWeightData::GradeModifiers)
+    ;
+
+    class_< FAIPawnGradeModifierData >("FAIPawnGradeModifierData", init<  >())
+        .def(init< const FAIPawnGradeModifierData& >())
+        .def_readwrite("CustomAIPawnArchetype", &FAIPawnGradeModifierData::CustomAIPawnArchetype)
+        .def_readwrite("DisplayName", &FAIPawnGradeModifierData::DisplayName)
+        .def_readwrite("ExpLevel", &FAIPawnGradeModifierData::ExpLevel)
+        .def_readwrite("OnSpawnCustomizations", &FAIPawnGradeModifierData::OnSpawnCustomizations)
+        .def_readwrite("AttributeStartingValues", &FAIPawnGradeModifierData::AttributeStartingValues)
+        .def_readwrite("CustomItemPoolIncludedLists", &FAIPawnGradeModifierData::CustomItemPoolIncludedLists)
+        .def_readwrite("CustomItemPoolList", &FAIPawnGradeModifierData::CustomItemPoolList)
+        .def_readwrite("TransformedNames", &FAIPawnGradeModifierData::TransformedNames)
+    ;
+
+    class_< FObjectiveStatusData >("FObjectiveStatusData", init<  >())
+        .def(init< const FObjectiveStatusData& >())
+        .def_readwrite("Objectives", &FObjectiveStatusData::Objectives)
+    ;
+
+    class_< FMissionObjectiveWaypointData >("FMissionObjectiveWaypointData", init<  >())
+        .def(init< const FMissionObjectiveWaypointData& >())
+        .def_readwrite("LinkedObjective", &FMissionObjectiveWaypointData::LinkedObjective)
+        .def_readwrite("ObjectiveSetRestrictions", &FMissionObjectiveWaypointData::ObjectiveSetRestrictions)
+    ;
+
+    class_< UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData >("UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData", init<  >())
+        .def(init< const UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData& >())
+        .def_readwrite("Action", &UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData::Action)
+        .def_readwrite("SequenceName", &UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData::SequenceName)
+    ;
+
+    class_< FAIThrowProjectileBehaviorSequenceStateData >("FAIThrowProjectileBehaviorSequenceStateData", init<  >())
+        .def(init< const FAIThrowProjectileBehaviorSequenceStateData& >())
+        .def_readwrite("Action", &FAIThrowProjectileBehaviorSequenceStateData::Action)
+        .def_readwrite("SequenceName", &FAIThrowProjectileBehaviorSequenceStateData::SequenceName)
+    ;
+
+    class_< FPhysicalMaterialTireModel >("FPhysicalMaterialTireModel", init<  >())
+        .def(init< const FPhysicalMaterialTireModel& >())
+        .def_readwrite("PhysMaterial", &FPhysicalMaterialTireModel::PhysMaterial)
+        .def_readwrite("LongGripScaler", &FPhysicalMaterialTireModel::LongGripScaler)
+        .def_readwrite("LatGripScaler", &FPhysicalMaterialTireModel::LatGripScaler)
+    ;
+
+    class_< FMissionItemPoolData >("FMissionItemPoolData", init<  >())
+        .def(init< const FMissionItemPoolData& >())
+        .def_readwrite("ItemObjective", &FMissionItemPoolData::ItemObjective)
+        .def_readwrite("DirectiveDefinition", &FMissionItemPoolData::DirectiveDefinition)
+        .def_readwrite("ItemPool", &FMissionItemPoolData::ItemPool)
+    ;
+
+    class_< FRelevanceBucketStruct >("FRelevanceBucketStruct", init<  >())
+        .def(init< const FRelevanceBucketStruct& >())
+        .def_readwrite("NdxToStartCheckFrom", &FRelevanceBucketStruct::NdxToStartCheckFrom)
+        .def_readwrite("DistanceSquared", &FRelevanceBucketStruct::DistanceSquared)
+        .def_readwrite("MinLineChecksPerFrame", &FRelevanceBucketStruct::MinLineChecksPerFrame)
+        .def_readwrite("MaxLineChecksPerFrame", &FRelevanceBucketStruct::MaxLineChecksPerFrame)
+        .def_readwrite("MaxIterationsPerFrame", &FRelevanceBucketStruct::MaxIterationsPerFrame)
+        .def_readwrite("Relevance", &FRelevanceBucketStruct::Relevance)
+    ;
+
+    class_< FRelevanceUpdateStruct >("FRelevanceUpdateStruct", init<  >())
+        .def(init< const FRelevanceUpdateStruct& >())
+        .def_readwrite("FromRealViewer", &FRelevanceUpdateStruct::FromRealViewer)
+        .def_readwrite("SrcLocation", &FRelevanceUpdateStruct::SrcLocation)
+        .def_readwrite("ToPawn", &FRelevanceUpdateStruct::ToPawn)
+        .def_readwrite("TimeRequested", &FRelevanceUpdateStruct::TimeRequested)
+        .def_readwrite("ShouldRemove", &FRelevanceUpdateStruct::ShouldRemove)
+        .def_readwrite("NextUpdateTime", &FRelevanceUpdateStruct::NextUpdateTime)
+    ;
+
+    class_< FRelevanceCacheStruct >("FRelevanceCacheStruct", init<  >())
+        .def(init< const FRelevanceCacheStruct& >())
+        .def_readwrite("RealViewerName", &FRelevanceCacheStruct::RealViewerName)
+        .def_readwrite("ToPawnName", &FRelevanceCacheStruct::ToPawnName)
+        .def_readwrite("TimeCached", &FRelevanceCacheStruct::TimeCached)
+        .def_readwrite("NextUpdateTime", &FRelevanceCacheStruct::NextUpdateTime)
+        .def_readwrite("FromLoc", &FRelevanceCacheStruct::FromLoc)
+        .def_readwrite("ToLoc", &FRelevanceCacheStruct::ToLoc)
+        .def_readwrite("RotatingIndex", &FRelevanceCacheStruct::RotatingIndex)
+    ;
+
+    class_< FContentState >("FContentState", init<  >())
+        .def(init< const FContentState& >())
+        .def_readwrite("LicensedMask", &FContentState::LicensedMask)
+        .def_readwrite("InstalledMask", &FContentState::InstalledMask)
+    ;
+
+    class_< FPopulatedPickupMemento >("FPopulatedPickupMemento", init<  >())
+        .def(init< const FPopulatedPickupMemento& >())
+        .def_readwrite("SavedInventoryClass", &FPopulatedPickupMemento::SavedInventoryClass)
+        .def_readwrite("PickupMemento", &FPopulatedPickupMemento::PickupMemento)
+        .def_readwrite("WeaponMemento", &FPopulatedPickupMemento::WeaponMemento)
+        .def_readwrite("ItemMemento", &FPopulatedPickupMemento::ItemMemento)
+    ;
+
+    class_< FDynamicNavMeshConnection >("FDynamicNavMeshConnection", init<  >())
+        .def(init< const FDynamicNavMeshConnection& >())
+        .def_readwrite("MaxConnectionDistance", &FDynamicNavMeshConnection::MaxConnectionDistance)
+        .def_readwrite("ConnectedPoint", &FDynamicNavMeshConnection::ConnectedPoint)
+    ;
+
+    class_< FObjectReference >("FObjectReference", init<  >())
+        .def(init< const FObjectReference& >())
+        .def_readwrite("Obj", &FObjectReference::Obj)
+    ;
+
+    class_< FBoneRotateData >("FBoneRotateData", init<  >())
+        .def(init< const FBoneRotateData& >())
+        .def_readwrite("Index", &FBoneRotateData::Index)
+        .def_readwrite("Rotation", &FBoneRotateData::Rotation)
+    ;
+
+    class_< FMoveToCellData >("FMoveToCellData", init<  >())
+        .def(init< const FMoveToCellData& >())
+        .def_readwrite("IndexInCellsList", &FMoveToCellData::IndexInCellsList)
+        .def_readwrite("DistanceFromCurrentCell", &FMoveToCellData::DistanceFromCurrentCell)
+        .def_readwrite("CosAngle", &FMoveToCellData::CosAngle)
+    ;
+
+    class_< FCellInfo >("FCellInfo", init<  >())
+        .def(init< const FCellInfo& >())
+        .def_readwrite("AbsolutePosition", &FCellInfo::AbsolutePosition)
+        .def_readwrite("Width", &FCellInfo::Width)
+        .def_readwrite("Height", &FCellInfo::Height)
+        .def_readwrite("CellName", &FCellInfo::CellName)
+    ;
+
+    class_< FTurretDamageEffectData >("FTurretDamageEffectData", init<  >())
+        .def(init< const FTurretDamageEffectData& >())
+        .def_readwrite("DamageThreshold", &FTurretDamageEffectData::DamageThreshold)
+        .def_readwrite("DamageStartTagName", &FTurretDamageEffectData::DamageStartTagName)
+        .def_readwrite("DamageEndTagName", &FTurretDamageEffectData::DamageEndTagName)
+        .def_readwrite("EffectActive", &FTurretDamageEffectData::EffectActive)
+    ;
+
+    class_< FTurretEffect >("FTurretEffect", init<  >())
+        .def(init< const FTurretEffect& >())
+        .def_readwrite("EffectStartTag", &FTurretEffect::EffectStartTag)
+        .def_readwrite("EffectEndTag", &FTurretEffect::EffectEndTag)
+        .def_readwrite("EffectTemplate", &FTurretEffect::EffectTemplate)
+        .def_readwrite("EffectSocket", &FTurretEffect::EffectSocket)
+        .def_readwrite("EffectRef", &FTurretEffect::EffectRef)
+        .def_readwrite("EffectAudioStartAkEvent", &FTurretEffect::EffectAudioStartAkEvent)
+        .def_readwrite("EffectAudioStopAkEvent", &FTurretEffect::EffectAudioStopAkEvent)
+    ;
+
+    class_< FWheelSlipModifierData >("FWheelSlipModifierData", init<  >())
+        .def(init< const FWheelSlipModifierData& >())
+        .def_readwrite("LongSlipFactor", &FWheelSlipModifierData::LongSlipFactor)
+        .def_readwrite("LatSlipFactor", &FWheelSlipModifierData::LatSlipFactor)
+    ;
+
+    class_< FTankSensor >("FTankSensor", init<  >())
+        .def(init< const FTankSensor& >())
+        .def_readwrite("Socket", &FTankSensor::Socket)
+        .def_readwrite("Type", &FTankSensor::Type)
+        .def_readwrite("SearchLength", &FTankSensor::SearchLength)
+        .def_readwrite("HitLength", &FTankSensor::HitLength)
+    ;
+
+    class_< FAimAnimTransitionData >("FAimAnimTransitionData", init<  >())
+        .def(init< const FAimAnimTransitionData& >())
+        .def_readwrite("FromState", &FAimAnimTransitionData::FromState)
+        .def_readwrite("ToState", &FAimAnimTransitionData::ToState)
+        .def_readwrite("AnimName", &FAimAnimTransitionData::AnimName)
+        .def_readwrite("BlendInTime", &FAimAnimTransitionData::BlendInTime)
+        .def_readwrite("BlendOutTime", &FAimAnimTransitionData::BlendOutTime)
+    ;
+
+    class_< FManufacturerSelectorData >("FManufacturerSelectorData", init<  >())
+        .def(init< const FManufacturerSelectorData& >())
+        .def_readwrite("AssociatedManufacturerName", &FManufacturerSelectorData::AssociatedManufacturerName)
+        .def_readwrite("ValueIfMatched", &FManufacturerSelectorData::ValueIfMatched)
+    ;
+
+    class_< FDesignerAttributeDefaultValueData >("FDesignerAttributeDefaultValueData", init<  >())
+        .def(init< const FDesignerAttributeDefaultValueData& >())
+        .def_readwrite("DesignerAttribute", &FDesignerAttributeDefaultValueData::DesignerAttribute)
+        .def_readwrite("BaseValue", &FDesignerAttributeDefaultValueData::BaseValue)
+    ;
+
+    class_< FLootData >("FLootData", init<  >())
+        .def(init< const FLootData& >())
+        .def_readwrite("Weight", &FLootData::Weight)
+        .def_readwrite("ItemPools", &FLootData::ItemPools)
+    ;
+
+    class_< FAsyncDataRequest >("FAsyncDataRequest", init<  >())
+        .def(init< const FAsyncDataRequest& >())
+        .def_readwrite("RequestType", &FAsyncDataRequest::RequestType)
+        .def_readwrite("ObjectPath", &FAsyncDataRequest::ObjectPath)
+        .def_readwrite("Instigator", &FAsyncDataRequest::Instigator)
+        .def_readwrite("PlayerContext", &FAsyncDataRequest::PlayerContext)
+        .def_readwrite("Payload", &FAsyncDataRequest::Payload)
+        .def_readwrite("CallbackEventName", &FAsyncDataRequest::CallbackEventName)
+        .def_readwrite("IntParam", &FAsyncDataRequest::IntParam)
+        .def_readwrite("FloatParam", &FAsyncDataRequest::FloatParam)
+    ;
+
+    class_< UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData >("UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData", init<  >())
+        .def(init< const UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData& >())
+        .def_readwrite("Action", &UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData::Action)
+        .def_readwrite("SequenceName", &UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData::SequenceName)
+    ;
+
+    class_< FDefinitionIconDatum >("FDefinitionIconDatum", init<  >())
+        .def(init< const FDefinitionIconDatum& >())
+        .def_readwrite("DefColor", &FDefinitionIconDatum::DefColor)
+        .def_readwrite("DefIcon", &FDefinitionIconDatum::DefIcon)
+        .def_readwrite("DefClass", &FDefinitionIconDatum::DefClass)
+    ;
+
+    class_< FDamageTypeSelectorData >("FDamageTypeSelectorData", init<  >())
+        .def(init< const FDamageTypeSelectorData& >())
+        .def_readwrite("AssociatedDamageTypeName", &FDamageTypeSelectorData::AssociatedDamageTypeName)
+        .def_readwrite("ValueIfMatched", &FDamageTypeSelectorData::ValueIfMatched)
+    ;
+
+    class_< FBlackMarketUpgradeLevelData >("FBlackMarketUpgradeLevelData", init<  >())
+        .def(init< const FBlackMarketUpgradeLevelData& >())
+        .def_readwrite("UpgradeDefinition", &FBlackMarketUpgradeLevelData::UpgradeDefinition)
+        .def_readwrite("MaxUpgradeLevel", &FBlackMarketUpgradeLevelData::MaxUpgradeLevel)
+    ;
+
+    class_< FTouchingPawn >("FTouchingPawn", init<  >())
+        .def(init< const FTouchingPawn& >())
+        .def_readwrite("Pawn", &FTouchingPawn::Pawn)
+        .def_readwrite("VolumesTouched", &FTouchingPawn::VolumesTouched)
+    ;
+
+    class_< FFeaturedItemData >("FFeaturedItemData", init<  >())
+        .def(init< const FFeaturedItemData& >())
+        .def_readwrite("CommerceMarkup", &FFeaturedItemData::CommerceMarkup)
+        .def_readwrite("LootConfiguration", &FFeaturedItemData::LootConfiguration)
+        .def_readwrite("GameStageValue", &FFeaturedItemData::GameStageValue)
+        .def_readwrite("AwesomeLevelValue", &FFeaturedItemData::AwesomeLevelValue)
+    ;
+
+    class_< FQueuedPersonalEchoLog >("FQueuedPersonalEchoLog", init<  >())
+        .def(init< const FQueuedPersonalEchoLog& >())
+        .def_readwrite("Event", &FQueuedPersonalEchoLog::Event)
+        .def_readwrite("Group", &FQueuedPersonalEchoLog::Group)
+    ;
+
+    class_< FCombatPointDebugData >("FCombatPointDebugData", init<  >())
+        .def(init< const FCombatPointDebugData& >())
+        .def_readwrite("Score", &FCombatPointDebugData::Score)
+        .def_readwrite("Location", &FCombatPointDebugData::Location)
+    ;
+
+    class_< FCombatPointData >("FCombatPointData", init<  >())
+        .def(init< const FCombatPointData& >())
+        .def_readwrite("Slot", &FCombatPointData::Slot)
+        .def_readwrite("Location", &FCombatPointData::Location)
+        .def_readwrite("Actor", &FCombatPointData::Actor)
+        .def_readwrite("ConstraintType", &FCombatPointData::ConstraintType)
+        .def_readwrite("ConstraintTags", &FCombatPointData::ConstraintTags)
+    ;
+
+    class_< FBalanceMeResourceUpgradePath >("FBalanceMeResourceUpgradePath", init<  >())
+        .def(init< const FBalanceMeResourceUpgradePath& >())
+        .def_readwrite("ResourceName", &FBalanceMeResourceUpgradePath::ResourceName)
+        .def_readwrite("PlayerLevelForEachUpgrade", &FBalanceMeResourceUpgradePath::PlayerLevelForEachUpgrade)
+    ;
+
+    class_< FViewProfile >("FViewProfile", init<  >())
+        .def(init< const FViewProfile& >())
+        .def_readwrite("InPlayer", &FViewProfile::InPlayer)
+        .def_readwrite("ViewNormal", &FViewProfile::ViewNormal)
+        .def_readwrite("ViewLocation", &FViewProfile::ViewLocation)
+        .def_readwrite("ViewRotation", &FViewProfile::ViewRotation)
+        .def_readwrite("ViewNormalDotViewNormal", &FViewProfile::ViewNormalDotViewNormal)
+        .def_readwrite("UnknownData00", &FViewProfile::UnknownData00)
+        .def_readwrite("ViewMatrix", &FViewProfile::ViewMatrix)
+    ;
+
+    class_< FSMPerchRandomPair >("FSMPerchRandomPair", init<  >())
+        .def(init< const FSMPerchRandomPair& >())
+        .def_readwrite("Weight", &FSMPerchRandomPair::Weight)
+        .def_readwrite("SMD", &FSMPerchRandomPair::SMD)
+    ;
+
+    class_< FWeaponTypeSelectorData >("FWeaponTypeSelectorData", init<  >())
+        .def(init< const FWeaponTypeSelectorData& >())
+        .def_readwrite("WeaponType", &FWeaponTypeSelectorData::WeaponType)
+        .def_readwrite("ValueIfMatched", &FWeaponTypeSelectorData::ValueIfMatched)
+    ;
+
+    class_< FWeaponAmmoResourceSelectorData >("FWeaponAmmoResourceSelectorData", init<  >())
+        .def(init< const FWeaponAmmoResourceSelectorData& >())
+        .def_readwrite("AssociatedResourceName", &FWeaponAmmoResourceSelectorData::AssociatedResourceName)
+        .def_readwrite("ValueIfMatched", &FWeaponAmmoResourceSelectorData::ValueIfMatched)
+    ;
+
+    class_< FUnlockItemData >("FUnlockItemData", init<  >())
+        .def(init< const FUnlockItemData& >())
+        .def_readwrite("GameStage", &FUnlockItemData::GameStage)
+        .def_readwrite("UnlockItems", &FUnlockItemData::UnlockItems)
+        .def_readwrite("UnlockItemPools", &FUnlockItemData::UnlockItemPools)
+    ;
+
+    class_< FWorldSpacePlayerInfo >("FWorldSpacePlayerInfo", init<  >())
+        .def(init< const FWorldSpacePlayerInfo& >())
+        .def_readwrite("WPRI", &FWorldSpacePlayerInfo::WPRI)
+        .def_readwrite("WPP", &FWorldSpacePlayerInfo::WPP)
+    ;
+
+    class_< FItemPartSettings >("FItemPartSettings", init<  >())
+        .def(init< const FItemPartSettings& >())
+        .def_readwrite("PartList", &FItemPartSettings::PartList)
+        .def_readwrite("Part", &FItemPartSettings::Part)
+        .def_readwrite("PartName", &FItemPartSettings::PartName)
+    ;
+
+    class_< FGrenadeModBehaviorSequenceStateData >("FGrenadeModBehaviorSequenceStateData", init<  >())
+        .def(init< const FGrenadeModBehaviorSequenceStateData& >())
+        .def_readwrite("Action", &FGrenadeModBehaviorSequenceStateData::Action)
+        .def_readwrite("SequenceName", &FGrenadeModBehaviorSequenceStateData::SequenceName)
+    ;
+
+    class_< FEnemyBreadCrumbStruct >("FEnemyBreadCrumbStruct", init<  >())
+        .def(init< const FEnemyBreadCrumbStruct& >())
+        .def_readwrite("pos", &FEnemyBreadCrumbStruct::pos)
+        .def_readwrite("CombatArea", &FEnemyBreadCrumbStruct::CombatArea)
+    ;
+
+    class_< FPrismDataContainer >("FPrismDataContainer", init<  >())
+        .def(init< const FPrismDataContainer& >())
+        .def_readwrite("RotateBoneTranslation", &FPrismDataContainer::RotateBoneTranslation)
+        .def_readwrite("RotateBone", &FPrismDataContainer::RotateBone)
+        .def_readwrite("RotateRefBone", &FPrismDataContainer::RotateRefBone)
+        .def_readwrite("AnimDeltaList", &FPrismDataContainer::AnimDeltaList)
+        .def_readwrite("AnimDeltaRefList", &FPrismDataContainer::AnimDeltaRefList)
+        .def_readwrite("SwapList", &FPrismDataContainer::SwapList)
+        .def_readwrite("RotateRootMotion", &FPrismDataContainer::RotateRootMotion)
+    ;
+
+    class_< FAnimDeltaDataList >("FAnimDeltaDataList", init<  >())
+        .def(init< const FAnimDeltaDataList& >())
+        .def_readwrite("IndexList", &FAnimDeltaDataList::IndexList)
+    ;
+
+    class_< FAnimSwapData >("FAnimSwapData", init<  >())
+        .def(init< const FAnimSwapData& >())
+        .def_readwrite("Index1", &FAnimSwapData::Index1)
+        .def_readwrite("Index2", &FAnimSwapData::Index2)
+    ;
+
+    class_< FGrenadeModPartBehaviorSequenceStateData >("FGrenadeModPartBehaviorSequenceStateData", init<  >())
+        .def(init< const FGrenadeModPartBehaviorSequenceStateData& >())
+        .def_readwrite("Action", &FGrenadeModPartBehaviorSequenceStateData::Action)
+        .def_readwrite("SequenceName", &FGrenadeModPartBehaviorSequenceStateData::SequenceName)
+    ;
+
+    class_< FMissionSetData >("FMissionSetData", init<  >())
+        .def(init< const FMissionSetData& >())
+        .def_readwrite("PackageName", &FMissionSetData::PackageName)
+        .def_readwrite("Missions", &FMissionSetData::Missions)
+    ;
+
+    class_< FDropProjectileBehaviorSequenceStateData >("FDropProjectileBehaviorSequenceStateData", init<  >())
+        .def(init< const FDropProjectileBehaviorSequenceStateData& >())
+        .def_readwrite("Action", &FDropProjectileBehaviorSequenceStateData::Action)
+        .def_readwrite("SequenceName", &FDropProjectileBehaviorSequenceStateData::SequenceName)
+    ;
+
+    class_< FSimpleAnimStateData >("FSimpleAnimStateData", init<  >())
+        .def(init< const FSimpleAnimStateData& >())
+        .def_readwrite("AnimState", &FSimpleAnimStateData::AnimState)
+    ;
+
+    class_< FDrunkenWaveFormData >("FDrunkenWaveFormData", init<  >())
+        .def(init< const FDrunkenWaveFormData& >())
+        .def_readwrite("WaveFreq", &FDrunkenWaveFormData::WaveFreq)
+        .def_readwrite("WaveAmp", &FDrunkenWaveFormData::WaveAmp)
+        .def_readwrite("WavePhase", &FDrunkenWaveFormData::WavePhase)
+    ;
+
+    class_< FPopulatedInteractiveObjectMemento >("FPopulatedInteractiveObjectMemento", init<  >())
+        .def(init< const FPopulatedInteractiveObjectMemento& >())
+        .def_readwrite("BehaviorSequenceState", &FPopulatedInteractiveObjectMemento::BehaviorSequenceState)
+    ;
+
+    class_< FVelocityObstacle >("FVelocityObstacle", init<  >())
+        .def(init< const FVelocityObstacle& >())
+        .def_readwrite("Segments", &FVelocityObstacle::Segments)
+    ;
+
+    class_< FObstacleSegment >("FObstacleSegment", init<  >())
+        .def(init< const FObstacleSegment& >())
+        .def_readwrite("P1", &FObstacleSegment::P1)
+        .def_readwrite("P2", &FObstacleSegment::P2)
+        .def_readwrite("Normal", &FObstacleSegment::Normal)
+    ;
+
+    class_< FBehaviorCondition >("FBehaviorCondition", init<  >())
+        .def(init< const FBehaviorCondition& >())
+        .def_readwrite("ConditionId", &FBehaviorCondition::ConditionId)
+        .def_readwrite("Condition", &FBehaviorCondition::Condition)
+        .def_readwrite("Behaviors", &FBehaviorCondition::Behaviors)
+    ;
+
+    class_< FStatusEffectNameMapping >("FStatusEffectNameMapping", init<  >())
+        .def(init< const FStatusEffectNameMapping& >())
+        .def_readwrite("StatusEffectName", &FStatusEffectNameMapping::StatusEffectName)
+        .def_readwrite("StatusEffectDefinitionName", &FStatusEffectNameMapping::StatusEffectDefinitionName)
+    ;
+
+    class_< FDirChangeRateRange >("FDirChangeRateRange", init<  >())
+        .def(init< const FDirChangeRateRange& >())
+        .def_readwrite("DirDegreesPerSecond", &FDirChangeRateRange::DirDegreesPerSecond)
+        .def_readwrite("SpeedRange", &FDirChangeRateRange::SpeedRange)
+    ;
+
+    class_< FDecalData >("FDecalData", init<  >())
+        .def(init< const FDecalData& >())
+        .def_readwrite("Materials", &FDecalData::Materials)
+        .def_readwrite("Width", &FDecalData::Width)
+        .def_readwrite("Height", &FDecalData::Height)
+        .def_readwrite("MinScale", &FDecalData::MinScale)
+        .def_readwrite("MaxScale", &FDecalData::MaxScale)
+        .def_readwrite("RandomRotation", &FDecalData::RandomRotation)
+        .def_readwrite("CreateNewMaterialInstanceConstant", &FDecalData::CreateNewMaterialInstanceConstant)
+    ;
+
+    class_< FFeatherBoneBlendTarget >("FFeatherBoneBlendTarget", init<  >())
+        .def(init< const FFeatherBoneBlendTarget& >())
+        .def_readwrite("StartBoneName", &FFeatherBoneBlendTarget::StartBoneName)
+        .def_readwrite("BlendWeight", &FFeatherBoneBlendTarget::BlendWeight)
+    ;
+
+    class_< FWeaponAccessorySetup >("FWeaponAccessorySetup", init<  >())
+        .def(init< const FWeaponAccessorySetup& >())
+        .def_readwrite("WeaponArchetypeName", &FWeaponAccessorySetup::WeaponArchetypeName)
+        .def_readwrite("AccessoryDefinition", &FWeaponAccessorySetup::AccessoryDefinition)
+        .def_readwrite("AccessoryTransforms", &FWeaponAccessorySetup::AccessoryTransforms)
+        .def_readwrite("AccessoryParts", &FWeaponAccessorySetup::AccessoryParts)
+    ;
+
+    class_< FEvalActionData >("FEvalActionData", init<  >())
+        .def(init< const FEvalActionData& >())
+        .def_readwrite("Action", &FEvalActionData::Action)
+    ;
+
+    class_< FSkillIndexLevelRequirementPair >("FSkillIndexLevelRequirementPair", init<  >())
+        .def(init< const FSkillIndexLevelRequirementPair& >())
+        .def_readwrite("SkillIndex", &FSkillIndexLevelRequirementPair::SkillIndex)
+        .def_readwrite("PlayerLevelRequirement", &FSkillIndexLevelRequirementPair::PlayerLevelRequirement)
+    ;
+
+    class_< FPlayerClassCountOverride >("FPlayerClassCountOverride", init<  >())
+        .def(init< const FPlayerClassCountOverride& >())
+        .def_readwrite("Override", &FPlayerClassCountOverride::Override)
+        .def_readwrite("PlayerClassIdDef", &FPlayerClassCountOverride::PlayerClassIdDef)
+    ;
+
+    class_< FNameExpressionData >("FNameExpressionData", init<  >())
+        .def(init< const FNameExpressionData& >())
+        .def_readwrite("Expressions", &FNameExpressionData::Expressions)
+        .def_readwrite("PreModifier", &FNameExpressionData::PreModifier)
+        .def_readwrite("PostModifier", &FNameExpressionData::PostModifier)
+    ;
+
+    class_< FHomingTargetedActorInfo >("FHomingTargetedActorInfo", init<  >())
+        .def(init< const FHomingTargetedActorInfo& >())
+        .def_readwrite("HomingActor", &FHomingTargetedActorInfo::HomingActor)
+        .def_readwrite("HomingActorCount", &FHomingTargetedActorInfo::HomingActorCount)
+    ;
+
+    class_< FUnloadableDlcEchoCallData >("FUnloadableDlcEchoCallData", init<  >())
+        .def(init< const FUnloadableDlcEchoCallData& >())
+        .def_readwrite("CallDefName", &FUnloadableDlcEchoCallData::CallDefName)
+        .def_readwrite("DlcPackageId", &FUnloadableDlcEchoCallData::DlcPackageId)
+    ;
+
+    class_< FEnvironmentalEffectInfo >("FEnvironmentalEffectInfo", init<  >())
+        .def(init< const FEnvironmentalEffectInfo& >())
+        .def_readwrite("EffectID", &FEnvironmentalEffectInfo::EffectID)
+        .def_readwrite("Volume", &FEnvironmentalEffectInfo::Volume)
+    ;
+
+    class_< FAkEventTrackKey >("FAkEventTrackKey", init<  >())
+        .def(init< const FAkEventTrackKey& >())
+        .def_readwrite("Time", &FAkEventTrackKey::Time)
+        .def_readwrite("Event", &FAkEventTrackKey::Event)
+    ;
+
+    class_< FEnvironmentalEffectSetting >("FEnvironmentalEffectSetting", init<  >())
+        .def(init< const FEnvironmentalEffectSetting& >())
+        .def_readwrite("Effect", &FEnvironmentalEffectSetting::Effect)
+        .def_readwrite("Volume", &FEnvironmentalEffectSetting::Volume)
+        .def_readwrite("FadeDistance", &FEnvironmentalEffectSetting::FadeDistance)
+        .def_readwrite("MinDistance", &FEnvironmentalEffectSetting::MinDistance)
+        .def_readwrite("MaxDistance", &FEnvironmentalEffectSetting::MaxDistance)
+    ;
+
+    class_< FRTPCSetting >("FRTPCSetting", init<  >())
+        .def(init< const FRTPCSetting& >())
+        .def_readwrite("Target", &FRTPCSetting::Target)
+        .def_readwrite("AkRtpc", &FRTPCSetting::AkRtpc)
+        .def_readwrite("ValueAtMaxRange", &FRTPCSetting::ValueAtMaxRange)
+        .def_readwrite("ValueWithinVolume", &FRTPCSetting::ValueWithinVolume)
+        .def_readwrite("FadeDistance", &FRTPCSetting::FadeDistance)
+        .def_readwrite("LastEvalValue", &FRTPCSetting::LastEvalValue)
+    ;
+
+    class_< FOccludedVolume >("FOccludedVolume", init<  >())
+        .def(init< const FOccludedVolume& >())
+        .def_readwrite("SoundVolume", &FOccludedVolume::SoundVolume)
+        .def_readwrite("Target", &FOccludedVolume::Target)
+        .def_readwrite("UnknownData00", &FOccludedVolume::UnknownData00)
+        .def_readwrite("MaxOcclusion", &FOccludedVolume::MaxOcclusion)
+        .def_readwrite("FadeDistance", &FOccludedVolume::FadeDistance)
+    ;
+
+    class_< FPlaylist >("FPlaylist", init<  >())
+        .def(init< const FPlaylist& >())
+        .def_readwrite("ConfiguredGames", &FPlaylist::ConfiguredGames)
+        .def_readwrite("PlaylistId", &FPlaylist::PlaylistId)
+        .def_readwrite("LoadBalanceId", &FPlaylist::LoadBalanceId)
+        .def_readwrite("LocalizationString", &FPlaylist::LocalizationString)
+        .def_readwrite("ContentIds", &FPlaylist::ContentIds)
+        .def_readwrite("TeamSize", &FPlaylist::TeamSize)
+        .def_readwrite("TeamCount", &FPlaylist::TeamCount)
+        .def_readwrite("MaxPartySize", &FPlaylist::MaxPartySize)
+        .def_readwrite("Name", &FPlaylist::Name)
+        .def_readwrite("URL", &FPlaylist::URL)
+        .def_readwrite("MatchType", &FPlaylist::MatchType)
+        .def_readwrite("MapCycle", &FPlaylist::MapCycle)
+        .def_readwrite("InventorySwaps", &FPlaylist::InventorySwaps)
+    ;
+
+    class_< FConfiguredGameSetting >("FConfiguredGameSetting", init<  >())
+        .def(init< const FConfiguredGameSetting& >())
+        .def_readwrite("GameSettingId", &FConfiguredGameSetting::GameSettingId)
+        .def_readwrite("GameSettingsClassName", &FConfiguredGameSetting::GameSettingsClassName)
+        .def_readwrite("URL", &FConfiguredGameSetting::URL)
+        .def_readwrite("GameSettings", &FConfiguredGameSetting::GameSettings)
+    ;
+
+    class_< FInventorySwap >("FInventorySwap", init<  >())
+        .def(init< const FInventorySwap& >())
+        .def_readwrite("Original", &FInventorySwap::Original)
+        .def_readwrite("SwapTo", &FInventorySwap::SwapTo)
+    ;
+
+    class_< FIpAddr >("FIpAddr", init<  >())
+        .def(init< const FIpAddr& >())
+        .def_readwrite("Addr", &FIpAddr::Addr)
+        .def_readwrite("Port", &FIpAddr::Port)
+    ;
+
+    class_< FClientBeaconConnection >("FClientBeaconConnection", init<  >())
+        .def(init< const FClientBeaconConnection& >())
+        .def_readwrite("PartyLeader", &FClientBeaconConnection::PartyLeader)
+        .def_readwrite("ElapsedHeartbeatTime", &FClientBeaconConnection::ElapsedHeartbeatTime)
+        .def_readwrite("Socket", &FClientBeaconConnection::Socket)
+    ;
+
+    class_< FPartyReservation >("FPartyReservation", init<  >())
+        .def(init< const FPartyReservation& >())
+        .def_readwrite("TeamNum", &FPartyReservation::TeamNum)
+        .def_readwrite("PartyLeader", &FPartyReservation::PartyLeader)
+        .def_readwrite("PartyMembers", &FPartyReservation::PartyMembers)
+    ;
+
+    class_< FPlayerReservation >("FPlayerReservation", init<  >())
+        .def(init< const FPlayerReservation& >())
+        .def_readwrite("NetId", &FPlayerReservation::NetId)
+        .def_readwrite("Skill", &FPlayerReservation::Skill)
+        .def_readwrite("XpLevel", &FPlayerReservation::XpLevel)
+        .def_readwrite("Mu", &FPlayerReservation::Mu)
+        .def_readwrite("Sigma", &FPlayerReservation::Sigma)
+        .def_readwrite("ElapsedSessionTime", &FPlayerReservation::ElapsedSessionTime)
+    ;
+
+    class_< FClientConnectionRequest >("FClientConnectionRequest", init<  >())
+        .def(init< const FClientConnectionRequest& >())
+        .def_readwrite("PlayerNetId", &FClientConnectionRequest::PlayerNetId)
+        .def_readwrite("NatType", &FClientConnectionRequest::NatType)
+        .def_readwrite("GoodHostRatio", &FClientConnectionRequest::GoodHostRatio)
+        .def_readwrite("BandwidthHistory", &FClientConnectionRequest::BandwidthHistory)
+        .def_readwrite("MinutesSinceLastTest", &FClientConnectionRequest::MinutesSinceLastTest)
+    ;
+
+    class_< FConnectionBandwidthStats >("FConnectionBandwidthStats", init<  >())
+        .def(init< const FConnectionBandwidthStats& >())
+        .def_readwrite("UpstreamRate", &FConnectionBandwidthStats::UpstreamRate)
+        .def_readwrite("DownstreamRate", &FConnectionBandwidthStats::DownstreamRate)
+        .def_readwrite("RoundtripLatency", &FConnectionBandwidthStats::RoundtripLatency)
+    ;
+
+    class_< FPlayerMember >("FPlayerMember", init<  >())
+        .def(init< const FPlayerMember& >())
+        .def_readwrite("TeamNum", &FPlayerMember::TeamNum)
+        .def_readwrite("Skill", &FPlayerMember::Skill)
+        .def_readwrite("NetId", &FPlayerMember::NetId)
+    ;
+
+    class_< FNewsCacheEntry >("FNewsCacheEntry", init<  >())
+        .def(init< const FNewsCacheEntry& >())
+        .def_readwrite("NewsUrl", &FNewsCacheEntry::NewsUrl)
+        .def_readwrite("ReadState", &FNewsCacheEntry::ReadState)
+        .def_readwrite("NewsType", &FNewsCacheEntry::NewsType)
+        .def_readwrite("NewsItem", &FNewsCacheEntry::NewsItem)
+        .def_readwrite("TimeOut", &FNewsCacheEntry::TimeOut)
+        .def_readwrite("HttpDownloader", &FNewsCacheEntry::HttpDownloader)
+    ;
+
+    class_< FEventUploadConfig >("FEventUploadConfig", init<  >())
+        .def(init< const FEventUploadConfig& >())
+        .def_readwrite("UploadType", &FEventUploadConfig::UploadType)
+        .def_readwrite("UploadUrl", &FEventUploadConfig::UploadUrl)
+        .def_readwrite("TimeOut", &FEventUploadConfig::TimeOut)
+    ;
+
+    class_< FClientMeshBeaconConnection >("FClientMeshBeaconConnection", init<  >())
+        .def(init< const FClientMeshBeaconConnection& >())
+        .def_readwrite("PlayerNetId", &FClientMeshBeaconConnection::PlayerNetId)
+        .def_readwrite("ElapsedHeartbeatTime", &FClientMeshBeaconConnection::ElapsedHeartbeatTime)
+        .def_readwrite("Socket", &FClientMeshBeaconConnection::Socket)
+        .def_readwrite("BandwidthTest", &FClientMeshBeaconConnection::BandwidthTest)
+        .def_readwrite("NatType", &FClientMeshBeaconConnection::NatType)
+        .def_readwrite("GoodHostRatio", &FClientMeshBeaconConnection::GoodHostRatio)
+        .def_readwrite("BandwidthHistory", &FClientMeshBeaconConnection::BandwidthHistory)
+        .def_readwrite("MinutesSinceLastTest", &FClientMeshBeaconConnection::MinutesSinceLastTest)
+    ;
+
+    class_< FClientConnectionBandwidthTestData >("FClientConnectionBandwidthTestData", init<  >())
+        .def(init< const FClientConnectionBandwidthTestData& >())
+        .def_readwrite("CurrentState", &FClientConnectionBandwidthTestData::CurrentState)
+        .def_readwrite("TestType", &FClientConnectionBandwidthTestData::TestType)
+        .def_readwrite("BytesTotalNeeded", &FClientConnectionBandwidthTestData::BytesTotalNeeded)
+        .def_readwrite("BytesReceived", &FClientConnectionBandwidthTestData::BytesReceived)
+        .def_readwrite("RequestTestStartTime", &FClientConnectionBandwidthTestData::RequestTestStartTime)
+        .def_readwrite("TestStartTime", &FClientConnectionBandwidthTestData::TestStartTime)
+        .def_readwrite("BandwidthStats", &FClientConnectionBandwidthTestData::BandwidthStats)
+    ;
+
+    class_< FFileNameToURLMapping >("FFileNameToURLMapping", init<  >())
+        .def(init< const FFileNameToURLMapping& >())
+        .def_readwrite("Filename", &FFileNameToURLMapping::Filename)
+        .def_readwrite("UrlMapping", &FFileNameToURLMapping::UrlMapping)
+    ;
+
+    class_< FPlaylistPopulation >("FPlaylistPopulation", init<  >())
+        .def(init< const FPlaylistPopulation& >())
+        .def_readwrite("PlaylistId", &FPlaylistPopulation::PlaylistId)
+        .def_readwrite("WorldwideTotal", &FPlaylistPopulation::WorldwideTotal)
+        .def_readwrite("RegionTotal", &FPlaylistPopulation::RegionTotal)
+    ;
+
+    class_< FTitleFileMcp, bases< FTitleFile >  >("FTitleFileMcp", init<  >())
+        .def(init< const FTitleFileMcp& >())
+        .def_readwrite("HttpDownloader", &FTitleFileMcp::HttpDownloader)
+    ;
+
+    class_< FClientBandwidthTestData >("FClientBandwidthTestData", init<  >())
+        .def(init< const FClientBandwidthTestData& >())
+        .def_readwrite("TestType", &FClientBandwidthTestData::TestType)
+        .def_readwrite("CurrentState", &FClientBandwidthTestData::CurrentState)
+        .def_readwrite("NumBytesToSendTotal", &FClientBandwidthTestData::NumBytesToSendTotal)
+        .def_readwrite("NumBytesSentTotal", &FClientBandwidthTestData::NumBytesSentTotal)
+        .def_readwrite("NumBytesSentLast", &FClientBandwidthTestData::NumBytesSentLast)
+        .def_readwrite("ElapsedTestTime", &FClientBandwidthTestData::ElapsedTestTime)
+    ;
+
+    class_< FDeferredLeaderboardRead >("FDeferredLeaderboardRead", init<  >())
+        .def(init< const FDeferredLeaderboardRead& >())
+        .def_readwrite("LeaderboardName", &FDeferredLeaderboardRead::LeaderboardName)
+        .def_readwrite("RequestType", &FDeferredLeaderboardRead::RequestType)
+        .def_readwrite("Start", &FDeferredLeaderboardRead::Start)
+        .def_readwrite("End", &FDeferredLeaderboardRead::End)
+    ;
+
+    class_< FDeferredLeaderboardWrite >("FDeferredLeaderboardWrite", init<  >())
+        .def(init< const FDeferredLeaderboardWrite& >())
+        .def_readwrite("LeaderboardName", &FDeferredLeaderboardWrite::LeaderboardName)
+        .def_readwrite("Score", &FDeferredLeaderboardWrite::Score)
+    ;
+
+    class_< FLeaderboardEntry >("FLeaderboardEntry", init<  >())
+        .def(init< const FLeaderboardEntry& >())
+        .def_readwrite("PlayerUID", &FLeaderboardEntry::PlayerUID)
+        .def_readwrite("Rank", &FLeaderboardEntry::Rank)
+        .def_readwrite("Score", &FLeaderboardEntry::Score)
+    ;
+
+    class_< FLeaderboardTemplate >("FLeaderboardTemplate", init<  >())
+        .def(init< const FLeaderboardTemplate& >())
+        .def_readwrite("LeaderboardName", &FLeaderboardTemplate::LeaderboardName)
+        .def_readwrite("UpdateType", &FLeaderboardTemplate::UpdateType)
+        .def_readwrite("LeaderboardSize", &FLeaderboardTemplate::LeaderboardSize)
+        .def_readwrite("SortType", &FLeaderboardTemplate::SortType)
+        .def_readwrite("DisplayFormat", &FLeaderboardTemplate::DisplayFormat)
+        .def_readwrite("LeaderboardRef", &FLeaderboardTemplate::LeaderboardRef)
+    ;
+
+    class_< FLeaderboardHandle >("FLeaderboardHandle", init<  >())
+        .def(init< const FLeaderboardHandle& >())
+        .def_readwrite("Dud", &FLeaderboardHandle::Dud)
+    ;
+
+    class_< FPendingEntry >("FPendingEntry", init<  >())
+        .def(init< const FPendingEntry& >())
+        .def_readwrite("RemoteId", &FPendingEntry::RemoteId)
+        .def_readwrite("CallbackFunc", &FPendingEntry::CallbackFunc)
+        .def_readwrite("UserData", &FPendingEntry::UserData)
+    ;
+
+    class_< FMarketplaceOfferData >("FMarketplaceOfferData", init<  >())
+        .def(init< const FMarketplaceOfferData& >())
+        .def_readwrite("OfferId", &FMarketplaceOfferData::OfferId)
+        .def_readwrite("Category", &FMarketplaceOfferData::Category)
+        .def_readwrite("SellTextLocKey", &FMarketplaceOfferData::SellTextLocKey)
+    ;
+
+    class_< FViewIdToLeaderboardName >("FViewIdToLeaderboardName", init<  >())
+        .def(init< const FViewIdToLeaderboardName& >())
+        .def_readwrite("ViewId", &FViewIdToLeaderboardName::ViewId)
+        .def_readwrite("LeaderboardName", &FViewIdToLeaderboardName::LeaderboardName)
+    ;
+
+    class_< FClientFilterORClause >("FClientFilterORClause", init<  >())
+        .def(init< const FClientFilterORClause& >())
+        .def_readwrite("OrParams", &FClientFilterORClause::OrParams)
+    ;
+
+    class_< FFilterKeyToSteamKeyMapping >("FFilterKeyToSteamKeyMapping", init<  >())
+        .def(init< const FFilterKeyToSteamKeyMapping& >())
+        .def_readwrite("KeyId", &FFilterKeyToSteamKeyMapping::KeyId)
+        .def_readwrite("KeyType", &FFilterKeyToSteamKeyMapping::KeyType)
+        .def_readwrite("RawKey", &FFilterKeyToSteamKeyMapping::RawKey)
+        .def_readwrite("SteamKey", &FFilterKeyToSteamKeyMapping::SteamKey)
+        .def_readwrite("IgnoreValue", &FFilterKeyToSteamKeyMapping::IgnoreValue)
+    ;
+
+    class_< FServerQueryToRulesResponseMapping >("FServerQueryToRulesResponseMapping", init<  >())
+        .def(init< const FServerQueryToRulesResponseMapping& >())
+        .def_readwrite("Query", &FServerQueryToRulesResponseMapping::Query)
+        .def_readwrite("Response", &FServerQueryToRulesResponseMapping::Response)
+    ;
+
+    class_< FServerQueryToPingResponseMapping >("FServerQueryToPingResponseMapping", init<  >())
+        .def(init< const FServerQueryToPingResponseMapping& >())
+        .def_readwrite("Query", &FServerQueryToPingResponseMapping::Query)
+        .def_readwrite("Response", &FServerQueryToPingResponseMapping::Response)
+    ;
+
+    class_< FPropertyToColumn >("FPropertyToColumn", init<  >())
+        .def(init< const FPropertyToColumn& >())
+        .def_readwrite("PropertyId", &FPropertyToColumn::PropertyId)
+        .def_readwrite("ColumnId", &FPropertyToColumn::ColumnId)
+    ;
+
+    class_< FPendingPlayerStats >("FPendingPlayerStats", init<  >())
+        .def(init< const FPendingPlayerStats& >())
+        .def_readwrite("Player", &FPendingPlayerStats::Player)
+        .def_readwrite("PlayerName", &FPendingPlayerStats::PlayerName)
+        .def_readwrite("StatGuid", &FPendingPlayerStats::StatGuid)
+        .def_readwrite("Stats", &FPendingPlayerStats::Stats)
+        .def_readwrite("Score", &FPendingPlayerStats::Score)
+        .def_readwrite("Place", &FPendingPlayerStats::Place)
+    ;
+
+    class_< FPlayerStat >("FPlayerStat", init<  >())
+        .def(init< const FPlayerStat& >())
+        .def_readwrite("ViewId", &FPlayerStat::ViewId)
+        .def_readwrite("PropertyId", &FPlayerStat::PropertyId)
+        .def_readwrite("Data", &FPlayerStat::Data)
+    ;
+
+    class_< FProfileSettingsCache >("FProfileSettingsCache", init<  >())
+        .def(init< const FProfileSettingsCache& >())
+        .def_readwrite("Profile", &FProfileSettingsCache::Profile)
+        .def_readwrite("ReadDelegates", &FProfileSettingsCache::ReadDelegates)
+        .def_readwrite("WriteDelegates", &FProfileSettingsCache::WriteDelegates)
+        .def_readwrite("ProfileDataChangedDelegates", &FProfileSettingsCache::ProfileDataChangedDelegates)
+    ;
+
+    class_< FDeviceIdCache >("FDeviceIdCache", init<  >())
+        .def(init< const FDeviceIdCache& >())
+        .def_readwrite("DeviceID", &FDeviceIdCache::DeviceID)
+        .def_readwrite("DeviceSelectionMulticast", &FDeviceIdCache::DeviceSelectionMulticast)
+        .def_readwrite("DeviceSelectionDelegates", &FDeviceIdCache::DeviceSelectionDelegates)
+    ;
+
+    class_< FOnlineStatusMapping >("FOnlineStatusMapping", init<  >())
+        .def(init< const FOnlineStatusMapping& >())
+        .def_readwrite("StatusId", &FOnlineStatusMapping::StatusId)
+        .def_readwrite("StatusString", &FOnlineStatusMapping::StatusString)
+    ;
+
+    class_< FOnlineStatusPropertyMapping >("FOnlineStatusPropertyMapping", init<  >())
+        .def(init< const FOnlineStatusPropertyMapping& >())
+        .def_readwrite("KeyString", &FOnlineStatusPropertyMapping::KeyString)
+        .def_readwrite("PropertyId", &FOnlineStatusPropertyMapping::PropertyId)
+        .def_readwrite("EncodeId", &FOnlineStatusPropertyMapping::EncodeId)
+    ;
+
+    class_< FOnlineStatusContextMapping >("FOnlineStatusContextMapping", init<  >())
+        .def(init< const FOnlineStatusContextMapping& >())
+        .def_readwrite("KeyString", &FOnlineStatusContextMapping::KeyString)
+        .def_readwrite("ContextId", &FOnlineStatusContextMapping::ContextId)
+    ;
+
+    class_< FControllerConnectionState >("FControllerConnectionState", init<  >())
+        .def(init< const FControllerConnectionState& >())
+    ;
+
+    class_< FTitleFileMapping >("FTitleFileMapping", init<  >())
+        .def(init< const FTitleFileMapping& >())
+        .def_readwrite("Filename", &FTitleFileMapping::Filename)
+        .def_readwrite("UGCHandle", &FTitleFileMapping::UGCHandle)
+    ;
+
+    class_< FQueuedAvatarRequest >("FQueuedAvatarRequest", init<  >())
+        .def(init< const FQueuedAvatarRequest& >())
+        .def_readwrite("CheckTime", &FQueuedAvatarRequest::CheckTime)
+        .def_readwrite("NumberOfAttempts", &FQueuedAvatarRequest::NumberOfAttempts)
+        .def_readwrite("PlayerNetId", &FQueuedAvatarRequest::PlayerNetId)
+        .def_readwrite("Size", &FQueuedAvatarRequest::Size)
+        .def_readwrite("ReadOnlineAvatarCompleteDelegate", &FQueuedAvatarRequest::ReadOnlineAvatarCompleteDelegate)
+    ;
+
+    class_< FAchievementMappingInfo >("FAchievementMappingInfo", init<  >())
+        .def(init< const FAchievementMappingInfo& >())
+        .def_readwrite("AchievementId", &FAchievementMappingInfo::AchievementId)
+        .def_readwrite("AchievementName", &FAchievementMappingInfo::AchievementName)
+        .def_readwrite("ViewId", &FAchievementMappingInfo::ViewId)
+        .def_readwrite("ProgressCount", &FAchievementMappingInfo::ProgressCount)
+        .def_readwrite("MaxProgress", &FAchievementMappingInfo::MaxProgress)
+    ;
+
+    class_< FAchievementProgressStat >("FAchievementProgressStat", init<  >())
+        .def(init< const FAchievementProgressStat& >())
+        .def_readwrite("AchievementId", &FAchievementProgressStat::AchievementId)
+        .def_readwrite("Progress", &FAchievementProgressStat::Progress)
+        .def_readwrite("MaxProgress", &FAchievementProgressStat::MaxProgress)
+    ;
+
+    class_< FMarketplaceListCache >("FMarketplaceListCache", init<  >())
+        .def(init< const FMarketplaceListCache& >())
+        .def_readwrite("Content", &FMarketplaceListCache::Content)
+        .def_readwrite("ReadState", &FMarketplaceListCache::ReadState)
+        .def_readwrite("ReadCompleteDelegates", &FMarketplaceListCache::ReadCompleteDelegates)
+    ;
+
+    class_< FSteamPlayerClanData >("FSteamPlayerClanData", init<  >())
+        .def(init< const FSteamPlayerClanData& >())
+        .def_readwrite("ClanName", &FSteamPlayerClanData::ClanName)
+        .def_readwrite("ClanTag", &FSteamPlayerClanData::ClanTag)
+    ;
+
+    class_< FRequestEntry >("FRequestEntry", init<  >())
+        .def(init< const FRequestEntry& >())
+        .def_readwrite("RemoteId", &FRequestEntry::RemoteId)
+        .def_readwrite("NumProbesSent", &FRequestEntry::NumProbesSent)
+        .def_readwrite("ChallengeTimestamp", &FRequestEntry::ChallengeTimestamp)
+        .def_readwrite("PingTimestamp", &FRequestEntry::PingTimestamp)
+        .def_readwrite("Status", &FRequestEntry::Status)
+        .def_readwrite("Results", &FRequestEntry::Results)
+        .def_readwrite("CallbackFunc", &FRequestEntry::CallbackFunc)
+        .def_readwrite("UserData", &FRequestEntry::UserData)
+    ;
+
+    class_< FQoSResults >("FQoSResults", init<  >())
+        .def(init< const FQoSResults& >())
+        .def_readwrite("PingTimes", &FQoSResults::PingTimes)
+        .def_readwrite("PingInMs", &FQoSResults::PingInMs)
+    ;
+
+    class_< FListenEntry >("FListenEntry", init<  >())
+        .def(init< const FListenEntry& >())
+        .def_readwrite("RemoteId", &FListenEntry::RemoteId)
+        .def_readwrite("Status", &FListenEntry::Status)
+        .def_readwrite("ActiveTimestamp", &FListenEntry::ActiveTimestamp)
+    ;
+
+}
+

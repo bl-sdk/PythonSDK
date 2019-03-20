@@ -75,8 +75,8 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include;C:\Users\abahb\boost_1_69_0;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;C:\Users\abahb\boost_1_69_0\stage_x86\lib;$(LibraryPath)</LibraryPath>
     <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -86,8 +86,8 @@
     <LinkIncremental>false</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include;C:\Users\abahb\boost_1_69_0;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;C:\Users\abahb\boost_1_69_0\stage_x86\lib;$(LibraryPath)</LibraryPath>
     <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -221,6 +221,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="_classes.cpp" />
+    <ClCompile Include="_structs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AkAudio_classes.h" />
