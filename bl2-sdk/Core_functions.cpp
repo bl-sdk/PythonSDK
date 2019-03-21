@@ -43,7 +43,7 @@ TArray< UObject* >* UObject::GObjObjects()
 	return ObjectArray;
 }
 
-char* UObject::GetName()
+std::string UObject::GetName()
 {
 	static char cOutBuffer[256];
 
@@ -52,7 +52,7 @@ char* UObject::GetName()
 	return cOutBuffer;
 }
 
-char* UObject::GetNameCPP()
+std::string UObject::GetNameCPP()
 {
 	static char cOutBuffer[256];
 
@@ -61,12 +61,12 @@ char* UObject::GetNameCPP()
 		UClass* pClass = (UClass*)this;
 		while (pClass)
 		{
-			if (!strcmp(pClass->GetName(), "Actor"))
+			if (!strcmp(pClass->GetName().c_str(), "Actor"))
 			{
 				strcpy_s(cOutBuffer, "A");
 				break;
 			}
-			else if (!strcmp(pClass->GetName(), "Object"))
+			else if (!strcmp(pClass->GetName().c_str(), "Object"))
 			{
 				strcpy_s(cOutBuffer, "U");
 				break;
@@ -80,12 +80,12 @@ char* UObject::GetNameCPP()
 		strcpy_s(cOutBuffer, "F");
 	}
 
-	strcat_s(cOutBuffer, this->GetName());
+	strcat_s(cOutBuffer, this->GetName().c_str());
 
 	return cOutBuffer;
 }
 
-char* UObject::GetFullName()
+std::string UObject::GetFullName()
 {
 	if (this->Class && this->Outer)
 	{
@@ -93,21 +93,21 @@ char* UObject::GetFullName()
 
 		if (this->Outer->Outer)
 		{
-			strcpy_s(cOutBuffer, this->Class->GetName());
+			strcpy_s(cOutBuffer, this->Class->GetName().c_str());
 			strcat_s(cOutBuffer, " ");
-			strcat_s(cOutBuffer, this->Outer->Outer->GetName());
+			strcat_s(cOutBuffer, this->Outer->Outer->GetName().c_str());
 			strcat_s(cOutBuffer, ".");
-			strcat_s(cOutBuffer, this->Outer->GetName());
+			strcat_s(cOutBuffer, this->Outer->GetName().c_str());
 			strcat_s(cOutBuffer, ".");
-			strcat_s(cOutBuffer, this->GetName());
+			strcat_s(cOutBuffer, this->GetName().c_str());
 		}
 		else
 		{
-			strcpy_s(cOutBuffer, this->Class->GetName());
+			strcpy_s(cOutBuffer, this->Class->GetName().c_str());
 			strcat_s(cOutBuffer, " ");
-			strcat_s(cOutBuffer, this->Outer->GetName());
+			strcat_s(cOutBuffer, this->Outer->GetName().c_str());
 			strcat_s(cOutBuffer, ".");
-			strcat_s(cOutBuffer, this->GetName());
+			strcat_s(cOutBuffer, this->GetName().c_str());
 		}
 
 		return cOutBuffer;
@@ -131,7 +131,7 @@ UClass* UObject::FindClass(char* ClassFullName)
 		if (!Object)
 			continue;
 
-		if (!_stricmp(Object->GetFullName(), ClassFullName))
+		if (!_stricmp(Object->GetFullName().c_str(), ClassFullName))
 			return (UClass*)Object;
 	}
 

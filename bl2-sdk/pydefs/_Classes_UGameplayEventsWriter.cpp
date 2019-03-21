@@ -1,0 +1,47 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UGameplayEventsWriter()
+{
+    class_< UGameplayEventsWriter, bases< UGameplayEvents >  , boost::noncopyable>("UGameplayEventsWriter", no_init)
+        .def_readwrite("Game", &UGameplayEventsWriter::Game)
+        .def("StaticClass", &UGameplayEventsWriter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("RecordCoverLinkFireLinks", &UGameplayEventsWriter::RecordCoverLinkFireLinks)
+        .def("RecordAIPathFail", &UGameplayEventsWriter::RecordAIPathFail)
+        .def("GetGenericParamListEntry", &UGameplayEventsWriter::GetGenericParamListEntry, return_value_policy< reference_existing_object >())
+        .def("LogSystemPollEvents", &UGameplayEventsWriter::LogSystemPollEvents)
+        .def("LogProjectileIntEvent", &UGameplayEventsWriter::LogProjectileIntEvent)
+        .def("LogDamageEvent", &UGameplayEventsWriter::LogDamageEvent)
+        .def("LogWeaponIntEvent", &UGameplayEventsWriter::LogWeaponIntEvent)
+        .def("LogPlayerPlayerEvent", &UGameplayEventsWriter::LogPlayerPlayerEvent)
+        .def("LogPlayerKillDeath", &UGameplayEventsWriter::LogPlayerKillDeath)
+        .def("LogAllPlayerPositionsEvent", &UGameplayEventsWriter::LogAllPlayerPositionsEvent)
+        .def("LogPlayerLoginChange", &UGameplayEventsWriter::LogPlayerLoginChange)
+        .def("LogPlayerSpawnEvent", &UGameplayEventsWriter::LogPlayerSpawnEvent)
+        .def("LogPlayerStringEvent", &UGameplayEventsWriter::LogPlayerStringEvent)
+        .def("LogPlayerFloatEvent", &UGameplayEventsWriter::LogPlayerFloatEvent)
+        .def("LogPlayerIntEvent", &UGameplayEventsWriter::LogPlayerIntEvent)
+        .def("LogTeamStringEvent", &UGameplayEventsWriter::LogTeamStringEvent)
+        .def("LogTeamFloatEvent", &UGameplayEventsWriter::LogTeamFloatEvent)
+        .def("LogTeamIntEvent", &UGameplayEventsWriter::LogTeamIntEvent)
+        .def("LogGamePositionEvent", &UGameplayEventsWriter::LogGamePositionEvent)
+        .def("LogGameFloatEvent", &UGameplayEventsWriter::LogGameFloatEvent)
+        .def("LogGameStringEvent", &UGameplayEventsWriter::LogGameStringEvent)
+        .def("LogGameIntEvent", &UGameplayEventsWriter::LogGameIntEvent)
+        .def("eventGetPlaylistId", &UGameplayEventsWriter::eventGetPlaylistId)
+        .def("eventGetGameTypeId", &UGameplayEventsWriter::eventGetGameTypeId)
+        .def("Poll", &UGameplayEventsWriter::Poll)
+        .def("SerializeFooter", &UGameplayEventsWriter::SerializeFooter)
+        .def("SerializeHeader", &UGameplayEventsWriter::SerializeHeader)
+        .def("CloseStatsFile", &UGameplayEventsWriter::CloseStatsFile)
+        .def("OpenStatsFile", &UGameplayEventsWriter::OpenStatsFile)
+        .def("IsSessionInProgress", &UGameplayEventsWriter::IsSessionInProgress)
+        .def("EndLogging", &UGameplayEventsWriter::EndLogging)
+        .def("ResetLogging", &UGameplayEventsWriter::ResetLogging)
+        .def("StartLogging", &UGameplayEventsWriter::StartLogging)
+        .def("ResolvePlayerIndex", &UGameplayEventsWriter::ResolvePlayerIndex)
+        .staticmethod("StaticClass")
+  ;
+}

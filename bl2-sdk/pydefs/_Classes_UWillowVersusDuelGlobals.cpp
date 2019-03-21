@@ -1,0 +1,29 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UWillowVersusDuelGlobals()
+{
+    class_< UWillowVersusDuelGlobals, bases< UGBXDefinition >  , boost::noncopyable>("UWillowVersusDuelGlobals", no_init)
+        .def_readwrite("ArenaMaterialIndex", &UWillowVersusDuelGlobals::ArenaMaterialIndex)
+        .def_readwrite("ArenaMaterialParamName", &UWillowVersusDuelGlobals::ArenaMaterialParamName)
+        .def_readwrite("ArenaMesh", &UWillowVersusDuelGlobals::ArenaMesh)
+        .def_readwrite("ArenaMeshRadiusActual", &UWillowVersusDuelGlobals::ArenaMeshRadiusActual)
+        .def_readwrite("ArenaMeshRadiusDesired", &UWillowVersusDuelGlobals::ArenaMeshRadiusDesired)
+        .def_readwrite("ArenaSetupTime", &UWillowVersusDuelGlobals::ArenaSetupTime)
+        .def_readwrite("ArenaTakeDownTime", &UWillowVersusDuelGlobals::ArenaTakeDownTime)
+        .def_readwrite("OnChallengeIssued", &UWillowVersusDuelGlobals::OnChallengeIssued)
+        .def_readwrite("OnDuelStarted", &UWillowVersusDuelGlobals::OnDuelStarted)
+        .def_readwrite("OnLeftDuelArena", &UWillowVersusDuelGlobals::OnLeftDuelArena)
+        .def_readwrite("OnDuelWinLoss", &UWillowVersusDuelGlobals::OnDuelWinLoss)
+        .def_readwrite("OnDuelDraw", &UWillowVersusDuelGlobals::OnDuelDraw)
+        .def_readwrite("DuelArenaTimeout", &UWillowVersusDuelGlobals::DuelArenaTimeout)
+        .def_readwrite("DuelChallengeCoolDown", &UWillowVersusDuelGlobals::DuelChallengeCoolDown)
+        .def_readwrite("DuelChallengeTimeout", &UWillowVersusDuelGlobals::DuelChallengeTimeout)
+        .def_readwrite("DuelLength", &UWillowVersusDuelGlobals::DuelLength)
+        .def_readwrite("DuelTeams", &UWillowVersusDuelGlobals::DuelTeams)
+        .def("StaticClass", &UWillowVersusDuelGlobals::StaticClass, return_value_policy< reference_existing_object >())
+        .staticmethod("StaticClass")
+  ;
+}

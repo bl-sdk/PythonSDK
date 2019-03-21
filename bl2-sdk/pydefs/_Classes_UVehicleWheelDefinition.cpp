@@ -1,0 +1,22 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UVehicleWheelDefinition()
+{
+    class_< UVehicleWheelDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UVehicleWheelDefinition", no_init)
+        .def_readwrite("BoneOffset", &UVehicleWheelDefinition::BoneOffset)
+        .def_readwrite("WheelRadius", &UVehicleWheelDefinition::WheelRadius)
+        .def_readwrite("SuspensionTravel", &UVehicleWheelDefinition::SuspensionTravel)
+        .def_readwrite("SuspensionSpeed", &UVehicleWheelDefinition::SuspensionSpeed)
+        .def_readwrite("LongSlipFactor", &UVehicleWheelDefinition::LongSlipFactor)
+        .def_readwrite("LatSlipFactor", &UVehicleWheelDefinition::LatSlipFactor)
+        .def_readwrite("HandbrakeLongSlipFactor", &UVehicleWheelDefinition::HandbrakeLongSlipFactor)
+        .def_readwrite("HandbrakeLatSlipFactor", &UVehicleWheelDefinition::HandbrakeLatSlipFactor)
+        .def_readwrite("ParkedSlipFactorLat", &UVehicleWheelDefinition::ParkedSlipFactorLat)
+        .def_readwrite("ParkedSlipFactorLong", &UVehicleWheelDefinition::ParkedSlipFactorLong)
+        .def("StaticClass", &UVehicleWheelDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .staticmethod("StaticClass")
+  ;
+}

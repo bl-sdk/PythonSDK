@@ -1,0 +1,39 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_ADeathtrapActionSkill()
+{
+    class_< ADeathtrapActionSkill, bases< AActionSkill >  , boost::noncopyable>("ADeathtrapActionSkill", no_init)
+        .def_readwrite("DeathTrap", &ADeathtrapActionSkill::DeathTrap)
+        .def_readwrite("ShareShieldsSkill", &ADeathtrapActionSkill::ShareShieldsSkill)
+        .def_readwrite("MedicBeamTarget", &ADeathtrapActionSkill::MedicBeamTarget)
+        .def_readwrite("MedicBeamState", &ADeathtrapActionSkill::MedicBeamState)
+        .def_readwrite("MedicBeamSourceSocket", &ADeathtrapActionSkill::MedicBeamSourceSocket)
+        .def_readwrite("MedicBeamTargetSocket", &ADeathtrapActionSkill::MedicBeamTargetSocket)
+        .def_readwrite("MedicBeamMaxDistance", &ADeathtrapActionSkill::MedicBeamMaxDistance)
+        .def_readwrite("MedicBeamSkill", &ADeathtrapActionSkill::MedicBeamSkill)
+        .def_readwrite("MedicBeamTargetSkill", &ADeathtrapActionSkill::MedicBeamTargetSkill)
+        .def_readwrite("MedicBeamFiringMode", &ADeathtrapActionSkill::MedicBeamFiringMode)
+        .def("StaticClass", &ADeathtrapActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("DeactivateMedicBeam", &ADeathtrapActionSkill::DeactivateMedicBeam)
+        .def("BlockMedicBeam", &ADeathtrapActionSkill::BlockMedicBeam)
+        .def("ActivateMedicBeam", &ADeathtrapActionSkill::ActivateMedicBeam)
+        .def("TryToActivateMedicBeam", &ADeathtrapActionSkill::TryToActivateMedicBeam)
+        .def("IsValidCurrentMedicBeamTarget", &ADeathtrapActionSkill::IsValidCurrentMedicBeamTarget)
+        .def("IsValidMedicBeamTarget", &ADeathtrapActionSkill::IsValidMedicBeamTarget)
+        .def("TryToShareShields", &ADeathtrapActionSkill::TryToShareShields)
+        .def("DestroyOwnedInstanceData", &ADeathtrapActionSkill::DestroyOwnedInstanceData)
+        .def("RemoveInstanceData", &ADeathtrapActionSkill::RemoveInstanceData)
+        .def("eventGetInstanceData", &ADeathtrapActionSkill::eventGetInstanceData)
+        .def("SetInstanceData", &ADeathtrapActionSkill::SetInstanceData)
+        .def("GetAutoAimPawn", &ADeathtrapActionSkill::GetAutoAimPawn, return_value_policy< reference_existing_object >())
+        .def("NotifyActionSkillActiveAbility", &ADeathtrapActionSkill::NotifyActionSkillActiveAbility)
+        .def("StartActionSkillActiveAbility", &ADeathtrapActionSkill::StartActionSkillActiveAbility)
+        .def("OnActionSkillEnded", &ADeathtrapActionSkill::OnActionSkillEnded)
+        .def("OnActionSkillStarted", &ADeathtrapActionSkill::OnActionSkillStarted)
+        .def("eventOnActionSkillTick", &ADeathtrapActionSkill::eventOnActionSkillTick)
+        .staticmethod("StaticClass")
+  ;
+}

@@ -12,10 +12,11 @@
 #include <string>
 #include <cstdlib>
 
+using namespace boost::python;
+
 void Export_classes();
 void Export_structs();
 
-using namespace boost::python;
 
 BOOST_PYTHON_MODULE(bl2sdk)
 {

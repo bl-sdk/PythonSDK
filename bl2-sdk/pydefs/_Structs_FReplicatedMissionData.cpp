@@ -1,0 +1,17 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_FReplicatedMissionData()
+{
+    class_< FReplicatedMissionData >("FReplicatedMissionData", no_init)
+        .def_readwrite("Mission", &FReplicatedMissionData::Mission)
+        .def_readwrite("Status", &FReplicatedMissionData::Status)
+        .def_readwrite("ActiveObjectiveSet", &FReplicatedMissionData::ActiveObjectiveSet)
+        .def_readonly("SubObjectiveSets", &FReplicatedMissionData::SubObjectiveSets)
+        .def_readwrite("SecondsLeft", &FReplicatedMissionData::SecondsLeft)
+        .def_readonly("ObjectiveCounts", &FReplicatedMissionData::ObjectiveCounts)
+        .def_readwrite("GameStage", &FReplicatedMissionData::GameStage)
+  ;
+}

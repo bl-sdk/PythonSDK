@@ -1,0 +1,47 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UWillowActionSequencePawn()
+{
+    class_< UWillowActionSequencePawn, bases< UActionSequencePawn >  , boost::noncopyable>("UWillowActionSequencePawn", no_init)
+        .def_readwrite("WillowAI", &UWillowActionSequencePawn::WillowAI)
+        .def_readwrite("MyNavHandle", &UWillowActionSequencePawn::MyNavHandle)
+        .def_readwrite("MyWillowMind", &UWillowActionSequencePawn::MyWillowMind)
+        .def_readwrite("MyWillowPawn", &UWillowActionSequencePawn::MyWillowPawn)
+        .def_readwrite("PathData", &UWillowActionSequencePawn::PathData)
+        .def_readwrite("Target", &UWillowActionSequencePawn::Target)
+        .def_readwrite("TargetRec", &UWillowActionSequencePawn::TargetRec)
+        .def_readwrite("ParentTargetRec", &UWillowActionSequencePawn::ParentTargetRec)
+        .def_readwrite("LastYawCheck", &UWillowActionSequencePawn::LastYawCheck)
+        .def("StaticClass", &UWillowActionSequencePawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("CreateActorPath", &UWillowActionSequencePawn::CreateActorPath)
+        .def("GetActorFloorLoc", &UWillowActionSequencePawn::GetActorFloorLoc)
+        .def("CreateBackupFlyerPath", &UWillowActionSequencePawn::CreateBackupFlyerPath)
+        .def("CreateVectorPath", &UWillowActionSequencePawn::CreateVectorPath)
+        .def("GetFinalDestination", &UWillowActionSequencePawn::GetFinalDestination)
+        .def("GetPointOnGround", &UWillowActionSequencePawn::GetPointOnGround)
+        .def("CanMoveTo", &UWillowActionSequencePawn::CanMoveTo)
+        .def("ReachedDestination", &UWillowActionSequencePawn::ReachedDestination)
+        .def("FinishPath", &UWillowActionSequencePawn::FinishPath)
+        .def("WaitForPath", &UWillowActionSequencePawn::WaitForPath)
+        .def("FollowPath", &UWillowActionSequencePawn::FollowPath)
+        .def("PathIsValid", &UWillowActionSequencePawn::PathIsValid)
+        .def("InvalidatePath", &UWillowActionSequencePawn::InvalidatePath)
+        .def("eventPathFind", &UWillowActionSequencePawn::eventPathFind)
+        .def("TargetTooFar", &UWillowActionSequencePawn::TargetTooFar)
+        .def("eventActivateEvent", &UWillowActionSequencePawn::eventActivateEvent)
+        .def("IsWalking", &UWillowActionSequencePawn::IsWalking)
+        .def("IsCurrentlyFlying", &UWillowActionSequencePawn::IsCurrentlyFlying)
+        .def("IsFixingFlying", &UWillowActionSequencePawn::IsFixingFlying)
+        .def("IsFlying", &UWillowActionSequencePawn::IsFlying)
+        .def("eventStop", &UWillowActionSequencePawn::eventStop)
+        .def("eventStart", &UWillowActionSequencePawn::eventStart)
+        .def("eventInit", &UWillowActionSequencePawn::eventInit)
+        .def("SetPawnMovementSpeed", &UWillowActionSequencePawn::SetPawnMovementSpeed)
+        .def("WaitForPawnToTurn", &UWillowActionSequencePawn::WaitForPawnToTurn)
+        .def("WaitForPawnToStop", &UWillowActionSequencePawn::WaitForPawnToStop)
+        .staticmethod("StaticClass")
+  ;
+}

@@ -1,0 +1,33 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UWillowCheatManager()
+{
+    class_< UWillowCheatManager, bases< UCheatManager >  , boost::noncopyable>("UWillowCheatManager", no_init)
+        .def_readwrite("ClassModPoolDefinitionName", &UWillowCheatManager::ClassModPoolDefinitionName)
+        .def_readwrite("CurrencyBalanceFormulaMultiplier", &UWillowCheatManager::CurrencyBalanceFormulaMultiplier)
+        .def_readwrite("CurrencyBalanceFormulaLevel", &UWillowCheatManager::CurrencyBalanceFormulaLevel)
+        .def_readwrite("CurrencyBalanceFormulaOffset", &UWillowCheatManager::CurrencyBalanceFormulaOffset)
+        .def_readwrite("AwesomeLevelBoostForAutoBalancedInventory", &UWillowCheatManager::AwesomeLevelBoostForAutoBalancedInventory)
+        .def_readwrite("BalanceMeItemPoolListDefinitionName", &UWillowCheatManager::BalanceMeItemPoolListDefinitionName)
+        .def_readwrite("BalanceMeAwesomeLevel", &UWillowCheatManager::BalanceMeAwesomeLevel)
+        .def_readwrite("ResourceUpgrades", &UWillowCheatManager::ResourceUpgrades)
+        .def_readwrite("StatusEffects", &UWillowCheatManager::StatusEffects)
+        .def_readwrite("WatchedSkills", &UWillowCheatManager::WatchedSkills)
+        .def_readwrite("SkillDebugPages", &UWillowCheatManager::SkillDebugPages)
+        .def_readwrite("LastDebugPageIndex", &UWillowCheatManager::LastDebugPageIndex)
+        .def_readwrite("LastSkillDebugPageUpdateTime", &UWillowCheatManager::LastSkillDebugPageUpdateTime)
+        .def_readwrite("LastDamagedAmount", &UWillowCheatManager::LastDamagedAmount)
+        .def_readwrite("SpawnItemPool_PoolToSpawnOutOf", &UWillowCheatManager::SpawnItemPool_PoolToSpawnOutOf)
+        .def_readwrite("SpawnItemPool_GameStage", &UWillowCheatManager::SpawnItemPool_GameStage)
+        .def_readwrite("SpawnItemPool_AwesomeLevel", &UWillowCheatManager::SpawnItemPool_AwesomeLevel)
+        .def_readwrite("SpawnItemPool_NumTimesToSpawnFromPool", &UWillowCheatManager::SpawnItemPool_NumTimesToSpawnFromPool)
+        .def_readwrite("SpawnItemPool_LastUpdateTime", &UWillowCheatManager::SpawnItemPool_LastUpdateTime)
+        .def_readwrite("SpawnItemPool_AccruedTime", &UWillowCheatManager::SpawnItemPool_AccruedTime)
+        .def_readwrite("SpawnItemPool_FuncName", &UWillowCheatManager::SpawnItemPool_FuncName)
+        .def("StaticClass", &UWillowCheatManager::StaticClass, return_value_policy< reference_existing_object >())
+        .staticmethod("StaticClass")
+  ;
+}

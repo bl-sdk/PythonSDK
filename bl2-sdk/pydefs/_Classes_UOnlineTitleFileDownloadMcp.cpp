@@ -1,0 +1,31 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UOnlineTitleFileDownloadMcp()
+{
+    class_< UOnlineTitleFileDownloadMcp, bases< UObject >  , boost::noncopyable>("UOnlineTitleFileDownloadMcp", no_init)
+        .def_readwrite("ReadTitleFileCompleteDelegates", &UOnlineTitleFileDownloadMcp::ReadTitleFileCompleteDelegates)
+        .def_readwrite("TitleFiles", &UOnlineTitleFileDownloadMcp::TitleFiles)
+        .def_readwrite("DownloadCount", &UOnlineTitleFileDownloadMcp::DownloadCount)
+        .def_readwrite("BaseUrl", &UOnlineTitleFileDownloadMcp::BaseUrl)
+        .def_readwrite("TimeOut", &UOnlineTitleFileDownloadMcp::TimeOut)
+        .def_readwrite("FilesToUrls", &UOnlineTitleFileDownloadMcp::FilesToUrls)
+        .def_readwrite("VfTable_FTickableObject", &UMCPBase::VfTable_FTickableObject)
+        .def("StaticClass", &UOnlineTitleFileDownloadMcp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("ClearShareTitleFileCompleteDelegate", &UOnlineTitleFileDownloadMcp::ClearShareTitleFileCompleteDelegate)
+        .def("AddShareTitleFileCompleteDelegate", &UOnlineTitleFileDownloadMcp::AddShareTitleFileCompleteDelegate)
+        .def("ShareTitleFile", &UOnlineTitleFileDownloadMcp::ShareTitleFile)
+        .def("ClearDownloadedFile", &UOnlineTitleFileDownloadMcp::ClearDownloadedFile)
+        .def("ClearDownloadedFiles", &UOnlineTitleFileDownloadMcp::ClearDownloadedFiles)
+        .def("GetTitleFileState", &UOnlineTitleFileDownloadMcp::GetTitleFileState)
+        .def("GetTitleFileContents", &UOnlineTitleFileDownloadMcp::GetTitleFileContents)
+        .def("ClearReadTitleFileCompleteDelegate", &UOnlineTitleFileDownloadMcp::ClearReadTitleFileCompleteDelegate)
+        .def("AddReadTitleFileCompleteDelegate", &UOnlineTitleFileDownloadMcp::AddReadTitleFileCompleteDelegate)
+        .def("ReadTitleFile", &UOnlineTitleFileDownloadMcp::ReadTitleFile)
+        .def("OnShareTitleFileComplete", &UOnlineTitleFileDownloadMcp::OnShareTitleFileComplete)
+        .def("OnReadTitleFileComplete", &UOnlineTitleFileDownloadMcp::OnReadTitleFileComplete)
+        .staticmethod("StaticClass")
+  ;
+}

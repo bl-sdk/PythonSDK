@@ -1,0 +1,48 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_ATravelStation()
+{
+    class_< ATravelStation, bases< AWillowInteractiveObject >  , boost::noncopyable>("ATravelStation", no_init)
+        .def_readwrite("VfTable_IIMission", &ATravelStation::VfTable_IIMission)
+        .def_readwrite("StationAntennaLight", &ATravelStation::StationAntennaLight)
+        .def_readwrite("TeleportDest", &ATravelStation::TeleportDest)
+        .def_readwrite("TeleportDestOffset", &ATravelStation::TeleportDestOffset)
+        .def_readwrite("TravelStationActivationOffset", &ATravelStation::TravelStationActivationOffset)
+        .def_readwrite("DebugDescription", &ATravelStation::DebugDescription)
+        .def_readwrite("DebugGameStageRegion", &ATravelStation::DebugGameStageRegion)
+        .def_readwrite("TouchVolumes", &ATravelStation::TouchVolumes)
+        .def_readwrite("TouchRadius", &ATravelStation::TouchRadius)
+        .def_readwrite("StationTouchRadius", &ATravelStation::StationTouchRadius)
+        .def_readwrite("StationTouchHeight", &ATravelStation::StationTouchHeight)
+        .def_readwrite("Nozzle1SocketName", &ATravelStation::Nozzle1SocketName)
+        .def_readwrite("Nozzle2SocketName", &ATravelStation::Nozzle2SocketName)
+        .def_readwrite("Nozzle3SocketName", &ATravelStation::Nozzle3SocketName)
+        .def_readwrite("Nozzle4SocketName", &ATravelStation::Nozzle4SocketName)
+        .def("StaticClass", &ATravelStation::StaticClass, return_value_policy< reference_existing_object >())
+        .def("CanResurrectHere", &ATravelStation::CanResurrectHere)
+        .def("eventSetUsability", &ATravelStation::eventSetUsability)
+        .def("eventAddLevelTransitionWaypoint", &ATravelStation::eventAddLevelTransitionWaypoint, return_value_policy< reference_existing_object >())
+        .def("FindTravelStation", &ATravelStation::FindTravelStation, return_value_policy< reference_existing_object >())
+        .def("SetFastTravelDebug", &ATravelStation::SetFastTravelDebug)
+        .def("IsFastTravelEnabled", &ATravelStation::IsFastTravelEnabled)
+        .def("eventMissionReactionObjectiveCleared", &ATravelStation::eventMissionReactionObjectiveCleared)
+        .def("eventMissionReactionObjectiveUpdated", &ATravelStation::eventMissionReactionObjectiveUpdated)
+        .def("eventMissionReactionObjectiveSetChanged", &ATravelStation::eventMissionReactionObjectiveSetChanged)
+        .def("eventMissionReactionObjectiveComplete", &ATravelStation::eventMissionReactionObjectiveComplete)
+        .def("eventMissionReactionStatusChanged", &ATravelStation::eventMissionReactionStatusChanged)
+        .def("eventMissionReactionLevelLoad", &ATravelStation::eventMissionReactionLevelLoad)
+        .def("GetInstanceData", &ATravelStation::GetInstanceData)
+        .def("ReplacePreviouslyActivatedStation", &ATravelStation::ReplacePreviouslyActivatedStation)
+        .def("eventSetStationActivatedState", &ATravelStation::eventSetStationActivatedState)
+        .def("TouchDenied", &ATravelStation::TouchDenied)
+        .def("GetTravelStationDefinition", &ATravelStation::GetTravelStationDefinition, return_value_policy< reference_existing_object >())
+        .def("InitializeFromDefinition", &ATravelStation::InitializeFromDefinition)
+        .def("eventPostBeginPlay", &ATravelStation::eventPostBeginPlay)
+        .def("eventReplicatedEvent", &ATravelStation::eventReplicatedEvent)
+        .def("UpdateCollideAsEncroacher", &ATravelStation::UpdateCollideAsEncroacher)
+        .staticmethod("StaticClass")
+  ;
+}

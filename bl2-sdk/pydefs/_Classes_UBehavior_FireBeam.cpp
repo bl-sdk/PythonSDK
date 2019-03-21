@@ -1,0 +1,27 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UBehavior_FireBeam()
+{
+    class_< UBehavior_FireBeam, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_FireBeam", no_init)
+        .def_readwrite("SourceSocket", &UBehavior_FireBeam::SourceSocket)
+        .def_readwrite("SourceOffset", &UBehavior_FireBeam::SourceOffset)
+        .def_readwrite("TargetSocket", &UBehavior_FireBeam::TargetSocket)
+        .def_readwrite("TargetOffset", &UBehavior_FireBeam::TargetOffset)
+        .def_readwrite("TargetContext", &UBehavior_FireBeam::TargetContext)
+        .def_readwrite("NumBeams", &UBehavior_FireBeam::NumBeams)
+        .def_readwrite("DamagePerSecondFormula", &UBehavior_FireBeam::DamagePerSecondFormula)
+        .def_readwrite("MomentumPerSecondFormula", &UBehavior_FireBeam::MomentumPerSecondFormula)
+        .def_readwrite("RadiusToDoDamageAroundImpact", &UBehavior_FireBeam::RadiusToDoDamageAroundImpact)
+        .def_readwrite("FiringModeDefinition", &UBehavior_FireBeam::FiringModeDefinition)
+        .def_readwrite("DamageSource", &UBehavior_FireBeam::DamageSource)
+        .def_readwrite("DamageTypeDefinition", &UBehavior_FireBeam::DamageTypeDefinition)
+        .def_readwrite("ImpactDefinition", &UBehavior_FireBeam::ImpactDefinition)
+        .def("StaticClass", &UBehavior_FireBeam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("FillData", &UBehavior_FireBeam::FillData)
+        .def("ApplyBehaviorToContext", &UBehavior_FireBeam::ApplyBehaviorToContext)
+        .staticmethod("StaticClass")
+  ;
+}

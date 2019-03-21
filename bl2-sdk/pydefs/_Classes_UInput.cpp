@@ -1,0 +1,46 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UInput()
+{
+    class_< UInput, bases< UObject >  , boost::noncopyable>("UInput", no_init)
+        .def_readwrite("Bindings", &UInput::Bindings)
+        .def_readwrite("PressedKeys", &UInput::PressedKeys)
+        .def_readwrite("CurrentEvent", &UInput::CurrentEvent)
+        .def_readwrite("CurrentDelta", &UInput::CurrentDelta)
+        .def_readwrite("CurrentDeltaTime", &UInput::CurrentDeltaTime)
+        .def_readonly("UnknownData00", &UInput::UnknownData00)
+        .def_readwrite("AxisArray", &UInput::AxisArray)
+        .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
+        .def("StaticClass", &UInput::StaticClass, return_value_policy< reference_existing_object >())
+        .def("SetBind", &UInput::SetBind)
+        .def("GetBind", &UInput::GetBind)
+        .def("ResetInput", &UInput::ResetInput)
+        .def("NotifyPlayerRemoved", &UInteraction::NotifyPlayerRemoved)
+        .def("NotifyPlayerAdded", &UInteraction::NotifyPlayerAdded)
+        .def("NotifyGameSessionEnded", &UInteraction::NotifyGameSessionEnded)
+        .def("Initialized", &UInteraction::Initialized)
+        .def("Oninitialize", &UInteraction::Oninitialize)
+        .def("Init", &UInteraction::Init)
+        .def("eventPostRender", &UInteraction::eventPostRender)
+        .def("eventTick", &UInteraction::eventTick)
+        .def("OnReceivedNativeInputChar", &UInteraction::OnReceivedNativeInputChar)
+        .def("OnReceivedNativeInputAxis", &UInteraction::OnReceivedNativeInputAxis)
+        .def("OnReceivedNativeInputKey", &UInteraction::OnReceivedNativeInputKey)
+        .def("SafeCaps", &UUIRoot::SafeCaps)
+        .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, return_value_policy< reference_existing_object >())
+        .def("GetOnlinePlayerInterface", &UUIRoot::GetOnlinePlayerInterface, return_value_policy< reference_existing_object >())
+        .def("GetOnlineGameInterface", &UUIRoot::GetOnlineGameInterface, return_value_policy< reference_existing_object >())
+        .def("GetDataStoreStringValue", &UUIRoot::GetDataStoreStringValue)
+        .def("GetDataStoreFieldValue", &UUIRoot::GetDataStoreFieldValue)
+        .def("SetDataStoreStringValue", &UUIRoot::SetDataStoreStringValue)
+        .def("SetDataStoreFieldValue", &UUIRoot::SetDataStoreFieldValue)
+        .def("StaticResolveDataStore", &UUIRoot::StaticResolveDataStore, return_value_policy< reference_existing_object >())
+        .def("GetSceneClient", &UUIRoot::GetSceneClient, return_value_policy< reference_existing_object >())
+        .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, return_value_policy< reference_existing_object >())
+        .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
+        .staticmethod("StaticClass")
+  ;
+}

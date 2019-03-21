@@ -1,0 +1,47 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_USavedMove()
+{
+    class_< USavedMove, bases< UObject >  , boost::noncopyable>("USavedMove", no_init)
+        .def_readwrite("NextMove", &USavedMove::NextMove)
+        .def_readwrite("TimeStamp", &USavedMove::TimeStamp)
+        .def_readwrite("Delta", &USavedMove::Delta)
+        .def_readwrite("DoubleClickMove", &USavedMove::DoubleClickMove)
+        .def_readwrite("SavedPhysics", &USavedMove::SavedPhysics)
+        .def_readwrite("AnalogPct", &USavedMove::AnalogPct)
+        .def_readwrite("RootMotionMode", &USavedMove::RootMotionMode)
+        .def_readwrite("StartLocation", &USavedMove::StartLocation)
+        .def_readwrite("StartRelativeLocation", &USavedMove::StartRelativeLocation)
+        .def_readwrite("StartVelocity", &USavedMove::StartVelocity)
+        .def_readwrite("StartFloor", &USavedMove::StartFloor)
+        .def_readwrite("SavedLocation", &USavedMove::SavedLocation)
+        .def_readwrite("SavedVelocity", &USavedMove::SavedVelocity)
+        .def_readwrite("SavedRelativeLocation", &USavedMove::SavedRelativeLocation)
+        .def_readwrite("RMVelocity", &USavedMove::RMVelocity)
+        .def_readwrite("Acceleration", &USavedMove::Acceleration)
+        .def_readwrite("Rotation", &USavedMove::Rotation)
+        .def_readwrite("StartBase", &USavedMove::StartBase)
+        .def_readwrite("EndBase", &USavedMove::EndBase)
+        .def_readwrite("CustomTimeDilation", &USavedMove::CustomTimeDilation)
+        .def_readwrite("AccelDotThreshold", &USavedMove::AccelDotThreshold)
+        .def_readwrite("RootMotionInterpCurrentTime", &USavedMove::RootMotionInterpCurrentTime)
+        .def_readwrite("RootMotionInterpCurveLastValue", &USavedMove::RootMotionInterpCurveLastValue)
+        .def("StaticClass", &USavedMove::StaticClass, return_value_policy< reference_existing_object >())
+        .def("GetDebugString", &USavedMove::GetDebugString)
+        .def("SetFlags", &USavedMove::SetFlags)
+        .def("CompressedFlags", &USavedMove::CompressedFlags)
+        .def("ResetMoveFor", &USavedMove::ResetMoveFor)
+        .def("PrepMoveFor", &USavedMove::PrepMoveFor)
+        .def("SetMoveFor", &USavedMove::SetMoveFor)
+        .def("CanCombineWith", &USavedMove::CanCombineWith)
+        .def("SetInitialPosition", &USavedMove::SetInitialPosition)
+        .def("GetStartLocation", &USavedMove::GetStartLocation)
+        .def("IsImportantMove", &USavedMove::IsImportantMove)
+        .def("PostUpdate", &USavedMove::PostUpdate)
+        .def("Clear", &USavedMove::Clear)
+        .staticmethod("StaticClass")
+  ;
+}

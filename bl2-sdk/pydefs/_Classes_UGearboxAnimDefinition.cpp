@@ -1,0 +1,47 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UGearboxAnimDefinition()
+{
+    class_< UGearboxAnimDefinition, bases< USpecialMoveDefinition >  , boost::noncopyable>("UGearboxAnimDefinition", no_init)
+        .def_readwrite("VfTable_IIBehaviorProvider", &UGearboxAnimDefinition::VfTable_IIBehaviorProvider)
+        .def_readwrite("AnimName", &UGearboxAnimDefinition::AnimName)
+        .def_readwrite("BlendInTime", &UGearboxAnimDefinition::BlendInTime)
+        .def_readwrite("BlendOutTime", &UGearboxAnimDefinition::BlendOutTime)
+        .def_readwrite("PlayRate", &UGearboxAnimDefinition::PlayRate)
+        .def_readwrite("EndingCondition", &UGearboxAnimDefinition::EndingCondition)
+        .def_readwrite("AnimSet", &UGearboxAnimDefinition::AnimSet)
+        .def_readwrite("AnimNodeName", &UGearboxAnimDefinition::AnimNodeName)
+        .def_readwrite("RootMotionDef", &UGearboxAnimDefinition::RootMotionDef)
+        .def_readwrite("BoneBlendDef", &UGearboxAnimDefinition::BoneBlendDef)
+        .def_readwrite("BoneNames", &UGearboxAnimDefinition::BoneNames)
+        .def_readwrite("StartBehaviors", &UGearboxAnimDefinition::StartBehaviors)
+        .def_readwrite("SMNotifies", &UGearboxAnimDefinition::SMNotifies)
+        .def_readwrite("StopBehaviors", &UGearboxAnimDefinition::StopBehaviors)
+        .def_readwrite("TimedBehaviorEvents", &UGearboxAnimDefinition::TimedBehaviorEvents)
+        .def_readwrite("BehaviorProviderDefinition", &UGearboxAnimDefinition::BehaviorProviderDefinition)
+        .def("StaticClass", &UGearboxAnimDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("GetAnimLength", &UGearboxAnimDefinition::GetAnimLength)
+        .def("eventIsPlayingLocally", &UGearboxAnimDefinition::eventIsPlayingLocally)
+        .def("GetSMNode", &UGearboxAnimDefinition::GetSMNode, return_value_policy< reference_existing_object >())
+        .def("PlayAnim", &UGearboxAnimDefinition::PlayAnim)
+        .def("eventAnimFinished", &UGearboxAnimDefinition::eventAnimFinished)
+        .def("eventClientFinished", &UGearboxAnimDefinition::eventClientFinished)
+        .def("eventClientStarted", &UGearboxAnimDefinition::eventClientStarted)
+        .def("eventServerFinished", &UGearboxAnimDefinition::eventServerFinished)
+        .def("eventServerStarted", &UGearboxAnimDefinition::eventServerStarted)
+        .def("AddAnimSet", &UGearboxAnimDefinition::AddAnimSet)
+        .def("GetSkeletalMesh", &UGearboxAnimDefinition::GetSkeletalMesh, return_value_policy< reference_existing_object >())
+        .def("eventAuthorityCanPlay", &UGearboxAnimDefinition::eventAuthorityCanPlay)
+        .def("OnTimedEvent", &UGearboxAnimDefinition::OnTimedEvent)
+        .def("OnServerStop", &UGearboxAnimDefinition::OnServerStop)
+        .def("OnServerStart", &UGearboxAnimDefinition::OnServerStart)
+        .def("OnStop", &UGearboxAnimDefinition::OnStop)
+        .def("OnStart", &UGearboxAnimDefinition::OnStart)
+        .def("SetBehaviorProviderDefinition", &UGearboxAnimDefinition::SetBehaviorProviderDefinition)
+        .def("GetBehaviorProviderDefinition", &UGearboxAnimDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .staticmethod("StaticClass")
+  ;
+}

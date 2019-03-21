@@ -1,0 +1,48 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UWillowScrollingListDataProviderGamepadOptions()
+{
+    class_< UWillowScrollingListDataProviderGamepadOptions, bases< UWillowScrollingListDataProviderOptionsBase >  , boost::noncopyable>("UWillowScrollingListDataProviderGamepadOptions", no_init)
+        .def_readwrite("KeyCaptionList", &UWillowScrollingListDataProviderGamepadOptions::KeyCaptionList)
+        .def_readonly("PlatformFrames", &UWillowScrollingListDataProviderGamepadOptions::PlatformFrames)
+        .def_readwrite("ControllerPresetTags", &UWillowScrollingListDataProviderGamepadOptions::ControllerPresetTags)
+        .def_readwrite("ControllerPresetNames", &UWillowScrollingListDataProviderGamepadOptions::ControllerPresetNames)
+        .def_readwrite("ControllerMappingClip", &UWillowScrollingListDataProviderGamepadOptions::ControllerMappingClip)
+        .def_readwrite("KeyTextFieldList", &UWillowScrollingListDataProviderGamepadOptions::KeyTextFieldList)
+        .def_readwrite("PresetNameField", &UWillowScrollingListDataProviderGamepadOptions::PresetNameField)
+        .def_readwrite("MyOptionsGFxMovie", &UWillowScrollingListDataProviderGamepadOptions::MyOptionsGFxMovie)
+        .def_readwrite("CustomPresetIndex", &UWillowScrollingListDataProviderGamepadOptions::CustomPresetIndex)
+        .def_readwrite("CurrentSelectedPresetIndex", &UWillowScrollingListDataProviderGamepadOptions::CurrentSelectedPresetIndex)
+        .def_readwrite("WPI", &UWillowScrollingListDataProviderGamepadOptions::WPI)
+        .def_readwrite("MyWillowScrollingList", &UWillowScrollingListDataProviderGamepadOptions::MyWillowScrollingList)
+        .def_readwrite("Platform", &UWillowScrollingListDataProviderGamepadOptions::Platform)
+        .def_readwrite("NonCustomizedPresetIndex", &UWillowScrollingListDataProviderGamepadOptions::NonCustomizedPresetIndex)
+        .def_readwrite("FirstButtonName", &UWillowScrollingListDataProviderGamepadOptions::FirstButtonName)
+        .def_readwrite("SecondButtonName", &UWillowScrollingListDataProviderGamepadOptions::SecondButtonName)
+        .def_readonly("RemappedButtonIndexes", &UWillowScrollingListDataProviderGamepadOptions::RemappedButtonIndexes)
+        .def("StaticClass", &UWillowScrollingListDataProviderGamepadOptions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("UpdatePresetCaptions", &UWillowScrollingListDataProviderGamepadOptions::UpdatePresetCaptions)
+        .def("InitControllerMapping", &UWillowScrollingListDataProviderGamepadOptions::InitControllerMapping)
+        .def("HideControllerMapping", &UWillowScrollingListDataProviderGamepadOptions::HideControllerMapping)
+        .def("GetIndexForButton", &UWillowScrollingListDataProviderGamepadOptions::GetIndexForButton)
+        .def("StartCustomizeMode", &UWillowScrollingListDataProviderGamepadOptions::StartCustomizeMode)
+        .def("HandleExitWarnDlgInputKey", &UWillowScrollingListDataProviderGamepadOptions::HandleExitWarnDlgInputKey)
+        .def("DisplayExitWarnDialog", &UWillowScrollingListDataProviderGamepadOptions::DisplayExitWarnDialog)
+        .def("HandleClobberDlgInputKey", &UWillowScrollingListDataProviderGamepadOptions::HandleClobberDlgInputKey)
+        .def("HandleInputKey", &UWillowScrollingListDataProviderGamepadOptions::HandleInputKey)
+        .def("EncodeButton", &UWillowScrollingListDataProviderGamepadOptions::EncodeButton)
+        .def("CreateControllerRebindingString", &UWillowScrollingListDataProviderGamepadOptions::CreateControllerRebindingString)
+        .def("OnPop", &UWillowScrollingListDataProviderGamepadOptions::OnPop)
+        .def("Cleanup", &UWillowScrollingListDataProviderGamepadOptions::Cleanup)
+        .def("HandleSelectionRollover", &UWillowScrollingListDataProviderGamepadOptions::HandleSelectionRollover)
+        .def("HandleSelectionChange", &UWillowScrollingListDataProviderGamepadOptions::HandleSelectionChange)
+        .def("HandleSpinnerChange", &UWillowScrollingListDataProviderGamepadOptions::HandleSpinnerChange)
+        .def("AddControllerPresets", &UWillowScrollingListDataProviderGamepadOptions::AddControllerPresets)
+        .def("HandleCustomizeModeDlgInputKey", &UWillowScrollingListDataProviderGamepadOptions::HandleCustomizeModeDlgInputKey)
+        .def("Populate", &UWillowScrollingListDataProviderGamepadOptions::Populate)
+        .staticmethod("StaticClass")
+  ;
+}

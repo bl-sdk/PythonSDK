@@ -1,0 +1,41 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_UBehavior_Explode()
+{
+    class_< UBehavior_Explode, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_Explode", no_init)
+        .def_readwrite("VfTable_IIDamageCauser", &UBehavior_Explode::VfTable_IIDamageCauser)
+        .def_readwrite("DamageSource", &UBehavior_Explode::DamageSource)
+        .def_readwrite("DamageRadiusFormula", &UBehavior_Explode::DamageRadiusFormula)
+        .def_readwrite("DamageFormula", &UBehavior_Explode::DamageFormula)
+        .def_readwrite("MomentumFormula", &UBehavior_Explode::MomentumFormula)
+        .def_readwrite("Definition", &UBehavior_Explode::Definition)
+        .def_readwrite("LocationOffset", &UBehavior_Explode::LocationOffset)
+        .def_readwrite("SocketName", &UBehavior_Explode::SocketName)
+        .def_readwrite("DamageContext", &UBehavior_Explode::DamageContext)
+        .def_readwrite("HitNormal", &UBehavior_Explode::HitNormal)
+        .def_readwrite("StatusEffectDamage", &UBehavior_Explode::StatusEffectDamage)
+        .def_readwrite("StatusEffectChance", &UBehavior_Explode::StatusEffectChance)
+        .def_readwrite("OverrideContext", &UBehavior_Explode::OverrideContext)
+        .def_readwrite("OverrideName", &UBehavior_Explode::OverrideName)
+        .def_readwrite("HitContext", &UBehavior_Explode::HitContext)
+        .def_readwrite("BarrelSourceTime", &UBehavior_Explode::BarrelSourceTime)
+        .def_readwrite("PlantSourceTime", &UBehavior_Explode::PlantSourceTime)
+        .def_readwrite("InstigatorSelfDamageScale", &UBehavior_Explode::InstigatorSelfDamageScale)
+        .def_readwrite("OverrideActor", &UBehavior_Explode::OverrideActor)
+        .def_readwrite("SelfActor", &UBehavior_Explode::SelfActor)
+        .def("StaticClass", &UBehavior_Explode::StaticClass, return_value_policy< reference_existing_object >())
+        .def("SetInstigatorOverride", &UBehavior_Explode::SetInstigatorOverride)
+        .def("GetControllerResponsibleForDamage", &UBehavior_Explode::GetControllerResponsibleForDamage, return_value_policy< reference_existing_object >())
+        .def("GetInstigator", &UBehavior_Explode::GetInstigator, return_value_policy< reference_existing_object >())
+        .def("GetInstigatorSelfDamageScale", &UBehavior_Explode::GetInstigatorSelfDamageScale)
+        .def("GetFireIntervalChanceModifier", &UBehavior_Explode::GetFireIntervalChanceModifier)
+        .def("GetStatusEffectBaseChanceModifier", &UBehavior_Explode::GetStatusEffectBaseChanceModifier)
+        .def("GetStatusEffectChanceModifier", &UBehavior_Explode::GetStatusEffectChanceModifier)
+        .def("GetStatusEffectBaseDamage", &UBehavior_Explode::GetStatusEffectBaseDamage)
+        .def("ApplyBehaviorToContext", &UBehavior_Explode::ApplyBehaviorToContext)
+        .staticmethod("StaticClass")
+  ;
+}

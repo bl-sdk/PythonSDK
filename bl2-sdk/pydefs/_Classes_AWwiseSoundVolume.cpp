@@ -1,0 +1,47 @@
+#include "stdafx.h"
+// Using =======================================================================
+using namespace boost::python;
+
+// Module ======================================================================
+void Export_pystes_AWwiseSoundVolume()
+{
+    class_< AWwiseSoundVolume, bases< AVolume >  , boost::noncopyable>("AWwiseSoundVolume", no_init)
+        .def_readwrite("VfTable_IIAkEnvironmentalEffectProvider", &AWwiseSoundVolume::VfTable_IIAkEnvironmentalEffectProvider)
+        .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundVolume::VfTable_IISpecialOcclusionProvider)
+        .def_readwrite("VfTable_IISpecialOcclusionAccumulator", &AWwiseSoundVolume::VfTable_IISpecialOcclusionAccumulator)
+        .def_readwrite("akPlayEvent", &AWwiseSoundVolume::akPlayEvent)
+        .def_readwrite("AutoPlayDistance", &AWwiseSoundVolume::AutoPlayDistance)
+        .def_readwrite("AutoStopDistance", &AWwiseSoundVolume::AutoStopDistance)
+        .def_readwrite("ParentVolume", &AWwiseSoundVolume::ParentVolume)
+        .def_readwrite("SubBrushes", &AWwiseSoundVolume::SubBrushes)
+        .def_readwrite("EnvironmentFadeDistance", &AWwiseSoundVolume::EnvironmentFadeDistance)
+        .def_readwrite("Group", &AWwiseSoundVolume::Group)
+        .def_readwrite("AkComponent", &AWwiseSoundVolume::AkComponent)
+        .def_readwrite("Midpoint", &AWwiseSoundVolume::Midpoint)
+        .def_readwrite("FarthestVertexDistance", &AWwiseSoundVolume::FarthestVertexDistance)
+        .def_readwrite("LastLocationUpdateTime", &AWwiseSoundVolume::LastLocationUpdateTime)
+        .def_readwrite("DistancePerAdditionalSecondBetweenUpdates", &AWwiseSoundVolume::DistancePerAdditionalSecondBetweenUpdates)
+        .def_readwrite("LastEnvironmentStrength", &AWwiseSoundVolume::LastEnvironmentStrength)
+        .def_readwrite("LastEnvironmentSuppressionModifier", &AWwiseSoundVolume::LastEnvironmentSuppressionModifier)
+        .def_readwrite("EnvironmentSuppressors", &AWwiseSoundVolume::EnvironmentSuppressors)
+        .def_readwrite("EnvironmentalEffects", &AWwiseSoundVolume::EnvironmentalEffects)
+        .def_readwrite("SuppressedEnvironments", &AWwiseSoundVolume::SuppressedEnvironments)
+        .def_readwrite("RTPCs", &AWwiseSoundVolume::RTPCs)
+        .def_readwrite("OccludedVolumes", &AWwiseSoundVolume::OccludedVolumes)
+        .def_readwrite("LastOcclusionLevel", &AWwiseSoundVolume::LastOcclusionLevel)
+        .def_readwrite("ActiveOccluders", &AWwiseSoundVolume::ActiveOccluders)
+        .def_readwrite("FacePlanes", &AWwiseSoundVolume::FacePlanes)
+        .def_readwrite("SoundSourceLocations", &AWwiseSoundVolume::SoundSourceLocations)
+        .def_readwrite("CachedListenerDistances", &AWwiseSoundVolume::CachedListenerDistances)
+        .def_readwrite("EffectSoundBank", &AWwiseSoundVolume::EffectSoundBank)
+        .def_readwrite("EffectSoundBankLoadDistance", &AWwiseSoundVolume::EffectSoundBankLoadDistance)
+        .def("StaticClass", &AWwiseSoundVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("RemoveOcclusionProvider", &AWwiseSoundVolume::RemoveOcclusionProvider)
+        .def("SetOcclusionForProvider", &AWwiseSoundVolume::SetOcclusionForProvider)
+        .def("GetOcclusionAmount", &AWwiseSoundVolume::GetOcclusionAmount)
+        .def("UpdateAkComponentPosition", &AWwiseSoundVolume::UpdateAkComponentPosition)
+        .def("GetEnvironmentalEffectsForLocation", &AWwiseSoundVolume::GetEnvironmentalEffectsForLocation)
+        .def("CalculateFacePlanes", &AWwiseSoundVolume::CalculateFacePlanes)
+        .staticmethod("StaticClass")
+  ;
+}
