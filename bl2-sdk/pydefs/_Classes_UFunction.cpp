@@ -11,7 +11,6 @@ void Export_pystes_UFunction(py::object m)
         .def_readwrite("FriendlyName", &UFunction::FriendlyName)
         .def_readwrite("NumParms", &UFunction::NumParms)
         .def_readwrite("ParmsSize", &UFunction::ParmsSize)
-        .def_readonly("UnknownData00", &UFunction::UnknownData00)
         .def_readwrite("Func", &UFunction::Func)
         .def("StaticClass", &UFunction::StaticClass, py::return_value_policy::reference)
           ;

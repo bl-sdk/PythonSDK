@@ -10,6 +10,5 @@ void Export_pystes_FBeamLocationData(py::object m)
         .def_readwrite("Socket", &FBeamLocationData::Socket)
         .def_readwrite("Offset", &FBeamLocationData::Offset)
         .def_readwrite("WorldBody", &FBeamLocationData::WorldBody)
-        .def_readonly("UnknownData00", &FBeamLocationData::UnknownData00)
   ;
 }

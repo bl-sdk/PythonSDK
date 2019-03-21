@@ -11,7 +11,6 @@ void Export_pystes_FWeaponSettings(py::object m)
         .def_readwrite("ManufacturerDefinition", &FWeaponSettings::ManufacturerDefinition)
         .def_readwrite("ManufacturerGradeIndex", &FWeaponSettings::ManufacturerGradeIndex)
         .def_readwrite("Level", &FWeaponSettings::Level)
-        .def_readonly("GenericParts", &FWeaponSettings::GenericParts)
         .def_readwrite("CurrentPartBeingSet", &FWeaponSettings::CurrentPartBeingSet)
   ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UShaderCache(py::object m)
 {
     py::class_< UShaderCache,  UObject   >(m, "UShaderCache")
-        .def_readonly("UnknownData00", &UShaderCache::UnknownData00)
         .def("StaticClass", &UShaderCache::StaticClass, py::return_value_policy::reference)
           ;
 }

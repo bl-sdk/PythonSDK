@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_ULeviathanChannel(py::object m)
 {
     py::class_< ULeviathanChannel,  UChannel   >(m, "ULeviathanChannel")
-        .def_readonly("UnknownData00", &ULeviathanChannel::UnknownData00)
         .def("StaticClass", &ULeviathanChannel::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -26,7 +26,5 @@ void Export_pystes_FDamageEventSummary(py::object m)
         .def_readwrite("PreviousHealth", &FDamageEventSummary::PreviousHealth)
         .def_readwrite("HitRegion", &FDamageEventSummary::HitRegion)
         .def_readwrite("ReflectionData", &FDamageEventSummary::ReflectionData)
-        .def_readonly("DamageTakenSkillEventsTriggered", &FDamageEventSummary::DamageTakenSkillEventsTriggered)
-        .def_readonly("DamageDealtSkillEventsTriggered", &FDamageEventSummary::DamageDealtSkillEventsTriggered)
   ;
 }

@@ -14,6 +14,5 @@ void Export_pystes_FBeamDamageData(py::object m)
         .def_readwrite("BarrelSourceTime", &FBeamDamageData::BarrelSourceTime)
         .def_readwrite("PlantSourceTime", &FBeamDamageData::PlantSourceTime)
         .def_readwrite("DamageCauser", &FBeamDamageData::DamageCauser)
-        .def_readonly("UnknownData00", &FBeamDamageData::UnknownData00)
   ;
 }

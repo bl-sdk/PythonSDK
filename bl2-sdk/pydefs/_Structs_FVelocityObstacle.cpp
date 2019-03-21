@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_FVelocityObstacle(py::object m)
 {
     py::class_< FVelocityObstacle >(m, "FVelocityObstacle")
-        .def_readonly("Segments", &FVelocityObstacle::Segments)
   ;
 }

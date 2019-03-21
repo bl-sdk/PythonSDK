@@ -11,7 +11,6 @@ void Export_pystes_FGBXNavMeshSpecialMove(py::object m)
         .def_readwrite("CrossLevelMoverIdx", &FGBXNavMeshSpecialMove::CrossLevelMoverIdx)
         .def_readwrite("ActorSpecialMoveId", &FGBXNavMeshSpecialMove::ActorSpecialMoveId)
         .def_readwrite("Mover", &FGBXNavMeshSpecialMove::Mover)
-        .def_readonly("UnknownData00", &FGBXNavMeshSpecialMove::UnknownData00)
         .def_readwrite("LocalSpaceSrcLocation", &FGBXNavMeshSpecialMove::LocalSpaceSrcLocation)
         .def_readwrite("LocalSpaceDestLocation", &FGBXNavMeshSpecialMove::LocalSpaceDestLocation)
   ;

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UGFxObject(py::object m)
 {
     py::class_< UGFxObject,  UObject   >(m, "UGFxObject")
-        .def_readonly("Value", &UGFxObject::Value)
         .def_readwrite("SubWidgetBindings", &UGFxObject::SubWidgetBindings)
         .def("StaticClass", &UGFxObject::StaticClass, py::return_value_policy::reference)
         .def("eventWidgetUnloaded", &UGFxObject::eventWidgetUnloaded)

@@ -17,7 +17,6 @@ void Export_pystes_FCameraShakeInstance(py::object m)
         .def_readwrite("Scale", &FCameraShakeInstance::Scale)
         .def_readwrite("AnimInst", &FCameraShakeInstance::AnimInst)
         .def_readwrite("PlaySpace", &FCameraShakeInstance::PlaySpace)
-        .def_readonly("UnknownData00", &FCameraShakeInstance::UnknownData00)
         .def_readwrite("UserPlaySpaceMatrix", &FCameraShakeInstance::UserPlaySpaceMatrix)
   ;
 }

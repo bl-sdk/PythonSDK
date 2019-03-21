@@ -7,7 +7,6 @@ void Export_pystes_FAimComponent(py::object m)
 {
     py::class_< FAimComponent >(m, "FAimComponent")
         .def_readwrite("BoneName", &FAimComponent::BoneName)
-        .def_readonly("UnknownData00", &FAimComponent::UnknownData00)
         .def_readwrite("LU", &FAimComponent::LU)
         .def_readwrite("LC", &FAimComponent::LC)
         .def_readwrite("LD", &FAimComponent::LD)

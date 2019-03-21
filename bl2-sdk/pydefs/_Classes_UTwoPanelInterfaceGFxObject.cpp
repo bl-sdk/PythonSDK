@@ -7,7 +7,6 @@ void Export_pystes_UTwoPanelInterfaceGFxObject(py::object m)
 {
     py::class_< UTwoPanelInterfaceGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UTwoPanelInterfaceGFxObject")
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxObject::TwoPanelInterface)
-        .def_readonly("UnknownData00", &UTwoPanelInterfaceGFxObject::UnknownData00)
         .def_readwrite("StoragePanel", &UTwoPanelInterfaceGFxObject::StoragePanel)
         .def_readwrite("PlayerPanel", &UTwoPanelInterfaceGFxObject::PlayerPanel)
         .def_readwrite("frameNum", &UTwoPanelInterfaceGFxObject::frameNum)

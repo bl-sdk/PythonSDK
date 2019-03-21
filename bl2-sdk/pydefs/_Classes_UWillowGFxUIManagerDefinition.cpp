@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxUIManagerDefinition(py::object m)
 {
     py::class_< UWillowGFxUIManagerDefinition,  UGBXDefinition   >(m, "UWillowGFxUIManagerDefinition")
-        .def_readonly("MeshTranslation", &UWillowGFxUIManagerDefinition::MeshTranslation)
         .def_readwrite("MeshRotation", &UWillowGFxUIManagerDefinition::MeshRotation)
         .def_readwrite("ViewOffsetClamp", &UWillowGFxUIManagerDefinition::ViewOffsetClamp)
         .def_readwrite("ViewOffsetScale", &UWillowGFxUIManagerDefinition::ViewOffsetScale)

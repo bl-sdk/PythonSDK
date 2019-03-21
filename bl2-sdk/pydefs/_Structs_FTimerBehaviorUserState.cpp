@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_FTimerBehaviorUserState(py::object m)
 {
     py::class_< FTimerBehaviorUserState >(m, "FTimerBehaviorUserState")
-        .def_readonly("Timers", &FTimerBehaviorUserState::Timers)
   ;
 }

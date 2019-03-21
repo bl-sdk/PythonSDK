@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UAITracker(py::object m)
 {
     py::class_< UAITracker,  UObject   >(m, "UAITracker")
-        .def_readonly("Snapshots", &UAITracker::Snapshots)
         .def_readwrite("SnapshotSize", &UAITracker::SnapshotSize)
         .def_readwrite("SnapshotIndex", &UAITracker::SnapshotIndex)
         .def_readwrite("DebugOwner", &UAITracker::DebugOwner)

@@ -7,7 +7,6 @@ void Export_pystes_UMultitypeScrollingListGFxObject(py::object m)
 {
     py::class_< UMultitypeScrollingListGFxObject,  UGFxObject   >(m, "UMultitypeScrollingListGFxObject")
         .def_readwrite("ParentPanel", &UMultitypeScrollingListGFxObject::ParentPanel)
-        .def_readonly("UnknownData00", &UMultitypeScrollingListGFxObject::UnknownData00)
         .def("StaticClass", &UMultitypeScrollingListGFxObject::StaticClass, py::return_value_policy::reference)
         .def("ContinueInitialInit", &UMultitypeScrollingListGFxObject::ContinueInitialInit)
         .def("extGameScroll", &UMultitypeScrollingListGFxObject::extGameScroll)

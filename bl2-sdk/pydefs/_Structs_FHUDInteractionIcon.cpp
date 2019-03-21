@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_FHUDInteractionIcon(py::object m)
 {
     py::class_< FHUDInteractionIcon >(m, "FHUDInteractionIcon")
-        .def_readonly("Icons", &FHUDInteractionIcon::Icons)
   ;
 }

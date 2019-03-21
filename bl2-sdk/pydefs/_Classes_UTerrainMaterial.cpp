@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UTerrainMaterial(py::object m)
 {
     py::class_< UTerrainMaterial,  UObject   >(m, "UTerrainMaterial")
-        .def_readonly("UnknownData00", &UTerrainMaterial::UnknownData00)
         .def_readwrite("LocalToMapping", &UTerrainMaterial::LocalToMapping)
         .def_readwrite("MappingType", &UTerrainMaterial::MappingType)
         .def_readwrite("MappingScale", &UTerrainMaterial::MappingScale)

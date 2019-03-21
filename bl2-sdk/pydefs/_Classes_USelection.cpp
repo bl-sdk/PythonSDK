@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USelection(py::object m)
 {
     py::class_< USelection,  UObject   >(m, "USelection")
-        .def_readonly("UnknownData00", &USelection::UnknownData00)
         .def("StaticClass", &USelection::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -16,6 +16,5 @@ void Export_pystes_FObstacleData(py::object m)
         .def_readwrite("OldVelocity", &FObstacleData::OldVelocity)
         .def_readwrite("LastOffset", &FObstacleData::LastOffset)
         .def_readwrite("IDO", &FObstacleData::IDO)
-        .def_readonly("UnknownData00", &FObstacleData::UnknownData00)
   ;
 }

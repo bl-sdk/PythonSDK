@@ -8,7 +8,5 @@ void Export_pystes_FCompressedTrack(py::object m)
     py::class_< FCompressedTrack >(m, "FCompressedTrack")
         .def_readwrite("ByteStream", &FCompressedTrack::ByteStream)
         .def_readwrite("Times", &FCompressedTrack::Times)
-        .def_readonly("Mins", &FCompressedTrack::Mins)
-        .def_readonly("Ranges", &FCompressedTrack::Ranges)
   ;
 }

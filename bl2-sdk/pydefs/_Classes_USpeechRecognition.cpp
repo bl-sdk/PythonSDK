@@ -12,7 +12,6 @@ void Export_pystes_USpeechRecognition(py::object m)
         .def_readwrite("VoiceData", &USpeechRecognition::VoiceData)
         .def_readwrite("WorkingVoiceData", &USpeechRecognition::WorkingVoiceData)
         .def_readwrite("UserData", &USpeechRecognition::UserData)
-        .def_readonly("InstanceData", &USpeechRecognition::InstanceData)
         .def_readwrite("FnxVoiceData", &USpeechRecognition::FnxVoiceData)
         .def("StaticClass", &USpeechRecognition::StaticClass, py::return_value_policy::reference)
           ;

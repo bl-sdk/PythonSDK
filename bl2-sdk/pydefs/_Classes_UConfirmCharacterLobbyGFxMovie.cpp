@@ -7,7 +7,6 @@ void Export_pystes_UConfirmCharacterLobbyGFxMovie(py::object m)
 {
     py::class_< UConfirmCharacterLobbyGFxMovie,  UWillowGFxMovie   >(m, "UConfirmCharacterLobbyGFxMovie")
         .def_readwrite("ConfirmCharacterLobbyObj", &UConfirmCharacterLobbyGFxMovie::ConfirmCharacterLobbyObj)
-        .def_readonly("WPRI", &UConfirmCharacterLobbyGFxMovie::WPRI)
         .def("StaticClass", &UConfirmCharacterLobbyGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("SetHeader", &UConfirmCharacterLobbyGFxMovie::SetHeader)
         .def("SetCharacterInfo", &UConfirmCharacterLobbyGFxMovie::SetCharacterInfo)

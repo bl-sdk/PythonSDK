@@ -7,7 +7,6 @@ void Export_pystes_FAITreeData(py::object m)
 {
     py::class_< FAITreeData >(m, "FAITreeData")
         .def_readwrite("AI", &FAITreeData::AI)
-        .def_readonly("UnknownData00", &FAITreeData::UnknownData00)
         .def_readwrite("Type", &FAITreeData::Type)
         .def_readwrite("Children", &FAITreeData::Children)
         .def_readwrite("Resource", &FAITreeData::Resource)

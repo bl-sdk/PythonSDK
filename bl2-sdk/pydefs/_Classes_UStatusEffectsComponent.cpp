@@ -7,7 +7,6 @@ void Export_pystes_UStatusEffectsComponent(py::object m)
 {
     py::class_< UStatusEffectsComponent,  UActorComponent   >(m, "UStatusEffectsComponent")
         .def_readwrite("OwnerTarget", &UStatusEffectsComponent::OwnerTarget)
-        .def_readonly("UnknownData00", &UStatusEffectsComponent::UnknownData00)
         .def_readwrite("BodyConsumptionPercent", &UStatusEffectsComponent::BodyConsumptionPercent)
         .def_readwrite("ActiveStatusEffects", &UStatusEffectsComponent::ActiveStatusEffects)
         .def_readwrite("LastPrimaryStatusEffect", &UStatusEffectsComponent::LastPrimaryStatusEffect)

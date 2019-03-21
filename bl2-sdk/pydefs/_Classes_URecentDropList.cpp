@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_URecentDropList(py::object m)
 {
     py::class_< URecentDropList,  UObject   >(m, "URecentDropList")
-        .def_readonly("RecentDrops", &URecentDropList::RecentDrops)
         .def_readwrite("NextIndex", &URecentDropList::NextIndex)
         .def("StaticClass", &URecentDropList::StaticClass, py::return_value_policy::reference)
         .def("Contains", &URecentDropList::Contains)

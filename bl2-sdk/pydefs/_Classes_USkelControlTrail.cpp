@@ -13,7 +13,6 @@ void Export_pystes_USkelControlTrail(py::object m)
         .def_readwrite("FakeVelocity", &USkelControlTrail::FakeVelocity)
         .def_readwrite("ThisTimstep", &USkelControlTrail::ThisTimstep)
         .def_readwrite("TrailBoneLocations", &USkelControlTrail::TrailBoneLocations)
-        .def_readonly("UnknownData00", &USkelControlTrail::UnknownData00)
         .def_readwrite("OldLocalToWorld", &USkelControlTrail::OldLocalToWorld)
         .def("StaticClass", &USkelControlTrail::StaticClass, py::return_value_policy::reference)
           ;

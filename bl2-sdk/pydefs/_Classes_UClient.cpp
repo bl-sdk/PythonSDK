@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UClient(py::object m)
 {
     py::class_< UClient,  UObject   >(m, "UClient")
-        .def_readonly("UnknownData00", &UClient::UnknownData00)
         .def_readwrite("MinDesiredFrameRate", &UClient::MinDesiredFrameRate)
         .def_readwrite("DisplayGamma", &UClient::DisplayGamma)
         .def_readwrite("InitialButtonRepeatDelay", &UClient::InitialButtonRepeatDelay)

@@ -7,7 +7,6 @@ void Export_pystes_FUIDataStoreBinding(py::object m)
 {
     py::class_< FUIDataStoreBinding >(m, "FUIDataStoreBinding")
         .def_readwrite("Subscriber", &FUIDataStoreBinding::Subscriber)
-        .def_readonly("UnknownData00", &FUIDataStoreBinding::UnknownData00)
         .def_readwrite("RequiredFieldType", &FUIDataStoreBinding::RequiredFieldType)
         .def_readwrite("MarkupString", &FUIDataStoreBinding::MarkupString)
         .def_readwrite("BindingIndex", &FUIDataStoreBinding::BindingIndex)
