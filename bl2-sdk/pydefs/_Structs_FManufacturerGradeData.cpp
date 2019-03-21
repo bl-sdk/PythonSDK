@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FManufacturerGradeData()
 {
-    class_< FManufacturerGradeData >("FManufacturerGradeData", no_init)
+    py::class_< FManufacturerGradeData >("FManufacturerGradeData")
         .def_readwrite("DisplayName", &FManufacturerGradeData::DisplayName)
   ;
 }

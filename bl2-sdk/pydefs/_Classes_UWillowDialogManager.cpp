@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDialogManager()
 {
-    class_< UWillowDialogManager, bases< UGearboxDialogManager >  , boost::noncopyable>("UWillowDialogManager", no_init)
+    py::class_< UWillowDialogManager,  UGearboxDialogManager   >("UWillowDialogManager")
         .def_readwrite("EchoActor", &UWillowDialogManager::EchoActor)
         .def_readwrite("EchoEmote", &UWillowDialogManager::EchoEmote)
         .def_readwrite("PureEchoActors", &UWillowDialogManager::PureEchoActors)
         .def_readwrite("QueuedPersonalEcho", &UWillowDialogManager::QueuedPersonalEcho)
-        .def("StaticClass", &UWillowDialogManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDialogManager::StaticClass, py::return_value_policy::reference)
         .def("PlayPersonalEchoLog", &UWillowDialogManager::PlayPersonalEchoLog)
         .def("IsMissionKickoffPlaying", &UWillowDialogManager::IsMissionKickoffPlaying)
         .def("GetPriorityForEchoActor", &UWillowDialogManager::GetPriorityForEchoActor)

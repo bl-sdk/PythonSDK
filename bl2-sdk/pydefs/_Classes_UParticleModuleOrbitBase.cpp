@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleOrbitBase()
 {
-    class_< UParticleModuleOrbitBase, bases< UParticleModule >  , boost::noncopyable>("UParticleModuleOrbitBase", no_init)
-        .def("StaticClass", &UParticleModuleOrbitBase::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UParticleModuleOrbitBase,  UParticleModule   >("UParticleModuleOrbitBase")
+        .def("StaticClass", &UParticleModuleOrbitBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

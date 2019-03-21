@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FThreadSafeCounter()
 {
-    class_< FThreadSafeCounter >("FThreadSafeCounter", no_init)
+    py::class_< FThreadSafeCounter >("FThreadSafeCounter")
         .def_readwrite("Value", &FThreadSafeCounter::Value)
   ;
 }

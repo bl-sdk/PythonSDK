@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UImpactDefinition()
 {
-    class_< UImpactDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UImpactDefinition", no_init)
-        .def("StaticClass", &UImpactDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UImpactDefinition,  UGBXDefinition   >("UImpactDefinition")
+        .def("StaticClass", &UImpactDefinition::StaticClass, py::return_value_policy::reference)
         .def("HandleRigidBodyImpact", &UImpactDefinition::HandleRigidBodyImpact)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTurnData()
 {
-    class_< FTurnData >("FTurnData", no_init)
+    py::class_< FTurnData >("FTurnData")
         .def_readwrite("MinRepeatTime", &FTurnData::MinRepeatTime)
         .def_readwrite("Left", &FTurnData::Left)
         .def_readwrite("Right", &FTurnData::Right)

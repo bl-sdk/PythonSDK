@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASplineLoftActor()
 {
-    class_< ASplineLoftActor, bases< ASplineActor >  , boost::noncopyable>("ASplineLoftActor", no_init)
+    py::class_< ASplineLoftActor,  ASplineActor   >("ASplineLoftActor")
         .def_readwrite("ScaleX", &ASplineLoftActor::ScaleX)
         .def_readwrite("ScaleY", &ASplineLoftActor::ScaleY)
         .def_readwrite("SplineMeshComps", &ASplineLoftActor::SplineMeshComps)
@@ -16,7 +16,7 @@ void Export_pystes_ASplineLoftActor()
         .def_readwrite("Offset", &ASplineLoftActor::Offset)
         .def_readwrite("MeshLightEnvironment", &ASplineLoftActor::MeshLightEnvironment)
         .def_readwrite("MeshMaxDrawDistance", &ASplineLoftActor::MeshMaxDrawDistance)
-        .def("StaticClass", &ASplineLoftActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASplineLoftActor::StaticClass, py::return_value_policy::reference)
         .def("UpdateSplineParams", &ASplineLoftActor::UpdateSplineParams)
         .def("ClearLoftMesh", &ASplineLoftActor::ClearLoftMesh)
         .staticmethod("StaticClass")

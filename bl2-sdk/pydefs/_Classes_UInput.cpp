@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInput()
 {
-    class_< UInput, bases< UObject >  , boost::noncopyable>("UInput", no_init)
+    py::class_< UInput,  UObject   >("UInput")
         .def_readwrite("Bindings", &UInput::Bindings)
         .def_readwrite("PressedKeys", &UInput::PressedKeys)
         .def_readwrite("CurrentEvent", &UInput::CurrentEvent)
@@ -14,7 +14,7 @@ void Export_pystes_UInput()
         .def_readonly("UnknownData00", &UInput::UnknownData00)
         .def_readwrite("AxisArray", &UInput::AxisArray)
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
-        .def("StaticClass", &UInput::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInput::StaticClass, py::return_value_policy::reference)
         .def("SetBind", &UInput::SetBind)
         .def("GetBind", &UInput::GetBind)
         .def("ResetInput", &UInput::ResetInput)
@@ -30,16 +30,16 @@ void Export_pystes_UInput()
         .def("OnReceivedNativeInputAxis", &UInteraction::OnReceivedNativeInputAxis)
         .def("OnReceivedNativeInputKey", &UInteraction::OnReceivedNativeInputKey)
         .def("SafeCaps", &UUIRoot::SafeCaps)
-        .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, return_value_policy< reference_existing_object >())
-        .def("GetOnlinePlayerInterface", &UUIRoot::GetOnlinePlayerInterface, return_value_policy< reference_existing_object >())
-        .def("GetOnlineGameInterface", &UUIRoot::GetOnlineGameInterface, return_value_policy< reference_existing_object >())
+        .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, py::return_value_policy::reference)
+        .def("GetOnlinePlayerInterface", &UUIRoot::GetOnlinePlayerInterface, py::return_value_policy::reference)
+        .def("GetOnlineGameInterface", &UUIRoot::GetOnlineGameInterface, py::return_value_policy::reference)
         .def("GetDataStoreStringValue", &UUIRoot::GetDataStoreStringValue)
         .def("GetDataStoreFieldValue", &UUIRoot::GetDataStoreFieldValue)
         .def("SetDataStoreStringValue", &UUIRoot::SetDataStoreStringValue)
         .def("SetDataStoreFieldValue", &UUIRoot::SetDataStoreFieldValue)
-        .def("StaticResolveDataStore", &UUIRoot::StaticResolveDataStore, return_value_policy< reference_existing_object >())
-        .def("GetSceneClient", &UUIRoot::GetSceneClient, return_value_policy< reference_existing_object >())
-        .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, return_value_policy< reference_existing_object >())
+        .def("StaticResolveDataStore", &UUIRoot::StaticResolveDataStore, py::return_value_policy::reference)
+        .def("GetSceneClient", &UUIRoot::GetSceneClient, py::return_value_policy::reference)
+        .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, py::return_value_policy::reference)
         .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
         .staticmethod("StaticClass")
   ;

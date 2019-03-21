@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UManufacturerAttributeValueResolver()
 {
-    class_< UManufacturerAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UManufacturerAttributeValueResolver", no_init)
+    py::class_< UManufacturerAttributeValueResolver,  UAttributeValueResolver   >("UManufacturerAttributeValueResolver")
         .def_readwrite("ValueIfNotMatched", &UManufacturerAttributeValueResolver::ValueIfNotMatched)
         .def_readwrite("Manufacturers", &UManufacturerAttributeValueResolver::Manufacturers)
-        .def("StaticClass", &UManufacturerAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UManufacturerAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

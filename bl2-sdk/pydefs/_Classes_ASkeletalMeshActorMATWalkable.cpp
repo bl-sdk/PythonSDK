@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASkeletalMeshActorMATWalkable()
 {
-    class_< ASkeletalMeshActorMATWalkable, bases< ASkeletalMeshActor >  , boost::noncopyable>("ASkeletalMeshActorMATWalkable", no_init)
+    py::class_< ASkeletalMeshActorMATWalkable,  ASkeletalMeshActor   >("ASkeletalMeshActorMATWalkable")
         .def_readwrite("SlotNodes", &ASkeletalMeshActorMAT::SlotNodes)
-        .def("StaticClass", &ASkeletalMeshActorMATWalkable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASkeletalMeshActorMATWalkable::StaticClass, py::return_value_policy::reference)
         .def("eventSetSkelControlScale", &ASkeletalMeshActorMAT::eventSetSkelControlScale)
         .def("eventSetMorphWeight", &ASkeletalMeshActorMAT::eventSetMorphWeight)
         .def("eventFinishAnimControl", &ASkeletalMeshActorMAT::eventFinishAnimControl)

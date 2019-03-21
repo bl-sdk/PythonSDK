@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKeyRebindingData()
 {
-    class_< FKeyRebindingData >("FKeyRebindingData", no_init)
+    py::class_< FKeyRebindingData >("FKeyRebindingData")
         .def_readwrite("DefaultKeyName", &FKeyRebindingData::DefaultKeyName)
         .def_readwrite("RemappedKeyName", &FKeyRebindingData::RemappedKeyName)
   ;

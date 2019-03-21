@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDWidget_WorldSpace()
 {
-    class_< UHUDWidget_WorldSpace, bases< UHUDWidget_Base >  , boost::noncopyable>("UHUDWidget_WorldSpace", no_init)
+    py::class_< UHUDWidget_WorldSpace,  UHUDWidget_Base   >("UHUDWidget_WorldSpace")
         .def_readwrite("ObjectiveIcons", &UHUDWidget_WorldSpace::ObjectiveIcons)
         .def_readwrite("PlayerIcons", &UHUDWidget_WorldSpace::PlayerIcons)
         .def_readwrite("NPCAllyIcons", &UHUDWidget_WorldSpace::NPCAllyIcons)
@@ -21,8 +21,8 @@ void Export_pystes_UHUDWidget_WorldSpace()
         .def_readwrite("MinimapWrapperClip", &UHUDWidget_WorldSpace::MinimapWrapperClip)
         .def_readwrite("MinimapClip", &UHUDWidget_WorldSpace::MinimapClip)
         .def_readwrite("ParentClip", &UHUDWidget_WorldSpace::ParentClip)
-        .def("StaticClass", &UHUDWidget_WorldSpace::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetPRIFor", &UHUDWidget_WorldSpace::GetPRIFor, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDWidget_WorldSpace::StaticClass, py::return_value_policy::reference)
+        .def("GetPRIFor", &UHUDWidget_WorldSpace::GetPRIFor, py::return_value_policy::reference)
         .def("NotifyOfPawnRelevance", &UHUDWidget_WorldSpace::NotifyOfPawnRelevance)
         .def("UpdateNPCAllyIcons", &UHUDWidget_WorldSpace::UpdateNPCAllyIcons)
         .def("UpdatePlayerIcons", &UHUDWidget_WorldSpace::UpdatePlayerIcons)

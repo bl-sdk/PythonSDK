@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDDefinition()
 {
-    class_< UHUDDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UHUDDefinition", no_init)
+    py::class_< UHUDDefinition,  UGBXDefinition   >("UHUDDefinition")
         .def_readwrite("MaxDamageIndicators", &UHUDDefinition::MaxDamageIndicators)
         .def_readwrite("DamageIndicatorLifetime", &UHUDDefinition::DamageIndicatorLifetime)
         .def_readwrite("ItemCardAwarenessRange", &UHUDDefinition::ItemCardAwarenessRange)
@@ -36,7 +36,7 @@ void Export_pystes_UHUDDefinition()
         .def_readwrite("PlayerNameHeightOffset", &UHUDDefinition::PlayerNameHeightOffset)
         .def_readwrite("HealthAnimationTime", &UHUDDefinition::HealthAnimationTime)
         .def_readwrite("AutosaveAkEvent", &UHUDDefinition::AutosaveAkEvent)
-        .def("StaticClass", &UHUDDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

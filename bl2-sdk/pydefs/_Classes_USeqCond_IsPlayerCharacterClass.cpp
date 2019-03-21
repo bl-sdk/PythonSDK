@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqCond_IsPlayerCharacterClass()
 {
-    class_< USeqCond_IsPlayerCharacterClass, bases< USequenceCondition >  , boost::noncopyable>("USeqCond_IsPlayerCharacterClass", no_init)
-        .def("StaticClass", &USeqCond_IsPlayerCharacterClass::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqCond_IsPlayerCharacterClass,  USequenceCondition   >("USeqCond_IsPlayerCharacterClass")
+        .def("StaticClass", &USeqCond_IsPlayerCharacterClass::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

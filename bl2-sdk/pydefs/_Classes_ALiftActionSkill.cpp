@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ALiftActionSkill()
 {
-    class_< ALiftActionSkill, bases< AActionSkill >  , boost::noncopyable>("ALiftActionSkill", no_init)
+    py::class_< ALiftActionSkill,  AActionSkill   >("ALiftActionSkill")
         .def_readwrite("CurrentState", &ALiftActionSkill::CurrentState)
         .def_readwrite("LiftedPawn", &ALiftActionSkill::LiftedPawn)
         .def_readwrite("StateStartTime", &ALiftActionSkill::StateStartTime)
@@ -78,7 +78,7 @@ void Export_pystes_ALiftActionSkill()
         .def_readwrite("SubsequenceProjectileDefinition", &ALiftActionSkill::SubsequenceProjectileDefinition)
         .def_readwrite("SubsequenceProjectileChance", &ALiftActionSkill::SubsequenceProjectileChance)
         .def_readwrite("SubsequenceProjectile", &ALiftActionSkill::SubsequenceProjectile)
-        .def("StaticClass", &ALiftActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ALiftActionSkill::StaticClass, py::return_value_policy::reference)
         .def("eventGetDeferredActionSkillTime", &ALiftActionSkill::eventGetDeferredActionSkillTime)
         .def("eventEnableActionSkillHUD", &ALiftActionSkill::eventEnableActionSkillHUD)
         .def("OnCharmTarget", &ALiftActionSkill::OnCharmTarget)
@@ -100,8 +100,8 @@ void Export_pystes_ALiftActionSkill()
         .def("FirstPersonEffectFinished", &ALiftActionSkill::FirstPersonEffectFinished)
         .def("eventRunCustomEvent", &ALiftActionSkill::eventRunCustomEvent)
         .def("UpdatePhaselockLight", &ALiftActionSkill::UpdatePhaselockLight)
-        .def("GetPhaseLockDefinition", &ALiftActionSkill::GetPhaseLockDefinition, return_value_policy< reference_existing_object >())
-        .def("GetPlayerAnimation", &ALiftActionSkill::GetPlayerAnimation, return_value_policy< reference_existing_object >())
+        .def("GetPhaseLockDefinition", &ALiftActionSkill::GetPhaseLockDefinition, py::return_value_policy::reference)
+        .def("GetPlayerAnimation", &ALiftActionSkill::GetPlayerAnimation, py::return_value_policy::reference)
         .def("UpdateLiftedPawnMeshOffset", &ALiftActionSkill::UpdateLiftedPawnMeshOffset)
         .def("UpdateLiftedPawn", &ALiftActionSkill::UpdateLiftedPawn)
         .def("GetBobLocation", &ALiftActionSkill::GetBobLocation)

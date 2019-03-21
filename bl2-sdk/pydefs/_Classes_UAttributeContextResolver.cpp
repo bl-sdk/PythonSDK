@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAttributeContextResolver()
 {
-    class_< UAttributeContextResolver, bases< UObject >  , boost::noncopyable>("UAttributeContextResolver", no_init)
-        .def("StaticClass", &UAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetAttributeContext", &UAttributeContextResolver::eventGetAttributeContext, return_value_policy< reference_existing_object >())
+    py::class_< UAttributeContextResolver,  UObject   >("UAttributeContextResolver")
+        .def("StaticClass", &UAttributeContextResolver::StaticClass, py::return_value_policy::reference)
+        .def("eventGetAttributeContext", &UAttributeContextResolver::eventGetAttributeContext, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

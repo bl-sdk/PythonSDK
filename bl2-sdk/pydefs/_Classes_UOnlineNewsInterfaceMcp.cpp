@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineNewsInterfaceMcp()
 {
-    class_< UOnlineNewsInterfaceMcp, bases< UMCPBase >  , boost::noncopyable>("UOnlineNewsInterfaceMcp", no_init)
+    py::class_< UOnlineNewsInterfaceMcp,  UMCPBase   >("UOnlineNewsInterfaceMcp")
         .def_readwrite("NewsItems", &UOnlineNewsInterfaceMcp::NewsItems)
         .def_readwrite("ReadNewsDelegates", &UOnlineNewsInterfaceMcp::ReadNewsDelegates)
-        .def("StaticClass", &UOnlineNewsInterfaceMcp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineNewsInterfaceMcp::StaticClass, py::return_value_policy::reference)
         .def("GetNews", &UOnlineNewsInterfaceMcp::GetNews)
         .def("ClearReadNewsCompletedDelegate", &UOnlineNewsInterfaceMcp::ClearReadNewsCompletedDelegate)
         .def("AddReadNewsCompletedDelegate", &UOnlineNewsInterfaceMcp::AddReadNewsCompletedDelegate)

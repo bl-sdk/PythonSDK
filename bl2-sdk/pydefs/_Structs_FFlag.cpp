@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFlag()
 {
-    class_< FFlag >("FFlag", no_init)
+    py::class_< FFlag >("FFlag")
         .def_readwrite("Value", &FFlag::Value)
         .def_readwrite("Raised", &FFlag::Raised)
         .def_readwrite("Lowered", &FFlag::Lowered)

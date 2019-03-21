@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AEmitter()
 {
-    class_< AEmitter, bases< AActor >  , boost::noncopyable>("AEmitter", no_init)
+    py::class_< AEmitter,  AActor   >("AEmitter")
         .def_readwrite("ParticleSystemComponent", &AEmitter::ParticleSystemComponent)
         .def_readwrite("LightEnvironment", &AEmitter::LightEnvironment)
-        .def("StaticClass", &AEmitter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AEmitter::StaticClass, py::return_value_policy::reference)
         .def("Behavior_Destroy", &AEmitter::Behavior_Destroy)
         .def("HideSelf", &AEmitter::HideSelf)
         .def("ApplyCheckpointRecord", &AEmitter::ApplyCheckpointRecord)

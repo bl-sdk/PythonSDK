@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFastTravelStationsListOrder()
 {
-    class_< UFastTravelStationsListOrder, bases< UGBXDefinition >  , boost::noncopyable>("UFastTravelStationsListOrder", no_init)
+    py::class_< UFastTravelStationsListOrder,  UGBXDefinition   >("UFastTravelStationsListOrder")
         .def_readwrite("FastTravelStationOrderList", &UFastTravelStationsListOrder::FastTravelStationOrderList)
         .def_readwrite("DlcExpansion", &UFastTravelStationsListOrder::DlcExpansion)
-        .def("StaticClass", &UFastTravelStationsListOrder::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFastTravelStationsListOrder::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

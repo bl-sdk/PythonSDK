@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowStaggerAnimNodeBlend()
 {
-    class_< UWillowStaggerAnimNodeBlend, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UWillowStaggerAnimNodeBlend", no_init)
+    py::class_< UWillowStaggerAnimNodeBlend,  UAnimNodeBlendBase   >("UWillowStaggerAnimNodeBlend")
         .def_readwrite("StaggerNodeIndex", &UWillowStaggerAnimNodeBlend::StaggerNodeIndex)
         .def_readwrite("StaggerNodeWeight", &UWillowStaggerAnimNodeBlend::StaggerNodeWeight)
         .def_readwrite("StaggerNodeWeightTarget", &UWillowStaggerAnimNodeBlend::StaggerNodeWeightTarget)
@@ -13,7 +13,7 @@ void Export_pystes_UWillowStaggerAnimNodeBlend()
         .def_readwrite("AltCondition", &UWillowStaggerAnimNodeBlend::AltCondition)
         .def_readwrite("AdditionalRotationDef", &UWillowStaggerAnimNodeBlend::AdditionalRotationDef)
         .def_readwrite("AdditionalRotationAlt", &UWillowStaggerAnimNodeBlend::AdditionalRotationAlt)
-        .def("StaticClass", &UWillowStaggerAnimNodeBlend::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowStaggerAnimNodeBlend::StaticClass, py::return_value_policy::reference)
         .def("EndStaggerBlend", &UWillowStaggerAnimNodeBlend::EndStaggerBlend)
         .def("StartStaggerBlend", &UWillowStaggerAnimNodeBlend::StartStaggerBlend)
         .def("PlayStaggerAnimation", &UWillowStaggerAnimNodeBlend::PlayStaggerAnimation)

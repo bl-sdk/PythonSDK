@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIPlayerListOwner()
 {
-    class_< UIPlayerListOwner, bases< UInterface >  , boost::noncopyable>("UIPlayerListOwner", no_init)
-        .def("StaticClass", &UIPlayerListOwner::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIPlayerListOwner,  UInterface   >("UIPlayerListOwner")
+        .def("StaticClass", &UIPlayerListOwner::StaticClass, py::return_value_policy::reference)
         .def("eventPlayUISound", &UIPlayerListOwner::eventPlayUISound)
-        .def("GetPlayerDetailsMovieDef", &UIPlayerListOwner::GetPlayerDetailsMovieDef, return_value_policy< reference_existing_object >())
+        .def("GetPlayerDetailsMovieDef", &UIPlayerListOwner::GetPlayerDetailsMovieDef, py::return_value_policy::reference)
         .def("GetFriend", &UIPlayerListOwner::GetFriend)
         .def("AppendTooltipString", &UIPlayerListOwner::AppendTooltipString)
         .def("CheckControllerStatus", &UIPlayerListOwner::CheckControllerStatus)
@@ -19,7 +19,7 @@ void Export_pystes_UIPlayerListOwner()
         .def("CanMute", &UIPlayerListOwner::CanMute)
         .def("CanInvite", &UIPlayerListOwner::CanInvite)
         .def("CanJoin", &UIPlayerListOwner::CanJoin)
-        .def("GetWPCOwner", &UIPlayerListOwner::GetWPCOwner, return_value_policy< reference_existing_object >())
+        .def("GetWPCOwner", &UIPlayerListOwner::GetWPCOwner, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

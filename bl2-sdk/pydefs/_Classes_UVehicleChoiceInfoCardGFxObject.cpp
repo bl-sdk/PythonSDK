@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleChoiceInfoCardGFxObject()
 {
-    class_< UVehicleChoiceInfoCardGFxObject, bases< UGFxObject >  , boost::noncopyable>("UVehicleChoiceInfoCardGFxObject", no_init)
-        .def("StaticClass", &UVehicleChoiceInfoCardGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UVehicleChoiceInfoCardGFxObject,  UGFxObject   >("UVehicleChoiceInfoCardGFxObject")
+        .def("StaticClass", &UVehicleChoiceInfoCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("TryScrollDown", &UVehicleChoiceInfoCardGFxObject::TryScrollDown)
         .def("TryScrollUp", &UVehicleChoiceInfoCardGFxObject::TryScrollUp)
         .def("TryScrollRight", &UVehicleChoiceInfoCardGFxObject::TryScrollRight)

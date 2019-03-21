@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackSound()
 {
-    class_< UInterpTrackSound, bases< UInterpTrackVectorBase >  , boost::noncopyable>("UInterpTrackSound", no_init)
+    py::class_< UInterpTrackSound,  UInterpTrackVectorBase   >("UInterpTrackSound")
         .def_readwrite("Sounds", &UInterpTrackSound::Sounds)
-        .def("StaticClass", &UInterpTrackSound::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackSound::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

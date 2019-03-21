@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSaveGameManager()
 {
-    class_< UWillowSaveGameManager, bases< UObject >  , boost::noncopyable>("UWillowSaveGameManager", no_init)
+    py::class_< UWillowSaveGameManager,  UObject   >("UWillowSaveGameManager")
         .def_readwrite("VfTable_FTickableObject", &UWillowSaveGameManager::VfTable_FTickableObject)
         .def_readonly("AsyncResult", &UWillowSaveGameManager::AsyncResult)
         .def_readonly("CurrentState", &UWillowSaveGameManager::CurrentState)
@@ -33,7 +33,7 @@ void Export_pystes_UWillowSaveGameManager()
         .def_readwrite("SingularDay", &UWillowSaveGameManager::SingularDay)
         .def_readwrite("PluralDays", &UWillowSaveGameManager::PluralDays)
         .def_readonly("bNeedsProfileWrite", &UWillowSaveGameManager::bNeedsProfileWrite)
-        .def("StaticClass", &UWillowSaveGameManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSaveGameManager::StaticClass, py::return_value_policy::reference)
         .def("DestroyAllRegisteredDelegates", &UWillowSaveGameManager::DestroyAllRegisteredDelegates)
         .def("AttemptProfileWriteIfNecessary", &UWillowSaveGameManager::AttemptProfileWriteIfNecessary)
         .def("NotifyProfileWriteComplete", &UWillowSaveGameManager::NotifyProfileWriteComplete)
@@ -63,14 +63,14 @@ void Export_pystes_UWillowSaveGameManager()
         .def("GetCrossTitleSaveGameList", &UWillowSaveGameManager::GetCrossTitleSaveGameList)
         .def("GetSaveGameList", &UWillowSaveGameManager::GetSaveGameList)
         .def("LoadRawData", &UWillowSaveGameManager::LoadRawData)
-        .def("LoadGraveyard", &UWillowSaveGameManager::LoadGraveyard, return_value_policy< reference_existing_object >())
+        .def("LoadGraveyard", &UWillowSaveGameManager::LoadGraveyard, py::return_value_policy::reference)
         .def("EndLoadWillowOneGame", &UWillowSaveGameManager::EndLoadWillowOneGame)
         .def("BeginLoadWillowOneGame", &UWillowSaveGameManager::BeginLoadWillowOneGame)
-        .def("EndLoadGame", &UWillowSaveGameManager::EndLoadGame, return_value_policy< reference_existing_object >())
+        .def("EndLoadGame", &UWillowSaveGameManager::EndLoadGame, py::return_value_policy::reference)
         .def("BeginLoadGame", &UWillowSaveGameManager::BeginLoadGame)
         .def("SetCachedPlayerSaveGame", &UWillowSaveGameManager::SetCachedPlayerSaveGame)
         .def("HasCachedPlayerSaveGame", &UWillowSaveGameManager::HasCachedPlayerSaveGame)
-        .def("GetCachedPlayerSaveGame", &UWillowSaveGameManager::GetCachedPlayerSaveGame, return_value_policy< reference_existing_object >())
+        .def("GetCachedPlayerSaveGame", &UWillowSaveGameManager::GetCachedPlayerSaveGame, py::return_value_policy::reference)
         .def("SaveRawData", &UWillowSaveGameManager::SaveRawData)
         .def("SaveGraveyard", &UWillowSaveGameManager::SaveGraveyard)
         .def("Save", &UWillowSaveGameManager::Save)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationBodyTag()
 {
-    class_< UPopulationBodyTag, bases< UGBXDefinition >  , boost::noncopyable>("UPopulationBodyTag", no_init)
-        .def("StaticClass", &UPopulationBodyTag::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPopulationBodyTag,  UGBXDefinition   >("UPopulationBodyTag")
+        .def("StaticClass", &UPopulationBodyTag::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

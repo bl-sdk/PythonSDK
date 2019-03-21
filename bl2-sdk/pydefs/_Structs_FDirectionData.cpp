@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDirectionData()
 {
-    class_< FDirectionData >("FDirectionData", no_init)
+    py::class_< FDirectionData >("FDirectionData")
         .def_readwrite("This", &FDirectionData::This)
         .def_readwrite("Left", &FDirectionData::Left)
         .def_readwrite("Right", &FDirectionData::Right)

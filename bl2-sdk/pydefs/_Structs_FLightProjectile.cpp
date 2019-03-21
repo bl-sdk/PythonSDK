@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightProjectile()
 {
-    class_< FLightProjectile >("FLightProjectile", no_init)
+    py::class_< FLightProjectile >("FLightProjectile")
         .def_readwrite("Location", &FLightProjectile::Location)
         .def_readwrite("PartLocation", &FLightProjectile::PartLocation)
         .def_readwrite("Velocity", &FLightProjectile::Velocity)

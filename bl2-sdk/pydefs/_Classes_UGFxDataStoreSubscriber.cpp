@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxDataStoreSubscriber()
 {
-    class_< UGFxDataStoreSubscriber, bases< UObject >  , boost::noncopyable>("UGFxDataStoreSubscriber", no_init)
+    py::class_< UGFxDataStoreSubscriber,  UObject   >("UGFxDataStoreSubscriber")
         .def_readwrite("VfTable_IUIDataStorePublisher", &UGFxDataStoreSubscriber::VfTable_IUIDataStorePublisher)
         .def_readwrite("Movie", &UGFxDataStoreSubscriber::Movie)
-        .def("StaticClass", &UGFxDataStoreSubscriber::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxDataStoreSubscriber::StaticClass, py::return_value_policy::reference)
         .def("SaveSubscriberValue", &UGFxDataStoreSubscriber::SaveSubscriberValue)
         .def("ClearBoundDataStores", &UGFxDataStoreSubscriber::ClearBoundDataStores)
         .def("GetBoundDataStores", &UGFxDataStoreSubscriber::GetBoundDataStores)

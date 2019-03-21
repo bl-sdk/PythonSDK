@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehaviorSequenceEnableByMultipleConditions()
 {
-    class_< UBehaviorSequenceEnableByMultipleConditions, bases< UBehaviorSequenceCustomEnableCondition >  , boost::noncopyable>("UBehaviorSequenceEnableByMultipleConditions", no_init)
+    py::class_< UBehaviorSequenceEnableByMultipleConditions,  UBehaviorSequenceCustomEnableCondition   >("UBehaviorSequenceEnableByMultipleConditions")
         .def_readwrite("EnableConditions", &UBehaviorSequenceEnableByMultipleConditions::EnableConditions)
         .def_readwrite("Operator", &UBehaviorSequenceEnableByMultipleConditions::Operator)
-        .def("StaticClass", &UBehaviorSequenceEnableByMultipleConditions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehaviorSequenceEnableByMultipleConditions::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

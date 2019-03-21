@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPS3InvitesPopupGFxObject()
 {
-    class_< UPS3InvitesPopupGFxObject, bases< UGFxObject >  , boost::noncopyable>("UPS3InvitesPopupGFxObject", no_init)
-        .def("StaticClass", &UPS3InvitesPopupGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPS3InvitesPopupGFxObject,  UGFxObject   >("UPS3InvitesPopupGFxObject")
+        .def("StaticClass", &UPS3InvitesPopupGFxObject::StaticClass, py::return_value_policy::reference)
         .def("Hide", &UPS3InvitesPopupGFxObject::Hide)
         .def("Show", &UPS3InvitesPopupGFxObject::Show)
         .def("Refresh", &UPS3InvitesPopupGFxObject::Refresh)

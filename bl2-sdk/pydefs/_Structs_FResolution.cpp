@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FResolution()
 {
-    class_< FResolution >("FResolution", no_init)
+    py::class_< FResolution >("FResolution")
         .def_readwrite("Width", &FResolution::Width)
         .def_readwrite("Height", &FResolution::Height)
   ;

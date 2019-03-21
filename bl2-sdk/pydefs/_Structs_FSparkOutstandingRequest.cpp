@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSparkOutstandingRequest()
 {
-    class_< FSparkOutstandingRequest >("FSparkOutstandingRequest", no_init)
+    py::class_< FSparkOutstandingRequest >("FSparkOutstandingRequest")
         .def_readwrite("State", &FSparkOutstandingRequest::State)
         .def_readwrite("SleepUntil", &FSparkOutstandingRequest::SleepUntil)
         .def_readwrite("RequestCompleteDelegate", &FSparkOutstandingRequest::RequestCompleteDelegate)

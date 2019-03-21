@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleChoiceModuleGFxObject()
 {
-    class_< UVehicleChoiceModuleGFxObject, bases< UGFxObject >  , boost::noncopyable>("UVehicleChoiceModuleGFxObject", no_init)
+    py::class_< UVehicleChoiceModuleGFxObject,  UGFxObject   >("UVehicleChoiceModuleGFxObject")
         .def_readwrite("CachedVehicleState", &UVehicleChoiceModuleGFxObject::CachedVehicleState)
         .def_readwrite("SelectedVehicleUIDefinition", &UVehicleChoiceModuleGFxObject::SelectedVehicleUIDefinition)
         .def_readwrite("EquippedVehicleCustomizationDefinition", &UVehicleChoiceModuleGFxObject::EquippedVehicleCustomizationDefinition)
         .def_readwrite("PreviewVehicleCustomizationDefinition", &UVehicleChoiceModuleGFxObject::PreviewVehicleCustomizationDefinition)
-        .def("StaticClass", &UVehicleChoiceModuleGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleChoiceModuleGFxObject::StaticClass, py::return_value_policy::reference)
         .def("DisableClip", &UVehicleChoiceModuleGFxObject::DisableClip)
         .def("ConfigureVehicleState", &UVehicleChoiceModuleGFxObject::ConfigureVehicleState)
         .def("ConfigureTeleportButton", &UVehicleChoiceModuleGFxObject::ConfigureTeleportButton)

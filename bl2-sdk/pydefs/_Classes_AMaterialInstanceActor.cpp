@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AMaterialInstanceActor()
 {
-    class_< AMaterialInstanceActor, bases< AActor >  , boost::noncopyable>("AMaterialInstanceActor", no_init)
+    py::class_< AMaterialInstanceActor,  AActor   >("AMaterialInstanceActor")
         .def_readwrite("MatInst", &AMaterialInstanceActor::MatInst)
-        .def("StaticClass", &AMaterialInstanceActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AMaterialInstanceActor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

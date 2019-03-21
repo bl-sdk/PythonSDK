@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCompatibilityVersionInfo()
 {
-    class_< FCompatibilityVersionInfo >("FCompatibilityVersionInfo", no_init)
+    py::class_< FCompatibilityVersionInfo >("FCompatibilityVersionInfo")
         .def_readwrite("CurrentCompatPackVersion", &FCompatibilityVersionInfo::CurrentCompatPackVersion)
         .def_readwrite("CurrentCompatibilityMask", &FCompatibilityVersionInfo::CurrentCompatibilityMask)
   ;

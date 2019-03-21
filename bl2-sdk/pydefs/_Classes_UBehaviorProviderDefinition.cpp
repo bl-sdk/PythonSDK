@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehaviorProviderDefinition()
 {
-    class_< UBehaviorProviderDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBehaviorProviderDefinition", no_init)
+    py::class_< UBehaviorProviderDefinition,  UGBXDefinition   >("UBehaviorProviderDefinition")
         .def_readwrite("CurrentVersion", &UBehaviorProviderDefinition::CurrentVersion)
         .def_readwrite("BehaviorSequences", &UBehaviorProviderDefinition::BehaviorSequences)
-        .def("StaticClass", &UBehaviorProviderDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehaviorProviderDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetObjectBehaviorVariable", &UBehaviorProviderDefinition::SetObjectBehaviorVariable)
         .def("SetVectorBehaviorVariable", &UBehaviorProviderDefinition::SetVectorBehaviorVariable)
         .def("SetFloatBehaviorVariable", &UBehaviorProviderDefinition::SetFloatBehaviorVariable)

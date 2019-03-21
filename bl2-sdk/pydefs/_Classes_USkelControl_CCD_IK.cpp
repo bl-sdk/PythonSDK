@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControl_CCD_IK()
 {
-    class_< USkelControl_CCD_IK, bases< USkelControlBase >  , boost::noncopyable>("USkelControl_CCD_IK", no_init)
+    py::class_< USkelControl_CCD_IK,  USkelControlBase   >("USkelControl_CCD_IK")
         .def_readwrite("EffectorLocation", &USkelControl_CCD_IK::EffectorLocation)
         .def_readwrite("EffectorLocationSpace", &USkelControl_CCD_IK::EffectorLocationSpace)
         .def_readwrite("EffectorSpaceBoneName", &USkelControl_CCD_IK::EffectorSpaceBoneName)
@@ -16,7 +16,7 @@ void Export_pystes_USkelControl_CCD_IK()
         .def_readwrite("Precision", &USkelControl_CCD_IK::Precision)
         .def_readwrite("AngleConstraint", &USkelControl_CCD_IK::AngleConstraint)
         .def_readwrite("MaxAngleSteps", &USkelControl_CCD_IK::MaxAngleSteps)
-        .def("StaticClass", &USkelControl_CCD_IK::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControl_CCD_IK::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

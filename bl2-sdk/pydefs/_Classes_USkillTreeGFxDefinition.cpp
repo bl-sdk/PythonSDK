@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillTreeGFxDefinition()
 {
-    class_< USkillTreeGFxDefinition, bases< UGBXDefinition >  , boost::noncopyable>("USkillTreeGFxDefinition", no_init)
+    py::class_< USkillTreeGFxDefinition,  UGBXDefinition   >("USkillTreeGFxDefinition")
         .def_readwrite("SkillMovieClip", &USkillTreeGFxDefinition::SkillMovieClip)
         .def_readwrite("ArtifactDialogMovieClip", &USkillTreeGFxDefinition::ArtifactDialogMovieClip)
         .def_readwrite("IconOnName", &USkillTreeGFxDefinition::IconOnName)
@@ -73,7 +73,7 @@ void Export_pystes_USkillTreeGFxDefinition()
         .def_readwrite("OverviewAlpha", &USkillTreeGFxDefinition::OverviewAlpha)
         .def_readwrite("SelectedSkillZOffset", &USkillTreeGFxDefinition::SelectedSkillZOffset)
         .def_readwrite("SelectedSkillZTweenTime", &USkillTreeGFxDefinition::SelectedSkillZTweenTime)
-        .def("StaticClass", &USkillTreeGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillTreeGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

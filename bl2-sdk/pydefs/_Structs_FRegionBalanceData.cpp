@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRegionBalanceData()
 {
-    class_< FRegionBalanceData >("FRegionBalanceData", no_init)
+    py::class_< FRegionBalanceData >("FRegionBalanceData")
         .def_readwrite("Region", &FRegionBalanceData::Region)
         .def_readwrite("MinDefaultGameStage", &FRegionBalanceData::MinDefaultGameStage)
         .def_readwrite("MaxDefaultGameStage", &FRegionBalanceData::MaxDefaultGameStage)

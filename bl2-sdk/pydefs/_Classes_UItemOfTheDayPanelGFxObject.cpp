@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemOfTheDayPanelGFxObject()
 {
-    class_< UItemOfTheDayPanelGFxObject, bases< UGFxObject >  , boost::noncopyable>("UItemOfTheDayPanelGFxObject", no_init)
+    py::class_< UItemOfTheDayPanelGFxObject,  UGFxObject   >("UItemOfTheDayPanelGFxObject")
         .def_readwrite("VendingMachineMovie", &UItemOfTheDayPanelGFxObject::VendingMachineMovie)
         .def_readwrite("CellThumbnail", &UItemOfTheDayPanelGFxObject::CellThumbnail)
         .def_readwrite("CustomMovieClip", &UItemOfTheDayPanelGFxObject::CustomMovieClip)
-        .def("StaticClass", &UItemOfTheDayPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetCellObject", &UItemOfTheDayPanelGFxObject::GetCellObject, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemOfTheDayPanelGFxObject::StaticClass, py::return_value_policy::reference)
+        .def("GetCellObject", &UItemOfTheDayPanelGFxObject::GetCellObject, py::return_value_policy::reference)
         .def("extOnIOTDPress", &UItemOfTheDayPanelGFxObject::extOnIOTDPress)
         .def("extOnIOTDRollOut", &UItemOfTheDayPanelGFxObject::extOnIOTDRollOut)
         .def("extOnIOTDRollOver", &UItemOfTheDayPanelGFxObject::extOnIOTDRollOver)

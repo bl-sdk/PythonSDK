@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFailedConnect()
 {
-    class_< UFailedConnect, bases< ULocalMessage >  , boost::noncopyable>("UFailedConnect", no_init)
+    py::class_< UFailedConnect,  ULocalMessage   >("UFailedConnect")
         .def_readonly("FailMessage", &UFailedConnect::FailMessage)
-        .def("StaticClass", &UFailedConnect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFailedConnect::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UFailedConnect::GetString)
         .def("GetFailSwitch", &UFailedConnect::GetFailSwitch)
         .staticmethod("StaticClass")

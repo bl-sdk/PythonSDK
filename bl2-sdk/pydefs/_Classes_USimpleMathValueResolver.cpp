@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USimpleMathValueResolver()
 {
-    class_< USimpleMathValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("USimpleMathValueResolver", no_init)
+    py::class_< USimpleMathValueResolver,  UAttributeValueResolver   >("USimpleMathValueResolver")
         .def_readwrite("Arg1Option", &USimpleMathValueResolver::Arg1Option)
         .def_readwrite("Operand", &USimpleMathValueResolver::Operand)
         .def_readwrite("Arg1Attribute", &USimpleMathValueResolver::Arg1Attribute)
         .def_readwrite("Argument", &USimpleMathValueResolver::Argument)
-        .def("StaticClass", &USimpleMathValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USimpleMathValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULensFlare()
 {
-    class_< ULensFlare, bases< UObject >  , boost::noncopyable>("ULensFlare", no_init)
+    py::class_< ULensFlare,  UObject   >("ULensFlare")
         .def_readwrite("SourceElement", &ULensFlare::SourceElement)
         .def_readwrite("SourceMesh", &ULensFlare::SourceMesh)
         .def_readwrite("SourceDPG", &ULensFlare::SourceDPG)
@@ -23,7 +23,7 @@ void Export_pystes_ULensFlare()
         .def_readwrite("ThumbnailAngle", &ULensFlare::ThumbnailAngle)
         .def_readwrite("ThumbnailDistance", &ULensFlare::ThumbnailDistance)
         .def_readwrite("ThumbnailImage", &ULensFlare::ThumbnailImage)
-        .def("StaticClass", &ULensFlare::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULensFlare::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

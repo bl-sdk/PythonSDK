@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULocalPlayer()
 {
-    class_< ULocalPlayer, bases< UObject >  , boost::noncopyable>("ULocalPlayer", no_init)
+    py::class_< ULocalPlayer,  UObject   >("ULocalPlayer")
         .def_readwrite("VfTable_FObserverInterface", &ULocalPlayer::VfTable_FObserverInterface)
         .def_readwrite("ControllerId", &ULocalPlayer::ControllerId)
         .def_readwrite("ViewportClient", &ULocalPlayer::ViewportClient)
@@ -41,7 +41,7 @@ void Export_pystes_ULocalPlayer()
         .def_readwrite("PP_HighlightsMultiplier", &UPlayer::PP_HighlightsMultiplier)
         .def_readwrite("PP_MidTonesMultiplier", &UPlayer::PP_MidTonesMultiplier)
         .def_readwrite("PP_ShadowsMultiplier", &UPlayer::PP_ShadowsMultiplier)
-        .def("StaticClass", &ULocalPlayer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULocalPlayer::StaticClass, py::return_value_policy::reference)
         .def("Cleanup", &ULocalPlayer::Cleanup)
         .def("eventExit", &ULocalPlayer::eventExit)
         .def("eventNotifyServerConnectionClose", &ULocalPlayer::eventNotifyServerConnectionClose)
@@ -63,11 +63,11 @@ void Export_pystes_ULocalPlayer()
         .def("RemoveWorldLightingOverride", &ULocalPlayer::RemoveWorldLightingOverride)
         .def("OverrideWorldLighting", &ULocalPlayer::OverrideWorldLighting)
         .def("TouchPlayerPostProcessChain", &ULocalPlayer::TouchPlayerPostProcessChain)
-        .def("GetPostProcessChain", &ULocalPlayer::GetPostProcessChain, return_value_policy< reference_existing_object >())
+        .def("GetPostProcessChain", &ULocalPlayer::GetPostProcessChain, py::return_value_policy::reference)
         .def("RemoveAllPostProcessingChains", &ULocalPlayer::RemoveAllPostProcessingChains)
         .def("RemovePostProcessingChain", &ULocalPlayer::RemovePostProcessingChain)
         .def("InsertPostProcessingChain", &ULocalPlayer::InsertPostProcessingChain)
-        .def("GetTranslationContext", &ULocalPlayer::GetTranslationContext, return_value_policy< reference_existing_object >())
+        .def("GetTranslationContext", &ULocalPlayer::GetTranslationContext, py::return_value_policy::reference)
         .def("SetControllerId", &ULocalPlayer::SetControllerId)
         .def("ClearPostProcessSettingsOverride", &ULocalPlayer::ClearPostProcessSettingsOverride)
         .def("OverridePostProcessSettings", &ULocalPlayer::OverridePostProcessSettings)

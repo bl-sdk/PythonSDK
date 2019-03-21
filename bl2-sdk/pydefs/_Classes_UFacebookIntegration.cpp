@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFacebookIntegration()
 {
-    class_< UFacebookIntegration, bases< UObject >  , boost::noncopyable>("UFacebookIntegration", no_init)
+    py::class_< UFacebookIntegration,  UObject   >("UFacebookIntegration")
         .def_readwrite("AppID", &UFacebookIntegration::AppID)
         .def_readwrite("UserName", &UFacebookIntegration::UserName)
         .def_readwrite("UserId", &UFacebookIntegration::UserId)
@@ -13,7 +13,7 @@ void Export_pystes_UFacebookIntegration()
         .def_readwrite("AuthorizationDelegates", &UFacebookIntegration::AuthorizationDelegates)
         .def_readwrite("FacebookRequestCompleteDelegates", &UFacebookIntegration::FacebookRequestCompleteDelegates)
         .def_readwrite("WebRequestCompleteDelegates", &UFacebookIntegration::WebRequestCompleteDelegates)
-        .def("StaticClass", &UFacebookIntegration::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFacebookIntegration::StaticClass, py::return_value_policy::reference)
         .def("ClearWebRequestCompleteDelegate", &UFacebookIntegration::ClearWebRequestCompleteDelegate)
         .def("AddWebRequestCompleteDelegate", &UFacebookIntegration::AddWebRequestCompleteDelegate)
         .def("OnWebRequestComplete", &UFacebookIntegration::OnWebRequestComplete)

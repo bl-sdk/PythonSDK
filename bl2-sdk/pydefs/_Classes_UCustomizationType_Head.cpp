@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCustomizationType_Head()
 {
-    class_< UCustomizationType_Head, bases< UCustomizationType >  , boost::noncopyable>("UCustomizationType_Head", no_init)
-        .def("StaticClass", &UCustomizationType_Head::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCustomizationType_Head,  UCustomizationType   >("UCustomizationType_Head")
+        .def("StaticClass", &UCustomizationType_Head::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

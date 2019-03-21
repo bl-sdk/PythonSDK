@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FColor()
 {
-    class_< FColor >("FColor", no_init)
+    py::class_< FColor >("FColor")
         .def_readwrite("B", &FColor::B)
         .def_readwrite("G", &FColor::G)
         .def_readwrite("R", &FColor::R)

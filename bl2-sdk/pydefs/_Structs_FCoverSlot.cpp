@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoverSlot()
 {
-    class_< FCoverSlot >("FCoverSlot", no_init)
+    py::class_< FCoverSlot >("FCoverSlot")
         .def_readwrite("SlotOwner", &FCoverSlot::SlotOwner)
         .def_readwrite("SlotValidAfterTime", &FCoverSlot::SlotValidAfterTime)
         .def_readwrite("ForceCoverType", &FCoverSlot::ForceCoverType)

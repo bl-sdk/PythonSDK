@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstProperty()
 {
-    class_< UInterpTrackInstProperty, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstProperty", no_init)
+    py::class_< UInterpTrackInstProperty,  UInterpTrackInst   >("UInterpTrackInstProperty")
         .def_readwrite("PropertyUpdateCallback", &UInterpTrackInstProperty::PropertyUpdateCallback)
         .def_readwrite("PropertyOuterObjectInst", &UInterpTrackInstProperty::PropertyOuterObjectInst)
-        .def("StaticClass", &UInterpTrackInstProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

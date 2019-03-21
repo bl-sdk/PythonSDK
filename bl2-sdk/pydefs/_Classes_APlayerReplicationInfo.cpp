@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APlayerReplicationInfo()
 {
-    class_< APlayerReplicationInfo, bases< AInfo >  , boost::noncopyable>("APlayerReplicationInfo", no_init)
+    py::class_< APlayerReplicationInfo,  AInfo   >("APlayerReplicationInfo")
         .def_readwrite("Score", &APlayerReplicationInfo::Score)
         .def_readwrite("Deaths", &APlayerReplicationInfo::Deaths)
         .def_readwrite("Ping", &APlayerReplicationInfo::Ping)
@@ -38,7 +38,7 @@ void Export_pystes_APlayerReplicationInfo()
         .def_readwrite("StatMaxOutBPS", &APlayerReplicationInfo::StatMaxOutBPS)
         .def_readwrite("StatAvgOutBPS", &APlayerReplicationInfo::StatAvgOutBPS)
         .def_readwrite("Avatar", &APlayerReplicationInfo::Avatar)
-        .def("StaticClass", &APlayerReplicationInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APlayerReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def("HandlePlayerJoinWithValidName", &APlayerReplicationInfo::HandlePlayerJoinWithValidName)
         .def("UnregisterPlayerFromSession", &APlayerReplicationInfo::UnregisterPlayerFromSession)
         .def("RegisterPlayerWithSession", &APlayerReplicationInfo::RegisterPlayerWithSession)
@@ -49,7 +49,7 @@ void Export_pystes_APlayerReplicationInfo()
         .def("IncrementDeaths", &APlayerReplicationInfo::IncrementDeaths)
         .def("CopyProperties", &APlayerReplicationInfo::CopyProperties)
         .def("OverrideWith", &APlayerReplicationInfo::OverrideWith)
-        .def("Duplicate", &APlayerReplicationInfo::Duplicate, return_value_policy< reference_existing_object >())
+        .def("Duplicate", &APlayerReplicationInfo::Duplicate, py::return_value_policy::reference)
         .def("SetWaitingPlayer", &APlayerReplicationInfo::SetWaitingPlayer)
         .def("eventSetPlayerName", &APlayerReplicationInfo::eventSetPlayerName)
         .def("eventGetHumanReadableHTMLName", &APlayerReplicationInfo::eventGetHumanReadableHTMLName)

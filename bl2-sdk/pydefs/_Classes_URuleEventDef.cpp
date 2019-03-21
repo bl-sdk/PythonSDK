@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URuleEventDef()
 {
-    class_< URuleEventDef, bases< UGBXDefinition >  , boost::noncopyable>("URuleEventDef", no_init)
+    py::class_< URuleEventDef,  UGBXDefinition   >("URuleEventDef")
         .def_readwrite("EventDefName", &URuleEventDef::EventDefName)
         .def_readwrite("FlagActionOnEventTrigger", &URuleEventDef::FlagActionOnEventTrigger)
-        .def("StaticClass", &URuleEventDef::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URuleEventDef::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

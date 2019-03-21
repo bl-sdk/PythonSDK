@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDefendTargetData()
 {
-    class_< FDefendTargetData >("FDefendTargetData", no_init)
+    py::class_< FDefendTargetData >("FDefendTargetData")
         .def_readwrite("Objective", &FDefendTargetData::Objective)
         .def_readwrite("PercentHealth", &FDefendTargetData::PercentHealth)
   ;

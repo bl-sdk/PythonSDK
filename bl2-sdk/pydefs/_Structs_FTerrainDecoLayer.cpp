@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTerrainDecoLayer()
 {
-    class_< FTerrainDecoLayer >("FTerrainDecoLayer", no_init)
+    py::class_< FTerrainDecoLayer >("FTerrainDecoLayer")
         .def_readwrite("Name", &FTerrainDecoLayer::Name)
         .def_readwrite("Decorations", &FTerrainDecoLayer::Decorations)
         .def_readwrite("AlphaMapIndex", &FTerrainDecoLayer::AlphaMapIndex)

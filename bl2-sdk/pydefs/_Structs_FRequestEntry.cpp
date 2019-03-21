@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRequestEntry()
 {
-    class_< FRequestEntry >("FRequestEntry", no_init)
+    py::class_< FRequestEntry >("FRequestEntry")
         .def_readwrite("RemoteId", &FRequestEntry::RemoteId)
         .def_readwrite("NumProbesSent", &FRequestEntry::NumProbesSent)
         .def_readwrite("ChallengeTimestamp", &FRequestEntry::ChallengeTimestamp)

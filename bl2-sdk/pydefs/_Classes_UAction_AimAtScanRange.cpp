@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_AimAtScanRange()
 {
-    class_< UAction_AimAtScanRange, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_AimAtScanRange", no_init)
+    py::class_< UAction_AimAtScanRange,  UWillowActionSequencePawn   >("UAction_AimAtScanRange")
         .def_readwrite("YawRange", &UAction_AimAtScanRange::YawRange)
         .def_readwrite("ScanSpeed", &UAction_AimAtScanRange::ScanSpeed)
         .def_readwrite("PointDelay", &UAction_AimAtScanRange::PointDelay)
         .def_readwrite("CurrentYawRange", &UAction_AimAtScanRange::CurrentYawRange)
-        .def("StaticClass", &UAction_AimAtScanRange::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_AimAtScanRange::StaticClass, py::return_value_policy::reference)
         .def("SetNewRotation", &UAction_AimAtScanRange::SetNewRotation)
         .def("eventStop", &UAction_AimAtScanRange::eventStop)
         .def("eventStart", &UAction_AimAtScanRange::eventStart)

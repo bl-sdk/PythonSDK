@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAmbientOcclusionEffect()
 {
-    class_< UAmbientOcclusionEffect, bases< UPostProcessEffect >  , boost::noncopyable>("UAmbientOcclusionEffect", no_init)
+    py::class_< UAmbientOcclusionEffect,  UPostProcessEffect   >("UAmbientOcclusionEffect")
         .def_readwrite("OcclusionColor", &UAmbientOcclusionEffect::OcclusionColor)
         .def_readwrite("OcclusionPower", &UAmbientOcclusionEffect::OcclusionPower)
         .def_readwrite("OcclusionScale", &UAmbientOcclusionEffect::OcclusionScale)
@@ -25,7 +25,7 @@ void Export_pystes_UAmbientOcclusionEffect()
         .def_readwrite("FilterSize", &UAmbientOcclusionEffect::FilterSize)
         .def_readwrite("HistoryConvergenceTime", &UAmbientOcclusionEffect::HistoryConvergenceTime)
         .def_readwrite("HistoryWeightConvergenceTime", &UAmbientOcclusionEffect::HistoryWeightConvergenceTime)
-        .def("StaticClass", &UAmbientOcclusionEffect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAmbientOcclusionEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

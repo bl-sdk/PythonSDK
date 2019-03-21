@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicsAsset()
 {
-    class_< UPhysicsAsset, bases< UObject >  , boost::noncopyable>("UPhysicsAsset", no_init)
+    py::class_< UPhysicsAsset,  UObject   >("UPhysicsAsset")
         .def_readwrite("BodySetup", &UPhysicsAsset::BodySetup)
         .def_readwrite("BodySetupIndexMap", &UPhysicsAsset::BodySetupIndexMap)
         .def_readwrite("BoundsBodies", &UPhysicsAsset::BoundsBodies)
         .def_readwrite("ConstraintSetup", &UPhysicsAsset::ConstraintSetup)
         .def_readwrite("DefaultInstance", &UPhysicsAsset::DefaultInstance)
-        .def("StaticClass", &UPhysicsAsset::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysicsAsset::StaticClass, py::return_value_policy::reference)
         .def("FindBodyIndex", &UPhysicsAsset::FindBodyIndex)
         .staticmethod("StaticClass")
   ;

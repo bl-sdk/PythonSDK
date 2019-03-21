@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightmassPointLightSettings()
 {
-    class_< FLightmassPointLightSettings >("FLightmassPointLightSettings", no_init)
+    py::class_< FLightmassPointLightSettings >("FLightmassPointLightSettings")
         .def_readwrite("LightSourceRadius", &FLightmassPointLightSettings::LightSourceRadius)
         .def_readwrite("IndirectLightingScale", &FLightmassLightSettings::IndirectLightingScale)
         .def_readwrite("IndirectLightingSaturation", &FLightmassLightSettings::IndirectLightingSaturation)

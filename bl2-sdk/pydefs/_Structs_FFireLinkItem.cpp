@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFireLinkItem()
 {
-    class_< FFireLinkItem >("FFireLinkItem", no_init)
+    py::class_< FFireLinkItem >("FFireLinkItem")
         .def_readwrite("SrcType", &FFireLinkItem::SrcType)
         .def_readwrite("SrcAction", &FFireLinkItem::SrcAction)
         .def_readwrite("DestType", &FFireLinkItem::DestType)

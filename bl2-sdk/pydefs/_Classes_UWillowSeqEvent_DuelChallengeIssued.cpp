@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqEvent_DuelChallengeIssued()
 {
-    class_< UWillowSeqEvent_DuelChallengeIssued, bases< USequenceEvent >  , boost::noncopyable>("UWillowSeqEvent_DuelChallengeIssued", no_init)
-        .def("StaticClass", &UWillowSeqEvent_DuelChallengeIssued::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqEvent_DuelChallengeIssued,  USequenceEvent   >("UWillowSeqEvent_DuelChallengeIssued")
+        .def("StaticClass", &UWillowSeqEvent_DuelChallengeIssued::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

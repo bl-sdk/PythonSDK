@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AExecuteActionSkill()
 {
-    class_< AExecuteActionSkill, bases< AActionSkill >  , boost::noncopyable>("AExecuteActionSkill", no_init)
+    py::class_< AExecuteActionSkill,  AActionSkill   >("AExecuteActionSkill")
         .def_readwrite("ExecuteDurationFormula", &AExecuteActionSkill::ExecuteDurationFormula)
         .def_readwrite("RestoreControlAfterMeleeSwingDelay", &AExecuteActionSkill::RestoreControlAfterMeleeSwingDelay)
         .def_readwrite("AutoSwingAngleInDegrees", &AExecuteActionSkill::AutoSwingAngleInDegrees)
@@ -49,7 +49,7 @@ void Export_pystes_AExecuteActionSkill()
         .def_readwrite("AutoSwingAngleCos", &AExecuteActionSkill::AutoSwingAngleCos)
         .def_readwrite("CancelDashAngleCos", &AExecuteActionSkill::CancelDashAngleCos)
         .def_readwrite("SkillDuration", &AExecuteActionSkill::SkillDuration)
-        .def("StaticClass", &AExecuteActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AExecuteActionSkill::StaticClass, py::return_value_policy::reference)
         .def("HasTrainedCritLocationsSkill", &AExecuteActionSkill::HasTrainedCritLocationsSkill)
         .def("eventOverrideCrosshairVisibility", &AExecuteActionSkill::eventOverrideCrosshairVisibility)
         .def("eventDisableActionSkillHUD", &AExecuteActionSkill::eventDisableActionSkillHUD)

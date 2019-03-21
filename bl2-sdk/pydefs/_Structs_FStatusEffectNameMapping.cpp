@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStatusEffectNameMapping()
 {
-    class_< FStatusEffectNameMapping >("FStatusEffectNameMapping", no_init)
+    py::class_< FStatusEffectNameMapping >("FStatusEffectNameMapping")
         .def_readwrite("StatusEffectName", &FStatusEffectNameMapping::StatusEffectName)
         .def_readwrite("StatusEffectDefinitionName", &FStatusEffectNameMapping::StatusEffectDefinitionName)
   ;

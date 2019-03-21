@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIDebugCamera()
 {
-    class_< UAIDebugCamera, bases< UObject >  , boost::noncopyable>("UAIDebugCamera", no_init)
+    py::class_< UAIDebugCamera,  UObject   >("UAIDebugCamera")
         .def_readwrite("Mind", &UAIDebugCamera::Mind)
         .def_readwrite("RuleEngine", &UAIDebugCamera::RuleEngine)
         .def_readwrite("DisplayList", &UAIDebugCamera::DisplayList)
@@ -22,7 +22,7 @@ void Export_pystes_UAIDebugCamera()
         .def_readwrite("Column1LastY", &UAIDebugCamera::Column1LastY)
         .def_readwrite("Column2LastY", &UAIDebugCamera::Column2LastY)
         .def_readwrite("LastColumnDrawnTo", &UAIDebugCamera::LastColumnDrawnTo)
-        .def("StaticClass", &UAIDebugCamera::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAIDebugCamera::StaticClass, py::return_value_policy::reference)
         .def("ToggleAITree", &UAIDebugCamera::ToggleAITree)
         .def("ToggleTargetViewCones", &UAIDebugCamera::ToggleTargetViewCones)
         .def("ToggleAwarenessZones", &UAIDebugCamera::ToggleAwarenessZones)
@@ -33,7 +33,7 @@ void Export_pystes_UAIDebugCamera()
         .def("ToggleInactiveRules", &UAIDebugCamera::ToggleInactiveRules)
         .def("ToggleRules", &UAIDebugCamera::ToggleRules)
         .def("ToggleFlags", &UAIDebugCamera::ToggleFlags)
-        .def("GetTracker", &UAIDebugCamera::GetTracker, return_value_policy< reference_existing_object >())
+        .def("GetTracker", &UAIDebugCamera::GetTracker, py::return_value_policy::reference)
         .def("SetMind", &UAIDebugCamera::SetMind)
         .def("InitDummies", &UAIDebugCamera::InitDummies)
         .def("WantsToDoCameraInspection", &UAIDebugCamera::WantsToDoCameraInspection)

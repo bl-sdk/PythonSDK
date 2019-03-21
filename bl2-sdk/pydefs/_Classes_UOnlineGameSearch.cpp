@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineGameSearch()
 {
-    class_< UOnlineGameSearch, bases< USettings >  , boost::noncopyable>("UOnlineGameSearch", no_init)
+    py::class_< UOnlineGameSearch,  USettings   >("UOnlineGameSearch")
         .def_readwrite("MaxSearchResults", &UOnlineGameSearch::MaxSearchResults)
         .def_readwrite("Query", &UOnlineGameSearch::Query)
         .def_readwrite("GameSettingsClass", &UOnlineGameSearch::GameSettingsClass)
@@ -18,7 +18,7 @@ void Export_pystes_UOnlineGameSearch()
         .def_readwrite("NumPingProbes", &UOnlineGameSearch::NumPingProbes)
         .def_readwrite("MaxPingBytes", &UOnlineGameSearch::MaxPingBytes)
         .def_readwrite("NumSearchUsers", &UOnlineGameSearch::NumSearchUsers)
-        .def("StaticClass", &UOnlineGameSearch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineGameSearch::StaticClass, py::return_value_policy::reference)
         .def("eventSortSearchResults", &UOnlineGameSearch::eventSortSearchResults)
         .def("SetSkillOverride", &UOnlineGameSearch::SetSkillOverride)
         .staticmethod("StaticClass")

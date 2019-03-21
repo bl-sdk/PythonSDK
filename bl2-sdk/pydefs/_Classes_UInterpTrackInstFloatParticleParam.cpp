@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstFloatParticleParam()
 {
-    class_< UInterpTrackInstFloatParticleParam, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstFloatParticleParam", no_init)
+    py::class_< UInterpTrackInstFloatParticleParam,  UInterpTrackInst   >("UInterpTrackInstFloatParticleParam")
         .def_readwrite("ResetFloat", &UInterpTrackInstFloatParticleParam::ResetFloat)
-        .def("StaticClass", &UInterpTrackInstFloatParticleParam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstFloatParticleParam::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

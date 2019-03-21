@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeAimOffset()
 {
-    class_< UAnimNodeAimOffset, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UAnimNodeAimOffset", no_init)
+    py::class_< UAnimNodeAimOffset,  UAnimNodeBlendBase   >("UAnimNodeAimOffset")
         .def_readwrite("Aim", &UAnimNodeAimOffset::Aim)
         .def_readwrite("AngleOffset", &UAnimNodeAimOffset::AngleOffset)
         .def_readwrite("PassThroughAtOrAboveLOD", &UAnimNodeAimOffset::PassThroughAtOrAboveLOD)
@@ -15,7 +15,7 @@ void Export_pystes_UAnimNodeAimOffset()
         .def_readwrite("TemplateNode", &UAnimNodeAimOffset::TemplateNode)
         .def_readwrite("Profiles", &UAnimNodeAimOffset::Profiles)
         .def_readwrite("CurrentProfileIndex", &UAnimNodeAimOffset::CurrentProfileIndex)
-        .def("StaticClass", &UAnimNodeAimOffset::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeAimOffset::StaticClass, py::return_value_policy::reference)
         .def("SetActiveProfileByIndex", &UAnimNodeAimOffset::SetActiveProfileByIndex)
         .def("SetActiveProfileByName", &UAnimNodeAimOffset::SetActiveProfileByName)
         .staticmethod("StaticClass")

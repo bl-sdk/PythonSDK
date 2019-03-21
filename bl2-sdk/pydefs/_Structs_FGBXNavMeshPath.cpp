@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGBXNavMeshPath()
 {
-    class_< FGBXNavMeshPath >("FGBXNavMeshPath", no_init)
+    py::class_< FGBXNavMeshPath >("FGBXNavMeshPath")
         .def_readwrite("PathPoints", &FGBXNavMeshPath::PathPoints)
         .def_readwrite("CurrentPathIdx", &FGBXNavMeshPath::CurrentPathIdx)
   ;

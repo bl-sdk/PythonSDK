@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIResourceExpressionEvaluator()
 {
-    class_< UAIResourceExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("UAIResourceExpressionEvaluator", no_init)
+    py::class_< UAIResourceExpressionEvaluator,  UExpressionEvaluator   >("UAIResourceExpressionEvaluator")
         .def_readwrite("Option", &UAIResourceExpressionEvaluator::Option)
         .def_readwrite("Resource", &UAIResourceExpressionEvaluator::Resource)
-        .def("StaticClass", &UAIResourceExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAIResourceExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UAIResourceExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

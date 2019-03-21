@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationOptionAreaPopDefData()
 {
-    class_< FPopulationOptionAreaPopDefData >("FPopulationOptionAreaPopDefData", no_init)
+    py::class_< FPopulationOptionAreaPopDefData >("FPopulationOptionAreaPopDefData")
         .def_readwrite("PopulationDef", &FPopulationOptionAreaPopDefData::PopulationDef)
         .def_readwrite("MaxTotalActorsFormula", &FPopulationOptionAreaPopDefData::MaxTotalActorsFormula)
         .def_readwrite("MaxTotalActors", &FPopulationOptionAreaPopDefData::MaxTotalActors)

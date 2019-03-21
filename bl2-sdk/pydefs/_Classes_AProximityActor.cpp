@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AProximityActor()
 {
-    class_< AProximityActor, bases< AActor >  , boost::noncopyable>("AProximityActor", no_init)
+    py::class_< AProximityActor,  AActor   >("AProximityActor")
         .def_readwrite("ProximityRadius", &AProximityActor::ProximityRadius)
         .def_readwrite("ProximityHeight", &AProximityActor::ProximityHeight)
         .def_readwrite("ProximityCylinder", &AProximityActor::ProximityCylinder)
-        .def("StaticClass", &AProximityActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AProximityActor::StaticClass, py::return_value_policy::reference)
         .def("eventTouch", &AProximityActor::eventTouch)
         .def("SetProximitySize", &AProximityActor::SetProximitySize)
         .staticmethod("StaticClass")

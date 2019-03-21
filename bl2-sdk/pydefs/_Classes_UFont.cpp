@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFont()
 {
-    class_< UFont, bases< UObject >  , boost::noncopyable>("UFont", no_init)
+    py::class_< UFont,  UObject   >("UFont")
         .def_readwrite("Characters", &UFont::Characters)
         .def_readwrite("Textures", &UFont::Textures)
         .def_readonly("UnknownData00", &UFont::UnknownData00)
@@ -19,7 +19,7 @@ void Export_pystes_UFont()
         .def_readwrite("NumCharacters", &UFont::NumCharacters)
         .def_readwrite("MaxCharHeight", &UFont::MaxCharHeight)
         .def_readwrite("ScalingFactor", &UFont::ScalingFactor)
-        .def("StaticClass", &UFont::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFont::StaticClass, py::return_value_policy::reference)
         .def("GetStringHeightAndWidth", &UFont::GetStringHeightAndWidth)
         .def("GetMaxCharHeight", &UFont::GetMaxCharHeight)
         .def("GetAuthoredViewportHeight", &UFont::GetAuthoredViewportHeight)

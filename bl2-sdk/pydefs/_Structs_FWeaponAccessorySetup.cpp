@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWeaponAccessorySetup()
 {
-    class_< FWeaponAccessorySetup >("FWeaponAccessorySetup", no_init)
+    py::class_< FWeaponAccessorySetup >("FWeaponAccessorySetup")
         .def_readwrite("WeaponArchetypeName", &FWeaponAccessorySetup::WeaponArchetypeName)
         .def_readwrite("AccessoryDefinition", &FWeaponAccessorySetup::AccessoryDefinition)
         .def_readwrite("AccessoryTransforms", &FWeaponAccessorySetup::AccessoryTransforms)

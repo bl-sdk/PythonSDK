@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AInteractiveFoliageActor()
 {
-    class_< AInteractiveFoliageActor, bases< AActor >  , boost::noncopyable>("AInteractiveFoliageActor", no_init)
+    py::class_< AInteractiveFoliageActor,  AActor   >("AInteractiveFoliageActor")
         .def_readwrite("CylinderComponent", &AInteractiveFoliageActor::CylinderComponent)
         .def_readwrite("TouchingActorEntryPosition", &AInteractiveFoliageActor::TouchingActorEntryPosition)
         .def_readwrite("FoliageVelocity", &AInteractiveFoliageActor::FoliageVelocity)
@@ -21,7 +21,7 @@ void Export_pystes_AInteractiveFoliageActor()
         .def_readwrite("MaxForce", &AInteractiveFoliageActor::MaxForce)
         .def_readwrite("Mass", &AInteractiveFoliageActor::Mass)
         .def_readwrite("StaticMeshComponent", &AStaticMeshActor::StaticMeshComponent)
-        .def("StaticClass", &AInteractiveFoliageActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AInteractiveFoliageActor::StaticClass, py::return_value_policy::reference)
         .def("eventTouch", &AInteractiveFoliageActor::eventTouch)
         .def("eventTakeDamage", &AInteractiveFoliageActor::eventTakeDamage)
         .staticmethod("StaticClass")

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFoliageInstanceBase()
 {
-    class_< FFoliageInstanceBase >("FFoliageInstanceBase", no_init)
+    py::class_< FFoliageInstanceBase >("FFoliageInstanceBase")
         .def_readwrite("Location", &FFoliageInstanceBase::Location)
         .def_readwrite("XAxis", &FFoliageInstanceBase::XAxis)
         .def_readwrite("YAxis", &FFoliageInstanceBase::YAxis)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorThread()
 {
-    class_< FBehaviorThread >("FBehaviorThread", no_init)
+    py::class_< FBehaviorThread >("FBehaviorThread")
         .def_readwrite("ThreadState", &FBehaviorThread::ThreadState)
         .def_readwrite("OwningProcessID", &FBehaviorThread::OwningProcessID)
         .def_readwrite("ThreadSequenceState", &FBehaviorThread::ThreadSequenceState)

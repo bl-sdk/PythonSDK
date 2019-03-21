@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLockOnProfile()
 {
-    class_< FLockOnProfile >("FLockOnProfile", no_init)
+    py::class_< FLockOnProfile >("FLockOnProfile")
         .def_readwrite("Target", &FLockOnProfile::Target)
         .def_readonly("UnknownData00", &FLockOnProfile::UnknownData00)
         .def_readwrite("Intersection", &FLockOnProfile::Intersection)

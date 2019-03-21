@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGuid()
 {
-    class_< FGuid >("FGuid", no_init)
+    py::class_< FGuid >("FGuid")
         .def_readwrite("A", &FGuid::A)
         .def_readwrite("B", &FGuid::B)
         .def_readwrite("C", &FGuid::C)

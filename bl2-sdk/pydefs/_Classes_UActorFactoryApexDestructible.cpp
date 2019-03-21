@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryApexDestructible()
 {
-    class_< UActorFactoryApexDestructible, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryApexDestructible", no_init)
+    py::class_< UActorFactoryApexDestructible,  UActorFactory   >("UActorFactoryApexDestructible")
         .def_readwrite("RBChannel", &UActorFactoryApexDestructible::RBChannel)
         .def_readwrite("CollideWithChannels", &UActorFactoryApexDestructible::CollideWithChannels)
         .def_readwrite("DestructibleAsset", &UActorFactoryApexDestructible::DestructibleAsset)
-        .def("StaticClass", &UActorFactoryApexDestructible::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryApexDestructible::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

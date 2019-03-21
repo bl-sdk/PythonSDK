@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLoadCharacterData()
 {
-    class_< FLoadCharacterData >("FLoadCharacterData", no_init)
+    py::class_< FLoadCharacterData >("FLoadCharacterData")
         .def_readwrite("SaveDataId", &FLoadCharacterData::SaveDataId)
         .def_readwrite("CharLevel", &FLoadCharacterData::CharLevel)
         .def_readwrite("CharName", &FLoadCharacterData::CharName)

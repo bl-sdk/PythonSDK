@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFractalViewWanderingDefinition()
 {
-    class_< UFractalViewWanderingDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UFractalViewWanderingDefinition", no_init)
+    py::class_< UFractalViewWanderingDefinition,  UGBXDefinition   >("UFractalViewWanderingDefinition")
         .def_readwrite("PseudoRandomPoints", &UFractalViewWanderingDefinition::PseudoRandomPoints)
         .def_readwrite("NumberOfOctaves", &UFractalViewWanderingDefinition::NumberOfOctaves)
-        .def("StaticClass", &UFractalViewWanderingDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFractalViewWanderingDefinition::StaticClass, py::return_value_policy::reference)
         .def("GenerateNewRandomPoints", &UFractalViewWanderingDefinition::GenerateNewRandomPoints)
         .staticmethod("StaticClass")
   ;

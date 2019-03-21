@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltSocketRemapEntry()
 {
-    class_< FGestaltSocketRemapEntry >("FGestaltSocketRemapEntry", no_init)
+    py::class_< FGestaltSocketRemapEntry >("FGestaltSocketRemapEntry")
         .def_readwrite("SkeletalMeshFragment", &FGestaltSocketRemapEntry::SkeletalMeshFragment)
         .def_readwrite("SkeletalMeshFragmentName", &FGestaltSocketRemapEntry::SkeletalMeshFragmentName)
         .def_readwrite("OriginalSocketName", &FGestaltSocketRemapEntry::OriginalSocketName)

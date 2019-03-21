@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UValueGFxObject()
 {
-    class_< UValueGFxObject, bases< UGFxObject >  , boost::noncopyable>("UValueGFxObject", no_init)
-        .def("StaticClass", &UValueGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UValueGFxObject,  UGFxObject   >("UValueGFxObject")
+        .def("StaticClass", &UValueGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetValue", &UValueGFxObject::SetValue)
         .staticmethod("StaticClass")
   ;

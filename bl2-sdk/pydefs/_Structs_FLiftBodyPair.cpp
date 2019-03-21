@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLiftBodyPair()
 {
-    class_< FLiftBodyPair >("FLiftBodyPair", no_init)
+    py::class_< FLiftBodyPair >("FLiftBodyPair")
         .def_readwrite("BodyTag", &FLiftBodyPair::BodyTag)
         .def_readwrite("PhaseLockDef", &FLiftBodyPair::PhaseLockDef)
   ;

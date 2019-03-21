@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SpawnParticleSystem()
 {
-    class_< UBehavior_SpawnParticleSystem, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SpawnParticleSystem", no_init)
+    py::class_< UBehavior_SpawnParticleSystem,  UBehaviorBase   >("UBehavior_SpawnParticleSystem")
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnParticleSystem::InstanceDataContext)
         .def_readwrite("SavedReferenceName", &UBehavior_SpawnParticleSystem::SavedReferenceName)
         .def_readwrite("ParticleEffect", &UBehavior_SpawnParticleSystem::ParticleEffect)
@@ -14,10 +14,10 @@ void Export_pystes_UBehavior_SpawnParticleSystem()
         .def_readwrite("RelativeRotation", &UBehavior_SpawnParticleSystem::RelativeRotation)
         .def_readwrite("DrawScale", &UBehavior_SpawnParticleSystem::DrawScale)
         .def_readwrite("SpawnDirection", &UBehavior_SpawnParticleSystem::SpawnDirection)
-        .def("StaticClass", &UBehavior_SpawnParticleSystem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SpawnParticleSystem::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_SpawnParticleSystem::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnParticleSystem::ApplyBehaviorToContext)
-        .def("GetEmitterClass", &UBehavior_SpawnParticleSystem::GetEmitterClass, return_value_policy< reference_existing_object >())
+        .def("GetEmitterClass", &UBehavior_SpawnParticleSystem::GetEmitterClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

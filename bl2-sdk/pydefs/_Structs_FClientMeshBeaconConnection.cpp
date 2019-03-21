@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClientMeshBeaconConnection()
 {
-    class_< FClientMeshBeaconConnection >("FClientMeshBeaconConnection", no_init)
+    py::class_< FClientMeshBeaconConnection >("FClientMeshBeaconConnection")
         .def_readwrite("PlayerNetId", &FClientMeshBeaconConnection::PlayerNetId)
         .def_readwrite("ElapsedHeartbeatTime", &FClientMeshBeaconConnection::ElapsedHeartbeatTime)
         .def_readwrite("Socket", &FClientMeshBeaconConnection::Socket)

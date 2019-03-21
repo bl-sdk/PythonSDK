@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_Charm()
 {
-    class_< UBehavior_Charm, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_Charm", no_init)
+    py::class_< UBehavior_Charm,  UBehaviorBase   >("UBehavior_Charm")
         .def_readwrite("Action", &UBehavior_Charm::Action)
         .def_readwrite("CharmOwner", &UBehavior_Charm::CharmOwner)
-        .def("StaticClass", &UBehavior_Charm::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_Charm::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_Charm::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

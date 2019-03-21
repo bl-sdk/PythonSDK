@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUIRangeData()
 {
-    class_< FUIRangeData >("FUIRangeData", no_init)
+    py::class_< FUIRangeData >("FUIRangeData")
         .def_readwrite("CurrentValue", &FUIRangeData::CurrentValue)
         .def_readwrite("MinValue", &FUIRangeData::MinValue)
         .def_readwrite("MaxValue", &FUIRangeData::MaxValue)

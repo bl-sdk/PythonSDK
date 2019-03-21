@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineCrossTitleContent()
 {
-    class_< FOnlineCrossTitleContent, bases< FOnlineContent >  >("FOnlineCrossTitleContent", no_init)
+    py::class_< FOnlineCrossTitleContent,  FOnlineContent   >("FOnlineCrossTitleContent")
         .def_readwrite("TitleId", &FOnlineCrossTitleContent::TitleId)
   ;
 }

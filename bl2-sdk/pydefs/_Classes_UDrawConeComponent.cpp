@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDrawConeComponent()
 {
-    class_< UDrawConeComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UDrawConeComponent", no_init)
+    py::class_< UDrawConeComponent,  UPrimitiveComponent   >("UDrawConeComponent")
         .def_readwrite("ConeColor", &UDrawConeComponent::ConeColor)
         .def_readwrite("ConeRadius", &UDrawConeComponent::ConeRadius)
         .def_readwrite("ConeAngle", &UDrawConeComponent::ConeAngle)
         .def_readwrite("ConeSides", &UDrawConeComponent::ConeSides)
-        .def("StaticClass", &UDrawConeComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDrawConeComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

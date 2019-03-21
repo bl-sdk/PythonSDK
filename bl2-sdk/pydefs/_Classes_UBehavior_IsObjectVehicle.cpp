@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_IsObjectVehicle()
 {
-    class_< UBehavior_IsObjectVehicle, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_IsObjectVehicle", no_init)
+    py::class_< UBehavior_IsObjectVehicle,  UBehaviorBase   >("UBehavior_IsObjectVehicle")
         .def_readwrite("VehicleCandidate", &UBehavior_IsObjectVehicle::VehicleCandidate)
-        .def("StaticClass", &UBehavior_IsObjectVehicle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_IsObjectVehicle::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_IsObjectVehicle::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

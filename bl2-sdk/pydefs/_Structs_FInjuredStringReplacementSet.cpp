@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInjuredStringReplacementSet()
 {
-    class_< FInjuredStringReplacementSet >("FInjuredStringReplacementSet", no_init)
+    py::class_< FInjuredStringReplacementSet >("FInjuredStringReplacementSet")
         .def_readwrite("Skills", &FInjuredStringReplacementSet::Skills)
         .def_readwrite("NewPlayerInjuredString", &FInjuredStringReplacementSet::NewPlayerInjuredString)
         .def_readwrite("NewInjuredTooltipString1", &FInjuredStringReplacementSet::NewInjuredTooltipString1)

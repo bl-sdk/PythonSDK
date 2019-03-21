@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqEvent_DenStat()
 {
-    class_< UWillowSeqEvent_DenStat, bases< USequenceEvent >  , boost::noncopyable>("UWillowSeqEvent_DenStat", no_init)
+    py::class_< UWillowSeqEvent_DenStat,  USequenceEvent   >("UWillowSeqEvent_DenStat")
         .def_readwrite("TriggerValue", &UWillowSeqEvent_DenStat::TriggerValue)
-        .def("StaticClass", &UWillowSeqEvent_DenStat::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqEvent_DenStat::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

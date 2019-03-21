@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UExpressionTree()
 {
-    class_< UExpressionTree, bases< UExpressionEvaluator >  , boost::noncopyable>("UExpressionTree", no_init)
+    py::class_< UExpressionTree,  UExpressionEvaluator   >("UExpressionTree")
         .def_readwrite("RootChild", &UExpressionTree::RootChild)
-        .def("StaticClass", &UExpressionTree::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UExpressionTree::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UExpressionTree::Evaluate)
         .staticmethod("StaticClass")
   ;

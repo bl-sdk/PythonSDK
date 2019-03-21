@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxAnimDefinition()
 {
-    class_< UGearboxAnimDefinition, bases< USpecialMoveDefinition >  , boost::noncopyable>("UGearboxAnimDefinition", no_init)
+    py::class_< UGearboxAnimDefinition,  USpecialMoveDefinition   >("UGearboxAnimDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UGearboxAnimDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("AnimName", &UGearboxAnimDefinition::AnimName)
         .def_readwrite("BlendInTime", &UGearboxAnimDefinition::BlendInTime)
@@ -22,10 +22,10 @@ void Export_pystes_UGearboxAnimDefinition()
         .def_readwrite("StopBehaviors", &UGearboxAnimDefinition::StopBehaviors)
         .def_readwrite("TimedBehaviorEvents", &UGearboxAnimDefinition::TimedBehaviorEvents)
         .def_readwrite("BehaviorProviderDefinition", &UGearboxAnimDefinition::BehaviorProviderDefinition)
-        .def("StaticClass", &UGearboxAnimDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxAnimDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetAnimLength", &UGearboxAnimDefinition::GetAnimLength)
         .def("eventIsPlayingLocally", &UGearboxAnimDefinition::eventIsPlayingLocally)
-        .def("GetSMNode", &UGearboxAnimDefinition::GetSMNode, return_value_policy< reference_existing_object >())
+        .def("GetSMNode", &UGearboxAnimDefinition::GetSMNode, py::return_value_policy::reference)
         .def("PlayAnim", &UGearboxAnimDefinition::PlayAnim)
         .def("eventAnimFinished", &UGearboxAnimDefinition::eventAnimFinished)
         .def("eventClientFinished", &UGearboxAnimDefinition::eventClientFinished)
@@ -33,7 +33,7 @@ void Export_pystes_UGearboxAnimDefinition()
         .def("eventServerFinished", &UGearboxAnimDefinition::eventServerFinished)
         .def("eventServerStarted", &UGearboxAnimDefinition::eventServerStarted)
         .def("AddAnimSet", &UGearboxAnimDefinition::AddAnimSet)
-        .def("GetSkeletalMesh", &UGearboxAnimDefinition::GetSkeletalMesh, return_value_policy< reference_existing_object >())
+        .def("GetSkeletalMesh", &UGearboxAnimDefinition::GetSkeletalMesh, py::return_value_policy::reference)
         .def("eventAuthorityCanPlay", &UGearboxAnimDefinition::eventAuthorityCanPlay)
         .def("OnTimedEvent", &UGearboxAnimDefinition::OnTimedEvent)
         .def("OnServerStop", &UGearboxAnimDefinition::OnServerStop)
@@ -41,7 +41,7 @@ void Export_pystes_UGearboxAnimDefinition()
         .def("OnStop", &UGearboxAnimDefinition::OnStop)
         .def("OnStart", &UGearboxAnimDefinition::OnStart)
         .def("SetBehaviorProviderDefinition", &UGearboxAnimDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UGearboxAnimDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UGearboxAnimDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

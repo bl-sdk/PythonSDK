@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSlaughterMissionChain()
 {
-    class_< FSlaughterMissionChain >("FSlaughterMissionChain", no_init)
+    py::class_< FSlaughterMissionChain >("FSlaughterMissionChain")
         .def_readwrite("SlaughterMissions", &FSlaughterMissionChain::SlaughterMissions)
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ConfigureBossMusic()
 {
-    class_< UWillowSeqAct_ConfigureBossMusic, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ConfigureBossMusic", no_init)
+    py::class_< UWillowSeqAct_ConfigureBossMusic,  USequenceAction   >("UWillowSeqAct_ConfigureBossMusic")
         .def_readwrite("BossAkState", &UWillowSeqAct_ConfigureBossMusic::BossAkState)
-        .def("StaticClass", &UWillowSeqAct_ConfigureBossMusic::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_ConfigureBossMusic::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

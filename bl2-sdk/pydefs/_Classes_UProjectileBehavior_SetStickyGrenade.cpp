@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileBehavior_SetStickyGrenade()
 {
-    class_< UProjectileBehavior_SetStickyGrenade, bases< UProjectileBehaviorBase >  , boost::noncopyable>("UProjectileBehavior_SetStickyGrenade", no_init)
-        .def("StaticClass", &UProjectileBehavior_SetStickyGrenade::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UProjectileBehavior_SetStickyGrenade,  UProjectileBehaviorBase   >("UProjectileBehavior_SetStickyGrenade")
+        .def("StaticClass", &UProjectileBehavior_SetStickyGrenade::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_SetStickyGrenade::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

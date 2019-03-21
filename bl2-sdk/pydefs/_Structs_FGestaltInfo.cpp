@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltInfo()
 {
-    class_< FGestaltInfo >("FGestaltInfo", no_init)
+    py::class_< FGestaltInfo >("FGestaltInfo")
         .def_readwrite("Parts", &FGestaltInfo::Parts)
   ;
 }

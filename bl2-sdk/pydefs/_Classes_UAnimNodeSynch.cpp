@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeSynch()
 {
-    class_< UAnimNodeSynch, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UAnimNodeSynch", no_init)
+    py::class_< UAnimNodeSynch,  UAnimNodeBlendBase   >("UAnimNodeSynch")
         .def_readwrite("Groups", &UAnimNodeSynch::Groups)
-        .def("StaticClass", &UAnimNodeSynch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeSynch::StaticClass, py::return_value_policy::reference)
         .def("SetGroupRateScale", &UAnimNodeSynch::SetGroupRateScale)
         .def("GetRelativePosition", &UAnimNodeSynch::GetRelativePosition)
         .def("ForceRelativePosition", &UAnimNodeSynch::ForceRelativePosition)
-        .def("GetMasterNodeOfGroup", &UAnimNodeSynch::GetMasterNodeOfGroup, return_value_policy< reference_existing_object >())
+        .def("GetMasterNodeOfGroup", &UAnimNodeSynch::GetMasterNodeOfGroup, py::return_value_policy::reference)
         .def("RemoveNodeFromGroup", &UAnimNodeSynch::RemoveNodeFromGroup)
         .def("AddNodeToGroup", &UAnimNodeSynch::AddNodeToGroup)
         .staticmethod("StaticClass")

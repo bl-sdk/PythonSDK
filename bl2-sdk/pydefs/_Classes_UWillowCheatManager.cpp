@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowCheatManager()
 {
-    class_< UWillowCheatManager, bases< UCheatManager >  , boost::noncopyable>("UWillowCheatManager", no_init)
+    py::class_< UWillowCheatManager,  UCheatManager   >("UWillowCheatManager")
         .def_readwrite("ClassModPoolDefinitionName", &UWillowCheatManager::ClassModPoolDefinitionName)
         .def_readwrite("CurrencyBalanceFormulaMultiplier", &UWillowCheatManager::CurrencyBalanceFormulaMultiplier)
         .def_readwrite("CurrencyBalanceFormulaLevel", &UWillowCheatManager::CurrencyBalanceFormulaLevel)
@@ -27,7 +27,7 @@ void Export_pystes_UWillowCheatManager()
         .def_readwrite("SpawnItemPool_LastUpdateTime", &UWillowCheatManager::SpawnItemPool_LastUpdateTime)
         .def_readwrite("SpawnItemPool_AccruedTime", &UWillowCheatManager::SpawnItemPool_AccruedTime)
         .def_readwrite("SpawnItemPool_FuncName", &UWillowCheatManager::SpawnItemPool_FuncName)
-        .def("StaticClass", &UWillowCheatManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowCheatManager::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

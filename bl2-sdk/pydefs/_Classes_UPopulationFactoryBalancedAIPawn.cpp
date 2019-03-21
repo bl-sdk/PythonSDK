@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationFactoryBalancedAIPawn()
 {
-    class_< UPopulationFactoryBalancedAIPawn, bases< UPopulationFactory >  , boost::noncopyable>("UPopulationFactoryBalancedAIPawn", no_init)
+    py::class_< UPopulationFactoryBalancedAIPawn,  UPopulationFactory   >("UPopulationFactoryBalancedAIPawn")
         .def_readwrite("PawnBalanceDefinition", &UPopulationFactoryBalancedAIPawn::PawnBalanceDefinition)
         .def_readwrite("WillowAIPawnArchetype", &UPopulationFactoryWillowAIPawn::WillowAIPawnArchetype)
         .def_readwrite("PawnExpLevel", &UPopulationFactoryWillowAIPawn::PawnExpLevel)
@@ -14,16 +14,16 @@ void Export_pystes_UPopulationFactoryBalancedAIPawn()
         .def_readwrite("AttributeStartingValues", &UPopulationFactoryWillowAIPawn::AttributeStartingValues)
         .def_readwrite("ItemPoolList", &UPopulationFactoryWillowAIPawn::ItemPoolList)
         .def_readwrite("ItemPoolIncludedLists", &UPopulationFactoryWillowAIPawn::ItemPoolIncludedLists)
-        .def("StaticClass", &UPopulationFactoryBalancedAIPawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPopulationFactoryBalancedAIPawn::StaticClass, py::return_value_policy::reference)
         .def("GetSpawnProbabilityAtThisGameStage", &UPopulationFactoryBalancedAIPawn::GetSpawnProbabilityAtThisGameStage)
         .def("eventGetDescriptionOfFactoryOutput", &UPopulationFactoryBalancedAIPawn::eventGetDescriptionOfFactoryOutput)
-        .def("SpawnAIPawn", &UPopulationFactoryBalancedAIPawn::SpawnAIPawn, return_value_policy< reference_existing_object >())
-        .def("eventRestorePopulatedAIPawn", &UPopulationFactoryBalancedAIPawn::eventRestorePopulatedAIPawn, return_value_policy< reference_existing_object >())
-        .def("eventCreatePopulationActor", &UPopulationFactoryBalancedAIPawn::eventCreatePopulationActor, return_value_policy< reference_existing_object >())
+        .def("SpawnAIPawn", &UPopulationFactoryBalancedAIPawn::SpawnAIPawn, py::return_value_policy::reference)
+        .def("eventRestorePopulatedAIPawn", &UPopulationFactoryBalancedAIPawn::eventRestorePopulatedAIPawn, py::return_value_policy::reference)
+        .def("eventCreatePopulationActor", &UPopulationFactoryBalancedAIPawn::eventCreatePopulationActor, py::return_value_policy::reference)
         .def("ApplyAttributeStartingValues", &UPopulationFactoryBalancedAIPawn::ApplyAttributeStartingValues)
         .def("SetupBalancedPopulationActor", &UPopulationFactoryBalancedAIPawn::SetupBalancedPopulationActor)
         .def("eventGetSpawnVisibilityBounds", &UPopulationFactoryBalancedAIPawn::eventGetSpawnVisibilityBounds)
-        .def("GetActorAllegiance", &UPopulationFactoryBalancedAIPawn::GetActorAllegiance, return_value_policy< reference_existing_object >())
+        .def("GetActorAllegiance", &UPopulationFactoryBalancedAIPawn::GetActorAllegiance, py::return_value_policy::reference)
         .def("eventGetActorSpawnCost", &UPopulationFactoryBalancedAIPawn::eventGetActorSpawnCost)
         .def("CanSpawn", &UPopulationFactoryBalancedAIPawn::CanSpawn)
         .def("CreateSavedInventory", &UPopulationFactoryWillowAIPawn::CreateSavedInventory)
@@ -33,7 +33,7 @@ void Export_pystes_UPopulationFactoryBalancedAIPawn()
         .def("SetupPopulationActor", &UPopulationFactoryWillowAIPawn::SetupPopulationActor)
         .def("SetFlagDefinitions", &UPopulationFactoryWillowAIPawn::SetFlagDefinitions)
         .def("ApplyPopulationDefinition", &UPopulationFactoryWillowAIPawn::ApplyPopulationDefinition)
-        .def("GetAContextSourceForThePopulationActor", &UPopulationFactoryWillowAIPawn::GetAContextSourceForThePopulationActor, return_value_policy< reference_existing_object >())
+        .def("GetAContextSourceForThePopulationActor", &UPopulationFactoryWillowAIPawn::GetAContextSourceForThePopulationActor, py::return_value_policy::reference)
         .def("eventSetupMatineeForActor", &UPopulationFactoryWillowAIPawn::eventSetupMatineeForActor)
         .staticmethod("StaticClass")
   ;

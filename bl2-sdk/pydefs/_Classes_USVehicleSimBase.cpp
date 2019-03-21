@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USVehicleSimBase()
 {
-    class_< USVehicleSimBase, bases< UActorComponent >  , boost::noncopyable>("USVehicleSimBase", no_init)
+    py::class_< USVehicleSimBase,  UActorComponent   >("USVehicleSimBase")
         .def_readwrite("WheelSuspensionStiffness", &USVehicleSimBase::WheelSuspensionStiffness)
         .def_readwrite("WheelSuspensionDamping", &USVehicleSimBase::WheelSuspensionDamping)
         .def_readwrite("WheelSuspensionBias", &USVehicleSimBase::WheelSuspensionBias)
@@ -19,7 +19,7 @@ void Export_pystes_USVehicleSimBase()
         .def_readwrite("WheelLatAsymptoteValue", &USVehicleSimBase::WheelLatAsymptoteValue)
         .def_readwrite("WheelInertia", &USVehicleSimBase::WheelInertia)
         .def_readwrite("AutoDriveSteer", &USVehicleSimBase::AutoDriveSteer)
-        .def("StaticClass", &USVehicleSimBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USVehicleSimBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

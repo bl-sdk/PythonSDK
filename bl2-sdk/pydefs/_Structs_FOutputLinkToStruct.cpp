@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOutputLinkToStruct()
 {
-    class_< FOutputLinkToStruct >("FOutputLinkToStruct", no_init)
+    py::class_< FOutputLinkToStruct >("FOutputLinkToStruct")
         .def_readwrite("FromNodeID", &FOutputLinkToStruct::FromNodeID)
         .def_readwrite("LinkNumber", &FOutputLinkToStruct::LinkNumber)
         .def_readwrite("ToNodeID", &FOutputLinkToStruct::ToNodeID)

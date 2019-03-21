@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDlcContentId()
 {
-    class_< FDlcContentId >("FDlcContentId", no_init)
+    py::class_< FDlcContentId >("FDlcContentId")
         .def_readwrite("PackageId", &FDlcContentId::PackageId)
         .def_readwrite("ContentId", &FDlcContentId::ContentId)
   ;

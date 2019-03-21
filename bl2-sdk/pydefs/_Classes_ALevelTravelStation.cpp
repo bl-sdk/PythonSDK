@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ALevelTravelStation()
 {
-    class_< ALevelTravelStation, bases< AWillowInteractiveObject >  , boost::noncopyable>("ALevelTravelStation", no_init)
+    py::class_< ALevelTravelStation,  AWillowInteractiveObject   >("ALevelTravelStation")
         .def_readwrite("TravelDefinition", &ALevelTravelStation::TravelDefinition)
         .def_readwrite("WaypointExceptions", &ALevelTravelStation::WaypointExceptions)
         .def_readwrite("LevelTravelMapDisplayName", &ALevelTravelStation::LevelTravelMapDisplayName)
@@ -24,17 +24,17 @@ void Export_pystes_ALevelTravelStation()
         .def_readwrite("Nozzle2SocketName", &ATravelStation::Nozzle2SocketName)
         .def_readwrite("Nozzle3SocketName", &ATravelStation::Nozzle3SocketName)
         .def_readwrite("Nozzle4SocketName", &ATravelStation::Nozzle4SocketName)
-        .def("StaticClass", &ALevelTravelStation::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ALevelTravelStation::StaticClass, py::return_value_policy::reference)
         .def("GetDestinationMapName", &ALevelTravelStation::GetDestinationMapName)
         .def("eventGetMapDisplayName", &ALevelTravelStation::eventGetMapDisplayName)
         .def("GetHumanReadableName", &ALevelTravelStation::GetHumanReadableName)
-        .def("GetDlcDestination", &ALevelTravelStation::GetDlcDestination, return_value_policy< reference_existing_object >())
+        .def("GetDlcDestination", &ALevelTravelStation::GetDlcDestination, py::return_value_policy::reference)
         .def("eventPostBeginPlay", &ALevelTravelStation::eventPostBeginPlay)
-        .def("GetTravelStationDefinition", &ALevelTravelStation::GetTravelStationDefinition, return_value_policy< reference_existing_object >())
+        .def("GetTravelStationDefinition", &ALevelTravelStation::GetTravelStationDefinition, py::return_value_policy::reference)
         .def("CanResurrectHere", &ATravelStation::CanResurrectHere)
         .def("eventSetUsability", &ATravelStation::eventSetUsability)
-        .def("eventAddLevelTransitionWaypoint", &ATravelStation::eventAddLevelTransitionWaypoint, return_value_policy< reference_existing_object >())
-        .def("FindTravelStation", &ATravelStation::FindTravelStation, return_value_policy< reference_existing_object >())
+        .def("eventAddLevelTransitionWaypoint", &ATravelStation::eventAddLevelTransitionWaypoint, py::return_value_policy::reference)
+        .def("FindTravelStation", &ATravelStation::FindTravelStation, py::return_value_policy::reference)
         .def("SetFastTravelDebug", &ATravelStation::SetFastTravelDebug)
         .def("IsFastTravelEnabled", &ATravelStation::IsFastTravelEnabled)
         .def("eventMissionReactionObjectiveCleared", &ATravelStation::eventMissionReactionObjectiveCleared)

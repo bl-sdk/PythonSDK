@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavMeshGoalFilter_MinPathDistance()
 {
-    class_< UNavMeshGoalFilter_MinPathDistance, bases< UNavMeshGoal_Filter >  , boost::noncopyable>("UNavMeshGoalFilter_MinPathDistance", no_init)
+    py::class_< UNavMeshGoalFilter_MinPathDistance,  UNavMeshGoal_Filter   >("UNavMeshGoalFilter_MinPathDistance")
         .def_readwrite("MinDistancePathShouldBe", &UNavMeshGoalFilter_MinPathDistance::MinDistancePathShouldBe)
-        .def("StaticClass", &UNavMeshGoalFilter_MinPathDistance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavMeshGoalFilter_MinPathDistance::StaticClass, py::return_value_policy::reference)
         .def("MustBeLongerPathThan", &UNavMeshGoalFilter_MinPathDistance::MustBeLongerPathThan)
         .staticmethod("StaticClass")
   ;

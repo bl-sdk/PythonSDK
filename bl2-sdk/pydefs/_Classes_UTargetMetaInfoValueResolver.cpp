@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTargetMetaInfoValueResolver()
 {
-    class_< UTargetMetaInfoValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UTargetMetaInfoValueResolver", no_init)
+    py::class_< UTargetMetaInfoValueResolver,  UAttributeValueResolver   >("UTargetMetaInfoValueResolver")
         .def_readwrite("PropertyName", &UTargetMetaInfoValueResolver::PropertyName)
-        .def("StaticClass", &UTargetMetaInfoValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTargetMetaInfoValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

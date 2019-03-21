@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBoneRotateData()
 {
-    class_< FBoneRotateData >("FBoneRotateData", no_init)
+    py::class_< FBoneRotateData >("FBoneRotateData")
         .def_readwrite("Index", &FBoneRotateData::Index)
         .def_readwrite("Rotation", &FBoneRotateData::Rotation)
   ;

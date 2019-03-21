@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBeamState()
 {
-    class_< FBeamState >("FBeamState", no_init)
+    py::class_< FBeamState >("FBeamState")
         .def_readwrite("BeamIndex", &FBeamState::BeamIndex)
         .def_readwrite("ServerOnlyState", &FBeamState::ServerOnlyState)
         .def_readwrite("CoreBeamState", &FBeamState::CoreBeamState)

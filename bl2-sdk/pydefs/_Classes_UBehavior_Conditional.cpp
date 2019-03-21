@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_Conditional()
 {
-    class_< UBehavior_Conditional, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_Conditional", no_init)
+    py::class_< UBehavior_Conditional,  UBehaviorBase   >("UBehavior_Conditional")
         .def_readwrite("Conditions", &UBehavior_Conditional::Conditions)
-        .def("StaticClass", &UBehavior_Conditional::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_Conditional::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_Conditional::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

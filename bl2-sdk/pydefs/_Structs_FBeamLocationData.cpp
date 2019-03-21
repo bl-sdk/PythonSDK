@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBeamLocationData()
 {
-    class_< FBeamLocationData >("FBeamLocationData", no_init)
+    py::class_< FBeamLocationData >("FBeamLocationData")
         .def_readwrite("Actor", &FBeamLocationData::Actor)
         .def_readwrite("Socket", &FBeamLocationData::Socket)
         .def_readwrite("Offset", &FBeamLocationData::Offset)

@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_Touch()
 {
-    class_< USeqEvent_Touch, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_Touch", no_init)
+    py::class_< USeqEvent_Touch,  USequenceEvent   >("USeqEvent_Touch")
         .def_readwrite("ClassProximityTypes", &USeqEvent_Touch::ClassProximityTypes)
         .def_readwrite("ArchetypeFilter", &USeqEvent_Touch::ArchetypeFilter)
         .def_readwrite("IgnoredClassProximityTypes", &USeqEvent_Touch::IgnoredClassProximityTypes)
         .def_readwrite("TouchedList", &USeqEvent_Touch::TouchedList)
-        .def("StaticClass", &USeqEvent_Touch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqEvent_Touch::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqEvent_Touch::eventGetObjClassVersion)
         .def("NotifyTouchingPawnDied", &USeqEvent_Touch::NotifyTouchingPawnDied)
         .def("eventToggled", &USeqEvent_Touch::eventToggled)

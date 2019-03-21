@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStatColorMapEntry()
 {
-    class_< FStatColorMapEntry >("FStatColorMapEntry", no_init)
+    py::class_< FStatColorMapEntry >("FStatColorMapEntry")
         .def_readwrite("In", &FStatColorMapEntry::In)
         .def_readwrite("Out", &FStatColorMapEntry::Out)
   ;

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionMeshEmitterDynamicParameter()
 {
-    class_< UMaterialExpressionMeshEmitterDynamicParameter, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionMeshEmitterDynamicParameter", no_init)
+    py::class_< UMaterialExpressionMeshEmitterDynamicParameter,  UMaterialExpression   >("UMaterialExpressionMeshEmitterDynamicParameter")
         .def_readwrite("ParamNames", &UMaterialExpressionDynamicParameter::ParamNames)
-        .def("StaticClass", &UMaterialExpressionMeshEmitterDynamicParameter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionMeshEmitterDynamicParameter::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

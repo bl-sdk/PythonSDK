@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAsyncDataRequest()
 {
-    class_< FAsyncDataRequest >("FAsyncDataRequest", no_init)
+    py::class_< FAsyncDataRequest >("FAsyncDataRequest")
         .def_readwrite("RequestType", &FAsyncDataRequest::RequestType)
         .def_readwrite("ObjectPath", &FAsyncDataRequest::ObjectPath)
         .def_readwrite("Instigator", &FAsyncDataRequest::Instigator)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMovieStateData()
 {
-    class_< FMovieStateData >("FMovieStateData", no_init)
+    py::class_< FMovieStateData >("FMovieStateData")
         .def_readwrite("State", &FMovieStateData::State)
         .def_readwrite("Mode", &FMovieStateData::Mode)
         .def_readwrite("Context", &FMovieStateData::Context)

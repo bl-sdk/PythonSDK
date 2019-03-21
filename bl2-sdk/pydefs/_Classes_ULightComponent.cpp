@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULightComponent()
 {
-    class_< ULightComponent, bases< UActorComponent >  , boost::noncopyable>("ULightComponent", no_init)
+    py::class_< ULightComponent,  UActorComponent   >("ULightComponent")
         .def_readwrite("SceneInfo", &ULightComponent::SceneInfo)
         .def_readwrite("WorldToLight", &ULightComponent::WorldToLight)
         .def_readwrite("LightToWorld", &ULightComponent::LightToWorld)
@@ -34,7 +34,7 @@ void Export_pystes_ULightComponent()
         .def_readwrite("BloomTint", &ULightComponent::BloomTint)
         .def_readwrite("RadialBlurPercent", &ULightComponent::RadialBlurPercent)
         .def_readwrite("OcclusionMaskDarkness", &ULightComponent::OcclusionMaskDarkness)
-        .def("StaticClass", &ULightComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULightComponent::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeVisibility", &ULightComponent::Behavior_ChangeVisibility)
         .def("Behavior_ToggleVisibility", &ULightComponent::Behavior_ToggleVisibility)
         .def("OnUpdatePropertyLightColor", &ULightComponent::OnUpdatePropertyLightColor)

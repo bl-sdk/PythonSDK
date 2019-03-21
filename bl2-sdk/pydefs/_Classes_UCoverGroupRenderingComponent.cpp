@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCoverGroupRenderingComponent()
 {
-    class_< UCoverGroupRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UCoverGroupRenderingComponent", no_init)
-        .def("StaticClass", &UCoverGroupRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCoverGroupRenderingComponent,  UPrimitiveComponent   >("UCoverGroupRenderingComponent")
+        .def("StaticClass", &UCoverGroupRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

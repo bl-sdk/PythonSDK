@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGbxMessage()
 {
-    class_< UGbxMessage, bases< UObject >  , boost::noncopyable>("UGbxMessage", no_init)
+    py::class_< UGbxMessage,  UObject   >("UGbxMessage")
         .def_readwrite("Definition", &UGbxMessage::Definition)
         .def_readwrite("NameKey", &UGbxMessage::NameKey)
         .def_readwrite("Sender", &UGbxMessage::Sender)
@@ -27,7 +27,7 @@ void Export_pystes_UGbxMessage()
         .def_readwrite("MaxDurationToSend", &UGbxMessage::MaxDurationToSend)
         .def_readwrite("TimeBetweenSends", &UGbxMessage::TimeBetweenSends)
         .def_readwrite("DupeCriteria", &UGbxMessage::DupeCriteria)
-        .def("StaticClass", &UGbxMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGbxMessage::StaticClass, py::return_value_policy::reference)
         .def("InitializeFromDefinition", &UGbxMessage::InitializeFromDefinition)
         .staticmethod("StaticClass")
   ;

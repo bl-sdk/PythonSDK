@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSMBehavior()
 {
-    class_< FSMBehavior >("FSMBehavior", no_init)
+    py::class_< FSMBehavior >("FSMBehavior")
         .def_readwrite("Behaviors", &FSMBehavior::Behaviors)
   ;
 }

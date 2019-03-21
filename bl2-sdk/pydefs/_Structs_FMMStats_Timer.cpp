@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMMStats_Timer()
 {
-    class_< FMMStats_Timer >("FMMStats_Timer", no_init)
+    py::class_< FMMStats_Timer >("FMMStats_Timer")
         .def_readwrite("MSecs", &FMMStats_Timer::MSecs)
   ;
 }

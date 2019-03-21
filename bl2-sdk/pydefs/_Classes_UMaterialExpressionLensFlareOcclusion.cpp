@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionLensFlareOcclusion()
 {
-    class_< UMaterialExpressionLensFlareOcclusion, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionLensFlareOcclusion", no_init)
-        .def("StaticClass", &UMaterialExpressionLensFlareOcclusion::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionLensFlareOcclusion,  UMaterialExpression   >("UMaterialExpressionLensFlareOcclusion")
+        .def("StaticClass", &UMaterialExpressionLensFlareOcclusion::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

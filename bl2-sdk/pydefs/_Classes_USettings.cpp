@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USettings()
 {
-    class_< USettings, bases< UObject >  , boost::noncopyable>("USettings", no_init)
+    py::class_< USettings,  UObject   >("USettings")
         .def_readwrite("LocalizedSettings", &USettings::LocalizedSettings)
         .def_readwrite("Properties", &USettings::Properties)
         .def_readwrite("LocalizedSettingsMappings", &USettings::LocalizedSettingsMappings)
         .def_readwrite("PropertyMappings", &USettings::PropertyMappings)
-        .def("StaticClass", &USettings::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USettings::StaticClass, py::return_value_policy::reference)
         .def("UpdateFromURL", &USettings::UpdateFromURL)
         .def("BuildURL", &USettings::BuildURL)
         .def("AppendContextsToURL", &USettings::AppendContextsToURL)

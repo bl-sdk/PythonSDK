@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTradingPanelGFxObject()
 {
-    class_< UTradingPanelGFxObject, bases< UBaseTopLevelPanelGFxObject >  , boost::noncopyable>("UTradingPanelGFxObject", no_init)
+    py::class_< UTradingPanelGFxObject,  UBaseTopLevelPanelGFxObject   >("UTradingPanelGFxObject")
         .def_readwrite("BackpackPanel", &UTradingPanelGFxObject::BackpackPanel)
         .def_readwrite("OffersPanel", &UTradingPanelGFxObject::OffersPanel)
         .def_readwrite("CurrentPanel", &UTradingPanelGFxObject::CurrentPanel)
         .def_readwrite("ReturnPanel", &UTradingPanelGFxObject::ReturnPanel)
         .def_readwrite("OfferingThing", &UTradingPanelGFxObject::OfferingThing)
         .def_readwrite("CachedSortFilterConfig", &UTradingPanelGFxObject::CachedSortFilterConfig)
-        .def("StaticClass", &UTradingPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTradingPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("extCompleteDrag_Backpack", &UTradingPanelGFxObject::extCompleteDrag_Backpack)
         .def("extCompleteDrag_Offered", &UTradingPanelGFxObject::extCompleteDrag_Offered)
         .def("extCancelDrag", &UTradingPanelGFxObject::extCancelDrag)
@@ -35,7 +35,7 @@ void Export_pystes_UTradingPanelGFxObject()
         .def("BlockInput", &UTradingPanelGFxObject::BlockInput)
         .def("DeferInput", &UTradingPanelGFxObject::DeferInput)
         .def("PanelOnInputKey", &UTradingPanelGFxObject::PanelOnInputKey)
-        .def("GetSelectedThing", &UTradingPanelGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetSelectedThing", &UTradingPanelGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("RefreshItemCards", &UTradingPanelGFxObject::RefreshItemCards)
         .def("SwitchToPanel", &UTradingPanelGFxObject::SwitchToPanel)
         .def("SwitchFocus", &UTradingPanelGFxObject::SwitchFocus)

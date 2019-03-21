@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpGroupInstDirector()
 {
-    class_< UInterpGroupInstDirector, bases< UInterpGroupInst >  , boost::noncopyable>("UInterpGroupInstDirector", no_init)
-        .def("StaticClass", &UInterpGroupInstDirector::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UInterpGroupInstDirector,  UInterpGroupInst   >("UInterpGroupInstDirector")
+        .def("StaticClass", &UInterpGroupInstDirector::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

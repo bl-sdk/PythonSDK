@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCombatPointSearchData()
 {
-    class_< FCombatPointSearchData >("FCombatPointSearchData", no_init)
+    py::class_< FCombatPointSearchData >("FCombatPointSearchData")
         .def_readwrite("PointRadius", &FCombatPointSearchData::PointRadius)
         .def_readwrite("ZoneMoveDist", &FCombatZoneSearchData::ZoneMoveDist)
         .def_readwrite("ZoneTimeLimit", &FCombatZoneSearchData::ZoneTimeLimit)

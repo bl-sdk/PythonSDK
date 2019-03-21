@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderMapList()
 {
-    class_< UWillowScrollingListDataProviderMapList, bases< UWillowScrollingListDataProviderBase >  , boost::noncopyable>("UWillowScrollingListDataProviderMapList", no_init)
+    py::class_< UWillowScrollingListDataProviderMapList,  UWillowScrollingListDataProviderBase   >("UWillowScrollingListDataProviderMapList")
         .def_readwrite("MapListDef", &UWillowScrollingListDataProviderMapList::MapListDef)
         .def_readwrite("MenuDisplayNameOverride", &UWillowScrollingListDataProviderMapList::MenuDisplayNameOverride)
-        .def("StaticClass", &UWillowScrollingListDataProviderMapList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingListDataProviderMapList::StaticClass, py::return_value_policy::reference)
         .def("Populate", &UWillowScrollingListDataProviderMapList::Populate)
         .def("HandleClick", &UWillowScrollingListDataProviderMapList::HandleClick)
         .def("GetMenuDisplayName", &UWillowScrollingListDataProviderMapList::GetMenuDisplayName)

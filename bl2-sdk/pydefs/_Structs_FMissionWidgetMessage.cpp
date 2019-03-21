@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMissionWidgetMessage()
 {
-    class_< FMissionWidgetMessage >("FMissionWidgetMessage", no_init)
+    py::class_< FMissionWidgetMessage >("FMissionWidgetMessage")
         .def_readwrite("Type", &FMissionWidgetMessage::Type)
         .def_readwrite("Category", &FMissionWidgetMessage::Category)
         .def_readwrite("MissDef", &FMissionWidgetMessage::MissDef)

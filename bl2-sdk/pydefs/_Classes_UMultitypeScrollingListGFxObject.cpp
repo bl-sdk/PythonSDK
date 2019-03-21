@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMultitypeScrollingListGFxObject()
 {
-    class_< UMultitypeScrollingListGFxObject, bases< UGFxObject >  , boost::noncopyable>("UMultitypeScrollingListGFxObject", no_init)
+    py::class_< UMultitypeScrollingListGFxObject,  UGFxObject   >("UMultitypeScrollingListGFxObject")
         .def_readwrite("ParentPanel", &UMultitypeScrollingListGFxObject::ParentPanel)
         .def_readonly("UnknownData00", &UMultitypeScrollingListGFxObject::UnknownData00)
-        .def("StaticClass", &UMultitypeScrollingListGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMultitypeScrollingListGFxObject::StaticClass, py::return_value_policy::reference)
         .def("ContinueInitialInit", &UMultitypeScrollingListGFxObject::ContinueInitialInit)
         .def("extGameScroll", &UMultitypeScrollingListGFxObject::extGameScroll)
-        .def("getRendererAt", &UMultitypeScrollingListGFxObject::getRendererAt, return_value_policy< reference_existing_object >())
+        .def("getRendererAt", &UMultitypeScrollingListGFxObject::getRendererAt, py::return_value_policy::reference)
         .def("SetEquippingState", &UMultitypeScrollingListGFxObject::SetEquippingState)
         .def("extSetRendererInfo", &UMultitypeScrollingListGFxObject::extSetRendererInfo)
         .def("Init", &UMultitypeScrollingListGFxObject::Init)

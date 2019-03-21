@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUnloadableDlcMissionStatusData()
 {
-    class_< FUnloadableDlcMissionStatusData >("FUnloadableDlcMissionStatusData", no_init)
+    py::class_< FUnloadableDlcMissionStatusData >("FUnloadableDlcMissionStatusData")
         .def_readwrite("MissionDefName", &FUnloadableDlcMissionStatusData::MissionDefName)
         .def_readwrite("Status", &FUnloadableDlcMissionStatusData::Status)
         .def_readwrite("DlcPackageId", &FUnloadableDlcMissionStatusData::DlcPackageId)

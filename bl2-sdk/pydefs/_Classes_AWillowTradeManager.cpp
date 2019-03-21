@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowTradeManager()
 {
-    class_< AWillowTradeManager, bases< AActor >  , boost::noncopyable>("AWillowTradeManager", no_init)
+    py::class_< AWillowTradeManager,  AActor   >("AWillowTradeManager")
         .def_readwrite("Status", &AWillowTradeManager::Status)
         .def_readwrite("Stance", &AWillowTradeManager::Stance)
         .def_readwrite("PartnerStance", &AWillowTradeManager::PartnerStance)
@@ -21,7 +21,7 @@ void Export_pystes_AWillowTradeManager()
         .def_readonly("MyInvOffered", &AWillowTradeManager::MyInvOffered)
         .def_readwrite("DuelInfo", &AWillowTradeManager::DuelInfo)
         .def_readwrite("MaxMyReceivableInventory", &AWillowTradeManager::MaxMyReceivableInventory)
-        .def("StaticClass", &AWillowTradeManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowTradeManager::StaticClass, py::return_value_policy::reference)
         .def("OnPartnerInvChanged", &AWillowTradeManager::OnPartnerInvChanged)
         .def("FindInventorySlot", &AWillowTradeManager::FindInventorySlot)
         .def("CanDrop", &AWillowTradeManager::CanDrop)
@@ -45,7 +45,7 @@ void Export_pystes_AWillowTradeManager()
         .def("InitAsRequester", &AWillowTradeManager::InitAsRequester)
         .def("FindAndRemoveInv", &AWillowTradeManager::FindAndRemoveInv)
         .def("InventoryMatch", &AWillowTradeManager::InventoryMatch)
-        .def("GetTradingWidget", &AWillowTradeManager::GetTradingWidget, return_value_policy< reference_existing_object >())
+        .def("GetTradingWidget", &AWillowTradeManager::GetTradingWidget, py::return_value_policy::reference)
         .def("OnAccepted", &AWillowTradeManager::OnAccepted)
         .def("OnInitialized", &AWillowTradeManager::OnInitialized)
         .def("CheckAcceptance", &AWillowTradeManager::CheckAcceptance)
@@ -56,7 +56,7 @@ void Export_pystes_AWillowTradeManager()
         .def("GetInvHash", &AWillowTradeManager::GetInvHash)
         .def("DoUpdateStance", &AWillowTradeManager::DoUpdateStance)
         .def("DoUpdateCashOffered", &AWillowTradeManager::DoUpdateCashOffered)
-        .def("GetWPC", &AWillowTradeManager::GetWPC, return_value_policy< reference_existing_object >())
+        .def("GetWPC", &AWillowTradeManager::GetWPC, py::return_value_policy::reference)
         .def("CalcTransactionHash", &AWillowTradeManager::CalcTransactionHash)
         .def("TradeParametersUpdated", &AWillowTradeManager::TradeParametersUpdated)
         .def("BreakTradeBond", &AWillowTradeManager::BreakTradeBond)

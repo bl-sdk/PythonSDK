@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTalkActData()
 {
-    class_< FTalkActData >("FTalkActData", no_init)
+    py::class_< FTalkActData >("FTalkActData")
         .def_readwrite("OutputDelay", &FTalkActData::OutputDelay)
         .def_readwrite("TalkData", &FTalkActData::TalkData)
         .def_readwrite("TalkerVariable", &FTalkActData::TalkerVariable)

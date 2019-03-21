@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowNavigationHandle()
 {
-    class_< UWillowNavigationHandle, bases< UGearboxNavigationHandle >  , boost::noncopyable>("UWillowNavigationHandle", no_init)
+    py::class_< UWillowNavigationHandle,  UGearboxNavigationHandle   >("UWillowNavigationHandle")
         .def_readwrite("MyWillowMind", &UWillowNavigationHandle::MyWillowMind)
         .def_readwrite("MyWillowPawn", &UWillowNavigationHandle::MyWillowPawn)
         .def_readwrite("ControllingAction", &UWillowNavigationHandle::ControllingAction)
@@ -29,7 +29,7 @@ void Export_pystes_UWillowNavigationHandle()
         .def_readwrite("FlyFixLastCheckTime", &UWillowNavigationHandle::FlyFixLastCheckTime)
         .def_readwrite("FlyFixLocation", &UWillowNavigationHandle::FlyFixLocation)
         .def_readwrite("MyNextExpensiveFrame", &UWillowNavigationHandle::MyNextExpensiveFrame)
-        .def("StaticClass", &UWillowNavigationHandle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowNavigationHandle::StaticClass, py::return_value_policy::reference)
         .def("PassedCurrentFlyGoal", &UWillowNavigationHandle::PassedCurrentFlyGoal)
         .def("ReachedCurrentFlyGoal", &UWillowNavigationHandle::ReachedCurrentFlyGoal)
         .def("CheckFlying", &UWillowNavigationHandle::CheckFlying)

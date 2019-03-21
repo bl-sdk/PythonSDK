@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDamageTypeDefinition()
 {
-    class_< UDamageTypeDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UDamageTypeDefinition", no_init)
-        .def("StaticClass", &UDamageTypeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDamageTypeDefinition,  UGBXDefinition   >("UDamageTypeDefinition")
+        .def("StaticClass", &UDamageTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def("CalcRadiusDamageScale", &UDamageTypeDefinition::CalcRadiusDamageScale)
         .def("GetMinDamagePercent", &UDamageTypeDefinition::GetMinDamagePercent)
         .def("GetMinDamageRadius", &UDamageTypeDefinition::GetMinDamageRadius)

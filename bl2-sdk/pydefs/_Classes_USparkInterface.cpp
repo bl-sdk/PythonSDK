@@ -1,19 +1,19 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USparkInterface()
 {
-    class_< USparkInterface, bases< UInterface >  , boost::noncopyable>("USparkInterface", no_init)
-        .def("StaticClass", &USparkInterface::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetNewsService", &USparkInterface::GetNewsService, return_value_policy< reference_existing_object >())
-        .def("GetTitleStorageServiceConfiguration", &USparkInterface::GetTitleStorageServiceConfiguration, return_value_policy< reference_existing_object >())
+    py::class_< USparkInterface,  UInterface   >("USparkInterface")
+        .def("StaticClass", &USparkInterface::StaticClass, py::return_value_policy::reference)
+        .def("GetNewsService", &USparkInterface::GetNewsService, py::return_value_policy::reference)
+        .def("GetTitleStorageServiceConfiguration", &USparkInterface::GetTitleStorageServiceConfiguration, py::return_value_policy::reference)
         .def("GetTitleStorageUrl", &USparkInterface::GetTitleStorageUrl)
         .def("ClearGearboxAccountData", &USparkInterface::ClearGearboxAccountData)
         .def("SignOutGearboxAccount", &USparkInterface::SignOutGearboxAccount)
         .def("SignInGearboxAccount", &USparkInterface::SignInGearboxAccount)
-        .def("eventGetGearboxAccountData", &USparkInterface::eventGetGearboxAccountData, return_value_policy< reference_existing_object >())
+        .def("eventGetGearboxAccountData", &USparkInterface::eventGetGearboxAccountData, py::return_value_policy::reference)
         .def("eventIsGearboxAccountAuthenticated", &USparkInterface::eventIsGearboxAccountAuthenticated)
         .def("IsGearboxAccountSignedIn", &USparkInterface::IsGearboxAccountSignedIn)
         .def("ConvertUtcTimeToLocalTime", &USparkInterface::ConvertUtcTimeToLocalTime)
@@ -29,7 +29,7 @@ void Export_pystes_USparkInterface()
         .def("GetInteractionMinWaitSeconds", &USparkInterface::GetInteractionMinWaitSeconds)
         .def("IsTmsComplete", &USparkInterface::IsTmsComplete)
         .def("SetTmsComplete", &USparkInterface::SetTmsComplete)
-        .def("GetSparkInitialization", &USparkInterface::GetSparkInitialization, return_value_policy< reference_existing_object >())
+        .def("GetSparkInitialization", &USparkInterface::GetSparkInitialization, py::return_value_policy::reference)
         .def("eventRestartSparkInitialization", &USparkInterface::eventRestartSparkInitialization)
         .def("RestartSparkInitializationFromScript", &USparkInterface::RestartSparkInitializationFromScript)
         .def("StartSparkInitialization", &USparkInterface::StartSparkInitialization)

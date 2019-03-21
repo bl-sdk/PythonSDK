@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSeqVarLink()
 {
-    class_< FSeqVarLink >("FSeqVarLink", no_init)
+    py::class_< FSeqVarLink >("FSeqVarLink")
         .def_readwrite("ExpectedType", &FSeqVarLink::ExpectedType)
         .def_readwrite("LinkedVariables", &FSeqVarLink::LinkedVariables)
         .def_readwrite("LinkDesc", &FSeqVarLink::LinkDesc)

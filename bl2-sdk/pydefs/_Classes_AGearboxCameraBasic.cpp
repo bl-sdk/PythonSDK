@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxCameraBasic()
 {
-    class_< AGearboxCameraBasic, bases< ACamera >  , boost::noncopyable>("AGearboxCameraBasic", no_init)
+    py::class_< AGearboxCameraBasic,  ACamera   >("AGearboxCameraBasic")
         .def_readwrite("VfTable_IInterfaceGearboxCamera", &AGearboxCameraBasic::VfTable_IInterfaceGearboxCamera)
-        .def("StaticClass", &AGearboxCameraBasic::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGearboxCameraBasic::StaticClass, py::return_value_policy::reference)
         .def("eventFinishCameraLookAt", &AGearboxCameraBasic::eventFinishCameraLookAt)
         .def("eventEnableThirdPersonLookAt", &AGearboxCameraBasic::eventEnableThirdPersonLookAt)
         .def("BeginCameraLookAt", &AGearboxCameraBasic::BeginCameraLookAt)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCoverSearchCriteria()
 {
-    class_< UCoverSearchCriteria, bases< UGBXDefinition >  , boost::noncopyable>("UCoverSearchCriteria", no_init)
+    py::class_< UCoverSearchCriteria,  UGBXDefinition   >("UCoverSearchCriteria")
         .def_readwrite("DistanceToOriginCandidateTestMax", &UCoverSearchCriteria::DistanceToOriginCandidateTestMax)
         .def_readwrite("DistanceToThreatCandidateTest", &UCoverSearchCriteria::DistanceToThreatCandidateTest)
         .def_readwrite("MinDistanceToOrigin", &UCoverSearchCriteria::MinDistanceToOrigin)
@@ -20,7 +20,7 @@ void Export_pystes_UCoverSearchCriteria()
         .def_readwrite("ScoreVantageOnAnyTarget", &UCoverSearchCriteria::ScoreVantageOnAnyTarget)
         .def_readwrite("ScoreUnoccupiedLink", &UCoverSearchCriteria::ScoreUnoccupiedLink)
         .def_readwrite("ScoreNonBlacklistedCover", &UCoverSearchCriteria::ScoreNonBlacklistedCover)
-        .def("StaticClass", &UCoverSearchCriteria::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCoverSearchCriteria::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

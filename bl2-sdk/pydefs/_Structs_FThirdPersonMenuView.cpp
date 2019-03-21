@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FThirdPersonMenuView()
 {
-    class_< FThirdPersonMenuView >("FThirdPersonMenuView", no_init)
+    py::class_< FThirdPersonMenuView >("FThirdPersonMenuView")
         .def_readwrite("RelativeCameraLocation", &FThirdPersonMenuView::RelativeCameraLocation)
         .def_readwrite("RelativeCameraRotation", &FThirdPersonMenuView::RelativeCameraRotation)
         .def_readwrite("RelativeMenuLocation", &FThirdPersonMenuView::RelativeMenuLocation)

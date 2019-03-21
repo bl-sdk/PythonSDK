@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameStatGroup()
 {
-    class_< FGameStatGroup >("FGameStatGroup", no_init)
+    py::class_< FGameStatGroup >("FGameStatGroup")
         .def_readwrite("Group", &FGameStatGroup::Group)
         .def_readwrite("Level", &FGameStatGroup::Level)
   ;

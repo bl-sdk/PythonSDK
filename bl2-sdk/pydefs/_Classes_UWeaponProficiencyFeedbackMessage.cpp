@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponProficiencyFeedbackMessage()
 {
-    class_< UWeaponProficiencyFeedbackMessage, bases< ULocalMessage >  , boost::noncopyable>("UWeaponProficiencyFeedbackMessage", no_init)
+    py::class_< UWeaponProficiencyFeedbackMessage,  ULocalMessage   >("UWeaponProficiencyFeedbackMessage")
         .def_readwrite("IsNowLevel", &UWeaponProficiencyFeedbackMessage::IsNowLevel)
-        .def("StaticClass", &UWeaponProficiencyFeedbackMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponProficiencyFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetMsgType", &UWeaponProficiencyFeedbackMessage::GetMsgType)
         .def("GetString", &UWeaponProficiencyFeedbackMessage::GetString)
         .staticmethod("StaticClass")

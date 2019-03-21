@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDistributionVectorConstant()
 {
-    class_< UDistributionVectorConstant, bases< UDistributionVector >  , boost::noncopyable>("UDistributionVectorConstant", no_init)
+    py::class_< UDistributionVectorConstant,  UDistributionVector   >("UDistributionVectorConstant")
         .def_readwrite("Constant", &UDistributionVectorConstant::Constant)
         .def_readwrite("LockedAxes", &UDistributionVectorConstant::LockedAxes)
-        .def("StaticClass", &UDistributionVectorConstant::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDistributionVectorConstant::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

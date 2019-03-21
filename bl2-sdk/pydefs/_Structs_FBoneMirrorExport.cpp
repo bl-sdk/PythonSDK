@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBoneMirrorExport()
 {
-    class_< FBoneMirrorExport >("FBoneMirrorExport", no_init)
+    py::class_< FBoneMirrorExport >("FBoneMirrorExport")
         .def_readwrite("BoneName", &FBoneMirrorExport::BoneName)
         .def_readwrite("SourceBoneName", &FBoneMirrorExport::SourceBoneName)
         .def_readwrite("BoneFlipAxis", &FBoneMirrorExport::BoneFlipAxis)

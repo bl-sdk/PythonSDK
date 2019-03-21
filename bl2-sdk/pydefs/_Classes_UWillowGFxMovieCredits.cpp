@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxMovieCredits()
 {
-    class_< UWillowGFxMovieCredits, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UWillowGFxMovieCredits", no_init)
+    py::class_< UWillowGFxMovieCredits,  UWillowGFxMovie3D   >("UWillowGFxMovieCredits")
         .def_readwrite("ceStarted", &UWillowGFxMovieCredits::ceStarted)
         .def_readwrite("ceFinished", &UWillowGFxMovieCredits::ceFinished)
         .def_readwrite("Credits", &UWillowGFxMovieCredits::Credits)
@@ -18,7 +18,7 @@ void Export_pystes_UWillowGFxMovieCredits()
         .def_readwrite("SplatTextureLinkageName", &UWillowGFxMovieCredits::SplatTextureLinkageName)
         .def_readwrite("ClosingTimeRemaining", &UWillowGFxMovieCredits::ClosingTimeRemaining)
         .def_readwrite("AxisResetCounter", &UWillowGFxMovieCredits::AxisResetCounter)
-        .def("StaticClass", &UWillowGFxMovieCredits::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxMovieCredits::StaticClass, py::return_value_policy::reference)
         .def("HandleInputAxis", &UWillowGFxMovieCredits::HandleInputAxis)
         .def("HandleInputKey", &UWillowGFxMovieCredits::HandleInputKey)
         .def("BeginClosing", &UWillowGFxMovieCredits::BeginClosing)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqCond_AnyPlayerHasMarketingUnlock()
 {
-    class_< UWillowSeqCond_AnyPlayerHasMarketingUnlock, bases< USequenceCondition >  , boost::noncopyable>("UWillowSeqCond_AnyPlayerHasMarketingUnlock", no_init)
+    py::class_< UWillowSeqCond_AnyPlayerHasMarketingUnlock,  USequenceCondition   >("UWillowSeqCond_AnyPlayerHasMarketingUnlock")
         .def_readwrite("MarketingUnlockDef", &UWillowSeqCond_AnyPlayerHasMarketingUnlock::MarketingUnlockDef)
-        .def("StaticClass", &UWillowSeqCond_AnyPlayerHasMarketingUnlock::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqCond_AnyPlayerHasMarketingUnlock::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

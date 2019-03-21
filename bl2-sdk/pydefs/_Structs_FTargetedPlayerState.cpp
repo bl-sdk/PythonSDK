@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTargetedPlayerState()
 {
-    class_< FTargetedPlayerState >("FTargetedPlayerState", no_init)
+    py::class_< FTargetedPlayerState >("FTargetedPlayerState")
         .def_readwrite("Enemy", &FTargetedPlayerState::Enemy)
         .def_readwrite("Player", &FTargetedPlayerState::Player)
         .def_readwrite("InitialThreat", &FTargetedPlayerState::InitialThreat)

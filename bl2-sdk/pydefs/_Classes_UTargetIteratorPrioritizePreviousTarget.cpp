@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTargetIteratorPrioritizePreviousTarget()
 {
-    class_< UTargetIteratorPrioritizePreviousTarget, bases< UTI_Prioritize >  , boost::noncopyable>("UTargetIteratorPrioritizePreviousTarget", no_init)
-        .def("StaticClass", &UTargetIteratorPrioritizePreviousTarget::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTargetIteratorPrioritizePreviousTarget,  UTI_Prioritize   >("UTargetIteratorPrioritizePreviousTarget")
+        .def("StaticClass", &UTargetIteratorPrioritizePreviousTarget::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

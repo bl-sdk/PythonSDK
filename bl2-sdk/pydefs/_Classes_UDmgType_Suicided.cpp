@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDmgType_Suicided()
 {
-    class_< UDmgType_Suicided, bases< UKillZDamageType >  , boost::noncopyable>("UDmgType_Suicided", no_init)
-        .def("StaticClass", &UDmgType_Suicided::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDmgType_Suicided,  UKillZDamageType   >("UDmgType_Suicided")
+        .def("StaticClass", &UDmgType_Suicided::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

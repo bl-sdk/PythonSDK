@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FChallengeData()
 {
-    class_< FChallengeData >("FChallengeData", no_init)
+    py::class_< FChallengeData >("FChallengeData")
         .def_readwrite("PCOwner", &FChallengeData::PCOwner)
         .def_readwrite("ChallengeDefinition", &FChallengeData::ChallengeDefinition)
   ;

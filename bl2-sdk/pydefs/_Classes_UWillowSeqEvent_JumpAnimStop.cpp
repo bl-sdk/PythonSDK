@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqEvent_JumpAnimStop()
 {
-    class_< UWillowSeqEvent_JumpAnimStop, bases< USequenceEvent >  , boost::noncopyable>("UWillowSeqEvent_JumpAnimStop", no_init)
-        .def("StaticClass", &UWillowSeqEvent_JumpAnimStop::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqEvent_JumpAnimStop,  USequenceEvent   >("UWillowSeqEvent_JumpAnimStop")
+        .def("StaticClass", &UWillowSeqEvent_JumpAnimStop::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAssetLibConfig()
 {
-    class_< FAssetLibConfig >("FAssetLibConfig", no_init)
+    py::class_< FAssetLibConfig >("FAssetLibConfig")
         .def_readwrite("SublibraryBits", &FAssetLibConfig::SublibraryBits)
         .def_readwrite("AssetBits", &FAssetLibConfig::AssetBits)
         .def_readwrite("Desc", &FAssetLibConfig::Desc)

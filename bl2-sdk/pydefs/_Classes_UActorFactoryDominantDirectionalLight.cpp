@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryDominantDirectionalLight()
 {
-    class_< UActorFactoryDominantDirectionalLight, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryDominantDirectionalLight", no_init)
-        .def("StaticClass", &UActorFactoryDominantDirectionalLight::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UActorFactoryDominantDirectionalLight,  UActorFactory   >("UActorFactoryDominantDirectionalLight")
+        .def("StaticClass", &UActorFactoryDominantDirectionalLight::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

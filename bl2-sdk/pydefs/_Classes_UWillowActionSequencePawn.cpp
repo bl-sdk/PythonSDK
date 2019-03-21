@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowActionSequencePawn()
 {
-    class_< UWillowActionSequencePawn, bases< UActionSequencePawn >  , boost::noncopyable>("UWillowActionSequencePawn", no_init)
+    py::class_< UWillowActionSequencePawn,  UActionSequencePawn   >("UWillowActionSequencePawn")
         .def_readwrite("WillowAI", &UWillowActionSequencePawn::WillowAI)
         .def_readwrite("MyNavHandle", &UWillowActionSequencePawn::MyNavHandle)
         .def_readwrite("MyWillowMind", &UWillowActionSequencePawn::MyWillowMind)
@@ -15,7 +15,7 @@ void Export_pystes_UWillowActionSequencePawn()
         .def_readwrite("TargetRec", &UWillowActionSequencePawn::TargetRec)
         .def_readwrite("ParentTargetRec", &UWillowActionSequencePawn::ParentTargetRec)
         .def_readwrite("LastYawCheck", &UWillowActionSequencePawn::LastYawCheck)
-        .def("StaticClass", &UWillowActionSequencePawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowActionSequencePawn::StaticClass, py::return_value_policy::reference)
         .def("CreateActorPath", &UWillowActionSequencePawn::CreateActorPath)
         .def("GetActorFloorLoc", &UWillowActionSequencePawn::GetActorFloorLoc)
         .def("CreateBackupFlyerPath", &UWillowActionSequencePawn::CreateBackupFlyerPath)

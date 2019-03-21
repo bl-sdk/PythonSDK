@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULcdHelper()
 {
-    class_< ULcdHelper, bases< UObject >  , boost::noncopyable>("ULcdHelper", no_init)
+    py::class_< ULcdHelper,  UObject   >("ULcdHelper")
         .def_readwrite("VfTable_FTickableObject", &ULcdHelper::VfTable_FTickableObject)
-        .def("StaticClass", &ULcdHelper::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULcdHelper::StaticClass, py::return_value_policy::reference)
         .def("IsLcdScreenConnected", &ULcdHelper::IsLcdScreenConnected)
         .def("UpdateAvailableTokens", &ULcdHelper::UpdateAvailableTokens)
         .def("UpdateCurrency", &ULcdHelper::UpdateCurrency)

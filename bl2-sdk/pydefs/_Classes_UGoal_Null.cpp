@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGoal_Null()
 {
-    class_< UGoal_Null, bases< UPathGoalEvaluator >  , boost::noncopyable>("UGoal_Null", no_init)
-        .def("StaticClass", &UGoal_Null::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGoal_Null,  UPathGoalEvaluator   >("UGoal_Null")
+        .def("StaticClass", &UGoal_Null::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UGoal_Null::Recycle)
         .def("GoUntilBust", &UGoal_Null::GoUntilBust)
         .staticmethod("StaticClass")

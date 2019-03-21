@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableExpansionDefinition()
 {
-    class_< UDownloadableExpansionDefinition, bases< UDownloadableContentDefinition >  , boost::noncopyable>("UDownloadableExpansionDefinition", no_init)
+    py::class_< UDownloadableExpansionDefinition,  UDownloadableContentDefinition   >("UDownloadableExpansionDefinition")
         .def_readwrite("LevelTravelPairs", &UDownloadableExpansionDefinition::LevelTravelPairs)
         .def_readwrite("LevelDependencyList", &UDownloadableExpansionDefinition::LevelDependencyList)
         .def_readwrite("ChallengeList", &UDownloadableExpansionDefinition::ChallengeList)
@@ -18,7 +18,7 @@ void Export_pystes_UDownloadableExpansionDefinition()
         .def_readwrite("MissionNumberBase", &UDownloadableExpansionDefinition::MissionNumberBase)
         .def_readwrite("SeasonalMissionList", &UDownloadableExpansionDefinition::SeasonalMissionList)
         .def_readwrite("TrainingMessageListDef", &UDownloadableExpansionDefinition::TrainingMessageListDef)
-        .def("StaticClass", &UDownloadableExpansionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadableExpansionDefinition::StaticClass, py::return_value_policy::reference)
         .def("IsLevelTravelAccessible", &UDownloadableExpansionDefinition::IsLevelTravelAccessible)
         .def("CanTravelTo", &UDownloadableExpansionDefinition::CanTravelTo)
         .staticmethod("StaticClass")

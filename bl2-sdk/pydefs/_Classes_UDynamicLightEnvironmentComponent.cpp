@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDynamicLightEnvironmentComponent()
 {
-    class_< UDynamicLightEnvironmentComponent, bases< ULightEnvironmentComponent >  , boost::noncopyable>("UDynamicLightEnvironmentComponent", no_init)
+    py::class_< UDynamicLightEnvironmentComponent,  ULightEnvironmentComponent   >("UDynamicLightEnvironmentComponent")
         .def_readwrite("State", &UDynamicLightEnvironmentComponent::State)
         .def_readwrite("InvisibleUpdateTime", &UDynamicLightEnvironmentComponent::InvisibleUpdateTime)
         .def_readwrite("MinTimeBetweenFullUpdates", &UDynamicLightEnvironmentComponent::MinTimeBetweenFullUpdates)
@@ -28,7 +28,7 @@ void Export_pystes_UDynamicLightEnvironmentComponent()
         .def_readwrite("OverriddenBounds", &UDynamicLightEnvironmentComponent::OverriddenBounds)
         .def_readwrite("OverriddenLightingChannels", &UDynamicLightEnvironmentComponent::OverriddenLightingChannels)
         .def_readwrite("OverriddenLightComponents", &UDynamicLightEnvironmentComponent::OverriddenLightComponents)
-        .def("StaticClass", &UDynamicLightEnvironmentComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDynamicLightEnvironmentComponent::StaticClass, py::return_value_policy::reference)
         .def("ResetEnvironment", &UDynamicLightEnvironmentComponent::ResetEnvironment)
         .staticmethod("StaticClass")
   ;

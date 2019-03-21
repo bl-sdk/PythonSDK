@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCheatManager()
 {
-    class_< UCheatManager, bases< UObject >  , boost::noncopyable>("UCheatManager", no_init)
+    py::class_< UCheatManager,  UObject   >("UCheatManager")
         .def_readwrite("DebugCameraControllerRef", &UCheatManager::DebugCameraControllerRef)
         .def_readwrite("DebugCameraControllerClass", &UCheatManager::DebugCameraControllerClass)
         .def_readwrite("ViewingFrom", &UCheatManager::ViewingFrom)
         .def_readwrite("OwnCamera", &UCheatManager::OwnCamera)
-        .def("StaticClass", &UCheatManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCheatManager::StaticClass, py::return_value_policy::reference)
         .def("ToggleAssertOnGBXCheck", &UCheatManager::ToggleAssertOnGBXCheck)
         .def("SetGBXCheckDisplayDuration", &UCheatManager::SetGBXCheckDisplayDuration)
         .def("SetNumberOfDebugMessages", &UCheatManager::SetNumberOfDebugMessages)

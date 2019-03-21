@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AInteractionProxy()
 {
-    class_< AInteractionProxy, bases< ATrigger >  , boost::noncopyable>("AInteractionProxy", no_init)
+    py::class_< AInteractionProxy,  ATrigger   >("AInteractionProxy")
         .def_readwrite("VfTable_IIUsable", &AInteractionProxy::VfTable_IIUsable)
         .def_readwrite("Definition", &AInteractionProxy::Definition)
         .def_readwrite("CostsToUseType", &AInteractionProxy::CostsToUseType)
         .def_readwrite("CostsToSecondaryUseType", &AInteractionProxy::CostsToSecondaryUseType)
         .def_readwrite("CostsToUseAmount", &AInteractionProxy::CostsToUseAmount)
         .def_readwrite("CostsToSecondaryUseAmount", &AInteractionProxy::CostsToSecondaryUseAmount)
-        .def("StaticClass", &AInteractionProxy::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AInteractionProxy::StaticClass, py::return_value_policy::reference)
         .def("NotifyUserCouldNotAffordAttemptedUse", &AInteractionProxy::NotifyUserCouldNotAffordAttemptedUse)
         .def("SetInteractionIcon", &AInteractionProxy::SetInteractionIcon)
         .def("UseObject", &AInteractionProxy::UseObject)

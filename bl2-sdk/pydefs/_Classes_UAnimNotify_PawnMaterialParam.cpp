@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_PawnMaterialParam()
 {
-    class_< UAnimNotify_PawnMaterialParam, bases< UAnimNotify_Scripted >  , boost::noncopyable>("UAnimNotify_PawnMaterialParam", no_init)
+    py::class_< UAnimNotify_PawnMaterialParam,  UAnimNotify_Scripted   >("UAnimNotify_PawnMaterialParam")
         .def_readwrite("ScalarParameterInterpArray", &UAnimNotify_PawnMaterialParam::ScalarParameterInterpArray)
-        .def("StaticClass", &UAnimNotify_PawnMaterialParam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_PawnMaterialParam::StaticClass, py::return_value_policy::reference)
         .def("eventNotify", &UAnimNotify_PawnMaterialParam::eventNotify)
         .staticmethod("StaticClass")
   ;

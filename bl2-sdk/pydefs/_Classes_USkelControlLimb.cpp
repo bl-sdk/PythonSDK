@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControlLimb()
 {
-    class_< USkelControlLimb, bases< USkelControlBase >  , boost::noncopyable>("USkelControlLimb", no_init)
+    py::class_< USkelControlLimb,  USkelControlBase   >("USkelControlLimb")
         .def_readwrite("EffectorLocation", &USkelControlLimb::EffectorLocation)
         .def_readwrite("EffectorRotation", &USkelControlLimb::EffectorRotation)
         .def_readwrite("EffectorLocationSpace", &USkelControlLimb::EffectorLocationSpace)
@@ -21,7 +21,7 @@ void Export_pystes_USkelControlLimb()
         .def_readwrite("StretchLimits", &USkelControlLimb::StretchLimits)
         .def_readwrite("StretchRollBoneName", &USkelControlLimb::StretchRollBoneName)
         .def_readwrite("CachedTwistBoneIndex", &USkelControlLimb::CachedTwistBoneIndex)
-        .def("StaticClass", &USkelControlLimb::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControlLimb::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

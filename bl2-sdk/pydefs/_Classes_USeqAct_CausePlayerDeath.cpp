@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_CausePlayerDeath()
 {
-    class_< USeqAct_CausePlayerDeath, bases< USequenceAction >  , boost::noncopyable>("USeqAct_CausePlayerDeath", no_init)
-        .def("StaticClass", &USeqAct_CausePlayerDeath::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_CausePlayerDeath,  USequenceAction   >("USeqAct_CausePlayerDeath")
+        .def("StaticClass", &USeqAct_CausePlayerDeath::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

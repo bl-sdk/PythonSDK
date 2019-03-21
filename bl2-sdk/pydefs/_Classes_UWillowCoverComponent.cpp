@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowCoverComponent()
 {
-    class_< UWillowCoverComponent, bases< UActorComponent >  , boost::noncopyable>("UWillowCoverComponent", no_init)
+    py::class_< UWillowCoverComponent,  UActorComponent   >("UWillowCoverComponent")
         .def_readwrite("AIPawn", &UWillowCoverComponent::AIPawn)
         .def_readwrite("LastAction", &UWillowCoverComponent::LastAction)
-        .def("StaticClass", &UWillowCoverComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowCoverComponent::StaticClass, py::return_value_policy::reference)
         .def("IdleTimer", &UWillowCoverComponent::IdleTimer)
         .def("FireTimer", &UWillowCoverComponent::FireTimer)
         .def("GetRange", &UWillowCoverComponent::GetRange)
@@ -17,7 +17,7 @@ void Export_pystes_UWillowCoverComponent()
         .def("PlayTimedAction", &UWillowCoverComponent::PlayTimedAction)
         .def("eventUpdateAction", &UWillowCoverComponent::eventUpdateAction)
         .def("GetAction", &UWillowCoverComponent::GetAction)
-        .def("GetStance", &UWillowCoverComponent::GetStance, return_value_policy< reference_existing_object >())
+        .def("GetStance", &UWillowCoverComponent::GetStance, py::return_value_policy::reference)
         .def("GetCoverRotation", &UWillowCoverComponent::GetCoverRotation)
         .def("GetCoverLocation", &UWillowCoverComponent::GetCoverLocation)
         .def("ResetExposure", &UWillowCoverComponent::ResetExposure)

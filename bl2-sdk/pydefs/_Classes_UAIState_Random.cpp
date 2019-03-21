@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIState_Random()
 {
-    class_< UAIState_Random, bases< UGearboxEditorNode >  , boost::noncopyable>("UAIState_Random", no_init)
-        .def("StaticClass", &UAIState_Random::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAIState_Random,  UGearboxEditorNode   >("UAIState_Random")
+        .def("StaticClass", &UAIState_Random::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

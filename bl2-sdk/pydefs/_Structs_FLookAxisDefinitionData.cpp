@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLookAxisDefinitionData()
 {
-    class_< FLookAxisDefinitionData >("FLookAxisDefinitionData", no_init)
+    py::class_< FLookAxisDefinitionData >("FLookAxisDefinitionData")
         .def_readwrite("Horizontal", &FLookAxisDefinitionData::Horizontal)
         .def_readwrite("Vertical", &FLookAxisDefinitionData::Vertical)
   ;

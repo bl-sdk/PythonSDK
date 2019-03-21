@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryDynamicSM()
 {
-    class_< UActorFactoryDynamicSM, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryDynamicSM", no_init)
+    py::class_< UActorFactoryDynamicSM,  UActorFactory   >("UActorFactoryDynamicSM")
         .def_readwrite("StaticMesh", &UActorFactoryDynamicSM::StaticMesh)
         .def_readwrite("DrawScale3D", &UActorFactoryDynamicSM::DrawScale3D)
         .def_readwrite("CollisionType", &UActorFactoryDynamicSM::CollisionType)
-        .def("StaticClass", &UActorFactoryDynamicSM::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryDynamicSM::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

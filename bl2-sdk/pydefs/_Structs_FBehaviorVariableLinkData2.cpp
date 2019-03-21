@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorVariableLinkData2()
 {
-    class_< FBehaviorVariableLinkData2 >("FBehaviorVariableLinkData2", no_init)
+    py::class_< FBehaviorVariableLinkData2 >("FBehaviorVariableLinkData2")
         .def_readwrite("PropertyName", &FBehaviorVariableLinkData2::PropertyName)
         .def_readwrite("VariableLinkType", &FBehaviorVariableLinkData2::VariableLinkType)
         .def_readwrite("ConnectionIndex", &FBehaviorVariableLinkData2::ConnectionIndex)

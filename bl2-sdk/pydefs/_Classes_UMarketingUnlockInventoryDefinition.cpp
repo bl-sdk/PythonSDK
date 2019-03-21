@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMarketingUnlockInventoryDefinition()
 {
-    class_< UMarketingUnlockInventoryDefinition, bases< UMarketingUnlockDefinition >  , boost::noncopyable>("UMarketingUnlockInventoryDefinition", no_init)
+    py::class_< UMarketingUnlockInventoryDefinition,  UMarketingUnlockDefinition   >("UMarketingUnlockInventoryDefinition")
         .def_readwrite("UnlockItems", &UMarketingUnlockInventoryDefinition::UnlockItems)
-        .def("StaticClass", &UMarketingUnlockInventoryDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMarketingUnlockInventoryDefinition::StaticClass, py::return_value_policy::reference)
         .def("GenerateUnlockedItems", &UMarketingUnlockInventoryDefinition::GenerateUnlockedItems)
         .staticmethod("StaticClass")
   ;

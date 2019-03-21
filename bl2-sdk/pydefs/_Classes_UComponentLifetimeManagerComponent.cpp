@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UComponentLifetimeManagerComponent()
 {
-    class_< UComponentLifetimeManagerComponent, bases< UActorComponent >  , boost::noncopyable>("UComponentLifetimeManagerComponent", no_init)
+    py::class_< UComponentLifetimeManagerComponent,  UActorComponent   >("UComponentLifetimeManagerComponent")
         .def_readwrite("ManagedComponents", &UComponentLifetimeManagerComponent::ManagedComponents)
         .def_readwrite("ManagedComponentsLifeSpan", &UComponentLifetimeManagerComponent::ManagedComponentsLifeSpan)
-        .def("StaticClass", &UComponentLifetimeManagerComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UComponentLifetimeManagerComponent::StaticClass, py::return_value_policy::reference)
         .def("RemoveManagedComponent", &UComponentLifetimeManagerComponent::RemoveManagedComponent)
         .def("AddManagedComponent", &UComponentLifetimeManagerComponent::AddManagedComponent)
         .staticmethod("StaticClass")

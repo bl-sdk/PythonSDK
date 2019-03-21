@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIPawnBalanceDefinition()
 {
-    class_< UAIPawnBalanceDefinition, bases< UBaseBalanceDefinition >  , boost::noncopyable>("UAIPawnBalanceDefinition", no_init)
+    py::class_< UAIPawnBalanceDefinition,  UBaseBalanceDefinition   >("UAIPawnBalanceDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UAIPawnBalanceDefinition::VfTable_IIConstructObject)
         .def_readwrite("CanSpawnIf", &UAIPawnBalanceDefinition::CanSpawnIf)
         .def_readwrite("PlayThroughs", &UAIPawnBalanceDefinition::PlayThroughs)
@@ -21,11 +21,11 @@ void Export_pystes_UAIPawnBalanceDefinition()
         .def_readwrite("Grades", &UAIPawnBalanceDefinition::Grades)
         .def_readwrite("FixupAIPawnNameIndex", &UAIPawnBalanceDefinition::FixupAIPawnNameIndex)
         .def_readwrite("BalanceModifier", &UAIPawnBalanceDefinition::BalanceModifier)
-        .def("StaticClass", &UAIPawnBalanceDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAIPawnBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetTransformedKillStat", &UAIPawnBalanceDefinition::GetTransformedKillStat)
         .def("GetTransformedDisplayName", &UAIPawnBalanceDefinition::GetTransformedDisplayName)
         .def("SetupPawnItemPoolList", &UAIPawnBalanceDefinition::SetupPawnItemPoolList)
-        .def("GetPawnArchetype", &UAIPawnBalanceDefinition::GetPawnArchetype, return_value_policy< reference_existing_object >())
+        .def("GetPawnArchetype", &UAIPawnBalanceDefinition::GetPawnArchetype, py::return_value_policy::reference)
         .def("GetPlayThroughIndex", &UAIPawnBalanceDefinition::GetPlayThroughIndex)
         .staticmethod("StaticClass")
   ;

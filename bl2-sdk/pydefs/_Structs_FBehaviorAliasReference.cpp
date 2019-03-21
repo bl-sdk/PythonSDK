@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorAliasReference()
 {
-    class_< FBehaviorAliasReference >("FBehaviorAliasReference", no_init)
+    py::class_< FBehaviorAliasReference >("FBehaviorAliasReference")
         .def_readwrite("BehaviorAlias", &FBehaviorAliasReference::BehaviorAlias)
         .def_readwrite("BehaviorList", &FBehaviorAliasReference::BehaviorList)
   ;

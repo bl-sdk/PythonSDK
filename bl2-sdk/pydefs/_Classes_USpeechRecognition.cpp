@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpeechRecognition()
 {
-    class_< USpeechRecognition, bases< UObject >  , boost::noncopyable>("USpeechRecognition", no_init)
+    py::class_< USpeechRecognition,  UObject   >("USpeechRecognition")
         .def_readwrite("Language", &USpeechRecognition::Language)
         .def_readwrite("ConfidenceThreshhold", &USpeechRecognition::ConfidenceThreshhold)
         .def_readwrite("Vocabularies", &USpeechRecognition::Vocabularies)
@@ -14,7 +14,7 @@ void Export_pystes_USpeechRecognition()
         .def_readwrite("UserData", &USpeechRecognition::UserData)
         .def_readonly("InstanceData", &USpeechRecognition::InstanceData)
         .def_readwrite("FnxVoiceData", &USpeechRecognition::FnxVoiceData)
-        .def("StaticClass", &USpeechRecognition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpeechRecognition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

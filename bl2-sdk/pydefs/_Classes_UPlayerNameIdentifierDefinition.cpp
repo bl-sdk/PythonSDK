@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerNameIdentifierDefinition()
 {
-    class_< UPlayerNameIdentifierDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UPlayerNameIdentifierDefinition", no_init)
+    py::class_< UPlayerNameIdentifierDefinition,  UGBXDefinition   >("UPlayerNameIdentifierDefinition")
         .def_readwrite("CharacterName", &UPlayerNameIdentifierDefinition::CharacterName)
         .def_readwrite("LocalizedCharacterName", &UPlayerNameIdentifierDefinition::LocalizedCharacterName)
         .def_readwrite("LocalizedCharacterDescription", &UPlayerNameIdentifierDefinition::LocalizedCharacterDescription)
@@ -43,7 +43,7 @@ void Export_pystes_UPlayerNameIdentifierDefinition()
         .def_readwrite("GFxActionSkillGuideHideGotoAndPlayString", &UPlayerNameIdentifierDefinition::GFxActionSkillGuideHideGotoAndPlayString)
         .def_readwrite("GFxActionSkillGuideHideStart", &UPlayerNameIdentifierDefinition::GFxActionSkillGuideHideStart)
         .def_readwrite("GFxActionSkillGuideHideResume", &UPlayerNameIdentifierDefinition::GFxActionSkillGuideHideResume)
-        .def("StaticClass", &UPlayerNameIdentifierDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerNameIdentifierDefinition::StaticClass, py::return_value_policy::reference)
         .def("eventGetCoopCharacterIconSwfMoviePath", &UPlayerNameIdentifierDefinition::eventGetCoopCharacterIconSwfMoviePath)
         .def("eventGetCharacterIconSwfMoviePath", &UPlayerNameIdentifierDefinition::eventGetCharacterIconSwfMoviePath)
         .def("eventGetPortraitSwfMoviePath", &UPlayerNameIdentifierDefinition::eventGetPortraitSwfMoviePath)

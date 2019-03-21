@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReflectionInfo()
 {
-    class_< FReflectionInfo >("FReflectionInfo", no_init)
+    py::class_< FReflectionInfo >("FReflectionInfo")
         .def_readwrite("ReflectionType", &FReflectionInfo::ReflectionType)
         .def_readwrite("ReflectedDamageScale", &FReflectionInfo::ReflectedDamageScale)
         .def_readwrite("ReflectedDamageToReflector", &FReflectionInfo::ReflectedDamageToReflector)

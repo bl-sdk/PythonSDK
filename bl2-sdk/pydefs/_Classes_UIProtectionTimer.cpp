@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIProtectionTimer()
 {
-    class_< UIProtectionTimer, bases< UInterface >  , boost::noncopyable>("UIProtectionTimer", no_init)
-        .def("StaticClass", &UIProtectionTimer::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIProtectionTimer,  UInterface   >("UIProtectionTimer")
+        .def("StaticClass", &UIProtectionTimer::StaticClass, py::return_value_policy::reference)
         .def("GetMinimumHealthMaintainedByProtectionTimer", &UIProtectionTimer::GetMinimumHealthMaintainedByProtectionTimer)
         .def("EnableProtectionTimer", &UIProtectionTimer::EnableProtectionTimer)
         .def("IsProtectionTimerActive", &UIProtectionTimer::IsProtectionTimerActive)

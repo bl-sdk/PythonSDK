@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIGBXNavMeshSpecialMove()
 {
-    class_< UIGBXNavMeshSpecialMove, bases< UInterface >  , boost::noncopyable>("UIGBXNavMeshSpecialMove", no_init)
-        .def("StaticClass", &UIGBXNavMeshSpecialMove::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIGBXNavMeshSpecialMove,  UInterface   >("UIGBXNavMeshSpecialMove")
+        .def("StaticClass", &UIGBXNavMeshSpecialMove::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

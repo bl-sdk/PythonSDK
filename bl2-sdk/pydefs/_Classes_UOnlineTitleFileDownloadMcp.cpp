@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineTitleFileDownloadMcp()
 {
-    class_< UOnlineTitleFileDownloadMcp, bases< UObject >  , boost::noncopyable>("UOnlineTitleFileDownloadMcp", no_init)
+    py::class_< UOnlineTitleFileDownloadMcp,  UObject   >("UOnlineTitleFileDownloadMcp")
         .def_readwrite("ReadTitleFileCompleteDelegates", &UOnlineTitleFileDownloadMcp::ReadTitleFileCompleteDelegates)
         .def_readwrite("TitleFiles", &UOnlineTitleFileDownloadMcp::TitleFiles)
         .def_readwrite("DownloadCount", &UOnlineTitleFileDownloadMcp::DownloadCount)
@@ -13,7 +13,7 @@ void Export_pystes_UOnlineTitleFileDownloadMcp()
         .def_readwrite("TimeOut", &UOnlineTitleFileDownloadMcp::TimeOut)
         .def_readwrite("FilesToUrls", &UOnlineTitleFileDownloadMcp::FilesToUrls)
         .def_readwrite("VfTable_FTickableObject", &UMCPBase::VfTable_FTickableObject)
-        .def("StaticClass", &UOnlineTitleFileDownloadMcp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineTitleFileDownloadMcp::StaticClass, py::return_value_policy::reference)
         .def("ClearShareTitleFileCompleteDelegate", &UOnlineTitleFileDownloadMcp::ClearShareTitleFileCompleteDelegate)
         .def("AddShareTitleFileCompleteDelegate", &UOnlineTitleFileDownloadMcp::AddShareTitleFileCompleteDelegate)
         .def("ShareTitleFile", &UOnlineTitleFileDownloadMcp::ShareTitleFile)

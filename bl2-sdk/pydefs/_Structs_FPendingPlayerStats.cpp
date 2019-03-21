@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPendingPlayerStats()
 {
-    class_< FPendingPlayerStats >("FPendingPlayerStats", no_init)
+    py::class_< FPendingPlayerStats >("FPendingPlayerStats")
         .def_readwrite("Player", &FPendingPlayerStats::Player)
         .def_readwrite("PlayerName", &FPendingPlayerStats::PlayerName)
         .def_readwrite("StatGuid", &FPendingPlayerStats::StatGuid)

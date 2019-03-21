@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULoadCharacterLobbyGFxObject()
 {
-    class_< ULoadCharacterLobbyGFxObject, bases< UGFxObject >  , boost::noncopyable>("ULoadCharacterLobbyGFxObject", no_init)
-        .def("StaticClass", &ULoadCharacterLobbyGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULoadCharacterLobbyGFxObject,  UGFxObject   >("ULoadCharacterLobbyGFxObject")
+        .def("StaticClass", &ULoadCharacterLobbyGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetQuadrant", &ULoadCharacterLobbyGFxObject::SetQuadrant)
         .def("SetTooltips", &ULoadCharacterLobbyGFxObject::SetTooltips)
         .def("SetSlotData", &ULoadCharacterLobbyGFxObject::SetSlotData)

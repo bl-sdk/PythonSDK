@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FValidNameRange()
 {
-    class_< FValidNameRange >("FValidNameRange", no_init)
+    py::class_< FValidNameRange >("FValidNameRange")
         .def_readwrite("Start", &FValidNameRange::Start)
         .def_readwrite("End", &FValidNameRange::End)
   ;

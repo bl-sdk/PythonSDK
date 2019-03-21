@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemBalanceDefinition()
 {
-    class_< UItemBalanceDefinition, bases< UInventoryBalanceDefinition >  , boost::noncopyable>("UItemBalanceDefinition", no_init)
+    py::class_< UItemBalanceDefinition,  UInventoryBalanceDefinition   >("UItemBalanceDefinition")
         .def_readwrite("ItemPartListCollection", &UItemBalanceDefinition::ItemPartListCollection)
         .def_readwrite("RuntimePartListCollection", &UItemBalanceDefinition::RuntimePartListCollection)
-        .def("StaticClass", &UItemBalanceDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

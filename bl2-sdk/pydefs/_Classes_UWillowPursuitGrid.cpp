@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPursuitGrid()
 {
-    class_< UWillowPursuitGrid, bases< UObject >  , boost::noncopyable>("UWillowPursuitGrid", no_init)
+    py::class_< UWillowPursuitGrid,  UObject   >("UWillowPursuitGrid")
         .def_readwrite("PursuitNodes", &UWillowPursuitGrid::PursuitNodes)
         .def_readwrite("GridName", &UWillowPursuitGrid::GridName)
-        .def("StaticClass", &UWillowPursuitGrid::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPursuitGrid::StaticClass, py::return_value_policy::reference)
         .def("InitializeFromDefinition", &UWillowPursuitGrid::InitializeFromDefinition)
         .staticmethod("StaticClass")
   ;

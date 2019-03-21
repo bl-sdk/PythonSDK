@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControlLeftHandGripWeapon()
 {
-    class_< USkelControlLeftHandGripWeapon, bases< USkelControlLimb >  , boost::noncopyable>("USkelControlLeftHandGripWeapon", no_init)
+    py::class_< USkelControlLeftHandGripWeapon,  USkelControlLimb   >("USkelControlLeftHandGripWeapon")
         .def_readwrite("CachedBodyClass", &USkelControlLeftHandGripWeapon::CachedBodyClass)
-        .def("StaticClass", &USkelControlLeftHandGripWeapon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControlLeftHandGripWeapon::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

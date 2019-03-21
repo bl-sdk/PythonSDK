@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FExplosionScaleData()
 {
-    class_< FExplosionScaleData >("FExplosionScaleData", no_init)
+    py::class_< FExplosionScaleData >("FExplosionScaleData")
         .def_readwrite("ExplosionPSTemplate", &FExplosionScaleData::ExplosionPSTemplate)
         .def_readwrite("MinRadius", &FExplosionScaleData::MinRadius)
         .def_readwrite("MaxRadius", &FExplosionScaleData::MaxRadius)

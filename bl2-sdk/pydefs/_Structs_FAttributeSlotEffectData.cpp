@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributeSlotEffectData()
 {
-    class_< FAttributeSlotEffectData >("FAttributeSlotEffectData", no_init)
+    py::class_< FAttributeSlotEffectData >("FAttributeSlotEffectData")
         .def_readwrite("SlotName", &FAttributeSlotEffectData::SlotName)
         .def_readwrite("AttributeToModify", &FAttributeSlotEffectData::AttributeToModify)
         .def_readwrite("ConstraintAttribute", &FAttributeSlotEffectData::ConstraintAttribute)

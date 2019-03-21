@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFeaturedItemData()
 {
-    class_< FFeaturedItemData >("FFeaturedItemData", no_init)
+    py::class_< FFeaturedItemData >("FFeaturedItemData")
         .def_readwrite("CommerceMarkup", &FFeaturedItemData::CommerceMarkup)
         .def_readwrite("LootConfiguration", &FFeaturedItemData::LootConfiguration)
         .def_readwrite("GameStageValue", &FFeaturedItemData::GameStageValue)

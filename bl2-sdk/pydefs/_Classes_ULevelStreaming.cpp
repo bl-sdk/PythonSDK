@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelStreaming()
 {
-    class_< ULevelStreaming, bases< UObject >  , boost::noncopyable>("ULevelStreaming", no_init)
+    py::class_< ULevelStreaming,  UObject   >("ULevelStreaming")
         .def_readwrite("PackageName", &ULevelStreaming::PackageName)
         .def_readwrite("LoadedLevel", &ULevelStreaming::LoadedLevel)
         .def_readwrite("Offset", &ULevelStreaming::Offset)
@@ -17,7 +17,7 @@ void Export_pystes_ULevelStreaming()
         .def_readwrite("Keywords", &ULevelStreaming::Keywords)
         .def_readwrite("EditorGridVolume", &ULevelStreaming::EditorGridVolume)
         .def_readonly("GridPosition", &ULevelStreaming::GridPosition)
-        .def("StaticClass", &ULevelStreaming::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULevelStreaming::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

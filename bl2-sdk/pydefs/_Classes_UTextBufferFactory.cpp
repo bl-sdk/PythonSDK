@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTextBufferFactory()
 {
-    class_< UTextBufferFactory, bases< UFactory >  , boost::noncopyable>("UTextBufferFactory", no_init)
-        .def("StaticClass", &UTextBufferFactory::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTextBufferFactory,  UFactory   >("UTextBufferFactory")
+        .def("StaticClass", &UTextBufferFactory::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

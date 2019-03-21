@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponResourcePoolAttributeContextResolver()
 {
-    class_< UWeaponResourcePoolAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UWeaponResourcePoolAttributeContextResolver", no_init)
+    py::class_< UWeaponResourcePoolAttributeContextResolver,  UAttributeContextResolver   >("UWeaponResourcePoolAttributeContextResolver")
         .def_readwrite("PrimaryHandResource", &UWeaponResourcePoolAttributeContextResolver::PrimaryHandResource)
         .def_readwrite("OffHandResource", &UWeaponResourcePoolAttributeContextResolver::OffHandResource)
-        .def("StaticClass", &UWeaponResourcePoolAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponResourcePoolAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

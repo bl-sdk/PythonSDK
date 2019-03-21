@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqVar_OverpowerLevel()
 {
-    class_< USeqVar_OverpowerLevel, bases< USeqVar_Int >  , boost::noncopyable>("USeqVar_OverpowerLevel", no_init)
-        .def("StaticClass", &USeqVar_OverpowerLevel::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqVar_OverpowerLevel,  USeqVar_Int   >("USeqVar_OverpowerLevel")
+        .def("StaticClass", &USeqVar_OverpowerLevel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

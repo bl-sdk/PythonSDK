@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIDynamicObstacle()
 {
-    class_< UIDynamicObstacle, bases< UInterface >  , boost::noncopyable>("UIDynamicObstacle", no_init)
-        .def("StaticClass", &UIDynamicObstacle::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIDynamicObstacle,  UInterface   >("UIDynamicObstacle")
+        .def("StaticClass", &UIDynamicObstacle::StaticClass, py::return_value_policy::reference)
         .def("GetObstacleInfo", &UIDynamicObstacle::GetObstacleInfo)
-        .def("GetObstacleActor", &UIDynamicObstacle::GetObstacleActor, return_value_policy< reference_existing_object >())
+        .def("GetObstacleActor", &UIDynamicObstacle::GetObstacleActor, py::return_value_policy::reference)
         .def("GetMagnetData", &UIDynamicObstacle::GetMagnetData)
         .def("SetObstacleVelocity", &UIDynamicObstacle::SetObstacleVelocity)
         .def("CanAvoidObstacle", &UIDynamicObstacle::CanAvoidObstacle)

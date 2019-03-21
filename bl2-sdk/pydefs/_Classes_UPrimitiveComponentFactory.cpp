@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPrimitiveComponentFactory()
 {
-    class_< UPrimitiveComponentFactory, bases< UObject >  , boost::noncopyable>("UPrimitiveComponentFactory", no_init)
-        .def("StaticClass", &UPrimitiveComponentFactory::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPrimitiveComponentFactory,  UObject   >("UPrimitiveComponentFactory")
+        .def("StaticClass", &UPrimitiveComponentFactory::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGBXNavMeshPolyData()
 {
-    class_< FGBXNavMeshPolyData >("FGBXNavMeshPolyData", no_init)
+    py::class_< FGBXNavMeshPolyData >("FGBXNavMeshPolyData")
         .def_readwrite("CrossLevelConnections", &FGBXNavMeshPolyData::CrossLevelConnections)
         .def_readwrite("SpecialMoves", &FGBXNavMeshPolyData::SpecialMoves)
         .def_readonly("Obstacles", &FGBXNavMeshPolyData::Obstacles)

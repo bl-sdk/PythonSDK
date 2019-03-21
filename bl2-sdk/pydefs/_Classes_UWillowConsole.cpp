@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowConsole()
 {
-    class_< UWillowConsole, bases< UConsole >  , boost::noncopyable>("UWillowConsole", no_init)
-        .def("StaticClass", &UWillowConsole::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowConsole,  UConsole   >("UWillowConsole")
+        .def("StaticClass", &UWillowConsole::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

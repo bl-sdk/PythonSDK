@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGBXDefinition()
 {
-    class_< UGBXDefinition, bases< UObject >  , boost::noncopyable>("UGBXDefinition", no_init)
-        .def("StaticClass", &UGBXDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGBXDefinition,  UObject   >("UGBXDefinition")
+        .def("StaticClass", &UGBXDefinition::StaticClass, py::return_value_policy::reference)
         .def("InitializeDefinitionActor", &UGBXDefinition::InitializeDefinitionActor)
-        .def("GetDefinitionActorClass", &UGBXDefinition::GetDefinitionActorClass, return_value_policy< reference_existing_object >())
+        .def("GetDefinitionActorClass", &UGBXDefinition::GetDefinitionActorClass, py::return_value_policy::reference)
         .def("StaticGetFullNameForDefinition", &UGBXDefinition::StaticGetFullNameForDefinition)
         .def("GetFullDefinitionName", &UGBXDefinition::GetFullDefinitionName)
-        .def("GetDefinition", &UGBXDefinition::GetDefinition, return_value_policy< reference_existing_object >())
+        .def("GetDefinition", &UGBXDefinition::GetDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

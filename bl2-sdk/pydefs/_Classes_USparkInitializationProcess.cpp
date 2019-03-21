@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USparkInitializationProcess()
 {
-    class_< USparkInitializationProcess, bases< UObject >  , boost::noncopyable>("USparkInitializationProcess", no_init)
+    py::class_< USparkInitializationProcess,  UObject   >("USparkInitializationProcess")
         .def_readwrite("Data", &USparkInitializationProcess::Data)
         .def_readwrite("PlayerIndex", &USparkInitializationProcess::PlayerIndex)
         .def_readwrite("SparkInitializedDelegates", &USparkInitializationProcess::SparkInitializedDelegates)
@@ -20,7 +20,7 @@ void Export_pystes_USparkInitializationProcess()
         .def_readwrite("WaitTime", &UGearboxProcess::WaitTime)
         .def_readwrite("CurrentStep", &UGearboxProcess::CurrentStep)
         .def_readwrite("FailureStep", &UGearboxProcess::FailureStep)
-        .def("StaticClass", &USparkInitializationProcess::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USparkInitializationProcess::StaticClass, py::return_value_policy::reference)
         .def("eventTriggerSparkInitializedDelegates", &USparkInitializationProcess::eventTriggerSparkInitializedDelegates)
         .def("ClearSparkInitializedDelegate", &USparkInitializationProcess::ClearSparkInitializedDelegate)
         .def("AddSparkInitializedDelegate", &USparkInitializationProcess::AddSparkInitializedDelegate)

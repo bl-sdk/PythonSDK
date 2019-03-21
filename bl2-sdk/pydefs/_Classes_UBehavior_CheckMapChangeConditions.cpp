@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_CheckMapChangeConditions()
 {
-    class_< UBehavior_CheckMapChangeConditions, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_CheckMapChangeConditions", no_init)
+    py::class_< UBehavior_CheckMapChangeConditions,  UBehaviorBase   >("UBehavior_CheckMapChangeConditions")
         .def_readwrite("MapChangeCustomEvent", &UBehavior_CheckMapChangeConditions::MapChangeCustomEvent)
         .def_readwrite("PlayerBusyCustomEvent", &UBehavior_CheckMapChangeConditions::PlayerBusyCustomEvent)
-        .def("StaticClass", &UBehavior_CheckMapChangeConditions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_CheckMapChangeConditions::StaticClass, py::return_value_policy::reference)
         .def("PlayerBusyEvent", &UBehavior_CheckMapChangeConditions::PlayerBusyEvent)
         .def("MapChangeEvent", &UBehavior_CheckMapChangeConditions::MapChangeEvent)
-        .def("GetDestinationStationDefinition", &UBehavior_CheckMapChangeConditions::GetDestinationStationDefinition, return_value_policy< reference_existing_object >())
+        .def("GetDestinationStationDefinition", &UBehavior_CheckMapChangeConditions::GetDestinationStationDefinition, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CheckMapChangeConditions::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FIntPoint()
 {
-    class_< FIntPoint >("FIntPoint", no_init)
+    py::class_< FIntPoint >("FIntPoint")
         .def_readwrite("X", &FIntPoint::X)
         .def_readwrite("Y", &FIntPoint::Y)
   ;

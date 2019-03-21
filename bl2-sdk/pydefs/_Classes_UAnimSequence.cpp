@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimSequence()
 {
-    class_< UAnimSequence, bases< UObject >  , boost::noncopyable>("UAnimSequence", no_init)
+    py::class_< UAnimSequence,  UObject   >("UAnimSequence")
         .def_readwrite("SequenceName", &UAnimSequence::SequenceName)
         .def_readwrite("Notifies", &UAnimSequence::Notifies)
         .def_readwrite("MetaData", &UAnimSequence::MetaData)
@@ -30,7 +30,7 @@ void Export_pystes_UAnimSequence()
         .def_readwrite("EncodingPkgVersion", &UAnimSequence::EncodingPkgVersion)
         .def_readwrite("UseScore", &UAnimSequence::UseScore)
         .def_readwrite("DeltaTrackCache", &UAnimSequence::DeltaTrackCache)
-        .def("StaticClass", &UAnimSequence::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimSequence::StaticClass, py::return_value_policy::reference)
         .def("GetNotifyTimeByClass", &UAnimSequence::GetNotifyTimeByClass)
         .staticmethod("StaticClass")
   ;

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAttributeModifier()
 {
-    class_< UAttributeModifier, bases< UObject >  , boost::noncopyable>("UAttributeModifier", no_init)
+    py::class_< UAttributeModifier,  UObject   >("UAttributeModifier")
         .def_readwrite("Type", &UAttributeModifier::Type)
         .def_readwrite("Value", &UAttributeModifier::Value)
-        .def("StaticClass", &UAttributeModifier::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAttributeModifier::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

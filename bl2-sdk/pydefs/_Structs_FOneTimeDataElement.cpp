@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOneTimeDataElement()
 {
-    class_< FOneTimeDataElement >("FOneTimeDataElement", no_init)
+    py::class_< FOneTimeDataElement >("FOneTimeDataElement")
         .def_readwrite("Text", &FOneTimeDataElement::Text)
         .def_readwrite("Icon", &FOneTimeDataElement::Icon)
         .def_readwrite("IconOverride", &FOneTimeDataElement::IconOverride)

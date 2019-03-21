@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxActorMoviePool()
 {
-    class_< UGFxActorMoviePool, bases< UObject >  , boost::noncopyable>("UGFxActorMoviePool", no_init)
+    py::class_< UGFxActorMoviePool,  UObject   >("UGFxActorMoviePool")
         .def_readwrite("MovieDefinition", &UGFxActorMoviePool::MovieDefinition)
         .def_readwrite("Pools", &UGFxActorMoviePool::Pools)
         .def_readwrite("MovieTargets", &UGFxActorMoviePool::MovieTargets)
-        .def("StaticClass", &UGFxActorMoviePool::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxActorMoviePool::StaticClass, py::return_value_policy::reference)
         .def("DisplayDebug", &UGFxActorMoviePool::DisplayDebug)
         .def("GetPoolName", &UGFxActorMoviePool::GetPoolName)
         .def("PoolStyleString", &UGFxActorMoviePool::PoolStyleString)

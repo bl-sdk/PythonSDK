@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions()
 {
-    class_< UWillowScrollingListDataProviderKeyboardMouseOptions, bases< UWillowScrollingListDataProviderOptionsBase >  , boost::noncopyable>("UWillowScrollingListDataProviderKeyboardMouseOptions", no_init)
+    py::class_< UWillowScrollingListDataProviderKeyboardMouseOptions,  UWillowScrollingListDataProviderOptionsBase   >("UWillowScrollingListDataProviderKeyboardMouseOptions")
         .def_readwrite("WPCOwner", &UWillowScrollingListDataProviderKeyboardMouseOptions::WPCOwner)
         .def_readwrite("ControllerMappingClip", &UWillowScrollingListDataProviderKeyboardMouseOptions::ControllerMappingClip)
         .def_readwrite("DeviceCollection", &UWillowScrollingListDataProviderKeyboardMouseOptions::DeviceCollection)
         .def_readwrite("KeyBinds", &UWillowScrollingListDataProviderKeyboardMouseOptions::KeyBinds)
         .def_readwrite("CurrentKeyBindSelection", &UWillowScrollingListDataProviderKeyboardMouseOptions::CurrentKeyBindSelection)
-        .def("StaticClass", &UWillowScrollingListDataProviderKeyboardMouseOptions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingListDataProviderKeyboardMouseOptions::StaticClass, py::return_value_policy::reference)
         .def("ShowControllerMapping", &UWillowScrollingListDataProviderKeyboardMouseOptions::ShowControllerMapping)
         .def("OnPop", &UWillowScrollingListDataProviderKeyboardMouseOptions::OnPop)
         .def("Cleanup", &UWillowScrollingListDataProviderKeyboardMouseOptions::Cleanup)

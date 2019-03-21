@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxSeqAct_TriggerDialogName()
 {
-    class_< UGearboxSeqAct_TriggerDialogName, bases< UGearboxSeqAct_TriggerDialog >  , boost::noncopyable>("UGearboxSeqAct_TriggerDialogName", no_init)
+    py::class_< UGearboxSeqAct_TriggerDialogName,  UGearboxSeqAct_TriggerDialog   >("UGearboxSeqAct_TriggerDialogName")
         .def_readwrite("Group", &UGearboxSeqAct_TriggerDialogName::Group)
-        .def("StaticClass", &UGearboxSeqAct_TriggerDialogName::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxSeqAct_TriggerDialogName::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

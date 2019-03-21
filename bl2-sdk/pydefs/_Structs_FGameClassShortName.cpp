@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameClassShortName()
 {
-    class_< FGameClassShortName >("FGameClassShortName", no_init)
+    py::class_< FGameClassShortName >("FGameClassShortName")
         .def_readwrite("ShortName", &FGameClassShortName::ShortName)
         .def_readwrite("GameClassName", &FGameClassShortName::GameClassName)
   ;

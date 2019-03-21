@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryPopulationOpportunityDen()
 {
-    class_< UActorFactoryPopulationOpportunityDen, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryPopulationOpportunityDen", no_init)
-        .def("StaticClass", &UActorFactoryPopulationOpportunityDen::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UActorFactoryPopulationOpportunityDen,  UActorFactory   >("UActorFactoryPopulationOpportunityDen")
+        .def("StaticClass", &UActorFactoryPopulationOpportunityDen::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowInteractiveSwitchRenderingComponent()
 {
-    class_< UWillowInteractiveSwitchRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UWillowInteractiveSwitchRenderingComponent", no_init)
-        .def("StaticClass", &UWillowInteractiveSwitchRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowInteractiveSwitchRenderingComponent,  UPrimitiveComponent   >("UWillowInteractiveSwitchRenderingComponent")
+        .def("StaticClass", &UWillowInteractiveSwitchRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

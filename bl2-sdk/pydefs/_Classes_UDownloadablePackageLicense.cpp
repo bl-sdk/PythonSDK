@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadablePackageLicense()
 {
-    class_< UDownloadablePackageLicense, bases< UObject >  , boost::noncopyable>("UDownloadablePackageLicense", no_init)
+    py::class_< UDownloadablePackageLicense,  UObject   >("UDownloadablePackageLicense")
         .def_readwrite("LicenseMask", &UDownloadablePackageLicense::LicenseMask)
-        .def("StaticClass", &UDownloadablePackageLicense::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadablePackageLicense::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

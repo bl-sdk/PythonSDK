@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_PostAkEventGetRTPC()
 {
-    class_< UBehavior_PostAkEventGetRTPC, bases< UBehavior_PostAkEvent >  , boost::noncopyable>("UBehavior_PostAkEventGetRTPC", no_init)
+    py::class_< UBehavior_PostAkEventGetRTPC,  UBehavior_PostAkEvent   >("UBehavior_PostAkEventGetRTPC")
         .def_readwrite("RTPC", &UBehavior_PostAkEventGetRTPC::RTPC)
         .def_readwrite("LastValue", &UBehavior_PostAkEventGetRTPC::LastValue)
-        .def("StaticClass", &UBehavior_PostAkEventGetRTPC::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_PostAkEventGetRTPC::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_PostAkEventGetRTPC::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_PostAkEventGetRTPC::ApplyBehaviorToContext)
         .staticmethod("StaticClass")

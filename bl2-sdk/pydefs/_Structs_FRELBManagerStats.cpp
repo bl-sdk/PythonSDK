@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRELBManagerStats()
 {
-    class_< FRELBManagerStats >("FRELBManagerStats", no_init)
+    py::class_< FRELBManagerStats >("FRELBManagerStats")
         .def_readwrite("TotalTimeUpdated", &FRELBManagerStats::TotalTimeUpdated)
         .def_readwrite("MaxTimeUpdating", &FRELBManagerStats::MaxTimeUpdating)
         .def_readwrite("NumUpdated", &FRELBManagerStats::NumUpdated)

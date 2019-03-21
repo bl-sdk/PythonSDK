@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionObjectiveDefinition()
 {
-    class_< UMissionObjectiveDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UMissionObjectiveDefinition", no_init)
+    py::class_< UMissionObjectiveDefinition,  UGBXDefinition   >("UMissionObjectiveDefinition")
         .def_readwrite("StatId", &UMissionObjectiveDefinition::StatId)
         .def_readwrite("ObjectiveCount", &UMissionObjectiveDefinition::ObjectiveCount)
         .def_readwrite("OptionalCurrencyRewardType", &UMissionObjectiveDefinition::OptionalCurrencyRewardType)
@@ -15,7 +15,7 @@ void Export_pystes_UMissionObjectiveDefinition()
         .def_readwrite("OptionalOtherCurrencyReward", &UMissionObjectiveDefinition::OptionalOtherCurrencyReward)
         .def_readwrite("OptionalExperienceRewardPercentage", &UMissionObjectiveDefinition::OptionalExperienceRewardPercentage)
         .def_readwrite("KillRestrictions", &UMissionObjectiveDefinition::KillRestrictions)
-        .def("StaticClass", &UMissionObjectiveDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionObjectiveDefinition::StaticClass, py::return_value_policy::reference)
         .def("IsMissionTurnIn", &UMissionObjectiveDefinition::IsMissionTurnIn)
         .def("GetMissionName", &UMissionObjectiveDefinition::GetMissionName)
         .def("GetObjectiveName", &UMissionObjectiveDefinition::GetObjectiveName)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUIStatModifierData()
 {
-    class_< FUIStatModifierData >("FUIStatModifierData", no_init)
+    py::class_< FUIStatModifierData >("FUIStatModifierData")
         .def_readwrite("AttributePresentation", &FUIStatModifierData::AttributePresentation)
         .def_readwrite("ConstraintAttributePresentation", &FUIStatModifierData::ConstraintAttributePresentation)
         .def_readwrite("AttributeStyle", &FUIStatModifierData::AttributeStyle)

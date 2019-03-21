@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMove_Perch()
 {
-    class_< USpecialMove_Perch, bases< UWillowAnimDefinition >  , boost::noncopyable>("USpecialMove_Perch", no_init)
-        .def("StaticClass", &USpecialMove_Perch::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USpecialMove_Perch,  UWillowAnimDefinition   >("USpecialMove_Perch")
+        .def("StaticClass", &USpecialMove_Perch::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

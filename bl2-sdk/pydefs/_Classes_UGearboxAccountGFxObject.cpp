@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxAccountGFxObject()
 {
-    class_< UGearboxAccountGFxObject, bases< UGFxObject >  , boost::noncopyable>("UGearboxAccountGFxObject", no_init)
-        .def("StaticClass", &UGearboxAccountGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxAccountGFxObject,  UGFxObject   >("UGearboxAccountGFxObject")
+        .def("StaticClass", &UGearboxAccountGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SelectIsEnabled", &UGearboxAccountGFxObject::SelectIsEnabled)
         .def("ClearKeyCode", &UGearboxAccountGFxObject::ClearKeyCode)
         .def("TrySetKeyCode", &UGearboxAccountGFxObject::TrySetKeyCode)

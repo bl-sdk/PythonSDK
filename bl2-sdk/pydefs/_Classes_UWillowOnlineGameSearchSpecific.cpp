@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowOnlineGameSearchSpecific()
 {
-    class_< UWillowOnlineGameSearchSpecific, bases< UOnlineGameSearch >  , boost::noncopyable>("UWillowOnlineGameSearchSpecific", no_init)
+    py::class_< UWillowOnlineGameSearchSpecific,  UOnlineGameSearch   >("UWillowOnlineGameSearchSpecific")
         .def_readwrite("LevelVariance", &UWillowOnlineGameSearch::LevelVariance)
         .def_readwrite("MaxPing", &UWillowOnlineGameSearch::MaxPing)
-        .def("StaticClass", &UWillowOnlineGameSearchSpecific::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowOnlineGameSearchSpecific::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

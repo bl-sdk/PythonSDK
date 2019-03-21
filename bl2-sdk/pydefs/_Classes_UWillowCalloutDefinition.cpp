@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowCalloutDefinition()
 {
-    class_< UWillowCalloutDefinition, bases< UGearboxCalloutDefinition >  , boost::noncopyable>("UWillowCalloutDefinition", no_init)
+    py::class_< UWillowCalloutDefinition,  UGearboxCalloutDefinition   >("UWillowCalloutDefinition")
         .def_readwrite("DialogEvent", &UWillowCalloutDefinition::DialogEvent)
-        .def("StaticClass", &UWillowCalloutDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowCalloutDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

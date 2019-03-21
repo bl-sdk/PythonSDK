@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleHandlingDefinition()
 {
-    class_< UVehicleHandlingDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UVehicleHandlingDefinition", no_init)
+    py::class_< UVehicleHandlingDefinition,  UGBXDefinition   >("UVehicleHandlingDefinition")
         .def_readwrite("WheelSuspensionStiffness", &UVehicleHandlingDefinition::WheelSuspensionStiffness)
         .def_readwrite("WheelSuspensionDamping", &UVehicleHandlingDefinition::WheelSuspensionDamping)
         .def_readwrite("WheelSuspensionBias", &UVehicleHandlingDefinition::WheelSuspensionBias)
@@ -29,7 +29,7 @@ void Export_pystes_UVehicleHandlingDefinition()
         .def_readwrite("HandbrakeFishtailForces", &UVehicleHandlingDefinition::HandbrakeFishtailForces)
         .def_readwrite("FishtailCameraShake", &UVehicleHandlingDefinition::FishtailCameraShake)
         .def_readwrite("FishtailCameraShakeMinVehicleSpeed", &UVehicleHandlingDefinition::FishtailCameraShakeMinVehicleSpeed)
-        .def("StaticClass", &UVehicleHandlingDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyDefinitionToVehicle", &UVehicleHandlingDefinition::ApplyDefinitionToVehicle)
         .staticmethod("StaticClass")
   ;

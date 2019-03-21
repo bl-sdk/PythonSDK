@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetPawnThrottleData()
 {
-    class_< UBehavior_SetPawnThrottleData, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetPawnThrottleData", no_init)
+    py::class_< UBehavior_SetPawnThrottleData,  UBehaviorBase   >("UBehavior_SetPawnThrottleData")
         .def_readwrite("FullThrottleDistance", &UBehavior_SetPawnThrottleData::FullThrottleDistance)
         .def_readwrite("FullThrottleTime", &UBehavior_SetPawnThrottleData::FullThrottleTime)
         .def_readwrite("MinThrottleDistance", &UBehavior_SetPawnThrottleData::MinThrottleDistance)
         .def_readwrite("MaxThrottleDistance", &UBehavior_SetPawnThrottleData::MaxThrottleDistance)
         .def_readwrite("MinThrottleTime", &UBehavior_SetPawnThrottleData::MinThrottleTime)
         .def_readwrite("MaxThrottleTime", &UBehavior_SetPawnThrottleData::MaxThrottleTime)
-        .def("StaticClass", &UBehavior_SetPawnThrottleData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetPawnThrottleData::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetPawnThrottleData::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

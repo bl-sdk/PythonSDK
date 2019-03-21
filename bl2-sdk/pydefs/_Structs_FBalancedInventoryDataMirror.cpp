@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBalancedInventoryDataMirror()
 {
-    class_< FBalancedInventoryDataMirror >("FBalancedInventoryDataMirror", no_init)
+    py::class_< FBalancedInventoryDataMirror >("FBalancedInventoryDataMirror")
         .def_readwrite("ObjectName", &FBalancedInventoryDataMirror::ObjectName)
         .def_readwrite("ObjectPath", &FBalancedInventoryDataMirror::ObjectPath)
   ;

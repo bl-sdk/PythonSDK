@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAchievementUnlockData()
 {
-    class_< FAchievementUnlockData >("FAchievementUnlockData", no_init)
+    py::class_< FAchievementUnlockData >("FAchievementUnlockData")
         .def_readwrite("UnlockType", &FAchievementUnlockData::UnlockType)
         .def_readwrite("Achievement", &FAchievementUnlockData::Achievement)
         .def_readwrite("StringData", &FAchievementUnlockData::StringData)

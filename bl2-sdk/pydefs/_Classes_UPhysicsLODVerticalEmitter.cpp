@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicsLODVerticalEmitter()
 {
-    class_< UPhysicsLODVerticalEmitter, bases< UObject >  , boost::noncopyable>("UPhysicsLODVerticalEmitter", no_init)
+    py::class_< UPhysicsLODVerticalEmitter,  UObject   >("UPhysicsLODVerticalEmitter")
         .def_readwrite("ParticlePercentage", &UPhysicsLODVerticalEmitter::ParticlePercentage)
-        .def("StaticClass", &UPhysicsLODVerticalEmitter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysicsLODVerticalEmitter::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

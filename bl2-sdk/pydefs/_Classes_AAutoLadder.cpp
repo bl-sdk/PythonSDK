@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AAutoLadder()
 {
-    class_< AAutoLadder, bases< ALadder >  , boost::noncopyable>("AAutoLadder", no_init)
-        .def("StaticClass", &AAutoLadder::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AAutoLadder,  ALadder   >("AAutoLadder")
+        .def("StaticClass", &AAutoLadder::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

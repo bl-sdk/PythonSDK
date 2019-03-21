@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCreditsGFxDefinition()
 {
-    class_< UCreditsGFxDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UCreditsGFxDefinition", no_init)
+    py::class_< UCreditsGFxDefinition,  UWillowGFxMovie3DDefinition   >("UCreditsGFxDefinition")
         .def_readwrite("CreditData", &UCreditsGFxDefinition::CreditData)
         .def_readwrite("DefaultSpeed", &UCreditsGFxDefinition::DefaultSpeed)
         .def_readwrite("MaxFastForwardSpeed", &UCreditsGFxDefinition::MaxFastForwardSpeed)
@@ -19,7 +19,7 @@ void Export_pystes_UCreditsGFxDefinition()
         .def_readwrite("MiddlewareTexturePath", &UCreditsGFxDefinition::MiddlewareTexturePath)
         .def_readwrite("SplatPackageName", &UCreditsGFxDefinition::SplatPackageName)
         .def_readwrite("SplatTexturePath", &UCreditsGFxDefinition::SplatTexturePath)
-        .def("StaticClass", &UCreditsGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCreditsGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

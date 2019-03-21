@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRelevanceBucketStruct()
 {
-    class_< FRelevanceBucketStruct >("FRelevanceBucketStruct", no_init)
+    py::class_< FRelevanceBucketStruct >("FRelevanceBucketStruct")
         .def_readwrite("NdxToStartCheckFrom", &FRelevanceBucketStruct::NdxToStartCheckFrom)
         .def_readwrite("DistanceSquared", &FRelevanceBucketStruct::DistanceSquared)
         .def_readwrite("MinLineChecksPerFrame", &FRelevanceBucketStruct::MinLineChecksPerFrame)

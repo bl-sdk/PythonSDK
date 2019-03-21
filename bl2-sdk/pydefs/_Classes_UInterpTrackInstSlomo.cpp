@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstSlomo()
 {
-    class_< UInterpTrackInstSlomo, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstSlomo", no_init)
+    py::class_< UInterpTrackInstSlomo,  UInterpTrackInst   >("UInterpTrackInstSlomo")
         .def_readwrite("OldTimeDilation", &UInterpTrackInstSlomo::OldTimeDilation)
-        .def("StaticClass", &UInterpTrackInstSlomo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstSlomo::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

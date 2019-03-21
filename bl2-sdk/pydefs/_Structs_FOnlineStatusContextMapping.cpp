@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineStatusContextMapping()
 {
-    class_< FOnlineStatusContextMapping >("FOnlineStatusContextMapping", no_init)
+    py::class_< FOnlineStatusContextMapping >("FOnlineStatusContextMapping")
         .def_readwrite("KeyString", &FOnlineStatusContextMapping::KeyString)
         .def_readwrite("ContextId", &FOnlineStatusContextMapping::ContextId)
   ;

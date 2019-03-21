@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowAICranePawn()
 {
-    class_< AWillowAICranePawn, bases< AWillowAIPawn >  , boost::noncopyable>("AWillowAICranePawn", no_init)
+    py::class_< AWillowAICranePawn,  AWillowAIPawn   >("AWillowAICranePawn")
         .def_readwrite("CraneSplineName", &AWillowAICranePawn::CraneSplineName)
         .def_readwrite("CraneSingleBoneName", &AWillowAICranePawn::CraneSingleBoneName)
         .def_readwrite("CraneSpline", &AWillowAICranePawn::CraneSpline)
@@ -19,7 +19,7 @@ void Export_pystes_AWillowAICranePawn()
         .def_readwrite("CraneHeightScale", &AWillowAICranePawn::CraneHeightScale)
         .def_readwrite("MyDummy", &AWillowAICranePawn::MyDummy)
         .def_readwrite("GoalLocation", &AWillowAICranePawn::GoalLocation)
-        .def("StaticClass", &AWillowAICranePawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowAICranePawn::StaticClass, py::return_value_policy::reference)
         .def("Behavior_Destroy", &AWillowAICranePawn::Behavior_Destroy)
         .def("DetachDummy", &AWillowAICranePawn::DetachDummy)
         .def("AttachDummy", &AWillowAICranePawn::AttachDummy)

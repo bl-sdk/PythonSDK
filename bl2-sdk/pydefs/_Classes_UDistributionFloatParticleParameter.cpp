@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDistributionFloatParticleParameter()
 {
-    class_< UDistributionFloatParticleParameter, bases< UDistributionFloatParameterBase >  , boost::noncopyable>("UDistributionFloatParticleParameter", no_init)
-        .def("StaticClass", &UDistributionFloatParticleParameter::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDistributionFloatParticleParameter,  UDistributionFloatParameterBase   >("UDistributionFloatParticleParameter")
+        .def("StaticClass", &UDistributionFloatParticleParameter::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

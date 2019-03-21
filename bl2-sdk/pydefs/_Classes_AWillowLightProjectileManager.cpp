@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowLightProjectileManager()
 {
-    class_< AWillowLightProjectileManager, bases< AActor >  , boost::noncopyable>("AWillowLightProjectileManager", no_init)
+    py::class_< AWillowLightProjectileManager,  AActor   >("AWillowLightProjectileManager")
         .def_readwrite("WeaponOwner", &AWillowLightProjectileManager::WeaponOwner)
         .def_readwrite("PawnOwner", &AWillowLightProjectileManager::PawnOwner)
         .def_readwrite("MyProjs", &AWillowLightProjectileManager::MyProjs)
@@ -19,7 +19,7 @@ void Export_pystes_AWillowLightProjectileManager()
         .def_readwrite("LastTimeSeconds", &AWillowLightProjectileManager::LastTimeSeconds)
         .def_readwrite("DamageApplicationInterval", &AWillowLightProjectileManager::DamageApplicationInterval)
         .def_readwrite("DeadOwnerCheckTime", &AWillowLightProjectileManager::DeadOwnerCheckTime)
-        .def("StaticClass", &AWillowLightProjectileManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowLightProjectileManager::StaticClass, py::return_value_policy::reference)
         .def("OnParticleSystemFinished", &AWillowLightProjectileManager::OnParticleSystemFinished)
         .def("eventSpawnOverchargedImpactEffect", &AWillowLightProjectileManager::eventSpawnOverchargedImpactEffect)
         .def("GetReflectionInaccuracyAngle", &AWillowLightProjectileManager::GetReflectionInaccuracyAngle)

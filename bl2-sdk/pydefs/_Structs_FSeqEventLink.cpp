@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSeqEventLink()
 {
-    class_< FSeqEventLink >("FSeqEventLink", no_init)
+    py::class_< FSeqEventLink >("FSeqEventLink")
         .def_readwrite("LinkedEvents", &FSeqEventLink::LinkedEvents)
         .def_readwrite("LinkDesc", &FSeqEventLink::LinkDesc)
   ;

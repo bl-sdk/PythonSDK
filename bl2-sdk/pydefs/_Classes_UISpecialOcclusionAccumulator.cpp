@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UISpecialOcclusionAccumulator()
 {
-    class_< UISpecialOcclusionAccumulator, bases< UInterface >  , boost::noncopyable>("UISpecialOcclusionAccumulator", no_init)
-        .def("StaticClass", &UISpecialOcclusionAccumulator::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UISpecialOcclusionAccumulator,  UInterface   >("UISpecialOcclusionAccumulator")
+        .def("StaticClass", &UISpecialOcclusionAccumulator::StaticClass, py::return_value_policy::reference)
         .def("RemoveOcclusionProvider", &UISpecialOcclusionAccumulator::RemoveOcclusionProvider)
         .def("SetOcclusionForProvider", &UISpecialOcclusionAccumulator::SetOcclusionForProvider)
         .staticmethod("StaticClass")

@@ -1,22 +1,22 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxAIMoveNode()
 {
-    class_< AGearboxAIMoveNode, bases< AActor >  , boost::noncopyable>("AGearboxAIMoveNode", no_init)
+    py::class_< AGearboxAIMoveNode,  AActor   >("AGearboxAIMoveNode")
         .def_readwrite("NextNodes", &AGearboxAIMoveNode::NextNodes)
         .def_readwrite("PreviousNodes", &AGearboxAIMoveNode::PreviousNodes)
         .def_readwrite("HoldTime", &AGearboxAIMoveNode::HoldTime)
         .def_readwrite("Behaviors", &AGearboxAIMoveNode::Behaviors)
         .def_readwrite("SpecialMoves", &AGearboxAIMoveNode::SpecialMoves)
         .def_readwrite("Sprite", &AGearboxAIMoveNode::Sprite)
-        .def("StaticClass", &AGearboxAIMoveNode::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGearboxAIMoveNode::StaticClass, py::return_value_policy::reference)
         .def("DoesPatrolPathExistToPoint", &AGearboxAIMoveNode::DoesPatrolPathExistToPoint)
         .def("GetAllLinkedNodes", &AGearboxAIMoveNode::GetAllLinkedNodes)
-        .def("GetNextMoveNodeClosestToPoint", &AGearboxAIMoveNode::GetNextMoveNodeClosestToPoint, return_value_policy< reference_existing_object >())
-        .def("GetNextMoveNode", &AGearboxAIMoveNode::GetNextMoveNode, return_value_policy< reference_existing_object >())
+        .def("GetNextMoveNodeClosestToPoint", &AGearboxAIMoveNode::GetNextMoveNodeClosestToPoint, py::return_value_policy::reference)
+        .def("GetNextMoveNode", &AGearboxAIMoveNode::GetNextMoveNode, py::return_value_policy::reference)
         .def("RemoveNode", &AGearboxAIMoveNode::RemoveNode)
         .def("AddNode", &AGearboxAIMoveNode::AddNode)
         .def("ClearLinks", &AGearboxAIMoveNode::ClearLinks)

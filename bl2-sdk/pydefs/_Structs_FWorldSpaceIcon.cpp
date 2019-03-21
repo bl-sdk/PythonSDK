@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWorldSpaceIcon()
 {
-    class_< FWorldSpaceIcon >("FWorldSpaceIcon", no_init)
+    py::class_< FWorldSpaceIcon >("FWorldSpaceIcon")
         .def_readwrite("IconClip", &FWorldSpaceIcon::IconClip)
         .def_readwrite("ArrowClip", &FWorldSpaceIcon::ArrowClip)
         .def_readwrite("NextOcclusionTestTime", &FWorldSpaceIcon::NextOcclusionTestTime)

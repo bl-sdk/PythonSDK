@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionWorldLightColor()
 {
-    class_< UMaterialExpressionWorldLightColor, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionWorldLightColor", no_init)
-        .def("StaticClass", &UMaterialExpressionWorldLightColor::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionWorldLightColor,  UMaterialExpression   >("UMaterialExpressionWorldLightColor")
+        .def("StaticClass", &UMaterialExpressionWorldLightColor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

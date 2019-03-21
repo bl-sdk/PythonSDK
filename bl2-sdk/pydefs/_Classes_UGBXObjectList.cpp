@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGBXObjectList()
 {
-    class_< UGBXObjectList, bases< UObject >  , boost::noncopyable>("UGBXObjectList", no_init)
+    py::class_< UGBXObjectList,  UObject   >("UGBXObjectList")
         .def_readwrite("ObjectList", &UGBXObjectList::ObjectList)
-        .def("StaticClass", &UGBXObjectList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGBXObjectList::StaticClass, py::return_value_policy::reference)
         .def("RemoveObjectsOfClass", &UGBXObjectList::RemoveObjectsOfClass)
-        .def("FindNextObjectByClass", &UGBXObjectList::FindNextObjectByClass, return_value_policy< reference_existing_object >())
-        .def("FindFirstObjectByClass", &UGBXObjectList::FindFirstObjectByClass, return_value_policy< reference_existing_object >())
+        .def("FindNextObjectByClass", &UGBXObjectList::FindNextObjectByClass, py::return_value_policy::reference)
+        .def("FindFirstObjectByClass", &UGBXObjectList::FindFirstObjectByClass, py::return_value_policy::reference)
         .def("RemoveObject", &UGBXObjectList::RemoveObject)
         .def("AddObject", &UGBXObjectList::AddObject)
         .staticmethod("StaticClass")

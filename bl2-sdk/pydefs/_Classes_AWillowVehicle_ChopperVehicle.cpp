@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVehicle_ChopperVehicle()
 {
-    class_< AWillowVehicle_ChopperVehicle, bases< AWillowVehicle >  , boost::noncopyable>("AWillowVehicle_ChopperVehicle", no_init)
+    py::class_< AWillowVehicle_ChopperVehicle,  AWillowVehicle   >("AWillowVehicle_ChopperVehicle")
         .def_readwrite("GroundEffectIndices", &AWillowVehicle_ChopperVehicle::GroundEffectIndices)
         .def_readwrite("MaxGroundEffectDist", &AWillowVehicle_ChopperVehicle::MaxGroundEffectDist)
         .def_readwrite("GroundEffectDistParameterName", &AWillowVehicle_ChopperVehicle::GroundEffectDistParameterName)
@@ -16,7 +16,7 @@ void Export_pystes_AWillowVehicle_ChopperVehicle()
         .def_readwrite("PushForce", &AWillowVehicle_ChopperVehicle::PushForce)
         .def_readwrite("RadarLockMessage", &AWillowVehicle_ChopperVehicle::RadarLockMessage)
         .def_readwrite("LastRadarLockWarnTime", &AWillowVehicle_ChopperVehicle::LastRadarLockWarnTime)
-        .def("StaticClass", &AWillowVehicle_ChopperVehicle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVehicle_ChopperVehicle::StaticClass, py::return_value_policy::reference)
         .def("SetInputs", &AWillowVehicle_ChopperVehicle::SetInputs)
         .def("ShouldClamp", &AWillowVehicle_ChopperVehicle::ShouldClamp)
         .def("ResetTurningSpeed", &AWillowVehicle_ChopperVehicle::ResetTurningSpeed)

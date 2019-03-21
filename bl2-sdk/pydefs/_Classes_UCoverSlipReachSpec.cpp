@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCoverSlipReachSpec()
 {
-    class_< UCoverSlipReachSpec, bases< UForcedReachSpec >  , boost::noncopyable>("UCoverSlipReachSpec", no_init)
+    py::class_< UCoverSlipReachSpec,  UForcedReachSpec   >("UCoverSlipReachSpec")
         .def_readwrite("SpecDirection", &UCoverSlipReachSpec::SpecDirection)
-        .def("StaticClass", &UCoverSlipReachSpec::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCoverSlipReachSpec::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

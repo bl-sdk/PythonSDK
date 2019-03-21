@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FConnectedPeerInfo()
 {
-    class_< FConnectedPeerInfo >("FConnectedPeerInfo", no_init)
+    py::class_< FConnectedPeerInfo >("FConnectedPeerInfo")
         .def_readwrite("PlayerID", &FConnectedPeerInfo::PlayerID)
         .def_readwrite("NatType", &FConnectedPeerInfo::NatType)
   ;

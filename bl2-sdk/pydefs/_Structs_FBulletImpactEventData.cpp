@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBulletImpactEventData()
 {
-    class_< FBulletImpactEventData >("FBulletImpactEventData", no_init)
+    py::class_< FBulletImpactEventData >("FBulletImpactEventData")
         .def_readwrite("DamageSurfaceType", &FBulletImpactEventData::DamageSurfaceType)
         .def_readwrite("Behaviors", &FBulletImpactEventData::Behaviors)
   ;

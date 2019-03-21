@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameTypes()
 {
-    class_< UGameTypes, bases< UObject >  , boost::noncopyable>("UGameTypes", no_init)
-        .def("StaticClass", &UGameTypes::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGameTypes,  UObject   >("UGameTypes")
+        .def("StaticClass", &UGameTypes::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

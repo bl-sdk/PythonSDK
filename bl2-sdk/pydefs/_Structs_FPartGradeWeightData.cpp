@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPartGradeWeightData()
 {
-    class_< FPartGradeWeightData >("FPartGradeWeightData", no_init)
+    py::class_< FPartGradeWeightData >("FPartGradeWeightData")
         .def_readwrite("Part", &FPartGradeWeightData::Part)
         .def_readwrite("Manufacturers", &FPartGradeWeightData::Manufacturers)
         .def_readwrite("MinGameStageIndex", &FPartGradeWeightData::MinGameStageIndex)

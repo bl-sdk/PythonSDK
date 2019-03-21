@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASpotLightToggleable()
 {
-    class_< ASpotLightToggleable, bases< AActor >  , boost::noncopyable>("ASpotLightToggleable", no_init)
+    py::class_< ASpotLightToggleable,  AActor   >("ASpotLightToggleable")
         .def_readwrite("LightComponent", &ALight::LightComponent)
-        .def("StaticClass", &ASpotLightToggleable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASpotLightToggleable::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ASpotLightToggleable::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ASpotLightToggleable::CreateCheckpointRecord)
         .def("ShouldSaveForCheckpoint", &ASpotLightToggleable::ShouldSaveForCheckpoint)

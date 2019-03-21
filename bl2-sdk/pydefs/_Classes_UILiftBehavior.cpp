@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UILiftBehavior()
 {
-    class_< UILiftBehavior, bases< UInterface >  , boost::noncopyable>("UILiftBehavior", no_init)
-        .def("StaticClass", &UILiftBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UILiftBehavior,  UInterface   >("UILiftBehavior")
+        .def("StaticClass", &UILiftBehavior::StaticClass, py::return_value_policy::reference)
         .def("BeginLifting", &UILiftBehavior::BeginLifting)
         .def("FinishLifting", &UILiftBehavior::FinishLifting)
         .def("SelectTarget", &UILiftBehavior::SelectTarget)

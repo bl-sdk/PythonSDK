@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMissionStatusPresentation()
 {
-    class_< FMissionStatusPresentation >("FMissionStatusPresentation", no_init)
+    py::class_< FMissionStatusPresentation >("FMissionStatusPresentation")
         .def_readwrite("TextColor", &FMissionStatusPresentation::TextColor)
         .def_readwrite("IconFrame", &FMissionStatusPresentation::IconFrame)
   ;

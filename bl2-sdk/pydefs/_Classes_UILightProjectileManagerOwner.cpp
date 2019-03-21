@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UILightProjectileManagerOwner()
 {
-    class_< UILightProjectileManagerOwner, bases< UInterface >  , boost::noncopyable>("UILightProjectileManagerOwner", no_init)
-        .def("StaticClass", &UILightProjectileManagerOwner::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetLightProjMgrFor", &UILightProjectileManagerOwner::GetLightProjMgrFor, return_value_policy< reference_existing_object >())
+    py::class_< UILightProjectileManagerOwner,  UInterface   >("UILightProjectileManagerOwner")
+        .def("StaticClass", &UILightProjectileManagerOwner::StaticClass, py::return_value_policy::reference)
+        .def("GetLightProjMgrFor", &UILightProjectileManagerOwner::GetLightProjMgrFor, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

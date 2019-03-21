@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_FlyAnimAttack()
 {
-    class_< UAction_FlyAnimAttack, bases< UAction_Burrow >  , boost::noncopyable>("UAction_FlyAnimAttack", no_init)
+    py::class_< UAction_FlyAnimAttack,  UAction_Burrow   >("UAction_FlyAnimAttack")
         .def_readwrite("AimType", &UAction_FlyAnimAttack::AimType)
         .def_readwrite("VisionAngle", &UAction_FlyAnimAttack::VisionAngle)
         .def_readwrite("Range", &UAction_FlyAnimAttack::Range)
@@ -13,7 +13,7 @@ void Export_pystes_UAction_FlyAnimAttack()
         .def_readwrite("CheckRate", &UAction_FlyAnimAttack::CheckRate)
         .def_readwrite("Aim", &UAction_FlyAnimAttack::Aim)
         .def_readwrite("ActualRange", &UAction_FlyAnimAttack::ActualRange)
-        .def("StaticClass", &UAction_FlyAnimAttack::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_FlyAnimAttack::StaticClass, py::return_value_policy::reference)
         .def("ValidAttackLoc", &UAction_FlyAnimAttack::ValidAttackLoc)
         .def("GetAttackLoc", &UAction_FlyAnimAttack::GetAttackLoc)
         .def("IsAimed", &UAction_FlyAnimAttack::IsAimed)

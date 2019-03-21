@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULANServerBrowserGFxMovie()
 {
-    class_< ULANServerBrowserGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("ULANServerBrowserGFxMovie", no_init)
+    py::class_< ULANServerBrowserGFxMovie,  UWillowGFxMovie3D   >("ULANServerBrowserGFxMovie")
         .def_readwrite("ServerBrowserObj", &ULANServerBrowserGFxMovie::ServerBrowserObj)
         .def_readwrite("HeaderTextPath", &ULANServerBrowserGFxMovie::HeaderTextPath)
         .def_readwrite("TooltipTextPath", &ULANServerBrowserGFxMovie::TooltipTextPath)
@@ -15,7 +15,7 @@ void Export_pystes_ULANServerBrowserGFxMovie()
         .def_readwrite("SortType", &ULANServerBrowserGFxMovie::SortType)
         .def_readwrite("SortDirection", &ULANServerBrowserGFxMovie::SortDirection)
         .def_readwrite("SortedResults", &ULANServerBrowserGFxMovie::SortedResults)
-        .def("StaticClass", &ULANServerBrowserGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULANServerBrowserGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("GetFriendlyGameVersionString", &ULANServerBrowserGFxMovie::GetFriendlyGameVersionString)
         .def("extLANServerBrowserOnLoad", &ULANServerBrowserGFxMovie::extLANServerBrowserOnLoad)
         .def("HandleServerBrowserSortDirectionButtonClick", &ULANServerBrowserGFxMovie::HandleServerBrowserSortDirectionButtonClick)

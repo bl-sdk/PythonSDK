@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIDrunkenProjectile()
 {
-    class_< UIDrunkenProjectile, bases< UInterface >  , boost::noncopyable>("UIDrunkenProjectile", no_init)
-        .def("StaticClass", &UIDrunkenProjectile::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIDrunkenProjectile,  UInterface   >("UIDrunkenProjectile")
+        .def("StaticClass", &UIDrunkenProjectile::StaticClass, py::return_value_policy::reference)
         .def("SetDrunkenRandomNumberSeed", &UIDrunkenProjectile::SetDrunkenRandomNumberSeed)
         .staticmethod("StaticClass")
   ;

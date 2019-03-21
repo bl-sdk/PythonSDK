@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionMeshEmitterVertexColor()
 {
-    class_< UMaterialExpressionMeshEmitterVertexColor, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionMeshEmitterVertexColor", no_init)
-        .def("StaticClass", &UMaterialExpressionMeshEmitterVertexColor::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionMeshEmitterVertexColor,  UMaterialExpression   >("UMaterialExpressionMeshEmitterVertexColor")
+        .def("StaticClass", &UMaterialExpressionMeshEmitterVertexColor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

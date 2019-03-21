@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowInventoryPartDefinition()
 {
-    class_< UWillowInventoryPartDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UWillowInventoryPartDefinition", no_init)
+    py::class_< UWillowInventoryPartDefinition,  UGBXDefinition   >("UWillowInventoryPartDefinition")
         .def_readwrite("Material", &UWillowInventoryPartDefinition::Material)
         .def_readwrite("GestaltModeSkeletalMeshName", &UWillowInventoryPartDefinition::GestaltModeSkeletalMeshName)
         .def_readwrite("NongestaltSkeletalMesh", &UWillowInventoryPartDefinition::NongestaltSkeletalMesh)
@@ -15,9 +15,9 @@ void Export_pystes_UWillowInventoryPartDefinition()
         .def_readwrite("MonetaryValueMod", &UWillowInventoryPartDefinition::MonetaryValueMod)
         .def_readwrite("Rarity", &UWillowInventoryPartDefinition::Rarity)
         .def_readwrite("MaterialVectorParameterValues", &UWillowInventoryPartDefinition::MaterialVectorParameterValues)
-        .def("StaticClass", &UWillowInventoryPartDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowInventoryPartDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyMaterialModifiers", &UWillowInventoryPartDefinition::ApplyMaterialModifiers)
-        .def("GetSkeletalMesh", &UWillowInventoryPartDefinition::GetSkeletalMesh, return_value_policy< reference_existing_object >())
+        .def("GetSkeletalMesh", &UWillowInventoryPartDefinition::GetSkeletalMesh, py::return_value_policy::reference)
         .def("AddAdditionalGestaltMeshNames", &UWillowInventoryPartDefinition::AddAdditionalGestaltMeshNames)
         .def("GetSkeletalMeshName", &UWillowInventoryPartDefinition::GetSkeletalMeshName)
         .def("GetRarityLevel", &UWillowInventoryPartDefinition::GetRarityLevel)

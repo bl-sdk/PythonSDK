@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVehicleSimFly()
 {
-    class_< UWillowVehicleSimFly, bases< USVehicleSimBase >  , boost::noncopyable>("UWillowVehicleSimFly", no_init)
+    py::class_< UWillowVehicleSimFly,  USVehicleSimBase   >("UWillowVehicleSimFly")
         .def_readwrite("RiseSpeed", &UWillowVehicleSimFly::RiseSpeed)
         .def_readwrite("MoveSpeed", &UWillowVehicleSimFly::MoveSpeed)
-        .def("StaticClass", &UWillowVehicleSimFly::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowVehicleSimFly::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

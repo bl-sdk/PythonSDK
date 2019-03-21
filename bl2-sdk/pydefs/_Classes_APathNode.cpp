@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APathNode()
 {
-    class_< APathNode, bases< ANavigationPoint >  , boost::noncopyable>("APathNode", no_init)
-        .def("StaticClass", &APathNode::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< APathNode,  ANavigationPoint   >("APathNode")
+        .def("StaticClass", &APathNode::StaticClass, py::return_value_policy::reference)
         .def("eventGetDebugAbbrev", &APathNode::eventGetDebugAbbrev)
         .staticmethod("StaticClass")
   ;

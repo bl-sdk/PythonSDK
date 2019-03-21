@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFogVolumeSphericalDensityComponent()
 {
-    class_< UFogVolumeSphericalDensityComponent, bases< UFogVolumeDensityComponent >  , boost::noncopyable>("UFogVolumeSphericalDensityComponent", no_init)
+    py::class_< UFogVolumeSphericalDensityComponent,  UFogVolumeDensityComponent   >("UFogVolumeSphericalDensityComponent")
         .def_readwrite("MaxDensity", &UFogVolumeSphericalDensityComponent::MaxDensity)
         .def_readwrite("SphereCenter", &UFogVolumeSphericalDensityComponent::SphereCenter)
         .def_readwrite("SphereRadius", &UFogVolumeSphericalDensityComponent::SphereRadius)
         .def_readwrite("PreviewSphereRadius", &UFogVolumeSphericalDensityComponent::PreviewSphereRadius)
-        .def("StaticClass", &UFogVolumeSphericalDensityComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFogVolumeSphericalDensityComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

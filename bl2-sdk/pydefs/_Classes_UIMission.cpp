@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIMission()
 {
-    class_< UIMission, bases< UInterface >  , boost::noncopyable>("UIMission", no_init)
-        .def("StaticClass", &UIMission::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIMission,  UInterface   >("UIMission")
+        .def("StaticClass", &UIMission::StaticClass, py::return_value_policy::reference)
         .def("eventMissionReactionObjectiveComplete", &UIMission::eventMissionReactionObjectiveComplete)
         .def("eventMissionReactionObjectiveCleared", &UIMission::eventMissionReactionObjectiveCleared)
         .def("eventMissionReactionObjectiveUpdated", &UIMission::eventMissionReactionObjectiveUpdated)

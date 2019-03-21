@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBodyCompositionData()
 {
-    class_< FBodyCompositionData >("FBodyCompositionData", no_init)
+    py::class_< FBodyCompositionData >("FBodyCompositionData")
         .def_readwrite("Attachments", &FBodyCompositionData::Attachments)
         .def_readwrite("MaxExpectedComponents", &FBodyCompositionData::MaxExpectedComponents)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FServerBeamState()
 {
-    class_< FServerBeamState >("FServerBeamState", no_init)
+    py::class_< FServerBeamState >("FServerBeamState")
         .def_readwrite("DamageData", &FServerBeamState::DamageData)
         .def_readwrite("DamageInstigator", &FServerBeamState::DamageInstigator)
         .def_readwrite("StartTime", &FServerBeamState::StartTime)

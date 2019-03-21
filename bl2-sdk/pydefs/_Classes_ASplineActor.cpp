@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASplineActor()
 {
-    class_< ASplineActor, bases< AActor >  , boost::noncopyable>("ASplineActor", no_init)
+    py::class_< ASplineActor,  AActor   >("ASplineActor")
         .def_readwrite("Connections", &ASplineActor::Connections)
         .def_readwrite("SplineActorTangent", &ASplineActor::SplineActorTangent)
         .def_readwrite("SplineColor", &ASplineActor::SplineColor)
@@ -16,18 +16,18 @@ void Export_pystes_ASplineActor()
         .def_readwrite("bestPathWeight", &ASplineActor::bestPathWeight)
         .def_readwrite("visitedWeight", &ASplineActor::visitedWeight)
         .def_readwrite("SplineVelocityOverTime", &ASplineActor::SplineVelocityOverTime)
-        .def("StaticClass", &ASplineActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASplineActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggleHidden", &ASplineActor::OnToggleHidden)
         .def("OnToggle", &ASplineActor::OnToggle)
         .def("GetAllConnectedSplineActors", &ASplineActor::GetAllConnectedSplineActors)
         .def("FindSplinePathTo", &ASplineActor::FindSplinePathTo)
-        .def("GetBestConnectionInDirection", &ASplineActor::GetBestConnectionInDirection, return_value_policy< reference_existing_object >())
-        .def("GetRandomConnection", &ASplineActor::GetRandomConnection, return_value_policy< reference_existing_object >())
+        .def("GetBestConnectionInDirection", &ASplineActor::GetBestConnectionInDirection, py::return_value_policy::reference)
+        .def("GetRandomConnection", &ASplineActor::GetRandomConnection, py::return_value_policy::reference)
         .def("BreakAllConnectionsFrom", &ASplineActor::BreakAllConnectionsFrom)
         .def("BreakAllConnections", &ASplineActor::BreakAllConnections)
         .def("BreakConnectionTo", &ASplineActor::BreakConnectionTo)
-        .def("FindTargetForComponent", &ASplineActor::FindTargetForComponent, return_value_policy< reference_existing_object >())
-        .def("FindSplineComponentTo", &ASplineActor::FindSplineComponentTo, return_value_policy< reference_existing_object >())
+        .def("FindTargetForComponent", &ASplineActor::FindTargetForComponent, py::return_value_policy::reference)
+        .def("FindSplineComponentTo", &ASplineActor::FindSplineComponentTo, py::return_value_policy::reference)
         .def("IsConnectedTo", &ASplineActor::IsConnectedTo)
         .def("AddConnectionTo", &ASplineActor::AddConnectionTo)
         .def("UpdateConnectedSplineComponents", &ASplineActor::UpdateConnectedSplineComponents)

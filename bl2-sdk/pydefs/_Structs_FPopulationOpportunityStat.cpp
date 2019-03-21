@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationOpportunityStat()
 {
-    class_< FPopulationOpportunityStat >("FPopulationOpportunityStat", no_init)
+    py::class_< FPopulationOpportunityStat >("FPopulationOpportunityStat")
         .def_readwrite("PercentNodeReduction", &FPopulationOpportunityStat::PercentNodeReduction)
   ;
 }

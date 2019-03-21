@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowWorldSoundManager()
 {
-    class_< AWillowWorldSoundManager, bases< AWorldSoundManager >  , boost::noncopyable>("AWillowWorldSoundManager", no_init)
+    py::class_< AWillowWorldSoundManager,  AWorldSoundManager   >("AWillowWorldSoundManager")
         .def_readwrite("MusicComponent", &AWillowWorldSoundManager::MusicComponent)
         .def_readwrite("CurrentMusicStartAkEvent", &AWillowWorldSoundManager::CurrentMusicStartAkEvent)
         .def_readwrite("CurrentMusicStopAkEvent", &AWillowWorldSoundManager::CurrentMusicStopAkEvent)
@@ -22,7 +22,7 @@ void Export_pystes_AWillowWorldSoundManager()
         .def_readwrite("CombatMusicTransitionEndTime", &AWillowWorldSoundManager::CombatMusicTransitionEndTime)
         .def_readwrite("LastTransitionDuration", &AWillowWorldSoundManager::LastTransitionDuration)
         .def_readwrite("CombatMusicRtpc", &AWillowWorldSoundManager::CombatMusicRtpc)
-        .def("StaticClass", &AWillowWorldSoundManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowWorldSoundManager::StaticClass, py::return_value_policy::reference)
         .def("IsLevelMusicPlaying", &AWillowWorldSoundManager::IsLevelMusicPlaying)
         .def("StaticSetCustomAmbientMusicAkState", &AWillowWorldSoundManager::StaticSetCustomAmbientMusicAkState)
         .def("StaticSetBossAkState", &AWillowWorldSoundManager::StaticSetBossAkState)

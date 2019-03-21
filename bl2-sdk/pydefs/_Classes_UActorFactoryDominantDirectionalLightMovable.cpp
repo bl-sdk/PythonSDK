@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryDominantDirectionalLightMovable()
 {
-    class_< UActorFactoryDominantDirectionalLightMovable, bases< UObject >  , boost::noncopyable>("UActorFactoryDominantDirectionalLightMovable", no_init)
+    py::class_< UActorFactoryDominantDirectionalLightMovable,  UObject   >("UActorFactoryDominantDirectionalLightMovable")
         .def_readwrite("GameplayActorClass", &UActorFactory::GameplayActorClass)
         .def_readwrite("MenuName", &UActorFactory::MenuName)
         .def_readwrite("MenuPriority", &UActorFactory::MenuPriority)
@@ -15,7 +15,7 @@ void Export_pystes_UActorFactoryDominantDirectionalLightMovable()
         .def_readwrite("CustomPropertyEditorDelegateClassName", &UActorFactory::CustomPropertyEditorDelegateClassName)
         .def_readwrite("CustomPropertyEditorDelegateInstance", &UActorFactory::CustomPropertyEditorDelegateInstance)
         .def_readwrite("CustomPropertyEditorDelegateTargetClass", &UActorFactory::CustomPropertyEditorDelegateTargetClass)
-        .def("StaticClass", &UActorFactoryDominantDirectionalLightMovable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryDominantDirectionalLightMovable::StaticClass, py::return_value_policy::reference)
         .def("eventPostCreateActor", &UActorFactory::eventPostCreateActor)
         .staticmethod("StaticClass")
   ;

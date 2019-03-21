@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineFriend()
 {
-    class_< FOnlineFriend >("FOnlineFriend", no_init)
+    py::class_< FOnlineFriend >("FOnlineFriend")
         .def_readwrite("UniqueId", &FOnlineFriend::UniqueId)
         .def_readwrite("SessionId", &FOnlineFriend::SessionId)
         .def_readwrite("SessionInfo", &FOnlineFriend::SessionInfo)

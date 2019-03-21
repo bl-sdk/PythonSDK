@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionMax()
 {
-    class_< UMaterialExpressionMax, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionMax", no_init)
+    py::class_< UMaterialExpressionMax,  UMaterialExpression   >("UMaterialExpressionMax")
         .def_readwrite("A", &UMaterialExpressionMax::A)
         .def_readwrite("B", &UMaterialExpressionMax::B)
-        .def("StaticClass", &UMaterialExpressionMax::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionMax::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

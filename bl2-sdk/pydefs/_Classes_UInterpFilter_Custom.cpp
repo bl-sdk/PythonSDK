@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpFilter_Custom()
 {
-    class_< UInterpFilter_Custom, bases< UInterpFilter >  , boost::noncopyable>("UInterpFilter_Custom", no_init)
-        .def("StaticClass", &UInterpFilter_Custom::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UInterpFilter_Custom,  UInterpFilter   >("UInterpFilter_Custom")
+        .def("StaticClass", &UInterpFilter_Custom::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

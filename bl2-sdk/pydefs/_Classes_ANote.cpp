@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANote()
 {
-    class_< ANote, bases< AActor >  , boost::noncopyable>("ANote", no_init)
-        .def("StaticClass", &ANote::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ANote,  AActor   >("ANote")
+        .def("StaticClass", &ANote::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

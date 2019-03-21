@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelTransitionSignGFxMovie()
 {
-    class_< ULevelTransitionSignGFxMovie, bases< UGFxMovieInteractiveObject >  , boost::noncopyable>("ULevelTransitionSignGFxMovie", no_init)
-        .def("StaticClass", &ULevelTransitionSignGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULevelTransitionSignGFxMovie,  UGFxMovieInteractiveObject   >("ULevelTransitionSignGFxMovie")
+        .def("StaticClass", &ULevelTransitionSignGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("eventStart", &ULevelTransitionSignGFxMovie::eventStart)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCommunityContentFile()
 {
-    class_< FCommunityContentFile >("FCommunityContentFile", no_init)
+    py::class_< FCommunityContentFile >("FCommunityContentFile")
         .def_readwrite("ContentId", &FCommunityContentFile::ContentId)
         .def_readwrite("FileId", &FCommunityContentFile::FileId)
         .def_readwrite("ContentType", &FCommunityContentFile::ContentType)

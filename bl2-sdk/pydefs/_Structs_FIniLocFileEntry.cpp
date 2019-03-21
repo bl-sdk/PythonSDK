@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FIniLocFileEntry()
 {
-    class_< FIniLocFileEntry >("FIniLocFileEntry", no_init)
+    py::class_< FIniLocFileEntry >("FIniLocFileEntry")
         .def_readwrite("Filename", &FIniLocFileEntry::Filename)
         .def_readwrite("ReadState", &FIniLocFileEntry::ReadState)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USVehicleSimTank()
 {
-    class_< USVehicleSimTank, bases< USVehicleSimCar >  , boost::noncopyable>("USVehicleSimTank", no_init)
+    py::class_< USVehicleSimTank,  USVehicleSimCar   >("USVehicleSimTank")
         .def_readwrite("LeftTrackVel", &USVehicleSimTank::LeftTrackVel)
         .def_readwrite("RightTrackVel", &USVehicleSimTank::RightTrackVel)
         .def_readwrite("LeftTrackTorque", &USVehicleSimTank::LeftTrackTorque)
@@ -17,7 +17,7 @@ void Export_pystes_USVehicleSimTank()
         .def_readwrite("TurnInPlaceThrottle", &USVehicleSimTank::TurnInPlaceThrottle)
         .def_readwrite("TurnMaxGripReduction", &USVehicleSimTank::TurnMaxGripReduction)
         .def_readwrite("TurnGripScaleRate", &USVehicleSimTank::TurnGripScaleRate)
-        .def("StaticClass", &USVehicleSimTank::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USVehicleSimTank::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

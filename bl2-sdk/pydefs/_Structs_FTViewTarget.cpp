@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTViewTarget()
 {
-    class_< FTViewTarget >("FTViewTarget", no_init)
+    py::class_< FTViewTarget >("FTViewTarget")
         .def_readwrite("Target", &FTViewTarget::Target)
         .def_readwrite("Controller", &FTViewTarget::Controller)
         .def_readwrite("POV", &FTViewTarget::POV)

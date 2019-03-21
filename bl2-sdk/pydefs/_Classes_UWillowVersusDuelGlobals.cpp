@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVersusDuelGlobals()
 {
-    class_< UWillowVersusDuelGlobals, bases< UGBXDefinition >  , boost::noncopyable>("UWillowVersusDuelGlobals", no_init)
+    py::class_< UWillowVersusDuelGlobals,  UGBXDefinition   >("UWillowVersusDuelGlobals")
         .def_readwrite("ArenaMaterialIndex", &UWillowVersusDuelGlobals::ArenaMaterialIndex)
         .def_readwrite("ArenaMaterialParamName", &UWillowVersusDuelGlobals::ArenaMaterialParamName)
         .def_readwrite("ArenaMesh", &UWillowVersusDuelGlobals::ArenaMesh)
@@ -23,7 +23,7 @@ void Export_pystes_UWillowVersusDuelGlobals()
         .def_readwrite("DuelChallengeTimeout", &UWillowVersusDuelGlobals::DuelChallengeTimeout)
         .def_readwrite("DuelLength", &UWillowVersusDuelGlobals::DuelLength)
         .def_readwrite("DuelTeams", &UWillowVersusDuelGlobals::DuelTeams)
-        .def("StaticClass", &UWillowVersusDuelGlobals::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowVersusDuelGlobals::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

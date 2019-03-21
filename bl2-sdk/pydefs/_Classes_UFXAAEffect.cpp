@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFXAAEffect()
 {
-    class_< UFXAAEffect, bases< UPostProcessEffect >  , boost::noncopyable>("UFXAAEffect", no_init)
-        .def("StaticClass", &UFXAAEffect::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UFXAAEffect,  UPostProcessEffect   >("UFXAAEffect")
+        .def("StaticClass", &UFXAAEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

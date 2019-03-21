@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCustomizationType_Skin()
 {
-    class_< UCustomizationType_Skin, bases< UCustomizationType >  , boost::noncopyable>("UCustomizationType_Skin", no_init)
-        .def("StaticClass", &UCustomizationType_Skin::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCustomizationType_Skin,  UCustomizationType   >("UCustomizationType_Skin")
+        .def("StaticClass", &UCustomizationType_Skin::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

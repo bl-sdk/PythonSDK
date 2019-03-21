@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFaceFXSoundCueKey()
 {
-    class_< FFaceFXSoundCueKey >("FFaceFXSoundCueKey", no_init)
+    py::class_< FFaceFXSoundCueKey >("FFaceFXSoundCueKey")
         .def_readwrite("FaceFXSoundCue", &FFaceFXSoundCueKey::FaceFXSoundCue)
         .def_readwrite("FaceFXAkEvent", &FFaceFXSoundCueKey::FaceFXAkEvent)
   ;

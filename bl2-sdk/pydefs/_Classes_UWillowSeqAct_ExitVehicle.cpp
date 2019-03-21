@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ExitVehicle()
 {
-    class_< UWillowSeqAct_ExitVehicle, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ExitVehicle", no_init)
+    py::class_< UWillowSeqAct_ExitVehicle,  USequenceAction   >("UWillowSeqAct_ExitVehicle")
         .def_readwrite("SeatsToForceExitOn", &UWillowSeqAct_ExitVehicle::SeatsToForceExitOn)
-        .def("StaticClass", &UWillowSeqAct_ExitVehicle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_ExitVehicle::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

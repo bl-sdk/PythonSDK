@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_Timer()
 {
-    class_< USeqAct_Timer, bases< USequenceAction >  , boost::noncopyable>("USeqAct_Timer", no_init)
+    py::class_< USeqAct_Timer,  USequenceAction   >("USeqAct_Timer")
         .def_readwrite("ActivationTime", &USeqAct_Timer::ActivationTime)
         .def_readwrite("Time", &USeqAct_Timer::Time)
-        .def("StaticClass", &USeqAct_Timer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_Timer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

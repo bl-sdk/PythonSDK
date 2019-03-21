@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FColumnMetaData()
 {
-    class_< FColumnMetaData >("FColumnMetaData", no_init)
+    py::class_< FColumnMetaData >("FColumnMetaData")
         .def_readwrite("Id", &FColumnMetaData::Id)
         .def_readwrite("Name", &FColumnMetaData::Name)
         .def_readwrite("ColumnName", &FColumnMetaData::ColumnName)

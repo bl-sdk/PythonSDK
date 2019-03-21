@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APopulationOpportunityCombat()
 {
-    class_< APopulationOpportunityCombat, bases< APopulationOpportunity >  , boost::noncopyable>("APopulationOpportunityCombat", no_init)
+    py::class_< APopulationOpportunityCombat,  APopulationOpportunity   >("APopulationOpportunityCombat")
         .def_readwrite("VfTable_IIGbxMessageListener", &APopulationOpportunityCombat::VfTable_IIGbxMessageListener)
         .def_readwrite("ParentEncounter", &APopulationOpportunityCombat::ParentEncounter)
         .def_readwrite("ParentEncounterWave", &APopulationOpportunityCombat::ParentEncounterWave)
@@ -26,18 +26,18 @@ void Export_pystes_APopulationOpportunityCombat()
         .def_readwrite("SpawnData", &APopulationOpportunityCombat::SpawnData)
         .def_readwrite("PlayersDetected", &APopulationOpportunityCombat::PlayersDetected)
         .def_readwrite("NumPlayersDetected", &APopulationOpportunityCombat::NumPlayersDetected)
-        .def("StaticClass", &APopulationOpportunityCombat::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APopulationOpportunityCombat::StaticClass, py::return_value_policy::reference)
         .def("ApplyPreviewBodyComposition", &APopulationOpportunityCombat::ApplyPreviewBodyComposition)
-        .def("GetBodyInfoProvider", &APopulationOpportunityCombat::GetBodyInfoProvider, return_value_policy< reference_existing_object >())
+        .def("GetBodyInfoProvider", &APopulationOpportunityCombat::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("eventTriggerKismetSingleDeathEvent", &APopulationOpportunityCombat::eventTriggerKismetSingleDeathEvent)
         .def("eventTriggerKismetDeathEvent", &APopulationOpportunityCombat::eventTriggerKismetDeathEvent)
         .def("GetNumSpawned", &APopulationOpportunityCombat::GetNumSpawned)
         .def("GetNumAlive", &APopulationOpportunityCombat::GetNumAlive)
         .def("GetNumDied", &APopulationOpportunityCombat::GetNumDied)
         .def("WantsToStopListening", &APopulationOpportunityCombat::WantsToStopListening)
-        .def("GetActor", &APopulationOpportunityCombat::GetActor, return_value_policy< reference_existing_object >())
+        .def("GetActor", &APopulationOpportunityCombat::GetActor, py::return_value_policy::reference)
         .def("GetListenerLocation", &APopulationOpportunityCombat::GetListenerLocation)
-        .def("GetAllegiance", &APopulationOpportunityCombat::GetAllegiance, return_value_policy< reference_existing_object >())
+        .def("GetAllegiance", &APopulationOpportunityCombat::GetAllegiance, py::return_value_policy::reference)
         .def("ReceiveMessage", &APopulationOpportunityCombat::ReceiveMessage)
         .def("CaresAboutMessage", &APopulationOpportunityCombat::CaresAboutMessage)
         .def("PostBeginPlay", &APopulationOpportunityCombat::PostBeginPlay)

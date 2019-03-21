@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AEmitterSpawnable()
 {
-    class_< AEmitterSpawnable, bases< AEmitter >  , boost::noncopyable>("AEmitterSpawnable", no_init)
+    py::class_< AEmitterSpawnable,  AEmitter   >("AEmitterSpawnable")
         .def_readwrite("ParticleTemplate", &AEmitterSpawnable::ParticleTemplate)
-        .def("StaticClass", &AEmitterSpawnable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AEmitterSpawnable::StaticClass, py::return_value_policy::reference)
         .def("eventReplicatedEvent", &AEmitterSpawnable::eventReplicatedEvent)
         .def("eventSetTemplate", &AEmitterSpawnable::eventSetTemplate)
         .staticmethod("StaticClass")

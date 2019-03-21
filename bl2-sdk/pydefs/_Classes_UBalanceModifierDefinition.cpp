@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBalanceModifierDefinition()
 {
-    class_< UBalanceModifierDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBalanceModifierDefinition", no_init)
+    py::class_< UBalanceModifierDefinition,  UGBXDefinition   >("UBalanceModifierDefinition")
         .def_readwrite("PlaythroughToBalance", &UBalanceModifierDefinition::PlaythroughToBalance)
         .def_readwrite("BalanceModifiers", &UBalanceModifierDefinition::BalanceModifiers)
         .def_readonly("ModifierToXPGainedTowardsNewLevelsInEarlierPlaythroughs", &UBalanceModifierDefinition::ModifierToXPGainedTowardsNewLevelsInEarlierPlaythroughs)
@@ -21,12 +21,12 @@ void Export_pystes_UBalanceModifierDefinition()
         .def_readwrite("GearDrops_CommonWeightModifier_PT2_BaseValueOverride", &UBalanceModifierDefinition::GearDrops_CommonWeightModifier_PT2_BaseValueOverride)
         .def_readwrite("ChestItemPool_Weight_2_Uncommon_PT1_Multiplier", &UBalanceModifierDefinition::ChestItemPool_Weight_2_Uncommon_PT1_Multiplier)
         .def_readwrite("ChestItemPool_Weight_2_Uncommon_PT2_Multiplier", &UBalanceModifierDefinition::ChestItemPool_Weight_2_Uncommon_PT2_Multiplier)
-        .def("StaticClass", &UBalanceModifierDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBalanceModifierDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetAIDamageScaleBasedOnExpLevelDifferences", &UBalanceModifierDefinition::GetAIDamageScaleBasedOnExpLevelDifferences)
         .def("GetStatusEffectChanceBasedOnExpLevelDifferences", &UBalanceModifierDefinition::GetStatusEffectChanceBasedOnExpLevelDifferences)
         .def("GetUncommonChestItemPoolWeightMultiplier", &UBalanceModifierDefinition::GetUncommonChestItemPoolWeightMultiplier)
         .def("GetCommonGearDropWeightBaseValue", &UBalanceModifierDefinition::GetCommonGearDropWeightBaseValue)
-        .def("GetNewAIPawnNamesForThisPlayThrough", &UBalanceModifierDefinition::GetNewAIPawnNamesForThisPlayThrough, return_value_policy< reference_existing_object >())
+        .def("GetNewAIPawnNamesForThisPlayThrough", &UBalanceModifierDefinition::GetNewAIPawnNamesForThisPlayThrough, py::return_value_policy::reference)
         .def("UpdatePlayerVehicleDamage", &UBalanceModifierDefinition::UpdatePlayerVehicleDamage)
         .def("GetAmmoDropsPerPlayerMultiplier", &UBalanceModifierDefinition::GetAmmoDropsPerPlayerMultiplier)
         .def("GetAmplifiedDamageMultiplier", &UBalanceModifierDefinition::GetAmplifiedDamageMultiplier)

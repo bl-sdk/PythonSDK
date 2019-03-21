@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionRewardGFxObject()
 {
-    class_< UMissionRewardGFxObject, bases< UGFxObject >  , boost::noncopyable>("UMissionRewardGFxObject", no_init)
+    py::class_< UMissionRewardGFxObject,  UGFxObject   >("UMissionRewardGFxObject")
         .def_readwrite("RewardData", &UMissionRewardGFxObject::RewardData)
         .def_readwrite("OwningMovie", &UMissionRewardGFxObject::OwningMovie)
         .def_readwrite("CardContents", &UMissionRewardGFxObject::CardContents)
@@ -18,12 +18,12 @@ void Export_pystes_UMissionRewardGFxObject()
         .def_readwrite("Header_Gear", &UMissionRewardGFxObject::Header_Gear)
         .def_readwrite("Header_Or", &UMissionRewardGFxObject::Header_Or)
         .def_readwrite("RewardChoiceFocused", &UMissionRewardGFxObject::RewardChoiceFocused)
-        .def("StaticClass", &UMissionRewardGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionRewardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("DestroyPreviewInventory", &UMissionRewardGFxObject::DestroyPreviewInventory)
         .def("Interrupted", &UMissionRewardGFxObject::Interrupted)
         .def("SetTooltips", &UMissionRewardGFxObject::SetTooltips)
         .def("InspectItem", &UMissionRewardGFxObject::InspectItem)
-        .def("GetSelectedThing", &UMissionRewardGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetSelectedThing", &UMissionRewardGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("PanelOnInputKey", &UMissionRewardGFxObject::PanelOnInputKey)
         .def("SetCellInfo", &UMissionRewardGFxObject::SetCellInfo)
         .def("RemoveEventListeners", &UMissionRewardGFxObject::RemoveEventListeners)
@@ -33,7 +33,7 @@ void Export_pystes_UMissionRewardGFxObject()
         .def("AcceptReward", &UMissionRewardGFxObject::AcceptReward)
         .def("ConfigureForPlayer", &UMissionRewardGFxObject::ConfigureForPlayer)
         .def("SetNumItemChoices", &UMissionRewardGFxObject::SetNumItemChoices)
-        .def("SpawnInventoryForRewardUI", &UMissionRewardGFxObject::SpawnInventoryForRewardUI, return_value_policy< reference_existing_object >())
+        .def("SpawnInventoryForRewardUI", &UMissionRewardGFxObject::SpawnInventoryForRewardUI, py::return_value_policy::reference)
         .def("SetUpRewardsPageItems", &UMissionRewardGFxObject::SetUpRewardsPageItems)
         .def("GetNumItems", &UMissionRewardGFxObject::GetNumItems)
         .def("SetPlotCritical", &UMissionRewardGFxObject::SetPlotCritical)

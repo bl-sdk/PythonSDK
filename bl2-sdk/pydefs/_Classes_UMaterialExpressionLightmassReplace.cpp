@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionLightmassReplace()
 {
-    class_< UMaterialExpressionLightmassReplace, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionLightmassReplace", no_init)
+    py::class_< UMaterialExpressionLightmassReplace,  UMaterialExpression   >("UMaterialExpressionLightmassReplace")
         .def_readwrite("Realtime", &UMaterialExpressionLightmassReplace::Realtime)
         .def_readwrite("Lightmass", &UMaterialExpressionLightmassReplace::Lightmass)
-        .def("StaticClass", &UMaterialExpressionLightmassReplace::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionLightmassReplace::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

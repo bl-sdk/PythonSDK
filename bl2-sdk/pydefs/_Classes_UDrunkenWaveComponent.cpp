@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDrunkenWaveComponent()
 {
-    class_< UDrunkenWaveComponent, bases< UMovementComponent >  , boost::noncopyable>("UDrunkenWaveComponent", no_init)
+    py::class_< UDrunkenWaveComponent,  UMovementComponent   >("UDrunkenWaveComponent")
         .def_readwrite("MaxRandomWaveOffsetTime", &UDrunkenWaveComponent::MaxRandomWaveOffsetTime)
         .def_readwrite("Waves", &UDrunkenWaveComponent::Waves)
         .def_readwrite("GlobalWaveScale", &UDrunkenWaveComponent::GlobalWaveScale)
@@ -18,7 +18,7 @@ void Export_pystes_UDrunkenWaveComponent()
         .def_readonly("UnknownData00", &UDrunkenBaseComponent::UnknownData00)
         .def_readwrite("LastVelocityRotOffset", &UDrunkenBaseComponent::LastVelocityRotOffset)
         .def_readwrite("LastAccelRotOffset", &UDrunkenBaseComponent::LastAccelRotOffset)
-        .def("StaticClass", &UDrunkenWaveComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDrunkenWaveComponent::StaticClass, py::return_value_policy::reference)
         .def("GenerateRandomNumberSeed", &UDrunkenBaseComponent::GenerateRandomNumberSeed)
         .def("SetRandomNumberSeed", &UDrunkenBaseComponent::SetRandomNumberSeed)
         .def("Init", &UDrunkenBaseComponent::Init)

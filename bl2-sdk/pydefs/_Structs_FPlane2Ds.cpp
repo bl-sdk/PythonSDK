@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlane2D()
 {
-    class_< FPlane2D, bases< FVector2D >  >("FPlane2D", no_init)
+    py::class_< FPlane2D,  FVector2D   >("FPlane2D")
         .def_readwrite("W", &FPlane2D::W)
   ;
 }

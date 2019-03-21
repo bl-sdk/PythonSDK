@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRTPCSetting()
 {
-    class_< FRTPCSetting >("FRTPCSetting", no_init)
+    py::class_< FRTPCSetting >("FRTPCSetting")
         .def_readwrite("Target", &FRTPCSetting::Target)
         .def_readwrite("AkRtpc", &FRTPCSetting::AkRtpc)
         .def_readwrite("ValueAtMaxRange", &FRTPCSetting::ValueAtMaxRange)

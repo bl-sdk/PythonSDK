@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleEventGeneratorDecal()
 {
-    class_< UParticleModuleEventGeneratorDecal, bases< UParticleModuleEventGenerator >  , boost::noncopyable>("UParticleModuleEventGeneratorDecal", no_init)
+    py::class_< UParticleModuleEventGeneratorDecal,  UParticleModuleEventGenerator   >("UParticleModuleEventGeneratorDecal")
         .def_readwrite("DecalMaterials", &UParticleModuleEventGeneratorDecal::DecalMaterials)
         .def_readwrite("DecalWidth", &UParticleModuleEventGeneratorDecal::DecalWidth)
         .def_readwrite("DecalHeight", &UParticleModuleEventGeneratorDecal::DecalHeight)
@@ -14,7 +14,7 @@ void Export_pystes_UParticleModuleEventGeneratorDecal()
         .def_readwrite("DecalLifeSpan", &UParticleModuleEventGeneratorDecal::DecalLifeSpan)
         .def_readwrite("DecalDepthBias", &UParticleModuleEventGeneratorDecal::DecalDepthBias)
         .def_readwrite("DecalBlendRange", &UParticleModuleEventGeneratorDecal::DecalBlendRange)
-        .def("StaticClass", &UParticleModuleEventGeneratorDecal::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleEventGeneratorDecal::StaticClass, py::return_value_policy::reference)
         .def("eventSpawnDecal", &UParticleModuleEventGeneratorDecal::eventSpawnDecal)
         .staticmethod("StaticClass")
   ;

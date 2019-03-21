@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLoadInfo()
 {
-    class_< FLoadInfo >("FLoadInfo", no_init)
+    py::class_< FLoadInfo >("FLoadInfo")
         .def_readwrite("CharacterData", &FLoadInfo::CharacterData)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFireLink()
 {
-    class_< FFireLink >("FFireLink", no_init)
+    py::class_< FFireLink >("FFireLink")
         .def_readwrite("Interactions", &FFireLink::Interactions)
         .def_readwrite("PackedProperties_CoverPairRefAndDynamicInfo", &FFireLink::PackedProperties_CoverPairRefAndDynamicInfo)
   ;

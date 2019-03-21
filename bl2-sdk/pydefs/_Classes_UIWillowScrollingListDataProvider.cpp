@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIWillowScrollingListDataProvider()
 {
-    class_< UIWillowScrollingListDataProvider, bases< UInterface >  , boost::noncopyable>("UIWillowScrollingListDataProvider", no_init)
-        .def("StaticClass", &UIWillowScrollingListDataProvider::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIWillowScrollingListDataProvider,  UInterface   >("UIWillowScrollingListDataProvider")
+        .def("StaticClass", &UIWillowScrollingListDataProvider::StaticClass, py::return_value_policy::reference)
         .def("Cleanup", &UIWillowScrollingListDataProvider::Cleanup)
-        .def("GetSubmenuForEvent", &UIWillowScrollingListDataProvider::GetSubmenuForEvent, return_value_policy< reference_existing_object >())
+        .def("GetSubmenuForEvent", &UIWillowScrollingListDataProvider::GetSubmenuForEvent, py::return_value_policy::reference)
         .def("Populate", &UIWillowScrollingListDataProvider::Populate)
         .def("HandleSpinnerChange", &UIWillowScrollingListDataProvider::HandleSpinnerChange)
         .def("HandleSliderChange", &UIWillowScrollingListDataProvider::HandleSliderChange)

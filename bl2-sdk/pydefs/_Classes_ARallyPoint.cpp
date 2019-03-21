@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ARallyPoint()
 {
-    class_< ARallyPoint, bases< AActor >  , boost::noncopyable>("ARallyPoint", no_init)
-        .def("StaticClass", &ARallyPoint::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ARallyPoint,  AActor   >("ARallyPoint")
+        .def("StaticClass", &ARallyPoint::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

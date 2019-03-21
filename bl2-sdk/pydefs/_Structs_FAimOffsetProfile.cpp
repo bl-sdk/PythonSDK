@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAimOffsetProfile()
 {
-    class_< FAimOffsetProfile >("FAimOffsetProfile", no_init)
+    py::class_< FAimOffsetProfile >("FAimOffsetProfile")
         .def_readwrite("ProfileName", &FAimOffsetProfile::ProfileName)
         .def_readwrite("HorizontalRange", &FAimOffsetProfile::HorizontalRange)
         .def_readwrite("VerticalRange", &FAimOffsetProfile::VerticalRange)

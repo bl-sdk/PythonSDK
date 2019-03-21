@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTargetIteratorData()
 {
-    class_< FTargetIteratorData >("FTargetIteratorData", no_init)
+    py::class_< FTargetIteratorData >("FTargetIteratorData")
         .def_readwrite("Iterator", &FTargetIteratorData::Iterator)
         .def_readwrite("Weight", &FTargetIteratorData::Weight)
   ;

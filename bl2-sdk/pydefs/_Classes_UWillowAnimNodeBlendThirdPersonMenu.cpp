@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimNodeBlendThirdPersonMenu()
 {
-    class_< UWillowAnimNodeBlendThirdPersonMenu, bases< UAnimNodeBlendList >  , boost::noncopyable>("UWillowAnimNodeBlendThirdPersonMenu", no_init)
+    py::class_< UWillowAnimNodeBlendThirdPersonMenu,  UAnimNodeBlendList   >("UWillowAnimNodeBlendThirdPersonMenu")
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendThirdPersonMenu::BlendTime)
-        .def("StaticClass", &UWillowAnimNodeBlendThirdPersonMenu::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAnimNodeBlendThirdPersonMenu::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

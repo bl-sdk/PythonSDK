@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowHUDGFxMovieDefinition()
 {
-    class_< UWillowHUDGFxMovieDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UWillowHUDGFxMovieDefinition", no_init)
+    py::class_< UWillowHUDGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >("UWillowHUDGFxMovieDefinition")
         .def_readwrite("MinimapRadius", &UWillowHUDGFxMovieDefinition::MinimapRadius)
         .def_readwrite("MinimapRadiusInVehicle", &UWillowHUDGFxMovieDefinition::MinimapRadiusInVehicle)
         .def_readwrite("MinimapRadiusLerpTime", &UWillowHUDGFxMovieDefinition::MinimapRadiusLerpTime)
@@ -27,7 +27,7 @@ void Export_pystes_UWillowHUDGFxMovieDefinition()
         .def_readwrite("RecordingMaps", &UWillowHUDGFxMovieDefinition::RecordingMaps)
         .def_readwrite("ScaledElements", &UWillowHUDGFxMovieDefinition::ScaledElements)
         .def_readwrite("InjuredStringReplacements", &UWillowHUDGFxMovieDefinition::InjuredStringReplacements)
-        .def("StaticClass", &UWillowHUDGFxMovieDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowHUDGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

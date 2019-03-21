@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIniLocPatcher()
 {
-    class_< UIniLocPatcher, bases< UObject >  , boost::noncopyable>("UIniLocPatcher", no_init)
+    py::class_< UIniLocPatcher,  UObject   >("UIniLocPatcher")
         .def_readwrite("Files", &UIniLocPatcher::Files)
         .def_readwrite("TitleFileInterface", &UIniLocPatcher::TitleFileInterface)
         .def_readonly("UnknownData00", &UIniLocPatcher::UnknownData00)
-        .def("StaticClass", &UIniLocPatcher::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UIniLocPatcher::StaticClass, py::return_value_policy::reference)
         .def("UpdateLocFileName", &UIniLocPatcher::UpdateLocFileName)
         .def("ClearCachedFiles", &UIniLocPatcher::ClearCachedFiles)
         .def("ClearReadFileDelegate", &UIniLocPatcher::ClearReadFileDelegate)

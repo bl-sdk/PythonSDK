@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxFSCmdHandler()
 {
-    class_< UGFxFSCmdHandler, bases< UObject >  , boost::noncopyable>("UGFxFSCmdHandler", no_init)
-        .def("StaticClass", &UGFxFSCmdHandler::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGFxFSCmdHandler,  UObject   >("UGFxFSCmdHandler")
+        .def("StaticClass", &UGFxFSCmdHandler::StaticClass, py::return_value_policy::reference)
         .def("eventFSCommand", &UGFxFSCmdHandler::eventFSCommand)
         .staticmethod("StaticClass")
   ;

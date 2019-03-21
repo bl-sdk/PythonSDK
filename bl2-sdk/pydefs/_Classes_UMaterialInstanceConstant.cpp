@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialInstanceConstant()
 {
-    class_< UMaterialInstanceConstant, bases< UMaterialInterface >  , boost::noncopyable>("UMaterialInstanceConstant", no_init)
+    py::class_< UMaterialInstanceConstant,  UMaterialInterface   >("UMaterialInstanceConstant")
         .def_readwrite("FontParameterValues", &UMaterialInstanceConstant::FontParameterValues)
         .def_readwrite("ScalarParameterValues", &UMaterialInstanceConstant::ScalarParameterValues)
         .def_readwrite("TextureParameterValues", &UMaterialInstanceConstant::TextureParameterValues)
@@ -21,7 +21,7 @@ void Export_pystes_UMaterialInstanceConstant()
         .def_readonly("Resources", &UMaterialInstance::Resources)
         .def_readwrite("ReferencedTextures", &UMaterialInstance::ReferencedTextures)
         .def_readwrite("ParentLightingGuid", &UMaterialInstance::ParentLightingGuid)
-        .def("StaticClass", &UMaterialInstanceConstant::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialInstanceConstant::StaticClass, py::return_value_policy::reference)
         .def("Behavior_SetObjectParameterValue", &UMaterialInstanceConstant::Behavior_SetObjectParameterValue)
         .def("Behavior_SetFloatParameterValue", &UMaterialInstanceConstant::Behavior_SetFloatParameterValue)
         .def("Behavior_SetColorParameterValue", &UMaterialInstanceConstant::Behavior_SetColorParameterValue)

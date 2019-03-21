@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBlurEffect()
 {
-    class_< UBlurEffect, bases< UPostProcessEffect >  , boost::noncopyable>("UBlurEffect", no_init)
+    py::class_< UBlurEffect,  UPostProcessEffect   >("UBlurEffect")
         .def_readwrite("BlurKernelSize", &UBlurEffect::BlurKernelSize)
-        .def("StaticClass", &UBlurEffect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBlurEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

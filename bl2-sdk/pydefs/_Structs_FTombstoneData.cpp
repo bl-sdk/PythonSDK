@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTombstoneData()
 {
-    class_< FTombstoneData >("FTombstoneData", no_init)
+    py::class_< FTombstoneData >("FTombstoneData")
         .def_readwrite("TotalTimePlayed", &FTombstoneData::TotalTimePlayed)
         .def_readwrite("CharacterLevel", &FTombstoneData::CharacterLevel)
         .def_readwrite("PercentMissionsComplete", &FTombstoneData::PercentMissionsComplete)

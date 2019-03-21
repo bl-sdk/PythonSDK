@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAkBaseSoundObject()
 {
-    class_< UAkBaseSoundObject, bases< UObject >  , boost::noncopyable>("UAkBaseSoundObject", no_init)
-        .def("StaticClass", &UAkBaseSoundObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAkBaseSoundObject,  UObject   >("UAkBaseSoundObject")
+        .def("StaticClass", &UAkBaseSoundObject::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

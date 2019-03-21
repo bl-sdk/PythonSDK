@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVectorParticleSystemParameter()
 {
-    class_< FVectorParticleSystemParameter >("FVectorParticleSystemParameter", no_init)
+    py::class_< FVectorParticleSystemParameter >("FVectorParticleSystemParameter")
         .def_readwrite("Name", &FVectorParticleSystemParameter::Name)
         .def_readwrite("Value", &FVectorParticleSystemParameter::Value)
         .def_readwrite("VectorScale", &FVectorParticleSystemParameter::VectorScale)

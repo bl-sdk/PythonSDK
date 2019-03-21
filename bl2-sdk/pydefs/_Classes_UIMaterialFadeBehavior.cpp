@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIMaterialFadeBehavior()
 {
-    class_< UIMaterialFadeBehavior, bases< UInterface >  , boost::noncopyable>("UIMaterialFadeBehavior", no_init)
-        .def("StaticClass", &UIMaterialFadeBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIMaterialFadeBehavior,  UInterface   >("UIMaterialFadeBehavior")
+        .def("StaticClass", &UIMaterialFadeBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_UseMaterialScalarFadeForGoreDeath", &UIMaterialFadeBehavior::Behavior_UseMaterialScalarFadeForGoreDeath)
         .def("Behavior_MaterialScalarFade", &UIMaterialFadeBehavior::Behavior_MaterialScalarFade)
         .staticmethod("StaticClass")

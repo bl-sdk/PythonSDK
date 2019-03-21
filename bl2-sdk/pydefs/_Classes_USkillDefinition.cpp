@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillDefinition()
 {
-    class_< USkillDefinition, bases< UGBXDefinition >  , boost::noncopyable>("USkillDefinition", no_init)
+    py::class_< USkillDefinition,  UGBXDefinition   >("USkillDefinition")
         .def_readwrite("VfTable_IIConstructObject", &USkillDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBehaviorProvider", &USkillDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("SkillEffectUpdateIterval", &USkillDefinition::SkillEffectUpdateIterval)
@@ -39,13 +39,13 @@ void Export_pystes_USkillDefinition()
         .def_readwrite("DamageEvents", &USkillDefinition::DamageEvents)
         .def_readwrite("KillEvents", &USkillDefinition::KillEvents)
         .def_readwrite("BehaviorProviderDefinition", &USkillDefinition::BehaviorProviderDefinition)
-        .def("StaticClass", &USkillDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillDefinition::StaticClass, py::return_value_policy::reference)
         .def("FireCustomEvent", &USkillDefinition::FireCustomEvent)
         .def("DoesSkillPassMinGradeTest", &USkillDefinition::DoesSkillPassMinGradeTest)
         .def("GetSkillEffectPresentations", &USkillDefinition::GetSkillEffectPresentations)
         .def("GetHumanReadableSkillEffects", &USkillDefinition::GetHumanReadableSkillEffects)
         .def("SetBehaviorProviderDefinition", &USkillDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &USkillDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &USkillDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .def("OnStatusEffectTypeEnd", &USkillDefinition::OnStatusEffectTypeEnd)
         .def("OnStatusEffectTypeBegin", &USkillDefinition::OnStatusEffectTypeBegin)
         .def("OnMeleeAttack", &USkillDefinition::OnMeleeAttack)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionGradient()
 {
-    class_< UMaterialExpressionGradient, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionGradient", no_init)
+    py::class_< UMaterialExpressionGradient,  UMaterialExpression   >("UMaterialExpressionGradient")
         .def_readwrite("Coordinates", &UMaterialExpressionGradient::Coordinates)
         .def_readwrite("GradientStyle", &UMaterialExpressionGradient::GradientStyle)
         .def_readwrite("AddressX", &UMaterialExpressionGradient::AddressX)
@@ -14,7 +14,7 @@ void Export_pystes_UMaterialExpressionGradient()
         .def_readwrite("BackgroundColor", &UMaterialExpressionGradient::BackgroundColor)
         .def_readwrite("ForegroundOffset", &UMaterialExpressionGradient::ForegroundOffset)
         .def_readwrite("BackgroundOffset", &UMaterialExpressionGradient::BackgroundOffset)
-        .def("StaticClass", &UMaterialExpressionGradient::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionGradient::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInventoryCardPresentationDefinition()
 {
-    class_< UInventoryCardPresentationDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UInventoryCardPresentationDefinition", no_init)
+    py::class_< UInventoryCardPresentationDefinition,  UGBXDefinition   >("UInventoryCardPresentationDefinition")
         .def_readwrite("ZippyFrame", &UInventoryCardPresentationDefinition::ZippyFrame)
         .def_readwrite("ItemFrame", &UInventoryCardPresentationDefinition::ItemFrame)
         .def_readwrite("DescriptionLocReference", &UInventoryCardPresentationDefinition::DescriptionLocReference)
-        .def("StaticClass", &UInventoryCardPresentationDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInventoryCardPresentationDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

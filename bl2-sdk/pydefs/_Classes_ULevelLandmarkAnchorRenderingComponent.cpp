@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelLandmarkAnchorRenderingComponent()
 {
-    class_< ULevelLandmarkAnchorRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("ULevelLandmarkAnchorRenderingComponent", no_init)
-        .def("StaticClass", &ULevelLandmarkAnchorRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULevelLandmarkAnchorRenderingComponent,  UPrimitiveComponent   >("ULevelLandmarkAnchorRenderingComponent")
+        .def("StaticClass", &ULevelLandmarkAnchorRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

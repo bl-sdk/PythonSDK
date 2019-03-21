@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAvatarAwardUtility()
 {
-    class_< UAvatarAwardUtility, bases< UObject >  , boost::noncopyable>("UAvatarAwardUtility", no_init)
-        .def("StaticClass", &UAvatarAwardUtility::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAvatarAwardUtility,  UObject   >("UAvatarAwardUtility")
+        .def("StaticClass", &UAvatarAwardUtility::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

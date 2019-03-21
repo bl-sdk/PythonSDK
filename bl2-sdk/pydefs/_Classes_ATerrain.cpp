@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATerrain()
 {
-    class_< ATerrain, bases< AInfo >  , boost::noncopyable>("ATerrain", no_init)
+    py::class_< ATerrain,  AInfo   >("ATerrain")
         .def_readwrite("Heights", &ATerrain::Heights)
         .def_readwrite("InfoData", &ATerrain::InfoData)
         .def_readwrite("Layers", &ATerrain::Layers)
@@ -37,7 +37,7 @@ void Export_pystes_ATerrain()
         .def_readwrite("LightingChannels", &ATerrain::LightingChannels)
         .def_readwrite("ReleaseResourcesFence", &ATerrain::ReleaseResourcesFence)
         .def_readwrite("SelectedVertices", &ATerrain::SelectedVertices)
-        .def("StaticClass", &ATerrain::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATerrain::StaticClass, py::return_value_policy::reference)
         .def("eventPostBeginPlay", &ATerrain::eventPostBeginPlay)
         .staticmethod("StaticClass")
   ;

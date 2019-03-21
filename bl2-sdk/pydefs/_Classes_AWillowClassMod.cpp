@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowClassMod()
 {
-    class_< AWillowClassMod, bases< AWillowEquipAbleItem >  , boost::noncopyable>("AWillowClassMod", no_init)
+    py::class_< AWillowClassMod,  AWillowEquipAbleItem   >("AWillowClassMod")
         .def_readwrite("ClassRequirementMetString", &AWillowClassMod::ClassRequirementMetString)
         .def_readwrite("ClassRequirementNotMetString", &AWillowClassMod::ClassRequirementNotMetString)
-        .def("StaticClass", &AWillowClassMod::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowClassMod::StaticClass, py::return_value_policy::reference)
         .def("GetItemCardTopSectionString", &AWillowClassMod::GetItemCardTopSectionString)
         .def("GetInventoryStatNumberData", &AWillowClassMod::GetInventoryStatNumberData)
         .def("GetHolsteredGearLikenessType", &AWillowClassMod::GetHolsteredGearLikenessType)
-        .def("GetAttributePresentationOverride", &AWillowClassMod::GetAttributePresentationOverride, return_value_policy< reference_existing_object >())
+        .def("GetAttributePresentationOverride", &AWillowClassMod::GetAttributePresentationOverride, py::return_value_policy::reference)
         .def("IsModifyingSkill", &AWillowClassMod::IsModifyingSkill)
         .def("eventGetClassModIconLabel", &AWillowClassMod::eventGetClassModIconLabel)
         .def("ValidateDefinitions", &AWillowClassMod::ValidateDefinitions)

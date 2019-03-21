@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FColumnLayoutData()
 {
-    class_< FColumnLayoutData >("FColumnLayoutData", no_init)
+    py::class_< FColumnLayoutData >("FColumnLayoutData")
         .def_readwrite("HeaderHAlign", &FColumnLayoutData::HeaderHAlign)
         .def_readwrite("Header", &FColumnLayoutData::Header)
         .def_readwrite("Width", &FColumnLayoutData::Width)

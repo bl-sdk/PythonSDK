@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FExposureCacheStruct()
 {
-    class_< FExposureCacheStruct >("FExposureCacheStruct", no_init)
+    py::class_< FExposureCacheStruct >("FExposureCacheStruct")
         .def_readwrite("FromPawnName", &FExposureCacheStruct::FromPawnName)
         .def_readwrite("ToActorName", &FExposureCacheStruct::ToActorName)
         .def_readwrite("TimeCached", &FExposureCacheStruct::TimeCached)

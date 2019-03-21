@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryDecal()
 {
-    class_< UActorFactoryDecal, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryDecal", no_init)
+    py::class_< UActorFactoryDecal,  UActorFactory   >("UActorFactoryDecal")
         .def_readwrite("DecalMaterial", &UActorFactoryDecal::DecalMaterial)
-        .def("StaticClass", &UActorFactoryDecal::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryDecal::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

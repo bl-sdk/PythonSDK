@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCurrencyPresentation()
 {
-    class_< FCurrencyPresentation >("FCurrencyPresentation", no_init)
+    py::class_< FCurrencyPresentation >("FCurrencyPresentation")
         .def_readwrite("Type", &FCurrencyPresentation::Type)
         .def_readwrite("WidgetFrame", &FCurrencyPresentation::WidgetFrame)
         .def_readwrite("WidgetClip", &FCurrencyPresentation::WidgetClip)

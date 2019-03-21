@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCardInfo()
 {
-    class_< FCardInfo >("FCardInfo", no_init)
+    py::class_< FCardInfo >("FCardInfo")
         .def_readwrite("CardName", &FCardInfo::CardName)
         .def_readwrite("CellWidth", &FCardInfo::CellWidth)
         .def_readwrite("CellHeight", &FCardInfo::CellHeight)

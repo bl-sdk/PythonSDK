@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClientAdjustment()
 {
-    class_< FClientAdjustment >("FClientAdjustment", no_init)
+    py::class_< FClientAdjustment >("FClientAdjustment")
         .def_readwrite("TimeStamp", &FClientAdjustment::TimeStamp)
         .def_readwrite("newPhysics", &FClientAdjustment::newPhysics)
         .def_readwrite("NewLoc", &FClientAdjustment::NewLoc)

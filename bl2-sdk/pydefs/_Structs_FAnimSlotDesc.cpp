@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAnimSlotDesc()
 {
-    class_< FAnimSlotDesc >("FAnimSlotDesc", no_init)
+    py::class_< FAnimSlotDesc >("FAnimSlotDesc")
         .def_readwrite("SlotName", &FAnimSlotDesc::SlotName)
         .def_readwrite("NumChannels", &FAnimSlotDesc::NumChannels)
   ;

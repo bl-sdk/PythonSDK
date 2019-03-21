@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_SetLockout()
 {
-    class_< UWillowSeqAct_SetLockout, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_SetLockout", no_init)
+    py::class_< UWillowSeqAct_SetLockout,  USequenceAction   >("UWillowSeqAct_SetLockout")
         .def_readwrite("LockoutDef", &UWillowSeqAct_SetLockout::LockoutDef)
-        .def("StaticClass", &UWillowSeqAct_SetLockout::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_SetLockout::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

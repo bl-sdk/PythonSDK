@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavMeshGoal_At()
 {
-    class_< UNavMeshGoal_At, bases< UNavMeshPathGoalEvaluator >  , boost::noncopyable>("UNavMeshGoal_At", no_init)
+    py::class_< UNavMeshGoal_At,  UNavMeshPathGoalEvaluator   >("UNavMeshGoal_At")
         .def_readwrite("Goal", &UNavMeshGoal_At::Goal)
         .def_readwrite("GoalDist", &UNavMeshGoal_At::GoalDist)
         .def_readwrite("PartialDistSq", &UNavMeshGoal_At::PartialDistSq)
         .def_readwrite("GoalPoly", &UNavMeshGoal_At::GoalPoly)
         .def_readwrite("PartialGoal", &UNavMeshGoal_At::PartialGoal)
-        .def("StaticClass", &UNavMeshGoal_At::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavMeshGoal_At::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshGoal_At::Recycle)
         .def("AtLocation", &UNavMeshGoal_At::AtLocation)
         .def("AtActor", &UNavMeshGoal_At::AtActor)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_GoToScriptedDestination()
 {
-    class_< UAction_GoToScriptedDestination, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_GoToScriptedDestination", no_init)
+    py::class_< UAction_GoToScriptedDestination,  UWillowActionSequencePawn   >("UAction_GoToScriptedDestination")
         .def_readwrite("FindLookAtTargetTime", &UAction_GoToScriptedDestination::FindLookAtTargetTime)
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)
@@ -14,14 +14,14 @@ void Export_pystes_UAction_GoToScriptedDestination()
         .def_readwrite("TimeToStopLooping", &UAction_FollowPath::TimeToStopLooping)
         .def_readwrite("BurrowEnter", &UAction_Burrow::BurrowEnter)
         .def_readwrite("BurrowExit", &UAction_Burrow::BurrowExit)
-        .def("StaticClass", &UAction_GoToScriptedDestination::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_GoToScriptedDestination::StaticClass, py::return_value_policy::reference)
         .def("FindLookAtTarget", &UAction_GoToScriptedDestination::FindLookAtTarget)
         .def("ReachedFormation", &UAction_GoToScriptedDestination::ReachedFormation)
         .def("CanFollowFormationOwner", &UAction_GoToScriptedDestination::CanFollowFormationOwner)
         .def("InRange", &UAction_GoToScriptedDestination::InRange)
         .def("WantsPath", &UAction_GoToScriptedDestination::WantsPath)
         .def("SetMoveNode", &UAction_GoToScriptedDestination::SetMoveNode)
-        .def("GetMoveNode", &UAction_GoToScriptedDestination::GetMoveNode, return_value_policy< reference_existing_object >())
+        .def("GetMoveNode", &UAction_GoToScriptedDestination::GetMoveNode, py::return_value_policy::reference)
         .def("SetMoveNodeSpeed", &UAction_GoToScriptedDestination::SetMoveNodeSpeed)
         .def("GetDefaultMoveNodeSpeed", &UAction_GoToScriptedDestination::GetDefaultMoveNodeSpeed)
         .def("SetMoveFacingPolicy", &UAction_GoToScriptedDestination::SetMoveFacingPolicy)

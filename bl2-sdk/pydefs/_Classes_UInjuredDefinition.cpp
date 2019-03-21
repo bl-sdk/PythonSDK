@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInjuredDefinition()
 {
-    class_< UInjuredDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UInjuredDefinition", no_init)
+    py::class_< UInjuredDefinition,  UGBXDefinition   >("UInjuredDefinition")
         .def_readwrite("InjuredInteractionDefinition", &UInjuredDefinition::InjuredInteractionDefinition)
         .def_readwrite("InjuredAttributeModifiers", &UInjuredDefinition::InjuredAttributeModifiers)
         .def_readwrite("InjuredBonusDamageScale", &UInjuredDefinition::InjuredBonusDamageScale)
@@ -57,7 +57,7 @@ void Export_pystes_UInjuredDefinition()
         .def_readwrite("InjuredPreDeathRecoveryTime", &UInjuredDefinition::InjuredPreDeathRecoveryTime)
         .def_readwrite("InjuredPreDeathRecoveryExponent", &UInjuredDefinition::InjuredPreDeathRecoveryExponent)
         .def_readwrite("InjuredPreDeathRecoveryAnim", &UInjuredDefinition::InjuredPreDeathRecoveryAnim)
-        .def("StaticClass", &UInjuredDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInjuredDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

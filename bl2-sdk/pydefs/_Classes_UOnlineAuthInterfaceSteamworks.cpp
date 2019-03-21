@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineAuthInterfaceSteamworks()
 {
-    class_< UOnlineAuthInterfaceSteamworks, bases< UOnlineAuthInterfaceImpl >  , boost::noncopyable>("UOnlineAuthInterfaceSteamworks", no_init)
+    py::class_< UOnlineAuthInterfaceSteamworks,  UOnlineAuthInterfaceImpl   >("UOnlineAuthInterfaceSteamworks")
         .def_readwrite("AuthCallbackBridge", &UOnlineAuthInterfaceSteamworks::AuthCallbackBridge)
-        .def("StaticClass", &UOnlineAuthInterfaceSteamworks::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineAuthInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
         .def("GetServerAddr", &UOnlineAuthInterfaceSteamworks::GetServerAddr)
         .def("GetServerUniqueId", &UOnlineAuthInterfaceSteamworks::GetServerUniqueId)
         .def("EndRemoteServerAuthSession", &UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession)

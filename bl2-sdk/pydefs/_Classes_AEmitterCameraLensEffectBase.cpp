@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AEmitterCameraLensEffectBase()
 {
-    class_< AEmitterCameraLensEffectBase, bases< AActor >  , boost::noncopyable>("AEmitterCameraLensEffectBase", no_init)
+    py::class_< AEmitterCameraLensEffectBase,  AActor   >("AEmitterCameraLensEffectBase")
         .def_readwrite("PS_CameraEffect", &AEmitterCameraLensEffectBase::PS_CameraEffect)
         .def_readwrite("PS_CameraEffectNonExtremeContent", &AEmitterCameraLensEffectBase::PS_CameraEffectNonExtremeContent)
         .def_readwrite("BaseFOV", &AEmitterCameraLensEffectBase::BaseFOV)
@@ -14,7 +14,7 @@ void Export_pystes_AEmitterCameraLensEffectBase()
         .def_readwrite("BaseCamera", &AEmitterCameraLensEffectBase::BaseCamera)
         .def_readwrite("ParticleSystemComponent", &AEmitter::ParticleSystemComponent)
         .def_readwrite("LightEnvironment", &AEmitter::LightEnvironment)
-        .def("StaticClass", &AEmitterCameraLensEffectBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AEmitterCameraLensEffectBase::StaticClass, py::return_value_policy::reference)
         .def("UpdateLocation", &AEmitterCameraLensEffectBase::UpdateLocation)
         .def("ActivateLensEffect", &AEmitterCameraLensEffectBase::ActivateLensEffect)
         .def("PostBeginPlay", &AEmitterCameraLensEffectBase::PostBeginPlay)

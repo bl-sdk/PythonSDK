@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCustomizationSizeMapping()
 {
-    class_< FCustomizationSizeMapping >("FCustomizationSizeMapping", no_init)
+    py::class_< FCustomizationSizeMapping >("FCustomizationSizeMapping")
         .def_readwrite("ProductID", &FCustomizationSizeMapping::ProductID)
         .def_readwrite("NumCustomizations", &FCustomizationSizeMapping::NumCustomizations)
   ;

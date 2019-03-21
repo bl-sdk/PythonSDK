@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FConditionalExplosionData()
 {
-    class_< FConditionalExplosionData >("FConditionalExplosionData", no_init)
+    py::class_< FConditionalExplosionData >("FConditionalExplosionData")
         .def_readwrite("Expression", &FConditionalExplosionData::Expression)
         .def_readwrite("Explosion", &FConditionalExplosionData::Explosion)
   ;

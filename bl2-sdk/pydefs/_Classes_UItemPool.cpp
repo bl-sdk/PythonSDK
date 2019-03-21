@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemPool()
 {
-    class_< UItemPool, bases< UObject >  , boost::noncopyable>("UItemPool", no_init)
-        .def("StaticClass", &UItemPool::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UItemPool,  UObject   >("UItemPool")
+        .def("StaticClass", &UItemPool::StaticClass, py::return_value_policy::reference)
         .def("IsAllItemTypesDebugEnabled", &UItemPool::IsAllItemTypesDebugEnabled)
         .def("ToggleAllItemTypesDebug", &UItemPool::ToggleAllItemTypesDebug)
         .def("SpawnBalancedInventoryFromInventoryBalanceDefinition", &UItemPool::SpawnBalancedInventoryFromInventoryBalanceDefinition)

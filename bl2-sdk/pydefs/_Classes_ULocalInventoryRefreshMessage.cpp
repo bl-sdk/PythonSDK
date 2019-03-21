@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULocalInventoryRefreshMessage()
 {
-    class_< ULocalInventoryRefreshMessage, bases< UWillowLocalMessage >  , boost::noncopyable>("ULocalInventoryRefreshMessage", no_init)
-        .def("StaticClass", &ULocalInventoryRefreshMessage::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULocalInventoryRefreshMessage,  UWillowLocalMessage   >("ULocalInventoryRefreshMessage")
+        .def("StaticClass", &ULocalInventoryRefreshMessage::StaticClass, py::return_value_policy::reference)
         .def("ClientInventoryRefresh", &ULocalInventoryRefreshMessage::ClientInventoryRefresh)
         .staticmethod("StaticClass")
   ;

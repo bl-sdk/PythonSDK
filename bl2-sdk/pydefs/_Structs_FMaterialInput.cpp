@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMaterialInput()
 {
-    class_< FMaterialInput >("FMaterialInput", no_init)
+    py::class_< FMaterialInput >("FMaterialInput")
         .def_readwrite("Expression", &FMaterialInput::Expression)
         .def_readwrite("Mask", &FMaterialInput::Mask)
         .def_readwrite("MaskR", &FMaterialInput::MaskR)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATestSplittingVolume()
 {
-    class_< ATestSplittingVolume, bases< AVolume >  , boost::noncopyable>("ATestSplittingVolume", no_init)
+    py::class_< ATestSplittingVolume,  AVolume   >("ATestSplittingVolume")
         .def_readwrite("VfTable_IInterface_NavMeshPathObject", &ATestSplittingVolume::VfTable_IInterface_NavMeshPathObject)
-        .def("StaticClass", &ATestSplittingVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATestSplittingVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

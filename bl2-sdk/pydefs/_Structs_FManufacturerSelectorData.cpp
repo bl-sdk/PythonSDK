@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FManufacturerSelectorData()
 {
-    class_< FManufacturerSelectorData >("FManufacturerSelectorData", no_init)
+    py::class_< FManufacturerSelectorData >("FManufacturerSelectorData")
         .def_readwrite("AssociatedManufacturerName", &FManufacturerSelectorData::AssociatedManufacturerName)
         .def_readwrite("ValueIfMatched", &FManufacturerSelectorData::ValueIfMatched)
   ;

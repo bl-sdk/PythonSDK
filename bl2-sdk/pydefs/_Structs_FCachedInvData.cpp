@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCachedInvData()
 {
-    class_< FCachedInvData >("FCachedInvData", no_init)
+    py::class_< FCachedInvData >("FCachedInvData")
         .def_readwrite("Inv", &FCachedInvData::Inv)
         .def_readwrite("TrashOrFavorite", &FCachedInvData::TrashOrFavorite)
   ;

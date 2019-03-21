@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UResourcePoolDefinition()
 {
-    class_< UResourcePoolDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UResourcePoolDefinition", no_init)
+    py::class_< UResourcePoolDefinition,  UGBXDefinition   >("UResourcePoolDefinition")
         .def_readwrite("Resource", &UResourcePoolDefinition::Resource)
         .def_readwrite("NetRelevancy", &UResourcePoolDefinition::NetRelevancy)
         .def_readwrite("RegenerationResource", &UResourcePoolDefinition::RegenerationResource)
@@ -27,7 +27,7 @@ void Export_pystes_UResourcePoolDefinition()
         .def_readwrite("UpgradeLevelAttribute", &UResourcePoolDefinition::UpgradeLevelAttribute)
         .def_readwrite("TotalUpgradeCount", &UResourcePoolDefinition::TotalUpgradeCount)
         .def_readwrite("MaxValueUpgrade", &UResourcePoolDefinition::MaxValueUpgrade)
-        .def("StaticClass", &UResourcePoolDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UResourcePoolDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

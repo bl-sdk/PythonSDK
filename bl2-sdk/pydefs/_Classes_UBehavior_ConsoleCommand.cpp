@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_ConsoleCommand()
 {
-    class_< UBehavior_ConsoleCommand, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_ConsoleCommand", no_init)
+    py::class_< UBehavior_ConsoleCommand,  UBehaviorBase   >("UBehavior_ConsoleCommand")
         .def_readwrite("Command", &UBehavior_ConsoleCommand::Command)
-        .def("StaticClass", &UBehavior_ConsoleCommand::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_ConsoleCommand::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ConsoleCommand::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

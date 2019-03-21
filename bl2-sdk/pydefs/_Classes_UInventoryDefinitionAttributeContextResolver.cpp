@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInventoryDefinitionAttributeContextResolver()
 {
-    class_< UInventoryDefinitionAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UInventoryDefinitionAttributeContextResolver", no_init)
-        .def("StaticClass", &UInventoryDefinitionAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetAttributeContext", &UInventoryDefinitionAttributeContextResolver::GetAttributeContext, return_value_policy< reference_existing_object >())
+    py::class_< UInventoryDefinitionAttributeContextResolver,  UAttributeContextResolver   >("UInventoryDefinitionAttributeContextResolver")
+        .def("StaticClass", &UInventoryDefinitionAttributeContextResolver::StaticClass, py::return_value_policy::reference)
+        .def("GetAttributeContext", &UInventoryDefinitionAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

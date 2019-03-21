@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponPartListCollectionDefinition()
 {
-    class_< UWeaponPartListCollectionDefinition, bases< UInventoryPartListCollectionDefinition >  , boost::noncopyable>("UWeaponPartListCollectionDefinition", no_init)
+    py::class_< UWeaponPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >("UWeaponPartListCollectionDefinition")
         .def_readwrite("AssociatedWeaponType", &UWeaponPartListCollectionDefinition::AssociatedWeaponType)
         .def_readwrite("BodyPartData", &UWeaponPartListCollectionDefinition::BodyPartData)
         .def_readwrite("GripPartData", &UWeaponPartListCollectionDefinition::GripPartData)
@@ -16,7 +16,7 @@ void Export_pystes_UWeaponPartListCollectionDefinition()
         .def_readwrite("Accessory1PartData", &UWeaponPartListCollectionDefinition::Accessory1PartData)
         .def_readwrite("Accessory2PartData", &UWeaponPartListCollectionDefinition::Accessory2PartData)
         .def_readwrite("MaterialPartData", &UWeaponPartListCollectionDefinition::MaterialPartData)
-        .def("StaticClass", &UWeaponPartListCollectionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponPartListCollectionDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

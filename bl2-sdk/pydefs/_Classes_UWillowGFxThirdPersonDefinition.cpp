@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxThirdPersonDefinition()
 {
-    class_< UWillowGFxThirdPersonDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UWillowGFxThirdPersonDefinition", no_init)
+    py::class_< UWillowGFxThirdPersonDefinition,  UWillowGFxMovie3DDefinition   >("UWillowGFxThirdPersonDefinition")
         .def_readwrite("CameraInterpSpeed", &UWillowGFxThirdPersonDefinition::CameraInterpSpeed)
         .def_readwrite("CloseInterpTime", &UWillowGFxThirdPersonDefinition::CloseInterpTime)
         .def_readwrite("CloseInterpDistSqThreshold", &UWillowGFxThirdPersonDefinition::CloseInterpDistSqThreshold)
@@ -15,7 +15,7 @@ void Export_pystes_UWillowGFxThirdPersonDefinition()
         .def_readwrite("CameraPitchMax", &UWillowGFxThirdPersonDefinition::CameraPitchMax)
         .def_readwrite("MenuRotationSpeed", &UWillowGFxThirdPersonDefinition::MenuRotationSpeed)
         .def_readwrite("MenuRotationSmoothingSpeed", &UWillowGFxThirdPersonDefinition::MenuRotationSmoothingSpeed)
-        .def("StaticClass", &UWillowGFxThirdPersonDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxThirdPersonDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

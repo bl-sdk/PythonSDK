@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNavMeshPathParams()
 {
-    class_< FNavMeshPathParams >("FNavMeshPathParams", no_init)
+    py::class_< FNavMeshPathParams >("FNavMeshPathParams")
         .def_readwrite("Interface", &FNavMeshPathParams::Interface)
         .def_readwrite("PhysicsJumpCostMultiplier", &FNavMeshPathParams::PhysicsJumpCostMultiplier)
         .def_readwrite("SearchExtent", &FNavMeshPathParams::SearchExtent)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATcpLink()
 {
-    class_< ATcpLink, bases< AInfo >  , boost::noncopyable>("ATcpLink", no_init)
+    py::class_< ATcpLink,  AInfo   >("ATcpLink")
         .def_readwrite("LinkState", &ATcpLink::LinkState)
         .def_readwrite("RemoteAddr", &ATcpLink::RemoteAddr)
         .def_readwrite("AcceptClass", &ATcpLink::AcceptClass)
@@ -20,7 +20,7 @@ void Export_pystes_ATcpLink()
         .def_readwrite("RemoteSocket", &AInternetLink::RemoteSocket)
         .def_readwrite("PrivateResolveInfo", &AInternetLink::PrivateResolveInfo)
         .def_readwrite("DataPending", &AInternetLink::DataPending)
-        .def("StaticClass", &ATcpLink::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATcpLink::StaticClass, py::return_value_policy::reference)
         .def("eventReceivedBinary", &ATcpLink::eventReceivedBinary)
         .def("eventReceivedLine", &ATcpLink::eventReceivedLine)
         .def("eventReceivedText", &ATcpLink::eventReceivedText)

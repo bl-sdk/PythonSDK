@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableCustomizationSetDefinition()
 {
-    class_< UDownloadableCustomizationSetDefinition, bases< UDownloadableContentDefinition >  , boost::noncopyable>("UDownloadableCustomizationSetDefinition", no_init)
+    py::class_< UDownloadableCustomizationSetDefinition,  UDownloadableContentDefinition   >("UDownloadableCustomizationSetDefinition")
         .def_readwrite("ProductID", &UDownloadableCustomizationSetDefinition::ProductID)
         .def_readwrite("NumCustomizations", &UDownloadableCustomizationSetDefinition::NumCustomizations)
-        .def("StaticClass", &UDownloadableCustomizationSetDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadableCustomizationSetDefinition::StaticClass, py::return_value_policy::reference)
         .def("CanUse", &UDownloadableCustomizationSetDefinition::CanUse)
         .staticmethod("StaticClass")
   ;

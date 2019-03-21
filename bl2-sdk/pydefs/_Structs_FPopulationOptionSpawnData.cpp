@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationOptionSpawnData()
 {
-    class_< FPopulationOptionSpawnData >("FPopulationOptionSpawnData", no_init)
+    py::class_< FPopulationOptionSpawnData >("FPopulationOptionSpawnData")
         .def_readwrite("PopulationDefName", &FPopulationOptionSpawnData::PopulationDefName)
         .def_readwrite("MaxActiveActors", &FPopulationOptionSpawnData::MaxActiveActors)
         .def_readwrite("NumTotalActors", &FPopulationOptionSpawnData::NumTotalActors)

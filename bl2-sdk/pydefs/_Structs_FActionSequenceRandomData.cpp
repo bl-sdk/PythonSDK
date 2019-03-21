@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActionSequenceRandomData()
 {
-    class_< FActionSequenceRandomData >("FActionSequenceRandomData", no_init)
+    py::class_< FActionSequenceRandomData >("FActionSequenceRandomData")
         .def_readwrite("ProbabilityData", &FActionSequenceRandomData::ProbabilityData)
         .def_readwrite("ActionToRunWhenTrue", &FActionSequenceRandomData::ActionToRunWhenTrue)
   ;

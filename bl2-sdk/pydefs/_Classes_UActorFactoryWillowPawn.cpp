@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryWillowPawn()
 {
-    class_< UActorFactoryWillowPawn, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryWillowPawn", no_init)
+    py::class_< UActorFactoryWillowPawn,  UActorFactory   >("UActorFactoryWillowPawn")
         .def_readwrite("PawnArchetype", &UActorFactoryWillowPawn::PawnArchetype)
-        .def("StaticClass", &UActorFactoryWillowPawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryWillowPawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

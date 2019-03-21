@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowElevatorButton()
 {
-    class_< AWillowElevatorButton, bases< AWillowInteractiveObject >  , boost::noncopyable>("AWillowElevatorButton", no_init)
+    py::class_< AWillowElevatorButton,  AWillowInteractiveObject   >("AWillowElevatorButton")
         .def_readwrite("Usage", &AWillowElevatorButton::Usage)
         .def_readwrite("ButtonState", &AWillowElevatorButton::ButtonState)
         .def_readwrite("CallFloor", &AWillowElevatorButton::CallFloor)
@@ -18,7 +18,7 @@ void Export_pystes_AWillowElevatorButton()
         .def_readwrite("BehaviorSetName_InUse_Glowing", &AWillowElevatorButton::BehaviorSetName_InUse_Glowing)
         .def_readwrite("BehaviorSetName_EnabledButUseless_Glowing", &AWillowElevatorButton::BehaviorSetName_EnabledButUseless_Glowing)
         .def_readwrite("AssociatedElevators", &AWillowElevatorButton::AssociatedElevators)
-        .def("StaticClass", &AWillowElevatorButton::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowElevatorButton::StaticClass, py::return_value_policy::reference)
         .def("UpdateState", &AWillowElevatorButton::UpdateState)
         .def("CanBeUsedForAnyAssociatedElevator", &AWillowElevatorButton::CanBeUsedForAnyAssociatedElevator)
         .def("UseObject", &AWillowElevatorButton::UseObject)

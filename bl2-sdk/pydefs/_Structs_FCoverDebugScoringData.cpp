@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoverDebugScoringData()
 {
-    class_< FCoverDebugScoringData >("FCoverDebugScoringData", no_init)
+    py::class_< FCoverDebugScoringData >("FCoverDebugScoringData")
         .def_readwrite("PriorityName", &FCoverDebugScoringData::PriorityName)
         .def_readwrite("Score", &FCoverDebugScoringData::Score)
   ;

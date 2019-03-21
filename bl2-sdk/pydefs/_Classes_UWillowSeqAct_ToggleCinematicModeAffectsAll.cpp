@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ToggleCinematicModeAffectsAll()
 {
-    class_< UWillowSeqAct_ToggleCinematicModeAffectsAll, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ToggleCinematicModeAffectsAll", no_init)
-        .def("StaticClass", &UWillowSeqAct_ToggleCinematicModeAffectsAll::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_ToggleCinematicModeAffectsAll,  USequenceAction   >("UWillowSeqAct_ToggleCinematicModeAffectsAll")
+        .def("StaticClass", &UWillowSeqAct_ToggleCinematicModeAffectsAll::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

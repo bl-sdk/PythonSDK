@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInstanceDataUnion()
 {
-    class_< FInstanceDataUnion >("FInstanceDataUnion", no_init)
+    py::class_< FInstanceDataUnion >("FInstanceDataUnion")
         .def_readwrite("Name", &FInstanceDataUnion::Name)
         .def_readwrite("Type", &FInstanceDataUnion::Type)
         .def_readwrite("Replication", &FInstanceDataUnion::Replication)

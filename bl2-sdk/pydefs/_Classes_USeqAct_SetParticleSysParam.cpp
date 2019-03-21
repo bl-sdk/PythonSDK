@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_SetParticleSysParam()
 {
-    class_< USeqAct_SetParticleSysParam, bases< USequenceAction >  , boost::noncopyable>("USeqAct_SetParticleSysParam", no_init)
+    py::class_< USeqAct_SetParticleSysParam,  USequenceAction   >("USeqAct_SetParticleSysParam")
         .def_readwrite("InstanceParameters", &USeqAct_SetParticleSysParam::InstanceParameters)
         .def_readwrite("ScalarValue", &USeqAct_SetParticleSysParam::ScalarValue)
-        .def("StaticClass", &USeqAct_SetParticleSysParam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_SetParticleSysParam::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNetworkChannelData()
 {
-    class_< FNetworkChannelData >("FNetworkChannelData", no_init)
+    py::class_< FNetworkChannelData >("FNetworkChannelData")
         .def_readwrite("ChannelName", &FNetworkChannelData::ChannelName)
         .def_readwrite("StateName", &FNetworkChannelData::StateName)
         .def_readwrite("ActorClass", &FNetworkChannelData::ActorClass)

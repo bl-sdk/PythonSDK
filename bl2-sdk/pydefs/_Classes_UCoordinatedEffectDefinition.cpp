@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCoordinatedEffectDefinition()
 {
-    class_< UCoordinatedEffectDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UCoordinatedEffectDefinition", no_init)
+    py::class_< UCoordinatedEffectDefinition,  UGBXDefinition   >("UCoordinatedEffectDefinition")
         .def_readwrite("OverrideMaterial", &UCoordinatedEffectDefinition::OverrideMaterial)
         .def_readwrite("CriticialHitParticle", &UCoordinatedEffectDefinition::CriticialHitParticle)
         .def_readwrite("ParticleEffects", &UCoordinatedEffectDefinition::ParticleEffects)
@@ -16,7 +16,7 @@ void Export_pystes_UCoordinatedEffectDefinition()
         .def_readwrite("ParticleSpeedMultiplier", &UCoordinatedEffectDefinition::ParticleSpeedMultiplier)
         .def_readwrite("NextEffect", &UCoordinatedEffectDefinition::NextEffect)
         .def_readwrite("MutexName", &UCoordinatedEffectDefinition::MutexName)
-        .def("StaticClass", &UCoordinatedEffectDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCoordinatedEffectDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

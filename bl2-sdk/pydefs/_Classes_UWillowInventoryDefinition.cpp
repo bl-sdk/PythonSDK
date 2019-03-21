@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowInventoryDefinition()
 {
-    class_< UWillowInventoryDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UWillowInventoryDefinition", no_init)
+    py::class_< UWillowInventoryDefinition,  UGBXDefinition   >("UWillowInventoryDefinition")
         .def_readwrite("InventoryClass", &UWillowInventoryDefinition::InventoryClass)
         .def_readwrite("PlayerDroppability", &UWillowInventoryDefinition::PlayerDroppability)
         .def_readwrite("FormOfCurrency", &UWillowInventoryDefinition::FormOfCurrency)
@@ -44,7 +44,7 @@ void Export_pystes_UWillowInventoryDefinition()
         .def_readwrite("AttributeSlotEffects", &UWillowInventoryDefinition::AttributeSlotEffects)
         .def_readwrite("AttributeSlotUpgrades", &UWillowInventoryDefinition::AttributeSlotUpgrades)
         .def_readwrite("LootBeamColorOverride", &UWillowInventoryDefinition::LootBeamColorOverride)
-        .def("StaticClass", &UWillowInventoryDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowInventoryDefinition::StaticClass, py::return_value_policy::reference)
         .def("CanPickupInBulk", &UWillowInventoryDefinition::CanPickupInBulk)
         .def("ShouldPlayerAutomaticallyPickup", &UWillowInventoryDefinition::ShouldPlayerAutomaticallyPickup)
         .def("GetAttributeSlotMaxActivated", &UWillowInventoryDefinition::GetAttributeSlotMaxActivated)

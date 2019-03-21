@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCustomizationDefinition()
 {
-    class_< UCustomizationDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UCustomizationDefinition", no_init)
+    py::class_< UCustomizationDefinition,  UGBXDefinition   >("UCustomizationDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UCustomizationDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("CustomizationName", &UCustomizationDefinition::CustomizationName)
         .def_readwrite("CustomizationType", &UCustomizationDefinition::CustomizationType)
@@ -18,14 +18,14 @@ void Export_pystes_UCustomizationDefinition()
         .def_readwrite("PrimarySort", &UCustomizationDefinition::PrimarySort)
         .def_readwrite("SecondarySort", &UCustomizationDefinition::SecondarySort)
         .def_readwrite("DlcCustomizationSetDef", &UCustomizationDefinition::DlcCustomizationSetDef)
-        .def("StaticClass", &UCustomizationDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCustomizationDefinition::StaticClass, py::return_value_policy::reference)
         .def("PassesDLCUsageRestrictionsForUser", &UCustomizationDefinition::PassesDLCUsageRestrictionsForUser)
         .def("eventIsVehicleSkinCustomization", &UCustomizationDefinition::eventIsVehicleSkinCustomization)
         .def("eventIsCharacterSkinCustomization", &UCustomizationDefinition::eventIsCharacterSkinCustomization)
         .def("eventIsCharacterHeadCustomization", &UCustomizationDefinition::eventIsCharacterHeadCustomization)
         .def("MatchRequiredUsageFlags", &UCustomizationDefinition::MatchRequiredUsageFlags)
         .def("SortCustomizationList", &UCustomizationDefinition::SortCustomizationList)
-        .def("GetDownloadableContentDefinition", &UCustomizationDefinition::GetDownloadableContentDefinition, return_value_policy< reference_existing_object >())
+        .def("GetDownloadableContentDefinition", &UCustomizationDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
         .def("GetAvailableAndUnauthorizedCustomizationsForVehicle", &UCustomizationDefinition::GetAvailableAndUnauthorizedCustomizationsForVehicle)
         .def("GetAvailableAndUnauthorizedCustomizationsForPlayer", &UCustomizationDefinition::GetAvailableAndUnauthorizedCustomizationsForPlayer)
         .def("GetAvailableCustomizationsForVehicle", &UCustomizationDefinition::GetAvailableCustomizationsForVehicle)

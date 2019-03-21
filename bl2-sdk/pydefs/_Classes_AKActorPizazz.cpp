@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AKActorPizazz()
 {
-    class_< AKActorPizazz, bases< AKActor >  , boost::noncopyable>("AKActorPizazz", no_init)
+    py::class_< AKActorPizazz,  AKActor   >("AKActorPizazz")
         .def_readwrite("ReplicatedImpulse", &AKActorPizazz::ReplicatedImpulse)
-        .def("StaticClass", &AKActorPizazz::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AKActorPizazz::StaticClass, py::return_value_policy::reference)
         .def("ApplyReplicatedImpulse", &AKActorPizazz::ApplyReplicatedImpulse)
         .def("eventReplicatedEvent", &AKActorPizazz::eventReplicatedEvent)
         .def("ResetComponents", &AKActorSpawnable::ResetComponents)

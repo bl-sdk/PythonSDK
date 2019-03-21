@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowTeleporter()
 {
-    class_< AWillowTeleporter, bases< ATeleporter >  , boost::noncopyable>("AWillowTeleporter", no_init)
-        .def("StaticClass", &AWillowTeleporter::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowTeleporter,  ATeleporter   >("AWillowTeleporter")
+        .def("StaticClass", &AWillowTeleporter::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &AWillowTeleporter::OnToggle)
         .staticmethod("StaticClass")
   ;

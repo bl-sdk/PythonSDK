@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ARB_ForceFieldExcludeVolume()
 {
-    class_< ARB_ForceFieldExcludeVolume, bases< AVolume >  , boost::noncopyable>("ARB_ForceFieldExcludeVolume", no_init)
+    py::class_< ARB_ForceFieldExcludeVolume,  AVolume   >("ARB_ForceFieldExcludeVolume")
         .def_readwrite("ForceFieldChannel", &ARB_ForceFieldExcludeVolume::ForceFieldChannel)
-        .def("StaticClass", &ARB_ForceFieldExcludeVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ARB_ForceFieldExcludeVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

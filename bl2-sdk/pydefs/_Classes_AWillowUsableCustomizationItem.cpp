@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowUsableCustomizationItem()
 {
-    class_< AWillowUsableCustomizationItem, bases< AWillowUsableItem >  , boost::noncopyable>("AWillowUsableCustomizationItem", no_init)
-        .def("StaticClass", &AWillowUsableCustomizationItem::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowUsableCustomizationItem,  AWillowUsableItem   >("AWillowUsableCustomizationItem")
+        .def("StaticClass", &AWillowUsableCustomizationItem::StaticClass, py::return_value_policy::reference)
         .def("IsUsefulToThisPlayer", &AWillowUsableCustomizationItem::IsUsefulToThisPlayer)
         .def("GetItemCardTopSectionString", &AWillowUsableCustomizationItem::GetItemCardTopSectionString)
         .def("InitMeshes", &AWillowUsableCustomizationItem::InitMeshes)

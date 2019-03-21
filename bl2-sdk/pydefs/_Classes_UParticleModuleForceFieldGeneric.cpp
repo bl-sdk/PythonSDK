@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleForceFieldGeneric()
 {
-    class_< UParticleModuleForceFieldGeneric, bases< UParticleModule >  , boost::noncopyable>("UParticleModuleForceFieldGeneric", no_init)
+    py::class_< UParticleModuleForceFieldGeneric,  UParticleModule   >("UParticleModuleForceFieldGeneric")
         .def_readwrite("ForceField", &UParticleModuleForceFieldBase::ForceField)
-        .def("StaticClass", &UParticleModuleForceFieldGeneric::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetForceFieldInstance", &UParticleModuleForceFieldBase::eventGetForceFieldInstance, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleForceFieldGeneric::StaticClass, py::return_value_policy::reference)
+        .def("eventGetForceFieldInstance", &UParticleModuleForceFieldBase::eventGetForceFieldInstance, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

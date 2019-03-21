@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FObjectKey()
 {
-    class_< FObjectKey >("FObjectKey", no_init)
+    py::class_< FObjectKey >("FObjectKey")
         .def_readwrite("ObjectName", &FObjectKey::ObjectName)
         .def_readwrite("AdditionalKey", &FObjectKey::AdditionalKey)
   ;

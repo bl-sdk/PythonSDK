@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTurnDefinition()
 {
-    class_< UTurnDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UTurnDefinition", no_init)
+    py::class_< UTurnDefinition,  UGBXDefinition   >("UTurnDefinition")
         .def_readwrite("Idle", &UTurnDefinition::Idle)
         .def_readwrite("Moving", &UTurnDefinition::Moving)
         .def_readwrite("TurnCancelTime", &UTurnDefinition::TurnCancelTime)
-        .def("StaticClass", &UTurnDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTurnDefinition::StaticClass, py::return_value_policy::reference)
         .def("UsesMovingTurns", &UTurnDefinition::UsesMovingTurns)
         .def("UsesIdleTurns", &UTurnDefinition::UsesIdleTurns)
         .staticmethod("StaticClass")

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUniqueNetId()
 {
-    class_< FUniqueNetId >("FUniqueNetId", no_init)
+    py::class_< FUniqueNetId >("FUniqueNetId")
         .def_readwrite("Uid", &FUniqueNetId::Uid)
         .def_readonly("NpId", &FUniqueNetId::NpId)
   ;

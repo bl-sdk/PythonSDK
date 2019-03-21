@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AVehicleLifetimeManager()
 {
-    class_< AVehicleLifetimeManager, bases< AInfo >  , boost::noncopyable>("AVehicleLifetimeManager", no_init)
+    py::class_< AVehicleLifetimeManager,  AInfo   >("AVehicleLifetimeManager")
         .def_readwrite("NextTickUpdateTime", &AVehicleLifetimeManager::NextTickUpdateTime)
         .def_readwrite("NextCheckUsersTime", &AVehicleLifetimeManager::NextCheckUsersTime)
         .def_readwrite("CurrentVehicleFamily", &AVehicleLifetimeManager::CurrentVehicleFamily)
@@ -14,7 +14,7 @@ void Export_pystes_AVehicleLifetimeManager()
         .def_readwrite("VehicleUnRegisterList", &AVehicleLifetimeManager::VehicleUnRegisterList)
         .def_readwrite("TickUpdateInterval", &AVehicleLifetimeManager::TickUpdateInterval)
         .def_readwrite("CheckUsersInterval", &AVehicleLifetimeManager::CheckUsersInterval)
-        .def("StaticClass", &AVehicleLifetimeManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AVehicleLifetimeManager::StaticClass, py::return_value_policy::reference)
         .def("eventReplicatedEvent", &AVehicleLifetimeManager::eventReplicatedEvent)
         .def("NotifySetCinematicMode", &AVehicleLifetimeManager::NotifySetCinematicMode)
         .def("CleanUpPlayerVehicles", &AVehicleLifetimeManager::CleanUpPlayerVehicles)
@@ -23,7 +23,7 @@ void Export_pystes_AVehicleLifetimeManager()
         .def("HasVehicleInRegistry", &AVehicleLifetimeManager::HasVehicleInRegistry)
         .def("UnRegisterVehicle", &AVehicleLifetimeManager::UnRegisterVehicle)
         .def("RegisterVehicle", &AVehicleLifetimeManager::RegisterVehicle)
-        .def("GetCurrentVehicleFamily", &AVehicleLifetimeManager::GetCurrentVehicleFamily, return_value_policy< reference_existing_object >())
+        .def("GetCurrentVehicleFamily", &AVehicleLifetimeManager::GetCurrentVehicleFamily, py::return_value_policy::reference)
         .def("SetCurrentVehicleFamily", &AVehicleLifetimeManager::SetCurrentVehicleFamily)
         .def("IsSpawnStationInUseByOtherThan", &AVehicleLifetimeManager::IsSpawnStationInUseByOtherThan)
         .def("SetSpawnStationInUse", &AVehicleLifetimeManager::SetSpawnStationInUse)

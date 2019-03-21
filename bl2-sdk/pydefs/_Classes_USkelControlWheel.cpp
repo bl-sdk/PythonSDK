@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControlWheel()
 {
-    class_< USkelControlWheel, bases< USkelControlBase >  , boost::noncopyable>("USkelControlWheel", no_init)
+    py::class_< USkelControlWheel,  USkelControlBase   >("USkelControlWheel")
         .def_readwrite("WheelDisplacement", &USkelControlWheel::WheelDisplacement)
         .def_readwrite("WheelMaxRenderDisplacement", &USkelControlWheel::WheelMaxRenderDisplacement)
         .def_readwrite("WheelRoll", &USkelControlWheel::WheelRoll)
@@ -18,7 +18,7 @@ void Export_pystes_USkelControlWheel()
         .def_readwrite("TranslationSpaceBoneName", &USkelControlSingleBone::TranslationSpaceBoneName)
         .def_readwrite("BoneRotation", &USkelControlSingleBone::BoneRotation)
         .def_readwrite("RotationSpaceBoneName", &USkelControlSingleBone::RotationSpaceBoneName)
-        .def("StaticClass", &USkelControlWheel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControlWheel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

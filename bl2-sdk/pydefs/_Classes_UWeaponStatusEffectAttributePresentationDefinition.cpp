@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponStatusEffectAttributePresentationDefinition()
 {
-    class_< UWeaponStatusEffectAttributePresentationDefinition, bases< UAttributePresentationDefinition >  , boost::noncopyable>("UWeaponStatusEffectAttributePresentationDefinition", no_init)
+    py::class_< UWeaponStatusEffectAttributePresentationDefinition,  UAttributePresentationDefinition   >("UWeaponStatusEffectAttributePresentationDefinition")
         .def_readwrite("MappingData", &UWeaponStatusEffectAttributePresentationDefinition::MappingData)
-        .def("StaticClass", &UWeaponStatusEffectAttributePresentationDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponStatusEffectAttributePresentationDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

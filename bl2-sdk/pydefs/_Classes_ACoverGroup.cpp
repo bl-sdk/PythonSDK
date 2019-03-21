@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ACoverGroup()
 {
-    class_< ACoverGroup, bases< AInfo >  , boost::noncopyable>("ACoverGroup", no_init)
+    py::class_< ACoverGroup,  AInfo   >("ACoverGroup")
         .def_readwrite("CoverLinkRefs", &ACoverGroup::CoverLinkRefs)
         .def_readwrite("AutoSelectRadius", &ACoverGroup::AutoSelectRadius)
         .def_readwrite("AutoSelectHeight", &ACoverGroup::AutoSelectHeight)
-        .def("StaticClass", &ACoverGroup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ACoverGroup::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ACoverGroup::OnToggle)
         .def("ToggleGroup", &ACoverGroup::ToggleGroup)
         .def("DisableGroup", &ACoverGroup::DisableGroup)

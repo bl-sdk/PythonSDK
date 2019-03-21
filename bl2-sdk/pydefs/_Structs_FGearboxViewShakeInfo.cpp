@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGearboxViewShakeInfo()
 {
-    class_< FGearboxViewShakeInfo >("FGearboxViewShakeInfo", no_init)
+    py::class_< FGearboxViewShakeInfo >("FGearboxViewShakeInfo")
         .def_readwrite("OffsetMag", &FGearboxViewShakeInfo::OffsetMag)
         .def_readwrite("OffsetRate", &FGearboxViewShakeInfo::OffsetRate)
         .def_readwrite("OffsetTime", &FGearboxViewShakeInfo::OffsetTime)

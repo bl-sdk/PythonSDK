@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASkeletalMeshActor()
 {
-    class_< ASkeletalMeshActor, bases< AActor >  , boost::noncopyable>("ASkeletalMeshActor", no_init)
+    py::class_< ASkeletalMeshActor,  AActor   >("ASkeletalMeshActor")
         .def_readwrite("VfTable_IIFaceFXActor", &ASkeletalMeshActor::VfTable_IIFaceFXActor)
         .def_readwrite("SkeletalMeshComponent", &ASkeletalMeshActor::SkeletalMeshComponent)
         .def_readwrite("LightEnvironment", &ASkeletalMeshActor::LightEnvironment)
@@ -17,9 +17,9 @@ void Export_pystes_ASkeletalMeshActor()
         .def_readwrite("InterpGroupList", &ASkeletalMeshActor::InterpGroupList)
         .def_readwrite("SavedAnimSeqName", &ASkeletalMeshActor::SavedAnimSeqName)
         .def_readwrite("SavedCurrentTime", &ASkeletalMeshActor::SavedCurrentTime)
-        .def("StaticClass", &ASkeletalMeshActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASkeletalMeshActor::StaticClass, py::return_value_policy::reference)
         .def("eventSetAudioCueOpenedByFaceFX", &ASkeletalMeshActor::eventSetAudioCueOpenedByFaceFX)
-        .def("eventGetFaceFXAsset", &ASkeletalMeshActor::eventGetFaceFXAsset, return_value_policy< reference_existing_object >())
+        .def("eventGetFaceFXAsset", &ASkeletalMeshActor::eventGetFaceFXAsset, py::return_value_policy::reference)
         .def("PlayFaceAnimation", &ASkeletalMeshActor::PlayFaceAnimation)
         .def("eventCreateForceField", &ASkeletalMeshActor::eventCreateForceField)
         .def("SkelMeshActorOnParticleSystemFinished", &ASkeletalMeshActor::SkelMeshActorOnParticleSystemFinished)
@@ -34,10 +34,10 @@ void Export_pystes_ASkeletalMeshActor()
         .def("eventOnUpdatePhysBonesFromAnim", &ASkeletalMeshActor::eventOnUpdatePhysBonesFromAnim)
         .def("eventOnSetMesh", &ASkeletalMeshActor::eventOnSetMesh)
         .def("IsActorPlayingFaceFXAnim", &ASkeletalMeshActor::IsActorPlayingFaceFXAnim)
-        .def("eventIGetActorFaceFXAsset", &ASkeletalMeshActor::eventIGetActorFaceFXAsset, return_value_policy< reference_existing_object >())
-        .def("eventGetActorFaceFXAsset", &ASkeletalMeshActor::eventGetActorFaceFXAsset, return_value_policy< reference_existing_object >())
+        .def("eventIGetActorFaceFXAsset", &ASkeletalMeshActor::eventIGetActorFaceFXAsset, py::return_value_policy::reference)
+        .def("eventGetActorFaceFXAsset", &ASkeletalMeshActor::eventGetActorFaceFXAsset, py::return_value_policy::reference)
         .def("OnPlayFaceFXAnim", &ASkeletalMeshActor::OnPlayFaceFXAnim)
-        .def("eventGetFaceFXAudioComponent", &ASkeletalMeshActor::eventGetFaceFXAudioComponent, return_value_policy< reference_existing_object >())
+        .def("eventGetFaceFXAudioComponent", &ASkeletalMeshActor::eventGetFaceFXAudioComponent, py::return_value_policy::reference)
         .def("eventStopActorFaceFXAnim", &ASkeletalMeshActor::eventStopActorFaceFXAnim)
         .def("eventPlayActorFaceFXAnim", &ASkeletalMeshActor::eventPlayActorFaceFXAnim)
         .def("MAT_FinishAnimControl", &ASkeletalMeshActor::MAT_FinishAnimControl)

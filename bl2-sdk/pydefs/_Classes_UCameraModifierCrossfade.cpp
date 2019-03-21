@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraModifierCrossfade()
 {
-    class_< UCameraModifierCrossfade, bases< UGearboxCameraModifier >  , boost::noncopyable>("UCameraModifierCrossfade", no_init)
+    py::class_< UCameraModifierCrossfade,  UGearboxCameraModifier   >("UCameraModifierCrossfade")
         .def_readwrite("ModifierA", &UCameraModifierCrossfade::ModifierA)
         .def_readwrite("ModifierB", &UCameraModifierCrossfade::ModifierB)
         .def_readwrite("CurModifierNdx", &UCameraModifierCrossfade::CurModifierNdx)
@@ -13,7 +13,7 @@ void Export_pystes_UCameraModifierCrossfade()
         .def_readwrite("BlendSpeed", &UCameraModifierCrossfade::BlendSpeed)
         .def_readwrite("DebugInset", &UCameraModifierCrossfade::DebugInset)
         .def_readwrite("LerpMode", &UCameraModifierCrossfade::LerpMode)
-        .def("StaticClass", &UCameraModifierCrossfade::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCameraModifierCrossfade::StaticClass, py::return_value_policy::reference)
         .def("DoCrossfade", &UCameraModifierCrossfade::DoCrossfade)
         .def("UpdateAllLerps", &UCameraModifierCrossfade::UpdateAllLerps)
         .def("ModifyCamera", &UCameraModifierCrossfade::ModifyCamera)

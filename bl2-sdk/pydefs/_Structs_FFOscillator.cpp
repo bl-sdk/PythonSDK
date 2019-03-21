@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFOscillator()
 {
-    class_< FFOscillator >("FFOscillator", no_init)
+    py::class_< FFOscillator >("FFOscillator")
         .def_readwrite("Amplitude", &FFOscillator::Amplitude)
         .def_readwrite("Frequency", &FFOscillator::Frequency)
         .def_readwrite("InitialOffset", &FFOscillator::InitialOffset)

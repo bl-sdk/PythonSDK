@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTradingOffersPanelGFxObject()
 {
-    class_< UTradingOffersPanelGFxObject, bases< UBaseInventoryPanelGFxObject >  , boost::noncopyable>("UTradingOffersPanelGFxObject", no_init)
+    py::class_< UTradingOffersPanelGFxObject,  UBaseInventoryPanelGFxObject   >("UTradingOffersPanelGFxObject")
         .def_readwrite("SelectedCellSuffix", &UTradingOffersPanelGFxObject::SelectedCellSuffix)
         .def_readwrite("NonCellButtonFocused", &UTradingOffersPanelGFxObject::NonCellButtonFocused)
         .def_readwrite("OfferingThing", &UTradingOffersPanelGFxObject::OfferingThing)
-        .def("StaticClass", &UTradingOffersPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTradingOffersPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("CleanUpAfterCancelledDrag", &UTradingOffersPanelGFxObject::CleanUpAfterCancelledDrag)
         .def("PrepareForFinishDrag", &UTradingOffersPanelGFxObject::PrepareForFinishDrag)
         .def("CanFinishDragOnCell", &UTradingOffersPanelGFxObject::CanFinishDragOnCell)
@@ -27,11 +27,11 @@ void Export_pystes_UTradingOffersPanelGFxObject()
         .def("SetSelectedButton", &UTradingOffersPanelGFxObject::SetSelectedButton)
         .def("ButtonsMove", &UTradingOffersPanelGFxObject::ButtonsMove)
         .def("CellMove", &UTradingOffersPanelGFxObject::CellMove)
-        .def("GetCurrentSelectedButton", &UTradingOffersPanelGFxObject::GetCurrentSelectedButton, return_value_policy< reference_existing_object >())
-        .def("GetCurrentSelectedCell", &UTradingOffersPanelGFxObject::GetCurrentSelectedCell, return_value_policy< reference_existing_object >())
+        .def("GetCurrentSelectedButton", &UTradingOffersPanelGFxObject::GetCurrentSelectedButton, py::return_value_policy::reference)
+        .def("GetCurrentSelectedCell", &UTradingOffersPanelGFxObject::GetCurrentSelectedCell, py::return_value_policy::reference)
         .def("extOnCellSelected", &UTradingOffersPanelGFxObject::extOnCellSelected)
-        .def("GetThingByIndex", &UTradingOffersPanelGFxObject::GetThingByIndex, return_value_policy< reference_existing_object >())
-        .def("GetSelectedThing", &UTradingOffersPanelGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetThingByIndex", &UTradingOffersPanelGFxObject::GetThingByIndex, py::return_value_policy::reference)
+        .def("GetSelectedThing", &UTradingOffersPanelGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("SetSelectedCell", &UTradingOffersPanelGFxObject::SetSelectedCell)
         .def("PanelOnInputKey", &UTradingOffersPanelGFxObject::PanelOnInputKey)
         .def("BlockInput", &UTradingOffersPanelGFxObject::BlockInput)

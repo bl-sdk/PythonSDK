@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPostProcessChainRecord()
 {
-    class_< FPostProcessChainRecord >("FPostProcessChainRecord", no_init)
+    py::class_< FPostProcessChainRecord >("FPostProcessChainRecord")
         .def_readwrite("Template", &FPostProcessChainRecord::Template)
         .def_readwrite("Instance", &FPostProcessChainRecord::Instance)
         .def_readwrite("AppliedModifiers", &FPostProcessChainRecord::AppliedModifiers)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_PlaySound()
 {
-    class_< USeqAct_PlaySound, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_PlaySound", no_init)
+    py::class_< USeqAct_PlaySound,  USeqAct_Latent   >("USeqAct_PlaySound")
         .def_readwrite("PlaySound", &USeqAct_PlaySound::PlaySound)
         .def_readwrite("ExtraDelay", &USeqAct_PlaySound::ExtraDelay)
         .def_readwrite("SoundDuration", &USeqAct_PlaySound::SoundDuration)
@@ -13,7 +13,7 @@ void Export_pystes_USeqAct_PlaySound()
         .def_readwrite("FadeOutTime", &USeqAct_PlaySound::FadeOutTime)
         .def_readwrite("VolumeMultiplier", &USeqAct_PlaySound::VolumeMultiplier)
         .def_readwrite("PitchMultiplier", &USeqAct_PlaySound::PitchMultiplier)
-        .def("StaticClass", &USeqAct_PlaySound::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_PlaySound::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_PlaySound::eventGetObjClassVersion)
         .staticmethod("StaticClass")
   ;

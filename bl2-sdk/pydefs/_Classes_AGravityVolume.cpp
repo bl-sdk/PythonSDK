@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGravityVolume()
 {
-    class_< AGravityVolume, bases< APhysicsVolume >  , boost::noncopyable>("AGravityVolume", no_init)
+    py::class_< AGravityVolume,  APhysicsVolume   >("AGravityVolume")
         .def_readwrite("GravityZ", &AGravityVolume::GravityZ)
-        .def("StaticClass", &AGravityVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGravityVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

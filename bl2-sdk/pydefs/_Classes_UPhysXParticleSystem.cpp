@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysXParticleSystem()
 {
-    class_< UPhysXParticleSystem, bases< UObject >  , boost::noncopyable>("UPhysXParticleSystem", no_init)
+    py::class_< UPhysXParticleSystem,  UObject   >("UPhysXParticleSystem")
         .def_readwrite("MaxParticles1", &UPhysXParticleSystem::MaxParticles1)
         .def_readwrite("MaxParticles2", &UPhysXParticleSystem::MaxParticles2)
         .def_readwrite("MaxParticles", &UPhysXParticleSystem::MaxParticles)
@@ -32,7 +32,7 @@ void Export_pystes_UPhysXParticleSystem()
         .def_readwrite("CollisionResponseCoefficient", &UPhysXParticleSystem::CollisionResponseCoefficient)
         .def_readwrite("CascadeScene", &UPhysXParticleSystem::CascadeScene)
         .def_readwrite("PSys", &UPhysXParticleSystem::PSys)
-        .def("StaticClass", &UPhysXParticleSystem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysXParticleSystem::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

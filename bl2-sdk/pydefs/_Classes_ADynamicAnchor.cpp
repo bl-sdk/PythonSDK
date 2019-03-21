@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADynamicAnchor()
 {
-    class_< ADynamicAnchor, bases< ANavigationPoint >  , boost::noncopyable>("ADynamicAnchor", no_init)
+    py::class_< ADynamicAnchor,  ANavigationPoint   >("ADynamicAnchor")
         .def_readwrite("CurrentUser", &ADynamicAnchor::CurrentUser)
-        .def("StaticClass", &ADynamicAnchor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADynamicAnchor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

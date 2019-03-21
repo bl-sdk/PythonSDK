@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillTreeUICell()
 {
-    class_< FSkillTreeUICell >("FSkillTreeUICell", no_init)
+    py::class_< FSkillTreeUICell >("FSkillTreeUICell")
         .def_readwrite("BranchNum", &FSkillTreeUICell::BranchNum)
         .def_readwrite("TierNum", &FSkillTreeUICell::TierNum)
         .def_readwrite("CellNum", &FSkillTreeUICell::CellNum)

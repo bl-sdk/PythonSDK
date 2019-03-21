@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetHardAttach()
 {
-    class_< UBehavior_SetHardAttach, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetHardAttach", no_init)
-        .def("StaticClass", &UBehavior_SetHardAttach::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehavior_SetHardAttach,  UBehaviorBase   >("UBehavior_SetHardAttach")
+        .def("StaticClass", &UBehavior_SetHardAttach::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetHardAttach::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

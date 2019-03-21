@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDeferredLeaderboardWrite()
 {
-    class_< FDeferredLeaderboardWrite >("FDeferredLeaderboardWrite", no_init)
+    py::class_< FDeferredLeaderboardWrite >("FDeferredLeaderboardWrite")
         .def_readwrite("LeaderboardName", &FDeferredLeaderboardWrite::LeaderboardName)
         .def_readwrite("Score", &FDeferredLeaderboardWrite::Score)
   ;

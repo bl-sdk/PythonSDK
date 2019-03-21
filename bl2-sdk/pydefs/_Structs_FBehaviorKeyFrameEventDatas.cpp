@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorKeyFrameEventData()
 {
-    class_< FBehaviorKeyFrameEventData, bases< FSpecializedBehaviorEvent >  >("FBehaviorKeyFrameEventData", no_init)
+    py::class_< FBehaviorKeyFrameEventData,  FSpecializedBehaviorEvent   >("FBehaviorKeyFrameEventData")
         .def_readwrite("KeyTime", &FBehaviorKeyFrameEventData::KeyTime)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDWidget_Minimap()
 {
-    class_< UHUDWidget_Minimap, bases< UHUDWidget_Base >  , boost::noncopyable>("UHUDWidget_Minimap", no_init)
+    py::class_< UHUDWidget_Minimap,  UHUDWidget_Base   >("UHUDWidget_Minimap")
         .def_readwrite("WorldRadius", &UHUDWidget_Minimap::WorldRadius)
         .def_readwrite("UnrealUnitsPerPixel", &UHUDWidget_Minimap::UnrealUnitsPerPixel)
         .def_readwrite("TargetWorldRadius", &UHUDWidget_Minimap::TargetWorldRadius)
@@ -34,7 +34,7 @@ void Export_pystes_UHUDWidget_Minimap()
         .def_readwrite("Icons_MissionRedeemable", &UHUDWidget_Minimap::Icons_MissionRedeemable)
         .def_readwrite("TacticalMapVolume", &UHUDWidget_Minimap::TacticalMapVolume)
         .def_readwrite("HUDMovieDef", &UHUDWidget_Minimap::HUDMovieDef)
-        .def("StaticClass", &UHUDWidget_Minimap::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDWidget_Minimap::StaticClass, py::return_value_policy::reference)
         .def("eventToggleFogOfWarBlob", &UHUDWidget_Minimap::eventToggleFogOfWarBlob)
         .def("eventInitFogOfWarBlobs", &UHUDWidget_Minimap::eventInitFogOfWarBlobs)
         .def("UpdateTargetRadius", &UHUDWidget_Minimap::UpdateTargetRadius)

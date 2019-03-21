@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAkSwitchGroup()
 {
-    class_< UAkSwitchGroup, bases< UAkObject >  , boost::noncopyable>("UAkSwitchGroup", no_init)
-        .def("StaticClass", &UAkSwitchGroup::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAkSwitchGroup,  UAkObject   >("UAkSwitchGroup")
+        .def("StaticClass", &UAkSwitchGroup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWeaponCustomPartTypeData()
 {
-    class_< FWeaponCustomPartTypeData >("FWeaponCustomPartTypeData", no_init)
+    py::class_< FWeaponCustomPartTypeData >("FWeaponCustomPartTypeData")
         .def_readwrite("WeightedParts", &FWeaponCustomPartTypeData::WeightedParts)
   ;
 }

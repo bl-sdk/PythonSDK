@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionObjectRadius()
 {
-    class_< UMaterialExpressionObjectRadius, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionObjectRadius", no_init)
-        .def("StaticClass", &UMaterialExpressionObjectRadius::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionObjectRadius,  UMaterialExpression   >("UMaterialExpressionObjectRadius")
+        .def("StaticClass", &UMaterialExpressionObjectRadius::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

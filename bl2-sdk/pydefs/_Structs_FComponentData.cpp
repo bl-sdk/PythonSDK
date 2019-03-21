@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FComponentData()
 {
-    class_< FComponentData >("FComponentData", no_init)
+    py::class_< FComponentData >("FComponentData")
         .def_readwrite("Component", &FComponentData::Component)
         .def_readwrite("CollisionType", &FComponentData::CollisionType)
         .def_readwrite("MeshSocketName", &FComponentData::MeshSocketName)

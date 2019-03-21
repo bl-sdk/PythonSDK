@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_TakeHitRegionDamage()
 {
-    class_< USeqEvent_TakeHitRegionDamage, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_TakeHitRegionDamage", no_init)
+    py::class_< USeqEvent_TakeHitRegionDamage,  USequenceEvent   >("USeqEvent_TakeHitRegionDamage")
         .def_readwrite("MinDamageAmount", &USeqEvent_TakeHitRegionDamage::MinDamageAmount)
         .def_readwrite("DamageThreshold", &USeqEvent_TakeHitRegionDamage::DamageThreshold)
         .def_readwrite("DamageTypes", &USeqEvent_TakeHitRegionDamage::DamageTypes)
@@ -14,7 +14,7 @@ void Export_pystes_USeqEvent_TakeHitRegionDamage()
         .def_readwrite("IgnoreDamageTypeDefinitions", &USeqEvent_TakeHitRegionDamage::IgnoreDamageTypeDefinitions)
         .def_readwrite("DamageHitRegion", &USeqEvent_TakeHitRegionDamage::DamageHitRegion)
         .def_readwrite("CurrentDamage", &USeqEvent_TakeHitRegionDamage::CurrentDamage)
-        .def("StaticClass", &USeqEvent_TakeHitRegionDamage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqEvent_TakeHitRegionDamage::StaticClass, py::return_value_policy::reference)
         .def("Reset", &USeqEvent_TakeHitRegionDamage::Reset)
         .def("HandleDamage", &USeqEvent_TakeHitRegionDamage::HandleDamage)
         .def("IsValidDamageTypeDefinition", &USeqEvent_TakeHitRegionDamage::IsValidDamageTypeDefinition)

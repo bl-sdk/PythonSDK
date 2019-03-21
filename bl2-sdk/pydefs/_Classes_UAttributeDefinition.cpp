@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAttributeDefinition()
 {
-    class_< UAttributeDefinition, bases< UAttributeDefinitionBase >  , boost::noncopyable>("UAttributeDefinition", no_init)
-        .def("StaticClass", &UAttributeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAttributeDefinition,  UAttributeDefinitionBase   >("UAttributeDefinition")
+        .def("StaticClass", &UAttributeDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDescriptor", &UAttributeDefinition::GetDescriptor)
         .def("GetBaseValue", &UAttributeDefinition::GetBaseValue)
         .def("GetValue", &UAttributeDefinition::GetValue)

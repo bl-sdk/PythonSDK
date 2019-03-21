@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ALight()
 {
-    class_< ALight, bases< AActor >  , boost::noncopyable>("ALight", no_init)
+    py::class_< ALight,  AActor   >("ALight")
         .def_readwrite("LightComponent", &ALight::LightComponent)
-        .def("StaticClass", &ALight::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ALight::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ALight::OnToggle)
         .def("eventReplicatedEvent", &ALight::eventReplicatedEvent)
         .staticmethod("StaticClass")

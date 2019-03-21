@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionBlendModeBase()
 {
-    class_< UMaterialExpressionBlendModeBase, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionBlendModeBase", no_init)
+    py::class_< UMaterialExpressionBlendModeBase,  UMaterialExpression   >("UMaterialExpressionBlendModeBase")
         .def_readwrite("Base", &UMaterialExpressionBlendModeBase::Base)
         .def_readwrite("Blend", &UMaterialExpressionBlendModeBase::Blend)
-        .def("StaticClass", &UMaterialExpressionBlendModeBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionBlendModeBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

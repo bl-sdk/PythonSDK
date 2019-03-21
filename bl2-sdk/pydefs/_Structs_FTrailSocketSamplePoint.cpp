@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTrailSocketSamplePoint()
 {
-    class_< FTrailSocketSamplePoint >("FTrailSocketSamplePoint", no_init)
+    py::class_< FTrailSocketSamplePoint >("FTrailSocketSamplePoint")
         .def_readwrite("Position", &FTrailSocketSamplePoint::Position)
         .def_readwrite("Velocity", &FTrailSocketSamplePoint::Velocity)
   ;

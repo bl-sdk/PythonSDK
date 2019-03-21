@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDeviceIdCache()
 {
-    class_< FDeviceIdCache >("FDeviceIdCache", no_init)
+    py::class_< FDeviceIdCache >("FDeviceIdCache")
         .def_readwrite("DeviceID", &FDeviceIdCache::DeviceID)
         .def_readwrite("DeviceSelectionMulticast", &FDeviceIdCache::DeviceSelectionMulticast)
         .def_readwrite("DeviceSelectionDelegates", &FDeviceIdCache::DeviceSelectionDelegates)

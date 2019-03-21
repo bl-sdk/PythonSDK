@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_SettingsArray()
 {
-    class_< UUIDataProvider_SettingsArray, bases< UUIDataProvider >  , boost::noncopyable>("UUIDataProvider_SettingsArray", no_init)
+    py::class_< UUIDataProvider_SettingsArray,  UUIDataProvider   >("UUIDataProvider_SettingsArray")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataProvider_SettingsArray::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_SettingsArray::VfTable_IUIListElementCellProvider)
         .def_readwrite("Settings", &UUIDataProvider_SettingsArray::Settings)
@@ -13,7 +13,7 @@ void Export_pystes_UUIDataProvider_SettingsArray()
         .def_readwrite("SettingsName", &UUIDataProvider_SettingsArray::SettingsName)
         .def_readwrite("ColumnHeaderText", &UUIDataProvider_SettingsArray::ColumnHeaderText)
         .def_readwrite("Values", &UUIDataProvider_SettingsArray::Values)
-        .def("StaticClass", &UUIDataProvider_SettingsArray::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_SettingsArray::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

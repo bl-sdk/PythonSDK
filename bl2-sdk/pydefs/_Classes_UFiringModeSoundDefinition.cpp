@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFiringModeSoundDefinition()
 {
-    class_< UFiringModeSoundDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UFiringModeSoundDefinition", no_init)
+    py::class_< UFiringModeSoundDefinition,  UGBXDefinition   >("UFiringModeSoundDefinition")
         .def_readwrite("FireSounds", &UFiringModeSoundDefinition::FireSounds)
         .def_readwrite("FireTailSounds", &UFiringModeSoundDefinition::FireTailSounds)
         .def_readwrite("ShellCasingImpact", &UFiringModeSoundDefinition::ShellCasingImpact)
@@ -16,7 +16,7 @@ void Export_pystes_UFiringModeSoundDefinition()
         .def_readwrite("BeamSoundEvent", &UFiringModeSoundDefinition::BeamSoundEvent)
         .def_readwrite("BeamStopSoundEvent", &UFiringModeSoundDefinition::BeamStopSoundEvent)
         .def_readwrite("BeamImpactSoundEvent", &UFiringModeSoundDefinition::BeamImpactSoundEvent)
-        .def("StaticClass", &UFiringModeSoundDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFiringModeSoundDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

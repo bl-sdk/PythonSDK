@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_CauseDamage()
 {
-    class_< UBehavior_CauseDamage, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_CauseDamage", no_init)
+    py::class_< UBehavior_CauseDamage,  UBehaviorBase   >("UBehavior_CauseDamage")
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_CauseDamage::VfTable_IIDamageCauser)
         .def_readwrite("DamageFormula", &UBehavior_CauseDamage::DamageFormula)
         .def_readwrite("RadiusFormula", &UBehavior_CauseDamage::RadiusFormula)
@@ -24,9 +24,9 @@ void Export_pystes_UBehavior_CauseDamage()
         .def_readwrite("PlantSourceTime", &UBehavior_CauseDamage::PlantSourceTime)
         .def_readwrite("InstigatorSelfDamageScale", &UBehavior_CauseDamage::InstigatorSelfDamageScale)
         .def_readwrite("SelfActor", &UBehavior_CauseDamage::SelfActor)
-        .def("StaticClass", &UBehavior_CauseDamage::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetControllerResponsibleForDamage", &UBehavior_CauseDamage::GetControllerResponsibleForDamage, return_value_policy< reference_existing_object >())
-        .def("GetInstigator", &UBehavior_CauseDamage::GetInstigator, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_CauseDamage::StaticClass, py::return_value_policy::reference)
+        .def("GetControllerResponsibleForDamage", &UBehavior_CauseDamage::GetControllerResponsibleForDamage, py::return_value_policy::reference)
+        .def("GetInstigator", &UBehavior_CauseDamage::GetInstigator, py::return_value_policy::reference)
         .def("GetInstigatorSelfDamageScale", &UBehavior_CauseDamage::GetInstigatorSelfDamageScale)
         .def("GetFireIntervalChanceModifier", &UBehavior_CauseDamage::GetFireIntervalChanceModifier)
         .def("GetStatusEffectBaseChanceModifier", &UBehavior_CauseDamage::GetStatusEffectBaseChanceModifier)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USmokeTestCommandlet()
 {
-    class_< USmokeTestCommandlet, bases< UCommandlet >  , boost::noncopyable>("USmokeTestCommandlet", no_init)
-        .def("StaticClass", &USmokeTestCommandlet::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USmokeTestCommandlet,  UCommandlet   >("USmokeTestCommandlet")
+        .def("StaticClass", &USmokeTestCommandlet::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

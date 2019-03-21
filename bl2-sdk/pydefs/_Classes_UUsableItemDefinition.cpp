@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUsableItemDefinition()
 {
-    class_< UUsableItemDefinition, bases< UItemDefinition >  , boost::noncopyable>("UUsableItemDefinition", no_init)
+    py::class_< UUsableItemDefinition,  UItemDefinition   >("UUsableItemDefinition")
         .def_readwrite("UsedStatId", &UUsableItemDefinition::UsedStatId)
-        .def("StaticClass", &UUsableItemDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUsableItemDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnUsed", &UUsableItemDefinition::OnUsed)
         .staticmethod("StaticClass")
   ;

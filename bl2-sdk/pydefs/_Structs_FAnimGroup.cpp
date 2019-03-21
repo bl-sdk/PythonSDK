@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAnimGroup()
 {
-    class_< FAnimGroup >("FAnimGroup", no_init)
+    py::class_< FAnimGroup >("FAnimGroup")
         .def_readwrite("SeqNodes", &FAnimGroup::SeqNodes)
         .def_readwrite("SynchMaster", &FAnimGroup::SynchMaster)
         .def_readwrite("NotifyMaster", &FAnimGroup::NotifyMaster)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopUpDebugBarGraph()
 {
-    class_< UPopUpDebugBarGraph, bases< UObject >  , boost::noncopyable>("UPopUpDebugBarGraph", no_init)
+    py::class_< UPopUpDebugBarGraph,  UObject   >("UPopUpDebugBarGraph")
         .def_readwrite("Columns", &UPopUpDebugBarGraph::Columns)
         .def_readwrite("TitleText", &UPopUpDebugBarGraph::TitleText)
         .def_readwrite("BaseLineColor", &UPopUpDebugBarGraph::BaseLineColor)
@@ -18,7 +18,7 @@ void Export_pystes_UPopUpDebugBarGraph()
         .def_readwrite("TitleTextScale", &UPopUpDebugBarGraph::TitleTextScale)
         .def_readwrite("TitleTextPaddingY", &UPopUpDebugBarGraph::TitleTextPaddingY)
         .def_readwrite("ColumnValueTextOffsetY", &UPopUpDebugBarGraph::ColumnValueTextOffsetY)
-        .def("StaticClass", &UPopUpDebugBarGraph::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPopUpDebugBarGraph::StaticClass, py::return_value_policy::reference)
         .def("Display", &UPopUpDebugBarGraph::Display)
         .def("GetValue", &UPopUpDebugBarGraph::GetValue)
         .def("SetValue", &UPopUpDebugBarGraph::SetValue)

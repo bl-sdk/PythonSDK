@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderOptionsBase()
 {
-    class_< UWillowScrollingListDataProviderOptionsBase, bases< UObject >  , boost::noncopyable>("UWillowScrollingListDataProviderOptionsBase", no_init)
+    py::class_< UWillowScrollingListDataProviderOptionsBase,  UObject   >("UWillowScrollingListDataProviderOptionsBase")
         .def_readwrite("MyOptionsMovie", &UWillowScrollingListDataProviderOptionsBase::MyOptionsMovie)
         .def_readwrite("RestartSettingInitialValues", &UWillowScrollingListDataProviderOptionsBase::RestartSettingInitialValues)
         .def_readwrite("Descriptions", &UWillowScrollingListDataProviderOptionsBase::Descriptions)
         .def_readwrite("MenuDisplayName", &UWillowScrollingListDataProviderBase::MenuDisplayName)
         .def_readwrite("MenuTooltip", &UWillowScrollingListDataProviderBase::MenuTooltip)
-        .def("StaticClass", &UWillowScrollingListDataProviderOptionsBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingListDataProviderOptionsBase::StaticClass, py::return_value_policy::reference)
         .def("Cleanup", &UWillowScrollingListDataProviderOptionsBase::Cleanup)
         .def("OnPop", &UWillowScrollingListDataProviderOptionsBase::OnPop)
         .def("UpdateRealtimeSetting", &UWillowScrollingListDataProviderOptionsBase::UpdateRealtimeSetting)
@@ -27,7 +27,7 @@ void Export_pystes_UWillowScrollingListDataProviderOptionsBase()
         .def("AddSystemSettingListItem", &UWillowScrollingListDataProviderOptionsBase::AddSystemSettingListItem)
         .def("AddProfileSettingListItem", &UWillowScrollingListDataProviderOptionsBase::AddProfileSettingListItem)
         .def("FindProfileData", &UWillowScrollingListDataProviderOptionsBase::FindProfileData)
-        .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderBase::GetSubmenuForEvent, return_value_policy< reference_existing_object >())
+        .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderBase::GetSubmenuForEvent, py::return_value_policy::reference)
         .def("HandleInputKey", &UWillowScrollingListDataProviderBase::HandleInputKey)
         .def("HandleClick", &UWillowScrollingListDataProviderBase::HandleClick)
         .def("OnPush", &UWillowScrollingListDataProviderBase::OnPush)

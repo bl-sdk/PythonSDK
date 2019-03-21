@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillDamagedEventConstraintData()
 {
-    class_< FSkillDamagedEventConstraintData >("FSkillDamagedEventConstraintData", no_init)
+    py::class_< FSkillDamagedEventConstraintData >("FSkillDamagedEventConstraintData")
         .def_readwrite("DamageTypeConstraint", &FSkillDamagedEventConstraintData::DamageTypeConstraint)
         .def_readwrite("DamageSourceConstraint", &FSkillDamagedEventConstraintData::DamageSourceConstraint)
   ;

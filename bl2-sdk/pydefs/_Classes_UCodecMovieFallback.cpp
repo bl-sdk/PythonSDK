@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCodecMovieFallback()
 {
-    class_< UCodecMovieFallback, bases< UCodecMovie >  , boost::noncopyable>("UCodecMovieFallback", no_init)
+    py::class_< UCodecMovieFallback,  UCodecMovie   >("UCodecMovieFallback")
         .def_readwrite("CurrentTime", &UCodecMovieFallback::CurrentTime)
-        .def("StaticClass", &UCodecMovieFallback::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCodecMovieFallback::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

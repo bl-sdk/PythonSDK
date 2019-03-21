@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOptionsGFxMovie()
 {
-    class_< UOptionsGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UOptionsGFxMovie", no_init)
+    py::class_< UOptionsGFxMovie,  UWillowGFxMovie3D   >("UOptionsGFxMovie")
         .def_readwrite("OptionsObj", &UOptionsGFxMovie::OptionsObj)
         .def_readwrite("TheList", &UOptionsGFxMovie::TheList)
         .def_readwrite("TooltipSpacing", &UOptionsGFxMovie::TooltipSpacing)
@@ -13,9 +13,9 @@ void Export_pystes_UOptionsGFxMovie()
         .def_readwrite("SystemSettings", &UOptionsGFxMovie::SystemSettings)
         .def_readwrite("HandleInputKeyHook", &UOptionsGFxMovie::HandleInputKeyHook)
         .def_readwrite("BackTooltip", &UOptionsGFxMovie::BackTooltip)
-        .def("StaticClass", &UOptionsGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOptionsGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extOptionsMenuOnLoad", &UOptionsGFxMovie::extOptionsMenuOnLoad)
-        .def("GetSystemSettings", &UOptionsGFxMovie::GetSystemSettings, return_value_policy< reference_existing_object >())
+        .def("GetSystemSettings", &UOptionsGFxMovie::GetSystemSettings, py::return_value_policy::reference)
         .def("OnScrollingListItemFocus", &UOptionsGFxMovie::OnScrollingListItemFocus)
         .def("UpdateTooltips", &UOptionsGFxMovie::UpdateTooltips)
         .def("AppendTooltipString", &UOptionsGFxMovie::AppendTooltipString)

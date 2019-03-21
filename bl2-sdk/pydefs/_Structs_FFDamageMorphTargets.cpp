@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFDamageMorphTargets()
 {
-    class_< FFDamageMorphTargets >("FFDamageMorphTargets", no_init)
+    py::class_< FFDamageMorphTargets >("FFDamageMorphTargets")
         .def_readwrite("MorphNodeName", &FFDamageMorphTargets::MorphNodeName)
         .def_readwrite("MorphNode", &FFDamageMorphTargets::MorphNode)
         .def_readwrite("LinkedMorphNodeName", &FFDamageMorphTargets::LinkedMorphNodeName)

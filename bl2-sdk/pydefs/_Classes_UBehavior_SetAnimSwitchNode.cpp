@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetAnimSwitchNode()
 {
-    class_< UBehavior_SetAnimSwitchNode, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetAnimSwitchNode", no_init)
+    py::class_< UBehavior_SetAnimSwitchNode,  UBehaviorBase   >("UBehavior_SetAnimSwitchNode")
         .def_readwrite("AnimNodeName", &UBehavior_SetAnimSwitchNode::AnimNodeName)
         .def_readwrite("Switch", &UBehavior_SetAnimSwitchNode::Switch)
-        .def("StaticClass", &UBehavior_SetAnimSwitchNode::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetAnimSwitchNode::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetAnimSwitchNode::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

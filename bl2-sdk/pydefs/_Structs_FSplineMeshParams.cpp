@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSplineMeshParams()
 {
-    class_< FSplineMeshParams >("FSplineMeshParams", no_init)
+    py::class_< FSplineMeshParams >("FSplineMeshParams")
         .def_readwrite("StartPos", &FSplineMeshParams::StartPos)
         .def_readwrite("StartTangent", &FSplineMeshParams::StartTangent)
         .def_readwrite("StartScale", &FSplineMeshParams::StartScale)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleSizeScaleOverDensity()
 {
-    class_< UParticleModuleSizeScaleOverDensity, bases< UParticleModule >  , boost::noncopyable>("UParticleModuleSizeScaleOverDensity", no_init)
+    py::class_< UParticleModuleSizeScaleOverDensity,  UParticleModule   >("UParticleModuleSizeScaleOverDensity")
         .def_readwrite("SizeScaleOverDensity", &UParticleModuleSizeScaleOverDensity::SizeScaleOverDensity)
-        .def("StaticClass", &UParticleModuleSizeScaleOverDensity::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleSizeScaleOverDensity::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

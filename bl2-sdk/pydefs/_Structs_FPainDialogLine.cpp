@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPainDialogLine()
 {
-    class_< FPainDialogLine >("FPainDialogLine", no_init)
+    py::class_< FPainDialogLine >("FPainDialogLine")
         .def_readwrite("DET_Pain", &FPainDialogLine::DET_Pain)
         .def_readwrite("DamageThresholdPct", &FPainDialogLine::DamageThresholdPct)
         .def_readwrite("ChanceToPlay", &FPainDialogLine::ChanceToPlay)

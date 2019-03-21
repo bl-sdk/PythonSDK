@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleSpawnStationGFxMovie()
 {
-    class_< UVehicleSpawnStationGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UVehicleSpawnStationGFxMovie", no_init)
+    py::class_< UVehicleSpawnStationGFxMovie,  UWillowGFxMovie3D   >("UVehicleSpawnStationGFxMovie")
         .def_readwrite("VfTable_IIStreamingDataEvent", &UVehicleSpawnStationGFxMovie::VfTable_IIStreamingDataEvent)
         .def_readwrite("VSSWrapperObj", &UVehicleSpawnStationGFxMovie::VSSWrapperObj)
         .def_readwrite("VehicleFamilySelector", &UVehicleSpawnStationGFxMovie::VehicleFamilySelector)
@@ -36,7 +36,7 @@ void Export_pystes_UVehicleSpawnStationGFxMovie()
         .def_readwrite("StartTime", &UVehicleSpawnStationGFxMovie::StartTime)
         .def_readwrite("StartFOV", &UVehicleSpawnStationGFxMovie::StartFOV)
         .def_readwrite("PreviewIndex", &UVehicleSpawnStationGFxMovie::PreviewIndex)
-        .def("StaticClass", &UVehicleSpawnStationGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleSpawnStationGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("eventRunStreamingDataEvent", &UVehicleSpawnStationGFxMovie::eventRunStreamingDataEvent)
         .def("CloseOrReturnToFamilySelection", &UVehicleSpawnStationGFxMovie::CloseOrReturnToFamilySelection)
         .def("extGenericButtonClicked", &UVehicleSpawnStationGFxMovie::extGenericButtonClicked)
@@ -77,7 +77,7 @@ void Export_pystes_UVehicleSpawnStationGFxMovie()
         .def("ConfigureVehicleTypeChoices", &UVehicleSpawnStationGFxMovie::ConfigureVehicleTypeChoices)
         .def("AddVehicleChoices", &UVehicleSpawnStationGFxMovie::AddVehicleChoices)
         .def("eventRefreshVehicleChoiceModule", &UVehicleSpawnStationGFxMovie::eventRefreshVehicleChoiceModule)
-        .def("GetVehicleChoiceModule", &UVehicleSpawnStationGFxMovie::GetVehicleChoiceModule, return_value_policy< reference_existing_object >())
+        .def("GetVehicleChoiceModule", &UVehicleSpawnStationGFxMovie::GetVehicleChoiceModule, py::return_value_policy::reference)
         .def("VehicleExistsAndIsOccupied", &UVehicleSpawnStationGFxMovie::VehicleExistsAndIsOccupied)
         .def("eventOnClose", &UVehicleSpawnStationGFxMovie::eventOnClose)
         .def("eventUpdatePreviewFromVSSUIDef", &UVehicleSpawnStationGFxMovie::eventUpdatePreviewFromVSSUIDef)

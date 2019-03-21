@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPendingFaceFXInfo()
 {
-    class_< FPendingFaceFXInfo >("FPendingFaceFXInfo", no_init)
+    py::class_< FPendingFaceFXInfo >("FPendingFaceFXInfo")
         .def_readwrite("PendingFaceFXPlayingInfoPtr", &FPendingFaceFXInfo::PendingFaceFXPlayingInfoPtr)
         .def_readwrite("AnimName", &FPendingFaceFXInfo::AnimName)
         .def_readwrite("RawData", &FPendingFaceFXInfo::RawData)

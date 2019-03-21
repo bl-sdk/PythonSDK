@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowInventoryGFxDefinition()
 {
-    class_< UWillowInventoryGFxDefinition, bases< UWillowGFxThirdPersonDefinition >  , boost::noncopyable>("UWillowInventoryGFxDefinition", no_init)
+    py::class_< UWillowInventoryGFxDefinition,  UWillowGFxThirdPersonDefinition   >("UWillowInventoryGFxDefinition")
         .def_readwrite("TF_Standard", &UWillowInventoryGFxDefinition::TF_Standard)
         .def_readwrite("TF_Trash", &UWillowInventoryGFxDefinition::TF_Trash)
         .def_readwrite("TF_Favorite", &UWillowInventoryGFxDefinition::TF_Favorite)
@@ -14,7 +14,7 @@ void Export_pystes_UWillowInventoryGFxDefinition()
         .def_readwrite("Cards", &UWillowInventoryGFxDefinition::Cards)
         .def_readwrite("ExternalTextureMap", &UWillowInventoryGFxDefinition::ExternalTextureMap)
         .def_readwrite("CardExternalTextureMap", &UWillowInventoryGFxDefinition::CardExternalTextureMap)
-        .def("StaticClass", &UWillowInventoryGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowInventoryGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

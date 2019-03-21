@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMoveInterface()
 {
-    class_< USpecialMoveInterface, bases< UInterface >  , boost::noncopyable>("USpecialMoveInterface", no_init)
-        .def("StaticClass", &USpecialMoveInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USpecialMoveInterface,  UInterface   >("USpecialMoveInterface")
+        .def("StaticClass", &USpecialMoveInterface::StaticClass, py::return_value_policy::reference)
         .def("SetReplicatedSMData", &USpecialMoveInterface::SetReplicatedSMData)
         .def("eventServerSpecialMove_StopAny", &USpecialMoveInterface::eventServerSpecialMove_StopAny)
         .def("eventServerSpecialMove_Stop", &USpecialMoveInterface::eventServerSpecialMove_Stop)
@@ -14,9 +14,9 @@ void Export_pystes_USpecialMoveInterface()
         .def("eventServerSpecialMove_Play", &USpecialMoveInterface::eventServerSpecialMove_Play)
         .def("GetDefaultRootMotionRotationMode", &USpecialMoveInterface::GetDefaultRootMotionRotationMode)
         .def("GetDefaultRootMotionMode", &USpecialMoveInterface::GetDefaultRootMotionMode)
-        .def("GetSkelMesh", &USpecialMoveInterface::GetSkelMesh, return_value_policy< reference_existing_object >())
-        .def("GetSMComponent", &USpecialMoveInterface::GetSMComponent, return_value_policy< reference_existing_object >())
-        .def("GetActor", &USpecialMoveInterface::GetActor, return_value_policy< reference_existing_object >())
+        .def("GetSkelMesh", &USpecialMoveInterface::GetSkelMesh, py::return_value_policy::reference)
+        .def("GetSMComponent", &USpecialMoveInterface::GetSMComponent, py::return_value_policy::reference)
+        .def("GetActor", &USpecialMoveInterface::GetActor, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

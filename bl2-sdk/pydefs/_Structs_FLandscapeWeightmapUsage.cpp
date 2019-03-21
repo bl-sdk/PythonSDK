@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLandscapeWeightmapUsage()
 {
-    class_< FLandscapeWeightmapUsage >("FLandscapeWeightmapUsage", no_init)
+    py::class_< FLandscapeWeightmapUsage >("FLandscapeWeightmapUsage")
         .def_readonly("ChannelUsage", &FLandscapeWeightmapUsage::ChannelUsage)
   ;
 }

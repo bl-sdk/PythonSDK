@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWaterVolume()
 {
-    class_< AWaterVolume, bases< APhysicsVolume >  , boost::noncopyable>("AWaterVolume", no_init)
+    py::class_< AWaterVolume,  APhysicsVolume   >("AWaterVolume")
         .def_readwrite("EntrySound", &AWaterVolume::EntrySound)
         .def_readwrite("EntryActor", &AWaterVolume::EntryActor)
         .def_readwrite("ExitSound", &AWaterVolume::ExitSound)
         .def_readwrite("ExitActor", &AWaterVolume::ExitActor)
-        .def("StaticClass", &AWaterVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWaterVolume::StaticClass, py::return_value_policy::reference)
         .def("PlayExitSplash", &AWaterVolume::PlayExitSplash)
         .def("eventUnTouch", &AWaterVolume::eventUnTouch)
         .def("PlayEntrySplash", &AWaterVolume::PlayEntrySplash)

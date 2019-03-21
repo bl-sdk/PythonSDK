@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FControllerConnectionState()
 {
-    class_< FControllerConnectionState >("FControllerConnectionState", no_init)
+    py::class_< FControllerConnectionState >("FControllerConnectionState")
         .def_readwrite("bIsControllerConnected", &FControllerConnectionState::bIsControllerConnected)
         .def_readwrite("bLastIsControllerConnected", &FControllerConnectionState::bLastIsControllerConnected)
   ;

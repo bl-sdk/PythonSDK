@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetUsabilityByMissionDirectives()
 {
-    class_< UBehavior_SetUsabilityByMissionDirectives, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetUsabilityByMissionDirectives", no_init)
+    py::class_< UBehavior_SetUsabilityByMissionDirectives,  UBehaviorBase   >("UBehavior_SetUsabilityByMissionDirectives")
         .def_readwrite("ChangeUsability", &UBehavior_SetUsabilityByMissionDirectives::ChangeUsability)
-        .def("StaticClass", &UBehavior_SetUsabilityByMissionDirectives::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetUsabilityByMissionDirectives::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetUsabilityByMissionDirectives::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_SetApexClothingParam()
 {
-    class_< USeqAct_SetApexClothingParam, bases< USequenceAction >  , boost::noncopyable>("USeqAct_SetApexClothingParam", no_init)
-        .def("StaticClass", &USeqAct_SetApexClothingParam::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_SetApexClothingParam,  USequenceAction   >("USeqAct_SetApexClothingParam")
+        .def("StaticClass", &USeqAct_SetApexClothingParam::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

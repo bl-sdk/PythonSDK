@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDirChangeRateRange()
 {
-    class_< FDirChangeRateRange >("FDirChangeRateRange", no_init)
+    py::class_< FDirChangeRateRange >("FDirChangeRateRange")
         .def_readwrite("DirDegreesPerSecond", &FDirChangeRateRange::DirDegreesPerSecond)
         .def_readwrite("SpeedRange", &FDirChangeRateRange::SpeedRange)
   ;

@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWebResponse()
 {
-    class_< UWebResponse, bases< UObject >  , boost::noncopyable>("UWebResponse", no_init)
+    py::class_< UWebResponse,  UObject   >("UWebResponse")
         .def_readwrite("headers", &UWebResponse::headers)
         .def_readwrite("ReplacementMap", &UWebResponse::ReplacementMap)
         .def_readwrite("IncludePath", &UWebResponse::IncludePath)
         .def_readwrite("CharSet", &UWebResponse::CharSet)
         .def_readwrite("Connection", &UWebResponse::Connection)
-        .def("StaticClass", &UWebResponse::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWebResponse::StaticClass, py::return_value_policy::reference)
         .def("SentResponse", &UWebResponse::SentResponse)
         .def("SentText", &UWebResponse::SentText)
         .def("Redirect", &UWebResponse::Redirect)

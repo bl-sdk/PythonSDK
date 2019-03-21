@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPolys()
 {
-    class_< UPolys, bases< UObject >  , boost::noncopyable>("UPolys", no_init)
+    py::class_< UPolys,  UObject   >("UPolys")
         .def_readonly("UnknownData00", &UPolys::UnknownData00)
-        .def("StaticClass", &UPolys::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPolys::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

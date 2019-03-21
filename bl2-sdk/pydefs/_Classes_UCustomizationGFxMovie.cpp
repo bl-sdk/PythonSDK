@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCustomizationGFxMovie()
 {
-    class_< UCustomizationGFxMovie, bases< UWillowGFxThirdPersonMovie >  , boost::noncopyable>("UCustomizationGFxMovie", no_init)
+    py::class_< UCustomizationGFxMovie,  UWillowGFxThirdPersonMovie   >("UCustomizationGFxMovie")
         .def_readwrite("CharacterCustomizationMenu", &UCustomizationGFxMovie::CharacterCustomizationMenu)
         .def_readwrite("CharacterCustomizationInfoCard", &UCustomizationGFxMovie::CharacterCustomizationInfoCard)
         .def_readonly("SkillBranchDescriptions", &UCustomizationGFxMovie::SkillBranchDescriptions)
@@ -32,7 +32,7 @@ void Export_pystes_UCustomizationGFxMovie()
         .def_readwrite("UnauthorizedHeadCustomizations", &UCustomizationGFxMovie::UnauthorizedHeadCustomizations)
         .def_readwrite("UnauthorizedSkinCustomizations", &UCustomizationGFxMovie::UnauthorizedSkinCustomizations)
         .def_readwrite("PotentialCustomizationForPurchase", &UCustomizationGFxMovie::PotentialCustomizationForPurchase)
-        .def("StaticClass", &UCustomizationGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCustomizationGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("MarketplaceDownloadComplete", &UCustomizationGFxMovie::MarketplaceDownloadComplete)
         .def("GetOfferIdForCustomization", &UCustomizationGFxMovie::GetOfferIdForCustomization)
         .def("extGenericButtonClicked", &UCustomizationGFxMovie::extGenericButtonClicked)

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxEngine()
 {
-    class_< UGFxEngine, bases< UObject >  , boost::noncopyable>("UGFxEngine", no_init)
+    py::class_< UGFxEngine,  UObject   >("UGFxEngine")
         .def_readwrite("GCReferences", &UGFxEngine::GCReferences)
         .def_readwrite("RefCount", &UGFxEngine::RefCount)
-        .def("StaticClass", &UGFxEngine::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxEngine::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

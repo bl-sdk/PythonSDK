@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_OnlinePlayerDataBase()
 {
-    class_< UUIDataProvider_OnlinePlayerDataBase, bases< UUIDataProvider >  , boost::noncopyable>("UUIDataProvider_OnlinePlayerDataBase", no_init)
+    py::class_< UUIDataProvider_OnlinePlayerDataBase,  UUIDataProvider   >("UUIDataProvider_OnlinePlayerDataBase")
         .def_readwrite("PlayerControllerId", &UUIDataProvider_OnlinePlayerDataBase::PlayerControllerId)
-        .def("StaticClass", &UUIDataProvider_OnlinePlayerDataBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_OnlinePlayerDataBase::StaticClass, py::return_value_policy::reference)
         .def("eventOnUnregister", &UUIDataProvider_OnlinePlayerDataBase::eventOnUnregister)
         .def("eventOnRegister", &UUIDataProvider_OnlinePlayerDataBase::eventOnRegister)
         .staticmethod("StaticClass")

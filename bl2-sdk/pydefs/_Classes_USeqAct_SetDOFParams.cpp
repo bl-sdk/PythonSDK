@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_SetDOFParams()
 {
-    class_< USeqAct_SetDOFParams, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_SetDOFParams", no_init)
+    py::class_< USeqAct_SetDOFParams,  USeqAct_Latent   >("USeqAct_SetDOFParams")
         .def_readwrite("FalloffExponent", &USeqAct_SetDOFParams::FalloffExponent)
         .def_readwrite("BlurKernelSize", &USeqAct_SetDOFParams::BlurKernelSize)
         .def_readwrite("MaxNearBlurAmount", &USeqAct_SetDOFParams::MaxNearBlurAmount)
@@ -24,7 +24,7 @@ void Export_pystes_USeqAct_SetDOFParams()
         .def_readwrite("OldFocusInnerRadius", &USeqAct_SetDOFParams::OldFocusInnerRadius)
         .def_readwrite("OldFocusDistance", &USeqAct_SetDOFParams::OldFocusDistance)
         .def_readwrite("OldFocusPosition", &USeqAct_SetDOFParams::OldFocusPosition)
-        .def("StaticClass", &USeqAct_SetDOFParams::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_SetDOFParams::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

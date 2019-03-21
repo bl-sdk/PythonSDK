@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVehicleSeatDefinition()
 {
-    class_< FVehicleSeatDefinition >("FVehicleSeatDefinition", no_init)
+    py::class_< FVehicleSeatDefinition >("FVehicleSeatDefinition")
         .def_readwrite("SeatDefinition", &FVehicleSeatDefinition::SeatDefinition)
         .def_readwrite("WeaponBalanceDefinition", &FVehicleSeatDefinition::WeaponBalanceDefinition)
         .def_readwrite("WeaponFireSMD", &FVehicleSeatDefinition::WeaponFireSMD)

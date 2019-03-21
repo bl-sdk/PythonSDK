@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationActor()
 {
-    class_< FPopulationActor >("FPopulationActor", no_init)
+    py::class_< FPopulationActor >("FPopulationActor")
         .def_readwrite("SpawnFactory", &FPopulationActor::SpawnFactory)
         .def_readwrite("Probability", &FPopulationActor::Probability)
         .def_readwrite("MaxActiveAtOneTime", &FPopulationActor::MaxActiveAtOneTime)

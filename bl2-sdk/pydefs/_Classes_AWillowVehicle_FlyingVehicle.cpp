@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVehicle_FlyingVehicle()
 {
-    class_< AWillowVehicle_FlyingVehicle, bases< AWillowVehicle >  , boost::noncopyable>("AWillowVehicle_FlyingVehicle", no_init)
+    py::class_< AWillowVehicle_FlyingVehicle,  AWillowVehicle   >("AWillowVehicle_FlyingVehicle")
         .def_readwrite("FlyingSpeed", &AWillowVehicle_FlyingVehicle::FlyingSpeed)
         .def_readwrite("AirTransFriction", &AWillowVehicle_FlyingVehicle::AirTransFriction)
         .def_readwrite("AirRotFriction", &AWillowVehicle_FlyingVehicle::AirRotFriction)
@@ -21,7 +21,7 @@ void Export_pystes_AWillowVehicle_FlyingVehicle()
         .def_readwrite("TraceLookAheadVelocityScalar", &AWillowVehicle_FlyingVehicle::TraceLookAheadVelocityScalar)
         .def_readwrite("TraceStartHeight", &AWillowVehicle_FlyingVehicle::TraceStartHeight)
         .def_readwrite("TurretConeAngle", &AWillowVehicle_FlyingVehicle::TurretConeAngle)
-        .def("StaticClass", &AWillowVehicle_FlyingVehicle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVehicle_FlyingVehicle::StaticClass, py::return_value_policy::reference)
         .def("ApplyCameraYawDamping", &AWillowVehicle_FlyingVehicle::ApplyCameraYawDamping)
         .def("TraceThroughTriggers", &AWillowVehicle_FlyingVehicle::TraceThroughTriggers)
         .def("SuggestRiseInput", &AWillowVehicle_FlyingVehicle::SuggestRiseInput)

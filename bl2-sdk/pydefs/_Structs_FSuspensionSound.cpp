@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSuspensionSound()
 {
-    class_< FSuspensionSound >("FSuspensionSound", no_init)
+    py::class_< FSuspensionSound >("FSuspensionSound")
         .def_readwrite("LastSuspensionTravel", &FSuspensionSound::LastSuspensionTravel)
         .def_readwrite("LastPlayTime", &FSuspensionSound::LastPlayTime)
         .def_readwrite("PlayingInfo", &FSuspensionSound::PlayingInfo)

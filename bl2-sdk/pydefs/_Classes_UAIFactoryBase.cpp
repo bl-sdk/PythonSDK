@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIFactoryBase()
 {
-    class_< UAIFactoryBase, bases< UObject >  , boost::noncopyable>("UAIFactoryBase", no_init)
+    py::class_< UAIFactoryBase,  UObject   >("UAIFactoryBase")
         .def_readwrite("KnowledgeRecordList", &UAIFactoryBase::KnowledgeRecordList)
         .def_readwrite("RuleSets", &UAIFactoryBase::RuleSets)
         .def_readwrite("Rules", &UAIFactoryBase::Rules)
@@ -13,7 +13,7 @@ void Export_pystes_UAIFactoryBase()
         .def_readwrite("TargetRecords", &UAIFactoryBase::TargetRecords)
         .def_readwrite("AIDefinitionRecords", &UAIFactoryBase::AIDefinitionRecords)
         .def_readwrite("TimeStampedRecordLifetime", &UAIFactoryBase::TimeStampedRecordLifetime)
-        .def("StaticClass", &UAIFactoryBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAIFactoryBase::StaticClass, py::return_value_policy::reference)
         .def("FlushPools", &UAIFactoryBase::FlushPools)
         .def("ReturnAIDef", &UAIFactoryBase::ReturnAIDef)
         .def("GetAIDef", &UAIFactoryBase::GetAIDef)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTraceHitInfo()
 {
-    class_< FTraceHitInfo >("FTraceHitInfo", no_init)
+    py::class_< FTraceHitInfo >("FTraceHitInfo")
         .def_readwrite("Material", &FTraceHitInfo::Material)
         .def_readwrite("PhysMaterial", &FTraceHitInfo::PhysMaterial)
         .def_readwrite("Item", &FTraceHitInfo::Item)

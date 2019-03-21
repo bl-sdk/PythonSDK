@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UObjectPropertyAttributeValueResolver()
 {
-    class_< UObjectPropertyAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UObjectPropertyAttributeValueResolver", no_init)
+    py::class_< UObjectPropertyAttributeValueResolver,  UAttributeValueResolver   >("UObjectPropertyAttributeValueResolver")
         .def_readwrite("PropertyName", &UObjectPropertyAttributeValueResolver::PropertyName)
         .def_readwrite("CachedProperty", &UObjectPropertyAttributeValueResolver::CachedProperty)
-        .def("StaticClass", &UObjectPropertyAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UObjectPropertyAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

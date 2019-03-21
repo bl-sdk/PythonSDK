@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTradingGFxDefinition()
 {
-    class_< UTradingGFxDefinition, bases< UWillowInventoryGFxDefinition >  , boost::noncopyable>("UTradingGFxDefinition", no_init)
-        .def("StaticClass", &UTradingGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTradingGFxDefinition,  UWillowInventoryGFxDefinition   >("UTradingGFxDefinition")
+        .def("StaticClass", &UTradingGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

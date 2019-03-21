@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UObjectPropertyFlagValueResolver()
 {
-    class_< UObjectPropertyFlagValueResolver, bases< UFlagValueResolver >  , boost::noncopyable>("UObjectPropertyFlagValueResolver", no_init)
+    py::class_< UObjectPropertyFlagValueResolver,  UFlagValueResolver   >("UObjectPropertyFlagValueResolver")
         .def_readwrite("PropertyName", &UObjectPropertyFlagValueResolver::PropertyName)
-        .def("StaticClass", &UObjectPropertyFlagValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UObjectPropertyFlagValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

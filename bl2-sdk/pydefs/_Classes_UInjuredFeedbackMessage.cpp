@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInjuredFeedbackMessage()
 {
-    class_< UInjuredFeedbackMessage, bases< UWillowLocalMessage >  , boost::noncopyable>("UInjuredFeedbackMessage", no_init)
+    py::class_< UInjuredFeedbackMessage,  UWillowLocalMessage   >("UInjuredFeedbackMessage")
         .def_readwrite("SecondWind", &UInjuredFeedbackMessage::SecondWind)
-        .def("StaticClass", &UInjuredFeedbackMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInjuredFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UInjuredFeedbackMessage::GetString)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeSequenceBlendByAim()
 {
-    class_< UAnimNodeSequenceBlendByAim, bases< UAnimNodeSequenceBlendBase >  , boost::noncopyable>("UAnimNodeSequenceBlendByAim", no_init)
+    py::class_< UAnimNodeSequenceBlendByAim,  UAnimNodeSequenceBlendBase   >("UAnimNodeSequenceBlendByAim")
         .def_readwrite("Aim", &UAnimNodeSequenceBlendByAim::Aim)
         .def_readwrite("PreviousAim", &UAnimNodeSequenceBlendByAim::PreviousAim)
         .def_readwrite("HorizontalRange", &UAnimNodeSequenceBlendByAim::HorizontalRange)
@@ -20,7 +20,7 @@ void Export_pystes_UAnimNodeSequenceBlendByAim()
         .def_readwrite("AnimName_RU", &UAnimNodeSequenceBlendByAim::AnimName_RU)
         .def_readwrite("AnimName_RC", &UAnimNodeSequenceBlendByAim::AnimName_RC)
         .def_readwrite("AnimName_RD", &UAnimNodeSequenceBlendByAim::AnimName_RD)
-        .def("StaticClass", &UAnimNodeSequenceBlendByAim::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeSequenceBlendByAim::StaticClass, py::return_value_policy::reference)
         .def("CheckAnimsUpToDate", &UAnimNodeSequenceBlendByAim::CheckAnimsUpToDate)
         .staticmethod("StaticClass")
   ;

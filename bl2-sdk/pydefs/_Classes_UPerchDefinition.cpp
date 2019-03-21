@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPerchDefinition()
 {
-    class_< UPerchDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UPerchDefinition", no_init)
+    py::class_< UPerchDefinition,  UGBXDefinition   >("UPerchDefinition")
         .def_readwrite("VfTable_IIBodyInfoProvider", &UPerchDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UPerchDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIAnimProvider", &UPerchDefinition::VfTable_IIAnimProvider)
@@ -30,14 +30,14 @@ void Export_pystes_UPerchDefinition()
         .def_readwrite("AmbientShadowColor", &UPerchDefinition::AmbientShadowColor)
         .def_readwrite("DominantShadowTransitionStartDistance", &UPerchDefinition::DominantShadowTransitionStartDistance)
         .def_readwrite("DominantShadowTransitionEndDistance", &UPerchDefinition::DominantShadowTransitionEndDistance)
-        .def("StaticClass", &UPerchDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPerchDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnPlayerInRange", &UPerchDefinition::OnPlayerInRange)
         .def("OnFinished", &UPerchDefinition::OnFinished)
         .def("OnStopAnim", &UPerchDefinition::OnStopAnim)
         .def("OnIdleAnim", &UPerchDefinition::OnIdleAnim)
         .def("OnStartAnim", &UPerchDefinition::OnStartAnim)
         .def("SetBehaviorProviderDefinition", &UPerchDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UPerchDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UPerchDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .def("GetAnims", &UPerchDefinition::GetAnims)
         .def("CanUse", &UPerchDefinition::CanUse)
         .def("GetPerchData", &UPerchDefinition::GetPerchData)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AKActor()
 {
-    class_< AKActor, bases< ADynamicSMActor >  , boost::noncopyable>("AKActor", no_init)
+    py::class_< AKActor,  ADynamicSMActor   >("AKActor")
         .def_readwrite("ImpactEffectComponent", &AKActor::ImpactEffectComponent)
         .def_readwrite("ImpactSoundComponent", &AKActor::ImpactSoundComponent)
         .def_readwrite("ImpactSoundComponent2", &AKActor::ImpactSoundComponent2)
@@ -25,7 +25,7 @@ void Export_pystes_AKActor()
         .def_readwrite("ReplicatedDrawScale3D", &AKActor::ReplicatedDrawScale3D)
         .def_readwrite("InitialLocation", &AKActor::InitialLocation)
         .def_readwrite("InitialRotation", &AKActor::InitialRotation)
-        .def("StaticClass", &AKActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AKActor::StaticClass, py::return_value_policy::reference)
         .def("Reset", &AKActor::Reset)
         .def("OnTeleport", &AKActor::OnTeleport)
         .def("OnToggle", &AKActor::OnToggle)
@@ -39,7 +39,7 @@ void Export_pystes_AKActor()
         .def("eventFellOutOfWorld", &AKActor::eventFellOutOfWorld)
         .def("eventPostBeginPlay", &AKActor::eventPostBeginPlay)
         .def("ResolveRBState", &AKActor::ResolveRBState)
-        .def("GetKActorPhysMaterial", &AKActor::GetKActorPhysMaterial, return_value_policy< reference_existing_object >())
+        .def("GetKActorPhysMaterial", &AKActor::GetKActorPhysMaterial, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

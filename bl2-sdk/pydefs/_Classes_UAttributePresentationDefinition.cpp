@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAttributePresentationDefinition()
 {
-    class_< UAttributePresentationDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UAttributePresentationDefinition", no_init)
+    py::class_< UAttributePresentationDefinition,  UGBXDefinition   >("UAttributePresentationDefinition")
         .def_readwrite("BasePriority", &UAttributePresentationDefinition::BasePriority)
         .def_readwrite("Attribute", &UAttributePresentationDefinition::Attribute)
         .def_readwrite("Description", &UAttributePresentationDefinition::Description)
@@ -18,7 +18,7 @@ void Export_pystes_UAttributePresentationDefinition()
         .def_readwrite("FloatPrecision", &UAttributePresentationDefinition::FloatPrecision)
         .def_readwrite("Icon", &UAttributePresentationDefinition::Icon)
         .def_readwrite("RemappingData", &UAttributePresentationDefinition::RemappingData)
-        .def("StaticClass", &UAttributePresentationDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAttributePresentationDefinition::StaticClass, py::return_value_policy::reference)
         .def("IncludePrefixInTranslation", &UAttributePresentationDefinition::IncludePrefixInTranslation)
         .def("IncludeSuffixInTranslation", &UAttributePresentationDefinition::IncludeSuffixInTranslation)
         .def("IsTextColorEnabled", &UAttributePresentationDefinition::IsTextColorEnabled)

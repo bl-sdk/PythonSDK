@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRemoteDynamicRadarIconData()
 {
-    class_< FRemoteDynamicRadarIconData >("FRemoteDynamicRadarIconData", no_init)
+    py::class_< FRemoteDynamicRadarIconData >("FRemoteDynamicRadarIconData")
         .def_readwrite("IconType", &FRemoteDynamicRadarIconData::IconType)
         .def_readwrite("Location", &FRemoteDynamicRadarIconData::Location)
   ;

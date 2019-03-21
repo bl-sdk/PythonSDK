@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqVar_DayNightCycleVariable()
 {
-    class_< UWillowSeqVar_DayNightCycleVariable, bases< USeqVar_Float >  , boost::noncopyable>("UWillowSeqVar_DayNightCycleVariable", no_init)
-        .def("StaticClass", &UWillowSeqVar_DayNightCycleVariable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqVar_DayNightCycleVariable,  USeqVar_Float   >("UWillowSeqVar_DayNightCycleVariable")
+        .def("StaticClass", &UWillowSeqVar_DayNightCycleVariable::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

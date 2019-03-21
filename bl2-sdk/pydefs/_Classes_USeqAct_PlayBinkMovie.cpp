@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_PlayBinkMovie()
 {
-    class_< USeqAct_PlayBinkMovie, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_PlayBinkMovie", no_init)
+    py::class_< USeqAct_PlayBinkMovie,  USeqAct_Latent   >("USeqAct_PlayBinkMovie")
         .def_readwrite("BinkMovieName", &USeqAct_PlayBinkMovie::BinkMovieName)
-        .def("StaticClass", &USeqAct_PlayBinkMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_PlayBinkMovie::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

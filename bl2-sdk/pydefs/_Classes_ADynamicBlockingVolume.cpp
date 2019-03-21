@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADynamicBlockingVolume()
 {
-    class_< ADynamicBlockingVolume, bases< ABlockingVolume >  , boost::noncopyable>("ADynamicBlockingVolume", no_init)
-        .def("StaticClass", &ADynamicBlockingVolume::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ADynamicBlockingVolume,  ABlockingVolume   >("ADynamicBlockingVolume")
+        .def("StaticClass", &ADynamicBlockingVolume::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ADynamicBlockingVolume::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ADynamicBlockingVolume::CreateCheckpointRecord)
         .def("eventPostBeginPlay", &ADynamicBlockingVolume::eventPostBeginPlay)

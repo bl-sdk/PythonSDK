@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetCompassIcon()
 {
-    class_< UBehavior_SetCompassIcon, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetCompassIcon", no_init)
+    py::class_< UBehavior_SetCompassIcon,  UBehaviorBase   >("UBehavior_SetCompassIcon")
         .def_readwrite("CompassIcon", &UBehavior_SetCompassIcon::CompassIcon)
-        .def("StaticClass", &UBehavior_SetCompassIcon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetCompassIcon::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetCompassIcon::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

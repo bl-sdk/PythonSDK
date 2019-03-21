@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USavedMove()
 {
-    class_< USavedMove, bases< UObject >  , boost::noncopyable>("USavedMove", no_init)
+    py::class_< USavedMove,  UObject   >("USavedMove")
         .def_readwrite("NextMove", &USavedMove::NextMove)
         .def_readwrite("TimeStamp", &USavedMove::TimeStamp)
         .def_readwrite("Delta", &USavedMove::Delta)
@@ -29,7 +29,7 @@ void Export_pystes_USavedMove()
         .def_readwrite("AccelDotThreshold", &USavedMove::AccelDotThreshold)
         .def_readwrite("RootMotionInterpCurrentTime", &USavedMove::RootMotionInterpCurrentTime)
         .def_readwrite("RootMotionInterpCurveLastValue", &USavedMove::RootMotionInterpCurveLastValue)
-        .def("StaticClass", &USavedMove::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USavedMove::StaticClass, py::return_value_policy::reference)
         .def("GetDebugString", &USavedMove::GetDebugString)
         .def("SetFlags", &USavedMove::SetFlags)
         .def("CompressedFlags", &USavedMove::CompressedFlags)

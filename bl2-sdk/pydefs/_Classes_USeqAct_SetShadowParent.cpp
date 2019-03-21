@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_SetShadowParent()
 {
-    class_< USeqAct_SetShadowParent, bases< USequenceAction >  , boost::noncopyable>("USeqAct_SetShadowParent", no_init)
-        .def("StaticClass", &USeqAct_SetShadowParent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_SetShadowParent,  USequenceAction   >("USeqAct_SetShadowParent")
+        .def("StaticClass", &USeqAct_SetShadowParent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

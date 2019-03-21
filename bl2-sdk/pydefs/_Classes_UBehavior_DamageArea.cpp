@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_DamageArea()
 {
-    class_< UBehavior_DamageArea, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_DamageArea", no_init)
+    py::class_< UBehavior_DamageArea,  UBehaviorBase   >("UBehavior_DamageArea")
         .def_readwrite("Action", &UBehavior_DamageArea::Action)
-        .def("StaticClass", &UBehavior_DamageArea::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_DamageArea::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_DamageArea::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

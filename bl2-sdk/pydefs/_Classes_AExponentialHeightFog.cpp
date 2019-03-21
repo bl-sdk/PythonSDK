@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AExponentialHeightFog()
 {
-    class_< AExponentialHeightFog, bases< AInfo >  , boost::noncopyable>("AExponentialHeightFog", no_init)
+    py::class_< AExponentialHeightFog,  AInfo   >("AExponentialHeightFog")
         .def_readwrite("Component", &AExponentialHeightFog::Component)
-        .def("StaticClass", &AExponentialHeightFog::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AExponentialHeightFog::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &AExponentialHeightFog::OnToggle)
         .def("eventReplicatedEvent", &AExponentialHeightFog::eventReplicatedEvent)
         .def("eventPostBeginPlay", &AExponentialHeightFog::eventPostBeginPlay)

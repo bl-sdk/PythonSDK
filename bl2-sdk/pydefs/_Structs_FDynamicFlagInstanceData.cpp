@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDynamicFlagInstanceData()
 {
-    class_< FDynamicFlagInstanceData >("FDynamicFlagInstanceData", no_init)
+    py::class_< FDynamicFlagInstanceData >("FDynamicFlagInstanceData")
         .def_readwrite("DynamicFlag", &FDynamicFlagInstanceData::DynamicFlag)
         .def_readwrite("LastEvaluatedExpressionTime", &FDynamicFlagInstanceData::LastEvaluatedExpressionTime)
   ;

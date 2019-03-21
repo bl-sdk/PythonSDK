@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSynchGroup()
 {
-    class_< FSynchGroup >("FSynchGroup", no_init)
+    py::class_< FSynchGroup >("FSynchGroup")
         .def_readwrite("SeqNodes", &FSynchGroup::SeqNodes)
         .def_readwrite("MasterNode", &FSynchGroup::MasterNode)
         .def_readwrite("GroupName", &FSynchGroup::GroupName)

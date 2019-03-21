@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMultiMap_Mirror()
 {
-    class_< FMultiMap_Mirror >("FMultiMap_Mirror", no_init)
+    py::class_< FMultiMap_Mirror >("FMultiMap_Mirror")
         .def_readwrite("Pairs", &FMultiMap_Mirror::Pairs)
   ;
 }

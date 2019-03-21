@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDominantSpotLightComponent()
 {
-    class_< UDominantSpotLightComponent, bases< USpotLightComponent >  , boost::noncopyable>("UDominantSpotLightComponent", no_init)
+    py::class_< UDominantSpotLightComponent,  USpotLightComponent   >("UDominantSpotLightComponent")
         .def_readonly("UnknownData00", &UDominantSpotLightComponent::UnknownData00)
         .def_readwrite("DominantLightShadowInfo", &UDominantSpotLightComponent::DominantLightShadowInfo)
         .def_readwrite("DominantLightShadowMap", &UDominantSpotLightComponent::DominantLightShadowMap)
-        .def("StaticClass", &UDominantSpotLightComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDominantSpotLightComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

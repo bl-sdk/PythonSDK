@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADebugCameraController()
 {
-    class_< ADebugCameraController, bases< APlayerController >  , boost::noncopyable>("ADebugCameraController", no_init)
+    py::class_< ADebugCameraController,  APlayerController   >("ADebugCameraController")
         .def_readwrite("PrimaryKey", &ADebugCameraController::PrimaryKey)
         .def_readwrite("SecondaryKey", &ADebugCameraController::SecondaryKey)
         .def_readwrite("UnselectKey", &ADebugCameraController::UnselectKey)
@@ -14,7 +14,7 @@ void Export_pystes_ADebugCameraController()
         .def_readwrite("DrawFrustum", &ADebugCameraController::DrawFrustum)
         .def_readwrite("SelectedActor", &ADebugCameraController::SelectedActor)
         .def_readwrite("SelectedComponent", &ADebugCameraController::SelectedComponent)
-        .def("StaticClass", &ADebugCameraController::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADebugCameraController::StaticClass, py::return_value_policy::reference)
         .def("ConsoleCommand", &ADebugCameraController::ConsoleCommand)
         .def("ShowDebugSelectedInfo", &ADebugCameraController::ShowDebugSelectedInfo)
         .def("NativeInputKey", &ADebugCameraController::NativeInputKey)

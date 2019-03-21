@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScreenParticleInitParams()
 {
-    class_< FScreenParticleInitParams >("FScreenParticleInitParams", no_init)
+    py::class_< FScreenParticleInitParams >("FScreenParticleInitParams")
         .def_readwrite("Template", &FScreenParticleInitParams::Template)
         .def_readwrite("ScreenParticleModifiers", &FScreenParticleInitParams::ScreenParticleModifiers)
         .def_readwrite("TemplateScreenParticleMaterial", &FScreenParticleInitParams::TemplateScreenParticleMaterial)

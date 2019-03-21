@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_Explode()
 {
-    class_< UBehavior_Explode, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_Explode", no_init)
+    py::class_< UBehavior_Explode,  UBehaviorBase   >("UBehavior_Explode")
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_Explode::VfTable_IIDamageCauser)
         .def_readwrite("DamageSource", &UBehavior_Explode::DamageSource)
         .def_readwrite("DamageRadiusFormula", &UBehavior_Explode::DamageRadiusFormula)
@@ -26,10 +26,10 @@ void Export_pystes_UBehavior_Explode()
         .def_readwrite("InstigatorSelfDamageScale", &UBehavior_Explode::InstigatorSelfDamageScale)
         .def_readwrite("OverrideActor", &UBehavior_Explode::OverrideActor)
         .def_readwrite("SelfActor", &UBehavior_Explode::SelfActor)
-        .def("StaticClass", &UBehavior_Explode::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_Explode::StaticClass, py::return_value_policy::reference)
         .def("SetInstigatorOverride", &UBehavior_Explode::SetInstigatorOverride)
-        .def("GetControllerResponsibleForDamage", &UBehavior_Explode::GetControllerResponsibleForDamage, return_value_policy< reference_existing_object >())
-        .def("GetInstigator", &UBehavior_Explode::GetInstigator, return_value_policy< reference_existing_object >())
+        .def("GetControllerResponsibleForDamage", &UBehavior_Explode::GetControllerResponsibleForDamage, py::return_value_policy::reference)
+        .def("GetInstigator", &UBehavior_Explode::GetInstigator, py::return_value_policy::reference)
         .def("GetInstigatorSelfDamageScale", &UBehavior_Explode::GetInstigatorSelfDamageScale)
         .def("GetFireIntervalChanceModifier", &UBehavior_Explode::GetFireIntervalChanceModifier)
         .def("GetStatusEffectBaseChanceModifier", &UBehavior_Explode::GetStatusEffectBaseChanceModifier)

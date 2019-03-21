@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerStatAttributeValueResolver()
 {
-    class_< UPlayerStatAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UPlayerStatAttributeValueResolver", no_init)
+    py::class_< UPlayerStatAttributeValueResolver,  UAttributeValueResolver   >("UPlayerStatAttributeValueResolver")
         .def_readwrite("StatName", &UPlayerStatAttributeValueResolver::StatName)
-        .def("StaticClass", &UPlayerStatAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerStatAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

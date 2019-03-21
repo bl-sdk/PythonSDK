@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_DestroyBeams()
 {
-    class_< UBehavior_DestroyBeams, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_DestroyBeams", no_init)
+    py::class_< UBehavior_DestroyBeams,  UBehaviorBase   >("UBehavior_DestroyBeams")
         .def_readwrite("TargetContext", &UBehavior_DestroyBeams::TargetContext)
-        .def("StaticClass", &UBehavior_DestroyBeams::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_DestroyBeams::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_DestroyBeams::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

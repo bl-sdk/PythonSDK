@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowGameReplicationInfo()
 {
-    class_< AWillowGameReplicationInfo, bases< AGameReplicationInfo >  , boost::noncopyable>("AWillowGameReplicationInfo", no_init)
+    py::class_< AWillowGameReplicationInfo,  AGameReplicationInfo   >("AWillowGameReplicationInfo")
         .def_readonly("ActiveWaypoints", &AWillowGameReplicationInfo::ActiveWaypoints)
         .def_readonly("ActiveAreaWaypoints", &AWillowGameReplicationInfo::ActiveAreaWaypoints)
         .def_readwrite("RadarMgr", &AWillowGameReplicationInfo::RadarMgr)
@@ -54,7 +54,7 @@ void Export_pystes_AWillowGameReplicationInfo()
         .def_readwrite("MenuMatinee", &AWillowGameReplicationInfo::MenuMatinee)
         .def_readwrite("MusicAkState", &AWillowGameReplicationInfo::MusicAkState)
         .def_readwrite("NameListDef", &AWillowGameReplicationInfo::NameListDef)
-        .def("StaticClass", &AWillowGameReplicationInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowGameReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def("NotifyPlaythroughChanged", &AWillowGameReplicationInfo::NotifyPlaythroughChanged)
         .def("NotifyMatchmakingStateChanged", &AWillowGameReplicationInfo::NotifyMatchmakingStateChanged)
         .def("ClearMatchmakingStateChangedDelegate", &AWillowGameReplicationInfo::ClearMatchmakingStateChangedDelegate)
@@ -104,7 +104,7 @@ void Export_pystes_AWillowGameReplicationInfo()
         .def("InColiseumGameplayMap", &AWillowGameReplicationInfo::InColiseumGameplayMap)
         .def("CacheMenuMatinee", &AWillowGameReplicationInfo::CacheMenuMatinee)
         .def("PostBeginPlay", &AWillowGameReplicationInfo::PostBeginPlay)
-        .def("GetDuelGlobals", &AWillowGameReplicationInfo::GetDuelGlobals, return_value_policy< reference_existing_object >())
+        .def("GetDuelGlobals", &AWillowGameReplicationInfo::GetDuelGlobals, py::return_value_policy::reference)
         .def("UpdateJackVoiceModulation", &AWillowGameReplicationInfo::UpdateJackVoiceModulation)
         .def("SetPlayersSoundLikeJack", &AWillowGameReplicationInfo::SetPlayersSoundLikeJack)
         .def("NotifyMissionTrackerCinematicModeChanged", &AWillowGameReplicationInfo::NotifyMissionTrackerCinematicModeChanged)

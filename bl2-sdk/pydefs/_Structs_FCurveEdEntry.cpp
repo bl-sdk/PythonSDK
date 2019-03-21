@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCurveEdEntry()
 {
-    class_< FCurveEdEntry >("FCurveEdEntry", no_init)
+    py::class_< FCurveEdEntry >("FCurveEdEntry")
         .def_readwrite("CurveObject", &FCurveEdEntry::CurveObject)
         .def_readwrite("CurveColor", &FCurveEdEntry::CurveColor)
         .def_readwrite("CurveName", &FCurveEdEntry::CurveName)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOverrideSkill()
 {
-    class_< FOverrideSkill >("FOverrideSkill", no_init)
+    py::class_< FOverrideSkill >("FOverrideSkill")
         .def_readwrite("LeaderboardId", &FOverrideSkill::LeaderboardId)
         .def_readwrite("Players", &FOverrideSkill::Players)
         .def_readwrite("Mus", &FOverrideSkill::Mus)

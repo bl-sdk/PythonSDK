@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AFogVolumeLinearHalfspaceDensityInfo()
 {
-    class_< AFogVolumeLinearHalfspaceDensityInfo, bases< AFogVolumeDensityInfo >  , boost::noncopyable>("AFogVolumeLinearHalfspaceDensityInfo", no_init)
-        .def("StaticClass", &AFogVolumeLinearHalfspaceDensityInfo::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AFogVolumeLinearHalfspaceDensityInfo,  AFogVolumeDensityInfo   >("AFogVolumeLinearHalfspaceDensityInfo")
+        .def("StaticClass", &AFogVolumeLinearHalfspaceDensityInfo::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

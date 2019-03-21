@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxDialogBox()
 {
-    class_< UWillowGFxDialogBox, bases< UWillowGFxMovie >  , boost::noncopyable>("UWillowGFxDialogBox", no_init)
+    py::class_< UWillowGFxDialogBox,  UWillowGFxMovie   >("UWillowGFxDialogBox")
         .def_readwrite("Layouts", &UWillowGFxDialogBox::Layouts)
         .def_readwrite("Buttons", &UWillowGFxDialogBox::Buttons)
         .def_readwrite("DlgCaptionMarkup", &UWillowGFxDialogBox::DlgCaptionMarkup)
@@ -16,7 +16,7 @@ void Export_pystes_UWillowGFxDialogBox()
         .def_readwrite("AutoLocFile", &UWillowGFxDialogBox::AutoLocFile)
         .def_readwrite("AutoLocSection", &UWillowGFxDialogBox::AutoLocSection)
         .def_readwrite("DefaultTooltips", &UWillowGFxDialogBox::DefaultTooltips)
-        .def("StaticClass", &UWillowGFxDialogBox::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxDialogBox::StaticClass, py::return_value_policy::reference)
         .def("SetViewScaleMode", &UWillowGFxDialogBox::SetViewScaleMode)
         .def("GetFallbackLocSection", &UWillowGFxDialogBox::GetFallbackLocSection)
         .def("GetFallbackLocFile", &UWillowGFxDialogBox::GetFallbackLocFile)
@@ -26,11 +26,11 @@ void Export_pystes_UWillowGFxDialogBox()
         .def("StorageDeviceChanged", &UWillowGFxDialogBox::StorageDeviceChanged)
         .def("SetTooltips", &UWillowGFxDialogBox::SetTooltips)
         .def("ShowTooltips", &UWillowGFxDialogBox::ShowTooltips)
-        .def("DisplayBlockingBox", &UWillowGFxDialogBox::DisplayBlockingBox, return_value_policy< reference_existing_object >())
+        .def("DisplayBlockingBox", &UWillowGFxDialogBox::DisplayBlockingBox, py::return_value_policy::reference)
         .def("DisplayCustomYesNoBox", &UWillowGFxDialogBox::DisplayCustomYesNoBox)
         .def("DisplayYesNoBox", &UWillowGFxDialogBox::DisplayYesNoBox)
-        .def("DisplayOkBoxTextFromSpark", &UWillowGFxDialogBox::DisplayOkBoxTextFromSpark, return_value_policy< reference_existing_object >())
-        .def("DisplayOkBox", &UWillowGFxDialogBox::DisplayOkBox, return_value_policy< reference_existing_object >())
+        .def("DisplayOkBoxTextFromSpark", &UWillowGFxDialogBox::DisplayOkBoxTextFromSpark, py::return_value_policy::reference)
+        .def("DisplayOkBox", &UWillowGFxDialogBox::DisplayOkBox, py::return_value_policy::reference)
         .def("ApplySelection", &UWillowGFxDialogBox::ApplySelection)
         .def("OnWidgetClicked", &UWillowGFxDialogBox::OnWidgetClicked)
         .def("OnWidgetFocused", &UWillowGFxDialogBox::OnWidgetFocused)

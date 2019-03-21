@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ABehaviorVolume()
 {
-    class_< ABehaviorVolume, bases< APhysicsVolume >  , boost::noncopyable>("ABehaviorVolume", no_init)
+    py::class_< ABehaviorVolume,  APhysicsVolume   >("ABehaviorVolume")
         .def_readwrite("VfTable_IIBehaviorConsumer", &ABehaviorVolume::VfTable_IIBehaviorConsumer)
         .def_readwrite("VfTable_IIInstanceData", &ABehaviorVolume::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBalancedActor", &ABehaviorVolume::VfTable_IIBalancedActor)
@@ -25,9 +25,9 @@ void Export_pystes_ABehaviorVolume()
         .def_readwrite("AwesomeLevel", &ABehaviorVolume::AwesomeLevel)
         .def_readwrite("AttributeStartingValues", &ABehaviorVolume::AttributeStartingValues)
         .def_readwrite("DesignerAttributes", &ABehaviorVolume::DesignerAttributes)
-        .def("StaticClass", &ABehaviorVolume::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetInstancedDesignerAttribute", &ABehaviorVolume::eventGetInstancedDesignerAttribute, return_value_policy< reference_existing_object >())
-        .def("CreateDesignerAttribute", &ABehaviorVolume::CreateDesignerAttribute, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ABehaviorVolume::StaticClass, py::return_value_policy::reference)
+        .def("eventGetInstancedDesignerAttribute", &ABehaviorVolume::eventGetInstancedDesignerAttribute, py::return_value_policy::reference)
+        .def("CreateDesignerAttribute", &ABehaviorVolume::CreateDesignerAttribute, py::return_value_policy::reference)
         .def("InitializeAttributeStartingValues", &ABehaviorVolume::InitializeAttributeStartingValues)
         .def("GetBalancedActorTypeIdentifier", &ABehaviorVolume::GetBalancedActorTypeIdentifier)
         .def("SetExpLevel", &ABehaviorVolume::SetExpLevel)

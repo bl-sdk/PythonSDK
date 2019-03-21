@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieDrawStyleMesh()
 {
-    class_< UGFxMovieDrawStyleMesh, bases< UGFxMovieDrawStyleComponent >  , boost::noncopyable>("UGFxMovieDrawStyleMesh", no_init)
+    py::class_< UGFxMovieDrawStyleMesh,  UGFxMovieDrawStyleComponent   >("UGFxMovieDrawStyleMesh")
         .def_readwrite("MeshComponentArchetype", &UGFxMovieDrawStyleMesh::MeshComponentArchetype)
         .def_readwrite("UseStaticMesh", &UGFxMovieDrawStyleMesh::UseStaticMesh)
         .def_readwrite("UseSkeletalMesh", &UGFxMovieDrawStyleMesh::UseSkeletalMesh)
@@ -16,7 +16,7 @@ void Export_pystes_UGFxMovieDrawStyleMesh()
         .def_readwrite("Component", &UGFxMovieDrawStyleMesh::Component)
         .def_readwrite("Mati", &UGFxMovieDrawStyleMesh::Mati)
         .def_readwrite("OriginalMaterial", &UGFxMovieDrawStyleMesh::OriginalMaterial)
-        .def("StaticClass", &UGFxMovieDrawStyleMesh::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxMovieDrawStyleMesh::StaticClass, py::return_value_policy::reference)
         .def("GetStyleDebugString", &UGFxMovieDrawStyleMesh::GetStyleDebugString)
         .def("eventRequiresClientInstance", &UGFxMovieDrawStyleMesh::eventRequiresClientInstance)
         .staticmethod("StaticClass")

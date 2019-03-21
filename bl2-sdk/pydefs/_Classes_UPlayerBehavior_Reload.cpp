@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_Reload()
 {
-    class_< UPlayerBehavior_Reload, bases< UPlayerBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_Reload", no_init)
-        .def("StaticClass", &UPlayerBehavior_Reload::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPlayerBehavior_Reload,  UPlayerBehaviorBase   >("UPlayerBehavior_Reload")
+        .def("StaticClass", &UPlayerBehavior_Reload::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_Reload::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFileNameToURLMapping()
 {
-    class_< FFileNameToURLMapping >("FFileNameToURLMapping", no_init)
+    py::class_< FFileNameToURLMapping >("FFileNameToURLMapping")
         .def_readwrite("Filename", &FFileNameToURLMapping::Filename)
         .def_readwrite("UrlMapping", &FFileNameToURLMapping::UrlMapping)
   ;

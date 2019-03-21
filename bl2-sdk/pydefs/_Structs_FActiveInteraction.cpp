@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActiveInteraction()
 {
-    class_< FActiveInteraction >("FActiveInteraction", no_init)
+    py::class_< FActiveInteraction >("FActiveInteraction")
         .def_readwrite("TimeLength", &FActiveInteraction::TimeLength)
         .def_readwrite("TimeRemaining", &FActiveInteraction::TimeRemaining)
         .def_readwrite("InteractionServer", &FActiveInteraction::InteractionServer)

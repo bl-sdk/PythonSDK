@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleSpawnStationGFxDefinition()
 {
-    class_< UVehicleSpawnStationGFxDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UVehicleSpawnStationGFxDefinition", no_init)
+    py::class_< UVehicleSpawnStationGFxDefinition,  UWillowGFxMovie3DDefinition   >("UVehicleSpawnStationGFxDefinition")
         .def_readwrite("SupportedTags", &UVehicleSpawnStationGFxDefinition::SupportedTags)
         .def_readwrite("RequiredTags", &UVehicleSpawnStationGFxDefinition::RequiredTags)
         .def_readwrite("PostProcessInterpolationTime", &UVehicleSpawnStationGFxDefinition::PostProcessInterpolationTime)
@@ -16,7 +16,7 @@ void Export_pystes_UVehicleSpawnStationGFxDefinition()
         .def_readonly("MeshRotationSpeed", &UVehicleSpawnStationGFxDefinition::MeshRotationSpeed)
         .def_readonly("MeshOffset", &UVehicleSpawnStationGFxDefinition::MeshOffset)
         .def_readwrite("HeaderTextOverrideKey", &UVehicleSpawnStationGFxDefinition::HeaderTextOverrideKey)
-        .def("StaticClass", &UVehicleSpawnStationGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleSpawnStationGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

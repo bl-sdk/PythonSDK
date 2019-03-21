@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWorldBody()
 {
-    class_< UWorldBody, bases< UObject >  , boost::noncopyable>("UWorldBody", no_init)
+    py::class_< UWorldBody,  UObject   >("UWorldBody")
         .def_readwrite("VfTable_IIWorldBody", &UWorldBody::VfTable_IIWorldBody)
         .def_readwrite("Instigator", &UWorldBody::Instigator)
         .def_readwrite("Location", &UWorldBody::Location)
@@ -14,7 +14,7 @@ void Export_pystes_UWorldBody()
         .def_readwrite("WorldBodyAttachmentProxy", &UWorldBody::WorldBodyAttachmentProxy)
         .def_readwrite("AttachmentProxyImpactInfo", &UWorldBody::AttachmentProxyImpactInfo)
         .def_readwrite("AdditionalQueryInterfaceSource", &UWorldBody::AdditionalQueryInterfaceSource)
-        .def("StaticClass", &UWorldBody::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWorldBody::StaticClass, py::return_value_policy::reference)
         .def("Behavior_CauseRadiusDamage", &UWorldBody::Behavior_CauseRadiusDamage)
         .def("Behavior_CauseDamage", &UWorldBody::Behavior_CauseDamage)
         .def("ShutDown", &UWorldBody::ShutDown)
@@ -23,7 +23,7 @@ void Export_pystes_UWorldBody()
         .def("WorldBodyAttachComponent", &UWorldBody::WorldBodyAttachComponent)
         .def("WorldBodyAttachActor", &UWorldBody::WorldBodyAttachActor)
         .def("WorldBodyAttachTo", &UWorldBody::WorldBodyAttachTo)
-        .def("GetWorldBodyAttachmentBase", &UWorldBody::GetWorldBodyAttachmentBase, return_value_policy< reference_existing_object >())
+        .def("GetWorldBodyAttachmentBase", &UWorldBody::GetWorldBodyAttachmentBase, py::return_value_policy::reference)
         .def("GetWorldBodyAttachmentBoneForComponent", &UWorldBody::GetWorldBodyAttachmentBoneForComponent)
         .def("GetWorldBodyAttachmentLocationAndRotation", &UWorldBody::GetWorldBodyAttachmentLocationAndRotation)
         .def("GetWorldBodyAttachmentRotation", &UWorldBody::GetWorldBodyAttachmentRotation)

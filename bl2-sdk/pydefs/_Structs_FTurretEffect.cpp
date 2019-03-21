@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTurretEffect()
 {
-    class_< FTurretEffect >("FTurretEffect", no_init)
+    py::class_< FTurretEffect >("FTurretEffect")
         .def_readwrite("EffectStartTag", &FTurretEffect::EffectStartTag)
         .def_readwrite("EffectEndTag", &FTurretEffect::EffectEndTag)
         .def_readwrite("EffectTemplate", &FTurretEffect::EffectTemplate)

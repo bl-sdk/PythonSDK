@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionTerrainLayerCoords()
 {
-    class_< UMaterialExpressionTerrainLayerCoords, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionTerrainLayerCoords", no_init)
+    py::class_< UMaterialExpressionTerrainLayerCoords,  UMaterialExpression   >("UMaterialExpressionTerrainLayerCoords")
         .def_readwrite("MappingType", &UMaterialExpressionTerrainLayerCoords::MappingType)
         .def_readwrite("MappingScale", &UMaterialExpressionTerrainLayerCoords::MappingScale)
         .def_readwrite("MappingRotation", &UMaterialExpressionTerrainLayerCoords::MappingRotation)
         .def_readwrite("MappingPanU", &UMaterialExpressionTerrainLayerCoords::MappingPanU)
         .def_readwrite("MappingPanV", &UMaterialExpressionTerrainLayerCoords::MappingPanV)
-        .def("StaticClass", &UMaterialExpressionTerrainLayerCoords::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionTerrainLayerCoords::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

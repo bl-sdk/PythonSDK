@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_ObjectClassSwitch()
 {
-    class_< UBehavior_ObjectClassSwitch, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_ObjectClassSwitch", no_init)
+    py::class_< UBehavior_ObjectClassSwitch,  UBehaviorBase   >("UBehavior_ObjectClassSwitch")
         .def_readwrite("ObjectClassName", &UBehavior_ObjectClassSwitch::ObjectClassName)
-        .def("StaticClass", &UBehavior_ObjectClassSwitch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_ObjectClassSwitch::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ObjectClassSwitch::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

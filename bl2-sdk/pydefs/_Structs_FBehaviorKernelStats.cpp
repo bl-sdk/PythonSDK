@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorKernelStats()
 {
-    class_< FBehaviorKernelStats >("FBehaviorKernelStats", no_init)
+    py::class_< FBehaviorKernelStats >("FBehaviorKernelStats")
         .def_readwrite("NumProcessesCreated", &FBehaviorKernelStats::NumProcessesCreated)
         .def_readwrite("NumThreadsCreated", &FBehaviorKernelStats::NumThreadsCreated)
         .def_readwrite("NumWaitingThreads", &FBehaviorKernelStats::NumWaitingThreads)

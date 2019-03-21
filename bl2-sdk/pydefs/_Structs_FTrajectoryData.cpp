@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTrajectoryData()
 {
-    class_< FTrajectoryData >("FTrajectoryData", no_init)
+    py::class_< FTrajectoryData >("FTrajectoryData")
         .def_readwrite("Speed", &FTrajectoryData::Speed)
         .def_readwrite("AnglePct", &FTrajectoryData::AnglePct)
         .def_readwrite("Angle", &FTrajectoryData::Angle)

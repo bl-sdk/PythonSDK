@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPersonalTeleporter()
 {
-    class_< AWillowPersonalTeleporter, bases< ATeleporterDestination >  , boost::noncopyable>("AWillowPersonalTeleporter", no_init)
+    py::class_< AWillowPersonalTeleporter,  ATeleporterDestination   >("AWillowPersonalTeleporter")
         .def_readwrite("TeleportedPlayers", &AWillowPersonalTeleporter::TeleportedPlayers)
         .def_readwrite("Definition", &AWillowPersonalTeleporter::Definition)
         .def_readwrite("CylinderComponent", &AWillowPersonalTeleporter::CylinderComponent)
         .def_readwrite("TeleporterParticleSystem", &AWillowPersonalTeleporter::TeleporterParticleSystem)
         .def_readwrite("LevelName", &AWillowPersonalTeleporter::LevelName)
         .def_readwrite("TeleporterAudio", &AWillowPersonalTeleporter::TeleporterAudio)
-        .def("StaticClass", &AWillowPersonalTeleporter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowPersonalTeleporter::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &AWillowPersonalTeleporter::eventDestroyed)
         .def("StopAmbientSound", &AWillowPersonalTeleporter::StopAmbientSound)
         .def("PlayAmbientSound", &AWillowPersonalTeleporter::PlayAmbientSound)

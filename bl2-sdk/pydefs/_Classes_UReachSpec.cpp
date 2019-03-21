@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UReachSpec()
 {
-    class_< UReachSpec, bases< UObject >  , boost::noncopyable>("UReachSpec", no_init)
+    py::class_< UReachSpec,  UObject   >("UReachSpec")
         .def_readwrite("NavOctreeObject", &UReachSpec::NavOctreeObject)
         .def_readwrite("Direction", &UReachSpec::Direction)
         .def_readwrite("BlockedBy", &UReachSpec::BlockedBy)
@@ -18,10 +18,10 @@ void Export_pystes_UReachSpec()
         .def_readwrite("reachFlags", &UReachSpec::reachFlags)
         .def_readwrite("bPruned", &UReachSpec::bPruned)
         .def_readwrite("PathColorIndex", &UReachSpec::PathColorIndex)
-        .def("StaticClass", &UReachSpec::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UReachSpec::StaticClass, py::return_value_policy::reference)
         .def("IsBlockedFor", &UReachSpec::IsBlockedFor)
         .def("GetDirection", &UReachSpec::GetDirection)
-        .def("GetEnd", &UReachSpec::GetEnd, return_value_policy< reference_existing_object >())
+        .def("GetEnd", &UReachSpec::GetEnd, py::return_value_policy::reference)
         .def("CostFor", &UReachSpec::CostFor)
         .staticmethod("StaticClass")
   ;

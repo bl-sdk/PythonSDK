@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowElevatorRenderingComponent()
 {
-    class_< UWillowElevatorRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UWillowElevatorRenderingComponent", no_init)
-        .def("StaticClass", &UWillowElevatorRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowElevatorRenderingComponent,  UPrimitiveComponent   >("UWillowElevatorRenderingComponent")
+        .def("StaticClass", &UWillowElevatorRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

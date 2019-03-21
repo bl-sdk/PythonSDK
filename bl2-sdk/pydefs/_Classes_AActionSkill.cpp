@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AActionSkill()
 {
-    class_< AActionSkill, bases< AActor >  , boost::noncopyable>("AActionSkill", no_init)
+    py::class_< AActionSkill,  AActor   >("AActionSkill")
         .def_readwrite("VfTable_IIInstanceData", &AActionSkill::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IITimerBehavior", &AActionSkill::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IICustomEvent", &AActionSkill::VfTable_IICustomEvent)
@@ -34,7 +34,7 @@ void Export_pystes_AActionSkill()
         .def_readwrite("CooldownAbilityActivationTimeFrequency", &AActionSkill::CooldownAbilityActivationTimeFrequency)
         .def_readwrite("MeleeOverrideSkill", &AActionSkill::MeleeOverrideSkill)
         .def_readwrite("TimeStarted", &AActionSkill::TimeStarted)
-        .def("StaticClass", &AActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AActionSkill::StaticClass, py::return_value_policy::reference)
         .def("ShouldResetOnInterruptedGrenadeThrow", &AActionSkill::ShouldResetOnInterruptedGrenadeThrow)
         .def("CanResetActionSkill", &AActionSkill::CanResetActionSkill)
         .def("eventOverrideCrosshairVisibility", &AActionSkill::eventOverrideCrosshairVisibility)
@@ -43,7 +43,7 @@ void Export_pystes_AActionSkill()
         .def("eventDisableActionSkillHUD", &AActionSkill::eventDisableActionSkillHUD)
         .def("eventEnableActionSkillHUD", &AActionSkill::eventEnableActionSkillHUD)
         .def("GetBehaviorConsumerHandle", &AActionSkill::GetBehaviorConsumerHandle)
-        .def("GetActionSkillEventContextObject", &AActionSkill::GetActionSkillEventContextObject, return_value_policy< reference_existing_object >())
+        .def("GetActionSkillEventContextObject", &AActionSkill::GetActionSkillEventContextObject, py::return_value_policy::reference)
         .def("eventRunCustomEvent", &AActionSkill::eventRunCustomEvent)
         .def("eventHandleTimerEvent", &AActionSkill::eventHandleTimerEvent)
         .def("SetTimerState", &AActionSkill::SetTimerState)
@@ -102,7 +102,7 @@ void Export_pystes_AActionSkill()
         .def("OnActionSkillActiveAbilityNotified", &AActionSkill::OnActionSkillActiveAbilityNotified)
         .def("OnActionSkillActiveAbilityActivated", &AActionSkill::OnActionSkillActiveAbilityActivated)
         .def("SetBehaviorProviderDefinition", &AActionSkill::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &AActionSkill::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &AActionSkill::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

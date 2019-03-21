@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGoldenKeyLicenseItem()
 {
-    class_< UGoldenKeyLicenseItem, bases< UDownloadablePackageLicenseItem >  , boost::noncopyable>("UGoldenKeyLicenseItem", no_init)
+    py::class_< UGoldenKeyLicenseItem,  UDownloadablePackageLicenseItem   >("UGoldenKeyLicenseItem")
         .def_readwrite("SourceId", &UGoldenKeyLicenseItem::SourceId)
         .def_readwrite("NumKeys", &UGoldenKeyLicenseItem::NumKeys)
-        .def("StaticClass", &UGoldenKeyLicenseItem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGoldenKeyLicenseItem::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

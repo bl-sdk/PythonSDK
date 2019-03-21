@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_OnlineFriends()
 {
-    class_< UUIDataProvider_OnlineFriends, bases< UUIDataProvider >  , boost::noncopyable>("UUIDataProvider_OnlineFriends", no_init)
+    py::class_< UUIDataProvider_OnlineFriends,  UUIDataProvider   >("UUIDataProvider_OnlineFriends")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlineFriends::VfTable_IUIListElementCellProvider)
         .def_readwrite("FriendsList", &UUIDataProvider_OnlineFriends::FriendsList)
         .def_readwrite("NickNameCol", &UUIDataProvider_OnlineFriends::NickNameCol)
@@ -25,7 +25,7 @@ void Export_pystes_UUIDataProvider_OnlineFriends()
         .def_readwrite("AwayText", &UUIDataProvider_OnlineFriends::AwayText)
         .def_readwrite("BusyText", &UUIDataProvider_OnlineFriends::BusyText)
         .def_readwrite("PlayerControllerId", &UUIDataProvider_OnlinePlayerDataBase::PlayerControllerId)
-        .def("StaticClass", &UUIDataProvider_OnlineFriends::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_OnlineFriends::StaticClass, py::return_value_policy::reference)
         .def("eventRefreshFriendsList", &UUIDataProvider_OnlineFriends::eventRefreshFriendsList)
         .def("OnLoginChange", &UUIDataProvider_OnlineFriends::OnLoginChange)
         .def("OnFriendsReadComplete", &UUIDataProvider_OnlineFriends::OnFriendsReadComplete)

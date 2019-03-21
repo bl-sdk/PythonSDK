@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicalMaterial()
 {
-    class_< UPhysicalMaterial, bases< UObject >  , boost::noncopyable>("UPhysicalMaterial", no_init)
+    py::class_< UPhysicalMaterial,  UObject   >("UPhysicalMaterial")
         .def_readwrite("MaterialIndex", &UPhysicalMaterial::MaterialIndex)
         .def_readwrite("Friction", &UPhysicalMaterial::Friction)
         .def_readwrite("Restitution", &UPhysicalMaterial::Restitution)
@@ -30,8 +30,8 @@ void Export_pystes_UPhysicalMaterial()
         .def_readwrite("FractureSoundSingle", &UPhysicalMaterial::FractureSoundSingle)
         .def_readwrite("Parent", &UPhysicalMaterial::Parent)
         .def_readwrite("PhysicalMaterialProperty", &UPhysicalMaterial::PhysicalMaterialProperty)
-        .def("StaticClass", &UPhysicalMaterial::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetPhysicalMaterialProperty", &UPhysicalMaterial::GetPhysicalMaterialProperty, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysicalMaterial::StaticClass, py::return_value_policy::reference)
+        .def("GetPhysicalMaterialProperty", &UPhysicalMaterial::GetPhysicalMaterialProperty, py::return_value_policy::reference)
         .def("FindFractureSounds", &UPhysicalMaterial::FindFractureSounds)
         .def("FindPhysEffectInfo", &UPhysicalMaterial::FindPhysEffectInfo)
         .staticmethod("StaticClass")

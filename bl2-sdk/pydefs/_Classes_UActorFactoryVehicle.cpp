@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryVehicle()
 {
-    class_< UActorFactoryVehicle, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryVehicle", no_init)
+    py::class_< UActorFactoryVehicle,  UActorFactory   >("UActorFactoryVehicle")
         .def_readwrite("VehicleClass", &UActorFactoryVehicle::VehicleClass)
-        .def("StaticClass", &UActorFactoryVehicle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryVehicle::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

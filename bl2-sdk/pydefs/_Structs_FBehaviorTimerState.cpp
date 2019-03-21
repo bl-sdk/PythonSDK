@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorTimerState()
 {
-    class_< FBehaviorTimerState >("FBehaviorTimerState", no_init)
+    py::class_< FBehaviorTimerState >("FBehaviorTimerState")
         .def_readwrite("Delay", &FBehaviorTimerState::Delay)
         .def_readwrite("EventTime", &FBehaviorTimerState::EventTime)
   ;

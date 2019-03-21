@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMarketplaceGFxMovie()
 {
-    class_< UMarketplaceGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UMarketplaceGFxMovie", no_init)
+    py::class_< UMarketplaceGFxMovie,  UWillowGFxMovie3D   >("UMarketplaceGFxMovie")
         .def_readwrite("BasicFilters", &UMarketplaceGFxMovie::BasicFilters)
         .def_readwrite("MarketPlacePanelObject", &UMarketplaceGFxMovie::MarketPlacePanelObject)
         .def_readwrite("MarketplaceDef", &UMarketplaceGFxMovie::MarketplaceDef)
@@ -50,13 +50,13 @@ void Export_pystes_UMarketplaceGFxMovie()
         .def_readwrite("Prop_statusText", &UMarketplaceGFxMovie::Prop_statusText)
         .def_readwrite("Prop_descriptionText", &UMarketplaceGFxMovie::Prop_descriptionText)
         .def_readwrite("WarningDlg", &UMarketplaceGFxMovie::WarningDlg)
-        .def("StaticClass", &UMarketplaceGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetSelectedObject", &UMarketplaceGFxMovie::GetSelectedObject, return_value_policy< reference_existing_object >())
-        .def("FinalizeContentData", &UMarketplaceGFxMovie::FinalizeContentData, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMarketplaceGFxMovie::StaticClass, py::return_value_policy::reference)
+        .def("GetSelectedObject", &UMarketplaceGFxMovie::GetSelectedObject, py::return_value_policy::reference)
+        .def("FinalizeContentData", &UMarketplaceGFxMovie::FinalizeContentData, py::return_value_policy::reference)
         .def("SetContentData", &UMarketplaceGFxMovie::SetContentData)
         .def("AddContentData", &UMarketplaceGFxMovie::AddContentData)
-        .def("SetFilterFromStringAndSortNew", &UMarketplaceGFxMovie::SetFilterFromStringAndSortNew, return_value_policy< reference_existing_object >())
-        .def("SetFilterFromString", &UMarketplaceGFxMovie::SetFilterFromString, return_value_policy< reference_existing_object >())
+        .def("SetFilterFromStringAndSortNew", &UMarketplaceGFxMovie::SetFilterFromStringAndSortNew, py::return_value_policy::reference)
+        .def("SetFilterFromString", &UMarketplaceGFxMovie::SetFilterFromString, py::return_value_policy::reference)
         .def("ClearFilters", &UMarketplaceGFxMovie::ClearFilters)
         .def("CycleFilter", &UMarketplaceGFxMovie::CycleFilter)
         .def("ApplyFilter", &UMarketplaceGFxMovie::ApplyFilter)
@@ -65,8 +65,8 @@ void Export_pystes_UMarketplaceGFxMovie()
         .def("ShowMarketplaceElements", &UMarketplaceGFxMovie::ShowMarketplaceElements)
         .def("SetStoreHeader", &UMarketplaceGFxMovie::SetStoreHeader)
         .def("SetTooltips", &UMarketplaceGFxMovie::SetTooltips)
-        .def("CreateContentItem", &UMarketplaceGFxMovie::CreateContentItem, return_value_policy< reference_existing_object >())
-        .def("CreateMarketplaceItem", &UMarketplaceGFxMovie::CreateMarketplaceItem, return_value_policy< reference_existing_object >())
+        .def("CreateContentItem", &UMarketplaceGFxMovie::CreateContentItem, py::return_value_policy::reference)
+        .def("CreateMarketplaceItem", &UMarketplaceGFxMovie::CreateMarketplaceItem, py::return_value_policy::reference)
         .def("GetOfferingStatusMessage", &UMarketplaceGFxMovie::GetOfferingStatusMessage)
         .def("FormatCost", &UMarketplaceGFxMovie::FormatCost)
         .def("extOnOfferingChanged", &UMarketplaceGFxMovie::extOnOfferingChanged)

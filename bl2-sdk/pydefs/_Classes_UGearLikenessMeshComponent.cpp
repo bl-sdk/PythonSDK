@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearLikenessMeshComponent()
 {
-    class_< UGearLikenessMeshComponent, bases< USkeletalMeshComponent >  , boost::noncopyable>("UGearLikenessMeshComponent", no_init)
+    py::class_< UGearLikenessMeshComponent,  USkeletalMeshComponent   >("UGearLikenessMeshComponent")
         .def_readwrite("LikenessOf", &UGearLikenessMeshComponent::LikenessOf)
         .def_readwrite("GroupIndex", &UGearLikenessMeshComponent::GroupIndex)
         .def_readwrite("CachedLikenessID", &UGearLikenessMeshComponent::CachedLikenessID)
-        .def("StaticClass", &UGearLikenessMeshComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearLikenessMeshComponent::StaticClass, py::return_value_policy::reference)
         .def("RefreshGearLikenessComponents", &UGearLikenessMeshComponent::RefreshGearLikenessComponents)
         .staticmethod("StaticClass")
   ;

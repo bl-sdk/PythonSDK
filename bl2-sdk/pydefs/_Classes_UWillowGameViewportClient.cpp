@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGameViewportClient()
 {
-    class_< UWillowGameViewportClient, bases< UGameViewportClient >  , boost::noncopyable>("UWillowGameViewportClient", no_init)
+    py::class_< UWillowGameViewportClient,  UGameViewportClient   >("UWillowGameViewportClient")
         .def_readwrite("ViewportUI", &UWillowGameViewportClient::ViewportUI)
         .def_readwrite("LoadBackground", &UWillowGameViewportClient::LoadBackground)
         .def_readwrite("LoadingImage", &UWillowGameViewportClient::LoadingImage)
@@ -21,7 +21,7 @@ void Export_pystes_UWillowGameViewportClient()
         .def_readonly("WaitingOnDeviceRemovalNotification", &UWillowGameViewportClient::WaitingOnDeviceRemovalNotification)
         .def_readonly("LastKnownProfileSaveCount", &UWillowGameViewportClient::LastKnownProfileSaveCount)
         .def_readonly("LastKnownChallengeRank", &UWillowGameViewportClient::LastKnownChallengeRank)
-        .def("StaticClass", &UWillowGameViewportClient::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGameViewportClient::StaticClass, py::return_value_policy::reference)
         .def("eventTick", &UWillowGameViewportClient::eventTick)
         .def("TryNotifyDeviceSelectionComplete", &UWillowGameViewportClient::TryNotifyDeviceSelectionComplete)
         .def("DeviceSelectionDone", &UWillowGameViewportClient::DeviceSelectionDone)
@@ -37,7 +37,7 @@ void Export_pystes_UWillowGameViewportClient()
         .def("SplitScreenLeave", &UWillowGameViewportClient::SplitScreenLeave)
         .def("CanSplitScreenLeave", &UWillowGameViewportClient::CanSplitScreenLeave)
         .def("eventUpdateSplitscreenConfiguration", &UWillowGameViewportClient::eventUpdateSplitscreenConfiguration)
-        .def("eventSplitScreenJoin", &UWillowGameViewportClient::eventSplitScreenJoin, return_value_policy< reference_existing_object >())
+        .def("eventSplitScreenJoin", &UWillowGameViewportClient::eventSplitScreenJoin, py::return_value_policy::reference)
         .def("CanSplitScreenJoin", &UWillowGameViewportClient::CanSplitScreenJoin)
         .def("RenderHeader", &UWillowGameViewportClient::RenderHeader)
         .def("eventPostRender", &UWillowGameViewportClient::eventPostRender)
@@ -58,7 +58,7 @@ void Export_pystes_UWillowGameViewportClient()
         .def("RegisterMarketingUnlocksFromDlc", &UWillowGameViewportClient::RegisterMarketingUnlocksFromDlc)
         .def("NotifyDlcRefreshComplete", &UWillowGameViewportClient::NotifyDlcRefreshComplete)
         .def("eventRemovePlayer", &UWillowGameViewportClient::eventRemovePlayer)
-        .def("eventCreatePlayer", &UWillowGameViewportClient::eventCreatePlayer, return_value_policy< reference_existing_object >())
+        .def("eventCreatePlayer", &UWillowGameViewportClient::eventCreatePlayer, py::return_value_policy::reference)
         .def("InputAxis", &UWillowGameViewportClient::InputAxis)
         .def("InputKey", &UWillowGameViewportClient::InputKey)
         .def("eventDlcManagerCreatedInit", &UWillowGameViewportClient::eventDlcManagerCreatedInit)

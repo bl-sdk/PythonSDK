@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackDirector()
 {
-    class_< UInterpTrackDirector, bases< UInterpTrack >  , boost::noncopyable>("UInterpTrackDirector", no_init)
+    py::class_< UInterpTrackDirector,  UInterpTrack   >("UInterpTrackDirector")
         .def_readwrite("CutTrack", &UInterpTrackDirector::CutTrack)
-        .def("StaticClass", &UInterpTrackDirector::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackDirector::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBodyClassDeathDefinition()
 {
-    class_< UBodyClassDeathDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBodyClassDeathDefinition", no_init)
+    py::class_< UBodyClassDeathDefinition,  UGBXDefinition   >("UBodyClassDeathDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyClassDeathDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("TechDeaths", &UBodyClassDeathDefinition::TechDeaths)
         .def_readwrite("NonRagdollDeathSpecialMove", &UBodyClassDeathDefinition::NonRagdollDeathSpecialMove)
@@ -24,7 +24,7 @@ void Export_pystes_UBodyClassDeathDefinition()
         .def_readwrite("RagdollContactReportBones", &UBodyClassDeathDefinition::RagdollContactReportBones)
         .def_readwrite("RagdollContactReportThreshold", &UBodyClassDeathDefinition::RagdollContactReportThreshold)
         .def_readwrite("RagdollSpringBones", &UBodyClassDeathDefinition::RagdollSpringBones)
-        .def("StaticClass", &UBodyClassDeathDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBodyClassDeathDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnTechDeath", &UBodyClassDeathDefinition::OnTechDeath)
         .def("OnBodyDissolve", &UBodyClassDeathDefinition::OnBodyDissolve)
         .def("OnDeathNonGib", &UBodyClassDeathDefinition::OnDeathNonGib)
@@ -32,7 +32,7 @@ void Export_pystes_UBodyClassDeathDefinition()
         .def("OnKilledBy", &UBodyClassDeathDefinition::OnKilledBy)
         .def("OnPlayDeathPizazz", &UBodyClassDeathDefinition::OnPlayDeathPizazz)
         .def("SetBehaviorProviderDefinition", &UBodyClassDeathDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UBodyClassDeathDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UBodyClassDeathDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

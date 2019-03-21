@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactory()
 {
-    class_< UActorFactory, bases< UObject >  , boost::noncopyable>("UActorFactory", no_init)
+    py::class_< UActorFactory,  UObject   >("UActorFactory")
         .def_readwrite("GameplayActorClass", &UActorFactory::GameplayActorClass)
         .def_readwrite("MenuName", &UActorFactory::MenuName)
         .def_readwrite("MenuPriority", &UActorFactory::MenuPriority)
@@ -15,7 +15,7 @@ void Export_pystes_UActorFactory()
         .def_readwrite("CustomPropertyEditorDelegateClassName", &UActorFactory::CustomPropertyEditorDelegateClassName)
         .def_readwrite("CustomPropertyEditorDelegateInstance", &UActorFactory::CustomPropertyEditorDelegateInstance)
         .def_readwrite("CustomPropertyEditorDelegateTargetClass", &UActorFactory::CustomPropertyEditorDelegateTargetClass)
-        .def("StaticClass", &UActorFactory::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactory::StaticClass, py::return_value_policy::reference)
         .def("eventPostCreateActor", &UActorFactory::eventPostCreateActor)
         .staticmethod("StaticClass")
   ;

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPersistentGameDataManager()
 {
-    class_< UPersistentGameDataManager, bases< UObject >  , boost::noncopyable>("UPersistentGameDataManager", no_init)
+    py::class_< UPersistentGameDataManager,  UObject   >("UPersistentGameDataManager")
         .def_readwrite("SequencesWithPersistentData", &UPersistentGameDataManager::SequencesWithPersistentData)
-        .def("StaticClass", &UPersistentGameDataManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPersistentGameDataManager::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

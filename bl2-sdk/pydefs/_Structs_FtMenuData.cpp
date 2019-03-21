@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FtMenuData()
 {
-    class_< FtMenuData >("FtMenuData", no_init)
+    py::class_< FtMenuData >("FtMenuData")
         .def_readwrite("ColumnText", &FtMenuData::ColumnText)
         .def_readwrite("PrimaryActionCmd", &FtMenuData::PrimaryActionCmd)
         .def_readwrite("SecondaryActionCmd", &FtMenuData::SecondaryActionCmd)

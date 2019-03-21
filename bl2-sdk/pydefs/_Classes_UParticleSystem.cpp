@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleSystem()
 {
-    class_< UParticleSystem, bases< UObject >  , boost::noncopyable>("UParticleSystem", no_init)
+    py::class_< UParticleSystem,  UObject   >("UParticleSystem")
         .def_readwrite("SystemUpdateMode", &UParticleSystem::SystemUpdateMode)
         .def_readwrite("LODMethod", &UParticleSystem::LODMethod)
         .def_readwrite("OcclusionBoundsMethod", &UParticleSystem::OcclusionBoundsMethod)
@@ -32,14 +32,14 @@ void Export_pystes_UParticleSystem()
         .def_readwrite("StopLoopingAudioEvent", &UParticleSystem::StopLoopingAudioEvent)
         .def_readwrite("fAudioDelaySeconds", &UParticleSystem::fAudioDelaySeconds)
         .def_readwrite("PhysxParticleSystemRef", &UParticleSystem::PhysxParticleSystemRef)
-        .def("StaticClass", &UParticleSystem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleSystem::StaticClass, py::return_value_policy::reference)
         .def("GetMaxLifespan", &UParticleSystem::GetMaxLifespan)
         .def("SetLODDistance", &UParticleSystem::SetLODDistance)
         .def("SetCurrentLODMethod", &UParticleSystem::SetCurrentLODMethod)
         .def("GetLODDistance", &UParticleSystem::GetLODDistance)
         .def("GetLODLevelCount", &UParticleSystem::GetLODLevelCount)
         .def("GetCurrentLODMethod", &UParticleSystem::GetCurrentLODMethod)
-        .def("EffectiveParticleSystemAfterPhysXMutator", &UParticleSystem::EffectiveParticleSystemAfterPhysXMutator, return_value_policy< reference_existing_object >())
+        .def("EffectiveParticleSystemAfterPhysXMutator", &UParticleSystem::EffectiveParticleSystemAfterPhysXMutator, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWorldDiscoveryArea()
 {
-    class_< AWorldDiscoveryArea, bases< AActor >  , boost::noncopyable>("AWorldDiscoveryArea", no_init)
+    py::class_< AWorldDiscoveryArea,  AActor   >("AWorldDiscoveryArea")
         .def_readwrite("VfTable_IIBalancedActor", &AWorldDiscoveryArea::VfTable_IIBalancedActor)
         .def_readwrite("DefaultWorldAreaShortName", &AWorldDiscoveryArea::DefaultWorldAreaShortName)
         .def_readwrite("CustomName", &AWorldDiscoveryArea::CustomName)
@@ -19,7 +19,7 @@ void Export_pystes_AWorldDiscoveryArea()
         .def_readwrite("GameStage", &AWorldDiscoveryArea::GameStage)
         .def_readwrite("PlayersDetected", &AWorldDiscoveryArea::PlayersDetected)
         .def_readwrite("NextDetectionTime", &AWorldDiscoveryArea::NextDetectionTime)
-        .def("StaticClass", &AWorldDiscoveryArea::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWorldDiscoveryArea::StaticClass, py::return_value_policy::reference)
         .def("GetBalancedActorTypeIdentifier", &AWorldDiscoveryArea::GetBalancedActorTypeIdentifier)
         .def("SetExpLevel", &AWorldDiscoveryArea::SetExpLevel)
         .def("SetAwesomeLevel", &AWorldDiscoveryArea::SetAwesomeLevel)

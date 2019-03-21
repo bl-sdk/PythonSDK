@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_ResetHitRegionHealth()
 {
-    class_< UBehavior_ResetHitRegionHealth, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_ResetHitRegionHealth", no_init)
+    py::class_< UBehavior_ResetHitRegionHealth,  UBehaviorBase   >("UBehavior_ResetHitRegionHealth")
         .def_readwrite("HitRegion", &UBehavior_ResetHitRegionHealth::HitRegion)
-        .def("StaticClass", &UBehavior_ResetHitRegionHealth::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_ResetHitRegionHealth::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ResetHitRegionHealth::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

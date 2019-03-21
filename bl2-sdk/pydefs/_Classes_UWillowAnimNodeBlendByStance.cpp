@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimNodeBlendByStance()
 {
-    class_< UWillowAnimNodeBlendByStance, bases< UAnimNodeBlendList >  , boost::noncopyable>("UWillowAnimNodeBlendByStance", no_init)
+    py::class_< UWillowAnimNodeBlendByStance,  UAnimNodeBlendList   >("UWillowAnimNodeBlendByStance")
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendByStance::BlendTime)
         .def_readwrite("ReferencesSpeeds", &UWillowAnimNodeBlendByStance::ReferencesSpeeds)
         .def_readwrite("DefaultStances", &UWillowAnimNodeBlendByStance::DefaultStances)
@@ -14,7 +14,7 @@ void Export_pystes_UWillowAnimNodeBlendByStance()
         .def_readwrite("DiagScale", &UWillowAnimNodeBlendByStance::DiagScale)
         .def_readwrite("CurrentStanceType", &UWillowAnimNodeBlendByStance::CurrentStanceType)
         .def_readwrite("CachedSkelControls", &UWillowAnimNodeBlendByStance::CachedSkelControls)
-        .def("StaticClass", &UWillowAnimNodeBlendByStance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAnimNodeBlendByStance::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

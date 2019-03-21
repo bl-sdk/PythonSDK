@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoverDebugInfo()
 {
-    class_< FCoverDebugInfo >("FCoverDebugInfo", no_init)
+    py::class_< FCoverDebugInfo >("FCoverDebugInfo")
         .def_readwrite("CoverRegionName", &FCoverDebugInfo::CoverRegionName)
         .def_readwrite("Score", &FCoverDebugInfo::Score)
         .def_readwrite("Distance", &FCoverDebugInfo::Distance)

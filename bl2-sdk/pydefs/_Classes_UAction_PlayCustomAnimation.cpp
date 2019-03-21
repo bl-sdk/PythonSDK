@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_PlayCustomAnimation()
 {
-    class_< UAction_PlayCustomAnimation, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_PlayCustomAnimation", no_init)
+    py::class_< UAction_PlayCustomAnimation,  UWillowActionSequencePawn   >("UAction_PlayCustomAnimation")
         .def_readwrite("SpecialMove", &UAction_PlayCustomAnimation::SpecialMove)
-        .def("StaticClass", &UAction_PlayCustomAnimation::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_PlayCustomAnimation::StaticClass, py::return_value_policy::reference)
         .def("eventStop", &UAction_PlayCustomAnimation::eventStop)
         .def("eventStart", &UAction_PlayCustomAnimation::eventStart)
         .def("eventCanRun", &UAction_PlayCustomAnimation::eventCanRun)

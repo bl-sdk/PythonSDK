@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleClassDefinition()
 {
-    class_< UVehicleClassDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UVehicleClassDefinition", no_init)
+    py::class_< UVehicleClassDefinition,  UGBXDefinition   >("UVehicleClassDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UVehicleClassDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("BehaviorProviderDefinition", &UVehicleClassDefinition::BehaviorProviderDefinition)
         .def_readwrite("VehicleImpactDamage", &UVehicleClassDefinition::VehicleImpactDamage)
@@ -71,11 +71,11 @@ void Export_pystes_UVehicleClassDefinition()
         .def_readwrite("RotationRate", &UVehicleClassDefinition::RotationRate)
         .def_readwrite("CrewAnimSetLookupTable", &UVehicleClassDefinition::CrewAnimSetLookupTable)
         .def_readwrite("StatNameFirstTimeUse", &UVehicleClassDefinition::StatNameFirstTimeUse)
-        .def("StaticClass", &UVehicleClassDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetSpeedDamageModifier", &UVehicleClassDefinition::GetSpeedDamageModifier)
         .def("GetEjectionVelocity", &UVehicleClassDefinition::GetEjectionVelocity)
         .def("GetSeatIndexFromPrefix", &UVehicleClassDefinition::GetSeatIndexFromPrefix)
-        .def("GetEnterAnim", &UVehicleClassDefinition::GetEnterAnim, return_value_policy< reference_existing_object >())
+        .def("GetEnterAnim", &UVehicleClassDefinition::GetEnterAnim, py::return_value_policy::reference)
         .def("EvaluateDamageFormula", &UVehicleClassDefinition::EvaluateDamageFormula)
         .def("OnReverseLightsDeactivated", &UVehicleClassDefinition::OnReverseLightsDeactivated)
         .def("OnReverseLightsActivated", &UVehicleClassDefinition::OnReverseLightsActivated)
@@ -99,9 +99,9 @@ void Export_pystes_UVehicleClassDefinition()
         .def("OnAfterburnerEngaged", &UVehicleClassDefinition::OnAfterburnerEngaged)
         .def("OnPlayHorn", &UVehicleClassDefinition::OnPlayHorn)
         .def("ProcessSeatEvent", &UVehicleClassDefinition::ProcessSeatEvent)
-        .def("GetCollisionDamageTypeForSpeed", &UVehicleClassDefinition::GetCollisionDamageTypeForSpeed, return_value_policy< reference_existing_object >())
+        .def("GetCollisionDamageTypeForSpeed", &UVehicleClassDefinition::GetCollisionDamageTypeForSpeed, py::return_value_policy::reference)
         .def("SetBehaviorProviderDefinition", &UVehicleClassDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UVehicleClassDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UVehicleClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

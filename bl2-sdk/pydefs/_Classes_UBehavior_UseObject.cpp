@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_UseObject()
 {
-    class_< UBehavior_UseObject, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_UseObject", no_init)
+    py::class_< UBehavior_UseObject,  UBehaviorBase   >("UBehavior_UseObject")
         .def_readwrite("UseType", &UBehavior_UseObject::UseType)
         .def_readwrite("User", &UBehavior_UseObject::User)
-        .def("StaticClass", &UBehavior_UseObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_UseObject::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_UseObject::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

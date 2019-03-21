@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemCardGFxObject()
 {
-    class_< UItemCardGFxObject, bases< UGFxObject >  , boost::noncopyable>("UItemCardGFxObject", no_init)
-        .def("StaticClass", &UItemCardGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UItemCardGFxObject,  UGFxObject   >("UItemCardGFxObject")
+        .def("StaticClass", &UItemCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetVisible_", &UItemCardGFxObject::SetVisible_)
         .def("SetBackgroundStyle", &UItemCardGFxObject::SetBackgroundStyle)
         .def("SetCardUIStats", &UItemCardGFxObject::SetCardUIStats)

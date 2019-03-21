@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerSkillTreeTierData()
 {
-    class_< FPlayerSkillTreeTierData >("FPlayerSkillTreeTierData", no_init)
+    py::class_< FPlayerSkillTreeTierData >("FPlayerSkillTreeTierData")
         .def_readwrite("SkillIndices", &FPlayerSkillTreeTierData::SkillIndices)
         .def_readwrite("BranchPointsToUnlockTier", &FPlayerSkillTreeTierData::BranchPointsToUnlockTier)
         .def_readwrite("Index", &FPlayerSkillTreeTierData::Index)

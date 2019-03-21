@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTwoPanelInterfaceGFxObject()
 {
-    class_< UTwoPanelInterfaceGFxObject, bases< UBaseTopLevelPanelGFxObject >  , boost::noncopyable>("UTwoPanelInterfaceGFxObject", no_init)
+    py::class_< UTwoPanelInterfaceGFxObject,  UBaseTopLevelPanelGFxObject   >("UTwoPanelInterfaceGFxObject")
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxObject::TwoPanelInterface)
         .def_readonly("UnknownData00", &UTwoPanelInterfaceGFxObject::UnknownData00)
         .def_readwrite("StoragePanel", &UTwoPanelInterfaceGFxObject::StoragePanel)
@@ -18,13 +18,13 @@ void Export_pystes_UTwoPanelInterfaceGFxObject()
         .def_readwrite("StoragePanelLabel", &UTwoPanelInterfaceGFxObject::StoragePanelLabel)
         .def_readwrite("PlayerPanelLabel", &UTwoPanelInterfaceGFxObject::PlayerPanelLabel)
         .def_readwrite("bCanAcceptInput", &UTwoPanelInterfaceGFxObject::bCanAcceptInput)
-        .def("StaticClass", &UTwoPanelInterfaceGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTwoPanelInterfaceGFxObject::StaticClass, py::return_value_policy::reference)
         .def("OnCellPressed", &UTwoPanelInterfaceGFxObject::OnCellPressed)
         .def("InitForConsole", &UTwoPanelInterfaceGFxObject::InitForConsole)
         .def("InitForPC", &UTwoPanelInterfaceGFxObject::InitForPC)
         .def("OnValidCell", &UTwoPanelInterfaceGFxObject::OnValidCell)
-        .def("GetCurrentCellObject", &UTwoPanelInterfaceGFxObject::GetCurrentCellObject, return_value_policy< reference_existing_object >())
-        .def("GetCurrentPanel", &UTwoPanelInterfaceGFxObject::GetCurrentPanel, return_value_policy< reference_existing_object >())
+        .def("GetCurrentCellObject", &UTwoPanelInterfaceGFxObject::GetCurrentCellObject, py::return_value_policy::reference)
+        .def("GetCurrentPanel", &UTwoPanelInterfaceGFxObject::GetCurrentPanel, py::return_value_policy::reference)
         .def("GetInspectedItemCurrencyType", &UTwoPanelInterfaceGFxObject::GetInspectedItemCurrencyType)
         .def("GetInspectedItemOverridePrice", &UTwoPanelInterfaceGFxObject::GetInspectedItemOverridePrice)
         .def("SetActivePanelSelectIndexByThing", &UTwoPanelInterfaceGFxObject::SetActivePanelSelectIndexByThing)
@@ -51,9 +51,9 @@ void Export_pystes_UTwoPanelInterfaceGFxObject()
         .def("InitItemCards", &UTwoPanelInterfaceGFxObject::InitItemCards)
         .def("AssignItemCards", &UTwoPanelInterfaceGFxObject::AssignItemCards)
         .def("SetHeader", &UTwoPanelInterfaceGFxObject::SetHeader)
-        .def("GetSelectedThing", &UTwoPanelInterfaceGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
-        .def("GetEquippedAnalogueThroughInterface", &UTwoPanelInterfaceGFxObject::GetEquippedAnalogueThroughInterface, return_value_policy< reference_existing_object >())
-        .def("GetSelectedThingThroughInterface", &UTwoPanelInterfaceGFxObject::GetSelectedThingThroughInterface, return_value_policy< reference_existing_object >())
+        .def("GetSelectedThing", &UTwoPanelInterfaceGFxObject::GetSelectedThing, py::return_value_policy::reference)
+        .def("GetEquippedAnalogueThroughInterface", &UTwoPanelInterfaceGFxObject::GetEquippedAnalogueThroughInterface, py::return_value_policy::reference)
+        .def("GetSelectedThingThroughInterface", &UTwoPanelInterfaceGFxObject::GetSelectedThingThroughInterface, py::return_value_policy::reference)
         .def("UpdateDynamicCard", &UTwoPanelInterfaceGFxObject::UpdateDynamicCard)
         .def("RefreshItemCards", &UTwoPanelInterfaceGFxObject::RefreshItemCards)
         .def("SetUpCard", &UTwoPanelInterfaceGFxObject::SetUpCard)

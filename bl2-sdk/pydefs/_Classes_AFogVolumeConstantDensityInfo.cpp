@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AFogVolumeConstantDensityInfo()
 {
-    class_< AFogVolumeConstantDensityInfo, bases< AInfo >  , boost::noncopyable>("AFogVolumeConstantDensityInfo", no_init)
+    py::class_< AFogVolumeConstantDensityInfo,  AInfo   >("AFogVolumeConstantDensityInfo")
         .def_readwrite("DensityComponent", &AFogVolumeDensityInfo::DensityComponent)
         .def_readwrite("AutomaticMeshComponent", &AFogVolumeDensityInfo::AutomaticMeshComponent)
-        .def("StaticClass", &AFogVolumeConstantDensityInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AFogVolumeConstantDensityInfo::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &AFogVolumeDensityInfo::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &AFogVolumeDensityInfo::CreateCheckpointRecord)
         .def("ShouldSaveForCheckpoint", &AFogVolumeDensityInfo::ShouldSaveForCheckpoint)

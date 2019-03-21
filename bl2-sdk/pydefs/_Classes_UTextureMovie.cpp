@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTextureMovie()
 {
-    class_< UTextureMovie, bases< UTexture >  , boost::noncopyable>("UTextureMovie", no_init)
+    py::class_< UTextureMovie,  UTexture   >("UTextureMovie")
         .def_readwrite("SizeX", &UTextureMovie::SizeX)
         .def_readwrite("SizeY", &UTextureMovie::SizeY)
         .def_readwrite("Format", &UTextureMovie::Format)
@@ -17,7 +17,7 @@ void Export_pystes_UTextureMovie()
         .def_readwrite("MovieName", &UTextureMovie::MovieName)
         .def_readwrite("Data", &UTextureMovie::Data)
         .def_readwrite("ReleaseCodecFence", &UTextureMovie::ReleaseCodecFence)
-        .def("StaticClass", &UTextureMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTextureMovie::StaticClass, py::return_value_policy::reference)
         .def("Stop", &UTextureMovie::Stop)
         .def("Pause", &UTextureMovie::Pause)
         .def("Play", &UTextureMovie::Play)

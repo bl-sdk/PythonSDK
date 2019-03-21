@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNPCLoadBalancer()
 {
-    class_< UNPCLoadBalancer, bases< UObject >  , boost::noncopyable>("UNPCLoadBalancer", no_init)
+    py::class_< UNPCLoadBalancer,  UObject   >("UNPCLoadBalancer")
         .def_readwrite("TheList", &UNPCLoadBalancer::TheList)
         .def_readwrite("LastPathTime", &UNPCLoadBalancer::LastPathTime)
         .def_readwrite("NumberNPCsMoving", &UNPCLoadBalancer::NumberNPCsMoving)
         .def_readwrite("LastUpdateTime", &UNPCLoadBalancer::LastUpdateTime)
         .def_readwrite("MaxNumberPathing", &UNPCLoadBalancer::MaxNumberPathing)
         .def_readwrite("TimeBetweenUpdates", &UNPCLoadBalancer::TimeBetweenUpdates)
-        .def("StaticClass", &UNPCLoadBalancer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNPCLoadBalancer::StaticClass, py::return_value_policy::reference)
         .def("CheckPathing", &UNPCLoadBalancer::CheckPathing)
         .def("WantsToPath", &UNPCLoadBalancer::WantsToPath)
         .def("PathFailed", &UNPCLoadBalancer::PathFailed)

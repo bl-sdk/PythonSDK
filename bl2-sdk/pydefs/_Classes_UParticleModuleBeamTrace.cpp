@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleBeamTrace()
 {
-    class_< UParticleModuleBeamTrace, bases< UParticleModuleBeamTarget >  , boost::noncopyable>("UParticleModuleBeamTrace", no_init)
+    py::class_< UParticleModuleBeamTrace,  UParticleModuleBeamTarget   >("UParticleModuleBeamTrace")
         .def_readwrite("TraceExtent", &UParticleModuleBeamTrace::TraceExtent)
         .def_readwrite("TraceRotation", &UParticleModuleBeamTrace::TraceRotation)
         .def_readwrite("TraceMaxDistance", &UParticleModuleBeamTrace::TraceMaxDistance)
@@ -13,7 +13,7 @@ void Export_pystes_UParticleModuleBeamTrace()
         .def_readwrite("MaxTraceEvents", &UParticleModuleBeamTrace::MaxTraceEvents)
         .def_readwrite("LastDistance", &UParticleModuleBeamTrace::LastDistance)
         .def_readwrite("LastUpdateTime", &UParticleModuleBeamTrace::LastUpdateTime)
-        .def("StaticClass", &UParticleModuleBeamTrace::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleBeamTrace::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

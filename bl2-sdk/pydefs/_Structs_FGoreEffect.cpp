@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGoreEffect()
 {
-    class_< FGoreEffect >("FGoreEffect", no_init)
+    py::class_< FGoreEffect >("FGoreEffect")
         .def_readwrite("HitRegion", &FGoreEffect::HitRegion)
         .def_readwrite("GoreDataIndex", &FGoreEffect::GoreDataIndex)
         .def_readwrite("InstigatedBy", &FGoreEffect::InstigatedBy)

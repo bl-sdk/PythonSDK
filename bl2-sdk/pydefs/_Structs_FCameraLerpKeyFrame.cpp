@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCameraLerpKeyFrame()
 {
-    class_< FCameraLerpKeyFrame >("FCameraLerpKeyFrame", no_init)
+    py::class_< FCameraLerpKeyFrame >("FCameraLerpKeyFrame")
         .def_readwrite("Alpha", &FCameraLerpKeyFrame::Alpha)
         .def_readwrite("CameraTargetThisKeyFrame", &FCameraLerpKeyFrame::CameraTargetThisKeyFrame)
         .def_readwrite("CameraRotationBehavior", &FCameraLerpKeyFrame::CameraRotationBehavior)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FServerResponseLine()
 {
-    class_< FServerResponseLine >("FServerResponseLine", no_init)
+    py::class_< FServerResponseLine >("FServerResponseLine")
         .def_readwrite("ServerID", &FServerResponseLine::ServerID)
         .def_readwrite("IP", &FServerResponseLine::IP)
         .def_readwrite("Port", &FServerResponseLine::Port)

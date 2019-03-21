@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActionSequence()
 {
-    class_< UActionSequence, bases< UObject >  , boost::noncopyable>("UActionSequence", no_init)
+    py::class_< UActionSequence,  UObject   >("UActionSequence")
         .def_readwrite("ResourcesUsed", &UActionSequence::ResourcesUsed)
         .def_readwrite("MyRuleEngine", &UActionSequence::MyRuleEngine)
         .def_readwrite("AttachedRule", &UActionSequence::AttachedRule)
@@ -21,7 +21,7 @@ void Export_pystes_UActionSequence()
         .def_readonly("UnknownData00", &UActionSequence::UnknownData00)
         .def_readwrite("BehaviorOutputs", &UActionSequence::BehaviorOutputs)
         .def_readwrite("BehaviorName", &UActionSequence::BehaviorName)
-        .def("StaticClass", &UActionSequence::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActionSequence::StaticClass, py::return_value_policy::reference)
         .def("TriggerBehavior", &UActionSequence::TriggerBehavior)
         .def("GetRangeValue", &UActionSequence::GetRangeValue)
         .def("RangeIsValid", &UActionSequence::RangeIsValid)
@@ -45,7 +45,7 @@ void Export_pystes_UActionSequence()
         .def("DoRuleSetPush", &UActionSequence::DoRuleSetPush)
         .def("DoRuleSetSwitch", &UActionSequence::DoRuleSetSwitch)
         .def("PreventNewRulesFromStarting", &UActionSequence::PreventNewRulesFromStarting)
-        .def("GetRuleNative", &UActionSequence::GetRuleNative, return_value_policy< reference_existing_object >())
+        .def("GetRuleNative", &UActionSequence::GetRuleNative, py::return_value_policy::reference)
         .def("GetActionSequence", &UActionSequence::GetActionSequence)
         .def("IsInLabel", &UActionSequence::IsInLabel)
         .def("IsAtomic", &UActionSequence::IsAtomic)

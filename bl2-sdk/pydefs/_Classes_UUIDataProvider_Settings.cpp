@@ -1,22 +1,22 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_Settings()
 {
-    class_< UUIDataProvider_Settings, bases< UUIDataProvider >  , boost::noncopyable>("UUIDataProvider_Settings", no_init)
+    py::class_< UUIDataProvider_Settings,  UUIDataProvider   >("UUIDataProvider_Settings")
         .def_readwrite("Settings", &UUIDataProvider_Settings::Settings)
         .def_readwrite("SettingsArrayProviders", &UUIDataProvider_Settings::SettingsArrayProviders)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDynamicDataProvider::VfTable_IUIListElementCellProvider)
         .def_readwrite("DataClass", &UUIDynamicDataProvider::DataClass)
         .def_readwrite("DataSource", &UUIDynamicDataProvider::DataSource)
         .def_readwrite("ComplexPropertyTypes", &UUIPropertyDataProvider::ComplexPropertyTypes)
-        .def("StaticClass", &UUIDataProvider_Settings::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_Settings::StaticClass, py::return_value_policy::reference)
         .def("OnSettingValueUpdated", &UUIDataProvider_Settings::OnSettingValueUpdated)
         .def("ArrayProviderPropertyChanged", &UUIDataProvider_Settings::ArrayProviderPropertyChanged)
         .def("CleanupDataProvider", &UUIDynamicDataProvider::CleanupDataProvider)
-        .def("GetDataSource", &UUIDynamicDataProvider::GetDataSource, return_value_policy< reference_existing_object >())
+        .def("GetDataSource", &UUIDynamicDataProvider::GetDataSource, py::return_value_policy::reference)
         .def("eventIsValidDataSourceClass", &UUIDynamicDataProvider::eventIsValidDataSourceClass)
         .def("eventProviderInstanceUnbound", &UUIDynamicDataProvider::eventProviderInstanceUnbound)
         .def("eventProviderInstanceBound", &UUIDynamicDataProvider::eventProviderInstanceBound)

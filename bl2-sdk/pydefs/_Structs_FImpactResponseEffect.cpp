@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FImpactResponseEffect()
 {
-    class_< FImpactResponseEffect >("FImpactResponseEffect", no_init)
+    py::class_< FImpactResponseEffect >("FImpactResponseEffect")
         .def_readwrite("CensoredEffectAlternative", &FImpactResponseEffect::CensoredEffectAlternative)
         .def_readwrite("DamageModifierPercent", &FImpactResponseEffect::DamageModifierPercent)
         .def_readwrite("ImpactEvent", &FImpactResponseEffect::ImpactEvent)

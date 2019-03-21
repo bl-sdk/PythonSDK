@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAudioComponent()
 {
-    class_< UAudioComponent, bases< UActorComponent >  , boost::noncopyable>("UAudioComponent", no_init)
+    py::class_< UAudioComponent,  UActorComponent   >("UAudioComponent")
         .def_readwrite("SoundCue", &UAudioComponent::SoundCue)
         .def_readwrite("CueFirstNode", &UAudioComponent::CueFirstNode)
         .def_readwrite("InstanceParameters", &UAudioComponent::InstanceParameters)
@@ -59,7 +59,7 @@ void Export_pystes_UAudioComponent()
         .def_readwrite("OcclusionCheckInterval", &UAudioComponent::OcclusionCheckInterval)
         .def_readwrite("LastOcclusionCheckTime", &UAudioComponent::LastOcclusionCheckTime)
         .def_readwrite("PreviewSoundRadius", &UAudioComponent::PreviewSoundRadius)
-        .def("StaticClass", &UAudioComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAudioComponent::StaticClass, py::return_value_policy::reference)
         .def("eventOcclusionChanged", &UAudioComponent::eventOcclusionChanged)
         .def("OnQueueSubtitles", &UAudioComponent::OnQueueSubtitles)
         .def("OnAudioFinished", &UAudioComponent::OnAudioFinished)

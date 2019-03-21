@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCanvas()
 {
-    class_< UCanvas, bases< UObject >  , boost::noncopyable>("UCanvas", no_init)
+    py::class_< UCanvas,  UObject   >("UCanvas")
         .def_readwrite("Font", &UCanvas::Font)
         .def_readwrite("OrgX", &UCanvas::OrgX)
         .def_readwrite("OrgY", &UCanvas::OrgY)
@@ -24,7 +24,7 @@ void Export_pystes_UCanvas()
         .def_readwrite("ColorModulate", &UCanvas::ColorModulate)
         .def_readwrite("DefaultTexture", &UCanvas::DefaultTexture)
         .def_readwrite("BGColor", &UCanvas::BGColor)
-        .def("StaticClass", &UCanvas::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCanvas::StaticClass, py::return_value_policy::reference)
         .def("DrawDebugGraph", &UCanvas::DrawDebugGraph)
         .def("DrawTextWithBG", &UCanvas::DrawTextWithBG)
         .def("DrawTextureDoubleLine", &UCanvas::DrawTextureDoubleLine)
@@ -43,7 +43,7 @@ void Export_pystes_UCanvas()
         .def("SetClip", &UCanvas::SetClip)
         .def("SetOrigin", &UCanvas::SetOrigin)
         .def("SetPos", &UCanvas::SetPos)
-        .def("GetDefaultCanvasFont", &UCanvas::GetDefaultCanvasFont, return_value_policy< reference_existing_object >())
+        .def("GetDefaultCanvasFont", &UCanvas::GetDefaultCanvasFont, py::return_value_policy::reference)
         .def("eventReset", &UCanvas::eventReset)
         .def("PopTransform", &UCanvas::PopTransform)
         .def("PushTranslationMatrix", &UCanvas::PushTranslationMatrix)

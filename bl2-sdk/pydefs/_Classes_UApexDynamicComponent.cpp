@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UApexDynamicComponent()
 {
-    class_< UApexDynamicComponent, bases< UApexComponentBase >  , boost::noncopyable>("UApexDynamicComponent", no_init)
+    py::class_< UApexDynamicComponent,  UApexComponentBase   >("UApexDynamicComponent")
         .def_readwrite("ComponentDynamicResources", &UApexDynamicComponent::ComponentDynamicResources)
-        .def("StaticClass", &UApexDynamicComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UApexDynamicComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

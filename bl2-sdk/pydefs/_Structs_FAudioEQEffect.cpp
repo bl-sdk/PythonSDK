@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAudioEQEffect()
 {
-    class_< FAudioEQEffect >("FAudioEQEffect", no_init)
+    py::class_< FAudioEQEffect >("FAudioEQEffect")
         .def_readwrite("RootTime", &FAudioEQEffect::RootTime)
         .def_readwrite("HFFrequency", &FAudioEQEffect::HFFrequency)
         .def_readwrite("HFGain", &FAudioEQEffect::HFGain)

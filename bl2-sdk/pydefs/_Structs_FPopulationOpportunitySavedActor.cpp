@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationOpportunitySavedActor()
 {
-    class_< FPopulationOpportunitySavedActor >("FPopulationOpportunitySavedActor", no_init)
+    py::class_< FPopulationOpportunitySavedActor >("FPopulationOpportunitySavedActor")
         .def_readwrite("FactoryPath", &FPopulationOpportunitySavedActor::FactoryPath)
         .def_readwrite("TimeActorSaved", &FPopulationOpportunitySavedActor::TimeActorSaved)
         .def_readwrite("SpawnActorLocation", &FPopulationOpportunitySavedActor::SpawnActorLocation)

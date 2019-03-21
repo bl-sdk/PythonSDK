@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UObjectFunctionFlagValueResolver()
 {
-    class_< UObjectFunctionFlagValueResolver, bases< UFlagValueResolver >  , boost::noncopyable>("UObjectFunctionFlagValueResolver", no_init)
+    py::class_< UObjectFunctionFlagValueResolver,  UFlagValueResolver   >("UObjectFunctionFlagValueResolver")
         .def_readwrite("CheckRate", &UObjectFunctionFlagValueResolver::CheckRate)
         .def_readwrite("FunctionCall", &UObjectFunctionFlagValueResolver::FunctionCall)
-        .def("StaticClass", &UObjectFunctionFlagValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UObjectFunctionFlagValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URule()
 {
-    class_< URule, bases< UObject >  , boost::noncopyable>("URule", no_init)
+    py::class_< URule,  UObject   >("URule")
         .def_readwrite("MyRuleEngine", &URule::MyRuleEngine)
         .def_readwrite("Priority", &URule::Priority)
         .def_readwrite("BasePriority", &URule::BasePriority)
@@ -30,10 +30,10 @@ void Export_pystes_URule()
         .def_readwrite("NumExecutions", &URule::NumExecutions)
         .def_readwrite("RuleEventDefPath", &URule::RuleEventDefPath)
         .def_readwrite("StartExecutionTimeStamp", &URule::StartExecutionTimeStamp)
-        .def("StaticClass", &URule::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URule::StaticClass, py::return_value_policy::reference)
         .def("GetRuleName", &URule::GetRuleName)
         .def("GetRuleFName", &URule::GetRuleFName)
-        .def("GetOtherEventParticipant", &URule::GetOtherEventParticipant, return_value_policy< reference_existing_object >())
+        .def("GetOtherEventParticipant", &URule::GetOtherEventParticipant, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

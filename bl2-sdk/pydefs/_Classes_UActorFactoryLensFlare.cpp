@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryLensFlare()
 {
-    class_< UActorFactoryLensFlare, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryLensFlare", no_init)
+    py::class_< UActorFactoryLensFlare,  UActorFactory   >("UActorFactoryLensFlare")
         .def_readwrite("LensFlareObject", &UActorFactoryLensFlare::LensFlareObject)
-        .def("StaticClass", &UActorFactoryLensFlare::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryLensFlare::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

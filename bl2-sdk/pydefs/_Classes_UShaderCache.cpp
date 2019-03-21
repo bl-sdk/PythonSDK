@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UShaderCache()
 {
-    class_< UShaderCache, bases< UObject >  , boost::noncopyable>("UShaderCache", no_init)
+    py::class_< UShaderCache,  UObject   >("UShaderCache")
         .def_readonly("UnknownData00", &UShaderCache::UnknownData00)
-        .def("StaticClass", &UShaderCache::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UShaderCache::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

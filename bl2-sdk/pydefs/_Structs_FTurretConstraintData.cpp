@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTurretConstraintData()
 {
-    class_< FTurretConstraintData >("FTurretConstraintData", no_init)
+    py::class_< FTurretConstraintData >("FTurretConstraintData")
         .def_readwrite("PitchConstraint", &FTurretConstraintData::PitchConstraint)
         .def_readwrite("YawConstraint", &FTurretConstraintData::YawConstraint)
         .def_readwrite("RollConstraint", &FTurretConstraintData::RollConstraint)

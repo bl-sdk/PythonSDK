@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCollisionDamageCalculation()
 {
-    class_< FCollisionDamageCalculation >("FCollisionDamageCalculation", no_init)
+    py::class_< FCollisionDamageCalculation >("FCollisionDamageCalculation")
         .def_readwrite("DamageType", &FCollisionDamageCalculation::DamageType)
         .def_readwrite("DamageTypes", &FCollisionDamageCalculation::DamageTypes)
         .def_readwrite("Formula", &FCollisionDamageCalculation::Formula)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoordinatedEffectProcess()
 {
-    class_< FCoordinatedEffectProcess >("FCoordinatedEffectProcess", no_init)
+    py::class_< FCoordinatedEffectProcess >("FCoordinatedEffectProcess")
         .def_readwrite("Target", &FCoordinatedEffectProcess::Target)
         .def_readwrite("Threads", &FCoordinatedEffectProcess::Threads)
         .def_readwrite("Player0MatIndex", &FCoordinatedEffectProcess::Player0MatIndex)

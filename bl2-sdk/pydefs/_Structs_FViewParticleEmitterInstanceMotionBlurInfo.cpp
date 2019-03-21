@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FViewParticleEmitterInstanceMotionBlurInfo()
 {
-    class_< FViewParticleEmitterInstanceMotionBlurInfo >("FViewParticleEmitterInstanceMotionBlurInfo", no_init)
+    py::class_< FViewParticleEmitterInstanceMotionBlurInfo >("FViewParticleEmitterInstanceMotionBlurInfo")
         .def_readwrite("EmitterInstanceMBInfoMap", &FViewParticleEmitterInstanceMotionBlurInfo::EmitterInstanceMBInfoMap)
   ;
 }

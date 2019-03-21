@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAIDenDefinition()
 {
-    class_< UWillowAIDenDefinition, bases< UAIDefinition >  , boost::noncopyable>("UWillowAIDenDefinition", no_init)
+    py::class_< UWillowAIDenDefinition,  UAIDefinition   >("UWillowAIDenDefinition")
         .def_readwrite("MinEngagementTime", &UWillowAIDenDefinition::MinEngagementTime)
         .def_readwrite("MinProvokedTime", &UWillowAIDenDefinition::MinProvokedTime)
-        .def("StaticClass", &UWillowAIDenDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAIDenDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

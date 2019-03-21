@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSourceObjectData()
 {
-    class_< FSourceObjectData >("FSourceObjectData", no_init)
+    py::class_< FSourceObjectData >("FSourceObjectData")
         .def_readwrite("UniqueId", &FSourceObjectData::UniqueId)
         .def_readwrite("SourceObject", &FSourceObjectData::SourceObject)
         .def_readwrite("SourceLocation", &FSourceObjectData::SourceLocation)

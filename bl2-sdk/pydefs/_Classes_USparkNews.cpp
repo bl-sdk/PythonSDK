@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USparkNews()
 {
-    class_< USparkNews, bases< UObject >  , boost::noncopyable>("USparkNews", no_init)
+    py::class_< USparkNews,  UObject   >("USparkNews")
         .def_readwrite("Articles", &USparkNews::Articles)
-        .def("StaticClass", &USparkNews::StaticClass, return_value_policy< reference_existing_object >())
-        .def("Internal_GetService", &USparkNews::Internal_GetService, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USparkNews::StaticClass, py::return_value_policy::reference)
+        .def("Internal_GetService", &USparkNews::Internal_GetService, py::return_value_policy::reference)
         .def("CallAndClearRetrievedDelegate", &USparkNews::CallAndClearRetrievedDelegate)
         .def("ParseArticles", &USparkNews::ParseArticles)
         .def("HandleNewsRetrievalResponse", &USparkNews::HandleNewsRetrievalResponse)

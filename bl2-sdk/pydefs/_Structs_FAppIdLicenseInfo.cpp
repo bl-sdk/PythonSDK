@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAppIdLicenseInfo()
 {
-    class_< FAppIdLicenseInfo >("FAppIdLicenseInfo", no_init)
+    py::class_< FAppIdLicenseInfo >("FAppIdLicenseInfo")
         .def_readwrite("AppID", &FAppIdLicenseInfo::AppID)
         .def_readwrite("LicenseMask", &FAppIdLicenseInfo::LicenseMask)
   ;

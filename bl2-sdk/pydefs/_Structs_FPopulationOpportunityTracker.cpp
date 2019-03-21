@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationOpportunityTracker()
 {
-    class_< FPopulationOpportunityTracker >("FPopulationOpportunityTracker", no_init)
+    py::class_< FPopulationOpportunityTracker >("FPopulationOpportunityTracker")
         .def_readwrite("OpportunityOutermostName", &FPopulationOpportunityTracker::OpportunityOutermostName)
         .def_readwrite("OpportunityName", &FPopulationOpportunityTracker::OpportunityName)
         .def_readwrite("LoadedOpportunity", &FPopulationOpportunityTracker::LoadedOpportunity)

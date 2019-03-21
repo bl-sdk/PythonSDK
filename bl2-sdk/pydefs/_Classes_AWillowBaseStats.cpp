@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowBaseStats()
 {
-    class_< AWillowBaseStats, bases< AInfo >  , boost::noncopyable>("AWillowBaseStats", no_init)
+    py::class_< AWillowBaseStats,  AInfo   >("AWillowBaseStats")
         .def_readwrite("VfTable_ISparkUpdateCallback", &AWillowBaseStats::VfTable_ISparkUpdateCallback)
         .def_readwrite("SaveVersion", &AWillowBaseStats::SaveVersion)
         .def_readwrite("ReadVersion", &AWillowBaseStats::ReadVersion)
@@ -14,7 +14,7 @@ void Export_pystes_AWillowBaseStats()
         .def_readwrite("ReplicationChannel", &AWillowBaseStats::ReplicationChannel)
         .def_readwrite("DebugDisplayFilter", &AWillowBaseStats::DebugDisplayFilter)
         .def_readwrite("CurrentDebugPage", &AWillowBaseStats::CurrentDebugPage)
-        .def("StaticClass", &AWillowBaseStats::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowBaseStats::StaticClass, py::return_value_policy::reference)
         .def("ClearSparkCallbacks", &AWillowBaseStats::ClearSparkCallbacks)
         .def("DirtyAllStats", &AWillowBaseStats::DirtyAllStats)
         .def("ReportDirtyStats", &AWillowBaseStats::ReportDirtyStats)

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkyLightComponent()
 {
-    class_< USkyLightComponent, bases< ULightComponent >  , boost::noncopyable>("USkyLightComponent", no_init)
+    py::class_< USkyLightComponent,  ULightComponent   >("USkyLightComponent")
         .def_readwrite("LowerBrightness", &USkyLightComponent::LowerBrightness)
         .def_readwrite("LowerColor", &USkyLightComponent::LowerColor)
-        .def("StaticClass", &USkyLightComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkyLightComponent::StaticClass, py::return_value_policy::reference)
         .def("OnUpdatePropertyLowerBrightness", &USkyLightComponent::OnUpdatePropertyLowerBrightness)
         .def("OnUpdatePropertyLowerColor", &USkyLightComponent::OnUpdatePropertyLowerColor)
         .def("OnUpdatePropertyLightEnv_BouncedLightBrightness", &USkyLightComponent::OnUpdatePropertyLightEnv_BouncedLightBrightness)

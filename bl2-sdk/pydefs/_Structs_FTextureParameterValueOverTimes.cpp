@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTextureParameterValueOverTime()
 {
-    class_< FTextureParameterValueOverTime, bases< FParameterValueOverTime >  >("FTextureParameterValueOverTime", no_init)
+    py::class_< FTextureParameterValueOverTime,  FParameterValueOverTime   >("FTextureParameterValueOverTime")
         .def_readwrite("ParameterValue", &FTextureParameterValueOverTime::ParameterValue)
   ;
 }

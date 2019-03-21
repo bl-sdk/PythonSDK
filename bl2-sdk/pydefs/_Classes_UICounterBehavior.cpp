@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UICounterBehavior()
 {
-    class_< UICounterBehavior, bases< UInterface >  , boost::noncopyable>("UICounterBehavior", no_init)
-        .def("StaticClass", &UICounterBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UICounterBehavior,  UInterface   >("UICounterBehavior")
+        .def("StaticClass", &UICounterBehavior::StaticClass, py::return_value_policy::reference)
         .def("SetCounterState", &UICounterBehavior::SetCounterState)
         .def("GetCounterState", &UICounterBehavior::GetCounterState)
         .def("OnCounterEvent", &UICounterBehavior::OnCounterEvent)

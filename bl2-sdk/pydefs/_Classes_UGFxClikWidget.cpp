@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxClikWidget()
 {
-    class_< UGFxClikWidget, bases< UGFxObject >  , boost::noncopyable>("UGFxClikWidget", no_init)
-        .def("StaticClass", &UGFxClikWidget::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGFxClikWidget,  UGFxObject   >("UGFxClikWidget")
+        .def("StaticClass", &UGFxClikWidget::StaticClass, py::return_value_policy::reference)
         .def("ASRemoveAllEventListeners", &UGFxClikWidget::ASRemoveAllEventListeners)
         .def("ASAddEventListener", &UGFxClikWidget::ASAddEventListener)
         .def("SetListener", &UGFxClikWidget::SetListener)

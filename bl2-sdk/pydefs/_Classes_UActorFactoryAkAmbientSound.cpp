@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryAkAmbientSound()
 {
-    class_< UActorFactoryAkAmbientSound, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryAkAmbientSound", no_init)
+    py::class_< UActorFactoryAkAmbientSound,  UActorFactory   >("UActorFactoryAkAmbientSound")
         .def_readwrite("AmbientEvent", &UActorFactoryAkAmbientSound::AmbientEvent)
-        .def("StaticClass", &UActorFactoryAkAmbientSound::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryAkAmbientSound::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLocationInfo()
 {
-    class_< FLocationInfo >("FLocationInfo", no_init)
+    py::class_< FLocationInfo >("FLocationInfo")
         .def_readwrite("Location", &FLocationInfo::Location)
   ;
 }

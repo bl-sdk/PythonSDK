@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AInterpActor()
 {
-    class_< AInterpActor, bases< AActor >  , boost::noncopyable>("AInterpActor", no_init)
+    py::class_< AInterpActor,  AActor   >("AInterpActor")
         .def_readwrite("MyMarker", &AInterpActor::MyMarker)
         .def_readwrite("MaxZVelocity", &AInterpActor::MaxZVelocity)
         .def_readwrite("StayOpenTime", &AInterpActor::StayOpenTime)
@@ -25,7 +25,7 @@ void Export_pystes_AInterpActor()
         .def_readwrite("ReplicatedMeshTranslation", &ADynamicSMActor::ReplicatedMeshTranslation)
         .def_readwrite("ReplicatedMeshRotation", &ADynamicSMActor::ReplicatedMeshRotation)
         .def_readwrite("ReplicatedMeshScale3D", &ADynamicSMActor::ReplicatedMeshScale3D)
-        .def("StaticClass", &AInterpActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AInterpActor::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &AInterpActor::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &AInterpActor::CreateCheckpointRecord)
         .def("ShouldSaveForCheckpoint", &AInterpActor::ShouldSaveForCheckpoint)

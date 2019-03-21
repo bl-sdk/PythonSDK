@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SendMessageToPlayers()
 {
-    class_< UBehavior_SendMessageToPlayers, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SendMessageToPlayers", no_init)
+    py::class_< UBehavior_SendMessageToPlayers,  UBehaviorBase   >("UBehavior_SendMessageToPlayers")
         .def_readwrite("SendMsgClass", &UBehavior_SendMessageToPlayers::SendMsgClass)
-        .def("StaticClass", &UBehavior_SendMessageToPlayers::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SendMessageToPlayers::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SendMessageToPlayers::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

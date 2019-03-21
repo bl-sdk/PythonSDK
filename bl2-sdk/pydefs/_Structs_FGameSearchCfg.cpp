@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameSearchCfg()
 {
-    class_< FGameSearchCfg >("FGameSearchCfg", no_init)
+    py::class_< FGameSearchCfg >("FGameSearchCfg")
         .def_readwrite("GameSearchClass", &FGameSearchCfg::GameSearchClass)
         .def_readwrite("DefaultGameSettingsClass", &FGameSearchCfg::DefaultGameSettingsClass)
         .def_readwrite("SearchResultsProviderClass", &FGameSearchCfg::SearchResultsProviderClass)

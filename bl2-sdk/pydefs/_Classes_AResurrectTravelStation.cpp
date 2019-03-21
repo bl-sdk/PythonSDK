@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AResurrectTravelStation()
 {
-    class_< AResurrectTravelStation, bases< ATravelStation >  , boost::noncopyable>("AResurrectTravelStation", no_init)
-        .def("StaticClass", &AResurrectTravelStation::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AResurrectTravelStation,  ATravelStation   >("AResurrectTravelStation")
+        .def("StaticClass", &AResurrectTravelStation::StaticClass, py::return_value_policy::reference)
         .def("CanResurrectHere", &AResurrectTravelStation::CanResurrectHere)
         .staticmethod("StaticClass")
   ;

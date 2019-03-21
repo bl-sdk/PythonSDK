@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPersistentMapDependencies()
 {
-    class_< FPersistentMapDependencies >("FPersistentMapDependencies", no_init)
+    py::class_< FPersistentMapDependencies >("FPersistentMapDependencies")
         .def_readwrite("PersistentMap", &FPersistentMapDependencies::PersistentMap)
         .def_readwrite("SecondaryMaps", &FPersistentMapDependencies::SecondaryMaps)
         .def_readwrite("ConnectedPersistents", &FPersistentMapDependencies::ConnectedPersistents)

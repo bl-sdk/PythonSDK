@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMontageGFxObject()
 {
-    class_< UMontageGFxObject, bases< UGFxObject >  , boost::noncopyable>("UMontageGFxObject", no_init)
+    py::class_< UMontageGFxObject,  UGFxObject   >("UMontageGFxObject")
         .def_readwrite("WPCOwner", &UMontageGFxObject::WPCOwner)
         .def_readwrite("CreditsDef", &UMontageGFxObject::CreditsDef)
         .def_readwrite("LinkageName", &UMontageGFxObject::LinkageName)
         .def_readwrite("MontageIdx", &UMontageGFxObject::MontageIdx)
         .def_readwrite("MontageTextures", &UMontageGFxObject::MontageTextures)
-        .def("StaticClass", &UMontageGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMontageGFxObject::StaticClass, py::return_value_policy::reference)
         .def("extFadeOutComplete", &UMontageGFxObject::extFadeOutComplete)
         .def("extFadeInComplete", &UMontageGFxObject::extFadeInComplete)
         .def("FadeOut", &UMontageGFxObject::FadeOut)

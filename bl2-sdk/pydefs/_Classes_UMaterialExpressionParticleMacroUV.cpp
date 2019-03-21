@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionParticleMacroUV()
 {
-    class_< UMaterialExpressionParticleMacroUV, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionParticleMacroUV", no_init)
-        .def("StaticClass", &UMaterialExpressionParticleMacroUV::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionParticleMacroUV,  UMaterialExpression   >("UMaterialExpressionParticleMacroUV")
+        .def("StaticClass", &UMaterialExpressionParticleMacroUV::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

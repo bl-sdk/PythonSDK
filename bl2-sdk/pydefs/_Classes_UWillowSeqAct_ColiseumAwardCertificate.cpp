@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ColiseumAwardCertificate()
 {
-    class_< UWillowSeqAct_ColiseumAwardCertificate, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ColiseumAwardCertificate", no_init)
-        .def("StaticClass", &UWillowSeqAct_ColiseumAwardCertificate::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_ColiseumAwardCertificate,  USequenceAction   >("UWillowSeqAct_ColiseumAwardCertificate")
+        .def("StaticClass", &UWillowSeqAct_ColiseumAwardCertificate::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_ColiseumAwardCertificate::eventActivated)
         .staticmethod("StaticClass")
   ;

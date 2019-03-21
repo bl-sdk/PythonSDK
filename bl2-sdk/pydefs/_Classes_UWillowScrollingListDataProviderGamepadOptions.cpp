@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderGamepadOptions()
 {
-    class_< UWillowScrollingListDataProviderGamepadOptions, bases< UWillowScrollingListDataProviderOptionsBase >  , boost::noncopyable>("UWillowScrollingListDataProviderGamepadOptions", no_init)
+    py::class_< UWillowScrollingListDataProviderGamepadOptions,  UWillowScrollingListDataProviderOptionsBase   >("UWillowScrollingListDataProviderGamepadOptions")
         .def_readwrite("KeyCaptionList", &UWillowScrollingListDataProviderGamepadOptions::KeyCaptionList)
         .def_readonly("PlatformFrames", &UWillowScrollingListDataProviderGamepadOptions::PlatformFrames)
         .def_readwrite("ControllerPresetTags", &UWillowScrollingListDataProviderGamepadOptions::ControllerPresetTags)
@@ -23,7 +23,7 @@ void Export_pystes_UWillowScrollingListDataProviderGamepadOptions()
         .def_readwrite("FirstButtonName", &UWillowScrollingListDataProviderGamepadOptions::FirstButtonName)
         .def_readwrite("SecondButtonName", &UWillowScrollingListDataProviderGamepadOptions::SecondButtonName)
         .def_readonly("RemappedButtonIndexes", &UWillowScrollingListDataProviderGamepadOptions::RemappedButtonIndexes)
-        .def("StaticClass", &UWillowScrollingListDataProviderGamepadOptions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingListDataProviderGamepadOptions::StaticClass, py::return_value_policy::reference)
         .def("UpdatePresetCaptions", &UWillowScrollingListDataProviderGamepadOptions::UpdatePresetCaptions)
         .def("InitControllerMapping", &UWillowScrollingListDataProviderGamepadOptions::InitControllerMapping)
         .def("HideControllerMapping", &UWillowScrollingListDataProviderGamepadOptions::HideControllerMapping)

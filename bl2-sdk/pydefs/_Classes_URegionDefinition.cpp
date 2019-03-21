@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URegionDefinition()
 {
-    class_< URegionDefinition, bases< UGBXDefinition >  , boost::noncopyable>("URegionDefinition", no_init)
-        .def("StaticClass", &URegionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< URegionDefinition,  UGBXDefinition   >("URegionDefinition")
+        .def("StaticClass", &URegionDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDefaultRegionGameStage", &URegionDefinition::GetDefaultRegionGameStage)
         .def("TestRegionGameStage", &URegionDefinition::TestRegionGameStage)
         .def("GetRegionGameStage", &URegionDefinition::GetRegionGameStage)

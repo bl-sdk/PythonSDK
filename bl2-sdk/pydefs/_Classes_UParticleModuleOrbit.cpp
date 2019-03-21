@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleOrbit()
 {
-    class_< UParticleModuleOrbit, bases< UParticleModule >  , boost::noncopyable>("UParticleModuleOrbit", no_init)
+    py::class_< UParticleModuleOrbit,  UParticleModule   >("UParticleModuleOrbit")
         .def_readwrite("ChainMode", &UParticleModuleOrbit::ChainMode)
         .def_readwrite("OffsetAmount", &UParticleModuleOrbit::OffsetAmount)
         .def_readwrite("OffsetOptions", &UParticleModuleOrbit::OffsetOptions)
@@ -13,7 +13,7 @@ void Export_pystes_UParticleModuleOrbit()
         .def_readwrite("RotationOptions", &UParticleModuleOrbit::RotationOptions)
         .def_readwrite("RotationRateAmount", &UParticleModuleOrbit::RotationRateAmount)
         .def_readwrite("RotationRateOptions", &UParticleModuleOrbit::RotationRateOptions)
-        .def("StaticClass", &UParticleModuleOrbit::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleOrbit::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

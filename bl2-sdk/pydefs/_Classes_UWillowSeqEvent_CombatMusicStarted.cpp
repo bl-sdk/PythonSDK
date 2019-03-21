@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqEvent_CombatMusicStarted()
 {
-    class_< UWillowSeqEvent_CombatMusicStarted, bases< USequenceEvent >  , boost::noncopyable>("UWillowSeqEvent_CombatMusicStarted", no_init)
-        .def("StaticClass", &UWillowSeqEvent_CombatMusicStarted::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqEvent_CombatMusicStarted,  USequenceEvent   >("UWillowSeqEvent_CombatMusicStarted")
+        .def("StaticClass", &UWillowSeqEvent_CombatMusicStarted::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

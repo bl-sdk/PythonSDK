@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInputEntry()
 {
-    class_< FInputEntry >("FInputEntry", no_init)
+    py::class_< FInputEntry >("FInputEntry")
         .def_readwrite("Type", &FInputEntry::Type)
         .def_readwrite("Value", &FInputEntry::Value)
         .def_readwrite("TimeDelta", &FInputEntry::TimeDelta)

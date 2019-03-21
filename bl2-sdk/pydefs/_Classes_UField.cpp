@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UField()
 {
-    class_< UField, bases< UObject >  , boost::noncopyable>("UField", no_init)
+    py::class_< UField,  UObject   >("UField")
         .def_readwrite("Next", &UField::Next)
-        .def("StaticClass", &UField::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UField::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

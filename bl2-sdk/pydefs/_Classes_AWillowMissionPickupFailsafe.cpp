@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowMissionPickupFailsafe()
 {
-    class_< AWillowMissionPickupFailsafe, bases< AActor >  , boost::noncopyable>("AWillowMissionPickupFailsafe", no_init)
+    py::class_< AWillowMissionPickupFailsafe,  AActor   >("AWillowMissionPickupFailsafe")
         .def_readwrite("LinkedAspect", &AWillowMissionPickupFailsafe::LinkedAspect)
         .def_readwrite("CompletedObjective", &AWillowMissionPickupFailsafe::CompletedObjective)
         .def_readwrite("ObjectiveSet", &AWillowMissionPickupFailsafe::ObjectiveSet)
@@ -17,7 +17,7 @@ void Export_pystes_AWillowMissionPickupFailsafe()
         .def_readwrite("ObjectiveBit", &AWillowMissionPickupSpawner::ObjectiveBit)
         .def_readwrite("MissionPickup", &AWillowMissionPickupSpawner::MissionPickup)
         .def_readwrite("Sprite", &AWillowMissionPickupSpawner::Sprite)
-        .def("StaticClass", &AWillowMissionPickupFailsafe::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowMissionPickupFailsafe::StaticClass, py::return_value_policy::reference)
         .def("EnactFailsafe", &AWillowMissionPickupFailsafe::EnactFailsafe)
         .def("CheckFailsafe", &AWillowMissionPickupFailsafe::CheckFailsafe)
         .def("SetupFailsafe", &AWillowMissionPickupFailsafe::SetupFailsafe)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDmgSource_Shield()
 {
-    class_< UWillowDmgSource_Shield, bases< UWillowDamageSource >  , boost::noncopyable>("UWillowDmgSource_Shield", no_init)
-        .def("StaticClass", &UWillowDmgSource_Shield::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowDmgSource_Shield,  UWillowDamageSource   >("UWillowDmgSource_Shield")
+        .def("StaticClass", &UWillowDmgSource_Shield::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

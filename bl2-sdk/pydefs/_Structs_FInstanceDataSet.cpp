@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInstanceDataSet()
 {
-    class_< FInstanceDataSet >("FInstanceDataSet", no_init)
+    py::class_< FInstanceDataSet >("FInstanceDataSet")
         .def_readwrite("Data", &FInstanceDataSet::Data)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNxForceFieldGenericComponent()
 {
-    class_< UNxForceFieldGenericComponent, bases< UNxForceFieldComponent >  , boost::noncopyable>("UNxForceFieldGenericComponent", no_init)
+    py::class_< UNxForceFieldGenericComponent,  UNxForceFieldComponent   >("UNxForceFieldGenericComponent")
         .def_readwrite("RoughExtentX", &UNxForceFieldGenericComponent::RoughExtentX)
         .def_readwrite("RoughExtentY", &UNxForceFieldGenericComponent::RoughExtentY)
         .def_readwrite("RoughExtentZ", &UNxForceFieldGenericComponent::RoughExtentZ)
@@ -24,7 +24,7 @@ void Export_pystes_UNxForceFieldGenericComponent()
         .def_readwrite("FalloffQuadratic", &UNxForceFieldGenericComponent::FalloffQuadratic)
         .def_readwrite("TorusRadius", &UNxForceFieldGenericComponent::TorusRadius)
         .def_readwrite("Kernel", &UNxForceFieldGenericComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldGenericComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNxForceFieldGenericComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

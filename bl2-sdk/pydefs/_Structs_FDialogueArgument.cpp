@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDialogueArgument()
 {
-    class_< FDialogueArgument >("FDialogueArgument", no_init)
+    py::class_< FDialogueArgument >("FDialogueArgument")
         .def_readwrite("Source", &FDialogueArgument::Source)
   ;
 }

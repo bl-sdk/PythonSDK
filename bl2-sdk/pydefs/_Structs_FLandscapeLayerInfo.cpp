@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLandscapeLayerInfo()
 {
-    class_< FLandscapeLayerInfo >("FLandscapeLayerInfo", no_init)
+    py::class_< FLandscapeLayerInfo >("FLandscapeLayerInfo")
         .def_readwrite("LayerName", &FLandscapeLayerInfo::LayerName)
         .def_readwrite("Hardness", &FLandscapeLayerInfo::Hardness)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEffectSoundData()
 {
-    class_< FEffectSoundData >("FEffectSoundData", no_init)
+    py::class_< FEffectSoundData >("FEffectSoundData")
         .def_readwrite("Type", &FEffectSoundData::Type)
         .def_readwrite("AkPlayingId", &FEffectSoundData::AkPlayingId)
   ;

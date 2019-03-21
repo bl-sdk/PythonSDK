@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxPlayerController()
 {
-    class_< AGearboxPlayerController, bases< AGamePlayerController >  , boost::noncopyable>("AGearboxPlayerController", no_init)
+    py::class_< AGearboxPlayerController,  AGamePlayerController   >("AGearboxPlayerController")
         .def_readwrite("CurrentViewShake", &AGearboxPlayerController::CurrentViewShake)
         .def_readwrite("BaseDamageShake", &AGearboxPlayerController::BaseDamageShake)
         .def_readwrite("ShakeOffset", &AGearboxPlayerController::ShakeOffset)
@@ -24,7 +24,7 @@ void Export_pystes_AGearboxPlayerController()
         .def_readwrite("PlaySessionGuid", &AGearboxPlayerController::PlaySessionGuid)
         .def_readwrite("SessionBundleNumber", &AGearboxPlayerController::SessionBundleNumber)
         .def_readwrite("CachedProfileSettings", &AGearboxPlayerController::CachedProfileSettings)
-        .def("StaticClass", &AGearboxPlayerController::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGearboxPlayerController::StaticClass, py::return_value_policy::reference)
         .def("RequestTitleStorageFile", &AGearboxPlayerController::RequestTitleStorageFile)
         .def("ShowSparkID", &AGearboxPlayerController::ShowSparkID)
         .def("ShouldCheckRemoteControlCheckbox", &AGearboxPlayerController::ShouldCheckRemoteControlCheckbox)
@@ -73,7 +73,7 @@ void Export_pystes_AGearboxPlayerController()
         .def("HidePS3WritingProfileDialog", &AGearboxPlayerController::HidePS3WritingProfileDialog)
         .def("ShowPS3WritingProfileDialog", &AGearboxPlayerController::ShowPS3WritingProfileDialog)
         .def("eventWriteProfile", &AGearboxPlayerController::eventWriteProfile)
-        .def("eventGetProfileSettings", &AGearboxPlayerController::eventGetProfileSettings, return_value_policy< reference_existing_object >())
+        .def("eventGetProfileSettings", &AGearboxPlayerController::eventGetProfileSettings, py::return_value_policy::reference)
         .def("GetMyControllerId", &AGearboxPlayerController::GetMyControllerId)
         .def("eventReadProfile", &AGearboxPlayerController::eventReadProfile)
         .def("UnregisterPlayerDataStores", &AGearboxPlayerController::UnregisterPlayerDataStores)

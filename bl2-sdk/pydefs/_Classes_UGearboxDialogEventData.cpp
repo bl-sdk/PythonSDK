@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogEventData()
 {
-    class_< UGearboxDialogEventData, bases< UObject >  , boost::noncopyable>("UGearboxDialogEventData", no_init)
+    py::class_< UGearboxDialogEventData,  UObject   >("UGearboxDialogEventData")
         .def_readwrite("EventInfo", &UGearboxDialogEventData::EventInfo)
         .def_readwrite("Instigator", &UGearboxDialogEventData::Instigator)
         .def_readwrite("Other", &UGearboxDialogEventData::Other)
@@ -18,7 +18,7 @@ void Export_pystes_UGearboxDialogEventData()
         .def_readwrite("PlayingInfo", &UGearboxDialogEventData::PlayingInfo)
         .def_readwrite("TalkFinishTime", &UGearboxDialogEventData::TalkFinishTime)
         .def_readwrite("UseCount", &UGearboxDialogEventData::UseCount)
-        .def("StaticClass", &UGearboxDialogEventData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxDialogEventData::StaticClass, py::return_value_policy::reference)
         .def("IsActive", &UGearboxDialogEventData::IsActive)
         .staticmethod("StaticClass")
   ;

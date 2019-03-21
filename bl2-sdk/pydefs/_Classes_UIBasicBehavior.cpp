@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIBasicBehavior()
 {
-    class_< UIBasicBehavior, bases< UInterface >  , boost::noncopyable>("UIBasicBehavior", no_init)
-        .def("StaticClass", &UIBasicBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIBasicBehavior,  UInterface   >("UIBasicBehavior")
+        .def("StaticClass", &UIBasicBehavior::StaticClass, py::return_value_policy::reference)
         .def("EvaluateAttributeInitialization", &UIBasicBehavior::EvaluateAttributeInitialization)
-        .def("FindAnimNode", &UIBasicBehavior::FindAnimNode, return_value_policy< reference_existing_object >())
+        .def("FindAnimNode", &UIBasicBehavior::FindAnimNode, py::return_value_policy::reference)
         .def("SetRotationRate", &UIBasicBehavior::SetRotationRate)
         .def("GetCollisionRadius", &UIBasicBehavior::GetCollisionRadius)
         .staticmethod("StaticClass")

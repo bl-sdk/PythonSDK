@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileBehavior_Detonate()
 {
-    class_< UProjectileBehavior_Detonate, bases< UProjectileBehaviorBase >  , boost::noncopyable>("UProjectileBehavior_Detonate", no_init)
+    py::class_< UProjectileBehavior_Detonate,  UProjectileBehaviorBase   >("UProjectileBehavior_Detonate")
         .def_readwrite("TargetAllegiance", &UProjectileBehavior_Detonate::TargetAllegiance)
-        .def("StaticClass", &UProjectileBehavior_Detonate::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UProjectileBehavior_Detonate::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_Detonate::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

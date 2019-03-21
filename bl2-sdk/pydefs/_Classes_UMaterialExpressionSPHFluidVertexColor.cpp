@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionSPHFluidVertexColor()
 {
-    class_< UMaterialExpressionSPHFluidVertexColor, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionSPHFluidVertexColor", no_init)
+    py::class_< UMaterialExpressionSPHFluidVertexColor,  UMaterialExpression   >("UMaterialExpressionSPHFluidVertexColor")
         .def_readwrite("DefaultTexture", &UMaterialExpressionSPHFluidVertexColor::DefaultTexture)
-        .def("StaticClass", &UMaterialExpressionSPHFluidVertexColor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionSPHFluidVertexColor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

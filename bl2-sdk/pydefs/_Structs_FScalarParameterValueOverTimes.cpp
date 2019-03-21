@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScalarParameterValueOverTime()
 {
-    class_< FScalarParameterValueOverTime, bases< FParameterValueOverTime >  >("FScalarParameterValueOverTime", no_init)
+    py::class_< FScalarParameterValueOverTime,  FParameterValueOverTime   >("FScalarParameterValueOverTime")
         .def_readwrite("ParameterValue", &FScalarParameterValueOverTime::ParameterValue)
         .def_readwrite("ParameterValueCurve", &FScalarParameterValueOverTime::ParameterValueCurve)
   ;

@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraModifier()
 {
-    class_< UCameraModifier, bases< UObject >  , boost::noncopyable>("UCameraModifier", no_init)
+    py::class_< UCameraModifier,  UObject   >("UCameraModifier")
         .def_readwrite("CameraOwner", &UCameraModifier::CameraOwner)
         .def_readwrite("Priority", &UCameraModifier::Priority)
         .def_readwrite("AlphaInTime", &UCameraModifier::AlphaInTime)
         .def_readwrite("AlphaOutTime", &UCameraModifier::AlphaOutTime)
         .def_readwrite("Alpha", &UCameraModifier::Alpha)
         .def_readwrite("TargetAlpha", &UCameraModifier::TargetAlpha)
-        .def("StaticClass", &UCameraModifier::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCameraModifier::StaticClass, py::return_value_policy::reference)
         .def("UpdateAlpha", &UCameraModifier::UpdateAlpha)
         .def("ProcessViewRotation", &UCameraModifier::ProcessViewRotation)
         .def("ToggleModifier", &UCameraModifier::ToggleModifier)

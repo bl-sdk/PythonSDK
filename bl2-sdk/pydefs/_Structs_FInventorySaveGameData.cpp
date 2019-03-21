@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInventorySaveGameData()
 {
-    class_< FInventorySaveGameData >("FInventorySaveGameData", no_init)
+    py::class_< FInventorySaveGameData >("FInventorySaveGameData")
         .def_readwrite("DefinitionData", &FInventorySaveGameData::DefinitionData)
         .def_readwrite("Quantity", &FInventorySaveGameData::Quantity)
         .def_readwrite("Mark", &FInventorySaveGameData::Mark)

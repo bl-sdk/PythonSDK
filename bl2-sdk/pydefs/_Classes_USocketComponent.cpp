@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USocketComponent()
 {
-    class_< USocketComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("USocketComponent", no_init)
+    py::class_< USocketComponent,  UPrimitiveComponent   >("USocketComponent")
         .def_readwrite("SocketName", &USocketComponent::SocketName)
-        .def("StaticClass", &USocketComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USocketComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpCurveEdSetup()
 {
-    class_< UInterpCurveEdSetup, bases< UObject >  , boost::noncopyable>("UInterpCurveEdSetup", no_init)
+    py::class_< UInterpCurveEdSetup,  UObject   >("UInterpCurveEdSetup")
         .def_readwrite("Tabs", &UInterpCurveEdSetup::Tabs)
         .def_readwrite("ActiveTab", &UInterpCurveEdSetup::ActiveTab)
-        .def("StaticClass", &UInterpCurveEdSetup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpCurveEdSetup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleSpriteEmitter()
 {
-    class_< UParticleSpriteEmitter, bases< UParticleEmitter >  , boost::noncopyable>("UParticleSpriteEmitter", no_init)
-        .def("StaticClass", &UParticleSpriteEmitter::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UParticleSpriteEmitter,  UParticleEmitter   >("UParticleSpriteEmitter")
+        .def("StaticClass", &UParticleSpriteEmitter::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHeadTrackingComponent()
 {
-    class_< UHeadTrackingComponent, bases< UActorComponent >  , boost::noncopyable>("UHeadTrackingComponent", no_init)
+    py::class_< UHeadTrackingComponent,  UActorComponent   >("UHeadTrackingComponent")
         .def_readwrite("TrackControllerName", &UHeadTrackingComponent::TrackControllerName)
         .def_readwrite("LookAtActorRadius", &UHeadTrackingComponent::LookAtActorRadius)
         .def_readwrite("MaxLookAtTime", &UHeadTrackingComponent::MaxLookAtTime)
@@ -18,7 +18,7 @@ void Export_pystes_UHeadTrackingComponent()
         .def_readwrite("TrackControls", &UHeadTrackingComponent::TrackControls)
         .def_readwrite("RootMeshLocation", &UHeadTrackingComponent::RootMeshLocation)
         .def_readwrite("RootMeshRotation", &UHeadTrackingComponent::RootMeshRotation)
-        .def("StaticClass", &UHeadTrackingComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHeadTrackingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

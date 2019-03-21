@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInputDeviceAxisData()
 {
-    class_< FInputDeviceAxisData >("FInputDeviceAxisData", no_init)
+    py::class_< FInputDeviceAxisData >("FInputDeviceAxisData")
         .def_readwrite("AxisName", &FInputDeviceAxisData::AxisName)
         .def_readwrite("AxisParameter", &FInputDeviceAxisData::AxisParameter)
         .def_readwrite("DeadZone", &FInputDeviceAxisData::DeadZone)

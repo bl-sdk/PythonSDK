@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileBehavior_SetSpeed()
 {
-    class_< UProjectileBehavior_SetSpeed, bases< UProjectileBehaviorBase >  , boost::noncopyable>("UProjectileBehavior_SetSpeed", no_init)
+    py::class_< UProjectileBehavior_SetSpeed,  UProjectileBehaviorBase   >("UProjectileBehavior_SetSpeed")
         .def_readwrite("NewSpeed", &UProjectileBehavior_SetSpeed::NewSpeed)
         .def_readwrite("SpeedMultiplier", &UProjectileBehavior_SetSpeed::SpeedMultiplier)
-        .def("StaticClass", &UProjectileBehavior_SetSpeed::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UProjectileBehavior_SetSpeed::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_SetSpeed::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

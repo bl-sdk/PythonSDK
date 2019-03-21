@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLevelStreamingNameCombo()
 {
-    class_< FLevelStreamingNameCombo >("FLevelStreamingNameCombo", no_init)
+    py::class_< FLevelStreamingNameCombo >("FLevelStreamingNameCombo")
         .def_readwrite("Level", &FLevelStreamingNameCombo::Level)
         .def_readwrite("LevelName", &FLevelStreamingNameCombo::LevelName)
   ;

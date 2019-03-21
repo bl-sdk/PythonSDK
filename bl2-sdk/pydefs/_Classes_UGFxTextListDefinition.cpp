@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxTextListDefinition()
 {
-    class_< UGFxTextListDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UGFxTextListDefinition", no_init)
+    py::class_< UGFxTextListDefinition,  UGBXDefinition   >("UGFxTextListDefinition")
         .def_readwrite("ContainerName", &UGFxTextListDefinition::ContainerName)
         .def_readwrite("FunctionPath", &UGFxTextListDefinition::FunctionPath)
         .def_readwrite("MoreUpName", &UGFxTextListDefinition::MoreUpName)
@@ -16,7 +16,7 @@ void Export_pystes_UGFxTextListDefinition()
         .def_readwrite("TextNormalColor", &UGFxTextListDefinition::TextNormalColor)
         .def_readwrite("TextHighlightColor", &UGFxTextListDefinition::TextHighlightColor)
         .def_readwrite("InitialEntryCount", &UGFxTextListDefinition::InitialEntryCount)
-        .def("StaticClass", &UGFxTextListDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxTextListDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

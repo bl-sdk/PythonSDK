@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APointLightToggleable()
 {
-    class_< APointLightToggleable, bases< APointLight >  , boost::noncopyable>("APointLightToggleable", no_init)
-        .def("StaticClass", &APointLightToggleable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< APointLightToggleable,  APointLight   >("APointLightToggleable")
+        .def("StaticClass", &APointLightToggleable::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &APointLightToggleable::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &APointLightToggleable::CreateCheckpointRecord)
         .def("ShouldSaveForCheckpoint", &APointLightToggleable::ShouldSaveForCheckpoint)

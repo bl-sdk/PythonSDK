@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTradingGFxMovie()
 {
-    class_< UTradingGFxMovie, bases< UWillowInventoryGFxMovie >  , boost::noncopyable>("UTradingGFxMovie", no_init)
+    py::class_< UTradingGFxMovie,  UWillowInventoryGFxMovie   >("UTradingGFxMovie")
         .def_readwrite("OfferingString", &UTradingGFxMovie::OfferingString)
         .def_readwrite("ReceivingString", &UTradingGFxMovie::ReceivingString)
         .def_readwrite("TooltipString", &UTradingGFxMovie::TooltipString)
@@ -29,14 +29,14 @@ void Export_pystes_UTradingGFxMovie()
         .def_readwrite("GenericSortConfigurations", &UTradingGFxMovie::GenericSortConfigurations)
         .def_readwrite("GenericSortConfigIndex", &UTradingGFxMovie::GenericSortConfigIndex)
         .def_readwrite("LastMoneyOfferString", &UTradingGFxMovie::LastMoneyOfferString)
-        .def("StaticClass", &UTradingGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTradingGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("UpdateMoneyOfferFromTextbox", &UTradingGFxMovie::UpdateMoneyOfferFromTextbox)
         .def("extGenericButtonClicked", &UTradingGFxMovie::extGenericButtonClicked)
         .def("extMoneyWidgetActivated", &UTradingGFxMovie::extMoneyWidgetActivated)
         .def("FreeCellData", &UTradingGFxMovie::FreeCellData)
-        .def("GetLocalInvForTradeSlot", &UTradingGFxMovie::GetLocalInvForTradeSlot, return_value_policy< reference_existing_object >())
+        .def("GetLocalInvForTradeSlot", &UTradingGFxMovie::GetLocalInvForTradeSlot, py::return_value_policy::reference)
         .def("OnPartnerInvChanged", &UTradingGFxMovie::OnPartnerInvChanged)
-        .def("GetOfferedCellInventory", &UTradingGFxMovie::GetOfferedCellInventory, return_value_policy< reference_existing_object >())
+        .def("GetOfferedCellInventory", &UTradingGFxMovie::GetOfferedCellInventory, py::return_value_policy::reference)
         .def("UpdateTimer", &UTradingGFxMovie::UpdateTimer)
         .def("extSetDuel", &UTradingGFxMovie::extSetDuel)
         .def("extSetTrade", &UTradingGFxMovie::extSetTrade)
@@ -51,7 +51,7 @@ void Export_pystes_UTradingGFxMovie()
         .def("eventBeginClosing", &UTradingGFxMovie::eventBeginClosing)
         .def("InitTradingScreen", &UTradingGFxMovie::InitTradingScreen)
         .def("SetTooltips", &UTradingGFxMovie::SetTooltips)
-        .def("GetTradeManager", &UTradingGFxMovie::GetTradeManager, return_value_policy< reference_existing_object >())
+        .def("GetTradeManager", &UTradingGFxMovie::GetTradeManager, py::return_value_policy::reference)
         .def("InitCellData", &UTradingGFxMovie::InitCellData)
         .def("IsOffering", &UTradingGFxMovie::IsOffering)
         .def("AddInventory", &UTradingGFxMovie::AddInventory)

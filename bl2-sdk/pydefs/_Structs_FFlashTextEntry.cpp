@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFlashTextEntry()
 {
-    class_< FFlashTextEntry >("FFlashTextEntry", no_init)
+    py::class_< FFlashTextEntry >("FFlashTextEntry")
         .def_readwrite("TextEntry", &FFlashTextEntry::TextEntry)
         .def_readwrite("IconFrameLabel", &FFlashTextEntry::IconFrameLabel)
         .def_readwrite("ArrayType", &FFlashTextEntry::ArrayType)

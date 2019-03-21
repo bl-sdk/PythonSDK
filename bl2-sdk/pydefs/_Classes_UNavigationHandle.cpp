@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavigationHandle()
 {
-    class_< UNavigationHandle, bases< UObject >  , boost::noncopyable>("UNavigationHandle", no_init)
+    py::class_< UNavigationHandle,  UObject   >("UNavigationHandle")
         .def_readwrite("AnchorPylon", &UNavigationHandle::AnchorPylon)
         .def_readwrite("AnchorPoly", &UNavigationHandle::AnchorPoly)
         .def_readwrite("PathCache", &UNavigationHandle::PathCache)
@@ -21,7 +21,7 @@ void Export_pystes_UNavigationHandle()
         .def_readonly("Breadcrumbs", &UNavigationHandle::Breadcrumbs)
         .def_readwrite("BreadCrumbMostRecentIdx", &UNavigationHandle::BreadCrumbMostRecentIdx)
         .def_readwrite("BreadCrumbDistanceInterval", &UNavigationHandle::BreadCrumbDistanceInterval)
-        .def("StaticClass", &UNavigationHandle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavigationHandle::StaticClass, py::return_value_policy::reference)
         .def("DrawBreadCrumbs", &UNavigationHandle::DrawBreadCrumbs)
         .def("StaticGetValidatedAnchorPosition", &UNavigationHandle::StaticGetValidatedAnchorPosition)
         .def("GetValidatedAnchorPosition", &UNavigationHandle::GetValidatedAnchorPosition)
@@ -51,15 +51,15 @@ void Export_pystes_UNavigationHandle()
         .def("SetFinalDestination", &UNavigationHandle::SetFinalDestination)
         .def("PullString", &UNavigationHandle::PullString)
         .def("GetNextMoveLocation", &UNavigationHandle::GetNextMoveLocation)
-        .def("GetPylonFromPos", &UNavigationHandle::GetPylonFromPos, return_value_policy< reference_existing_object >())
+        .def("GetPylonFromPos", &UNavigationHandle::GetPylonFromPos, py::return_value_policy::reference)
         .def("FindPylon", &UNavigationHandle::FindPylon)
         .def("GetBestUnfinishedPathPoint", &UNavigationHandle::GetBestUnfinishedPathPoint)
         .def("PathCache_RemoveIndex", &UNavigationHandle::PathCache_RemoveIndex)
         .def("PathCache_GetGoalPoint", &UNavigationHandle::PathCache_GetGoalPoint)
         .def("PathCache_Empty", &UNavigationHandle::PathCache_Empty)
         .def("GetPathCacheLength", &UNavigationHandle::GetPathCacheLength)
-        .def("CreatePathGoalEvaluator", &UNavigationHandle::CreatePathGoalEvaluator, return_value_policy< reference_existing_object >())
-        .def("CreatePathConstraint", &UNavigationHandle::CreatePathConstraint, return_value_policy< reference_existing_object >())
+        .def("CreatePathGoalEvaluator", &UNavigationHandle::CreatePathGoalEvaluator, py::return_value_policy::reference)
+        .def("CreatePathConstraint", &UNavigationHandle::CreatePathConstraint, py::return_value_policy::reference)
         .def("DoesPylonAHaveAPathToPylonB", &UNavigationHandle::DoesPylonAHaveAPathToPylonB)
         .def("AddGoalEvaluator", &UNavigationHandle::AddGoalEvaluator)
         .def("AddPathConstraint", &UNavigationHandle::AddPathConstraint)

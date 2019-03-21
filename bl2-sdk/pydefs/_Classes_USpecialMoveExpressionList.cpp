@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMoveExpressionList()
 {
-    class_< USpecialMoveExpressionList, bases< USpecialMoveDefinition >  , boost::noncopyable>("USpecialMoveExpressionList", no_init)
+    py::class_< USpecialMoveExpressionList,  USpecialMoveDefinition   >("USpecialMoveExpressionList")
         .def_readwrite("SpecialMoveList", &USpecialMoveExpressionList::SpecialMoveList)
-        .def("StaticClass", &USpecialMoveExpressionList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpecialMoveExpressionList::StaticClass, py::return_value_policy::reference)
         .def("Contains", &USpecialMoveExpressionList::Contains)
-        .def("GetSMDToPlay", &USpecialMoveExpressionList::GetSMDToPlay, return_value_policy< reference_existing_object >())
+        .def("GetSMDToPlay", &USpecialMoveExpressionList::GetSMDToPlay, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDamageTypeDefinition()
 {
-    class_< UWillowDamageTypeDefinition, bases< UDamageTypeDefinition >  , boost::noncopyable>("UWillowDamageTypeDefinition", no_init)
+    py::class_< UWillowDamageTypeDefinition,  UDamageTypeDefinition   >("UWillowDamageTypeDefinition")
         .def_readwrite("FleshDamageModifier", &UWillowDamageTypeDefinition::FleshDamageModifier)
         .def_readwrite("ArmorDamageModifier", &UWillowDamageTypeDefinition::ArmorDamageModifier)
         .def_readwrite("ShieldDamageModifier", &UWillowDamageTypeDefinition::ShieldDamageModifier)
@@ -27,7 +27,7 @@ void Export_pystes_UWillowDamageTypeDefinition()
         .def_readwrite("HardFlinchPercent", &UWillowDamageTypeDefinition::HardFlinchPercent)
         .def_readwrite("DamageDealtStatId", &UWillowDamageTypeDefinition::DamageDealtStatId)
         .def_readwrite("DamageLanguageId", &UWillowDamageTypeDefinition::DamageLanguageId)
-        .def("StaticClass", &UWillowDamageTypeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDamageTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDamageTypeModifiers", &UWillowDamageTypeDefinition::GetDamageTypeModifiers)
         .def("eventDisplayRecentDamageForPlayer", &UWillowDamageTypeDefinition::eventDisplayRecentDamageForPlayer)
         .def("HasPlayerRecentDamageFlags", &UWillowDamageTypeDefinition::HasPlayerRecentDamageFlags)

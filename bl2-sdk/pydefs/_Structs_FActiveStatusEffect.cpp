@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActiveStatusEffect()
 {
-    class_< FActiveStatusEffect >("FActiveStatusEffect", no_init)
+    py::class_< FActiveStatusEffect >("FActiveStatusEffect")
         .def_readwrite("Duration", &FActiveStatusEffect::Duration)
         .def_readwrite("TotalElapsedTime", &FActiveStatusEffect::TotalElapsedTime)
         .def_readwrite("AccumulatedTime", &FActiveStatusEffect::AccumulatedTime)

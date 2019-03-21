@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_SetCurrentProjectile()
 {
-    class_< UPlayerBehavior_SetCurrentProjectile, bases< UPlayerBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_SetCurrentProjectile", no_init)
+    py::class_< UPlayerBehavior_SetCurrentProjectile,  UPlayerBehaviorBase   >("UPlayerBehavior_SetCurrentProjectile")
         .def_readwrite("CurrentProjectile", &UPlayerBehavior_SetCurrentProjectile::CurrentProjectile)
-        .def("StaticClass", &UPlayerBehavior_SetCurrentProjectile::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerBehavior_SetCurrentProjectile::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_SetCurrentProjectile::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHUDCoordValue()
 {
-    class_< FHUDCoordValue >("FHUDCoordValue", no_init)
+    py::class_< FHUDCoordValue >("FHUDCoordValue")
         .def_readwrite("Type", &FHUDCoordValue::Type)
         .def_readwrite("Value", &FHUDCoordValue::Value)
         .def_readwrite("CurrentValue", &FHUDCoordValue::CurrentValue)

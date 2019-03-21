@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavMeshPath_SameCoverLink()
 {
-    class_< UNavMeshPath_SameCoverLink, bases< UNavMeshPathConstraint >  , boost::noncopyable>("UNavMeshPath_SameCoverLink", no_init)
+    py::class_< UNavMeshPath_SameCoverLink,  UNavMeshPathConstraint   >("UNavMeshPath_SameCoverLink")
         .def_readwrite("TestLink", &UNavMeshPath_SameCoverLink::TestLink)
-        .def("StaticClass", &UNavMeshPath_SameCoverLink::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavMeshPath_SameCoverLink::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshPath_SameCoverLink::Recycle)
         .def("SameCoverLink", &UNavMeshPath_SameCoverLink::SameCoverLink)
         .staticmethod("StaticClass")

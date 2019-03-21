@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AFluidSurfaceActor()
 {
-    class_< AFluidSurfaceActor, bases< AActor >  , boost::noncopyable>("AFluidSurfaceActor", no_init)
+    py::class_< AFluidSurfaceActor,  AActor   >("AFluidSurfaceActor")
         .def_readwrite("FluidComponent", &AFluidSurfaceActor::FluidComponent)
         .def_readwrite("ProjectileEntryEffect", &AFluidSurfaceActor::ProjectileEntryEffect)
-        .def("StaticClass", &AFluidSurfaceActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AFluidSurfaceActor::StaticClass, py::return_value_policy::reference)
         .def("eventTouch", &AFluidSurfaceActor::eventTouch)
         .def("eventTakeDamage", &AFluidSurfaceActor::eventTakeDamage)
         .staticmethod("StaticClass")

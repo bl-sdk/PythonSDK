@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCharacterSelectionGFxObject()
 {
-    class_< UCharacterSelectionGFxObject, bases< UGFxObject >  , boost::noncopyable>("UCharacterSelectionGFxObject", no_init)
-        .def("StaticClass", &UCharacterSelectionGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCharacterSelectionGFxObject,  UGFxObject   >("UCharacterSelectionGFxObject")
+        .def("StaticClass", &UCharacterSelectionGFxObject::StaticClass, py::return_value_policy::reference)
         .def("FadeIn", &UCharacterSelectionGFxObject::FadeIn)
         .def("BeginClose", &UCharacterSelectionGFxObject::BeginClose)
         .def("ConfigureForPause", &UCharacterSelectionGFxObject::ConfigureForPause)

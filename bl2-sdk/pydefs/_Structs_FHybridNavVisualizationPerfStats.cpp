@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHybridNavVisualizationPerfStats()
 {
-    class_< FHybridNavVisualizationPerfStats >("FHybridNavVisualizationPerfStats", no_init)
+    py::class_< FHybridNavVisualizationPerfStats >("FHybridNavVisualizationPerfStats")
         .def_readwrite("VisualizationBuildingStartTime", &FHybridNavVisualizationPerfStats::VisualizationBuildingStartTime)
         .def_readwrite("VisualizationBuildingEndTime", &FHybridNavVisualizationPerfStats::VisualizationBuildingEndTime)
         .def_readwrite("CyclesBuildingVisualization", &FHybridNavVisualizationPerfStats::CyclesBuildingVisualization)

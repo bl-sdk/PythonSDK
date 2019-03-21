@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDistributionVectorUniformCurve()
 {
-    class_< UDistributionVectorUniformCurve, bases< UDistributionVector >  , boost::noncopyable>("UDistributionVectorUniformCurve", no_init)
+    py::class_< UDistributionVectorUniformCurve,  UDistributionVector   >("UDistributionVectorUniformCurve")
         .def_readwrite("ConstantCurve", &UDistributionVectorUniformCurve::ConstantCurve)
         .def_readonly("LockedAxes", &UDistributionVectorUniformCurve::LockedAxes)
         .def_readonly("MirrorFlags", &UDistributionVectorUniformCurve::MirrorFlags)
-        .def("StaticClass", &UDistributionVectorUniformCurve::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDistributionVectorUniformCurve::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

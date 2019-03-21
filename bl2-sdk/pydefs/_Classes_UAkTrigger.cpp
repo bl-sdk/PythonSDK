@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAkTrigger()
 {
-    class_< UAkTrigger, bases< UAkObject >  , boost::noncopyable>("UAkTrigger", no_init)
-        .def("StaticClass", &UAkTrigger::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAkTrigger,  UAkObject   >("UAkTrigger")
+        .def("StaticClass", &UAkTrigger::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

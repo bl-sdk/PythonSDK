@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDefaultInputContextSelector()
 {
-    class_< UDefaultInputContextSelector, bases< UInputContextSelectorBase >  , boost::noncopyable>("UDefaultInputContextSelector", no_init)
-        .def("StaticClass", &UDefaultInputContextSelector::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDefaultInputContextSelector,  UInputContextSelectorBase   >("UDefaultInputContextSelector")
+        .def("StaticClass", &UDefaultInputContextSelector::StaticClass, py::return_value_policy::reference)
         .def("SelectContext", &UDefaultInputContextSelector::SelectContext)
         .staticmethod("StaticClass")
   ;

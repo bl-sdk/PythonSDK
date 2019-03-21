@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryClone()
 {
-    class_< UActorFactoryClone, bases< UActorFactory >  , boost::noncopyable>("UActorFactoryClone", no_init)
+    py::class_< UActorFactoryClone,  UActorFactory   >("UActorFactoryClone")
         .def_readwrite("CloneArchetype", &UActorFactoryClone::CloneArchetype)
         .def_readwrite("NewCloneTag", &UActorFactoryClone::NewCloneTag)
-        .def("StaticClass", &UActorFactoryClone::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorFactoryClone::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionObjectiveSetBranchingDefinition()
 {
-    class_< UMissionObjectiveSetBranchingDefinition, bases< UMissionObjectiveSetDefinition >  , boost::noncopyable>("UMissionObjectiveSetBranchingDefinition", no_init)
+    py::class_< UMissionObjectiveSetBranchingDefinition,  UMissionObjectiveSetDefinition   >("UMissionObjectiveSetBranchingDefinition")
         .def_readwrite("BranchedObjectiveDefinitions", &UMissionObjectiveSetBranchingDefinition::BranchedObjectiveDefinitions)
-        .def("StaticClass", &UMissionObjectiveSetBranchingDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionObjectiveSetBranchingDefinition::StaticClass, py::return_value_policy::reference)
         .def("ContainsObjective", &UMissionObjectiveSetBranchingDefinition::ContainsObjective)
         .staticmethod("StaticClass")
   ;

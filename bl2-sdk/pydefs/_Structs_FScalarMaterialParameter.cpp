@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScalarMaterialParameter()
 {
-    class_< FScalarMaterialParameter >("FScalarMaterialParameter", no_init)
+    py::class_< FScalarMaterialParameter >("FScalarMaterialParameter")
         .def_readwrite("Name", &FScalarMaterialParameter::Name)
         .def_readwrite("Value", &FScalarMaterialParameter::Value)
         .def_readwrite("ValueFromAttribute", &FScalarMaterialParameter::ValueFromAttribute)

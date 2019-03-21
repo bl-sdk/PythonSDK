@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControlBase()
 {
-    class_< USkelControlBase, bases< UAnimObject >  , boost::noncopyable>("USkelControlBase", no_init)
+    py::class_< USkelControlBase,  UAnimObject   >("USkelControlBase")
         .def_readwrite("ControlName", &USkelControlBase::ControlName)
         .def_readwrite("ControlStrength", &USkelControlBase::ControlStrength)
         .def_readwrite("BlendInTime", &USkelControlBase::BlendInTime)
@@ -23,7 +23,7 @@ void Export_pystes_USkelControlBase()
         .def_readwrite("NextControl", &USkelControlBase::NextControl)
         .def_readwrite("ControlPosX", &USkelControlBase::ControlPosX)
         .def_readwrite("ControlPosY", &USkelControlBase::ControlPosY)
-        .def("StaticClass", &USkelControlBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControlBase::StaticClass, py::return_value_policy::reference)
         .def("GetControlMetadataWeight", &USkelControlBase::GetControlMetadataWeight)
         .def("eventTickSkelControl", &USkelControlBase::eventTickSkelControl)
         .def("SetSkelControlStrength", &USkelControlBase::SetSkelControlStrength)

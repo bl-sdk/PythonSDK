@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UClassModBalanceDefinition()
 {
-    class_< UClassModBalanceDefinition, bases< UItemBalanceDefinition >  , boost::noncopyable>("UClassModBalanceDefinition", no_init)
+    py::class_< UClassModBalanceDefinition,  UItemBalanceDefinition   >("UClassModBalanceDefinition")
         .def_readwrite("ClassModDefinitions", &UClassModBalanceDefinition::ClassModDefinitions)
-        .def("StaticClass", &UClassModBalanceDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UClassModBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetClassModDefSpawnedByBalanceDef", &UClassModBalanceDefinition::GetClassModDefSpawnedByBalanceDef)
-        .def("GetInventoryDefinitionForManufacturerGrade", &UClassModBalanceDefinition::GetInventoryDefinitionForManufacturerGrade, return_value_policy< reference_existing_object >())
+        .def("GetInventoryDefinitionForManufacturerGrade", &UClassModBalanceDefinition::GetInventoryDefinitionForManufacturerGrade, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

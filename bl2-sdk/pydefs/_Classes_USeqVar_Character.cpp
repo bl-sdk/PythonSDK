@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqVar_Character()
 {
-    class_< USeqVar_Character, bases< USeqVar_Object >  , boost::noncopyable>("USeqVar_Character", no_init)
+    py::class_< USeqVar_Character,  USeqVar_Object   >("USeqVar_Character")
         .def_readwrite("PawnClass", &USeqVar_Character::PawnClass)
-        .def("StaticClass", &USeqVar_Character::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqVar_Character::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

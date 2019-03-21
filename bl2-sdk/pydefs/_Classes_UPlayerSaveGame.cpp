@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerSaveGame()
 {
-    class_< UPlayerSaveGame, bases< UObject >  , boost::noncopyable>("UPlayerSaveGame", no_init)
+    py::class_< UPlayerSaveGame,  UObject   >("UPlayerSaveGame")
         .def_readwrite("UIPreferences", &UPlayerSaveGame::UIPreferences)
         .def_readwrite("PlayerClassDefinition", &UPlayerSaveGame::PlayerClassDefinition)
         .def_readwrite("ExpLevel", &UPlayerSaveGame::ExpLevel)
@@ -57,7 +57,7 @@ void Export_pystes_UPlayerSaveGame()
         .def_readwrite("NumOverpowerLevelsUnlocked", &UPlayerSaveGame::NumOverpowerLevelsUnlocked)
         .def_readwrite("LastOverpowerChoice", &UPlayerSaveGame::LastOverpowerChoice)
         .def_readwrite("ChosenVehicleCustomizations", &UPlayerSaveGame::ChosenVehicleCustomizations)
-        .def("StaticClass", &UPlayerSaveGame::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerSaveGame::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHitRegionDamage()
 {
-    class_< FHitRegionDamage >("FHitRegionDamage", no_init)
+    py::class_< FHitRegionDamage >("FHitRegionDamage")
         .def_readwrite("BodyHitRegion", &FHitRegionDamage::BodyHitRegion)
         .def_readwrite("Damage", &FHitRegionDamage::Damage)
         .def_readwrite("RecentDamage", &FHitRegionDamage::RecentDamage)

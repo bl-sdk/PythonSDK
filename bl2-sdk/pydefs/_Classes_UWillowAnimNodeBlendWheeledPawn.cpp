@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimNodeBlendWheeledPawn()
 {
-    class_< UWillowAnimNodeBlendWheeledPawn, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UWillowAnimNodeBlendWheeledPawn", no_init)
+    py::class_< UWillowAnimNodeBlendWheeledPawn,  UAnimNodeBlendBase   >("UWillowAnimNodeBlendWheeledPawn")
         .def_readwrite("DirChangeRateMin", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMin)
         .def_readwrite("DirChangeRateMax", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMax)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendWheeledPawn::BlendTime)
@@ -16,7 +16,7 @@ void Export_pystes_UWillowAnimNodeBlendWheeledPawn()
         .def_readwrite("IdleBlendTime", &UWillowAnimNodeBlendWheeledPawn::IdleBlendTime)
         .def_readwrite("DirAngle", &UWillowAnimNodeBlendWheeledPawn::DirAngle)
         .def_readwrite("CurSpeed", &UWillowAnimNodeBlendWheeledPawn::CurSpeed)
-        .def("StaticClass", &UWillowAnimNodeBlendWheeledPawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAnimNodeBlendWheeledPawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPawnInteractionDefinition()
 {
-    class_< UWillowPawnInteractionDefinition, bases< UPawnInteractionDefinition >  , boost::noncopyable>("UWillowPawnInteractionDefinition", no_init)
+    py::class_< UWillowPawnInteractionDefinition,  UPawnInteractionDefinition   >("UWillowPawnInteractionDefinition")
         .def_readwrite("HUDIcon", &UWillowPawnInteractionDefinition::HUDIcon)
         .def_readwrite("HUDIconDef", &UWillowPawnInteractionDefinition::HUDIconDef)
         .def_readwrite("HUDIconDefSecondary", &UWillowPawnInteractionDefinition::HUDIconDefSecondary)
-        .def("StaticClass", &UWillowPawnInteractionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPawnInteractionDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

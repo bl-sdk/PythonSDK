@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFloatProperty()
 {
-    class_< UFloatProperty, bases< UProperty >  , boost::noncopyable>("UFloatProperty", no_init)
-        .def("StaticClass", &UFloatProperty::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UFloatProperty,  UProperty   >("UFloatProperty")
+        .def("StaticClass", &UFloatProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

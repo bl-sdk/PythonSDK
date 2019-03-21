@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleTypeDataTrail2()
 {
-    class_< UParticleModuleTypeDataTrail2, bases< UParticleModuleTypeDataBase >  , boost::noncopyable>("UParticleModuleTypeDataTrail2", no_init)
+    py::class_< UParticleModuleTypeDataTrail2,  UParticleModuleTypeDataBase   >("UParticleModuleTypeDataTrail2")
         .def_readwrite("TessellationFactor", &UParticleModuleTypeDataTrail2::TessellationFactor)
         .def_readwrite("TessellationFactorDistance", &UParticleModuleTypeDataTrail2::TessellationFactorDistance)
         .def_readwrite("TessellationStrength", &UParticleModuleTypeDataTrail2::TessellationStrength)
@@ -13,7 +13,7 @@ void Export_pystes_UParticleModuleTypeDataTrail2()
         .def_readwrite("Sheets", &UParticleModuleTypeDataTrail2::Sheets)
         .def_readwrite("MaxTrailCount", &UParticleModuleTypeDataTrail2::MaxTrailCount)
         .def_readwrite("MaxParticleInTrailCount", &UParticleModuleTypeDataTrail2::MaxParticleInTrailCount)
-        .def("StaticClass", &UParticleModuleTypeDataTrail2::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleTypeDataTrail2::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

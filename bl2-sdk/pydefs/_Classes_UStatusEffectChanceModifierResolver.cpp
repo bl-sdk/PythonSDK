@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusEffectChanceModifierResolver()
 {
-    class_< UStatusEffectChanceModifierResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UStatusEffectChanceModifierResolver", no_init)
-        .def("StaticClass", &UStatusEffectChanceModifierResolver::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetAttributeContext", &UStatusEffectChanceModifierResolver::GetAttributeContext, return_value_policy< reference_existing_object >())
+    py::class_< UStatusEffectChanceModifierResolver,  UAttributeContextResolver   >("UStatusEffectChanceModifierResolver")
+        .def("StaticClass", &UStatusEffectChanceModifierResolver::StaticClass, py::return_value_policy::reference)
+        .def("GetAttributeContext", &UStatusEffectChanceModifierResolver::GetAttributeContext, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoverReplicationInfo()
 {
-    class_< FCoverReplicationInfo >("FCoverReplicationInfo", no_init)
+    py::class_< FCoverReplicationInfo >("FCoverReplicationInfo")
         .def_readwrite("Link", &FCoverReplicationInfo::Link)
         .def_readwrite("SlotsEnabled", &FCoverReplicationInfo::SlotsEnabled)
         .def_readwrite("SlotsDisabled", &FCoverReplicationInfo::SlotsDisabled)

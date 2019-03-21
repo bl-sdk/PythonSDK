@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPostProcessEffect()
 {
-    class_< UPostProcessEffect, bases< UObject >  , boost::noncopyable>("UPostProcessEffect", no_init)
+    py::class_< UPostProcessEffect,  UObject   >("UPostProcessEffect")
         .def_readwrite("EffectName", &UPostProcessEffect::EffectName)
         .def_readwrite("NodePosY", &UPostProcessEffect::NodePosY)
         .def_readwrite("NodePosX", &UPostProcessEffect::NodePosX)
@@ -14,7 +14,7 @@ void Export_pystes_UPostProcessEffect()
         .def_readwrite("OutDrawY", &UPostProcessEffect::OutDrawY)
         .def_readwrite("InDrawY", &UPostProcessEffect::InDrawY)
         .def_readwrite("SceneDPG", &UPostProcessEffect::SceneDPG)
-        .def("StaticClass", &UPostProcessEffect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPostProcessEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

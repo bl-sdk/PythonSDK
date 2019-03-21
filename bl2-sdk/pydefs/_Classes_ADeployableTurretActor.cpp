@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADeployableTurretActor()
 {
-    class_< ADeployableTurretActor, bases< AWillowAIPawn >  , boost::noncopyable>("ADeployableTurretActor", no_init)
+    py::class_< ADeployableTurretActor,  AWillowAIPawn   >("ADeployableTurretActor")
         .def_readwrite("BounceImpact", &ADeployableTurretActor::BounceImpact)
         .def_readwrite("AtRestSpeedThreshold", &ADeployableTurretActor::AtRestSpeedThreshold)
         .def_readwrite("TurretEffects", &ADeployableTurretActor::TurretEffects)
         .def_readwrite("TurretDamagePct", &ADeployableTurretActor::TurretDamagePct)
         .def_readwrite("DamageEffectTriggers", &ADeployableTurretActor::DamageEffectTriggers)
-        .def("StaticClass", &ADeployableTurretActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADeployableTurretActor::StaticClass, py::return_value_policy::reference)
         .def("PostSpawnCheckForPlayerOverlap", &ADeployableTurretActor::PostSpawnCheckForPlayerOverlap)
         .def("PostInitBodyComposition", &ADeployableTurretActor::PostInitBodyComposition)
         .def("FindBase", &ADeployableTurretActor::FindBase)

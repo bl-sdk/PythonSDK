@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScaleformPortraitData()
 {
-    class_< FScaleformPortraitData >("FScaleformPortraitData", no_init)
+    py::class_< FScaleformPortraitData >("FScaleformPortraitData")
         .def_readwrite("ScaleformName", &FScaleformPortraitData::ScaleformName)
         .def_readwrite("PortraitMovie", &FScaleformPortraitData::PortraitMovie)
   ;

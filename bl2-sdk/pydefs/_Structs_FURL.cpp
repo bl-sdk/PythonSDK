@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FURL()
 {
-    class_< FURL >("FURL", no_init)
+    py::class_< FURL >("FURL")
         .def_readwrite("Protocol", &FURL::Protocol)
         .def_readwrite("Host", &FURL::Host)
         .def_readwrite("Port", &FURL::Port)

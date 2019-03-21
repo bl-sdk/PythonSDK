@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFColorVertexBuffer_Mirror()
 {
-    class_< FFColorVertexBuffer_Mirror >("FFColorVertexBuffer_Mirror", no_init)
+    py::class_< FFColorVertexBuffer_Mirror >("FFColorVertexBuffer_Mirror")
         .def_readwrite("VfTable", &FFColorVertexBuffer_Mirror::VfTable)
         .def_readwrite("VertexData", &FFColorVertexBuffer_Mirror::VertexData)
         .def_readwrite("Data", &FFColorVertexBuffer_Mirror::Data)

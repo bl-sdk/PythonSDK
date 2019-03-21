@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIDamageable()
 {
-    class_< UIDamageable, bases< UInterface >  , boost::noncopyable>("UIDamageable", no_init)
-        .def("StaticClass", &UIDamageable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIDamageable,  UInterface   >("UIDamageable")
+        .def("StaticClass", &UIDamageable::StaticClass, py::return_value_policy::reference)
         .def("GetDamageSurfaceTypeFromHit", &UIDamageable::GetDamageSurfaceTypeFromHit)
         .def("GetIntrinsicArmor", &UIDamageable::GetIntrinsicArmor)
         .def("ShieldAbsorbedAmmo", &UIDamageable::ShieldAbsorbedAmmo)

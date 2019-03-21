@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTierLayout()
 {
-    class_< FTierLayout >("FTierLayout", no_init)
+    py::class_< FTierLayout >("FTierLayout")
         .def_readwrite("bCellIsOccupied", &FTierLayout::bCellIsOccupied)
   ;
 }

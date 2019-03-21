@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameUISceneClient()
 {
-    class_< UGameUISceneClient, bases< UUIRoot >  , boost::noncopyable>("UGameUISceneClient", no_init)
+    py::class_< UGameUISceneClient,  UUIRoot   >("UGameUISceneClient")
         .def_readwrite("LatestDeltaTime", &UGameUISceneClient::LatestDeltaTime)
         .def_readwrite("DoubleClickStartTime", &UGameUISceneClient::DoubleClickStartTime)
         .def_readwrite("DoubleClickStartPosition", &UGameUISceneClient::DoubleClickStartPosition)
@@ -20,7 +20,7 @@ void Export_pystes_UGameUISceneClient()
         .def_readwrite("CanvasToScreen", &UUISceneClient::CanvasToScreen)
         .def_readwrite("InvCanvasToScreen", &UUISceneClient::InvCanvasToScreen)
         .def_readwrite("UIScenePostProcess", &UUISceneClient::UIScenePostProcess)
-        .def("StaticClass", &UGameUISceneClient::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameUISceneClient::StaticClass, py::return_value_policy::reference)
         .def("FindLocalPlayerIndex", &UGameUISceneClient::FindLocalPlayerIndex)
         .def("NotifyPlayerRemoved", &UGameUISceneClient::NotifyPlayerRemoved)
         .def("NotifyPlayerAdded", &UGameUISceneClient::NotifyPlayerAdded)

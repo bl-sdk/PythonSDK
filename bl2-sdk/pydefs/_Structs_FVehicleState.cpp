@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVehicleState()
 {
-    class_< FVehicleState >("FVehicleState", no_init)
+    py::class_< FVehicleState >("FVehicleState")
         .def_readwrite("RBState", &FVehicleState::RBState)
         .def_readwrite("ServerBrake", &FVehicleState::ServerBrake)
         .def_readwrite("ServerGas", &FVehicleState::ServerGas)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimNodeBlendInjured()
 {
-    class_< UWillowAnimNodeBlendInjured, bases< UAnimNodeBlendList >  , boost::noncopyable>("UWillowAnimNodeBlendInjured", no_init)
+    py::class_< UWillowAnimNodeBlendInjured,  UAnimNodeBlendList   >("UWillowAnimNodeBlendInjured")
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendInjured::BlendTime)
-        .def("StaticClass", &UWillowAnimNodeBlendInjured::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAnimNodeBlendInjured::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

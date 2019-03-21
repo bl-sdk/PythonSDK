@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTwoPanelInterfaceGFxDefinition()
 {
-    class_< UTwoPanelInterfaceGFxDefinition, bases< UWillowInventoryGFxDefinition >  , boost::noncopyable>("UTwoPanelInterfaceGFxDefinition", no_init)
+    py::class_< UTwoPanelInterfaceGFxDefinition,  UWillowInventoryGFxDefinition   >("UTwoPanelInterfaceGFxDefinition")
         .def_readwrite("PathToBackgroundArtClip", &UTwoPanelInterfaceGFxDefinition::PathToBackgroundArtClip)
-        .def("StaticClass", &UTwoPanelInterfaceGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTwoPanelInterfaceGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

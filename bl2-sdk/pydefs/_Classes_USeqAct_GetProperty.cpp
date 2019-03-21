@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_GetProperty()
 {
-    class_< USeqAct_GetProperty, bases< USequenceAction >  , boost::noncopyable>("USeqAct_GetProperty", no_init)
+    py::class_< USeqAct_GetProperty,  USequenceAction   >("USeqAct_GetProperty")
         .def_readwrite("PropertyName", &USeqAct_GetProperty::PropertyName)
-        .def("StaticClass", &USeqAct_GetProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_GetProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActionSequenceList()
 {
-    class_< UActionSequenceList, bases< UActionSequence >  , boost::noncopyable>("UActionSequenceList", no_init)
+    py::class_< UActionSequenceList,  UActionSequence   >("UActionSequenceList")
         .def_readwrite("CurrentIndex", &UActionSequenceList::CurrentIndex)
-        .def("StaticClass", &UActionSequenceList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActionSequenceList::StaticClass, py::return_value_policy::reference)
         .def("IsActionReadyToFinish", &UActionSequenceList::IsActionReadyToFinish)
         .staticmethod("StaticClass")
   ;

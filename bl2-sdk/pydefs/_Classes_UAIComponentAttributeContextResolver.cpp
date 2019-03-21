@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIComponentAttributeContextResolver()
 {
-    class_< UAIComponentAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UAIComponentAttributeContextResolver", no_init)
-        .def("StaticClass", &UAIComponentAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetAttributeContext", &UAIComponentAttributeContextResolver::GetAttributeContext, return_value_policy< reference_existing_object >())
+    py::class_< UAIComponentAttributeContextResolver,  UAttributeContextResolver   >("UAIComponentAttributeContextResolver")
+        .def("StaticClass", &UAIComponentAttributeContextResolver::StaticClass, py::return_value_policy::reference)
+        .def("GetAttributeContext", &UAIComponentAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

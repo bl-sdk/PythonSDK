@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackToggle()
 {
-    class_< UInterpTrackToggle, bases< UInterpTrack >  , boost::noncopyable>("UInterpTrackToggle", no_init)
+    py::class_< UInterpTrackToggle,  UInterpTrack   >("UInterpTrackToggle")
         .def_readwrite("ToggleTrack", &UInterpTrackToggle::ToggleTrack)
-        .def("StaticClass", &UInterpTrackToggle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackToggle::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

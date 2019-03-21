@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGFxTextEntry()
 {
-    class_< FGFxTextEntry >("FGFxTextEntry", no_init)
+    py::class_< FGFxTextEntry >("FGFxTextEntry")
         .def_readwrite("ArrayIdx", &FGFxTextEntry::ArrayIdx)
         .def_readwrite("Kind", &FGFxTextEntry::Kind)
   ;

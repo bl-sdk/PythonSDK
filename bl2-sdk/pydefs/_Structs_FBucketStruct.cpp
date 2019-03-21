@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBucketStruct()
 {
-    class_< FBucketStruct >("FBucketStruct", no_init)
+    py::class_< FBucketStruct >("FBucketStruct")
         .def_readwrite("NdxToStartCheckFrom", &FBucketStruct::NdxToStartCheckFrom)
         .def_readwrite("DistanceSquared", &FBucketStruct::DistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &FBucketStruct::MaxLineChecksPerFrame)

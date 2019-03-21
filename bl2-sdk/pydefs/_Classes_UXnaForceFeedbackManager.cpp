@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UXnaForceFeedbackManager()
 {
-    class_< UXnaForceFeedbackManager, bases< UForceFeedbackManager >  , boost::noncopyable>("UXnaForceFeedbackManager", no_init)
-        .def("StaticClass", &UXnaForceFeedbackManager::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UXnaForceFeedbackManager,  UForceFeedbackManager   >("UXnaForceFeedbackManager")
+        .def("StaticClass", &UXnaForceFeedbackManager::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

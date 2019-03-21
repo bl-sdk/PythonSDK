@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeSequenceBlendBase()
 {
-    class_< UAnimNodeSequenceBlendBase, bases< UAnimNodeSequence >  , boost::noncopyable>("UAnimNodeSequenceBlendBase", no_init)
+    py::class_< UAnimNodeSequenceBlendBase,  UAnimNodeSequence   >("UAnimNodeSequenceBlendBase")
         .def_readwrite("Anims", &UAnimNodeSequenceBlendBase::Anims)
-        .def("StaticClass", &UAnimNodeSequenceBlendBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeSequenceBlendBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAkEventResolver()
 {
-    class_< FAkEventResolver >("FAkEventResolver", no_init)
+    py::class_< FAkEventResolver >("FAkEventResolver")
         .def_readwrite("Interaction", &FAkEventResolver::Interaction)
         .def_readwrite("AkEvent", &FAkEventResolver::AkEvent)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBodyClassDefinition()
 {
-    class_< UBodyClassDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBodyClassDefinition", no_init)
+    py::class_< UBodyClassDefinition,  UGBXDefinition   >("UBodyClassDefinition")
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UBodyClassDefinition::VfTable_IIHitRegionInfoProvider)
         .def_readwrite("HeadLookAtName", &UBodyClassDefinition::HeadLookAtName)
         .def_readwrite("BodyTag", &UBodyClassDefinition::BodyTag)
@@ -172,19 +172,19 @@ void Export_pystes_UBodyClassDefinition()
         .def_readwrite("CrawlerFloorAdjustRate", &UBodyClassDefinition::CrawlerFloorAdjustRate)
         .def_readwrite("PhaseLockDef", &UBodyClassDefinition::PhaseLockDef)
         .def_readwrite("DLCVehicleAnimSetMappings", &UBodyClassDefinition::DLCVehicleAnimSetMappings)
-        .def("StaticClass", &UBodyClassDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBodyClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetHitRegions", &UBodyClassDefinition::GetHitRegions)
         .def("ShouldUseUpperBodyMovementBlendForHoldName", &UBodyClassDefinition::ShouldUseUpperBodyMovementBlendForHoldName)
         .def("ShouldUseArmBoneBlendForHoldName", &UBodyClassDefinition::ShouldUseArmBoneBlendForHoldName)
         .def("GetAimOffsetProfileForHoldName", &UBodyClassDefinition::GetAimOffsetProfileForHoldName)
         .def("GetFirstPersonWeaponHoldAnimSets", &UBodyClassDefinition::GetFirstPersonWeaponHoldAnimSets)
         .def("GetWeaponHoldAnimSets", &UBodyClassDefinition::GetWeaponHoldAnimSets)
-        .def("GetFirstPersonWeaponHoldDef", &UBodyClassDefinition::GetFirstPersonWeaponHoldDef, return_value_policy< reference_existing_object >())
-        .def("GetWeaponHoldDef", &UBodyClassDefinition::GetWeaponHoldDef, return_value_policy< reference_existing_object >())
-        .def("GetCloakBody", &UBodyClassDefinition::GetCloakBody, return_value_policy< reference_existing_object >())
+        .def("GetFirstPersonWeaponHoldDef", &UBodyClassDefinition::GetFirstPersonWeaponHoldDef, py::return_value_policy::reference)
+        .def("GetWeaponHoldDef", &UBodyClassDefinition::GetWeaponHoldDef, py::return_value_policy::reference)
+        .def("GetCloakBody", &UBodyClassDefinition::GetCloakBody, py::return_value_policy::reference)
         .def("ShouldCloak", &UBodyClassDefinition::ShouldCloak)
-        .def("GetCringeAnim", &UBodyClassDefinition::GetCringeAnim, return_value_policy< reference_existing_object >())
-        .def("GetKnockbackBody", &UBodyClassDefinition::GetKnockbackBody, return_value_policy< reference_existing_object >())
+        .def("GetCringeAnim", &UBodyClassDefinition::GetCringeAnim, py::return_value_policy::reference)
+        .def("GetKnockbackBody", &UBodyClassDefinition::GetKnockbackBody, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

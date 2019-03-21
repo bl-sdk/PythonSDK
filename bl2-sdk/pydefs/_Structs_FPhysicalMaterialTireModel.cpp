@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPhysicalMaterialTireModel()
 {
-    class_< FPhysicalMaterialTireModel >("FPhysicalMaterialTireModel", no_init)
+    py::class_< FPhysicalMaterialTireModel >("FPhysicalMaterialTireModel")
         .def_readwrite("PhysMaterial", &FPhysicalMaterialTireModel::PhysMaterial)
         .def_readwrite("LongGripScaler", &FPhysicalMaterialTireModel::LongGripScaler)
         .def_readwrite("LatGripScaler", &FPhysicalMaterialTireModel::LatGripScaler)

@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieStatePlayerAware()
 {
-    class_< UGFxMovieStatePlayerAware, bases< UGFxMovieState >  , boost::noncopyable>("UGFxMovieStatePlayerAware", no_init)
+    py::class_< UGFxMovieStatePlayerAware,  UGFxMovieState   >("UGFxMovieStatePlayerAware")
         .def_readwrite("LookAtThreshold", &UGFxMovieStatePlayerAware::LookAtThreshold)
         .def_readwrite("LookStates", &UGFxMovieStatePlayerAware::LookStates)
         .def_readwrite("RangeStates", &UGFxMovieStatePlayerAware::RangeStates)
-        .def("StaticClass", &UGFxMovieStatePlayerAware::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxMovieStatePlayerAware::StaticClass, py::return_value_policy::reference)
         .def("EnableState", &UGFxMovieStatePlayerAware::EnableState)
         .staticmethod("StaticClass")
   ;

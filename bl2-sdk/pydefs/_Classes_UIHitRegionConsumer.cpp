@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIHitRegionConsumer()
 {
-    class_< UIHitRegionConsumer, bases< UInterface >  , boost::noncopyable>("UIHitRegionConsumer", no_init)
-        .def("StaticClass", &UIHitRegionConsumer::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIHitRegionConsumer,  UInterface   >("UIHitRegionConsumer")
+        .def("StaticClass", &UIHitRegionConsumer::StaticClass, py::return_value_policy::reference)
         .def("PlayHit", &UIHitRegionConsumer::PlayHit)
         .def("ResetHitRegionHealth", &UIHitRegionConsumer::ResetHitRegionHealth)
         .def("HealDamageOnHitRegion", &UIHitRegionConsumer::HealDamageOnHitRegion)
@@ -15,7 +15,7 @@ void Export_pystes_UIHitRegionConsumer()
         .def("ReplicateDamageEffect", &UIHitRegionConsumer::ReplicateDamageEffect)
         .def("AddDamageToHitRegion", &UIHitRegionConsumer::AddDamageToHitRegion)
         .def("GetHitRegionHealthValues", &UIHitRegionConsumer::GetHitRegionHealthValues)
-        .def("GetHitRegionForTakenDamage", &UIHitRegionConsumer::GetHitRegionForTakenDamage, return_value_policy< reference_existing_object >())
+        .def("GetHitRegionForTakenDamage", &UIHitRegionConsumer::GetHitRegionForTakenDamage, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

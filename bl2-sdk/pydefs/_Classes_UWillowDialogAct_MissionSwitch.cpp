@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDialogAct_MissionSwitch()
 {
-    class_< UWillowDialogAct_MissionSwitch, bases< UGearboxDialogAction >  , boost::noncopyable>("UWillowDialogAct_MissionSwitch", no_init)
+    py::class_< UWillowDialogAct_MissionSwitch,  UGearboxDialogAction   >("UWillowDialogAct_MissionSwitch")
         .def_readwrite("TrackedState", &UWillowDialogAct_MissionSwitch::TrackedState)
         .def_readwrite("MissionDefinition", &UWillowDialogAct_MissionSwitch::MissionDefinition)
-        .def("StaticClass", &UWillowDialogAct_MissionSwitch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDialogAct_MissionSwitch::StaticClass, py::return_value_policy::reference)
         .def("eventActivate", &UWillowDialogAct_MissionSwitch::eventActivate)
         .staticmethod("StaticClass")
   ;

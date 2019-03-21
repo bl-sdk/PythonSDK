@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPawnRelevanceUtilityCaching()
 {
-    class_< UPawnRelevanceUtilityCaching, bases< UPawnRelevanceUtility >  , boost::noncopyable>("UPawnRelevanceUtilityCaching", no_init)
+    py::class_< UPawnRelevanceUtilityCaching,  UPawnRelevanceUtility   >("UPawnRelevanceUtilityCaching")
         .def_readwrite("MaxCacheTime", &UPawnRelevanceUtilityCaching::MaxCacheTime)
         .def_readwrite("DistanceClose", &UPawnRelevanceUtilityCaching::DistanceClose)
         .def_readwrite("DistanceMed", &UPawnRelevanceUtilityCaching::DistanceMed)
@@ -19,7 +19,7 @@ void Export_pystes_UPawnRelevanceUtilityCaching()
         .def_readwrite("HasMovedDistThreshold", &UPawnRelevanceUtilityCaching::HasMovedDistThreshold)
         .def_readwrite("HasMovedDistThresholdRelevant", &UPawnRelevanceUtilityCaching::HasMovedDistThresholdRelevant)
         .def_readwrite("CachedRelevance", &UPawnRelevanceUtilityCaching::CachedRelevance)
-        .def("StaticClass", &UPawnRelevanceUtilityCaching::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPawnRelevanceUtilityCaching::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

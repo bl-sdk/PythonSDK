@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AScout()
 {
-    class_< AScout, bases< APawn >  , boost::noncopyable>("AScout", no_init)
+    py::class_< AScout,  APawn   >("AScout")
         .def_readwrite("PathSizes", &AScout::PathSizes)
         .def_readwrite("TestJumpZ", &AScout::TestJumpZ)
         .def_readwrite("TestGroundSpeed", &AScout::TestGroundSpeed)
@@ -37,7 +37,7 @@ void Export_pystes_AScout()
         .def_readwrite("MinMantleLateralDist", &AScout::MinMantleLateralDist)
         .def_readwrite("MaxMantleLateralDist", &AScout::MaxMantleLateralDist)
         .def_readwrite("MaxMantleFallTime", &AScout::MaxMantleFallTime)
-        .def("StaticClass", &AScout::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AScout::StaticClass, py::return_value_policy::reference)
         .def("eventPreBeginPlay", &AScout::eventPreBeginPlay)
         .staticmethod("StaticClass")
   ;

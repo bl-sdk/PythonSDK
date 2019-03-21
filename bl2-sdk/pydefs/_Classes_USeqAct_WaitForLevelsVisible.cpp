@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_WaitForLevelsVisible()
 {
-    class_< USeqAct_WaitForLevelsVisible, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_WaitForLevelsVisible", no_init)
+    py::class_< USeqAct_WaitForLevelsVisible,  USeqAct_Latent   >("USeqAct_WaitForLevelsVisible")
         .def_readwrite("LevelNames", &USeqAct_WaitForLevelsVisible::LevelNames)
-        .def("StaticClass", &USeqAct_WaitForLevelsVisible::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_WaitForLevelsVisible::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &USeqAct_WaitForLevelsVisible::eventActivated)
         .def("CheckLevelsVisible", &USeqAct_WaitForLevelsVisible::CheckLevelsVisible)
         .staticmethod("StaticClass")

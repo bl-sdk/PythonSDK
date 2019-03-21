@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDlcTmsHolder()
 {
-    class_< UDlcTmsHolder, bases< UObject >  , boost::noncopyable>("UDlcTmsHolder", no_init)
+    py::class_< UDlcTmsHolder,  UObject   >("UDlcTmsHolder")
         .def_readwrite("PremiumCustomizationList", &UDlcTmsHolder::PremiumCustomizationList)
         .def_readwrite("PremiumClassList", &UDlcTmsHolder::PremiumClassList)
-        .def("StaticClass", &UDlcTmsHolder::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDlcTmsHolder::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

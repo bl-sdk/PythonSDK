@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ARB_CylindricalForceActor()
 {
-    class_< ARB_CylindricalForceActor, bases< ARigidBodyBase >  , boost::noncopyable>("ARB_CylindricalForceActor", no_init)
+    py::class_< ARB_CylindricalForceActor,  ARigidBodyBase   >("ARB_CylindricalForceActor")
         .def_readwrite("RenderComponent", &ARB_CylindricalForceActor::RenderComponent)
         .def_readwrite("RadialStrength", &ARB_CylindricalForceActor::RadialStrength)
         .def_readwrite("RotationalStrength", &ARB_CylindricalForceActor::RotationalStrength)
@@ -17,7 +17,7 @@ void Export_pystes_ARB_CylindricalForceActor()
         .def_readwrite("ForceHeight", &ARB_CylindricalForceActor::ForceHeight)
         .def_readwrite("HeightOffset", &ARB_CylindricalForceActor::HeightOffset)
         .def_readwrite("CollideWithChannels", &ARB_CylindricalForceActor::CollideWithChannels)
-        .def("StaticClass", &ARB_CylindricalForceActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ARB_CylindricalForceActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ARB_CylindricalForceActor::OnToggle)
         .staticmethod("StaticClass")
   ;

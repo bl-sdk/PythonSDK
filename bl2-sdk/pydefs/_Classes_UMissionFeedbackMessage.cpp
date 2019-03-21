@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionFeedbackMessage()
 {
-    class_< UMissionFeedbackMessage, bases< UWillowLocalMessage >  , boost::noncopyable>("UMissionFeedbackMessage", no_init)
+    py::class_< UMissionFeedbackMessage,  UWillowLocalMessage   >("UMissionFeedbackMessage")
         .def_readwrite("MissionAdded", &UMissionFeedbackMessage::MissionAdded)
         .def_readwrite("MissionCompleted", &UMissionFeedbackMessage::MissionCompleted)
         .def_readwrite("MissionFailed", &UMissionFeedbackMessage::MissionFailed)
         .def_readwrite("MissionRequiredObjectivesComplete", &UMissionFeedbackMessage::MissionRequiredObjectivesComplete)
         .def_readwrite("MissionReadyToTurnIn", &UMissionFeedbackMessage::MissionReadyToTurnIn)
-        .def("StaticClass", &UMissionFeedbackMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UMissionFeedbackMessage::GetString)
         .staticmethod("StaticClass")
   ;

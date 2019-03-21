@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowReplicatedEmitter()
 {
-    class_< AWillowReplicatedEmitter, bases< AWillowEmitter >  , boost::noncopyable>("AWillowReplicatedEmitter", no_init)
+    py::class_< AWillowReplicatedEmitter,  AWillowEmitter   >("AWillowReplicatedEmitter")
         .def_readwrite("EmitterTemplate", &AWillowReplicatedEmitter::EmitterTemplate)
         .def_readwrite("ServerLifeSpan", &AWillowReplicatedEmitter::ServerLifeSpan)
         .def_readwrite("NumFloatParameters", &AWillowReplicatedEmitter::NumFloatParameters)
@@ -14,7 +14,7 @@ void Export_pystes_AWillowReplicatedEmitter()
         .def_readonly("ReplicatedFloatParameters", &AWillowReplicatedEmitter::ReplicatedFloatParameters)
         .def_readonly("ReplicatedVectorParameters", &AWillowReplicatedEmitter::ReplicatedVectorParameters)
         .def_readonly("ReplicatedColorParameters", &AWillowReplicatedEmitter::ReplicatedColorParameters)
-        .def("StaticClass", &AWillowReplicatedEmitter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowReplicatedEmitter::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeParticleSystemActiveState", &AWillowReplicatedEmitter::Behavior_ChangeParticleSystemActiveState)
         .def("Behavior_SetObjectParameterValue", &AWillowReplicatedEmitter::Behavior_SetObjectParameterValue)
         .def("Behavior_GetObjectParameterValue", &AWillowReplicatedEmitter::Behavior_GetObjectParameterValue)

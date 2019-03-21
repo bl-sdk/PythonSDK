@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCharacterSelectionReduxGFxMovie()
 {
-    class_< UCharacterSelectionReduxGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UCharacterSelectionReduxGFxMovie", no_init)
+    py::class_< UCharacterSelectionReduxGFxMovie,  UWillowGFxMovie3D   >("UCharacterSelectionReduxGFxMovie")
         .def_readwrite("FadeInTimeInSeconds", &UCharacterSelectionReduxGFxMovie::FadeInTimeInSeconds)
         .def_readwrite("FadeOutTimeInSeconds", &UCharacterSelectionReduxGFxMovie::FadeOutTimeInSeconds)
         .def_readwrite("CharacterSelectClip", &UCharacterSelectionReduxGFxMovie::CharacterSelectClip)
@@ -38,7 +38,7 @@ void Export_pystes_UCharacterSelectionReduxGFxMovie()
         .def_readonly("PreviewIndex", &UCharacterSelectionReduxGFxMovie::PreviewIndex)
         .def_readwrite("LastOfferPlayerIndex", &UCharacterSelectionReduxGFxMovie::LastOfferPlayerIndex)
         .def_readwrite("PurchaseDialog", &UCharacterSelectionReduxGFxMovie::PurchaseDialog)
-        .def("StaticClass", &UCharacterSelectionReduxGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCharacterSelectionReduxGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extOnFadeInComplete", &UCharacterSelectionReduxGFxMovie::extOnFadeInComplete)
         .def("extCharacterSelectOnLoad", &UCharacterSelectionReduxGFxMovie::extCharacterSelectOnLoad)
         .def("CheckForStartFadeIn", &UCharacterSelectionReduxGFxMovie::CheckForStartFadeIn)

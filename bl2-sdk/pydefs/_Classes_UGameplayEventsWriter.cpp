@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameplayEventsWriter()
 {
-    class_< UGameplayEventsWriter, bases< UGameplayEvents >  , boost::noncopyable>("UGameplayEventsWriter", no_init)
+    py::class_< UGameplayEventsWriter,  UGameplayEvents   >("UGameplayEventsWriter")
         .def_readwrite("Game", &UGameplayEventsWriter::Game)
-        .def("StaticClass", &UGameplayEventsWriter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameplayEventsWriter::StaticClass, py::return_value_policy::reference)
         .def("RecordCoverLinkFireLinks", &UGameplayEventsWriter::RecordCoverLinkFireLinks)
         .def("RecordAIPathFail", &UGameplayEventsWriter::RecordAIPathFail)
-        .def("GetGenericParamListEntry", &UGameplayEventsWriter::GetGenericParamListEntry, return_value_policy< reference_existing_object >())
+        .def("GetGenericParamListEntry", &UGameplayEventsWriter::GetGenericParamListEntry, py::return_value_policy::reference)
         .def("LogSystemPollEvents", &UGameplayEventsWriter::LogSystemPollEvents)
         .def("LogProjectileIntEvent", &UGameplayEventsWriter::LogProjectileIntEvent)
         .def("LogDamageEvent", &UGameplayEventsWriter::LogDamageEvent)

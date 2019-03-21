@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_CombatPoint()
 {
-    class_< UAction_CombatPoint, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_CombatPoint", no_init)
+    py::class_< UAction_CombatPoint,  UWillowActionSequencePawn   >("UAction_CombatPoint")
         .def_readwrite("Search", &UAction_CombatPoint::Search)
         .def_readwrite("Limits", &UAction_CoverAttack::Limits)
         .def_readwrite("LineOfSightTime", &UAction_CoverAttack::LineOfSightTime)
         .def_readwrite("MyCover", &UAction_CoverAttack::MyCover)
         .def_readwrite("MyZone", &UAction_CoverAttack::MyZone)
         .def_readwrite("IdleTime", &UAction_CoverAttack::IdleTime)
-        .def("StaticClass", &UAction_CombatPoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_CombatPoint::StaticClass, py::return_value_policy::reference)
         .def("eventPathFind", &UAction_CoverAttack::eventPathFind)
         .def("CheckExpiredZone", &UAction_CoverAttack::CheckExpiredZone)
         .def("CheckForNewZone", &UAction_CoverAttack::CheckForNewZone)

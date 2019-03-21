@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_SetRigidBodyIgnoreVehicles()
 {
-    class_< USeqAct_SetRigidBodyIgnoreVehicles, bases< USequenceAction >  , boost::noncopyable>("USeqAct_SetRigidBodyIgnoreVehicles", no_init)
-        .def("StaticClass", &USeqAct_SetRigidBodyIgnoreVehicles::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_SetRigidBodyIgnoreVehicles,  USequenceAction   >("USeqAct_SetRigidBodyIgnoreVehicles")
+        .def("StaticClass", &USeqAct_SetRigidBodyIgnoreVehicles::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

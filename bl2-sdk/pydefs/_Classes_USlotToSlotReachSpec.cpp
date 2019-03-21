@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USlotToSlotReachSpec()
 {
-    class_< USlotToSlotReachSpec, bases< UForcedReachSpec >  , boost::noncopyable>("USlotToSlotReachSpec", no_init)
+    py::class_< USlotToSlotReachSpec,  UForcedReachSpec   >("USlotToSlotReachSpec")
         .def_readwrite("SpecDirection", &USlotToSlotReachSpec::SpecDirection)
-        .def("StaticClass", &USlotToSlotReachSpec::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USlotToSlotReachSpec::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

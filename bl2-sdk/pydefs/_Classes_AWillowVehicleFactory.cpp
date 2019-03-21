@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVehicleFactory()
 {
-    class_< AWillowVehicleFactory, bases< ANavigationPoint >  , boost::noncopyable>("AWillowVehicleFactory", no_init)
+    py::class_< AWillowVehicleFactory,  ANavigationPoint   >("AWillowVehicleFactory")
         .def_readwrite("VehicleClass", &AWillowVehicleFactory::VehicleClass)
         .def_readwrite("VehicleArchetype", &AWillowVehicleFactory::VehicleArchetype)
         .def_readwrite("ChildVehicle", &AWillowVehicleFactory::ChildVehicle)
@@ -15,7 +15,7 @@ void Export_pystes_AWillowVehicleFactory()
         .def_readwrite("HUDLocation", &AWillowVehicleFactory::HUDLocation)
         .def_readwrite("HUDMaterialInstance", &AWillowVehicleFactory::HUDMaterialInstance)
         .def_readwrite("InitialGunRotations", &AWillowVehicleFactory::InitialGunRotations)
-        .def("StaticClass", &AWillowVehicleFactory::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVehicleFactory::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &AWillowVehicleFactory::OnToggle)
         .def("SpawnVehicle", &AWillowVehicleFactory::SpawnVehicle)
         .def("eventPreSpawn", &AWillowVehicleFactory::eventPreSpawn)

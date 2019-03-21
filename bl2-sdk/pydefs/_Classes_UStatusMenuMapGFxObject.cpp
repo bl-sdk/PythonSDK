@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusMenuMapGFxObject()
 {
-    class_< UStatusMenuMapGFxObject, bases< UGFxObject >  , boost::noncopyable>("UStatusMenuMapGFxObject", no_init)
+    py::class_< UStatusMenuMapGFxObject,  UGFxObject   >("UStatusMenuMapGFxObject")
         .def_readwrite("ViewBorder", &UStatusMenuMapGFxObject::ViewBorder)
         .def_readwrite("PanRate", &UStatusMenuMapGFxObject::PanRate)
         .def_readonly("CompassIconFrames", &UStatusMenuMapGFxObject::CompassIconFrames)
@@ -46,7 +46,7 @@ void Export_pystes_UStatusMenuMapGFxObject()
         .def_readwrite("Title_AreaObjective", &UStatusMenuMapGFxObject::Title_AreaObjective)
         .def_readwrite("Title_InteractiveObject", &UStatusMenuMapGFxObject::Title_InteractiveObject)
         .def_readwrite("MissionTurnIn", &UStatusMenuMapGFxObject::MissionTurnIn)
-        .def("StaticClass", &UStatusMenuMapGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStatusMenuMapGFxObject::StaticClass, py::return_value_policy::reference)
         .def("ToggleFogOfWarBlob", &UStatusMenuMapGFxObject::ToggleFogOfWarBlob)
         .def("ToggleLegend", &UStatusMenuMapGFxObject::ToggleLegend)
         .def("eventSetPlayerInfo", &UStatusMenuMapGFxObject::eventSetPlayerInfo)

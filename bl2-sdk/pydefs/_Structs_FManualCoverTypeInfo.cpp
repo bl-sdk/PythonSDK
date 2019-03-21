@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FManualCoverTypeInfo()
 {
-    class_< FManualCoverTypeInfo >("FManualCoverTypeInfo", no_init)
+    py::class_< FManualCoverTypeInfo >("FManualCoverTypeInfo")
         .def_readwrite("SlotIndex", &FManualCoverTypeInfo::SlotIndex)
         .def_readwrite("ManualCoverType", &FManualCoverTypeInfo::ManualCoverType)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLeaderboardHandle()
 {
-    class_< FLeaderboardHandle >("FLeaderboardHandle", no_init)
+    py::class_< FLeaderboardHandle >("FLeaderboardHandle")
         .def_readwrite("Dud", &FLeaderboardHandle::Dud)
   ;
 }

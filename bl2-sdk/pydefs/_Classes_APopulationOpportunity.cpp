@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APopulationOpportunity()
 {
-    class_< APopulationOpportunity, bases< AInfo >  , boost::noncopyable>("APopulationOpportunity", no_init)
+    py::class_< APopulationOpportunity,  AInfo   >("APopulationOpportunity")
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APopulationOpportunity::VfTable_IIBodyCompositionInstance)
         .def_readwrite("CleanupParams", &APopulationOpportunity::CleanupParams)
         .def_readwrite("SpawnPoints", &APopulationOpportunity::SpawnPoints)
@@ -21,10 +21,10 @@ void Export_pystes_APopulationOpportunity()
         .def_readwrite("SpawnList", &APopulationOpportunity::SpawnList)
         .def_readwrite("InclusiveSpawnIndex", &APopulationOpportunity::InclusiveSpawnIndex)
         .def_readwrite("InclusiveSpawnList", &APopulationOpportunity::InclusiveSpawnList)
-        .def("StaticClass", &APopulationOpportunity::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APopulationOpportunity::StaticClass, py::return_value_policy::reference)
         .def("ClearBodyCompositionInstance", &APopulationOpportunity::ClearBodyCompositionInstance)
         .def("ApplyPreviewBodyComposition", &APopulationOpportunity::ApplyPreviewBodyComposition)
-        .def("GetBodyInfoProvider", &APopulationOpportunity::GetBodyInfoProvider, return_value_policy< reference_existing_object >())
+        .def("GetBodyInfoProvider", &APopulationOpportunity::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("ChangeInstanceDataSwitch", &APopulationOpportunity::ChangeInstanceDataSwitch)
         .def("PostInitBodyComposition", &APopulationOpportunity::PostInitBodyComposition)
         .def("PreRemoveBodyComposition", &APopulationOpportunity::PreRemoveBodyComposition)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADeathtrapActionSkill()
 {
-    class_< ADeathtrapActionSkill, bases< AActionSkill >  , boost::noncopyable>("ADeathtrapActionSkill", no_init)
+    py::class_< ADeathtrapActionSkill,  AActionSkill   >("ADeathtrapActionSkill")
         .def_readwrite("DeathTrap", &ADeathtrapActionSkill::DeathTrap)
         .def_readwrite("ShareShieldsSkill", &ADeathtrapActionSkill::ShareShieldsSkill)
         .def_readwrite("MedicBeamTarget", &ADeathtrapActionSkill::MedicBeamTarget)
@@ -16,7 +16,7 @@ void Export_pystes_ADeathtrapActionSkill()
         .def_readwrite("MedicBeamSkill", &ADeathtrapActionSkill::MedicBeamSkill)
         .def_readwrite("MedicBeamTargetSkill", &ADeathtrapActionSkill::MedicBeamTargetSkill)
         .def_readwrite("MedicBeamFiringMode", &ADeathtrapActionSkill::MedicBeamFiringMode)
-        .def("StaticClass", &ADeathtrapActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADeathtrapActionSkill::StaticClass, py::return_value_policy::reference)
         .def("DeactivateMedicBeam", &ADeathtrapActionSkill::DeactivateMedicBeam)
         .def("BlockMedicBeam", &ADeathtrapActionSkill::BlockMedicBeam)
         .def("ActivateMedicBeam", &ADeathtrapActionSkill::ActivateMedicBeam)
@@ -28,7 +28,7 @@ void Export_pystes_ADeathtrapActionSkill()
         .def("RemoveInstanceData", &ADeathtrapActionSkill::RemoveInstanceData)
         .def("eventGetInstanceData", &ADeathtrapActionSkill::eventGetInstanceData)
         .def("SetInstanceData", &ADeathtrapActionSkill::SetInstanceData)
-        .def("GetAutoAimPawn", &ADeathtrapActionSkill::GetAutoAimPawn, return_value_policy< reference_existing_object >())
+        .def("GetAutoAimPawn", &ADeathtrapActionSkill::GetAutoAimPawn, py::return_value_policy::reference)
         .def("NotifyActionSkillActiveAbility", &ADeathtrapActionSkill::NotifyActionSkillActiveAbility)
         .def("StartActionSkillActiveAbility", &ADeathtrapActionSkill::StartActionSkillActiveAbility)
         .def("OnActionSkillEnded", &ADeathtrapActionSkill::OnActionSkillEnded)

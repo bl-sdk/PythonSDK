@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_Spring()
 {
-    class_< URB_Spring, bases< UActorComponent >  , boost::noncopyable>("URB_Spring", no_init)
+    py::class_< URB_Spring,  UActorComponent   >("URB_Spring")
         .def_readwrite("Component1", &URB_Spring::Component1)
         .def_readwrite("BoneName1", &URB_Spring::BoneName1)
         .def_readwrite("Component2", &URB_Spring::Component2)
@@ -20,7 +20,7 @@ void Export_pystes_URB_Spring()
         .def_readwrite("SpringMaxForceTimeScale", &URB_Spring::SpringMaxForceTimeScale)
         .def_readwrite("DampSaturateVel", &URB_Spring::DampSaturateVel)
         .def_readwrite("DampMaxForce", &URB_Spring::DampMaxForce)
-        .def("StaticClass", &URB_Spring::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_Spring::StaticClass, py::return_value_policy::reference)
         .def("Clear", &URB_Spring::Clear)
         .def("SetComponents", &URB_Spring::SetComponents)
         .staticmethod("StaticClass")

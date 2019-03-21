@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowTurretWeapon()
 {
-    class_< AWillowTurretWeapon, bases< AWillowWeapon >  , boost::noncopyable>("AWillowTurretWeapon", no_init)
+    py::class_< AWillowTurretWeapon,  AWillowWeapon   >("AWillowTurretWeapon")
         .def_readwrite("FireTriggerTags", &AWillowTurretWeapon::FireTriggerTags)
         .def_readwrite("AltFireTriggerTags", &AWillowTurretWeapon::AltFireTriggerTags)
         .def_readwrite("AimTraceRange", &AWillowTurretWeapon::AimTraceRange)
         .def_readwrite("TurretWeaponSocketName", &AWillowTurretWeapon::TurretWeaponSocketName)
-        .def("StaticClass", &AWillowTurretWeapon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowTurretWeapon::StaticClass, py::return_value_policy::reference)
         .def("HasSpareAmmo", &AWillowTurretWeapon::HasSpareAmmo)
         .def("DetachMuzzleFlash", &AWillowTurretWeapon::DetachMuzzleFlash)
         .def("AttachMuzzleFlash", &AWillowTurretWeapon::AttachMuzzleFlash)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerResponseLine()
 {
-    class_< FPlayerResponseLine >("FPlayerResponseLine", no_init)
+    py::class_< FPlayerResponseLine >("FPlayerResponseLine")
         .def_readwrite("PlayerNum", &FPlayerResponseLine::PlayerNum)
         .def_readwrite("PlayerID", &FPlayerResponseLine::PlayerID)
         .def_readwrite("PlayerName", &FPlayerResponseLine::PlayerName)

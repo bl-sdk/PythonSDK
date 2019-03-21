@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackEvent()
 {
-    class_< UInterpTrackEvent, bases< UInterpTrack >  , boost::noncopyable>("UInterpTrackEvent", no_init)
+    py::class_< UInterpTrackEvent,  UInterpTrack   >("UInterpTrackEvent")
         .def_readwrite("EventTrack", &UInterpTrackEvent::EventTrack)
-        .def("StaticClass", &UInterpTrackEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackEvent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

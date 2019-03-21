@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDWidget_Trading()
 {
-    class_< UHUDWidget_Trading, bases< UHUDWidget_Base >  , boost::noncopyable>("UHUDWidget_Trading", no_init)
+    py::class_< UHUDWidget_Trading,  UHUDWidget_Base   >("UHUDWidget_Trading")
         .def_readwrite("TradePrompt_Send", &UHUDWidget_Trading::TradePrompt_Send)
         .def_readwrite("TradePrompt_Accept", &UHUDWidget_Trading::TradePrompt_Accept)
         .def_readwrite("TradeSentTo", &UHUDWidget_Trading::TradeSentTo)
@@ -33,7 +33,7 @@ void Export_pystes_UHUDWidget_Trading()
         .def_readwrite("CachedPartnerPRI", &UHUDWidget_Trading::CachedPartnerPRI)
         .def_readwrite("ReasonMessageDuration", &UHUDWidget_Trading::ReasonMessageDuration)
         .def_readwrite("LastReasonMessageTime", &UHUDWidget_Trading::LastReasonMessageTime)
-        .def("StaticClass", &UHUDWidget_Trading::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDWidget_Trading::StaticClass, py::return_value_policy::reference)
         .def("TradeManagerShutDown", &UHUDWidget_Trading::TradeManagerShutDown)
         .def("TradeManagerInitialized", &UHUDWidget_Trading::TradeManagerInitialized)
         .def("HideTips", &UHUDWidget_Trading::HideTips)

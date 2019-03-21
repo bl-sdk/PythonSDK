@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSKURuntimeLibrarySet()
 {
-    class_< FSKURuntimeLibrarySet >("FSKURuntimeLibrarySet", no_init)
+    py::class_< FSKURuntimeLibrarySet >("FSKURuntimeLibrarySet")
         .def_readwrite("Id", &FSKURuntimeLibrarySet::Id)
         .def_readonly("Libraries", &FSKURuntimeLibrarySet::Libraries)
   ;

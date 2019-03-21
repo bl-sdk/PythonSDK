@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineProfileSettings()
 {
-    class_< UOnlineProfileSettings, bases< UOnlinePlayerStorage >  , boost::noncopyable>("UOnlineProfileSettings", no_init)
+    py::class_< UOnlineProfileSettings,  UOnlinePlayerStorage   >("UOnlineProfileSettings")
         .def_readwrite("ProfileSettingIds", &UOnlineProfileSettings::ProfileSettingIds)
         .def_readwrite("DefaultSettings", &UOnlineProfileSettings::DefaultSettings)
         .def_readwrite("DefaultConsoleSettings", &UOnlineProfileSettings::DefaultConsoleSettings)
         .def_readwrite("OwnerMappings", &UOnlineProfileSettings::OwnerMappings)
-        .def("StaticClass", &UOnlineProfileSettings::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineProfileSettings::StaticClass, py::return_value_policy::reference)
         .def("FindDefaultConsoleSettingIndex", &UOnlineProfileSettings::FindDefaultConsoleSettingIndex)
         .def("eventModifyAvailableProfileSettings", &UOnlineProfileSettings::eventModifyAvailableProfileSettings)
         .def("AppendVersionToReadIds", &UOnlineProfileSettings::AppendVersionToReadIds)

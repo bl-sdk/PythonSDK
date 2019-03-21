@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPawnRelevanceUtilityFixedCost()
 {
-    class_< UPawnRelevanceUtilityFixedCost, bases< UPawnRelevanceUtility >  , boost::noncopyable>("UPawnRelevanceUtilityFixedCost", no_init)
+    py::class_< UPawnRelevanceUtilityFixedCost,  UPawnRelevanceUtility   >("UPawnRelevanceUtilityFixedCost")
         .def_readwrite("CloseDistanceSquared", &UPawnRelevanceUtilityFixedCost::CloseDistanceSquared)
         .def_readwrite("MedDistanceSquared", &UPawnRelevanceUtilityFixedCost::MedDistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &UPawnRelevanceUtilityFixedCost::MaxLineChecksPerFrame)
@@ -26,7 +26,7 @@ void Export_pystes_UPawnRelevanceUtilityFixedCost()
         .def_readwrite("HasMovedDistThreshold", &UPawnRelevanceUtilityCaching::HasMovedDistThreshold)
         .def_readwrite("HasMovedDistThresholdRelevant", &UPawnRelevanceUtilityCaching::HasMovedDistThresholdRelevant)
         .def_readwrite("CachedRelevance", &UPawnRelevanceUtilityCaching::CachedRelevance)
-        .def("StaticClass", &UPawnRelevanceUtilityFixedCost::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPawnRelevanceUtilityFixedCost::StaticClass, py::return_value_policy::reference)
         .def("SetMaxLineChecks", &UPawnRelevanceUtilityFixedCost::SetMaxLineChecks)
         .def("SetBucket", &UPawnRelevanceUtilityFixedCost::SetBucket)
         .def("ShowBucketSettings", &UPawnRelevanceUtilityFixedCost::ShowBucketSettings)

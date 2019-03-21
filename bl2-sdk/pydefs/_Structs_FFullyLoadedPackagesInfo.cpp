@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFullyLoadedPackagesInfo()
 {
-    class_< FFullyLoadedPackagesInfo >("FFullyLoadedPackagesInfo", no_init)
+    py::class_< FFullyLoadedPackagesInfo >("FFullyLoadedPackagesInfo")
         .def_readwrite("FullyLoadType", &FFullyLoadedPackagesInfo::FullyLoadType)
         .def_readwrite("Tag", &FFullyLoadedPackagesInfo::Tag)
         .def_readwrite("PackagesToLoad", &FFullyLoadedPackagesInfo::PackagesToLoad)

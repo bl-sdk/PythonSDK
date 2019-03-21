@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCachedTerrainMaterialArray()
 {
-    class_< FCachedTerrainMaterialArray >("FCachedTerrainMaterialArray", no_init)
+    py::class_< FCachedTerrainMaterialArray >("FCachedTerrainMaterialArray")
         .def_readwrite("CachedMaterials", &FCachedTerrainMaterialArray::CachedMaterials)
   ;
 }

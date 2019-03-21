@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_BikeMove()
 {
-    class_< UAction_BikeMove, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_BikeMove", no_init)
+    py::class_< UAction_BikeMove,  UWillowActionSequencePawn   >("UAction_BikeMove")
         .def_readwrite("TargetOffsets", &UAction_BikeMove::TargetOffsets)
         .def_readwrite("RecalcDestTargetMoveDist", &UAction_BikeMove::RecalcDestTargetMoveDist)
         .def_readwrite("ReachDistance", &UAction_BikeMove::ReachDistance)
@@ -14,7 +14,7 @@ void Export_pystes_UAction_BikeMove()
         .def_readwrite("DestIdx", &UAction_BikeMove::DestIdx)
         .def_readwrite("NumFailedDests", &UAction_BikeMove::NumFailedDests)
         .def_readwrite("CachedTargetLoc", &UAction_BikeMove::CachedTargetLoc)
-        .def("StaticClass", &UAction_BikeMove::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_BikeMove::StaticClass, py::return_value_policy::reference)
         .def("WantsPathFind", &UAction_BikeMove::WantsPathFind)
         .def("ShouldRecalcDests", &UAction_BikeMove::ShouldRecalcDests)
         .def("IsDestClose", &UAction_BikeMove::IsDestClose)

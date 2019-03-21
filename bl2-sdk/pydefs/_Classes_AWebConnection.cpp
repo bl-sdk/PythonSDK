@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWebConnection()
 {
-    class_< AWebConnection, bases< AInfo >  , boost::noncopyable>("AWebConnection", no_init)
+    py::class_< AWebConnection,  AInfo   >("AWebConnection")
         .def_readwrite("WebServer", &AWebConnection::WebServer)
         .def_readwrite("ReceivedData", &AWebConnection::ReceivedData)
         .def_readwrite("Request", &AWebConnection::Request)
@@ -29,7 +29,7 @@ void Export_pystes_AWebConnection()
         .def_readwrite("RemoteSocket", &AInternetLink::RemoteSocket)
         .def_readwrite("PrivateResolveInfo", &AInternetLink::PrivateResolveInfo)
         .def_readwrite("DataPending", &AInternetLink::DataPending)
-        .def("StaticClass", &AWebConnection::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWebConnection::StaticClass, py::return_value_policy::reference)
         .def("IsHanging", &AWebConnection::IsHanging)
         .def("Cleanup", &AWebConnection::Cleanup)
         .def("CheckRawBytes", &AWebConnection::CheckRawBytes)

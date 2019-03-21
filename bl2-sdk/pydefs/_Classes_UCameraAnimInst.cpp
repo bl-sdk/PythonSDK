@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraAnimInst()
 {
-    class_< UCameraAnimInst, bases< UObject >  , boost::noncopyable>("UCameraAnimInst", no_init)
+    py::class_< UCameraAnimInst,  UObject   >("UCameraAnimInst")
         .def_readwrite("CamAnim", &UCameraAnimInst::CamAnim)
         .def_readwrite("InterpGroupInst", &UCameraAnimInst::InterpGroupInst)
         .def_readwrite("CurTime", &UCameraAnimInst::CurTime)
@@ -27,7 +27,7 @@ void Export_pystes_UCameraAnimInst()
         .def_readwrite("LastPPSettings", &UCameraAnimInst::LastPPSettings)
         .def_readwrite("LastPPSettingsAlpha", &UCameraAnimInst::LastPPSettingsAlpha)
         .def_readwrite("LastCameraLoc", &UCameraAnimInst::LastCameraLoc)
-        .def("StaticClass", &UCameraAnimInst::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCameraAnimInst::StaticClass, py::return_value_policy::reference)
         .def("ApplyMirroring", &UCameraAnimInst::ApplyMirroring)
         .def("SetPlaySpace", &UCameraAnimInst::SetPlaySpace)
         .def("ApplyTransientScaling", &UCameraAnimInst::ApplyTransientScaling)

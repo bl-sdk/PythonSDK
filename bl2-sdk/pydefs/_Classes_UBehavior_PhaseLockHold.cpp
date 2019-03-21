@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_PhaseLockHold()
 {
-    class_< UBehavior_PhaseLockHold, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_PhaseLockHold", no_init)
+    py::class_< UBehavior_PhaseLockHold,  UBehaviorBase   >("UBehavior_PhaseLockHold")
         .def_readwrite("Reason", &UBehavior_PhaseLockHold::Reason)
         .def_readwrite("Action", &UBehavior_PhaseLockHold::Action)
-        .def("StaticClass", &UBehavior_PhaseLockHold::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_PhaseLockHold::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_PhaseLockHold::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

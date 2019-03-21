@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTankSensor()
 {
-    class_< FTankSensor >("FTankSensor", no_init)
+    py::class_< FTankSensor >("FTankSensor")
         .def_readwrite("Socket", &FTankSensor::Socket)
         .def_readwrite("Type", &FTankSensor::Type)
         .def_readwrite("SearchLength", &FTankSensor::SearchLength)

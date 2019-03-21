@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AApexDestructibleActor()
 {
-    class_< AApexDestructibleActor, bases< AActor >  , boost::noncopyable>("AApexDestructibleActor", no_init)
+    py::class_< AApexDestructibleActor,  AActor   >("AApexDestructibleActor")
         .def_readwrite("LightEnvironment", &AApexDestructibleActor::LightEnvironment)
         .def_readwrite("FractureMaterials", &AApexDestructibleActor::FractureMaterials)
         .def_readwrite("StaticDestructibleComponent", &AApexDestructibleActor::StaticDestructibleComponent)
@@ -13,7 +13,7 @@ void Export_pystes_AApexDestructibleActor()
         .def_readwrite("FractureSounds", &AApexDestructibleActor::FractureSounds)
         .def_readwrite("FractureParticleEffects", &AApexDestructibleActor::FractureParticleEffects)
         .def_readwrite("ModifyHealthParams", &AApexDestructibleActor::ModifyHealthParams)
-        .def("StaticClass", &AApexDestructibleActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AApexDestructibleActor::StaticClass, py::return_value_policy::reference)
         .def("eventModifyHealth", &AApexDestructibleActor::eventModifyHealth)
         .def("ModifyHealthExec", &AApexDestructibleActor::ModifyHealthExec)
         .def("TakeRadiusDamage", &AApexDestructibleActor::TakeRadiusDamage)

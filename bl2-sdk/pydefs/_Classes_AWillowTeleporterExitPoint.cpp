@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowTeleporterExitPoint()
 {
-    class_< AWillowTeleporterExitPoint, bases< AActor >  , boost::noncopyable>("AWillowTeleporterExitPoint", no_init)
+    py::class_< AWillowTeleporterExitPoint,  AActor   >("AWillowTeleporterExitPoint")
         .def_readwrite("CylinderComponent", &AWillowTeleporterExitPoint::CylinderComponent)
-        .def("StaticClass", &AWillowTeleporterExitPoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowTeleporterExitPoint::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

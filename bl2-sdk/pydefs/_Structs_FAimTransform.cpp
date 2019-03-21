@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAimTransform()
 {
-    class_< FAimTransform >("FAimTransform", no_init)
+    py::class_< FAimTransform >("FAimTransform")
         .def_readwrite("Quaternion", &FAimTransform::Quaternion)
         .def_readwrite("Translation", &FAimTransform::Translation)
   ;

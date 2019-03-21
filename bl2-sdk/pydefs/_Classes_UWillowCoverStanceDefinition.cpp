@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowCoverStanceDefinition()
 {
-    class_< UWillowCoverStanceDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UWillowCoverStanceDefinition", no_init)
+    py::class_< UWillowCoverStanceDefinition,  UGBXDefinition   >("UWillowCoverStanceDefinition")
         .def_readwrite("AimProfile", &UWillowCoverStanceDefinition::AimProfile)
         .def_readwrite("Enter", &UWillowCoverStanceDefinition::Enter)
         .def_readwrite("Exit", &UWillowCoverStanceDefinition::Exit)
@@ -13,7 +13,7 @@ void Export_pystes_UWillowCoverStanceDefinition()
         .def_readwrite("FireEnter", &UWillowCoverStanceDefinition::FireEnter)
         .def_readwrite("FireExit", &UWillowCoverStanceDefinition::FireExit)
         .def_readwrite("FireIdle", &UWillowCoverStanceDefinition::FireIdle)
-        .def("StaticClass", &UWillowCoverStanceDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowCoverStanceDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

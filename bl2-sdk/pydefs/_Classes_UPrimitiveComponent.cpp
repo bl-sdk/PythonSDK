@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPrimitiveComponent()
 {
-    class_< UPrimitiveComponent, bases< UActorComponent >  , boost::noncopyable>("UPrimitiveComponent", no_init)
+    py::class_< UPrimitiveComponent,  UActorComponent   >("UPrimitiveComponent")
         .def_readwrite("Tag", &UPrimitiveComponent::Tag)
         .def_readwrite("Bounds", &UPrimitiveComponent::Bounds)
         .def_readwrite("SceneInfo", &UPrimitiveComponent::SceneInfo)
@@ -50,7 +50,7 @@ void Export_pystes_UPrimitiveComponent()
         .def_readwrite("BoundsScale", &UPrimitiveComponent::BoundsScale)
         .def_readwrite("LastSubmitTime", &UPrimitiveComponent::LastSubmitTime)
         .def_readwrite("LastRenderTime", &UPrimitiveComponent::LastRenderTime)
-        .def("StaticClass", &UPrimitiveComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPrimitiveComponent::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeCollisionSize", &UPrimitiveComponent::Behavior_ChangeCollisionSize)
         .def("Behavior_ChangeCollision", &UPrimitiveComponent::Behavior_ChangeCollision)
         .def("TickInstanceDataAttachment", &UPrimitiveComponent::TickInstanceDataAttachment)
@@ -82,8 +82,8 @@ void Export_pystes_UPrimitiveComponent()
         .def("SetHidden", &UPrimitiveComponent::SetHidden)
         .def("ShouldComponentAddToScene", &UPrimitiveComponent::ShouldComponentAddToScene)
         .def("SetRBDominanceGroup", &UPrimitiveComponent::SetRBDominanceGroup)
-        .def("GetRootBodyInstance", &UPrimitiveComponent::GetRootBodyInstance, return_value_policy< reference_existing_object >())
-        .def("GetPhysicalMaterial", &UPrimitiveComponent::GetPhysicalMaterial, return_value_policy< reference_existing_object >())
+        .def("GetRootBodyInstance", &UPrimitiveComponent::GetRootBodyInstance, py::return_value_policy::reference)
+        .def("GetPhysicalMaterial", &UPrimitiveComponent::GetPhysicalMaterial, py::return_value_policy::reference)
         .def("SetPhysMaterialOverride", &UPrimitiveComponent::SetPhysMaterialOverride)
         .def("InitRBPhys", &UPrimitiveComponent::InitRBPhys)
         .def("SetNotifyRigidBodyCollision", &UPrimitiveComponent::SetNotifyRigidBodyCollision)

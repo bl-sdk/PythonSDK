@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDmgSource_Skill_IgnoreIOs()
 {
-    class_< UWillowDmgSource_Skill_IgnoreIOs, bases< UWillowDamageSource >  , boost::noncopyable>("UWillowDmgSource_Skill_IgnoreIOs", no_init)
-        .def("StaticClass", &UWillowDmgSource_Skill_IgnoreIOs::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowDmgSource_Skill_IgnoreIOs,  UWillowDamageSource   >("UWillowDmgSource_Skill_IgnoreIOs")
+        .def("StaticClass", &UWillowDmgSource_Skill_IgnoreIOs::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

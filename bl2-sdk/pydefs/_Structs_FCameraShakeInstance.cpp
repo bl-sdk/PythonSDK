@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCameraShakeInstance()
 {
-    class_< FCameraShakeInstance >("FCameraShakeInstance", no_init)
+    py::class_< FCameraShakeInstance >("FCameraShakeInstance")
         .def_readwrite("SourceShake", &FCameraShakeInstance::SourceShake)
         .def_readwrite("SourceShakeName", &FCameraShakeInstance::SourceShakeName)
         .def_readwrite("OscillatorTimeRemaining", &FCameraShakeInstance::OscillatorTimeRemaining)

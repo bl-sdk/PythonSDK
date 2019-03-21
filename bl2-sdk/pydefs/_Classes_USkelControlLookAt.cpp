@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControlLookAt()
 {
-    class_< USkelControlLookAt, bases< USkelControlBase >  , boost::noncopyable>("USkelControlLookAt", no_init)
+    py::class_< USkelControlLookAt,  USkelControlBase   >("USkelControlLookAt")
         .def_readwrite("TargetLocation", &USkelControlLookAt::TargetLocation)
         .def_readwrite("TargetLocationSpace", &USkelControlLookAt::TargetLocationSpace)
         .def_readwrite("LookAtAxis", &USkelControlLookAt::LookAtAxis)
@@ -30,7 +30,7 @@ void Export_pystes_USkelControlLookAt()
         .def_readwrite("BaseBonePos", &USkelControlLookAt::BaseBonePos)
         .def_readwrite("LastCalcTime", &USkelControlLookAt::LastCalcTime)
         .def_readwrite("ControlBoneIndex", &USkelControlLookAt::ControlBoneIndex)
-        .def("StaticClass", &USkelControlLookAt::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControlLookAt::StaticClass, py::return_value_policy::reference)
         .def("CanLookAtPoint", &USkelControlLookAt::CanLookAtPoint)
         .def("SetLookAtAlpha", &USkelControlLookAt::SetLookAtAlpha)
         .def("InterpolateTargetLocation", &USkelControlLookAt::InterpolateTargetLocation)

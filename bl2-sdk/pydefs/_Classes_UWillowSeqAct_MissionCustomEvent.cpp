@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_MissionCustomEvent()
 {
-    class_< UWillowSeqAct_MissionCustomEvent, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_MissionCustomEvent", no_init)
+    py::class_< UWillowSeqAct_MissionCustomEvent,  USequenceAction   >("UWillowSeqAct_MissionCustomEvent")
         .def_readwrite("AssociatedMission", &UWillowSeqAct_MissionCustomEvent::AssociatedMission)
         .def_readwrite("EventName", &UWillowSeqAct_MissionCustomEvent::EventName)
-        .def("StaticClass", &UWillowSeqAct_MissionCustomEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_MissionCustomEvent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

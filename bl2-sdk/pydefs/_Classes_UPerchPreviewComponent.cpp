@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPerchPreviewComponent()
 {
-    class_< UPerchPreviewComponent, bases< USkeletalMeshComponent >  , boost::noncopyable>("UPerchPreviewComponent", no_init)
+    py::class_< UPerchPreviewComponent,  USkeletalMeshComponent   >("UPerchPreviewComponent")
         .def_readwrite("PerchDef", &UPerchPreviewComponent::PerchDef)
         .def_readwrite("CurrentPawn", &UWillowPreviewComponent::CurrentPawn)
-        .def("StaticClass", &UPerchPreviewComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPerchPreviewComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

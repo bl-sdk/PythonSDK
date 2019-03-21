@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTAlphaBlend()
 {
-    class_< FTAlphaBlend >("FTAlphaBlend", no_init)
+    py::class_< FTAlphaBlend >("FTAlphaBlend")
         .def_readwrite("AlphaIn", &FTAlphaBlend::AlphaIn)
         .def_readwrite("AlphaOut", &FTAlphaBlend::AlphaOut)
         .def_readwrite("AlphaTarget", &FTAlphaBlend::AlphaTarget)

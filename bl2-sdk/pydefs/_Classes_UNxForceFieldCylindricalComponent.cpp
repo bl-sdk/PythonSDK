@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNxForceFieldCylindricalComponent()
 {
-    class_< UNxForceFieldCylindricalComponent, bases< UNxForceFieldComponent >  , boost::noncopyable>("UNxForceFieldCylindricalComponent", no_init)
+    py::class_< UNxForceFieldCylindricalComponent,  UNxForceFieldComponent   >("UNxForceFieldCylindricalComponent")
         .def_readwrite("RadialStrength", &UNxForceFieldCylindricalComponent::RadialStrength)
         .def_readwrite("RotationalStrength", &UNxForceFieldCylindricalComponent::RotationalStrength)
         .def_readwrite("LiftStrength", &UNxForceFieldCylindricalComponent::LiftStrength)
@@ -16,7 +16,7 @@ void Export_pystes_UNxForceFieldCylindricalComponent()
         .def_readwrite("ForceHeight", &UNxForceFieldCylindricalComponent::ForceHeight)
         .def_readwrite("HeightOffset", &UNxForceFieldCylindricalComponent::HeightOffset)
         .def_readwrite("Kernel", &UNxForceFieldCylindricalComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldCylindricalComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNxForceFieldCylindricalComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

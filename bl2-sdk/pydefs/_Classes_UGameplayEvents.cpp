@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameplayEvents()
 {
-    class_< UGameplayEvents, bases< UObject >  , boost::noncopyable>("UGameplayEvents", no_init)
+    py::class_< UGameplayEvents,  UObject   >("UGameplayEvents")
         .def_readwrite("Archive", &UGameplayEvents::Archive)
         .def_readwrite("StatsFileName", &UGameplayEvents::StatsFileName)
         .def_readwrite("Header", &UGameplayEvents::Header)
@@ -19,7 +19,7 @@ void Export_pystes_UGameplayEvents()
         .def_readwrite("PawnClassArray", &UGameplayEvents::PawnClassArray)
         .def_readwrite("ActorArray", &UGameplayEvents::ActorArray)
         .def_readwrite("SoundCueArray", &UGameplayEvents::SoundCueArray)
-        .def("StaticClass", &UGameplayEvents::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameplayEvents::StaticClass, py::return_value_policy::reference)
         .def("eventGetFilename", &UGameplayEvents::eventGetFilename)
         .def("CloseStatsFile", &UGameplayEvents::CloseStatsFile)
         .def("OpenStatsFile", &UGameplayEvents::OpenStatsFile)

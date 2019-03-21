@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDamageClassEventData()
 {
-    class_< FDamageClassEventData >("FDamageClassEventData", no_init)
+    py::class_< FDamageClassEventData >("FDamageClassEventData")
         .def_readwrite("DamageClassName", &FDamageClassEventData::DamageClassName)
   ;
 }

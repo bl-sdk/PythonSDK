@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDecalComponent()
 {
-    class_< UDecalComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UDecalComponent", no_init)
+    py::class_< UDecalComponent,  UPrimitiveComponent   >("UDecalComponent")
         .def_readwrite("DecalMaterial", &UDecalComponent::DecalMaterial)
         .def_readwrite("Width", &UDecalComponent::Width)
         .def_readwrite("Height", &UDecalComponent::Height)
@@ -47,9 +47,9 @@ void Export_pystes_UDecalComponent()
         .def_readwrite("ParentRelativeOrientation", &UDecalComponent::ParentRelativeOrientation)
         .def_readonly("UnknownData00", &UDecalComponent::UnknownData00)
         .def_readwrite("ParentRelLocRotMatrix", &UDecalComponent::ParentRelLocRotMatrix)
-        .def("StaticClass", &UDecalComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDecalComponent::StaticClass, py::return_value_policy::reference)
         .def("IsWaitingForResetToDefaultsToComplete", &UDecalComponent::IsWaitingForResetToDefaultsToComplete)
-        .def("GetDecalMaterial", &UDecalComponent::GetDecalMaterial, return_value_policy< reference_existing_object >())
+        .def("GetDecalMaterial", &UDecalComponent::GetDecalMaterial, py::return_value_policy::reference)
         .def("SetDecalMaterial", &UDecalComponent::SetDecalMaterial)
         .def("ResetToDefaults", &UDecalComponent::ResetToDefaults)
         .staticmethod("StaticClass")

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FParticleSystemReplayFrame()
 {
-    class_< FParticleSystemReplayFrame >("FParticleSystemReplayFrame", no_init)
+    py::class_< FParticleSystemReplayFrame >("FParticleSystemReplayFrame")
         .def_readwrite("Emitters", &FParticleSystemReplayFrame::Emitters)
   ;
 }

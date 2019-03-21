@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataStore_Fonts()
 {
-    class_< UUIDataStore_Fonts, bases< UUIDataStore >  , boost::noncopyable>("UUIDataStore_Fonts", no_init)
-        .def("StaticClass", &UUIDataStore_Fonts::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UUIDataStore_Fonts,  UUIDataStore   >("UUIDataStore_Fonts")
+        .def("StaticClass", &UUIDataStore_Fonts::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

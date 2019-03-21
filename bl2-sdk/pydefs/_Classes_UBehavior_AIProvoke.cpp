@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AIProvoke()
 {
-    class_< UBehavior_AIProvoke, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AIProvoke", no_init)
+    py::class_< UBehavior_AIProvoke,  UBehaviorBase   >("UBehavior_AIProvoke")
         .def_readwrite("ProvokeInstigator", &UBehavior_AIProvoke::ProvokeInstigator)
-        .def("StaticClass", &UBehavior_AIProvoke::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AIProvoke::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AIProvoke::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

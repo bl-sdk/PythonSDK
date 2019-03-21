@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAnimTag()
 {
-    class_< FAnimTag >("FAnimTag", no_init)
+    py::class_< FAnimTag >("FAnimTag")
         .def_readwrite("Tag", &FAnimTag::Tag)
         .def_readwrite("Contains", &FAnimTag::Contains)
   ;

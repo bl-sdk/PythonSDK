@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackColorProp()
 {
-    class_< UInterpTrackColorProp, bases< UInterpTrackVectorBase >  , boost::noncopyable>("UInterpTrackColorProp", no_init)
+    py::class_< UInterpTrackColorProp,  UInterpTrackVectorBase   >("UInterpTrackColorProp")
         .def_readwrite("PropertyName", &UInterpTrackColorProp::PropertyName)
-        .def("StaticClass", &UInterpTrackColorProp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackColorProp::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

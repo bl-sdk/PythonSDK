@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameWaveForms()
 {
-    class_< UGameWaveForms, bases< UObject >  , boost::noncopyable>("UGameWaveForms", no_init)
+    py::class_< UGameWaveForms,  UObject   >("UGameWaveForms")
         .def_readwrite("CameraShakeMediumShort", &UGameWaveForms::CameraShakeMediumShort)
         .def_readwrite("CameraShakeMediumLong", &UGameWaveForms::CameraShakeMediumLong)
         .def_readwrite("CameraShakeBigShort", &UGameWaveForms::CameraShakeBigShort)
         .def_readwrite("CameraShakeBigLong", &UGameWaveForms::CameraShakeBigLong)
-        .def("StaticClass", &UGameWaveForms::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameWaveForms::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

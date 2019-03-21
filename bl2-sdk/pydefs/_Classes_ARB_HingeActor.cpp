@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ARB_HingeActor()
 {
-    class_< ARB_HingeActor, bases< ARigidBodyBase >  , boost::noncopyable>("ARB_HingeActor", no_init)
+    py::class_< ARB_HingeActor,  ARigidBodyBase   >("ARB_HingeActor")
         .def_readwrite("ConstraintActor1", &ARB_ConstraintActor::ConstraintActor1)
         .def_readwrite("ConstraintActor2", &ARB_ConstraintActor::ConstraintActor2)
         .def_readwrite("ConstraintSetup", &ARB_ConstraintActor::ConstraintSetup)
         .def_readwrite("ConstraintInstance", &ARB_ConstraintActor::ConstraintInstance)
         .def_readwrite("PulleyPivotActor1", &ARB_ConstraintActor::PulleyPivotActor1)
         .def_readwrite("PulleyPivotActor2", &ARB_ConstraintActor::PulleyPivotActor2)
-        .def("StaticClass", &ARB_HingeActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ARB_HingeActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggleConstraintDrive", &ARB_ConstraintActor::OnToggleConstraintDrive)
         .def("OnToggle", &ARB_ConstraintActor::OnToggle)
         .def("OnDestroy", &ARB_ConstraintActor::OnDestroy)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNetworkOptionsGFxObject()
 {
-    class_< UNetworkOptionsGFxObject, bases< UGFxObject >  , boost::noncopyable>("UNetworkOptionsGFxObject", no_init)
-        .def("StaticClass", &UNetworkOptionsGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UNetworkOptionsGFxObject,  UGFxObject   >("UNetworkOptionsGFxObject")
+        .def("StaticClass", &UNetworkOptionsGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetClickHandler", &UNetworkOptionsGFxObject::SetClickHandler)
         .def("NavigateDown", &UNetworkOptionsGFxObject::NavigateDown)
         .def("NavigateUp", &UNetworkOptionsGFxObject::NavigateUp)

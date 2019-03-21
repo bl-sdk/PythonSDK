@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderExtras()
 {
-    class_< UWillowScrollingListDataProviderExtras, bases< UWillowScrollingListDataProviderBase >  , boost::noncopyable>("UWillowScrollingListDataProviderExtras", no_init)
-        .def("StaticClass", &UWillowScrollingListDataProviderExtras::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowScrollingListDataProviderExtras,  UWillowScrollingListDataProviderBase   >("UWillowScrollingListDataProviderExtras")
+        .def("StaticClass", &UWillowScrollingListDataProviderExtras::StaticClass, py::return_value_policy::reference)
         .def("Populate", &UWillowScrollingListDataProviderExtras::Populate)
         .def("HandleClick", &UWillowScrollingListDataProviderExtras::HandleClick)
         .staticmethod("StaticClass")

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWebRequest()
 {
-    class_< UWebRequest, bases< UObject >  , boost::noncopyable>("UWebRequest", no_init)
+    py::class_< UWebRequest,  UObject   >("UWebRequest")
         .def_readwrite("RemoteAddr", &UWebRequest::RemoteAddr)
         .def_readwrite("URI", &UWebRequest::URI)
         .def_readwrite("UserName", &UWebRequest::UserName)
@@ -15,7 +15,7 @@ void Export_pystes_UWebRequest()
         .def_readwrite("RequestType", &UWebRequest::RequestType)
         .def_readwrite("HeaderMap", &UWebRequest::HeaderMap)
         .def_readwrite("VariableMap", &UWebRequest::VariableMap)
-        .def("StaticClass", &UWebRequest::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWebRequest::StaticClass, py::return_value_policy::reference)
         .def("GetHexDigit", &UWebRequest::GetHexDigit)
         .def("DecodeFormData", &UWebRequest::DecodeFormData)
         .def("ProcessHeaderString", &UWebRequest::ProcessHeaderString)

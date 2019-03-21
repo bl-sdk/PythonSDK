@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBoolTrackKey()
 {
-    class_< FBoolTrackKey >("FBoolTrackKey", no_init)
+    py::class_< FBoolTrackKey >("FBoolTrackKey")
         .def_readwrite("Time", &FBoolTrackKey::Time)
   ;
 }

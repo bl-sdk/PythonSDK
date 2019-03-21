@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDominantDirectionalLightComponent()
 {
-    class_< UDominantDirectionalLightComponent, bases< ULightComponent >  , boost::noncopyable>("UDominantDirectionalLightComponent", no_init)
+    py::class_< UDominantDirectionalLightComponent,  ULightComponent   >("UDominantDirectionalLightComponent")
         .def_readwrite("DominantLightmassBrightness", &UDominantDirectionalLightComponent::DominantLightmassBrightness)
         .def_readwrite("TimeOfDayDiffuseBrightness", &UDominantDirectionalLightComponent::TimeOfDayDiffuseBrightness)
         .def_readwrite("TimeOfDayDiffuseColor", &UDominantDirectionalLightComponent::TimeOfDayDiffuseColor)
@@ -19,7 +19,7 @@ void Export_pystes_UDominantDirectionalLightComponent()
         .def_readwrite("NumWholeSceneDynamicShadowCascades", &UDirectionalLightComponent::NumWholeSceneDynamicShadowCascades)
         .def_readwrite("CascadeDistributionExponent", &UDirectionalLightComponent::CascadeDistributionExponent)
         .def_readwrite("LightmassSettings", &UDirectionalLightComponent::LightmassSettings)
-        .def("StaticClass", &UDominantDirectionalLightComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDominantDirectionalLightComponent::StaticClass, py::return_value_policy::reference)
         .def("OnUpdatePropertyTimeOfDaySpecularColor", &UDominantDirectionalLightComponent::OnUpdatePropertyTimeOfDaySpecularColor)
         .def("OnUpdatePropertyTimeOfDaySpecularBrightness", &UDominantDirectionalLightComponent::OnUpdatePropertyTimeOfDaySpecularBrightness)
         .def("OnUpdatePropertyTimeOfDayDiffuseColor", &UDominantDirectionalLightComponent::OnUpdatePropertyTimeOfDayDiffuseColor)

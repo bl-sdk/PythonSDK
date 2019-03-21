@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineGameInterface()
 {
-    class_< UOnlineGameInterface, bases< UInterface >  , boost::noncopyable>("UOnlineGameInterface", no_init)
-        .def("StaticClass", &UOnlineGameInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineGameInterface,  UInterface   >("UOnlineGameInterface")
+        .def("StaticClass", &UOnlineGameInterface::StaticClass, py::return_value_policy::reference)
         .def("HasPendingBootInvite", &UOnlineGameInterface::HasPendingBootInvite)
         .def("CancelNATNegotiation", &UOnlineGameInterface::CancelNATNegotiation)
         .def("ClearJoinMigratedOnlineGameCompleteDelegate", &UOnlineGameInterface::ClearJoinMigratedOnlineGameCompleteDelegate)
@@ -58,7 +58,7 @@ void Export_pystes_UOnlineGameInterface()
         .def("JoinOnlineGame", &UOnlineGameInterface::JoinOnlineGame)
         .def("QueryNonAdvertisedData", &UOnlineGameInterface::QueryNonAdvertisedData)
         .def("FreeSearchResults", &UOnlineGameInterface::FreeSearchResults)
-        .def("GetGameSearch", &UOnlineGameInterface::GetGameSearch, return_value_policy< reference_existing_object >())
+        .def("GetGameSearch", &UOnlineGameInterface::GetGameSearch, py::return_value_policy::reference)
         .def("BindPlatformSpecificSessionToSearch", &UOnlineGameInterface::BindPlatformSpecificSessionToSearch)
         .def("ReadPlatformSpecificSessionInfoBySessionName", &UOnlineGameInterface::ReadPlatformSpecificSessionInfoBySessionName)
         .def("ReadPlatformSpecificSessionInfo", &UOnlineGameInterface::ReadPlatformSpecificSessionInfo)
@@ -77,7 +77,7 @@ void Export_pystes_UOnlineGameInterface()
         .def("AddDestroyOnlineGameCompleteDelegate", &UOnlineGameInterface::AddDestroyOnlineGameCompleteDelegate)
         .def("OnDestroyOnlineGameComplete", &UOnlineGameInterface::OnDestroyOnlineGameComplete)
         .def("DestroyOnlineGame", &UOnlineGameInterface::DestroyOnlineGame)
-        .def("GetGameSettings", &UOnlineGameInterface::GetGameSettings, return_value_policy< reference_existing_object >())
+        .def("GetGameSettings", &UOnlineGameInterface::GetGameSettings, py::return_value_policy::reference)
         .def("ClearUpdateOnlineGameCompleteDelegate", &UOnlineGameInterface::ClearUpdateOnlineGameCompleteDelegate)
         .def("AddUpdateOnlineGameCompleteDelegate", &UOnlineGameInterface::AddUpdateOnlineGameCompleteDelegate)
         .def("OnUpdateOnlineGameComplete", &UOnlineGameInterface::OnUpdateOnlineGameComplete)

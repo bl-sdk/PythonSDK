@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIStorageDevice()
 {
-    class_< UIStorageDevice, bases< UInterface >  , boost::noncopyable>("UIStorageDevice", no_init)
-        .def("StaticClass", &UIStorageDevice::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIStorageDevice,  UInterface   >("UIStorageDevice")
+        .def("StaticClass", &UIStorageDevice::StaticClass, py::return_value_policy::reference)
         .def("StorageDeviceChanged", &UIStorageDevice::StorageDeviceChanged)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSystemSettings()
 {
-    class_< UWillowSystemSettings, bases< UObject >  , boost::noncopyable>("UWillowSystemSettings", no_init)
+    py::class_< UWillowSystemSettings,  UObject   >("UWillowSystemSettings")
         .def_readwrite("SystemOptions", &UWillowSystemSettings::SystemOptions)
         .def_readwrite("SupportedResolutions", &UWillowSystemSettings::SupportedResolutions)
         .def_readwrite("QueuedResolution", &UWillowSystemSettings::QueuedResolution)
@@ -15,7 +15,7 @@ void Export_pystes_UWillowSystemSettings()
         .def_readwrite("QueuedWindowMode", &UWillowSystemSettings::QueuedWindowMode)
         .def_readwrite("QueuedVSyncMode", &UWillowSystemSettings::QueuedVSyncMode)
         .def_readwrite("PreviousVSyncMode", &UWillowSystemSettings::PreviousVSyncMode)
-        .def("StaticClass", &UWillowSystemSettings::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSystemSettings::StaticClass, py::return_value_policy::reference)
         .def("UpdateViewDistance", &UWillowSystemSettings::UpdateViewDistance)
         .def("ResetResolution", &UWillowSystemSettings::ResetResolution)
         .def("ConfirmResolution_Clicked", &UWillowSystemSettings::ConfirmResolution_Clicked)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBaseAuthSession()
 {
-    class_< FBaseAuthSession >("FBaseAuthSession", no_init)
+    py::class_< FBaseAuthSession >("FBaseAuthSession")
         .def_readwrite("EndPointIP", &FBaseAuthSession::EndPointIP)
         .def_readwrite("EndPointPort", &FBaseAuthSession::EndPointPort)
         .def_readwrite("EndPointUID", &FBaseAuthSession::EndPointUID)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDlcCompatibilityData()
 {
-    class_< FDlcCompatibilityData >("FDlcCompatibilityData", no_init)
+    py::class_< FDlcCompatibilityData >("FDlcCompatibilityData")
         .def_readwrite("A", &FDlcCompatibilityData::A)
         .def_readwrite("B", &FDlcCompatibilityData::B)
         .def_readwrite("C", &FDlcCompatibilityData::C)

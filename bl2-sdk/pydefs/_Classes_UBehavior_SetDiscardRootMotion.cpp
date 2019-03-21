@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetDiscardRootMotion()
 {
-    class_< UBehavior_SetDiscardRootMotion, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetDiscardRootMotion", no_init)
-        .def("StaticClass", &UBehavior_SetDiscardRootMotion::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehavior_SetDiscardRootMotion,  UBehaviorBase   >("UBehavior_SetDiscardRootMotion")
+        .def("StaticClass", &UBehavior_SetDiscardRootMotion::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetDiscardRootMotion::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

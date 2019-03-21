@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorProcess()
 {
-    class_< FBehaviorProcess >("FBehaviorProcess", no_init)
+    py::class_< FBehaviorProcess >("FBehaviorProcess")
         .def_readwrite("Owner", &FBehaviorProcess::Owner)
         .def_readwrite("ProcessID", &FBehaviorProcess::ProcessID)
         .def_readwrite("SequenceEnabledBitField", &FBehaviorProcess::SequenceEnabledBitField)

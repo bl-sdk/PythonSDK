@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_IsObjectPlayer()
 {
-    class_< UBehavior_IsObjectPlayer, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_IsObjectPlayer", no_init)
+    py::class_< UBehavior_IsObjectPlayer,  UBehaviorBase   >("UBehavior_IsObjectPlayer")
         .def_readwrite("PlayerCandidate", &UBehavior_IsObjectPlayer::PlayerCandidate)
-        .def("StaticClass", &UBehavior_IsObjectPlayer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_IsObjectPlayer::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_IsObjectPlayer::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

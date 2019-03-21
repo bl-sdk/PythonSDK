@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowDamageArea()
 {
-    class_< AWillowDamageArea, bases< AActor >  , boost::noncopyable>("AWillowDamageArea", no_init)
+    py::class_< AWillowDamageArea,  AActor   >("AWillowDamageArea")
         .def_readwrite("CollisionPrimitiveType", &AWillowDamageArea::CollisionPrimitiveType)
         .def_readwrite("DamagePerSecond", &AWillowDamageArea::DamagePerSecond)
         .def_readwrite("StatusEffectDamage", &AWillowDamageArea::StatusEffectDamage)
@@ -21,15 +21,15 @@ void Export_pystes_AWillowDamageArea()
         .def_readwrite("BeamTargets", &AWillowDamageArea::BeamTargets)
         .def_readwrite("BarrelSourceTime", &AWillowDamageArea::BarrelSourceTime)
         .def_readwrite("PlantSourceTime", &AWillowDamageArea::PlantSourceTime)
-        .def("StaticClass", &AWillowDamageArea::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowDamageArea::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &AWillowDamageArea::eventDestroyed)
         .def("OnToggle", &AWillowDamageArea::OnToggle)
         .def("DisableArea", &AWillowDamageArea::DisableArea)
         .def("EnableArea", &AWillowDamageArea::EnableArea)
         .def("IsEnabled", &AWillowDamageArea::IsEnabled)
-        .def("eventGetLightProjectileManager", &AWillowDamageArea::eventGetLightProjectileManager, return_value_policy< reference_existing_object >())
-        .def("GetControllerResponsibleForDamage", &AWillowDamageArea::GetControllerResponsibleForDamage, return_value_policy< reference_existing_object >())
-        .def("GetInstigator", &AWillowDamageArea::GetInstigator, return_value_policy< reference_existing_object >())
+        .def("eventGetLightProjectileManager", &AWillowDamageArea::eventGetLightProjectileManager, py::return_value_policy::reference)
+        .def("GetControllerResponsibleForDamage", &AWillowDamageArea::GetControllerResponsibleForDamage, py::return_value_policy::reference)
+        .def("GetInstigator", &AWillowDamageArea::GetInstigator, py::return_value_policy::reference)
         .def("GetStatusEffectChanceModifier", &AWillowDamageArea::GetStatusEffectChanceModifier)
         .def("GetStatusEffectBaseChanceModifier", &AWillowDamageArea::GetStatusEffectBaseChanceModifier)
         .def("GetStatusEffectBaseDamage", &AWillowDamageArea::GetStatusEffectBaseDamage)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInteractiveFoliageComponent()
 {
-    class_< UInteractiveFoliageComponent, bases< UStaticMeshComponent >  , boost::noncopyable>("UInteractiveFoliageComponent", no_init)
+    py::class_< UInteractiveFoliageComponent,  UStaticMeshComponent   >("UInteractiveFoliageComponent")
         .def_readwrite("FoliageSceneProxy", &UInteractiveFoliageComponent::FoliageSceneProxy)
-        .def("StaticClass", &UInteractiveFoliageComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInteractiveFoliageComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

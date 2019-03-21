@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEnvironmentTagDefinition()
 {
-    class_< UEnvironmentTagDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UEnvironmentTagDefinition", no_init)
-        .def("StaticClass", &UEnvironmentTagDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UEnvironmentTagDefinition,  UGBXDefinition   >("UEnvironmentTagDefinition")
+        .def("StaticClass", &UEnvironmentTagDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

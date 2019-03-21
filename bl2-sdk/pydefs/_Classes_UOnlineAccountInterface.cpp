@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineAccountInterface()
 {
-    class_< UOnlineAccountInterface, bases< UInterface >  , boost::noncopyable>("UOnlineAccountInterface", no_init)
-        .def("StaticClass", &UOnlineAccountInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineAccountInterface,  UInterface   >("UOnlineAccountInterface")
+        .def("StaticClass", &UOnlineAccountInterface::StaticClass, py::return_value_policy::reference)
         .def("GetLocalAccountNames", &UOnlineAccountInterface::GetLocalAccountNames)
         .def("DeleteLocalAccount", &UOnlineAccountInterface::DeleteLocalAccount)
         .def("RenameLocalAccount", &UOnlineAccountInterface::RenameLocalAccount)

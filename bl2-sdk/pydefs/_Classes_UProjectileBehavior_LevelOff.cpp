@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileBehavior_LevelOff()
 {
-    class_< UProjectileBehavior_LevelOff, bases< UProjectileBehaviorBase >  , boost::noncopyable>("UProjectileBehavior_LevelOff", no_init)
+    py::class_< UProjectileBehavior_LevelOff,  UProjectileBehaviorBase   >("UProjectileBehavior_LevelOff")
         .def_readwrite("DesiredWorldZToLevelOff", &UProjectileBehavior_LevelOff::DesiredWorldZToLevelOff)
         .def_readwrite("TurnSpeed", &UProjectileBehavior_LevelOff::TurnSpeed)
-        .def("StaticClass", &UProjectileBehavior_LevelOff::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UProjectileBehavior_LevelOff::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_LevelOff::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

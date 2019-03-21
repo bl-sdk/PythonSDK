@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USceneCapture2DHitMaskComponent()
 {
-    class_< USceneCapture2DHitMaskComponent, bases< USceneCaptureComponent >  , boost::noncopyable>("USceneCapture2DHitMaskComponent", no_init)
+    py::class_< USceneCapture2DHitMaskComponent,  USceneCaptureComponent   >("USceneCapture2DHitMaskComponent")
         .def_readwrite("TextureTarget", &USceneCapture2DHitMaskComponent::TextureTarget)
         .def_readwrite("SkeletalMeshComp", &USceneCapture2DHitMaskComponent::SkeletalMeshComp)
         .def_readwrite("MaterialIndex", &USceneCapture2DHitMaskComponent::MaterialIndex)
@@ -15,7 +15,7 @@ void Export_pystes_USceneCapture2DHitMaskComponent()
         .def_readwrite("FadingPercentage", &USceneCapture2DHitMaskComponent::FadingPercentage)
         .def_readwrite("FadingDurationTime", &USceneCapture2DHitMaskComponent::FadingDurationTime)
         .def_readwrite("FadingIntervalTime", &USceneCapture2DHitMaskComponent::FadingIntervalTime)
-        .def("StaticClass", &USceneCapture2DHitMaskComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USceneCapture2DHitMaskComponent::StaticClass, py::return_value_policy::reference)
         .def("SetFadingStartTimeSinceHit", &USceneCapture2DHitMaskComponent::SetFadingStartTimeSinceHit)
         .def("SetCaptureParameters", &USceneCapture2DHitMaskComponent::SetCaptureParameters)
         .def("SetCaptureTargetTexture", &USceneCapture2DHitMaskComponent::SetCaptureTargetTexture)

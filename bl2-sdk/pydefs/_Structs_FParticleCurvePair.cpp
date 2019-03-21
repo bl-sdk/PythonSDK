@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FParticleCurvePair()
 {
-    class_< FParticleCurvePair >("FParticleCurvePair", no_init)
+    py::class_< FParticleCurvePair >("FParticleCurvePair")
         .def_readwrite("CurveName", &FParticleCurvePair::CurveName)
         .def_readwrite("CurveObject", &FParticleCurvePair::CurveObject)
   ;

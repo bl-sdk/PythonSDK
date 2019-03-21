@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AKAssetSpawnable()
 {
-    class_< AKAssetSpawnable, bases< AKAsset >  , boost::noncopyable>("AKAssetSpawnable", no_init)
-        .def("StaticClass", &AKAssetSpawnable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AKAssetSpawnable,  AKAsset   >("AKAssetSpawnable")
+        .def("StaticClass", &AKAssetSpawnable::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleUberLTISIVCLILIRSSBLIRR()
 {
-    class_< UParticleModuleUberLTISIVCLILIRSSBLIRR, bases< UParticleModuleUberBase >  , boost::noncopyable>("UParticleModuleUberLTISIVCLILIRSSBLIRR", no_init)
+    py::class_< UParticleModuleUberLTISIVCLILIRSSBLIRR,  UParticleModuleUberBase   >("UParticleModuleUberLTISIVCLILIRSSBLIRR")
         .def_readwrite("Lifetime", &UParticleModuleUberLTISIVCLILIRSSBLIRR::Lifetime)
         .def_readwrite("StartSize", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StartSize)
         .def_readwrite("StartVelocity", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StartVelocity)
@@ -16,7 +16,7 @@ void Export_pystes_UParticleModuleUberLTISIVCLILIRSSBLIRR()
         .def_readwrite("StartRotation", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StartRotation)
         .def_readwrite("SizeLifeMultiplier", &UParticleModuleUberLTISIVCLILIRSSBLIRR::SizeLifeMultiplier)
         .def_readwrite("StartRotationRate", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StartRotationRate)
-        .def("StaticClass", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

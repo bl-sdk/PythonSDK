@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_DropItems()
 {
-    class_< UPlayerBehavior_DropItems, bases< UBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_DropItems", no_init)
+    py::class_< UPlayerBehavior_DropItems,  UBehaviorBase   >("UPlayerBehavior_DropItems")
         .def_readwrite("ConfigurationName", &UPlayerBehavior_DropItems::ConfigurationName)
         .def_readwrite("TargetContext", &UPlayerBehavior_DropItems::TargetContext)
         .def_readwrite("LocationContext", &UPlayerBehavior_DropItems::LocationContext)
@@ -15,7 +15,7 @@ void Export_pystes_UPlayerBehavior_DropItems()
         .def_readwrite("CustomDirection", &UBehavior_DropItems::CustomDirection)
         .def_readwrite("CustomVelocity", &UBehavior_DropItems::CustomVelocity)
         .def_readwrite("Torque", &UBehavior_DropItems::Torque)
-        .def("StaticClass", &UPlayerBehavior_DropItems::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerBehavior_DropItems::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_DropItems::ApplyBehaviorToContext)
         .def("DropItems", &UBehavior_DropItems::DropItems)
         .staticmethod("StaticClass")

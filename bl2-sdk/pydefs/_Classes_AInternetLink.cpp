@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AInternetLink()
 {
-    class_< AInternetLink, bases< AInfo >  , boost::noncopyable>("AInternetLink", no_init)
+    py::class_< AInternetLink,  AInfo   >("AInternetLink")
         .def_readwrite("LinkMode", &AInternetLink::LinkMode)
         .def_readwrite("InLineMode", &AInternetLink::InLineMode)
         .def_readwrite("OutLineMode", &AInternetLink::OutLineMode)
@@ -15,7 +15,7 @@ void Export_pystes_AInternetLink()
         .def_readwrite("RemoteSocket", &AInternetLink::RemoteSocket)
         .def_readwrite("PrivateResolveInfo", &AInternetLink::PrivateResolveInfo)
         .def_readwrite("DataPending", &AInternetLink::DataPending)
-        .def("StaticClass", &AInternetLink::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AInternetLink::StaticClass, py::return_value_policy::reference)
         .def("eventResolveFailed", &AInternetLink::eventResolveFailed)
         .def("eventResolved", &AInternetLink::eventResolved)
         .def("GetLocalIP", &AInternetLink::GetLocalIP)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUIDataStoreBinding()
 {
-    class_< FUIDataStoreBinding >("FUIDataStoreBinding", no_init)
+    py::class_< FUIDataStoreBinding >("FUIDataStoreBinding")
         .def_readwrite("Subscriber", &FUIDataStoreBinding::Subscriber)
         .def_readonly("UnknownData00", &FUIDataStoreBinding::UnknownData00)
         .def_readwrite("RequiredFieldType", &FUIDataStoreBinding::RequiredFieldType)

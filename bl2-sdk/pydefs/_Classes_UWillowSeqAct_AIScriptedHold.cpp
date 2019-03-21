@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_AIScriptedHold()
 {
-    class_< UWillowSeqAct_AIScriptedHold, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_AIScriptedHold", no_init)
+    py::class_< UWillowSeqAct_AIScriptedHold,  USequenceAction   >("UWillowSeqAct_AIScriptedHold")
         .def_readwrite("Option", &UWillowSeqAct_AIScriptedHold::Option)
-        .def("StaticClass", &UWillowSeqAct_AIScriptedHold::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_AIScriptedHold::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

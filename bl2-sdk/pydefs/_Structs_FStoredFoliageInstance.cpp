@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStoredFoliageInstance()
 {
-    class_< FStoredFoliageInstance >("FStoredFoliageInstance", no_init)
+    py::class_< FStoredFoliageInstance >("FStoredFoliageInstance")
         .def_readonly("StaticLighting", &FStoredFoliageInstance::StaticLighting)
         .def_readwrite("Location", &FFoliageInstanceBase::Location)
         .def_readwrite("XAxis", &FFoliageInstanceBase::XAxis)

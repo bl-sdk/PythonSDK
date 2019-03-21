@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightMapRef()
 {
-    class_< FLightMapRef >("FLightMapRef", no_init)
+    py::class_< FLightMapRef >("FLightMapRef")
         .def_readwrite("Reference", &FLightMapRef::Reference)
   ;
 }

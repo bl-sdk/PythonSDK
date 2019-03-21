@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWeaponDefinitionData()
 {
-    class_< FWeaponDefinitionData >("FWeaponDefinitionData", no_init)
+    py::class_< FWeaponDefinitionData >("FWeaponDefinitionData")
         .def_readwrite("WeaponTypeDefinition", &FWeaponDefinitionData::WeaponTypeDefinition)
         .def_readwrite("BalanceDefinition", &FWeaponDefinitionData::BalanceDefinition)
         .def_readwrite("ManufacturerDefinition", &FWeaponDefinitionData::ManufacturerDefinition)

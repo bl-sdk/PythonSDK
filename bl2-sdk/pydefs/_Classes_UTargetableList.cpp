@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTargetableList()
 {
-    class_< UTargetableList, bases< UObject >  , boost::noncopyable>("UTargetableList", no_init)
+    py::class_< UTargetableList,  UObject   >("UTargetableList")
         .def_readwrite("TargetableAllegianceMap", &UTargetableList::TargetableAllegianceMap)
         .def_readwrite("FullTargetableList", &UTargetableList::FullTargetableList)
-        .def("StaticClass", &UTargetableList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTargetableList::StaticClass, py::return_value_policy::reference)
         .def("GetDebugInfo", &UTargetableList::GetDebugInfo)
         .def("ResetAllegiance", &UTargetableList::ResetAllegiance)
-        .def("GetNext", &UTargetableList::GetNext, return_value_policy< reference_existing_object >())
-        .def("StartSearch", &UTargetableList::StartSearch, return_value_policy< reference_existing_object >())
+        .def("GetNext", &UTargetableList::GetNext, py::return_value_policy::reference)
+        .def("StartSearch", &UTargetableList::StartSearch, py::return_value_policy::reference)
         .def("UnRegisterTargetable", &UTargetableList::UnRegisterTargetable)
         .def("RegisterTargetable", &UTargetableList::RegisterTargetable)
         .staticmethod("StaticClass")

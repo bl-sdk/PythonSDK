@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionPixelDepth()
 {
-    class_< UMaterialExpressionPixelDepth, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionPixelDepth", no_init)
-        .def("StaticClass", &UMaterialExpressionPixelDepth::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionPixelDepth,  UMaterialExpression   >("UMaterialExpressionPixelDepth")
+        .def("StaticClass", &UMaterialExpressionPixelDepth::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

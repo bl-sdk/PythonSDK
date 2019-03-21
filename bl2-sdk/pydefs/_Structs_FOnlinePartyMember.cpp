@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlinePartyMember()
 {
-    class_< FOnlinePartyMember >("FOnlinePartyMember", no_init)
+    py::class_< FOnlinePartyMember >("FOnlinePartyMember")
         .def_readwrite("UniqueId", &FOnlinePartyMember::UniqueId)
         .def_readwrite("NickName", &FOnlinePartyMember::NickName)
         .def_readwrite("LocalUserNum", &FOnlinePartyMember::LocalUserNum)

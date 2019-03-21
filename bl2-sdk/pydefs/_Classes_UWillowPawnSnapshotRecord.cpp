@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPawnSnapshotRecord()
 {
-    class_< UWillowPawnSnapshotRecord, bases< UGearboxPawnSnapshotRecord >  , boost::noncopyable>("UWillowPawnSnapshotRecord", no_init)
+    py::class_< UWillowPawnSnapshotRecord,  UGearboxPawnSnapshotRecord   >("UWillowPawnSnapshotRecord")
         .def_readwrite("MyWillowPawnName", &UWillowPawnSnapshotRecord::MyWillowPawnName)
         .def_readwrite("MyWeaponName", &UWillowPawnSnapshotRecord::MyWeaponName)
         .def_readwrite("MyDrivenVehicleName", &UWillowPawnSnapshotRecord::MyDrivenVehicleName)
@@ -32,7 +32,7 @@ void Export_pystes_UWillowPawnSnapshotRecord()
         .def_readwrite("TargetVehiclePursuitPoints", &UWillowPawnSnapshotRecord::TargetVehiclePursuitPoints)
         .def_readwrite("TargetVehicleSelectedPursuitPointNdx", &UWillowPawnSnapshotRecord::TargetVehicleSelectedPursuitPointNdx)
         .def_readwrite("ExtraDebugItems", &UWillowPawnSnapshotRecord::ExtraDebugItems)
-        .def("StaticClass", &UWillowPawnSnapshotRecord::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

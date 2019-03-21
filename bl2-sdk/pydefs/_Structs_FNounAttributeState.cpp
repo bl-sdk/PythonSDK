@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNounAttributeState()
 {
-    class_< FNounAttributeState >("FNounAttributeState", no_init)
+    py::class_< FNounAttributeState >("FNounAttributeState")
         .def_readwrite("NounName", &FNounAttributeState::NounName)
         .def_readwrite("Value", &FNounAttributeState::Value)
         .def_readwrite("BaseValue", &FNounAttributeState::BaseValue)

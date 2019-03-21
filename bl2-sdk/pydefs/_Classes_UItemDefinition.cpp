@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemDefinition()
 {
-    class_< UItemDefinition, bases< UWillowInventoryDefinition >  , boost::noncopyable>("UItemDefinition", no_init)
+    py::class_< UItemDefinition,  UWillowInventoryDefinition   >("UItemDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UItemDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UItemDefinition::VfTable_IIConstructObject)
         .def_readwrite("DroppedImpact", &UItemDefinition::DroppedImpact)
@@ -34,17 +34,17 @@ void Export_pystes_UItemDefinition()
         .def_readwrite("CustomPresentations", &UItemDefinition::CustomPresentations)
         .def_readwrite("RequiredPlayerClass", &UItemDefinition::RequiredPlayerClass)
         .def_readwrite("PickupIconOverride", &UItemDefinition::PickupIconOverride)
-        .def("StaticClass", &UItemDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemDefinition::StaticClass, py::return_value_policy::reference)
         .def("DisplayTitleAtEnd", &UItemDefinition::DisplayTitleAtEnd)
-        .def("GetManufacturerOverrideOrDefault", &UItemDefinition::GetManufacturerOverrideOrDefault, return_value_policy< reference_existing_object >())
+        .def("GetManufacturerOverrideOrDefault", &UItemDefinition::GetManufacturerOverrideOrDefault, py::return_value_policy::reference)
         .def("eventGetEquipmentLocation", &UItemDefinition::eventGetEquipmentLocation)
         .def("PlayerClassRequirementMet", &UItemDefinition::PlayerClassRequirementMet)
-        .def("GetRequiredPlayerClass", &UItemDefinition::GetRequiredPlayerClass, return_value_policy< reference_existing_object >())
+        .def("GetRequiredPlayerClass", &UItemDefinition::GetRequiredPlayerClass, py::return_value_policy::reference)
         .def("OnPickupDisassociated", &UItemDefinition::OnPickupDisassociated)
         .def("OnPickupAssociated", &UItemDefinition::OnPickupAssociated)
         .def("OnCreate", &UItemDefinition::OnCreate)
         .def("SetBehaviorProviderDefinition", &UItemDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UItemDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UItemDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

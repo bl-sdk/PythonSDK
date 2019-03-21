@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMove_PhysicsJump()
 {
-    class_< USpecialMove_PhysicsJump, bases< UWillowAnimDefinition >  , boost::noncopyable>("USpecialMove_PhysicsJump", no_init)
+    py::class_< USpecialMove_PhysicsJump,  UWillowAnimDefinition   >("USpecialMove_PhysicsJump")
         .def_readwrite("AnimIdle", &USpecialMove_PhysicsJump::AnimIdle)
         .def_readwrite("AnimLand", &USpecialMove_PhysicsJump::AnimLand)
         .def_readwrite("BodyTag", &USpecialMove_PhysicsJump::BodyTag)
-        .def("StaticClass", &USpecialMove_PhysicsJump::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpecialMove_PhysicsJump::StaticClass, py::return_value_policy::reference)
         .def("PlayLand", &USpecialMove_PhysicsJump::PlayLand)
         .def("PlayIdle", &USpecialMove_PhysicsJump::PlayIdle)
         .def("GetIdleLength", &USpecialMove_PhysicsJump::GetIdleLength)

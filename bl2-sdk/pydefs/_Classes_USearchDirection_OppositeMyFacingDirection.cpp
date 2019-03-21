@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USearchDirection_OppositeMyFacingDirection()
 {
-    class_< USearchDirection_OppositeMyFacingDirection, bases< USearchDirection >  , boost::noncopyable>("USearchDirection_OppositeMyFacingDirection", no_init)
-        .def("StaticClass", &USearchDirection_OppositeMyFacingDirection::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USearchDirection_OppositeMyFacingDirection,  USearchDirection   >("USearchDirection_OppositeMyFacingDirection")
+        .def("StaticClass", &USearchDirection_OppositeMyFacingDirection::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

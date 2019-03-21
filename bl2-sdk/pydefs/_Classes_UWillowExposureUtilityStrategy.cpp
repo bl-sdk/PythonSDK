@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowExposureUtilityStrategy()
 {
-    class_< UWillowExposureUtilityStrategy, bases< UExposureUtilityStrategy >  , boost::noncopyable>("UWillowExposureUtilityStrategy", no_init)
-        .def("StaticClass", &UWillowExposureUtilityStrategy::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowExposureUtilityStrategy,  UExposureUtilityStrategy   >("UWillowExposureUtilityStrategy")
+        .def("StaticClass", &UWillowExposureUtilityStrategy::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

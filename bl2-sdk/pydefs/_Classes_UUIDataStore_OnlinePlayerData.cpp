@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataStore_OnlinePlayerData()
 {
-    class_< UUIDataStore_OnlinePlayerData, bases< UUIDataStore >  , boost::noncopyable>("UUIDataStore_OnlinePlayerData", no_init)
+    py::class_< UUIDataStore_OnlinePlayerData,  UUIDataStore   >("UUIDataStore_OnlinePlayerData")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlinePlayerData::VfTable_IUIListElementProvider)
         .def_readwrite("FriendsProvider", &UUIDataStore_OnlinePlayerData::FriendsProvider)
         .def_readwrite("PlayerControllerId", &UUIDataStore_OnlinePlayerData::PlayerControllerId)
@@ -31,9 +31,9 @@ void Export_pystes_UUIDataStore_OnlinePlayerData()
         .def_readwrite("PartyChatProviderClassName", &UUIDataStore_OnlinePlayerData::PartyChatProviderClassName)
         .def_readwrite("PartyChatProviderClass", &UUIDataStore_OnlinePlayerData::PartyChatProviderClass)
         .def_readwrite("PartyChatProvider", &UUIDataStore_OnlinePlayerData::PartyChatProvider)
-        .def("StaticClass", &UUIDataStore_OnlinePlayerData::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetCachedPlayerStorage", &UUIDataStore_OnlinePlayerData::eventGetCachedPlayerStorage, return_value_policy< reference_existing_object >())
-        .def("eventGetCachedPlayerProfile", &UUIDataStore_OnlinePlayerData::eventGetCachedPlayerProfile, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataStore_OnlinePlayerData::StaticClass, py::return_value_policy::reference)
+        .def("eventGetCachedPlayerStorage", &UUIDataStore_OnlinePlayerData::eventGetCachedPlayerStorage, py::return_value_policy::reference)
+        .def("eventGetCachedPlayerProfile", &UUIDataStore_OnlinePlayerData::eventGetCachedPlayerProfile, py::return_value_policy::reference)
         .def("ClearDelegates", &UUIDataStore_OnlinePlayerData::ClearDelegates)
         .def("RegisterDelegates", &UUIDataStore_OnlinePlayerData::RegisterDelegates)
         .def("OnPlayerDataChange", &UUIDataStore_OnlinePlayerData::OnPlayerDataChange)

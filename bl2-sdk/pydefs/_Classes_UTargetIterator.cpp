@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTargetIterator()
 {
-    class_< UTargetIterator, bases< UObject >  , boost::noncopyable>("UTargetIterator", no_init)
+    py::class_< UTargetIterator,  UObject   >("UTargetIterator")
         .def_readwrite("IteratorType", &UTargetIterator::IteratorType)
         .def_readwrite("BarGraphShortName", &UTargetIterator::BarGraphShortName)
-        .def("StaticClass", &UTargetIterator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTargetIterator::StaticClass, py::return_value_policy::reference)
         .def("eventRecordEvalCallback", &UTargetIterator::eventRecordEvalCallback)
         .staticmethod("StaticClass")
   ;

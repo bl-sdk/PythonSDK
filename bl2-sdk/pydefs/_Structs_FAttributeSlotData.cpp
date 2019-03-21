@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributeSlotData()
 {
-    class_< FAttributeSlotData >("FAttributeSlotData", no_init)
+    py::class_< FAttributeSlotData >("FAttributeSlotData")
         .def_readwrite("SlotName", &FAttributeSlotData::SlotName)
         .def_readwrite("MinimumGrade", &FAttributeSlotData::MinimumGrade)
         .def_readwrite("MaximumGrade", &FAttributeSlotData::MaximumGrade)

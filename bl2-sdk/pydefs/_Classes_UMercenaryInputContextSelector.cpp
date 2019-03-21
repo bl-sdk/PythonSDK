@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMercenaryInputContextSelector()
 {
-    class_< UMercenaryInputContextSelector, bases< UDefaultInputContextSelector >  , boost::noncopyable>("UMercenaryInputContextSelector", no_init)
-        .def("StaticClass", &UMercenaryInputContextSelector::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMercenaryInputContextSelector,  UDefaultInputContextSelector   >("UMercenaryInputContextSelector")
+        .def("StaticClass", &UMercenaryInputContextSelector::StaticClass, py::return_value_policy::reference)
         .def("SelectContext", &UMercenaryInputContextSelector::SelectContext)
         .staticmethod("StaticClass")
   ;

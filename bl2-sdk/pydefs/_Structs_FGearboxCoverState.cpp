@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGearboxCoverState()
 {
-    class_< FGearboxCoverState >("FGearboxCoverState", no_init)
+    py::class_< FGearboxCoverState >("FGearboxCoverState")
         .def_readwrite("TheCoverActor", &FGearboxCoverState::TheCoverActor)
         .def_readwrite("SlotIndex", &FGearboxCoverState::SlotIndex)
         .def_readwrite("State", &FGearboxCoverState::State)

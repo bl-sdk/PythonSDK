@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AInventoryManager()
 {
-    class_< AInventoryManager, bases< AActor >  , boost::noncopyable>("AInventoryManager", no_init)
+    py::class_< AInventoryManager,  AActor   >("AInventoryManager")
         .def_readwrite("InventoryChain", &AInventoryManager::InventoryChain)
         .def_readwrite("PendingWeapon", &AInventoryManager::PendingWeapon)
         .def_readwrite("PendingOffHandWeapon", &AInventoryManager::PendingOffHandWeapon)
         .def_readwrite("LastAttemptedSwitchToWeapon", &AInventoryManager::LastAttemptedSwitchToWeapon)
         .def_readwrite("PendingFire", &AInventoryManager::PendingFire)
         .def_readwrite("OffHandPendingFire", &AInventoryManager::OffHandPendingFire)
-        .def("StaticClass", &AInventoryManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AInventoryManager::StaticClass, py::return_value_policy::reference)
         .def("ClientConditionalIncrementPickupStats", &AInventoryManager::ClientConditionalIncrementPickupStats)
         .def("ClearInventoryReferences", &AInventoryManager::ClearInventoryReferences)
         .def("ShouldSwitchToBestWeapon", &AInventoryManager::ShouldSwitchToBestWeapon)
@@ -28,7 +28,7 @@ void Export_pystes_AInventoryManager()
         .def("NextWeapon", &AInventoryManager::NextWeapon)
         .def("PrevWeapon", &AInventoryManager::PrevWeapon)
         .def("SwitchToBestWeapon", &AInventoryManager::SwitchToBestWeapon)
-        .def("GetBestWeapon", &AInventoryManager::GetBestWeapon, return_value_policy< reference_existing_object >())
+        .def("GetBestWeapon", &AInventoryManager::GetBestWeapon, py::return_value_policy::reference)
         .def("GetWeaponRatingFor", &AInventoryManager::GetWeaponRatingFor)
         .def("eventDrawHUD", &AInventoryManager::eventDrawHUD)
         .def("OwnerDied", &AInventoryManager::OwnerDied)
@@ -37,8 +37,8 @@ void Export_pystes_AInventoryManager()
         .def("InventoryReadied", &AInventoryManager::InventoryReadied)
         .def("RemoveFromInventory", &AInventoryManager::RemoveFromInventory)
         .def("AddInventory", &AInventoryManager::AddInventory)
-        .def("CreateInventory", &AInventoryManager::CreateInventory, return_value_policy< reference_existing_object >())
-        .def("eventFindInventoryType", &AInventoryManager::eventFindInventoryType, return_value_policy< reference_existing_object >())
+        .def("CreateInventory", &AInventoryManager::CreateInventory, py::return_value_policy::reference)
+        .def("eventFindInventoryType", &AInventoryManager::eventFindInventoryType, py::return_value_policy::reference)
         .def("eventHandlePickupQuery", &AInventoryManager::eventHandlePickupQuery)
         .def("eventDestroyed", &AInventoryManager::eventDestroyed)
         .def("SetupFor", &AInventoryManager::SetupFor)

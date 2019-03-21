@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrack()
 {
-    class_< UInterpTrack, bases< UObject >  , boost::noncopyable>("UInterpTrack", no_init)
+    py::class_< UInterpTrack,  UObject   >("UInterpTrack")
         .def_readwrite("VfTable_FInterpEdInputInterface", &UInterpTrack::VfTable_FInterpEdInputInterface)
         .def_readwrite("CurveEdVTable", &UInterpTrack::CurveEdVTable)
         .def_readwrite("SubTracks", &UInterpTrack::SubTracks)
@@ -13,7 +13,7 @@ void Export_pystes_UInterpTrack()
         .def_readwrite("ActiveCondition", &UInterpTrack::ActiveCondition)
         .def_readwrite("TrackPlayDirection", &UInterpTrack::TrackPlayDirection)
         .def_readwrite("TrackTitle", &UInterpTrack::TrackTitle)
-        .def("StaticClass", &UInterpTrack::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrack::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

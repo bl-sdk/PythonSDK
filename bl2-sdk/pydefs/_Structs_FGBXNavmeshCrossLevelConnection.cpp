@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGBXNavmeshCrossLevelConnection()
 {
-    class_< FGBXNavmeshCrossLevelConnection >("FGBXNavmeshCrossLevelConnection", no_init)
+    py::class_< FGBXNavmeshCrossLevelConnection >("FGBXNavmeshCrossLevelConnection")
         .def_readonly("EdgeIdx", &FGBXNavmeshCrossLevelConnection::EdgeIdx)
         .def_readonly("ConnectedNavmeshIdx", &FGBXNavmeshCrossLevelConnection::ConnectedNavmeshIdx)
         .def_readonly("PolyIdx", &FGBXNavmeshCrossLevelConnection::PolyIdx)

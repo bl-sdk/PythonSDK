@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavMeshGoal_WithinDistanceEnvelope()
 {
-    class_< UNavMeshGoal_WithinDistanceEnvelope, bases< UNavMeshPathGoalEvaluator >  , boost::noncopyable>("UNavMeshGoal_WithinDistanceEnvelope", no_init)
+    py::class_< UNavMeshGoal_WithinDistanceEnvelope,  UNavMeshPathGoalEvaluator   >("UNavMeshGoal_WithinDistanceEnvelope")
         .def_readwrite("MaxDistance", &UNavMeshGoal_WithinDistanceEnvelope::MaxDistance)
         .def_readwrite("MinDistance", &UNavMeshGoal_WithinDistanceEnvelope::MinDistance)
         .def_readwrite("MinTraversalDist", &UNavMeshGoal_WithinDistanceEnvelope::MinTraversalDist)
         .def_readwrite("EnvelopeTestPoint", &UNavMeshGoal_WithinDistanceEnvelope::EnvelopeTestPoint)
-        .def("StaticClass", &UNavMeshGoal_WithinDistanceEnvelope::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavMeshGoal_WithinDistanceEnvelope::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshGoal_WithinDistanceEnvelope::Recycle)
         .def("GoalWithinEnvelopeToLoc", &UNavMeshGoal_WithinDistanceEnvelope::GoalWithinEnvelopeToLoc)
         .staticmethod("StaticClass")

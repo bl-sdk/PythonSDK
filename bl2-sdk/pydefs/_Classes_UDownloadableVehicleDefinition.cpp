@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableVehicleDefinition()
 {
-    class_< UDownloadableVehicleDefinition, bases< UDownloadableContentDefinition >  , boost::noncopyable>("UDownloadableVehicleDefinition", no_init)
-        .def("StaticClass", &UDownloadableVehicleDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDownloadableVehicleDefinition,  UDownloadableContentDefinition   >("UDownloadableVehicleDefinition")
+        .def("StaticClass", &UDownloadableVehicleDefinition::StaticClass, py::return_value_policy::reference)
         .def("CanDrive", &UDownloadableVehicleDefinition::CanDrive)
         .staticmethod("StaticClass")
   ;

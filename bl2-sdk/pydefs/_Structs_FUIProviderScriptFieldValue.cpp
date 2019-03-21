@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUIProviderScriptFieldValue()
 {
-    class_< FUIProviderScriptFieldValue >("FUIProviderScriptFieldValue", no_init)
+    py::class_< FUIProviderScriptFieldValue >("FUIProviderScriptFieldValue")
         .def_readwrite("PropertyTag", &FUIProviderScriptFieldValue::PropertyTag)
         .def_readwrite("PropertyType", &FUIProviderScriptFieldValue::PropertyType)
         .def_readwrite("StringValue", &FUIProviderScriptFieldValue::StringValue)

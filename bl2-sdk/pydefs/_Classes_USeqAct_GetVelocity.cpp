@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_GetVelocity()
 {
-    class_< USeqAct_GetVelocity, bases< USequenceAction >  , boost::noncopyable>("USeqAct_GetVelocity", no_init)
+    py::class_< USeqAct_GetVelocity,  USequenceAction   >("USeqAct_GetVelocity")
         .def_readwrite("VelocityMag", &USeqAct_GetVelocity::VelocityMag)
         .def_readwrite("VelocityVect", &USeqAct_GetVelocity::VelocityVect)
-        .def("StaticClass", &USeqAct_GetVelocity::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_GetVelocity::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_GetVelocity::eventGetObjClassVersion)
         .staticmethod("StaticClass")
   ;

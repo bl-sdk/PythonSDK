@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UResourcePool()
 {
-    class_< UResourcePool, bases< UObject >  , boost::noncopyable>("UResourcePool", no_init)
+    py::class_< UResourcePool,  UObject   >("UResourcePool")
         .def_readwrite("Definition", &UResourcePool::Definition)
         .def_readwrite("PoolGUID", &UResourcePool::PoolGUID)
         .def_readwrite("MinValue", &UResourcePool::MinValue)
@@ -44,7 +44,7 @@ void Export_pystes_UResourcePool()
         .def_readwrite("HUDMaterialInstance", &UResourcePool::HUDMaterialInstance)
         .def_readwrite("RegenerationPool", &UResourcePool::RegenerationPool)
         .def_readwrite("IsRegenerating", &UResourcePool::IsRegenerating)
-        .def("StaticClass", &UResourcePool::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UResourcePool::StaticClass, py::return_value_policy::reference)
         .def("IsResourcePoolInState", &UResourcePool::IsResourcePoolInState)
         .def("WasCreatedAndNotModified", &UResourcePool::WasCreatedAndNotModified)
         .def("IsAuthoritative", &UResourcePool::IsAuthoritative)

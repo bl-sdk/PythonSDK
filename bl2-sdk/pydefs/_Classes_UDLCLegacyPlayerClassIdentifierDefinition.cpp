@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDLCLegacyPlayerClassIdentifierDefinition()
 {
-    class_< UDLCLegacyPlayerClassIdentifierDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UDLCLegacyPlayerClassIdentifierDefinition", no_init)
+    py::class_< UDLCLegacyPlayerClassIdentifierDefinition,  UGBXDefinition   >("UDLCLegacyPlayerClassIdentifierDefinition")
         .def_readwrite("CharacterCustomizations", &UDLCLegacyPlayerClassIdentifierDefinition::CharacterCustomizations)
         .def_readwrite("AssociatedPlayerClassIdentifierPath", &UDLCLegacyPlayerClassIdentifierDefinition::AssociatedPlayerClassIdentifierPath)
         .def_readwrite("AsterClassMods", &UDLCLegacyPlayerClassIdentifierDefinition::AsterClassMods)
         .def_readwrite("LobeliaClassMods", &UDLCLegacyPlayerClassIdentifierDefinition::LobeliaClassMods)
-        .def("StaticClass", &UDLCLegacyPlayerClassIdentifierDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDLCLegacyPlayerClassIdentifierDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

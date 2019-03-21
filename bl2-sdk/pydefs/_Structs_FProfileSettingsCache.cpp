@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FProfileSettingsCache()
 {
-    class_< FProfileSettingsCache >("FProfileSettingsCache", no_init)
+    py::class_< FProfileSettingsCache >("FProfileSettingsCache")
         .def_readwrite("Profile", &FProfileSettingsCache::Profile)
         .def_readwrite("ReadDelegates", &FProfileSettingsCache::ReadDelegates)
         .def_readwrite("WriteDelegates", &FProfileSettingsCache::WriteDelegates)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_OverrideWeaponCrosshair()
 {
-    class_< UBehavior_OverrideWeaponCrosshair, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_OverrideWeaponCrosshair", no_init)
+    py::class_< UBehavior_OverrideWeaponCrosshair,  UBehaviorBase   >("UBehavior_OverrideWeaponCrosshair")
         .def_readwrite("CrosshairFrame", &UBehavior_OverrideWeaponCrosshair::CrosshairFrame)
-        .def("StaticClass", &UBehavior_OverrideWeaponCrosshair::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_OverrideWeaponCrosshair::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_OverrideWeaponCrosshair::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

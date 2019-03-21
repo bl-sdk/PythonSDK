@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UApexDestructibleAsset()
 {
-    class_< UApexDestructibleAsset, bases< UApexAsset >  , boost::noncopyable>("UApexDestructibleAsset", no_init)
+    py::class_< UApexDestructibleAsset,  UApexAsset   >("UApexDestructibleAsset")
         .def_readwrite("MApexAsset", &UApexDestructibleAsset::MApexAsset)
         .def_readwrite("Materials", &UApexDestructibleAsset::Materials)
         .def_readwrite("FractureMaterials", &UApexDestructibleAsset::FractureMaterials)
@@ -14,7 +14,7 @@ void Export_pystes_UApexDestructibleAsset()
         .def_readwrite("CrumbleEmitterName", &UApexDestructibleAsset::CrumbleEmitterName)
         .def_readwrite("DustEmitterName", &UApexDestructibleAsset::DustEmitterName)
         .def_readwrite("DestructibleParameters", &UApexDestructibleAsset::DestructibleParameters)
-        .def("StaticClass", &UApexDestructibleAsset::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UApexDestructibleAsset::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

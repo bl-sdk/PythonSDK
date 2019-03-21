@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxEditDialog()
 {
-    class_< UWillowGFxEditDialog, bases< UWillowGFxMovie >  , boost::noncopyable>("UWillowGFxEditDialog", no_init)
+    py::class_< UWillowGFxEditDialog,  UWillowGFxMovie   >("UWillowGFxEditDialog")
         .def_readwrite("Tools", &UWillowGFxEditDialog::Tools)
         .def_readwrite("MenuItemCallbacks", &UWillowGFxEditDialog::MenuItemCallbacks)
-        .def("StaticClass", &UWillowGFxEditDialog::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxEditDialog::StaticClass, py::return_value_policy::reference)
         .def("GetDefaultEditBoxValue", &UWillowGFxEditDialog::GetDefaultEditBoxValue)
         .def("DisplayOkBox", &UWillowGFxEditDialog::DisplayOkBox)
         .def("extMenuItemClicked", &UWillowGFxEditDialog::extMenuItemClicked)

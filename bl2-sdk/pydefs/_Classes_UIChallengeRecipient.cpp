@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIChallengeRecipient()
 {
-    class_< UIChallengeRecipient, bases< UInterface >  , boost::noncopyable>("UIChallengeRecipient", no_init)
-        .def("StaticClass", &UIChallengeRecipient::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIChallengeRecipient,  UInterface   >("UIChallengeRecipient")
+        .def("StaticClass", &UIChallengeRecipient::StaticClass, py::return_value_policy::reference)
         .def("ReceiveChallenge", &UIChallengeRecipient::ReceiveChallenge)
         .staticmethod("StaticClass")
   ;

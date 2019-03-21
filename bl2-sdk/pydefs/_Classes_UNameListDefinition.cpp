@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNameListDefinition()
 {
-    class_< UNameListDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UNameListDefinition", no_init)
+    py::class_< UNameListDefinition,  UGBXDefinition   >("UNameListDefinition")
         .def_readwrite("Names", &UNameListDefinition::Names)
-        .def("StaticClass", &UNameListDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNameListDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

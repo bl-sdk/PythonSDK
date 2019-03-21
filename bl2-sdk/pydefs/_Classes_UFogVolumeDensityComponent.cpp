@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFogVolumeDensityComponent()
 {
-    class_< UFogVolumeDensityComponent, bases< UActorComponent >  , boost::noncopyable>("UFogVolumeDensityComponent", no_init)
+    py::class_< UFogVolumeDensityComponent,  UActorComponent   >("UFogVolumeDensityComponent")
         .def_readwrite("FogMaterial", &UFogVolumeDensityComponent::FogMaterial)
         .def_readwrite("DefaultFogVolumeMaterial", &UFogVolumeDensityComponent::DefaultFogVolumeMaterial)
         .def_readwrite("SimpleLightColor", &UFogVolumeDensityComponent::SimpleLightColor)
@@ -13,7 +13,7 @@ void Export_pystes_UFogVolumeDensityComponent()
         .def_readwrite("StartDistance", &UFogVolumeDensityComponent::StartDistance)
         .def_readwrite("MaxDistance", &UFogVolumeDensityComponent::MaxDistance)
         .def_readwrite("FogVolumeActors", &UFogVolumeDensityComponent::FogVolumeActors)
-        .def("StaticClass", &UFogVolumeDensityComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFogVolumeDensityComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &UFogVolumeDensityComponent::SetEnabled)
         .staticmethod("StaticClass")
   ;

@@ -1,20 +1,20 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_Patrol()
 {
-    class_< UAction_Patrol, bases< UAction_FollowPath >  , boost::noncopyable>("UAction_Patrol", no_init)
+    py::class_< UAction_Patrol,  UAction_FollowPath   >("UAction_Patrol")
         .def_readwrite("TimeBetweenPatrolMovement", &UAction_Patrol::TimeBetweenPatrolMovement)
         .def_readwrite("TimeOfNextRandomPatrol", &UAction_Patrol::TimeOfNextRandomPatrol)
         .def_readwrite("HideLocation", &UAction_Patrol::HideLocation)
         .def_readwrite("HideLimits", &UAction_Patrol::HideLimits)
-        .def("StaticClass", &UAction_Patrol::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_Patrol::StaticClass, py::return_value_policy::reference)
         .def("CheckFullyBlocked", &UAction_Patrol::CheckFullyBlocked)
         .def("GetRandomHomeLocation", &UAction_Patrol::GetRandomHomeLocation)
         .def("SetMoveNode", &UAction_Patrol::SetMoveNode)
-        .def("GetMoveNode", &UAction_Patrol::GetMoveNode, return_value_policy< reference_existing_object >())
+        .def("GetMoveNode", &UAction_Patrol::GetMoveNode, py::return_value_policy::reference)
         .def("SetMoveNodeSpeed", &UAction_Patrol::SetMoveNodeSpeed)
         .def("SetMoveFacingPolicy", &UAction_Patrol::SetMoveFacingPolicy)
         .def("ShowDesignError", &UAction_Patrol::ShowDesignError)

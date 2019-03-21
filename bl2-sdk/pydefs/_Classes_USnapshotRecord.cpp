@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USnapshotRecord()
 {
-    class_< USnapshotRecord, bases< USnapshotInterface >  , boost::noncopyable>("USnapshotRecord", no_init)
+    py::class_< USnapshotRecord,  USnapshotInterface   >("USnapshotRecord")
         .def_readwrite("MyName", &USnapshotRecord::MyName)
         .def_readwrite("RuleSet", &USnapshotRecord::RuleSet)
         .def_readwrite("CurrentRules", &USnapshotRecord::CurrentRules)
@@ -34,7 +34,7 @@ void Export_pystes_USnapshotRecord()
         .def_readwrite("DisabledRulesColor", &USnapshotRecord::DisabledRulesColor)
         .def_readwrite("FlagsColor", &USnapshotRecord::FlagsColor)
         .def_readwrite("ResourcesColor", &USnapshotRecord::ResourcesColor)
-        .def("StaticClass", &USnapshotRecord::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USnapshotRecord::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

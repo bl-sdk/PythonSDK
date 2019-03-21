@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionFluidNormal()
 {
-    class_< UMaterialExpressionFluidNormal, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionFluidNormal", no_init)
+    py::class_< UMaterialExpressionFluidNormal,  UMaterialExpression   >("UMaterialExpressionFluidNormal")
         .def_readwrite("Coordinates", &UMaterialExpressionFluidNormal::Coordinates)
-        .def("StaticClass", &UMaterialExpressionFluidNormal::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionFluidNormal::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

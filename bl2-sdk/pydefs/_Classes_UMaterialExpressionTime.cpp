@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionTime()
 {
-    class_< UMaterialExpressionTime, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionTime", no_init)
-        .def("StaticClass", &UMaterialExpressionTime::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionTime,  UMaterialExpression   >("UMaterialExpressionTime")
+        .def("StaticClass", &UMaterialExpressionTime::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBadassPanelGFxObject()
 {
-    class_< UBadassPanelGFxObject, bases< UBaseInventoryPanelGFxObject >  , boost::noncopyable>("UBadassPanelGFxObject", no_init)
+    py::class_< UBadassPanelGFxObject,  UBaseInventoryPanelGFxObject   >("UBadassPanelGFxObject")
         .def_readwrite("BA_RankString", &UBadassPanelGFxObject::BA_RankString)
         .def_readwrite("BA_TokensString", &UBadassPanelGFxObject::BA_TokensString)
         .def_readwrite("BA_RedeemTokenButtonString", &UBadassPanelGFxObject::BA_RedeemTokenButtonString)
@@ -23,7 +23,7 @@ void Export_pystes_UBadassPanelGFxObject()
         .def_readwrite("RewardString", &UBadassPanelGFxObject::RewardString)
         .def_readwrite("TooltipsText_ActivateBonusStats", &UBadassPanelGFxObject::TooltipsText_ActivateBonusStats)
         .def_readwrite("TooltipsText_DeactivateBonusStats", &UBadassPanelGFxObject::TooltipsText_DeactivateBonusStats)
-        .def("StaticClass", &UBadassPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBadassPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("UpdateTrainingBox", &UBadassPanelGFxObject::UpdateTrainingBox)
         .def("OnRewardFocused", &UBadassPanelGFxObject::OnRewardFocused)
         .def("OnRedeemTokensFocused", &UBadassPanelGFxObject::OnRedeemTokensFocused)

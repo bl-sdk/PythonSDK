@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelDependencyList()
 {
-    class_< ULevelDependencyList, bases< UGBXDefinition >  , boost::noncopyable>("ULevelDependencyList", no_init)
+    py::class_< ULevelDependencyList,  UGBXDefinition   >("ULevelDependencyList")
         .def_readwrite("LoaderMap", &ULevelDependencyList::LoaderMap)
         .def_readwrite("LevelList", &ULevelDependencyList::LevelList)
         .def_readwrite("LevelWorldDiscoveryStatID", &ULevelDependencyList::LevelWorldDiscoveryStatID)
         .def_readwrite("TotalNumWorldDiscoveryAreas", &ULevelDependencyList::TotalNumWorldDiscoveryAreas)
         .def_readwrite("AllAreasDiscoveredAchievement", &ULevelDependencyList::AllAreasDiscoveredAchievement)
-        .def("StaticClass", &ULevelDependencyList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULevelDependencyList::StaticClass, py::return_value_policy::reference)
         .def("GetFriendlyLevelNameFromMapName", &ULevelDependencyList::GetFriendlyLevelNameFromMapName)
         .staticmethod("StaticClass")
   ;

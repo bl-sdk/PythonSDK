@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowBoundaryTurret()
 {
-    class_< AWillowBoundaryTurret, bases< AActor >  , boost::noncopyable>("AWillowBoundaryTurret", no_init)
+    py::class_< AWillowBoundaryTurret,  AActor   >("AWillowBoundaryTurret")
         .def_readwrite("ShotTime", &AWillowBoundaryTurret::ShotTime)
         .def_readwrite("SeekTime", &AWillowBoundaryTurret::SeekTime)
         .def_readwrite("FiringModeDef", &AWillowBoundaryTurret::FiringModeDef)
@@ -24,7 +24,7 @@ void Export_pystes_AWillowBoundaryTurret()
         .def_readwrite("WarningEffects", &AWillowBoundaryTurret::WarningEffects)
         .def_readwrite("CurrentTarget", &AWillowBoundaryTurret::CurrentTarget)
         .def_readwrite("PlayersInWarnZone", &AWillowBoundaryTurret::PlayersInWarnZone)
-        .def("StaticClass", &AWillowBoundaryTurret::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowBoundaryTurret::StaticClass, py::return_value_policy::reference)
         .def("IsLethalLocation", &AWillowBoundaryTurret::IsLethalLocation)
         .def("Shoot", &AWillowBoundaryTurret::Shoot)
         .def("eventSetInitialState", &AWillowBoundaryTurret::eventSetInitialState)

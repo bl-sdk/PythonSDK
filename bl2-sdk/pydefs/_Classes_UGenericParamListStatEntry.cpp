@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGenericParamListStatEntry()
 {
-    class_< UGenericParamListStatEntry, bases< UObject >  , boost::noncopyable>("UGenericParamListStatEntry", no_init)
+    py::class_< UGenericParamListStatEntry,  UObject   >("UGenericParamListStatEntry")
         .def_readwrite("StatEvent", &UGenericParamListStatEntry::StatEvent)
         .def_readwrite("Writer", &UGenericParamListStatEntry::Writer)
-        .def("StaticClass", &UGenericParamListStatEntry::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGenericParamListStatEntry::StaticClass, py::return_value_policy::reference)
         .def("CommitToDisk", &UGenericParamListStatEntry::CommitToDisk)
         .def("GetString", &UGenericParamListStatEntry::GetString)
         .def("GetVector", &UGenericParamListStatEntry::GetVector)

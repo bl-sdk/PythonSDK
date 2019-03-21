@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorSequenceState()
 {
-    class_< FBehaviorSequenceState >("FBehaviorSequenceState", no_init)
+    py::class_< FBehaviorSequenceState >("FBehaviorSequenceState")
         .def_readwrite("ProvidersIndex", &FBehaviorSequenceState::ProvidersIndex)
         .def_readwrite("SequencesDataIndex", &FBehaviorSequenceState::SequencesDataIndex)
         .def_readwrite("SequenceEnabledBitIndex", &FBehaviorSequenceState::SequenceEnabledBitIndex)

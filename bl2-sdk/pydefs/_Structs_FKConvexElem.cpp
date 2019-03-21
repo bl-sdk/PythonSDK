@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKConvexElem()
 {
-    class_< FKConvexElem >("FKConvexElem", no_init)
+    py::class_< FKConvexElem >("FKConvexElem")
         .def_readwrite("VertexData", &FKConvexElem::VertexData)
         .def_readwrite("PermutedVertexData", &FKConvexElem::PermutedVertexData)
         .def_readwrite("FaceTriData", &FKConvexElem::FaceTriData)

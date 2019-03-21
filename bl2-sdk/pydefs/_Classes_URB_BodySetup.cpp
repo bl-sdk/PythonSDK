@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_BodySetup()
 {
-    class_< URB_BodySetup, bases< UObject >  , boost::noncopyable>("URB_BodySetup", no_init)
+    py::class_< URB_BodySetup,  UObject   >("URB_BodySetup")
         .def_readwrite("SleepFamily", &URB_BodySetup::SleepFamily)
         .def_readwrite("BoneName", &URB_BodySetup::BoneName)
         .def_readwrite("PhysMaterial", &URB_BodySetup::PhysMaterial)
@@ -17,7 +17,7 @@ void Export_pystes_URB_BodySetup()
         .def_readwrite("PreCachedPhysDataVersion", &URB_BodySetup::PreCachedPhysDataVersion)
         .def_readwrite("COMNudge", &UKMeshProps::COMNudge)
         .def_readwrite("AggGeom", &UKMeshProps::AggGeom)
-        .def("StaticClass", &URB_BodySetup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_BodySetup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

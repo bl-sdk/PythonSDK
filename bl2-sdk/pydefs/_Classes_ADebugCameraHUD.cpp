@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADebugCameraHUD()
 {
-    class_< ADebugCameraHUD, bases< AHUD >  , boost::noncopyable>("ADebugCameraHUD", no_init)
-        .def("StaticClass", &ADebugCameraHUD::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ADebugCameraHUD,  AHUD   >("ADebugCameraHUD")
+        .def("StaticClass", &ADebugCameraHUD::StaticClass, py::return_value_policy::reference)
         .def("eventPostRender", &ADebugCameraHUD::eventPostRender)
         .def("DisplayMaterials", &ADebugCameraHUD::DisplayMaterials)
         .def("eventPostBeginPlay", &ADebugCameraHUD::eventPostBeginPlay)

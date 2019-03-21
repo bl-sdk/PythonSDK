@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpecializedBehaviorEvent()
 {
-    class_< FSpecializedBehaviorEvent >("FSpecializedBehaviorEvent", no_init)
+    py::class_< FSpecializedBehaviorEvent >("FSpecializedBehaviorEvent")
         .def_readwrite("EventName", &FSpecializedBehaviorEvent::EventName)
   ;
 }

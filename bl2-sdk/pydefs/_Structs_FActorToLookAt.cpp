@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActorToLookAt()
 {
-    class_< FActorToLookAt >("FActorToLookAt", no_init)
+    py::class_< FActorToLookAt >("FActorToLookAt")
         .def_readwrite("Actor", &FActorToLookAt::Actor)
         .def_readwrite("Rating", &FActorToLookAt::Rating)
         .def_readwrite("EnteredTime", &FActorToLookAt::EnteredTime)

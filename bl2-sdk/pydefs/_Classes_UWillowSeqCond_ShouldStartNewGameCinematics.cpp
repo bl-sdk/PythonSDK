@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqCond_ShouldStartNewGameCinematics()
 {
-    class_< UWillowSeqCond_ShouldStartNewGameCinematics, bases< USequenceCondition >  , boost::noncopyable>("UWillowSeqCond_ShouldStartNewGameCinematics", no_init)
-        .def("StaticClass", &UWillowSeqCond_ShouldStartNewGameCinematics::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqCond_ShouldStartNewGameCinematics,  USequenceCondition   >("UWillowSeqCond_ShouldStartNewGameCinematics")
+        .def("StaticClass", &UWillowSeqCond_ShouldStartNewGameCinematics::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFeatherBoneBlendData()
 {
-    class_< FFeatherBoneBlendData >("FFeatherBoneBlendData", no_init)
+    py::class_< FFeatherBoneBlendData >("FFeatherBoneBlendData")
         .def_readwrite("StartBoneName", &FFeatherBoneBlendData::StartBoneName)
         .def_readwrite("BlendWeight", &FFeatherBoneBlendData::BlendWeight)
   ;

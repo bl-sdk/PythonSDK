@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_ChangeCollisionSize()
 {
-    class_< UBehavior_ChangeCollisionSize, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_ChangeCollisionSize", no_init)
+    py::class_< UBehavior_ChangeCollisionSize,  UBehaviorBase   >("UBehavior_ChangeCollisionSize")
         .def_readwrite("Radius", &UBehavior_ChangeCollisionSize::Radius)
         .def_readwrite("Height", &UBehavior_ChangeCollisionSize::Height)
-        .def("StaticClass", &UBehavior_ChangeCollisionSize::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_ChangeCollisionSize::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ChangeCollisionSize::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

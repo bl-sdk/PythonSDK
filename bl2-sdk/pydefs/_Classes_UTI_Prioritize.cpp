@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTI_Prioritize()
 {
-    class_< UTI_Prioritize, bases< UTargetIterator >  , boost::noncopyable>("UTI_Prioritize", no_init)
+    py::class_< UTI_Prioritize,  UTargetIterator   >("UTI_Prioritize")
         .def_readwrite("Weight", &UTI_Prioritize::Weight)
-        .def("StaticClass", &UTI_Prioritize::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTI_Prioritize::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

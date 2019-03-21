@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineVoiceInterface()
 {
-    class_< UOnlineVoiceInterface, bases< UInterface >  , boost::noncopyable>("UOnlineVoiceInterface", no_init)
-        .def("StaticClass", &UOnlineVoiceInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineVoiceInterface,  UInterface   >("UOnlineVoiceInterface")
+        .def("StaticClass", &UOnlineVoiceInterface::StaticClass, py::return_value_policy::reference)
         .def("SetVoiceVolume", &UOnlineVoiceInterface::SetVoiceVolume)
         .def("UnmuteAll", &UOnlineVoiceInterface::UnmuteAll)
         .def("MuteAll", &UOnlineVoiceInterface::MuteAll)

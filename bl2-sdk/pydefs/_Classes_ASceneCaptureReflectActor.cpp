@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASceneCaptureReflectActor()
 {
-    class_< ASceneCaptureReflectActor, bases< AActor >  , boost::noncopyable>("ASceneCaptureReflectActor", no_init)
+    py::class_< ASceneCaptureReflectActor,  AActor   >("ASceneCaptureReflectActor")
         .def_readwrite("StaticMesh", &ASceneCaptureReflectActor::StaticMesh)
         .def_readwrite("ReflectMaterialInst", &ASceneCaptureReflectActor::ReflectMaterialInst)
         .def_readwrite("SceneCapture", &ASceneCaptureActor::SceneCapture)
-        .def("StaticClass", &ASceneCaptureReflectActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASceneCaptureReflectActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ASceneCaptureActor::OnToggle)
         .staticmethod("StaticClass")
   ;

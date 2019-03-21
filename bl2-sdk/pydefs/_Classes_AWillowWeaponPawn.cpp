@@ -1,29 +1,29 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowWeaponPawn()
 {
-    class_< AWillowWeaponPawn, bases< AWillowVehicleBase >  , boost::noncopyable>("AWillowWeaponPawn", no_init)
+    py::class_< AWillowWeaponPawn,  AWillowVehicleBase   >("AWillowWeaponPawn")
         .def_readwrite("MyVehicleWeapon", &AWillowWeaponPawn::MyVehicleWeapon)
         .def_readwrite("MyVehicle", &AWillowWeaponPawn::MyVehicle)
         .def_readwrite("MySeatIndex", &AWillowWeaponPawn::MySeatIndex)
         .def_readwrite("FixViewTime", &AWillowWeaponPawn::FixViewTime)
-        .def("StaticClass", &AWillowWeaponPawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowWeaponPawn::StaticClass, py::return_value_policy::reference)
         .def("GetAimDirection", &AWillowWeaponPawn::GetAimDirection)
         .def("GetPivotPoint", &AWillowWeaponPawn::GetPivotPoint)
         .def("SetAllegiance", &AWillowWeaponPawn::SetAllegiance)
         .def("eventOutsideWorldBounds", &AWillowWeaponPawn::eventOutsideWorldBounds)
         .def("eventFellOutOfWorld", &AWillowWeaponPawn::eventFellOutOfWorld)
-        .def("GetWillowVehicle", &AWillowWeaponPawn::GetWillowVehicle, return_value_policy< reference_existing_object >())
+        .def("GetWillowVehicle", &AWillowWeaponPawn::GetWillowVehicle, py::return_value_policy::reference)
         .def("ClientUnsitDriver", &AWillowWeaponPawn::ClientUnsitDriver)
         .def("GetVehicleAndSeatIndex", &AWillowWeaponPawn::GetVehicleAndSeatIndex)
         .def("ServerNotifyAltFireTriggered", &AWillowWeaponPawn::ServerNotifyAltFireTriggered)
         .def("ServerNotifyTargetLockSuccessful", &AWillowWeaponPawn::ServerNotifyTargetLockSuccessful)
         .def("StopFireTurret", &AWillowWeaponPawn::StopFireTurret)
         .def("StartFireTurret", &AWillowWeaponPawn::StartFireTurret)
-        .def("GetPawnToTeleport", &AWillowWeaponPawn::GetPawnToTeleport, return_value_policy< reference_existing_object >())
+        .def("GetPawnToTeleport", &AWillowWeaponPawn::GetPawnToTeleport, py::return_value_policy::reference)
         .def("ProcessViewRotationForAttachedRiders", &AWillowWeaponPawn::ProcessViewRotationForAttachedRiders)
         .def("ProcessViewRotation", &AWillowWeaponPawn::ProcessViewRotation)
         .def("VehicleAdjustInput", &AWillowWeaponPawn::VehicleAdjustInput)
@@ -67,7 +67,7 @@ void Export_pystes_AWillowWeaponPawn()
         .def("CalcCamera", &AWillowWeaponPawn::CalcCamera)
         .def("SetVehicleData", &AWillowWeaponPawn::SetVehicleData)
         .def("IsAttachedRiderSeat", &AWillowWeaponPawn::IsAttachedRiderSeat)
-        .def("GetDriverController", &AWillowWeaponPawn::GetDriverController, return_value_policy< reference_existing_object >())
+        .def("GetDriverController", &AWillowWeaponPawn::GetDriverController, py::return_value_policy::reference)
         .def("eventReplicatedEvent", &AWillowWeaponPawn::eventReplicatedEvent)
         .staticmethod("StaticClass")
   ;

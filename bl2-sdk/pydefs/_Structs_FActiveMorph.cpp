@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActiveMorph()
 {
-    class_< FActiveMorph >("FActiveMorph", no_init)
+    py::class_< FActiveMorph >("FActiveMorph")
         .def_readwrite("Target", &FActiveMorph::Target)
         .def_readwrite("Weight", &FActiveMorph::Weight)
   ;

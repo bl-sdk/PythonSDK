@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTerrainLayerSetup()
 {
-    class_< UTerrainLayerSetup, bases< UObject >  , boost::noncopyable>("UTerrainLayerSetup", no_init)
+    py::class_< UTerrainLayerSetup,  UObject   >("UTerrainLayerSetup")
         .def_readwrite("Materials", &UTerrainLayerSetup::Materials)
-        .def("StaticClass", &UTerrainLayerSetup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTerrainLayerSetup::StaticClass, py::return_value_policy::reference)
         .def("PostBeginPlay", &UTerrainLayerSetup::PostBeginPlay)
         .staticmethod("StaticClass")
   ;

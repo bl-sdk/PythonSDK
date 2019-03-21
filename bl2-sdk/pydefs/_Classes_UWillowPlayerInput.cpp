@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPlayerInput()
 {
-    class_< UWillowPlayerInput, bases< UPlayerInput >  , boost::noncopyable>("UWillowPlayerInput", no_init)
+    py::class_< UWillowPlayerInput,  UPlayerInput   >("UWillowPlayerInput")
         .def_readwrite("DebugBindOverrideKeyName", &UWillowPlayerInput::DebugBindOverrideKeyName)
         .def_readwrite("ButtonHoldEventTime", &UWillowPlayerInput::ButtonHoldEventTime)
         .def_readwrite("LastDuckTime", &UWillowPlayerInput::LastDuckTime)
@@ -28,7 +28,7 @@ void Export_pystes_UWillowPlayerInput()
         .def_readwrite("KeyRebindings", &UWillowPlayerInput::KeyRebindings)
         .def_readwrite("ControllerRebindings", &UWillowPlayerInput::ControllerRebindings)
         .def_readwrite("EndCrouchOnNextForwardMovement", &UWillowPlayerInput::EndCrouchOnNextForwardMovement)
-        .def("StaticClass", &UWillowPlayerInput::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPlayerInput::StaticClass, py::return_value_policy::reference)
         .def("ReleasedEndDuck", &UWillowPlayerInput::ReleasedEndDuck)
         .def("PressedEndDuck", &UWillowPlayerInput::PressedEndDuck)
         .def("ToggleViewAccel", &UWillowPlayerInput::ToggleViewAccel)

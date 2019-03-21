@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDebugTextInfo()
 {
-    class_< FDebugTextInfo >("FDebugTextInfo", no_init)
+    py::class_< FDebugTextInfo >("FDebugTextInfo")
         .def_readwrite("SrcActor", &FDebugTextInfo::SrcActor)
         .def_readwrite("SrcActorOffset", &FDebugTextInfo::SrcActorOffset)
         .def_readwrite("SrcActorDesiredOffset", &FDebugTextInfo::SrcActorDesiredOffset)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUnloadableDlcEchoCallData()
 {
-    class_< FUnloadableDlcEchoCallData >("FUnloadableDlcEchoCallData", no_init)
+    py::class_< FUnloadableDlcEchoCallData >("FUnloadableDlcEchoCallData")
         .def_readwrite("CallDefName", &FUnloadableDlcEchoCallData::CallDefName)
         .def_readwrite("DlcPackageId", &FUnloadableDlcEchoCallData::DlcPackageId)
   ;

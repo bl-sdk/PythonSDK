@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSkelControlSpline()
 {
-    class_< UWillowSkelControlSpline, bases< USkelControlBase >  , boost::noncopyable>("UWillowSkelControlSpline", no_init)
+    py::class_< UWillowSkelControlSpline,  USkelControlBase   >("UWillowSkelControlSpline")
         .def_readwrite("SplineLength", &UWillowSkelControlSpline::SplineLength)
         .def_readwrite("SplineBoneAxis", &UWillowSkelControlSpline::SplineBoneAxis)
         .def_readwrite("BoneRotMode", &UWillowSkelControlSpline::BoneRotMode)
@@ -13,7 +13,7 @@ void Export_pystes_UWillowSkelControlSpline()
         .def_readwrite("StartSplineLocationSpace", &UWillowSkelControlSpline::StartSplineLocationSpace)
         .def_readwrite("EndSplineOffset", &UWillowSkelControlSpline::EndSplineOffset)
         .def_readwrite("StartSplineOffset", &UWillowSkelControlSpline::StartSplineOffset)
-        .def("StaticClass", &UWillowSkelControlSpline::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSkelControlSpline::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraShake()
 {
-    class_< UCameraShake, bases< UObject >  , boost::noncopyable>("UCameraShake", no_init)
+    py::class_< UCameraShake,  UObject   >("UCameraShake")
         .def_readwrite("OscillationDuration", &UCameraShake::OscillationDuration)
         .def_readwrite("OscillationBlendInTime", &UCameraShake::OscillationBlendInTime)
         .def_readwrite("OscillationBlendOutTime", &UCameraShake::OscillationBlendOutTime)
@@ -18,7 +18,7 @@ void Export_pystes_UCameraShake()
         .def_readwrite("AnimBlendInTime", &UCameraShake::AnimBlendInTime)
         .def_readwrite("AnimBlendOutTime", &UCameraShake::AnimBlendOutTime)
         .def_readwrite("RandomAnimSegmentDuration", &UCameraShake::RandomAnimSegmentDuration)
-        .def("StaticClass", &UCameraShake::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCameraShake::StaticClass, py::return_value_policy::reference)
         .def("GetLocOscillationMagnitude", &UCameraShake::GetLocOscillationMagnitude)
         .def("GetRotOscillationMagnitude", &UCameraShake::GetRotOscillationMagnitude)
         .staticmethod("StaticClass")

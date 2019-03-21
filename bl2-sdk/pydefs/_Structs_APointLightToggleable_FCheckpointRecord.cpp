@@ -1,10 +1,10 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APointLightToggleable_FCheckpointRecord()
 {
-    class_< APointLightToggleable_FCheckpointRecord >("APointLightToggleable_FCheckpointRecord", no_init)
+    py::class_< APointLightToggleable_FCheckpointRecord >("APointLightToggleable_FCheckpointRecord")
   ;
 }

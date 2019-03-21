@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTextureRenderTarget()
 {
-    class_< UTextureRenderTarget, bases< UTexture >  , boost::noncopyable>("UTextureRenderTarget", no_init)
+    py::class_< UTextureRenderTarget,  UTexture   >("UTextureRenderTarget")
         .def_readwrite("TargetGamma", &UTextureRenderTarget::TargetGamma)
-        .def("StaticClass", &UTextureRenderTarget::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTextureRenderTarget::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

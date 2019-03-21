@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLODSoloTrack()
 {
-    class_< FLODSoloTrack >("FLODSoloTrack", no_init)
+    py::class_< FLODSoloTrack >("FLODSoloTrack")
         .def_readwrite("SoloEnableSetting", &FLODSoloTrack::SoloEnableSetting)
   ;
 }

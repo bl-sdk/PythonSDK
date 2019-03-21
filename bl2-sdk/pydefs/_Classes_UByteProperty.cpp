@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UByteProperty()
 {
-    class_< UByteProperty, bases< UProperty >  , boost::noncopyable>("UByteProperty", no_init)
+    py::class_< UByteProperty,  UProperty   >("UByteProperty")
         .def_readonly("UnknownData00", &UByteProperty::UnknownData00)
-        .def("StaticClass", &UByteProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UByteProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

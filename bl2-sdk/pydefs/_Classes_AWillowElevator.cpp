@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowElevator()
 {
-    class_< AWillowElevator, bases< AInterpActor >  , boost::noncopyable>("AWillowElevator", no_init)
+    py::class_< AWillowElevator,  AInterpActor   >("AWillowElevator")
         .def_readwrite("FloorIndex", &AWillowElevator::FloorIndex)
         .def_readwrite("DestFloorIndex", &AWillowElevator::DestFloorIndex)
         .def_readwrite("InitialFloorIndex", &AWillowElevator::InitialFloorIndex)
         .def_readwrite("Floors", &AWillowElevator::Floors)
         .def_readwrite("Buttons", &AWillowElevator::Buttons)
-        .def("StaticClass", &AWillowElevator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowElevator::StaticClass, py::return_value_policy::reference)
         .def("ButtonsGoToInUseState", &AWillowElevator::ButtonsGoToInUseState)
         .def("eventButtonsGoToEnabledState", &AWillowElevator::eventButtonsGoToEnabledState)
         .def("OnToggle", &AWillowElevator::OnToggle)

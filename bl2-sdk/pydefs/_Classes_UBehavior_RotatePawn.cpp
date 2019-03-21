@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_RotatePawn()
 {
-    class_< UBehavior_RotatePawn, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_RotatePawn", no_init)
+    py::class_< UBehavior_RotatePawn,  UBehaviorBase   >("UBehavior_RotatePawn")
         .def_readwrite("RotateDirection", &UBehavior_RotatePawn::RotateDirection)
         .def_readwrite("Time", &UBehavior_RotatePawn::Time)
-        .def("StaticClass", &UBehavior_RotatePawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_RotatePawn::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_RotatePawn::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

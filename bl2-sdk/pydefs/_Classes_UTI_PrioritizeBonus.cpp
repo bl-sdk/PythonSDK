@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTI_PrioritizeBonus()
 {
-    class_< UTI_PrioritizeBonus, bases< UTI_Prioritize >  , boost::noncopyable>("UTI_PrioritizeBonus", no_init)
-        .def("StaticClass", &UTI_PrioritizeBonus::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTI_PrioritizeBonus,  UTI_Prioritize   >("UTI_PrioritizeBonus")
+        .def("StaticClass", &UTI_PrioritizeBonus::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

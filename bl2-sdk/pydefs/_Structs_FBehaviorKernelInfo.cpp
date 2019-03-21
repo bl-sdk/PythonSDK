@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorKernelInfo()
 {
-    class_< FBehaviorKernelInfo >("FBehaviorKernelInfo", no_init)
+    py::class_< FBehaviorKernelInfo >("FBehaviorKernelInfo")
         .def_readwrite("StateForThreadRunningThisBehavior", &FBehaviorKernelInfo::StateForThreadRunningThisBehavior)
         .def_readwrite("WorldTime", &FBehaviorKernelInfo::WorldTime)
         .def_readwrite("ExecutionTime", &FBehaviorKernelInfo::ExecutionTime)

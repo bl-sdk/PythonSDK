@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIFlagProviderGroup()
 {
-    class_< UIFlagProviderGroup, bases< UInterface >  , boost::noncopyable>("UIFlagProviderGroup", no_init)
-        .def("StaticClass", &UIFlagProviderGroup::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIFlagProviderGroup,  UInterface   >("UIFlagProviderGroup")
+        .def("StaticClass", &UIFlagProviderGroup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

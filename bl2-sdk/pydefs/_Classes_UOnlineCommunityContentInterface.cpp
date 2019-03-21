@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineCommunityContentInterface()
 {
-    class_< UOnlineCommunityContentInterface, bases< UInterface >  , boost::noncopyable>("UOnlineCommunityContentInterface", no_init)
-        .def("StaticClass", &UOnlineCommunityContentInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineCommunityContentInterface,  UInterface   >("UOnlineCommunityContentInterface")
+        .def("StaticClass", &UOnlineCommunityContentInterface::StaticClass, py::return_value_policy::reference)
         .def("RateContent", &UOnlineCommunityContentInterface::RateContent)
         .def("ClearGetContentPayloadCompleteDelegate", &UOnlineCommunityContentInterface::ClearGetContentPayloadCompleteDelegate)
         .def("AddGetContentPayloadCompleteDelegate", &UOnlineCommunityContentInterface::AddGetContentPayloadCompleteDelegate)

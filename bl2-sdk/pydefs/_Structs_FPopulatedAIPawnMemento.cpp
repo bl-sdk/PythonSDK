@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulatedAIPawnMemento()
 {
-    class_< FPopulatedAIPawnMemento >("FPopulatedAIPawnMemento", no_init)
+    py::class_< FPopulatedAIPawnMemento >("FPopulatedAIPawnMemento")
         .def_readwrite("PawnWeapons", &FPopulatedAIPawnMemento::PawnWeapons)
         .def_readwrite("PawnItems", &FPopulatedAIPawnMemento::PawnItems)
   ;

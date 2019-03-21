@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInventoryGradeModifierData()
 {
-    class_< FInventoryGradeModifierData >("FInventoryGradeModifierData", no_init)
+    py::class_< FInventoryGradeModifierData >("FInventoryGradeModifierData")
         .def_readwrite("ExpLevel", &FInventoryGradeModifierData::ExpLevel)
         .def_readwrite("CustomInventoryDefinition", &FInventoryGradeModifierData::CustomInventoryDefinition)
   ;

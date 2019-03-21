@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANxGenericForceFieldBrush()
 {
-    class_< ANxGenericForceFieldBrush, bases< AVolume >  , boost::noncopyable>("ANxGenericForceFieldBrush", no_init)
+    py::class_< ANxGenericForceFieldBrush,  AVolume   >("ANxGenericForceFieldBrush")
         .def_readwrite("ExcludeChannel", &ANxGenericForceFieldBrush::ExcludeChannel)
         .def_readwrite("CollideWithChannels", &ANxGenericForceFieldBrush::CollideWithChannels)
         .def_readwrite("RBChannel", &ANxGenericForceFieldBrush::RBChannel)
@@ -28,7 +28,7 @@ void Export_pystes_ANxGenericForceFieldBrush()
         .def_readwrite("ExclusionShapes", &ANxGenericForceFieldBrush::ExclusionShapes)
         .def_readwrite("ExclusionShapePoses", &ANxGenericForceFieldBrush::ExclusionShapePoses)
         .def_readwrite("LinearKernel", &ANxGenericForceFieldBrush::LinearKernel)
-        .def("StaticClass", &ANxGenericForceFieldBrush::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANxGenericForceFieldBrush::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &ANxGenericForceFieldBrush::StopsProjectile)
         .def("eventPostBeginPlay", &ANxGenericForceFieldBrush::eventPostBeginPlay)
         .staticmethod("StaticClass")

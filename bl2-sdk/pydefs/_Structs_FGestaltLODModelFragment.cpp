@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltLODModelFragment()
 {
-    class_< FGestaltLODModelFragment >("FGestaltLODModelFragment", no_init)
+    py::class_< FGestaltLODModelFragment >("FGestaltLODModelFragment")
         .def_readwrite("MaterialIndex", &FGestaltLODModelFragment::MaterialIndex)
         .def_readwrite("FirstIndex", &FGestaltLODModelFragment::FirstIndex)
         .def_readwrite("NumPrimitives", &FGestaltLODModelFragment::NumPrimitives)

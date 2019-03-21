@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoordinatedEffectIndices()
 {
-    class_< FCoordinatedEffectIndices >("FCoordinatedEffectIndices", no_init)
+    py::class_< FCoordinatedEffectIndices >("FCoordinatedEffectIndices")
         .def_readwrite("StartingIndex", &FCoordinatedEffectIndices::StartingIndex)
         .def_readwrite("EndingIndex", &FCoordinatedEffectIndices::EndingIndex)
   ;

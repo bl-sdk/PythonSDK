@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSkelControl_EyelidLook()
 {
-    class_< UWillowSkelControl_EyelidLook, bases< USkelControlSingleBone >  , boost::noncopyable>("UWillowSkelControl_EyelidLook", no_init)
+    py::class_< UWillowSkelControl_EyelidLook,  USkelControlSingleBone   >("UWillowSkelControl_EyelidLook")
         .def_readwrite("OriginalHorizAngle", &UWillowSkelControl_EyelidLook::OriginalHorizAngle)
         .def_readwrite("OriginalVertAngle", &UWillowSkelControl_EyelidLook::OriginalVertAngle)
         .def_readwrite("EyeBoneName", &UWillowSkelControl_EyelidLook::EyeBoneName)
@@ -17,7 +17,7 @@ void Export_pystes_UWillowSkelControl_EyelidLook()
         .def_readwrite("maxOpenValue", &UWillowSkelControl_EyelidLook::maxOpenValue)
         .def_readwrite("minOpenValue", &UWillowSkelControl_EyelidLook::minOpenValue)
         .def_readwrite("ClosedValue", &UWillowSkelControl_EyelidLook::ClosedValue)
-        .def("StaticClass", &UWillowSkelControl_EyelidLook::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSkelControl_EyelidLook::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

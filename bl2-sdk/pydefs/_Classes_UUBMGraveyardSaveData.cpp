@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUBMGraveyardSaveData()
 {
-    class_< UUBMGraveyardSaveData, bases< UObject >  , boost::noncopyable>("UUBMGraveyardSaveData", no_init)
+    py::class_< UUBMGraveyardSaveData,  UObject   >("UUBMGraveyardSaveData")
         .def_readwrite("TombstoneList", &UUBMGraveyardSaveData::TombstoneList)
-        .def("StaticClass", &UUBMGraveyardSaveData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUBMGraveyardSaveData::StaticClass, py::return_value_policy::reference)
         .def("GetFormattedChallengesComplete", &UUBMGraveyardSaveData::GetFormattedChallengesComplete)
         .def("GetFormattedMissionsComplete", &UUBMGraveyardSaveData::GetFormattedMissionsComplete)
         .def("GetFormattedCharacterLevel", &UUBMGraveyardSaveData::GetFormattedCharacterLevel)

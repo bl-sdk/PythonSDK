@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAttributePresentationListDefinition()
 {
-    class_< UAttributePresentationListDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UAttributePresentationListDefinition", no_init)
+    py::class_< UAttributePresentationListDefinition,  UGBXDefinition   >("UAttributePresentationListDefinition")
         .def_readwrite("Attributes", &UAttributePresentationListDefinition::Attributes)
-        .def("StaticClass", &UAttributePresentationListDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("FindAttributePresentation", &UAttributePresentationListDefinition::FindAttributePresentation, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAttributePresentationListDefinition::StaticClass, py::return_value_policy::reference)
+        .def("FindAttributePresentation", &UAttributePresentationListDefinition::FindAttributePresentation, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

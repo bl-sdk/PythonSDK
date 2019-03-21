@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemPartListDefinition()
 {
-    class_< UItemPartListDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UItemPartListDefinition", no_init)
+    py::class_< UItemPartListDefinition,  UGBXDefinition   >("UItemPartListDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UItemPartListDefinition::VfTable_IIConstructObject)
         .def_readwrite("WeightedParts", &UItemPartListDefinition::WeightedParts)
         .def_readwrite("ConsolidatedAttributeInitData", &UItemPartListDefinition::ConsolidatedAttributeInitData)
-        .def("StaticClass", &UItemPartListDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemPartListDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

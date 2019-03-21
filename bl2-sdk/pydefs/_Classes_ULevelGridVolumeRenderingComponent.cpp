@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelGridVolumeRenderingComponent()
 {
-    class_< ULevelGridVolumeRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("ULevelGridVolumeRenderingComponent", no_init)
-        .def("StaticClass", &ULevelGridVolumeRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULevelGridVolumeRenderingComponent,  UPrimitiveComponent   >("ULevelGridVolumeRenderingComponent")
+        .def("StaticClass", &ULevelGridVolumeRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

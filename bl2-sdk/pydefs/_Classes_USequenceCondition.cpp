@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USequenceCondition()
 {
-    class_< USequenceCondition, bases< USequenceOp >  , boost::noncopyable>("USequenceCondition", no_init)
-        .def("StaticClass", &USequenceCondition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USequenceCondition,  USequenceOp   >("USequenceCondition")
+        .def("StaticClass", &USequenceCondition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPlayerSnapshotRecord()
 {
-    class_< UWillowPlayerSnapshotRecord, bases< USnapshotRecord >  , boost::noncopyable>("UWillowPlayerSnapshotRecord", no_init)
+    py::class_< UWillowPlayerSnapshotRecord,  USnapshotRecord   >("UWillowPlayerSnapshotRecord")
         .def_readwrite("MyWillowPawnName", &UWillowPlayerSnapshotRecord::MyWillowPawnName)
-        .def("StaticClass", &UWillowPlayerSnapshotRecord::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPlayerSnapshotRecord::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

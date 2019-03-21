@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDeltaTrackInfo()
 {
-    class_< FDeltaTrackInfo >("FDeltaTrackInfo", no_init)
+    py::class_< FDeltaTrackInfo >("FDeltaTrackInfo")
         .def_readonly("RotKey", &FDeltaTrackInfo::RotKey)
         .def_readonly("PosKey", &FDeltaTrackInfo::PosKey)
         .def_readonly("RotKeyIndex", &FDeltaTrackInfo::RotKeyIndex)

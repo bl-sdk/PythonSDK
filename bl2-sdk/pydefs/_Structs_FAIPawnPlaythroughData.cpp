@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAIPawnPlaythroughData()
 {
-    class_< FAIPawnPlaythroughData >("FAIPawnPlaythroughData", no_init)
+    py::class_< FAIPawnPlaythroughData >("FAIPawnPlaythroughData")
         .def_readwrite("PlayThrough", &FAIPawnPlaythroughData::PlayThrough)
         .def_readwrite("DisplayName", &FAIPawnPlaythroughData::DisplayName)
         .def_readwrite("TransformedNames", &FAIPawnPlaythroughData::TransformedNames)

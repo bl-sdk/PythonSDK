@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInventoryDataProviderElement()
 {
-    class_< UInventoryDataProviderElement, bases< UGFxObject >  , boost::noncopyable>("UInventoryDataProviderElement", no_init)
+    py::class_< UInventoryDataProviderElement,  UGFxObject   >("UInventoryDataProviderElement")
         .def_readwrite("Kind", &UInventoryDataProviderElement::Kind)
         .def_readwrite("LightweightIdx", &UInventoryDataProviderElement::LightweightIdx)
-        .def("StaticClass", &UInventoryDataProviderElement::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInventoryDataProviderElement::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

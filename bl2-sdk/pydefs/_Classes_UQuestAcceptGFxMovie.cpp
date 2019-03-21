@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UQuestAcceptGFxMovie()
 {
-    class_< UQuestAcceptGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UQuestAcceptGFxMovie", no_init)
+    py::class_< UQuestAcceptGFxMovie,  UWillowGFxMovie3D   >("UQuestAcceptGFxMovie")
         .def_readwrite("MissionUIDef", &UQuestAcceptGFxMovie::MissionUIDef)
         .def_readwrite("MissionTextList", &UQuestAcceptGFxMovie::MissionTextList)
         .def_readwrite("MissionCategories", &UQuestAcceptGFxMovie::MissionCategories)
@@ -22,7 +22,7 @@ void Export_pystes_UQuestAcceptGFxMovie()
         .def_readwrite("MissionDefForRewardPage", &UQuestAcceptGFxMovie::MissionDefForRewardPage)
         .def_readwrite("RewardObject", &UQuestAcceptGFxMovie::RewardObject)
         .def_readwrite("WantsAcceptCounter", &UQuestAcceptGFxMovie::WantsAcceptCounter)
-        .def("StaticClass", &UQuestAcceptGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UQuestAcceptGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extGenericButtonClicked", &UQuestAcceptGFxMovie::extGenericButtonClicked)
         .def("eventOnTick", &UQuestAcceptGFxMovie::eventOnTick)
         .def("InitForConsole", &UQuestAcceptGFxMovie::InitForConsole)

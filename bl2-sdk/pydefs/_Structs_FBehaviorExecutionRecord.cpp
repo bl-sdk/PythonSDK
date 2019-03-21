@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorExecutionRecord()
 {
-    class_< FBehaviorExecutionRecord >("FBehaviorExecutionRecord", no_init)
+    py::class_< FBehaviorExecutionRecord >("FBehaviorExecutionRecord")
         .def_readwrite("OwningProcessID", &FBehaviorExecutionRecord::OwningProcessID)
         .def_readwrite("ProvidersIndex", &FBehaviorExecutionRecord::ProvidersIndex)
         .def_readwrite("SequencesDataIndex", &FBehaviorExecutionRecord::SequencesDataIndex)

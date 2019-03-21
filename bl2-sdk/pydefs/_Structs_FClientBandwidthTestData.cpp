@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClientBandwidthTestData()
 {
-    class_< FClientBandwidthTestData >("FClientBandwidthTestData", no_init)
+    py::class_< FClientBandwidthTestData >("FClientBandwidthTestData")
         .def_readwrite("TestType", &FClientBandwidthTestData::TestType)
         .def_readwrite("CurrentState", &FClientBandwidthTestData::CurrentState)
         .def_readwrite("NumBytesToSendTotal", &FClientBandwidthTestData::NumBytesToSendTotal)

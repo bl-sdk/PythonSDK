@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlaylist()
 {
-    class_< FPlaylist >("FPlaylist", no_init)
+    py::class_< FPlaylist >("FPlaylist")
         .def_readwrite("ConfiguredGames", &FPlaylist::ConfiguredGames)
         .def_readwrite("PlaylistId", &FPlaylist::PlaylistId)
         .def_readwrite("LoadBalanceId", &FPlaylist::LoadBalanceId)

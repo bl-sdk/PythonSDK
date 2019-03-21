@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillExpressionEvaluatorDefinition()
 {
-    class_< USkillExpressionEvaluatorDefinition, bases< UGBXDefinition >  , boost::noncopyable>("USkillExpressionEvaluatorDefinition", no_init)
+    py::class_< USkillExpressionEvaluatorDefinition,  UGBXDefinition   >("USkillExpressionEvaluatorDefinition")
         .def_readwrite("Evaluator", &USkillExpressionEvaluatorDefinition::Evaluator)
-        .def("StaticClass", &USkillExpressionEvaluatorDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillExpressionEvaluatorDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

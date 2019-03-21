@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSubscribedInputEventParameters()
 {
-    class_< FSubscribedInputEventParameters >("FSubscribedInputEventParameters", no_init)
+    py::class_< FSubscribedInputEventParameters >("FSubscribedInputEventParameters")
         .def_readwrite("InputAliasName", &FSubscribedInputEventParameters::InputAliasName)
         .def_readwrite("PlayerIndex", &FInputEventParameters::PlayerIndex)
         .def_readwrite("ControllerId", &FInputEventParameters::ControllerId)

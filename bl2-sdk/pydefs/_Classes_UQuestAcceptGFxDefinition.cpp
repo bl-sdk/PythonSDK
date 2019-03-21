@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UQuestAcceptGFxDefinition()
 {
-    class_< UQuestAcceptGFxDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UQuestAcceptGFxDefinition", no_init)
+    py::class_< UQuestAcceptGFxDefinition,  UWillowGFxMovie3DDefinition   >("UQuestAcceptGFxDefinition")
         .def_readwrite("MissionTextDefinition", &UQuestAcceptGFxDefinition::MissionTextDefinition)
         .def_readwrite("NumEntriesOnMissionList", &UQuestAcceptGFxDefinition::NumEntriesOnMissionList)
         .def_readwrite("Pres_Available", &UQuestAcceptGFxDefinition::Pres_Available)
@@ -16,7 +16,7 @@ void Export_pystes_UQuestAcceptGFxDefinition()
         .def_readwrite("Pres_Ineligible", &UQuestAcceptGFxDefinition::Pres_Ineligible)
         .def_readwrite("Pres_Failed", &UQuestAcceptGFxDefinition::Pres_Failed)
         .def_readwrite("PostProcessInterpolationTime", &UQuestAcceptGFxDefinition::PostProcessInterpolationTime)
-        .def("StaticClass", &UQuestAcceptGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UQuestAcceptGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UShieldBarGFxObject()
 {
-    class_< UShieldBarGFxObject, bases< UGFxObject >  , boost::noncopyable>("UShieldBarGFxObject", no_init)
+    py::class_< UShieldBarGFxObject,  UGFxObject   >("UShieldBarGFxObject")
         .def_readwrite("CachedCurrentShield", &UShieldBarGFxObject::CachedCurrentShield)
-        .def("StaticClass", &UShieldBarGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UShieldBarGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetShield", &UShieldBarGFxObject::SetShield)
         .staticmethod("StaticClass")
   ;

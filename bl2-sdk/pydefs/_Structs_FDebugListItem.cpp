@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDebugListItem()
 {
-    class_< FDebugListItem >("FDebugListItem", no_init)
+    py::class_< FDebugListItem >("FDebugListItem")
         .def_readwrite("DisplayType", &FDebugListItem::DisplayType)
         .def_readwrite("Location", &FDebugListItem::Location)
         .def_readwrite("Location2", &FDebugListItem::Location2)

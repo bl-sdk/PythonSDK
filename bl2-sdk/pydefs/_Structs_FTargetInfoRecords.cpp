@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTargetInfoRecord()
 {
-    class_< FTargetInfoRecord, bases< FTimeStampedRecord >  >("FTargetInfoRecord", no_init)
+    py::class_< FTargetInfoRecord,  FTimeStampedRecord   >("FTargetInfoRecord")
         .def_readwrite("TheObj", &FTargetInfoRecord::TheObj)
         .def_readwrite("InUse", &FTargetInfoRecord::InUse)
   ;

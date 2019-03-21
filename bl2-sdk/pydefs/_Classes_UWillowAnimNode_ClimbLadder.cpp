@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimNode_ClimbLadder()
 {
-    class_< UWillowAnimNode_ClimbLadder, bases< UAnimNodeScaleRateBySpeed >  , boost::noncopyable>("UWillowAnimNode_ClimbLadder", no_init)
-        .def("StaticClass", &UWillowAnimNode_ClimbLadder::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowAnimNode_ClimbLadder,  UAnimNodeScaleRateBySpeed   >("UWillowAnimNode_ClimbLadder")
+        .def("StaticClass", &UWillowAnimNode_ClimbLadder::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

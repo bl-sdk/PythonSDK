@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributeScalarParam()
 {
-    class_< FAttributeScalarParam >("FAttributeScalarParam", no_init)
+    py::class_< FAttributeScalarParam >("FAttributeScalarParam")
         .def_readwrite("ParamName", &FAttributeScalarParam::ParamName)
         .def_readwrite("Input", &FAttributeScalarParam::Input)
         .def_readwrite("MinInput", &FAttributeScalarParam::MinInput)

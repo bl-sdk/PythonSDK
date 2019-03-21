@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_UnlockCustomizationFromRewardPool()
 {
-    class_< UBehavior_UnlockCustomizationFromRewardPool, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_UnlockCustomizationFromRewardPool", no_init)
+    py::class_< UBehavior_UnlockCustomizationFromRewardPool,  UBehaviorBase   >("UBehavior_UnlockCustomizationFromRewardPool")
         .def_readwrite("RewardItemPool", &UBehavior_UnlockCustomizationFromRewardPool::RewardItemPool)
-        .def("StaticClass", &UBehavior_UnlockCustomizationFromRewardPool::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_UnlockCustomizationFromRewardPool::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_UnlockCustomizationFromRewardPool::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

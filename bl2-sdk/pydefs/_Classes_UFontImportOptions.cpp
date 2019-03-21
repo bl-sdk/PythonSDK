@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFontImportOptions()
 {
-    class_< UFontImportOptions, bases< UObject >  , boost::noncopyable>("UFontImportOptions", no_init)
+    py::class_< UFontImportOptions,  UObject   >("UFontImportOptions")
         .def_readwrite("Data", &UFontImportOptions::Data)
-        .def("StaticClass", &UFontImportOptions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFontImportOptions::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FItemMemento()
 {
-    class_< FItemMemento >("FItemMemento", no_init)
+    py::class_< FItemMemento >("FItemMemento")
         .def_readwrite("SerialNumber", &FItemMemento::SerialNumber)
   ;
 }

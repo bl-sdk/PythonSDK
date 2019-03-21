@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetSkelControlSingleBoneData()
 {
-    class_< UBehavior_SetSkelControlSingleBoneData, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetSkelControlSingleBoneData", no_init)
+    py::class_< UBehavior_SetSkelControlSingleBoneData,  UBehaviorBase   >("UBehavior_SetSkelControlSingleBoneData")
         .def_readwrite("SkelControlName", &UBehavior_SetSkelControlSingleBoneData::SkelControlName)
         .def_readwrite("BoneTranslation", &UBehavior_SetSkelControlSingleBoneData::BoneTranslation)
         .def_readwrite("BoneRotation", &UBehavior_SetSkelControlSingleBoneData::BoneRotation)
-        .def("StaticClass", &UBehavior_SetSkelControlSingleBoneData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetSkelControlSingleBoneData::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetSkelControlSingleBoneData::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

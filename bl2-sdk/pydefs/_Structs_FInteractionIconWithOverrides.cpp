@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInteractionIconWithOverrides()
 {
-    class_< FInteractionIconWithOverrides >("FInteractionIconWithOverrides", no_init)
+    py::class_< FInteractionIconWithOverrides >("FInteractionIconWithOverrides")
         .def_readwrite("IconDef", &FInteractionIconWithOverrides::IconDef)
         .def_readwrite("OverrideIconDef", &FInteractionIconWithOverrides::OverrideIconDef)
         .def_readwrite("bCostsToUse", &FInteractionIconWithOverrides::bCostsToUse)

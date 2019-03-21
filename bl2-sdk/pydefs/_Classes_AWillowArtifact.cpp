@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowArtifact()
 {
-    class_< AWillowArtifact, bases< AWillowEquipAbleItem >  , boost::noncopyable>("AWillowArtifact", no_init)
-        .def("StaticClass", &AWillowArtifact::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowArtifact,  AWillowEquipAbleItem   >("AWillowArtifact")
+        .def("StaticClass", &AWillowArtifact::StaticClass, py::return_value_policy::reference)
         .def("GetItemCardTopSectionString", &AWillowArtifact::GetItemCardTopSectionString)
-        .def("GetAttributePresentationOverride", &AWillowArtifact::GetAttributePresentationOverride, return_value_policy< reference_existing_object >())
+        .def("GetAttributePresentationOverride", &AWillowArtifact::GetAttributePresentationOverride, py::return_value_policy::reference)
         .def("SetElementalFrame", &AWillowArtifact::SetElementalFrame)
         .def("ValidateDefinitions", &AWillowArtifact::ValidateDefinitions)
         .def("GetEquippedStat", &AWillowArtifact::GetEquippedStat)

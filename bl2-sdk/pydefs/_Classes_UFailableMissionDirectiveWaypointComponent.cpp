@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFailableMissionDirectiveWaypointComponent()
 {
-    class_< UFailableMissionDirectiveWaypointComponent, bases< UWaypointComponent >  , boost::noncopyable>("UFailableMissionDirectiveWaypointComponent", no_init)
+    py::class_< UFailableMissionDirectiveWaypointComponent,  UWaypointComponent   >("UFailableMissionDirectiveWaypointComponent")
         .def_readwrite("LinkedMission", &UMissionDirectiveWaypointComponent::LinkedMission)
         .def_readwrite("BranchEnding", &UMissionDirectiveWaypointComponent::BranchEnding)
-        .def("StaticClass", &UFailableMissionDirectiveWaypointComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFailableMissionDirectiveWaypointComponent::StaticClass, py::return_value_policy::reference)
         .def("RemoveWaypoint", &UMissionDirectiveWaypointComponent::RemoveWaypoint)
         .staticmethod("StaticClass")
   ;

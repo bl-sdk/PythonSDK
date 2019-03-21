@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqVar_External()
 {
-    class_< USeqVar_External, bases< USequenceVariable >  , boost::noncopyable>("USeqVar_External", no_init)
+    py::class_< USeqVar_External,  USequenceVariable   >("USeqVar_External")
         .def_readwrite("ExpectedType", &USeqVar_External::ExpectedType)
         .def_readwrite("VariableLabel", &USeqVar_External::VariableLabel)
-        .def("StaticClass", &USeqVar_External::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqVar_External::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

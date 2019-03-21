@@ -1,19 +1,19 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UITwoPanelInterface()
 {
-    class_< UITwoPanelInterface, bases< UInterface >  , boost::noncopyable>("UITwoPanelInterface", no_init)
-        .def("StaticClass", &UITwoPanelInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UITwoPanelInterface,  UInterface   >("UITwoPanelInterface")
+        .def("StaticClass", &UITwoPanelInterface::StaticClass, py::return_value_policy::reference)
         .def("OnCellPressed", &UITwoPanelInterface::OnCellPressed)
         .def("OnLeftPanelInit", &UITwoPanelInterface::OnLeftPanelInit)
         .def("SetItemLocation", &UITwoPanelInterface::SetItemLocation)
         .def("PanelOnItemSelected", &UITwoPanelInterface::PanelOnItemSelected)
         .def("ShouldStoragePanelHighlightFrozen", &UITwoPanelInterface::ShouldStoragePanelHighlightFrozen)
-        .def("GetEquippedAnalogue", &UITwoPanelInterface::GetEquippedAnalogue, return_value_policy< reference_existing_object >())
-        .def("GetSelectedThing", &UITwoPanelInterface::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetEquippedAnalogue", &UITwoPanelInterface::GetEquippedAnalogue, py::return_value_policy::reference)
+        .def("GetSelectedThing", &UITwoPanelInterface::GetSelectedThing, py::return_value_policy::reference)
         .def("GetPlayerPanelLabel", &UITwoPanelInterface::GetPlayerPanelLabel)
         .def("GetStoragePanelLabel", &UITwoPanelInterface::GetStoragePanelLabel)
         .def("ShouldShowPanelNavTooltips", &UITwoPanelInterface::ShouldShowPanelNavTooltips)
@@ -21,8 +21,8 @@ void Export_pystes_UITwoPanelInterface()
         .def("GetCurrencyTypeForInventory", &UITwoPanelInterface::GetCurrencyTypeForInventory)
         .def("GetOverridePriceForInventory", &UITwoPanelInterface::GetOverridePriceForInventory)
         .def("GetSortConfigDataForPanel", &UITwoPanelInterface::GetSortConfigDataForPanel)
-        .def("GetStorageReferenceForTransferring", &UITwoPanelInterface::GetStorageReferenceForTransferring, return_value_policy< reference_existing_object >())
-        .def("GetStorageReferenceForSwapping", &UITwoPanelInterface::GetStorageReferenceForSwapping, return_value_policy< reference_existing_object >())
+        .def("GetStorageReferenceForTransferring", &UITwoPanelInterface::GetStorageReferenceForTransferring, py::return_value_policy::reference)
+        .def("GetStorageReferenceForSwapping", &UITwoPanelInterface::GetStorageReferenceForSwapping, py::return_value_policy::reference)
         .def("GetPlayerPanelItems", &UITwoPanelInterface::GetPlayerPanelItems)
         .def("GetStoragePanelItems", &UITwoPanelInterface::GetStoragePanelItems)
         .def("GetTitle", &UITwoPanelInterface::GetTitle)

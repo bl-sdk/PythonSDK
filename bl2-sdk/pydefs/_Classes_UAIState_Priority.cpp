@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIState_Priority()
 {
-    class_< UAIState_Priority, bases< UAIStateBase >  , boost::noncopyable>("UAIState_Priority", no_init)
-        .def("StaticClass", &UAIState_Priority::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAIState_Priority,  UAIStateBase   >("UAIState_Priority")
+        .def("StaticClass", &UAIState_Priority::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

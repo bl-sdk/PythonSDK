@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxRuleEngine()
 {
-    class_< UGearboxRuleEngine, bases< UObject >  , boost::noncopyable>("UGearboxRuleEngine", no_init)
+    py::class_< UGearboxRuleEngine,  UObject   >("UGearboxRuleEngine")
         .def_readwrite("MyGearboxPawn", &UGearboxRuleEngine::MyGearboxPawn)
         .def_readwrite("MyGearboxMind", &UGearboxRuleEngine::MyGearboxMind)
         .def_readwrite("VfTable_IIFlagProvider", &URuleEngine::VfTable_IIFlagProvider)
@@ -36,16 +36,16 @@ void Export_pystes_UGearboxRuleEngine()
         .def_readwrite("WorstTargetIteratorRuleEvalDiffTime", &URuleEngine::WorstTargetIteratorRuleEvalDiffTime)
         .def_readwrite("ActivateTime", &URuleEngine::ActivateTime)
         .def_readwrite("RuleSetReferences", &URuleEngine::RuleSetReferences)
-        .def("StaticClass", &UGearboxRuleEngine::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxRuleEngine::StaticClass, py::return_value_policy::reference)
         .def("Initialize", &UGearboxRuleEngine::Initialize)
-        .def("GetContextSource", &UGearboxRuleEngine::GetContextSource, return_value_policy< reference_existing_object >())
+        .def("GetContextSource", &UGearboxRuleEngine::GetContextSource, py::return_value_policy::reference)
         .def("ApplyFlagInitializationData", &URuleEngine::ApplyFlagInitializationData)
         .def("IsResourceInUse", &URuleEngine::IsResourceInUse)
         .def("IsRunningRuleWhichBlocksRuleSetChange", &URuleEngine::IsRunningRuleWhichBlocksRuleSetChange)
         .def("GetDynamicFlagValue", &URuleEngine::GetDynamicFlagValue)
         .def("SetDynamicFlagDefTrueTimed", &URuleEngine::SetDynamicFlagDefTrueTimed)
         .def("SetDynamicFlagDefValue", &URuleEngine::SetDynamicFlagDefValue)
-        .def("GetRuleSetFromReference", &URuleEngine::GetRuleSetFromReference, return_value_policy< reference_existing_object >())
+        .def("GetRuleSetFromReference", &URuleEngine::GetRuleSetFromReference, py::return_value_policy::reference)
         .def("ClearRuleSetStack", &URuleEngine::ClearRuleSetStack)
         .def("PopRuleSetSwitch", &URuleEngine::PopRuleSetSwitch)
         .def("PushRuleSetSwitch", &URuleEngine::PushRuleSetSwitch)

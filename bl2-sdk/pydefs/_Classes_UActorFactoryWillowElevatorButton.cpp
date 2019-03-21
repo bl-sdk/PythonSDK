@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactoryWillowElevatorButton()
 {
-    class_< UActorFactoryWillowElevatorButton, bases< UActorFactoryInteractiveObject >  , boost::noncopyable>("UActorFactoryWillowElevatorButton", no_init)
-        .def("StaticClass", &UActorFactoryWillowElevatorButton::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UActorFactoryWillowElevatorButton,  UActorFactoryInteractiveObject   >("UActorFactoryWillowElevatorButton")
+        .def("StaticClass", &UActorFactoryWillowElevatorButton::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

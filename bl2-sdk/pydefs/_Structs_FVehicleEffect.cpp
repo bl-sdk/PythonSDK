@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVehicleEffect()
 {
-    class_< FVehicleEffect >("FVehicleEffect", no_init)
+    py::class_< FVehicleEffect >("FVehicleEffect")
         .def_readwrite("EffectStartTag", &FVehicleEffect::EffectStartTag)
         .def_readwrite("EffectEndTag", &FVehicleEffect::EffectEndTag)
         .def_readwrite("EffectTemplate", &FVehicleEffect::EffectTemplate)

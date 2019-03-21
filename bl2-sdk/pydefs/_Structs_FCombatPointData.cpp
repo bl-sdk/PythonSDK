@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCombatPointData()
 {
-    class_< FCombatPointData >("FCombatPointData", no_init)
+    py::class_< FCombatPointData >("FCombatPointData")
         .def_readwrite("Slot", &FCombatPointData::Slot)
         .def_readwrite("Location", &FCombatPointData::Location)
         .def_readwrite("Actor", &FCombatPointData::Actor)

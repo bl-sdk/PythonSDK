@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_SetSoundMode()
 {
-    class_< USeqAct_SetSoundMode, bases< USequenceAction >  , boost::noncopyable>("USeqAct_SetSoundMode", no_init)
+    py::class_< USeqAct_SetSoundMode,  USequenceAction   >("USeqAct_SetSoundMode")
         .def_readwrite("SoundMode", &USeqAct_SetSoundMode::SoundMode)
-        .def("StaticClass", &USeqAct_SetSoundMode::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_SetSoundMode::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_SetSoundMode::eventGetObjClassVersion)
         .def("eventActivated", &USeqAct_SetSoundMode::eventActivated)
         .staticmethod("StaticClass")

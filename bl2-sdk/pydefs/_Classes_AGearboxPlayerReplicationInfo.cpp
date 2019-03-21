@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxPlayerReplicationInfo()
 {
-    class_< AGearboxPlayerReplicationInfo, bases< APlayerReplicationInfo >  , boost::noncopyable>("AGearboxPlayerReplicationInfo", no_init)
+    py::class_< AGearboxPlayerReplicationInfo,  APlayerReplicationInfo   >("AGearboxPlayerReplicationInfo")
         .def_readwrite("Difficulty", &AGearboxPlayerReplicationInfo::Difficulty)
         .def_readwrite("Dummy", &AGearboxPlayerReplicationInfo::Dummy)
-        .def("StaticClass", &AGearboxPlayerReplicationInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGearboxPlayerReplicationInfo::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

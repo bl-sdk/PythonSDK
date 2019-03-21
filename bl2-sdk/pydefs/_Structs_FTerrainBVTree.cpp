@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTerrainBVTree()
 {
-    class_< FTerrainBVTree >("FTerrainBVTree", no_init)
+    py::class_< FTerrainBVTree >("FTerrainBVTree")
         .def_readwrite("Nodes", &FTerrainBVTree::Nodes)
   ;
 }

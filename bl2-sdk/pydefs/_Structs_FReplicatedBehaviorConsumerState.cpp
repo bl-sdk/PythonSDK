@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReplicatedBehaviorConsumerState()
 {
-    class_< FReplicatedBehaviorConsumerState >("FReplicatedBehaviorConsumerState", no_init)
+    py::class_< FReplicatedBehaviorConsumerState >("FReplicatedBehaviorConsumerState")
         .def_readwrite("BehaviorSequenceEnabledFlags", &FReplicatedBehaviorConsumerState::BehaviorSequenceEnabledFlags)
   ;
 }

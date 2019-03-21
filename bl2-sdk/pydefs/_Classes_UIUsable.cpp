@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIUsable()
 {
-    class_< UIUsable, bases< UInterface >  , boost::noncopyable>("UIUsable", no_init)
-        .def("StaticClass", &UIUsable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIUsable,  UInterface   >("UIUsable")
+        .def("StaticClass", &UIUsable::StaticClass, py::return_value_policy::reference)
         .def("NotifyUserCouldNotAffordAttemptedUse", &UIUsable::NotifyUserCouldNotAffordAttemptedUse)
         .def("SetInteractionIcon", &UIUsable::SetInteractionIcon)
         .def("UseObject", &UIUsable::UseObject)

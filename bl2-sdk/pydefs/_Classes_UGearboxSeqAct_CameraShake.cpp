@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxSeqAct_CameraShake()
 {
-    class_< UGearboxSeqAct_CameraShake, bases< USequenceAction >  , boost::noncopyable>("UGearboxSeqAct_CameraShake", no_init)
+    py::class_< UGearboxSeqAct_CameraShake,  USequenceAction   >("UGearboxSeqAct_CameraShake")
         .def_readwrite("CameraShake", &UGearboxSeqAct_CameraShake::CameraShake)
-        .def("StaticClass", &UGearboxSeqAct_CameraShake::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxSeqAct_CameraShake::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

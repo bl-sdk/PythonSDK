@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStepConfiguration()
 {
-    class_< FStepConfiguration >("FStepConfiguration", no_init)
+    py::class_< FStepConfiguration >("FStepConfiguration")
         .def_readwrite("FirstAttemptDelay", &FStepConfiguration::FirstAttemptDelay)
         .def_readwrite("BaseRetrySeconds", &FStepConfiguration::BaseRetrySeconds)
         .def_readwrite("RetryMultiplier", &FStepConfiguration::RetryMultiplier)

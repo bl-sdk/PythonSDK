@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_ProceduralSwitch()
 {
-    class_< USeqAct_ProceduralSwitch, bases< USequenceAction >  , boost::noncopyable>("USeqAct_ProceduralSwitch", no_init)
+    py::class_< USeqAct_ProceduralSwitch,  USequenceAction   >("USeqAct_ProceduralSwitch")
         .def_readwrite("Possibilities", &USeqAct_ProceduralSwitch::Possibilities)
-        .def("StaticClass", &USeqAct_ProceduralSwitch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_ProceduralSwitch::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

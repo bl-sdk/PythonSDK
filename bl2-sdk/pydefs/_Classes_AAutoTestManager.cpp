@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AAutoTestManager()
 {
-    class_< AAutoTestManager, bases< AInfo >  , boost::noncopyable>("AAutoTestManager", no_init)
+    py::class_< AAutoTestManager,  AInfo   >("AAutoTestManager")
         .def_readwrite("AutomatedPerfRemainingTime", &AAutoTestManager::AutomatedPerfRemainingTime)
         .def_readwrite("AutomatedTestingMapIndex", &AAutoTestManager::AutomatedTestingMapIndex)
         .def_readwrite("AutomatedMapTestingList", &AAutoTestManager::AutomatedMapTestingList)
@@ -31,7 +31,7 @@ void Export_pystes_AAutoTestManager()
         .def_readwrite("StationDefName", &AAutoTestManager::StationDefName)
         .def_readwrite("AutomatedTestingTravelType", &AAutoTestManager::AutomatedTestingTravelType)
         .def_readwrite("NumOfDLCsToIncludeInRun", &AAutoTestManager::NumOfDLCsToIncludeInRun)
-        .def("StaticClass", &AAutoTestManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AAutoTestManager::StaticClass, py::return_value_policy::reference)
         .def("CheckForSentinelRun", &AAutoTestManager::CheckForSentinelRun)
         .def("StartMatch", &AAutoTestManager::StartMatch)
         .def("StopTraversal", &AAutoTestManager::StopTraversal)

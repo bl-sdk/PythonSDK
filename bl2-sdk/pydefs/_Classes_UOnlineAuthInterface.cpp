@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineAuthInterface()
 {
-    class_< UOnlineAuthInterface, bases< UInterface >  , boost::noncopyable>("UOnlineAuthInterface", no_init)
-        .def("StaticClass", &UOnlineAuthInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineAuthInterface,  UInterface   >("UOnlineAuthInterface")
+        .def("StaticClass", &UOnlineAuthInterface::StaticClass, py::return_value_policy::reference)
         .def("GetServerAddr", &UOnlineAuthInterface::GetServerAddr)
         .def("GetServerUniqueId", &UOnlineAuthInterface::GetServerUniqueId)
         .def("EndRemoteServerAuthSession", &UOnlineAuthInterface::EndRemoteServerAuthSession)

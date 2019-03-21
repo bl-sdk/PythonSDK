@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADefaultPhysicsVolume()
 {
-    class_< ADefaultPhysicsVolume, bases< AVolume >  , boost::noncopyable>("ADefaultPhysicsVolume", no_init)
+    py::class_< ADefaultPhysicsVolume,  AVolume   >("ADefaultPhysicsVolume")
         .def_readwrite("ZoneVelocity", &APhysicsVolume::ZoneVelocity)
         .def_readwrite("GroundFriction", &APhysicsVolume::GroundFriction)
         .def_readwrite("TerminalVelocity", &APhysicsVolume::TerminalVelocity)
@@ -21,7 +21,7 @@ void Export_pystes_ADefaultPhysicsVolume()
         .def_readwrite("PainTimer", &APhysicsVolume::PainTimer)
         .def_readwrite("DamageInstigator", &APhysicsVolume::DamageInstigator)
         .def_readwrite("NextPhysicsVolume", &APhysicsVolume::NextPhysicsVolume)
-        .def("StaticClass", &ADefaultPhysicsVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADefaultPhysicsVolume::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &ADefaultPhysicsVolume::eventDestroyed)
         .def("ApplyCheckpointRecord", &APhysicsVolume::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &APhysicsVolume::CreateCheckpointRecord)

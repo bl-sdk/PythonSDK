@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLungeData()
 {
-    class_< FLungeData >("FLungeData", no_init)
+    py::class_< FLungeData >("FLungeData")
         .def_readwrite("Target", &FLungeData::Target)
         .def_readwrite("Length", &FLungeData::Length)
         .def_readwrite("Start", &FLungeData::Start)

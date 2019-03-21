@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULocalTrainingDefinitionMessage()
 {
-    class_< ULocalTrainingDefinitionMessage, bases< UWillowLocalMessage >  , boost::noncopyable>("ULocalTrainingDefinitionMessage", no_init)
-        .def("StaticClass", &ULocalTrainingDefinitionMessage::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULocalTrainingDefinitionMessage,  UWillowLocalMessage   >("ULocalTrainingDefinitionMessage")
+        .def("StaticClass", &ULocalTrainingDefinitionMessage::StaticClass, py::return_value_policy::reference)
         .def("ClientTrainingDefinitionReceive", &ULocalTrainingDefinitionMessage::ClientTrainingDefinitionReceive)
         .staticmethod("StaticClass")
   ;

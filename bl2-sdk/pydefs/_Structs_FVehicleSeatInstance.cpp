@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVehicleSeatInstance()
 {
-    class_< FVehicleSeatInstance >("FVehicleSeatInstance", no_init)
+    py::class_< FVehicleSeatInstance >("FVehicleSeatInstance")
         .def_readwrite("StoragePawn", &FVehicleSeatInstance::StoragePawn)
         .def_readwrite("LastStoragePawn", &FVehicleSeatInstance::LastStoragePawn)
         .def_readwrite("SeatPawn", &FVehicleSeatInstance::SeatPawn)

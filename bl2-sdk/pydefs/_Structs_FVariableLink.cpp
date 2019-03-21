@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVariableLink()
 {
-    class_< FVariableLink >("FVariableLink", no_init)
+    py::class_< FVariableLink >("FVariableLink")
         .def_readwrite("Links", &FVariableLink::Links)
   ;
 }

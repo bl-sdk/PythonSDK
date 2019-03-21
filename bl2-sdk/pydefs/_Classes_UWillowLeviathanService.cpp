@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowLeviathanService()
 {
-    class_< UWillowLeviathanService, bases< ULeviathanService >  , boost::noncopyable>("UWillowLeviathanService", no_init)
+    py::class_< UWillowLeviathanService,  ULeviathanService   >("UWillowLeviathanService")
         .def_readwrite("VfTable_FTickableObject", &UWillowLeviathanService::VfTable_FTickableObject)
-        .def("StaticClass", &UWillowLeviathanService::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowLeviathanService::StaticClass, py::return_value_policy::reference)
         .def("RecordDiagnosticEventForPlayer", &UWillowLeviathanService::RecordDiagnosticEventForPlayer)
         .def("RecordCustomizeCharacterEventForPlayer", &UWillowLeviathanService::RecordCustomizeCharacterEventForPlayer)
         .def("RecordCharacterDeletedEventForPlayer", &UWillowLeviathanService::RecordCharacterDeletedEventForPlayer)

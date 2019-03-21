@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPawnMoveLocationRequest()
 {
-    class_< UPawnMoveLocationRequest, bases< UObject >  , boost::noncopyable>("UPawnMoveLocationRequest", no_init)
+    py::class_< UPawnMoveLocationRequest,  UObject   >("UPawnMoveLocationRequest")
         .def_readwrite("CoverSearchFilter", &UPawnMoveLocationRequest::CoverSearchFilter)
         .def_readwrite("RepathOption", &UPawnMoveLocationRequest::RepathOption)
         .def_readwrite("CoverFailureResponse", &UPawnMoveLocationRequest::CoverFailureResponse)
@@ -22,7 +22,7 @@ void Export_pystes_UPawnMoveLocationRequest()
         .def_readwrite("SearchRandomness", &UGearboxLocationRequest::SearchRandomness)
         .def_readwrite("SearchOriginResult", &UGearboxLocationRequest::SearchOriginResult)
         .def_readwrite("SearchDirectionResult", &UGearboxLocationRequest::SearchDirectionResult)
-        .def("StaticClass", &UPawnMoveLocationRequest::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPawnMoveLocationRequest::StaticClass, py::return_value_policy::reference)
         .def("Get", &UPawnMoveLocationRequest::Get)
         .def("GetLastDirection", &UGearboxLocationRequest::GetLastDirection)
         .def("GetLastOrigin", &UGearboxLocationRequest::GetLastOrigin)

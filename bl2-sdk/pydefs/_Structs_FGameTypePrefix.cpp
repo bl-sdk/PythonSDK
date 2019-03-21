@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameTypePrefix()
 {
-    class_< FGameTypePrefix >("FGameTypePrefix", no_init)
+    py::class_< FGameTypePrefix >("FGameTypePrefix")
         .def_readwrite("Prefix", &FGameTypePrefix::Prefix)
         .def_readwrite("GameType", &FGameTypePrefix::GameType)
         .def_readwrite("AdditionalGameTypes", &FGameTypePrefix::AdditionalGameTypes)

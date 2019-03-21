@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOpinionData()
 {
-    class_< FOpinionData >("FOpinionData", no_init)
+    py::class_< FOpinionData >("FOpinionData")
         .def_readwrite("Opinion", &FOpinionData::Opinion)
         .def_readwrite("Allegiance", &FOpinionData::Allegiance)
   ;

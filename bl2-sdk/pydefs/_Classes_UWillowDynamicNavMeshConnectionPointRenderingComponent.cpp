@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDynamicNavMeshConnectionPointRenderingComponent()
 {
-    class_< UWillowDynamicNavMeshConnectionPointRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UWillowDynamicNavMeshConnectionPointRenderingComponent", no_init)
+    py::class_< UWillowDynamicNavMeshConnectionPointRenderingComponent,  UPrimitiveComponent   >("UWillowDynamicNavMeshConnectionPointRenderingComponent")
         .def_readwrite("ConnectionValidColor", &UWillowDynamicNavMeshConnectionPointRenderingComponent::ConnectionValidColor)
         .def_readwrite("ConnectionInvalidColor", &UWillowDynamicNavMeshConnectionPointRenderingComponent::ConnectionInvalidColor)
-        .def("StaticClass", &UWillowDynamicNavMeshConnectionPointRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDynamicNavMeshConnectionPointRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimationCompressionAlgorithm_RemoveLinearKeys()
 {
-    class_< UAnimationCompressionAlgorithm_RemoveLinearKeys, bases< UObject >  , boost::noncopyable>("UAnimationCompressionAlgorithm_RemoveLinearKeys", no_init)
+    py::class_< UAnimationCompressionAlgorithm_RemoveLinearKeys,  UObject   >("UAnimationCompressionAlgorithm_RemoveLinearKeys")
         .def_readwrite("MaxPosDiff", &UAnimationCompressionAlgorithm_RemoveLinearKeys::MaxPosDiff)
         .def_readwrite("MaxAngleDiff", &UAnimationCompressionAlgorithm_RemoveLinearKeys::MaxAngleDiff)
         .def_readwrite("MaxEffectorDiff", &UAnimationCompressionAlgorithm_RemoveLinearKeys::MaxEffectorDiff)
@@ -15,7 +15,7 @@ void Export_pystes_UAnimationCompressionAlgorithm_RemoveLinearKeys()
         .def_readwrite("Description", &UAnimationCompressionAlgorithm::Description)
         .def_readwrite("TranslationCompressionChoice", &UAnimationCompressionAlgorithm::TranslationCompressionChoice)
         .def_readwrite("RotationCompressionChoice", &UAnimationCompressionAlgorithm::RotationCompressionChoice)
-        .def("StaticClass", &UAnimationCompressionAlgorithm_RemoveLinearKeys::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimationCompressionAlgorithm_RemoveLinearKeys::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

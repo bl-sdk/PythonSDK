@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIMissionDirector()
 {
-    class_< UIMissionDirector, bases< UInterface >  , boost::noncopyable>("UIMissionDirector", no_init)
-        .def("StaticClass", &UIMissionDirector::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIMissionDirector,  UInterface   >("UIMissionDirector")
+        .def("StaticClass", &UIMissionDirector::StaticClass, py::return_value_policy::reference)
         .def("OnPlayerClosedMissionUI", &UIMissionDirector::OnPlayerClosedMissionUI)
         .def("OnPlayerOpenedMissionUI", &UIMissionDirector::OnPlayerOpenedMissionUI)
         .def("HasAnyMissionsForPlayer", &UIMissionDirector::HasAnyMissionsForPlayer)

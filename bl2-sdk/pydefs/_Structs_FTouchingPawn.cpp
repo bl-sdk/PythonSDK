@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTouchingPawn()
 {
-    class_< FTouchingPawn >("FTouchingPawn", no_init)
+    py::class_< FTouchingPawn >("FTouchingPawn")
         .def_readwrite("Pawn", &FTouchingPawn::Pawn)
         .def_readwrite("VolumesTouched", &FTouchingPawn::VolumesTouched)
   ;

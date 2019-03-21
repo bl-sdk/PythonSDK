@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDialogGlobalsDefinition()
 {
-    class_< UWillowDialogGlobalsDefinition, bases< UGearboxDialogGlobalsDefinition >  , boost::noncopyable>("UWillowDialogGlobalsDefinition", no_init)
+    py::class_< UWillowDialogGlobalsDefinition,  UGearboxDialogGlobalsDefinition   >("UWillowDialogGlobalsDefinition")
         .def_readwrite("DefaultTemplateGroup", &UWillowDialogGlobalsDefinition::DefaultTemplateGroup)
         .def_readwrite("DET_Jump", &UWillowDialogGlobalsDefinition::DET_Jump)
         .def_readwrite("DET_JumpLand", &UWillowDialogGlobalsDefinition::DET_JumpLand)
@@ -78,10 +78,10 @@ void Export_pystes_UWillowDialogGlobalsDefinition()
         .def_readwrite("ActiveSideMissionMinPriority", &UWillowDialogGlobalsDefinition::ActiveSideMissionMinPriority)
         .def_readwrite("ActiveMissionMinPriorityStart", &UWillowDialogGlobalsDefinition::ActiveMissionMinPriorityStart)
         .def_readwrite("SideMissionKickoffPriority", &UWillowDialogGlobalsDefinition::SideMissionKickoffPriority)
-        .def("StaticClass", &UWillowDialogGlobalsDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDialogGlobalsDefinition::StaticClass, py::return_value_policy::reference)
         .def("TriggerTemplateEvent", &UWillowDialogGlobalsDefinition::TriggerTemplateEvent)
         .def("StaticTriggerTemplateEvent", &UWillowDialogGlobalsDefinition::StaticTriggerTemplateEvent)
-        .def("Get", &UWillowDialogGlobalsDefinition::Get, return_value_policy< reference_existing_object >())
+        .def("Get", &UWillowDialogGlobalsDefinition::Get, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

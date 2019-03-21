@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USoundNodeWave()
 {
-    class_< USoundNodeWave, bases< USoundNode >  , boost::noncopyable>("USoundNodeWave", no_init)
+    py::class_< USoundNodeWave,  USoundNode   >("USoundNodeWave")
         .def_readwrite("CompressionQuality", &USoundNodeWave::CompressionQuality)
         .def_readwrite("TTSSpeaker", &USoundNodeWave::TTSSpeaker)
         .def_readwrite("DecompressionType", &USoundNodeWave::DecompressionType)
@@ -27,7 +27,7 @@ void Export_pystes_USoundNodeWave()
         .def_readwrite("ResourceData", &USoundNodeWave::ResourceData)
         .def_readwrite("Subtitles", &USoundNodeWave::Subtitles)
         .def_readwrite("LocalizedSubtitles", &USoundNodeWave::LocalizedSubtitles)
-        .def("StaticClass", &USoundNodeWave::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USoundNodeWave::StaticClass, py::return_value_policy::reference)
         .def("eventGeneratePCMData", &USoundNodeWave::eventGeneratePCMData)
         .staticmethod("StaticClass")
   ;

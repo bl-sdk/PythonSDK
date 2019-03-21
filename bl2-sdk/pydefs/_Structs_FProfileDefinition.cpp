@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FProfileDefinition()
 {
-    class_< FProfileDefinition >("FProfileDefinition", no_init)
+    py::class_< FProfileDefinition >("FProfileDefinition")
         .def_readwrite("Profile", &FProfileDefinition::Profile)
         .def_readwrite("Definition", &FProfileDefinition::Definition)
   ;

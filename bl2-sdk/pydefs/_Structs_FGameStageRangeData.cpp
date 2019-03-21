@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameStageRangeData()
 {
-    class_< FGameStageRangeData >("FGameStageRangeData", no_init)
+    py::class_< FGameStageRangeData >("FGameStageRangeData")
         .def_readwrite("MinGameStage", &FGameStageRangeData::MinGameStage)
         .def_readwrite("MaxGameStage", &FGameStageRangeData::MaxGameStage)
   ;

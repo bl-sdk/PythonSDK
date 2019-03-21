@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderBase()
 {
-    class_< UWillowScrollingListDataProviderBase, bases< UObject >  , boost::noncopyable>("UWillowScrollingListDataProviderBase", no_init)
+    py::class_< UWillowScrollingListDataProviderBase,  UObject   >("UWillowScrollingListDataProviderBase")
         .def_readwrite("MenuDisplayName", &UWillowScrollingListDataProviderBase::MenuDisplayName)
         .def_readwrite("MenuTooltip", &UWillowScrollingListDataProviderBase::MenuTooltip)
-        .def("StaticClass", &UWillowScrollingListDataProviderBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingListDataProviderBase::StaticClass, py::return_value_policy::reference)
         .def("Cleanup", &UWillowScrollingListDataProviderBase::Cleanup)
-        .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderBase::GetSubmenuForEvent, return_value_policy< reference_existing_object >())
+        .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderBase::GetSubmenuForEvent, py::return_value_policy::reference)
         .def("Populate", &UWillowScrollingListDataProviderBase::Populate)
         .def("HandleSpinnerChange", &UWillowScrollingListDataProviderBase::HandleSpinnerChange)
         .def("HandleSliderChange", &UWillowScrollingListDataProviderBase::HandleSliderChange)

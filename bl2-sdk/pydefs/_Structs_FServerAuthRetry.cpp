@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FServerAuthRetry()
 {
-    class_< FServerAuthRetry >("FServerAuthRetry", no_init)
+    py::class_< FServerAuthRetry >("FServerAuthRetry")
         .def_readwrite("ClientUID", &FServerAuthRetry::ClientUID)
         .def_readwrite("AuthRetryCount", &FServerAuthRetry::AuthRetryCount)
   ;

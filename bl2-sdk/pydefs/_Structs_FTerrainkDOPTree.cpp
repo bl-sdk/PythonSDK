@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTerrainkDOPTree()
 {
-    class_< FTerrainkDOPTree >("FTerrainkDOPTree", no_init)
+    py::class_< FTerrainkDOPTree >("FTerrainkDOPTree")
         .def_readwrite("Nodes", &FTerrainkDOPTree::Nodes)
         .def_readwrite("Triangles", &FTerrainkDOPTree::Triangles)
   ;

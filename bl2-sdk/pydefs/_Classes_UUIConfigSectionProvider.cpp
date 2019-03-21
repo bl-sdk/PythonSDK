@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIConfigSectionProvider()
 {
-    class_< UUIConfigSectionProvider, bases< UUIDataProvider >  , boost::noncopyable>("UUIConfigSectionProvider", no_init)
+    py::class_< UUIConfigSectionProvider,  UUIDataProvider   >("UUIConfigSectionProvider")
         .def_readwrite("SectionName", &UUIConfigSectionProvider::SectionName)
-        .def("StaticClass", &UUIConfigSectionProvider::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIConfigSectionProvider::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

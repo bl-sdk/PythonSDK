@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDWidget_Challenges()
 {
-    class_< UHUDWidget_Challenges, bases< UHUDWidget_Base >  , boost::noncopyable>("UHUDWidget_Challenges", no_init)
+    py::class_< UHUDWidget_Challenges,  UHUDWidget_Base   >("UHUDWidget_Challenges")
         .def_readwrite("InnerClip", &UHUDWidget_Challenges::InnerClip)
         .def_readwrite("HeaderClip", &UHUDWidget_Challenges::HeaderClip)
         .def_readwrite("SubtextClip", &UHUDWidget_Challenges::SubtextClip)
@@ -15,7 +15,7 @@ void Export_pystes_UHUDWidget_Challenges()
         .def_readwrite("HideTime", &UHUDWidget_Challenges::HideTime)
         .def_readwrite("Header_InProgress", &UHUDWidget_Challenges::Header_InProgress)
         .def_readwrite("Header_Complete", &UHUDWidget_Challenges::Header_Complete)
-        .def("StaticClass", &UHUDWidget_Challenges::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDWidget_Challenges::StaticClass, py::return_value_policy::reference)
         .def("GetRewardString", &UHUDWidget_Challenges::GetRewardString)
         .def("GetProgressString", &UHUDWidget_Challenges::GetProgressString)
         .def("GetNameString", &UHUDWidget_Challenges::GetNameString)

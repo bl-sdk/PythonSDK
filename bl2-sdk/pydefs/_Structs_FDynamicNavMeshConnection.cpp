@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDynamicNavMeshConnection()
 {
-    class_< FDynamicNavMeshConnection >("FDynamicNavMeshConnection", no_init)
+    py::class_< FDynamicNavMeshConnection >("FDynamicNavMeshConnection")
         .def_readwrite("MaxConnectionDistance", &FDynamicNavMeshConnection::MaxConnectionDistance)
         .def_readwrite("ConnectedPoint", &FDynamicNavMeshConnection::ConnectedPoint)
   ;

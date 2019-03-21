@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlinePartyChatInterface()
 {
-    class_< UOnlinePartyChatInterface, bases< UInterface >  , boost::noncopyable>("UOnlinePartyChatInterface", no_init)
-        .def("StaticClass", &UOnlinePartyChatInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlinePartyChatInterface,  UInterface   >("UOnlinePartyChatInterface")
+        .def("StaticClass", &UOnlinePartyChatInterface::StaticClass, py::return_value_policy::reference)
         .def("IsInPartyChat", &UOnlinePartyChatInterface::IsInPartyChat)
         .def("ShowCommunitySessionsUI", &UOnlinePartyChatInterface::ShowCommunitySessionsUI)
         .def("ShowVoiceChannelUI", &UOnlinePartyChatInterface::ShowVoiceChannelUI)

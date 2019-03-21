@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillTreeSkillStateData()
 {
-    class_< FSkillTreeSkillStateData >("FSkillTreeSkillStateData", no_init)
+    py::class_< FSkillTreeSkillStateData >("FSkillTreeSkillStateData")
         .def_readwrite("SkillDefinition", &FSkillTreeSkillStateData::SkillDefinition)
         .def_readwrite("ParentBranchDefinition", &FSkillTreeSkillStateData::ParentBranchDefinition)
         .def_readwrite("TierNumber", &FSkillTreeSkillStateData::TierNumber)

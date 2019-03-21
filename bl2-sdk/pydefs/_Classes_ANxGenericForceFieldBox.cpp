@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANxGenericForceFieldBox()
 {
-    class_< ANxGenericForceFieldBox, bases< ANxGenericForceField >  , boost::noncopyable>("ANxGenericForceFieldBox", no_init)
+    py::class_< ANxGenericForceFieldBox,  ANxGenericForceField   >("ANxGenericForceFieldBox")
         .def_readwrite("RenderComponent", &ANxGenericForceFieldBox::RenderComponent)
         .def_readwrite("BoxExtent", &ANxGenericForceFieldBox::BoxExtent)
-        .def("StaticClass", &ANxGenericForceFieldBox::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANxGenericForceFieldBox::StaticClass, py::return_value_policy::reference)
         .def("DoInitRBPhys", &ANxGenericForceFieldBox::DoInitRBPhys)
         .staticmethod("StaticClass")
   ;

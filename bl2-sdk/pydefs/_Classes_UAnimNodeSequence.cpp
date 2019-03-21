@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeSequence()
 {
-    class_< UAnimNodeSequence, bases< UAnimNode >  , boost::noncopyable>("UAnimNodeSequence", no_init)
+    py::class_< UAnimNodeSequence,  UAnimNode   >("UAnimNodeSequence")
         .def_readwrite("AnimSeqName", &UAnimNodeSequence::AnimSeqName)
         .def_readwrite("Rate", &UAnimNodeSequence::Rate)
         .def_readwrite("CurrentTime", &UAnimNodeSequence::CurrentTime)
@@ -25,7 +25,7 @@ void Export_pystes_UAnimNodeSequence()
         .def_readonly("RootBoneOption", &UAnimNodeSequence::RootBoneOption)
         .def_readonly("RootRotationOption", &UAnimNodeSequence::RootRotationOption)
         .def_readwrite("MetaDataSkelControlList", &UAnimNodeSequence::MetaDataSkelControlList)
-        .def("StaticClass", &UAnimNodeSequence::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeSequence::StaticClass, py::return_value_policy::reference)
         .def("SetRootBoneRotationOption", &UAnimNodeSequence::SetRootBoneRotationOption)
         .def("SetRootBoneAxisOption", &UAnimNodeSequence::SetRootBoneAxisOption)
         .def("GetTimeLeft", &UAnimNodeSequence::GetTimeLeft)

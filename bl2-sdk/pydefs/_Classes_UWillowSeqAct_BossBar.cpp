@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_BossBar()
 {
-    class_< UWillowSeqAct_BossBar, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_BossBar", no_init)
+    py::class_< UWillowSeqAct_BossBar,  USequenceAction   >("UWillowSeqAct_BossBar")
         .def_readwrite("BossActor", &UWillowSeqAct_BossBar::BossActor)
-        .def("StaticClass", &UWillowSeqAct_BossBar::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_BossBar::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_BossBar::eventActivated)
         .staticmethod("StaticClass")
   ;

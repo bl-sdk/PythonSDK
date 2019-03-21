@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FtMenuLayout()
 {
-    class_< FtMenuLayout >("FtMenuLayout", no_init)
+    py::class_< FtMenuLayout >("FtMenuLayout")
         .def_readwrite("Background", &FtMenuLayout::Background)
         .def_readwrite("BackgroundXPos", &FtMenuLayout::BackgroundXPos)
         .def_readwrite("BackgroundYPos", &FtMenuLayout::BackgroundYPos)

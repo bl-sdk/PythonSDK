@@ -1,20 +1,20 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHitRegionHelper()
 {
-    class_< UHitRegionHelper, bases< UObject >  , boost::noncopyable>("UHitRegionHelper", no_init)
+    py::class_< UHitRegionHelper,  UObject   >("UHitRegionHelper")
         .def_readwrite("HitRegionDamageList", &UHitRegionHelper::HitRegionDamageList)
-        .def("StaticClass", &UHitRegionHelper::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHitRegionHelper::StaticClass, py::return_value_policy::reference)
         .def("PlayHit", &UHitRegionHelper::PlayHit)
         .def("ResetHitRegionHealth", &UHitRegionHelper::ResetHitRegionHealth)
         .def("HealDamageOnHitRegion", &UHitRegionHelper::HealDamageOnHitRegion)
         .def("GetBoneNameFromHitComponent", &UHitRegionHelper::GetBoneNameFromHitComponent)
-        .def("GetHitRegionFromInstanceData", &UHitRegionHelper::GetHitRegionFromInstanceData, return_value_policy< reference_existing_object >())
-        .def("GetHitRegionFromBoneName", &UHitRegionHelper::GetHitRegionFromBoneName, return_value_policy< reference_existing_object >())
-        .def("GetHitRegionForTakenDamage", &UHitRegionHelper::GetHitRegionForTakenDamage, return_value_policy< reference_existing_object >())
+        .def("GetHitRegionFromInstanceData", &UHitRegionHelper::GetHitRegionFromInstanceData, py::return_value_policy::reference)
+        .def("GetHitRegionFromBoneName", &UHitRegionHelper::GetHitRegionFromBoneName, py::return_value_policy::reference)
+        .def("GetHitRegionForTakenDamage", &UHitRegionHelper::GetHitRegionForTakenDamage, py::return_value_policy::reference)
         .def("GetHealthValuesForOwner", &UHitRegionHelper::GetHealthValuesForOwner)
         .def("AddDamageToHitRegion", &UHitRegionHelper::AddDamageToHitRegion)
         .def("RecordRecentDamageToHitRegion", &UHitRegionHelper::RecordRecentDamageToHitRegion)

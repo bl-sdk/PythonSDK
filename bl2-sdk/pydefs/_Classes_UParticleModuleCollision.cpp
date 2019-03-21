@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleCollision()
 {
-    class_< UParticleModuleCollision, bases< UParticleModuleCollisionBase >  , boost::noncopyable>("UParticleModuleCollision", no_init)
+    py::class_< UParticleModuleCollision,  UParticleModuleCollisionBase   >("UParticleModuleCollision")
         .def_readwrite("DampingFactor", &UParticleModuleCollision::DampingFactor)
         .def_readwrite("DampingFactorRotation", &UParticleModuleCollision::DampingFactorRotation)
         .def_readwrite("MaxCollisions", &UParticleModuleCollision::MaxCollisions)
@@ -15,7 +15,7 @@ void Export_pystes_UParticleModuleCollision()
         .def_readwrite("VerticalFudgeFactor", &UParticleModuleCollision::VerticalFudgeFactor)
         .def_readwrite("DelayAmount", &UParticleModuleCollision::DelayAmount)
         .def_readwrite("MaxCollisionDistance", &UParticleModuleCollision::MaxCollisionDistance)
-        .def("StaticClass", &UParticleModuleCollision::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleCollision::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

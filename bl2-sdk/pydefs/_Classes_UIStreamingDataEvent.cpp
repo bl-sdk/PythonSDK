@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIStreamingDataEvent()
 {
-    class_< UIStreamingDataEvent, bases< UInterface >  , boost::noncopyable>("UIStreamingDataEvent", no_init)
-        .def("StaticClass", &UIStreamingDataEvent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIStreamingDataEvent,  UInterface   >("UIStreamingDataEvent")
+        .def("StaticClass", &UIStreamingDataEvent::StaticClass, py::return_value_policy::reference)
         .def("eventRunStreamingDataEvent", &UIStreamingDataEvent::eventRunStreamingDataEvent)
         .staticmethod("StaticClass")
   ;

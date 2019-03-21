@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAimAnimTransitionData()
 {
-    class_< FAimAnimTransitionData >("FAimAnimTransitionData", no_init)
+    py::class_< FAimAnimTransitionData >("FAimAnimTransitionData")
         .def_readwrite("FromState", &FAimAnimTransitionData::FromState)
         .def_readwrite("ToState", &FAimAnimTransitionData::ToState)
         .def_readwrite("AnimName", &FAimAnimTransitionData::AnimName)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIHijackBehavior()
 {
-    class_< UIHijackBehavior, bases< UInterface >  , boost::noncopyable>("UIHijackBehavior", no_init)
-        .def("StaticClass", &UIHijackBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIHijackBehavior,  UInterface   >("UIHijackBehavior")
+        .def("StaticClass", &UIHijackBehavior::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

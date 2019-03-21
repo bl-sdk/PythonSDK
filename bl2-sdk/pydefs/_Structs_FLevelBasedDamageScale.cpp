@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLevelBasedDamageScale()
 {
-    class_< FLevelBasedDamageScale >("FLevelBasedDamageScale", no_init)
+    py::class_< FLevelBasedDamageScale >("FLevelBasedDamageScale")
         .def_readwrite("LevelDifference", &FLevelBasedDamageScale::LevelDifference)
         .def_readwrite("HigherLevelAttackerDmgScale", &FLevelBasedDamageScale::HigherLevelAttackerDmgScale)
         .def_readwrite("LowerLevelAttackerDmgScale", &FLevelBasedDamageScale::LowerLevelAttackerDmgScale)

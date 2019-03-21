@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInputDeviceButtonData()
 {
-    class_< FInputDeviceButtonData >("FInputDeviceButtonData", no_init)
+    py::class_< FInputDeviceButtonData >("FInputDeviceButtonData")
         .def_readwrite("KeyName", &FInputDeviceButtonData::KeyName)
         .def_readwrite("PressActions", &FInputDeviceButtonData::PressActions)
         .def_readwrite("TapActions", &FInputDeviceButtonData::TapActions)

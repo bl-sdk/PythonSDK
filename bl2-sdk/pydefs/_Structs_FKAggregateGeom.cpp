@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKAggregateGeom()
 {
-    class_< FKAggregateGeom >("FKAggregateGeom", no_init)
+    py::class_< FKAggregateGeom >("FKAggregateGeom")
         .def_readwrite("SphereElems", &FKAggregateGeom::SphereElems)
         .def_readwrite("BoxElems", &FKAggregateGeom::BoxElems)
         .def_readwrite("SphylElems", &FKAggregateGeom::SphylElems)

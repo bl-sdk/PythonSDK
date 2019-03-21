@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqCond_CompareLocation()
 {
-    class_< USeqCond_CompareLocation, bases< USequenceCondition >  , boost::noncopyable>("USeqCond_CompareLocation", no_init)
+    py::class_< USeqCond_CompareLocation,  USequenceCondition   >("USeqCond_CompareLocation")
         .def_readwrite("CheckRadius", &USeqCond_CompareLocation::CheckRadius)
-        .def("StaticClass", &USeqCond_CompareLocation::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqCond_CompareLocation::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

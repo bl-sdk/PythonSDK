@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFontImportOptionsData()
 {
-    class_< FFontImportOptionsData >("FFontImportOptionsData", no_init)
+    py::class_< FFontImportOptionsData >("FFontImportOptionsData")
         .def_readwrite("FontName", &FFontImportOptionsData::FontName)
         .def_readwrite("Height", &FFontImportOptionsData::Height)
         .def_readwrite("CharacterSet", &FFontImportOptionsData::CharacterSet)

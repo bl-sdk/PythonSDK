@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingList()
 {
-    class_< UWillowScrollingList, bases< UGFxClikWidget >  , boost::noncopyable>("UWillowScrollingList", no_init)
+    py::class_< UWillowScrollingList,  UGFxClikWidget   >("UWillowScrollingList")
         .def_readwrite("DataProviderStack", &UWillowScrollingList::DataProviderStack)
         .def_readwrite("IndexToEventId", &UWillowScrollingList::IndexToEventId)
         .def_readwrite("MyOwnerMovie", &UWillowScrollingList::MyOwnerMovie)
         .def_readwrite("BackCaption", &UWillowScrollingList::BackCaption)
-        .def("StaticClass", &UWillowScrollingList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingList::StaticClass, py::return_value_policy::reference)
         .def("PlaySound_VerticalMovement", &UWillowScrollingList::PlaySound_VerticalMovement)
         .def("OnSpinnerValueChange", &UWillowScrollingList::OnSpinnerValueChange)
         .def("OnSliderValueChange", &UWillowScrollingList::OnSliderValueChange)
@@ -34,7 +34,7 @@ void Export_pystes_UWillowScrollingList()
         .def("HandlePopList", &UWillowScrollingList::HandlePopList)
         .def("Refresh", &UWillowScrollingList::Refresh)
         .def("PushDataProvider", &UWillowScrollingList::PushDataProvider)
-        .def("GetCurrentDataProvider", &UWillowScrollingList::GetCurrentDataProvider, return_value_policy< reference_existing_object >())
+        .def("GetCurrentDataProvider", &UWillowScrollingList::GetCurrentDataProvider, py::return_value_policy::reference)
         .def("Cleanup", &UWillowScrollingList::Cleanup)
         .def("Init", &UWillowScrollingList::Init)
         .def("OnSelectedIndexChanged", &UWillowScrollingList::OnSelectedIndexChanged)

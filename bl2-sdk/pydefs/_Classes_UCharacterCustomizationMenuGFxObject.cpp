@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCharacterCustomizationMenuGFxObject()
 {
-    class_< UCharacterCustomizationMenuGFxObject, bases< UGFxObject >  , boost::noncopyable>("UCharacterCustomizationMenuGFxObject", no_init)
-        .def("StaticClass", &UCharacterCustomizationMenuGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCharacterCustomizationMenuGFxObject,  UGFxObject   >("UCharacterCustomizationMenuGFxObject")
+        .def("StaticClass", &UCharacterCustomizationMenuGFxObject::StaticClass, py::return_value_policy::reference)
         .def("GetEntryLabel", &UCharacterCustomizationMenuGFxObject::GetEntryLabel)
         .def("SetSelectedEntry", &UCharacterCustomizationMenuGFxObject::SetSelectedEntry)
         .def("GetSelectedEntry", &UCharacterCustomizationMenuGFxObject::GetSelectedEntry)

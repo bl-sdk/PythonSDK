@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadablePackageDefinition()
 {
-    class_< UDownloadablePackageDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UDownloadablePackageDefinition", no_init)
+    py::class_< UDownloadablePackageDefinition,  UGBXDefinition   >("UDownloadablePackageDefinition")
         .def_readwrite("VfTable_IIDlcLicenseObject", &UDownloadablePackageDefinition::VfTable_IIDlcLicenseObject)
         .def_readwrite("PackageId", &UDownloadablePackageDefinition::PackageId)
         .def_readwrite("PackageMask", &UDownloadablePackageDefinition::PackageMask)
@@ -15,10 +15,10 @@ void Export_pystes_UDownloadablePackageDefinition()
         .def_readwrite("LicenseItems", &UDownloadablePackageDefinition::LicenseItems)
         .def_readwrite("bUsesExtendedLicensing", &UDownloadablePackageDefinition::bUsesExtendedLicensing)
         .def_readwrite("AppliedLicense", &UDownloadablePackageDefinition::AppliedLicense)
-        .def("StaticClass", &UDownloadablePackageDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadablePackageDefinition::StaticClass, py::return_value_policy::reference)
         .def("IsFullyInstalled", &UDownloadablePackageDefinition::IsFullyInstalled)
         .def("IsFullyLicensed", &UDownloadablePackageDefinition::IsFullyLicensed)
-        .def("GetContentDefinitionById", &UDownloadablePackageDefinition::GetContentDefinitionById, return_value_policy< reference_existing_object >())
+        .def("GetContentDefinitionById", &UDownloadablePackageDefinition::GetContentDefinitionById, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

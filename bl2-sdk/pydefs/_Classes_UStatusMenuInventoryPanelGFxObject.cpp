@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusMenuInventoryPanelGFxObject()
 {
-    class_< UStatusMenuInventoryPanelGFxObject, bases< UBaseTopLevelPanelGFxObject >  , boost::noncopyable>("UStatusMenuInventoryPanelGFxObject", no_init)
+    py::class_< UStatusMenuInventoryPanelGFxObject,  UBaseTopLevelPanelGFxObject   >("UStatusMenuInventoryPanelGFxObject")
         .def_readwrite("EquippedPanel", &UStatusMenuInventoryPanelGFxObject::EquippedPanel)
         .def_readwrite("BackpackPanel", &UStatusMenuInventoryPanelGFxObject::BackpackPanel)
         .def_readwrite("AmmoPanel", &UStatusMenuInventoryPanelGFxObject::AmmoPanel)
@@ -20,8 +20,8 @@ void Export_pystes_UStatusMenuInventoryPanelGFxObject()
         .def_readwrite("BackpackSortConfigIndex", &UStatusMenuInventoryPanelGFxObject::BackpackSortConfigIndex)
         .def_readwrite("StartingBackpackSortConfigIndex", &UStatusMenuInventoryPanelGFxObject::StartingBackpackSortConfigIndex)
         .def_readwrite("BackpackSortConfigurations", &UStatusMenuInventoryPanelGFxObject::BackpackSortConfigurations)
-        .def("StaticClass", &UStatusMenuInventoryPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetCurrentCellObject", &UStatusMenuInventoryPanelGFxObject::GetCurrentCellObject, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStatusMenuInventoryPanelGFxObject::StaticClass, py::return_value_policy::reference)
+        .def("GetCurrentCellObject", &UStatusMenuInventoryPanelGFxObject::GetCurrentCellObject, py::return_value_policy::reference)
         .def("OnCellPressed", &UStatusMenuInventoryPanelGFxObject::OnCellPressed)
         .def("extCompleteDrag_Backpack", &UStatusMenuInventoryPanelGFxObject::extCompleteDrag_Backpack)
         .def("extCompleteDrag_Equipped", &UStatusMenuInventoryPanelGFxObject::extCompleteDrag_Equipped)
@@ -66,8 +66,8 @@ void Export_pystes_UStatusMenuInventoryPanelGFxObject()
         .def("NormalInputKey", &UStatusMenuInventoryPanelGFxObject::NormalInputKey)
         .def("PanelOnInputKey", &UStatusMenuInventoryPanelGFxObject::PanelOnInputKey)
         .def("InspectSelectedItem", &UStatusMenuInventoryPanelGFxObject::InspectSelectedItem)
-        .def("eventGetSelectedThingFromNative", &UStatusMenuInventoryPanelGFxObject::eventGetSelectedThingFromNative, return_value_policy< reference_existing_object >())
-        .def("GetSelectedThing", &UStatusMenuInventoryPanelGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("eventGetSelectedThingFromNative", &UStatusMenuInventoryPanelGFxObject::eventGetSelectedThingFromNative, py::return_value_policy::reference)
+        .def("GetSelectedThing", &UStatusMenuInventoryPanelGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("UpdateDynamicCard", &UStatusMenuInventoryPanelGFxObject::UpdateDynamicCard)
         .def("RefreshItemCards", &UStatusMenuInventoryPanelGFxObject::RefreshItemCards)
         .def("SwitchToEquippedPanel", &UStatusMenuInventoryPanelGFxObject::SwitchToEquippedPanel)

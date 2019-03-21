@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScaledHUDElement()
 {
-    class_< FScaledHUDElement >("FScaledHUDElement", no_init)
+    py::class_< FScaledHUDElement >("FScaledHUDElement")
         .def_readwrite("ElementName", &FScaledHUDElement::ElementName)
         .def_readwrite("Anchor", &FScaledHUDElement::Anchor)
   ;

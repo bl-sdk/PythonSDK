@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AApexDestructibleActorSpawnable()
 {
-    class_< AApexDestructibleActorSpawnable, bases< AApexDestructibleActor >  , boost::noncopyable>("AApexDestructibleActorSpawnable", no_init)
-        .def("StaticClass", &AApexDestructibleActorSpawnable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AApexDestructibleActorSpawnable,  AApexDestructibleActor   >("AApexDestructibleActorSpawnable")
+        .def("StaticClass", &AApexDestructibleActorSpawnable::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

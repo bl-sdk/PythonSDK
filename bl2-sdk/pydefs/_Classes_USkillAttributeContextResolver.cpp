@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillAttributeContextResolver()
 {
-    class_< USkillAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("USkillAttributeContextResolver", no_init)
+    py::class_< USkillAttributeContextResolver,  UAttributeContextResolver   >("USkillAttributeContextResolver")
         .def_readwrite("AssociatedSkill", &USkillAttributeContextResolver::AssociatedSkill)
         .def_readwrite("AssociatedSkillPathName", &USkillAttributeContextResolver::AssociatedSkillPathName)
-        .def("StaticClass", &USkillAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

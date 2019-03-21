@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKCachedConvexData()
 {
-    class_< FKCachedConvexData >("FKCachedConvexData", no_init)
+    py::class_< FKCachedConvexData >("FKCachedConvexData")
         .def_readwrite("CachedConvexElements", &FKCachedConvexData::CachedConvexElements)
   ;
 }

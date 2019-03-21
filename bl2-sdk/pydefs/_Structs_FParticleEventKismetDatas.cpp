@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FParticleEventKismetData()
 {
-    class_< FParticleEventKismetData, bases< FParticleEventData >  >("FParticleEventKismetData", no_init)
+    py::class_< FParticleEventKismetData,  FParticleEventData   >("FParticleEventKismetData")
         .def_readwrite("Normal", &FParticleEventKismetData::Normal)
   ;
 }

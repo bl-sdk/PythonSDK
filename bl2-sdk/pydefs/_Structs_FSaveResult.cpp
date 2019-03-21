@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSaveResult()
 {
-    class_< FSaveResult >("FSaveResult", no_init)
+    py::class_< FSaveResult >("FSaveResult")
         .def_readwrite("charID", &FSaveResult::charID)
         .def_readwrite("Data", &FSaveResult::Data)
   ;

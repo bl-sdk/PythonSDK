@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstVectorMaterialParam()
 {
-    class_< UInterpTrackInstVectorMaterialParam, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstVectorMaterialParam", no_init)
+    py::class_< UInterpTrackInstVectorMaterialParam,  UInterpTrackInst   >("UInterpTrackInstVectorMaterialParam")
         .def_readwrite("MICInfos", &UInterpTrackInstVectorMaterialParam::MICInfos)
         .def_readwrite("InstancedTrack", &UInterpTrackInstVectorMaterialParam::InstancedTrack)
-        .def("StaticClass", &UInterpTrackInstVectorMaterialParam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstVectorMaterialParam::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

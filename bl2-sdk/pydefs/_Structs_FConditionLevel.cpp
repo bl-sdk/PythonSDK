@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FConditionLevel()
 {
-    class_< FConditionLevel >("FConditionLevel", no_init)
+    py::class_< FConditionLevel >("FConditionLevel")
         .def_readwrite("ConditionDefinitions", &FConditionLevel::ConditionDefinitions)
         .def_readwrite("ProgressNotificationOverride", &FConditionLevel::ProgressNotificationOverride)
         .def_readwrite("CompletedAttributeEffects", &FConditionLevel::CompletedAttributeEffects)

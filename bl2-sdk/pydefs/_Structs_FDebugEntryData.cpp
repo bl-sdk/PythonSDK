@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDebugEntryData()
 {
-    class_< FDebugEntryData >("FDebugEntryData", no_init)
+    py::class_< FDebugEntryData >("FDebugEntryData")
         .def_readwrite("DebugStrs", &FDebugEntryData::DebugStrs)
   ;
 }

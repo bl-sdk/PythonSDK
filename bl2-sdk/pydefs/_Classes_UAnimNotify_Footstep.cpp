@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_Footstep()
 {
-    class_< UAnimNotify_Footstep, bases< UAnimNotify >  , boost::noncopyable>("UAnimNotify_Footstep", no_init)
+    py::class_< UAnimNotify_Footstep,  UAnimNotify   >("UAnimNotify_Footstep")
         .def_readwrite("FootDown", &UAnimNotify_Footstep::FootDown)
-        .def("StaticClass", &UAnimNotify_Footstep::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_Footstep::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

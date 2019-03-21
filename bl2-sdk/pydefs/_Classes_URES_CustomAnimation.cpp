@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URES_CustomAnimation()
 {
-    class_< URES_CustomAnimation, bases< UActionResource >  , boost::noncopyable>("URES_CustomAnimation", no_init)
-        .def("StaticClass", &URES_CustomAnimation::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< URES_CustomAnimation,  UActionResource   >("URES_CustomAnimation")
+        .def("StaticClass", &URES_CustomAnimation::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

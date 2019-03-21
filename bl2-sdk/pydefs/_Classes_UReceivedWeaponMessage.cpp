@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UReceivedWeaponMessage()
 {
-    class_< UReceivedWeaponMessage, bases< UWillowLocalMessage >  , boost::noncopyable>("UReceivedWeaponMessage", no_init)
+    py::class_< UReceivedWeaponMessage,  UWillowLocalMessage   >("UReceivedWeaponMessage")
         .def_readwrite("ReceivedWeapon", &UReceivedWeaponMessage::ReceivedWeapon)
         .def_readwrite("SelfReceivedItem", &UReceivedWeaponMessage::SelfReceivedItem)
-        .def("StaticClass", &UReceivedWeaponMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UReceivedWeaponMessage::StaticClass, py::return_value_policy::reference)
         .def("GetWeaponString", &UReceivedWeaponMessage::GetWeaponString)
         .def("GetWeaponColor", &ULocalWeaponMessage::GetWeaponColor)
         .def("ClientWeaponReceive", &ULocalWeaponMessage::ClientWeaponReceive)

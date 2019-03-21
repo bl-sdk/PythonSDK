@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReplicatedCoordinatedEffect()
 {
-    class_< FReplicatedCoordinatedEffect >("FReplicatedCoordinatedEffect", no_init)
+    py::class_< FReplicatedCoordinatedEffect >("FReplicatedCoordinatedEffect")
         .def_readwrite("Effects", &FReplicatedCoordinatedEffect::Effects)
         .def_readwrite("Targets", &FReplicatedCoordinatedEffect::Targets)
   ;

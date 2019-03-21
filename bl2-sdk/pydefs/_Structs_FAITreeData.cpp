@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAITreeData()
 {
-    class_< FAITreeData >("FAITreeData", no_init)
+    py::class_< FAITreeData >("FAITreeData")
         .def_readwrite("AI", &FAITreeData::AI)
         .def_readonly("UnknownData00", &FAITreeData::UnknownData00)
         .def_readwrite("Type", &FAITreeData::Type)

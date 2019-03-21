@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFlagDefinitionInitialization()
 {
-    class_< FFlagDefinitionInitialization >("FFlagDefinitionInitialization", no_init)
+    py::class_< FFlagDefinitionInitialization >("FFlagDefinitionInitialization")
         .def_readwrite("FlagToSet", &FFlagDefinitionInitialization::FlagToSet)
         .def_readwrite("ChanceTrue", &FFlagDefinitionInitialization::ChanceTrue)
         .def_readwrite("ProbabilityTrue", &FFlagDefinitionInitialization::ProbabilityTrue)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerDetailsGFxObject()
 {
-    class_< UPlayerDetailsGFxObject, bases< UGFxObject >  , boost::noncopyable>("UPlayerDetailsGFxObject", no_init)
-        .def("StaticClass", &UPlayerDetailsGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPlayerDetailsGFxObject,  UGFxObject   >("UPlayerDetailsGFxObject")
+        .def("StaticClass", &UPlayerDetailsGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetClickHandler", &UPlayerDetailsGFxObject::SetClickHandler)
         .def("NavigateDown", &UPlayerDetailsGFxObject::NavigateDown)
         .def("NavigateUp", &UPlayerDetailsGFxObject::NavigateUp)

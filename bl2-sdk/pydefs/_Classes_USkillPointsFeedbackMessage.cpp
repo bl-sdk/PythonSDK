@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillPointsFeedbackMessage()
 {
-    class_< USkillPointsFeedbackMessage, bases< UWillowLocalMessage >  , boost::noncopyable>("USkillPointsFeedbackMessage", no_init)
+    py::class_< USkillPointsFeedbackMessage,  UWillowLocalMessage   >("USkillPointsFeedbackMessage")
         .def_readwrite("HasSkillPoints", &USkillPointsFeedbackMessage::HasSkillPoints)
-        .def("StaticClass", &USkillPointsFeedbackMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillPointsFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &USkillPointsFeedbackMessage::GetString)
         .staticmethod("StaticClass")
   ;

@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPackageAssetSublibrary()
 {
-    class_< UPackageAssetSublibrary, bases< UGBXDefinition >  , boost::noncopyable>("UPackageAssetSublibrary", no_init)
+    py::class_< UPackageAssetSublibrary,  UGBXDefinition   >("UPackageAssetSublibrary")
         .def_readwrite("LibraryType", &UPackageAssetSublibrary::LibraryType)
         .def_readwrite("Assets", &UPackageAssetSublibrary::Assets)
         .def_readwrite("AssetPaths", &UPackageAssetSublibrary::AssetPaths)
         .def_readwrite("CachedPackageName", &UPackageAssetSublibrary::CachedPackageName)
-        .def("StaticClass", &UPackageAssetSublibrary::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPackageAssetSublibrary::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

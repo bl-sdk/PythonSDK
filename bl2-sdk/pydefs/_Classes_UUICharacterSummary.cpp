@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUICharacterSummary()
 {
-    class_< UUICharacterSummary, bases< UUIResourceDataProvider >  , boost::noncopyable>("UUICharacterSummary", no_init)
+    py::class_< UUICharacterSummary,  UUIResourceDataProvider   >("UUICharacterSummary")
         .def_readwrite("ClassPathName", &UUICharacterSummary::ClassPathName)
         .def_readwrite("CharacterName", &UUICharacterSummary::CharacterName)
         .def_readwrite("CharacterBio", &UUICharacterSummary::CharacterBio)
-        .def("StaticClass", &UUICharacterSummary::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUICharacterSummary::StaticClass, py::return_value_policy::reference)
         .def("eventIsProviderDisabled", &UUICharacterSummary::eventIsProviderDisabled)
         .staticmethod("StaticClass")
   ;

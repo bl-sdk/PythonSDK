@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWorldEventSource()
 {
-    class_< FWorldEventSource >("FWorldEventSource", no_init)
+    py::class_< FWorldEventSource >("FWorldEventSource")
         .def_readwrite("AkEvent", &FWorldEventSource::AkEvent)
         .def_readwrite("GroupActor", &FWorldEventSource::GroupActor)
         .def_readwrite("AkComponents", &FWorldEventSource::AkComponents)

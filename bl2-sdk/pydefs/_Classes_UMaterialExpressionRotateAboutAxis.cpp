@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionRotateAboutAxis()
 {
-    class_< UMaterialExpressionRotateAboutAxis, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionRotateAboutAxis", no_init)
+    py::class_< UMaterialExpressionRotateAboutAxis,  UMaterialExpression   >("UMaterialExpressionRotateAboutAxis")
         .def_readwrite("NormalizedRotationAxisAndAngle", &UMaterialExpressionRotateAboutAxis::NormalizedRotationAxisAndAngle)
         .def_readwrite("PositionOnAxis", &UMaterialExpressionRotateAboutAxis::PositionOnAxis)
         .def_readwrite("Position", &UMaterialExpressionRotateAboutAxis::Position)
-        .def("StaticClass", &UMaterialExpressionRotateAboutAxis::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionRotateAboutAxis::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

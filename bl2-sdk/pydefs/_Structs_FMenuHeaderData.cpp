@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMenuHeaderData()
 {
-    class_< FMenuHeaderData >("FMenuHeaderData", no_init)
+    py::class_< FMenuHeaderData >("FMenuHeaderData")
         .def_readwrite("Header", &FMenuHeaderData::Header)
         .def_readwrite("Width", &FMenuHeaderData::Width)
         .def_readwrite("InterfaceName", &FMenuHeaderData::InterfaceName)

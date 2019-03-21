@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCachedWeaponInfo()
 {
-    class_< FCachedWeaponInfo >("FCachedWeaponInfo", no_init)
+    py::class_< FCachedWeaponInfo >("FCachedWeaponInfo")
         .def_readwrite("CachedClipSize", &FCachedWeaponInfo::CachedClipSize)
         .def_readwrite("CachedAmmoInClip", &FCachedWeaponInfo::CachedAmmoInClip)
         .def_readwrite("CachedAmmoNotInClip", &FCachedWeaponInfo::CachedAmmoNotInClip)

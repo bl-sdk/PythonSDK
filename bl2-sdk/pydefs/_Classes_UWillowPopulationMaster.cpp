@@ -1,21 +1,21 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPopulationMaster()
 {
-    class_< UWillowPopulationMaster, bases< UPopulationMaster >  , boost::noncopyable>("UWillowPopulationMaster", no_init)
+    py::class_< UWillowPopulationMaster,  UPopulationMaster   >("UWillowPopulationMaster")
         .def_readonly("VehicleSpawnStationSlots", &UWillowPopulationMaster::VehicleSpawnStationSlots)
-        .def("StaticClass", &UWillowPopulationMaster::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPopulationMaster::StaticClass, py::return_value_policy::reference)
         .def("UpdateGRI", &UWillowPopulationMaster::UpdateGRI)
         .def("RemoveSpawnedActor", &UWillowPopulationMaster::RemoveSpawnedActor)
-        .def("GetVehicleDefinitionFromVehicleSpawnStation", &UWillowPopulationMaster::GetVehicleDefinitionFromVehicleSpawnStation, return_value_policy< reference_existing_object >())
+        .def("GetVehicleDefinitionFromVehicleSpawnStation", &UWillowPopulationMaster::GetVehicleDefinitionFromVehicleSpawnStation, py::return_value_policy::reference)
         .def("GetPooledVehicleIndexFromVehicleSpawnStation", &UWillowPopulationMaster::GetPooledVehicleIndexFromVehicleSpawnStation)
-        .def("GetVehicleFromVehicleSpawnStation", &UWillowPopulationMaster::GetVehicleFromVehicleSpawnStation, return_value_policy< reference_existing_object >())
+        .def("GetVehicleFromVehicleSpawnStation", &UWillowPopulationMaster::GetVehicleFromVehicleSpawnStation, py::return_value_policy::reference)
         .def("DespawnVehicleFromVehicleSpawnStation", &UWillowPopulationMaster::DespawnVehicleFromVehicleSpawnStation)
         .def("SpawnVehicleFromVehicleSpawnStation", &UWillowPopulationMaster::SpawnVehicleFromVehicleSpawnStation)
-        .def("SpawnActorFromOpportunity", &UWillowPopulationMaster::SpawnActorFromOpportunity, return_value_policy< reference_existing_object >())
+        .def("SpawnActorFromOpportunity", &UWillowPopulationMaster::SpawnActorFromOpportunity, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSMNotify()
 {
-    class_< FSMNotify, bases< FSMBehavior >  >("FSMNotify", no_init)
+    py::class_< FSMNotify,  FSMBehavior   >("FSMNotify")
         .def_readwrite("Time", &FSMNotify::Time)
   ;
 }

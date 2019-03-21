@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_BunkerBoss_Flight()
 {
-    class_< UAction_BunkerBoss_Flight, bases< UAction_FollowPath >  , boost::noncopyable>("UAction_BunkerBoss_Flight", no_init)
+    py::class_< UAction_BunkerBoss_Flight,  UAction_FollowPath   >("UAction_BunkerBoss_Flight")
         .def_readwrite("OffsetDistance", &UAction_BunkerBoss_Flight::OffsetDistance)
         .def_readwrite("TimeBetweenAttacks", &UAction_BunkerBoss_Flight::TimeBetweenAttacks)
         .def_readwrite("CircleFlightDistance", &UAction_BunkerBoss_Flight::CircleFlightDistance)
@@ -27,7 +27,7 @@ void Export_pystes_UAction_BunkerBoss_Flight()
         .def_readwrite("PerchOffset", &UAction_BunkerBoss_Flight::PerchOffset)
         .def_readwrite("DeathPerch", &UAction_BunkerBoss_Flight::DeathPerch)
         .def_readwrite("RotOffsetBone", &UAction_BunkerBoss_Flight::RotOffsetBone)
-        .def("StaticClass", &UAction_BunkerBoss_Flight::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_BunkerBoss_Flight::StaticClass, py::return_value_policy::reference)
         .def("PerchStart", &UAction_BunkerBoss_Flight::PerchStart)
         .def("GetFlightPathToPerch", &UAction_BunkerBoss_Flight::GetFlightPathToPerch)
         .def("PerchDone", &UAction_BunkerBoss_Flight::PerchDone)

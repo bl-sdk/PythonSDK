@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIInstanceData()
 {
-    class_< UIInstanceData, bases< UInterface >  , boost::noncopyable>("UIInstanceData", no_init)
-        .def("StaticClass", &UIInstanceData::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIInstanceData,  UInterface   >("UIInstanceData")
+        .def("StaticClass", &UIInstanceData::StaticClass, py::return_value_policy::reference)
         .def("GetReplicatedInstanceDataState", &UIInstanceData::GetReplicatedInstanceDataState)
         .def("GetInstanceDataState", &UIInstanceData::GetInstanceDataState)
         .def("DestroyOwnedInstanceData", &UIInstanceData::DestroyOwnedInstanceData)

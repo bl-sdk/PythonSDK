@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRemoteTalker()
 {
-    class_< FRemoteTalker >("FRemoteTalker", no_init)
+    py::class_< FRemoteTalker >("FRemoteTalker")
         .def_readwrite("TalkerId", &FRemoteTalker::TalkerId)
         .def_readwrite("LastNotificationTime", &FRemoteTalker::LastNotificationTime)
   ;

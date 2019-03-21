@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeRandom()
 {
-    class_< UAnimNodeRandom, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UAnimNodeRandom", no_init)
+    py::class_< UAnimNodeRandom,  UAnimNodeBlendBase   >("UAnimNodeRandom")
         .def_readwrite("RandomInfo", &UAnimNodeRandom::RandomInfo)
         .def_readwrite("PlayingSeqNode", &UAnimNodeRandom::PlayingSeqNode)
         .def_readwrite("PendingChildIndex", &UAnimNodeRandom::PendingChildIndex)
@@ -13,7 +13,7 @@ void Export_pystes_UAnimNodeRandom()
         .def_readwrite("BlendTimeToGo", &UAnimNodeBlendList::BlendTimeToGo)
         .def_readwrite("ActiveChildIndex", &UAnimNodeBlendList::ActiveChildIndex)
         .def_readwrite("SliderPosition", &UAnimNodeBlendList::SliderPosition)
-        .def("StaticClass", &UAnimNodeRandom::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeRandom::StaticClass, py::return_value_policy::reference)
         .def("SetActiveChild", &UAnimNodeBlendList::SetActiveChild)
         .staticmethod("StaticClass")
   ;

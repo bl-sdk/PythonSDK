@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPostProcessChain()
 {
-    class_< UPostProcessChain, bases< UObject >  , boost::noncopyable>("UPostProcessChain", no_init)
+    py::class_< UPostProcessChain,  UObject   >("UPostProcessChain")
         .def_readwrite("Effects", &UPostProcessChain::Effects)
-        .def("StaticClass", &UPostProcessChain::StaticClass, return_value_policy< reference_existing_object >())
-        .def("FindPostProcessEffect", &UPostProcessChain::FindPostProcessEffect, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPostProcessChain::StaticClass, py::return_value_policy::reference)
+        .def("FindPostProcessEffect", &UPostProcessChain::FindPostProcessEffect, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEncounterTracker()
 {
-    class_< FEncounterTracker >("FEncounterTracker", no_init)
+    py::class_< FEncounterTracker >("FEncounterTracker")
         .def_readwrite("LoadedEncounter", &FEncounterTracker::LoadedEncounter)
         .def_readwrite("EncountersLevel", &FEncounterTracker::EncountersLevel)
         .def_readwrite("EncounterPath", &FEncounterTracker::EncounterPath)

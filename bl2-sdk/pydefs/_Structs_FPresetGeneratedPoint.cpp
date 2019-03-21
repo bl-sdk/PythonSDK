@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPresetGeneratedPoint()
 {
-    class_< FPresetGeneratedPoint >("FPresetGeneratedPoint", no_init)
+    py::class_< FPresetGeneratedPoint >("FPresetGeneratedPoint")
         .def_readwrite("KeyIn", &FPresetGeneratedPoint::KeyIn)
         .def_readwrite("KeyOut", &FPresetGeneratedPoint::KeyOut)
         .def_readwrite("TangentIn", &FPresetGeneratedPoint::TangentIn)

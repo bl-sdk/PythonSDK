@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APlayerStandIn()
 {
-    class_< APlayerStandIn, bases< AActor >  , boost::noncopyable>("APlayerStandIn", no_init)
+    py::class_< APlayerStandIn,  AActor   >("APlayerStandIn")
         .def_readwrite("VfTable_IIGearLikenessConsumer", &APlayerStandIn::VfTable_IIGearLikenessConsumer)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APlayerStandIn::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IIBodyInfoProvider", &APlayerStandIn::VfTable_IIBodyInfoProvider)
@@ -26,12 +26,12 @@ void Export_pystes_APlayerStandIn()
         .def_readwrite("ClassModData", &APlayerStandIn::ClassModData)
         .def_readwrite("ExtraPlayerMeshOffset", &APlayerStandIn::ExtraPlayerMeshOffset)
         .def_readwrite("ExtraPlayerMeshRotation", &APlayerStandIn::ExtraPlayerMeshRotation)
-        .def("StaticClass", &APlayerStandIn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APlayerStandIn::StaticClass, py::return_value_policy::reference)
         .def("SetExtraPlayerMeshRotation", &APlayerStandIn::SetExtraPlayerMeshRotation)
         .def("SetExtraPlayerMeshOffset", &APlayerStandIn::SetExtraPlayerMeshOffset)
         .def("ClearBodyCompositionInstance", &APlayerStandIn::ClearBodyCompositionInstance)
         .def("ApplyPreviewBodyComposition", &APlayerStandIn::ApplyPreviewBodyComposition)
-        .def("GetBodyInfoProvider", &APlayerStandIn::GetBodyInfoProvider, return_value_policy< reference_existing_object >())
+        .def("GetBodyInfoProvider", &APlayerStandIn::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("ChangeInstanceDataSwitch", &APlayerStandIn::ChangeInstanceDataSwitch)
         .def("PostInitBodyComposition", &APlayerStandIn::PostInitBodyComposition)
         .def("PreRemoveBodyComposition", &APlayerStandIn::PreRemoveBodyComposition)
@@ -50,7 +50,7 @@ void Export_pystes_APlayerStandIn()
         .def("RefreshCustomizationsOnInstanceData", &APlayerStandIn::RefreshCustomizationsOnInstanceData)
         .def("GetCustomizableName", &APlayerStandIn::GetCustomizableName)
         .def("GetCustomizableInstanceDataSets", &APlayerStandIn::GetCustomizableInstanceDataSets)
-        .def("GetDesiredCustomizationOfType", &APlayerStandIn::GetDesiredCustomizationOfType, return_value_policy< reference_existing_object >())
+        .def("GetDesiredCustomizationOfType", &APlayerStandIn::GetDesiredCustomizationOfType, py::return_value_policy::reference)
         .def("CustomizationApplied", &APlayerStandIn::CustomizationApplied)
         .def("Destroyed", &APlayerStandIn::Destroyed)
         .def("PostBeginPlay", &APlayerStandIn::PostBeginPlay)

@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCrossDLCClassModDefinition()
 {
-    class_< UCrossDLCClassModDefinition, bases< UEquipableItemDefinition >  , boost::noncopyable>("UCrossDLCClassModDefinition", no_init)
+    py::class_< UCrossDLCClassModDefinition,  UEquipableItemDefinition   >("UCrossDLCClassModDefinition")
         .def_readwrite("RequiredPlayerClassPathName", &UCrossDLCClassModDefinition::RequiredPlayerClassPathName)
         .def_readwrite("ManufacturerOverride", &UClassModDefinition::ManufacturerOverride)
         .def_readwrite("DisplayClassModAtBeginningOfName", &UClassModDefinition::DisplayClassModAtBeginningOfName)
-        .def("StaticClass", &UCrossDLCClassModDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCrossDLCClassModDefinition::StaticClass, py::return_value_policy::reference)
         .def("DisplayTitleAtEnd", &UClassModDefinition::DisplayTitleAtEnd)
-        .def("GetManufacturerOverrideOrDefault", &UClassModDefinition::GetManufacturerOverrideOrDefault, return_value_policy< reference_existing_object >())
+        .def("GetManufacturerOverrideOrDefault", &UClassModDefinition::GetManufacturerOverrideOrDefault, py::return_value_policy::reference)
         .def("GetEquipmentLocation", &UClassModDefinition::GetEquipmentLocation)
         .def("PlayerClassRequirementMet", &UClassModDefinition::PlayerClassRequirementMet)
         .staticmethod("StaticClass")

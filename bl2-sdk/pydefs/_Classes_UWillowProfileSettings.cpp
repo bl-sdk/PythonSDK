@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowProfileSettings()
 {
-    class_< UWillowProfileSettings, bases< UGearboxProfileSettings >  , boost::noncopyable>("UWillowProfileSettings", no_init)
-        .def("StaticClass", &UWillowProfileSettings::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowProfileSettings,  UGearboxProfileSettings   >("UWillowProfileSettings")
+        .def("StaticClass", &UWillowProfileSettings::StaticClass, py::return_value_policy::reference)
         .def("IsSetToDefaults", &UWillowProfileSettings::IsSetToDefaults)
         .staticmethod("StaticClass")
   ;

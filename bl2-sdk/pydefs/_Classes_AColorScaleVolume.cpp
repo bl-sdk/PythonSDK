@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AColorScaleVolume()
 {
-    class_< AColorScaleVolume, bases< AVolume >  , boost::noncopyable>("AColorScaleVolume", no_init)
+    py::class_< AColorScaleVolume,  AVolume   >("AColorScaleVolume")
         .def_readwrite("ColorScale", &AColorScaleVolume::ColorScale)
         .def_readwrite("InterpTime", &AColorScaleVolume::InterpTime)
-        .def("StaticClass", &AColorScaleVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AColorScaleVolume::StaticClass, py::return_value_policy::reference)
         .def("eventUnTouch", &AColorScaleVolume::eventUnTouch)
         .def("eventTouch", &AColorScaleVolume::eventTouch)
         .staticmethod("StaticClass")

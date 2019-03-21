@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNetDriver()
 {
-    class_< UNetDriver, bases< USubsystem >  , boost::noncopyable>("UNetDriver", no_init)
+    py::class_< UNetDriver,  USubsystem   >("UNetDriver")
         .def_readonly("UnknownData00", &UNetDriver::UnknownData00)
         .def_readwrite("ConnectionTimeout", &UNetDriver::ConnectionTimeout)
         .def_readwrite("InitialConnectTimeout", &UNetDriver::InitialConnectTimeout)
@@ -22,7 +22,7 @@ void Export_pystes_UNetDriver()
         .def_readonly("UnknownData02", &UNetDriver::UnknownData02)
         .def_readwrite("NetConnectionClassName", &UNetDriver::NetConnectionClassName)
         .def_readonly("UnknownData03", &UNetDriver::UnknownData03)
-        .def("StaticClass", &UNetDriver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNetDriver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

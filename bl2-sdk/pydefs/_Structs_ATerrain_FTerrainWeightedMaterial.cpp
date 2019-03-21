@@ -1,10 +1,10 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATerrain_FTerrainWeightedMaterial()
 {
-    class_< ATerrain_FTerrainWeightedMaterial >("ATerrain_FTerrainWeightedMaterial", no_init)
+    py::class_< ATerrain_FTerrainWeightedMaterial >("ATerrain_FTerrainWeightedMaterial")
   ;
 }

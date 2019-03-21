@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOccludedVolume()
 {
-    class_< FOccludedVolume >("FOccludedVolume", no_init)
+    py::class_< FOccludedVolume >("FOccludedVolume")
         .def_readwrite("SoundVolume", &FOccludedVolume::SoundVolume)
         .def_readwrite("Target", &FOccludedVolume::Target)
         .def_readonly("UnknownData00", &FOccludedVolume::UnknownData00)

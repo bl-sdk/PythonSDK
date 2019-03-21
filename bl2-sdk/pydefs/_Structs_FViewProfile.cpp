@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FViewProfile()
 {
-    class_< FViewProfile >("FViewProfile", no_init)
+    py::class_< FViewProfile >("FViewProfile")
         .def_readwrite("InPlayer", &FViewProfile::InPlayer)
         .def_readwrite("ViewNormal", &FViewProfile::ViewNormal)
         .def_readwrite("ViewLocation", &FViewProfile::ViewLocation)

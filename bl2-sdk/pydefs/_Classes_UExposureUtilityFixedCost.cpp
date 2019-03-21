@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UExposureUtilityFixedCost()
 {
-    class_< UExposureUtilityFixedCost, bases< UExposureUtilityBase >  , boost::noncopyable>("UExposureUtilityFixedCost", no_init)
+    py::class_< UExposureUtilityFixedCost,  UExposureUtilityBase   >("UExposureUtilityFixedCost")
         .def_readwrite("CloseDistanceSquared", &UExposureUtilityFixedCost::CloseDistanceSquared)
         .def_readwrite("MedDistanceSquared", &UExposureUtilityFixedCost::MedDistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &UExposureUtilityFixedCost::MaxLineChecksPerFrame)
@@ -33,7 +33,7 @@ void Export_pystes_UExposureUtilityFixedCost()
         .def_readwrite("HasMovedDistThreshold", &UExposureUtilityBasicCaching::HasMovedDistThreshold)
         .def_readwrite("HasMovedDistThresholdPlayer", &UExposureUtilityBasicCaching::HasMovedDistThresholdPlayer)
         .def_readwrite("CachedExposures", &UExposureUtilityBasicCaching::CachedExposures)
-        .def("StaticClass", &UExposureUtilityFixedCost::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UExposureUtilityFixedCost::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

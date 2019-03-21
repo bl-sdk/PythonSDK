@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_AnimAttack()
 {
-    class_< UAction_AnimAttack, bases< UAction_Burrow >  , boost::noncopyable>("UAction_AnimAttack", no_init)
+    py::class_< UAction_AnimAttack,  UAction_Burrow   >("UAction_AnimAttack")
         .def_readwrite("AimType", &UAction_AnimAttack::AimType)
         .def_readwrite("VisionAngle", &UAction_AnimAttack::VisionAngle)
         .def_readwrite("AttackAnim", &UAction_AnimAttack::AttackAnim)
@@ -19,7 +19,7 @@ void Export_pystes_UAction_AnimAttack()
         .def_readwrite("AttackLoc", &UAction_GenericAttack::AttackLoc)
         .def_readwrite("MyZone", &UAction_GenericAttack::MyZone)
         .def_readwrite("IdleTime", &UAction_GenericAttack::IdleTime)
-        .def("StaticClass", &UAction_AnimAttack::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_AnimAttack::StaticClass, py::return_value_policy::reference)
         .def("IsAimed", &UAction_AnimAttack::IsAimed)
         .def("ReleaseTarget", &UAction_AnimAttack::ReleaseTarget)
         .def("HoldTarget", &UAction_AnimAttack::HoldTarget)

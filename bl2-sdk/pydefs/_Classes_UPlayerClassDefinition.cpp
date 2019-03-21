@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerClassDefinition()
 {
-    class_< UPlayerClassDefinition, bases< UCharacterClassDefinition >  , boost::noncopyable>("UPlayerClassDefinition", no_init)
+    py::class_< UPlayerClassDefinition,  UCharacterClassDefinition   >("UPlayerClassDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UPlayerClassDefinition::VfTable_IIConstructObject)
         .def_readwrite("PawnArchetypePath", &UPlayerClassDefinition::PawnArchetypePath)
         .def_readwrite("SkillTreePath", &UPlayerClassDefinition::SkillTreePath)
@@ -66,10 +66,10 @@ void Export_pystes_UPlayerClassDefinition()
         .def_readwrite("BehaviorProviderDefinition", &UWillowCharacterClassDefinition::BehaviorProviderDefinition)
         .def_readwrite("RevivalHealthMultiplier", &UWillowCharacterClassDefinition::RevivalHealthMultiplier)
         .def_readwrite("CharacterInjuredDefinition", &UWillowCharacterClassDefinition::CharacterInjuredDefinition)
-        .def("StaticClass", &UPlayerClassDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("ShouldUnlockPlayerClassAchievement", &UPlayerClassDefinition::ShouldUnlockPlayerClassAchievement)
         .def("SetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

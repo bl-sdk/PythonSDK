@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSubtitleProfile()
 {
-    class_< FSubtitleProfile >("FSubtitleProfile", no_init)
+    py::class_< FSubtitleProfile >("FSubtitleProfile")
         .def_readwrite("MinX", &FSubtitleProfile::MinX)
         .def_readwrite("MaxX", &FSubtitleProfile::MaxX)
         .def_readwrite("MinY", &FSubtitleProfile::MinY)

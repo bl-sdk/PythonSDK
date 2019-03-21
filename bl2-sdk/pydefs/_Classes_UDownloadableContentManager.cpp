@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableContentManager()
 {
-    class_< UDownloadableContentManager, bases< UObject >  , boost::noncopyable>("UDownloadableContentManager", no_init)
+    py::class_< UDownloadableContentManager,  UObject   >("UDownloadableContentManager")
         .def_readwrite("DLCConfigCacheChanges", &UDownloadableContentManager::DLCConfigCacheChanges)
         .def_readwrite("DlcOffers", &UDownloadableContentManager::DlcOffers)
         .def_readwrite("InstalledContent", &UDownloadableContentManager::InstalledContent)
@@ -22,7 +22,7 @@ void Export_pystes_UDownloadableContentManager()
         .def_readwrite("RefreshCount", &UDownloadableContentManager::RefreshCount)
         .def_readwrite("GameEngine", &UDownloadableContentManager::GameEngine)
         .def_readwrite("RefreshCompleteDelegates", &UDownloadableContentManager::RefreshCompleteDelegates)
-        .def("StaticClass", &UDownloadableContentManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadableContentManager::StaticClass, py::return_value_policy::reference)
         .def("IsSeasonPassLicensed", &UDownloadableContentManager::IsSeasonPassLicensed)
         .def("GetMarketplaceOfferInstalledState", &UDownloadableContentManager::GetMarketplaceOfferInstalledState)
         .def("GetMarketplaceContentInstalledState", &UDownloadableContentManager::GetMarketplaceContentInstalledState)

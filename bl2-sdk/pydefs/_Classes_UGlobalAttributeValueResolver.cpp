@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGlobalAttributeValueResolver()
 {
-    class_< UGlobalAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UGlobalAttributeValueResolver", no_init)
+    py::class_< UGlobalAttributeValueResolver,  UAttributeValueResolver   >("UGlobalAttributeValueResolver")
         .def_readwrite("GlobalAttribute", &UGlobalAttributeValueResolver::GlobalAttribute)
-        .def("StaticClass", &UGlobalAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGlobalAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .def("GetGlobalAttributeValue", &UGlobalAttributeValueResolver::GetGlobalAttributeValue)
         .def("SetGlobalAttributeValue", &UGlobalAttributeValueResolver::SetGlobalAttributeValue)
         .staticmethod("StaticClass")

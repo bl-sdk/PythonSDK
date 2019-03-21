@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAwarenessZoneDefinition()
 {
-    class_< UWillowAwarenessZoneDefinition, bases< UAwarenessZoneDefinition >  , boost::noncopyable>("UWillowAwarenessZoneDefinition", no_init)
+    py::class_< UWillowAwarenessZoneDefinition,  UAwarenessZoneDefinition   >("UWillowAwarenessZoneDefinition")
         .def_readwrite("ThreatLevel", &UWillowAwarenessZoneDefinition::ThreatLevel)
-        .def("StaticClass", &UWillowAwarenessZoneDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAwarenessZoneDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

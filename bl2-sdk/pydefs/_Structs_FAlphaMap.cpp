@@ -1,10 +1,10 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAlphaMap()
 {
-    class_< FAlphaMap >("FAlphaMap", no_init)
+    py::class_< FAlphaMap >("FAlphaMap")
   ;
 }

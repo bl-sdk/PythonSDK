@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFiringCondition()
 {
-    class_< UFiringCondition, bases< UObject >  , boost::noncopyable>("UFiringCondition", no_init)
-        .def("StaticClass", &UFiringCondition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UFiringCondition,  UObject   >("UFiringCondition")
+        .def("StaticClass", &UFiringCondition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

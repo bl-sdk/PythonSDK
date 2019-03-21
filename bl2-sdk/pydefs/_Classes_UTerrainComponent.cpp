@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTerrainComponent()
 {
-    class_< UTerrainComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UTerrainComponent", no_init)
+    py::class_< UTerrainComponent,  UPrimitiveComponent   >("UTerrainComponent")
         .def_readwrite("ShadowMaps", &UTerrainComponent::ShadowMaps)
         .def_readwrite("IrrelevantLights", &UTerrainComponent::IrrelevantLights)
         .def_readwrite("TerrainObject", &UTerrainComponent::TerrainObject)
@@ -22,7 +22,7 @@ void Export_pystes_UTerrainComponent()
         .def_readwrite("GameBVTree", &UTerrainComponent::GameBVTree)
         .def_readwrite("EditorBVTree", &UTerrainComponent::EditorBVTree)
         .def_readwrite("RBHeightfield", &UTerrainComponent::RBHeightfield)
-        .def("StaticClass", &UTerrainComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTerrainComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

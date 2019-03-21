@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleMaterialByParameter()
 {
-    class_< UParticleModuleMaterialByParameter, bases< UParticleModuleMaterialBase >  , boost::noncopyable>("UParticleModuleMaterialByParameter", no_init)
+    py::class_< UParticleModuleMaterialByParameter,  UParticleModuleMaterialBase   >("UParticleModuleMaterialByParameter")
         .def_readwrite("MaterialParameters", &UParticleModuleMaterialByParameter::MaterialParameters)
         .def_readwrite("DefaultMaterials", &UParticleModuleMaterialByParameter::DefaultMaterials)
-        .def("StaticClass", &UParticleModuleMaterialByParameter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleMaterialByParameter::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

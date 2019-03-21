@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlinePlaylistManager()
 {
-    class_< UOnlinePlaylistManager, bases< UObject >  , boost::noncopyable>("UOnlinePlaylistManager", no_init)
+    py::class_< UOnlinePlaylistManager,  UObject   >("UOnlinePlaylistManager")
         .def_readwrite("VfTable_FTickableObject", &UOnlinePlaylistManager::VfTable_FTickableObject)
         .def_readwrite("Playlists", &UOnlinePlaylistManager::Playlists)
         .def_readwrite("PlaylistFileNames", &UOnlinePlaylistManager::PlaylistFileNames)
@@ -28,7 +28,7 @@ void Export_pystes_UOnlinePlaylistManager()
         .def_readwrite("DataCenterFileName", &UOnlinePlaylistManager::DataCenterFileName)
         .def_readwrite("LastPlaylistDownloadTime", &UOnlinePlaylistManager::LastPlaylistDownloadTime)
         .def_readwrite("PlaylistRefreshInterval", &UOnlinePlaylistManager::PlaylistRefreshInterval)
-        .def("StaticClass", &UOnlinePlaylistManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlinePlaylistManager::StaticClass, py::return_value_policy::reference)
         .def("ParseDataCenterId", &UOnlinePlaylistManager::ParseDataCenterId)
         .def("OnReadDataCenterIdComplete", &UOnlinePlaylistManager::OnReadDataCenterIdComplete)
         .def("ReadDataCenterId", &UOnlinePlaylistManager::ReadDataCenterId)
@@ -40,7 +40,7 @@ void Export_pystes_UOnlinePlaylistManager()
         .def("ReadPlaylistPopulation", &UOnlinePlaylistManager::ReadPlaylistPopulation)
         .def("Reset", &UOnlinePlaylistManager::Reset)
         .def("GetContentIdsFromPlaylist", &UOnlinePlaylistManager::GetContentIdsFromPlaylist)
-        .def("GetInventorySwapFromPlaylist", &UOnlinePlaylistManager::GetInventorySwapFromPlaylist, return_value_policy< reference_existing_object >())
+        .def("GetInventorySwapFromPlaylist", &UOnlinePlaylistManager::GetInventorySwapFromPlaylist, py::return_value_policy::reference)
         .def("GetMapCycleFromPlaylist", &UOnlinePlaylistManager::GetMapCycleFromPlaylist)
         .def("GetUrlFromPlaylist", &UOnlinePlaylistManager::GetUrlFromPlaylist)
         .def("GetMatchType", &UOnlinePlaylistManager::GetMatchType)
@@ -49,7 +49,7 @@ void Export_pystes_UOnlinePlaylistManager()
         .def("GetTeamInfoFromPlaylist", &UOnlinePlaylistManager::GetTeamInfoFromPlaylist)
         .def("PlaylistSupportsDedicatedServers", &UOnlinePlaylistManager::PlaylistSupportsDedicatedServers)
         .def("HasAnyGameSettings", &UOnlinePlaylistManager::HasAnyGameSettings)
-        .def("GetGameSettings", &UOnlinePlaylistManager::GetGameSettings, return_value_policy< reference_existing_object >())
+        .def("GetGameSettings", &UOnlinePlaylistManager::GetGameSettings, py::return_value_policy::reference)
         .def("FinalizePlaylistObjects", &UOnlinePlaylistManager::FinalizePlaylistObjects)
         .def("OnReadTitleFileComplete", &UOnlinePlaylistManager::OnReadTitleFileComplete)
         .def("ShouldRefreshPlaylists", &UOnlinePlaylistManager::ShouldRefreshPlaylists)

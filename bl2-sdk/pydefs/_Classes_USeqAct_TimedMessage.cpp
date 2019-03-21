@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_TimedMessage()
 {
-    class_< USeqAct_TimedMessage, bases< USeqAct_Log >  , boost::noncopyable>("USeqAct_TimedMessage", no_init)
+    py::class_< USeqAct_TimedMessage,  USeqAct_Log   >("USeqAct_TimedMessage")
         .def_readwrite("MessageTime", &USeqAct_TimedMessage::MessageTime)
-        .def("StaticClass", &USeqAct_TimedMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_TimedMessage::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

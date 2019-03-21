@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackVectorProp()
 {
-    class_< UInterpTrackVectorProp, bases< UInterpTrackVectorBase >  , boost::noncopyable>("UInterpTrackVectorProp", no_init)
+    py::class_< UInterpTrackVectorProp,  UInterpTrackVectorBase   >("UInterpTrackVectorProp")
         .def_readwrite("PropertyName", &UInterpTrackVectorProp::PropertyName)
-        .def("StaticClass", &UInterpTrackVectorProp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackVectorProp::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

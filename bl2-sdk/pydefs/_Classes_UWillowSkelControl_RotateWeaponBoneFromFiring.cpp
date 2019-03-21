@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSkelControl_RotateWeaponBoneFromFiring()
 {
-    class_< UWillowSkelControl_RotateWeaponBoneFromFiring, bases< USkelControlSingleBone >  , boost::noncopyable>("UWillowSkelControl_RotateWeaponBoneFromFiring", no_init)
+    py::class_< UWillowSkelControl_RotateWeaponBoneFromFiring,  USkelControlSingleBone   >("UWillowSkelControl_RotateWeaponBoneFromFiring")
         .def_readwrite("VfTable_IIWeaponBoneController", &UWillowSkelControl_RotateWeaponBoneFromFiring::VfTable_IIWeaponBoneController)
         .def_readwrite("NumberOfShotsPerRotation", &UWillowSkelControl_RotateWeaponBoneFromFiring::NumberOfShotsPerRotation)
         .def_readwrite("MaxRotationsPerSecond", &UWillowSkelControl_RotateWeaponBoneFromFiring::MaxRotationsPerSecond)
@@ -15,7 +15,7 @@ void Export_pystes_UWillowSkelControl_RotateWeaponBoneFromFiring()
         .def_readwrite("BlendPercent", &UWillowSkelControl_RotateWeaponBoneFromFiring::BlendPercent)
         .def_readwrite("BlendPercentRate", &UWillowSkelControl_RotateWeaponBoneFromFiring::BlendPercentRate)
         .def_readwrite("BlendPercentRateDelay", &UWillowSkelControl_RotateWeaponBoneFromFiring::BlendPercentRateDelay)
-        .def("StaticClass", &UWillowSkelControl_RotateWeaponBoneFromFiring::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSkelControl_RotateWeaponBoneFromFiring::StaticClass, py::return_value_policy::reference)
         .def("UnPause", &UWillowSkelControl_RotateWeaponBoneFromFiring::UnPause)
         .def("Pause", &UWillowSkelControl_RotateWeaponBoneFromFiring::Pause)
         .def("Stop", &UWillowSkelControl_RotateWeaponBoneFromFiring::Stop)

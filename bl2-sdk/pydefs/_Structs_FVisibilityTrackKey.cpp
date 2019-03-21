@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVisibilityTrackKey()
 {
-    class_< FVisibilityTrackKey >("FVisibilityTrackKey", no_init)
+    py::class_< FVisibilityTrackKey >("FVisibilityTrackKey")
         .def_readwrite("Time", &FVisibilityTrackKey::Time)
         .def_readwrite("Action", &FVisibilityTrackKey::Action)
         .def_readwrite("ActiveCondition", &FVisibilityTrackKey::ActiveCondition)

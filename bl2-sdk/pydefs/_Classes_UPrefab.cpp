@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPrefab()
 {
-    class_< UPrefab, bases< UObject >  , boost::noncopyable>("UPrefab", no_init)
+    py::class_< UPrefab,  UObject   >("UPrefab")
         .def_readwrite("PrefabVersion", &UPrefab::PrefabVersion)
         .def_readwrite("PrefabArchetypes", &UPrefab::PrefabArchetypes)
         .def_readwrite("RemovedArchetypes", &UPrefab::RemovedArchetypes)
         .def_readwrite("PrefabSequence", &UPrefab::PrefabSequence)
-        .def("StaticClass", &UPrefab::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPrefab::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

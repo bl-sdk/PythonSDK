@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFiringBehaviorManager()
 {
-    class_< UFiringBehaviorManager, bases< UObject >  , boost::noncopyable>("UFiringBehaviorManager", no_init)
+    py::class_< UFiringBehaviorManager,  UObject   >("UFiringBehaviorManager")
         .def_readwrite("CurrentFiringPattern", &UFiringBehaviorManager::CurrentFiringPattern)
         .def_readwrite("CurrentTargetExposure", &UFiringBehaviorManager::CurrentTargetExposure)
         .def_readwrite("NumShotsThisBurst", &UFiringBehaviorManager::NumShotsThisBurst)
@@ -16,8 +16,8 @@ void Export_pystes_UFiringBehaviorManager()
         .def_readwrite("CurrentConditionalPattern", &UFiringBehaviorManager::CurrentConditionalPattern)
         .def_readwrite("DefaultFiringBehaviorDefinition", &UFiringBehaviorManager::DefaultFiringBehaviorDefinition)
         .def_readwrite("DefaultFiringPatternTemplate", &UFiringBehaviorManager::DefaultFiringPatternTemplate)
-        .def("StaticClass", &UFiringBehaviorManager::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetTemplateClass", &UFiringBehaviorManager::eventGetTemplateClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFiringBehaviorManager::StaticClass, py::return_value_policy::reference)
+        .def("eventGetTemplateClass", &UFiringBehaviorManager::eventGetTemplateClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieMissionStatus()
 {
-    class_< UGFxMovieMissionStatus, bases< UWillowGFxMovie >  , boost::noncopyable>("UGFxMovieMissionStatus", no_init)
-        .def("StaticClass", &UGFxMovieMissionStatus::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGFxMovieMissionStatus,  UWillowGFxMovie   >("UGFxMovieMissionStatus")
+        .def("StaticClass", &UGFxMovieMissionStatus::StaticClass, py::return_value_policy::reference)
         .def("eventOnClose", &UGFxMovieMissionStatus::eventOnClose)
         .def("CheckMissionState", &UGFxMovieMissionStatus::CheckMissionState)
         .def("OnTick", &UGFxMovieMissionStatus::OnTick)

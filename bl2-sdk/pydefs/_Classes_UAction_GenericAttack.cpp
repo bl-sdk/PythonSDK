@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_GenericAttack()
 {
-    class_< UAction_GenericAttack, bases< UAction_Burrow >  , boost::noncopyable>("UAction_GenericAttack", no_init)
+    py::class_< UAction_GenericAttack,  UAction_Burrow   >("UAction_GenericAttack")
         .def_readwrite("Limits", &UAction_GenericAttack::Limits)
         .def_readwrite("CrouchIdleChance", &UAction_GenericAttack::CrouchIdleChance)
         .def_readwrite("CrouchMoveChance", &UAction_GenericAttack::CrouchMoveChance)
@@ -15,7 +15,7 @@ void Export_pystes_UAction_GenericAttack()
         .def_readwrite("AttackLoc", &UAction_GenericAttack::AttackLoc)
         .def_readwrite("MyZone", &UAction_GenericAttack::MyZone)
         .def_readwrite("IdleTime", &UAction_GenericAttack::IdleTime)
-        .def("StaticClass", &UAction_GenericAttack::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_GenericAttack::StaticClass, py::return_value_policy::reference)
         .def("ReachedAttackLoc", &UAction_GenericAttack::ReachedAttackLoc)
         .def("HalfExposed", &UAction_GenericAttack::HalfExposed)
         .def("GetDotToTarget", &UAction_GenericAttack::GetDotToTarget)

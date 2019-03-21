@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTravelStationNozzleComponent()
 {
-    class_< UTravelStationNozzleComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UTravelStationNozzleComponent", no_init)
-        .def("StaticClass", &UTravelStationNozzleComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTravelStationNozzleComponent,  UPrimitiveComponent   >("UTravelStationNozzleComponent")
+        .def("StaticClass", &UTravelStationNozzleComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

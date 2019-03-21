@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBulletTimerEvent()
 {
-    class_< FBulletTimerEvent >("FBulletTimerEvent", no_init)
+    py::class_< FBulletTimerEvent >("FBulletTimerEvent")
         .def_readwrite("Time", &FBulletTimerEvent::Time)
         .def_readwrite("Response", &FBulletTimerEvent::Response)
   ;

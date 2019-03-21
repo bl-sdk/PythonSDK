@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIScreenParticle()
 {
-    class_< UIScreenParticle, bases< UInterface >  , boost::noncopyable>("UIScreenParticle", no_init)
-        .def("StaticClass", &UIScreenParticle::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIScreenParticle,  UInterface   >("UIScreenParticle")
+        .def("StaticClass", &UIScreenParticle::StaticClass, py::return_value_policy::reference)
         .def("UpdateVisibilityOfAllActiveScreenParticles", &UIScreenParticle::UpdateVisibilityOfAllActiveScreenParticles)
         .def("ScreenParticlesShouldBeVisible", &UIScreenParticle::ScreenParticlesShouldBeVisible)
         .def("SetUpVoGScreenParticle", &UIScreenParticle::SetUpVoGScreenParticle)

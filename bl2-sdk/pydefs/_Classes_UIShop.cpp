@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIShop()
 {
-    class_< UIShop, bases< UInterface >  , boost::noncopyable>("UIShop", no_init)
-        .def("StaticClass", &UIShop::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIShop,  UInterface   >("UIShop")
+        .def("StaticClass", &UIShop::StaticClass, py::return_value_policy::reference)
         .def("GetSellingPriceForInventory", &UIShop::GetSellingPriceForInventory)
         .def("GetCurrencyTypeInventoryIsSoldIn", &UIShop::GetCurrencyTypeInventoryIsSoldIn)
         .def("PlayerBuyBackItem", &UIShop::PlayerBuyBackItem)

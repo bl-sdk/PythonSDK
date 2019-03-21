@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APortalTeleporter()
 {
-    class_< APortalTeleporter, bases< AActor >  , boost::noncopyable>("APortalTeleporter", no_init)
+    py::class_< APortalTeleporter,  AActor   >("APortalTeleporter")
         .def_readwrite("SisterPortal", &APortalTeleporter::SisterPortal)
         .def_readwrite("TextureResolutionX", &APortalTeleporter::TextureResolutionX)
         .def_readwrite("TextureResolutionY", &APortalTeleporter::TextureResolutionY)
@@ -13,9 +13,9 @@ void Export_pystes_APortalTeleporter()
         .def_readwrite("StaticMesh", &ASceneCaptureReflectActor::StaticMesh)
         .def_readwrite("ReflectMaterialInst", &ASceneCaptureReflectActor::ReflectMaterialInst)
         .def_readwrite("SceneCapture", &ASceneCaptureActor::SceneCapture)
-        .def("StaticClass", &APortalTeleporter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APortalTeleporter::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &APortalTeleporter::StopsProjectile)
-        .def("CreatePortalTexture", &APortalTeleporter::CreatePortalTexture, return_value_policy< reference_existing_object >())
+        .def("CreatePortalTexture", &APortalTeleporter::CreatePortalTexture, py::return_value_policy::reference)
         .def("TransformHitLocation", &APortalTeleporter::TransformHitLocation)
         .def("TransformVectorDir", &APortalTeleporter::TransformVectorDir)
         .def("TransformActor", &APortalTeleporter::TransformActor)

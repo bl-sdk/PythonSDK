@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScreenParticleVectorParamOverTime()
 {
-    class_< FScreenParticleVectorParamOverTime >("FScreenParticleVectorParamOverTime", no_init)
+    py::class_< FScreenParticleVectorParamOverTime >("FScreenParticleVectorParamOverTime")
         .def_readwrite("ParameterName", &FScreenParticleVectorParamOverTime::ParameterName)
         .def_readwrite("TotalTime", &FScreenParticleVectorParamOverTime::TotalTime)
         .def_readwrite("VectorStartValue", &FScreenParticleVectorParamOverTime::VectorStartValue)

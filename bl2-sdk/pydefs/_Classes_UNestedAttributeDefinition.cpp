@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNestedAttributeDefinition()
 {
-    class_< UNestedAttributeDefinition, bases< UAttributeDefinition >  , boost::noncopyable>("UNestedAttributeDefinition", no_init)
+    py::class_< UNestedAttributeDefinition,  UAttributeDefinition   >("UNestedAttributeDefinition")
         .def_readwrite("OuterContextAttributeDefinition", &UNestedAttributeDefinition::OuterContextAttributeDefinition)
         .def_readwrite("InnerContextAttributeDefinition", &UNestedAttributeDefinition::InnerContextAttributeDefinition)
-        .def("StaticClass", &UNestedAttributeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNestedAttributeDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

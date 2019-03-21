@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCustomInput()
 {
-    class_< FCustomInput >("FCustomInput", no_init)
+    py::class_< FCustomInput >("FCustomInput")
         .def_readwrite("InputName", &FCustomInput::InputName)
         .def_readwrite("Input", &FCustomInput::Input)
   ;

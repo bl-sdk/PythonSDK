@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMultipleFlagValueResolver()
 {
-    class_< UMultipleFlagValueResolver, bases< UFlagValueResolver >  , boost::noncopyable>("UMultipleFlagValueResolver", no_init)
+    py::class_< UMultipleFlagValueResolver,  UFlagValueResolver   >("UMultipleFlagValueResolver")
         .def_readwrite("FlagToLookUp", &UMultipleFlagValueResolver::FlagToLookUp)
         .def_readwrite("AggregationType", &UMultipleFlagValueResolver::AggregationType)
-        .def("StaticClass", &UMultipleFlagValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMultipleFlagValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

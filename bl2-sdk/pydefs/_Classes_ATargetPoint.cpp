@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATargetPoint()
 {
-    class_< ATargetPoint, bases< AKeypoint >  , boost::noncopyable>("ATargetPoint", no_init)
+    py::class_< ATargetPoint,  AKeypoint   >("ATargetPoint")
         .def_readwrite("SpawnRefCount", &ATargetPoint::SpawnRefCount)
-        .def("StaticClass", &ATargetPoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATargetPoint::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_ConstraintDrawComponent()
 {
-    class_< URB_ConstraintDrawComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("URB_ConstraintDrawComponent", no_init)
+    py::class_< URB_ConstraintDrawComponent,  UPrimitiveComponent   >("URB_ConstraintDrawComponent")
         .def_readwrite("LimitMaterial", &URB_ConstraintDrawComponent::LimitMaterial)
-        .def("StaticClass", &URB_ConstraintDrawComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_ConstraintDrawComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

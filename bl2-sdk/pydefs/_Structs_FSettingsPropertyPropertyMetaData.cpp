@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSettingsPropertyPropertyMetaData()
 {
-    class_< FSettingsPropertyPropertyMetaData >("FSettingsPropertyPropertyMetaData", no_init)
+    py::class_< FSettingsPropertyPropertyMetaData >("FSettingsPropertyPropertyMetaData")
         .def_readwrite("Id", &FSettingsPropertyPropertyMetaData::Id)
         .def_readwrite("Name", &FSettingsPropertyPropertyMetaData::Name)
         .def_readwrite("ColumnHeaderText", &FSettingsPropertyPropertyMetaData::ColumnHeaderText)

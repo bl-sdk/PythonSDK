@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHashDisplayGFxDefinition()
 {
-    class_< UHashDisplayGFxDefinition, bases< UGFxMovieDefinition >  , boost::noncopyable>("UHashDisplayGFxDefinition", no_init)
+    py::class_< UHashDisplayGFxDefinition,  UGFxMovieDefinition   >("UHashDisplayGFxDefinition")
         .def_readwrite("LeftSideDef", &UHashDisplayGFxDefinition::LeftSideDef)
         .def_readwrite("EmptySlotColor", &UHashDisplayGFxDefinition::EmptySlotColor)
         .def_readwrite("CardCellWidth", &UHashDisplayGFxDefinition::CardCellWidth)
@@ -13,7 +13,7 @@ void Export_pystes_UHashDisplayGFxDefinition()
         .def_readwrite("CardTextureWidth", &UHashDisplayGFxDefinition::CardTextureWidth)
         .def_readwrite("CardTextureHeight", &UHashDisplayGFxDefinition::CardTextureHeight)
         .def_readwrite("Card1ExternalTextureMap", &UHashDisplayGFxDefinition::Card1ExternalTextureMap)
-        .def("StaticClass", &UHashDisplayGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHashDisplayGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

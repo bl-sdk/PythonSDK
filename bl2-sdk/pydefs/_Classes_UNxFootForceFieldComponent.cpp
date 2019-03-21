@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNxFootForceFieldComponent()
 {
-    class_< UNxFootForceFieldComponent, bases< UNxForceFieldRadialComponent >  , boost::noncopyable>("UNxFootForceFieldComponent", no_init)
-        .def("StaticClass", &UNxFootForceFieldComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UNxFootForceFieldComponent,  UNxForceFieldRadialComponent   >("UNxFootForceFieldComponent")
+        .def("StaticClass", &UNxFootForceFieldComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

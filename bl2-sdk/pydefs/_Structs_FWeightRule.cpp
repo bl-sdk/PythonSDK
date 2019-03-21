@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWeightRule()
 {
-    class_< FWeightRule >("FWeightRule", no_init)
+    py::class_< FWeightRule >("FWeightRule")
         .def_readwrite("FirstNode", &FWeightRule::FirstNode)
         .def_readwrite("SecondNode", &FWeightRule::SecondNode)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFontParameterValue()
 {
-    class_< FFontParameterValue >("FFontParameterValue", no_init)
+    py::class_< FFontParameterValue >("FFontParameterValue")
         .def_readwrite("ParameterName", &FFontParameterValue::ParameterName)
         .def_readwrite("FontValue", &FFontParameterValue::FontValue)
         .def_readwrite("FontPage", &FFontParameterValue::FontPage)

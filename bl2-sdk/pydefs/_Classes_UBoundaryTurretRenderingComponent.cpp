@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBoundaryTurretRenderingComponent()
 {
-    class_< UBoundaryTurretRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UBoundaryTurretRenderingComponent", no_init)
-        .def("StaticClass", &UBoundaryTurretRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBoundaryTurretRenderingComponent,  UPrimitiveComponent   >("UBoundaryTurretRenderingComponent")
+        .def("StaticClass", &UBoundaryTurretRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

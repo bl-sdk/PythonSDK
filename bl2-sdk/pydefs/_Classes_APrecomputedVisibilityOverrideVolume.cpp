@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APrecomputedVisibilityOverrideVolume()
 {
-    class_< APrecomputedVisibilityOverrideVolume, bases< AVolume >  , boost::noncopyable>("APrecomputedVisibilityOverrideVolume", no_init)
+    py::class_< APrecomputedVisibilityOverrideVolume,  AVolume   >("APrecomputedVisibilityOverrideVolume")
         .def_readwrite("OverrideVisibleActors", &APrecomputedVisibilityOverrideVolume::OverrideVisibleActors)
         .def_readwrite("OverrideInvisibleActors", &APrecomputedVisibilityOverrideVolume::OverrideInvisibleActors)
-        .def("StaticClass", &APrecomputedVisibilityOverrideVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APrecomputedVisibilityOverrideVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

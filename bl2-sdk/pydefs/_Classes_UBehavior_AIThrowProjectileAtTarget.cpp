@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AIThrowProjectileAtTarget()
 {
-    class_< UBehavior_AIThrowProjectileAtTarget, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AIThrowProjectileAtTarget", no_init)
+    py::class_< UBehavior_AIThrowProjectileAtTarget,  UBehaviorBase   >("UBehavior_AIThrowProjectileAtTarget")
         .def_readwrite("NumProjectiles", &UBehavior_AIThrowProjectileAtTarget::NumProjectiles)
         .def_readwrite("Options", &UBehavior_AIThrowProjectileAtTarget::Options)
         .def_readwrite("StartOffset", &UBehavior_AIThrowProjectileAtTarget::StartOffset)
@@ -14,7 +14,7 @@ void Export_pystes_UBehavior_AIThrowProjectileAtTarget()
         .def_readwrite("ProjectileDef", &UBehavior_AIThrowProjectileAtTarget::ProjectileDef)
         .def_readwrite("ExistingProjectile", &UBehavior_AIThrowProjectileAtTarget::ExistingProjectile)
         .def_readwrite("SetProjectileSequenceState", &UBehavior_AIThrowProjectileAtTarget::SetProjectileSequenceState)
-        .def("StaticClass", &UBehavior_AIThrowProjectileAtTarget::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AIThrowProjectileAtTarget::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_AIThrowProjectileAtTarget::PublishBehaviorOutput)
         .def("ThrowExisting", &UBehavior_AIThrowProjectileAtTarget::ThrowExisting)
         .def("ThrowProjectile", &UBehavior_AIThrowProjectileAtTarget::ThrowProjectile)

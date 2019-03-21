@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDominantPointLightComponent()
 {
-    class_< UDominantPointLightComponent, bases< UPointLightComponent >  , boost::noncopyable>("UDominantPointLightComponent", no_init)
-        .def("StaticClass", &UDominantPointLightComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDominantPointLightComponent,  UPointLightComponent   >("UDominantPointLightComponent")
+        .def("StaticClass", &UDominantPointLightComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

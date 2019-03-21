@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponScopeGFxDefinition()
 {
-    class_< UWeaponScopeGFxDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UWeaponScopeGFxDefinition", no_init)
+    py::class_< UWeaponScopeGFxDefinition,  UWillowGFxMovie3DDefinition   >("UWeaponScopeGFxDefinition")
         .def_readwrite("LinkageMappings_Manufacturers", &UWeaponScopeGFxDefinition::LinkageMappings_Manufacturers)
         .def_readwrite("LinkageMappings_WeaponTypes", &UWeaponScopeGFxDefinition::LinkageMappings_WeaponTypes)
-        .def("StaticClass", &UWeaponScopeGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponScopeGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

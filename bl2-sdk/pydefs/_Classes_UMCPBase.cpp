@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMCPBase()
 {
-    class_< UMCPBase, bases< UObject >  , boost::noncopyable>("UMCPBase", no_init)
+    py::class_< UMCPBase,  UObject   >("UMCPBase")
         .def_readwrite("VfTable_FTickableObject", &UMCPBase::VfTable_FTickableObject)
-        .def("StaticClass", &UMCPBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMCPBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

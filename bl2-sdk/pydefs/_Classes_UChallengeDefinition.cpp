@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UChallengeDefinition()
 {
-    class_< UChallengeDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UChallengeDefinition", no_init)
+    py::class_< UChallengeDefinition,  UGBXDefinition   >("UChallengeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UChallengeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UChallengeDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("ChallengeName", &UChallengeDefinition::ChallengeName)
@@ -24,12 +24,12 @@ void Export_pystes_UChallengeDefinition()
         .def_readwrite("DlcBalanceMod", &UChallengeDefinition::DlcBalanceMod)
         .def_readwrite("BehaviorProvider", &UChallengeDefinition::BehaviorProvider)
         .def_readwrite("LevelChallengeOneOffIdx", &UChallengeDefinition::LevelChallengeOneOffIdx)
-        .def("StaticClass", &UChallengeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UChallengeDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetRewardText", &UChallengeDefinition::GetRewardText)
-        .def("GetDownloadableContentDefinition", &UChallengeDefinition::GetDownloadableContentDefinition, return_value_policy< reference_existing_object >())
+        .def("GetDownloadableContentDefinition", &UChallengeDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
         .def("OnLevelCompleted", &UChallengeDefinition::OnLevelCompleted)
         .def("SetBehaviorProviderDefinition", &UChallengeDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UChallengeDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UChallengeDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

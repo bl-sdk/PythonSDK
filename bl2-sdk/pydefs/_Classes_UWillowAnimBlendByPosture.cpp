@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimBlendByPosture()
 {
-    class_< UWillowAnimBlendByPosture, bases< UAnimNodeBlendList >  , boost::noncopyable>("UWillowAnimBlendByPosture", no_init)
+    py::class_< UWillowAnimBlendByPosture,  UAnimNodeBlendList   >("UWillowAnimBlendByPosture")
         .def_readwrite("BlendTime", &UWillowAnimBlendByPosture::BlendTime)
-        .def("StaticClass", &UWillowAnimBlendByPosture::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAnimBlendByPosture::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

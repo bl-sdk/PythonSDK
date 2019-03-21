@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAreaTestSortedPoint()
 {
-    class_< FAreaTestSortedPoint >("FAreaTestSortedPoint", no_init)
+    py::class_< FAreaTestSortedPoint >("FAreaTestSortedPoint")
         .def_readwrite("Nav", &FAreaTestSortedPoint::Nav)
         .def_readwrite("DistSq", &FAreaTestSortedPoint::DistSq)
   ;

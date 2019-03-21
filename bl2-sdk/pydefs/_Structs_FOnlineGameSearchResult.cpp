@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineGameSearchResult()
 {
-    class_< FOnlineGameSearchResult >("FOnlineGameSearchResult", no_init)
+    py::class_< FOnlineGameSearchResult >("FOnlineGameSearchResult")
         .def_readwrite("GameSettings", &FOnlineGameSearchResult::GameSettings)
         .def_readwrite("PlatformData", &FOnlineGameSearchResult::PlatformData)
   ;

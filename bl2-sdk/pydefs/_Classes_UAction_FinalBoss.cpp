@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_FinalBoss()
 {
-    class_< UAction_FinalBoss, bases< UAction_FollowPath >  , boost::noncopyable>("UAction_FinalBoss", no_init)
-        .def("StaticClass", &UAction_FinalBoss::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAction_FinalBoss,  UAction_FollowPath   >("UAction_FinalBoss")
+        .def("StaticClass", &UAction_FinalBoss::StaticClass, py::return_value_policy::reference)
         .def("eventStop", &UAction_FinalBoss::eventStop)
         .def("eventStart", &UAction_FinalBoss::eventStart)
         .def("eventCanRun", &UAction_FinalBoss::eventCanRun)

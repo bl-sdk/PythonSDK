@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_TurnOffCombatMusic()
 {
-    class_< UWillowSeqAct_TurnOffCombatMusic, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_TurnOffCombatMusic", no_init)
+    py::class_< UWillowSeqAct_TurnOffCombatMusic,  USequenceAction   >("UWillowSeqAct_TurnOffCombatMusic")
         .def_readwrite("FadeOutTime", &UWillowSeqAct_TurnOffCombatMusic::FadeOutTime)
-        .def("StaticClass", &UWillowSeqAct_TurnOffCombatMusic::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_TurnOffCombatMusic::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

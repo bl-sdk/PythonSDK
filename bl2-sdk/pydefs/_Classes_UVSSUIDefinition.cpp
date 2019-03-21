@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVSSUIDefinition()
 {
-    class_< UVSSUIDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UVSSUIDefinition", no_init)
+    py::class_< UVSSUIDefinition,  UGBXDefinition   >("UVSSUIDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UVSSUIDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("VehicleFamily", &UVSSUIDefinition::VehicleFamily)
         .def_readwrite("VehicleName", &UVSSUIDefinition::VehicleName)
@@ -19,9 +19,9 @@ void Export_pystes_UVSSUIDefinition()
         .def_readwrite("VehiclePreviewClip", &UVSSUIDefinition::VehiclePreviewClip)
         .def_readwrite("RequiredMissionCompletionToUnlock", &UVSSUIDefinition::RequiredMissionCompletionToUnlock)
         .def_readwrite("DlcVehicleDef", &UVSSUIDefinition::DlcVehicleDef)
-        .def("StaticClass", &UVSSUIDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVSSUIDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetVehiclePreviewMoviePath", &UVSSUIDefinition::GetVehiclePreviewMoviePath)
-        .def("GetDownloadableContentDefinition", &UVSSUIDefinition::GetDownloadableContentDefinition, return_value_policy< reference_existing_object >())
+        .def("GetDownloadableContentDefinition", &UVSSUIDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
         .def("GetHumanReadableVehicleName", &UVSSUIDefinition::GetHumanReadableVehicleName)
         .staticmethod("StaticClass")
   ;

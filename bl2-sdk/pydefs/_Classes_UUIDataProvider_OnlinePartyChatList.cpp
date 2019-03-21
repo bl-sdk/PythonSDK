@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_OnlinePartyChatList()
 {
-    class_< UUIDataProvider_OnlinePartyChatList, bases< UUIDataProvider_OnlinePlayerDataBase >  , boost::noncopyable>("UUIDataProvider_OnlinePartyChatList", no_init)
+    py::class_< UUIDataProvider_OnlinePartyChatList,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_OnlinePartyChatList")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlinePartyChatList::VfTable_IUIListElementCellProvider)
         .def_readwrite("PartyMembersList", &UUIDataProvider_OnlinePartyChatList::PartyMembersList)
         .def_readwrite("NatTypes", &UUIDataProvider_OnlinePartyChatList::NatTypes)
@@ -16,7 +16,7 @@ void Export_pystes_UUIDataProvider_OnlinePartyChatList()
         .def_readwrite("IsTalkingCol", &UUIDataProvider_OnlinePartyChatList::IsTalkingCol)
         .def_readwrite("IsInGameSessionCol", &UUIDataProvider_OnlinePartyChatList::IsInGameSessionCol)
         .def_readwrite("IsPlayingThisGameCol", &UUIDataProvider_OnlinePartyChatList::IsPlayingThisGameCol)
-        .def("StaticClass", &UUIDataProvider_OnlinePartyChatList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_OnlinePartyChatList::StaticClass, py::return_value_policy::reference)
         .def("eventRefreshMembersList", &UUIDataProvider_OnlinePartyChatList::eventRefreshMembersList)
         .def("OnLoginChange", &UUIDataProvider_OnlinePartyChatList::OnLoginChange)
         .def("eventOnUnregister", &UUIDataProvider_OnlinePartyChatList::eventOnUnregister)

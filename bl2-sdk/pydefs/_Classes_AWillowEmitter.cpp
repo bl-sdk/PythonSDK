@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowEmitter()
 {
-    class_< AWillowEmitter, bases< AEmitter >  , boost::noncopyable>("AWillowEmitter", no_init)
+    py::class_< AWillowEmitter,  AEmitter   >("AWillowEmitter")
         .def_readwrite("NetCullDistanceSquared", &AWillowEmitter::NetCullDistanceSquared)
-        .def("StaticClass", &AWillowEmitter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowEmitter::StaticClass, py::return_value_policy::reference)
         .def("SetOwnerNoSeeEmitter", &AWillowEmitter::SetOwnerNoSeeEmitter)
         .def("eventReplicatedEvent", &AWillowEmitter::eventReplicatedEvent)
         .staticmethod("StaticClass")

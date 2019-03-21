@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_AkSetSwitch()
 {
-    class_< USeqAct_AkSetSwitch, bases< USequenceAction >  , boost::noncopyable>("USeqAct_AkSetSwitch", no_init)
+    py::class_< USeqAct_AkSetSwitch,  USequenceAction   >("USeqAct_AkSetSwitch")
         .def_readwrite("AkSwitch", &USeqAct_AkSetSwitch::AkSwitch)
-        .def("StaticClass", &USeqAct_AkSetSwitch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_AkSetSwitch::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

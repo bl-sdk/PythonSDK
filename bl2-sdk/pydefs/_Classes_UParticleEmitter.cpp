@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleEmitter()
 {
-    class_< UParticleEmitter, bases< UObject >  , boost::noncopyable>("UParticleEmitter", no_init)
+    py::class_< UParticleEmitter,  UObject   >("UParticleEmitter")
         .def_readwrite("EmitterName", &UParticleEmitter::EmitterName)
         .def_readwrite("SubUVDataOffset", &UParticleEmitter::SubUVDataOffset)
         .def_readwrite("EmitterRenderMode", &UParticleEmitter::EmitterRenderMode)
@@ -13,7 +13,7 @@ void Export_pystes_UParticleEmitter()
         .def_readwrite("PeakActiveParticles", &UParticleEmitter::PeakActiveParticles)
         .def_readwrite("InitialAllocationCount", &UParticleEmitter::InitialAllocationCount)
         .def_readwrite("MediumDetailSpawnRateScale", &UParticleEmitter::MediumDetailSpawnRateScale)
-        .def("StaticClass", &UParticleEmitter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleEmitter::StaticClass, py::return_value_policy::reference)
         .def("GetMaxLifespan", &UParticleEmitter::GetMaxLifespan)
         .staticmethod("StaticClass")
   ;

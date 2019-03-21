@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UShieldDefinition()
 {
-    class_< UShieldDefinition, bases< UItemDefinition >  , boost::noncopyable>("UShieldDefinition", no_init)
+    py::class_< UShieldDefinition,  UItemDefinition   >("UShieldDefinition")
         .def_readwrite("ShieldType", &UShieldDefinition::ShieldType)
         .def_readwrite("ShieldPrimeMechanism", &UShieldDefinition::ShieldPrimeMechanism)
         .def_readwrite("ShieldTypeFlashFrameName", &UShieldDefinition::ShieldTypeFlashFrameName)
@@ -14,7 +14,7 @@ void Export_pystes_UShieldDefinition()
         .def_readwrite("DamageTypeIcon", &UEquipableItemDefinition::DamageTypeIcon)
         .def_readwrite("EquipSounds", &UEquipableItemDefinition::EquipSounds)
         .def_readwrite("UnequipSounds", &UEquipableItemDefinition::UnequipSounds)
-        .def("StaticClass", &UShieldDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UShieldDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetEquipmentLocation", &UShieldDefinition::GetEquipmentLocation)
         .def("OnDamageResistanceTypeChanged", &UShieldDefinition::OnDamageResistanceTypeChanged)
         .def("OnEffectTriggered", &UShieldDefinition::OnEffectTriggered)

@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationFactoryBlackMarket()
 {
-    class_< UPopulationFactoryBlackMarket, bases< UPopulationFactoryInteractiveObject >  , boost::noncopyable>("UPopulationFactoryBlackMarket", no_init)
+    py::class_< UPopulationFactoryBlackMarket,  UPopulationFactoryInteractiveObject   >("UPopulationFactoryBlackMarket")
         .def_readwrite("MarketDefinition", &UPopulationFactoryBlackMarket::MarketDefinition)
-        .def("StaticClass", &UPopulationFactoryBlackMarket::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPopulationFactoryBlackMarket::StaticClass, py::return_value_policy::reference)
         .def("eventShouldSavePopulationActor", &UPopulationFactoryBlackMarket::eventShouldSavePopulationActor)
-        .def("CreateInteractiveObject", &UPopulationFactoryBlackMarket::CreateInteractiveObject, return_value_policy< reference_existing_object >())
-        .def("eventCreatePopulationActor", &UPopulationFactoryBlackMarket::eventCreatePopulationActor, return_value_policy< reference_existing_object >())
+        .def("CreateInteractiveObject", &UPopulationFactoryBlackMarket::CreateInteractiveObject, py::return_value_policy::reference)
+        .def("eventCreatePopulationActor", &UPopulationFactoryBlackMarket::eventCreatePopulationActor, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

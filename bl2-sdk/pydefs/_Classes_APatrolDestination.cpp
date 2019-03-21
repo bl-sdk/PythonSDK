@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APatrolDestination()
 {
-    class_< APatrolDestination, bases< AActor >  , boost::noncopyable>("APatrolDestination", no_init)
+    py::class_< APatrolDestination,  AActor   >("APatrolDestination")
         .def_readwrite("NextPatrolPoints", &APatrolDestination::NextPatrolPoints)
-        .def("StaticClass", &APatrolDestination::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APatrolDestination::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

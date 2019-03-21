@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSynchronizedActorVisibilityHistory()
 {
-    class_< FSynchronizedActorVisibilityHistory >("FSynchronizedActorVisibilityHistory", no_init)
+    py::class_< FSynchronizedActorVisibilityHistory >("FSynchronizedActorVisibilityHistory")
         .def_readwrite("State", &FSynchronizedActorVisibilityHistory::State)
         .def_readwrite("CriticalSection", &FSynchronizedActorVisibilityHistory::CriticalSection)
   ;

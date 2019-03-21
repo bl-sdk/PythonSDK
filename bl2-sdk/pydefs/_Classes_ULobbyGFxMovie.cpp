@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULobbyGFxMovie()
 {
-    class_< ULobbyGFxMovie, bases< UFrontendGFxMovie >  , boost::noncopyable>("ULobbyGFxMovie", no_init)
+    py::class_< ULobbyGFxMovie,  UFrontendGFxMovie   >("ULobbyGFxMovie")
         .def_readwrite("PrimaryPlayerPRI", &ULobbyGFxMovie::PrimaryPlayerPRI)
         .def_readwrite("SplitPlayerPRI", &ULobbyGFxMovie::SplitPlayerPRI)
-        .def("StaticClass", &ULobbyGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULobbyGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("FadeLobbyDeco", &ULobbyGFxMovie::FadeLobbyDeco)
         .def("ShowConfirmQuitDialog", &ULobbyGFxMovie::ShowConfirmQuitDialog)
         .def("OnQuitConfirmed", &ULobbyGFxMovie::OnQuitConfirmed)

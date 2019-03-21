@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMissionRewardData()
 {
-    class_< FMissionRewardData >("FMissionRewardData", no_init)
+    py::class_< FMissionRewardData >("FMissionRewardData")
         .def_readwrite("MissionDef", &FMissionRewardData::MissionDef)
   ;
 }

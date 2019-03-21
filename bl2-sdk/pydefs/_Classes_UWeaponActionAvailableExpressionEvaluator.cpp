@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponActionAvailableExpressionEvaluator()
 {
-    class_< UWeaponActionAvailableExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("UWeaponActionAvailableExpressionEvaluator", no_init)
-        .def("StaticClass", &UWeaponActionAvailableExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWeaponActionAvailableExpressionEvaluator,  UExpressionEvaluator   >("UWeaponActionAvailableExpressionEvaluator")
+        .def("StaticClass", &UWeaponActionAvailableExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UWeaponActionAvailableExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

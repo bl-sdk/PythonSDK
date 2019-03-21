@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpawnedPopulationActor()
 {
-    class_< FSpawnedPopulationActor >("FSpawnedPopulationActor", no_init)
+    py::class_< FSpawnedPopulationActor >("FSpawnedPopulationActor")
         .def_readwrite("SpawnedActor", &FSpawnedPopulationActor::SpawnedActor)
         .def_readwrite("SpawnFactory", &FSpawnedPopulationActor::SpawnFactory)
         .def_readwrite("FactoryDestructionParams", &FSpawnedPopulationActor::FactoryDestructionParams)

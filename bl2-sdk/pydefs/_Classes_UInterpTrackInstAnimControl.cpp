@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstAnimControl()
 {
-    class_< UInterpTrackInstAnimControl, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstAnimControl", no_init)
+    py::class_< UInterpTrackInstAnimControl,  UInterpTrackInst   >("UInterpTrackInstAnimControl")
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstAnimControl::LastUpdatePosition)
         .def_readwrite("ResetLocation", &UInterpTrackInstAnimControl::ResetLocation)
         .def_readwrite("ResetRotation", &UInterpTrackInstAnimControl::ResetRotation)
-        .def("StaticClass", &UInterpTrackInstAnimControl::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstAnimControl::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

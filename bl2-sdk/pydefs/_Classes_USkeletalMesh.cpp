@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkeletalMesh()
 {
-    class_< USkeletalMesh, bases< UObject >  , boost::noncopyable>("USkeletalMesh", no_init)
+    py::class_< USkeletalMesh,  UObject   >("USkeletalMesh")
         .def_readwrite("Bounds", &USkeletalMesh::Bounds)
         .def_readwrite("Materials", &USkeletalMesh::Materials)
         .def_readwrite("ClothingAssets", &USkeletalMesh::ClothingAssets)
@@ -99,7 +99,7 @@ void Export_pystes_USkeletalMesh()
         .def_readwrite("SkelMeshRUID", &USkeletalMesh::SkelMeshRUID)
         .def_readwrite("CachedRefBoneAtoms", &USkeletalMesh::CachedRefBoneAtoms)
         .def_readwrite("CachedAnimSetLinkupName", &USkeletalMesh::CachedAnimSetLinkupName)
-        .def("StaticClass", &USkeletalMesh::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkeletalMesh::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

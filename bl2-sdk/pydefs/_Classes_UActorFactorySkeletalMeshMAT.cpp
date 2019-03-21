@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorFactorySkeletalMeshMAT()
 {
-    class_< UActorFactorySkeletalMeshMAT, bases< UActorFactorySkeletalMesh >  , boost::noncopyable>("UActorFactorySkeletalMeshMAT", no_init)
-        .def("StaticClass", &UActorFactorySkeletalMeshMAT::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UActorFactorySkeletalMeshMAT,  UActorFactorySkeletalMesh   >("UActorFactorySkeletalMeshMAT")
+        .def("StaticClass", &UActorFactorySkeletalMeshMAT::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

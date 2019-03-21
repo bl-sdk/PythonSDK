@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_Handle()
 {
-    class_< URB_Handle, bases< UActorComponent >  , boost::noncopyable>("URB_Handle", no_init)
+    py::class_< URB_Handle,  UActorComponent   >("URB_Handle")
         .def_readwrite("GrabbedComponent", &URB_Handle::GrabbedComponent)
         .def_readwrite("GrabbedBoneName", &URB_Handle::GrabbedBoneName)
         .def_readwrite("SceneIndex", &URB_Handle::SceneIndex)
@@ -20,7 +20,7 @@ void Export_pystes_URB_Handle()
         .def_readwrite("Destination", &URB_Handle::Destination)
         .def_readwrite("StepSize", &URB_Handle::StepSize)
         .def_readwrite("Location", &URB_Handle::Location)
-        .def("StaticClass", &URB_Handle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_Handle::StaticClass, py::return_value_policy::reference)
         .def("GetOrientation", &URB_Handle::GetOrientation)
         .def("SetOrientation", &URB_Handle::SetOrientation)
         .def("UpdateSmoothLocation", &URB_Handle::UpdateSmoothLocation)

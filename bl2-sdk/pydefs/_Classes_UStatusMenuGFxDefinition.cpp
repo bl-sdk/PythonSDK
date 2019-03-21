@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusMenuGFxDefinition()
 {
-    class_< UStatusMenuGFxDefinition, bases< UWillowInventoryGFxDefinition >  , boost::noncopyable>("UStatusMenuGFxDefinition", no_init)
+    py::class_< UStatusMenuGFxDefinition,  UWillowInventoryGFxDefinition   >("UStatusMenuGFxDefinition")
         .def_readwrite("Directions", &UStatusMenuGFxDefinition::Directions)
         .def_readwrite("NumEntriesOnMissionLog", &UStatusMenuGFxDefinition::NumEntriesOnMissionLog)
         .def_readwrite("MissionLogTextDefinition", &UStatusMenuGFxDefinition::MissionLogTextDefinition)
@@ -58,7 +58,7 @@ void Export_pystes_UStatusMenuGFxDefinition()
         .def_readwrite("InventoryPanelPath", &UStatusMenuGFxDefinition::InventoryPanelPath)
         .def_readwrite("ChallengesPanelDef", &UStatusMenuGFxDefinition::ChallengesPanelDef)
         .def_readwrite("LatentRewardDef", &UStatusMenuGFxDefinition::LatentRewardDef)
-        .def("StaticClass", &UStatusMenuGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStatusMenuGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

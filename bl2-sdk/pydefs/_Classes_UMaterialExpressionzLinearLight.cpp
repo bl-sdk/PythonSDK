@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionzLinearLight()
 {
-    class_< UMaterialExpressionzLinearLight, bases< UMaterialExpressionBlendModeBase >  , boost::noncopyable>("UMaterialExpressionzLinearLight", no_init)
-        .def("StaticClass", &UMaterialExpressionzLinearLight::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionzLinearLight,  UMaterialExpressionBlendModeBase   >("UMaterialExpressionzLinearLight")
+        .def("StaticClass", &UMaterialExpressionzLinearLight::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

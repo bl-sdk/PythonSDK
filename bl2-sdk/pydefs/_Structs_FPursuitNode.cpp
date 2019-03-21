@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPursuitNode()
 {
-    class_< FPursuitNode >("FPursuitNode", no_init)
+    py::class_< FPursuitNode >("FPursuitNode")
         .def_readwrite("RelativeLocation", &FPursuitNode::RelativeLocation)
         .def_readwrite("RelativeDistance", &FPursuitNode::RelativeDistance)
         .def_readwrite("EvasiveActionDistance", &FPursuitNode::EvasiveActionDistance)

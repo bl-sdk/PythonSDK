@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMarketingUnlockDefinition()
 {
-    class_< UMarketingUnlockDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UMarketingUnlockDefinition", no_init)
+    py::class_< UMarketingUnlockDefinition,  UGBXDefinition   >("UMarketingUnlockDefinition")
         .def_readwrite("UnlockCode", &UMarketingUnlockDefinition::UnlockCode)
         .def_readwrite("DialogLocFile", &UMarketingUnlockDefinition::DialogLocFile)
         .def_readwrite("DialogLocSection", &UMarketingUnlockDefinition::DialogLocSection)
-        .def("StaticClass", &UMarketingUnlockDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMarketingUnlockDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AStatusEffectReplicatedEmitter()
 {
-    class_< AStatusEffectReplicatedEmitter, bases< AEmitter >  , boost::noncopyable>("AStatusEffectReplicatedEmitter", no_init)
+    py::class_< AStatusEffectReplicatedEmitter,  AEmitter   >("AStatusEffectReplicatedEmitter")
         .def_readwrite("EmitterTemplate", &AStatusEffectReplicatedEmitter::EmitterTemplate)
         .def_readwrite("ServerLifeSpan", &AStatusEffectReplicatedEmitter::ServerLifeSpan)
         .def_readwrite("RandomTTL", &AStatusEffectReplicatedEmitter::RandomTTL)
@@ -13,7 +13,7 @@ void Export_pystes_AStatusEffectReplicatedEmitter()
         .def_readwrite("BaseTarget", &AStatusEffectReplicatedEmitter::BaseTarget)
         .def_readonly("UnknownData00", &AStatusEffectReplicatedEmitter::UnknownData00)
         .def_readwrite("NetCullDistanceSquared", &AWillowEmitter::NetCullDistanceSquared)
-        .def("StaticClass", &AStatusEffectReplicatedEmitter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AStatusEffectReplicatedEmitter::StaticClass, py::return_value_policy::reference)
         .def("eventTearOff", &AStatusEffectReplicatedEmitter::eventTearOff)
         .def("ChooseRandomTTL", &AStatusEffectReplicatedEmitter::ChooseRandomTTL)
         .def("eventBaseChange", &AStatusEffectReplicatedEmitter::eventBaseChange)

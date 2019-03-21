@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UITinnitusTarget()
 {
-    class_< UITinnitusTarget, bases< UInterface >  , boost::noncopyable>("UITinnitusTarget", no_init)
-        .def("StaticClass", &UITinnitusTarget::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UITinnitusTarget,  UInterface   >("UITinnitusTarget")
+        .def("StaticClass", &UITinnitusTarget::StaticClass, py::return_value_policy::reference)
         .def("TriggerTinnitus", &UITinnitusTarget::TriggerTinnitus)
         .def("TriggerTinnitusFromLocation", &UITinnitusTarget::TriggerTinnitusFromLocation)
         .staticmethod("StaticClass")

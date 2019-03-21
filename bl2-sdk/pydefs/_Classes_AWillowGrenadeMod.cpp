@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowGrenadeMod()
 {
-    class_< AWillowGrenadeMod, bases< AWillowEquipAbleItem >  , boost::noncopyable>("AWillowGrenadeMod", no_init)
+    py::class_< AWillowGrenadeMod,  AWillowEquipAbleItem   >("AWillowGrenadeMod")
         .def_readwrite("GrenadeDamage", &AWillowGrenadeMod::GrenadeDamage)
         .def_readwrite("GrenadeDamageBaseValue", &AWillowGrenadeMod::GrenadeDamageBaseValue)
         .def_readwrite("GrenadeDamageModifierStack", &AWillowGrenadeMod::GrenadeDamageModifierStack)
@@ -27,19 +27,19 @@ void Export_pystes_AWillowGrenadeMod()
         .def_readwrite("StatusEffectDamage", &AWillowGrenadeMod::StatusEffectDamage)
         .def_readwrite("StatusEffectDamageBaseValue", &AWillowGrenadeMod::StatusEffectDamageBaseValue)
         .def_readwrite("StatusEffectDamageModifierStack", &AWillowGrenadeMod::StatusEffectDamageModifierStack)
-        .def("StaticClass", &AWillowGrenadeMod::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowGrenadeMod::StaticClass, py::return_value_policy::reference)
         .def("GetItemCardTopSectionString", &AWillowGrenadeMod::GetItemCardTopSectionString)
         .def("eventGetCategoryKey", &AWillowGrenadeMod::eventGetCategoryKey)
         .def("eventSetGrenadeStorage", &AWillowGrenadeMod::eventSetGrenadeStorage)
         .def("RemoveFromShop", &AWillowGrenadeMod::RemoveFromShop)
-        .def("CreatePickup", &AWillowGrenadeMod::CreatePickup, return_value_policy< reference_existing_object >())
-        .def("GetPickup", &AWillowGrenadeMod::GetPickup, return_value_policy< reference_existing_object >())
+        .def("CreatePickup", &AWillowGrenadeMod::CreatePickup, py::return_value_policy::reference)
+        .def("GetPickup", &AWillowGrenadeMod::GetPickup, py::return_value_policy::reference)
         .def("GetHolsteredGearLikenessType", &AWillowGrenadeMod::GetHolsteredGearLikenessType)
-        .def("GetAttributePresentationOverride", &AWillowGrenadeMod::GetAttributePresentationOverride, return_value_policy< reference_existing_object >())
+        .def("GetAttributePresentationOverride", &AWillowGrenadeMod::GetAttributePresentationOverride, py::return_value_policy::reference)
         .def("CanAIUse", &AWillowGrenadeMod::CanAIUse)
-        .def("GetProjectileDefinition", &AWillowGrenadeMod::GetProjectileDefinition, return_value_policy< reference_existing_object >())
+        .def("GetProjectileDefinition", &AWillowGrenadeMod::GetProjectileDefinition, py::return_value_policy::reference)
         .def("Init", &AWillowGrenadeMod::Init)
-        .def("SpawnProjectile", &AWillowGrenadeMod::SpawnProjectile, return_value_policy< reference_existing_object >())
+        .def("SpawnProjectile", &AWillowGrenadeMod::SpawnProjectile, py::return_value_policy::reference)
         .def("SetElementalFrame", &AWillowGrenadeMod::SetElementalFrame)
         .def("ValidateDefinitions", &AWillowGrenadeMod::ValidateDefinitions)
         .def("GetEquippedStat", &AWillowGrenadeMod::GetEquippedStat)

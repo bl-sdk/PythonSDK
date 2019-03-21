@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_ConstraintSetup()
 {
-    class_< URB_ConstraintSetup, bases< UObject >  , boost::noncopyable>("URB_ConstraintSetup", no_init)
+    py::class_< URB_ConstraintSetup,  UObject   >("URB_ConstraintSetup")
         .def_readwrite("JointName", &URB_ConstraintSetup::JointName)
         .def_readwrite("ConstraintBone1", &URB_ConstraintSetup::ConstraintBone1)
         .def_readwrite("ConstraintBone2", &URB_ConstraintSetup::ConstraintBone2)
@@ -32,7 +32,7 @@ void Export_pystes_URB_ConstraintSetup()
         .def_readwrite("TwistLimitDamping", &URB_ConstraintSetup::TwistLimitDamping)
         .def_readwrite("AngularBreakThreshold", &URB_ConstraintSetup::AngularBreakThreshold)
         .def_readwrite("PulleyRatio", &URB_ConstraintSetup::PulleyRatio)
-        .def("StaticClass", &URB_ConstraintSetup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_ConstraintSetup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

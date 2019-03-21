@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogNonTemplateAction()
 {
-    class_< UGearboxDialogNonTemplateAction, bases< UGearboxDialogNode >  , boost::noncopyable>("UGearboxDialogNonTemplateAction", no_init)
-        .def("StaticClass", &UGearboxDialogNonTemplateAction::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxDialogNonTemplateAction,  UGearboxDialogNode   >("UGearboxDialogNonTemplateAction")
+        .def("StaticClass", &UGearboxDialogNonTemplateAction::StaticClass, py::return_value_policy::reference)
         .def("eventActivate", &UGearboxDialogAction::eventActivate)
         .staticmethod("StaticClass")
   ;

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UChildConnection()
 {
-    class_< UChildConnection, bases< UNetConnection >  , boost::noncopyable>("UChildConnection", no_init)
+    py::class_< UChildConnection,  UNetConnection   >("UChildConnection")
         .def_readwrite("Parent", &UChildConnection::Parent)
-        .def("StaticClass", &UChildConnection::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UChildConnection::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

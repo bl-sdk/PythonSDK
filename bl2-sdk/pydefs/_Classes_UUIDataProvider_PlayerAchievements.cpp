@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_PlayerAchievements()
 {
-    class_< UUIDataProvider_PlayerAchievements, bases< UUIDataProvider_OnlinePlayerDataBase >  , boost::noncopyable>("UUIDataProvider_PlayerAchievements", no_init)
+    py::class_< UUIDataProvider_PlayerAchievements,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_PlayerAchievements")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_PlayerAchievements::VfTable_IUIListElementCellProvider)
         .def_readwrite("Achievements", &UUIDataProvider_PlayerAchievements::Achievements)
-        .def("StaticClass", &UUIDataProvider_PlayerAchievements::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_PlayerAchievements::StaticClass, py::return_value_policy::reference)
         .def("UpdateAchievements", &UUIDataProvider_PlayerAchievements::UpdateAchievements)
         .def("OnLoginChange", &UUIDataProvider_PlayerAchievements::OnLoginChange)
         .def("eventOnUnregister", &UUIDataProvider_PlayerAchievements::eventOnUnregister)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAmmoPanelGFxObject()
 {
-    class_< UAmmoPanelGFxObject, bases< UGFxObject >  , boost::noncopyable>("UAmmoPanelGFxObject", no_init)
+    py::class_< UAmmoPanelGFxObject,  UGFxObject   >("UAmmoPanelGFxObject")
         .def_readwrite("AmmoTitle", &UAmmoPanelGFxObject::AmmoTitle)
         .def_readwrite("CachedRepeater", &UAmmoPanelGFxObject::CachedRepeater)
         .def_readwrite("CachedSMG", &UAmmoPanelGFxObject::CachedSMG)
@@ -14,7 +14,7 @@ void Export_pystes_UAmmoPanelGFxObject()
         .def_readwrite("CachedSniper", &UAmmoPanelGFxObject::CachedSniper)
         .def_readwrite("CachedRocket", &UAmmoPanelGFxObject::CachedRocket)
         .def_readwrite("CachedGrenade", &UAmmoPanelGFxObject::CachedGrenade)
-        .def("StaticClass", &UAmmoPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAmmoPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetHighlight", &UAmmoPanelGFxObject::SetHighlight)
         .def("SetAmmoLabels", &UAmmoPanelGFxObject::SetAmmoLabels)
         .def("SetAmmoCount", &UAmmoPanelGFxObject::SetAmmoCount)

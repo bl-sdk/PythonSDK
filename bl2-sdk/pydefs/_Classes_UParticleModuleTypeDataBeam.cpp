@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleTypeDataBeam()
 {
-    class_< UParticleModuleTypeDataBeam, bases< UParticleModule >  , boost::noncopyable>("UParticleModuleTypeDataBeam", no_init)
+    py::class_< UParticleModuleTypeDataBeam,  UParticleModule   >("UParticleModuleTypeDataBeam")
         .def_readwrite("BeamMethod", &UParticleModuleTypeDataBeam::BeamMethod)
         .def_readwrite("EndPointMethod", &UParticleModuleTypeDataBeam::EndPointMethod)
         .def_readwrite("Distance", &UParticleModuleTypeDataBeam::Distance)
@@ -15,7 +15,7 @@ void Export_pystes_UParticleModuleTypeDataBeam()
         .def_readwrite("TargetStrength", &UParticleModuleTypeDataBeam::TargetStrength)
         .def_readwrite("EndPointDirection", &UParticleModuleTypeDataBeam::EndPointDirection)
         .def_readwrite("TextureTile", &UParticleModuleTypeDataBeam::TextureTile)
-        .def("StaticClass", &UParticleModuleTypeDataBeam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleTypeDataBeam::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

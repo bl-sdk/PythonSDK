@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UISimpleAnimPlayer()
 {
-    class_< UISimpleAnimPlayer, bases< UInterface >  , boost::noncopyable>("UISimpleAnimPlayer", no_init)
-        .def("StaticClass", &UISimpleAnimPlayer::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UISimpleAnimPlayer,  UInterface   >("UISimpleAnimPlayer")
+        .def("StaticClass", &UISimpleAnimPlayer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

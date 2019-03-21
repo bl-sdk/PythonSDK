@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPerchStateData()
 {
-    class_< FPerchStateData >("FPerchStateData", no_init)
+    py::class_< FPerchStateData >("FPerchStateData")
         .def_readwrite("AttachmentName", &FPerchStateData::AttachmentName)
         .def_readwrite("StaticMesh", &FPerchStateData::StaticMesh)
         .def_readwrite("SkelMesh", &FPerchStateData::SkelMesh)

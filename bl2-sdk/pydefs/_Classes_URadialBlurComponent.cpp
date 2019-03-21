@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URadialBlurComponent()
 {
-    class_< URadialBlurComponent, bases< UActorComponent >  , boost::noncopyable>("URadialBlurComponent", no_init)
+    py::class_< URadialBlurComponent,  UActorComponent   >("URadialBlurComponent")
         .def_readwrite("Material", &URadialBlurComponent::Material)
         .def_readwrite("DepthPriorityGroup", &URadialBlurComponent::DepthPriorityGroup)
         .def_readwrite("BlurScale", &URadialBlurComponent::BlurScale)
@@ -15,7 +15,7 @@ void Export_pystes_URadialBlurComponent()
         .def_readwrite("DistanceFalloffExponent", &URadialBlurComponent::DistanceFalloffExponent)
         .def_readonly("UnknownData00", &URadialBlurComponent::UnknownData00)
         .def_readwrite("LocalToWorld", &URadialBlurComponent::LocalToWorld)
-        .def("StaticClass", &URadialBlurComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URadialBlurComponent::StaticClass, py::return_value_policy::reference)
         .def("OnUpdatePropertyBlurOpacity", &URadialBlurComponent::OnUpdatePropertyBlurOpacity)
         .def("OnUpdatePropertyBlurFalloffExponent", &URadialBlurComponent::OnUpdatePropertyBlurFalloffExponent)
         .def("OnUpdatePropertyBlurScale", &URadialBlurComponent::OnUpdatePropertyBlurScale)

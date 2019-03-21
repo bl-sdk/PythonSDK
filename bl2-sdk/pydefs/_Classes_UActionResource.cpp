@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActionResource()
 {
-    class_< UActionResource, bases< UObject >  , boost::noncopyable>("UActionResource", no_init)
-        .def("StaticClass", &UActionResource::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UActionResource,  UObject   >("UActionResource")
+        .def("StaticClass", &UActionResource::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

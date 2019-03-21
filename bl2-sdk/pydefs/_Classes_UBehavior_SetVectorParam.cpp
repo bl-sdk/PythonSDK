@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetVectorParam()
 {
-    class_< UBehavior_SetVectorParam, bases< UParameterBehaviorBase >  , boost::noncopyable>("UBehavior_SetVectorParam", no_init)
+    py::class_< UBehavior_SetVectorParam,  UParameterBehaviorBase   >("UBehavior_SetVectorParam")
         .def_readwrite("RValue", &UBehavior_SetVectorParam::RValue)
         .def_readwrite("GValue", &UBehavior_SetVectorParam::GValue)
         .def_readwrite("bValue", &UBehavior_SetVectorParam::bValue)
         .def_readwrite("AValue", &UBehavior_SetVectorParam::AValue)
-        .def("StaticClass", &UBehavior_SetVectorParam::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetVectorParam::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetVectorParam::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

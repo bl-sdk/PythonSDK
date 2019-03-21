@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UServerCommandlet()
 {
-    class_< UServerCommandlet, bases< UCommandlet >  , boost::noncopyable>("UServerCommandlet", no_init)
-        .def("StaticClass", &UServerCommandlet::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UServerCommandlet,  UCommandlet   >("UServerCommandlet")
+        .def("StaticClass", &UServerCommandlet::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

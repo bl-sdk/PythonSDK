@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationFactoryVendingMachine()
 {
-    class_< UPopulationFactoryVendingMachine, bases< UPopulationFactory >  , boost::noncopyable>("UPopulationFactoryVendingMachine", no_init)
+    py::class_< UPopulationFactoryVendingMachine,  UPopulationFactory   >("UPopulationFactoryVendingMachine")
         .def_readwrite("ShopType", &UPopulationFactoryVendingMachine::ShopType)
         .def_readwrite("FormOfCurrency", &UPopulationFactoryVendingMachine::FormOfCurrency)
         .def_readwrite("CommerceMarkup", &UPopulationFactoryVendingMachine::CommerceMarkup)
@@ -17,17 +17,17 @@ void Export_pystes_UPopulationFactoryVendingMachine()
         .def_readwrite("ObjectBalanceDefinition", &UPopulationFactoryInteractiveObject::ObjectBalanceDefinition)
         .def_readwrite("EnabledBehaviorSets", &UPopulationFactoryInteractiveObject::EnabledBehaviorSets)
         .def_readwrite("AttributeStartingValues", &UPopulationFactoryInteractiveObject::AttributeStartingValues)
-        .def("StaticClass", &UPopulationFactoryVendingMachine::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPopulationFactoryVendingMachine::StaticClass, py::return_value_policy::reference)
         .def("eventShouldSavePopulationActor", &UPopulationFactoryVendingMachine::eventShouldSavePopulationActor)
-        .def("CreateInteractiveObject", &UPopulationFactoryVendingMachine::CreateInteractiveObject, return_value_policy< reference_existing_object >())
-        .def("eventCreatePopulationActor", &UPopulationFactoryVendingMachine::eventCreatePopulationActor, return_value_policy< reference_existing_object >())
+        .def("CreateInteractiveObject", &UPopulationFactoryVendingMachine::CreateInteractiveObject, py::return_value_policy::reference)
+        .def("eventCreatePopulationActor", &UPopulationFactoryVendingMachine::eventCreatePopulationActor, py::return_value_policy::reference)
         .def("eventGetDescriptionOfFactoryOutput", &UPopulationFactoryInteractiveObject::eventGetDescriptionOfFactoryOutput)
         .def("GetSpawnLocation", &UPopulationFactoryInteractiveObject::GetSpawnLocation)
         .def("eventGetPopulatedInteractiveObjectMemento", &UPopulationFactoryInteractiveObject::eventGetPopulatedInteractiveObjectMemento)
-        .def("eventRestoreInteractiveObject", &UPopulationFactoryInteractiveObject::eventRestoreInteractiveObject, return_value_policy< reference_existing_object >())
+        .def("eventRestoreInteractiveObject", &UPopulationFactoryInteractiveObject::eventRestoreInteractiveObject, py::return_value_policy::reference)
         .def("eventGetSpawnVisibilityBounds", &UPopulationFactoryInteractiveObject::eventGetSpawnVisibilityBounds)
-        .def("GetActorAllegiance", &UPopulationFactoryInteractiveObject::GetActorAllegiance, return_value_policy< reference_existing_object >())
-        .def("GetObjectDefinition", &UPopulationFactoryInteractiveObject::GetObjectDefinition, return_value_policy< reference_existing_object >())
+        .def("GetActorAllegiance", &UPopulationFactoryInteractiveObject::GetActorAllegiance, py::return_value_policy::reference)
+        .def("GetObjectDefinition", &UPopulationFactoryInteractiveObject::GetObjectDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

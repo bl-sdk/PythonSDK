@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoverDebugPriority()
 {
-    class_< FCoverDebugPriority >("FCoverDebugPriority", no_init)
+    py::class_< FCoverDebugPriority >("FCoverDebugPriority")
         .def_readwrite("Score", &FCoverDebugPriority::Score)
         .def_readwrite("Distance", &FCoverDebugPriority::Distance)
         .def_readwrite("TheCoverActor", &FCoverDebugPriority::TheCoverActor)

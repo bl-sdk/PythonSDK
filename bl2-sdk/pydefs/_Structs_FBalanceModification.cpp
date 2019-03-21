@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBalanceModification()
 {
-    class_< FBalanceModification >("FBalanceModification", no_init)
+    py::class_< FBalanceModification >("FBalanceModification")
         .def_readwrite("MinEffectiveLevel", &FBalanceModification::MinEffectiveLevel)
         .def_readwrite("EnemyHealthMultiplier", &FBalanceModification::EnemyHealthMultiplier)
         .def_readwrite("BadassEnemyHealthMultiplier", &FBalanceModification::BadassEnemyHealthMultiplier)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UQoSHandlerSteamworks()
 {
-    class_< UQoSHandlerSteamworks, bases< UObject >  , boost::noncopyable>("UQoSHandlerSteamworks", no_init)
+    py::class_< UQoSHandlerSteamworks,  UObject   >("UQoSHandlerSteamworks")
         .def_readwrite("MaxQoSRequest", &UQoSHandlerSteamworks::MaxQoSRequest)
         .def_readwrite("MaxQoSListen", &UQoSHandlerSteamworks::MaxQoSListen)
         .def_readwrite("NumPingProbes", &UQoSHandlerSteamworks::NumPingProbes)
@@ -16,7 +16,7 @@ void Export_pystes_UQoSHandlerSteamworks()
         .def_readwrite("ListenEntries", &UQoSHandlerSteamworks::ListenEntries)
         .def_readwrite("RequestEntries", &UQoSHandlerSteamworks::RequestEntries)
         .def_readwrite("PendingRequests", &UQoSHandlerSteamworks::PendingRequests)
-        .def("StaticClass", &UQoSHandlerSteamworks::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UQoSHandlerSteamworks::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameplayEventsHeader()
 {
-    class_< FGameplayEventsHeader >("FGameplayEventsHeader", no_init)
+    py::class_< FGameplayEventsHeader >("FGameplayEventsHeader")
         .def_readwrite("EngineVersion", &FGameplayEventsHeader::EngineVersion)
         .def_readwrite("StatsWriterVersion", &FGameplayEventsHeader::StatsWriterVersion)
         .def_readwrite("StreamOffset", &FGameplayEventsHeader::StreamOffset)

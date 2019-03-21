@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxCoverStateManager()
 {
-    class_< UGearboxCoverStateManager, bases< UObject >  , boost::noncopyable>("UGearboxCoverStateManager", no_init)
+    py::class_< UGearboxCoverStateManager,  UObject   >("UGearboxCoverStateManager")
         .def_readwrite("MyGearboxPawn", &UGearboxCoverStateManager::MyGearboxPawn)
         .def_readwrite("DesiredCoverState", &UGearboxCoverStateManager::DesiredCoverState)
         .def_readwrite("CurrentCoverState", &UGearboxCoverStateManager::CurrentCoverState)
@@ -22,7 +22,7 @@ void Export_pystes_UGearboxCoverStateManager()
         .def_readwrite("CoverDebugList", &UGearboxCoverStateManager::CoverDebugList)
         .def_readwrite("HorizontalCoverAngleDegrees", &UGearboxCoverStateManager::HorizontalCoverAngleDegrees)
         .def_readwrite("VerticalCoverAngleDegrees", &UGearboxCoverStateManager::VerticalCoverAngleDegrees)
-        .def("StaticClass", &UGearboxCoverStateManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxCoverStateManager::StaticClass, py::return_value_policy::reference)
         .def("IsChangingDirection", &UGearboxCoverStateManager::IsChangingDirection)
         .def("IsMantlingOverCoverInProgress", &UGearboxCoverStateManager::IsMantlingOverCoverInProgress)
         .def("IsReturnFromPeekInProgress", &UGearboxCoverStateManager::IsReturnFromPeekInProgress)

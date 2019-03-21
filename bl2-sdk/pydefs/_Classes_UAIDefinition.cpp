@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIDefinition()
 {
-    class_< UAIDefinition, bases< UObject >  , boost::noncopyable>("UAIDefinition", no_init)
+    py::class_< UAIDefinition,  UObject   >("UAIDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UAIDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("BehaviorProviderDefinition", &UAIDefinition::BehaviorProviderDefinition)
         .def_readwrite("AIBehaviorProviderDefinition", &UAIDefinition::AIBehaviorProviderDefinition)
         .def_readwrite("NodeList", &UAIDefinition::NodeList)
         .def_readwrite("TargetSearchRadius", &UAIDefinition::TargetSearchRadius)
         .def_readwrite("TargetingDef", &UAIDefinition::TargetingDef)
-        .def("StaticClass", &UAIDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAIDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnReset", &UAIDefinition::OnReset)
         .def("OnHitByVehicle", &UAIDefinition::OnHitByVehicle)
         .def("OnRanOver", &UAIDefinition::OnRanOver)
@@ -33,7 +33,7 @@ void Export_pystes_UAIDefinition()
         .def("OnSecondaryUsed", &UAIDefinition::OnSecondaryUsed)
         .def("OnUsed", &UAIDefinition::OnUsed)
         .def("SetBehaviorProviderDefinition", &UAIDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UAIDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UAIDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

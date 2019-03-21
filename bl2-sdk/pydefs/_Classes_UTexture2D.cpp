@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTexture2D()
 {
-    class_< UTexture2D, bases< UTexture >  , boost::noncopyable>("UTexture2D", no_init)
+    py::class_< UTexture2D,  UTexture   >("UTexture2D")
         .def_readwrite("Mips", &UTexture2D::Mips)
         .def_readwrite("SizeX", &UTexture2D::SizeX)
         .def_readwrite("SizeY", &UTexture2D::SizeY)
@@ -26,8 +26,8 @@ void Export_pystes_UTexture2D()
         .def_readwrite("ResourceMem", &UTexture2D::ResourceMem)
         .def_readwrite("FirstResourceMemMip", &UTexture2D::FirstResourceMemMip)
         .def_readwrite("Timer", &UTexture2D::Timer)
-        .def("StaticClass", &UTexture2D::StaticClass, return_value_policy< reference_existing_object >())
-        .def("Create", &UTexture2D::Create, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTexture2D::StaticClass, py::return_value_policy::reference)
+        .def("Create", &UTexture2D::Create, py::return_value_policy::reference)
         .def("SetForceMipLevelsToBeResident", &UTexture2D::SetForceMipLevelsToBeResident)
         .staticmethod("StaticClass")
   ;

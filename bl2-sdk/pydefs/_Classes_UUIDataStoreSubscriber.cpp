@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataStoreSubscriber()
 {
-    class_< UUIDataStoreSubscriber, bases< UInterface >  , boost::noncopyable>("UUIDataStoreSubscriber", no_init)
-        .def("StaticClass", &UUIDataStoreSubscriber::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UUIDataStoreSubscriber,  UInterface   >("UUIDataStoreSubscriber")
+        .def("StaticClass", &UUIDataStoreSubscriber::StaticClass, py::return_value_policy::reference)
         .def("ClearBoundDataStores", &UUIDataStoreSubscriber::ClearBoundDataStores)
         .def("GetBoundDataStores", &UUIDataStoreSubscriber::GetBoundDataStores)
         .def("NotifyDataStoreValueUpdated", &UUIDataStoreSubscriber::NotifyDataStoreValueUpdated)

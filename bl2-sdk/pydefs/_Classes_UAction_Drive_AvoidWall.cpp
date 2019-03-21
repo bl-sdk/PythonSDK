@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_Drive_AvoidWall()
 {
-    class_< UAction_Drive_AvoidWall, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_Drive_AvoidWall", no_init)
+    py::class_< UAction_Drive_AvoidWall,  UWillowActionSequencePawn   >("UAction_Drive_AvoidWall")
         .def_readwrite("LineCheckDistance", &UAction_Drive_AvoidWall::LineCheckDistance)
         .def_readwrite("NumLineChecks", &UAction_Drive_AvoidWall::NumLineChecks)
         .def_readwrite("HitNormalDotZThreshold", &UAction_Drive_AvoidWall::HitNormalDotZThreshold)
@@ -16,7 +16,7 @@ void Export_pystes_UAction_Drive_AvoidWall()
         .def_readwrite("HitNormal", &UAction_Drive_AvoidWall::HitNormal)
         .def_readwrite("Speed", &UAction_Drive_AvoidWall::Speed)
         .def_readwrite("SpeedMultiplier", &UAction_Drive_AvoidWall::SpeedMultiplier)
-        .def("StaticClass", &UAction_Drive_AvoidWall::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_Drive_AvoidWall::StaticClass, py::return_value_policy::reference)
         .def("IAmBlocked", &UAction_Drive_AvoidWall::IAmBlocked)
         .def("GetPursuitPoint", &UAction_Drive_AvoidWall::GetPursuitPoint)
         .def("eventStart", &UAction_Drive_AvoidWall::eventStart)

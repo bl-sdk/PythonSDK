@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPerBoneMaskInfo()
 {
-    class_< FPerBoneMaskInfo >("FPerBoneMaskInfo", no_init)
+    py::class_< FPerBoneMaskInfo >("FPerBoneMaskInfo")
         .def_readwrite("BranchList", &FPerBoneMaskInfo::BranchList)
         .def_readwrite("DesiredWeight", &FPerBoneMaskInfo::DesiredWeight)
         .def_readwrite("BlendTimeToGo", &FPerBoneMaskInfo::BlendTimeToGo)

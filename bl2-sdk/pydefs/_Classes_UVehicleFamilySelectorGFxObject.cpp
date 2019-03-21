@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleFamilySelectorGFxObject()
 {
-    class_< UVehicleFamilySelectorGFxObject, bases< UGFxObject >  , boost::noncopyable>("UVehicleFamilySelectorGFxObject", no_init)
-        .def("StaticClass", &UVehicleFamilySelectorGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UVehicleFamilySelectorGFxObject,  UGFxObject   >("UVehicleFamilySelectorGFxObject")
+        .def("StaticClass", &UVehicleFamilySelectorGFxObject::StaticClass, py::return_value_policy::reference)
         .def("TryScrollDown", &UVehicleFamilySelectorGFxObject::TryScrollDown)
         .def("TryScrollUp", &UVehicleFamilySelectorGFxObject::TryScrollUp)
         .def("SetSelectedVehicleFamilyIndex", &UVehicleFamilySelectorGFxObject::SetSelectedVehicleFamilyIndex)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSMExpressionList()
 {
-    class_< FSMExpressionList >("FSMExpressionList", no_init)
+    py::class_< FSMExpressionList >("FSMExpressionList")
         .def_readwrite("Expression", &FSMExpressionList::Expression)
         .def_readwrite("SMD", &FSMExpressionList::SMD)
   ;

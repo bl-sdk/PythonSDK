@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNode()
 {
-    class_< UAnimNode, bases< UObject >  , boost::noncopyable>("UAnimNode", no_init)
+    py::class_< UAnimNode,  UObject   >("UAnimNode")
         .def_readwrite("NodeTickTag", &UAnimNode::NodeTickTag)
         .def_readwrite("NodeInitTag", &UAnimNode::NodeInitTag)
         .def_readwrite("TickArrayIndex", &UAnimNode::TickArrayIndex)
@@ -21,12 +21,12 @@ void Export_pystes_UAnimNode()
         .def_readwrite("CachedCurveKeys", &UAnimNode::CachedCurveKeys)
         .def_readwrite("SearchTag", &UAnimNode::SearchTag)
         .def_readwrite("SkelComponent", &UAnimObject::SkelComponent)
-        .def("StaticClass", &UAnimNode::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNode::StaticClass, py::return_value_policy::reference)
         .def("ReplayAnim", &UAnimNode::ReplayAnim)
         .def("StopAnim", &UAnimNode::StopAnim)
         .def("PlayAnim", &UAnimNode::PlayAnim)
         .def("FindAllAnimNodes", &UAnimNode::FindAllAnimNodes)
-        .def("FindAnimNode", &UAnimNode::FindAnimNode, return_value_policy< reference_existing_object >())
+        .def("FindAnimNode", &UAnimNode::FindAnimNode, py::return_value_policy::reference)
         .def("eventOnCeaseRelevant", &UAnimNode::eventOnCeaseRelevant)
         .def("eventOnBecomeRelevant", &UAnimNode::eventOnBecomeRelevant)
         .def("eventOnInit", &UAnimNode::eventOnInit)

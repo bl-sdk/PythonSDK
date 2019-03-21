@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UApexGenericAsset()
 {
-    class_< UApexGenericAsset, bases< UApexAsset >  , boost::noncopyable>("UApexGenericAsset", no_init)
+    py::class_< UApexGenericAsset,  UApexAsset   >("UApexGenericAsset")
         .def_readwrite("MApexAsset", &UApexGenericAsset::MApexAsset)
-        .def("StaticClass", &UApexGenericAsset::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UApexGenericAsset::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

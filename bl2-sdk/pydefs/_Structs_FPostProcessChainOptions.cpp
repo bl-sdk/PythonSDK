@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPostProcessChainOptions()
 {
-    class_< FPostProcessChainOptions >("FPostProcessChainOptions", no_init)
+    py::class_< FPostProcessChainOptions >("FPostProcessChainOptions")
         .def_readwrite("MaterialEffectModifiers", &FPostProcessChainOptions::MaterialEffectModifiers)
         .def_readwrite("DOFEffectModifier", &FPostProcessChainOptions::DOFEffectModifier)
   ;

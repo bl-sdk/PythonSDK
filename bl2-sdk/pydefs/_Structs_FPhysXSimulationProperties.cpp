@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPhysXSimulationProperties()
 {
-    class_< FPhysXSimulationProperties >("FPhysXSimulationProperties", no_init)
+    py::class_< FPhysXSimulationProperties >("FPhysXSimulationProperties")
         .def_readwrite("TimeStep", &FPhysXSimulationProperties::TimeStep)
         .def_readwrite("MaxSubSteps", &FPhysXSimulationProperties::MaxSubSteps)
   ;

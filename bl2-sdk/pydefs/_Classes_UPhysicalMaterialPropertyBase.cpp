@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicalMaterialPropertyBase()
 {
-    class_< UPhysicalMaterialPropertyBase, bases< UObject >  , boost::noncopyable>("UPhysicalMaterialPropertyBase", no_init)
-        .def("StaticClass", &UPhysicalMaterialPropertyBase::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPhysicalMaterialPropertyBase,  UObject   >("UPhysicalMaterialPropertyBase")
+        .def("StaticClass", &UPhysicalMaterialPropertyBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

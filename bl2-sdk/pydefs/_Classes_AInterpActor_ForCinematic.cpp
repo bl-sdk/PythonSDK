@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AInterpActor_ForCinematic()
 {
-    class_< AInterpActor_ForCinematic, bases< AInterpActor >  , boost::noncopyable>("AInterpActor_ForCinematic", no_init)
-        .def("StaticClass", &AInterpActor_ForCinematic::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AInterpActor_ForCinematic,  AInterpActor   >("AInterpActor_ForCinematic")
+        .def("StaticClass", &AInterpActor_ForCinematic::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

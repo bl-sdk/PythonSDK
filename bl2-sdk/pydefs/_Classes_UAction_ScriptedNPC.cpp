@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_ScriptedNPC()
 {
-    class_< UAction_ScriptedNPC, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_ScriptedNPC", no_init)
+    py::class_< UAction_ScriptedNPC,  UWillowActionSequencePawn   >("UAction_ScriptedNPC")
         .def_readwrite("FindLookAtTargetTime", &UAction_GoToScriptedDestination::FindLookAtTargetTime)
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)
@@ -14,7 +14,7 @@ void Export_pystes_UAction_ScriptedNPC()
         .def_readwrite("TimeToStopLooping", &UAction_FollowPath::TimeToStopLooping)
         .def_readwrite("BurrowEnter", &UAction_Burrow::BurrowEnter)
         .def_readwrite("BurrowExit", &UAction_Burrow::BurrowExit)
-        .def("StaticClass", &UAction_ScriptedNPC::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_ScriptedNPC::StaticClass, py::return_value_policy::reference)
         .def("PerchPlayStopBalanced", &UAction_ScriptedNPC::PerchPlayStopBalanced)
         .def("PerchPlayStop", &UAction_ScriptedNPC::PerchPlayStop)
         .def("PerchDone", &UAction_ScriptedNPC::PerchDone)
@@ -36,7 +36,7 @@ void Export_pystes_UAction_ScriptedNPC()
         .def("InRange", &UAction_GoToScriptedDestination::InRange)
         .def("WantsPath", &UAction_GoToScriptedDestination::WantsPath)
         .def("SetMoveNode", &UAction_GoToScriptedDestination::SetMoveNode)
-        .def("GetMoveNode", &UAction_GoToScriptedDestination::GetMoveNode, return_value_policy< reference_existing_object >())
+        .def("GetMoveNode", &UAction_GoToScriptedDestination::GetMoveNode, py::return_value_policy::reference)
         .def("SetMoveNodeSpeed", &UAction_GoToScriptedDestination::SetMoveNodeSpeed)
         .def("LookAtScriptedFocus", &UAction_GoToScriptedDestination::LookAtScriptedFocus)
         .def("ShouldLookAtPlayer", &UAction_GoToScriptedDestination::ShouldLookAtPlayer)

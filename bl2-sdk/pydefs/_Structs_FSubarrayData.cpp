@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSubarrayData()
 {
-    class_< FSubarrayData >("FSubarrayData", no_init)
+    py::class_< FSubarrayData >("FSubarrayData")
         .def_readwrite("ArrayIndexAndLength", &FSubarrayData::ArrayIndexAndLength)
   ;
 }

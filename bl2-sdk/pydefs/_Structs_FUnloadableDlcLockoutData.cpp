@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUnloadableDlcLockoutData()
 {
-    class_< FUnloadableDlcLockoutData >("FUnloadableDlcLockoutData", no_init)
+    py::class_< FUnloadableDlcLockoutData >("FUnloadableDlcLockoutData")
         .def_readwrite("LockoutDefName", &FUnloadableDlcLockoutData::LockoutDefName)
         .def_readwrite("LockoutTime", &FUnloadableDlcLockoutData::LockoutTime)
         .def_readwrite("DlcPackageId", &FUnloadableDlcLockoutData::DlcPackageId)

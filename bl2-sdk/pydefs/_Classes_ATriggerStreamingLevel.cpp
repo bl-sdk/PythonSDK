@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATriggerStreamingLevel()
 {
-    class_< ATriggerStreamingLevel, bases< ATrigger >  , boost::noncopyable>("ATriggerStreamingLevel", no_init)
+    py::class_< ATriggerStreamingLevel,  ATrigger   >("ATriggerStreamingLevel")
         .def_readwrite("Levels", &ATriggerStreamingLevel::Levels)
-        .def("StaticClass", &ATriggerStreamingLevel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATriggerStreamingLevel::StaticClass, py::return_value_policy::reference)
         .def("eventTouch", &ATriggerStreamingLevel::eventTouch)
         .staticmethod("StaticClass")
   ;

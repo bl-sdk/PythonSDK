@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRarelyChangedPoolState()
 {
-    class_< FRarelyChangedPoolState >("FRarelyChangedPoolState", no_init)
+    py::class_< FRarelyChangedPoolState >("FRarelyChangedPoolState")
         .def_readwrite("ConsumptionRate", &FRarelyChangedPoolState::ConsumptionRate)
         .def_readwrite("ActiveRegenerationRate", &FRarelyChangedPoolState::ActiveRegenerationRate)
         .def_readwrite("OnIdleRegenerationRate", &FRarelyChangedPoolState::OnIdleRegenerationRate)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APopulationPoint()
 {
-    class_< APopulationPoint, bases< AActor >  , boost::noncopyable>("APopulationPoint", no_init)
+    py::class_< APopulationPoint,  AActor   >("APopulationPoint")
         .def_readwrite("VfTable_IIPopulationSpawnPoint", &APopulationPoint::VfTable_IIPopulationSpawnPoint)
         .def_readwrite("Flags", &APopulationPoint::Flags)
         .def_readwrite("AISpawnStyle", &APopulationPoint::AISpawnStyle)
@@ -17,13 +17,13 @@ void Export_pystes_APopulationPoint()
         .def_readwrite("TagsToUseWithConstraint", &APopulationPoint::TagsToUseWithConstraint)
         .def_readwrite("OnSpawnCustomizations", &APopulationPoint::OnSpawnCustomizations)
         .def_readwrite("MinSpawnDistance", &APopulationPoint::MinSpawnDistance)
-        .def("StaticClass", &APopulationPoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APopulationPoint::StaticClass, py::return_value_policy::reference)
         .def("CanSpawnFromFactory", &APopulationPoint::CanSpawnFromFactory)
         .def("GetSpawnRotation", &APopulationPoint::GetSpawnRotation)
         .def("GetSpawnLocation", &APopulationPoint::GetSpawnLocation)
         .def("ActorSpawned", &APopulationPoint::ActorSpawned)
         .def("GetInitialMovementHoldTime", &APopulationPoint::GetInitialMovementHoldTime)
-        .def("GetInitialDestination", &APopulationPoint::GetInitialDestination, return_value_policy< reference_existing_object >())
+        .def("GetInitialDestination", &APopulationPoint::GetInitialDestination, py::return_value_policy::reference)
         .def("RandomizeInitialDestinations", &APopulationPoint::RandomizeInitialDestinations)
         .def("GetInitialActionType", &APopulationPoint::GetInitialActionType)
         .def("GetSpawnStyleType", &APopulationPoint::GetSpawnStyleType)

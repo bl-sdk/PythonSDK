@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionPopulationAspect()
 {
-    class_< UMissionPopulationAspect, bases< UPopulationAspect >  , boost::noncopyable>("UMissionPopulationAspect", no_init)
+    py::class_< UMissionPopulationAspect,  UPopulationAspect   >("UMissionPopulationAspect")
         .def_readwrite("VfTable_IIMission", &UMissionPopulationAspect::VfTable_IIMission)
         .def_readwrite("MissionObjective", &UMissionPopulationAspect::MissionObjective)
         .def_readwrite("Activation", &UMissionPopulationAspect::Activation)
@@ -17,7 +17,7 @@ void Export_pystes_UMissionPopulationAspect()
         .def_readwrite("AreaRadius", &UMissionPopulationAspect::AreaRadius)
         .def_readwrite("ItemPools", &UMissionPopulationAspect::ItemPools)
         .def_readwrite("PickupFailsafe", &UMissionPopulationAspect::PickupFailsafe)
-        .def("StaticClass", &UMissionPopulationAspect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionPopulationAspect::StaticClass, py::return_value_policy::reference)
         .def("eventDenStatRemoved", &UMissionPopulationAspect::eventDenStatRemoved)
         .def("eventDenStatAdded", &UMissionPopulationAspect::eventDenStatAdded)
         .def("eventMissionReactionObjectiveComplete", &UMissionPopulationAspect::eventMissionReactionObjectiveComplete)

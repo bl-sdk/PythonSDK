@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FIndexPair()
 {
-    class_< FIndexPair >("FIndexPair", no_init)
+    py::class_< FIndexPair >("FIndexPair")
         .def_readwrite("Index1", &FIndexPair::Index1)
         .def_readwrite("Index2", &FIndexPair::Index2)
   ;

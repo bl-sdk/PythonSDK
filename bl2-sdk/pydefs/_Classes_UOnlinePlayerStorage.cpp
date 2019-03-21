@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlinePlayerStorage()
 {
-    class_< UOnlinePlayerStorage, bases< UObject >  , boost::noncopyable>("UOnlinePlayerStorage", no_init)
+    py::class_< UOnlinePlayerStorage,  UObject   >("UOnlinePlayerStorage")
         .def_readwrite("VersionNumber", &UOnlinePlayerStorage::VersionNumber)
         .def_readwrite("VersionSettingsId", &UOnlinePlayerStorage::VersionSettingsId)
         .def_readwrite("SaveCountSettingId", &UOnlinePlayerStorage::SaveCountSettingId)
@@ -13,7 +13,7 @@ void Export_pystes_UOnlinePlayerStorage()
         .def_readwrite("ProfileMappings", &UOnlinePlayerStorage::ProfileMappings)
         .def_readwrite("AsyncState", &UOnlinePlayerStorage::AsyncState)
         .def_readwrite("DeviceID", &UOnlinePlayerStorage::DeviceID)
-        .def("StaticClass", &UOnlinePlayerStorage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlinePlayerStorage::StaticClass, py::return_value_policy::reference)
         .def("SetDefaultVersionNumber", &UOnlinePlayerStorage::SetDefaultVersionNumber)
         .def("GetVersionNumber", &UOnlinePlayerStorage::GetVersionNumber)
         .def("AppendVersionToSettings", &UOnlinePlayerStorage::AppendVersionToSettings)

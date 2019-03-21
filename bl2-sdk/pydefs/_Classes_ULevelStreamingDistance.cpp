@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelStreamingDistance()
 {
-    class_< ULevelStreamingDistance, bases< ULevelStreaming >  , boost::noncopyable>("ULevelStreamingDistance", no_init)
+    py::class_< ULevelStreamingDistance,  ULevelStreaming   >("ULevelStreamingDistance")
         .def_readwrite("Origin", &ULevelStreamingDistance::Origin)
         .def_readwrite("MaxDistance", &ULevelStreamingDistance::MaxDistance)
-        .def("StaticClass", &ULevelStreamingDistance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULevelStreamingDistance::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

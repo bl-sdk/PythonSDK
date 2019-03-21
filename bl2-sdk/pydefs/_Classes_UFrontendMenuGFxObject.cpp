@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFrontendMenuGFxObject()
 {
-    class_< UFrontendMenuGFxObject, bases< UGFxObject >  , boost::noncopyable>("UFrontendMenuGFxObject", no_init)
-        .def("StaticClass", &UFrontendMenuGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UFrontendMenuGFxObject,  UGFxObject   >("UFrontendMenuGFxObject")
+        .def("StaticClass", &UFrontendMenuGFxObject::StaticClass, py::return_value_policy::reference)
         .def("FadeLobbyDeco", &UFrontendMenuGFxObject::FadeLobbyDeco)
         .def("SetDecoVisible", &UFrontendMenuGFxObject::SetDecoVisible)
         .def("ApplyPriorityVisibilityEffect", &UFrontendMenuGFxObject::ApplyPriorityVisibilityEffect)

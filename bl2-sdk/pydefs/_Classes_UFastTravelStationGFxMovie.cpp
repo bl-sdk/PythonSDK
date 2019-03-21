@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFastTravelStationGFxMovie()
 {
-    class_< UFastTravelStationGFxMovie, bases< UWillowGFxThirdPersonMovie >  , boost::noncopyable>("UFastTravelStationGFxMovie", no_init)
+    py::class_< UFastTravelStationGFxMovie,  UWillowGFxThirdPersonMovie   >("UFastTravelStationGFxMovie")
         .def_readwrite("LocationDisplayNames", &UFastTravelStationGFxMovie::LocationDisplayNames)
         .def_readwrite("LocationStationStrings", &UFastTravelStationGFxMovie::LocationStationStrings)
         .def_readwrite("LocationStationDefinitions", &UFastTravelStationGFxMovie::LocationStationDefinitions)
@@ -19,7 +19,7 @@ void Export_pystes_UFastTravelStationGFxMovie()
         .def_readwrite("LocationMissionTeaser", &UFastTravelStationGFxMovie::LocationMissionTeaser)
         .def_readwrite("NextWaypointCheckTime", &UFastTravelStationGFxMovie::NextWaypointCheckTime)
         .def_readwrite("LastSelectionIndex", &UFastTravelStationGFxMovie::LastSelectionIndex)
-        .def("StaticClass", &UFastTravelStationGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFastTravelStationGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("eventSetCurrentWaypoint", &UFastTravelStationGFxMovie::eventSetCurrentWaypoint)
         .def("extGenericButtonClicked", &UFastTravelStationGFxMovie::extGenericButtonClicked)
         .def("InitForConsole", &UFastTravelStationGFxMovie::InitForConsole)

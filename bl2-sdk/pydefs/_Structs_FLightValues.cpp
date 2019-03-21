@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightValues()
 {
-    class_< FLightValues >("FLightValues", no_init)
+    py::class_< FLightValues >("FLightValues")
         .def_readwrite("StartTime", &FLightValues::StartTime)
         .def_readwrite("Radius", &FLightValues::Radius)
         .def_readwrite("Brightness", &FLightValues::Brightness)

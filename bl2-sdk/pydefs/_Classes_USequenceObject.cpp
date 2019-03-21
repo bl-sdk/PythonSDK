@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USequenceObject()
 {
-    class_< USequenceObject, bases< UObject >  , boost::noncopyable>("USequenceObject", no_init)
+    py::class_< USequenceObject,  UObject   >("USequenceObject")
         .def_readwrite("ObjInstanceVersion", &USequenceObject::ObjInstanceVersion)
         .def_readwrite("ParentSequence", &USequenceObject::ParentSequence)
-        .def("StaticClass", &USequenceObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USequenceObject::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USequenceObject::eventGetObjClassVersion)
         .def("eventIsPastingIntoLevelSequenceAllowed", &USequenceObject::eventIsPastingIntoLevelSequenceAllowed)
         .def("eventIsValidLevelSequenceObject", &USequenceObject::eventIsValidLevelSequenceObject)
-        .def("GetWorldInfo", &USequenceObject::GetWorldInfo, return_value_policy< reference_existing_object >())
+        .def("GetWorldInfo", &USequenceObject::GetWorldInfo, py::return_value_policy::reference)
         .def("ScriptLog", &USequenceObject::ScriptLog)
         .staticmethod("StaticClass")
   ;

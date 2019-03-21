@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AEnvironmentVolume()
 {
-    class_< AEnvironmentVolume, bases< AVolume >  , boost::noncopyable>("AEnvironmentVolume", no_init)
+    py::class_< AEnvironmentVolume,  AVolume   >("AEnvironmentVolume")
         .def_readwrite("VfTable_IInterface_NavMeshPathObstacle", &AEnvironmentVolume::VfTable_IInterface_NavMeshPathObstacle)
         .def_readwrite("VfTable_IInterface_NavMeshPathObject", &AEnvironmentVolume::VfTable_IInterface_NavMeshPathObject)
-        .def("StaticClass", &AEnvironmentVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AEnvironmentVolume::StaticClass, py::return_value_policy::reference)
         .def("SetSplitNavMesh", &AEnvironmentVolume::SetSplitNavMesh)
         .staticmethod("StaticClass")
   ;

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationOpportunityPointRenderingComponent()
 {
-    class_< UPopulationOpportunityPointRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UPopulationOpportunityPointRenderingComponent", no_init)
-        .def("StaticClass", &UPopulationOpportunityPointRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPopulationOpportunityPointRenderingComponent,  UPrimitiveComponent   >("UPopulationOpportunityPointRenderingComponent")
+        .def("StaticClass", &UPopulationOpportunityPointRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

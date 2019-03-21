@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIRBCollisionListener()
 {
-    class_< UIRBCollisionListener, bases< UInterface >  , boost::noncopyable>("UIRBCollisionListener", no_init)
-        .def("StaticClass", &UIRBCollisionListener::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIRBCollisionListener,  UInterface   >("UIRBCollisionListener")
+        .def("StaticClass", &UIRBCollisionListener::StaticClass, py::return_value_policy::reference)
         .def("NotifyRigidBodyCollision", &UIRBCollisionListener::NotifyRigidBodyCollision)
         .staticmethod("StaticClass")
   ;

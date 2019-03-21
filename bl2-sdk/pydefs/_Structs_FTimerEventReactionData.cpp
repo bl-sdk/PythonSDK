@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTimerEventReactionData()
 {
-    class_< FTimerEventReactionData >("FTimerEventReactionData", no_init)
+    py::class_< FTimerEventReactionData >("FTimerEventReactionData")
         .def_readwrite("EventType", &FTimerEventReactionData::EventType)
         .def_readwrite("Behaviors", &FTimerEventReactionData::Behaviors)
   ;

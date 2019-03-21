@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerActionExpressionEvaluator()
 {
-    class_< UPlayerActionExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("UPlayerActionExpressionEvaluator", no_init)
+    py::class_< UPlayerActionExpressionEvaluator,  UExpressionEvaluator   >("UPlayerActionExpressionEvaluator")
         .def_readwrite("EvalActions", &UPlayerActionExpressionEvaluator::EvalActions)
-        .def("StaticClass", &UPlayerActionExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerActionExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UPlayerActionExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

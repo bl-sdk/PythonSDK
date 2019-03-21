@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMovieInstanceArray()
 {
-    class_< FMovieInstanceArray >("FMovieInstanceArray", no_init)
+    py::class_< FMovieInstanceArray >("FMovieInstanceArray")
         .def_readwrite("Movies", &FMovieInstanceArray::Movies)
         .def_readwrite("PoolParent", &FMovieInstanceArray::PoolParent)
   ;

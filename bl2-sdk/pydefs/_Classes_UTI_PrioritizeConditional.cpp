@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTI_PrioritizeConditional()
 {
-    class_< UTI_PrioritizeConditional, bases< UTI_Prioritize >  , boost::noncopyable>("UTI_PrioritizeConditional", no_init)
+    py::class_< UTI_PrioritizeConditional,  UTI_Prioritize   >("UTI_PrioritizeConditional")
         .def_readwrite("Condition", &UTI_PrioritizeConditional::Condition)
-        .def("StaticClass", &UTI_PrioritizeConditional::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTI_PrioritizeConditional::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

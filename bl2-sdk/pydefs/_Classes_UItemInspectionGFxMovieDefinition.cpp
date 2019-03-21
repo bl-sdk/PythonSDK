@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemInspectionGFxMovieDefinition()
 {
-    class_< UItemInspectionGFxMovieDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UItemInspectionGFxMovieDefinition", no_init)
+    py::class_< UItemInspectionGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >("UItemInspectionGFxMovieDefinition")
         .def_readwrite("ItemFOV", &UItemInspectionGFxMovieDefinition::ItemFOV)
         .def_readwrite("ItemScale", &UItemInspectionGFxMovieDefinition::ItemScale)
         .def_readwrite("RotationSpeed", &UItemInspectionGFxMovieDefinition::RotationSpeed)
@@ -17,7 +17,7 @@ void Export_pystes_UItemInspectionGFxMovieDefinition()
         .def_readwrite("IntroRotationRandomness", &UItemInspectionGFxMovieDefinition::IntroRotationRandomness)
         .def_readwrite("IntroRotationAlphaPowerRandomness", &UItemInspectionGFxMovieDefinition::IntroRotationAlphaPowerRandomness)
         .def_readwrite("HeightThreshold", &UItemInspectionGFxMovieDefinition::HeightThreshold)
-        .def("StaticClass", &UItemInspectionGFxMovieDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemInspectionGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

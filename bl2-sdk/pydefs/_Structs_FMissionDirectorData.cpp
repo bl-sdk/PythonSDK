@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMissionDirectorData()
 {
-    class_< FMissionDirectorData >("FMissionDirectorData", no_init)
+    py::class_< FMissionDirectorData >("FMissionDirectorData")
         .def_readwrite("MissionDefinition", &FMissionDirectorData::MissionDefinition)
         .def_readwrite("BranchEnding", &FMissionDirectorData::BranchEnding)
   ;

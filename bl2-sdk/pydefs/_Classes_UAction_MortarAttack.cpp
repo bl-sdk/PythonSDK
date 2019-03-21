@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_MortarAttack()
 {
-    class_< UAction_MortarAttack, bases< UAction_Burrow >  , boost::noncopyable>("UAction_MortarAttack", no_init)
+    py::class_< UAction_MortarAttack,  UAction_Burrow   >("UAction_MortarAttack")
         .def_readwrite("ShotDelay", &UAction_MortarAttack::ShotDelay)
         .def_readwrite("MortarSocket", &UAction_MortarAttack::MortarSocket)
         .def_readwrite("Options", &UAction_MortarAttack::Options)
@@ -44,7 +44,7 @@ void Export_pystes_UAction_MortarAttack()
         .def_readwrite("AttackLoc", &UAction_GenericAttack::AttackLoc)
         .def_readwrite("MyZone", &UAction_GenericAttack::MyZone)
         .def_readwrite("IdleTime", &UAction_GenericAttack::IdleTime)
-        .def("StaticClass", &UAction_MortarAttack::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_MortarAttack::StaticClass, py::return_value_policy::reference)
         .def("FireMortar", &UAction_MortarAttack::FireMortar)
         .def("CreateEffect", &UAction_MortarAttack::CreateEffect)
         .def("DetachBeam", &UAction_MortarAttack::DetachBeam)

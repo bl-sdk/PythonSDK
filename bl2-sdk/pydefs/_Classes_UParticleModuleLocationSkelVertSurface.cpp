@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleLocationSkelVertSurface()
 {
-    class_< UParticleModuleLocationSkelVertSurface, bases< UParticleModuleLocationBase >  , boost::noncopyable>("UParticleModuleLocationSkelVertSurface", no_init)
+    py::class_< UParticleModuleLocationSkelVertSurface,  UParticleModuleLocationBase   >("UParticleModuleLocationSkelVertSurface")
         .def_readwrite("SourceType", &UParticleModuleLocationSkelVertSurface::SourceType)
         .def_readwrite("UniversalOffset", &UParticleModuleLocationSkelVertSurface::UniversalOffset)
         .def_readwrite("SkelMeshActorParamName", &UParticleModuleLocationSkelVertSurface::SkelMeshActorParamName)
@@ -14,7 +14,7 @@ void Export_pystes_UParticleModuleLocationSkelVertSurface()
         .def_readwrite("NormalCheckToleranceDegrees", &UParticleModuleLocationSkelVertSurface::NormalCheckToleranceDegrees)
         .def_readwrite("NormalCheckTolerance", &UParticleModuleLocationSkelVertSurface::NormalCheckTolerance)
         .def_readwrite("ValidMaterialIndices", &UParticleModuleLocationSkelVertSurface::ValidMaterialIndices)
-        .def("StaticClass", &UParticleModuleLocationSkelVertSurface::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleLocationSkelVertSurface::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_Interp()
 {
-    class_< USeqAct_Interp, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_Interp", no_init)
+    py::class_< USeqAct_Interp,  USeqAct_Latent   >("USeqAct_Interp")
         .def_readonly("UnknownData00", &USeqAct_Interp::UnknownData00)
         .def_readonly("UnknownData01", &USeqAct_Interp::UnknownData01)
         .def_readwrite("PlayRate", &USeqAct_Interp::PlayRate)
@@ -20,7 +20,7 @@ void Export_pystes_USeqAct_Interp()
         .def_readwrite("CameraCuts", &USeqAct_Interp::CameraCuts)
         .def_readwrite("TerminationTime", &USeqAct_Interp::TerminationTime)
         .def_readwrite("RenderingOverrides", &USeqAct_Interp::RenderingOverrides)
-        .def("StaticClass", &USeqAct_Interp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_Interp::StaticClass, py::return_value_policy::reference)
         .def("IsNetworkReady", &USeqAct_Interp::IsNetworkReady)
         .def("eventGetObjClassVersion", &USeqAct_Interp::eventGetObjClassVersion)
         .def("Reset", &USeqAct_Interp::Reset)

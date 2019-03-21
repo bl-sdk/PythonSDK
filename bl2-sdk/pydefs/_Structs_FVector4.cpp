@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVector4()
 {
-    class_< FVector4 >("FVector4", no_init)
+    py::class_< FVector4 >("FVector4")
         .def_readwrite("X", &FVector4::X)
         .def_readwrite("Y", &FVector4::Y)
         .def_readwrite("Z", &FVector4::Z)

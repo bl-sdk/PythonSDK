@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleUberRainImpacts()
 {
-    class_< UParticleModuleUberRainImpacts, bases< UParticleModuleUberBase >  , boost::noncopyable>("UParticleModuleUberRainImpacts", no_init)
+    py::class_< UParticleModuleUberRainImpacts,  UParticleModuleUberBase   >("UParticleModuleUberRainImpacts")
         .def_readwrite("Lifetime", &UParticleModuleUberRainImpacts::Lifetime)
         .def_readwrite("StartSize", &UParticleModuleUberRainImpacts::StartSize)
         .def_readwrite("StartRotation", &UParticleModuleUberRainImpacts::StartRotation)
@@ -17,7 +17,7 @@ void Export_pystes_UParticleModuleUberRainImpacts()
         .def_readwrite("PC_HeightAxis", &UParticleModuleUberRainImpacts::PC_HeightAxis)
         .def_readwrite("ColorOverLife", &UParticleModuleUberRainImpacts::ColorOverLife)
         .def_readwrite("AlphaOverLife", &UParticleModuleUberRainImpacts::AlphaOverLife)
-        .def("StaticClass", &UParticleModuleUberRainImpacts::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleUberRainImpacts::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

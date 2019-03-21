@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderAudioOptions()
 {
-    class_< UWillowScrollingListDataProviderAudioOptions, bases< UWillowScrollingListDataProviderOptionsBase >  , boost::noncopyable>("UWillowScrollingListDataProviderAudioOptions", no_init)
-        .def("StaticClass", &UWillowScrollingListDataProviderAudioOptions::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowScrollingListDataProviderAudioOptions,  UWillowScrollingListDataProviderOptionsBase   >("UWillowScrollingListDataProviderAudioOptions")
+        .def("StaticClass", &UWillowScrollingListDataProviderAudioOptions::StaticClass, py::return_value_policy::reference)
         .def("UpdateRealtimeSetting", &UWillowScrollingListDataProviderAudioOptions::UpdateRealtimeSetting)
         .def("StopAllVolumeSounds", &UWillowScrollingListDataProviderAudioOptions::StopAllVolumeSounds)
         .def("CheckStopVolumeSound", &UWillowScrollingListDataProviderAudioOptions::CheckStopVolumeSound)

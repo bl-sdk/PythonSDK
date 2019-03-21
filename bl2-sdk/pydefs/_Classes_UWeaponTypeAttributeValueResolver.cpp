@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponTypeAttributeValueResolver()
 {
-    class_< UWeaponTypeAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UWeaponTypeAttributeValueResolver", no_init)
+    py::class_< UWeaponTypeAttributeValueResolver,  UAttributeValueResolver   >("UWeaponTypeAttributeValueResolver")
         .def_readwrite("ValueIfNotMatched", &UWeaponTypeAttributeValueResolver::ValueIfNotMatched)
         .def_readwrite("WeaponTypes", &UWeaponTypeAttributeValueResolver::WeaponTypes)
-        .def("StaticClass", &UWeaponTypeAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponTypeAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

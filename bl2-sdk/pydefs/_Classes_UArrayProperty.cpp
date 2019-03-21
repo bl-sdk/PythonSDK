@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UArrayProperty()
 {
-    class_< UArrayProperty, bases< UProperty >  , boost::noncopyable>("UArrayProperty", no_init)
+    py::class_< UArrayProperty,  UProperty   >("UArrayProperty")
         .def_readonly("UnknownData00", &UArrayProperty::UnknownData00)
-        .def("StaticClass", &UArrayProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UArrayProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

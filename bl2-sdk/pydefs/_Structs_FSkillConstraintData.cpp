@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillConstraintData()
 {
-    class_< FSkillConstraintData >("FSkillConstraintData", no_init)
+    py::class_< FSkillConstraintData >("FSkillConstraintData")
         .def_readwrite("OnFailure", &FSkillConstraintData::OnFailure)
         .def_readwrite("Evaluator", &FSkillConstraintData::Evaluator)
         .def_readwrite("EvaluatorDefinitions", &FSkillConstraintData::EvaluatorDefinitions)

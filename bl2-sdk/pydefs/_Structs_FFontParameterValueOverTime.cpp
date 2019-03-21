@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFontParameterValueOverTime()
 {
-    class_< FFontParameterValueOverTime >("FFontParameterValueOverTime", no_init)
+    py::class_< FFontParameterValueOverTime >("FFontParameterValueOverTime")
         .def_readwrite("FontValue", &FFontParameterValueOverTime::FontValue)
         .def_readwrite("FontPage", &FFontParameterValueOverTime::FontPage)
         .def_readwrite("ExpressionGUID", &FParameterValueOverTime::ExpressionGUID)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSHVectorRGB()
 {
-    class_< FSHVectorRGB >("FSHVectorRGB", no_init)
+    py::class_< FSHVectorRGB >("FSHVectorRGB")
         .def_readwrite("R", &FSHVectorRGB::R)
         .def_readwrite("G", &FSHVectorRGB::G)
         .def_readwrite("B", &FSHVectorRGB::B)

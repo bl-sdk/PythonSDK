@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHUDInteractionIcon()
 {
-    class_< FHUDInteractionIcon >("FHUDInteractionIcon", no_init)
+    py::class_< FHUDInteractionIcon >("FHUDInteractionIcon")
         .def_readonly("Icons", &FHUDInteractionIcon::Icons)
   ;
 }

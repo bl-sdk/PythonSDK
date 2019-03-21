@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVOscillator()
 {
-    class_< FVOscillator >("FVOscillator", no_init)
+    py::class_< FVOscillator >("FVOscillator")
         .def_readwrite("X", &FVOscillator::X)
         .def_readwrite("Y", &FVOscillator::Y)
         .def_readwrite("Z", &FVOscillator::Z)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FASColorTransform()
 {
-    class_< FASColorTransform >("FASColorTransform", no_init)
+    py::class_< FASColorTransform >("FASColorTransform")
         .def_readwrite("Multiply", &FASColorTransform::Multiply)
         .def_readwrite("Add", &FASColorTransform::Add)
   ;

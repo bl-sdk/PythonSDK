@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqCond_Increment()
 {
-    class_< USeqCond_Increment, bases< USequenceCondition >  , boost::noncopyable>("USeqCond_Increment", no_init)
+    py::class_< USeqCond_Increment,  USequenceCondition   >("USeqCond_Increment")
         .def_readwrite("IncrementAmount", &USeqCond_Increment::IncrementAmount)
         .def_readwrite("ValueA", &USeqCond_Increment::ValueA)
         .def_readwrite("ValueB", &USeqCond_Increment::ValueB)
-        .def("StaticClass", &USeqCond_Increment::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqCond_Increment::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltPart()
 {
-    class_< FGestaltPart >("FGestaltPart", no_init)
+    py::class_< FGestaltPart >("FGestaltPart")
         .def_readwrite("SkeletalMeshFragment", &FGestaltPart::SkeletalMeshFragment)
         .def_readwrite("SkeletalMeshFragmentName", &FGestaltPart::SkeletalMeshFragmentName)
         .def_readwrite("MaterialIndex", &FGestaltPart::MaterialIndex)

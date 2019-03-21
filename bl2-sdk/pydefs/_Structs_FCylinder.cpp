@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCylinder()
 {
-    class_< FCylinder >("FCylinder", no_init)
+    py::class_< FCylinder >("FCylinder")
         .def_readwrite("Radius", &FCylinder::Radius)
         .def_readwrite("Height", &FCylinder::Height)
   ;

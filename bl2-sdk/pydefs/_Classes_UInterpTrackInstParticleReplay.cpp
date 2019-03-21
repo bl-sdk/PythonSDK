@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstParticleReplay()
 {
-    class_< UInterpTrackInstParticleReplay, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstParticleReplay", no_init)
+    py::class_< UInterpTrackInstParticleReplay,  UInterpTrackInst   >("UInterpTrackInstParticleReplay")
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstParticleReplay::LastUpdatePosition)
-        .def("StaticClass", &UInterpTrackInstParticleReplay::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstParticleReplay::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

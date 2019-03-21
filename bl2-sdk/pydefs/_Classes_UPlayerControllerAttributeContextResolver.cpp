@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerControllerAttributeContextResolver()
 {
-    class_< UPlayerControllerAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UPlayerControllerAttributeContextResolver", no_init)
-        .def("StaticClass", &UPlayerControllerAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPlayerControllerAttributeContextResolver,  UAttributeContextResolver   >("UPlayerControllerAttributeContextResolver")
+        .def("StaticClass", &UPlayerControllerAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

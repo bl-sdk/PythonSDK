@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AIHold()
 {
-    class_< UBehavior_AIHold, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AIHold", no_init)
+    py::class_< UBehavior_AIHold,  UBehaviorBase   >("UBehavior_AIHold")
         .def_readwrite("Reason", &UBehavior_AIHold::Reason)
         .def_readwrite("Action", &UBehavior_AIHold::Action)
         .def_readwrite("Type", &UBehavior_AIHold::Type)
-        .def("StaticClass", &UBehavior_AIHold::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AIHold::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AIHold::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

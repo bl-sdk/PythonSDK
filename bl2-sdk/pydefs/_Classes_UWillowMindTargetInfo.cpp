@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowMindTargetInfo()
 {
-    class_< UWillowMindTargetInfo, bases< UMindTargetInfo >  , boost::noncopyable>("UWillowMindTargetInfo", no_init)
+    py::class_< UWillowMindTargetInfo,  UMindTargetInfo   >("UWillowMindTargetInfo")
         .def_readwrite("Targetable", &UWillowMindTargetInfo::Targetable)
         .def_readonly("UnknownData00", &UWillowMindTargetInfo::UnknownData00)
         .def_readwrite("Distance2D", &UWillowMindTargetInfo::Distance2D)
@@ -26,7 +26,7 @@ void Export_pystes_UWillowMindTargetInfo()
         .def_readwrite("TotalDamagePct", &UWillowMindTargetInfo::TotalDamagePct)
         .def_readwrite("MovingAI", &UWillowMindTargetInfo::MovingAI)
         .def_readonly("UnknownData01", &UWillowMindTargetInfo::UnknownData01)
-        .def("StaticClass", &UWillowMindTargetInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def("GetTargetLocation", &UWillowMindTargetInfo::GetTargetLocation)
         .staticmethod("StaticClass")
   ;

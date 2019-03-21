@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APopulationOpportunityCloner()
 {
-    class_< APopulationOpportunityCloner, bases< APopulationOpportunity >  , boost::noncopyable>("APopulationOpportunityCloner", no_init)
+    py::class_< APopulationOpportunityCloner,  APopulationOpportunity   >("APopulationOpportunityCloner")
         .def_readwrite("Conditions", &APopulationOpportunityCloner::Conditions)
         .def_readwrite("SpawnFactory", &APopulationOpportunityCloner::SpawnFactory)
         .def_readwrite("MaxTotalActors", &APopulationOpportunityCloner::MaxTotalActors)
@@ -15,9 +15,9 @@ void Export_pystes_APopulationOpportunityCloner()
         .def_readwrite("RespawnDelayAfterDeath", &APopulationOpportunityCloner::RespawnDelayAfterDeath)
         .def_readwrite("NumTotalActors", &APopulationOpportunityCloner::NumTotalActors)
         .def_readwrite("NumActiveActors", &APopulationOpportunityCloner::NumActiveActors)
-        .def("StaticClass", &APopulationOpportunityCloner::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APopulationOpportunityCloner::StaticClass, py::return_value_policy::reference)
         .def("ApplyPreviewBodyComposition", &APopulationOpportunityCloner::ApplyPreviewBodyComposition)
-        .def("GetBodyInfoProvider", &APopulationOpportunityCloner::GetBodyInfoProvider, return_value_policy< reference_existing_object >())
+        .def("GetBodyInfoProvider", &APopulationOpportunityCloner::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("CloneTimer", &APopulationOpportunityCloner::CloneTimer)
         .def("RespawnKilledActors", &APopulationOpportunityCloner::RespawnKilledActors)
         .def("DoSpawning", &APopulationOpportunityCloner::DoSpawning)

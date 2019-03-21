@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTargetIteratorPrioritizeTargetWhoShootsAtMe()
 {
-    class_< UTargetIteratorPrioritizeTargetWhoShootsAtMe, bases< UTI_Prioritize >  , boost::noncopyable>("UTargetIteratorPrioritizeTargetWhoShootsAtMe", no_init)
-        .def("StaticClass", &UTargetIteratorPrioritizeTargetWhoShootsAtMe::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTargetIteratorPrioritizeTargetWhoShootsAtMe,  UTI_Prioritize   >("UTargetIteratorPrioritizeTargetWhoShootsAtMe")
+        .def("StaticClass", &UTargetIteratorPrioritizeTargetWhoShootsAtMe::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

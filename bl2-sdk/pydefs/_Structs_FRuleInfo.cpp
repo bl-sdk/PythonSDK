@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRuleInfo()
 {
-    class_< FRuleInfo >("FRuleInfo", no_init)
+    py::class_< FRuleInfo >("FRuleInfo")
         .def_readwrite("RuleName", &FRuleInfo::RuleName)
         .def_readwrite("RuleNameString", &FRuleInfo::RuleNameString)
         .def_readwrite("RunningSequence", &FRuleInfo::RunningSequence)

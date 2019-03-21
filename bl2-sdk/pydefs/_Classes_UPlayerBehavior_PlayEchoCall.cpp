@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_PlayEchoCall()
 {
-    class_< UPlayerBehavior_PlayEchoCall, bases< UPlayerBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_PlayEchoCall", no_init)
-        .def("StaticClass", &UPlayerBehavior_PlayEchoCall::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPlayerBehavior_PlayEchoCall,  UPlayerBehaviorBase   >("UPlayerBehavior_PlayEchoCall")
+        .def("StaticClass", &UPlayerBehavior_PlayEchoCall::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_PlayEchoCall::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

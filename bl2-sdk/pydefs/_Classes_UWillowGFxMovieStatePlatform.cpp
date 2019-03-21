@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxMovieStatePlatform()
 {
-    class_< UWillowGFxMovieStatePlatform, bases< UGFxMovieState >  , boost::noncopyable>("UWillowGFxMovieStatePlatform", no_init)
+    py::class_< UWillowGFxMovieStatePlatform,  UGFxMovieState   >("UWillowGFxMovieStatePlatform")
         .def_readwrite("PlatformStates", &UWillowGFxMovieStatePlatform::PlatformStates)
-        .def("StaticClass", &UWillowGFxMovieStatePlatform::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxMovieStatePlatform::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

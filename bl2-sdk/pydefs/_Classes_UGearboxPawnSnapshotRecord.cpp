@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxPawnSnapshotRecord()
 {
-    class_< UGearboxPawnSnapshotRecord, bases< USnapshotRecord >  , boost::noncopyable>("UGearboxPawnSnapshotRecord", no_init)
+    py::class_< UGearboxPawnSnapshotRecord,  USnapshotRecord   >("UGearboxPawnSnapshotRecord")
         .def_readwrite("PawnIconZOffset", &UGearboxPawnSnapshotRecord::PawnIconZOffset)
         .def_readwrite("PawnExposureZOffset", &UGearboxPawnSnapshotRecord::PawnExposureZOffset)
         .def_readwrite("CollectionNameOffset", &UGearboxPawnSnapshotRecord::CollectionNameOffset)
@@ -71,7 +71,7 @@ void Export_pystes_UGearboxPawnSnapshotRecord()
         .def_readwrite("MovementHolds", &UGearboxPawnSnapshotRecord::MovementHolds)
         .def_readwrite("DemigodHolds", &UGearboxPawnSnapshotRecord::DemigodHolds)
         .def_readwrite("GodHolds", &UGearboxPawnSnapshotRecord::GodHolds)
-        .def("StaticClass", &UGearboxPawnSnapshotRecord::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

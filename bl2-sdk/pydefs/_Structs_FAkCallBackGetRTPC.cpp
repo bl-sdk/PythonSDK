@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAkCallBackGetRTPC()
 {
-    class_< FAkCallBackGetRTPC >("FAkCallBackGetRTPC", no_init)
+    py::class_< FAkCallBackGetRTPC >("FAkCallBackGetRTPC")
         .def_readwrite("RTPC", &FAkCallBackGetRTPC::RTPC)
         .def_readwrite("Owner", &FAkCallBackGetRTPC::Owner)
         .def_readwrite("Component", &FAkCallBackGetRTPC::Component)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGearBuilderCustomizationUsageData()
 {
-    class_< FGearBuilderCustomizationUsageData >("FGearBuilderCustomizationUsageData", no_init)
+    py::class_< FGearBuilderCustomizationUsageData >("FGearBuilderCustomizationUsageData")
         .def_readwrite("Usage", &FGearBuilderCustomizationUsageData::Usage)
         .def_readwrite("CustomizationBalanceDefinitions", &FGearBuilderCustomizationUsageData::CustomizationBalanceDefinitions)
   ;

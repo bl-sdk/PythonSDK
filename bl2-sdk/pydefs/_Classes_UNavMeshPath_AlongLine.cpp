@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavMeshPath_AlongLine()
 {
-    class_< UNavMeshPath_AlongLine, bases< UNavMeshPathConstraint >  , boost::noncopyable>("UNavMeshPath_AlongLine", no_init)
+    py::class_< UNavMeshPath_AlongLine,  UNavMeshPathConstraint   >("UNavMeshPath_AlongLine")
         .def_readwrite("Direction", &UNavMeshPath_AlongLine::Direction)
-        .def("StaticClass", &UNavMeshPath_AlongLine::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavMeshPath_AlongLine::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshPath_AlongLine::Recycle)
         .def("AlongLine", &UNavMeshPath_AlongLine::AlongLine)
         .staticmethod("StaticClass")

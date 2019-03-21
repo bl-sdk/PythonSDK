@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineGameInterfaceSteamworks()
 {
-    class_< UOnlineGameInterfaceSteamworks, bases< UOnlineGameInterfaceImpl >  , boost::noncopyable>("UOnlineGameInterfaceSteamworks", no_init)
+    py::class_< UOnlineGameInterfaceSteamworks,  UOnlineGameInterfaceImpl   >("UOnlineGameInterfaceSteamworks")
         .def_readwrite("QueryToRulesResponseMap", &UOnlineGameInterfaceSteamworks::QueryToRulesResponseMap)
         .def_readwrite("QueryToPingResponseMap", &UOnlineGameInterfaceSteamworks::QueryToPingResponseMap)
         .def_readwrite("ServerListResponse", &UOnlineGameInterfaceSteamworks::ServerListResponse)
@@ -18,8 +18,8 @@ void Export_pystes_UOnlineGameInterfaceSteamworks()
         .def_readwrite("ActiveClientsideFilters", &UOnlineGameInterfaceSteamworks::ActiveClientsideFilters)
         .def_readwrite("FilterKeyToSteamKeyMap", &UOnlineGameInterfaceSteamworks::FilterKeyToSteamKeyMap)
         .def_readwrite("ServerSessionName", &UOnlineGameInterfaceSteamworks::ServerSessionName)
-        .def("StaticClass", &UOnlineGameInterfaceSteamworks::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetGameSettings", &UOnlineGameInterfaceSteamworks::GetGameSettings, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineGameInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
+        .def("GetGameSettings", &UOnlineGameInterfaceSteamworks::GetGameSettings, py::return_value_policy::reference)
         .def("GetResolvedConnectString", &UOnlineGameInterfaceSteamworks::GetResolvedConnectString)
         .def("BindPlatformSpecificSessionToSearch", &UOnlineGameInterfaceSteamworks::BindPlatformSpecificSessionToSearch)
         .def("ReadPlatformSpecificSessionInfoBySessionName", &UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfoBySessionName)

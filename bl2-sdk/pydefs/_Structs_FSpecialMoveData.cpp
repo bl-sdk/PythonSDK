@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpecialMoveData()
 {
-    class_< FSpecialMoveData >("FSpecialMoveData", no_init)
+    py::class_< FSpecialMoveData >("FSpecialMoveData")
         .def_readwrite("Data", &FSpecialMoveData::Data)
         .def_readwrite("PlayRateScale", &FSpecialMoveData::PlayRateScale)
         .def_readwrite("Duration", &FSpecialMoveData::Duration)

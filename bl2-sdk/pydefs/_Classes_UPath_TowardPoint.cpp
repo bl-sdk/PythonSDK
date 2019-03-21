@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPath_TowardPoint()
 {
-    class_< UPath_TowardPoint, bases< UPathConstraint >  , boost::noncopyable>("UPath_TowardPoint", no_init)
+    py::class_< UPath_TowardPoint,  UPathConstraint   >("UPath_TowardPoint")
         .def_readwrite("GoalPoint", &UPath_TowardPoint::GoalPoint)
-        .def("StaticClass", &UPath_TowardPoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPath_TowardPoint::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UPath_TowardPoint::Recycle)
         .def("TowardPoint", &UPath_TowardPoint::TowardPoint)
         .staticmethod("StaticClass")

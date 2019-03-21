@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FImpulseData()
 {
-    class_< FImpulseData >("FImpulseData", no_init)
+    py::class_< FImpulseData >("FImpulseData")
         .def_readwrite("Impulse", &FImpulseData::Impulse)
         .def_readwrite("Source", &FImpulseData::Source)
   ;

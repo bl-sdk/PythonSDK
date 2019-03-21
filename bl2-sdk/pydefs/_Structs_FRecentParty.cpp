@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRecentParty()
 {
-    class_< FRecentParty >("FRecentParty", no_init)
+    py::class_< FRecentParty >("FRecentParty")
         .def_readwrite("PartyLeader", &FRecentParty::PartyLeader)
         .def_readwrite("PartyMembers", &FRecentParty::PartyMembers)
   ;

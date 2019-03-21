@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerStatsNotifier()
 {
-    class_< UPlayerStatsNotifier, bases< UObject >  , boost::noncopyable>("UPlayerStatsNotifier", no_init)
+    py::class_< UPlayerStatsNotifier,  UObject   >("UPlayerStatsNotifier")
         .def_readwrite("StatIdListenerMap", &UPlayerStatsNotifier::StatIdListenerMap)
-        .def("StaticClass", &UPlayerStatsNotifier::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerStatsNotifier::StaticClass, py::return_value_policy::reference)
         .def("DisplayDebug", &UPlayerStatsNotifier::DisplayDebug)
         .def("OnStatIncrement", &UPlayerStatsNotifier::OnStatIncrement)
         .def("UnRegisterListeners", &UPlayerStatsNotifier::UnRegisterListeners)

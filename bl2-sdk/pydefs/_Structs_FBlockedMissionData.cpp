@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBlockedMissionData()
 {
-    class_< FBlockedMissionData >("FBlockedMissionData", no_init)
+    py::class_< FBlockedMissionData >("FBlockedMissionData")
         .def_readwrite("BlockedMission", &FBlockedMissionData::BlockedMission)
         .def_readwrite("MissionBlockers", &FBlockedMissionData::MissionBlockers)
   ;

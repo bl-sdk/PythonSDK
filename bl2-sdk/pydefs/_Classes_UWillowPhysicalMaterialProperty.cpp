@@ -1,25 +1,25 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPhysicalMaterialProperty()
 {
-    class_< UWillowPhysicalMaterialProperty, bases< UPhysicalMaterialPropertyBase >  , boost::noncopyable>("UWillowPhysicalMaterialProperty", no_init)
+    py::class_< UWillowPhysicalMaterialProperty,  UPhysicalMaterialPropertyBase   >("UWillowPhysicalMaterialProperty")
         .def_readwrite("MaterialAkSwitch", &UWillowPhysicalMaterialProperty::MaterialAkSwitch)
         .def_readwrite("DamageSurfaceType", &UWillowPhysicalMaterialProperty::DamageSurfaceType)
         .def_readwrite("ImpactResponses", &UWillowPhysicalMaterialProperty::ImpactResponses)
         .def_readwrite("DefaultResponseParameters", &UWillowPhysicalMaterialProperty::DefaultResponseParameters)
         .def_readwrite("WheelSlipModifiers", &UWillowPhysicalMaterialProperty::WheelSlipModifiers)
         .def_readwrite("ParticleSystemTemplate", &UWillowPhysicalMaterialProperty::ParticleSystemTemplate)
-        .def("StaticClass", &UWillowPhysicalMaterialProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPhysicalMaterialProperty::StaticClass, py::return_value_policy::reference)
         .def("ApplyParametersToMaterialInstance", &UWillowPhysicalMaterialProperty::ApplyParametersToMaterialInstance)
         .def("AttachParticleSystemComponentToActor", &UWillowPhysicalMaterialProperty::AttachParticleSystemComponentToActor)
         .def("AttachEmitterToActor", &UWillowPhysicalMaterialProperty::AttachEmitterToActor)
         .def("ApplyParametersToParticleSystemComponent", &UWillowPhysicalMaterialProperty::ApplyParametersToParticleSystemComponent)
         .def("ApplyParametersToEmitter", &UWillowPhysicalMaterialProperty::ApplyParametersToEmitter)
         .def("eventPlayImpactEffect", &UWillowPhysicalMaterialProperty::eventPlayImpactEffect)
-        .def("GetPhysicalMaterialSwitch", &UWillowPhysicalMaterialProperty::GetPhysicalMaterialSwitch, return_value_policy< reference_existing_object >())
+        .def("GetPhysicalMaterialSwitch", &UWillowPhysicalMaterialProperty::GetPhysicalMaterialSwitch, py::return_value_policy::reference)
         .def("StaticPlayImpactEffect", &UWillowPhysicalMaterialProperty::StaticPlayImpactEffect)
         .def("PlayImpactEffectSound", &UWillowPhysicalMaterialProperty::PlayImpactEffectSound)
         .def("FindResponseIndex", &UWillowPhysicalMaterialProperty::FindResponseIndex)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AResourcePoolManager()
 {
-    class_< AResourcePoolManager, bases< AReplicationInfo >  , boost::noncopyable>("AResourcePoolManager", no_init)
+    py::class_< AResourcePoolManager,  AReplicationInfo   >("AResourcePoolManager")
         .def_readonly("ResourcePools", &AResourcePoolManager::ResourcePools)
         .def_readonly("UnknownData00", &AResourcePoolManager::UnknownData00)
         .def_readwrite("NextPoolGUID", &AResourcePoolManager::NextPoolGUID)
@@ -14,11 +14,11 @@ void Export_pystes_AResourcePoolManager()
         .def_readonly("ReplicatedMinValues", &AResourcePoolManager::ReplicatedMinValues)
         .def_readonly("ReplicatedMaxValues", &AResourcePoolManager::ReplicatedMaxValues)
         .def_readonly("ReplicatedRarelyChangedState", &AResourcePoolManager::ReplicatedRarelyChangedState)
-        .def("StaticClass", &AResourcePoolManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AResourcePoolManager::StaticClass, py::return_value_policy::reference)
         .def("CreateResourcePoolManagerIfNecessary", &AResourcePoolManager::CreateResourcePoolManagerIfNecessary)
         .def("DeletePoolAtIndex", &AResourcePoolManager::DeletePoolAtIndex)
-        .def("InternalCreatePoolAtIndex", &AResourcePoolManager::InternalCreatePoolAtIndex, return_value_policy< reference_existing_object >())
-        .def("CreatePoolAtIndex", &AResourcePoolManager::CreatePoolAtIndex, return_value_policy< reference_existing_object >())
+        .def("InternalCreatePoolAtIndex", &AResourcePoolManager::InternalCreatePoolAtIndex, py::return_value_policy::reference)
+        .def("CreatePoolAtIndex", &AResourcePoolManager::CreatePoolAtIndex, py::return_value_policy::reference)
         .def("GetDebugInfo", &AResourcePoolManager::GetDebugInfo)
         .def("GetNumberOfPoolsInUse", &AResourcePoolManager::GetNumberOfPoolsInUse)
         .def("RecalculateBaseValues", &AResourcePoolManager::RecalculateBaseValues)

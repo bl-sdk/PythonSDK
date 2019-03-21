@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLoginState()
 {
-    class_< FLoginState >("FLoginState", no_init)
+    py::class_< FLoginState >("FLoginState")
         .def_readwrite("LoginName", &FLoginState::LoginName)
   ;
 }

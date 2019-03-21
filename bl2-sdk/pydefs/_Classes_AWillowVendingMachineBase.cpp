@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVendingMachineBase()
 {
-    class_< AWillowVendingMachineBase, bases< AWillowInteractiveObject >  , boost::noncopyable>("AWillowVendingMachineBase", no_init)
+    py::class_< AWillowVendingMachineBase,  AWillowInteractiveObject   >("AWillowVendingMachineBase")
         .def_readwrite("VfTable_IIShop", &AWillowVendingMachineBase::VfTable_IIShop)
         .def_readwrite("ShopType", &AWillowVendingMachineBase::ShopType)
         .def_readwrite("FormOfCurrency", &AWillowVendingMachineBase::FormOfCurrency)
         .def_readwrite("FixedItemCost", &AWillowVendingMachineBase::FixedItemCost)
         .def_readwrite("FixedFeaturedItemCost", &AWillowVendingMachineBase::FixedFeaturedItemCost)
-        .def("StaticClass", &AWillowVendingMachineBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVendingMachineBase::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &AWillowVendingMachineBase::eventDestroyed)
         .def("GetResetCost", &AWillowVendingMachineBase::GetResetCost)
         .def("ClearInventory", &AWillowVendingMachineBase::ClearInventory)

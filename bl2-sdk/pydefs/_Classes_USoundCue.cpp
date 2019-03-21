@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USoundCue()
 {
-    class_< USoundCue, bases< UObject >  , boost::noncopyable>("USoundCue", no_init)
+    py::class_< USoundCue,  UObject   >("USoundCue")
         .def_readwrite("SoundClass", &USoundCue::SoundClass)
         .def_readwrite("SoundClassName", &USoundCue::SoundClassName)
         .def_readwrite("FirstNode", &USoundCue::FirstNode)
@@ -23,7 +23,7 @@ void Export_pystes_USoundCue()
         .def_readwrite("SoundGroup", &USoundCue::SoundGroup)
         .def_readwrite("Priority", &USoundCue::Priority)
         .def_readwrite("SpatializationPercent", &USoundCue::SpatializationPercent)
-        .def("StaticClass", &USoundCue::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USoundCue::StaticClass, py::return_value_policy::reference)
         .def("GetCueDuration", &USoundCue::GetCueDuration)
         .def("IsSoundLooping", &USoundCue::IsSoundLooping)
         .staticmethod("StaticClass")

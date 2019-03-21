@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTimerData()
 {
-    class_< FTimerData >("FTimerData", no_init)
+    py::class_< FTimerData >("FTimerData")
         .def_readwrite("FuncName", &FTimerData::FuncName)
         .def_readwrite("Rate", &FTimerData::Rate)
         .def_readwrite("Count", &FTimerData::Count)

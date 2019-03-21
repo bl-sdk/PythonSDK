@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowOnlineGameSettings()
 {
-    class_< UWillowOnlineGameSettings, bases< UOnlineGameSettings >  , boost::noncopyable>("UWillowOnlineGameSettings", no_init)
-        .def("StaticClass", &UWillowOnlineGameSettings::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowOnlineGameSettings,  UOnlineGameSettings   >("UWillowOnlineGameSettings")
+        .def("StaticClass", &UWillowOnlineGameSettings::StaticClass, py::return_value_policy::reference)
         .def("GetConnectionQualityUIString", &UWillowOnlineGameSettings::GetConnectionQualityUIString)
         .def("UpdateActivePlotMission", &UWillowOnlineGameSettings::UpdateActivePlotMission)
         .def("GetActivePlotMission", &UWillowOnlineGameSettings::GetActivePlotMission)

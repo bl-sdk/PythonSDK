@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleTrailSpawn()
 {
-    class_< UParticleModuleTrailSpawn, bases< UParticleModuleTrailBase >  , boost::noncopyable>("UParticleModuleTrailSpawn", no_init)
+    py::class_< UParticleModuleTrailSpawn,  UParticleModuleTrailBase   >("UParticleModuleTrailSpawn")
         .def_readwrite("SpawnDistanceMap", &UParticleModuleTrailSpawn::SpawnDistanceMap)
         .def_readwrite("MinSpawnVelocity", &UParticleModuleTrailSpawn::MinSpawnVelocity)
-        .def("StaticClass", &UParticleModuleTrailSpawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleTrailSpawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

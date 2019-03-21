@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxAction_OpenMovie()
 {
-    class_< UGFxAction_OpenMovie, bases< USequenceAction >  , boost::noncopyable>("UGFxAction_OpenMovie", no_init)
+    py::class_< UGFxAction_OpenMovie,  USequenceAction   >("UGFxAction_OpenMovie")
         .def_readwrite("Movie", &UGFxAction_OpenMovie::Movie)
         .def_readwrite("MoviePlayerClass", &UGFxAction_OpenMovie::MoviePlayerClass)
         .def_readwrite("MoviePlayer", &UGFxAction_OpenMovie::MoviePlayer)
@@ -16,7 +16,7 @@ void Export_pystes_UGFxAction_OpenMovie()
         .def_readwrite("RenderTexture", &UGFxAction_OpenMovie::RenderTexture)
         .def_readwrite("CaptureKeys", &UGFxAction_OpenMovie::CaptureKeys)
         .def_readwrite("FocusIgnoreKeys", &UGFxAction_OpenMovie::FocusIgnoreKeys)
-        .def("StaticClass", &UGFxAction_OpenMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxAction_OpenMovie::StaticClass, py::return_value_policy::reference)
         .def("eventIsValidLevelSequenceObject", &UGFxAction_OpenMovie::eventIsValidLevelSequenceObject)
         .staticmethod("StaticClass")
   ;

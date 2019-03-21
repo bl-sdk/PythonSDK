@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPropertyInfo()
 {
-    class_< FPropertyInfo >("FPropertyInfo", no_init)
+    py::class_< FPropertyInfo >("FPropertyInfo")
         .def_readwrite("PropertyName", &FPropertyInfo::PropertyName)
         .def_readwrite("PropertyValue", &FPropertyInfo::PropertyValue)
   ;

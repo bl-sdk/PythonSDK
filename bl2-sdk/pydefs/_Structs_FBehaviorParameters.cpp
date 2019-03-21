@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorParameters()
 {
-    class_< FBehaviorParameters >("FBehaviorParameters", no_init)
+    py::class_< FBehaviorParameters >("FBehaviorParameters")
         .def_readwrite("Parameters", &FBehaviorParameters::Parameters)
   ;
 }

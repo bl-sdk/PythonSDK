@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFlagEvalConditional()
 {
-    class_< FFlagEvalConditional >("FFlagEvalConditional", no_init)
+    py::class_< FFlagEvalConditional >("FFlagEvalConditional")
         .def_readwrite("FlagEvalType", &FFlagEvalConditional::FlagEvalType)
         .def_readwrite("FlagDefinition", &FFlagEvalConditional::FlagDefinition)
         .def_readwrite("TimeSeconds", &FFlagEvalConditional::TimeSeconds)

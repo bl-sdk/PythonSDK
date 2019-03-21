@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_MoveToFormation()
 {
-    class_< UAction_MoveToFormation, bases< UAction_Burrow >  , boost::noncopyable>("UAction_MoveToFormation", no_init)
+    py::class_< UAction_MoveToFormation,  UAction_Burrow   >("UAction_MoveToFormation")
         .def_readwrite("HoldDistance", &UAction_MoveToFormation::HoldDistance)
         .def_readwrite("NameTag", &UAction_MoveToFormation::NameTag)
         .def_readwrite("MyFormation", &UAction_MoveToFormation::MyFormation)
-        .def("StaticClass", &UAction_MoveToFormation::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_MoveToFormation::StaticClass, py::return_value_policy::reference)
         .def("HalfExposed", &UAction_MoveToFormation::HalfExposed)
         .def("RotatedEnough", &UAction_MoveToFormation::RotatedEnough)
         .def("CloseEnough", &UAction_MoveToFormation::CloseEnough)
@@ -17,7 +17,7 @@ void Export_pystes_UAction_MoveToFormation()
         .def("OwnerIsMoving", &UAction_MoveToFormation::OwnerIsMoving)
         .def("SetFacingPolicy", &UAction_MoveToFormation::SetFacingPolicy)
         .def("CheckFormation", &UAction_MoveToFormation::CheckFormation)
-        .def("GetLeaderPawn", &UAction_MoveToFormation::GetLeaderPawn, return_value_policy< reference_existing_object >())
+        .def("GetLeaderPawn", &UAction_MoveToFormation::GetLeaderPawn, py::return_value_policy::reference)
         .def("CanFollowOwner", &UAction_MoveToFormation::CanFollowOwner)
         .def("CheckStateTransition", &UAction_MoveToFormation::CheckStateTransition)
         .def("eventUpdate", &UAction_MoveToFormation::eventUpdate)

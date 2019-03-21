@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillTreeBranchLayoutDefinition()
 {
-    class_< USkillTreeBranchLayoutDefinition, bases< UGBXDefinition >  , boost::noncopyable>("USkillTreeBranchLayoutDefinition", no_init)
+    py::class_< USkillTreeBranchLayoutDefinition,  UGBXDefinition   >("USkillTreeBranchLayoutDefinition")
         .def_readwrite("Tiers", &USkillTreeBranchLayoutDefinition::Tiers)
-        .def("StaticClass", &USkillTreeBranchLayoutDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillTreeBranchLayoutDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

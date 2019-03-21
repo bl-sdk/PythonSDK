@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FItemBehaviorSet()
 {
-    class_< FItemBehaviorSet >("FItemBehaviorSet", no_init)
+    py::class_< FItemBehaviorSet >("FItemBehaviorSet")
         .def_readwrite("OnUsed", &FItemBehaviorSet::OnUsed)
   ;
 }

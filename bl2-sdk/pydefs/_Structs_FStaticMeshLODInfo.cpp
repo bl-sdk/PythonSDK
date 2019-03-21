@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStaticMeshLODInfo()
 {
-    class_< FStaticMeshLODInfo >("FStaticMeshLODInfo", no_init)
+    py::class_< FStaticMeshLODInfo >("FStaticMeshLODInfo")
         .def_readwrite("Elements", &FStaticMeshLODInfo::Elements)
   ;
 }

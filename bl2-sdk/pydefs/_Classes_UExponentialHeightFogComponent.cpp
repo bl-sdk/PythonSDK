@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UExponentialHeightFogComponent()
 {
-    class_< UExponentialHeightFogComponent, bases< UActorComponent >  , boost::noncopyable>("UExponentialHeightFogComponent", no_init)
+    py::class_< UExponentialHeightFogComponent,  UActorComponent   >("UExponentialHeightFogComponent")
         .def_readwrite("FogHeight", &UExponentialHeightFogComponent::FogHeight)
         .def_readwrite("FogDensity", &UExponentialHeightFogComponent::FogDensity)
         .def_readwrite("FogHeightFalloff", &UExponentialHeightFogComponent::FogHeightFalloff)
@@ -16,7 +16,7 @@ void Export_pystes_UExponentialHeightFogComponent()
         .def_readwrite("OppositeLightColor", &UExponentialHeightFogComponent::OppositeLightColor)
         .def_readwrite("LightInscatteringBrightness", &UExponentialHeightFogComponent::LightInscatteringBrightness)
         .def_readwrite("LightInscatteringColor", &UExponentialHeightFogComponent::LightInscatteringColor)
-        .def("StaticClass", &UExponentialHeightFogComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UExponentialHeightFogComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &UExponentialHeightFogComponent::SetEnabled)
         .staticmethod("StaticClass")
   ;

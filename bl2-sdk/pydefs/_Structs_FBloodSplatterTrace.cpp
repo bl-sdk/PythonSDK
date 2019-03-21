@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBloodSplatterTrace()
 {
-    class_< FBloodSplatterTrace >("FBloodSplatterTrace", no_init)
+    py::class_< FBloodSplatterTrace >("FBloodSplatterTrace")
         .def_readwrite("HitRegion", &FBloodSplatterTrace::HitRegion)
         .def_readwrite("HitLocation", &FBloodSplatterTrace::HitLocation)
         .def_readwrite("Momentum", &FBloodSplatterTrace::Momentum)

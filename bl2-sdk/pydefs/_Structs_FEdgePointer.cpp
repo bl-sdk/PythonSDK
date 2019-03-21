@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEdgePointer()
 {
-    class_< FEdgePointer >("FEdgePointer", no_init)
+    py::class_< FEdgePointer >("FEdgePointer")
         .def_readwrite("Dummy", &FEdgePointer::Dummy)
   ;
 }

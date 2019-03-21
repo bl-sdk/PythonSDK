@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNavMeshGoal_OutOfViewFrom()
 {
-    class_< UNavMeshGoal_OutOfViewFrom, bases< UNavMeshPathGoalEvaluator >  , boost::noncopyable>("UNavMeshGoal_OutOfViewFrom", no_init)
+    py::class_< UNavMeshGoal_OutOfViewFrom,  UNavMeshPathGoalEvaluator   >("UNavMeshGoal_OutOfViewFrom")
         .def_readwrite("GoalPoly", &UNavMeshGoal_OutOfViewFrom::GoalPoly)
         .def_readwrite("OutOfViewLocation", &UNavMeshGoal_OutOfViewFrom::OutOfViewLocation)
-        .def("StaticClass", &UNavMeshGoal_OutOfViewFrom::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNavMeshGoal_OutOfViewFrom::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshGoal_OutOfViewFrom::Recycle)
         .def("MustBeHiddenFromThisPoint", &UNavMeshGoal_OutOfViewFrom::MustBeHiddenFromThisPoint)
         .def("RecycleNative", &UNavMeshGoal_OutOfViewFrom::RecycleNative)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPassengerCameraDefinition()
 {
-    class_< UPassengerCameraDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UPassengerCameraDefinition", no_init)
+    py::class_< UPassengerCameraDefinition,  UGBXDefinition   >("UPassengerCameraDefinition")
         .def_readwrite("AfterburnerHandlingCamera", &UPassengerCameraDefinition::AfterburnerHandlingCamera)
         .def_readwrite("CameraModifierSpeed", &UPassengerCameraDefinition::CameraModifierSpeed)
         .def_readwrite("CameraRollSmoothingSpeed", &UPassengerCameraDefinition::CameraRollSmoothingSpeed)
@@ -26,7 +26,7 @@ void Export_pystes_UPassengerCameraDefinition()
         .def_readwrite("RotationRateYaw", &UPassengerCameraDefinition::RotationRateYaw)
         .def_readwrite("RotationRatePitch", &UPassengerCameraDefinition::RotationRatePitch)
         .def_readwrite("LookForwardDist", &UPassengerCameraDefinition::LookForwardDist)
-        .def("StaticClass", &UPassengerCameraDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPassengerCameraDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAIHoldDebugData()
 {
-    class_< FAIHoldDebugData >("FAIHoldDebugData", no_init)
+    py::class_< FAIHoldDebugData >("FAIHoldDebugData")
         .def_readwrite("HoldName", &FAIHoldDebugData::HoldName)
         .def_readwrite("HoldTag", &FAIHoldDebugData::HoldTag)
   ;

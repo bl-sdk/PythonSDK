@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSelectedTerrainVertex()
 {
-    class_< FSelectedTerrainVertex >("FSelectedTerrainVertex", no_init)
+    py::class_< FSelectedTerrainVertex >("FSelectedTerrainVertex")
         .def_readwrite("X", &FSelectedTerrainVertex::X)
         .def_readwrite("Y", &FSelectedTerrainVertex::Y)
         .def_readwrite("Weight", &FSelectedTerrainVertex::Weight)

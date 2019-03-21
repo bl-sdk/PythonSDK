@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ALandscape()
 {
-    class_< ALandscape, bases< ALandscapeProxy >  , boost::noncopyable>("ALandscape", no_init)
+    py::class_< ALandscape,  ALandscapeProxy   >("ALandscape")
         .def_readwrite("LandscapeMaterial", &ALandscape::LandscapeMaterial)
         .def_readwrite("MaxLODLevel", &ALandscape::MaxLODLevel)
         .def_readwrite("LayerNames", &ALandscape::LayerNames)
@@ -19,7 +19,7 @@ void Export_pystes_ALandscape()
         .def_readwrite("SubsectionSizeQuads", &ALandscape::SubsectionSizeQuads)
         .def_readwrite("NumSubsections", &ALandscape::NumSubsections)
         .def_readwrite("Proxies", &ALandscape::Proxies)
-        .def("StaticClass", &ALandscape::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ALandscape::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

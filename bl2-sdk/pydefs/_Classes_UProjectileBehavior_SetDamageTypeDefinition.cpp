@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileBehavior_SetDamageTypeDefinition()
 {
-    class_< UProjectileBehavior_SetDamageTypeDefinition, bases< UBehaviorBase >  , boost::noncopyable>("UProjectileBehavior_SetDamageTypeDefinition", no_init)
+    py::class_< UProjectileBehavior_SetDamageTypeDefinition,  UBehaviorBase   >("UProjectileBehavior_SetDamageTypeDefinition")
         .def_readwrite("DamageTypeDefinition", &UProjectileBehavior_SetDamageTypeDefinition::DamageTypeDefinition)
-        .def("StaticClass", &UProjectileBehavior_SetDamageTypeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UProjectileBehavior_SetDamageTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_SetDamageTypeDefinition::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

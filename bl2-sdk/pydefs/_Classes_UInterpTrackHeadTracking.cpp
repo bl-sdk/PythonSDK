@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackHeadTracking()
 {
-    class_< UInterpTrackHeadTracking, bases< UInterpTrack >  , boost::noncopyable>("UInterpTrackHeadTracking", no_init)
+    py::class_< UInterpTrackHeadTracking,  UInterpTrack   >("UInterpTrackHeadTracking")
         .def_readwrite("HeadTrackingTrack", &UInterpTrackHeadTracking::HeadTrackingTrack)
         .def_readwrite("TrackControllerName", &UInterpTrackHeadTracking::TrackControllerName)
         .def_readwrite("LookAtActorRadius", &UInterpTrackHeadTracking::LookAtActorRadius)
@@ -14,7 +14,7 @@ void Export_pystes_UInterpTrackHeadTracking()
         .def_readwrite("MaxInterestTime", &UInterpTrackHeadTracking::MaxInterestTime)
         .def_readwrite("ActorClassesToLookAt", &UInterpTrackHeadTracking::ActorClassesToLookAt)
         .def_readwrite("TargetBoneNames", &UInterpTrackHeadTracking::TargetBoneNames)
-        .def("StaticClass", &UInterpTrackHeadTracking::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackHeadTracking::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

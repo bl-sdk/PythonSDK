@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxAction_SetVariable()
 {
-    class_< UGFxAction_SetVariable, bases< USequenceAction >  , boost::noncopyable>("UGFxAction_SetVariable", no_init)
+    py::class_< UGFxAction_SetVariable,  USequenceAction   >("UGFxAction_SetVariable")
         .def_readwrite("Movie", &UGFxAction_SetVariable::Movie)
         .def_readwrite("Variable", &UGFxAction_SetVariable::Variable)
-        .def("StaticClass", &UGFxAction_SetVariable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxAction_SetVariable::StaticClass, py::return_value_policy::reference)
         .def("eventIsValidLevelSequenceObject", &UGFxAction_SetVariable::eventIsValidLevelSequenceObject)
         .staticmethod("StaticClass")
   ;

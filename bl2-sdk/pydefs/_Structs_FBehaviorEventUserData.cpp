@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorEventUserData()
 {
-    class_< FBehaviorEventUserData >("FBehaviorEventUserData", no_init)
+    py::class_< FBehaviorEventUserData >("FBehaviorEventUserData")
         .def_readwrite("EventName", &FBehaviorEventUserData::EventName)
         .def_readwrite("MaxTriggerCount", &FBehaviorEventUserData::MaxTriggerCount)
         .def_readwrite("ReTriggerDelay", &FBehaviorEventUserData::ReTriggerDelay)

@@ -1,24 +1,24 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIRoot()
 {
-    class_< UUIRoot, bases< UObject >  , boost::noncopyable>("UUIRoot", no_init)
+    py::class_< UUIRoot,  UObject   >("UUIRoot")
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
-        .def("StaticClass", &UUIRoot::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIRoot::StaticClass, py::return_value_policy::reference)
         .def("SafeCaps", &UUIRoot::SafeCaps)
-        .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, return_value_policy< reference_existing_object >())
-        .def("GetOnlinePlayerInterface", &UUIRoot::GetOnlinePlayerInterface, return_value_policy< reference_existing_object >())
-        .def("GetOnlineGameInterface", &UUIRoot::GetOnlineGameInterface, return_value_policy< reference_existing_object >())
+        .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, py::return_value_policy::reference)
+        .def("GetOnlinePlayerInterface", &UUIRoot::GetOnlinePlayerInterface, py::return_value_policy::reference)
+        .def("GetOnlineGameInterface", &UUIRoot::GetOnlineGameInterface, py::return_value_policy::reference)
         .def("GetDataStoreStringValue", &UUIRoot::GetDataStoreStringValue)
         .def("GetDataStoreFieldValue", &UUIRoot::GetDataStoreFieldValue)
         .def("SetDataStoreStringValue", &UUIRoot::SetDataStoreStringValue)
         .def("SetDataStoreFieldValue", &UUIRoot::SetDataStoreFieldValue)
-        .def("StaticResolveDataStore", &UUIRoot::StaticResolveDataStore, return_value_policy< reference_existing_object >())
-        .def("GetSceneClient", &UUIRoot::GetSceneClient, return_value_policy< reference_existing_object >())
-        .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, return_value_policy< reference_existing_object >())
+        .def("StaticResolveDataStore", &UUIRoot::StaticResolveDataStore, py::return_value_policy::reference)
+        .def("GetSceneClient", &UUIRoot::GetSceneClient, py::return_value_policy::reference)
+        .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, py::return_value_policy::reference)
         .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
         .staticmethod("StaticClass")
   ;

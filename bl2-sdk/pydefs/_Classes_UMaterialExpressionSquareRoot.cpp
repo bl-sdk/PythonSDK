@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionSquareRoot()
 {
-    class_< UMaterialExpressionSquareRoot, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionSquareRoot", no_init)
+    py::class_< UMaterialExpressionSquareRoot,  UMaterialExpression   >("UMaterialExpressionSquareRoot")
         .def_readwrite("Input", &UMaterialExpressionSquareRoot::Input)
-        .def("StaticClass", &UMaterialExpressionSquareRoot::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionSquareRoot::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

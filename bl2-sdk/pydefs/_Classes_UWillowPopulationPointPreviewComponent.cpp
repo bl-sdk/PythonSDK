@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPopulationPointPreviewComponent()
 {
-    class_< UWillowPopulationPointPreviewComponent, bases< UWillowPreviewComponent >  , boost::noncopyable>("UWillowPopulationPointPreviewComponent", no_init)
+    py::class_< UWillowPopulationPointPreviewComponent,  UWillowPreviewComponent   >("UWillowPopulationPointPreviewComponent")
         .def_readwrite("PointDef", &UWillowPopulationPointPreviewComponent::PointDef)
-        .def("StaticClass", &UWillowPopulationPointPreviewComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPopulationPointPreviewComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

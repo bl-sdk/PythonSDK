@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPrismDataContainer()
 {
-    class_< FPrismDataContainer >("FPrismDataContainer", no_init)
+    py::class_< FPrismDataContainer >("FPrismDataContainer")
         .def_readwrite("RotateBoneTranslation", &FPrismDataContainer::RotateBoneTranslation)
         .def_readwrite("RotateBone", &FPrismDataContainer::RotateBone)
         .def_readwrite("RotateRefBone", &FPrismDataContainer::RotateRefBone)

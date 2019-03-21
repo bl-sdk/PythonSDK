@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_TakeDamage()
 {
-    class_< USeqEvent_TakeDamage, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_TakeDamage", no_init)
+    py::class_< USeqEvent_TakeDamage,  USequenceEvent   >("USeqEvent_TakeDamage")
         .def_readwrite("MinDamageAmount", &USeqEvent_TakeDamage::MinDamageAmount)
         .def_readwrite("DamageThreshold", &USeqEvent_TakeDamage::DamageThreshold)
         .def_readwrite("DamageTypes", &USeqEvent_TakeDamage::DamageTypes)
@@ -13,7 +13,7 @@ void Export_pystes_USeqEvent_TakeDamage()
         .def_readwrite("IgnoreDamageTypes", &USeqEvent_TakeDamage::IgnoreDamageTypes)
         .def_readwrite("IgnoreDamageTypeDefinitions", &USeqEvent_TakeDamage::IgnoreDamageTypeDefinitions)
         .def_readwrite("CurrentDamage", &USeqEvent_TakeDamage::CurrentDamage)
-        .def("StaticClass", &USeqEvent_TakeDamage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqEvent_TakeDamage::StaticClass, py::return_value_policy::reference)
         .def("eventToggled", &USeqEvent_TakeDamage::eventToggled)
         .def("eventGetObjClassVersion", &USeqEvent_TakeDamage::eventGetObjClassVersion)
         .def("Reset", &USeqEvent_TakeDamage::Reset)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOpportunitySavedState()
 {
-    class_< FOpportunitySavedState >("FOpportunitySavedState", no_init)
+    py::class_< FOpportunitySavedState >("FOpportunitySavedState")
         .def_readwrite("SelectedSpawnIdx", &FOpportunitySavedState::SelectedSpawnIdx)
         .def_readwrite("NumTotalActors", &FOpportunitySavedState::NumTotalActors)
         .def_readwrite("MaxActiveActors", &FOpportunitySavedState::MaxActiveActors)

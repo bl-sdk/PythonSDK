@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_LoadingMovie()
 {
-    class_< USeqAct_LoadingMovie, bases< USequenceAction >  , boost::noncopyable>("USeqAct_LoadingMovie", no_init)
+    py::class_< USeqAct_LoadingMovie,  USequenceAction   >("USeqAct_LoadingMovie")
         .def_readwrite("MovieName", &USeqAct_LoadingMovie::MovieName)
         .def_readwrite("PauseDuration", &USeqAct_LoadingMovie::PauseDuration)
         .def_readwrite("KeepPlayingDuration", &USeqAct_LoadingMovie::KeepPlayingDuration)
-        .def("StaticClass", &USeqAct_LoadingMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_LoadingMovie::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

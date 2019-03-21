@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPopulationPoint_Dynamic()
 {
-    class_< AWillowPopulationPoint_Dynamic, bases< APopulationPoint >  , boost::noncopyable>("AWillowPopulationPoint_Dynamic", no_init)
+    py::class_< AWillowPopulationPoint_Dynamic,  APopulationPoint   >("AWillowPopulationPoint_Dynamic")
         .def_readwrite("VfTable_ISpecialMoveInterface", &AWillowPopulationPoint::VfTable_ISpecialMoveInterface)
         .def_readwrite("VfTable_IIInstanceData", &AWillowPopulationPoint::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &AWillowPopulationPoint::VfTable_IIBodyCompositionInstance)
@@ -26,9 +26,9 @@ void Export_pystes_AWillowPopulationPoint_Dynamic()
         .def_readwrite("DynamicLightEnvironment", &AWillowPopulationPoint::DynamicLightEnvironment)
         .def_readwrite("CombatVolume", &AWillowPopulationPoint::CombatVolume)
         .def_readwrite("AssociatedChallenge", &AWillowPopulationPoint::AssociatedChallenge)
-        .def("StaticClass", &AWillowPopulationPoint_Dynamic::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowPopulationPoint_Dynamic::StaticClass, py::return_value_policy::reference)
         .def("ClearBodyCompositionInstance", &AWillowPopulationPoint::ClearBodyCompositionInstance)
-        .def("GetBodyInfoProvider", &AWillowPopulationPoint::GetBodyInfoProvider, return_value_policy< reference_existing_object >())
+        .def("GetBodyInfoProvider", &AWillowPopulationPoint::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("ApplyPreviewBodyComposition", &AWillowPopulationPoint::ApplyPreviewBodyComposition)
         .def("ChangeInstanceDataSwitch", &AWillowPopulationPoint::ChangeInstanceDataSwitch)
         .def("PostInitBodyComposition", &AWillowPopulationPoint::PostInitBodyComposition)
@@ -47,9 +47,9 @@ void Export_pystes_AWillowPopulationPoint_Dynamic()
         .def("SetReplicatedSMData", &AWillowPopulationPoint::SetReplicatedSMData)
         .def("GetDefaultRootMotionRotationMode", &AWillowPopulationPoint::GetDefaultRootMotionRotationMode)
         .def("GetDefaultRootMotionMode", &AWillowPopulationPoint::GetDefaultRootMotionMode)
-        .def("GetSkelMesh", &AWillowPopulationPoint::GetSkelMesh, return_value_policy< reference_existing_object >())
-        .def("GetSMComponent", &AWillowPopulationPoint::GetSMComponent, return_value_policy< reference_existing_object >())
-        .def("GetActor", &AWillowPopulationPoint::GetActor, return_value_policy< reference_existing_object >())
+        .def("GetSkelMesh", &AWillowPopulationPoint::GetSkelMesh, py::return_value_policy::reference)
+        .def("GetSMComponent", &AWillowPopulationPoint::GetSMComponent, py::return_value_policy::reference)
+        .def("GetActor", &AWillowPopulationPoint::GetActor, py::return_value_policy::reference)
         .def("CanSpawnFromFactory", &AWillowPopulationPoint::CanSpawnFromFactory)
         .def("GetStretchyOffset", &AWillowPopulationPoint::GetStretchyOffset)
         .def("ApplyOffsetToComponents", &AWillowPopulationPoint::ApplyOffsetToComponents)

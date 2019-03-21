@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMultiFont()
 {
-    class_< UMultiFont, bases< UFont >  , boost::noncopyable>("UMultiFont", no_init)
+    py::class_< UMultiFont,  UFont   >("UMultiFont")
         .def_readwrite("ResolutionTestTable", &UMultiFont::ResolutionTestTable)
-        .def("StaticClass", &UMultiFont::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMultiFont::StaticClass, py::return_value_policy::reference)
         .def("GetResolutionTestTableIndex", &UMultiFont::GetResolutionTestTableIndex)
         .staticmethod("StaticClass")
   ;

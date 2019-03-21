@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDOFEffectModifierData()
 {
-    class_< FDOFEffectModifierData >("FDOFEffectModifierData", no_init)
+    py::class_< FDOFEffectModifierData >("FDOFEffectModifierData")
         .def_readwrite("RecalculateFocusDistanceRate", &FDOFEffectModifierData::RecalculateFocusDistanceRate)
         .def_readwrite("FocusDistanceLerpRate", &FDOFEffectModifierData::FocusDistanceLerpRate)
   ;

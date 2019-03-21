@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIListElementProvider()
 {
-    class_< UUIListElementProvider, bases< UInterface >  , boost::noncopyable>("UUIListElementProvider", no_init)
-        .def("StaticClass", &UUIListElementProvider::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UUIListElementProvider,  UInterface   >("UUIListElementProvider")
+        .def("StaticClass", &UUIListElementProvider::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

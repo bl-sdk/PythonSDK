@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTerrainFoliageMesh()
 {
-    class_< FTerrainFoliageMesh >("FTerrainFoliageMesh", no_init)
+    py::class_< FTerrainFoliageMesh >("FTerrainFoliageMesh")
         .def_readwrite("StaticMesh", &FTerrainFoliageMesh::StaticMesh)
         .def_readwrite("Material", &FTerrainFoliageMesh::Material)
         .def_readwrite("Density", &FTerrainFoliageMesh::Density)

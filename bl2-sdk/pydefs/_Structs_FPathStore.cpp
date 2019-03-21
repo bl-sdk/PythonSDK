@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPathStore()
 {
-    class_< FPathStore >("FPathStore", no_init)
+    py::class_< FPathStore >("FPathStore")
         .def_readwrite("EdgeList", &FPathStore::EdgeList)
         .def_readwrite("PathDistances", &FPathStore::PathDistances)
   ;

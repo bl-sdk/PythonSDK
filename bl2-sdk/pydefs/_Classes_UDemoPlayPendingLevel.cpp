@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDemoPlayPendingLevel()
 {
-    class_< UDemoPlayPendingLevel, bases< UPendingLevel >  , boost::noncopyable>("UDemoPlayPendingLevel", no_init)
-        .def("StaticClass", &UDemoPlayPendingLevel::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UDemoPlayPendingLevel,  UPendingLevel   >("UDemoPlayPendingLevel")
+        .def("StaticClass", &UDemoPlayPendingLevel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AITargeting()
 {
-    class_< UBehavior_AITargeting, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AITargeting", no_init)
+    py::class_< UBehavior_AITargeting,  UBehaviorBase   >("UBehavior_AITargeting")
         .def_readwrite("NewTargetingDefinition", &UBehavior_AITargeting::NewTargetingDefinition)
-        .def("StaticClass", &UBehavior_AITargeting::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AITargeting::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AITargeting::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

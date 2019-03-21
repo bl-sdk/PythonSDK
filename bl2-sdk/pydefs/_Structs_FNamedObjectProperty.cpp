@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNamedObjectProperty()
 {
-    class_< FNamedObjectProperty >("FNamedObjectProperty", no_init)
+    py::class_< FNamedObjectProperty >("FNamedObjectProperty")
         .def_readwrite("ObjectPropertyName", &FNamedObjectProperty::ObjectPropertyName)
         .def_readwrite("ObjectPropertyValue", &FNamedObjectProperty::ObjectPropertyValue)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression()
 {
-    class_< UAnimationCompressionAlgorithm_PerTrackCompression, bases< UObject >  , boost::noncopyable>("UAnimationCompressionAlgorithm_PerTrackCompression", no_init)
+    py::class_< UAnimationCompressionAlgorithm_PerTrackCompression,  UObject   >("UAnimationCompressionAlgorithm_PerTrackCompression")
         .def_readwrite("MaxZeroingThreshold", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxZeroingThreshold)
         .def_readwrite("MaxPosDiffBitwise", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxPosDiffBitwise)
         .def_readwrite("MaxAngleDiffBitwise", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxAngleDiffBitwise)
@@ -30,7 +30,7 @@ void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression()
         .def_readwrite("Description", &UAnimationCompressionAlgorithm::Description)
         .def_readwrite("TranslationCompressionChoice", &UAnimationCompressionAlgorithm::TranslationCompressionChoice)
         .def_readwrite("RotationCompressionChoice", &UAnimationCompressionAlgorithm::RotationCompressionChoice)
-        .def("StaticClass", &UAnimationCompressionAlgorithm_PerTrackCompression::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimationCompressionAlgorithm_PerTrackCompression::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

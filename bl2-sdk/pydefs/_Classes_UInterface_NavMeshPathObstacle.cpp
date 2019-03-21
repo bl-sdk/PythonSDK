@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterface_NavMeshPathObstacle()
 {
-    class_< UInterface_NavMeshPathObstacle, bases< UInterface >  , boost::noncopyable>("UInterface_NavMeshPathObstacle", no_init)
-        .def("StaticClass", &UInterface_NavMeshPathObstacle::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UInterface_NavMeshPathObstacle,  UInterface   >("UInterface_NavMeshPathObstacle")
+        .def("StaticClass", &UInterface_NavMeshPathObstacle::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

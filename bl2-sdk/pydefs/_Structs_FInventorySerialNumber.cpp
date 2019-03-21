@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInventorySerialNumber()
 {
-    class_< FInventorySerialNumber >("FInventorySerialNumber", no_init)
+    py::class_< FInventorySerialNumber >("FInventorySerialNumber")
         .def_readonly("Buffer", &FInventorySerialNumber::Buffer)
         .def_readwrite("State", &FInventorySerialNumber::State)
         .def_readwrite("RunningCounter", &FInventorySerialNumber::RunningCounter)

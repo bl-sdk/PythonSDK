@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTextureCube()
 {
-    class_< UTextureCube, bases< UTexture >  , boost::noncopyable>("UTextureCube", no_init)
+    py::class_< UTextureCube,  UTexture   >("UTextureCube")
         .def_readwrite("SizeX", &UTextureCube::SizeX)
         .def_readwrite("SizeY", &UTextureCube::SizeY)
         .def_readwrite("Format", &UTextureCube::Format)
@@ -16,7 +16,7 @@ void Export_pystes_UTextureCube()
         .def_readwrite("FaceNegY", &UTextureCube::FaceNegY)
         .def_readwrite("FacePosZ", &UTextureCube::FacePosZ)
         .def_readwrite("FaceNegZ", &UTextureCube::FaceNegZ)
-        .def("StaticClass", &UTextureCube::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTextureCube::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

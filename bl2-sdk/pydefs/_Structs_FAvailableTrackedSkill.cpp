@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAvailableTrackedSkill()
 {
-    class_< FAvailableTrackedSkill >("FAvailableTrackedSkill", no_init)
+    py::class_< FAvailableTrackedSkill >("FAvailableTrackedSkill")
         .def_readwrite("SkillDef", &FAvailableTrackedSkill::SkillDef)
         .def_readwrite("RemappedSlot", &FAvailableTrackedSkill::RemappedSlot)
   ;

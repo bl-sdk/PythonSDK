@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_PlayMultipleExplosionsSound()
 {
-    class_< UBehavior_PlayMultipleExplosionsSound, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_PlayMultipleExplosionsSound", no_init)
+    py::class_< UBehavior_PlayMultipleExplosionsSound,  UBehaviorBase   >("UBehavior_PlayMultipleExplosionsSound")
         .def_readwrite("Definition", &UBehavior_PlayMultipleExplosionsSound::Definition)
         .def_readwrite("OverrideContext", &UBehavior_PlayMultipleExplosionsSound::OverrideContext)
         .def_readwrite("OverrideName", &UBehavior_PlayMultipleExplosionsSound::OverrideName)
-        .def("StaticClass", &UBehavior_PlayMultipleExplosionsSound::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_PlayMultipleExplosionsSound::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_PlayMultipleExplosionsSound::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

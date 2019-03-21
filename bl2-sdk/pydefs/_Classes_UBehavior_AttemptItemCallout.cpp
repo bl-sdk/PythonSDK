@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AttemptItemCallout()
 {
-    class_< UBehavior_AttemptItemCallout, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AttemptItemCallout", no_init)
+    py::class_< UBehavior_AttemptItemCallout,  UBehaviorBase   >("UBehavior_AttemptItemCallout")
         .def_readwrite("DET_CallOut", &UBehavior_AttemptItemCallout::DET_CallOut)
         .def_readwrite("InstanceDataName", &UBehavior_AttemptItemCallout::InstanceDataName)
-        .def("StaticClass", &UBehavior_AttemptItemCallout::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AttemptItemCallout::StaticClass, py::return_value_policy::reference)
         .def("TestTargetVisibility", &UBehavior_AttemptItemCallout::TestTargetVisibility)
         .def("ApplyBehaviorToContext", &UBehavior_AttemptItemCallout::ApplyBehaviorToContext)
         .staticmethod("StaticClass")

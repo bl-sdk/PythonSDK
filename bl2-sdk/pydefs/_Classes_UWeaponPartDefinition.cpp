@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponPartDefinition()
 {
-    class_< UWeaponPartDefinition, bases< UWillowInventoryPartDefinition >  , boost::noncopyable>("UWeaponPartDefinition", no_init)
+    py::class_< UWeaponPartDefinition,  UWillowInventoryPartDefinition   >("UWeaponPartDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWeaponPartDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("TitleList", &UWeaponPartDefinition::TitleList)
         .def_readwrite("PrefixList", &UWeaponPartDefinition::PrefixList)
@@ -44,7 +44,7 @@ void Export_pystes_UWeaponPartDefinition()
         .def_readwrite("SightFXCrosshairMaterial", &UWeaponPartDefinition::SightFXCrosshairMaterial)
         .def_readwrite("SightFXCrosshairParamName", &UWeaponPartDefinition::SightFXCrosshairParamName)
         .def_readwrite("SightFXCrosshairRefractionParamName", &UWeaponPartDefinition::SightFXCrosshairRefractionParamName)
-        .def("StaticClass", &UWeaponPartDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponPartDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnAbortReload", &UWeaponPartDefinition::OnAbortReload)
         .def("OnZoomOut", &UWeaponPartDefinition::OnZoomOut)
         .def("OnZoomIn", &UWeaponPartDefinition::OnZoomIn)
@@ -52,7 +52,7 @@ void Export_pystes_UWeaponPartDefinition()
         .def("OnEquip", &UWeaponPartDefinition::OnEquip)
         .def("OnCreate", &UWeaponPartDefinition::OnCreate)
         .def("SetBehaviorProviderDefinition", &UWeaponPartDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UWeaponPartDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UWeaponPartDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

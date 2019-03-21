@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEnvironmentalEffectSetting()
 {
-    class_< FEnvironmentalEffectSetting >("FEnvironmentalEffectSetting", no_init)
+    py::class_< FEnvironmentalEffectSetting >("FEnvironmentalEffectSetting")
         .def_readwrite("Effect", &FEnvironmentalEffectSetting::Effect)
         .def_readwrite("Volume", &FEnvironmentalEffectSetting::Volume)
         .def_readwrite("FadeDistance", &FEnvironmentalEffectSetting::FadeDistance)

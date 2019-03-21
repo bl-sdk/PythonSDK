@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxMenuHelperSaveGame()
 {
-    class_< UWillowGFxMenuHelperSaveGame, bases< UObject >  , boost::noncopyable>("UWillowGFxMenuHelperSaveGame", no_init)
+    py::class_< UWillowGFxMenuHelperSaveGame,  UObject   >("UWillowGFxMenuHelperSaveGame")
         .def_readwrite("LoadingListDlg", &UWillowGFxMenuHelperSaveGame::LoadingListDlg)
         .def_readwrite("DeletingDlg", &UWillowGFxMenuHelperSaveGame::DeletingDlg)
         .def_readwrite("ValidatingDlg", &UWillowGFxMenuHelperSaveGame::ValidatingDlg)
@@ -13,7 +13,7 @@ void Export_pystes_UWillowGFxMenuHelperSaveGame()
         .def_readwrite("PlayerIndex", &UWillowGFxMenuHelperSaveGame::PlayerIndex)
         .def_readwrite("MenuOwner", &UWillowGFxMenuHelperSaveGame::MenuOwner)
         .def_readwrite("CurrentSelection", &UWillowGFxMenuHelperSaveGame::CurrentSelection)
-        .def("StaticClass", &UWillowGFxMenuHelperSaveGame::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxMenuHelperSaveGame::StaticClass, py::return_value_policy::reference)
         .def("CheckForPS3SaveList", &UWillowGFxMenuHelperSaveGame::CheckForPS3SaveList)
         .def("CheckForPS3LoadGame", &UWillowGFxMenuHelperSaveGame::CheckForPS3LoadGame)
         .def("BeginPS3LoadGame", &UWillowGFxMenuHelperSaveGame::BeginPS3LoadGame)

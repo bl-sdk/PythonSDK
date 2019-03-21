@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AExecuteBlockingVolume()
 {
-    class_< AExecuteBlockingVolume, bases< ABlockingVolume >  , boost::noncopyable>("AExecuteBlockingVolume", no_init)
-        .def("StaticClass", &AExecuteBlockingVolume::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AExecuteBlockingVolume,  ABlockingVolume   >("AExecuteBlockingVolume")
+        .def("StaticClass", &AExecuteBlockingVolume::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &AExecuteBlockingVolume::StopsProjectile)
         .staticmethod("StaticClass")
   ;

@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDynamicFieldProvider()
 {
-    class_< UUIDynamicFieldProvider, bases< UUIDataProvider >  , boost::noncopyable>("UUIDynamicFieldProvider", no_init)
+    py::class_< UUIDynamicFieldProvider,  UUIDataProvider   >("UUIDynamicFieldProvider")
         .def_readwrite("PersistentDataFields", &UUIDynamicFieldProvider::PersistentDataFields)
         .def_readwrite("RuntimeDataFields", &UUIDynamicFieldProvider::RuntimeDataFields)
         .def_readwrite("PersistentCollectionData", &UUIDynamicFieldProvider::PersistentCollectionData)
         .def_readwrite("RuntimeCollectionData", &UUIDynamicFieldProvider::RuntimeCollectionData)
-        .def("StaticClass", &UUIDynamicFieldProvider::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDynamicFieldProvider::StaticClass, py::return_value_policy::reference)
         .def("FindCollectionValueIndex", &UUIDynamicFieldProvider::FindCollectionValueIndex)
         .def("GetCollectionValue", &UUIDynamicFieldProvider::GetCollectionValue)
         .def("ClearCollectionValueArray", &UUIDynamicFieldProvider::ClearCollectionValueArray)

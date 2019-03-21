@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHybridNavVisualizationVert()
 {
-    class_< FHybridNavVisualizationVert >("FHybridNavVisualizationVert", no_init)
+    py::class_< FHybridNavVisualizationVert >("FHybridNavVisualizationVert")
         .def_readwrite("Vert", &FHybridNavVisualizationVert::Vert)
   ;
 }

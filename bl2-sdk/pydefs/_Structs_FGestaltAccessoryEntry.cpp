@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltAccessoryEntry()
 {
-    class_< FGestaltAccessoryEntry >("FGestaltAccessoryEntry", no_init)
+    py::class_< FGestaltAccessoryEntry >("FGestaltAccessoryEntry")
         .def_readwrite("TransformIndex", &FGestaltAccessoryEntry::TransformIndex)
         .def_readwrite("OriginalBoneIndex", &FGestaltAccessoryEntry::OriginalBoneIndex)
         .def_readwrite("GPUBoneIndex", &FGestaltAccessoryEntry::GPUBoneIndex)

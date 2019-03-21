@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAIDenComponent()
 {
-    class_< UWillowAIDenComponent, bases< UWillowAIComponent >  , boost::noncopyable>("UWillowAIDenComponent", no_init)
+    py::class_< UWillowAIDenComponent,  UWillowAIComponent   >("UWillowAIDenComponent")
         .def_readwrite("ParentDenAI", &UWillowAIDenComponent::ParentDenAI)
-        .def("StaticClass", &UWillowAIDenComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAIDenComponent::StaticClass, py::return_value_policy::reference)
         .def("ShouldRemoveTarget", &UWillowAIDenComponent::ShouldRemoveTarget)
         .def("FindTargetsInDen", &UWillowAIDenComponent::FindTargetsInDen)
         .def("FindTargets", &UWillowAIDenComponent::FindTargets)

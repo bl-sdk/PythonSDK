@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRawAnimSequenceTrack()
 {
-    class_< FRawAnimSequenceTrack >("FRawAnimSequenceTrack", no_init)
+    py::class_< FRawAnimSequenceTrack >("FRawAnimSequenceTrack")
         .def_readwrite("PosKeys", &FRawAnimSequenceTrack::PosKeys)
         .def_readwrite("RotKeys", &FRawAnimSequenceTrack::RotKeys)
   ;

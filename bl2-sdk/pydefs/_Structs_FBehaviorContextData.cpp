@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorContextData()
 {
-    class_< FBehaviorContextData >("FBehaviorContextData", no_init)
+    py::class_< FBehaviorContextData >("FBehaviorContextData")
         .def_readwrite("InstancedDataContextName", &FBehaviorContextData::InstancedDataContextName)
         .def_readwrite("ContextObject", &FBehaviorContextData::ContextObject)
         .def_readwrite("BehaviorContext", &FBehaviorContextData::BehaviorContext)

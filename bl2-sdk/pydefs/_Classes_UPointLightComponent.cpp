@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPointLightComponent()
 {
-    class_< UPointLightComponent, bases< ULightComponent >  , boost::noncopyable>("UPointLightComponent", no_init)
+    py::class_< UPointLightComponent,  ULightComponent   >("UPointLightComponent")
         .def_readwrite("ShadowRadiusMultiplier", &UPointLightComponent::ShadowRadiusMultiplier)
         .def_readwrite("Radius", &UPointLightComponent::Radius)
         .def_readwrite("FalloffExponent", &UPointLightComponent::FalloffExponent)
@@ -19,7 +19,7 @@ void Export_pystes_UPointLightComponent()
         .def_readwrite("PreviewLightRadius", &UPointLightComponent::PreviewLightRadius)
         .def_readwrite("LightmassSettings", &UPointLightComponent::LightmassSettings)
         .def_readwrite("PreviewLightSourceRadius", &UPointLightComponent::PreviewLightSourceRadius)
-        .def("StaticClass", &UPointLightComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPointLightComponent::StaticClass, py::return_value_policy::reference)
         .def("OnUpdatePropertyLightEnv_BouncedLightBrightness", &UPointLightComponent::OnUpdatePropertyLightEnv_BouncedLightBrightness)
         .def("OnUpdatePropertyLightEnv_BouncedModulationColor", &UPointLightComponent::OnUpdatePropertyLightEnv_BouncedModulationColor)
         .def("OnUpdatePropertyBrightness", &UPointLightComponent::OnUpdatePropertyBrightness)

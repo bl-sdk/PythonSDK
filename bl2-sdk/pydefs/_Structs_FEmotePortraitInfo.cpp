@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEmotePortraitInfo()
 {
-    class_< FEmotePortraitInfo >("FEmotePortraitInfo", no_init)
+    py::class_< FEmotePortraitInfo >("FEmotePortraitInfo")
         .def_readwrite("Emote", &FEmotePortraitInfo::Emote)
         .def_readwrite("EmotePortrait", &FEmotePortraitInfo::EmotePortrait)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWorldSpacePlayerInfo()
 {
-    class_< FWorldSpacePlayerInfo >("FWorldSpacePlayerInfo", no_init)
+    py::class_< FWorldSpacePlayerInfo >("FWorldSpacePlayerInfo")
         .def_readwrite("WPRI", &FWorldSpacePlayerInfo::WPRI)
         .def_readwrite("WPP", &FWorldSpacePlayerInfo::WPP)
   ;

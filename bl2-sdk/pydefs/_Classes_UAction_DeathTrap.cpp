@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_DeathTrap()
 {
-    class_< UAction_DeathTrap, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_DeathTrap", no_init)
+    py::class_< UAction_DeathTrap,  UWillowActionSequencePawn   >("UAction_DeathTrap")
         .def_readwrite("MoveRange", &UAction_DeathTrap::MoveRange)
         .def_readwrite("RandomHOffset", &UAction_DeathTrap::RandomHOffset)
         .def_readwrite("RandomVOffset", &UAction_DeathTrap::RandomVOffset)
@@ -13,7 +13,7 @@ void Export_pystes_UAction_DeathTrap()
         .def_readwrite("RandomAngleLimits", &UAction_DeathTrap::RandomAngleLimits)
         .def_readwrite("AttackDist", &UAction_DeathTrap::AttackDist)
         .def_readwrite("CurrentMoveOffset", &UAction_DeathTrap::CurrentMoveOffset)
-        .def("StaticClass", &UAction_DeathTrap::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_DeathTrap::StaticClass, py::return_value_policy::reference)
         .def("Reinitialize", &UAction_DeathTrap::Reinitialize)
         .def("WantsPath", &UAction_DeathTrap::WantsPath)
         .def("StopAttacking", &UAction_DeathTrap::StopAttacking)
@@ -25,8 +25,8 @@ void Export_pystes_UAction_DeathTrap()
         .def("GetMoveLoc", &UAction_DeathTrap::GetMoveLoc)
         .def("PickRandomOffset", &UAction_DeathTrap::PickRandomOffset)
         .def("GetRandomYaw", &UAction_DeathTrap::GetRandomYaw)
-        .def("GetPointDefense", &UAction_DeathTrap::GetPointDefense, return_value_policy< reference_existing_object >())
-        .def("GetOwner", &UAction_DeathTrap::GetOwner, return_value_policy< reference_existing_object >())
+        .def("GetPointDefense", &UAction_DeathTrap::GetPointDefense, py::return_value_policy::reference)
+        .def("GetOwner", &UAction_DeathTrap::GetOwner, py::return_value_policy::reference)
         .def("eventStop", &UAction_DeathTrap::eventStop)
         .def("eventStart", &UAction_DeathTrap::eventStart)
         .def("eventCanRun", &UAction_DeathTrap::eventCanRun)

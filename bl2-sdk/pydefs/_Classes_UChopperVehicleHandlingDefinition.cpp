@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UChopperVehicleHandlingDefinition()
 {
-    class_< UChopperVehicleHandlingDefinition, bases< UVehicleHandlingDefinition >  , boost::noncopyable>("UChopperVehicleHandlingDefinition", no_init)
+    py::class_< UChopperVehicleHandlingDefinition,  UVehicleHandlingDefinition   >("UChopperVehicleHandlingDefinition")
         .def_readwrite("MaxThrustForce", &UChopperVehicleHandlingDefinition::MaxThrustForce)
         .def_readwrite("MaxReverseForce", &UChopperVehicleHandlingDefinition::MaxReverseForce)
         .def_readwrite("LongDamping", &UChopperVehicleHandlingDefinition::LongDamping)
@@ -32,7 +32,7 @@ void Export_pystes_UChopperVehicleHandlingDefinition()
         .def_readwrite("MaxVelocityWhenAdjustingHover", &UChopperVehicleHandlingDefinition::MaxVelocityWhenAdjustingHover)
         .def_readwrite("HoverDeadZone", &UChopperVehicleHandlingDefinition::HoverDeadZone)
         .def_readwrite("RiseAdjustmentInterval", &UChopperVehicleHandlingDefinition::RiseAdjustmentInterval)
-        .def("StaticClass", &UChopperVehicleHandlingDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UChopperVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

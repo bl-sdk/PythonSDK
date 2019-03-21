@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWaveFormBase()
 {
-    class_< UWaveFormBase, bases< UObject >  , boost::noncopyable>("UWaveFormBase", no_init)
+    py::class_< UWaveFormBase,  UObject   >("UWaveFormBase")
         .def_readwrite("TheWaveForm", &UWaveFormBase::TheWaveForm)
-        .def("StaticClass", &UWaveFormBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWaveFormBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

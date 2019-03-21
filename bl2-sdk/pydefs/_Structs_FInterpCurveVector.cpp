@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInterpCurveVector()
 {
-    class_< FInterpCurveVector >("FInterpCurveVector", no_init)
+    py::class_< FInterpCurveVector >("FInterpCurveVector")
         .def_readwrite("Points", &FInterpCurveVector::Points)
         .def_readwrite("InterpMethod", &FInterpCurveVector::InterpMethod)
   ;

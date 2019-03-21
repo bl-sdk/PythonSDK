@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIWeaponThrow()
 {
-    class_< UIWeaponThrow, bases< UInterface >  , boost::noncopyable>("UIWeaponThrow", no_init)
-        .def("StaticClass", &UIWeaponThrow::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIWeaponThrow,  UInterface   >("UIWeaponThrow")
+        .def("StaticClass", &UIWeaponThrow::StaticClass, py::return_value_policy::reference)
         .def("Behavior_WeaponThrow", &UIWeaponThrow::Behavior_WeaponThrow)
         .staticmethod("StaticClass")
   ;

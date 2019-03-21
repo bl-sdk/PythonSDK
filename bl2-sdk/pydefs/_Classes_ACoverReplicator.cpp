@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ACoverReplicator()
 {
-    class_< ACoverReplicator, bases< AReplicationInfo >  , boost::noncopyable>("ACoverReplicator", no_init)
+    py::class_< ACoverReplicator,  AReplicationInfo   >("ACoverReplicator")
         .def_readwrite("CoverReplicationData", &ACoverReplicator::CoverReplicationData)
-        .def("StaticClass", &ACoverReplicator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ACoverReplicator::StaticClass, py::return_value_policy::reference)
         .def("ClientReceiveLinkDisabledState", &ACoverReplicator::ClientReceiveLinkDisabledState)
         .def("ServerSendLinkDisabledState", &ACoverReplicator::ServerSendLinkDisabledState)
         .def("NotifyLinkDisabledStateChange", &ACoverReplicator::NotifyLinkDisabledStateChange)

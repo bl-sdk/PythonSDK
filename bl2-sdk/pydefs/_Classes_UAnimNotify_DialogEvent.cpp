@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_DialogEvent()
 {
-    class_< UAnimNotify_DialogEvent, bases< UAnimNotify >  , boost::noncopyable>("UAnimNotify_DialogEvent", no_init)
+    py::class_< UAnimNotify_DialogEvent,  UAnimNotify   >("UAnimNotify_DialogEvent")
         .def_readwrite("EventTag", &UAnimNotify_DialogEvent::EventTag)
         .def_readwrite("Group", &UAnimNotify_DialogEvent::Group)
-        .def("StaticClass", &UAnimNotify_DialogEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_DialogEvent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

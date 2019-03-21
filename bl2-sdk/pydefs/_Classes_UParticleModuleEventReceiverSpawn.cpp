@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleEventReceiverSpawn()
 {
-    class_< UParticleModuleEventReceiverSpawn, bases< UParticleModuleEventReceiverBase >  , boost::noncopyable>("UParticleModuleEventReceiverSpawn", no_init)
+    py::class_< UParticleModuleEventReceiverSpawn,  UParticleModuleEventReceiverBase   >("UParticleModuleEventReceiverSpawn")
         .def_readwrite("SpawnCount", &UParticleModuleEventReceiverSpawn::SpawnCount)
         .def_readwrite("InheritVelocityScale", &UParticleModuleEventReceiverSpawn::InheritVelocityScale)
-        .def("StaticClass", &UParticleModuleEventReceiverSpawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleEventReceiverSpawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

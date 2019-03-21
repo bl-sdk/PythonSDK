@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULookingAtInjuredPlayerExpressionEvaluator()
 {
-    class_< ULookingAtInjuredPlayerExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("ULookingAtInjuredPlayerExpressionEvaluator", no_init)
-        .def("StaticClass", &ULookingAtInjuredPlayerExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULookingAtInjuredPlayerExpressionEvaluator,  UExpressionEvaluator   >("ULookingAtInjuredPlayerExpressionEvaluator")
+        .def("StaticClass", &ULookingAtInjuredPlayerExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &ULookingAtInjuredPlayerExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

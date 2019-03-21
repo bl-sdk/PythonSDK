@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionTextureCoordinate()
 {
-    class_< UMaterialExpressionTextureCoordinate, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionTextureCoordinate", no_init)
+    py::class_< UMaterialExpressionTextureCoordinate,  UMaterialExpression   >("UMaterialExpressionTextureCoordinate")
         .def_readwrite("CoordinateIndex", &UMaterialExpressionTextureCoordinate::CoordinateIndex)
         .def_readwrite("UTiling", &UMaterialExpressionTextureCoordinate::UTiling)
         .def_readwrite("VTiling", &UMaterialExpressionTextureCoordinate::VTiling)
-        .def("StaticClass", &UMaterialExpressionTextureCoordinate::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionTextureCoordinate::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

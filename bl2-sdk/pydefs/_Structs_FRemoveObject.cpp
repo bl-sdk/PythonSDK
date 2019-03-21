@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRemoveObject()
 {
-    class_< FRemoveObject >("FRemoveObject", no_init)
+    py::class_< FRemoveObject >("FRemoveObject")
         .def_readwrite("Name", &FRemoveObject::Name)
   ;
 }

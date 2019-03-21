@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackSkelControlScale()
 {
-    class_< UInterpTrackSkelControlScale, bases< UInterpTrackFloatBase >  , boost::noncopyable>("UInterpTrackSkelControlScale", no_init)
+    py::class_< UInterpTrackSkelControlScale,  UInterpTrackFloatBase   >("UInterpTrackSkelControlScale")
         .def_readwrite("SkelControlName", &UInterpTrackSkelControlScale::SkelControlName)
-        .def("StaticClass", &UInterpTrackSkelControlScale::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackSkelControlScale::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

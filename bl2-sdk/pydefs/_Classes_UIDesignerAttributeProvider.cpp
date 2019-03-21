@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIDesignerAttributeProvider()
 {
-    class_< UIDesignerAttributeProvider, bases< UInterface >  , boost::noncopyable>("UIDesignerAttributeProvider", no_init)
-        .def("StaticClass", &UIDesignerAttributeProvider::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetInstancedDesignerAttribute", &UIDesignerAttributeProvider::eventGetInstancedDesignerAttribute, return_value_policy< reference_existing_object >())
+    py::class_< UIDesignerAttributeProvider,  UInterface   >("UIDesignerAttributeProvider")
+        .def("StaticClass", &UIDesignerAttributeProvider::StaticClass, py::return_value_policy::reference)
+        .def("eventGetInstancedDesignerAttribute", &UIDesignerAttributeProvider::eventGetInstancedDesignerAttribute, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

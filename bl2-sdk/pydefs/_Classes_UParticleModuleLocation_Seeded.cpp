@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleLocation_Seeded()
 {
-    class_< UParticleModuleLocation_Seeded, bases< UParticleModuleLocation >  , boost::noncopyable>("UParticleModuleLocation_Seeded", no_init)
+    py::class_< UParticleModuleLocation_Seeded,  UParticleModuleLocation   >("UParticleModuleLocation_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleLocation_Seeded::RandomSeedInfo)
-        .def("StaticClass", &UParticleModuleLocation_Seeded::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleLocation_Seeded::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

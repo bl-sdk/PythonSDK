@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AISetItemTossTarget()
 {
-    class_< UBehavior_AISetItemTossTarget, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AISetItemTossTarget", no_init)
+    py::class_< UBehavior_AISetItemTossTarget,  UBehaviorBase   >("UBehavior_AISetItemTossTarget")
         .def_readwrite("TossTarget", &UBehavior_AISetItemTossTarget::TossTarget)
-        .def("StaticClass", &UBehavior_AISetItemTossTarget::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AISetItemTossTarget::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AISetItemTossTarget::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

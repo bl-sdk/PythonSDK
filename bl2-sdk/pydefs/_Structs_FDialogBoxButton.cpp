@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDialogBoxButton()
 {
-    class_< FDialogBoxButton >("FDialogBoxButton", no_init)
+    py::class_< FDialogBoxButton >("FDialogBoxButton")
         .def_readwrite("Caption", &FDialogBoxButton::Caption)
         .def_readwrite("TipText", &FDialogBoxButton::TipText)
         .def_readwrite("Tag", &FDialogBoxButton::Tag)

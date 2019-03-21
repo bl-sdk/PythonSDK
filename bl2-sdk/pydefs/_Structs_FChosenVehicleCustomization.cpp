@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FChosenVehicleCustomization()
 {
-    class_< FChosenVehicleCustomization >("FChosenVehicleCustomization", no_init)
+    py::class_< FChosenVehicleCustomization >("FChosenVehicleCustomization")
         .def_readwrite("FamilyDef", &FChosenVehicleCustomization::FamilyDef)
         .def_readonly("CustomizationDef", &FChosenVehicleCustomization::CustomizationDef)
   ;

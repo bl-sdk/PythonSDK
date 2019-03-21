@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowInventoryGFxMovie()
 {
-    class_< UWillowInventoryGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UWillowInventoryGFxMovie", no_init)
+    py::class_< UWillowInventoryGFxMovie,  UWillowGFxMovie3D   >("UWillowInventoryGFxMovie")
         .def_readwrite("RTM", &UWillowInventoryGFxMovie::RTM)
         .def_readwrite("CardContents", &UWillowInventoryGFxMovie::CardContents)
         .def_readwrite("FrozenThing", &UWillowInventoryGFxMovie::FrozenThing)
@@ -39,12 +39,12 @@ void Export_pystes_UWillowInventoryGFxMovie()
         .def_readwrite("MouseDrag_Region_Right", &UWillowGFxThirdPersonMovie::MouseDrag_Region_Right)
         .def_readwrite("MouseDrag_Region_Top", &UWillowGFxThirdPersonMovie::MouseDrag_Region_Top)
         .def_readwrite("MouseDrag_Region_Bottom", &UWillowGFxThirdPersonMovie::MouseDrag_Region_Bottom)
-        .def("StaticClass", &UWillowInventoryGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowInventoryGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("GetPlayerThings", &UWillowInventoryGFxMovie::GetPlayerThings)
         .def("GetTotalCredits", &UWillowInventoryGFxMovie::GetTotalCredits)
         .def("EvaluateCurrentSelection", &UWillowInventoryGFxMovie::EvaluateCurrentSelection)
         .def("OnPanelRollOver", &UWillowInventoryGFxMovie::OnPanelRollOver)
-        .def("GetEquippedAnalogue", &UWillowInventoryGFxMovie::GetEquippedAnalogue, return_value_policy< reference_existing_object >())
+        .def("GetEquippedAnalogue", &UWillowInventoryGFxMovie::GetEquippedAnalogue, py::return_value_policy::reference)
         .def("PressedHotkeyNumber", &UWillowInventoryGFxMovie::PressedHotkeyNumber)
         .def("OnInventoryPanelSetActive", &UWillowInventoryGFxMovie::OnInventoryPanelSetActive)
         .def("GetNextSortConfiguration", &UWillowInventoryGFxMovie::GetNextSortConfiguration)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ACoverLink()
 {
-    class_< ACoverLink, bases< ANavigationPoint >  , boost::noncopyable>("ACoverLink", no_init)
+    py::class_< ACoverLink,  ANavigationPoint   >("ACoverLink")
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &ACoverLink::VfTable_IIGBXNavMeshSpecialMove)
         .def_readwrite("LeanTraceDist", &ACoverLink::LeanTraceDist)
         .def_readwrite("Slots", &ACoverLink::Slots)
@@ -28,7 +28,7 @@ void Export_pystes_ACoverLink()
         .def_readwrite("CoverSlotMarkerClassName", &ACoverLink::CoverSlotMarkerClassName)
         .def_readwrite("NextCoverLink", &ACoverLink::NextCoverLink)
         .def_readwrite("LocationDescription", &ACoverLink::LocationDescription)
-        .def("StaticClass", &ACoverLink::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ACoverLink::StaticClass, py::return_value_policy::reference)
         .def("eventGetDebugAbbrev", &ACoverLink::eventGetDebugAbbrev)
         .def("GetLocationDescription", &ACoverLink::GetLocationDescription)
         .def("eventGetDebugString", &ACoverLink::eventGetDebugString)

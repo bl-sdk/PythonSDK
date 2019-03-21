@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUIKeyRepeatData()
 {
-    class_< FUIKeyRepeatData >("FUIKeyRepeatData", no_init)
+    py::class_< FUIKeyRepeatData >("FUIKeyRepeatData")
         .def_readwrite("CurrentRepeatKey", &FUIKeyRepeatData::CurrentRepeatKey)
         .def_readwrite("NextRepeatTime", &FUIKeyRepeatData::NextRepeatTime)
   ;

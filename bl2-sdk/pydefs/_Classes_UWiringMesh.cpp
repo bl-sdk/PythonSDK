@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWiringMesh()
 {
-    class_< UWiringMesh, bases< UStaticMesh >  , boost::noncopyable>("UWiringMesh", no_init)
+    py::class_< UWiringMesh,  UStaticMesh   >("UWiringMesh")
         .def_readonly("UnknownData00", &UWiringMesh::UnknownData00)
-        .def("StaticClass", &UWiringMesh::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWiringMesh::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

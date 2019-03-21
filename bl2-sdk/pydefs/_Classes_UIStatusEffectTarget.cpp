@@ -1,22 +1,22 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIStatusEffectTarget()
 {
-    class_< UIStatusEffectTarget, bases< UInterface >  , boost::noncopyable>("UIStatusEffectTarget", no_init)
-        .def("StaticClass", &UIStatusEffectTarget::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIStatusEffectTarget,  UInterface   >("UIStatusEffectTarget")
+        .def("StaticClass", &UIStatusEffectTarget::StaticClass, py::return_value_policy::reference)
         .def("CanReceiveStatusEffects", &UIStatusEffectTarget::CanReceiveStatusEffects)
         .def("ReactToPrimaryStatusEffect", &UIStatusEffectTarget::ReactToPrimaryStatusEffect)
         .def("Behavior_ClearStatusEffects", &UIStatusEffectTarget::Behavior_ClearStatusEffects)
-        .def("GetAttributeContextSource", &UIStatusEffectTarget::GetAttributeContextSource, return_value_policy< reference_existing_object >())
+        .def("GetAttributeContextSource", &UIStatusEffectTarget::GetAttributeContextSource, py::return_value_policy::reference)
         .def("GetDefaultDamageSurfaceType", &UIStatusEffectTarget::GetDefaultDamageSurfaceType)
         .def("GetBoundingSphereRadius", &UIStatusEffectTarget::GetBoundingSphereRadius)
         .def("AttachEmitter", &UIStatusEffectTarget::AttachEmitter)
-        .def("GetDefaultStatusEffectsParticleSystemTemplate", &UIStatusEffectTarget::GetDefaultStatusEffectsParticleSystemTemplate, return_value_policy< reference_existing_object >())
+        .def("GetDefaultStatusEffectsParticleSystemTemplate", &UIStatusEffectTarget::GetDefaultStatusEffectsParticleSystemTemplate, py::return_value_policy::reference)
         .def("GetDefaultStatusEffectSockets", &UIStatusEffectTarget::GetDefaultStatusEffectSockets)
-        .def("GetStatusEffectsComponent", &UIStatusEffectTarget::GetStatusEffectsComponent, return_value_policy< reference_existing_object >())
+        .def("GetStatusEffectsComponent", &UIStatusEffectTarget::GetStatusEffectsComponent, py::return_value_policy::reference)
         .def("GetHitRegions", &UIHitRegionInfoProvider::GetHitRegions)
         .staticmethod("StaticClass")
   ;

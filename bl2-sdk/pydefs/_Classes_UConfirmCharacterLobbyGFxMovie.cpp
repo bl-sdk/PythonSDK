@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UConfirmCharacterLobbyGFxMovie()
 {
-    class_< UConfirmCharacterLobbyGFxMovie, bases< UWillowGFxMovie >  , boost::noncopyable>("UConfirmCharacterLobbyGFxMovie", no_init)
+    py::class_< UConfirmCharacterLobbyGFxMovie,  UWillowGFxMovie   >("UConfirmCharacterLobbyGFxMovie")
         .def_readwrite("ConfirmCharacterLobbyObj", &UConfirmCharacterLobbyGFxMovie::ConfirmCharacterLobbyObj)
         .def_readonly("WPRI", &UConfirmCharacterLobbyGFxMovie::WPRI)
-        .def("StaticClass", &UConfirmCharacterLobbyGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UConfirmCharacterLobbyGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("SetHeader", &UConfirmCharacterLobbyGFxMovie::SetHeader)
         .def("SetCharacterInfo", &UConfirmCharacterLobbyGFxMovie::SetCharacterInfo)
         .def("Hide", &UConfirmCharacterLobbyGFxMovie::Hide)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_QueryTeleporterStatus()
 {
-    class_< UWillowSeqAct_QueryTeleporterStatus, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_QueryTeleporterStatus", no_init)
-        .def("StaticClass", &UWillowSeqAct_QueryTeleporterStatus::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_QueryTeleporterStatus,  USequenceAction   >("UWillowSeqAct_QueryTeleporterStatus")
+        .def("StaticClass", &UWillowSeqAct_QueryTeleporterStatus::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

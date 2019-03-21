@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoordinatedEffectThread()
 {
-    class_< FCoordinatedEffectThread >("FCoordinatedEffectThread", no_init)
+    py::class_< FCoordinatedEffectThread >("FCoordinatedEffectThread")
         .def_readwrite("EffectDefinition", &FCoordinatedEffectThread::EffectDefinition)
         .def_readwrite("IgnoreInstanceData", &FCoordinatedEffectThread::IgnoreInstanceData)
         .def_readwrite("LatentFloat", &FCoordinatedEffectThread::LatentFloat)

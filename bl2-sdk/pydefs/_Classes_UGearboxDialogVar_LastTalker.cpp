@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogVar_LastTalker()
 {
-    class_< UGearboxDialogVar_LastTalker, bases< UGearboxDialogVariable >  , boost::noncopyable>("UGearboxDialogVar_LastTalker", no_init)
-        .def("StaticClass", &UGearboxDialogVar_LastTalker::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxDialogVar_LastTalker,  UGearboxDialogVariable   >("UGearboxDialogVar_LastTalker")
+        .def("StaticClass", &UGearboxDialogVar_LastTalker::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

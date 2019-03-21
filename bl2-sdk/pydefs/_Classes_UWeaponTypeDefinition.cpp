@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponTypeDefinition()
 {
-    class_< UWeaponTypeDefinition, bases< UWillowInventoryDefinition >  , boost::noncopyable>("UWeaponTypeDefinition", no_init)
+    py::class_< UWeaponTypeDefinition,  UWillowInventoryDefinition   >("UWeaponTypeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWeaponTypeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UWeaponTypeDefinition::VfTable_IIConstructObject)
         .def_readwrite("WeaponType", &UWeaponTypeDefinition::WeaponType)
@@ -184,7 +184,7 @@ void Export_pystes_UWeaponTypeDefinition()
         .def_readwrite("MaintainTargetTime", &UWeaponTypeDefinition::MaintainTargetTime)
         .def_readwrite("VantageTagNames", &UWeaponTypeDefinition::VantageTagNames)
         .def_readwrite("BehaviorProviderDefinition", &UWeaponTypeDefinition::BehaviorProviderDefinition)
-        .def("StaticClass", &UWeaponTypeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnProjectileFired", &UWeaponTypeDefinition::OnProjectileFired)
         .def("OnTargetLockAcquired", &UWeaponTypeDefinition::OnTargetLockAcquired)
         .def("OnAltFireTriggered", &UWeaponTypeDefinition::OnAltFireTriggered)
@@ -197,7 +197,7 @@ void Export_pystes_UWeaponTypeDefinition()
         .def("GetHolsteredGearLikenessType", &UWeaponTypeDefinition::GetHolsteredGearLikenessType)
         .def("GetHolsteredWeaponSizeType", &UWeaponTypeDefinition::GetHolsteredWeaponSizeType)
         .def("SetBehaviorProviderDefinition", &UWeaponTypeDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UWeaponTypeDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UWeaponTypeDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

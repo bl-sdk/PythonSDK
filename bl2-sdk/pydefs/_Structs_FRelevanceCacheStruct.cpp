@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRelevanceCacheStruct()
 {
-    class_< FRelevanceCacheStruct >("FRelevanceCacheStruct", no_init)
+    py::class_< FRelevanceCacheStruct >("FRelevanceCacheStruct")
         .def_readwrite("RealViewerName", &FRelevanceCacheStruct::RealViewerName)
         .def_readwrite("ToPawnName", &FRelevanceCacheStruct::ToPawnName)
         .def_readwrite("TimeCached", &FRelevanceCacheStruct::TimeCached)

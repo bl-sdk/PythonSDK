@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNewsCacheEntry()
 {
-    class_< FNewsCacheEntry >("FNewsCacheEntry", no_init)
+    py::class_< FNewsCacheEntry >("FNewsCacheEntry")
         .def_readwrite("NewsUrl", &FNewsCacheEntry::NewsUrl)
         .def_readwrite("ReadState", &FNewsCacheEntry::ReadState)
         .def_readwrite("NewsType", &FNewsCacheEntry::NewsType)

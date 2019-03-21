@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASVehicle()
 {
-    class_< ASVehicle, bases< AVehicle >  , boost::noncopyable>("ASVehicle", no_init)
+    py::class_< ASVehicle,  AVehicle   >("ASVehicle")
         .def_readwrite("SimObj", &ASVehicle::SimObj)
         .def_readwrite("Wheels", &ASVehicle::Wheels)
         .def_readwrite("COMOffset", &ASVehicle::COMOffset)
@@ -51,7 +51,7 @@ void Export_pystes_ASVehicle()
         .def_readwrite("VState", &ASVehicle::VState)
         .def_readwrite("AngErrorAccumulator", &ASVehicle::AngErrorAccumulator)
         .def_readwrite("RadialImpulseScaling", &ASVehicle::RadialImpulseScaling)
-        .def("StaticClass", &ASVehicle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASVehicle::StaticClass, py::return_value_policy::reference)
         .def("GetSVehicleDebug", &ASVehicle::GetSVehicleDebug)
         .def("HermiteEval", &ASVehicle::HermiteEval)
         .def("PostTeleport", &ASVehicle::PostTeleport)

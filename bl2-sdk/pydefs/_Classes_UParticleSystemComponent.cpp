@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleSystemComponent()
 {
-    class_< UParticleSystemComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UParticleSystemComponent", no_init)
+    py::class_< UParticleSystemComponent,  UPrimitiveComponent   >("UParticleSystemComponent")
         .def_readwrite("Template", &UParticleSystemComponent::Template)
         .def_readwrite("LightEnvironmentClass", &UParticleSystemComponent::LightEnvironmentClass)
         .def_readwrite("LightEnvironmentSharedInstigator", &UParticleSystemComponent::LightEnvironmentSharedInstigator)
@@ -41,7 +41,7 @@ void Export_pystes_UParticleSystemComponent()
         .def_readwrite("EmitterDelay", &UParticleSystemComponent::EmitterDelay)
         .def_readwrite("AudioEventDelay", &UParticleSystemComponent::AudioEventDelay)
         .def_readwrite("LoopingAkPlayingInfo", &UParticleSystemComponent::LoopingAkPlayingInfo)
-        .def("StaticClass", &UParticleSystemComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleSystemComponent::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeParticleSystemActiveState", &UParticleSystemComponent::Behavior_ChangeParticleSystemActiveState)
         .def("Behavior_SetVectorParameterValue", &UParticleSystemComponent::Behavior_SetVectorParameterValue)
         .def("Behavior_SetColorParameterValue", &UParticleSystemComponent::Behavior_SetColorParameterValue)

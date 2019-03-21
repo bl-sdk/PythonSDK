@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxSeqAct_ResetPopulationCount()
 {
-    class_< UGearboxSeqAct_ResetPopulationCount, bases< USequenceAction >  , boost::noncopyable>("UGearboxSeqAct_ResetPopulationCount", no_init)
-        .def("StaticClass", &UGearboxSeqAct_ResetPopulationCount::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxSeqAct_ResetPopulationCount,  USequenceAction   >("UGearboxSeqAct_ResetPopulationCount")
+        .def("StaticClass", &UGearboxSeqAct_ResetPopulationCount::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

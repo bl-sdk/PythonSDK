@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_PrepareMapChange()
 {
-    class_< USeqAct_PrepareMapChange, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_PrepareMapChange", no_init)
+    py::class_< USeqAct_PrepareMapChange,  USeqAct_Latent   >("USeqAct_PrepareMapChange")
         .def_readwrite("MainLevelName", &USeqAct_PrepareMapChange::MainLevelName)
         .def_readwrite("InitiallyLoadedSecondaryLevelNames", &USeqAct_PrepareMapChange::InitiallyLoadedSecondaryLevelNames)
-        .def("StaticClass", &USeqAct_PrepareMapChange::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_PrepareMapChange::StaticClass, py::return_value_policy::reference)
         .def("SetSavedLevels", &USeqAct_PrepareMapChange::SetSavedLevels)
         .staticmethod("StaticClass")
   ;

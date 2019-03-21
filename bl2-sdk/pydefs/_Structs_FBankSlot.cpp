@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBankSlot()
 {
-    class_< FBankSlot >("FBankSlot", no_init)
+    py::class_< FBankSlot >("FBankSlot")
         .def_readwrite("InventorySerialNumber", &FBankSlot::InventorySerialNumber)
   ;
 }

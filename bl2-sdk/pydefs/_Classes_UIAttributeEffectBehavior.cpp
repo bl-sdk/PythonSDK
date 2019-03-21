@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIAttributeEffectBehavior()
 {
-    class_< UIAttributeEffectBehavior, bases< UInterface >  , boost::noncopyable>("UIAttributeEffectBehavior", no_init)
-        .def("StaticClass", &UIAttributeEffectBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIAttributeEffectBehavior,  UInterface   >("UIAttributeEffectBehavior")
+        .def("StaticClass", &UIAttributeEffectBehavior::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStaticMesh()
 {
-    class_< UStaticMesh, bases< UObject >  , boost::noncopyable>("UStaticMesh", no_init)
+    py::class_< UStaticMesh,  UObject   >("UStaticMesh")
         .def_readonly("UnknownData00", &UStaticMesh::UnknownData00)
         .def_readwrite("LODInfo", &UStaticMesh::LODInfo)
         .def_readwrite("LODDistanceRatio", &UStaticMesh::LODDistanceRatio)
@@ -18,7 +18,7 @@ void Export_pystes_UStaticMesh()
         .def_readwrite("DynamicShadowCastRelevance", &UStaticMesh::DynamicShadowCastRelevance)
         .def_readwrite("StreamingDistanceMultiplier", &UStaticMesh::StreamingDistanceMultiplier)
         .def_readonly("UnknownData03", &UStaticMesh::UnknownData03)
-        .def("StaticClass", &UStaticMesh::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStaticMesh::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

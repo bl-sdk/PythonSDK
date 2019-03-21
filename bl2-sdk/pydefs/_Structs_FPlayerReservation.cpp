@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerReservation()
 {
-    class_< FPlayerReservation >("FPlayerReservation", no_init)
+    py::class_< FPlayerReservation >("FPlayerReservation")
         .def_readwrite("NetId", &FPlayerReservation::NetId)
         .def_readwrite("Skill", &FPlayerReservation::Skill)
         .def_readwrite("XpLevel", &FPlayerReservation::XpLevel)

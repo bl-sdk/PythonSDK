@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FConditionalValueExpression()
 {
-    class_< FConditionalValueExpression >("FConditionalValueExpression", no_init)
+    py::class_< FConditionalValueExpression >("FConditionalValueExpression")
         .def_readwrite("BaseValueIfTrue", &FConditionalValueExpression::BaseValueIfTrue)
         .def_readwrite("Expressions", &FConditionalValueExpression::Expressions)
   ;

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleSubUVDirect()
 {
-    class_< UParticleModuleSubUVDirect, bases< UParticleModuleSubUVBase >  , boost::noncopyable>("UParticleModuleSubUVDirect", no_init)
+    py::class_< UParticleModuleSubUVDirect,  UParticleModuleSubUVBase   >("UParticleModuleSubUVDirect")
         .def_readwrite("SubUVPosition", &UParticleModuleSubUVDirect::SubUVPosition)
         .def_readwrite("SubUVSize", &UParticleModuleSubUVDirect::SubUVSize)
-        .def("StaticClass", &UParticleModuleSubUVDirect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleSubUVDirect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

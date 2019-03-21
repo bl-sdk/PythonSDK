@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDamageReactionData()
 {
-    class_< FDamageReactionData, bases< FSpecializedBehaviorEvent >  >("FDamageReactionData", no_init)
+    py::class_< FDamageReactionData,  FSpecializedBehaviorEvent   >("FDamageReactionData")
         .def_readwrite("DamageTriggers", &FDamageReactionData::DamageTriggers)
         .def_readwrite("PercentOfHealthTrigger", &FDamageReactionData::PercentOfHealthTrigger)
         .def_readwrite("DamageSpecialMove", &FDamageReactionData::DamageSpecialMove)

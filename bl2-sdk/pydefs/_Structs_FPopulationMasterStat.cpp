@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPopulationMasterStat()
 {
-    class_< FPopulationMasterStat >("FPopulationMasterStat", no_init)
+    py::class_< FPopulationMasterStat >("FPopulationMasterStat")
         .def_readwrite("StatName", &FPopulationMasterStat::StatName)
         .def_readwrite("StatTime", &FPopulationMasterStat::StatTime)
         .def_readwrite("StatMaxTime", &FPopulationMasterStat::StatMaxTime)

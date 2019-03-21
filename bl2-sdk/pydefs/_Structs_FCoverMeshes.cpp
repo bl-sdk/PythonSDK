@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoverMeshes()
 {
-    class_< FCoverMeshes >("FCoverMeshes", no_init)
+    py::class_< FCoverMeshes >("FCoverMeshes")
         .def_readwrite("Base", &FCoverMeshes::Base)
         .def_readwrite("LeanLeft", &FCoverMeshes::LeanLeft)
         .def_readwrite("LeanRight", &FCoverMeshes::LeanRight)

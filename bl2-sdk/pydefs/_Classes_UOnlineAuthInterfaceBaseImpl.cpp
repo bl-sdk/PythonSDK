@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineAuthInterfaceBaseImpl()
 {
-    class_< UOnlineAuthInterfaceBaseImpl, bases< UObject >  , boost::noncopyable>("UOnlineAuthInterfaceBaseImpl", no_init)
+    py::class_< UOnlineAuthInterfaceBaseImpl,  UObject   >("UOnlineAuthInterfaceBaseImpl")
         .def_readwrite("ClientAuthSessions", &UOnlineAuthInterfaceBaseImpl::ClientAuthSessions)
         .def_readwrite("ServerAuthSessions", &UOnlineAuthInterfaceBaseImpl::ServerAuthSessions)
         .def_readwrite("PeerAuthSessions", &UOnlineAuthInterfaceBaseImpl::PeerAuthSessions)
         .def_readwrite("LocalClientAuthSessions", &UOnlineAuthInterfaceBaseImpl::LocalClientAuthSessions)
         .def_readwrite("LocalServerAuthSessions", &UOnlineAuthInterfaceBaseImpl::LocalServerAuthSessions)
         .def_readwrite("LocalPeerAuthSessions", &UOnlineAuthInterfaceBaseImpl::LocalPeerAuthSessions)
-        .def("StaticClass", &UOnlineAuthInterfaceBaseImpl::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineAuthInterfaceBaseImpl::StaticClass, py::return_value_policy::reference)
         .def("GetServerAddr", &UOnlineAuthInterfaceBaseImpl::GetServerAddr)
         .def("GetServerUniqueId", &UOnlineAuthInterfaceBaseImpl::GetServerUniqueId)
         .def("FindLocalServerAuthSession", &UOnlineAuthInterfaceBaseImpl::FindLocalServerAuthSession)

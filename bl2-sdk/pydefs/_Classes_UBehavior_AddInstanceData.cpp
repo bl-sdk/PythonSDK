@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AddInstanceData()
 {
-    class_< UBehavior_AddInstanceData, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AddInstanceData", no_init)
+    py::class_< UBehavior_AddInstanceData,  UBehaviorBase   >("UBehavior_AddInstanceData")
         .def_readwrite("InstanceData", &UBehavior_AddInstanceData::InstanceData)
-        .def("StaticClass", &UBehavior_AddInstanceData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AddInstanceData::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AddInstanceData::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

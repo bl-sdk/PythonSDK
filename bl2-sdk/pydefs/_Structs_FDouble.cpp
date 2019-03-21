@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDouble()
 {
-    class_< FDouble >("FDouble", no_init)
+    py::class_< FDouble >("FDouble")
         .def_readwrite("A", &FDouble::A)
         .def_readwrite("B", &FDouble::B)
   ;

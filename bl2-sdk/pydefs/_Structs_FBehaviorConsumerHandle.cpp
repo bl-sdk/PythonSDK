@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorConsumerHandle()
 {
-    class_< FBehaviorConsumerHandle >("FBehaviorConsumerHandle", no_init)
+    py::class_< FBehaviorConsumerHandle >("FBehaviorConsumerHandle")
         .def_readwrite("PID", &FBehaviorConsumerHandle::PID)
   ;
 }

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleColorScaleOverDensity()
 {
-    class_< UParticleModuleColorScaleOverDensity, bases< UParticleModuleColorBase >  , boost::noncopyable>("UParticleModuleColorScaleOverDensity", no_init)
+    py::class_< UParticleModuleColorScaleOverDensity,  UParticleModuleColorBase   >("UParticleModuleColorScaleOverDensity")
         .def_readwrite("ColorScaleOverDensity", &UParticleModuleColorScaleOverDensity::ColorScaleOverDensity)
         .def_readwrite("AlphaScaleOverDensity", &UParticleModuleColorScaleOverDensity::AlphaScaleOverDensity)
-        .def("StaticClass", &UParticleModuleColorScaleOverDensity::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleColorScaleOverDensity::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

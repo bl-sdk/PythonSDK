@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpeedTravelData()
 {
-    class_< FSpeedTravelData >("FSpeedTravelData", no_init)
+    py::class_< FSpeedTravelData >("FSpeedTravelData")
         .def_readwrite("OriginLeaveTime", &FSpeedTravelData::OriginLeaveTime)
         .def_readwrite("OriginRegion", &FSpeedTravelData::OriginRegion)
   ;

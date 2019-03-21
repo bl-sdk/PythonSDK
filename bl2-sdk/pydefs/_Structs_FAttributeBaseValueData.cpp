@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributeBaseValueData()
 {
-    class_< FAttributeBaseValueData >("FAttributeBaseValueData", no_init)
+    py::class_< FAttributeBaseValueData >("FAttributeBaseValueData")
         .def_readwrite("Attribute", &FAttributeBaseValueData::Attribute)
         .def_readwrite("BaseValue", &FAttributeBaseValueData::BaseValue)
   ;

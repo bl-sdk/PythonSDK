@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerEvents()
 {
-    class_< FPlayerEvents >("FPlayerEvents", no_init)
+    py::class_< FPlayerEvents >("FPlayerEvents")
         .def_readwrite("TotalEvents", &FPlayerEvents::TotalEvents)
         .def_readwrite("WeaponEvents", &FPlayerEvents::WeaponEvents)
         .def_readwrite("DamageAsPlayerEvents", &FPlayerEvents::DamageAsPlayerEvents)

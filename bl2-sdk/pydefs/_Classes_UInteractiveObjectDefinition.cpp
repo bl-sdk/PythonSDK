@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInteractiveObjectDefinition()
 {
-    class_< UInteractiveObjectDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UInteractiveObjectDefinition", no_init)
+    py::class_< UInteractiveObjectDefinition,  UGBXDefinition   >("UInteractiveObjectDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UInteractiveObjectDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UInteractiveObjectDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UInteractiveObjectDefinition::VfTable_IIBehaviorProvider)
@@ -54,10 +54,10 @@ void Export_pystes_UInteractiveObjectDefinition()
         .def_readwrite("DominantShadowTransitionEndDistance", &UInteractiveObjectDefinition::DominantShadowTransitionEndDistance)
         .def_readwrite("SkelUpdate_ThrottleDistance", &UInteractiveObjectDefinition::SkelUpdate_ThrottleDistance)
         .def_readwrite("Skelupdate_ThrottleTime", &UInteractiveObjectDefinition::Skelupdate_ThrottleTime)
-        .def("StaticClass", &UInteractiveObjectDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInteractiveObjectDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetHitRegions", &UInteractiveObjectDefinition::GetHitRegions)
         .def("SetBehaviorProviderDefinition", &UInteractiveObjectDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UInteractiveObjectDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UInteractiveObjectDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .def("OnAllPickupsDetached", &UInteractiveObjectDefinition::OnAllPickupsDetached)
         .def("OnPickupDetached", &UInteractiveObjectDefinition::OnPickupDetached)
         .def("OnDispense", &UInteractiveObjectDefinition::OnDispense)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCharacterClassMessageDefinition()
 {
-    class_< UCharacterClassMessageDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UCharacterClassMessageDefinition", no_init)
+    py::class_< UCharacterClassMessageDefinition,  UGBXDefinition   >("UCharacterClassMessageDefinition")
         .def_readwrite("BehaviorTriggers", &UCharacterClassMessageDefinition::BehaviorTriggers)
-        .def("StaticClass", &UCharacterClassMessageDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCharacterClassMessageDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

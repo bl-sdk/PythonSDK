@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APopulationEncounter()
 {
-    class_< APopulationEncounter, bases< AInfo >  , boost::noncopyable>("APopulationEncounter", no_init)
+    py::class_< APopulationEncounter,  AInfo   >("APopulationEncounter")
         .def_readwrite("EncounterPopulationDef", &APopulationEncounter::EncounterPopulationDef)
         .def_readwrite("MemberOutposts", &APopulationEncounter::MemberOutposts)
         .def_readwrite("MemberOpportunities", &APopulationEncounter::MemberOpportunities)
@@ -14,7 +14,7 @@ void Export_pystes_APopulationEncounter()
         .def_readwrite("CurrentWave", &APopulationEncounter::CurrentWave)
         .def_readwrite("TimeToStartNextWave", &APopulationEncounter::TimeToStartNextWave)
         .def_readwrite("RespawnDelayStartTime", &APopulationEncounter::RespawnDelayStartTime)
-        .def("StaticClass", &APopulationEncounter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APopulationEncounter::StaticClass, py::return_value_policy::reference)
         .def("eventTriggerKismetAllSpawnedEvent", &APopulationEncounter::eventTriggerKismetAllSpawnedEvent)
         .def("eventTriggerKismetDeathEvent", &APopulationEncounter::eventTriggerKismetDeathEvent)
         .def("OnToggle", &APopulationEncounter::OnToggle)

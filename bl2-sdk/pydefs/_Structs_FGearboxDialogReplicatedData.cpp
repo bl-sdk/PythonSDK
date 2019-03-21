@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGearboxDialogReplicatedData()
 {
-    class_< FGearboxDialogReplicatedData >("FGearboxDialogReplicatedData", no_init)
+    py::class_< FGearboxDialogReplicatedData >("FGearboxDialogReplicatedData")
         .def_readwrite("Pitch", &FGearboxDialogReplicatedData::Pitch)
         .def_readwrite("TalkAkEvent", &FGearboxDialogReplicatedData::TalkAkEvent)
         .def_readwrite("AkAudioUniqueID", &FGearboxDialogReplicatedData::AkAudioUniqueID)

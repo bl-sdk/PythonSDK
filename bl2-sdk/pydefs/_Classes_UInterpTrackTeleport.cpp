@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackTeleport()
 {
-    class_< UInterpTrackTeleport, bases< UInterpTrack >  , boost::noncopyable>("UInterpTrackTeleport", no_init)
+    py::class_< UInterpTrackTeleport,  UInterpTrack   >("UInterpTrackTeleport")
         .def_readwrite("TeleportKeys", &UInterpTrackTeleport::TeleportKeys)
-        .def("StaticClass", &UInterpTrackTeleport::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackTeleport::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

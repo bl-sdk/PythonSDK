@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAutoAimStrategy()
 {
-    class_< UWillowAutoAimStrategy, bases< UObject >  , boost::noncopyable>("UWillowAutoAimStrategy", no_init)
+    py::class_< UWillowAutoAimStrategy,  UObject   >("UWillowAutoAimStrategy")
         .def_readwrite("DataDefinition", &UWillowAutoAimStrategy::DataDefinition)
         .def_readwrite("CurrentFrame", &UWillowAutoAimStrategy::CurrentFrame)
         .def_readwrite("LastFrame", &UWillowAutoAimStrategy::LastFrame)
@@ -20,13 +20,13 @@ void Export_pystes_UWillowAutoAimStrategy()
         .def_readwrite("PrevProfile", &UWillowAutoAimStrategy::PrevProfile)
         .def_readwrite("CurrentProfile", &UWillowAutoAimStrategy::CurrentProfile)
         .def_readwrite("TargetSet", &UWillowAutoAimStrategy::TargetSet)
-        .def("StaticClass", &UWillowAutoAimStrategy::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAutoAimStrategy::StaticClass, py::return_value_policy::reference)
         .def("SetTargetSet", &UWillowAutoAimStrategy::SetTargetSet)
         .def("SetAdjustOnMoveOnly", &UWillowAutoAimStrategy::SetAdjustOnMoveOnly)
         .def("SetLockingEnabled", &UWillowAutoAimStrategy::SetLockingEnabled)
         .def("GetLogMagnetismRange", &UWillowAutoAimStrategy::GetLogMagnetismRange)
         .def("eventDrawAutoAimDebug", &UWillowAutoAimStrategy::eventDrawAutoAimDebug)
-        .def("GetPreferredTarget", &UWillowAutoAimStrategy::GetPreferredTarget, return_value_policy< reference_existing_object >())
+        .def("GetPreferredTarget", &UWillowAutoAimStrategy::GetPreferredTarget, py::return_value_policy::reference)
         .def("ModifyInput", &UWillowAutoAimStrategy::ModifyInput)
         .staticmethod("StaticClass")
   ;

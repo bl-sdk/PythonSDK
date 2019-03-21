@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLevelStreamingStatus()
 {
-    class_< FLevelStreamingStatus >("FLevelStreamingStatus", no_init)
+    py::class_< FLevelStreamingStatus >("FLevelStreamingStatus")
         .def_readwrite("PackageName", &FLevelStreamingStatus::PackageName)
   ;
 }

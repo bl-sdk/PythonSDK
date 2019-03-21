@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxManagerDefinition()
 {
-    class_< UGFxManagerDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UGFxManagerDefinition", no_init)
+    py::class_< UGFxManagerDefinition,  UGBXDefinition   >("UGFxManagerDefinition")
         .def_readwrite("ManagerClass", &UGFxManagerDefinition::ManagerClass)
         .def_readwrite("GFxDialogBox", &UGFxManagerDefinition::GFxDialogBox)
         .def_readonly("UnknownData00", &UGFxManagerDefinition::UnknownData00)
         .def_readwrite("InteractionSounds", &UGFxManagerDefinition::InteractionSounds)
-        .def("StaticClass", &UGFxManagerDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxManagerDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

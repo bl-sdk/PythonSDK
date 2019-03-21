@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpecialMoveValuePair()
 {
-    class_< FSpecialMoveValuePair >("FSpecialMoveValuePair", no_init)
+    py::class_< FSpecialMoveValuePair >("FSpecialMoveValuePair")
         .def_readwrite("Key", &FSpecialMoveValuePair::Key)
         .def_readwrite("Value", &FSpecialMoveValuePair::Value)
   ;

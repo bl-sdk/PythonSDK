@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionFoliageNormalizedRotationAxisAndAngle()
 {
-    class_< UMaterialExpressionFoliageNormalizedRotationAxisAndAngle, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionFoliageNormalizedRotationAxisAndAngle", no_init)
-        .def("StaticClass", &UMaterialExpressionFoliageNormalizedRotationAxisAndAngle::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionFoliageNormalizedRotationAxisAndAngle,  UMaterialExpression   >("UMaterialExpressionFoliageNormalizedRotationAxisAndAngle")
+        .def("StaticClass", &UMaterialExpressionFoliageNormalizedRotationAxisAndAngle::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRootMotionCurve()
 {
-    class_< FRootMotionCurve >("FRootMotionCurve", no_init)
+    py::class_< FRootMotionCurve >("FRootMotionCurve")
         .def_readwrite("AnimName", &FRootMotionCurve::AnimName)
         .def_readwrite("Curve", &FRootMotionCurve::Curve)
         .def_readwrite("MaxCurveTime", &FRootMotionCurve::MaxCurveTime)

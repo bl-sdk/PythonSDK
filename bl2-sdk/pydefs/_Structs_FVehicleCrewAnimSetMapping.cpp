@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVehicleCrewAnimSetMapping()
 {
-    class_< FVehicleCrewAnimSetMapping >("FVehicleCrewAnimSetMapping", no_init)
+    py::class_< FVehicleCrewAnimSetMapping >("FVehicleCrewAnimSetMapping")
         .def_readwrite("CharacterName", &FVehicleCrewAnimSetMapping::CharacterName)
         .def_readwrite("TheAnimSet", &FVehicleCrewAnimSetMapping::TheAnimSet)
   ;

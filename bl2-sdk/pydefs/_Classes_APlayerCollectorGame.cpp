@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APlayerCollectorGame()
 {
-    class_< APlayerCollectorGame, bases< AGameInfo >  , boost::noncopyable>("APlayerCollectorGame", no_init)
+    py::class_< APlayerCollectorGame,  AGameInfo   >("APlayerCollectorGame")
         .def_readwrite("NumberOfClientsToWaitFor", &APlayerCollectorGame::NumberOfClientsToWaitFor)
         .def_readwrite("URLToLoad", &APlayerCollectorGame::URLToLoad)
-        .def("StaticClass", &APlayerCollectorGame::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APlayerCollectorGame::StaticClass, py::return_value_policy::reference)
         .def("eventGetSeamlessTravelActorList", &APlayerCollectorGame::eventGetSeamlessTravelActorList)
-        .def("eventLogin", &APlayerCollectorGame::eventLogin, return_value_policy< reference_existing_object >())
+        .def("eventLogin", &APlayerCollectorGame::eventLogin, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

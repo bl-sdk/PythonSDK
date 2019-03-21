@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPathFindData()
 {
-    class_< FPathFindData >("FPathFindData", no_init)
+    py::class_< FPathFindData >("FPathFindData")
         .def_readwrite("Path", &FPathFindData::Path)
         .def_readwrite("FinalDest", &FPathFindData::FinalDest)
         .def_readwrite("MaxRangeToDest", &FPathFindData::MaxRangeToDest)

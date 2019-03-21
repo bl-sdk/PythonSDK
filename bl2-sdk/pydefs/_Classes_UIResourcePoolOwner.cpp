@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIResourcePoolOwner()
 {
-    class_< UIResourcePoolOwner, bases< UInterface >  , boost::noncopyable>("UIResourcePoolOwner", no_init)
-        .def("StaticClass", &UIResourcePoolOwner::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIResourcePoolOwner,  UInterface   >("UIResourcePoolOwner")
+        .def("StaticClass", &UIResourcePoolOwner::StaticClass, py::return_value_policy::reference)
         .def("CanSetResourcePoolValues", &UIResourcePoolOwner::CanSetResourcePoolValues)
         .staticmethod("StaticClass")
   ;

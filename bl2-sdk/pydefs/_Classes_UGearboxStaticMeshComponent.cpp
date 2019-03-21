@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxStaticMeshComponent()
 {
-    class_< UGearboxStaticMeshComponent, bases< UStaticMeshComponent >  , boost::noncopyable>("UGearboxStaticMeshComponent", no_init)
+    py::class_< UGearboxStaticMeshComponent,  UStaticMeshComponent   >("UGearboxStaticMeshComponent")
         .def_readwrite("FOV", &UGearboxStaticMeshComponent::FOV)
-        .def("StaticClass", &UGearboxStaticMeshComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxStaticMeshComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

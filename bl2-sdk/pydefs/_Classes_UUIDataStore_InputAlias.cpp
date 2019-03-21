@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataStore_InputAlias()
 {
-    class_< UUIDataStore_InputAlias, bases< UUIDataStore_StringBase >  , boost::noncopyable>("UUIDataStore_InputAlias", no_init)
+    py::class_< UUIDataStore_InputAlias,  UUIDataStore_StringBase   >("UUIDataStore_InputAlias")
         .def_readwrite("InputAliases", &UUIDataStore_InputAlias::InputAliases)
         .def_readonly("UnknownData00", &UUIDataStore_InputAlias::UnknownData00)
-        .def("StaticClass", &UUIDataStore_InputAlias::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataStore_InputAlias::StaticClass, py::return_value_policy::reference)
         .def("HasAliasMappingForPlatform", &UUIDataStore_InputAlias::HasAliasMappingForPlatform)
         .def("FindInputAliasIndex", &UUIDataStore_InputAlias::FindInputAliasIndex)
         .def("GetAliasInputKeyDataByIndex", &UUIDataStore_InputAlias::GetAliasInputKeyDataByIndex)

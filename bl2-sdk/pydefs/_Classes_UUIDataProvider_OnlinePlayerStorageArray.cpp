@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_OnlinePlayerStorageArray()
 {
-    class_< UUIDataProvider_OnlinePlayerStorageArray, bases< UUIDataProvider >  , boost::noncopyable>("UUIDataProvider_OnlinePlayerStorageArray", no_init)
+    py::class_< UUIDataProvider_OnlinePlayerStorageArray,  UUIDataProvider   >("UUIDataProvider_OnlinePlayerStorageArray")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataProvider_OnlinePlayerStorageArray::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlinePlayerStorageArray::VfTable_IUIListElementCellProvider)
         .def_readwrite("PlayerStorage", &UUIDataProvider_OnlinePlayerStorageArray::PlayerStorage)
@@ -13,7 +13,7 @@ void Export_pystes_UUIDataProvider_OnlinePlayerStorageArray()
         .def_readwrite("PlayerStorageName", &UUIDataProvider_OnlinePlayerStorageArray::PlayerStorageName)
         .def_readwrite("ColumnHeaderText", &UUIDataProvider_OnlinePlayerStorageArray::ColumnHeaderText)
         .def_readwrite("Values", &UUIDataProvider_OnlinePlayerStorageArray::Values)
-        .def("StaticClass", &UUIDataProvider_OnlinePlayerStorageArray::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_OnlinePlayerStorageArray::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDWidget_Crosshairs()
 {
-    class_< UHUDWidget_Crosshairs, bases< UGFxObject >  , boost::noncopyable>("UHUDWidget_Crosshairs", no_init)
+    py::class_< UHUDWidget_Crosshairs,  UGFxObject   >("UHUDWidget_Crosshairs")
         .def_readwrite("CrosshairSize", &UHUDWidget_Crosshairs::CrosshairSize)
         .def_readwrite("CrosshairFrame", &UHUDWidget_Crosshairs::CrosshairFrame)
         .def_readwrite("CrosshairVisibility", &UHUDWidget_Crosshairs::CrosshairVisibility)
@@ -16,7 +16,7 @@ void Export_pystes_UHUDWidget_Crosshairs()
         .def_readwrite("ChargeClip", &UHUDWidget_Crosshairs::ChargeClip)
         .def_readwrite("WWeap", &UHUDWidget_Crosshairs::WWeap)
         .def_readwrite("MyHUDMovie", &UHUDWidget_Base::MyHUDMovie)
-        .def("StaticClass", &UHUDWidget_Crosshairs::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDWidget_Crosshairs::StaticClass, py::return_value_policy::reference)
         .def("AssociateWeapon", &UHUDWidget_Crosshairs::AssociateWeapon)
         .def("UpdateCrosshairColor", &UHUDWidget_Crosshairs::UpdateCrosshairColor)
         .def("UpdateCrosshairFrame", &UHUDWidget_Crosshairs::UpdateCrosshairFrame)

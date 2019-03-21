@@ -1,19 +1,19 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlinePlayerInterfaceEx()
 {
-    class_< UOnlinePlayerInterfaceEx, bases< UInterface >  , boost::noncopyable>("UOnlinePlayerInterfaceEx", no_init)
-        .def("StaticClass", &UOnlinePlayerInterfaceEx::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlinePlayerInterfaceEx,  UInterface   >("UOnlinePlayerInterfaceEx")
+        .def("StaticClass", &UOnlinePlayerInterfaceEx::StaticClass, py::return_value_policy::reference)
         .def("ShowRedeemCodeUI", &UOnlinePlayerInterfaceEx::ShowRedeemCodeUI)
         .def("ClearUnlockAvatarAwardCompleteDelegate", &UOnlinePlayerInterfaceEx::ClearUnlockAvatarAwardCompleteDelegate)
         .def("AddUnlockAvatarAwardCompleteDelegate", &UOnlinePlayerInterfaceEx::AddUnlockAvatarAwardCompleteDelegate)
         .def("OnUnlockAvatarAwardComplete", &UOnlinePlayerInterfaceEx::OnUnlockAvatarAwardComplete)
         .def("ShowCustomMessageUI", &UOnlinePlayerInterfaceEx::ShowCustomMessageUI)
         .def("ClearCrossTitleProfileSettings", &UOnlinePlayerInterfaceEx::ClearCrossTitleProfileSettings)
-        .def("GetCrossTitleProfileSettings", &UOnlinePlayerInterfaceEx::GetCrossTitleProfileSettings, return_value_policy< reference_existing_object >())
+        .def("GetCrossTitleProfileSettings", &UOnlinePlayerInterfaceEx::GetCrossTitleProfileSettings, py::return_value_policy::reference)
         .def("ClearReadCrossTitleProfileSettingsCompleteDelegate", &UOnlinePlayerInterfaceEx::ClearReadCrossTitleProfileSettingsCompleteDelegate)
         .def("AddReadCrossTitleProfileSettingsCompleteDelegate", &UOnlinePlayerInterfaceEx::AddReadCrossTitleProfileSettingsCompleteDelegate)
         .def("OnReadCrossTitleProfileSettingsComplete", &UOnlinePlayerInterfaceEx::OnReadCrossTitleProfileSettingsComplete)

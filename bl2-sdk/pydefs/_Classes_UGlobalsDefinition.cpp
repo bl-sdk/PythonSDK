@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGlobalsDefinition()
 {
-    class_< UGlobalsDefinition, bases< UGearboxGlobalsDefinition >  , boost::noncopyable>("UGlobalsDefinition", no_init)
+    py::class_< UGlobalsDefinition,  UGearboxGlobalsDefinition   >("UGlobalsDefinition")
         .def_readwrite("BulletReflectionRadius", &UGlobalsDefinition::BulletReflectionRadius)
         .def_readwrite("BulletReflectionSpeedAdjustment", &UGlobalsDefinition::BulletReflectionSpeedAdjustment)
         .def_readwrite("BulletReflectionParticle", &UGlobalsDefinition::BulletReflectionParticle)
@@ -363,14 +363,14 @@ void Export_pystes_UGlobalsDefinition()
         .def_readwrite("CustomizationApplicationEffectHead", &UGlobalsDefinition::CustomizationApplicationEffectHead)
         .def_readonly("AssetLibraries", &UGlobalsDefinition::AssetLibraries)
         .def_readwrite("BinkMovieVolumeScaleFactor", &UGlobalsDefinition::BinkMovieVolumeScaleFactor)
-        .def("StaticClass", &UGlobalsDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGlobalsDefinition::StaticClass, py::return_value_policy::reference)
         .def("eventGetDLCCharacterIconSwfMoviePath", &UGlobalsDefinition::eventGetDLCCharacterIconSwfMoviePath)
-        .def("FindUnlockDefinitionForUnlockCode", &UGlobalsDefinition::FindUnlockDefinitionForUnlockCode, return_value_policy< reference_existing_object >())
+        .def("FindUnlockDefinitionForUnlockCode", &UGlobalsDefinition::FindUnlockDefinitionForUnlockCode, py::return_value_policy::reference)
         .def("ApplySpinToPickup", &UGlobalsDefinition::ApplySpinToPickup)
         .def("ShouldUsePC360Buttons", &UGlobalsDefinition::ShouldUsePC360Buttons)
         .def("GetStatusEffectTypeProperties", &UGlobalsDefinition::GetStatusEffectTypeProperties)
         .def("GetStatusEffectChanceBasedOnExpLevelDifferences", &UGlobalsDefinition::GetStatusEffectChanceBasedOnExpLevelDifferences)
-        .def("GetAttributePresentationForAttribute", &UGlobalsDefinition::GetAttributePresentationForAttribute, return_value_policy< reference_existing_object >())
+        .def("GetAttributePresentationForAttribute", &UGlobalsDefinition::GetAttributePresentationForAttribute, py::return_value_policy::reference)
         .def("GetDropLifeSpanType", &UGlobalsDefinition::GetDropLifeSpanType)
         .def("GetRarityColorForRarityRating", &UGlobalsDefinition::GetRarityColorForRarityRating)
         .def("GetRarityColorForLevel", &UGlobalsDefinition::GetRarityColorForLevel)

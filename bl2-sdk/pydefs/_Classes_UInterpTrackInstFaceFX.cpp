@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstFaceFX()
 {
-    class_< UInterpTrackInstFaceFX, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstFaceFX", no_init)
+    py::class_< UInterpTrackInstFaceFX,  UInterpTrackInst   >("UInterpTrackInstFaceFX")
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstFaceFX::LastUpdatePosition)
-        .def("StaticClass", &UInterpTrackInstFaceFX::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstFaceFX::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

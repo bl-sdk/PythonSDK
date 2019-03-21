@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UISkillTreeListener()
 {
-    class_< UISkillTreeListener, bases< UInterface >  , boost::noncopyable>("UISkillTreeListener", no_init)
-        .def("StaticClass", &UISkillTreeListener::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UISkillTreeListener,  UInterface   >("UISkillTreeListener")
+        .def("StaticClass", &UISkillTreeListener::StaticClass, py::return_value_policy::reference)
         .def("HandleSkillTreeReset", &UISkillTreeListener::HandleSkillTreeReset)
         .staticmethod("StaticClass")
   ;

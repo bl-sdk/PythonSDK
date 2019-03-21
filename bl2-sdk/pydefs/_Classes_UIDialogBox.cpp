@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIDialogBox()
 {
-    class_< UIDialogBox, bases< UInterface >  , boost::noncopyable>("UIDialogBox", no_init)
-        .def("StaticClass", &UIDialogBox::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIDialogBox,  UInterface   >("UIDialogBox")
+        .def("StaticClass", &UIDialogBox::StaticClass, py::return_value_policy::reference)
         .def("eventDisplayYesNoBox", &UIDialogBox::eventDisplayYesNoBox)
         .def("eventDisplayOkBox", &UIDialogBox::eventDisplayOkBox)
         .def("eventApplyContentChanges", &UIDialogBox::eventApplyContentChanges)

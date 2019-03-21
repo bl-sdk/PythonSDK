@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionTransformPosition()
 {
-    class_< UMaterialExpressionTransformPosition, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionTransformPosition", no_init)
+    py::class_< UMaterialExpressionTransformPosition,  UMaterialExpression   >("UMaterialExpressionTransformPosition")
         .def_readwrite("Input", &UMaterialExpressionTransformPosition::Input)
         .def_readwrite("TransformType", &UMaterialExpressionTransformPosition::TransformType)
-        .def("StaticClass", &UMaterialExpressionTransformPosition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionTransformPosition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIChangeBehaviorSetStateBehavior()
 {
-    class_< UIChangeBehaviorSetStateBehavior, bases< UInterface >  , boost::noncopyable>("UIChangeBehaviorSetStateBehavior", no_init)
-        .def("StaticClass", &UIChangeBehaviorSetStateBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIChangeBehaviorSetStateBehavior,  UInterface   >("UIChangeBehaviorSetStateBehavior")
+        .def("StaticClass", &UIChangeBehaviorSetStateBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeBehaviorSet", &UIChangeBehaviorSetStateBehavior::Behavior_ChangeBehaviorSet)
         .staticmethod("StaticClass")
   ;

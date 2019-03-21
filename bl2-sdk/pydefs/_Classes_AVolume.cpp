@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AVolume()
 {
-    class_< AVolume, bases< AActor >  , boost::noncopyable>("AVolume", no_init)
+    py::class_< AVolume,  AActor   >("AVolume")
         .def_readwrite("AssociatedActors", &AVolume::AssociatedActors)
         .def_readwrite("CsgOper", &ABrush::CsgOper)
         .def_readwrite("BrushColor", &ABrush::BrushColor)
@@ -13,7 +13,7 @@ void Export_pystes_AVolume()
         .def_readwrite("Brush", &ABrush::Brush)
         .def_readwrite("BrushComponent", &ABrush::BrushComponent)
         .def_readwrite("SavedSelections", &ABrush::SavedSelections)
-        .def("StaticClass", &AVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AVolume::StaticClass, py::return_value_policy::reference)
         .def("eventProcessActorSetVolume", &AVolume::eventProcessActorSetVolume)
         .def("eventCollisionChanged", &AVolume::eventCollisionChanged)
         .def("OnToggle", &AVolume::OnToggle)

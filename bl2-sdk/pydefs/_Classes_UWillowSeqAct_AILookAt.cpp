@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_AILookAt()
 {
-    class_< UWillowSeqAct_AILookAt, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_AILookAt", no_init)
+    py::class_< UWillowSeqAct_AILookAt,  USequenceAction   >("UWillowSeqAct_AILookAt")
         .def_readwrite("LookAt", &UWillowSeqAct_AILookAt::LookAt)
-        .def("StaticClass", &UWillowSeqAct_AILookAt::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_AILookAt::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

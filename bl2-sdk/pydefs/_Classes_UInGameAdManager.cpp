@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInGameAdManager()
 {
-    class_< UInGameAdManager, bases< UObject >  , boost::noncopyable>("UInGameAdManager", no_init)
+    py::class_< UInGameAdManager,  UObject   >("UInGameAdManager")
         .def_readwrite("ClickedBannerDelegates", &UInGameAdManager::ClickedBannerDelegates)
         .def_readwrite("ClosedAdDelegates", &UInGameAdManager::ClosedAdDelegates)
-        .def("StaticClass", &UInGameAdManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInGameAdManager::StaticClass, py::return_value_policy::reference)
         .def("ClearClosedAdDelegate", &UInGameAdManager::ClearClosedAdDelegate)
         .def("AddClosedAdDelegate", &UInGameAdManager::AddClosedAdDelegate)
         .def("OnUserClosedAdvertisement", &UInGameAdManager::OnUserClosedAdvertisement)

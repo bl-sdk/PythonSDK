@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ACullDistanceVolume()
 {
-    class_< ACullDistanceVolume, bases< AVolume >  , boost::noncopyable>("ACullDistanceVolume", no_init)
+    py::class_< ACullDistanceVolume,  AVolume   >("ACullDistanceVolume")
         .def_readwrite("CullDistances", &ACullDistanceVolume::CullDistances)
-        .def("StaticClass", &ACullDistanceVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ACullDistanceVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

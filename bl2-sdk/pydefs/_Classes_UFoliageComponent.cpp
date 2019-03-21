@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFoliageComponent()
 {
-    class_< UFoliageComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UFoliageComponent", no_init)
+    py::class_< UFoliageComponent,  UPrimitiveComponent   >("UFoliageComponent")
         .def_readwrite("LitInstances", &UFoliageComponent::LitInstances)
         .def_readwrite("StaticallyRelevantLights", &UFoliageComponent::StaticallyRelevantLights)
         .def_readwrite("StaticallyIrrelevantLights", &UFoliageComponent::StaticallyIrrelevantLights)
@@ -19,7 +19,7 @@ void Export_pystes_UFoliageComponent()
         .def_readwrite("MinScale", &UFoliageComponent::MinScale)
         .def_readwrite("MaxScale", &UFoliageComponent::MaxScale)
         .def_readwrite("SwayScale", &UFoliageComponent::SwayScale)
-        .def("StaticClass", &UFoliageComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFoliageComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

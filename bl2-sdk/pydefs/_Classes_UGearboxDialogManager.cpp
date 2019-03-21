@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogManager()
 {
-    class_< UGearboxDialogManager, bases< UObject >  , boost::noncopyable>("UGearboxDialogManager", no_init)
+    py::class_< UGearboxDialogManager,  UObject   >("UGearboxDialogManager")
         .def_readwrite("Talkers", &UGearboxDialogManager::Talkers)
         .def_readwrite("DisabledTalkers", &UGearboxDialogManager::DisabledTalkers)
         .def_readwrite("Groups", &UGearboxDialogManager::Groups)
@@ -14,14 +14,14 @@ void Export_pystes_UGearboxDialogManager()
         .def_readwrite("EventDataPool", &UGearboxDialogManager::EventDataPool)
         .def_readwrite("EventDataClassPath", &UGearboxDialogManager::EventDataClassPath)
         .def_readwrite("EventDataClass", &UGearboxDialogManager::EventDataClass)
-        .def("StaticClass", &UGearboxDialogManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxDialogManager::StaticClass, py::return_value_policy::reference)
         .def("DrawDialogDebug", &UGearboxDialogManager::DrawDialogDebug)
         .def("CheckpointRemoveReferencesBeforeDestroy", &UGearboxDialogManager::CheckpointRemoveReferencesBeforeDestroy)
-        .def("GetEventTagForEventInfo", &UGearboxDialogManager::GetEventTagForEventInfo, return_value_policy< reference_existing_object >())
-        .def("TriggerGroupEvent", &UGearboxDialogManager::TriggerGroupEvent, return_value_policy< reference_existing_object >())
+        .def("GetEventTagForEventInfo", &UGearboxDialogManager::GetEventTagForEventInfo, py::return_value_policy::reference)
+        .def("TriggerGroupEvent", &UGearboxDialogManager::TriggerGroupEvent, py::return_value_policy::reference)
         .def("Cleanup", &UGearboxDialogManager::Cleanup)
         .def("SetGroupEventTag", &UGearboxDialogManager::SetGroupEventTag)
-        .def("GetGroupEventTag", &UGearboxDialogManager::GetGroupEventTag, return_value_policy< reference_existing_object >())
+        .def("GetGroupEventTag", &UGearboxDialogManager::GetGroupEventTag, py::return_value_policy::reference)
         .def("SilenceGroup", &UGearboxDialogManager::SilenceGroup)
         .def("AddGroup", &UGearboxDialogManager::AddGroup)
         .def("UnregisterTalker", &UGearboxDialogManager::UnregisterTalker)

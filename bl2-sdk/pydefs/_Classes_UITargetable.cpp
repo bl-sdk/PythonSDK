@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UITargetable()
 {
-    class_< UITargetable, bases< UInterface >  , boost::noncopyable>("UITargetable", no_init)
-        .def("StaticClass", &UITargetable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UITargetable,  UInterface   >("UITargetable")
+        .def("StaticClass", &UITargetable::StaticClass, py::return_value_policy::reference)
         .def("SetPatsy", &UITargetable::SetPatsy)
-        .def("GetPatsy", &UITargetable::GetPatsy, return_value_policy< reference_existing_object >())
+        .def("GetPatsy", &UITargetable::GetPatsy, py::return_value_policy::reference)
         .def("IsBeingHealed", &UITargetable::IsBeingHealed)
         .def("SetBeingHealed", &UITargetable::SetBeingHealed)
         .def("IsBoss", &UITargetable::IsBoss)
@@ -30,8 +30,8 @@ void Export_pystes_UITargetable()
         .def("ShowSelfAsTarget", &UITargetable::ShowSelfAsTarget)
         .def("GetOpinion", &UITargetable::GetOpinion)
         .def("SetAllegiance", &UITargetable::SetAllegiance)
-        .def("GetDefaultAllegiance", &UITargetable::GetDefaultAllegiance, return_value_policy< reference_existing_object >())
-        .def("GetObjectAllegiance", &UITargetable::GetObjectAllegiance, return_value_policy< reference_existing_object >())
+        .def("GetDefaultAllegiance", &UITargetable::GetDefaultAllegiance, py::return_value_policy::reference)
+        .def("GetObjectAllegiance", &UITargetable::GetObjectAllegiance, py::return_value_policy::reference)
         .def("IsSameAllegiance", &UITargetable::IsSameAllegiance)
         .def("IsNeutral", &UITargetable::IsNeutral)
         .def("IsFriendly", &UITargetable::IsFriendly)
@@ -44,7 +44,7 @@ void Export_pystes_UITargetable()
         .def("DisplayParentInfo", &UITargetable::DisplayParentInfo)
         .def("GetAllBarInfo", &UITargetable::GetAllBarInfo)
         .def("GetExpInfo", &UITargetable::GetExpInfo)
-        .def("GetTargetableActor", &UITargetable::GetTargetableActor, return_value_policy< reference_existing_object >())
+        .def("GetTargetableActor", &UITargetable::GetTargetableActor, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

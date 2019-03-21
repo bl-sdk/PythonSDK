@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTextureCoordinates()
 {
-    class_< FTextureCoordinates >("FTextureCoordinates", no_init)
+    py::class_< FTextureCoordinates >("FTextureCoordinates")
         .def_readwrite("U", &FTextureCoordinates::U)
         .def_readwrite("V", &FTextureCoordinates::V)
         .def_readwrite("UL", &FTextureCoordinates::UL)

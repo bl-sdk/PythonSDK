@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAkRtpc()
 {
-    class_< UAkRtpc, bases< UAkObject >  , boost::noncopyable>("UAkRtpc", no_init)
+    py::class_< UAkRtpc,  UAkObject   >("UAkRtpc")
         .def_readwrite("MinRange", &UAkRtpc::MinRange)
         .def_readwrite("MaxRange", &UAkRtpc::MaxRange)
-        .def("StaticClass", &UAkRtpc::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAkRtpc::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

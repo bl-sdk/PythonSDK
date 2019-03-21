@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetMorphNodeWeight()
 {
-    class_< UBehavior_SetMorphNodeWeight, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetMorphNodeWeight", no_init)
+    py::class_< UBehavior_SetMorphNodeWeight,  UBehaviorBase   >("UBehavior_SetMorphNodeWeight")
         .def_readwrite("MorphNodeName", &UBehavior_SetMorphNodeWeight::MorphNodeName)
         .def_readwrite("WeightTarget", &UBehavior_SetMorphNodeWeight::WeightTarget)
         .def_readwrite("WeightBlendTime", &UBehavior_SetMorphNodeWeight::WeightBlendTime)
-        .def("StaticClass", &UBehavior_SetMorphNodeWeight::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetMorphNodeWeight::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetMorphNodeWeight::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

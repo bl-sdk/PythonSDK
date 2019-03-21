@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIProjectileReflector()
 {
-    class_< UIProjectileReflector, bases< UInterface >  , boost::noncopyable>("UIProjectileReflector", no_init)
-        .def("StaticClass", &UIProjectileReflector::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIProjectileReflector,  UInterface   >("UIProjectileReflector")
+        .def("StaticClass", &UIProjectileReflector::StaticClass, py::return_value_policy::reference)
         .def("GetBulletReflectedOffSelfDamageScale", &UIProjectileReflector::GetBulletReflectedOffSelfDamageScale)
         .def("GetBulletReflectedOffEnemyDamageScale", &UIProjectileReflector::GetBulletReflectedOffEnemyDamageScale)
         .def("GetBulletReflectedOffSelfDamageTakenScale", &UIProjectileReflector::GetBulletReflectedOffSelfDamageTakenScale)

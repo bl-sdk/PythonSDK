@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActorParticleSystemParameter()
 {
-    class_< FActorParticleSystemParameter >("FActorParticleSystemParameter", no_init)
+    py::class_< FActorParticleSystemParameter >("FActorParticleSystemParameter")
         .def_readwrite("Name", &FActorParticleSystemParameter::Name)
         .def_readwrite("Context", &FActorParticleSystemParameter::Context)
   ;

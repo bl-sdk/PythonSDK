@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCurveEdTab()
 {
-    class_< FCurveEdTab >("FCurveEdTab", no_init)
+    py::class_< FCurveEdTab >("FCurveEdTab")
         .def_readwrite("TabName", &FCurveEdTab::TabName)
         .def_readwrite("Curves", &FCurveEdTab::Curves)
         .def_readwrite("ViewStartInput", &FCurveEdTab::ViewStartInput)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWorld()
 {
-    class_< UWorld, bases< UObject >  , boost::noncopyable>("UWorld", no_init)
+    py::class_< UWorld,  UObject   >("UWorld")
         .def_readonly("UnknownData00", &UWorld::UnknownData00)
-        .def("StaticClass", &UWorld::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWorld::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

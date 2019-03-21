@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_ForceFeedback()
 {
-    class_< UPlayerBehavior_ForceFeedback, bases< UPlayerBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_ForceFeedback", no_init)
+    py::class_< UPlayerBehavior_ForceFeedback,  UPlayerBehaviorBase   >("UPlayerBehavior_ForceFeedback")
         .def_readwrite("FFWaveform", &UPlayerBehavior_ForceFeedback::FFWaveform)
-        .def("StaticClass", &UPlayerBehavior_ForceFeedback::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerBehavior_ForceFeedback::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_ForceFeedback::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

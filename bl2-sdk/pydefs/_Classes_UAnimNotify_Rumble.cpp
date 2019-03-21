@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_Rumble()
 {
-    class_< UAnimNotify_Rumble, bases< UAnimNotify >  , boost::noncopyable>("UAnimNotify_Rumble", no_init)
+    py::class_< UAnimNotify_Rumble,  UAnimNotify   >("UAnimNotify_Rumble")
         .def_readwrite("PredefinedWaveForm", &UAnimNotify_Rumble::PredefinedWaveForm)
         .def_readwrite("WaveForm", &UAnimNotify_Rumble::WaveForm)
         .def_readwrite("EffectRadius", &UAnimNotify_Rumble::EffectRadius)
-        .def("StaticClass", &UAnimNotify_Rumble::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_Rumble::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

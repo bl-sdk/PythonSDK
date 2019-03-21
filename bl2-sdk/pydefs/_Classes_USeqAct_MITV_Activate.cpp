@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_MITV_Activate()
 {
-    class_< USeqAct_MITV_Activate, bases< USequenceAction >  , boost::noncopyable>("USeqAct_MITV_Activate", no_init)
+    py::class_< USeqAct_MITV_Activate,  USequenceAction   >("USeqAct_MITV_Activate")
         .def_readwrite("DurationOfMITV", &USeqAct_MITV_Activate::DurationOfMITV)
-        .def("StaticClass", &USeqAct_MITV_Activate::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_MITV_Activate::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &USeqAct_MITV_Activate::eventActivated)
         .def("eventGetObjClassVersion", &USeqAct_MITV_Activate::eventGetObjClassVersion)
         .staticmethod("StaticClass")

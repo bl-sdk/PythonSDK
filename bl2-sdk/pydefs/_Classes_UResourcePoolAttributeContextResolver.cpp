@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UResourcePoolAttributeContextResolver()
 {
-    class_< UResourcePoolAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UResourcePoolAttributeContextResolver", no_init)
+    py::class_< UResourcePoolAttributeContextResolver,  UAttributeContextResolver   >("UResourcePoolAttributeContextResolver")
         .def_readwrite("Resource", &UResourcePoolAttributeContextResolver::Resource)
-        .def("StaticClass", &UResourcePoolAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UResourcePoolAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

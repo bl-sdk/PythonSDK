@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClientConnectionRequest()
 {
-    class_< FClientConnectionRequest >("FClientConnectionRequest", no_init)
+    py::class_< FClientConnectionRequest >("FClientConnectionRequest")
         .def_readwrite("PlayerNetId", &FClientConnectionRequest::PlayerNetId)
         .def_readwrite("NatType", &FClientConnectionRequest::NatType)
         .def_readwrite("GoodHostRatio", &FClientConnectionRequest::GoodHostRatio)

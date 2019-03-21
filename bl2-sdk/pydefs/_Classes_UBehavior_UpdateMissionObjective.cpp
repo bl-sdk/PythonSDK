@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_UpdateMissionObjective()
 {
-    class_< UBehavior_UpdateMissionObjective, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_UpdateMissionObjective", no_init)
+    py::class_< UBehavior_UpdateMissionObjective,  UBehaviorBase   >("UBehavior_UpdateMissionObjective")
         .def_readwrite("MissionObjective", &UBehavior_UpdateMissionObjective::MissionObjective)
-        .def("StaticClass", &UBehavior_UpdateMissionObjective::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_UpdateMissionObjective::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_UpdateMissionObjective::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

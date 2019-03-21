@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTcpNetDriver()
 {
-    class_< UTcpNetDriver, bases< UNetDriver >  , boost::noncopyable>("UTcpNetDriver", no_init)
+    py::class_< UTcpNetDriver,  UNetDriver   >("UTcpNetDriver")
         .def_readonly("UnknownData00", &UTcpNetDriver::UnknownData00)
-        .def("StaticClass", &UTcpNetDriver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTcpNetDriver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

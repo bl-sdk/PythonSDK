@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIFocusable()
 {
-    class_< UIFocusable, bases< UInterface >  , boost::noncopyable>("UIFocusable", no_init)
-        .def("StaticClass", &UIFocusable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIFocusable,  UInterface   >("UIFocusable")
+        .def("StaticClass", &UIFocusable::StaticClass, py::return_value_policy::reference)
         .def("GetFocusScreenOffset", &UIFocusable::GetFocusScreenOffset)
         .def("GetFocusRadius", &UIFocusable::GetFocusRadius)
         .def("GetFocusLocation", &UIFocusable::GetFocusLocation)

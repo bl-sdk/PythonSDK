@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMeshComponentFactory()
 {
-    class_< UMeshComponentFactory, bases< UPrimitiveComponentFactory >  , boost::noncopyable>("UMeshComponentFactory", no_init)
+    py::class_< UMeshComponentFactory,  UPrimitiveComponentFactory   >("UMeshComponentFactory")
         .def_readwrite("Materials", &UMeshComponentFactory::Materials)
-        .def("StaticClass", &UMeshComponentFactory::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMeshComponentFactory::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

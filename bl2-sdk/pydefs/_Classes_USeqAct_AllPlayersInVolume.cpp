@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_AllPlayersInVolume()
 {
-    class_< USeqAct_AllPlayersInVolume, bases< USequenceAction >  , boost::noncopyable>("USeqAct_AllPlayersInVolume", no_init)
+    py::class_< USeqAct_AllPlayersInVolume,  USequenceAction   >("USeqAct_AllPlayersInVolume")
         .def_readwrite("Volumes", &USeqAct_AllPlayersInVolume::Volumes)
-        .def("StaticClass", &USeqAct_AllPlayersInVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_AllPlayersInVolume::StaticClass, py::return_value_policy::reference)
         .def("AllPlayersInVolumes", &USeqAct_AllPlayersInVolume::AllPlayersInVolumes)
         .def("PlayerIsInAVolume", &USeqAct_AllPlayersInVolume::PlayerIsInAVolume)
         .staticmethod("StaticClass")

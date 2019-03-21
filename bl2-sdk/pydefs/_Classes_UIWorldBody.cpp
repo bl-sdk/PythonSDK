@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIWorldBody()
 {
-    class_< UIWorldBody, bases< UInterface >  , boost::noncopyable>("UIWorldBody", no_init)
-        .def("StaticClass", &UIWorldBody::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIWorldBody,  UInterface   >("UIWorldBody")
+        .def("StaticClass", &UIWorldBody::StaticClass, py::return_value_policy::reference)
         .def("WorldBodyAttachComponent", &UIWorldBody::WorldBodyAttachComponent)
         .def("WorldBodyAttachActor", &UIWorldBody::WorldBodyAttachActor)
         .def("WorldBodyAttachTo", &UIWorldBody::WorldBodyAttachTo)
@@ -14,7 +14,7 @@ void Export_pystes_UIWorldBody()
         .def("GetWorldBodyAttachmentLocationAndRotation", &UIWorldBody::GetWorldBodyAttachmentLocationAndRotation)
         .def("GetWorldBodyAttachmentRotation", &UIWorldBody::GetWorldBodyAttachmentRotation)
         .def("GetWorldBodyAttachmentLocation", &UIWorldBody::GetWorldBodyAttachmentLocation)
-        .def("GetWorldBodyAttachmentBase", &UIWorldBody::GetWorldBodyAttachmentBase, return_value_policy< reference_existing_object >())
+        .def("GetWorldBodyAttachmentBase", &UIWorldBody::GetWorldBodyAttachmentBase, py::return_value_policy::reference)
         .def("GetWorldBodyVelocity", &UIWorldBody::GetWorldBodyVelocity)
         .def("GetWorldBodyRotation", &UIWorldBody::GetWorldBodyRotation)
         .def("GetWorldBodyLocation", &UIWorldBody::GetWorldBodyLocation)

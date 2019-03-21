@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowEmitterServerSide()
 {
-    class_< AWillowEmitterServerSide, bases< AWillowReplicatedEmitter >  , boost::noncopyable>("AWillowEmitterServerSide", no_init)
-        .def("StaticClass", &AWillowEmitterServerSide::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowEmitterServerSide,  AWillowReplicatedEmitter   >("AWillowEmitterServerSide")
+        .def("StaticClass", &AWillowEmitterServerSide::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

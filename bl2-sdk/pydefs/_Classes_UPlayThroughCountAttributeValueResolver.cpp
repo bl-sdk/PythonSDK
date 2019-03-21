@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayThroughCountAttributeValueResolver()
 {
-    class_< UPlayThroughCountAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UPlayThroughCountAttributeValueResolver", no_init)
+    py::class_< UPlayThroughCountAttributeValueResolver,  UAttributeValueResolver   >("UPlayThroughCountAttributeValueResolver")
         .def_readwrite("IncludePlaythroughThree", &UPlayThroughCountAttributeValueResolver::IncludePlaythroughThree)
-        .def("StaticClass", &UPlayThroughCountAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayThroughCountAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

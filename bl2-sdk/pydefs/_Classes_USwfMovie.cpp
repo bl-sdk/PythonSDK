@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USwfMovie()
 {
-    class_< USwfMovie, bases< UObject >  , boost::noncopyable>("USwfMovie", no_init)
+    py::class_< USwfMovie,  UObject   >("USwfMovie")
         .def_readwrite("PackTextureSize", &USwfMovie::PackTextureSize)
         .def_readwrite("TextureRescale", &USwfMovie::TextureRescale)
         .def_readwrite("DesiredMemArena", &USwfMovie::DesiredMemArena)
@@ -18,7 +18,7 @@ void Export_pystes_USwfMovie()
         .def_readwrite("ReferencedSwfs", &UGFxRawData::ReferencedSwfs)
         .def_readwrite("References", &UGFxRawData::References)
         .def_readwrite("UserReferences", &UGFxRawData::UserReferences)
-        .def("StaticClass", &USwfMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USwfMovie::StaticClass, py::return_value_policy::reference)
         .def("GetPathForLoadMovie", &USwfMovie::GetPathForLoadMovie)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FActionSequenceRecord()
 {
-    class_< FActionSequenceRecord, bases< FTimeStampedRecord >  >("FActionSequenceRecord", no_init)
+    py::class_< FActionSequenceRecord,  FTimeStampedRecord   >("FActionSequenceRecord")
         .def_readwrite("TheObj", &FActionSequenceRecord::TheObj)
         .def_readwrite("InUse", &FActionSequenceRecord::InUse)
   ;

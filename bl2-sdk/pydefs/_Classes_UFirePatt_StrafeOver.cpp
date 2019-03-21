@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFirePatt_StrafeOver()
 {
-    class_< UFirePatt_StrafeOver, bases< UFiringPattern >  , boost::noncopyable>("UFirePatt_StrafeOver", no_init)
+    py::class_< UFirePatt_StrafeOver,  UFiringPattern   >("UFirePatt_StrafeOver")
         .def_readwrite("CurrentAimRotation", &UFirePatt_StrafeOver::CurrentAimRotation)
         .def_readwrite("PitchDeltaPerShot", &UFirePatt_StrafeOver::PitchDeltaPerShot)
         .def_readwrite("MaxYawDeltaPerShot", &UFirePatt_StrafeOver::MaxYawDeltaPerShot)
@@ -14,7 +14,7 @@ void Export_pystes_UFirePatt_StrafeOver()
         .def_readwrite("LineOfShotsEndZ", &UFirePatt_StrafeOver::LineOfShotsEndZ)
         .def_readwrite("YawDeltaRatio", &UFirePatt_StrafeOver::YawDeltaRatio)
         .def_readwrite("TargetPosition", &UFirePatt_StrafeOver::TargetPosition)
-        .def("StaticClass", &UFirePatt_StrafeOver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFirePatt_StrafeOver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

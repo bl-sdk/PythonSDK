@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCreditsGFxObject()
 {
-    class_< UCreditsGFxObject, bases< UGFxObject >  , boost::noncopyable>("UCreditsGFxObject", no_init)
+    py::class_< UCreditsGFxObject,  UGFxObject   >("UCreditsGFxObject")
         .def_readwrite("CreditsDef", &UCreditsGFxObject::CreditsDef)
         .def_readwrite("CachedDelta", &UCreditsGFxObject::CachedDelta)
-        .def("StaticClass", &UCreditsGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCreditsGFxObject::StaticClass, py::return_value_policy::reference)
         .def("UpdateDelta", &UCreditsGFxObject::UpdateDelta)
         .def("StartCreditScroll", &UCreditsGFxObject::StartCreditScroll)
         .def("Init", &UCreditsGFxObject::Init)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSavedMove()
 {
-    class_< UWillowSavedMove, bases< USavedMove >  , boost::noncopyable>("UWillowSavedMove", no_init)
-        .def("StaticClass", &UWillowSavedMove::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSavedMove,  USavedMove   >("UWillowSavedMove")
+        .def("StaticClass", &UWillowSavedMove::StaticClass, py::return_value_policy::reference)
         .def("SetFlags", &UWillowSavedMove::SetFlags)
         .def("CompressedFlags", &UWillowSavedMove::CompressedFlags)
         .def("SetMoveFor", &UWillowSavedMove::SetMoveFor)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRecoilParams()
 {
-    class_< FRecoilParams >("FRecoilParams", no_init)
+    py::class_< FRecoilParams >("FRecoilParams")
         .def_readwrite("X", &FRecoilParams::X)
         .def_readwrite("Y", &FRecoilParams::Y)
         .def_readwrite("Z", &FRecoilParams::Z)

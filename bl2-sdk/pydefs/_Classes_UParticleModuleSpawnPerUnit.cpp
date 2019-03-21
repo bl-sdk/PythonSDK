@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleSpawnPerUnit()
 {
-    class_< UParticleModuleSpawnPerUnit, bases< UParticleModuleSpawnBase >  , boost::noncopyable>("UParticleModuleSpawnPerUnit", no_init)
+    py::class_< UParticleModuleSpawnPerUnit,  UParticleModuleSpawnBase   >("UParticleModuleSpawnPerUnit")
         .def_readwrite("UnitScalar", &UParticleModuleSpawnPerUnit::UnitScalar)
         .def_readwrite("SpawnPerUnit", &UParticleModuleSpawnPerUnit::SpawnPerUnit)
         .def_readwrite("MovementTolerance", &UParticleModuleSpawnPerUnit::MovementTolerance)
         .def_readwrite("MaxFrameDistance", &UParticleModuleSpawnPerUnit::MaxFrameDistance)
-        .def("StaticClass", &UParticleModuleSpawnPerUnit::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleSpawnPerUnit::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDefinitionUITestCaseDefinition()
 {
-    class_< UDefinitionUITestCaseDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UDefinitionUITestCaseDefinition", no_init)
+    py::class_< UDefinitionUITestCaseDefinition,  UGBXDefinition   >("UDefinitionUITestCaseDefinition")
         .def_readwrite("ConstantFloat", &UDefinitionUITestCaseDefinition::ConstantFloat)
         .def_readwrite("ConstantFloatArray", &UDefinitionUITestCaseDefinition::ConstantFloatArray)
         .def_readwrite("Float", &UDefinitionUITestCaseDefinition::Float)
@@ -14,7 +14,7 @@ void Export_pystes_UDefinitionUITestCaseDefinition()
         .def_readwrite("EditConstArrayOfReferences", &UDefinitionUITestCaseDefinition::EditConstArrayOfReferences)
         .def_readwrite("ReferencedDefinition", &UDefinitionUITestCaseDefinition::ReferencedDefinition)
         .def_readwrite("ArrayOfReferences", &UDefinitionUITestCaseDefinition::ArrayOfReferences)
-        .def("StaticClass", &UDefinitionUITestCaseDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDefinitionUITestCaseDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowCombatPoint()
 {
-    class_< AWillowCombatPoint, bases< AActor >  , boost::noncopyable>("AWillowCombatPoint", no_init)
+    py::class_< AWillowCombatPoint,  AActor   >("AWillowCombatPoint")
         .def_readwrite("ConstraintType", &AWillowCombatPoint::ConstraintType)
         .def_readwrite("ConstraintTags", &AWillowCombatPoint::ConstraintTags)
-        .def("StaticClass", &AWillowCombatPoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowCombatPoint::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

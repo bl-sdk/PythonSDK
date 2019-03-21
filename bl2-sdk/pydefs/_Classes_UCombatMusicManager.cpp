@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCombatMusicManager()
 {
-    class_< UCombatMusicManager, bases< UObject >  , boost::noncopyable>("UCombatMusicManager", no_init)
+    py::class_< UCombatMusicManager,  UObject   >("UCombatMusicManager")
         .def_readwrite("TargetedPlayerStates", &UCombatMusicManager::TargetedPlayerStates)
         .def_readwrite("TimeSinceLastUpdate", &UCombatMusicManager::TimeSinceLastUpdate)
         .def_readwrite("TimeOfNewCombatAction", &UCombatMusicManager::TimeOfNewCombatAction)
@@ -19,7 +19,7 @@ void Export_pystes_UCombatMusicManager()
         .def_readwrite("CurrentThreatValue", &UCombatMusicManager::CurrentThreatValue)
         .def_readwrite("CombatMusicParams", &UCombatMusicManager::CombatMusicParams)
         .def_readwrite("UpdateThreatDelta", &UCombatMusicManager::UpdateThreatDelta)
-        .def("StaticClass", &UCombatMusicManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCombatMusicManager::StaticClass, py::return_value_policy::reference)
         .def("GetDebugTime", &UCombatMusicManager::GetDebugTime)
         .def("ForceSetThreatLevel", &UCombatMusicManager::ForceSetThreatLevel)
         .def("ForceFadeOutCombatMusic", &UCombatMusicManager::ForceFadeOutCombatMusic)

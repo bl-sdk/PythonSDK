@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FImpactInfo()
 {
-    class_< FImpactInfo >("FImpactInfo", no_init)
+    py::class_< FImpactInfo >("FImpactInfo")
         .def_readwrite("HitActor", &FImpactInfo::HitActor)
         .def_readwrite("HitLocation", &FImpactInfo::HitLocation)
         .def_readwrite("HitNormal", &FImpactInfo::HitNormal)

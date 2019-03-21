@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineGameSettings()
 {
-    class_< UOnlineGameSettings, bases< UObject >  , boost::noncopyable>("UOnlineGameSettings", no_init)
+    py::class_< UOnlineGameSettings,  UObject   >("UOnlineGameSettings")
         .def_readwrite("NumPublicConnections", &UOnlineGameSettings::NumPublicConnections)
         .def_readwrite("NumPrivateConnections", &UOnlineGameSettings::NumPrivateConnections)
         .def_readwrite("NumOpenPublicConnections", &UOnlineGameSettings::NumOpenPublicConnections)
@@ -22,7 +22,7 @@ void Export_pystes_UOnlineGameSettings()
         .def_readwrite("Properties", &USettings::Properties)
         .def_readwrite("LocalizedSettingsMappings", &USettings::LocalizedSettingsMappings)
         .def_readwrite("PropertyMappings", &USettings::PropertyMappings)
-        .def("StaticClass", &UOnlineGameSettings::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineGameSettings::StaticClass, py::return_value_policy::reference)
         .def("GetGameVersionString", &UOnlineGameSettings::GetGameVersionString)
         .def("UpdateFromURL", &USettings::UpdateFromURL)
         .def("BuildURL", &USettings::BuildURL)

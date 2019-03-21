@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVantageSpot()
 {
-    class_< FVantageSpot >("FVantageSpot", no_init)
+    py::class_< FVantageSpot >("FVantageSpot")
         .def_readwrite("Location", &FVantageSpot::Location)
         .def_readwrite("VantageType", &FVantageSpot::VantageType)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_ConstraintInstance()
 {
-    class_< URB_ConstraintInstance, bases< UObject >  , boost::noncopyable>("URB_ConstraintInstance", no_init)
+    py::class_< URB_ConstraintInstance,  UObject   >("URB_ConstraintInstance")
         .def_readwrite("Owner", &URB_ConstraintInstance::Owner)
         .def_readwrite("OwnerComponent", &URB_ConstraintInstance::OwnerComponent)
         .def_readwrite("ConstraintIndex", &URB_ConstraintInstance::ConstraintIndex)
@@ -23,7 +23,7 @@ void Export_pystes_URB_ConstraintInstance()
         .def_readwrite("AngularDriveDamping", &URB_ConstraintInstance::AngularDriveDamping)
         .def_readwrite("AngularDriveForceLimit", &URB_ConstraintInstance::AngularDriveForceLimit)
         .def_readwrite("DummyKinActor", &URB_ConstraintInstance::DummyKinActor)
-        .def("StaticClass", &URB_ConstraintInstance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_ConstraintInstance::StaticClass, py::return_value_policy::reference)
         .def("MoveKinActorTransform", &URB_ConstraintInstance::MoveKinActorTransform)
         .def("SetLinearLimitSize", &URB_ConstraintInstance::SetLinearLimitSize)
         .def("SetAngularDOFLimitScale", &URB_ConstraintInstance::SetAngularDOFLimitScale)
@@ -39,7 +39,7 @@ void Export_pystes_URB_ConstraintInstance()
         .def("SetLinearVelocityDrive", &URB_ConstraintInstance::SetLinearVelocityDrive)
         .def("SetLinearPositionDrive", &URB_ConstraintInstance::SetLinearPositionDrive)
         .def("GetConstraintLocation", &URB_ConstraintInstance::GetConstraintLocation)
-        .def("GetPhysicsAssetInstance", &URB_ConstraintInstance::GetPhysicsAssetInstance, return_value_policy< reference_existing_object >())
+        .def("GetPhysicsAssetInstance", &URB_ConstraintInstance::GetPhysicsAssetInstance, py::return_value_policy::reference)
         .def("TermConstraint", &URB_ConstraintInstance::TermConstraint)
         .def("InitConstraint", &URB_ConstraintInstance::InitConstraint)
         .staticmethod("StaticClass")

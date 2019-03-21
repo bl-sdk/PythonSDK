@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_FollowPath()
 {
-    class_< UAction_FollowPath, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_FollowPath", no_init)
+    py::class_< UAction_FollowPath,  UWillowActionSequencePawn   >("UAction_FollowPath")
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)
         .def_readwrite("NextNode", &UAction_FollowPath::NextNode)
@@ -13,7 +13,7 @@ void Export_pystes_UAction_FollowPath()
         .def_readwrite("TimeToStopLooping", &UAction_FollowPath::TimeToStopLooping)
         .def_readwrite("BurrowEnter", &UAction_Burrow::BurrowEnter)
         .def_readwrite("BurrowExit", &UAction_Burrow::BurrowExit)
-        .def("StaticClass", &UAction_FollowPath::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_FollowPath::StaticClass, py::return_value_policy::reference)
         .def("PathAttemptFinished", &UAction_FollowPath::PathAttemptFinished)
         .def("PerchStop", &UAction_FollowPath::PerchStop)
         .def("PerchDone", &UAction_FollowPath::PerchDone)
@@ -29,7 +29,7 @@ void Export_pystes_UAction_FollowPath()
         .def("SetMoveTimer", &UAction_FollowPath::SetMoveTimer)
         .def("eventStop", &UAction_FollowPath::eventStop)
         .def("SetMoveNode", &UAction_FollowPath::SetMoveNode)
-        .def("GetMoveNode", &UAction_FollowPath::GetMoveNode, return_value_policy< reference_existing_object >())
+        .def("GetMoveNode", &UAction_FollowPath::GetMoveNode, py::return_value_policy::reference)
         .def("SetMoveFacingPolicy", &UAction_FollowPath::SetMoveFacingPolicy)
         .def("SetMoveNodeSpeed", &UAction_FollowPath::SetMoveNodeSpeed)
         .def("CheckCloaked", &UAction_Burrow::CheckCloaked)

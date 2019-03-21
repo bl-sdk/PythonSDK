@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDeathByDamageTypeStatID()
 {
-    class_< FDeathByDamageTypeStatID >("FDeathByDamageTypeStatID", no_init)
+    py::class_< FDeathByDamageTypeStatID >("FDeathByDamageTypeStatID")
         .def_readwrite("DamageType", &FDeathByDamageTypeStatID::DamageType)
         .def_readwrite("StatId", &FDeathByDamageTypeStatID::StatId)
   ;

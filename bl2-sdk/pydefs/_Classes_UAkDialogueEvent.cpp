@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAkDialogueEvent()
 {
-    class_< UAkDialogueEvent, bases< UAkObject >  , boost::noncopyable>("UAkDialogueEvent", no_init)
+    py::class_< UAkDialogueEvent,  UAkObject   >("UAkDialogueEvent")
         .def_readwrite("RequiredBank", &UAkDialogueEvent::RequiredBank)
         .def_readwrite("Arguments", &UAkDialogueEvent::Arguments)
         .def_readwrite("FaceFXAnimSet", &UAkDialogueEvent::FaceFXAnimSet)
-        .def("StaticClass", &UAkDialogueEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAkDialogueEvent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

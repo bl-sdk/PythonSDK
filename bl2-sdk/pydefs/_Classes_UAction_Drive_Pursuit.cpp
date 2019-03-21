@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_Drive_Pursuit()
 {
-    class_< UAction_Drive_Pursuit, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_Drive_Pursuit", no_init)
+    py::class_< UAction_Drive_Pursuit,  UWillowActionSequencePawn   >("UAction_Drive_Pursuit")
         .def_readwrite("TargetForwardVelocityStartAction", &UAction_Drive_Pursuit::TargetForwardVelocityStartAction)
         .def_readwrite("TargetForwardVelocityStopAction", &UAction_Drive_Pursuit::TargetForwardVelocityStopAction)
         .def_readwrite("TimeBeforeExitingActionIfTargetSlowsDown", &UAction_Drive_Pursuit::TimeBeforeExitingActionIfTargetSlowsDown)
@@ -36,7 +36,7 @@ void Export_pystes_UAction_Drive_Pursuit()
         .def_readwrite("RequiredDelayBetweenBoosts", &UAction_Drive_Pursuit::RequiredDelayBetweenBoosts)
         .def_readwrite("BreadCrumbCoalesceThreshold", &UAction_Drive_Pursuit::BreadCrumbCoalesceThreshold)
         .def_readwrite("OutOfCombatAreaGracePeriod", &UAction_Drive_Pursuit::OutOfCombatAreaGracePeriod)
-        .def("StaticClass", &UAction_Drive_Pursuit::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_Drive_Pursuit::StaticClass, py::return_value_policy::reference)
         .def("DisplayDebugBreadCrumbs", &UAction_Drive_Pursuit::DisplayDebugBreadCrumbs)
         .def("ReachedBreadCrumb", &UAction_Drive_Pursuit::ReachedBreadCrumb)
         .def("UpdateBreadCrumbs", &UAction_Drive_Pursuit::UpdateBreadCrumbs)

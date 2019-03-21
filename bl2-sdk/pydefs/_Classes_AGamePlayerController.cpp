@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGamePlayerController()
 {
-    class_< AGamePlayerController, bases< APlayerController >  , boost::noncopyable>("AGamePlayerController", no_init)
+    py::class_< AGamePlayerController,  APlayerController   >("AGamePlayerController")
         .def_readwrite("CurrentSoundMode", &AGamePlayerController::CurrentSoundMode)
-        .def("StaticClass", &AGamePlayerController::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGamePlayerController::StaticClass, py::return_value_policy::reference)
         .def("ClientColorFade", &AGamePlayerController::ClientColorFade)
         .def("CallMemLeakCheck", &AGamePlayerController::CallMemLeakCheck)
         .def("StopMemLeakChecking", &AGamePlayerController::StopMemLeakChecking)

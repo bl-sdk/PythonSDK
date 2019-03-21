@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVendingMachineGFxDefinition()
 {
-    class_< UVendingMachineGFxDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UVendingMachineGFxDefinition", no_init)
+    py::class_< UVendingMachineGFxDefinition,  UWillowGFxMovie3DDefinition   >("UVendingMachineGFxDefinition")
         .def_readwrite("StrictGiveUpDistance", &UVendingMachineGFxDefinition::StrictGiveUpDistance)
         .def_readwrite("LooseGiveUpDistance", &UVendingMachineGFxDefinition::LooseGiveUpDistance)
         .def_readwrite("StrictTolerance", &UVendingMachineGFxDefinition::StrictTolerance)
@@ -37,7 +37,7 @@ void Export_pystes_UVendingMachineGFxDefinition()
         .def_readwrite("Card1TextureLinkage", &UVendingMachineGFxDefinition::Card1TextureLinkage)
         .def_readwrite("Card2TextureLinkage", &UVendingMachineGFxDefinition::Card2TextureLinkage)
         .def_readwrite("RefreshInterval", &UVendingMachineGFxDefinition::RefreshInterval)
-        .def("StaticClass", &UVendingMachineGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVendingMachineGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

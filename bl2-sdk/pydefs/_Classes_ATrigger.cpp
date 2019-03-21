@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATrigger()
 {
-    class_< ATrigger, bases< AActor >  , boost::noncopyable>("ATrigger", no_init)
+    py::class_< ATrigger,  AActor   >("ATrigger")
         .def_readwrite("CylinderComponent", &ATrigger::CylinderComponent)
         .def_readwrite("AITriggerDelay", &ATrigger::AITriggerDelay)
-        .def("StaticClass", &ATrigger::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATrigger::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ATrigger::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ATrigger::CreateCheckpointRecord)
         .def("ShouldSaveForCheckpoint", &ATrigger::ShouldSaveForCheckpoint)

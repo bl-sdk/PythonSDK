@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInputDeviceDefinition()
 {
-    class_< UInputDeviceDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UInputDeviceDefinition", no_init)
+    py::class_< UInputDeviceDefinition,  UGBXDefinition   >("UInputDeviceDefinition")
         .def_readwrite("Axes", &UInputDeviceDefinition::Axes)
         .def_readwrite("LookAxisDefinitions", &UInputDeviceDefinition::LookAxisDefinitions)
         .def_readwrite("Buttons", &UInputDeviceDefinition::Buttons)
-        .def("StaticClass", &UInputDeviceDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInputDeviceDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

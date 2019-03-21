@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIPlayerMaster()
 {
-    class_< UIPlayerMaster, bases< UInterface >  , boost::noncopyable>("UIPlayerMaster", no_init)
-        .def("StaticClass", &UIPlayerMaster::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetPlayerMasterPlayerController", &UIPlayerMaster::GetPlayerMasterPlayerController, return_value_policy< reference_existing_object >())
+    py::class_< UIPlayerMaster,  UInterface   >("UIPlayerMaster")
+        .def("StaticClass", &UIPlayerMaster::StaticClass, py::return_value_policy::reference)
+        .def("GetPlayerMasterPlayerController", &UIPlayerMaster::GetPlayerMasterPlayerController, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

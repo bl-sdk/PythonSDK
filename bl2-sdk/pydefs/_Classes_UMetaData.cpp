@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMetaData()
 {
-    class_< UMetaData, bases< UObject >  , boost::noncopyable>("UMetaData", no_init)
+    py::class_< UMetaData,  UObject   >("UMetaData")
         .def_readonly("UnknownData00", &UMetaData::UnknownData00)
-        .def("StaticClass", &UMetaData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMetaData::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

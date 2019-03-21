@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIBalancedActor()
 {
-    class_< UIBalancedActor, bases< UInterface >  , boost::noncopyable>("UIBalancedActor", no_init)
-        .def("StaticClass", &UIBalancedActor::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIBalancedActor,  UInterface   >("UIBalancedActor")
+        .def("StaticClass", &UIBalancedActor::StaticClass, py::return_value_policy::reference)
         .def("GetBalancedActorTypeIdentifier", &UIBalancedActor::GetBalancedActorTypeIdentifier)
         .def("SetExpLevel", &UIBalancedActor::SetExpLevel)
         .def("SetAwesomeLevel", &UIBalancedActor::SetAwesomeLevel)

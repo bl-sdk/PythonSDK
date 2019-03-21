@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FObstacleData()
 {
-    class_< FObstacleData >("FObstacleData", no_init)
+    py::class_< FObstacleData >("FObstacleData")
         .def_readwrite("Actor", &FObstacleData::Actor)
         .def_readwrite("Leader", &FObstacleData::Leader)
         .def_readwrite("Radius", &FObstacleData::Radius)

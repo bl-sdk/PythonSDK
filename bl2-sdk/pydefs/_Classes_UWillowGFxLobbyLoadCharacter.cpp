@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxLobbyLoadCharacter()
 {
-    class_< UWillowGFxLobbyLoadCharacter, bases< UWillowGFxMovie >  , boost::noncopyable>("UWillowGFxLobbyLoadCharacter", no_init)
+    py::class_< UWillowGFxLobbyLoadCharacter,  UWillowGFxMovie   >("UWillowGFxLobbyLoadCharacter")
         .def_readwrite("LoadCharacterLobby", &UWillowGFxLobbyLoadCharacter::LoadCharacterLobby)
         .def_readwrite("DisplayedCharacterDataList", &UWillowGFxLobbyLoadCharacter::DisplayedCharacterDataList)
         .def_readwrite("SaveGameHelper", &UWillowGFxLobbyLoadCharacter::SaveGameHelper)
@@ -22,7 +22,7 @@ void Export_pystes_UWillowGFxLobbyLoadCharacter()
         .def_readwrite("LastDeletedLevel", &UWillowGFxLobbyLoadCharacter::LastDeletedLevel)
         .def_readwrite("LastDeletedGuid", &UWillowGFxLobbyLoadCharacter::LastDeletedGuid)
         .def_readwrite("LastClickedDataIndex", &UWillowGFxLobbyLoadCharacter::LastClickedDataIndex)
-        .def("StaticClass", &UWillowGFxLobbyLoadCharacter::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxLobbyLoadCharacter::StaticClass, py::return_value_policy::reference)
         .def("OnTick", &UWillowGFxLobbyLoadCharacter::OnTick)
         .def("SetTickInterval", &UWillowGFxLobbyLoadCharacter::SetTickInterval)
         .def("CanShowStorageSelector", &UWillowGFxLobbyLoadCharacter::CanShowStorageSelector)

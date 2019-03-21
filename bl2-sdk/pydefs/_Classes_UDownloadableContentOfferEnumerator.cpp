@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableContentOfferEnumerator()
 {
-    class_< UDownloadableContentOfferEnumerator, bases< UObject >  , boost::noncopyable>("UDownloadableContentOfferEnumerator", no_init)
+    py::class_< UDownloadableContentOfferEnumerator,  UObject   >("UDownloadableContentOfferEnumerator")
         .def_readwrite("CurrentEnumerationState", &UDownloadableContentOfferEnumerator::CurrentEnumerationState)
         .def_readwrite("MarketplaceOffers", &UDownloadableContentOfferEnumerator::MarketplaceOffers)
         .def_readwrite("FindDlcOfferDelegates", &UDownloadableContentOfferEnumerator::FindDlcOfferDelegates)
-        .def("StaticClass", &UDownloadableContentOfferEnumerator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadableContentOfferEnumerator::StaticClass, py::return_value_policy::reference)
         .def("IsBusy", &UDownloadableContentOfferEnumerator::IsBusy)
         .def("TriggerFindDlcOfferDelegates", &UDownloadableContentOfferEnumerator::TriggerFindDlcOfferDelegates)
         .def("ClearFindDlcOfferDelegate", &UDownloadableContentOfferEnumerator::ClearFindDlcOfferDelegate)

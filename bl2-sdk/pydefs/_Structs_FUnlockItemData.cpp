@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUnlockItemData()
 {
-    class_< FUnlockItemData >("FUnlockItemData", no_init)
+    py::class_< FUnlockItemData >("FUnlockItemData")
         .def_readwrite("GameStage", &FUnlockItemData::GameStage)
         .def_readwrite("UnlockItems", &FUnlockItemData::UnlockItems)
         .def_readwrite("UnlockItemPools", &FUnlockItemData::UnlockItemPools)

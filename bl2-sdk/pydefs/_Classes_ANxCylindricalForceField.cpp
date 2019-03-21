@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANxCylindricalForceField()
 {
-    class_< ANxCylindricalForceField, bases< ANxForceField >  , boost::noncopyable>("ANxCylindricalForceField", no_init)
+    py::class_< ANxCylindricalForceField,  ANxForceField   >("ANxCylindricalForceField")
         .def_readwrite("RadialStrength", &ANxCylindricalForceField::RadialStrength)
         .def_readwrite("RotationalStrength", &ANxCylindricalForceField::RotationalStrength)
         .def_readwrite("LiftStrength", &ANxCylindricalForceField::LiftStrength)
@@ -16,7 +16,7 @@ void Export_pystes_ANxCylindricalForceField()
         .def_readwrite("ForceHeight", &ANxCylindricalForceField::ForceHeight)
         .def_readwrite("HeightOffset", &ANxCylindricalForceField::HeightOffset)
         .def_readwrite("Kernel", &ANxCylindricalForceField::Kernel)
-        .def("StaticClass", &ANxCylindricalForceField::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANxCylindricalForceField::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

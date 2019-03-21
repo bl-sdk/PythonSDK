@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInteractiveObjectGameStageGradeWeightData()
 {
-    class_< FInteractiveObjectGameStageGradeWeightData, bases< FGameStageGradeWeightData >  >("FInteractiveObjectGameStageGradeWeightData", no_init)
+    py::class_< FInteractiveObjectGameStageGradeWeightData,  FGameStageGradeWeightData   >("FInteractiveObjectGameStageGradeWeightData")
         .def_readwrite("GradeModifiers", &FInteractiveObjectGameStageGradeWeightData::GradeModifiers)
   ;
 }

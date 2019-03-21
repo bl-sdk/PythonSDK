@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqEvent_TimerElapsed()
 {
-    class_< UWillowSeqEvent_TimerElapsed, bases< USequenceEvent >  , boost::noncopyable>("UWillowSeqEvent_TimerElapsed", no_init)
+    py::class_< UWillowSeqEvent_TimerElapsed,  USequenceEvent   >("UWillowSeqEvent_TimerElapsed")
         .def_readwrite("Event", &UWillowSeqEvent_TimerElapsed::Event)
-        .def("StaticClass", &UWillowSeqEvent_TimerElapsed::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqEvent_TimerElapsed::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

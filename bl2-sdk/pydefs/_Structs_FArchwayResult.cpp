@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FArchwayResult()
 {
-    class_< FArchwayResult >("FArchwayResult", no_init)
+    py::class_< FArchwayResult >("FArchwayResult")
         .def_readwrite("RequestId", &FArchwayResult::RequestId)
         .def_readwrite("GearboxUserToken", &FArchwayResult::GearboxUserToken)
         .def_readwrite("GearboxUserEmail", &FArchwayResult::GearboxUserEmail)

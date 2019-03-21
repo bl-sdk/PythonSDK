@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDynamicResourceProviderDefinition()
 {
-    class_< FDynamicResourceProviderDefinition >("FDynamicResourceProviderDefinition", no_init)
+    py::class_< FDynamicResourceProviderDefinition >("FDynamicResourceProviderDefinition")
         .def_readwrite("ProviderTag", &FDynamicResourceProviderDefinition::ProviderTag)
         .def_readwrite("ProviderClassName", &FDynamicResourceProviderDefinition::ProviderClassName)
         .def_readwrite("ProviderClass", &FDynamicResourceProviderDefinition::ProviderClass)

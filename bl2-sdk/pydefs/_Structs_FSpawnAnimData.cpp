@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpawnAnimData()
 {
-    class_< FSpawnAnimData >("FSpawnAnimData", no_init)
+    py::class_< FSpawnAnimData >("FSpawnAnimData")
         .def_readwrite("Key", &FSpawnAnimData::Key)
         .def_readwrite("AnimPairs", &FSpawnAnimData::AnimPairs)
         .def_readwrite("PreviewMeshOffset", &FSpawnAnimData::PreviewMeshOffset)

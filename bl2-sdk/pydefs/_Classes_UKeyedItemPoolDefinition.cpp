@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UKeyedItemPoolDefinition()
 {
-    class_< UKeyedItemPoolDefinition, bases< UItemPoolDefinition >  , boost::noncopyable>("UKeyedItemPoolDefinition", no_init)
+    py::class_< UKeyedItemPoolDefinition,  UItemPoolDefinition   >("UKeyedItemPoolDefinition")
         .def_readwrite("Key", &UKeyedItemPoolDefinition::Key)
-        .def("StaticClass", &UKeyedItemPoolDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UKeyedItemPoolDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

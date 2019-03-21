@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowRegionDefinition()
 {
-    class_< UWillowRegionDefinition, bases< URegionDefinition >  , boost::noncopyable>("UWillowRegionDefinition", no_init)
+    py::class_< UWillowRegionDefinition,  URegionDefinition   >("UWillowRegionDefinition")
         .def_readwrite("DlcExpansion", &UWillowRegionDefinition::DlcExpansion)
-        .def("StaticClass", &UWillowRegionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowRegionDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetAwesomeLevelOverride", &UWillowRegionDefinition::SetAwesomeLevelOverride)
         .def("SetGameStageOverride", &UWillowRegionDefinition::SetGameStageOverride)
         .def("GetDefaultRegionGameStage", &UWillowRegionDefinition::GetDefaultRegionGameStage)

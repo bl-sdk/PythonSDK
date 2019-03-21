@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameplayEventsReader()
 {
-    class_< UGameplayEventsReader, bases< UObject >  , boost::noncopyable>("UGameplayEventsReader", no_init)
+    py::class_< UGameplayEventsReader,  UObject   >("UGameplayEventsReader")
         .def_readwrite("RegisteredHandlers", &UGameplayEventsReader::RegisteredHandlers)
         .def_readwrite("Archive", &UGameplayEvents::Archive)
         .def_readwrite("StatsFileName", &UGameplayEvents::StatsFileName)
@@ -20,7 +20,7 @@ void Export_pystes_UGameplayEventsReader()
         .def_readwrite("PawnClassArray", &UGameplayEvents::PawnClassArray)
         .def_readwrite("ActorArray", &UGameplayEvents::ActorArray)
         .def_readwrite("SoundCueArray", &UGameplayEvents::SoundCueArray)
-        .def("StaticClass", &UGameplayEventsReader::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameplayEventsReader::StaticClass, py::return_value_policy::reference)
         .def("GetSessionDuration", &UGameplayEventsReader::GetSessionDuration)
         .def("GetSessionEnd", &UGameplayEventsReader::GetSessionEnd)
         .def("GetSessionStart", &UGameplayEventsReader::GetSessionStart)

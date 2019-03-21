@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_WeaponsRestriction()
 {
-    class_< UBehavior_WeaponsRestriction, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_WeaponsRestriction", no_init)
-        .def("StaticClass", &UBehavior_WeaponsRestriction::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehavior_WeaponsRestriction,  UBehaviorBase   >("UBehavior_WeaponsRestriction")
+        .def("StaticClass", &UBehavior_WeaponsRestriction::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_WeaponsRestriction::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_ChangeCollision()
 {
-    class_< USeqAct_ChangeCollision, bases< USequenceAction >  , boost::noncopyable>("USeqAct_ChangeCollision", no_init)
+    py::class_< USeqAct_ChangeCollision,  USequenceAction   >("USeqAct_ChangeCollision")
         .def_readwrite("CollisionType", &USeqAct_ChangeCollision::CollisionType)
-        .def("StaticClass", &USeqAct_ChangeCollision::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_ChangeCollision::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ChangeCollision::eventGetObjClassVersion)
         .staticmethod("StaticClass")
   ;

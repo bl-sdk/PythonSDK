@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AStationTeleporterDestination()
 {
-    class_< AStationTeleporterDestination, bases< ATeleporterDestination >  , boost::noncopyable>("AStationTeleporterDestination", no_init)
+    py::class_< AStationTeleporterDestination,  ATeleporterDestination   >("AStationTeleporterDestination")
         .def_readwrite("ExitPointRadius", &AStationTeleporterDestination::ExitPointRadius)
         .def_readwrite("ExitPointHeight", &AStationTeleporterDestination::ExitPointHeight)
-        .def("StaticClass", &AStationTeleporterDestination::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AStationTeleporterDestination::StaticClass, py::return_value_policy::reference)
         .def("UpdateExitPointHeights", &AStationTeleporterDestination::UpdateExitPointHeights)
         .def("UpdateExitPointLocations", &AStationTeleporterDestination::UpdateExitPointLocations)
         .def("eventDestroyed", &AStationTeleporterDestination::eventDestroyed)

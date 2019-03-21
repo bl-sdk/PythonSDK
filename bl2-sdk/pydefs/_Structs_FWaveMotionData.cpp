@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWaveMotionData()
 {
-    class_< FWaveMotionData >("FWaveMotionData", no_init)
+    py::class_< FWaveMotionData >("FWaveMotionData")
         .def_readwrite("WaveFreq", &FWaveMotionData::WaveFreq)
         .def_readwrite("WaveAmp", &FWaveMotionData::WaveAmp)
         .def_readwrite("WavePhase", &FWaveMotionData::WavePhase)

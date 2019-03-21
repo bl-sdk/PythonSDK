@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxDialogActor()
 {
-    class_< AGearboxDialogActor, bases< AActor >  , boost::noncopyable>("AGearboxDialogActor", no_init)
+    py::class_< AGearboxDialogActor,  AActor   >("AGearboxDialogActor")
         .def_readwrite("VfTable_IGearboxDialogInterface", &AGearboxDialogActor::VfTable_IGearboxDialogInterface)
         .def_readwrite("DialogGroups", &AGearboxDialogActor::DialogGroups)
         .def_readwrite("NameTag", &AGearboxDialogActor::NameTag)
@@ -13,14 +13,14 @@ void Export_pystes_AGearboxDialogActor()
         .def_readwrite("DialogComponent", &AGearboxDialogActor::DialogComponent)
         .def_readwrite("DialogReplicatedData", &AGearboxDialogActor::DialogReplicatedData)
         .def_readwrite("CurrentNameTag", &AGearboxDialogActor::CurrentNameTag)
-        .def("StaticClass", &AGearboxDialogActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGearboxDialogActor::StaticClass, py::return_value_policy::reference)
         .def("SetDialogNameTag", &AGearboxDialogActor::SetDialogNameTag)
         .def("GetReplicatedDialogData", &AGearboxDialogActor::GetReplicatedDialogData)
         .def("SetReplicatedDialogData", &AGearboxDialogActor::SetReplicatedDialogData)
         .def("GetDialogGroups", &AGearboxDialogActor::GetDialogGroups)
-        .def("GetDialogComponent", &AGearboxDialogActor::GetDialogComponent, return_value_policy< reference_existing_object >())
-        .def("GetDialogNameTag", &AGearboxDialogActor::GetDialogNameTag, return_value_policy< reference_existing_object >())
-        .def("GetActor", &AGearboxDialogActor::GetActor, return_value_policy< reference_existing_object >())
+        .def("GetDialogComponent", &AGearboxDialogActor::GetDialogComponent, py::return_value_policy::reference)
+        .def("GetDialogNameTag", &AGearboxDialogActor::GetDialogNameTag, py::return_value_policy::reference)
+        .def("GetActor", &AGearboxDialogActor::GetActor, py::return_value_policy::reference)
         .def("CanTalk", &AGearboxDialogActor::CanTalk)
         .def("eventServerDialog_TriggerEvent", &AGearboxDialogActor::eventServerDialog_TriggerEvent)
         .def("eventReplicatedEvent", &AGearboxDialogActor::eventReplicatedEvent)

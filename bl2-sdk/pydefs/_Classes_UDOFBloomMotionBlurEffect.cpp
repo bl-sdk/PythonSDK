@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDOFBloomMotionBlurEffect()
 {
-    class_< UDOFBloomMotionBlurEffect, bases< UPostProcessEffect >  , boost::noncopyable>("UDOFBloomMotionBlurEffect", no_init)
+    py::class_< UDOFBloomMotionBlurEffect,  UPostProcessEffect   >("UDOFBloomMotionBlurEffect")
         .def_readwrite("MaxVelocity", &UDOFBloomMotionBlurEffect::MaxVelocity)
         .def_readwrite("MotionBlurAmount", &UDOFBloomMotionBlurEffect::MotionBlurAmount)
         .def_readwrite("CameraRotationThreshold", &UDOFBloomMotionBlurEffect::CameraRotationThreshold)
@@ -39,7 +39,7 @@ void Export_pystes_UDOFBloomMotionBlurEffect()
         .def_readwrite("FocusDistanceOverride", &UDOFEffect::FocusDistanceOverride)
         .def_readwrite("TunnelVisionScaleOverride", &UDOFEffect::TunnelVisionScaleOverride)
         .def_readwrite("TunnelVisionYOffsetOverride", &UDOFEffect::TunnelVisionYOffsetOverride)
-        .def("StaticClass", &UDOFBloomMotionBlurEffect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDOFBloomMotionBlurEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRuleSetReference()
 {
-    class_< FRuleSetReference >("FRuleSetReference", no_init)
+    py::class_< FRuleSetReference >("FRuleSetReference")
         .def_readwrite("ReferenceName", &FRuleSetReference::ReferenceName)
         .def_readwrite("ReferenceRuleSet", &FRuleSetReference::ReferenceRuleSet)
   ;

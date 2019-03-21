@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBodyHitRegionDefinition()
 {
-    class_< UBodyHitRegionDefinition, bases< UBaseHitRegionDefinition >  , boost::noncopyable>("UBodyHitRegionDefinition", no_init)
+    py::class_< UBodyHitRegionDefinition,  UBaseHitRegionDefinition   >("UBodyHitRegionDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyHitRegionDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UBodyHitRegionDefinition::VfTable_IIConstructObject)
         .def_readwrite("HitRegionName", &UBodyHitRegionDefinition::HitRegionName)
@@ -37,7 +37,7 @@ void Export_pystes_UBodyHitRegionDefinition()
         .def_readwrite("StatusEffectDamageModifierOverride", &UBodyHitRegionDefinition::StatusEffectDamageModifierOverride)
         .def_readwrite("OverrideDeathDef", &UBodyHitRegionDefinition::OverrideDeathDef)
         .def_readwrite("BehaviorProviderDefinition", &UBodyHitRegionDefinition::BehaviorProviderDefinition)
-        .def("StaticClass", &UBodyHitRegionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBodyHitRegionDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnHealingReaction", &UBodyHitRegionDefinition::OnHealingReaction)
         .def("OnRegionRejuvenate", &UBodyHitRegionDefinition::OnRegionRejuvenate)
         .def("OnReflectedProjectile", &UBodyHitRegionDefinition::OnReflectedProjectile)
@@ -45,7 +45,7 @@ void Export_pystes_UBodyHitRegionDefinition()
         .def("OnDamageReaction", &UBodyHitRegionDefinition::OnDamageReaction)
         .def("OnRegionDeath", &UBodyHitRegionDefinition::OnRegionDeath)
         .def("SetBehaviorProviderDefinition", &UBodyHitRegionDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UBodyHitRegionDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UBodyHitRegionDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .def("GetDamageSurfaceType", &UBodyHitRegionDefinition::GetDamageSurfaceType)
         .def("GetDamageModifierPercentForImpact", &UBodyHitRegionDefinition::GetDamageModifierPercentForImpact)
         .def("GetResponseForImpact", &UBodyHitRegionDefinition::GetResponseForImpact)

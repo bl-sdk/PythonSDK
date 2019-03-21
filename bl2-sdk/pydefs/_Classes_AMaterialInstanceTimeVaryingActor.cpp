@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AMaterialInstanceTimeVaryingActor()
 {
-    class_< AMaterialInstanceTimeVaryingActor, bases< AActor >  , boost::noncopyable>("AMaterialInstanceTimeVaryingActor", no_init)
+    py::class_< AMaterialInstanceTimeVaryingActor,  AActor   >("AMaterialInstanceTimeVaryingActor")
         .def_readwrite("MatInst", &AMaterialInstanceTimeVaryingActor::MatInst)
-        .def("StaticClass", &AMaterialInstanceTimeVaryingActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AMaterialInstanceTimeVaryingActor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

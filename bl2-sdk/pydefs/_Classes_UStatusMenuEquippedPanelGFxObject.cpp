@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusMenuEquippedPanelGFxObject()
 {
-    class_< UStatusMenuEquippedPanelGFxObject, bases< UBaseInventoryPanelGFxObject >  , boost::noncopyable>("UStatusMenuEquippedPanelGFxObject", no_init)
+    py::class_< UStatusMenuEquippedPanelGFxObject,  UBaseInventoryPanelGFxObject   >("UStatusMenuEquippedPanelGFxObject")
         .def_readwrite("SelectedCellSuffix", &UStatusMenuEquippedPanelGFxObject::SelectedCellSuffix)
         .def_readwrite("PreferredDownCellSuffix", &UStatusMenuEquippedPanelGFxObject::PreferredDownCellSuffix)
         .def_readwrite("EquippedTypeCellSuffix", &UStatusMenuEquippedPanelGFxObject::EquippedTypeCellSuffix)
         .def_readwrite("StatusDef", &UStatusMenuEquippedPanelGFxObject::StatusDef)
         .def_readwrite("CachedCurrentlySelectedCell", &UStatusMenuEquippedPanelGFxObject::CachedCurrentlySelectedCell)
-        .def("StaticClass", &UStatusMenuEquippedPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStatusMenuEquippedPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("ShowDualWieldInventoryGuides", &UStatusMenuEquippedPanelGFxObject::ShowDualWieldInventoryGuides)
         .def("CleanUpAfterCancelledDrag", &UStatusMenuEquippedPanelGFxObject::CleanUpAfterCancelledDrag)
         .def("PrepareForFinishDrag", &UStatusMenuEquippedPanelGFxObject::PrepareForFinishDrag)
@@ -41,11 +41,11 @@ void Export_pystes_UStatusMenuEquippedPanelGFxObject()
         .def("RestoreCurrentSelectedCell", &UStatusMenuEquippedPanelGFxObject::RestoreCurrentSelectedCell)
         .def("CacheCurrentSelectedCellAndSetToNone", &UStatusMenuEquippedPanelGFxObject::CacheCurrentSelectedCellAndSetToNone)
         .def("ResetCacheCurrentSelectedCell", &UStatusMenuEquippedPanelGFxObject::ResetCacheCurrentSelectedCell)
-        .def("GetCurrentSelectedCell", &UStatusMenuEquippedPanelGFxObject::GetCurrentSelectedCell, return_value_policy< reference_existing_object >())
+        .def("GetCurrentSelectedCell", &UStatusMenuEquippedPanelGFxObject::GetCurrentSelectedCell, py::return_value_policy::reference)
         .def("extOnCellUnselected", &UStatusMenuEquippedPanelGFxObject::extOnCellUnselected)
         .def("extOnCellSelected", &UStatusMenuEquippedPanelGFxObject::extOnCellSelected)
-        .def("GetThingByIndex", &UStatusMenuEquippedPanelGFxObject::GetThingByIndex, return_value_policy< reference_existing_object >())
-        .def("GetSelectedThing", &UStatusMenuEquippedPanelGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetThingByIndex", &UStatusMenuEquippedPanelGFxObject::GetThingByIndex, py::return_value_policy::reference)
+        .def("GetSelectedThing", &UStatusMenuEquippedPanelGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("SetCellsForEquipping", &UStatusMenuEquippedPanelGFxObject::SetCellsForEquipping)
         .def("SetSelectedCell", &UStatusMenuEquippedPanelGFxObject::SetSelectedCell)
         .def("PanelOnInputKey", &UStatusMenuEquippedPanelGFxObject::PanelOnInputKey)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFloatMaterialParamMICData()
 {
-    class_< FFloatMaterialParamMICData >("FFloatMaterialParamMICData", no_init)
+    py::class_< FFloatMaterialParamMICData >("FFloatMaterialParamMICData")
         .def_readwrite("MICs", &FFloatMaterialParamMICData::MICs)
         .def_readwrite("MICResetFloats", &FFloatMaterialParamMICData::MICResetFloats)
   ;

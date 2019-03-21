@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeScalePlayRate()
 {
-    class_< UAnimNodeScalePlayRate, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UAnimNodeScalePlayRate", no_init)
+    py::class_< UAnimNodeScalePlayRate,  UAnimNodeBlendBase   >("UAnimNodeScalePlayRate")
         .def_readwrite("ScaleByValue", &UAnimNodeScalePlayRate::ScaleByValue)
-        .def("StaticClass", &UAnimNodeScalePlayRate::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeScalePlayRate::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

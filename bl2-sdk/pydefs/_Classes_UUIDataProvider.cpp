@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider()
 {
-    class_< UUIDataProvider, bases< UUIRoot >  , boost::noncopyable>("UUIDataProvider", no_init)
+    py::class_< UUIDataProvider,  UUIRoot   >("UUIDataProvider")
         .def_readwrite("WriteAccessType", &UUIDataProvider::WriteAccessType)
         .def_readwrite("ProviderChangedNotifies", &UUIDataProvider::ProviderChangedNotifies)
-        .def("StaticClass", &UUIDataProvider::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider::StaticClass, py::return_value_policy::reference)
         .def("ParseTagArrayDelimiter", &UUIDataProvider::ParseTagArrayDelimiter)
         .def("RemovePropertyNotificationChangeRequest", &UUIDataProvider::RemovePropertyNotificationChangeRequest)
         .def("AddPropertyNotificationChangeRequest", &UUIDataProvider::AddPropertyNotificationChangeRequest)

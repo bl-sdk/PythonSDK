@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTI_Calc()
 {
-    class_< UTI_Calc, bases< UObject >  , boost::noncopyable>("UTI_Calc", no_init)
+    py::class_< UTI_Calc,  UObject   >("UTI_Calc")
         .def_readwrite("IteratorType", &UTargetIterator::IteratorType)
         .def_readwrite("BarGraphShortName", &UTargetIterator::BarGraphShortName)
-        .def("StaticClass", &UTI_Calc::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTI_Calc::StaticClass, py::return_value_policy::reference)
         .def("eventRecordEvalCallback", &UTargetIterator::eventRecordEvalCallback)
         .staticmethod("StaticClass")
   ;

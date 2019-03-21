@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPersonalTeleporterDefinition()
 {
-    class_< UPersonalTeleporterDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UPersonalTeleporterDefinition", no_init)
+    py::class_< UPersonalTeleporterDefinition,  UGBXDefinition   >("UPersonalTeleporterDefinition")
         .def_readwrite("ParticleEffect", &UPersonalTeleporterDefinition::ParticleEffect)
         .def_readwrite("PlayerTeleportedEffect", &UPersonalTeleporterDefinition::PlayerTeleportedEffect)
         .def_readwrite("PlayerTeleportedEffectLifespan", &UPersonalTeleporterDefinition::PlayerTeleportedEffectLifespan)
@@ -17,7 +17,7 @@ void Export_pystes_UPersonalTeleporterDefinition()
         .def_readwrite("CollisionRadius", &UPersonalTeleporterDefinition::CollisionRadius)
         .def_readwrite("CollisionHeight", &UPersonalTeleporterDefinition::CollisionHeight)
         .def_readwrite("ExitPointDistance", &UPersonalTeleporterDefinition::ExitPointDistance)
-        .def("StaticClass", &UPersonalTeleporterDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPersonalTeleporterDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

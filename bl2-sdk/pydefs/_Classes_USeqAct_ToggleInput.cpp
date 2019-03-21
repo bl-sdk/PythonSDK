@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_ToggleInput()
 {
-    class_< USeqAct_ToggleInput, bases< USeqAct_Toggle >  , boost::noncopyable>("USeqAct_ToggleInput", no_init)
-        .def("StaticClass", &USeqAct_ToggleInput::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_ToggleInput,  USeqAct_Toggle   >("USeqAct_ToggleInput")
+        .def("StaticClass", &USeqAct_ToggleInput::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UConstantAttributeValueResolver()
 {
-    class_< UConstantAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UConstantAttributeValueResolver", no_init)
+    py::class_< UConstantAttributeValueResolver,  UAttributeValueResolver   >("UConstantAttributeValueResolver")
         .def_readwrite("ConstantValue", &UConstantAttributeValueResolver::ConstantValue)
-        .def("StaticClass", &UConstantAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UConstantAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

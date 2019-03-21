@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFlagExpressionEvaluator()
 {
-    class_< UFlagExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("UFlagExpressionEvaluator", no_init)
+    py::class_< UFlagExpressionEvaluator,  UExpressionEvaluator   >("UFlagExpressionEvaluator")
         .def_readwrite("FlagChain", &UFlagExpressionEvaluator::FlagChain)
         .def_readwrite("FlagChainOperator", &UFlagExpressionEvaluator::FlagChainOperator)
-        .def("StaticClass", &UFlagExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFlagExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UFlagExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

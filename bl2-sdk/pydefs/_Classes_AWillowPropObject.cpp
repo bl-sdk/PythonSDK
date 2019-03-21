@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPropObject()
 {
-    class_< AWillowPropObject, bases< AWillowInteractiveObject >  , boost::noncopyable>("AWillowPropObject", no_init)
-        .def("StaticClass", &AWillowPropObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowPropObject,  AWillowInteractiveObject   >("AWillowPropObject")
+        .def("StaticClass", &AWillowPropObject::StaticClass, py::return_value_policy::reference)
         .def("PostBeginPlay", &AWillowPropObject::PostBeginPlay)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStringIdToStringMapping()
 {
-    class_< FStringIdToStringMapping >("FStringIdToStringMapping", no_init)
+    py::class_< FStringIdToStringMapping >("FStringIdToStringMapping")
         .def_readwrite("Id", &FStringIdToStringMapping::Id)
         .def_readwrite("Name", &FStringIdToStringMapping::Name)
   ;

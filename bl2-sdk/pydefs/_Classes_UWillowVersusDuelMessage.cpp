@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVersusDuelMessage()
 {
-    class_< UWillowVersusDuelMessage, bases< ULocalMessage >  , boost::noncopyable>("UWillowVersusDuelMessage", no_init)
+    py::class_< UWillowVersusDuelMessage,  ULocalMessage   >("UWillowVersusDuelMessage")
         .def_readwrite("DuelingDisabled", &UWillowVersusDuelMessage::DuelingDisabled)
         .def_readwrite("AlreadyDueling", &UWillowVersusDuelMessage::AlreadyDueling)
         .def_readwrite("AlreadyChallenged", &UWillowVersusDuelMessage::AlreadyChallenged)
@@ -18,7 +18,7 @@ void Export_pystes_UWillowVersusDuelMessage()
         .def_readwrite("DuelDraw", &UWillowVersusDuelMessage::DuelDraw)
         .def_readwrite("DuelWin", &UWillowVersusDuelMessage::DuelWin)
         .def_readwrite("DuelNotRightNow", &UWillowVersusDuelMessage::DuelNotRightNow)
-        .def("StaticClass", &UWillowVersusDuelMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowVersusDuelMessage::StaticClass, py::return_value_policy::reference)
         .def("GetLifeTime", &UWillowVersusDuelMessage::GetLifeTime)
         .def("GetMsgType", &UWillowVersusDuelMessage::GetMsgType)
         .def("GetString", &UWillowVersusDuelMessage::GetString)

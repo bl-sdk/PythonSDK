@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDuelTeamPair()
 {
-    class_< FDuelTeamPair >("FDuelTeamPair", no_init)
+    py::class_< FDuelTeamPair >("FDuelTeamPair")
         .def_readwrite("ChallengerTeam", &FDuelTeamPair::ChallengerTeam)
         .def_readwrite("CompetitorTeam", &FDuelTeamPair::CompetitorTeam)
   ;

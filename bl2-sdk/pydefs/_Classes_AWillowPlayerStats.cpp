@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPlayerStats()
 {
-    class_< AWillowPlayerStats, bases< AInfo >  , boost::noncopyable>("AWillowPlayerStats", no_init)
+    py::class_< AWillowPlayerStats,  AInfo   >("AWillowPlayerStats")
         .def_readwrite("nNumConsecutiveSniperRifleKills", &AWillowPlayerStats::nNumConsecutiveSniperRifleKills)
         .def_readwrite("VfTable_ISparkUpdateCallback", &AWillowBaseStats::VfTable_ISparkUpdateCallback)
         .def_readwrite("SaveVersion", &AWillowBaseStats::SaveVersion)
@@ -15,7 +15,7 @@ void Export_pystes_AWillowPlayerStats()
         .def_readwrite("ReplicationChannel", &AWillowBaseStats::ReplicationChannel)
         .def_readwrite("DebugDisplayFilter", &AWillowBaseStats::DebugDisplayFilter)
         .def_readwrite("CurrentDebugPage", &AWillowBaseStats::CurrentDebugPage)
-        .def("StaticClass", &AWillowPlayerStats::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowPlayerStats::StaticClass, py::return_value_policy::reference)
         .def("IncrementPlayerLauncherDirectHitStat", &AWillowPlayerStats::IncrementPlayerLauncherDirectHitStat)
         .def("IncrementPlayerKnockedDownProjectileStat", &AWillowPlayerStats::IncrementPlayerKnockedDownProjectileStat)
         .def("IncrementPlayerTedioreReloadDamageStat", &AWillowPlayerStats::IncrementPlayerTedioreReloadDamageStat)

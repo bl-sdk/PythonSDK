@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADynamicSMActor()
 {
-    class_< ADynamicSMActor, bases< AActor >  , boost::noncopyable>("ADynamicSMActor", no_init)
+    py::class_< ADynamicSMActor,  AActor   >("ADynamicSMActor")
         .def_readwrite("StaticMeshComponent", &ADynamicSMActor::StaticMeshComponent)
         .def_readwrite("LightEnvironment", &ADynamicSMActor::LightEnvironment)
         .def_readwrite("ReplicatedMesh", &ADynamicSMActor::ReplicatedMesh)
@@ -14,7 +14,7 @@ void Export_pystes_ADynamicSMActor()
         .def_readwrite("ReplicatedMeshTranslation", &ADynamicSMActor::ReplicatedMeshTranslation)
         .def_readwrite("ReplicatedMeshRotation", &ADynamicSMActor::ReplicatedMeshRotation)
         .def_readwrite("ReplicatedMeshScale3D", &ADynamicSMActor::ReplicatedMeshScale3D)
-        .def("StaticClass", &ADynamicSMActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADynamicSMActor::StaticClass, py::return_value_policy::reference)
         .def("SetLightEnvironmentToNotBeDynamic", &ADynamicSMActor::SetLightEnvironmentToNotBeDynamic)
         .def("eventDetach", &ADynamicSMActor::eventDetach)
         .def("eventAttach", &ADynamicSMActor::eventAttach)

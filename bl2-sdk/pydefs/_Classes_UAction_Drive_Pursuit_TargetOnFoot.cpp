@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_Drive_Pursuit_TargetOnFoot()
 {
-    class_< UAction_Drive_Pursuit_TargetOnFoot, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_Drive_Pursuit_TargetOnFoot", no_init)
+    py::class_< UAction_Drive_Pursuit_TargetOnFoot,  UWillowActionSequencePawn   >("UAction_Drive_Pursuit_TargetOnFoot")
         .def_readwrite("MaxSpeedMultiplier", &UAction_Drive_Pursuit_TargetOnFoot::MaxSpeedMultiplier)
         .def_readwrite("SpeedMultiplierDuringSharpTurns", &UAction_Drive_Pursuit_TargetOnFoot::SpeedMultiplierDuringSharpTurns)
         .def_readwrite("DistanceToTargetStartAction", &UAction_Drive_Pursuit_TargetOnFoot::DistanceToTargetStartAction)
@@ -23,7 +23,7 @@ void Export_pystes_UAction_Drive_Pursuit_TargetOnFoot()
         .def_readwrite("MinTimeSpentBraking", &UAction_Drive_Pursuit_TargetOnFoot::MinTimeSpentBraking)
         .def_readwrite("RequiredDelayBetweenBrakings", &UAction_Drive_Pursuit_TargetOnFoot::RequiredDelayBetweenBrakings)
         .def_readwrite("OutOfCombatAreaGracePeriod", &UAction_Drive_Pursuit_TargetOnFoot::OutOfCombatAreaGracePeriod)
-        .def("StaticClass", &UAction_Drive_Pursuit_TargetOnFoot::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_Drive_Pursuit_TargetOnFoot::StaticClass, py::return_value_policy::reference)
         .def("IsSharpTurn", &UAction_Drive_Pursuit_TargetOnFoot::IsSharpTurn)
         .def("GetPursuitPointAndSpeedMultiplier", &UAction_Drive_Pursuit_TargetOnFoot::GetPursuitPointAndSpeedMultiplier)
         .def("eventStop", &UAction_Drive_Pursuit_TargetOnFoot::eventStop)

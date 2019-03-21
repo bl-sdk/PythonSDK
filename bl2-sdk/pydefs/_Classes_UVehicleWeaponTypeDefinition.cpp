@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleWeaponTypeDefinition()
 {
-    class_< UVehicleWeaponTypeDefinition, bases< UWeaponTypeDefinition >  , boost::noncopyable>("UVehicleWeaponTypeDefinition", no_init)
+    py::class_< UVehicleWeaponTypeDefinition,  UWeaponTypeDefinition   >("UVehicleWeaponTypeDefinition")
         .def_readwrite("WeaponMeshInstanceDataName", &UVehicleWeaponTypeDefinition::WeaponMeshInstanceDataName)
-        .def("StaticClass", &UVehicleWeaponTypeDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleWeaponTypeDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

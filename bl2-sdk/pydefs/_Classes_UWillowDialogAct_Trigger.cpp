@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDialogAct_Trigger()
 {
-    class_< UWillowDialogAct_Trigger, bases< UGearboxDialogAct_Trigger >  , boost::noncopyable>("UWillowDialogAct_Trigger", no_init)
-        .def("StaticClass", &UWillowDialogAct_Trigger::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowDialogAct_Trigger,  UGearboxDialogAct_Trigger   >("UWillowDialogAct_Trigger")
+        .def("StaticClass", &UWillowDialogAct_Trigger::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

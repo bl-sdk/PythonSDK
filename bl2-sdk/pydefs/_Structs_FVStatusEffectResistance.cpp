@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVStatusEffectResistance()
 {
-    class_< FVStatusEffectResistance >("FVStatusEffectResistance", no_init)
+    py::class_< FVStatusEffectResistance >("FVStatusEffectResistance")
         .def_readwrite("ChanceResistance", &FVStatusEffectResistance::ChanceResistance)
         .def_readwrite("DurationResistance", &FVStatusEffectResistance::DurationResistance)
   ;

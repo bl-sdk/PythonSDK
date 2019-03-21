@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APortalVolume()
 {
-    class_< APortalVolume, bases< AActor >  , boost::noncopyable>("APortalVolume", no_init)
+    py::class_< APortalVolume,  AActor   >("APortalVolume")
         .def_readwrite("Portals", &APortalVolume::Portals)
         .def_readwrite("AssociatedActors", &AVolume::AssociatedActors)
         .def_readwrite("CsgOper", &ABrush::CsgOper)
@@ -14,7 +14,7 @@ void Export_pystes_APortalVolume()
         .def_readwrite("Brush", &ABrush::Brush)
         .def_readwrite("BrushComponent", &ABrush::BrushComponent)
         .def_readwrite("SavedSelections", &ABrush::SavedSelections)
-        .def("StaticClass", &APortalVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APortalVolume::StaticClass, py::return_value_policy::reference)
         .def("eventProcessActorSetVolume", &AVolume::eventProcessActorSetVolume)
         .def("eventCollisionChanged", &AVolume::eventCollisionChanged)
         .def("OnToggle", &AVolume::OnToggle)

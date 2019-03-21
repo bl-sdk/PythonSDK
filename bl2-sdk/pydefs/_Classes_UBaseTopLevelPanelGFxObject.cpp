@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBaseTopLevelPanelGFxObject()
 {
-    class_< UBaseTopLevelPanelGFxObject, bases< UGFxObject >  , boost::noncopyable>("UBaseTopLevelPanelGFxObject", no_init)
+    py::class_< UBaseTopLevelPanelGFxObject,  UGFxObject   >("UBaseTopLevelPanelGFxObject")
         .def_readwrite("ParentMovie", &UBaseTopLevelPanelGFxObject::ParentMovie)
         .def_readwrite("ParentMovieDef", &UBaseTopLevelPanelGFxObject::ParentMovieDef)
         .def_readwrite("ItemCards", &UBaseTopLevelPanelGFxObject::ItemCards)
         .def_readwrite("QueuedTriggerKey", &UBaseTopLevelPanelGFxObject::QueuedTriggerKey)
         .def_readwrite("QueuedInputKey", &UBaseTopLevelPanelGFxObject::QueuedInputKey)
-        .def("StaticClass", &UBaseTopLevelPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBaseTopLevelPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("OnTrashFavChanged", &UBaseTopLevelPanelGFxObject::OnTrashFavChanged)
         .def("OnCellPressed", &UBaseTopLevelPanelGFxObject::OnCellPressed)
         .def("OnStartDrag", &UBaseTopLevelPanelGFxObject::OnStartDrag)
@@ -24,7 +24,7 @@ void Export_pystes_UBaseTopLevelPanelGFxObject()
         .def("SetUpCardEx", &UBaseTopLevelPanelGFxObject::SetUpCardEx)
         .def("SetUpCard", &UBaseTopLevelPanelGFxObject::SetUpCard)
         .def("GetItemCardContentIndex", &UBaseTopLevelPanelGFxObject::GetItemCardContentIndex)
-        .def("GetItemCard", &UBaseTopLevelPanelGFxObject::GetItemCard, return_value_policy< reference_existing_object >())
+        .def("GetItemCard", &UBaseTopLevelPanelGFxObject::GetItemCard, py::return_value_policy::reference)
         .def("GetItemCardInfo", &UBaseTopLevelPanelGFxObject::GetItemCardInfo)
         .def("GetPanel", &UBaseTopLevelPanelGFxObject::GetPanel)
         .def("extInitComplete", &UBaseTopLevelPanelGFxObject::extInitComplete)

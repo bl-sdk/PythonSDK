@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerInteractionServer()
 {
-    class_< UPlayerInteractionServer, bases< UObject >  , boost::noncopyable>("UPlayerInteractionServer", no_init)
+    py::class_< UPlayerInteractionServer,  UObject   >("UPlayerInteractionServer")
         .def_readwrite("TimeoutTime", &UPlayerInteractionServer::TimeoutTime)
-        .def("StaticClass", &UPlayerInteractionServer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerInteractionServer::StaticClass, py::return_value_policy::reference)
         .def("IsValid", &UPlayerInteractionServer::IsValid)
         .def("CanReceiveMessages", &UPlayerInteractionServer::CanReceiveMessages)
         .def("MarkDone", &UPlayerInteractionServer::MarkDone)
@@ -16,7 +16,7 @@ void Export_pystes_UPlayerInteractionServer()
         .def("SendMessage", &UPlayerInteractionServer::SendMessage)
         .def("UsesClientType", &UPlayerInteractionServer::UsesClientType)
         .def("HandleMessage", &UPlayerInteractionServer::HandleMessage)
-        .def("GetClientType", &UPlayerInteractionServer::GetClientType, return_value_policy< reference_existing_object >())
+        .def("GetClientType", &UPlayerInteractionServer::GetClientType, py::return_value_policy::reference)
         .def("GetInitialMessageForPlayer", &UPlayerInteractionServer::GetInitialMessageForPlayer)
         .def("initialize", &UPlayerInteractionServer::initialize)
         .staticmethod("StaticClass")

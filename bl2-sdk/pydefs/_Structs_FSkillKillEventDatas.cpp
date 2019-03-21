@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillKillEventData()
 {
-    class_< FSkillKillEventData, bases< FSpecializedBehaviorEvent >  >("FSkillKillEventData", no_init)
+    py::class_< FSkillKillEventData,  FSpecializedBehaviorEvent   >("FSkillKillEventData")
         .def_readwrite("EventType", &FSkillKillEventData::EventType)
         .def_readwrite("EventConstraints", &FSkillKillEventData::EventConstraints)
   ;

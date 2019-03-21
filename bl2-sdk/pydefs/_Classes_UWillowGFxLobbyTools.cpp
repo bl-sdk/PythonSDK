@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxLobbyTools()
 {
-    class_< UWillowGFxLobbyTools, bases< UObject >  , boost::noncopyable>("UWillowGFxLobbyTools", no_init)
+    py::class_< UWillowGFxLobbyTools,  UObject   >("UWillowGFxLobbyTools")
         .def_readwrite("Movie", &UWillowGFxLobbyTools::Movie)
         .def_readwrite("InputMenuTag", &UWillowGFxLobbyTools::InputMenuTag)
         .def_readwrite("InputPlayerID", &UWillowGFxLobbyTools::InputPlayerID)
-        .def("StaticClass", &UWillowGFxLobbyTools::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxLobbyTools::StaticClass, py::return_value_policy::reference)
         .def("FinishInput", &UWillowGFxLobbyTools::FinishInput)
         .def("BeginInputText", &UWillowGFxLobbyTools::BeginInputText)
         .def("AS_SetArgU", &UWillowGFxLobbyTools::AS_SetArgU)

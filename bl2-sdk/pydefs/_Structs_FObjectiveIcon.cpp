@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FObjectiveIcon()
 {
-    class_< FObjectiveIcon >("FObjectiveIcon", no_init)
+    py::class_< FObjectiveIcon >("FObjectiveIcon")
         .def_readwrite("TransitionStartTime", &FObjectiveIcon::TransitionStartTime)
         .def_readwrite("LastLocation", &FObjectiveIcon::LastLocation)
         .def_readwrite("FadeAlpha", &FObjectiveIcon::FadeAlpha)

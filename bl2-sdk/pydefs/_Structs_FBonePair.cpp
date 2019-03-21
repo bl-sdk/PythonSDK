@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBonePair()
 {
-    class_< FBonePair >("FBonePair", no_init)
+    py::class_< FBonePair >("FBonePair")
         .def_readonly("Bones", &FBonePair::Bones)
   ;
 }

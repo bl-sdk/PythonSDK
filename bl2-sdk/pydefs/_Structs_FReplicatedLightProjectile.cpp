@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReplicatedLightProjectile()
 {
-    class_< FReplicatedLightProjectile >("FReplicatedLightProjectile", no_init)
+    py::class_< FReplicatedLightProjectile >("FReplicatedLightProjectile")
         .def_readwrite("Id", &FReplicatedLightProjectile::Id)
         .def_readwrite("StartTrace", &FReplicatedLightProjectile::StartTrace)
         .def_readwrite("EndTrace", &FReplicatedLightProjectile::EndTrace)

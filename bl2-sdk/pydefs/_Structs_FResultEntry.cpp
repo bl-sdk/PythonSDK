@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FResultEntry()
 {
-    class_< FResultEntry >("FResultEntry", no_init)
+    py::class_< FResultEntry >("FResultEntry")
         .def_readwrite("Game", &FResultEntry::Game)
         .def_readwrite("Name", &FResultEntry::Name)
         .def_readwrite("ExpLevel", &FResultEntry::ExpLevel)

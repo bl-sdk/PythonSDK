@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGrenadeModDefinition()
 {
-    class_< UGrenadeModDefinition, bases< UEquipableItemDefinition >  , boost::noncopyable>("UGrenadeModDefinition", no_init)
+    py::class_< UGrenadeModDefinition,  UEquipableItemDefinition   >("UGrenadeModDefinition")
         .def_readwrite("DefaultProjectileDefinition", &UGrenadeModDefinition::DefaultProjectileDefinition)
         .def_readwrite("ProjectileBaseValues", &UGrenadeModDefinition::ProjectileBaseValues)
         .def_readwrite("SetProjectileSequenceState", &UGrenadeModDefinition::SetProjectileSequenceState)
-        .def("StaticClass", &UGrenadeModDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGrenadeModDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetEquipmentLocation", &UGrenadeModDefinition::GetEquipmentLocation)
         .def("OnGrenadeKilledEnemy", &UGrenadeModDefinition::OnGrenadeKilledEnemy)
         .def("OnGrenadeKilledNeutral", &UGrenadeModDefinition::OnGrenadeKilledNeutral)

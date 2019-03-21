@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UConsole()
 {
-    class_< UConsole, bases< UInteraction >  , boost::noncopyable>("UConsole", no_init)
+    py::class_< UConsole,  UInteraction   >("UConsole")
         .def_readwrite("ConsoleTargetPlayer", &UConsole::ConsoleTargetPlayer)
         .def_readwrite("DefaultTexture_Black", &UConsole::DefaultTexture_Black)
         .def_readwrite("DefaultTexture_White", &UConsole::DefaultTexture_White)
@@ -26,7 +26,7 @@ void Export_pystes_UConsole()
         .def_readwrite("AutoCompleteIndex", &UConsole::AutoCompleteIndex)
         .def_readwrite("AutoCompleteTree", &UConsole::AutoCompleteTree)
         .def_readwrite("AutoCompleteIndices", &UConsole::AutoCompleteIndices)
-        .def("StaticClass", &UConsole::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UConsole::StaticClass, py::return_value_policy::reference)
         .def("UpdateCompleteIndices", &UConsole::UpdateCompleteIndices)
         .def("BuildRuntimeAutoCompleteList", &UConsole::BuildRuntimeAutoCompleteList)
         .def("AppendInputText", &UConsole::AppendInputText)

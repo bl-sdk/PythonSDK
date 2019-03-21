@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USystem()
 {
-    class_< USystem, bases< UObject >  , boost::noncopyable>("USystem", no_init)
+    py::class_< USystem,  UObject   >("USystem")
         .def_readwrite("StaleCacheDays", &USystem::StaleCacheDays)
         .def_readwrite("MaxStaleCacheSize", &USystem::MaxStaleCacheSize)
         .def_readwrite("MaxOverallCacheSize", &USystem::MaxOverallCacheSize)
@@ -32,7 +32,7 @@ void Export_pystes_USystem()
         .def_readwrite("MissingRedirectObjectName", &USystem::MissingRedirectObjectName)
         .def_readwrite("Unsuppress", &USystem::Unsuppress)
         .def_readwrite("VfTable_FExec", &USubsystem::VfTable_FExec)
-        .def("StaticClass", &USystem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USystem::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

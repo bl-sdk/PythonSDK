@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIResourceDataProvider()
 {
-    class_< UUIResourceDataProvider, bases< UUIPropertyDataProvider >  , boost::noncopyable>("UUIResourceDataProvider", no_init)
+    py::class_< UUIResourceDataProvider,  UUIPropertyDataProvider   >("UUIResourceDataProvider")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIResourceDataProvider::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIResourceDataProvider::VfTable_IUIListElementCellProvider)
-        .def("StaticClass", &UUIResourceDataProvider::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIResourceDataProvider::StaticClass, py::return_value_policy::reference)
         .def("eventInitializeProvider", &UUIResourceDataProvider::eventInitializeProvider)
         .staticmethod("StaticClass")
   ;

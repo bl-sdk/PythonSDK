@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULocationFilter_MustHaveLOS()
 {
-    class_< ULocationFilter_MustHaveLOS, bases< ULocationFilter >  , boost::noncopyable>("ULocationFilter_MustHaveLOS", no_init)
-        .def("StaticClass", &ULocationFilter_MustHaveLOS::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ULocationFilter_MustHaveLOS,  ULocationFilter   >("ULocationFilter_MustHaveLOS")
+        .def("StaticClass", &ULocationFilter_MustHaveLOS::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTwoPanelInterfaceGFxMovie()
 {
-    class_< UTwoPanelInterfaceGFxMovie, bases< UWillowInventoryGFxMovie >  , boost::noncopyable>("UTwoPanelInterfaceGFxMovie", no_init)
+    py::class_< UTwoPanelInterfaceGFxMovie,  UWillowInventoryGFxMovie   >("UTwoPanelInterfaceGFxMovie")
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxMovie::TwoPanelInterface)
         .def_readwrite("GenericSortConfigurations", &UTwoPanelInterfaceGFxMovie::GenericSortConfigurations)
         .def_readwrite("GenericSortConfigIndex_Storage", &UTwoPanelInterfaceGFxMovie::GenericSortConfigIndex_Storage)
@@ -14,7 +14,7 @@ void Export_pystes_UTwoPanelInterfaceGFxMovie()
         .def_readwrite("StoragePanelLabel", &UTwoPanelInterfaceGFxMovie::StoragePanelLabel)
         .def_readwrite("PlayerPanelLabel", &UTwoPanelInterfaceGFxMovie::PlayerPanelLabel)
         .def_readwrite("NumHeaderButtons", &UTwoPanelInterfaceGFxMovie::NumHeaderButtons)
-        .def("StaticClass", &UTwoPanelInterfaceGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTwoPanelInterfaceGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("SetItemLocation", &UTwoPanelInterfaceGFxMovie::SetItemLocation)
         .def("PressedHotkeyNumber", &UTwoPanelInterfaceGFxMovie::PressedHotkeyNumber)
         .def("extGenericButtonClicked", &UTwoPanelInterfaceGFxMovie::extGenericButtonClicked)
@@ -27,7 +27,7 @@ void Export_pystes_UTwoPanelInterfaceGFxMovie()
         .def("OnCellPressed", &UTwoPanelInterfaceGFxMovie::OnCellPressed)
         .def("PanelOnItemSelected", &UTwoPanelInterfaceGFxMovie::PanelOnItemSelected)
         .def("ShouldStoragePanelHighlightFrozen", &UTwoPanelInterfaceGFxMovie::ShouldStoragePanelHighlightFrozen)
-        .def("GetSelectedThing", &UTwoPanelInterfaceGFxMovie::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetSelectedThing", &UTwoPanelInterfaceGFxMovie::GetSelectedThing, py::return_value_policy::reference)
         .def("GetPlayerPanelLabel", &UTwoPanelInterfaceGFxMovie::GetPlayerPanelLabel)
         .def("GetStoragePanelLabel", &UTwoPanelInterfaceGFxMovie::GetStoragePanelLabel)
         .def("ShouldShowPanelNavTooltips", &UTwoPanelInterfaceGFxMovie::ShouldShowPanelNavTooltips)
@@ -36,8 +36,8 @@ void Export_pystes_UTwoPanelInterfaceGFxMovie()
         .def("GetOverridePriceForInventory", &UTwoPanelInterfaceGFxMovie::GetOverridePriceForInventory)
         .def("GetSortConfigDataForPanel", &UTwoPanelInterfaceGFxMovie::GetSortConfigDataForPanel)
         .def("OnLeftPanelInit", &UTwoPanelInterfaceGFxMovie::OnLeftPanelInit)
-        .def("GetStorageReferenceForTransferring", &UTwoPanelInterfaceGFxMovie::GetStorageReferenceForTransferring, return_value_policy< reference_existing_object >())
-        .def("GetStorageReferenceForSwapping", &UTwoPanelInterfaceGFxMovie::GetStorageReferenceForSwapping, return_value_policy< reference_existing_object >())
+        .def("GetStorageReferenceForTransferring", &UTwoPanelInterfaceGFxMovie::GetStorageReferenceForTransferring, py::return_value_policy::reference)
+        .def("GetStorageReferenceForSwapping", &UTwoPanelInterfaceGFxMovie::GetStorageReferenceForSwapping, py::return_value_policy::reference)
         .def("GetPlayerPanelItems", &UTwoPanelInterfaceGFxMovie::GetPlayerPanelItems)
         .def("GetStoragePanelItems", &UTwoPanelInterfaceGFxMovie::GetStoragePanelItems)
         .def("GetTitle", &UTwoPanelInterfaceGFxMovie::GetTitle)

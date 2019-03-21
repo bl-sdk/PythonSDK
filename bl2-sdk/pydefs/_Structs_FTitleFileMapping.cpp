@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTitleFileMapping()
 {
-    class_< FTitleFileMapping >("FTitleFileMapping", no_init)
+    py::class_< FTitleFileMapping >("FTitleFileMapping")
         .def_readwrite("Filename", &FTitleFileMapping::Filename)
         .def_readwrite("UGCHandle", &FTitleFileMapping::UGCHandle)
   ;

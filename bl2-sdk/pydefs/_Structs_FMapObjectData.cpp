@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMapObjectData()
 {
-    class_< FMapObjectData >("FMapObjectData", no_init)
+    py::class_< FMapObjectData >("FMapObjectData")
         .def_readwrite("Player", &FMapObjectData::Player)
         .def_readwrite("Vehicle", &FMapObjectData::Vehicle)
         .def_readwrite("Landmark", &FMapObjectData::Landmark)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCounterEventReactionData()
 {
-    class_< FCounterEventReactionData >("FCounterEventReactionData", no_init)
+    py::class_< FCounterEventReactionData >("FCounterEventReactionData")
         .def_readwrite("EventType", &FCounterEventReactionData::EventType)
         .def_readwrite("Behaviors", &FCounterEventReactionData::Behaviors)
   ;

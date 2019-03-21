@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPostProcessOverlay()
 {
-    class_< FPostProcessOverlay >("FPostProcessOverlay", no_init)
+    py::class_< FPostProcessOverlay >("FPostProcessOverlay")
         .def_readwrite("OverlayName", &FPostProcessOverlay::OverlayName)
         .def_readwrite("DestPostProcessOverlay", &FPostProcessOverlay::DestPostProcessOverlay)
         .def_readwrite("MinTransitionInDuration", &FPostProcessOverlay::MinTransitionInDuration)

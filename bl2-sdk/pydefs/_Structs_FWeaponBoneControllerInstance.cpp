@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWeaponBoneControllerInstance()
 {
-    class_< FWeaponBoneControllerInstance >("FWeaponBoneControllerInstance", no_init)
+    py::class_< FWeaponBoneControllerInstance >("FWeaponBoneControllerInstance")
         .def_readwrite("SourcePartType", &FWeaponBoneControllerInstance::SourcePartType)
         .def_readwrite("BoneControlType", &FWeaponBoneControllerInstance::BoneControlType)
         .def_readwrite("BoneController", &FWeaponBoneControllerInstance::BoneController)

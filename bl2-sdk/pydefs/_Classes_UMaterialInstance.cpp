@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialInstance()
 {
-    class_< UMaterialInstance, bases< UMaterialInterface >  , boost::noncopyable>("UMaterialInstance", no_init)
+    py::class_< UMaterialInstance,  UMaterialInterface   >("UMaterialInstance")
         .def_readwrite("PhysMaterial", &UMaterialInstance::PhysMaterial)
         .def_readwrite("Parent", &UMaterialInstance::Parent)
         .def_readwrite("PhysMaterialMask", &UMaterialInstance::PhysMaterialMask)
@@ -17,7 +17,7 @@ void Export_pystes_UMaterialInstance()
         .def_readonly("Resources", &UMaterialInstance::Resources)
         .def_readwrite("ReferencedTextures", &UMaterialInstance::ReferencedTextures)
         .def_readwrite("ParentLightingGuid", &UMaterialInstance::ParentLightingGuid)
-        .def("StaticClass", &UMaterialInstance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialInstance::StaticClass, py::return_value_policy::reference)
         .def("IsInMapOrTransientPackage", &UMaterialInstance::IsInMapOrTransientPackage)
         .def("ClearParameterValues", &UMaterialInstance::ClearParameterValues)
         .def("SetFontParameterValue", &UMaterialInstance::SetFontParameterValue)

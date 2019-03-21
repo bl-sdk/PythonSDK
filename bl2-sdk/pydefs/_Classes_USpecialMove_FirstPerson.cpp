@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMove_FirstPerson()
 {
-    class_< USpecialMove_FirstPerson, bases< UGearboxAnimDefinition >  , boost::noncopyable>("USpecialMove_FirstPerson", no_init)
-        .def("StaticClass", &USpecialMove_FirstPerson::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetSMNode", &USpecialMove_FirstPerson::GetSMNode, return_value_policy< reference_existing_object >())
+    py::class_< USpecialMove_FirstPerson,  UGearboxAnimDefinition   >("USpecialMove_FirstPerson")
+        .def("StaticClass", &USpecialMove_FirstPerson::StaticClass, py::return_value_policy::reference)
+        .def("GetSMNode", &USpecialMove_FirstPerson::GetSMNode, py::return_value_policy::reference)
         .def("PlayAnim", &USpecialMove_FirstPerson::PlayAnim)
         .def("StopWeaponRecoilAnimImp", &USpecialMove_FirstPerson::StopWeaponRecoilAnimImp)
         .def("StopWeaponRecoilAnim", &USpecialMove_FirstPerson::StopWeaponRecoilAnim)
         .def("eventClientStarted", &USpecialMove_FirstPerson::eventClientStarted)
-        .def("GetSkeletalMesh", &USpecialMove_FirstPerson::GetSkeletalMesh, return_value_policy< reference_existing_object >())
+        .def("GetSkeletalMesh", &USpecialMove_FirstPerson::GetSkeletalMesh, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

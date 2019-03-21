@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIRuleEngineOwner()
 {
-    class_< UIRuleEngineOwner, bases< UInterface >  , boost::noncopyable>("UIRuleEngineOwner", no_init)
-        .def("StaticClass", &UIRuleEngineOwner::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetRuleEngine", &UIRuleEngineOwner::GetRuleEngine, return_value_policy< reference_existing_object >())
+    py::class_< UIRuleEngineOwner,  UInterface   >("UIRuleEngineOwner")
+        .def("StaticClass", &UIRuleEngineOwner::StaticClass, py::return_value_policy::reference)
+        .def("GetRuleEngine", &UIRuleEngineOwner::GetRuleEngine, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

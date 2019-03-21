@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxGlobalsDefinition()
 {
-    class_< UGearboxGlobalsDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UGearboxGlobalsDefinition", no_init)
+    py::class_< UGearboxGlobalsDefinition,  UGBXDefinition   >("UGearboxGlobalsDefinition")
         .def_readwrite("RespawnDelayInSeconds", &UGearboxGlobalsDefinition::RespawnDelayInSeconds)
         .def_readwrite("Dialog", &UGearboxGlobalsDefinition::Dialog)
-        .def("StaticClass", &UGearboxGlobalsDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxGlobalsDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

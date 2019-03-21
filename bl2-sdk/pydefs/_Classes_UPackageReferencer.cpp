@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPackageReferencer()
 {
-    class_< UPackageReferencer, bases< UObject >  , boost::noncopyable>("UPackageReferencer", no_init)
+    py::class_< UPackageReferencer,  UObject   >("UPackageReferencer")
         .def_readwrite("PackageNames", &UPackageReferencer::PackageNames)
-        .def("StaticClass", &UPackageReferencer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPackageReferencer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

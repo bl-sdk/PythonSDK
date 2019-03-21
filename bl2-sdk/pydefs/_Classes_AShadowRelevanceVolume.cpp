@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AShadowRelevanceVolume()
 {
-    class_< AShadowRelevanceVolume, bases< AVolume >  , boost::noncopyable>("AShadowRelevanceVolume", no_init)
+    py::class_< AShadowRelevanceVolume,  AVolume   >("AShadowRelevanceVolume")
         .def_readwrite("ShadowRelevanceList", &AShadowRelevanceVolume::ShadowRelevanceList)
-        .def("StaticClass", &AShadowRelevanceVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AShadowRelevanceVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

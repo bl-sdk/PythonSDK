@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_EncounterWaveComplete()
 {
-    class_< USeqEvent_EncounterWaveComplete, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_EncounterWaveComplete", no_init)
+    py::class_< USeqEvent_EncounterWaveComplete,  USequenceEvent   >("USeqEvent_EncounterWaveComplete")
         .def_readwrite("CurrentWave", &USeqEvent_EncounterWaveComplete::CurrentWave)
-        .def("StaticClass", &USeqEvent_EncounterWaveComplete::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqEvent_EncounterWaveComplete::StaticClass, py::return_value_policy::reference)
         .def("NotifyWaveComplete", &USeqEvent_EncounterWaveComplete::NotifyWaveComplete)
         .staticmethod("StaticClass")
   ;

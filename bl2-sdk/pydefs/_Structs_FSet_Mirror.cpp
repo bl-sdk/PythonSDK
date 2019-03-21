@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSet_Mirror()
 {
-    class_< FSet_Mirror >("FSet_Mirror", no_init)
+    py::class_< FSet_Mirror >("FSet_Mirror")
         .def_readwrite("Elements", &FSet_Mirror::Elements)
         .def_readwrite("InlineHash", &FSet_Mirror::InlineHash)
         .def_readwrite("Hash", &FSet_Mirror::Hash)

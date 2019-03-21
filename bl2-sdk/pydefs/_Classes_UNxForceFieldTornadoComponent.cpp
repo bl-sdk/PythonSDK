@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNxForceFieldTornadoComponent()
 {
-    class_< UNxForceFieldTornadoComponent, bases< UNxForceFieldComponent >  , boost::noncopyable>("UNxForceFieldTornadoComponent", no_init)
+    py::class_< UNxForceFieldTornadoComponent,  UNxForceFieldComponent   >("UNxForceFieldTornadoComponent")
         .def_readwrite("RadialStrength", &UNxForceFieldTornadoComponent::RadialStrength)
         .def_readwrite("RotationalStrength", &UNxForceFieldTornadoComponent::RotationalStrength)
         .def_readwrite("LiftStrength", &UNxForceFieldTornadoComponent::LiftStrength)
@@ -17,7 +17,7 @@ void Export_pystes_UNxForceFieldTornadoComponent()
         .def_readwrite("HeightOffset", &UNxForceFieldTornadoComponent::HeightOffset)
         .def_readwrite("SelfRotationStrength", &UNxForceFieldTornadoComponent::SelfRotationStrength)
         .def_readwrite("Kernel", &UNxForceFieldTornadoComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldTornadoComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNxForceFieldTornadoComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

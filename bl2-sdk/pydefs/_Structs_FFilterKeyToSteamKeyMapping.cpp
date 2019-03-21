@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFilterKeyToSteamKeyMapping()
 {
-    class_< FFilterKeyToSteamKeyMapping >("FFilterKeyToSteamKeyMapping", no_init)
+    py::class_< FFilterKeyToSteamKeyMapping >("FFilterKeyToSteamKeyMapping")
         .def_readwrite("KeyId", &FFilterKeyToSteamKeyMapping::KeyId)
         .def_readwrite("KeyType", &FFilterKeyToSteamKeyMapping::KeyType)
         .def_readwrite("RawKey", &FFilterKeyToSteamKeyMapping::RawKey)

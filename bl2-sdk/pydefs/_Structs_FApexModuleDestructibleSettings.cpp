@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FApexModuleDestructibleSettings()
 {
-    class_< FApexModuleDestructibleSettings >("FApexModuleDestructibleSettings", no_init)
+    py::class_< FApexModuleDestructibleSettings >("FApexModuleDestructibleSettings")
         .def_readwrite("MaxChunkIslandCount", &FApexModuleDestructibleSettings::MaxChunkIslandCount)
         .def_readwrite("MaxRrbActorCount", &FApexModuleDestructibleSettings::MaxRrbActorCount)
         .def_readwrite("MaxChunkSeparationLOD", &FApexModuleDestructibleSettings::MaxChunkSeparationLOD)

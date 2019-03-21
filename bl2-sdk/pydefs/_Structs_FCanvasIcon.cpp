@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCanvasIcon()
 {
-    class_< FCanvasIcon >("FCanvasIcon", no_init)
+    py::class_< FCanvasIcon >("FCanvasIcon")
         .def_readwrite("Texture", &FCanvasIcon::Texture)
         .def_readwrite("U", &FCanvasIcon::U)
         .def_readwrite("V", &FCanvasIcon::V)

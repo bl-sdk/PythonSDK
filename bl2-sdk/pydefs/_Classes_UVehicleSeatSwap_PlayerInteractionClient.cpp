@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleSeatSwap_PlayerInteractionClient()
 {
-    class_< UVehicleSeatSwap_PlayerInteractionClient, bases< UPlayerInteractionClient >  , boost::noncopyable>("UVehicleSeatSwap_PlayerInteractionClient", no_init)
+    py::class_< UVehicleSeatSwap_PlayerInteractionClient,  UPlayerInteractionClient   >("UVehicleSeatSwap_PlayerInteractionClient")
         .def_readwrite("MsgTitle", &UVehicleSeatSwap_PlayerInteractionClient::MsgTitle)
-        .def("StaticClass", &UVehicleSeatSwap_PlayerInteractionClient::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleSeatSwap_PlayerInteractionClient::StaticClass, py::return_value_policy::reference)
         .def("ShutDown", &UVehicleSeatSwap_PlayerInteractionClient::ShutDown)
         .def("HandleSeatSwapCommand", &UVehicleSeatSwap_PlayerInteractionClient::HandleSeatSwapCommand)
         .def("Initialize", &UVehicleSeatSwap_PlayerInteractionClient::Initialize)

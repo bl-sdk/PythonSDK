@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMeshBeacon()
 {
-    class_< UMeshBeacon, bases< UObject >  , boost::noncopyable>("UMeshBeacon", no_init)
+    py::class_< UMeshBeacon,  UObject   >("UMeshBeacon")
         .def_readwrite("VfTable_FTickableObject", &UMeshBeacon::VfTable_FTickableObject)
         .def_readwrite("MeshBeaconPort", &UMeshBeacon::MeshBeaconPort)
         .def_readwrite("Socket", &UMeshBeacon::Socket)
@@ -19,7 +19,7 @@ void Export_pystes_UMeshBeacon()
         .def_readwrite("MaxBandwidthTestSendTime", &UMeshBeacon::MaxBandwidthTestSendTime)
         .def_readwrite("MaxBandwidthTestReceiveTime", &UMeshBeacon::MaxBandwidthTestReceiveTime)
         .def_readwrite("MaxBandwidthHistoryEntries", &UMeshBeacon::MaxBandwidthHistoryEntries)
-        .def("StaticClass", &UMeshBeacon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMeshBeacon::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyBeacon", &UMeshBeacon::eventDestroyBeacon)
         .staticmethod("StaticClass")
   ;

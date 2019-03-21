@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFiringModeDefinition()
 {
-    class_< UFiringModeDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UFiringModeDefinition", no_init)
+    py::class_< UFiringModeDefinition,  UGBXDefinition   >("UFiringModeDefinition")
         .def_readwrite("FireType", &UFiringModeDefinition::FireType)
         .def_readwrite("BeamLockBehavior", &UFiringModeDefinition::BeamLockBehavior)
         .def_readwrite("DamageTypeDefinition", &UFiringModeDefinition::DamageTypeDefinition)
@@ -53,8 +53,8 @@ void Export_pystes_UFiringModeDefinition()
         .def_readwrite("FiringPatternLines", &UFiringModeDefinition::FiringPatternLines)
         .def_readwrite("BasePatternSpread", &UFiringModeDefinition::BasePatternSpread)
         .def_readwrite("MinPatternScale", &UFiringModeDefinition::MinPatternScale)
-        .def("StaticClass", &UFiringModeDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetParticleSystemTemplate", &UFiringModeDefinition::GetParticleSystemTemplate, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFiringModeDefinition::StaticClass, py::return_value_policy::reference)
+        .def("GetParticleSystemTemplate", &UFiringModeDefinition::GetParticleSystemTemplate, py::return_value_policy::reference)
         .def("NotifyFiringPatternWhenShotComplete", &UFiringModeDefinition::NotifyFiringPatternWhenShotComplete)
         .def("GetFiringPatternAdjustments", &UFiringModeDefinition::GetFiringPatternAdjustments)
         .def("RunBehaviorsForImpact", &UFiringModeDefinition::RunBehaviorsForImpact)

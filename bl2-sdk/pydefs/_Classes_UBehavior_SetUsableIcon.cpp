@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SetUsableIcon()
 {
-    class_< UBehavior_SetUsableIcon, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SetUsableIcon", no_init)
+    py::class_< UBehavior_SetUsableIcon,  UBehaviorBase   >("UBehavior_SetUsableIcon")
         .def_readwrite("Icon", &UBehavior_SetUsableIcon::Icon)
         .def_readwrite("UsabilityType", &UBehavior_SetUsableIcon::UsabilityType)
-        .def("StaticClass", &UBehavior_SetUsableIcon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SetUsableIcon::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetUsableIcon::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

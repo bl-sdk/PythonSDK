@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionAppendVector()
 {
-    class_< UMaterialExpressionAppendVector, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionAppendVector", no_init)
+    py::class_< UMaterialExpressionAppendVector,  UMaterialExpression   >("UMaterialExpressionAppendVector")
         .def_readwrite("A", &UMaterialExpressionAppendVector::A)
         .def_readwrite("B", &UMaterialExpressionAppendVector::B)
-        .def("StaticClass", &UMaterialExpressionAppendVector::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionAppendVector::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

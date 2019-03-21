@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineContentInterface()
 {
-    class_< UOnlineContentInterface, bases< UInterface >  , boost::noncopyable>("UOnlineContentInterface", no_init)
-        .def("StaticClass", &UOnlineContentInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineContentInterface,  UInterface   >("UOnlineContentInterface")
+        .def("StaticClass", &UOnlineContentInterface::StaticClass, py::return_value_policy::reference)
         .def("ClearCheckDownloadableContentListDelegate", &UOnlineContentInterface::ClearCheckDownloadableContentListDelegate)
         .def("AddCheckDownloadableContentListDelegate", &UOnlineContentInterface::AddCheckDownloadableContentListDelegate)
         .def("CheckDownloadableContentList", &UOnlineContentInterface::CheckDownloadableContentList)

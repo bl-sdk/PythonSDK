@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltAccessoryGroupEntry()
 {
-    class_< FGestaltAccessoryGroupEntry >("FGestaltAccessoryGroupEntry", no_init)
+    py::class_< FGestaltAccessoryGroupEntry >("FGestaltAccessoryGroupEntry")
         .def_readwrite("GroupName", &FGestaltAccessoryGroupEntry::GroupName)
         .def_readwrite("GestaltAccessoryPartList", &FGestaltAccessoryGroupEntry::GestaltAccessoryPartList)
   ;

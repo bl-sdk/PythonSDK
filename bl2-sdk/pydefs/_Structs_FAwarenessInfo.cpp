@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAwarenessInfo()
 {
-    class_< FAwarenessInfo >("FAwarenessInfo", no_init)
+    py::class_< FAwarenessInfo >("FAwarenessInfo")
         .def_readwrite("Location", &FAwarenessInfo::Location)
         .def_readwrite("Radius", &FAwarenessInfo::Radius)
         .def_readwrite("AwarenessZoneName", &FAwarenessInfo::AwarenessZoneName)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHostMigrationState()
 {
-    class_< FHostMigrationState >("FHostMigrationState", no_init)
+    py::class_< FHostMigrationState >("FHostMigrationState")
         .def_readwrite("HostMigrationProgress", &FHostMigrationState::HostMigrationProgress)
         .def_readwrite("HostMigrationElapsedTime", &FHostMigrationState::HostMigrationElapsedTime)
         .def_readwrite("HostMigrationTravelCountdown", &FHostMigrationState::HostMigrationTravelCountdown)

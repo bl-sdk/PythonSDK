@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxProcess()
 {
-    class_< UGearboxProcess, bases< UObject >  , boost::noncopyable>("UGearboxProcess", no_init)
+    py::class_< UGearboxProcess,  UObject   >("UGearboxProcess")
         .def_readwrite("FirstAttemptDelay", &UGearboxProcess::FirstAttemptDelay)
         .def_readwrite("BaseRetrySeconds", &UGearboxProcess::BaseRetrySeconds)
         .def_readwrite("MaxRetryAttempts", &UGearboxProcess::MaxRetryAttempts)
@@ -16,7 +16,7 @@ void Export_pystes_UGearboxProcess()
         .def_readwrite("WaitTime", &UGearboxProcess::WaitTime)
         .def_readwrite("CurrentStep", &UGearboxProcess::CurrentStep)
         .def_readwrite("FailureStep", &UGearboxProcess::FailureStep)
-        .def("StaticClass", &UGearboxProcess::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxProcess::StaticClass, py::return_value_policy::reference)
         .def("GetStepConfiguration", &UGearboxProcess::GetStepConfiguration)
         .def("GotoStep", &UGearboxProcess::GotoStep)
         .def("GotoNextStep", &UGearboxProcess::GotoNextStep)

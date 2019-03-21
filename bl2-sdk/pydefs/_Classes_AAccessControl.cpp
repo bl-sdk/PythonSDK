@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AAccessControl()
 {
-    class_< AAccessControl, bases< AInfo >  , boost::noncopyable>("AAccessControl", no_init)
+    py::class_< AAccessControl,  AInfo   >("AAccessControl")
         .def_readwrite("IPPolicies", &AAccessControl::IPPolicies)
         .def_readwrite("BannedIDs", &AAccessControl::BannedIDs)
         .def_readwrite("IPBanned", &AAccessControl::IPBanned)
@@ -29,7 +29,7 @@ void Export_pystes_AAccessControl()
         .def_readwrite("ServerAuthRetries", &AAccessControl::ServerAuthRetries)
         .def_readwrite("ListenAuthBlobUID", &AAccessControl::ListenAuthBlobUID)
         .def_readwrite("ListenAuthRetryCount", &AAccessControl::ListenAuthRetryCount)
-        .def("StaticClass", &AAccessControl::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AAccessControl::StaticClass, py::return_value_policy::reference)
         .def("ShutdownAuth", &AAccessControl::ShutdownAuth)
         .def("InitAuth", &AAccessControl::InitAuth)
         .def("IsPendingAuth", &AAccessControl::IsPendingAuth)
@@ -64,7 +64,7 @@ void Export_pystes_AAccessControl()
         .def("ForceKickPlayer", &AAccessControl::ForceKickPlayer)
         .def("KickBan", &AAccessControl::KickBan)
         .def("Kick", &AAccessControl::Kick)
-        .def("GetControllerFromString", &AAccessControl::GetControllerFromString, return_value_policy< reference_existing_object >())
+        .def("GetControllerFromString", &AAccessControl::GetControllerFromString, py::return_value_policy::reference)
         .def("RequiresPassword", &AAccessControl::RequiresPassword)
         .def("SetGamePassword", &AAccessControl::SetGamePassword)
         .def("SetAdminPassword", &AAccessControl::SetAdminPassword)

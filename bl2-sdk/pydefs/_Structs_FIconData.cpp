@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FIconData()
 {
-    class_< FIconData >("FIconData", no_init)
+    py::class_< FIconData >("FIconData")
         .def_readwrite("U", &FIconData::U)
         .def_readwrite("V", &FIconData::V)
         .def_readwrite("UL", &FIconData::UL)

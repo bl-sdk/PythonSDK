@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNetworkOptionsGFxMovie()
 {
-    class_< UNetworkOptionsGFxMovie, bases< UWillowGFxMovie >  , boost::noncopyable>("UNetworkOptionsGFxMovie", no_init)
+    py::class_< UNetworkOptionsGFxMovie,  UWillowGFxMovie   >("UNetworkOptionsGFxMovie")
         .def_readwrite("NetworkOptionsObject", &UNetworkOptionsGFxMovie::NetworkOptionsObject)
         .def_readwrite("OwningMovie", &UNetworkOptionsGFxMovie::OwningMovie)
-        .def("StaticClass", &UNetworkOptionsGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNetworkOptionsGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("ResolveNetworkTypeString", &UNetworkOptionsGFxMovie::ResolveNetworkTypeString)
         .def("HandleInputKey", &UNetworkOptionsGFxMovie::HandleInputKey)
         .def("extClosed", &UNetworkOptionsGFxMovie::extClosed)

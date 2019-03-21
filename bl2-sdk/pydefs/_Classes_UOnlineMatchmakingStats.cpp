@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineMatchmakingStats()
 {
-    class_< UOnlineMatchmakingStats, bases< UObject >  , boost::noncopyable>("UOnlineMatchmakingStats", no_init)
-        .def("StaticClass", &UOnlineMatchmakingStats::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineMatchmakingStats,  UObject   >("UOnlineMatchmakingStats")
+        .def("StaticClass", &UOnlineMatchmakingStats::StaticClass, py::return_value_policy::reference)
         .def("StopTimer", &UOnlineMatchmakingStats::StopTimer)
         .def("StartTimer", &UOnlineMatchmakingStats::StartTimer)
         .staticmethod("StaticClass")

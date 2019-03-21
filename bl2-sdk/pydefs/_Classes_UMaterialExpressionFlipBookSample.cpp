@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionFlipBookSample()
 {
-    class_< UMaterialExpressionFlipBookSample, bases< UMaterialExpressionTextureSample >  , boost::noncopyable>("UMaterialExpressionFlipBookSample", no_init)
-        .def("StaticClass", &UMaterialExpressionFlipBookSample::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionFlipBookSample,  UMaterialExpressionTextureSample   >("UMaterialExpressionFlipBookSample")
+        .def("StaticClass", &UMaterialExpressionFlipBookSample::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

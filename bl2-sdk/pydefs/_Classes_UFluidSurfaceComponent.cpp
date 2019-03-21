@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFluidSurfaceComponent()
 {
-    class_< UFluidSurfaceComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UFluidSurfaceComponent", no_init)
+    py::class_< UFluidSurfaceComponent,  UPrimitiveComponent   >("UFluidSurfaceComponent")
         .def_readwrite("FluidMaterial", &UFluidSurfaceComponent::FluidMaterial)
         .def_readwrite("LightMapResolution", &UFluidSurfaceComponent::LightMapResolution)
         .def_readwrite("SimulationQuadsX", &UFluidSurfaceComponent::SimulationQuadsX)
@@ -46,7 +46,7 @@ void Export_pystes_UFluidSurfaceComponent()
         .def_readwrite("ShadowMaps", &UFluidSurfaceComponent::ShadowMaps)
         .def_readwrite("LightMap", &UFluidSurfaceComponent::LightMap)
         .def_readwrite("FluidSimulation", &UFluidSurfaceComponent::FluidSimulation)
-        .def("StaticClass", &UFluidSurfaceComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFluidSurfaceComponent::StaticClass, py::return_value_policy::reference)
         .def("SetSimulationPosition", &UFluidSurfaceComponent::SetSimulationPosition)
         .def("SetDetailPosition", &UFluidSurfaceComponent::SetDetailPosition)
         .def("ApplyForce", &UFluidSurfaceComponent::ApplyForce)

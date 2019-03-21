@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDrunkenWaveFormData()
 {
-    class_< FDrunkenWaveFormData >("FDrunkenWaveFormData", no_init)
+    py::class_< FDrunkenWaveFormData >("FDrunkenWaveFormData")
         .def_readwrite("WaveFreq", &FDrunkenWaveFormData::WaveFreq)
         .def_readwrite("WaveAmp", &FDrunkenWaveFormData::WaveAmp)
         .def_readwrite("WavePhase", &FDrunkenWaveFormData::WavePhase)

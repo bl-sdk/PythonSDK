@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowInteractiveSwitch()
 {
-    class_< AWillowInteractiveSwitch, bases< AWillowInteractiveObject >  , boost::noncopyable>("AWillowInteractiveSwitch", no_init)
+    py::class_< AWillowInteractiveSwitch,  AWillowInteractiveObject   >("AWillowInteractiveSwitch")
         .def_readwrite("OnBehaviorSetName", &AWillowInteractiveSwitch::OnBehaviorSetName)
         .def_readwrite("NotAllPlayersNearBehaviorSetName", &AWillowInteractiveSwitch::NotAllPlayersNearBehaviorSetName)
         .def_readwrite("OffBehaviorSetName", &AWillowInteractiveSwitch::OffBehaviorSetName)
@@ -18,7 +18,7 @@ void Export_pystes_AWillowInteractiveSwitch()
         .def_readwrite("OffIconDef", &AWillowInteractiveSwitch::OffIconDef)
         .def_readwrite("NotAllPlayersNearIconDef", &AWillowInteractiveSwitch::NotAllPlayersNearIconDef)
         .def_readwrite("CurrentIcon", &AWillowInteractiveSwitch::CurrentIcon)
-        .def("StaticClass", &AWillowInteractiveSwitch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowInteractiveSwitch::StaticClass, py::return_value_policy::reference)
         .def("SetInteractionIcon", &AWillowInteractiveSwitch::SetInteractionIcon)
         .def("PlayerLeftGame", &AWillowInteractiveSwitch::PlayerLeftGame)
         .def("PlayerEnteredGame", &AWillowInteractiveSwitch::PlayerEnteredGame)

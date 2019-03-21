@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULevelStreamingDomino()
 {
-    class_< ULevelStreamingDomino, bases< ULevelStreamingKismet >  , boost::noncopyable>("ULevelStreamingDomino", no_init)
+    py::class_< ULevelStreamingDomino,  ULevelStreamingKismet   >("ULevelStreamingDomino")
         .def_readwrite("TilePossibilities", &ULevelStreamingDomino::TilePossibilities)
-        .def("StaticClass", &ULevelStreamingDomino::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULevelStreamingDomino::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

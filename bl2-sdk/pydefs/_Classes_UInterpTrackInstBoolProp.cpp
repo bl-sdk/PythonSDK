@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstBoolProp()
 {
-    class_< UInterpTrackInstBoolProp, bases< UInterpTrackInstProperty >  , boost::noncopyable>("UInterpTrackInstBoolProp", no_init)
+    py::class_< UInterpTrackInstBoolProp,  UInterpTrackInstProperty   >("UInterpTrackInstBoolProp")
         .def_readwrite("BoolProp", &UInterpTrackInstBoolProp::BoolProp)
         .def_readwrite("BitMask", &UInterpTrackInstBoolProp::BitMask)
-        .def("StaticClass", &UInterpTrackInstBoolProp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstBoolProp::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

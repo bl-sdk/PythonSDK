@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEnum()
 {
-    class_< UEnum, bases< UField >  , boost::noncopyable>("UEnum", no_init)
+    py::class_< UEnum,  UField   >("UEnum")
         .def_readonly("UnknownData00", &UEnum::UnknownData00)
-        .def("StaticClass", &UEnum::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UEnum::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

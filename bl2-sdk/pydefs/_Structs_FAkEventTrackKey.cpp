@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAkEventTrackKey()
 {
-    class_< FAkEventTrackKey >("FAkEventTrackKey", no_init)
+    py::class_< FAkEventTrackKey >("FAkEventTrackKey")
         .def_readwrite("Time", &FAkEventTrackKey::Time)
         .def_readwrite("Event", &FAkEventTrackKey::Event)
   ;

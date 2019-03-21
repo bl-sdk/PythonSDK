@@ -1,28 +1,28 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADroppedPickup()
 {
-    class_< ADroppedPickup, bases< AActor >  , boost::noncopyable>("ADroppedPickup", no_init)
+    py::class_< ADroppedPickup,  AActor   >("ADroppedPickup")
         .def_readwrite("VfTable_IIPickupable", &ADroppedPickup::VfTable_IIPickupable)
         .def_readwrite("Inventory", &ADroppedPickup::Inventory)
         .def_readwrite("PickupCache", &ADroppedPickup::PickupCache)
         .def_readwrite("Manufacturer", &ADroppedPickup::Manufacturer)
         .def_readwrite("MeshBounds", &ADroppedPickup::MeshBounds)
         .def_readwrite("Torque", &ADroppedPickup::Torque)
-        .def("StaticClass", &ADroppedPickup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADroppedPickup::StaticClass, py::return_value_policy::reference)
         .def("GetTouchTraceLocation", &ADroppedPickup::GetTouchTraceLocation)
         .def("TouchPickupTrace", &ADroppedPickup::TouchPickupTrace)
-        .def("GetPickupableMeshActor", &ADroppedPickup::GetPickupableMeshActor, return_value_policy< reference_existing_object >())
+        .def("GetPickupableMeshActor", &ADroppedPickup::GetPickupableMeshActor, py::return_value_policy::reference)
         .def("SetInteractionIcon", &ADroppedPickup::SetInteractionIcon)
         .def("MarkAsDiscovered", &ADroppedPickup::MarkAsDiscovered)
         .def("IsDiscovered", &ADroppedPickup::IsDiscovered)
         .def("DenyPickupAttempt", &ADroppedPickup::DenyPickupAttempt)
         .def("Pickupable_IsEnabled", &ADroppedPickup::Pickupable_IsEnabled)
-        .def("GetPickupableInventoryDefinition", &ADroppedPickup::GetPickupableInventoryDefinition, return_value_policy< reference_existing_object >())
-        .def("GetPickupableInventory", &ADroppedPickup::GetPickupableInventory, return_value_policy< reference_existing_object >())
+        .def("GetPickupableInventoryDefinition", &ADroppedPickup::GetPickupableInventoryDefinition, py::return_value_policy::reference)
+        .def("GetPickupableInventory", &ADroppedPickup::GetPickupableInventory, py::return_value_policy::reference)
         .def("IsPickupableInventoryAutomaticallyPickedUp", &ADroppedPickup::IsPickupableInventoryAutomaticallyPickedUp)
         .def("RecheckValidTouch", &ADroppedPickup::RecheckValidTouch)
         .def("FailedPickup", &ADroppedPickup::FailedPickup)

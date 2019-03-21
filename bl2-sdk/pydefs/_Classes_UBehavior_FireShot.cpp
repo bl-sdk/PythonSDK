@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_FireShot()
 {
-    class_< UBehavior_FireShot, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_FireShot", no_init)
+    py::class_< UBehavior_FireShot,  UBehaviorBase   >("UBehavior_FireShot")
         .def_readwrite("WeaponOwnerContext", &UBehavior_FireShot::WeaponOwnerContext)
         .def_readwrite("NumProjectiles", &UBehavior_FireShot::NumProjectiles)
         .def_readwrite("SpawnDirection", &UBehavior_FireShot::SpawnDirection)
@@ -24,7 +24,7 @@ void Export_pystes_UBehavior_FireShot()
         .def_readwrite("BeamLocationOffset", &UBehavior_FireShot::BeamLocationOffset)
         .def_readwrite("FireLocationSocketsRemaining", &UBehavior_FireShot::FireLocationSocketsRemaining)
         .def_readwrite("NumShotsFired", &UBehavior_FireShot::NumShotsFired)
-        .def("StaticClass", &UBehavior_FireShot::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_FireShot::StaticClass, py::return_value_policy::reference)
         .def("FireNextShot", &UBehavior_FireShot::FireNextShot)
         .def("ApplyBehaviorToContext", &UBehavior_FireShot::ApplyBehaviorToContext)
         .staticmethod("StaticClass")

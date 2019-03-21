@@ -75,8 +75,8 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;C:\Users\abahb\boost_1_69_0;$(IncludePath)</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;C:\Users\abahb\boost_1_69_0\stage_x86\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs</LibraryPath>
     <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -87,8 +87,8 @@
     </LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;C:\Users\abahb\boost_1_69_0;$(IncludePath)</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;C:\Users\abahb\boost_1_69_0\stage_x86\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs</LibraryPath>
     <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -4998,6 +4998,30 @@
     <ClInclude Include="GFxUI_classes.h" />
     <ClInclude Include="GFxUI_f_structs.h" />
     <ClInclude Include="GFxUI_structs.h" />
+    <ClInclude Include="include\pybind11\attr.h" />
+    <ClInclude Include="include\pybind11\buffer_info.h" />
+    <ClInclude Include="include\pybind11\cast.h" />
+    <ClInclude Include="include\pybind11\chrono.h" />
+    <ClInclude Include="include\pybind11\common.h" />
+    <ClInclude Include="include\pybind11\complex.h" />
+    <ClInclude Include="include\pybind11\detail\class.h" />
+    <ClInclude Include="include\pybind11\detail\common.h" />
+    <ClInclude Include="include\pybind11\detail\descr.h" />
+    <ClInclude Include="include\pybind11\detail\init.h" />
+    <ClInclude Include="include\pybind11\detail\internals.h" />
+    <ClInclude Include="include\pybind11\detail\typeid.h" />
+    <ClInclude Include="include\pybind11\eigen.h" />
+    <ClInclude Include="include\pybind11\embed.h" />
+    <ClInclude Include="include\pybind11\eval.h" />
+    <ClInclude Include="include\pybind11\functional.h" />
+    <ClInclude Include="include\pybind11\iostream.h" />
+    <ClInclude Include="include\pybind11\numpy.h" />
+    <ClInclude Include="include\pybind11\operators.h" />
+    <ClInclude Include="include\pybind11\options.h" />
+    <ClInclude Include="include\pybind11\pybind11.h" />
+    <ClInclude Include="include\pybind11\pytypes.h" />
+    <ClInclude Include="include\pybind11\stl.h" />
+    <ClInclude Include="include\pybind11\stl_bind.h" />
     <ClInclude Include="IpDrv_classes.h" />
     <ClInclude Include="IpDrv_f_structs.h" />
     <ClInclude Include="IpDrv_structs.h" />

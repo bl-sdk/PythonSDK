@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FHttpParameters()
 {
-    class_< FHttpParameters >("FHttpParameters", no_init)
+    py::class_< FHttpParameters >("FHttpParameters")
         .def_readwrite("ServiceConfiguration", &FHttpParameters::ServiceConfiguration)
         .def_readwrite("SubService", &FHttpParameters::SubService)
         .def_readwrite("ContentType", &FHttpParameters::ContentType)

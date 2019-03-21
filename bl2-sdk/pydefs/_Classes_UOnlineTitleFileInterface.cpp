@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineTitleFileInterface()
 {
-    class_< UOnlineTitleFileInterface, bases< UInterface >  , boost::noncopyable>("UOnlineTitleFileInterface", no_init)
-        .def("StaticClass", &UOnlineTitleFileInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineTitleFileInterface,  UInterface   >("UOnlineTitleFileInterface")
+        .def("StaticClass", &UOnlineTitleFileInterface::StaticClass, py::return_value_policy::reference)
         .def("ClearShareTitleFileCompleteDelegate", &UOnlineTitleFileInterface::ClearShareTitleFileCompleteDelegate)
         .def("AddShareTitleFileCompleteDelegate", &UOnlineTitleFileInterface::AddShareTitleFileCompleteDelegate)
         .def("ShareTitleFile", &UOnlineTitleFileInterface::ShareTitleFile)

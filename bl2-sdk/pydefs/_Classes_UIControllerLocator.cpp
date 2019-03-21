@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIControllerLocator()
 {
-    class_< UIControllerLocator, bases< UInterface >  , boost::noncopyable>("UIControllerLocator", no_init)
-        .def("StaticClass", &UIControllerLocator::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetAWillowMind", &UIControllerLocator::GetAWillowMind, return_value_policy< reference_existing_object >())
-        .def("GetAWillowPlayerController", &UIControllerLocator::GetAWillowPlayerController, return_value_policy< reference_existing_object >())
-        .def("GetABaseController", &UIControllerLocator::GetABaseController, return_value_policy< reference_existing_object >())
+    py::class_< UIControllerLocator,  UInterface   >("UIControllerLocator")
+        .def("StaticClass", &UIControllerLocator::StaticClass, py::return_value_policy::reference)
+        .def("GetAWillowMind", &UIControllerLocator::GetAWillowMind, py::return_value_policy::reference)
+        .def("GetAWillowPlayerController", &UIControllerLocator::GetAWillowPlayerController, py::return_value_policy::reference)
+        .def("GetABaseController", &UIControllerLocator::GetABaseController, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

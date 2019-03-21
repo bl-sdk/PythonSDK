@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBehaviorCondition()
 {
-    class_< FBehaviorCondition >("FBehaviorCondition", no_init)
+    py::class_< FBehaviorCondition >("FBehaviorCondition")
         .def_readwrite("ConditionId", &FBehaviorCondition::ConditionId)
         .def_readwrite("Condition", &FBehaviorCondition::Condition)
         .def_readwrite("Behaviors", &FBehaviorCondition::Behaviors)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleCrewAnimSetLookupTable()
 {
-    class_< UVehicleCrewAnimSetLookupTable, bases< UObject >  , boost::noncopyable>("UVehicleCrewAnimSetLookupTable", no_init)
+    py::class_< UVehicleCrewAnimSetLookupTable,  UObject   >("UVehicleCrewAnimSetLookupTable")
         .def_readwrite("Mappings", &UVehicleCrewAnimSetLookupTable::Mappings)
-        .def("StaticClass", &UVehicleCrewAnimSetLookupTable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleCrewAnimSetLookupTable::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

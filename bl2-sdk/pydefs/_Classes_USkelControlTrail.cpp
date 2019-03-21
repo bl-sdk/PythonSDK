@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkelControlTrail()
 {
-    class_< USkelControlTrail, bases< USkelControlBase >  , boost::noncopyable>("USkelControlTrail", no_init)
+    py::class_< USkelControlTrail,  USkelControlBase   >("USkelControlTrail")
         .def_readwrite("ChainLength", &USkelControlTrail::ChainLength)
         .def_readwrite("ChainBoneAxis", &USkelControlTrail::ChainBoneAxis)
         .def_readwrite("TrailRelaxation", &USkelControlTrail::TrailRelaxation)
@@ -15,7 +15,7 @@ void Export_pystes_USkelControlTrail()
         .def_readwrite("TrailBoneLocations", &USkelControlTrail::TrailBoneLocations)
         .def_readonly("UnknownData00", &USkelControlTrail::UnknownData00)
         .def_readwrite("OldLocalToWorld", &USkelControlTrail::OldLocalToWorld)
-        .def("StaticClass", &USkelControlTrail::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkelControlTrail::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

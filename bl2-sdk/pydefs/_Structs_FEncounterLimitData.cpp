@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEncounterLimitData()
 {
-    class_< FEncounterLimitData >("FEncounterLimitData", no_init)
+    py::class_< FEncounterLimitData >("FEncounterLimitData")
         .def_readwrite("ActorTags", &FEncounterLimitData::ActorTags)
         .def_readwrite("MaxTotalToSpawn", &FEncounterLimitData::MaxTotalToSpawn)
         .def_readwrite("MaxActiveAtATime", &FEncounterLimitData::MaxActiveAtATime)

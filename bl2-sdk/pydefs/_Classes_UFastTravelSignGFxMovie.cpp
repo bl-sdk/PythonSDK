@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFastTravelSignGFxMovie()
 {
-    class_< UFastTravelSignGFxMovie, bases< UGFxMovieInteractiveObject >  , boost::noncopyable>("UFastTravelSignGFxMovie", no_init)
-        .def("StaticClass", &UFastTravelSignGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UFastTravelSignGFxMovie,  UGFxMovieInteractiveObject   >("UFastTravelSignGFxMovie")
+        .def("StaticClass", &UFastTravelSignGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("eventStart", &UFastTravelSignGFxMovie::eventStart)
         .staticmethod("StaticClass")
   ;

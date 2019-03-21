@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FConditionalPattern()
 {
-    class_< FConditionalPattern >("FConditionalPattern", no_init)
+    py::class_< FConditionalPattern >("FConditionalPattern")
         .def_readwrite("Conditions", &FConditionalPattern::Conditions)
         .def_readwrite("Pattern", &FConditionalPattern::Pattern)
   ;

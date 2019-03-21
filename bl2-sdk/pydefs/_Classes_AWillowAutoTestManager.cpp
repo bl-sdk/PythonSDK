@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowAutoTestManager()
 {
-    class_< AWillowAutoTestManager, bases< AAutoTestManager >  , boost::noncopyable>("AWillowAutoTestManager", no_init)
+    py::class_< AWillowAutoTestManager,  AAutoTestManager   >("AWillowAutoTestManager")
         .def_readwrite("WillowSentinelPC", &AWillowAutoTestManager::WillowSentinelPC)
         .def_readwrite("TotalLevelLoads", &AWillowAutoTestManager::TotalLevelLoads)
-        .def("StaticClass", &AWillowAutoTestManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowAutoTestManager::StaticClass, py::return_value_policy::reference)
         .def("Tick", &AWillowAutoTestManager::Tick)
         .def("CloseAutomatedMapTestTimer", &AWillowAutoTestManager::CloseAutomatedMapTestTimer)
         .def("AutomatedTravelToNextMap", &AWillowAutoTestManager::AutomatedTravelToNextMap)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFrontEndPlayerListGFxObject()
 {
-    class_< UFrontEndPlayerListGFxObject, bases< UGFxObject >  , boost::noncopyable>("UFrontEndPlayerListGFxObject", no_init)
+    py::class_< UFrontEndPlayerListGFxObject,  UGFxObject   >("UFrontEndPlayerListGFxObject")
         .def_readwrite("OwningMovie", &UFrontEndPlayerListGFxObject::OwningMovie)
         .def_readonly("UnknownData00", &UFrontEndPlayerListGFxObject::UnknownData00)
         .def_readwrite("PlayerListIds", &UFrontEndPlayerListGFxObject::PlayerListIds)
@@ -31,7 +31,7 @@ void Export_pystes_UFrontEndPlayerListGFxObject()
         .def_readwrite("UnmuteCaption", &UFrontEndPlayerListGFxObject::UnmuteCaption)
         .def_readwrite("KickCaption", &UFrontEndPlayerListGFxObject::KickCaption)
         .def_readwrite("BackCaption", &UFrontEndPlayerListGFxObject::BackCaption)
-        .def("StaticClass", &UFrontEndPlayerListGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFrontEndPlayerListGFxObject::StaticClass, py::return_value_policy::reference)
         .def("HidePlayerDetailsMovie", &UFrontEndPlayerListGFxObject::HidePlayerDetailsMovie)
         .def("GetPrimaryPlayerControllerId", &UFrontEndPlayerListGFxObject::GetPrimaryPlayerControllerId)
         .def("GetPlayerName", &UFrontEndPlayerListGFxObject::GetPlayerName)
@@ -42,7 +42,7 @@ void Export_pystes_UFrontEndPlayerListGFxObject()
         .def("JoinGame", &UFrontEndPlayerListGFxObject::JoinGame)
         .def("OnConfirmKickPlayer_Clicked", &UFrontEndPlayerListGFxObject::OnConfirmKickPlayer_Clicked)
         .def("HandlePlayerDetailsButtonClick", &UFrontEndPlayerListGFxObject::HandlePlayerDetailsButtonClick)
-        .def("GetPRI", &UFrontEndPlayerListGFxObject::GetPRI, return_value_policy< reference_existing_object >())
+        .def("GetPRI", &UFrontEndPlayerListGFxObject::GetPRI, py::return_value_policy::reference)
         .def("PopulatePlayerDetailsDialog", &UFrontEndPlayerListGFxObject::PopulatePlayerDetailsDialog)
         .def("AddPlayerDetailsButton", &UFrontEndPlayerListGFxObject::AddPlayerDetailsButton)
         .def("OnPlayerDetailsLoaded", &UFrontEndPlayerListGFxObject::OnPlayerDetailsLoaded)

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackInstVisibility()
 {
-    class_< UInterpTrackInstVisibility, bases< UInterpTrackInst >  , boost::noncopyable>("UInterpTrackInstVisibility", no_init)
+    py::class_< UInterpTrackInstVisibility,  UInterpTrackInst   >("UInterpTrackInstVisibility")
         .def_readwrite("Action", &UInterpTrackInstVisibility::Action)
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstVisibility::LastUpdatePosition)
-        .def("StaticClass", &UInterpTrackInstVisibility::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackInstVisibility::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCharacterCustomizationInfoCardGFxObject()
 {
-    class_< UCharacterCustomizationInfoCardGFxObject, bases< UGFxObject >  , boost::noncopyable>("UCharacterCustomizationInfoCardGFxObject", no_init)
-        .def("StaticClass", &UCharacterCustomizationInfoCardGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCharacterCustomizationInfoCardGFxObject,  UGFxObject   >("UCharacterCustomizationInfoCardGFxObject")
+        .def("StaticClass", &UCharacterCustomizationInfoCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetAutoSizeTextOnFields", &UCharacterCustomizationInfoCardGFxObject::SetAutoSizeTextOnFields)
         .def("TryFocusList", &UCharacterCustomizationInfoCardGFxObject::TryFocusList)
         .def("PopulateScrollingList", &UCharacterCustomizationInfoCardGFxObject::PopulateScrollingList)

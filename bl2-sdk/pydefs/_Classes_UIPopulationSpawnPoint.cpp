@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIPopulationSpawnPoint()
 {
-    class_< UIPopulationSpawnPoint, bases< UInterface >  , boost::noncopyable>("UIPopulationSpawnPoint", no_init)
-        .def("StaticClass", &UIPopulationSpawnPoint::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIPopulationSpawnPoint,  UInterface   >("UIPopulationSpawnPoint")
+        .def("StaticClass", &UIPopulationSpawnPoint::StaticClass, py::return_value_policy::reference)
         .def("GetInitialMovementHoldTime", &UIPopulationSpawnPoint::GetInitialMovementHoldTime)
-        .def("GetInitialDestination", &UIPopulationSpawnPoint::GetInitialDestination, return_value_policy< reference_existing_object >())
+        .def("GetInitialDestination", &UIPopulationSpawnPoint::GetInitialDestination, py::return_value_policy::reference)
         .def("GetInitialActionType", &UIPopulationSpawnPoint::GetInitialActionType)
         .def("GetSpawnStyleType", &UIPopulationSpawnPoint::GetSpawnStyleType)
         .staticmethod("StaticClass")

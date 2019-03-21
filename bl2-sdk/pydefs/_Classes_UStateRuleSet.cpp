@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStateRuleSet()
 {
-    class_< UStateRuleSet, bases< URuleSet >  , boost::noncopyable>("UStateRuleSet", no_init)
+    py::class_< UStateRuleSet,  URuleSet   >("UStateRuleSet")
         .def_readwrite("StateRules", &UStateRuleSet::StateRules)
         .def_readwrite("StateAttributeMap", &UStateRuleSet::StateAttributeMap)
-        .def("StaticClass", &UStateRuleSet::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStateRuleSet::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

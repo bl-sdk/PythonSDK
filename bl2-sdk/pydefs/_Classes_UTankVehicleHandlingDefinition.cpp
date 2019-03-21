@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTankVehicleHandlingDefinition()
 {
-    class_< UTankVehicleHandlingDefinition, bases< UCarVehicleHandlingDefinition >  , boost::noncopyable>("UTankVehicleHandlingDefinition", no_init)
+    py::class_< UTankVehicleHandlingDefinition,  UCarVehicleHandlingDefinition   >("UTankVehicleHandlingDefinition")
         .def_readwrite("MaxEngineTorque", &UTankVehicleHandlingDefinition::MaxEngineTorque)
         .def_readwrite("EngineDamping", &UTankVehicleHandlingDefinition::EngineDamping)
         .def_readwrite("InsideTrackTorqueFactor", &UTankVehicleHandlingDefinition::InsideTrackTorqueFactor)
@@ -15,7 +15,7 @@ void Export_pystes_UTankVehicleHandlingDefinition()
         .def_readwrite("TurnGripScaleRate", &UTankVehicleHandlingDefinition::TurnGripScaleRate)
         .def_readwrite("SteeringThresholdForStoppedTurns", &UTankVehicleHandlingDefinition::SteeringThresholdForStoppedTurns)
         .def_readwrite("EngineDampingOnStoppedTurns", &UTankVehicleHandlingDefinition::EngineDampingOnStoppedTurns)
-        .def("StaticClass", &UTankVehicleHandlingDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTankVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

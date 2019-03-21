@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInstalledContentInfo()
 {
-    class_< FInstalledContentInfo >("FInstalledContentInfo", no_init)
+    py::class_< FInstalledContentInfo >("FInstalledContentInfo")
         .def_readwrite("ContentType", &FInstalledContentInfo::ContentType)
         .def_readwrite("ContentName", &FInstalledContentInfo::ContentName)
         .def_readwrite("ContentPath", &FInstalledContentInfo::ContentPath)

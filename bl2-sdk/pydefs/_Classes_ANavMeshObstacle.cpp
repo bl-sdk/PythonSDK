@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANavMeshObstacle()
 {
-    class_< ANavMeshObstacle, bases< AActor >  , boost::noncopyable>("ANavMeshObstacle", no_init)
+    py::class_< ANavMeshObstacle,  AActor   >("ANavMeshObstacle")
         .def_readwrite("VfTable_IInterface_NavMeshPathObstacle", &ANavMeshObstacle::VfTable_IInterface_NavMeshPathObstacle)
-        .def("StaticClass", &ANavMeshObstacle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANavMeshObstacle::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ANavMeshObstacle::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ANavMeshObstacle::CreateCheckpointRecord)
         .def("SetEnabled", &ANavMeshObstacle::SetEnabled)

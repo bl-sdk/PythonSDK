@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationAspect()
 {
-    class_< UPopulationAspect, bases< UObject >  , boost::noncopyable>("UPopulationAspect", no_init)
-        .def("StaticClass", &UPopulationAspect::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPopulationAspect,  UObject   >("UPopulationAspect")
+        .def("StaticClass", &UPopulationAspect::StaticClass, py::return_value_policy::reference)
         .def("eventDenStatRemoved", &UPopulationAspect::eventDenStatRemoved)
         .def("eventDenStatAdded", &UPopulationAspect::eventDenStatAdded)
         .def("eventEnabledStatusChanged", &UPopulationAspect::eventEnabledStatusChanged)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_ProjectileLanded()
 {
-    class_< USeqEvent_ProjectileLanded, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_ProjectileLanded", no_init)
+    py::class_< USeqEvent_ProjectileLanded,  USequenceEvent   >("USeqEvent_ProjectileLanded")
         .def_readwrite("MaxDistance", &USeqEvent_ProjectileLanded::MaxDistance)
-        .def("StaticClass", &USeqEvent_ProjectileLanded::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqEvent_ProjectileLanded::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

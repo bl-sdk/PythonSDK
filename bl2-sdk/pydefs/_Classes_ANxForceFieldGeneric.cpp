@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANxForceFieldGeneric()
 {
-    class_< ANxForceFieldGeneric, bases< AActor >  , boost::noncopyable>("ANxForceFieldGeneric", no_init)
+    py::class_< ANxForceFieldGeneric,  AActor   >("ANxForceFieldGeneric")
         .def_readwrite("Shape", &ANxForceFieldGeneric::Shape)
         .def_readwrite("DrawComponent", &ANxForceFieldGeneric::DrawComponent)
         .def_readwrite("RoughExtentX", &ANxForceFieldGeneric::RoughExtentX)
@@ -35,7 +35,7 @@ void Export_pystes_ANxForceFieldGeneric()
         .def_readwrite("ExclusionShapePoses", &ANxForceField::ExclusionShapePoses)
         .def_readwrite("U2NRotation", &ANxForceField::U2NRotation)
         .def_readwrite("SceneIndex", &ANxForceField::SceneIndex)
-        .def("StaticClass", &ANxForceFieldGeneric::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANxForceFieldGeneric::StaticClass, py::return_value_policy::reference)
         .def("DoInitRBPhys", &ANxForceFieldGeneric::DoInitRBPhys)
         .def("OnToggle", &ANxForceField::OnToggle)
         .staticmethod("StaticClass")

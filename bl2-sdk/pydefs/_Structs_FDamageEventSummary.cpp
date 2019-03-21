@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDamageEventSummary()
 {
-    class_< FDamageEventSummary >("FDamageEventSummary", no_init)
+    py::class_< FDamageEventSummary >("FDamageEventSummary")
         .def_readwrite("InitialDamage", &FDamageEventSummary::InitialDamage)
         .def_readwrite("AIDamageScaleReduction", &FDamageEventSummary::AIDamageScaleReduction)
         .def_readwrite("DamageSourceReduction", &FDamageEventSummary::DamageSourceReduction)

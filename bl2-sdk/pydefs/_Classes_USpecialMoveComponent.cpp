@@ -1,25 +1,25 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMoveComponent()
 {
-    class_< USpecialMoveComponent, bases< UActorComponent >  , boost::noncopyable>("USpecialMoveComponent", no_init)
+    py::class_< USpecialMoveComponent,  UActorComponent   >("USpecialMoveComponent")
         .def_readwrite("StartTime", &USpecialMoveComponent::StartTime)
         .def_readwrite("SMI", &USpecialMoveComponent::SMI)
         .def_readonly("UnknownData00", &USpecialMoveComponent::UnknownData00)
         .def_readwrite("CurrentSMData", &USpecialMoveComponent::CurrentSMData)
         .def_readwrite("SMDQueue", &USpecialMoveComponent::SMDQueue)
         .def_readwrite("SMBlendNode", &USpecialMoveComponent::SMBlendNode)
-        .def("StaticClass", &USpecialMoveComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpecialMoveComponent::StaticClass, py::return_value_policy::reference)
         .def("IsOwnerAlwaysNetRelevant", &USpecialMoveComponent::IsOwnerAlwaysNetRelevant)
         .def("CanPlayBehaviorData", &USpecialMoveComponent::CanPlayBehaviorData)
         .def("RunBehaviors", &USpecialMoveComponent::RunBehaviors)
-        .def("GetCurrent", &USpecialMoveComponent::GetCurrent, return_value_policy< reference_existing_object >())
+        .def("GetCurrent", &USpecialMoveComponent::GetCurrent, py::return_value_policy::reference)
         .def("GetPlayRateScale", &USpecialMoveComponent::GetPlayRateScale)
         .def("GetDuration", &USpecialMoveComponent::GetDuration)
-        .def("GetData", &USpecialMoveComponent::GetData, return_value_policy< reference_existing_object >())
+        .def("GetData", &USpecialMoveComponent::GetData, py::return_value_policy::reference)
         .def("LocalAnimFinished", &USpecialMoveComponent::LocalAnimFinished)
         .def("ClearQueue", &USpecialMoveComponent::ClearQueue)
         .def("StopAnyLocal", &USpecialMoveComponent::StopAnyLocal)
@@ -35,7 +35,7 @@ void Export_pystes_USpecialMoveComponent()
         .def("IsPlayingAny", &USpecialMoveComponent::IsPlayingAny)
         .def("IsPlaying", &USpecialMoveComponent::IsPlaying)
         .def("GetAnimDelta", &USpecialMoveComponent::GetAnimDelta)
-        .def("GetSMNode", &USpecialMoveComponent::GetSMNode, return_value_policy< reference_existing_object >())
+        .def("GetSMNode", &USpecialMoveComponent::GetSMNode, py::return_value_policy::reference)
         .def("PlayReplicated", &USpecialMoveComponent::PlayReplicated)
         .def("GetAnimLength", &USpecialMoveComponent::GetAnimLength)
         .staticmethod("StaticClass")

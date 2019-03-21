@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimSet()
 {
-    class_< UAnimSet, bases< UObject >  , boost::noncopyable>("UAnimSet", no_init)
+    py::class_< UAnimSet,  UObject   >("UAnimSet")
         .def_readwrite("TrackBoneNames", &UAnimSet::TrackBoneNames)
         .def_readwrite("Sequences", &UAnimSet::Sequences)
         .def_readonly("UnknownData00", &UAnimSet::UnknownData00)
@@ -17,7 +17,7 @@ void Export_pystes_UAnimSet()
         .def_readwrite("ForceMeshTranslationBoneNames", &UAnimSet::ForceMeshTranslationBoneNames)
         .def_readwrite("PreviewSkelMeshName", &UAnimSet::PreviewSkelMeshName)
         .def_readwrite("BestRatioSkelMeshName", &UAnimSet::BestRatioSkelMeshName)
-        .def("StaticClass", &UAnimSet::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimSet::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

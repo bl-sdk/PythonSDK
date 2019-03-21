@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributePresentationDamageTypeMapping()
 {
-    class_< FAttributePresentationDamageTypeMapping >("FAttributePresentationDamageTypeMapping", no_init)
+    py::class_< FAttributePresentationDamageTypeMapping >("FAttributePresentationDamageTypeMapping")
         .def_readwrite("Presentation", &FAttributePresentationDamageTypeMapping::Presentation)
         .def_readwrite("DamageType", &FAttributePresentationDamageTypeMapping::DamageType)
   ;

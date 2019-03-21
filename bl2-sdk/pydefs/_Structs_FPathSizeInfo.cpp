@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPathSizeInfo()
 {
-    class_< FPathSizeInfo >("FPathSizeInfo", no_init)
+    py::class_< FPathSizeInfo >("FPathSizeInfo")
         .def_readwrite("Desc", &FPathSizeInfo::Desc)
         .def_readwrite("Radius", &FPathSizeInfo::Radius)
         .def_readwrite("Height", &FPathSizeInfo::Height)

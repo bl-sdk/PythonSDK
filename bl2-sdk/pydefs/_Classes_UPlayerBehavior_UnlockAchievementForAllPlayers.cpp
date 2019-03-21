@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_UnlockAchievementForAllPlayers()
 {
-    class_< UPlayerBehavior_UnlockAchievementForAllPlayers, bases< UPlayerBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_UnlockAchievementForAllPlayers", no_init)
+    py::class_< UPlayerBehavior_UnlockAchievementForAllPlayers,  UPlayerBehaviorBase   >("UPlayerBehavior_UnlockAchievementForAllPlayers")
         .def_readwrite("Achievement", &UPlayerBehavior_UnlockAchievementForAllPlayers::Achievement)
         .def_readwrite("MinimumPlayersRequired", &UPlayerBehavior_UnlockAchievementForAllPlayers::MinimumPlayersRequired)
-        .def("StaticClass", &UPlayerBehavior_UnlockAchievementForAllPlayers::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerBehavior_UnlockAchievementForAllPlayers::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_UnlockAchievementForAllPlayers::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

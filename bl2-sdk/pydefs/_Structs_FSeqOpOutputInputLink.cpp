@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSeqOpOutputInputLink()
 {
-    class_< FSeqOpOutputInputLink >("FSeqOpOutputInputLink", no_init)
+    py::class_< FSeqOpOutputInputLink >("FSeqOpOutputInputLink")
         .def_readwrite("LinkedOp", &FSeqOpOutputInputLink::LinkedOp)
         .def_readwrite("InputLinkIdx", &FSeqOpOutputInputLink::InputLinkIdx)
   ;

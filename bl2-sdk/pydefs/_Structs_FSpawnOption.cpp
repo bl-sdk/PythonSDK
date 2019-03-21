@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSpawnOption()
 {
-    class_< FSpawnOption >("FSpawnOption", no_init)
+    py::class_< FSpawnOption >("FSpawnOption")
         .def_readwrite("Factory", &FSpawnOption::Factory)
         .def_readwrite("ComputedProbability", &FSpawnOption::ComputedProbability)
   ;

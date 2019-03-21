@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkelControlListHead()
 {
-    class_< FSkelControlListHead >("FSkelControlListHead", no_init)
+    py::class_< FSkelControlListHead >("FSkelControlListHead")
         .def_readwrite("BoneName", &FSkelControlListHead::BoneName)
         .def_readwrite("ControlHead", &FSkelControlListHead::ControlHead)
   ;

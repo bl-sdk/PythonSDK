@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCurrencyListDefinition()
 {
-    class_< UCurrencyListDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UCurrencyListDefinition", no_init)
+    py::class_< UCurrencyListDefinition,  UGBXDefinition   >("UCurrencyListDefinition")
         .def_readwrite("Currencies", &UCurrencyListDefinition::Currencies)
-        .def("StaticClass", &UCurrencyListDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCurrencyListDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

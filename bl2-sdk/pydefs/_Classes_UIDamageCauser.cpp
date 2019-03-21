@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIDamageCauser()
 {
-    class_< UIDamageCauser, bases< UInterface >  , boost::noncopyable>("UIDamageCauser", no_init)
-        .def("StaticClass", &UIDamageCauser::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetControllerResponsibleForDamage", &UIDamageCauser::GetControllerResponsibleForDamage, return_value_policy< reference_existing_object >())
-        .def("GetInstigator", &UIDamageCauser::GetInstigator, return_value_policy< reference_existing_object >())
+    py::class_< UIDamageCauser,  UInterface   >("UIDamageCauser")
+        .def("StaticClass", &UIDamageCauser::StaticClass, py::return_value_policy::reference)
+        .def("GetControllerResponsibleForDamage", &UIDamageCauser::GetControllerResponsibleForDamage, py::return_value_policy::reference)
+        .def("GetInstigator", &UIDamageCauser::GetInstigator, py::return_value_policy::reference)
         .def("GetInstigatorSelfDamageScale", &UIDamageCauser::GetInstigatorSelfDamageScale)
         .def("GetFireIntervalChanceModifier", &UIDamageCauser::GetFireIntervalChanceModifier)
         .def("GetStatusEffectBaseChanceModifier", &UIDamageCauser::GetStatusEffectBaseChanceModifier)

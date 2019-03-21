@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOctreeElementId()
 {
-    class_< FOctreeElementId >("FOctreeElementId", no_init)
+    py::class_< FOctreeElementId >("FOctreeElementId")
         .def_readwrite("Node", &FOctreeElementId::Node)
         .def_readwrite("ElementIndex", &FOctreeElementId::ElementIndex)
   ;

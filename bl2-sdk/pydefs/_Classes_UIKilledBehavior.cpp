@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIKilledBehavior()
 {
-    class_< UIKilledBehavior, bases< UInterface >  , boost::noncopyable>("UIKilledBehavior", no_init)
-        .def("StaticClass", &UIKilledBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIKilledBehavior,  UInterface   >("UIKilledBehavior")
+        .def("StaticClass", &UIKilledBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_Killed", &UIKilledBehavior::Behavior_Killed)
         .staticmethod("StaticClass")
   ;

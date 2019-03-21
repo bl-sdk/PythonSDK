@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableFixupAIPawnNamesDefinition()
 {
-    class_< UDownloadableFixupAIPawnNamesDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UDownloadableFixupAIPawnNamesDefinition", no_init)
+    py::class_< UDownloadableFixupAIPawnNamesDefinition,  UGBXDefinition   >("UDownloadableFixupAIPawnNamesDefinition")
         .def_readwrite("PlayThroughThree", &UDownloadableFixupAIPawnNamesDefinition::PlayThroughThree)
-        .def("StaticClass", &UDownloadableFixupAIPawnNamesDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadableFixupAIPawnNamesDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxLocationRequest()
 {
-    class_< UGearboxLocationRequest, bases< UObject >  , boost::noncopyable>("UGearboxLocationRequest", no_init)
+    py::class_< UGearboxLocationRequest,  UObject   >("UGearboxLocationRequest")
         .def_readwrite("SearchOrigin", &UGearboxLocationRequest::SearchOrigin)
         .def_readwrite("DirectionFromOrigin", &UGearboxLocationRequest::DirectionFromOrigin)
         .def_readwrite("LocationFilterTest", &UGearboxLocationRequest::LocationFilterTest)
@@ -15,7 +15,7 @@ void Export_pystes_UGearboxLocationRequest()
         .def_readwrite("SearchRandomness", &UGearboxLocationRequest::SearchRandomness)
         .def_readwrite("SearchOriginResult", &UGearboxLocationRequest::SearchOriginResult)
         .def_readwrite("SearchDirectionResult", &UGearboxLocationRequest::SearchDirectionResult)
-        .def("StaticClass", &UGearboxLocationRequest::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxLocationRequest::StaticClass, py::return_value_policy::reference)
         .def("GetLastDirection", &UGearboxLocationRequest::GetLastDirection)
         .def("GetLastOrigin", &UGearboxLocationRequest::GetLastOrigin)
         .def("GetDirection", &UGearboxLocationRequest::GetDirection)

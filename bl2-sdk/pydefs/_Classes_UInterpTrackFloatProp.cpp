@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInterpTrackFloatProp()
 {
-    class_< UInterpTrackFloatProp, bases< UInterpTrackFloatBase >  , boost::noncopyable>("UInterpTrackFloatProp", no_init)
+    py::class_< UInterpTrackFloatProp,  UInterpTrackFloatBase   >("UInterpTrackFloatProp")
         .def_readwrite("PropertyName", &UInterpTrackFloatProp::PropertyName)
-        .def("StaticClass", &UInterpTrackFloatProp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInterpTrackFloatProp::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ClientFlagSet()
 {
-    class_< UWillowSeqAct_ClientFlagSet, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ClientFlagSet", no_init)
+    py::class_< UWillowSeqAct_ClientFlagSet,  USequenceAction   >("UWillowSeqAct_ClientFlagSet")
         .def_readwrite("ClientFlagName", &UWillowSeqAct_ClientFlagSet::ClientFlagName)
-        .def("StaticClass", &UWillowSeqAct_ClientFlagSet::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_ClientFlagSet::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_ClientFlagSet::eventActivated)
         .staticmethod("StaticClass")
   ;

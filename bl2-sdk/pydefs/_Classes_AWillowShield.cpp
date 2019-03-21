@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowShield()
 {
-    class_< AWillowShield, bases< AWillowEquipAbleItem >  , boost::noncopyable>("AWillowShield", no_init)
+    py::class_< AWillowShield,  AWillowEquipAbleItem   >("AWillowShield")
         .def_readwrite("PercentChanceToAbsorbAmmo", &AWillowShield::PercentChanceToAbsorbAmmo)
         .def_readwrite("PercentChanceToAbsorbAmmoBaseValue", &AWillowShield::PercentChanceToAbsorbAmmoBaseValue)
         .def_readwrite("PercentChanceToAbsorbAmmoModifierStack", &AWillowShield::PercentChanceToAbsorbAmmoModifierStack)
@@ -77,10 +77,10 @@ void Export_pystes_AWillowShield()
         .def_readwrite("ShieldSpecialSlotGradeMinusRarity", &AWillowShield::ShieldSpecialSlotGradeMinusRarity)
         .def_readwrite("ShieldSpecialSlotGradeMinusRarityBaseValue", &AWillowShield::ShieldSpecialSlotGradeMinusRarityBaseValue)
         .def_readwrite("ShieldSpecialSlotGradeMinusRarityModifierStack", &AWillowShield::ShieldSpecialSlotGradeMinusRarityModifierStack)
-        .def("StaticClass", &AWillowShield::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowShield::StaticClass, py::return_value_policy::reference)
         .def("GetHolsteredGearLikenessType", &AWillowShield::GetHolsteredGearLikenessType)
         .def("GetItemCardTopSectionString", &AWillowShield::GetItemCardTopSectionString)
-        .def("GetAttributePresentationOverride", &AWillowShield::GetAttributePresentationOverride, return_value_policy< reference_existing_object >())
+        .def("GetAttributePresentationOverride", &AWillowShield::GetAttributePresentationOverride, py::return_value_policy::reference)
         .def("IsSameShieldTypeAs", &AWillowShield::IsSameShieldTypeAs)
         .def("CanCompareUIStat", &AWillowShield::CanCompareUIStat)
         .def("ValidateDefinitions", &AWillowShield::ValidateDefinitions)

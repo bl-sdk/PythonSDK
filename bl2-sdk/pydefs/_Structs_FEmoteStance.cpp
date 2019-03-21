@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEmoteStance()
 {
-    class_< FEmoteStance >("FEmoteStance", no_init)
+    py::class_< FEmoteStance >("FEmoteStance")
         .def_readwrite("Emote", &FEmoteStance::Emote)
         .def_readwrite("StanceSpecialMove", &FEmoteStance::StanceSpecialMove)
   ;

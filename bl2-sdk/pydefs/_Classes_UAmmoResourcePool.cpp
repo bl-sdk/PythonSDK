@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAmmoResourcePool()
 {
-    class_< UAmmoResourcePool, bases< UResourcePool >  , boost::noncopyable>("UAmmoResourcePool", no_init)
-        .def("StaticClass", &UAmmoResourcePool::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAmmoResourcePool,  UResourcePool   >("UAmmoResourcePool")
+        .def("StaticClass", &UAmmoResourcePool::StaticClass, py::return_value_policy::reference)
         .def("GetDebugText", &UAmmoResourcePool::GetDebugText)
         .def("GetExtraAmmoRegen", &UAmmoResourcePool::GetExtraAmmoRegen)
         .staticmethod("StaticClass")

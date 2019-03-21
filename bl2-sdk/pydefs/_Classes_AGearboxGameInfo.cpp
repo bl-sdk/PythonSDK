@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxGameInfo()
 {
-    class_< AGearboxGameInfo, bases< AGameInfo >  , boost::noncopyable>("AGearboxGameInfo", no_init)
-        .def("StaticClass", &AGearboxGameInfo::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AGearboxGameInfo,  AGameInfo   >("AGearboxGameInfo")
+        .def("StaticClass", &AGearboxGameInfo::StaticClass, py::return_value_policy::reference)
         .def("eventPostLogin", &AGearboxGameInfo::eventPostLogin)
         .staticmethod("StaticClass")
   ;

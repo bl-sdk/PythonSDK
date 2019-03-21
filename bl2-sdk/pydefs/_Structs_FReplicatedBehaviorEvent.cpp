@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReplicatedBehaviorEvent()
 {
-    class_< FReplicatedBehaviorEvent >("FReplicatedBehaviorEvent", no_init)
+    py::class_< FReplicatedBehaviorEvent >("FReplicatedBehaviorEvent")
         .def_readwrite("SequenceIndex", &FReplicatedBehaviorEvent::SequenceIndex)
         .def_readwrite("EventCounter", &FReplicatedBehaviorEvent::EventCounter)
         .def_readwrite("EventIndex", &FReplicatedBehaviorEvent::EventIndex)

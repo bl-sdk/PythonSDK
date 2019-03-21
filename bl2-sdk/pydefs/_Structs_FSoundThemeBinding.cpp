@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSoundThemeBinding()
 {
-    class_< FSoundThemeBinding >("FSoundThemeBinding", no_init)
+    py::class_< FSoundThemeBinding >("FSoundThemeBinding")
         .def_readwrite("ThemeName", &FSoundThemeBinding::ThemeName)
         .def_readwrite("Theme", &FSoundThemeBinding::Theme)
   ;

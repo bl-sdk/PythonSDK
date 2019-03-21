@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ADecalManager()
 {
-    class_< ADecalManager, bases< AActor >  , boost::noncopyable>("ADecalManager", no_init)
+    py::class_< ADecalManager,  AActor   >("ADecalManager")
         .def_readwrite("DecalTemplate", &ADecalManager::DecalTemplate)
         .def_readwrite("PoolDecals", &ADecalManager::PoolDecals)
         .def_readwrite("MaxActiveDecals", &ADecalManager::MaxActiveDecals)
@@ -20,11 +20,11 @@ void Export_pystes_ADecalManager()
         .def_readwrite("FadeParameterName", &ADecalManager::FadeParameterName)
         .def_readwrite("ActiveDecals", &ADecalManager::ActiveDecals)
         .def_readwrite("FadingDecals", &ADecalManager::FadingDecals)
-        .def("StaticClass", &ADecalManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ADecalManager::StaticClass, py::return_value_policy::reference)
         .def("ClearAllPoolComponents", &ADecalManager::ClearAllPoolComponents)
         .def("ClearDecals", &ADecalManager::ClearDecals)
-        .def("eventSpawnDecal", &ADecalManager::eventSpawnDecal, return_value_policy< reference_existing_object >())
-        .def("GetPooledComponent", &ADecalManager::GetPooledComponent, return_value_policy< reference_existing_object >())
+        .def("eventSpawnDecal", &ADecalManager::eventSpawnDecal, py::return_value_policy::reference)
+        .def("GetPooledComponent", &ADecalManager::GetPooledComponent, py::return_value_policy::reference)
         .def("SetDecalParameters", &ADecalManager::SetDecalParameters)
         .def("CanSpawnDecals", &ADecalManager::CanSpawnDecals)
         .def("eventDecalFinished", &ADecalManager::eventDecalFinished)

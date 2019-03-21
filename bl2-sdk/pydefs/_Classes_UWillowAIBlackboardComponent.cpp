@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAIBlackboardComponent()
 {
-    class_< UWillowAIBlackboardComponent, bases< UWillowAIComponent >  , boost::noncopyable>("UWillowAIBlackboardComponent", no_init)
+    py::class_< UWillowAIBlackboardComponent,  UWillowAIComponent   >("UWillowAIBlackboardComponent")
         .def_readwrite("Allegiance", &UWillowAIBlackboardComponent::Allegiance)
-        .def("StaticClass", &UWillowAIBlackboardComponent::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetAllegiance", &UWillowAIBlackboardComponent::GetAllegiance, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAIBlackboardComponent::StaticClass, py::return_value_policy::reference)
+        .def("GetAllegiance", &UWillowAIBlackboardComponent::GetAllegiance, py::return_value_policy::reference)
         .def("GetTargets", &UWillowAIBlackboardComponent::GetTargets)
         .staticmethod("StaticClass")
   ;

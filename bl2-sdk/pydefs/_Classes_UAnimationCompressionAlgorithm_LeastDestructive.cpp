@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimationCompressionAlgorithm_LeastDestructive()
 {
-    class_< UAnimationCompressionAlgorithm_LeastDestructive, bases< UAnimationCompressionAlgorithm >  , boost::noncopyable>("UAnimationCompressionAlgorithm_LeastDestructive", no_init)
-        .def("StaticClass", &UAnimationCompressionAlgorithm_LeastDestructive::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAnimationCompressionAlgorithm_LeastDestructive,  UAnimationCompressionAlgorithm   >("UAnimationCompressionAlgorithm_LeastDestructive")
+        .def("StaticClass", &UAnimationCompressionAlgorithm_LeastDestructive::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

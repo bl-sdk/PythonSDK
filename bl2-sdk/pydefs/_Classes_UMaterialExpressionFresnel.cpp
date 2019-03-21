@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionFresnel()
 {
-    class_< UMaterialExpressionFresnel, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionFresnel", no_init)
+    py::class_< UMaterialExpressionFresnel,  UMaterialExpression   >("UMaterialExpressionFresnel")
         .def_readwrite("Exponent", &UMaterialExpressionFresnel::Exponent)
         .def_readwrite("Normal", &UMaterialExpressionFresnel::Normal)
-        .def("StaticClass", &UMaterialExpressionFresnel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionFresnel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

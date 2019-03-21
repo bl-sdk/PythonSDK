@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRewardData()
 {
-    class_< FRewardData >("FRewardData", no_init)
+    py::class_< FRewardData >("FRewardData")
         .def_readwrite("ExperienceRewardPercentage", &FRewardData::ExperienceRewardPercentage)
         .def_readwrite("CurrencyRewardType", &FRewardData::CurrencyRewardType)
         .def_readwrite("CreditRewardMultiplier", &FRewardData::CreditRewardMultiplier)

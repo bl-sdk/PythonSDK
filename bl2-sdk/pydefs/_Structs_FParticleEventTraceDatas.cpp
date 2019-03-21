@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FParticleEventTraceData()
 {
-    class_< FParticleEventTraceData, bases< FParticleEventData >  >("FParticleEventTraceData", no_init)
+    py::class_< FParticleEventTraceData,  FParticleEventData   >("FParticleEventTraceData")
         .def_readwrite("ParticleTime", &FParticleEventTraceData::ParticleTime)
   ;
 }

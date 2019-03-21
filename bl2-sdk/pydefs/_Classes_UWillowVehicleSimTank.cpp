@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVehicleSimTank()
 {
-    class_< UWillowVehicleSimTank, bases< USVehicleSimTank >  , boost::noncopyable>("UWillowVehicleSimTank", no_init)
+    py::class_< UWillowVehicleSimTank,  USVehicleSimTank   >("UWillowVehicleSimTank")
         .def_readwrite("SteeringThresholdForStoppedTurns", &UWillowVehicleSimTank::SteeringThresholdForStoppedTurns)
         .def_readwrite("EngineDampingOnStoppedTurns", &UWillowVehicleSimTank::EngineDampingOnStoppedTurns)
-        .def("StaticClass", &UWillowVehicleSimTank::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowVehicleSimTank::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

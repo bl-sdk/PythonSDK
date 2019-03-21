@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBodyWeaponHoldDefinition()
 {
-    class_< UBodyWeaponHoldDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBodyWeaponHoldDefinition", no_init)
+    py::class_< UBodyWeaponHoldDefinition,  UGBXDefinition   >("UBodyWeaponHoldDefinition")
         .def_readwrite("HoldName", &UBodyWeaponHoldDefinition::HoldName)
         .def_readwrite("EnvironmentTag", &UBodyWeaponHoldDefinition::EnvironmentTag)
         .def_readwrite("AimOffsetProfileName", &UBodyWeaponHoldDefinition::AimOffsetProfileName)
@@ -17,9 +17,9 @@ void Export_pystes_UBodyWeaponHoldDefinition()
         .def_readwrite("LeftHandIKHandLocation", &UBodyWeaponHoldDefinition::LeftHandIKHandLocation)
         .def_readwrite("LeftHandIKHandRotation", &UBodyWeaponHoldDefinition::LeftHandIKHandRotation)
         .def_readwrite("ParentDefinition", &UBodyWeaponHoldDefinition::ParentDefinition)
-        .def("StaticClass", &UBodyWeaponHoldDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBodyWeaponHoldDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetAnimSets", &UBodyWeaponHoldDefinition::GetAnimSets)
-        .def("GetWeaponSMD", &UBodyWeaponHoldDefinition::GetWeaponSMD, return_value_policy< reference_existing_object >())
+        .def("GetWeaponSMD", &UBodyWeaponHoldDefinition::GetWeaponSMD, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

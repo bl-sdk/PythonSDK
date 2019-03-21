@@ -3,9 +3,7 @@
 #include <SDKDDKVer.h>
 #define WIN32_LEAN_AND_MEAN
 
-#define BOOST_PYTHON_STATIC_LIB
-#include <boost/python.hpp>
-#include <boost/cstdint.hpp>
+#include <pybind11/pybind11.h>
 
 #include <windows.h>
 #include <stdio.h>

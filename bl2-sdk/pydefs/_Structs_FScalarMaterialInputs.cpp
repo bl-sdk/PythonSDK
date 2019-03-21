@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScalarMaterialInput()
 {
-    class_< FScalarMaterialInput, bases< FMaterialInput >  >("FScalarMaterialInput", no_init)
+    py::class_< FScalarMaterialInput,  FMaterialInput   >("FScalarMaterialInput")
         .def_readwrite("Constant", &FScalarMaterialInput::Constant)
   ;
 }

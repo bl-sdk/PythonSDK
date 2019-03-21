@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInterpCurvePointLinearColor()
 {
-    class_< FInterpCurvePointLinearColor >("FInterpCurvePointLinearColor", no_init)
+    py::class_< FInterpCurvePointLinearColor >("FInterpCurvePointLinearColor")
         .def_readwrite("InVal", &FInterpCurvePointLinearColor::InVal)
         .def_readwrite("OutVal", &FInterpCurvePointLinearColor::OutVal)
         .def_readwrite("ArriveTangent", &FInterpCurvePointLinearColor::ArriveTangent)

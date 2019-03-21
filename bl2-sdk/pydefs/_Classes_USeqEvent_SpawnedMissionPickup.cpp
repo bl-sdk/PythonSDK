@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_SpawnedMissionPickup()
 {
-    class_< USeqEvent_SpawnedMissionPickup, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_SpawnedMissionPickup", no_init)
-        .def("StaticClass", &USeqEvent_SpawnedMissionPickup::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqEvent_SpawnedMissionPickup,  USequenceEvent   >("USeqEvent_SpawnedMissionPickup")
+        .def("StaticClass", &USeqEvent_SpawnedMissionPickup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USphereComponent()
 {
-    class_< USphereComponent, bases< UCylinderComponent >  , boost::noncopyable>("USphereComponent", no_init)
-        .def("StaticClass", &USphereComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USphereComponent,  UCylinderComponent   >("USphereComponent")
+        .def("StaticClass", &USphereComponent::StaticClass, py::return_value_policy::reference)
         .def("SetSphereSize", &USphereComponent::SetSphereSize)
         .staticmethod("StaticClass")
   ;

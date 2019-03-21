@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionDepthBiasBlend()
 {
-    class_< UMaterialExpressionDepthBiasBlend, bases< UMaterialExpressionTextureSample >  , boost::noncopyable>("UMaterialExpressionDepthBiasBlend", no_init)
+    py::class_< UMaterialExpressionDepthBiasBlend,  UMaterialExpressionTextureSample   >("UMaterialExpressionDepthBiasBlend")
         .def_readwrite("BiasScale", &UMaterialExpressionDepthBiasBlend::BiasScale)
         .def_readwrite("Bias", &UMaterialExpressionDepthBiasBlend::Bias)
-        .def("StaticClass", &UMaterialExpressionDepthBiasBlend::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionDepthBiasBlend::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

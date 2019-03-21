@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInteriorSettings()
 {
-    class_< FInteriorSettings >("FInteriorSettings", no_init)
+    py::class_< FInteriorSettings >("FInteriorSettings")
         .def_readwrite("ExteriorVolume", &FInteriorSettings::ExteriorVolume)
         .def_readwrite("ExteriorTime", &FInteriorSettings::ExteriorTime)
         .def_readwrite("ExteriorLPF", &FInteriorSettings::ExteriorLPF)

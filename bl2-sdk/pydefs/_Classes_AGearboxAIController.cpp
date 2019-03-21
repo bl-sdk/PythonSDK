@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGearboxAIController()
 {
-    class_< AGearboxAIController, bases< AAIController >  , boost::noncopyable>("AGearboxAIController", no_init)
-        .def("StaticClass", &AGearboxAIController::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AGearboxAIController,  AAIController   >("AGearboxAIController")
+        .def("StaticClass", &AGearboxAIController::StaticClass, py::return_value_policy::reference)
         .def("ForceMoveToActor", &AGearboxAIController::ForceMoveToActor)
         .staticmethod("StaticClass")
   ;

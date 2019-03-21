@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineGameSearchSortClause()
 {
-    class_< FOnlineGameSearchSortClause >("FOnlineGameSearchSortClause", no_init)
+    py::class_< FOnlineGameSearchSortClause >("FOnlineGameSearchSortClause")
         .def_readwrite("EntryId", &FOnlineGameSearchSortClause::EntryId)
         .def_readwrite("ObjectPropertyName", &FOnlineGameSearchSortClause::ObjectPropertyName)
         .def_readwrite("EntryType", &FOnlineGameSearchSortClause::EntryType)

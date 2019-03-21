@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FChildBoneBlendInfo()
 {
-    class_< FChildBoneBlendInfo >("FChildBoneBlendInfo", no_init)
+    py::class_< FChildBoneBlendInfo >("FChildBoneBlendInfo")
         .def_readwrite("TargetPerBoneWeight", &FChildBoneBlendInfo::TargetPerBoneWeight)
         .def_readwrite("InitTargetStartBone", &FChildBoneBlendInfo::InitTargetStartBone)
         .def_readwrite("InitPerBoneIncrease", &FChildBoneBlendInfo::InitPerBoneIncrease)

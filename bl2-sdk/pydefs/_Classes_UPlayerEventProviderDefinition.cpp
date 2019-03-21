@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerEventProviderDefinition()
 {
-    class_< UPlayerEventProviderDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UPlayerEventProviderDefinition", no_init)
+    py::class_< UPlayerEventProviderDefinition,  UGBXDefinition   >("UPlayerEventProviderDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UPlayerEventProviderDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UPlayerEventProviderDefinition::VfTable_IIConstructObject)
         .def_readwrite("BehaviorProviderDefinition", &UPlayerEventProviderDefinition::BehaviorProviderDefinition)
-        .def("StaticClass", &UPlayerEventProviderDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerEventProviderDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnPlayerEvent", &UPlayerEventProviderDefinition::OnPlayerEvent)
         .def("SetBehaviorProviderDefinition", &UPlayerEventProviderDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UPlayerEventProviderDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UPlayerEventProviderDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

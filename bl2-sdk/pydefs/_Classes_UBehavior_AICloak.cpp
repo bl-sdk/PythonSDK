@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AICloak()
 {
-    class_< UBehavior_AICloak, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AICloak", no_init)
+    py::class_< UBehavior_AICloak,  UBehaviorBase   >("UBehavior_AICloak")
         .def_readwrite("NewCloakBehavior", &UBehavior_AICloak::NewCloakBehavior)
-        .def("StaticClass", &UBehavior_AICloak::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AICloak::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AICloak::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

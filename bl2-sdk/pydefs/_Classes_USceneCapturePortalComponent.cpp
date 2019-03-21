@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USceneCapturePortalComponent()
 {
-    class_< USceneCapturePortalComponent, bases< USceneCaptureComponent >  , boost::noncopyable>("USceneCapturePortalComponent", no_init)
+    py::class_< USceneCapturePortalComponent,  USceneCaptureComponent   >("USceneCapturePortalComponent")
         .def_readwrite("TextureTarget", &USceneCapturePortalComponent::TextureTarget)
         .def_readwrite("ScaleFOV", &USceneCapturePortalComponent::ScaleFOV)
         .def_readwrite("ViewDestination", &USceneCapturePortalComponent::ViewDestination)
-        .def("StaticClass", &USceneCapturePortalComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USceneCapturePortalComponent::StaticClass, py::return_value_policy::reference)
         .def("SetCaptureParameters", &USceneCapturePortalComponent::SetCaptureParameters)
         .staticmethod("StaticClass")
   ;

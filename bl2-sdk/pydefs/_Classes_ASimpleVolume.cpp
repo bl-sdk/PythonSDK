@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASimpleVolume()
 {
-    class_< ASimpleVolume, bases< AVolume >  , boost::noncopyable>("ASimpleVolume", no_init)
-        .def("StaticClass", &ASimpleVolume::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ASimpleVolume,  AVolume   >("ASimpleVolume")
+        .def("StaticClass", &ASimpleVolume::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &ASimpleVolume::StopsProjectile)
         .staticmethod("StaticClass")
   ;

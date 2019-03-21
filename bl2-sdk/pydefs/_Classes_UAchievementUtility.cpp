@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAchievementUtility()
 {
-    class_< UAchievementUtility, bases< UObject >  , boost::noncopyable>("UAchievementUtility", no_init)
-        .def("StaticClass", &UAchievementUtility::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAchievementUtility,  UObject   >("UAchievementUtility")
+        .def("StaticClass", &UAchievementUtility::StaticClass, py::return_value_policy::reference)
         .def("ShouldUnlockAchievementFromUnlockType", &UAchievementUtility::ShouldUnlockAchievementFromUnlockType)
         .staticmethod("StaticClass")
   ;

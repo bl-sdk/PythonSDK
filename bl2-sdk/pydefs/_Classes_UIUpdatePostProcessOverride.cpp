@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIUpdatePostProcessOverride()
 {
-    class_< UIUpdatePostProcessOverride, bases< UInterface >  , boost::noncopyable>("UIUpdatePostProcessOverride", no_init)
-        .def("StaticClass", &UIUpdatePostProcessOverride::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIUpdatePostProcessOverride,  UInterface   >("UIUpdatePostProcessOverride")
+        .def("StaticClass", &UIUpdatePostProcessOverride::StaticClass, py::return_value_policy::reference)
         .def("EndLostShield", &UIUpdatePostProcessOverride::EndLostShield)
         .def("BeginLostShield", &UIUpdatePostProcessOverride::BeginLostShield)
         .def("PopPostProcessChain", &UIUpdatePostProcessOverride::PopPostProcessChain)

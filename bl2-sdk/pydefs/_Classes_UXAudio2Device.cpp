@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UXAudio2Device()
 {
-    class_< UXAudio2Device, bases< UAudioDevice >  , boost::noncopyable>("UXAudio2Device", no_init)
+    py::class_< UXAudio2Device,  UAudioDevice   >("UXAudio2Device")
         .def_readonly("UnknownData00", &UXAudio2Device::UnknownData00)
-        .def("StaticClass", &UXAudio2Device::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UXAudio2Device::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

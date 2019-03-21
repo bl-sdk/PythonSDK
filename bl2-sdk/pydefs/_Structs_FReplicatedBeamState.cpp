@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReplicatedBeamState()
 {
-    class_< FReplicatedBeamState >("FReplicatedBeamState", no_init)
+    py::class_< FReplicatedBeamState >("FReplicatedBeamState")
         .def_readwrite("FireDef", &FReplicatedBeamState::FireDef)
         .def_readwrite("ImpactDefinition", &FReplicatedBeamState::ImpactDefinition)
         .def_readwrite("SourceData", &FReplicatedBeamState::SourceData)

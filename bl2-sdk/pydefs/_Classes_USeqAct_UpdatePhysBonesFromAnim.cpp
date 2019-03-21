@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_UpdatePhysBonesFromAnim()
 {
-    class_< USeqAct_UpdatePhysBonesFromAnim, bases< USequenceAction >  , boost::noncopyable>("USeqAct_UpdatePhysBonesFromAnim", no_init)
-        .def("StaticClass", &USeqAct_UpdatePhysBonesFromAnim::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_UpdatePhysBonesFromAnim,  USequenceAction   >("USeqAct_UpdatePhysBonesFromAnim")
+        .def("StaticClass", &USeqAct_UpdatePhysBonesFromAnim::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_UpdatePhysBonesFromAnim::eventGetObjClassVersion)
         .staticmethod("StaticClass")
   ;

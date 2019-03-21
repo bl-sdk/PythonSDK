@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWwiseSoundVolume()
 {
-    class_< AWwiseSoundVolume, bases< AVolume >  , boost::noncopyable>("AWwiseSoundVolume", no_init)
+    py::class_< AWwiseSoundVolume,  AVolume   >("AWwiseSoundVolume")
         .def_readwrite("VfTable_IIAkEnvironmentalEffectProvider", &AWwiseSoundVolume::VfTable_IIAkEnvironmentalEffectProvider)
         .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundVolume::VfTable_IISpecialOcclusionProvider)
         .def_readwrite("VfTable_IISpecialOcclusionAccumulator", &AWwiseSoundVolume::VfTable_IISpecialOcclusionAccumulator)
@@ -35,7 +35,7 @@ void Export_pystes_AWwiseSoundVolume()
         .def_readwrite("CachedListenerDistances", &AWwiseSoundVolume::CachedListenerDistances)
         .def_readwrite("EffectSoundBank", &AWwiseSoundVolume::EffectSoundBank)
         .def_readwrite("EffectSoundBankLoadDistance", &AWwiseSoundVolume::EffectSoundBankLoadDistance)
-        .def("StaticClass", &AWwiseSoundVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWwiseSoundVolume::StaticClass, py::return_value_policy::reference)
         .def("RemoveOcclusionProvider", &AWwiseSoundVolume::RemoveOcclusionProvider)
         .def("SetOcclusionForProvider", &AWwiseSoundVolume::SetOcclusionForProvider)
         .def("GetOcclusionAmount", &AWwiseSoundVolume::GetOcclusionAmount)

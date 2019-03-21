@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULandscapeComponent()
 {
-    class_< ULandscapeComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("ULandscapeComponent", no_init)
+    py::class_< ULandscapeComponent,  UPrimitiveComponent   >("ULandscapeComponent")
         .def_readwrite("SectionBaseX", &ULandscapeComponent::SectionBaseX)
         .def_readwrite("SectionBaseY", &ULandscapeComponent::SectionBaseY)
         .def_readwrite("ComponentSizeQuads", &ULandscapeComponent::ComponentSizeQuads)
@@ -28,7 +28,7 @@ void Export_pystes_ULandscapeComponent()
         .def_readwrite("CollisionMipLevel", &ULandscapeComponent::CollisionMipLevel)
         .def_readwrite("PlatformData", &ULandscapeComponent::PlatformData)
         .def_readwrite("PlatformDataSize", &ULandscapeComponent::PlatformDataSize)
-        .def("StaticClass", &ULandscapeComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULandscapeComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

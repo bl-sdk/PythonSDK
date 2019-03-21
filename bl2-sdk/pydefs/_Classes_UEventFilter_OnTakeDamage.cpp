@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEventFilter_OnTakeDamage()
 {
-    class_< UEventFilter_OnTakeDamage, bases< UBehaviorEventFilterBase >  , boost::noncopyable>("UEventFilter_OnTakeDamage", no_init)
+    py::class_< UEventFilter_OnTakeDamage,  UBehaviorEventFilterBase   >("UEventFilter_OnTakeDamage")
         .def_readwrite("DamageThreshold", &UEventFilter_OnTakeDamage::DamageThreshold)
-        .def("StaticClass", &UEventFilter_OnTakeDamage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UEventFilter_OnTakeDamage::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

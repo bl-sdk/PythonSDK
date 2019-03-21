@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTimeStampedRecord()
 {
-    class_< FTimeStampedRecord >("FTimeStampedRecord", no_init)
+    py::class_< FTimeStampedRecord >("FTimeStampedRecord")
         .def_readwrite("DeathTimeStamp", &FTimeStampedRecord::DeathTimeStamp)
   ;
 }

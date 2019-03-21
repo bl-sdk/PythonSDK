@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBulletEventResponse()
 {
-    class_< FBulletEventResponse >("FBulletEventResponse", no_init)
+    py::class_< FBulletEventResponse >("FBulletEventResponse")
         .def_readwrite("SplitNum", &FBulletEventResponse::SplitNum)
         .def_readwrite("SplitAngle", &FBulletEventResponse::SplitAngle)
         .def_readwrite("SplitAngleOffset", &FBulletEventResponse::SplitAngleOffset)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerClassIdentifierDefinition()
 {
-    class_< UPlayerClassIdentifierDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UPlayerClassIdentifierDefinition", no_init)
+    py::class_< UPlayerClassIdentifierDefinition,  UGBXDefinition   >("UPlayerClassIdentifierDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UPlayerClassIdentifierDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("ClassName", &UPlayerClassIdentifierDefinition::ClassName)
         .def_readwrite("LocalizedClassName", &UPlayerClassIdentifierDefinition::LocalizedClassName)
@@ -22,8 +22,8 @@ void Export_pystes_UPlayerClassIdentifierDefinition()
         .def_readwrite("AsterClassMods", &UPlayerClassIdentifierDefinition::AsterClassMods)
         .def_readwrite("LobeliaClassMods", &UPlayerClassIdentifierDefinition::LobeliaClassMods)
         .def_readwrite("CharacterCustomizations", &UPlayerClassIdentifierDefinition::CharacterCustomizations)
-        .def("StaticClass", &UPlayerClassIdentifierDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetDownloadableContentDefinition", &UPlayerClassIdentifierDefinition::GetDownloadableContentDefinition, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerClassIdentifierDefinition::StaticClass, py::return_value_policy::reference)
+        .def("GetDownloadableContentDefinition", &UPlayerClassIdentifierDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

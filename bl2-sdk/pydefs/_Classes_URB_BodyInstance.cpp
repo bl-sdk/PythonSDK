@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_BodyInstance()
 {
-    class_< URB_BodyInstance, bases< UObject >  , boost::noncopyable>("URB_BodyInstance", no_init)
+    py::class_< URB_BodyInstance,  UObject   >("URB_BodyInstance")
         .def_readwrite("OwnerComponent", &URB_BodyInstance::OwnerComponent)
         .def_readwrite("BodyIndex", &URB_BodyInstance::BodyIndex)
         .def_readwrite("Velocity", &URB_BodyInstance::Velocity)
@@ -25,7 +25,7 @@ void Export_pystes_URB_BodyInstance()
         .def_readwrite("ContactReportForceThreshold", &URB_BodyInstance::ContactReportForceThreshold)
         .def_readwrite("InstanceMassScale", &URB_BodyInstance::InstanceMassScale)
         .def_readwrite("InstanceDampingScale", &URB_BodyInstance::InstanceDampingScale)
-        .def("StaticClass", &URB_BodyInstance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URB_BodyInstance::StaticClass, py::return_value_policy::reference)
         .def("SetNotifyCollision", &URB_BodyInstance::SetNotifyCollision)
         .def("UpdateDampingProperties", &URB_BodyInstance::UpdateDampingProperties)
         .def("UpdateMassProperties", &URB_BodyInstance::UpdateMassProperties)
@@ -40,7 +40,7 @@ void Export_pystes_URB_BodyInstance()
         .def("GetUnrealWorldAngularVelocity", &URB_BodyInstance::GetUnrealWorldAngularVelocity)
         .def("GetUnrealWorldVelocity", &URB_BodyInstance::GetUnrealWorldVelocity)
         .def("GetUnrealWorldTM", &URB_BodyInstance::GetUnrealWorldTM)
-        .def("GetPhysicsAssetInstance", &URB_BodyInstance::GetPhysicsAssetInstance, return_value_policy< reference_existing_object >())
+        .def("GetPhysicsAssetInstance", &URB_BodyInstance::GetPhysicsAssetInstance, py::return_value_policy::reference)
         .def("IsValidBodyInstance", &URB_BodyInstance::IsValidBodyInstance)
         .def("IsFixed", &URB_BodyInstance::IsFixed)
         .def("SetFixed", &URB_BodyInstance::SetFixed)

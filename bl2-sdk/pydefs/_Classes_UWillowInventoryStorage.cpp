@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowInventoryStorage()
 {
-    class_< UWillowInventoryStorage, bases< UObject >  , boost::noncopyable>("UWillowInventoryStorage", no_init)
+    py::class_< UWillowInventoryStorage,  UObject   >("UWillowInventoryStorage")
         .def_readwrite("MaxSlots", &UWillowInventoryStorage::MaxSlots)
         .def_readwrite("ChestSlots", &UWillowInventoryStorage::ChestSlots)
         .def_readwrite("TheChest", &UWillowInventoryStorage::TheChest)
         .def_readwrite("UnloadableInventory", &UWillowInventoryStorage::UnloadableInventory)
-        .def("StaticClass", &UWillowInventoryStorage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowInventoryStorage::StaticClass, py::return_value_policy::reference)
         .def("SetMaxSlots", &UWillowInventoryStorage::SetMaxSlots)
         .def("PrintLog", &UWillowInventoryStorage::PrintLog)
         .def("IsOpen", &UWillowInventoryStorage::IsOpen)

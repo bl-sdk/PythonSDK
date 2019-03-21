@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowForcedReachSpec()
 {
-    class_< UWillowForcedReachSpec, bases< UForcedReachSpec >  , boost::noncopyable>("UWillowForcedReachSpec", no_init)
-        .def("StaticClass", &UWillowForcedReachSpec::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowForcedReachSpec,  UForcedReachSpec   >("UWillowForcedReachSpec")
+        .def("StaticClass", &UWillowForcedReachSpec::StaticClass, py::return_value_policy::reference)
         .def("eventDoSpecialMove", &UWillowForcedReachSpec::eventDoSpecialMove)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPartyBeaconHost()
 {
-    class_< UPartyBeaconHost, bases< UObject >  , boost::noncopyable>("UPartyBeaconHost", no_init)
+    py::class_< UPartyBeaconHost,  UObject   >("UPartyBeaconHost")
         .def_readwrite("Clients", &UPartyBeaconHost::Clients)
         .def_readwrite("NumTeams", &UPartyBeaconHost::NumTeams)
         .def_readwrite("NumPlayersPerTeam", &UPartyBeaconHost::NumPlayersPerTeam)
@@ -23,7 +23,7 @@ void Export_pystes_UPartyBeaconHost()
         .def_readwrite("HeartbeatTimeout", &UPartyBeacon::HeartbeatTimeout)
         .def_readwrite("ElapsedHeartbeatTime", &UPartyBeacon::ElapsedHeartbeatTime)
         .def_readwrite("BeaconName", &UPartyBeacon::BeaconName)
-        .def("StaticClass", &UPartyBeaconHost::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPartyBeaconHost::StaticClass, py::return_value_policy::reference)
         .def("GetMaxAvailableTeamSize", &UPartyBeaconHost::GetMaxAvailableTeamSize)
         .def("GetPartyLeaders", &UPartyBeaconHost::GetPartyLeaders)
         .def("GetPlayers", &UPartyBeaconHost::GetPlayers)

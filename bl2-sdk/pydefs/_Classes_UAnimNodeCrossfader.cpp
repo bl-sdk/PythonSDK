@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeCrossfader()
 {
-    class_< UAnimNodeCrossfader, bases< UAnimNodeBlend >  , boost::noncopyable>("UAnimNodeCrossfader", no_init)
+    py::class_< UAnimNodeCrossfader,  UAnimNodeBlend   >("UAnimNodeCrossfader")
         .def_readwrite("DefaultAnimSeqName", &UAnimNodeCrossfader::DefaultAnimSeqName)
         .def_readwrite("PendingBlendOutTimeOneShot", &UAnimNodeCrossfader::PendingBlendOutTimeOneShot)
-        .def("StaticClass", &UAnimNodeCrossfader::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetActiveChild", &UAnimNodeCrossfader::GetActiveChild, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeCrossfader::StaticClass, py::return_value_policy::reference)
+        .def("GetActiveChild", &UAnimNodeCrossfader::GetActiveChild, py::return_value_policy::reference)
         .def("GetAnimName", &UAnimNodeCrossfader::GetAnimName)
         .def("BlendToLoopingAnim", &UAnimNodeCrossfader::BlendToLoopingAnim)
         .def("PlayOneShotAnim", &UAnimNodeCrossfader::PlayOneShotAnim)

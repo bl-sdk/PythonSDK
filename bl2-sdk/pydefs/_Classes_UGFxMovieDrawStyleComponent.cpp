@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieDrawStyleComponent()
 {
-    class_< UGFxMovieDrawStyleComponent, bases< UGFxMovieDrawStyle >  , boost::noncopyable>("UGFxMovieDrawStyleComponent", no_init)
+    py::class_< UGFxMovieDrawStyleComponent,  UGFxMovieDrawStyle   >("UGFxMovieDrawStyleComponent")
         .def_readwrite("TextureSize", &UGFxMovieDrawStyleRTT::TextureSize)
         .def_readwrite("RenderTextureMode", &UGFxMovieDrawStyleRTT::RenderTextureMode)
-        .def("StaticClass", &UGFxMovieDrawStyleComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxMovieDrawStyleComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

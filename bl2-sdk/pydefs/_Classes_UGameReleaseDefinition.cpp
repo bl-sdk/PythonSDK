@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameReleaseDefinition()
 {
-    class_< UGameReleaseDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UGameReleaseDefinition", no_init)
+    py::class_< UGameReleaseDefinition,  UGBXDefinition   >("UGameReleaseDefinition")
         .def_readwrite("WorldDiscoveryStatID", &UGameReleaseDefinition::WorldDiscoveryStatID)
         .def_readwrite("NumWorldDiscoveryAreas", &UGameReleaseDefinition::NumWorldDiscoveryAreas)
-        .def("StaticClass", &UGameReleaseDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameReleaseDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

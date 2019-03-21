@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEncounterLimitState()
 {
-    class_< FEncounterLimitState >("FEncounterLimitState", no_init)
+    py::class_< FEncounterLimitState >("FEncounterLimitState")
         .def_readwrite("NumTotalSpawned", &FEncounterLimitState::NumTotalSpawned)
         .def_readwrite("NumCurrentlyActive", &FEncounterLimitState::NumCurrentlyActive)
   ;

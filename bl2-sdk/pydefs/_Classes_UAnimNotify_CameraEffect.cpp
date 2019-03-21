@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_CameraEffect()
 {
-    class_< UAnimNotify_CameraEffect, bases< UAnimNotify >  , boost::noncopyable>("UAnimNotify_CameraEffect", no_init)
+    py::class_< UAnimNotify_CameraEffect,  UAnimNotify   >("UAnimNotify_CameraEffect")
         .def_readwrite("CameraLensEffect", &UAnimNotify_CameraEffect::CameraLensEffect)
-        .def("StaticClass", &UAnimNotify_CameraEffect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_CameraEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

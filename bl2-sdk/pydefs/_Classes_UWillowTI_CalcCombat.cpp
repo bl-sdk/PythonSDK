@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowTI_CalcCombat()
 {
-    class_< UWillowTI_CalcCombat, bases< UTI_Calc >  , boost::noncopyable>("UWillowTI_CalcCombat", no_init)
-        .def("StaticClass", &UWillowTI_CalcCombat::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowTI_CalcCombat,  UTI_Calc   >("UWillowTI_CalcCombat")
+        .def("StaticClass", &UWillowTI_CalcCombat::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

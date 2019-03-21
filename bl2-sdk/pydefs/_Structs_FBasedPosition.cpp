@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBasedPosition()
 {
-    class_< FBasedPosition >("FBasedPosition", no_init)
+    py::class_< FBasedPosition >("FBasedPosition")
         .def_readwrite("Base", &FBasedPosition::Base)
         .def_readwrite("Position", &FBasedPosition::Position)
         .def_readwrite("CachedBaseLocation", &FBasedPosition::CachedBaseLocation)

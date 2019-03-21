@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFiringZoneCollectionDefinition()
 {
-    class_< UFiringZoneCollectionDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UFiringZoneCollectionDefinition", no_init)
+    py::class_< UFiringZoneCollectionDefinition,  UGBXDefinition   >("UFiringZoneCollectionDefinition")
         .def_readwrite("Zones", &UFiringZoneCollectionDefinition::Zones)
-        .def("StaticClass", &UFiringZoneCollectionDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetZoneForDistance", &UFiringZoneCollectionDefinition::eventGetZoneForDistance, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFiringZoneCollectionDefinition::StaticClass, py::return_value_policy::reference)
+        .def("eventGetZoneForDistance", &UFiringZoneCollectionDefinition::eventGetZoneForDistance, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

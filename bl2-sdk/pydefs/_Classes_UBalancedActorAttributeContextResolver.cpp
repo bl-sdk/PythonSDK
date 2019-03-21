@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBalancedActorAttributeContextResolver()
 {
-    class_< UBalancedActorAttributeContextResolver, bases< UAttributeContextResolver >  , boost::noncopyable>("UBalancedActorAttributeContextResolver", no_init)
-        .def("StaticClass", &UBalancedActorAttributeContextResolver::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetAttributeContext", &UBalancedActorAttributeContextResolver::GetAttributeContext, return_value_policy< reference_existing_object >())
+    py::class_< UBalancedActorAttributeContextResolver,  UAttributeContextResolver   >("UBalancedActorAttributeContextResolver")
+        .def("StaticClass", &UBalancedActorAttributeContextResolver::StaticClass, py::return_value_policy::reference)
+        .def("GetAttributeContext", &UBalancedActorAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCustomSkeletalMeshComponent()
 {
-    class_< UCustomSkeletalMeshComponent, bases< USkeletalMeshComponent >  , boost::noncopyable>("UCustomSkeletalMeshComponent", no_init)
+    py::class_< UCustomSkeletalMeshComponent,  USkeletalMeshComponent   >("UCustomSkeletalMeshComponent")
         .def_readwrite("DefaultSkeletalMesh", &UCustomSkeletalMeshComponent::DefaultSkeletalMesh)
-        .def("StaticClass", &UCustomSkeletalMeshComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCustomSkeletalMeshComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

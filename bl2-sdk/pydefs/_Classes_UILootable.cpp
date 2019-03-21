@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UILootable()
 {
-    class_< UILootable, bases< UInterface >  , boost::noncopyable>("UILootable", no_init)
-        .def("StaticClass", &UILootable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UILootable,  UInterface   >("UILootable")
+        .def("StaticClass", &UILootable::StaticClass, py::return_value_policy::reference)
         .def("WillLootableBeResetOnLevelLoad", &UILootable::WillLootableBeResetOnLevelLoad)
         .def("GetDroppedLoot", &UILootable::GetDroppedLoot)
         .def("GetAttachedLoot", &UILootable::GetAttachedLoot)

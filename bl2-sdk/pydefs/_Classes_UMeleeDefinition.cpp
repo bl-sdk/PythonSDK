@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMeleeDefinition()
 {
-    class_< UMeleeDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UMeleeDefinition", no_init)
+    py::class_< UMeleeDefinition,  UGBXDefinition   >("UMeleeDefinition")
         .def_readwrite("VfTable_IIDamageCauser", &UMeleeDefinition::VfTable_IIDamageCauser)
         .def_readwrite("Damage", &UMeleeDefinition::Damage)
         .def_readwrite("DamageSource", &UMeleeDefinition::DamageSource)
@@ -31,9 +31,9 @@ void Export_pystes_UMeleeDefinition()
         .def_readwrite("OnHitFriendly", &UMeleeDefinition::OnHitFriendly)
         .def_readwrite("OnHitEnemyOrFriendly", &UMeleeDefinition::OnHitEnemyOrFriendly)
         .def_readwrite("OnKilledEnemy", &UMeleeDefinition::OnKilledEnemy)
-        .def("StaticClass", &UMeleeDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetControllerResponsibleForDamage", &UMeleeDefinition::GetControllerResponsibleForDamage, return_value_policy< reference_existing_object >())
-        .def("GetInstigator", &UMeleeDefinition::GetInstigator, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMeleeDefinition::StaticClass, py::return_value_policy::reference)
+        .def("GetControllerResponsibleForDamage", &UMeleeDefinition::GetControllerResponsibleForDamage, py::return_value_policy::reference)
+        .def("GetInstigator", &UMeleeDefinition::GetInstigator, py::return_value_policy::reference)
         .def("GetInstigatorSelfDamageScale", &UMeleeDefinition::GetInstigatorSelfDamageScale)
         .def("GetFireIntervalChanceModifier", &UMeleeDefinition::GetFireIntervalChanceModifier)
         .def("GetStatusEffectBaseChanceModifier", &UMeleeDefinition::GetStatusEffectBaseChanceModifier)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ABroadcastHandler()
 {
-    class_< ABroadcastHandler, bases< AInfo >  , boost::noncopyable>("ABroadcastHandler", no_init)
+    py::class_< ABroadcastHandler,  AInfo   >("ABroadcastHandler")
         .def_readwrite("SentText", &ABroadcastHandler::SentText)
-        .def("StaticClass", &ABroadcastHandler::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ABroadcastHandler::StaticClass, py::return_value_policy::reference)
         .def("eventAllowBroadcastLocalizedTeam", &ABroadcastHandler::eventAllowBroadcastLocalizedTeam)
         .def("eventAllowBroadcastLocalized", &ABroadcastHandler::eventAllowBroadcastLocalized)
         .def("BroadcastTeam", &ABroadcastHandler::BroadcastTeam)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UShadowMapTexture2D()
 {
-    class_< UShadowMapTexture2D, bases< UTexture2D >  , boost::noncopyable>("UShadowMapTexture2D", no_init)
+    py::class_< UShadowMapTexture2D,  UTexture2D   >("UShadowMapTexture2D")
         .def_readwrite("ShadowmapFlags", &UShadowMapTexture2D::ShadowmapFlags)
-        .def("StaticClass", &UShadowMapTexture2D::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UShadowMapTexture2D::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

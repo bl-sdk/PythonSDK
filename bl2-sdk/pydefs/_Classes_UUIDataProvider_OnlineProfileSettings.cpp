@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_OnlineProfileSettings()
 {
-    class_< UUIDataProvider_OnlineProfileSettings, bases< UUIDataProvider_OnlinePlayerDataBase >  , boost::noncopyable>("UUIDataProvider_OnlineProfileSettings", no_init)
+    py::class_< UUIDataProvider_OnlineProfileSettings,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_OnlineProfileSettings")
         .def_readwrite("Profile", &UUIDataProvider_OnlinePlayerStorage::Profile)
         .def_readwrite("ProviderName", &UUIDataProvider_OnlinePlayerStorage::ProviderName)
         .def_readwrite("PlayerStorageArrayProviders", &UUIDataProvider_OnlinePlayerStorage::PlayerStorageArrayProviders)
         .def_readwrite("DeviceStorageSizeNeeded", &UUIDataProvider_OnlinePlayerStorage::DeviceStorageSizeNeeded)
-        .def("StaticClass", &UUIDataProvider_OnlineProfileSettings::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_OnlineProfileSettings::StaticClass, py::return_value_policy::reference)
         .def("RefreshStorageData", &UUIDataProvider_OnlineProfileSettings::RefreshStorageData)
         .def("ClearReadCompleteDelegate", &UUIDataProvider_OnlineProfileSettings::ClearReadCompleteDelegate)
         .def("AddReadCompleteDelegate", &UUIDataProvider_OnlineProfileSettings::AddReadCompleteDelegate)

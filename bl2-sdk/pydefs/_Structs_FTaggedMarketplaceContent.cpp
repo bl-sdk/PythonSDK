@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTaggedMarketplaceContent()
 {
-    class_< FTaggedMarketplaceContent >("FTaggedMarketplaceContent", no_init)
+    py::class_< FTaggedMarketplaceContent >("FTaggedMarketplaceContent")
         .def_readwrite("Tag", &FTaggedMarketplaceContent::Tag)
         .def_readwrite("OfferId", &FTaggedMarketplaceContent::OfferId)
         .def_readwrite("OfferIdText", &FTaggedMarketplaceContent::OfferIdText)

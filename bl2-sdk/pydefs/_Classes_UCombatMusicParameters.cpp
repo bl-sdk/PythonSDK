@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCombatMusicParameters()
 {
-    class_< UCombatMusicParameters, bases< UGBXDefinition >  , boost::noncopyable>("UCombatMusicParameters", no_init)
+    py::class_< UCombatMusicParameters,  UGBXDefinition   >("UCombatMusicParameters")
         .def_readwrite("FullThreatThreshholdValue", &UCombatMusicParameters::FullThreatThreshholdValue)
         .def_readwrite("MediumThreatThreshholdValue", &UCombatMusicParameters::MediumThreatThreshholdValue)
         .def_readwrite("NoThreatThressholdValue", &UCombatMusicParameters::NoThreatThressholdValue)
@@ -37,7 +37,7 @@ void Export_pystes_UCombatMusicParameters()
         .def_readwrite("TimeBetweenShieldDownThreats", &UCombatMusicParameters::TimeBetweenShieldDownThreats)
         .def_readwrite("StateChangeDelay", &UCombatMusicParameters::StateChangeDelay)
         .def_readwrite("EnemyNotTargetingPlayerTimeout", &UCombatMusicParameters::EnemyNotTargetingPlayerTimeout)
-        .def("StaticClass", &UCombatMusicParameters::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCombatMusicParameters::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

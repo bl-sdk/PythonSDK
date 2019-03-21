@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVehicleSeatDefinition()
 {
-    class_< UWillowVehicleSeatDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UWillowVehicleSeatDefinition", no_init)
+    py::class_< UWillowVehicleSeatDefinition,  UGBXDefinition   >("UWillowVehicleSeatDefinition")
         .def_readwrite("VirtualSeatKey", &UWillowVehicleSeatDefinition::VirtualSeatKey)
         .def_readwrite("InteractIcon", &UWillowVehicleSeatDefinition::InteractIcon)
         .def_readwrite("SeatInteractTextDefinition", &UWillowVehicleSeatDefinition::SeatInteractTextDefinition)
@@ -53,7 +53,7 @@ void Export_pystes_UWillowVehicleSeatDefinition()
         .def_readwrite("EjectRandMin", &UWillowVehicleSeatDefinition::EjectRandMin)
         .def_readwrite("EjectRandMax", &UWillowVehicleSeatDefinition::EjectRandMax)
         .def_readwrite("ControllerRumbleWhenRotating", &UWillowVehicleSeatDefinition::ControllerRumbleWhenRotating)
-        .def("StaticClass", &UWillowVehicleSeatDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowVehicleSeatDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

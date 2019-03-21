@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UObjectSerializer()
 {
-    class_< UObjectSerializer, bases< UObject >  , boost::noncopyable>("UObjectSerializer", no_init)
+    py::class_< UObjectSerializer,  UObject   >("UObjectSerializer")
         .def_readonly("UnknownData00", &UObjectSerializer::UnknownData00)
-        .def("StaticClass", &UObjectSerializer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UObjectSerializer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_SwoopAttack()
 {
-    class_< UAction_SwoopAttack, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_SwoopAttack", no_init)
+    py::class_< UAction_SwoopAttack,  UWillowActionSequencePawn   >("UAction_SwoopAttack")
         .def_readwrite("SwoopFarDistance", &UAction_SwoopAttack::SwoopFarDistance)
         .def_readwrite("SwoopFarHeight", &UAction_SwoopAttack::SwoopFarHeight)
         .def_readwrite("SwoopCloseDistance", &UAction_SwoopAttack::SwoopCloseDistance)
@@ -19,7 +19,7 @@ void Export_pystes_UAction_SwoopAttack()
         .def_readwrite("ClosestAttackDist", &UAction_SwoopAttack::ClosestAttackDist)
         .def_readwrite("LastAttackLocation", &UAction_SwoopAttack::LastAttackLocation)
         .def_readwrite("CachedTargetLoc", &UAction_SwoopAttack::CachedTargetLoc)
-        .def("StaticClass", &UAction_SwoopAttack::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_SwoopAttack::StaticClass, py::return_value_policy::reference)
         .def("GetDistToGoal", &UAction_SwoopAttack::GetDistToGoal)
         .def("GetGoalLocation", &UAction_SwoopAttack::GetGoalLocation)
         .def("SetAllTriggered", &UAction_SwoopAttack::SetAllTriggered)

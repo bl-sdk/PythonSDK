@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URB_SkelJointSetup()
 {
-    class_< URB_SkelJointSetup, bases< URB_ConstraintSetup >  , boost::noncopyable>("URB_SkelJointSetup", no_init)
-        .def("StaticClass", &URB_SkelJointSetup::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< URB_SkelJointSetup,  URB_ConstraintSetup   >("URB_SkelJointSetup")
+        .def("StaticClass", &URB_SkelJointSetup::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

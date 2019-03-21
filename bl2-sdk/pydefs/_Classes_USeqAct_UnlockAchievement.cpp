@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_UnlockAchievement()
 {
-    class_< USeqAct_UnlockAchievement, bases< USequenceAction >  , boost::noncopyable>("USeqAct_UnlockAchievement", no_init)
+    py::class_< USeqAct_UnlockAchievement,  USequenceAction   >("USeqAct_UnlockAchievement")
         .def_readwrite("AchievementId", &USeqAct_UnlockAchievement::AchievementId)
         .def_readwrite("MinimumPlayersRequired", &USeqAct_UnlockAchievement::MinimumPlayersRequired)
-        .def("StaticClass", &USeqAct_UnlockAchievement::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_UnlockAchievement::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &USeqAct_UnlockAchievement::eventActivated)
         .staticmethod("StaticClass")
   ;

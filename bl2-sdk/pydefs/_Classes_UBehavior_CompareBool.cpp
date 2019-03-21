@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_CompareBool()
 {
-    class_< UBehavior_CompareBool, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_CompareBool", no_init)
-        .def("StaticClass", &UBehavior_CompareBool::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehavior_CompareBool,  UBehaviorBase   >("UBehavior_CompareBool")
+        .def("StaticClass", &UBehavior_CompareBool::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CompareBool::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

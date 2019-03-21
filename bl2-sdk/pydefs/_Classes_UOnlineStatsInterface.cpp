@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineStatsInterface()
 {
-    class_< UOnlineStatsInterface, bases< UInterface >  , boost::noncopyable>("UOnlineStatsInterface", no_init)
-        .def("StaticClass", &UOnlineStatsInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineStatsInterface,  UInterface   >("UOnlineStatsInterface")
+        .def("StaticClass", &UOnlineStatsInterface::StaticClass, py::return_value_policy::reference)
         .def("CalcAggregateSkill", &UOnlineStatsInterface::CalcAggregateSkill)
         .def("RegisterStatGuid", &UOnlineStatsInterface::RegisterStatGuid)
         .def("GetClientStatGuid", &UOnlineStatsInterface::GetClientStatGuid)

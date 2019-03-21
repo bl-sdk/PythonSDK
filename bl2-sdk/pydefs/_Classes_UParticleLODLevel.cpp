@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleLODLevel()
 {
-    class_< UParticleLODLevel, bases< UObject >  , boost::noncopyable>("UParticleLODLevel", no_init)
+    py::class_< UParticleLODLevel,  UObject   >("UParticleLODLevel")
         .def_readwrite("Level", &UParticleLODLevel::Level)
         .def_readwrite("RequiredModule", &UParticleLODLevel::RequiredModule)
         .def_readwrite("Modules", &UParticleLODLevel::Modules)
@@ -18,7 +18,7 @@ void Export_pystes_UParticleLODLevel()
         .def_readwrite("OrbitModules", &UParticleLODLevel::OrbitModules)
         .def_readwrite("EventReceiverModules", &UParticleLODLevel::EventReceiverModules)
         .def_readwrite("PeakActiveParticles", &UParticleLODLevel::PeakActiveParticles)
-        .def("StaticClass", &UParticleLODLevel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleLODLevel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

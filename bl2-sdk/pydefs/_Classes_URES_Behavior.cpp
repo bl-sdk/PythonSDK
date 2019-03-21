@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URES_Behavior()
 {
-    class_< URES_Behavior, bases< UActionResource >  , boost::noncopyable>("URES_Behavior", no_init)
-        .def("StaticClass", &URES_Behavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< URES_Behavior,  UActionResource   >("URES_Behavior")
+        .def("StaticClass", &URES_Behavior::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

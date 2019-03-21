@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMeshBeaconHost()
 {
-    class_< UMeshBeaconHost, bases< UObject >  , boost::noncopyable>("UMeshBeaconHost", no_init)
+    py::class_< UMeshBeaconHost,  UObject   >("UMeshBeaconHost")
         .def_readwrite("ClientConnections", &UMeshBeaconHost::ClientConnections)
         .def_readwrite("PendingPlayerConnections", &UMeshBeaconHost::PendingPlayerConnections)
         .def_readwrite("OwningPlayerId", &UMeshBeaconHost::OwningPlayerId)
@@ -23,7 +23,7 @@ void Export_pystes_UMeshBeaconHost()
         .def_readwrite("MaxBandwidthTestSendTime", &UMeshBeacon::MaxBandwidthTestSendTime)
         .def_readwrite("MaxBandwidthTestReceiveTime", &UMeshBeacon::MaxBandwidthTestReceiveTime)
         .def_readwrite("MaxBandwidthHistoryEntries", &UMeshBeacon::MaxBandwidthHistoryEntries)
-        .def("StaticClass", &UMeshBeaconHost::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMeshBeaconHost::StaticClass, py::return_value_policy::reference)
         .def("OnReceivedClientCreateNewSessionResult", &UMeshBeaconHost::OnReceivedClientCreateNewSessionResult)
         .def("RequestClientCreateNewSession", &UMeshBeaconHost::RequestClientCreateNewSession)
         .def("TellClientsToTravel", &UMeshBeaconHost::TellClientsToTravel)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIItemCardable()
 {
-    class_< UIItemCardable, bases< UInterface >  , boost::noncopyable>("UIItemCardable", no_init)
-        .def("StaticClass", &UIItemCardable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIItemCardable,  UInterface   >("UIItemCardable")
+        .def("StaticClass", &UIItemCardable::StaticClass, py::return_value_policy::reference)
         .def("IsUsefulToThisPlayer", &UIItemCardable::IsUsefulToThisPlayer)
         .def("IsReadied", &UIItemCardable::IsReadied)
         .def("GetDLCRestrictedMessage", &UIItemCardable::GetDLCRestrictedMessage)
@@ -18,7 +18,7 @@ void Export_pystes_UIItemCardable()
         .def("GetZippyFrame", &UIItemCardable::GetZippyFrame)
         .def("GetRarityLevel", &UIItemCardable::GetRarityLevel)
         .def("GetShortHumanReadableName", &UIItemCardable::GetShortHumanReadableName)
-        .def("GetManufacturer", &UIItemCardable::GetManufacturer, return_value_policy< reference_existing_object >())
+        .def("GetManufacturer", &UIItemCardable::GetManufacturer, py::return_value_policy::reference)
         .def("GenerateFunStatsText", &UIItemCardable::GenerateFunStatsText)
         .def("GetInventoryStatTextData", &UIItemCardable::GetInventoryStatTextData)
         .def("GetInventoryStatNumberData", &UIItemCardable::GetInventoryStatNumberData)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGBXCrossLevelReferenceContainer()
 {
-    class_< UGBXCrossLevelReferenceContainer, bases< UObject >  , boost::noncopyable>("UGBXCrossLevelReferenceContainer", no_init)
+    py::class_< UGBXCrossLevelReferenceContainer,  UObject   >("UGBXCrossLevelReferenceContainer")
         .def_readwrite("CrossLevelObjectRef", &UGBXCrossLevelReferenceContainer::CrossLevelObjectRef)
-        .def("StaticClass", &UGBXCrossLevelReferenceContainer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGBXCrossLevelReferenceContainer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

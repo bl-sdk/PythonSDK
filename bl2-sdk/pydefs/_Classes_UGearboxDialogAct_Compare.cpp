@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogAct_Compare()
 {
-    class_< UGearboxDialogAct_Compare, bases< UGearboxDialogAction >  , boost::noncopyable>("UGearboxDialogAct_Compare", no_init)
-        .def("StaticClass", &UGearboxDialogAct_Compare::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxDialogAct_Compare,  UGearboxDialogAction   >("UGearboxDialogAct_Compare")
+        .def("StaticClass", &UGearboxDialogAct_Compare::StaticClass, py::return_value_policy::reference)
         .def("eventActivate", &UGearboxDialogAct_Compare::eventActivate)
         .staticmethod("StaticClass")
   ;

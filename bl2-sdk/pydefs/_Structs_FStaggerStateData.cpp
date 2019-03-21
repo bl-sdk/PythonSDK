@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStaggerStateData()
 {
-    class_< FStaggerStateData >("FStaggerStateData", no_init)
+    py::class_< FStaggerStateData >("FStaggerStateData")
         .def_readwrite("State", &FStaggerStateData::State)
         .def_readwrite("StaggerStartTime", &FStaggerStateData::StaggerStartTime)
         .def_readwrite("StaggerEndTime", &FStaggerStateData::StaggerEndTime)

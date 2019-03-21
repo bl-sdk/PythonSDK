@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationFactoryWillowAIPawn()
 {
-    class_< UPopulationFactoryWillowAIPawn, bases< UPopulationFactory >  , boost::noncopyable>("UPopulationFactoryWillowAIPawn", no_init)
+    py::class_< UPopulationFactoryWillowAIPawn,  UPopulationFactory   >("UPopulationFactoryWillowAIPawn")
         .def_readwrite("WillowAIPawnArchetype", &UPopulationFactoryWillowAIPawn::WillowAIPawnArchetype)
         .def_readwrite("PawnExpLevel", &UPopulationFactoryWillowAIPawn::PawnExpLevel)
         .def_readwrite("PawnWeaponLevel", &UPopulationFactoryWillowAIPawn::PawnWeaponLevel)
@@ -13,20 +13,20 @@ void Export_pystes_UPopulationFactoryWillowAIPawn()
         .def_readwrite("AttributeStartingValues", &UPopulationFactoryWillowAIPawn::AttributeStartingValues)
         .def_readwrite("ItemPoolList", &UPopulationFactoryWillowAIPawn::ItemPoolList)
         .def_readwrite("ItemPoolIncludedLists", &UPopulationFactoryWillowAIPawn::ItemPoolIncludedLists)
-        .def("StaticClass", &UPopulationFactoryWillowAIPawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPopulationFactoryWillowAIPawn::StaticClass, py::return_value_policy::reference)
         .def("eventGetDescriptionOfFactoryOutput", &UPopulationFactoryWillowAIPawn::eventGetDescriptionOfFactoryOutput)
-        .def("eventRestorePopulatedAIPawn", &UPopulationFactoryWillowAIPawn::eventRestorePopulatedAIPawn, return_value_policy< reference_existing_object >())
+        .def("eventRestorePopulatedAIPawn", &UPopulationFactoryWillowAIPawn::eventRestorePopulatedAIPawn, py::return_value_policy::reference)
         .def("CreateSavedInventory", &UPopulationFactoryWillowAIPawn::CreateSavedInventory)
         .def("eventGetPopulatedAIPawnMemento", &UPopulationFactoryWillowAIPawn::eventGetPopulatedAIPawnMemento)
         .def("eventShouldSavePopulationActor", &UPopulationFactoryWillowAIPawn::eventShouldSavePopulationActor)
         .def("eventDestroyPopulationActor", &UPopulationFactoryWillowAIPawn::eventDestroyPopulationActor)
-        .def("eventCreatePopulationActor", &UPopulationFactoryWillowAIPawn::eventCreatePopulationActor, return_value_policy< reference_existing_object >())
+        .def("eventCreatePopulationActor", &UPopulationFactoryWillowAIPawn::eventCreatePopulationActor, py::return_value_policy::reference)
         .def("SetupPopulationActor", &UPopulationFactoryWillowAIPawn::SetupPopulationActor)
         .def("SetFlagDefinitions", &UPopulationFactoryWillowAIPawn::SetFlagDefinitions)
         .def("ApplyPopulationDefinition", &UPopulationFactoryWillowAIPawn::ApplyPopulationDefinition)
-        .def("GetAContextSourceForThePopulationActor", &UPopulationFactoryWillowAIPawn::GetAContextSourceForThePopulationActor, return_value_policy< reference_existing_object >())
+        .def("GetAContextSourceForThePopulationActor", &UPopulationFactoryWillowAIPawn::GetAContextSourceForThePopulationActor, py::return_value_policy::reference)
         .def("eventGetSpawnVisibilityBounds", &UPopulationFactoryWillowAIPawn::eventGetSpawnVisibilityBounds)
-        .def("GetActorAllegiance", &UPopulationFactoryWillowAIPawn::GetActorAllegiance, return_value_policy< reference_existing_object >())
+        .def("GetActorAllegiance", &UPopulationFactoryWillowAIPawn::GetActorAllegiance, py::return_value_policy::reference)
         .def("eventGetActorSpawnCost", &UPopulationFactoryWillowAIPawn::eventGetActorSpawnCost)
         .def("eventSetupMatineeForActor", &UPopulationFactoryWillowAIPawn::eventSetupMatineeForActor)
         .staticmethod("StaticClass")

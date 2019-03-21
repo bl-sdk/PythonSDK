@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMoveRandom()
 {
-    class_< USpecialMoveRandom, bases< USpecialMoveDefinition >  , boost::noncopyable>("USpecialMoveRandom", no_init)
+    py::class_< USpecialMoveRandom,  USpecialMoveDefinition   >("USpecialMoveRandom")
         .def_readwrite("RandomList", &USpecialMoveRandom::RandomList)
-        .def("StaticClass", &USpecialMoveRandom::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpecialMoveRandom::StaticClass, py::return_value_policy::reference)
         .def("Contains", &USpecialMoveRandom::Contains)
-        .def("GetSMDToPlay", &USpecialMoveRandom::GetSMDToPlay, return_value_policy< reference_existing_object >())
+        .def("GetSMDToPlay", &USpecialMoveRandom::GetSMDToPlay, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

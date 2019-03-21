@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBankGFxDefinition()
 {
-    class_< UBankGFxDefinition, bases< UWillowGFxMovie3DDefinition >  , boost::noncopyable>("UBankGFxDefinition", no_init)
+    py::class_< UBankGFxDefinition,  UWillowGFxMovie3DDefinition   >("UBankGFxDefinition")
         .def_readwrite("LeftSideDef", &UBankGFxDefinition::LeftSideDef)
         .def_readwrite("RightSideDef", &UBankGFxDefinition::RightSideDef)
         .def_readwrite("EmptySlotColor", &UBankGFxDefinition::EmptySlotColor)
@@ -15,7 +15,7 @@ void Export_pystes_UBankGFxDefinition()
         .def_readwrite("CardTextureHeight", &UBankGFxDefinition::CardTextureHeight)
         .def_readwrite("Card1ExternalTextureMap", &UBankGFxDefinition::Card1ExternalTextureMap)
         .def_readwrite("Card2ExternalTextureMap", &UBankGFxDefinition::Card2ExternalTextureMap)
-        .def("StaticClass", &UBankGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBankGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

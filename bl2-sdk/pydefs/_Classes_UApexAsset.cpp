@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UApexAsset()
 {
-    class_< UApexAsset, bases< UObject >  , boost::noncopyable>("UApexAsset", no_init)
+    py::class_< UApexAsset,  UObject   >("UApexAsset")
         .def_readwrite("OriginalApexName", &UApexAsset::OriginalApexName)
         .def_readwrite("ApexComponents", &UApexAsset::ApexComponents)
-        .def("StaticClass", &UApexAsset::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UApexAsset::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

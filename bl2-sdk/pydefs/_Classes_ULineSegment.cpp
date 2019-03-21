@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULineSegment()
 {
-    class_< ULineSegment, bases< UObject >  , boost::noncopyable>("ULineSegment", no_init)
+    py::class_< ULineSegment,  UObject   >("ULineSegment")
         .def_readwrite("ParentLine", &ULineSegment::ParentLine)
         .def_readonly("Verts", &ULineSegment::Verts)
         .def_readwrite("Direction", &ULineSegment::Direction)
@@ -22,7 +22,7 @@ void Export_pystes_ULineSegment()
         .def_readwrite("SIColor", &ULineSegment::SIColor)
         .def_readwrite("RetreatColor", &ULineSegment::RetreatColor)
         .def_readwrite("StealthColor", &ULineSegment::StealthColor)
-        .def("StaticClass", &ULineSegment::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULineSegment::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

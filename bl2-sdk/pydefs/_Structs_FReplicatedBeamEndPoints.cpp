@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReplicatedBeamEndPoints()
 {
-    class_< FReplicatedBeamEndPoints >("FReplicatedBeamEndPoints", no_init)
+    py::class_< FReplicatedBeamEndPoints >("FReplicatedBeamEndPoints")
         .def_readwrite("StartPoint", &FReplicatedBeamEndPoints::StartPoint)
         .def_readwrite("EndPoint", &FReplicatedBeamEndPoints::EndPoint)
   ;

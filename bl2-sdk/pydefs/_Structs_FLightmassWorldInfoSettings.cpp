@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightmassWorldInfoSettings()
 {
-    class_< FLightmassWorldInfoSettings >("FLightmassWorldInfoSettings", no_init)
+    py::class_< FLightmassWorldInfoSettings >("FLightmassWorldInfoSettings")
         .def_readwrite("StaticLightingLevelScale", &FLightmassWorldInfoSettings::StaticLightingLevelScale)
         .def_readwrite("NumIndirectLightingBounces", &FLightmassWorldInfoSettings::NumIndirectLightingBounces)
         .def_readwrite("EnvironmentColor", &FLightmassWorldInfoSettings::EnvironmentColor)

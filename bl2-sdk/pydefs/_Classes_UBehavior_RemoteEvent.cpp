@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_RemoteEvent()
 {
-    class_< UBehavior_RemoteEvent, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_RemoteEvent", no_init)
+    py::class_< UBehavior_RemoteEvent,  UBehaviorBase   >("UBehavior_RemoteEvent")
         .def_readwrite("EventName", &UBehavior_RemoteEvent::EventName)
-        .def("StaticClass", &UBehavior_RemoteEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_RemoteEvent::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_RemoteEvent::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

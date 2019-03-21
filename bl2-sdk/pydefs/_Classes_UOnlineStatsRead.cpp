@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineStatsRead()
 {
-    class_< UOnlineStatsRead, bases< UOnlineStats >  , boost::noncopyable>("UOnlineStatsRead", no_init)
+    py::class_< UOnlineStatsRead,  UOnlineStats   >("UOnlineStatsRead")
         .def_readwrite("ViewId", &UOnlineStatsRead::ViewId)
         .def_readwrite("SortColumnId", &UOnlineStatsRead::SortColumnId)
         .def_readwrite("ColumnIds", &UOnlineStatsRead::ColumnIds)
@@ -14,7 +14,7 @@ void Export_pystes_UOnlineStatsRead()
         .def_readwrite("ColumnMappings", &UOnlineStatsRead::ColumnMappings)
         .def_readwrite("ViewName", &UOnlineStatsRead::ViewName)
         .def_readwrite("TitleId", &UOnlineStatsRead::TitleId)
-        .def("StaticClass", &UOnlineStatsRead::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineStatsRead::StaticClass, py::return_value_policy::reference)
         .def("GetRankForPlayer", &UOnlineStatsRead::GetRankForPlayer)
         .def("AddPlayer", &UOnlineStatsRead::AddPlayer)
         .def("IsStatZero", &UOnlineStatsRead::IsStatZero)

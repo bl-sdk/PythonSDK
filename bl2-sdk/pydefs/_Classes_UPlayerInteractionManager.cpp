@@ -1,19 +1,19 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerInteractionManager()
 {
-    class_< UPlayerInteractionManager, bases< UObject >  , boost::noncopyable>("UPlayerInteractionManager", no_init)
+    py::class_< UPlayerInteractionManager,  UObject   >("UPlayerInteractionManager")
         .def_readwrite("Interactions", &UPlayerInteractionManager::Interactions)
         .def_readwrite("TickDelay", &UPlayerInteractionManager::TickDelay)
         .def_readwrite("TimeToTick", &UPlayerInteractionManager::TimeToTick)
-        .def("StaticClass", &UPlayerInteractionManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPlayerInteractionManager::StaticClass, py::return_value_policy::reference)
         .def("GetInteractionPlayers", &UPlayerInteractionManager::GetInteractionPlayers)
         .def("IsInInteraction", &UPlayerInteractionManager::IsInInteraction)
-        .def("GetServerForPlayer", &UPlayerInteractionManager::GetServerForPlayer, return_value_policy< reference_existing_object >())
-        .def("GetInstigator", &UPlayerInteractionManager::GetInstigator, return_value_policy< reference_existing_object >())
+        .def("GetServerForPlayer", &UPlayerInteractionManager::GetServerForPlayer, py::return_value_policy::reference)
+        .def("GetInstigator", &UPlayerInteractionManager::GetInstigator, py::return_value_policy::reference)
         .def("RelayMessage", &UPlayerInteractionManager::RelayMessage)
         .def("StartInteraction", &UPlayerInteractionManager::StartInteraction)
         .staticmethod("StaticClass")

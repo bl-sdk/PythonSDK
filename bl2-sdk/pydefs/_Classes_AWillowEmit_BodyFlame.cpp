@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowEmit_BodyFlame()
 {
-    class_< AWillowEmit_BodyFlame, bases< AWillowReplicatedEmitter >  , boost::noncopyable>("AWillowEmit_BodyFlame", no_init)
+    py::class_< AWillowEmit_BodyFlame,  AWillowReplicatedEmitter   >("AWillowEmit_BodyFlame")
         .def_readwrite("BoneName", &AWillowEmit_HitEffect::BoneName)
-        .def("StaticClass", &AWillowEmit_BodyFlame::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowEmit_BodyFlame::StaticClass, py::return_value_policy::reference)
         .def("AttachTo", &AWillowEmit_HitEffect::AttachTo)
         .def("eventReplicatedEvent", &AWillowEmit_HitEffect::eventReplicatedEvent)
         .staticmethod("StaticClass")

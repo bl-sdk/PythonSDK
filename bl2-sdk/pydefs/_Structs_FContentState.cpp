@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FContentState()
 {
-    class_< FContentState >("FContentState", no_init)
+    py::class_< FContentState >("FContentState")
         .def_readwrite("LicensedMask", &FContentState::LicensedMask)
         .def_readwrite("InstalledMask", &FContentState::InstalledMask)
   ;

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogVar_Instigator()
 {
-    class_< UGearboxDialogVar_Instigator, bases< UGearboxDialogVariable >  , boost::noncopyable>("UGearboxDialogVar_Instigator", no_init)
-        .def("StaticClass", &UGearboxDialogVar_Instigator::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxDialogVar_Instigator,  UGearboxDialogVariable   >("UGearboxDialogVar_Instigator")
+        .def("StaticClass", &UGearboxDialogVar_Instigator::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

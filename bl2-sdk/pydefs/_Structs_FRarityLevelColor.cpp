@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRarityLevelColor()
 {
-    class_< FRarityLevelColor >("FRarityLevelColor", no_init)
+    py::class_< FRarityLevelColor >("FRarityLevelColor")
         .def_readwrite("MinLevel", &FRarityLevelColor::MinLevel)
         .def_readwrite("MaxLevel", &FRarityLevelColor::MaxLevel)
         .def_readwrite("Color", &FRarityLevelColor::Color)

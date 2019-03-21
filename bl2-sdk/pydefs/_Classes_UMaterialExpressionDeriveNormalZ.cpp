@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionDeriveNormalZ()
 {
-    class_< UMaterialExpressionDeriveNormalZ, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionDeriveNormalZ", no_init)
+    py::class_< UMaterialExpressionDeriveNormalZ,  UMaterialExpression   >("UMaterialExpressionDeriveNormalZ")
         .def_readwrite("InXY", &UMaterialExpressionDeriveNormalZ::InXY)
-        .def("StaticClass", &UMaterialExpressionDeriveNormalZ::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionDeriveNormalZ::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

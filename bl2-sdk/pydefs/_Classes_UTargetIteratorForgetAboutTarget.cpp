@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTargetIteratorForgetAboutTarget()
 {
-    class_< UTargetIteratorForgetAboutTarget, bases< UTargetIterator >  , boost::noncopyable>("UTargetIteratorForgetAboutTarget", no_init)
-        .def("StaticClass", &UTargetIteratorForgetAboutTarget::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UTargetIteratorForgetAboutTarget,  UTargetIterator   >("UTargetIteratorForgetAboutTarget")
+        .def("StaticClass", &UTargetIteratorForgetAboutTarget::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

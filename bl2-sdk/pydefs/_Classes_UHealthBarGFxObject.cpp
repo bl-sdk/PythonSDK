@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHealthBarGFxObject()
 {
-    class_< UHealthBarGFxObject, bases< UGFxObject >  , boost::noncopyable>("UHealthBarGFxObject", no_init)
+    py::class_< UHealthBarGFxObject,  UGFxObject   >("UHealthBarGFxObject")
         .def_readwrite("CachedCurrentHealth", &UHealthBarGFxObject::CachedCurrentHealth)
-        .def("StaticClass", &UHealthBarGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHealthBarGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetHealth", &UHealthBarGFxObject::SetHealth)
         .staticmethod("StaticClass")
   ;

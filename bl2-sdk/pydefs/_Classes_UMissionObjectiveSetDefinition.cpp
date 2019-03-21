@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionObjectiveSetDefinition()
 {
-    class_< UMissionObjectiveSetDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UMissionObjectiveSetDefinition", no_init)
+    py::class_< UMissionObjectiveSetDefinition,  UGBXDefinition   >("UMissionObjectiveSetDefinition")
         .def_readwrite("ObjectiveDefinitions", &UMissionObjectiveSetDefinition::ObjectiveDefinitions)
         .def_readwrite("NextSet", &UMissionObjectiveSetDefinition::NextSet)
         .def_readwrite("StationOverride", &UMissionObjectiveSetDefinition::StationOverride)
         .def_readwrite("MissionSummaryOverride", &UMissionObjectiveSetDefinition::MissionSummaryOverride)
         .def_readwrite("MissionDescriptionOverride", &UMissionObjectiveSetDefinition::MissionDescriptionOverride)
-        .def("StaticClass", &UMissionObjectiveSetDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionObjectiveSetDefinition::StaticClass, py::return_value_policy::reference)
         .def("ContainsOptionalObjective", &UMissionObjectiveSetDefinition::ContainsOptionalObjective)
         .def("ContainsObjective", &UMissionObjectiveSetDefinition::ContainsObjective)
         .staticmethod("StaticClass")

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEventFilter_OnTouch()
 {
-    class_< UEventFilter_OnTouch, bases< UBehaviorEventFilterBase >  , boost::noncopyable>("UEventFilter_OnTouch", no_init)
-        .def("StaticClass", &UEventFilter_OnTouch::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UEventFilter_OnTouch,  UBehaviorEventFilterBase   >("UEventFilter_OnTouch")
+        .def("StaticClass", &UEventFilter_OnTouch::StaticClass, py::return_value_policy::reference)
         .def("eventAllowedToRunThisEvent", &UEventFilter_OnTouch::eventAllowedToRunThisEvent)
         .def("PassesAllegianceTests", &UEventFilter_OnTouch::PassesAllegianceTests)
         .staticmethod("StaticClass")

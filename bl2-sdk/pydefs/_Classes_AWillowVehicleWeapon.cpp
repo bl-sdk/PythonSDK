@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVehicleWeapon()
 {
-    class_< AWillowVehicleWeapon, bases< AWillowWeapon >  , boost::noncopyable>("AWillowVehicleWeapon", no_init)
+    py::class_< AWillowVehicleWeapon,  AWillowWeapon   >("AWillowVehicleWeapon")
         .def_readwrite("SeatIndex", &AWillowVehicleWeapon::SeatIndex)
         .def_readwrite("MyVehicle", &AWillowVehicleWeapon::MyVehicle)
         .def_readwrite("FireTriggerTags", &AWillowVehicleWeapon::FireTriggerTags)
@@ -14,7 +14,7 @@ void Export_pystes_AWillowVehicleWeapon()
         .def_readwrite("BadAimColor", &AWillowVehicleWeapon::BadAimColor)
         .def_readwrite("AimTraceRange", &AWillowVehicleWeapon::AimTraceRange)
         .def_readwrite("CrosshairOwner", &AWillowVehicleWeapon::CrosshairOwner)
-        .def("StaticClass", &AWillowVehicleWeapon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVehicleWeapon::StaticClass, py::return_value_policy::reference)
         .def("ClearFlashLocation", &AWillowVehicleWeapon::ClearFlashLocation)
         .def("ClearFlashCount", &AWillowVehicleWeapon::ClearFlashCount)
         .def("GetBurstInterval", &AWillowVehicleWeapon::GetBurstInterval)
@@ -27,8 +27,8 @@ void Export_pystes_AWillowVehicleWeapon()
         .def("PlayAnimation", &AWillowVehicleWeapon::PlayAnimation)
         .def("PlayFirstPersonBodyAnimation", &AWillowVehicleWeapon::PlayFirstPersonBodyAnimation)
         .def("ExecuteProjectileFiredConstructEvent", &AWillowVehicleWeapon::ExecuteProjectileFiredConstructEvent)
-        .def("eventProjectileDefinitionFire", &AWillowVehicleWeapon::eventProjectileDefinitionFire, return_value_policy< reference_existing_object >())
-        .def("ProjectileFire", &AWillowVehicleWeapon::ProjectileFire, return_value_policy< reference_existing_object >())
+        .def("eventProjectileDefinitionFire", &AWillowVehicleWeapon::eventProjectileDefinitionFire, py::return_value_policy::reference)
+        .def("ProjectileFire", &AWillowVehicleWeapon::ProjectileFire, py::return_value_policy::reference)
         .def("AdjustFiredProjectileVelocity", &AWillowVehicleWeapon::AdjustFiredProjectileVelocity)
         .def("ClientStopZoom", &AWillowVehicleWeapon::ClientStopZoom)
         .def("InstantFireEndTrace", &AWillowVehicleWeapon::InstantFireEndTrace)
@@ -53,7 +53,7 @@ void Export_pystes_AWillowVehicleWeapon()
         .def("IsAimCorrect", &AWillowVehicleWeapon::IsAimCorrect)
         .def("GetDesiredAimPoint", &AWillowVehicleWeapon::GetDesiredAimPoint)
         .def("ClientWeaponSetWaitForAmmoPool", &AWillowVehicleWeapon::ClientWeaponSetWaitForAmmoPool)
-        .def("GetResourcePoolContext", &AWillowVehicleWeapon::GetResourcePoolContext, return_value_policy< reference_existing_object >())
+        .def("GetResourcePoolContext", &AWillowVehicleWeapon::GetResourcePoolContext, py::return_value_policy::reference)
         .def("AssociateAmmoPool", &AWillowVehicleWeapon::AssociateAmmoPool)
         .def("AddAmmo", &AWillowVehicleWeapon::AddAmmo)
         .def("InitializeWeaponAfterBringUp", &AWillowVehicleWeapon::InitializeWeaponAfterBringUp)

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFiringBehaviorDefinition()
 {
-    class_< UFiringBehaviorDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UFiringBehaviorDefinition", no_init)
+    py::class_< UFiringBehaviorDefinition,  UGBXDefinition   >("UFiringBehaviorDefinition")
         .def_readwrite("ConditionalPatterns", &UFiringBehaviorDefinition::ConditionalPatterns)
-        .def("StaticClass", &UFiringBehaviorDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFiringBehaviorDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

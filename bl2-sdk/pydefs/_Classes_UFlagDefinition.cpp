@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UFlagDefinition()
 {
-    class_< UFlagDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UFlagDefinition", no_init)
+    py::class_< UFlagDefinition,  UGBXDefinition   >("UFlagDefinition")
         .def_readwrite("EvaluationExpression", &UFlagDefinition::EvaluationExpression)
         .def_readwrite("ContextResolverChain", &UFlagDefinition::ContextResolverChain)
         .def_readwrite("ValueResolver", &UFlagDefinition::ValueResolver)
-        .def("StaticClass", &UFlagDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UFlagDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyFlagInitializationData", &UFlagDefinition::ApplyFlagInitializationData)
-        .def("ResolveContext", &UFlagDefinition::ResolveContext, return_value_policy< reference_existing_object >())
+        .def("ResolveContext", &UFlagDefinition::ResolveContext, py::return_value_policy::reference)
         .def("SetTrueTimed", &UFlagDefinition::SetTrueTimed)
         .def("SetValue", &UFlagDefinition::SetValue)
         .staticmethod("StaticClass")

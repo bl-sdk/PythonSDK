@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOpportunityCleanupParameters()
 {
-    class_< FOpportunityCleanupParameters >("FOpportunityCleanupParameters", no_init)
+    py::class_< FOpportunityCleanupParameters >("FOpportunityCleanupParameters")
         .def_readwrite("ActorIrrelvantDistance", &FOpportunityCleanupParameters::ActorIrrelvantDistance)
   ;
 }

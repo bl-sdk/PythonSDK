@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicsAssetInstance()
 {
-    class_< UPhysicsAssetInstance, bases< UObject >  , boost::noncopyable>("UPhysicsAssetInstance", no_init)
+    py::class_< UPhysicsAssetInstance,  UObject   >("UPhysicsAssetInstance")
         .def_readwrite("Owner", &UPhysicsAssetInstance::Owner)
         .def_readwrite("RootBodyIndex", &UPhysicsAssetInstance::RootBodyIndex)
         .def_readwrite("Bodies", &UPhysicsAssetInstance::Bodies)
@@ -17,9 +17,9 @@ void Export_pystes_UPhysicsAssetInstance()
         .def_readwrite("AngularSpringScale", &UPhysicsAssetInstance::AngularSpringScale)
         .def_readwrite("AngularDampingScale", &UPhysicsAssetInstance::AngularDampingScale)
         .def_readwrite("AngularForceLimitScale", &UPhysicsAssetInstance::AngularForceLimitScale)
-        .def("StaticClass", &UPhysicsAssetInstance::StaticClass, return_value_policy< reference_existing_object >())
-        .def("FindConstraintInstance", &UPhysicsAssetInstance::FindConstraintInstance, return_value_policy< reference_existing_object >())
-        .def("FindBodyInstance", &UPhysicsAssetInstance::FindBodyInstance, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysicsAssetInstance::StaticClass, py::return_value_policy::reference)
+        .def("FindConstraintInstance", &UPhysicsAssetInstance::FindConstraintInstance, py::return_value_policy::reference)
+        .def("FindBodyInstance", &UPhysicsAssetInstance::FindBodyInstance, py::return_value_policy::reference)
         .def("SetFullAnimWeightBonesFixed", &UPhysicsAssetInstance::SetFullAnimWeightBonesFixed)
         .def("SetFullAnimWeightBlockRigidBody", &UPhysicsAssetInstance::SetFullAnimWeightBlockRigidBody)
         .def("SetNamedBodiesBlockRigidBody", &UPhysicsAssetInstance::SetNamedBodiesBlockRigidBody)

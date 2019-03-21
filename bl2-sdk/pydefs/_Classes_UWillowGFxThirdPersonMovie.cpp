@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxThirdPersonMovie()
 {
-    class_< UWillowGFxThirdPersonMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UWillowGFxThirdPersonMovie", no_init)
+    py::class_< UWillowGFxThirdPersonMovie,  UWillowGFxMovie3D   >("UWillowGFxThirdPersonMovie")
         .def_readwrite("MyThirdPersonDefinition", &UWillowGFxThirdPersonMovie::MyThirdPersonDefinition)
         .def_readwrite("CameraYaw", &UWillowGFxThirdPersonMovie::CameraYaw)
         .def_readwrite("CameraPitch", &UWillowGFxThirdPersonMovie::CameraPitch)
@@ -32,7 +32,7 @@ void Export_pystes_UWillowGFxThirdPersonMovie()
         .def_readwrite("MouseDrag_Region_Right", &UWillowGFxThirdPersonMovie::MouseDrag_Region_Right)
         .def_readwrite("MouseDrag_Region_Top", &UWillowGFxThirdPersonMovie::MouseDrag_Region_Top)
         .def_readwrite("MouseDrag_Region_Bottom", &UWillowGFxThirdPersonMovie::MouseDrag_Region_Bottom)
-        .def("StaticClass", &UWillowGFxThirdPersonMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxThirdPersonMovie::StaticClass, py::return_value_policy::reference)
         .def("HandleMouseDrag_Camera", &UWillowGFxThirdPersonMovie::HandleMouseDrag_Camera)
         .def("Get3DRotationOffset", &UWillowGFxThirdPersonMovie::Get3DRotationOffset)
         .def("Get3DLocationOffset", &UWillowGFxThirdPersonMovie::Get3DLocationOffset)

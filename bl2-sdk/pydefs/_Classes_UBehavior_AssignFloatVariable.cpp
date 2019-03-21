@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_AssignFloatVariable()
 {
-    class_< UBehavior_AssignFloatVariable, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_AssignFloatVariable", no_init)
+    py::class_< UBehavior_AssignFloatVariable,  UBehaviorBase   >("UBehavior_AssignFloatVariable")
         .def_readwrite("Value", &UBehavior_AssignFloatVariable::Value)
-        .def("StaticClass", &UBehavior_AssignFloatVariable::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_AssignFloatVariable::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_AssignFloatVariable::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_AssignFloatVariable::ApplyBehaviorToContext)
         .staticmethod("StaticClass")

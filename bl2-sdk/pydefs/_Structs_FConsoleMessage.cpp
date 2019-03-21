@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FConsoleMessage()
 {
-    class_< FConsoleMessage >("FConsoleMessage", no_init)
+    py::class_< FConsoleMessage >("FConsoleMessage")
         .def_readwrite("Text", &FConsoleMessage::Text)
         .def_readwrite("TextColor", &FConsoleMessage::TextColor)
         .def_readwrite("MessageLife", &FConsoleMessage::MessageLife)

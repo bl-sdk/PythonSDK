@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimTreeFactory()
 {
-    class_< UWillowAnimTreeFactory, bases< UFactory >  , boost::noncopyable>("UWillowAnimTreeFactory", no_init)
-        .def("StaticClass", &UWillowAnimTreeFactory::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowAnimTreeFactory,  UFactory   >("UWillowAnimTreeFactory")
+        .def("StaticClass", &UWillowAnimTreeFactory::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

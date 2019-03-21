@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPanelInfo()
 {
-    class_< FPanelInfo >("FPanelInfo", no_init)
+    py::class_< FPanelInfo >("FPanelInfo")
         .def_readwrite("PanelName", &FPanelInfo::PanelName)
         .def_readwrite("PanelFocused", &FPanelInfo::PanelFocused)
         .def_readwrite("PanelUnfocused", &FPanelInfo::PanelUnfocused)

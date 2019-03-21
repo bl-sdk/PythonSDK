@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMorphTarget()
 {
-    class_< UMorphTarget, bases< UObject >  , boost::noncopyable>("UMorphTarget", no_init)
+    py::class_< UMorphTarget,  UObject   >("UMorphTarget")
         .def_readwrite("MorphLODModels", &UMorphTarget::MorphLODModels)
         .def_readwrite("MaterialSlotId", &UMorphTarget::MaterialSlotId)
         .def_readwrite("ScalarParameterName", &UMorphTarget::ScalarParameterName)
-        .def("StaticClass", &UMorphTarget::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMorphTarget::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

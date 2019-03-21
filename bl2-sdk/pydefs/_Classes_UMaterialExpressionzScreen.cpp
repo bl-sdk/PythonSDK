@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionzScreen()
 {
-    class_< UMaterialExpressionzScreen, bases< UMaterialExpressionBlendModeBase >  , boost::noncopyable>("UMaterialExpressionzScreen", no_init)
-        .def("StaticClass", &UMaterialExpressionzScreen::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionzScreen,  UMaterialExpressionBlendModeBase   >("UMaterialExpressionzScreen")
+        .def("StaticClass", &UMaterialExpressionzScreen::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATrigger_LOS()
 {
-    class_< ATrigger_LOS, bases< ATrigger >  , boost::noncopyable>("ATrigger_LOS", no_init)
+    py::class_< ATrigger_LOS,  ATrigger   >("ATrigger_LOS")
         .def_readwrite("PCsWithLOS", &ATrigger_LOS::PCsWithLOS)
-        .def("StaticClass", &ATrigger_LOS::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATrigger_LOS::StaticClass, py::return_value_policy::reference)
         .def("eventTick", &ATrigger_LOS::eventTick)
         .staticmethod("StaticClass")
   ;

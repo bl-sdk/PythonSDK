@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWeaponScopeGFxMovie()
 {
-    class_< UWeaponScopeGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UWeaponScopeGFxMovie", no_init)
+    py::class_< UWeaponScopeGFxMovie,  UWillowGFxMovie3D   >("UWeaponScopeGFxMovie")
         .def_readwrite("MyScopeDefinition", &UWeaponScopeGFxMovie::MyScopeDefinition)
         .def_readwrite("CrosshairWidget", &UWeaponScopeGFxMovie::CrosshairWidget)
         .def_readwrite("CachedFLN_Housing", &UWeaponScopeGFxMovie::CachedFLN_Housing)
@@ -15,7 +15,7 @@ void Export_pystes_UWeaponScopeGFxMovie()
         .def_readwrite("CachedFLN_Crosshairs", &UWeaponScopeGFxMovie::CachedFLN_Crosshairs)
         .def_readwrite("CachedSFN", &UWeaponScopeGFxMovie::CachedSFN)
         .def_readwrite("CachedElementalName", &UWeaponScopeGFxMovie::CachedElementalName)
-        .def("StaticClass", &UWeaponScopeGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWeaponScopeGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("InitializeAsTelescope", &UWeaponScopeGFxMovie::InitializeAsTelescope)
         .def("CloseScope", &UWeaponScopeGFxMovie::CloseScope)
         .def("InitCrosshair", &UWeaponScopeGFxMovie::InitCrosshair)
@@ -23,7 +23,7 @@ void Export_pystes_UWeaponScopeGFxMovie()
         .def("GetElementalName", &UWeaponScopeGFxMovie::GetElementalName)
         .def("InitializeFromWeapon", &UWeaponScopeGFxMovie::InitializeFromWeapon)
         .def("ClearCached", &UWeaponScopeGFxMovie::ClearCached)
-        .def("GetManufacturerDefinitionFromWeaponPart", &UWeaponScopeGFxMovie::GetManufacturerDefinitionFromWeaponPart, return_value_policy< reference_existing_object >())
+        .def("GetManufacturerDefinitionFromWeaponPart", &UWeaponScopeGFxMovie::GetManufacturerDefinitionFromWeaponPart, py::return_value_policy::reference)
         .def("GetWeaponTypeNameForLinkage", &UWeaponScopeGFxMovie::GetWeaponTypeNameForLinkage)
         .def("GetManufacturerNameForLinkage", &UWeaponScopeGFxMovie::GetManufacturerNameForLinkage)
         .def("GetLinkageName", &UWeaponScopeGFxMovie::GetLinkageName)

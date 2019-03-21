@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UKMeshProps()
 {
-    class_< UKMeshProps, bases< UObject >  , boost::noncopyable>("UKMeshProps", no_init)
+    py::class_< UKMeshProps,  UObject   >("UKMeshProps")
         .def_readwrite("COMNudge", &UKMeshProps::COMNudge)
         .def_readwrite("AggGeom", &UKMeshProps::AggGeom)
-        .def("StaticClass", &UKMeshProps::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UKMeshProps::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

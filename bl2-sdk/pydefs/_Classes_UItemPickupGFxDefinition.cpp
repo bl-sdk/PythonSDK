@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemPickupGFxDefinition()
 {
-    class_< UItemPickupGFxDefinition, bases< UGFxMovieDefinition >  , boost::noncopyable>("UItemPickupGFxDefinition", no_init)
+    py::class_< UItemPickupGFxDefinition,  UGFxMovieDefinition   >("UItemPickupGFxDefinition")
         .def_readwrite("MatSrc", &UItemPickupGFxDefinition::MatSrc)
         .def_readwrite("Particle", &UItemPickupGFxDefinition::Particle)
         .def_readwrite("ParticleMatParamName", &UItemPickupGFxDefinition::ParticleMatParamName)
         .def_readwrite("MatTexParamName", &UItemPickupGFxDefinition::MatTexParamName)
         .def_readwrite("TallItemZOffsetPercentage", &UItemPickupGFxDefinition::TallItemZOffsetPercentage)
-        .def("StaticClass", &UItemPickupGFxDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemPickupGFxDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

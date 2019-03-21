@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGameReplicationInfo()
 {
-    class_< AGameReplicationInfo, bases< AReplicationInfo >  , boost::noncopyable>("AGameReplicationInfo", no_init)
+    py::class_< AGameReplicationInfo,  AReplicationInfo   >("AGameReplicationInfo")
         .def_readwrite("VfTable_IIResourcePoolProvider", &AGameReplicationInfo::VfTable_IIResourcePoolProvider)
         .def_readwrite("GameClass", &AGameReplicationInfo::GameClass)
         .def_readwrite("RemainingTime", &AGameReplicationInfo::RemainingTime)
@@ -20,7 +20,7 @@ void Export_pystes_AGameReplicationInfo()
         .def_readwrite("InactivePRIArray", &AGameReplicationInfo::InactivePRIArray)
         .def_readwrite("ResourcePoolManager", &AGameReplicationInfo::ResourcePoolManager)
         .def_readwrite("MusicInfo", &AGameReplicationInfo::MusicInfo)
-        .def("StaticClass", &AGameReplicationInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGameReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def("GetResourcePoolForResourceDefinition", &AGameReplicationInfo::GetResourcePoolForResourceDefinition)
         .def("eventShouldShowGore", &AGameReplicationInfo::eventShouldShowGore)
         .def("IsCoopMultiplayerGame", &AGameReplicationInfo::IsCoopMultiplayerGame)

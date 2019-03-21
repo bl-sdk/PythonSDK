@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UForceFieldShapeBox()
 {
-    class_< UForceFieldShapeBox, bases< UForceFieldShape >  , boost::noncopyable>("UForceFieldShapeBox", no_init)
+    py::class_< UForceFieldShapeBox,  UForceFieldShape   >("UForceFieldShapeBox")
         .def_readwrite("Shape", &UForceFieldShapeBox::Shape)
-        .def("StaticClass", &UForceFieldShapeBox::StaticClass, return_value_policy< reference_existing_object >())
-        .def("eventGetDrawComponent", &UForceFieldShapeBox::eventGetDrawComponent, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UForceFieldShapeBox::StaticClass, py::return_value_policy::reference)
+        .def("eventGetDrawComponent", &UForceFieldShapeBox::eventGetDrawComponent, py::return_value_policy::reference)
         .def("eventFillByCylinder", &UForceFieldShapeBox::eventFillByCylinder)
         .def("eventFillByCapsule", &UForceFieldShapeBox::eventFillByCapsule)
         .def("eventFillByBox", &UForceFieldShapeBox::eventFillByBox)

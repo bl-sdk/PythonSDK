@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_LeavingMoveNode()
 {
-    class_< USeqEvent_LeavingMoveNode, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_LeavingMoveNode", no_init)
-        .def("StaticClass", &USeqEvent_LeavingMoveNode::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqEvent_LeavingMoveNode,  USequenceEvent   >("USeqEvent_LeavingMoveNode")
+        .def("StaticClass", &USeqEvent_LeavingMoveNode::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

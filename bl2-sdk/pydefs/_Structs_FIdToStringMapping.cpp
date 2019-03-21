@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FIdToStringMapping()
 {
-    class_< FIdToStringMapping >("FIdToStringMapping", no_init)
+    py::class_< FIdToStringMapping >("FIdToStringMapping")
         .def_readwrite("Id", &FIdToStringMapping::Id)
         .def_readwrite("Name", &FIdToStringMapping::Name)
   ;

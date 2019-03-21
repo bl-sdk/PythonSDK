@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBalanceDefSpawnedActorState()
 {
-    class_< FBalanceDefSpawnedActorState >("FBalanceDefSpawnedActorState", no_init)
+    py::class_< FBalanceDefSpawnedActorState >("FBalanceDefSpawnedActorState")
         .def_readwrite("BalanceDefinition", &FBalanceDefSpawnedActorState::BalanceDefinition)
         .def_readwrite("GradeIndex", &FBalanceDefSpawnedActorState::GradeIndex)
   ;

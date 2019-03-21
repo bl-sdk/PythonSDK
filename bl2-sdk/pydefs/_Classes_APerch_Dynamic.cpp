@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APerch_Dynamic()
 {
-    class_< APerch_Dynamic, bases< APerch >  , boost::noncopyable>("APerch_Dynamic", no_init)
-        .def("StaticClass", &APerch_Dynamic::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< APerch_Dynamic,  APerch   >("APerch_Dynamic")
+        .def("StaticClass", &APerch_Dynamic::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

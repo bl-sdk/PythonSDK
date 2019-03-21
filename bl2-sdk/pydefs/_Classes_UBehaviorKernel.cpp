@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehaviorKernel()
 {
-    class_< UBehaviorKernel, bases< UObject >  , boost::noncopyable>("UBehaviorKernel", no_init)
+    py::class_< UBehaviorKernel,  UObject   >("UBehaviorKernel")
         .def_readwrite("Processes", &UBehaviorKernel::Processes)
         .def_readwrite("ProcessDeathList", &UBehaviorKernel::ProcessDeathList)
         .def_readwrite("WaitingThreads", &UBehaviorKernel::WaitingThreads)
@@ -24,7 +24,7 @@ void Export_pystes_UBehaviorKernel()
         .def_readwrite("CurrentDebugPage", &UBehaviorKernel::CurrentDebugPage)
         .def_readwrite("DebugPages", &UBehaviorKernel::DebugPages)
         .def_readwrite("EventFilterObjects", &UBehaviorKernel::EventFilterObjects)
-        .def("StaticClass", &UBehaviorKernel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehaviorKernel::StaticClass, py::return_value_policy::reference)
         .def("RecentlyRunBehaviorsForSequence", &UBehaviorKernel::RecentlyRunBehaviorsForSequence)
         .def("AllEventStateForSequence", &UBehaviorKernel::AllEventStateForSequence)
         .def("AllWaitingThreadsForSequence", &UBehaviorKernel::AllWaitingThreadsForSequence)

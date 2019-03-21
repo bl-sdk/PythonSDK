@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIBehaviorProviderDefinition()
 {
-    class_< UAIBehaviorProviderDefinition, bases< UBehaviorProviderDefinition >  , boost::noncopyable>("UAIBehaviorProviderDefinition", no_init)
-        .def("StaticClass", &UAIBehaviorProviderDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAIBehaviorProviderDefinition,  UBehaviorProviderDefinition   >("UAIBehaviorProviderDefinition")
+        .def("StaticClass", &UAIBehaviorProviderDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FShadowRelevanceSizePair()
 {
-    class_< FShadowRelevanceSizePair >("FShadowRelevanceSizePair", no_init)
+    py::class_< FShadowRelevanceSizePair >("FShadowRelevanceSizePair")
         .def_readwrite("Size", &FShadowRelevanceSizePair::Size)
         .def_readwrite("DynamicShadowCastRelevance", &FShadowRelevanceSizePair::DynamicShadowCastRelevance)
         .def_readwrite("OverrideStaticShadowSettings", &FShadowRelevanceSizePair::OverrideStaticShadowSettings)

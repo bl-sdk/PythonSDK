@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGameSessionInformation()
 {
-    class_< FGameSessionInformation >("FGameSessionInformation", no_init)
+    py::class_< FGameSessionInformation >("FGameSessionInformation")
         .def_readwrite("AppTitleID", &FGameSessionInformation::AppTitleID)
         .def_readwrite("PlatformType", &FGameSessionInformation::PlatformType)
         .def_readwrite("Language", &FGameSessionInformation::Language)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AMassiveLODOverrideVolume()
 {
-    class_< AMassiveLODOverrideVolume, bases< AVolume >  , boost::noncopyable>("AMassiveLODOverrideVolume", no_init)
-        .def("StaticClass", &AMassiveLODOverrideVolume::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AMassiveLODOverrideVolume,  AVolume   >("AMassiveLODOverrideVolume")
+        .def("StaticClass", &AMassiveLODOverrideVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

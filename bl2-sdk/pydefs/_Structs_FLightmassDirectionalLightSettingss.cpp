@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightmassDirectionalLightSettings()
 {
-    class_< FLightmassDirectionalLightSettings, bases< FLightmassLightSettings >  >("FLightmassDirectionalLightSettings", no_init)
+    py::class_< FLightmassDirectionalLightSettings,  FLightmassLightSettings   >("FLightmassDirectionalLightSettings")
         .def_readwrite("LightSourceAngle", &FLightmassDirectionalLightSettings::LightSourceAngle)
   ;
 }

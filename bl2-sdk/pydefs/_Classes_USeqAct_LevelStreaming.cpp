@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_LevelStreaming()
 {
-    class_< USeqAct_LevelStreaming, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_LevelStreaming", no_init)
+    py::class_< USeqAct_LevelStreaming,  USeqAct_Latent   >("USeqAct_LevelStreaming")
         .def_readwrite("Level", &USeqAct_LevelStreaming::Level)
         .def_readwrite("LevelName", &USeqAct_LevelStreaming::LevelName)
-        .def("StaticClass", &USeqAct_LevelStreaming::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_LevelStreaming::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

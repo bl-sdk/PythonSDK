@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUntypedBulkData_Mirror()
 {
-    class_< FUntypedBulkData_Mirror >("FUntypedBulkData_Mirror", no_init)
+    py::class_< FUntypedBulkData_Mirror >("FUntypedBulkData_Mirror")
         .def_readwrite("VfTable", &FUntypedBulkData_Mirror::VfTable)
         .def_readwrite("BulkDataFlags", &FUntypedBulkData_Mirror::BulkDataFlags)
         .def_readwrite("ElementCount", &FUntypedBulkData_Mirror::ElementCount)

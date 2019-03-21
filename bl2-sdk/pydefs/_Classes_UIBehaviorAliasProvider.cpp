@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIBehaviorAliasProvider()
 {
-    class_< UIBehaviorAliasProvider, bases< UInterface >  , boost::noncopyable>("UIBehaviorAliasProvider", no_init)
-        .def("StaticClass", &UIBehaviorAliasProvider::StaticClass, return_value_policy< reference_existing_object >())
-        .def("BehaviorAlias_GetLookupDefinition", &UIBehaviorAliasProvider::BehaviorAlias_GetLookupDefinition, return_value_policy< reference_existing_object >())
+    py::class_< UIBehaviorAliasProvider,  UInterface   >("UIBehaviorAliasProvider")
+        .def("StaticClass", &UIBehaviorAliasProvider::StaticClass, py::return_value_policy::reference)
+        .def("BehaviorAlias_GetLookupDefinition", &UIBehaviorAliasProvider::BehaviorAlias_GetLookupDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleRequired()
 {
-    class_< UParticleModuleRequired, bases< UObject >  , boost::noncopyable>("UParticleModuleRequired", no_init)
+    py::class_< UParticleModuleRequired,  UObject   >("UParticleModuleRequired")
         .def_readwrite("Material", &UParticleModuleRequired::Material)
         .def_readwrite("ScreenAlignment", &UParticleModuleRequired::ScreenAlignment)
         .def_readwrite("SortMode", &UParticleModuleRequired::SortMode)
@@ -28,7 +28,7 @@ void Export_pystes_UParticleModuleRequired()
         .def_readwrite("NormalsSphereCenter", &UParticleModuleRequired::NormalsSphereCenter)
         .def_readwrite("NormalsCylinderDirection", &UParticleModuleRequired::NormalsCylinderDirection)
         .def_readwrite("LODValidity", &UParticleModule::LODValidity)
-        .def("StaticClass", &UParticleModuleRequired::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleRequired::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

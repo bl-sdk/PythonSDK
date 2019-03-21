@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UClientBeaconAddressResolver()
 {
-    class_< UClientBeaconAddressResolver, bases< UObject >  , boost::noncopyable>("UClientBeaconAddressResolver", no_init)
+    py::class_< UClientBeaconAddressResolver,  UObject   >("UClientBeaconAddressResolver")
         .def_readwrite("BeaconPort", &UClientBeaconAddressResolver::BeaconPort)
         .def_readwrite("BeaconName", &UClientBeaconAddressResolver::BeaconName)
-        .def("StaticClass", &UClientBeaconAddressResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UClientBeaconAddressResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEditorLinkSelectionInterface()
 {
-    class_< UEditorLinkSelectionInterface, bases< UInterface >  , boost::noncopyable>("UEditorLinkSelectionInterface", no_init)
-        .def("StaticClass", &UEditorLinkSelectionInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UEditorLinkSelectionInterface,  UInterface   >("UEditorLinkSelectionInterface")
+        .def("StaticClass", &UEditorLinkSelectionInterface::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

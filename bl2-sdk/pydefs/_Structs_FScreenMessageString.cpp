@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScreenMessageString()
 {
-    class_< FScreenMessageString >("FScreenMessageString", no_init)
+    py::class_< FScreenMessageString >("FScreenMessageString")
         .def_readwrite("Key", &FScreenMessageString::Key)
         .def_readwrite("ScreenMessage", &FScreenMessageString::ScreenMessage)
         .def_readwrite("DisplayColor", &FScreenMessageString::DisplayColor)

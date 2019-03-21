@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerUIPreferences()
 {
-    class_< FPlayerUIPreferences >("FPlayerUIPreferences", no_init)
+    py::class_< FPlayerUIPreferences >("FPlayerUIPreferences")
         .def_readwrite("CharacterName", &FPlayerUIPreferences::CharacterName)
         .def_readwrite("PrimaryColor", &FPlayerUIPreferences::PrimaryColor)
         .def_readwrite("SecondaryColor", &FPlayerUIPreferences::SecondaryColor)

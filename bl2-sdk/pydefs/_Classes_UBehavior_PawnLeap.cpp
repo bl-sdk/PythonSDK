@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_PawnLeap()
 {
-    class_< UBehavior_PawnLeap, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_PawnLeap", no_init)
+    py::class_< UBehavior_PawnLeap,  UBehaviorBase   >("UBehavior_PawnLeap")
         .def_readwrite("LeapSpeed", &UBehavior_PawnLeap::LeapSpeed)
         .def_readwrite("LeapAngle", &UBehavior_PawnLeap::LeapAngle)
         .def_readwrite("OffsetLocation", &UBehavior_PawnLeap::OffsetLocation)
@@ -16,7 +16,7 @@ void Export_pystes_UBehavior_PawnLeap()
         .def_readwrite("TargetObject", &UBehavior_PawnLeap::TargetObject)
         .def_readwrite("RandomYawOnTarget", &UBehavior_PawnLeap::RandomYawOnTarget)
         .def_readwrite("LeapAnimDef", &UBehavior_PawnLeap::LeapAnimDef)
-        .def("StaticClass", &UBehavior_PawnLeap::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_PawnLeap::StaticClass, py::return_value_policy::reference)
         .def("FindLandingLocation", &UBehavior_PawnLeap::FindLandingLocation)
         .def("ApplyBehaviorToContext", &UBehavior_PawnLeap::ApplyBehaviorToContext)
         .staticmethod("StaticClass")

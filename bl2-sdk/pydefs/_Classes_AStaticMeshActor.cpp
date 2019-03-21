@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AStaticMeshActor()
 {
-    class_< AStaticMeshActor, bases< AActor >  , boost::noncopyable>("AStaticMeshActor", no_init)
+    py::class_< AStaticMeshActor,  AActor   >("AStaticMeshActor")
         .def_readwrite("StaticMeshComponent", &AStaticMeshActor::StaticMeshComponent)
-        .def("StaticClass", &AStaticMeshActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AStaticMeshActor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

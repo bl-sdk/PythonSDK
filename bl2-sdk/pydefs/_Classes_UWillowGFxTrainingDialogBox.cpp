@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxTrainingDialogBox()
 {
-    class_< UWillowGFxTrainingDialogBox, bases< UWillowGFxDialogBox >  , boost::noncopyable>("UWillowGFxTrainingDialogBox", no_init)
+    py::class_< UWillowGFxTrainingDialogBox,  UWillowGFxDialogBox   >("UWillowGFxTrainingDialogBox")
         .def_readwrite("DelayUntilShowOk", &UWillowGFxTrainingDialogBox::DelayUntilShowOk)
         .def_readwrite("StatusMenuTab", &UWillowGFxTrainingDialogBox::StatusMenuTab)
-        .def("StaticClass", &UWillowGFxTrainingDialogBox::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxTrainingDialogBox::StaticClass, py::return_value_policy::reference)
         .def("OnClose", &UWillowGFxTrainingDialogBox::OnClose)
         .def("OnTick", &UWillowGFxTrainingDialogBox::OnTick)
         .def("DisplayDelayedOkBoxForTraining", &UWillowGFxTrainingDialogBox::DisplayDelayedOkBoxForTraining)

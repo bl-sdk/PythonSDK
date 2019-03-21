@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMindTargetInfo()
 {
-    class_< UMindTargetInfo, bases< UObject >  , boost::noncopyable>("UMindTargetInfo", no_init)
+    py::class_< UMindTargetInfo,  UObject   >("UMindTargetInfo")
         .def_readwrite("Target", &UMindTargetInfo::Target)
         .def_readwrite("Distance", &UMindTargetInfo::Distance)
         .def_readwrite("bCanFireAt", &UMindTargetInfo::bCanFireAt)
@@ -22,7 +22,7 @@ void Export_pystes_UMindTargetInfo()
         .def_readwrite("IHaveSeenOrKnownThisTargetBefore", &UMindTargetInfo::IHaveSeenOrKnownThisTargetBefore)
         .def_readwrite("LastVisibleOrAudibleLocation", &UMindTargetInfo::LastVisibleOrAudibleLocation)
         .def_readwrite("BonusPriority", &UMindTargetInfo::BonusPriority)
-        .def("StaticClass", &UMindTargetInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def("GetAverageHitTime", &UMindTargetInfo::GetAverageHitTime)
         .def("AddHitTargetRecord", &UMindTargetInfo::AddHitTargetRecord)
         .staticmethod("StaticClass")

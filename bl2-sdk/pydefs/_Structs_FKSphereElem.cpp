@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKSphereElem()
 {
-    class_< FKSphereElem >("FKSphereElem", no_init)
+    py::class_< FKSphereElem >("FKSphereElem")
         .def_readwrite("TM", &FKSphereElem::TM)
         .def_readwrite("Radius", &FKSphereElem::Radius)
   ;

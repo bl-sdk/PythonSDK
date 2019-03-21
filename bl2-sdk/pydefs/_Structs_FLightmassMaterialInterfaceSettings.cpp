@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightmassMaterialInterfaceSettings()
 {
-    class_< FLightmassMaterialInterfaceSettings >("FLightmassMaterialInterfaceSettings", no_init)
+    py::class_< FLightmassMaterialInterfaceSettings >("FLightmassMaterialInterfaceSettings")
         .def_readwrite("DistanceFieldPenumbraScale", &FLightmassMaterialInterfaceSettings::DistanceFieldPenumbraScale)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATravelStation()
 {
-    class_< ATravelStation, bases< AWillowInteractiveObject >  , boost::noncopyable>("ATravelStation", no_init)
+    py::class_< ATravelStation,  AWillowInteractiveObject   >("ATravelStation")
         .def_readwrite("VfTable_IIMission", &ATravelStation::VfTable_IIMission)
         .def_readwrite("StationAntennaLight", &ATravelStation::StationAntennaLight)
         .def_readwrite("TeleportDest", &ATravelStation::TeleportDest)
@@ -21,11 +21,11 @@ void Export_pystes_ATravelStation()
         .def_readwrite("Nozzle2SocketName", &ATravelStation::Nozzle2SocketName)
         .def_readwrite("Nozzle3SocketName", &ATravelStation::Nozzle3SocketName)
         .def_readwrite("Nozzle4SocketName", &ATravelStation::Nozzle4SocketName)
-        .def("StaticClass", &ATravelStation::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATravelStation::StaticClass, py::return_value_policy::reference)
         .def("CanResurrectHere", &ATravelStation::CanResurrectHere)
         .def("eventSetUsability", &ATravelStation::eventSetUsability)
-        .def("eventAddLevelTransitionWaypoint", &ATravelStation::eventAddLevelTransitionWaypoint, return_value_policy< reference_existing_object >())
-        .def("FindTravelStation", &ATravelStation::FindTravelStation, return_value_policy< reference_existing_object >())
+        .def("eventAddLevelTransitionWaypoint", &ATravelStation::eventAddLevelTransitionWaypoint, py::return_value_policy::reference)
+        .def("FindTravelStation", &ATravelStation::FindTravelStation, py::return_value_policy::reference)
         .def("SetFastTravelDebug", &ATravelStation::SetFastTravelDebug)
         .def("IsFastTravelEnabled", &ATravelStation::IsFastTravelEnabled)
         .def("eventMissionReactionObjectiveCleared", &ATravelStation::eventMissionReactionObjectiveCleared)
@@ -38,7 +38,7 @@ void Export_pystes_ATravelStation()
         .def("ReplacePreviouslyActivatedStation", &ATravelStation::ReplacePreviouslyActivatedStation)
         .def("eventSetStationActivatedState", &ATravelStation::eventSetStationActivatedState)
         .def("TouchDenied", &ATravelStation::TouchDenied)
-        .def("GetTravelStationDefinition", &ATravelStation::GetTravelStationDefinition, return_value_policy< reference_existing_object >())
+        .def("GetTravelStationDefinition", &ATravelStation::GetTravelStationDefinition, py::return_value_policy::reference)
         .def("InitializeFromDefinition", &ATravelStation::InitializeFromDefinition)
         .def("eventPostBeginPlay", &ATravelStation::eventPostBeginPlay)
         .def("eventReplicatedEvent", &ATravelStation::eventReplicatedEvent)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKeyBindInfo()
 {
-    class_< FKeyBindInfo >("FKeyBindInfo", no_init)
+    py::class_< FKeyBindInfo >("FKeyBindInfo")
         .def_readwrite("Tag", &FKeyBindInfo::Tag)
         .def_readwrite("ActionName", &FKeyBindInfo::ActionName)
         .def_readwrite("Caption", &FKeyBindInfo::Caption)

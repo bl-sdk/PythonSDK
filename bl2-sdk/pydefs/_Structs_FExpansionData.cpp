@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FExpansionData()
 {
-    class_< FExpansionData >("FExpansionData", no_init)
+    py::class_< FExpansionData >("FExpansionData")
         .def_readwrite("Tag", &FExpansionData::Tag)
         .def_readwrite("Data", &FExpansionData::Data)
   ;

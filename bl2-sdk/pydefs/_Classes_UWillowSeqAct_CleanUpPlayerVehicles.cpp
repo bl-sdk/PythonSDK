@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_CleanUpPlayerVehicles()
 {
-    class_< UWillowSeqAct_CleanUpPlayerVehicles, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_CleanUpPlayerVehicles", no_init)
-        .def("StaticClass", &UWillowSeqAct_CleanUpPlayerVehicles::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_CleanUpPlayerVehicles,  USequenceAction   >("UWillowSeqAct_CleanUpPlayerVehicles")
+        .def("StaticClass", &UWillowSeqAct_CleanUpPlayerVehicles::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_CleanUpPlayerVehicles::eventActivated)
         .staticmethod("StaticClass")
   ;

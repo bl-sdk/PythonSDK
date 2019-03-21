@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkill()
 {
-    class_< USkill, bases< UObject >  , boost::noncopyable>("USkill", no_init)
+    py::class_< USkill,  UObject   >("USkill")
         .def_readwrite("VfTable_IIBehaviorConsumer", &USkill::VfTable_IIBehaviorConsumer)
         .def_readwrite("Definition", &USkill::Definition)
         .def_readwrite("SkillEffects", &USkill::SkillEffects)
@@ -29,7 +29,7 @@ void Export_pystes_USkill()
         .def_readwrite("AdditionalSkillTarget", &USkill::AdditionalSkillTarget)
         .def_readwrite("CachedActionSkill", &USkill::CachedActionSkill)
         .def_readwrite("ConsumerHandle", &USkill::ConsumerHandle)
-        .def("StaticClass", &USkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkill::StaticClass, py::return_value_policy::reference)
         .def("GetBehaviorConsumerHandle", &USkill::GetBehaviorConsumerHandle)
         .def("ForceRefresh", &USkill::ForceRefresh)
         .def("GetGrade", &USkill::GetGrade)
@@ -42,11 +42,11 @@ void Export_pystes_USkill()
         .def("CalculateModifierValue", &USkill::CalculateModifierValue)
         .def("AdjustModifiers", &USkill::AdjustModifiers)
         .def("GetAttributeContexts", &USkill::GetAttributeContexts)
-        .def("GetEffectInstigator", &USkill::GetEffectInstigator, return_value_policy< reference_existing_object >())
+        .def("GetEffectInstigator", &USkill::GetEffectInstigator, py::return_value_policy::reference)
         .def("IsSkillForInstigator", &USkill::IsSkillForInstigator)
         .def("UpdateGrade", &USkill::UpdateGrade)
         .def("CalculateStateBasedOnConstraints", &USkill::CalculateStateBasedOnConstraints)
-        .def("GetSkillInstigator", &USkill::GetSkillInstigator, return_value_policy< reference_existing_object >())
+        .def("GetSkillInstigator", &USkill::GetSkillInstigator, py::return_value_policy::reference)
         .def("GetSkillState", &USkill::GetSkillState)
         .def("eventResume", &USkill::eventResume)
         .def("eventPause", &USkill::eventPause)

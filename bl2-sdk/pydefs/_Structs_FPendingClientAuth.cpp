@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPendingClientAuth()
 {
-    class_< FPendingClientAuth >("FPendingClientAuth", no_init)
+    py::class_< FPendingClientAuth >("FPendingClientAuth")
         .def_readwrite("ClientConnection", &FPendingClientAuth::ClientConnection)
         .def_readwrite("ClientUID", &FPendingClientAuth::ClientUID)
         .def_readwrite("AuthTimestamp", &FPendingClientAuth::AuthTimestamp)

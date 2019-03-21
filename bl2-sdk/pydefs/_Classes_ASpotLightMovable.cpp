@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASpotLightMovable()
 {
-    class_< ASpotLightMovable, bases< ASpotLight >  , boost::noncopyable>("ASpotLightMovable", no_init)
-        .def("StaticClass", &ASpotLightMovable::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< ASpotLightMovable,  ASpotLight   >("ASpotLightMovable")
+        .def("StaticClass", &ASpotLightMovable::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

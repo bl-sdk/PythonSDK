@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_TogglePostRenderFor()
 {
-    class_< UWillowSeqAct_TogglePostRenderFor, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_TogglePostRenderFor", no_init)
-        .def("StaticClass", &UWillowSeqAct_TogglePostRenderFor::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_TogglePostRenderFor,  USequenceAction   >("UWillowSeqAct_TogglePostRenderFor")
+        .def("StaticClass", &UWillowSeqAct_TogglePostRenderFor::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

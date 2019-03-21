@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowTacticalMapVolume()
 {
-    class_< AWillowTacticalMapVolume, bases< AVolume >  , boost::noncopyable>("AWillowTacticalMapVolume", no_init)
+    py::class_< AWillowTacticalMapVolume,  AVolume   >("AWillowTacticalMapVolume")
         .def_readwrite("UnrealUnitsPerPixel", &AWillowTacticalMapVolume::UnrealUnitsPerPixel)
         .def_readwrite("NorthOffsetInDegreesClockwise", &AWillowTacticalMapVolume::NorthOffsetInDegreesClockwise)
-        .def("StaticClass", &AWillowTacticalMapVolume::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowTacticalMapVolume::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

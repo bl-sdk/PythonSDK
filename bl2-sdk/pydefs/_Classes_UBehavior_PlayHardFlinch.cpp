@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_PlayHardFlinch()
 {
-    class_< UBehavior_PlayHardFlinch, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_PlayHardFlinch", no_init)
+    py::class_< UBehavior_PlayHardFlinch,  UBehaviorBase   >("UBehavior_PlayHardFlinch")
         .def_readwrite("HitLocation", &UBehavior_PlayHardFlinch::HitLocation)
         .def_readwrite("InstigatedBy", &UBehavior_PlayHardFlinch::InstigatedBy)
-        .def("StaticClass", &UBehavior_PlayHardFlinch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_PlayHardFlinch::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_PlayHardFlinch::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

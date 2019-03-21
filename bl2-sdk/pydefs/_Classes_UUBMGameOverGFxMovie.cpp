@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUBMGameOverGFxMovie()
 {
-    class_< UUBMGameOverGFxMovie, bases< UWillowGFxMovie >  , boost::noncopyable>("UUBMGameOverGFxMovie", no_init)
+    py::class_< UUBMGameOverGFxMovie,  UWillowGFxMovie   >("UUBMGameOverGFxMovie")
         .def_readwrite("GameOverClip", &UUBMGameOverGFxMovie::GameOverClip)
-        .def("StaticClass", &UUBMGameOverGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUBMGameOverGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extEnableGameOverScreenInput", &UUBMGameOverGFxMovie::extEnableGameOverScreenInput)
         .def("extGameOverClipReady", &UUBMGameOverGFxMovie::extGameOverClipReady)
         .def("PopulatePlayerInfo", &UUBMGameOverGFxMovie::PopulatePlayerInfo)

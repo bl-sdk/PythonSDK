@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UChallengesScreenGFxObject()
 {
-    class_< UChallengesScreenGFxObject, bases< UBaseTopLevelPanelGFxObject >  , boost::noncopyable>("UChallengesScreenGFxObject", no_init)
+    py::class_< UChallengesScreenGFxObject,  UBaseTopLevelPanelGFxObject   >("UChallengesScreenGFxObject")
         .def_readwrite("CurrentPanel", &UChallengesScreenGFxObject::CurrentPanel)
         .def_readwrite("BadassPanel", &UChallengesScreenGFxObject::BadassPanel)
         .def_readwrite("ChallengesPanel", &UChallengesScreenGFxObject::ChallengesPanel)
         .def_readwrite("PanelDef", &UChallengesScreenGFxObject::PanelDef)
-        .def("StaticClass", &UChallengesScreenGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UChallengesScreenGFxObject::StaticClass, py::return_value_policy::reference)
         .def("Tick", &UChallengesScreenGFxObject::Tick)
         .def("SetTooltipText", &UChallengesScreenGFxObject::SetTooltipText)
         .def("ConfigureForPlayer", &UChallengesScreenGFxObject::ConfigureForPlayer)

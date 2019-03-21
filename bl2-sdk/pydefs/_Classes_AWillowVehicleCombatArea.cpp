@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVehicleCombatArea()
 {
-    class_< AWillowVehicleCombatArea, bases< AActor >  , boost::noncopyable>("AWillowVehicleCombatArea", no_init)
+    py::class_< AWillowVehicleCombatArea,  AActor   >("AWillowVehicleCombatArea")
         .def_readwrite("CombatRadius", &AWillowVehicleCombatArea::CombatRadius)
         .def_readwrite("CombatDisplayHeight", &AWillowVehicleCombatArea::CombatDisplayHeight)
         .def_readwrite("NextVehicleCombatArea", &AWillowVehicleCombatArea::NextVehicleCombatArea)
-        .def("StaticClass", &AWillowVehicleCombatArea::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVehicleCombatArea::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &AWillowVehicleCombatArea::eventDestroyed)
         .def("eventPostBeginPlay", &AWillowVehicleCombatArea::eventPostBeginPlay)
         .def("IsActorInside", &AWillowVehicleCombatArea::IsActorInside)

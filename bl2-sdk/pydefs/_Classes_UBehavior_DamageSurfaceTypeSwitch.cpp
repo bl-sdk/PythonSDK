@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_DamageSurfaceTypeSwitch()
 {
-    class_< UBehavior_DamageSurfaceTypeSwitch, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_DamageSurfaceTypeSwitch", no_init)
+    py::class_< UBehavior_DamageSurfaceTypeSwitch,  UBehaviorBase   >("UBehavior_DamageSurfaceTypeSwitch")
         .def_readwrite("DamageSurfaceType", &UBehavior_DamageSurfaceTypeSwitch::DamageSurfaceType)
-        .def("StaticClass", &UBehavior_DamageSurfaceTypeSwitch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_DamageSurfaceTypeSwitch::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_DamageSurfaceTypeSwitch::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

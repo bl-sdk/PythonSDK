@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSortFilterConfiguration()
 {
-    class_< FSortFilterConfiguration >("FSortFilterConfiguration", no_init)
+    py::class_< FSortFilterConfiguration >("FSortFilterConfiguration")
         .def_readwrite("SortType", &FSortFilterConfiguration::SortType)
         .def_readwrite("FilterType", &FSortFilterConfiguration::FilterType)
         .def_readwrite("CategoryType", &FSortFilterConfiguration::CategoryType)

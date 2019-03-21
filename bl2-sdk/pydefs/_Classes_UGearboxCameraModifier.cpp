@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxCameraModifier()
 {
-    class_< UGearboxCameraModifier, bases< UCameraModifier >  , boost::noncopyable>("UGearboxCameraModifier", no_init)
+    py::class_< UGearboxCameraModifier,  UCameraModifier   >("UGearboxCameraModifier")
         .def_readwrite("GBXCameraOwner", &UGearboxCameraModifier::GBXCameraOwner)
         .def_readwrite("DesiredPOV", &UGearboxCameraModifier::DesiredPOV)
         .def_readwrite("MasterFadeValue", &UGearboxCameraModifier::MasterFadeValue)
         .def_readwrite("FadeElapsedTime", &UGearboxCameraModifier::FadeElapsedTime)
         .def_readwrite("FadeTimeSpan", &UGearboxCameraModifier::FadeTimeSpan)
         .def_readwrite("FadeMode", &UGearboxCameraModifier::FadeMode)
-        .def("StaticClass", &UGearboxCameraModifier::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxCameraModifier::StaticClass, py::return_value_policy::reference)
         .def("LerpFOV", &UGearboxCameraModifier::LerpFOV)
         .def("LerpRotation", &UGearboxCameraModifier::LerpRotation)
         .def("LerpLocation", &UGearboxCameraModifier::LerpLocation)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOfferResult()
 {
-    class_< FOfferResult >("FOfferResult", no_init)
+    py::class_< FOfferResult >("FOfferResult")
         .def_readwrite("TitleEfigs", &FOfferResult::TitleEfigs)
         .def_readwrite("DescriptionEfigs", &FOfferResult::DescriptionEfigs)
         .def_readwrite("Id", &FOfferResult::Id)

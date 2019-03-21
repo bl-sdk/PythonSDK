@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ACamera()
 {
-    class_< ACamera, bases< AActor >  , boost::noncopyable>("ACamera", no_init)
+    py::class_< ACamera,  AActor   >("ACamera")
         .def_readwrite("PCOwner", &ACamera::PCOwner)
         .def_readwrite("CameraStyle", &ACamera::CameraStyle)
         .def_readwrite("DefaultFOV", &ACamera::DefaultFOV)
@@ -43,11 +43,11 @@ void Export_pystes_ACamera()
         .def_readwrite("ActiveAnims", &ACamera::ActiveAnims)
         .def_readwrite("FreeAnims", &ACamera::FreeAnims)
         .def_readwrite("AnimCameraActor", &ACamera::AnimCameraActor)
-        .def("StaticClass", &ACamera::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ACamera::StaticClass, py::return_value_policy::reference)
         .def("StopCameraAnim", &ACamera::StopCameraAnim)
         .def("StopAllCameraAnimsByType", &ACamera::StopAllCameraAnimsByType)
         .def("StopAllCameraAnims", &ACamera::StopAllCameraAnims)
-        .def("PlayCameraAnim", &ACamera::PlayCameraAnim, return_value_policy< reference_existing_object >())
+        .def("PlayCameraAnim", &ACamera::PlayCameraAnim, py::return_value_policy::reference)
         .def("ClearAllCameraShakes", &ACamera::ClearAllCameraShakes)
         .def("PlayWorldCameraShake", &ACamera::PlayWorldCameraShake)
         .def("CalcRadialShakeScale", &ACamera::CalcRadialShakeScale)
@@ -56,7 +56,7 @@ void Export_pystes_ACamera()
         .def("ClearCameraLensEffects", &ACamera::ClearCameraLensEffects)
         .def("RemoveCameraLensEffect", &ACamera::RemoveCameraLensEffect)
         .def("AddCameraLensEffect", &ACamera::AddCameraLensEffect)
-        .def("FindCameraLensEffect", &ACamera::FindCameraLensEffect, return_value_policy< reference_existing_object >())
+        .def("FindCameraLensEffect", &ACamera::FindCameraLensEffect, py::return_value_policy::reference)
         .def("ProcessViewRotation", &ACamera::ProcessViewRotation)
         .def("SetViewTarget", &ACamera::SetViewTarget)
         .def("UpdateViewTarget", &ACamera::UpdateViewTarget)
@@ -74,7 +74,7 @@ void Export_pystes_ACamera()
         .def("ApplyCameraModifiers", &ACamera::ApplyCameraModifiers)
         .def("eventDestroyed", &ACamera::eventDestroyed)
         .def("PostBeginPlay", &ACamera::PostBeginPlay)
-        .def("CreateCameraModifier", &ACamera::CreateCameraModifier, return_value_policy< reference_existing_object >())
+        .def("CreateCameraModifier", &ACamera::CreateCameraModifier, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

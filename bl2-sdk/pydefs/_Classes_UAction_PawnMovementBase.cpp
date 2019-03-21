@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_PawnMovementBase()
 {
-    class_< UAction_PawnMovementBase, bases< UActionSequencePawn >  , boost::noncopyable>("UAction_PawnMovementBase", no_init)
+    py::class_< UAction_PawnMovementBase,  UActionSequencePawn   >("UAction_PawnMovementBase")
         .def_readwrite("CachedSearchOrigin", &UAction_PawnMovementBase::CachedSearchOrigin)
         .def_readwrite("CoverCheckThrottle", &UAction_PawnMovementBase::CoverCheckThrottle)
         .def_readwrite("CoverCheckThrottleInterval", &UAction_PawnMovementBase::CoverCheckThrottleInterval)
@@ -27,7 +27,7 @@ void Export_pystes_UAction_PawnMovementBase()
         .def_readwrite("OverrideDistanceForCover", &UAction_PawnMovementBase::OverrideDistanceForCover)
         .def_readwrite("RepathDistanceThresh", &UAction_PawnMovementBase::RepathDistanceThresh)
         .def_readwrite("FailureEvent", &UAction_PawnMovementBase::FailureEvent)
-        .def("StaticClass", &UAction_PawnMovementBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_PawnMovementBase::StaticClass, py::return_value_policy::reference)
         .def("eventPostMovement", &UAction_PawnMovementBase::eventPostMovement)
         .def("eventPreMovement", &UAction_PawnMovementBase::eventPreMovement)
         .def("eventPrePathFind", &UAction_PawnMovementBase::eventPrePathFind)

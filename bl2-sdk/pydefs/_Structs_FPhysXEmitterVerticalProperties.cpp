@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPhysXEmitterVerticalProperties()
 {
-    class_< FPhysXEmitterVerticalProperties >("FPhysXEmitterVerticalProperties", no_init)
+    py::class_< FPhysXEmitterVerticalProperties >("FPhysXEmitterVerticalProperties")
         .def_readwrite("ParticlesLodMin", &FPhysXEmitterVerticalProperties::ParticlesLodMin)
         .def_readwrite("ParticlesLodMax", &FPhysXEmitterVerticalProperties::ParticlesLodMax)
         .def_readwrite("PacketsPerPhysXParticleSystemMax", &FPhysXEmitterVerticalProperties::PacketsPerPhysXParticleSystemMax)

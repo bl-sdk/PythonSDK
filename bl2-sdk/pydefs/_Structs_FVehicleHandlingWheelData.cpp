@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FVehicleHandlingWheelData()
 {
-    class_< FVehicleHandlingWheelData >("FVehicleHandlingWheelData", no_init)
+    py::class_< FVehicleHandlingWheelData >("FVehicleHandlingWheelData")
         .def_readwrite("BoneName", &FVehicleHandlingWheelData::BoneName)
         .def_readwrite("WheelDef", &FVehicleHandlingWheelData::WheelDef)
   ;

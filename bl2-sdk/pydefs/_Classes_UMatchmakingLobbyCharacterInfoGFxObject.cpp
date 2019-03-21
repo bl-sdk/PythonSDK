@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMatchmakingLobbyCharacterInfoGFxObject()
 {
-    class_< UMatchmakingLobbyCharacterInfoGFxObject, bases< UGFxObject >  , boost::noncopyable>("UMatchmakingLobbyCharacterInfoGFxObject", no_init)
-        .def("StaticClass", &UMatchmakingLobbyCharacterInfoGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMatchmakingLobbyCharacterInfoGFxObject,  UGFxObject   >("UMatchmakingLobbyCharacterInfoGFxObject")
+        .def("StaticClass", &UMatchmakingLobbyCharacterInfoGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetInfo", &UMatchmakingLobbyCharacterInfoGFxObject::SetInfo)
         .staticmethod("StaticClass")
   ;

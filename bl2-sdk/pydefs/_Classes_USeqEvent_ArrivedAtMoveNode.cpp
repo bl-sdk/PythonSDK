@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqEvent_ArrivedAtMoveNode()
 {
-    class_< USeqEvent_ArrivedAtMoveNode, bases< USequenceEvent >  , boost::noncopyable>("USeqEvent_ArrivedAtMoveNode", no_init)
-        .def("StaticClass", &USeqEvent_ArrivedAtMoveNode::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqEvent_ArrivedAtMoveNode,  USequenceEvent   >("USeqEvent_ArrivedAtMoveNode")
+        .def("StaticClass", &USeqEvent_ArrivedAtMoveNode::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

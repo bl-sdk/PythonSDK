@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDamageType()
 {
-    class_< UDamageType, bases< UObject >  , boost::noncopyable>("UDamageType", no_init)
+    py::class_< UDamageType,  UObject   >("UDamageType")
         .def_readwrite("KDamageImpulse", &UDamageType::KDamageImpulse)
         .def_readwrite("KDeathVel", &UDamageType::KDeathVel)
         .def_readwrite("KDeathUpKick", &UDamageType::KDeathUpKick)
@@ -15,7 +15,7 @@ void Export_pystes_UDamageType()
         .def_readwrite("DamagedFFWaveform", &UDamageType::DamagedFFWaveform)
         .def_readwrite("KilledFFWaveform", &UDamageType::KilledFFWaveform)
         .def_readwrite("FracturedMeshDamage", &UDamageType::FracturedMeshDamage)
-        .def("StaticClass", &UDamageType::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDamageType::StaticClass, py::return_value_policy::reference)
         .def("VehicleDamageScalingFor", &UDamageType::VehicleDamageScalingFor)
         .staticmethod("StaticClass")
   ;

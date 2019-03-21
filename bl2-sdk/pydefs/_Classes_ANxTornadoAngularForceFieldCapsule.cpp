@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANxTornadoAngularForceFieldCapsule()
 {
-    class_< ANxTornadoAngularForceFieldCapsule, bases< ANxTornadoAngularForceField >  , boost::noncopyable>("ANxTornadoAngularForceFieldCapsule", no_init)
+    py::class_< ANxTornadoAngularForceFieldCapsule,  ANxTornadoAngularForceField   >("ANxTornadoAngularForceFieldCapsule")
         .def_readwrite("RenderComponent", &ANxTornadoAngularForceFieldCapsule::RenderComponent)
-        .def("StaticClass", &ANxTornadoAngularForceFieldCapsule::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANxTornadoAngularForceFieldCapsule::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

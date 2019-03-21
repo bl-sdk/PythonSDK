@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPreviewAnimSetsStruct()
 {
-    class_< FPreviewAnimSetsStruct >("FPreviewAnimSetsStruct", no_init)
+    py::class_< FPreviewAnimSetsStruct >("FPreviewAnimSetsStruct")
         .def_readwrite("DisplayName", &FPreviewAnimSetsStruct::DisplayName)
         .def_readwrite("PreviewAnimSets", &FPreviewAnimSetsStruct::PreviewAnimSets)
   ;

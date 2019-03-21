@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicsJumpPreviewComponent()
 {
-    class_< UPhysicsJumpPreviewComponent, bases< UWillowPreviewComponent >  , boost::noncopyable>("UPhysicsJumpPreviewComponent", no_init)
+    py::class_< UPhysicsJumpPreviewComponent,  UWillowPreviewComponent   >("UPhysicsJumpPreviewComponent")
         .def_readwrite("JumpNode", &UPhysicsJumpPreviewComponent::JumpNode)
-        .def("StaticClass", &UPhysicsJumpPreviewComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysicsJumpPreviewComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKismetDrawTextInfo()
 {
-    class_< FKismetDrawTextInfo >("FKismetDrawTextInfo", no_init)
+    py::class_< FKismetDrawTextInfo >("FKismetDrawTextInfo")
         .def_readwrite("MessageText", &FKismetDrawTextInfo::MessageText)
         .def_readwrite("AppendedText", &FKismetDrawTextInfo::AppendedText)
         .def_readwrite("MessageFont", &FKismetDrawTextInfo::MessageFont)

@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialInterface()
 {
-    class_< UMaterialInterface, bases< UObject >  , boost::noncopyable>("UMaterialInterface", no_init)
+    py::class_< UMaterialInterface,  UObject   >("UMaterialInterface")
         .def_readwrite("ParentRefFence", &UMaterialInterface::ParentRefFence)
         .def_readwrite("LightmassSettings", &UMaterialInterface::LightmassSettings)
         .def_readwrite("CustomSkinType", &UMaterialInterface::CustomSkinType)
-        .def("StaticClass", &UMaterialInterface::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialInterface::StaticClass, py::return_value_policy::reference)
         .def("SetForceMipLevelsToBeResident", &UMaterialInterface::SetForceMipLevelsToBeResident)
         .def("Behavior_SetColorParameterValue", &UMaterialInterface::Behavior_SetColorParameterValue)
         .def("Behavior_SetFloatParameterValue", &UMaterialInterface::Behavior_SetFloatParameterValue)
@@ -26,8 +26,8 @@ void Export_pystes_UMaterialInterface()
         .def("GetScalarParameterValue", &UMaterialInterface::GetScalarParameterValue)
         .def("GetFontParameterValue", &UMaterialInterface::GetFontParameterValue)
         .def("GetParameterDesc", &UMaterialInterface::GetParameterDesc)
-        .def("GetPhysicalMaterial", &UMaterialInterface::GetPhysicalMaterial, return_value_policy< reference_existing_object >())
-        .def("GetMaterial", &UMaterialInterface::GetMaterial, return_value_policy< reference_existing_object >())
+        .def("GetPhysicalMaterial", &UMaterialInterface::GetPhysicalMaterial, py::return_value_policy::reference)
+        .def("GetMaterial", &UMaterialInterface::GetMaterial, py::return_value_policy::reference)
         .def("GetSurfaceHeight", &USurface::GetSurfaceHeight)
         .def("GetSurfaceWidth", &USurface::GetSurfaceWidth)
         .staticmethod("StaticClass")

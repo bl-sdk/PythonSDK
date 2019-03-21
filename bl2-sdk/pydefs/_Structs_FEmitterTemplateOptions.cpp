@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEmitterTemplateOptions()
 {
-    class_< FEmitterTemplateOptions >("FEmitterTemplateOptions", no_init)
+    py::class_< FEmitterTemplateOptions >("FEmitterTemplateOptions")
         .def_readwrite("DefaultTemplate", &FEmitterTemplateOptions::DefaultTemplate)
         .def_readwrite("CensoredTemplateAlternative", &FEmitterTemplateOptions::CensoredTemplateAlternative)
   ;

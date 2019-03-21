@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWebServer()
 {
-    class_< AWebServer, bases< ATcpLink >  , boost::noncopyable>("AWebServer", no_init)
+    py::class_< AWebServer,  ATcpLink   >("AWebServer")
         .def_readwrite("ServerName", &AWebServer::ServerName)
         .def_readonly("Applications", &AWebServer::Applications)
         .def_readonly("ApplicationPaths", &AWebServer::ApplicationPaths)
@@ -17,8 +17,8 @@ void Export_pystes_AWebServer()
         .def_readonly("ApplicationObjects", &AWebServer::ApplicationObjects)
         .def_readwrite("ConnectionCount", &AWebServer::ConnectionCount)
         .def_readwrite("ConnID", &AWebServer::ConnID)
-        .def("StaticClass", &AWebServer::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetApplication", &AWebServer::GetApplication, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWebServer::StaticClass, py::return_value_policy::reference)
+        .def("GetApplication", &AWebServer::GetApplication, py::return_value_policy::reference)
         .def("eventLostChild", &AWebServer::eventLostChild)
         .def("eventGainedChild", &AWebServer::eventGainedChild)
         .def("eventDestroyed", &AWebServer::eventDestroyed)

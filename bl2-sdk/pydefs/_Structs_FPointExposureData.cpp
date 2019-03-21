@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPointExposureData()
 {
-    class_< FPointExposureData >("FPointExposureData", no_init)
+    py::class_< FPointExposureData >("FPointExposureData")
         .def_readwrite("Looker", &FPointExposureData::Looker)
         .def_readwrite("Point", &FPointExposureData::Point)
         .def_readwrite("Point2", &FPointExposureData::Point2)

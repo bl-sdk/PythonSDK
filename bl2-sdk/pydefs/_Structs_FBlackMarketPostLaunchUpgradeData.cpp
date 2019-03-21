@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBlackMarketPostLaunchUpgradeData()
 {
-    class_< FBlackMarketPostLaunchUpgradeData >("FBlackMarketPostLaunchUpgradeData", no_init)
+    py::class_< FBlackMarketPostLaunchUpgradeData >("FBlackMarketPostLaunchUpgradeData")
         .def_readwrite("EridiumCostForUpgrade", &FBlackMarketPostLaunchUpgradeData::EridiumCostForUpgrade)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWorldLightingOverride()
 {
-    class_< FWorldLightingOverride >("FWorldLightingOverride", no_init)
+    py::class_< FWorldLightingOverride >("FWorldLightingOverride")
         .def_readwrite("DirectionOffset", &FWorldLightingOverride::DirectionOffset)
         .def_readwrite("FadeInTime", &FWorldLightingOverride::FadeInTime)
         .def_readwrite("FadeOutTime", &FWorldLightingOverride::FadeOutTime)

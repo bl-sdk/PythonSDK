@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTargetPriorityInfo()
 {
-    class_< FTargetPriorityInfo >("FTargetPriorityInfo", no_init)
+    py::class_< FTargetPriorityInfo >("FTargetPriorityInfo")
         .def_readwrite("TargetName", &FTargetPriorityInfo::TargetName)
         .def_readwrite("ShortName", &FTargetPriorityInfo::ShortName)
         .def_readwrite("Value", &FTargetPriorityInfo::Value)

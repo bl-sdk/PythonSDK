@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActionSequenceRandom()
 {
-    class_< UActionSequenceRandom, bases< UActionSequence >  , boost::noncopyable>("UActionSequenceRandom", no_init)
+    py::class_< UActionSequenceRandom,  UActionSequence   >("UActionSequenceRandom")
         .def_readwrite("ActionList", &UActionSequenceRandom::ActionList)
-        .def("StaticClass", &UActionSequenceRandom::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActionSequenceRandom::StaticClass, py::return_value_policy::reference)
         .def("EvaluateActionList", &UActionSequenceRandom::EvaluateActionList)
         .def("OverrideNextSequenceToRun", &UActionSequenceRandom::OverrideNextSequenceToRun)
-        .def("GetRandomAction", &UActionSequenceRandom::GetRandomAction, return_value_policy< reference_existing_object >())
+        .def("GetRandomAction", &UActionSequenceRandom::GetRandomAction, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

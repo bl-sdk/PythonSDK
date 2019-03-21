@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAnimBlendChild()
 {
-    class_< FAnimBlendChild >("FAnimBlendChild", no_init)
+    py::class_< FAnimBlendChild >("FAnimBlendChild")
         .def_readwrite("Name", &FAnimBlendChild::Name)
         .def_readwrite("Anim", &FAnimBlendChild::Anim)
         .def_readwrite("Weight", &FAnimBlendChild::Weight)

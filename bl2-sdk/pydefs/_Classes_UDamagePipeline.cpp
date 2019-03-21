@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDamagePipeline()
 {
-    class_< UDamagePipeline, bases< UObject >  , boost::noncopyable>("UDamagePipeline", no_init)
+    py::class_< UDamagePipeline,  UObject   >("UDamagePipeline")
         .def_readwrite("DamageTypeDef", &UDamagePipeline::DamageTypeDef)
         .def_readwrite("ImpactDefinition", &UDamagePipeline::ImpactDefinition)
         .def_readwrite("DirectHitObject", &UDamagePipeline::DirectHitObject)
@@ -13,7 +13,7 @@ void Export_pystes_UDamagePipeline()
         .def_readwrite("DamageSummary", &UDamagePipeline::DamageSummary)
         .def_readwrite("BarrelSourceTime", &UDamagePipeline::BarrelSourceTime)
         .def_readwrite("PlantSourceTime", &UDamagePipeline::PlantSourceTime)
-        .def("StaticClass", &UDamagePipeline::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDamagePipeline::StaticClass, py::return_value_policy::reference)
         .def("GetWouldBeHealedSomehowByFriendlyFire", &UDamagePipeline::GetWouldBeHealedSomehowByFriendlyFire)
         .def("SetPlantSourceTime", &UDamagePipeline::SetPlantSourceTime)
         .def("SetBarrelSourceTime", &UDamagePipeline::SetBarrelSourceTime)
@@ -24,8 +24,8 @@ void Export_pystes_UDamagePipeline()
         .def("GetOvercharged", &UDamagePipeline::GetOvercharged)
         .def("SetOvercharged", &UDamagePipeline::SetOvercharged)
         .def("GetCanInflictFriendlyFire", &UDamagePipeline::GetCanInflictFriendlyFire)
-        .def("GetImpactDefinition", &UDamagePipeline::GetImpactDefinition, return_value_policy< reference_existing_object >())
-        .def("GetDamageTypeDef", &UDamagePipeline::GetDamageTypeDef, return_value_policy< reference_existing_object >())
+        .def("GetImpactDefinition", &UDamagePipeline::GetImpactDefinition, py::return_value_policy::reference)
+        .def("GetDamageTypeDef", &UDamagePipeline::GetDamageTypeDef, py::return_value_policy::reference)
         .def("Initialize", &UDamagePipeline::Initialize)
         .def("ResetToDefaults", &UDamagePipeline::ResetToDefaults)
         .def("ConvertDamageToHealing", &UDamagePipeline::ConvertDamageToHealing)

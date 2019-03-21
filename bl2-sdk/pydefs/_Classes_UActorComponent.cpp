@@ -1,21 +1,21 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActorComponent()
 {
-    class_< UActorComponent, bases< UComponent >  , boost::noncopyable>("UActorComponent", no_init)
+    py::class_< UActorComponent,  UComponent   >("UActorComponent")
         .def_readwrite("VfTable_IIWorldBody", &UActorComponent::VfTable_IIWorldBody)
         .def_readwrite("Scene", &UActorComponent::Scene)
         .def_readwrite("Owner", &UActorComponent::Owner)
         .def_readwrite("TickGroup", &UActorComponent::TickGroup)
-        .def("StaticClass", &UActorComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActorComponent::StaticClass, py::return_value_policy::reference)
         .def("Behavior_Destroy", &UActorComponent::Behavior_Destroy)
         .def("WorldBodyAttachComponent", &UActorComponent::WorldBodyAttachComponent)
         .def("WorldBodyAttachActor", &UActorComponent::WorldBodyAttachActor)
         .def("WorldBodyAttachTo", &UActorComponent::WorldBodyAttachTo)
-        .def("GetWorldBodyAttachmentBase", &UActorComponent::GetWorldBodyAttachmentBase, return_value_policy< reference_existing_object >())
+        .def("GetWorldBodyAttachmentBase", &UActorComponent::GetWorldBodyAttachmentBase, py::return_value_policy::reference)
         .def("GetWorldBodyAttachmentBoneForComponent", &UActorComponent::GetWorldBodyAttachmentBoneForComponent)
         .def("GetWorldBodyAttachmentLocationAndRotation", &UActorComponent::GetWorldBodyAttachmentLocationAndRotation)
         .def("GetWorldBodyAttachmentRotation", &UActorComponent::GetWorldBodyAttachmentRotation)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSourceTexture2DRegion()
 {
-    class_< FSourceTexture2DRegion >("FSourceTexture2DRegion", no_init)
+    py::class_< FSourceTexture2DRegion >("FSourceTexture2DRegion")
         .def_readwrite("OffsetX", &FSourceTexture2DRegion::OffsetX)
         .def_readwrite("OffsetY", &FSourceTexture2DRegion::OffsetY)
         .def_readwrite("SizeX", &FSourceTexture2DRegion::SizeX)

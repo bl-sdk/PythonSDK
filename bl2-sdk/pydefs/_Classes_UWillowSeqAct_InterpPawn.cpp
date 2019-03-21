@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_InterpPawn()
 {
-    class_< UWillowSeqAct_InterpPawn, bases< USeqAct_Latent >  , boost::noncopyable>("UWillowSeqAct_InterpPawn", no_init)
+    py::class_< UWillowSeqAct_InterpPawn,  USeqAct_Latent   >("UWillowSeqAct_InterpPawn")
         .def_readwrite("InterpSpeed", &UWillowSeqAct_InterpPawn::InterpSpeed)
         .def_readwrite("Goal", &UWillowSeqAct_InterpPawn::Goal)
-        .def("StaticClass", &UWillowSeqAct_InterpPawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_InterpPawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

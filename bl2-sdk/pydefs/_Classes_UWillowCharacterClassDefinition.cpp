@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowCharacterClassDefinition()
 {
-    class_< UWillowCharacterClassDefinition, bases< UCharacterClassDefinition >  , boost::noncopyable>("UWillowCharacterClassDefinition", no_init)
+    py::class_< UWillowCharacterClassDefinition,  UCharacterClassDefinition   >("UWillowCharacterClassDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWillowCharacterClassDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("AttributeParentClass", &UWillowCharacterClassDefinition::AttributeParentClass)
         .def_readwrite("AttributeStartingValues", &UWillowCharacterClassDefinition::AttributeStartingValues)
@@ -33,9 +33,9 @@ void Export_pystes_UWillowCharacterClassDefinition()
         .def_readwrite("BehaviorProviderDefinition", &UWillowCharacterClassDefinition::BehaviorProviderDefinition)
         .def_readwrite("RevivalHealthMultiplier", &UWillowCharacterClassDefinition::RevivalHealthMultiplier)
         .def_readwrite("CharacterInjuredDefinition", &UWillowCharacterClassDefinition::CharacterInjuredDefinition)
-        .def("StaticClass", &UWillowCharacterClassDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowCharacterClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

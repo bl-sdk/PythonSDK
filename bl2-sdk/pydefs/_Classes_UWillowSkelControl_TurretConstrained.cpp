@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSkelControl_TurretConstrained()
 {
-    class_< UWillowSkelControl_TurretConstrained, bases< USkelControlSingleBone >  , boost::noncopyable>("UWillowSkelControl_TurretConstrained", no_init)
+    py::class_< UWillowSkelControl_TurretConstrained,  USkelControlSingleBone   >("UWillowSkelControl_TurretConstrained")
         .def_readwrite("MaxAngle", &UWillowSkelControl_TurretConstrained::MaxAngle)
         .def_readwrite("MinAngle", &UWillowSkelControl_TurretConstrained::MinAngle)
         .def_readwrite("LagDegreesPerSecondYaw", &UWillowSkelControl_TurretConstrained::LagDegreesPerSecondYaw)
@@ -16,7 +16,7 @@ void Export_pystes_UWillowSkelControl_TurretConstrained()
         .def_readwrite("DefaultRotation", &UWillowSkelControl_TurretConstrained::DefaultRotation)
         .def_readwrite("VirtualSeatKey", &UWillowSkelControl_TurretConstrained::VirtualSeatKey)
         .def_readwrite("ConstrainedBoneRotation", &UWillowSkelControl_TurretConstrained::ConstrainedBoneRotation)
-        .def("StaticClass", &UWillowSkelControl_TurretConstrained::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSkelControl_TurretConstrained::StaticClass, py::return_value_policy::reference)
         .def("OnTurretStatusChange", &UWillowSkelControl_TurretConstrained::OnTurretStatusChange)
         .staticmethod("StaticClass")
   ;

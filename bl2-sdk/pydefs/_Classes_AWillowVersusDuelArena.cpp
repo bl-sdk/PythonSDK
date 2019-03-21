@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVersusDuelArena()
 {
-    class_< AWillowVersusDuelArena, bases< AActor >  , boost::noncopyable>("AWillowVersusDuelArena", no_init)
+    py::class_< AWillowVersusDuelArena,  AActor   >("AWillowVersusDuelArena")
         .def_readwrite("DuelInfo", &AWillowVersusDuelArena::DuelInfo)
         .def_readwrite("ArenaIndex", &AWillowVersusDuelArena::ArenaIndex)
         .def_readwrite("Challenger", &AWillowVersusDuelArena::Challenger)
@@ -20,7 +20,7 @@ void Export_pystes_AWillowVersusDuelArena()
         .def_readwrite("CurrentCompetitorTeamColorPrimary", &AWillowVersusDuelArena::CurrentCompetitorTeamColorPrimary)
         .def_readwrite("CurrentCompetitorTeamColorSecondary", &AWillowVersusDuelArena::CurrentCompetitorTeamColorSecondary)
         .def_readwrite("CurrentCompetitorTeamColorTertiary", &AWillowVersusDuelArena::CurrentCompetitorTeamColorTertiary)
-        .def("StaticClass", &AWillowVersusDuelArena::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVersusDuelArena::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyDuelArena", &AWillowVersusDuelArena::eventDestroyDuelArena)
         .def("OnDuelEnd", &AWillowVersusDuelArena::OnDuelEnd)
         .def("eventCreateDuelArena", &AWillowVersusDuelArena::eventCreateDuelArena)

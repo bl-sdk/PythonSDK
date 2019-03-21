@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNxDestructibleParameters()
 {
-    class_< FNxDestructibleParameters >("FNxDestructibleParameters", no_init)
+    py::class_< FNxDestructibleParameters >("FNxDestructibleParameters")
         .def_readwrite("DamageThreshold", &FNxDestructibleParameters::DamageThreshold)
         .def_readwrite("DamageToRadius", &FNxDestructibleParameters::DamageToRadius)
         .def_readwrite("DamageCap", &FNxDestructibleParameters::DamageCap)

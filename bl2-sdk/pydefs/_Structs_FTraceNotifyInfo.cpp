@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTraceNotifyInfo()
 {
-    class_< FTraceNotifyInfo >("FTraceNotifyInfo", no_init)
+    py::class_< FTraceNotifyInfo >("FTraceNotifyInfo")
         .def_readwrite("ActorToNotify", &FTraceNotifyInfo::ActorToNotify)
         .def_readwrite("ActorCallingTrace", &FTraceNotifyInfo::ActorCallingTrace)
         .def_readwrite("ComponentHit", &FTraceNotifyInfo::ComponentHit)

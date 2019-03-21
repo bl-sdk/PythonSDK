@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_AkLoadBank()
 {
-    class_< USeqAct_AkLoadBank, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_AkLoadBank", no_init)
-        .def("StaticClass", &USeqAct_AkLoadBank::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_AkLoadBank,  USeqAct_Latent   >("USeqAct_AkLoadBank")
+        .def("StaticClass", &USeqAct_AkLoadBank::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

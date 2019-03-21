@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineGameInterfaceImpl()
 {
-    class_< UOnlineGameInterfaceImpl, bases< UObject >  , boost::noncopyable>("UOnlineGameInterfaceImpl", no_init)
+    py::class_< UOnlineGameInterfaceImpl,  UObject   >("UOnlineGameInterfaceImpl")
         .def_readwrite("OwningSubsystem", &UOnlineGameInterfaceImpl::OwningSubsystem)
         .def_readwrite("GameSettings", &UOnlineGameInterfaceImpl::GameSettings)
         .def_readwrite("GameSearch", &UOnlineGameInterfaceImpl::GameSearch)
@@ -31,7 +31,7 @@ void Export_pystes_UOnlineGameInterfaceImpl()
         .def_readwrite("LanBeacon", &UOnlineGameInterfaceImpl::LanBeacon)
         .def_readwrite("SessionInfo", &UOnlineGameInterfaceImpl::SessionInfo)
         .def_readwrite("NATResolutionTimeout", &UOnlineGameInterfaceImpl::NATResolutionTimeout)
-        .def("StaticClass", &UOnlineGameInterfaceImpl::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineGameInterfaceImpl::StaticClass, py::return_value_policy::reference)
         .def("HasPendingBootInvite", &UOnlineGameInterfaceImpl::HasPendingBootInvite)
         .def("CancelNATNegotiation", &UOnlineGameInterfaceImpl::CancelNATNegotiation)
         .def("ClearQosStatusChangedDelegate", &UOnlineGameInterfaceImpl::ClearQosStatusChangedDelegate)
@@ -108,8 +108,8 @@ void Export_pystes_UOnlineGameInterfaceImpl()
         .def("AddCreateOnlineGameCompleteDelegate", &UOnlineGameInterfaceImpl::AddCreateOnlineGameCompleteDelegate)
         .def("OnCreateOnlineGameComplete", &UOnlineGameInterfaceImpl::OnCreateOnlineGameComplete)
         .def("CreateOnlineGame", &UOnlineGameInterfaceImpl::CreateOnlineGame)
-        .def("GetGameSearch", &UOnlineGameInterfaceImpl::GetGameSearch, return_value_policy< reference_existing_object >())
-        .def("GetGameSettings", &UOnlineGameInterfaceImpl::GetGameSettings, return_value_policy< reference_existing_object >())
+        .def("GetGameSearch", &UOnlineGameInterfaceImpl::GetGameSearch, py::return_value_policy::reference)
+        .def("GetGameSettings", &UOnlineGameInterfaceImpl::GetGameSettings, py::return_value_policy::reference)
         .def("OnFindOnlineGamesComplete", &UOnlineGameInterfaceImpl::OnFindOnlineGamesComplete)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FExpressionInput()
 {
-    class_< FExpressionInput >("FExpressionInput", no_init)
+    py::class_< FExpressionInput >("FExpressionInput")
         .def_readwrite("Expression", &FExpressionInput::Expression)
         .def_readwrite("Mask", &FExpressionInput::Mask)
         .def_readwrite("MaskR", &FExpressionInput::MaskR)

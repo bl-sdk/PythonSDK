@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMatrix()
 {
-    class_< FMatrix >("FMatrix", no_init)
+    py::class_< FMatrix >("FMatrix")
         .def_readwrite("XPlane", &FMatrix::XPlane)
         .def_readwrite("YPlane", &FMatrix::YPlane)
         .def_readwrite("ZPlane", &FMatrix::ZPlane)

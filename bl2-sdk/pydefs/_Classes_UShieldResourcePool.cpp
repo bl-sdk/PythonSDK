@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UShieldResourcePool()
 {
-    class_< UShieldResourcePool, bases< UResourcePool >  , boost::noncopyable>("UShieldResourcePool", no_init)
-        .def("StaticClass", &UShieldResourcePool::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UShieldResourcePool,  UResourcePool   >("UShieldResourcePool")
+        .def("StaticClass", &UShieldResourcePool::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

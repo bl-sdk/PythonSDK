@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHTTPDownload()
 {
-    class_< UHTTPDownload, bases< UDownload >  , boost::noncopyable>("UHTTPDownload", no_init)
+    py::class_< UHTTPDownload,  UDownload   >("UHTTPDownload")
         .def_readwrite("ProxyServerHost", &UHTTPDownload::ProxyServerHost)
         .def_readwrite("ProxyServerPort", &UHTTPDownload::ProxyServerPort)
         .def_readwrite("ConnectionTimeout", &UHTTPDownload::ConnectionTimeout)
         .def_readonly("UnknownData00", &UHTTPDownload::UnknownData00)
-        .def("StaticClass", &UHTTPDownload::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHTTPDownload::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

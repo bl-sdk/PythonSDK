@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTextSizingParameters()
 {
-    class_< FTextSizingParameters >("FTextSizingParameters", no_init)
+    py::class_< FTextSizingParameters >("FTextSizingParameters")
         .def_readwrite("DrawX", &FTextSizingParameters::DrawX)
         .def_readwrite("DrawY", &FTextSizingParameters::DrawY)
         .def_readwrite("DrawXL", &FTextSizingParameters::DrawXL)

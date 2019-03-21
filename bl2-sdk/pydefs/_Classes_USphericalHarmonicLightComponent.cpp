@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USphericalHarmonicLightComponent()
 {
-    class_< USphericalHarmonicLightComponent, bases< ULightComponent >  , boost::noncopyable>("USphericalHarmonicLightComponent", no_init)
+    py::class_< USphericalHarmonicLightComponent,  ULightComponent   >("USphericalHarmonicLightComponent")
         .def_readonly("UnknownData00", &USphericalHarmonicLightComponent::UnknownData00)
         .def_readwrite("WorldSpaceIncidentLighting", &USphericalHarmonicLightComponent::WorldSpaceIncidentLighting)
         .def_readwrite("IndirectColor", &USphericalHarmonicLightComponent::IndirectColor)
         .def_readwrite("IndirectDirection", &USphericalHarmonicLightComponent::IndirectDirection)
-        .def("StaticClass", &USphericalHarmonicLightComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USphericalHarmonicLightComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

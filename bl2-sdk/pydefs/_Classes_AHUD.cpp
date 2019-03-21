@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AHUD()
 {
-    class_< AHUD, bases< AActor >  , boost::noncopyable>("AHUD", no_init)
+    py::class_< AHUD,  AActor   >("AHUD")
         .def_readwrite("WhiteColor", &AHUD::WhiteColor)
         .def_readwrite("GreenColor", &AHUD::GreenColor)
         .def_readwrite("RedColor", &AHUD::RedColor)
@@ -34,7 +34,7 @@ void Export_pystes_AHUD()
         .def_readwrite("DebugDisplay", &AHUD::DebugDisplay)
         .def_readwrite("ActiveDebugDisplay", &AHUD::ActiveDebugDisplay)
         .def_readwrite("KismetTextInfo", &AHUD::KismetTextInfo)
-        .def("StaticClass", &AHUD::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AHUD::StaticClass, py::return_value_policy::reference)
         .def("eventGetShowZones", &AHUD::eventGetShowZones)
         .def("eventGetShowCoverNum", &AHUD::eventGetShowCoverNum)
         .def("eventGetShowCoverVis", &AHUD::eventGetShowCoverVis)

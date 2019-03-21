@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMapProperty()
 {
-    class_< UMapProperty, bases< UProperty >  , boost::noncopyable>("UMapProperty", no_init)
+    py::class_< UMapProperty,  UProperty   >("UMapProperty")
         .def_readonly("UnknownData00", &UMapProperty::UnknownData00)
-        .def("StaticClass", &UMapProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMapProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

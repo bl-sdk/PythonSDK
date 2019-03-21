@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCriticalTextMessage()
 {
-    class_< FCriticalTextMessage >("FCriticalTextMessage", no_init)
+    py::class_< FCriticalTextMessage >("FCriticalTextMessage")
         .def_readwrite("Message", &FCriticalTextMessage::Message)
         .def_readwrite("Title", &FCriticalTextMessage::Title)
         .def_readwrite("DestroyTime", &FCriticalTextMessage::DestroyTime)

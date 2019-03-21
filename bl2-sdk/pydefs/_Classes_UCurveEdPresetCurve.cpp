@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCurveEdPresetCurve()
 {
-    class_< UCurveEdPresetCurve, bases< UObject >  , boost::noncopyable>("UCurveEdPresetCurve", no_init)
+    py::class_< UCurveEdPresetCurve,  UObject   >("UCurveEdPresetCurve")
         .def_readwrite("CurveName", &UCurveEdPresetCurve::CurveName)
         .def_readwrite("Points", &UCurveEdPresetCurve::Points)
-        .def("StaticClass", &UCurveEdPresetCurve::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCurveEdPresetCurve::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

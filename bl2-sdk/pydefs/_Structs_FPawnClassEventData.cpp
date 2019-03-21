@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPawnClassEventData()
 {
-    class_< FPawnClassEventData >("FPawnClassEventData", no_init)
+    py::class_< FPawnClassEventData >("FPawnClassEventData")
         .def_readwrite("PawnClassName", &FPawnClassEventData::PawnClassName)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRotator()
 {
-    class_< FRotator >("FRotator", no_init)
+    py::class_< FRotator >("FRotator")
         .def_readwrite("Pitch", &FRotator::Pitch)
         .def_readwrite("Yaw", &FRotator::Yaw)
         .def_readwrite("Roll", &FRotator::Roll)

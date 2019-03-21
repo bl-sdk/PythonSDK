@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineNewsInterface()
 {
-    class_< UOnlineNewsInterface, bases< UInterface >  , boost::noncopyable>("UOnlineNewsInterface", no_init)
-        .def("StaticClass", &UOnlineNewsInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineNewsInterface,  UInterface   >("UOnlineNewsInterface")
+        .def("StaticClass", &UOnlineNewsInterface::StaticClass, py::return_value_policy::reference)
         .def("GetNews", &UOnlineNewsInterface::GetNews)
         .def("ClearReadNewsCompletedDelegate", &UOnlineNewsInterface::ClearReadNewsCompletedDelegate)
         .def("AddReadNewsCompletedDelegate", &UOnlineNewsInterface::AddReadNewsCompletedDelegate)

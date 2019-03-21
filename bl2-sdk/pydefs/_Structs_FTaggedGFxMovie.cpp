@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTaggedGFxMovie()
 {
-    class_< FTaggedGFxMovie >("FTaggedGFxMovie", no_init)
+    py::class_< FTaggedGFxMovie >("FTaggedGFxMovie")
         .def_readwrite("Movie", &FTaggedGFxMovie::Movie)
         .def_readwrite("Tag", &FTaggedGFxMovie::Tag)
   ;

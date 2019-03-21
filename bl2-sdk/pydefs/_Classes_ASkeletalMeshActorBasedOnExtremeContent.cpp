@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASkeletalMeshActorBasedOnExtremeContent()
 {
-    class_< ASkeletalMeshActorBasedOnExtremeContent, bases< ASkeletalMeshActor >  , boost::noncopyable>("ASkeletalMeshActorBasedOnExtremeContent", no_init)
+    py::class_< ASkeletalMeshActorBasedOnExtremeContent,  ASkeletalMeshActor   >("ASkeletalMeshActorBasedOnExtremeContent")
         .def_readwrite("ExtremeContent", &ASkeletalMeshActorBasedOnExtremeContent::ExtremeContent)
         .def_readwrite("NonExtremeContent", &ASkeletalMeshActorBasedOnExtremeContent::NonExtremeContent)
-        .def("StaticClass", &ASkeletalMeshActorBasedOnExtremeContent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASkeletalMeshActorBasedOnExtremeContent::StaticClass, py::return_value_policy::reference)
         .def("SetMaterialBasedOnExtremeContent", &ASkeletalMeshActorBasedOnExtremeContent::SetMaterialBasedOnExtremeContent)
         .def("eventPostBeginPlay", &ASkeletalMeshActorBasedOnExtremeContent::eventPostBeginPlay)
         .staticmethod("StaticClass")

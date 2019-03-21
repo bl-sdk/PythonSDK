@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDownloadableItemSetDefinition()
 {
-    class_< UDownloadableItemSetDefinition, bases< UDownloadableContentDefinition >  , boost::noncopyable>("UDownloadableItemSetDefinition", no_init)
+    py::class_< UDownloadableItemSetDefinition,  UDownloadableContentDefinition   >("UDownloadableItemSetDefinition")
         .def_readwrite("DefaultAttributePresentation", &UDownloadableItemSetDefinition::DefaultAttributePresentation)
         .def_readwrite("ItemAttributePresentationOverride", &UDownloadableItemSetDefinition::ItemAttributePresentationOverride)
         .def_readwrite("ArtifactAttributePresentationOverride", &UDownloadableItemSetDefinition::ArtifactAttributePresentationOverride)
@@ -13,7 +13,7 @@ void Export_pystes_UDownloadableItemSetDefinition()
         .def_readwrite("GrenadeModAttributePresentationOverride", &UDownloadableItemSetDefinition::GrenadeModAttributePresentationOverride)
         .def_readwrite("ShieldAttributePresentationOverride", &UDownloadableItemSetDefinition::ShieldAttributePresentationOverride)
         .def_readwrite("WeaponAttributePresentationOverride", &UDownloadableItemSetDefinition::WeaponAttributePresentationOverride)
-        .def("StaticClass", &UDownloadableItemSetDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDownloadableItemSetDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDLCRestrictedMessage", &UDownloadableItemSetDefinition::GetDLCRestrictedMessage)
         .def("CanUse", &UDownloadableItemSetDefinition::CanUse)
         .staticmethod("StaticClass")

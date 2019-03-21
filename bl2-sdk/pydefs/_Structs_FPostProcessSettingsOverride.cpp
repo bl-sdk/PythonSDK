@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPostProcessSettingsOverride()
 {
-    class_< FPostProcessSettingsOverride >("FPostProcessSettingsOverride", no_init)
+    py::class_< FPostProcessSettingsOverride >("FPostProcessSettingsOverride")
         .def_readwrite("Settings", &FPostProcessSettingsOverride::Settings)
         .def_readwrite("CurrentBlendInTime", &FPostProcessSettingsOverride::CurrentBlendInTime)
         .def_readwrite("CurrentBlendOutTime", &FPostProcessSettingsOverride::CurrentBlendOutTime)

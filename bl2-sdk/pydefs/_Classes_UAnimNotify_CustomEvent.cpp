@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_CustomEvent()
 {
-    class_< UAnimNotify_CustomEvent, bases< UAnimNotify >  , boost::noncopyable>("UAnimNotify_CustomEvent", no_init)
+    py::class_< UAnimNotify_CustomEvent,  UAnimNotify   >("UAnimNotify_CustomEvent")
         .def_readwrite("CustomEventName", &UAnimNotify_CustomEvent::CustomEventName)
-        .def("StaticClass", &UAnimNotify_CustomEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_CustomEvent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

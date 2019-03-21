@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UJsonObject()
 {
-    class_< UJsonObject, bases< UObject >  , boost::noncopyable>("UJsonObject", no_init)
+    py::class_< UJsonObject,  UObject   >("UJsonObject")
         .def_readwrite("ValueMap", &UJsonObject::ValueMap)
         .def_readwrite("ObjectMap", &UJsonObject::ObjectMap)
         .def_readwrite("ValueArray", &UJsonObject::ValueArray)
         .def_readwrite("ObjectArray", &UJsonObject::ObjectArray)
-        .def("StaticClass", &UJsonObject::StaticClass, return_value_policy< reference_existing_object >())
-        .def("DecodeJson", &UJsonObject::DecodeJson, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UJsonObject::StaticClass, py::return_value_policy::reference)
+        .def("DecodeJson", &UJsonObject::DecodeJson, py::return_value_policy::reference)
         .def("EncodeJson", &UJsonObject::EncodeJson)
         .def("SetBoolValue", &UJsonObject::SetBoolValue)
         .def("SetFloatValue", &UJsonObject::SetFloatValue)
@@ -22,7 +22,7 @@ void Export_pystes_UJsonObject()
         .def("GetFloatValue", &UJsonObject::GetFloatValue)
         .def("GetIntValue", &UJsonObject::GetIntValue)
         .def("GetStringValue", &UJsonObject::GetStringValue)
-        .def("GetObject", &UJsonObject::GetObject, return_value_policy< reference_existing_object >())
+        .def("GetObject", &UJsonObject::GetObject, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

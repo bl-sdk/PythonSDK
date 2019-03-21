@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowUIInteraction()
 {
-    class_< UWillowUIInteraction, bases< UUIInteraction >  , boost::noncopyable>("UWillowUIInteraction", no_init)
+    py::class_< UWillowUIInteraction,  UUIInteraction   >("UWillowUIInteraction")
         .def_readwrite("VfTable_IIBalancedActor", &UWillowUIInteraction::VfTable_IIBalancedActor)
         .def_readwrite("ExpandedMissions", &UWillowUIInteraction::ExpandedMissions)
         .def_readwrite("BlankEntry", &UWillowUIInteraction::BlankEntry)
@@ -79,7 +79,7 @@ void Export_pystes_UWillowUIInteraction()
         .def_readwrite("CustomizationBalanceDefinitionsByUsage", &UWillowUIInteraction::CustomizationBalanceDefinitionsByUsage)
         .def_readwrite("PotentialCustomizationUsagesToFilterBy", &UWillowUIInteraction::PotentialCustomizationUsagesToFilterBy)
         .def_readwrite("CurrentCustomizationUsageFilterIndex", &UWillowUIInteraction::CurrentCustomizationUsageFilterIndex)
-        .def("StaticClass", &UWillowUIInteraction::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowUIInteraction::StaticClass, py::return_value_policy::reference)
         .def("HandleClientMessage", &UWillowUIInteraction::HandleClientMessage)
         .def("CloseMenu", &UWillowUIInteraction::CloseMenu)
         .def("CloseStatusMenu", &UWillowUIInteraction::CloseStatusMenu)
@@ -110,7 +110,7 @@ void Export_pystes_UWillowUIInteraction()
         .def("GetNumberOfConfigurationsForWeaponManufacturer", &UWillowUIInteraction::GetNumberOfConfigurationsForWeaponManufacturer)
         .def("GetNumberOfConfigurationsForWeaponBalanceDefinition", &UWillowUIInteraction::GetNumberOfConfigurationsForWeaponBalanceDefinition)
         .def("GetWeightedWeaponPartList", &UWillowUIInteraction::GetWeightedWeaponPartList)
-        .def("GetSoleManufacturerForWeapon", &UWillowUIInteraction::GetSoleManufacturerForWeapon, return_value_policy< reference_existing_object >())
+        .def("GetSoleManufacturerForWeapon", &UWillowUIInteraction::GetSoleManufacturerForWeapon, py::return_value_policy::reference)
         .def("GetNumberOfConfigurationsForRemainingItemParts", &UWillowUIInteraction::GetNumberOfConfigurationsForRemainingItemParts)
         .def("GetNumberOfConfigurationsForItemManufacturer", &UWillowUIInteraction::GetNumberOfConfigurationsForItemManufacturer)
         .def("GetNumberOfConfigurationsForItemBalanceDefinition", &UWillowUIInteraction::GetNumberOfConfigurationsForItemBalanceDefinition)

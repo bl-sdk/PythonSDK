@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxNavigationHandle()
 {
-    class_< UGearboxNavigationHandle, bases< UNavigationHandle >  , boost::noncopyable>("UGearboxNavigationHandle", no_init)
+    py::class_< UGearboxNavigationHandle,  UNavigationHandle   >("UGearboxNavigationHandle")
         .def_readwrite("DesiredMovementSpeed", &UGearboxNavigationHandle::DesiredMovementSpeed)
         .def_readwrite("ActiveSpecialNavMeshMove", &UGearboxNavigationHandle::ActiveSpecialNavMeshMove)
         .def_readwrite("CurrentGoal", &UGearboxNavigationHandle::CurrentGoal)
@@ -23,7 +23,7 @@ void Export_pystes_UGearboxNavigationHandle()
         .def_readwrite("NearPathCheckDistMin", &UGearboxNavigationHandle::NearPathCheckDistMin)
         .def_readwrite("NearPathCheckDistMax", &UGearboxNavigationHandle::NearPathCheckDistMax)
         .def_readwrite("NearPathCheckDistRate", &UGearboxNavigationHandle::NearPathCheckDistRate)
-        .def("StaticClass", &UGearboxNavigationHandle::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxNavigationHandle::StaticClass, py::return_value_policy::reference)
         .def("SetDesiredMovementSpeed", &UGearboxNavigationHandle::SetDesiredMovementSpeed)
         .def("ClearAnchor", &UGearboxNavigationHandle::ClearAnchor)
         .def("GetNearestPositionOnNavMesh", &UGearboxNavigationHandle::GetNearestPositionOnNavMesh)

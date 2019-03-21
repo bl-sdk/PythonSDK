@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributeCategory()
 {
-    class_< FAttributeCategory >("FAttributeCategory", no_init)
+    py::class_< FAttributeCategory >("FAttributeCategory")
         .def_readwrite("Category", &FAttributeCategory::Category)
         .def_readwrite("Attributes", &FAttributeCategory::Attributes)
   ;

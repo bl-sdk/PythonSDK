@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionCustomTexture()
 {
-    class_< UMaterialExpressionCustomTexture, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionCustomTexture", no_init)
+    py::class_< UMaterialExpressionCustomTexture,  UMaterialExpression   >("UMaterialExpressionCustomTexture")
         .def_readwrite("Texture", &UMaterialExpressionCustomTexture::Texture)
-        .def("StaticClass", &UMaterialExpressionCustomTexture::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionCustomTexture::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FKBoxElem()
 {
-    class_< FKBoxElem >("FKBoxElem", no_init)
+    py::class_< FKBoxElem >("FKBoxElem")
         .def_readwrite("TM", &FKBoxElem::TM)
         .def_readwrite("X", &FKBoxElem::X)
         .def_readwrite("Y", &FKBoxElem::Y)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNodeData()
 {
-    class_< FNodeData >("FNodeData", no_init)
+    py::class_< FNodeData >("FNodeData")
         .def_readwrite("Node", &FNodeData::Node)
         .def_readwrite("Weight", &FNodeData::Weight)
   ;

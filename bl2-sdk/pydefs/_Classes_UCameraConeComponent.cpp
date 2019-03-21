@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraConeComponent()
 {
-    class_< UCameraConeComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UCameraConeComponent", no_init)
-        .def("StaticClass", &UCameraConeComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCameraConeComponent,  UPrimitiveComponent   >("UCameraConeComponent")
+        .def("StaticClass", &UCameraConeComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

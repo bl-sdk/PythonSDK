@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRecentlyResistedAttackData()
 {
-    class_< FRecentlyResistedAttackData >("FRecentlyResistedAttackData", no_init)
+    py::class_< FRecentlyResistedAttackData >("FRecentlyResistedAttackData")
         .def_readwrite("DamagedActor", &FRecentlyResistedAttackData::DamagedActor)
         .def_readwrite("DamageType", &FRecentlyResistedAttackData::DamageType)
         .def_readwrite("LastResistTime", &FRecentlyResistedAttackData::LastResistTime)

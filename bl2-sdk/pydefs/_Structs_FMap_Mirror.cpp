@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMap_Mirror()
 {
-    class_< FMap_Mirror >("FMap_Mirror", no_init)
+    py::class_< FMap_Mirror >("FMap_Mirror")
         .def_readwrite("Pairs", &FMap_Mirror::Pairs)
   ;
 }

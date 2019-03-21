@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIParameterBehavior()
 {
-    class_< UIParameterBehavior, bases< UInterface >  , boost::noncopyable>("UIParameterBehavior", no_init)
-        .def("StaticClass", &UIParameterBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIParameterBehavior,  UInterface   >("UIParameterBehavior")
+        .def("StaticClass", &UIParameterBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_SetColorParameterValue", &UIParameterBehavior::Behavior_SetColorParameterValue)
         .def("Behavior_SetFloatParameterValue", &UIParameterBehavior::Behavior_SetFloatParameterValue)
         .def("Behavior_SetObjectParameterValue", &UIParameterBehavior::Behavior_SetObjectParameterValue)

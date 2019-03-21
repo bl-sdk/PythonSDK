@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UChallengesPanelGFxObject()
 {
-    class_< UChallengesPanelGFxObject, bases< UBaseInventoryPanelGFxObject >  , boost::noncopyable>("UChallengesPanelGFxObject", no_init)
+    py::class_< UChallengesPanelGFxObject,  UBaseInventoryPanelGFxObject   >("UChallengesPanelGFxObject")
         .def_readwrite("ChallengeLogTextList", &UChallengesPanelGFxObject::ChallengeLogTextList)
         .def_readwrite("StatusMenuDef", &UChallengesPanelGFxObject::StatusMenuDef)
         .def_readwrite("MyWPC", &UChallengesPanelGFxObject::MyWPC)
@@ -19,7 +19,7 @@ void Export_pystes_UChallengesPanelGFxObject()
         .def_readwrite("CurrentSortMode", &UChallengesPanelGFxObject::CurrentSortMode)
         .def_readwrite("ChallengeSortTooltip", &UChallengesPanelGFxObject::ChallengeSortTooltip)
         .def_readwrite("ChallengeRewardHeader", &UChallengesPanelGFxObject::ChallengeRewardHeader)
-        .def("StaticClass", &UChallengesPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UChallengesPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("UpdatePrestigeIndicator", &UChallengesPanelGFxObject::UpdatePrestigeIndicator)
         .def("GetSortString", &UChallengesPanelGFxObject::GetSortString)
         .def("SortModeChanged", &UChallengesPanelGFxObject::SortModeChanged)

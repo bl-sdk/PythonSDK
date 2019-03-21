@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FObjectReference()
 {
-    class_< FObjectReference >("FObjectReference", no_init)
+    py::class_< FObjectReference >("FObjectReference")
         .def_readwrite("Obj", &FObjectReference::Obj)
   ;
 }

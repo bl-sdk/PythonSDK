@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributePriorityData()
 {
-    class_< FAttributePriorityData >("FAttributePriorityData", no_init)
+    py::class_< FAttributePriorityData >("FAttributePriorityData")
         .def_readwrite("Attribute", &FAttributePriorityData::Attribute)
         .def_readwrite("PriorityIncrease", &FAttributePriorityData::PriorityIncrease)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRuleSetRecord()
 {
-    class_< FRuleSetRecord, bases< FTimeStampedRecord >  >("FRuleSetRecord", no_init)
+    py::class_< FRuleSetRecord,  FTimeStampedRecord   >("FRuleSetRecord")
         .def_readwrite("TheObj", &FRuleSetRecord::TheObj)
         .def_readwrite("InUse", &FRuleSetRecord::InUse)
   ;

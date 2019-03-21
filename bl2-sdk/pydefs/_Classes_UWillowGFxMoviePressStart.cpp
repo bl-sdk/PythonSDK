@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxMoviePressStart()
 {
-    class_< UWillowGFxMoviePressStart, bases< UWillowGFxMovie >  , boost::noncopyable>("UWillowGFxMoviePressStart", no_init)
+    py::class_< UWillowGFxMoviePressStart,  UWillowGFxMovie   >("UWillowGFxMoviePressStart")
         .def_readwrite("IdleTimeBeforeStartingAttractLoop", &UWillowGFxMoviePressStart::IdleTimeBeforeStartingAttractLoop)
         .def_readwrite("CurrIdleTime", &UWillowGFxMoviePressStart::CurrIdleTime)
         .def_readwrite("AttractModeMovieName", &UWillowGFxMoviePressStart::AttractModeMovieName)
@@ -15,7 +15,7 @@ void Export_pystes_UWillowGFxMoviePressStart()
         .def_readwrite("TimerPauseTicker", &UWillowGFxMoviePressStart::TimerPauseTicker)
         .def_readwrite("CurrentStartupStep", &UWillowGFxMoviePressStart::CurrentStartupStep)
         .def_readonly("EggCode", &UWillowGFxMoviePressStart::EggCode)
-        .def("StaticClass", &UWillowGFxMoviePressStart::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxMoviePressStart::StaticClass, py::return_value_policy::reference)
         .def("extSetLegalText", &UWillowGFxMoviePressStart::extSetLegalText)
         .def("IsTimerActive", &UWillowGFxMoviePressStart::IsTimerActive)
         .def("ClearTimer", &UWillowGFxMoviePressStart::ClearTimer)
@@ -29,7 +29,7 @@ void Export_pystes_UWillowGFxMoviePressStart()
         .def("TryCreateLANGame", &UWillowGFxMoviePressStart::TryCreateLANGame)
         .def("TryCreateInternetGame", &UWillowGFxMoviePressStart::TryCreateInternetGame)
         .def("CreateSession", &UWillowGFxMoviePressStart::CreateSession)
-        .def("GetFrontEndMovieDef", &UWillowGFxMoviePressStart::GetFrontEndMovieDef, return_value_policy< reference_existing_object >())
+        .def("GetFrontEndMovieDef", &UWillowGFxMoviePressStart::GetFrontEndMovieDef, py::return_value_policy::reference)
         .def("DoStartupDeviceSelection", &UWillowGFxMoviePressStart::DoStartupDeviceSelection)
         .def("PatcherDownloadProcessComplete", &UWillowGFxMoviePressStart::PatcherDownloadProcessComplete)
         .def("DownloadPatcherFiles", &UWillowGFxMoviePressStart::DownloadPatcherFiles)

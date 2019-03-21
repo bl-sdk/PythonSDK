@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkelMeshActorControlTarget()
 {
-    class_< FSkelMeshActorControlTarget >("FSkelMeshActorControlTarget", no_init)
+    py::class_< FSkelMeshActorControlTarget >("FSkelMeshActorControlTarget")
         .def_readwrite("ControlName", &FSkelMeshActorControlTarget::ControlName)
         .def_readwrite("TargetActor", &FSkelMeshActorControlTarget::TargetActor)
   ;

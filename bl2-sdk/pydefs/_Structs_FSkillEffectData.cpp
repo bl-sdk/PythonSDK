@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillEffectData()
 {
-    class_< FSkillEffectData >("FSkillEffectData", no_init)
+    py::class_< FSkillEffectData >("FSkillEffectData")
         .def_readwrite("AttributeToModify", &FSkillEffectData::AttributeToModify)
         .def_readwrite("EffectTarget", &FSkillEffectData::EffectTarget)
         .def_readwrite("TargetInstanceDataName", &FSkillEffectData::TargetInstanceDataName)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAimComponent()
 {
-    class_< FAimComponent >("FAimComponent", no_init)
+    py::class_< FAimComponent >("FAimComponent")
         .def_readwrite("BoneName", &FAimComponent::BoneName)
         .def_readonly("UnknownData00", &FAimComponent::UnknownData00)
         .def_readwrite("LU", &FAimComponent::LU)

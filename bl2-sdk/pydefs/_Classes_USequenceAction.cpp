@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USequenceAction()
 {
-    class_< USequenceAction, bases< UObject >  , boost::noncopyable>("USequenceAction", no_init)
+    py::class_< USequenceAction,  UObject   >("USequenceAction")
         .def_readwrite("HandlerName", &USequenceAction::HandlerName)
         .def_readwrite("Targets", &USequenceAction::Targets)
         .def_readwrite("InputLinks", &USequenceOp::InputLinks)
@@ -18,11 +18,11 @@ void Export_pystes_USequenceAction()
         .def_readwrite("SearchTag", &USequenceOp::SearchTag)
         .def_readwrite("ObjInstanceVersion", &USequenceObject::ObjInstanceVersion)
         .def_readwrite("ParentSequence", &USequenceObject::ParentSequence)
-        .def("StaticClass", &USequenceAction::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USequenceAction::StaticClass, py::return_value_policy::reference)
         .def("ForceActivateOutput", &USequenceOp::ForceActivateOutput)
         .def("ForceActivateInput", &USequenceOp::ForceActivateInput)
-        .def("GetController", &USequenceOp::GetController, return_value_policy< reference_existing_object >())
-        .def("GetPawn", &USequenceOp::GetPawn, return_value_policy< reference_existing_object >())
+        .def("GetController", &USequenceOp::GetController, py::return_value_policy::reference)
+        .def("GetPawn", &USequenceOp::GetPawn, py::return_value_policy::reference)
         .def("Reset", &USequenceOp::Reset)
         .def("PublishLinkedVariableValues", &USequenceOp::PublishLinkedVariableValues)
         .def("PopulateLinkedVariableValues", &USequenceOp::PopulateLinkedVariableValues)
@@ -40,7 +40,7 @@ void Export_pystes_USequenceAction()
         .def("eventGetObjClassVersion", &USequenceObject::eventGetObjClassVersion)
         .def("eventIsPastingIntoLevelSequenceAllowed", &USequenceObject::eventIsPastingIntoLevelSequenceAllowed)
         .def("eventIsValidLevelSequenceObject", &USequenceObject::eventIsValidLevelSequenceObject)
-        .def("GetWorldInfo", &USequenceObject::GetWorldInfo, return_value_policy< reference_existing_object >())
+        .def("GetWorldInfo", &USequenceObject::GetWorldInfo, py::return_value_policy::reference)
         .def("ScriptLog", &USequenceObject::ScriptLog)
         .staticmethod("StaticClass")
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_MenuItem()
 {
-    class_< UUIDataProvider_MenuItem, bases< UUIResourceDataProvider >  , boost::noncopyable>("UUIDataProvider_MenuItem", no_init)
+    py::class_< UUIDataProvider_MenuItem,  UUIResourceDataProvider   >("UUIDataProvider_MenuItem")
         .def_readwrite("OptionType", &UUIDataProvider_MenuItem::OptionType)
         .def_readwrite("OptionSet", &UUIDataProvider_MenuItem::OptionSet)
         .def_readwrite("DataStoreMarkup", &UUIDataProvider_MenuItem::DataStoreMarkup)
@@ -18,7 +18,7 @@ void Export_pystes_UUIDataProvider_MenuItem()
         .def_readwrite("RangeData", &UUIDataProvider_MenuItem::RangeData)
         .def_readwrite("SchemaCellFields", &UUIDataProvider_MenuItem::SchemaCellFields)
         .def_readwrite("IniName", &UUIDataProvider_MenuItem::IniName)
-        .def("StaticClass", &UUIDataProvider_MenuItem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_MenuItem::StaticClass, py::return_value_policy::reference)
         .def("IsFiltered", &UUIDataProvider_MenuItem::IsFiltered)
         .staticmethod("StaticClass")
   ;

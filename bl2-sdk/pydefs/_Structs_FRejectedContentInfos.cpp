@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRejectedContentInfo()
 {
-    class_< FRejectedContentInfo, bases< FInstalledContentInfo >  >("FRejectedContentInfo", no_init)
+    py::class_< FRejectedContentInfo,  FInstalledContentInfo   >("FRejectedContentInfo")
         .def_readwrite("Result", &FRejectedContentInfo::Result)
   ;
 }

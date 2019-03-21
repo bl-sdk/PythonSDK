@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLensFlareElement()
 {
-    class_< FLensFlareElement >("FLensFlareElement", no_init)
+    py::class_< FLensFlareElement >("FLensFlareElement")
         .def_readwrite("ElementName", &FLensFlareElement::ElementName)
         .def_readwrite("RayDistance", &FLensFlareElement::RayDistance)
         .def_readwrite("Size", &FLensFlareElement::Size)

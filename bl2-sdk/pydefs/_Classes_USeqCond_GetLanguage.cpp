@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqCond_GetLanguage()
 {
-    class_< USeqCond_GetLanguage, bases< USequenceCondition >  , boost::noncopyable>("USeqCond_GetLanguage", no_init)
+    py::class_< USeqCond_GetLanguage,  USequenceCondition   >("USeqCond_GetLanguage")
         .def_readwrite("LangList", &USeqCond_GetLanguage::LangList)
-        .def("StaticClass", &USeqCond_GetLanguage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqCond_GetLanguage::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

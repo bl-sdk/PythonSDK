@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPlayerCamera()
 {
-    class_< AWillowPlayerCamera, bases< AGearboxCameraBasic >  , boost::noncopyable>("AWillowPlayerCamera", no_init)
-        .def("StaticClass", &AWillowPlayerCamera::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowPlayerCamera,  AGearboxCameraBasic   >("AWillowPlayerCamera")
+        .def("StaticClass", &AWillowPlayerCamera::StaticClass, py::return_value_policy::reference)
         .def("UpdateViewTarget", &AWillowPlayerCamera::UpdateViewTarget)
         .def("PostBeginPlay", &AWillowPlayerCamera::PostBeginPlay)
         .staticmethod("StaticClass")

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBalanceMeResourceUpgradePath()
 {
-    class_< FBalanceMeResourceUpgradePath >("FBalanceMeResourceUpgradePath", no_init)
+    py::class_< FBalanceMeResourceUpgradePath >("FBalanceMeResourceUpgradePath")
         .def_readwrite("ResourceName", &FBalanceMeResourceUpgradePath::ResourceName)
         .def_readwrite("PlayerLevelForEachUpgrade", &FBalanceMeResourceUpgradePath::PlayerLevelForEachUpgrade)
   ;

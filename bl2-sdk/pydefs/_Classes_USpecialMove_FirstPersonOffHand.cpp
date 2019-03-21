@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMove_FirstPersonOffHand()
 {
-    class_< USpecialMove_FirstPersonOffHand, bases< USpecialMove_FirstPerson >  , boost::noncopyable>("USpecialMove_FirstPersonOffHand", no_init)
-        .def("StaticClass", &USpecialMove_FirstPersonOffHand::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USpecialMove_FirstPersonOffHand,  USpecialMove_FirstPerson   >("USpecialMove_FirstPersonOffHand")
+        .def("StaticClass", &USpecialMove_FirstPersonOffHand::StaticClass, py::return_value_policy::reference)
         .def("StopWeaponRecoilAnim", &USpecialMove_FirstPersonOffHand::StopWeaponRecoilAnim)
         .staticmethod("StaticClass")
   ;

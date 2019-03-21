@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInteractiveObjectLootListDefinition()
 {
-    class_< UInteractiveObjectLootListDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UInteractiveObjectLootListDefinition", no_init)
+    py::class_< UInteractiveObjectLootListDefinition,  UGBXDefinition   >("UInteractiveObjectLootListDefinition")
         .def_readwrite("LootData", &UInteractiveObjectLootListDefinition::LootData)
-        .def("StaticClass", &UInteractiveObjectLootListDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInteractiveObjectLootListDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

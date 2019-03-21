@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UItemInspectionGFxMovie()
 {
-    class_< UItemInspectionGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UItemInspectionGFxMovie", no_init)
+    py::class_< UItemInspectionGFxMovie,  UWillowGFxMovie3D   >("UItemInspectionGFxMovie")
         .def_readwrite("MyInspDef", &UItemInspectionGFxMovie::MyInspDef)
         .def_readwrite("StartTime", &UItemInspectionGFxMovie::StartTime)
         .def_readwrite("MyInspectionMesh", &UItemInspectionGFxMovie::MyInspectionMesh)
@@ -40,7 +40,7 @@ void Export_pystes_UItemInspectionGFxMovie()
         .def_readwrite("ScreenShotCounter", &UItemInspectionGFxMovie::ScreenShotCounter)
         .def_readwrite("SerialNumberString", &UItemInspectionGFxMovie::SerialNumberString)
         .def_readwrite("DemoPerkCode", &UItemInspectionGFxMovie::DemoPerkCode)
-        .def("StaticClass", &UItemInspectionGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UItemInspectionGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("ShowDemoPerkCreatedDialog", &UItemInspectionGFxMovie::ShowDemoPerkCreatedDialog)
         .def("HandleCreateDemoPerkResponse", &UItemInspectionGFxMovie::HandleCreateDemoPerkResponse)
         .def("SaveDemoPerk", &UItemInspectionGFxMovie::SaveDemoPerk)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIGBXNavMeshSeed()
 {
-    class_< UIGBXNavMeshSeed, bases< UInterface >  , boost::noncopyable>("UIGBXNavMeshSeed", no_init)
-        .def("StaticClass", &UIGBXNavMeshSeed::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIGBXNavMeshSeed,  UInterface   >("UIGBXNavMeshSeed")
+        .def("StaticClass", &UIGBXNavMeshSeed::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

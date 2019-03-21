@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AVehicleSpawnStationPlatform()
 {
-    class_< AVehicleSpawnStationPlatform, bases< AWillowInteractiveObject >  , boost::noncopyable>("AVehicleSpawnStationPlatform", no_init)
+    py::class_< AVehicleSpawnStationPlatform,  AWillowInteractiveObject   >("AVehicleSpawnStationPlatform")
         .def_readwrite("StationSlot", &AVehicleSpawnStationPlatform::StationSlot)
         .def_readwrite("CachedVSSVehicleDefinition", &AVehicleSpawnStationPlatform::CachedVSSVehicleDefinition)
         .def_readwrite("SeatOccupiedFlags", &AVehicleSpawnStationPlatform::SeatOccupiedFlags)
-        .def("StaticClass", &AVehicleSpawnStationPlatform::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AVehicleSpawnStationPlatform::StaticClass, py::return_value_policy::reference)
         .def("SetInteractionIcon", &AVehicleSpawnStationPlatform::SetInteractionIcon)
         .def("TriggerKismetVehicleSpawnEvents", &AVehicleSpawnStationPlatform::TriggerKismetVehicleSpawnEvents)
         .def("SpawnVehicle", &AVehicleSpawnStationPlatform::SpawnVehicle)

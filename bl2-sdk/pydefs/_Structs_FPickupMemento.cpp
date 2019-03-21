@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPickupMemento()
 {
-    class_< FPickupMemento >("FPickupMemento", no_init)
+    py::class_< FPickupMemento >("FPickupMemento")
         .def_readwrite("Rotation", &FPickupMemento::Rotation)
   ;
 }

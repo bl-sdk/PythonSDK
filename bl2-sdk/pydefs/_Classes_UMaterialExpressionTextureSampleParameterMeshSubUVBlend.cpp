@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionTextureSampleParameterMeshSubUVBlend()
 {
-    class_< UMaterialExpressionTextureSampleParameterMeshSubUVBlend, bases< UMaterialExpressionTextureSampleParameter >  , boost::noncopyable>("UMaterialExpressionTextureSampleParameterMeshSubUVBlend", no_init)
-        .def("StaticClass", &UMaterialExpressionTextureSampleParameterMeshSubUVBlend::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionTextureSampleParameterMeshSubUVBlend,  UMaterialExpressionTextureSampleParameter   >("UMaterialExpressionTextureSampleParameterMeshSubUVBlend")
+        .def("StaticClass", &UMaterialExpressionTextureSampleParameterMeshSubUVBlend::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

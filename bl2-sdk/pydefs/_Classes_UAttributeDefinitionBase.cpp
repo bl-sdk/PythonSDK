@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAttributeDefinitionBase()
 {
-    class_< UAttributeDefinitionBase, bases< UGBXDefinition >  , boost::noncopyable>("UAttributeDefinitionBase", no_init)
+    py::class_< UAttributeDefinitionBase,  UGBXDefinition   >("UAttributeDefinitionBase")
         .def_readwrite("AttributeDataType", &UAttributeDefinitionBase::AttributeDataType)
         .def_readwrite("ContextResolverChain", &UAttributeDefinitionBase::ContextResolverChain)
         .def_readwrite("ValueResolverChain", &UAttributeDefinitionBase::ValueResolverChain)
-        .def("StaticClass", &UAttributeDefinitionBase::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAttributeDefinitionBase::StaticClass, py::return_value_policy::reference)
         .def("SetAttributeBaseValue", &UAttributeDefinitionBase::SetAttributeBaseValue)
         .def("RemoveAttributeModifier", &UAttributeDefinitionBase::RemoveAttributeModifier)
         .def("AddAttributeModifier", &UAttributeDefinitionBase::AddAttributeModifier)
@@ -17,7 +17,7 @@ void Export_pystes_UAttributeDefinitionBase()
         .def("GetBaseValueFromContext", &UAttributeDefinitionBase::GetBaseValueFromContext)
         .def("GetValueFromContext", &UAttributeDefinitionBase::GetValueFromContext)
         .def("ResolveContexts", &UAttributeDefinitionBase::ResolveContexts)
-        .def("ResolveContext", &UAttributeDefinitionBase::ResolveContext, return_value_policy< reference_existing_object >())
+        .def("ResolveContext", &UAttributeDefinitionBase::ResolveContext, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

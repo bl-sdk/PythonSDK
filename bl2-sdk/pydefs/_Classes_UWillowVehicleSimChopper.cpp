@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVehicleSimChopper()
 {
-    class_< UWillowVehicleSimChopper, bases< USVehicleSimBase >  , boost::noncopyable>("UWillowVehicleSimChopper", no_init)
+    py::class_< UWillowVehicleSimChopper,  USVehicleSimBase   >("UWillowVehicleSimChopper")
         .def_readwrite("MaxThrustForce", &UWillowVehicleSimChopper::MaxThrustForce)
         .def_readwrite("MaxReverseForce", &UWillowVehicleSimChopper::MaxReverseForce)
         .def_readwrite("LongDamping", &UWillowVehicleSimChopper::LongDamping)
@@ -46,7 +46,7 @@ void Export_pystes_UWillowVehicleSimChopper()
         .def_readwrite("DesiredHoverHeight", &UWillowVehicleSimChopper::DesiredHoverHeight)
         .def_readwrite("PreviousZVel", &UWillowVehicleSimChopper::PreviousZVel)
         .def_readwrite("AdjustedRise", &UWillowVehicleSimChopper::AdjustedRise)
-        .def("StaticClass", &UWillowVehicleSimChopper::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowVehicleSimChopper::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

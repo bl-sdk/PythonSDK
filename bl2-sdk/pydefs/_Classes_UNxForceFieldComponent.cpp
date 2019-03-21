@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UNxForceFieldComponent()
 {
-    class_< UNxForceFieldComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UNxForceFieldComponent", no_init)
+    py::class_< UNxForceFieldComponent,  UPrimitiveComponent   >("UNxForceFieldComponent")
         .def_readwrite("Shape", &UNxForceFieldComponent::Shape)
         .def_readwrite("DrawComponent", &UNxForceFieldComponent::DrawComponent)
         .def_readwrite("ExcludeChannel", &UNxForceFieldComponent::ExcludeChannel)
@@ -19,7 +19,7 @@ void Export_pystes_UNxForceFieldComponent()
         .def_readwrite("ElapsedTime", &UNxForceFieldComponent::ElapsedTime)
         .def_readwrite("RenderComponent", &UNxForceFieldComponent::RenderComponent)
         .def_readwrite("RBPhysScene", &UNxForceFieldComponent::RBPhysScene)
-        .def("StaticClass", &UNxForceFieldComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UNxForceFieldComponent::StaticClass, py::return_value_policy::reference)
         .def("DoInitRBPhys", &UNxForceFieldComponent::DoInitRBPhys)
         .staticmethod("StaticClass")
   ;

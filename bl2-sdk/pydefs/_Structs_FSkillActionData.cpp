@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkillActionData()
 {
-    class_< FSkillActionData >("FSkillActionData", no_init)
+    py::class_< FSkillActionData >("FSkillActionData")
         .def_readwrite("ClientConsoleCommand", &FSkillActionData::ClientConsoleCommand)
         .def_readwrite("GradeType", &FSkillActionData::GradeType)
         .def_readwrite("HardcodedGrade", &FSkillActionData::HardcodedGrade)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USearchDirection_AwayFromMe()
 {
-    class_< USearchDirection_AwayFromMe, bases< USearchDirection >  , boost::noncopyable>("USearchDirection_AwayFromMe", no_init)
-        .def("StaticClass", &USearchDirection_AwayFromMe::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USearchDirection_AwayFromMe,  USearchDirection   >("USearchDirection_AwayFromMe")
+        .def("StaticClass", &USearchDirection_AwayFromMe::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

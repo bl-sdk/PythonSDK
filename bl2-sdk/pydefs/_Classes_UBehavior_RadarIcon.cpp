@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_RadarIcon()
 {
-    class_< UBehavior_RadarIcon, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_RadarIcon", no_init)
+    py::class_< UBehavior_RadarIcon,  UBehaviorBase   >("UBehavior_RadarIcon")
         .def_readwrite("IconType", &UBehavior_RadarIcon::IconType)
         .def_readwrite("Action", &UBehavior_RadarIcon::Action)
         .def_readwrite("OverrideDuration", &UBehavior_RadarIcon::OverrideDuration)
-        .def("StaticClass", &UBehavior_RadarIcon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_RadarIcon::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_RadarIcon::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

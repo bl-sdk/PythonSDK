@@ -1,10 +1,10 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGBXNavMeshVertex()
 {
-    class_< FGBXNavMeshVertex, bases< FVector >  >("FGBXNavMeshVertex", no_init)
+    py::class_< FGBXNavMeshVertex,  FVector   >("FGBXNavMeshVertex")
   ;
 }

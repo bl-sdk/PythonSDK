@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowAnimDefinition()
 {
-    class_< UWillowAnimDefinition, bases< UGearboxAnimDefinition >  , boost::noncopyable>("UWillowAnimDefinition", no_init)
+    py::class_< UWillowAnimDefinition,  UGearboxAnimDefinition   >("UWillowAnimDefinition")
         .def_readwrite("InstanceDataName", &UWillowAnimDefinition::InstanceDataName)
-        .def("StaticClass", &UWillowAnimDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetSMNode", &UWillowAnimDefinition::GetSMNode, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowAnimDefinition::StaticClass, py::return_value_policy::reference)
+        .def("GetSMNode", &UWillowAnimDefinition::GetSMNode, py::return_value_policy::reference)
         .def("eventClientFinished", &UWillowAnimDefinition::eventClientFinished)
         .def("eventClientStarted", &UWillowAnimDefinition::eventClientStarted)
         .def("eventServerFinished", &UWillowAnimDefinition::eventServerFinished)

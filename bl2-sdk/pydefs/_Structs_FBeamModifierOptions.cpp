@@ -1,10 +1,10 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FBeamModifierOptions()
 {
-    class_< FBeamModifierOptions >("FBeamModifierOptions", no_init)
+    py::class_< FBeamModifierOptions >("FBeamModifierOptions")
   ;
 }

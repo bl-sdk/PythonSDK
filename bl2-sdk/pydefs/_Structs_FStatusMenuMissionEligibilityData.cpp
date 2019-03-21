@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FStatusMenuMissionEligibilityData()
 {
-    class_< FStatusMenuMissionEligibilityData >("FStatusMenuMissionEligibilityData", no_init)
+    py::class_< FStatusMenuMissionEligibilityData >("FStatusMenuMissionEligibilityData")
         .def_readwrite("MissionDef", &FStatusMenuMissionEligibilityData::MissionDef)
         .def_readwrite("MissionStatus", &FStatusMenuMissionEligibilityData::MissionStatus)
   ;

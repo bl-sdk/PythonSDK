@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGBXNavMeshPathFinder()
 {
-    class_< UGBXNavMeshPathFinder, bases< UObject >  , boost::noncopyable>("UGBXNavMeshPathFinder", no_init)
+    py::class_< UGBXNavMeshPathFinder,  UObject   >("UGBXNavMeshPathFinder")
         .def_readwrite("PathModifiers", &UGBXNavMeshPathFinder::PathModifiers)
-        .def("StaticClass", &UGBXNavMeshPathFinder::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGBXNavMeshPathFinder::StaticClass, py::return_value_policy::reference)
         .def("FindPathToLocation", &UGBXNavMeshPathFinder::FindPathToLocation)
         .def("FindNavMeshPolyForPoint", &UGBXNavMeshPathFinder::FindNavMeshPolyForPoint)
         .staticmethod("StaticClass")

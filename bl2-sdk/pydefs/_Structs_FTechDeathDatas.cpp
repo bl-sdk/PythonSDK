@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTechDeathData()
 {
-    class_< FTechDeathData, bases< FSpecializedBehaviorEvent >  >("FTechDeathData", no_init)
+    py::class_< FTechDeathData,  FSpecializedBehaviorEvent   >("FTechDeathData")
         .def_readwrite("DamageTypeTriggers", &FTechDeathData::DamageTypeTriggers)
         .def_readwrite("DeathAnimation", &FTechDeathData::DeathAnimation)
   ;

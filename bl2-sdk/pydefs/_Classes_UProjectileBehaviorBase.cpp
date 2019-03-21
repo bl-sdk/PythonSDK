@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileBehaviorBase()
 {
-    class_< UProjectileBehaviorBase, bases< UBehaviorBase >  , boost::noncopyable>("UProjectileBehaviorBase", no_init)
-        .def("StaticClass", &UProjectileBehaviorBase::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UProjectileBehaviorBase,  UBehaviorBase   >("UProjectileBehaviorBase")
+        .def("StaticClass", &UProjectileBehaviorBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

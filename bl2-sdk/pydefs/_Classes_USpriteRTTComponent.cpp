@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpriteRTTComponent()
 {
-    class_< USpriteRTTComponent, bases< USpriteComponent >  , boost::noncopyable>("USpriteRTTComponent", no_init)
+    py::class_< USpriteRTTComponent,  USpriteComponent   >("USpriteRTTComponent")
         .def_readwrite("SpriteRTT", &USpriteRTTComponent::SpriteRTT)
-        .def("StaticClass", &USpriteRTTComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpriteRTTComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

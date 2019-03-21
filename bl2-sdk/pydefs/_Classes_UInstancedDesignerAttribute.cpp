@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInstancedDesignerAttribute()
 {
-    class_< UInstancedDesignerAttribute, bases< UObject >  , boost::noncopyable>("UInstancedDesignerAttribute", no_init)
+    py::class_< UInstancedDesignerAttribute,  UObject   >("UInstancedDesignerAttribute")
         .def_readwrite("Definition", &UInstancedDesignerAttribute::Definition)
         .def_readwrite("AttributeName", &UInstancedDesignerAttribute::AttributeName)
         .def_readwrite("AttributeDataType", &UInstancedDesignerAttribute::AttributeDataType)
@@ -19,7 +19,7 @@ void Export_pystes_UInstancedDesignerAttribute()
         .def_readwrite("BoolValueBaseValue", &UInstancedDesignerAttribute::BoolValueBaseValue)
         .def_readwrite("BoolValueModifierStack", &UInstancedDesignerAttribute::BoolValueModifierStack)
         .def_readwrite("DesignerAttributeDefinitionPathName", &UInstancedDesignerAttribute::DesignerAttributeDefinitionPathName)
-        .def("StaticClass", &UInstancedDesignerAttribute::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInstancedDesignerAttribute::StaticClass, py::return_value_policy::reference)
         .def("SetBaseValue", &UInstancedDesignerAttribute::SetBaseValue)
         .def("InitializeByName", &UInstancedDesignerAttribute::InitializeByName)
         .def("Initialize", &UInstancedDesignerAttribute::Initialize)

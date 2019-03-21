@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataStore()
 {
-    class_< UUIDataStore, bases< UUIRoot >  , boost::noncopyable>("UUIDataStore", no_init)
+    py::class_< UUIDataStore,  UUIRoot   >("UUIDataStore")
         .def_readwrite("Tag", &UUIDataStore::Tag)
         .def_readwrite("RefreshSubscriberNotifies", &UUIDataStore::RefreshSubscriberNotifies)
         .def_readwrite("WriteAccessType", &UUIDataProvider::WriteAccessType)
         .def_readwrite("ProviderChangedNotifies", &UUIDataProvider::ProviderChangedNotifies)
-        .def("StaticClass", &UUIDataStore::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetDataStoreClient", &UUIDataStore::GetDataStoreClient, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataStore::StaticClass, py::return_value_policy::reference)
+        .def("GetDataStoreClient", &UUIDataStore::GetDataStoreClient, py::return_value_policy::reference)
         .def("OnCommit", &UUIDataStore::OnCommit)
         .def("eventRefreshSubscribers", &UUIDataStore::eventRefreshSubscribers)
         .def("NotifyGameSessionEnded", &UUIDataStore::NotifyGameSessionEnded)

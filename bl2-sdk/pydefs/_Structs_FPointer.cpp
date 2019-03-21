@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPointer()
 {
-    class_< FPointer >("FPointer", no_init)
+    py::class_< FPointer >("FPointer")
         .def_readwrite("Dummy", &FPointer::Dummy)
   ;
 }

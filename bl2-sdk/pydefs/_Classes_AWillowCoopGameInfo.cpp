@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowCoopGameInfo()
 {
-    class_< AWillowCoopGameInfo, bases< AWillowGameInfo >  , boost::noncopyable>("AWillowCoopGameInfo", no_init)
+    py::class_< AWillowCoopGameInfo,  AWillowGameInfo   >("AWillowCoopGameInfo")
         .def_readwrite("Teams", &AWillowCoopGameInfo::Teams)
-        .def("StaticClass", &AWillowCoopGameInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowCoopGameInfo::StaticClass, py::return_value_policy::reference)
         .def("InitializeTeams", &AWillowCoopGameInfo::InitializeTeams)
         .def("eventHandleSeamlessTravelPlayer", &AWillowCoopGameInfo::eventHandleSeamlessTravelPlayer)
         .def("eventGetSeamlessTravelActorList", &AWillowCoopGameInfo::eventGetSeamlessTravelActorList)
@@ -23,7 +23,7 @@ void Export_pystes_AWillowCoopGameInfo()
         .def("AllowPausing", &AWillowCoopGameInfo::AllowPausing)
         .def("IsHumanControlled", &AWillowCoopGameInfo::IsHumanControlled)
         .def("eventShouldOverrideDamageTypeForHealing", &AWillowCoopGameInfo::eventShouldOverrideDamageTypeForHealing)
-        .def("eventGetHealingDamageTypeDefinition", &AWillowCoopGameInfo::eventGetHealingDamageTypeDefinition, return_value_policy< reference_existing_object >())
+        .def("eventGetHealingDamageTypeDefinition", &AWillowCoopGameInfo::eventGetHealingDamageTypeDefinition, py::return_value_policy::reference)
         .def("ConvertDamageToHealing", &AWillowCoopGameInfo::ConvertDamageToHealing)
         .def("ReduceDamage", &AWillowCoopGameInfo::ReduceDamage)
         .def("IsFriendlyFire", &AWillowCoopGameInfo::IsFriendlyFire)

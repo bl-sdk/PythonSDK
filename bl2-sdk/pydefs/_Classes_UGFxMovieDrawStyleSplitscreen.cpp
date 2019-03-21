@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieDrawStyleSplitscreen()
 {
-    class_< UGFxMovieDrawStyleSplitscreen, bases< UGFxMovieDrawStyle >  , boost::noncopyable>("UGFxMovieDrawStyleSplitscreen", no_init)
-        .def("StaticClass", &UGFxMovieDrawStyleSplitscreen::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGFxMovieDrawStyleSplitscreen,  UGFxMovieDrawStyle   >("UGFxMovieDrawStyleSplitscreen")
+        .def("StaticClass", &UGFxMovieDrawStyleSplitscreen::StaticClass, py::return_value_policy::reference)
         .def("eventRequiresClientInstance", &UGFxMovieDrawStyleSplitscreen::eventRequiresClientInstance)
         .staticmethod("StaticClass")
   ;

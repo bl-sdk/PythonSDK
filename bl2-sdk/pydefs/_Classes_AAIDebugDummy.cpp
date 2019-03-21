@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AAIDebugDummy()
 {
-    class_< AAIDebugDummy, bases< AAIDebugDummyBase >  , boost::noncopyable>("AAIDebugDummy", no_init)
-        .def("StaticClass", &AAIDebugDummy::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AAIDebugDummy,  AAIDebugDummyBase   >("AAIDebugDummy")
+        .def("StaticClass", &AAIDebugDummy::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

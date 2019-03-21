@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWebApplication()
 {
-    class_< UWebApplication, bases< UObject >  , boost::noncopyable>("UWebApplication", no_init)
+    py::class_< UWebApplication,  UObject   >("UWebApplication")
         .def_readwrite("WorldInfo", &UWebApplication::WorldInfo)
         .def_readwrite("WebServer", &UWebApplication::WebServer)
         .def_readwrite("Path", &UWebApplication::Path)
-        .def("StaticClass", &UWebApplication::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWebApplication::StaticClass, py::return_value_policy::reference)
         .def("PostQuery", &UWebApplication::PostQuery)
         .def("Query", &UWebApplication::Query)
         .def("PreQuery", &UWebApplication::PreQuery)

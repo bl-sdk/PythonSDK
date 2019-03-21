@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerSaveData()
 {
-    class_< FPlayerSaveData >("FPlayerSaveData", no_init)
+    py::class_< FPlayerSaveData >("FPlayerSaveData")
         .def_readwrite("FilePath", &FPlayerSaveData::FilePath)
         .def_readwrite("TimeStamp", &FPlayerSaveData::TimeStamp)
         .def_readwrite("PlayerClassDefName", &FPlayerSaveData::PlayerClassDefName)

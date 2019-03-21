@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPlayerBehavior_ToggleRevive()
 {
-    class_< UPlayerBehavior_ToggleRevive, bases< UPlayerBehaviorBase >  , boost::noncopyable>("UPlayerBehavior_ToggleRevive", no_init)
-        .def("StaticClass", &UPlayerBehavior_ToggleRevive::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPlayerBehavior_ToggleRevive,  UPlayerBehaviorBase   >("UPlayerBehavior_ToggleRevive")
+        .def("StaticClass", &UPlayerBehavior_ToggleRevive::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_ToggleRevive::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

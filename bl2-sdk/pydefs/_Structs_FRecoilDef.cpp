@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRecoilDef()
 {
-    class_< FRecoilDef >("FRecoilDef", no_init)
+    py::class_< FRecoilDef >("FRecoilDef")
         .def_readwrite("TimeToGo", &FRecoilDef::TimeToGo)
         .def_readwrite("TimeDuration", &FRecoilDef::TimeDuration)
         .def_readwrite("RotAmplitude", &FRecoilDef::RotAmplitude)

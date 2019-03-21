@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SpawnProjectile()
 {
-    class_< UBehavior_SpawnProjectile, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SpawnProjectile", no_init)
+    py::class_< UBehavior_SpawnProjectile,  UBehaviorBase   >("UBehavior_SpawnProjectile")
         .def_readwrite("OwnerContext", &UBehavior_SpawnProjectile::OwnerContext)
         .def_readwrite("AttachmentPointName", &UBehavior_SpawnProjectile::AttachmentPointName)
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnProjectile::InstanceDataContext)
@@ -30,7 +30,7 @@ void Export_pystes_UBehavior_SpawnProjectile()
         .def_readwrite("GearLikenessContext", &UBehavior_SpawnProjectile::GearLikenessContext)
         .def_readwrite("FireLocationSocketsRemaining", &UBehavior_SpawnProjectile::FireLocationSocketsRemaining)
         .def_readwrite("NumShotsFired", &UBehavior_SpawnProjectile::NumShotsFired)
-        .def("StaticClass", &UBehavior_SpawnProjectile::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SpawnProjectile::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_SpawnProjectile::PublishBehaviorOutput)
         .def("StaticGetWorldBodyViewLocation", &UBehavior_SpawnProjectile::StaticGetWorldBodyViewLocation)
         .def("StaticGetChildProjectilePosition", &UBehavior_SpawnProjectile::StaticGetChildProjectilePosition)

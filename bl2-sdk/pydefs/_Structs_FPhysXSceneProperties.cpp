@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPhysXSceneProperties()
 {
-    class_< FPhysXSceneProperties >("FPhysXSceneProperties", no_init)
+    py::class_< FPhysXSceneProperties >("FPhysXSceneProperties")
         .def_readwrite("PrimaryScene", &FPhysXSceneProperties::PrimaryScene)
         .def_readwrite("CompartmentRigidBody", &FPhysXSceneProperties::CompartmentRigidBody)
         .def_readwrite("CompartmentFluid", &FPhysXSceneProperties::CompartmentFluid)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineAuthInterfaceImpl()
 {
-    class_< UOnlineAuthInterfaceImpl, bases< UOnlineAuthInterfaceBaseImpl >  , boost::noncopyable>("UOnlineAuthInterfaceImpl", no_init)
+    py::class_< UOnlineAuthInterfaceImpl,  UOnlineAuthInterfaceBaseImpl   >("UOnlineAuthInterfaceImpl")
         .def_readwrite("OwningSubsystem", &UOnlineAuthInterfaceImpl::OwningSubsystem)
         .def_readwrite("AuthReadyDelegates", &UOnlineAuthInterfaceImpl::AuthReadyDelegates)
         .def_readwrite("AuthRequestClientDelegates", &UOnlineAuthInterfaceImpl::AuthRequestClientDelegates)
@@ -18,7 +18,7 @@ void Export_pystes_UOnlineAuthInterfaceImpl()
         .def_readwrite("AuthRetryServerDelegates", &UOnlineAuthInterfaceImpl::AuthRetryServerDelegates)
         .def_readwrite("ClientConnectionCloseDelegates", &UOnlineAuthInterfaceImpl::ClientConnectionCloseDelegates)
         .def_readwrite("ServerConnectionCloseDelegates", &UOnlineAuthInterfaceImpl::ServerConnectionCloseDelegates)
-        .def("StaticClass", &UOnlineAuthInterfaceImpl::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineAuthInterfaceImpl::StaticClass, py::return_value_policy::reference)
         .def("FindLocalServerAuthSession", &UOnlineAuthInterfaceImpl::FindLocalServerAuthSession)
         .def("FindServerAuthSession", &UOnlineAuthInterfaceImpl::FindServerAuthSession)
         .def("FindLocalClientAuthSession", &UOnlineAuthInterfaceImpl::FindLocalClientAuthSession)

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowScrollingListDataProviderVideoOptions()
 {
-    class_< UWillowScrollingListDataProviderVideoOptions, bases< UWillowScrollingListDataProviderOptionsBase >  , boost::noncopyable>("UWillowScrollingListDataProviderVideoOptions", no_init)
+    py::class_< UWillowScrollingListDataProviderVideoOptions,  UWillowScrollingListDataProviderOptionsBase   >("UWillowScrollingListDataProviderVideoOptions")
         .def_readwrite("ScaleGuide", &UWillowScrollingListDataProviderVideoOptions::ScaleGuide)
-        .def("StaticClass", &UWillowScrollingListDataProviderVideoOptions::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderVideoOptions::GetSubmenuForEvent, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowScrollingListDataProviderVideoOptions::StaticClass, py::return_value_policy::reference)
+        .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderVideoOptions::GetSubmenuForEvent, py::return_value_policy::reference)
         .def("HideGuide", &UWillowScrollingListDataProviderVideoOptions::HideGuide)
         .def("ShowGuide", &UWillowScrollingListDataProviderVideoOptions::ShowGuide)
         .def("UpdateRealtimeSetting", &UWillowScrollingListDataProviderVideoOptions::UpdateRealtimeSetting)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPCContextMenuObject()
 {
-    class_< UPCContextMenuObject, bases< UGFxMoviePlayer >  , boost::noncopyable>("UPCContextMenuObject", no_init)
+    py::class_< UPCContextMenuObject,  UGFxMoviePlayer   >("UPCContextMenuObject")
         .def_readwrite("MenuListObject", &UPCContextMenuObject::MenuListObject)
         .def_readwrite("Str_Buy", &UPCContextMenuObject::Str_Buy)
         .def_readwrite("Str_BuyBack", &UPCContextMenuObject::Str_BuyBack)
@@ -15,7 +15,7 @@ void Export_pystes_UPCContextMenuObject()
         .def_readwrite("Str_Inspect", &UPCContextMenuObject::Str_Inspect)
         .def_readwrite("Str_SelectCompare", &UPCContextMenuObject::Str_SelectCompare)
         .def_readwrite("Str_Drop", &UPCContextMenuObject::Str_Drop)
-        .def("StaticClass", &UPCContextMenuObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPCContextMenuObject::StaticClass, py::return_value_policy::reference)
         .def("AddToMenuItemList", &UPCContextMenuObject::AddToMenuItemList)
         .def("extOnMenuItemClicked", &UPCContextMenuObject::extOnMenuItemClicked)
         .def("extOnMenuAbort", &UPCContextMenuObject::extOnMenuAbort)

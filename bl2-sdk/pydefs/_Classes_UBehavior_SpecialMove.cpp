@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_SpecialMove()
 {
-    class_< UBehavior_SpecialMove, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_SpecialMove", no_init)
+    py::class_< UBehavior_SpecialMove,  UBehaviorBase   >("UBehavior_SpecialMove")
         .def_readwrite("SpecialMove", &UBehavior_SpecialMove::SpecialMove)
         .def_readwrite("Duration", &UBehavior_SpecialMove::Duration)
-        .def("StaticClass", &UBehavior_SpecialMove::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_SpecialMove::StaticClass, py::return_value_policy::reference)
         .def("PlaySpecialMove", &UBehavior_SpecialMove::PlaySpecialMove)
         .def("TriggerOutput", &UBehavior_SpecialMove::TriggerOutput)
         .def("ApplyBehaviorToContext", &UBehavior_SpecialMove::ApplyBehaviorToContext)

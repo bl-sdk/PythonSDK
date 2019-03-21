@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEridiumValueGFxObject()
 {
-    class_< UEridiumValueGFxObject, bases< UValueGFxObject >  , boost::noncopyable>("UEridiumValueGFxObject", no_init)
+    py::class_< UEridiumValueGFxObject,  UValueGFxObject   >("UEridiumValueGFxObject")
         .def_readwrite("CurrencyFrames", &UEridiumValueGFxObject::CurrencyFrames)
-        .def("StaticClass", &UEridiumValueGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UEridiumValueGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetCurrencyClip", &UEridiumValueGFxObject::SetCurrencyClip)
         .def("SetCurrencyFrame", &UEridiumValueGFxObject::SetCurrencyFrame)
         .def("SetCurrencyType", &UEridiumValueGFxObject::SetCurrencyType)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FColorMaterialInput()
 {
-    class_< FColorMaterialInput >("FColorMaterialInput", no_init)
+    py::class_< FColorMaterialInput >("FColorMaterialInput")
         .def_readwrite("Constant", &FColorMaterialInput::Constant)
         .def_readwrite("Expression", &FMaterialInput::Expression)
         .def_readwrite("Mask", &FMaterialInput::Mask)

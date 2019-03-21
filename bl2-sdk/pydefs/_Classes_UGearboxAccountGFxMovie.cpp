@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxAccountGFxMovie()
 {
-    class_< UGearboxAccountGFxMovie, bases< UWillowGFxMovie >  , boost::noncopyable>("UGearboxAccountGFxMovie", no_init)
+    py::class_< UGearboxAccountGFxMovie,  UWillowGFxMovie   >("UGearboxAccountGFxMovie")
         .def_readwrite("GearboxAccountObj", &UGearboxAccountGFxMovie::GearboxAccountObj)
         .def_readwrite("ScreenStack", &UGearboxAccountGFxMovie::ScreenStack)
         .def_readwrite("CurrentAgeString", &UGearboxAccountGFxMovie::CurrentAgeString)
@@ -18,7 +18,7 @@ void Export_pystes_UGearboxAccountGFxMovie()
         .def_readwrite("MinInitTime", &UGearboxAccountGFxMovie::MinInitTime)
         .def_readwrite("MaxInitTime", &UGearboxAccountGFxMovie::MaxInitTime)
         .def_readwrite("InitTicker", &UGearboxAccountGFxMovie::InitTicker)
-        .def("StaticClass", &UGearboxAccountGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxAccountGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("IsSparkTimerActive", &UGearboxAccountGFxMovie::IsSparkTimerActive)
         .def("ClearSparkTimer", &UGearboxAccountGFxMovie::ClearSparkTimer)
         .def("SetSparkTimer", &UGearboxAccountGFxMovie::SetSparkTimer)

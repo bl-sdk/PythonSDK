@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UExplosionDefinition()
 {
-    class_< UExplosionDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UExplosionDefinition", no_init)
+    py::class_< UExplosionDefinition,  UGBXDefinition   >("UExplosionDefinition")
         .def_readwrite("ExplosionAkEvent", &UExplosionDefinition::ExplosionAkEvent)
         .def_readwrite("MultipleExplosionsAkEvent", &UExplosionDefinition::MultipleExplosionsAkEvent)
         .def_readwrite("ExplosionPSTemplate", &UExplosionDefinition::ExplosionPSTemplate)
@@ -21,7 +21,7 @@ void Export_pystes_UExplosionDefinition()
         .def_readwrite("RecentExplosionTracker", &UExplosionDefinition::RecentExplosionTracker)
         .def_readwrite("ExplosionSoundStackingPreventionDelay", &UExplosionDefinition::ExplosionSoundStackingPreventionDelay)
         .def_readwrite("ExplosionSoundStackingMaxDistanceSquared", &UExplosionDefinition::ExplosionSoundStackingMaxDistanceSquared)
-        .def("StaticClass", &UExplosionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UExplosionDefinition::StaticClass, py::return_value_policy::reference)
         .def("DidAnExplosionForThisInstigatorJustGoOff", &UExplosionDefinition::DidAnExplosionForThisInstigatorJustGoOff)
         .def("MakeExplodyShakes", &UExplosionDefinition::MakeExplodyShakes)
         .def("PlayExplosionCameraAnim", &UExplosionDefinition::PlayExplosionCameraAnim)

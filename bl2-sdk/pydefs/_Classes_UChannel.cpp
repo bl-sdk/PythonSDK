@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UChannel()
 {
-    class_< UChannel, bases< UObject >  , boost::noncopyable>("UChannel", no_init)
+    py::class_< UChannel,  UObject   >("UChannel")
         .def_readonly("UnknownData00", &UChannel::UnknownData00)
-        .def("StaticClass", &UChannel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UChannel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

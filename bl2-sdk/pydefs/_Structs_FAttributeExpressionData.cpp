@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAttributeExpressionData()
 {
-    class_< FAttributeExpressionData >("FAttributeExpressionData", no_init)
+    py::class_< FAttributeExpressionData >("FAttributeExpressionData")
         .def_readwrite("AttributeOperand1", &FAttributeExpressionData::AttributeOperand1)
         .def_readwrite("ComparisonOperator", &FAttributeExpressionData::ComparisonOperator)
         .def_readwrite("Operand2Usage", &FAttributeExpressionData::Operand2Usage)

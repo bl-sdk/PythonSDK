@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDownloadableContentManager()
 {
-    class_< UWillowDownloadableContentManager, bases< UDownloadableContentManager >  , boost::noncopyable>("UWillowDownloadableContentManager", no_init)
+    py::class_< UWillowDownloadableContentManager,  UDownloadableContentManager   >("UWillowDownloadableContentManager")
         .def_readwrite("ContentPackages", &UWillowDownloadableContentManager::ContentPackages)
         .def_readwrite("AllContent", &UWillowDownloadableContentManager::AllContent)
         .def_readwrite("Expansions", &UWillowDownloadableContentManager::Expansions)
@@ -35,7 +35,7 @@ void Export_pystes_UWillowDownloadableContentManager()
         .def_readwrite("TaggedDLC", &UWillowDownloadableContentManager::TaggedDLC)
         .def_readwrite("FastTravelAccessibilityTimes", &UWillowDownloadableContentManager::FastTravelAccessibilityTimes)
         .def_readwrite("CachedExtendedLicenseInfo", &UWillowDownloadableContentManager::CachedExtendedLicenseInfo)
-        .def("StaticClass", &UWillowDownloadableContentManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDownloadableContentManager::StaticClass, py::return_value_policy::reference)
         .def("GetSeasonPassPackageCount", &UWillowDownloadableContentManager::GetSeasonPassPackageCount)
         .def("HasSeasonPassContentToInstall", &UWillowDownloadableContentManager::HasSeasonPassContentToInstall)
         .def("HasFutureSeasonPassContentToInstall", &UWillowDownloadableContentManager::HasFutureSeasonPassContentToInstall)
@@ -55,17 +55,17 @@ void Export_pystes_UWillowDownloadableContentManager()
         .def("StaticGetDlcContentIdForCurrentMap", &UWillowDownloadableContentManager::StaticGetDlcContentIdForCurrentMap)
         .def("StaticGetDlcContentIdForMap", &UWillowDownloadableContentManager::StaticGetDlcContentIdForMap)
         .def("ValidateInstalledContentReachability", &UWillowDownloadableContentManager::ValidateInstalledContentReachability)
-        .def("GetDownloadableContentDefinitionFromDlcContentId", &UWillowDownloadableContentManager::GetDownloadableContentDefinitionFromDlcContentId, return_value_policy< reference_existing_object >())
-        .def("GetDownloadableContentDefinitionFromId", &UWillowDownloadableContentManager::GetDownloadableContentDefinitionFromId, return_value_policy< reference_existing_object >())
-        .def("GetDownloadablePackageDefinitionFromId", &UWillowDownloadableContentManager::GetDownloadablePackageDefinitionFromId, return_value_policy< reference_existing_object >())
-        .def("GetDownloadablePackageDefinitionFromDLCName", &UWillowDownloadableContentManager::GetDownloadablePackageDefinitionFromDLCName, return_value_policy< reference_existing_object >())
+        .def("GetDownloadableContentDefinitionFromDlcContentId", &UWillowDownloadableContentManager::GetDownloadableContentDefinitionFromDlcContentId, py::return_value_policy::reference)
+        .def("GetDownloadableContentDefinitionFromId", &UWillowDownloadableContentManager::GetDownloadableContentDefinitionFromId, py::return_value_policy::reference)
+        .def("GetDownloadablePackageDefinitionFromId", &UWillowDownloadableContentManager::GetDownloadablePackageDefinitionFromId, py::return_value_policy::reference)
+        .def("GetDownloadablePackageDefinitionFromDLCName", &UWillowDownloadableContentManager::GetDownloadablePackageDefinitionFromDLCName, py::return_value_policy::reference)
         .def("GetDlcIniPath", &UWillowDownloadableContentManager::GetDlcIniPath)
         .def("IsContentInstalled", &UWillowDownloadableContentManager::IsContentInstalled)
         .def("IsContentLicensed", &UWillowDownloadableContentManager::IsContentLicensed)
         .def("IsPackageFullyInstalled", &UWillowDownloadableContentManager::IsPackageFullyInstalled)
         .def("IsPackageFullyLicensed", &UWillowDownloadableContentManager::IsPackageFullyLicensed)
-        .def("FindExpansionForMap", &UWillowDownloadableContentManager::FindExpansionForMap, return_value_policy< reference_existing_object >())
-        .def("FindMatchingDlcLevelTravelDestination", &UWillowDownloadableContentManager::FindMatchingDlcLevelTravelDestination, return_value_policy< reference_existing_object >())
+        .def("FindExpansionForMap", &UWillowDownloadableContentManager::FindExpansionForMap, py::return_value_policy::reference)
+        .def("FindMatchingDlcLevelTravelDestination", &UWillowDownloadableContentManager::FindMatchingDlcLevelTravelDestination, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

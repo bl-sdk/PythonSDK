@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAmmoResourceUpgradeAttributeValueResolver()
 {
-    class_< UAmmoResourceUpgradeAttributeValueResolver, bases< UAttributeValueResolver >  , boost::noncopyable>("UAmmoResourceUpgradeAttributeValueResolver", no_init)
+    py::class_< UAmmoResourceUpgradeAttributeValueResolver,  UAttributeValueResolver   >("UAmmoResourceUpgradeAttributeValueResolver")
         .def_readwrite("AssociatedResource", &UAmmoResourceUpgradeAttributeValueResolver::AssociatedResource)
         .def_readwrite("AmmoResourceUpgradesArrayIndex", &UAmmoResourceUpgradeAttributeValueResolver::AmmoResourceUpgradesArrayIndex)
-        .def("StaticClass", &UAmmoResourceUpgradeAttributeValueResolver::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAmmoResourceUpgradeAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

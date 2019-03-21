@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMaterialReferenceList()
 {
-    class_< FMaterialReferenceList >("FMaterialReferenceList", no_init)
+    py::class_< FMaterialReferenceList >("FMaterialReferenceList")
         .def_readwrite("TargetMaterial", &FMaterialReferenceList::TargetMaterial)
         .def_readwrite("AffectedMaterialRefs", &FMaterialReferenceList::AffectedMaterialRefs)
         .def_readwrite("AffectedPPChainMaterialRefs", &FMaterialReferenceList::AffectedPPChainMaterialRefs)

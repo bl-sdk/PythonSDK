@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSwitchClassInfo()
 {
-    class_< FSwitchClassInfo >("FSwitchClassInfo", no_init)
+    py::class_< FSwitchClassInfo >("FSwitchClassInfo")
         .def_readwrite("ClassName", &FSwitchClassInfo::ClassName)
         .def_readwrite("bFallThru", &FSwitchClassInfo::bFallThru)
   ;

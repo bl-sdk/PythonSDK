@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIProjectileBehavior()
 {
-    class_< UIProjectileBehavior, bases< UInterface >  , boost::noncopyable>("UIProjectileBehavior", no_init)
-        .def("StaticClass", &UIProjectileBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIProjectileBehavior,  UInterface   >("UIProjectileBehavior")
+        .def("StaticClass", &UIProjectileBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_TagPayloadType", &UIProjectileBehavior::Behavior_TagPayloadType)
         .def("Behavior_LevelOffTrajectory", &UIProjectileBehavior::Behavior_LevelOffTrajectory)
         .def("Behavior_SetExplosionDefinition", &UIProjectileBehavior::Behavior_SetExplosionDefinition)

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_ActivateSkill()
 {
-    class_< UBehavior_ActivateSkill, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_ActivateSkill", no_init)
+    py::class_< UBehavior_ActivateSkill,  UBehaviorBase   >("UBehavior_ActivateSkill")
         .def_readwrite("SkillToActivate", &UBehavior_ActivateSkill::SkillToActivate)
         .def_readwrite("AdditionalTargetContext", &UBehavior_ActivateSkill::AdditionalTargetContext)
-        .def("StaticClass", &UBehavior_ActivateSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_ActivateSkill::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ActivateSkill::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

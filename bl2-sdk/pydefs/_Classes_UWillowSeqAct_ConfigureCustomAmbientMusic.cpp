@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ConfigureCustomAmbientMusic()
 {
-    class_< UWillowSeqAct_ConfigureCustomAmbientMusic, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ConfigureCustomAmbientMusic", no_init)
+    py::class_< UWillowSeqAct_ConfigureCustomAmbientMusic,  USequenceAction   >("UWillowSeqAct_ConfigureCustomAmbientMusic")
         .def_readwrite("AmbientMusicAkState", &UWillowSeqAct_ConfigureCustomAmbientMusic::AmbientMusicAkState)
-        .def("StaticClass", &UWillowSeqAct_ConfigureCustomAmbientMusic::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_ConfigureCustomAmbientMusic::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

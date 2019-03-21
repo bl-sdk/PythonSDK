@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTitleFileMcp()
 {
-    class_< FTitleFileMcp, bases< FTitleFile >  >("FTitleFileMcp", no_init)
+    py::class_< FTitleFileMcp,  FTitleFile   >("FTitleFileMcp")
         .def_readwrite("HttpDownloader", &FTitleFileMcp::HttpDownloader)
   ;
 }

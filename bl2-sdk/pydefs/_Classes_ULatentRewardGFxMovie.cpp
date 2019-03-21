@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULatentRewardGFxMovie()
 {
-    class_< ULatentRewardGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("ULatentRewardGFxMovie", no_init)
+    py::class_< ULatentRewardGFxMovie,  UWillowGFxMovie3D   >("ULatentRewardGFxMovie")
         .def_readwrite("RewardObject", &ULatentRewardGFxMovie::RewardObject)
-        .def("StaticClass", &ULatentRewardGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULatentRewardGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("OnClosedOnDeath", &ULatentRewardGFxMovie::OnClosedOnDeath)
         .def("HandleInputAxis", &ULatentRewardGFxMovie::HandleInputAxis)
         .def("HandleRewardInputKey", &ULatentRewardGFxMovie::HandleRewardInputKey)

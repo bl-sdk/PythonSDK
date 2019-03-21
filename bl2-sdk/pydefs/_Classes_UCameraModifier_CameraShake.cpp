@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraModifier_CameraShake()
 {
-    class_< UCameraModifier_CameraShake, bases< UCameraModifier >  , boost::noncopyable>("UCameraModifier_CameraShake", no_init)
+    py::class_< UCameraModifier_CameraShake,  UCameraModifier   >("UCameraModifier_CameraShake")
         .def_readwrite("ActiveShakes", &UCameraModifier_CameraShake::ActiveShakes)
         .def_readwrite("SplitScreenShakeScale", &UCameraModifier_CameraShake::SplitScreenShakeScale)
-        .def("StaticClass", &UCameraModifier_CameraShake::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCameraModifier_CameraShake::StaticClass, py::return_value_policy::reference)
         .def("ModifyCamera", &UCameraModifier_CameraShake::ModifyCamera)
         .def("UpdateCameraShake", &UCameraModifier_CameraShake::UpdateCameraShake)
         .def("RemoveAllCameraShakes", &UCameraModifier_CameraShake::RemoveAllCameraShakes)

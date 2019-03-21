@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FExposureUpdateStruct()
 {
-    class_< FExposureUpdateStruct >("FExposureUpdateStruct", no_init)
+    py::class_< FExposureUpdateStruct >("FExposureUpdateStruct")
         .def_readwrite("FromPawn", &FExposureUpdateStruct::FromPawn)
         .def_readwrite("ToActor", &FExposureUpdateStruct::ToActor)
         .def_readwrite("TimeRequested", &FExposureUpdateStruct::TimeRequested)

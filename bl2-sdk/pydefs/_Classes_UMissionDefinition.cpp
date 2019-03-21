@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMissionDefinition()
 {
-    class_< UMissionDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UMissionDefinition", no_init)
+    py::class_< UMissionDefinition,  UGBXDefinition   >("UMissionDefinition")
         .def_readwrite("VfTable_IIBalancedActor", &UMissionDefinition::VfTable_IIBalancedActor)
         .def_readwrite("VfTable_IIBehaviorProvider", &UMissionDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UMissionDefinition::VfTable_IIDlcLicensableObject)
@@ -46,11 +46,11 @@ void Export_pystes_UMissionDefinition()
         .def_readwrite("AwesomeLevel", &UMissionDefinition::AwesomeLevel)
         .def_readwrite("ExpLevel", &UMissionDefinition::ExpLevel)
         .def_readwrite("BehaviorProvider", &UMissionDefinition::BehaviorProvider)
-        .def("StaticClass", &UMissionDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMissionDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetItemRewardPools", &UMissionDefinition::GetItemRewardPools)
         .def("SetBehaviorProviderDefinition", &UMissionDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UMissionDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
-        .def("GetDownloadableContentDefinition", &UMissionDefinition::GetDownloadableContentDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UMissionDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
+        .def("GetDownloadableContentDefinition", &UMissionDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
         .def("CanBeFailed", &UMissionDefinition::CanBeFailed)
         .def("GetMissionRewardPresentation", &UMissionDefinition::GetMissionRewardPresentation)
         .def("ShouldGrantAlternateReward", &UMissionDefinition::ShouldGrantAlternateReward)

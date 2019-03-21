@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ASkillEffectManager()
 {
-    class_< ASkillEffectManager, bases< AActor >  , boost::noncopyable>("ASkillEffectManager", no_init)
+    py::class_< ASkillEffectManager,  AActor   >("ASkillEffectManager")
         .def_readwrite("DeferredSkillActivationList", &ASkillEffectManager::DeferredSkillActivationList)
         .def_readwrite("ActiveSkills", &ASkillEffectManager::ActiveSkills)
-        .def("StaticClass", &ASkillEffectManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ASkillEffectManager::StaticClass, py::return_value_policy::reference)
         .def("TriggerTakeHitEvents", &ASkillEffectManager::TriggerTakeHitEvents)
-        .def("GetActiveSkillForInstigatorByDefinition", &ASkillEffectManager::GetActiveSkillForInstigatorByDefinition, return_value_policy< reference_existing_object >())
-        .def("GetActiveSkillForInstigator", &ASkillEffectManager::GetActiveSkillForInstigator, return_value_policy< reference_existing_object >())
+        .def("GetActiveSkillForInstigatorByDefinition", &ASkillEffectManager::GetActiveSkillForInstigatorByDefinition, py::return_value_policy::reference)
+        .def("GetActiveSkillForInstigator", &ASkillEffectManager::GetActiveSkillForInstigator, py::return_value_policy::reference)
         .def("UpdateSkillGrade", &ASkillEffectManager::UpdateSkillGrade)
         .def("NotifySkillDamagedEvent", &ASkillEffectManager::NotifySkillDamagedEvent)
         .def("NotifySkillEvent", &ASkillEffectManager::NotifySkillEvent)

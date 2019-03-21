@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIInteraction()
 {
-    class_< UUIInteraction, bases< UInteraction >  , boost::noncopyable>("UUIInteraction", no_init)
+    py::class_< UUIInteraction,  UInteraction   >("UUIInteraction")
         .def_readwrite("VfTable_FExec", &UUIInteraction::VfTable_FExec)
         .def_readwrite("VfTable_FGlobalDataStoreClientManager", &UUIInteraction::VfTable_FGlobalDataStoreClientManager)
         .def_readwrite("VfTable_FCallbackEventDevice", &UUIInteraction::VfTable_FCallbackEventDevice)
@@ -26,7 +26,7 @@ void Export_pystes_UUIInteraction()
         .def_readwrite("ConfiguredAxisEmulationDefinitions", &UUIInteraction::ConfiguredAxisEmulationDefinitions)
         .def_readonly("UnknownData00", &UUIInteraction::UnknownData00)
         .def_readonly("AxisInputEmulation", &UUIInteraction::AxisInputEmulation)
-        .def("StaticClass", &UUIInteraction::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIInteraction::StaticClass, py::return_value_policy::reference)
         .def("NotifyGameSessionEnded", &UUIInteraction::NotifyGameSessionEnded)
         .def("eventGetNATType", &UUIInteraction::eventGetNATType)
         .def("eventCanCommunicate", &UUIInteraction::eventCanCommunicate)
@@ -40,8 +40,8 @@ void Export_pystes_UUIInteraction()
         .def("eventGetLoginStatus", &UUIInteraction::eventGetLoginStatus)
         .def("NotifyPlayerRemoved", &UUIInteraction::NotifyPlayerRemoved)
         .def("NotifyPlayerAdded", &UUIInteraction::NotifyPlayerAdded)
-        .def("GetLocalPlayer", &UUIInteraction::GetLocalPlayer, return_value_policy< reference_existing_object >())
-        .def("GetDataStoreClient", &UUIInteraction::GetDataStoreClient, return_value_policy< reference_existing_object >())
+        .def("GetLocalPlayer", &UUIInteraction::GetLocalPlayer, py::return_value_policy::reference)
+        .def("GetDataStoreClient", &UUIInteraction::GetDataStoreClient, py::return_value_policy::reference)
         .def("GetPlayerControllerId", &UUIInteraction::GetPlayerControllerId)
         .def("GetPlayerIndex", &UUIInteraction::GetPlayerIndex)
         .def("GetPlayerCount", &UUIInteraction::GetPlayerCount)

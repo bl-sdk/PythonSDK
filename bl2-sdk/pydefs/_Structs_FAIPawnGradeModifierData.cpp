@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAIPawnGradeModifierData()
 {
-    class_< FAIPawnGradeModifierData >("FAIPawnGradeModifierData", no_init)
+    py::class_< FAIPawnGradeModifierData >("FAIPawnGradeModifierData")
         .def_readwrite("CustomAIPawnArchetype", &FAIPawnGradeModifierData::CustomAIPawnArchetype)
         .def_readwrite("DisplayName", &FAIPawnGradeModifierData::DisplayName)
         .def_readwrite("ExpLevel", &FAIPawnGradeModifierData::ExpLevel)

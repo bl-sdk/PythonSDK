@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieInteractiveObject()
 {
-    class_< UGFxMovieInteractiveObject, bases< UGearboxGFxMovie >  , boost::noncopyable>("UGFxMovieInteractiveObject", no_init)
-        .def("StaticClass", &UGFxMovieInteractiveObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGFxMovieInteractiveObject,  UGearboxGFxMovie   >("UGFxMovieInteractiveObject")
+        .def("StaticClass", &UGFxMovieInteractiveObject::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

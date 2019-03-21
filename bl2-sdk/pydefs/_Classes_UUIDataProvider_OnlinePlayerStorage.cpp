@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataProvider_OnlinePlayerStorage()
 {
-    class_< UUIDataProvider_OnlinePlayerStorage, bases< UUIDataProvider_OnlinePlayerDataBase >  , boost::noncopyable>("UUIDataProvider_OnlinePlayerStorage", no_init)
+    py::class_< UUIDataProvider_OnlinePlayerStorage,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_OnlinePlayerStorage")
         .def_readwrite("Profile", &UUIDataProvider_OnlinePlayerStorage::Profile)
         .def_readwrite("ProviderName", &UUIDataProvider_OnlinePlayerStorage::ProviderName)
         .def_readwrite("PlayerStorageArrayProviders", &UUIDataProvider_OnlinePlayerStorage::PlayerStorageArrayProviders)
         .def_readwrite("DeviceStorageSizeNeeded", &UUIDataProvider_OnlinePlayerStorage::DeviceStorageSizeNeeded)
-        .def("StaticClass", &UUIDataProvider_OnlinePlayerStorage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataProvider_OnlinePlayerStorage::StaticClass, py::return_value_policy::reference)
         .def("OnExternalUIChange", &UUIDataProvider_OnlinePlayerStorage::OnExternalUIChange)
         .def("OnStorageDeviceChange", &UUIDataProvider_OnlinePlayerStorage::OnStorageDeviceChange)
         .def("OnSettingValueUpdated", &UUIDataProvider_OnlinePlayerStorage::OnSettingValueUpdated)

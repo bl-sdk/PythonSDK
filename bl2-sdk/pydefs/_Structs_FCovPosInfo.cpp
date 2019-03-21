@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCovPosInfo()
 {
-    class_< FCovPosInfo >("FCovPosInfo", no_init)
+    py::class_< FCovPosInfo >("FCovPosInfo")
         .def_readwrite("Link", &FCovPosInfo::Link)
         .def_readwrite("LtSlotIdx", &FCovPosInfo::LtSlotIdx)
         .def_readwrite("RtSlotIdx", &FCovPosInfo::RtSlotIdx)

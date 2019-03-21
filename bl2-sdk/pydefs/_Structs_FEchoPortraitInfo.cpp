@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEchoPortraitInfo()
 {
-    class_< FEchoPortraitInfo >("FEchoPortraitInfo", no_init)
+    py::class_< FEchoPortraitInfo >("FEchoPortraitInfo")
         .def_readwrite("PortraitType", &FEchoPortraitInfo::PortraitType)
         .def_readwrite("ScaleformPortrait", &FEchoPortraitInfo::ScaleformPortrait)
         .def_readwrite("VideoPortrait", &FEchoPortraitInfo::VideoPortrait)

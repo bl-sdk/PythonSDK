@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFoliageMesh()
 {
-    class_< FFoliageMesh >("FFoliageMesh", no_init)
+    py::class_< FFoliageMesh >("FFoliageMesh")
         .def_readwrite("InstanceStaticMesh", &FFoliageMesh::InstanceStaticMesh)
         .def_readwrite("Material", &FFoliageMesh::Material)
         .def_readwrite("MaxDrawRadius", &FFoliageMesh::MaxDrawRadius)

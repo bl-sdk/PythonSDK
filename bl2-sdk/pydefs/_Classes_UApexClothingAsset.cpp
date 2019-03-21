@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UApexClothingAsset()
 {
-    class_< UApexClothingAsset, bases< UObject >  , boost::noncopyable>("UApexClothingAsset", no_init)
+    py::class_< UApexClothingAsset,  UObject   >("UApexClothingAsset")
         .def_readwrite("MApexAsset", &UApexClothingAsset::MApexAsset)
         .def_readwrite("ApexClothingLibrary", &UApexClothingAsset::ApexClothingLibrary)
         .def_readwrite("UVChannelForTangentUpdate", &UApexClothingAsset::UVChannelForTangentUpdate)
@@ -18,7 +18,7 @@ void Export_pystes_UApexClothingAsset()
         .def_readwrite("LodWeightsBenefitsBias", &UApexClothingAsset::LodWeightsBenefitsBias)
         .def_readwrite("OriginalApexName", &UApexAsset::OriginalApexName)
         .def_readwrite("ApexComponents", &UApexAsset::ApexComponents)
-        .def("StaticClass", &UApexClothingAsset::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UApexClothingAsset::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

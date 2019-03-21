@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAccelStateData()
 {
-    class_< FAccelStateData >("FAccelStateData", no_init)
+    py::class_< FAccelStateData >("FAccelStateData")
         .def_readwrite("Warmup", &FAccelStateData::Warmup)
         .def_readwrite("CurrentSpeed", &FAccelStateData::CurrentSpeed)
         .def_readwrite("Direction", &FAccelStateData::Direction)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_IsCensoredMode()
 {
-    class_< UBehavior_IsCensoredMode, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_IsCensoredMode", no_init)
-        .def("StaticClass", &UBehavior_IsCensoredMode::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehavior_IsCensoredMode,  UBehaviorBase   >("UBehavior_IsCensoredMode")
+        .def("StaticClass", &UBehavior_IsCensoredMode::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_IsCensoredMode::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

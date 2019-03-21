@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FUIDataStoreInputAlias()
 {
-    class_< FUIDataStoreInputAlias >("FUIDataStoreInputAlias", no_init)
+    py::class_< FUIDataStoreInputAlias >("FUIDataStoreInputAlias")
         .def_readwrite("AliasName", &FUIDataStoreInputAlias::AliasName)
         .def_readonly("PlatformInputKeys", &FUIDataStoreInputAlias::PlatformInputKeys)
   ;

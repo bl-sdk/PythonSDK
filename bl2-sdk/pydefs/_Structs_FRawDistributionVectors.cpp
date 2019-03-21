@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRawDistributionVector()
 {
-    class_< FRawDistributionVector, bases< FRawDistribution >  >("FRawDistributionVector", no_init)
+    py::class_< FRawDistributionVector,  FRawDistribution   >("FRawDistributionVector")
         .def_readwrite("Distribution", &FRawDistributionVector::Distribution)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDamageSurfaceTypeModifier()
 {
-    class_< FDamageSurfaceTypeModifier >("FDamageSurfaceTypeModifier", no_init)
+    py::class_< FDamageSurfaceTypeModifier >("FDamageSurfaceTypeModifier")
         .def_readwrite("SurfaceType", &FDamageSurfaceTypeModifier::SurfaceType)
         .def_readwrite("BaseChance", &FDamageSurfaceTypeModifier::BaseChance)
         .def_readwrite("BaseSpreadChance", &FDamageSurfaceTypeModifier::BaseSpreadChance)

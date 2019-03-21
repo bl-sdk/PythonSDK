@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionConstantBiasScale()
 {
-    class_< UMaterialExpressionConstantBiasScale, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionConstantBiasScale", no_init)
+    py::class_< UMaterialExpressionConstantBiasScale,  UMaterialExpression   >("UMaterialExpressionConstantBiasScale")
         .def_readwrite("Input", &UMaterialExpressionConstantBiasScale::Input)
         .def_readwrite("Bias", &UMaterialExpressionConstantBiasScale::Bias)
         .def_readwrite("Scale", &UMaterialExpressionConstantBiasScale::Scale)
-        .def("StaticClass", &UMaterialExpressionConstantBiasScale::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMaterialExpressionConstantBiasScale::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

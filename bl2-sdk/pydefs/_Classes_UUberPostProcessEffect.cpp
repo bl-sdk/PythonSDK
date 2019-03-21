@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUberPostProcessEffect()
 {
-    class_< UUberPostProcessEffect, bases< UPostProcessEffect >  , boost::noncopyable>("UUberPostProcessEffect", no_init)
+    py::class_< UUberPostProcessEffect,  UPostProcessEffect   >("UUberPostProcessEffect")
         .def_readwrite("SceneShadows", &UUberPostProcessEffect::SceneShadows)
         .def_readwrite("SceneHighLights", &UUberPostProcessEffect::SceneHighLights)
         .def_readwrite("SceneMidTones", &UUberPostProcessEffect::SceneMidTones)
@@ -61,7 +61,7 @@ void Export_pystes_UUberPostProcessEffect()
         .def_readwrite("FocusDistanceOverride", &UDOFEffect::FocusDistanceOverride)
         .def_readwrite("TunnelVisionScaleOverride", &UDOFEffect::TunnelVisionScaleOverride)
         .def_readwrite("TunnelVisionYOffsetOverride", &UDOFEffect::TunnelVisionYOffsetOverride)
-        .def("StaticClass", &UUberPostProcessEffect::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUberPostProcessEffect::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

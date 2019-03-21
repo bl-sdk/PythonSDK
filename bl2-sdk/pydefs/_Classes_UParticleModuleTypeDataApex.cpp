@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleTypeDataApex()
 {
-    class_< UParticleModuleTypeDataApex, bases< UParticleModuleTypeDataBase >  , boost::noncopyable>("UParticleModuleTypeDataApex", no_init)
+    py::class_< UParticleModuleTypeDataApex,  UParticleModuleTypeDataBase   >("UParticleModuleTypeDataApex")
         .def_readwrite("ApexIOFX", &UParticleModuleTypeDataApex::ApexIOFX)
         .def_readwrite("ApexEmitter", &UParticleModuleTypeDataApex::ApexEmitter)
-        .def("StaticClass", &UParticleModuleTypeDataApex::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleTypeDataApex::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

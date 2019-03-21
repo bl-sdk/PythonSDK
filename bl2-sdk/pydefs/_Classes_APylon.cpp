@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APylon()
 {
-    class_< APylon, bases< ANavigationPoint >  , boost::noncopyable>("APylon", no_init)
+    py::class_< APylon,  ANavigationPoint   >("APylon")
         .def_readwrite("VfTable_IEditorLinkSelectionInterface", &APylon::VfTable_IEditorLinkSelectionInterface)
         .def_readwrite("NavMeshPtr", &APylon::NavMeshPtr)
         .def_readwrite("ObstacleMesh", &APylon::ObstacleMesh)
@@ -34,7 +34,7 @@ void Export_pystes_APylon()
         .def_readwrite("EdgeCheckHeight", &APylon::EdgeCheckHeight)
         .def_readwrite("PolyMergeThreshold", &APylon::PolyMergeThreshold)
         .def_readwrite("OuterPylon", &APylon::OuterPylon)
-        .def("StaticClass", &APylon::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APylon::StaticClass, py::return_value_policy::reference)
         .def("CanReachPylon", &APylon::CanReachPylon)
         .def("OnToggle", &APylon::OnToggle)
         .def("eventIsEnabled", &APylon::eventIsEnabled)

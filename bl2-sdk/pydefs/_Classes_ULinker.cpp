@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ULinker()
 {
-    class_< ULinker, bases< UObject >  , boost::noncopyable>("ULinker", no_init)
+    py::class_< ULinker,  UObject   >("ULinker")
         .def_readonly("UnknownData00", &ULinker::UnknownData00)
-        .def("StaticClass", &ULinker::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ULinker::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPostureStateExpressionEvaluator()
 {
-    class_< UPostureStateExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("UPostureStateExpressionEvaluator", no_init)
-        .def("StaticClass", &UPostureStateExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPostureStateExpressionEvaluator,  UExpressionEvaluator   >("UPostureStateExpressionEvaluator")
+        .def("StaticClass", &UPostureStateExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UPostureStateExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

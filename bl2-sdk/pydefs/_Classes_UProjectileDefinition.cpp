@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UProjectileDefinition()
 {
-    class_< UProjectileDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UProjectileDefinition", no_init)
+    py::class_< UProjectileDefinition,  UGBXDefinition   >("UProjectileDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UProjectileDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UProjectileDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UProjectileDefinition::VfTable_IIBehaviorProvider)
@@ -75,9 +75,9 @@ void Export_pystes_UProjectileDefinition()
         .def_readwrite("FlashIconName", &UProjectileDefinition::FlashIconName)
         .def_readwrite("BodyComposition", &UProjectileDefinition::BodyComposition)
         .def_readwrite("BehaviorProviderDefinition", &UProjectileDefinition::BehaviorProviderDefinition)
-        .def("StaticClass", &UProjectileDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UProjectileDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetBehaviorProviderDefinition", &UProjectileDefinition::SetBehaviorProviderDefinition)
-        .def("GetBehaviorProviderDefinition", &UProjectileDefinition::GetBehaviorProviderDefinition, return_value_policy< reference_existing_object >())
+        .def("GetBehaviorProviderDefinition", &UProjectileDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
         .def("OnHomingTargetChanged", &UProjectileDefinition::OnHomingTargetChanged)
         .def("OnReflected", &UProjectileDefinition::OnReflected)
         .def("OnTouchProximity", &UProjectileDefinition::OnTouchProximity)

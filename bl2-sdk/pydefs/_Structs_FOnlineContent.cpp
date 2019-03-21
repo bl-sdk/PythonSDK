@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineContent()
 {
-    class_< FOnlineContent >("FOnlineContent", no_init)
+    py::class_< FOnlineContent >("FOnlineContent")
         .def_readwrite("ContentType", &FOnlineContent::ContentType)
         .def_readwrite("UserIndex", &FOnlineContent::UserIndex)
         .def_readwrite("DeviceID", &FOnlineContent::DeviceID)

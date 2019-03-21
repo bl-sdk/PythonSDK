@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMissionStateBalanceAdjustment()
 {
-    class_< FMissionStateBalanceAdjustment >("FMissionStateBalanceAdjustment", no_init)
+    py::class_< FMissionStateBalanceAdjustment >("FMissionStateBalanceAdjustment")
         .def_readwrite("Mission", &FMissionStateBalanceAdjustment::Mission)
         .def_readwrite("MinGameStage", &FMissionStateBalanceAdjustment::MinGameStage)
         .def_readwrite("MaxGameStage", &FMissionStateBalanceAdjustment::MaxGameStage)

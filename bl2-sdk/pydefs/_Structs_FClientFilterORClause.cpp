@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClientFilterORClause()
 {
-    class_< FClientFilterORClause >("FClientFilterORClause", no_init)
+    py::class_< FClientFilterORClause >("FClientFilterORClause")
         .def_readwrite("OrParams", &FClientFilterORClause::OrParams)
   ;
 }

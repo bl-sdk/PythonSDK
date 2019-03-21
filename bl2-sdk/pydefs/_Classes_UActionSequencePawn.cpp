@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UActionSequencePawn()
 {
-    class_< UActionSequencePawn, bases< UActionSequence >  , boost::noncopyable>("UActionSequencePawn", no_init)
+    py::class_< UActionSequencePawn,  UActionSequence   >("UActionSequencePawn")
         .def_readwrite("MyGearboxMind", &UActionSequencePawn::MyGearboxMind)
         .def_readwrite("MyGearboxPawn", &UActionSequencePawn::MyGearboxPawn)
-        .def("StaticClass", &UActionSequencePawn::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UActionSequencePawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

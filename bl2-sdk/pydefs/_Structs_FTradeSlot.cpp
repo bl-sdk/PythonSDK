@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTradeSlot()
 {
-    class_< FTradeSlot >("FTradeSlot", no_init)
+    py::class_< FTradeSlot >("FTradeSlot")
         .def_readwrite("Status", &FTradeSlot::Status)
         .def_readwrite("WeaponData", &FTradeSlot::WeaponData)
         .def_readwrite("ItemData", &FTradeSlot::ItemData)

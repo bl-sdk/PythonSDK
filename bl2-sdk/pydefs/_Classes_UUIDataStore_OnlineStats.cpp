@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIDataStore_OnlineStats()
 {
-    class_< UUIDataStore_OnlineStats, bases< UUIDataStore_Remote >  , boost::noncopyable>("UUIDataStore_OnlineStats", no_init)
+    py::class_< UUIDataStore_OnlineStats,  UUIDataStore_Remote   >("UUIDataStore_OnlineStats")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlineStats::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataStore_OnlineStats::VfTable_IUIListElementCellProvider)
         .def_readwrite("StatsReadClasses", &UUIDataStore_OnlineStats::StatsReadClasses)
@@ -20,7 +20,7 @@ void Export_pystes_UUIDataStore_OnlineStats()
         .def_readonly("UnknownData00", &UUIDataStore_OnlineStats::UnknownData00)
         .def_readwrite("PlayerInterface", &UUIDataStore_OnlineStats::PlayerInterface)
         .def_readonly("UnknownData01", &UUIDataStore_OnlineStats::UnknownData01)
-        .def("StaticClass", &UUIDataStore_OnlineStats::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIDataStore_OnlineStats::StaticClass, py::return_value_policy::reference)
         .def("SortResultsByRank", &UUIDataStore_OnlineStats::SortResultsByRank)
         .def("OnReadComplete", &UUIDataStore_OnlineStats::OnReadComplete)
         .def("eventShowGamercard", &UUIDataStore_OnlineStats::eventShowGamercard)

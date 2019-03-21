@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ATemporalField()
 {
-    class_< ATemporalField, bases< AActor >  , boost::noncopyable>("ATemporalField", no_init)
+    py::class_< ATemporalField,  AActor   >("ATemporalField")
         .def_readwrite("StaticMeshComponent", &ATemporalField::StaticMeshComponent)
         .def_readwrite("SkillEffect", &ATemporalField::SkillEffect)
         .def_readwrite("MyTickMultiplier", &ATemporalField::MyTickMultiplier)
         .def_readwrite("TransitionDistancePercent", &ATemporalField::TransitionDistancePercent)
         .def_readwrite("TouchEffectTemplate", &ATemporalField::TouchEffectTemplate)
-        .def("StaticClass", &ATemporalField::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ATemporalField::StaticClass, py::return_value_policy::reference)
         .def("PlayTouchEffect", &ATemporalField::PlayTouchEffect)
         .def("CalculateTickMultiplierForActor", &ATemporalField::CalculateTickMultiplierForActor)
         .def("eventDestroyed", &ATemporalField::eventDestroyed)

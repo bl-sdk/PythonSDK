@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCustomizationUsage_ExtraPlayerK()
 {
-    class_< UCustomizationUsage_ExtraPlayerK, bases< UCustomizationUsage_Player >  , boost::noncopyable>("UCustomizationUsage_ExtraPlayerK", no_init)
-        .def("StaticClass", &UCustomizationUsage_ExtraPlayerK::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCustomizationUsage_ExtraPlayerK,  UCustomizationUsage_Player   >("UCustomizationUsage_ExtraPlayerK")
+        .def("StaticClass", &UCustomizationUsage_ExtraPlayerK::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

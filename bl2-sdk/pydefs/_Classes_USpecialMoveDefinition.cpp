@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USpecialMoveDefinition()
 {
-    class_< USpecialMoveDefinition, bases< UGBXDefinition >  , boost::noncopyable>("USpecialMoveDefinition", no_init)
+    py::class_< USpecialMoveDefinition,  UGBXDefinition   >("USpecialMoveDefinition")
         .def_readwrite("NextSpecialMove", &USpecialMoveDefinition::NextSpecialMove)
         .def_readwrite("StopExpression", &USpecialMoveDefinition::StopExpression)
-        .def("StaticClass", &USpecialMoveDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USpecialMoveDefinition::StaticClass, py::return_value_policy::reference)
         .def("eventIsPlayingLocally", &USpecialMoveDefinition::eventIsPlayingLocally)
-        .def("GetSMDToPlay", &USpecialMoveDefinition::GetSMDToPlay, return_value_policy< reference_existing_object >())
+        .def("GetSMDToPlay", &USpecialMoveDefinition::GetSMDToPlay, py::return_value_policy::reference)
         .def("Contains", &USpecialMoveDefinition::Contains)
         .def("eventClientFinished", &USpecialMoveDefinition::eventClientFinished)
         .def("eventServerFinished", &USpecialMoveDefinition::eventServerFinished)

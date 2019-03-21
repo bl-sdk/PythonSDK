@@ -1,21 +1,21 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStashGFxMovie()
 {
-    class_< UStashGFxMovie, bases< UTwoPanelInterfaceGFxMovie >  , boost::noncopyable>("UStashGFxMovie", no_init)
+    py::class_< UStashGFxMovie,  UTwoPanelInterfaceGFxMovie   >("UStashGFxMovie")
         .def_readwrite("StashTitle", &UStashGFxMovie::StashTitle)
         .def_readwrite("StashAddTip", &UStashGFxMovie::StashAddTip)
         .def_readwrite("StashStorage", &UStashGFxMovie::StashStorage)
         .def_readwrite("StorageSortConfiguration", &UStashGFxMovie::StorageSortConfiguration)
-        .def("StaticClass", &UStashGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStashGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("SetItemLocation", &UStashGFxMovie::SetItemLocation)
         .def("OnInventoryPanelSetActive", &UStashGFxMovie::OnInventoryPanelSetActive)
         .def("GetSortConfigDataForPanel", &UStashGFxMovie::GetSortConfigDataForPanel)
-        .def("GetStorageReferenceForTransferring", &UStashGFxMovie::GetStorageReferenceForTransferring, return_value_policy< reference_existing_object >())
-        .def("GetStorageReferenceForSwapping", &UStashGFxMovie::GetStorageReferenceForSwapping, return_value_policy< reference_existing_object >())
+        .def("GetStorageReferenceForTransferring", &UStashGFxMovie::GetStorageReferenceForTransferring, py::return_value_policy::reference)
+        .def("GetStorageReferenceForSwapping", &UStashGFxMovie::GetStorageReferenceForSwapping, py::return_value_policy::reference)
         .def("GetPlayerPanelItems", &UStashGFxMovie::GetPlayerPanelItems)
         .def("GetStoragePanelItems", &UStashGFxMovie::GetStoragePanelItems)
         .def("GetAddTip", &UStashGFxMovie::GetAddTip)

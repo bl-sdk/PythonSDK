@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowHUD()
 {
-    class_< AWillowHUD, bases< AHUD >  , boost::noncopyable>("AWillowHUD", no_init)
+    py::class_< AWillowHUD,  AHUD   >("AWillowHUD")
         .def_readwrite("DlcVersionErrorDisplayDuration", &AWillowHUD::DlcVersionErrorDisplayDuration)
         .def_readwrite("DlcVersionErrorDisplayStartTime", &AWillowHUD::DlcVersionErrorDisplayStartTime)
         .def_readwrite("PlayerInfoHeight", &AWillowHUD::PlayerInfoHeight)
@@ -108,14 +108,14 @@ void Export_pystes_AWillowHUD()
         .def_readwrite("QueuedInitFrame", &AWillowHUD::QueuedInitFrame)
         .def_readwrite("PlayedInitFrames", &AWillowHUD::PlayedInitFrames)
         .def_readwrite("QueuedPullThePinNotification", &AWillowHUD::QueuedPullThePinNotification)
-        .def("StaticClass", &AWillowHUD::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowHUD::StaticClass, py::return_value_policy::reference)
         .def("ShowChallengeWidget", &AWillowHUD::ShowChallengeWidget)
         .def("ShowIpAddress", &AWillowHUD::ShowIpAddress)
         .def("LevelTimer", &AWillowHUD::LevelTimer)
         .def("AutoAimDebug", &AWillowHUD::AutoAimDebug)
         .def("eventAmmoAbsorbed", &AWillowHUD::eventAmmoAbsorbed)
         .def("eventColiseumWantsSuppressHUD", &AWillowHUD::eventColiseumWantsSuppressHUD)
-        .def("GetPlayingColiseumOverlayMovie", &AWillowHUD::GetPlayingColiseumOverlayMovie, return_value_policy< reference_existing_object >())
+        .def("GetPlayingColiseumOverlayMovie", &AWillowHUD::GetPlayingColiseumOverlayMovie, py::return_value_policy::reference)
         .def("ColiseumNotify", &AWillowHUD::ColiseumNotify)
         .def("RuleAnnounce", &AWillowHUD::RuleAnnounce)
         .def("RoundAnnounce", &AWillowHUD::RoundAnnounce)
@@ -152,8 +152,8 @@ void Export_pystes_AWillowHUD()
         .def("eventShowInspectedAI", &AWillowHUD::eventShowInspectedAI)
         .def("eventDrawShowIos", &AWillowHUD::eventDrawShowIos)
         .def("eventDrawShowHos", &AWillowHUD::eventDrawShowHos)
-        .def("eventGetWeaponScopeMovie", &AWillowHUD::eventGetWeaponScopeMovie, return_value_policy< reference_existing_object >())
-        .def("eventGetHUDMovie", &AWillowHUD::eventGetHUDMovie, return_value_policy< reference_existing_object >())
+        .def("eventGetWeaponScopeMovie", &AWillowHUD::eventGetWeaponScopeMovie, py::return_value_policy::reference)
+        .def("eventGetHUDMovie", &AWillowHUD::eventGetHUDMovie, py::return_value_policy::reference)
         .def("DisplayTargetPopupInfo", &AWillowHUD::DisplayTargetPopupInfo)
         .def("UpdatePickupParticles", &AWillowHUD::UpdatePickupParticles)
         .def("PostRenderDebug", &AWillowHUD::PostRenderDebug)

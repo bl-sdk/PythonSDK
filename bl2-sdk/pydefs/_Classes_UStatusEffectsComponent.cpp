@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusEffectsComponent()
 {
-    class_< UStatusEffectsComponent, bases< UActorComponent >  , boost::noncopyable>("UStatusEffectsComponent", no_init)
+    py::class_< UStatusEffectsComponent,  UActorComponent   >("UStatusEffectsComponent")
         .def_readwrite("OwnerTarget", &UStatusEffectsComponent::OwnerTarget)
         .def_readonly("UnknownData00", &UStatusEffectsComponent::UnknownData00)
         .def_readwrite("BodyConsumptionPercent", &UStatusEffectsComponent::BodyConsumptionPercent)
@@ -46,7 +46,7 @@ void Export_pystes_UStatusEffectsComponent()
         .def_readwrite("AmpDurationResistanceModifierModifierStack", &UStatusEffectsComponent::AmpDurationResistanceModifierModifierStack)
         .def_readwrite("OngoingEffects", &UStatusEffectsComponent::OngoingEffects)
         .def_readwrite("DebugPawnMarkerInst", &UStatusEffectsComponent::DebugPawnMarkerInst)
-        .def("StaticClass", &UStatusEffectsComponent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStatusEffectsComponent::StaticClass, py::return_value_policy::reference)
         .def("RemoveDenStat", &UStatusEffectsComponent::RemoveDenStat)
         .def("AddDenStat", &UStatusEffectsComponent::AddDenStat)
         .def("ClearDenStats", &UStatusEffectsComponent::ClearDenStats)
@@ -66,7 +66,7 @@ void Export_pystes_UStatusEffectsComponent()
         .def("GetRegionSpecificEffects", &UStatusEffectsComponent::GetRegionSpecificEffects)
         .def("GetStatusEffects", &UStatusEffectsComponent::GetStatusEffects)
         .def("eventOnStatusEffectEnd", &UStatusEffectsComponent::eventOnStatusEffectEnd)
-        .def("GetEmitterForSocketRegion", &UStatusEffectsComponent::GetEmitterForSocketRegion, return_value_policy< reference_existing_object >())
+        .def("GetEmitterForSocketRegion", &UStatusEffectsComponent::GetEmitterForSocketRegion, py::return_value_policy::reference)
         .def("GetRegionSocketNames", &UStatusEffectsComponent::GetRegionSocketNames)
         .def("eventUpdateRegionData", &UStatusEffectsComponent::eventUpdateRegionData)
         .def("CreateTraceHitInfo", &UStatusEffectsComponent::CreateTraceHitInfo)
@@ -91,8 +91,8 @@ void Export_pystes_UStatusEffectsComponent()
         .def("RollChanceForStatusEffect", &UStatusEffectsComponent::RollChanceForStatusEffect)
         .def("GetActiveStatusEffectTypes", &UStatusEffectsComponent::GetActiveStatusEffectTypes)
         .def("HasActiveStatusEffects", &UStatusEffectsComponent::HasActiveStatusEffects)
-        .def("eventGetMostRecentStatusEffect", &UStatusEffectsComponent::eventGetMostRecentStatusEffect, return_value_policy< reference_existing_object >())
-        .def("GetMostRecentEffectHitRegion", &UStatusEffectsComponent::GetMostRecentEffectHitRegion, return_value_policy< reference_existing_object >())
+        .def("eventGetMostRecentStatusEffect", &UStatusEffectsComponent::eventGetMostRecentStatusEffect, py::return_value_policy::reference)
+        .def("GetMostRecentEffectHitRegion", &UStatusEffectsComponent::GetMostRecentEffectHitRegion, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

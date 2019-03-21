@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxProfileSettings()
 {
-    class_< UGearboxProfileSettings, bases< UOnlineProfileSettings >  , boost::noncopyable>("UGearboxProfileSettings", no_init)
-        .def("StaticClass", &UGearboxProfileSettings::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UGearboxProfileSettings,  UOnlineProfileSettings   >("UGearboxProfileSettings")
+        .def("StaticClass", &UGearboxProfileSettings::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

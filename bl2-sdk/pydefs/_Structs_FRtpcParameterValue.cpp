@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FRtpcParameterValue()
 {
-    class_< FRtpcParameterValue >("FRtpcParameterValue", no_init)
+    py::class_< FRtpcParameterValue >("FRtpcParameterValue")
         .def_readwrite("AkRtpc", &FRtpcParameterValue::AkRtpc)
         .def_readwrite("Value", &FRtpcParameterValue::Value)
   ;

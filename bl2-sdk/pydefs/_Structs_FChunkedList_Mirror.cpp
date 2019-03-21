@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FChunkedList_Mirror()
 {
-    class_< FChunkedList_Mirror >("FChunkedList_Mirror", no_init)
+    py::class_< FChunkedList_Mirror >("FChunkedList_Mirror")
         .def_readwrite("Members", &FChunkedList_Mirror::Members)
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPartyReservation()
 {
-    class_< FPartyReservation >("FPartyReservation", no_init)
+    py::class_< FPartyReservation >("FPartyReservation")
         .def_readwrite("TeamNum", &FPartyReservation::TeamNum)
         .def_readwrite("PartyLeader", &FPartyReservation::PartyLeader)
         .def_readwrite("PartyMembers", &FPartyReservation::PartyMembers)

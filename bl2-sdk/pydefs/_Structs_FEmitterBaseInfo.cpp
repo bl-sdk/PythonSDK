@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEmitterBaseInfo()
 {
-    class_< FEmitterBaseInfo >("FEmitterBaseInfo", no_init)
+    py::class_< FEmitterBaseInfo >("FEmitterBaseInfo")
         .def_readwrite("PSC", &FEmitterBaseInfo::PSC)
         .def_readwrite("Base", &FEmitterBaseInfo::Base)
         .def_readwrite("RelativeLocation", &FEmitterBaseInfo::RelativeLocation)

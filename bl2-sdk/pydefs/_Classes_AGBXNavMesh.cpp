@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGBXNavMesh()
 {
-    class_< AGBXNavMesh, bases< AActor >  , boost::noncopyable>("AGBXNavMesh", no_init)
+    py::class_< AGBXNavMesh,  AActor   >("AGBXNavMesh")
         .def_readwrite("BuildVersion", &AGBXNavMesh::BuildVersion)
         .def_readwrite("BuildGUID", &AGBXNavMesh::BuildGUID)
         .def_readwrite("MeshID", &AGBXNavMesh::MeshID)
@@ -25,7 +25,7 @@ void Export_pystes_AGBXNavMesh()
         .def_readwrite("NextNavMesh", &AGBXNavMesh::NextNavMesh)
         .def_readwrite("BuildData", &AGBXNavMesh::BuildData)
         .def_readwrite("RenderComponent", &AGBXNavMesh::RenderComponent)
-        .def("StaticClass", &AGBXNavMesh::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AGBXNavMesh::StaticClass, py::return_value_policy::reference)
         .def("PolyContainsPoint", &AGBXNavMesh::PolyContainsPoint)
         .def("OnPotentiallyConnectedMeshRemoved", &AGBXNavMesh::OnPotentiallyConnectedMeshRemoved)
         .def("OnPotentiallyConnectedMeshAdded", &AGBXNavMesh::OnPotentiallyConnectedMeshAdded)

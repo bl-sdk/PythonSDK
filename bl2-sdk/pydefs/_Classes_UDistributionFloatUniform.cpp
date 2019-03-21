@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UDistributionFloatUniform()
 {
-    class_< UDistributionFloatUniform, bases< UDistributionFloat >  , boost::noncopyable>("UDistributionFloatUniform", no_init)
+    py::class_< UDistributionFloatUniform,  UDistributionFloat   >("UDistributionFloatUniform")
         .def_readwrite("Min", &UDistributionFloatUniform::Min)
         .def_readwrite("Max", &UDistributionFloatUniform::Max)
-        .def("StaticClass", &UDistributionFloatUniform::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UDistributionFloatUniform::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ALensFlareSource()
 {
-    class_< ALensFlareSource, bases< AActor >  , boost::noncopyable>("ALensFlareSource", no_init)
+    py::class_< ALensFlareSource,  AActor   >("ALensFlareSource")
         .def_readwrite("LensFlareComp", &ALensFlareSource::LensFlareComp)
-        .def("StaticClass", &ALensFlareSource::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ALensFlareSource::StaticClass, py::return_value_policy::reference)
         .def("SetActorParameter", &ALensFlareSource::SetActorParameter)
         .def("SetExtColorParameter", &ALensFlareSource::SetExtColorParameter)
         .def("SetColorParameter", &ALensFlareSource::SetColorParameter)

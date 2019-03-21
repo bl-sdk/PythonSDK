@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehaviorEventFilterBase()
 {
-    class_< UBehaviorEventFilterBase, bases< UObject >  , boost::noncopyable>("UBehaviorEventFilterBase", no_init)
-        .def("StaticClass", &UBehaviorEventFilterBase::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehaviorEventFilterBase,  UObject   >("UBehaviorEventFilterBase")
+        .def("StaticClass", &UBehaviorEventFilterBase::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

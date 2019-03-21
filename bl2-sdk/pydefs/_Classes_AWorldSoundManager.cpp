@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWorldSoundManager()
 {
-    class_< AWorldSoundManager, bases< AInfo >  , boost::noncopyable>("AWorldSoundManager", no_init)
+    py::class_< AWorldSoundManager,  AInfo   >("AWorldSoundManager")
         .def_readwrite("EventSources", &AWorldSoundManager::EventSources)
         .def_readwrite("UIAkComponent", &AWorldSoundManager::UIAkComponent)
-        .def("StaticClass", &AWorldSoundManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWorldSoundManager::StaticClass, py::return_value_policy::reference)
         .def("GetWorldSoundCount", &AWorldSoundManager::GetWorldSoundCount)
         .def("StaticPlayUIAkEvent", &AWorldSoundManager::StaticPlayUIAkEvent)
         .def("StaticUnregisterEventSource", &AWorldSoundManager::StaticUnregisterEventSource)

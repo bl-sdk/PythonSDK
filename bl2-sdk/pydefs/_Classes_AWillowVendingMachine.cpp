@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowVendingMachine()
 {
-    class_< AWillowVendingMachine, bases< AWillowVendingMachineBase >  , boost::noncopyable>("AWillowVendingMachine", no_init)
+    py::class_< AWillowVendingMachine,  AWillowVendingMachineBase   >("AWillowVendingMachine")
         .def_readonly("ShopInventory", &AWillowVendingMachine::ShopInventory)
         .def_readwrite("FeaturedItem", &AWillowVendingMachine::FeaturedItem)
         .def_readwrite("FeaturedItemPickup", &AWillowVendingMachine::FeaturedItemPickup)
@@ -17,7 +17,7 @@ void Export_pystes_AWillowVendingMachine()
         .def_readwrite("FeaturedItemConfigurationName", &AWillowVendingMachine::FeaturedItemConfigurationName)
         .def_readwrite("FeaturedItemGameStage", &AWillowVendingMachine::FeaturedItemGameStage)
         .def_readwrite("FeaturedItemAwesomeLevel", &AWillowVendingMachine::FeaturedItemAwesomeLevel)
-        .def("StaticClass", &AWillowVendingMachine::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowVendingMachine::StaticClass, py::return_value_policy::reference)
         .def("PlayerBuyItem", &AWillowVendingMachine::PlayerBuyItem)
         .def("NotifyBasedPickupRemoved", &AWillowVendingMachine::NotifyBasedPickupRemoved)
         .def("eventGetInstanceData", &AWillowVendingMachine::eventGetInstanceData)

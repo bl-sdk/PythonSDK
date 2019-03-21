@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCoordinatedParticleSystemDefinition()
 {
-    class_< FCoordinatedParticleSystemDefinition >("FCoordinatedParticleSystemDefinition", no_init)
+    py::class_< FCoordinatedParticleSystemDefinition >("FCoordinatedParticleSystemDefinition")
         .def_readwrite("ParticleSystem", &FCoordinatedParticleSystemDefinition::ParticleSystem)
         .def_readwrite("LocationOffset", &FCoordinatedParticleSystemDefinition::LocationOffset)
         .def_readwrite("RotationOffset", &FCoordinatedParticleSystemDefinition::RotationOffset)

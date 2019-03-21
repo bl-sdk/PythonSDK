@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGestaltDataContainer()
 {
-    class_< FGestaltDataContainer >("FGestaltDataContainer", no_init)
+    py::class_< FGestaltDataContainer >("FGestaltDataContainer")
         .def_readwrite("SkeletalMesh", &FGestaltDataContainer::SkeletalMesh)
         .def_readwrite("LODModelData", &FGestaltDataContainer::LODModelData)
         .def_readwrite("SocketMappings", &FGestaltDataContainer::SocketMappings)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMaterialExpressionCameraWorldPosition()
 {
-    class_< UMaterialExpressionCameraWorldPosition, bases< UMaterialExpression >  , boost::noncopyable>("UMaterialExpressionCameraWorldPosition", no_init)
-        .def("StaticClass", &UMaterialExpressionCameraWorldPosition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UMaterialExpressionCameraWorldPosition,  UMaterialExpression   >("UMaterialExpressionCameraWorldPosition")
+        .def("StaticClass", &UMaterialExpressionCameraWorldPosition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

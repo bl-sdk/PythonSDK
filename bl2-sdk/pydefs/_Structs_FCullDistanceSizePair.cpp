@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCullDistanceSizePair()
 {
-    class_< FCullDistanceSizePair >("FCullDistanceSizePair", no_init)
+    py::class_< FCullDistanceSizePair >("FCullDistanceSizePair")
         .def_readwrite("Size", &FCullDistanceSizePair::Size)
         .def_readwrite("CullDistance", &FCullDistanceSizePair::CullDistance)
   ;

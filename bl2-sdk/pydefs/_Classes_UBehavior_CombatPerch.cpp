@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_CombatPerch()
 {
-    class_< UBehavior_CombatPerch, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_CombatPerch", no_init)
+    py::class_< UBehavior_CombatPerch,  UBehaviorBase   >("UBehavior_CombatPerch")
         .def_readwrite("AttachmentName", &UBehavior_CombatPerch::AttachmentName)
         .def_readwrite("Action", &UBehavior_CombatPerch::Action)
-        .def("StaticClass", &UBehavior_CombatPerch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_CombatPerch::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CombatPerch::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

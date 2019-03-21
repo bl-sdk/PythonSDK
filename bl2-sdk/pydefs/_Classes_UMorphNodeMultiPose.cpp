@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMorphNodeMultiPose()
 {
-    class_< UMorphNodeMultiPose, bases< UMorphNodeBase >  , boost::noncopyable>("UMorphNodeMultiPose", no_init)
+    py::class_< UMorphNodeMultiPose,  UMorphNodeBase   >("UMorphNodeMultiPose")
         .def_readwrite("Targets", &UMorphNodeMultiPose::Targets)
         .def_readwrite("MorphNames", &UMorphNodeMultiPose::MorphNames)
         .def_readwrite("Weights", &UMorphNodeMultiPose::Weights)
-        .def("StaticClass", &UMorphNodeMultiPose::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMorphNodeMultiPose::StaticClass, py::return_value_policy::reference)
         .def("UpdateMorphTarget", &UMorphNodeMultiPose::UpdateMorphTarget)
         .def("RemoveMorphTarget", &UMorphNodeMultiPose::RemoveMorphTarget)
         .def("AddMorphTarget", &UMorphNodeMultiPose::AddMorphTarget)

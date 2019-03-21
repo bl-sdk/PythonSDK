@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGBXNavMeshPolyLookup()
 {
-    class_< FGBXNavMeshPolyLookup >("FGBXNavMeshPolyLookup", no_init)
+    py::class_< FGBXNavMeshPolyLookup >("FGBXNavMeshPolyLookup")
         .def_readwrite("XCells", &FGBXNavMeshPolyLookup::XCells)
         .def_readwrite("YCells", &FGBXNavMeshPolyLookup::YCells)
         .def_readwrite("Origin", &FGBXNavMeshPolyLookup::Origin)

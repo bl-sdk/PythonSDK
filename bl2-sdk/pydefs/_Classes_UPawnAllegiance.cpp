@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPawnAllegiance()
 {
-    class_< UPawnAllegiance, bases< UObject >  , boost::noncopyable>("UPawnAllegiance", no_init)
+    py::class_< UPawnAllegiance,  UObject   >("UPawnAllegiance")
         .def_readwrite("DefaultOpinion", &UPawnAllegiance::DefaultOpinion)
         .def_readwrite("SelfOpinion", &UPawnAllegiance::SelfOpinion)
         .def_readwrite("ForcedOtherOpinion", &UPawnAllegiance::ForcedOtherOpinion)
         .def_readwrite("MyOpinions", &UPawnAllegiance::MyOpinions)
         .def_readwrite("OtherOpinions", &UPawnAllegiance::OtherOpinions)
         .def_readwrite("AllegianceKilledStat", &UPawnAllegiance::AllegianceKilledStat)
-        .def("StaticClass", &UPawnAllegiance::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPawnAllegiance::StaticClass, py::return_value_policy::reference)
         .def("IsAllegianceChild", &UPawnAllegiance::IsAllegianceChild)
         .def("SetParent", &UPawnAllegiance::SetParent)
         .def("RemoveChildren", &UPawnAllegiance::RemoveChildren)
@@ -26,10 +26,10 @@ void Export_pystes_UPawnAllegiance()
         .def("GetObjectOpinion", &UPawnAllegiance::GetObjectOpinion)
         .def("GetOpinion", &UPawnAllegiance::GetOpinion)
         .def("InitializeDefinitionActor", &UGBXDefinition::InitializeDefinitionActor)
-        .def("GetDefinitionActorClass", &UGBXDefinition::GetDefinitionActorClass, return_value_policy< reference_existing_object >())
+        .def("GetDefinitionActorClass", &UGBXDefinition::GetDefinitionActorClass, py::return_value_policy::reference)
         .def("StaticGetFullNameForDefinition", &UGBXDefinition::StaticGetFullNameForDefinition)
         .def("GetFullDefinitionName", &UGBXDefinition::GetFullDefinitionName)
-        .def("GetDefinition", &UGBXDefinition::GetDefinition, return_value_policy< reference_existing_object >())
+        .def("GetDefinition", &UGBXDefinition::GetDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

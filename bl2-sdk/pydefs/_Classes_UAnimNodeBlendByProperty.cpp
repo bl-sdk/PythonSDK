@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeBlendByProperty()
 {
-    class_< UAnimNodeBlendByProperty, bases< UAnimNodeBlendList >  , boost::noncopyable>("UAnimNodeBlendByProperty", no_init)
+    py::class_< UAnimNodeBlendByProperty,  UAnimNodeBlendList   >("UAnimNodeBlendByProperty")
         .def_readwrite("PropertyName", &UAnimNodeBlendByProperty::PropertyName)
         .def_readwrite("CachedPropertyName", &UAnimNodeBlendByProperty::CachedPropertyName)
         .def_readwrite("CachedFloatProperty", &UAnimNodeBlendByProperty::CachedFloatProperty)
@@ -17,7 +17,7 @@ void Export_pystes_UAnimNodeBlendByProperty()
         .def_readwrite("FloatPropMax", &UAnimNodeBlendByProperty::FloatPropMax)
         .def_readwrite("BlendToChild1Time", &UAnimNodeBlendByProperty::BlendToChild1Time)
         .def_readwrite("BlendToChild2Time", &UAnimNodeBlendByProperty::BlendToChild2Time)
-        .def("StaticClass", &UAnimNodeBlendByProperty::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeBlendByProperty::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

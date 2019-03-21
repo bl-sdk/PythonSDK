@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInputBindingsClipGFxObject()
 {
-    class_< UInputBindingsClipGFxObject, bases< UGFxObject >  , boost::noncopyable>("UInputBindingsClipGFxObject", no_init)
-        .def("StaticClass", &UInputBindingsClipGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UInputBindingsClipGFxObject,  UGFxObject   >("UInputBindingsClipGFxObject")
+        .def("StaticClass", &UInputBindingsClipGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetCustomizeTip", &UInputBindingsClipGFxObject::SetCustomizeTip)
-        .def("AddKeyData", &UInputBindingsClipGFxObject::AddKeyData, return_value_policy< reference_existing_object >())
+        .def("AddKeyData", &UInputBindingsClipGFxObject::AddKeyData, py::return_value_policy::reference)
         .def("EmptyKeyData", &UInputBindingsClipGFxObject::EmptyKeyData)
         .def("InvalidateKeyData", &UInputBindingsClipGFxObject::InvalidateKeyData)
         .def("SetKeybindMode", &UInputBindingsClipGFxObject::SetKeybindMode)

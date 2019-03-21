@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWindDirectionalSource()
 {
-    class_< AWindDirectionalSource, bases< AInfo >  , boost::noncopyable>("AWindDirectionalSource", no_init)
+    py::class_< AWindDirectionalSource,  AInfo   >("AWindDirectionalSource")
         .def_readwrite("Component", &AWindDirectionalSource::Component)
-        .def("StaticClass", &AWindDirectionalSource::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWindDirectionalSource::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

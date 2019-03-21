@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxColiseumOverlayMovie()
 {
-    class_< UWillowGFxColiseumOverlayMovie, bases< UWillowGFxMovie >  , boost::noncopyable>("UWillowGFxColiseumOverlayMovie", no_init)
+    py::class_< UWillowGFxColiseumOverlayMovie,  UWillowGFxMovie   >("UWillowGFxColiseumOverlayMovie")
         .def_readwrite("OverlayDef", &UWillowGFxColiseumOverlayMovie::OverlayDef)
         .def_readonly("CurrentRules", &UWillowGFxColiseumOverlayMovie::CurrentRules)
         .def_readwrite("RoundPrefix", &UWillowGFxColiseumOverlayMovie::RoundPrefix)
@@ -24,7 +24,7 @@ void Export_pystes_UWillowGFxColiseumOverlayMovie()
         .def_readwrite("PlayerLines", &UWillowGFxColiseumOverlayMovie::PlayerLines)
         .def_readwrite("HighlightedResultsLine", &UWillowGFxColiseumOverlayMovie::HighlightedResultsLine)
         .def_readonly("SortedResultsPRI", &UWillowGFxColiseumOverlayMovie::SortedResultsPRI)
-        .def("StaticClass", &UWillowGFxColiseumOverlayMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxColiseumOverlayMovie::StaticClass, py::return_value_policy::reference)
         .def("CertificateGotoAndStop", &UWillowGFxColiseumOverlayMovie::CertificateGotoAndStop)
         .def("HighlightGotoFrame", &UWillowGFxColiseumOverlayMovie::HighlightGotoFrame)
         .def("CatchupColiseumRule_Wrapper", &UWillowGFxColiseumOverlayMovie::CatchupColiseumRule_Wrapper)

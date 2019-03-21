@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URES_RuleSetChange()
 {
-    class_< URES_RuleSetChange, bases< UActionResource >  , boost::noncopyable>("URES_RuleSetChange", no_init)
-        .def("StaticClass", &URES_RuleSetChange::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< URES_RuleSetChange,  UActionResource   >("URES_RuleSetChange")
+        .def("StaticClass", &URES_RuleSetChange::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

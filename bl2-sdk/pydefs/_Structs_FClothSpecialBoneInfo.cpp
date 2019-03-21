@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClothSpecialBoneInfo()
 {
-    class_< FClothSpecialBoneInfo >("FClothSpecialBoneInfo", no_init)
+    py::class_< FClothSpecialBoneInfo >("FClothSpecialBoneInfo")
         .def_readwrite("BoneName", &FClothSpecialBoneInfo::BoneName)
         .def_readwrite("BoneType", &FClothSpecialBoneInfo::BoneType)
         .def_readwrite("AttachedVertexIndices", &FClothSpecialBoneInfo::AttachedVertexIndices)

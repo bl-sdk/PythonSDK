@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimTree()
 {
-    class_< UAnimTree, bases< UObject >  , boost::noncopyable>("UAnimTree", no_init)
+    py::class_< UAnimTree,  UObject   >("UAnimTree")
         .def_readwrite("AnimTreeTemplate", &UAnimTree::AnimTreeTemplate)
         .def_readwrite("AnimGroups", &UAnimTree::AnimGroups)
         .def_readwrite("PrioritizedSkelBranches", &UAnimTree::PrioritizedSkelBranches)
@@ -32,23 +32,23 @@ void Export_pystes_UAnimTree()
         .def_readwrite("CachedCurveKeys", &UAnimNode::CachedCurveKeys)
         .def_readwrite("SearchTag", &UAnimNode::SearchTag)
         .def_readwrite("SkelComponent", &UAnimObject::SkelComponent)
-        .def("StaticClass", &UAnimTree::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimTree::StaticClass, py::return_value_policy::reference)
         .def("GetGroupIndex", &UAnimTree::GetGroupIndex)
         .def("GetGroupRateScale", &UAnimTree::GetGroupRateScale)
         .def("SetGroupRateScale", &UAnimTree::SetGroupRateScale)
         .def("GetGroupRelativePosition", &UAnimTree::GetGroupRelativePosition)
         .def("ForceGroupRelativePosition", &UAnimTree::ForceGroupRelativePosition)
-        .def("GetGroupNotifyMaster", &UAnimTree::GetGroupNotifyMaster, return_value_policy< reference_existing_object >())
-        .def("GetGroupSynchMaster", &UAnimTree::GetGroupSynchMaster, return_value_policy< reference_existing_object >())
+        .def("GetGroupNotifyMaster", &UAnimTree::GetGroupNotifyMaster, py::return_value_policy::reference)
+        .def("GetGroupSynchMaster", &UAnimTree::GetGroupSynchMaster, py::return_value_policy::reference)
         .def("SetAnimGroupForNode", &UAnimTree::SetAnimGroupForNode)
         .def("SetUseSavedPose", &UAnimTree::SetUseSavedPose)
-        .def("FindMorphNode", &UAnimTree::FindMorphNode, return_value_policy< reference_existing_object >())
-        .def("FindSkelControl", &UAnimTree::FindSkelControl, return_value_policy< reference_existing_object >())
+        .def("FindMorphNode", &UAnimTree::FindMorphNode, py::return_value_policy::reference)
+        .def("FindSkelControl", &UAnimTree::FindSkelControl, py::return_value_policy::reference)
         .def("ReplayAnim", &UAnimNodeBlendBase::ReplayAnim)
         .def("StopAnim", &UAnimNodeBlendBase::StopAnim)
         .def("PlayAnim", &UAnimNodeBlendBase::PlayAnim)
         .def("FindAllAnimNodes", &UAnimNode::FindAllAnimNodes)
-        .def("FindAnimNode", &UAnimNode::FindAnimNode, return_value_policy< reference_existing_object >())
+        .def("FindAnimNode", &UAnimNode::FindAnimNode, py::return_value_policy::reference)
         .def("eventOnCeaseRelevant", &UAnimNode::eventOnCeaseRelevant)
         .def("eventOnBecomeRelevant", &UAnimNode::eventOnBecomeRelevant)
         .def("eventOnInit", &UAnimNode::eventOnInit)

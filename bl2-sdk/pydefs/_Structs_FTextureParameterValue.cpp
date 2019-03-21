@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTextureParameterValue()
 {
-    class_< FTextureParameterValue >("FTextureParameterValue", no_init)
+    py::class_< FTextureParameterValue >("FTextureParameterValue")
         .def_readwrite("ParameterName", &FTextureParameterValue::ParameterName)
         .def_readwrite("ParameterValue", &FTextureParameterValue::ParameterValue)
         .def_readwrite("ExpressionGUID", &FTextureParameterValue::ExpressionGUID)

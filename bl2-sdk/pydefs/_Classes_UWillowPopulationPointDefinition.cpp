@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowPopulationPointDefinition()
 {
-    class_< UWillowPopulationPointDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UWillowPopulationPointDefinition", no_init)
+    py::class_< UWillowPopulationPointDefinition,  UGBXDefinition   >("UWillowPopulationPointDefinition")
         .def_readwrite("VfTable_IIBodyInfoProvider", &UWillowPopulationPointDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIAnimProvider", &UWillowPopulationPointDefinition::VfTable_IIAnimProvider)
         .def_readwrite("AnimMap", &UWillowPopulationPointDefinition::AnimMap)
@@ -19,9 +19,9 @@ void Export_pystes_UWillowPopulationPointDefinition()
         .def_readwrite("AmbientShadowColor", &UWillowPopulationPointDefinition::AmbientShadowColor)
         .def_readwrite("DominantShadowTransitionStartDistance", &UWillowPopulationPointDefinition::DominantShadowTransitionStartDistance)
         .def_readwrite("DominantShadowTransitionEndDistance", &UWillowPopulationPointDefinition::DominantShadowTransitionEndDistance)
-        .def("StaticClass", &UWillowPopulationPointDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowPopulationPointDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetAnims", &UWillowPopulationPointDefinition::GetAnims)
-        .def("GetPointAnim", &UWillowPopulationPointDefinition::GetPointAnim, return_value_policy< reference_existing_object >())
+        .def("GetPointAnim", &UWillowPopulationPointDefinition::GetPointAnim, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

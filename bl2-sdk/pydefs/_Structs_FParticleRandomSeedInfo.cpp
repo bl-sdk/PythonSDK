@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FParticleRandomSeedInfo()
 {
-    class_< FParticleRandomSeedInfo >("FParticleRandomSeedInfo", no_init)
+    py::class_< FParticleRandomSeedInfo >("FParticleRandomSeedInfo")
         .def_readwrite("ParameterName", &FParticleRandomSeedInfo::ParameterName)
         .def_readwrite("RandomSeeds", &FParticleRandomSeedInfo::RandomSeeds)
   ;

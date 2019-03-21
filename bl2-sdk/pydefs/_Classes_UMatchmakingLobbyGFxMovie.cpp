@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UMatchmakingLobbyGFxMovie()
 {
-    class_< UMatchmakingLobbyGFxMovie, bases< UWillowGFxMovie3D >  , boost::noncopyable>("UMatchmakingLobbyGFxMovie", no_init)
+    py::class_< UMatchmakingLobbyGFxMovie,  UWillowGFxMovie3D   >("UMatchmakingLobbyGFxMovie")
         .def_readwrite("CharacterInfoGFxObj", &UMatchmakingLobbyGFxMovie::CharacterInfoGFxObj)
         .def_readwrite("ResultsGFxObj", &UMatchmakingLobbyGFxMovie::ResultsGFxObj)
         .def_readwrite("TooltipsGFxObj", &UMatchmakingLobbyGFxMovie::TooltipsGFxObj)
         .def_readonly("ResultEntries", &UMatchmakingLobbyGFxMovie::ResultEntries)
         .def_readwrite("CurrentMatchmakingState", &UMatchmakingLobbyGFxMovie::CurrentMatchmakingState)
-        .def("StaticClass", &UMatchmakingLobbyGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UMatchmakingLobbyGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extMatchmakingLobbyOnLoad", &UMatchmakingLobbyGFxMovie::extMatchmakingLobbyOnLoad)
         .def("ResolvePlaythrough", &UMatchmakingLobbyGFxMovie::ResolvePlaythrough)
         .def("UpdateTooltips", &UMatchmakingLobbyGFxMovie::UpdateTooltips)

@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UEffectCollectionDefinition()
 {
-    class_< UEffectCollectionDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UEffectCollectionDefinition", no_init)
+    py::class_< UEffectCollectionDefinition,  UGBXDefinition   >("UEffectCollectionDefinition")
         .def_readwrite("ParticleEffects", &UEffectCollectionDefinition::ParticleEffects)
-        .def("StaticClass", &UEffectCollectionDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetParticleEffect", &UEffectCollectionDefinition::GetParticleEffect, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UEffectCollectionDefinition::StaticClass, py::return_value_policy::reference)
+        .def("GetParticleEffect", &UEffectCollectionDefinition::GetParticleEffect, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

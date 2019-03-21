@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_ChangeEnvironmentTag()
 {
-    class_< UBehavior_ChangeEnvironmentTag, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_ChangeEnvironmentTag", no_init)
+    py::class_< UBehavior_ChangeEnvironmentTag,  UBehaviorBase   >("UBehavior_ChangeEnvironmentTag")
         .def_readwrite("Action", &UBehavior_ChangeEnvironmentTag::Action)
         .def_readwrite("EnvironmentTag", &UBehavior_ChangeEnvironmentTag::EnvironmentTag)
-        .def("StaticClass", &UBehavior_ChangeEnvironmentTag::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_ChangeEnvironmentTag::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ChangeEnvironmentTag::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

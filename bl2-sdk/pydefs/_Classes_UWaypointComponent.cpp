@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWaypointComponent()
 {
-    class_< UWaypointComponent, bases< UActorComponent >  , boost::noncopyable>("UWaypointComponent", no_init)
-        .def("StaticClass", &UWaypointComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWaypointComponent,  UActorComponent   >("UWaypointComponent")
+        .def("StaticClass", &UWaypointComponent::StaticClass, py::return_value_policy::reference)
         .def("RemoveWaypoint", &UWaypointComponent::RemoveWaypoint)
         .staticmethod("StaticClass")
   ;

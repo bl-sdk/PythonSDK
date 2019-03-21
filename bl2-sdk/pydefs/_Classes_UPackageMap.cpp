@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPackageMap()
 {
-    class_< UPackageMap, bases< UObject >  , boost::noncopyable>("UPackageMap", no_init)
+    py::class_< UPackageMap,  UObject   >("UPackageMap")
         .def_readonly("UnknownData00", &UPackageMap::UnknownData00)
-        .def("StaticClass", &UPackageMap::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPackageMap::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

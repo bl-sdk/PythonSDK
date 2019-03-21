@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AEmitterPool()
 {
-    class_< AEmitterPool, bases< AActor >  , boost::noncopyable>("AEmitterPool", no_init)
+    py::class_< AEmitterPool,  AActor   >("AEmitterPool")
         .def_readwrite("PSCTemplate", &AEmitterPool::PSCTemplate)
         .def_readwrite("PoolComponents", &AEmitterPool::PoolComponents)
         .def_readwrite("ActiveComponents", &AEmitterPool::ActiveComponents)
@@ -21,15 +21,15 @@ void Export_pystes_AEmitterPool()
         .def_readwrite("IdealMaterialInstanceConstants", &AEmitterPool::IdealMaterialInstanceConstants)
         .def_readwrite("FreeSMComponents", &AEmitterPool::FreeSMComponents)
         .def_readwrite("FreeMatInstConsts", &AEmitterPool::FreeMatInstConsts)
-        .def("StaticClass", &AEmitterPool::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AEmitterPool::StaticClass, py::return_value_policy::reference)
         .def("PostBeginPlay", &AEmitterPool::PostBeginPlay)
-        .def("SpawnEmitterCustomLifetime", &AEmitterPool::SpawnEmitterCustomLifetime, return_value_policy< reference_existing_object >())
-        .def("SpawnEmitterMeshAttachment", &AEmitterPool::SpawnEmitterMeshAttachment, return_value_policy< reference_existing_object >())
-        .def("SpawnEmitter", &AEmitterPool::SpawnEmitter, return_value_policy< reference_existing_object >())
-        .def("GetPooledComponent", &AEmitterPool::GetPooledComponent, return_value_policy< reference_existing_object >())
-        .def("GetFreeMatInstConsts", &AEmitterPool::GetFreeMatInstConsts, return_value_policy< reference_existing_object >())
+        .def("SpawnEmitterCustomLifetime", &AEmitterPool::SpawnEmitterCustomLifetime, py::return_value_policy::reference)
+        .def("SpawnEmitterMeshAttachment", &AEmitterPool::SpawnEmitterMeshAttachment, py::return_value_policy::reference)
+        .def("SpawnEmitter", &AEmitterPool::SpawnEmitter, py::return_value_policy::reference)
+        .def("GetPooledComponent", &AEmitterPool::GetPooledComponent, py::return_value_policy::reference)
+        .def("GetFreeMatInstConsts", &AEmitterPool::GetFreeMatInstConsts, py::return_value_policy::reference)
         .def("FreeMaterialInstanceConstants", &AEmitterPool::FreeMaterialInstanceConstants)
-        .def("GetFreeStaticMeshComponent", &AEmitterPool::GetFreeStaticMeshComponent, return_value_policy< reference_existing_object >())
+        .def("GetFreeStaticMeshComponent", &AEmitterPool::GetFreeStaticMeshComponent, py::return_value_policy::reference)
         .def("FreeStaticMeshComponents", &AEmitterPool::FreeStaticMeshComponents)
         .def("ReturnToPool", &AEmitterPool::ReturnToPool)
         .def("ClearAllPoolComponents", &AEmitterPool::ClearAllPoolComponents)

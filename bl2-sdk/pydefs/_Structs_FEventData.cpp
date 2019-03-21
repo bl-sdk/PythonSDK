@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEventData()
 {
-    class_< FEventData >("FEventData", no_init)
+    py::class_< FEventData >("FEventData")
         .def_readwrite("Type", &FEventData::Type)
         .def_readwrite("Data", &FEventData::Data)
         .def_readwrite("mouseIndex", &FEventData::mouseIndex)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAwarenessZoneDefinition()
 {
-    class_< UAwarenessZoneDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UAwarenessZoneDefinition", no_init)
+    py::class_< UAwarenessZoneDefinition,  UGBXDefinition   >("UAwarenessZoneDefinition")
         .def_readwrite("ZoneName", &UAwarenessZoneDefinition::ZoneName)
         .def_readwrite("OuterRimDistance", &UAwarenessZoneDefinition::OuterRimDistance)
         .def_readwrite("ViewConeStyle", &UAwarenessZoneDefinition::ViewConeStyle)
@@ -17,7 +17,7 @@ void Export_pystes_UAwarenessZoneDefinition()
         .def_readwrite("TargetSelectionPriority", &UAwarenessZoneDefinition::TargetSelectionPriority)
         .def_readwrite("ZoneColor", &UAwarenessZoneDefinition::ZoneColor)
         .def_readwrite("TimeFiringAtLastKnownLocation", &UAwarenessZoneDefinition::TimeFiringAtLastKnownLocation)
-        .def("StaticClass", &UAwarenessZoneDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAwarenessZoneDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

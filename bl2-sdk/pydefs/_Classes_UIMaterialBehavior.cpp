@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIMaterialBehavior()
 {
-    class_< UIMaterialBehavior, bases< UInterface >  , boost::noncopyable>("UIMaterialBehavior", no_init)
-        .def("StaticClass", &UIMaterialBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIMaterialBehavior,  UInterface   >("UIMaterialBehavior")
+        .def("StaticClass", &UIMaterialBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_SetTextureParameterValue", &UIMaterialBehavior::Behavior_SetTextureParameterValue)
         .def("Behavior_SetScalarParameterValue", &UIMaterialBehavior::Behavior_SetScalarParameterValue)
         .def("Behavior_SetVectorParameterValue", &UIMaterialBehavior::Behavior_SetVectorParameterValue)

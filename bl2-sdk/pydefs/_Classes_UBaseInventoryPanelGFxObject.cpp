@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBaseInventoryPanelGFxObject()
 {
-    class_< UBaseInventoryPanelGFxObject, bases< UGFxObject >  , boost::noncopyable>("UBaseInventoryPanelGFxObject", no_init)
+    py::class_< UBaseInventoryPanelGFxObject,  UGFxObject   >("UBaseInventoryPanelGFxObject")
         .def_readwrite("HandleRollOverArgs", &UBaseInventoryPanelGFxObject::HandleRollOverArgs)
         .def_readwrite("CellObjects", &UBaseInventoryPanelGFxObject::CellObjects)
         .def_readwrite("EmptyWidgetObjects", &UBaseInventoryPanelGFxObject::EmptyWidgetObjects)
         .def_readwrite("ParentPanel", &UBaseInventoryPanelGFxObject::ParentPanel)
         .def_readwrite("OwningMovie", &UBaseInventoryPanelGFxObject::OwningMovie)
         .def_readwrite("OwningMovieDef", &UBaseInventoryPanelGFxObject::OwningMovieDef)
-        .def("StaticClass", &UBaseInventoryPanelGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBaseInventoryPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def("handleRollOver", &UBaseInventoryPanelGFxObject::handleRollOver)
         .def("handleRollOver2", &UBaseInventoryPanelGFxObject::handleRollOver2)
         .def("handleRollOver3", &UBaseInventoryPanelGFxObject::handleRollOver3)
@@ -26,12 +26,12 @@ void Export_pystes_UBaseInventoryPanelGFxObject()
         .def("RedirectRollOver", &UBaseInventoryPanelGFxObject::RedirectRollOver)
         .def("FlourishActiveCell", &UBaseInventoryPanelGFxObject::FlourishActiveCell)
         .def("OnStartDrag", &UBaseInventoryPanelGFxObject::OnStartDrag)
-        .def("extStartDrag", &UBaseInventoryPanelGFxObject::extStartDrag, return_value_policy< reference_existing_object >())
+        .def("extStartDrag", &UBaseInventoryPanelGFxObject::extStartDrag, py::return_value_policy::reference)
         .def("OnSettingPanelForTransferring", &UBaseInventoryPanelGFxObject::OnSettingPanelForTransferring)
         .def("extOnSetActive", &UBaseInventoryPanelGFxObject::extOnSetActive)
         .def("SetActive", &UBaseInventoryPanelGFxObject::SetActive)
         .def("InspectItem", &UBaseInventoryPanelGFxObject::InspectItem)
-        .def("GetSelectedThing", &UBaseInventoryPanelGFxObject::GetSelectedThing, return_value_policy< reference_existing_object >())
+        .def("GetSelectedThing", &UBaseInventoryPanelGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("PanelOnInputKey", &UBaseInventoryPanelGFxObject::PanelOnInputKey)
         .def("Init", &UBaseInventoryPanelGFxObject::Init)
         .staticmethod("StaticClass")

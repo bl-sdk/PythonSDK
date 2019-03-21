@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USaveGameChannel()
 {
-    class_< USaveGameChannel, bases< UChannel >  , boost::noncopyable>("USaveGameChannel", no_init)
+    py::class_< USaveGameChannel,  UChannel   >("USaveGameChannel")
         .def_readonly("UnknownData00", &USaveGameChannel::UnknownData00)
-        .def("StaticClass", &USaveGameChannel::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USaveGameChannel::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

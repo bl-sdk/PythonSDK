@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEnvironmentalEffectInfo()
 {
-    class_< FEnvironmentalEffectInfo >("FEnvironmentalEffectInfo", no_init)
+    py::class_< FEnvironmentalEffectInfo >("FEnvironmentalEffectInfo")
         .def_readwrite("EffectID", &FEnvironmentalEffectInfo::EffectID)
         .def_readwrite("Volume", &FEnvironmentalEffectInfo::Volume)
   ;

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USequenceEvent()
 {
-    class_< USequenceEvent, bases< USequenceOp >  , boost::noncopyable>("USequenceEvent", no_init)
+    py::class_< USequenceEvent,  USequenceOp   >("USequenceEvent")
         .def_readwrite("DuplicateEvts", &USequenceEvent::DuplicateEvts)
         .def_readwrite("Originator", &USequenceEvent::Originator)
         .def_readwrite("Instigator", &USequenceEvent::Instigator)
@@ -17,7 +17,7 @@ void Export_pystes_USequenceEvent()
         .def_readwrite("MaxWidth", &USequenceEvent::MaxWidth)
         .def_readwrite("RequiredAllegiance", &USequenceEvent::RequiredAllegiance)
         .def_readwrite("CustomEnableCondition", &USequenceEvent::CustomEnableCondition)
-        .def("StaticClass", &USequenceEvent::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USequenceEvent::StaticClass, py::return_value_policy::reference)
         .def("eventToggled", &USequenceEvent::eventToggled)
         .def("Reset", &USequenceEvent::Reset)
         .def("CheckActivate", &USequenceEvent::CheckActivate)

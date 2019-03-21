@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USparkInterfaceImpl()
 {
-    class_< USparkInterfaceImpl, bases< UObject >  , boost::noncopyable>("USparkInterfaceImpl", no_init)
+    py::class_< USparkInterfaceImpl,  UObject   >("USparkInterfaceImpl")
         .def_readwrite("VfTable_ISparkInterface", &USparkInterfaceImpl::VfTable_ISparkInterface)
         .def_readwrite("VfTable_FTickableObject", &USparkInterfaceImpl::VfTable_FTickableObject)
         .def_readwrite("SparkInitialization", &USparkInterfaceImpl::SparkInitialization)
@@ -26,9 +26,9 @@ void Export_pystes_USparkInterfaceImpl()
         .def_readwrite("TitleStorageService", &USparkInterfaceImpl::TitleStorageService)
         .def_readwrite("TitleStorageUrl", &USparkInterfaceImpl::TitleStorageUrl)
         .def_readwrite("NewsService", &USparkInterfaceImpl::NewsService)
-        .def("StaticClass", &USparkInterfaceImpl::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetNewsService", &USparkInterfaceImpl::GetNewsService, return_value_policy< reference_existing_object >())
-        .def("GetTitleStorageServiceConfiguration", &USparkInterfaceImpl::GetTitleStorageServiceConfiguration, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USparkInterfaceImpl::StaticClass, py::return_value_policy::reference)
+        .def("GetNewsService", &USparkInterfaceImpl::GetNewsService, py::return_value_policy::reference)
+        .def("GetTitleStorageServiceConfiguration", &USparkInterfaceImpl::GetTitleStorageServiceConfiguration, py::return_value_policy::reference)
         .def("GetTitleStorageUrl", &USparkInterfaceImpl::GetTitleStorageUrl)
         .def("OnSparkInitialized", &USparkInterfaceImpl::OnSparkInitialized)
         .def("IncreaseInteractionTries", &USparkInterfaceImpl::IncreaseInteractionTries)
@@ -48,9 +48,9 @@ void Export_pystes_USparkInterfaceImpl()
         .def("ResetInitializationStatus", &USparkInterfaceImpl::ResetInitializationStatus)
         .def("ResetSecondaryInitializationStatus", &USparkInterfaceImpl::ResetSecondaryInitializationStatus)
         .def("StartSecondaryInitialization", &USparkInterfaceImpl::StartSecondaryInitialization)
-        .def("GetSparkInitialization", &USparkInterfaceImpl::GetSparkInitialization, return_value_policy< reference_existing_object >())
+        .def("GetSparkInitialization", &USparkInterfaceImpl::GetSparkInitialization, py::return_value_policy::reference)
         .def("SignInGearboxAccount", &USparkInterfaceImpl::SignInGearboxAccount)
-        .def("eventGetGearboxAccountData", &USparkInterfaceImpl::eventGetGearboxAccountData, return_value_policy< reference_existing_object >())
+        .def("eventGetGearboxAccountData", &USparkInterfaceImpl::eventGetGearboxAccountData, py::return_value_policy::reference)
         .def("SignOutGearboxAccount", &USparkInterfaceImpl::SignOutGearboxAccount)
         .def("ValidPlayerIndex", &USparkInterfaceImpl::ValidPlayerIndex)
         .def("GetPlayerIndex", &USparkInterfaceImpl::GetPlayerIndex)

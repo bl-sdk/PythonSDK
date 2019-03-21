@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehaviorHelpers()
 {
-    class_< UBehaviorHelpers, bases< UObject >  , boost::noncopyable>("UBehaviorHelpers", no_init)
-        .def("StaticClass", &UBehaviorHelpers::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBehaviorHelpers,  UObject   >("UBehaviorHelpers")
+        .def("StaticClass", &UBehaviorHelpers::StaticClass, py::return_value_policy::reference)
         .def("RunAllBehaviorsForEvent", &UBehaviorHelpers::RunAllBehaviorsForEvent)
         .def("BehaviorStrategy", &UBehaviorHelpers::BehaviorStrategy)
         .def("BehaviorSetStrategy", &UBehaviorHelpers::BehaviorSetStrategy)
-        .def("ResolveBehaviorProviderDefinitionReference", &UBehaviorHelpers::ResolveBehaviorProviderDefinitionReference, return_value_policy< reference_existing_object >())
+        .def("ResolveBehaviorProviderDefinitionReference", &UBehaviorHelpers::ResolveBehaviorProviderDefinitionReference, py::return_value_policy::reference)
         .def("IsBehaviorsV2", &UBehaviorHelpers::IsBehaviorsV2)
         .def("ShouldContinueExecution", &UBehaviorHelpers::ShouldContinueExecution)
         .def("GetNextFireLocationSocket", &UBehaviorHelpers::GetNextFireLocationSocket)

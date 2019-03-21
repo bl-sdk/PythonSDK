@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCameraModifierLookAt()
 {
-    class_< UCameraModifierLookAt, bases< UCameraModifier >  , boost::noncopyable>("UCameraModifierLookAt", no_init)
+    py::class_< UCameraModifierLookAt,  UCameraModifier   >("UCameraModifierLookAt")
         .def_readwrite("LookAtMode", &UCameraModifierLookAt::LookAtMode)
         .def_readwrite("Duration", &UCameraModifierLookAt::Duration)
         .def_readwrite("TimeElapsed", &UCameraModifierLookAt::TimeElapsed)
@@ -23,7 +23,7 @@ void Export_pystes_UCameraModifierLookAt()
         .def_readwrite("FadeElapsedTime", &UGearboxCameraModifier::FadeElapsedTime)
         .def_readwrite("FadeTimeSpan", &UGearboxCameraModifier::FadeTimeSpan)
         .def_readwrite("FadeMode", &UGearboxCameraModifier::FadeMode)
-        .def("StaticClass", &UCameraModifierLookAt::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UCameraModifierLookAt::StaticClass, py::return_value_policy::reference)
         .def("ExecuteFadeIfNeeded", &UCameraModifierLookAt::ExecuteFadeIfNeeded)
         .def("GetDesiredLocation", &UCameraModifierLookAt::GetDesiredLocation)
         .def("ModifyCamera", &UCameraModifierLookAt::ModifyCamera)

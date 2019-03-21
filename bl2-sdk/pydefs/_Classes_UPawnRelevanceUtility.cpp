@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPawnRelevanceUtility()
 {
-    class_< UPawnRelevanceUtility, bases< UObject >  , boost::noncopyable>("UPawnRelevanceUtility", no_init)
-        .def("StaticClass", &UPawnRelevanceUtility::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UPawnRelevanceUtility,  UObject   >("UPawnRelevanceUtility")
+        .def("StaticClass", &UPawnRelevanceUtility::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

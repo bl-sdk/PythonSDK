@@ -1,21 +1,21 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AScorpioActionSkill()
 {
-    class_< AScorpioActionSkill, bases< AActionSkill >  , boost::noncopyable>("AScorpioActionSkill", no_init)
+    py::class_< AScorpioActionSkill,  AActionSkill   >("AScorpioActionSkill")
         .def_readwrite("ScorpioSpawnedActor", &AScorpioActionSkill::ScorpioSpawnedActor)
         .def_readwrite("GeminiSpawnedActor", &AScorpioActionSkill::GeminiSpawnedActor)
         .def_readwrite("ActiveProjectile", &AScorpioActionSkill::ActiveProjectile)
         .def_readwrite("GeminiSkill", &AScorpioActionSkill::GeminiSkill)
         .def_readwrite("ThrowScorpioSMD", &AScorpioActionSkill::ThrowScorpioSMD)
-        .def("StaticClass", &AScorpioActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AScorpioActionSkill::StaticClass, py::return_value_policy::reference)
         .def("ShouldResetOnInterruptedGrenadeThrow", &AScorpioActionSkill::ShouldResetOnInterruptedGrenadeThrow)
         .def("CanResetActionSkill", &AScorpioActionSkill::CanResetActionSkill)
         .def("NotifySkillActorDied", &AScorpioActionSkill::NotifySkillActorDied)
-        .def("GetActionSkillEventContextObject", &AScorpioActionSkill::GetActionSkillEventContextObject, return_value_policy< reference_existing_object >())
+        .def("GetActionSkillEventContextObject", &AScorpioActionSkill::GetActionSkillEventContextObject, py::return_value_policy::reference)
         .def("ClientDeployScorpio", &AScorpioActionSkill::ClientDeployScorpio)
         .def("DeployScorpio", &AScorpioActionSkill::DeployScorpio)
         .def("PlayThrowAnimation", &AScorpioActionSkill::PlayThrowAnimation)

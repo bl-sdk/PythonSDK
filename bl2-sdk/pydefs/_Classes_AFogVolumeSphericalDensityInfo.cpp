@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AFogVolumeSphericalDensityInfo()
 {
-    class_< AFogVolumeSphericalDensityInfo, bases< AFogVolumeDensityInfo >  , boost::noncopyable>("AFogVolumeSphericalDensityInfo", no_init)
-        .def("StaticClass", &AFogVolumeSphericalDensityInfo::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AFogVolumeSphericalDensityInfo,  AFogVolumeDensityInfo   >("AFogVolumeSphericalDensityInfo")
+        .def("StaticClass", &AFogVolumeSphericalDensityInfo::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSkeletalMeshLODInfo()
 {
-    class_< FSkeletalMeshLODInfo >("FSkeletalMeshLODInfo", no_init)
+    py::class_< FSkeletalMeshLODInfo >("FSkeletalMeshLODInfo")
         .def_readwrite("DisplayFactor", &FSkeletalMeshLODInfo::DisplayFactor)
         .def_readwrite("LODHysteresis", &FSkeletalMeshLODInfo::LODHysteresis)
         .def_readwrite("LODMaterialMap", &FSkeletalMeshLODInfo::LODMaterialMap)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FClanSwitchData()
 {
-    class_< FClanSwitchData >("FClanSwitchData", no_init)
+    py::class_< FClanSwitchData >("FClanSwitchData")
         .def_readwrite("SwitchName", &FClanSwitchData::SwitchName)
         .def_readwrite("SwitchValue", &FClanSwitchData::SwitchValue)
   ;

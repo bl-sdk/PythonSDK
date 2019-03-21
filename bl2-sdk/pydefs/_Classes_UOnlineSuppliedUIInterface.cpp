@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineSuppliedUIInterface()
 {
-    class_< UOnlineSuppliedUIInterface, bases< UInterface >  , boost::noncopyable>("UOnlineSuppliedUIInterface", no_init)
-        .def("StaticClass", &UOnlineSuppliedUIInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlineSuppliedUIInterface,  UInterface   >("UOnlineSuppliedUIInterface")
+        .def("StaticClass", &UOnlineSuppliedUIInterface::StaticClass, py::return_value_policy::reference)
         .def("ShowMatchmakingUI", &UOnlineSuppliedUIInterface::ShowMatchmakingUI)
         .def("ClearShowOnlineStatsUICompleteDelegate", &UOnlineSuppliedUIInterface::ClearShowOnlineStatsUICompleteDelegate)
         .def("AddShowOnlineStatsUICompleteDelegate", &UOnlineSuppliedUIInterface::AddShowOnlineStatsUICompleteDelegate)

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UINounAttributeProvider()
 {
-    class_< UINounAttributeProvider, bases< UInterface >  , boost::noncopyable>("UINounAttributeProvider", no_init)
-        .def("StaticClass", &UINounAttributeProvider::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UINounAttributeProvider,  UInterface   >("UINounAttributeProvider")
+        .def("StaticClass", &UINounAttributeProvider::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

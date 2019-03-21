@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSimpleAnimData()
 {
-    class_< FSimpleAnimData >("FSimpleAnimData", no_init)
+    py::class_< FSimpleAnimData >("FSimpleAnimData")
         .def_readwrite("AnimName", &FSimpleAnimData::AnimName)
         .def_readwrite("Tree", &FSimpleAnimData::Tree)
         .def_readwrite("Nodes", &FSimpleAnimData::Nodes)

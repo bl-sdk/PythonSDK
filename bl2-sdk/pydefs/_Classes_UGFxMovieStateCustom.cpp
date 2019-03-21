@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieStateCustom()
 {
-    class_< UGFxMovieStateCustom, bases< UGFxMovieState >  , boost::noncopyable>("UGFxMovieStateCustom", no_init)
+    py::class_< UGFxMovieStateCustom,  UGFxMovieState   >("UGFxMovieStateCustom")
         .def_readwrite("CustomStates", &UGFxMovieStateCustom::CustomStates)
-        .def("StaticClass", &UGFxMovieStateCustom::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxMovieStateCustom::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FObjectiveStatusData()
 {
-    class_< FObjectiveStatusData >("FObjectiveStatusData", no_init)
+    py::class_< FObjectiveStatusData >("FObjectiveStatusData")
         .def_readwrite("Objectives", &FObjectiveStatusData::Objectives)
   ;
 }

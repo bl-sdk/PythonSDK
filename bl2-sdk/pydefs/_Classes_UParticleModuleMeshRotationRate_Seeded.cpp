@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleMeshRotationRate_Seeded()
 {
-    class_< UParticleModuleMeshRotationRate_Seeded, bases< UParticleModuleMeshRotationRate >  , boost::noncopyable>("UParticleModuleMeshRotationRate_Seeded", no_init)
+    py::class_< UParticleModuleMeshRotationRate_Seeded,  UParticleModuleMeshRotationRate   >("UParticleModuleMeshRotationRate_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleMeshRotationRate_Seeded::RandomSeedInfo)
-        .def("StaticClass", &UParticleModuleMeshRotationRate_Seeded::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleMeshRotationRate_Seeded::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

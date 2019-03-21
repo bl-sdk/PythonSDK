@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPopulationEncounter()
 {
-    class_< AWillowPopulationEncounter, bases< APopulationEncounter >  , boost::noncopyable>("AWillowPopulationEncounter", no_init)
-        .def("StaticClass", &AWillowPopulationEncounter::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AWillowPopulationEncounter,  APopulationEncounter   >("AWillowPopulationEncounter")
+        .def("StaticClass", &AWillowPopulationEncounter::StaticClass, py::return_value_policy::reference)
         .def("OnAIAbortMoveToActor", &AWillowPopulationEncounter::OnAIAbortMoveToActor)
         .def("OnAICombatVolume", &AWillowPopulationEncounter::OnAICombatVolume)
         .def("OnAIScripted", &AWillowPopulationEncounter::OnAIScripted)

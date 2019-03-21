@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerRecentDamageEventData()
 {
-    class_< FPlayerRecentDamageEventData >("FPlayerRecentDamageEventData", no_init)
+    py::class_< FPlayerRecentDamageEventData >("FPlayerRecentDamageEventData")
         .def_readwrite("DamageTypeDefinition", &FPlayerRecentDamageEventData::DamageTypeDefinition)
         .def_readwrite("DamageLocation", &FPlayerRecentDamageEventData::DamageLocation)
         .def_readwrite("TotalDamageForDamageType", &FPlayerRecentDamageEventData::TotalDamageForDamageType)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FAutoCompleteNode()
 {
-    class_< FAutoCompleteNode >("FAutoCompleteNode", no_init)
+    py::class_< FAutoCompleteNode >("FAutoCompleteNode")
         .def_readwrite("IndexChar", &FAutoCompleteNode::IndexChar)
         .def_readwrite("AutoCompleteListIndices", &FAutoCompleteNode::AutoCompleteListIndices)
         .def_readwrite("ChildNodes", &FAutoCompleteNode::ChildNodes)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FCreditsLine()
 {
-    class_< FCreditsLine >("FCreditsLine", no_init)
+    py::class_< FCreditsLine >("FCreditsLine")
         .def_readwrite("LineType", &FCreditsLine::LineType)
         .def_readwrite("Text", &FCreditsLine::Text)
   ;

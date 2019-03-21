@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ANxRadialCustomForceField()
 {
-    class_< ANxRadialCustomForceField, bases< ANxRadialForceField >  , boost::noncopyable>("ANxRadialCustomForceField", no_init)
+    py::class_< ANxRadialCustomForceField,  ANxRadialForceField   >("ANxRadialCustomForceField")
         .def_readwrite("SelfRotationStrength", &ANxRadialCustomForceField::SelfRotationStrength)
         .def_readwrite("Kernel", &ANxRadialCustomForceField::Kernel)
-        .def("StaticClass", &ANxRadialCustomForceField::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ANxRadialCustomForceField::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDmgSource_Sniper()
 {
-    class_< UWillowDmgSource_Sniper, bases< UWillowDmgSource_Bullet >  , boost::noncopyable>("UWillowDmgSource_Sniper", no_init)
-        .def("StaticClass", &UWillowDmgSource_Sniper::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowDmgSource_Sniper,  UWillowDmgSource_Bullet   >("UWillowDmgSource_Sniper")
+        .def("StaticClass", &UWillowDmgSource_Sniper::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

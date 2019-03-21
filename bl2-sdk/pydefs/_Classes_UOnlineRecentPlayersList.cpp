@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineRecentPlayersList()
 {
-    class_< UOnlineRecentPlayersList, bases< UObject >  , boost::noncopyable>("UOnlineRecentPlayersList", no_init)
+    py::class_< UOnlineRecentPlayersList,  UObject   >("UOnlineRecentPlayersList")
         .def_readwrite("RecentPlayers", &UOnlineRecentPlayersList::RecentPlayers)
         .def_readwrite("RecentParties", &UOnlineRecentPlayersList::RecentParties)
         .def_readwrite("LastParty", &UOnlineRecentPlayersList::LastParty)
@@ -14,7 +14,7 @@ void Export_pystes_UOnlineRecentPlayersList()
         .def_readwrite("RecentPlayersAddIndex", &UOnlineRecentPlayersList::RecentPlayersAddIndex)
         .def_readwrite("RecentPartiesAddIndex", &UOnlineRecentPlayersList::RecentPartiesAddIndex)
         .def_readwrite("CurrentPlayers", &UOnlineRecentPlayersList::CurrentPlayers)
-        .def("StaticClass", &UOnlineRecentPlayersList::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineRecentPlayersList::StaticClass, py::return_value_policy::reference)
         .def("GetCurrentPlayersListCount", &UOnlineRecentPlayersList::GetCurrentPlayersListCount)
         .def("SetCurrentPlayersList", &UOnlineRecentPlayersList::SetCurrentPlayersList)
         .def("ShowCurrentPlayersList", &UOnlineRecentPlayersList::ShowCurrentPlayersList)

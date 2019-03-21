@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UCeilingReachSpec()
 {
-    class_< UCeilingReachSpec, bases< UReachSpec >  , boost::noncopyable>("UCeilingReachSpec", no_init)
-        .def("StaticClass", &UCeilingReachSpec::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UCeilingReachSpec,  UReachSpec   >("UCeilingReachSpec")
+        .def("StaticClass", &UCeilingReachSpec::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FReverbSettings()
 {
-    class_< FReverbSettings >("FReverbSettings", no_init)
+    py::class_< FReverbSettings >("FReverbSettings")
         .def_readwrite("ReverbType", &FReverbSettings::ReverbType)
         .def_readwrite("Volume", &FReverbSettings::Volume)
         .def_readwrite("FadeTime", &FReverbSettings::FadeTime)

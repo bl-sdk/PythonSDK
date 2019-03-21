@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AAdmin()
 {
-    class_< AAdmin, bases< APlayerController >  , boost::noncopyable>("AAdmin", no_init)
-        .def("StaticClass", &AAdmin::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AAdmin,  APlayerController   >("AAdmin")
+        .def("StaticClass", &AAdmin::StaticClass, py::return_value_policy::reference)
         .def("ServerSwitch", &AAdmin::ServerSwitch)
         .def("Switch", &AAdmin::Switch)
         .def("ServerRestartMap", &AAdmin::ServerRestartMap)

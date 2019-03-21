@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGFxMovieDefinition()
 {
-    class_< UGFxMovieDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UGFxMovieDefinition", no_init)
+    py::class_< UGFxMovieDefinition,  UGBXDefinition   >("UGFxMovieDefinition")
         .def_readwrite("SwfMovie", &UGFxMovieDefinition::SwfMovie)
         .def_readwrite("SwfMovieClass", &UGFxMovieDefinition::SwfMovieClass)
         .def_readwrite("Movie", &UGFxMovieDefinition::Movie)
@@ -27,10 +27,10 @@ void Export_pystes_UGFxMovieDefinition()
         .def_readwrite("RenderTexture", &UGFxMovieDefinition::RenderTexture)
         .def_readwrite("InteractionOverrideSounds", &UGFxMovieDefinition::InteractionOverrideSounds)
         .def_readwrite("BaseMovieStates", &UGFxMovieDefinition::BaseMovieStates)
-        .def("StaticClass", &UGFxMovieDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("FindMovieLink", &UGFxMovieDefinition::FindMovieLink, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
+        .def("FindMovieLink", &UGFxMovieDefinition::FindMovieLink, py::return_value_policy::reference)
         .def("PostMovieStart", &UGFxMovieDefinition::PostMovieStart)
-        .def("SpawnPlayerMovie", &UGFxMovieDefinition::SpawnPlayerMovie, return_value_policy< reference_existing_object >())
+        .def("SpawnPlayerMovie", &UGFxMovieDefinition::SpawnPlayerMovie, py::return_value_policy::reference)
         .def("SupportsStatePooling", &UGFxMovieDefinition::SupportsStatePooling)
         .def("GetPoolStyle", &UGFxMovieDefinition::GetPoolStyle)
         .staticmethod("StaticClass")

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInputKeyAction()
 {
-    class_< FInputKeyAction >("FInputKeyAction", no_init)
+    py::class_< FInputKeyAction >("FInputKeyAction")
         .def_readwrite("InputKeyName", &FInputKeyAction::InputKeyName)
         .def_readwrite("InputKeyState", &FInputKeyAction::InputKeyState)
         .def_readwrite("TriggeredOps", &FInputKeyAction::TriggeredOps)

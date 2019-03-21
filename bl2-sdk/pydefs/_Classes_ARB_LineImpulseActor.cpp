@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ARB_LineImpulseActor()
 {
-    class_< ARB_LineImpulseActor, bases< ARigidBodyBase >  , boost::noncopyable>("ARB_LineImpulseActor", no_init)
+    py::class_< ARB_LineImpulseActor,  ARigidBodyBase   >("ARB_LineImpulseActor")
         .def_readwrite("ImpulseStrength", &ARB_LineImpulseActor::ImpulseStrength)
         .def_readwrite("ImpulseRange", &ARB_LineImpulseActor::ImpulseRange)
         .def_readwrite("Arrow", &ARB_LineImpulseActor::Arrow)
         .def_readwrite("ImpulseCount", &ARB_LineImpulseActor::ImpulseCount)
-        .def("StaticClass", &ARB_LineImpulseActor::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ARB_LineImpulseActor::StaticClass, py::return_value_policy::reference)
         .def("eventReplicatedEvent", &ARB_LineImpulseActor::eventReplicatedEvent)
         .def("OnToggle", &ARB_LineImpulseActor::OnToggle)
         .def("FireLineImpulse", &ARB_LineImpulseActor::FireLineImpulse)

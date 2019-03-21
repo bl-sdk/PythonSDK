@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UParticleModuleLifetime()
 {
-    class_< UParticleModuleLifetime, bases< UParticleModule >  , boost::noncopyable>("UParticleModuleLifetime", no_init)
+    py::class_< UParticleModuleLifetime,  UParticleModule   >("UParticleModuleLifetime")
         .def_readwrite("Lifetime", &UParticleModuleLifetime::Lifetime)
-        .def("StaticClass", &UParticleModuleLifetime::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UParticleModuleLifetime::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

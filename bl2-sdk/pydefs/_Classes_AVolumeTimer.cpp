@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AVolumeTimer()
 {
-    class_< AVolumeTimer, bases< AInfo >  , boost::noncopyable>("AVolumeTimer", no_init)
+    py::class_< AVolumeTimer,  AInfo   >("AVolumeTimer")
         .def_readwrite("V", &AVolumeTimer::V)
-        .def("StaticClass", &AVolumeTimer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AVolumeTimer::StaticClass, py::return_value_policy::reference)
         .def("eventTimer", &AVolumeTimer::eventTimer)
         .def("eventPostBeginPlay", &AVolumeTimer::eventPostBeginPlay)
         .staticmethod("StaticClass")

@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UUIResourceCombinationProvider()
 {
-    class_< UUIResourceCombinationProvider, bases< UUIDataProvider >  , boost::noncopyable>("UUIResourceCombinationProvider", no_init)
+    py::class_< UUIResourceCombinationProvider,  UUIDataProvider   >("UUIResourceCombinationProvider")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIResourceCombinationProvider::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIResourceCombinationProvider::VfTable_IUIListElementCellProvider)
         .def_readwrite("StaticDataProvider", &UUIResourceCombinationProvider::StaticDataProvider)
         .def_readwrite("ProfileProvider", &UUIResourceCombinationProvider::ProfileProvider)
-        .def("StaticClass", &UUIResourceCombinationProvider::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UUIResourceCombinationProvider::StaticClass, py::return_value_policy::reference)
         .def("ReplaceProviderCollection", &UUIResourceCombinationProvider::ReplaceProviderCollection)
         .def("ReplaceProviderValue", &UUIResourceCombinationProvider::ReplaceProviderValue)
         .def("ClearProviderReferences", &UUIResourceCombinationProvider::ClearProviderReferences)

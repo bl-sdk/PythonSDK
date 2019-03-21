@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPerkData()
 {
-    class_< FPerkData >("FPerkData", no_init)
+    py::class_< FPerkData >("FPerkData")
         .def_readwrite("ButtonChain", &FPerkData::ButtonChain)
         .def_readwrite("Command", &FPerkData::Command)
   ;

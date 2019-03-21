@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineSubsystem()
 {
-    class_< UOnlineSubsystem, bases< UObject >  , boost::noncopyable>("UOnlineSubsystem", no_init)
+    py::class_< UOnlineSubsystem,  UObject   >("UOnlineSubsystem")
         .def_readwrite("VfTable_FTickableObject", &UOnlineSubsystem::VfTable_FTickableObject)
         .def_readwrite("AccountInterface", &UOnlineSubsystem::AccountInterface)
         .def_readonly("UnknownData00", &UOnlineSubsystem::UnknownData00)
@@ -38,7 +38,7 @@ void Export_pystes_UOnlineSubsystem()
         .def_readwrite("IniLocPatcherClassName", &UOnlineSubsystem::IniLocPatcherClassName)
         .def_readwrite("Patcher", &UOnlineSubsystem::Patcher)
         .def_readwrite("AsyncMinCompletionTime", &UOnlineSubsystem::AsyncMinCompletionTime)
-        .def("StaticClass", &UOnlineSubsystem::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineSubsystem::StaticClass, py::return_value_policy::reference)
         .def("ProcessCompressedConfig", &UOnlineSubsystem::ProcessCompressedConfig)
         .def("FindUniqueId", &UOnlineSubsystem::FindUniqueId)
         .def("ClearCachedProfile", &UOnlineSubsystem::ClearCachedProfile)
@@ -51,7 +51,7 @@ void Export_pystes_UOnlineSubsystem()
         .def("eventGetPlayerUniqueNetIdFromIndex", &UOnlineSubsystem::eventGetPlayerUniqueNetIdFromIndex)
         .def("StringToUniqueNetId", &UOnlineSubsystem::StringToUniqueNetId)
         .def("UniqueNetIdToString", &UOnlineSubsystem::UniqueNetIdToString)
-        .def("eventGetNamedInterface", &UOnlineSubsystem::eventGetNamedInterface, return_value_policy< reference_existing_object >())
+        .def("eventGetNamedInterface", &UOnlineSubsystem::eventGetNamedInterface, py::return_value_policy::reference)
         .def("eventSetNamedInterface", &UOnlineSubsystem::eventSetNamedInterface)
         .def("eventSetAuthInterface", &UOnlineSubsystem::eventSetAuthInterface)
         .def("eventSetTitleFileInterface", &UOnlineSubsystem::eventSetTitleFileInterface)

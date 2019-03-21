@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_URuleContainer()
 {
-    class_< URuleContainer, bases< URule >  , boost::noncopyable>("URuleContainer", no_init)
+    py::class_< URuleContainer,  URule   >("URuleContainer")
         .def_readwrite("RuleSetTemplate", &URuleContainer::RuleSetTemplate)
         .def_readwrite("CurRuleSet", &URuleContainer::CurRuleSet)
-        .def("StaticClass", &URuleContainer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &URuleContainer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

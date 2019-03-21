@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APerch()
 {
-    class_< APerch, bases< AGearboxAIMoveNode >  , boost::noncopyable>("APerch", no_init)
+    py::class_< APerch,  AGearboxAIMoveNode   >("APerch")
         .def_readwrite("VfTable_IIInstanceData", &APerch::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APerch::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IIBehaviorConsumer", &APerch::VfTable_IIBehaviorConsumer)
@@ -30,11 +30,11 @@ void Export_pystes_APerch()
         .def_readwrite("PawnArrivalRadius", &AWillowAIMoveNode::PawnArrivalRadius)
         .def_readwrite("AISpeedPercentageHere", &AWillowAIMoveNode::AISpeedPercentageHere)
         .def_readwrite("VehicleNodeType", &AWillowAIMoveNode::VehicleNodeType)
-        .def("StaticClass", &APerch::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APerch::StaticClass, py::return_value_policy::reference)
         .def("GetBehaviorConsumerHandle", &APerch::GetBehaviorConsumerHandle)
         .def("RegisterBehaviorConsumer", &APerch::RegisterBehaviorConsumer)
         .def("ClearBodyCompositionInstance", &APerch::ClearBodyCompositionInstance)
-        .def("GetBodyInfoProvider", &APerch::GetBodyInfoProvider, return_value_policy< reference_existing_object >())
+        .def("GetBodyInfoProvider", &APerch::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("ApplyPreviewBodyComposition", &APerch::ApplyPreviewBodyComposition)
         .def("ChangeInstanceDataSwitch", &APerch::ChangeInstanceDataSwitch)
         .def("PostInitBodyComposition", &APerch::PostInitBodyComposition)

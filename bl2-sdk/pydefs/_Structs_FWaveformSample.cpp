@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FWaveformSample()
 {
-    class_< FWaveformSample >("FWaveformSample", no_init)
+    py::class_< FWaveformSample >("FWaveformSample")
         .def_readwrite("LeftAmplitude", &FWaveformSample::LeftAmplitude)
         .def_readwrite("RightAmplitude", &FWaveformSample::RightAmplitude)
         .def_readwrite("LeftFunction", &FWaveformSample::LeftFunction)

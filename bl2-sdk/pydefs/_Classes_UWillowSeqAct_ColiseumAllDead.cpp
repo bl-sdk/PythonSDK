@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_ColiseumAllDead()
 {
-    class_< UWillowSeqAct_ColiseumAllDead, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_ColiseumAllDead", no_init)
-        .def("StaticClass", &UWillowSeqAct_ColiseumAllDead::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_ColiseumAllDead,  USequenceAction   >("UWillowSeqAct_ColiseumAllDead")
+        .def("StaticClass", &UWillowSeqAct_ColiseumAllDead::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_ColiseumAllDead::eventActivated)
         .staticmethod("StaticClass")
   ;

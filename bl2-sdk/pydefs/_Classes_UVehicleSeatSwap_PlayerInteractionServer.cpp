@@ -1,17 +1,17 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer()
 {
-    class_< UVehicleSeatSwap_PlayerInteractionServer, bases< UPlayerInteractionServer >  , boost::noncopyable>("UVehicleSeatSwap_PlayerInteractionServer", no_init)
+    py::class_< UVehicleSeatSwap_PlayerInteractionServer,  UPlayerInteractionServer   >("UVehicleSeatSwap_PlayerInteractionServer")
         .def_readwrite("PlayerVehicle", &UVehicleSeatSwap_PlayerInteractionServer::PlayerVehicle)
         .def_readwrite("RequestedSeat", &UVehicleSeatSwap_PlayerInteractionServer::RequestedSeat)
-        .def("StaticClass", &UVehicleSeatSwap_PlayerInteractionServer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleSeatSwap_PlayerInteractionServer::StaticClass, py::return_value_policy::reference)
         .def("IsValid", &UVehicleSeatSwap_PlayerInteractionServer::IsValid)
         .def("initialize", &UVehicleSeatSwap_PlayerInteractionServer::initialize)
-        .def("GetClientType", &UVehicleSeatSwap_PlayerInteractionServer::GetClientType, return_value_policy< reference_existing_object >())
+        .def("GetClientType", &UVehicleSeatSwap_PlayerInteractionServer::GetClientType, py::return_value_policy::reference)
         .def("GetInitialMessageForPlayer", &UVehicleSeatSwap_PlayerInteractionServer::GetInitialMessageForPlayer)
         .def("HandleMessage", &UVehicleSeatSwap_PlayerInteractionServer::HandleMessage)
         .staticmethod("StaticClass")

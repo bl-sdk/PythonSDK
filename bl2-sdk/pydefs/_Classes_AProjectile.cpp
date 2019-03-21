@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AProjectile()
 {
-    class_< AProjectile, bases< AActor >  , boost::noncopyable>("AProjectile", no_init)
+    py::class_< AProjectile,  AActor   >("AProjectile")
         .def_readwrite("Speed", &AProjectile::Speed)
         .def_readwrite("MaxSpeed", &AProjectile::MaxSpeed)
         .def_readwrite("ZeroCollider", &AProjectile::ZeroCollider)
@@ -26,7 +26,7 @@ void Export_pystes_AProjectile()
         .def_readwrite("ImpactedActor", &AProjectile::ImpactedActor)
         .def_readwrite("NetCullDistanceSquared", &AProjectile::NetCullDistanceSquared)
         .def_readwrite("CylinderComponent", &AProjectile::CylinderComponent)
-        .def("StaticClass", &AProjectile::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AProjectile::StaticClass, py::return_value_policy::reference)
         .def("ApplyFluidSurfaceImpact", &AProjectile::ApplyFluidSurfaceImpact)
         .def("GetRange", &AProjectile::GetRange)
         .def("StaticGetTimeToLocation", &AProjectile::StaticGetTimeToLocation)

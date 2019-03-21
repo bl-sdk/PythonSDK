@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGearboxDialogNameTag()
 {
-    class_< UGearboxDialogNameTag, bases< UGBXDefinition >  , boost::noncopyable>("UGearboxDialogNameTag", no_init)
+    py::class_< UGearboxDialogNameTag,  UGBXDefinition   >("UGearboxDialogNameTag")
         .def_readwrite("NameTag", &UGearboxDialogNameTag::NameTag)
         .def_readwrite("ParentTag", &UGearboxDialogNameTag::ParentTag)
-        .def("StaticClass", &UGearboxDialogNameTag::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGearboxDialogNameTag::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

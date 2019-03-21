@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FSwoopAttackData()
 {
-    class_< FSwoopAttackData >("FSwoopAttackData", no_init)
+    py::class_< FSwoopAttackData >("FSwoopAttackData")
         .def_readwrite("Distance", &FSwoopAttackData::Distance)
   ;
 }

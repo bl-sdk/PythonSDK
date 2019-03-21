@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FItemSettings()
 {
-    class_< FItemSettings >("FItemSettings", no_init)
+    py::class_< FItemSettings >("FItemSettings")
         .def_readwrite("ItemDefinition", &FItemSettings::ItemDefinition)
         .def_readwrite("BalanceDefinition", &FItemSettings::BalanceDefinition)
         .def_readwrite("ManufacturerDefinition", &FItemSettings::ManufacturerDefinition)

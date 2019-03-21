@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FModifierValuePresentationData()
 {
-    class_< FModifierValuePresentationData >("FModifierValuePresentationData", no_init)
+    py::class_< FModifierValuePresentationData >("FModifierValuePresentationData")
         .def_readwrite("AttributePresentation", &FModifierValuePresentationData::AttributePresentation)
         .def_readwrite("OptionalConstraintPresentation", &FModifierValuePresentationData::OptionalConstraintPresentation)
         .def_readwrite("ModifierValue", &FModifierValuePresentationData::ModifierValue)

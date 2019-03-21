@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FFriendsQuery()
 {
-    class_< FFriendsQuery >("FFriendsQuery", no_init)
+    py::class_< FFriendsQuery >("FFriendsQuery")
         .def_readwrite("UniqueId", &FFriendsQuery::UniqueId)
   ;
 }

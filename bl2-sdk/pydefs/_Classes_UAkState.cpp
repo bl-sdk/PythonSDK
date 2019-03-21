@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAkState()
 {
-    class_< UAkState, bases< UAkObject >  , boost::noncopyable>("UAkState", no_init)
+    py::class_< UAkState,  UAkObject   >("UAkState")
         .def_readwrite("StateGroup", &UAkState::StateGroup)
-        .def("StaticClass", &UAkState::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAkState::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

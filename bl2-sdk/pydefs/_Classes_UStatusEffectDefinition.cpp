@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UStatusEffectDefinition()
 {
-    class_< UStatusEffectDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UStatusEffectDefinition", no_init)
+    py::class_< UStatusEffectDefinition,  UGBXDefinition   >("UStatusEffectDefinition")
         .def_readwrite("BaseDuration", &UStatusEffectDefinition::BaseDuration)
         .def_readwrite("BaseSpreadTimeInterval", &UStatusEffectDefinition::BaseSpreadTimeInterval)
         .def_readwrite("BaseSpreadDistanceFromSource", &UStatusEffectDefinition::BaseSpreadDistanceFromSource)
@@ -22,7 +22,7 @@ void Export_pystes_UStatusEffectDefinition()
         .def_readwrite("DamageTypeDefinition", &UStatusEffectDefinition::DamageTypeDefinition)
         .def_readwrite("AppliedEffectStatId", &UStatusEffectDefinition::AppliedEffectStatId)
         .def_readwrite("ScreenParticleInit", &UStatusEffectDefinition::ScreenParticleInit)
-        .def("StaticClass", &UStatusEffectDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UStatusEffectDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

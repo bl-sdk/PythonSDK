@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_CloseColiseumOverlay()
 {
-    class_< UWillowSeqAct_CloseColiseumOverlay, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_CloseColiseumOverlay", no_init)
-        .def("StaticClass", &UWillowSeqAct_CloseColiseumOverlay::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowSeqAct_CloseColiseumOverlay,  USequenceAction   >("UWillowSeqAct_CloseColiseumOverlay")
+        .def("StaticClass", &UWillowSeqAct_CloseColiseumOverlay::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_CloseColiseumOverlay::eventActivated)
         .staticmethod("StaticClass")
   ;

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehaviorAliasLookupDefinition()
 {
-    class_< UBehaviorAliasLookupDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBehaviorAliasLookupDefinition", no_init)
+    py::class_< UBehaviorAliasLookupDefinition,  UGBXDefinition   >("UBehaviorAliasLookupDefinition")
         .def_readwrite("BehaviorAliasList", &UBehaviorAliasLookupDefinition::BehaviorAliasList)
-        .def("StaticClass", &UBehaviorAliasLookupDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehaviorAliasLookupDefinition::StaticClass, py::return_value_policy::reference)
         .def("RunBehaviorAlias", &UBehaviorAliasLookupDefinition::RunBehaviorAlias)
         .staticmethod("StaticClass")
   ;

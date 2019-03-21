@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDamagePipeline()
 {
-    class_< UWillowDamagePipeline, bases< UDamagePipeline >  , boost::noncopyable>("UWillowDamagePipeline", no_init)
+    py::class_< UWillowDamagePipeline,  UDamagePipeline   >("UWillowDamagePipeline")
         .def_readwrite("WillowDamageTypeDef", &UWillowDamagePipeline::WillowDamageTypeDef)
         .def_readwrite("WillowImpactDefinition", &UWillowDamagePipeline::WillowImpactDefinition)
         .def_readwrite("DamageInstigator", &UWillowDamagePipeline::DamageInstigator)
@@ -41,7 +41,7 @@ void Export_pystes_UWillowDamagePipeline()
         .def_readwrite("BulletFromClipType", &UWillowDamagePipeline::BulletFromClipType)
         .def_readwrite("TakingRadiusDamageOnHitRegions", &UWillowDamagePipeline::TakingRadiusDamageOnHitRegions)
         .def_readwrite("ResistDamageReductionThreshold", &UWillowDamagePipeline::ResistDamageReductionThreshold)
-        .def("StaticClass", &UWillowDamagePipeline::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDamagePipeline::StaticClass, py::return_value_policy::reference)
         .def("eventKillPlayer", &UWillowDamagePipeline::eventKillPlayer)
         .def("GetWouldBeHealedSomehowByFriendlyFire", &UWillowDamagePipeline::GetWouldBeHealedSomehowByFriendlyFire)
         .def("DamageDealtSkillEventsTriggered", &UWillowDamagePipeline::DamageDealtSkillEventsTriggered)

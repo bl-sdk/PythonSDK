@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLightmassPrimitiveSettings()
 {
-    class_< FLightmassPrimitiveSettings >("FLightmassPrimitiveSettings", no_init)
+    py::class_< FLightmassPrimitiveSettings >("FLightmassPrimitiveSettings")
         .def_readwrite("EmissiveLightFalloffExponent", &FLightmassPrimitiveSettings::EmissiveLightFalloffExponent)
         .def_readwrite("EmissiveLightExplicitInfluenceRadius", &FLightmassPrimitiveSettings::EmissiveLightExplicitInfluenceRadius)
         .def_readwrite("EmissiveBoost", &FLightmassPrimitiveSettings::EmissiveBoost)

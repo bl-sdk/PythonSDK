@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FOnlineRegistrant()
 {
-    class_< FOnlineRegistrant >("FOnlineRegistrant", no_init)
+    py::class_< FOnlineRegistrant >("FOnlineRegistrant")
         .def_readwrite("PlayerNetId", &FOnlineRegistrant::PlayerNetId)
   ;
 }

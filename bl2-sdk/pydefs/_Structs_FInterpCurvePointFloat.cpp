@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInterpCurvePointFloat()
 {
-    class_< FInterpCurvePointFloat >("FInterpCurvePointFloat", no_init)
+    py::class_< FInterpCurvePointFloat >("FInterpCurvePointFloat")
         .def_readwrite("InVal", &FInterpCurvePointFloat::InVal)
         .def_readwrite("OutVal", &FInterpCurvePointFloat::OutVal)
         .def_readwrite("ArriveTangent", &FInterpCurvePointFloat::ArriveTangent)

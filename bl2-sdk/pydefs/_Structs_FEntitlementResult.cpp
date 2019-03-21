@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEntitlementResult()
 {
-    class_< FEntitlementResult >("FEntitlementResult", no_init)
+    py::class_< FEntitlementResult >("FEntitlementResult")
         .def_readwrite("Identifier", &FEntitlementResult::Identifier)
         .def_readwrite("Payload", &FEntitlementResult::Payload)
         .def_readwrite("Id", &FEntitlementResult::Id)

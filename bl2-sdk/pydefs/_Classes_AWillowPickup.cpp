@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPickup()
 {
-    class_< AWillowPickup, bases< ADroppedPickup >  , boost::noncopyable>("AWillowPickup", no_init)
+    py::class_< AWillowPickup,  ADroppedPickup   >("AWillowPickup")
         .def_readwrite("VfTable_IIMission", &AWillowPickup::VfTable_IIMission)
         .def_readwrite("VfTable_IIMissionDirector", &AWillowPickup::VfTable_IIMissionDirector)
         .def_readwrite("VfTable_IIFocusable", &AWillowPickup::VfTable_IIFocusable)
@@ -33,7 +33,7 @@ void Export_pystes_AWillowPickup()
         .def_readwrite("InteractionIconOverride", &AWillowPickup::InteractionIconOverride)
         .def_readwrite("CostsToPickUpAmount", &AWillowPickup::CostsToPickUpAmount)
         .def_readwrite("PickedUpByActor", &AWillowPickup::PickedUpByActor)
-        .def("StaticClass", &AWillowPickup::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowPickup::StaticClass, py::return_value_policy::reference)
         .def("OnPlayerClosedMissionUI", &AWillowPickup::OnPlayerClosedMissionUI)
         .def("OnPlayerOpenedMissionUI", &AWillowPickup::OnPlayerOpenedMissionUI)
         .def("SetInteractionIcon", &AWillowPickup::SetInteractionIcon)
@@ -49,7 +49,7 @@ void Export_pystes_AWillowPickup()
         .def("eventBeginShrinking", &AWillowPickup::eventBeginShrinking)
         .def("PickedUpBy", &AWillowPickup::PickedUpBy)
         .def("GiveTo", &AWillowPickup::GiveTo)
-        .def("CreatePickupFromMemento", &AWillowPickup::CreatePickupFromMemento, return_value_policy< reference_existing_object >())
+        .def("CreatePickupFromMemento", &AWillowPickup::CreatePickupFromMemento, py::return_value_policy::reference)
         .def("eventConvertFixedToRigidBody", &AWillowPickup::eventConvertFixedToRigidBody)
         .def("eventConvertRigidBodyToFixed", &AWillowPickup::eventConvertRigidBodyToFixed)
         .def("FailedPickup", &AWillowPickup::FailedPickup)
@@ -57,7 +57,7 @@ void Export_pystes_AWillowPickup()
         .def("AdjustPickupPhysicsAndCollisionForBeingDropped", &AWillowPickup::AdjustPickupPhysicsAndCollisionForBeingDropped)
         .def("AdjustPickupPhysicsAndCollisionForBeingAttached", &AWillowPickup::AdjustPickupPhysicsAndCollisionForBeingAttached)
         .def("AttachPickupToWorldBody", &AWillowPickup::AttachPickupToWorldBody)
-        .def("GetPickupableMeshActor", &AWillowPickup::GetPickupableMeshActor, return_value_policy< reference_existing_object >())
+        .def("GetPickupableMeshActor", &AWillowPickup::GetPickupableMeshActor, py::return_value_policy::reference)
         .def("Pickupable_IsEnabled", &AWillowPickup::Pickupable_IsEnabled)
         .def("SetSaveRotation", &AWillowPickup::SetSaveRotation)
         .def("GetSaveRotation", &AWillowPickup::GetSaveRotation)

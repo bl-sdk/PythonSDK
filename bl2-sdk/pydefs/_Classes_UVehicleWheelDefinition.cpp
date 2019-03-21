@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UVehicleWheelDefinition()
 {
-    class_< UVehicleWheelDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UVehicleWheelDefinition", no_init)
+    py::class_< UVehicleWheelDefinition,  UGBXDefinition   >("UVehicleWheelDefinition")
         .def_readwrite("BoneOffset", &UVehicleWheelDefinition::BoneOffset)
         .def_readwrite("WheelRadius", &UVehicleWheelDefinition::WheelRadius)
         .def_readwrite("SuspensionTravel", &UVehicleWheelDefinition::SuspensionTravel)
@@ -16,7 +16,7 @@ void Export_pystes_UVehicleWheelDefinition()
         .def_readwrite("HandbrakeLatSlipFactor", &UVehicleWheelDefinition::HandbrakeLatSlipFactor)
         .def_readwrite("ParkedSlipFactorLat", &UVehicleWheelDefinition::ParkedSlipFactorLat)
         .def_readwrite("ParkedSlipFactorLong", &UVehicleWheelDefinition::ParkedSlipFactorLong)
-        .def("StaticClass", &UVehicleWheelDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UVehicleWheelDefinition::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

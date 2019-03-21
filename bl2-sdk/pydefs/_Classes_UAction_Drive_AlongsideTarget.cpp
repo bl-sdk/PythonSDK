@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_Drive_AlongsideTarget()
 {
-    class_< UAction_Drive_AlongsideTarget, bases< UWillowActionSequencePawn >  , boost::noncopyable>("UAction_Drive_AlongsideTarget", no_init)
+    py::class_< UAction_Drive_AlongsideTarget,  UWillowActionSequencePawn   >("UAction_Drive_AlongsideTarget")
         .def_readwrite("IdealDistanceFromTarget", &UAction_Drive_AlongsideTarget::IdealDistanceFromTarget)
         .def_readwrite("IdealDistanceAheadOfTarget", &UAction_Drive_AlongsideTarget::IdealDistanceAheadOfTarget)
         .def_readwrite("MinSpeedMultiplierWhenAheadOfTarget", &UAction_Drive_AlongsideTarget::MinSpeedMultiplierWhenAheadOfTarget)
@@ -43,7 +43,7 @@ void Export_pystes_UAction_Drive_AlongsideTarget()
         .def_readwrite("RequiredDelayBetweenBoosts", &UAction_Drive_Pursuit::RequiredDelayBetweenBoosts)
         .def_readwrite("BreadCrumbCoalesceThreshold", &UAction_Drive_Pursuit::BreadCrumbCoalesceThreshold)
         .def_readwrite("OutOfCombatAreaGracePeriod", &UAction_Drive_Pursuit::OutOfCombatAreaGracePeriod)
-        .def("StaticClass", &UAction_Drive_AlongsideTarget::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAction_Drive_AlongsideTarget::StaticClass, py::return_value_policy::reference)
         .def("GetPursuitPointAndSpeedMultiplier", &UAction_Drive_AlongsideTarget::GetPursuitPointAndSpeedMultiplier)
         .def("DetermineClosestFlankPoint", &UAction_Drive_AlongsideTarget::DetermineClosestFlankPoint)
         .def("DisplayDebugBreadCrumbs", &UAction_Drive_Pursuit::DisplayDebugBreadCrumbs)

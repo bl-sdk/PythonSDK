@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNodeBlendDirectional()
 {
-    class_< UAnimNodeBlendDirectional, bases< UAnimNodeBlendBase >  , boost::noncopyable>("UAnimNodeBlendDirectional", no_init)
+    py::class_< UAnimNodeBlendDirectional,  UAnimNodeBlendBase   >("UAnimNodeBlendDirectional")
         .def_readwrite("DirDegreesPerSecond", &UAnimNodeBlendDirectional::DirDegreesPerSecond)
         .def_readwrite("DirAngle", &UAnimNodeBlendDirectional::DirAngle)
         .def_readwrite("SingleAnimAtOrAboveLOD", &UAnimNodeBlendDirectional::SingleAnimAtOrAboveLOD)
         .def_readwrite("RotationOffset", &UAnimNodeBlendDirectional::RotationOffset)
-        .def("StaticClass", &UAnimNodeBlendDirectional::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNodeBlendDirectional::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

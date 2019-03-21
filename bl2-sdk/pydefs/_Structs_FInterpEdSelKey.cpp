@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FInterpEdSelKey()
 {
-    class_< FInterpEdSelKey >("FInterpEdSelKey", no_init)
+    py::class_< FInterpEdSelKey >("FInterpEdSelKey")
         .def_readwrite("Group", &FInterpEdSelKey::Group)
         .def_readwrite("Track", &FInterpEdSelKey::Track)
         .def_readwrite("KeyIndex", &FInterpEdSelKey::KeyIndex)

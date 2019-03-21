@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBehavior_WeaponVisibleAmmoState()
 {
-    class_< UBehavior_WeaponVisibleAmmoState, bases< UBehaviorBase >  , boost::noncopyable>("UBehavior_WeaponVisibleAmmoState", no_init)
+    py::class_< UBehavior_WeaponVisibleAmmoState,  UBehaviorBase   >("UBehavior_WeaponVisibleAmmoState")
         .def_readwrite("State", &UBehavior_WeaponVisibleAmmoState::State)
-        .def("StaticClass", &UBehavior_WeaponVisibleAmmoState::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UBehavior_WeaponVisibleAmmoState::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_WeaponVisibleAmmoState::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

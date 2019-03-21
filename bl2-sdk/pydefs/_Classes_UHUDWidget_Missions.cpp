@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHUDWidget_Missions()
 {
-    class_< UHUDWidget_Missions, bases< UHUDWidget_Base >  , boost::noncopyable>("UHUDWidget_Missions", no_init)
+    py::class_< UHUDWidget_Missions,  UHUDWidget_Base   >("UHUDWidget_Missions")
         .def_readwrite("CachedActiveMissionObjectives", &UHUDWidget_Missions::CachedActiveMissionObjectives)
         .def_readwrite("CachedBranchedMissionObjectives", &UHUDWidget_Missions::CachedBranchedMissionObjectives)
         .def_readwrite("DisplayedActiveMissionObjectives", &UHUDWidget_Missions::DisplayedActiveMissionObjectives)
@@ -29,7 +29,7 @@ void Export_pystes_UHUDWidget_Missions()
         .def_readwrite("MessageQueue", &UHUDWidget_Missions::MessageQueue)
         .def_readwrite("ProcessedMessageQueue", &UHUDWidget_Missions::ProcessedMessageQueue)
         .def_readwrite("ActiveFlyingCheckmarks", &UHUDWidget_Missions::ActiveFlyingCheckmarks)
-        .def("StaticClass", &UHUDWidget_Missions::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHUDWidget_Missions::StaticClass, py::return_value_policy::reference)
         .def("ClearAllCheckmarks", &UHUDWidget_Missions::ClearAllCheckmarks)
         .def("ClearNextCheckmark", &UHUDWidget_Missions::ClearNextCheckmark)
         .def("FindModuleNumForDisplayedObjective", &UHUDWidget_Missions::FindModuleNumForDisplayedObjective)

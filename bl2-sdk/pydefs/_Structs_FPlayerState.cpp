@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPlayerState()
 {
-    class_< FPlayerState >("FPlayerState", no_init)
+    py::class_< FPlayerState >("FPlayerState")
         .def_readwrite("PlayerIndex", &FPlayerState::PlayerIndex)
         .def_readwrite("CurrentTeamIndex", &FPlayerState::CurrentTeamIndex)
         .def_readwrite("TimeSpawned", &FPlayerState::TimeSpawned)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAudioDevice()
 {
-    class_< UAudioDevice, bases< USubsystem >  , boost::noncopyable>("UAudioDevice", no_init)
+    py::class_< UAudioDevice,  USubsystem   >("UAudioDevice")
         .def_readwrite("MaxChannels", &UAudioDevice::MaxChannels)
         .def_readwrite("CommonAudioPoolSize", &UAudioDevice::CommonAudioPoolSize)
         .def_readwrite("LowPassFilterResonance", &UAudioDevice::LowPassFilterResonance)
@@ -51,8 +51,8 @@ void Export_pystes_UAudioDevice()
         .def_readwrite("DebugState", &UAudioDevice::DebugState)
         .def_readwrite("TransientMasterVolume", &UAudioDevice::TransientMasterVolume)
         .def_readwrite("LastUpdateTime", &UAudioDevice::LastUpdateTime)
-        .def("StaticClass", &UAudioDevice::StaticClass, return_value_policy< reference_existing_object >())
-        .def("FindSoundClass", &UAudioDevice::FindSoundClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAudioDevice::StaticClass, py::return_value_policy::reference)
+        .def("FindSoundClass", &UAudioDevice::FindSoundClass, py::return_value_policy::reference)
         .def("SetSoundMode", &UAudioDevice::SetSoundMode)
         .staticmethod("StaticClass")
   ;

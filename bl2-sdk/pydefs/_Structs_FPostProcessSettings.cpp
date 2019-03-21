@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FPostProcessSettings()
 {
-    class_< FPostProcessSettings >("FPostProcessSettings", no_init)
+    py::class_< FPostProcessSettings >("FPostProcessSettings")
         .def_readwrite("Bloom_Scale", &FPostProcessSettings::Bloom_Scale)
         .def_readwrite("Bloom_Threshold", &FPostProcessSettings::Bloom_Threshold)
         .def_readwrite("Bloom_Tint", &FPostProcessSettings::Bloom_Tint)

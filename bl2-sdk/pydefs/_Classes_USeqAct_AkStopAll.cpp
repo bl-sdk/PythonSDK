@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_AkStopAll()
 {
-    class_< USeqAct_AkStopAll, bases< USequenceAction >  , boost::noncopyable>("USeqAct_AkStopAll", no_init)
-        .def("StaticClass", &USeqAct_AkStopAll::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< USeqAct_AkStopAll,  USequenceAction   >("USeqAct_AkStopAll")
+        .def("StaticClass", &USeqAct_AkStopAll::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

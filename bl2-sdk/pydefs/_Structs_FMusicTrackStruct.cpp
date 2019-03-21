@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FMusicTrackStruct()
 {
-    class_< FMusicTrackStruct >("FMusicTrackStruct", no_init)
+    py::class_< FMusicTrackStruct >("FMusicTrackStruct")
         .def_readwrite("TheSoundCue", &FMusicTrackStruct::TheSoundCue)
         .def_readwrite("FadeInTime", &FMusicTrackStruct::FadeInTime)
         .def_readwrite("FadeInVolumeLevel", &FMusicTrackStruct::FadeInVolumeLevel)

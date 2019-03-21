@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowReplicatedAmbientSoundRenderingComponent()
 {
-    class_< UWillowReplicatedAmbientSoundRenderingComponent, bases< UPrimitiveComponent >  , boost::noncopyable>("UWillowReplicatedAmbientSoundRenderingComponent", no_init)
-        .def("StaticClass", &UWillowReplicatedAmbientSoundRenderingComponent::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowReplicatedAmbientSoundRenderingComponent,  UPrimitiveComponent   >("UWillowReplicatedAmbientSoundRenderingComponent")
+        .def("StaticClass", &UWillowReplicatedAmbientSoundRenderingComponent::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

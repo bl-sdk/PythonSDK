@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowSeqAct_GiveMission()
 {
-    class_< UWillowSeqAct_GiveMission, bases< USequenceAction >  , boost::noncopyable>("UWillowSeqAct_GiveMission", no_init)
+    py::class_< UWillowSeqAct_GiveMission,  USequenceAction   >("UWillowSeqAct_GiveMission")
         .def_readwrite("AssociatedMission", &UWillowSeqAct_GiveMission::AssociatedMission)
-        .def("StaticClass", &UWillowSeqAct_GiveMission::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowSeqAct_GiveMission::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

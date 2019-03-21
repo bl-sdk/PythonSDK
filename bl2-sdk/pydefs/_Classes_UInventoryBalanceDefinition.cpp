@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInventoryBalanceDefinition()
 {
-    class_< UInventoryBalanceDefinition, bases< UBaseBalanceDefinition >  , boost::noncopyable>("UInventoryBalanceDefinition", no_init)
+    py::class_< UInventoryBalanceDefinition,  UBaseBalanceDefinition   >("UInventoryBalanceDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UInventoryBalanceDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("InventoryDefinition", &UInventoryBalanceDefinition::InventoryDefinition)
         .def_readwrite("BaseDefinition", &UInventoryBalanceDefinition::BaseDefinition)
@@ -13,14 +13,14 @@ void Export_pystes_UInventoryBalanceDefinition()
         .def_readwrite("DlcItemSet", &UInventoryBalanceDefinition::DlcItemSet)
         .def_readwrite("PartListCollection", &UInventoryBalanceDefinition::PartListCollection)
         .def_readwrite("PlayerClassId", &UInventoryBalanceDefinition::PlayerClassId)
-        .def("StaticClass", &UInventoryBalanceDefinition::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetDownloadableContentDefinition", &UInventoryBalanceDefinition::GetDownloadableContentDefinition, return_value_policy< reference_existing_object >())
-        .def("GetInventoryPartListCollection", &UInventoryBalanceDefinition::GetInventoryPartListCollection, return_value_policy< reference_existing_object >())
-        .def("GetInventoryDefinitionForManufacturerGrade", &UInventoryBalanceDefinition::GetInventoryDefinitionForManufacturerGrade, return_value_policy< reference_existing_object >())
-        .def("HACKGetVehicleInventoryDefinition", &UInventoryBalanceDefinition::HACKGetVehicleInventoryDefinition, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInventoryBalanceDefinition::StaticClass, py::return_value_policy::reference)
+        .def("GetDownloadableContentDefinition", &UInventoryBalanceDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
+        .def("GetInventoryPartListCollection", &UInventoryBalanceDefinition::GetInventoryPartListCollection, py::return_value_policy::reference)
+        .def("GetInventoryDefinitionForManufacturerGrade", &UInventoryBalanceDefinition::GetInventoryDefinitionForManufacturerGrade, py::return_value_policy::reference)
+        .def("HACKGetVehicleInventoryDefinition", &UInventoryBalanceDefinition::HACKGetVehicleInventoryDefinition, py::return_value_policy::reference)
         .def("GetExpLevelFromManufacturerData", &UInventoryBalanceDefinition::GetExpLevelFromManufacturerData)
-        .def("GetRequiredPlayerClassId", &UInventoryBalanceDefinition::GetRequiredPlayerClassId, return_value_policy< reference_existing_object >())
-        .def("GetInventoryDefinition", &UInventoryBalanceDefinition::GetInventoryDefinition, return_value_policy< reference_existing_object >())
+        .def("GetRequiredPlayerClassId", &UInventoryBalanceDefinition::GetRequiredPlayerClassId, py::return_value_policy::reference)
+        .def("GetInventoryDefinition", &UInventoryBalanceDefinition::GetInventoryDefinition, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

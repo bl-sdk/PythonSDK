@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UHashDisplayGFxMovie()
 {
-    class_< UHashDisplayGFxMovie, bases< UWillowGFxMovie >  , boost::noncopyable>("UHashDisplayGFxMovie", no_init)
+    py::class_< UHashDisplayGFxMovie,  UWillowGFxMovie   >("UHashDisplayGFxMovie")
         .def_readwrite("WInvMgr", &UHashDisplayGFxMovie::WInvMgr)
         .def_readwrite("HashDisplayDef", &UHashDisplayGFxMovie::HashDisplayDef)
         .def_readwrite("LeftSideTextList", &UHashDisplayGFxMovie::LeftSideTextList)
@@ -19,7 +19,7 @@ void Export_pystes_UHashDisplayGFxMovie()
         .def_readwrite("UsedWeaponTypes", &UHashDisplayGFxMovie::UsedWeaponTypes)
         .def_readwrite("EquippedLabels", &UHashDisplayGFxMovie::EquippedLabels)
         .def_readwrite("EmptySlotText", &UHashDisplayGFxMovie::EmptySlotText)
-        .def("StaticClass", &UHashDisplayGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UHashDisplayGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("ConfigureForPlayer", &UHashDisplayGFxMovie::ConfigureForPlayer)
         .def("FadePopup_AS", &UHashDisplayGFxMovie::FadePopup_AS)
         .def("ShowPopup_AS", &UHashDisplayGFxMovie::ShowPopup_AS)

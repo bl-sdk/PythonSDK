@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPauseGFxMovie()
 {
-    class_< UPauseGFxMovie, bases< UFrontendGFxMovie >  , boost::noncopyable>("UPauseGFxMovie", no_init)
+    py::class_< UPauseGFxMovie,  UFrontendGFxMovie   >("UPauseGFxMovie")
         .def_readwrite("PauseDlg", &UPauseGFxMovie::PauseDlg)
         .def_readwrite("SavingDlg", &UPauseGFxMovie::SavingDlg)
         .def_readwrite("SaveDurationTicker", &UPauseGFxMovie::SaveDurationTicker)
@@ -16,7 +16,7 @@ void Export_pystes_UPauseGFxMovie()
         .def_readwrite("ResumeString", &UPauseGFxMovie::ResumeString)
         .def_readwrite("SplitPlayerPRI", &UPauseGFxMovie::SplitPlayerPRI)
         .def_readwrite("SaveOwner", &UPauseGFxMovie::SaveOwner)
-        .def("StaticClass", &UPauseGFxMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPauseGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extFrontEndMenuOnLoad", &UPauseGFxMovie::extFrontEndMenuOnLoad)
         .def("LanNetworkOptionsAvailable", &UPauseGFxMovie::LanNetworkOptionsAvailable)
         .def("OnlineNetworkOptionsAvailable", &UPauseGFxMovie::OnlineNetworkOptionsAvailable)

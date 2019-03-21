@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTranslatorTag()
 {
-    class_< UTranslatorTag, bases< UObject >  , boost::noncopyable>("UTranslatorTag", no_init)
+    py::class_< UTranslatorTag,  UObject   >("UTranslatorTag")
         .def_readwrite("Tag", &UTranslatorTag::Tag)
-        .def("StaticClass", &UTranslatorTag::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTranslatorTag::StaticClass, py::return_value_policy::reference)
         .def("Translate", &UTranslatorTag::Translate)
         .staticmethod("StaticClass")
   ;

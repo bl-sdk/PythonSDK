@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowWaypoint()
 {
-    class_< AWillowWaypoint, bases< ATrigger >  , boost::noncopyable>("AWillowWaypoint", no_init)
+    py::class_< AWillowWaypoint,  ATrigger   >("AWillowWaypoint")
         .def_readwrite("VfTable_IIMission", &AWillowWaypoint::VfTable_IIMission)
         .def_readwrite("WaypointInfo", &AWillowWaypoint::WaypointInfo)
         .def_readwrite("AreaRadius", &AWillowWaypoint::AreaRadius)
@@ -17,7 +17,7 @@ void Export_pystes_AWillowWaypoint()
         .def_readwrite("ParticleHighlight", &AWillowTrigger::ParticleHighlight)
         .def_readwrite("TriggerSprite", &AWillowTrigger::TriggerSprite)
         .def_readwrite("CostsToUseAmount", &AWillowTrigger::CostsToUseAmount)
-        .def("StaticClass", &AWillowWaypoint::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowWaypoint::StaticClass, py::return_value_policy::reference)
         .def("eventMissionReactionObjectiveComplete", &AWillowWaypoint::eventMissionReactionObjectiveComplete)
         .def("eventMissionReactionObjectiveCleared", &AWillowWaypoint::eventMissionReactionObjectiveCleared)
         .def("eventMissionReactionObjectiveUpdated", &AWillowWaypoint::eventMissionReactionObjectiveUpdated)

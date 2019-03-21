@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTOCInfo()
 {
-    class_< FTOCInfo >("FTOCInfo", no_init)
+    py::class_< FTOCInfo >("FTOCInfo")
         .def_readwrite("TOC", &FTOCInfo::TOC)
         .def_readwrite("RootPath", &FTOCInfo::RootPath)
         .def_readwrite("Path", &FTOCInfo::Path)

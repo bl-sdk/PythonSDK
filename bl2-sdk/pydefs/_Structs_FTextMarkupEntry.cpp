@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FTextMarkupEntry()
 {
-    class_< FTextMarkupEntry >("FTextMarkupEntry", no_init)
+    py::class_< FTextMarkupEntry >("FTextMarkupEntry")
         .def_readwrite("MarkupTag", &FTextMarkupEntry::MarkupTag)
         .def_readwrite("HTMLMarkupBeginText", &FTextMarkupEntry::HTMLMarkupBeginText)
         .def_readwrite("HTMLMarkupEndText", &FTextMarkupEntry::HTMLMarkupEndText)

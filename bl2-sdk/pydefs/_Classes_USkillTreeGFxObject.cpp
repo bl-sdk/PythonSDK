@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USkillTreeGFxObject()
 {
-    class_< USkillTreeGFxObject, bases< UGFxObject >  , boost::noncopyable>("USkillTreeGFxObject", no_init)
+    py::class_< USkillTreeGFxObject,  UGFxObject   >("USkillTreeGFxObject")
         .def_readwrite("Artifacts", &USkillTreeGFxObject::Artifacts)
         .def_readwrite("NoArtifactsDescription", &USkillTreeGFxObject::NoArtifactsDescription)
         .def_readwrite("ArtifactsDescription", &USkillTreeGFxObject::ArtifactsDescription)
@@ -59,12 +59,12 @@ void Export_pystes_USkillTreeGFxObject()
         .def_readwrite("bTree1Init", &USkillTreeGFxObject::bTree1Init)
         .def_readwrite("bTree2Init", &USkillTreeGFxObject::bTree2Init)
         .def_readwrite("bTree3Init", &USkillTreeGFxObject::bTree3Init)
-        .def("StaticClass", &USkillTreeGFxObject::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USkillTreeGFxObject::StaticClass, py::return_value_policy::reference)
         .def("eventOnCellRolledOver", &USkillTreeGFxObject::eventOnCellRolledOver)
         .def("CellRolledOver", &USkillTreeGFxObject::CellRolledOver)
         .def("eventOnCellClicked", &USkillTreeGFxObject::eventOnCellClicked)
         .def("CellClicked", &USkillTreeGFxObject::CellClicked)
-        .def("GetPlayerClassMod", &USkillTreeGFxObject::GetPlayerClassMod, return_value_policy< reference_existing_object >())
+        .def("GetPlayerClassMod", &USkillTreeGFxObject::GetPlayerClassMod, py::return_value_policy::reference)
         .def("Flash_UpdateArtifactSelection", &USkillTreeGFxObject::Flash_UpdateArtifactSelection)
         .def("Flash_PopulateArtifactList", &USkillTreeGFxObject::Flash_PopulateArtifactList)
         .def("BuildArtifactList", &USkillTreeGFxObject::BuildArtifactList)
@@ -103,10 +103,10 @@ void Export_pystes_USkillTreeGFxObject()
         .def("eventGetEffectiveCurrentBranchNumber", &USkillTreeGFxObject::eventGetEffectiveCurrentBranchNumber)
         .def("UpdateTooltips", &USkillTreeGFxObject::UpdateTooltips)
         .def("PostNav", &USkillTreeGFxObject::PostNav)
-        .def("GetHighlightClip", &USkillTreeGFxObject::GetHighlightClip, return_value_policy< reference_existing_object >())
-        .def("GetCellClip", &USkillTreeGFxObject::GetCellClip, return_value_policy< reference_existing_object >())
+        .def("GetHighlightClip", &USkillTreeGFxObject::GetHighlightClip, py::return_value_policy::reference)
+        .def("GetCellClip", &USkillTreeGFxObject::GetCellClip, py::return_value_policy::reference)
         .def("GetUICell", &USkillTreeGFxObject::GetUICell)
-        .def("Navigate", &USkillTreeGFxObject::Navigate, return_value_policy< reference_existing_object >())
+        .def("Navigate", &USkillTreeGFxObject::Navigate, py::return_value_policy::reference)
         .def("Nav_Right", &USkillTreeGFxObject::Nav_Right)
         .def("Nav_Left", &USkillTreeGFxObject::Nav_Left)
         .def("Nav_Down", &USkillTreeGFxObject::Nav_Down)

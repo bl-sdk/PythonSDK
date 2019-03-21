@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxUIManagerDefinition()
 {
-    class_< UWillowGFxUIManagerDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UWillowGFxUIManagerDefinition", no_init)
+    py::class_< UWillowGFxUIManagerDefinition,  UGBXDefinition   >("UWillowGFxUIManagerDefinition")
         .def_readonly("MeshTranslation", &UWillowGFxUIManagerDefinition::MeshTranslation)
         .def_readwrite("MeshRotation", &UWillowGFxUIManagerDefinition::MeshRotation)
         .def_readwrite("ViewOffsetClamp", &UWillowGFxUIManagerDefinition::ViewOffsetClamp)
@@ -17,7 +17,7 @@ void Export_pystes_UWillowGFxUIManagerDefinition()
         .def_readwrite("TrainingDialogBoxDefinition_NoPause", &UWillowGFxUIManagerDefinition::TrainingDialogBoxDefinition_NoPause)
         .def_readwrite("EditDialogBoxDefinition", &UWillowGFxUIManagerDefinition::EditDialogBoxDefinition)
         .def_readwrite("RenderTextureSize", &UWillowGFxUIManagerDefinition::RenderTextureSize)
-        .def("StaticClass", &UWillowGFxUIManagerDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxUIManagerDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetTranslation", &UWillowGFxUIManagerDefinition::GetTranslation)
         .staticmethod("StaticClass")
   ;

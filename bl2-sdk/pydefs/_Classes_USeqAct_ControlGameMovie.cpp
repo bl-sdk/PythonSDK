@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_USeqAct_ControlGameMovie()
 {
-    class_< USeqAct_ControlGameMovie, bases< USeqAct_Latent >  , boost::noncopyable>("USeqAct_ControlGameMovie", no_init)
+    py::class_< USeqAct_ControlGameMovie,  USeqAct_Latent   >("USeqAct_ControlGameMovie")
         .def_readwrite("MovieName", &USeqAct_ControlGameMovie::MovieName)
         .def_readwrite("StartOfRenderingMovieFrame", &USeqAct_ControlGameMovie::StartOfRenderingMovieFrame)
         .def_readwrite("EndOfRenderingMovieFrame", &USeqAct_ControlGameMovie::EndOfRenderingMovieFrame)
-        .def("StaticClass", &USeqAct_ControlGameMovie::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &USeqAct_ControlGameMovie::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

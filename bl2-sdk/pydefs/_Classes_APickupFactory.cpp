@@ -1,18 +1,18 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_APickupFactory()
 {
-    class_< APickupFactory, bases< ANavigationPoint >  , boost::noncopyable>("APickupFactory", no_init)
+    py::class_< APickupFactory,  ANavigationPoint   >("APickupFactory")
         .def_readwrite("InventoryType", &APickupFactory::InventoryType)
         .def_readwrite("RespawnEffectTime", &APickupFactory::RespawnEffectTime)
         .def_readwrite("MaxDesireability", &APickupFactory::MaxDesireability)
         .def_readwrite("PickupMesh", &APickupFactory::PickupMesh)
         .def_readwrite("ReplacementFactory", &APickupFactory::ReplacementFactory)
         .def_readwrite("OriginalFactory", &APickupFactory::OriginalFactory)
-        .def("StaticClass", &APickupFactory::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &APickupFactory::StaticClass, py::return_value_policy::reference)
         .def("DelayRespawn", &APickupFactory::DelayRespawn)
         .def("eventDestroyed", &APickupFactory::eventDestroyed)
         .def("SetPickupVisible", &APickupFactory::SetPickupVisible)

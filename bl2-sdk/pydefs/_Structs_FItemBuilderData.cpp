@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FItemBuilderData()
 {
-    class_< FItemBuilderData >("FItemBuilderData", no_init)
+    py::class_< FItemBuilderData >("FItemBuilderData")
         .def_readwrite("TabName", &FItemBuilderData::TabName)
         .def_readwrite("ItemName", &FItemBuilderData::ItemName)
         .def_readwrite("BuildItemMessage", &FItemBuilderData::BuildItemMessage)

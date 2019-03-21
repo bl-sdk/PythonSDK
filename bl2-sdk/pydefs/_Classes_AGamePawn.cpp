@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AGamePawn()
 {
-    class_< AGamePawn, bases< APawn >  , boost::noncopyable>("AGamePawn", no_init)
-        .def("StaticClass", &AGamePawn::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< AGamePawn,  APawn   >("AGamePawn")
+        .def("StaticClass", &AGamePawn::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

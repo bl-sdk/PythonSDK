@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowDialogVar_InstanceData()
 {
-    class_< UWillowDialogVar_InstanceData, bases< UGearboxDialogVariable >  , boost::noncopyable>("UWillowDialogVar_InstanceData", no_init)
+    py::class_< UWillowDialogVar_InstanceData,  UGearboxDialogVariable   >("UWillowDialogVar_InstanceData")
         .def_readwrite("InstanceDataName", &UWillowDialogVar_InstanceData::InstanceDataName)
-        .def("StaticClass", &UWillowDialogVar_InstanceData::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowDialogVar_InstanceData::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

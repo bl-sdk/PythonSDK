@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPopulationMaster()
 {
-    class_< UPopulationMaster, bases< UObject >  , boost::noncopyable>("UPopulationMaster", no_init)
+    py::class_< UPopulationMaster,  UObject   >("UPopulationMaster")
         .def_readwrite("OpportunityList", &UPopulationMaster::OpportunityList)
         .def_readwrite("ActiveActorCost", &UPopulationMaster::ActiveActorCost)
         .def_readwrite("MaxActorCost", &UPopulationMaster::MaxActorCost)
@@ -18,13 +18,13 @@ void Export_pystes_UPopulationMaster()
         .def_readwrite("NextOpportunityTickTime", &UPopulationMaster::NextOpportunityTickTime)
         .def_readwrite("NextDestroyTestTickTime", &UPopulationMaster::NextDestroyTestTickTime)
         .def_readwrite("PopulationRespawnDelayInSeconds", &UPopulationMaster::PopulationRespawnDelayInSeconds)
-        .def("StaticClass", &UPopulationMaster::StaticClass, return_value_policy< reference_existing_object >())
-        .def("GetActorSpawnedFromOpportunity", &UPopulationMaster::GetActorSpawnedFromOpportunity, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPopulationMaster::StaticClass, py::return_value_policy::reference)
+        .def("GetActorSpawnedFromOpportunity", &UPopulationMaster::GetActorSpawnedFromOpportunity, py::return_value_policy::reference)
         .def("GetSavedActorDebugInfoForOpportunity", &UPopulationMaster::GetSavedActorDebugInfoForOpportunity)
         .def("GetNumberOfSavedActorsForOpportunity", &UPopulationMaster::GetNumberOfSavedActorsForOpportunity)
         .def("WillActorsOpportunityBeResetOnLevelLoad", &UPopulationMaster::WillActorsOpportunityBeResetOnLevelLoad)
         .def("ResetRespawn", &UPopulationMaster::ResetRespawn)
-        .def("GetStreamingLevelForActor", &UPopulationMaster::GetStreamingLevelForActor, return_value_policy< reference_existing_object >())
+        .def("GetStreamingLevelForActor", &UPopulationMaster::GetStreamingLevelForActor, py::return_value_policy::reference)
         .def("HasCapacityToSpawnFromFactories", &UPopulationMaster::HasCapacityToSpawnFromFactories)
         .def("HasCapacityToSpawnFromFactory", &UPopulationMaster::HasCapacityToSpawnFromFactory)
         .def("IsPopulationSystemAtCapacity", &UPopulationMaster::IsPopulationSystemAtCapacity)
@@ -36,16 +36,16 @@ void Export_pystes_UPopulationMaster()
         .def("ConnectEncounter", &UPopulationMaster::ConnectEncounter)
         .def("DisconnectOpportunity", &UPopulationMaster::DisconnectOpportunity)
         .def("ConnectOpportunity", &UPopulationMaster::ConnectOpportunity)
-        .def("GetWorldInfo", &UPopulationMaster::GetWorldInfo, return_value_policy< reference_existing_object >())
+        .def("GetWorldInfo", &UPopulationMaster::GetWorldInfo, py::return_value_policy::reference)
         .def("DestroySpawnedActors", &UPopulationMaster::DestroySpawnedActors)
         .def("RemoveSpawnedActor", &UPopulationMaster::RemoveSpawnedActor)
         .def("SetSpawnedActorsReuse", &UPopulationMaster::SetSpawnedActorsReuse)
         .def("AddExternalActor", &UPopulationMaster::AddExternalActor)
-        .def("SpawnActorFromOpportunity", &UPopulationMaster::SpawnActorFromOpportunity, return_value_policy< reference_existing_object >())
-        .def("SpawnActor", &UPopulationMaster::SpawnActor, return_value_policy< reference_existing_object >())
+        .def("SpawnActorFromOpportunity", &UPopulationMaster::SpawnActorFromOpportunity, py::return_value_policy::reference)
+        .def("SpawnActor", &UPopulationMaster::SpawnActor, py::return_value_policy::reference)
         .def("GetPopulationOpportunityIndex", &UPopulationMaster::GetPopulationOpportunityIndex)
-        .def("GetActorsOpportunity", &UPopulationMaster::GetActorsOpportunity, return_value_policy< reference_existing_object >())
-        .def("SpawnPopulationControlledActor", &UPopulationMaster::SpawnPopulationControlledActor, return_value_policy< reference_existing_object >())
+        .def("GetActorsOpportunity", &UPopulationMaster::GetActorsOpportunity, py::return_value_policy::reference)
+        .def("SpawnPopulationControlledActor", &UPopulationMaster::SpawnPopulationControlledActor, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

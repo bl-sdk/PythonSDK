@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlinePlayerInterface()
 {
-    class_< UOnlinePlayerInterface, bases< UInterface >  , boost::noncopyable>("UOnlinePlayerInterface", no_init)
-        .def("StaticClass", &UOnlinePlayerInterface::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UOnlinePlayerInterface,  UInterface   >("UOnlinePlayerInterface")
+        .def("StaticClass", &UOnlinePlayerInterface::StaticClass, py::return_value_policy::reference)
         .def("GetAchievements", &UOnlinePlayerInterface::GetAchievements)
         .def("ClearReadAchievementsCompleteDelegate", &UOnlinePlayerInterface::ClearReadAchievementsCompleteDelegate)
         .def("AddReadAchievementsCompleteDelegate", &UOnlinePlayerInterface::AddReadAchievementsCompleteDelegate)
@@ -60,7 +60,7 @@ void Export_pystes_UOnlinePlayerInterface()
         .def("AddWritePlayerStorageCompleteDelegate", &UOnlinePlayerInterface::AddWritePlayerStorageCompleteDelegate)
         .def("OnWritePlayerStorageComplete", &UOnlinePlayerInterface::OnWritePlayerStorageComplete)
         .def("WritePlayerStorage", &UOnlinePlayerInterface::WritePlayerStorage)
-        .def("GetPlayerStorage", &UOnlinePlayerInterface::GetPlayerStorage, return_value_policy< reference_existing_object >())
+        .def("GetPlayerStorage", &UOnlinePlayerInterface::GetPlayerStorage, py::return_value_policy::reference)
         .def("ClearReadPlayerStorageForNetIdCompleteDelegate", &UOnlinePlayerInterface::ClearReadPlayerStorageForNetIdCompleteDelegate)
         .def("AddReadPlayerStorageForNetIdCompleteDelegate", &UOnlinePlayerInterface::AddReadPlayerStorageForNetIdCompleteDelegate)
         .def("OnReadPlayerStorageForNetIdComplete", &UOnlinePlayerInterface::OnReadPlayerStorageForNetIdComplete)
@@ -73,7 +73,7 @@ void Export_pystes_UOnlinePlayerInterface()
         .def("AddWriteProfileSettingsCompleteDelegate", &UOnlinePlayerInterface::AddWriteProfileSettingsCompleteDelegate)
         .def("OnWriteProfileSettingsComplete", &UOnlinePlayerInterface::OnWriteProfileSettingsComplete)
         .def("WriteProfileSettings", &UOnlinePlayerInterface::WriteProfileSettings)
-        .def("GetProfileSettings", &UOnlinePlayerInterface::GetProfileSettings, return_value_policy< reference_existing_object >())
+        .def("GetProfileSettings", &UOnlinePlayerInterface::GetProfileSettings, py::return_value_policy::reference)
         .def("ClearReadProfileSettingsCompleteDelegate", &UOnlinePlayerInterface::ClearReadProfileSettingsCompleteDelegate)
         .def("AddReadProfileSettingsCompleteDelegate", &UOnlinePlayerInterface::AddReadProfileSettingsCompleteDelegate)
         .def("OnReadProfileSettingsComplete", &UOnlinePlayerInterface::OnReadProfileSettingsComplete)

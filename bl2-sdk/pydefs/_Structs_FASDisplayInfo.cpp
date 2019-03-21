@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FASDisplayInfo()
 {
-    class_< FASDisplayInfo >("FASDisplayInfo", no_init)
+    py::class_< FASDisplayInfo >("FASDisplayInfo")
         .def_readwrite("X", &FASDisplayInfo::X)
         .def_readwrite("Y", &FASDisplayInfo::Y)
         .def_readwrite("Z", &FASDisplayInfo::Z)

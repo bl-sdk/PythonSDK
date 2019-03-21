@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UIPursuitBehavior()
 {
-    class_< UIPursuitBehavior, bases< UInterface >  , boost::noncopyable>("UIPursuitBehavior", no_init)
-        .def("StaticClass", &UIPursuitBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UIPursuitBehavior,  UInterface   >("UIPursuitBehavior")
+        .def("StaticClass", &UIPursuitBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_SetPreferredNodeType", &UIPursuitBehavior::Behavior_SetPreferredNodeType)
         .staticmethod("StaticClass")
   ;

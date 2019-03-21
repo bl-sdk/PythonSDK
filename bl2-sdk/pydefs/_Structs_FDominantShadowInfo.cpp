@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FDominantShadowInfo()
 {
-    class_< FDominantShadowInfo >("FDominantShadowInfo", no_init)
+    py::class_< FDominantShadowInfo >("FDominantShadowInfo")
         .def_readwrite("WorldToLight", &FDominantShadowInfo::WorldToLight)
         .def_readwrite("LightToWorld", &FDominantShadowInfo::LightToWorld)
         .def_readwrite("LightSpaceImportanceBounds", &FDominantShadowInfo::LightSpaceImportanceBounds)

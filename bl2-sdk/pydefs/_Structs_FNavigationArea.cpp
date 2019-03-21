@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FNavigationArea()
 {
-    class_< FNavigationArea >("FNavigationArea", no_init)
+    py::class_< FNavigationArea >("FNavigationArea")
         .def_readwrite("AreaName", &FNavigationArea::AreaName)
         .def_readwrite("AreaColor", &FNavigationArea::AreaColor)
   ;

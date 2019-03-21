@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAIClassDefinition()
 {
-    class_< UAIClassDefinition, bases< UWillowCharacterClassDefinition >  , boost::noncopyable>("UAIClassDefinition", no_init)
+    py::class_< UAIClassDefinition,  UWillowCharacterClassDefinition   >("UAIClassDefinition")
         .def_readwrite("AIDef", &UAIClassDefinition::AIDef)
         .def_readwrite("DefaultDisplayName", &UAIClassDefinition::DefaultDisplayName)
         .def_readwrite("UBMKilledByMessageString", &UAIClassDefinition::UBMKilledByMessageString)
@@ -50,7 +50,7 @@ void Export_pystes_UAIClassDefinition()
         .def_readwrite("TimeUntilConsideredLingering", &UAIClassDefinition::TimeUntilConsideredLingering)
         .def_readwrite("FocusRadius", &UAIClassDefinition::FocusRadius)
         .def_readwrite("FocusOffset", &UAIClassDefinition::FocusOffset)
-        .def("StaticClass", &UAIClassDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAIClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnAllPickupsDetached", &UAIClassDefinition::OnAllPickupsDetached)
         .def("OnPickupDetached", &UAIClassDefinition::OnPickupDetached)
         .def("OnFootStep", &UAIClassDefinition::OnFootStep)

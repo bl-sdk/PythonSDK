@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAction_FaceThreat()
 {
-    class_< UAction_FaceThreat, bases< UActionSequencePawn >  , boost::noncopyable>("UAction_FaceThreat", no_init)
-        .def("StaticClass", &UAction_FaceThreat::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UAction_FaceThreat,  UActionSequencePawn   >("UAction_FaceThreat")
+        .def("StaticClass", &UAction_FaceThreat::StaticClass, py::return_value_policy::reference)
         .def("eventStopSequence", &UAction_FaceThreat::eventStopSequence)
         .staticmethod("StaticClass")
   ;

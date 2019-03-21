@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPhysicsStateExpressionEvaluator()
 {
-    class_< UPhysicsStateExpressionEvaluator, bases< UExpressionEvaluator >  , boost::noncopyable>("UPhysicsStateExpressionEvaluator", no_init)
+    py::class_< UPhysicsStateExpressionEvaluator,  UExpressionEvaluator   >("UPhysicsStateExpressionEvaluator")
         .def_readwrite("PhysicsState", &UPhysicsStateExpressionEvaluator::PhysicsState)
-        .def("StaticClass", &UPhysicsStateExpressionEvaluator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPhysicsStateExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UPhysicsStateExpressionEvaluator::Evaluate)
         .staticmethod("StaticClass")
   ;

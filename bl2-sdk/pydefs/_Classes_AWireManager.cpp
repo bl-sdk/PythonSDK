@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWireManager()
 {
-    class_< AWireManager, bases< AActor >  , boost::noncopyable>("AWireManager", no_init)
+    py::class_< AWireManager,  AActor   >("AWireManager")
         .def_readwrite("DefaultMaterial", &AWireManager::DefaultMaterial)
-        .def("StaticClass", &AWireManager::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWireManager::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

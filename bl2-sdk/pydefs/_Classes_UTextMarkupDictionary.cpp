@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UTextMarkupDictionary()
 {
-    class_< UTextMarkupDictionary, bases< UGBXDefinition >  , boost::noncopyable>("UTextMarkupDictionary", no_init)
+    py::class_< UTextMarkupDictionary,  UGBXDefinition   >("UTextMarkupDictionary")
         .def_readwrite("Dictionary", &UTextMarkupDictionary::Dictionary)
-        .def("StaticClass", &UTextMarkupDictionary::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UTextMarkupDictionary::StaticClass, py::return_value_policy::reference)
         .def("ResolveCustomMarkupString", &UTextMarkupDictionary::ResolveCustomMarkupString)
         .staticmethod("StaticClass")
   ;

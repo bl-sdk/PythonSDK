@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLootConfigurationData()
 {
-    class_< FLootConfigurationData >("FLootConfigurationData", no_init)
+    py::class_< FLootConfigurationData >("FLootConfigurationData")
         .def_readwrite("ConfigurationName", &FLootConfigurationData::ConfigurationName)
         .def_readwrite("LootGameStageVarianceFormula", &FLootConfigurationData::LootGameStageVarianceFormula)
         .def_readwrite("Weight", &FLootConfigurationData::Weight)

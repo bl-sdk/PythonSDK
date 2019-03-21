@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FParticleSysParam()
 {
-    class_< FParticleSysParam >("FParticleSysParam", no_init)
+    py::class_< FParticleSysParam >("FParticleSysParam")
         .def_readwrite("Name", &FParticleSysParam::Name)
         .def_readwrite("ParamType", &FParticleSysParam::ParamType)
         .def_readwrite("Scalar", &FParticleSysParam::Scalar)

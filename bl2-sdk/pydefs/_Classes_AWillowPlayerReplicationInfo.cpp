@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AWillowPlayerReplicationInfo()
 {
-    class_< AWillowPlayerReplicationInfo, bases< APlayerReplicationInfo >  , boost::noncopyable>("AWillowPlayerReplicationInfo", no_init)
+    py::class_< AWillowPlayerReplicationInfo,  APlayerReplicationInfo   >("AWillowPlayerReplicationInfo")
         .def_readwrite("VfTable_IINounAttributeProvider", &AWillowPlayerReplicationInfo::VfTable_IINounAttributeProvider)
         .def_readwrite("ExpLevel", &AWillowPlayerReplicationInfo::ExpLevel)
         .def_readwrite("ExpPointsNextLevelAt", &AWillowPlayerReplicationInfo::ExpPointsNextLevelAt)
@@ -48,7 +48,7 @@ void Export_pystes_AWillowPlayerReplicationInfo()
         .def_readonly("TrackedSkills", &AWillowPlayerReplicationInfo::TrackedSkills)
         .def_readwrite("InitializeFor", &AWillowPlayerReplicationInfo::InitializeFor)
         .def_readwrite("NumOverpowerLevelsUnlocked", &AWillowPlayerReplicationInfo::NumOverpowerLevelsUnlocked)
-        .def("StaticClass", &AWillowPlayerReplicationInfo::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AWillowPlayerReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def("ServerMigrateUniqueId", &AWillowPlayerReplicationInfo::ServerMigrateUniqueId)
         .def("RefreshStandInGear", &AWillowPlayerReplicationInfo::RefreshStandInGear)
         .def("ServerSetStandInGear", &AWillowPlayerReplicationInfo::ServerSetStandInGear)
@@ -56,7 +56,7 @@ void Export_pystes_AWillowPlayerReplicationInfo()
         .def("OnPlayerJoinLeave", &AWillowPlayerReplicationInfo::OnPlayerJoinLeave)
         .def("eventDestroyed", &AWillowPlayerReplicationInfo::eventDestroyed)
         .def("IsRemotePlayer", &AWillowPlayerReplicationInfo::IsRemotePlayer)
-        .def("eventGetPrimaryPlayerPC", &AWillowPlayerReplicationInfo::eventGetPrimaryPlayerPC, return_value_policy< reference_existing_object >())
+        .def("eventGetPrimaryPlayerPC", &AWillowPlayerReplicationInfo::eventGetPrimaryPlayerPC, py::return_value_policy::reference)
         .def("ServerUpdatePRIRemoteCustomizationArray", &AWillowPlayerReplicationInfo::ServerUpdatePRIRemoteCustomizationArray)
         .def("ClientInitiateCustomizationRequest", &AWillowPlayerReplicationInfo::ClientInitiateCustomizationRequest)
         .def("ServerInitiateCustomizationRequest", &AWillowPlayerReplicationInfo::ServerInitiateCustomizationRequest)

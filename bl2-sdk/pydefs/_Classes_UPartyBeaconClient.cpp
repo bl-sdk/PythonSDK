@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UPartyBeaconClient()
 {
-    class_< UPartyBeaconClient, bases< UPartyBeacon >  , boost::noncopyable>("UPartyBeaconClient", no_init)
+    py::class_< UPartyBeaconClient,  UPartyBeacon   >("UPartyBeaconClient")
         .def_readwrite("HostPendingRequest", &UPartyBeaconClient::HostPendingRequest)
         .def_readwrite("PendingRequest", &UPartyBeaconClient::PendingRequest)
         .def_readwrite("ClientBeaconState", &UPartyBeaconClient::ClientBeaconState)
@@ -15,7 +15,7 @@ void Export_pystes_UPartyBeaconClient()
         .def_readwrite("ResolverClassName", &UPartyBeaconClient::ResolverClassName)
         .def_readwrite("ResolverClass", &UPartyBeaconClient::ResolverClass)
         .def_readwrite("Resolver", &UPartyBeaconClient::Resolver)
-        .def("StaticClass", &UPartyBeaconClient::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UPartyBeaconClient::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyBeacon", &UPartyBeaconClient::eventDestroyBeacon)
         .def("CancelReservation", &UPartyBeaconClient::CancelReservation)
         .def("RequestReservationUpdate", &UPartyBeaconClient::RequestReservationUpdate)

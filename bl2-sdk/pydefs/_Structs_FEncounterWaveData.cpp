@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FEncounterWaveData()
 {
-    class_< FEncounterWaveData >("FEncounterWaveData", no_init)
+    py::class_< FEncounterWaveData >("FEncounterWaveData")
         .def_readwrite("InitialDelay", &FEncounterWaveData::InitialDelay)
         .def_readwrite("PercentToComplete", &FEncounterWaveData::PercentToComplete)
         .def_readwrite("EncounterPopulationDef", &FEncounterWaveData::EncounterPopulationDef)

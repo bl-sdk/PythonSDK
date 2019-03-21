@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FGFxDataStoreBinding()
 {
-    class_< FGFxDataStoreBinding >("FGFxDataStoreBinding", no_init)
+    py::class_< FGFxDataStoreBinding >("FGFxDataStoreBinding")
         .def_readwrite("DataSource", &FGFxDataStoreBinding::DataSource)
         .def_readwrite("VarPath", &FGFxDataStoreBinding::VarPath)
         .def_readwrite("ModelId", &FGFxDataStoreBinding::ModelId)

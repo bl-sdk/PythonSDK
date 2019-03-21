@@ -1,16 +1,16 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UAnimNotify_ClothingMaxDistanceScale()
 {
-    class_< UAnimNotify_ClothingMaxDistanceScale, bases< UAnimNotify >  , boost::noncopyable>("UAnimNotify_ClothingMaxDistanceScale", no_init)
+    py::class_< UAnimNotify_ClothingMaxDistanceScale,  UAnimNotify   >("UAnimNotify_ClothingMaxDistanceScale")
         .def_readwrite("StartScale", &UAnimNotify_ClothingMaxDistanceScale::StartScale)
         .def_readwrite("EndScale", &UAnimNotify_ClothingMaxDistanceScale::EndScale)
         .def_readwrite("ScaleMode", &UAnimNotify_ClothingMaxDistanceScale::ScaleMode)
         .def_readwrite("Duration", &UAnimNotify_ClothingMaxDistanceScale::Duration)
-        .def("StaticClass", &UAnimNotify_ClothingMaxDistanceScale::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UAnimNotify_ClothingMaxDistanceScale::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

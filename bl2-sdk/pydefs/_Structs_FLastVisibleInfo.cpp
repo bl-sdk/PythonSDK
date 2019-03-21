@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FLastVisibleInfo()
 {
-    class_< FLastVisibleInfo >("FLastVisibleInfo", no_init)
+    py::class_< FLastVisibleInfo >("FLastVisibleInfo")
         .def_readwrite("LastVisibleLocation", &FLastVisibleInfo::LastVisibleLocation)
         .def_readwrite("CurrentLocation", &FLastVisibleInfo::CurrentLocation)
   ;

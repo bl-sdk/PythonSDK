@@ -1,15 +1,15 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UOnlineEventsInterfaceMcp()
 {
-    class_< UOnlineEventsInterfaceMcp, bases< UMCPBase >  , boost::noncopyable>("UOnlineEventsInterfaceMcp", no_init)
+    py::class_< UOnlineEventsInterfaceMcp,  UMCPBase   >("UOnlineEventsInterfaceMcp")
         .def_readwrite("EventUploadConfigs", &UOnlineEventsInterfaceMcp::EventUploadConfigs)
         .def_readwrite("MCPEventPostObjects", &UOnlineEventsInterfaceMcp::MCPEventPostObjects)
         .def_readwrite("DisabledUploadTypes", &UOnlineEventsInterfaceMcp::DisabledUploadTypes)
-        .def("StaticClass", &UOnlineEventsInterfaceMcp::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UOnlineEventsInterfaceMcp::StaticClass, py::return_value_policy::reference)
         .def("UploadMatchmakingStats", &UOnlineEventsInterfaceMcp::UploadMatchmakingStats)
         .def("UpdatePlaylistPopulation", &UOnlineEventsInterfaceMcp::UpdatePlaylistPopulation)
         .def("UploadGameplayEventsData", &UOnlineEventsInterfaceMcp::UploadGameplayEventsData)

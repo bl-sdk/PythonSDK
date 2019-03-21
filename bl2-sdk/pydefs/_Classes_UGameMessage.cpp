@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UGameMessage()
 {
-    class_< UGameMessage, bases< ULocalMessage >  , boost::noncopyable>("UGameMessage", no_init)
+    py::class_< UGameMessage,  ULocalMessage   >("UGameMessage")
         .def_readwrite("SwitchLevelMessage", &UGameMessage::SwitchLevelMessage)
         .def_readwrite("LeftMessage", &UGameMessage::LeftMessage)
         .def_readwrite("FailedTeamMessage", &UGameMessage::FailedTeamMessage)
@@ -29,7 +29,7 @@ void Export_pystes_UGameMessage()
         .def_readwrite("KickWarning", &UGameMessage::KickWarning)
         .def_readwrite("NewSpecMessage", &UGameMessage::NewSpecMessage)
         .def_readwrite("SpecEnteredMessage", &UGameMessage::SpecEnteredMessage)
-        .def("StaticClass", &UGameMessage::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UGameMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UGameMessage::GetString)
         .staticmethod("StaticClass")
   ;

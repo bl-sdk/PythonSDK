@@ -1,13 +1,13 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UInventoryUIStatComparer()
 {
-    class_< UInventoryUIStatComparer, bases< UQSortComparer >  , boost::noncopyable>("UInventoryUIStatComparer", no_init)
+    py::class_< UInventoryUIStatComparer,  UQSortComparer   >("UInventoryUIStatComparer")
         .def_readwrite("StatIndex", &UInventoryUIStatComparer::StatIndex)
-        .def("StaticClass", &UInventoryUIStatComparer::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UInventoryUIStatComparer::StaticClass, py::return_value_policy::reference)
         .staticmethod("StaticClass")
   ;
 }

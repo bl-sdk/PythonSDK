@@ -1,14 +1,14 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_AMutator()
 {
-    class_< AMutator, bases< AInfo >  , boost::noncopyable>("AMutator", no_init)
+    py::class_< AMutator,  AInfo   >("AMutator")
         .def_readwrite("NextMutator", &AMutator::NextMutator)
         .def_readwrite("GroupNames", &AMutator::GroupNames)
-        .def("StaticClass", &AMutator::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &AMutator::StaticClass, py::return_value_policy::reference)
         .def("NetDamage", &AMutator::NetDamage)
         .def("ScoreKill", &AMutator::ScoreKill)
         .def("ScoreObjective", &AMutator::ScoreObjective)
@@ -16,7 +16,7 @@ void Export_pystes_AMutator()
         .def("OverridePickupQuery", &AMutator::OverridePickupQuery)
         .def("CheckEndGame", &AMutator::CheckEndGame)
         .def("HandleRestartGame", &AMutator::HandleRestartGame)
-        .def("FindPlayerStart", &AMutator::FindPlayerStart, return_value_policy< reference_existing_object >())
+        .def("FindPlayerStart", &AMutator::FindPlayerStart, py::return_value_policy::reference)
         .def("GetSeamlessTravelActorList", &AMutator::GetSeamlessTravelActorList)
         .def("InitMutator", &AMutator::InitMutator)
         .def("DriverLeftVehicle", &AMutator::DriverLeftVehicle)

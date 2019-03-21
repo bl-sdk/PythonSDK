@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FScreenParticleRecord()
 {
-    class_< FScreenParticleRecord >("FScreenParticleRecord", no_init)
+    py::class_< FScreenParticleRecord >("FScreenParticleRecord")
         .def_readwrite("Tag", &FScreenParticleRecord::Tag)
         .def_readwrite("Template", &FScreenParticleRecord::Template)
         .def_readwrite("MatParamName", &FScreenParticleRecord::MatParamName)

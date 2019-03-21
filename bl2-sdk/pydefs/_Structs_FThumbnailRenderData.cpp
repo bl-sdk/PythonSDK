@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_FThumbnailRenderData()
 {
-    class_< FThumbnailRenderData >("FThumbnailRenderData", no_init)
+    py::class_< FThumbnailRenderData >("FThumbnailRenderData")
         .def_readwrite("Context", &FThumbnailRenderData::Context)
         .def_readwrite("RenderTarget", &FThumbnailRenderData::RenderTarget)
         .def_readwrite("ResultTexture", &FThumbnailRenderData::ResultTexture)

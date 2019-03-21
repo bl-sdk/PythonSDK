@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowVersusDuelBehavior()
 {
-    class_< UWillowVersusDuelBehavior, bases< UBehaviorBase >  , boost::noncopyable>("UWillowVersusDuelBehavior", no_init)
-        .def("StaticClass", &UWillowVersusDuelBehavior::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UWillowVersusDuelBehavior,  UBehaviorBase   >("UWillowVersusDuelBehavior")
+        .def("StaticClass", &UWillowVersusDuelBehavior::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UWillowVersusDuelBehavior::ApplyBehaviorToContext)
         .staticmethod("StaticClass")
   ;

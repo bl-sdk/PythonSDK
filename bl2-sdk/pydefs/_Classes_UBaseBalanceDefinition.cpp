@@ -1,12 +1,12 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UBaseBalanceDefinition()
 {
-    class_< UBaseBalanceDefinition, bases< UGBXDefinition >  , boost::noncopyable>("UBaseBalanceDefinition", no_init)
-        .def("StaticClass", &UBaseBalanceDefinition::StaticClass, return_value_policy< reference_existing_object >())
+    py::class_< UBaseBalanceDefinition,  UGBXDefinition   >("UBaseBalanceDefinition")
+        .def("StaticClass", &UBaseBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyGradeCustomizations", &UBaseBalanceDefinition::ApplyGradeCustomizations)
         .def("DoesSpawnChampion", &UBaseBalanceDefinition::DoesSpawnChampion)
         .def("GetDisplayNameAtGrade", &UBaseBalanceDefinition::GetDisplayNameAtGrade)

@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_ABuzzaxeActionSkill()
 {
-    class_< ABuzzaxeActionSkill, bases< AActionSkill >  , boost::noncopyable>("ABuzzaxeActionSkill", no_init)
+    py::class_< ABuzzaxeActionSkill,  AActionSkill   >("ABuzzaxeActionSkill")
         .def_readwrite("ActiveWeaponSlot", &ABuzzaxeActionSkill::ActiveWeaponSlot)
         .def_readwrite("Buzzaxe", &ABuzzaxeActionSkill::Buzzaxe)
         .def_readwrite("MyActionSkill", &ABuzzaxeActionSkill::MyActionSkill)
@@ -18,7 +18,7 @@ void Export_pystes_ABuzzaxeActionSkill()
         .def_readwrite("OverrideSMD", &ABuzzaxeActionSkill::OverrideSMD)
         .def_readwrite("OverrideEndSMD", &ABuzzaxeActionSkill::OverrideEndSMD)
         .def_readwrite("OverrideEndInjuredOverridePercentage", &ABuzzaxeActionSkill::OverrideEndInjuredOverridePercentage)
-        .def("StaticClass", &ABuzzaxeActionSkill::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &ABuzzaxeActionSkill::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &ABuzzaxeActionSkill::eventDestroyed)
         .def("OnActionSkillWeaponsRestricted", &ABuzzaxeActionSkill::OnActionSkillWeaponsRestricted)
         .def("OnActionSkillOwnerRevived", &ABuzzaxeActionSkill::OnActionSkillOwnerRevived)

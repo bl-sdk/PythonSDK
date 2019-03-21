@@ -1,11 +1,11 @@
 #include "stdafx.h"
 // Using =======================================================================
-using namespace boost::python;
+namespace py = pybind11;
 
 // Module ======================================================================
 void Export_pystes_UWillowGFxColiseumOverlayDefinition()
 {
-    class_< UWillowGFxColiseumOverlayDefinition, bases< UGFxMovieDefinition >  , boost::noncopyable>("UWillowGFxColiseumOverlayDefinition", no_init)
+    py::class_< UWillowGFxColiseumOverlayDefinition,  UGFxMovieDefinition   >("UWillowGFxColiseumOverlayDefinition")
         .def_readwrite("CurrentRoundCounter", &UWillowGFxColiseumOverlayDefinition::CurrentRoundCounter)
         .def_readwrite("CurrentWaveCounter", &UWillowGFxColiseumOverlayDefinition::CurrentWaveCounter)
         .def_readwrite("MaxRoundCounter", &UWillowGFxColiseumOverlayDefinition::MaxRoundCounter)
@@ -15,7 +15,7 @@ void Export_pystes_UWillowGFxColiseumOverlayDefinition()
         .def_readwrite("WaveLabels", &UWillowGFxColiseumOverlayDefinition::WaveLabels)
         .def_readwrite("RefreshInterval", &UWillowGFxColiseumOverlayDefinition::RefreshInterval)
         .def_readwrite("AllRulesDefinition", &UWillowGFxColiseumOverlayDefinition::AllRulesDefinition)
-        .def("StaticClass", &UWillowGFxColiseumOverlayDefinition::StaticClass, return_value_policy< reference_existing_object >())
+        .def("StaticClass", &UWillowGFxColiseumOverlayDefinition::StaticClass, py::return_value_policy::reference)
         .def("EvaluateBalanceFormula", &UWillowGFxColiseumOverlayDefinition::EvaluateBalanceFormula)
         .staticmethod("StaticClass")
   ;
