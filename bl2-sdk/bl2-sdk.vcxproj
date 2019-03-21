@@ -83,7 +83,8 @@
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>
+    </LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <IncludePath>$(PYTHONPATH)\include;C:\Users\abahb\boost_1_69_0;$(IncludePath)</IncludePath>
@@ -149,7 +150,8 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -161,6 +163,7 @@
       <AssemblyDebug>false</AssemblyDebug>
       <GenerateMapFile>false</GenerateMapFile>
       <MapExports>false</MapExports>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -250,7 +253,6 @@
     <ClCompile Include="pydefs\_Classes_ADecalActor.cpp" />
     <ClCompile Include="pydefs\_Classes_ADecalActorBase.cpp" />
     <ClCompile Include="pydefs\_Classes_ADecalActorMovable.cpp" />
-    <ClCompile Include="pydefs\_Classes_ADecalManager.cpp" />
     <ClCompile Include="pydefs\_Classes_ADefaultPhysicsVolume.cpp" />
     <ClCompile Include="pydefs\_Classes_ADeployableTurretActor.cpp" />
     <ClCompile Include="pydefs\_Classes_ADirectionalLight.cpp" />
@@ -1350,7 +1352,6 @@
     <ClCompile Include="pydefs\_Classes_UCustomSkeletalMeshComponent.cpp" />
     <ClCompile Include="pydefs\_Classes_UCylinderComponent.cpp" />
     <ClCompile Include="pydefs\_Classes_UDamageAdjuster.cpp" />
-    <ClCompile Include="pydefs\_Classes_UDamageOverTimeManager.cpp" />
     <ClCompile Include="pydefs\_Classes_UDamagePipeline.cpp" />
     <ClCompile Include="pydefs\_Classes_UDamageType.cpp" />
     <ClCompile Include="pydefs\_Classes_UDamageTypeAttributeValueResolver.cpp" />
@@ -1453,7 +1454,6 @@
     <ClCompile Include="pydefs\_Classes_UExperienceFeedbackMessage.cpp" />
     <ClCompile Include="pydefs\_Classes_UExperienceResourcePool.cpp" />
     <ClCompile Include="pydefs\_Classes_UExplosionCollectionDefinition.cpp" />
-    <ClCompile Include="pydefs\_Classes_UExplosionDefinition.cpp" />
     <ClCompile Include="pydefs\_Classes_UExponentialHeightFogComponent.cpp" />
     <ClCompile Include="pydefs\_Classes_UExporter.cpp" />
     <ClCompile Include="pydefs\_Classes_UExposureUtilityBase.cpp" />
@@ -3076,7 +3076,6 @@
     <ClCompile Include="pydefs\_Classes_UStatusEffectExpressionEvaluator.cpp" />
     <ClCompile Include="pydefs\_Classes_UStatusEffectsComponent.cpp" />
     <ClCompile Include="pydefs\_Classes_UStatusMenuEquippedPanelGFxObject.cpp" />
-    <ClCompile Include="pydefs\_Classes_UStatusMenuExGFxMovie.cpp" />
     <ClCompile Include="pydefs\_Classes_UStatusMenuGFxDefinition.cpp" />
     <ClCompile Include="pydefs\_Classes_UStatusMenuInventoryPanelGFxObject.cpp" />
     <ClCompile Include="pydefs\_Classes_UStatusMenuMapGFxObject.cpp" />
@@ -3371,7 +3370,6 @@
     <ClCompile Include="pydefs\_Classes_UWillowGFxBuddyPlane.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowGFxClikWidget.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowGFxColiseumOverlayDefinition.cpp" />
-    <ClCompile Include="pydefs\_Classes_UWillowGFxColiseumOverlayMovie.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowGFxDialogBox.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowGFxEditDialog.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowGFxLobbyLoadCharacter.cpp" />
@@ -3633,7 +3631,7 @@
     <ClCompile Include="pydefs\_Structs_FAchievementProgressStat.cpp" />
     <ClCompile Include="pydefs\_Structs_FAchievementUnlockData.cpp" />
     <ClCompile Include="pydefs\_Structs_FActionSequenceRandomData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FActionSequenceRecord, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FActionSequenceRecords.cpp" />
     <ClCompile Include="pydefs\_Structs_FActionSkillCustomEventReplicationData.cpp" />
     <ClCompile Include="pydefs\_Structs_FActivateOp.cpp" />
     <ClCompile Include="pydefs\_Structs_FActiveAreaWaypointData.cpp" />
@@ -3646,14 +3644,14 @@
     <ClCompile Include="pydefs\_Structs_FActorReference.cpp" />
     <ClCompile Include="pydefs\_Structs_FActorToLookAt.cpp" />
     <ClCompile Include="pydefs\_Structs_FAggregateEventMapping.cpp" />
-    <ClCompile Include="pydefs\_Structs_FAIDefinitionRecord, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FAIDefinitionRecords.cpp" />
     <ClCompile Include="pydefs\_Structs_FAIHoldData.cpp" />
     <ClCompile Include="pydefs\_Structs_FAIHoldDebugData.cpp" />
     <ClCompile Include="pydefs\_Structs_FAimAnimTransitionData.cpp" />
     <ClCompile Include="pydefs\_Structs_FAimComponent.cpp" />
     <ClCompile Include="pydefs\_Structs_FAimOffsetProfile.cpp" />
     <ClCompile Include="pydefs\_Structs_FAimTransform.cpp" />
-    <ClCompile Include="pydefs\_Structs_FAIPawnGameStageGradeWeightData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FAIPawnGameStageGradeWeightDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FAIPawnGradeModifierData.cpp" />
     <ClCompile Include="pydefs\_Structs_FAIPawnPlaythroughData.cpp" />
     <ClCompile Include="pydefs\_Structs_FAIPawnPlaythroughThreeData.cpp" />
@@ -3749,7 +3747,7 @@
     <ClCompile Include="pydefs\_Structs_FBehaviorKernelArrayStats.cpp" />
     <ClCompile Include="pydefs\_Structs_FBehaviorKernelInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FBehaviorKernelStats.cpp" />
-    <ClCompile Include="pydefs\_Structs_FBehaviorKeyFrameEventData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FBehaviorKeyFrameEventDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FBehaviorOutputLinkData.cpp" />
     <ClCompile Include="pydefs\_Structs_FBehaviorOutputLinkData2.cpp" />
     <ClCompile Include="pydefs\_Structs_FBehaviorOutputLinkDescriptionData.cpp" />
@@ -3882,7 +3880,7 @@
     <ClCompile Include="pydefs\_Structs_FCoverExposureData.cpp" />
     <ClCompile Include="pydefs\_Structs_FCoverInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FCoverMeshes.cpp" />
-    <ClCompile Include="pydefs\_Structs_FCoverReference, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FCoverReferences.cpp" />
     <ClCompile Include="pydefs\_Structs_FCoverReplicationInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FCoverSlot.cpp" />
     <ClCompile Include="pydefs\_Structs_FCoverSpotInfo.cpp" />
@@ -3903,21 +3901,21 @@
     <ClCompile Include="pydefs\_Structs_FCustomBodyHandIKHoldData.cpp" />
     <ClCompile Include="pydefs\_Structs_FCustomCringeData.cpp" />
     <ClCompile Include="pydefs\_Structs_FCustomEventReactionData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FCustomEventReactionDataSpecialized, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FCustomEventReactionDataSpecializeds.cpp" />
     <ClCompile Include="pydefs\_Structs_FCustomInput.cpp" />
     <ClCompile Include="pydefs\_Structs_FCustomizationItemData.cpp" />
     <ClCompile Include="pydefs\_Structs_FCustomizationSizeMapping.cpp" />
     <ClCompile Include="pydefs\_Structs_FCustomizationUnlockData.cpp" />
     <ClCompile Include="pydefs\_Structs_FCylinder.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageClassEventData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FDamageEvents, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FDamageEventss.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageEventSummary.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageLocationData.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageOnlyOnceData.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamagePair.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageParameters.cpp" />
-    <ClCompile Include="pydefs\_Structs_FDamageReactionData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FDamageReactionDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageSurfaceTypeModifier.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageTypeBySpeedStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FDamageTypeExpModifier.cpp" />
@@ -3960,7 +3958,7 @@
     <ClCompile Include="pydefs\_Structs_FDirectionData.cpp" />
     <ClCompile Include="pydefs\_Structs_FDirectorTrackCut.cpp" />
     <ClCompile Include="pydefs\_Structs_FDlcCompatibilityData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FDlcCompatibilityDataEx, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FDlcCompatibilityDataExs.cpp" />
     <ClCompile Include="pydefs\_Structs_FDlcContentId.cpp" />
     <ClCompile Include="pydefs\_Structs_FDlcContentInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FDlcLevelTravelPair.cpp" />
@@ -4073,7 +4071,7 @@
     <ClCompile Include="pydefs\_Structs_FGBXNavMeshPolyRef.cpp" />
     <ClCompile Include="pydefs\_Structs_FGBXNavMeshSpecialMove.cpp" />
     <ClCompile Include="pydefs\_Structs_FGBXNavMeshSpecialMoveConnection.cpp" />
-    <ClCompile Include="pydefs\_Structs_FGBXNavMeshVertex, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FGBXNavMeshVertexs.cpp" />
     <ClCompile Include="pydefs\_Structs_FGCReference.cpp" />
     <ClCompile Include="pydefs\_Structs_FGearboxCoverState.cpp" />
     <ClCompile Include="pydefs\_Structs_FGearboxCoverTransition.cpp" />
@@ -4166,7 +4164,7 @@
     <ClCompile Include="pydefs\_Structs_FInstancedStaticMeshInstanceData.cpp" />
     <ClCompile Include="pydefs\_Structs_FInstancedStaticMeshMappingInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FInteractionIconWithOverrides.cpp" />
-    <ClCompile Include="pydefs\_Structs_FInteractiveObjectGameStageGradeWeightData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FInteractiveObjectGameStageGradeWeightDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FInteractiveObjectGradeModifierData.cpp" />
     <ClCompile Include="pydefs\_Structs_FInteractiveObjectReplicatedStateData.cpp" />
     <ClCompile Include="pydefs\_Structs_FInteriorSettings.cpp" />
@@ -4187,7 +4185,7 @@
     <ClCompile Include="pydefs\_Structs_FInterpLookupTrack.cpp" />
     <ClCompile Include="pydefs\_Structs_FIntPoint.cpp" />
     <ClCompile Include="pydefs\_Structs_FIntPoint3D.cpp" />
-    <ClCompile Include="pydefs\_Structs_FInventoryGameStageGradeWeightData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FInventoryGameStageGradeWeightDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FInventoryGradeModifierData.cpp" />
     <ClCompile Include="pydefs\_Structs_FInventoryManufacturerBalanceData.cpp" />
     <ClCompile Include="pydefs\_Structs_FInventorySaveGameData.cpp" />
@@ -4249,7 +4247,7 @@
     <ClCompile Include="pydefs\_Structs_FLightingChannelContainer.cpp" />
     <ClCompile Include="pydefs\_Structs_FLightMapRef.cpp" />
     <ClCompile Include="pydefs\_Structs_FLightmassDebugOptions.cpp" />
-    <ClCompile Include="pydefs\_Structs_FLightmassDirectionalLightSettings, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FLightmassDirectionalLightSettingss.cpp" />
     <ClCompile Include="pydefs\_Structs_FLightmassLightSettings.cpp" />
     <ClCompile Include="pydefs\_Structs_FLightmassMaterialInterfaceSettings.cpp" />
     <ClCompile Include="pydefs\_Structs_FLightmassPointLightSettings.cpp" />
@@ -4265,7 +4263,7 @@
     <ClCompile Include="pydefs\_Structs_FLoadCharacterData.cpp" />
     <ClCompile Include="pydefs\_Structs_FLoadInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FLoadingMovieExceptionInfo.cpp" />
-    <ClCompile Include="pydefs\_Structs_FLocalAuthSession, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FLocalAuthSessions.cpp" />
     <ClCompile Include="pydefs\_Structs_FLocalizedStringSetting.cpp" />
     <ClCompile Include="pydefs\_Structs_FLocalizedStringSettingMetaData.cpp" />
     <ClCompile Include="pydefs\_Structs_FLocalizedSubtitle.cpp" />
@@ -4336,7 +4334,7 @@
     <ClCompile Include="pydefs\_Structs_FMorphNodeConn.cpp" />
     <ClCompile Include="pydefs\_Structs_FMoveToCellData.cpp" />
     <ClCompile Include="pydefs\_Structs_FMovieInstanceArray.cpp" />
-    <ClCompile Include="pydefs\_Structs_FMovieRangeStateData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FMovieRangeStateDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FMovieStateData.cpp" />
     <ClCompile Include="pydefs\_Structs_FMovieStateStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FMultiMap_Mirror.cpp" />
@@ -4347,7 +4345,7 @@
     <ClCompile Include="pydefs\_Structs_FNamedInterfaceDef.cpp" />
     <ClCompile Include="pydefs\_Structs_FNamedNetDriver.cpp" />
     <ClCompile Include="pydefs\_Structs_FNamedObjectProperty.cpp" />
-    <ClCompile Include="pydefs\_Structs_FNamedOnlineContent, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FNamedOnlineContents.cpp" />
     <ClCompile Include="pydefs\_Structs_FNamedSession.cpp" />
     <ClCompile Include="pydefs\_Structs_FNamedSkillEvent.cpp" />
     <ClCompile Include="pydefs\_Structs_FNameExpressionData.cpp" />
@@ -4386,7 +4384,7 @@
     <ClCompile Include="pydefs\_Structs_FOnlineArbitrationRegistrant.cpp" />
     <ClCompile Include="pydefs\_Structs_FOnlineContent.cpp" />
     <ClCompile Include="pydefs\_Structs_FOnlineContentNameInfo.cpp" />
-    <ClCompile Include="pydefs\_Structs_FOnlineCrossTitleContent, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FOnlineCrossTitleContents.cpp" />
     <ClCompile Include="pydefs\_Structs_FOnlineFriend.cpp" />
     <ClCompile Include="pydefs\_Structs_FOnlineFriendMessage.cpp" />
     <ClCompile Include="pydefs\_Structs_FOnlineGameSearchORClause.cpp" />
@@ -4421,12 +4419,12 @@
     <ClCompile Include="pydefs\_Structs_FParticleEmitterInstance.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleEmitterInstanceMotionBlurInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleEmitterReplayFrame.cpp" />
-    <ClCompile Include="pydefs\_Structs_FParticleEventCollideData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FParticleEventCollideDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleEventData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FParticleEventDeathData, bases.cpp" />
-    <ClCompile Include="pydefs\_Structs_FParticleEventKismetData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FParticleEventDeathDatas.cpp" />
+    <ClCompile Include="pydefs\_Structs_FParticleEventKismetDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleEventSpawnData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FParticleEventTraceData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FParticleEventTraceDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleEvent_GenerateInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleRandomSeedInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FParticleReplayTrackKey.cpp" />
@@ -4439,7 +4437,7 @@
     <ClCompile Include="pydefs\_Structs_FPathStore.cpp" />
     <ClCompile Include="pydefs\_Structs_FPauseTimerData.cpp" />
     <ClCompile Include="pydefs\_Structs_FPawnClassEventData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FPawnEvents, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FPawnEventss.cpp" />
     <ClCompile Include="pydefs\_Structs_FPCContextMenuItem.cpp" />
     <ClCompile Include="pydefs\_Structs_FPendingClientAuth.cpp" />
     <ClCompile Include="pydefs\_Structs_FPendingClientTrainingMessage.cpp" />
@@ -4457,7 +4455,7 @@
     <ClCompile Include="pydefs\_Structs_FPerPlayerSplitscreenData.cpp" />
     <ClCompile Include="pydefs\_Structs_FPersistentData.cpp" />
     <ClCompile Include="pydefs\_Structs_FPersistentMapDependencies.cpp" />
-    <ClCompile Include="pydefs\_Structs_FPersistentSeqAct_InterpData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FPersistentSeqAct_InterpDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FPersistentSequenceEventData.cpp" />
     <ClCompile Include="pydefs\_Structs_FPhysEffectInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FPhysicalMaterialTireModel.cpp" />
@@ -4467,13 +4465,13 @@
     <ClCompile Include="pydefs\_Structs_FPhysXSimulationProperties.cpp" />
     <ClCompile Include="pydefs\_Structs_FPhysXVerticalProperties.cpp" />
     <ClCompile Include="pydefs\_Structs_FPickupMemento.cpp" />
-    <ClCompile Include="pydefs\_Structs_FPlane, bases.cpp" />
-    <ClCompile Include="pydefs\_Structs_FPlane2D, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FPlane2Ds.cpp" />
+    <ClCompile Include="pydefs\_Structs_FPlanes.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerClassAchievementUnlockData.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerClassCountOverride.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerDataStoreGroup.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerEvents.cpp" />
-    <ClCompile Include="pydefs\_Structs_FPlayerIcon, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FPlayerIcons.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerInformation.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerLineInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FPlayerMember.cpp" />
@@ -4554,7 +4552,7 @@
     <ClCompile Include="pydefs\_Structs_FRawAnimSequenceTrack.cpp" />
     <ClCompile Include="pydefs\_Structs_FRawDistribution.cpp" />
     <ClCompile Include="pydefs\_Structs_FRawDistributionFloat.cpp" />
-    <ClCompile Include="pydefs\_Structs_FRawDistributionVector, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FRawDistributionVectors.cpp" />
     <ClCompile Include="pydefs\_Structs_FRawInputKeyEventData.cpp" />
     <ClCompile Include="pydefs\_Structs_FRBCollisionChannelContainer.cpp" />
     <ClCompile Include="pydefs\_Structs_FRecentDamageTracker.cpp" />
@@ -4571,7 +4569,7 @@
     <ClCompile Include="pydefs\_Structs_FReflectionInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FRegionBalanceData.cpp" />
     <ClCompile Include="pydefs\_Structs_FRegionGameStageData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FRejectedContentInfo, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FRejectedContentInfos.cpp" />
     <ClCompile Include="pydefs\_Structs_FRelativeDirectionData.cpp" />
     <ClCompile Include="pydefs\_Structs_FRELBManagerStats.cpp" />
     <ClCompile Include="pydefs\_Structs_FRelevanceBucketStruct.cpp" />
@@ -4618,17 +4616,17 @@
     <ClCompile Include="pydefs\_Structs_FRTPCSetting.cpp" />
     <ClCompile Include="pydefs\_Structs_FRuleEngineLoadBalanceStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FRuleInfo.cpp" />
-    <ClCompile Include="pydefs\_Structs_FRuleRecord, bases.cpp" />
-    <ClCompile Include="pydefs\_Structs_FRuleSetRecord, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FRuleRecords.cpp" />
+    <ClCompile Include="pydefs\_Structs_FRuleSetRecords.cpp" />
     <ClCompile Include="pydefs\_Structs_FRuleSetReference.cpp" />
     <ClCompile Include="pydefs\_Structs_FSavedRandomValue.cpp" />
     <ClCompile Include="pydefs\_Structs_FSavedTransform.cpp" />
     <ClCompile Include="pydefs\_Structs_FSaveResult.cpp" />
-    <ClCompile Include="pydefs\_Structs_FScalarMaterialInput, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FScalarMaterialInputs.cpp" />
     <ClCompile Include="pydefs\_Structs_FScalarMaterialParameter.cpp" />
     <ClCompile Include="pydefs\_Structs_FScalarParameterInterpStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FScalarParameterValue.cpp" />
-    <ClCompile Include="pydefs\_Structs_FScalarParameterValueOverTime, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FScalarParameterValueOverTimes.cpp" />
     <ClCompile Include="pydefs\_Structs_FScalarParticleSystemParameter.cpp" />
     <ClCompile Include="pydefs\_Structs_FScaledHUDElement.cpp" />
     <ClCompile Include="pydefs\_Structs_FScaleformPortraitData.cpp" />
@@ -4677,11 +4675,11 @@
     <ClCompile Include="pydefs\_Structs_FSkillActionData.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillConstraintData.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillDamagedEventConstraintData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FSkillDamageEventData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FSkillDamageEventDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillEffectData.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillEventResponseData.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillIndexLevelRequirementPair.cpp" />
-    <ClCompile Include="pydefs\_Structs_FSkillKillEventData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FSkillKillEventDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillSaveGameData.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillTreeBranchStateData.cpp" />
     <ClCompile Include="pydefs\_Structs_FSkillTreeSkillStateData.cpp" />
@@ -4697,7 +4695,7 @@
     <ClCompile Include="pydefs\_Structs_FSMBehavior.cpp" />
     <ClCompile Include="pydefs\_Structs_FSMExpressionList.cpp" />
     <ClCompile Include="pydefs\_Structs_FSMMaterialSetterDatum.cpp" />
-    <ClCompile Include="pydefs\_Structs_FSMNotify, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FSMNotifys.cpp" />
     <ClCompile Include="pydefs\_Structs_FSMPerchRandomPair.cpp" />
     <ClCompile Include="pydefs\_Structs_FSMRandomPair.cpp" />
     <ClCompile Include="pydefs\_Structs_FSocketEmitter.cpp" />
@@ -4773,14 +4771,14 @@
     <ClCompile Include="pydefs\_Structs_FTankSensor.cpp" />
     <ClCompile Include="pydefs\_Structs_FTargetDebugDatum.cpp" />
     <ClCompile Include="pydefs\_Structs_FTargetedPlayerState.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTargetInfoRecord, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTargetInfoRecords.cpp" />
     <ClCompile Include="pydefs\_Structs_FTargetIteratorData.cpp" />
     <ClCompile Include="pydefs\_Structs_FTargetPriorityInfo.cpp" />
     <ClCompile Include="pydefs\_Structs_FTCameraCache.cpp" />
     <ClCompile Include="pydefs\_Structs_FTeamEvents.cpp" />
     <ClCompile Include="pydefs\_Structs_FTeamInformation.cpp" />
     <ClCompile Include="pydefs\_Structs_FTeamState.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTechDeathData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTechDeathDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FTeleportKeyData.cpp" />
     <ClCompile Include="pydefs\_Structs_FTempProfileStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FTempWeaponStruct.cpp" />
@@ -4804,25 +4802,25 @@
     <ClCompile Include="pydefs\_Structs_FTextureLinkedListMirror.cpp" />
     <ClCompile Include="pydefs\_Structs_FTextureMaterialParameter.cpp" />
     <ClCompile Include="pydefs\_Structs_FTextureParameterValue.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTextureParameterValueOverTime, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTextureParameterValueOverTimes.cpp" />
     <ClCompile Include="pydefs\_Structs_FThirdPersonMenuView.cpp" />
     <ClCompile Include="pydefs\_Structs_FThreadSafeCounter.cpp" />
     <ClCompile Include="pydefs\_Structs_FThumbnailLightData.cpp" />
     <ClCompile Include="pydefs\_Structs_FThumbnailRenderData.cpp" />
     <ClCompile Include="pydefs\_Structs_FTier.cpp" />
     <ClCompile Include="pydefs\_Structs_FTierLayout.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTimedAnimBehaviorEvent, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTimedAnimBehaviorEvents.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimedMissionData.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimeModifier.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimePosition.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimerBehaviorUserState.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimerData.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimerEventReactionData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTimerEventReactionDataSpecialized, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTimerEventReactionDataSpecializeds.cpp" />
     <ClCompile Include="pydefs\_Structs_FTimeStampedRecord.cpp" />
     <ClCompile Include="pydefs\_Structs_FTitleFile.cpp" />
     <ClCompile Include="pydefs\_Structs_FTitleFileMapping.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTitleFileMcp, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTitleFileMcps.cpp" />
     <ClCompile Include="pydefs\_Structs_FTitleSafeZoneArea.cpp" />
     <ClCompile Include="pydefs\_Structs_FtMenuData.cpp" />
     <ClCompile Include="pydefs\_Structs_FtMenuLayout.cpp" />
@@ -4851,7 +4849,7 @@
     <ClCompile Include="pydefs\_Structs_FTurretEffect.cpp" />
     <ClCompile Include="pydefs\_Structs_FTViewTarget.cpp" />
     <ClCompile Include="pydefs\_Structs_FTwoVectors.cpp" />
-    <ClCompile Include="pydefs\_Structs_FUIAxisEmulationData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FUIAxisEmulationDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FUIAxisEmulationDefinition.cpp" />
     <ClCompile Include="pydefs\_Structs_FUIDataProviderField.cpp" />
     <ClCompile Include="pydefs\_Structs_FUIDataStoreBinding.cpp" />
@@ -4882,20 +4880,20 @@
     <ClCompile Include="pydefs\_Structs_FVariance.cpp" />
     <ClCompile Include="pydefs\_Structs_FVector.cpp" />
     <ClCompile Include="pydefs\_Structs_FVector2D.cpp" />
-    <ClCompile Include="pydefs\_Structs_FVector2MaterialInput, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FVector2MaterialInputs.cpp" />
     <ClCompile Include="pydefs\_Structs_FVector4.cpp" />
-    <ClCompile Include="pydefs\_Structs_FVectorMaterialInput, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FVectorMaterialInputs.cpp" />
     <ClCompile Include="pydefs\_Structs_FVectorMaterialParameter.cpp" />
     <ClCompile Include="pydefs\_Structs_FVectorMaterialParamMICData.cpp" />
     <ClCompile Include="pydefs\_Structs_FVectorParameter.cpp" />
     <ClCompile Include="pydefs\_Structs_FVectorParameterValue.cpp" />
-    <ClCompile Include="pydefs\_Structs_FVectorParameterValueOverTime, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FVectorParameterValueOverTimes.cpp" />
     <ClCompile Include="pydefs\_Structs_FVectorParticleSystemParameter.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleCrewAnimSetMapping.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleCrewMappingStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleDefaultCrewStruct.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleEffect.cpp" />
-    <ClCompile Include="pydefs\_Structs_FVehicleGameStageGradeWeightData, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FVehicleGameStageGradeWeightDatas.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleGradeModifierData.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleHandlingWheelData.cpp" />
     <ClCompile Include="pydefs\_Structs_FVehicleSeatDefinition.cpp" />
@@ -4927,7 +4925,7 @@
     <ClCompile Include="pydefs\_Structs_FWeaponClassEventData.cpp" />
     <ClCompile Include="pydefs\_Structs_FWeaponCustomPartTypeData.cpp" />
     <ClCompile Include="pydefs\_Structs_FWeaponDefinitionData.cpp" />
-    <ClCompile Include="pydefs\_Structs_FWeaponEvents, bases.cpp" />
+    <ClCompile Include="pydefs\_Structs_FWeaponEventss.cpp" />
     <ClCompile Include="pydefs\_Structs_FWeaponMemento.cpp" />
     <ClCompile Include="pydefs\_Structs_FWeaponPartAttachmentData.cpp" />
     <ClCompile Include="pydefs\_Structs_FWeaponSaveGameData.cpp" />
